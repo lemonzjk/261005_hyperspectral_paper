@@ -48,3 +48,19 @@
  .atlas-paper-grid{grid-template-columns:1fr}.atlas-paper{padding:16px}.atlas-paper h4{font-size:16px}.atlas-paper-title{font-size:12px;-webkit-line-clamp:2;margin-bottom:14px}.atlas-paper-meta,.atlas-paper-footer{font-size:11px}.atlas-footnote{font-size:11px}
  .filter-bar{padding:14px 14px 12px}.filter-bar select{font-size:12px}.results-heading{padding:0 14px 14px}.results-heading>span{font-size:11px}.results-note{font-size:10px}
 }
+
+/* Publication timeline: colored routes and accessible paper stations. */
+.timeline-browser{border-top:1px solid var(--line);padding:20px;background:#f8faf6;min-width:0}
+.timeline-toolbar{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:15px;flex-wrap:wrap}
+.timeline-toolbar strong{font-size:14px;color:#31594d}.timeline-toolbar>div>span{display:block;font-size:11px;color:#7b8a7d;margin-top:5px}
+.timeline-controls{display:flex;flex-wrap:wrap;gap:1px;border:1px solid #cdd8ce;border-radius:6px;overflow:hidden;background:#cdd8ce}
+.timeline-controls button{background:#fffdf7;padding:8px 11px;font-size:11px;color:#36594b}.timeline-controls button:hover{background:#eef3e9}
+.timeline-viewport{width:100%;height:620px;overflow:auto;border:1px solid #d6dfd4;border-radius:8px;background:#fffdf7;cursor:grab;touch-action:none;overscroll-behavior:contain}
+.timeline-viewport.is-dragging{cursor:grabbing;user-select:none}.timeline-viewport svg{max-width:none;flex-shrink:0}
+.timeline-station{cursor:pointer;outline:none}.timeline-station:hover>rect:first-of-type,.timeline-station:focus-visible>rect:first-of-type{fill:#e5eee3;fill-opacity:.65;stroke:#9aad9e;stroke-width:1}
+.timeline-caption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10px;color:#7d8c7d;margin-top:12px}
+@media(max-width:700px){.timeline-browser{padding:12px}.timeline-viewport{height:510px}.timeline-toolbar{gap:12px}.timeline-controls button{padding:9px 10px}.timeline-caption{font-size:10px}}
+
+.timeline-explorer{display:block}.timeline-explorer .explorer-sidebar{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);padding:15px 22px}.timeline-explorer .explorer-sidebar>.track-button,.timeline-explorer .sidebar-heading,.timeline-explorer .sidebar-note{display:none}.timeline-explorer .mobile-track-filter{display:flex;align-items:center;gap:14px;font-size:12px}.timeline-explorer .mobile-track-filter select{max-width:420px;flex:1;border:1px solid #dce6df;border-radius:5px;background:white;padding:9px;color:#315744}
+
+.timeline-legend{display:flex;flex-wrap:wrap;gap:9px 18px;margin-bottom:15px;font-size:10px;color:#61766a}.timeline-legend>span{display:flex;align-items:center;gap:6px}.timeline-legend i{width:15px;height:2px;display:inline-block}.timeline-viewport svg{user-select:none}

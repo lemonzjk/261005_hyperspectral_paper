@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { tracks as trackDefinitions } from '../src/tracks.ts';
+import { timelineLayout } from '../src/timeline-layout.ts';
 import { groupPapers } from '../src/map-groups.ts';
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
@@ -33,3 +34,17 @@ for (const grouping of ['track', 'year']) {
 }
 console.log(`Catalog valid: ${catalog.papers.length} papers, ${catalog.datasets.length} dataset resources.`);
 console.log(`Context valid: ${contextCharacters}/2000 characters, ${contextLines}/60 lines.`);
+
+for (const papers of [catalog.papers, [], ...trackDefinitions.map(track => catalog.papers.filter(p => p.track === track.id))]) {
+  const layout = timelineLayout(papers);
+  const stations = layout.lanes.flatMap(lane => lane.stations);
+  assert.equal(stations.length, papers.length, 'Timeline must contain every filtered paper');
+  assert.equal(new Set(stations.map(s => s.paper.id)).size, papers.length, 'Timeline stations must be unique');
+  for (const lane of layout.lanes) {
+    lane.stations.forEach((station, index) => {
+      assert(station.x > 240 && station.x < layout.width, 'Station must fit timeline');
+      if (index) assert(station.x - lane.stations[index - 1].x >= 150, 'Timeline labels must not overlap');
+    });
+  }
+}
+console.log('Timeline valid: full and filtered coverage, unique stations, no label collisions.');
