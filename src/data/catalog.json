@@ -1909,6 +1909,236 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@inproceedings{fluorescencebispectralps,\n  title={Bispectral Photometric Stereo based on Fluorescence},\n  author={Imari Sato and Takahiro Okabe and Yoichi Sato},\n  year={2012},\n  booktitle={CVPR},\n  url={https://research.nii.ac.jp/~imarik/resources/papers/BispectralPhotometricStereoCVPR2012.pdf},\n  doi={10.1109/CVPR.2012.6247685}\n}"
+    },
+    {
+      "id": "bispectral-brrdf",
+      "shortTitle": "Bispectral BRRDF",
+      "title": "Acquisition and Analysis of Bispectral Bidirectional Reflectance and Reradiation Distribution Functions",
+      "authors": "Matthias B. Hullin, Johannes Hanika, Boris Ajdin, Hans-Peter Seidel, Jan Kautz, Hendrik P. A. Lensch",
+      "year": 2010,
+      "venue": "TOG",
+      "track": "materials",
+      "representation": "光谱材料模型",
+      "scope": "相关研究",
+      "tags": [
+        "光谱材料模型",
+        "materials"
+      ],
+      "summary": "测量荧光材料随入射/出射方向和激发/发射波长变化的响应，构建支持波长间能量转移的渲染模型。",
+      "input": "多角度、多激发/发射波长材料观测。",
+      "output": "双光谱 BRRDF 与荧光材料三维渲染。",
+      "mechanism": "将 BRDF 扩展为双光谱反射及再辐射分布，用稀疏角度的完整光谱数据做 PCA，选择少量波长对进行高角分辨率测量。",
+      "readingNote": "双光谱指同时建模输入和输出波长，并非仅两个固定波段；恢复的是材料角度–光谱响应，不是未知场景几何。",
+      "paper": "https://doi.org/10.1145/1778765.1778834",
+      "doi": "10.1145/1778765.1778834",
+      "publicationName": "ACM Transactions on Graphics",
+      "verificationLevel": "author_full_text",
+      "sources": [
+        {
+          "url": "https://jo.dreggn.org/home/2010_bispectral.pdf",
+          "note": "作者公开正式论文，核验方法、作者及三维渲染实验。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{bispectralbrrdf,\n  title={Acquisition and Analysis of Bispectral Bidirectional Reflectance and Reradiation Distribution Functions},\n  author={Matthias B. Hullin and Johannes Hanika and Boris Ajdin and Hans-Peter Seidel and Jan Kautz and Hendrik P. A. Lensch},\n  year={2010},\n  journal={ACM Transactions on Graphics},\n  url={https://doi.org/10.1145/1778765.1778834},\n  doi={10.1145/1778765.1778834}\n}"
+    },
+    {
+      "id": "luminescence-3d-thermal",
+      "shortTitle": "3D Luminescence Thermal",
+      "title": "Luminescence-enabled three-dimensional temperature bioimaging",
+      "authors": "Liyan Ming, Anna Romelli, José Lifante, Patrizia Canton, Ginés Lifante-Pedrola, Daniel Jaque, Erving Ximendes, Riccardo Marin",
+      "year": 2025,
+      "venue": "Nature Communications",
+      "track": "understanding",
+      "representation": "深度与温度图",
+      "scope": "核心研究",
+      "tags": [
+        "深度与温度图",
+        "understanding"
+      ],
+      "summary": "从近红外高光谱荧光信号同时估计探针深度和温度，构建组织内三维温度分布。",
+      "input": "含 Ag₂S 纳米温度探针的近红外高光谱图像。",
+      "output": "探针温度与组织内深度组成的三维温度图。",
+      "mechanism": "利用温度改变发射谱形与组织吸收造成的波长相关衰减，由串联卷积和全连接网络联合预测温度与深度。",
+      "readingNote": "依赖纳米探针及温度–组织厚度标定，展示仿体、离体组织和活体条件；不是任意场景无标记三维重建，也不是完整组织断层恢复。",
+      "paper": "https://www.nature.com/articles/s41467-025-59681-7",
+      "doi": "10.1038/s41467-025-59681-7",
+      "publicationName": "Nature Communications",
+      "verificationLevel": "publisher_full_text",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12254501/",
+          "note": "原始论文公开全文与作者信息；出版社结果核验标定、图 3 和讨论。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{luminescence3dthermal,\n  title={Luminescence-enabled three-dimensional temperature bioimaging},\n  author={Liyan Ming and Anna Romelli and José Lifante and Patrizia Canton and Ginés Lifante-Pedrola and Daniel Jaque and Erving Ximendes and Riccardo Marin},\n  year={2025},\n  journal={Nature Communications},\n  url={https://www.nature.com/articles/s41467-025-59681-7},\n  doi={10.1038/s41467-025-59681-7}\n}"
+    },
+    {
+      "id": "bs-idt",
+      "shortTitle": "BS-IDT",
+      "title": "Bond-selective intensity diffraction tomography",
+      "authors": "Jian Zhao, Alex Matlock, Hongbo Zhu, Ziqi Song, Jiabei Zhu, Biao Wang, Fukai Chen, Yuewei Zhan, Zhicong Chen, Yihong Xu, Xingchen Lin, Lei Tian, Ji-Xin Cheng",
+      "year": 2022,
+      "venue": "Nature Communications",
+      "track": "volumetric",
+      "representation": "三维光谱体",
+      "scope": "核心研究",
+      "tags": [
+        "三维光谱体",
+        "volumetric"
+      ],
+      "summary": "以中红外光热激发结合强度衍射断层，恢复细胞等样品的三维化学分布及局部红外光谱。",
+      "input": "中红外泵浦、可见探测光照下的多角度强度图像。",
+      "output": "键选择性三维折射率分布与空间定位的中红外光谱。",
+      "mechanism": "将时间门控泵浦–探测光热成像与强度衍射断层结合，扫描中红外波数获得三维光谱化学映射。",
+      "readingNote": "20 秒每体积是论文演示条件，不等于完整多波长数据集的统一采集时间；三维折射率/化学体成像与表面网格重建不同。",
+      "paper": "https://www.nature.com/articles/s41467-022-35329-8",
+      "doi": "10.1038/s41467-022-35329-8",
+      "publicationName": "Nature Communications",
+      "verificationLevel": "publisher_full_text",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9755124/",
+          "note": "原始开放论文摘要、方法与三维化学映射实验。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{bsidt,\n  title={Bond-selective intensity diffraction tomography},\n  author={Jian Zhao and Alex Matlock and Hongbo Zhu and Ziqi Song and Jiabei Zhu and Biao Wang and Fukai Chen and Yuewei Zhan and Zhicong Chen and Yihong Xu and Xingchen Lin and Lei Tian and Ji-Xin Cheng},\n  year={2022},\n  journal={Nature Communications},\n  url={https://www.nature.com/articles/s41467-022-35329-8},\n  doi={10.1038/s41467-022-35329-8}\n}"
+    },
+    {
+      "id": "color-mono-stereo",
+      "shortTitle": "Color-Mono Stereo",
+      "title": "Stereo Matching With Color and Monochrome Cameras in Low-Light Conditions",
+      "authors": "Hae-Gon Jeon, Joon-Young Lee, Sunghoon Im, Hyowon Ha, In So Kweon",
+      "year": 2016,
+      "venue": "CVPR",
+      "track": "registration",
+      "representation": "跨光谱深度",
+      "scope": "相关研究",
+      "tags": [
+        "跨光谱深度",
+        "registration"
+      ],
+      "summary": "利用彩色与单色相机的互补低照度观测，同时恢复深度和高质量图像。",
+      "input": "低照度彩色–单色立体图像对。",
+      "output": "深度图及改善质量的图像。",
+      "mechanism": "补偿彩色滤波相机和单色相机的辐射响应差异，在立体匹配中利用两类观测的互补信息。",
+      "readingNote": "彩色–宽带单色组合并非高光谱，也不等同于 RGB–NIR；原始摘要明确恢复深度，纳入跨响应立体匹配相关阅读。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2016/html/Jeon_Stereo_Matching_With_CVPR_2016_paper.html",
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{colormonostereo,\n  title={Stereo Matching With Color and Monochrome Cameras in Low-Light Conditions},\n  author={Hae-Gon Jeon and Joon-Young Lee and Sunghoon Im and Hyowon Ha and In So Kweon},\n  year={2016},\n  booktitle={CVPR},\n  url={https://openaccess.thecvf.com/content_cvpr_2016/html/Jeon_Stereo_Matching_With_CVPR_2016_paper.html}\n}"
+    },
+    {
+      "id": "fbs-idt",
+      "shortTitle": "FBS-IDT",
+      "title": "Mid-infrared chemical imaging of intracellular tau fibrils using fluorescence-guided computational photothermal microscopy",
+      "authors": "Jian Zhao, Lulu Jiang, Alex Matlock, Yihong Xu, Jiabei Zhu, Hongbo Zhu, Lei Tian, Benjamin Wolozin, Ji-Xin Cheng",
+      "year": 2023,
+      "venue": "Light: Science & Applications",
+      "track": "volumetric",
+      "representation": "三维光谱体",
+      "scope": "核心研究",
+      "tags": [
+        "三维光谱体",
+        "volumetric"
+      ],
+      "summary": "在细胞内进行三维中红外光谱化学成像，用荧光引导定位 tau 蛋白聚集体并分析其结构。",
+      "input": "二维荧光引导图像与多角度、多波数泵浦–探测强度观测。",
+      "output": "三维化学体、深度分辨中红外指纹谱及蛋白 β 折叠分布。",
+      "mechanism": "以二维荧光区分目标与背景，再用键选择性强度衍射断层恢复逐波数的三维折射率变化。",
+      "readingNote": "扩展 BS-IDT 并增加荧光定位与蛋白分析；中红外化学成像不需额外染色，但整套引导流程包含荧光。实验细胞中的三维化学成像不能推定为活体临床成像。",
+      "paper": "https://www.nature.com/articles/s41377-023-01191-6",
+      "doi": "10.1038/s41377-023-01191-6",
+      "publicationName": "Light: Science & Applications",
+      "verificationLevel": "publisher_full_text",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10272128/",
+          "note": "公开原论文方法、实验及讨论；Crossref 核验正式发表信息。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{fbsidt,\n  title={Mid-infrared chemical imaging of intracellular tau fibrils using fluorescence-guided computational photothermal microscopy},\n  author={Jian Zhao and Lulu Jiang and Alex Matlock and Yihong Xu and Jiabei Zhu and Hongbo Zhu and Lei Tian and Benjamin Wolozin and Ji-Xin Cheng},\n  year={2023},\n  journal={Light: Science & Applications},\n  url={https://www.nature.com/articles/s41377-023-01191-6},\n  doi={10.1038/s41377-023-01191-6}\n}"
+    },
+    {
+      "id": "qvri",
+      "shortTitle": "qVRI",
+      "title": "Quantitative volumetric Raman imaging of three dimensional cell cultures",
+      "authors": "Charalambos Kallepitis, Mads S. Bergholt, Manuel M. Mazo, Vincent Leonardo, Stacey C. Skaalure, Stephanie A. Maynard, Molly M. Stevens",
+      "year": 2017,
+      "venue": "Nature Communications",
+      "track": "volumetric",
+      "representation": "三维光谱体",
+      "scope": "核心研究",
+      "tags": [
+        "三维光谱体",
+        "volumetric"
+      ],
+      "summary": "将共焦拉曼 z 层扫描组成真实三维光谱体，解混后可视化和定量细胞及其内部生物分子结构。",
+      "input": "多个深度层的拉曼高光谱图像。",
+      "output": "各分子成分的三维分布及形态、体积量化。",
+      "mechanism": "把空间体中的拉曼谱展开为矩阵并预处理，使用 VCA 解混获得成分丰度，再折回 x、y、z 体进行三维分析。",
+      "readingNote": "三维来自共焦 z 扫描，不是把波数当成几何第三维；依赖解混纯成分假设和三维扫描采集，体积量化与分子浓度绝对定量不同。",
+      "paper": "https://www.nature.com/articles/ncomms14843",
+      "doi": "10.1038/ncomms14843",
+      "publicationName": "Nature Communications",
+      "verificationLevel": "publisher_full_text",
+      "sources": [
+        {
+          "url": "https://kclpure.kcl.ac.uk/ws/files/147267375/Quantitative_volumetric_Raman_imaging_of_BERGHOLT_Published22March2017_GOLD_VoR_CC_BY_.pdf",
+          "note": "作者机构保存正式论文，核验作者和三维成分分析。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{qvri,\n  title={Quantitative volumetric Raman imaging of three dimensional cell cultures},\n  author={Charalambos Kallepitis and Mads S. Bergholt and Manuel M. Mazo and Vincent Leonardo and Stacey C. Skaalure and Stephanie A. Maynard and Molly M. Stevens},\n  year={2017},\n  journal={Nature Communications},\n  url={https://www.nature.com/articles/ncomms14843},\n  doi={10.1038/ncomms14843}\n}"
+    },
+    {
+      "id": "raman-projection-tomography",
+      "shortTitle": "RSPT",
+      "title": "Label-free 3D molecular imaging of living tissues using Raman spectral projection tomography",
+      "authors": "Elzbieta Stepula, Anders R. Walther, Magnus Jensen, Dev R. Mehrotra, Mu H. Yuan, Simon V. Pedersen, Vishal Kumar, Eileen Gentleman, Michael B. Albro, Martin A. B. Hedegaard, Mads S. Bergholt",
+      "year": 2024,
+      "venue": "Nature Communications",
+      "track": "volumetric",
+      "representation": "三维光谱体",
+      "scope": "核心研究",
+      "tags": [
+        "三维光谱体",
+        "volumetric"
+      ],
+      "summary": "由拉曼光谱投影重建组织的三维分子分布，支持透明及半透明样本的无标记体成像。",
+      "input": "多投影方向的拉曼光谱数据。",
+      "output": "三维分子对比体及组织分子梯度与非均匀性。",
+      "mechanism": "构建拉曼投影成像系统和多变量重建流程，提取投影中的分子光谱信息并恢复三维空间分布。",
+      "readingNote": "分辨率为光学亚毫米尺度；散射破坏平行束假设会导致模糊。实验涵盖固定/活体组织工程构建体与离体软骨，不能扩写为人体深层临床成像。",
+      "paper": "https://www.nature.com/articles/s41467-024-51616-y",
+      "doi": "10.1038/s41467-024-51616-y",
+      "publicationName": "Nature Communications",
+      "verificationLevel": "official_abstract",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11384735/",
+          "note": "原论文摘要和研究范围；出版社正文提示散射引起的模糊。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{ramanprojectiontomography,\n  title={Label-free 3D molecular imaging of living tissues using Raman spectral projection tomography},\n  author={Elzbieta Stepula and Anders R. Walther and Magnus Jensen and Dev R. Mehrotra and Mu H. Yuan and Simon V. Pedersen and Vishal Kumar and Eileen Gentleman and Michael B. Albro and Martin A. B. Hedegaard and Mads S. Bergholt},\n  year={2024},\n  journal={Nature Communications},\n  url={https://www.nature.com/articles/s41467-024-51616-y},\n  doi={10.1038/s41467-024-51616-y}\n}"
     }
   ],
   "datasets": [
