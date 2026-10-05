@@ -1,0 +1,55 @@
+# HS3D Atlas · 高光谱三维视觉研究图谱
+
+探索高光谱与三维视觉交汇的研究路线、论文与数据资源。
+
+第一版包含 5 个研究方向、4 篇种子论文与 2 个数据资源入口。它是持续整理的起点，尚未覆盖整个领域。条目记录原始来源、核验日期及待核验信息。
+
+## 本地运行
+
+需要 Node.js 22.12 或更新版本。
+
+```bash
+npm ci
+npm run dev
+```
+
+打开终端中显示的地址。默认端口为 `5173`。
+
+```bash
+npm run validate
+npm run build
+npm run preview
+```
+
+`validate` 检查文献字段、数据资源关联、来源链接格式和地图节点间距。`build` 检查 TypeScript 并生成静态网站至 `dist/`。
+
+## 页面功能
+
+- 按研究方向、年份、场景表示筛选；支持关键词搜索。
+- 地图节点、缩放与拖动；地图和论文列表使用相同筛选条件。
+- 论文详情、输入与输出、方法笔记、原始来源与 BibTeX。
+- 数据资源入口、收录范围和建议阅读顺序。
+- URL 保留筛选和选中论文，便于分享；移动端适配、键盘访问与对话框焦点管理。
+
+## 维护文献
+
+编辑 `src/data/catalog.json`。新增论文需提供来源、版本年份、核验日期、输入与输出和阅读笔记。`mapX` 控制论文节点的横向位置：2024 区间约为 300–590，2025 区间约为 640–980；同方向节点间距至少 150。研究方向配置在 `src/tracks.ts`。
+
+主线路：采集与标定、几何与光谱联合重建、场景表示与新视角合成、材料分解与逆渲染、三维理解与应用。尚无种子论文的方向显示“文献整理中”。路线只表示阅读组织，不声明方法继承关系。
+
+导出的 BibTeX 由同一底表生成。后续补齐作者或版本信息时，直接更新条目的 `citation`。
+
+## GitHub Pages
+
+仓库已包含 `.github/workflows/pages.yml`。发布时先在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**，然后推送 `main`。部署成功后的预期地址：
+
+https://lemonzjk.github.io/261005_hyperspectral_paper/
+
+未启用 Pages 或未推送代码时，该地址不会提供本网站。Vite 使用相对资源路径，支持仓库子路径部署。
+
+## 来源与设计参考
+
+- [Awesome Thinking with VAD](https://github.com/2-mo/Awesome-Thinking-with-VAD)：研究线路图与文献组织方式的参考。本项目界面和代码独立实现。
+- 论文和数据来源见各条目；所有笔记均为本站整理。没有使用第三方论文配图。
+
+推荐论文或纠错：[提交 Issue](https://github.com/lemonzjk/261005_hyperspectral_paper/issues/new)。

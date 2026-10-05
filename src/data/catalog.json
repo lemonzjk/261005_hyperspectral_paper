@@ -1,0 +1,162 @@
+{
+  "updatedAt": "2026-10-05",
+  "papers": [
+    {
+      "id": "hs-nerf",
+      "shortTitle": "HS-NeRF",
+      "title": "Hyperspectral Neural Radiance Fields",
+      "authors": "Gerry Chen, Sunil Kumar Narayanan, Thomas Gautier Ottou, Benjamin Missaoui, Harsh Muriki, Cédric Pradalier, Yongsheng Chen",
+      "year": 2024,
+      "venue": "arXiv",
+      "track": "rendering",
+      "representation": "NeRF",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱",
+        "新视角合成",
+        "连续光谱",
+        "传感器仿真"
+      ],
+      "summary": "在三维空间与观察方向上建立波长相关的辐射和透射表示，将神经辐射场扩展到高光谱场景。",
+      "input": "多视角高光谱图像",
+      "output": "高光谱三维辐射场与新视角图像",
+      "mechanism": "联合建模位置、方向和波长相关的辐射与透射光谱，探索高光谱超分辨率与成像传感器仿真。",
+      "readingNote": "关注光谱表示的选择、透射建模与实验中的相机设置。年份按已核验的 arXiv 2024 版本记录，后续发表版本待补充。",
+      "paper": "https://arxiv.org/abs/2403.14839",
+      "verifiedAt": "2026-10-05",
+      "mapX": 535,
+      "citation": "@misc{chen2024hyperspectral,\n  title={Hyperspectral Neural Radiance Fields},\n  author={Chen, Gerry and Narayanan, Sunil Kumar and Ottou, Thomas Gautier and Missaoui, Benjamin and Muriki, Harsh and Pradalier, Cédric and Chen, Yongsheng},\n  year={2024},\n  eprint={2403.14839},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2403.14839}\n}"
+    },
+    {
+      "id": "spectralnerf",
+      "shortTitle": "SpectralNeRF",
+      "title": "SpectralNeRF: Physically Based Spectral Rendering with Neural Radiance Field",
+      "authors": "Ru Li, Jia Liu, Guanghui Liu, Shengping Zhang, Bing Zeng, Shuaicheng Liu",
+      "year": 2024,
+      "venue": "AAAI",
+      "track": "rendering",
+      "representation": "NeRF",
+      "scope": "相关研究",
+      "tags": [
+        "光谱渲染",
+        "新视角合成",
+        "RGB 输出"
+      ],
+      "summary": "先生成不同波长下的光谱图，再融合为 RGB 图像，以光谱渲染视角建模新视角合成。",
+      "input": "光线原点与方向；训练观测设置见原文",
+      "output": "新视角光谱图与白光照明下的 RGB 图像",
+      "mechanism": "SpectralMLP 构建光谱辐射场，Spectrum Attention UNet 将光谱图组合为 RGB 输出。",
+      "readingNote": "作为光谱渲染相关研究收录。阅读时区分光谱建模与真实高光谱观测驱动的三维重建，具体采集和训练设置以原文为准。",
+      "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/28099",
+      "code": "https://github.com/liru0126/SpectralNeRF",
+      "verifiedAt": "2026-10-05",
+      "mapX": 365,
+      "citation": "@inproceedings{li2024spectralnerf,\n  title={SpectralNeRF: Physically Based Spectral Rendering with Neural Radiance Field},\n  author={Li, Ru and Liu, Jia and Liu, Guanghui and Zhang, Shengping and Zeng, Bing and Liu, Shuaicheng},\n  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},\n  volume={38},\n  number={4},\n  pages={3154--3162},\n  year={2024},\n  doi={10.1609/aaai.v38i4.28099}\n}"
+    },
+    {
+      "id": "hypergs",
+      "shortTitle": "HyperGS",
+      "title": "HyperGS: Hyperspectral 3D Gaussian Splatting",
+      "authors": "Christopher Thirgood, Oscar Mendez, Erin Ling, Jon Storey, Simon Hadfield",
+      "year": 2025,
+      "venue": "CVPR",
+      "track": "rendering",
+      "representation": "3DGS",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱",
+        "高斯表示",
+        "新视角合成",
+        "潜在光谱"
+      ],
+      "summary": "将高光谱信息纳入三维高斯场景表示，探索高光谱场景的新视角渲染。",
+      "input": "多视角高光谱观测",
+      "output": "高光谱三维高斯场景与新视角图像",
+      "mechanism": "在三维高斯中表示潜在高光谱特征，并通过密度控制和剪枝支持高光谱场景优化。",
+      "readingNote": "关注潜在光谱表示如何解码、密度控制与剪枝设计，以及真实与合成数据的评测差异。代码开放状态尚未核验。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/html/Thirgood_HyperGS_Hyperspectral_3D_Gaussian_Splatting_CVPR_2025_paper.html",
+      "verifiedAt": "2026-10-05",
+      "mapX": 790,
+      "citation": "@inproceedings{thirgood2025hypergs,\n  title={HyperGS: Hyperspectral 3D Gaussian Splatting},\n  author={Thirgood, Christopher and Mendez, Oscar and Ling, Erin and Storey, Jon and Hadfield, Simon},\n  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n  pages={5970--5979},\n  year={2025},\n  url={https://openaccess.thecvf.com/content/CVPR2025/html/Thirgood_HyperGS_Hyperspectral_3D_Gaussian_Splatting_CVPR_2025_paper.html}\n}"
+    },
+    {
+      "id": "unmix-nerf",
+      "shortTitle": "UnMix-NeRF",
+      "title": "UnMix-NeRF: Spectral Unmixing Meets Neural Radiance Fields",
+      "authors": "Fabian Perez, Sara Rojas, Carlos Hinojosa, Hoover Rueda-Chacón, Bernard Ghanem",
+      "year": 2025,
+      "venue": "ICCV",
+      "track": "materials",
+      "representation": "NeRF",
+      "scope": "核心研究",
+      "tags": [
+        "光谱解混",
+        "材料分解",
+        "三维场景"
+      ],
+      "summary": "将光谱解混融入神经辐射场，联合实现高光谱新视角合成和无监督材料分割。",
+      "input": "高光谱场景观测",
+      "output": "高光谱新视角图像、材料分割与材料外观编辑",
+      "mechanism": "通过漫反射与镜面反射分量建模光谱反射率；学习全局端元字典表示纯材料光谱，以每点丰度描述材料分布。",
+      "readingNote": "关注端元字典与逐点丰度的学习、无监督材料分割，以及材料编辑与光照变化的关系。具体训练和采集条件需结合全文确认。",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2025/html/Perez_UnMix-NeRF_Spectral_Unmixing_Meets_Neural_Radiance_Fields_ICCV_2025_paper.html",
+      "verifiedAt": "2026-10-05",
+      "mapX": 855,
+      "citation": "@inproceedings{perez2025unmixnerf,\n  title={UnMix-NeRF: Spectral Unmixing Meets Neural Radiance Fields},\n  author={Perez, Fabian and Rojas, Sara and Hinojosa, Carlos and Rueda-Chacón, Hoover and Ghanem, Bernard},\n  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},\n  pages={26284--26293},\n  year={2025},\n  url={https://openaccess.thecvf.com/content/ICCV2025/html/Perez_UnMix-NeRF_Spectral_Unmixing_Meets_Neural_Radiance_Fields_ICCV_2025_paper.html}\n}"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "hs-nerf-data",
+      "name": "HS-NeRF 场景数据",
+      "subtitle": "Multi-view hyperspectral scenes",
+      "type": "真实采集",
+      "description": "为高光谱神经辐射场实验采集的多视角场景数据，可作为研究高光谱新视角合成的阅读入口。",
+      "facts": [
+        {
+          "label": "场景",
+          "value": "8"
+        },
+        {
+          "label": "相机",
+          "value": "2"
+        },
+        {
+          "label": "图像",
+          "value": "近 2,000"
+        }
+      ],
+      "paperIds": [
+        "hs-nerf"
+      ],
+      "source": "https://arxiv.org/abs/2403.14839",
+      "availability": "获取入口与许可待核验"
+    },
+    {
+      "id": "spectralnerf-data",
+      "name": "SpectralNeRF 数据资源",
+      "subtitle": "Spectral rendering resources",
+      "type": "合成与真实实验",
+      "description": "论文提供光谱渲染相关代码与数据入口。具体波段、采集条件和数据划分需结合仓库与论文确认。",
+      "facts": [
+        {
+          "label": "用途",
+          "value": "光谱渲染"
+        },
+        {
+          "label": "资源",
+          "value": "作者仓库"
+        },
+        {
+          "label": "规格",
+          "value": "待整理"
+        }
+      ],
+      "paperIds": [
+        "spectralnerf"
+      ],
+      "source": "https://github.com/liru0126/SpectralNeRF",
+      "availability": "作者提供资源入口；下载与许可待核验"
+    }
+  ]
+}
