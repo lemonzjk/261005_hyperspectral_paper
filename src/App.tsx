@@ -1,13 +1,12 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import rawCatalog from './data/catalog.json';
 import { getTrack, tracks } from './tracks';
-import { createMapLayout } from './map-layout';
+import { ResearchMap } from './ResearchMap';
 import type { Dataset, Paper } from './types';
 
 const catalog = rawCatalog as { updatedAt: string; papers: Paper[]; datasets: Dataset[] };
 const years = [...new Set(catalog.papers.map(p => String(p.year)))].sort().reverse();
 const representations = [...new Set(catalog.papers.map(p => p.representation))];
-const mapLayout = createMapLayout(catalog.papers);
 const repo = 'https://github.com/lemonzjk/261005_hyperspectral_paper';
 const views = [{ id: 'atlas', label: '研究图谱' }, { id: 'papers', label: '论文库' }, { id: 'datasets', label: '数据资源' }, { id: 'guide', label: '阅读指南' }] as const;
 type View = typeof views[number]['id'];
@@ -26,54 +25,6 @@ function SpectrumArt() {
     <text x="104" y="236" fill="#778986" fontSize="10" fontFamily="monospace">SPACE × SPECTRUM</text>
     <path d="M353 71h45" stroke="url(#spectrum)" strokeWidth="4"/><text x="354" y="61" fill="#778986" fontSize="10" fontFamily="monospace">λ₁ … λₙ</text>
   </svg>;
-}
-
-function ResearchMap({ papers, onSelect }: { papers: Paper[]; onSelect: (p: Paper) => void }) {
-  const [zoom, setZoom] = useState(1);
-  const [pan, setPan] = useState({ x: 0, y: 0 });
-  const drag = useRef<{ x: number; y: number; px: number; py: number; moved: boolean } | null>(null);
-  const svg = useRef<SVGSVGElement>(null);
-  const handleMove = (event: PointerEvent<SVGSVGElement>) => {
-    if (!drag.current || !svg.current) return;
-    const d = drag.current;
-    const dx = event.clientX - d.x, dy = event.clientY - d.y;
-    if (Math.abs(dx) + Math.abs(dy) > 5) d.moved = true;
-    const scale = mapLayout.width / svg.current.getBoundingClientRect().width;
-    setPan({ x: d.px + dx * scale, y: d.py + dy * scale });
-  };
-  const reset = () => { setZoom(1); setPan({ x: 0, y: 0 }); };
-  return <div className="map-canvas">
-    <div className="map-scroll"><svg ref={svg} className="research-map" viewBox={`0 0 ${mapLayout.width} ${mapLayout.height}`} style={{ width: mapLayout.width }} role="group" aria-label="按年份和研究方向组织的论文图谱，可点击节点查看论文"
-      onPointerDown={event => { if (event.button !== 0 || (event.target as Element).closest('[data-paper]')) return; drag.current = { x: event.clientX, y: event.clientY, px: pan.x, py: pan.y, moved: false }; event.currentTarget.setPointerCapture(event.pointerId); }}
-      onPointerMove={handleMove} onPointerUp={() => { drag.current = null; }} onPointerCancel={() => { drag.current = null; }}>
-      <defs><pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#d7dfe2"/></pattern></defs>
-      <rect width={mapLayout.width} height={mapLayout.height} fill="url(#dots)"/>
-      <g transform={`translate(${mapLayout.width / 2 + pan.x} ${mapLayout.height / 2 + pan.y}) scale(${zoom}) translate(${-mapLayout.width / 2} ${-mapLayout.height / 2})`}>
-        {mapLayout.years.map(y => <g key={y.year}><path d={`M${y.x} 55V${mapLayout.height - 36}`} stroke="#e3e8ea" strokeDasharray="3 7"/><text x={y.x} y="31" textAnchor="middle" className="map-year">{y.year}</text></g>)}
-        <text x="36" y="31" className="map-axis">RESEARCH DIRECTIONS</text>
-        {tracks.map((track, i) => {
-          const y = 94 + i * 78;
-          const inTrack = papers.filter(p => p.track === track.id);
-          return <g key={track.id}>
-            <rect x="26" y={y - 16} width="4" height="31" rx="2" fill={track.color}/>
-            <text x="40" y={y - 2} className="map-track">{track.name}</text>
-            <text x="40" y={y + 16} className="map-track-en">{track.en}</text>
-            <path d={`M259 ${y}H${mapLayout.width - 35}`} stroke={track.color} strokeOpacity={inTrack.length ? '.65' : '.2'} strokeWidth={inTrack.length ? '3' : '2'} strokeDasharray={inTrack.length ? undefined : '3 7'} strokeLinecap="round"/>
-            <circle cx="259" cy={y} r="3.5" fill={track.color} opacity={inTrack.length ? 1 : .35}/>
-            {!inTrack.length && <text x="670" y={y - 11} className="map-empty">{catalog.papers.some(p => p.track === track.id) ? '当前筛选下无论文' : '文献整理中'}</text>}
-            {inTrack.map(paper => <g data-paper="true" key={paper.id} role="button" tabIndex={0} aria-label={`${paper.shortTitle}，${paper.venue} ${paper.year}，查看论文详情`} className="map-node" onClick={() => onSelect(paper)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect(paper); } }}>
-              <title>{paper.title}</title><rect x={mapLayout.positions.get(paper.id)! - 76} y={y - 46} width="152" height="78" rx="8" fill="transparent"/>
-              <circle className="node-halo" cx={mapLayout.positions.get(paper.id)!} cy={y} r="15" fill={track.color} fillOpacity=".1"/>
-              <circle cx={mapLayout.positions.get(paper.id)!} cy={y} r="7" fill="white" stroke={track.color} strokeWidth="3"/>
-              <text x={mapLayout.positions.get(paper.id)!} y={y - 26} textAnchor="middle" className="node-title">{paper.shortTitle}</text>
-              <text x={mapLayout.positions.get(paper.id)!} y={y + 29} textAnchor="middle" className="node-meta">{paper.venue} {paper.year} · {paper.representation}</text>
-            </g>)}
-          </g>;
-        })}
-      </g>
-    </svg></div>
-    <div className="map-bottom"><span><span className="legend-dot"/>论文节点 <span className="legend-line"/>同方向阅读路线</span><div className="zoom-controls"><button aria-label="缩小图谱" disabled={zoom <= .75} onClick={() => setZoom(z => Math.max(.75, z - .25))}>−</button><button onClick={reset} aria-label="重置图谱视图">{Math.round(zoom * 100)}%</button><button aria-label="放大图谱" disabled={zoom >= 2} onClick={() => setZoom(z => Math.min(2, z + .25))}>+</button></div></div>
-  </div>;
 }
 
 function PaperCard({ paper, onSelect }: { paper: Paper; onSelect: (p: Paper) => void }) {
@@ -134,10 +85,10 @@ export default function App() {
       <div className="workspace">
         <section className="overview-strip" aria-label="收录概况"><div><b>{String(catalog.papers.length).padStart(2, '0')}</b><span>收录论文<small>CURATED PAPERS</small></span></div><div><b>{String(tracks.length).padStart(2, '0')}</b><span>研究方向<small>RESEARCH TRACKS</small></span></div><div><b>{String(catalog.datasets.length).padStart(2, '0')}</b><span>数据资源入口<small>DATA RESOURCES</small></span></div><p><span className="status-dot"/>系统调研 · 持续扩充<br/><small>正式发表优先，原始来源逐篇核验</small></p></section>
         {(view === 'atlas' || view === 'papers') && <>
-          <div className="section-heading"><div><span className="eyebrow">{view === 'atlas' ? 'EXPLORE THE CONNECTIONS' : 'THE READING COLLECTION'}</span><h2>{view === 'atlas' ? '研究线路图' : '论文库'}<span>{view === 'atlas' ? 'Research atlas' : 'Paper collection'}</span></h2></div><div className="view-toggle" aria-label="论文展示方式"><button className={view === 'atlas' ? 'active' : ''} onClick={() => setView('atlas')}><span aria-hidden="true">⌘</span> 图谱</button><button className={view === 'papers' ? 'active' : ''} onClick={() => setView('papers')}><span aria-hidden="true">☷</span> 列表</button></div></div>
-          <div className="explorer"><aside className="explorer-sidebar"><div className="sidebar-heading">研究方向<span>{tracks.length} TRACKS</span></div><button className={`track-button ${track === '' ? 'active' : ''}`} onClick={() => setTrack('')}><span className="all-track-icon">⊞</span><span>全部方向</span><b>{catalog.papers.length}</b></button>{tracks.map((t, i) => <button key={t.id} className={`track-button ${track === t.id ? 'active' : ''}`} style={{ '--track': t.color } as CSSProperties} onClick={() => setTrack(t.id)}><span className="track-number">{String(i + 1).padStart(2, '0')}</span><span>{t.name}<small>{t.en}</small></span><b>{catalog.papers.filter(p => p.track === t.id).length}</b></button>)}<div className="sidebar-note"><span>阅读提示</span><p>点击论文节点查看笔记。路线表示同方向的阅读顺序，具体继承关系需以论文为依据。</p><button onClick={() => setView('guide')}>了解收录范围 →</button></div></aside>
+          <div className="section-heading"><div><span className="eyebrow">{view === 'atlas' ? 'EXPLORE THE CONNECTIONS' : 'THE READING COLLECTION'}</span><h2>{view === 'atlas' ? '研究方向图谱' : '论文库'}<span>{view === 'atlas' ? 'Research atlas' : 'Paper collection'}</span></h2></div><div className="view-toggle" aria-label="论文展示方式"><button className={view === 'atlas' ? 'active' : ''} onClick={() => setView('atlas')}><span aria-hidden="true">⌘</span> 图谱</button><button className={view === 'papers' ? 'active' : ''} onClick={() => setView('papers')}><span aria-hidden="true">☷</span> 列表</button></div></div>
+          <div className="explorer"><aside className="explorer-sidebar"><label className="mobile-track-filter">研究方向<select value={track} onChange={e => setTrack(e.target.value)} aria-label="选择研究方向"><option value="">全部方向（{catalog.papers.length} 篇）</option>{tracks.map(t => <option key={t.id} value={t.id}>{t.name}（{catalog.papers.filter(p => p.track === t.id).length}）</option>)}</select></label><div className="sidebar-heading">研究方向<span>{tracks.length} TRACKS</span></div><button className={`track-button ${track === '' ? 'active' : ''}`} onClick={() => setTrack('')}><span className="all-track-icon">⊞</span><span>全部方向</span><b>{catalog.papers.length}</b></button>{tracks.map((t, i) => <button key={t.id} className={`track-button ${track === t.id ? 'active' : ''}`} style={{ '--track': t.color } as CSSProperties} onClick={() => setTrack(t.id)}><span className="track-number">{String(i + 1).padStart(2, '0')}</span><span>{t.name}<small>{t.en}</small></span><b>{catalog.papers.filter(p => p.track === t.id).length}</b></button>)}<div className="sidebar-note"><span>阅读提示</span><p>先选研究方向，再用关键词或年份缩小范围。点击论文卡片查看方法、输入输出与原始来源。</p><button onClick={() => setView('guide')}>了解收录范围 →</button></div></aside>
             <div className="explorer-content"><form className="filter-bar" onSubmit={e => e.preventDefault()}><label className="search-field"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="m13 13 4 4" stroke="currentColor" strokeWidth="1.5"/></svg><input type="search" aria-label="搜索论文、方法或关键词" placeholder="搜索论文、方法或关键词…" value={query} onChange={e => setQuery(e.target.value)}/></label><label><span className="sr-only">年份</span><select value={year} onChange={e => setYear(e.target.value)}><option value="">全部年份</option>{[...new Set(catalog.papers.map(p => p.year))].sort().reverse().map(y => <option key={y}>{y}</option>)}</select></label><label><span className="sr-only">场景表示</span><select value={representation} onChange={e => setRepresentation(e.target.value)}><option value="">全部表示</option>{[...new Set(catalog.papers.map(p => p.representation))].map(r => <option key={r}>{r}</option>)}</select></label></form>
-              <div className="results-heading"><span aria-live="polite">显示 <b>{filtered.length}</b> / {catalog.papers.length} 篇论文{track && <span> · {getTrack(track as Paper['track']).name}</span>}</span>{hasFilters ? <button onClick={resetFilters}>清除筛选 ×</button> : <span className="results-note">{view === 'atlas' ? '点击节点 · 拖动平移' : '按年份从新到旧'}</span>}</div>
+              <div className="results-heading"><span aria-live="polite">{view === 'atlas' ? '匹配' : '显示'} <b>{filtered.length}</b> / {catalog.papers.length} 篇论文{track && <span> · {getTrack(track as Paper['track']).name}</span>}</span>{hasFilters ? <button onClick={resetFilters}>清除筛选 ×</button> : <span className="results-note">{view === 'atlas' ? '按方向或年份分组浏览' : '按年份从新到旧'}</span>}</div>
               {view === 'atlas' ? <ResearchMap papers={filtered} onSelect={setSelected}/> : <div className="paper-grid explorer-paper-grid">{filtered.map(p => <PaperCard key={p.id} paper={p} onSelect={setSelected}/>)}</div>}
               {!filtered.length && <div className="empty-state"><span>◎</span><h3>暂时没有匹配的论文</h3><p>{track && !catalog.papers.some(p => p.track === track) ? '这个方向的文献正在整理中，可以先浏览其他研究路线。' : '试试其他关键词，或清除当前筛选条件。'}</p><button className="secondary-button" onClick={resetFilters}>查看全部论文</button></div>}
             </div>

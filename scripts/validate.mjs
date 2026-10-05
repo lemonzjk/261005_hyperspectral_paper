@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { tracks as trackDefinitions } from '../src/tracks.ts';
-import { createMapLayout } from '../src/map-layout.ts';
+import { groupPapers } from '../src/map-groups.ts';
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
 const contextCharacters = [...context].length;
@@ -26,14 +26,10 @@ for (const dataset of catalog.datasets) {
   assert(new URL(dataset.source).protocol === 'https:', `Expected HTTPS: ${dataset.id}`);
   assert(dataset.availability, `Missing availability: ${dataset.id}`);
 }
-const layout = createMapLayout(catalog.papers);
-assert(layout.positions.size === catalog.papers.length, 'Every paper must appear in the map layout');
-for (const paper of catalog.papers) assert(layout.positions.get(paper.id) >= 280 && layout.positions.get(paper.id) <= layout.width, `Node outside map: ${paper.id}`);
-for (let i = 0; i < catalog.papers.length; i++) {
-  for (const other of catalog.papers.slice(i + 1)) {
-    const paper = catalog.papers[i];
-    if (paper.track === other.track) assert(Math.abs(layout.positions.get(paper.id) - layout.positions.get(other.id)) >= 150, `Overlapping map labels: ${paper.id}, ${other.id}`);
-  }
+for (const grouping of ['track', 'year']) {
+  const grouped = groupPapers(catalog.papers, grouping).flatMap(group => group.papers.map(p => p.id));
+  assert.equal(grouped.length, catalog.papers.length, `Missing papers in ${grouping} groups`);
+  assert.equal(new Set(grouped).size, catalog.papers.length, `Duplicate papers in ${grouping} groups`);
 }
 console.log(`Catalog valid: ${catalog.papers.length} papers, ${catalog.datasets.length} dataset resources.`);
 console.log(`Context valid: ${contextCharacters}/2000 characters, ${contextLines}/60 lines.`);
