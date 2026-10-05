@@ -1,5 +1,7 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
+import { tracks as trackDefinitions } from '../src/tracks.ts';
+import { createMapLayout } from '../src/map-layout.ts';
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
 const contextCharacters = [...context].length;
@@ -9,7 +11,7 @@ assert(contextLines <= 60, `CONTEXT.md exceeds 60 lines: ${contextLines}`);
 
 const catalog = JSON.parse(readFileSync(new URL('../src/data/catalog.json', import.meta.url)));
 const ids = new Set();
-const tracks = new Set(['capture', 'geometry', 'rendering', 'materials', 'understanding']);
+const tracks = new Set(trackDefinitions.map(t => t.id));
 for (const paper of catalog.papers) {
   assert(!ids.has(paper.id), `Duplicate paper: ${paper.id}`);
   ids.add(paper.id);
@@ -18,17 +20,19 @@ for (const paper of catalog.papers) {
   assert(Number.isInteger(paper.year), `Invalid year: ${paper.id}`);
   assert(/^\d{4}-\d{2}-\d{2}$/.test(paper.verifiedAt), `Missing verification date: ${paper.id}`);
   for (const url of [paper.paper, paper.code].filter(Boolean)) assert(new URL(url).protocol === 'https:', `Expected HTTPS: ${paper.id}`);
-  assert(paper.mapX >= 280 && paper.mapX <= 980, `Node outside map: ${paper.id}`);
 }
 for (const dataset of catalog.datasets) {
   assert(dataset.paperIds.every(id => ids.has(id)), `Unknown paper in dataset: ${dataset.id}`);
   assert(new URL(dataset.source).protocol === 'https:', `Expected HTTPS: ${dataset.id}`);
   assert(dataset.availability, `Missing availability: ${dataset.id}`);
 }
+const layout = createMapLayout(catalog.papers);
+assert(layout.positions.size === catalog.papers.length, 'Every paper must appear in the map layout');
+for (const paper of catalog.papers) assert(layout.positions.get(paper.id) >= 280 && layout.positions.get(paper.id) <= layout.width, `Node outside map: ${paper.id}`);
 for (let i = 0; i < catalog.papers.length; i++) {
   for (const other of catalog.papers.slice(i + 1)) {
     const paper = catalog.papers[i];
-    if (paper.track === other.track) assert(Math.abs(paper.mapX - other.mapX) >= 150, `Overlapping map labels: ${paper.id}, ${other.id}`);
+    if (paper.track === other.track) assert(Math.abs(layout.positions.get(paper.id) - layout.positions.get(other.id)) >= 150, `Overlapping map labels: ${paper.id}, ${other.id}`);
   }
 }
 console.log(`Catalog valid: ${catalog.papers.length} papers, ${catalog.datasets.length} dataset resources.`);
