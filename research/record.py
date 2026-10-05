@@ -16,7 +16,7 @@ for entry in entries:
     entry.setdefault('publicationStatus', 'published')
     entry.setdefault('venueTier', 'target')
     if 'citation' not in entry:
-        kind = 'article' if entry['venue'] in ['TPAMI', 'IJCV', 'TIP', 'TOG', 'TGRS', 'ISPRS JPRS', 'RSE', 'PR', 'Nature Photonics', 'Optica', 'Photonics Research', 'Light: Science & Applications', 'Information Fusion'] else 'inproceedings'
+        kind = 'article' if entry['venue'] in ['TPAMI', 'IJCV', 'TIP', 'TOG', 'TGRS', 'ISPRS JPRS', 'RSE', 'PR', 'Nature Photonics', 'Nature Communications', 'Optica', 'Photonics Research', 'Light: Science & Applications', 'Information Fusion'] else 'inproceedings'
         fields = {'title': entry['title'], 'author': entry['authors'].replace(', ', ' and '),
                   'year': str(entry['year']), 'journal' if kind == 'article' else 'booktitle': entry.get('publicationName', entry['venue']),
                   'url': entry['paper']}

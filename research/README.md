@@ -1,12 +1,12 @@
 # 文献调研
 
-检索截止日期：2026-10-06。当前仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 50 篇论文、3 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
 收录真实三维空间与光谱联合采集、重建、表示、渲染、材料分析和理解。多光谱光度立体属于相关研究；HSI 与 LiDAR/DSM 高度辅助的二维分类单列为相关方向。仅因使用 3D CNN 或 H×W×B 数据立方体的二维光谱处理不属于三维视觉。
 
-目标场所同时覆盖视觉、图形学、遥感与光学。包括 CVPR、ICCV、ECCV、SIGGRAPH、TOG、TPAMI、IJCV、TGRS、IGARSS、ISPRS JPRS、RSE、Optica、Nature Photonics 等。完整清单与领域期刊政策见 `survey.json`。清单是检索优先级，不是统一的期刊等级认证。预印本与其他专业场所作为补充阅读，不能冒充已正式发表的顶会顶刊论文。
+目标场所同时覆盖视觉、图形学、遥感与光学。包括 CVPR、ICCV、ECCV、SIGGRAPH、TOG、TPAMI、IJCV、TGRS、IGARSS、ISPRS JPRS、RSE、Optica、Nature Photonics、Nature Communications 等。完整清单与领域期刊政策见 `survey.json`。清单是检索优先级，不是统一的期刊等级认证。预印本与其他专业场所作为补充阅读，不能冒充已正式发表的顶会顶刊论文。
 
 ## 数据与证据
 
@@ -23,3 +23,5 @@ CVF 已扫描大部分 CVPR 2013–2026、ICCV 2013–2025 目录；旧目录按
 网站的 12 个方向是便于阅读的主分类，存在交叉，不代表领域只有这些方向。会议与期刊扩展版本分别标注，不能把它们当作独立方法重复统计。
 
 `discover_ecva.py` 记录 ECVA 官方目录候选；`retry_cvf.py` 通过旧版按日页面补扫失败年份。两者仅登记发现，不自动收录。Python 检索脚本依赖 `beautifulsoup4`，元数据采集另使用 `requests`。
+
+已核验片上偏振高光谱传感器的真实表面法线与高度恢复（Nature Communications 2026），以及三维光谱单分子定位（Optica 2024，相关研究）。补充 TGRS 稀疏低秩融合、ISPRS JPRS 全波形体素融合与 Information Fusion 对抗/层级注意力融合，均按高度辅助分类标注；不能据此声称真实三维重建文献已穷尽。
