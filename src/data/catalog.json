@@ -2654,6 +2654,246 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{growspforms,\n  title={Unsupervised deep learning for semantic segmentation of multispectral LiDAR forest point clouds},\n  author={Lassi Ruoppa and Oona Oinonen and Josef Taher and Matti Lehtomäki and Narges Takhtkeshha and Antero Kukko and Harri Kaartinen and Juha Hyyppä},\n  year={2025},\n  journal={ISPRS JPRS},\n  url={https://doi.org/10.1016/j.isprsjprs.2025.07.038},\n  doi={10.1016/j.isprsjprs.2025.07.038}\n}"
+    },
+    {
+      "id": "fgi-emit",
+      "shortTitle": "FGI-EMIT",
+      "title": "Benchmarking individual tree segmentation using multispectral airborne laser scanning data: The FGI-EMIT dataset",
+      "authors": "Lassi Ruoppa, Tarmo Hietala, Verneri Seppänen, Josef Taher, Teemu Hakala, Xiaowei Yu, Antero Kukko, Harri Kaartinen, Juha Hyyppä",
+      "year": 2026,
+      "venue": "ISPRS JPRS",
+      "track": "understanding",
+      "representation": "多光谱单木分割",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱单木分割",
+        "understanding"
+      ],
+      "summary": "发布多光谱机载森林单木实例分割基准，并比较传统无监督和有监督深度学习方法对林下小树的表现。",
+      "input": "532、905、1550 nm 三波长机载点云与人工逐点单木标签。",
+      "output": "含 1561 棵标注树的 FGI-EMIT 数据集，以及四种传统和四种深度学习方法的评测。",
+      "mechanism": "对无监督算法进行贝叶斯参数优化，深度学习从头训练；以实例分割指标、冠层类别和点密度消融分析单木检测与光谱收益。",
+      "readingNote": "属于三波段多光谱 LiDAR 相关研究。论文发现简单拼接反射率的受测深度模型未必充分利用多光谱信息，不能描述为多波段必然提高精度。正式发表年是 2026，预印本为 2025。",
+      "paper": "https://doi.org/10.1016/j.isprsjprs.2026.04.021",
+      "doi": "10.1016/j.isprsjprs.2026.04.021",
+      "verificationLevel": "institutional_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://research.aalto.fi/en/publications/benchmarking-individual-tree-segmentation-using-multispectral-air/",
+          "note": "作者机构正式条目核验摘要、作者、正式卷年及数据 DOI。"
+        },
+        {
+          "url": "https://doi.org/10.5281/zenodo.19351234",
+          "note": "Zenodo 元数据已核验公开文件和 CC BY-NC-SA 4.0；固定训练/测试划分由作者机构数据说明核验，未下载完整点云。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{fgiemit,\n  title={Benchmarking individual tree segmentation using multispectral airborne laser scanning data: The FGI-EMIT dataset},\n  author={Lassi Ruoppa and Tarmo Hietala and Verneri Seppänen and Josef Taher and Teemu Hakala and Xiaowei Yu and Antero Kukko and Harri Kaartinen and Juha Hyyppä},\n  year={2026},\n  journal={ISPRS JPRS},\n  url={https://doi.org/10.1016/j.isprsjprs.2026.04.021},\n  doi={10.1016/j.isprsjprs.2026.04.021}\n}"
+    },
+    {
+      "id": "gcnas-spectral-lidar",
+      "shortTitle": "GCNAS",
+      "title": "Semantic Segmentation of Spectral LiDAR Point Clouds Based on Neural Architecture Search",
+      "authors": "Qi Zhang, Yuanxi Peng, Zhiwen Zhang, Teng Li",
+      "year": 2023,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "多光谱点云语义分割",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱点云语义分割",
+        "understanding"
+      ],
+      "summary": "通过神经架构搜索选择逐层图卷积核，在不规则多光谱 LiDAR 点云上进行语义分割。",
+      "input": "Titan 多光谱 LiDAR 点云的三维坐标与光谱强度。",
+      "output": "逐点地物语义类别及搜索得到的图卷积网络架构。",
+      "mechanism": "以图表示局部点云几何，在层级搜索空间中采用蒙特卡洛树搜索选择不同图卷积核，以组合多层次语义表达。",
+      "readingNote": "标题中的 spectral 指实测多波段 LiDAR 信息，而非仅图特征值；数据仍为 Titan 多光谱，不直接当作连续高光谱方法。摘要未充分给出输入归一化和划分细节，需参阅原文。",
+      "paper": "https://doi.org/10.1109/TGRS.2023.3284995",
+      "doi": "10.1109/TGRS.2023.3284995",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/371457178_Semantic_Segmentation_of_Spectral_Lidar_Point_Clouds_Based_on_Neural_Architecture_Search",
+          "note": "原始摘要确认图卷积、MCTS 架构搜索及 Titan 多光谱实验。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{gcnasspectrallidar,\n  title={Semantic Segmentation of Spectral LiDAR Point Clouds Based on Neural Architecture Search},\n  author={Qi Zhang and Yuanxi Peng and Zhiwen Zhang and Teng Li},\n  year={2023},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2023.3284995},\n  doi={10.1109/TGRS.2023.3284995}\n}"
+    },
+    {
+      "id": "spherical-shell-occluded",
+      "shortTitle": "Spherical-Shell Detection",
+      "title": "Unsupervised Occluded Target Detection Based on Spherical Shell With Multispectral Point Clouds",
+      "authors": "Likun Chen, Yanfeng Gu, Xian Li",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "光谱点云目标检测",
+      "scope": "核心研究",
+      "tags": [
+        "光谱点云目标检测",
+        "understanding"
+      ],
+      "summary": "联合三维局部球壳邻域与光谱差异，无监督检测植被下的遮挡目标，并提供目标级评价以缓解点密度影响。",
+      "input": "无人机融合光谱点云；原论文另含 Houston 2018 的 48 波段高光谱—LiDAR 融合点云。",
+      "output": "遮挡与裸露目标的点级异常检测，以及目标级评价。",
+      "mechanism": "球壳邻域隔离局部背景以减轻目标污染，结合自适应半径、多尺度空间特征与协同表示，抑制可由背景表达的点。",
+      "readingNote": "虽以 multispectral 为题名，原文实验明确 Houston 48 波段逐点光谱，支持真实高光谱三维理解。森林下检测依赖 LiDAR 实际采到的回波，不能宣称穿透完全不可见物体；异常检测不等于带类别的三维边界框检测。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3585524",
+      "doi": "10.1109/TGRS.2025.3585524",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/393376264_Unsupervised_Occluded_Target_Detection_based_on_Spherical_Shell_with_Multispectral_Point_Clouds",
+          "note": "Xian Li 上传原文；方法核验球壳背景协同表示，Houston 实验明确每点 48 波段。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{sphericalshelloccluded,\n  title={Unsupervised Occluded Target Detection Based on Spherical Shell With Multispectral Point Clouds},\n  author={Likun Chen and Yanfeng Gu and Xian Li},\n  year={2025},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2025.3585524},\n  doi={10.1109/TGRS.2025.3585524}\n}"
+    },
+    {
+      "id": "aacb-tree-transformer",
+      "shortTitle": "AACB Transformer",
+      "title": "Individual tree species classification using low-density airborne multispectral LiDAR data via attribute-aware cross-branch transformer",
+      "authors": "Lanying Wang, Dening Lu, Linlin Xu, Derek T. Robinson, Weikai Tan, Qian Xie, Haiyan Guan, Michael A. Chapman, Jonathan Li",
+      "year": 2024,
+      "venue": "RSE",
+      "track": "understanding",
+      "representation": "多光谱单木分类",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱单木分类",
+        "understanding"
+      ],
+      "summary": "面向低密度多光谱机载 LiDAR，联合几何与属性分支识别已分割的单木树种。",
+      "input": "低于 30 点每平方米的多光谱机载点云与预先划分的单木实例。",
+      "output": "单木树种、属和叶型分类结果。",
+      "mechanism": "属性感知双分支 Transformer 利用跨分支注意力融合特征，通道合并机制降低训练样本准备的计算代价。",
+      "readingNote": "属于多光谱 LiDAR 单木分类，不是连续高光谱方法，也不是从完整森林点云完成实例检测。论文加拿大混交林实验平均 9 点每平方米，涉及六个树种，不能推广为任意树种的识别。",
+      "paper": "https://doi.org/10.1016/j.rse.2024.114456",
+      "doi": "10.1016/j.rse.2024.114456",
+      "code": "https://github.com/l333wang/Tree-Species-Classification-for-point-clouds",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0034425724004826",
+          "note": "出版社原始摘要核验低密度输入、跨分支注意力和单木分类输出。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{aacbtreetransformer,\n  title={Individual tree species classification using low-density airborne multispectral LiDAR data via attribute-aware cross-branch transformer},\n  author={Lanying Wang and Dening Lu and Linlin Xu and Derek T. Robinson and Weikai Tan and Qian Xie and Haiyan Guan and Michael A. Chapman and Jonathan Li},\n  year={2024},\n  journal={RSE},\n  url={https://doi.org/10.1016/j.rse.2024.114456},\n  doi={10.1016/j.rse.2024.114456}\n}"
+    },
+    {
+      "id": "s4dr-net",
+      "shortTitle": "S4DR-Net",
+      "title": "S4DR-Net: Self-Supervised Spatial–Spectral Distance Reconstruction Network for Multispectral Point Cloud Classification",
+      "authors": "Qingwang Wang, Jianling Kuang, Tao Shen, Yanfeng Gu",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "多光谱点云预训练",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱点云预训练",
+        "understanding"
+      ],
+      "summary": "以三维空间和光谱距离关系的重建进行自监督预训练，学习多光谱点云分类表示。",
+      "input": "未标注多光谱三维点云及体素块。",
+      "output": "自监督学习的空间—光谱特征表示，用于下游点云分类。",
+      "mechanism": "S-SDP 模块预测体素块之间的三维欧氏距离与光谱距离，联合约束空间—光谱一致性并学习低维表示。",
+      "readingNote": "预训练阶段无需人工标注不等于下游分类完全无监督。论文明确为多光谱点云，摘要未核验完整波段数量，不当作高光谱核心；题名的 distance reconstruction 指关系预测，不是恢复三维场景几何。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3638606",
+      "doi": "10.1109/TGRS.2025.3638606",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/398100930_S4DR-Net_Self-Supervised_Spatial-Spectral_Distance_Reconstruction_Network_for_Multispectral_Point_Cloud_Classification",
+          "note": "原始摘要核验自监督空间—光谱距离预测；作者声明拟发布代码，实际可用性尚待核验。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{s4drnet,\n  title={S4DR-Net: Self-Supervised Spatial–Spectral Distance Reconstruction Network for Multispectral Point Cloud Classification},\n  author={Qingwang Wang and Jianling Kuang and Tao Shen and Yanfeng Gu},\n  year={2025},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2025.3638606},\n  doi={10.1109/TGRS.2025.3638606}\n}"
+    },
+    {
+      "id": "robust-ms-pointcloud",
+      "shortTitle": "Robust MSI Reconstruction",
+      "title": "A Robust Multispectral Point Cloud Generation Method Based on 3-D Reconstruction From Multispectral Images",
+      "authors": "Chen Wang, Yanfeng Gu, Xian Li",
+      "year": 2023,
+      "venue": "TGRS",
+      "track": "geometry",
+      "representation": "多光谱三维重建",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱三维重建",
+        "geometry"
+      ],
+      "summary": "适配无人机多镜头多光谱成像，通过反射率校正、波段对齐和 NDVI 引导匹配生成三维多光谱点云。",
+      "input": "RedEdge-MX 五波段多视角无人机图像、标定及反射率校正信息。",
+      "output": "通过多视角几何重建生成的带五波段属性三维点云。",
+      "mechanism": "先校正辐射变化和波段几何错位，再融合多光谱特征并用 NDVI 引导对应点筛选，执行增量式三维重建及光谱投影。",
+      "readingNote": "原文使用蓝、绿、红、红边与近红外五个波段，属于多光谱相关几何方法，不是连续高光谱点云。几何来自图像多视角重建，与仅对已有 LiDAR 点云贴光谱的方法区分。",
+      "paper": "https://doi.org/10.1109/TGRS.2023.3326153",
+      "doi": "10.1109/TGRS.2023.3326153",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/374890540_A_Robust_Multispectral_Point_Cloud_Generation_Method_Based_on_3D_Reconstruction_from_Multispectral_Images",
+          "note": "Xian Li 上传原作者稿，方法核验辐射校正、对齐、NDVI 匹配；表 I 明确五波段。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{robustmspointcloud,\n  title={A Robust Multispectral Point Cloud Generation Method Based on 3-D Reconstruction From Multispectral Images},\n  author={Chen Wang and Yanfeng Gu and Xian Li},\n  year={2023},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2023.3326153},\n  doi={10.1109/TGRS.2023.3326153}\n}"
+    },
+    {
+      "id": "piv-ahpc",
+      "shortTitle": "PiV-AHPC",
+      "title": "Pillar-voxel fusion network for 3D object detection in airborne hyperspectral point clouds",
+      "authors": "Yanze Jiang, Yanfeng Gu, Xian Li",
+      "year": 2026,
+      "venue": "Science China Information Sciences",
+      "track": "understanding",
+      "representation": "高光谱三维目标检测",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱三维目标检测",
+        "understanding"
+      ],
+      "summary": "联合柱状和体素两种点云编码，缓解机载高光谱点云融合的光谱及几何失真，进行三维目标检测。",
+      "input": "由机载高光谱影像与 LiDAR 融合生成的高光谱三维点云。",
+      "output": "高光谱点云中的三维目标检测结果。",
+      "mechanism": "柱状分支编码光谱和垂直结构，体素分支提取三维空间特征；多层级融合通过邻域对齐与通道自适应选择整合两类表示。",
+      "readingNote": "使用已融合的三维点云进行检测，不是从高光谱影像独立恢复几何。正式为 2026 年第 69 卷文章 112301，2025-09-16 在线发表；同名 2025 预印本不另计独立论文。",
+      "paper": "https://doi.org/10.1007/s11432-024-4458-0",
+      "doi": "10.1007/s11432-024-4458-0",
+      "verificationLevel": "official_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11432-024-4458-0",
+          "note": "正式出版社核验卷年、作者和柱状—体素双分支方法。"
+        },
+        {
+          "url": "https://arxiv.org/abs/2504.09506",
+          "note": "作者公开同一工作预印本，已关联正式期刊 DOI。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{pivahpc,\n  title={Pillar-voxel fusion network for 3D object detection in airborne hyperspectral point clouds},\n  author={Yanze Jiang and Yanfeng Gu and Xian Li},\n  year={2026},\n  journal={Science China Information Sciences},\n  url={https://doi.org/10.1007/s11432-024-4458-0},\n  doi={10.1007/s11432-024-4458-0}\n}"
     }
   ],
   "datasets": [
@@ -2734,6 +2974,40 @@
       ],
       "source": "https://hifexplo.github.io/tinto/",
       "availability": "作者项目页提供 RODARE 下载入口与教程；本地未下载数据。"
+    },
+    {
+      "id": "fgi-emit",
+      "name": "FGI-EMIT",
+      "subtitle": "三波长机载森林点云 · 单木实例分割基准",
+      "type": "多光谱 LiDAR 基准",
+      "description": "芬兰北方森林 19 个样地的三维点云，包含 1561 棵人工标注树及林下小树。提供逐点实例与语义标签，用于比较单木分割方法；三波长数据不属于连续高光谱。",
+      "facts": [
+        {
+          "label": "光谱通道",
+          "value": "532 / 905 / 1550 nm"
+        },
+        {
+          "label": "标注规模",
+          "value": "19 个样地 · 1561 棵树"
+        },
+        {
+          "label": "固定划分",
+          "value": "13 个训练样地 / 6 个测试样地"
+        },
+        {
+          "label": "推荐验证",
+          "value": "训练样地 1019、1022、1031"
+        },
+        {
+          "label": "许可",
+          "value": "CC BY-NC-SA 4.0（Zenodo 元数据）"
+        }
+      ],
+      "paperIds": [
+        "fgi-emit"
+      ],
+      "source": "https://zenodo.org/records/19351234",
+      "availability": "Zenodo 已公开数据及评测脚本；元数据和划分已核验，未下载完整点云验证。"
     }
   ]
 }

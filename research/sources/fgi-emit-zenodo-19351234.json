@@ -1,0 +1,289 @@
+{
+  "created": "2026-04-11T12:22:23.314627+00:00",
+  "modified": "2026-05-13T06:39:17.818992+00:00",
+  "id": 19351234,
+  "conceptrecid": "19351233",
+  "doi": "10.5281/zenodo.19351234",
+  "conceptdoi": "10.5281/zenodo.19351233",
+  "doi_url": "https://doi.org/10.5281/zenodo.19351234",
+  "metadata": {
+    "title": "FGI-EMIT: a multispectral high-density airborne laser scanning benchmark dataset for individual tree segmentation",
+    "doi": "10.5281/zenodo.19351234",
+    "publication_date": "2026-04-11",
+    "description": "<h1>1. Overview</h1>\n<p>This repository contains FGI-EMIT, a multispectral high-density airborne laser scanning benchmark dataset for individual tree segmentation, presented in the paper <em><a title=\"Benchmarking individual tree segmentation using multispectral airborne laser scanning data: the FGI-EMIT dataset (Ruoppa et al., 2026)\" href=\"https://doi.org/10.1016/j.isprsjprs.2026.04.021\" rel=\"noopener\">Benchmarking individual tree segmentation using multispectral airborne laser scanning data: the FGI-EMIT dataset (Ruoppa et al., 2026)</a></em>. FGI-EMIT consists of 19 boreal forest plots spanning a wide range of forest types and also includes built environment, extending its applicability to urban forests. Each tree instance across all plots has been manually annotated in 3D, resulting in a total of 1,561 trees with high-quality instance annotations, with a particular focus on small understory trees that are notoriously challenging to segment. All point clouds in the dataset are multispectral and include reflectance information captured simultaneously at three distinct wavelengths.</p>\n<p>The multispectral point clouds were originally acquired in the Espoonlahti district of Espoo, Finland (60.1462&deg;N, 24.6587&deg;E) on July 20 and 28, 2023, using the Finnish Geospatial Research Institute&rsquo;s (FGI&rsquo;s) in-house developed laser scanning system, HeliALS-TW. The system includes three separate RIEGL LiDAR scanners, VUX-1HA (1,550 nm), miniVUX-1DL (905 nm), and VQ-840-G (532 nm), referred to as scanners 1, 2, and 3, respectively. For a detailed description of the FGI-EMIT dataset, including data acquisition, preprocessing, and an extensive benchmark of popular individual tree segmentation (ITS) methods, covering both conventional unsupervised algorithms and deep learning (DL) approaches, please refer to the associated paper.</p>\n<h1>2. Data usage</h1>\n<p>FGI-EMIT is a machine learning (ML) and deep learning-ready dataset for benchmarking individual tree segmentation methods. This section provides a brief overview of how the data can be used for benchmarking purposes. To ensure comparability between studies, we encourage adhering to the standardized benchmarking procedure presented in Appendix A.4 of the associated paper when evaluating ITS methods using the FGI-EMIT dataset.</p>\n<h2>2.1 Data split</h2>\n<p>The 19 plots in the FGI-EMIT dataset have been divided into training and test sets, to be used as follows:</p>\n<ul>\n<li><strong>Training set: </strong>intended for method development. This data can be used, for example, to train ML- and DL-based individual tree segmentation models and/or to optimize hyperparameters of unsupervised segmentation algorithms.</li>\n<li><strong>Test</strong> <strong>set:</strong> intended only for evaluating the accuracy of individual tree segmentation methods. To prevent data leakage, the test set must not be used at any stage of model training or hyperparameter optimization.</li>\n</ul>\n<p>70% of the 19 plots were assigned to the training set, with the remaining 30%, that is, 6 plots, assigned to the test set. Due to substantial variation in plot complexity, the test set was selected using stratified random sampling, in which the plots were divided into three groups based on forest density.</p>\n<p>In this repository, the FGI-EMIT data are provided pre-divided into <code>training</code> and <code>test</code> directories. The specific data split is also listed in Table 1. While FGI-EMIT does not include a designated validation set, a portion of the training data can be set aside for purposes such as model selection, hyperparameter tuning, and overfitting prevention. The proportion of training data allocated to validation can be determined by the user to suit the particular use case. For consistency, we recommend using the same three-plot validation set as in the benchmark (plots with IDs 1019, 1022, and 1031) in applications where validation is required.</p>\n<p>&nbsp;</p>\n<p><strong>Table 1:</strong> Training-test split of the FGI-EMIT dataset.</p>\n<table>\n<tbody>\n<tr>\n<td><strong>Set</strong></td>\n<td><strong>Plot IDs</strong></td>\n<td><strong>Number of trees</strong></td>\n</tr>\n<tr>\n<td>Training</td>\n<td>1001, 1003, 1005, 1009, 1010, 1013, 1019, 1020, 1022, 1023, 1024, 1027, 1031</td>\n<td>1098</td>\n</tr>\n<tr>\n<td>Test</td>\n<td>1002, 1004, 1008, 1012, 1018, 1028</td>\n<td>463</td>\n</tr>\n</tbody>\n</table>\n<h2>2.2 Accuracy computation</h2>\n<p>Individual tree segmentation performance on FGI-EMIT should be assessed using common instance segmentation metrics, specifically Recall, Precision, F1-score, Coverage (Cov), and Average Precision (AP). Additionally, if crown category information is available, category-level recall can be computed to assess the effects of relative crown positioning on method accuracy.</p>\n<p>A Python script for accuracy computation is provided in the <code>accuracy</code> directory of this repository. The script matches predicted instances to ground truth based on intersection over union (IoU) and computes the required metrics, as described in Section 3.4.2 of the associated paper. For consistency, we strongly recommend using the official accuracy computation script when evaluating ITS methods on FGI-EMIT. Detailed documentation on how to configure the script is also provided (<code>DOCS.md</code>). The script supports point clouds in the <code>las</code>, <code>laz</code> and <code>ply</code> file formats. By default, it is configured for the annotation format used in FGI-EMIT, but it can be easily adapted to work with other formats, such as that of the <a title=\"FOR-InstanceV2 dataset\" href=\"https://doi.org/10.5281/zenodo.16742708\" rel=\"noopener\">FOR-InstanceV2 dataset</a>. The code is also available in the <a title=\"FGI-EMIT GitHub repository\" href=\"https://github.com/ruoppa/fgi_emit\" rel=\"noopener\">FGI-EMIT GitHub repository</a>.</p>\n<h1>3. Data description</h1>\n<p>The FGI-EMIT dataset contains a total of 19 cylindrical forest plots of varying sizes, representing a wide range of boreal forest environments, including coniferous-dominated, deciduous-dominated, and mixed forests, as well as planted trees. In addition, some plots contain man-made structures, such as buildings and vehicles. The multispectral LiDAR point clouds for the 19 plots are provided in the <code>las</code> file format. Each point cloud includes manually generated point-level instance and semantic ground truth annotations, as well as several non-standard attributes. Furthermore, all instances in the dataset have been assigned a crown category that describes their size and position relative to neighboring trees. For a complete description of the dataset, please refer to Section 3 and Appendix A of the associated paper.</p>\n<h2>3.1 Ground truth labels</h2>\n<p>For each of the 19 plots in the FGI-EMIT dataset, individual trees have been manually annotated at the point level. All sections of the point cloud that could be definitively identified as trees and were at least 3 meters in height have been segmented into individual instances. For partial trees along the plot perimeter, only those for which at least approximately 50% of the tree appeared to lie within the plot boundaries were segmented. Points belonging to the same tree have been assigned a common positive integer ID, while non-tree points are assigned the value 0. The tree instance IDs are stored in the field <code>tree_index</code> and are unique at the plot level.</p>\n<p>In addition to instance annotations, FGI-EMIT includes rudimentary semantic labels for common categories present in the data. In particular, in addition to trees, man-made objects have each been assigned their own semantic classes. Furthermore, partial trees along plot perimeters that were not given instance labels have been assigned to a separate class. The semantic labels are stored in the <code>classification</code> field of the point clouds. The primary purpose of the semantic annotations is to facilitate the filtering of object categories that could hinder the performance of ITS methods, which is particularly relevant for unsupervised approaches. The definitions of each semantic category are listed in Table 2.</p>\n<p>In the ITS benchmark presented in the associated paper, points in class 5 were always removed from the data. For unsupervised algorithms, which are not inherently designed to handle data from non-forest environments, points in classes 2&ndash;4 were also removed. In contrast, since DL models can learn to classify built environments as background, points in classes 2&ndash;4 were remapped to class 0.</p>\n<p>&nbsp;</p>\n<p><strong>Table 2: </strong>Descriptions of the semantic categories available in the FGI-EMIT dataset.</p>\n<table>\n<tbody>\n<tr>\n<td><strong>Name</strong></td>\n<td><strong>ID</strong></td>\n<td><strong>Description</strong></td>\n</tr>\n<tr>\n<td>Other</td>\n<td>0</td>\n<td>Points not belonging to any other category. A majority of points in this class are either ground or understory vegetation.</td>\n</tr>\n<tr>\n<td>Tree</td>\n<td>1</td>\n<td>Points that are part of any tree instance.</td>\n</tr>\n<tr>\n<td>Building</td>\n<td>2</td>\n<td>Buildings and similar smaller man-made structures, such as sheds. This also includes structures attached to buildings, e.g. fences.</td>\n</tr>\n<tr>\n<td>Vehicle</td>\n<td>3</td>\n<td>Motorized vehicles, such as cars, trucks and buses.</td>\n</tr>\n<tr>\n<td>Pole</td>\n<td>4</td>\n<td>Vertical pole-like structures, such as lamp-posts, traffic signs and utility poles.</td>\n</tr>\n<tr>\n<td>Out</td>\n<td>5</td>\n<td>Points belonging to trees that reside mostly outside the plot boundaries and were therefore not assigned to any tree instance.</td>\n</tr>\n</tbody>\n</table>\n<h2>3.2 Tree locations, heights, and crown categories</h2>\n<p>An $xy$-location and height were computed for each tree instance based on the point cloud data. The tree location was determined by computing the centroid of a convex hull fitted to the $xy$-plane projection of the crown points. The tree height was then computed as follows:</p>\n<p>$h_{\\text{tree}}=z_{\\max,\\text{tree}}-\\min\\left\\{z_{\\min,\\text{ground}},z_{\\min,\\text{tree}}\\right\\},$</p>\n<p>where $z_{\\max,\\text{tree}}$ is the maximum $z$-coordinate in the tree instance, $z_{\\min,\\text{ground}}$ is the minimum $z$-coordinate of the ground directly below the instance, and $z_{\\min,\\text{tree}}$ is the minimum $z$-coordinate within the instance.</p>\n<p>To facilitate the analysis of how relative crown positioning affects the accuracy of individual tree segmentation, all tree instances were classified into four distinct crown categories based on height differences and distances relative to neighboring trees. The crown category definitions and corresponding tree counts in the FGI-EMIT dataset are listed in Table 3. The categories were determined using an automatic algorithm based on the tree locations and heights computed from the instance point clouds.</p>\n<p>Tree locations, heights, and crown categories for each plot, along with plot-level tree counts and densities, are provided in a machine-readable format in the file <code>plot_data.yaml</code>. The information in the file is grouped by plot ID and tree ID. The file format is compatible with the accuracy computation script, enabling crown-category-level recall to be computed.</p>\n<p>&nbsp;</p>\n<p><strong>Table 3: </strong>Specifications of the four tree crown categories. Two trees were considered neighbors if the distance between them was less than 3 m.</p>\n<table>\n<tbody>\n<tr>\n<td><strong>Category</strong></td>\n<td><strong>Number of trees</strong></td>\n<td><strong>Description</strong></td>\n<td><strong>Definition</strong></td>\n</tr>\n<tr>\n<td>A</td>\n<td>611 (39%)</td>\n<td>Isolated or dominant trees</td>\n<td>Tree has no neighboring trees or is &ge;2 m higher than all neighbors.</td>\n</tr>\n<tr>\n<td>B</td>\n<td>308 (20%)</td>\n<td>Group of similar trees</td>\n<td>Tree has at least one neighboring tree and is &lt;2 m higher than all neighbors.</td>\n</tr>\n<tr>\n<td>C</td>\n<td>451 (29%)</td>\n<td>Tree alongside a dominant tree</td>\n<td>Tree has at least one neighboring tree which is &ge;2 m higher and at a distance of &ge;1.5 m.</td>\n</tr>\n<tr>\n<td>D</td>\n<td>191 (12%)</td>\n<td>Tree under a dominant tree</td>\n<td>Tree has at least one neighboring tree which is &ge; 2 m higher and at a distance of &lt;1.5 m.</td>\n</tr>\n</tbody>\n</table>\n<h2>3.3 Additional point cloud attributes</h2>\n<p>All point clouds in the FGI-EMIT dataset include the non-standard attributes listed in Table 4. To facilitate, for example, the automatic filtering of points with missing attribute values, the same information is also provided in a machine-readable format in the file <code>metadata.yaml</code>.</p>\n<p>&nbsp;</p>\n<p><strong>Table 4: </strong>Additional attributes available in the FGI-EMIT point clouds. The missing value column indicates the placeholder used for attributes when no corresponding record exists for a point.</p>\n<table>\n<tbody>\n<tr>\n<td><strong>Attribute</strong></td>\n<td><strong>Missing value</strong></td>\n<td><strong>Description</strong></td>\n</tr>\n<tr>\n<td><code>red</code></td>\n<td>-</td>\n<td>Scaled reflectance from scanner 1.</td>\n</tr>\n<tr>\n<td><code>green</code></td>\n<td>-</td>\n<td>Scaled reflectance from scanner 2.</td>\n</tr>\n<tr>\n<td><code>blue</code></td>\n<td>-</td>\n<td>Scaled reflectance from scanner 3.</td>\n</tr>\n<tr>\n<td><code>intensity_1</code></td>\n<td>0</td>\n<td>Intensity from scanner 1.</td>\n</tr>\n<tr>\n<td><code>intensity_2</code></td>\n<td>0</td>\n<td>Intensity from scanner 2.</td>\n</tr>\n<tr>\n<td><code>intensity_3</code></td>\n<td>0</td>\n<td>Intensity from scanner 3.</td>\n</tr>\n<tr>\n<td><code>amplitude_1</code></td>\n<td>0</td>\n<td>Amplitude from scanner 1.</td>\n</tr>\n<tr>\n<td><code>amplitude_2</code></td>\n<td>0</td>\n<td>Amplitude from scanner 2.</td>\n</tr>\n<tr>\n<td><code>amplitude_3</code></td>\n<td>0</td>\n<td>Amplitude from scanner 3.</td>\n</tr>\n<tr>\n<td><code>reflectance_1</code></td>\n<td>-9,999</td>\n<td>Reflectance from scanner 1.</td>\n</tr>\n<tr>\n<td><code>reflectance_2</code></td>\n<td>-9,999</td>\n<td>Reflectance from scanner 2.</td>\n</tr>\n<tr>\n<td><code>reflectance_3</code></td>\n<td>-9,999</td>\n<td>Reflectance from scanner 3.</td>\n</tr>\n<tr>\n<td><code>deviation_1</code></td>\n<td>65,535</td>\n<td>Echo deviation from scanner 1.</td>\n</tr>\n<tr>\n<td><code>deviation_2</code></td>\n<td>65,535</td>\n<td>Echo deviation from scanner 2.</td>\n</tr>\n<tr>\n<td><code>deviation_3</code></td>\n<td>65,535</td>\n<td>Echo deviation from scanner 3.</td>\n</tr>\n<tr>\n<td><code>user_data</code></td>\n<td>-</td>\n<td>This value indicates which scanner an individual point is originally from. The points have been labeled either 1, 2, or 3 for scanners 1, 2, and 3 respectively.</td>\n</tr>\n<tr>\n<td><code>tree_index</code></td>\n<td>-</td>\n<td>Manually generated tree instance annotation. All points in a tree instance share the same value, and each tree instance within a plot has a unique index. Points not belonging to any tree instance have <code>tree_index</code> set to 0.</td>\n</tr>\n<tr>\n<td><code>edge</code></td>\n<td>-</td>\n<td>Tree instances on the edge of the plot with some parts missing have this value set to 1 for all points. All other points have this value set to 0.</td>\n</tr>\n<tr>\n<td><code>dead</code></td>\n<td>-</td>\n<td>Tree instances identified as dead via visual inspection have this value set to 1 for all points. All other points have this value set to 0.</td>\n</tr>\n</tbody>\n</table>\n<h1>4. Citation</h1>\n<p><strong>Any scientific publication using the data should cite the following paper:</strong></p>\n<p>Ruoppa, L., Hietala, T., Sepp&auml;nen, V., Taher, J., Hakala, T., Yu, X., Kukko, A., Kaartinen, H., and Hyypp&auml;, J., 2026. Benchmarking individual tree segmentation using multispectral airborne laser scanning data: the FGI-EMIT dataset. <em>ISPRS J. Photogramm. Remote Sens.</em>, 236:569&ndash;605, 2026. doi:10.1016/j.isprsjprs.2026.04.021.</p>\n<p><strong>BibTeX:</strong></p>\n<pre><code>@article{ruoppa2026benchmarking,</code><br><code>&nbsp; &nbsp; title = {{Benchmarking individual tree segmentation using multispectral airborne laser scanning data: The FGI-EMIT dataset}},</code><br><code>&nbsp; &nbsp; author = {Lassi Ruoppa and Tarmo Hietala and Verneri Sepp&auml;nen and Josef Taher and Teemu Hakala and Xiaowei Yu and Antero Kukko and Harri Kaartinen and Juha Hyypp&auml;},</code><br><code>  &nbsp; journal = {ISPRS J. Photogramm. Remote Sens.},</code><br><code>&nbsp; &nbsp; volume = {236},</code><br><code>&nbsp; &nbsp; pages = {569--605},</code><br><code>&nbsp; &nbsp; year = {2026},</code><br><code>&nbsp; &nbsp; doi = {10.1016/j.isprsjprs.2026.04.021},</code><br><code>}</code></pre>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Ruoppa, Lassi",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0009-0002-4267-572X"
+      },
+      {
+        "name": "Hietala, Tarmo",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0009-0001-4659-6212"
+      },
+      {
+        "name": "Sepp\u00e4nen, Verneri",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0000-0002-9097-1921"
+      },
+      {
+        "name": "Taher, Josef",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0000-0002-3142-731X"
+      },
+      {
+        "name": "Hakala, Teemu",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0000-0001-5486-4582"
+      },
+      {
+        "name": "Yu, Xiaowei",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0000-0001-5545-0613"
+      },
+      {
+        "name": "Kukko, Antero",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0000-0002-3841-6533"
+      },
+      {
+        "name": "Kaartinen, Harri",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0000-0002-4796-3942"
+      },
+      {
+        "name": "Hyypp\u00e4, Juha",
+        "affiliation": "Finnish Geospatial Research Institute",
+        "orcid": "0000-0001-5360-4017"
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.1016/j.isprsjprs.2026.04.021",
+        "relation": "isPublishedIn",
+        "resource_type": "publication-article",
+        "scheme": "doi"
+      }
+    ],
+    "custom": {
+      "code:codeRepository": "https://github.com/ruoppa/fgi_emit",
+      "code:programmingLanguage": [
+        {
+          "id": "python",
+          "title": {
+            "en": "Python"
+          }
+        }
+      ],
+      "code:developmentStatus": {
+        "id": "active",
+        "title": {
+          "en": "Active"
+        }
+      }
+    },
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-nc-sa-4.0"
+    },
+    "grants": [
+      {
+        "code": "359554",
+        "internal_id": "10.13039/501100002341::359554",
+        "funder": {
+          "name": "Research Council of Finland",
+          "doi": "10.13039/501100002341",
+          "acronym": "AKA"
+        },
+        "title": "Collecting accurate individual tree information for harvester operation decision making"
+      },
+      {
+        "code": "359203",
+        "internal_id": "10.13039/501100002341::359203",
+        "funder": {
+          "name": "Research Council of Finland",
+          "doi": "10.13039/501100002341",
+          "acronym": "AKA"
+        },
+        "title": "High-performance computing allowing high-accuracy country-level individual tree carbon sink and biodiversity mapping"
+      },
+      {
+        "code": "353264",
+        "internal_id": "10.13039/501100002341::353264",
+        "funder": {
+          "name": "Research Council of Finland",
+          "doi": "10.13039/501100002341",
+          "acronym": "AKA"
+        },
+        "title": "Digital technologies, risk management solutions and tools for mitigating forest disturbances"
+      },
+      {
+        "code": "HORIZON-JU-CBE-2023-R-02 101157488",
+        "internal_id": "019w4f821::HORIZON-JU-CBE-2023-R-02 101157488",
+        "funder": {
+          "name": "European Union"
+        },
+        "title": "Optimizing multifunctional forest-based value chains with single tree information and application of digital technologies"
+      },
+      {
+        "code": "359175",
+        "internal_id": "10.13039/501100002341::359175",
+        "funder": {
+          "name": "Research Council of Finland",
+          "doi": "10.13039/501100002341",
+          "acronym": "AKA"
+        },
+        "title": "Forest-Human-Machine Interplay \u2013 Building Resilience, Redefining Value Networks and Enabling Meaningful Experiences"
+      },
+      {
+        "code": "346382",
+        "internal_id": "10.13039/501100002341::346382",
+        "funder": {
+          "name": "Research Council of Finland",
+          "doi": "10.13039/501100002341",
+          "acronym": "AKA"
+        },
+        "title": "Measuring Spatiotemporal Changes in Forest Ecosystem"
+      },
+      {
+        "code": "346162",
+        "internal_id": "10.13039/501100002341::346162",
+        "funder": {
+          "name": "Research Council of Finland",
+          "doi": "10.13039/501100002341",
+          "acronym": "AKA"
+        },
+        "title": "Hydro-RI-platform"
+      },
+      {
+        "code": "VA-MMM-2024-25-1",
+        "internal_id": "04xa2jy35::VA-MMM-2024-25-1",
+        "funder": {
+          "name": "Ministry of Agriculture and Forestry"
+        },
+        "title": "Future Forest Information System at Individual Tree Level 2.0"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "19351233"
+          }
+        }
+      ]
+    }
+  },
+  "title": "FGI-EMIT: a multispectral high-density airborne laser scanning benchmark dataset for individual tree segmentation",
+  "links": {
+    "self": "https://zenodo.org/api/records/19351234",
+    "self_html": "https://zenodo.org/records/19351234",
+    "preview_html": "https://zenodo.org/records/19351234?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.19351234",
+    "self_doi": "https://doi.org/10.5281/zenodo.19351234",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19351234",
+    "reserve_doi": "https://zenodo.org/api/records/19351234/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/19351233",
+    "parent_html": "https://zenodo.org/records/19351233",
+    "parent_doi": "https://doi.org/10.5281/zenodo.19351233",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.19351233",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:19351234/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:19351234/sequence/default",
+    "files": "https://zenodo.org/api/records/19351234/files",
+    "media_files": "https://zenodo.org/api/records/19351234/media-files",
+    "archive": "https://zenodo.org/api/records/19351234/files-archive",
+    "archive_media": "https://zenodo.org/api/records/19351234/media-files-archive",
+    "latest": "https://zenodo.org/api/records/19351234/versions/latest",
+    "latest_html": "https://zenodo.org/records/19351234/latest",
+    "versions": "https://zenodo.org/api/records/19351234/versions",
+    "draft": "https://zenodo.org/api/records/19351234/draft",
+    "access_links": "https://zenodo.org/api/records/19351234/access/links",
+    "access_grants": "https://zenodo.org/api/records/19351234/access/grants",
+    "access_users": "https://zenodo.org/api/records/19351234/access/users",
+    "access_request": "https://zenodo.org/api/records/19351234/access/request",
+    "access": "https://zenodo.org/api/records/19351234/access",
+    "communities": "https://zenodo.org/api/records/19351234/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/19351234/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/19351234/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/19351234/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/19351234/quota-increase",
+    "requests": "https://zenodo.org/api/records/19351234/requests"
+  },
+  "updated": "2026-05-13T06:39:17.818992+00:00",
+  "recid": "19351234",
+  "revision": 5,
+  "files": [
+    {
+      "id": "bf9c7cd4-3265-40b0-9e53-0e03d1f5bcb7",
+      "key": "plot_data.yaml",
+      "size": 105578,
+      "checksum": "md5:0e5f69c28be31374bb3cf8faa03bded0",
+      "links": {
+        "self": "https://zenodo.org/api/records/19351234/files/plot_data.yaml/content"
+      }
+    },
+    {
+      "id": "900d93ba-437b-461e-9d09-2d78dc6512ae",
+      "key": "training.zip",
+      "size": 1796142742,
+      "checksum": "md5:b1c5ee7e9c166dd7ff377539944e5002",
+      "links": {
+        "self": "https://zenodo.org/api/records/19351234/files/training.zip/content"
+      }
+    },
+    {
+      "id": "9b2bad25-9ea2-4454-bc05-e0e160fff023",
+      "key": "metadata.yaml",
+      "size": 2793,
+      "checksum": "md5:a42b36c6f11e7c571b29d9006129c458",
+      "links": {
+        "self": "https://zenodo.org/api/records/19351234/files/metadata.yaml/content"
+      }
+    },
+    {
+      "id": "b13387c3-5e19-4e35-a433-5c41ce0c5a64",
+      "key": "test.zip",
+      "size": 648739416,
+      "checksum": "md5:c67b80c1e7f8a2ea28f54ed364aceea2",
+      "links": {
+        "self": "https://zenodo.org/api/records/19351234/files/test.zip/content"
+      }
+    },
+    {
+      "id": "f3086a3e-fa06-4885-a369-d39a6f9f39fe",
+      "key": "accuracy.zip",
+      "size": 19188,
+      "checksum": "md5:368c1b7228b1ca63ae16eae3dddc8388",
+      "links": {
+        "self": "https://zenodo.org/api/records/19351234/files/accuracy.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1365332"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 731,
+    "unique_downloads": 327,
+    "views": 523,
+    "unique_views": 477,
+    "version_downloads": 731,
+    "version_unique_downloads": 327,
+    "version_unique_views": 477,
+    "version_views": 523
+  },
+  "state": "done",
+  "submitted": true
+}

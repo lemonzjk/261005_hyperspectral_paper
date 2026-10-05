@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 88 篇论文、3 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 95 篇论文、4 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -35,3 +35,7 @@ CVF 已扫描大部分 CVPR 2013–2026、ICCV 2013–2025 目录；旧目录通
 进一步补充 HySP（Nature Methods 2017）、高光谱光片（Nature Communications 2015）、HR-FLFM（Optica 2021，多色相关研究）、八通道多光谱体成像（Nature Photonics 2025，相关研究）及 Photonics Research 2026 DOE–结构光联合成像。HySP 原始补充表 3 直接证明 xyzλt 五维；Photonics Research 论文为接受后 Early Posting，卷期未知，作者姓名保留官方元数据原样。Nature Methods 作为三维光谱显微方法的重要目标期刊纳入检索，不能据此扩大到所有二维生物光谱图像。
 
 本轮沿光谱点云引文链补入 9 篇：Brell 2016 几何配准、2017 辐射交叉标定，Shen 2020 冠层垂直性状，TGRS 2022 超体素本征点云与 DSM 辅助本征分解，2023 阴影恢复及归一化超体素分割，RSE 2024 HPProj，以及 ISPRS JPRS 2025 GrowSP-ForMS。DSM 辅助二维本征输出、Titan 三波段超体素与 GrowSP-ForMS 三波段叶木分离标为相关研究；高光谱点云融合与物理标定按实际输入输出记录。正式卷年份与在线年份分开核验。新增候选含谱 LiDAR 架构搜索、遮挡目标检测与 FGI-EMIT，原文核验尚未完成。
+
+新增 FGI-EMIT（ISPRS JPRS 2026）、AACB（RSE 2024）、GCNAS、球壳遮挡检测、S4DR-Net、五波段图像点云重建（TGRS）以及 PiV-AHPC（Science China Information Sciences 2026）。球壳原文确认 Houston 每点 48 波段，归入核心三维理解；三波段 LiDAR 与五波段影像工作标相关研究。FGI-EMIT 数据元数据确认 CC BY-NC-SA 4.0，19 个样地固定为 13 训练 / 6 测试；验证样地按作者建议从训练集选取。
+
+补充三次 Crossref 题名主题检索，每次仅前 100 条相关性结果，按目标场所与光谱三维题名筛选新增 5 个待核验候选；清单见 `sources/pointcloud-crossref-topic-scan-2026-10-06.json`，不代表完整期刊检索。GSFF 已发现正式 TGRS DOI，但四作者期刊版本与三作者预印本有差异，暂不沿用预印本方法笔记。CVF Spectral Informed Mamba 原摘要明确为图拉普拉斯谱，排除；SG-NLF 的 spectral prior 是否为波长信息尚未证明，继续待范围核验。Science China Information Sciences 纳入信息科学重要期刊检索，场所清单不是统一等级认证。

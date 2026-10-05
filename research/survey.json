@@ -31,10 +31,12 @@
       "Information Fusion",
       "IGARSS",
       "Nature Communications",
-      "Nature Methods"
+      "Nature Methods",
+      "Science China Information Sciences"
     ],
     "backgroundPolicy": "专业会议、workshop、普通期刊和预印本记录为候选/背景，不冒充顶会顶刊；主收录优先正式发表的目标场所。",
-    "opticalPolicy": "光学与高光谱领域的重要期刊允许收录，仍需真实空间深度/几何或明确三维光传输/光谱材料关联；Applied Optics、Optics Express等逐篇记录为领域期刊候选，不能笼统称全部顶刊。"
+    "opticalPolicy": "光学与高光谱领域的重要期刊允许收录，仍需真实空间深度/几何或明确三维光传输/光谱材料关联；Applied Optics、Optics Express等逐篇记录为领域期刊候选，不能笼统称全部顶刊。",
+    "informationSciencePolicy": "Science China Information Sciences 作为信息科学重要期刊补查与光谱三维明确相关的正式论文；目标场所列表用于检索优先级，不是统一期刊等级认证。"
   },
   "queries": [
     {
@@ -266,6 +268,32 @@
       "date": "2026-10-06",
       "engine": "IEEE / Elsevier / GFZ author manuscripts / author-uploaded papers / Crossref",
       "query": "HPProj asynchronous HSPC; intrinsic supervoxel scene properties; shadow-less HSPC; DSM-cued intrinsic decomposition; Brell 2016 geometric coalignment and 2017 radiometric cross-calibration; Shen 2020 vertical canopy pigments; normalized spatial-spectral supervoxels; GrowSP-ForMS"
+    },
+    {
+      "date": "2026-10-06",
+      "engine": "Crossref publisher metadata",
+      "query": "hyperspectral point cloud",
+      "rows": 100,
+      "limitation": "按相关性返回前 100 条，不是穷尽检索；仅题名和场所过滤，须核验原始摘要。"
+    },
+    {
+      "date": "2026-10-06",
+      "engine": "Crossref publisher metadata",
+      "query": "multispectral point cloud",
+      "rows": 100,
+      "limitation": "按相关性返回前 100 条，不是穷尽检索；仅题名和场所过滤，须核验原始摘要。"
+    },
+    {
+      "date": "2026-10-06",
+      "engine": "Crossref publisher metadata",
+      "query": "hyperspectral three-dimensional reconstruction",
+      "rows": 100,
+      "limitation": "按相关性返回前 100 条，不是穷尽检索；仅题名和场所过滤，须核验原始摘要。"
+    },
+    {
+      "date": "2026-10-06",
+      "engine": "author papers / publisher / Aalto / Zenodo / CVF",
+      "query": "FGI-EMIT, GCNAS, spherical-shell occluded target detection, AACB, S4DR-Net, robust MSI reconstruction, PiV-AHPC; CVF spectral LiDAR scope checks"
     }
   ],
   "candidates": [
@@ -1379,8 +1407,10 @@
       "venue": "CVPR",
       "year": 2025,
       "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Bahri_Spectral_Informed_Mamba_for_Robust_Point_Cloud_Processing_CVPR_2025_paper.html",
-      "status": "pending_scope",
-      "discovery": "official_CVF_proceedings"
+      "status": "excluded_scope",
+      "discovery": "official_CVF_proceedings",
+      "verificationLevel": "official_abstract",
+      "note": "CVF 原始摘要明确 spectral 为图拉普拉斯特征谱；没有波长维度或高光谱采集，不属于本项目。"
     },
     {
       "title": "Any-Resolution AI-Generated Image Detection by Spectral Learning",
@@ -1733,7 +1763,9 @@
       "year": 2026,
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Spectral-Geometric_Neural_Fields_for_Pose-Free_LiDAR_View_Synthesis_CVPR_2026_paper.html",
       "status": "pending_scope",
-      "discovery": "official_CVF_proceedings"
+      "discovery": "official_CVF_proceedings",
+      "verificationLevel": "official_abstract",
+      "note": "CVF 原始摘要已读取，但 spectral prior 未证明是波长信息；仅新视角 LiDAR 几何不足以收录，需查看原文定义。"
     },
     {
       "title": "EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution",
@@ -3506,24 +3538,30 @@
       "year": 2023,
       "venue": "TGRS",
       "url": "https://doi.org/10.1109/TGRS.2023.3284995",
-      "status": "pending",
-      "note": "元数据与原始摘要待完整核验；初步线索为 Titan 多光谱 LiDAR，不直接视为高光谱核心。"
+      "status": "included",
+      "note": "元数据与原始摘要待完整核验；初步线索为 Titan 多光谱 LiDAR，不直接视为高光谱核心。",
+      "paperId": "gcnas-spectral-lidar",
+      "verificationLevel": "author_abstract_and_publisher_metadata"
     },
     {
       "title": "Unsupervised Occluded Target Detection Based on Spherical Shell With Multispectral Point Clouds",
       "year": 2025,
       "venue": "TGRS",
-      "url": "https://www.researchgate.net/scientific-contributions/Likun-Chen-2260859460",
-      "status": "pending",
-      "note": "待核验 DOI、作者稿和光谱通道；三维遮挡目标检测，需追溯原文。"
+      "url": "https://doi.org/10.1109/TGRS.2025.3585524",
+      "status": "included",
+      "note": "待核验 DOI、作者稿和光谱通道；三维遮挡目标检测，需追溯原文。",
+      "paperId": "spherical-shell-occluded",
+      "verificationLevel": "author_manuscript_and_publisher_metadata"
     },
     {
       "title": "Benchmarking individual tree segmentation using multispectral airborne laser scanning data: The FGI-EMIT dataset",
       "year": 2026,
       "venue": "ISPRS JPRS",
-      "url": "https://www.sciencedirect.com/author/7004260140/juha-m-hyyppa",
-      "status": "pending",
-      "note": "出版社作者页提供摘要线索：532、905、1550 nm 与 1561 树实例；正式文章与数据划分待核验。"
+      "url": "https://doi.org/10.1016/j.isprsjprs.2026.04.021",
+      "status": "included",
+      "note": "出版社作者页提供摘要线索：532、905、1550 nm 与 1561 树实例；正式文章与数据划分待核验。",
+      "paperId": "fgi-emit",
+      "verificationLevel": "institutional_abstract_and_publisher_metadata"
     },
     {
       "title": "Terrestrial Hyperspectral Image Shadow Restoration through Lidar Fusion",
@@ -3540,6 +3578,102 @@
       "url": "https://doi.org/10.3390/app13148210",
       "status": "background",
       "note": "作者机构与原文确认点卷积融合；与 RSE HPProj 不同，期刊范围暂作背景。"
+    },
+    {
+      "title": "Individual tree species classification using low-density airborne multispectral LiDAR data via attribute-aware cross-branch transformer",
+      "paperId": "aacb-tree-transformer",
+      "year": 2024,
+      "venue": "RSE",
+      "url": "https://doi.org/10.1016/j.rse.2024.114456",
+      "status": "included",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "S4DR-Net: Self-Supervised Spatial–Spectral Distance Reconstruction Network for Multispectral Point Cloud Classification",
+      "paperId": "s4dr-net",
+      "year": 2025,
+      "venue": "TGRS",
+      "url": "https://doi.org/10.1109/TGRS.2025.3638606",
+      "status": "included",
+      "verificationLevel": "author_abstract_and_publisher_metadata"
+    },
+    {
+      "title": "A Robust Multispectral Point Cloud Generation Method Based on 3-D Reconstruction From Multispectral Images",
+      "paperId": "robust-ms-pointcloud",
+      "year": 2023,
+      "venue": "TGRS",
+      "url": "https://doi.org/10.1109/TGRS.2023.3326153",
+      "status": "included",
+      "verificationLevel": "author_manuscript_and_publisher_metadata"
+    },
+    {
+      "title": "Pillar-voxel fusion network for 3D object detection in airborne hyperspectral point clouds",
+      "paperId": "piv-ahpc",
+      "year": 2026,
+      "venue": "Science China Information Sciences",
+      "url": "https://doi.org/10.1007/s11432-024-4458-0",
+      "status": "included",
+      "verificationLevel": "official_abstract_and_publisher_metadata"
+    },
+    {
+      "title": "Edge Effect Issue on Hyperspectral LiDAR Point Cloud Data: Generation Principle and Framework of Detection and Filtering",
+      "doi": "10.1109/tgrs.2026.3699269",
+      "year": 2026,
+      "venue": "TGRS",
+      "url": "https://doi.org/10.1109/tgrs.2026.3699269",
+      "status": "pending_abstract",
+      "discovery": "Crossref topic title query; metadata only, scope unverified"
+    },
+    {
+      "title": "Masking Graph Cross-Convolution Network for Multispectral Point Cloud Classification",
+      "doi": "10.1109/tgrs.2025.3545783",
+      "year": 2025,
+      "venue": "TGRS",
+      "url": "https://doi.org/10.1109/tgrs.2025.3545783",
+      "status": "pending_abstract",
+      "discovery": "Crossref topic title query; metadata only, scope unverified"
+    },
+    {
+      "title": "Unsupervised Domain Adaptation for Cross-Scene Multispectral Point Cloud Classification",
+      "doi": "10.1109/tgrs.2024.3423759",
+      "year": 2024,
+      "venue": "TGRS",
+      "url": "https://doi.org/10.1109/tgrs.2024.3423759",
+      "status": "pending_abstract",
+      "discovery": "Crossref topic title query; metadata only, scope unverified"
+    },
+    {
+      "title": "An Enhanced Geometric-Spectral Feature Learning Framework for Airborne Multispectral Point Cloud Classification",
+      "doi": "10.1109/tgrs.2026.3739775",
+      "year": 2026,
+      "venue": "TGRS",
+      "url": "https://doi.org/10.1109/tgrs.2026.3739775",
+      "status": "pending_abstract",
+      "discovery": "Crossref topic title query; metadata only, scope unverified",
+      "note": "已发现正式 TGRS 2026 DOI，但期刊元数据为四作者（含 Linghua Xu），2026-06 arXiv 为三作者；需要核验正式版本摘要、作者与波段，不直接沿用预印本笔记。"
+    },
+    {
+      "title": "A Maximum Entropy-Based Optimal Neighbor Selection for Multispectral Airborne LiDAR Point Cloud Classification",
+      "doi": "10.1109/tgrs.2023.3323963",
+      "year": 2023,
+      "venue": "TGRS",
+      "url": "https://doi.org/10.1109/tgrs.2023.3323963",
+      "status": "pending_abstract",
+      "discovery": "Crossref topic title query; metadata only, scope unverified"
+    },
+    {
+      "title": "Hyperspectral images 3D reconstruction based on structure-from-motion and multi-view stereo",
+      "url": "https://doi.org/10.1016/j.optlaseng.2025.109578",
+      "venue": "Optics and Lasers in Engineering",
+      "status": "pending_venue",
+      "note": "发现真实高光谱多视角几何论文；方法与领域场所政策待核验。"
+    },
+    {
+      "title": "Fast, small and robust hyperspectral 3DGS based on spectral compression",
+      "url": "https://doi.org/10.1007/s10489-025-06983-4",
+      "venue": "Applied Intelligence",
+      "status": "background_specialist",
+      "note": "2026 正式卷、2025 在线发表；领域背景候选，不自动称顶刊。"
     }
   ],
   "coverage": {
