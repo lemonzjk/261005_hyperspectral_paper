@@ -1,5 +1,5 @@
 """Retry failed official CVF indexes using the older .py URL convention."""
-import json,re,concurrent.futures,urllib.request
+import json,re,concurrent.futures,requests
 from pathlib import Path
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
@@ -9,12 +9,12 @@ manifest=json.loads(path.read_text())
 def fetch(entry):
  url=f'https://openaccess.thecvf.com/{entry["venue"]}{entry["year"]}.py?day=all'
  try:
-  soup=BeautifulSoup(urllib.request.urlopen(url,timeout=30).read(),'html.parser');links=soup.select('.ptitle a')
+  soup=BeautifulSoup(requests.get(url,timeout=25).text,'html.parser');links=soup.select('.ptitle a')
   if not links:
-   soup=BeautifulSoup(urllib.request.urlopen(url.split('?')[0],timeout=30).read(),'html.parser')
+   soup=BeautifulSoup(requests.get(url.split('?')[0],timeout=25).text,'html.parser')
    day_urls=sorted({urljoin(url,a['href']) for a in soup.select('a[href]') if '?day=' in a['href'] and 'all' not in a['href'] and 'workshop' not in a['href'].lower()})
    for day_url in day_urls:
-    page=BeautifulSoup(urllib.request.urlopen(day_url,timeout=30).read(),'html.parser')
+    page=BeautifulSoup(requests.get(day_url,timeout=25).text,'html.parser')
     day_links=page.select('.ptitle a')
     if not day_links:raise ValueError('Day page contains no titles: '+day_url)
     links.extend(day_links)
