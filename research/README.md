@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 73 篇论文、3 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 78 篇论文、3 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -30,4 +30,6 @@ CVF 已扫描大部分 CVPR 2013–2026、ICCV 2013–2025 目录；旧目录通
 
 新增三维光谱体成像方向：CVPR 2021 与 TPAMI 2023 光声恢复工作明确使用 x、y、z、波长四维数据；期刊扩展不计为独立方法。补充 CVPR 2012 荧光光度立体、2015 DASC、2018 材料感知 RGB–NIR 立体、2021 事件双光谱水下形状，以及 ICCV 2025 直接/间接光传输分离。后者仅提供与距离相关的周期图，不声称度量深度恢复。联合图的谱对应论文排除；固定视角荧光再照明留作背景引文。
 
-已补 TOG 双光谱荧光 BRRDF、Nature Communications 三维温度感知、BS-IDT、qVRI、RSPT，以及 Light: Science & Applications FBS-IDT。三维光谱体包含空间深度层与逐体素光谱；不同于二维 H×W×B。13 个 CVF 候选逐篇阅读原始摘要，9 个图谱/频域或非光谱题名排除，4 个二维光谱材料/引导去噪工作留背景；证据见 `sources/cvf-3d-scope-review-2026-10-06.json`。Nature Methods HySP 及 Optica 多色光场继续核验；ACS Photonics、Chemical & Biomedical Imaging 等保留领域候选，不能仅凭出版社或题名标顶刊。
+已补 TOG 双光谱荧光 BRRDF、Nature Communications 三维温度感知、BS-IDT、qVRI、RSPT，以及 Light: Science & Applications FBS-IDT。三维光谱体包含空间深度层与逐体素光谱；不同于二维 H×W×B。13 个 CVF 候选逐篇阅读原始摘要，9 个图谱/频域或非光谱题名排除，4 个二维光谱材料/引导去噪工作留背景；证据见 `sources/cvf-3d-scope-review-2026-10-06.json`。Nature Methods HySP 及 Optica 多色光场已核验收录；ACS Photonics、Chemical & Biomedical Imaging 等保留领域候选，不能仅凭出版社或题名标顶刊。
+
+进一步补充 HySP（Nature Methods 2017）、高光谱光片（Nature Communications 2015）、HR-FLFM（Optica 2021，多色相关研究）、八通道多光谱体成像（Nature Photonics 2025，相关研究）及 Photonics Research 2026 DOE–结构光联合成像。HySP 原始补充表 3 直接证明 xyzλt 五维；Photonics Research 论文为接受后 Early Posting，卷期未知，作者姓名保留官方元数据原样。Nature Methods 作为三维光谱显微方法的重要目标期刊纳入检索，不能据此扩大到所有二维生物光谱图像。

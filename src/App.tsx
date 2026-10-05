@@ -30,7 +30,7 @@ function SpectrumArt() {
 function PaperCard({ paper, onSelect }: { paper: Paper; onSelect: (p: Paper) => void }) {
   const track = getTrack(paper.track);
   return <button className="paper-card" onClick={() => onSelect(paper)} style={{ '--track': track.color } as CSSProperties}>
-    <div className="card-top"><span className="venue-badge">{paper.venue} {paper.year}</span><span className="scope">{paper.venueTier === 'background' ? '补充阅读 · ' : ''}{paper.scope}</span></div>
+    <div className="card-top"><span className="venue-badge">{paper.venue} {paper.year}{paper.publicationStatus === 'early_access' ? ' · 在线先行' : ''}</span><span className="scope">{paper.venueTier === 'background' ? '补充阅读 · ' : ''}{paper.scope}</span></div>
     <h3>{paper.shortTitle}<span aria-hidden="true">↗</span></h3><p className="paper-full-title">{paper.title}</p>
     <p className="paper-summary">{paper.summary}</p>
     <div className="paper-card-bottom"><span><i/>{track.name}</span><span>{paper.representation}</span></div>
@@ -49,7 +49,7 @@ function PaperDialog({ paper, onClose }: { paper: Paper | null; onClose: () => v
   };
   return <dialog className="paper-dialog" ref={dialog} onClose={onClose} onClick={e => { if (e.target === e.currentTarget) { const rect = e.currentTarget.getBoundingClientRect(); if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) onClose(); } }} aria-labelledby="dialog-title">
     {paper && <><div className="dialog-top"><span className="eyebrow">PAPER NOTES / {paper.venue} {paper.year}</span><button className="close-button" onClick={onClose} aria-label="关闭论文详情">×</button></div>
-      <div className="dialog-tags"><span className="tag" style={{ color: getTrack(paper.track).color }}>{getTrack(paper.track).name}</span><span className="tag">{paper.representation}</span><span className="tag">{paper.scope}</span></div>
+      <div className="dialog-tags"><span className="tag" style={{ color: getTrack(paper.track).color }}>{getTrack(paper.track).name}</span><span className="tag">{paper.representation}</span><span className="tag">{paper.scope}</span>{paper.publicationStatus === 'early_access' && <span className="tag">在线先行 · 卷期待补</span>}</div>
       <h2 id="dialog-title">{paper.shortTitle}</h2><p className="dialog-full-title">{paper.title}</p><p className="authors">{paper.authors}</p>
       <div className="dialog-links"><a className="primary-button" href={paper.paper} target="_blank" rel="noreferrer">阅读论文 {arrow}</a>{paper.code && <a className="secondary-button" href={paper.code} target="_blank" rel="noreferrer">作者代码 {arrow}</a>}</div>
       <p className="dialog-summary">{paper.summary}</p>
