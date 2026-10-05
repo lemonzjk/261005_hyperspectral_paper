@@ -66,3 +66,10 @@
 .timeline-legend{display:flex;flex-wrap:wrap;gap:9px 18px;margin-bottom:15px;font-size:10px;color:#61766a}.timeline-legend>span{display:flex;align-items:center;gap:6px}.timeline-legend i{width:15px;height:2px;display:inline-block}.timeline-viewport svg{user-select:none}
 
 .timeline-viewport svg{display:block;min-height:100%}
+
+/* Keep the timeline readable; overview remains an explicit user choice. */
+.timeline-browser.is-expanded{position:fixed;inset:12px;z-index:90;display:flex;flex-direction:column;border:1px solid #cdd8ce;border-radius:10px;box-shadow:0 0 0 30px #203b36a6;padding:20px}
+.timeline-browser.is-expanded .timeline-viewport{flex:1;min-height:0;height:auto}
+.timeline-browser.is-expanded .timeline-toolbar,.timeline-browser.is-expanded .timeline-legend,.timeline-browser.is-expanded .timeline-caption{flex-shrink:0}
+.timeline-controls button:focus-visible{outline:2px solid #31594d;outline-offset:-3px}
+@media(max-width:700px){.timeline-browser.is-expanded{inset:0;border-radius:0;padding:12px}.timeline-browser.is-expanded .timeline-legend{gap:6px 12px}}

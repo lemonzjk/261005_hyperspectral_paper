@@ -1,4 +1,4 @@
-import { useRef, useState, useLayoutEffect } from 'react';
+import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import { timelineLayout } from './timeline-layout';
 import type { Paper } from './types';
 
@@ -9,20 +9,41 @@ export function ResearchMap({ papers, onSelect }: { papers: Paper[]; onSelect: (
   const suppressClick = useRef(false);
   const [zoom, setZoom] = useState(1);
   const [dragging, setDragging] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const layout = timelineLayout(papers);
-  const overview = useRef(true);
+  const overview = useRef(false);
   const fit = () => {
     if (!viewport.current) return;
     overview.current = true;
     setZoom(Math.max(.05, Math.min(1, (viewport.current.clientWidth - 24) / layout.width, (viewport.current.clientHeight - 24) / layout.height)));
     viewport.current.scrollTo(0, 0);
   };
+  const readable = () => {
+    overview.current = false;
+    setZoom(.8);
+    requestAnimationFrame(() => viewport.current?.scrollTo({ left: viewport.current.scrollWidth, top: 0 }));
+  };
   useLayoutEffect(() => {
-    fit();
+    readable();
+  }, [papers]);
+  useLayoutEffect(() => {
     const observer = new ResizeObserver(() => { if (overview.current) fit(); });
     if (viewport.current) observer.observe(viewport.current);
     return () => observer.disconnect();
   }, [papers]);
+  useEffect(() => {
+    if (!expanded) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const close = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !document.querySelector('dialog[open]')) setExpanded(false);
+    };
+    document.addEventListener('keydown', close);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', close);
+    };
+  }, [expanded]);
   const latest = () => {
     overview.current = false;
     setZoom(1);
@@ -59,15 +80,17 @@ export function ResearchMap({ papers, onSelect }: { papers: Paper[]; onSelect: (
     const anchor = document.createElement('a'); anchor.href = url; anchor.download = 'hs3d-research-timeline.svg'; anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
-  return <div className="timeline-browser">
+  return <div className={`timeline-browser${expanded ? ' is-expanded' : ''}`}>
     <div className="timeline-toolbar">
       <div><strong>研究时间轴</strong><span>年份横轴 · 方向线路 · 论文站点</span></div>
       <div className="timeline-controls" role="group" aria-label="时间轴视图控制">
         <button aria-label="缩小时间轴" disabled={zoom <= .05} onClick={() => changeZoom(1 / 1.25)}>−</button>
         <button aria-label="恢复原始大小" onClick={() => { overview.current = false; setZoom(1); }}>{Math.round(zoom * 100)}%</button>
         <button aria-label="放大时间轴" disabled={zoom >= 2.5} onClick={() => changeZoom(1.25)}>+</button>
+        <button onClick={readable}>适合阅读</button>
         <button onClick={fit}>完整图谱</button>
         <button onClick={latest}>最新研究</button>
+        <button onClick={() => setExpanded(value => !value)} aria-pressed={expanded}>{expanded ? '退出全屏' : '全屏浏览'}</button>
         <button onClick={exportSvg}>导出 SVG</button>
       </div>
     </div>
@@ -116,6 +139,6 @@ export function ResearchMap({ papers, onSelect }: { papers: Paper[]; onSelect: (
         <text x="28" y={layout.height - 25} fill="#75847b" fontSize="11">○ 核心研究　□ 相关研究　·　同一线路用于组织阅读，不表示直接继承关系</text>
       </svg>
     </div>
-    <div className="timeline-caption"><span>点击站点查看论文 · 拖动 / 滚动平移 · 键盘 Tab 选择站点</span><span>{papers.length} 个论文站点 · 年份已核验，未推定发表月份</span></div>
+    <div className="timeline-caption"><span>点击站点查看论文 · 拖动 / 滚动平移 · 完整图谱查看全貌 · Tab 选择站点</span><span>{papers.length} 个论文站点 · 年份已核验，未推定发表月份</span></div>
   </div>;
 }
