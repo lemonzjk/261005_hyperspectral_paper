@@ -12,6 +12,7 @@ export const tracks: { id: TrackId; name: string; en: string; color: string; des
   { id: 'lidar', name: '高光谱 LiDAR 与辐射校正', en: 'Hyperspectral LiDAR', color: '#5a968a', description: '主动多波长激光测距、波形处理，以及距离和入射角相关的光谱校正。' },
   { id: 'pointcloud', name: '光谱点云构建与映射', en: 'Spectral point cloud mapping', color: '#8b9456', description: '将成像光谱映射到真实三维点云，建立具有光谱属性的空间模型。' },
   { id: 'registration', name: '跨模态配准与定位', en: 'Registration & localization', color: '#ab7694', description: '跨光谱特征匹配、HSI–LiDAR 配准、传感器外参估计与定位。' },
+  { id: 'volumetric', name: '三维光谱体成像', en: 'Spectral volumetric imaging', color: '#b66a87', description: '光声等体成像中的真实三维空间与波长联合恢复，区别于二维光谱立方体。' },
   { id: 'fusion', name: 'HSI 与高度信息融合', en: 'HSI & elevation fusion', color: '#a98166', description: '利用 LiDAR 或 DSM 高度辅助地物分类和检测；明确区分二维分类与三维点云任务。' },
 ];
 export const getTrack = (id: TrackId) => tracks.find(t => t.id === id)!;

@@ -18,7 +18,7 @@ export function groupPapers(papers: Paper[], grouping: Grouping): PaperGroup[] {
       papers: sorted.filter(p => p.year === year),
     }));
   }
-  const order = ['rendering', 'active', 'lightfield', 'geometry', 'materials', 'pointcloud', 'lidar', 'registration', 'capture', 'understanding', 'holography', 'fusion'];
+  const order = ['rendering', 'active', 'lightfield', 'geometry', 'materials', 'pointcloud', 'lidar', 'registration', 'capture', 'understanding', 'holography', 'volumetric', 'fusion'];
   return [...tracks].sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id))
     .map(track => ({ ...track, papers: sorted.filter(p => p.track === track.id) }))
     .filter(group => group.papers.length);

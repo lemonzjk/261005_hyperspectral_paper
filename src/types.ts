@@ -1,4 +1,4 @@
-export type TrackId = 'capture' | 'geometry' | 'rendering' | 'materials' | 'understanding' | 'active' | 'lightfield' | 'lidar' | 'pointcloud' | 'registration' | 'fusion' | 'holography';
+export type TrackId = 'capture' | 'geometry' | 'rendering' | 'materials' | 'understanding' | 'active' | 'lightfield' | 'lidar' | 'pointcloud' | 'registration' | 'fusion' | 'holography' | 'volumetric';
 export interface Paper {
   id: string; shortTitle: string; title: string; authors: string; year: number;
   venue: string; track: TrackId; representation: string; scope: string;
