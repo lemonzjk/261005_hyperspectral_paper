@@ -1,6 +1,12 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
+const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
+const contextCharacters = [...context].length;
+const contextLines = context.split('\n').length - (context.endsWith('\n') ? 1 : 0);
+assert(contextCharacters <= 2000, `CONTEXT.md exceeds 2,000 characters: ${contextCharacters}`);
+assert(contextLines <= 60, `CONTEXT.md exceeds 60 lines: ${contextLines}`);
+
 const catalog = JSON.parse(readFileSync(new URL('../src/data/catalog.json', import.meta.url)));
 const ids = new Set();
 const tracks = new Set(['capture', 'geometry', 'rendering', 'materials', 'understanding']);
@@ -26,3 +32,4 @@ for (let i = 0; i < catalog.papers.length; i++) {
   }
 }
 console.log(`Catalog valid: ${catalog.papers.length} papers, ${catalog.datasets.length} dataset resources.`);
+console.log(`Context valid: ${contextCharacters}/2000 characters, ${contextLines}/60 lines.`);
