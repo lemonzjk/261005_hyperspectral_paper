@@ -2352,6 +2352,308 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{forestrestorationuav,\n  title={Monitoring restored tropical forest diversity and structure through UAV-borne hyperspectral and lidar fusion},\n  author={Danilo Roberti Alves de Almeida and Eben North Broadbent and Matheus Pinheiro Ferreira and Paula Meli and Angelica Maria Almeyda Zambrano and Eric Bastos Gorgens and Angelica Faria Resende and Catherine Torres de Almeida and Cibele Hummel do Amaral and Ana Paula Dalla Corte and Carlos Alberto Silva and João P. Romanelli and Gabriel Atticciati Prata and Daniel de Almeida Papa and Scott C. Stark and Ruben Valbuena and Bruce Walker Nelson and Joannes Guillemot and Jean-Baptiste Féret and Robin Chazdon and Pedro H.S. Brancalion},\n  year={2021},\n  journal={Remote Sensing of Environment},\n  url={https://doi.org/10.1016/j.rse.2021.112582},\n  doi={10.1016/j.rse.2021.112582}\n}"
+    },
+    {
+      "id": "intrinsic-supervoxel",
+      "shortTitle": "Intrinsic HSPC",
+      "title": "Supervoxel-Based Intrinsic Scene Properties From Hyperspectral Images and LiDAR",
+      "authors": "Xudong Jin, Yanfeng Gu, Tianzhu Liu, Wen Xie",
+      "year": 2022,
+      "venue": "TGRS",
+      "track": "materials",
+      "representation": "本征光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "本征光谱点云",
+        "materials"
+      ],
+      "summary": "联合高光谱图像与 LiDAR 几何，用超体素本征分解恢复逐点光谱反射率与入射光方向，生成带法线的本征光谱点云。",
+      "input": "高光谱图像与 LiDAR 三维点云。",
+      "output": "入射光方向、逐点法线及各波长反射率组成的本征光谱点云。",
+      "mechanism": "建立点云到图像的几何—反射率—照明模型，使用图方法提取超体素，再在超体素框架中优化联合本征分解。",
+      "readingNote": "三维坐标来自 LiDAR，并非由高光谱图像独立重建。正式卷为 2022 年第 60 卷；2021 为在线发表年份。作者原始摘要与 Crossref 元数据已核验。",
+      "paper": "https://doi.org/10.1109/TGRS.2021.3096839",
+      "doi": "10.1109/TGRS.2021.3096839",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/353498130_Supervoxel-Based_Intrinsic_Scene_Properties_From_Hyperspectral_Images_and_LiDAR",
+          "note": "作者研究条目刊载的原始摘要，明确超体素本征分解和逐点光谱反射率输出。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{intrinsicsupervoxel,\n  title={Supervoxel-Based Intrinsic Scene Properties From Hyperspectral Images and LiDAR},\n  author={Xudong Jin and Yanfeng Gu and Tianzhu Liu and Wen Xie},\n  year={2022},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2021.3096839},\n  doi={10.1109/TGRS.2021.3096839}\n}"
+    },
+    {
+      "id": "hpproj",
+      "shortTitle": "HPProj",
+      "title": "Quantifying vegetation species functional traits along hydrologic gradients in karst wetland based on 3D mapping with UAV hyperspectral point cloud",
+      "authors": "Bolin Fu, Liwei Deng, Weiwei Sun, Hongchang He, Huajian Li, Yong Wang, Yeqiao Wang",
+      "year": 2024,
+      "venue": "RSE",
+      "track": "pointcloud",
+      "representation": "光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "光谱点云",
+        "pointcloud"
+      ],
+      "summary": "以自监督对比学习融合异步采集的无人机高光谱图像与 LiDAR 点云，生成光谱点云并用于湿地三维植被制图。",
+      "input": "异步采集的无人机高光谱图像和 LiDAR 三维点云。",
+      "output": "光谱点云、24 类三维植被地图及植被功能性状的空间分布分析。",
+      "mechanism": "HPProj 仅使用高光谱图像自监督训练，再零样本迁移到图像与点云融合；结合 PointNeXt 三维分类和 3D-VQAF 分析体积、高度、光谱生化指数及水文梯度。",
+      "readingNote": "三维坐标由 LiDAR 提供，贡献是异步光谱—点云投影与三维理解，不是仅凭图像恢复几何。生化指数不等于直接测得化学浓度；24 类映射结论限于论文研究场景。",
+      "paper": "https://doi.org/10.1016/j.rse.2024.114160",
+      "doi": "10.1016/j.rse.2024.114160",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0034425724001718",
+          "note": "出版商原始贡献、方法与结论核验 HPProj、PointNeXt 和 3D-VQAF。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_method_and_publisher_metadata",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{hpproj,\n  title={Quantifying vegetation species functional traits along hydrologic gradients in karst wetland based on 3D mapping with UAV hyperspectral point cloud},\n  author={Bolin Fu and Liwei Deng and Weiwei Sun and Hongchang He and Huajian Li and Yong Wang and Yeqiao Wang},\n  year={2024},\n  journal={RSE},\n  url={https://doi.org/10.1016/j.rse.2024.114160},\n  doi={10.1016/j.rse.2024.114160}\n}"
+    },
+    {
+      "id": "vertical-canopy-biochemistry",
+      "shortTitle": "Vertical Canopy Traits",
+      "title": "Quantifying vertical profiles of biochemical traits for forest plantation species using advanced remote sensing approaches",
+      "authors": "Xin Shen, Lin Cao, Nicholas C. Coops, Hongchao Fan, Xiangqian Wu, Hao Liu, Guibin Wang, Fuliang Cao",
+      "year": 2020,
+      "venue": "RSE",
+      "track": "understanding",
+      "representation": "光谱点云性状",
+      "scope": "核心研究",
+      "tags": [
+        "光谱点云性状",
+        "understanding"
+      ],
+      "summary": "融合无人机 LiDAR 点云与高光谱反射率，估计单木冠层表面的生化色素并比较三个垂直层的分布。",
+      "input": "无人机高光谱图像、LiDAR 点云及叶片生化色素样本。",
+      "output": "单木冠层上、中、下层叶绿素和类胡萝卜素的估计及三维分布分析。",
+      "mechanism": "DSM 辅助几何融合将光谱与三维点云关联，用植被指数构建色素回归模型，以留一交叉验证评估并分析高度、树种与年龄差异。",
+      "readingNote": "研究对象是可观测冠层表面及三个高度层，不代表完整树冠内部光谱断层。DSM 用于融合，但输出分析保留三维冠层垂直结构，不是普通二维地物分类。",
+      "paper": "https://doi.org/10.1016/j.rse.2020.112041",
+      "doi": "10.1016/j.rse.2020.112041",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0034425720304119",
+          "note": "出版商原始摘要明确三维点云融合、冠层三层色素回归及留一验证。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{verticalcanopybiochemistry,\n  title={Quantifying vertical profiles of biochemical traits for forest plantation species using advanced remote sensing approaches},\n  author={Xin Shen and Lin Cao and Nicholas C. Coops and Hongchao Fan and Xiangqian Wu and Hao Liu and Guibin Wang and Fuliang Cao},\n  year={2020},\n  journal={RSE},\n  url={https://doi.org/10.1016/j.rse.2020.112041},\n  doi={10.1016/j.rse.2020.112041}\n}"
+    },
+    {
+      "id": "hsi-lidar-crosscalibration",
+      "shortTitle": "HSI–LiDAR Crosscalibration",
+      "title": "Hyperspectral and Lidar Intensity Data Fusion: A Framework for the Rigorous Correction of Illumination, Anisotropic Effects, and Cross Calibration",
+      "authors": "Maximilian Brell, Karl Segl, Luis Guanter, Bodo Bookhagen",
+      "year": 2017,
+      "venue": "TGRS",
+      "track": "capture",
+      "representation": "光谱辐射标定",
+      "scope": "核心研究",
+      "tags": [
+        "光谱辐射标定",
+        "capture"
+      ],
+      "summary": "利用主动 LiDAR 回波强度校正被动高光谱图像的照明变化、投影阴影和部分各向异性影响。",
+      "input": "机载高光谱图像与激光扫描的几何及回波强度信息。",
+      "output": "在高光谱波段范围内进行照明校正的影像与主动—被动传感器交叉标定。",
+      "mechanism": "通过光线追踪求交两传感器光束形状，融合辐射信息并校正跨时间、航带和阴影的照明差异。",
+      "readingNote": "三维光束与 LiDAR 几何支持物理辐射融合，主要输出是光谱照明校正而非新三维模型。论文只声称部分各向异性校正，不能描述为完整 BRDF 恢复。",
+      "paper": "https://doi.org/10.1109/TGRS.2017.2654516",
+      "doi": "10.1109/TGRS.2017.2654516",
+      "sources": [
+        {
+          "url": "https://bodobookhagen.github.io/pdf/brell17_lidar_fusion.pdf",
+          "note": "作者公开原论文，摘要确认光线追踪、回波强度交叉标定及照明校正。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{hsilidarcrosscalibration,\n  title={Hyperspectral and Lidar Intensity Data Fusion: A Framework for the Rigorous Correction of Illumination, Anisotropic Effects, and Cross Calibration},\n  author={Maximilian Brell and Karl Segl and Luis Guanter and Bodo Bookhagen},\n  year={2017},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2017.2654516},\n  doi={10.1109/TGRS.2017.2654516}\n}"
+    },
+    {
+      "id": "parametric-hsi-lidar-alignment",
+      "shortTitle": "Parametric HSI–LiDAR Alignment",
+      "title": "Improving Sensor Fusion: A Parametric Method for the Geometric Coalignment of Airborne Hyperspectral and Lidar Data",
+      "authors": "Maximilian Brell, Christian Rogass, Karl Segl, Bodo Bookhagen, Luis Guanter",
+      "year": 2016,
+      "venue": "TGRS",
+      "track": "registration",
+      "representation": "光谱—点云配准",
+      "scope": "核心研究",
+      "tags": [
+        "光谱—点云配准",
+        "registration"
+      ],
+      "summary": "通过 LiDAR 与高光谱共同波段的强度关联，优化推扫相机内外参数，实现机载数据的亚像素几何对齐。",
+      "input": "机载高光谱数据、LiDAR 点云及回波强度、传感器定位与姿态参数。",
+      "output": "校正后的相机内外参数与几何对齐的高光谱和 LiDAR 数据。",
+      "mechanism": "依次执行控制点粗视轴对齐、影像到 LiDAR 强度配准及区域代价聚合的参数细化；光线追踪反投影减轻栅格离散化影响。",
+      "readingNote": "这是为后续光谱点云融合提供基础的传感器几何配准。原论文实验约三分之一像素误差仅适用于其数据；算法依赖共同波段和定位姿态输入。",
+      "paper": "https://doi.org/10.1109/TGRS.2016.2518930",
+      "doi": "10.1109/TGRS.2016.2518930",
+      "sources": [
+        {
+          "url": "https://gfzpublic.gfz-potsdam.de/pubman/item/item_1480936_7/component/file_1612892/1480936.pdf",
+          "note": "GFZ 原始作者稿核验三阶段流程、光线追踪和相机内外参数优化。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{parametrichsilidaralignment,\n  title={Improving Sensor Fusion: A Parametric Method for the Geometric Coalignment of Airborne Hyperspectral and Lidar Data},\n  author={Maximilian Brell and Christian Rogass and Karl Segl and Bodo Bookhagen and Luis Guanter},\n  year={2016},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2016.2518930},\n  doi={10.1109/TGRS.2016.2518930}\n}"
+    },
+    {
+      "id": "shadowless-intrinsic-hspc",
+      "shortTitle": "Shadowless IHSPC",
+      "title": "Shadow-Less Intrinsic Hyperspectral Point Cloud Generation From HSIs and LiDAR",
+      "authors": "Wen Xie, Xudong Jin, Yanfeng Gu, Tianzhu Liu",
+      "year": 2023,
+      "venue": "TGRS",
+      "track": "materials",
+      "representation": "本征光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "本征光谱点云",
+        "materials"
+      ],
+      "summary": "显式考虑三维遮挡与阴影，恢复阴影区域的光谱反射率，生成去阴影本征高光谱点云。",
+      "input": "高光谱图像与 LiDAR 点云。",
+      "output": "阴影区域检测、照明与反射率估计，以及去阴影本征高光谱点云。",
+      "mechanism": "先恢复全局照明，再对点云超体素分割并计算遮挡关系，最后用照明不变光谱先验恢复阴影区域的照明和反射率。",
+      "readingNote": "在已有 LiDAR 几何上校正光谱照明，不能当作图像独立三维重建。与 2022 年超体素本征分解分列，因为本论文显式建模非均匀遮挡阴影。",
+      "paper": "https://doi.org/10.1109/TGRS.2023.3265080",
+      "doi": "10.1109/TGRS.2023.3265080",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/369865968_Shadow-less_Intrinsic_Hyperspectral_Point_Cloud_Generation_from_HSIs_and_LiDAR",
+          "note": "作者研究条目的原始摘要确认全局照明、超体素遮挡判断和照明不变光谱先验。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{shadowlessintrinsichspc,\n  title={Shadow-Less Intrinsic Hyperspectral Point Cloud Generation From HSIs and LiDAR},\n  author={Wen Xie and Xudong Jin and Yanfeng Gu and Tianzhu Liu},\n  year={2023},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2023.3265080},\n  doi={10.1109/TGRS.2023.3265080}\n}"
+    },
+    {
+      "id": "normalized-spectral-supervoxels",
+      "shortTitle": "Spatial–Spectral Supervoxels",
+      "title": "A Normalized Spatial–Spectral Supervoxel Segmentation Method for Multispectral Point Cloud Data",
+      "authors": "Likun Chen, Yanfeng Gu, Xian Li, Xiangrong Zhang, Baisen Liu",
+      "year": 2023,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "多光谱点云分割",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱点云分割",
+        "understanding"
+      ],
+      "summary": "联合归一化空间—光谱度量与自适应种子选择，在无需手工训练标注的条件下对多光谱三维点云进行超体素分割。",
+      "input": "带多波段回波强度的机载三维点云；实验使用 Titan 三波长 LiDAR。",
+      "output": "贴合物体边界的超体素分割，可作为后续点云分类的预处理。",
+      "mechanism": "以归一化空间—光谱度量构建 KD 树和聚类，通过距离和能量最小化自适应选择种子，再结合凹凸判断优化相邻体素边界。",
+      "readingNote": "原论文两个数据集均使用 532、1064、1550 nm 三通道强度，是多光谱 LiDAR 相关方法，不能把 Houston 数据集名称误当作使用 144 波段高光谱图像。无训练标注不等于实验评价无需真值。",
+      "paper": "https://doi.org/10.1109/TGRS.2023.3313734",
+      "doi": "10.1109/TGRS.2023.3313734",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/373835832_A_Normalized_Spatial-Spectral_Supervoxel_Segmentation_Method_for_Multispectral_Point_Cloud_Data",
+          "note": "Xian Li 上传原作者稿；摘要核验算法，实验部分明确 Titan 三通道及两个点云数据集。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{normalizedspectralsupervoxels,\n  title={A Normalized Spatial–Spectral Supervoxel Segmentation Method for Multispectral Point Cloud Data},\n  author={Likun Chen and Yanfeng Gu and Xian Li and Xiangrong Zhang and Baisen Liu},\n  year={2023},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2023.3313734},\n  doi={10.1109/TGRS.2023.3313734}\n}"
+    },
+    {
+      "id": "intrinsic-dsm-cues",
+      "shortTitle": "Intrinsic DSM Cues",
+      "title": "Intrinsic Hyperspectral Image Decomposition With DSM Cues",
+      "authors": "Xudong Jin, Yanfeng Gu, Wen Xie",
+      "year": 2022,
+      "venue": "TGRS",
+      "track": "materials",
+      "representation": "高度辅助逆渲染",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助逆渲染",
+        "materials"
+      ],
+      "summary": "利用 DSM 几何与球谐照明模型分解高光谱影像的反射率和照明，并约束反射率的局部平滑及全局一致性。",
+      "input": "高光谱图像与数字表面模型 DSM。",
+      "output": "高光谱本征反射率和照明分解结果。",
+      "mechanism": "构建包含几何分布、材料反射率及球谐环境照明的高光谱渲染模型，以局部和非局部反射率先验优化本征分解。",
+      "readingNote": "DSM 是已知的高度表面约束，输出主要是二维影像的本征分量，不声称生成完整三维点云。正式第 60 卷为 2022 年，在线发表日期为 2021-08-13。",
+      "paper": "https://doi.org/10.1109/TGRS.2021.3102644",
+      "doi": "10.1109/TGRS.2021.3102644",
+      "sources": [
+        {
+          "url": "https://ieeexplore.ieee.org/document/9513268/",
+          "note": "IEEE 原始摘要和卷号核验球谐渲染、DSM 几何及局部与非局部先验。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{intrinsicdsmcues,\n  title={Intrinsic Hyperspectral Image Decomposition With DSM Cues},\n  author={Xudong Jin and Yanfeng Gu and Wen Xie},\n  year={2022},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2021.3102644},\n  doi={10.1109/TGRS.2021.3102644}\n}"
+    },
+    {
+      "id": "growsp-forms",
+      "shortTitle": "GrowSP-ForMS",
+      "title": "Unsupervised deep learning for semantic segmentation of multispectral LiDAR forest point clouds",
+      "authors": "Lassi Ruoppa, Oona Oinonen, Josef Taher, Matti Lehtomäki, Narges Takhtkeshha, Antero Kukko, Harri Kaartinen, Juha Hyyppä",
+      "year": 2025,
+      "venue": "ISPRS JPRS",
+      "track": "understanding",
+      "representation": "多光谱森林点云",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱森林点云",
+        "understanding"
+      ],
+      "summary": "面向高密度多光谱机载点云，以无监督深度学习区分叶片与木质结构，并定量评估多波段信息的收益。",
+      "input": "532、905 和 1550 nm 三通道高密度机载森林点云。",
+      "output": "逐点叶片—木质结构语义分割；公开代码、预训练权重和多光谱数据。",
+      "mechanism": "在 GrowSP 超点增长无监督框架上设计森林多光谱适配，通过实验与消融比较几何、单波段及多波段信息。",
+      "readingNote": "这是三通道多光谱 LiDAR，而非连续高光谱方法。论文显示优于无监督对照，但仍低于部分较新有监督网络；不应泛化为超越所有监督方法。",
+      "paper": "https://doi.org/10.1016/j.isprsjprs.2025.07.038",
+      "doi": "10.1016/j.isprsjprs.2025.07.038",
+      "code": "https://github.com/ruoppa/GrowSP-ForMS",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0924271625003089",
+          "note": "出版商原始摘要核验三波长、无监督叶木分离、比较边界及公开资源。"
+        },
+        {
+          "url": "https://zenodo.org/records/15913427",
+          "note": "论文摘要提供的多光谱点云数据入口，数据划分与许可另待核验。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{growspforms,\n  title={Unsupervised deep learning for semantic segmentation of multispectral LiDAR forest point clouds},\n  author={Lassi Ruoppa and Oona Oinonen and Josef Taher and Matti Lehtomäki and Narges Takhtkeshha and Antero Kukko and Harri Kaartinen and Juha Hyyppä},\n  year={2025},\n  journal={ISPRS JPRS},\n  url={https://doi.org/10.1016/j.isprsjprs.2025.07.038},\n  doi={10.1016/j.isprsjprs.2025.07.038}\n}"
     }
   ],
   "datasets": [

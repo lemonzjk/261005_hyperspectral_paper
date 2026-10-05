@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 79 篇论文、3 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 88 篇论文、3 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -33,3 +33,5 @@ CVF 已扫描大部分 CVPR 2013–2026、ICCV 2013–2025 目录；旧目录通
 已补 TOG 双光谱荧光 BRRDF、Nature Communications 三维温度感知、BS-IDT、qVRI、RSPT，以及 Light: Science & Applications FBS-IDT。三维光谱体包含空间深度层与逐体素光谱；不同于二维 H×W×B。13 个 CVF 候选逐篇阅读原始摘要，9 个图谱/频域或非光谱题名排除，4 个二维光谱材料/引导去噪工作留背景；证据见 `sources/cvf-3d-scope-review-2026-10-06.json`。Nature Methods HySP 及 Optica 多色光场已核验收录；ACS Photonics、Chemical & Biomedical Imaging 等保留领域候选，不能仅凭出版社或题名标顶刊。
 
 进一步补充 HySP（Nature Methods 2017）、高光谱光片（Nature Communications 2015）、HR-FLFM（Optica 2021，多色相关研究）、八通道多光谱体成像（Nature Photonics 2025，相关研究）及 Photonics Research 2026 DOE–结构光联合成像。HySP 原始补充表 3 直接证明 xyzλt 五维；Photonics Research 论文为接受后 Early Posting，卷期未知，作者姓名保留官方元数据原样。Nature Methods 作为三维光谱显微方法的重要目标期刊纳入检索，不能据此扩大到所有二维生物光谱图像。
+
+本轮沿光谱点云引文链补入 9 篇：Brell 2016 几何配准、2017 辐射交叉标定，Shen 2020 冠层垂直性状，TGRS 2022 超体素本征点云与 DSM 辅助本征分解，2023 阴影恢复及归一化超体素分割，RSE 2024 HPProj，以及 ISPRS JPRS 2025 GrowSP-ForMS。DSM 辅助二维本征输出、Titan 三波段超体素与 GrowSP-ForMS 三波段叶木分离标为相关研究；高光谱点云融合与物理标定按实际输入输出记录。正式卷年份与在线年份分开核验。新增候选含谱 LiDAR 架构搜索、遮挡目标检测与 FGI-EMIT，原文核验尚未完成。
