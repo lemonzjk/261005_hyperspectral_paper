@@ -159,3 +159,16 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - Range Resolution 2023：arXiv 原始页只列 v1，管理员因当时提交者没有许可授权而移除此版本；没有可取的其他历史版本。不将该路线继续当作有效 PDF，也不据此声称正式 TGRS 论文撤稿。
 
 实际下载地址、响应及版本结论见 sources/pointcloud-fig2-and-waveform-source-audit-2026-10-06.json。下一轮继续其他原始作者/机构入口，已定位 Fig. 2 可供合法作者稿或人工附件对照；未取得原图前不升级状态。
+
+
+## 公开 DSpace 附件与作者博士论文版本核验（2026-10-06）
+
+仍为 174 篇：121 篇有 142 张图，44 needs_access、9 no_framework。本轮取得新的作者全文证据并补充方法限制，没有把通用原理、设备照片或结果图算作完整框架。
+
+- VI-SLAM Pushbroom 2025：imec item 68b60d13-97d1-4041-bd99-943115ef3c32 的公开 bundles API 返回 200、totalElements=1，只有 LICENSE bundle，bitstream f865a65f-23f4-4bfa-92cf-ea9413196020 是 license.txt；不是隐藏的论文 PDF。RMA 博士论文附件 11823186 返回 403。
+- 新找到 Ghent 同作者博士论文公开附件 01K9X88QW351STY5Y4SWTE2NZ0.pdf，实际下载 200、29,219,378 字节、240 页。7.4 章 PDF 188–197（印刷 152–161）明确基于同名 IGARSS 2025 四作者论文，已读完整对应章节并渲染十页核对。Fig. 7.17/7.18 是通用推扫和畸变示意；7.19 设备照片；7.20 场景、7.21 原始数据、7.22 重建结果，未见完整算法图。作者章节不等于正式会议排版，因此保留 needs_access，不标正式论文 no_framework。
+- 方法新证据已即时写 catalog：OpenVINS 平面估计、假设目标共面、模型计算外参、按扫描时间插值位姿、射线与平面求交、离线处理。不宣称任意非平面重建或在线部署。保留原 DOI 和正式机构卷页 8592–8596；proceedings.com TOC 的 7626 与机构卷页不一致，未据其修改。
+- Aquatic Inelastic HSL 2016：作者组 mbrydegaard.com/about/ 引出 Elin Malmqvist 的 Lund 博士论文。公开 PDF Fauna_to_Flames.pdf 实际下载 200、20,032,774 字节、134 页。PDF 16 列 Paper II，119 是贡献摘要；没有附入原始七页 LPR 论文。PDF 99 Fig. 7.7 是博士论文系统图，未冒充期刊原图。仍需正式或明确同篇作者稿。
+- Dimensional Dilemma 2024：冰岛大学另一语言条目和 AI4RS 作者会议列表无公开 PDF；准确 RG 383806681 为 Request full-text。未发送作者请求。
+
+证据、PDF 哈希和版本范围见 sources/imec-bundles-and-author-theses-2026-10-06.json。下一步继续其他缺图论文的新作者/机构附件；现有章节可辅助对照正式原图，不能替换图号或扩大无图结论。任务仍未完成。

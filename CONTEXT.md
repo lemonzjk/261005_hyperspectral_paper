@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx`、`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 121 篇、142 张；44 篇需全文/人工补图、9 篇全文无独立框架。新定位 Robust MPC 2023 完整流程 Fig. 2 的作者图页和精确下载地址，下载 403，未计有图。Range Resolution 的 arXiv 只有被移除的 v1，无历史 PDF；不表示正式 TGRS 论文撤稿。ZORA、植物所全文线索及逐篇失败证据见框架图交接。
+- 框架图累计 121 篇、142 张；44 篇需全文/人工补图、9 篇全文无独立框架。新取得 VI-SLAM Pushbroom 作者博士论文并核对对应 7.4 章，补录共面假设、位姿插值与离线限制；该章只有原理/设备照片/结果图，不能据此判正式会议无框架。imec API 仅 LICENSE；Lund 另一作者博士论文未含原始 LPR 稿。证据见框架交接。
 - 交接见 `research/framework-handoff.md`；初查全部年份后，优先从最新年份重试 44 篇缺图，寻找作者/机构副本；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 扫描候选待核验，其中 CGCN 2023 已补 DOI、作者和卷页但缺原始摘要、专业期刊与引文追溯未完成；Eradiate（GMD 2026）留背景，PhotoniX 2024 串级单像素相机留候选。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
