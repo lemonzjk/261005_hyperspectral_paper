@@ -29,6 +29,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 82 篇、91 张；34 篇需全文/人工补图、5 篇已取得全文无独立框架图、51 篇待检索。2026–2018 初查完整，2019 年 6 篇全有图；2020 年 TMDE、Maize 需全文。2018 年 3 篇有图，Fourier、VBRT 需全文；LiDAR Spatial Unmix 作者预印本 Fig.1–8 无框架图，出版版可复核。2017 年已保存 Catadioptric HLF、Snapshot H-LF（含光学系统与数据流），余 8 篇待查。
-- 交接见 `research/framework-handoff.md`；从 2017 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
+- 框架图累计 87 篇、97 张；37 篇需全文/人工补图、5 篇已取得全文无独立框架图、43 篇待检索。2026–2017 初查完整，2019 年 6 篇全有图；2020 年 TMDE、Maize 需全文。2018 年 3 篇有图，Fourier、VBRT 需全文；LiDAR Spatial Unmix 作者预印本 Fig.1–8 无框架图，出版版可复核。2017 年 7 篇有图，EP-OTVCA、LAT、UAV Forest Fusion 需全文/原图；交叉标定含总览与四阶段细节。
+- 交接见 `research/framework-handoff.md`；从 2016 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

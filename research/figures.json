@@ -2942,59 +2942,211 @@
     },
     {
       "paperId": "ep-otvca",
-      "status": "pending",
-      "attempts": [],
+      "status": "needs_access",
+      "attempts": [
+        {
+          "date": "2026-10-06",
+          "url": "https://elib.dlr.de/112025/1/TVFE-Final-File.pdf",
+          "note": "机构 PDF 返回 HTTP 401。已通过作者 Pedram Ghamisi 上传的 ResearchGate 图页核对框架为 Figure 1（The work flow of the proposed fusion method），但原图下载返回 403；需要取得该图或公开作者全文。图页：https://www.researchgate.net/figure/The-work-flow-of-the-proposed-fusion-method_fig1_316202851 。未用 SL-RCA 或 EP-CNN 同系列图替代。"
+        }
+      ],
       "year": 2017,
       "title": "Hyperspectral and LiDAR Fusion Using Extinction Profiles and Total Variation Component Analysis",
       "paperUrl": "https://iris.hi.is/en/publications/hyperspectral-and-lidar-fusion-using-extinction-profiles-and-tota/"
     },
     {
       "paperId": "fpi-band-registration",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 2017,
       "title": "Band registration of tuneable frame format hyperspectral UAV imagers in complex scenes",
-      "paperUrl": "https://www.sciencedirect.com/science/article/pii/S0924271616305378"
+      "paperUrl": "https://www.sciencedirect.com/science/article/pii/S0924271616305378",
+      "figures": [
+        {
+          "sourceUrl": "https://repositorio.unesp.br/server/api/core/bitstreams/ff539fa7-951c-4740-b16d-dc64b01c2f19/content",
+          "imageUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0924271616305378-gr1_lrg.jpg",
+          "figureLabel": "Figure 1a",
+          "caption": "波段配准的地形位移几何：离天底距离 X、物体高度 dZ 与飞行高度 FH 导致投影位移 dX。该图解释采用三维配准的几何依据，不是完整配准流程。",
+          "verificationNote": "核对 UNESP 同题名出版全文 Figure 1 图注及出版社原图，裁切仅保留完整 a 子图；排除 b 数据示例和 c 曲线，未重绘。",
+          "extraction": {
+            "method": "publisher_image_crop",
+            "pixelBox": [
+              0,
+              0,
+              1000,
+              887
+            ],
+            "originalWidth": 2524,
+            "originalHeight": 887
+          },
+          "path": "figures/fpi-band-registration/framework.png",
+          "width": 1000,
+          "height": 887,
+          "verifiedAt": "2026-10-06",
+          "sha256": "b923e477eb67ae23c7e2a8b76f00463ef6c22be55bc89fa2bc0e0d11807b193d",
+          "attribution": "Eija Honkavaara, Tomi Rosnell, Raquel Oliveira, Antonio Tommaselli · ISPRS JPRS 2017"
+        }
+      ]
     },
     {
       "paperId": "hsi-lidar-crosscalibration",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 2017,
       "title": "Hyperspectral and Lidar Intensity Data Fusion: A Framework for the Rigorous Correction of Illumination, Anisotropic Effects, and Cross Calibration",
-      "paperUrl": "https://doi.org/10.1109/TGRS.2017.2654516"
+      "paperUrl": "https://doi.org/10.1109/TGRS.2017.2654516",
+      "figures": [
+        {
+          "sourceUrl": "https://bodobookhagen.github.io/pdf/brell17_lidar_fusion.pdf",
+          "figureLabel": "Figure 2（作者稿）",
+          "caption": "光谱与 LiDAR 强度交叉标定总流程：几何/辐射预处理与传感器共配准，在重叠波长进行反射率交叉标定和传感器响应适配，输出校正的 VNIR/SWIR 高光谱反射率及点云几何。",
+          "verificationNote": "核对原文 PDF 第 3 页 Figure 2（作者稿） 图注和图中输入、模块、箭头与输出；保留完整图，未重绘。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 220,
+            "pixelBox": [
+              946,
+              169,
+              1730,
+              975
+            ]
+          },
+          "path": "figures/hsi-lidar-crosscalibration/framework.png",
+          "width": 784,
+          "height": 806,
+          "verifiedAt": "2026-10-06",
+          "sha256": "d24a12faf639988fe077866d5beda24837746c4054a36b2912f5def085017f01",
+          "attribution": "Maximilian Brell, Karl Segl, Luis Guanter, Bodo Bookhagen · TGRS 2017"
+        },
+        {
+          "sourceUrl": "https://bodobookhagen.github.io/pdf/brell17_lidar_fusion.pdf",
+          "figureLabel": "Figure 4（作者稿）",
+          "caption": "交叉标定的四阶段细节：计算入射、太阳照明和视角几何，估计 1550 nm 高光谱 BOA 反射率，标定 ALS 强度，适配传感器空间响应并计算跨传感器传递因子，校正 VNIR/SWIR 光谱。",
+          "verificationNote": "核对原文 PDF 第 4 页 Figure 4（作者稿） 图注和图中输入、模块、箭头与输出；保留完整图，未重绘。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 220,
+            "pixelBox": [
+              946,
+              168,
+              1730,
+              947
+            ]
+          },
+          "path": "figures/hsi-lidar-crosscalibration/framework-detail.png",
+          "width": 784,
+          "height": 779,
+          "verifiedAt": "2026-10-06",
+          "sha256": "fa9fe9ff15847842a6fd17bc8a87bfdd2a9ca92ffd1d767ec9a8494cce3013f7",
+          "attribution": "Maximilian Brell, Karl Segl, Luis Guanter, Bodo Bookhagen · TGRS 2017"
+        }
+      ]
     },
     {
       "paperId": "hysp-5d",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 2017,
       "title": "Hyperspectral phasor analysis enables multiplexed 5D in vivo imaging",
-      "paperUrl": "https://www.nature.com/articles/nmeth.4134"
+      "paperUrl": "https://www.nature.com/articles/nmeth.4134",
+      "figures": [
+        {
+          "sourceUrl": "https://www.nature.com/articles/nmeth.4134/figures/1",
+          "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnmeth.4134/MediaObjects/41592_2017_Article_BFnmeth4134_Fig1_HTML.jpg",
+          "figureLabel": "Figure 1a",
+          "caption": "HySP 原理：将多维数据每个体素的光谱转换为傅里叶系数 G、S 并映射到 phasor 平面，结合空间和时间进行荧光信号分析。仅收录方法示意子图 a。",
+          "verificationNote": "已核对出版社同题名 Figure 1 页面完整图注及原始高清图。裁切保留完整 a 子图，排除 b–f 测量与误差曲线；未重绘。",
+          "extraction": {
+            "method": "publisher_image_crop",
+            "pixelBox": [
+              0,
+              0,
+              946,
+              330
+            ],
+            "originalWidth": 946,
+            "originalHeight": 1104
+          },
+          "path": "figures/hysp-5d/framework.png",
+          "width": 946,
+          "height": 330,
+          "verifiedAt": "2026-10-06",
+          "sha256": "0cd6546f1e5480a602410f5ba6112e0ed2676b3f8e51070242ceaabbffd4e090",
+          "attribution": "Francesco Cutrale, Vikas Trivedi, Le A Trinh, Chi-Li Chiu, John M Choi, Marcela S Artiga, Scott E Fraser · Nature Methods 2017"
+        }
+      ]
     },
     {
       "paperId": "lat-crossmodal",
-      "status": "pending",
-      "attempts": [],
+      "status": "needs_access",
+      "attempts": [
+        {
+          "date": "2026-10-06",
+          "url": "https://www.sciencedirect.com/science/article/pii/S003132031630320X",
+          "note": "核对 DOI 对应 PII 并取得出版社 gr1–gr7：图像变换、匹配结果及性能比较，未取得可核验的方法框架图。作者机构检索未找到公开 PDF；尚未读完整正文，不能判定无框架图，需要全文进一步核对。"
+        }
+      ],
       "year": 2017,
       "title": "LAT: Local area transform for cross modal correspondence matching",
       "paperUrl": "https://pure.kaist.ac.kr/en/publications/lat-local-area-transform-for-cross-modal-correspondence-matching/"
     },
     {
       "paperId": "qvri",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 2017,
       "title": "Quantitative volumetric Raman imaging of three dimensional cell cultures",
-      "paperUrl": "https://www.nature.com/articles/ncomms14843"
+      "paperUrl": "https://www.nature.com/articles/ncomms14843",
+      "figures": [
+        {
+          "sourceUrl": "https://www.nature.com/articles/ncomms14843",
+          "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fncomms14843/MediaObjects/41467_2017_Article_BFncomms14843_Fig1_HTML.jpg",
+          "figureLabel": "Figure 1",
+          "caption": "qVRI 完整流程：共焦拉曼逐层采集三维样本，将体积高光谱数据展开为矩阵并光谱解混，再把分量丰度折回三维体积，实现结构重建与生物分子体积定量。",
+          "verificationNote": "已核对出版社同题名正文 Figure 1 完整图注及高清原图，保留采集、展开、解混、三维重建和定量全部模块；未重绘。",
+          "path": "figures/qvri/framework.jpg",
+          "width": 946,
+          "height": 1073,
+          "verifiedAt": "2026-10-06",
+          "sha256": "41aa4780eb9826497fd219785f2ea880867eb2c4e58b91d933ef6481e3ab9c65",
+          "attribution": "Charalambos Kallepitis, Mads S. Bergholt, Manuel M. Mazo, Vincent Leonardo, Stacey C. Skaalure, Stephanie A. Maynard, Molly M. Stevens · Nature Communications 2017"
+        }
+      ]
     },
     {
       "paperId": "slrca-fusion",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 2017,
       "title": "Fusion of Hyperspectral and LiDAR Data Using Sparse and Low-Rank Component Analysis",
-      "paperUrl": "https://elib.dlr.de/115362/"
+      "paperUrl": "https://elib.dlr.de/115362/",
+      "figures": [
+        {
+          "sourceUrl": "https://elib.dlr.de/115362/1/LRSF.pdf",
+          "figureLabel": "Figure 1（作者稿）",
+          "caption": "SL-RCA 的 EMEP 特征提取子流程：保留高光谱前三个独立成分，对各成分构建多属性消光剖面，再串接为空间特征。该图是方法的特征提取模块，不是完整融合流程。",
+          "verificationNote": "核对原文 PDF 第 4 页 Figure 1（作者稿） 图注和图中输入、模块、箭头与输出；保留完整图，未重绘。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 220,
+            "pixelBox": [
+              150,
+              160,
+              920,
+              550
+            ]
+          },
+          "path": "figures/slrca-fusion/framework.png",
+          "width": 770,
+          "height": 390,
+          "verifiedAt": "2026-10-06",
+          "sha256": "e84b60772f1aab0470bf42a1008f65d8d4b28bf8eb60d2d315871d1ee87d1978",
+          "attribution": "Behnood Rasti, Pedram Ghamisi, Javier Plaza, Antonio Plaza · TGRS 2017"
+        }
+      ]
     },
     {
       "paperId": "snapshot-hlf",
@@ -3054,8 +3206,14 @@
     },
     {
       "paperId": "uav-forest-fusion",
-      "status": "pending",
-      "attempts": [],
+      "status": "needs_access",
+      "attempts": [
+        {
+          "date": "2026-10-06",
+          "url": "https://pubs.usgs.gov/publication/70191185",
+          "note": "核对 USGS 记录及同题名出版社 PII S0034425717301578；取得 gr1–gr3、gr5–gr7 均为场景、树高/地形或比较结果，gr4 下载出现 TLS 错误。尚未取得完整正文与独立流程图，需作者全文或人工补图，不能判定全文无图。"
+        }
+      ],
       "year": 2017,
       "title": "UAV lidar and hyperspectral fusion for forest monitoring in the southwestern USA",
       "paperUrl": "https://pubs.usgs.gov/publication/70191185"

@@ -10,12 +10,14 @@
 
 ## 权威状态
 
-- 172 篇：82 篇 verified、91 张图；34 篇 needs_access；5 篇 no_framework；51 篇 pending。
-- 2026–2018 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
+- 172 篇：87 篇 verified、97 张图；37 篇 needs_access；5 篇 no_framework；43 篇 pending。
+- 2026–2017 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
 - LiDAR Spatial Unmix 已读 24 页作者预印本，Fig.1–8 为数据或结果，方法是公式和 Algorithm 1–2 伪代码，无独立框架图；该结论仅针对该预印本，正式版与补充材料可复核。
-- 2017 年新增 Catadioptric HLF Figure 2，以及 Snapshot H-LF Figures 1、2；下一步继续该年剩余 8 篇，再向 2016 年及更早推进。
+- 2017 年共 7 篇有图：Catadioptric HLF、Snapshot H-LF、qVRI、HySP、SL-RCA、HSI–LiDAR Crosscalibration、FPI Band Registration。HySP 只取 Figure 1a 原理，FPI 只取 Figure 1a 地形位移几何；SL-RCA 是 Figure 1 EMEP 子模块，均明确不是完整流程。交叉标定保存 Figures 2、4。
+- 2017 年 EP-OTVCA：机构 PDF 401，作者 Figure 1 已确认但下载 403。LAT：出版社 gr1–gr7 无可核验流程，需全文。UAV Forest Fusion：已查 USGS 记录及出版社多张数据/结果图，gr4 TLS 错误，需全文继续核验。不能把这些判定为全文无图。
+- 下一步从 2016 年 pending 继续，再向更早年份推进；详细尝试记录在 figures.json。
 - 随后重试最新年份缺图项；全部来源与失败原因以 `research/figures.json` 为准。任务未完成。
 
 ## 文件与工具
