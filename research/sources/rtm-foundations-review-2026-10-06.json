@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-06",
+  "coverage": "三维光谱正向渲染、森林实测光谱验证、地表–大气耦合和光学导数传播的主题引文检索；不声明全面覆盖。",
+  "papers": [
+    {
+      "id": "less-rt",
+      "title": "LESS: LargE-Scale remote sensing data and image simulation framework over heterogeneous 3D scenes",
+      "doi": "10.1016/j.rse.2018.11.036",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425718305443",
+        "https://github.com/jianboqi/lessrt"
+      ],
+      "evidence": "正式卷期为 2019 年，DOI 含 2018 不作为年份。本文为三维光谱正向渲染框架，不是神经逆渲染或几何重建算法；后续 LESS 版本功能不能归于这篇原始论文。"
+    },
+    {
+      "id": "dart-lux",
+      "title": "DART-Lux: An unbiased and rapid Monte Carlo radiative transfer method for simulating remote sensing images",
+      "doi": "10.1016/j.rse.2022.112973",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425722000876",
+        "https://www.cesbio.cnrs.fr/author/jean-philippe-gastellu-etchegorry/"
+      ],
+      "evidence": "官方摘要及理论简介已核验。论文报告的约百倍时间和内存改善依赖测试场景，不作普适保证。此文为被动光谱图像渲染，LiDAR 时间与功率测量来自另篇扩展，不能混写。"
+    },
+    {
+      "id": "dart-lux-atmosphere",
+      "title": "3D Monte Carlo surface-atmosphere radiative transfer modelling with DART",
+      "doi": "10.1016/j.rse.2023.113946",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425723004984"
+      ],
+      "evidence": "正式卷期为 2024 年，DOI 为 2023。三维辐射传输相关阅读；摘要中的应用使用 Sentinel-2A 蓝、绿、红、近红外四波段，不能描述成实测连续高光谱重建。"
+    },
+    {
+      "id": "forest-library-twin",
+      "title": "Reconstructing the digital twin of forests from a 3D library: Quantifying trade-offs for radiative transfer modeling",
+      "doi": "10.1016/j.rse.2023.113832",
+      "sources": [
+        "https://discovery.ucl.ac.uk/id/eprint/10179284/",
+        "https://discovery.ucl.ac.uk/id/eprint/10179284/1/Reconstructing%20the%20digital%20twin%20of%20forests%20from%20a%203D%20library%20-%20quantifying%20trade-offs%20for%20radiative%20transfer%20modeling.pdf"
+      ],
+      "evidence": "作者接收稿第 2.2、2.5、2.6 节已核验，包含实测高光谱图像比较；采样误差以完整重建场景为参考。20% 子地块采样的效果是该温带落叶林个案结果，不泛化为所有森林。"
+    },
+    {
+      "id": "dart-lux-toa",
+      "title": "Accurate and fast simulation of remote sensing images at top of atmosphere with DART-Lux",
+      "doi": "10.1016/j.rse.2021.112311",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425721000298"
+      ],
+      "evidence": "混合大气模型，区别于 2024 年的完整蒙特卡洛大气扩展。官方原文说明光谱路径与大气计算问题；报告的 750 倍速度改善是特定森林仿真对比，不是实测成像速度或通用性能保证。"
+    },
+    {
+      "id": "dart-differentiable",
+      "title": "3D Monte Carlo differentiable radiative transfer with DART",
+      "doi": "10.1016/j.rse.2024.114201",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425724002190",
+        "https://api.crossref.org/works/10.1016/j.rse.2024.114201"
+      ],
+      "evidence": "可微三维光谱逆问题的基础相关阅读。原文实现并验证导数正向传播，不等于已完成高光谱材料反演或几何重建；与 3D-Diff 的实际参数优化研究区分。"
+    }
+  ]
+}

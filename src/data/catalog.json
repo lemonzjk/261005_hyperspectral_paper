@@ -3840,6 +3840,191 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{dartoriginal,\n  title={Modeling radiative transfer in heterogeneous 3-D vegetation canopies},\n  author={J. P. Gastellu-Etchegorry and V. Demarez and V. Pinel and F. Zagolski},\n  year={1996},\n  journal={RSE},\n  url={https://doi.org/10.1016/0034-4257(95)00253-7},\n  doi={10.1016/0034-4257(95)00253-7}\n}"
+    },
+    {
+      "id": "less-rt",
+      "shortTitle": "LESS",
+      "title": "LESS: LargE-Scale remote sensing data and image simulation framework over heterogeneous 3D scenes",
+      "authors": "Jianbo Qi, Donghui Xie, Tiangang Yin, Guangjian Yan, Jean-Philippe Gastellu-Etchegorry, Linyuan Li, Wuming Zhang, Xihan Mu, Leslie K. Norford",
+      "year": 2019,
+      "venue": "RSE",
+      "track": "rendering",
+      "representation": "三维辐射传输",
+      "scope": "核心研究",
+      "tags": [
+        "三维辐射传输",
+        "rendering"
+      ],
+      "summary": "在显式三维景观中模拟多光谱、多角度辐射与大尺度光谱图像，连接场景几何、光学属性和传感器观测。",
+      "input": "三维景观几何、材料光学属性、光照与传感器参数。",
+      "output": "多光谱双向反射因子、辐射通量、光谱与热红外传感器图像。",
+      "mechanism": "加权前向光子追踪计算反射因子与通量，后向路径追踪生成传感器图像；结合场景构建工具，并与其他模型、实测方向反射因子和逐像素图像比较。",
+      "readingNote": "正式卷期为 2019 年，DOI 含 2018 不作为年份。本文为三维光谱正向渲染框架，不是神经逆渲染或几何重建算法；后续 LESS 版本功能不能归于这篇原始论文。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425718305443",
+      "doi": "10.1016/j.rse.2018.11.036",
+      "code": "https://github.com/jianboqi/lessrt",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425718305443",
+        "https://github.com/jianboqi/lessrt"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{lessrt,\n  title={LESS: LargE-Scale remote sensing data and image simulation framework over heterogeneous 3D scenes},\n  author={Jianbo Qi and Donghui Xie and Tiangang Yin and Guangjian Yan and Jean-Philippe Gastellu-Etchegorry and Linyuan Li and Wuming Zhang and Xihan Mu and Leslie K. Norford},\n  year={2019},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425718305443},\n  doi={10.1016/j.rse.2018.11.036}\n}"
+    },
+    {
+      "id": "dart-lux",
+      "shortTitle": "DART-Lux",
+      "title": "DART-Lux: An unbiased and rapid Monte Carlo radiative transfer method for simulating remote sensing images",
+      "authors": "Yingjie Wang, Abdelaziz Kallel, Xuebo Yang, Omar Regaieg, Nicolas Lauret, Jordan Guilleux, Eric Chavanon, Jean-Philippe Gastellu-Etchegorry",
+      "year": 2022,
+      "venue": "RSE",
+      "track": "rendering",
+      "representation": "三维辐射传输",
+      "scope": "核心研究",
+      "tags": [
+        "三维辐射传输",
+        "rendering"
+      ],
+      "summary": "用双向路径追踪模拟复杂自然与城市场景的光谱图像和方向反射，提升大规模三维光谱仿真的效率。",
+      "input": "三维场景、表面光学属性、光源及传感器设置。",
+      "output": "光谱遥感图像与双向反射因子。",
+      "mechanism": "在 DART 框架内引入基于 LuxCoreRender 的蒙特卡洛双向路径追踪，组合光源端和传感器端路径，并分析路径相关性导致的方差；与离散方向 DART-FT 比较。",
+      "readingNote": "官方摘要及理论简介已核验。论文报告的约百倍时间和内存改善依赖测试场景，不作普适保证。此文为被动光谱图像渲染，LiDAR 时间与功率测量来自另篇扩展，不能混写。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425722000876",
+      "doi": "10.1016/j.rse.2022.112973",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425722000876",
+        "https://www.cesbio.cnrs.fr/author/jean-philippe-gastellu-etchegorry/"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{dartlux,\n  title={DART-Lux: An unbiased and rapid Monte Carlo radiative transfer method for simulating remote sensing images},\n  author={Yingjie Wang and Abdelaziz Kallel and Xuebo Yang and Omar Regaieg and Nicolas Lauret and Jordan Guilleux and Eric Chavanon and Jean-Philippe Gastellu-Etchegorry},\n  year={2022},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425722000876},\n  doi={10.1016/j.rse.2022.112973}\n}"
+    },
+    {
+      "id": "dart-lux-atmosphere",
+      "shortTitle": "DART-Lux Atmosphere",
+      "title": "3D Monte Carlo surface-atmosphere radiative transfer modelling with DART",
+      "authors": "Yingjie Wang, Nicolas Lauret, Omar Regaieg, Xuebo Yang, Jordan Guilleux, Eric Chavanon, Abdelaziz Kallel, Mustapha Moulana, Jérôme Colin, Olivier Hagolle, Didier Ramon, Jean-Philippe Gastellu-Etchegorry",
+      "year": 2024,
+      "venue": "RSE",
+      "track": "rendering",
+      "representation": "三维辐射传输",
+      "scope": "相关研究",
+      "tags": [
+        "三维辐射传输",
+        "rendering"
+      ],
+      "summary": "将三维地表与大气蒙特卡洛传输耦合，研究邻近像元和场景几何对遥感辐射与反照率的影响。",
+      "input": "地表三维几何、表面与体介质光学参数、大气及观测几何。",
+      "output": "冠层顶与大气顶的辐射、反照率及邻近效应分析。",
+      "mechanism": "扩展 DART-Lux 的地球–大气表示与表面/体积传输，先与 SMART-G 比较，再模拟森林包围城市的三维场景。",
+      "readingNote": "正式卷期为 2024 年，DOI 为 2023。三维辐射传输相关阅读；摘要中的应用使用 Sentinel-2A 蓝、绿、红、近红外四波段，不能描述成实测连续高光谱重建。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425723004984",
+      "doi": "10.1016/j.rse.2023.113946",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425723004984"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{dartluxatmosphere,\n  title={3D Monte Carlo surface-atmosphere radiative transfer modelling with DART},\n  author={Yingjie Wang and Nicolas Lauret and Omar Regaieg and Xuebo Yang and Jordan Guilleux and Eric Chavanon and Abdelaziz Kallel and Mustapha Moulana and Jérôme Colin and Olivier Hagolle and Didier Ramon and Jean-Philippe Gastellu-Etchegorry},\n  year={2024},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425723004984},\n  doi={10.1016/j.rse.2023.113946}\n}"
+    },
+    {
+      "id": "forest-library-twin",
+      "shortTitle": "Forest Library Twin",
+      "title": "Reconstructing the digital twin of forests from a 3D library: Quantifying trade-offs for radiative transfer modeling",
+      "authors": "Chang Liu, Kim Calders, Niall Origo, Mathias Disney, Félicien Meunier, William Woodgate, Jean-Philippe Gastellu-Etchegorry, Joanne Nightingale, Eija Honkavaara, Teemu Hakala, Lauri Markelin, Hans Verbeeck",
+      "year": 2023,
+      "venue": "RSE",
+      "track": "rendering",
+      "representation": "三维辐射传输",
+      "scope": "核心研究",
+      "tags": [
+        "三维辐射传输",
+        "rendering"
+      ],
+      "summary": "比较子地块采样与单树库采样构建三维森林的效率和光谱辐射误差，减少大尺度数字孪生构建成本。",
+      "input": "地面激光扫描、叶片/树皮/林下光谱与无人机高光谱观测。",
+      "output": "一公顷显式三维森林及简化森林的方向反射图像与采样误差。",
+      "mechanism": "由 TLS 和地形数据重建森林，结合实测材料光谱运行 DART；用 520–886 nm 的 32 波段 UAV 影像核验完整场景，再比较不同采样比例的重建。",
+      "readingNote": "作者接收稿第 2.2、2.5、2.6 节已核验，包含实测高光谱图像比较；采样误差以完整重建场景为参考。20% 子地块采样的效果是该温带落叶林个案结果，不泛化为所有森林。",
+      "paper": "https://discovery.ucl.ac.uk/id/eprint/10179284/",
+      "doi": "10.1016/j.rse.2023.113832",
+      "verificationLevel": "official_fulltext",
+      "sourceUrls": [
+        "https://discovery.ucl.ac.uk/id/eprint/10179284/",
+        "https://discovery.ucl.ac.uk/id/eprint/10179284/1/Reconstructing%20the%20digital%20twin%20of%20forests%20from%20a%203D%20library%20-%20quantifying%20trade-offs%20for%20radiative%20transfer%20modeling.pdf"
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{forestlibrarytwin,\n  title={Reconstructing the digital twin of forests from a 3D library: Quantifying trade-offs for radiative transfer modeling},\n  author={Chang Liu and Kim Calders and Niall Origo and Mathias Disney and Félicien Meunier and William Woodgate and Jean-Philippe Gastellu-Etchegorry and Joanne Nightingale and Eija Honkavaara and Teemu Hakala and Lauri Markelin and Hans Verbeeck},\n  year={2023},\n  journal={RSE},\n  url={https://discovery.ucl.ac.uk/id/eprint/10179284/},\n  doi={10.1016/j.rse.2023.113832}\n}"
+    },
+    {
+      "id": "dart-lux-toa",
+      "shortTitle": "DART-Lux TOA",
+      "title": "Accurate and fast simulation of remote sensing images at top of atmosphere with DART-Lux",
+      "authors": "Yingjie Wang, Jean-Philippe Gastellu-Etchegorry",
+      "year": 2021,
+      "venue": "RSE",
+      "track": "rendering",
+      "representation": "三维辐射传输",
+      "scope": "核心研究",
+      "tags": [
+        "三维辐射传输",
+        "rendering"
+      ],
+      "summary": "耦合三维地表蒙特卡洛光传输与离散方向大气传输，快速模拟大气顶光谱遥感图像。",
+      "input": "三维森林结构、波长相关光学属性、大气、天空照明及观测方向。",
+      "output": "大气顶遥感图像及方向反射。",
+      "mechanism": "设计各向异性天空照明、BRF 相机和耦合框架，将 DART-Lux 地表传输与 DART-FT 大气传输连接，并在真实结构的森林场景上以 DART-FT 作参考。",
+      "readingNote": "混合大气模型，区别于 2024 年的完整蒙特卡洛大气扩展。官方原文说明光谱路径与大气计算问题；报告的 750 倍速度改善是特定森林仿真对比，不是实测成像速度或通用性能保证。",
+      "paper": "https://www.sciencedirect.com/science/article/abs/pii/S0034425721000298",
+      "doi": "10.1016/j.rse.2021.112311",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425721000298"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{dartluxtoa,\n  title={Accurate and fast simulation of remote sensing images at top of atmosphere with DART-Lux},\n  author={Yingjie Wang and Jean-Philippe Gastellu-Etchegorry},\n  year={2021},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S0034425721000298},\n  doi={10.1016/j.rse.2021.112311}\n}"
+    },
+    {
+      "id": "dart-differentiable",
+      "shortTitle": "Differentiable DART",
+      "title": "3D Monte Carlo differentiable radiative transfer with DART",
+      "authors": "Yingjie Wang, Abdelaziz Kallel, Zhijun Zhen, Nicolas Lauret, Jordan Guilleux, Eric Chavanon, Jean-Philippe Gastellu-Etchegorry",
+      "year": 2024,
+      "venue": "RSE",
+      "track": "materials",
+      "representation": "三维辐射传输",
+      "scope": "相关研究",
+      "tags": [
+        "三维辐射传输",
+        "materials"
+      ],
+      "summary": "在三维自然与城市场景中传播反射率导数，计算遥感辐射对各场景元素光学参数的敏感性。",
+      "input": "已知三维结构、材料反射率、光照及传感器配置。",
+      "output": "辐射与反射率图像，以及对表面光学参数的 Jacobian 图像。",
+      "mechanism": "在双向路径追踪中沿光路径累积并加权导数，以解析解和三维城市有限差分结果核验。",
+      "readingNote": "可微三维光谱逆问题的基础相关阅读。原文实现并验证导数正向传播，不等于已完成高光谱材料反演或几何重建；与 3D-Diff 的实际参数优化研究区分。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425724002190",
+      "doi": "10.1016/j.rse.2024.114201",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425724002190",
+        "https://api.crossref.org/works/10.1016/j.rse.2024.114201"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{dartdifferentiable,\n  title={3D Monte Carlo differentiable radiative transfer with DART},\n  author={Yingjie Wang and Abdelaziz Kallel and Zhijun Zhen and Nicolas Lauret and Jordan Guilleux and Eric Chavanon and Jean-Philippe Gastellu-Etchegorry},\n  year={2024},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425724002190},\n  doi={10.1016/j.rse.2024.114201}\n}"
     }
   ],
   "datasets": [
