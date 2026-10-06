@@ -22,13 +22,12 @@
 - 浅色全宽首屏：交互合成高光谱点云，自然色/单波段/几何、450–950 nm、旋转/复位/材料选择；12,348 点，响应为概念示意。用户拒绝左侧大字、深色、摄影和抽象装饰。
 - 默认横向研究路线图：年份横轴、方向线路、代表论文站点；点击展开、+N、出版信息。另有方向矩阵、全部论文与详细 SVG 缩放/平移/全屏/导出；分阶段间距不表示时长，不声明继承关系。
 - 框架图详情支持本地图、高清打开、图号、PDF 页码、原始来源及作者归属；未检索、待人工补充、全文未见独立框架图分别展示。
-- 2026 年初查：8 篇有图、5 篇需全文/原图；FGI-EMIT 正文 Fig.1–8 无独立框架图。IEEE/Wiley 访问问题不等于没有框架图。
 
 ## 关键文件与续接
 
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 87 篇、97 张；37 篇需全文/人工补图、5 篇已取得全文无独立框架图、43 篇待检索。2026–2017 初查完整，2019 年 6 篇全有图；2020 年 TMDE、Maize 需全文。2018 年 3 篇有图，Fourier、VBRT 需全文；LiDAR Spatial Unmix 作者预印本 Fig.1–8 无框架图，出版版可复核。2017 年 7 篇有图，EP-OTVCA、LAT、UAV Forest Fusion 需全文/原图；交叉标定含总览与四阶段细节。
-- 交接见 `research/framework-handoff.md`；从 2016 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
+- 框架图累计 90 篇、102 张；38 篇需全文/人工补图、5 篇已取得全文无独立框架图、39 篇待检索。2026–2016 初查完整，2019 年 6 篇全有图；IEEE/Wiley 阻挡不能判定无图。2018 年 LiDAR Spatial Unmix 的无图结论只针对作者预印本。2017 年 EP-OTVCA 已确认 Figure 1，仍需原图；LAT、UAV Forest Fusion 需全文。2016 年 3 篇有图：Color-Mono Stereo、Parametric Alignment（总览/细节）、PROCOSINE（物理模型/采集）；Aquatic HSL 需全文，未用 2018 年同作者会议论文图替代。
+- 交接见 `research/framework-handoff.md`；从 2015 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
