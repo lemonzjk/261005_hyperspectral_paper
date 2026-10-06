@@ -96,3 +96,15 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - 新收录 `fisher-mrf-hsi-lidar`：作者 Hacettepe 官方个人空间提供正式 IGARSS 2016 四页 PDF（2522–2525），已读方法、实验、结论并逐页目视核对 Figure 1–3；仅参数曲线和精度表，没有独立框架。标记 `no_framework` 的范围限定此会议稿；2019 IET 后续版本须另核验。
 - LAT（PR 2017）：新增共同作者 KAIST CVLAB 的 J5 出版链接，PDF 指向 Elsevier reader，请求 SSL 失败。2019 arXiv 1901.00927 是博士论文，不能直接用不同题名/扩展深度模型的图当作 PR 期刊图。
 - 当前 173 篇：118 篇有 138 张图、47 篇需要全文/原图、8 篇全文无独立框架。尚未完成缺图补齐和全面文献调研。
+
+## 近红外双波段测深与作者新入口（2026-10-06）
+
+当前 174 篇：119 篇有 139 张原图，47 needs_access、8 no_framework、0 pending。用户新要求明确：先补现有框架图，完成后再扩充文献，以后新文献同步查图。公开入口初查结束不等于补图完成。
+
+- 已完成上轮找到的 ECCV 2016 Shape from Water，15 页作者原文与 Crossref 卷页一致；Fig. 5 作者项目透明 PNG 与 PDF 第 10 页（印刷页 644）一致，四子图全部保留。这是双波段水下测深相关研究，系统图不冒称完整算法。
+- TPAMI 后续同组水下测深正式卷年为 2021，43(8):2611–2622；2020 是在线先行。出版社 staging 原始 PDF 返回 418 HTML，保持候选，不能借用会议图。
+- HoloSpec 新查共同作者 web.ece.hku.hk/~elam/pub.html，只有不同 Snapshot HoloSpec 附件，没有 LPR 原稿。Hyper-LIFT 的 PubMed Fig. 2 图注确认光学系统；PMC 仍需 reCAPTCHA、Europe PMC API 500，未绕过验证，未新增图。
+- MGC2N 新查作者团队全部公开 repo，并检查两个未指定论文的代码仓库 README/树；分别是毕业论文代码和点云补全，不足以归属原稿。Single-view NIR-II FMT 通过后续 IJCAI STAR-Net 原文引文确认作者与 TCI 期刊，但未获得原稿附件；STAR-Net 的 spectral 指傅里叶频率，未纳入高光谱主库，图不替代 TCI。
+- PhotoniX 2024 串级单像素相机新来源已即时记入 survey.json 候选；待现有缺图补齐后核验全文与场所，不先扩充。
+
+新证据见 sources/water-depth-and-framework-retry-2026-10-06.json。下一步继续现有缺图的其他公开作者/机构入口，优先最新年份；已失败的同一入口没有新证据时不要重复请求。

@@ -75,3 +75,5 @@ VISAPP 2024 双相机融合已解决场所待核验；ISPRS Archives、JOSA A、
 本轮核验并逐篇补入 IGARSS 2016 的 Semantic Segmentation of Hyperspectral Images with the Fusion of LiDAR Data（Aytaylan、Yuksel）。作者公开四页正式会议全文与 Crossref 卷页、DOI 交叉确认；Fisher Vector 强度/高程 unary 和三维邻域 pairwise 服务于二维分类，归入相关研究。论文明确 pairwise 修改未带来显著额外提升，不能将整体增益全部归给三维距离。四页全部图表已目视检查，没有独立框架图；不能用 2019 IET 后续版本图替代。核验与原始 PDF 校验和见 `sources/semantic-hsi-lidar-review-2026-10-06.json`。
 
 IGARSS 2023 的 Coupled Graph Convolution Network for Cross-Scene Multispectral Point Cloud Classification 已补齐正式 DOI 10.1109/IGARSS52108.2023.10281816、四作者与 6258–6261 页，官方详情仅题名和报告信息，Crossref 无摘要。继续待原始摘要核验，不因二级索引摘要或接收目录直接收录。IGARSS 2025 Hypermesh 官方作者列表与 SPIE 同题论文不同，暂不合并两个场所或复用 SPIE DOI。
+
+补入已在上轮发现、已完成全文核验的 ECCV 2016 Shape from Water，并同步保存作者 Fig. 5 系统原图。两个近红外波段用于真实水下深度，标相关，不称高光谱采集；TPAMI 后续版 2020 在线先行与 2021 正式卷年分开，期刊候选图仍待取得。新增 PhotoniX 串级单像素光谱/飞行时间候选只记录、不展开；IJCAI STAR-Net 已读正式全文，其 spectral 指傅里叶频率，排除主库。用户要求现有补图优先，完成后继续扩充，每篇新增论文同时找框架图。证据见 `sources/water-depth-and-framework-retry-2026-10-06.json`。
