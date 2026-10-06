@@ -1,6 +1,6 @@
 # 框架图搜集交接
 
-用户于 2026-10-06 要求暂停，交给另一会话继续。当前 goal 已 paused；收到用户继续指令后再开展检索。本轮保存、检查与本地提交用于交接，不推送、不发布。
+用户已要求继续搜集现有论文框架图；任务进行中。仅本地保存、检查与 Git 提交，不推送、不发布。
 
 ## 目标与操作
 
@@ -10,10 +10,10 @@
 
 ## 权威状态
 
-- 172 篇：70 篇 verified、77 张图；30 篇 needs_access；4 篇 no_framework；68 篇 pending。
-- 2026–2021 年初查完整。2020 年已保存 Dual-cue MPS（3 张）、Optimized MS-LiDAR CNN（1 张）、Vertical Canopy Traits（1 张）。
-- 下一步先处理 2020 年 `iisu-dsm`、`tmde-mslidar`、`vertical-chl-maize-hsl`，然后 2019 年及更早。三篇已有 pending 尝试记录，不能误判为已完成。
-- IISU：作者 PDF https://arxiv.org/pdf/2007.11770 已取得，Fig.1 为光路示意，仍需完整人工核验能否作为框架图。
+- 172 篇：77 篇 verified、85 张图；30 篇 needs_access；4 篇 no_framework；61 篇 pending。
+- 2026–2021 年初查完整。2020 年 4 篇有图；IISU 新增作者预印本 Figure 1 光路模型示意，明确不是完整算法流程。
+- 2019 年 6 篇全部有图：H-LF Stereo、Pro-Cam SSfM、F-cycleGAN、LESS、HSPC Generation（2 张）、HVLL HDSM。后三篇采用出版社原始图，图号来自 grN 资源标识，未编造 PDF 页码。
+- 下一步先处理 2020 年 `tmde-mslidar`、`vertical-chl-maize-hsl`，然后 2018 年及更早，并重试最新年份缺图。两个 pending 保留未完成状态。
 - TMDE：ResearchGate 请求全文，IEEE 文档 8887512 无全文，开放索引无 OA PDF。
 - Maize vertical chlorophyll：ResearchGate 请求全文，IEEE 文档 9079454 无全文，开放索引无 OA PDF。
 - 随后重试最新年份缺图项；全部来源与失败原因以 `research/figures.json` 为准。任务未完成。

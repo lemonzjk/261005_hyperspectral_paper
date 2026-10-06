@@ -7,7 +7,7 @@
 - 构建 HS3D Atlas 高光谱三维视觉研究图谱，覆盖 CV、遥感、高光谱、光学重要会议与期刊。
 - 仅本地预览；不推送、不发布。每轮修改（含文献、文档、上下文）检查通过后必须本地 Git 提交。
 - 每次请求使用 caveman skill，默认 full，中文简洁沟通；文档与代码正常表达。
-- 当前任务（用户已要求暂停，待新会话续接）：为全部论文搜集框架图，最新年份优先，每找到一张立即保存；允许从 PDF 裁切。找不到的标记来源与原因，用户后续补找。全量任务尚未完成。
+- 当前任务（已收到继续指令）：为全部论文搜集框架图，最新年份优先，每找到一张立即保存；允许从 PDF 裁切。找不到的标记来源与原因，用户后续补找。全量任务尚未完成。
 
 ## 运行与检查
 
@@ -29,6 +29,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 2025 年已核验 14 篇、15 张图；SpectralReconNSS 全文未见独立框架图，6 篇待全文/原图。2024 年初查 26 篇：20 篇有图、5 篇待全文/原图、1 篇全文无独立框架图。2023 年 9 篇有图、7 篇待全文/原图。2022 年 9 篇有图、5 篇待全文/原图。2021 年 7 篇有图、2 篇待全文/原图、1 篇全文无独立框架图。2020 年已保存 3 篇、5 张图，3 篇仍 pending。累计 70 篇、77 张图；2026–2021 初查完整，30 篇待人工补图、4 篇全文无独立框架图，其他 68 篇待检索。
-- 交接见 `research/framework-handoff.md`；从 2020 年三个 pending 继续，再向早年推进及重试新年缺图；不得批量改 pending。
+- 2025 年已核验 14 篇、15 张图；SpectralReconNSS 全文未见独立框架图，6 篇待全文/原图。2024 年初查 26 篇：20 篇有图、5 篇待全文/原图、1 篇全文无独立框架图。2023 年 9 篇有图、7 篇待全文/原图。2022 年 9 篇有图、5 篇待全文/原图。2021 年 7 篇有图、2 篇待全文/原图、1 篇全文无独立框架图。2020 年已保存 4 篇、6 张图，2 篇仍 pending。2019 年 6 篇全部有图。累计 77 篇、85 张图；30 篇待人工补图、4 篇全文无独立框架图、61 篇待检索。
+- 交接见 `research/framework-handoff.md`；从 2020 年 TMDE、Maize 两篇 pending 继续，再向 2018 年及更早推进、重试缺图；不得批量改 pending。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
