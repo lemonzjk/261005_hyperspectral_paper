@@ -7,11 +7,11 @@
 - 构建 HS3D Atlas 高光谱三维视觉研究图谱，覆盖 CV、遥感、高光谱、光学重要会议与期刊。
 - 仅本地预览；不推送、不发布。每轮修改（含文献、文档、上下文）检查通过后必须本地 Git 提交。
 - 每次请求使用 caveman skill，默认 full，中文简洁沟通；文档与代码正常表达。
-- 先补齐现有论文框架图，再扩充文献；以后新增论文同步查图。最新年份优先，逐张即时保存，允许 PDF 裁切；失败记录来源和原因供人工补找。
+- 用户已要求暂停并交接；后续扩充 CV/高光谱重要会议期刊与 arXiv 文献，新增论文同步查图。逐张保存，允许 PDF 裁切；失败保留原因。
 
 ## 运行与检查
 
-- 目录：`/data1/vad/data1/zjk/261005_hyperspectral_paper`；远程 GitHub lemonzjk/261005_hyperspectral_paper。
+- 目录：`/data1/vad/data1/zjk/261005_hyperspectral_paper`。
 - React 19、TypeScript、Vite 7；Node.js 22.12+。安装 `npm ci`。
 - 预览 `npm run dev -- --port 5173`，`http://localhost:5173/`；远程需转发端口；新会话确认服务，本机请求绕过 proxy。
 - `npm run validate` 检查数据、框架图校验和与上下文；网站修改运行 `npm run build`，交互变更浏览器检查。
@@ -29,5 +29,5 @@
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx`、`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
 - 框架图累计 122 篇、143 张；43 篇需全文/人工补图、9 篇全文无独立框架。Fourier Fig.6、HoloSpec Fig.1 原图受限；ACFFN 作者目录有 49 篇其他 PDF，无同篇附件；两篇新融合候选留 survey 待核验。开放标签不代表取得原图，不据作者章节判正式论文无框架。
-- 交接见 `research/framework-handoff.md`；初查全部年份后，优先从最新年份重试 43 篇缺图，寻找作者/机构副本；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
+- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；174 篇全部初查，无 pending；43 篇缺图仍可重试。新发现 HS-3D-NeRF、光谱 Gaussian 等线索待核验，尚未入库。几何示意注明不是完整流程，无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 扫描候选待核验，其中 CGCN 2023 已补 DOI、作者和卷页但缺原始摘要、专业期刊与引文追溯未完成；Eradiate（GMD 2026）留背景，PhotoniX 2024 串级单像素相机留候选。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
