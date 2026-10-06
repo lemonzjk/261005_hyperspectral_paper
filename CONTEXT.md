@@ -7,7 +7,7 @@
 - 构建 HS3D Atlas 高光谱三维视觉研究图谱，覆盖 CV、遥感、高光谱、光学重要会议与期刊。
 - 仅本地预览；不推送、不发布。每轮修改（含文献、文档、上下文）检查通过后必须本地 Git 提交。
 - 每次请求使用 caveman skill，默认 full，中文简洁沟通；文档与代码正常表达。
-- 文献框架图收集未完成：最新年份优先，逐张即时保存，允许 PDF 裁切；失败记录来源和原因供人工补找。本轮优先改善图谱直观性；文献搜图后续继续。
+- 文献框架图收集未完成：最新年份优先，逐张即时保存，允许 PDF 裁切；失败记录来源和原因供人工补找。图谱紧凑矩阵已提交；继续补搜缺图论文。
 
 ## 运行与检查
 
@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 118 篇、138 张；47 篇需全文/人工补图、7 篇全文无独立框架图，所有 172 篇已完成初查，补图尚未完成。2004 年 HYDICE 共线/共面模型、2001 年 SENSOR 完整模拟流程、1996 年 DART 完整计算与场景矩阵有图。SENSOR 为出版社低分辨率原图，保留原尺寸。Linked RTM 旧版原图仅模拟/反演结果，全文仍缺；Raytran JRC 无附件，FLIGHT Cronfa SSL/超时、RG 403。来源限制见交接。
+- 框架图累计 118 篇、138 张；47 篇需全文/人工补图、7 篇全文无独立框架图，所有 172 篇已初查，补图尚未完成。缺图重试：HoloSpec Figure 1 图页已定位，原图 403；DWF 精确 SSRN PDF 403；Hyper-LIFT 作者博士论文 PDF 202 空内容、Europe PMC API 500；DART 2014 TU Wien 仅元数据。Hylite 仓库通用 workflow 图不是论文 Figure 1，未替代。
 - 交接见 `research/framework-handoff.md`；初查全部年份后，优先从最新年份重试 47 篇缺图，寻找作者/机构副本；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
-- 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
+- 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成；Eradiate（GMD 2026）新增为背景与引文入口，未加入主库。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

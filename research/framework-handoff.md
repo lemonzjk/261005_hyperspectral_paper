@@ -79,3 +79,14 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - DART 1996：HAL/IRD 作者全文 https://ird.hal.science/ird-00405222v1/file/RSE1996B_Gastellu.pdf 成功下载，27 页含 HAL 封面；PDF 第 7 页 Figure 2 完整迭代计算结构、第 4 页 Figure 1 场景单元矩阵与照明均保存。修正裁切以保留 Iteration 左侧标签，排除残缺图注。
 - Raytran：JRC16024 出版页无期刊附件；RAMI 模型页所见 DPR-EC-21872.pdf 是隐私声明，非论文，不能使用。期刊 DOI/IEEE662732 入口要求机器人验证，记录 needs_access。不要拿其他 Raytran 论文或模型网站场景结果当原论文框架。
 - FLIGHT：作者官网确认 https://cronfa.swansea.ac.uk/Record/cronfa16791 ，新旧域名均 SSL EOF、浏览工具超时；ResearchGate 作者公开上传页本地 403。未取得原始全文，记录 needs_access。
+
+## 缺图重试与新增检索入口（2026-10-06）
+
+- HoloSpec（LPR 2026）：作者 ResearchGate Figure 1 独立图页已定位，图注确认包含装置、完整四维重建流程与棱镜色散模型。公开下载及原图请求均为 403；HKU ISL 当前论文目录未列出本篇。详见 figures.json 精确图页，不能用 J. Phys. Photonics 的 Snapshot HoloSpec 替代。
+- DWF（TGRS 2025）：新增精确 SSRN Delivery PDF 地址，仍为 403 HTML。未取得图像，不提高核验状态。
+- Hyper-LIFT（Optica 2021）：UCLA 2023 博士论文 Multi-dimensional Optical Imaging 包含对应章节，但公开 PDF 返回 202 空内容；Europe PMC fullTextXML API 返回 500。论文稿与博士论文图号须分别核对。
+- DART forest simulation（RSE 2014）：TU Wien reposiTUm 条目 20.500.12708/156727 可访问并确认 DOI、七位作者、卷页，但没有全文附件。
+- Hylite（TGRS 2022）：作者仓库 workflow.png 可取得；已目视检查，README 标为工具箱总体预处理工作流，并非论文 Figure 1 的照明概念模型。未将其计为该论文框架。
+- 扩展调研发现 Eradiate（GMD 2026，DOI 10.5194/gmd-19-4289-2026）：出版社全文公开，Mitsuba 3 派生光谱三维辐射传输与真实三维冠层直接相关。已即时记入 survey.json 背景候选及引文入口；GMD 场所尚未列为主收录目标，未无依据称顶刊，也未加入网站主库。大气建模是一维，不可写成完整三维大气。
+
+本次没有获得新增论文框架图：仍为 118 篇、138 张；47 篇缺全文或原图，7 篇已核验全文无独立框架。下一轮避开已重复失败的同一入口，优先核查作者新的机构附件、准确公开图页，或继续核验专业期刊/IGARSS 待选文献。
