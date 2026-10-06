@@ -172,3 +172,15 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - Dimensional Dilemma 2024：冰岛大学另一语言条目和 AI4RS 作者会议列表无公开 PDF；准确 RG 383806681 为 Request full-text。未发送作者请求。
 
 证据、PDF 哈希和版本范围见 sources/imec-bundles-and-author-theses-2026-10-06.json。下一步继续其他缺图论文的新作者/机构附件；现有章节可辅助对照正式原图，不能替换图号或扩大无图结论。任务仍未完成。
+
+
+## TPAMI 作者目录与 HyLite 精确原图入口（2026-10-06）
+
+仍为 174 篇、121 篇有 142 张图；44 needs_access、9 no_framework。本轮实际检查新作者目录及原始下载地址，没有取得可保存图片。
+
+- Reliability-Aware PA（TPAMI 2023）：共同作者 Art Subpa-asa 的准确站点为 asubpa.github.io/profile/，根站是 404。个人出版页确有期刊同名条目，但没有原稿链接；CVF 链接位于 CVPR 2021 不同版本条目下。公开 GitHub repo 是 asubpa/profile，master 全树成功返回；只有网页、CV、兴趣图片和 pub_img 缩略图，未见 TPAMI 原稿。PA.png 无可靠期刊版本归属，不用它填期刊图。
+- HyLite Illumination 2022：OpenAlex 新给出的正式 PDF 为 IEEE /ielx7/36/9633014/09507524.pdf，实际返回 418 HTML。原始 Fig. 1 页面与公开原文图注一致，明确为复杂几何场景的太阳/天空光、遮阴/阴影及斜视照明分量模型。真实 Download directly 的 AS:1053611517812736@1628211969966 PNG 返回 403 HTML，未保存成图。此前工具箱 workflow.png 仍不能替代它。
+- HZDR 普通 Cms 页面不执行检索；从公开表单找到实际 !ContMan.Search.Data 查询，200 返回无结果并注明完整检索需要登录；专门 !Publications?pSelTitle=Illumination+Correction 返回 403。没有登录或声称取得机构全文。
+- HoloSpec 2026：OpenAlex 200 仅提供 CC-BY DOI 位置，没有 PDF；不将 OA 元数据当成功下载。新找到同组 DH 2026 M4A.4（DOI 10.1364/DH.2026.M4A.4）不同会议论文，未借其图替代 LPR 71516。
+
+本轮实际响应、作者仓库全树及原图地址见 sources/author-profile-and-hylite-original-downloads-2026-10-06.json。下一步继续其余缺图论文的新作者/机构全文路线；没有新附件证据时不重复上述拒绝地址。全部缺图补齐及完整文献调研仍未完成。
