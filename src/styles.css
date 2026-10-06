@@ -101,7 +101,7 @@
 .overview-route:last-child{border-bottom:0}
 .overview-route-name{display:flex;align-items:flex-start;gap:10px;padding:23px 14px;background:color-mix(in srgb,var(--route) 6%,white);border-left:3px solid var(--route)}
 .overview-route-name>span{color:var(--route);font:11px monospace;padding-top:3px}
-.overview-route-name strong{font-size:14px;font-weight:600;line-height:1.6;color:#334e42}
+.overview-route-name strong{display:block;font-size:14px;font-weight:600;line-height:1.6;color:#334e42}
 .overview-route-name p{font-size:11px;line-height:1.7;color:#809087;margin-top:8px}
 .overview-route-name small{display:inline-block;font-size:10px;color:var(--route);margin-top:12px;background:white;padding:4px 7px;border-radius:4px}
 .overview-cell{border-left:1px solid #edf2ee;padding:20px 10px 18px;min-width:0;background:linear-gradient(180deg,color-mix(in srgb,var(--route) 3%,white),white 95px)}
@@ -137,3 +137,19 @@
  .overview-footer{font-size:10px}
 }
 @media(max-width:480px){.overview-cell-papers{grid-template-columns:1fr}.overview-paper{padding:8px 3px}.overview-paper span{font-size:11px}}
+
+/* A compact default reveals every direction without hiding the optional full list. */
+.overview-density{display:flex;border:1px solid #dfe8e3;background:#f1f5f3;padding:3px;border-radius:7px;gap:2px}
+.overview-actions .overview-density button{border:0;background:transparent;padding:7px 10px;border-radius:4px;color:#799087}
+.overview-actions .overview-density button[aria-pressed=true]{background:white;color:#315f4d;box-shadow:0 1px 4px #29433412}
+.overview-cell-heading>button{font-size:10px;color:var(--route);background:transparent;padding:0;min-height:12px}
+.overview-cell-heading>button:disabled{opacity:1}
+.overview-cell-heading>button:not(:disabled):hover{text-decoration:underline}
+.is-glance .overview-route{min-height:90px}
+.is-glance .overview-route-name{padding:17px 14px}
+.is-glance .overview-route-name p{display:none}
+.is-glance .overview-route-name small{margin-top:5px;padding:0;background:transparent}
+.is-glance .overview-cell{padding-top:14px;padding-bottom:12px}
+.is-glance .overview-cell-heading{margin-bottom:5px;padding-top:6px}
+.is-glance .overview-paper{padding-top:3px;padding-bottom:3px}
+@media(max-width:900px){.is-glance .overview-route-name{padding:16px}.is-glance .overview-cell{padding:8px 15px 12px 30px}}
