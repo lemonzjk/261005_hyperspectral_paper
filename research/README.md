@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 168 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 172 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -65,3 +65,9 @@ VISAPP 2024 双相机融合已解决场所待核验；ISPRS Archives、JOSA A、
 本轮补入 9 篇：Nature Photonics 多光谱反射矩阵、Nature Communications 双色 Alpha-LFM 和体反射矩阵；TOG 半透明材料光谱参数测量与五波段颜料复现；RSE Sierra 生物量/胁迫、CAO-2 AToMS、CAO–AVIRIS 入侵树种和银杏三维黄酮指数。CAO-2 属于真实三维结构与成像光谱的联合采集，1064 nm 双激光本身不是高光谱 LiDAR；银杏点云性状仍受被动光谱冠层表面观测限制。显微结构恢复没有逐体素材料光谱时标相关研究；均匀材料参数空间的“3D”不等于 xyz 几何。
 
 证据与正式元数据保存在 `sources/spectral-material-ecosystem-review-2026-10-06.json`。TOG 2017 Spectral Tracking 原文明确所有实验仅 RGB，留体渲染背景；TOG 2013 Material Dictionaries 的三个 RGB 激光波长反演也留背景。CGF 2020 材料光学采集综述提供颜色/波长分类和引文链，CAO 2007 原始系统发表于 Journal of Applied Remote Sensing，ISRSE 2011 模型参数研究为会议稿，均单列背景，不误标 RSE/ISPRS JPRS。下一步核验 RSE 2024 小麦三维光合性状，继续查目标场所逐年目录及相关引文链。
+
+本轮新增小麦三维光合性状（RSE 2024，多光谱相关）、Uis 锂矿露头 hypercloud（RSE 2022）、Hylite 三维露头光照校正（TGRS 2022）及视觉惯性 SLAM 辅助高光谱推扫重建（IGARSS 2025）。Uis 全文明确使用 SIFT/PnP/RANSAC 将光谱反投影至摄影测量点云，实验室 LWIR 不可写成野外 LWIR。Hylite 正式期刊全文经公开镜像与作者代码文档核验，IEEE 直接 PDF 请求失败。SLAM 原始机构摘要证明实际使用三维几何和轨迹，但手持验证不等于完成无人机战场测试。证据见 `sources/outcrop-plant-slam-review-2026-10-06.json`。
+
+`discover_igarss.py` 新增官方接收目录题名扫描：2023 年 2,859 个、2025 年 2,990 个题名，分别得到 17、20 个关键词命中；其中 2 个已入库，其余 35 个先记待范围核验。完整题名与来源哈希见 `sources/igarss-title-scan-2026-10-06.json`。接收目录不等于最终正式发表证明，关键词漏检与误检仍需逐篇阅读解决，其他年份未覆盖。运行：`python research/discover_igarss.py 2023 2025`；依赖 requests 与 beautifulsoup4。
+
+已区分 IJRS 2013 近距离地质流程、Frontiers 2021 DHPC、Remote Sensing 2013 DART 小波反演和 ISPRS Archives 2016 综述的真实场所；它们不因被顶刊引用就算顶刊。ISPRS JPRS 2026 ITCMNet 仅用 RGB，排除；分层 SIF 与 SCOPE 2.0 工作暂留范围背景。OSTI 检索到的 PDF 是引用目标 SIF 论文的另一项研究，记录检索错配，不用于提升核验等级。下一步优先读新增 IGARSS 光谱点云、波形和几何候选，核对其 DOI、原始摘要及与期刊版本的关系。
