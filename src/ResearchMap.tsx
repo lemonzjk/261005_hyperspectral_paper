@@ -87,7 +87,7 @@ export function ResearchMap({ papers, onSelect }: { papers: Paper[]; onSelect: (
     <div className="timeline-toolbar">
       <div><strong>研究时间轴</strong><span>年份横轴 · 方向线路 · 论文站点</span></div>
       <div className="timeline-controls" role="group" aria-label="时间轴视图控制">
-        <button onClick={() => { setExpanded(false); setDetailed(false); }}>返回一屏总览</button>
+        <button onClick={() => { setExpanded(false); setDetailed(false); }}>返回论文总览</button>
         <button aria-label="缩小时间轴" disabled={zoom <= .05} onClick={() => changeZoom(1 / 1.25)}>−</button>
         <button aria-label="恢复原始大小" onClick={() => { overview.current = false; setZoom(1); }}>{Math.round(zoom * 100)}%</button>
         <button aria-label="放大时间轴" disabled={zoom >= 2.5} onClick={() => changeZoom(1.25)}>+</button>
