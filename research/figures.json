@@ -4271,12 +4271,17 @@
     },
     {
       "paperId": "linked-rtm-canopy",
-      "status": "pending",
+      "status": "needs_access",
       "attempts": [
         {
           "date": "2026-10-06",
           "url": "https://citeseerx.ist.psu.edu/document?doi=cdb11d543e7064625c5a4861b282ba72f5306f31&repid=rep1&type=pdf",
           "note": "初步定位到同名 11 页 article-in-press，但本地下载端点返回 404。出版社 S0034425706003506 gr1–3_lrg.jpg 均 404；尚需检查作者 UZH/NASA 原文或旧版图片格式，仍在检索，不归入无法访问结论。"
+        },
+        {
+          "date": "2026-10-06",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0034425706003506",
+          "note": "已重查 UZH 作者发表列表：标有 PDF 文字但没有附件链接；Citeseer 同名 11 页 article-in-press 本地 404，浏览工具超时。出版社旧版 gr1.jpg/gr2.jpg/gr3.jpg 可下载，但分别为树模型与模拟观测、结构反演回归和叶参数反演结果；高清 jpg 及 gif 端点 404。没有方法图注/全文，不能以模拟或回归图代替独立框架；需要作者全文或人工补图。"
         }
       ],
       "year": 2007,
@@ -4318,40 +4323,163 @@
     },
     {
       "paperId": "linear-feature-hydice-restitution",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 2004,
       "title": "Extraction, modelling, and use of linear features for restitution of airborne hyperspectral imagery",
-      "paperUrl": "https://www.sciencedirect.com/science/article/abs/pii/S0924271603000613"
+      "paperUrl": "https://www.sciencedirect.com/science/article/abs/pii/S0924271603000613",
+      "figures": [
+        {
+          "sourceUrl": "https://engineering.purdue.edu/~bethel/extmoduse.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "HYDICE 推扫成像的共线几何模型：瞬时透视中心、扫描线像向量与地面点构成共线关系，结合逐行外方位参数进行机载高光谱影像几何恢复。图示为传感器几何子模型，不是完整线特征提取与平差流程。",
+          "verificationNote": "核对原文 PDF 第 2 页 Figure 1 图注和图中输入、模块、箭头与输出；保留完整图，未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 220,
+            "pixelBox": [
+              850,
+              1410,
+              1560,
+              1990
+            ]
+          },
+          "path": "figures/linear-feature-hydice-restitution/framework-collinearity.png",
+          "width": 710,
+          "height": 580,
+          "verifiedAt": "2026-10-06",
+          "sha256": "63ec7e6edef9859782b7e186d6543ab2eb9fa481896da451d0fb06ae7b4a3d6a",
+          "attribution": "Changno Lee, James S. Bethel · ISPRS JPRS 2004"
+        },
+        {
+          "sourceUrl": "https://engineering.purdue.edu/~bethel/extmoduse.pdf",
+          "figureLabel": "Figure 4",
+          "caption": "线特征约束的共面几何模型：地面直线向量 L1、透视中心至地面端点的向量 L2 和像向量 L3 位于同一平面，用于建立推扫高光谱影像的线特征观测方程。图示为共面约束子模型，不是完整几何校正框架。",
+          "verificationNote": "核对原文 PDF 第 5 页 Figure 4 图注和图中输入、模块、箭头与输出；保留完整图，未重绘。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 220,
+            "pixelBox": [
+              850,
+              1410,
+              1570,
+              1990
+            ]
+          },
+          "path": "figures/linear-feature-hydice-restitution/framework-coplanarity.png",
+          "width": 720,
+          "height": 580,
+          "verifiedAt": "2026-10-06",
+          "sha256": "22c0c50e0e10a735d0750ac0a2235ac06e9d894868813773b1c7cfd42041f525",
+          "attribution": "Changno Lee, James S. Bethel · ISPRS JPRS 2004"
+        }
+      ]
     },
     {
       "paperId": "sensor-spectral-simulator",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 2001,
       "title": "SENSOR: a tool for the simulation of hyperspectral remote sensing systems",
-      "paperUrl": "https://www.sciencedirect.com/science/article/pii/S0924271601000223"
+      "paperUrl": "https://www.sciencedirect.com/science/article/pii/S0924271601000223",
+      "figures": [
+        {
+          "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0924271601000223",
+          "imageUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0924271601000223-gr1.jpg",
+          "figureLabel": "Figure 1",
+          "caption": "SENSOR 端到端高光谱遥感模拟框架：地形/表面、太阳/航线和标定输入光线追踪模块；反射光谱、气象参数与大气查找表输入辐射传输模块；传感器光学/电子参数与传感器处辐亮度共同生成数字光谱和图像立方体。",
+          "verificationNote": "核对同名期刊论文出版社 gr1 原图的输入、三个模块、连接及输出，保存全部图，未重绘。图号依据出版社 gr1 标识；本站图注为人工概述。高清 gr1_lrg 端点尚未取得，当前保存出版社原始 jpg 分辨率，不做插值放大。作者 PDF 本地请求受安全策略限制，未据此声称全文核验。",
+          "path": "figures/sensor-spectral-simulator/framework-simulator.jpg",
+          "width": 467,
+          "height": 326,
+          "verifiedAt": "2026-10-06",
+          "sha256": "623f891d2977c599ccdda0416a6e0a377fcef4777c1a2c1856ac35d63f9a78a0",
+          "attribution": "Anko Börner, Lorenz Wiest, Peter Keller, Ralf Reulke, Rolf Richter, Michael Schaepman, Daniel Schläpfer · ISPRS JPRS 2001"
+        }
+      ]
     },
     {
       "paperId": "raytran-original",
-      "status": "pending",
-      "attempts": [],
+      "status": "needs_access",
+      "attempts": [
+        {
+          "date": "2026-10-06",
+          "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC16024",
+          "note": "JRC 官方出版条目没有期刊全文附件。RAMI Raytran 模型页的期刊入口跳转 DOI；另一个可下载 PDF DPR-EC-21872 实际是 RAMI 隐私声明，已检查标题，不是论文，不使用。IEEE 662732 正文入口要求机器人验证，未绕过。尚无可核验原始框架图，需要作者期刊副本或人工补图。"
+        }
+      ],
       "year": 1998,
       "title": "Raytran: a Monte Carlo ray-tracing model to compute light scattering in three-dimensional heterogeneous media",
       "paperUrl": "https://publications.jrc.ec.europa.eu/repository/handle/JRC16024"
     },
     {
       "paperId": "dart-original",
-      "status": "pending",
+      "status": "verified",
       "attempts": [],
       "year": 1996,
       "title": "Modeling radiative transfer in heterogeneous 3-D vegetation canopies",
-      "paperUrl": "https://doi.org/10.1016/0034-4257(95)00253-7"
+      "paperUrl": "https://doi.org/10.1016/0034-4257(95)00253-7",
+      "figures": [
+        {
+          "sourceUrl": "https://ird.hal.science/ird-00405222v1/file/RSE1996B_Gastellu.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "DART 三维场景单元矩阵与照明表示：冠层、间隙、树干、草地、土壤与水体离散为单元，图示太阳和大气辐射、单元间传输及出射方向。图为场景与传输几何，完整计算流程另见 Figure 2。",
+          "verificationNote": "核对原文 PDF 第 4 页 Figure 1 图注和图中输入、模块、箭头与输出；保留完整图，未重绘。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 220,
+            "pixelBox": [
+              120,
+              220,
+              1730,
+              1230
+            ]
+          },
+          "path": "figures/dart-original/framework-scene.png",
+          "width": 1610,
+          "height": 1010,
+          "verifiedAt": "2026-10-06",
+          "sha256": "acc8fcee1edf13d4eb0c9827f97c218ce57ac0077d1037d160fff060b76e2862",
+          "attribution": "J. P. Gastellu-Etchegorry, V. Demarez, V. Pinel, F. Zagolski · RSE 1996"
+        },
+        {
+          "sourceUrl": "https://ird.hal.science/ird-00405222v1/file/RSE1996B_Gastellu.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "DART 原始模型计算框架：三维单元矩阵与参数接受太阳辐射，先计算直射照明和一次散射，再结合大气辐射迭代多次散射、保存能量系数，输出各单元能量状态、场景 BRDF 及方向图像。",
+          "verificationNote": "核对原文 PDF 第 7 页 Figure 2 图注和图中输入、模块、箭头与输出；保留完整图，未重绘。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 220,
+            "pixelBox": [
+              880,
+              225,
+              1730,
+              890
+            ]
+          },
+          "path": "figures/dart-original/framework-model.png",
+          "width": 850,
+          "height": 665,
+          "verifiedAt": "2026-10-06",
+          "sha256": "416bcda0c5ce539b77beafcacaeaf395d2d3172dc94ec921ade6b11a06587cbc",
+          "attribution": "J. P. Gastellu-Etchegorry, V. Demarez, V. Pinel, F. Zagolski · RSE 1996"
+        }
+      ]
     },
     {
       "paperId": "flight-original",
-      "status": "pending",
-      "attempts": [],
+      "status": "needs_access",
+      "attempts": [
+        {
+          "date": "2026-10-06",
+          "url": "https://cronfa.swansea.ac.uk/Record/cronfa16791",
+          "note": "已从作者 Swansea 官方发表列表确认 Cronfa16791 为 North 1996 原始 FLIGHT 论文；swansea.ac.uk 与旧 swan.ac.uk 仓库本地请求均 SSL EOF，浏览工具超时。ResearchGate 同名作者上传全文页面本地返回 403，未绕过限制。RAMI/ROMC 链接仅指向 DOI，未取得原文或框架图，需作者 PDF/人工补图。"
+        }
+      ],
       "year": 1996,
       "title": "Three-dimensional forest light interaction model using a Monte Carlo method",
       "paperUrl": "https://www.researchgate.net/publication/3201565_Three-dimensional_forest_light_interaction_model_using_a_Monte_Carlo_method"

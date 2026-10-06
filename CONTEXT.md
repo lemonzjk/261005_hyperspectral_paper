@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 115 篇、133 张；44 篇需全文/人工补图、7 篇全文无独立框架图、6 篇待检索。2026–2008 初查完整。2008 年 CAO 入侵植物检测和复杂森林融合分类完整流程已保存；LVIS–AVIRIS Inventory 缺全文。2009 年 MSCL 模拟仅取得波形/结果候选，需方法与图注，暂不替代框架。2007 年 Non-rigid Color PS 采集与标定装置有图；Linked RTM 同名预印本下载 404，仍在寻找作者副本。来源限制见交接。
-- 交接见 `research/framework-handoff.md`；从 2007 年 Linked RTM 未完成项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
+- 框架图累计 118 篇、138 张；47 篇需全文/人工补图、7 篇全文无独立框架图，所有 172 篇已完成初查，补图尚未完成。2004 年 HYDICE 共线/共面模型、2001 年 SENSOR 完整模拟流程、1996 年 DART 完整计算与场景矩阵有图。SENSOR 为出版社低分辨率原图，保留原尺寸。Linked RTM 旧版原图仅模拟/反演结果，全文仍缺；Raytran JRC 无附件，FLIGHT Cronfa SSL/超时、RG 403。来源限制见交接。
+- 交接见 `research/framework-handoff.md`；初查全部年份后，优先从最新年份重试 47 篇缺图，寻找作者/机构副本；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

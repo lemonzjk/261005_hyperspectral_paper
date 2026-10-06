@@ -68,3 +68,14 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - LVIS–AVIRIS Inventory：UNH 573 条目无 Download；期刊正文入口只有摘要及 Purchase PDF。gr1/2/4–8 是研究区、波形指标和清查结果，gr3 404；保留 needs_access，不作全文无框架结论。
 - Non-rigid Color PS：作者 Stenger PDF https://bjornstenger.github.io/papers/hernandez_iccv2007.pdf ，第 1 页 Figure 1 采集示意与标定板完整两子图已保存；其他 Figures 2–5 是重建/追踪展示。Carlos Hernandez 链接 web 可读但本地 406，Stenger 副本可下载。
 - Linked RTM Canopy（pending）：ScienceDirect PII S0034425706003506；搜索得到同名 11 页 article-in-press https://citeseerx.ist.psu.edu/document?doi=cdb11d543e7064625c5a4861b282ba72f5306f31&repid=rep1&type=pdf ，下载 404；gr1–3_lrg.jpg 404。下一轮先找 UZH/NASA 作者全文与旧图格式，不要用同作者 SVM 林火分类会议论文代替。
+
+## 2026-10-06：早期论文初查完成
+
+118 篇有图、138 张；47 needs_access、7 no_framework、0 pending。所有现有论文均已初查，不等于框架图收集完成。后续优先从最新年份重试缺图，继续找作者/机构全文。
+
+- Linked RTM：旧版 gr1.jpg、gr2.jpg、gr3.jpg 可下载，但为 ZELIG 模拟与反演结果，不用作框架；UZH 列表 PDF 只是文字、没有附件，Citeseer 404/超时。记录 needs_access。
+- HYDICE Linear EO：作者 Purdue https://engineering.purdue.edu/~bethel/extmoduse.pdf 12 页原文，第 2 页 Figure 1 共线几何、第 5 页 Figure 4 共面约束已保存。两图标注为几何子模型，未声称完整算法流程。
+- SENSOR：出版社 https://ars.els-cdn.com/content/image/1-s2.0-S0924271601000223-gr1.jpg 为完整三模块框架，保留原始 467×326 像素，不插值放大。作者 https://www.daniel-schlaepfer.ch/pdf/2001/ISPRS_2001_sensor.pdf 浏览工具可读 15 页、本地下载受安全策略限制返回 510；框架图源为期刊原图，图号依据 gr1 标识。
+- DART 1996：HAL/IRD 作者全文 https://ird.hal.science/ird-00405222v1/file/RSE1996B_Gastellu.pdf 成功下载，27 页含 HAL 封面；PDF 第 7 页 Figure 2 完整迭代计算结构、第 4 页 Figure 1 场景单元矩阵与照明均保存。修正裁切以保留 Iteration 左侧标签，排除残缺图注。
+- Raytran：JRC16024 出版页无期刊附件；RAMI 模型页所见 DPR-EC-21872.pdf 是隐私声明，非论文，不能使用。期刊 DOI/IEEE662732 入口要求机器人验证，记录 needs_access。不要拿其他 Raytran 论文或模型网站场景结果当原论文框架。
+- FLIGHT：作者官网确认 https://cronfa.swansea.ac.uk/Record/cronfa16791 ，新旧域名均 SSL EOF、浏览工具超时；ResearchGate 作者公开上传页本地 403。未取得原始全文，记录 needs_access。
