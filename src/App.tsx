@@ -89,15 +89,11 @@ export default function App() {
       <a className="github-link" href={repo} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .8a11.3 11.3 0 0 0-3.57 22c.56.1.77-.24.77-.54v-2.1c-3.15.7-3.82-1.34-3.82-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.44-2.25 1.17-3.04-.12-.28-.51-1.44.11-3 0 0 .95-.3 3.11 1.16a10.8 10.8 0 0 1 5.66 0c2.16-1.46 3.1-1.16 3.1-1.16.63 1.56.24 2.72.12 3 .73.79 1.16 1.8 1.16 3.03 0 4.35-2.64 5.31-5.16 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.2.65.78.54A11.3 11.3 0 0 0 12 .8Z"/></svg>GitHub {arrow}</a>
     </header>
     <main id="main">
-      <section className="hero">
-        <div className="hero-copy"><span className="eyebrow"><i/> 高光谱 × 三维视觉研究图谱</span>
-          <h1>高光谱<span className="hero-multiply"> ×</span><br/>三维视觉。</h1>
-          <p className="hero-en">Beyond RGB. Into the spectral world.</p>
-          <p className="hero-description">从成像采集到场景重建，连接几何、光谱与材料。<br/>系统整理研究进展，让论文、方向与时间清晰相连。</p>
+      <section className="hero hero-scene-only">
+        <SpectralScene/>
+        <div className="hero-scene-footer"><p>在同一三维场景中，探索几何与光谱的联系。<small>持续更新 · {catalog.updatedAt}</small></p>
           <div className="hero-actions"><a className="hero-primary" href="#research" onClick={() => setView('atlas')}>探索研究时间轴 <span>↗</span></a><a className="hero-secondary" href="#research" onClick={() => setView('papers')}>浏览论文库 <span>→</span></a></div>
-          <div className="hero-bottom"><span className="edition"><i/> 开放图谱 · 持续更新</span><span className="last-updated">更新于 {catalog.updatedAt}</span></div>
         </div>
-        <div className="hero-visual"><SpectralScene/></div>
       </section>
       <div className="workspace" id="research">
         <section className="overview-strip" aria-label="收录概况"><div><b>{String(catalog.papers.length).padStart(2, '0')}</b><span>收录论文<small>CURATED PAPERS</small></span></div><div><b>{String(tracks.length).padStart(2, '0')}</b><span>研究方向<small>RESEARCH TRACKS</small></span></div><div><b>{String(catalog.datasets.length).padStart(2, '0')}</b><span>数据资源入口<small>DATA RESOURCES</small></span></div><p><span className="status-dot"/>系统调研 · 持续扩充<br/><small>正式发表优先，原始来源逐篇核验</small></p></section>

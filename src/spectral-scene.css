@@ -1,8 +1,8 @@
-/* The hero is a small, inspectable spatial-and-spectral scene. */
+/* A full-width first-screen scene links spatial geometry and spectral response. */
 .spectral-scene{min-width:0;background:#fff;border:1px solid #dce6df;border-radius:13px;overflow:hidden;box-shadow:0 12px 36px #31523c08}
 .spectral-scene-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:19px 22px 12px}
 .spectral-scene-header>div>span{font:8px monospace;letter-spacing:1.7px;color:#8ba391}
-.spectral-scene-header h2{font-size:15px;font-weight:550;letter-spacing:-.2px;color:#3c634d;margin:7px 0 0}
+.spectral-scene-header h1{font-size:15px;font-weight:550;letter-spacing:-.2px;color:#3c634d;margin:7px 0 0}
 .spectral-scene-badge{display:flex;align-items:center;gap:5px;white-space:nowrap;color:#8a9e8f;font-size:9px}
 .spectral-scene-badge>i{height:5px;width:5px;border-radius:50%;background:#81a68d}
 .spectral-scene-modes{display:flex;gap:3px;border:1px solid #e3ebe5;border-radius:6px;padding:3px;margin:0 22px;width:fit-content;background:#f6f9f7}
@@ -32,9 +32,33 @@
 .spectral-wavelength input{min-width:0;width:100%;height:3px;margin:0;accent-color:#5b906e;cursor:pointer}
 .spectral-wavelength-end{font-size:8px;white-space:nowrap;color:#a1b1a5}
 .spectral-scene-footnote{display:flex;justify-content:space-between;gap:10px;padding:12px 22px;color:#9bac9f;font-size:8px;border-top:1px solid #ebf0eb}
-@media(max-width:1100px){.spectral-scene-header{padding:16px 16px 12px}.spectral-scene-header h2{font-size:13px}.spectral-scene-badge{font-size:8px}.spectral-scene-modes{margin:0 16px}.spectral-scene-viewport>canvas{height:240px}.spectral-scene-caption{left:16px}.spectral-scene-rotation{padding-left:16px;padding-right:16px}.spectral-scene-analysis{padding:12px 16px 14px}.spectral-response-heading{flex-wrap:wrap}.spectral-wavelength{gap:8px}.spectral-wavelength-end{display:none}.spectral-scene-footnote{padding:10px 16px;font-size:7px}}
-@media(max-width:760px){.spectral-scene-viewport>canvas{height:250px}.spectral-scene-header h2{font-size:14px}.spectral-response-heading{gap:7px}.spectral-response-heading small{font-size:8px}.spectral-scene-rotation button{min-width:30px;min-height:30px}.spectral-scene-modes button{padding:8px 10px}.spectral-materials button{padding:5px}.spectral-scene-footnote{font-size:8px;flex-wrap:wrap}.spectral-response-chart{height:94px}}
+@media(max-width:1100px){.spectral-scene-header{padding:16px 16px 12px}.spectral-scene-header h1{font-size:13px}.spectral-scene-badge{font-size:8px}.spectral-scene-modes{margin:0 16px}.spectral-scene-viewport>canvas{height:240px}.spectral-scene-caption{left:16px}.spectral-scene-rotation{padding-left:16px;padding-right:16px}.spectral-scene-analysis{padding:12px 16px 14px}.spectral-response-heading{flex-wrap:wrap}.spectral-wavelength{gap:8px}.spectral-wavelength-end{display:none}.spectral-scene-footnote{padding:10px 16px;font-size:7px}}
+@media(max-width:760px){.spectral-scene-viewport>canvas{height:250px}.spectral-scene-header h1{font-size:14px}.spectral-response-heading{gap:7px}.spectral-response-heading small{font-size:8px}.spectral-scene-rotation button{min-width:30px;min-height:30px}.spectral-scene-modes button{padding:8px 10px}.spectral-materials button{padding:5px}.spectral-scene-footnote{font-size:8px;flex-wrap:wrap}.spectral-response-chart{height:94px}}
 .hero .hero-visual{pointer-events:auto;min-width:0}
 .spectral-wavelength input{appearance:none;background:linear-gradient(90deg,#8495bc,#84a7a0,#9eae8b,#b8a181);border-radius:3px}
 .spectral-wavelength input::-webkit-slider-thumb{appearance:none;width:13px;height:13px;border-radius:50%;background:#5b906e;border:2px solid white;box-shadow:0 0 0 1px #80a78c}
 .spectral-wavelength input::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#5b906e;border:2px solid white;box-shadow:0 0 0 1px #80a78c}
+/* Give the interactive scene the entire first-screen content area. */
+.hero.hero-scene-only{display:block;max-width:1246px;min-height:0;margin:22px auto 0;padding:0 0 14px;overflow:visible}
+.hero-scene-only .spectral-scene-header{padding:20px 28px 14px}
+.hero-scene-only .spectral-scene-header h1{font-size:23px;line-height:1.3;letter-spacing:-.5px;margin:7px 0 0;font-weight:550;color:#3c634d}
+.hero-scene-only .spectral-scene-modes{margin:0 28px}
+.hero-scene-only .spectral-scene-viewport>canvas{height:clamp(320px,42svh,480px)}
+.hero-scene-only .spectral-scene-caption{left:28px;top:18px}
+.hero-scene-only .spectral-scene-rotation{padding:0 28px 15px}
+.hero-scene-only .spectral-scene-analysis{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:4px 40px;padding:17px 28px 14px;align-items:center}
+.hero-scene-only .spectral-response-heading{grid-column:1/-1}
+.hero-scene-only .spectral-response-chart{height:100px;max-width:570px;margin:0}
+.hero-scene-only .spectral-wavelength{min-width:0;flex-wrap:wrap;gap:12px}
+.hero-scene-only .spectral-wavelength input{flex:1;min-width:130px;width:auto}
+.hero-scene-only .spectral-wavelength-end{display:block;width:100%;text-align:right}
+.hero-scene-only .spectral-scene-footnote{padding:11px 28px}
+.hero-scene-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 4px 0}
+.hero-scene-footer>p{font-size:11px;color:#869b8c;line-height:1.8;margin:0}
+.hero-scene-footer>p>small{display:block;font-size:9px;color:#a0afa4;margin-top:2px}
+.hero-scene-footer .hero-actions{margin:0;gap:10px}
+.hero-scene-footer .hero-actions a{padding:10px 14px;font-size:11px}
+@media(max-width:1350px){.hero.hero-scene-only{margin-left:50px;margin-right:50px}}
+@media(max-width:1100px){.hero.hero-scene-only{margin:20px 28px 0}.hero-scene-only .spectral-scene-analysis{grid-template-columns:minmax(0,1fr) minmax(210px,.8fr);gap:6px 22px}.hero-scene-only .spectral-scene-viewport>canvas{height:clamp(300px,40svh,440px)}}
+@media(max-width:760px){.hero.hero-scene-only{margin:14px 20px 0;padding:0 0 12px}.hero-scene-only .spectral-scene-header{padding:17px 16px 13px}.hero-scene-only .spectral-scene-header h1{font-size:18px;letter-spacing:-.3px}.hero-scene-only .spectral-scene-modes{margin:0 16px}.hero-scene-only .spectral-scene-viewport>canvas{height:clamp(230px,32svh,310px)}.hero-scene-only .spectral-scene-caption{left:16px;top:12px}.hero-scene-only .spectral-scene-rotation{padding:0 16px 12px}.hero-scene-only .spectral-scene-analysis{display:block;padding:13px 16px 16px}.hero-scene-only .spectral-response-chart{height:94px;max-width:none;margin:4px 0}.hero-scene-only .spectral-wavelength{flex-wrap:nowrap;gap:9px}.hero-scene-only .spectral-wavelength-end{display:none}.hero-scene-only .spectral-wavelength input{min-width:0;flex:1}.hero-scene-only .spectral-scene-footnote{padding:10px 16px;font-size:7px}.hero-scene-footer{display:block;padding:14px 0 0}.hero-scene-footer>p{font-size:10px}.hero-scene-footer>p>small{display:none}.hero-scene-footer .hero-actions{margin-top:10px;gap:9px}.hero-scene-footer .hero-actions a{font-size:10px;padding:10px 12px}}
+@media(max-width:360px){.hero.hero-scene-only{margin-left:16px;margin-right:16px}.hero-scene-only .spectral-scene-header h1{font-size:17px}}

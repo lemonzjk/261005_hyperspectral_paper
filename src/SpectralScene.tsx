@@ -101,7 +101,7 @@ export function SpectralScene() {
   }, [mode, wavelength, yaw]);
   const path = materials.map(item => ({ ...item, line: Array.from({ length: 51 }, (_, index) => `${index ? 'L' : 'M'}${25 + index * 5.7},${76 - response(item.id, 450 + index * 10) * 62}`).join(' ') }));
   return <section className="spectral-scene" aria-label="高光谱三维场景交互示意">
-    <div className="spectral-scene-header"><div><span>SPATIAL × SPECTRAL</span><h2>一个场景，多种光谱视角</h2></div><span className="spectral-scene-badge"><i/>交互演示</span></div>
+    <div className="spectral-scene-header"><div><span>SPATIAL × SPECTRAL</span><h1>高光谱 × 三维视觉</h1></div><span className="spectral-scene-badge"><i/>交互演示</span></div>
     <div className="spectral-scene-modes" role="group" aria-label="三维场景显示方式">
       {([{ id: 'natural', label: '自然色' }, { id: 'band', label: '单波段响应' }, { id: 'geometry', label: '三维几何' }] as const).map(item => <button key={item.id} aria-pressed={mode === item.id} onClick={() => setMode(item.id)}>{item.label}</button>)}
     </div>
