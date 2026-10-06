@@ -7135,8 +7135,8 @@
       "citation": "@article{latcrossmodal,\n  title={LAT: Local area transform for cross modal correspondence matching},\n  author={Seungchul Ryu and Seungryong Kim and Kwanghoon Sohn},\n  year={2017},\n  journal={Pattern Recognition},\n  url={https://pure.kaist.ac.kr/en/publications/lat-local-area-transform-for-cross-modal-correspondence-matching/},\n  doi={10.1016/j.patcog.2016.10.006}\n}",
       "frameworkFigureSearch": {
         "status": "needs_access",
-        "note": "核对 DOI 对应 PII 并取得出版社 gr1–gr7：图像变换、匹配结果及性能比较，未取得可核验的方法框架图。作者机构检索未找到公开 PDF；尚未读完整正文，不能判定无框架图，需要全文进一步核对。",
-        "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S003132031630320X",
+        "note": "2026-10-06 补查共同作者 Seungryong Kim 的 KAIST CVLAB 正式出版目录：J5 确认三作者、PR 63:218–228（2017），pdf 链接指向 Elsevier reader，实际请求 SSL 失败，未取得正文或原图。2019 arXiv 1901.00927 是作者博士论文，题名与任务扩展，不直接当作此期刊原图；未复制含临时参数的链接。",
+        "sourceUrl": "https://cvlab.kaist.ac.kr/publication",
         "checkedAt": "2026-10-06"
       }
     },
@@ -8350,6 +8350,41 @@
         "status": "needs_access",
         "note": "已检查 Royal Military Academy 与 imec 机构条目，均只有摘要和 DOI，没有公开附件；未找到可核验的会议 PDF。需要 IGARSS 2025 全文。",
         "sourceUrl": "https://researchportal.rma.ac.be/en/publications/image-reconstruction-for-hyperspectral-pushbroom-cameras-using-vi-2/",
+        "checkedAt": "2026-10-06"
+      }
+    },
+    {
+      "id": "fisher-mrf-hsi-lidar",
+      "shortTitle": "Fisher–MRF Fusion",
+      "title": "Semantic Segmentation of Hyperspectral Images with the Fusion of LiDAR Data",
+      "authors": "Hakan Aytaylan, Seniha Esen Yuksel",
+      "year": 2016,
+      "venue": "IGARSS",
+      "track": "fusion",
+      "representation": "HSI + LiDAR",
+      "scope": "相关研究",
+      "tags": [
+        "Fisher Vector",
+        "MRF",
+        "图割",
+        "高程辅助分类"
+      ],
+      "summary": "将高光谱分类概率与 LiDAR 强度、高程的 Fisher Vector 分类概率纳入 MRF，并以光谱和三维邻域距离约束二维像素语义分割。",
+      "input": "Houston 2013：144 波段高光谱图像、LiDAR 首次/平均/末次回波强度与高程栅格。",
+      "output": "二维像素语义分割与 15 类地物分类图；不输出三维表面或体重建。",
+      "mechanism": "对 LiDAR 四通道属性计算 Fisher Vector，使用 HySime 及 SVM/MLRSub 构造联合 unary；pairwise 结合光谱角、像素位置与高程距离，最后用 graph cuts 优化 MRF。",
+      "readingNote": "已读作者公开四页会议全文及全部图表；论文明确 pairwise 改动未带来显著额外提升，主要增益来自 unary 融合。Fisher Vector 对 MLRSub 有益，但对 SVM 未优于原属性；不可泛化为全面更优。2019 IET Computer Vision 同组相关工作属于后续版本，不能混用结果。",
+      "paper": "https://www.ee.hacettepe.edu.tr/~eyuksel/USB-SenihaEsenYukselErdem/2e%20maddesine%20ait%20eserler/4-paper_semanticSegmentation.pdf",
+      "doi": "10.1109/IGARSS.2016.7729651",
+      "verificationLevel": "author_fulltext",
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{aytaylan2016semantic,\n  title={Semantic Segmentation of Hyperspectral Images with the Fusion of LiDAR Data},\n  author={Aytaylan, Hakan and Yuksel, Seniha Esen},\n  booktitle={2016 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)},\n  year={2016},\n  pages={2522--2525},\n  doi={10.1109/IGARSS.2016.7729651}\n}",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "已读作者公开 IGARSS 2016 四页会议全文（印刷页 2522–2525）、方法与实验，并逐页目视检查全部图表：Figure 1 和 Figure 2 为参数精度曲线，Figure 3 为精度表；该作者会议稿没有独立方法、网络或系统框架图。结果图不替代框架图。本结论仅指此四页会议版本，不指 2019 IET 后续论文。",
+        "sourceUrl": "https://www.ee.hacettepe.edu.tr/~eyuksel/USB-SenihaEsenYukselErdem/2e%20maddesine%20ait%20eserler/4-paper_semanticSegmentation.pdf",
         "checkedAt": "2026-10-06"
       }
     }

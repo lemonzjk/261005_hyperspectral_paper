@@ -18,7 +18,7 @@
 
 ## 当前状态
 
-- 172 篇论文、13 个主分类、5 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX、手机适配。
+- 173 篇论文、13 个主分类、5 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX、手机适配。
 - 浅色全宽首屏：交互合成高光谱点云，自然色/单波段/几何、450–950 nm、旋转/复位/材料选择；12,348 点，响应为概念示意。用户拒绝左侧大字、深色、摄影和抽象装饰。
 - 图谱默认单张紧凑方向×时间矩阵：合并数量分布与代表论文，底色深浅显示收录密度，直接显示论文、出版来源及篇数；方向编号和年份栏辅助定位，桌面滚动时固定年份栏。点击论文看详情，点篇数/方向在当前行下展开；手机用纵向时间轴。保留方向全景、全部论文和年度 SVG 下载，无拖拽/缩放或嵌套画布。阶段间距不表示时长，不声明继承关系。
 - 框架图详情支持本地图、高清打开、图号、PDF 页码、原始来源及作者归属；未检索、待人工补充、全文未见独立框架图分别展示。
@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 118 篇、138 张；47 篇需全文/人工补图、7 篇全文无独立框架图，所有 172 篇已初查，补图尚未完成。缺图重试：HoloSpec Figure 1 图页已定位，原图 403；DWF 精确 SSRN PDF 403；Hyper-LIFT 作者博士论文 PDF 202 空内容、Europe PMC API 500；DART 2014 TU Wien 仅元数据。Hylite 仓库通用 workflow 图不是论文 Figure 1，未替代。
+- 框架图累计 118 篇、138 张；47 篇需全文/人工补图、8 篇全文无独立框架图，所有 173 篇已初查，补图尚未完成。新增 IGARSS 2016 Fisher–MRF Fusion，已读作者四页正式会议全文，图表全部是参数曲线/精度表，无独立框架；只属于高程辅助二维分割。LAT 作者 KAIST 目录仅提供无法下载的 Elsevier reader，未用 2019 博士论文图替代。此前各缺图入口与失败原因见交接。
 - 交接见 `research/framework-handoff.md`；初查全部年份后，优先从最新年份重试 47 篇缺图，寻找作者/机构副本；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
-- 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成；Eradiate（GMD 2026）新增为背景与引文入口，未加入主库。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
+- 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 扫描候选待核验，其中 CGCN 2023 已补 DOI、作者和卷页但缺原始摘要、专业期刊与引文追溯未完成；Eradiate（GMD 2026）新增为背景与引文入口，未加入主库。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

@@ -71,3 +71,7 @@ VISAPP 2024 双相机融合已解决场所待核验；ISPRS Archives、JOSA A、
 `discover_igarss.py` 新增官方接收目录题名扫描：2023 年 2,859 个、2025 年 2,990 个题名，分别得到 17、20 个关键词命中；其中 2 个已入库，其余 35 个先记待范围核验。完整题名与来源哈希见 `sources/igarss-title-scan-2026-10-06.json`。接收目录不等于最终正式发表证明，关键词漏检与误检仍需逐篇阅读解决，其他年份未覆盖。运行：`python research/discover_igarss.py 2023 2025`；依赖 requests 与 beautifulsoup4。
 
 已区分 IJRS 2013 近距离地质流程、Frontiers 2021 DHPC、Remote Sensing 2013 DART 小波反演和 ISPRS Archives 2016 综述的真实场所；它们不因被顶刊引用就算顶刊。ISPRS JPRS 2026 ITCMNet 仅用 RGB，排除；分层 SIF 与 SCOPE 2.0 工作暂留范围背景。OSTI 检索到的 PDF 是引用目标 SIF 论文的另一项研究，记录检索错配，不用于提升核验等级。下一步优先读新增 IGARSS 光谱点云、波形和几何候选，核对其 DOI、原始摘要及与期刊版本的关系。
+
+本轮核验并逐篇补入 IGARSS 2016 的 Semantic Segmentation of Hyperspectral Images with the Fusion of LiDAR Data（Aytaylan、Yuksel）。作者公开四页正式会议全文与 Crossref 卷页、DOI 交叉确认；Fisher Vector 强度/高程 unary 和三维邻域 pairwise 服务于二维分类，归入相关研究。论文明确 pairwise 修改未带来显著额外提升，不能将整体增益全部归给三维距离。四页全部图表已目视检查，没有独立框架图；不能用 2019 IET 后续版本图替代。核验与原始 PDF 校验和见 `sources/semantic-hsi-lidar-review-2026-10-06.json`。
+
+IGARSS 2023 的 Coupled Graph Convolution Network for Cross-Scene Multispectral Point Cloud Classification 已补齐正式 DOI 10.1109/IGARSS52108.2023.10281816、四作者与 6258–6261 页，官方详情仅题名和报告信息，Crossref 无摘要。继续待原始摘要核验，不因二级索引摘要或接收目录直接收录。IGARSS 2025 Hypermesh 官方作者列表与 SPIE 同题论文不同，暂不合并两个场所或复用 SPIE DOI。
