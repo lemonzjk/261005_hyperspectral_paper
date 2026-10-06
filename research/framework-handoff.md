@@ -10,8 +10,8 @@
 
 ## 权威状态
 
-- 172 篇：98 篇 verified、111 张图；39 篇 needs_access；5 篇 no_framework；30 篇 pending。
-- 2026–2015 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
+- 172 篇：102 篇 verified、116 张图；41 篇 needs_access；5 篇 no_framework；24 篇 pending。
+- 2026–2014 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
 - LiDAR Spatial Unmix 已读 24 页作者预印本，Fig.1–8 为数据或结果，方法是公式和 Algorithm 1–2 伪代码，无独立框架图；该结论仅针对该预印本，正式版与补充材料可复核。
@@ -21,7 +21,9 @@
 - 2016 年 Aquatic HSL：Wiley 403，Lund 机构记录无公开 PDF，同题名 ResearchGate 请求全文；公开 2018 年 EPJ 会议论文为另一篇，不能错配系统图。已记 needs_access。
 - 2015 年 9 篇初查完成，8 篇有图、9 张原图：DASC Figure 3 描述子原理；Bayesian MSL Fig. 8 完整流程（arXiv 作者稿 PDF 第 17 页）；SPIM Figure 1 系统；Object HSI–DSM Figure 1 配准流程；UAV HS-DSM Figure 3.4 完整流程（作者学位论文 PDF 第 68 页、印刷页 46，同题名期刊论文收录章节，编号保持该版本）；DART Fig. 6 投影模型；Waveform–HSI Fig. 1 波形合成模块；Pushbroom Calibration Figs. 2、3 系统/几何。局部原理和几何图不声称完整流程；Elsevier 图号由 grN 标识确定，未取得正文图注时已注明。
 - ITC-S3VM：DLR 100204 明示不提供全文；出版社 gr1 404、gr2–3 为数据；作者发表列表 PDF 链接仍为 ScienceDirect，ResearchGate 请求全文。已记 needs_access，不能当无框架图。
-- 下一步从 2014 年 pending 继续，再向更早年份推进；详细尝试记录在 figures.json。
+- 2014 年 6 篇初查完成：4 篇、5 张图。Arboreal MS-LiDAR Fig. 1 系统（Edinburgh 机构 PDF 第 4 页）；Urban Tree Fusion Fig. 2 完整融合分类流程（作者 PDF 第 4 页）；Boreal ITC Fig. 1 完整流程（出版社 gr1）；PRISMS Fig. 1 采集系统（NTU 机构 PDF 第 3 页）和 Fig. 4(a) 辐射几何（第 5 页，仅子图 a、不含校准曲线）。
+- DART Forest Simulation：已检查 gr1–gr7，都是点云/采样区、光谱、材料分布、重建和模拟对照；TU Wien 无公开 PDF，UZH 作者发表页及 3D Vegetation Lab 链接仍指向出版社，正文 403。未把项目报告或其他论文图当原图。Multispectral Outcrop：gr1–gr6 为岩样、定标、露头和分类结果，ResearchGate 需请求全文。两篇 needs_access，不能判全文无框架。
+- 下一步从 2013 年 pending 继续，再向更早年份推进；详细尝试记录在 figures.json。
 - 随后重试最新年份缺图项；全部来源与失败原因以 `research/figures.json` 为准。任务未完成。
 
 ## 文件与工具

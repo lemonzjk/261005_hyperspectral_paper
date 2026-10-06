@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 98 篇、111 张；39 篇需全文/人工补图、5 篇已取得全文无独立框架图、30 篇待检索。2026–2015 初查完整。2015 年新增 8 篇、9 张：DASC 描述子、Bayesian MSL 流程、SPIM 系统、HSI–DSM 配准流程、UAV HS-DSM 流程、DART 投影、波形合成、推扫相机系统与几何。UAV 图号 Figure 3.4 来自作者学位论文收录版，不冒用期刊图号；ITC-S3VM 需全文。历年缺图入口及核验限制详见交接。
-- 交接见 `research/framework-handoff.md`；从 2014 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
+- 框架图累计 102 篇、116 张；41 篇需全文/人工补图、5 篇已取得全文无独立框架图、24 篇待检索。2026–2014 初查完整。2014 年 4 篇有图：Arboreal MS-LiDAR 系统、Urban Tree Fusion 完整流程、Boreal ITC 完整流程、PRISMS 系统及 Fig. 4(a) 辐射几何。DART Forest Simulation 和 Multispectral Outcrop 原图目前为数据/结果，需全文再核验，未误标为全文无图。2015 UAV 图号 Figure 3.4 为作者学位论文收录版；历年来源限制见交接。
+- 交接见 `research/framework-handoff.md`；从 2013 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
