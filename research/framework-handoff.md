@@ -139,3 +139,13 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - 作者 GitHub xiaoli980/PROSPECULAR-model 的公开全树只有 MATLAB 模型、参数和数据，没有论文 PDF/原图附件。未取得实际 PDF，不将 corrected-proof 印刷页码冒称 PDF 页序。
 
 来源、核验范围和原图哈希见 sources/prospecular-original-model-overview-2026-10-06.json。下一轮继续 44 篇缺图的新公开入口；对于出版社有图但前几张为结果的论文，先用真实全文定位后续框架图号，再下载核对，不能据图号猜测内容或借其他稿件图。
+
+## ZORA 精确作者稿与植物所存档线索（2026-10-06）
+
+本轮新增可续接的准确机构地址，没有新增图或状态升级。保持 174 篇、121 篇有 142 张图、44 needs_access、9 no_framework。
+
+- MSCL 2009：OpenAlex 当前 locations 新给出 acceptedVersion `https://www.zora.uzh.ch/id/eprint/24285/36/Morsdorf_Nichol_Assessing_Forest_2009.pdf`，并关联迁移后 `https://www.zora.uzh.ch/handle/20.500.14742/45809`。PDF 和两个域名的 handle 实际请求 SSL EOF；浏览工具新 handle 也不可访问。保存确切文件名和版本范围，不把开放标签当作取得全文。
+- VBRT：OpenAlex 指向植物所记录 `http://ir.ibcas.ac.cn/handle/2S10CLM1/20149`、`/20568`。实际访问第一个条目为 HTTP 502、HTTPS 浏览不可访问。出版社检索预览显示 View Open Manuscript，但正文请求 403，尚未找到公开稿具体附件。20568 是索引线索，本轮未访问；不要将其记为已请求失败。
+- UAV Forest Fusion：OpenAlex 当前只有 DOI 出版条目，没有新增 PDF。检索出现同作者其他题名公开稿，不替代当前 RSE 2017 论文。
+
+本轮实际请求与开放索引字段见 sources/zora-and-ibcas-original-fulltext-leads-2026-10-06.json。下一轮仍有其他未查作者入口，任务不处于全面阻塞；继续最新缺图论文的作者附件。若重试 ZORA 或植物所，仅在新连接证据或实际附件路径出现时进行，不重复空转同一请求。
