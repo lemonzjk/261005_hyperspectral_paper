@@ -4423,6 +4423,181 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{wstncuttrees,\n  title={Individual tree segmentation and tree species classification in subtropical broadleaf forests using UAV-based LiDAR, hyperspectral, and ultrahigh-resolution RGB data},\n  author={Haiming Qin and Weiqi Zhou and Yang Yao and Weimin Wang},\n  year={2022},\n  journal={RSE},\n  url={https://doi.org/10.1016/j.rse.2022.113143},\n  doi={10.1016/j.rse.2022.113143}\n}"
+    },
+    {
+      "id": "rgb-ms-matching",
+      "shortTitle": "RGB-MS Matching",
+      "title": "RGB-Multispectral Matching: Dataset, Learning Methodology, Evaluation",
+      "authors": "Fabio Tosi, Pierluigi Zama Ramirez, Matteo Poggi, Samuele Salti, Stefano Mattoccia, Luigi Di Stefano",
+      "year": 2022,
+      "venue": "CVPR",
+      "track": "registration",
+      "representation": "跨光谱深度",
+      "scope": "相关研究",
+      "tags": [
+        "跨光谱深度",
+        "registration"
+      ],
+      "summary": "通过跨模态立体匹配对齐不同分辨率的 RGB 与多光谱图像，并提供带视差真值的室内评测集。",
+      "input": "同步采集的高分辨率 RGB 与低分辨率多光谱图像；训练采集增加一台 RGB 相机。",
+      "output": "RGB–多光谱视差与配准结果。",
+      "mechanism": "从较易的 RGB–RGB 匹配向 RGB–多光谱任务蒸馏知识，在无视差标签的三图采集上自监督训练。",
+      "readingNote": "作者页确认 CVPR 2022，评测集含13个室内场景、34对图像。训练辅助相机不要求部署时使用。属于多光谱跨相机几何相关阅读，不称连续高光谱重建。",
+      "paper": "https://cvlab-unibo.github.io/rgb-ms-web/",
+      "doi": "10.1109/CVPR52688.2022.01549",
+      "sourceUrls": [
+        "https://openaccess.thecvf.com/content/CVPR2022/papers/Tosi_RGB-Multispectral_Matching_Dataset_Learning_Methodology_Evaluation_CVPR_2022_paper.pdf"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{rgbmsmatching,\n  title={RGB-Multispectral Matching: Dataset, Learning Methodology, Evaluation},\n  author={Fabio Tosi and Pierluigi Zama Ramirez and Matteo Poggi and Samuele Salti and Stefano Mattoccia and Luigi Di Stefano},\n  year={2022},\n  booktitle={CVPR},\n  url={https://cvlab-unibo.github.io/rgb-ms-web/},\n  doi={10.1109/CVPR52688.2022.01549}\n}"
+    },
+    {
+      "id": "unsupervised-crossspectral-synthesis",
+      "shortTitle": "F-cycleGAN Stereo",
+      "title": "Unsupervised Cross-Spectral Stereo Matching by Learning to Synthesize",
+      "authors": "Mingyang Liang, Xiaoyang Guo, Hongsheng Li, Xiaogang Wang, You Song",
+      "year": 2019,
+      "venue": "AAAI",
+      "track": "registration",
+      "representation": "跨光谱深度",
+      "scope": "相关研究",
+      "tags": [
+        "跨光谱深度",
+        "registration"
+      ],
+      "summary": "将光谱风格转换与立体匹配联合训练，在没有深度或视差标签的情况下估计跨光谱图像视差。",
+      "input": "跨光谱立体图像对。",
+      "output": "稠密视差图。",
+      "mechanism": "F-cycleGAN 通过循环一致性与对抗训练减小外观差异，同谱图像用视图重建训练匹配；估计视差反过来约束光谱转换。",
+      "readingNote": "正式 AAAI 2019 摘要与作者信息已核验。关注无监督外观转换和几何估计的耦合；属于跨光谱相关阅读，不是密集波段高光谱场景表示。",
+      "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/4894",
+      "doi": "10.1609/aaai.v33i01.33018706",
+      "sourceUrls": [
+        "https://arxiv.org/abs/1903.01078"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{unsupervisedcrossspectralsynthesis,\n  title={Unsupervised Cross-Spectral Stereo Matching by Learning to Synthesize},\n  author={Mingyang Liang and Xiaoyang Guo and Hongsheng Li and Xiaogang Wang and You Song},\n  year={2019},\n  booktitle={AAAI},\n  url={https://ojs.aaai.org/index.php/AAAI/article/view/4894},\n  doi={10.1609/aaai.v33i01.33018706}\n}"
+    },
+    {
+      "id": "lat-crossmodal",
+      "shortTitle": "LAT",
+      "title": "LAT: Local area transform for cross modal correspondence matching",
+      "authors": "Seungchul Ryu, Seungryong Kim, Kwanghoon Sohn",
+      "year": 2017,
+      "venue": "PR",
+      "track": "registration",
+      "representation": "跨光谱深度",
+      "scope": "相关研究",
+      "tags": [
+        "跨光谱深度",
+        "registration"
+      ],
+      "summary": "将图像强度转换为局部面积表示，提高跨光谱与跨模态对应估计的稳健性，并在立体匹配任务上评估。",
+      "input": "具有非线性强度差异的跨模态图像对。",
+      "output": "模态稳健表示与匹配结果；实验涵盖跨辐射立体视差。",
+      "mechanism": "局部面积变换从强度域转入面积域，以减小辐射、光度和光谱差异；用其重构描述子并进行对应搜索。",
+      "readingNote": "作者机构摘要确认 RGB–NIR 模板/特征匹配、跨辐射立体及稠密流实验。通用对应方法，仅按几何评估作为相关阅读，不能称高光谱三维联合重建。正式卷年2017，DOI含2016为在线年线索。",
+      "paper": "https://pure.kaist.ac.kr/en/publications/lat-local-area-transform-for-cross-modal-correspondence-matching/",
+      "doi": "10.1016/j.patcog.2016.10.006",
+      "publicationName": "Pattern Recognition",
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{latcrossmodal,\n  title={LAT: Local area transform for cross modal correspondence matching},\n  author={Seungchul Ryu and Seungryong Kim and Kwanghoon Sohn},\n  year={2017},\n  journal={Pattern Recognition},\n  url={https://pure.kaist.ac.kr/en/publications/lat-local-area-transform-for-cross-modal-correspondence-matching/},\n  doi={10.1016/j.patcog.2016.10.006}\n}"
+    },
+    {
+      "id": "hvll-hdsm",
+      "shortTitle": "HVLL HDSM",
+      "title": "Generating a hyperspectral digital surface model using a hyperspectral 2D frame camera",
+      "authors": "Raquel A. Oliveira, Antonio M.G. Tommaselli, Eija Honkavaara",
+      "year": 2019,
+      "venue": "ISPRS JPRS",
+      "track": "geometry",
+      "representation": "光谱表面模型",
+      "scope": "核心研究",
+      "tags": [
+        "光谱表面模型",
+        "geometry"
+      ],
+      "summary": "从无人机高光谱帧相机观测生成同时带光谱与观测角信息的三维表面模型，并在热带与北方森林验证。",
+      "input": "基于可调 Fabry–Pérot 干涉仪的无人机多视角高光谱帧图像。",
+      "output": "高光谱数字表面模型及各点的光谱、观测角信息。",
+      "mechanism": "将物方竖直线轨迹搜索扩展为 HVLL；依据图像类别调整匹配参数，并提取各点光谱与视角。",
+      "readingNote": "正式卷年2019，在线 DOI 年2018。树冠连续覆盖区偏差高于商业软件 DSM；分类辅助策略在阴影地面和树冠空隙更有优势，不能概括为所有区域精度更高。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0924271618303277",
+      "doi": "10.1016/j.isprsjprs.2018.11.025",
+      "publicationName": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{hvllhdsm,\n  title={Generating a hyperspectral digital surface model using a hyperspectral 2D frame camera},\n  author={Raquel A. Oliveira and Antonio M.G. Tommaselli and Eija Honkavaara},\n  year={2019},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  url={https://www.sciencedirect.com/science/article/pii/S0924271618303277},\n  doi={10.1016/j.isprsjprs.2018.11.025}\n}"
+    },
+    {
+      "id": "object-hsi-dsm-coreg",
+      "shortTitle": "Object HSI–DSM",
+      "title": "Coregistration refinement of hyperspectral images and DSM: An object-based approach using spectral information",
+      "authors": "Janja Avbelj, Dorota Iwaszczuk, Rupert Müller, Peter Reinartz, Uwe Stilla",
+      "year": 2015,
+      "venue": "ISPRS JPRS",
+      "track": "registration",
+      "representation": "光谱–高度配准",
+      "scope": "相关研究",
+      "tags": [
+        "光谱–高度配准",
+        "registration"
+      ],
+      "summary": "利用高光谱材料信息与 DSM 高度信息提取建筑轮廓，对两种遥感产品进行精细配准。",
+      "input": "不同空间和光谱分辨率的已地理定位航空高光谱图像与 DSM。",
+      "output": "精化配准变换与对齐的光谱、表面高度产品。",
+      "mechanism": "轮廓检测、对象轮廓匹配与变换估计三阶段；将轮廓几何精度纳入随机模型，估计最优变换参数。",
+      "readingNote": "正式2015卷100，在线先行2014。方法用建筑二维轮廓精化 HSI–DSM 配准，不是从光谱图像重新恢复三维几何。作者机构摘要保留两套 HSI/DSM 的验证范围。",
+      "paper": "https://elib.dlr.de/90424/",
+      "doi": "10.1016/j.isprsjprs.2014.05.010",
+      "publicationName": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0924271614001282"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{objecthsidsmcoreg,\n  title={Coregistration refinement of hyperspectral images and DSM: An object-based approach using spectral information},\n  author={Janja Avbelj and Dorota Iwaszczuk and Rupert Müller and Peter Reinartz and Uwe Stilla},\n  year={2015},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  url={https://elib.dlr.de/90424/},\n  doi={10.1016/j.isprsjprs.2014.05.010}\n}"
+    },
+    {
+      "id": "close-range-pushbroom-calibration",
+      "shortTitle": "Pushbroom Calibration",
+      "title": "Calibration of hyperspectral close-range pushbroom cameras for plant phenotyping",
+      "authors": "Jan Behmann, Anne-Katrin Mahlein, Stefan Paulus, Heiner Kuhlmann, Erich-Christian Oerke, Lutz Plümer",
+      "year": 2015,
+      "venue": "ISPRS JPRS",
+      "track": "capture",
+      "representation": "相机几何标定",
+      "scope": "核心研究",
+      "tags": [
+        "相机几何标定",
+        "capture"
+      ],
+      "summary": "标定近景高光谱推扫相机的几何成像模型，为光谱图像与植物三维模型准确对齐提供基础。",
+      "input": "近景推扫系统的标定观测；实验使用覆盖400–2500 nm的两台线相机。",
+      "output": "含非线性效应的相机几何模型与标定参数。",
+      "mechanism": "先估计线性推扫模型，再以 Chebychev 多项式描述畸变、旋转和侧向运动等非线性效应。",
+      "readingNote": "论文报告亚像素尺度的几何标定准确性和可重复性。植物三维光谱纹理、正射校正等是讨论的应用前景，不能把标定验证写成独立的完整三维植物重建性能评测。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0924271615001471",
+      "doi": "10.1016/j.isprsjprs.2015.05.010",
+      "publicationName": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{closerangepushbroomcalibration,\n  title={Calibration of hyperspectral close-range pushbroom cameras for plant phenotyping},\n  author={Jan Behmann and Anne-Katrin Mahlein and Stefan Paulus and Heiner Kuhlmann and Erich-Christian Oerke and Lutz Plümer},\n  year={2015},\n  journal={ISPRS Journal of Photogrammetry and Remote Sensing},\n  url={https://www.sciencedirect.com/science/article/pii/S0924271615001471},\n  doi={10.1016/j.isprsjprs.2015.05.010}\n}"
     }
   ],
   "datasets": [
@@ -4537,6 +4712,32 @@
       ],
       "source": "https://zenodo.org/records/19351234",
       "availability": "Zenodo 已公开数据及评测脚本；元数据和划分已核验，未下载完整点云验证。"
+    },
+    {
+      "id": "rgb-ms-dataset",
+      "name": "RGB-MS Dataset",
+      "subtitle": "不同分辨率 RGB–多光谱立体匹配评测",
+      "type": "多光谱立体数据",
+      "description": "作者发布的室内 RGB–多光谱数据。带标签部分提供高分辨率半稠密视差真值，无标签部分用于自监督训练。",
+      "facts": [
+        {
+          "label": "场景 / 标注",
+          "value": "13个室内场景，34对带标签图像"
+        },
+        {
+          "label": "图像规格",
+          "value": "RGB 3222×1605；MS 510×254，10个可见光波段"
+        },
+        {
+          "label": "许可",
+          "value": "CC BY-NC 4.0"
+        }
+      ],
+      "availability": "机构仓库提供带标签511 MB、无标签81 GB和README入口；未下载完整数据验证文件内容。",
+      "source": "https://amsacta.unibo.it/id/eprint/6877/",
+      "paperIds": [
+        "rgb-ms-matching"
+      ]
     }
   ]
 }

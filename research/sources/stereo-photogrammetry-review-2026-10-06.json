@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-06",
+  "coverage": "跨光谱立体与高光谱摄影测量的主题检索和引文追溯；新增六篇与一个数据资源，不能证明全部目标场所已覆盖。",
+  "papers": [
+    {
+      "id": "rgb-ms-matching",
+      "title": "RGB-Multispectral Matching: Dataset, Learning Methodology, Evaluation",
+      "year": 2022,
+      "venue": "CVPR",
+      "doi": "10.1109/CVPR52688.2022.01549",
+      "verificationLevel": "official_abstract",
+      "readingNote": "作者页确认 CVPR 2022，评测集含13个室内场景、34对图像。训练辅助相机不要求部署时使用。属于多光谱跨相机几何相关阅读，不称连续高光谱重建。",
+      "sources": [
+        "https://cvlab-unibo.github.io/rgb-ms-web/",
+        "https://openaccess.thecvf.com/content/CVPR2022/papers/Tosi_RGB-Multispectral_Matching_Dataset_Learning_Methodology_Evaluation_CVPR_2022_paper.pdf"
+      ]
+    },
+    {
+      "id": "unsupervised-crossspectral-synthesis",
+      "title": "Unsupervised Cross-Spectral Stereo Matching by Learning to Synthesize",
+      "year": 2019,
+      "venue": "AAAI",
+      "doi": "10.1609/aaai.v33i01.33018706",
+      "verificationLevel": "official_abstract",
+      "readingNote": "正式 AAAI 2019 摘要与作者信息已核验。关注无监督外观转换和几何估计的耦合；属于跨光谱相关阅读，不是密集波段高光谱场景表示。",
+      "sources": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/4894",
+        "https://arxiv.org/abs/1903.01078"
+      ]
+    },
+    {
+      "id": "lat-crossmodal",
+      "title": "LAT: Local area transform for cross modal correspondence matching",
+      "year": 2017,
+      "venue": "PR",
+      "doi": "10.1016/j.patcog.2016.10.006",
+      "verificationLevel": "official_abstract",
+      "readingNote": "作者机构摘要确认 RGB–NIR 模板/特征匹配、跨辐射立体及稠密流实验。通用对应方法，仅按几何评估作为相关阅读，不能称高光谱三维联合重建。正式卷年2017，DOI含2016为在线年线索。",
+      "sources": [
+        "https://pure.kaist.ac.kr/en/publications/lat-local-area-transform-for-cross-modal-correspondence-matching/"
+      ]
+    },
+    {
+      "id": "hvll-hdsm",
+      "title": "Generating a hyperspectral digital surface model using a hyperspectral 2D frame camera",
+      "year": 2019,
+      "venue": "ISPRS JPRS",
+      "doi": "10.1016/j.isprsjprs.2018.11.025",
+      "verificationLevel": "official_abstract",
+      "readingNote": "正式卷年2019，在线 DOI 年2018。树冠连续覆盖区偏差高于商业软件 DSM；分类辅助策略在阴影地面和树冠空隙更有优势，不能概括为所有区域精度更高。",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0924271618303277"
+      ]
+    },
+    {
+      "id": "object-hsi-dsm-coreg",
+      "title": "Coregistration refinement of hyperspectral images and DSM: An object-based approach using spectral information",
+      "year": 2015,
+      "venue": "ISPRS JPRS",
+      "doi": "10.1016/j.isprsjprs.2014.05.010",
+      "verificationLevel": "official_abstract",
+      "readingNote": "正式2015卷100，在线先行2014。方法用建筑二维轮廓精化 HSI–DSM 配准，不是从光谱图像重新恢复三维几何。作者机构摘要保留两套 HSI/DSM 的验证范围。",
+      "sources": [
+        "https://elib.dlr.de/90424/",
+        "https://www.sciencedirect.com/science/article/pii/S0924271614001282"
+      ]
+    },
+    {
+      "id": "close-range-pushbroom-calibration",
+      "title": "Calibration of hyperspectral close-range pushbroom cameras for plant phenotyping",
+      "year": 2015,
+      "venue": "ISPRS JPRS",
+      "doi": "10.1016/j.isprsjprs.2015.05.010",
+      "verificationLevel": "official_abstract",
+      "readingNote": "论文报告亚像素尺度的几何标定准确性和可重复性。植物三维光谱纹理、正射校正等是讨论的应用前景，不能把标定验证写成独立的完整三维植物重建性能评测。",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0924271615001471"
+      ]
+    }
+  ],
+  "backgroundReviews": [
+    {
+      "title": "Multispectral Stereo-Image Fusion for 3D Hyperspectral Scene Reconstruction",
+      "status": "background_specialist",
+      "url": "https://www.scitepress.org/Link.aspx?doi=10.5220%2F0012354400003660",
+      "venue": "VISAPP",
+      "year": 2024,
+      "doi": "10.5220/0012354400003660",
+      "verificationLevel": "official_abstract",
+      "note": "作者 arXiv 正式引用与出版商核验：VISAPP 2024，88–99页；两台覆盖不同光谱范围的快照相机组成标定立体系统，联合几何与光谱融合。保留专业背景，不误标 CVPR 或仅有预印本。"
+    },
+    {
+      "title": "Hyperspectral images 3D reconstruction based on structure-from-motion and multi-view stereo",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0143816625007626",
+      "venue": "Optics and Lasers in Engineering",
+      "status": "background_specialist",
+      "note": "出版商确认2026卷199、109578；内部推扫多视角采集，分割、环形匹配、光谱多通道代价及统计反射率融合产生真实光谱点云。400–1000 nm、300波段；仍为专业背景，不改列既定优先期刊。",
+      "year": 2026,
+      "doi": "10.1016/j.optlaseng.2025.109578",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "3D RECONSTRUCTION FROM UAV-BASED HYPERSPECTRAL IMAGES",
+      "venue": "ISPRS Archives",
+      "year": 2018,
+      "status": "background_specialist",
+      "url": "https://isprs-archives.copernicus.org/articles/XLII-3/1073/2018/index.html",
+      "doi": "10.5194/isprs-archives-XLII-3-1073-2018",
+      "verificationLevel": "official_abstract",
+      "note": "官方摘要：Cubert UHD185 同时采集全色与高光谱，VisualSfM从全色恢复点云，MATLAB映射光谱。Archives不是ISPRS JPRS。"
+    },
+    {
+      "title": "Hyperspectral photometric stereo for a single capture",
+      "venue": "JOSA A",
+      "year": 2017,
+      "status": "background_specialist",
+      "url": "https://opg.optica.org/josaa/abstract.cfm?uri=josaa-34-3-384",
+      "doi": "10.1364/JOSAA.34.000384",
+      "verificationLevel": "official_abstract",
+      "note": "官方摘要：光谱空间设计照明，从单幅高光谱图估计反射光谱与法线；局部测量光谱并插值，含仿真与真实表面重建。JOSA A为专业背景。"
+    },
+    {
+      "title": "Ground-Based Panoramic Stereo Hyperspectral Imaging System With Multiband Stereo Matching",
+      "venue": "JSTARS",
+      "year": 2016,
+      "status": "background_specialist",
+      "url": "https://avesis.yildiz.edu.tr/yayin/2657c3a4-c37a-4d3c-969f-4da0025b03f2/ground-based-panoramic-stereo-hyperspectral-imaging-system-with-multiband-stereo-matching",
+      "doi": "10.1109/JSTARS.2015.2483678",
+      "verificationLevel": "official_abstract",
+      "note": "作者机构确认正式卷2016、在线2015；旋转平台的两台400–1000 nm线扫相机，multiband Census及SAD代价聚合估计深度，LiDAR比较。专业背景不误标TGRS。"
+    },
+    {
+      "title": "Dense Cross-Modal Correspondence Estimation With the Deep Self-Correlation Descriptor",
+      "venue": "TPAMI",
+      "year": 2021,
+      "status": "background_scope",
+      "url": "https://seungryong.github.io/DSC/DSCdescriptor_TPAMI.pdf",
+      "doi": "10.1109/TPAMI.2020.2965528",
+      "verificationLevel": "official_full_text",
+      "note": "作者全文引言与第5节：Middlebury几何视差、RGB–NIR通用对应分别测试，不等于真实跨光谱三维重建；DSC/GI-DSC为免训练手工描述子，deep不表示CNN训练。期刊正式2021卷43(7)，作者原稿头2018不得作为发表年。保留范围背景，待进一步明确直接三维光谱用途。"
+    }
+  ],
+  "dataset": {
+    "source": "https://amsacta.unibo.it/id/eprint/6877/",
+    "license": "CC BY-NC 4.0",
+    "verification": "机构仓库页面提供带标签、无标签与README下载；项目页确认13场景、34对评测及10波段规格。未下载81GB完整数据。"
+  }
+}

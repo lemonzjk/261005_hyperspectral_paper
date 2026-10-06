@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 144 篇论文、4 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 150 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -53,3 +53,7 @@ Palmer 扫描标定、BGE-ICMER、真彩三维 LiDAR、混合几何辐射校正�
 进一步核验 FLIGHT（TGRS 1996，高分辨率光谱实测比较）、Raytran（TGRS 1998，通用光传播相关阅读）、DART–DLAmaize（RSE 2025，机载高光谱作物性状反演）、单树邻近约束反演（RSE 2025，多光谱相关阅读）及 AHSL 森林胁迫（RSE 2023，仿真点云）。林下土壤 HSL 为既有条目，复核后补充 SOC/全氮回归限制，不重复新增。证据见 `sources/vegetation-3d-spectral-review-2026-10-06.json`。Miraglio 的 Remote Sensing 2020 稀疏林反演作为专业背景保留，已发现生化验证数据勘误，后续使用须以更正版本为准。下一步继续早期森林反演与树冠融合引文、目标场所逐年扫描。
 
 沿森林融合引文补充八篇 RSE/ISPRS JPRS 相关阅读：AISA–LiDAR 树种分布（2010）、LVIS–AVIRIS 清查（2008）、热带生物量比较（2011）、南阿尔卑斯分类（2012）、北方树冠划分（2014）、ITC-S3VM（2015）、Evo 3D-CNN（2021）与 WST-Ncut（2022）。Evo 的 3D 卷积维度为 H×W×波段，LiDAR CHM 用于检测/匹配；不称三维空间 CNN。热带生物量实验中融合没有超过两高度变量模型，保留这一结果及采集时段限制。WST-Ncut 为树冠结构/光谱/纹理融合，逐点算法范围待全文。证据见 `sources/forest-fusion-citation-review-2026-10-06.json`。后续查 Sierra Nevada 融合、生态方法期刊树木碳制图、各目标场所逐年目录；新增相关研究不代表核心几何方向已穷尽。
+
+核验跨光谱立体与摄影测量，新增 RGB-MS Matching（CVPR 2022）、F-cycleGAN Stereo（AAAI 2019）、LAT（PR 2017）、HVLL HDSM（ISPRS JPRS 2019）、对象 HSI–DSM 配准（2015）与近景推扫几何标定（2015）。前两项多光谱/跨光谱工作、LAT 与二维轮廓配准标相关；HVLL 和直接面向三维光谱映射的高光谱标定标核心，标定应用前景与实际验证区分。HVLL 连续树冠偏差较大、阴影地面/冠隙更优的权衡保留。RGB-MS 数据资源新增，机构仓库许可 CC BY-NC 4.0，不声称已下载完整数据。
+
+VISAPP 2024 双相机融合已解决场所待核验；ISPRS Archives、JOSA A、JSTARS 全景立体与 Optics and Lasers in Engineering 2026 直接三维重建保留专业背景，正式卷年与在线年分开。DSC 作者全文确认免训练手工描述子及通用对应评测，先留范围背景。证据见 `sources/stereo-photogrammetry-review-2026-10-06.json`。下一步继续核心几何引文与目标期刊逐年扫描，补完整算法核验；当前清单仍非全面覆盖。
