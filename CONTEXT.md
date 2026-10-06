@@ -29,5 +29,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 下一步继续 2025 年框架图，再向早年推进；重试可获取原图的 2026 缺失条目。不得把 pending 批量改为已查过。
+- 2025 年已核验 14 篇、15 张图；SpectralReconNSS 全文未见独立框架图，6 篇待全文/原图。累计 22 篇、23 张图；2026/2025 初查记录完整，其他 137 篇仍待检索。
+- 下一步从 2024 年继续向早年推进，并重试最新年份缺失项；不得把 pending 批量改为已查过。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
