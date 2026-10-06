@@ -29,6 +29,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 2025 年已核验 14 篇、15 张图；SpectralReconNSS 全文未见独立框架图，6 篇待全文/原图。2024 年初查 26 篇：20 篇有图、5 篇待全文/原图、1 篇全文无独立框架图。2023 年 9 篇有图、7 篇待全文/原图。2022 年 9 篇有图、5 篇待全文/原图。累计 60 篇、65 张图；2026–2022 初查完整，28 篇待人工补图、3 篇全文无独立框架图，其他 81 篇待检索。
-- 下一步从 2021 年继续向早年推进，并重试最新年份缺失项；不得把 pending 批量改为已查过。
+- 2025 年已核验 14 篇、15 张图；SpectralReconNSS 全文未见独立框架图，6 篇待全文/原图。2024 年初查 26 篇：20 篇有图、5 篇待全文/原图、1 篇全文无独立框架图。2023 年 9 篇有图、7 篇待全文/原图。2022 年 9 篇有图、5 篇待全文/原图。2021 年 7 篇有图、2 篇待全文/原图、1 篇全文无独立框架图。累计 67 篇、72 张图；2026–2021 初查完整，30 篇待人工补图、4 篇全文无独立框架图，其他 71 篇待检索。
+- 下一步从 2020 年继续向早年推进，并重试最新年份缺失项；不得把 pending 批量改为已查过。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
