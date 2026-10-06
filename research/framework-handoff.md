@@ -217,3 +217,15 @@ PDF 哈希、页码、裁切坐标与真实下载协议见 sources/dual-angle-of
 - HoloSpec 2026 LPR：RG 408522709 的 Wiley 正文与 DOI、四作者一致；精确 Fig.1 含 (a) 实验系统、(b) 双次测量的四维重建流程、(c) 棱镜色散模型。Download directly 的原始 PNG 返回 403 HTML。HKU 当前 ISL publications 正文成功读取，未列准确同篇；旧 optima 根目录只是 2004 新闻，猜测 2607_LPR/LPOR 文件均 404，不能称作者提供过这些附件。2602_JPP.pdf 是不同 Snapshot HoloSpec 论文，不替代 LPR 原图。
 
 精确 URL、补充材料哈希、真实返回状态见 sources/fourier-supplement-and-holospec-exact-original-figures-2026-10-07.json。继续其余缺图论文的作者/机构公开全文入口；两篇保留 needs_access，不以有全文文字或 OA 元数据冒充取得图片。
+
+
+## Swansea 仓库全文状态与 NAU/SYSU 新入口（2026-10-07）
+
+174 篇、122 篇有 143 张图；43 needs_access、9 no_framework。本轮新核对三篇的机构入口，未取得可保存框架图。最新条目的作者/出版社入口此前多次受限，本轮转查此前尚未读到正文的机构记录；不批量改状态。
+
+- FLIGHT 1996：HTTP Cronfa16791 正常跳转 HTTPS，实际成功 200、65446 字节，题名、作者、DOI 与页码一致。正文明确 Full text not available from this repository，只有 DOI、没有下载附件。此前的 SSL/超时遗留现在可收窄：这个机构记录没有公开全文，不能据此判论文无框架。下一步找作者同篇副本，避免重复在此记录猜 PDF 文件名。
+- UAV Forest Fusion 2017：准确 NAU Pure 记录成功 200、56786 字节；Access to Document 只有 DOI，无 PDF 或 /files 附件。USGS 记录本地亦 200、80138 字节，无附件。rse2.44 是另一篇 arid/semi-arid 融合论文，不替代本篇。
+- VBRT 2018：准确 Wenkai Li 官方主页为 gp.sysu.edu.cn/node/182，索引列出本篇；实际访问 403，附件情况未知。不要把猜测 geography.sysu.edu.cn 地址或非官方镜像当作者提供的全文。植物所 20568 的 HTTP 实际 502；没有全文。
+- NASA NTRS 两次实际查询未给准确原稿：Koetz 联合辐射传输长题名零结果；Anderson 2008 相关词唯一结果是 1992 IGARSS 总会议录，不能因搜索返回一条就当同篇。
+
+真实 URL、返回码、成功机构页面审查哈希见 sources/cronfa-fulltext-absence-and-nau-sysu-framework-routes-2026-10-07.json。继续其他缺图论文新的公开作者/全文入口；不使用其他版本、照片或结果图填补缺口。

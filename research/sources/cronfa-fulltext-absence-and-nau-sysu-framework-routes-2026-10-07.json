@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-07",
+  "purpose": "New author/institutional routes for remaining missing framework images; latest entries already have repeatedly restricted publisher endpoints.",
+  "records": [
+    {
+      "paperId": "flight-original",
+      "url": "http://cronfa.swansea.ac.uk/Record/cronfa16791",
+      "finalUrl": "https://cronfa.swansea.ac.uk/Record/cronfa16791",
+      "status": 200,
+      "bytes": 65446,
+      "contentType": "text/html; charset=UTF-8",
+      "finding": "Same title, author, DOI and journal pages. Repository explicitly states: Full text not available from this repository: check for access using links below. The DOI is the sole published-version access link. No PDF/download link. Not evidence that paper itself has no framework.",
+      "localAuditHtmlSha256": "00359095e335162d68f62adcca099f619dc25e9dd926d11dc984c07ec856fdd2"
+    },
+    {
+      "paperId": "uav-forest-fusion",
+      "url": "https://experts.nau.edu/en/publications/uav-lidar-and-hyperspectral-fusion-for-forest-monitoring-in-the-s/",
+      "status": 200,
+      "bytes": 56786,
+      "finding": "Exact title, four authors, DOI and journal pages match. Parsed all hyperlinks: DOI access links, no PDF or file attachment. USGS exact record also returned 200, 80138 bytes, without PDF/file links. rse2.44 is a different paper, not a substitute.",
+      "localAuditHtmlSha256": "20bb2281e0221db1b5df05324642f0612b068a026cb1a633a6a71050077a198f"
+    },
+    {
+      "paperId": "vbrt-forest",
+      "url": "https://gp.sysu.edu.cn/node/182",
+      "status": 403,
+      "bytes": 2446,
+      "finding": "Official SYSU author profile discovered and search-indexed exact VBRT publication. Actual requests and web open denied. Attachment availability remains unknown, not absent."
+    }
+  ],
+  "additionalActualChecks": [
+    {
+      "url": "http://ir.ibcas.ac.cn/handle/2S10CLM1/20568",
+      "status": 502,
+      "bytes": 0,
+      "paperId": "vbrt-forest"
+    },
+    {
+      "url": "http://www.zora.uzh.ch/id/eprint/24285/36/Morsdorf_Nichol_Assessing_Forest_2009.pdf",
+      "status": 502,
+      "bytes": 0,
+      "paperId": "mscl-rtm-physiology"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/search",
+      "query": "Fusion of imaging spectrometer and LIDAR data over combined radiative transfer models",
+      "status": 200,
+      "total": 0,
+      "paperId": "linked-rtm-canopy"
+    },
+    {
+      "url": "https://ntrs.nasa.gov/api/citations/search",
+      "query": "Integrating waveform lidar with hyperspectral imagery",
+      "status": 200,
+      "total": 1,
+      "returnedId": 19930063554,
+      "returnedTitle": "IGARSS '92; Proceedings of the 12th Annual International Geoscience and Remote Sensing Symposium, Houston, TX, May 26-29, 1992. Vols. 1 & 2",
+      "finding": "Different title/year; not the Anderson 2008 journal paper. Search result count is not proof of a same-paper manuscript."
+    }
+  ],
+  "counts": {
+    "papers": 174,
+    "papersWithFigures": 122,
+    "images": 143,
+    "needsAccess": 43,
+    "noFramework": 9,
+    "pending": 0
+  },
+  "outcome": "No accepted images or status upgrades; preserve exact negative evidence to avoid repeating known non-full-text records."
+}
