@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 159 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 168 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -61,3 +61,7 @@ VISAPP 2024 双相机融合已解决场所待核验；ISPRS Archives、JOSA A、
 沿三维光谱几何与光学体成像补充 7 篇：SENSOR（ISPRS JPRS 2001）、PROSPECULAR（RSE 2023）、HYDICE 直线定向（ISPRS JPRS 2004）、单视角 NIR-II FMT（TCI 2025）、EnMAP 几何仿真（ISPRS JPRS 2012）、水体非弹性高光谱 LiDAR（Laser & Photonics Reviews 2016）及 HoloSpec（2026 在线先行）。叶片 BRDF、推扫定向和波段配准标相关；真实距离、空间体分布及全息四维恢复按具体输出标核心。SENSOR 以 DEM 地形为主，不冒充任意三维体渲染；NIR-II FMT 仅仿真与体模验证；HoloSpec 需要两幅快照，430 个计算通道不等于独立谱线分辨数，谱峰间距的 Crossref 公式缺失未猜填。TCI 与 Laser & Photonics Reviews 纳入计算成像/光子学重要期刊定向检索，场所清单仍不是统一等级认证。
 
 同时记录 6 篇范围或专业背景：折射率与吸收 SPOT（Physical Review Applied）、中子高光谱断层、Journal of Physics: Photonics 单快照 HoloSpec、Nature Communications 光谱波前与 Optics Express HS-ODT；另排除一篇仅 x、y、波长维度的 CTIS。PRA 折射率工作保留 2023-04-18 方程勘误；光谱波前工作在线 2025、正式卷 2026，波前不自动等于 xyz 物体重建。单快照颗粒分类与 LPR 双快照重建分开，不能混用作者、曝光次数或 F1/几何指标。证据见 `sources/geometry-spectral-tomography-review-2026-10-06.json`。后续继续完整算法、光学断层与几何标定引文及目标期刊逐年检索；清单尚非全面覆盖。
+
+本轮补入 9 篇：Nature Photonics 多光谱反射矩阵、Nature Communications 双色 Alpha-LFM 和体反射矩阵；TOG 半透明材料光谱参数测量与五波段颜料复现；RSE Sierra 生物量/胁迫、CAO-2 AToMS、CAO–AVIRIS 入侵树种和银杏三维黄酮指数。CAO-2 属于真实三维结构与成像光谱的联合采集，1064 nm 双激光本身不是高光谱 LiDAR；银杏点云性状仍受被动光谱冠层表面观测限制。显微结构恢复没有逐体素材料光谱时标相关研究；均匀材料参数空间的“3D”不等于 xyz 几何。
+
+证据与正式元数据保存在 `sources/spectral-material-ecosystem-review-2026-10-06.json`。TOG 2017 Spectral Tracking 原文明确所有实验仅 RGB，留体渲染背景；TOG 2013 Material Dictionaries 的三个 RGB 激光波长反演也留背景。CGF 2020 材料光学采集综述提供颜色/波长分类和引文链，CAO 2007 原始系统发表于 Journal of Applied Remote Sensing，ISRSE 2011 模型参数研究为会议稿，均单列背景，不误标 RSE/ISPRS JPRS。下一步核验 RSE 2024 小麦三维光合性状，继续查目标场所逐年目录及相关引文链。
