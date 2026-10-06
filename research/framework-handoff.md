@@ -207,3 +207,13 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - Spherical Shell 2025：HIT 共同作者 Gu 主页由脚本动态加载；读取其公开 teacherBody.do（POST id=1163，200、126072 字节）后才核对正文，不据静态空壳判无附件。当前公开正文无准确论文题名、PDF/file/download 链接。准确 OpenAlex 只有 DOI，无 PDF，仍 needs_access。
 
 PDF 哈希、页码、裁切坐标与真实下载协议见 sources/dual-angle-official-framework-and-hit-author-body-2026-10-07.json。下一轮继续其余 43 篇缺图；已知官方文章号可用于合法公开期刊域附件核验，不能因 HTTPS/目录失败就排除 HTTP 公开原稿，也不能把元数据或不同稿件当补图。全面文献调研仍未完成。
+
+
+## Fourier 官方补充材料与 HoloSpec 精确正文图（2026-10-07）
+
+174 篇、122 篇有 143 张图；43 needs_access、9 no_framework。本轮没有取得可保存的框架原图，但明确两篇的准确正文目标。
+
+- Fourier 2018：官方 Figshare 5919526 的 resource_doi 与原文匹配；Supplement 1 文件 52745228 成功下载，共 3 页。核对六作者、题名及全部正文，目视审查第 2–3 页。S2 仅高频重组局部原理，S5 是设备照片；不能替代三模态系统。S5 图注和出版社提供的 RG 正文都指向主文 Fig. 6。已找到精确 Fig.6 Download directly；真实请求返回 403 HTML。UConn Guoan Zheng 出版目录仅给 Optica 链接，没有同条目作者稿。下一次优先取正文 Fig.6，不再把 S5 照片或张紫邦目录面具结果图当框架。
+- HoloSpec 2026 LPR：RG 408522709 的 Wiley 正文与 DOI、四作者一致；精确 Fig.1 含 (a) 实验系统、(b) 双次测量的四维重建流程、(c) 棱镜色散模型。Download directly 的原始 PNG 返回 403 HTML。HKU 当前 ISL publications 正文成功读取，未列准确同篇；旧 optima 根目录只是 2004 新闻，猜测 2607_LPR/LPOR 文件均 404，不能称作者提供过这些附件。2602_JPP.pdf 是不同 Snapshot HoloSpec 论文，不替代 LPR 原图。
+
+精确 URL、补充材料哈希、真实返回状态见 sources/fourier-supplement-and-holospec-exact-original-figures-2026-10-07.json。继续其余缺图论文的作者/机构公开全文入口；两篇保留 needs_access，不以有全文文字或 OA 元数据冒充取得图片。
