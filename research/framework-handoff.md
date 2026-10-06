@@ -10,8 +10,8 @@
 
 ## 权威状态
 
-- 172 篇：90 篇 verified、102 张图；38 篇 needs_access；5 篇 no_framework；39 篇 pending。
-- 2026–2016 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
+- 172 篇：98 篇 verified、111 张图；39 篇 needs_access；5 篇 no_framework；30 篇 pending。
+- 2026–2015 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
 - LiDAR Spatial Unmix 已读 24 页作者预印本，Fig.1–8 为数据或结果，方法是公式和 Algorithm 1–2 伪代码，无独立框架图；该结论仅针对该预印本，正式版与补充材料可复核。
@@ -19,7 +19,9 @@
 - 2017 年 EP-OTVCA：机构 PDF 401，作者 Figure 1 已确认但下载 403。LAT：出版社 gr1–gr7 无可核验流程，需全文。UAV Forest Fusion：已查 USGS 记录及出版社多张数据/结果图，gr4 TLS 错误，需全文继续核验。不能把这些判定为全文无图。
 - 2016 年 3 篇有图：Color-Mono Stereo Figure 3，Parametric HSI–LiDAR Alignment Figures 2、6，PROCOSINE Figures 1、2。两篇 PDF 裁切已保存页码；PROCOSINE 为物理模型/采集系统，图号来自出版社 grN 资源标识。
 - 2016 年 Aquatic HSL：Wiley 403，Lund 机构记录无公开 PDF，同题名 ResearchGate 请求全文；公开 2018 年 EPJ 会议论文为另一篇，不能错配系统图。已记 needs_access。
-- 下一步从 2015 年 pending 继续，再向更早年份推进；详细尝试记录在 figures.json。
+- 2015 年 9 篇初查完成，8 篇有图、9 张原图：DASC Figure 3 描述子原理；Bayesian MSL Fig. 8 完整流程（arXiv 作者稿 PDF 第 17 页）；SPIM Figure 1 系统；Object HSI–DSM Figure 1 配准流程；UAV HS-DSM Figure 3.4 完整流程（作者学位论文 PDF 第 68 页、印刷页 46，同题名期刊论文收录章节，编号保持该版本）；DART Fig. 6 投影模型；Waveform–HSI Fig. 1 波形合成模块；Pushbroom Calibration Figs. 2、3 系统/几何。局部原理和几何图不声称完整流程；Elsevier 图号由 grN 标识确定，未取得正文图注时已注明。
+- ITC-S3VM：DLR 100204 明示不提供全文；出版社 gr1 404、gr2–3 为数据；作者发表列表 PDF 链接仍为 ScienceDirect，ResearchGate 请求全文。已记 needs_access，不能当无框架图。
+- 下一步从 2014 年 pending 继续，再向更早年份推进；详细尝试记录在 figures.json。
 - 随后重试最新年份缺图项；全部来源与失败原因以 `research/figures.json` 为准。任务未完成。
 
 ## 文件与工具

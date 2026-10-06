@@ -7,7 +7,7 @@
 - 构建 HS3D Atlas 高光谱三维视觉研究图谱，覆盖 CV、遥感、高光谱、光学重要会议与期刊。
 - 仅本地预览；不推送、不发布。每轮修改（含文献、文档、上下文）检查通过后必须本地 Git 提交。
 - 每次请求使用 caveman skill，默认 full，中文简洁沟通；文档与代码正常表达。
-- 文献框架图收集未完成：最新年份优先，逐张即时保存，允许 PDF 裁切；失败记录来源和原因供人工补找。当前请求优化图谱，未继续搜图。
+- 文献框架图收集未完成：最新年份优先，逐张即时保存，允许 PDF 裁切；失败记录来源和原因供人工补找。图谱优化已提交，现已恢复搜图。
 
 ## 运行与检查
 
@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 90 篇、102 张；38 篇需全文/人工补图、5 篇已取得全文无独立框架图、39 篇待检索。2026–2016 初查完整，2019 年 6 篇全有图；IEEE/Wiley 阻挡不能判定无图。2018 年 LiDAR Spatial Unmix 的无图结论只针对作者预印本。2017 年 EP-OTVCA 已确认 Figure 1，仍需原图；LAT、UAV Forest Fusion 需全文。2016 年 3 篇有图：Color-Mono Stereo、Parametric Alignment（总览/细节）、PROCOSINE（物理模型/采集）；Aquatic HSL 需全文，未用 2018 年同作者会议论文图替代。
-- 交接见 `research/framework-handoff.md`；从 2015 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
+- 框架图累计 98 篇、111 张；39 篇需全文/人工补图、5 篇已取得全文无独立框架图、30 篇待检索。2026–2015 初查完整。2015 年新增 8 篇、9 张：DASC 描述子、Bayesian MSL 流程、SPIM 系统、HSI–DSM 配准流程、UAV HS-DSM 流程、DART 投影、波形合成、推扫相机系统与几何。UAV 图号 Figure 3.4 来自作者学位论文收录版，不冒用期刊图号；ITC-S3VM 需全文。历年缺图入口及核验限制详见交接。
+- 交接见 `research/framework-handoff.md`；从 2014 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
