@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import fieldSensingHero from './assets/field-sensing-hero.webp';
+import { SpectralScene } from './SpectralScene';
 import rawCatalog from './data/catalog.json';
 import { getTrack, tracks } from './tracks';
 import { ResearchMap } from './ResearchMap';
@@ -24,15 +24,6 @@ if (initialYears.start && initialYears.end && Number(initialYears.start) > Numbe
 const publicationLabels: Record<string, string> = { published: '正式发表', early_access: '在线先行', preprint: '预印本' };
 const arrow = <span aria-hidden="true">↗</span>;
 
-function FieldScene() {
-  return <div className="field-scene">
-    <img src={fieldSensingHero} width={1536} height={1024}
-      alt="摄影风格场景示意：三脚架上的光学采集设备面向山谷、河流与森林"
-      decoding="async" fetchPriority="high"/>
-    <span className="field-scene-label">FIELD SENSING · 场景示意</span>
-    <div className="field-scene-caption"><span>从场景采集，到三维理解</span><span>GEOMETRY × SPECTRUM</span></div>
-  </div>;
-}
 
 function PaperCard({ paper, onSelect }: { paper: Paper; onSelect: (p: Paper) => void }) {
   const track = getTrack(paper.track);
@@ -106,7 +97,7 @@ export default function App() {
           <div className="hero-actions"><a className="hero-primary" href="#research" onClick={() => setView('atlas')}>探索研究时间轴 <span>↗</span></a><a className="hero-secondary" href="#research" onClick={() => setView('papers')}>浏览论文库 <span>→</span></a></div>
           <div className="hero-bottom"><span className="edition"><i/> 开放图谱 · 持续更新</span><span className="last-updated">更新于 {catalog.updatedAt}</span></div>
         </div>
-        <div className="hero-visual"><FieldScene/></div>
+        <div className="hero-visual"><SpectralScene/></div>
       </section>
       <div className="workspace" id="research">
         <section className="overview-strip" aria-label="收录概况"><div><b>{String(catalog.papers.length).padStart(2, '0')}</b><span>收录论文<small>CURATED PAPERS</small></span></div><div><b>{String(tracks.length).padStart(2, '0')}</b><span>研究方向<small>RESEARCH TRACKS</small></span></div><div><b>{String(catalog.datasets.length).padStart(2, '0')}</b><span>数据资源入口<small>DATA RESOURCES</small></span></div><p><span className="status-dot"/>系统调研 · 持续扩充<br/><small>正式发表优先，原始来源逐篇核验</small></p></section>

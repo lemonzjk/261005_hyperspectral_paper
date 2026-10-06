@@ -1,13 +1,23 @@
-# 首屏现场采集主视觉
+# 首屏空间与光谱交互示意
 
-用户要求浅色背景、更自然真实的画面与重新设计的首屏布局，明确不接受深色底色、简单层叠 SVG 或悬浮地形与玻璃切片。
+首屏展示三维几何与波长相关表面属性的关系，替换此前的摄影风格场景图。用户强调首屏需要体现高光谱三维视觉本身，而非用照片或抽象装饰表达。
 
-- 使用内置 `image_gen` 工具生成摄影风格的场景示意，没有使用 CLI 或额外 API 凭据。
-- 最终资源：`src/assets/field-sensing-hero.webp`，1536 × 1024。保持原始尺寸，PNG 转码为 WebP，以减少页面加载体积。
-- 图片为 AI 生成的概念场景，不是实际设备照片，不指向特定制造商、实际地点或实测结果。页面标注「场景示意」。
-- 构图为山谷、森林、河流与三脚架上的光学采集设备，去掉抽象光谱体、玻璃片与人为光束。
-- `src/App.tsx` 的 `FieldScene` 负责图片及说明，`src/styles.css` 使用左文右图布局，手机上下排列；正文入口和统计栏保持独立。
+## 数据与表达边界
 
-## 实际生成提示词
+- `src/SpectralScene.tsx` 生成 126 × 98 个采样点，每个点记录空间坐标、材料类别和表面着色参数。
+- 地形使用解析函数生成；植被、岩石、水体标签属于预设类别，不是模型预测。
+- 450–950 nm 范围内的响应曲线是解析示意函数，不是实测反射率、论文复现实验或真实高光谱数据。
+- 「自然色」是类别配色示意；「单波段响应」使用响应值生成伪彩色；「三维几何」保留几何结构。页面底部明确说明合成场景与概念响应。
+- 这是带空间坐标的表面点云，展示同一几何位置附带波长相关属性；不把 H×W×B 图像立方体等同于三维几何。
 
-Use case: photorealistic-natural. Asset type: premium scientific research website hero photograph, wide landscape 3:2. Create an extremely realistic professional editorial photograph of terrestrial optical 3D and spectral field sensing. Scene: a real rocky mountain valley with a stream, evergreen trees and pale distant mountain ridges, natural late-morning daylight, soft cloudy blue sky and restrained real-life greens and stone grays. In the right foreground stands ONE authentic-looking compact scientific survey imaging camera on a sturdy black carbon-fiber tripod, a precise rectangular off-white metal instrument body with a conventional dark glass optical lens and realistic metal fasteners, cable ports and small red alignment details, aimed toward the valley. It looks like believable field research equipment, modest in size, not a science-fiction gadget. Camera and tripod entirely visible; foothill ground and low plants around the tripod. Realistic optical depth of field: instrument sharp, distant landscape moderately clear, organic textures. Art direction: high-end professional technology company photography with calm confident composition and understated visual storytelling; shot on a full-frame camera with a 50mm lens, meticulous natural detail, believable imperfections, soft directional sunlight, neutral color grading. Instrument on the right third, open landscape on left and center. No people. Absolutely no floating terrain, no glass panels, no prisms, no rainbow particles, no artificial light rays, no laser beams, no HUD, no point-cloud overlay, no geometric wireframes, no abstract objects. No text, no logos, no branding, no watermark. Bright natural setting, no dark background, no dramatic dystopian mood. Photographic realism rather than CGI. This is an illustrative field sensing scene and must not claim to depict a particular actual device.
+## 交互与实现
+
+- 可拖动旋转，或使用左右旋转与复位按钮。手机保留纵向页面滚动。
+- 点击点云表面或材料按钮选择光谱曲线；调节波长会切换到单波段响应，并同步点云着色与曲线游标。
+- Canvas 通过投影与深度排序绘制，SVG 展示曲线。没有新增第三方依赖，没有自动动画或持续帧循环。
+- ResizeObserver 适配画布尺寸，设备像素比例上限为 2；组件卸载时释放观察器。
+- `src/spectral-scene.css` 维护独立样式；`src/App.tsx` 将交互示意接入首屏。
+
+## 验证
+
+构建与数据／上下文校验；浏览器检查三种显示方式、波长与材料联动、拖动、旋转复位、键盘调节、手机与桌面布局，以及研究入口和出版筛选。
