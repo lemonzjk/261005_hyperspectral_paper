@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx`、`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 122 篇、143 张；43 篇需全文/人工补图、9 篇全文无独立框架。Fourier Fig.6、HoloSpec Fig.1 原图受限；已确认 FLIGHT 的 Swansea 仓库无全文、UAV 融合 NAU 记录仅 DOI。开放标签不代表取得原图，不据作者章节判正式论文无框架。
+- 框架图累计 122 篇、143 张；43 篇需全文/人工补图、9 篇全文无独立框架。Fourier Fig.6、HoloSpec Fig.1 原图受限；ACFFN 作者目录有 49 篇其他 PDF，无同篇附件；两篇新融合候选留 survey 待核验。开放标签不代表取得原图，不据作者章节判正式论文无框架。
 - 交接见 `research/framework-handoff.md`；初查全部年份后，优先从最新年份重试 43 篇缺图，寻找作者/机构副本；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 扫描候选待核验，其中 CGCN 2023 已补 DOI、作者和卷页但缺原始摘要、专业期刊与引文追溯未完成；Eradiate（GMD 2026）留背景，PhotoniX 2024 串级单像素相机留候选。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

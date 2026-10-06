@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 172 篇：108 篇 verified、126 张图；41 篇 needs_access；6 篇 no_framework；17 篇 pending。
+- 当前 174 篇：122 篇 verified、143 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -26,7 +26,7 @@
 - 2013 年两篇有图：Pigment Mixtures Figure 2 完整系统（作者 PDF 第 3 页）；DART Earth–Atmosphere Fig. 1 分层三维模型（出版社 gr1）。DART 搜索命中的 UMD 教学 PDF 返回 404，未编造全文图注。
 - 2012 年 5 篇初查完成，4 篇、8 张图：3DIS 作者稿 Figures 1、2（PDF 第 1、3 页，总览和成像子系统）；CAO-2 AToMS Figs. 1、2（作者公开 PDF 第 2、3 页，平台和光谱仪）；EnMAP Figs. 1、2（出版社采集/定位几何）；Southern Alps Figs. 2、3（出版社高光谱和多光谱对照完整流程）。几何/结构图已注明不是完整算法流程。
 - Fluorescence Bispectral PS：已核对 NII 作者公开 8 页 CVPR 2012 全文；Fig. 1 是分离示例，Fig. 2–3 是光谱/响应曲线，Fig. 4–7 是重建结果；第 3–5 页方法为模型方程、线性求解和观测条件，无独立系统/流程/方法几何。已记 no_framework，仅针对该作者全文版本。
-- 下一步从 2011 年 pending 继续，再向更早年份推进；详细尝试记录在 figures.json。
+- 全部年份初查已结束；现在优先重试最新年份的 needs_access，详细尝试记录在 figures.json。
 - 随后重试最新年份缺图项；全部来源与失败原因以 `research/figures.json` 为准。任务未完成。
 
 ## 文件与工具
@@ -229,3 +229,13 @@ PDF 哈希、页码、裁切坐标与真实下载协议见 sources/dual-angle-of
 - NASA NTRS 两次实际查询未给准确原稿：Koetz 联合辐射传输长题名零结果；Anderson 2008 相关词唯一结果是 1992 IGARSS 总会议录，不能因搜索返回一条就当同篇。
 
 真实 URL、返回码、成功机构页面审查哈希见 sources/cronfa-fulltext-absence-and-nau-sysu-framework-routes-2026-10-07.json。继续其他缺图论文新的公开作者/全文入口；不使用其他版本、照片或结果图填补缺口。
+
+
+## ACFFN 作者公开附件与 NIR-II FMT 作者入口（2026-10-07）
+
+- 石翠萍公开主页准确列 ACFFN（TGRS 2026, 64, 5510412），该条目无原稿链接。主页底层 GitHub main 完整文件树有 59 文件、49 PDF，未截断；附件包含其他融合论文，但没有同篇 ACFFN 文件，不能用其他论文图补缺。完整文件路径保存在 sources/acffn-author-attachments-and-fmt-institutional-check-2026-10-07.json。
+- 从上述作者目录顺带发现两篇尚未入库的 2025 融合论文：Hierarchical Multimodal Feature Aggregation-Based Multihead Axial Attention Transformer（TGRS）和 Multilevel Feature Gated Fusion Based Spatial and Frequency Domain Attention Network（JSTARS）。已逐篇记录 survey.json 为 pending_fulltext；公开 PDF 路径可作为后续线索，尚未下载核验，不计新增网站论文。JSTARS 场所政策仍需复核，不能自动宣称顶刊。
+- 本轮重新查询 Figshare resource_doi：ACFFN、PS2F2L、Compact DOE 实际 200 空数组；HIDEDaSF、HoloSpec 本次 SSL 失败，不能把本次失败说成空结果。空索引不表示论文没有图。
+- Single-view NIR-II FMT 的蔡夫鸿海南大学官方页成功 200，但为 2020 年旧介绍，只列较早代表作，没有 2025 TCI 同篇或 PDF 附件。保留 needs_access。IEEE 本篇正式记录为 document 11137413；同组其他设备或 STAR-Net 不可替代。
+
+本轮没有新原图。网站仍为 174 篇、122 篇有 143 张图；43 needs_access、9 no_framework。下一步使用尚未查过的同篇作者或机构全文入口，不重复猜已证明无附件的记录。
