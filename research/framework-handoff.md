@@ -108,3 +108,14 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - PhotoniX 2024 串级单像素相机新来源已即时记入 survey.json 候选；待现有缺图补齐后核验全文与场所，不先扩充。
 
 新证据见 sources/water-depth-and-framework-retry-2026-10-06.json。下一步继续现有缺图的其他公开作者/机构入口，优先最新年份；已失败的同一入口没有新证据时不要重复请求。
+
+## Evo 全文补齐与公开作者图复核（2026-10-06）
+
+174 篇：119 篇有 139 张图、46 needs_access、9 no_framework、0 pending。本轮未新增图片；解决一篇原先缺全文的正式版本核验，不等于其余框架补齐。
+
+- Evo 3D-CNN：Finna 官方 syke.10138_576385 新记录提供 Helda bitstream dd54d326-aebc-4340-ab34-8947f69d716f。/bitstreams/.../download 返回 Angular 外壳；公开 /server/api/core/bitstreams/.../content 成功返回文件。传输为 multipart，按 MIME 边界取 file.blob，取得正式十六页 Elsevier PDF；标题、DOI、作者与原条目一致。方法 3.1–3.5、讨论和结论已读，16 页全部渲染目视核对，Figure 1–10 都是数据/结果/解释性图。网络结构只见 PDF 第 6 页 Table 3；没有独立框架图，标 no_framework，结构表不冒充图。
+- Fourier Multimodal 2018：作者 Smart Imaging Lab 同篇条目配图可下载，但目视是面具 top/perspective/side views 的三子图重建结果；不计框架，仍需原稿。
+- Jie Bai 的 UESTC 官方主页同时确认 HIDEDaSF、DWF、Leaf Incidence 与 RSE 2024 Independence，但均只有 IEEE/Elsevier 链接。Leaf Incidence 2021 为在线年、卷 60 对应 2022，保持网站正式年份。未请求作者、未绕过登录。
+- Science China 的 scis 期刊站点按编号探测路径 SSL unexpected EOF/浏览超时，没有实际取得或确认该路径附件；不把推测 URL 当发现的全文。
+
+证据与 PDF 哈希见 sources/evo-fulltext-and-public-author-retry-2026-10-06.json。后续已有明确图号的优先公开作者附件：HIDEDaSF Fig. 4、HoloSpec Fig. 1、Spherical Shell Fig. 2、EP-OTVCA Fig. 1、Hyper-LIFT Fig. 2；没有新入口时不重试同一拒绝页面。继续找其他原始机构存档；Helda 新公共接口可用于合法开放附件。
