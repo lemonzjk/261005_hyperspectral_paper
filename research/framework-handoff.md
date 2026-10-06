@@ -57,3 +57,14 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - Sierra Biomass：UNL PDF 与 ScienceDirect 正文 403。UMD 作者博士论文 https://api.drum.lib.umd.edu/server/api/core/bitstreams/71ff7674-50e1-45e0-96d1-e9f55c38b669/content 可读；第 2 章同名工作 PDF 26–61 页方法及 Fig. 2-1–2-12 为数据/结果图。第 3 章流程图属于其他工作，不使用；期刊版本未全面核验，保留 needs_access。
 - Bispectral BRRDF： https://jo.dreggn.org/home/2010_bispectral.pdf 第 3 页 Figure 3，保存完整测量装置；明确不是 PCA 或渲染完整流程。
 - AISA–LiDAR Species：出版社 S003442571000218X gr2 为光谱/CHM/CVP 与高度掩膜、40/41/44/41 波段分类输入流程，保存完整图；gr1 研究区、gr3–4 光谱、gr5–6 统计结果不使用。正文 403，图号依据为 gr2，本站概述注明二维分类输入及版本限制。
+
+## 2026-10-06：2009–2008 年及 2007 年彩色光度立体
+
+累计 115 篇有图、133 张；44 needs_access、7 no_framework、6 pending。2026–2008 初查完成，下一步 2007 Linked RTM，再推进 2004–1996。
+
+- CAO Invasive Trees：USDA 14 页同名期刊全文 https://www.fs.usda.gov/psw/publications/hughes/psw_2008_hughes004.pdf ，第 4 页 Figure 2 完整入侵植物检测流程，含三维融合、校正、太阳–冠层光线追踪和 AutoMCU/S，已保存全部连线和输出。
+- Forest Fusion 2008：作者 https://rslab.disi.unitn.it/papers/R59-TGARS-Dalponte.pdf ，第 5 页 Figure 2 完整分类系统，包括强度、高程、DEM/DCM 与高光谱预处理、特征选择和分类。
+- MSCL RTM Physiology：ScienceDirect S003442570900176X 正文 403；Edinburgh、UZH 作者列表无附件，ResearchGate 仅申请全文。已看 gr1–8，gr3 含强度/深度到截面箭头和脉冲/波形曲线，但缺图注和方法，无法判断是否独立方法框架，不代替框架；保留 needs_access。
+- LVIS–AVIRIS Inventory：UNH 573 条目无 Download；期刊正文入口只有摘要及 Purchase PDF。gr1/2/4–8 是研究区、波形指标和清查结果，gr3 404；保留 needs_access，不作全文无框架结论。
+- Non-rigid Color PS：作者 Stenger PDF https://bjornstenger.github.io/papers/hernandez_iccv2007.pdf ，第 1 页 Figure 1 采集示意与标定板完整两子图已保存；其他 Figures 2–5 是重建/追踪展示。Carlos Hernandez 链接 web 可读但本地 406，Stenger 副本可下载。
+- Linked RTM Canopy（pending）：ScienceDirect PII S0034425706003506；搜索得到同名 11 页 article-in-press https://citeseerx.ist.psu.edu/document?doi=cdb11d543e7064625c5a4861b282ba72f5306f31&repid=rep1&type=pdf ，下载 404；gr1–3_lrg.jpg 404。下一轮先找 UZH/NASA 作者全文与旧图格式，不要用同作者 SVM 林火分类会议论文代替。
