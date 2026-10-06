@@ -5,13 +5,20 @@ import { ResearchMap } from './ResearchMap';
 import type { Dataset, Paper } from './types';
 
 const catalog = rawCatalog as { updatedAt: string; papers: Paper[]; datasets: Dataset[] };
-const years = [...new Set(catalog.papers.map(p => String(p.year)))].sort().reverse();
+const paperYears = catalog.papers.map(p => p.year);
+const years = Array.from({ length: Math.max(...paperYears) - Math.min(...paperYears) + 1 }, (_, i) => String(Math.max(...paperYears) - i));
 const representations = [...new Set(catalog.papers.map(p => p.representation))];
 const repo = 'https://github.com/lemonzjk/261005_hyperspectral_paper';
 const views = [{ id: 'atlas', label: '研究图谱' }, { id: 'papers', label: '论文库' }, { id: 'datasets', label: '数据资源' }, { id: 'guide', label: '阅读指南' }] as const;
 type View = typeof views[number]['id'];
 const params = new URLSearchParams(window.location.search);
 const initialView = views.some(v => v.id === params.get('view')) ? params.get('view') as View : 'atlas';
+const readYear = (key: string) => years.includes(params.get(key) ?? '') ? params.get(key)! : '';
+const legacyYear = readYear('year');
+const initialYears = { start: readYear('yearFrom') || legacyYear, end: readYear('yearTo') || legacyYear };
+if (initialYears.start && initialYears.end && Number(initialYears.start) > Number(initialYears.end)) {
+  [initialYears.start, initialYears.end] = [initialYears.end, initialYears.start];
+}
 const arrow = <span aria-hidden="true">↗</span>;
 
 function SpectrumArt() {
@@ -66,13 +73,21 @@ export default function App() {
   const [view, setView] = useState<View>(initialView);
   const [query, setQuery] = useState(params.get('q') ?? '');
   const [track, setTrack] = useState(tracks.some(t => t.id === params.get('track')) ? params.get('track')! : '');
-  const [year, setYear] = useState(years.includes(params.get('year') ?? '') ? params.get('year')! : '');
+  const [yearRange, setYearRange] = useState(initialYears);
+  const { start: yearFrom, end: yearTo } = yearRange;
+  const changeYear = (bound: 'start' | 'end', value: string) => setYearRange(current => {
+    const next = { ...current, [bound]: value };
+    if (next.start && next.end && Number(next.start) > Number(next.end)) {
+      next[bound === 'start' ? 'end' : 'start'] = value;
+    }
+    return next;
+  });
   const [representation, setRepresentation] = useState(representations.includes(params.get('representation') ?? '') ? params.get('representation')! : '');
   const [selected, setSelected] = useState<Paper | null>(catalog.papers.find(p => p.id === params.get('paper')) ?? null);
-  const filtered = useMemo(() => catalog.papers.filter(p => (!track || p.track === track) && (!year || String(p.year) === year) && (!representation || p.representation === representation) && query.toLowerCase().trim().split(/\s+/).every(word => `${p.shortTitle} ${p.title} ${p.authors} ${p.summary} ${p.tags.join(' ')} ${p.venue} ${getTrack(p.track).name}`.toLowerCase().includes(word))).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)), [query, track, year, representation]);
-  const hasFilters = Boolean(query || track || year || representation);
-  const resetFilters = () => { setQuery(''); setTrack(''); setYear(''); setRepresentation(''); };
-  useEffect(() => { const next = new URLSearchParams(); if (view !== 'atlas') next.set('view', view); if (query) next.set('q', query); if (track) next.set('track', track); if (year) next.set('year', year); if (representation) next.set('representation', representation); if (selected) next.set('paper', selected.id); window.history.replaceState(null, '', `${window.location.pathname}${next.size ? '?' + next.toString() : ''}`); }, [view, query, track, year, representation, selected]);
+  const filtered = useMemo(() => catalog.papers.filter(p => (!track || p.track === track) && (!yearFrom || p.year >= Number(yearFrom)) && (!yearTo || p.year <= Number(yearTo)) && (!representation || p.representation === representation) && query.toLowerCase().trim().split(/\s+/).every(word => `${p.shortTitle} ${p.title} ${p.authors} ${p.summary} ${p.tags.join(' ')} ${p.venue} ${getTrack(p.track).name}`.toLowerCase().includes(word))).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)), [query, track, yearFrom, yearTo, representation]);
+  const hasFilters = Boolean(query || track || yearFrom || yearTo || representation);
+  const resetFilters = () => { setQuery(''); setTrack(''); setYearRange({ start: '', end: '' }); setRepresentation(''); };
+  useEffect(() => { const next = new URLSearchParams(); if (view !== 'atlas') next.set('view', view); if (query) next.set('q', query); if (track) next.set('track', track); if (yearFrom) next.set('yearFrom', yearFrom); if (yearTo) next.set('yearTo', yearTo); if (representation) next.set('representation', representation); if (selected) next.set('paper', selected.id); window.history.replaceState(null, '', `${window.location.pathname}${next.size ? '?' + next.toString() : ''}`); }, [view, query, track, yearFrom, yearTo, representation, selected]);
   const downloadBib = () => { const url = URL.createObjectURL(new Blob([catalog.papers.map(p => p.citation).join('\n\n')], { type: 'text/plain;charset=utf-8' })); const a = document.createElement('a'); a.href = url; a.download = 'hyperspectral-3d-references.bib'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); };
   return <>
     <a className="skip-link" href="#main">跳到主要内容</a>
@@ -87,8 +102,8 @@ export default function App() {
         {(view === 'atlas' || view === 'papers') && <>
           <div className="section-heading"><div><span className="eyebrow">{view === 'atlas' ? 'EXPLORE THE CONNECTIONS' : 'THE READING COLLECTION'}</span><h2>{view === 'atlas' ? '研究方向图谱' : '论文库'}<span>{view === 'atlas' ? 'Research atlas' : 'Paper collection'}</span></h2></div><div className="view-toggle" aria-label="论文展示方式"><button className={view === 'atlas' ? 'active' : ''} onClick={() => setView('atlas')}><span aria-hidden="true">⌘</span> 图谱</button><button className={view === 'papers' ? 'active' : ''} onClick={() => setView('papers')}><span aria-hidden="true">☷</span> 列表</button></div></div>
           <div className={`explorer${view === 'atlas' ? ' timeline-explorer' : ''}`}><aside className="explorer-sidebar"><label className="mobile-track-filter">研究方向<select value={track} onChange={e => setTrack(e.target.value)} aria-label="选择研究方向"><option value="">全部方向（{catalog.papers.length} 篇）</option>{tracks.map(t => <option key={t.id} value={t.id}>{t.name}（{catalog.papers.filter(p => p.track === t.id).length}）</option>)}</select></label><div className="sidebar-heading">研究方向<span>{tracks.length} TRACKS</span></div><button className={`track-button ${track === '' ? 'active' : ''}`} onClick={() => setTrack('')}><span className="all-track-icon">⊞</span><span>全部方向</span><b>{catalog.papers.length}</b></button>{tracks.map((t, i) => <button key={t.id} className={`track-button ${track === t.id ? 'active' : ''}`} style={{ '--track': t.color } as CSSProperties} onClick={() => setTrack(t.id)}><span className="track-number">{String(i + 1).padStart(2, '0')}</span><span>{t.name}<small>{t.en}</small></span><b>{catalog.papers.filter(p => p.track === t.id).length}</b></button>)}<div className="sidebar-note"><span>阅读提示</span><p>先选研究方向，再用关键词或年份缩小范围。点击论文卡片查看方法、输入输出与原始来源。</p><button onClick={() => setView('guide')}>了解收录范围 →</button></div></aside>
-            <div className="explorer-content"><form className="filter-bar" onSubmit={e => e.preventDefault()}><label className="search-field"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="m13 13 4 4" stroke="currentColor" strokeWidth="1.5"/></svg><input type="search" aria-label="搜索论文、方法或关键词" placeholder="搜索论文、方法或关键词…" value={query} onChange={e => setQuery(e.target.value)}/></label><label><span className="sr-only">年份</span><select value={year} onChange={e => setYear(e.target.value)}><option value="">全部年份</option>{[...new Set(catalog.papers.map(p => p.year))].sort().reverse().map(y => <option key={y}>{y}</option>)}</select></label><label><span className="sr-only">场景表示</span><select value={representation} onChange={e => setRepresentation(e.target.value)}><option value="">全部表示</option>{[...new Set(catalog.papers.map(p => p.representation))].map(r => <option key={r}>{r}</option>)}</select></label></form>
-              <div className="results-heading"><span aria-live="polite">{view === 'atlas' ? '匹配' : '显示'} <b>{filtered.length}</b> / {catalog.papers.length} 篇论文{track && <span> · {getTrack(track as Paper['track']).name}</span>}</span>{hasFilters ? <button onClick={resetFilters}>清除筛选 ×</button> : <span className="results-note">{view === 'atlas' ? '按年份与研究方向浏览时间轴' : '按年份从新到旧'}</span>}</div>
+            <div className="explorer-content"><form className="filter-bar" onSubmit={e => e.preventDefault()}><label className="search-field"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="m13 13 4 4" stroke="currentColor" strokeWidth="1.5"/></svg><input type="search" aria-label="搜索论文、方法或关键词" placeholder="搜索论文、方法或关键词…" value={query} onChange={e => setQuery(e.target.value)}/></label><div className="year-range" role="group" aria-label="年份范围"><label><span className="sr-only">起始年份</span><select aria-label="起始年份" value={yearFrom} onChange={e => changeYear('start', e.target.value)}><option value="">起始不限</option>{years.map(y => <option key={y} value={y}>{y}</option>)}</select></label><span className="year-range-separator">至</span><label><span className="sr-only">结束年份</span><select aria-label="结束年份" value={yearTo} onChange={e => changeYear('end', e.target.value)}><option value="">结束不限</option>{years.map(y => <option key={y} value={y}>{y}</option>)}</select></label></div><label><span className="sr-only">场景表示</span><select value={representation} onChange={e => setRepresentation(e.target.value)}><option value="">全部表示</option>{[...new Set(catalog.papers.map(p => p.representation))].map(r => <option key={r}>{r}</option>)}</select></label></form>
+              <div className="results-heading"><span aria-live="polite">{view === 'atlas' ? '匹配' : '显示'} <b>{filtered.length}</b> / {catalog.papers.length} 篇论文{(yearFrom || yearTo) && <span> · {yearFrom && yearTo ? yearFrom === yearTo ? `${yearFrom} 年` : `${yearFrom}–${yearTo} 年` : yearFrom ? `${yearFrom} 年起` : `截至 ${yearTo} 年`}</span>}{track && <span> · {getTrack(track as Paper['track']).name}</span>}</span>{hasFilters ? <button onClick={resetFilters}>清除筛选 ×</button> : <span className="results-note">{view === 'atlas' ? '按年份与研究方向浏览时间轴' : '按年份从新到旧'}</span>}</div>
               {view === 'atlas' ? <ResearchMap papers={filtered} onSelect={setSelected}/> : <div className="paper-grid explorer-paper-grid">{filtered.map(p => <PaperCard key={p.id} paper={p} onSelect={setSelected}/>)}</div>}
               {!filtered.length && <div className="empty-state"><span>◎</span><h3>暂时没有匹配的论文</h3><p>{track && !catalog.papers.some(p => p.track === track) ? '这个方向的文献正在整理中，可以先浏览其他研究路线。' : '试试其他关键词，或清除当前筛选条件。'}</p><button className="secondary-button" onClick={resetFilters}>查看全部论文</button></div>}
             </div>
