@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import fieldSensingHero from './assets/field-sensing-hero.webp';
 import rawCatalog from './data/catalog.json';
 import { getTrack, tracks } from './tracks';
 import { ResearchMap } from './ResearchMap';
@@ -23,30 +24,14 @@ if (initialYears.start && initialYears.end && Number(initialYears.start) > Numbe
 const publicationLabels: Record<string, string> = { published: '正式发表', early_access: '在线先行', preprint: '预印本' };
 const arrow = <span aria-hidden="true">↗</span>;
 
-function SpectrumArt() {
-  const colors = ['#9385ed', '#777ce9', '#638ce7', '#52a6da', '#44bed0', '#4fd1b3', '#80d3a0', '#b0d396', '#d7cc8b', '#e4b58c', '#dc928d', '#c67b9f'];
-  return <svg className="spectrum-art" viewBox="0 0 520 400" fill="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="spectrum"><stop stopColor="#9385ed"/><stop offset=".3" stopColor="#52a6da"/><stop offset=".5" stopColor="#4fd1b3"/><stop offset=".75" stopColor="#d7cc8b"/><stop offset="1" stopColor="#dc928d"/></linearGradient>
-      <radialGradient id="volumeGlow"><stop stopColor="#67cebe" stopOpacity=".15"/><stop offset="1" stopColor="#67cebe" stopOpacity="0"/></radialGradient>
-      <pattern id="heroGrid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#91bfb4" strokeOpacity=".12" strokeWidth=".5"/></pattern>
-    </defs>
-    <rect width="520" height="400" fill="url(#heroGrid)"/>
-    <ellipse cx="268" cy="233" rx="215" ry="162" fill="url(#volumeGlow)"/>
-    <ellipse cx="266" cy="242" rx="217" ry="91" stroke="#73b7a6" strokeOpacity=".18" strokeDasharray="3 8" transform="rotate(-16 266 242)"/>
-    <path d="M260 75v270M70 268l355-179M75 115l370 194" stroke="#8abab0" strokeOpacity=".17" strokeDasharray="3 5"/>
-    {colors.map((color, i) => <g key={color} transform={`translate(0 ${-i * 11})`}>
-      <path d="m116 235 143-79 145 79-143 82Z" fill={color} fillOpacity=".07" stroke={color} strokeOpacity=".85" strokeWidth="1"/>
-      <path d="m116 235 145 82 143-82v6l-143 82-145-82Z" fill={color} fillOpacity=".16"/>
-      {[1, 2, 3, 4].map(n => <path key={n} d={`M${116 + n * 29} ${235 + n * 16.4}l143-79M${116 + n * 28.6} ${235 - n * 15.8}l145 82`} stroke={color} strokeOpacity=".1" strokeWidth=".6"/>)}
-    </g>)}
-    <path d="M116 118v-37h78M404 243v66h-43" stroke="#81a192" strokeOpacity=".45"/>
-    <circle cx="116" cy="118" r="3" fill="#a18de9"/><circle cx="404" cy="243" r="3" fill="#d59494"/>
-    <text x="118" y="69" fill="#6b8979" fontSize="9" letterSpacing="2" fontFamily="monospace">SPECTRAL VOLUME</text>
-    <text x="380" y="331" fill="#6b8979" fontSize="9" fontFamily="monospace">x · y · z · λ</text>
-    <rect x="112" y="368" width="292" height="2" rx="1" fill="url(#spectrum)"/>
-    <text x="112" y="391" fill="#789381" fontSize="9" fontFamily="monospace">λ₁</text><text x="393" y="391" fill="#789381" fontSize="9" fontFamily="monospace">λₙ</text>
-  </svg>;
+function FieldScene() {
+  return <div className="field-scene">
+    <img src={fieldSensingHero} width={1536} height={1024}
+      alt="摄影风格场景示意：三脚架上的光学采集设备面向山谷、河流与森林"
+      decoding="async" fetchPriority="high"/>
+    <span className="field-scene-label">FIELD SENSING · 场景示意</span>
+    <div className="field-scene-caption"><span>从场景采集，到三维理解</span><span>GEOMETRY × SPECTRUM</span></div>
+  </div>;
 }
 
 function PaperCard({ paper, onSelect }: { paper: Paper; onSelect: (p: Paper) => void }) {
@@ -115,13 +100,13 @@ export default function App() {
     <main id="main">
       <section className="hero">
         <div className="hero-copy"><span className="eyebrow"><i/> 高光谱 × 三维视觉研究图谱</span>
-          <h1>从<span className="hero-spectrum-word">光谱</span>，<br/>看见三维世界。</h1>
+          <h1>高光谱<span className="hero-multiply"> ×</span><br/>三维视觉。</h1>
           <p className="hero-en">Beyond RGB. Into the spectral world.</p>
-          <p className="hero-description">连接几何、光谱与材料。<br/>一站探索高光谱三维视觉的研究路线、论文与数据。</p>
+          <p className="hero-description">从成像采集到场景重建，连接几何、光谱与材料。<br/>系统整理研究进展，让论文、方向与时间清晰相连。</p>
           <div className="hero-actions"><a className="hero-primary" href="#research" onClick={() => setView('atlas')}>探索研究时间轴 <span>↗</span></a><a className="hero-secondary" href="#research" onClick={() => setView('papers')}>浏览论文库 <span>→</span></a></div>
           <div className="hero-bottom"><span className="edition"><i/> 开放图谱 · 持续更新</span><span className="last-updated">更新于 {catalog.updatedAt}</span></div>
         </div>
-        <div className="hero-visual"><div className="hero-visual-heading"><span>THE SPECTRAL DIMENSION</span><span>01 / EXPLORATION</span></div><SpectrumArt/><div className="visual-caption"><span>Geometry</span><span>Spectrum</span><span>Materials</span></div></div>
+        <div className="hero-visual"><FieldScene/></div>
       </section>
       <div className="workspace" id="research">
         <section className="overview-strip" aria-label="收录概况"><div><b>{String(catalog.papers.length).padStart(2, '0')}</b><span>收录论文<small>CURATED PAPERS</small></span></div><div><b>{String(tracks.length).padStart(2, '0')}</b><span>研究方向<small>RESEARCH TRACKS</small></span></div><div><b>{String(catalog.datasets.length).padStart(2, '0')}</b><span>数据资源入口<small>DATA RESOURCES</small></span></div><p><span className="status-dot"/>系统调研 · 持续扩充<br/><small>正式发表优先，原始来源逐篇核验</small></p></section>
