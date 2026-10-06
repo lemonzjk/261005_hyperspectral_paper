@@ -25,8 +25,8 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
     .sort((a, b) => a.year - b.year || a.shortTitle.localeCompare(b.shortTitle)) ?? [];
   return <div className={`timeline-overview${showAll ? ' show-all' : ' is-glance'}`} style={{ '--periods': columns.length } as CSSProperties}>
     <div className="overview-toolbar">
-      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 研究时间轴</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {mode === 'timeline' ? '年份横轴 · 方向线路 · 论文站点' : showAll ? '全部展示' : '点击方向或时间节点展开论文'}</p></div>
-      <div className="overview-actions"><div className="overview-density" role="group" aria-label="时间轴展示密度"><button aria-pressed={mode === 'timeline'} onClick={() => setMode('timeline')}>时间轴</button><button aria-pressed={mode === 'directions'} onClick={() => setMode('directions')}>方向全景</button><button aria-pressed={showAll} onClick={() => setMode('all')}>全部论文</button></div><button className="overview-advanced" onClick={onDetail}>详细图 / 导出 ↗</button></div>
+      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 研究时间轴</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {mode === 'timeline' ? '方向与时间一览 · 点击展开论文' : showAll ? '全部展示' : '点击方向或时间节点展开论文'}</p></div>
+      <div className="overview-actions"><div className="overview-density" role="group" aria-label="时间轴展示密度"><button aria-pressed={mode === 'timeline'} onClick={() => setMode('timeline')}>时间轴</button><button aria-pressed={mode === 'directions'} onClick={() => setMode('directions')}>方向全景</button><button aria-pressed={showAll} onClick={() => setMode('all')}>全部论文</button></div><button className="overview-advanced" onClick={onDetail}>导出完整 SVG ↓</button></div>
     </div>
     {mode !== 'timeline' && <div className="overview-key">{showAll && <><span><i className="core-marker"/>核心研究</span><span><i className="related-marker"/>相关研究</span></>}<p>{showAll ? '横向看时间，纵向看方向；圆点核心、方点相关。' : '横向看时间，纵向看方向；数字为篇数，节点旁为阶段代表论文。'}</p></div>}
     {mode === 'timeline' && papers.length > 0 && <TimelineRoutes groups={groups} periods={columns} selection={selection} onSelect={setSelection} onPaperSelect={onSelect}/>}
@@ -79,6 +79,6 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
         </section>)}
       </div>
     </div>}
-    <div className="overview-footer"><span>{mode === 'timeline' ? '代表论文优先核心研究 · 连线表示同方向的时间分布，不表示方法继承' : '早期合并为阶段 · 列宽不表示时长 · 方向归类不表示方法继承'}</span><span>篇数仅表示当前收录分布</span></div>
+    <div className="overview-footer"><span>{mode === 'timeline' ? '代表论文优先核心研究 · 方向归类不表示方法继承' : '早期合并为阶段 · 列宽不表示时长 · 方向归类不表示方法继承'}</span><span>篇数仅表示当前收录分布</span></div>
   </div>;
 }
