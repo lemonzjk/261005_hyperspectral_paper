@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 108 篇、126 张；41 篇需全文/人工补图、6 篇已取得全文无独立框架图、17 篇待检索。2026–2012 初查完整。2013 年 Pigment Mixtures 完整流程、DART Earth–Atmosphere 分层模型有图；2012 年 3DIS 总览/成像、CAO-2 平台/光谱仪、EnMAP 采集/定位几何、Southern Alps 高光谱及多光谱对照流程有图。Fluorescence Bispectral PS 已读 NII 作者 8 页全文，图为数据/结果，方法以公式叙述，无独立框架图（仅此版本）。历年来源限制见交接。
-- 交接见 `research/framework-handoff.md`；从 2011 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
+- 框架图累计 112 篇、130 张；42 篇需全文/人工补图、7 篇已取得全文无独立框架图、11 篇待检索。2026–2010 初查完整。2011 年 Color PS 分割子模块、Virtual HSL 系统已保存；Tropical Biomass 全文无独立流程图。Sierra Biomass 期刊全文 403，作者博士论文同名章节仅数据/结果图，仍待期刊核验。2010 年 Bispectral BRRDF 测量装置、AISA–LiDAR 融合预处理流程有图。版本、图号依据及来源限制见交接。
+- 交接见 `research/framework-handoff.md`；从 2009 年未检索项继续，再向更早年份推进、重试新年缺图；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 35 候选待核验、专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

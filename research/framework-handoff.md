@@ -46,3 +46,14 @@
 本地预览端口 5173；本机请求绕过 proxy。数据和上下文修改运行 `npm run validate`，网站构建 `npm run build`，详情新增图进行桌面和手机检查。每轮检查通过后创建本地 Git 提交。
 
 Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图、原图尺寸、链接、关闭与 320/390/1440 px 溢出。Chromium 为 `/root/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome`。临时目录失效时自行恢复验证，不依赖本文件证明检查已通过。
+
+## 2026-10-06：2011–2010 年框架图
+
+累计 112 篇有图、130 张；42 needs_access、7 no_framework、11 pending。2026–2010 年初查完成；下一步从 2009 年继续。
+
+- Color Photometric Stereo for Multicolored Surfaces：作者 ICCV PDF 第 3 页 Figure 2，保存分割假设评估子模块，明确不是完整重建框架；裁切保留所有假设及比较箭头。来源 https://bjornstenger.github.io/papers/anderson_iccv2011.pdf 。
+- Virtual HSL：出版社 S0924271611000529 gr1 系统与光路，分体式光谱和测距装置；gr2–3 为曲线，不替代框架。
+- Tropical Biomass：取得 https://tropicalstudies.org/carbono/nbina-15042.pdf 的 12 页期刊全文，方法 2.1–2.5、全部 Figure 1–6 已核对，只有研究区/数据/回归/地图结果，无独立框架图。
+- Sierra Biomass：UNL PDF 与 ScienceDirect 正文 403。UMD 作者博士论文 https://api.drum.lib.umd.edu/server/api/core/bitstreams/71ff7674-50e1-45e0-96d1-e9f55c38b669/content 可读；第 2 章同名工作 PDF 26–61 页方法及 Fig. 2-1–2-12 为数据/结果图。第 3 章流程图属于其他工作，不使用；期刊版本未全面核验，保留 needs_access。
+- Bispectral BRRDF： https://jo.dreggn.org/home/2010_bispectral.pdf 第 3 页 Figure 3，保存完整测量装置；明确不是 PCA 或渲染完整流程。
+- AISA–LiDAR Species：出版社 S003442571000218X gr2 为光谱/CHM/CVP 与高度掩膜、40/41/44/41 波段分类输入流程，保存完整图；gr1 研究区、gr3–4 光谱、gr5–6 统计结果不使用。正文 403，图号依据为 gr2，本站概述注明二维分类输入及版本限制。
