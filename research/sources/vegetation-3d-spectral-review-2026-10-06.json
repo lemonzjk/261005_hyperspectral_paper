@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-06",
+  "coverage": "森林和作物三维光谱物理模型引文核验，新增五篇与复核一篇；整体调研未完成。",
+  "papers": [
+    {
+      "id": "understory-hsl",
+      "title": "Assessing hyperspectral LiDAR capability for understory soil spectral retrieval and property estimation",
+      "doi": "10.1016/j.rse.2026.115491",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425726002610"
+      ],
+      "evidence": "核心实验为 LESS 三维辐射传输仿真，不能描述成新硬件或机载高光谱 LiDAR 实测。出版社正式卷期为 2026 年 9 月；实测土壤光谱用于场景输入。SOC 和全氮回归 R² 分别为 0.332、0.485，光谱恢复改善不等于高精度土壤属性反演。"
+    },
+    {
+      "id": "flight-original",
+      "title": "Three-dimensional forest light interaction model using a Monte Carlo method",
+      "doi": "10.1109/36.508411",
+      "sources": [
+        "https://www.researchgate.net/publication/3201565_Three-dimensional_forest_light_interaction_model_using_a_Monte_Carlo_method"
+      ],
+      "evidence": "作者上传的原始摘要已核验，正式 1996 年 TGRS 34(4):946–956。验证案例为茂密云杉林；是森林光谱正向模型，不是逐叶网格恢复或由光谱图像反演任意三维几何。"
+    },
+    {
+      "id": "raytran-original",
+      "title": "Raytran: a Monte Carlo ray-tracing model to compute light scattering in three-dimensional heterogeneous media",
+      "doi": "10.1109/36.662732",
+      "sources": [
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC16024",
+        "https://api.crossref.org/works/10.1109/36.662732"
+      ],
+      "evidence": "作者机构 JRC 原始摘要与正式 DOI 元数据已核验。标相关的通用三维光传输基础，尚未核验全文中的高光谱波段设置，不能写成真实高光谱三维采集或神经逆渲染；正式页码 493–505，以期刊元数据为准。"
+    },
+    {
+      "id": "dart-dlamaize-traits",
+      "title": "Modeling 3D radiative transfer for maize traits retrieval: A growth stage-dependent study on hyperspectral sensitivity to field geometry, soil moisture, and leaf biochemistry",
+      "doi": "10.1016/j.rse.2025.114784",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425725001889"
+      ],
+      "evidence": "原始摘要和结论已核验，实测验证来自 2018 年两次田间观测。三维模型用于光谱解释与性状反演，最终性状地图为二维栅格，不声称由高光谱影像恢复任意三维几何。"
+    },
+    {
+      "id": "tree-adjacency-traits",
+      "title": "Seeing into individual trees: Tree-specific retrieval of tree-level traits using 3D radiative transfer model and spatial adjacency constraint from UAV multispectral imagery",
+      "doi": "10.1016/j.rse.2025.114616",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425725000203"
+      ],
+      "evidence": "原始摘要与引言已核验。输入为多光谱，标相关；树冠凸包为三维结构先验，不是逐叶精细重建。反演精度与树冠覆盖和光照有关，不能把该验证误写成实测高光谱点云重建。"
+    },
+    {
+      "id": "ahsl-forest-stress",
+      "title": "Evaluating the potential of airborne hyperspectral LiDAR for assessing forest insects and diseases with 3D Radiative Transfer Modeling",
+      "doi": "10.1016/j.rse.2023.113759",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425723003103"
+      ],
+      "evidence": "原始引言与讨论已核验，森林结构和叶片光谱来自测量，但 AHSL 输出由仿真生成；这是机载系统潜力评估，不是实际机载 HSL 野外试验或已部署系统。"
+    }
+  ]
+}

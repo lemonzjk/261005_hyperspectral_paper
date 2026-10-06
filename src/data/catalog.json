@@ -903,14 +903,17 @@
       "input": "实测土壤光谱、定制树模型及不同植被覆盖率的三维场景。",
       "output": "模拟光谱点云和影像、冠层下土壤光谱及土壤属性估计。",
       "mechanism": "使用 LESS 三维辐射传输模型比较激光回波与被动成像的冠层散射干扰，并评估光谱曲线、指数和回归结果。",
-      "readingNote": "核心实验为三维辐射传输仿真，不能描述成新硬件实测点云重建。出版社正式卷期与摘要已核验。",
+      "readingNote": "核心实验为 LESS 三维辐射传输仿真，不能描述成新硬件或机载高光谱 LiDAR 实测。出版社正式卷期为 2026 年 9 月；实测土壤光谱用于场景输入。SOC 和全氮回归 R² 分别为 0.332、0.485，光谱恢复改善不等于高精度土壤属性反演。",
       "paper": "https://www.sciencedirect.com/science/article/abs/pii/S0034425726002610",
       "doi": "10.1016/j.rse.2026.115491",
       "verifiedAt": "2026-10-06",
       "verificationLevel": "official_abstract",
       "publicationStatus": "published",
       "venueTier": "target",
-      "citation": "@article{understoryhsl,\n  title={Assessing hyperspectral LiDAR capability for understory soil spectral retrieval and property estimation},\n  author={Yishuo Hao and Li Wang and Zheng Niu and Yunsheng Dong and Jianying Liu and Guoxu Li and Chang Liu and Jie Bai and Kaiyi Bi},\n  year={2026},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S0034425726002610},\n  doi={10.1016/j.rse.2026.115491}\n}"
+      "citation": "@article{understoryhsl,\n  title={Assessing hyperspectral LiDAR capability for understory soil spectral retrieval and property estimation},\n  author={Yishuo Hao and Li Wang and Zheng Niu and Yunsheng Dong and Jianying Liu and Guoxu Li and Chang Liu and Jie Bai and Kaiyi Bi},\n  year={2026},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S0034425726002610},\n  doi={10.1016/j.rse.2026.115491}\n}",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425726002610"
+      ]
     },
     {
       "id": "nonrigid-color-ps",
@@ -4025,6 +4028,157 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{dartdifferentiable,\n  title={3D Monte Carlo differentiable radiative transfer with DART},\n  author={Yingjie Wang and Abdelaziz Kallel and Zhijun Zhen and Nicolas Lauret and Jordan Guilleux and Eric Chavanon and Jean-Philippe Gastellu-Etchegorry},\n  year={2024},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425724002190},\n  doi={10.1016/j.rse.2024.114201}\n}"
+    },
+    {
+      "id": "flight-original",
+      "shortTitle": "FLIGHT",
+      "title": "Three-dimensional forest light interaction model using a Monte Carlo method",
+      "authors": "P. R. J. North",
+      "year": 1996,
+      "venue": "TGRS",
+      "track": "rendering",
+      "representation": "三维辐射传输",
+      "scope": "核心研究",
+      "tags": [
+        "三维辐射传输",
+        "rendering"
+      ],
+      "summary": "用三维蒙特卡洛光子轨迹模拟森林多次散射，并以实测方向反射、高分辨率光谱和半球反照率验证。",
+      "input": "树冠与树干形状位置、冠内平均叶片结构与光学属性、地表及各向异性天空辐射。",
+      "output": "森林方向反射、高分辨率光谱及半球反照率。",
+      "mechanism": "采用几何树冠/树干与冠内体平均叶片属性的混合表示，追踪冠内及不同树冠、树干和地表间的三维散射轨迹。",
+      "readingNote": "作者上传的原始摘要已核验，正式 1996 年 TGRS 34(4):946–956。验证案例为茂密云杉林；是森林光谱正向模型，不是逐叶网格恢复或由光谱图像反演任意三维几何。",
+      "paper": "https://www.researchgate.net/publication/3201565_Three-dimensional_forest_light_interaction_model_using_a_Monte_Carlo_method",
+      "doi": "10.1109/36.508411",
+      "sourceUrls": [
+        "https://www.researchgate.net/publication/3201565_Three-dimensional_forest_light_interaction_model_using_a_Monte_Carlo_method"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{flightoriginal,\n  title={Three-dimensional forest light interaction model using a Monte Carlo method},\n  author={P. R. J. North},\n  year={1996},\n  journal={TGRS},\n  url={https://www.researchgate.net/publication/3201565_Three-dimensional_forest_light_interaction_model_using_a_Monte_Carlo_method},\n  doi={10.1109/36.508411}\n}"
+    },
+    {
+      "id": "raytran-original",
+      "shortTitle": "Raytran",
+      "title": "Raytran: a Monte Carlo ray-tracing model to compute light scattering in three-dimensional heterogeneous media",
+      "authors": "Y. M. Govaerts, M. M. Verstraete",
+      "year": 1998,
+      "venue": "TGRS",
+      "track": "rendering",
+      "representation": "三维辐射传输",
+      "scope": "相关研究",
+      "tags": [
+        "三维辐射传输",
+        "rendering"
+      ],
+      "summary": "用蒙特卡洛射线追踪模拟复杂三维非均匀地表中的光传播，提供三维光谱仿真的早期物理模型背景。",
+      "input": "显式三维场景及其元素光学与结构属性。",
+      "output": "按研究需求配置的场景辐射传输与光散射观测。",
+      "mechanism": "以显式复杂场景和细粒度辐射过程构成虚拟实验室，采用蒙特卡洛光线追踪评估光传播。",
+      "readingNote": "作者机构 JRC 原始摘要与正式 DOI 元数据已核验。标相关的通用三维光传输基础，尚未核验全文中的高光谱波段设置，不能写成真实高光谱三维采集或神经逆渲染；正式页码 493–505，以期刊元数据为准。",
+      "paper": "https://publications.jrc.ec.europa.eu/repository/handle/JRC16024",
+      "doi": "10.1109/36.662732",
+      "sourceUrls": [
+        "https://publications.jrc.ec.europa.eu/repository/handle/JRC16024",
+        "https://api.crossref.org/works/10.1109/36.662732"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{raytranoriginal,\n  title={Raytran: a Monte Carlo ray-tracing model to compute light scattering in three-dimensional heterogeneous media},\n  author={Y. M. Govaerts and M. M. Verstraete},\n  year={1998},\n  journal={TGRS},\n  url={https://publications.jrc.ec.europa.eu/repository/handle/JRC16024},\n  doi={10.1109/36.662732}\n}"
+    },
+    {
+      "id": "dart-dlamaize-traits",
+      "shortTitle": "DART–DLAmaize",
+      "title": "Modeling 3D radiative transfer for maize traits retrieval: A growth stage-dependent study on hyperspectral sensitivity to field geometry, soil moisture, and leaf biochemistry",
+      "authors": "Romain Démoulin, Jean-Philippe Gastellu-Etchegorry, Sidonie Lefebvre, Xavier Briottet, Zhijun Zhen, Karine Adeline, Matthieu Marionneau, Valérie Le Dantec",
+      "year": 2025,
+      "venue": "RSE",
+      "track": "materials",
+      "representation": "三维辐射传输",
+      "scope": "核心研究",
+      "tags": [
+        "三维辐射传输",
+        "materials"
+      ],
+      "summary": "结合三维玉米生长结构与辐射传输，分析不同生育阶段的高光谱敏感性，并反演多种作物性状。",
+      "input": "DLAmaize 三维植株生长模型、土壤与叶片光学参数、地面测量及 HyPlant-DUAL 机载高光谱影像。",
+      "output": "叶面积指数、叶绿素、氮、干物质和含水量估计，以及两个日期的 10 m 性状图。",
+      "mechanism": "以 DART–DLAmaize 生成场景反射，采用依赖性全局敏感性分析，结合主动学习与核岭回归进行混合反演；与 SAIL 比较行结构、坡地和冠层散射的影响。",
+      "readingNote": "原始摘要和结论已核验，实测验证来自 2018 年两次田间观测。三维模型用于光谱解释与性状反演，最终性状地图为二维栅格，不声称由高光谱影像恢复任意三维几何。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425725001889",
+      "doi": "10.1016/j.rse.2025.114784",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425725001889"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{dartdlamaizetraits,\n  title={Modeling 3D radiative transfer for maize traits retrieval: A growth stage-dependent study on hyperspectral sensitivity to field geometry, soil moisture, and leaf biochemistry},\n  author={Romain Démoulin and Jean-Philippe Gastellu-Etchegorry and Sidonie Lefebvre and Xavier Briottet and Zhijun Zhen and Karine Adeline and Matthieu Marionneau and Valérie Le Dantec},\n  year={2025},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425725001889},\n  doi={10.1016/j.rse.2025.114784}\n}"
+    },
+    {
+      "id": "tree-adjacency-traits",
+      "shortTitle": "Tree Adjacency Inversion",
+      "title": "Seeing into individual trees: Tree-specific retrieval of tree-level traits using 3D radiative transfer model and spatial adjacency constraint from UAV multispectral imagery",
+      "authors": "Linyuan Li, Shangbo Liu, Zhihui Wang, Xun Zhao, Jianbo Qi, Yelu Zeng, Dong Li, Pengfei Guo, Zhexiu Yu, Simei Lin, Shouyang Liu, Huaguo Huang",
+      "year": 2025,
+      "venue": "RSE",
+      "track": "materials",
+      "representation": "三维辐射传输",
+      "scope": "相关研究",
+      "tags": [
+        "三维辐射传输",
+        "materials"
+      ],
+      "summary": "利用摄影测量点云定义单树及邻树三维结构，在反演中考虑邻近树冠的多次散射，恢复单树叶面积体积密度和叶绿素含量。",
+      "input": "UAV 多光谱影像、对应摄影测量点云、树位与树冠三维凸包。",
+      "output": "单树叶面积体积密度与叶绿素含量估计。",
+      "mechanism": "把目标树与邻近树结构一起纳入三维辐射传输反演，约束光散射环境；使用真实 UAV 与合成数据比较有无邻树约束的结果。",
+      "readingNote": "原始摘要与引言已核验。输入为多光谱，标相关；树冠凸包为三维结构先验，不是逐叶精细重建。反演精度与树冠覆盖和光照有关，不能把该验证误写成实测高光谱点云重建。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425725000203",
+      "doi": "10.1016/j.rse.2025.114616",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425725000203"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{treeadjacencytraits,\n  title={Seeing into individual trees: Tree-specific retrieval of tree-level traits using 3D radiative transfer model and spatial adjacency constraint from UAV multispectral imagery},\n  author={Linyuan Li and Shangbo Liu and Zhihui Wang and Xun Zhao and Jianbo Qi and Yelu Zeng and Dong Li and Pengfei Guo and Zhexiu Yu and Simei Lin and Shouyang Liu and Huaguo Huang},\n  year={2025},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425725000203},\n  doi={10.1016/j.rse.2025.114616}\n}"
+    },
+    {
+      "id": "ahsl-forest-stress",
+      "shortTitle": "AHSL Forest Stress",
+      "title": "Evaluating the potential of airborne hyperspectral LiDAR for assessing forest insects and diseases with 3D Radiative Transfer Modeling",
+      "authors": "Xun Zhao, Jianbo Qi, Haifeng Xu, Zhexiu Yu, Lijuan Yuan, Yiwen Chen, Huaguo Huang",
+      "year": 2023,
+      "venue": "RSE",
+      "track": "lidar",
+      "representation": "光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "光谱点云",
+        "lidar"
+      ],
+      "summary": "利用三维辐射传输仿真评估机载高光谱 LiDAR 监测不同冠层深度病虫害胁迫的潜力。",
+      "input": "TLS 重建森林、实测受损叶片光谱、预设损伤位置与胁迫水平。",
+      "output": "模拟高光谱 LiDAR 点云、被动高光谱影像及不同冠层损伤检测分析。",
+      "mechanism": "用 LESS 模拟具有不同损伤层位与程度的显式森林，对比主动高光谱点云与被动影像对中下层胁迫的敏感性。",
+      "readingNote": "原始引言与讨论已核验，森林结构和叶片光谱来自测量，但 AHSL 输出由仿真生成；这是机载系统潜力评估，不是实际机载 HSL 野外试验或已部署系统。",
+      "paper": "https://www.sciencedirect.com/science/article/abs/pii/S0034425723003103",
+      "doi": "10.1016/j.rse.2023.113759",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425723003103"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{ahslforeststress,\n  title={Evaluating the potential of airborne hyperspectral LiDAR for assessing forest insects and diseases with 3D Radiative Transfer Modeling},\n  author={Xun Zhao and Jianbo Qi and Haifeng Xu and Zhexiu Yu and Lijuan Yuan and Yiwen Chen and Huaguo Huang},\n  year={2023},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S0034425723003103},\n  doi={10.1016/j.rse.2023.113759}\n}"
     }
   ],
   "datasets": [
