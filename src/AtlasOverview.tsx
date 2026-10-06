@@ -3,6 +3,15 @@ import type { PaperGroup } from './map-groups';
 import type { Paper } from './types';
 
 interface Period { start: number; end: number; label: string }
+const directionHints: Record<string, string> = {
+  rendering: '表示场景 · 合成新视角', active: '主动照明 · 同时获取光谱与深度',
+  lightfield: '多视角观测 · 立体深度', geometry: '从观测恢复三维几何',
+  materials: '反射率 · 材料属性 · 光谱解混', pointcloud: '给真实点云赋予光谱属性',
+  lidar: '多波长测距 · 光谱辐射校正', registration: '跨传感器匹配 · 对齐 · 定位',
+  capture: '采集设备 · 几何与辐射标定', understanding: '识别 · 分割 · 三维场景应用',
+  holography: '多波长相位 · 波场与轮廓', volumetric: '三维体空间与波长联合成像',
+  fusion: '高度辅助分类 · 区别于三维重建',
+};
 const newestFirst = (a: Paper, b: Paper) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle);
 
 /** A single reading surface exposes directions, time, examples, and collection counts. */
@@ -13,18 +22,18 @@ export function AtlasOverview({ groups, periods, onSelect }: {
   const toggle = (group: string, period?: number) => setSelection(current =>
     current?.group === group && current.period === period ? null : { group, period });
   return <section className="atlas-roadmap" aria-label="研究方向与论文时间轴" style={{ '--stages': periods.length } as CSSProperties}>
-    <div className="atlas-roadmap-guide"><span><i aria-hidden="true"/>方向 × 年代</span><p>点论文读详情 · 点篇数展开同阶段论文</p><span className="atlas-roadmap-time">早期积累 <span aria-hidden="true">⟶</span> 最新研究</span></div>
+    <div className="atlas-roadmap-guide"><span><i aria-hidden="true"/>研究方向与时间脉络</span><p>直接读方向与论文 · 点篇数展开</p><span className="atlas-roadmap-time">早期积累 <span aria-hidden="true">⟶</span> 最新研究</span></div>
     <table className="atlas-roadmap-table">
       <caption className="sr-only">各方向每阶段最新收录的一篇论文及收录篇数。阶段等宽，不表示时长；示例不是排名或方法继承关系。</caption>
-      <thead><tr><th scope="col">研究方向 <small>{groups.length} 个方向</small></th>{periods.map(period => <th scope="col" key={period.start}>{period.label}</th>)}</tr></thead>
+      <thead><tr><th scope="col">研究方向 <small>{groups.length} 个方向</small></th>{periods.map(period => <th scope="col" key={period.start}>{period.label}<small>{period.start === periods.at(-1)?.start ? '最新收录' : period.start === period.end ? '年度研究' : '早期研究'}</small></th>)}</tr></thead>
       <tbody>{groups.map((group, index) => {
         const selected = selection?.group === group.id;
         const period = selected && selection.period !== undefined ? periods[selection.period] : undefined;
         const visible = group.papers.filter(paper => !period || paper.year >= period.start && paper.year <= period.end).sort(newestFirst);
         const detailId = `atlas-detail-${group.id}`;
         return <Fragment key={group.id}><tr className={`atlas-roadmap-row${selected ? ' selected' : ''}`} style={{ '--route': group.color } as CSSProperties}>
-          <th scope="row"><button className="atlas-roadmap-direction" title={group.description} aria-expanded={selected && !period} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id)}>
-            <span className="atlas-roadmap-index">{String(index + 1).padStart(2, '0')}</span><span><strong>{group.name}</strong><small>{group.papers.length} 篇 · {Math.min(...group.papers.map(paper => paper.year))}–{Math.max(...group.papers.map(paper => paper.year))}</small></span><span className="atlas-roadmap-chevron" aria-hidden="true">{selected && !period ? '−' : '+'}</span>
+          <th scope="row"><button className="atlas-roadmap-direction" title={`${group.description} 点击展开全部 ${group.papers.length} 篇论文。`} aria-expanded={selected && !period} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id)}>
+            <span className="atlas-roadmap-index">{String(index + 1).padStart(2, '0')}</span><span><strong>{group.name}</strong><small>{directionHints[group.id] ?? group.description}</small></span><span className="atlas-roadmap-chevron" aria-hidden="true">{group.papers.length}<small>篇</small></span>
           </button></th>
           {periods.map((stage, stageIndex) => {
             const papers = group.papers.filter(paper => paper.year >= stage.start && paper.year <= stage.end).sort(newestFirst);
@@ -32,9 +41,9 @@ export function AtlasOverview({ groups, periods, onSelect }: {
             const active = selected && selection.period === stageIndex;
             return <td className={`atlas-roadmap-stage${example ? ' occupied' : ''}`} key={stage.start}>
               <span className="atlas-roadmap-mobile-year">{stage.label}</span>
-              {example ? <div className="atlas-roadmap-node"><i aria-hidden="true"/><button className="atlas-roadmap-paper" data-atlas-example={example.id} onClick={() => onSelect(example)} title={example.title}>
+              {example ? <div className="atlas-roadmap-node"><i aria-hidden="true"/><button className="atlas-roadmap-paper" data-atlas-example={example.id} onClick={() => onSelect(example)} title={`${example.title} · ${example.scope}`}>
                 <strong>{example.shortTitle}</strong><small>{example.year} · {example.venue}</small>
-              </button><button className="atlas-roadmap-count" aria-label={`${group.name}，${stage.label}，${papers.length} 篇，${active ? '收起' : '展开'}论文`} aria-expanded={active} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id, stageIndex)}>{papers.length} 篇 <span aria-hidden="true">{active ? '−' : '+'}</span></button></div> : <span className="atlas-roadmap-empty">暂无收录</span>}
+              </button><button className="atlas-roadmap-count" aria-label={`${group.name}，${stage.label}，${papers.length} 篇，${active ? '收起' : '展开'}论文`} aria-expanded={active} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id, stageIndex)}>{papers.length} 篇 <span aria-hidden="true">{active ? '−' : '+'}</span></button></div> : <span className="atlas-roadmap-empty">—</span>}
 
             </td>;
           })}
