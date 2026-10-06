@@ -184,3 +184,15 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - HoloSpec 2026：OpenAlex 200 仅提供 CC-BY DOI 位置，没有 PDF；不将 OA 元数据当成功下载。新找到同组 DH 2026 M4A.4（DOI 10.1364/DH.2026.M4A.4）不同会议论文，未借其图替代 LPR 71516。
 
 本轮实际响应、作者仓库全树及原图地址见 sources/author-profile-and-hylite-original-downloads-2026-10-06.json。下一步继续其余缺图论文的新作者/机构全文路线；没有新附件证据时不重复上述拒绝地址。全部缺图补齐及完整文献调研仍未完成。
+
+
+## FMach 受限附件、HAL notice 与最新作者入口（2026-10-07）
+
+本轮新增原始附件定位和可排除的元数据入口；没有新增图片。174 篇、121 篇有 142 张图、44 needs_access、9 no_framework。
+
+- ITC-S3VM：FMach 10449/26859 实际本地请求 200，公开页面列出准确 2015 ISPRS Dalponte.pdf、4.13 MB、bitstream e1dbfeaa-d71d-4ac9-e053-1705fe0a1c61，并明确仅授权用户。retrieve 实际跳转登录 HTML，不是 PDF；没有登录或发送索取请求。出版社正文片段明确 Fig. 1 是集成 HSI/ALS 的系统示意，待原稿核对。
+- DART Forest 2014：HAL 精确查询命中 hal-04652613v1，submitType_s=notice，无 fileMain_s/files_s；document 实际 404。HAL 不是现成的作者全文入口。Aarhus 仅 DOI；UZH 项目页该文仍指向 ScienceDirect。DGfK 2014 同名会议稿 DOI 10.5167/uzh-98314 与 RSE 不同，不借图。
+- Compact DOE 2026：新查 Wenbo Ding 的 SSR 研究页、出版列表，无同名原稿。LiteS2CR、607958 hyperspectral 的 GitHub 仓库搜索 200 零结果；准确 OpenAlex 200 只列 DOI，无 PDF。不能把其他多光谱触觉系统图当本篇图。
+- PS2F2L 2026：准确方法名 GitHub 搜索 200 零结果，OpenAlex 只有 DOI，无 PDF；精确题名仍指向 IEEE 摘要。
+
+实际来源与响应见 sources/institutional-notices-and-latest-author-leads-2026-10-07.json。下一步继续其他缺图论文尚未检查的作者/机构附件；FMach 受限文件和 HAL notice 不重复当公开全文。仍有未试入口，全部缺图与全面文献调研尚未完成。
