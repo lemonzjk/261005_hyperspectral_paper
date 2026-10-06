@@ -260,3 +260,30 @@ body{background:#f8faf9}.hero{grid-template-columns:.8fr 1.2fr;gap:56px;min-heig
  .route-atlas-node{font-size:9px;min-height:36px;padding:6px;gap:5px;align-self:center;flex-direction:column;align-items:center}.route-atlas-marker b{font-size:12px}
  .route-atlas-group{scroll-margin-top:85px}.route-atlas-note{line-height:1.8}
 }
+
+/* Direction cards keep descriptions and dated paper nodes readable without a canvas. */
+.direction-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+.direction-card{min-width:0;border:1px solid #e0e7e5;border-radius:12px;padding:20px 22px;background:#fff;box-shadow:0 3px 12px #263b3b04}
+.direction-card header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.direction-index{font:600 12px monospace;color:var(--route);background:color-mix(in srgb,var(--route) 10%,white);border-radius:6px;padding:7px 9px}
+.direction-count{font-size:12px;color:#70817a}
+.direction-card h4{margin:0 0 8px;font-size:17px;line-height:1.5;letter-spacing:-.3px;color:#233e35}
+.direction-description{font-size:12px;color:#687d73;line-height:1.8;min-height:44px}
+.direction-range{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border-top:1px solid #edf1ef;padding-top:14px;margin-top:16px;font-size:10px;color:#788c82}
+.direction-range>span:first-child{font-variant-numeric:tabular-nums;color:var(--route);font-weight:600}
+.direction-timeline{list-style:none;margin:12px 0 0;padding:0}
+.direction-timeline li{display:grid;grid-template-columns:42px minmax(0,1fr);gap:12px;position:relative;padding:0 0 17px;min-height:64px}
+.direction-timeline li:last-child{padding-bottom:0}
+.direction-timeline li:before{content:'';position:absolute;left:49px;top:10px;bottom:-10px;border-left:1px solid color-mix(in srgb,var(--route) 25%,white)}
+.direction-timeline li:last-child:before{display:none}
+.direction-timeline li:after{content:'';position:absolute;left:46px;top:7px;width:7px;height:7px;background:white;border:2px solid var(--route);border-radius:50%;pointer-events:none}
+.direction-year{font-size:11px;font-weight:600;color:var(--route);padding-top:4px;font-variant-numeric:tabular-nums}
+.direction-timeline button{text-align:left;min-width:0;padding:0 0 0 9px;background:transparent;border-radius:4px;width:100%}
+.direction-timeline button strong{display:block;font-size:14px;line-height:1.5;color:#2b4238;overflow-wrap:anywhere}
+.direction-timeline button>span{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-top:4px;font-size:11px;color:#76877d;line-height:1.5}
+.direction-timeline small{font-size:9px;color:#947e60;white-space:nowrap}.direction-timeline small.core{color:#438b75}
+.direction-timeline button:hover{background:color-mix(in srgb,var(--route) 7%,white)}
+.direction-expand{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding:12px 0 0;width:100%;background:none;border-top:1px solid #edf1ef;font-size:12px;color:#516f61;text-align:left}
+.direction-expand>span{color:var(--route);font-size:18px;line-height:1}.direction-expand:hover{color:var(--route)}
+@media(max-width:1100px){.direction-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media(max-width:760px){.direction-board{grid-template-columns:1fr;gap:14px}.direction-card{padding:18px}.direction-description{min-height:0;font-size:13px}.direction-card h4{font-size:18px}.direction-timeline button strong{font-size:15px}.direction-timeline button>span{font-size:12px}.direction-expand{min-height:44px}.direction-timeline li{min-height:70px}.direction-range{font-size:11px}}
