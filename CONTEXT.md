@@ -20,14 +20,14 @@
 
 - 174 篇论文、13 个主分类、5 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX、手机适配。
 - 浅色全宽首屏：交互合成高光谱点云，自然色/单波段/几何、450–950 nm、旋转/复位/材料选择；12,348 点，响应为概念示意。用户拒绝左侧大字、深色、摄影和抽象装饰。
-- 图谱默认「方向总览」：桌面三列、平板两列、手机单列卡片，直接显示说明、篇数和年份范围；最早、中期、最新三个年代示例按年份排成纵向时间轴，标题点击详情。不足三篇全显；可在卡片内展开全部论文，正常页面滚动。保留「时间矩阵」、全部论文及年度 SVG 下载；无需拖拽/缩放或嵌套画布。示例不表示论文排名或方法继承。
+- 图谱默认「全景时间轴」：每行一个方向，直接展示研究内容、总篇数、五个年代阶段的收录篇数和最新年份论文；全部方向在紧凑总览中比较，无需拖拽、缩放或嵌套滚动。点击方向/阶段篇数就地展开论文，点击标题查看详情；手机按方向纵向排列。保留方向卡片、时间矩阵、全部论文及年度 SVG 下载。阶段等宽不表示时长，连线不表示方法继承；同年按标题排序。
 - 框架图详情支持本地图、高清打开、图号、PDF 页码、原始来源及作者归属；未检索、待人工补充、全文未见独立框架图分别展示。
 
 ## 关键文件与续接
 
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
-- `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 119 篇、139 张；46 篇需全文/人工补图、9 篇全文无独立框架，补图尚未完成。Evo 3D-CNN 已通过 Finna 新记录取得 Helda 正式十六页全文；全部图表目视核验，结构只有 Table 3，改 no_framework。Helda 公开内容接口及 multipart 解析方式见交接。Shape from Water 系统原图已保存，TPAMI 后续候选不借会议图。
+- `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx`、`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
+- 框架图累计 119 篇、139 张；46 篇需全文/人工补图、9 篇全文无独立框架，补图尚未完成。Evo 3D-CNN 已通过 Finna 新记录取得 Helda 正式十六页全文；全部图表目视核验，结构只有 Table 3，改 no_framework。Shape from Water 系统原图已保存，TPAMI 后续候选不借会议图。
 - 交接见 `research/framework-handoff.md`；初查全部年份后，优先从最新年份重试 46 篇缺图，寻找作者/机构副本；不得批量改 pending。几何示意需注明不是完整流程，预印本无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 扫描候选待核验，其中 CGCN 2023 已补 DOI、作者和卷页但缺原始摘要、专业期刊与引文追溯未完成；Eradiate（GMD 2026）留背景，PhotoniX 2024 串级单像素相机留候选。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

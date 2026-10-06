@@ -1,4 +1,5 @@
 import { useState, type CSSProperties } from 'react';
+import { AtlasOverview } from './AtlasOverview';
 import { TimelineRoutes } from './TimelineRoutes';
 import { DirectionOverview } from './DirectionOverview';
 import { groupPapers } from './map-groups';
@@ -7,7 +8,7 @@ import type { Paper } from './types';
 export function TimelineOverview({ papers, onSelect, onDetail }: {
   papers: Paper[]; onSelect: (paper: Paper) => void; onDetail: () => void;
 }) {
-  const [mode, setMode] = useState<'timeline' | 'directions' | 'all'>('directions');
+  const [mode, setMode] = useState<'glance' | 'timeline' | 'directions' | 'all'>('glance');
   const showAll = mode === 'all';
   const [selection, setSelection] = useState<{ groupId: string; start?: number; end?: number } | null>(null);
   const groups = groupPapers(papers, 'track');
@@ -22,10 +23,11 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
   const columns = ranges.map(([start, end]) => ({ start, end, label: start === end ? String(start) : `${start}–${end}` }));
   return <div className={`timeline-overview${showAll ? ' show-all' : ' is-glance'}`} style={{ '--periods': columns.length } as CSSProperties}>
     <div className="overview-toolbar">
-      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 方向与时间</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {mode === 'timeline' ? '按阶段比较方向分布 · 点论文看详情' : showAll ? '所有论文直接展示 · 点论文看详情' : '先看研究内容，再按年份读论文 · 点标题看详情'}</p></div>
-      <div className="overview-actions"><div className="overview-density" role="group" aria-label="时间轴展示密度"><button aria-pressed={mode === 'directions'} onClick={() => setMode('directions')}>方向总览</button><button aria-pressed={mode === 'timeline'} onClick={() => setMode('timeline')}>时间矩阵</button><button aria-pressed={showAll} onClick={() => setMode('all')}>全部论文</button></div><button className="overview-advanced" onClick={onDetail}>导出完整 SVG ↓</button></div>
+      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 研究全景</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {mode === 'glance' ? '横向看年代，纵向看方向 · 点篇数展开，点标题看详情' : mode === 'timeline' ? '按阶段比较方向分布 · 点论文看详情' : showAll ? '所有论文直接展示 · 点论文看详情' : '先看研究内容，再按年份读论文 · 点标题看详情'}</p></div>
+      <div className="overview-actions"><div className="overview-density" role="group" aria-label="图谱展示方式"><button aria-pressed={mode === 'glance'} onClick={() => setMode('glance')}>全景时间轴</button><button aria-pressed={mode === 'directions'} onClick={() => setMode('directions')}>方向总览</button><button aria-pressed={mode === 'timeline'} onClick={() => setMode('timeline')}>时间矩阵</button><button aria-pressed={showAll} onClick={() => setMode('all')}>全部论文</button></div><button className="overview-advanced" onClick={onDetail}>导出完整 SVG ↓</button></div>
     </div>
     {showAll && <div className="overview-key"><span><i className="core-marker"/>核心研究</span><span><i className="related-marker"/>相关研究</span><p>横向看时间，纵向看方向；圆点核心、方点相关。</p></div>}
+    {mode === 'glance' && papers.length > 0 && <AtlasOverview groups={groups} periods={columns} onSelect={onSelect}/>}
     {mode === 'directions' && <DirectionOverview groups={groups} onSelect={onSelect}/>}
     {mode === 'timeline' && papers.length > 0 && <TimelineRoutes groups={groups} periods={columns} selection={selection} onSelect={setSelection} onPaperSelect={onSelect}/>}
     {showAll && <div className="overview-matrix">
@@ -52,6 +54,6 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
         </section>)}
       </div>
     </div>}
-    <div className="overview-footer"><span>{mode === 'directions' ? '节点按发表年份排列 · 示例按收录时间范围选取 · 不表示方法继承或论文排名' : '早期合并为阶段 · 列宽不表示时长 · 方向归类不表示方法继承'}</span><span>篇数仅表示当前收录分布</span></div>
+    {mode !== 'glance' && <div className="overview-footer"><span>{mode === 'directions' ? '节点按发表年份排列 · 示例按收录时间范围选取 · 不表示方法继承或论文排名' : '早期合并为阶段 · 列宽不表示时长 · 方向归类不表示方法继承'}</span><span>篇数仅表示当前收录分布</span></div>}
   </div>;
 }
