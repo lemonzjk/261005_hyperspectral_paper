@@ -10,12 +10,12 @@
 
 ## 权威状态
 
-- 172 篇：77 篇 verified、85 张图；30 篇 needs_access；4 篇 no_framework；61 篇 pending。
-- 2026–2021 年初查完整。2020 年 4 篇有图；IISU 新增作者预印本 Figure 1 光路模型示意，明确不是完整算法流程。
-- 2019 年 6 篇全部有图：H-LF Stereo、Pro-Cam SSfM、F-cycleGAN、LESS、HSPC Generation（2 张）、HVLL HDSM。后三篇采用出版社原始图，图号来自 grN 资源标识，未编造 PDF 页码。
-- 下一步先处理 2020 年 `tmde-mslidar`、`vertical-chl-maize-hsl`，然后 2018 年及更早，并重试最新年份缺图。两个 pending 保留未完成状态。
-- TMDE：ResearchGate 请求全文，IEEE 文档 8887512 无全文，开放索引无 OA PDF。
-- Maize vertical chlorophyll：ResearchGate 请求全文，IEEE 文档 9079454 无全文，开放索引无 OA PDF。
+- 172 篇：82 篇 verified、91 张图；34 篇 needs_access；5 篇 no_framework；51 篇 pending。
+- 2026–2018 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
+- 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
+- 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
+- LiDAR Spatial Unmix 已读 24 页作者预印本，Fig.1–8 为数据或结果，方法是公式和 Algorithm 1–2 伪代码，无独立框架图；该结论仅针对该预印本，正式版与补充材料可复核。
+- 2017 年新增 Catadioptric HLF Figure 2，以及 Snapshot H-LF Figures 1、2；下一步继续该年剩余 8 篇，再向 2016 年及更早推进。
 - 随后重试最新年份缺图项；全部来源与失败原因以 `research/figures.json` 为准。任务未完成。
 
 ## 文件与工具
