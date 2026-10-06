@@ -1,11 +1,13 @@
 import { useState, type CSSProperties } from 'react';
+import { TimelineRoutes } from './TimelineRoutes';
 import { groupPapers } from './map-groups';
 import type { Paper } from './types';
 
 export function TimelineOverview({ papers, onSelect, onDetail }: {
   papers: Paper[]; onSelect: (paper: Paper) => void; onDetail: () => void;
 }) {
-  const [showAll, setShowAll] = useState(false);
+  const [mode, setMode] = useState<'timeline' | 'directions' | 'all'>('timeline');
+  const showAll = mode === 'all';
   const [selection, setSelection] = useState<{ groupId: string; start?: number; end?: number } | null>(null);
   const groups = groupPapers(papers, 'track');
   const years = [...new Set(papers.map(paper => paper.year))].sort((a, b) => a - b);
@@ -23,11 +25,12 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
     .sort((a, b) => a.year - b.year || a.shortTitle.localeCompare(b.shortTitle)) ?? [];
   return <div className={`timeline-overview${showAll ? ' show-all' : ' is-glance'}`} style={{ '--periods': columns.length } as CSSProperties}>
     <div className="overview-toolbar">
-      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 研究全景</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {showAll ? '全部展示' : '点击方向或时间节点展开论文'} · 点击论文查看详情</p></div>
-      <div className="overview-actions"><div className="overview-density" role="group" aria-label="时间轴展示密度"><button aria-pressed={!showAll} onClick={() => setShowAll(false)}>方向全景</button><button aria-pressed={showAll} onClick={() => setShowAll(true)}>全部论文</button></div><button className="overview-advanced" onClick={onDetail}>详细图 / 导出 ↗</button></div>
+      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 研究时间轴</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {mode === 'timeline' ? '年份横轴 · 方向线路 · 论文站点' : showAll ? '全部展示' : '点击方向或时间节点展开论文'}</p></div>
+      <div className="overview-actions"><div className="overview-density" role="group" aria-label="时间轴展示密度"><button aria-pressed={mode === 'timeline'} onClick={() => setMode('timeline')}>时间轴</button><button aria-pressed={mode === 'directions'} onClick={() => setMode('directions')}>方向全景</button><button aria-pressed={showAll} onClick={() => setMode('all')}>全部论文</button></div><button className="overview-advanced" onClick={onDetail}>详细图 / 导出 ↗</button></div>
     </div>
-    <div className="overview-key">{showAll && <><span><i className="core-marker"/>核心研究</span><span><i className="related-marker"/>相关研究</span></>}<p>{showAll ? '横向看时间，纵向看方向；圆点核心、方点相关。' : '横向看时间，纵向看方向；数字为篇数，节点旁为阶段代表论文。'}</p></div>
-    {!showAll && <div className="atlas-panorama" style={{ '--periods': columns.length } as CSSProperties}>
+    {mode !== 'timeline' && <div className="overview-key">{showAll && <><span><i className="core-marker"/>核心研究</span><span><i className="related-marker"/>相关研究</span></>}<p>{showAll ? '横向看时间，纵向看方向；圆点核心、方点相关。' : '横向看时间，纵向看方向；数字为篇数，节点旁为阶段代表论文。'}</p></div>}
+    {mode === 'timeline' && papers.length > 0 && <TimelineRoutes groups={groups} periods={columns} selection={selection} onSelect={setSelection} onPaperSelect={onSelect}/>}
+    {mode === 'directions' && <div className="atlas-panorama" style={{ '--periods': columns.length } as CSSProperties}>
       <div className="panorama-axis"><span>研究方向</span>{columns.map(column => <span key={column.start}>{column.label}</span>)}</div>
       {groups.map(group => <div className="panorama-row" key={group.id} style={{ '--route': group.color } as CSSProperties}>
         <button className="panorama-name" title={group.description} aria-expanded={selection?.groupId === group.id} aria-controls={selectedGroup ? "panorama-papers" : undefined}
@@ -46,7 +49,7 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
         })}
       </div>)}
     </div>}
-    {!showAll && selectedGroup && <section className="panorama-detail" id="panorama-papers" aria-label="选中阶段的论文" style={{ '--route': selectedGroup.color } as CSSProperties}>
+    {mode === 'directions' && selectedGroup && <section className="panorama-detail" id="panorama-papers" aria-label="选中阶段的论文" style={{ '--route': selectedGroup.color } as CSSProperties}>
       <div className="panorama-detail-heading"><div><h4>{selectedGroup.name} <span>{selection?.start === undefined ? '全部年份' : `${selection.start}${selection.end === selection.start ? '' : `–${selection.end}`}` } · {selectedPapers.length} 篇</span></h4><p>{selectedGroup.description}</p></div><button onClick={() => setSelection(null)} aria-label="收起阶段论文">收起 ×</button></div>
       <div className="panorama-paper-list">{selectedPapers.map(paper => <button className={`overview-paper${paper.scope === '核心研究' ? ' is-core' : ''}`} key={paper.id} data-overview-paper={paper.id} onClick={() => onSelect(paper)}>
         <i aria-hidden="true"/><div><strong>{paper.shortTitle}</strong><span>{paper.venue} · {paper.year} · {paper.scope}</span><p>{paper.summary}</p></div>
@@ -61,7 +64,7 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
             const cell = group.papers.filter(paper => paper.year >= column.start && paper.year <= column.end)
               .sort((a, b) => a.year - b.year || a.shortTitle.localeCompare(b.shortTitle));
             return <div key={column.start} className={`overview-cell${cell.length ? ' has-papers' : ''}`}>
-              <span className="overview-cell-heading"><span>{column.label}</span><button disabled={!cell.length || showAll} aria-label={`${group.name} ${column.label}，查看全部 ${cell.length} 篇论文`} onClick={() => setShowAll(true)}>{cell.length ? `${cell.length} 篇` : ''}</button></span>
+              <span className="overview-cell-heading"><span>{column.label}</span><button disabled={!cell.length || showAll} aria-label={`${group.name} ${column.label}，查看全部 ${cell.length} 篇论文`} onClick={() => setMode('all')}>{cell.length ? `${cell.length} 篇` : ''}</button></span>
               <div className="overview-cell-papers">
                 {(showAll ? cell : [...cell].sort((a, b) => Number(b.scope === '核心研究') - Number(a.scope === '核心研究') || b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)).slice(0, 1)).map(paper => <button key={paper.id} className={`overview-paper${paper.scope === '核心研究' ? ' is-core' : ''}`} data-overview-paper={paper.id}
                   aria-label={`${paper.shortTitle}，${paper.venue} ${paper.year}，${paper.scope}，查看详情`}
@@ -76,6 +79,6 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
         </section>)}
       </div>
     </div>}
-    <div className="overview-footer"><span>早期合并为阶段 · 列宽不表示时长 · 方向归类不表示方法继承</span><span>篇数仅表示当前收录分布</span></div>
+    <div className="overview-footer"><span>{mode === 'timeline' ? '代表论文优先核心研究 · 连线表示同方向的时间分布，不表示方法继承' : '早期合并为阶段 · 列宽不表示时长 · 方向归类不表示方法继承'}</span><span>篇数仅表示当前收录分布</span></div>
   </div>;
 }
