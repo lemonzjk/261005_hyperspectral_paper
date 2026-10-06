@@ -1,12 +1,12 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 152 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 159 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
 收录真实三维空间与光谱联合采集、重建、表示、渲染、材料分析和理解。多光谱光度立体属于相关研究；HSI 与 LiDAR/DSM 高度辅助的二维分类单列为相关方向。仅因使用 3D CNN 或 H×W×B 数据立方体的二维光谱处理不属于三维视觉。
 
-目标场所同时覆盖视觉、图形学、遥感与光学。包括 CVPR、ICCV、ECCV、SIGGRAPH、TOG、TPAMI、IJCV、TGRS、IGARSS、ISPRS JPRS、RSE、Optica、Nature Photonics、Nature Communications 等。完整清单与领域期刊政策见 `survey.json`。清单是检索优先级，不是统一的期刊等级认证。预印本与其他专业场所作为补充阅读，不能冒充已正式发表的顶会顶刊论文。
+目标场所同时覆盖视觉、图形学、遥感与光学。包括 CVPR、ICCV、ECCV、SIGGRAPH、TOG、TPAMI、IJCV、TGRS、IGARSS、ISPRS JPRS、RSE、TCI、Laser & Photonics Reviews、Optica、Nature Photonics、Nature Communications 等。完整清单与领域期刊政策见 `survey.json`。清单是检索优先级，不是统一的期刊等级认证。预印本与其他专业场所作为补充阅读，不能冒充已正式发表的顶会顶刊论文。
 
 ## 数据与证据
 
@@ -57,3 +57,7 @@ Palmer 扫描标定、BGE-ICMER、真彩三维 LiDAR、混合几何辐射校正�
 核验跨光谱立体与摄影测量，新增 RGB-MS Matching（CVPR 2022）、F-cycleGAN Stereo（AAAI 2019）、LAT（PR 2017）、HVLL HDSM（ISPRS JPRS 2019）、对象 HSI–DSM 配准（2015）与近景推扫几何标定（2015）。前两项多光谱/跨光谱工作、LAT 与二维轮廓配准标相关；HVLL 和直接面向三维光谱映射的高光谱标定标核心，标定应用前景与实际验证区分。HVLL 连续树冠偏差较大、阴影地面/冠隙更优的权衡保留。RGB-MS 数据资源新增，机构仓库许可 CC BY-NC 4.0，不声称已下载完整数据。
 
 VISAPP 2024 双相机融合已解决场所待核验；ISPRS Archives、JOSA A、JSTARS 全景立体与 Optics and Lasers in Engineering 2026 直接三维重建保留专业背景，正式卷年与在线年分开。DSC 作者全文确认免训练手工描述子及通用对应评测，先留范围背景。证据见 `sources/stereo-photogrammetry-review-2026-10-06.json`。下一步继续核心几何引文与目标期刊逐年扫描，补完整算法核验；当前清单仍非全面覆盖。
+
+沿三维光谱几何与光学体成像补充 7 篇：SENSOR（ISPRS JPRS 2001）、PROSPECULAR（RSE 2023）、HYDICE 直线定向（ISPRS JPRS 2004）、单视角 NIR-II FMT（TCI 2025）、EnMAP 几何仿真（ISPRS JPRS 2012）、水体非弹性高光谱 LiDAR（Laser & Photonics Reviews 2016）及 HoloSpec（2026 在线先行）。叶片 BRDF、推扫定向和波段配准标相关；真实距离、空间体分布及全息四维恢复按具体输出标核心。SENSOR 以 DEM 地形为主，不冒充任意三维体渲染；NIR-II FMT 仅仿真与体模验证；HoloSpec 需要两幅快照，430 个计算通道不等于独立谱线分辨数，谱峰间距的 Crossref 公式缺失未猜填。TCI 与 Laser & Photonics Reviews 纳入计算成像/光子学重要期刊定向检索，场所清单仍不是统一等级认证。
+
+同时记录 6 篇范围或专业背景：折射率与吸收 SPOT（Physical Review Applied）、中子高光谱断层、Journal of Physics: Photonics 单快照 HoloSpec、Nature Communications 光谱波前与 Optics Express HS-ODT；另排除一篇仅 x、y、波长维度的 CTIS。PRA 折射率工作保留 2023-04-18 方程勘误；光谱波前工作在线 2025、正式卷 2026，波前不自动等于 xyz 物体重建。单快照颗粒分类与 LPR 双快照重建分开，不能混用作者、曝光次数或 F1/几何指标。证据见 `sources/geometry-spectral-tomography-review-2026-10-06.json`。后续继续完整算法、光学断层与几何标定引文及目标期刊逐年检索；清单尚非全面覆盖。
