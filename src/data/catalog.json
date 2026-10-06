@@ -4179,6 +4179,250 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{ahslforeststress,\n  title={Evaluating the potential of airborne hyperspectral LiDAR for assessing forest insects and diseases with 3D Radiative Transfer Modeling},\n  author={Xun Zhao and Jianbo Qi and Haifeng Xu and Zhexiu Yu and Lijuan Yuan and Yiwen Chen and Huaguo Huang},\n  year={2023},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S0034425723003103},\n  doi={10.1016/j.rse.2023.113759}\n}"
+    },
+    {
+      "id": "boreal-itc-delineation",
+      "shortTitle": "Boreal ITC",
+      "title": "Tree crown delineation and tree species classification in boreal forests using hyperspectral and ALS data",
+      "authors": "Michele Dalponte, Hans Ole Ørka, Liviu Theodor Ene, Terje Gobakken, Erik Næsset",
+      "year": 2014,
+      "venue": "RSE",
+      "track": "fusion",
+      "representation": "高度辅助融合",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助融合",
+        "fusion"
+      ],
+      "summary": "比较高光谱影像和机载激光扫描生成的树冠边界对单树物种分类的影响，并检验树冠内像元选择策略。",
+      "input": "高光谱波段、ALS 冠层高度模型及参考树冠边界。",
+      "output": "松、云杉与阔叶树的树冠级分类及树木检测分析。",
+      "mechanism": "先分别基于 ALS 与高光谱数据分割树冠，在影像像元上使用非线性 SVM，再以树冠内多数投票生成类别；比较光谱和高度条件下的像元选择。",
+      "readingNote": "正式卷期为 2014 年，DOI 含 2013。ALS 用于树冠边界与高度辅助，分类输出为树冠/影像，不能写成三维光谱点云分割。高光谱分割的分类精度较高，但检测到的树木较少，须保留该权衡。",
+      "paper": "https://www.sciencedirect.com/science/article/abs/pii/S003442571300309X",
+      "doi": "10.1016/j.rse.2013.09.006",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S003442571300309X"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{borealitcdelineation,\n  title={Tree crown delineation and tree species classification in boreal forests using hyperspectral and ALS data},\n  author={Michele Dalponte and Hans Ole Ørka and Liviu Theodor Ene and Terje Gobakken and Erik Næsset},\n  year={2014},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S003442571300309X},\n  doi={10.1016/j.rse.2013.09.006}\n}"
+    },
+    {
+      "id": "itc-s3vm",
+      "shortTitle": "ITC-S3VM",
+      "title": "Semi-supervised SVM for individual tree crown species classification",
+      "authors": "Michele Dalponte, Liviu Theodor Ene, Mattia Marconcini, Terje Gobakken, Erik Næsset",
+      "year": 2015,
+      "venue": "ISPRS JPRS",
+      "track": "fusion",
+      "representation": "高度辅助融合",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助融合",
+        "fusion"
+      ],
+      "summary": "用同一树冠内像元应共享类别的约束，利用无标签树冠改善小样本树种分类。",
+      "input": "两处北方森林的高光谱影像、激光扫描数据及部分标注树冠。",
+      "output": "松、云杉与阔叶树的树冠级物种分类。",
+      "mechanism": "在半监督 SVM 学习中引入树冠内标签一致性，利用未标注树冠样本补充监督信息。",
+      "readingNote": "作者机构 DLR 与出版社摘要已核验。树冠/影像分类相关阅读；存在激光扫描数据不等于训练输入为三维光谱点云。详细树冠生成与算法实现待全文，不能声称几何重建。",
+      "paper": "https://www.sciencedirect.com/science/article/abs/pii/S0924271615002403",
+      "doi": "10.1016/j.isprsjprs.2015.10.010",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0924271615002403",
+        "https://elib.dlr.de/100204/"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{itcs3vm,\n  title={Semi-supervised SVM for individual tree crown species classification},\n  author={Michele Dalponte and Liviu Theodor Ene and Mattia Marconcini and Terje Gobakken and Erik Næsset},\n  year={2015},\n  journal={ISPRS JPRS},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S0924271615002403},\n  doi={10.1016/j.isprsjprs.2015.10.010}\n}"
+    },
+    {
+      "id": "evo-tree-3dcnn",
+      "shortTitle": "Evo Tree 3D-CNN",
+      "title": "Tree species classification from airborne hyperspectral and LiDAR data using 3D convolutional neural networks",
+      "authors": "Janne Mäyrä, Sarita Keski-Saari, Sonja Kivinen, Topi Tanhuanpää, Pekka Hurskainen, Peter Kullberg, Laura Poikolainen, Arto Viinikka, Sakari Tuominen, Timo Kumpula, Petteri Vihervaara",
+      "year": 2021,
+      "venue": "RSE",
+      "track": "fusion",
+      "representation": "高度辅助融合",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助融合",
+        "fusion"
+      ],
+      "summary": "用高光谱空间–光谱卷积分类单树树种，LiDAR 冠层高度模型用于树木检测、树冠分割与参考数据匹配。",
+      "input": "高光谱影像块、LiDAR 衍生冠层高度模型及地面树种参考。",
+      "output": "松、云杉、桦与欧洲山杨的树冠分类及研究区树种地图。",
+      "mechanism": "以 CHM 处理树木检测/匹配，3D-CNN 从 H×W×波段影像块提取特征，与 SVM、RF、梯度提升和 ANN 比较，并用遮挡和显著性图解释模型。",
+      "readingNote": "官方全文方法部分已核验：3D 卷积的第三维是波长，不是空间 z。属于高度辅助的二维影像/树冠分类，不能写成三维点云 CNN。代码为作者发布的处理与训练流程。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425721000407",
+      "doi": "10.1016/j.rse.2021.112322",
+      "verificationLevel": "official_fulltext",
+      "code": "https://github.com/jaeeolma/tree-detection-evo",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425721000407"
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{evotree3dcnn,\n  title={Tree species classification from airborne hyperspectral and LiDAR data using 3D convolutional neural networks},\n  author={Janne Mäyrä and Sarita Keski-Saari and Sonja Kivinen and Topi Tanhuanpää and Pekka Hurskainen and Peter Kullberg and Laura Poikolainen and Arto Viinikka and Sakari Tuominen and Timo Kumpula and Petteri Vihervaara},\n  year={2021},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425721000407},\n  doi={10.1016/j.rse.2021.112322}\n}"
+    },
+    {
+      "id": "aisa-lidar-species",
+      "shortTitle": "AISA–LiDAR Species",
+      "title": "Assessing the utility of airborne hyperspectral and LiDAR data for species distribution mapping in the coastal Pacific Northwest, Canada",
+      "authors": "Trevor G. Jones, Nicholas C. Coops, Tara Sharma",
+      "year": 2010,
+      "venue": "RSE",
+      "track": "fusion",
+      "representation": "高度辅助融合",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助融合",
+        "fusion"
+      ],
+      "summary": "将机载高光谱与 LiDAR 高度、冠层体积剖面在像元层面融合，评估加拿大海岸森林的树种分布制图。",
+      "input": "AISA 高光谱影像、小足迹离散回波 LiDAR 衍生高度与冠层体积剖面。",
+      "output": "11 种树木的分布分类地图及融合前后精度比较。",
+      "mechanism": "将光谱与刻画垂直冠层结构的栅格变量作为分类输入，以 McNemar 检验评估加入结构变量带来的精度变化。",
+      "readingNote": "官方摘要与引言已核验。三维体积剖面被转为像元级解释变量，输出为二维树种图，不是逐点三维语义分割。结构融合收益与物种生长阶段有关，不保证所有物种都改善。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S003442571000218X",
+      "doi": "10.1016/j.rse.2010.07.002",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S003442571000218X"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{aisalidarspecies,\n  title={Assessing the utility of airborne hyperspectral and LiDAR data for species distribution mapping in the coastal Pacific Northwest, Canada},\n  author={Trevor G. Jones and Nicholas C. Coops and Tara Sharma},\n  year={2010},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S003442571000218X},\n  doi={10.1016/j.rse.2010.07.002}\n}"
+    },
+    {
+      "id": "lvis-aviris-inventory",
+      "shortTitle": "LVIS–AVIRIS Inventory",
+      "title": "Integrating waveform lidar with hyperspectral imagery for inventory of a northern temperate forest",
+      "authors": "Jeanne E. Anderson, Lucie C. Plourde, Mary E. Martin, Bobby H. Braswell, Marie-Louise Smith, Ralph O. Dubayah, Michelle A. Hofton, J. Bryan Blair",
+      "year": 2008,
+      "venue": "RSE",
+      "track": "fusion",
+      "representation": "高度辅助融合",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助融合",
+        "fusion"
+      ],
+      "summary": "比较全波形 LiDAR 与高光谱数据单独及融合估计温带混交林结构、生物量和树种丰度的能力。",
+      "input": "LVIS 全波形指标、AVIRIS 高光谱特征及四百余地面样地。",
+      "output": "胸高断面积、地上生物量、平方平均直径及树种丰度/结构地图。",
+      "mechanism": "把波形结构指标与光谱特征合并，使用样地森林清查验证，并比较不同管理状态与树种条件下的传感器贡献。",
+      "readingNote": "作者机构原始摘要已核验，正式 2008 年。融合改善整体清查指标，但按物种限定的丰度预测中 AVIRIS 单独表现更好；不作“融合始终更好”表述。输出为森林统计/制图，不是三维光谱点云重建。",
+      "paper": "https://scholars.unh.edu/earthsci_facpub/573/",
+      "doi": "10.1016/j.rse.2007.09.009",
+      "sourceUrls": [
+        "https://scholars.unh.edu/earthsci_facpub/573/"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{lvisavirisinventory,\n  title={Integrating waveform lidar with hyperspectral imagery for inventory of a northern temperate forest},\n  author={Jeanne E. Anderson and Lucie C. Plourde and Mary E. Martin and Bobby H. Braswell and Marie-Louise Smith and Ralph O. Dubayah and Michelle A. Hofton and J. Bryan Blair},\n  year={2008},\n  journal={RSE},\n  url={https://scholars.unh.edu/earthsci_facpub/573/},\n  doi={10.1016/j.rse.2007.09.009}\n}"
+    },
+    {
+      "id": "tropical-biomass-sensors",
+      "shortTitle": "Tropical Biomass Fusion",
+      "title": "Estimation of tropical rain forest aboveground biomass with small-footprint lidar and hyperspectral sensors",
+      "authors": "Matthew L. Clark, Dar A. Roberts, John J. Ewel, David B. Clark",
+      "year": 2011,
+      "venue": "RSE",
+      "track": "fusion",
+      "representation": "高度辅助融合",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助融合",
+        "fusion"
+      ],
+      "summary": "评估小足迹 LiDAR 高度与高光谱指标估计热带森林生物量，保留融合并未优于最佳 LiDAR 模型的负面结果。",
+      "input": "离散 LiDAR 首回波冠层高度剖面、九个光谱指数和三个解混组分及样地生物量。",
+      "output": "样地地上生物量回归估计与不同传感器组合比较。",
+      "mechanism": "采用单变量与双变量线性回归比较光谱、高度及混合指标；最佳整体模型使用平均高度与最大高度。",
+      "readingNote": "正式卷期 2011 年，DOI 含 2010。原始摘要明确光谱融合模型没有优于两高度变量模型；传感器分季节单次飞行且只评估线性回归，不能将个案结论泛化为所有融合方法无效。不是三维点云语义方法。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0034425711001404",
+      "doi": "10.1016/j.rse.2010.08.029",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425711001404",
+        "https://people.clas.ufl.edu/jackewel/files/clark-et-al-rse-2011.pdf"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{tropicalbiomasssensors,\n  title={Estimation of tropical rain forest aboveground biomass with small-footprint lidar and hyperspectral sensors},\n  author={Matthew L. Clark and Dar A. Roberts and John J. Ewel and David B. Clark},\n  year={2011},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/pii/S0034425711001404},\n  doi={10.1016/j.rse.2010.08.029}\n}"
+    },
+    {
+      "id": "southern-alps-species",
+      "shortTitle": "Southern Alps Fusion",
+      "title": "Tree species classification in the Southern Alps based on the fusion of very high geometrical resolution multispectral/hyperspectral images and LiDAR data",
+      "authors": "Michele Dalponte, Lorenzo Bruzzone, Damiano Gianelle",
+      "year": 2012,
+      "venue": "RSE",
+      "track": "fusion",
+      "representation": "高度辅助融合",
+      "scope": "相关研究",
+      "tags": [
+        "高度辅助融合",
+        "fusion"
+      ],
+      "summary": "比较机载高光谱或卫星多光谱与不同密度 LiDAR 的融合，评估复杂山地树种分类对光谱分辨率和点密度的依赖。",
+      "input": "真实机载高光谱、卫星多光谱及低密度/高密度 LiDAR 采集。",
+      "output": "宏观类别、森林类型与七种树木及非森林类别的分类。",
+      "mechanism": "采用两条多源数据处理流程与 SVM、随机森林，比较不同类别粒度、光谱分辨率和 LiDAR 点密度。",
+      "readingNote": "官方摘要与作者机构条目已核验。影像/结构特征融合相关阅读，不称三维光谱点云分类。各数据设置为真实独立采集，而非统一原始数据降采样，采集时段差异可能影响分辨率比较。",
+      "paper": "https://www.sciencedirect.com/science/article/abs/pii/S0034425712001320",
+      "doi": "10.1016/j.rse.2012.03.013",
+      "sourceUrls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425712001320",
+        "https://openpub.fmach.it/handle/10449/21299"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{southernalpsspecies,\n  title={Tree species classification in the Southern Alps based on the fusion of very high geometrical resolution multispectral/hyperspectral images and LiDAR data},\n  author={Michele Dalponte and Lorenzo Bruzzone and Damiano Gianelle},\n  year={2012},\n  journal={RSE},\n  url={https://www.sciencedirect.com/science/article/abs/pii/S0034425712001320},\n  doi={10.1016/j.rse.2012.03.013}\n}"
+    },
+    {
+      "id": "wst-ncut-trees",
+      "shortTitle": "WST-Ncut",
+      "title": "Individual tree segmentation and tree species classification in subtropical broadleaf forests using UAV-based LiDAR, hyperspectral, and ultrahigh-resolution RGB data",
+      "authors": "Haiming Qin, Weiqi Zhou, Yang Yao, Weimin Wang",
+      "year": 2022,
+      "venue": "RSE",
+      "track": "fusion",
+      "representation": "树冠结构融合",
+      "scope": "相关研究",
+      "tags": [
+        "树冠结构融合",
+        "fusion"
+      ],
+      "summary": "融合无人机 LiDAR 结构、高光谱和 RGB 纹理，减少多峰阔叶树冠的过分割，并分类单树树种。",
+      "input": "UAV LiDAR、高光谱影像与超高分辨率 RGB 数据。",
+      "output": "单树树冠边界、树冠级结构/光谱/纹理特征及 18 种树木的分类。",
+      "mechanism": "用分水岭–光谱–纹理控制的归一化割（WST-Ncut）生成树冠，再提取垂直结构、光谱与纹理特征，由随机森林分类。",
+      "readingNote": "官方摘要和引言已核验。结构–光谱树冠融合相关阅读，摘要只证明树冠及特征级输出，不推定输出逐点光谱语义标签。深圳阔叶森林个案中分割与分类相互影响；详细图节点构造待全文核验。",
+      "paper": "https://doi.org/10.1016/j.rse.2022.113143",
+      "doi": "10.1016/j.rse.2022.113143",
+      "sourceUrls": [
+        "https://doi.org/10.1016/j.rse.2022.113143"
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{wstncuttrees,\n  title={Individual tree segmentation and tree species classification in subtropical broadleaf forests using UAV-based LiDAR, hyperspectral, and ultrahigh-resolution RGB data},\n  author={Haiming Qin and Weiqi Zhou and Yang Yao and Weimin Wang},\n  year={2022},\n  journal={RSE},\n  url={https://doi.org/10.1016/j.rse.2022.113143},\n  doi={10.1016/j.rse.2022.113143}\n}"
     }
   ],
   "datasets": [

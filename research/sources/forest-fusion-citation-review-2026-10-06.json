@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-06",
+  "coverage": "森林结构辅助影像/树冠分类与清查的主题引文检索，新增八篇相关阅读；不能据此声称真实三维光谱视觉文献已全面覆盖。",
+  "papers": [
+    {
+      "id": "boreal-itc-delineation",
+      "title": "Tree crown delineation and tree species classification in boreal forests using hyperspectral and ALS data",
+      "doi": "10.1016/j.rse.2013.09.006",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S003442571300309X"
+      ],
+      "evidence": "正式卷期为 2014 年，DOI 含 2013。ALS 用于树冠边界与高度辅助，分类输出为树冠/影像，不能写成三维光谱点云分割。高光谱分割的分类精度较高，但检测到的树木较少，须保留该权衡。"
+    },
+    {
+      "id": "itc-s3vm",
+      "title": "Semi-supervised SVM for individual tree crown species classification",
+      "doi": "10.1016/j.isprsjprs.2015.10.010",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0924271615002403",
+        "https://elib.dlr.de/100204/"
+      ],
+      "evidence": "作者机构 DLR 与出版社摘要已核验。树冠/影像分类相关阅读；存在激光扫描数据不等于训练输入为三维光谱点云。详细树冠生成与算法实现待全文，不能声称几何重建。"
+    },
+    {
+      "id": "evo-tree-3dcnn",
+      "title": "Tree species classification from airborne hyperspectral and LiDAR data using 3D convolutional neural networks",
+      "doi": "10.1016/j.rse.2021.112322",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425721000407"
+      ],
+      "evidence": "官方全文方法部分已核验：3D 卷积的第三维是波长，不是空间 z。属于高度辅助的二维影像/树冠分类，不能写成三维点云 CNN。代码为作者发布的处理与训练流程。"
+    },
+    {
+      "id": "aisa-lidar-species",
+      "title": "Assessing the utility of airborne hyperspectral and LiDAR data for species distribution mapping in the coastal Pacific Northwest, Canada",
+      "doi": "10.1016/j.rse.2010.07.002",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S003442571000218X"
+      ],
+      "evidence": "官方摘要与引言已核验。三维体积剖面被转为像元级解释变量，输出为二维树种图，不是逐点三维语义分割。结构融合收益与物种生长阶段有关，不保证所有物种都改善。"
+    },
+    {
+      "id": "lvis-aviris-inventory",
+      "title": "Integrating waveform lidar with hyperspectral imagery for inventory of a northern temperate forest",
+      "doi": "10.1016/j.rse.2007.09.009",
+      "sources": [
+        "https://scholars.unh.edu/earthsci_facpub/573/"
+      ],
+      "evidence": "作者机构原始摘要已核验，正式 2008 年。融合改善整体清查指标，但按物种限定的丰度预测中 AVIRIS 单独表现更好；不作“融合始终更好”表述。输出为森林统计/制图，不是三维光谱点云重建。"
+    },
+    {
+      "id": "tropical-biomass-sensors",
+      "title": "Estimation of tropical rain forest aboveground biomass with small-footprint lidar and hyperspectral sensors",
+      "doi": "10.1016/j.rse.2010.08.029",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0034425711001404",
+        "https://people.clas.ufl.edu/jackewel/files/clark-et-al-rse-2011.pdf"
+      ],
+      "evidence": "正式卷期 2011 年，DOI 含 2010。原始摘要明确光谱融合模型没有优于两高度变量模型；传感器分季节单次飞行且只评估线性回归，不能将个案结论泛化为所有融合方法无效。不是三维点云语义方法。"
+    },
+    {
+      "id": "southern-alps-species",
+      "title": "Tree species classification in the Southern Alps based on the fusion of very high geometrical resolution multispectral/hyperspectral images and LiDAR data",
+      "doi": "10.1016/j.rse.2012.03.013",
+      "sources": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0034425712001320",
+        "https://openpub.fmach.it/handle/10449/21299"
+      ],
+      "evidence": "官方摘要与作者机构条目已核验。影像/结构特征融合相关阅读，不称三维光谱点云分类。各数据设置为真实独立采集，而非统一原始数据降采样，采集时段差异可能影响分辨率比较。"
+    },
+    {
+      "id": "wst-ncut-trees",
+      "title": "Individual tree segmentation and tree species classification in subtropical broadleaf forests using UAV-based LiDAR, hyperspectral, and ultrahigh-resolution RGB data",
+      "doi": "10.1016/j.rse.2022.113143",
+      "sources": [
+        "https://doi.org/10.1016/j.rse.2022.113143"
+      ],
+      "evidence": "官方摘要和引言已核验。结构–光谱树冠融合相关阅读，摘要只证明树冠及特征级输出，不推定输出逐点光谱语义标签。深圳阔叶森林个案中分割与分类相互影响；详细图节点构造待全文核验。"
+    }
+  ]
+}
