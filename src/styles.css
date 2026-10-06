@@ -153,3 +153,25 @@
 .is-glance .overview-cell-heading{margin-bottom:5px;padding-top:6px}
 .is-glance .overview-paper{padding-top:3px;padding-bottom:3px}
 @media(max-width:900px){.is-glance .overview-route-name{padding:16px}.is-glance .overview-cell{padding:8px 15px 12px 30px}}
+
+/* Compact time overview keeps all directions visible without a movable canvas. */
+.atlas-panorama{border:1px solid #dfe7e4;border-radius:10px;overflow:hidden;background:#fff}
+.panorama-axis,.panorama-row{display:grid;grid-template-columns:190px repeat(var(--periods),minmax(0,1fr))}
+.panorama-axis{background:#f4f7f6;color:#59736a;font-size:12px;font-weight:600;text-align:center;border-bottom:1px solid #dfe7e4}
+.panorama-axis>span{padding:13px 8px}.panorama-axis>span:first-child{text-align:left;padding-left:16px}
+.panorama-row{min-height:44px;border-bottom:1px solid #edf1ef}.panorama-row:last-child{border-bottom:0}.panorama-row:hover{background:#f8faf9}
+.panorama-name{display:flex;align-items:center;gap:9px;background:transparent;padding:10px 14px;text-align:left;min-width:0;border-right:1px solid #e7edea}
+.panorama-name i{height:16px;width:3px;border-radius:2px;background:var(--route);flex-shrink:0}.panorama-name>span{font-size:12px;font-weight:550;line-height:1.4;flex:1}.panorama-name small{font:10px monospace;color:#87978f}
+.panorama-name:hover,.panorama-name[aria-expanded=true]{background:color-mix(in srgb,var(--route) 8%,white)}
+.panorama-period{display:flex;align-items:center;min-width:0;position:relative;border-right:1px dashed #e9eeeb;padding:4px 8px}
+.panorama-period:last-child{border-right:0}.panorama-period:before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:color-mix(in srgb,var(--route) 24%,white)}
+.panorama-node{display:flex;align-items:center;gap:7px;position:relative;width:100%;min-width:0;background:#fff;padding:4px;border-radius:5px;text-align:left;min-height:32px}
+.panorama-node b{display:flex;align-items:center;justify-content:center;width:24px;height:24px;flex-shrink:0;border:1px solid color-mix(in srgb,var(--route) 45%,white);border-radius:50%;color:var(--route);background:color-mix(in srgb,var(--route) calc(8% + var(--weight) * 18%),white);font-size:11px;font-variant-numeric:tabular-nums}
+.panorama-node>span{font-size:11px;color:#4b6158;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.panorama-node:hover,.panorama-node.active{background:color-mix(in srgb,var(--route) 10%,white)}.panorama-node.active b{background:var(--route);color:#fff;border-color:var(--route)}
+.panorama-gap{position:relative;margin:auto;background:white;color:#c1cdc6;padding:0 5px;font-size:11px}
+.panorama-detail{margin-top:18px;padding:20px;border:1px solid color-mix(in srgb,var(--route) 25%,white);border-left:3px solid var(--route);border-radius:8px;background:#fbfcfb}
+.panorama-detail-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:15px}.panorama-detail h4{margin:0;font-size:16px;font-weight:600}.panorama-detail h4 span{font-size:11px;font-weight:400;color:#788c81;margin-left:8px}.panorama-detail-heading p{font-size:12px;color:#7b8e82;margin-top:5px}.panorama-detail-heading>button{background:transparent;white-space:nowrap;color:#71877a;font-size:12px;padding:4px}
+.panorama-paper-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.panorama-paper-list .overview-paper{padding:12px;background:white;border:1px solid #e4ebe6}.panorama-paper-list .overview-paper:hover{border-color:var(--route)}.panorama-paper-list p{font-size:11px;line-height:1.7;color:#7b8c80;margin-top:8px}
+@media(max-width:1100px){.panorama-axis,.panorama-row{grid-template-columns:160px repeat(var(--periods),minmax(0,1fr))}.panorama-period{padding:4px}.panorama-node{gap:4px}.panorama-name{padding:10px}.panorama-paper-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.panorama-axis,.panorama-row{grid-template-columns:120px repeat(var(--periods),minmax(0,1fr))}.panorama-node>span{display:none}.panorama-node{justify-content:center;background:transparent;padding:3px 0}.panorama-name>span{font-size:11px}.panorama-name{padding:9px 7px;gap:6px}.panorama-name small{display:none}.panorama-axis{font-size:10px}.panorama-axis>span{padding:12px 1px;overflow-wrap:anywhere}.panorama-axis>span:first-child{padding-left:12px}.panorama-period{padding:3px 0}.panorama-node b{height:22px;width:22px;font-size:10px}.panorama-row{min-height:42px}.panorama-detail{padding:15px}.panorama-paper-list{grid-template-columns:1fr}.panorama-detail h4 span{display:block;margin:6px 0 0}}
