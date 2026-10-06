@@ -289,6 +289,29 @@ body{background:#f8faf9}.hero{grid-template-columns:.8fr 1.2fr;gap:56px;min-heig
 @media(max-width:760px){.direction-board{grid-template-columns:1fr;gap:14px}.direction-card{padding:18px}.direction-description{min-height:0;font-size:13px}.direction-card h4{font-size:18px}.direction-timeline button strong{font-size:15px}.direction-timeline button>span{font-size:12px}.direction-expand{min-height:44px}.direction-timeline li{min-height:70px}.direction-range{font-size:11px}}
 
 /* The reading atlas exposes paper titles without a canvas or horizontal scrolling. */
+.atlas-landscape{padding:24px;background:#fff;border:1px solid #dee7e4;border-radius:12px;margin-bottom:36px}
+.atlas-landscape header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.atlas-landscape h4{font-size:21px;font-weight:600;letter-spacing:-.4px;margin:6px 0 0;color:#233e35}
+.atlas-landscape header p{font-size:12px;color:#6c8076}
+.atlas-distribution{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:5px 4px;font-variant-numeric:tabular-nums}
+.atlas-distribution th:first-child{width:26%}.atlas-distribution .atlas-distribution-total{width:7%;text-align:right;color:#7c8e84;font-size:12px}
+.atlas-distribution thead th{text-align:center;font-size:12px;font-weight:500;color:#6c8076;padding:0 0 10px}
+.atlas-distribution thead th:first-child{text-align:left}
+.atlas-distribution tbody th{font-weight:500;padding:0;text-align:left}
+.atlas-distribution tbody th button{display:flex;align-items:center;gap:10px;min-height:32px;width:100%;background:none;text-align:left;padding:4px 0;font-size:12px;line-height:1.5;color:#304c40;border-radius:4px}
+.atlas-distribution tbody th i{width:5px;height:17px;border-radius:2px;background:var(--route);flex-shrink:0}
+.atlas-distribution tbody th button:hover{color:var(--route);background:#f4f7f5}
+.atlas-distribution td{padding:0;text-align:center}
+.atlas-distribution-cell{display:block;width:100%;position:relative;min-height:32px;padding:6px;border-radius:4px;overflow:hidden;background:color-mix(in srgb,var(--route) var(--strength),#f6f9f7);color:#183629;font-size:12px;font-weight:600}
+.atlas-distribution-cell:hover{outline:2px solid var(--route);outline-offset:1px}
+.atlas-distribution-bar{position:absolute;left:0;bottom:0;height:2px;background:var(--route)}
+.atlas-distribution-empty{display:block;min-height:32px;padding:6px;background:#f6f8f7;border-radius:4px;color:#b6c3bb;font-size:12px}
+.atlas-landscape footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding-top:14px;border-top:1px solid #e9efeb;font-size:10px;color:#7f9186;line-height:1.7}
+.atlas-reading-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
+.atlas-reading-heading h4{margin:0;font-size:19px;color:#294639;font-weight:600}.atlas-reading-heading p{font-size:12px;color:#7a8e81}
+.atlas-sheet-group{scroll-margin-top:24px}
+@media(max-width:900px){.atlas-landscape{padding:18px;margin-bottom:28px}.atlas-landscape header{display:block;margin-bottom:16px}.atlas-landscape header p{margin-top:8px;font-size:11px}.atlas-distribution th:first-child{width:31%}.atlas-distribution tbody th button{font-size:11px;gap:6px}.atlas-landscape h4{font-size:19px}}
+@media(max-width:480px){.atlas-landscape{padding:14px 8px}.atlas-landscape header,.atlas-landscape footer{margin-left:5px;margin-right:5px}.atlas-distribution{border-spacing:3px 4px}.atlas-distribution th:first-child{width:37%}.atlas-distribution-total{display:none}.atlas-distribution thead th{font-size:9px;overflow-wrap:anywhere;padding-bottom:5px}.atlas-distribution tbody th button{font-size:10px;gap:5px;min-height:38px}.atlas-distribution tbody th i{width:3px;height:22px}.atlas-distribution-cell,.atlas-distribution-empty{font-size:11px;min-height:38px;padding:11px 1px}.atlas-reading-heading{display:block}.atlas-reading-heading p{margin-top:5px;font-size:11px}.atlas-landscape footer{font-size:9px}}
 .atlas-sheet{border:1px solid #dee7e4;border-radius:12px;background:white}
 .atlas-sheet-axis,.atlas-sheet-row{display:grid;grid-template-columns:minmax(210px,1.15fr) minmax(0,3fr)}
 .atlas-sheet-axis{background:#eff5f2;border-bottom:1px solid #dee7e4;border-radius:12px 12px 0 0;color:#34584a;padding:14px 0;font-size:14px;font-weight:600}
