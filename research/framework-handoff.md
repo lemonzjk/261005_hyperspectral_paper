@@ -129,3 +129,13 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - EP–OTVCA：共同作者旧主页出版条目 27 的 code 链接实际指向 OTVCA_V3，引用不同的 2016 特征提取论文；第一作者公开 GitHub 个人站、OTVCA、OptFus 树中没有本篇原稿或图附件，不能替代 2017 融合论文。已逐条记录，仍需 Fig. 1。
 
 证据、公开链接、原图与补充稿哈希见 sources/hyper-lift-original-images-and-rasti-code-2026-10-06.json。下一轮继续 45 篇缺图的新作者/机构入口，优先最新年份；本轮取得的 CDN 路径只能用于此篇，其他论文必须从其原始正文确认附件，不能猜测归属。
+
+## PROSPECULAR 原始模型框架补齐（2026-10-06）
+
+174 篇：121 篇有 142 张图、44 needs_access、9 no_framework、0 pending。现有缺图和全面文献调研仍未完成。
+
+- 原先只检查过 gr1–gr6，不能据此前几张结果图排除后续框架。本轮作者上传的 corrected proof 全文显示 Section 4.2 明确引用 Fig. 13，图注将其定义为五模型主要特征示意。
+- 已下载唯一 PII S003442572300305X 的出版社 gr13_lrg.jpg 并目视核对全图：多角度 BRF、单视角分支、五个模型、黄色反演和蓝色正向模拟箭头及参数输出全部保留。图中附带曲线没有单独冒充框架；保存的是完整模型关系与正反演总览，注明不是具体优化器步骤。
+- 作者 GitHub xiaoli980/PROSPECULAR-model 的公开全树只有 MATLAB 模型、参数和数据，没有论文 PDF/原图附件。未取得实际 PDF，不将 corrected-proof 印刷页码冒称 PDF 页序。
+
+来源、核验范围和原图哈希见 sources/prospecular-original-model-overview-2026-10-06.json。下一轮继续 44 篇缺图的新公开入口；对于出版社有图但前几张为结果的论文，先用真实全文定位后续框架图号，再下载核对，不能据图号猜测内容或借其他稿件图。
