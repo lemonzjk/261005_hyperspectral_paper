@@ -196,3 +196,14 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - PS2F2L 2026：准确方法名 GitHub 搜索 200 零结果，OpenAlex 只有 DOI，无 PDF；精确题名仍指向 IEEE 摘要。
 
 实际来源与响应见 sources/institutional-notices-and-latest-author-leads-2026-10-07.json。下一步继续其他缺图论文尚未检查的作者/机构附件；FMach 受限文件和 HAL notice 不重复当公开全文。仍有未试入口，全部缺图与全面文献调研尚未完成。
+
+
+## 双角度多光谱重建正式框架图补齐（2026-10-07）
+
+174 篇：122 篇有 143 张图、43 needs_access、9 no_framework。本轮补到一篇正式原图。
+
+- Dual-angle MS Stereo 2024：Springer 正式记录给出期刊文章号 182305。scis.scichina.com 的 HTTPS 连接失败，但公开 HTTP /en/2024/182305.pdf 实际返回 200 application/pdf、2,672,042 字节、15 页，无需认证。首页题名、四作者、DOI、182305:1–15 与日期均核对一致，是正式期刊排版。
+- 已渲染并目视检查 PDF 第 5 页 Figure 2、图注及裁切结果：保留多光谱输入、标定、预处理、框架分解、点云输出以及投影变换/NCC/自适应 SIFT/POS 辅助匹配/稠密匹配/光谱映射六模块。即刻用 figures.py add 保存 framework-reconstruction-flowchart.png。来源链接为 Springer 正式页，实际 HTTP 下载路径明确写核验说明，没有伪称 HTTPS 下载成功。
+- Spherical Shell 2025：HIT 共同作者 Gu 主页由脚本动态加载；读取其公开 teacherBody.do（POST id=1163，200、126072 字节）后才核对正文，不据静态空壳判无附件。当前公开正文无准确论文题名、PDF/file/download 链接。准确 OpenAlex 只有 DOI，无 PDF，仍 needs_access。
+
+PDF 哈希、页码、裁切坐标与真实下载协议见 sources/dual-angle-official-framework-and-hit-author-body-2026-10-07.json。下一轮继续其余 43 篇缺图；已知官方文章号可用于合法公开期刊域附件核验，不能因 HTTPS/目录失败就排除 HTTP 公开原稿，也不能把元数据或不同稿件当补图。全面文献调研仍未完成。

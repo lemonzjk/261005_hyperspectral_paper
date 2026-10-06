@@ -4599,9 +4599,9 @@
       "citation": "@article{sphericalshelloccluded,\n  title={Unsupervised Occluded Target Detection Based on Spherical Shell With Multispectral Point Clouds},\n  author={Likun Chen and Yanfeng Gu and Xian Li},\n  year={2025},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2025.3585524},\n  doi={10.1109/TGRS.2025.3585524}\n}",
       "frameworkFigureSearch": {
         "status": "needs_access",
-        "note": "作者 Xian Li 上传的全文记录明确含 Fig. 2 整体架构，位于 PDF 第 4 页；直接下载返回 HTTP 403，未取得可核验图像。后续取得 PDF 后提取 Fig. 2。",
-        "sourceUrl": "https://www.researchgate.net/publication/393376264_Unsupervised_Occluded_Target_Detection_based_on_Spherical_Shell_with_Multispectral_Point_Clouds",
-        "checkedAt": "2026-10-06"
+        "note": "新查共同作者 Yanfeng Gu 的 HIT 主页及页面实际公开 teacherBody.do 数据（POST id=1163，HTTP 200，126072 字节）。解码正文后未见本篇 Spherical Shell/Occluded 题名或 PDF/download 附件，不是静态空壳误判；准确 OpenAlex DOI 200 只列出版 DOI，无 PDF。此前作者 RG 原文仍指出 Fig. 2，但本轮未取得原图，不升级状态。",
+        "sourceUrl": "https://homepage.hit.edu.cn/guyf?lang=en",
+        "checkedAt": "2026-10-07"
       }
     },
     {
@@ -5065,12 +5065,31 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{adaptivedualanglemsstereo,\n  title={An adaptive 3D reconstruction method for asymmetric dual-angle multispectral stereo imaging system on UAV platform},\n  author={Chen Wang and Xian Li and Yanfeng Gu and Zixu Wang},\n  year={2024},\n  journal={Science China Information Sciences},\n  url={https://link.springer.com/article/10.1007/s11432-024-4056-8},\n  doi={10.1007/s11432-024-4056-8}\n}",
-      "frameworkFigureSearch": {
-        "status": "needs_access",
-        "note": "已查 Springer 正式论文页及 content/pdf 入口；当前仅显示订阅摘要，PDF 请求重定向摘要。ScienceEngine PDF 入口返回 No Fund Article，SciChina 入口 404；未取得可核验全文及框架原图，待人工补充。",
-        "sourceUrl": "https://link.springer.com/article/10.1007/s11432-024-4056-8",
-        "checkedAt": "2026-10-06"
-      }
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://link.springer.com/article/10.1007/s11432-024-4056-8",
+          "figureLabel": "Figure 2",
+          "page": 5,
+          "caption": "双角度多光谱三维重建完整流程：标定与预处理后，进行投影变换、NCC 计算、自适应 SIFT、POS 辅助特征匹配、稠密匹配及光谱映射，输出多光谱点云。浅色模块处理角度造成的几何问题，深色模块处理波段间光谱差异。",
+          "verificationNote": "已核对官方期刊 PDF 的题名、四作者、DOI 及 182305:1–15，目视检查第 5 页 Figure 2 与图注。完整保留输入、标定、预处理、框架分解及点云输出，没有用结果图替代流程。实际 PDF 下载为期刊原域的公开 HTTP 地址 http://scis.scichina.com/en/2024/182305.pdf（HTTPS 连接失败）；来源链接使用可访问的 Springer 正式论文页。图由原 PDF 裁切，未重绘。",
+          "extraction": {
+            "method": "PDF page rendered with pdftoppm then cropped with Pillow",
+            "dpi": 180,
+            "pixelBox": [
+              171,
+              294,
+              1339,
+              728
+            ]
+          },
+          "path": "figures/adaptive-dual-angle-ms-stereo/framework-reconstruction-flowchart.png",
+          "width": 1168,
+          "height": 434,
+          "verifiedAt": "2026-10-07",
+          "sha256": "f526fc229236b2c785827b834f582bbaca682f314cff3cf06a1e0e8d0768b1dd",
+          "attribution": "Chen Wang, Xian Li, Yanfeng Gu, Zixu Wang · Science China Information Sciences 2024"
+        }
+      ]
     },
     {
       "id": "empc-long-tailed",
