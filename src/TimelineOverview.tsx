@@ -25,7 +25,7 @@ export function TimelineOverview({ papers, onSelect, onDetail }: {
     .sort((a, b) => a.year - b.year || a.shortTitle.localeCompare(b.shortTitle)) ?? [];
   return <div className={`timeline-overview${showAll ? ' show-all' : ' is-glance'}`} style={{ '--periods': columns.length } as CSSProperties}>
     <div className="overview-toolbar">
-      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 研究时间轴</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {mode === 'timeline' ? '方向与时间一览 · 点论文查看详情' : showAll ? '全部展示' : '点击方向或时间节点展开论文'}</p></div>
+      <div><span className="overview-kicker">RESEARCH THROUGH TIME</span><h3>高光谱三维视觉 · 研究时间轴</h3><p>{groups.length} 个方向 · {papers.length} 篇论文 · {mode === 'timeline' ? '每格一篇代表论文 · 底色越深收录越多 · 点论文看详情' : showAll ? '全部展示' : '点击方向或时间节点展开论文'}</p></div>
       <div className="overview-actions"><div className="overview-density" role="group" aria-label="时间轴展示密度"><button aria-pressed={mode === 'timeline'} onClick={() => setMode('timeline')}>时间轴</button><button aria-pressed={mode === 'directions'} onClick={() => setMode('directions')}>方向全景</button><button aria-pressed={showAll} onClick={() => setMode('all')}>全部论文</button></div><button className="overview-advanced" onClick={onDetail}>导出完整 SVG ↓</button></div>
     </div>
     {mode !== 'timeline' && <div className="overview-key">{showAll && <><span><i className="core-marker"/>核心研究</span><span><i className="related-marker"/>相关研究</span></>}<p>{showAll ? '横向看时间，纵向看方向；圆点核心、方点相关。' : '横向看时间，纵向看方向；数字为篇数，节点旁为阶段代表论文。'}</p></div>}
