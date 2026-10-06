@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-06。网站当前收录 104 篇论文、4 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-06。网站当前收录 107 篇论文、4 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -41,3 +41,5 @@ CVF 已扫描大部分 CVPR 2013–2026、ICCV 2013–2025 目录；旧目录通
 补充三次 Crossref 题名主题检索，每次仅前 100 条相关性结果，按目标场所与光谱三维题名筛选新增 5 个待核验候选；清单见 `sources/pointcloud-crossref-topic-scan-2026-10-06.json`，不代表完整期刊检索。GSFF 已核验作者 v2 全文及正式 DOI，四作者版本对应，两个影像重建点云均为 10 波段；以 2026 TGRS 在线先行版本收录。CVF Spectral Informed Mamba 原摘要明确为图拉普拉斯谱，排除；SG-NLF 的 spectral prior 是否为波长信息尚未证明，继续待范围核验。Science China Information Sciences 纳入信息科学重要期刊检索，场所清单不是统一等级认证。
 
 沿点云引文补充 9 篇：HIDEDaSF 边缘滤波、MaxEnt 邻域选择、PS-UDA 跨场景迁移、MGC2N、GSFF、非对称双角度多光谱立体、EMPC 长尾分类、MGSVM FS 多模态 LiDAR 特征选择、优化 CNN 的 LiDAR 栅格分类。后者明确将三维点云转为二维图像，归高度辅助融合；MGSVM FS 的 28 通道含距离、反射率和偏振，材料实验规模为 30 件 / 4 类，不外推野外性能。HyperPointFormer 和 MKGSL 正式发表于 JSTARS，DSGCN 专业工作发表于 Remote Sensing，保留专业背景候选，不误标 TGRS。
+
+新增 SCSQ-Net（TGRS 2024，弱监督多光谱点云）、TMDE（TGRS 2020，张量判别分类）与 DWF（TGRS 2025，全波形高光谱时延校正/分解）。TMDE 在线年 2019 与正式卷年 2020 分开；DWF 正式六作者与早期五作者稿分开，Wang Li 和 Li Wang 不合并。MIWD 元数据已核验但缺可访问原始摘要，继续待核验。叶片入射角校正已有作者原文方法证据，正式 DOI 待查。

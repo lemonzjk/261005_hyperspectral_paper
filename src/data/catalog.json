@@ -3186,6 +3186,109 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{optimizedcnnmslidar,\n  title={Land-cover classification of multispectral LiDAR data using CNN with optimized hyper-parameters},\n  author={Suoyan Pan and Haiyan Guan and Yating Chen and Yongtao Yu and Wesley Nunes Gonçalves and José Marcato Junior and Jonathan Li},\n  year={2020},\n  journal={ISPRS JPRS},\n  url={https://doi.org/10.1016/j.isprsjprs.2020.05.022},\n  doi={10.1016/j.isprsjprs.2020.05.022}\n}"
+    },
+    {
+      "id": "scsq-net",
+      "shortTitle": "SCSQ-Net",
+      "title": "SCSQ-Net: A Shared Kernel Point Convolution Semantic Query Network for Weakly Supervised Classification of Multispectral LiDAR Point Clouds",
+      "authors": "Ke Chen, Haiyan Guan, Yongtao Yu, Lanying Wang, Jiacheng Liu, Yufu Zang, Chenglu Wen",
+      "year": 2024,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "弱监督多光谱点云分类",
+      "scope": "相关研究",
+      "tags": [
+        "弱监督多光谱点云分类",
+        "understanding"
+      ],
+      "summary": "以少量标注训练共享核点卷积与语义查询网络，分类大范围多光谱机载 LiDAR 点云。",
+      "input": "多光谱机载 LiDAR 三维点云、邻域特征和少量人工标签。",
+      "output": "逐点地物语义标签。",
+      "mechanism": "共享核点卷积融合邻域，ADA 自适应 dropout 激活增强特征学习；点亲和损失、加权交叉熵与 Lovasz-Softmax 组合监督。",
+      "readingNote": "作者原文与机构页核验；WS 实验使用 Titan 三波长（含 532 nm），不是连续高光谱系统。摘要报告 0.1% 标签条件下的结果，属于弱监督，不能称完全无监督。原文为作者接受稿，正式年份和完整作者以 DOI 元数据核对。",
+      "paper": "https://doi.org/10.1109/TGRS.2024.3506016",
+      "doi": "10.1109/TGRS.2024.3506016",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/386133627_SCSQ-Net_A_shared_kernel_point_convolution_semantic_query_network_for_weakly_supervised_classification_of_multispectral_LiDAR_point_clouds",
+          "note": "作者接受稿核验方法、弱监督设定及 Titan 数据。"
+        },
+        {
+          "url": "https://rsn.nuist.edu.cn/info/1109/1148.htm",
+          "note": "作者机构介绍共享卷积语义查询网络。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{scsqnet,\n  title={SCSQ-Net: A Shared Kernel Point Convolution Semantic Query Network for Weakly Supervised Classification of Multispectral LiDAR Point Clouds},\n  author={Ke Chen and Haiyan Guan and Yongtao Yu and Lanying Wang and Jiacheng Liu and Yufu Zang and Chenglu Wen},\n  year={2024},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2024.3506016},\n  doi={10.1109/TGRS.2024.3506016}\n}"
+    },
+    {
+      "id": "tmde-mslidar",
+      "shortTitle": "TMDE",
+      "title": "A Discriminative Tensor Representation Model for Feature Extraction and Classification of Multispectral LiDAR Data",
+      "authors": "Qingwang Wang, Yanfeng Gu",
+      "year": 2020,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "光谱点云判别张量",
+      "scope": "相关研究",
+      "tags": [
+        "光谱点云判别张量",
+        "understanding"
+      ],
+      "summary": "把每点及其邻域的空间、光谱信息表示为二阶张量，学习判别嵌入后分类点云。",
+      "input": "多光谱 LiDAR 三维点、光谱属性和邻域结构。",
+      "output": "几何—光谱判别特征及逐点地物类别。",
+      "mechanism": "TMDE 张量流形判别嵌入分别学习两个模态映射，压紧类内分布、扩大类间距离，再用 SVM 分类。",
+      "readingNote": "作者原始摘要明确输入真实三维点云，二阶张量不代表 H×W×B 图像立方。完整波段配置待核验，标多光谱相关研究。在线发表 2019，正式卷 58(3) 为 2020，以正式卷年份记录。",
+      "paper": "https://doi.org/10.1109/TGRS.2019.2947081",
+      "doi": "10.1109/TGRS.2019.2947081",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/336912817_A_Discriminative_Tensor_Representation_Model_for_Feature_Extraction_and_Classification_of_Multispectral_LiDAR_Data",
+          "note": "原始摘要确认点和邻域张量表示、TMDE 与 SVM。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{tmdemslidar,\n  title={A Discriminative Tensor Representation Model for Feature Extraction and Classification of Multispectral LiDAR Data},\n  author={Qingwang Wang and Yanfeng Gu},\n  year={2020},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2019.2947081},\n  doi={10.1109/TGRS.2019.2947081}\n}"
+    },
+    {
+      "id": "dwf-hsl",
+      "shortTitle": "DWF",
+      "title": "A Novel Dynamic Warping Fusion (DWF) Method for Full-Waveform Hyperspectral LiDAR Signal Correction and Decomposition",
+      "authors": "Yishuo Hao, Zheng Niu, Wang Li, Jie Bai, Li Wang, Kaiyi Bi",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "lidar",
+      "representation": "全波形光谱距离分解",
+      "scope": "核心研究",
+      "tags": [
+        "全波形光谱距离分解",
+        "lidar"
+      ],
+      "summary": "联合校正高光谱 LiDAR 各通道时延和响应差异，分解多目标回波以提取目标位置及反射光谱。",
+      "input": "多通道全波形高光谱 LiDAR 回波。",
+      "output": "校正后的通道回波、目标位置和基于积分面积的光谱特征。",
+      "mechanism": "DDTW 导数动态时间规整对齐通道并合成全色波形；逆 DDTW 生成逐通道初始化参数，降低漏检和过分割。",
+      "readingNote": "正式 DOI 原始摘要核验，六位作者含 Wang Li 与 Li Wang 两人，保留出版商姓名顺序。2025 SSRN 稿是五作者版本，不替代正式版本。方法恢复回波位置及光谱，不直接生成完整表面网格；跨设备适用性不等同于已完成广泛硬件实测。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3631229",
+      "doi": "10.1109/TGRS.2025.3631229",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/397472383_A_Novel_Dynamic_Warping_Fusion_DWF_Method_for_Full-Waveform_Hyperspectral_LiDAR_Signal_Correction_and_Decomposition",
+          "note": "正式 DOI 原始摘要核验 DDTW、逆变换与积分光谱。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{dwfhsl,\n  title={A Novel Dynamic Warping Fusion (DWF) Method for Full-Waveform Hyperspectral LiDAR Signal Correction and Decomposition},\n  author={Yishuo Hao and Zheng Niu and Wang Li and Jie Bai and Li Wang and Kaiyi Bi},\n  year={2025},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2025.3631229},\n  doi={10.1109/TGRS.2025.3631229}\n}"
     }
   ],
   "datasets": [
