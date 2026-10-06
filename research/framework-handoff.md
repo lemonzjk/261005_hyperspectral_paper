@@ -119,3 +119,13 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - Science China 的 scis 期刊站点按编号探测路径 SSL unexpected EOF/浏览超时，没有实际取得或确认该路径附件；不把推测 URL 当发现的全文。
 
 证据与 PDF 哈希见 sources/evo-fulltext-and-public-author-retry-2026-10-06.json。后续已有明确图号的优先公开作者附件：HIDEDaSF Fig. 4、HoloSpec Fig. 1、Spherical Shell Fig. 2、EP-OTVCA Fig. 1、Hyper-LIFT Fig. 2；没有新入口时不重试同一拒绝页面。继续找其他原始机构存档；Helda 新公共接口可用于合法开放附件。
+
+## Hyper-LIFT 原始系统与成像模型补齐（2026-10-06）
+
+174 篇：120 篇有 141 张原图、45 needs_access、9 no_framework、0 pending。缺图补齐及全面文献调研仍未完成。
+
+- Hyper-LIFT：本轮浏览工具能够取得 PMC 同名作者稿正文及方法 2.A–C，正文直接列出的 NCBI CDN 原始附件下载返回 200 JPEG。逐图目视核对 Fig. 2 完整光学系统与 Fig. 1 单子视场前向模型，均已即时保存到 catalog、figures 清单和 public。Fig. 1 明确标为采集模型，不声称完整数值反演。没有解决或绕过验证码；本地 PMC/PubMed HTML 请求仍未得到正文，原始附件路径由公开正文提供。
+- PubMed 关联的 Optica Figshare 16918231 v3 公共 API 提供 52753214 原始补充 PDF，取得全文并核对封面父 DOI；PDF 第 2 页 Fig. S1 只是安装板，未冒充框架。正式补图使用论文 Fig. 1/2，不借补充结果图。
+- EP–OTVCA：共同作者旧主页出版条目 27 的 code 链接实际指向 OTVCA_V3，引用不同的 2016 特征提取论文；第一作者公开 GitHub 个人站、OTVCA、OptFus 树中没有本篇原稿或图附件，不能替代 2017 融合论文。已逐条记录，仍需 Fig. 1。
+
+证据、公开链接、原图与补充稿哈希见 sources/hyper-lift-original-images-and-rasti-code-2026-10-06.json。下一轮继续 45 篇缺图的新作者/机构入口，优先最新年份；本轮取得的 CDN 路径只能用于此篇，其他论文必须从其原始正文确认附件，不能猜测归属。

@@ -2070,12 +2070,34 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{hyperlift,\n  title={Snapshot hyperspectral light field tomography},\n  author={Qi Cui and Jongchan Park and Yayao Ma and Liang Gao},\n  year={2021},\n  journal={Optica},\n  url={https://pmc.ncbi.nlm.nih.gov/articles/PMC9202651/},\n  doi={10.1364/OPTICA.440074}\n}",
-      "frameworkFigureSearch": {
-        "status": "needs_access",
-        "note": "PubMed 原始 Figure 2 图注确认 Optical schematic of a Hyper-LIFT camera；正文 PMC 入口仍要求 reCAPTCHA，未尝试绕过。Europe PMC 官方全文 API 500、页面 403，旧 NCBI OA 索引 API 404，未取得原图。保留期刊缺图；已定位准确 Fig. 2 图注。",
-        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/35720735/",
-        "checkedAt": "2026-10-06"
-      }
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9202651/",
+          "imageUrl": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f5da/9202651/6fad073d1b36/nihms-1771659-f0002.jpg",
+          "figureLabel": "Fig. 2",
+          "caption": "Hyper-LIFT 光学系统：物镜、Dove 棱镜阵列与柱面透镜阵列、狭缝阵列、中继透镜、衍射光栅及相机构成多角度投影与光谱色散采集光路。",
+          "verificationNote": "核对 PMC 同名 Optica 2021 作者稿（DOI 10.1364/OPTICA.440074）方法 2.A 与 Fig. 2 图注；从正文直接列出的 NCBI 公共 CDN 附件下载原图，目视确认所有器件、左上阵列示意和完整光路均保留。此图为论文原始光学系统，不声称包含数值重建算法。未绕过登录或验证码，未从补充材料或其他论文借图。",
+          "path": "figures/hyper-lift/framework-optical-system.jpg",
+          "width": 1050,
+          "height": 467,
+          "verifiedAt": "2026-10-06",
+          "sha256": "becb242726434e13eca26ae2f09eea7b1e6d1f93ef83567af043f35b65828a60",
+          "attribution": "Qi Cui, Jongchan Park, Yayao Ma, Liang Gao · Optica 2021"
+        },
+        {
+          "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9202651/",
+          "imageUrl": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f5da/9202651/46e619f60c8f/nihms-1771659-f0001.jpg",
+          "figureLabel": "Fig. 1",
+          "caption": "Hyper-LIFT 单个子视场的前向成像模型：透视图经旋转 Dove 棱镜、柱面透镜和狭缝形成一维投影，再经衍射光栅形成色散投影。此图描述采集模型，不是完整重建算法。",
+          "verificationNote": "核对同名论文 PMC 作者稿方法 2.A、公式 (1) 与 Fig. 1 图注；NCBI 正文直接列出的原始 JPEG 下载成功。逐项目视核对透视图、旋转图、重新成像、1D Projection 与 Dispersed 1D projection image；保留全图及所有标签。与同篇 Fig. 2 完整光学系统搭配展示，不将前向模型冒称数值反演流程。",
+          "path": "figures/hyper-lift/framework-image-formation.jpg",
+          "width": 1050,
+          "height": 717,
+          "verifiedAt": "2026-10-06",
+          "sha256": "5c6fb3f9febf84454b852b65c830324c4ca7b44b843f4b28bb03ad813a24cdad",
+          "attribution": "Qi Cui, Jongchan Park, Yayao Ma, Liang Gao · Optica 2021"
+        }
+      ]
     },
     {
       "id": "forest-fusion-2008",
@@ -2242,8 +2264,8 @@
       "citation": "@article{epotvca,\n  title={Hyperspectral and LiDAR Fusion Using Extinction Profiles and Total Variation Component Analysis},\n  author={Behnood Rasti and Pedram Ghamisi and Richard Gloaguen},\n  year={2017},\n  journal={TGRS},\n  url={https://iris.hi.is/en/publications/hyperspectral-and-lidar-fusion-using-extinction-profiles-and-tota/},\n  doi={10.1109/TGRS.2017.2686450}\n}",
       "frameworkFigureSearch": {
         "status": "needs_access",
-        "note": "机构 PDF 返回 HTTP 401。已通过作者 Pedram Ghamisi 上传的 ResearchGate 图页核对框架为 Figure 1（The work flow of the proposed fusion method），但原图下载返回 403；需要取得该图或公开作者全文。图页：https://www.researchgate.net/figure/The-work-flow-of-the-proposed-fusion-method_fig1_316202851 。未用 SL-RCA 或 EP-CNN 同系列图替代。",
-        "sourceUrl": "https://elib.dlr.de/112025/1/TVFE-Final-File.pdf",
+        "note": "新增共同作者旧个人主页出版条目 27，实际点击 code 得到 ResearchGate OTVCA_V3（330634438），其摘要明确关联 Rasti/Ulfarsson/Sveinsson 的 2016 特征提取论文，并非 2017 EP–OTVCA 融合期刊原稿。另核对第一作者 BehnoodRasti 的公开 GitHub repo 列表及个人网站、OTVCA、OptFus 文件树；没有本篇原始 PDF 或框架附件。OTVCA README 同样引用 2016 不同论文，未借用其图。仍需本篇 Fig. 1。",
+        "sourceUrl": "https://pghamisi.wixsite.com/mysite",
         "checkedAt": "2026-10-06"
       }
     },
