@@ -2894,6 +2894,298 @@
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{pivahpc,\n  title={Pillar-voxel fusion network for 3D object detection in airborne hyperspectral point clouds},\n  author={Yanze Jiang and Yanfeng Gu and Xian Li},\n  year={2026},\n  journal={Science China Information Sciences},\n  url={https://doi.org/10.1007/s11432-024-4458-0},\n  doi={10.1007/s11432-024-4458-0}\n}"
+    },
+    {
+      "id": "hidedasf-edge-filter",
+      "shortTitle": "HIDEDaSF",
+      "title": "Edge Effect Issue on Hyperspectral LiDAR Point Cloud Data: Generation Principle and Framework of Detection and Filtering",
+      "authors": "Jie Bai, Jiayu Zhu, Binbin He, Binxiang Qian, Li Wang, Zheng Niu, Shihua Li",
+      "year": 2026,
+      "venue": "TGRS",
+      "track": "lidar",
+      "representation": "高光谱点云辐射滤波",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱点云辐射滤波",
+        "lidar"
+      ],
+      "summary": "分析叶缘部分照射导致的高光谱 LiDAR 强度损失，以联合边缘检测和三维空间滤波保留有效光谱点。",
+      "input": "高光谱 LiDAR 叶片点云的三维坐标与多波段回波强度。",
+      "output": "边缘效应检测和过滤后的高光谱点云，改善光谱一致性及生化反演可靠性。",
+      "mechanism": "分析多层边缘效应物理形成机制，联合强度分布直方图、边缘检测和球形空间过滤构成 HIDEDaSF。",
+      "readingNote": "处理的是已有三维测量中失真的回波强度点，核心贡献为辐射质量控制；过滤无效点不等于恢复被遮挡或未测到的几何。跨平台适用性按论文声称理解，不能当作所有系统均已验证。",
+      "paper": "https://doi.org/10.1109/tgrs.2026.3699269",
+      "doi": "10.1109/tgrs.2026.3699269",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/405783089_Edge_Effect_Issue_on_Hyperspectral_LiDAR_Point_Cloud_Data_Generation_Principle_and_Framework_of_Detection_and_Filtering",
+          "note": "Jie Bai 上传正式作者论文，核验叶缘部分照射及直方图—边缘—球形空间过滤。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{hidedasfedgefilter,\n  title={Edge Effect Issue on Hyperspectral LiDAR Point Cloud Data: Generation Principle and Framework of Detection and Filtering},\n  author={Jie Bai and Jiayu Zhu and Binbin He and Binxiang Qian and Li Wang and Zheng Niu and Shihua Li},\n  year={2026},\n  journal={TGRS},\n  url={https://doi.org/10.1109/tgrs.2026.3699269},\n  doi={10.1109/tgrs.2026.3699269}\n}"
+    },
+    {
+      "id": "maxent-lidar-neighborhood",
+      "shortTitle": "MaxEnt Neighborhoods",
+      "title": "A Maximum Entropy-Based Optimal Neighbor Selection for Multispectral Airborne LiDAR Point Cloud Classification",
+      "authors": "Ge Jiang, Wai Yeung Yan, Derek D. Lichti",
+      "year": 2023,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "多光谱点云邻域选择",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱点云邻域选择",
+        "understanding"
+      ],
+      "summary": "依据最大熵原则自适应选择点云邻域，兼顾局部同质性和足够样本，为多光谱 LiDAR 分类生成几何与辐射特征。",
+      "input": "带三维坐标及多光谱强度的机载 LiDAR 点云。",
+      "output": "逐点自适应邻域、几何/辐射上下文特征及分类结果。",
+      "mechanism": "判定每个点的局部邻域同质性，用 MaxEnt 选择附近点构建上下文特征，再输入机器学习分类器，与六种邻域选择方法比较。",
+      "readingNote": "属于多光谱点云分类的特征/邻域构建方法，不能描述为连续高光谱采集或几何重建；具体通道及数据划分需按原文实验。",
+      "paper": "https://doi.org/10.1109/tgrs.2023.3323963",
+      "doi": "10.1109/tgrs.2023.3323963",
+      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/374704860_A_Maximum_Entropy-Based_Optimal_Neighbor_Selection_for_Multispectral_Airborne_LiDAR_Point_Cloud_Classification",
+          "note": "原始作者稿摘要核验最大熵邻域、同质性、几何与辐射特征和分类器。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{maxentlidarneighborhood,\n  title={A Maximum Entropy-Based Optimal Neighbor Selection for Multispectral Airborne LiDAR Point Cloud Classification},\n  author={Ge Jiang and Wai Yeung Yan and Derek D. Lichti},\n  year={2023},\n  journal={TGRS},\n  url={https://doi.org/10.1109/tgrs.2023.3323963},\n  doi={10.1109/tgrs.2023.3323963}\n}"
+    },
+    {
+      "id": "ps-uda-pointcloud",
+      "shortTitle": "PS-UDA",
+      "title": "Unsupervised Domain Adaptation for Cross-Scene Multispectral Point Cloud Classification",
+      "authors": "Qingwang Wang, Mingye Wang, Jiangbo Huang, Tianzhu Liu, Tao Shen, Yanfeng Gu",
+      "year": 2024,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "跨场景多光谱点云分类",
+      "scope": "相关研究",
+      "tags": [
+        "跨场景多光谱点云分类",
+        "understanding"
+      ],
+      "summary": "结合特征预对齐与 Shannon 熵约束，在源域与未标注目标域之间迁移多光谱点云分类。",
+      "input": "有标注源域与未标注目标域的多光谱三维点云。",
+      "output": "目标场景点云的地物分类结果。",
+      "mechanism": "L2 范数约束将域特征映射到同一球面，图 Laplace 矩阵促进分布预对齐，再以熵约束提高伪标签置信度并用邻接矩阵增强目标域特征。",
+      "readingNote": "无监督指目标域不需要真实标签，源域仍有监督。图拉普拉斯是内部对齐工具，实际输入为实测多光谱点云，因此与仅研究图谱的非光谱三维方法区分。",
+      "paper": "https://doi.org/10.1109/tgrs.2024.3423759",
+      "doi": "10.1109/tgrs.2024.3423759",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/382031559_Unsupervised_Domain_Adaptation_for_Cross-Scene_Multispectral_Point_Cloud_Classification",
+          "note": "原始摘要确认 PS-UDA、球面/图预对齐、熵约束和目标域增强。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{psudapointcloud,\n  title={Unsupervised Domain Adaptation for Cross-Scene Multispectral Point Cloud Classification},\n  author={Qingwang Wang and Mingye Wang and Jiangbo Huang and Tianzhu Liu and Tao Shen and Yanfeng Gu},\n  year={2024},\n  journal={TGRS},\n  url={https://doi.org/10.1109/tgrs.2024.3423759},\n  doi={10.1109/tgrs.2024.3423759}\n}"
+    },
+    {
+      "id": "mgc2n",
+      "shortTitle": "MGC2N",
+      "title": "Masking Graph Cross-Convolution Network for Multispectral Point Cloud Classification",
+      "authors": "Qingwang Wang, Xueqian Chen, Zifeng Zhang, Yuanqin Meng, Tao Shen, Yanfeng Gu",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "多光谱点云图分类",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱点云图分类",
+        "understanding"
+      ],
+      "summary": "利用光谱相似性建立不受空间距离限制的点间关系，自适应融合空间分布与局部光谱，分类多光谱点云。",
+      "input": "包含三维位置与光谱属性的多光谱点云。",
+      "output": "地物点云分类结果。",
+      "mechanism": "SAM 自注意力掩码调整邻接矩阵的节点和边，S2C2 空间—光谱交叉卷积提取空间分布及局部光谱特征。",
+      "readingNote": "摘要明确输入为多光谱点云，尚未核验连续高光谱波段和所有预处理细节，因此标相关研究。掩码表示图关系调整，不是成像硬件的编码光谱掩模。",
+      "paper": "https://doi.org/10.1109/tgrs.2025.3545783",
+      "doi": "10.1109/tgrs.2025.3545783",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/publication/389385392_Masking_Graph_Cross-Convolution_Network_for_Multispectral_Point_Cloud_Classification",
+          "note": "原始摘要核验光谱关系建图、SAM 和 S2C2。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{mgc2n,\n  title={Masking Graph Cross-Convolution Network for Multispectral Point Cloud Classification},\n  author={Qingwang Wang and Xueqian Chen and Zifeng Zhang and Yuanqin Meng and Tao Shen and Yanfeng Gu},\n  year={2025},\n  journal={TGRS},\n  url={https://doi.org/10.1109/tgrs.2025.3545783},\n  doi={10.1109/tgrs.2025.3545783}\n}"
+    },
+    {
+      "id": "gsff",
+      "shortTitle": "GSFF",
+      "title": "An Enhanced Geometric-Spectral Feature Learning Framework for Airborne Multispectral Point Cloud Classification",
+      "authors": "Xian Li, Yanfeng Gu, Linghua Xu, Aleksandra Pižurica",
+      "year": 2026,
+      "venue": "TGRS",
+      "track": "understanding",
+      "representation": "多光谱点云分类",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱点云分类",
+        "understanding"
+      ],
+      "summary": "结合双流注意力与联合损失，在类别长尾及光谱相似条件下分类由多光谱影像重建的三维点云。",
+      "input": "ZJKM 与 SKM 的三维点云及 430–870 nm 的 10 波段光谱属性。",
+      "output": "逐点地物及红树林物种标签。",
+      "mechanism": "全局位置编码光谱注意力与多核点卷积的光谱引导几何流，经残差注意力融合；联合损失处理类别不均衡和类间相似。",
+      "readingNote": "作者 v2 全文核验两个数据集均由影像匹配重建、均为 10 波段，故列相关研究。v2 四位作者与出版商 DOI 元数据相符；arXiv 页面姓名解析异常，采用 PDF 与正式元数据。正式 DOI 尚无卷号且页码占位，标在线先行；不把预印本重复计数。",
+      "paper": "https://doi.org/10.1109/TGRS.2026.3739775",
+      "doi": "10.1109/TGRS.2026.3739775",
+      "publicationStatus": "early_access",
+      "verificationLevel": "author_fulltext_and_publisher_metadata",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2606.09123v2",
+          "note": "作者修订稿，核验四位作者、双流方法与 10 波段影像重建点云。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "venueTier": "target",
+      "citation": "@article{gsff,\n  title={An Enhanced Geometric-Spectral Feature Learning Framework for Airborne Multispectral Point Cloud Classification},\n  author={Xian Li and Yanfeng Gu and Linghua Xu and Aleksandra Pižurica},\n  year={2026},\n  journal={TGRS},\n  url={https://doi.org/10.1109/TGRS.2026.3739775},\n  doi={10.1109/TGRS.2026.3739775}\n}"
+    },
+    {
+      "id": "adaptive-dual-angle-ms-stereo",
+      "shortTitle": "Dual-angle MS Stereo",
+      "title": "An adaptive 3D reconstruction method for asymmetric dual-angle multispectral stereo imaging system on UAV platform",
+      "authors": "Chen Wang, Xian Li, Yanfeng Gu, Zixu Wang",
+      "year": 2024,
+      "venue": "Science China Information Sciences",
+      "track": "geometry",
+      "representation": "多光谱立体点云",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱立体点云",
+        "geometry"
+      ],
+      "summary": "用非对称波段、不同视角的双多光谱相机，在无人机上采集侧向信息并重建三维光谱点云。",
+      "input": "无人机双多光谱相机影像及位置姿态信息。",
+      "output": "稠密多光谱三维点云。",
+      "mechanism": "位置姿态辅助投影变换、归一化阈值调整与互信息稠密匹配，处理几何畸变及波段非线性亮度差异。",
+      "readingNote": "官方摘要与作者、年份已核验；明确输出真实三维点云，非二维光谱立方。摘要没有核验完整波段配置，按多光谱相关研究记录；系统不同于单相机五波段点云生成方法。",
+      "paper": "https://link.springer.com/article/10.1007/s11432-024-4056-8",
+      "doi": "10.1007/s11432-024-4056-8",
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{adaptivedualanglemsstereo,\n  title={An adaptive 3D reconstruction method for asymmetric dual-angle multispectral stereo imaging system on UAV platform},\n  author={Chen Wang and Xian Li and Yanfeng Gu and Zixu Wang},\n  year={2024},\n  journal={Science China Information Sciences},\n  url={https://link.springer.com/article/10.1007/s11432-024-4056-8},\n  doi={10.1007/s11432-024-4056-8}\n}"
+    },
+    {
+      "id": "empc-long-tailed",
+      "shortTitle": "EMPC",
+      "title": "An enhanced classification method based on adaptive multi-scale fusion for long-tailed multispectral point clouds",
+      "authors": "Tianzhu Liu, Bangyan Hu, Yanfeng Gu, Xian Li, Aleksandra Pižurica",
+      "year": 2025,
+      "venue": "Science China Information Sciences",
+      "track": "understanding",
+      "representation": "长尾多光谱点云分类",
+      "scope": "相关研究",
+      "tags": [
+        "长尾多光谱点云分类",
+        "understanding"
+      ],
+      "summary": "面向室外多光谱点云稀疏标注、尺度变化和类别长尾，联合均衡采样、多尺度特征融合与自适应分类损失。",
+      "input": "带三维坐标、光谱特征和稀疏标签的室外多光谱点云。",
+      "output": "逐点地物分类结果。",
+      "mechanism": "网格均衡采样生成训练样本，多尺度浅层特征融合保留细节，自适应混合损失与多个分类头改善小类别学习。",
+      "readingNote": "官方摘要确认三套点云数据实验；未核验所有波段配置，按多光谱相关研究记录。2024 arXiv 预印本与 2025 正式期刊为同一工作，不重复计数；不是无标签三维重建。",
+      "paper": "https://link.springer.com/article/10.1007/s11432-024-4324-6",
+      "doi": "10.1007/s11432-024-4324-6",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2412.11407",
+          "note": "同一方法的作者预印本，仅作为版本追溯。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{empclongtailed,\n  title={An enhanced classification method based on adaptive multi-scale fusion for long-tailed multispectral point clouds},\n  author={Tianzhu Liu and Bangyan Hu and Yanfeng Gu and Xian Li and Aleksandra Pižurica},\n  year={2025},\n  journal={Science China Information Sciences},\n  url={https://link.springer.com/article/10.1007/s11432-024-4324-6},\n  doi={10.1007/s11432-024-4324-6}\n}"
+    },
+    {
+      "id": "mgsvm-fs-mm-lidar",
+      "shortTitle": "MGSVM FS",
+      "title": "A feature selection method for multimodal multispectral LiDAR sensing",
+      "authors": "Yu Han, David Salido-Monzú, Jemil Avers Butt, Sebastian Schweizer, Andreas Wieser",
+      "year": 2024,
+      "venue": "ISPRS JPRS",
+      "track": "lidar",
+      "representation": "光谱偏振距离联合特征",
+      "scope": "核心研究",
+      "tags": [
+        "光谱偏振距离联合特征",
+        "lidar"
+      ],
+      "summary": "利用三维激光测距仪的反射率、距离及偏振光谱，按波段和模态的组结构选择材料分类特征。",
+      "input": "实验多模态 LiDAR 的 28 个 10 nm 宽光谱通道，每通道含反射率、距离和线偏振度。",
+      "output": "选定的光谱通道与模态配置，以及材料类别。",
+      "mechanism": "MGSVM FS 将结构稀疏 l2,1 正则与多类别 SVM 联合，配合分类性能、稳定性和选择概率进行配置决策。",
+      "readingNote": "原始摘要及结论核验三十件样本、四种建材的室内实验。三通道达到高分仅适用于该小数据集，不能外推大型场景。距离是实际 LiDAR 测量；该工作优化特征/仪器配置，不恢复场景网格。引文列表将作者错误写成 Schindler，采用出版商正式五作者。",
+      "paper": "https://doi.org/10.1016/j.isprsjprs.2024.04.022",
+      "doi": "10.1016/j.isprsjprs.2024.04.022",
+      "verificationLevel": "publisher_abstract_and_fulltext_sections",
+      "code": "https://github.com/yuhan-yhyh/Dataset_Code_MGSVM-FS-MM-LiDAR",
+      "sources": [
+        {
+          "url": "https://gseg.igp.ethz.ch/research0/sensor-and-sensor-systems/Multispectral-precision-distance-metrology-and-material-probing.html",
+          "note": "作者机构项目页说明多模态光谱测距与特征选择。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{mgsvmfsmmlidar,\n  title={A feature selection method for multimodal multispectral LiDAR sensing},\n  author={Yu Han and David Salido-Monzú and Jemil Avers Butt and Sebastian Schweizer and Andreas Wieser},\n  year={2024},\n  journal={ISPRS JPRS},\n  url={https://doi.org/10.1016/j.isprsjprs.2024.04.022},\n  doi={10.1016/j.isprsjprs.2024.04.022}\n}"
+    },
+    {
+      "id": "optimized-cnn-mslidar",
+      "shortTitle": "Optimized MS-LiDAR CNN",
+      "title": "Land-cover classification of multispectral LiDAR data using CNN with optimized hyper-parameters",
+      "authors": "Suoyan Pan, Haiyan Guan, Yating Chen, Yongtao Yu, Wesley Nunes Gonçalves, José Marcato Junior, Jonathan Li",
+      "year": 2020,
+      "venue": "ISPRS JPRS",
+      "track": "fusion",
+      "representation": "三波段 LiDAR 栅格分类",
+      "scope": "相关研究",
+      "tags": [
+        "三波段 LiDAR 栅格分类",
+        "fusion"
+      ],
+      "summary": "把多光谱三维 LiDAR 预处理为二维图像，以七层 CNN 与超参数优化执行地物分类。",
+      "input": "Titan 532、1064、1550 nm 三波段 LiDAR，经预处理形成二维栅格。",
+      "output": "建筑、树木、道路、草地、土壤和水体六类地物分类。",
+      "mechanism": "构建七个基本功能层，优化模型参数并与 AlexNet、VGG16、ResNet50 比较。",
+      "readingNote": "原始摘要明确先把三维点云转为二维图像；标高度/光谱辅助分类，不能写成原生三维点云网络或高光谱重建。只有三波长，属于多光谱相关研究。",
+      "paper": "https://doi.org/10.1016/j.isprsjprs.2020.05.022",
+      "doi": "10.1016/j.isprsjprs.2020.05.022",
+      "sources": [
+        {
+          "url": "https://uwaterloo.ca/geospatial-intelligence/sites/default/files/uploads/files/2020-pan-guan-etal-li-isprs.pdf",
+          "note": "作者机构公开原论文；摘要确认三波长与二维预处理。"
+        }
+      ],
+      "verifiedAt": "2026-10-06",
+      "verificationLevel": "official_abstract",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{optimizedcnnmslidar,\n  title={Land-cover classification of multispectral LiDAR data using CNN with optimized hyper-parameters},\n  author={Suoyan Pan and Haiyan Guan and Yating Chen and Yongtao Yu and Wesley Nunes Gonçalves and José Marcato Junior and Jonathan Li},\n  year={2020},\n  journal={ISPRS JPRS},\n  url={https://doi.org/10.1016/j.isprsjprs.2020.05.022},\n  doi={10.1016/j.isprsjprs.2020.05.022}\n}"
     }
   ],
   "datasets": [
