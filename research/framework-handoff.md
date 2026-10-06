@@ -149,3 +149,13 @@ Playwright 在 `/tmp/hs3d-browser-check/`，脚本按年份检查全部框架图
 - UAV Forest Fusion：OpenAlex 当前只有 DOI 出版条目，没有新增 PDF。检索出现同作者其他题名公开稿，不替代当前 RSE 2017 论文。
 
 本轮实际请求与开放索引字段见 sources/zora-and-ibcas-original-fulltext-leads-2026-10-06.json。下一轮仍有其他未查作者入口，任务不处于全面阻塞；继续最新缺图论文的作者附件。若重试 ZORA 或植物所，仅在新连接证据或实际附件路径出现时进行，不重复空转同一请求。
+
+## 点云重建 Fig. 2 与波形来源范围核查（2026-10-06）
+
+本轮没有新增可保存原图，仍为 121 篇、142 张；44 needs_access、9 no_framework。取得可供下一步精确补图的新图页及地址。
+
+- Robust MPC Generation 2023：作者 Xian Li 独立图页明确为 Fig. 2，方法上下文给出多波段输入、预处理、对应关系计算和三维信息恢复，输出稠密多光谱点云。真实 Download directly 提供 PNG（AS:11431281215534308@1704259235954）；本地直下返回 403 HTML，规范作者图片路径也 403。没有把错误页保存入 public。作者 HITlixian GitHub 仅列不同分类论文 TGRS_GSFF；树 409、README 404，不借其框架。
+- MSL Weak Signals 2024：新定位准确 ResearchGate 378615312，页面明确没有公开全文，未发作者请求。
+- Range Resolution 2023：arXiv 原始页只列 v1，管理员因当时提交者没有许可授权而移除此版本；没有可取的其他历史版本。不将该路线继续当作有效 PDF，也不据此声称正式 TGRS 论文撤稿。
+
+实际下载地址、响应及版本结论见 sources/pointcloud-fig2-and-waveform-source-audit-2026-10-06.json。下一轮继续其他原始作者/机构入口，已定位 Fig. 2 可供合法作者稿或人工附件对照；未取得原图前不升级状态。
