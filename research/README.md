@@ -93,3 +93,5 @@ Fiducial HS3D Mapping 六页全文明确 RGB SfM、标记约束、正交渲染�
 引文追溯核验 Nature Communications 臭氧层析正文，明确演示二维水平气体分布，保留背景而非三维体成像主条目；CVF 的双相机多光谱去马赛克按原始摘要排除。RSE 两篇冠层导数已补正式元数据：2025 LAI 论文 HAL API 无全文附件，2026 叶密度论文登记未来 11 月卷期但没有在线日期；光谱波段/实验仍待全文，不强行收录。证据见 `sources/ghost-hs3d-lidar-review-2026-10-07.json` 与 `sources/rtm-and-lidar-scope-review-2026-10-07.json`。目标目录与原始全文缺口仍未全部解决。
 
 新增 FRGFNet 与 FusDreamer 两篇 TGRS 2025 高度辅助分类论文。FRGFNet 核验 IEEE 原始摘要、五作者与正式 DOI；作者主页误标 2024，收录以正式卷 63、2025 为准，全文和原图请求受限。FusDreamer 取得作者公开 14 页正式排版 PDF 及当前已发布代码，保存第 3 页完整 Figure 1；世界模型在此为潜空间生成与多模态分类，不冒称三维几何或时序场景恢复。人为设计的类别/属性文本提示、CLIP、少标注实验边界保留，不称零标注开放类别识别。证据见 `sources/frgfnet-fusdreamer-review-2026-10-07.json`。UCAFNet 仍缺原始摘要/全文核验，不据二手摘要自动纳入；余下 TGRS 候选、专业期刊与目录检索继续。
+
+2026-10-07：全部既有 CVPR 关键词命中候选已有逐篇决定，新增 SpectralMoE 深度先验辅助二维光谱分割及原始框架；当前网站 196 篇。原始摘要及歧义论文的全文证据保存在 sources/*scope-review*.json，审查汇总见 survey.coverage.cvprCandidateReview。该进度不等于所有 CVPR 论文的语义覆盖；ICCV/ECCV 候选、期刊与引文追溯仍未完成。

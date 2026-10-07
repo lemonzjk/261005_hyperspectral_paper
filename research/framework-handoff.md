@@ -1,6 +1,6 @@
 # 框架图搜集交接
 
-用户于 2026-10-07 要求暂停，准备交给另一会话。框架图初查已经覆盖全部现有论文，仍有缺图项；后续任务转为扩充高光谱三维视觉文献并同步查图。仅本地保存、检查与 Git 提交，不推送、不发布。
+用户已恢复当前会话的文献扩充。框架图初查覆盖全部现有论文，仍有缺图项；新增文献同步查图。仅本地保存、检查与 Git 提交，不推送、不发布。
 
 ## 目标与操作
 
@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 195 篇：139 篇 verified、167 张图；46 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 196 篇：140 篇 verified、168 张图；46 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。

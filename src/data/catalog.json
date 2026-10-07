@@ -9814,6 +9814,67 @@
           "attribution": "Yasuto Nagase, Takahiro Kushida, Kenichiro Tanaka, Takuya Funatomi, Yasuhiro Mukaigawa · CVPR 2022"
         }
       ]
+    },
+    {
+      "id": "spectralmoe-dgss",
+      "shortTitle": "SpectralMoE DGSS",
+      "title": "Local Precise Refinement: A Dual-Gated Mixture-of-Experts for Enhancing Foundation Model Generalization against Spectral Shifts",
+      "authors": "Xi Chen, Maojun Zhang, Yu Liu, Shen Yan",
+      "year": 2026,
+      "venue": "CVPR",
+      "publicationName": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "track": "fusion",
+      "representation": "二维光谱影像与估计深度特征",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "多光谱",
+        "深度先验",
+        "域泛化",
+        "混合专家",
+        "语义分割"
+      ],
+      "summary": "通过双门控专家分别调整光谱视觉与 RGB 估计深度特征，再交叉注意力融合，增强遥感二维语义分割的跨域泛化。",
+      "input": "高光谱/多光谱遥感影像，以及从所选 RGB 波段通过冻结深度基础模型提取的深度特征；不是外部 LiDAR 点云或实测 DSM。",
+      "output": "逐像素土地覆盖语义分割图，不输出独立三维表面、光谱点云或测量深度。",
+      "mechanism": "在冻结视觉与深度基础模型各层加入 SpectralMoE。模态独立的双门控将每个 token 路由至 top-k 低秩专家；调整后的深度特征作为交叉注意力 key/value，向视觉流注入结构先验；训练专家模块与分割头以适应光谱域偏移。",
+      "readingNote": "核验 CVF 11 页官方全文、四作者与正式页码 20521–20531；不是另一篇 Spectral Mixture-of-Experts for Continual Learning。高光谱跨区域实验使用 WHU-OHS，另有多光谱与 RGB 域泛化实验；深度从输入 RGB 波段估计，不是独立三维真值。仅以结构/深度先验辅助二维理解，列相关融合研究；正文未证明高光谱三维重建或几何测量精度。框架 Figure 3 位于 PDF 第 4 页，已保留全部输入、双门控、专家、融合及输出。未运行训练复现。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Local_Precise_Refinement_A_Dual-Gated_Mixture-of-Experts_for_Enhancing_Foundation_Model_CVPR_2026_paper.html",
+      "code": "https://github.com/nudt-sawlab/SpectralMoE-main",
+      "verificationLevel": "official_full_text",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{spectralmoedgss,\n  title={Local Precise Refinement: A Dual-Gated Mixture-of-Experts for Enhancing Foundation Model Generalization against Spectral Shifts},\n  author={Xi Chen and Maojun Zhang and Yu Liu and Shen Yan},\n  year={2026},\n  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n  url={https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Local_Precise_Refinement_A_Dual-Gated_Mixture-of-Experts_for_Enhancing_Foundation_Model_CVPR_2026_paper.html}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chen_Local_Precise_Refinement_A_Dual-Gated_Mixture-of-Experts_for_Enhancing_Foundation_Model_CVPR_2026_paper.pdf",
+          "figureLabel": "Figure 3",
+          "page": 4,
+          "caption": "SpectralMoE 完整框架：光谱视觉与 RGB 估计深度双流、模态独立门控、低秩专家、交叉注意力融合及二维分割输出；深度分支为估计先验，不是 LiDAR 测量。",
+          "verificationNote": "逐页定位并目视核对 CVF 正式 PDF 第 4 页 Figure 3 与图注、四作者。保留上下两条基础模型流、RGB Band Selection、全部双门控/专家/融合模块、输出与图例；未使用实验分割结果代替框架。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              2010,
+              2600
+            ],
+            "pixelBox": [
+              185,
+              220,
+              1840,
+              1225
+            ],
+            "renderCommand": "pdftoppm -f 4 -singlefile -scale-to 2600 -png"
+          },
+          "path": "figures/spectralmoe-dgss/framework-dual-gated-fusion.png",
+          "width": 1655,
+          "height": 1005,
+          "verifiedAt": "2026-10-07",
+          "sha256": "d5d941e9a3db1007b328b06e5e9658ecc7f372a6a9d3fb7294b4b0136bf89f15",
+          "attribution": "Xi Chen, Maojun Zhang, Yu Liu, Shen Yan · CVPR 2026"
+        }
+      ]
     }
   ],
   "datasets": [
