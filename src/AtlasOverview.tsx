@@ -12,6 +12,16 @@ const directionHints: Record<string, string> = {
   holography: '多波长相位 · 波场与轮廓', volumetric: '三维体空间与波长联合成像',
   fusion: '高度辅助分类 · 区别于三维重建',
 };
+const families = [
+  { name: '重建与场景表示', hint: '恢复几何、光谱与外观', tracks: ['rendering', 'geometry', 'lightfield', 'materials'] },
+  { name: '采集与空间对齐', hint: '获取观测，建立光谱与空间对应', tracks: ['active', 'capture', 'lidar', 'pointcloud', 'registration'] },
+  { name: '理解与扩展成像', hint: '场景应用、波场计量与体成像', tracks: ['understanding', 'holography', 'volumetric', 'fusion'] },
+];
+const venueLabels: Record<string, string> = {
+  'Nature Communications': 'Nat. Commun.', 'Nature Photonics': 'Nat. Photonics',
+  'Nature Methods': 'Nat. Methods', 'Light: Science & Applications': 'Light Sci. Appl.',
+  'Laser & Photonics Reviews': 'Laser Photon. Rev.', 'Science China Information Sciences': 'Sci. China Inf. Sci.',
+};
 const newestFirst = (a: Paper, b: Paper) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle);
 
 /** A single reading surface exposes directions, time, examples, and collection counts. */
@@ -21,17 +31,20 @@ export function AtlasOverview({ groups, periods, onSelect }: {
   const [selection, setSelection] = useState<{ group: string; period?: number } | null>(null);
   const toggle = (group: string, period?: number) => setSelection(current =>
     current?.group === group && current.period === period ? null : { group, period });
+  const sections = families.map(family => ({ ...family, groups: family.tracks.flatMap(id => groups.filter(group => group.id === id)) })).filter(family => family.groups.length);
+  const ordered = sections.flatMap(family => family.groups);
   return <section className="atlas-roadmap" aria-label="研究方向与论文时间轴" style={{ '--stages': periods.length } as CSSProperties}>
-    <div className="atlas-roadmap-guide"><span><i aria-hidden="true"/>研究方向与时间脉络</span><p>直接读方向与论文 · 点篇数展开</p><span className="atlas-roadmap-time">早期积累 <span aria-hidden="true">⟶</span> 最新研究</span></div>
+    <div className="atlas-roadmap-guide"><span>纵向看方向，横向看时间</span><p>论文标题可直接点击 · 篇数展开完整列表</p><div className="atlas-roadmap-scope-key"><span><i className="core"/>核心研究</span><span><i/>相关研究</span></div></div>
     <table className="atlas-roadmap-table">
       <caption className="sr-only">各方向每阶段最新收录的一篇论文及收录篇数。阶段等宽，不表示时长；示例不是排名或方法继承关系。</caption>
-      <thead><tr><th scope="col">研究方向 <small>{groups.length} 个方向</small></th>{periods.map(period => <th scope="col" key={period.start}>{period.label}<small>{period.start === periods.at(-1)?.start ? '最新收录' : period.start === period.end ? '年度研究' : '早期研究'}</small></th>)}</tr></thead>
-      <tbody>{groups.map((group, index) => {
+      <thead><tr><th scope="col">研究方向 <small>{groups.length} 个方向</small></th>{periods.map(period => <th scope="col" key={period.start}>{period.label}<small>{period.start === periods.at(-1)?.start ? '最新收录' : period.start === period.end ? '年度研究' : '阶段积累'}</small></th>)}</tr></thead>
+      <tbody>{ordered.map((group, index) => {
+        const family = sections.find(section => section.groups[0].id === group.id);
         const selected = selection?.group === group.id;
         const period = selected && selection.period !== undefined ? periods[selection.period] : undefined;
         const visible = group.papers.filter(paper => !period || paper.year >= period.start && paper.year <= period.end).sort(newestFirst);
         const detailId = `atlas-detail-${group.id}`;
-        return <Fragment key={group.id}><tr className={`atlas-roadmap-row${selected ? ' selected' : ''}`} style={{ '--route': group.color } as CSSProperties}>
+        return <Fragment key={group.id}>{family && <tr className="atlas-roadmap-family"><th colSpan={periods.length + 1} scope="rowgroup"><strong>{family.name}</strong><span>{family.hint}</span><small>{family.groups.length} 个方向 · {family.groups.reduce((total, item) => total + item.papers.length, 0)} 篇</small></th></tr>}<tr className={`atlas-roadmap-row${selected ? ' selected' : ''}`} style={{ '--route': group.color } as CSSProperties}>
           <th scope="row"><button className="atlas-roadmap-direction" title={`${group.description} 点击展开全部 ${group.papers.length} 篇论文。`} aria-expanded={selected && !period} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id)}>
             <span className="atlas-roadmap-index">{String(index + 1).padStart(2, '0')}</span><span><strong>{group.name}</strong><small>{directionHints[group.id] ?? group.description}</small></span><span className="atlas-roadmap-chevron" aria-hidden="true">{group.papers.length}<small>篇</small></span>
           </button></th>
@@ -41,8 +54,8 @@ export function AtlasOverview({ groups, periods, onSelect }: {
             const active = selected && selection.period === stageIndex;
             return <td className={`atlas-roadmap-stage${example ? ' occupied' : ''}`} key={stage.start}>
               <span className="atlas-roadmap-mobile-year">{stage.label}</span>
-              {example ? <div className="atlas-roadmap-node"><i aria-hidden="true"/><button className="atlas-roadmap-paper" data-atlas-example={example.id} onClick={() => onSelect(example)} title={`${example.title} · ${example.scope}`}>
-                <strong>{example.shortTitle}</strong><small>{example.year} · {example.venue}</small>
+              {example ? <div className={`atlas-roadmap-node${example.scope === '核心研究' ? ' is-core' : ''}`}><i aria-hidden="true"/><button className="atlas-roadmap-paper" data-atlas-example={example.id} onClick={() => onSelect(example)} title={`${example.title} · ${example.scope}`}>
+                <strong>{example.shortTitle}</strong><small title={example.venue}>{example.year} · {venueLabels[example.venue] ?? example.venue}</small>
               </button><button className="atlas-roadmap-count" aria-label={`${group.name}，${stage.label}，${papers.length} 篇，${active ? '收起' : '展开'}论文`} aria-expanded={active} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id, stageIndex)}>{papers.length} 篇 <span aria-hidden="true">{active ? '−' : '+'}</span></button></div> : <span className="atlas-roadmap-empty">—</span>}
 
             </td>;
