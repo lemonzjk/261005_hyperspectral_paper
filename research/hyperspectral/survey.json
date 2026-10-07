@@ -100,7 +100,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "尚未独立系统检索；见上方已执行年度记录"
+      "statusLabel": "2022/2023指定五词题名命中已逐篇处理；其他年度、摘要全量及任务词待查"
     },
     {
       "id": "icml",
@@ -2539,6 +2539,41 @@
       ],
       "htmlSha256": "7de72193a1f28f67d171ddf27fb067bd2a44d630382c6ae8bdbdb4bca2c8d27a",
       "sourceSnapshot": "sources/icml-2021-pmlr-all-titles.json"
+    },
+    {
+      "id": "neurips-2022-title-optical-terms",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T23:05:45.351532+00:00",
+      "method": "官方年度目录逐题名关键词扫描，再逐篇核验命中摘要",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "multi-spectral",
+        "spectral",
+        "spectrum"
+      ],
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022",
+      "pagination": "单页官方年度目录，含主会及数据集评测 Track；无结果条数截断",
+      "titleCount": 2834,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "指定五题名词19命中均已核验官方摘要；其他主题及全量摘要未完成",
+      "gaps": [
+        "关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成"
+      ],
+      "directoryPages": [
+        {
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2022",
+          "queriedAt": "2026-10-07T23:05:49.202552+00:00",
+          "htmlSha256": "a7a50e3897323a5f71bbf5bc71dbc42a4397a6ec6ab9cc6350ece1c895b6951d",
+          "titleCount": 2834
+        }
+      ],
+      "sourceSnapshot": "sources/neurips-2022-all-titles.json",
+      "htmlSha256": "a7a50e3897323a5f71bbf5bc71dbc42a4397a6ec6ab9cc6350ece1c895b6951d",
+      "candidateCount": 19,
+      "reviewedCount": 19
     }
   ],
   "candidates": [
@@ -5781,6 +5816,238 @@
       "reason": "已读官方摘要：分布式图稀疏化的有效电阻及最短距离保持，非成像光谱。当前证据排除，可由明确光学HSI关系复审。",
       "checkedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/icml-2019-2021-candidate-review.json"
+    },
+    {
+      "title": "SatMAE: Pre-training Transformers for Temporal and Multi-Spectral Satellite Imagery",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/01c561df365429f33fcd7a7faa44c985-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "included",
+      "reason": "正式摘要与局部原文核验：光学多光谱相关：明确按波段波长/空间分辨率分组并编码RGB+NIR、红边和SWIR；为多波段表征学习的相关基础，不是窄连续波段HSI论文，原文未验证HSI迁移。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json",
+      "paperId": "satmae-2022"
+    },
+    {
+      "title": "Revisiting Graph Contrastive Learning from the Perspective of Graph Spectrum",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/13b45b44e26c353c64cba9529bf4724f-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：图对比学习的图谱高低频增强；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Spectral Bias in Practice: The Role of Function Frequency in Generalization",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/306264db5698839230be3642aafc849c-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：CIFAR/ImageNet函数傅里叶学习偏差；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "A Simple Approach to Automated Spectral Clustering",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/407fb8c5f3fda374c57d1bb18313ea5d-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：自然影像图谱聚类及相对特征间隙，摘要未明确HSI；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "On the Spectral Bias of Convolutional Neural Tangent and Gaussian Process Kernels",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/48fd58527b29c5c0ef2cae43065636e6-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：卷积NTK/Gaussian核的球谐特征函数；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Consistency of Constrained Spectral Clustering under Graph Induced Fair Planted Partitions",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/57d7e7e1593ad1ab6818c258fa5654ce-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：人口属性图的公平聚类理论；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Beyond spectral gap: the role of the topology in decentralized learning",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/61162d94822d468ee6e92803340f2040-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：去中心化学习通信图拓扑/谱间隙；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "$\\alpha$-ReQ : Assessing Representation Quality in Self-Supervised Learning by measuring eigenspectrum decay",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/70596d70542c51c8d9b4e423f4bf2736-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：自监督特征协方差特征值衰减，实验CIFAR/STL10/MIT67/ImageNet；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Spectrum Random Masking for Generalization in Image-based Reinforcement Learning",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/802a4350ca4fced76b13b8b320af1543-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：图像强化学习傅里叶随机掩码，实验DMControl；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Symplectic Spectrum Gaussian Processes: Learning Hamiltonians from Noisy and Sparse Data",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/82f05a105c928c10706213952bf0c8b7-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：Hamiltonian动力学辛结构及随机傅里叶特征；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Panchromatic and Multispectral Image Fusion via Alternating Reverse Filtering Network",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/89ef9ce35c7833cba14bb2381ead6c54-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "included",
+      "reason": "正式摘要与局部原文核验：光学多光谱全色锐化相关方法；与HSI空间融合共享谱保真/高分辨率引导问题，第8页参考文献6/7明确定位HSI pansharpening前序。本文实验仅MS/PAN，不作为HSI已验证方法。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json",
+      "paperId": "arfnet-2022"
+    },
+    {
+      "title": "DiSC: Differential Spectral Clustering of Features",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a84953147312ea2e8b020e53a267321b-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "included",
+      "reason": "正式摘要与局部原文核验：通用差异特征分群方法有原文明确HSI变化检测实验；虽使用图谱算子，HSI应用证据足够。HSI例中图节点为像元、波段为样本，不能错标为波段选择。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json",
+      "paperId": "disc-2022"
+    },
+    {
+      "title": "Contrastive and Non-Contrastive Self-Supervised Learning Recover Global and Local Spectral Embedding Methods",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/aa56c74513a5e35768a11f4e82dd7ffb-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：自监督学习与图流形谱嵌入的理论统一；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Extrapolation and Spectral Bias of Neural Nets with Hadamard Product: a Polynomial Net Study",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/acb3565a58dea4c39c84af35d4225d97-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：Hadamard乘积网络的NTK学习高频函数偏差；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Byzantine Spectral Ranking",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1f7288854d3bd476c17725c2d85967f-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：BTL比较图上的Byzantine排序；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Learning Multi-resolution Functional Maps with Spectral Attention for Robust Shape Matching",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/bcade016e3004543b289b33e7deb7472-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：形状匹配的几何Laplace谱与functional maps；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Spectral Bias Outside the Training Set for Deep Networks in the Kernel Regime",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/c4006ff54a7bbda74c09bad6f7586f5b-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：NTK/Fisher特征谱的函数空间泛化界；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
+    },
+    {
+      "title": "Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/f621c2ead473ca36763696b712ffda01-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "included",
+      "reason": "正式摘要与局部原文核验：直接用于CASSI高光谱压缩观测恢复；与MST/CST共用作者工具库，但方法和论文不同，不据同代码链接归并。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json",
+      "paperId": "dauhst-2022"
+    },
+    {
+      "title": "A Spectral Approach to Item Response Theory",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/fd88ea50ca8c1973db037462f116ff99-Abstract-Conference.html",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "neurips-2022-title-optical-terms",
+      "decision": "excluded",
+      "reason": "已读完整官方摘要：Rasch模型用户/题目比较图的Markov排序；当前证据未建立光学HSI关系，按本证据排除，可由明确应用复审。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/neurips-2022-candidate-review.json"
     }
   ],
   "batches": [
@@ -6486,6 +6753,23 @@
       "gaps": [
         "其他任务关键词、全文、引用链、早于2013和晚于2024年度及workshop仍待查"
       ]
+    },
+    {
+      "id": "neurips-2022-optical-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "neurips-2022-title-optical-terms"
+      ],
+      "new": 4,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 15,
+      "pending": 0,
+      "categoriesAdded": 3,
+      "readingBoundary": "19份完整官方摘要已读；4新增仅摘要及注明局部原文页已读，不是阅读全文；每篇原图已裁切并目视核对。",
+      "gaps": [
+        "全量摘要发现、其他任务词及引文待查；四篇预印本版本日期/差异仍待追踪；资源许可和实验复现待核验"
+      ]
     }
   ],
   "gaps": [
@@ -6498,6 +6782,7 @@
     "TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。",
     "光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。",
     "TGRS1994登记136题名两关键词组7候选：三条原摘要访问受限；雷达一条仅题名暂排除。森林原文首页已核验但PDF原图受限；出版社年度全量仍未证明。",
-    "ICML2013–2024十二主卷10951题名/摘要、84指定词命中全部处理（4新增、80排除）；其他任务词、正文、引文、workshop及更早/更晚年度未完成。三种通用方法有明确HSI应用；2014结构低秩的盲解混为未来工作，作者代码HSI入口/许可及2017/TPAMI2020后续稿归并待查。2021FMoW-WILDS候选的使用输入为RGB，已留官方加载器快照。"
+    "ICML2013–2024十二主卷10951题名/摘要、84指定词命中全部处理（4新增、80排除）；其他任务词、正文、引文、workshop及更早/更晚年度未完成。三种通用方法有明确HSI应用；2014结构低秩的盲解混为未来工作，作者代码HSI入口/许可及2017/TPAMI2020后续稿归并待查。2021FMoW-WILDS候选的使用输入为RGB，已留官方加载器快照。",
+    "NeurIPS2022官方2834题名五词19命中处理：4新增、15排除。SatMAE/ARFNet为多光谱相关，DiSC为有HSI应用的通用基础，DAUHST为直接HSI；四篇原图已保存。其他词、全量摘要、版本差异和资源许可/复现待查。"
   ]
 }

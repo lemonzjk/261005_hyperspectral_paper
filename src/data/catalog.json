@@ -24327,6 +24327,469 @@
           "attribution": "Benjamin D. Haeffele, Eric D. Young, René Vidal · ICML 2014"
         }
       ]
+    },
+    {
+      "id": "satmae-2022",
+      "shortTitle": "SatMAE",
+      "title": "SatMAE: Pre-training Transformers for Temporal and Multi-Spectral Satellite Imagery",
+      "authors": "Yezhen Cong, Samar Khanna, Chenlin Meng, Patrick Liu, Erik Rozi, Yutong He, Marshall Burke, David B. Lobell, Stefano Ermon",
+      "year": 2022,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 35",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.52202/068431-0015",
+      "representation": "以MAE为基础，时间编码配合跨时独立掩码；多光谱分组采用独立patch embedding及谱组索引位置编码。",
+      "tags": [
+        "multispectral-self-supervised-representation",
+        "transformer",
+        "datasets-benchmarks"
+      ],
+      "summary": "以MAE为基础，时间编码配合跨时独立掩码；多光谱分组采用独立patch embedding及谱组索引位置编码。",
+      "input": "卫星影像时间序列，或Sentinel-2多光谱波段分组。",
+      "output": "掩码像素重建及用于分类/分割迁移的预训练表征。",
+      "mechanism": "以MAE为基础，时间编码配合跨时独立掩码；多光谱分组采用独立patch embedding及谱组索引位置编码。",
+      "readingNote": "已读官方摘要和原PDF第1,2,4,5,6,7页；非阅读全文。作者项目及仓库README已访问，含数据/模型入口；未下载大数据、执行训练或核验全部许可。 定位相关预印本2207.08051，日期与版本差异待查。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/01c561df365429f33fcd7a7faa44c985-Abstract-Conference.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@inproceedings{NEURIPS2022_01c561df,\n author = {Cong, Yezhen and Khanna, Samar and Meng, Chenlin and Liu, Patrick and Rozi, Erik and He, Yutong and Burke, Marshall and Lobell, David and Ermon, Stefano},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/068431-0015},\n editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},\n pages = {197--211},\n publisher = {Curran Associates, Inc.},\n title = {SatMAE: Pre-training Transformers for Temporal and Multi-Spectral Satellite Imagery},\n url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/01c561df365429f33fcd7a7faa44c985-Paper-Conference.pdf},\n volume = {35},\n year = {2022}\n}\n",
+      "library": {
+        "categoryIds": [
+          "multispectral-self-supervised-representation",
+          "transformer",
+          "datasets-benchmarks"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "光学多光谱相关：明确按波段波长/空间分辨率分组并编码RGB+NIR、红边和SWIR；为多波段表征学习的相关基础，不是窄连续波段HSI论文，原文未验证HSI迁移。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在无标签卫星影像中利用时间与光学多波段结构预训练可迁移表征？",
+        "datasets": "fMoW RGB/temporal和新fMoW-Sentinel；后者采集13波段，正文实验去掉B1/B9/B10，仅用10波段，分RGB+NIR、红边和SWIR三组。",
+        "experimentSetting": "第6页fMoW-Sentinel记录712874训练、84939验证、84966测试图像；第7页比较分组与堆叠、独立/一致掩码及编码消融。时间与多光谱设置分别评估，不能合称已验证联合时谱HSI预训练。",
+        "conclusions": "作者报告分类及遥感迁移收益；摘要最大增益与正文不同评估口径未统一，未录统一性能数字。",
+        "limitations": "谱编码依赖人为分组索引；采集13波段与主实验10波段必须分开。多光谱/时序验证不证明HSI或任意波长迁移。",
+        "dataLinks": [
+          "https://sustainlab-group.github.io/SatMAE/"
+        ],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/01c561df365429f33fcd7a7faa44c985-Abstract-Conference.html",
+            "checkedAt": "2026-10-08",
+            "level": "官方完整摘要及BibTeX",
+            "supports": [
+              "SatMAE: Pre-training Transformers for Temporal and Multi-Spectral Satellite Imagery",
+              "NeurIPS2022正式发表",
+              "10.52202/068431-0015"
+            ]
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/01c561df365429f33fcd7a7faa44c985-Paper-Conference.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文局部页1,2,4,5,6,7；非阅读全文",
+            "supports": [
+              "以MAE为基础，时间编码配合跨时独立掩码；多光谱分组采用独立patch embedding及谱组索引位置编码。",
+              "fMoW RGB/temporal和新fMoW-Sentinel；后者采集13波段，正文实验去掉B1/B9/B10，仅用10波段，分RGB+NIR、红边和SWIR三组。",
+              "第6页fMoW-Sentinel记录712874训练、84939验证、84966测试图像；第7页比较分组与堆叠、独立/一致掩码及编码消融。时间与多光谱设置分别评估，不能合称已验证联合时谱HSI预训练。",
+              "谱编码依赖人为分组索引；采集13波段与主实验10波段必须分开。多光谱/时序验证不证明HSI或任意波长迁移。"
+            ]
+          },
+          {
+            "url": "https://github.com/sustainlab-group/SatMAE",
+            "checkedAt": "2026-10-08",
+            "level": "作者仓库README；未运行代码",
+            "supports": [
+              "作者项目及仓库README已访问，含数据/模型入口；未下载大数据、执行训练或核验全部许可。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "satmae-2022-neurips2022",
+            "type": "会议正式版",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/01c561df365429f33fcd7a7faa44c985-Abstract-Conference.html",
+            "year": 2022,
+            "doi": "10.52202/068431-0015",
+            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+          }
+        ],
+        "methodFamilyId": "satmae-2022"
+      },
+      "code": "https://github.com/sustainlab-group/SatMAE",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2022/file/01c561df365429f33fcd7a7faa44c985-Paper-Conference.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "SatMAE原始方法总览。",
+          "verificationNote": "NeurIPS2022正式PDF第2页原Figure 1裁切，已目视核对图号与完整图注；非预印本/生成示意图。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              291,
+              196,
+              1414,
+              839
+            ]
+          },
+          "path": "figures/satmae-2022/framework.png",
+          "width": 1123,
+          "height": 643,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "7975ace46c823e306d9a2416e50a483bf6763d88f193caeb9250fa2e9bbb2f5d",
+          "attribution": "Yezhen Cong, Samar Khanna, Chenlin Meng, Patrick Liu, Erik Rozi, Yutong He, Marshall Burke, David B. Lobell, Stefano Ermon · NeurIPS 2022"
+        }
+      ]
+    },
+    {
+      "id": "arfnet-2022",
+      "shortTitle": "ARFNet",
+      "title": "Panchromatic and Multispectral Image Fusion via Alternating Reverse Filtering Network",
+      "authors": "Keyu Yan, Man Zhou, Jie Huang, Feng Zhao, Chengjun Xie, Chongyi Li, Danfeng Hong",
+      "year": 2022,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 35",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.52202/068431-1598",
+      "representation": "交替反向滤波过程展开成网络，以可学习多尺度高斯核模块代替固定滤波器，并在收缩映射条件下分析稳定性与收敛。",
+      "tags": [
+        "spatial-super-resolution",
+        "multispectral-pansharpening",
+        "deep-unfolding"
+      ],
+      "summary": "交替反向滤波过程展开成网络，以可学习多尺度高斯核模块代替固定滤波器，并在收缩映射条件下分析稳定性与收敛。",
+      "input": "低空间分辨率多光谱影像及高分辨率PAN全色影像。",
+      "output": "高空间分辨率多光谱影像。",
+      "mechanism": "交替反向滤波过程展开成网络，以可学习多尺度高斯核模块代替固定滤波器，并在收缩映射条件下分析稳定性与收敛。",
+      "readingNote": "已读官方摘要和原PDF第1,2,3,6,8,15页；非阅读全文。原PDF未给确定代码URL，checklist称接收后发布；网页检索发现聚合索引，但尚未核验作者代码地址，代码/数据入口待核验。 定位相关预印本2210.08181，日期与版本差异待查。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/89ef9ce35c7833cba14bb2381ead6c54-Abstract-Conference.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@inproceedings{NEURIPS2022_89ef9ce3,\n author = {Yan, Keyu and Zhou, Man and Huang, Jie and Zhao, Feng and Xie, Chengjun and Li, Chongyi and Hong, Danfeng},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/068431-1598},\n editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},\n pages = {21988--22002},\n publisher = {Curran Associates, Inc.},\n title = {Panchromatic and Multispectral Image Fusion via Alternating Reverse Filtering Network},\n url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/89ef9ce35c7833cba14bb2381ead6c54-Paper-Conference.pdf},\n volume = {35},\n year = {2022}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "multispectral-pansharpening",
+          "deep-unfolding"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "光学多光谱全色锐化相关方法；与HSI空间融合共享谱保真/高分辨率引导问题，第8页参考文献6/7明确定位HSI pansharpening前序。本文实验仅MS/PAN，不作为HSI已验证方法。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何减少手工精确退化先验依赖，并以可学习反向滤波迭代实现多光谱全色锐化？",
+        "datasets": "WorldView-II、WorldView-III及GaoFen2 MS/PAN；未证明本文运行HSI实验。",
+        "experimentSetting": "第6页Wald协议生成PAN128×128、LRMS32×32、HRMS128×128训练对；K=5、最大高斯核17、SGD2000epochs。确切样本数/波段数/公开数据入口待核验。",
+        "conclusions": "作者报告模拟及真实全分辨率图像上的MS/PAN融合收益；HSI适用性和独立复现待查。",
+        "limitations": "收敛结论有收缩映射条件；第15页checklist明确未报告随机种子误差条，固定种子不能证明跨种子稳定。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/89ef9ce35c7833cba14bb2381ead6c54-Abstract-Conference.html",
+            "checkedAt": "2026-10-08",
+            "level": "官方完整摘要及BibTeX",
+            "supports": [
+              "Panchromatic and Multispectral Image Fusion via Alternating Reverse Filtering Network",
+              "NeurIPS2022正式发表",
+              "10.52202/068431-1598"
+            ]
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/89ef9ce35c7833cba14bb2381ead6c54-Paper-Conference.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文局部页1,2,3,6,8,15；非阅读全文",
+            "supports": [
+              "交替反向滤波过程展开成网络，以可学习多尺度高斯核模块代替固定滤波器，并在收缩映射条件下分析稳定性与收敛。",
+              "WorldView-II、WorldView-III及GaoFen2 MS/PAN；未证明本文运行HSI实验。",
+              "第6页Wald协议生成PAN128×128、LRMS32×32、HRMS128×128训练对；K=5、最大高斯核17、SGD2000epochs。确切样本数/波段数/公开数据入口待核验。",
+              "收敛结论有收缩映射条件；第15页checklist明确未报告随机种子误差条，固定种子不能证明跨种子稳定。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "arfnet-2022-neurips2022",
+            "type": "会议正式版",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/89ef9ce35c7833cba14bb2381ead6c54-Abstract-Conference.html",
+            "year": 2022,
+            "doi": "10.52202/068431-1598",
+            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+          }
+        ],
+        "methodFamilyId": "arfnet-2022"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2022/file/89ef9ce35c7833cba14bb2381ead6c54-Paper-Conference.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "ARFNet原始方法总览。",
+          "verificationNote": "NeurIPS2022正式PDF第3页原Figure 1裁切，已目视核对图号与完整图注；非预印本/生成示意图。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              291,
+              189,
+              1414,
+              660
+            ]
+          },
+          "path": "figures/arfnet-2022/framework.png",
+          "width": 1123,
+          "height": 471,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "11b5f6bc15d9712e542b46095d9bd8b79fcfa15eed6a88357125cc7b8e7534fd",
+          "attribution": "Keyu Yan, Man Zhou, Jie Huang, Feng Zhao, Chengjun Xie, Chongyi Li, Danfeng Hong · NeurIPS 2022"
+        }
+      ]
+    },
+    {
+      "id": "disc-2022",
+      "shortTitle": "DiSC",
+      "title": "DiSC: Differential Spectral Clustering of Features",
+      "authors": "Ram Dyuthi Sristi, Gal Mishne, Ariel Jaffe",
+      "year": 2022,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 35",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.52202/068431-1905",
+      "representation": "分别构造特征相似图，用扩散子空间及投影剔除两图共有结构，再提取条件特有差异特征。",
+      "tags": [
+        "hyperspectral-change-detection",
+        "hyperspectral-clustering"
+      ],
+      "summary": "分别构造特征相似图，用扩散子空间及投影剔除两图共有结构，再提取条件特有差异特征。",
+      "input": "共享特征的两个数据矩阵；HSI案例为不同月份场景及October-change含篷布影像。",
+      "output": "差异特征向量及其聚类；HSI案例为像元变化区域。",
+      "mechanism": "分别构造特征相似图，用扩散子空间及投影剔除两图共有结构，再提取条件特有差异特征。",
+      "readingNote": "已读官方摘要和原PDF第1,3,4,7,9页；非阅读全文。原PDF第7页链接及作者仓库README已核验；公开说明覆盖玩具/MNIST，不宣称HSI已可复现，未运行。 定位相关预印本2211.05314，日期与版本差异待查。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a84953147312ea2e8b020e53a267321b-Abstract-Conference.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@inproceedings{NEURIPS2022_a8495314,\n author = {Sristi, Ram Dyuthi and Mishne, Gal and Jaffe, Ariel},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/068431-1905},\n editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},\n pages = {26269--26282},\n publisher = {Curran Associates, Inc.},\n title = {DiSC: Differential Spectral Clustering of Features},\n url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/a84953147312ea2e8b020e53a267321b-Paper-Conference.pdf},\n volume = {35},\n year = {2022}\n}\n",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-change-detection",
+          "hyperspectral-clustering"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "foundation",
+        "relationNote": "通用差异特征分群方法有原文明确HSI变化检测实验；虽使用图谱算子，HSI应用证据足够。HSI例中图节点为像元、波段为样本，不能错标为波段选择。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在两个条件间发现连接关系改变的特征组，并降低天气/照明差异对HSI变化检测的干扰？",
+        "datasets": "原文引Eismann/Meola/Hardie变化数据：100×100像元、124波段，8/9/10/11月及October-change篷布场景；非Indian Pines/Pavia。",
+        "experimentSetting": "第9页将每个月与October-change配对；取后者最显著四个差异向量，k-means k=3，对比DM-changing data。图特征是像元，因此不是光谱波段选择实验。",
+        "conclusions": "作者展示四个月配对中篷布成为主要差异像元簇；噪声比较引至附录，附录未读，未核验定量完整性。",
+        "limitations": "特征列需对齐，连接差异假设与聚类参数有条件；作者代码README仅明确玩具和MNIST脚本，HSI实验脚本及数据许可待查。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a84953147312ea2e8b020e53a267321b-Abstract-Conference.html",
+            "checkedAt": "2026-10-08",
+            "level": "官方完整摘要及BibTeX",
+            "supports": [
+              "DiSC: Differential Spectral Clustering of Features",
+              "NeurIPS2022正式发表",
+              "10.52202/068431-1905"
+            ]
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a84953147312ea2e8b020e53a267321b-Paper-Conference.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文局部页1,3,4,7,9；非阅读全文",
+            "supports": [
+              "分别构造特征相似图，用扩散子空间及投影剔除两图共有结构，再提取条件特有差异特征。",
+              "原文引Eismann/Meola/Hardie变化数据：100×100像元、124波段，8/9/10/11月及October-change篷布场景；非Indian Pines/Pavia。",
+              "第9页将每个月与October-change配对；取后者最显著四个差异向量，k-means k=3，对比DM-changing data。图特征是像元，因此不是光谱波段选择实验。",
+              "特征列需对齐，连接差异假设与聚类参数有条件；作者代码README仅明确玩具和MNIST脚本，HSI实验脚本及数据许可待查。"
+            ]
+          },
+          {
+            "url": "https://github.com/Mishne-Lab/DiSC",
+            "checkedAt": "2026-10-08",
+            "level": "作者仓库README；未运行代码",
+            "supports": [
+              "原PDF第7页链接及作者仓库README已核验；公开说明覆盖玩具/MNIST，不宣称HSI已可复现，未运行。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "disc-2022-neurips2022",
+            "type": "会议正式版",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a84953147312ea2e8b020e53a267321b-Abstract-Conference.html",
+            "year": 2022,
+            "doi": "10.52202/068431-1905",
+            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+          }
+        ],
+        "methodFamilyId": "disc-2022"
+      },
+      "code": "https://github.com/Mishne-Lab/DiSC",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a84953147312ea2e8b020e53a267321b-Paper-Conference.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "DiSC原始方法总览。",
+          "verificationNote": "NeurIPS2022正式PDF第4页原Figure 1裁切，已目视核对图号与完整图注；非预印本/生成示意图。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              291,
+              189,
+              1422,
+              728
+            ]
+          },
+          "path": "figures/disc-2022/framework.png",
+          "width": 1131,
+          "height": 539,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "8361fe1015c1186be17b6ea6e6e0cfbf149df472e58c6c7a461ad7268c2309af",
+          "attribution": "Ram Dyuthi Sristi, Gal Mishne, Ariel Jaffe · NeurIPS 2022"
+        }
+      ]
+    },
+    {
+      "id": "dauhst-2022",
+      "shortTitle": "DAUHST",
+      "title": "Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging",
+      "authors": "Yuanhao Cai, Jing Lin, Haoqian Wang, Xin Yuan, Henghui Ding, Yulun Zhang, Radu Timofte, Luc Van Gool",
+      "year": 2022,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 35",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.52202/068431-2736",
+      "representation": "DAUF从压缩观测和掩模估计各阶段参数，控制线性投影和去噪；HST以Half-Shuffle注意力结合局部与跨窗依赖。",
+      "tags": [
+        "spectral-reconstruction",
+        "computational-imaging",
+        "transformer",
+        "deep-unfolding"
+      ],
+      "summary": "DAUF从压缩观测和掩模估计各阶段参数，控制线性投影和去噪；HST以Half-Shuffle注意力结合局部与跨窗依赖。",
+      "input": "CASSI单次压缩观测及物理掩模/感知矩阵。",
+      "output": "重建高光谱影像。",
+      "mechanism": "DAUF从压缩观测和掩模估计各阶段参数，控制线性投影和去噪；HST以Half-Shuffle注意力结合局部与跨窗依赖。",
+      "readingNote": "已读官方摘要和原PDF第1,3,6,7,9页；非阅读全文。作者工具库README明确列本论文及代码/模型发布，多个方法共用仓库；未运行DAUHST或下载模型。 定位相关预印本2205.10102，日期与版本差异待查。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/f621c2ead473ca36763696b712ffda01-Abstract-Conference.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@inproceedings{NEURIPS2022_f621c2ea,\n author = {Cai, Yuanhao and Lin, Jing and Wang, Haoqian and Yuan, Xin and Ding, Henghui and Zhang, Yulun and Timofte, Radu and Gool, Luc V},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/068431-2736},\n editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},\n pages = {37749--37761},\n publisher = {Curran Associates, Inc.},\n title = {Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging},\n url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/f621c2ead473ca36763696b712ffda01-Paper-Conference.pdf},\n volume = {35},\n year = {2022}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "computational-imaging",
+          "transformer",
+          "deep-unfolding"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接用于CASSI高光谱压缩观测恢复；与MST/CST共用作者工具库，但方法和论文不同，不据同代码链接归并。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何按CASSI退化程度自适应控制展开迭代，同时以低开销注意力捕获局部和非局部信息？",
+        "datasets": "CAVE32幅训练、KAIST中10场景测试；另测试已有CASSI系统采集5真实场景。",
+        "experimentSetting": "第6–7页将450–650nm插值为28通道，仿真/真实训练裁块256×256/660×660，Adam300epochs、batch5、RMSE目标；多阶段去噪权重不共享。",
+        "conclusions": "作者报告重建质量和计算开销优于所列比较方法；原表与模型阶段有关，未独立重跑，不把一个阶段的开销归给全部版本。",
+        "limitations": "已读局部页未全面核验噪声/硬件校准及跨系统泛化；仿真插值与真实观测评估需分开。版本全文差异、模型权重与数据许可待查。",
+        "dataLinks": [
+          "https://github.com/caiyuanhao1998/MST"
+        ],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/f621c2ead473ca36763696b712ffda01-Abstract-Conference.html",
+            "checkedAt": "2026-10-08",
+            "level": "官方完整摘要及BibTeX",
+            "supports": [
+              "Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging",
+              "NeurIPS2022正式发表",
+              "10.52202/068431-2736"
+            ]
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/f621c2ead473ca36763696b712ffda01-Paper-Conference.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文局部页1,3,6,7,9；非阅读全文",
+            "supports": [
+              "DAUF从压缩观测和掩模估计各阶段参数，控制线性投影和去噪；HST以Half-Shuffle注意力结合局部与跨窗依赖。",
+              "CAVE32幅训练、KAIST中10场景测试；另测试已有CASSI系统采集5真实场景。",
+              "第6–7页将450–650nm插值为28通道，仿真/真实训练裁块256×256/660×660，Adam300epochs、batch5、RMSE目标；多阶段去噪权重不共享。",
+              "已读局部页未全面核验噪声/硬件校准及跨系统泛化；仿真插值与真实观测评估需分开。版本全文差异、模型权重与数据许可待查。"
+            ]
+          },
+          {
+            "url": "https://github.com/caiyuanhao1998/MST",
+            "checkedAt": "2026-10-08",
+            "level": "作者仓库README；未运行代码",
+            "supports": [
+              "作者工具库README明确列本论文及代码/模型发布，多个方法共用仓库；未运行DAUHST或下载模型。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dauhst-2022-neurips2022",
+            "type": "会议正式版",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/f621c2ead473ca36763696b712ffda01-Abstract-Conference.html",
+            "year": 2022,
+            "doi": "10.52202/068431-2736",
+            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+          }
+        ],
+        "methodFamilyId": "dauhst-2022"
+      },
+      "code": "https://github.com/caiyuanhao1998/MST",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2022/file/f621c2ead473ca36763696b712ffda01-Paper-Conference.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "DAUHST原始方法总览。",
+          "verificationNote": "NeurIPS2022正式PDF第3页原Figure 2裁切，已目视核对图号与完整图注；非预印本/生成示意图。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              291,
+              189,
+              1422,
+              636
+            ]
+          },
+          "path": "figures/dauhst-2022/framework.png",
+          "width": 1131,
+          "height": 447,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "4954bcb612006e8b319a1769908d87f807351e4e4a2d125a1798a2485226d080",
+          "attribution": "Yuanhao Cai, Jing Lin, Haoqian Wang, Xin Yuan, Henghui Ding, Yulun Zhang, Radu Timofte, Luc Van Gool · NeurIPS 2022"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -24560,7 +25023,8 @@
         "random-printed-mask-2019",
         "dispersive-blur-imager-2019",
         "dnu-2020",
-        "structured-low-rank-2014"
+        "structured-low-rank-2014",
+        "dauhst-2022"
       ],
       "history": [
         {
@@ -24600,7 +25064,8 @@
         "catadioptric-hlf",
         "random-printed-mask-2019",
         "dispersive-blur-imager-2019",
-        "structured-low-rank-2014"
+        "structured-low-rank-2014",
+        "dauhst-2022"
       ],
       "history": [
         {
@@ -24631,7 +25096,8 @@
         "mhf-net-2019",
         "optimized-rgb-sr-2019",
         "ual-2020",
-        "mftn-2024"
+        "mftn-2024",
+        "arfnet-2022"
       ],
       "history": [
         {
@@ -24674,7 +25140,9 @@
         "mst-cassi",
         "hypertransformer-pansharpening",
         "multispectral-illumination-unrolling-2021",
-        "mftn-2024"
+        "mftn-2024",
+        "satmae-2022",
+        "dauhst-2022"
       ],
       "history": [
         {
@@ -24699,7 +25167,9 @@
         "multispectral-illumination-unrolling-2021",
         "mhf-net-2019",
         "dssp-2019",
-        "dnu-2020"
+        "dnu-2020",
+        "arfnet-2022",
+        "dauhst-2022"
       ],
       "history": [
         {
@@ -24806,7 +25276,8 @@
         "realistic-hsi-denoising-2021",
         "learned-hs-depth",
         "miid-subspace-2018",
-        "multispectral-powders-2019"
+        "multispectral-powders-2019",
+        "satmae-2022"
       ],
       "history": [
         {
@@ -25997,7 +26468,8 @@
       "createdAt": "2026-10-08",
       "rationale": "ICML2024正式摘要、原Algorithm 2及HSI实验页支持；任务与方法分维度。",
       "evidencePaperIds": [
-        "rmt-frechet-2024"
+        "rmt-frechet-2024",
+        "disc-2022"
       ],
       "history": [
         {
@@ -26024,6 +26496,66 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "由原文聚类应用和SPD均值方法形成暂定标签，后续全文复核定义。"
+        }
+      ]
+    },
+    {
+      "id": "multispectral-self-supervised-representation",
+      "name": "多光谱自监督表征",
+      "dimension": "method",
+      "definition": "通过光学多波段掩码或其他自监督任务学习可迁移表征；保留多光谱与HSI验证边界。",
+      "status": "provisional",
+      "color": "#b6c6da",
+      "createdAt": "2026-10-08",
+      "rationale": "NeurIPS2022正式摘要和注明原文页支持；由实际方法/任务形成暂定标签。",
+      "evidencePaperIds": [
+        "satmae-2022"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "在光学多波段表征、全色锐化或明确HSI变化应用中发现独立分类需求。"
+        }
+      ]
+    },
+    {
+      "id": "multispectral-pansharpening",
+      "name": "多光谱全色锐化",
+      "dimension": "task",
+      "definition": "以高空间分辨率PAN引导恢复多光谱空间细节；与HSI融合相关但不宣称其等同HSI实验。",
+      "status": "provisional",
+      "color": "#b6c6da",
+      "createdAt": "2026-10-08",
+      "rationale": "NeurIPS2022正式摘要和注明原文页支持；由实际方法/任务形成暂定标签。",
+      "evidencePaperIds": [
+        "arfnet-2022"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "在光学多波段表征、全色锐化或明确HSI变化应用中发现独立分类需求。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-change-detection",
+      "name": "高光谱变化检测",
+      "dimension": "task",
+      "definition": "比较不同时期或条件的高光谱影像，定位场景变化并区分采集条件扰动。",
+      "status": "provisional",
+      "color": "#b6c6da",
+      "createdAt": "2026-10-08",
+      "rationale": "NeurIPS2022正式摘要和注明原文页支持；由实际方法/任务形成暂定标签。",
+      "evidencePaperIds": [
+        "disc-2022"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "在光学多波段表征、全色锐化或明确HSI变化应用中发现独立分类需求。"
         }
       ]
     }
