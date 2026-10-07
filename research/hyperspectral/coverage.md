@@ -35,6 +35,9 @@
 | ICCV | 2013 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 454 / 2 / 2 | 指定五关键词两命中均核验官方摘要；全领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器工具目录返回403，直接HTTP成功取得454题名与两篇官方摘要；新增文献仅摘要与局部页；完整实验、代码数据及期刊最终版差异待核验 |
 | TPAMI | 2016 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1109/tpami.2015.2473839；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 期刊扩展原文关系核验，作为版本归并 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
 | JSAP-OSA Joint Symposia | 2014 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1364/jsap.2014.20p_c4_1；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 官方摘要核验并按方法重述归并；不是独立方法 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
+| ICCV | 2015 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 526 / 6 / 6 | 指定五关键词六命中均核验官方摘要；年度领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器目录访问失败；直接HTTP成功取回官方526题名、六摘要和五原文PDF；完整实验、版本差异与资源运行/许可待核验；两项相关出版关系只核验元数据，待原文确认 |
+| IJCV | 2017 | Adaptive Spatial-Spectral Dictionary Learning for Hyperspectral Image Restoration、10.1007/s11263-016-0921-6；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 相关出版元数据已获得，原文与版本关系待核验 | 相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。；完整年度与其他研究问题未检索 |
+| IGARSS | 2014 | Coupled hyperspectral super-resolution and unmixing、10.1109/igarss.2014.6947016；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 相关出版元数据已获得，原文与版本关系待核验 | 相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。；完整年度与其他研究问题未检索 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -117,6 +120,8 @@
   阅读边界：新增1条期刊文献、更新前序uSDN关联；原文明确同一方法族，不计新增独立方法族。正式卷期2022与2019–2021五个arXiv版本分别记录；读v5摘要与第2/4/5/7/8局部页，保存明确版本的Fig.3，非阅读全文。
 - 2026-10-08 / iccv-2013-reflective-fluorescent-and-versions：新增 1，更新 0，去重 2，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：454题名两命中读官方摘要；新增反射/荧光分离与原Fig.3采集原理图，排除数学谱分割。2014专题摘要与2016期刊扩展归并为两个版本，不计独立方法。期刊作者接受稿第2/14页证明会议前序及新增处理，仅局部阅读。
+- 2026-10-08 / iccv-2015-optical-keywords：新增 5，更新 0，去重 0，排除 1，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：526题名六命中均读官方摘要，五新条目分别保存总体流程、照明设计比较、层次先验模型或原算法；五DOI题名作者年份核验。CSU作者代码MIT与CAVE样例权利分开。两相关出版元数据候选未推定扩展关系；全部非阅读全文。
 
 ## 未解决缺口
 
