@@ -13,10 +13,30 @@ const directionHints: Record<string, string> = {
   fusion: '高度辅助分类 · 区别于三维重建',
 };
 const families = [
-  { name: '重建与场景表示', hint: '恢复几何、光谱与外观', tracks: ['rendering', 'geometry', 'lightfield', 'materials'] },
-  { name: '采集与空间对齐', hint: '获取观测，建立光谱与空间对应', tracks: ['active', 'capture', 'lidar', 'pointcloud', 'registration'] },
-  { name: '理解与扩展成像', hint: '场景应用、波场计量与体成像', tracks: ['understanding', 'holography', 'volumetric', 'fusion'] },
+  { id: 'acquire', name: '采集与空间对齐', hint: '获取观测，建立光谱与空间对应', input: '相机 / 激光 / 多传感器', output: '光谱与三维观测', tracks: ['capture', 'active', 'lidar', 'pointcloud', 'registration'] },
+  { id: 'reconstruct', name: '重建与场景表示', hint: '恢复几何、光谱与外观', input: '多视角 / 多波段观测', output: '几何、材质与场景', tracks: ['geometry', 'rendering', 'lightfield', 'materials'] },
+  { id: 'understand', name: '理解与扩展成像', hint: '场景应用、波场计量与体成像', input: '光谱与空间信息', output: '识别、计量与体成像', tracks: ['understanding', 'holography', 'volumetric', 'fusion'] },
 ];
+
+/** Small conceptual drawings distinguish the three themes without a draggable canvas. */
+function FamilyIllustration({ family }: { family: string }) {
+  return <svg className="atlas-family-illustration" viewBox="0 0 100 72" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" aria-hidden="true">
+    {family === 'acquire' ? <>
+      <rect x="8" y="20" width="26" height="31" rx="5"/><circle cx="21" cy="35" r="7"/><path d="M15 20v-5h12v5M37 29l34-16M37 35h34M37 41l34 16" strokeDasharray="3 4"/>
+      <path d="m73 22 15-8v36l-15 8z" fill="currentColor" fillOpacity=".12"/><path d="m80 18 15-8v36l-15 8z" fill="currentColor" fillOpacity=".08"/>
+      <path d="M75 30v14M82 26v14M89 22v14"/>
+    </> : family === 'reconstruct' ? <>
+      <path d="m50 9 31 17v30L50 68 19 51V23Z" fill="currentColor" fillOpacity=".05"/><path d="m19 23 31 17 31-14M50 40v28M50 9v31"/>
+      <path d="m29 29 12-14 20 19 10-2M29 29l7 23 25-18 10 22M36 52l14 9 21-5"/>
+      {[[29,29],[41,15],[61,34],[71,32],[36,52],[50,61],[71,56]].map(([x,y]) => <circle key={`${x}-${y}`} cx={x} cy={y} r="2.6" fill="currentColor" stroke="none"/>)}
+    </> : <>
+      <path d="m12 46 37-21 39 20-37 21Z" fill="currentColor" fillOpacity=".08"/><path d="m12 46 37-21 2 41M49 25l39 20-37 21"/>
+      <path d="m25 38 12-7 13 7-13 7Zm0 0v15l12 7V45m13-7v15l-13 7" fill="currentColor" fillOpacity=".15"/>
+      <path d="m58 31 12-7 12 7-12 7Zm0 0v15l12 7V38m12-7v15l-12 7" fill="currentColor" fillOpacity=".3"/>
+      <path d="m33 18 4-4 4 4M64 14l4-4 4 4"/>
+    </>}
+  </svg>;
+}
 const venueLabels: Record<string, string> = {
   'Nature Communications': 'Nat. Commun.', 'Nature Photonics': 'Nat. Photonics',
   'Nature Methods': 'Nat. Methods', 'Light: Science & Applications': 'Light Sci. Appl.',
@@ -35,15 +55,22 @@ export function AtlasOverview({ groups, periods, onSelect }: {
   const ordered = sections.flatMap(family => family.groups);
   return <div className="atlas-reading-surface">
     <section className="atlas-taxonomy" aria-label="高光谱三维视觉方向图">
-      <header><div><span>领域结构</span><h4>光谱信息 × 三维空间</h4><p>从获取观测，到恢复场景，再到理解与扩展成像</p></div><small>主题分组 · 非方法继承关系</small></header>
+      <header><div><span>FIELD OVERVIEW · 领域全景</span><h4>高光谱三维视觉，研究什么？</h4><p>看方向、看任务、看年代分布。点击方向，阅读下方论文时间轴。</p></div><small>主题分组<br/>不表示方法继承</small></header>
       <div className="atlas-taxonomy-branches" style={{ '--families': sections.length } as CSSProperties}>
-        {sections.map((family, index) => <section className={`atlas-taxonomy-family family-${families.findIndex(item => item.name === family.name)}`} key={family.name}>
-          <header><span className="atlas-taxonomy-number">0{index + 1}</span><div><h5>{family.name}</h5><p>{family.hint}</p></div><small>{family.groups.reduce((total, group) => total + group.papers.length, 0)} 篇</small></header>
-          <div className="atlas-taxonomy-tracks">{family.groups.map(group => <a key={group.id} href={`#atlas-track-${group.id}`} style={{ '--route': group.color } as CSSProperties}>
-            <span><strong>{group.name}</strong><small>{group.papers.length} 篇</small></span><p>{directionHints[group.id] ?? group.description}</p>
+        {sections.map(family => <section className={`atlas-taxonomy-family family-${family.id}`} key={family.id}>
+          <header><FamilyIllustration family={family.id}/><div><span className="atlas-family-stage">{family.id === 'acquire' ? '获取观测' : family.id === 'reconstruct' ? '恢复场景' : '分析与测量'}</span><h5>{family.name}</h5><p>{family.groups.length} 个方向 · {family.groups.reduce((total, group) => total + group.papers.length, 0)} 篇</p></div></header>
+          <div className="atlas-family-task"><span>输入 <b>{family.input}</b></span><span>目标 <b>{family.output}</b></span></div>
+          <div className="atlas-distribution-label"><span>收录年代 / 篇数</span><div style={{ '--stages': periods.length } as CSSProperties}>{periods.map(period => <span key={period.start}>{period.label}</span>)}</div></div>
+          <div className="atlas-taxonomy-tracks">{family.groups.map(group => <a key={group.id} href={`#atlas-track-${group.id}`} style={{ '--route': group.color, '--stages': periods.length } as CSSProperties}>
+            <span><strong>{group.name}</strong><small>{group.papers.length} <em>篇</em></small></span><p>{directionHints[group.id] ?? group.description}</p>
+            <div className="atlas-track-distribution" aria-label={`${group.name}的年代分布`}>{periods.map(period => {
+              const count = group.papers.filter(paper => paper.year >= period.start && paper.year <= period.end).length;
+              return <span key={period.start} className={count ? 'has-papers' : ''} aria-label={`${period.label}：${count} 篇`}><b>{count || '—'}</b><span className="atlas-distribution-mobile-year">{period.label}</span></span>;
+            })}</div>
           </a>)}</div>
         </section>)}
       </div>
+      <footer><span>年代格显示当前收录数量；空格表示暂无收录。</span><span>高度辅助二维分类属于相关方向，区别于真实三维几何任务。</span></footer>
     </section>
     <div className="atlas-timeline-heading"><div><span>研究进展</span><h4>沿时间，读每个方向</h4></div><p>每阶段一篇示例 · 点击篇数查看其余论文</p></div>
     <section className="atlas-roadmap" aria-label="研究方向与论文时间轴" style={{ '--stages': periods.length } as CSSProperties}>

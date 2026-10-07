@@ -1,0 +1,59 @@
+/* A fixed overview: every direction, task and period count is visible without gestures. */
+.atlas-taxonomy{padding:0;border:0;border-radius:0;background:none}
+.atlas-taxonomy>header{padding:8px 0 24px;text-align:left;align-items:flex-end}
+.atlas-taxonomy>header>div{margin:0}
+.atlas-taxonomy>header span{font-size:10px;letter-spacing:1.6px;color:#597569}
+.atlas-taxonomy h4{font-size:28px;letter-spacing:-.5px;margin:10px 0;color:#203e33}
+.atlas-taxonomy>header p{font-size:13px;color:#60796c}
+.atlas-taxonomy>header>small{position:static;line-height:1.8;text-align:right;font-size:11px;color:#718579}
+.atlas-taxonomy>header:after,.atlas-taxonomy-branches:before,.atlas-taxonomy-family:before{display:none}
+.atlas-taxonomy-branches{padding:0;gap:18px;align-items:start}
+.atlas-taxonomy-family{--family:#46817b;border:1px solid #dbe5df;border-radius:12px;border-top:0;overflow:hidden;box-shadow:none}
+.atlas-taxonomy-family.family-reconstruct{--family:#577db0}
+.atlas-taxonomy-family.family-understand{--family:#8a70a2}
+.atlas-taxonomy-family>header{padding:15px 18px;gap:15px;border-bottom:0;background:color-mix(in srgb,var(--family) 7%,white)}
+.atlas-family-illustration{flex:0 0 78px;width:78px;height:64px;color:var(--family)}
+.atlas-family-stage{font-size:10px;letter-spacing:1.5px;color:var(--family)}
+.atlas-taxonomy h5{font-size:18px;letter-spacing:-.3px;margin:7px 0;font-weight:650}
+.atlas-taxonomy-family>header p{font-size:12px;color:#657c6e}
+.atlas-family-task{display:grid;gap:5px;padding:10px 18px;border-bottom:1px solid #e9eeeb;font-size:11px;color:#839188}
+.atlas-family-task span{display:flex;gap:12px;align-items:baseline}
+.atlas-family-task b{font-size:12px;font-weight:500;color:#486252}
+.atlas-distribution-label{padding:12px 18px 0;color:#718578;font-size:10px;line-height:1.6}
+.atlas-distribution-label>span{display:block;margin-bottom:6px}
+.atlas-distribution-label>div{display:grid;grid-template-columns:repeat(var(--stages),minmax(0,1fr));gap:5px;text-align:center;font-size:10px;white-space:nowrap}
+.atlas-taxonomy-tracks{padding:0 18px 8px;display:grid;grid-template-columns:1fr;column-gap:0}
+.atlas-taxonomy-tracks a{padding:10px 0;border-bottom:1px solid #e7ede9}
+.atlas-taxonomy-tracks a:before{display:none}
+.atlas-taxonomy-tracks a>span{align-items:center;gap:8px}
+.atlas-taxonomy-tracks strong{font-size:14px;font-weight:600;line-height:1.55;color:#274434}
+.atlas-taxonomy-tracks small{font-size:16px;font-weight:600;color:var(--family);font-variant-numeric:tabular-nums}
+.atlas-taxonomy-tracks small em{font-size:10px;font-style:normal;font-weight:400}
+.atlas-taxonomy-tracks p{font-size:12px;color:#6a8072;line-height:1.5;margin:4px 0 7px}
+.atlas-track-distribution{display:grid;grid-template-columns:repeat(var(--stages),minmax(0,1fr));gap:5px}
+.atlas-track-distribution>span{display:flex;align-items:center;justify-content:center;min-height:22px;border-radius:3px;background:#f5f7f5;color:#b2beb5;font-size:11px}
+.atlas-track-distribution>span.has-papers{background:color-mix(in srgb,var(--family) 10%,white);color:var(--family)}
+.atlas-track-distribution b{font-weight:550;font-variant-numeric:tabular-nums}
+.atlas-distribution-mobile-year{display:none}
+.atlas-taxonomy-tracks a:hover{background:#f8faf8}
+.atlas-taxonomy-tracks a:focus-visible{outline:2px solid var(--family);outline-offset:3px;border-radius:3px}
+.atlas-taxonomy footer{display:flex;justify-content:space-between;gap:14px;font-size:11px;line-height:1.7;color:#768b7c;margin-top:14px;flex-wrap:wrap}
+@media(min-width:769px) and (max-width:1100px){
+ .atlas-taxonomy-family>header{padding:18px 12px;gap:8px}.atlas-family-illustration{width:52px;flex-basis:52px;height:50px}
+ .atlas-taxonomy h5{font-size:16px}.atlas-taxonomy-branches{gap:12px}
+ .atlas-family-task,.atlas-distribution-label{padding-left:12px;padding-right:12px}.atlas-taxonomy-tracks{padding-left:12px;padding-right:12px}
+ .atlas-distribution-label>div{font-size:8px;gap:3px}.atlas-taxonomy-tracks strong{font-size:13px}
+}
+@media(max-width:768px){
+ .atlas-taxonomy>header{padding-top:0;padding-bottom:20px}.atlas-taxonomy h4{font-size:24px}.atlas-taxonomy>header>small{display:none}
+ .atlas-taxonomy-branches{grid-template-columns:1fr;gap:18px}.atlas-taxonomy-family>header{padding:18px;gap:14px}
+ .atlas-family-task{grid-template-columns:1fr 1fr;gap:12px}.atlas-family-task span{display:block}.atlas-family-task b{display:block;margin-top:4px}
+ .atlas-distribution-label{display:none}.atlas-taxonomy-tracks a{padding:16px 0}
+ .atlas-distribution-mobile-year{display:block;font-size:9px;margin-top:3px;font-weight:400;white-space:nowrap}
+ .atlas-track-distribution>span{flex-direction:column;min-height:38px}.atlas-taxonomy-tracks strong{font-size:15px}
+}
+@media(max-width:380px){
+ .atlas-taxonomy-family>header{padding:14px}.atlas-family-task{padding:12px 14px}.atlas-taxonomy-tracks{padding:0 14px 6px}
+ .atlas-family-illustration{width:60px;flex-basis:60px;height:52px}.atlas-taxonomy h4{font-size:22px}
+ .atlas-taxonomy h5{font-size:17px}.atlas-distribution-mobile-year{font-size:8px}.atlas-track-distribution{gap:3px}
+}
