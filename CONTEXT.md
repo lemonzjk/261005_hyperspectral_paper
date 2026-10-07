@@ -28,5 +28,5 @@
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx` / `src/atlas-overview.css`、`src/TimelineOverview.tsx`、`src/ResearchMap.tsx`：图谱。
 - 框架图累计 140 篇、168 张；46 篇需全文/人工补图、10 篇全文无独立框架。JSTARS 融合候选待核验，旧缺图来源详见交接。开放标签不代表取得原图，不据作者章节判正式论文无框架。
-- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；196 篇全部初查，无 pending；46 篇缺图可重试。新增 SpectralMoE（CVPR 2026），RGB 估计深度辅助二维光谱分割，归相关融合；完整 Figure 3 已保存。既有 CVPR 候选全部已审；ICCV 至 2021 待审 27 篇已核验，21 排除、6 背景，余 38 篇；ECCV/期刊待续。关键词初查不代表全部语义覆盖。SMLA/光谱立体全文待核验。Ghost LiDAR 吞吐非全谱帧率；Fiducial Mapping 无独立三维真值；MS-ALS 更正待查。
+- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；196 篇全部初查，无 pending；46 篇缺图可重试。新增 SpectralMoE（CVPR 2026），RGB 估计深度辅助二维光谱分割，归相关融合；完整 Figure 3 已保存。既有 CVPR 候选全部已审；ICCV 2023 待审 18 篇已核验，16 排除、2 背景，余 2025 年 20 篇；ECCV/期刊待续。关键词初查不代表全部语义覆盖。SMLA/光谱立体全文待核验。Ghost LiDAR 吞吐非全谱帧率；Fiducial Mapping 无独立三维真值；MS-ALS 更正待查。
 - 文献调研见 `research/survey.json`、`research/README.md`：IGARSS 候选待原始摘要与版本核验；RSE 两篇冠层导数待全文光谱范围核验，2026 叶密度论文登记未来卷期不代表在线日期。臭氧层析正文仅二维水平分布，保留背景；专业期刊及引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

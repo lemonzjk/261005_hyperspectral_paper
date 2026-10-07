@@ -107,3 +107,7 @@
 ## ICCV 2013–2021 候选筛查（2026-10-07）
 
 既有待审 27 篇逐篇查官方摘要，21 excluded_scope、6 background_scope，无新增网站论文。AFD-Net 十页全文：VIS–NIR 实验为二维 patch 匹配，Brown 单谱 patch 标签有三维点 ID，但不是已验证跨光谱三维重建；保留配准对应背景。Manifold-Structured HCS（9 页）与 DLTR（10 页）正文确认第三维为波段，先验 shape/tensor 不等于 xyz 表面。其余背景是滤片选择、照明谱、噪声/杂散光校准及 RGB–热红外区域对齐。完整官方摘要、逐篇决定、三份原稿哈希与方法证据见 sources/iccv2013-2021-scope-review-2026-10-07.json。ICCV 余 38 篇（2023 十八篇、2025 二十篇），ECCV 及专业期刊/引文追溯仍未完成。
+
+## ICCV 2023 候选筛查（2026-10-07）
+
+余下十八篇官方摘要逐篇核验：十六 excluded_scope，PGVS-Net 与 ADIS 两篇 background_scope，无新增网站论文。三份 11 页原始 PDF 另核对：PGVS 的 multi-view 为时序 RGB-P 特征，法线只作为偏振变化动机，输出二维玻璃掩模；ADIS 的 volume 是空间–光谱数据立方体，深度不变性是光路/PSF 鲁棒性，不是三维目标恢复；SgMg 的 spectrum 是二维 DFT。Spectral Graphormer 的真实手部几何输入是多视角 RGB，谱图算子不是光学多波长。原始摘要、逐篇理由与三份全文哈希/方法证据见 sources/iccv2023-scope-review-2026-10-07.json。ICCV 尚待二十篇 2025 候选；ECCV、专业期刊、SMLA/光谱立体全文及引文追溯仍未完成。
