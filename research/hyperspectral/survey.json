@@ -863,9 +863,39 @@
       "status": "metadata_verified",
       "statusLabel": "后续稿出版元数据已核验，扩展关系待原文核验",
       "gaps": [
-        "正式卷期为2019，DOI含2018；在线日期、作者变更及会议扩展声明待核验"
+        "正式卷期为2019，DOI含2018；在线日期、作者变更及会议扩展声明待核验",
+        "2026-10-08：作者主页核验成功；IEEE页面及PDF验证页、开放索引无PDF，详见hshs-tpami-access-review.json。"
       ],
       "sourceSnapshot": "sources/crossref-10.1109_TPAMI.2018.2817496.json"
+    },
+    {
+      "id": "cvpr-2016-title-optical-terms",
+      "venue": "CVPR",
+      "year": 2016,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T17:43:03.384789+00:00",
+      "method": "官方年度目录逐题名关键词扫描，再逐篇核验命中摘要",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "multi-spectral",
+        "spectral",
+        "spectrum"
+      ],
+      "url": "https://openaccess.thecvf.com/CVPR2016?day=all",
+      "pagination": "day=all；单页全年官方目录；无结果条数截断",
+      "titleCount": 643,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "指定五关键词四命中均已核验官方摘要",
+      "gaps": [
+        "只完成指定题名词；其他任务词、摘要全量与引文追踪待补",
+        "浏览器工具访问CVF两篇返回403，直接HTTP目录/摘要/PDF均成功并保存证据",
+        "全文实验、资源可用性/许可与预印本关系待核验"
+      ],
+      "sourceSnapshot": "sources/cvpr-2016-all-titles.json",
+      "htmlSha256": "04a5350f327c0b96e5e390bf445c2e1b7d9638c1e94bf65021964c5bc09bcbee",
+      "candidateCount": 4,
+      "reviewedCount": 4
     }
   ],
   "candidates": [
@@ -2082,8 +2112,61 @@
       "discoveredAt": "2026-10-08",
       "searchId": "hshs-tpami-followup-relation",
       "decision": "pending",
-      "reason": "同双相机体系的后续稿，题名和部分作者变化；尚未取得扩展声明，不计作独立新方法。",
-      "evidencePath": "research/hyperspectral/sources/crossref-10.1109_TPAMI.2018.2817496.json"
+      "reason": "作者主页核验题名、作者和2019卷期；IEEE原文418验证页，Semantic Scholar标CLOSED无开放PDF。扩展声明仍未取得，保留候选不增加方法计数。",
+      "evidencePath": "research/hyperspectral/sources/crossref-10.1109_TPAMI.2018.2817496.json",
+      "lastCheckedAt": "2026-10-08",
+      "accessEvidencePath": "research/hyperspectral/sources/hshs-tpami-access-review.json"
+    },
+    {
+      "title": "Multispectral Images Denoising by Intrinsic Tensor Sparsity Regularization",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/Xie_Multispectral_Images_Denoising_CVPR_2016_paper.html",
+      "venue": "CVPR",
+      "year": 2016,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2016-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要与局部原文明确光学波长数据；ITSReg以原称多光谱关系记录，CAVE31波段证据提供高光谱联系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Xie_Multispectral_Images_Denoising_CVPR_2016_paper.json",
+      "paperId": "itsreg-2016"
+    },
+    {
+      "title": "Do It Yourself Hyperspectral Imaging With Everyday Digital Cameras",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/Oh_Do_It_Yourself_CVPR_2016_paper.html",
+      "venue": "CVPR",
+      "year": 2016,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2016-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要与局部原文明确光学波长数据；ITSReg以原称多光谱关系记录，CAVE31波段证据提供高光谱联系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Oh_Do_It_Yourself_CVPR_2016_paper.json",
+      "paperId": "diy-hsi-2016"
+    },
+    {
+      "title": "Learned Binary Spectral Shape Descriptor for 3D Shape Correspondence",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/Xie_Learned_Binary_Spectral_CVPR_2016_paper.html",
+      "venue": "CVPR",
+      "year": 2016,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2016-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要以Laplace-Beltrami特征向量表示几何形状并匹配SCAPE/TOSCA；spectral不是光学波长，未建立高光谱联系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Xie_Learned_Binary_Spectral_CVPR_2016_paper.json"
+    },
+    {
+      "title": "Exploiting Spectral-Spatial Correlation for Coded Hyperspectral Image Restoration",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/Fu_Exploiting_Spectral-Spatial_Correlation_CVPR_2016_paper.html",
+      "venue": "CVPR",
+      "year": 2016,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2016-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要与局部原文明确光学波长数据；ITSReg以原称多光谱关系记录，CAVE31波段证据提供高光谱联系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Fu_Exploiting_Spectral-Spatial_Correlation_CVPR_2016_paper.json",
+      "paperId": "spectral-spatial-lowrank-2016"
     }
   ],
   "batches": [
@@ -2288,6 +2371,28 @@
         "检索工具访问目录失败，直接 HTTP 获取目录和七篇官方证据成功",
         "Crossref 题名查询返回 429，精确 DOI 查询成功；未核验的 DOI/预印本不猜测",
         "TPAMI 后续视频稿作者与版本扩展关系、全文实验、资源入口与许可待核验"
+      ]
+    },
+    {
+      "id": "cvpr-2016-optical-keywords-and-followup-access",
+      "date": "2026-10-08",
+      "searchIds": [
+        "cvpr-2016-title-optical-terms",
+        "hshs-tpami-followup-relation"
+      ],
+      "new": 3,
+      "updated": 1,
+      "duplicates": 0,
+      "excluded": 1,
+      "pending": 1,
+      "categoriesAdded": 2,
+      "readingBoundary": "643题名四命中均读官方摘要；三新条目各保存原图并核验DOI。ITSReg第6页局部数据/设置核验，仍非阅读全文。TPAMI候选补作者机构与访问证据，扩展关系待查。",
+      "gaps": [
+        "只完成指定题名词；其他任务词、摘要全量与引文追踪待补",
+        "浏览器工具访问CVF两篇返回403，直接HTTP目录/摘要/PDF均成功并保存证据",
+        "全文实验、资源可用性/许可与预印本关系待核验",
+        "正式卷期为2019，DOI含2018；在线日期、作者变更及会议扩展声明待核验",
+        "2026-10-08：作者主页核验成功；IEEE页面及PDF验证页、开放索引无PDF，详见hshs-tpami-access-review.json。"
       ]
     }
   ],
