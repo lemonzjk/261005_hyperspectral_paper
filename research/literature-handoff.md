@@ -95,3 +95,7 @@
 ## CVPR 2025 原始摘要与事件约束核验（2026-10-07）
 
 余下十八篇候选逐篇核验：十五篇 excluded_scope，照明谱估计、自动光谱校准及 Active Hyperspectral Imaging 三篇 background_scope，没有新增网站论文。另查 HyperFree 11 页和 Active Hyperspectral Imaging 13 页官方 PDF：前者主实验五任务及扩展三任务为二维光谱处理，后者 §3.2–3.3 的重建目标是逐像素 S_xy(λ)，未知量为 M 维光谱向量，其几何约束指零光谱向量的正交关系，不是深度/法线恢复；不能因相关工作引用 EventPS/Dispersed Structured Light 就借用这些三维能力。逐篇官方摘要、理由、原稿哈希及方法证据见 sources/cvpr2025-scope-review-2026-10-07.json。CVPR 尚有 53 篇待审；其他场所与引文追溯仍未完成。
+
+## CVPR 2018/2019 与 2026 聚焦核验（2026-10-07）
+
+复核剩余 2018 年五篇、2019 年十二篇及 2026 年七篇：十五篇 excluded_scope，九篇采集/材质/校准背景，无新增网站论文。Spectrum from Defocus 的焦栈用于恢复 H×W×C，物距仅在景深范围测试；MetaSpectra+ 输出 HSI+HDR/偏振而非深度；SG-NLF 的 spectral embedding 是 Laplace–Beltrami 特征函数，不是光学波长。三篇各 11 页官方 PDF 的方法、实验与定义已核对，哈希保存；从引文发现 OL 2025 SMLA 真实多光谱深度系统，登记 pending_fulltext；ECCV 2012 彩色孔径测深登记 background_scope，非高光谱重建。官方摘要、逐篇理由、原稿证据与新引文见 sources/cvpr2018-2019-2026-focused-scope-review-2026-10-07.json。CVPR 既有候选剩余 29 篇（均 2026）；仅关键词命中候选筛查，不能据此宣称整个 CVPR 语义覆盖完毕。其他场所与期刊追溯仍未完成。
