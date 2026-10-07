@@ -111,3 +111,9 @@
 ## ICCV 2023 候选筛查（2026-10-07）
 
 余下十八篇官方摘要逐篇核验：十六 excluded_scope，PGVS-Net 与 ADIS 两篇 background_scope，无新增网站论文。三份 11 页原始 PDF 另核对：PGVS 的 multi-view 为时序 RGB-P 特征，法线只作为偏振变化动机，输出二维玻璃掩模；ADIS 的 volume 是空间–光谱数据立方体，深度不变性是光路/PSF 鲁棒性，不是三维目标恢复；SgMg 的 spectrum 是二维 DFT。Spectral Graphormer 的真实手部几何输入是多视角 RGB，谱图算子不是光学多波长。原始摘要、逐篇理由与三份全文哈希/方法证据见 sources/iccv2023-scope-review-2026-10-07.json。ICCV 尚待二十篇 2025 候选；ECCV、专业期刊、SMLA/光谱立体全文及引文追溯仍未完成。
+
+## 暂停交接（2026-10-07）
+
+用户要求暂停，交由另一会话继续。当前已收录 196 篇，框架图 140 篇 / 168 张；研究尚未完成，不能宣称已找到全部相关论文。既有 CVPR 候选及 ICCV 2013–2023 候选已完成上述审查；ICCV 2025 二十篇仍未审查。暂停前已抓取其官方页面摘要，缓存保存为 sources/iccv2025-unreviewed-abstracts-2026-10-07.json；该文件仅为抓取结果，未形成范围判断，未改变 survey.json 或网站收录状态。
+
+下一会话先读 CONTEXT.md 与本交接，再逐篇核验这二十篇，必要时查官方 PDF。随后继续 ECCV、目标专业期刊、arXiv 与引文追溯，优先核验 SMLA 和 Cross-Modal Stereo 的正式版本、全文及框架图。缺图重试入口见 framework-handoff.md。只做本地修改与提交，不推送、不发布。
