@@ -121,3 +121,7 @@
 ## 恢复调研与 ICCV 2025 筛查（2026-10-07）
 
 用户撤销暂停，要求由当前会话继续完成。二十篇官方摘要全部核验，十八 excluded_scope、二 background_scope，无新增网站论文。另查光栅标定 10 页、IHRUT 11 页、SMARTIES 10 页、M-SpecGene 12 页原始 PDF。SMARTIES 的多传感器为二维光学/SAR/RGB，并非 LiDAR/DSM；M-SpecGene 四任务为二维检测、分割、显著性及配准。IHRUT 光程差编码波数，第三维仍是波段，不能误认场景深度。方法边界、原始摘要与全文哈希见 sources/iccv2025-scope-review-2026-10-07.json。既有 CVPR/ICCV 关键词候选已审查，不表示所有论文语义覆盖；ECCV、专业期刊和引文追溯仍待继续。
+
+## ECCV 2018–2024 既有候选筛查（2026-10-07）
+
+三十篇官方摘要全部核验：二十三 excluded_scope，七 background_scope，无新增网站论文。另核验 JDM、ECT、HyTAS、PCCADIS 四份各 17 页，以及 TSA-Net、物理色散解混两份各 18 页官方全文。HyTAS 使用 Houston2013 的 HSI 而非配套 LiDAR，不能因数据集名字归入几何融合；ECT/TSA 的第三维明确为波段；PCCADIS 双支路用于光谱采集并非立体测深；材质 inverse rendering 不代表形状重建。证据见 sources/eccv2018-2024-scope-review-2026-10-07.json。现有 CVPR/ICCV/ECVA 关键词候选均已审查，旧 ECCV 与 2026 目录、IGARSS、期刊和引文追溯仍需继续。
