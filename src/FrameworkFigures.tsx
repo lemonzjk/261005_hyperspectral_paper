@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent, type DragEvent } from 'react';
 import type { FrameworkFigure, Paper } from './types';
+
+const containsFiles = (event: DragEvent) => event.dataTransfer.types.includes('Files');
 
 const imagePath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
@@ -15,8 +17,8 @@ function FigureImage({ paper, figure }: { paper: Paper; figure: FrameworkFigure 
   </>;
 }
 
-function UploadForm({ paper, replacement, onSaved, onCancel }: {
-  paper: Paper; replacement: FrameworkFigure | null; onSaved: (paper: Paper) => void; onCancel: () => void;
+function UploadForm({ paper, replacement, initialFiles, onSaved, onCancel }: {
+  paper: Paper; replacement: FrameworkFigure | null; initialFiles?: File[]; onSaved: (paper: Paper) => void; onCancel: () => void;
 }) {
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState('');
@@ -25,6 +27,7 @@ function UploadForm({ paper, replacement, onSaved, onCancel }: {
   const [source, setSource] = useState(replacement?.sourceUrl ?? paper.paper);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
+  const [dragging, setDragging] = useState(false);
   const input = useRef<HTMLInputElement>(null);
   const mounted = useRef(true);
   useEffect(() => { input.current?.focus(); mounted.current = true; return () => { mounted.current = false; }; }, []);
@@ -41,6 +44,11 @@ function UploadForm({ paper, replacement, onSaved, onCancel }: {
     if (value.size > 10 * 1024 * 1024 || value.size === 0) { setError('图片须大于 0 字节，且不超过 10 MB。'); return; }
     setFile(value);
   };
+  const chooseFiles = (files: File[]) => {
+    if (files.length !== 1) { setFile(null); setError('每次请拖入一张图片。'); return; }
+    chooseFile(files[0]);
+  };
+  useEffect(() => { if (initialFiles) chooseFiles(initialFiles); }, [initialFiles]);
   const submit = async (event: FormEvent) => {
     event.preventDefault();
     if (!file || saving) return;
@@ -64,11 +72,15 @@ function UploadForm({ paper, replacement, onSaved, onCancel }: {
       if (mounted.current) setError(reason instanceof Error ? reason.message : '上传失败，请检查连接后重试。');
     } finally { if (mounted.current) setSaving(false); }
   };
-  return <form className="figure-upload" onSubmit={submit} aria-label={replacement ? '替换框架图' : '补充框架图'} aria-busy={saving}>
+  return <form className="figure-upload" onSubmit={submit} aria-label={replacement ? '替换框架图' : '补充框架图'} aria-busy={saving}
+    onDragOver={event => { if (containsFiles(event)) { event.preventDefault(); event.stopPropagation(); event.dataTransfer.dropEffect = saving ? 'none' : 'copy'; if (!saving) setDragging(true); } }}
+    onDragLeave={event => { if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) setDragging(false); }}
+    onDrop={event => { if (containsFiles(event)) { event.preventDefault(); event.stopPropagation(); setDragging(false); if (!saving) chooseFiles(Array.from(event.dataTransfer.files)); } }}
+    data-dragging={dragging}>
     <h4>{replacement ? `替换 ${replacement.figureLabel}` : '补充框架图'}</h4>
     <p>{replacement ? '新图片保留原来的展示位置，旧图和来源存入替换历史。' : '新图片追加到这篇论文的框架图中。'}上传后标记为待核验。</p>
     <fieldset disabled={saving}>
-      <label className="figure-file">选择图片<input ref={input} type="file" accept="image/png,image/jpeg,image/webp" onChange={event => chooseFile(event.target.files?.[0])}/><small>PNG / JPG / WebP · 最大 10 MB · 宽高至少 100 像素</small></label>
+      <label className="figure-file figure-drop-zone"><strong>{dragging ? '松开，预览图片' : '拖入图片，或点击选择'}</strong><input aria-label="选择图片" ref={input} type="file" accept="image/png,image/jpeg,image/webp" onChange={event => { if (event.target.files?.length) chooseFiles(Array.from(event.target.files)); event.target.value = ''; }}/><small>PNG / JPG / WebP · 最大 10 MB · 宽高至少 100 像素</small></label>
       {preview && <div className="figure-upload-preview"><img src={preview} alt="待上传图片预览"/><span>{file?.name}</span></div>}
       <label>图号或名称<input required maxLength={160} value={label} onChange={event => setLabel(event.target.value)} placeholder="例如 Figure 2 · 总体框架"/></label>
       <label>来源链接<input type="url" required maxLength={2000} value={source} onChange={event => setSource(event.target.value)} placeholder="https://…"/><small>填写论文、作者项目页或原图的 HTTPS 链接。</small></label>
@@ -81,8 +93,9 @@ function UploadForm({ paper, replacement, onSaved, onCancel }: {
 }
 
 export function FrameworkFigures({ paper, onUpdated }: { paper: Paper; onUpdated: (paper: Paper) => void }) {
-  const [editing, setEditing] = useState<{ replacement: FrameworkFigure | null } | null>(null);
+  const [editing, setEditing] = useState<{ replacement: FrameworkFigure | null; initialFiles?: File[] } | null>(null);
   const [message, setMessage] = useState('');
+  const [dragging, setDragging] = useState(false);
   const addButton = useRef<HTMLButtonElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
   const figures = paper.frameworkFigures ?? [];
@@ -91,11 +104,23 @@ export function FrameworkFigures({ paper, onUpdated }: { paper: Paper; onUpdated
     setMessage('图片已保存到本地项目，当前标记为待核验。');
     requestAnimationFrame(() => addButton.current?.focus({ preventScroll: true }));
   };
-  return <section className="paper-frameworks" aria-label="论文框架图">
+  return <section className="paper-frameworks" aria-label="论文框架图" data-dragging={dragging}
+    onDragOver={event => { if (import.meta.env.DEV && containsFiles(event)) { event.preventDefault(); event.dataTransfer.dropEffect = editing ? 'none' : 'copy'; if (!editing) setDragging(true); } }}
+    onDragLeave={event => { if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) setDragging(false); }}
+    onDrop={event => {
+      if (!import.meta.env.DEV || !containsFiles(event)) return;
+      event.preventDefault(); event.stopPropagation(); setDragging(false);
+      if (editing) return;
+      const target = event.target instanceof Element ? event.target.closest('[data-replace-figure]') : null;
+      const replacement = figures.find(figure => figure.path === target?.getAttribute('data-replace-figure')) ?? null;
+      trigger.current = addButton.current; setMessage('');
+      setEditing({ replacement, initialFiles: Array.from(event.dataTransfer.files) });
+    }}>
     <div className="framework-heading"><h3>论文框架图 <span>{figures.length} 张</span></h3>{import.meta.env.DEV && <button ref={addButton} type="button" className="secondary-button" disabled={Boolean(editing)} onClick={event => { trigger.current = event.currentTarget; setMessage(''); setEditing({ replacement: null }); }}>＋ 补充图片</button>}</div>
+    {import.meta.env.DEV && !editing && <p className="figure-drop-hint">{dragging ? '松开后预览，再确认保存' : '可直接拖入图片补充；拖到已有框架图上可替换。'}</p>}
     {message && <p className="figure-upload-success" role="status">{message}</p>}
-    {editing && <UploadForm key={editing.replacement?.path ?? 'new'} paper={paper} replacement={editing.replacement} onSaved={finish} onCancel={() => { setEditing(null); requestAnimationFrame(() => trigger.current?.focus({ preventScroll: true })); }}/>}
-    {figures.length ? figures.map(figure => <figure key={figure.path}>
+    {editing && <UploadForm key={editing.replacement?.path ?? 'new'} paper={paper} replacement={editing.replacement} initialFiles={editing.initialFiles} onSaved={finish} onCancel={() => { setEditing(null); requestAnimationFrame(() => trigger.current?.focus({ preventScroll: true })); }}/>}
+    {figures.length ? figures.map(figure => <figure key={figure.path} data-replace-figure={figure.path}>
       <FigureImage paper={paper} figure={figure}/>
       {import.meta.env.DEV && <div className="figure-edit-actions"><button className="secondary-button" disabled={Boolean(editing)} onClick={event => { trigger.current = event.currentTarget; setMessage(''); setEditing({ replacement: figure }); }}>替换此图<span className="sr-only">：{figure.figureLabel}</span></button></div>}
     </figure>) : <div className="framework-pending"><strong>{paper.frameworkFigureSearch?.status === 'no_framework' ? '全文未发现独立框架图' : paper.frameworkFigureSearch?.status === 'needs_access' ? '框架图待人工补充' : '框架图待检索'}</strong><p>{paper.frameworkFigureSearch?.note || '按最新年份优先逐篇收集，核验后将在这里展示。'}</p>{paper.frameworkFigureSearch && <a href={paper.frameworkFigureSearch.sourceUrl} target="_blank" rel="noreferrer">已检查来源 · {paper.frameworkFigureSearch.checkedAt} ↗</a>}</div>}

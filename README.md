@@ -67,7 +67,7 @@ https://lemonzjk.github.io/261005_hyperspectral_paper/
 
 使用 `npm run dev -- --port 5173` 启动本地编辑服务，需要 Python 3 和 Pillow（与 `research/figures.py` 的依赖一致）。静态构建及 `npm run preview` 只提供浏览，不显示上传入口。
 
-1. 打开任一论文详情，在「论文框架图」旁点击「＋ 补充图片」；已有图片下方可点击「替换此图」。
+1. 打开任一论文详情，可直接把本地图片拖入框架图区补充，拖到已有框架图上则替换。也可点击「＋ 补充图片」或「替换此图」，在表单内拖入或选择文件。一次处理一张，拖入后先预览，再点击保存。
 2. 选择 PNG、JPG 或 WebP 静态图片，预览后填写图号或名称、HTTPS 来源链接，可补充说明。单图最大 10 MB，宽高至少 100 像素，总像素不超过 2500 万。
 3. 点击「保存补充图」或「保存替换」。图片保存到 `public/figures/<paper-id>/`，元数据同步保存到 `src/data/catalog.json` 与 `research/figures.json`，刷新后仍可查看。
 
