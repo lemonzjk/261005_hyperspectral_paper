@@ -16,19 +16,19 @@
 
 ## 当前状态
 
-- 总库 243 篇、33 个暂定标签；三维原 214 篇、13 方向、7 资源入口不变。collections 明确成员，迁移快照验证三维事实。总库 ?collection=hyperspectral，旧链接进入三维专题。
+- 总库 247 篇、37 个暂定标签；三维原 214 篇、13 方向、7 资源入口不变。collections 明确成员，迁移快照验证三维事实。总库 ?collection=hyperspectral，旧链接进入三维专题。
 - 总库多标签并集、待分类、阅读进度、搜索、年份与来源筛选；URL 保存条件和详情，往返保留位置；共享原图、SVG/BibTeX 导出。任务/方法/应用分维度，旧专题标签仍需逐篇复核。
-- 截止 2026-10-08：CVPR 2013/2014/2021/2022、ICCV 2021、NeurIPS 2023 完成指定五关键词题名扫描，78 命中全部处理（新增19、去重7、排除52）；不代表年度全领域检索完成。
-- CVPR 2021 新增 TLPLN、DGSM-SCI、SCI-TV-FFDNet、IR-cut，均存原图；补三个旧条目总库标签/关系，新增七标签。双波长事件与 MPS 标多光谱，HSPA 标直接高光谱。九个方法共十八个 arXiv 版本日期已核验，全文差异待查。Hyper-Skin 数量330/306冲突待查。
-- ICCV 2021 新增 PnP-DIP、语义无配对重建、多光谱照明展开、真实噪声去噪；保存两原图、一原算法，噪声论文未见独立框架。补 Learned DOE HS-D 总库标签/版本；新五标签。
+- 截止 2026-10-08：CVPR 2013/2014/2015/2021/2022、ICCV 2021、NeurIPS 2023 完成指定五关键词题名扫描，85 命中全部处理（新增23、去重8、排除54）；不代表年度全领域检索完成。
+- 九个方法共十八个 arXiv 版本日期已核验，全文差异待查；Hyper-Skin 数量330/306冲突待查。CVPR/ICCV 2021 批次详情见独立调研记录。
+- CVPR 2015 新增 IRSS、RLPHCS、Bayes HSI SR、双相机视频，核验四 DOI、存三原图，IRSS 未见独立框架；补 DASC 多光谱关系。新增四标签。RGB/热成像行人检测无明确高光谱联系，暂排除。TPAMI 视频后续稿（正式2019、DOI含2018）作者变化/扩展关系待核验，保留1候选，不计新方法。
 - TGRS 五个早期年份仅主题/引文核验：VCA、OSP、HySime、MNF、Craig MVT、FCLS；MNF/Craig 为基础关系。FCLS DOI 10.1109/36.911111，存原 UFCLS 伪代码。全部摘要已读，全文待查。
 - OL 2007 Crossref 登记1141条两页取回，六成像词4命中处理（3摘要、1题名暂排除）；新增动态变焦、UV FLIM。定向新增 DD/SD-CASSI 并存 Fig.1；SD 的2007 SPIE前序稿关联期刊版。版本DOI参与去重。出版社年度全量未证明；其他年度/关键词仍有缺口。
 - 石墨黑主题；首屏850nm合成地形、450–950nm联动，非实测。时间轴每年六篇/展开；桌面双列、手机单列。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。框架续接清单覆盖243篇、203张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。框架续接清单覆盖247篇、206张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、成员、libraryCategories、library、原图；src/library.ts 总库筛选；HyperspectralLibrary.tsx 独立入口；App.tsx 三维入口。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 官方会议扫描、crossref-inventory.py 分页登记、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；详细说明见 README.md 和 research/。
-- 下一步扩展任务词、年份和场所；核验版本/方法族、完整实验、代码数据；复核旧专题总库关系。记录访问失败，继续其他来源。
+- 下一步先核验 TPAMI 视频后续稿关系，继续扩展任务词、年份和场所；复核全文实验与代码数据；复核旧专题总库关系。记录访问失败，继续其他来源。

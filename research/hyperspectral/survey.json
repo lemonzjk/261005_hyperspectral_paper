@@ -814,6 +814,58 @@
       "htmlSha256": "ecc3b67bf222cdcb1f97598f41e3f0ec32b0e67b2a2e0391223a905a9de3e20b",
       "candidateCount": 7,
       "reviewedCount": 7
+    },
+    {
+      "id": "cvpr-2015-title-optical-terms",
+      "venue": "CVPR",
+      "year": 2015,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T17:36:34.860131+00:00",
+      "method": "官方年度目录逐题名关键词扫描，再逐篇核验命中摘要",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "multi-spectral",
+        "spectral",
+        "spectrum"
+      ],
+      "url": "https://openaccess.thecvf.com/CVPR2015?day=all",
+      "pagination": "day=all；单页全年官方目录；无结果条数截断",
+      "titleCount": 602,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "指定五关键词命中 7 篇均已核验官方摘要",
+      "gaps": [
+        "仅完成指定题名词；任务词、摘要全量与引文发现待补",
+        "检索工具访问目录失败，直接 HTTP 获取目录和七篇官方证据成功",
+        "Crossref 题名查询返回 429，精确 DOI 查询成功；未核验的 DOI/预印本不猜测",
+        "TPAMI 后续视频稿作者与版本扩展关系、全文实验、资源入口与许可待核验"
+      ],
+      "sourceSnapshot": "sources/cvpr-2015-all-titles.json",
+      "htmlSha256": "79294fcf21ea9844b5924bcbedd5ea22b75da7833ab3c911b9dacbcc187774e5",
+      "candidateCount": 7,
+      "reviewedCount": 7
+    },
+    {
+      "id": "hshs-tpami-followup-relation",
+      "venue": "TPAMI",
+      "year": 2019,
+      "date": "2026-10-08",
+      "method": "会议条目后续引用追踪，Crossref 精确 DOI 注册元数据与作者机构页面",
+      "keywords": [
+        "High-Speed Hyperspectral Video Acquisition",
+        "10.1109/TPAMI.2018.2817496"
+      ],
+      "url": "https://api.crossref.org/works/10.1109/TPAMI.2018.2817496",
+      "pagination": "单篇定向核验，不代表年度目录",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 0,
+      "status": "metadata_verified",
+      "statusLabel": "后续稿出版元数据已核验，扩展关系待原文核验",
+      "gaps": [
+        "正式卷期为2019，DOI含2018；在线日期、作者变更及会议扩展声明待核验"
+      ],
+      "sourceSnapshot": "sources/crossref-10.1109_TPAMI.2018.2817496.json"
     }
   ],
   "candidates": [
@@ -1932,6 +1984,106 @@
       "reason": "官方摘要研究卷积滤波的频谱泄漏与通用分类/对抗鲁棒性，未建立光学高光谱联系。",
       "reviewedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/Tomen_Spectral_Leakage_and_Rethinking_the_Kernel_Size_in_CNNs_ICCV_2021_paper.json"
+    },
+    {
+      "title": "Multispectral Pedestrian Detection: Benchmark Dataset and Baseline",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Hwang_Multispectral_Pedestrian_Detection_2015_CVPR_paper.html",
+      "venue": "CVPR",
+      "year": 2015,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2015-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要为 RGB/热成像成对行人检测；全文词检索未见 hyperspectral，当前证据未建立明确高光谱联系，后续有证据可重审。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Hwang_Multispectral_Pedestrian_Detection_2015_CVPR_paper.json"
+    },
+    {
+      "title": "Superpixel Segmentation Using Linear Spectral Clustering",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Li_Superpixel_Segmentation_Using_2015_CVPR_paper.html",
+      "venue": "CVPR",
+      "year": 2015,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2015-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要 spectral 指图谱归一化割与核映射聚类，研究通用超像素；未建立光学波长或高光谱联系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Li_Superpixel_Segmentation_Using_2015_CVPR_paper.json"
+    },
+    {
+      "title": "Illumination and Reflectance Spectra Separation of a Hyperspectral Image Meets Low-Rank Matrix Factorization",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zheng_Illumination_and_Reflectance_2015_CVPR_paper.html",
+      "venue": "CVPR",
+      "year": 2015,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2015-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要直接研究光学高光谱数据；DOI 与题名/作者/页码核验，保存原图或逐图缺图记录。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Zheng_Illumination_and_Reflectance_2015_CVPR_paper.json",
+      "paperId": "irss-lowrank-2015"
+    },
+    {
+      "title": "DASC: Dense Adaptive Self-Correlation Descriptor for Multi-Modal and Multi-Spectral Correspondence",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Kim_DASC_Dense_Adaptive_2015_CVPR_paper.html",
+      "venue": "CVPR",
+      "year": 2015,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2015-title-optical-terms",
+      "decision": "duplicate",
+      "reason": "核对题名和作者，已有三维专题条目；补独立总库关系、标签和摘要证据。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Kim_DASC_Dense_Adaptive_2015_CVPR_paper.json",
+      "paperId": "dasc-correspondence"
+    },
+    {
+      "title": "Reweighted Laplace Prior Based Hyperspectral Compressive Sensing for Unknown Sparsity",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zhang_Reweighted_Laplace_Prior_2015_CVPR_paper.html",
+      "venue": "CVPR",
+      "year": 2015,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2015-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要直接研究光学高光谱数据；DOI 与题名/作者/页码核验，保存原图或逐图缺图记录。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Zhang_Reweighted_Laplace_Prior_2015_CVPR_paper.json",
+      "paperId": "rlphcs-2015"
+    },
+    {
+      "title": "Bayesian Sparse Representation for Hyperspectral Image Super Resolution",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.html",
+      "venue": "CVPR",
+      "year": 2015,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2015-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要直接研究光学高光谱数据；DOI 与题名/作者/页码核验，保存原图或逐图缺图记录。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.json",
+      "paperId": "bayesian-hsi-sr-2015"
+    },
+    {
+      "title": "High-Speed Hyperspectral Video Acquisition With a Dual-Camera Architecture",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Wang_High-Speed_Hyperspectral_Video_2015_CVPR_paper.html",
+      "venue": "CVPR",
+      "year": 2015,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2015-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要直接研究光学高光谱数据；DOI 与题名/作者/页码核验，保存原图或逐图缺图记录。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Wang_High-Speed_Hyperspectral_Video_2015_CVPR_paper.json",
+      "paperId": "dual-camera-hshs-2015"
+    },
+    {
+      "title": "High-Speed Hyperspectral Video Acquisition By Combining Nyquist and Compressive Sampling",
+      "url": "https://doi.org/10.1109/TPAMI.2018.2817496",
+      "venue": "TPAMI",
+      "year": 2019,
+      "discoveredAt": "2026-10-08",
+      "searchId": "hshs-tpami-followup-relation",
+      "decision": "pending",
+      "reason": "同双相机体系的后续稿，题名和部分作者变化；尚未取得扩展声明，不计作独立新方法。",
+      "evidencePath": "research/hyperspectral/sources/crossref-10.1109_TPAMI.2018.2817496.json"
     }
   ],
   "batches": [
@@ -2115,6 +2267,27 @@
         "只完成指定五关键词题名扫描；其他任务词、摘要全量发现与引文追踪待补",
         "检索工具访问 CVF 目录返回 403；直接 HTTP 成功并保存官方目录及七篇原始证据",
         "全文实验、DOI、代码数据许可及预印本/正式版差异仍待核验"
+      ]
+    },
+    {
+      "id": "cvpr-2015-optical-keywords",
+      "date": "2026-10-08",
+      "searchIds": [
+        "cvpr-2015-title-optical-terms",
+        "hshs-tpami-followup-relation"
+      ],
+      "new": 4,
+      "updated": 1,
+      "duplicates": 1,
+      "excluded": 2,
+      "pending": 1,
+      "categoriesAdded": 4,
+      "readingBoundary": "602 官方题名七命中均读官方摘要；保存三原图，IRSS 八图均为分析/结果，未见独立框架；四新 DOI 精确核验。DASC 只补 library。另发现一篇 TPAMI 后续稿，版本关系待核验。均非阅读全文。",
+      "gaps": [
+        "仅完成指定题名词；任务词、摘要全量与引文发现待补",
+        "检索工具访问目录失败，直接 HTTP 获取目录和七篇官方证据成功",
+        "Crossref 题名查询返回 429，精确 DOI 查询成功；未核验的 DOI/预印本不猜测",
+        "TPAMI 后续视频稿作者与版本扩展关系、全文实验、资源入口与许可待核验"
       ]
     }
   ],

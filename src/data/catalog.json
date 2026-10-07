@@ -4830,20 +4830,41 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
+        "categoryIds": [
+          "multimodal-spectral-correspondence"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "既有三维专题的多模态/跨光谱匹配条目；有限多光谱关联，不据题名推定为高光谱数据方法。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何构造对模态或光谱差异稳健的稠密匹配描述子？",
+        "datasets": "多模态和多光谱对应实验；具体数据及通道范围待全文核验。",
+        "experimentSetting": "局部窗口自相关、学习采样的 patch 接受域池化与快速边缘感知滤波；完整比较设置待核验。",
+        "conclusions": "作者摘要报告多模态/多光谱匹配表现；当前未复核完整数值。",
+        "limitations": "自相似和局部匹配假设、密集高光谱适用性待全文核验。",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Kim_DASC_Dense_Adaptive_2015_CVPR_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要及 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份",
+              "如何构造对模态或光谱差异稳健的稠密匹配描述子？",
+              "作者摘要报告多模态/多光谱匹配表现；当前未复核完整数值。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dasc-correspondence-cvpr2015",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Kim_DASC_Dense_Adaptive_2015_CVPR_paper.html",
+            "year": 2015,
+            "relation": "采用 CVPR 2015 正式版；预印本及后续扩展关系待核验。"
+          }
+        ],
         "methodFamilyId": "dasc-correspondence"
       }
     },
@@ -18472,6 +18493,441 @@
         "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2021/papers/Zhang_Hyperspectral_Image_Denoising_With_Realistic_Data_ICCV_2021_paper.pdf",
         "checkedAt": "2026-10-08"
       }
+    },
+    {
+      "id": "irss-lowrank-2015",
+      "shortTitle": "IRSS Low-Rank",
+      "title": "Illumination and Reflectance Spectra Separation of a Hyperspectral Image Meets Low-Rank Matrix Factorization",
+      "authors": "Yinqiang Zheng, Imari Sato, Yoichi Sato",
+      "year": 2015,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/CVPR.2015.7298787",
+      "representation": "IRSS Low-Rank",
+      "tags": [
+        "spectral-illumination-estimation",
+        "spectral-relighting",
+        "low-rank-matrix-factorization"
+      ],
+      "summary": "将照明/反射率分离转为低秩矩阵分解，利用大量颜色信息和可扩展优化。",
+      "input": "一般光谱照明下的高光谱图像",
+      "output": "照明光谱与表面光谱反射率",
+      "mechanism": "将照明/反射率分离转为低秩矩阵分解，利用大量颜色信息和可扩展优化。",
+      "readingNote": "已读官方摘要并核验注明的局部图注；未阅读全文。预印本、代码/数据入口、资源许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zheng_Illumination_and_Reflectance_2015_CVPR_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Zheng_2015_CVPR,\nauthor = {Zheng, Yinqiang and Sato, Imari and Sato, Yoichi},\ntitle = {Illumination and Reflectance Spectra Separation of a Hyperspectral Image Meets Low-Rank Matrix Factorization},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2015}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-illumination-estimation",
+          "spectral-relighting",
+          "low-rank-matrix-factorization"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学高光谱数据及其波长维；普通新增只进入总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在一般光谱照明下分离高光谱图像的照明与反射率？",
+        "datasets": "合成与真实图像；完整数据集名称、规模和拆分待全文核验。",
+        "experimentSetting": "摘要在反射率低维假设下证明尺度不确定意义的唯一性，并处理模型误差与噪声；完整定理和实验设置待核验。",
+        "conclusions": "作者摘要报告分离可用于光谱重照明和照明交换；唯一性依赖反射率低维假设，且只到未知尺度。",
+        "limitations": "尺度不确定、低维反射率假设及复杂空间光照适用范围待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zheng_Illumination_and_Reflectance_2015_CVPR_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要及 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份",
+              "如何在一般光谱照明下分离高光谱图像的照明与反射率？",
+              "作者摘要报告分离可用于光谱重照明和照明交换；唯一性依赖反射率低维假设，且只到未知尺度。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/CVPR.2015.7298787",
+            "checkedAt": "2026-10-08",
+            "level": "出版社 DOI 注册元数据，与 CVF 作者/题名及原文页码核对",
+            "supports": [
+              "DOI、作者、正式会议年份与页码"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Zheng_Illumination_and_Reflectance_2015_CVPR_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF 第 4–8 页局部图号/图注核验",
+            "supports": [
+              "检索图号并核对局部图注：Fig. 1–3 为误差/准确率曲线，Fig. 4–8 为照明分离、重照明和交换示例；未见独立方法框架图。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "irss-lowrank-2015-cvpr2015",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zheng_Illumination_and_Reflectance_2015_CVPR_paper.html",
+            "year": 2015,
+            "relation": "采用 CVPR 2015 正式版；预印本及后续扩展关系待核验。",
+            "doi": "10.1109/CVPR.2015.7298787"
+          }
+        ],
+        "methodFamilyId": "irss-lowrank-2015"
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "原文 PDF 已取得；核对 Fig. 1–8：前三图是误差或准确率曲线，后五图是分离、重照明及交换示例，未见独立方法框架图。仅局部图注核验，不计阅读全文。",
+        "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Zheng_Illumination_and_Reflectance_2015_CVPR_paper.pdf",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "rlphcs-2015",
+      "shortTitle": "RLPHCS",
+      "title": "Reweighted Laplace Prior Based Hyperspectral Compressive Sensing for Unknown Sparsity",
+      "authors": "Lei Zhang, Wei Wei, Yanning Zhang, Chunna Tian, Fei Li",
+      "year": 2015,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/CVPR.2015.7298840",
+      "representation": "RLPHCS",
+      "tags": [
+        "spectral-reconstruction",
+        "learned-statistical-priors"
+      ],
+      "summary": "以重加权 Laplace 先验和潜变量 Bayes 模型，在变分框架联合推断稀疏信号、先验和噪声。",
+      "input": "高光谱的少量线性压缩测量及测量/变换矩阵",
+      "output": "恢复的高光谱数据",
+      "mechanism": "以重加权 Laplace 先验和潜变量 Bayes 模型，在变分框架联合推断稀疏信号、先验和噪声。",
+      "readingNote": "已读官方摘要并核验注明的局部图注；未阅读全文。预印本、代码/数据入口、资源许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zhang_Reweighted_Laplace_Prior_2015_CVPR_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Zhang_2015_CVPR,\nauthor = {Zhang, Lei and Wei, Wei and Zhang, Yanning and Tian, Chunna and Li, Fei},\ntitle = {Reweighted Laplace Prior Based Hyperspectral Compressive Sensing for Unknown Sparsity},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2015}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "learned-statistical-priors"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学高光谱数据及其波长维；普通新增只进入总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在未知稀疏度和噪声条件下重建压缩高光谱数据？",
+        "datasets": "官方摘要说明三个高光谱数据集；具体名称、预处理和划分待全文核验。",
+        "experimentSetting": "从测量学习重加权 Laplace 先验参数，统一信号恢复、先验学习与噪声估计；具体采样与比较设置待核验。",
+        "conclusions": "作者摘要报告三个数据集重建改善；当前未复核数值。",
+        "limitations": "测量矩阵、变换域稀疏性和噪声假设的适用范围待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zhang_Reweighted_Laplace_Prior_2015_CVPR_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要及 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份",
+              "如何在未知稀疏度和噪声条件下重建压缩高光谱数据？",
+              "作者摘要报告三个数据集重建改善；当前未复核数值。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/CVPR.2015.7298840",
+            "checkedAt": "2026-10-08",
+            "level": "出版社 DOI 注册元数据，与 CVF 作者/题名及原文页码核对",
+            "supports": [
+              "DOI、作者、正式会议年份与页码"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Zhang_Reweighted_Laplace_Prior_2015_CVPR_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF 第 3 页局部原图及完整图注",
+            "supports": [
+              "Figure 2 — RLPHCS 层次概率模型",
+              "重加权 Laplace 先验、信号、测量及噪声变量的层次关系。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "rlphcs-2015-cvpr2015",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Zhang_Reweighted_Laplace_Prior_2015_CVPR_paper.html",
+            "year": 2015,
+            "relation": "采用 CVPR 2015 正式版；预印本及后续扩展关系待核验。",
+            "doi": "10.1109/CVPR.2015.7298840"
+          }
+        ],
+        "methodFamilyId": "rlphcs-2015"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Zhang_Reweighted_Laplace_Prior_2015_CVPR_paper.pdf",
+          "figureLabel": "Figure 2 — RLPHCS 层次概率模型",
+          "page": 3,
+          "caption": "重加权 Laplace 先验、信号、测量及噪声变量的层次关系。",
+          "verificationNote": "人工核验原始图形、图号、页码与完整图注；PDF 裁切，未重绘；局部阅读不计阅读全文。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              46,
+              69,
+              290,
+              161
+            ]
+          },
+          "path": "figures/rlphcs-2015/framework.png",
+          "width": 488,
+          "height": 184,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "39ed08bc975e0e189cc90811e4c51d8cb8f54ca3d10cf712d1b0ce3d0937897b",
+          "attribution": "Lei Zhang, Wei Wei, Yanning Zhang, Chunna Tian, Fei Li · CVPR 2015"
+        }
+      ]
+    },
+    {
+      "id": "bayesian-hsi-sr-2015",
+      "shortTitle": "Bayesian HSI SR",
+      "title": "Bayesian Sparse Representation for Hyperspectral Image Super Resolution",
+      "authors": "Naveed Akhtar, Faisal Shafait, Ajmal Mian",
+      "year": 2015,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/CVPR.2015.7298986",
+      "representation": "Bayesian HSI SR",
+      "tags": [
+        "spatial-super-resolution",
+        "learned-statistical-priors",
+        "sparse-dictionary-learning"
+      ],
+      "summary": "推断材料光谱及比例分布，估计并变换字典，编码高分辨观测后构建高分辨 HSI。",
+      "input": "高空间分辨图像与低空间分辨高光谱图像",
+      "output": "高空间分辨高光谱图像",
+      "mechanism": "推断材料光谱及比例分布，估计并变换字典，编码高分辨观测后构建高分辨 HSI。",
+      "readingNote": "已读官方摘要并核验注明的局部图注；未阅读全文。预印本、代码/数据入口、资源许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2015/html/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Akhtar_2015_CVPR,\nauthor = {Akhtar, Naveed and Shafait, Faisal and Mian, Ajmal},\ntitle = {Bayesian Sparse Representation for Hyperspectral Image Super Resolution},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2015}\n}",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "learned-statistical-priors",
+          "sparse-dictionary-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学高光谱数据及其波长维；普通新增只进入总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何融合高空间分辨图像与低空间分辨 HSI，获得高分辨 HSI？",
+        "datasets": "摘要说明两个公开地面高光谱数据库及一幅遥感图像；名称、规模和拆分待全文核验。",
+        "experimentSetting": "Beta process 非参数 Bayes 字典学习与稀疏编码；局部 Fig. 2 支持字典光谱变换和输出构建，完整实验待核验。",
+        "conclusions": "作者摘要报告所比较数据上优于已有方法；完整数值、退化与公平性待核验。",
+        "limitations": "光谱混合、稀疏表示、空间配准和高分辨通道响应约束待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要及 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份",
+              "如何融合高空间分辨图像与低空间分辨 HSI，获得高分辨 HSI？",
+              "作者摘要报告所比较数据上优于已有方法；完整数值、退化与公平性待核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/CVPR.2015.7298986",
+            "checkedAt": "2026-10-08",
+            "level": "出版社 DOI 注册元数据，与 CVF 作者/题名及原文页码核对",
+            "supports": [
+              "DOI、作者、正式会议年份与页码"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF 第 2 页局部原图及完整图注",
+            "supports": [
+              "Figure 2 — Bayes 光谱空间超分辨流程",
+              "学习字典和支撑分布、字典响应变换、Bayes 稀疏编码与高分辨 HSI 构建。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "bayesian-hsi-sr-2015-cvpr2015",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.html",
+            "year": 2015,
+            "relation": "采用 CVPR 2015 正式版；预印本及后续扩展关系待核验。",
+            "doi": "10.1109/CVPR.2015.7298986"
+          }
+        ],
+        "methodFamilyId": "bayesian-hsi-sr-2015"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Akhtar_Bayesian_Sparse_Representation_2015_CVPR_paper.pdf",
+          "figureLabel": "Figure 2 — Bayes 光谱空间超分辨流程",
+          "page": 2,
+          "caption": "学习字典和支撑分布、字典响应变换、Bayes 稀疏编码与高分辨 HSI 构建。",
+          "verificationNote": "人工核验原始图形、图号、页码与完整图注；PDF 裁切，未重绘；局部阅读不计阅读全文。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              45,
+              68,
+              550,
+              339
+            ]
+          },
+          "path": "figures/bayesian-hsi-sr-2015/framework.png",
+          "width": 1010,
+          "height": 542,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "518d23268a1fbd05d76cc488745f3e00a44120565f1b267c8762ebb3d1173a96",
+          "attribution": "Naveed Akhtar, Faisal Shafait, Ajmal Mian · CVPR 2015"
+        }
+      ]
+    },
+    {
+      "id": "dual-camera-hshs-2015",
+      "shortTitle": "Dual-Camera HSHS",
+      "title": "High-Speed Hyperspectral Video Acquisition With a Dual-Camera Architecture",
+      "authors": "Lizhi Wang, Zhiwei Xiong, Dahua Gao, Guangming Shi, Wenjun Zeng, Feng Wu",
+      "year": 2015,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/CVPR.2015.7299128",
+      "representation": "Dual-Camera HSHS",
+      "tags": [
+        "hyperspectral-video-acquisition",
+        "spectral-instrument-design",
+        "computational-imaging",
+        "sparse-dictionary-learning"
+      ],
+      "summary": "全色高速相机与低速 CASSI 分支联合测量，学习三维字典并计算重建高光谱视频。",
+      "input": "高速全色视频与同步低速高光谱视频",
+      "output": "高空间/光谱分辨的高帧率高光谱视频",
+      "mechanism": "全色高速相机与低速 CASSI 分支联合测量，学习三维字典并计算重建高光谱视频。",
+      "readingNote": "已读官方摘要并核验注明的局部图注；未阅读全文。预印本、代码/数据入口、资源许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2015/html/Wang_High-Speed_Hyperspectral_Video_2015_CVPR_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Wang_2015_CVPR,\nauthor = {Wang, Lizhi and Xiong, Zhiwei and Gao, Dahua and Shi, Guangming and Zeng, Wenjun and Wu, Feng},\ntitle = {High-Speed Hyperspectral Video Acquisition With a Dual-Camera Architecture},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2015}\n}",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-video-acquisition",
+          "spectral-instrument-design",
+          "computational-imaging",
+          "sparse-dictionary-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学高光谱数据及其波长维；普通新增只进入总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以双相机联合测量提高高光谱视频帧率？",
+        "datasets": "作者摘要报告原型视频实验；场景、样本、完整光谱/时间采样设置待全文核验。",
+        "experimentSetting": "同步采集高速全色与低速高光谱视频；从全色视频学习三维字典，再联合恢复空间—波长—时间视频。",
+        "conclusions": "作者摘要报告最高 100 fps 且弱入射光下取得可用结果；此为作者报告，未独立复核画质或完整帧率条件。",
+        "limitations": "对准、同步、字典稀疏性和运动条件待全文核验；发现 TPAMI 后续稿，作者名单变化，扩展关系待原文核实。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Wang_High-Speed_Hyperspectral_Video_2015_CVPR_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要及 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份",
+              "如何以双相机联合测量提高高光谱视频帧率？",
+              "作者摘要报告最高 100 fps 且弱入射光下取得可用结果；此为作者报告，未独立复核画质或完整帧率条件。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/CVPR.2015.7299128",
+            "checkedAt": "2026-10-08",
+            "level": "出版社 DOI 注册元数据，与 CVF 作者/题名及原文页码核对",
+            "supports": [
+              "DOI、作者、正式会议年份与页码"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Wang_High-Speed_Hyperspectral_Video_2015_CVPR_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF 第 3 页局部原图及完整图注",
+            "supports": [
+              "Figure 2 — 双相机高光谱视频数据流",
+              "全色与 CASSI 同步观测、字典学习与空间—波长—时间视频恢复。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dual-camera-hshs-2015-cvpr2015",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Wang_High-Speed_Hyperspectral_Video_2015_CVPR_paper.html",
+            "year": 2015,
+            "relation": "采用 CVPR 2015 正式版；预印本及后续扩展关系待核验。",
+            "doi": "10.1109/CVPR.2015.7299128"
+          }
+        ],
+        "methodFamilyId": "dual-camera-hshs-2015"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Wang_High-Speed_Hyperspectral_Video_2015_CVPR_paper.pdf",
+          "figureLabel": "Figure 2 — 双相机高光谱视频数据流",
+          "page": 3,
+          "caption": "全色与 CASSI 同步观测、字典学习与空间—波长—时间视频恢复。",
+          "verificationNote": "人工核验原始图形、图号、页码与完整图注；PDF 裁切，未重绘；局部阅读不计阅读全文。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              45,
+              70,
+              550,
+              245
+            ]
+          },
+          "path": "figures/dual-camera-hshs-2015/framework.png",
+          "width": 1010,
+          "height": 350,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "4c18fad46fb9b67aea53f468da4cea895673ea09f6d8ac7f5a37d25c21f89511",
+          "attribution": "Lizhi Wang, Zhiwei Xiong, Dahua Gao, Guangming Shi, Wenjun Zeng, Feng Wu · CVPR 2015"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -18690,7 +19146,8 @@
         "ircut-spectral-2021",
         "pnp-dip-2021",
         "semantic-unsupervised-sr-2021",
-        "learned-hs-depth"
+        "learned-hs-depth",
+        "rlphcs-2015"
       ],
       "history": [
         {
@@ -18716,7 +19173,8 @@
         "dgsm-sci-2021",
         "sci-tv-ffdnet-2021",
         "pnp-dip-2021",
-        "learned-hs-depth"
+        "learned-hs-depth",
+        "dual-camera-hshs-2015"
       ],
       "history": [
         {
@@ -18736,7 +19194,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
-        "hypertransformer-pansharpening"
+        "hypertransformer-pansharpening",
+        "bayesian-hsi-sr-2015"
       ],
       "history": [
         {
@@ -18820,7 +19279,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据本轮早期官方摘要与局部方法形成，边界待更多文献复核。",
       "evidencePaperIds": [
-        "reflective-fluorescent-relighting"
+        "reflective-fluorescent-relighting",
+        "irss-lowrank-2015"
       ],
       "history": [
         {
@@ -19102,7 +19562,8 @@
         "sd-cassi-2008",
         "ircut-spectral-2021",
         "event-bispectral-photometry",
-        "learned-hs-depth"
+        "learned-hs-depth",
+        "dual-camera-hshs-2015"
       ],
       "history": [
         {
@@ -19182,7 +19643,9 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
       "evidencePaperIds": [
-        "dgsm-sci-2021"
+        "dgsm-sci-2021",
+        "rlphcs-2015",
+        "bayesian-hsi-sr-2015"
       ],
       "history": [
         {
@@ -19344,7 +19807,8 @@
       "createdAt": "2026-10-08",
       "rationale": "由 ICCV 2021 官方摘要与注明的局部原文证据形成；边界随更多论文复核。",
       "evidencePaperIds": [
-        "multispectral-illumination-unrolling-2021"
+        "multispectral-illumination-unrolling-2021",
+        "irss-lowrank-2015"
       ],
       "history": [
         {
@@ -19391,6 +19855,87 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "本批论文提供对应任务或方法的直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "low-rank-matrix-factorization",
+      "name": "低秩矩阵分解",
+      "dimension": "method",
+      "definition": "利用低秩矩阵结构分离光谱成分或求解光谱数据逆问题。",
+      "status": "provisional",
+      "color": "#92a1a9",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
+      "evidencePaperIds": [
+        "irss-lowrank-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批研究直接支持对应任务或方法。"
+        }
+      ]
+    },
+    {
+      "id": "sparse-dictionary-learning",
+      "name": "稀疏字典学习",
+      "dimension": "method",
+      "definition": "从光谱或引导观测学习字典与稀疏表示，用于光谱数据恢复。",
+      "status": "provisional",
+      "color": "#92a1a9",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
+      "evidencePaperIds": [
+        "bayesian-hsi-sr-2015",
+        "dual-camera-hshs-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批研究直接支持对应任务或方法。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-video-acquisition",
+      "name": "高光谱视频采集",
+      "dimension": "task",
+      "definition": "采集或恢复空间、波长和时间共同组成的动态高光谱数据。",
+      "status": "provisional",
+      "color": "#92a1a9",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
+      "evidencePaperIds": [
+        "dual-camera-hshs-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批研究直接支持对应任务或方法。"
+        }
+      ]
+    },
+    {
+      "id": "multimodal-spectral-correspondence",
+      "name": "多模态与跨光谱匹配",
+      "dimension": "task",
+      "definition": "建立不同模态或波长图像间的稠密对应；具体通道关系逐篇注明。",
+      "status": "provisional",
+      "color": "#92a1a9",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
+      "evidencePaperIds": [
+        "dasc-correspondence"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批研究直接支持对应任务或方法。"
         }
       ]
     }
