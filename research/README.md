@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-07。网站当前收录 185 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-07。网站当前收录 187 篇论文、6 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -79,3 +79,7 @@ IGARSS 2023 的 Coupled Graph Convolution Network for Cross-Scene Multispectral 
 补入已在上轮发现、已完成全文核验的 ECCV 2016 Shape from Water，并同步保存作者 Fig. 5 系统原图。两个近红外波段用于真实水下深度，标相关，不称高光谱采集；TPAMI 后续版 2020 在线先行与 2021 正式卷年分开，期刊候选图仍待取得。新增 PhotoniX 串级单像素光谱/飞行时间候选只记录、不展开；IJCAI STAR-Net 已读正式全文，其 spectral 指傅里叶频率，排除主库。用户要求现有补图优先，完成后继续扩充，每篇新增论文同时找框架图。证据见 `sources/water-depth-and-framework-retry-2026-10-06.json`。
 
 核验 IGARSS 2024 Towards 3D Hyperspectral Imaging 的会议程序、作者机构原始摘要与出版社 Crossref，补入真实三维 hyperclouds 路线；核验等级仅为机构摘要，未推断具体网络或独立方法创新。全文入口受限，框架记 needs_access。IGARSS 2025 LiDAR-guided fast multimodal unmixing 已核对正式 DOI 和 7347–7351 页，官方全文入口实际需要会议注册登录，继续待摘要。MaxEnt TGRS 条目已有图，补核验正式全文及三波长输入；会议候选不重复新增，待版本关系核验。新发现 Multi-Sensor Multi-Stream 论文的真实场所为 WHISPERS 2024，而非 IGARSS 2025；专业场所与原始摘要仍待核验。证据见 sources/igarss-hypercloud-and-unmix-review-2026-10-07.json。
+
+## MS-ALS 与 IGARSS LiDAR 候选核验（2026-10-07）
+
+新增 ISPRS JPRS 2026 的国际树种分类基准 msals-tree-benchmark 与配套数据论文 msals-species-data（通过 arXiv v2 发现，已正式发表于 ISPRS Open JPRS；标专业期刊，不冒充 JPRS）。两篇共用 MS-ALS-SPECIES，6,326 个单木段、九树种、每系统三波长，列相关研究。新增第六个数据资源入口；作者与出版社声明公开 Zenodo DOI，本次 API 超时，不声称已下载核验许可。数据论文 Figure 3(a) 标注平台架构已保存；基准 34 页机构正式 PDF 已逐页检查，独立框架未见，记 no_framework，只针对正文版本。基准存在更正稿 PII S0924271626000742，内容 403 待核验，未引用最佳精度数值。2023 两个 IGARSS LiDAR 候选补正式 DOI 和作者，仍缺原始摘要；森林胁迫会议候选关联已收录 RSE 论文，待扩展关系。2025 波形候选的 Crossref 第一搜索结果为另一作者组合的 SSRN 论文，不合并 DOI。证据见 sources/msals-and-igarss-lidar-review-2026-10-07.json。

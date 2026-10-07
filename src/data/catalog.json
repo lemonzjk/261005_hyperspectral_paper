@@ -9167,6 +9167,102 @@
         "sourceUrl": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10642828",
         "checkedAt": "2026-10-07"
       }
+    },
+    {
+      "id": "msals-tree-benchmark",
+      "shortTitle": "MS-ALS Benchmark",
+      "title": "Multispectral airborne laser scanning for tree species classification: A benchmark of machine learning and deep learning algorithms",
+      "authors": "Josef Taher, Eric Hyyppä, Matti Hyyppä, Klaara Salolahti, Xiaowei Yu, Leena Matikainen, Antero Kukko, Matti Lehtomäki, Harri Kaartinen, Sopitta Thurachen, Paula Litkey, Ville Luoma, Markus Holopainen, Gefei Kong, Hongchao Fan, Petri Rönnholm, Matti Vaaja, Antti Polvivaara, Samuli Junttila, Mikko Vastaranta, Stefano Puliti, Rasmus Astrup, Joel Kostensalo, Mari Myllymäki, Maksymilian Kulicki, Krzysztof Stereńczak, Raul de Paula Pires, Ruben Valbuena, Juan Pedro Carbonell-Rivera, Jesús Torralba, Yi-Chen Chen, Lukas Winiwarter, Markus Hollaus, Gottfried Mandlburger, Narges Takhtkeshha, Fabio Remondino, Maciej Lisiewicz, Bartłomiej Kraszewski, Xinlian Liang, Jianchang Chen, Eero Ahokas, Kirsi Karila, Eugeniu Vezeteu, Petri Manninen, Roope Näsi, Heikki Hyyti, Siiri Pyykkönen, Peilun Hu, Juha Hyyppä",
+      "year": 2026,
+      "venue": "ISPRS JPRS",
+      "track": "understanding",
+      "representation": "多光谱三维单木点云",
+      "scope": "相关研究",
+      "tags": [
+        "树种分类",
+        "多光谱 LiDAR",
+        "国际基准",
+        "类别不均衡"
+      ],
+      "summary": "比较机器学习、三维点云网络和投影图像网络在九种树种上的分类表现，分析激光波长、点密度与训练样本规模的作用。",
+      "input": "芬兰 Espoonlahti 的 6,326 个已分割单木点云及现场树种标签；HeliALS 为 1550/905/532 nm，Optech Titan 为 1550/1064/532 nm。",
+      "output": "单木树种预测与统一基准评估，以及点密度、训练规模和错误分割影响的分析。",
+      "mechanism": "现场众包核验参考标签，在共同划分下比较传统特征分类器、点云深度模型及点云投影图像模型；以五折交叉验证分析采样密度和训练规模。",
+      "readingNote": "Aalto 公开正式版 PDF 共 34 页（含机构封面与空白页），正式文章 ISPRS JPRS 233:278–309，49 位作者由出版社 Crossref 核对。已有树木分段输入，不是从完整森林直接完成实例检测；两套传感器中间波长分别为 905 和 1064 nm，不能写成完全相同三通道。连续高光谱不在实验输入中，故标相关研究。与 MS-ALS-SPECIES 数据论文共用数据，不视为两个独立基准。出版社另列 corrigendum（PII S0924271626000742），本次正文请求 403，尚未核验更正内容；不引用未复核的最佳精度数值。",
+      "paper": "https://doi.org/10.1016/j.isprsjprs.2026.01.031",
+      "doi": "10.1016/j.isprsjprs.2026.01.031",
+      "verificationLevel": "institutional_fulltext_and_publisher_metadata",
+      "verifiedAt": "2026-10-07",
+      "sources": [
+        {
+          "url": "https://aaltodoc.aalto.fi/bitstreams/ac27d045-016d-4e2e-85b6-4fa3ebf47fe0/download",
+          "note": "机构公开正式全文，含 32 页文章及两页封面/空白；核验输入、流程及原文全部图表。"
+        }
+      ],
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{msalstreebenchmark,\n  title={Multispectral airborne laser scanning for tree species classification: A benchmark of machine learning and deep learning algorithms},\n  author={Josef Taher and Eric Hyyppä and Matti Hyyppä and Klaara Salolahti and Xiaowei Yu and Leena Matikainen and Antero Kukko and Matti Lehtomäki and Harri Kaartinen and Sopitta Thurachen and Paula Litkey and Ville Luoma and Markus Holopainen and Gefei Kong and Hongchao Fan and Petri Rönnholm and Matti Vaaja and Antti Polvivaara and Samuli Junttila and Mikko Vastaranta and Stefano Puliti and Rasmus Astrup and Joel Kostensalo and Mari Myllymäki and Maksymilian Kulicki and Krzysztof Stereńczak and Raul de Paula Pires and Ruben Valbuena and Juan Pedro Carbonell-Rivera and Jesús Torralba and Yi-Chen Chen and Lukas Winiwarter and Markus Hollaus and Gottfried Mandlburger and Narges Takhtkeshha and Fabio Remondino and Maciej Lisiewicz and Bartłomiej Kraszewski and Xinlian Liang and Jianchang Chen and Eero Ahokas and Kirsi Karila and Eugeniu Vezeteu and Petri Manninen and Roope Näsi and Heikki Hyyti and Siiri Pyykkönen and Peilun Hu and Juha Hyyppä},\n  year={2026},\n  journal={ISPRS JPRS},\n  url={https://doi.org/10.1016/j.isprsjprs.2026.01.031},\n  doi={10.1016/j.isprsjprs.2026.01.031}\n}",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "已核验机构公开正式版 PDF 34 页（两页封面/空白及 32 页文章），逐页浏览并复核全部图注：主文 Fig.1–14 及附录图为地图、扫描仪照片、树木/界面数据示例、强度分布、精度曲线和混淆矩阵；方法由正文和 Tables 2–3 比较表描述，没有独立流程或网络框架。结论只针对该正式正文 PDF，不覆盖尚未取得的 graphical abstract 或 corrigendum；未把扫描仪照片、分类结果或另一篇数据论文 Fig.3(a) 当框架。",
+        "sourceUrl": "https://aaltodoc.aalto.fi/bitstreams/ac27d045-016d-4e2e-85b6-4fa3ebf47fe0/download",
+        "checkedAt": "2026-10-07"
+      }
+    },
+    {
+      "id": "msals-species-data",
+      "shortTitle": "MS-ALS-SPECIES",
+      "title": "Multispectral airborne laser scanning dataset for tree species classification: MS-ALS-SPECIES",
+      "authors": "Matti Hyyppä, Klaara Salolahti, Eric Hyyppä, Xiaowei Yu, Josef Taher, Leena Matikainen, Matti Lehtomäki, Paula Litkey, Teemu Hakala, Harri Kaartinen, Juha Hyyppä, Antero Kukko",
+      "year": 2026,
+      "venue": "ISPRS Open JPRS",
+      "publicationName": "ISPRS Open Journal of Photogrammetry and Remote Sensing",
+      "venueTier": "specialist",
+      "track": "capture",
+      "representation": "多光谱三维点云数据与标注",
+      "scope": "相关研究",
+      "tags": [
+        "公开数据",
+        "三波长 LiDAR",
+        "树种标注",
+        "数据质量"
+      ],
+      "summary": "公开两套三波长机载 LiDAR 的单木点云与现场核验树种标签，并用众包平台辅助采集和复核参考数据。",
+      "input": "两套机载三波长 LiDAR、预先分割的树木边界、背景地图与现场树种调查；共 6,326 个树木段、九种树种。",
+      "output": "可供树种分类的 MS-ALS-SPECIES 点云数据、参考标签与质量标记，以及筛选较干净分段后的分类分析。",
+      "mechanism": "采集并配准 HeliALS 和 Optech Titan 点云，利用网页众包平台结合位置、树木边界和高度信息完成现场标注及复核；提供单木数据和强度属性，再检验分割质量对分类的影响。",
+      "readingNote": "用户允许 arXiv 补充阅读，据 arXiv:2604.24370v2（2026-09-02，30 页）全文发现并核验；出版社 Crossref 确认正式版 ISPRS Open Journal of Photogrammetry and Remote Sensing 21:100142（2026-08），按真实场所标专业期刊，不能冒称 ISPRS JPRS 顶刊。HeliALS 中间波长 905 nm，Titan 为 1064 nm；两者都是三个波长，不是连续高光谱。与 Taher 等 ISPRS JPRS 2026 国际基准共用数据，数据论文不算独立新模型。作者公开声明 Zenodo DOI 10.5281/zenodo.17077255；本次 Zenodo API 读取超时，未下载数据、核验压缩包或许可。",
+      "paper": "https://arxiv.org/abs/2604.24370v2",
+      "doi": "10.1016/j.ophoto.2026.100142",
+      "verificationLevel": "author_fulltext_and_publisher_metadata",
+      "verifiedAt": "2026-10-07",
+      "citation": "@article{msalsspeciesdata,\n  title={Multispectral airborne laser scanning dataset for tree species classification: MS-ALS-SPECIES},\n  author={Matti Hyyppä and Klaara Salolahti and Eric Hyyppä and Xiaowei Yu and Josef Taher and Leena Matikainen and Matti Lehtomäki and Paula Litkey and Teemu Hakala and Harri Kaartinen and Juha Hyyppä and Antero Kukko},\n  journal={ISPRS Open Journal of Photogrammetry and Remote Sensing},\n  volume={21},\n  pages={100142},\n  year={2026},\n  doi={10.1016/j.ophoto.2026.100142},\n  url={https://arxiv.org/abs/2604.24370v2}\n}\n",
+      "publicationStatus": "published",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2604.24370v2",
+          "figureLabel": "Figure 3(a)",
+          "caption": "MS-ALS-SPECIES 现场树种标注平台的软件架构：点云分段边界与冠层高度图、背景地图和树木属性数据库，经 TileServer、Django 与地图界面辅助现场标注及复核。仅为参考标签采集子系统，不是三维分类网络。",
+          "verificationNote": "核对 arXiv v2 全文第 7 页 Figure 3 图注与完整子图 (a)，保留所有模块、箭头与说明；排除 (b) 现场照片和手机界面。该图属于数据论文，不复用为 Taher 基准论文的框架。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              203,
+              141,
+              758,
+              514
+            ]
+          },
+          "path": "figures/msals-species-data/framework-annotation.png",
+          "width": 555,
+          "height": 373,
+          "verifiedAt": "2026-10-07",
+          "sha256": "28925a16654b3fcc7ab83940ef8b45bdd0762751aaefd153143bffab57f16755",
+          "attribution": "Matti Hyyppä, Klaara Salolahti, Eric Hyyppä, Xiaowei Yu, Josef Taher, Leena Matikainen, Matti Lehtomäki, Paula Litkey, Teemu Hakala, Harri Kaartinen, Juha Hyyppä, Antero Kukko · ISPRS Open JPRS 2026"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -9307,6 +9403,33 @@
       "paperIds": [
         "rgb-ms-matching"
       ]
+    },
+    {
+      "id": "msals-species",
+      "name": "MS-ALS-SPECIES",
+      "subtitle": "Multispectral airborne single-tree point clouds",
+      "type": "多光谱三维点云",
+      "description": "芬兰 Espoonlahti 的现场核验单木点云，两套三波长机载扫描系统包含几何、强度和树种标签。HeliALS 使用 1550/905/532 nm，Optech Titan 使用 1550/1064/532 nm；不是连续高光谱数据。",
+      "facts": [
+        {
+          "label": "树木段",
+          "value": "6,326"
+        },
+        {
+          "label": "树种",
+          "value": "9"
+        },
+        {
+          "label": "激光波长",
+          "value": "每系统 3 个"
+        }
+      ],
+      "paperIds": [
+        "msals-tree-benchmark",
+        "msals-species-data"
+      ],
+      "source": "https://doi.org/10.5281/zenodo.17077255",
+      "availability": "作者与出版社明确给出公开 Zenodo 入口；本次 API 读取超时，未下载数据或核验文件与许可。"
     }
   ]
 }
