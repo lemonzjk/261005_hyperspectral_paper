@@ -1194,20 +1194,41 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
+        "categoryIds": [
+          "joint-spectral-depth",
+          "spectral-instrument-design"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "标准RGB相机与投影仪多光谱照明估计表面光谱反射率及三维几何；摘要不证明稠密高光谱采集。原三维专题事实保持。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用移动投影仪与RGB相机低成本获取稠密几何及光谱反射率？",
         "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
+        "experimentSetting": "官方摘要报告真实物体实验；照明波段、几何精度和反射率指标待查。",
+        "conclusions": "作者摘要报告多视图结构光/SfM与考虑几何的光谱估计可联合恢复几何和反射率；具体精度未独立复核。",
         "limitations": "待核验",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Li_Pro-Cam_SSfM_Projector-Camera_System_for_Structure_and_Spectral_Reflectance_From_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "官方摘要与完整四作者BibTeX；非阅读全文",
+            "supports": [
+              "ICCV2019与题名作者",
+              "投影仪多光谱成像、RGB相机、结构光/SfM与光谱反射率恢复"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "procam-ssfm-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Li_Pro-Cam_SSfM_Projector-Camera_System_for_Structure_and_Spectral_Reflectance_From_ICCV_2019_paper.html",
+            "year": 2019,
+            "relation": "原专题条目去重，官方摘要复核总库关系；其他版本待查。"
+          }
+        ],
         "methodFamilyId": "procam-ssfm"
       }
     },
@@ -21516,6 +21537,817 @@
           "attribution": "Yan Jia, Yinqiang Zheng, Lin Gu, Art Subpa-Asa, Antony Lam, Yoichi Sato, Imari Sato · ICCV 2017"
         }
       ]
+    },
+    {
+      "id": "afd-net-2019",
+      "shortTitle": "AFD-Net",
+      "title": "AFD-Net: Aggregated Feature Difference Learning for Cross-Spectral Image Patch Matching",
+      "authors": "Dou Quan, Xuefeng Liang, Shuang Wang, Shaowei Wei, Yanfeng Li, Ning Huyan, Licheng Jiao",
+      "year": 2019,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2019.00311",
+      "representation": "AFD-Net",
+      "tags": [
+        "multimodal-spectral-correspondence"
+      ],
+      "summary": "利用实例/批归一化提取跨域特征，聚合多层特征差异，以大间隔余弦损失训练匹配度量。",
+      "input": "可见光与近红外图像块对。",
+      "output": "匹配/非匹配判定。",
+      "mechanism": "利用实例/批归一化提取跨域特征，聚合多层特征差异，以大间隔余弦损失训练匹配度量。",
+      "readingNote": "已读官方摘要与指定局部原图；未阅读全文。代码/数据仅在摘要与PDF链接中查找，未见明确可核验仓库；完整资源与许可待查。",
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Quan_AFD-Net_Aggregated_Feature_Difference_Learning_for_Cross-Spectral_Image_Patch_Matching_ICCV_2019_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Quan_2019_ICCV,\nauthor = {Quan, Dou and Liang, Xuefeng and Wang, Shuang and Wei, Shaowei and Li, Yanfeng and Huyan, Ning and Jiao, Licheng},\ntitle = {AFD-Net: Aggregated Feature Difference Learning for Cross-Spectral Image Patch Matching},\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\nmonth = {October},\nyear = {2019}\n}",
+      "library": {
+        "categoryIds": [
+          "multimodal-spectral-correspondence"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "可见光与近红外块匹配，属于明确关联的多光谱工作；不是稠密高光谱成像。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何减少可见光与近红外图像块外观差异，提高匹配判别力？",
+        "datasets": "第5页图注核验VIS/NIR块对；数据集具体名称、规模和划分待阅读全文核验。",
+        "experimentSetting": "已核验官方摘要与PDF第3页原图；完整参数、数据划分、指标和性能数字待复核。",
+        "conclusions": "作者摘要报告所提方法的实验有效性；性能优势数值及完整实验协议未独立复核。",
+        "limitations": "适用假设、跨传感器/场景泛化、噪声与复现成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Quan_AFD-Net_Aggregated_Feature_Difference_Learning_for_Cross-Spectral_Image_Patch_Matching_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者及ICCV2019",
+              "利用实例/批归一化提取跨域特征，聚合多层特征差异，以大间隔余弦损失训练匹配度量。",
+              "可见光与近红外块匹配，属于明确关联的多光谱工作；不是稠密高光谱成像。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=AFD-Net%3A+Aggregated+Feature+Difference+Learning+for+Cross-Spectral+Image+Patch+Matching&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位DOI；非年度完整检索",
+            "supports": [
+              "DOI 10.1109/iccv.2019.00311；页码3017-3026；2019年一致；完整作者顺序一致",
+              "精确题名一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Quan_AFD-Net_Aggregated_Feature_Difference_Learning_for_Cross-Spectral_Image_Patch_Matching_ICCV_2019_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第3页原图及注明局部页；非阅读全文",
+            "supports": [
+              "Figure 2",
+              "域不变特征提取、特征差异聚合与度量网络的完整匹配框架。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "afd-net-2019-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Quan_AFD-Net_Aggregated_Feature_Difference_Learning_for_Cross-Spectral_Image_Patch_Matching_ICCV_2019_paper.html",
+            "year": 2019,
+            "doi": "10.1109/iccv.2019.00311",
+            "relation": "以ICCV2019正式版为记录依据；预印本/期刊关联与版本差异待核验。"
+          }
+        ],
+        "methodFamilyId": "afd-net-2019"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Quan_AFD-Net_Aggregated_Feature_Difference_Learning_for_Cross-Spectral_Image_Patch_Matching_ICCV_2019_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "域不变特征提取、特征差异聚合与度量网络的完整匹配框架。",
+          "verificationNote": "同名ICCV2019原文PDF第3页原图和完整图注；PDF裁切未重绘。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              173,
+              1524,
+              764
+            ]
+          },
+          "path": "figures/afd-net-2019/framework.png",
+          "width": 1398,
+          "height": 591,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "8aff072f0c37003b9ece0c121a2fe46aa9873a41cae63c3a0beae12dab649b3e",
+          "attribution": "Dou Quan, Xuefeng Liang, Shuang Wang, Shaowei Wei, Yanfeng Li, Ning Huyan, Licheng Jiao · ICCV 2019"
+        }
+      ]
+    },
+    {
+      "id": "lambda-net-2019",
+      "shortTitle": "λ-Net",
+      "title": "l-Net: Reconstruct Hyperspectral Images From a Snapshot Measurement",
+      "authors": "Xin Miao, Xin Yuan, Yunchen Pu, Vassilis Athitsos",
+      "year": 2019,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2019.00416",
+      "representation": "λ-Net",
+      "tags": [
+        "spectral-reconstruction",
+        "generative-spectral-reconstruction"
+      ],
+      "summary": "重建阶段结合自注意力生成对抗网络和分层通道重建，再以较浅U-Net逐通道细化；三维立方是空间–波长，不是几何深度。",
+      "input": "单幅编码快照测量及按波长偏移的掩模。",
+      "output": "重建高光谱数据立方。",
+      "mechanism": "重建阶段结合自注意力生成对抗网络和分层通道重建，再以较浅U-Net逐通道细化；三维立方是空间–波长，不是几何深度。",
+      "readingNote": "已读官方摘要与指定局部原图；未阅读全文。CVF题名写l-Net，Crossref写lambda-Net，PDF正文写λ-net；四作者顺序、年份和4058-4068页一致，保留各来源原题名。CVF摘要与PDF摘要的性能表述边界有差别，未混用数字。作者原代码链接API返回404，不能声称可复现。",
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Miao_l-Net_Reconstruct_Hyperspectral_Images_From_a_Snapshot_Measurement_ICCV_2019_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Miao_2019_ICCV,\nauthor = {Miao, Xin and Yuan, Xin and Pu, Yunchen and Athitsos, Vassilis},\ntitle = {l-Net: Reconstruct Hyperspectral Images From a Snapshot Measurement},\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\nmonth = {October},\nyear = {2019}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "generative-spectral-reconstruction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过两阶段生成模型提高快照高光谱恢复质量与速度？",
+        "datasets": "摘要报告仿真和实测数据；具体数据来源、插值、划分与实测条件待全文核验。",
+        "experimentSetting": "已核验官方摘要与PDF第2页原图；完整参数、数据划分、指标和性能数字待复核。",
+        "conclusions": "作者摘要报告所提方法的实验有效性；性能优势数值及完整实验协议未独立复核。",
+        "limitations": "适用假设、跨传感器/场景泛化、噪声与复现成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Miao_l-Net_Reconstruct_Hyperspectral_Images_From_a_Snapshot_Measurement_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者及ICCV2019",
+              "重建阶段结合自注意力生成对抗网络和分层通道重建，再以较浅U-Net逐通道细化；三维立方是空间–波长，不是几何深度。",
+              "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=l-Net%3A+Reconstruct+Hyperspectral+Images+From+a+Snapshot+Measurement&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位DOI；非年度完整检索",
+            "supports": [
+              "DOI 10.1109/iccv.2019.00416；页码4058-4068；2019年一致；完整作者顺序一致",
+              "CVF l-Net与Crossref lambda-Net题名变体、PDF λ-net核对"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Miao_l-Net_Reconstruct_Hyperspectral_Images_From_a_Snapshot_Measurement_ICCV_2019_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第2页原图及注明局部页；非阅读全文",
+            "supports": [
+              "Figure 2",
+              "SCI光学编码及自注意力生成、分层通道重建和细化两阶段流程。"
+            ]
+          },
+          {
+            "url": "https://api.github.com/repos/xinxinmiao/lambda-net",
+            "checkedAt": "2026-10-08",
+            "level": "作者资源访问记录；代码未运行，数据未下载",
+            "supports": [
+              "CVF题名写l-Net，Crossref写lambda-Net，PDF正文写λ-net；四作者顺序、年份和4058-4068页一致，保留各来源原题名。CVF摘要与PDF摘要的性能表述边界有差别，未混用数字。作者原代码链接API返回404，不能声称可复现。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "lambda-net-2019-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Miao_l-Net_Reconstruct_Hyperspectral_Images_From_a_Snapshot_Measurement_ICCV_2019_paper.html",
+            "year": 2019,
+            "doi": "10.1109/iccv.2019.00416",
+            "relation": "以ICCV2019正式版为记录依据；预印本/期刊关联与版本差异待核验。"
+          }
+        ],
+        "methodFamilyId": "lambda-net-2019"
+      },
+      "code": "https://github.com/xinxinmiao/lambda-net",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Miao_l-Net_Reconstruct_Hyperspectral_Images_From_a_Snapshot_Measurement_ICCV_2019_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "SCI光学编码及自注意力生成、分层通道重建和细化两阶段流程。",
+          "verificationNote": "同名ICCV2019原文PDF第2页原图和完整图注；PDF裁切未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              189,
+              1524,
+              974
+            ]
+          },
+          "path": "figures/lambda-net-2019/framework.png",
+          "width": 1398,
+          "height": 785,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "04817205a4e90abcafda4aee04e43d21ceca294b33fed8300ba23604a659d2e9",
+          "attribution": "Xin Miao, Xin Yuan, Yunchen Pu, Vassilis Athitsos · ICCV 2019"
+        }
+      ]
+    },
+    {
+      "id": "dbin-2019",
+      "shortTitle": "DBIN",
+      "title": "Deep Blind Hyperspectral Image Fusion",
+      "authors": "Wu Wang, Weihong Zeng, Yue Huang, Xinghao Ding, John Paisley",
+      "year": 2019,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2019.00425",
+      "representation": "DBIN",
+      "tags": [
+        "spatial-super-resolution",
+        "blind-hsi-fusion"
+      ],
+      "summary": "交替估计观测映射和融合恢复，以迭代反馈误差修正高分辨HSI，约束空间和光谱一致性。",
+      "input": "低空间分辨HSI与高空间分辨MSI；观测退化响应未知。",
+      "output": "高空间分辨HSI及估计的观测模型。",
+      "mechanism": "交替估计观测映射和融合恢复，以迭代反馈误差修正高分辨HSI，约束空间和光谱一致性。",
+      "readingNote": "已读官方摘要与指定局部原图；未阅读全文。代码/数据仅在摘要与PDF链接中查找，未见明确可核验仓库；完整资源与许可待查。",
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Deep_Blind_Hyperspectral_Image_Fusion_ICCV_2019_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Wang_2019_ICCV,\nauthor = {Wang, Wu and Zeng, Weihong and Huang, Yue and Ding, Xinghao and Paisley, John},\ntitle = {Deep Blind Hyperspectral Image Fusion},\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\nmonth = {October},\nyear = {2019}\n}",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "blind-hsi-fusion"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在未知空间/光谱退化响应下进行盲高光谱融合？",
+        "datasets": "官方摘要报告三个公开数据集；数据集名称、合成退化与划分待阅读全文核验。",
+        "experimentSetting": "已核验官方摘要与PDF第2页原图；完整参数、数据划分、指标和性能数字待复核。",
+        "conclusions": "作者摘要报告所提方法的实验有效性；性能优势数值及完整实验协议未独立复核。",
+        "limitations": "适用假设、跨传感器/场景泛化、噪声与复现成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Deep_Blind_Hyperspectral_Image_Fusion_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者及ICCV2019",
+              "交替估计观测映射和融合恢复，以迭代反馈误差修正高分辨HSI，约束空间和光谱一致性。",
+              "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Deep+Blind+Hyperspectral+Image+Fusion&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位DOI；非年度完整检索",
+            "supports": [
+              "DOI 10.1109/iccv.2019.00425；页码4149-4158；2019年一致；完整作者顺序一致",
+              "精确题名一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Wang_Deep_Blind_Hyperspectral_Image_Fusion_ICCV_2019_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第2页原图及注明局部页；非阅读全文",
+            "supports": [
+              "Figure 2",
+              "一轮盲融合操作：估计观测映射g、计算观测误差并用融合映射f修正HSI。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dbin-2019-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Deep_Blind_Hyperspectral_Image_Fusion_ICCV_2019_paper.html",
+            "year": 2019,
+            "doi": "10.1109/iccv.2019.00425",
+            "relation": "以ICCV2019正式版为记录依据；预印本/期刊关联与版本差异待核验。"
+          }
+        ],
+        "methodFamilyId": "dbin-2019"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Wang_Deep_Blind_Hyperspectral_Image_Fusion_ICCV_2019_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "一轮盲融合操作：估计观测映射g、计算观测误差并用融合映射f修正HSI。",
+          "verificationNote": "同名ICCV2019原文PDF第2页原图和完整图注；PDF裁切未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              844,
+              173,
+              1524,
+              778
+            ]
+          },
+          "path": "figures/dbin-2019/framework.png",
+          "width": 680,
+          "height": 605,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "3839e06cf4042e7eb3fcb113cf4c18e8b53e11a34324e0980396c07cef47f803",
+          "attribution": "Wu Wang, Weihong Zeng, Yue Huang, Xinghao Ding, John Paisley · ICCV 2019"
+        }
+      ]
+    },
+    {
+      "id": "ar-cnn-2019",
+      "shortTitle": "AR-CNN",
+      "title": "Weakly Aligned Cross-Modal Learning for Multispectral Pedestrian Detection",
+      "authors": "Lu Zhang, Xiangyu Zhu, Xiangyu Chen, Xu Yang, Zhen Lei, Zhiyong Liu",
+      "year": 2019,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2019.00523",
+      "representation": "AR-CNN",
+      "tags": [
+        "multispectral-pedestrian-detection",
+        "multimodal-spectral-correspondence"
+      ],
+      "summary": "双流区域候选网络联合区域特征对齐、置信度重加权融合及RoI抖动，并建立KAIST-Paired配对标注。",
+      "input": "弱对齐可见光彩色与热红外图像对。",
+      "output": "行人框、跨模态区域对齐与检测结果。",
+      "mechanism": "双流区域候选网络联合区域特征对齐、置信度重加权融合及RoI抖动，并建立KAIST-Paired配对标注。",
+      "readingNote": "已读官方摘要与指定局部原图；未阅读全文。作者仓库README和实际LICENSE均可访问，代码Apache-2.0；标注、原始数据和模型的下载/许可单独待查。历史Python/PyTorch/CUDA环境未安装运行。",
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Weakly_Aligned_Cross-Modal_Learning_for_Multispectral_Pedestrian_Detection_ICCV_2019_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Zhang_2019_ICCV,\nauthor = {Zhang, Lu and Zhu, Xiangyu and Chen, Xiangyu and Yang, Xu and Lei, Zhen and Liu, Zhiyong},\ntitle = {Weakly Aligned Cross-Modal Learning for Multispectral Pedestrian Detection},\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\nmonth = {October},\nyear = {2019}\n}",
+      "library": {
+        "categoryIds": [
+          "multispectral-pedestrian-detection",
+          "multimodal-spectral-correspondence"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "彩色/热红外弱对齐检测，属于关联多光谱工作；不是稠密高光谱观测。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何应对彩色/热红外行人检测中不同模态目标框的空间偏移？",
+        "datasets": "官方摘要和作者README核验KAIST-Paired标注；README指向原KAIST数据和配对标注下载。未下载、运行或核验数据许可。",
+        "experimentSetting": "已核验官方摘要与PDF第5页原图；完整参数、数据划分、指标和性能数字待复核。",
+        "conclusions": "作者摘要报告所提方法的实验有效性；性能优势数值及完整实验协议未独立复核。",
+        "limitations": "适用假设、跨传感器/场景泛化、噪声与复现成本待全文核验。",
+        "dataLinks": [
+          "https://drive.google.com/open?id=1FLkoJQOGt4PqRtr0j6namAaehrdt_A45"
+        ],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Weakly_Aligned_Cross-Modal_Learning_for_Multispectral_Pedestrian_Detection_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者及ICCV2019",
+              "双流区域候选网络联合区域特征对齐、置信度重加权融合及RoI抖动，并建立KAIST-Paired配对标注。",
+              "彩色/热红外弱对齐检测，属于关联多光谱工作；不是稠密高光谱观测。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Weakly+Aligned+Cross-Modal+Learning+for+Multispectral+Pedestrian+Detection&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位DOI；非年度完整检索",
+            "supports": [
+              "DOI 10.1109/iccv.2019.00523；页码5126-5136；2019年一致；完整作者顺序一致",
+              "精确题名一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Weakly_Aligned_Cross-Modal_Learning_for_Multispectral_Pedestrian_Detection_ICCV_2019_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第5页原图及注明局部页；非阅读全文",
+            "supports": [
+              "Figure 5",
+              "双流AR-CNN总体网络：区域候选、RoI抖动、区域特征对齐、置信度融合与检测损失。"
+            ]
+          },
+          {
+            "url": "https://api.github.com/repos/luzhang16/AR-CNN",
+            "checkedAt": "2026-10-08",
+            "level": "作者资源访问记录；代码未运行，数据未下载",
+            "supports": [
+              "作者仓库README和实际LICENSE均可访问，代码Apache-2.0；标注、原始数据和模型的下载/许可单独待查。历史Python/PyTorch/CUDA环境未安装运行。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ar-cnn-2019-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Weakly_Aligned_Cross-Modal_Learning_for_Multispectral_Pedestrian_Detection_ICCV_2019_paper.html",
+            "year": 2019,
+            "doi": "10.1109/iccv.2019.00523",
+            "relation": "以ICCV2019正式版为记录依据；预印本/期刊关联与版本差异待核验。"
+          }
+        ],
+        "methodFamilyId": "ar-cnn-2019"
+      },
+      "code": "https://github.com/luzhang16/AR-CNN",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Weakly_Aligned_Cross-Modal_Learning_for_Multispectral_Pedestrian_Detection_ICCV_2019_paper.pdf",
+          "figureLabel": "Figure 5",
+          "caption": "双流AR-CNN总体网络：区域候选、RoI抖动、区域特征对齐、置信度融合与检测损失。",
+          "verificationNote": "同名ICCV2019原文PDF第5页原图和完整图注；PDF裁切未重绘。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              181,
+              1524,
+              987
+            ]
+          },
+          "path": "figures/ar-cnn-2019/framework.png",
+          "width": 1398,
+          "height": 806,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "6c42c08f6c6e42fb86befee2559395d0c9414359d11c5268d4203cf903ad561b",
+          "attribution": "Lu Zhang, Xiangyu Zhu, Xiangyu Chen, Xu Yang, Zhen Lei, Zhiyong Liu · ICCV 2019"
+        }
+      ]
+    },
+    {
+      "id": "deep-external-internal-2019",
+      "shortTitle": "Deep External/Internal",
+      "title": "Hyperspectral Image Reconstruction Using Deep External and Internal Learning",
+      "authors": "Tao Zhang, Ying Fu, Lizhi Wang, Hua Huang",
+      "year": 2019,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2019.00865",
+      "representation": "Deep External/Internal",
+      "tags": [
+        "spectral-reconstruction",
+        "external-internal-prior-learning"
+      ],
+      "summary": "先在外部数据学习CNN重建先验，再结合每幅输入的空间–光谱一致性约束进行内部学习；不等同完全无外部训练。",
+      "input": "编码快照测量，外部训练HSI及前向成像约束。",
+      "output": "重建高光谱图像。",
+      "mechanism": "先在外部数据学习CNN重建先验，再结合每幅输入的空间–光谱一致性约束进行内部学习；不等同完全无外部训练。",
+      "readingNote": "已读官方摘要与指定局部原图；未阅读全文。代码/数据仅在摘要与PDF链接中查找，未见明确可核验仓库；完整资源与许可待查。",
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Hyperspectral_Image_Reconstruction_Using_Deep_External_and_Internal_Learning_ICCV_2019_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Zhang_2019_ICCV,\nauthor = {Zhang, Tao and Fu, Ying and Wang, Lizhi and Huang, Hua},\ntitle = {Hyperspectral Image Reconstruction Using Deep External and Internal Learning},\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\nmonth = {October},\nyear = {2019}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "external-internal-prior-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何结合外部数据先验与当前编码观测内部信息，改善HSI恢复泛化？",
+        "datasets": "摘要未列数据集名称；外部训练划分、内部优化细节和实测条件待全文核验。",
+        "experimentSetting": "已核验官方摘要与PDF第1页原图；完整参数、数据划分、指标和性能数字待复核。",
+        "conclusions": "作者摘要报告所提方法的实验有效性；性能优势数值及完整实验协议未独立复核。",
+        "limitations": "适用假设、跨传感器/场景泛化、噪声与复现成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Hyperspectral_Image_Reconstruction_Using_Deep_External_and_Internal_Learning_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者及ICCV2019",
+              "先在外部数据学习CNN重建先验，再结合每幅输入的空间–光谱一致性约束进行内部学习；不等同完全无外部训练。",
+              "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Hyperspectral+Image+Reconstruction+Using+Deep+External+and+Internal+Learning&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位DOI；非年度完整检索",
+            "supports": [
+              "DOI 10.1109/iccv.2019.00865；页码8558-8567；2019年一致；完整作者顺序一致",
+              "精确题名一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Hyperspectral_Image_Reconstruction_Using_Deep_External_and_Internal_Learning_ICCV_2019_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第1页原图及注明局部页；非阅读全文",
+            "supports": [
+              "Figure 1",
+              "外部数据学习重建网络，逐场景内部学习结合空间–光谱约束细化恢复。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "deep-external-internal-2019-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Hyperspectral_Image_Reconstruction_Using_Deep_External_and_Internal_Learning_ICCV_2019_paper.html",
+            "year": 2019,
+            "doi": "10.1109/iccv.2019.00865",
+            "relation": "以ICCV2019正式版为记录依据；预印本/期刊关联与版本差异待核验。"
+          }
+        ],
+        "methodFamilyId": "deep-external-internal-2019"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Hyperspectral_Image_Reconstruction_Using_Deep_External_and_Internal_Learning_ICCV_2019_paper.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "外部数据学习重建网络，逐场景内部学习结合空间–光谱约束细化恢复。",
+          "verificationNote": "同名ICCV2019原文PDF第1页原图和完整图注；PDF裁切未重绘。",
+          "page": 1,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              844,
+              581,
+              1524,
+              1166
+            ]
+          },
+          "path": "figures/deep-external-internal-2019/framework.png",
+          "width": 680,
+          "height": 585,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "4468f00126e19fd24b2231505a619418ffdedc04720ea30e5572870c661c5f96",
+          "attribution": "Tao Zhang, Ying Fu, Lizhi Wang, Hua Huang · ICCV 2019"
+        }
+      ]
+    },
+    {
+      "id": "interference-hsi-flare-2019",
+      "shortTitle": "Interference Flare",
+      "title": "Flare in Interference-Based Hyperspectral Cameras",
+      "authors": "Eden Sassoon, Yoav Y. Schechner, Tali Treibitz",
+      "year": 2019,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2019.01027",
+      "representation": "Interference Flare",
+      "tags": [
+        "spectral-instrument-design",
+        "spectral-flare-modeling"
+      ],
+      "summary": "区分常规镜片间二次反射与干涉滤片反射后的一次镜片反射，建立波长和场景相关杂散光模型并验证去偏差。",
+      "input": "带窄带干涉滤片阵列相机的光学场景与光谱观测。",
+      "output": "杂散光成像模型、偏差定量分析及去杂散光测试。",
+      "mechanism": "区分常规镜片间二次反射与干涉滤片反射后的一次镜片反射，建立波长和场景相关杂散光模型并验证去偏差。",
+      "readingNote": "已读官方摘要与指定局部原图；未阅读全文。原文PDF首页及CVF作者顺序为Eden Sassoon、Yoav Y. Schechner、Tali Treibitz；Crossref顺序与姓名拆分冲突，保留原始登记证据，采用原文。代码数据与完整实验待查。",
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Sassoon_Flare_in_Interference-Based_Hyperspectral_Cameras_ICCV_2019_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Sassoon_2019_ICCV,\nauthor = {Sassoon, Eden and Schechner, Yoav Y. and Treibitz, Tali},\ntitle = {Flare in Interference-Based Hyperspectral Cameras},\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\nmonth = {October},\nyear = {2019}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-instrument-design",
+          "spectral-flare-modeling"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "干涉滤片反射如何造成跨像素光谱污染，如何建模和校正？",
+        "datasets": "摘要报告仿真与实验；具体相机参数、标定数据、场景及去杂散光测试协议待查。",
+        "experimentSetting": "已核验官方摘要与PDF第3页原图；完整参数、数据划分、指标和性能数字待复核。",
+        "conclusions": "作者摘要报告干涉滤片造成显著杂散光偏差，并通过仿真和实验定量及去偏差测试；具体量值待复核。",
+        "limitations": "适用假设、跨传感器/场景泛化、噪声与复现成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Sassoon_Flare_in_Interference-Based_Hyperspectral_Cameras_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者及ICCV2019",
+              "区分常规镜片间二次反射与干涉滤片反射后的一次镜片反射，建立波长和场景相关杂散光模型并验证去偏差。",
+              "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Flare+in+Interference-Based+Hyperspectral+Cameras&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位DOI；非年度完整检索",
+            "supports": [
+              "DOI 10.1109/iccv.2019.01027；页码10173-10181；2019年一致；Crossref作者顺序及Yoav Schechner姓名字段错误，以PDF首页和CVF为准",
+              "精确题名一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Sassoon_Flare_in_Interference-Based_Hyperspectral_Cameras_ICCV_2019_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第3页原图及注明局部页；非阅读全文",
+            "supports": [
+              "Figure 5 — 光学反射机制",
+              "常规镜片二次反射与干涉滤片造成的一次镜片反射光路对比；这是成因示意，不是完整校正流程。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "interference-hsi-flare-2019-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Sassoon_Flare_in_Interference-Based_Hyperspectral_Cameras_ICCV_2019_paper.html",
+            "year": 2019,
+            "doi": "10.1109/iccv.2019.01027",
+            "relation": "以ICCV2019正式版为记录依据；预印本/期刊关联与版本差异待核验。"
+          }
+        ],
+        "methodFamilyId": "interference-hsi-flare-2019"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Sassoon_Flare_in_Interference-Based_Hyperspectral_Cameras_ICCV_2019_paper.pdf",
+          "figureLabel": "Figure 5 — 光学反射机制",
+          "caption": "常规镜片二次反射与干涉滤片造成的一次镜片反射光路对比；这是成因示意，不是完整校正流程。",
+          "verificationNote": "同名ICCV2019原文PDF第3页原图和完整图注；PDF裁切未重绘。光学反射机制示意，非校正流程。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              844,
+              196,
+              1524,
+              1182
+            ]
+          },
+          "path": "figures/interference-hsi-flare-2019/framework.png",
+          "width": 680,
+          "height": 986,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "1f41eb4b6e92ee47480bfc82cb955b933366cad90f1bd7e90191ba7c8db89503",
+          "attribution": "Eden Sassoon, Yoav Y. Schechner, Tali Treibitz · ICCV 2019"
+        }
+      ]
+    },
+    {
+      "id": "dltr-2019",
+      "shortTitle": "DLTR",
+      "title": "Computational Hyperspectral Imaging Based on Dimension-Discriminative Low-Rank Tensor Recovery",
+      "authors": "Shipeng Zhang, Lizhi Wang, Ying Fu, Xiaoming Zhong, Hua Huang",
+      "year": 2019,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2019.01028",
+      "representation": "DLTR",
+      "tags": [
+        "spectral-reconstruction",
+        "nonlocal-spatial-priors",
+        "dimension-aware-tensor-recovery"
+      ],
+      "summary": "利用非局部相似组高阶张量，按维度区分低秩先验，与成像模型结合，以交替最小化迭代匹配、低秩恢复及投影。",
+      "input": "编码高光谱压缩测量及前向成像算子。",
+      "output": "重建高光谱图像。",
+      "mechanism": "利用非局部相似组高阶张量，按维度区分低秩先验，与成像模型结合，以交替最小化迭代匹配、低秩恢复及投影。",
+      "readingNote": "已读官方摘要与指定局部原图；未阅读全文。代码/数据仅在摘要与PDF链接中查找，未见明确可核验仓库；完整资源与许可待查。",
+      "paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Computational_Hyperspectral_Imaging_Based_on_Dimension-Discriminative_Low-Rank_Tensor_Recovery_ICCV_2019_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Zhang_2019_ICCV,\nauthor = {Zhang, Shipeng and Wang, Lizhi and Fu, Ying and Zhong, Xiaoming and Huang, Hua},\ntitle = {Computational Hyperspectral Imaging Based on Dimension-Discriminative Low-Rank Tensor Recovery},\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\nmonth = {October},\nyear = {2019}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "nonlocal-spatial-priors",
+          "dimension-aware-tensor-recovery"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何避免向量化后把HSI不同维度的结构先验无差别处理？",
+        "datasets": "摘要报告合成与实测数据；名称、规模、参数和指标设置待全文核验。",
+        "experimentSetting": "已核验官方摘要与PDF第2页原图；完整参数、数据划分、指标和性能数字待复核。",
+        "conclusions": "作者摘要报告所提方法的实验有效性；性能优势数值及完整实验协议未独立复核。",
+        "limitations": "适用假设、跨传感器/场景泛化、噪声与复现成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Computational_Hyperspectral_Imaging_Based_on_Dimension-Discriminative_Low-Rank_Tensor_Recovery_ICCV_2019_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者及ICCV2019",
+              "利用非局部相似组高阶张量，按维度区分低秩先验，与成像模型结合，以交替最小化迭代匹配、低秩恢复及投影。",
+              "直接研究空间–波长高光谱测量、恢复或仪器误差；不加入三维专题。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Computational+Hyperspectral+Imaging+Based+on+Dimension-Discriminative+Low-Rank+Tensor+Recovery&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位DOI；非年度完整检索",
+            "supports": [
+              "DOI 10.1109/iccv.2019.01028；页码10182-10191；2019年一致；完整作者顺序一致",
+              "精确题名一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Computational_Hyperspectral_Imaging_Based_on_Dimension-Discriminative_Low-Rank_Tensor_Recovery_ICCV_2019_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第2页原图及注明局部页；非阅读全文",
+            "supports": [
+              "Figure 2",
+              "初始化、非局部块匹配、维度区分低秩张量恢复及成像一致性投影的总体流程。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dltr-2019-iccv2019",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Computational_Hyperspectral_Imaging_Based_on_Dimension-Discriminative_Low-Rank_Tensor_Recovery_ICCV_2019_paper.html",
+            "year": 2019,
+            "doi": "10.1109/iccv.2019.01028",
+            "relation": "以ICCV2019正式版为记录依据；预印本/期刊关联与版本差异待核验。"
+          }
+        ],
+        "methodFamilyId": "dltr-2019"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Computational_Hyperspectral_Imaging_Based_on_Dimension-Discriminative_Low-Rank_Tensor_Recovery_ICCV_2019_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "初始化、非局部块匹配、维度区分低秩张量恢复及成像一致性投影的总体流程。",
+          "verificationNote": "同名ICCV2019原文PDF第2页原图和完整图注；PDF裁切未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              189,
+              801,
+              863
+            ]
+          },
+          "path": "figures/dltr-2019/framework.png",
+          "width": 675,
+          "height": 674,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "51f80b4670d76ce67809a07b4ef4ab97586cc75f1580825be49699efdaf730a4",
+          "attribution": "Shipeng Zhang, Lizhi Wang, Ying Fu, Xiaoming Zhong, Hua Huang · ICCV 2019"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -21741,7 +22573,10 @@
         "faced-reflector-hsi-2017",
         "learned-filter-response-2018",
         "filter-selection-2017",
-        "rgb-manifold-mapping-2017"
+        "rgb-manifold-mapping-2017",
+        "lambda-net-2019",
+        "deep-external-internal-2019",
+        "dltr-2019"
       ],
       "history": [
         {
@@ -21804,7 +22639,8 @@
         "usdn-2018",
         "u2mdn-tgrs-2022",
         "rgb-guided-upsampling-2015",
-        "csu-2015"
+        "csu-2015",
+        "dbin-2019"
       ],
       "history": [
         {
@@ -22186,7 +23022,9 @@
         "diy-hsi-2016",
         "faced-reflector-hsi-2017",
         "snapshot-hlf",
-        "learned-filter-response-2018"
+        "learned-filter-response-2018",
+        "interference-hsi-flare-2019",
+        "procam-ssfm"
       ],
       "history": [
         {
@@ -22475,7 +23313,8 @@
       "createdAt": "2026-10-08",
       "rationale": "由 ICCV 2021 官方摘要与注明的局部原文证据形成；边界随更多论文复核。",
       "evidencePaperIds": [
-        "learned-hs-depth"
+        "learned-hs-depth",
+        "procam-ssfm"
       ],
       "history": [
         {
@@ -22563,7 +23402,9 @@
       "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
       "evidencePaperIds": [
         "dasc-correspondence",
-        "material-aware-stereo"
+        "material-aware-stereo",
+        "afd-net-2019",
+        "ar-cnn-2019"
       ],
       "history": [
         {
@@ -22608,7 +23449,8 @@
         "spectral-spatial-lowrank-2016",
         "llrt-2017",
         "nlstf-2017",
-        "assdl-denoising-2015"
+        "assdl-denoising-2015",
+        "dltr-2019"
       ],
       "history": [
         {
@@ -22845,6 +23687,126 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "自然光谱低维嵌入与逆映射机制经原图核验，范围待后续阅读复核。"
+        }
+      ]
+    },
+    {
+      "id": "generative-spectral-reconstruction",
+      "name": "生成式光谱重建",
+      "dimension": "method",
+      "definition": "利用生成对抗等生成模型学习快照光谱恢复先验；训练数据、对抗损失及通道策略逐篇核验。",
+      "status": "provisional",
+      "color": "#9dbbd6",
+      "createdAt": "2026-10-08",
+      "rationale": "依据ICCV2019官方摘要及原方法图形成，后续全文阅读复核范围。",
+      "evidencePaperIds": [
+        "lambda-net-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "摘要及局部原图支持此机制或任务；不预设固定分类。"
+        }
+      ]
+    },
+    {
+      "id": "blind-hsi-fusion",
+      "name": "盲高光谱融合",
+      "dimension": "task",
+      "definition": "在空间/光谱退化响应未知时联合估计观测模型并融合HSI与MSI；不自动等同无监督训练。",
+      "status": "provisional",
+      "color": "#9dbbd6",
+      "createdAt": "2026-10-08",
+      "rationale": "依据ICCV2019官方摘要及原方法图形成，后续全文阅读复核范围。",
+      "evidencePaperIds": [
+        "dbin-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "摘要及局部原图支持此机制或任务；不预设固定分类。"
+        }
+      ]
+    },
+    {
+      "id": "multispectral-pedestrian-detection",
+      "name": "多光谱行人检测",
+      "dimension": "task",
+      "definition": "利用可见光与热红外等明确标注的通道关系检测行人；不将此类工作统一标为稠密高光谱。",
+      "status": "provisional",
+      "color": "#9dbbd6",
+      "createdAt": "2026-10-08",
+      "rationale": "依据ICCV2019官方摘要及原方法图形成，后续全文阅读复核范围。",
+      "evidencePaperIds": [
+        "ar-cnn-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "摘要及局部原图支持此机制或任务；不预设固定分类。"
+        }
+      ]
+    },
+    {
+      "id": "external-internal-prior-learning",
+      "name": "外部与内部先验学习",
+      "dimension": "method",
+      "definition": "结合外部训练数据学习与当前观测内部优化进行光谱恢复；外部训练和逐场景约束分别记录。",
+      "status": "provisional",
+      "color": "#9dbbd6",
+      "createdAt": "2026-10-08",
+      "rationale": "依据ICCV2019官方摘要及原方法图形成，后续全文阅读复核范围。",
+      "evidencePaperIds": [
+        "deep-external-internal-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "摘要及局部原图支持此机制或任务；不预设固定分类。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-flare-modeling",
+      "name": "光谱杂散光建模",
+      "dimension": "task",
+      "definition": "分析光谱仪器内部反射产生的波长相关杂散光偏差，建立成像模型并研究校正。",
+      "status": "provisional",
+      "color": "#9dbbd6",
+      "createdAt": "2026-10-08",
+      "rationale": "依据ICCV2019官方摘要及原方法图形成，后续全文阅读复核范围。",
+      "evidencePaperIds": [
+        "interference-hsi-flare-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "摘要及局部原图支持此机制或任务；不预设固定分类。"
+        }
+      ]
+    },
+    {
+      "id": "dimension-aware-tensor-recovery",
+      "name": "维度区分张量低秩恢复",
+      "dimension": "method",
+      "definition": "对空间、波长与非局部组等不同张量维度使用区分的低秩结构先验；与可学习神经低秩特征分开。",
+      "status": "provisional",
+      "color": "#9dbbd6",
+      "createdAt": "2026-10-08",
+      "rationale": "依据ICCV2019官方摘要及原方法图形成，后续全文阅读复核范围。",
+      "evidencePaperIds": [
+        "dltr-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "摘要及局部原图支持此机制或任务；不预设固定分类。"
         }
       ]
     }

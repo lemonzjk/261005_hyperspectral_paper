@@ -16,20 +16,20 @@
 
 ## 当前状态
 
-- 总库 267 篇、50 个暂定标签；三维原 214 篇、13 方向、7 资源入口不变。collections 明确成员，迁移快照验证三维事实。总库 ?collection=hyperspectral，旧链接进入三维专题。
+- 总库 274 篇、56 个暂定标签；三维原 214 篇、13 方向、7 资源入口不变。collections 明确成员，迁移快照验证三维事实。总库 ?collection=hyperspectral，旧链接进入三维专题。
 - 总库多标签并集、待分类、阅读进度、搜索、年份与来源筛选；URL 保存条件和详情，往返保留位置；共享原图、SVG/BibTeX 导出。任务/方法/应用分维度，旧专题标签仍需逐篇复核。
-- 截止 2026-10-08：CVPR 2013–2018/2021/2022、ICCV 2013/2015/2017/2021、NeurIPS 2023 完成指定五关键词题名扫描，118 命中全部处理（新增42、去重11、排除65）；不代表年度全领域检索完成。
+- 截止 2026-10-08：CVPR 2013–2018/2021/2022、ICCV 2013/2015/2017/2019/2021、NeurIPS 2023 完成指定五关键词题名扫描，130 命中全部处理（新增49、去重12、排除69）；不代表年度全领域检索完成。
 - 十一份文献共二十六个 arXiv 版本日期已核验，全文差异待查；Hyper-Skin 数量330/306冲突待查。各批次详情见调研记录。
 - TPAMI视频/湿度共2版本候选待扩展声明。u²-MDN原文已证实扩展uSDN；期刊正式2022，五个预印本2019–2021分别记录；新增文献仍属原方法族，原图明确为arXiv v5。
-- ICCV2015六命中已闭环，五DOI/原图核验，CSU代码MIT与CAVE样例权利分开。ICCV2017扫描621题名五命中，新增滤片选择和RGB流形映射两篇及两原图；去重光场一篇、排除两篇。三维嵌入非几何；局部阅读不计全文。ASSDL期刊摘要与局部模型已读，扩展关系待查；IGARSS2014作者不同，撤销CSU前序关联，留独立候选。
+- ICCV2019四日目录1075题名、十二命中闭环，新增7篇及7原图；两篇关联多光谱，去重1、排除4。Flare登记作者错误按原文纠正；λ-Net题名变体保留、代码404。AR-CNN代码Apache与数据许可分开。全部局部阅读非全文。ASSDL期刊关系待查；IGARSS2014作者不同，已撤销CSU前序关联，留独立候选。
 - TGRS基础工作VCA、OSP、HySime、MNF、Craig、FCLS仅定向摘要核验；MNF/Craig标基础关系，全部全文待查。FCLS存原UFCLS算法，HySime/Craig原图受限。
 - OL2007 Crossref登记1141条完整两页，六词4命中处理（3摘要、1题名暂排除）；新增动态变焦/UV FLIM，定向新增DD/SD-CASSI原图与SPIE前序版本关联。出版社年度全量未证明；其他年度/关键词仍有缺口。
 - 石墨黑主题；450–950nm合成地形联动，非实测。时间轴按年展开；桌面双列、手机单列。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖267篇、226张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖274篇、233张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、成员、libraryCategories、library、原图；src/library.ts 总库筛选；HyperspectralLibrary.tsx 独立入口；App.tsx 三维入口。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 官方会议扫描、crossref-inventory.py 分页登记、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；详细说明见 README.md 和 research/。
-- 下一步补ICCV2019及任务词，扩展其他场所；复核两TPAMI、ASSDL期刊和独立IGARSS候选、全文实验与资源。访问失败留证，继续可用来源。
+- 下一步补CVPR2019/2020及任务词，扩展遥感和光学场所；复核两TPAMI、ASSDL期刊和独立IGARSS候选、全文实验与资源。访问失败留证，继续可用来源。
