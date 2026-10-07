@@ -9875,6 +9875,85 @@
           "attribution": "Xi Chen, Maojun Zhang, Yu Liu, Shen Yan · CVPR 2026"
         }
       ]
+    },
+    {
+      "id": "crossmodal-stereo-hsi",
+      "shortTitle": "Cross-Modal Stereo HSI",
+      "title": "Simultaneous Depth and Spectral Imaging With a Cross-Modal Stereo System",
+      "authors": "Lizhi Wang, Zhiwei Xiong, Guangming Shi, Wenjun Zeng, Feng Wu",
+      "year": 2018,
+      "venue": "TCSVT",
+      "publicationName": "IEEE Transactions on Circuits and Systems for Video Technology",
+      "track": "capture",
+      "representation": "高光谱与立体深度",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱",
+        "CASSI",
+        "全色图像",
+        "立体匹配",
+        "联合重建"
+      ],
+      "summary": "同步采集压缩高光谱测量与全色图像，通过光谱恢复和跨模态立体匹配交替估计光谱数据与深度。",
+      "input": "同一场景不同视点同步采集的一幅压缩高光谱测量和一幅全色测量。",
+      "output": "高光谱数据立方体及由立体视差估计的场景深度。",
+      "mechanism": "先由全色测量学习自适应字典，辅助压缩感知恢复高光谱；再匹配高光谱与全色图估计视差，用视差对齐两类测量，并迭代改善光谱恢复。",
+      "readingNote": "作者机构原始摘要明确原型硬件与同步深度/光谱恢复，满足真实几何范围。以正式卷年 2018、28(3):812–817 收录；2016 是 DOI/在线先行年份，作者主页标 2017 不替代卷期。当前仅核验到原始摘要与元数据；波段数、深度精度、帧率及完整算法正文未确认。作者主页 Stereo.jpg 为原型实物照片，不能冒充算法框架图；原始框架仍待补充。",
+      "paper": "https://ieeexplore.ieee.org/document/7588092",
+      "doi": "10.1109/TCSVT.2016.2616374",
+      "sourceUrls": [
+        "https://www.microsoft.com/en-us/research/publication/simultaneous-depth-spectral-imaging-cross-modal-stereo-system/",
+        "https://faculty.xidian.edu.cn/SGM1/en/lwcg/296597/content/8339.htm",
+        "https://wang-lizhi.github.io/"
+      ],
+      "verificationLevel": "official_abstract",
+      "venueTier": "target",
+      "citation": "@article{crossmodalstereohsi,\n  title={Simultaneous Depth and Spectral Imaging With a Cross-Modal Stereo System},\n  author={Lizhi Wang and Zhiwei Xiong and Guangming Shi and Wenjun Zeng and Feng Wu},\n  year={2018},\n  journal={IEEE Transactions on Circuits and Systems for Video Technology},\n  volume={28},\n  number={3},\n  pages={812--817},\n  doi={10.1109/TCSVT.2016.2616374},\n  url={https://ieeexplore.ieee.org/document/7588092}\n}",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "IEEE 原始论文页机器人验证；公开 PDF 暂不可取得。作者 Stereo.jpg 目视确认是原型实物照片，不是框架图。原始算法框架仍待人工补充。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/7588092",
+        "checkedAt": "2026-10-07"
+      }
+    },
+    {
+      "id": "smla-ms-depth",
+      "shortTitle": "SMLA",
+      "title": "Compact snapshot multispectral-depth imaging system with shared-modal multi-bandpass lenslet array (SMLA)",
+      "authors": "Zhiwei Deng, Zhan Shi, Chenglong Huang, Shiqiao Li, Xun Cao",
+      "year": 2025,
+      "venue": "Optics Letters",
+      "publicationName": "Optics Letters",
+      "track": "capture",
+      "representation": "九通道多光谱与深度",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱",
+        "深度",
+        "子孔径阵列",
+        "多带通滤光片",
+        "RGB–NIR"
+      ],
+      "summary": "共享模态的多带通子孔径阵列同时捕获九通道多光谱与深度，借助共有通带处理子孔径视差与光谱深度配准。",
+      "input": "四子孔径、四片三通带滤光片与 RGB–NIR 传感器的同步观测。",
+      "output": "400–900 nm 范围九个通道的多光谱图像及对应深度测量。",
+      "mechanism": "在子孔径阵列前定制多带通滤光片，以线性方法恢复光谱，并通过共享模态滤片设计处理孔径间视差，实现光谱和深度配准；无需像素级滤片对准。",
+      "readingNote": "出版社原始摘要明确 1296×1028 空间分辨率、7–15 nm 光谱分辨率及深度测量；九离散通道不写成连续密集高光谱。正式卷期 50(11):3568–3571，在线 2025-05-20。全文与框架暂不可取得，深度精度、帧率及实验细节未核验。与同作者 Optics Express 2025 的七通道双相机 SMF 是不同题名/DOI，不能借用其 1.75 mm、30 fps 或框架；版本关系待核验。Optics Letters 按光学领域重要期刊收录，场所标签不是统一等级认证。",
+      "paper": "https://opg.optica.org/ol/abstract.cfm?uri=ol-50-11-3568",
+      "doi": "10.1364/OL.563215",
+      "verificationLevel": "official_abstract",
+      "venueTier": "target",
+      "citation": "@article{smlamsdepth,\n  title={Compact snapshot multispectral-depth imaging system with shared-modal multi-bandpass lenslet array (SMLA)},\n  author={Zhiwei Deng and Zhan Shi and Chenglong Huang and Shiqiao Li and Xun Cao},\n  year={2025},\n  journal={Optics Letters},\n  volume={50},\n  number={11},\n  pages={3568--3571},\n  doi={10.1364/OL.563215},\n  url={https://opg.optica.org/ol/abstract.cfm?uri=ol-50-11-3568}\n}",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "出版社摘要可读，PDF/HTML 接口均返回 202 Please wait 验证页，未取得全文或框架。不可借用同作者七通道 SMF 论文框架。",
+        "sourceUrl": "https://opg.optica.org/ol/viewmedia.cfm?seq=0&uri=ol-50-11-3568",
+        "checkedAt": "2026-10-07"
+      }
     }
   ],
   "datasets": [

@@ -17,7 +17,7 @@
 
 ## 当前状态
 
-- 196 篇论文、13 个主分类、6 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX。
+- 198 篇论文、13 个主分类、6 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX。
 - 浅色全宽首屏：交互合成高光谱点云，自然色/单波段/几何、450–950 nm、旋转/复位/材料选择；12,348 点，响应为概念示意。用户拒绝左侧大字、深色、摄影和抽象装饰。
 - 图谱默认「领域图与时间轴」：采集、重建、理解三列紧凑方向索引，13 个方向显示任务提示与篇数，点击定位下方方向×年代时间轴。已移除重复年代格、装饰线图及方向总览/时间矩阵切换；仅默认视图与全部论文，保留年度 SVG 导出和共用筛选。标题看详情、篇数就地展开，无需拖拽、缩放、横向或内部滚动；手机纵向浏览。分组不表示继承，阶段等宽不表示时长；篇数仅表示收录分布。
 - 框架图详情支持本地图、高清打开、图号、PDF 页码、原始来源及作者归属；未检索、待人工补充、全文未见独立框架图分别展示。
@@ -27,6 +27,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx` / `src/atlas-overview.css`、`src/TimelineOverview.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 140 篇、168 张；46 篇需全文/人工补图、10 篇全文无独立框架。JSTARS 融合候选待核验，旧缺图来源详见交接。开放标签不代表取得原图，不据作者章节判正式论文无框架。
-- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；196 篇全部初查，无 pending；46 篇缺图可重试。新增 SpectralMoE（CVPR 2026），RGB 估计深度辅助二维光谱分割，归相关融合；完整 Figure 3 已保存。既有 CVPR/ICCV 候选已审；ICCV 2025 的 20 篇为 18 排除、2 背景，无新增。ECCV 30 篇已审，23 排除、7 背景；期刊、旧目录与引文待续。关键词初查不等于全面覆盖。SMLA/光谱立体全文待核验。Ghost LiDAR 吞吐非全谱帧率；Fiducial Mapping 无独立三维真值；MS-ALS 更正待查。
+- 框架图累计 140 篇、168 张；48 篇需全文/人工补图、10 篇全文无独立框架。JSTARS 融合候选待核验，旧缺图来源详见交接。开放标签不代表取得原图，不据作者章节判正式论文无框架。
+- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；198 篇全部初查，无 pending；48 篇缺图可重试。SpectralMoE（CVPR 2026）为 RGB 估计深度辅助二维分割，归相关融合，Figure 3 已保存。既有 CVPR/ICCV 候选已审；ICCV 2025 的 20 篇为 18 排除、2 背景，无新增。ECCV 30 篇已审，23 排除、7 背景；期刊、旧目录与引文待续。关键词初查不等于全面覆盖。SMLA/光谱立体已按原始摘要收录，正文/图待补。Ghost LiDAR 吞吐非全谱帧率；Fiducial Mapping 无独立三维真值；MS-ALS 更正待查。
 - 调研见 `research/survey.json`、`research/README.md`：IGARSS 待原始摘要与版本核验；专业期刊、旧目录与引文追溯未完成。RSE 两篇冠层导数待全文光谱范围核验；未来卷期不代表在线日期。H×W×B 不等于 xyz；高度辅助二维分类与真实光谱点云区分。

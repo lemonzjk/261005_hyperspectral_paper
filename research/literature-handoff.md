@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 196 篇；140 篇有 168 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 198 篇；140 篇有 168 张框架图，48 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -125,3 +125,7 @@
 ## ECCV 2018–2024 既有候选筛查（2026-10-07）
 
 三十篇官方摘要全部核验：二十三 excluded_scope，七 background_scope，无新增网站论文。另核验 JDM、ECT、HyTAS、PCCADIS 四份各 17 页，以及 TSA-Net、物理色散解混两份各 18 页官方全文。HyTAS 使用 Houston2013 的 HSI 而非配套 LiDAR，不能因数据集名字归入几何融合；ECT/TSA 的第三维明确为波段；PCCADIS 双支路用于光谱采集并非立体测深；材质 inverse rendering 不代表形状重建。证据见 sources/eccv2018-2024-scope-review-2026-10-07.json。现有 CVPR/ICCV/ECVA 关键词候选均已审查，旧 ECCV 与 2026 目录、IGARSS、期刊和引文追溯仍需继续。
+
+## 光谱立体与 SMLA 正式论文补充（2026-10-07）
+
+原始作者机构/出版社摘要已明确真实深度，补入 TCSVT 2018 Cross-Modal Stereo（核心）与 Optics Letters 2025 SMLA（九通道多光谱，相关）。书目、机制、正式卷年、摘要级核验与未核验指标均在网站明确记录。TCSVT 在线 DOI 年 2016 与正式卷年 2018 分开；SMLA 为九通道 400–900 nm，不借用不同 DOI 的七通道 SMF 深度精度/帧率。两篇全文/框架暂不可取得：IEEE 页面需验证，Optica PDF/HTML 返回等待验证；作者 Stereo.jpg 目视确认是实物照片，不冒充框架图。记录 needs_access。当前 198 篇，140 篇有 168 图，48 needs_access、10 no_framework、0 pending。Optics Letters 与 TCSVT 按领域重要期刊加入优先检索，场所清单不是统一等级认证。原始证据见 sources/crossmodal-smla-primary-review-2026-10-07.json。
