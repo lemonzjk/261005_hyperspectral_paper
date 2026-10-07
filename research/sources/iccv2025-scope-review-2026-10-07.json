@@ -1,0 +1,276 @@
+{
+  "checkedAt": "2026-10-07",
+  "records": [
+    {
+      "title": "M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Nam_M2SFormer_Multi-Spectral_and_Multi-Scale_Attention_with_Edge-Aware_Difficulty_Guidance_for_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Image editing techniques have rapidly advanced, facilitating both innovative use cases and malicious manipulation of digital images. Deep learning-based methods have recently achieved high accuracy in pixel-level forgery localization, yet they frequently struggle with computational overhead and limited representation power, particularly for subtle or complex tampering. In this paper, we propose M2SFormer, a novel Transformer encoder-based framework designed to overcome these challenges. Unlike approaches that process spatial and frequency cues separately, M2SFormer unifies multi-frequency and multi-scale attentions in the skip connection, harnessing global context to better capture diverse forgery artifacts. Additionally, our framework addresses the loss of fine detail during upsampling by utilizing a global prior map--a curvature metric indicating the difficulty of forgery localization--which then guides a difficulty-guided attention module to preserve subtle manipulations more effectively. Extensive experiments on multiple benchmark datasets demonstrate that M2SFormer outperforms existing state-of-the-art models, offering superior generalization in detecting and localizing forgeries across unseen domains. Our M2SFormer code is available in Github Link.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "多频率注意力用于二维图像篡改定位，非光学多波长或空间三维。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Robust Adverse Weather Removal via Spectral-based Spatial Grouping",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jeong_Robust_Adverse_Weather_Removal_via_Spectral-based_Spatial_Grouping_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Adverse weather conditions cause diverse and complex degradation patterns, driving the development of All-in-One (AiO) models. However, recent AiO solutions still struggle to capture diverse degradations, since global filtering methods like direct operations on the frequency domain fail to handle highly variable and localized distortions. To address these issue, we propose Spectral-based Spatial Grouping Transformer (SSGformer), a novel approach that leverages spectral decomposition and group-wise attention for multi-weather image restoration. SSGformer decomposes images into high-frequency edge features using conventional edge detection and low-frequency information via Singular Value Decomposition. We utilize multi-head linear attention to effectively model the relationship between these features. The fused features are integrated with the input to generate a grouping-mask that clusters regions based on the spatial similarity and image texture. To fully leverage this mask, we introduce a group-wise attention mechanism, enabling robust adverse weather removal and ensuring consistent performance across diverse weather conditions. We also propose a Spatial Grouping Transformer Block that uses both channel attention and spatial attention, effectively balancing feature-wise relationships and spatial dependencies. Extensive experiments show the superiority of our approach, validating its effectiveness in handling the varied and intricate adverse weather degradations.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "SVD/边缘高低频分解用于二维恶劣天气图像恢复，非光学多波长。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Pierson_DiffuMatch_Category-Agnostic_Spectral_Diffusion_Priors_for_Robust_Non-rigid_Shape_Matching_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Deep functional maps have recently emerged as a powerful tool for solving non-rigid shape correspondence tasks. Methods that use this approach combine the power and flexibility of the functional map framework, with data-driven learning for improved accuracy and generality. However, most existing methods in this area restrict the learning aspect only to the feature functions and still rely on axiomatic modeling for formulating the training loss or for functional map regularization inside the networks. This limits both the accuracy and the applicability of the resulting approaches only to scenarios where assumptions of the axiomatic models hold. In this work, we show, for the first time, that both in-network regularization and functional map training can be replaced with data-driven methods. For this, we first train a generative model of functional maps in the spectral domain using score-based generative modeling, built from a large collection of high-quality maps. We then exploit the resulting model to promote the structural properties of ground truth functional maps on new shape collections. Remarkably, we demonstrate that the learned models are category-agnostic, and can fully replace commonly used strategies such as enforcing Laplacian commutativity or orthogonality of functional maps. Our key technical contribution is a novel distillation strategy from diffusion models in the spectral domain. Experiments demonstrate that our learned regularization leads to better results than axiomatic approaches for zero-shot non-rigid shape matching. Our code is available at: https://github.com/daidedou/diffumatch/",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "非刚性三维形状对应属真实几何，但 spectral 指函数映射的拉普拉斯谱，非波长场。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Towards Stabilized and Efficient Diffusion Transformers through Long-Skip-Connections with Spectral Constraints",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Chen_Towards_Stabilized_and_Efficient_Diffusion_Transformers_through_Long-Skip-Connections_with_Spectral_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Diffusion Transformers (DiT) have emerged as a powerful architecture for image and video generation, offering superior quality and scalability. However, their practical application suffers from inherent dynamic feature instability, leading to error amplification during cached inference. Through systematic analysis, we identify the absence of long-range feature preservation mechanisms as the root cause of unstable feature propagation and perturbation sensitivity. To this end, we propose Skip-DiT, a novel DiT variant enhanced with Long-Skip-Connections (LSCs) - the key efficiency component in U-Nets. Theoretical spectral norm and visualization analysis demonstrate how LSCs stabilize feature dynamics. Skip-DiT architecture and its stabilized dynamic feature enable an efficient statical caching mechanism that reuses deep features across timesteps while updating shallow components. Extensive experiments across image and video generation tasks demonstrate that Skip-DiT achieves: (1) **4.4x** training acceleration and faster convergence, (2) **1.5-2x** inference acceleration without quality loss and high fidelity to original output, outperforming existing DiT caching methods across various quantitative metrics. Our findings establish long-skip connections as critical architectural components for training stable and efficient diffusion transformers. Codes are provided in the anonymous URL https://anonymous.4open.science/r/Skip-DiT-72B7/.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "谱范数约束稳定图像/视频生成 Transformer，非光学光谱。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "SpecGuard: Spectral Projection-based Advanced Invisible Watermarking",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Alam_SpecGuard_Spectral_Projection-based_Advanced_Invisible_Watermarking_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Watermarking embeds imperceptible patterns into images for authenticity verification. However, existing methods often lack robustness against various transformations primarily including distortions, image regeneration, and adversarial perturbation, creating real-world challenges. In this work, we introduce SpecGuard, a novel watermarking approach for robust and invisible image watermarking. Unlike prior approaches, we embed the message inside hidden convolution layers by converting from the spatial domain to the frequency domain using spectral projection of a higher frequency band that is decomposed by wavelet projection. Spectral projection employs Fast Fourier Transform approximation to transform spatial data into the frequency domain efficiently. In the encoding phase, a strength factor enhances resilience against diverse attacks, including adversarial, geometric, and regeneration-based distortions, ensuring the preservation of copyrighted information. Meanwhile, the decoder leverages Parseval's theorem to effectively learn and extract the watermark pattern, enabling accurate retrieval under challenging transformations. We evaluate the proposed SpecGuard based on the embedded watermark's invisibility, capacity, and robustness. Comprehensive experiments demonstrate the proposed SpecGuard outperforms the state-of-the-art models. To ensure reproducibility, the full code is released on \\href https://github.com/inzamamulDU/SpecGuard_ICCV_2025  GitHub .",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "FFT/小波频率投影用于图像水印，非光学波长。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Makabe_Spectral_Sensitivity_Estimation_with_an_Uncalibrated_Diffraction_Grating_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "This paper introduces a practical and accurate calibration method for camera spectral sensitivity using a diffraction grating. Accurate calibration of camera spectral sensitivity is crucial for various computer vision tasks, including color correction, illumination estimation, and material analysis. Unlike existing approaches that require specialized narrow-band filters or reference targets with known spectral reflectances, our method only requires an uncalibrated diffraction grating sheet, readily available off-the-shelf. By capturing images of the direct illumination and its diffracted pattern through the grating sheet, our method estimates both the camera spectral sensitivity and the diffraction grating parameters in a closed-form manner. Experiments on synthetic and real-world data demonstrate that our method outperforms conventional reference target-based methods, underscoring its effectiveness and practicality.",
+      "venue": "ICCV",
+      "status": "background_scope",
+      "note": "衍射光栅联合标定 RGB 相机光谱灵敏度与光栅效率，保留采集标定背景；不恢复目标三维。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_fulltext"
+    },
+    {
+      "title": "Physical Degradation Model-Guided Interferometric Hyperspectral Reconstruction with Unfolding Transformer",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Li_Physical_Degradation_Model-Guided_Interferometric_Hyperspectral_Reconstruction_with_Unfolding_Transformer_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Interferometric Hyperspectral Imaging (IHI) is a critical technique for large-scale remote sensing tasks due to its advantages in flux and spectral resolution. However, IHI is susceptible to complex errors arising from imaging steps, and its quality is limited by existing signal processing-based reconstruction algorithms. Two key challenges hinder performance enhancement: 1) the lack of training datasets. 2) the difficulty in eliminating IHI-specific degradation components through learning-based methods. To address these challenges, we propose a novel IHI reconstruction pipeline. First, based on imaging physics and radiometric calibration data, we establish a simplified yet accurate IHI degradation model and a parameter estimation method. This model enables the synthesis of realistic IHI training datasets from hyperspectral images (HSIs), bridging the gap between IHI reconstruction and deep learning. Second, we design the Interferometric Hyperspectral Reconstruction Unfolding Transformer (IHRUT), which achieves effective spectral correction and detail restoration through a stripe-pattern enhancement mechanism and a spatial-spectral transformer architecture. Experimental results demonstrate the superior performance and generalization capability of our method. The code and are available at https://github.com/bit1120203554/IHRUT.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "LASIS 干涉图以光程差编码波数，恢复 H×W×N 光谱图像；N 为波段，不是场景深度。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_fulltext"
+    },
+    {
+      "title": "Deep Adaptive Unfolded Network via Spatial Morphology Stripping and Spectral Filtration for Pan-sharpening",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_Deep_Adaptive_Unfolded_Network_via_Spatial_Morphology_Stripping_and_Spectral_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "In the field of pan-sharpening, existing deep methods are hindered in deepening cross-modal complementarity in the intermediate feature, and lack effective strategies to harness the network entirety for optimal solutions, exhibiting limited feasibility and interpretability due to their black-box designs. Besides, validating pan-sharpening performance in high-level semantic tasks is intractable for the absence of datasets. To tackle these issues, we propose a deep adaptive unfolded network via spatial morphology stripping and spectral filtration for pan-sharpening, which is conceptualized as a linear inverse problem regularized by spatial and spectral priors. Specifically, we incorporate phase-oriented constraints into the spatial prior to facilitate the extraction of modal-invariant spatial morphology by intrinsic decomposition and leverage a physics-driven spectral filtration attention mechanism aligned with the spectral prior to mine the inherent spectral correlation. After transparently unfolding the model into a multi-stage network, an adaptive stage-exiting mechanism is designed to capitalize on fusion diversity by aggregating optimal image patches across candidate stages. To systematically complete the assessment, we construct the first panoptic segmentation dataset as a semantic-level benchmark for pan-sharpening performance validation. Extensive experiments are conducted to verify the merits of our method with state-of-the-arts. Code is available at https://github.com/Baixuzx7/DAPNet.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "PAN 与多光谱二维图像融合及二维全景分割，不输入高度/点云或输出空间三维。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Enhanced Pansharpening via Quaternion Spatial-Spectral Interactions",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Li_Enhanced_Pansharpening_via_Quaternion_Spatial-Spectral_Interactions_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Pansharpening aims to generate high-resolution multispectral (MS) images by fusing panchromatic (PAN) images with corresponding low-resolution MS images. However, many existing methods struggle to fully capture spatial and spectral interactions, limiting their effectiveness. To address this, we propose a novel quaternion-based spatial-spectral interaction network that enhances pansharpening by leveraging the compact representation capabilities of quaternions for high-dimensional data. Our method consists of three key components: the quaternion global spectral interaction branch, the quaternion local spatial structure awareness branch, and the quaternion spatial-spectral interaction branch. The first applies the quaternion Fourier transform to convert multi-channel features into the frequency domain as a whole, enabling global information interaction while preserving inter-channel dependencies, which aids spectral fidelity. The second uses a customized spatial quaternion representation, combined with a window-shifting strategy, to maintain local spatial dependencies while promoting spatial interactions, which helps inject spatial details. The last integrates the two pathways within the quaternion framework to enrich spatial-spectral interactions for richer representations. By utilizing quaternion's multi-dimensional representation and parameter-sharing properties, our method achieves a more compact and efficient cross-resolution, multi-band information integration, significantly improving the quality of the fused image. Extensive experiments validate the proposed method's effectiveness and its superior performance over current SOTA techniques. The code is available at https://github.com/dongli8/QuatPanNet.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "四元数频域交互用于二维 PAN/MS 融合，四元数维度不是 xyz 几何。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Spectral Image Tokenizer",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Esteves_Spectral_Image_Tokenizer_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Image tokenizers map images to sequences of discrete tokens, and are a crucial component of autoregressive transformer-based image generation. The tokens are typically associated with spatial locations in the input image, arranged in raster scan order, which is not ideal for autoregressive modeling. In this paper, we propose to tokenize the image spectrum instead, obtained from a discrete wavelet transform (DWT), such that the sequence of tokens represents the image in a coarse-to-fine fashion. Our tokenizer brings several advantages: 1) it leverages that natural images are more compressible at high frequencies, 2) it can take and reconstruct images of different resolutions without retraining, 3) it improves the conditioning for next-token prediction -- instead of conditioning on a partial line-by-line reconstruction of the image, it takes a coarse reconstruction of the full image, 4) it enables partial decoding where the first few generated tokens can reconstruct a coarse version of the image, 5) it enables autoregressive models to be used for image upsampling. We evaluate the tokenizer reconstruction metrics as well as multiscale image generation, text-guided image upsampling and editing.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "DWT 图像频率 tokenizer 用于自然图像生成，不是光学波长。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Hipandas: Hyperspectral Image Joint Denoising and Super-Resolution by Image Fusion with the Panchromatic Image",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Hipandas_Hyperspectral_Image_Joint_Denoising_and_Super-Resolution_by_Image_Fusion_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Hyperspectral images (HSIs) are frequently noisy and of low resolution due to the constraints of imaging devices. Recently launched satellites can concurrently acquire HSIs and panchromatic (PAN) images, enabling the restoration of HSIs to generate clean and high-resolution imagery through fusing PAN images for denoising and super-resolution. However, previous studies treated these two tasks as independent processes, resulting in accumulated errors. This paper introduces Hyperspectral Image Joint Pandenoising and Pansharpening (Hipandas), a novel learning paradigm that reconstructs high quality HSIs from noisy low-resolution HSIs (NLRHS) and high-resolution PAN images. The proposed unsupervised Hipandas framework consists of a guided denoising network, a guided super-resolution network, and a PAN reconstruction network, utilizing an HSI low-rank prior and a newly introduced detail-oriented low-rank prior. The interconnection of these networks complicates the training process, necessitating a two-stage training strategy to ensure effective training. Experimental results on both simulated and real-world datasets indicate that the proposed method surpasses state-of-the-art algorithms, yielding more accurate and visually pleasing HRHS images. The code is available at https://github.com/shuangxu96/Hipandas.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "二维 HSI+PAN 联合去噪和超分辨，不输入深度或输出空间三维。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Sumbul_SMARTIES_Spectrum-Aware_Multi-Sensor_Auto-Encoder_for_Remote_Sensing_Images_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "From optical sensors to microwave radars, leveraging the complementary strengths of remote sensing (RS) sensors is crucial for achieving dense spatio-temporal monitoring of our planet. In contrast, recent deep learning models, whether task-specific or foundational, are often specific to single sensors or to fixed combinations: adapting such models to different sensory inputs requires both architectural changes and re-training, limiting scalability and generalization across multiple RS sensors. On the contrary, a single model able to modulate its feature representations to accept diverse sensors as input would pave the way to agile and flexible multi-sensor RS data processing. To address this, we introduce SMARTIES, a generic and versatile foundation model lifting sensor-specific/dependent efforts and enabling scalability and generalization to diverse RS sensors: SMARTIES projects data from heterogeneous sensors into a shared spectrum-aware space, enabling the use of arbitrary combinations of bands both for training and inference. To obtain sensor-agnostic representations, we train a single, unified transformer model reconstructing masked multi-sensor data with cross-sensor token mixup. On both single- and multi-modal tasks across diverse sensors, SMARTIES outperforms previous models that rely on sensor-specific pretraining. Our code and pretrained models are available at https://gsumbul.github.io/SMARTIES.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "原文 §4.1/实验输入是 Sentinel-1 SAR、Sentinel-2 多光谱、Maxar RGB；任务为二维分类/分割，不是 HSI 与 LiDAR/DSM 融合或真实几何恢复。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_fulltext"
+    },
+    {
+      "title": "MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wu_MP-HSIR_A_Multi-Prompt_Framework_for_Universal_Hyperspectral_Image_Restoration_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Hyperspectral images (HSIs) often suffer from diverse and unknown degradations during imaging, leading to severe spectral and spatial distortions. Existing HSI restoration methods typically rely on specific degradation assumptions, limiting their effectiveness in complex scenarios. In this paper, we propose MP-HSIR, a novel multi-prompt framework that effectively integrates spectral, textual, and visual prompts to achieve universal HSI restoration across diverse degradation types and intensities. Specifically, we develop a prompt-guided spatial-spectral transformer, which incorporates spatial self-attention and a prompt-guided dual-branch spectral self-attention. Since degradations affect spectral features differently, we introduce spectral prompts in the local spectral branch to provide universal low-rank spectral patterns as prior knowledge for enhancing spectral reconstruction. Furthermore, the text-visual synergistic prompt fuses high-level semantic representations with fine-grained visual features to encode degradation information, thereby guiding the restoration process. Extensive experiments on 9 HSI restoration tasks, including all-in-one scenarios, generalization tests, and real-world cases, demonstrate that MP-HSIR not only consistently outperforms existing all-in-one methods but also surpasses state-of-the-art task-specific approaches across multiple tasks. The code and models are available at https://github.com/ZhehuiWu/MP-HSIR.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "九种二维光谱图像退化恢复，光谱/文本/视觉 prompt 不提供空间三维几何。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "WeaveSeg: Iterative Contrast-weaving and Spectral Feature-refining for Nuclei Instance Segmentation",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Li_WeaveSeg_Iterative_Contrast-weaving_and_Spectral_Feature-refining_for_Nuclei_Instance_Segmentation_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "histopathology images is a fundamental task in computational pathology. It is also a very challenging task due to complex nuclei morphologies, ambiguous boundaries, and staining variations. Existing methods often struggle to precisely delineate overlapping nuclei and handle class imbalance. We introduce WeaveSeg, a novel deep learning model for nuclei instance segmentation that significantly improves segmentation performance via synergistic integration of adaptive spectral feature refinement and iterative contrast-weaving. WeaveSeg features an adaptive spectral detail refinement (SAR) module for multi-scale feature enhancement via adaptive frequency component fusion, and an iterative contrast-weaving (ICW) module that progressively refines features through integrating contrastive attention, decoupled semantic context, and adaptive gating. Furthermore, we introduce a specialized uncertainty loss to explicitly model ambiguous regions, and a novel local contrast-based self-adaptive adjustment mechanism to accommodate dynamic feature distributions. Extensive experiments on MoNuSeg and CoNSeP demonstrate WeaveSeg's SOTA performance over existing models. Code will be publicly available.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "病理二维核分割的 spectral 是图像频率特征，非多波长空间三维。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "HPSv3: Towards Wide-Spectrum Human Preference Score",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ma_HPSv3_Towards_Wide-Spectrum_Human_Preference_Score_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Evaluating text-to-image generation models requires alignment with human perception, yet existing human-centric metrics are constrained by limited data coverage, suboptimal feature extraction, and inefficient loss functions. To address these challenges, we introduce Human Preference Score v3 (HPSv3). (1) We release HPDv3, the first wide-spectrum human preference dataset integrating 1.08M text-image pairs and 1.17M annotated pairwise comparisons from state-of-the-art generative models and low to high-quality real-world images. (2) We introduce a VLM-based preference model trained using an uncertainty-aware ranking loss for fine-grained ranking. Besides, we propose Chain-of-Human-Preference (CoHP), an iterative image refinement method that enhances quality without extra data, using HPSv3 to select the best image at each step. Extensive experiments demonstrate that HPSv3 serves as a robust metric for wide-spectrum image evaluation, and CoHP offers an efficient and human-aligned approach to improve image generation quality. Code and dataset is available at https://mizzenai.github.io/HPSv3/",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "wide-spectrum 指人类偏好样本覆盖范围，非光学波长。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Face Retouching with Diffusion Data Generation and Spectral Restorement",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Face_Retouching_with_Diffusion_Data_Generation_and_Spectral_Restorement_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Face retouching has achieved impressive performance largely driven by its wide range of applications in various real-world tasks. However, most existing works often encounters a dilemma between global consistency and local detail preservation, partially due to the lack of large-scale and high-quality training data. We address the face retouching challenge from two perspectives. First, we create a large-scale face retouching benchmark to mitigate the data scarcity issue. The benchmark comprises 25,000 pairs of high-quality facial images (before and after face retouching) that contain a variety of facial attributes and blemish types such as acne and moles. Second, we design a novel framework that introduces frequency selection and restoration (FSR) and multi-resolution fusion (MRF) that leverages frequency-aware dynamic aggregation and spatial-frequency filtering to achieve global consistency and local detail preservation concurrently. Inspired by the principle of JPEG compression, FSR introduces frequency-domain quantization with spatial projections to learn enhanced feature representations. MRF fuses multi-resolution features via laplacian pyramid fusion, removing large-area blemishes and preserving local fine details effectively. Extensive experiments over multiple benchmarks show that the proposed framework outperforms the state-of-the-art quantitatively and qualitatively. The created benchmark also provides valuable data for training and evaluating both existing and future face retouching networks.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "JPEG 频率与拉普拉斯金字塔用于二维人脸修饰，非光学光谱。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "SpectralAR: Spectral Autoregressive Visual Generation",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Huang_SpectralAR_Spectral_Autoregressive_Visual_Generation_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Autoregressive visual generation has garnered increasing attention due to its scalability and compatibility with other modalities compared with diffusion models. Most existing methods construct visual sequences as spatial patches for autoregressive generation. However, image patches are inherently parallel, contradicting the causal nature of autoregressive modeling. To address this, we propose a Spectral AutoRegressive (SpectralAR) visual generation framework, which realizes causality for visual sequences from the spectral perspective. Specifically, we first transform an image into ordered spectral tokens with Nested Spectral Tokenization, representing lower to higher frequency components. We then perform autoregressive generation in a coarse-to-fine manner with the sequences of spectral tokens. By considering different levels of detail in images, our SpectralAR achieves both sequence causality and token efficiency without bells and whistles. We conduct extensive experiments on ImageNet-1K for image reconstruction and autoregressive generation, and SpectralAR achieves 3.02 gFID with only 64 tokens and 310M parameters. Project page: https://huang-yh.github.io/spectralar/.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "有序图像频率 token 自回归生成，不是光学波长。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Diffusion Transformer meets Multi-level Wavelet Spectrum for Single Image Super-Resolution",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Du_Diffusion_Transformer_meets_Multi-level_Wavelet_Spectrum_for_Single_Image_Super-Resolution_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Discrete Wavelet Transform (DWT) has been widely explored to enhance the performance of image super-resolution (SR). Despite some DWT-based methods improving SR by capturing fine-grained frequency signals, most existing approaches neglect the interrelations among multi-scale frequency sub-bands, resulting in inconsistencies and unnatural artifacts in the reconstructed images. To address this challenge, we propose a Diffusion Transformer model based on image Wavelet spectra for SR (DTWSR). DTWSR incorporates the superiority of diffusion models and transformers to capture the interrelations among multi-scale frequency sub-bands, leading to a more consistence and realistic SR image. Specifically, we use a Multi-level Discrete Wavelet Transform (MDWT) to decompose images into wavelet spectra. A pyramid tokenization method is proposed which embeds the spectra into a sequence of tokens for transformer model, facilitating to capture features from both spatial and frequency domain. A dual-decoder is designed elaborately to handle the distinct variances in low-frequency (LF) and high-frequency (HF) sub-bands, without omitting their alignment in image generation. Extensive experiments on multiple benchmark datasets demonstrate the effectiveness of our method, with high performance on both perception quality and fidelity.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "离散小波子带二维超分辨，不是光学波长或空间三维。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "Bridging Class Imbalance and Partial Labeling via Spectral-Balanced Energy Propagation for Skeleton-based Action Recognition",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_Bridging_Class_Imbalance_and_Partial_Labeling_via_Spectral-Balanced_Energy_Propagation_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "Skeleton-based action recognition faces class imbalance and insufficient labeling problems in real-world applications. Existing methods typically address these issues separately, lacking a unified framework that can effectively handle both issues simultaneously while considering their inherent relationships. Our theoretical analysis reveals two fundamental connections between these problems. First, class imbalance systematically shifts the eigenvalue spectrum of normalized affinity matrices, compromising both convergence and accuracy of label propagation. Second, boundary samples are critical for model training under imbalanced conditions but are often mistakenly excluded by conventional reliability metrics, which focus on relative class differences rather than holistic connectivity patterns. Built upon these theoretical findings, we propose SpeLER (Spectral-balanced Label Propagation with Energy-based Tightened Reliability), which introduces a spectral balancing technique that explicitly counteracts spectral shifts by incorporating class distribution information. Meanwhile, a propagation energy-based tightened reliability measure is proposed to better preserve crucial boundary samples by evaluating holistic connectivity patterns. Extensive experiments on six public datasets demonstrate that SpeLER consistently outperforms state-of-the-art methods, validating both our theoretical findings and practical effectiveness.",
+      "venue": "ICCV",
+      "status": "excluded_scope",
+      "note": "骨架动作的 affinity 矩阵特征值谱，不是光学波长。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
+    },
+    {
+      "title": "M-SpecGene: Generalized Foundation Model for RGBT Multispectral Vision",
+      "year": 2025,
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_M-SpecGene_Generalized_Foundation_Model_for_RGBT_Multispectral_Vision_ICCV_2025_paper.html",
+      "httpStatus": 200,
+      "abstract": "RGB-Thermal (RGBT) multispectral vision is essential for robust perception in complex environments. Most RGBT tasks follow a case-by-case research paradigm, relying on manually customized models to learn task-oriented representations. Nevertheless, this paradigm is inherently constrained by artificial inductive bias, modality bias, and data bottleneck. To address these limitations, we make the initial attempt to build a Generalized RGBT MultiSpectral foundation model (M-SpecGene), which aims to learn modality-invariant representations from large-scale broad data in a self-supervised manner. M-SpecGene provides new insights into multispectral fusion and integrates prior case-by-case studies into a unified paradigm. Considering the unique characteristic of information imbalance in RGBT data, we introduce the Cross-Modality Structural Sparsity (CMSS) metric to quantify the information density across two modalities. Then we develop the GMM-CMSS progressive masking strategy to facilitate a flexible, easy-to-hard, and object-centric pre-training process. Comprehensive experiments validate M-SpecGene's generalizability across eleven datasets for four RGBT downstream tasks.",
+      "venue": "ICCV",
+      "status": "background_scope",
+      "note": "RGB–热红外基础模型四类二维任务：检测、语义分割、显著性、配准；原文实验无实测深度/点云或三维重建。保留跨谱视觉背景。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_fulltext"
+    }
+  ],
+  "fulltextEvidence": [
+    {
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Makabe_Spectral_Sensitivity_Estimation_with_an_Uncalibrated_Diffraction_Grating_ICCV_2025_paper.pdf",
+      "sha256": "fa670de99cf128a4f9febd89614a56a52ed9bfdbc926cde246dcb6056f0578bd",
+      "pageCount": 10,
+      "title": "Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating",
+      "methodEvidence": "衍射光栅联合标定 RGB 相机光谱灵敏度与光栅效率，保留采集标定背景；不恢复目标三维。"
+    },
+    {
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Li_Physical_Degradation_Model-Guided_Interferometric_Hyperspectral_Reconstruction_with_Unfolding_Transformer_ICCV_2025_paper.pdf",
+      "sha256": "00bc1ae2b98e45ff3eeb43c7b271b852398cceef1b5ba4ce969bf0e884629aa0",
+      "pageCount": 11,
+      "title": "Physical Degradation Model-Guided Interferometric Hyperspectral Reconstruction with Unfolding Transformer",
+      "methodEvidence": "LASIS 干涉图以光程差编码波数，恢复 H×W×N 光谱图像；N 为波段，不是场景深度。"
+    },
+    {
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Sumbul_SMARTIES_Spectrum-Aware_Multi-Sensor_Auto-Encoder_for_Remote_Sensing_Images_ICCV_2025_paper.pdf",
+      "sha256": "919b8c6fb54e709c934bebc2144f0118f959e598ff6c526508f6a3ddd7c01d0f",
+      "pageCount": 10,
+      "title": "SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images",
+      "methodEvidence": "原文 §4.1/实验输入是 Sentinel-1 SAR、Sentinel-2 多光谱、Maxar RGB；任务为二维分类/分割，不是 HSI 与 LiDAR/DSM 融合或真实几何恢复。"
+    },
+    {
+      "pdf": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhou_M-SpecGene_Generalized_Foundation_Model_for_RGBT_Multispectral_Vision_ICCV_2025_paper.pdf",
+      "sha256": "3d568488941ab732b59c2690f0641ccb7c0c24e593a15bbe091cd7c6c7dddc57",
+      "pageCount": 12,
+      "title": "M-SpecGene: Generalized Foundation Model for RGBT Multispectral Vision",
+      "methodEvidence": "RGB–热红外基础模型四类二维任务：检测、语义分割、显著性、配准；原文实验无实测深度/点云或三维重建。保留跨谱视觉背景。"
+    }
+  ],
+  "limitation": "审查既有关键词候选，不是全部 ICCV 论文的语义覆盖。"
+}

@@ -117,3 +117,7 @@
 用户要求暂停，交由另一会话继续。当前已收录 196 篇，框架图 140 篇 / 168 张；研究尚未完成，不能宣称已找到全部相关论文。既有 CVPR 候选及 ICCV 2013–2023 候选已完成上述审查；ICCV 2025 二十篇仍未审查。暂停前已抓取其官方页面摘要，缓存保存为 sources/iccv2025-unreviewed-abstracts-2026-10-07.json；该文件仅为抓取结果，未形成范围判断，未改变 survey.json 或网站收录状态。
 
 下一会话先读 CONTEXT.md 与本交接，再逐篇核验这二十篇，必要时查官方 PDF。随后继续 ECCV、目标专业期刊、arXiv 与引文追溯，优先核验 SMLA 和 Cross-Modal Stereo 的正式版本、全文及框架图。缺图重试入口见 framework-handoff.md。只做本地修改与提交，不推送、不发布。
+
+## 恢复调研与 ICCV 2025 筛查（2026-10-07）
+
+用户撤销暂停，要求由当前会话继续完成。二十篇官方摘要全部核验，十八 excluded_scope、二 background_scope，无新增网站论文。另查光栅标定 10 页、IHRUT 11 页、SMARTIES 10 页、M-SpecGene 12 页原始 PDF。SMARTIES 的多传感器为二维光学/SAR/RGB，并非 LiDAR/DSM；M-SpecGene 四任务为二维检测、分割、显著性及配准。IHRUT 光程差编码波数，第三维仍是波段，不能误认场景深度。方法边界、原始摘要与全文哈希见 sources/iccv2025-scope-review-2026-10-07.json。既有 CVPR/ICCV 关键词候选已审查，不表示所有论文语义覆盖；ECCV、专业期刊和引文追溯仍待继续。
