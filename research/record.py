@@ -1,17 +1,19 @@
 """Record curated research entries one at a time from a JSON object or array on stdin."""
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / 'src/data/catalog.json'
 SURVEY = ROOT / 'research/survey.json'
+TODAY = date.today().isoformat()
 entries = json.load(sys.stdin)
 if isinstance(entries, dict):
     entries = [entries]
 for entry in entries:
     catalog = json.loads(CATALOG.read_text())
-    entry.setdefault('verifiedAt', '2026-10-06')
+    entry.setdefault('verifiedAt', TODAY)
     entry.setdefault('verificationLevel', 'official_abstract')
     entry.setdefault('publicationStatus', 'published')
     entry.setdefault('venueTier', 'target')
@@ -33,7 +35,7 @@ for entry in entries:
         if any(p['title'].casefold() == entry['title'].casefold() for p in catalog['papers']):
             raise ValueError(f'Duplicate title: {entry["title"]}')
         catalog['papers'].append(entry)
-    catalog['updatedAt'] = '2026-10-06'
+    catalog['updatedAt'] = TODAY
     CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n')
     survey = json.loads(SURVEY.read_text())
     candidate = next((p for p in survey['candidates'] if p['title'] == entry['title']), None)
@@ -44,5 +46,6 @@ for entry in entries:
         candidate.update(record)
     else:
         survey['candidates'].append(record)
+    survey['updatedAt'] = TODAY
     SURVEY.write_text(json.dumps(survey, ensure_ascii=False, indent=2) + '\n')
     print(f'Recorded: {entry["venue"]} {entry["year"]} — {entry["title"]}')

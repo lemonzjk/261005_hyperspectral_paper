@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 178 篇；126 篇有 148 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 180 篇；128 篇有 150 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -22,8 +22,14 @@
 
 ## 操作
 
-逐篇核对原始摘要/全文、作者、版本、正式场所、重复条目与三维任务。H×W×B 不是三维几何；高度辅助二维分类单列。用 research/record.py 立即记录，每条显式填写真实核验日期；该工具 updatedAt 仍硬编码，结束时复核 catalog 与 survey 日期。用 figures.py init 同步新论文，逐张 add 保存原图或 attempt 记录真实失败；只在完整全文图审查后判 no_framework。
+逐篇核对原始摘要/全文、作者、版本、正式场所、重复条目与三维任务。H×W×B 不是三维几何；高度辅助二维分类单列。用 research/record.py 立即记录，每条显式填写真实核验日期；工具已改用当天日期，同时更新 catalog 与 survey 日期；有历史核验日期时显式传入。用 figures.py init 同步新论文，逐张 add 保存原图或 attempt 记录真实失败；只在完整全文图审查后判 no_framework。
 
 每轮更新 CONTEXT（最多 2000 字符、60 行），运行 validate；网站代码变更运行 build 与交互检查。完成后本地提交。
 
 本轮两篇全文哈希、正式版本关系与图号见 sources/gas-plume-nerf-and-cascaded-spectral-tof-2026-10-07.json。继续专业期刊、arXiv 与引文追溯；框架初查结束不等于文献搜集全面。
+
+## 最新扩充
+
+- MS-Splatting：正式 Computer Graphics Forum / Eurographics 2026，DOI 10.1111/cgf.70337、e70337，2026-04-25；方法核验 arXiv:2506.03407v2 的 29 页作者稿。RGB 加四个离散波段，标相关研究；依赖联合 SfM，不能把无需预标定解释为无需相机参数。保存第 4 页 Figure 3 全流程；项目页所谓 Pipeline 实际为 Figure 1 展示图，未混用。
+- LGDWT-GS：arXiv:2601.17185v2，2026-05-04；四波段植物共享几何、伪 RGB 与 NIR 联合监督，局部及全局小波损失，标相关研究。页脚 2023 为模板残留，不冒称 IEEE 正式出版；作者仓库实际 master 分支可访问，保存第 5 页 Figure 4 多光谱框架。两篇均未运行训练复现。
+- 原稿哈希、出版社登记及来源纠错见 sources/ms-splatting-and-lgdwt-fulltext-2026-10-07.json。VMV 2025 比较论文保留场所候选；GaussianHSI 2026 为二维超分已排除。继续优先连续高光谱几何、专业期刊与引文追溯，覆盖仍未完成。

@@ -8768,6 +8768,118 @@
           "attribution": "Jongchan Park, Liang Gao · PhotoniX 2024"
         }
       ]
+    },
+    {
+      "id": "lgdwt-gs",
+      "shortTitle": "LGDWT-GS",
+      "title": "LGDWT-GS: Local and Global Discrete Wavelet-Regularized 3D Gaussian Splatting for Sparse-View Scene Reconstruction",
+      "authors": "Shima Salehi, Atharva Agashe, Andrew J. McFarland, Joshua Peeples",
+      "year": 2026,
+      "venue": "arXiv",
+      "publicationName": "arXiv preprint arXiv:2601.17185v2",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "track": "rendering",
+      "representation": "3D Gaussian Splatting",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱",
+        "稀疏视角",
+        "小波正则化",
+        "农业三维重建"
+      ],
+      "summary": "用全局与局部离散小波损失稳定稀疏视角三维高斯重建，并扩展到共享几何的伪 RGB 与近红外联合渲染。提供四波段温室植物数据，属于多光谱相关研究。",
+      "input": "稀疏多视角图像；多光谱扩展使用绿、红、红边、近红外四波段，以及 COLMAP 相机位姿与初始点云。",
+      "output": "共享三维几何的高斯场景表示及伪 RGB、近红外新视角图像。",
+      "mechanism": "全局 Haar DWT 对齐低频与中频结构，基于 ELF 选择局部图块做小波细节约束；多光谱分支共享高斯几何、分别编码颜色并联合监督，以两模态最大残差引导增密。",
+      "readingNote": "核对 arXiv:2601.17185v2（2026-05-04）12 页全文。四个离散波段为 580/660/735/820 nm；文中 RGB 是红、绿、红边组成的伪 RGB，不是普通 RGB 相机。不等于连续高光谱光谱恢复。页脚 VOLUME 11, 2023 是模板残留，不能据此认定 IEEE 正式出版。已核对作者仓库 master 分支 README，列出多光谱 train_nir.py 与 Zenodo 数据入口，尚未安装或复现实验。Figure 4 为多光谱扩展框架，Figure 1 为基础小波训练框架。",
+      "paper": "https://arxiv.org/abs/2601.17185v2",
+      "doi": "10.48550/arXiv.2601.17185",
+      "verifiedAt": "2026-10-07",
+      "verificationLevel": "official_fulltext",
+      "citation": "@misc{salehi2026lgdwtgs,\n  title={LGDWT-GS: Local and Global Discrete Wavelet-Regularized 3D Gaussian Splatting for Sparse-View Scene Reconstruction},\n  author={Shima Salehi and Atharva Agashe and Andrew J. McFarland and Joshua Peeples},\n  year={2026},\n  eprint={2601.17185},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2601.17185v2}\n}",
+      "code": "https://github.com/Advanced-Vision-and-Learning-Lab/sparse-view-3dgs-pack",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2601.17185v2",
+          "figureLabel": "Figure 4",
+          "caption": "多光谱扩展框架：由红、绿、红边生成伪 RGB 做 COLMAP，共享三维几何联合优化伪 RGB 与近红外，保留损失与操作/梯度流图例。",
+          "verificationNote": "核对 arXiv:2601.17185v2 PDF 第 5 页 Figure 4。保留全部输入、共享几何、双输出、联合损失及黑/蓝箭头图例。图为多光谱分支；基础全局和局部小波细节见同稿 Figure 1。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              825,
+              165,
+              1495,
+              635
+            ]
+          },
+          "path": "figures/lgdwt-gs/framework.png",
+          "width": 670,
+          "height": 470,
+          "verifiedAt": "2026-10-07",
+          "sha256": "6d3a4bf01b6e304a915491e1dc97bae8f806e9df219f9c340b8faa469026130b",
+          "attribution": "Shima Salehi, Atharva Agashe, Andrew J. McFarland, Joshua Peeples · arXiv 2026"
+        }
+      ]
+    },
+    {
+      "id": "ms-splatting",
+      "shortTitle": "MS-Splatting",
+      "title": "Multi-Spectral Gaussian Splatting with Neural Color Representation",
+      "authors": "Lukas Meyer, Josef Grün, Maximilian Weiherer, Bernhard Egger, Marc Stamminger, Linus Franke",
+      "year": 2026,
+      "venue": "Computer Graphics Forum",
+      "publicationName": "Computer Graphics Forum (Eurographics 2026), e70337",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "track": "rendering",
+      "representation": "3D Gaussian Splatting",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱",
+        "神经颜色表示",
+        "联合 SfM",
+        "新视角植被指数"
+      ],
+      "summary": "将多相机的 RGB 与离散光谱观测融入共享三维高斯，以每个高斯的紧凑特征和浅层 MLP 解码各波段辐射，实现跨视角光谱渲染及 NDVI 合成。",
+      "input": "不同相机与位置拍摄的多视角 RGB、红、绿、红边和近红外图像；联合 SfM 估计相机位姿和稀疏点云。",
+      "output": "共享几何与光谱特征的三维高斯场景、多波段新视角图像与合成视角植被指数。",
+      "mechanism": "跨通道联合 SfM 后初始化高斯几何；每个高斯存储 8 维联合特征，浅层 MLP 结合观察方向输出各通道颜色。随机采样视角和波段，用光度、结构相似性与特征范数约束训练，并采用多波段感知的增密。",
+      "readingNote": "正式版 DOI 登记为 Computer Graphics Forum，2026-04-25，e70337；作者发表列表及代码仓库标注 Eurographics 2026。核对 arXiv:2506.03407v2（2026-02-16）29 页作者稿与补充材料，不另收录 2025 v1。实验含 RGB 三通道及四个离散多光谱通道，不是连续高光谱恢复。无需预先跨相机标定不等于无需估计相机参数，仍依赖跨谱 SfM，且要求场景和照明相对稳定。MLP 解码辐射，不是材料反射率或显式物理光照反演。Towards Integrating Multi-Spectral Imaging with Gaussian Splatting（VMV 2025）是其比较的另一篇工作，不是本文旧标题。项目页名为 Pipeline 的图片对应 Figure 1 展示图，完整训练框架以 v2 Figure 3 为准。已核对作者代码仓库入口，未运行复现。",
+      "paper": "https://doi.org/10.1111/cgf.70337",
+      "code": "https://github.com/j-gruen/MS-Splatting",
+      "doi": "10.1111/cgf.70337",
+      "verifiedAt": "2026-10-07",
+      "verificationLevel": "official_fulltext",
+      "citation": "@article{meyer2026mssplatting,\n  title={Multi-Spectral Gaussian Splatting with Neural Color Representation},\n  author={Lukas Meyer and Josef Grün and Maximilian Weiherer and Bernhard Egger and Marc Stamminger and Linus Franke},\n  journal={Computer Graphics Forum},\n  year={2026},\n  pages={e70337},\n  doi={10.1111/cgf.70337},\n  url={https://doi.org/10.1111/cgf.70337}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2506.03407v2",
+          "figureLabel": "Figure 3",
+          "caption": "完整 MS-Splatting 流程：跨谱 SfM、联合高斯与神经颜色解码、多波段可微渲染、光谱损失及多光谱感知增密。",
+          "verificationNote": "核对 arXiv:2506.03407v2 PDF 第 4 页 Figure 3。保留配准、高斯/特征解码、渲染、损失、增密与全部箭头；这是 2026 作者稿框架，不冒称出版社排版原图。作者项目页 pipeline_new_final.png 对应 Figure 1 展示图，未用它替代完整框架。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              100,
+              170,
+              1145,
+              465
+            ]
+          },
+          "path": "figures/ms-splatting/framework.png",
+          "width": 1045,
+          "height": 295,
+          "verifiedAt": "2026-10-07",
+          "sha256": "a1f642d7cc830e32212deb3940704a96817f88536994a2601b54b44460ccaec7",
+          "attribution": "Lukas Meyer, Josef Grün, Maximilian Weiherer, Bernhard Egger, Marc Stamminger, Linus Franke · Computer Graphics Forum 2026"
+        }
+      ]
     }
   ],
   "datasets": [
