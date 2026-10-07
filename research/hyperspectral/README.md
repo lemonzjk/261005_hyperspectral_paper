@@ -21,13 +21,18 @@
 ```bash
 python research/hyperspectral/discover.py CVPR 2022
 python research/hyperspectral/discover.py NeurIPS 2023
+python research/hyperspectral/pmlr-inventory.py ICML 2024 235
 python research/hyperspectral/crossref-inventory.py "Optics Letters" 0146-9592 2007
 python research/hyperspectral/coverage.py
 npm run validate
 npm run build
 ```
 
-目录扫描存每个题名、官方链接、原网页 SHA-256、实际获取时间和分页方式。当前标题关键词为 hyperspectral、multispectral、multi-spectral、spectral、spectrum。仅完成该组题名扫描，不代表其他任务词、全量摘要或引用链完成。其他场所、年份、关键词组在 `venuePlan` 与 `matrixDefinition` 继续推进。重复扫描保留已审决定；失败记录原因，继续可访问来源；已有成功证据不会被一次重试失败覆盖。
+目录扫描存每个题名、官方链接、原网页 SHA-256、实际获取时间和分页方式。CVF/NeurIPS 工具的题名关键词为 hyperspectral、multispectral、multi-spectral、spectral、spectrum。仅完成该组题名扫描，不代表其他任务词、全量摘要或引用链完成。其他场所、年份、关键词组在 `venuePlan` 与 `matrixDefinition` 继续推进。重复扫描保留已审决定；失败记录原因，继续可访问来源；已有成功证据不会被一次重试失败覆盖。
+
+`pmlr-inventory.py` 需要 Python 的 requests、beautifulsoup4、PyYAML，参数为会议、年份和明确的 PMLR 卷号。它核对官方目录与 `citeproc.yaml` 的全部论文 URL 集合、唯一性、卷号、年份、会议名及摘要非空性，全部一致后才声明该主卷的摘要词扫描完成。元数据按 UTF-8 解码，避免 HTTP 默认编码损坏作者姓名。题名用上述五个宽词；摘要用高光谱/多光谱、光谱成像/重建/解混、遥感/地球观测/卫星影像等十一词，具体逐字段词表保存在检索记录。候选取并集并记录两字段各自命中，既不漏掉题名没有高光谱词的明确 HSI 应用，也不把图谱论文自动收录。
+
+PMLR 的原目录 HTML 和原元数据 HTTP 响应以 gzip 保存，压缩前字节 SHA-256、实际获取时间及全部题名/命中摘要存于配套 JSON；可解压离线复核完整集合与关键词。此处“全量摘要扫描”表示对卷内每份摘要执行注明词表，不表示已人工阅读全文或完成所有研究问题检索。ICML 2013、2022–2024 四卷共 5,954 个题名和摘要、36 个并集候选已逐篇处理；新增 MFTN 与两种有明确 HSI 应用的通用方法 APT/EAPT、RMT Fréchet Mean。后两篇由摘要补扫发现，分别保留基础关系；原图/算法、聚类评估真值对齐及理论条件分开记录。RMT 两个预印本版本关联作者仓库与正式论文，正文差异待查。
 
 每个候选记录 `searchId`、`decision`、理由、核验日期、证据路径和收录 ID。`included`、`excluded`、`duplicate`、`pending` 四种决定均留痕。仅发现题名的候选不会自动进入网站。按 DOI、arXiv ID、规范化题名与作者交叉去重；正式版和预印本以 `versions` 关联，`methodFamilyId` 标识方法族。未经确认的版本号、首次提交和更新日期明确记为待核验；不混入会议版实验事实。
 

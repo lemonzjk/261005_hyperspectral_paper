@@ -23839,6 +23839,377 @@
         "sourceUrl": "https://ieeexplore.ieee.org/document/312895/",
         "checkedAt": "2026-10-08"
       }
+    },
+    {
+      "id": "eapt-tensor-rpca-2022",
+      "shortTitle": "APT / EAPT",
+      "title": "Fast and Provable Nonconvex Tensor RPCA",
+      "authors": "Haiquan Qiu, Yao Wang, Shaojie Tang, Deyu Meng, Quanming Yao",
+      "year": 2022,
+      "venue": "ICML",
+      "publicationName": "Proceedings of the 39th International Conference on Machine Learning",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "APT / EAPT",
+      "tags": [
+        "spectral-denoising",
+        "tensor-low-rank-learning"
+      ],
+      "summary": "APT交替投影到低多秩和稀疏张量集合；EAPT利用低秩切空间降低投影开销，在非相干等条件下给出恢复保证。",
+      "input": "含稀疏污染的三阶张量；应用含CAVE高光谱影像。",
+      "output": "低秩张量与稀疏张量；HSI应用中低秩部分作为恢复影像。",
+      "mechanism": "APT交替投影到低多秩和稀疏张量集合；EAPT利用低秩切空间降低投影开销，在非相干等条件下给出恢复保证。",
+      "readingNote": "已读官方摘要和局部原文页1,6,7,8；保存原方法图/算法。未阅读全文；未运行代码。PMLR书目未列会议DOI，其他出版版本待查。",
+      "paper": "https://proceedings.mlr.press/v162/qiu22d.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{qiu22d,\n  title = {Fast and Provable Nonconvex Tensor RPCA},\n  author = {Qiu, Haiquan and Wang, Yao and Tang, Shaojie and Meng, Deyu and Yao, Quanming},\n  booktitle = {Proceedings of the 39th International Conference on Machine Learning},\n  year = {2022},\n  volume = {162},\n  pages = {18211--18249},\n  publisher = {PMLR},\n  url = {https://proceedings.mlr.press/v162/qiu22d.html}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-denoising",
+          "tensor-low-rank-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "foundation",
+        "relationNote": "通用张量RPCA方法；原摘要与第7–8页明确用于CAVE高光谱去噪，也用于视频背景分离。不是专为HSI设计。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过变换域多秩与切空间投影加速非凸张量低秩和稀疏分解？",
+        "datasets": "局部原文确认CAVE六幅影像：toys、feathers、sponges、watercolors、paints、sushi；另有合成张量和视频。完整数据选择、许可和下载入口待查。",
+        "experimentSetting": "第7–8页：以Bernoulli方式选择污染元素、赋予[0,1]均匀值；比较EAPT-FFT与EAPT-DCT，报告PSNR和用时。完整超参数、重排协议及附录C.2待查。",
+        "conclusions": "作者报告变换t-SVD方法具有恢复与效率优势；完整指标未复核，不将条件性理论保证扩展到任意真实噪声。",
+        "limitations": "理论要求张量非相干和稀疏分布条件；第8页认为进一步考虑噪声理论有待研究。通用高阶张量扩展、真实混合噪声与完整复现待查。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://proceedings.mlr.press/v162/qiu22d.html",
+            "checkedAt": "2026-10-08",
+            "level": "PMLR官方摘要与书目；摘要和局部原文已读，非阅读全文",
+            "supports": [
+              "Fast and Provable Nonconvex Tensor RPCA",
+              "Haiquan Qiu, Yao Wang, Shaojie Tang, Deyu Meng, Quanming Yao",
+              "ICML 2022；PMLR 162:18211–18249",
+              "APT交替投影到低多秩和稀疏张量集合；EAPT利用低秩切空间降低投影开销，在非相干等条件下给出恢复保证。"
+            ]
+          },
+          {
+            "url": "https://proceedings.mlr.press/v162/qiu22d/qiu22d.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "正式原文局部页1,6,7,8；图/算法与相关实验说明，非阅读全文",
+            "supports": [
+              "EAPT原始算法伪代码：初始化、Trim、切空间/低秩投影及稀疏阈值更新。引用Algorithm 1初始化，未将本裁切冒充完整证明。",
+              "局部原文确认CAVE六幅影像：toys、feathers、sponges、watercolors、paints、sushi；另有合成张量和视频。完整数据选择、许可和下载入口待查。",
+              "第7–8页：以Bernoulli方式选择污染元素、赋予[0,1]均匀值；比较EAPT-FFT与EAPT-DCT，报告PSNR和用时。完整超参数、重排协议及附录C.2待查。",
+              "理论要求张量非相干和稀疏分布条件；第8页认为进一步考虑噪声理论有待研究。通用高阶张量扩展、真实混合噪声与完整复现待查。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "eapt-tensor-rpca-2022-icml2022",
+            "type": "会议正式版",
+            "url": "https://proceedings.mlr.press/v162/qiu22d.html",
+            "year": 2022,
+            "relation": "正式PMLR卷与会议年份；前序/扩展关系及正文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "eapt-tensor-rpca-2022"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.mlr.press/v162/qiu22d/qiu22d.pdf",
+          "figureLabel": "Algorithm 4",
+          "caption": "EAPT原始算法伪代码：初始化、Trim、切空间/低秩投影及稀疏阈值更新。引用Algorithm 1初始化，未将本裁切冒充完整证明。",
+          "verificationNote": "PMLR所链接正式原文局部裁切；已目视核对完整图/算法，未重绘。",
+          "page": 6,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              146,
+              248,
+              808,
+              564
+            ]
+          },
+          "path": "figures/eapt-tensor-rpca-2022/framework.png",
+          "width": 662,
+          "height": 316,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "59c1083750b6eda8482f7ba7ba9097953088ae8e83cdc3b4d60af007f41e11b5",
+          "attribution": "Haiquan Qiu, Yao Wang, Shaojie Tang, Deyu Meng, Quanming Yao · ICML 2022"
+        }
+      ]
+    },
+    {
+      "id": "mftn-2024",
+      "shortTitle": "MFTN",
+      "title": "MFTN: A Multi-scale Feature Transfer Network Based on IMatchFormer for Hyperspectral Image Super-Resolution",
+      "authors": "Shuying Huang, Mingyang Ren, Yong Yang, Xiaozheng Wang, Yingzhi Wei",
+      "year": 2024,
+      "venue": "ICML",
+      "publicationName": "Proceedings of the 41st International Conference on Machine Learning",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "MFTN",
+      "tags": [
+        "spatial-super-resolution",
+        "transformer"
+      ],
+      "summary": "多尺度特征提取后，用三个IMatchFormer从HR-MSI迁移细节，再以三个光谱感知聚合模块逐级恢复HR-HSI。",
+      "input": "低空间分辨率HSI与高空间分辨率MSI，以及退化后的MSI特征。",
+      "output": "高空间分辨率HSI。",
+      "mechanism": "多尺度特征提取后，用三个IMatchFormer从HR-MSI迁移细节，再以三个光谱感知聚合模块逐级恢复HR-HSI。",
+      "readingNote": "已读官方摘要和局部原文页1,3,6；保存原方法图/算法。未阅读全文；未运行代码。PMLR书目未列会议DOI，其他出版版本待查。",
+      "paper": "https://proceedings.mlr.press/v235/huang24s.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{huang24s,\n  title = {MFTN: A Multi-scale Feature Transfer Network Based on IMatchFormer for Hyperspectral Image Super-Resolution},\n  author = {Huang, Shuying and Ren, Mingyang and Yang, Yong and Wang, Xiaozheng and Wei, Yingzhi},\n  booktitle = {Proceedings of the 41st International Conference on Machine Learning},\n  year = {2024},\n  volume = {235},\n  pages = {20063--20072},\n  publisher = {PMLR},\n  url = {https://proceedings.mlr.press/v235/huang24s.html}\n}",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "transformer"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接融合LR-HSI与HR-MSI以生成HR-HSI；空间超分辨，不是几何三维任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何补偿LR-HSI与HR-MSI的特征差异并减少融合后的光谱失真？",
+        "datasets": "原文第6页确认Pavia Center、Botswana、Chikusei；样本规模、划分、原始下载入口和许可待查。",
+        "experimentSetting": "第6页说明采用Wald协议训练与比较，指标含SCC、SAM、ERGAS、UIQI、SSIM、PSNR；完整合成退化、配准与训练划分待查。",
+        "conclusions": "作者摘要报告三个数据集上优于比较方法；局部页说明运行时间并非最小，性能数字未独立复核。",
+        "limitations": "局部图包含退化MSI与HSI间特征匹配；真实传感器响应、未知退化、配准偏差与跨场景泛化待全文查证。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://proceedings.mlr.press/v235/huang24s.html",
+            "checkedAt": "2026-10-08",
+            "level": "PMLR官方摘要与书目；摘要和局部原文已读，非阅读全文",
+            "supports": [
+              "MFTN: A Multi-scale Feature Transfer Network Based on IMatchFormer for Hyperspectral Image Super-Resolution",
+              "Shuying Huang, Mingyang Ren, Yong Yang, Xiaozheng Wang, Yingzhi Wei",
+              "ICML 2024；PMLR 235:20063–20072",
+              "多尺度特征提取后，用三个IMatchFormer从HR-MSI迁移细节，再以三个光谱感知聚合模块逐级恢复HR-HSI。"
+            ]
+          },
+          {
+            "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/huang24s/huang24s.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "正式原文局部页1,3,6；图/算法与相关实验说明，非阅读全文",
+            "supports": [
+              "MFTN总体结构：MFEM多尺度特征提取、MFTM/IMatchFormer特征迁移与MDAM聚合。",
+              "原文第6页确认Pavia Center、Botswana、Chikusei；样本规模、划分、原始下载入口和许可待查。",
+              "第6页说明采用Wald协议训练与比较，指标含SCC、SAM、ERGAS、UIQI、SSIM、PSNR；完整合成退化、配准与训练划分待查。",
+              "局部图包含退化MSI与HSI间特征匹配；真实传感器响应、未知退化、配准偏差与跨场景泛化待全文查证。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mftn-2024-icml2024",
+            "type": "会议正式版",
+            "url": "https://proceedings.mlr.press/v235/huang24s.html",
+            "year": 2024,
+            "relation": "正式PMLR卷与会议年份；前序/扩展关系及正文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "mftn-2024"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/huang24s/huang24s.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "MFTN总体结构：MFEM多尺度特征提取、MFTM/IMatchFormer特征迁移与MDAM聚合。",
+          "verificationNote": "PMLR所链接正式原文局部裁切；已目视核对完整图/算法，未重绘。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              145,
+              165,
+              1507,
+              745
+            ]
+          },
+          "path": "figures/mftn-2024/framework.png",
+          "width": 1362,
+          "height": 580,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "23d1748b30b1c5a50d61325cbc131d7728683f26cf00c9a441e2d49f1399297f",
+          "attribution": "Shuying Huang, Mingyang Ren, Yong Yang, Xiaozheng Wang, Yingzhi Wei · ICML 2024"
+        }
+      ]
+    },
+    {
+      "id": "rmt-frechet-2024",
+      "shortTitle": "RMT Fréchet Mean",
+      "title": "Random matrix theory improved Fréchet mean of symmetric positive definite matrices",
+      "authors": "Florent Bouchard, Ammar Mian, Malik Tiomoko, Guillaume Ginolhac, Frederic Pascal",
+      "year": 2024,
+      "venue": "ICML",
+      "publicationName": "Proceedings of the 41st International Conference on Machine Learning",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "RMT Fréchet Mean",
+      "tags": [
+        "hyperspectral-clustering",
+        "riemannian-covariance-learning"
+      ],
+      "summary": "以RMT校正Fisher距离构造均值目标，在SPD流形上做黎曼梯度下降；将均值用于最近中心分类及高光谱K-means聚类。",
+      "input": "多个观测数据矩阵及其样本协方差；HSI实验以降维后的局部像元窗口构造输入。",
+      "output": "RMT校正的SPD Fréchet均值；HSI应用输出聚类标签。",
+      "mechanism": "以RMT校正Fisher距离构造均值目标，在SPD流形上做黎曼梯度下降；将均值用于最近中心分类及高光谱K-means聚类。",
+      "readingNote": "已读官方摘要和局部原文页1,2,6,8,9；保存原方法图/算法。未阅读全文；未运行代码。PMLR书目未列会议DOI，其他出版版本待查。 作者仓库及HSI配置已核验，复用许可待查；Pavia子集与仓库配置存在名称差别，未据此改原文。",
+      "paper": "https://proceedings.mlr.press/v235/bouchard24a.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{bouchard24a,\n  title = {Random matrix theory improved Fréchet mean of symmetric positive definite matrices},\n  author = {Bouchard, Florent and Mian, Ammar and Tiomoko, Malik and Ginolhac, Guillaume and Pascal, Frederic},\n  booktitle = {Proceedings of the 41st International Conference on Machine Learning},\n  year = {2024},\n  volume = {235},\n  pages = {4403--4415},\n  publisher = {PMLR},\n  url = {https://proceedings.mlr.press/v235/bouchard24a.html}\n}",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-clustering",
+          "riemannian-covariance-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "foundation",
+        "relationNote": "通用SPD协方差几何方法；正式原文明确用高光谱遥感数据聚类验证，另有EEG实验。不是将矩阵特征谱直接标为光学光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "低样本支持时，如何用随机矩阵理论校正SPD协方差矩阵的Fréchet均值？",
+        "datasets": "第8–9页确认Indian Pines、Salinas、Pavia、KSC；原文给出EHU数据入口。Pavia具体子集、完整数据规模和资源许可待查。",
+        "experimentSetting": "HSI先全局去均值、PCA降维，再取重叠滑窗；K-means上限100轮。undefined区域参与聚类但不计准确率；与GT用线性分配对齐聚类标签。完整复现尚未执行。",
+        "conclusions": "作者报告HSI上较SCM/LW改善；第8页明确EEG与SCM差距很小，未声称所有任务均有显著提升。",
+        "limitations": "第9页说明矩阵数很少且样本数与维度相近时，均值与数据依赖使RMT距离估计不理想；样本数充分大时接近常规Fisher均值。",
+        "dataLinks": [
+          "https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes"
+        ],
+        "evidence": [
+          {
+            "url": "https://proceedings.mlr.press/v235/bouchard24a.html",
+            "checkedAt": "2026-10-08",
+            "level": "PMLR官方摘要与书目；摘要和局部原文已读，非阅读全文",
+            "supports": [
+              "Random matrix theory improved Fréchet mean of symmetric positive definite matrices",
+              "Florent Bouchard, Ammar Mian, Malik Tiomoko, Guillaume Ginolhac, Frederic Pascal",
+              "ICML 2024；PMLR 235:4403–4415",
+              "以RMT校正Fisher距离构造均值目标，在SPD流形上做黎曼梯度下降；将均值用于最近中心分类及高光谱K-means聚类。"
+            ]
+          },
+          {
+            "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/bouchard24a/bouchard24a.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "正式原文局部页1,2,6,8,9；图/算法与相关实验说明，非阅读全文",
+            "supports": [
+              "RMT校正Fréchet均值原算法：样本协方差、流形梯度、线搜索和retraction迭代。",
+              "第8–9页确认Indian Pines、Salinas、Pavia、KSC；原文给出EHU数据入口。Pavia具体子集、完整数据规模和资源许可待查。",
+              "HSI先全局去均值、PCA降维，再取重叠滑窗；K-means上限100轮。undefined区域参与聚类但不计准确率；与GT用线性分配对齐聚类标签。完整复现尚未执行。",
+              "第9页说明矩阵数很少且样本数与维度相近时，均值与数据依赖使RMT距离估计不理想；样本数充分大时接近常规Fisher均值。"
+            ]
+          },
+          {
+            "url": "https://github.com/AmmarMian/icml-rmt-2024",
+            "checkedAt": "2026-10-08",
+            "level": "原文第2页作者代码链接、仓库README与未截断完整目录树；未执行代码",
+            "supports": [
+              "README明确本ICML2024论文与同题预印本；含hyperspectral实验代码及配置",
+              "根目录和目录树未发现LICENSE/COPYING；复用许可待查，数据许可独立待查"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2405.06558v1",
+            "checkedAt": "2026-10-08",
+            "level": "官方分版本书目与提交历史；非正文比对",
+            "supports": [
+              "2405.06558v1",
+              "2024-05-10",
+              "与ICML同五作者，arXiv采用Frédéric重音姓名；原作者仓库明确预印本关系"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2405.06558v2",
+            "checkedAt": "2026-10-08",
+            "level": "官方分版本书目与提交历史；非正文比对",
+            "supports": [
+              "2405.06558v2",
+              "2024-06-05",
+              "与ICML同五作者，arXiv采用Frédéric重音姓名；原作者仓库明确预印本关系"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "rmt-frechet-2024-icml2024",
+            "type": "会议正式版",
+            "url": "https://proceedings.mlr.press/v235/bouchard24a.html",
+            "year": 2024,
+            "relation": "正式PMLR卷与会议年份；前序/扩展关系及正文差异待核验。"
+          },
+          {
+            "id": "rmt-frechet-2024-arxiv-v1",
+            "type": "预印本",
+            "url": "https://arxiv.org/abs/2405.06558v1",
+            "year": 2024,
+            "arxivId": "2405.06558",
+            "version": "v1",
+            "firstSubmittedAt": "2024-05-10",
+            "updatedAt": "2024-05-10",
+            "metadataStatus": "verified",
+            "relation": "同题名、同五作者；日期来自官方历史，作者仓库将本预印本关联ICML2024。正文差异未比对，不计独立方法。"
+          },
+          {
+            "id": "rmt-frechet-2024-arxiv-v2",
+            "type": "预印本",
+            "url": "https://arxiv.org/abs/2405.06558v2",
+            "year": 2024,
+            "arxivId": "2405.06558",
+            "version": "v2",
+            "firstSubmittedAt": "2024-05-10",
+            "updatedAt": "2024-06-05",
+            "metadataStatus": "verified",
+            "relation": "同题名、同五作者；日期来自官方历史，作者仓库将本预印本关联ICML2024。正文差异未比对，不计独立方法。"
+          }
+        ],
+        "methodFamilyId": "rmt-frechet-2024"
+      },
+      "code": "https://github.com/AmmarMian/icml-rmt-2024",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/bouchard24a/bouchard24a.pdf",
+          "figureLabel": "Algorithm 2",
+          "caption": "RMT校正Fréchet均值原算法：样本协方差、流形梯度、线搜索和retraction迭代。",
+          "verificationNote": "PMLR所链接正式原文局部裁切；已目视核对完整图/算法，未重绘。",
+          "page": 6,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              850,
+              324,
+              1507,
+              829
+            ]
+          },
+          "path": "figures/rmt-frechet-2024/framework.png",
+          "width": 657,
+          "height": 505,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "5d2a11e4fe026cb94dc8a0bcfa2ad182adc849da8821abd1784ab32eaafc59ac",
+          "attribution": "Florent Bouchard, Ammar Mian, Malik Tiomoko, Guillaume Ginolhac, Frederic Pascal · ICML 2024"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -24140,7 +24511,8 @@
         "dbin-2019",
         "mhf-net-2019",
         "optimized-rgb-sr-2019",
-        "ual-2020"
+        "ual-2020",
+        "mftn-2024"
       ],
       "history": [
         {
@@ -24182,7 +24554,8 @@
       "evidencePaperIds": [
         "mst-cassi",
         "hypertransformer-pansharpening",
-        "multispectral-illumination-unrolling-2021"
+        "multispectral-illumination-unrolling-2021",
+        "mftn-2024"
       ],
       "history": [
         {
@@ -24261,7 +24634,8 @@
         "itsreg-2016",
         "llrt-2017",
         "assdl-denoising-2015",
-        "ngmeet-2019"
+        "ngmeet-2019",
+        "eapt-tensor-rpca-2022"
       ],
       "history": [
         {
@@ -24599,7 +24973,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
       "evidencePaperIds": [
-        "tlpln-2021"
+        "tlpln-2021",
+        "eapt-tensor-rpca-2022"
       ],
       "history": [
         {
@@ -25489,6 +25864,46 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "依据原摘要建立应用标签；完整实验与迁移适用性待全文复核。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-clustering",
+      "name": "高光谱聚类分群",
+      "dimension": "task",
+      "definition": "在没有训练类别标签的条件下对高光谱像元或局部描述进行分群；记录用于评估的真值匹配，区别于有监督分类。",
+      "status": "provisional",
+      "color": "#b6c6da",
+      "createdAt": "2026-10-08",
+      "rationale": "ICML2024正式摘要、原Algorithm 2及HSI实验页支持；任务与方法分维度。",
+      "evidencePaperIds": [
+        "rmt-frechet-2024"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "由原文聚类应用和SPD均值方法形成暂定标签，后续全文复核定义。"
+        }
+      ]
+    },
+    {
+      "id": "riemannian-covariance-learning",
+      "name": "黎曼协方差几何学习",
+      "dimension": "method",
+      "definition": "在对称正定协方差矩阵流形上学习距离、均值或模型；注明对高光谱描述与应用的实际连接，不把矩阵特征谱当光学光谱。",
+      "status": "provisional",
+      "color": "#b6c6da",
+      "createdAt": "2026-10-08",
+      "rationale": "ICML2024正式摘要、原Algorithm 2及HSI实验页支持；任务与方法分维度。",
+      "evidencePaperIds": [
+        "rmt-frechet-2024"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "由原文聚类应用和SPD均值方法形成暂定标签，后续全文复核定义。"
         }
       ]
     }

@@ -45,6 +45,11 @@
 | CVPR | 2020 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all 无题名；读取官方入口并遍历其全部日目录，按原文 URL 去重；无条数截断 | 1466 / 5 / 5 | 三日1466题名；五关键词五命中均审查官方摘要/局部页；年度领域覆盖未完成 | 其他任务词、全量摘要和引文发现待查；浏览器访问失败，直接HTTP获得三日目录、五摘要与三原文PDF；全部摘要/局部页，全文实验、预印本关系和资源运行/许可待查；UAL预训练/适配监督边界已区分 |
 | TGRS | 1994 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；136 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 136 / 4 / 1 | 登记136题名四命中；1去重、3原摘要待查；出版社年度覆盖未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成 |
 | TGRS | 1994 | unmixing、endmember、minimum-volume、aviris、spectrum；rows=1000，1 页；136 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 136 / 3 / 3 | 增补题名词新增3候选全部处理；含1题名暂排除；出版社年度覆盖未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；增补词共命中4条，其中1条已进入首组；不重复计入新增候选。雷达候选仅题名暂排除，摘要仍待查。 |
+| ICML | 2013 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录283篇与全量元数据283摘要URL集合完全一致；无条数截断 | 283 / 4 / 4 | 指定题名/全量摘要词命中4全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2022 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1233篇与全量元数据1233摘要URL集合完全一致；无条数截断 | 1233 / 8 / 8 | 指定题名/全量摘要词命中8全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2023 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1828篇与全量元数据1828摘要URL集合完全一致；无条数截断 | 1828 / 4 / 4 | 指定题名/全量摘要词命中4全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2024 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录2610篇与全量元数据2610摘要URL集合完全一致；无条数截断 | 2610 / 20 / 20 | 指定题名/全量摘要词命中20全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| arXiv | 2024 | 2405.06558、Random matrix theory improved Fréchet mean of symmetric positive definite matrices；精确ID两个分版本页面；非arXiv年度/领域搜索 | 2 / 2 / 2 | 两个预印本版本日期已核验并归并；正文差异待查 | v1/v2与会议正文及实验差异待查；其他arXiv论文和更新不在此定向范围 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -58,7 +63,7 @@
 | ICCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ECCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | NeurIPS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| ICML | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| ICML | conference | 最早可用目录至 2026 | 2013、2022–2024官方主卷指定题名/全量摘要词候选已处理；其他年份/关键词/正文未完成 |
 | ICLR | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | AAAI | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IJCAI | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -143,6 +148,16 @@
   阅读边界：接受稿1–3页与17页明确扩展会议，增加恢复任务并保留七作者；v1日期和Accepted to TPAMI来自官方arXiv。只关联版本，不推定正式出版年。非阅读全文。
 - 2026-10-08 / tgrs-1994-title-and-inversion-review：新增 1，更新 0，去重 2，排除 1，待处理 3。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：136条Crossref登记题名六成像词四命中；增补五任务词按DOI扣除重复后新增三候选。森林论文读作者上传原文首页摘要并核对NASA书目；两条去重，雷达仅题名暂排除；三条原摘要受限。非阅读全文、非出版社年度全覆盖。
+- 2026-10-08 / icml-2013-pmlr-optical-review：新增 0，更新 0，去重 0，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
+- 2026-10-08 / icml-2022-pmlr-optical-review：新增 1，更新 0，去重 0，排除 7，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
+- 2026-10-08 / icml-2023-pmlr-optical-review：新增 0，更新 0，去重 0，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
+- 2026-10-08 / icml-2024-pmlr-optical-review：新增 2，更新 0，去重 0，排除 18，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
+- 2026-10-08 / rmt-frechet-arxiv-version-association：新增 0，更新 0，去重 2，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：两个预印本版本候选归并到本批新建会议条目；官方日期已核验，作者仓库明确出版关联，非全文比对。
 
 ## 未解决缺口
 
@@ -155,3 +170,4 @@
 - TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。
 - 光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。
 - TGRS1994登记136题名两关键词组7候选：三条原摘要访问受限；雷达一条仅题名暂排除。森林原文首页已核验但PDF原图受限；出版社年度全量仍未证明。
+- ICML2013/2022–2024完成官方主卷目录与全量摘要指定词筛选：5954篇、36命中已处理；其他关键词、年度、workshop与正文/引文未完成。APT及RMT是通用方法的明确HSI应用，全文/复现仍待查。
