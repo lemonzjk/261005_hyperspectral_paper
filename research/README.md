@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-07。网站当前收录 213 篇论文、7 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-07。网站当前收录 214 篇论文、7 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -102,8 +102,10 @@ Optics Letters 与 TCSVT 加入领域重要期刊优先检索，分别补入九�
 
 沿原始摘要、官方全文与作者引文链再扩展八篇，网站达到 206 篇。HSI–DSM 分类标相关研究；SVSPI 真实法线/深度归核心；VCD-LFM 两颜色三维体归相关，采集帧率与网络吞吐分开。已保存 DPMamba、SymDiffuser、VCD-LFM 四张方法原图，另五篇标待补。
 
-继续补充 RSNCC、DSC、HCGFN、内部推扫 SfM/MVS、树木碳密度、EventSpecPS、SPoILeR 与 MultimodalStudio，当前权威统计为 213 篇、7 个资源、180 张原图。EventSpecPS 和 SPoILeR 在 ECCV 2026 官方接收列表核验，正式卷页未取得；MultimodalStudio 为 CVPR 2025 正式论文，沿引文发现，说明标题关键词扫描存在漏检。新增 MMS-DATA 推荐官方修正后的 v1.1，未下载大型数据压缩包，数据许可待核验。DSC 的相关体第三维不是 xyz；树木碳密度为高度/树种辅助估算；MultimodalStudio 未提供几何真值或数值几何评估。
+继续补充 RSNCC、DSC、HCGFN、内部推扫 SfM/MVS、树木碳密度、EventSpecPS、SPoILeR 与 MultimodalStudio，当前权威统计为 214 篇、7 个资源、180 张原图。EventSpecPS 和 SPoILeR 在 ECCV 2026 官方接收列表核验，正式卷页未取得；MultimodalStudio 为 CVPR 2025 正式论文，沿引文发现，说明标题关键词扫描存在漏检。新增 MMS-DATA 推荐官方修正后的 v1.1，未下载大型数据压缩包，数据许可待核验。DSC 的相关体第三维不是 xyz；树木碳密度为高度/树种辅助估算；MultimodalStudio 未提供几何真值或数值几何评估。
 
 本批保存八张方法原图；RSNCC 作者完整正文未见独立框架，内部推扫 SfM/MVS 待原始全文/补图。HCGFN 作者仓库图保留资源身份，未冒称正式期刊版；SPoILeR 网络图从 PDF 裁切，避开作者网页截断图。来源见 sources/seven-reviewed-and-mms-primary-2026-10-07.json。ECCV 2026 与 IGARSS 访问记录分别存于同目录候选审查文件。IGARSS 2025 正确入口需要 sessionID；18 篇稿件入口均返回登录页面，未据题名完成方法核验。GFSFN 作者全文确认为 JSTARS 二维分类背景。目录、其他期刊与引文追溯仍有遗漏，不声明穷尽。
 
 主题补查再排除 Optica 2026 OpenHI 与 ECCV 2014 两篇二维光谱重建/超分论文，依据作者全文或机构原始摘要；事件云 x/y/t 不作为 xyz。审查见 sources/optica-and-eccv2014-scope-review-2026-10-07.json。此补查不代表旧 ECCV 完整目录覆盖。
+
+Optics Express 2025 色差测深取得 Optica Publishing Group 在 ResearchGate 提供的正式正文，收录核心研究，已确认 Figures 7、9，图片下载仍受限。75 场景、16 个网络波段、相对深度及正文照明/训练波段范围不一致均保留；证据见 sources/chromatic-depth-primary-review-2026-10-07.json。bioRxiv BoNeRF-HS 原始摘要已核验，正文请求失败，列非 arXiv 预印本背景，不冒称正式发表。

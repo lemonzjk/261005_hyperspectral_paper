@@ -10731,6 +10731,45 @@
         }
       ],
       "code": "https://github.com/LTTM/MultimodalStudio"
+    },
+    {
+      "id": "chromatic-aberration-depth-net",
+      "shortTitle": "Chromatic HSI Depth",
+      "title": "Depth estimation from hyperspectral images based on chromatic aberration",
+      "authors": "Zhuang Zhao, Lei Gan, Jing Han, Lianfa Bai, Xingyu Zhang, Mingze Ma, Baohui Guo, Yong Peng",
+      "year": 2025,
+      "venue": "Optics Express",
+      "track": "geometry",
+      "representation": "高光谱相对深度图",
+      "scope": "核心研究",
+      "tags": [
+        "色差",
+        "离焦测深",
+        "高光谱",
+        "编码器解码器"
+      ],
+      "summary": "利用大孔径镜头的波长相关离焦差异，从高光谱图像监督学习场景相对深度。",
+      "input": "专用推扫成像系统的高光谱图像，经相邻波段合并和间隔选取后输入 16 个波段；结构光提供监督深度。",
+      "output": "逐像素相对深度图；绝对深度仍需相机参数转换。",
+      "mechanism": "波段特征增强与高频增强后，五级编码器用连续空洞卷积和局部/全局交互提取离焦特征；解码器融合跳连和各级中间深度，多损失监督，部分损失只作用于前景掩膜。",
+      "readingNote": "出版社通过 ResearchGate 提供的正式正文核验：33(22):47439–47454，2025-10-31 在线发表。75 个自采场景，1920×1200；结构光用于采集真值，不是推理所需投影。正文称照明 400–800 nm，但训练数据又写 350–670 nm，范围描述不一致，未改写为已核实传感器范围。16 个网络波段不是传感器全部波段。依赖该光学系统的色差/离焦和监督数据，不宣称跨镜头泛化、开放数据或真实世界任意场景绝对测深。已确认 Figure 7 网络、Figure 9 采集系统，原始图片/PDF 下载未取得。",
+      "paper": "https://doi.org/10.1364/OE.576592",
+      "doi": "10.1364/OE.576592",
+      "publicationName": "Optics Express",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "verificationLevel": "publisher_fulltext_via_researchgate",
+      "verifiedAt": "2026-10-07",
+      "sources": [
+        "https://www.researchgate.net/publication/396750957_Depth_estimation_from_hyperspectral_images_based_on_chromatic_aberration"
+      ],
+      "citation": "@article{chromaticaberrationdepthnet,\n  title={Depth estimation from hyperspectral images based on chromatic aberration},\n  author={Zhuang Zhao and Lei Gan and Jing Han and Lianfa Bai and Xingyu Zhang and Mingze Ma and Baohui Guo and Yong Peng},\n  journal={Optics Express},\n  volume={33},\n  number={22},\n  pages={47439--47454},\n  year={2025},\n  doi={10.1364/OE.576592}\n}",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "出版社通过 ResearchGate 提供的正式正文已核验 Figure 7 网络、Figure 9 采集系统；PDF 请求返回 HTML 验证页，RG 直接下载受限。等待可下载原图，不将文字当图。",
+        "sourceUrl": "https://opg.optica.org/oe/viewmedia.cfm?uri=oe-33-22-47439",
+        "checkedAt": "2026-10-07"
+      }
     }
   ],
   "datasets": [
