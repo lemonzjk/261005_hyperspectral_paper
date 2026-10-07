@@ -103,3 +103,7 @@
 ## CVPR 既有候选审查结束与 SpectralMoE 补充（2026-10-07）
 
 复核剩余 29 篇：25 排除、3 背景、1 收录。新增 spectralmoe-dgss（CVPR 2026，20521–20531），四作者与 11 页原始全文核验；深度从输入 RGB 波段估计，辅助二维光谱分割，不是实测 DSM/点云或三维重建。保存第 4 页完整 Figure 3，并与同名 continual-learning Spectral MoE 区分。UniSpector 的频谱为二维 DFT，全文核验后排除。证据见 sources/cvpr2026-remaining-scope-review-2026-10-07.json。用 pdfinfo 复核实际页数，纠正此前 Active Hyperspectral Imaging 的文本换页字符计数 13 为 11；正文页码以实际 PDF 为准。当前 196 篇，140 篇有 168 张图，46 needs_access、10 no_framework、0 pending。所有既有 CVPR 关键词命中候选均已有决定，不表示全部 CVPR 语义覆盖；下一步 ICCV/ECCV 候选与 SMLA/光谱立体及目标期刊、引文追溯。
+
+## ICCV 2013–2021 候选筛查（2026-10-07）
+
+既有待审 27 篇逐篇查官方摘要，21 excluded_scope、6 background_scope，无新增网站论文。AFD-Net 十页全文：VIS–NIR 实验为二维 patch 匹配，Brown 单谱 patch 标签有三维点 ID，但不是已验证跨光谱三维重建；保留配准对应背景。Manifold-Structured HCS（9 页）与 DLTR（10 页）正文确认第三维为波段，先验 shape/tensor 不等于 xyz 表面。其余背景是滤片选择、照明谱、噪声/杂散光校准及 RGB–热红外区域对齐。完整官方摘要、逐篇决定、三份原稿哈希与方法证据见 sources/iccv2013-2021-scope-review-2026-10-07.json。ICCV 余 38 篇（2023 十八篇、2025 二十篇），ECCV 及专业期刊/引文追溯仍未完成。
