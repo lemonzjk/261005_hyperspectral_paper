@@ -1,90 +1,38 @@
-import { Fragment, useState, type CSSProperties } from 'react';
-import type { PaperGroup } from './map-groups';
+import { useState } from 'react';
+import { getTrack } from './tracks';
 import type { Paper } from './types';
 
-interface Period { start: number; end: number; label: string }
-const directionHints: Record<string, string> = {
-  rendering: '表示场景 · 合成新视角', active: '主动照明 · 同时获取光谱与深度',
-  lightfield: '多视角观测 · 立体深度', geometry: '从观测恢复三维几何',
-  materials: '反射率 · 材料属性 · 光谱解混', pointcloud: '给真实点云赋予光谱属性',
-  lidar: '多波长测距 · 光谱辐射校正', registration: '跨传感器匹配 · 对齐 · 定位',
-  capture: '采集设备 · 几何与辐射标定', understanding: '识别 · 分割 · 三维场景应用',
-  holography: '多波长相位 · 波场与轮廓', volumetric: '三维体空间与波长联合成像',
-  fusion: '高度辅助分类 · 区别于三维重建',
-};
-const families = [
-  { id: 'acquire', name: '采集与空间对齐', hint: '获取观测，建立光谱与空间对应', tracks: ['capture', 'active', 'lidar', 'pointcloud', 'registration'] },
-  { id: 'reconstruct', name: '重建与场景表示', hint: '恢复几何、光谱与外观', tracks: ['geometry', 'rendering', 'lightfield', 'materials'] },
-  { id: 'understand', name: '理解与扩展成像', hint: '场景应用、波场计量与体成像', tracks: ['understanding', 'holography', 'volumetric', 'fusion'] },
-];
-
-const venueLabels: Record<string, string> = {
-  'Nature Communications': 'Nat. Commun.', 'Nature Photonics': 'Nat. Photonics',
-  'Nature Methods': 'Nat. Methods', 'Light: Science & Applications': 'Light Sci. Appl.',
-  'Laser & Photonics Reviews': 'Laser Photon. Rev.', 'Science China Information Sciences': 'Sci. China Inf. Sci.',
-};
-const newestFirst = (a: Paper, b: Paper) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle);
-
-/** A single reading surface exposes directions, time, examples, and collection counts. */
-export function AtlasOverview({ groups, periods, onSelect }: {
-  groups: PaperGroup[]; periods: Period[]; onSelect: (paper: Paper) => void;
+/** Annual groups share the document scroll and preserve every filtered paper. */
+export function AtlasOverview({ papers, ascending, showAll, onSelect }: {
+  papers: Paper[]; ascending: boolean; showAll: boolean; onSelect: (paper: Paper) => void;
 }) {
-  const [selection, setSelection] = useState<{ group: string; period?: number } | null>(null);
-  const toggle = (group: string, period?: number) => setSelection(current =>
-    current?.group === group && current.period === period ? null : { group, period });
-  const sections = families.map(family => ({ ...family, groups: family.tracks.flatMap(id => groups.filter(group => group.id === id)) })).filter(family => family.groups.length);
-  const ordered = sections.flatMap(family => family.groups);
-  return <div className="atlas-reading-surface">
-    <section className="atlas-taxonomy" aria-label="高光谱三维视觉方向图">
-      <header><div><span>FIELD GUIDE · 方向索引</span><h4>从观测，到三维场景，再到应用</h4><p>{groups.length} 个研究方向，按任务组织。选一个方向，直接定位论文时间轴。</p></div></header>
-      <div className="atlas-taxonomy-branches" style={{ '--families': sections.length } as CSSProperties}>
-        {sections.map((family, familyIndex) => <section className={`atlas-taxonomy-family family-${family.id}`} key={family.id}>
-          <header><span className="atlas-family-step">0{familyIndex + 1}</span><div><h5>{family.name}</h5><p>{family.hint}</p></div></header>
-          <div className="atlas-taxonomy-tracks">{family.groups.map(group => <a key={group.id} href={`#atlas-track-${group.id}`} style={{ '--route': group.color } as CSSProperties}>
-            <span><strong>{group.name}</strong><small>{group.papers.length} <em>篇</em></small></span><p>{directionHints[group.id] ?? group.description}</p>
-          </a>)}</div>
-        </section>)}
-      </div>
-      <footer><span>点击方向定位 · 点击论文看详情 · 点击篇数展开</span><span>高度辅助二维分类列为相关研究；分组不表示方法继承。</span></footer>
-    </section>
-    <div className="atlas-timeline-heading"><div><span>研究进展</span><h4>沿时间，读每个方向</h4></div><p>每阶段一篇示例 · 点击篇数查看其余论文</p></div>
-    <section className="atlas-roadmap" aria-label="研究方向与论文时间轴" style={{ '--stages': periods.length } as CSSProperties}>
-    <div className="atlas-roadmap-guide"><span>纵向看方向，横向看时间</span><p>论文标题可直接点击 · 篇数展开完整列表</p><div className="atlas-roadmap-scope-key"><span><i className="core"/>核心研究</span><span><i/>相关研究</span></div></div>
-    <table className="atlas-roadmap-table">
-      <caption className="sr-only">各方向每阶段最新收录的一篇论文及收录篇数。阶段等宽，不表示时长；示例不是排名或方法继承关系。</caption>
-      <thead><tr><th scope="col">研究方向 <small>{groups.length} 个方向</small></th>{periods.map(period => <th scope="col" key={period.start}>{period.label}<small>{period.start === periods.at(-1)?.start ? '最新收录' : period.start === period.end ? '年度研究' : '阶段积累'}</small></th>)}</tr></thead>
-      <tbody>{ordered.map((group, index) => {
-        const family = sections.find(section => section.groups[0].id === group.id);
-        const selected = selection?.group === group.id;
-        const period = selected && selection.period !== undefined ? periods[selection.period] : undefined;
-        const visible = group.papers.filter(paper => !period || paper.year >= period.start && paper.year <= period.end).sort(newestFirst);
-        const detailId = `atlas-detail-${group.id}`;
-        return <Fragment key={group.id}>{family && <tr className="atlas-roadmap-family"><th colSpan={periods.length + 1} scope="rowgroup"><strong>{family.name}</strong><span>{family.hint}</span><small>{family.groups.length} 个方向 · {family.groups.reduce((total, item) => total + item.papers.length, 0)} 篇</small></th></tr>}<tr id={`atlas-track-${group.id}`} className={`atlas-roadmap-row${selected ? ' selected' : ''}`} style={{ '--route': group.color } as CSSProperties}>
-          <th scope="row"><button className="atlas-roadmap-direction" title={`${group.description} 点击展开全部 ${group.papers.length} 篇论文。`} aria-expanded={selected && !period} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id)}>
-            <span className="atlas-roadmap-index">{String(index + 1).padStart(2, '0')}</span><span><strong>{group.name}</strong><small>{directionHints[group.id] ?? group.description}</small></span><span className="atlas-roadmap-chevron" aria-hidden="true">{group.papers.length}<small>篇</small></span>
-          </button></th>
-          {periods.map((stage, stageIndex) => {
-            const papers = group.papers.filter(paper => paper.year >= stage.start && paper.year <= stage.end).sort(newestFirst);
-            const example = papers[0];
-            const active = selected && selection.period === stageIndex;
-            return <td className={`atlas-roadmap-stage${example ? ' occupied' : ''}`} key={stage.start}>
-              <span className="atlas-roadmap-mobile-year">{stage.label}</span>
-              {example ? <div className={`atlas-roadmap-node${example.scope === '核心研究' ? ' is-core' : ''}`}><i aria-hidden="true"/><button className="atlas-roadmap-paper" data-atlas-example={example.id} onClick={() => onSelect(example)} title={`${example.title} · ${example.scope}`}>
-                <strong>{example.shortTitle}</strong><small title={example.venue}>{example.year} · {venueLabels[example.venue] ?? example.venue}</small>
-              </button><button className="atlas-roadmap-count" aria-label={`${group.name}，${stage.label}，${papers.length} 篇，${active ? '收起' : '展开'}论文`} aria-expanded={active} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id, stageIndex)}>{papers.length} 篇 <span aria-hidden="true">{active ? '−' : '+'}</span></button></div> : <span className="atlas-roadmap-empty">—</span>}
-
-            </td>;
-          })}
-        </tr>
-        {selected && <tr className="atlas-roadmap-detail-row" style={{ '--route': group.color } as CSSProperties}><td colSpan={periods.length + 1}>
-              <section className="atlas-roadmap-detail" id={detailId} aria-label={`${group.name}展开论文`}>
-                <header><div><h4>{group.name} <span>{period?.label ?? '全部年份'} · {visible.length} 篇</span></h4><p>{group.description}</p></div><button onClick={() => setSelection(null)} aria-label="收起论文">收起 ×</button></header>
-                <div className="atlas-sheet-paper-list">{visible.map(paper => <button key={paper.id} data-atlas-paper={paper.id} onClick={() => onSelect(paper)}><span>{paper.year}</span><div><strong>{paper.shortTitle}</strong><small>{paper.venue} · {paper.scope}</small><p>{paper.summary}</p></div></button>)}</div>
-              </section>
-        </td></tr>}
-        </Fragment>;
-      })}</tbody>
-    </table>
-    <footer className="atlas-roadmap-footer"><span>每阶段显示最新收录的一篇；篇数包含该阶段全部收录。</span><span>阶段等宽，不表示时长；排列不表示排名或继承关系。</span></footer>
-  </section></div>;
+  const [expanded, setExpanded] = useState<number[]>([]);
+  const years = [...new Set(papers.map(paper => paper.year))].sort((a, b) => ascending ? a - b : b - a);
+  return <div className="annual-atlas">
+    <nav className="annual-navigation" aria-label="跳转到发表年份">
+      <span>年份索引</span><div>{years.map(year => <a key={year} href={`#research-year-${year}`}>{year}</a>)}</div>
+    </nav>
+    <div className="annual-sections" aria-label="论文年度时间轴">
+      {years.map(year => {
+        const collection = papers.filter(paper => paper.year === year);
+        const open = showAll || expanded.includes(year);
+        const visible = open ? collection : collection.slice(0, 6);
+        return <section className="annual-section" id={`research-year-${year}`} key={year} aria-label={`${year} 年，${collection.length} 篇论文`}>
+          <header className="annual-year"><span className="annual-dot" aria-hidden="true"/><h4>{year}</h4><span>{collection.length} 篇论文</span>{year === Math.max(...years) && <small>最新年份</small>}</header>
+          <div className="annual-content">
+            <div className="annual-papers">{visible.map(paper => {
+              const figure = paper.frameworkFigures?.[0];
+              return <button className="annual-paper" key={paper.id} data-timeline-paper={paper.id} onClick={() => onSelect(paper)} aria-label={`${paper.shortTitle}，${paper.venue} ${paper.year}，查看详情`}>
+                <div className="annual-paper-meta"><span>{paper.venue}</span>{paper.publicationStatus === 'accepted' && <small>已接收</small>}{paper.publicationStatus === 'preprint' && <small>预印本</small>}<span className={`annual-scope${paper.scope === '核心研究' ? ' core' : ''}`}>{paper.scope === '核心研究' ? '核心' : '相关'}</span></div>
+                <div className="annual-paper-body"><div><h5>{paper.shortTitle}<span aria-hidden="true">↗</span></h5><p>{paper.summary}</p></div>{figure && <img src={`${import.meta.env.BASE_URL}${figure.path.replace(/^\//, '')}`} alt="" loading="lazy"/>}</div>
+                <footer><span>{getTrack(paper.track).name}</span><span>{figure ? '框架原图' : '方法详情'} <span aria-hidden="true">↗</span></span></footer>
+              </button>;
+            })}</div>
+            {!showAll && collection.length > 6 && <button className="annual-expand" aria-expanded={open} onClick={() => setExpanded(current => open ? current.filter(value => value !== year) : [...current, year])}>{open ? '收起本年论文' : `展开其余 ${collection.length - 6} 篇论文`} <span aria-hidden="true">{open ? '−' : '+'}</span></button>}
+          </div>
+        </section>;
+      })}
+    </div>
+    <p className="annual-note">按收录版本年份排列，年度间距不表示时长。方向归类用于阅读，不表示方法继承。</p>
+  </div>;
 }
