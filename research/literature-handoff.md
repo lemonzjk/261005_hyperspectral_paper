@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 182 篇；130 篇有 153 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 184 篇；132 篇有 156 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -39,3 +39,9 @@
 - HMAT：TGRS 2025, 63:5503817，DOI 10.1109/TGRS.2025.3533475；作者公开正式排版 17 页 PDF 核验，Figure 1 第 3 页完整网络与算子图例已保存。输入是 HSI 与高度栅格，输出二维类别图，标 fusion/相关研究。原 pending_fulltext 候选已改 included。
 - HyKey：发现于 arXiv:2604.17446v1，已核对正式 IJCARS 2026, 21:1061–1069（2026-04-27），DOI 10.1007/s11548-026-03633-z，同文只收录一次；专业场所不冒称 CV 顶刊。16 波段 460–600 nm，空间–光谱特征与单应/极线监督支持真实相对位姿估计，标 registration/核心研究，不声称已输出完整稠密表面。正式 Springer Figures 2、3 原图已保存；仓库名末尾句点已纠正，未运行复现。
 - 全文哈希、出版社元数据与版本关系见 sources/hmat-and-hykey-fulltext-2026-10-07.json。仍待 JSTARS 融合候选与更多专业期刊/IGARSS；HyKey 引文 HSSPN（IEEE Access 2022）和 Optics and Lasers in Engineering 光谱 SfM 保留场所/全文候选。BoNeRF-HS 目前 bioRxiv，不自动等同用户允许的 arXiv。
+
+## 光谱全息与偏振数据扩充
+
+- Microcomb HS3D：arXiv:2508.18219v1（2025），15 页全文及补充核验；约 1 THz 梳齿近红外幅度/相位、重聚焦和分层相位展开高度，标 holography/核心研究。页眉 Optica 不是正式发表证据。塑料实验记录 29 s；硬币 0.96 s，1.2×10^6/s 为光谱与空间分辨单元吞吐，不是三维帧率。保存 Figure 1 概念（第 2 页）与补充 Figure 1 两种完整散射系统（第 9 页）。
+- Spectro-polarimetric Dataset：CVPR 2024 官方 PDF，311 张 21 波段 450–650 nm 全 Stokes，另有 2022 张 RGB Stokes；两套数据均分析 SfP 法线的波段依赖。作为 capture/相关研究，不声称新三维重建模型或三维真值。保存第 4 页 Figure 3(a) 两种采集系统。原 pending_scope 候选已纳入。
+- 全文哈希见 sources/microcomb-and-spectropolar-fulltext-2026-10-07.json。OL 2026 SVSPI 摘要及正式登记已确认，但正文挑战页，保留 pending_fulltext；需要与 MOCI-PHI 平台和方法关系核验，不混用框架。
