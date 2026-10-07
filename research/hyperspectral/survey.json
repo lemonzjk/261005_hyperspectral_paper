@@ -1524,6 +1524,66 @@
       "htmlSha256": "21eec48e144aaee1d34537c1986697514b013356a51f89b3eaac8f067a9a3741",
       "candidateCount": 5,
       "reviewedCount": 5
+    },
+    {
+      "id": "tgrs-1994-crossref-imaging-terms",
+      "venue": "TGRS",
+      "year": 1994,
+      "keywordGroup": "optical-imaging-title",
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T22:38:28.911863+00:00",
+      "method": "Crossref 出版社登记元数据年度集合，按游标完整分页并逐题名扫描成像任务词",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "spectral imaging",
+        "coded aperture",
+        "compressive imaging",
+        "compressive spectral"
+      ],
+      "url": "https://api.crossref.org/journals/0196-2892/works",
+      "pagination": "rows=1000，1 页；136 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验",
+      "titleCount": 136,
+      "candidateCount": 4,
+      "reviewedCount": 1,
+      "status": "metadata_title_scan_complete",
+      "statusLabel": "登记136题名四命中；1去重、3原摘要待查；出版社年度覆盖未证明",
+      "sourceSnapshot": "sources/tgrs-1994-crossref-titles.json",
+      "htmlSha256": "a6339b0f450d869301d76121005ec17b2eaad612d236677957cffd9ae401c950",
+      "gaps": [
+        "Crossref 未登记论文及出版日期/卷期年度差异尚未核对",
+        "出版社全部目录、全量摘要、其他关键词和引文尚未完成"
+      ]
+    },
+    {
+      "id": "tgrs-1994-crossref-inversion-spectrum-terms",
+      "venue": "TGRS",
+      "year": 1994,
+      "keywordGroup": "inversion-spectrum-title-residual",
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T22:38:28.911863+00:00",
+      "method": "复用同一136条Crossref登记题名；扫描解混/端元/AVIRIS/波谱任务词，再按DOI排除已进入成像词候选的条目",
+      "keywords": [
+        "unmixing",
+        "endmember",
+        "minimum-volume",
+        "aviris",
+        "spectrum"
+      ],
+      "url": "https://api.crossref.org/journals/0196-2892/works",
+      "pagination": "rows=1000，1 页；136 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验",
+      "titleCount": 136,
+      "candidateCount": 3,
+      "reviewedCount": 3,
+      "status": "metadata_keyword_candidates_reviewed",
+      "statusLabel": "增补题名词新增3候选全部处理；含1题名暂排除；出版社年度覆盖未证明",
+      "sourceSnapshot": "sources/tgrs-1994-crossref-titles.json",
+      "htmlSha256": "a6339b0f450d869301d76121005ec17b2eaad612d236677957cffd9ae401c950",
+      "gaps": [
+        "Crossref 未登记论文及出版日期/卷期年度差异尚未核对",
+        "出版社全部目录、全量摘要、其他关键词和引文尚未完成",
+        "增补词共命中4条，其中1条已进入首组；不重复计入新增候选。雷达候选仅题名暂排除，摘要仍待查。"
+      ]
     }
   ],
   "candidates": [
@@ -3622,6 +3682,90 @@
       "reason": "形状Laplace–Beltrami谱与Chebyshev图卷积，非光学高光谱。",
       "checkedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/Li_Shape_correspondence_using_anisotropic_Chebyshev_spectral_CNNs_CVPR_2020_paper.json"
+    },
+    {
+      "title": "Hyperspectral image classification and dimensionality reduction: an orthogonal subspace projection approach",
+      "url": "https://doi.org/10.1109/36.298007",
+      "venue": "TGRS",
+      "year": 1994,
+      "searchId": "tgrs-1994-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "duplicate",
+      "reason": "DOI与既有OSP一致；沿用已核验原文及高光谱关系，不新增文献。",
+      "paperId": "osp-1994",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/tgrs-1994-review.json"
+    },
+    {
+      "title": "Application of EOF's to multispectral imagery: data compression and noise detection for AVIRIS",
+      "url": "https://doi.org/10.1109/36.285186",
+      "venue": "TGRS",
+      "year": 1994,
+      "searchId": "tgrs-1994-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "Crossref书目已保存；IEEE原页HTTP202空响应，浏览器访问校验/不可访问；第三方摘要仅作寻找原文线索，原摘要与图未核验，继续待查。",
+      "accessEvidencePath": "research/hyperspectral/sources/tgrs-1994-review.json"
+    },
+    {
+      "title": "Sea surface velocities from visible and infrared multispectral atmospheric mapping sensor (MAMS) imagery",
+      "url": "https://doi.org/10.1109/36.285208",
+      "venue": "TGRS",
+      "year": 1994,
+      "searchId": "tgrs-1994-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "Crossref书目已保存；IEEE原页HTTP202空响应，浏览器访问校验/不可访问；第三方摘要仅作寻找原文线索，原摘要与图未核验，继续待查。",
+      "accessEvidencePath": "research/hyperspectral/sources/tgrs-1994-review.json"
+    },
+    {
+      "title": "Lossless compression of multispectral image data",
+      "url": "https://doi.org/10.1109/36.295043",
+      "venue": "TGRS",
+      "year": 1994,
+      "searchId": "tgrs-1994-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "Crossref书目已保存；IEEE原页HTTP202空响应，浏览器访问校验/不可访问；第三方摘要仅作寻找原文线索，原摘要与图未核验，继续待查。",
+      "accessEvidencePath": "research/hyperspectral/sources/tgrs-1994-review.json"
+    },
+    {
+      "title": "Minimum-volume transforms for remotely sensed data",
+      "url": "https://doi.org/10.1109/36.297973",
+      "venue": "TGRS",
+      "year": 1994,
+      "searchId": "tgrs-1994-crossref-inversion-spectrum-terms",
+      "discoveredAt": "2026-10-08",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/tgrs-1994-review.json",
+      "decision": "duplicate",
+      "paperId": "craig-mvt-1994",
+      "reason": "DOI与既有Craig条目一致；沿用原出版社摘要及基础关系，不新增文献。"
+    },
+    {
+      "title": "Modulation of waveheight spectrum and radar cross section by varying surface currents",
+      "url": "https://doi.org/10.1109/36.312888",
+      "venue": "TGRS",
+      "year": 1994,
+      "searchId": "tgrs-1994-crossref-inversion-spectrum-terms",
+      "discoveredAt": "2026-10-08",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/tgrs-1994-review.json",
+      "decision": "excluded",
+      "reason": "仅登记题名暂排除：海浪波高谱及雷达截面随海流变化，不将波浪谱当作光学高光谱；原摘要未取得，若后续发现光学成像内容应复审。"
+    },
+    {
+      "title": "Forest canopy closure from classification and spectral unmixing of scene components-multisensor evaluation of an open canopy",
+      "url": "https://doi.org/10.1109/36.312895",
+      "venue": "TGRS",
+      "year": 1994,
+      "searchId": "tgrs-1994-crossref-inversion-spectrum-terms",
+      "discoveredAt": "2026-10-08",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/tgrs-1994-review.json",
+      "decision": "included",
+      "paperId": "forest-canopy-unmixing-1994",
+      "reason": "NASA书目及作者上传原文首页摘要证实AVIRIS/CASI森林冠层分类与解混；加入独立总库。"
     }
   ],
   "batches": [
@@ -4069,6 +4213,25 @@
       "gaps": [
         "正式卷期年、最终题名、最终版与接受稿实验差异待查"
       ]
+    },
+    {
+      "id": "tgrs-1994-title-and-inversion-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "tgrs-1994-crossref-imaging-terms",
+        "tgrs-1994-crossref-inversion-spectrum-terms"
+      ],
+      "new": 1,
+      "updated": 0,
+      "duplicates": 2,
+      "excluded": 1,
+      "pending": 3,
+      "categoriesAdded": 1,
+      "readingBoundary": "136条Crossref登记题名六成像词四命中；增补五任务词按DOI扣除重复后新增三候选。森林论文读作者上传原文首页摘要并核对NASA书目；两条去重，雷达仅题名暂排除；三条原摘要受限。非阅读全文、非出版社年度全覆盖。",
+      "gaps": [
+        "EOF/MAMS/无损压缩原摘要、全部候选完整实验与版本关系待核验",
+        "森林PDF及原图受限；出版社年度目录与其他任务词待扩展"
+      ]
     }
   ],
   "gaps": [
@@ -4079,6 +4242,7 @@
     "既有 214 篇总库关系、分类及阅读进度待复核",
     "Hyper-Skin 网页摘要 330 与官方 PDF 采集正文 306 数量不一致，待作者或发布数据核验。",
     "TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。",
-    "光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。"
+    "光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。",
+    "TGRS1994登记136题名两关键词组7候选：三条原摘要访问受限；雷达一条仅题名暂排除。森林原文首页已核验但PDF原图受限；出版社年度全量仍未证明。"
   ]
 }
