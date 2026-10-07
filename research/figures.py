@@ -28,7 +28,7 @@ def synchronize():
         entry = previous.get(paper['id'], {'paperId': paper['id'], 'status': 'pending', 'attempts': []})
         entry.update(year=paper['year'], title=paper['title'], paperUrl=paper['paper'])
         if paper.get('frameworkFigures'):
-            entry.update(status='verified', figures=paper['frameworkFigures'])
+            entry.update(status='needs_review' if any(figure.get('verificationStatus') == 'pending' for figure in paper['frameworkFigures']) else 'verified', figures=paper['frameworkFigures'])
             paper.pop('frameworkFigureSearch', None)
         elif entry['attempts']:
             latest = entry['attempts'][-1]
@@ -76,7 +76,7 @@ if args.command == 'add':
         shutil.copyfile(local, destination)
     figure = {key: value for key, value in record.items() if key not in ['paperId', 'localFile', 'filename']}
     figure.update(path=destination.relative_to(ROOT / 'public').as_posix(), width=width, height=height,
-                  verifiedAt=str(date.today()), sha256=hashlib.sha256(destination.read_bytes()).hexdigest(),
+                  verificationStatus='verified', verifiedAt=str(date.today()), sha256=hashlib.sha256(destination.read_bytes()).hexdigest(),
                   attribution=f"{paper['authors']} · {paper['venue']} {paper['year']}")
     existing = paper.setdefault('frameworkFigures', [])
     existing[:] = [item for item in existing if item['path'] != figure['path']]
@@ -85,14 +85,14 @@ if args.command == 'add':
     # Persist immediately for this one paper, before moving on to any next result.
     save(CATALOG, catalog)
     entry = next(item for item in registry['papers'] if item['paperId'] == paper['id'])
-    entry.update(status='verified', figures=existing)
+    entry.update(status='needs_review' if any(figure.get('verificationStatus') == 'pending' for figure in existing) else 'verified', figures=existing)
     print(f"Saved {paper['year']} {paper['shortTitle']}: {figure['path']}")
 elif args.command == 'attempt':
     if not args.url.startswith('https://'):
         raise ValueError('An original HTTPS source is required')
     entry = next(item for item in registry['papers'] if item['paperId'] == args.paper_id)
     entry['attempts'].append({'date': str(date.today()), 'url': args.url, 'note': args.note})
-    if entry['status'] != 'verified':
+    if entry['status'] not in ('verified', 'needs_review'):
         entry['status'] = args.status
         paper = next(item for item in catalog['papers'] if item['id'] == args.paper_id)
         paper['frameworkFigureSearch'] = {'status': args.status, 'note': args.note, 'sourceUrl': args.url, 'checkedAt': str(date.today())}

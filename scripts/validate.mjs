@@ -37,15 +37,22 @@ for (const entry of figureRegistry.papers) {
     assert(new URL(attempt.url).protocol === 'https:' && attempt.note?.trim(), `Invalid search attempt: ${paper.id}`);
     assert(/^\d{4}-\d{2}-\d{2}$/.test(attempt.date), `Invalid search date: ${paper.id}`);
   }
-  assert(['pending', 'verified', 'needs_access', 'no_framework'].includes(entry.status), `Invalid figure status: ${paper.id}`);
-  if (entry.status === 'verified') assert(paper.frameworkFigures?.length, `Missing verified figures: ${paper.id}`);
+  assert(['pending', 'verified', 'needs_access', 'no_framework', 'needs_review'].includes(entry.status), `Invalid figure status: ${paper.id}`);
+  if (entry.status === 'verified') assert(paper.frameworkFigures?.length && paper.frameworkFigures.every(figure => figure.verificationStatus !== 'pending'), `Invalid verified figures: ${paper.id}`);
+  if (entry.status === 'needs_review') assert(paper.frameworkFigures?.some(figure => figure.verificationStatus === 'pending'), `Missing pending upload: ${paper.id}`);
+  if (paper.frameworkFigures?.some(figure => figure.verificationStatus === 'pending')) assert.equal(entry.status, 'needs_review', `Pending upload marked verified: ${paper.id}`);
+  assert.deepEqual(entry.figureHistory ?? [], paper.frameworkFigureHistory ?? [], `Figure history mismatch: ${paper.id}`);
+  for (const history of paper.frameworkFigureHistory ?? []) {
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(history.replacedAt), `Invalid replacement date: ${paper.id}`);
+    assert([...(paper.frameworkFigures ?? []), ...(paper.frameworkFigureHistory ?? []).map(item => item.figure)].some(figure => figure.path === history.replacementPath), `Missing replacement image: ${paper.id}`);
+  }
   assert.deepEqual(entry.figures ?? [], paper.frameworkFigures ?? [], `Registry/catalog figure mismatch: ${paper.id}`);
   if (paper.frameworkFigureSearch) {
     const latest = entry.attempts.at(-1);
     assert.deepEqual(paper.frameworkFigureSearch, { status: entry.status, note: latest?.note, sourceUrl: latest?.url, checkedAt: latest?.date }, `Search status mismatch: ${paper.id}`);
     assert(!paper.frameworkFigures?.length, `Verified paper still marked missing: ${paper.id}`);
   }
-  for (const figure of paper.frameworkFigures ?? []) {
+  for (const figure of [...(paper.frameworkFigures ?? []), ...(paper.frameworkFigureHistory ?? []).map(item => item.figure)]) {
     assert(figure.path.startsWith(`figures/${paper.id}/`) && !figure.path.includes('..'), `Invalid figure path: ${paper.id}`);
     const local = new URL(`../public/${figure.path}`, import.meta.url);
     assert(existsSync(local), `Missing framework image: ${paper.id}`);
@@ -53,7 +60,13 @@ for (const entry of figureRegistry.papers) {
     assert(figure.width >= 100 && figure.height >= 100, `Unreadable image: ${paper.id}`);
     for (const key of ['figureLabel', 'caption', 'verificationNote', 'attribution']) assert(figure[key]?.trim(), `Missing figure ${key}: ${paper.id}`);
     assert(new URL(figure.sourceUrl).protocol === 'https:', `Invalid figure source: ${paper.id}`);
-    assert(/^\d{4}-\d{2}-\d{2}$/.test(figure.verifiedAt), `Missing figure verification: ${paper.id}`);
+    if (figure.verificationStatus === 'pending') {
+      assert(/^\d{4}-\d{2}-\d{2}$/.test(figure.uploadedAt), `Missing upload date: ${paper.id}`);
+      assert(!figure.verifiedAt, `Unverified upload has verification date: ${paper.id}`);
+    } else {
+      assert(figure.verificationStatus === undefined || figure.verificationStatus === 'verified', `Invalid verification status: ${paper.id}`);
+      assert(/^\d{4}-\d{2}-\d{2}$/.test(figure.verifiedAt), `Missing figure verification: ${paper.id}`);
+    }
     if (figure.page !== undefined) assert(Number.isInteger(figure.page) && figure.page > 0, `Invalid PDF page: ${paper.id}`);
     figureCount++;
   }

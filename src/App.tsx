@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { FrameworkFigures } from './FrameworkFigures';
 import { SpectralScene } from './SpectralScene';
 import rawCatalog from './data/catalog.json';
 import { getTrack, tracks } from './tracks';
@@ -6,16 +7,16 @@ import { ResearchMap } from './ResearchMap';
 import { PublicationFilter, type PublicationOption } from './PublicationFilter';
 import type { Dataset, Paper } from './types';
 
-const catalog = rawCatalog as { updatedAt: string; papers: Paper[]; datasets: Dataset[] };
-const paperYears = catalog.papers.map(p => p.year);
+const initialCatalog = rawCatalog as { updatedAt: string; papers: Paper[]; datasets: Dataset[] };
+const paperYears = initialCatalog.papers.map(p => p.year);
 const years = Array.from({ length: Math.max(...paperYears) - Math.min(...paperYears) + 1 }, (_, i) => String(Math.max(...paperYears) - i));
-const venues = [...new Set(catalog.papers.map(p => p.venue))].sort((a, b) => a.localeCompare(b));
+const venues = [...new Set(initialCatalog.papers.map(p => p.venue))].sort((a, b) => a.localeCompare(b));
 const publicationOptions: PublicationOption[] = venues.map(name => {
-  const papers = catalog.papers.filter(paper => paper.venue === name);
+  const papers = initialCatalog.papers.filter(paper => paper.venue === name);
   return { name, fullName: papers.find(paper => paper.publicationName)?.publicationName ?? name, count: papers.length,
     kind: name === 'arXiv' ? 'preprint' : papers.some(paper => paper.citation.startsWith('@article')) ? 'journal' : 'conference' };
 });
-const representations = [...new Set(catalog.papers.map(p => p.representation))];
+const representations = [...new Set(initialCatalog.papers.map(p => p.representation))];
 const repo = 'https://github.com/lemonzjk/261005_hyperspectral_paper';
 const views = [{ id: 'atlas', label: '研究图谱' }, { id: 'papers', label: '论文库' }, { id: 'datasets', label: '数据资源' }, { id: 'guide', label: '阅读指南' }] as const;
 type View = typeof views[number]['id'];
@@ -35,14 +36,14 @@ function PaperCard({ paper, onSelect }: { paper: Paper; onSelect: (p: Paper) => 
   const track = getTrack(paper.track);
   return <button className="paper-card" onClick={() => onSelect(paper)} style={{ '--track': track.color } as CSSProperties}>
     <div className="card-top"><span className="venue-badge">{paper.venue} {paper.year}{paper.publicationStatus === 'early_access' ? ' · 在线先行' : paper.publicationStatus === 'accepted' ? ' · 已接收' : ''}</span><span className="scope">{paper.venueTier === 'background' ? '补充阅读 · ' : ''}{paper.scope}</span></div>
-    {paper.frameworkFigures?.[0] && <div className="paper-card-figure"><img src={`${import.meta.env.BASE_URL}${paper.frameworkFigures[0].path}`} alt="" loading="lazy"/><span>论文框架原图</span></div>}
+    {paper.frameworkFigures?.[0] && <div className="paper-card-figure"><img src={`${import.meta.env.BASE_URL}${paper.frameworkFigures[0].path}`} alt="" loading="lazy"/><span>{paper.frameworkFigures[0].verificationStatus === 'pending' ? '用户上传 · 待核验' : '论文框架原图'}</span></div>}
     <h3>{paper.shortTitle}<span aria-hidden="true">↗</span></h3><p className="paper-full-title">{paper.title}</p>
     <p className="paper-summary">{paper.summary}</p>
     <div className="paper-card-bottom"><span><i/>{track.name}</span><span>{paper.representation}</span></div>
   </button>;
 }
 
-function PaperDialog({ paper, onClose }: { paper: Paper | null; onClose: () => void }) {
+function PaperDialog({ paper, onClose, onUpdated }: { paper: Paper | null; onClose: () => void; onUpdated: (paper: Paper) => void }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
@@ -59,10 +60,7 @@ function PaperDialog({ paper, onClose }: { paper: Paper | null; onClose: () => v
       <div className="dialog-links"><a className="primary-button" href={paper.paper} target="_blank" rel="noreferrer">阅读论文 {arrow}</a>{paper.code && <a className="secondary-button" href={paper.code} target="_blank" rel="noreferrer">作者代码 {arrow}</a>}</div>
       <dl className="publication-facts"><div><dt>出版来源</dt><dd>{paper.publicationName || paper.venue}</dd></div><div><dt>版本年份</dt><dd>{paper.year}{paper.publicationStatus && publicationLabels[paper.publicationStatus] && <span>{publicationLabels[paper.publicationStatus]}</span>}</dd></div>{paper.doi && <div><dt>DOI</dt><dd>{paper.doi}</dd></div>}</dl>
       <p className="dialog-summary">{paper.summary}</p>
-      {paper.frameworkFigures?.length ? <section className="paper-frameworks" aria-label="论文框架图"><h3>论文框架图 <span>{paper.frameworkFigures.length} 张</span></h3>{paper.frameworkFigures.map(figure => <figure key={figure.path}>
-        <a className="framework-image-link" href={`${import.meta.env.BASE_URL}${figure.path}`} target="_blank" rel="noreferrer" aria-label={`${figure.figureLabel}，打开高清原图`}><img src={`${import.meta.env.BASE_URL}${figure.path}`} alt={`${paper.shortTitle} ${figure.figureLabel}：${figure.caption}`} width={figure.width} height={figure.height} loading="lazy"/><span>打开高清原图 ↗</span></a>
-        <figcaption><strong>{figure.figureLabel}</strong><p>{figure.caption}</p><div><a href={figure.sourceUrl} target="_blank" rel="noreferrer">原始来源{figure.page ? ` · PDF 第 ${figure.page} 页` : ''} ↗</a><span>核验 {figure.verifiedAt}</span></div><small>{figure.attribution}</small></figcaption>
-      </figure>)}</section> : <div className="framework-pending"><strong>{paper.frameworkFigureSearch?.status === 'no_framework' ? '全文未发现独立框架图' : paper.frameworkFigureSearch?.status === 'needs_access' ? '框架图待人工补充' : '框架图待检索'}</strong><p>{paper.frameworkFigureSearch?.note || '按最新年份优先逐篇收集，核验后将在这里展示。'}</p>{paper.frameworkFigureSearch && <a href={paper.frameworkFigureSearch.sourceUrl} target="_blank" rel="noreferrer">已检查来源 · {paper.frameworkFigureSearch.checkedAt} ↗</a>}</div>}
+      <FrameworkFigures key={paper.id} paper={paper} onUpdated={onUpdated}/>
 
       <dl className="io-grid"><div><dt>输入 / INPUT</dt><dd>{paper.input}</dd></div><div><dt>输出 / OUTPUT</dt><dd>{paper.output}</dd></div></dl>
       <h3>关键方法</h3><p>{paper.mechanism}</p><div className="tags">{paper.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
@@ -74,6 +72,7 @@ function PaperDialog({ paper, onClose }: { paper: Paper | null; onClose: () => v
 }
 
 export default function App() {
+  const [catalog, setCatalog] = useState(initialCatalog);
   const [view, setView] = useState<View>(initialView);
   const [query, setQuery] = useState(params.get('q') ?? '');
   const [track, setTrack] = useState(tracks.some(t => t.id === params.get('track')) ? params.get('track')! : '');
@@ -90,7 +89,11 @@ export default function App() {
   const changeVenues = (values: string[]) => setSelectedVenues([...new Set(values)].sort((a, b) => a.localeCompare(b)));
   const [representation, setRepresentation] = useState(representations.includes(params.get('representation') ?? '') ? params.get('representation')! : '');
   const [selected, setSelected] = useState<Paper | null>(catalog.papers.find(p => p.id === params.get('paper')) ?? null);
-  const filtered = useMemo(() => catalog.papers.filter(p => (!track || p.track === track) && (!yearFrom || p.year >= Number(yearFrom)) && (!yearTo || p.year <= Number(yearTo)) && (!selectedVenues.length || selectedVenues.includes(p.venue)) && (!representation || p.representation === representation) && query.toLowerCase().trim().split(/\s+/).every(word => `${p.shortTitle} ${p.title} ${p.authors} ${p.summary} ${p.tags.join(' ')} ${p.venue} ${getTrack(p.track).name}`.toLowerCase().includes(word))).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)), [query, track, yearFrom, yearTo, selectedVenues, representation]);
+  useEffect(() => {
+    setCatalog(initialCatalog);
+    setSelected(current => current ? initialCatalog.papers.find(paper => paper.id === current.id) ?? null : null);
+  }, [initialCatalog]);
+  const filtered = useMemo(() => catalog.papers.filter(p => (!track || p.track === track) && (!yearFrom || p.year >= Number(yearFrom)) && (!yearTo || p.year <= Number(yearTo)) && (!selectedVenues.length || selectedVenues.includes(p.venue)) && (!representation || p.representation === representation) && query.toLowerCase().trim().split(/\s+/).every(word => `${p.shortTitle} ${p.title} ${p.authors} ${p.summary} ${p.tags.join(' ')} ${p.venue} ${getTrack(p.track).name}`.toLowerCase().includes(word))).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)), [catalog, query, track, yearFrom, yearTo, selectedVenues, representation]);
   const hasFilters = Boolean(query || track || yearFrom || yearTo || selectedVenues.length || representation);
   const resetFilters = () => { setQuery(''); setTrack(''); setYearRange({ start: '', end: '' }); setRepresentation(''); setSelectedVenues([]); };
   useEffect(() => { const next = new URLSearchParams(); if (view !== 'atlas') next.set('view', view); if (query) next.set('q', query); if (track) next.set('track', track); if (yearFrom) next.set('yearFrom', yearFrom); if (yearTo) next.set('yearTo', yearTo); selectedVenues.forEach(value => next.append('venue', value)); if (representation) next.set('representation', representation); if (selected) next.set('paper', selected.id); window.history.replaceState(null, '', `${window.location.pathname}${next.size ? '?' + next.toString() : ''}`); }, [view, query, track, yearFrom, yearTo, selectedVenues, representation, selected]);
@@ -138,6 +141,6 @@ export default function App() {
       </div>
     </main>
     <footer className="site-footer"><div><b>HS3D Atlas</b><span>高光谱三维视觉研究图谱</span></div><p>独立整理 · 持续更新 · 尊重原始来源</p><div><button onClick={downloadBib}>BibTeX ↓</button><a href={repo} target="_blank" rel="noreferrer">GitHub {arrow}</a></div></footer>
-    <PaperDialog paper={selected} onClose={() => setSelected(null)}/>
+    <PaperDialog paper={selected} onClose={() => setSelected(null)} onUpdated={paper => { setCatalog(current => ({ ...current, papers: current.papers.map(item => item.id === paper.id ? paper : item) })); setSelected(current => current?.id === paper.id ? paper : current); }}/>
   </>;
 }

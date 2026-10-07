@@ -2,7 +2,7 @@ export type TrackId = 'capture' | 'geometry' | 'rendering' | 'materials' | 'unde
 export interface FrameworkFigure {
   path: string; figureLabel: string; caption: string; sourceUrl: string;
   imageUrl?: string; page?: number; width: number; height: number;
-  verifiedAt: string; sha256: string; attribution: string; verificationNote: string;
+  verifiedAt?: string; uploadedAt?: string; verificationStatus?: 'pending' | 'verified'; sha256: string; attribution: string; verificationNote: string;
 }
 export interface Paper {
   id: string; shortTitle: string; title: string; authors: string; year: number;
@@ -12,6 +12,7 @@ export interface Paper {
   citation: string; mapX?: number;
   doi?: string; publicationName?: string; verificationLevel?: string;
   publicationStatus?: string; venueTier?: string; frameworkFigures?: FrameworkFigure[];
+  frameworkFigureHistory?: { figure: FrameworkFigure; replacedAt: string; replacementPath: string }[];
   frameworkFigureSearch?: { status: 'pending' | 'needs_access' | 'no_framework'; note: string; sourceUrl: string; checkedAt: string };
 }
 export interface Dataset {

@@ -62,3 +62,15 @@ https://lemonzjk.github.io/261005_hyperspectral_paper/
 推荐论文或纠错：[提交 Issue](https://github.com/lemonzjk/261005_hyperspectral_paper/issues/new)。
 
 文献检索的范围、候选与进度见 [research/README.md](research/README.md)。逐篇整理的输入、输出、机制与核验信息保存在论文数据中。
+
+## 在页面上传框架图
+
+使用 `npm run dev -- --port 5173` 启动本地编辑服务，需要 Python 3 和 Pillow（与 `research/figures.py` 的依赖一致）。静态构建及 `npm run preview` 只提供浏览，不显示上传入口。
+
+1. 打开任一论文详情，在「论文框架图」旁点击「＋ 补充图片」；已有图片下方可点击「替换此图」。
+2. 选择 PNG、JPG 或 WebP 静态图片，预览后填写图号或名称、HTTPS 来源链接，可补充说明。单图最大 10 MB，宽高至少 100 像素，总像素不超过 2500 万。
+3. 点击「保存补充图」或「保存替换」。图片保存到 `public/figures/<paper-id>/`，元数据同步保存到 `src/data/catalog.json` 与 `research/figures.json`，刷新后仍可查看。
+
+补充图片追加到列表；替换图片保留原位置，旧文件不删除，旧图号、来源和核验信息存入「替换历史」。新上传图片默认标记「用户上传 · 待核验」，不会自动继承旧图的核验结论；存在待核验图的论文在续接清单中标记 `needs_review`。重复图片、损坏图片和失效的替换目标会拒绝保存。失败时表单保留，可修正后重试。
+
+上传不会自动创建 Git 提交；整理核验完成后运行 `npm run validate` 并按仓库约定提交。后端检查可运行 `python3 -m unittest discover -s server -p 'test_*.py'`；测试使用临时目录，不修改文献数据。
