@@ -1,0 +1,2779 @@
+{
+  "checkedAt": "2026-10-07",
+  "papers": [
+    {
+      "id": "shape-from-water-tpami",
+      "title": "Depth Sensing by Near-Infrared Light Absorption in Water",
+      "paper": "https://pubmed.ncbi.nlm.nih.gov/32078532/",
+      "doi": "10.1109/TPAMI.2020.2973986",
+      "verificationLevel": "official_abstract",
+      "input": "两个近红外波段的水下成像，另研究三波段变体。",
+      "output": "水下物体的深度和形状。",
+      "readingNote": "正式 TPAMI 43(8):2611–2622（2021）原始摘要与作者出版目录核验。与 ECCV 2016 Shape from Water 同团队同主题，原始摘要新增透视/发散光源及三波段稳健性描述；未经全文逐节比较，不称独立方法。摘要级收录，期刊正文/原图仍待取得，不能用会议图替代期刊框架。双/三波段属于相关研究，不是密集高光谱测量。"
+    },
+    {
+      "id": "svspi-shape-hsi",
+      "title": "Joint 3D shape and hyperspectral reconstruction from single-view spectro-polarimetric imaging",
+      "paper": "https://opg.optica.org/ol/abstract.cfm?uri=ol-51-5-1132",
+      "doi": "10.1364/OL.588516",
+      "verificationLevel": "official_abstract",
+      "input": "单视角光谱偏振观测及用于训练/评价的光谱–偏振–三维数据集。",
+      "output": "表面法线、深度图，以及 400–1000 nm 的光谱信息。",
+      "readingNote": "出版社原始摘要、八作者、DOI 与 OL 51(5):1132–1135 正式版本核验，2026-02-18 在线、3 月卷期。摘要级收录：具体网络、波段数量、误差指标与实验边界需正文进一步核验。与同团队 Nature Communications 2026 的 MOCI/PHI 传感器研究有关联，未经本文正文证明不判为其扩展版或独立平台；不借用该论文框架或实验数值。"
+    },
+    {
+      "id": "s2msmamba-fusion",
+      "title": "Spatial–Spectral Multiscale Mamba Fusion Network for Hyperspectral and LiDAR Data Classification",
+      "paper": "https://ieeexplore.ieee.org/document/11683289",
+      "doi": "10.1109/TGRS.2026.3731189",
+      "verificationLevel": "official_abstract",
+      "input": "配准的 HSI 与 LiDAR 数据；Houston、MUUFL、Trento 土地覆盖分类基准。",
+      "output": "二维土地覆盖类别预测，不输出真实三维表面或光谱点云。",
+      "readingNote": "原始 IEEE 摘要与出版社 Crossref 九作者核验，TGRS 64、文章号 5529116，2026-09-07 在线。摘要明确分类任务，不能把 LiDAR 输入写成三维重建输出。正文具体栅格/点云预处理尚未核验。原文宣布代码仓库 binzhao1018/S2MSMamba，但当前 GitHub API 返回空仓库状态 409，不标为已可复现。原始图仍待补充。"
+    },
+    {
+      "id": "tapt-arbitrary-fusion",
+      "title": "T-APT: Text-Guided Modality-Aware Prompt Tuning for Arbitrary Multimodal Remote Sensing Data Joint Classification",
+      "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/42411",
+      "doi": "10.1609/aaai.v40i6.42411",
+      "verificationLevel": "official_full_text",
+      "input": "HSI、MSI、LiDAR/DSM 或 SAR 的不同组合与类别/模态文本；真实实验包括 HSI–LiDAR。",
+      "output": "二维逐像素土地覆盖分类。",
+      "readingNote": "核验 AAAI 2026 官方九页 PDF：§Datasets 使用 Houston2013、MUUFL 的配准 HSI+LiDAR DSM 与 Augsburg；不是仅因为 arbitrary 题名而推断高度融合。正式页码 4158–4166、三作者，2026-03-14。Figure 2 在 PDF 第 3 页；网页缓存正文可读，但原始 PDF 下载受限。原稿中的 github.com/Jiahuiqu/TAPT 当前 API 404，不标可运行代码。"
+    },
+    {
+      "id": "fvmgn-generalization",
+      "title": "Frequency-Aware Vision-Language Multimodality Generalization Network for Remote Sensing Image Classification",
+      "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/38251",
+      "doi": "10.1609/aaai.v40i15.38251",
+      "verificationLevel": "official_full_text",
+      "input": "MUUFL、Trento、Houston2013 的 HSI–LiDAR 图像与共有/模态特有类别文本。",
+      "output": "跨数据集二维土地覆盖类别，实验关注树、道路、建筑三个公共类别。",
+      "readingNote": "核验 AAAI 2026 官方九页 PDF 的方法与第 5 页实验设定：明确使用 HSI–LiDAR，而非仅图像频率方法；Frequency 指小波频率，光学光谱来自 HSI 输入。三公共类别的跨数据集实验不能外推全部类别。正式四作者、12564–12572、2026-03-14；正文说明代码数据将公布，未发现当前可用代码或可下载原图。"
+    },
+    {
+      "id": "dpmamba-missing-modalities",
+      "title": "DPMamba: Distillation Prompt Mamba for Multimodal Remote Sensing Image Classification with Missing Modalities",
+      "paper": "https://www.ijcai.org/proceedings/2025/248",
+      "doi": "10.24963/ijcai.2025/248",
+      "verificationLevel": "official_full_text",
+      "input": "Houston/Trento 配准 HSI 与 LiDAR DSM，以及 Augsburg 多模态影像；训练完整模态，推理允许缺模态。",
+      "output": "二维土地覆盖分类；不恢复独立测量的三维表面或缺失波段/高度真值。",
+      "readingNote": "官方九页全文及正式四作者、2224–2232、DOI 核验。§4.1 明确 LiDAR-derived DSM，不把 3D 输入和网络维度当成几何重建。Figure 2 的预训练、教师/学生训练、缺模态推理完整流程位于 PDF 第 3 页。仅整理方法，未运行复现。"
+    },
+    {
+      "id": "symdiffuser-fusion",
+      "title": "Fusion from a Distributional Perspective: A Unified Symbiotic Diffusion Framework for Any Multisource Remote Sensing Data Classification",
+      "paper": "https://www.ijcai.org/proceedings/2024/174",
+      "doi": "10.24963/ijcai.2024/174",
+      "verificationLevel": "official_full_text",
+      "input": "任意一对不同遥感模态及类别文本；实际 HSI–LiDAR 实验使用 MUUFL，另有 HSI–MSI、HSI–SAR。",
+      "output": "二维土地覆盖类别预测。",
+      "readingNote": "官方九页全文、五作者、1570–1578、DOI 核验。标题 any multisource 不等于所有场景有效，实际实验模态和数据集分别记录；MUUFL 含 LiDAR 高度信息，属于二维融合相关研究。Figure 2 是预训练 CSDiff 阶段，不冒充下游完整分类框架；Figure 1 提供两阶段概览。"
+    },
+    {
+      "id": "vcd-lfm-dualcolor",
+      "title": "Real-time volumetric reconstruction of biological dynamics with light-field microscopy and deep learning",
+      "paper": "https://www.nature.com/articles/s41592-021-01058-x",
+      "doi": "10.1038/s41592-021-01058-x",
+      "verificationLevel": "official_full_text",
+      "input": "光场荧光视频与训练用三维图像；线虫实验同时记录绿色 GCaMP6 和红色 wCherry 通道。",
+      "output": "逐颜色三维体序列及神经活动/生物动态；体深度轴是真实 z。",
+      "readingNote": "核验作者实验室 15 页原始稿及出版社 DOI/12 作者，Nature Methods 18:551–556，2021-02-11 在线。正文线虫部分明确一分种绿色/红色光场记录和比率校正：双颜色属于相关阅读，不能写成连续高光谱体成像。100 Hz 采集与约 13.5 Hz 该实验重建吞吐不同；200 Hz 是另一个生物采集场景，不写成全部通道实时重建速度。Figure 1a,b 为采集/训练/推理流程，c–j 为结果，不用结果冒充框架。"
+    }
+  ],
+  "crossrefMetadata": [
+    {
+      "doi": "10.1038/s41592-021-01058-x",
+      "metadata": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              6
+            ]
+          ],
+          "date-time": "2026-10-06T23:43:37Z",
+          "timestamp": 1791330217881,
+          "version": "4.3.1"
+        },
+        "reference-count": 32,
+        "publisher": "Springer Science and Business Media LLC",
+        "issue": "5",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  2,
+                  11
+                ]
+              ],
+              "date-time": "2021-02-11T00:00:00Z",
+              "timestamp": 1613001600000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://www.springer.com/tdm"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2021,
+                  2,
+                  11
+                ]
+              ],
+              "date-time": "2021-02-11T00:00:00Z",
+              "timestamp": 1613001600000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://www.springer.com/tdm"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "21874052"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "21874052"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "21927802"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "21927802"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [
+            "link.springer.com"
+          ],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "Nat Methods"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              5
+            ]
+          ]
+        },
+        "DOI": "10.1038/s41592-021-01058-x",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2021,
+              2,
+              11
+            ]
+          ],
+          "date-time": "2021-02-11T12:06:51Z",
+          "timestamp": 1613045211000
+        },
+        "page": "551-556",
+        "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+        "source": "Crossref",
+        "is-referenced-by-count": 236,
+        "title": [
+          "Real-time volumetric reconstruction of biological dynamics with light-field microscopy and deep learning"
+        ],
+        "prefix": "10.1038",
+        "volume": "18",
+        "author": [
+          {
+            "given": "Zhaoqiang",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lanxin",
+            "family": "Zhu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hao",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Guo",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Chengqiang",
+            "family": "Yi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yi",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yicong",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6242-3506",
+            "authenticated-orcid": false,
+            "given": "Yichen",
+            "family": "Ding",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0086-9622",
+            "authenticated-orcid": false,
+            "given": "Mei",
+            "family": "Zhen",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5431-4628",
+            "authenticated-orcid": false,
+            "given": "Shangbang",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1734-0792",
+            "authenticated-orcid": false,
+            "given": "Tzung K.",
+            "family": "Hsiai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3764-817X",
+            "authenticated-orcid": false,
+            "given": "Peng",
+            "family": "Fei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "297",
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              2,
+              11
+            ]
+          ]
+        },
+        "reference": [
+          {
+            "key": "1058_CR1",
+            "doi-asserted-by": "publisher",
+            "first-page": "1065",
+            "DOI": "10.1126/science.1162493",
+            "volume": "322",
+            "author": "PJ Keller",
+            "year": "2008",
+            "unstructured": "Keller, P. J., Schmidt, A. D., Wittbrodt, J. & Stelzer, E. H. K. Reconstruction of zebrafish early embryonic development by scanned light sheet microscopy. Science 322, 1065–1069 (2008).",
+            "journal-title": "Science"
+          },
+          {
+            "key": "1058_CR2",
+            "doi-asserted-by": "publisher",
+            "first-page": "417",
+            "DOI": "10.1038/nmeth.1586",
+            "volume": "8",
+            "author": "TA Planchon",
+            "year": "2011",
+            "unstructured": "Planchon, T. A. et al. Rapid three-dimensional isotropic imaging of living cells using Bessel beam plane illumination. Nat. Methods 8, 417–423 (2011).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR3",
+            "doi-asserted-by": "publisher",
+            "first-page": "920",
+            "DOI": "10.1038/nmeth815",
+            "volume": "2",
+            "author": "J-A Conchello",
+            "year": "2005",
+            "unstructured": "Conchello, J.-A. & Lichtman, J. W. Optical sectioning microscopy. Nat. Methods 2, 920–931 (2005).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR4",
+            "doi-asserted-by": "publisher",
+            "first-page": "1007",
+            "DOI": "10.1126/science.1100035",
+            "volume": "305",
+            "author": "J Huisken",
+            "year": "2004",
+            "unstructured": "Huisken, J., Swoger, J., Del, B. F., Wittbrodt, J. & Stelzer, E. H. Optical sectioning deep inside live embryos by selective plane illumination microscopy. Science 305, 1007–1009 (2004).",
+            "journal-title": "Science"
+          },
+          {
+            "key": "1058_CR5",
+            "doi-asserted-by": "publisher",
+            "first-page": "349",
+            "DOI": "10.1038/nmeth.4230",
+            "volume": "14",
+            "author": "W Yang",
+            "year": "2017",
+            "unstructured": "Yang, W. & Yuste, R. In vivo imaging of neural activity. Nat. Methods 14, 349–359 (2017).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR6",
+            "doi-asserted-by": "publisher",
+            "first-page": "924",
+            "DOI": "10.1145/1141911.1141976",
+            "volume": "25",
+            "author": "M Levoy",
+            "year": "2006",
+            "unstructured": "Levoy, M., Ng, R., Adams, A., Footer, M. & Horowitz, M. Light field microscopy. ACM Trans. Graph. 25, 924–934 (2006).",
+            "journal-title": "ACM Trans. Graph."
+          },
+          {
+            "key": "1058_CR7",
+            "doi-asserted-by": "publisher",
+            "first-page": "727",
+            "DOI": "10.1038/nmeth.2964",
+            "volume": "11",
+            "author": "R Prevedel",
+            "year": "2014",
+            "unstructured": "Prevedel, R. et al. Simultaneous whole-animal 3D imaging of neuronal activity using light-field microscopy. Nat. Methods 11, 727–730 (2014).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR8",
+            "doi-asserted-by": "publisher",
+            "first-page": "517",
+            "DOI": "10.1364/OPTICA.3.000517",
+            "volume": "3",
+            "author": "NC Pégard",
+            "year": "2016",
+            "unstructured": "Pégard, N. C. et al. Compressive light-field microscopy for 3D neural activity recording. Optica 3, 517–524 (2016).",
+            "journal-title": "Optica"
+          },
+          {
+            "key": "1058_CR9",
+            "doi-asserted-by": "publisher",
+            "first-page": "e28158",
+            "DOI": "10.7554/eLife.28158",
+            "volume": "6",
+            "author": "L Cong",
+            "year": "2017",
+            "unstructured": "Cong, L. et al. Rapid whole brain imaging of neural activity in freely behaving larval zebrafish (Danio rerio). eLife 6, e28158 (2017).",
+            "journal-title": "eLife"
+          },
+          {
+            "key": "1058_CR10",
+            "doi-asserted-by": "publisher",
+            "first-page": "811",
+            "DOI": "10.1038/nmeth.4341",
+            "volume": "14",
+            "author": "T Nobauer",
+            "year": "2017",
+            "unstructured": "Nobauer, T. et al. Video rate volumetric Ca2+ imaging across cortex using seeded iterative demixing (SID) microscopy. Nat. Methods 14, 811–818 (2017).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR11",
+            "doi-asserted-by": "publisher",
+            "first-page": "497",
+            "DOI": "10.1038/s41592-019-0393-z",
+            "volume": "16",
+            "author": "N Wagner",
+            "year": "2019",
+            "unstructured": "Wagner, N. et al. Instantaneous isotropic volumetric imaging of fast biological processes. Nat. Methods 16, 497–500 (2019).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR12",
+            "doi-asserted-by": "publisher",
+            "first-page": "24817",
+            "DOI": "10.1364/OE.22.024817",
+            "volume": "22",
+            "author": "N Cohen",
+            "year": "2014",
+            "unstructured": "Cohen, N. et al. Enhancing the performance of the light field microscope using wavefront coding. Opt. Express 22, 24817–24839 (2014).",
+            "journal-title": "Opt. Express"
+          },
+          {
+            "key": "1058_CR13",
+            "doi-asserted-by": "publisher",
+            "first-page": "25418",
+            "DOI": "10.1364/OE.21.025418",
+            "volume": "21",
+            "author": "M Broxton",
+            "year": "2013",
+            "unstructured": "Broxton, M. et al. Wave optics theory and 3-D deconvolution for the light field microscope. Opt. Express 21, 25418–25439 (2013).",
+            "journal-title": "Opt. Express"
+          },
+          {
+            "key": "1058_CR14",
+            "doi-asserted-by": "publisher",
+            "first-page": "25573",
+            "DOI": "10.1364/OE.27.025573",
+            "volume": "27",
+            "author": "C Guo",
+            "year": "2019",
+            "unstructured": "Guo, C., Liu, W., Hua, X., Li, H. & Jia, S. Fourier light-field microscopy. Opt. Express 27, 25573–25594 (2019).",
+            "journal-title": "Opt. Express"
+          },
+          {
+            "key": "1058_CR15",
+            "doi-asserted-by": "publisher",
+            "first-page": "e29915",
+            "DOI": "10.7554/eLife.29915",
+            "volume": "7",
+            "author": "S Gao",
+            "year": "2018",
+            "unstructured": "Gao, S. et al. Excitatory motor neurons are local oscillators for backward locomotion. eLife 7, e29915 (2018).",
+            "journal-title": "eLife"
+          },
+          {
+            "key": "1058_CR16",
+            "doi-asserted-by": "publisher",
+            "first-page": "20170370",
+            "DOI": "10.1098/rstb.2017.0370",
+            "volume": "373",
+            "author": "Q Wen",
+            "year": "2018",
+            "unstructured": "Wen, Q., Gao, S. & Zhen, M. Caenorhabditis elegans excitatory ventral cord motor neurons derive rhythm for body undulation. Philos. Trans. R. Soc. B. 373, 20170370 (2018).",
+            "journal-title": "Philos. Trans. R. Soc. B."
+          },
+          {
+            "key": "1058_CR17",
+            "doi-asserted-by": "publisher",
+            "first-page": "E4493",
+            "DOI": "10.1073/pnas.1717022115",
+            "volume": "115",
+            "author": "T Xu",
+            "year": "2018",
+            "unstructured": "Xu, T. et al. Descending pathway facilitates undulatory wave propagation in Caenorhabditis elegans through gap junctions. Proc. Natl Acad. Sci. USA 115, E4493–E4502 (2018).",
+            "journal-title": "Proc. Natl Acad. Sci. USA"
+          },
+          {
+            "key": "1058_CR18",
+            "doi-asserted-by": "publisher",
+            "first-page": "E1074",
+            "DOI": "10.1073/pnas.1507110112",
+            "volume": "113",
+            "author": "JP Nguyen",
+            "year": "2016",
+            "unstructured": "Nguyen, J. P. et al. Whole-brain calcium imaging with cellular resolution in freely behaving Caenorhabditis elegans. Proc. Natl Acad. Sci. USA 113, E1074–E1081 (2016).",
+            "journal-title": "Proc. Natl Acad. Sci. USA"
+          },
+          {
+            "key": "1058_CR19",
+            "doi-asserted-by": "publisher",
+            "first-page": "E1082",
+            "DOI": "10.1073/pnas.1507109113",
+            "volume": "113",
+            "author": "V Venkatachalam",
+            "year": "2016",
+            "unstructured": "Venkatachalam, V. et al. Pan-neuronal imaging in roaming Caenorhabditis elegans. Proc. Natl Acad. Sci. USA 113, E1082–E1088 (2016).",
+            "journal-title": "Proc. Natl Acad. Sci. USA"
+          },
+          {
+            "key": "1058_CR20",
+            "doi-asserted-by": "publisher",
+            "first-page": "572",
+            "DOI": "10.1016/j.neuron.2011.09.005",
+            "volume": "72",
+            "author": "T Kawano",
+            "year": "2011",
+            "unstructured": "Kawano, T. et al. An imbalancing act: gap junctions reduce the backward motor circuit activity to bias C. elegans for forward locomotion. Neuron 72, 572–586 (2011).",
+            "journal-title": "Neuron"
+          },
+          {
+            "key": "1058_CR21",
+            "doi-asserted-by": "publisher",
+            "first-page": "1",
+            "DOI": "10.1038/s42003-020-0787-6",
+            "volume": "3",
+            "author": "TV Truong",
+            "year": "2020",
+            "unstructured": "Truong, T. V. et al. High-contrast, synchronous volumetric imaging with selective volume illumination microscopy. Commun. Biol. 3, 1–8 (2020).",
+            "journal-title": "Commun. Biol."
+          },
+          {
+            "key": "1058_CR22",
+            "doi-asserted-by": "publisher",
+            "first-page": "1090",
+            "DOI": "10.1038/s41592-018-0216-7",
+            "volume": "15",
+            "author": "M Weigert",
+            "year": "2018",
+            "unstructured": "Weigert, M. et al. Content-aware image restoration: pushing the limits of fluorescence microscopy. Nat. Methods 15, 1090–1097 (2018).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR23",
+            "doi-asserted-by": "publisher",
+            "first-page": "919",
+            "DOI": "10.1038/nmeth.3037",
+            "volume": "11",
+            "author": "M Mickoleit",
+            "year": "2014",
+            "unstructured": "Mickoleit, M. et al. High-resolution reconstruction of the beating zebrafish heart. Nat. Methods 11, 919–922 (2014).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR24",
+            "doi-asserted-by": "publisher",
+            "first-page": "1054",
+            "DOI": "10.1038/s41592-019-0579-4",
+            "volume": "16",
+            "author": "V Voleti",
+            "year": "2019",
+            "unstructured": "Voleti, V. et al. Real-time volumetric microscopy of in vivo dynamics and large-scale samples with SCAPE 2.0. Nat. Methods 16, 1054–1062 (2019).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR25",
+            "unstructured": "Ng, R. et al. Light Field Photography with a Hand-Held Plenoptic Camera. Dissertation, Stanford Univ. (2005)."
+          },
+          {
+            "key": "1058_CR26",
+            "doi-asserted-by": "publisher",
+            "first-page": "67",
+            "DOI": "10.1038/s41592-018-0261-2",
+            "volume": "16",
+            "author": "T Falk",
+            "year": "2019",
+            "unstructured": "Falk, T. et al. U-Net: deep learning for cell counting, detection, and morphometry. Nat. Methods 16, 67–70 (2019).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR27",
+            "doi-asserted-by": "publisher",
+            "first-page": "80",
+            "DOI": "10.1016/j.ymeth.2016.09.016",
+            "volume": "115",
+            "author": "JY Tinevez",
+            "year": "2017",
+            "unstructured": "Tinevez, J. Y. et al. TrackMate: an open and extensible platform for single-particle tracking. Methods 115, 80–90 (2017).",
+            "journal-title": "Methods"
+          },
+          {
+            "key": "1058_CR28",
+            "doi-asserted-by": "publisher",
+            "first-page": "e1003702",
+            "DOI": "10.1371/journal.pcbi.1003702",
+            "volume": "10",
+            "author": "C Restif",
+            "year": "2014",
+            "unstructured": "Restif, C. et al. CeleST: computer vision software for quantitative analysis of C. elegans swim behavior reveals novel features of locomotion. PLoS Comput. Biol. 10, e1003702 (2014).",
+            "journal-title": "PLoS Comput. Biol."
+          },
+          {
+            "key": "1058_CR29",
+            "doi-asserted-by": "publisher",
+            "first-page": "1679",
+            "DOI": "10.1172/JCI83496",
+            "volume": "126",
+            "author": "J Lee",
+            "year": "2016",
+            "unstructured": "Lee, J. et al. 4-Dimensional light-sheet microscopy to elucidate shear stress modulation of cardiac trabeculation. J. Clin. Investig. 126, 1679–1690 (2016).",
+            "journal-title": "J. Clin. Investig."
+          },
+          {
+            "key": "1058_CR30",
+            "doi-asserted-by": "publisher",
+            "first-page": "054001",
+            "DOI": "10.1117/1.2061567",
+            "volume": "10",
+            "author": "M Liebling",
+            "year": "2005",
+            "unstructured": "Liebling, M., Forouhar, A. S., Gharib, M., Fraser, S. E. & Dickinson, M. E. Four-dimensional cardiac imaging in living embryos via postacquisition synchronization of nongated slice sequences. J. Biomed. Opt. 10, 054001 (2005).",
+            "journal-title": "J. Biomed. Opt."
+          },
+          {
+            "key": "1058_CR31",
+            "doi-asserted-by": "publisher",
+            "first-page": "918",
+            "DOI": "10.1038/s41592-019-0515-7",
+            "volume": "16",
+            "author": "AC Descloux",
+            "year": "2019",
+            "unstructured": "Descloux, A. C., Grussmayer, K. S. & Radenovic, A. Parameter-free image resolution estimation based on decorrelation analysis. Nat. Methods 16, 918–924 (2019).",
+            "journal-title": "Nat. Methods"
+          },
+          {
+            "key": "1058_CR32",
+            "doi-asserted-by": "publisher",
+            "first-page": "40",
+            "DOI": "10.1109/MCSE.2011.35",
+            "volume": "13",
+            "author": "P Ramachandran",
+            "year": "2011",
+            "unstructured": "Ramachandran, P. & Varoquaux, G. Mayavi: 3D visualization of scientific data. Comput. Sci. Eng. 13, 40–51 (2011).",
+            "journal-title": "Comput. Sci. Eng."
+          }
+        ],
+        "container-title": [
+          "Nature Methods"
+        ],
+        "original-title": [],
+        "language": "en",
+        "link": [
+          {
+            "URL": "http://www.nature.com/articles/s41592-021-01058-x.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://www.nature.com/articles/s41592-021-01058-x",
+            "content-type": "text/html",
+            "content-version": "vor",
+            "intended-application": "text-mining"
+          },
+          {
+            "URL": "http://www.nature.com/articles/s41592-021-01058-x.pdf",
+            "content-type": "application/pdf",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2023,
+              5,
+              20
+            ]
+          ],
+          "date-time": "2023-05-20T18:13:41Z",
+          "timestamp": 1684606421000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://www.nature.com/articles/s41592-021-01058-x"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              2,
+              11
+            ]
+          ]
+        },
+        "references-count": 32,
+        "journal-issue": {
+          "issue": "5",
+          "published-print": {
+            "date-parts": [
+              [
+                2021,
+                5
+              ]
+            ]
+          }
+        },
+        "alternative-id": [
+          "1058"
+        ],
+        "URL": "https://doi.org/10.1038/s41592-021-01058-x",
+        "relation": {
+          "has-preprint": [
+            {
+              "id-type": "doi",
+              "id": "10.1101/432807",
+              "asserted-by": "object"
+            }
+          ]
+        },
+        "ISSN": [
+          "1548-7091",
+          "1548-7105"
+        ],
+        "issn-type": [
+          {
+            "value": "1548-7091",
+            "type": "print"
+          },
+          {
+            "value": "1548-7105",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2021,
+              2,
+              11
+            ]
+          ]
+        },
+        "assertion": [
+          {
+            "value": "3 December 2019",
+            "order": 1,
+            "name": "received",
+            "label": "Received",
+            "group": {
+              "name": "ArticleHistory",
+              "label": "Article History"
+            }
+          },
+          {
+            "value": "26 November 2020",
+            "order": 2,
+            "name": "revised",
+            "label": "Revised",
+            "group": {
+              "name": "ArticleHistory",
+              "label": "Article History"
+            }
+          },
+          {
+            "value": "6 January 2021",
+            "order": 3,
+            "name": "accepted",
+            "label": "Accepted",
+            "group": {
+              "name": "ArticleHistory",
+              "label": "Article History"
+            }
+          },
+          {
+            "value": "11 February 2021",
+            "order": 4,
+            "name": "first_online",
+            "label": "First Online",
+            "group": {
+              "name": "ArticleHistory",
+              "label": "Article History"
+            }
+          },
+          {
+            "value": "The authors declare no competing interests.",
+            "order": 1,
+            "name": "Ethics",
+            "group": {
+              "name": "EthicsHeading",
+              "label": "Competing interests"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1364/OL.588516",
+      "metadata": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              30
+            ]
+          ],
+          "date-time": "2026-07-30T14:44:44Z",
+          "timestamp": 1785422684776,
+          "version": "3.56.0"
+        },
+        "reference-count": 15,
+        "publisher": "Optica Publishing Group",
+        "issue": "5",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  2,
+                  18
+                ]
+              ],
+              "date-time": "2026-02-18T00:00:00Z",
+              "timestamp": 1771372800000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.1364/OA_License_v2#VOR"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  2,
+                  18
+                ]
+              ],
+              "date-time": "2026-02-18T00:00:00Z",
+              "timestamp": 1771372800000
+            },
+            "content-version": "tdm",
+            "delay-in-days": 0,
+            "URL": "https://opg.optica.org/policies/opg-tdm-policy.json"
+          }
+        ],
+        "funder": [
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "62322502"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "62322502"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              },
+              {
+                "id": "https://ror.org/01h0zpd94",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "62088101"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "62088101"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              },
+              {
+                "id": "https://ror.org/01h0zpd94",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/501100001809",
+            "name": "National Natural Science Foundation of China",
+            "doi-asserted-by": "crossref",
+            "award": [
+              "624B2028"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "624B2028"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/501100001809",
+                "id-type": "DOI",
+                "asserted-by": "crossref"
+              },
+              {
+                "id": "https://ror.org/01h0zpd94",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ]
+          },
+          {
+            "name": "Scientific Research Innovation Capability Support Project for Young Faculty",
+            "award": [
+              "ZYGXONJSKYCXNLZCXM-I4"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "ZYGXONJSKYCXNLZCXM-I4"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Beijing Natural Science Foundation",
+            "award": [
+              "JQ25017"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "JQ25017"
+                ]
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [
+            "opg.optica.org"
+          ],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "Opt. Lett."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              1
+            ]
+          ]
+        },
+        "abstract": "<jats:p>Shape from Polarization (SfP) has emerged as a promising technique for reconstructing the three-dimensional (3D) structure of objects using polarization information. However, existing 3D reconstruction methods generally suffer from degraded accuracy when dealing with dark or low-reflectivity surfaces, resulting in unreliable point cloud data. Furthermore, most current methods generally focus on geometric reconstruction, such as surface normals or depth maps, limiting their ability to capture the spectral characteristics of objects’ materials. Here, we propose a novel single-view spectro-polarimetric imaging (SVSPI) method that, for the first time to our knowledge, achieves joint reconstruction of 3D shape and hyperspectral information from single-view spectro-polarimetric imaging for dark-surfaced objects. This method uses an on-chip broadband hyperspectral imaging sensor and introduces a dedicated spectral-polarization-3D dataset to support training and evaluation. Experimental results demonstrate the effectiveness of the proposed method, achieving the simultaneous reconstruction of surface normals, depth maps, and spectral information within the 400–1000 nm range under complex environmental conditions.</jats:p>",
+        "DOI": "10.1364/ol.588516",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              9
+            ]
+          ],
+          "date-time": "2026-02-09T14:00:27Z",
+          "timestamp": 1770645627000
+        },
+        "page": "1132",
+        "update-policy": "https://doi.org/10.1364/crossmark_policy",
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Joint 3D shape and hyperspectral reconstruction from single-view spectro-polarimetric imaging"
+        ],
+        "prefix": "10.1364",
+        "volume": "51",
+        "author": [
+          {
+            "given": "Pengming",
+            "family": "Peng",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Beijing Institute of Technology"
+              },
+              {
+                "name": "Yangtze Delta Region Academy of Beijing Institute of Technology (Jiaxing)"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhen",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zhengyi",
+            "family": "Zhao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Chengfu",
+            "family": "Zhao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rong",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Lianjie",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing Institute of Technology"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Wenhui",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Yangtze Delta Region Academy of Beijing Institute of Technology (Jiaxing)"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8016-0375",
+            "authenticated-orcid": true,
+            "given": "Liheng",
+            "family": "Bian",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Beijing Institute of Technology"
+              },
+              {
+                "name": "Yangtze Delta Region Academy of Beijing Institute of Technology (Jiaxing)"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "285",
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              18
+            ]
+          ]
+        },
+        "reference": [
+          {
+            "key": "ol-51-5-1132-R1",
+            "doi-asserted-by": "publisher",
+            "first-page": "446",
+            "DOI": "10.1364/OPTICA.538331",
+            "type": "journal-article",
+            "volume": "12",
+            "author": "Wang",
+            "year": "2025",
+            "journal-title": "Optica"
+          },
+          {
+            "key": "ol-51-5-1132-R2",
+            "doi-asserted-by": "publisher",
+            "first-page": "5053",
+            "DOI": "10.1364/OL.499161",
+            "type": "journal-article",
+            "volume": "48",
+            "author": "Li",
+            "year": "2023",
+            "journal-title": "Opt. Lett."
+          },
+          {
+            "key": "ol-51-5-1132-R3",
+            "doi-asserted-by": "publisher",
+            "first-page": "6855",
+            "DOI": "10.1038/s41467-023-38984-7",
+            "type": "journal-article",
+            "volume": "14",
+            "author": "Huang",
+            "year": "2023",
+            "journal-title": "Nat. Commun."
+          },
+          {
+            "key": "ol-51-5-1132-R4",
+            "doi-asserted-by": "publisher",
+            "first-page": "1486",
+            "DOI": "10.1364/OPTICA.502119",
+            "type": "journal-article",
+            "volume": "10",
+            "author": "Brasselet",
+            "year": "2023",
+            "journal-title": "Optica"
+          },
+          {
+            "key": "ol-51-5-1132-R5",
+            "doi-asserted-by": "publisher",
+            "first-page": "872",
+            "DOI": "10.1364/OPTICA.560166",
+            "type": "journal-article",
+            "volume": "12",
+            "author": "Shen",
+            "year": "2025",
+            "journal-title": "Optica"
+          },
+          {
+            "key": "ol-51-5-1132-R6",
+            "doi-asserted-by": "publisher",
+            "first-page": "2068",
+            "DOI": "10.1364/OE.541298",
+            "type": "journal-article",
+            "volume": "33",
+            "author": "Wu",
+            "year": "2025",
+            "journal-title": "Opt. Express"
+          },
+          {
+            "key": "ol-51-5-1132-R8",
+            "doi-asserted-by": "publisher",
+            "first-page": "108139",
+            "DOI": "10.1016/j.optlaseng.2024.108139",
+            "type": "journal-article",
+            "volume": "177",
+            "author": "Zhu",
+            "year": "2024",
+            "journal-title": "Opt. Lasers Eng."
+          },
+          {
+            "key": "ol-51-5-1132-R14",
+            "doi-asserted-by": "publisher",
+            "first-page": "391",
+            "DOI": "10.1364/OPTICA.549864",
+            "type": "journal-article",
+            "volume": "12",
+            "author": "Fu",
+            "year": "2025",
+            "journal-title": "Optica"
+          },
+          {
+            "key": "ol-51-5-1132-R15",
+            "doi-asserted-by": "publisher",
+            "first-page": "29255",
+            "DOI": "10.1364/OE.562136",
+            "type": "journal-article",
+            "volume": "33",
+            "author": "Wang",
+            "year": "2025",
+            "journal-title": "Opt. Express"
+          },
+          {
+            "key": "ol-51-5-1132-R16",
+            "doi-asserted-by": "publisher",
+            "first-page": "30418",
+            "DOI": "10.1364/OE.565989",
+            "type": "journal-article",
+            "volume": "33",
+            "author": "McKenna",
+            "year": "2025",
+            "journal-title": "Opt. Express"
+          },
+          {
+            "key": "ol-51-5-1132-R17",
+            "doi-asserted-by": "publisher",
+            "first-page": "19",
+            "DOI": "10.1016/j.inffus.2021.07.002",
+            "type": "journal-article",
+            "volume": "77",
+            "author": "Tian",
+            "year": "2022",
+            "journal-title": "Inf. Fusion"
+          },
+          {
+            "key": "ol-51-5-1132-R18",
+            "doi-asserted-by": "publisher",
+            "first-page": "4592",
+            "DOI": "10.3390/s23104592",
+            "type": "journal-article",
+            "volume": "23",
+            "author": "Wu",
+            "year": "2023",
+            "journal-title": "Sensors"
+          },
+          {
+            "key": "ol-51-5-1132-R19",
+            "doi-asserted-by": "publisher",
+            "first-page": "38749",
+            "DOI": "10.1364/OE.570825",
+            "type": "journal-article",
+            "volume": "33",
+            "author": "Zhu",
+            "year": "2025",
+            "journal-title": "Opt. Express"
+          },
+          {
+            "key": "ol-51-5-1132-R20",
+            "doi-asserted-by": "publisher",
+            "first-page": "73",
+            "DOI": "10.1038/s41586-024-08109-1",
+            "type": "journal-article",
+            "volume": "635",
+            "author": "Bian",
+            "year": "2024",
+            "journal-title": "Nature"
+          },
+          {
+            "key": "ol-51-5-1132-R21",
+            "doi-asserted-by": "publisher",
+            "first-page": "2401983",
+            "DOI": "10.1002/lpor.202401983",
+            "type": "journal-article",
+            "volume": "19",
+            "author": "Wen",
+            "year": "2025",
+            "journal-title": "Laser Photonics Rev."
+          }
+        ],
+        "container-title": [
+          "Optics Letters"
+        ],
+        "original-title": [],
+        "language": "en",
+        "link": [
+          {
+            "URL": "https://opg.optica.org/viewmedia.cfm?URI=ol-51-5-1132&seq=0",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              5,
+              13
+            ]
+          ],
+          "date-time": "2026-05-13T14:36:35Z",
+          "timestamp": 1778682995000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://opg.optica.org/abstract.cfm?URI=ol-51-5-1132"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              18
+            ]
+          ]
+        },
+        "references-count": 15,
+        "journal-issue": {
+          "issue": "5",
+          "published-online": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          }
+        },
+        "URL": "https://doi.org/10.1364/ol.588516",
+        "relation": {},
+        "ISSN": [
+          "0146-9592",
+          "1539-4794"
+        ],
+        "issn-type": [
+          {
+            "value": "0146-9592",
+            "type": "print"
+          },
+          {
+            "value": "1539-4794",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              18
+            ]
+          ]
+        },
+        "assertion": [
+          {
+            "value": "Optica Publishing Group",
+            "name": "publisher",
+            "label": "This article is maintained by"
+          },
+          {
+            "value": "https://doi.org/10.1364/OL.588516",
+            "name": "articlelink",
+            "label": "Crossref DOI link to publisher maintained version"
+          },
+          {
+            "value": "letter",
+            "name": "content_type",
+            "label": "Article type"
+          },
+          {
+            "value": "Screened by Similarity Check",
+            "name": "cross_check",
+            "label": "Similarity check"
+          },
+          {
+            "value": "Yes",
+            "order": 0,
+            "name": "peer_reviewed",
+            "label": "Peer reviewed",
+            "group": {
+              "name": "peer_review",
+              "label": "Peer review"
+            }
+          },
+          {
+            "value": "Single blind",
+            "order": 1,
+            "name": "review_process",
+            "label": "Review process",
+            "group": {
+              "name": "peer_review",
+              "label": "Peer review"
+            }
+          },
+          {
+            "value": "29 December 2025",
+            "order": 0,
+            "name": "received",
+            "label": "Received",
+            "group": {
+              "name": "publication_history",
+              "label": "Publication History"
+            }
+          },
+          {
+            "value": "9 February 2026",
+            "order": 1,
+            "name": "accepted",
+            "label": "Accepted",
+            "group": {
+              "name": "publication_history",
+              "label": "Publication History"
+            }
+          },
+          {
+            "value": "18 February 2026",
+            "order": 2,
+            "name": "published",
+            "label": "Published",
+            "group": {
+              "name": "publication_history",
+              "label": "Publication History"
+            }
+          },
+          {
+            "value": "© 2026 Optica Publishing Group. All rights, including for text and data mining (TDM), Artificial Intelligence (AI) training, and similar technologies, are reserved.",
+            "name": "copyright",
+            "label": "Copyright"
+          }
+        ]
+      }
+    },
+    {
+      "doi": "10.1109/TPAMI.2020.2973986",
+      "metadata": {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              3,
+              11
+            ]
+          ],
+          "date-time": "2026-03-11T16:28:03Z",
+          "timestamp": 1773246483941,
+          "version": "3.50.1"
+        },
+        "reference-count": 23,
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "license": [
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2020,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2020-01-01T00:00:00Z",
+              "timestamp": 1577836800000
+            },
+            "content-version": "vor",
+            "delay-in-days": 0,
+            "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2020,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2020-01-01T00:00:00Z",
+              "timestamp": 1577836800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-029"
+          },
+          {
+            "start": {
+              "date-parts": [
+                [
+                  2020,
+                  1,
+                  1
+                ]
+              ],
+              "date-time": "2020-01-01T00:00:00Z",
+              "timestamp": 1577836800000
+            },
+            "content-version": "stm-asf",
+            "delay-in-days": 0,
+            "URL": "https://doi.org/10.15223/policy-037"
+          }
+        ],
+        "funder": [
+          {
+            "name": "JSPS KAKENHI",
+            "award": [
+              "18J15114"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "18J15114"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "JSPS KAKENHI",
+            "award": [
+              "JP15H05918"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "JP15H05918"
+                ]
+              }
+            ]
+          },
+          {
+            "DOI": "10.13039/100000006",
+            "name": "Office of Naval Research",
+            "doi-asserted-by": "publisher",
+            "award": [
+              "N00014-16-1-2158 (N00014-14-1-0316)"
+            ],
+            "award-info": [
+              {
+                "award-number": [
+                  "N00014-16-1-2158 (N00014-14-1-0316)"
+                ]
+              }
+            ],
+            "id": [
+              {
+                "id": "10.13039/100000006",
+                "id-type": "DOI",
+                "asserted-by": "publisher"
+              }
+            ]
+          }
+        ],
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "IEEE Trans. Pattern Anal. Mach. Intell."
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "DOI": "10.1109/tpami.2020.2973986",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2020,
+              2,
+              14
+            ]
+          ],
+          "date-time": "2020-02-14T21:34:13Z",
+          "timestamp": 1581716053000
+        },
+        "page": "1-1",
+        "source": "Crossref",
+        "is-referenced-by-count": 8,
+        "title": [
+          "Depth Sensing by Near-Infrared Light Absorption in Water"
+        ],
+        "prefix": "10.1109",
+        "author": [
+          {
+            "given": "Yuta",
+            "family": "Asano",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yinqiang",
+            "family": "Zheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Ko",
+            "family": "Nishino",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Imari",
+            "family": "Sato",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "member": "263",
+        "reference": [
+          {
+            "key": "ref10",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1117/12.7972479"
+          },
+          {
+            "key": "ref11",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV.2005.232"
+          },
+          {
+            "key": "ref12",
+            "first-page": "1956",
+            "article-title": "Single image haze removal using dark channel prior",
+            "author": "he",
+            "year": "2009",
+            "journal-title": "Proc IEEE Conf Comp Vis Patt Recogn"
+          },
+          {
+            "key": "ref13",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2001.990493"
+          },
+          {
+            "key": "ref14",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2008.4587643"
+          },
+          {
+            "key": "ref15",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/1399504.1360671"
+          },
+          {
+            "key": "ref16",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV.2009.5459382"
+          },
+          {
+            "key": "ref17",
+            "doi-asserted-by": "crossref",
+            "first-page": "65",
+            "DOI": "10.2197/ipsjtcva.5.65",
+            "article-title": "3D shape from silhouettes in water for online novel-view synthesis",
+            "volume": "5",
+            "author": "tomohiko",
+            "year": "2013",
+            "journal-title": "IPSJ Trans Comput Vis Appl"
+          },
+          {
+            "key": "ref18",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-030-01219-9_46"
+          },
+          {
+            "key": "ref19",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/ICCV.2015.390"
+          },
+          {
+            "key": "ref4",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1145/2669024.2669042"
+          },
+          {
+            "key": "ref3",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1201/b10637"
+          },
+          {
+            "key": "ref6",
+            "author": "hartley",
+            "year": "2003",
+            "journal-title": "Multiple View Geometry in Computer Vision"
+          },
+          {
+            "key": "ref5",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/978-3-319-46466-4_38"
+          },
+          {
+            "key": "ref8",
+            "author": "hansard",
+            "year": "2012",
+            "journal-title": "Time-of-flight Cameras Principles Methods and Applications"
+          },
+          {
+            "key": "ref7",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1016/S0031-3203(97)00074-5"
+          },
+          {
+            "key": "ref2",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1007/s11263-011-0508-1"
+          },
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1023/A:1016328200723"
+          },
+          {
+            "key": "ref9",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/34.784284"
+          },
+          {
+            "key": "ref20",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2017.68"
+          },
+          {
+            "key": "ref22",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/TIP.2011.2179666"
+          },
+          {
+            "key": "ref21",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.1109/CVPR.2018.00703"
+          },
+          {
+            "key": "ref23",
+            "first-page": "1",
+            "article-title": "Diving into hazelines: Color restoration of underwater images",
+            "author": "berman",
+            "year": "2017",
+            "journal-title": "Proc Brit Mach Vis Conf"
+          }
+        ],
+        "container-title": [
+          "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+        ],
+        "original-title": [],
+        "link": [
+          {
+            "URL": "http://xplorestaging.ieee.org/ielx7/34/4359286/08999525.pdf?arnumber=8999525",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2022,
+              5,
+              10
+            ]
+          ],
+          "date-time": "2022-05-10T14:49:22Z",
+          "timestamp": 1652194162000
+        },
+        "score": 1,
+        "resource": {
+          "primary": {
+            "URL": "https://ieeexplore.ieee.org/document/8999525/"
+          }
+        },
+        "subtitle": [],
+        "short-title": [],
+        "issued": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "references-count": 23,
+        "URL": "https://doi.org/10.1109/tpami.2020.2973986",
+        "relation": {},
+        "ISSN": [
+          "0162-8828",
+          "2160-9292",
+          "1939-3539"
+        ],
+        "issn-type": [
+          {
+            "value": "0162-8828",
+            "type": "print"
+          },
+          {
+            "value": "2160-9292",
+            "type": "electronic"
+          },
+          {
+            "value": "1939-3539",
+            "type": "electronic"
+          }
+        ],
+        "subject": [],
+        "published": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "tgrsMetadata": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          29
+        ]
+      ],
+      "date-time": "2026-09-29T20:01:10Z",
+      "timestamp": 1790712070440,
+      "version": "4.1.0"
+    },
+    "reference-count": 66,
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2026-01-01T00:00:00Z",
+          "timestamp": 1767225600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2026-01-01T00:00:00Z",
+          "timestamp": 1767225600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-029"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2026-01-01T00:00:00Z",
+          "timestamp": 1767225600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-037"
+      }
+    ],
+    "funder": [
+      {
+        "name": "National Natural Science Foundation of China",
+        "award": [
+          "42401467"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "42401467"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "https://ror.org/01h0zpd94",
+            "id-type": "ROR",
+            "asserted-by": "crossref"
+          }
+        ]
+      },
+      {
+        "name": "Natural Science Foundation of Shandong Province, China",
+        "award": [
+          "ZR2025MS521"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "ZR2025MS521"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Open Fund of State Key Laboratory of Remote Sensing Science",
+        "award": [
+          "OFSLRSS202415"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "OFSLRSS202415"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "https://ror.org/05wzjqa24",
+            "id-type": "ROR",
+            "asserted-by": "crossref"
+          }
+        ]
+      },
+      {
+        "name": "Shandong Provincial Higher Education Youth Innovation Science and Technology Support Program",
+        "award": [
+          "2024KJH092"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "2024KJH092"
+            ]
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "IEEE Trans. Geosci. Remote Sensing"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1109/tgrs.2026.3731189",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          7
+        ]
+      ],
+      "date-time": "2026-09-07T19:03:09Z",
+      "timestamp": 1788807789000
+    },
+    "page": "5529116-5529116",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "Spatial–Spectral Multiscale Mamba Fusion Network for Hyperspectral and LiDAR Data Classification"
+    ],
+    "prefix": "10.1109",
+    "volume": "64",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-2544-5263",
+        "authenticated-orcid": false,
+        "given": "Bin",
+        "family": "Zhao",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Shandong Agricultural University",
+            "place": [
+              "Taian, China"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Wenjie",
+        "family": "Cao",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Shandong Agricultural University",
+            "place": [
+              "Taian, China"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0008-5438-9716",
+        "authenticated-orcid": false,
+        "given": "Lin",
+        "family": "Han",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "No.5 Geological Brigade of Shandong Provincial Bureau of Geology and Mineral Resources (No.5 Institute of Geology and Mineral Exploration of Shandong Province)",
+            "place": [
+              "Taian, China"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5089-4127",
+        "authenticated-orcid": false,
+        "given": "Weiwei",
+        "family": "Song",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Pengcheng Laboratory",
+            "place": [
+              "Shenzhen, China"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0534-0974",
+        "authenticated-orcid": false,
+        "given": "Wenjuan",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Chinese Academy of Sciences",
+            "place": [
+              "Beijing, China"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3888-8124",
+        "authenticated-orcid": false,
+        "given": "Lianru",
+        "family": "Gao",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Chinese Academy of Sciences",
+            "place": [
+              "Beijing, China"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-4978-9722",
+        "authenticated-orcid": false,
+        "given": "Jakob",
+        "family": "Sigurdsson",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Iceland",
+            "place": [
+              "Reykjavik, Iceland"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0461-040X",
+        "authenticated-orcid": false,
+        "given": "Magnus O.",
+        "family": "Ulfarsson",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Iceland",
+            "place": [
+              "Reykjavik, Iceland"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0621-9647",
+        "authenticated-orcid": false,
+        "given": "Jon Atli",
+        "family": "Benediktsson",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "University of Iceland",
+            "place": [
+              "Reykjavik, Iceland"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "263",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/07038992.2016.1207484"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.isprsjprs.2019.09.006"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/rs12162659"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2022.3143571"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2023.3290232"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TCYB.2021.3070577"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2025.3556276"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TMM.2025.3604954"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2022.3202865"
+      },
+      {
+        "key": "ref10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2026.3705157"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2019.2907932"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2018.2794326"
+      },
+      {
+        "key": "ref13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TCSVT.2025.3556548"
+      },
+      {
+        "key": "ref14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2023.3309245"
+      },
+      {
+        "key": "ref15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/MGRS.2021.3071158"
+      },
+      {
+        "key": "ref16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2022.3142988"
+      },
+      {
+        "key": "ref17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTARS.2026.3693895"
+      },
+      {
+        "key": "ref18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/LGRS.2019.2899823"
+      },
+      {
+        "key": "ref19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3389/frsen.2021.641723"
+      },
+      {
+        "key": "ref20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTARS.2013.2292032"
+      },
+      {
+        "key": "ref21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2025.3554862"
+      },
+      {
+        "key": "ref22",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.isprsjprs.2020.06.014"
+      },
+      {
+        "key": "ref23",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2008.916480"
+      },
+      {
+        "key": "ref24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTARS.2015.2432037"
+      },
+      {
+        "key": "ref25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2010.2048116"
+      },
+      {
+        "key": "ref26",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTSP.2012.2208177"
+      },
+      {
+        "key": "ref27",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/LGRS.2018.2816958"
+      },
+      {
+        "key": "ref28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TPAMI.2013.50"
+      },
+      {
+        "key": "ref29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/nature14539"
+      },
+      {
+        "key": "ref30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/LGRS.2021.3121028"
+      },
+      {
+        "key": "ref31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TCYB.2018.2864670"
+      },
+      {
+        "key": "ref32",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2023.3283508"
+      },
+      {
+        "key": "ref33",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTARS.2024.3366614"
+      },
+      {
+        "key": "ref34",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TCSVT.2025.3525734"
+      },
+      {
+        "key": "ref35",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2020.2969024"
+      },
+      {
+        "key": "ref36",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2021.3093334"
+      },
+      {
+        "key": "ref37",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2023.3321057"
+      },
+      {
+        "key": "ref38",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TIP.2022.3162964"
+      },
+      {
+        "key": "ref39",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTARS.2022.3232995"
+      },
+      {
+        "key": "ref40",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TNNLS.2022.3189994"
+      },
+      {
+        "key": "ref41",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2022.3216319"
+      },
+      {
+        "key": "ref42",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2023.3286826"
+      },
+      {
+        "key": "ref43",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/s22155735"
+      },
+      {
+        "key": "ref44",
+        "first-page": "7796",
+        "article-title": "Deep state space models for time series forecasting",
+        "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+        "volume": "31",
+        "author": "Rangapuram"
+      },
+      {
+        "key": "ref45",
+        "article-title": "Mamba: Linear-time sequence modeling with selective state spaces",
+        "author": "Gu",
+        "year": "2023",
+        "journal-title": "arXiv:2312.00752"
+      },
+      {
+        "key": "ref46",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/rs16132449"
+      },
+      {
+        "key": "ref47",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2024.3459709"
+      },
+      {
+        "key": "ref48",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2017.2756851"
+      },
+      {
+        "key": "ref49",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2021.3124913"
+      },
+      {
+        "key": "ref50",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/IGARSS46834.2022.9883136"
+      },
+      {
+        "key": "ref51",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2020.2982064"
+      },
+      {
+        "key": "ref52",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTARS.2024.3415729"
+      },
+      {
+        "key": "ref53",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2022.3232498"
+      },
+      {
+        "key": "ref54",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2024.3367374"
+      },
+      {
+        "key": "ref55",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2024.3472091"
+      },
+      {
+        "key": "ref56",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jag.2024.104092"
+      },
+      {
+        "key": "ref57",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2025.3530993"
+      },
+      {
+        "key": "ref58",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/LGRS.2024.3506034"
+      },
+      {
+        "key": "ref59",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2024.3516817"
+      },
+      {
+        "key": "ref60",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2024.3493101"
+      },
+      {
+        "key": "ref61",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2025.3535622"
+      },
+      {
+        "key": "ref62",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/IGARSS39084.2020.9323397"
+      },
+      {
+        "key": "ref63",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/LGRS.2020.3017414"
+      },
+      {
+        "key": "ref64",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTARS.2024.3502761"
+      },
+      {
+        "key": "ref65",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2025.3567297"
+      },
+      {
+        "key": "ref66",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2025.3605373"
+      }
+    ],
+    "container-title": [
+      "IEEE Transactions on Geoscience and Remote Sensing"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "http://xplorestaging.ieee.org/ielx8/36/11333908/11683289.pdf?arnumber=11683289",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          29
+        ]
+      ],
+      "date-time": "2026-09-29T19:03:06Z",
+      "timestamp": 1790708586000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://ieeexplore.ieee.org/document/11683289/"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "references-count": 66,
+    "URL": "https://doi.org/10.1109/tgrs.2026.3731189",
+    "relation": {},
+    "ISSN": [
+      "0196-2892",
+      "1558-0644"
+    ],
+    "issn-type": [
+      {
+        "value": "0196-2892",
+        "type": "print"
+      },
+      {
+        "value": "1558-0644",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  "pdfDownloads": [
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/42411/46372",
+      "error": "HTTPSConnectionPool(host='ojs.aaai.org', port=443): Max retries exceeded with url: /index.php/AAAI/article/view/42411/46372 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/38251/42213",
+      "error": "HTTPSConnectionPool(host='ojs.aaai.org', port=443): Max retries exceeded with url: /index.php/AAAI/article/view/38251/42213 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"
+    },
+    {
+      "url": "https://www.ijcai.org/proceedings/2025/0248.pdf",
+      "httpStatus": 200,
+      "bytes": 5423393,
+      "sha256": "72d409d0fead78269f43c2450761805a833f549821497dab3fb87e1a8e3f91d3",
+      "pageCount": 9
+    },
+    {
+      "url": "https://www.ijcai.org/proceedings/2024/0174.pdf",
+      "httpStatus": 200,
+      "bytes": 16071708,
+      "sha256": "9c178b44d1d0dd309fea21c1697da22b1337ca672c0e6f34e4fe030a14c6bff7",
+      "pageCount": 9
+    }
+  ],
+  "vcdPdf": {
+    "url": "https://zhenlab.com/wp-content/uploads/2021/05/Real-time-volumetric-reconstruction-of-biological-dynamics-with-light-field-microscopy-and-deep-learning.pdf",
+    "pageCount": 15,
+    "sha256": "f584004833d69d6ab655401e89067c623786a5a6faa3cf12cc3a1a012b0dd4a0"
+  },
+  "aaaiFulltextEvidence": [
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/42411/46372",
+      "pageCount": 9,
+      "methodPage": 3,
+      "datasetPage": 5,
+      "note": "原始网页 PDF 缓存正文可读；下载失败，没有伪造本地 SHA。"
+    },
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/38251/42213",
+      "pageCount": 9,
+      "datasetPage": 5,
+      "note": "Datasets 原文明确 HS–LiDAR MUUFL/Trento/Houston2013 与三公共类别；下载失败，没有伪造本地 SHA。"
+    }
+  ]
+}

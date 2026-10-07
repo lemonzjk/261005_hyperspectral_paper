@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 198 篇；140 篇有 168 张框架图，48 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 206 篇；143 篇有 172 张框架图，53 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -129,3 +129,9 @@
 ## 光谱立体与 SMLA 正式论文补充（2026-10-07）
 
 原始作者机构/出版社摘要已明确真实深度，补入 TCSVT 2018 Cross-Modal Stereo（核心）与 Optics Letters 2025 SMLA（九通道多光谱，相关）。书目、机制、正式卷年、摘要级核验与未核验指标均在网站明确记录。TCSVT 在线 DOI 年 2016 与正式卷年 2018 分开；SMLA 为九通道 400–900 nm，不借用不同 DOI 的七通道 SMF 深度精度/帧率。两篇全文/框架暂不可取得：IEEE 页面需验证，Optica PDF/HTML 返回等待验证；作者 Stereo.jpg 目视确认是实物照片，不冒充框架图。记录 needs_access。当前 198 篇，140 篇有 168 图，48 needs_access、10 no_framework、0 pending。Optics Letters 与 TCSVT 按领域重要期刊加入优先检索，场所清单不是统一等级认证。原始证据见 sources/crossmodal-smla-primary-review-2026-10-07.json。
+
+## 原始来源与引文扩展八篇（2026-10-07）
+
+新增 TPAMI 2021 Shape from Water 期刊版、OL 2026 SVSPI、TGRS 2026 S²MSMamba、AAAI 2026 T-APT/FVMGN、IJCAI 2025 DPMamba/2024 SymDiffuser，以及 Nature Methods 2021 VCD-LFM。期刊版与会议版、SVSPI 与同团队 MOCI/PHI 的关系分别说明，不借用原图；VCD-LFM 是双颜色三维相关阅读，非连续高光谱体成像。T-APT、FVMGN 原始九页网页 PDF 可读，分别核验第 5 页 HSI–LiDAR/DSM 实验；本地下载失败，未伪造哈希或可用代码。T-APT 公布仓库当前 404、S²MSMamba 当前空仓库 409，未声称可复现。
+
+保存四张原图：DPMamba PDF 第 3 页完整 Figure 2；SymDiffuser 第 1 页两阶段 Figure 1、第 3 页预训练 Figure 2；VCD-LFM 作者原稿第 2 页 Figure 1a,b。其余五篇 needs_access，已保存具体失败入口。当前 206 篇、143 篇有 172 图、53 needs_access、10 no_framework、0 pending。书目、输入输出边界、原稿哈希及访问记录见 sources/eight-journal-conference-primary-review-2026-10-07.json。

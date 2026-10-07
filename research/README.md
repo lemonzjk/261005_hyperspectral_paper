@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-07。网站当前收录 198 篇论文、6 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-07。网站当前收录 206 篇论文、6 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -94,8 +94,10 @@ Fiducial HS3D Mapping 六页全文明确 RGB SfM、标记约束、正交渲染�
 
 新增 FRGFNet 与 FusDreamer 两篇 TGRS 2025 高度辅助分类论文。FRGFNet 核验 IEEE 原始摘要、五作者与正式 DOI；作者主页误标 2024，收录以正式卷 63、2025 为准，全文和原图请求受限。FusDreamer 取得作者公开 14 页正式排版 PDF 及当前已发布代码，保存第 3 页完整 Figure 1；世界模型在此为潜空间生成与多模态分类，不冒称三维几何或时序场景恢复。人为设计的类别/属性文本提示、CLIP、少标注实验边界保留，不称零标注开放类别识别。证据见 `sources/frgfnet-fusdreamer-review-2026-10-07.json`。UCAFNet 仍缺原始摘要/全文核验，不据二手摘要自动纳入；余下 TGRS 候选、专业期刊与目录检索继续。
 
-2026-10-07：全部既有 CVPR 关键词命中候选已有逐篇决定，新增 SpectralMoE 深度先验辅助二维光谱分割及原始框架；当前网站 198 篇。原始摘要及歧义论文的全文证据保存在 sources/*scope-review*.json，审查汇总见 survey.coverage.cvprCandidateReview。该进度不等于所有 CVPR 论文的语义覆盖；ICCV/ECCV 候选、期刊与引文追溯仍未完成。
+2026-10-07：全部既有 CVPR 关键词命中候选已有逐篇决定，新增 SpectralMoE 深度先验辅助二维光谱分割及原始框架；当前网站 206 篇。原始摘要及歧义论文的全文证据保存在 sources/*scope-review*.json，审查汇总见 survey.coverage.cvprCandidateReview。该进度不等于所有 CVPR 论文的语义覆盖；ICCV/ECCV 候选、期刊与引文追溯仍未完成。
 
 既有 CVPR/ICCV 关键词候选已逐篇完成审查；ICCV 2025 二十篇为十八排除、二背景，无新增网站论文。候选审查并不等于全部会议论文的语义覆盖。ECCV 三十篇既有候选已审：二十三排除、七背景。专业期刊、其他年份目录和引文追溯仍未完成。
 
 Optics Letters 与 TCSVT 加入领域重要期刊优先检索，分别补入九通道 SMLA 与高光谱 Cross-Modal Stereo；当前按原始摘要核验，未取得正文/框架，网站已明确指标与版本边界。其他 Optics Express 候选仍逐篇核验场所与版本关系。
+
+沿原始摘要、官方全文与作者引文链再扩展八篇，网站达到 206 篇。HSI–DSM 分类标相关研究；SVSPI 真实法线/深度归核心；VCD-LFM 两颜色三维体归相关，采集帧率与网络吞吐分开。已保存 DPMamba、SymDiffuser、VCD-LFM 四张方法原图，另五篇标待补。
