@@ -137,6 +137,24 @@ for (const paper of libraryPapers) {
     if (version.arxivId) assert(version.metadataStatus || (version.arxivVersion && version.firstSubmittedAt && version.updatedAt), `Missing arXiv version audit state: ${paper.id}`);
   }
 }
+// Detect cross-entry versions before their counts can be mistaken for separate methods.
+const normalizeTitle = value => value.normalize('NFKD').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+const identityIndex = new Map();
+for (const paper of catalog.papers) {
+  const arxiv = paper.paper.match(/arxiv\.org\/(?:abs|pdf)\/(\d{4}\.\d{4,5})/i)?.[1];
+  const keys = new Set([
+    'title:' + normalizeTitle(paper.title),
+    ...(paper.doi ? ['doi:' + paper.doi.toLowerCase()] : []),
+    ...[arxiv, ...(paper.library?.versions ?? []).map(version => version.arxivId)].filter(Boolean).map(id => 'arxiv:' + id),
+  ]);
+  for (const key of keys) {
+    const previous = identityIndex.get(key);
+    if (previous && previous.id !== paper.id) assert.equal(previous.library?.methodFamilyId, paper.library?.methodFamilyId, `Duplicate identity needs explicit method-family association: ${previous.id}/${paper.id}/${key}`);
+    identityIndex.set(key, paper);
+  }
+}
+console.log('Identity audit valid: normalized titles, DOIs, arXiv IDs and explicit version families.');
+
 // Test union semantics, counts independent of category selection, URL roundtrip, and SVG coverage.
 const blank = { query: '', yearFrom: '', yearTo: '', venues: [], categoryIds: [], pending: false, reading: '' };
 const present = libraryPresentation(categories);

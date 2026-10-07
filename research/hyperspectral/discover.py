@@ -26,16 +26,16 @@ def save(path, value):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('venue', choices=['CVPR', 'ICCV'])
+    parser.add_argument('venue', choices=['CVPR', 'ICCV', 'NeurIPS'])
     parser.add_argument('year', type=int)
     args = parser.parse_args()
     survey = json.loads((ROOT / 'survey.json').read_text())
-    url = f'https://openaccess.thecvf.com/{args.venue}{args.year}?day=all'
+    url = f'https://proceedings.neurips.cc/paper_files/paper/{args.year}' if args.venue == 'NeurIPS' else f'https://openaccess.thecvf.com/{args.venue}{args.year}?day=all'
     identifier = f'{args.venue.lower()}-{args.year}-title-optical-terms'
     record = {'id': identifier, 'venue': args.venue, 'year': args.year,
               'date': survey['cutoffDate'], 'queriedAt': datetime.now(timezone.utc).isoformat(),
-              'method': '官方全年目录逐题名关键词扫描，再逐篇核验命中摘要', 'keywords': KEYWORDS,
-              'url': url, 'pagination': 'day=all；单页全年官方目录；无结果条数截断',
+              'method': '官方年度目录逐题名关键词扫描，再逐篇核验命中摘要', 'keywords': KEYWORDS,
+              'url': url, 'pagination': '单页官方年度目录，含主会及数据集评测 Track；无结果条数截断' if args.venue == 'NeurIPS' else 'day=all；单页全年官方目录；无结果条数截断',
               'titleCount': 0, 'status': 'failed', 'statusLabel': '访问失败',
               'gaps': ['关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成']}
     try:
@@ -43,7 +43,7 @@ def main():
         response.raise_for_status()
         html = BeautifulSoup(response.text, 'html.parser')
         titles = [{'title': link.get_text(' ', strip=True), 'url': urljoin(url, link['href'])}
-                  for link in html.select('.ptitle a')]
+                  for link in html.select('li a[href*="Abstract"]' if args.venue == 'NeurIPS' else '.ptitle a')]
         if not titles:
             raise ValueError('No titles in official directory; coverage unverified')
         digest = hashlib.sha256(response.content).hexdigest()

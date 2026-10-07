@@ -12,7 +12,7 @@ export interface Paper {
   tags: string[]; summary: string; input: string; output: string; mechanism: string;
   readingNote: string; paper: string; code?: string; verifiedAt: string;
   citation: string; mapX?: number;
-  doi?: string; publicationName?: string; verificationLevel?: string;
+  doi?: string; publicationName?: string; publicationTrack?: string; verificationLevel?: string;
   publicationStatus?: string; venueTier?: string; frameworkFigures?: FrameworkFigure[];
   frameworkFigureHistory?: { figure: FrameworkFigure; replacedAt: string; replacementPath: string }[];
   frameworkFigureSearch?: { status: 'pending' | 'needs_access' | 'no_framework'; note: string; sourceUrl: string; checkedAt: string };

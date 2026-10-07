@@ -16233,6 +16233,325 @@
           "attribution": "Yi Peng, Deyu Meng, Zongben Xu, Chenqiang Gao, Yi Yang, Biao Zhang · CVPR 2014"
         }
       ]
+    },
+    {
+      "id": "hyper-skin-2023",
+      "shortTitle": "Hyper-Skin",
+      "title": "Hyper-Skin: A Hyperspectral Dataset for Reconstructing Facial Skin-Spectra from RGB Images",
+      "authors": "Pai Chet Ng, Zhixiang Chi, Yannick Verdie, Juwei Lu, Konstantinos N Plataniotis",
+      "year": 2023,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 36 — Datasets and Benchmarks Track",
+      "publicationTrack": "Datasets and Benchmarks",
+      "publicationStatus": "published",
+      "doi": "10.52202/075280-1050",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "面部光谱数据集",
+      "tags": [
+        "高光谱",
+        "Hyper-Skin",
+        "datasets-benchmarks",
+        "spectral-reconstruction",
+        "skin-analysis"
+      ],
+      "summary": "提供配对面部高光谱与合成 RGB 数据，以研究从消费级 RGB 观测恢复皮肤可见—近红外光谱。",
+      "input": "推扫面部高光谱数据及基于真实相机响应合成的配对 RGB",
+      "output": "皮肤光谱重建数据集与基准",
+      "mechanism": "采集多受试者、多角度与姿态的面部高光谱图像，使用相机响应生成配对 RGB，并在重采样光谱数据上评测重建模型。",
+      "readingNote": "已核验官方摘要、作者、出版信息与 DOI；原 PDF 仅用于方法图与数据入口核对，尚未阅读全文。主会与数据集评测 Track 分开标注。 官方网页摘要与 PDF 采集数量存在 330/306 差异；不据局部阅读声称已解决。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4c0986bd04d747745beba3752bdf4d9d-Abstract-Datasets_and_Benchmarks.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_pages",
+      "citation": "@inproceedings{NEURIPS2023_4c0986bd,\n author = {Ng, Pai Chet and Chi, Zhixiang and Verdie, Yannick and Lu, Juwei and  Plataniotis, Konstantinos N},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/075280-1050},\n editor = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},\n pages = {24158--24170},\n publisher = {Curran Associates, Inc.},\n title = {Hyper-Skin: A Hyperspectral Dataset for Reconstructing Facial Skin-Spectra from RGB Images},\n url = {https://proceedings.neurips.cc/paper_files/paper/2023/file/4c0986bd04d747745beba3752bdf4d9d-Paper-Datasets_and_Benchmarks.pdf},\n volume = {36},\n year = {2023}\n}\n",
+      "library": {
+        "categoryIds": [
+          "datasets-benchmarks",
+          "spectral-reconstruction",
+          "skin-analysis"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "官方摘要明确以高光谱成像数据、光谱恢复或高光谱目标检测为研究对象。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何建立面部皮肤光谱数据与 RGB 配对基准，支持皮肤光谱重建和材料分析？",
+        "datasets": "官方摘要报告 51 名受试者、330 个 1024×1024×448 高光谱立方体，涵盖 400–1000 nm；实际开放范围与许可待核验。 官方 PDF 第 4 页局部正文写 51 人、306 次采集，与网页摘要的 330 不一致，保留两处来源，不统一数量。",
+        "experimentSetting": "官方摘要报告在 VIS/NIR 重采样 31 波段上评测已有模型；训练/测试受试者划分与完整采集标定待核验。",
+        "conclusions": "摘要报告数据能够支持从 RGB 重建皮肤光谱；不将黑色素/血红蛋白分析动机写为临床有效性结论。",
+        "limitations": "官方网页摘要写 330 个立方体，关联官方 PDF 第 4 页采集段写 306，数量存在来源内部不一致，待作者或发布数据核验；基准使用合成 RGB，真实相机域差异、受试者覆盖和完整局限待全文。",
+        "dataLinks": [
+          "https://github.com/hyperspectral-skin/Hyper-Skin-2023"
+        ],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4c0986bd04d747745beba3752bdf4d9d-Abstract-Datasets_and_Benchmarks.html",
+            "checkedAt": "2026-10-08",
+            "level": "NeurIPS 官方摘要与 BibTeX",
+            "supports": [
+              "题名、作者、版本年份、Track 与 DOI",
+              "输入输出、核心机制、数据概况；完整实验待核验"
+            ]
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/4c0986bd04d747745beba3752bdf4d9d-Paper-Datasets_and_Benchmarks.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方 PDF 局部，第 4 页",
+            "supports": [
+              "官方 PDF 的采集数量 306 与网页摘要 330 不一致",
+              "数据请求使用 EULA 签署流程；实际数据许可条款待核验"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hyper-skin-2023-neurips2023",
+            "type": "会议正式版 · Datasets and Benchmarks",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4c0986bd04d747745beba3752bdf4d9d-Abstract-Datasets_and_Benchmarks.html",
+            "year": 2023,
+            "relation": "官方会议版本；预印本及扩展版待检索，不推定不存在。"
+          }
+        ],
+        "methodFamilyId": "hyper-skin-2023"
+      },
+      "code": "https://github.com/hyperspectral-skin/Hyper-Skin-2023",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/file/4c0986bd04d747745beba3752bdf4d9d-Paper-Datasets_and_Benchmarks.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "Hyper-Skin 面部光谱采集装置与照明/扫描几何设置。",
+          "verificationNote": "逐张查看 NeurIPS 官方 PDF 第 4 页 Figure 2，核对完整方法或采集设置原图、图号和图注；原图裁切，未重绘。仅局部核验。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pdfPointBox": [
+              140,
+              222,
+              510,
+              352
+            ],
+            "pdfSha256": "6d88b8fa05df4e1b5d2ab6fcfa3c54e78a03b9033822c0d821c38bc11ae55b95"
+          },
+          "path": "figures/hyper-skin-2023/framework.png",
+          "width": 1029,
+          "height": 362,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "39f09b70e3fa97d415b134928f4e67db14b07e974d2fe324452382120427f15b",
+          "attribution": "Pai Chet Ng, Zhixiang Chi, Yannick Verdie, Juwei Lu, Konstantinos N Plataniotis · NeurIPS 2023"
+        }
+      ]
+    },
+    {
+      "id": "bisrnet-bisci",
+      "shortTitle": "BiSRNet / BiSCI",
+      "title": "Binarized Spectral Compressive Imaging",
+      "authors": "Yuanhao Cai, Yuxin Zheng, Jing Lin, Xin Yuan, Yulun Zhang, Haoqian Wang",
+      "year": 2023,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 36 — Main Conference Track",
+      "publicationTrack": "Main Conference",
+      "publicationStatus": "published",
+      "doi": "10.52202/075280-1665",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "二值光谱恢复网络",
+      "tags": [
+        "高光谱",
+        "BiSRNet / BiSCI",
+        "spectral-reconstruction",
+        "network-quantization"
+      ],
+      "summary": "在快照光谱重建中以光谱重分布和二值卷积降低网络计算与存储开销。",
+      "input": "SCI 系统的压缩光谱测量",
+      "output": "高光谱重建图像",
+      "mechanism": "先设计紧凑基模型；BiSR-Conv 在激活二值化前重分布光谱特征，以可缩放 tanh 近似反向传播 Sign，并设计四类二值卷积模块处理维度与全精度信息。",
+      "readingNote": "已核验官方摘要、作者、出版信息与 DOI；原 PDF 仅用于方法图与数据入口核对，尚未阅读全文。主会与数据集评测 Track 分开标注。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/788e086c07b8d6fa6b279df56e512312-Abstract-Conference.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract",
+      "citation": "@inproceedings{NEURIPS2023_788e086c,\n author = {Cai, Yuanhao and Zheng, Yuxin and Lin, Jing and Yuan, Xin and Zhang, Yulun and Wang, Haoqian},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/075280-1665},\n editor = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},\n pages = {38335--38346},\n publisher = {Curran Associates, Inc.},\n title = {Binarized Spectral Compressive Imaging},\n url = {https://proceedings.neurips.cc/paper_files/paper/2023/file/788e086c07b8d6fa6b279df56e512312-Paper-Conference.pdf},\n volume = {36},\n year = {2023}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "network-quantization"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "官方摘要明确以高光谱成像数据、光谱恢复或高光谱目标检测为研究对象。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何使高光谱快照恢复网络适合计算和存储受限设备？",
+        "datasets": "摘要未列具体模拟/真实数据集名称，待全文核验。",
+        "experimentSetting": "摘要确认量化与定性比较二值网络算法；实际设备部署、精度/速度和内存测量待全文核验。",
+        "conclusions": "作者摘要报告所提二值网络优于比较的二值化算法；未声明优于全部全精度重建网络或已完成移动设备部署。",
+        "limitations": "二值化带来的精度与资源权衡、实际硬件速度及跨成像系统表现待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/788e086c07b8d6fa6b279df56e512312-Abstract-Conference.html",
+            "checkedAt": "2026-10-08",
+            "level": "NeurIPS 官方摘要与 BibTeX",
+            "supports": [
+              "题名、作者、版本年份、Track 与 DOI",
+              "输入输出、核心机制、数据概况；完整实验待核验"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "bisrnet-bisci-neurips2023",
+            "type": "会议正式版 · Main Conference",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/788e086c07b8d6fa6b279df56e512312-Abstract-Conference.html",
+            "year": 2023,
+            "relation": "官方会议版本；预印本及扩展版待检索，不推定不存在。"
+          }
+        ],
+        "methodFamilyId": "bisrnet-bisci"
+      },
+      "code": "https://github.com/caiyuanhao1998/BiSCI",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/file/788e086c07b8d6fa6b279df56e512312-Paper-Conference.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "BiSRNet 二值化基模型与光谱重分布卷积、上下采样模块。",
+          "verificationNote": "逐张查看 NeurIPS 官方 PDF 第 4 页 Figure 2，核对完整方法或采集设置原图、图号和图注；原图裁切，未重绘。仅局部核验。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pdfPointBox": [
+              104,
+              70,
+              518,
+              282
+            ],
+            "pdfSha256": "bdc81101e5e44b7091686b5ebd0c4febb55659853def458ff1c0d2c55b12522e"
+          },
+          "path": "figures/bisrnet-bisci/framework.png",
+          "width": 1151,
+          "height": 590,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "f4a2b0a81ef5619cf195708b4bf0cc52bdcfcc1bb9a48650784d8ae9513a2a72",
+          "attribution": "Yuanhao Cai, Yuxin Zheng, Jing Lin, Xin Yuan, Yulun Zhang, Haoqian Wang · NeurIPS 2023"
+        }
+      ]
+    },
+    {
+      "id": "m2sodai-2023",
+      "shortTitle": "M²SODAI / DoubleFPN",
+      "title": "M²SODAI: Multi-Modal Maritime Object Detection Dataset With RGB and Hyperspectral Image Sensors",
+      "authors": "Jonggyu Jang, Sangwoo Oh, Youjin Kim, Dongmin Seo, Youngchol Choi, Hyun Jong Yang",
+      "year": 2023,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 36 — Datasets and Benchmarks Track",
+      "publicationTrack": "Datasets and Benchmarks",
+      "publicationStatus": "published",
+      "doi": "10.52202/075280-2341",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "RGB–HSI 检测基准",
+      "tags": [
+        "高光谱",
+        "M²SODAI / DoubleFPN",
+        "datasets-benchmarks",
+        "hyperspectral-object-detection",
+        "maritime-monitoring"
+      ],
+      "summary": "提供同步 RGB 与高光谱海上船舶/漂浮物检测数据，并以 DoubleFPN 融合两模态处理海面反光等干扰。",
+      "input": "同步的航空 RGB/HSI 图像对，含可见与近红外的超过 100 光谱通道",
+      "output": "船舶与漂浮物检测标注、基准与框预测",
+      "mechanism": "收集同步 RGB/HSI 并标注边界框；以多模态特征金字塔 DoubleFPN 结合光谱材料信息与 RGB 视觉特征。",
+      "readingNote": "已核验官方摘要、作者、出版信息与 DOI；原 PDF 仅用于方法图与数据入口核对，尚未阅读全文。主会与数据集评测 Track 分开标注。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a8757b889350a3782b384a3ec0dfbae9-Abstract-Datasets_and_Benchmarks.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_pages",
+      "citation": "@inproceedings{NEURIPS2023_a8757b88,\n author = {Jang, Jonggyu and Oh, Sangwoo and Kim, Youjin and Seo, Dongmin and Choi, Youngchol and Yang, Hyun Jong},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/075280-2341},\n editor = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},\n pages = {53831--53843},\n publisher = {Curran Associates, Inc.},\n title = {M\\^{}\\lbrace 2\\rbrace SODAI: Multi-Modal Maritime Object Detection Dataset With RGB and Hyperspectral Image Sensors},\n url = {https://proceedings.neurips.cc/paper_files/paper/2023/file/a8757b889350a3782b384a3ec0dfbae9-Paper-Datasets_and_Benchmarks.pdf},\n volume = {36},\n year = {2023}\n}\n",
+      "library": {
+        "categoryIds": [
+          "datasets-benchmarks",
+          "hyperspectral-object-detection",
+          "maritime-monitoring"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "官方摘要明确以高光谱成像数据、光谱恢复或高光谱目标检测为研究对象。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "高光谱与 RGB 融合能否减轻海面反光、波浪等因素导致的海上目标检测误检？",
+        "datasets": "官方摘要报告每类约 6,000 个实例；原 PDF 第 3/5 页局部正文列 1,257 对同步 RGB–HSI、11,527 实例。许可与下载数据版本待核验。",
+        "experimentSetting": "原 PDF 第 5 页局部正文列随机划分 1,007 训练、125 验证、125 测试对；摘要报告 RGB/HSI 融合与 mAP 比较。完整采集/配准协议与具体性能待全文。",
+        "conclusions": "作者摘要报告 RGB/HSI 融合在本基准中改善 mAP，尤其在海面干扰下；不外推为全部海域或平台上的鲁棒性保证。",
+        "limitations": "传感器同步/配准、目标尺度、场景覆盖、跨海域泛化和数据许可待全文核验。",
+        "dataLinks": [
+          "https://sites.google.com/view/m2sodai"
+        ],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a8757b889350a3782b384a3ec0dfbae9-Abstract-Datasets_and_Benchmarks.html",
+            "checkedAt": "2026-10-08",
+            "level": "NeurIPS 官方摘要与 BibTeX",
+            "supports": [
+              "题名、作者、版本年份、Track 与 DOI",
+              "输入输出、核心机制、数据概况；完整实验待核验"
+            ]
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/a8757b889350a3782b384a3ec0dfbae9-Paper-Datasets_and_Benchmarks.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方 PDF 局部，第 5 页",
+            "supports": [
+              "数据对数及随机训练/验证/测试划分",
+              "原始 DoubleFPN 方法图；不代表完整全文核验"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "m2sodai-2023-neurips2023",
+            "type": "会议正式版 · Datasets and Benchmarks",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a8757b889350a3782b384a3ec0dfbae9-Abstract-Datasets_and_Benchmarks.html",
+            "year": 2023,
+            "relation": "官方会议版本；预印本及扩展版待检索，不推定不存在。"
+          }
+        ],
+        "methodFamilyId": "m2sodai-2023"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/file/a8757b889350a3782b384a3ec0dfbae9-Paper-Datasets_and_Benchmarks.pdf",
+          "figureLabel": "Figure 5",
+          "caption": "DoubleFPN 的 RGB/HSI 双骨干、特征金字塔与目标检测头。",
+          "verificationNote": "逐张查看 NeurIPS 官方 PDF 第 5 页 Figure 5，核对完整方法或采集设置原图、图号和图注；原图裁切，未重绘。仅局部核验。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pdfPointBox": [
+              119,
+              72,
+              496,
+              218
+            ],
+            "pdfSha256": "4bbe3a0327d0e86a17c172bd0f247a104c02050f546e4ecdb5caf70a65d4c48d"
+          },
+          "path": "figures/m2sodai-2023/framework.png",
+          "width": 1048,
+          "height": 406,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "a2973012bbc6bb0c46685b65a9ac3f823116a11dd138f8ea6d374aaf21aeacf8",
+          "attribution": "Jonggyu Jang, Sangwoo Oh, Youjin Kim, Dongmin Seo, Youngchol Choi, Hyun Jong Yang · NeurIPS 2023"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -16613,6 +16932,107 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "早期光谱建模或张量去噪工作提供直接任务/方法依据。"
+        }
+      ]
+    },
+    {
+      "id": "datasets-benchmarks",
+      "name": "数据集与评测",
+      "dimension": "task",
+      "definition": "建立可追溯高光谱数据、标注及任务评测；独立保存来源 Track 与许可核验。",
+      "status": "provisional",
+      "color": "#7d9a8c",
+      "createdAt": "2026-10-08",
+      "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
+      "evidencePaperIds": [
+        "hyper-skin-2023",
+        "m2sodai-2023"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "数据、量化恢复或具体应用提供直接分类依据；边界暂定。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-object-detection",
+      "name": "高光谱目标检测",
+      "dimension": "task",
+      "definition": "利用高光谱或明确关联的多模态观测预测目标边界框。",
+      "status": "provisional",
+      "color": "#ad8266",
+      "createdAt": "2026-10-08",
+      "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
+      "evidencePaperIds": [
+        "m2sodai-2023"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "数据、量化恢复或具体应用提供直接分类依据；边界暂定。"
+        }
+      ]
+    },
+    {
+      "id": "skin-analysis",
+      "name": "皮肤光谱分析",
+      "dimension": "application",
+      "definition": "面部皮肤高光谱采集、重建和成分分析；不等同于临床诊断有效性。",
+      "status": "provisional",
+      "color": "#b5899a",
+      "createdAt": "2026-10-08",
+      "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
+      "evidencePaperIds": [
+        "hyper-skin-2023"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "数据、量化恢复或具体应用提供直接分类依据；边界暂定。"
+        }
+      ]
+    },
+    {
+      "id": "maritime-monitoring",
+      "name": "海上监测",
+      "dimension": "application",
+      "definition": "船舶、漂浮物及海面场景的光谱观测与识别。",
+      "status": "provisional",
+      "color": "#6c98a6",
+      "createdAt": "2026-10-08",
+      "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
+      "evidencePaperIds": [
+        "m2sodai-2023"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "数据、量化恢复或具体应用提供直接分类依据；边界暂定。"
+        }
+      ]
+    },
+    {
+      "id": "network-quantization",
+      "name": "网络量化",
+      "dimension": "method",
+      "definition": "通过二值等参数/激活量化降低高光谱网络资源需求；与光学器件制造量化区分。",
+      "status": "provisional",
+      "color": "#a096b7",
+      "createdAt": "2026-10-08",
+      "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
+      "evidencePaperIds": [
+        "bisrnet-bisci"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "数据、量化恢复或具体应用提供直接分类依据；边界暂定。"
         }
       ]
     }
