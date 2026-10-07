@@ -20011,6 +20011,14 @@
             "supports": [
               "v1/v2/v3日期、首次提交与更新；不认定正文版本相同"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1904.12175v5",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv v5第2页扩展声明与局部差异说明",
+            "supports": [
+              "arXiv v5第2页明确声明为uSDN扩展：非配准输入、单一共享编码器/解码器、互信息取代角度约束、l2,1重建损失；与CVPR2018属同一方法族，不按两独立方法计数。"
+            ]
           }
         ],
         "versions": [
@@ -20054,6 +20062,14 @@
             "firstSubmittedAt": "2018-04-13T17:17:05Z",
             "updatedAt": "2018-07-15T12:53:39Z",
             "relation": "arXiv题名、三作者与版本日期已核验；逐版正文及正式版差异待核验。"
+          },
+          {
+            "id": "usdn-2018-u2mdn-extension",
+            "type": "期刊扩展方法（u²-MDN）",
+            "url": "https://doi.org/10.1109/tgrs.2021.3079518",
+            "year": 2022,
+            "doi": "10.1109/tgrs.2021.3079518",
+            "relation": "arXiv v5第2页明确声明为uSDN扩展：非配准输入、单一共享编码器/解码器、互信息取代角度约束、l2,1重建损失；与CVPR2018属同一方法族，不按两独立方法计数。；正式题名：Unsupervised and Unregistered Hyperspectral Image Super-Resolution With Mutual Dirichlet-Net；作者：Ying Qu, Hairong Qi, Chiman Kwan, Naoto Yokoya, Jocelyn Chanussot；完整独立出版记录见u2mdn-tgrs-2022。"
           }
         ],
         "methodFamilyId": "usdn-2018"
@@ -20321,6 +20337,200 @@
           "verifiedAt": "2026-10-08",
           "sha256": "5b4a717e9c6e7890ac3c6d49bf8e76790ba7e72104c09dfd5d2407c06390cd54",
           "attribution": "Qian Huang, Weixin Zhu, Yang Zhao, Linsen Chen, Yao Wang, Tao Yue, Xun Cao · CVPR 2018"
+        }
+      ]
+    },
+    {
+      "id": "u2mdn-tgrs-2022",
+      "shortTitle": "u²-MDN",
+      "title": "Unsupervised and Unregistered Hyperspectral Image Super-Resolution With Mutual Dirichlet-Net",
+      "authors": "Ying Qu, Hairong Qi, Chiman Kwan, Naoto Yokoya, Jocelyn Chanussot",
+      "year": 2022,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2021.3079518",
+      "representation": "u²-MDN",
+      "tags": [
+        "spatial-super-resolution",
+        "unsupervised-hsi-fusion",
+        "dirichlet-abundance-prior",
+        "unregistered-spectral-fusion"
+      ],
+      "summary": "把两模态投影到相同统计空间并共享编码器/解码器，以Dirichlet表示、输入与表示互信息及协同l2,1重建损失减少光谱失真。",
+      "input": "未配准且有重叠区域的低空间分辨HSI与高空间分辨MSI；已知光谱响应矩阵。",
+      "output": "与高空间分辨MSI覆盖区域对应的高空间分辨HSI。",
+      "mechanism": "把两模态投影到相同统计空间并共享编码器/解码器，以Dirichlet表示、输入与表示互信息及协同l2,1重建损失减少光谱失真。",
+      "readingNote": "正式卷期2022、DOI含2021；只读arXiv v5摘要与指定局部页，未读期刊全文。原文明确扩展uSDN，同族关联保留五作者及方法变化；版本数量不等于独立方法数量。",
+      "paper": "https://doi.org/10.1109/tgrs.2021.3079518",
+      "code": "https://github.com/yingutk/u2MDN",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "preprint_abstract_selected_pages_and_publication_metadata",
+      "citation": "@article{qu2022u2mdn,\n  title={Unsupervised and Unregistered Hyperspectral Image Super-Resolution With Mutual Dirichlet-Net},\n  author={Qu, Ying and Qi, Hairong and Kwan, Chiman and Yokoya, Naoto and Chanussot, Jocelyn},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  year={2022},\n  volume={60},\n  pages={1--18},\n  doi={10.1109/tgrs.2021.3079518}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "unsupervised-hsi-fusion",
+          "dirichlet-abundance-prior",
+          "unregistered-spectral-fusion"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接高光谱与多光谱融合；允许未配准，但需重叠区域和共享光谱材料/基。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何不依赖图像预配准或高分辨HSI训练真值，融合有重叠区域的低分辨HSI和高分辨MSI？",
+        "datasets": "arXiv v5第7–8页局部核验：CAVE、Harvard、Chikusei、Houston、Pavia、Washington DC Mall及Cuprite Hyperion/WorldView3实测数据；许可、完整获取和期刊版实验待核验。",
+        "experimentSetting": "v5第8页区分配准/未配准两组；CAVE/Harvard空间比例32，未配准模拟旋转5°并裁边15%；遥感组随机位移模拟非刚性，实测组直接使用Hyperion/WorldView3。仅局部设置，完整数值与期刊版待核验。",
+        "conclusions": "作者预印本摘要报告未配准高光谱空间超分辨性能优势；完整实验数值和正式版结果尚未复核。",
+        "limitations": "v5第4页假设两观测有重叠区域且共享材料光谱基，光谱响应矩阵作为已知先验；作者代码说明随机初始化影响结果且需按图像调整参数。整体局限待阅读全文。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1904.12175",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv题名、五作者、摘要、DOI及全部Submission history",
+            "supports": [
+              "首次提交2019-04-27；v1–v5更新日期",
+              "未配准融合、互信息与协同l2,1损失"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2021.3079518",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref精确DOI与arXiv题名及完整作者核对",
+            "supports": [
+              "正式TGRS卷60、2022、页1–18；在线日期未给出"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1904.12175v5",
+            "checkedAt": "2026-10-08",
+            "level": "明确为arXiv v5原文局部第2/4/5/7/8页；非阅读全文",
+            "supports": [
+              "arXiv v5第2页明确声明为uSDN扩展：非配准输入、单一共享编码器/解码器、互信息取代角度约束、l2,1重建损失；与CVPR2018属同一方法族，不按两独立方法计数。",
+              "第5页Fig.3完整架构",
+              "第4页重叠和共享材料基假设；第7–8页数据与局部实验设置"
+            ]
+          },
+          {
+            "url": "https://github.com/yingutk/u2MDN",
+            "checkedAt": "2026-10-08",
+            "level": "作者原文链接的代码仓库README；未执行代码",
+            "supports": [
+              "明确论文题名、五作者及DOI；研究用途、All rights reserved",
+              "Python3.7.6、TensorFlow1.13.1、scipy；随机初始化与按输入调整参数；数据许可未核验"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "u2mdn-tgrs-2022-formal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/tgrs.2021.3079518",
+            "year": 2022,
+            "doi": "10.1109/tgrs.2021.3079518",
+            "relation": "TGRS卷60，页1–18；Crossref正式出版年份2022。DOI及作者代码引文含2021，在线日期待核验；最终版全文与arXiv差异待比对。"
+          },
+          {
+            "id": "u2mdn-tgrs-2022-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1904.12175v1",
+            "year": 2019,
+            "arxivId": "1904.12175",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2019-04-27T16:38:35Z",
+            "updatedAt": "2019-04-27T16:38:35Z",
+            "metadataStatus": "verified",
+            "relation": "官方Submission history完整核验；只读v5摘要与局部原文，其他版本和期刊正式版正文差异待核验。"
+          },
+          {
+            "id": "u2mdn-tgrs-2022-arxiv-v2",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1904.12175v2",
+            "year": 2019,
+            "arxivId": "1904.12175",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2019-04-27T16:38:35Z",
+            "updatedAt": "2019-05-10T13:44:25Z",
+            "metadataStatus": "verified",
+            "relation": "官方Submission history完整核验；只读v5摘要与局部原文，其他版本和期刊正式版正文差异待核验。"
+          },
+          {
+            "id": "u2mdn-tgrs-2022-arxiv-v3",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1904.12175v3",
+            "year": 2021,
+            "arxivId": "1904.12175",
+            "arxivVersion": "v3",
+            "firstSubmittedAt": "2019-04-27T16:38:35Z",
+            "updatedAt": "2021-04-15T20:02:23Z",
+            "metadataStatus": "verified",
+            "relation": "官方Submission history完整核验；只读v5摘要与局部原文，其他版本和期刊正式版正文差异待核验。"
+          },
+          {
+            "id": "u2mdn-tgrs-2022-arxiv-v4",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1904.12175v4",
+            "year": 2021,
+            "arxivId": "1904.12175",
+            "arxivVersion": "v4",
+            "firstSubmittedAt": "2019-04-27T16:38:35Z",
+            "updatedAt": "2021-05-10T10:18:18Z",
+            "metadataStatus": "verified",
+            "relation": "官方Submission history完整核验；只读v5摘要与局部原文，其他版本和期刊正式版正文差异待核验。"
+          },
+          {
+            "id": "u2mdn-tgrs-2022-arxiv-v5",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1904.12175v5",
+            "year": 2021,
+            "arxivId": "1904.12175",
+            "arxivVersion": "v5",
+            "firstSubmittedAt": "2019-04-27T16:38:35Z",
+            "updatedAt": "2021-08-02T13:44:38Z",
+            "metadataStatus": "verified",
+            "relation": "官方Submission history完整核验；只读v5摘要与局部原文，其他版本和期刊正式版正文差异待核验。"
+          },
+          {
+            "id": "u2mdn-tgrs-2022-usdn-predecessor",
+            "type": "前序会议方法",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Qu_Unsupervised_Sparse_Dirichlet-Net_CVPR_2018_paper.html",
+            "year": 2018,
+            "doi": "10.1109/cvpr.2018.00266",
+            "relation": "arXiv v5第2页明确声明为uSDN扩展：非配准输入、单一共享编码器/解码器、互信息取代角度约束、l2,1重建损失；与CVPR2018属同一方法族，不按两独立方法计数。；前序正式题名：Unsupervised Sparse Dirichlet-Net for Hyperspectral Image Super-Resolution；作者：Ying Qu, Hairong Qi, Chiman Kwan"
+          }
+        ],
+        "methodFamilyId": "usdn-2018"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1904.12175v5",
+          "figureLabel": "Figure 3 — arXiv v5",
+          "caption": "u²-MDN简化架构：两模态共用编码器与解码器，互信息支路与协同损失约束Dirichlet表示；输出高空间分辨HSI。",
+          "verificationNote": "核对arXiv1904.12175v5第5页Fig.3完整图像和图注；明确为预印本v5原图，不称为已比对的期刊最终图。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              154,
+              848,
+              534
+            ]
+          },
+          "path": "figures/u2mdn-tgrs-2022/framework.png",
+          "width": 722,
+          "height": 380,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "01d016f6859474ae6970f234681b62aa5fcaf8fef0a2e14bcac17e219630d0cb",
+          "attribution": "Ying Qu, Hairong Qi, Chiman Kwan, Naoto Yokoya, Jocelyn Chanussot · TGRS 2022"
         }
       ]
     }
@@ -20599,7 +20809,8 @@
         "hypertransformer-pansharpening",
         "bayesian-hsi-sr-2015",
         "nlstf-2017",
-        "usdn-2018"
+        "usdn-2018",
+        "u2mdn-tgrs-2022"
       ],
       "history": [
         {
@@ -21474,7 +21685,8 @@
       "createdAt": "2026-10-08",
       "rationale": "由CVPR2018已读摘要和注明局部原文形成；边界随后续阅读复核。",
       "evidencePaperIds": [
-        "usdn-2018"
+        "usdn-2018",
+        "u2mdn-tgrs-2022"
       ],
       "history": [
         {
@@ -21494,7 +21706,8 @@
       "createdAt": "2026-10-08",
       "rationale": "由CVPR2018已读摘要和注明局部原文形成；边界随后续阅读复核。",
       "evidencePaperIds": [
-        "usdn-2018"
+        "usdn-2018",
+        "u2mdn-tgrs-2022"
       ],
       "history": [
         {
@@ -21521,6 +21734,26 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "本批原文明确支持任务或方法标签。"
+        }
+      ]
+    },
+    {
+      "id": "unregistered-spectral-fusion",
+      "name": "非配准光谱融合",
+      "dimension": "task",
+      "definition": "在光谱观测未预先配准但有重叠与共享材料的条件下融合不同空间及光谱分辨率数据。",
+      "status": "provisional",
+      "color": "#94a3aa",
+      "createdAt": "2026-10-08",
+      "rationale": "u²-MDN原文明确将未配准HSI/MSI融合与前序配准融合区别；随更多原文复核边界。",
+      "evidencePaperIds": [
+        "u2mdn-tgrs-2022"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "由已核验摘要与原文扩展声明形成任务标签。"
         }
       ]
     }

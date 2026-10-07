@@ -1057,6 +1057,52 @@
       "gaps": [
         "只有一个既有方法的三版本历史；未核验逐版实验和其他arXiv方法"
       ]
+    },
+    {
+      "id": "tgrs-2022-usdn-journal-extension",
+      "venue": "TGRS",
+      "year": 2022,
+      "date": "2026-10-08",
+      "method": "CVPR2018题名查询发现后续稿；Crossref精确DOI、作者预印本与第2页扩展声明交叉核验",
+      "keywords": [
+        "Unsupervised and Unregistered Hyperspectral Image Super-Resolution With Mutual Dirichlet-Net",
+        "10.1109/tgrs.2021.3079518",
+        "uSDN",
+        "u²-MDN"
+      ],
+      "url": "https://api.crossref.org/works/10.1109/TGRS.2021.3079518",
+      "pagination": "单个DOI与指定arXiv全文、作者仓库；非年度目录检索",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "targeted_topic_reviewed",
+      "statusLabel": "单篇期刊扩展元数据、摘要与局部方法关系核验；年度全量未检索",
+      "sourceSnapshot": "sources/crossref-u2mdn-exact.json",
+      "gaps": [
+        "TGRS2022年度目录、其他任务词和完整引文链未检索",
+        "期刊最终全文、在线日期、五个预印本逐版差异、资源许可与代码复现待核验"
+      ]
+    },
+    {
+      "id": "u2mdn-arxiv-version-history",
+      "venue": "arXiv",
+      "year": "2019–2021",
+      "date": "2026-10-08",
+      "method": "定向题名、五作者、DOI与全部Submission history核验",
+      "keywords": [
+        "1904.12175"
+      ],
+      "url": "https://arxiv.org/abs/1904.12175",
+      "pagination": "指定abs页面v1–v5全部历史；非跨分类检索",
+      "titleCount": 1,
+      "candidateCount": 0,
+      "reviewedCount": 1,
+      "status": "targeted_metadata_reviewed",
+      "statusLabel": "五个版本日期核验并关联TGRS2022正式出版；逐版全文待查",
+      "sourceSnapshot": "sources/arxiv-1904.12175.json",
+      "gaps": [
+        "其他arXiv论文、逐版实验及期刊最终版差异仍未核验"
+      ]
     }
   ],
   "candidates": [
@@ -2541,6 +2587,19 @@
       "reason": "原始摘要研究图傅里叶基与相似性检索，非光学高光谱。",
       "checkedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/Iscen_Fast_Spectral_Ranking_CVPR_2018_paper.json"
+    },
+    {
+      "title": "Unsupervised and Unregistered Hyperspectral Image Super-Resolution With Mutual Dirichlet-Net",
+      "url": "https://doi.org/10.1109/tgrs.2021.3079518",
+      "venue": "TGRS",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "tgrs-2022-usdn-journal-extension",
+      "decision": "included",
+      "paperId": "u2mdn-tgrs-2022",
+      "reason": "arXiv v5第2页明确声明为uSDN扩展：非配准输入、单一共享编码器/解码器、互信息取代角度约束、l2,1重建损失；与CVPR2018属同一方法族，不按两独立方法计数。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/u2mdn-extension-selected-pages-review.json"
     }
   ],
   "batches": [
@@ -2808,6 +2867,26 @@
         "浏览器工具访问CVF失败；直接HTTP成功保存官方证据；day=all空目录，遍历全部三个日目录取得979题名",
         "Crossref Nie题名请求429，精确DOI核验成功；MIID数据入口重定向至首页",
         "完整实验、代码运行、数据许可及正式版与预印本差异待核验"
+      ]
+    },
+    {
+      "id": "usdn-u2mdn-journal-extension",
+      "date": "2026-10-08",
+      "searchIds": [
+        "tgrs-2022-usdn-journal-extension",
+        "u2mdn-arxiv-version-history"
+      ],
+      "new": 1,
+      "updated": 1,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 0,
+      "categoriesAdded": 1,
+      "methodFamiliesAdded": 0,
+      "readingBoundary": "新增1条期刊文献、更新前序uSDN关联；原文明确同一方法族，不计新增独立方法族。正式卷期2022与2019–2021五个arXiv版本分别记录；读v5摘要与第2/4/5/7/8局部页，保存明确版本的Fig.3，非阅读全文。",
+      "gaps": [
+        "TGRS2022年度目录、其他任务词和完整引文链未检索",
+        "期刊最终全文、在线日期、五个预印本逐版差异、资源许可与代码复现待核验"
       ]
     }
   ],
