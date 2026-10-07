@@ -154,9 +154,11 @@ export function SpectralScene() {
     defaultSample("vegetation"),
   );
   const [yaw, setYaw] = useState(-0.28);
-  const [compare, setCompare] = useState(
-    () => window.matchMedia("(min-width: 900px)").matches,
+  const [compare, setCompare] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(
+    () => window.matchMedia("(min-width: 1000px)").matches,
   );
+  const panelToggle = useRef<HTMLButtonElement>(null);
   const material = sample.material;
   const currentMaterial = materials.find((item) => item.id === material)!;
   const chooseWavelength = (value: number) => {
@@ -168,7 +170,7 @@ export function SpectralScene() {
     setWavelength(850);
     setSample(defaultSample("vegetation"));
     setYaw(-0.28);
-    setCompare(window.matchMedia("(min-width: 900px)").matches);
+    setCompare(false);
   };
 
   useEffect(() => {
@@ -352,16 +354,32 @@ export function SpectralScene() {
   }, [mode, wavelength, yaw, sample, currentMaterial, compare]);
 
   return (
-    <section className="spectral-lab" aria-label="高光谱三维交互实验">
+    <section
+      className="spectral-lab"
+      aria-label="高光谱三维交互实验"
+      data-panel-open={panelOpen}
+    >
       <header className="lab-toolbar">
         <div>
           <span className="lab-live-dot" />
           <strong>光谱 × 空间实验室</strong>
           <span className="lab-demo-badge">交互示意</span>
         </div>
-        <button className="lab-reset" onClick={reset}>
-          ↺ 重置演示
-        </button>
+        <div className="lab-toolbar-actions">
+          <button className="lab-reset" onClick={reset}>
+            ↺ 重置
+          </button>
+          <button
+            ref={panelToggle}
+            className="lab-panel-toggle"
+            aria-expanded={panelOpen}
+            aria-controls="spectral-controls"
+            onClick={() => setPanelOpen((open) => !open)}
+          >
+            {panelOpen ? "收起光谱面板" : "光谱面板"}{" "}
+            <span aria-hidden="true">{panelOpen ? "−" : "+"}</span>
+          </button>
+        </div>
       </header>
       <div className="lab-body">
         <div className="lab-scene">
@@ -496,15 +514,27 @@ export function SpectralScene() {
               <button onClick={() => setYaw(-0.28)}>复位视角</button>
             </div>
           </div>
-          <div className="lab-insight">
-            <span aria-hidden="true">◎</span>
+          <details className="lab-help">
+            <summary>如何读懂这个场景</summary>
             <p>
               <strong>每一个三维点，都有一条光谱。</strong>
               空间坐标描述「在哪里」，光谱响应帮助观察「有什么不同」。
             </p>
-          </div>
+            <p>{modes.find((item) => item.id === mode)!.description}</p>
+          </details>
         </div>
-        <aside className="lab-inspector" aria-label="光谱实验控制面板">
+        <aside
+          id="spectral-controls"
+          className="lab-inspector"
+          aria-label="光谱实验控制面板"
+          hidden={!panelOpen}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setPanelOpen(false);
+              panelToggle.current?.focus();
+            }
+          }}
+        >
           <section className="lab-control-section">
             <h2>
               <span>01</span>选择观察波长{" "}
