@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 184 篇：132 篇 verified、156 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 185 篇：132 篇 verified、156 张图；44 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -257,3 +257,7 @@ Gas Plume NeRF（arXiv 2026）保存 Figure 2 权重计算子流程；明确不�
 - 2026-10-07 扩充：HMAT（TGRS 2025）作者正式排版 Figure 1 第 3 页；HyKey（IJCARS 2026）正式 Springer Figures 2、3，分别完整网络与训练。共新增两篇、三张，当前 182 篇 / 130 篇有图 / 153 张，43 needs_access、9 no_framework、0 pending。
 
 - 2026-10-07：Microcomb HS3D Figure 1、Supplementary Figure 1（arXiv v1 第 2、9 页），CVPR 2024 Spectro-polarimetric Dataset Figure 3(a)（第 4 页），共三张原系统/概念图。当前 184 篇 / 132 篇有图 / 156 张，43 needs_access、9 no_framework、0 pending。
+
+## IGARSS 候选核验（2026-10-07）
+
+新增 towards-3d-hyperclouds（IGARSS 2024, DOI 10.1109/IGARSS53475.2024.10642828）：机构原始摘要明确 LiDAR/摄影测量三维点云附加高光谱属性；仅摘要核验，不声称独立新架构。会议无资源、机构无全文、IEEE PDF HTTP 418，框架 needs_access。MaxEnt TGRS 正式全文补核验三个激光波长与流程，原 Fig.1 已在库，会议候选留待版本关系核验。LiDAR-guided unmixing 2025 已补正式 DOI 10.1109/IGARSS55030.2025.11243629 与出版社页码 7347–7351，官方稿件入口返回会议注册登录，pending_abstract。Multi-Sensor Multi-Stream 的官方程序属于 WHISPERS 2024，待场所政策与原文核验，不沿用 IGARSS 2025 搜索误导。详细证据见 sources/igarss-hypercloud-and-unmix-review-2026-10-07.json。当前 185 篇全部初查，0 pending；文献调研仍未完成。

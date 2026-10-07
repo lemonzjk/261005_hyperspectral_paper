@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 184 篇；132 篇有 156 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 185 篇；132 篇有 156 张框架图，44 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -45,3 +45,7 @@
 - Microcomb HS3D：arXiv:2508.18219v1（2025），15 页全文及补充核验；约 1 THz 梳齿近红外幅度/相位、重聚焦和分层相位展开高度，标 holography/核心研究。页眉 Optica 不是正式发表证据。塑料实验记录 29 s；硬币 0.96 s，1.2×10^6/s 为光谱与空间分辨单元吞吐，不是三维帧率。保存 Figure 1 概念（第 2 页）与补充 Figure 1 两种完整散射系统（第 9 页）。
 - Spectro-polarimetric Dataset：CVPR 2024 官方 PDF，311 张 21 波段 450–650 nm 全 Stokes，另有 2022 张 RGB Stokes；两套数据均分析 SfP 法线的波段依赖。作为 capture/相关研究，不声称新三维重建模型或三维真值。保存第 4 页 Figure 3(a) 两种采集系统。原 pending_scope 候选已纳入。
 - 全文哈希见 sources/microcomb-and-spectropolar-fulltext-2026-10-07.json。OL 2026 SVSPI 摘要及正式登记已确认，但正文挑战页，保留 pending_fulltext；需要与 MOCI-PHI 平台和方法关系核验，不混用框架。
+
+## IGARSS 候选核验（2026-10-07）
+
+新增 towards-3d-hyperclouds（IGARSS 2024, DOI 10.1109/IGARSS53475.2024.10642828）：机构原始摘要明确 LiDAR/摄影测量三维点云附加高光谱属性；仅摘要核验，不声称独立新架构。会议无资源、机构无全文、IEEE PDF HTTP 418，框架 needs_access。MaxEnt TGRS 正式全文补核验三个激光波长与流程，原 Fig.1 已在库，会议候选留待版本关系核验。LiDAR-guided unmixing 2025 已补正式 DOI 10.1109/IGARSS55030.2025.11243629 与出版社页码 7347–7351，官方稿件入口返回会议注册登录，pending_abstract。Multi-Sensor Multi-Stream 的官方程序属于 WHISPERS 2024，待场所政策与原文核验，不沿用 IGARSS 2025 搜索误导。详细证据见 sources/igarss-hypercloud-and-unmix-review-2026-10-07.json。当前 185 篇全部初查，0 pending；文献调研仍未完成。

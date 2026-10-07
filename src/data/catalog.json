@@ -4860,20 +4860,24 @@
         "understanding"
       ],
       "summary": "依据最大熵原则自适应选择点云邻域，兼顾局部同质性和足够样本，为多光谱 LiDAR 分类生成几何与辐射特征。",
-      "input": "带三维坐标及多光谱强度的机载 LiDAR 点云。",
+      "input": "Optech Titan 三波长机载 LiDAR 点云：1550、1064、532 nm 三通道强度与真实 x、y、z 坐标。",
       "output": "逐点自适应邻域、几何/辐射上下文特征及分类结果。",
-      "mechanism": "判定每个点的局部邻域同质性，用 MaxEnt 选择附近点构建上下文特征，再输入机器学习分类器，与六种邻域选择方法比较。",
-      "readingNote": "属于多光谱点云分类的特征/邻域构建方法，不能描述为连续高光谱采集或几何重建；具体通道及数据划分需按原文实验。",
+      "mechanism": "将另外两个通道强度映射到核心通道点，先以 kNN 获得候选邻域，再利用高程及各波长强度的最大熵准则选择同质邻点；提取几何与辐射上下文特征供分类器预测。",
+      "readingNote": "已取得 PolyU 机构公开的 18 页 TGRS 正式版，核验三波长输入、核心通道强度映射、kNN 候选与最大熵筛选流程。属于多光谱真实点云分类，不是连续高光谱采集或几何重建。作者代码仓库入口已确认，未运行复现。IGARSS 2023 同作者同名 MaxEnt 候选可能为会议版本，尚缺会议原文的扩展关系证据，不作为独立新方法重复收录。",
       "paper": "https://doi.org/10.1109/tgrs.2023.3323963",
       "doi": "10.1109/tgrs.2023.3323963",
-      "verificationLevel": "author_manuscript_and_publisher_metadata",
+      "verificationLevel": "institutional_fulltext",
       "sources": [
         {
           "url": "https://www.researchgate.net/publication/374704860_A_Maximum_Entropy-Based_Optimal_Neighbor_Selection_for_Multispectral_Airborne_LiDAR_Point_Cloud_Classification",
           "note": "原始作者稿摘要核验最大熵邻域、同质性、几何与辐射特征和分类器。"
+        },
+        {
+          "url": "https://ira.lib.polyu.edu.hk/bitstream/10397/102694/1/Jiang_Maximum_Entropy-Based_Optimal.pdf",
+          "note": "PolyU 机构公开的 18 页正式版；核验题名、作者、TGRS 61:5705018、波长及 Figure 1 流程。原框架图保留，不重复下载入库。"
         }
       ],
-      "verifiedAt": "2026-10-06",
+      "verifiedAt": "2026-10-07",
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{maxentlidarneighborhood,\n  title={A Maximum Entropy-Based Optimal Neighbor Selection for Multispectral Airborne LiDAR Point Cloud Classification},\n  author={Ge Jiang and Wai Yeung Yan and Derek D. Lichti},\n  year={2023},\n  journal={TGRS},\n  url={https://doi.org/10.1109/tgrs.2023.3323963},\n  doi={10.1109/tgrs.2023.3323963}\n}",
@@ -4901,7 +4905,8 @@
           "sha256": "fe4ac54955e882f2840510dfef09376e1c505e773099f9457c7439304cbd4a60",
           "attribution": "Ge Jiang, Wai Yeung Yan, Derek D. Lichti · TGRS 2023"
         }
-      ]
+      ],
+      "code": "https://github.com/Jiang-ge/MaxEnt"
     },
     {
       "id": "ps-uda-pointcloud",
@@ -9126,6 +9131,42 @@
           "attribution": "Yujin Jeon, Eunsue Choi, Youngchan Kim, Yunseong Moon, Khalid Omer, Felix Heide, Seung-Hwan Baek · CVPR 2024"
         }
       ]
+    },
+    {
+      "id": "towards-3d-hyperclouds",
+      "shortTitle": "3D Hyperclouds",
+      "title": "Towards 3D Hyperspectral Imaging",
+      "authors": "Richard Gloaguen, Aldino Rizaldy, Ahmed J. Afifi, Sandra Lorenz, Samuel T. Thiele, Moritz Kirsch, Pedram Ghamisi",
+      "year": 2024,
+      "venue": "IGARSS",
+      "publicationName": "2024 IEEE International Geoscience and Remote Sensing Symposium",
+      "track": "pointcloud",
+      "representation": "光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "hyperclouds",
+        "光谱点云",
+        "多平台观测",
+        "几何与光谱融合"
+      ],
+      "summary": "讨论二维高光谱图像在高分辨率、多平台观测中的投影、遮挡与视角问题，提出用带高光谱属性的真实三维点云组织和分析场景。",
+      "input": "来自不同平台的高光谱观测，以及 LiDAR 或摄影测量产生的三维点云；具体传感器参数仍需全文核验。",
+      "output": "带高光谱属性的三维 hyperclouds，以及面向该表示的场景分析示例；摘要未给出统一重建指标。",
+      "mechanism": "将三维空间位置与高光谱属性关联，并采用适配点云的机器学习架构进行分析。摘要强调表示和应用价值，未披露具体网络模块或优化流程。",
+      "readingNote": "会议官方程序、作者机构原始摘要与出版社 Crossref 正式记录交叉核验，正式卷页为 8573–8576，DOI 为 10.1109/IGARSS53475.2024.10642828。当前核验等级仅为机构摘要；不是完整方法复现，也不声称解决所有遮挡。与同年 Dimensional Dilemma 是不同题名、作者组合和 DOI，但同属该团队光谱点云路线；在未取得全文前不能称独立新架构或独立数据集。框架图未取得，不复用 Tinto 或同团队其他论文图。",
+      "paper": "https://iris.landsbokasafn.is/en/publications/towards-3d-hyperspectral-imaging/",
+      "doi": "10.1109/IGARSS53475.2024.10642828",
+      "verificationLevel": "institutional_abstract",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{towards3dhyperclouds,\n  title={Towards 3D Hyperspectral Imaging},\n  author={Richard Gloaguen and Aldino Rizaldy and Ahmed J. Afifi and Sandra Lorenz and Samuel T. Thiele and Moritz Kirsch and Pedram Ghamisi},\n  year={2024},\n  booktitle={2024 IEEE International Geoscience and Remote Sensing Symposium},\n  url={https://iris.landsbokasafn.is/en/publications/towards-3d-hyperspectral-imaging/},\n  doi={10.1109/IGARSS53475.2024.10642828}\n}",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "已检查同题名会议官方页面（PaperNum=4908）：No resources available。作者机构页只有原始摘要、卷页与 DOI，无同篇 PDF 附件；IEEE 正式 PDF 请求返回 HTTP 418 HTML，未取得全文或可核验图注。不能复用 Tinto 或 Dimensional Dilemma 的图，也不能据摘要判定无框架图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10642828",
+        "checkedAt": "2026-10-07"
+      }
     }
   ],
   "datasets": [

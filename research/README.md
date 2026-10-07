@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-07。网站当前收录 178 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-07。网站当前收录 185 篇论文、5 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -77,3 +77,5 @@ VISAPP 2024 双相机融合已解决场所待核验；ISPRS Archives、JOSA A、
 IGARSS 2023 的 Coupled Graph Convolution Network for Cross-Scene Multispectral Point Cloud Classification 已补齐正式 DOI 10.1109/IGARSS52108.2023.10281816、四作者与 6258–6261 页，官方详情仅题名和报告信息，Crossref 无摘要。继续待原始摘要核验，不因二级索引摘要或接收目录直接收录。IGARSS 2025 Hypermesh 官方作者列表与 SPIE 同题论文不同，暂不合并两个场所或复用 SPIE DOI。
 
 补入已在上轮发现、已完成全文核验的 ECCV 2016 Shape from Water，并同步保存作者 Fig. 5 系统原图。两个近红外波段用于真实水下深度，标相关，不称高光谱采集；TPAMI 后续版 2020 在线先行与 2021 正式卷年分开，期刊候选图仍待取得。新增 PhotoniX 串级单像素光谱/飞行时间候选只记录、不展开；IJCAI STAR-Net 已读正式全文，其 spectral 指傅里叶频率，排除主库。用户要求现有补图优先，完成后继续扩充，每篇新增论文同时找框架图。证据见 `sources/water-depth-and-framework-retry-2026-10-06.json`。
+
+核验 IGARSS 2024 Towards 3D Hyperspectral Imaging 的会议程序、作者机构原始摘要与出版社 Crossref，补入真实三维 hyperclouds 路线；核验等级仅为机构摘要，未推断具体网络或独立方法创新。全文入口受限，框架记 needs_access。IGARSS 2025 LiDAR-guided fast multimodal unmixing 已核对正式 DOI 和 7347–7351 页，官方全文入口实际需要会议注册登录，继续待摘要。MaxEnt TGRS 条目已有图，补核验正式全文及三波长输入；会议候选不重复新增，待版本关系核验。新发现 Multi-Sensor Multi-Stream 论文的真实场所为 WHISPERS 2024，而非 IGARSS 2025；专业场所与原始摘要仍待核验。证据见 sources/igarss-hypercloud-and-unmix-review-2026-10-07.json。
