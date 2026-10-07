@@ -57,6 +57,9 @@
 | ICML | 2018 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录621篇与全量元数据621摘要URL集合完全一致；无条数截断 | 621 / 11 / 11 | 指定题名/全量摘要词命中11全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 | arXiv | 2017 | Structured Low-Rank Matrix Factorization: Global Optimality, Algorithms, and Applications；一个定向相关版本目标；非年度目录或主题全量检索 | 1 / 1 / 0 | 前序引用关系与书目已定位；正式版本归并待查 | 最终TPAMI正文、明确扩展声明与版本实验差异待核验 |
 | TPAMI | 2020 | Structured Low-Rank Matrix Factorization: Global Optimality, Algorithms, and Applications；一个定向相关版本目标；非年度目录或主题全量检索 | 1 / 1 / 0 | 前序引用关系与书目已定位；正式版本归并待查 | 最终TPAMI正文、明确扩展声明与版本实验差异待核验 |
+| ICML | 2019 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录773篇与全量元数据773摘要URL集合完全一致；无条数截断 | 773 / 6 / 6 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2020 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1084篇与全量元数据1084摘要URL集合完全一致；无条数截断 | 1084 / 7 / 7 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2021 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1183篇与全量元数据1183摘要URL集合完全一致；无条数截断 | 1183 / 9 / 9 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -70,7 +73,7 @@
 | ICCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ECCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | NeurIPS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| ICML | conference | 最早可用目录至 2026 | 2013–2018、2022–2024主卷指定题名/全量摘要词候选已处理；其他年份/关键词/正文未完成 |
+| ICML | conference | 最早可用目录至 2026 | 2013–2024十二主卷指定题名/全量摘要词候选已处理；其他年份/关键词/正文未完成 |
 | ICLR | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | AAAI | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IJCAI | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -177,6 +180,12 @@
   阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
 - 2026-10-08 / structured-low-rank-related-publications-discovery：新增 0，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：后续arXiv原文页1/3/14确认前序引用；官方v1日期与Crossref正式期刊书目已核验。未证明正式版本归并，不把两作者内容混入会议三作者事实。
+- 2026-10-08 / icml-2019-middle-pmlr-review：新增 0，更新 0，去重 0，排除 6，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录与全量摘要元数据URL集合一致；逐篇阅读注明关键词并集候选的官方摘要。2021卫星影像候选追加局部原文及官方RGB加载器核验；未声明全文阅读。
+- 2026-10-08 / icml-2020-middle-pmlr-review：新增 0，更新 0，去重 0，排除 7，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录与全量摘要元数据URL集合一致；逐篇阅读注明关键词并集候选的官方摘要。2021卫星影像候选追加局部原文及官方RGB加载器核验；未声明全文阅读。
+- 2026-10-08 / icml-2021-middle-pmlr-review：新增 0，更新 0，去重 0，排除 9，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录与全量摘要元数据URL集合一致；逐篇阅读注明关键词并集候选的官方摘要。2021卫星影像候选追加局部原文及官方RGB加载器核验；未声明全文阅读。
 
 ## 未解决缺口
 
@@ -189,5 +198,4 @@
 - TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。
 - 光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。
 - TGRS1994登记136题名两关键词组7候选：三条原摘要访问受限；雷达一条仅题名暂排除。森林原文首页已核验但PDF原图受限；出版社年度全量仍未证明。
-- ICML2013/2022–2024完成官方主卷目录与全量摘要指定词筛选：5954篇、36命中已处理；其他关键词、年度、workshop与正文/引文未完成。APT及RMT是通用方法的明确HSI应用，全文/复现仍待查。
-- ICML2014–2018五主卷1957题名及摘要、26词命中处理：新增结构低秩压缩恢复1、排除25；2014双Cycle均含。盲解混为未来工作；作者代码未见HSI实验入口，2017/2020后续稿的版本归并仍待原文确认。
+- ICML2013–2024十二主卷10951题名/摘要、84指定词命中全部处理（4新增、80排除）；其他任务词、正文、引文、workshop及更早/更晚年度未完成。三种通用方法有明确HSI应用；2014结构低秩的盲解混为未来工作，作者代码HSI入口/许可及2017/TPAMI2020后续稿归并待查。2021FMoW-WILDS候选的使用输入为RGB，已留官方加载器快照。
