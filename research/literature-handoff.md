@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 194 篇；138 篇有 165 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 195 篇；139 篇有 167 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -79,3 +79,11 @@
 ## 三维多光谱训练策略与 CVF 同词排除（2026-10-07）
 
 新增 Towards Multi-Spectral GS（VMV 2025，arXiv:2509.00989v1，10.2312/vmv.20251237），核验 9 页正式全文与 17 页含补充作者稿；保存正式 PDF 第 1 页 Figure 1 和第 4 页 Figure 3。RGB 加红/绿/红边/NIR，相关三维多光谱补充阅读，VMV 不标目标顶会。与 MS-Splatting 是作者明确区分、共享代码的两篇；本篇是球谐表示与 Separate/Split/Joint 训练策略，不借用神经颜色表示。证据见 sources/towards-multispectral-gs-review-2026-10-07.json。另逐篇核验并排除 CVPR 2014 六篇图谱聚类/图匹配同词候选；原始摘要与决定见 sources/cvpr2014-graph-spectrum-scope-review-2026-10-07.json。CVF 其他候选与专业期刊追溯仍待继续。
+
+## CVPR 原始摘要筛查与热辐射测距（2026-10-07）
+
+逐篇核验 CVPR 2014–2017、2021–2022 的 43 篇待审候选，30 篇排除、12 篇保留背景、1 篇收录；四篇采集/扩频歧义论文另读完整 PDF。证据见 sources/cvpr2014-2017-2021-2022-scope-review-2026-10-07.json。新增 Shape from Thermal Radiation（CVPR 2022，10.1109/CVPR52688.2022.01233），11 页原始全文核验，保存 PDF 第 1 页 Figure 1 及第 7 页完整 Figure 5(a,b)。空气波长相关吸收实现深度/温度/灰体发射率估计，三离散 LWIR 波段，归相关几何研究。需已知空气衰减、灰体与无其他热源反射，滤轮顺序采集，不能称单帧全谱或任意发射率谱。详情证据见 sources/shape-thermal-radiation-review-2026-10-07.json。CVPR 仍有 103 篇待审，ICCV/ECCV 与专业期刊也未完成。
+
+## CVPR 2023 原始摘要筛查（2026-10-07）
+
+逐篇核验余下十篇 CVPR 2023 候选官方摘要：八篇 excluded_scope，MethaneMapper 与宽波段照明设计两篇保留 background_scope；本轮没有新增网站论文。CASSI 的 3D spectral cube 为 H×W×B，B 不是 xyz 深度；Meta-Explore/BASiS 的 spectral 分别是 Fourier/图特征空间。RGB–热红外视频分割仅有时间上下文，不能称三维光谱场景理解。两篇背景的摘要未定义几何任务，结论仅限摘要级证据，后续新全文证据允许复核。完整官方摘要、来源、状态与逐篇理由见 sources/cvpr2023-scope-review-2026-10-07.json。CVPR 待审候选仍有 87 篇；ICCV/ECCV、专业期刊与引文追溯仍未完成。

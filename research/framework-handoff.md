@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 194 篇：138 篇 verified、165 张图；46 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 195 篇：139 篇 verified、167 张图；46 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -281,3 +281,7 @@ FusDreamer 作者公开正式 PDF（14 页）的第 3 页 Figure 1 已保存完�
 ## 三维多光谱训练策略与 CVF 同词排除（2026-10-07）
 
 新增 Towards Multi-Spectral GS（VMV 2025，arXiv:2509.00989v1，10.2312/vmv.20251237），核验 9 页正式全文与 17 页含补充作者稿；保存正式 PDF 第 1 页 Figure 1 和第 4 页 Figure 3。RGB 加红/绿/红边/NIR，相关三维多光谱补充阅读，VMV 不标目标顶会。与 MS-Splatting 是作者明确区分、共享代码的两篇；本篇是球谐表示与 Separate/Split/Joint 训练策略，不借用神经颜色表示。证据见 sources/towards-multispectral-gs-review-2026-10-07.json。另逐篇核验并排除 CVPR 2014 六篇图谱聚类/图匹配同词候选；原始摘要与决定见 sources/cvpr2014-graph-spectrum-scope-review-2026-10-07.json。CVF 其他候选与专业期刊追溯仍待继续。
+
+## CVPR 原始摘要筛查与热辐射测距（2026-10-07）
+
+逐篇核验 CVPR 2014–2017、2021–2022 的 43 篇待审候选，30 篇排除、12 篇保留背景、1 篇收录；四篇采集/扩频歧义论文另读完整 PDF。证据见 sources/cvpr2014-2017-2021-2022-scope-review-2026-10-07.json。新增 Shape from Thermal Radiation（CVPR 2022，10.1109/CVPR52688.2022.01233），11 页原始全文核验，保存 PDF 第 1 页 Figure 1 及第 7 页完整 Figure 5(a,b)。空气波长相关吸收实现深度/温度/灰体发射率估计，三离散 LWIR 波段，归相关几何研究。需已知空气衰减、灰体与无其他热源反射，滤轮顺序采集，不能称单帧全谱或任意发射率谱。详情证据见 sources/shape-thermal-radiation-review-2026-10-07.json。CVPR 仍有 103 篇待审，ICCV/ECCV 与专业期刊也未完成。

@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-07",
+  "method": "Individual official CVF abstract review. Web open returned 403 for two pages; direct requests successfully returned HTTP 200 for all ten. Abstract evidence establishes stated tasks, not exhaustive absence of geometry from unreviewed full texts.",
+  "records": [
+    {
+      "title": "Spectral Bayesian Uncertainty for Image Super-Resolution",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Liu_Spectral_Bayesian_Uncertainty_for_Image_Super-Resolution_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "Recently deep learning techniques have significantly advanced image super-resolution (SR). Due to the black-box nature, quantifying reconstruction uncertainty is crucial when employing these deep SR networks. Previous approaches for SR uncertainty estimation mostly focus on capturing pixel-wise uncertainty in the spatial domain. SR uncertainty in the frequency domain which is highly related to image SR is seldom explored. In this paper, we propose to quantify spectral Bayesian uncertainty in image SR. To achieve this, a Dual-Domain Learning (DDL) framework is first proposed. Combined with Bayesian approaches, the DDL model is able to estimate spectral uncertainty accurately, enabling a reliability assessment for high frequencies reasoning from the frequency domain perspective. Extensive experiments under non-ideal premises are conducted and demonstrate the effectiveness of the proposed spectral uncertainty. Furthermore, we propose a novel Spectral Uncertainty based Decoupled Frequency (SUDF) training scheme for perceptual SR. Experimental results show the proposed SUDF can evidently boost perceptual quality of SR results without sacrificing much pixel accuracy.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "spectral 指图像空间频率域的 SR 不确定性，不是光学波长或三维几何。"
+    },
+    {
+      "title": "MethaneMapper: Spectral Absorption Aware Hyperspectral Transformer for Methane Detection",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Kumar_MethaneMapper_Spectral_Absorption_Aware_Hyperspectral_Transformer_for_Methane_Detection_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "Methane (CH 4 ) is the chief contributor to global climate change. Recent Airborne Visible-Infrared Imaging Spectrometer-Next Generation (AVIRIS-NG) has been very useful in quantitative mapping of methane emissions. Existing methods for analyzing this data are sensitive to local terrain conditions, often require manual inspection from domain experts, prone to significant error and hence are not scalable. To address these challenges, we propose a novel end-to-end spectral absorption wavelength aware transformer network, MethaneMapper, to detect and quantify the emissions. MethaneMapper introduces two novel modules that help to locate the most relevant methane plume regions in the spectral domain and uses them to localize these accurately. Thorough evaluation shows that MethaneMapper achieves 0.63 mAP in detection and reduces the model size (by 5x) compared to the current state of the art. In addition, we also introduce a large-scale dataset of methane plume segmentation mask for over 1200 AVIRIS-NG flightlines from 2015-2022. It contains over 4000 methane plume sites. Our dataset will provide researchers the opportunity to develop and advance new methods for tackling this challenging green-house gas detection problem with significant broader social impact. Dataset and source code link.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "background_scope",
+      "reason": "AVIRIS-NG 甲烷羽流检测、定量与二维分割数据；摘要未定义气体三维体场或几何重建，保留气体光谱分析背景。"
+    },
+    {
+      "title": "Residual Degradation Learning Unfolding Framework With Mixing Priors Across Spectral and Spatial for Compressive Spectral Imaging",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Dong_Residual_Degradation_Learning_Unfolding_Framework_With_Mixing_Priors_Across_Spectral_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "To acquire a snapshot spectral image, coded aperture snapshot spectral imaging (CASSI) is proposed. A core problem of the CASSI system is to recover the reliable and fine underlying 3D spectral cube from the 2D measurement. By alternately solving a data subproblem and a prior subproblem, deep unfolding methods achieve good performance. However, in the data subproblem, the used sensing matrix is ill-suited for the real degradation process due to the device errors caused by phase aberration, distortion; in the prior subproblem, it is important to design a suitable model to jointly exploit both spatial and spectral priors. In this paper, we propose a Residual Degradation Learning Unfolding Framework (RDLUF), which bridges the gap between the sensing matrix and the degradation process. Moreover, a MixS2 Transformer is designed via mixing priors across spectral and spatial to strengthen the spectral-spatial representation capability. Finally, plugging the MixS2 Transformer into the RDLUF leads to an end-to-end trainable and interpretable neural network RDLUF-MixS2. Experimental results establish the superior performance of the proposed method over existing ones.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "CASSI 二维测量恢复 H×W×B 光谱立方体；3D spectral cube 的第三轴是波长，不是空间深度。"
+    },
+    {
+      "title": "Visibility Constrained Wide-Band Illumination Spectrum Design for Seeing-in-the-Dark",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Niu_Visibility_Constrained_Wide-Band_Illumination_Spectrum_Design_for_Seeing-in-the-Dark_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "Seeing-in-the-dark is one of the most important and challenging computer vision tasks due to its wide applications and extreme complexities of in-the-wild scenarios. Existing arts can be mainly divided into two threads: 1) RGB-dependent methods restore information using degraded RGB inputs only (e.g., low-light enhancement), 2) RGB-independent methods translate images captured under auxiliary near-infrared (NIR) illuminants into RGB domain (e.g., NIR2RGB translation). The latter is very attractive since it works in complete darkness and the illuminants are visually friendly to naked eyes, but tends to be unstable due to its intrinsic ambiguities. In this paper, we try to robustify NIR2RGB translation by designing the optimal spectrum of auxiliary illumination in the wide-band VIS-NIR range, while keeping visual friendliness. Our core idea is to quantify the visibility constraint implied by the human vision system and incorporate it into the design pipeline. By modeling the formation process of images in the VIS-NIR range, the optimal multiplexing of a wide range of LEDs is automatically designed in a fully differentiable manner, within the feasible region defined by the visibility constraint. We also collect a substantially expanded VIS-NIR hyperspectral image dataset for experiments by using a customized 50-band filter wheel. Experimental results show that the task can be significantly improved by using the optimized wide-band illumination than using NIR only. Codes Available: https://github.com/MyNiuuu/VCSD.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "background_scope",
+      "reason": "VIS–NIR 照明波长设计用于 NIR2RGB 外观转换，另有 50 波段图像数据；摘要无三维几何恢复。"
+    },
+    {
+      "title": "Meta-Explore: Exploratory Hierarchical Vision-and-Language Navigation Using Scene Object Spectrum Grounding",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Hwang_Meta-Explore_Exploratory_Hierarchical_Vision-and-Language_Navigation_Using_Scene_Object_Spectrum_Grounding_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "The main challenge in vision-and-language navigation (VLN) is how to understand natural-language instructions in an unseen environment. The main limitation of conventional VLN algorithms is that if an action is mistaken, the agent fails to follow the instructions or explores unnecessary regions, leading the agent to an irrecoverable path. To tackle this problem, we propose Meta-Explore, a hierarchical navigation method deploying an exploitation policy to correct misled recent actions. We show that an exploitation policy, which moves the agent toward a well-chosen local goal among unvisited but observable states, outperforms a method which moves the agent to a previously visited state. We also highlight the demand for imagining regretful explorations with semantically meaningful clues. The key to our approach is understanding the object placements around the agent in spectral-domain. Specifically, we present a novel visual representation, called scene object spectrum (SOS), which performs category-wise 2D Fourier transform of detected objects. Combining exploitation policy and SOS features, the agent can correct its path by choosing a promising local goal. We evaluate our method in three VLN benchmarks: R2R, SOON, and REVERIE. Meta-Explore outperforms other baselines and shows significant generalization performance. In addition, local goal search using the proposed spectral-domain SOS features significantly improves the success rate by 17.1% and SPL by 20.6% for the SOON benchmark.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "scene object spectrum 是类别检测图的二维 Fourier 变换，不是高光谱波长测量。"
+    },
+    {
+      "title": "Spectral Enhanced Rectangle Transformer for Hyperspectral Image Denoising",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Li_Spectral_Enhanced_Rectangle_Transformer_for_Hyperspectral_Image_Denoising_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "Denoising is a crucial step for hyperspectral image (HSI) applications. Though witnessing the great power of deep learning, existing HSI denoising methods suffer from limitations in capturing the non-local self-similarity. Transformers have shown potential in capturing long-range dependencies, but few attempts have been made with specifically designed Transformer to model the spatial and spectral correlation in HSIs. In this paper, we address these issues by proposing a spectral enhanced rectangle Transformer, driving it to explore the non-local spatial similarity and global spectral low-rank property of HSIs. For the former, we exploit the rectangle self-attention horizontally and vertically to capture the non-local similarity in the spatial domain. For the latter, we design a spectral enhancement module that is capable of extracting global underlying low-rank property of spatial-spectral cubes to suppress noise, while enabling the interactions among non-overlapping spatial rectangles. Extensive experiments have been conducted on both synthetic noisy HSIs and real noisy HSIs, showing the effectiveness of our proposed method in terms of both objective metric and subjective visual quality. The code is available at https://github.com/MyuLi/SERT.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "HSI 去噪与低秩空间–光谱建模，输出二维光谱影像，无三维几何任务。"
+    },
+    {
+      "title": "Quantum-Inspired Spectral-Spatial Pyramid Network for Hyperspectral Image Classification",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_Quantum-Inspired_Spectral-Spatial_Pyramid_Network_for_Hyperspectral_Image_Classification_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "Hyperspectral image (HSI) classification aims at assigning a unique label for every pixel to identify categories of different land covers. Existing deep learning models for HSIs are usually performed in a traditional learning paradigm. Being emerging machines, quantum computers are limited in the noisy intermediate-scale quantum (NISQ) era. The quantum theory offers a new paradigm for designing deep learning models. Motivated by the quantum circuit (QC) model, we propose a quantum-inspired spectral-spatial network (QSSN) for HSI feature extraction. The proposed QSSN consists of a phase-prediction module (PPM) and a measurement-like fusion module (MFM) inspired from quantum theory to dynamically fuse spectral and spatial information. Specifically, QSSN uses a quantum representation to represent an HSI cuboid and extracts joint spectral-spatial features using MFM. An HSI cuboid and its phases predicted by PPM are used in the quantum representation. Using QSSN as the building block, we propose an end-to-end quantum-inspired spectral-spatial pyramid network (QSSPN) for HSI feature extraction and classification. In this pyramid framework, QSSPN progressively learns feature representations by cascading QSSN blocks and performs classification with a softmax classifier. It is the first attempt to introduce quantum theory in HSI processing model design. Substantial experiments are conducted on three HSI datasets to verify the superiority of the proposed QSSPN framework over the state-of-the-art methods.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "逐像素 HSI 地物分类；cuboid 表示空间–波长邻域，不是 xyz 几何。"
+    },
+    {
+      "title": "Multispectral Video Semantic Segmentation: A Benchmark Dataset and Baseline",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Ji_Multispectral_Video_Semantic_Segmentation_A_Benchmark_Dataset_and_Baseline_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "Robust and reliable semantic segmentation in complex scenes is crucial for many real-life applications such as autonomous safe driving and nighttime rescue. In most approaches, it is typical to make use of RGB images as input. They however work well only in preferred weather conditions; when facing adverse conditions such as rainy, overexposure, or low-light, they often fail to deliver satisfactory results. This has led to the recent investigation into multispectral semantic segmentation, where RGB and thermal infrared (RGBT) images are both utilized as input. This gives rise to significantly more robust segmentation of image objects in complex scenes and under adverse conditions. Nevertheless, the present focus in single RGBT image input restricts existing methods from well addressing dynamic real-world scenes. Motivated by the above observations, in this paper, we set out to address a relatively new task of semantic segmentation of multispectral video input, which we refer to as Multispectral Video Semantic Segmentation, or MVSS in short. An in-house MVSeg dataset is thus curated, consisting of 738 calibrated RGB and thermal videos, accompanied by 3,545 fine-grained pixel-level semantic annotations of 26 categories. Our dataset contains a wide range of challenging urban scenes in both daytime and nighttime. Moreover, we propose an effective MVSS baseline, dubbed MVNet, which is to our knowledge the first model to jointly learn semantic representations from multispectral and temporal contexts. Comprehensive experiments are conducted using various semantic segmentation models on the MVSeg dataset. Empirically, the engagement of multispectral video input is shown to lead to significant improvement in semantic segmentation; the effectiveness of our MVNet baseline has also been verified.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "RGB 与热红外视频的逐像素语义分割；时间上下文不等于场景三维几何。"
+    },
+    {
+      "title": "BASiS: Batch Aligned Spectral Embedding Space",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Streicher_BASiS_Batch_Aligned_Spectral_Embedding_Space_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "Graph is a highly generic and diverse representation, suitable for almost any data processing problem. Spectral graph theory has been shown to provide powerful algorithms, backed by solid linear algebra theory. It thus can be extremely instrumental to design deep network building blocks with spectral graph characteristics. For instance, such a network allows the design of optimal graphs for certain tasks or obtaining a canonical orthogonal low-dimensional embedding of the data. Recent attempts to solve this problem were based on minimizing Rayleigh-quotient type losses. We propose a different approach of directly learning the graph's eigensapce. A severe problem of the direct approach, applied in batch-learning, is the inconsistent mapping of features to eigenspace coordinates in different batches. We analyze the degrees of freedom of learning this task using batches and propose a stable alignment mechanism that can work both with batch changes and with graph-metric changes. We show that our learnt spectral embedding is better in terms of NMI, ACC, Grassman distnace, orthogonality and classification accuracy, compared to SOTA. In addition, the learning is more stable.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "图拉普拉斯特征空间与批次谱嵌入，不是光学波长信息。"
+    },
+    {
+      "title": "Toward Stable, Interpretable, and Lightweight Hyperspectral Super-Resolution",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Xie_Toward_Stable_Interpretable_and_Lightweight_Hyperspectral_Super-Resolution_CVPR_2023_paper.html",
+      "httpStatus": 200,
+      "abstract": "For real applications, existing HSI-SR methods are mostly not only limited to unstable performance under unknown scenarios but also suffer from high computation consumption. In this paper, we develop a new coordination optimization framework for stable, interpretable, and lightweight HSI-SR. Specifically, we create a positive cycle between fusion and degradation estimation under a new probabilistic framework. The estimated degradation is applied to fusion as guidance for a degradation-aware HSI-SR. Under the framework, we establish an explicit degradation estimation method to tackle the indeterminacy and unstable performance driven by black-box simulation in previous methods. Considering the interpretability in fusion, we integrate spectral mixing prior to the fusion process, which can be easily realized by a tiny autoencoder, leading to a dramatic release of the computation burden. We then develop a partial fine-tune strategy in inference to reduce the computation cost further. Comprehensive experiments demonstrate the superiority of our method against state-of-the-art under synthetic and real datasets. For instance, we achieve a 2.3 dB promotion on PSNR with 120x model size reduction and 4300x FLOPs reduction under the CAVE dataset. Code is available in https://github.com/WenjinGuo/DAEM.",
+      "year": 2023,
+      "venue": "CVPR",
+      "decision": "excluded_scope",
+      "reason": "HSI 超分辨率与退化估计，输出二维空间–光谱影像，无深度或真实三维表示。"
+    }
+  ]
+}
