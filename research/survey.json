@@ -470,6 +470,15 @@
         "sources/cmfnet-author-code-review-2026-10-07.json",
         "sources/fiducial-hsi-mapping-review-2026-10-07.json"
       ]
+    },
+    {
+      "date": "2026-10-07",
+      "engine": "web_primary_and_publisher_metadata",
+      "query": "RSE canopy reflectance derivatives scope; hyperspectral 3D arXiv and spectral LiDAR citation trail",
+      "evidenceFiles": [
+        "sources/ghost-hs3d-lidar-review-2026-10-07.json",
+        "sources/rtm-and-lidar-scope-review-2026-10-07.json"
+      ]
     }
   ],
   "candidates": [
@@ -2494,8 +2503,11 @@
       "venue": "ICCV",
       "year": 2025,
       "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Tedla_Multispectral_Demosaicing_via_Dual_Cameras_ICCV_2025_paper.html",
-      "status": "pending_scope",
-      "discovery": "official_CVF_proceedings"
+      "status": "excluded_scope",
+      "discovery": "official_CVF_proceedings",
+      "note": "CVF 原始摘要说明 RGB 引导多光谱去马赛克与二维光谱图像恢复；双相机不是已输出深度或三维几何的证据。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
     },
     {
       "title": "Face Retouching with Diffusion Data Generation and Spectral Restorement",
@@ -4252,16 +4264,22 @@
       "year": 2025,
       "venue": "RSE",
       "url": "https://www.sciencedirect.com/science/article/pii/S0034425725001890",
-      "status": "pending_scope",
-      "note": "原始摘要说明对 LAI 求导，待核验波长维度、三维结构及目标范围；不得仅凭 BRDF 题名收录。"
+      "status": "pending_fulltext_scope",
+      "note": "原始出版社摘要确认三维冠层光线追踪及导数估计；尚未核验实际波段/光谱实验，不据 BRDF 或 RSE 场所自动纳入。HAL hal-05655059 API 原始记录只有摘要，无 fileMain_s，OpenAlex 未提供公开 PDF。",
+      "doi": "10.1016/j.rse.2025.114785",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract_and_publisher_metadata"
     },
     {
       "title": "Derivative of canopy reflectance with respect to leaf density: A probabilistic rendering framework",
       "year": 2026,
       "venue": "RSE",
       "url": "https://www.sciencedirect.com/science/article/pii/S0034425726003421",
-      "status": "pending_scope",
-      "note": "已发现出版社题名和方法片段；待核验正式发表日期、全文及光谱三维范围。"
+      "status": "pending_fulltext_scope",
+      "note": "原始出版社摘要确认三维冠层光线追踪及导数估计；尚未核验实际波段/光谱实验，不据 BRDF 或 RSE 场所自动纳入。Crossref 登记卷 345、115572、2026-11，属于未来卷期；未提供 published-online，不据卷期判断在线发表日期。",
+      "doi": "10.1016/j.rse.2026.115572",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract_and_publisher_metadata"
     },
     {
       "title": "Comprehensive LiDAR simulation with efficient physically-based DART-Lux model (II): Validation with GEDI and ICESat-2 measurements at natural and urban landscapes",
@@ -5508,6 +5526,31 @@
       "checkedAt": "2026-10-07",
       "verificationLevel": "official_abstract",
       "note": "原始 arXiv 摘要明确为五波段二维图像恢复 224 波段影像及分类/分割；3D shifted-window 沿空间与波段工作，未恢复 xyz 几何。"
+    },
+    {
+      "title": "High-speed hyperspectral 3D ghost imaging LiDAR",
+      "paperId": "ghost-hyperspectral-lidar",
+      "year": 2026,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2604.21742",
+      "status": "included",
+      "verificationLevel": "full_text"
+    },
+    {
+      "title": "Ozone pollution monitoring using a full-time hyperspectral tomography system for multiple air pollutants",
+      "url": "https://www.nature.com/articles/s41467-025-66944-w",
+      "venue": "Nature Communications",
+      "year": 2026,
+      "status": "background_scope",
+      "note": "出版社完整正文 HTTP 200，明确本论文演示 two-dimensional horizontal distribution of pollutants；多高度观测差异不等于输出 xyz 浓度体。保留光谱气体层析背景，不当作高光谱三维体成像主条目。在线 2025-12-01，正式卷 17:245 为 2026。",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_full_text",
+      "sourceEvidence": {
+        "url": "https://www.nature.com/articles/s41467-025-66944-w",
+        "httpStatus": 200,
+        "htmlSha256": "b3f62c66adcdaea1179eec635a91835c642f20c4caad8c8ab340bf77a9bf37a1",
+        "boundary": "Discussion explicitly describes the demonstrated result as a two-dimensional horizontal distribution; introduction and system design describe horizontal gas distribution reconstruction."
+      }
     }
   ],
   "coverage": {

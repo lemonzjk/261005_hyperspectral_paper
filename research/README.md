@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-07。网站当前收录 189 篇论文、6 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-07。网站当前收录 190 篇论文、6 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -87,3 +87,7 @@ IGARSS 2023 的 Coupled Graph Convolution Network for Cross-Scene Multispectral 
 补充 CMFNet（TGRS 2025）和 Fiducial HS3D Mapping（arXiv 2026）。CMFNet 的 IEEE 原始摘要及作者公开代码确认多尺度、GLFE、CMF 融合；读取 DSM/栅格，3D 卷积沿波段与二维邻域，归相关研究。作者压缩包没有框架或论文 PDF，出版社返回 HTTP 418，保留 needs_access。没有把多个其他领域同名 CMFNet 的图拿来替代。
 
 Fiducial HS3D Mapping 六页全文明确 RGB SfM、标记约束、正交渲染与二维单应/xyz 查表，输出真实三维光谱表面点云，归核心研究。保存 PDF 第 2 页完整 Figure 1。原稿首页注明 Ital-IA 2026 全国会议，按用户允许的 arXiv 版本补充，不称顶会；两个离体组织、同源重建真值和俯视投影限制保留。证据见 `sources/cmfnet-author-code-review-2026-10-07.json`、`sources/fiducial-hsi-mapping-review-2026-10-07.json`。SpecSwin3D 和二维 GaussianHSI 经原始摘要核验排除，不能因 3D/高斯题名进入三维几何清单。后续仍需原始全文核验的 TGRS 融合、RSE 三维辐射传输候选及目标场所目录补扫；清单尚未全面覆盖。
+
+新增 Ghost HS3D LiDAR（arXiv:2604.21742v1）：18 页正文验证真实 ToF 深度与 1100–1250 nm 光谱，保存完整原理/系统 Figures 1、2（PDF 第 4、6 页）。60.5 MHz / 1.8 GHz 为约 30 点/线脉冲吞吐，6044 次平均测距实际 10 kHz，材料光谱展示用 5800 次随机实现；不能宣称 GHz 独立全谱三维帧率。0.02 mm 为最强回波 Allan 偏差，不是全部点绝对误差；实验为近距离字母目标及前置化学透射样品。补充材料提及但未取得，现有证据仅 arXiv 原稿。
+
+引文追溯核验 Nature Communications 臭氧层析正文，明确演示二维水平气体分布，保留背景而非三维体成像主条目；CVF 的双相机多光谱去马赛克按原始摘要排除。RSE 两篇冠层导数已补正式元数据：2025 LAI 论文 HAL API 无全文附件，2026 叶密度论文登记未来 11 月卷期但没有在线日期；光谱波段/实验仍待全文，不强行收录。证据见 `sources/ghost-hs3d-lidar-review-2026-10-07.json` 与 `sources/rtm-and-lidar-scope-review-2026-10-07.json`。目标目录与原始全文缺口仍未全部解决。

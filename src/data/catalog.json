@@ -9363,6 +9363,94 @@
           "attribution": "Anna Bicchi, Alberto Rota, Leonardo Passoni, Nicola Ancellotti, Andrea Peroni, Lorenzo Vinco, Dario Polli, Elena De Momi · arXiv 2026"
         }
       ]
+    },
+    {
+      "id": "ghost-hyperspectral-lidar",
+      "shortTitle": "Ghost HS3D LiDAR",
+      "title": "High-speed hyperspectral 3D ghost imaging LiDAR",
+      "authors": "Jing Hu, Wending Huang, Tianjian Lv, Ming Yan, Zhaoyang Wen, Zijian Wang, Yuan Chen, Zhuoren Wan, Mei Yang, Heping Zeng",
+      "year": 2026,
+      "venue": "arXiv",
+      "publicationName": "arXiv preprint arXiv:2604.21742v1",
+      "track": "lidar",
+      "representation": "光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱",
+        "LiDAR",
+        "鬼成像",
+        "ToF",
+        "单像素探测",
+        "时空编码"
+      ],
+      "summary": "将随机宽带光谱鬼成像与时空编码 ToF 测距结合，联合恢复真实三维坐标和近红外光谱，验证实验室三维目标及透射样品光谱区分。",
+      "input": "1100–1250 nm 随机超连续脉冲、时间拉伸参考光谱及目标回波；一维光斑阵列配扫描或二维复用阵列。",
+      "output": "真实三维点云及各空间位置的光谱响应，支持选波段三维显示和材料谱特征分析；不是体内断层。",
+      "mechanism": "参考臂通过 TS-DFT 将波长映射到时间；检测臂的时空编码器产生横向位置与延时已知的子脉冲，回波 ToF 恢复深度。目标回波强度与多次随机参考光谱作二阶相关，恢复光谱响应。",
+      "readingNote": "arXiv v1 十八页全文核验，仅有预印本证据，未标为正式期刊。60.5 MHz / 1.8 GHz 是约 30 点/线的脉冲吞吐上限，不能写成完整高光谱三维帧率；高精度线扫描累计 6044 次、100 μs，实际 10 kHz。0.02 mm 是最强回波在 10.4 μs 平均下的 Allan 偏差，不是全点绝对精度；三维目标逐点相对均值偏差 FWHM 为 0.22–0.27 mm。光谱分辨率约 1.4 nm，材料谱展示使用 5800 次随机实现，不能声称每脉冲完成独立全谱。单次深度无模糊范围 7.5 cm；二维阵列演示为 96 点、34.7 MHz、4.5 cm 无模糊范围且有交错扫描。化学样品置于字母目标前方，主要验证透射光谱，不等于野外植被或污染物应用验证。原稿提及的补充文件未取得。",
+      "paper": "https://arxiv.org/abs/2604.21742",
+      "doi": "10.48550/arXiv.2604.21742",
+      "verificationLevel": "full_text",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "citation": "@misc{ghosthyperspectrallidar,\n  title={High-speed hyperspectral 3D ghost imaging LiDAR},\n  author={Jing Hu and Wending Huang and Tianjian Lv and Ming Yan and Zhaoyang Wen and Zijian Wang and Yuan Chen and Zhuoren Wan and Mei Yang and Heping Zeng},\n  year={2026},\n  eprint={2604.21742},\n  archivePrefix={arXiv},\n  primaryClass={physics.optics},\n  url={https://arxiv.org/abs/2604.21742},\n  doi={10.48550/arXiv.2604.21742}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2604.21742v1",
+          "figureLabel": "Figure 1",
+          "caption": "双臂随机宽带脉冲、时空编码和时间拉伸光谱参考，分别通过 ToF 与二阶相关恢复三维坐标和光谱。",
+          "verificationNote": "核对同题名 arXiv v1 原稿第 4 页图号、图注与方法，保留全部模块和子图；Figure 1 图注延续至第 5 页，图本身完整位于第 4 页。概念中的建筑/汽车不等于已验证野外场景。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              2262,
+              3200
+            ],
+            "pixelBox": [
+              310,
+              1410,
+              1955,
+              2445
+            ],
+            "renderCommand": "pdftoppm -singlefile -scale-to 3200 -png"
+          },
+          "path": "figures/ghost-hyperspectral-lidar/framework-principle.png",
+          "width": 1645,
+          "height": 1035,
+          "verifiedAt": "2026-10-07",
+          "sha256": "587b938a3eef10edbd1e98aae5f1537ae1d4c1af0351c77488502c51e0eb5018",
+          "attribution": "Jing Hu, Wending Huang, Tianjian Lv, Ming Yan, Zhaoyang Wen, Zijian Wang, Yuan Chen, Zhuoren Wan, Mei Yang, Heping Zeng · arXiv 2026"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2604.21742v1",
+          "figureLabel": "Figure 2",
+          "caption": "高光谱 LiDAR 实验系统及全部子图：双臂采集、一维反射式时空编码器、二维光纤复用光斑阵列。",
+          "verificationNote": "核对同题名 arXiv v1 原稿第 6 页图号、图注与方法，保留全部模块和子图；Figure 1 图注延续至第 5 页，图本身完整位于第 4 页。概念中的建筑/汽车不等于已验证野外场景。",
+          "page": 6,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              2262,
+              3200
+            ],
+            "pixelBox": [
+              320,
+              1045,
+              1945,
+              1940
+            ],
+            "renderCommand": "pdftoppm -singlefile -scale-to 3200 -png"
+          },
+          "path": "figures/ghost-hyperspectral-lidar/framework-system.png",
+          "width": 1625,
+          "height": 895,
+          "verifiedAt": "2026-10-07",
+          "sha256": "83e44c2ce153a24abbf72f3a976d482697f4de1de1a241c850fe38050839c92f",
+          "attribution": "Jing Hu, Wending Huang, Tianjian Lv, Ming Yan, Zhaoyang Wen, Zijian Wang, Yuan Chen, Zhuoren Wan, Mei Yang, Heping Zeng · arXiv 2026"
+        }
+      ]
     }
   ],
   "datasets": [

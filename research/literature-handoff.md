@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 189 篇；134 篇有 158 张框架图，45 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 190 篇；135 篇有 160 张框架图，45 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -59,3 +59,9 @@
 - CMFNet（TGRS 2025，10.1109/TGRS.2025.3610348）：新增 fusion/相关研究。IEEE 原始摘要和作者 CMFNet.rar 代码确认 DSM/栅格输入、GLFE/CMF 双分支分类；不把 HSI 3D 卷积称为 xyz 卷积。正式全文未取得，未运行代码，不依配置选项推定全部实验。压缩包只有分类结果图，IEEE PDF/猜测图片返回 418，needs_access。证据 sources/cmfnet-author-code-review-2026-10-07.json。
 - Fiducial HS3D Mapping（arXiv:2606.14534v1，六页）：新增 pointcloud/核心研究，八作者、原文与完整 Figure 1（PDF 第 2 页）核验。RGB MASt3R-SfM、ArUco 约束、俯视渲染及二维单应/深度查表赋谱；原稿首页 Ital-IA 2026 不冒称 CV 顶会，按允许的 arXiv 版本补充。仅两个离体样本，配准误差在同源重建的标记角点评估，不视为独立表面或临床验证。证据 sources/fiducial-hsi-mapping-review-2026-10-07.json。
 - SpecSwin3D 与二维 GaussianHSI 原始摘要明确二维光谱恢复/超分辨，记 excluded_scope。下一步可查医学三维光谱映射引文的真实场所、RSE 辐射传输候选波段范围及余下 TGRS 原始摘要；总体检索仍未完成。
+
+## 鬼成像三维高光谱 LiDAR 与范围核验
+
+- Ghost HS3D LiDAR（arXiv:2604.21742v1）：新增 lidar/核心研究，十作者及 18 页正文核验。真实 ToF 深度加 1100–1250 nm 光谱，Figures 1、2 保存第 4、6 页完整原理/系统；第 1 图注跨页但图本身不跨页。脉冲 GHz 点吞吐、高精度平均时间与光谱 5800 次相关分别记录，不合成 GHz 全谱帧率。96 点二维阵列/交错扫描、无模糊范围及前置透射样品边界保留。补充文件未取得，没有正式期刊版本证据。
+- RSE LAI 导数 10.1016/j.rse.2025.114785 的 HAL hal-05655059 API 无 fileMain_s；叶密度导数 10.1016/j.rse.2026.115572 登记未来 2026-11 卷 345、115572，无 published-online。均 pending_fulltext_scope，不能据场所/题名纳入，也不能推断全文无框架。
+- CVF ICCV 2025 双相机多光谱去马赛克 excluded_scope；Nature Communications 臭氧层析（2026 卷，2025 在线）原始全文明确二维水平分布，background_scope。证据 sources/ghost-hs3d-lidar-review-2026-10-07.json 与 sources/rtm-and-lidar-scope-review-2026-10-07.json。继续目标场所/引文扫描及原始全文核验，不声明全部覆盖。
