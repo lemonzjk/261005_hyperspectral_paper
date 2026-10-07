@@ -91,3 +91,7 @@
 ## CVPR 2024 原始摘要与轴定义核验（2026-10-07）
 
 逐篇复核余下十六篇候选，均 excluded_scope；未新增网站论文。In2SET 的 11 页与 S2MAE 的 10 页官方全文另核对输入定义、方法及实验：其 3D 为两空间维加光谱，不是 xyz。FastMAC 的几何配准是真的，但 spectral 为图信号频率；FINER 与 Batch Normalization 的 spectral bias 是坐标网络频率，不是波长场景。详细摘要、理由、两份原稿哈希与定义线索见 sources/cvpr2024-scope-review-2026-10-07.json。CVPR 尚有 71 篇待审；全文追溯另发现 Simultaneous Depth and Spectral Imaging With a Cross-Modal Stereo System，TCSVT 28(3):812–817（2018），DOI 10.1109/TCSVT.2016.2616374。In2SET 引文写 2016，作者机构记录为正式卷年 2018，版本/全文/框架仍待核验，不据引文年份直接入库。
+
+## CVPR 2025 原始摘要与事件约束核验（2026-10-07）
+
+余下十八篇候选逐篇核验：十五篇 excluded_scope，照明谱估计、自动光谱校准及 Active Hyperspectral Imaging 三篇 background_scope，没有新增网站论文。另查 HyperFree 11 页和 Active Hyperspectral Imaging 13 页官方 PDF：前者主实验五任务及扩展三任务为二维光谱处理，后者 §3.2–3.3 的重建目标是逐像素 S_xy(λ)，未知量为 M 维光谱向量，其几何约束指零光谱向量的正交关系，不是深度/法线恢复；不能因相关工作引用 EventPS/Dispersed Structured Light 就借用这些三维能力。逐篇官方摘要、理由、原稿哈希及方法证据见 sources/cvpr2025-scope-review-2026-10-07.json。CVPR 尚有 53 篇待审；其他场所与引文追溯仍未完成。

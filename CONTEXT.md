@@ -28,5 +28,5 @@
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx` / `src/atlas-overview.css`、`src/TimelineOverview.tsx`、`src/ResearchMap.tsx`：图谱。
 - 框架图累计 139 篇、167 张；46 篇需全文/人工补图、10 篇全文无独立框架。JSTARS 融合候选待核验，旧缺图来源详见交接。开放标签不代表取得原图，不据作者章节判正式论文无框架。
-- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；195 篇全部初查，无 pending；46 篇缺图可重试。新增 Shape from Thermal Radiation（CVPR 2022，三波段 LWIR 相关深度研究），完整原图 2 张；本轮复核 CVPR 2024 十六篇，均排除；仍待审 71 篇。TMCFN 正文待核验。Ghost LiDAR 的 GHz 吞吐不等于全谱帧率；Fiducial Mapping 无独立三维真值；MS-ALS 更正稿待核验。
+- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；195 篇全部初查，无 pending；46 篇缺图可重试。新增 Shape from Thermal Radiation（CVPR 2022，三波段 LWIR 相关深度研究），完整原图 2 张；本轮复核 CVPR 2025 十八篇，15 排除、3 背景；仍待审 53 篇。TMCFN 正文待核验。Ghost LiDAR 的 GHz 吞吐不等于全谱帧率；Fiducial Mapping 无独立三维真值；MS-ALS 更正稿待核验。
 - 文献调研见 `research/survey.json`、`research/README.md`：IGARSS 候选待原始摘要与版本核验；RSE 两篇冠层导数待全文光谱范围核验，2026 叶密度论文登记未来卷期不代表在线日期。臭氧层析正文仅二维水平分布，保留背景；专业期刊及引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
