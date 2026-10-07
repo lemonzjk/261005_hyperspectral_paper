@@ -4,6 +4,7 @@ import { SpectralScene } from './SpectralScene';
 import rawCatalog from './data/catalog.json';
 import { getTrack, tracks } from './tracks';
 import { ResearchMap } from './ResearchMap';
+import { PaperCard } from './PaperCard';
 import { PublicationFilter, type PublicationOption } from './PublicationFilter';
 import type { Dataset, Paper } from './types';
 
@@ -34,16 +35,6 @@ const publicationLabels: Record<string, string> = { published: '正式发表', e
 const arrow = <span aria-hidden="true">↗</span>;
 
 
-function PaperCard({ paper, onSelect }: { paper: Paper; onSelect: (p: Paper) => void }) {
-  const track = getTrack(paper.track);
-  return <button className="paper-card" onClick={() => onSelect(paper)} style={{ '--track': track.color } as CSSProperties}>
-    <div className="card-top"><span className="venue-badge">{paper.venue} {paper.year}{paper.publicationStatus === 'early_access' ? ' · 在线先行' : paper.publicationStatus === 'accepted' ? ' · 已接收' : ''}</span><span className="scope">{paper.venueTier === 'background' ? '补充阅读 · ' : ''}{paper.scope}</span></div>
-    {paper.frameworkFigures?.[0] && <div className="paper-card-figure"><img src={`${import.meta.env.BASE_URL}${paper.frameworkFigures[0].path}`} alt="" loading="lazy"/><span>{paper.frameworkFigures[0].verificationStatus === 'pending' ? '用户上传 · 待核验' : '论文框架原图'}</span></div>}
-    <h3>{paper.shortTitle}<span aria-hidden="true">↗</span></h3><p className="paper-full-title">{paper.title}</p>
-    <p className="paper-summary">{paper.summary}</p>
-    <div className="paper-card-bottom"><span><i/>{track.name}</span><span>{paper.representation}</span></div>
-  </button>;
-}
 
 function PaperDialog({ paper, onClose, onUpdated }: { paper: Paper | null; onClose: () => void; onUpdated: (paper: Paper) => void }) {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -119,7 +110,7 @@ export default function App() {
   return <>
     <a className="skip-link" href="#main">跳到主要内容</a>
     <header className="site-header"><a className="brand" href={import.meta.env.BASE_URL} aria-label="HS3D Atlas 首页"><span className="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m16 3 12 7-12 7L4 10 16 3Z" stroke="currentColor" strokeWidth="1.3"/><path d="m4 16 12 7 12-7M4 22l12 7 12-7" stroke="currentColor" strokeWidth="1.3"/></svg></span><span>HS3D <b>Atlas</b><small>HYPERSPECTRAL 3D VISION</small></span></a>
-      <nav className="header-nav" aria-label="主导航">{views.map(v => <button key={v.id} className={view === v.id ? 'active' : ''} aria-current={view === v.id ? 'page' : undefined} onClick={() => navigate(v.id)}>{v.label}</button>)}</nav>
+      <nav className="header-nav" aria-label="主导航">{views.map(v => <button key={v.id} className={view === v.id ? 'active' : ''} aria-current={view === v.id ? 'page' : undefined} onClick={() => navigate(v.id)}>{v.label}</button>)}<a className="library-link" href={`${import.meta.env.BASE_URL}docs/hyperspectral-library-prototype.html`}>高光谱调研 ↗</a></nav>
       <a className="github-link" aria-label="GitHub 仓库" href={repo} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .8a11.3 11.3 0 0 0-3.57 22c.56.1.77-.24.77-.54v-2.1c-3.15.7-3.82-1.34-3.82-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.44-2.25 1.17-3.04-.12-.28-.51-1.44.11-3 0 0 .95-.3 3.11 1.16a10.8 10.8 0 0 1 5.66 0c2.16-1.46 3.1-1.16 3.1-1.16.63 1.56.24 2.72.12 3 .73.79 1.16 1.8 1.16 3.03 0 4.35-2.64 5.31-5.16 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.2.65.78.54A11.3 11.3 0 0 0 12 .8Z"/></svg><span className="github-label">GitHub {arrow}</span></a>
     </header>
     <main id="main">
