@@ -172,7 +172,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "尚未独立系统检索；见上方已执行年度记录"
+      "statusLabel": "2016单篇扩展关系核验、2019/2022两篇版本候选；年度全量未检索"
     },
     {
       "id": "ijcv",
@@ -253,7 +253,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "已做 1988/1994/2001/2005/2008 早期主题与引文定向检索；年度全量仍未检索"
+      "statusLabel": "1988/1994/2001/2005/2008基础主题及2022单篇期刊扩展定向核验；年度全量未检索"
     },
     {
       "id": "remote-sensing-of-environment",
@@ -416,6 +416,15 @@
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
       "statusLabel": "尚未独立系统检索；见上方已执行年度记录"
+    },
+    {
+      "id": "jsap-osa",
+      "name": "JSAP-OSA Joint Symposia",
+      "kind": "specialist_conference_abstract",
+      "years": "earliest_available_to_cutoff",
+      "defaultAnnualStatus": "not_searched",
+      "plannedMethod": "官方专题会议摘要目录、出版社页面及引文追踪；明确摘要来源类型",
+      "statusLabel": "2014单篇同题名摘要定向核验并归并版本；年度目录未检索，不冒充顶会研究论文"
     }
   ],
   "searches": [
@@ -617,10 +626,9 @@
       "candidateCount": 1,
       "reviewedCount": 1,
       "status": "targeted_topic_review",
-      "statusLabel": "定向主题/引文检索；年度全量目录未检索",
+      "statusLabel": "定向主题/引文候选摘要核验完成；年度全量目录未检索",
       "gaps": [
-        "该年度全部目录、其他任务词和完整引文链尚未检索",
-        "MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验"
+        "该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验"
       ],
       "sourceSnapshot": "sources/tgrs-2005-early-unmixing-subspace-targets.json",
       "htmlSha256": "2340270051b65dc5a4a0020c653b0646fc6dbcbe7c3b0d4f3b2bbb8674dfa13c"
@@ -641,10 +649,9 @@
       "candidateCount": 1,
       "reviewedCount": 1,
       "status": "targeted_topic_review",
-      "statusLabel": "定向主题/引文检索；年度全量目录未检索",
+      "statusLabel": "定向主题/引文候选摘要核验完成；年度全量目录未检索",
       "gaps": [
-        "该年度全部目录、其他任务词和完整引文链尚未检索",
-        "MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验"
+        "该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验"
       ],
       "sourceSnapshot": "sources/tgrs-2008-early-unmixing-subspace-targets.json",
       "htmlSha256": "9accf70d8055f668b81a69cea4654b5aa8fdf9a1373de3008b8d3aa05b206436"
@@ -1102,6 +1109,87 @@
       "sourceSnapshot": "sources/arxiv-1904.12175.json",
       "gaps": [
         "其他arXiv论文、逐版实验及期刊最终版差异仍未核验"
+      ]
+    },
+    {
+      "id": "iccv-2013-title-optical-terms",
+      "venue": "ICCV",
+      "year": 2013,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T22:00:35.324039+00:00",
+      "method": "官方年度目录逐题名关键词扫描，再逐篇核验命中摘要",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "multi-spectral",
+        "spectral",
+        "spectrum"
+      ],
+      "url": "https://openaccess.thecvf.com/ICCV2013?day=all",
+      "pagination": "day=all；单页全年官方目录；无结果条数截断",
+      "titleCount": 454,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "指定五关键词两命中均核验官方摘要；全领域覆盖未完成",
+      "gaps": [
+        "其他任务词、全量摘要与引文发现未完成",
+        "浏览器工具目录返回403，直接HTTP成功取得454题名与两篇官方摘要",
+        "新增文献仅摘要与局部页；完整实验、代码数据及期刊最终版差异待核验"
+      ],
+      "directoryPages": [
+        {
+          "url": "https://openaccess.thecvf.com/ICCV2013?day=all",
+          "queriedAt": "2026-10-07T22:00:37.216534+00:00",
+          "htmlSha256": "4194eaa3ca771a65b900b854d33085d8c222cd81e3a882fe1b0901bf0780e75a",
+          "titleCount": 454
+        }
+      ],
+      "sourceSnapshot": "sources/iccv-2013-all-titles.json",
+      "htmlSha256": "4194eaa3ca771a65b900b854d33085d8c222cd81e3a882fe1b0901bf0780e75a",
+      "candidateCount": 2,
+      "reviewedCount": 2
+    },
+    {
+      "id": "hf-reflection-fluorescence-tpami-version",
+      "venue": "TPAMI",
+      "year": 2016,
+      "date": "2026-10-08",
+      "method": "同题名和五作者元数据、原文扩展声明或出版社摘要定向核验",
+      "keywords": [
+        "Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain",
+        "10.1109/tpami.2015.2473839"
+      ],
+      "url": "https://doi.org/10.1109/tpami.2015.2473839",
+      "pagination": "单篇定向关联；没有扫描年度目录",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "targeted_version_reviewed",
+      "statusLabel": "期刊扩展原文关系核验，作为版本归并",
+      "gaps": [
+        "完整年度目录及其他研究问题未检索",
+        "期刊最终版/专题摘要全文与完整实验差异待查"
+      ]
+    },
+    {
+      "id": "hf-reflection-fluorescence-jsap-version",
+      "venue": "JSAP-OSA Joint Symposia",
+      "year": 2014,
+      "date": "2026-10-08",
+      "method": "同题名和五作者元数据、原文扩展声明或出版社摘要定向核验",
+      "keywords": [
+        "Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain",
+        "10.1364/jsap.2014.20p_c4_1"
+      ],
+      "url": "https://opg.optica.org/abstract.cfm?uri=jsap-2014-20p_C4_1",
+      "pagination": "单篇定向关联；没有扫描年度目录",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "targeted_version_reviewed",
+      "statusLabel": "官方摘要核验并按方法重述归并；不是独立方法",
+      "gaps": [
+        "完整年度目录及其他研究问题未检索",
+        "期刊最终版/专题摘要全文与完整实验差异待查"
       ]
     }
   ],
@@ -2600,6 +2688,57 @@
       "reason": "arXiv v5第2页明确声明为uSDN扩展：非配准输入、单一共享编码器/解码器、互信息取代角度约束、l2,1重建损失；与CVPR2018属同一方法族，不按两独立方法计数。",
       "checkedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/u2mdn-extension-selected-pages-review.json"
+    },
+    {
+      "title": "Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain",
+      "url": "https://openaccess.thecvf.com/content_iccv_2013/html/Fu_Separating_Reflective_and_2013_ICCV_paper.html",
+      "venue": "ICCV",
+      "year": 2013,
+      "discoveredAt": "2026-10-08",
+      "searchId": "iccv-2013-title-optical-terms",
+      "decision": "included",
+      "reason": "直接以两幅高光谱图像估计反射、荧光发射和吸收谱，不是仅讨论数学频谱。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Fu_Separating_Reflective_and_2013_ICCV_paper.json",
+      "paperId": "hf-reflection-fluorescence-2013"
+    },
+    {
+      "title": "Progressive Multigrid Eigensolvers for Multiscale Spectral Segmentation",
+      "url": "https://openaccess.thecvf.com/content_iccv_2013/html/Maire_Progressive_Multigrid_Eigensolvers_2013_ICCV_paper.html",
+      "venue": "ICCV",
+      "year": 2013,
+      "discoveredAt": "2026-10-08",
+      "searchId": "iccv-2013-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要研究Normalized Cuts、Angular Embedding及多重网格特征求解器，spectral是图矩阵谱；未建立光学高光谱联系。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Maire_Progressive_Multigrid_Eigensolvers_2013_ICCV_paper.json"
+    },
+    {
+      "title": "Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain",
+      "url": "https://doi.org/10.1109/tpami.2015.2473839",
+      "venue": "TPAMI",
+      "year": 2016,
+      "discoveredAt": "2026-10-08",
+      "searchId": "hf-reflection-fluorescence-tpami-version",
+      "decision": "duplicate",
+      "paperId": "hf-reflection-fluorescence-2013",
+      "reason": "同题名、同五作者；正式TPAMI38(5)，965–978，2016-05-01。作者接受稿第2页声明前序工作[14]，第14页明确指向ICCV2013；增加理论/误差分析、普通光源配滤波器和环境光处理。接受稿带2015版权与未终编水印，在线日期及期刊最终版差异待核验，不混入会议实验。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/fu-pami-accepted-manuscript-review.json"
+    },
+    {
+      "title": "Separating Reflective and Fluorescent Components using High Frequency Illumination in the Spectral Domain",
+      "url": "https://opg.optica.org/abstract.cfm?uri=jsap-2014-20p_C4_1",
+      "venue": "JSAP-OSA Joint Symposia",
+      "year": 2014,
+      "discoveredAt": "2026-10-08",
+      "searchId": "hf-reflection-fluorescence-jsap-version",
+      "decision": "duplicate",
+      "paperId": "hf-reflection-fluorescence-2013",
+      "reason": "JSAP-OSA Joint Symposia 2014 Abstracts，20p_C4_1；同题名、五作者、两幅HSI分离和吸收估计摘要匹配，以方法重述归并，不计独立方法；专题摘要PDF差异待核验。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/fu-jsap2014-publisher.json"
     }
   ],
   "batches": [
@@ -2887,6 +3026,27 @@
       "gaps": [
         "TGRS2022年度目录、其他任务词和完整引文链未检索",
         "期刊最终全文、在线日期、五个预印本逐版差异、资源许可与代码复现待核验"
+      ]
+    },
+    {
+      "id": "iccv-2013-reflective-fluorescent-and-versions",
+      "date": "2026-10-08",
+      "searchIds": [
+        "iccv-2013-title-optical-terms",
+        "hf-reflection-fluorescence-tpami-version",
+        "hf-reflection-fluorescence-jsap-version"
+      ],
+      "new": 1,
+      "updated": 0,
+      "duplicates": 2,
+      "excluded": 1,
+      "pending": 0,
+      "categoriesAdded": 2,
+      "readingBoundary": "454题名两命中读官方摘要；新增反射/荧光分离与原Fig.3采集原理图，排除数学谱分割。2014专题摘要与2016期刊扩展归并为两个版本，不计独立方法。期刊作者接受稿第2/14页证明会议前序及新增处理，仅局部阅读。",
+      "gaps": [
+        "其他任务词、全量摘要与引文发现未完成",
+        "浏览器工具目录返回403，直接HTTP成功取得454题名与两篇官方摘要",
+        "新增文献仅摘要与局部页；完整实验、代码数据及期刊最终版差异待核验"
       ]
     }
   ],

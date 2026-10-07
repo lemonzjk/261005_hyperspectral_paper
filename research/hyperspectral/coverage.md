@@ -15,8 +15,8 @@
 | NeurIPS | 2023 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录，含主会及数据集评测 Track；无结果条数截断 | 3540 / 30 / 30 | 指定关键词题名扫描及 30 个命中摘要审查完成；其他主题与引文未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | TGRS | 1988 | A transformation for ordering multispectral data in terms of image quality with implications for noise removal；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文候选摘要核验完成；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验 |
 | TGRS | 1994 | Hyperspectral Image Classification and Dimensionality Reduction: An Orthogonal Subspace Projection Approach、Minimum-volume transforms for remotely sensed data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 2 / 2 / 2 | 定向主题/引文候选摘要核验完成；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验 |
-| TGRS | 2005 | Vertex Component Analysis: A Fast Algorithm to Unmix Hyperspectral Data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
-| TGRS | 2008 | Hyperspectral Subspace Identification；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
+| TGRS | 2005 | Vertex Component Analysis: A Fast Algorithm to Unmix Hyperspectral Data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文候选摘要核验完成；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验 |
+| TGRS | 2008 | Hyperspectral Subspace Identification；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文候选摘要核验完成；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验 |
 | TGRS | 2001 | Fully constrained least squares linear spectral mixture analysis method for material quantification in hyperspectral imagery、FCLS、UFCLS；定向题名检索与 DOI 核对；Crossref 题名返回前三项，不代表完整年度或主题检索 | 1 / 1 / 1 | 定向主题核验完成；年度全量目录未检索 | 该年度全部目录、其他关键词及完整引文尚未检索；全文实验、代码数据、早期会议版本待核验 |
 | Optics Letters | 2007 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，2 页；1141 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 1141 / 4 / 4 | Crossref 登记题名扫描完成，4 候选已处理（3 摘要、1 题名）；出版社年度覆盖未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成 |
 | Optics Express | 2007 | Single-shot compressive spectral imaging with a dual-disperser architecture、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
@@ -32,6 +32,9 @@
 | arXiv | 2018 | 1804.05042；单个abs页面，v1/v2/v3历史全部列出；非跨分类检索 | 1 / 0 / 1 | uSDN三版本日期核验；逐版全文差异待查 | 只有一个既有方法的三版本历史；未核验逐版实验和其他arXiv方法 |
 | TGRS | 2022 | Unsupervised and Unregistered Hyperspectral Image Super-Resolution With Mutual Dirichlet-Net、10.1109/tgrs.2021.3079518、uSDN、u²-MDN；单个DOI与指定arXiv全文、作者仓库；非年度目录检索 | 1 / 1 / 1 | 单篇期刊扩展元数据、摘要与局部方法关系核验；年度全量未检索 | TGRS2022年度目录、其他任务词和完整引文链未检索；期刊最终全文、在线日期、五个预印本逐版差异、资源许可与代码复现待核验 |
 | arXiv | 2019–2021 | 1904.12175；指定abs页面v1–v5全部历史；非跨分类检索 | 1 / 0 / 1 | 五个版本日期核验并关联TGRS2022正式出版；逐版全文待查 | 其他arXiv论文、逐版实验及期刊最终版差异仍未核验 |
+| ICCV | 2013 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 454 / 2 / 2 | 指定五关键词两命中均核验官方摘要；全领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器工具目录返回403，直接HTTP成功取得454题名与两篇官方摘要；新增文献仅摘要与局部页；完整实验、代码数据及期刊最终版差异待核验 |
+| TPAMI | 2016 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1109/tpami.2015.2473839；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 期刊扩展原文关系核验，作为版本归并 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
+| JSAP-OSA Joint Symposia | 2014 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1364/jsap.2014.20p_c4_1；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 官方摘要核验并按方法重述归并；不是独立方法 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -52,7 +55,7 @@
 | ACM MM | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | SIGGRAPH | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | SIGGRAPH Asia | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| TPAMI | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| TPAMI | journal | 最早可用目录至 2026 | 2016单篇扩展关系核验、2019/2022两篇版本候选；年度全量未检索 |
 | IJCV | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TIP | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TOG | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -61,7 +64,7 @@
 | Information Fusion | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TSP | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TCI | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| TGRS | journal | 最早可用目录至 2026 | 已做 1988/1994/2001/2005/2008 早期主题与引文定向检索；年度全量仍未检索 |
+| TGRS | journal | 最早可用目录至 2026 | 1988/1994/2001/2005/2008基础主题及2022单篇期刊扩展定向核验；年度全量未检索 |
 | Remote Sensing of Environment | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IGARSS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -80,6 +83,7 @@
 | Remote Sensing | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | JSTARS | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | CVPR Workshops | workshop | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| JSAP-OSA Joint Symposia | specialist_conference_abstract | 最早可用目录至 2026 | 2014单篇同题名摘要定向核验并归并版本；年度目录未检索，不冒充顶会研究论文 |
 
 ## 已闭环批次
 
@@ -111,6 +115,8 @@
   阅读边界：979题名来源为三日367/370/242；六命中均读摘要。三新条目原图已保存，MIID 118/30通道、滤波器设计与实际双通道硬件分别记录。uSDN三arXiv版本日期与作者仓库已核验；全部仍非阅读全文。
 - 2026-10-08 / usdn-u2mdn-journal-extension：新增 1，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：新增1条期刊文献、更新前序uSDN关联；原文明确同一方法族，不计新增独立方法族。正式卷期2022与2019–2021五个arXiv版本分别记录；读v5摘要与第2/4/5/7/8局部页，保存明确版本的Fig.3，非阅读全文。
+- 2026-10-08 / iccv-2013-reflective-fluorescent-and-versions：新增 1，更新 0，去重 2，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：454题名两命中读官方摘要；新增反射/荧光分离与原Fig.3采集原理图，排除数学谱分割。2014专题摘要与2016期刊扩展归并为两个版本，不计独立方法。期刊作者接受稿第2/14页证明会议前序及新增处理，仅局部阅读。
 
 ## 未解决缺口
 

@@ -20533,6 +20533,160 @@
           "attribution": "Ying Qu, Hairong Qi, Chiman Kwan, Naoto Yokoya, Jocelyn Chanussot · TGRS 2022"
         }
       ]
+    },
+    {
+      "id": "hf-reflection-fluorescence-2013",
+      "shortTitle": "HF Reflection–Fluorescence",
+      "title": "Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain",
+      "authors": "Ying Fu, Antony Lam, Imari Sato, Takahiro Okabe, Yoichi Sato",
+      "year": 2013,
+      "venue": "ICCV",
+      "publicationName": "IEEE International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2013.63",
+      "representation": "高频光谱照明",
+      "tags": [
+        "reflection-fluorescence-separation",
+        "high-frequency-spectral-modulation",
+        "spectral-relighting"
+      ],
+      "summary": "在光谱域使用高频照明及其互补或相移照明，由两幅HSI分离反射与荧光发射，再依据发射与吸收关联估计荧光吸收谱。",
+      "input": "两种互补或相移高频光谱照明下的两幅高光谱图像。",
+      "output": "反射率、荧光发射和估计吸收谱，以及合成重照明。",
+      "mechanism": "在光谱域使用高频照明及其互补或相移照明，由两幅HSI分离反射与荧光发射，再依据发射与吸收关联估计荧光吸收谱。",
+      "readingNote": "已读会议官方摘要与第1/3/6页局部原文；非阅读全文。Fig.3是采集原理示意。2014专题会议摘要和2016期刊扩展作为版本关联，期刊接受稿改动单列，最终全文差异与代码数据待核验。",
+      "paper": "https://openaccess.thecvf.com/content_iccv_2013/html/Fu_Separating_Reflective_and_2013_ICCV_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Fu_2013_ICCV,\nauthor = {Fu, Ying and Lam, Antony and Sato, Imari and Okabe, Takahiro and Sato, Yoichi},\ntitle = {Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain},\nbooktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},\nmonth = {December},\nyear = {2013}\n}",
+      "library": {
+        "categoryIds": [
+          "reflection-fluorescence-separation",
+          "high-frequency-spectral-modulation",
+          "spectral-relighting"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接以两幅高光谱图像估计反射、荧光发射和吸收谱，不是仅讨论数学频谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用两次高光谱采集分离反射与荧光，并估计荧光吸收谱以支持重照明？",
+        "datasets": "摘要报告模拟和实测；第6页局部核验Nikon ELS照明、PR-670真值光谱和EBA Japan NH-7高光谱相机。数据集完整内容、获取及许可待核验。",
+        "experimentSetting": "会议摘要仅需两幅HSI；第3页Fig.3解释互补高频光谱照明采集，第6页报告400–720nm可编程光源。期刊接受稿增加常规光源/滤波器与环境光处理，单列版本差异。",
+        "conclusions": "作者会议摘要报告分离与吸收估计有效，并展示合成重照明；完整数值和实验协议待阅读全文。",
+        "limitations": "会议原文第1页要求荧光吸收谱相对照明高频变化平滑；第3页模型假设吸收与发射重叠较小。实际噪声、材料和光源适用边界待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_iccv_2013/html/Fu_Separating_Reflective_and_2013_ICCV_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "正式题名、五作者、ICCV2013",
+              "两幅HSI、反射/发射分离、吸收估计及重照明"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/ICCV.2013.63",
+            "checkedAt": "2026-10-08",
+            "level": "精确Crossref DOI与原PDF首页DOI核对",
+            "supports": [
+              "会议DOI、完整作者、2013年、457–464页"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_iccv_2013/papers/Fu_Separating_Reflective_and_2013_ICCV_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF第1/3/6页局部；非阅读全文",
+            "supports": [
+              "第3页Fig.3完整采集原理图；不是完整算法流程",
+              "第1页平滑假设；第3页小重叠假设；第6页照明、真值仪器和高光谱相机"
+            ]
+          },
+          {
+            "url": "https://antonylam.github.io/papers/Separating_Reflective_and_Fluorescent_Components_Using_High_Frequency_Illumination_in_the_Spectral_Domain_PAMI.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "作者接受稿摘要与第2/14页局部；非期刊最终全文",
+            "supports": [
+              "第2页前序声明及第14页ICCV2013引用；普通光源滤波和环境光扩展",
+              "首页DOI和五作者；带未终编水印及2015版权，最终版差异未知"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TPAMI.2015.2473839",
+            "checkedAt": "2026-10-08",
+            "level": "期刊精确DOI注册元数据",
+            "supports": [
+              "正式卷38期5、2016-05-01、965–978；不从DOI推正式年"
+            ]
+          },
+          {
+            "url": "https://opg.optica.org/abstract.cfm?uri=jsap-2014-20p_C4_1",
+            "checkedAt": "2026-10-08",
+            "level": "浏览器工具取得官方题名、五作者与摘要；直接HTTP未定位摘要",
+            "supports": [
+              "专题会议摘要2014、paper20p_C4_1、两幅HSI方法重述；非顶会正式研究稿"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hf-reflection-fluorescence-2013-iccv2013",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_iccv_2013/html/Fu_Separating_Reflective_and_2013_ICCV_paper.html",
+            "year": 2013,
+            "doi": "10.1109/iccv.2013.63",
+            "relation": "ICCV2013正式论文，457–464页，五作者已核验。"
+          },
+          {
+            "id": "hf-reflection-fluorescence-2013-jsap2014",
+            "type": "专题会议摘要",
+            "url": "https://opg.optica.org/abstract.cfm?uri=jsap-2014-20p_C4_1",
+            "year": 2014,
+            "doi": "10.1364/jsap.2014.20p_c4_1",
+            "relation": "JSAP-OSA Joint Symposia 2014 Abstracts，20p_C4_1；同题名、五作者、两幅HSI分离和吸收估计摘要匹配，以方法重述归并，不计独立方法；专题摘要PDF差异待核验。"
+          },
+          {
+            "id": "hf-reflection-fluorescence-2013-tpami2016",
+            "type": "期刊扩展正式版",
+            "url": "https://doi.org/10.1109/tpami.2015.2473839",
+            "year": 2016,
+            "doi": "10.1109/tpami.2015.2473839",
+            "relation": "同题名、同五作者；正式TPAMI38(5)，965–978，2016-05-01。作者接受稿第2页声明前序工作[14]，第14页明确指向ICCV2013；增加理论/误差分析、普通光源配滤波器和环境光处理。接受稿带2015版权与未终编水印，在线日期及期刊最终版差异待核验，不混入会议实验。"
+          }
+        ],
+        "methodFamilyId": "hf-reflection-fluorescence-2013"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_iccv_2013/papers/Fu_Separating_Reflective_and_2013_ICCV_paper.pdf",
+          "figureLabel": "Figure 3 — 采集原理",
+          "caption": "相机、光源及场景与两种互补高频二值光谱照明；亮波长含反射和荧光，暗波长仅含荧光。原图为采集原理示意，不是完整算法流程。",
+          "verificationNote": "核对同名ICCV2013原文PDF第3页Fig.3完整(a)(b)(c)与图注，保留全部子图；从原文裁切，未重绘。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              864,
+              189,
+              1549,
+              748
+            ]
+          },
+          "path": "figures/hf-reflection-fluorescence-2013/framework.png",
+          "width": 685,
+          "height": 559,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "3ed8ac64135ebe2354cbdda6c094e9cc17b36e7831bb2eeea9409bbf2af6e023",
+          "attribution": "Ying Fu, Antony Lam, Imari Sato, Takahiro Okabe, Yoichi Sato · ICCV 2013"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -20896,7 +21050,8 @@
       "evidencePaperIds": [
         "reflective-fluorescent-relighting",
         "irss-lowrank-2015",
-        "diy-hsi-2016"
+        "diy-hsi-2016",
+        "hf-reflection-fluorescence-2013"
       ],
       "history": [
         {
@@ -21754,6 +21909,46 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "由已核验摘要与原文扩展声明形成任务标签。"
+        }
+      ]
+    },
+    {
+      "id": "reflection-fluorescence-separation",
+      "name": "反射与荧光光谱分离",
+      "dimension": "task",
+      "definition": "从混合反射/荧光观测分离反射率与荧光发射，吸收估计能力逐篇注明。",
+      "status": "provisional",
+      "color": "#a2a69a",
+      "createdAt": "2026-10-08",
+      "rationale": "由ICCV2013官方摘要和原文采集原理形成；随后续论文复核适用边界。",
+      "evidencePaperIds": [
+        "hf-reflection-fluorescence-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "原文明确支持高光谱分离任务及光谱域照明方法。"
+        }
+      ]
+    },
+    {
+      "id": "high-frequency-spectral-modulation",
+      "name": "光谱高频调制",
+      "dimension": "method",
+      "definition": "沿波长维度调制照明强度并利用互补或相移观测约束光谱分量分离；不同于空间结构光。",
+      "status": "provisional",
+      "color": "#a2a69a",
+      "createdAt": "2026-10-08",
+      "rationale": "由ICCV2013官方摘要和原文采集原理形成；随后续论文复核适用边界。",
+      "evidencePaperIds": [
+        "hf-reflection-fluorescence-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "原文明确支持高光谱分离任务及光谱域照明方法。"
         }
       ]
     }
