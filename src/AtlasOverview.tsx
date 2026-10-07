@@ -33,7 +33,20 @@ export function AtlasOverview({ groups, periods, onSelect }: {
     current?.group === group && current.period === period ? null : { group, period });
   const sections = families.map(family => ({ ...family, groups: family.tracks.flatMap(id => groups.filter(group => group.id === id)) })).filter(family => family.groups.length);
   const ordered = sections.flatMap(family => family.groups);
-  return <section className="atlas-roadmap" aria-label="研究方向与论文时间轴" style={{ '--stages': periods.length } as CSSProperties}>
+  return <div className="atlas-reading-surface">
+    <section className="atlas-taxonomy" aria-label="高光谱三维视觉方向图">
+      <header><div><span>领域结构</span><h4>光谱信息 × 三维空间</h4><p>从获取观测，到恢复场景，再到理解与扩展成像</p></div><small>主题分组 · 非方法继承关系</small></header>
+      <div className="atlas-taxonomy-branches" style={{ '--families': sections.length } as CSSProperties}>
+        {sections.map((family, index) => <section className={`atlas-taxonomy-family family-${families.findIndex(item => item.name === family.name)}`} key={family.name}>
+          <header><span className="atlas-taxonomy-number">0{index + 1}</span><div><h5>{family.name}</h5><p>{family.hint}</p></div><small>{family.groups.reduce((total, group) => total + group.papers.length, 0)} 篇</small></header>
+          <div className="atlas-taxonomy-tracks">{family.groups.map(group => <a key={group.id} href={`#atlas-track-${group.id}`} style={{ '--route': group.color } as CSSProperties}>
+            <span><strong>{group.name}</strong><small>{group.papers.length} 篇</small></span><p>{directionHints[group.id] ?? group.description}</p>
+          </a>)}</div>
+        </section>)}
+      </div>
+    </section>
+    <div className="atlas-timeline-heading"><div><span>研究进展</span><h4>沿时间，读每个方向</h4></div><p>每阶段一篇示例 · 点击篇数查看其余论文</p></div>
+    <section className="atlas-roadmap" aria-label="研究方向与论文时间轴" style={{ '--stages': periods.length } as CSSProperties}>
     <div className="atlas-roadmap-guide"><span>纵向看方向，横向看时间</span><p>论文标题可直接点击 · 篇数展开完整列表</p><div className="atlas-roadmap-scope-key"><span><i className="core"/>核心研究</span><span><i/>相关研究</span></div></div>
     <table className="atlas-roadmap-table">
       <caption className="sr-only">各方向每阶段最新收录的一篇论文及收录篇数。阶段等宽，不表示时长；示例不是排名或方法继承关系。</caption>
@@ -44,7 +57,7 @@ export function AtlasOverview({ groups, periods, onSelect }: {
         const period = selected && selection.period !== undefined ? periods[selection.period] : undefined;
         const visible = group.papers.filter(paper => !period || paper.year >= period.start && paper.year <= period.end).sort(newestFirst);
         const detailId = `atlas-detail-${group.id}`;
-        return <Fragment key={group.id}>{family && <tr className="atlas-roadmap-family"><th colSpan={periods.length + 1} scope="rowgroup"><strong>{family.name}</strong><span>{family.hint}</span><small>{family.groups.length} 个方向 · {family.groups.reduce((total, item) => total + item.papers.length, 0)} 篇</small></th></tr>}<tr className={`atlas-roadmap-row${selected ? ' selected' : ''}`} style={{ '--route': group.color } as CSSProperties}>
+        return <Fragment key={group.id}>{family && <tr className="atlas-roadmap-family"><th colSpan={periods.length + 1} scope="rowgroup"><strong>{family.name}</strong><span>{family.hint}</span><small>{family.groups.length} 个方向 · {family.groups.reduce((total, item) => total + item.papers.length, 0)} 篇</small></th></tr>}<tr id={`atlas-track-${group.id}`} className={`atlas-roadmap-row${selected ? ' selected' : ''}`} style={{ '--route': group.color } as CSSProperties}>
           <th scope="row"><button className="atlas-roadmap-direction" title={`${group.description} 点击展开全部 ${group.papers.length} 篇论文。`} aria-expanded={selected && !period} aria-controls={selected ? detailId : undefined} onClick={() => toggle(group.id)}>
             <span className="atlas-roadmap-index">{String(index + 1).padStart(2, '0')}</span><span><strong>{group.name}</strong><small>{directionHints[group.id] ?? group.description}</small></span><span className="atlas-roadmap-chevron" aria-hidden="true">{group.papers.length}<small>篇</small></span>
           </button></th>
@@ -71,5 +84,5 @@ export function AtlasOverview({ groups, periods, onSelect }: {
       })}</tbody>
     </table>
     <footer className="atlas-roadmap-footer"><span>每阶段显示最新收录的一篇；篇数包含该阶段全部收录。</span><span>阶段等宽，不表示时长；排列不表示排名或继承关系。</span></footer>
-  </section>;
+  </section></div>;
 }
