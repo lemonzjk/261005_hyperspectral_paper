@@ -22578,6 +22578,23 @@
               "Submission history From: Wei He [ view email ] [v1] Tue, 11 Dec 2018 07:26:07 UTC (3,752 KB) [v2] Wed, 27 Mar 2019 04:00:22 UTC (8,946 KB)",
               "与CVPR同题名完整作者一致；出版年份保持2019"
             ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2010.12921",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv官方Submission history与接受说明；版本全文未比较",
+            "supports": [
+              "v1提交/更新2020-10-24；完整七作者；Accepted to TPAMI"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2010.12921v1",
+            "checkedAt": "2026-10-08",
+            "level": "接受稿第1–3页摘要/扩展说明及第17页参考文献；非阅读全文",
+            "supports": [
+              "第2页明确扩展会议[48]；第17页[48]为CVPR2019原论文",
+              "扩展去噪到压缩重建和补全，改写目标、优化与秩适配；最终期刊题名/卷期年仍待查"
+            ]
           }
         ],
         "versions": [
@@ -22612,6 +22629,19 @@
             "updatedAt": "2019-03-27",
             "metadataStatus": "verified",
             "relation": "同题名、同作者预印本；提交/更新日期来自官方历史，正文实验差异待比较。"
+          },
+          {
+            "id": "ngmeet-2019-journal-accepted-arxiv-v1",
+            "type": "期刊扩展接受稿（预印本）",
+            "url": "https://arxiv.org/abs/2010.12921v1",
+            "year": 2020,
+            "doi": "10.1109/TPAMI.2020.3027563",
+            "arxivId": "2010.12921",
+            "version": "v1",
+            "firstSubmittedAt": "2020-10-24",
+            "updatedAt": "2020-10-24",
+            "metadataStatus": "verified",
+            "relation": "arXiv官方Accepted to TPAMI；2020为v1提交年，正式卷期年待查。原文题名为Non-local Meets Global: An Iterative Paradigm for Hyperspectral Image Restoration；完整作者：Wei He, Quanming Yao, Chao Li, Naoto Yokoya, Qibin Zhao, Hongyan Zhang, Liangpei Zhang。第2页明确扩展CVPR2019，第17页参考文献[48]确认；新增压缩重建、补全、潜在输入估计及秩自适应，未混入会议去噪实验。Crossref题名Integrated、2020及1-1页仍为早期登记，不代替最终出版事实。"
           }
         ],
         "methodFamilyId": "ngmeet-2019"
@@ -22641,6 +22671,30 @@
           "verifiedAt": "2026-10-08",
           "sha256": "9a5ab8489a695bb932cc8ae08b110f2eb0194e5bab8a256adcbc0eb29e9e99af",
           "attribution": "Wei He, Quanming Yao, Chao Li, Naoto Yokoya, Qibin Zhao · CVPR 2019"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2010.12921v1",
+          "figureLabel": "Figure 1 — 期刊扩展接受稿 arXiv v1",
+          "caption": "2020年arXiv2010.12921v1接受稿：潜在输入估计、谱基、非局部分组恢复以及噪声估计/秩适配；与会议去噪图分开。",
+          "verificationNote": "已核验接受稿PDF第2页完整图注和第1页七作者、第2页扩展声明；源为arXiv v1，2020是提交年，非已证明的正式期刊卷期年。PDF裁切未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              123,
+              119,
+              1573,
+              806
+            ]
+          },
+          "path": "figures/ngmeet-2019/framework-journal-arxiv-v1.png",
+          "width": 1450,
+          "height": 687,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "6979c852cffad055433e7689a5ee6c87a62362a97779c19af6301a7b49998367",
+          "attribution": "Wei He, Quanming Yao, Chao Li, Naoto Yokoya, Qibin Zhao, Hongyan Zhang, Liangpei Zhang · TPAMI接受稿，arXiv2010.12921v1，2020提交年；正式卷期年待查"
         }
       ]
     },
@@ -23337,6 +23391,361 @@
           "attribution": "Takeshi Uemori, Atsushi Ito, Yusuke Moriuchi, Alexander Gatto, Jun Murayama · CVPR 2019"
         }
       ]
+    },
+    {
+      "id": "ual-2020",
+      "shortTitle": "UAL",
+      "title": "Unsupervised Adaptation Learning for Hyperspectral Imagery Super-Resolution",
+      "authors": "Lei Zhang, Jiangtao Nie, Wei Wei, Yanning Zhang, Shengcai Liao, Ling Shao",
+      "year": 2020,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr42600.2020.00314",
+      "representation": "UAL",
+      "tags": [
+        "spatial-super-resolution",
+        "blind-hsi-fusion",
+        "image-specific-prior-adaptation"
+      ],
+      "summary": "在合成数据监督预训练融合模块；当前图像上冻结融合模块，联合无监督学习轻量适配模块与退化网络。",
+      "input": "低空间分辨HSI、高空间分辨MSI和给定光谱响应；空间退化未知。",
+      "output": "高空间分辨HSI和估计空间退化。",
+      "mechanism": "在合成数据监督预训练融合模块；当前图像上冻结融合模块，联合无监督学习轻量适配模块与退化网络。",
+      "readingNote": "已读官方摘要与注明局部原图/说明；未阅读全文。代码/数据与完整实验协议、预印本关系待核验。包含监督预训练，只有图像适配阶段无监督；原文第3页给定光谱响应P，主要估计空间退化H。",
+      "paper": "https://openaccess.thecvf.com/content_CVPR_2020/html/Zhang_Unsupervised_Adaptation_Learning_for_Hyperspectral_Imagery_Super-Resolution_CVPR_2020_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Zhang_2020_CVPR,\nauthor = {Zhang, Lei and Nie, Jiangtao and Wei, Wei and Zhang, Yanning and Liao, Shengcai and Shao, Ling},\ntitle = {Unsupervised Adaptation Learning for Hyperspectral Imagery Super-Resolution},\nbooktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2020}\n}",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "blind-hsi-fusion",
+          "image-specific-prior-adaptation"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究空间–波长高光谱恢复；普通高光谱新增不进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何将监督预训练的一般先验适配当前HSI的未知退化？",
+        "datasets": "官方摘要报告四个基准；具体名称、训练划分与指标协议待全文核验。",
+        "experimentSetting": "摘要与原文第3页图/局部说明已核验；完整参数和指标待查。",
+        "conclusions": "作者摘要报告优于所比较方法；具体性能数字与完整协议尚未独立复核。",
+        "limitations": "观测或配对假设、跨传感器泛化、训练/适配成本与复现条件待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Zhang_Unsupervised_Adaptation_Learning_for_Hyperspectral_Imagery_Super-Resolution_CVPR_2020_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与完整BibTeX；非阅读全文",
+            "supports": [
+              "Unsupervised Adaptation Learning for Hyperspectral Imagery Super-Resolution",
+              "Lei Zhang, Jiangtao Nie, Wei Wei, Yanning Zhang, Shengcai Liao, Ling Shao",
+              "CVPR2020",
+              "在合成数据监督预训练融合模块；当前图像上冻结融合模块，联合无监督学习轻量适配模块与退化网络。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Unsupervised+Adaptation+Learning+for+Hyperspectral+Imagery+Super-Resolution&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位；非年度/主题全量",
+            "supports": [
+              "DOI 10.1109/cvpr42600.2020.00314；精确题名、作者顺序与2020年一致；页码3070-3079"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_Unsupervised_Adaptation_Learning_for_Hyperspectral_Imagery_Super-Resolution_CVPR_2020_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第3页原图及局部说明；非阅读全文",
+            "supports": [
+              "Figure 2",
+              "UAL联合退化估计及两阶段网络；灰色融合模块在无监督适配中冻结。",
+              "已读官方摘要与注明局部原图/说明；未阅读全文。代码/数据与完整实验协议、预印本关系待核验。包含监督预训练，只有图像适配阶段无监督；原文第3页给定光谱响应P，主要估计空间退化H。"
+            ]
+          },
+          {
+            "url": "https://github.com/JiangtaoNie/UAL",
+            "checkedAt": "2026-10-08",
+            "level": "作者原文项目链接与仓库README；代码未运行",
+            "supports": [
+              "仓库访问200；许可、数据下载与运行条件另行核验"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ual-2020-cvpr2020",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Zhang_Unsupervised_Adaptation_Learning_for_Hyperspectral_Imagery_Super-Resolution_CVPR_2020_paper.html",
+            "year": 2020,
+            "doi": "10.1109/cvpr42600.2020.00314",
+            "relation": "采用CVPR2020出版事实；其他出版版、预印本及正文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "ual-2020"
+      },
+      "code": "https://github.com/JiangtaoNie/UAL",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_Unsupervised_Adaptation_Learning_for_Hyperspectral_Imagery_Super-Resolution_CVPR_2020_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "UAL联合退化估计及两阶段网络；灰色融合模块在无监督适配中冻结。",
+          "verificationNote": "同名CVPR2020原文第3页图及完整图注，PDF裁切未重绘。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              196,
+              1524,
+              530
+            ]
+          },
+          "path": "figures/ual-2020/framework.png",
+          "width": 1398,
+          "height": 334,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "601c7f62493f882b405106871e40561af791f092b206dee9124dba9f23a1e788",
+          "attribution": "Lei Zhang, Jiangtao Nie, Wei Wei, Yanning Zhang, Shengcai Liao, Ling Shao · CVPR 2020"
+        }
+      ]
+    },
+    {
+      "id": "dnu-2020",
+      "shortTitle": "DNU",
+      "title": "DNU: Deep Non-Local Unrolling for Computational Spectral Imaging",
+      "authors": "Lizhi Wang, Chen Sun, Maoqing Zhang, Ying Fu, Hua Huang",
+      "year": 2020,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr42600.2020.00173",
+      "representation": "DNU",
+      "tags": [
+        "spectral-reconstruction",
+        "deep-unfolding",
+        "nonlocal-spatial-priors"
+      ],
+      "summary": "把自适应局部与非局部先验作为正则，并利用感知矩阵结构展开递归恢复网络，端到端学习网络参数。",
+      "input": "编码高光谱快照观测与系统成像算子。",
+      "output": "重建HSI。",
+      "mechanism": "把自适应局部与非局部先验作为正则，并利用感知矩阵结构展开递归恢复网络，端到端学习网络参数。",
+      "readingNote": "已读官方摘要与注明局部原图/说明；未阅读全文。代码/数据与完整实验协议、预印本关系待核验。论文参考文献[1]仅指向作者GitHub主页，尚未定位该论文仓库。",
+      "paper": "https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_DNU_Deep_Non-Local_Unrolling_for_Computational_Spectral_Imaging_CVPR_2020_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Wang_2020_CVPR,\nauthor = {Wang, Lizhi and Sun, Chen and Zhang, Maoqing and Fu, Ying and Huang, Hua},\ntitle = {DNU: Deep Non-Local Unrolling for Computational Spectral Imaging},\nbooktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2020}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "deep-unfolding",
+          "nonlocal-spatial-priors"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究空间–波长高光谱恢复；普通高光谱新增不进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何将局部/非局部学习先验与系统成像模型纳入可解释恢复网络？",
+        "datasets": "摘要报告仿真及硬件实验；数据集、掩模、训练划分和硬件协议待查。",
+        "experimentSetting": "摘要与原文第4页图/局部说明已核验；完整参数和指标待查。",
+        "conclusions": "作者摘要报告优于所比较方法；具体性能数字与完整协议尚未独立复核。",
+        "limitations": "观测或配对假设、跨传感器泛化、训练/适配成本与复现条件待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_DNU_Deep_Non-Local_Unrolling_for_Computational_Spectral_Imaging_CVPR_2020_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与完整BibTeX；非阅读全文",
+            "supports": [
+              "DNU: Deep Non-Local Unrolling for Computational Spectral Imaging",
+              "Lizhi Wang, Chen Sun, Maoqing Zhang, Ying Fu, Hua Huang",
+              "CVPR2020",
+              "把自适应局部与非局部先验作为正则，并利用感知矩阵结构展开递归恢复网络，端到端学习网络参数。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=DNU%3A+Deep+Non-Local+Unrolling+for+Computational+Spectral+Imaging&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位；非年度/主题全量",
+            "supports": [
+              "DOI 10.1109/cvpr42600.2020.00173；精确题名、作者顺序与2020年一致；页码1658-1668"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_DNU_Deep_Non-Local_Unrolling_for_Computational_Spectral_Imaging_CVPR_2020_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第4页原图及局部说明；非阅读全文",
+            "supports": [
+              "Figure 4",
+              "多递归恢复网络，包含光谱先验、系统矩阵相关线性连接及观测残差。",
+              "已读官方摘要与注明局部原图/说明；未阅读全文。代码/数据与完整实验协议、预印本关系待核验。论文参考文献[1]仅指向作者GitHub主页，尚未定位该论文仓库。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dnu-2020-cvpr2020",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_DNU_Deep_Non-Local_Unrolling_for_Computational_Spectral_Imaging_CVPR_2020_paper.html",
+            "year": 2020,
+            "doi": "10.1109/cvpr42600.2020.00173",
+            "relation": "采用CVPR2020出版事实；其他出版版、预印本及正文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "dnu-2020"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_DNU_Deep_Non-Local_Unrolling_for_Computational_Spectral_Imaging_CVPR_2020_paper.pdf",
+          "figureLabel": "Figure 4",
+          "caption": "多递归恢复网络，包含光谱先验、系统矩阵相关线性连接及观测残差。",
+          "verificationNote": "同名CVPR2020原文第4页图及完整图注，PDF裁切未重绘。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              844,
+              196,
+              1524,
+              834
+            ]
+          },
+          "path": "figures/dnu-2020/framework.png",
+          "width": 680,
+          "height": 638,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "33c30a2de0586033931271a4e7ab888d1b3bcd264fbd39e07600502d9e6f1a4a",
+          "attribution": "Lizhi Wang, Chen Sun, Maoqing Zhang, Ying Fu, Hua Huang · CVPR 2020"
+        }
+      ]
+    },
+    {
+      "id": "pach-2020",
+      "shortTitle": "PACH",
+      "title": "Cross-Spectral Face Hallucination via Disentangling Independent Factors",
+      "authors": "Boyan Duan, Chaoyou Fu, Yi Li, Xingguang Song, Ran He",
+      "year": 2020,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr42600.2020.00795",
+      "representation": "PACH",
+      "tags": [
+        "cross-spectral-face-synthesis",
+        "multispectral-biometrics"
+      ],
+      "summary": "用UV映射引导无监督人脸对齐，再由纹理先验合成模块控制肤色并转换成可见光；光学通道为NIR/VIS，不是稠密HSI。",
+      "input": "近红外人脸、配对可见光人脸及姿态UV映射/纹理先验。",
+      "output": "形状对齐并转换后的可见光人脸；用于异质人脸识别。",
+      "mechanism": "用UV映射引导无监督人脸对齐，再由纹理先验合成模块控制肤色并转换成可见光；光学通道为NIR/VIS，不是稠密HSI。",
+      "readingNote": "已读官方摘要与注明局部原图/说明；未阅读全文。代码/数据与完整实验协议、预印本关系待核验。UV映射用于姿态引导，不将本工作加入场景三维专题。",
+      "paper": "https://openaccess.thecvf.com/content_CVPR_2020/html/Duan_Cross-Spectral_Face_Hallucination_via_Disentangling_Independent_Factors_CVPR_2020_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Duan_2020_CVPR,\nauthor = {Duan, Boyan and Fu, Chaoyou and Li, Yi and Song, Xingguang and He, Ran},\ntitle = {Cross-Spectral Face Hallucination via Disentangling Independent Factors},\nbooktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2020}\n}",
+      "library": {
+        "categoryIds": [
+          "cross-spectral-face-synthesis",
+          "multispectral-biometrics"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "NIR–VIS人脸转换与识别是关联多光谱研究；不代表稠密高光谱数据或几何重建。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何分开处理NIR–VIS人脸中的几何偏移与外观域差异？",
+        "datasets": "摘要报告三个NIR–VIS数据集；局部页提及CASIA NIR-VIS 2.0、Oulu-CASIA NIR-VIS及BUAA-VisNir。规模、划分、识别协议与许可待查。",
+        "experimentSetting": "摘要与原文第2页图/局部说明已核验；完整参数和指标待查。",
+        "conclusions": "作者摘要报告优于所比较方法；具体性能数字与完整协议尚未独立复核。",
+        "limitations": "观测或配对假设、跨传感器泛化、训练/适配成本与复现条件待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Duan_Cross-Spectral_Face_Hallucination_via_Disentangling_Independent_Factors_CVPR_2020_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与完整BibTeX；非阅读全文",
+            "supports": [
+              "Cross-Spectral Face Hallucination via Disentangling Independent Factors",
+              "Boyan Duan, Chaoyou Fu, Yi Li, Xingguang Song, Ran He",
+              "CVPR2020",
+              "用UV映射引导无监督人脸对齐，再由纹理先验合成模块控制肤色并转换成可见光；光学通道为NIR/VIS，不是稠密HSI。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Cross-Spectral+Face+Hallucination+via+Disentangling+Independent+Factors&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果定位；非年度/主题全量",
+            "supports": [
+              "DOI 10.1109/cvpr42600.2020.00795；精确题名、作者顺序与2020年一致；页码7927-7935"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Duan_Cross-Spectral_Face_Hallucination_via_Disentangling_Independent_Factors_CVPR_2020_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "PDF第2页原图及局部说明；非阅读全文",
+            "supports": [
+              "Figure 2",
+              "PACH的UFA姿态对齐与TPS纹理/可见光合成两阶段流程。",
+              "已读官方摘要与注明局部原图/说明；未阅读全文。代码/数据与完整实验协议、预印本关系待核验。UV映射用于姿态引导，不将本工作加入场景三维专题。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "pach-2020-cvpr2020",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Duan_Cross-Spectral_Face_Hallucination_via_Disentangling_Independent_Factors_CVPR_2020_paper.html",
+            "year": 2020,
+            "doi": "10.1109/cvpr42600.2020.00795",
+            "relation": "采用CVPR2020出版事实；其他出版版、预印本及正文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "pach-2020"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Duan_Cross-Spectral_Face_Hallucination_via_Disentangling_Independent_Factors_CVPR_2020_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "PACH的UFA姿态对齐与TPS纹理/可见光合成两阶段流程。",
+          "verificationNote": "同名CVPR2020原文第2页图及完整图注，PDF裁切未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              189,
+              1524,
+              721
+            ]
+          },
+          "path": "figures/pach-2020/framework.png",
+          "width": 1398,
+          "height": 532,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "59c969e22c15f89de1480d370175752373f1306acbffb1de9569a04728f4ee34",
+          "attribution": "Boyan Duan, Chaoyou Fu, Yi Li, Xingguang Song, Ran He · CVPR 2020"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -23568,7 +23977,8 @@
         "dltr-2019",
         "dssp-2019",
         "random-printed-mask-2019",
-        "dispersive-blur-imager-2019"
+        "dispersive-blur-imager-2019",
+        "dnu-2020"
       ],
       "history": [
         {
@@ -23636,7 +24046,8 @@
         "csu-2015",
         "dbin-2019",
         "mhf-net-2019",
-        "optimized-rgb-sr-2019"
+        "optimized-rgb-sr-2019",
+        "ual-2020"
       ],
       "history": [
         {
@@ -23702,7 +24113,8 @@
         "dgsm-sci-2021",
         "multispectral-illumination-unrolling-2021",
         "mhf-net-2019",
-        "dssp-2019"
+        "dssp-2019",
+        "dnu-2020"
       ],
       "history": [
         {
@@ -24461,7 +24873,8 @@
         "nlstf-2017",
         "assdl-denoising-2015",
         "dltr-2019",
-        "ngmeet-2019"
+        "ngmeet-2019",
+        "dnu-2020"
       ],
       "history": [
         {
@@ -24732,7 +25145,8 @@
       "createdAt": "2026-10-08",
       "rationale": "依据ICCV2019官方摘要及原方法图形成，后续全文阅读复核范围。",
       "evidencePaperIds": [
-        "dbin-2019"
+        "dbin-2019",
+        "ual-2020"
       ],
       "history": [
         {
@@ -24912,13 +25326,54 @@
       "createdAt": "2026-10-08",
       "rationale": "CVPR2019官方摘要与原文局部图核验后形成，范围待持续阅读复核。",
       "evidencePaperIds": [
-        "multispectral-skin-id-2019"
+        "multispectral-skin-id-2019",
+        "pach-2020"
       ],
       "history": [
         {
           "date": "2026-10-08",
           "action": "created",
           "reason": "新增论文明确机制/任务/应用，不预设固定类别。"
+        }
+      ]
+    },
+    {
+      "id": "image-specific-prior-adaptation",
+      "name": "图像特定先验适配",
+      "dimension": "method",
+      "definition": "将预训练先验适配当前光谱观测，并可联合估计退化；监督预训练与无监督适配阶段必须分开记录。",
+      "status": "provisional",
+      "color": "#b6c6da",
+      "createdAt": "2026-10-08",
+      "rationale": "CVPR2020官方摘要与原方法图明确适配或跨谱合成任务，后续全文复核范围。",
+      "evidencePaperIds": [
+        "ual-2020"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "有摘要与原图依据，不将部分无监督等同完整无监督。"
+        }
+      ]
+    },
+    {
+      "id": "cross-spectral-face-synthesis",
+      "name": "跨光谱人脸合成",
+      "dimension": "task",
+      "definition": "在NIR/VIS等光学通道间合成人脸外观并处理形状偏移，记录输入通道与下游识别关系。",
+      "status": "provisional",
+      "color": "#b6c6da",
+      "createdAt": "2026-10-08",
+      "rationale": "CVPR2020官方摘要与原方法图明确适配或跨谱合成任务，后续全文复核范围。",
+      "evidencePaperIds": [
+        "pach-2020"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "有摘要与原图依据，不将部分无监督等同完整无监督。"
         }
       ]
     }

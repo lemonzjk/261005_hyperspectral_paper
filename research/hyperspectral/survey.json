@@ -1456,13 +1456,74 @@
       "pagination": "仅指定候选；非年度目录或主题全量",
       "titleCount": 1,
       "candidateCount": 1,
-      "reviewedCount": 0,
-      "status": "targeted_metadata_pending",
-      "statusLabel": "期刊关联候选；2020登记年不作为已证实正式年",
+      "reviewedCount": 1,
+      "status": "targeted_version_relation_reviewed",
+      "statusLabel": "原文扩展关系确认并按方法族关联接受稿；正式出版元数据待核验",
       "gaps": [
-        "Crossref相关期刊记录题名为Integrated，另发现arXiv2010.12921题名为Iterative且作者扩展。登记2020不作为正式卷期年；关系、最终题名、作者与正式发表年待原文核验，不直接归并。",
-        "完整年度与其他研究问题未检索"
+        "接受稿与正式版最终题名、作者、卷期年、页码及实验差异待查",
+        "2020仅预印本提交年；完整年度与其他研究问题未检索"
       ]
+    },
+    {
+      "id": "cvpr-2020-title-optical-terms",
+      "venue": "CVPR",
+      "year": 2020,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T22:33:16.458024+00:00",
+      "method": "官方年度目录逐题名关键词扫描，再逐篇核验命中摘要",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "multi-spectral",
+        "spectral",
+        "spectrum"
+      ],
+      "url": "https://openaccess.thecvf.com/CVPR2020?day=all",
+      "pagination": "day=all 无题名；读取官方入口并遍历其全部日目录，按原文 URL 去重；无条数截断",
+      "titleCount": 1466,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "三日1466题名；五关键词五命中均审查官方摘要/局部页；年度领域覆盖未完成",
+      "gaps": [
+        "其他任务词、全量摘要和引文发现待查",
+        "浏览器访问失败，直接HTTP获得三日目录、五摘要与三原文PDF",
+        "全部摘要/局部页，全文实验、预印本关系和资源运行/许可待查；UAL预训练/适配监督边界已区分"
+      ],
+      "directoryPages": [
+        {
+          "url": "https://openaccess.thecvf.com/CVPR2020?day=all",
+          "queriedAt": "2026-10-07T22:33:17.486374+00:00",
+          "htmlSha256": "21eec48e144aaee1d34537c1986697514b013356a51f89b3eaac8f067a9a3741",
+          "titleCount": 0
+        },
+        {
+          "url": "https://openaccess.thecvf.com/CVPR2020",
+          "queriedAt": "2026-10-07T22:33:18.509089+00:00",
+          "htmlSha256": "cd51baedf258b47be5c8125ea582b2337eda8bf49fd31d659879bbf83ac546fe",
+          "titleCount": 0
+        },
+        {
+          "url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-16",
+          "queriedAt": "2026-10-07T22:33:20.851361+00:00",
+          "htmlSha256": "57975bf59819520d60a46210e17146e7a519d0783412f14900ffeb7d58bf49bc",
+          "titleCount": 483
+        },
+        {
+          "url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-17",
+          "queriedAt": "2026-10-07T22:33:23.192521+00:00",
+          "htmlSha256": "63d4130f6d805a62b5cc226b87b2876504ddc398f8084eead0d7782739393576",
+          "titleCount": 480
+        },
+        {
+          "url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-18",
+          "queriedAt": "2026-10-07T22:33:25.689066+00:00",
+          "htmlSha256": "e97ffae30a4c2f0db5d1d833e219f4c65cfb89703c8bf2a7d4d9bd79e4571bc1",
+          "titleCount": 503
+        }
+      ],
+      "sourceSnapshot": "sources/cvpr-2020-all-titles.json",
+      "htmlSha256": "21eec48e144aaee1d34537c1986697514b013356a51f89b3eaac8f067a9a3741",
+      "candidateCount": 5,
+      "reviewedCount": 5
     }
   ],
   "candidates": [
@@ -3491,11 +3552,76 @@
       "year": 2020,
       "discoveredAt": "2026-10-08",
       "searchId": "ngmeet-tpami-related-publication",
-      "decision": "pending",
-      "reason": "Crossref相关期刊记录题名为Integrated，另发现arXiv2010.12921题名为Iterative且作者扩展。登记2020不作为正式卷期年；关系、最终题名、作者与正式发表年待原文核验，不直接归并。",
-      "evidencePath": "research/hyperspectral/sources/crossref-ngmeet-cvpr2019-title.json",
+      "decision": "duplicate",
+      "reason": "arXiv接受稿明确扩展会议，作为原方法族版本关联；提交年2020不作为正式卷期年；Crossref题名/页码冲突与最终出版事实仍待核验。",
+      "evidencePath": "research/hyperspectral/sources/ngmeet-journal-extension-selected-pages.json",
       "relatedPaperId": "ngmeet-2019",
-      "metadataNote": "同DOI登记内容存在题名/年份待核验；不将arXiv2010.12921加入已确认版本。"
+      "metadataNote": "接受稿原题名Iterative、七作者，与早期Crossref Integrated有差异；不将版本数量当新方法。",
+      "paperId": "ngmeet-2019",
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "title": "Unsupervised Adaptation Learning for Hyperspectral Imagery Super-Resolution",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Zhang_Unsupervised_Adaptation_Learning_for_Hyperspectral_Imagery_Super-Resolution_CVPR_2020_paper.html",
+      "venue": "CVPR",
+      "year": 2020,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2020-title-optical-terms",
+      "decision": "included",
+      "reason": "直接研究空间–波长高光谱恢复；普通高光谱新增不进入三维专题。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Zhang_Unsupervised_Adaptation_Learning_for_Hyperspectral_Imagery_Super-Resolution_CVPR_2020_paper.json",
+      "paperId": "ual-2020"
+    },
+    {
+      "title": "DNU: Deep Non-Local Unrolling for Computational Spectral Imaging",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_DNU_Deep_Non-Local_Unrolling_for_Computational_Spectral_Imaging_CVPR_2020_paper.html",
+      "venue": "CVPR",
+      "year": 2020,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2020-title-optical-terms",
+      "decision": "included",
+      "reason": "直接研究空间–波长高光谱恢复；普通高光谱新增不进入三维专题。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Wang_DNU_Deep_Non-Local_Unrolling_for_Computational_Spectral_Imaging_CVPR_2020_paper.json",
+      "paperId": "dnu-2020"
+    },
+    {
+      "title": "Watch Your Up-Convolution: CNN Based Generative Deep Neural Networks Are Failing to Reproduce Spectral Distributions",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Durall_Watch_Your_Up-Convolution_CNN_Based_Generative_Deep_Neural_Networks_Are_CVPR_2020_paper.html",
+      "venue": "CVPR",
+      "year": 2020,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2020-title-optical-terms",
+      "decision": "excluded",
+      "reason": "上卷积的自然图像频率谱失真，非光学波长信息。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Durall_Watch_Your_Up-Convolution_CNN_Based_Generative_Deep_Neural_Networks_Are_CVPR_2020_paper.json"
+    },
+    {
+      "title": "Cross-Spectral Face Hallucination via Disentangling Independent Factors",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Duan_Cross-Spectral_Face_Hallucination_via_Disentangling_Independent_Factors_CVPR_2020_paper.html",
+      "venue": "CVPR",
+      "year": 2020,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2020-title-optical-terms",
+      "decision": "included",
+      "reason": "NIR–VIS人脸转换与识别是关联多光谱研究；不代表稠密高光谱数据或几何重建。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Duan_Cross-Spectral_Face_Hallucination_via_Disentangling_Independent_Factors_CVPR_2020_paper.json",
+      "paperId": "pach-2020"
+    },
+    {
+      "title": "Shape correspondence using anisotropic Chebyshev spectral CNNs",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Li_Shape_correspondence_using_anisotropic_Chebyshev_spectral_CNNs_CVPR_2020_paper.html",
+      "venue": "CVPR",
+      "year": 2020,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2020-title-optical-terms",
+      "decision": "excluded",
+      "reason": "形状Laplace–Beltrami谱与Chebyshev图卷积，非光学高光谱。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Li_Shape_correspondence_using_anisotropic_Chebyshev_spectral_CNNs_CVPR_2020_paper.json"
     }
   ],
   "batches": [
@@ -3906,6 +4032,42 @@
         "两个Crossref题名查询429，降低并发重试200；只用于元数据定位",
         "NGmeet仓库未识别许可；推测MHF-net仓库404不记为已证实官方代码；其他资源与数据许可待查",
         "两文献共三个arXiv版本日期已核验；全文差异及相关期刊关系待查；全部不计阅读全文"
+      ]
+    },
+    {
+      "id": "cvpr-2020-optical-keywords",
+      "date": "2026-10-08",
+      "searchIds": [
+        "cvpr-2020-title-optical-terms"
+      ],
+      "new": 3,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 2,
+      "pending": 0,
+      "categoriesAdded": 2,
+      "readingBoundary": "五命中闭环；三篇DOI与原图/完整作者核验；PACH关联NIR–VIS。UAL监督预训练与无监督适配、给定谱响应与未知空间退化单独记录。非阅读全文。",
+      "gaps": [
+        "其他任务词、全量摘要和引文发现待查",
+        "浏览器访问失败，直接HTTP获得三日目录、五摘要与三原文PDF",
+        "全部摘要/局部页，全文实验、预印本关系和资源运行/许可待查；UAL预训练/适配监督边界已区分"
+      ]
+    },
+    {
+      "id": "ngmeet-journal-accepted-relation",
+      "date": "2026-10-08",
+      "searchIds": [
+        "ngmeet-tpami-related-publication"
+      ],
+      "new": 0,
+      "updated": 1,
+      "duplicates": 1,
+      "excluded": 0,
+      "pending": 0,
+      "categoriesAdded": 0,
+      "readingBoundary": "接受稿1–3页与17页明确扩展会议，增加恢复任务并保留七作者；v1日期和Accepted to TPAMI来自官方arXiv。只关联版本，不推定正式出版年。非阅读全文。",
+      "gaps": [
+        "正式卷期年、最终题名、最终版与接受稿实验差异待查"
       ]
     }
   ],
