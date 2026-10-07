@@ -139,20 +139,36 @@ for (const paper of libraryPapers) {
 }
 // Detect cross-entry versions before their counts can be mistaken for separate methods.
 const normalizeTitle = value => value.normalize('NFKD').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-const identityIndex = new Map();
-for (const paper of catalog.papers) {
-  const arxiv = paper.paper.match(/arxiv\.org\/(?:abs|pdf)\/(\d{4}\.\d{4,5})/i)?.[1];
-  const keys = new Set([
-    'title:' + normalizeTitle(paper.title),
-    ...(paper.doi ? ['doi:' + paper.doi.toLowerCase()] : []),
-    ...[arxiv, ...(paper.library?.versions ?? []).map(version => version.arxivId)].filter(Boolean).map(id => 'arxiv:' + id),
-  ]);
-  for (const key of keys) {
-    const previous = identityIndex.get(key);
-    if (previous && previous.id !== paper.id) assert.equal(previous.library?.methodFamilyId, paper.library?.methodFamilyId, `Duplicate identity needs explicit method-family association: ${previous.id}/${paper.id}/${key}`);
-    identityIndex.set(key, paper);
+function assertDistinctMethods(papers) {
+  const identityIndex = new Map();
+  for (const paper of papers) {
+    const arxiv = paper.paper.match(/arxiv\.org\/(?:abs|pdf)\/(\d{4}\.\d{4,5})/i)?.[1];
+    const versionDois = (paper.library?.versions ?? []).map(version => {
+      const url = new URL(version.url);
+      return version.doi || (url.hostname === 'doi.org' ? decodeURIComponent(url.pathname.slice(1)) : undefined);
+    });
+    const keys = new Set([
+      'title:' + normalizeTitle(paper.title),
+      ...[paper.doi, ...versionDois].filter(Boolean).map(doi => 'doi:' + doi.toLowerCase()),
+      ...[arxiv, ...(paper.library?.versions ?? []).map(version => version.arxivId)].filter(Boolean).map(id => 'arxiv:' + id),
+    ]);
+    for (const key of keys) {
+      const previous = identityIndex.get(key);
+      if (previous && previous.id !== paper.id) {
+        assert(previous.library?.methodFamilyId && paper.library?.methodFamilyId, `Duplicate identity needs explicit method-family association: ${key}`);
+        assert.equal(previous.library.methodFamilyId, paper.library.methodFamilyId, `Duplicate identity needs explicit method-family association: ${previous.id}/${paper.id}/${key}`);
+      }
+      identityIndex.set(key, paper);
+    }
   }
 }
+assertDistinctMethods(catalog.papers);
+// An earlier publication's DOI must collide with its linked journal method,
+// even when the earlier DOI exists only in a version URL.
+const versionParent = { id: 'journal', title: 'Journal method', paper: 'https://example.org/journal', library: { methodFamilyId: 'linked', versions: [{ url: 'https://doi.org/10.1117/12.734058' }] } };
+const versionChild = { id: 'conference', title: 'Earlier title', paper: 'https://example.org/conference', doi: '10.1117/12.734058', library: { methodFamilyId: 'unlinked', versions: [] } };
+assert.throws(() => assertDistinctMethods([versionParent, versionChild]), /Duplicate identity/);
+assertDistinctMethods([versionParent, { ...versionChild, library: { ...versionChild.library, methodFamilyId: 'linked' } }]);
 console.log('Identity audit valid: normalized titles, DOIs, arXiv IDs and explicit version families.');
 
 // Test union semantics, counts independent of category selection, URL roundtrip, and SVG coverage.

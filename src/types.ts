@@ -38,6 +38,7 @@ export interface LibraryNotes {
   conclusions: string; limitations: string; dataLinks: string[];
   evidence: { url: string; checkedAt: string; level: string; supports: string[] }[];
   versions: { id: string; type: string; url: string; year: number; relation: string;
+    doi?: string;
     arxivId?: string; arxivVersion?: string; firstSubmittedAt?: string; updatedAt?: string;
     metadataStatus?: string }[];
   methodFamilyId: string;

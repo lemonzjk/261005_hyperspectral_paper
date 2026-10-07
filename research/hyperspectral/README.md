@@ -21,6 +21,7 @@
 ```bash
 python research/hyperspectral/discover.py CVPR 2022
 python research/hyperspectral/discover.py NeurIPS 2023
+python research/hyperspectral/crossref-inventory.py "Optics Letters" 0146-9592 2007
 python research/hyperspectral/coverage.py
 npm run validate
 npm run build
@@ -29,6 +30,10 @@ npm run build
 目录扫描存每个题名、官方链接、原网页 SHA-256、实际获取时间和分页方式。当前标题关键词为 hyperspectral、multispectral、multi-spectral、spectral、spectrum。仅完成该组题名扫描，不代表其他任务词、全量摘要或引用链完成。其他场所、年份、关键词组在 `venuePlan` 与 `matrixDefinition` 继续推进。重复扫描保留已审决定；失败记录原因，继续可访问来源；已有成功证据不会被一次重试失败覆盖。
 
 每个候选记录 `searchId`、`decision`、理由、核验日期、证据路径和收录 ID。`included`、`excluded`、`duplicate`、`pending` 四种决定均留痕。仅发现题名的候选不会自动进入网站。按 DOI、arXiv ID、规范化题名与作者交叉去重；正式版和预印本以 `versions` 关联，`methodFamilyId` 标识方法族。未经确认的版本号、首次提交和更新日期明确记为待核验；不混入会议版实验事实。
+
+`crossref-inventory.py` 逐游标获取一个 ISSN 的登记出版日期年度集合，要求不同 DOI 数与稳定的登记总数一致；保存各页实际时间、条数和响应哈希；`hashInput` 区分原 HTTP 字节与重放时保存的 JSON 响应快照。它是出版社注册到 Crossref 的元数据集合，不能替代出版社全部卷期目录；漏登、日期变化或线上/卷期年份差异仍需交叉核验。命中词目前为 hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral。`--response-files` 可重放已经保存的 API 响应；未审决定不会被重放覆盖。
+
+版本 DOI 可以显式写 `versions[].doi`，也会从 doi.org 版本 URL 参与跨条目去重。校验包含前序会议 DOI 与期刊条目版本 URL 相撞的反例：必须有明确且相同的方法族才能保留关联条目。未获得的实验内容继续按版本分别留为未知。
 
 ## 每批闭环
 
@@ -48,3 +53,5 @@ VCA 保存原文第 3 页 Fig. 1；OSP 共七页的图版只含数据与结果�
 后续基础批次已闭环 MNF 与 Craig 两个候选，并新增 FCLS：MNF 原文为多光谱数据，Craig 出版社摘要也为多光谱线性混合；两者以 VCA 原文明确引用的高光谱基础方法关系收录，`relation: foundation`。MNF 原文十个图注均为输入或结果，未见独立框架；Craig PDF 仍受访问限制。FCLS 经精确题名和独立 Crossref 元数据核对，正确 DOI 为 `10.1109/36.911111`，与作者原文卷期页码一致；此前猜测的 `10.1109/36.911160` 返回 404，不进入目录。保存第 8 页原始 UFCLS 算法伪代码，明确其为 FCLS 的无监督扩展，未冒充独立编号框架图。三篇仍为摘要已读；完整实验、版本及代码数据待复核。总库现有 231 条目、18 个暂定标签；后续继续其他关键词组、年份、场所与早期引文，不按数量结束。
 
 Hyper-Skin 的官方网页/PDF 摘要写 330 个立方体，但 PDF 第 4 页采集正文写 306，数量尚未一致核验，目录与覆盖表保留两处证据。数据请求流程与代码许可、数据许可分开核验，不将资源入口当作已下载数据。
+
+光学批次完整取回 Optics Letters 2007 Crossref 登记的 1,141 个 DOI（两页 1,000/141），六个成像任务词命中的四个候选中，动态光谱变焦与 UV 高光谱 FLIM 收录、多光谱光声成像按当前缺少明确高光谱联系排除；三篇已读官方摘要。光波形功率谱缩放条目只取得登记题名，按研究对象暂排除，没有将其写成已读摘要；未来原文证据可重审。另定向收录 Optics Express 2007 DD-CASSI 与 Applied Optics 2008 SD-CASSI，各保存原文 Fig. 1。SD-CASSI 的 SPIE 2007 单色散前序稿由 Crossref 和作者机构摘要关联，版本差异仍待全文比对，不计为独立方法。动态变焦标为多光谱关联；UV FLIM、DD/SD-CASSI 标直接高光谱对象，均未阅读全文。新增仪器设计、自适应采集、荧光显微三个暂定标签。总库当前 235 条目、21 个暂定标签；出版社完整年度目录及其他任务词仍有缺口。

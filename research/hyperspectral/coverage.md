@@ -18,6 +18,9 @@
 | TGRS | 2005 | Vertex Component Analysis: A Fast Algorithm to Unmix Hyperspectral Data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
 | TGRS | 2008 | Hyperspectral Subspace Identification；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
 | TGRS | 2001 | Fully constrained least squares linear spectral mixture analysis method for material quantification in hyperspectral imagery、FCLS、UFCLS；定向题名检索与 DOI 核对；Crossref 题名返回前三项，不代表完整年度或主题检索 | 1 / 1 / 1 | 定向主题核验完成；年度全量目录未检索 | 该年度全部目录、其他关键词及完整引文尚未检索；全文实验、代码数据、早期会议版本待核验 |
+| Optics Letters | 2007 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，2 页；1141 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 1141 / 4 / 4 | Crossref 登记题名扫描完成，4 候选已处理（3 摘要、1 题名）；出版社年度覆盖未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成 |
+| Optics Express | 2007 | Single-shot compressive spectral imaging with a dual-disperser architecture、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
+| Applied Optics | 2008 | Single disperser design for coded aperture snapshot spectral imaging、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -57,12 +60,12 @@
 | Light: Science & Applications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Laser & Photonics Reviews | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Photonics Research | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| Optics Letters | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| Optics Letters | journal | 最早可用目录至 2026 | 2007 Crossref 登记题名成像任务词扫描及 4 候选处理；出版社全量目录未证明 |
 | Nature Communications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Nature Methods | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | arXiv | preprint | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| Optics Express | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| Applied Optics | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| Optics Express | specialist_journal | 最早可用目录至 2026 | 2007 DD-CASSI 定向核验；年度全量仍未检索 |
+| Applied Optics | specialist_journal | 最早可用目录至 2026 | 2008 SD-CASSI 与 2007 SPIE 前序稿定向核验；年度全量仍未检索 |
 | Remote Sensing | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | JSTARS | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | CVPR Workshops | workshop | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -81,6 +84,8 @@
   阅读边界：VCA、OSP 摘要和局部方法/数据页；HySime 机构摘要与出版元数据。没有阅读全文。定向查找涉及 1988/1994/2005/2008，不代表年度系统检索。
 - 2026-10-08 / tgrs-foundations-and-fcls：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：MNF 原文摘要及局部图注；Craig 出版社索引摘要及 VCA 引文；FCLS 原文摘要、局部算法/数据说明。没有阅读全文。前批两个待核验候选已收录。
+- 2026-10-08 / optical-2007-2008-imaging：新增 4，更新 0，去重 0，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：OL 2007 Crossref 登记 1141 条按六成像任务词扫描；四命中中三篇读官方摘要、一篇只按题名暂排除。两篇 CASSI 定向核验原文摘要与局部系统图，仍非全文阅读；SPIE 前序稿单列版本不计方法数。
 
 ## 未解决缺口
 
@@ -91,3 +96,4 @@
 - 既有 214 篇总库关系、分类及阅读进度待复核
 - Hyper-Skin 网页摘要 330 与官方 PDF 采集正文 306 数量不一致，待作者或发布数据核验。
 - TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。
+- 光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。

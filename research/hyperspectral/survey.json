@@ -50,6 +50,18 @@
           "hyperspectral agriculture"
         ],
         "status": "planned"
+      },
+      {
+        "id": "optical-imaging-title",
+        "keywords": [
+          "hyperspectral",
+          "multispectral",
+          "spectral imaging",
+          "coded aperture",
+          "compressive imaging",
+          "compressive spectral"
+        ],
+        "status": "active"
       }
     ]
   },
@@ -331,7 +343,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "尚未独立系统检索；见上方已执行年度记录"
+      "statusLabel": "2007 Crossref 登记题名成像任务词扫描及 4 候选处理；出版社全量目录未证明"
     },
     {
       "id": "nature-communications",
@@ -367,7 +379,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "尚未独立系统检索；见上方已执行年度记录"
+      "statusLabel": "2007 DD-CASSI 定向核验；年度全量仍未检索"
     },
     {
       "id": "applied-optics",
@@ -376,7 +388,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "尚未独立系统检索；见上方已执行年度记录"
+      "statusLabel": "2008 SD-CASSI 与 2007 SPIE 前序稿定向核验；年度全量仍未检索"
     },
     {
       "id": "remote-sensing",
@@ -662,6 +674,88 @@
       ],
       "sourceSnapshot": "sources/fcls-title-crossref-query.json",
       "htmlSha256": "b4ff9349a299a97b410c71da9769bfa269f487aee13183c7784db84ad42792af"
+    },
+    {
+      "id": "optics-letters-2007-crossref-imaging-terms",
+      "venue": "Optics Letters",
+      "year": 2007,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T16:57:27.523010+00:00",
+      "method": "Crossref 出版社登记元数据年度集合，按游标完整分页并逐题名扫描成像任务词",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "spectral imaging",
+        "coded aperture",
+        "compressive imaging",
+        "compressive spectral"
+      ],
+      "url": "https://api.crossref.org/journals/0146-9592/works",
+      "pagination": "rows=1000，2 页；1141 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验",
+      "titleCount": 1141,
+      "candidateCount": 4,
+      "reviewedCount": 4,
+      "status": "metadata_title_scan_complete",
+      "statusLabel": "Crossref 登记题名扫描完成，4 候选已处理（3 摘要、1 题名）；出版社年度覆盖未证明",
+      "sourceSnapshot": "sources/optics-letters-2007-crossref-titles.json",
+      "htmlSha256": "ab04eaf1f4294dfd983aa2e1ce7ea7e63cb1d13707694bea1fc229b807ef0345",
+      "gaps": [
+        "Crossref 未登记论文及出版日期/卷期年度差异尚未核对",
+        "出版社全部目录、全量摘要、其他关键词和引文尚未完成"
+      ],
+      "keywordGroup": "optical-imaging-title"
+    },
+    {
+      "id": "dd-cassi-2007-targeted-optical-review",
+      "venue": "Optics Express",
+      "year": 2007,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T17:05:58.755997+00:00",
+      "method": "精确题名检索、Crossref DOI 与原文核验；相关前序版本交叉追踪",
+      "keywords": [
+        "Single-shot compressive spectral imaging with a dual-disperser architecture",
+        "coded aperture",
+        "compressive spectral"
+      ],
+      "url": "https://pdfs.semanticscholar.org/8282/e1c9e75db4f6f4c79ecea1333f9edea3b493.pdf",
+      "pagination": "定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "targeted_topic_review",
+      "statusLabel": "CASSI 定向核验；年度全量目录未检索",
+      "gaps": [
+        "完整年度目录、其他任务词和引文链待检索",
+        "全文实验、代码数据及其他版本待核验"
+      ],
+      "sourceSnapshot": "sources/dd-cassi-2007-review.json",
+      "htmlSha256": "45194c9ce7acd7a5dd92aa0a186994f3cf4d109b59dae5881630402d2215a18d"
+    },
+    {
+      "id": "sd-cassi-2008-targeted-optical-review",
+      "venue": "Applied Optics",
+      "year": 2008,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T17:05:58.758365+00:00",
+      "method": "精确题名检索、Crossref DOI 与原文核验；相关前序版本交叉追踪",
+      "keywords": [
+        "Single disperser design for coded aperture snapshot spectral imaging",
+        "coded aperture",
+        "compressive spectral"
+      ],
+      "url": "https://www.ee.technion.ac.il/people/tomermic/SamplingCourse/Wagadarikar2008.pdf",
+      "pagination": "定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "targeted_topic_review",
+      "statusLabel": "CASSI 定向核验；年度全量目录未检索",
+      "gaps": [
+        "完整年度目录、其他任务词和引文链待检索",
+        "全文实验、代码数据及其他版本待核验"
+      ],
+      "sourceSnapshot": "sources/sd-cassi-2008-review.json",
+      "htmlSha256": "695b96eec825aa4d7923c09f70e5e6273fcc64b5c6bcdee42e25690491f7e1a9"
     }
   ],
   "candidates": [
@@ -1476,6 +1570,82 @@
       "paperId": "fcls-2001",
       "reviewedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/fcls-2001-review.json"
+    },
+    {
+      "title": "Dynamic spectral imaging with spectral zooming capability",
+      "url": "https://doi.org/10.1364/ol.32.001518",
+      "venue": "Optics Letters",
+      "year": 2007,
+      "searchId": "optics-letters-2007-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原摘要明确空间—光谱图像数据立方体与 9–50 nm 窄/宽波段采集，关联高光谱成像的波段选择和可调分辨率。以多光谱关联标注，不推定为同时稠密全谱采集。",
+      "paperId": "spectral-zoom-2007",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/ol-2007-1518-publisher.json"
+    },
+    {
+      "title": "Multispectral photoacoustic imaging of fluorochromes in small animals",
+      "url": "https://doi.org/10.1364/ol.32.002891",
+      "venue": "Optics Letters",
+      "year": 2007,
+      "searchId": "optics-letters-2007-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "出版社摘要为多光谱光声小动物荧光团成像，当前未建立光学高光谱图像或明确高光谱方法联系；按当前证据排除，后续关系证据可重审。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/ol-2007-2891-publisher.json"
+    },
+    {
+      "title": "Spectral imaging system for scaling the power spectrum of optical waveforms",
+      "url": "https://doi.org/10.1364/ol.32.002849",
+      "venue": "Optics Letters",
+      "year": 2007,
+      "searchId": "optics-letters-2007-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "登记题名明确为光波形功率谱缩放；当前未证明空间—波长光学高光谱对象。仅题名范围筛选，摘要未取得，按现有证据暂排除并允许重审。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/ol-2007-2849-publisher.json"
+    },
+    {
+      "title": "Excitation-resolved hyperspectral fluorescence lifetime imaging using a UV-extended supercontinuum source",
+      "url": "https://doi.org/10.1364/ol.32.003408",
+      "venue": "Optics Letters",
+      "year": 2007,
+      "searchId": "optics-letters-2007-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原始出版社摘要明确为 hyperspectral fluorescence lifetime imaging；研究光学波长维与荧光衰减，而不是一般时间频谱。",
+      "paperId": "uv-hyperspectral-flim-2007",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/ol-2007-3408-publisher.json"
+    },
+    {
+      "url": "https://doi.org/10.1364/oe.15.014013",
+      "title": "Single-shot compressive spectral imaging with a dual-disperser architecture",
+      "venue": "Optics Express",
+      "year": 2007,
+      "discoveredAt": "2026-10-08",
+      "searchId": "dd-cassi-2007-targeted-optical-review",
+      "decision": "included",
+      "reason": "原文与单色散 CASSI 后续原文明确讨论高光谱数据立方体及重建；二维空间加波长轴不等于真实三维几何。",
+      "paperId": "dd-cassi-2007",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/dd-cassi-2007-review.json"
+    },
+    {
+      "url": "https://doi.org/10.1364/ao.47.000b44",
+      "title": "Single disperser design for coded aperture snapshot spectral imaging",
+      "venue": "Applied Optics",
+      "year": 2008,
+      "discoveredAt": "2026-10-08",
+      "searchId": "sd-cassi-2008-targeted-optical-review",
+      "decision": "included",
+      "reason": "原文第 2 页明确讨论高光谱 CASSI 数据立方体与 DD/SD 区别；保留单色散和双色散两个独立架构条目，不把前序会议稿算成新方法。",
+      "paperId": "sd-cassi-2008",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/sd-cassi-2008-review.json"
     }
   ],
   "batches": [
@@ -1600,6 +1770,28 @@
         "MNF 图注为输入与结果，无独立框架图",
         "全文实验、数据/代码许可及版本待复核"
       ]
+    },
+    {
+      "id": "optical-2007-2008-imaging",
+      "date": "2026-10-08",
+      "searchIds": [
+        "optics-letters-2007-crossref-imaging-terms",
+        "dd-cassi-2007-targeted-optical-review",
+        "sd-cassi-2008-targeted-optical-review"
+      ],
+      "new": 4,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 2,
+      "pending": 0,
+      "categoriesAdded": 3,
+      "readingBoundary": "OL 2007 Crossref 登记 1141 条按六成像任务词扫描；四命中中三篇读官方摘要、一篇只按题名暂排除。两篇 CASSI 定向核验原文摘要与局部系统图，仍非全文阅读；SPIE 前序稿单列版本不计方法数。",
+      "gaps": [
+        "出版社年度目录与 Crossref 漏登/日期差异待核对",
+        "光波形条目官方摘要未取得，暂排除可重审",
+        "Dynamic Spectral Zoom 与 UV FLIM 原图未获得；官方 PDF 返回 HTML 验证页",
+        "新条目全文实验、代码数据许可与版本差异待复核"
+      ]
     }
   ],
   "gaps": [
@@ -1609,6 +1801,7 @@
     "arXiv 跨分类、版本号、首次提交和更新日期尚待逐篇核验",
     "既有 214 篇总库关系、分类及阅读进度待复核",
     "Hyper-Skin 网页摘要 330 与官方 PDF 采集正文 306 数量不一致，待作者或发布数据核验。",
-    "TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。"
+    "TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。",
+    "光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。"
   ]
 }
