@@ -489,20 +489,53 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
+        "categoryIds": [
+          "hyperspectral-light-field",
+          "spectral-instrument-design",
+          "computational-imaging",
+          "sparse-dictionary-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "研究空间、角度与波长组成的5D光场；角度轴与几何深度独立。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何由互补角度和光谱观测单次恢复完整高光谱光场？",
+        "datasets": "作者构建高光谱光场数据；数量、完整采集与开放状态待核验。",
+        "experimentSetting": "自学习字典利用角度和光谱相关；摘要报告9×9视角、27波段单次曝光，完整条件待核验。",
+        "conclusions": "作者摘要报告真实原型恢复5D光场；9×9视角/27波段为作者报告，未独立复核。",
+        "limitations": "严重欠采样、字典相关性和校准影响待全文核验。",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Xiong_Snapshot_Hyperspectral_Light_CVPR_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、会议年份",
+              "如何由互补角度和光谱观测单次恢复完整高光谱光场？",
+              "作者摘要报告真实原型恢复5D光场；9×9视角/27波段为作者报告，未独立复核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Snapshot+Hyperspectral+Light+Field+Imaging&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref题名、完整作者与会议年核验",
+            "supports": [
+              "会议DOI元数据；页码与CVF存在差异，未认定页码一致"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "snapshot-hlf-cvpr2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Xiong_Snapshot_Hyperspectral_Light_CVPR_2017_paper.html",
+            "year": 2017,
+            "relation": "采用CVPR2017正式版；预印本与扩展关系待核验。",
+            "doi": "10.1109/cvpr.2017.727"
+          }
+        ],
         "methodFamilyId": "snapshot-hlf"
       }
     },
@@ -19286,6 +19319,587 @@
           "attribution": "Ying Fu, Yinqiang Zheng, Imari Sato, Yoichi Sato · CVPR 2016"
         }
       ]
+    },
+    {
+      "id": "illuminant-design-2017",
+      "shortTitle": "Illuminant Design",
+      "title": "Designing Illuminant Spectral Power Distributions for Surface Classification",
+      "authors": "Henryk Blasinski, Joyce Farrell, Brian Wandell",
+      "year": 2017,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr.2017.287",
+      "representation": "Illuminant Design",
+      "tags": [
+        "spectral-material-detection",
+        "illumination-spectral-design"
+      ],
+      "summary": "监督优化分类器与照明，或以非负稀疏PCA选择照明光谱。",
+      "input": "表面光谱数据和可控照明/传感器响应",
+      "output": "优化照明光谱及表面分类结果",
+      "mechanism": "监督优化分类器与照明，或以非负稀疏PCA选择照明光谱。",
+      "readingNote": "已读官方摘要及注明局部原文；非阅读全文。DOI题名/作者/年份已核验，Crossref页码与CVF PDF页脚不同，各自保留，未认定一致。预印本、代码数据许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2017/html/Blasinski_Designing_Illuminant_Spectral_CVPR_2017_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Blasinski_2017_CVPR,\nauthor = {Blasinski, Henryk and Farrell, Joyce and Wandell, Brian},\ntitle = {Designing Illuminant Spectral Power Distributions for Surface Classification},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {July},\nyear = {2017}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-material-detection",
+          "illumination-spectral-design"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "foundation",
+        "relationNote": "优化波长照明进行表面分类；局部第3页明确说明足够多单色照明相当于取得完整高光谱表征，作为相关采集/分类方法收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何设计光谱照明，使单色传感器更有效分类表面？",
+        "datasets": "作者摘要为单色传感器与RGB分类比较；完整场景、数量和拆分待全文核验。",
+        "experimentSetting": "监督双凸优化交替更新SVM权重/照明，非监督采用非负稀疏PCA与ADMM；局部Algorithm2仅为PCA分支。",
+        "conclusions": "作者摘要报告优化照明分类收益；非监督和监督两分支分别记录，完整数字待复核。",
+        "limitations": "照明可控性、光源可实现性、训练表面分布与尺度条件待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Blasinski_Designing_Illuminant_Spectral_CVPR_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、会议年份",
+              "如何设计光谱照明，使单色传感器更有效分类表面？",
+              "作者摘要报告优化照明分类收益；非监督和监督两分支分别记录，完整数字待复核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Designing+Illuminant+Spectral+Power+Distributions+for+Surface+Classification&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref 精确题名/完整作者/正式年份核对；登记页码另存，与CVF页脚不同",
+            "supports": [
+              "DOI、题名、完整作者及2017年会议",
+              "Crossref登记页码2682-2691；CVF原PDF首页页脚2164，页码差异待核验"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Blasinski_Designing_Illuminant_Spectral_CVPR_2017_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF局部页码 3,5",
+            "supports": [
+              "Algorithm 2 — 非负稀疏 PCA",
+              "非监督照明选择分支的原算法，调用Algorithm1求方向；不代表监督SVM分支。",
+              "优化波长照明进行表面分类；局部第3页明确说明足够多单色照明相当于取得完整高光谱表征，作为相关采集/分类方法收录。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "illuminant-design-2017-cvpr2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Blasinski_Designing_Illuminant_Spectral_CVPR_2017_paper.html",
+            "year": 2017,
+            "relation": "采用CVPR2017正式版；预印本与扩展关系待核验。",
+            "doi": "10.1109/cvpr.2017.287"
+          }
+        ],
+        "methodFamilyId": "illuminant-design-2017"
+      },
+      "code": "https://github.com/hblasins/optIll",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Blasinski_Designing_Illuminant_Spectral_CVPR_2017_paper.pdf",
+          "figureLabel": "Algorithm 2 — 非负稀疏 PCA",
+          "page": 5,
+          "caption": "非监督照明选择分支的原算法，调用Algorithm1求方向；不代表监督SVM分支。",
+          "verificationNote": "人工核验原图/算法与完整图注；PDF裁切，未重绘。此算法仅为非监督分支。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              45,
+              240,
+              290,
+              388
+            ]
+          },
+          "path": "figures/illuminant-design-2017/framework.png",
+          "width": 490,
+          "height": 296,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "cfc68b879222344eeb58bf5434c882b046c9b7313aca77914bbf92dc13a83401",
+          "attribution": "Henryk Blasinski, Joyce Farrell, Brian Wandell · CVPR 2017"
+        }
+      ]
+    },
+    {
+      "id": "spectral-wetness-2017",
+      "shortTitle": "Spectral Wetness",
+      "title": "Wetness and Color From a Single Multispectral Image",
+      "authors": "Mihoko Shimano, Hiroki Okawa, Yuta Asano, Ryoma Bise, Ko Nishino, Imari Sato",
+      "year": 2017,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr.2017.42",
+      "representation": "Spectral Wetness",
+      "tags": [
+        "surface-wetness-analysis"
+      ],
+      "summary": "解析建模湿表面的多次散射、吸收与光谱锐化，估计湿度分布和干燥表面光谱。",
+      "input": "单幅多光谱湿表面图像",
+      "output": "表面湿度图及干燥表面光谱分布",
+      "mechanism": "解析建模湿表面的多次散射、吸收与光谱锐化，估计湿度分布和干燥表面光谱。",
+      "readingNote": "已读官方摘要及注明局部原文；非阅读全文。DOI题名/作者/年份已核验，Crossref页码与CVF PDF页脚不同，各自保留，未认定一致。预印本、代码数据许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2017/html/Shimano_Wetness_and_Color_CVPR_2017_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Shimano_2017_CVPR,\nauthor = {Shimano, Mihoko and Okawa, Hiroki and Asano, Yuta and Bise, Ryoma and Nishino, Ko and Sato, Imari},\ntitle = {Wetness and Color From a Single Multispectral Image},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {July},\nyear = {2017}\n}",
+      "library": {
+        "categoryIds": [
+          "surface-wetness-analysis"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "原文称多光谱；第6页NH-8相机400–950nm、5nm光谱分辨率明确密集波长观测联系，不与NIR-VIS两模态任务混同。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何从单幅波长图像同时估计表面湿度与干燥光谱颜色？",
+        "datasets": "局部第6页说明真实材料、表面点光谱/重量及NH-8图像；完整数量和拆分待全文核验。",
+        "experimentSetting": "分析多次散射与吸收导致的光谱锐化；交替优化参数。第6页说明NH-8 1280×1024、400–950nm、5nm光谱分辨率及白参考标定。",
+        "conclusions": "作者摘要报告真实湿表面验证及干燥颜色恢复；定量性能和适用液体边界待全文核验。",
+        "limitations": "局部第5页方法涉及干/饱和参考或相对选择；未建立所有材料和光照下的绝对湿度准确性。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Shimano_Wetness_and_Color_CVPR_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、会议年份",
+              "如何从单幅波长图像同时估计表面湿度与干燥光谱颜色？",
+              "作者摘要报告真实湿表面验证及干燥颜色恢复；定量性能和适用液体边界待全文核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Wetness+and+Color+From+a+Single+Multispectral+Image&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref 精确题名/完整作者/正式年份核对；登记页码另存，与CVF页脚不同",
+            "supports": [
+              "DOI、题名、完整作者及2017年会议",
+              "Crossref登记页码321-329；CVF原PDF首页页脚13967，页码差异待核验"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Shimano_Wetness_and_Color_CVPR_2017_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF局部页码 3,5,6",
+            "supports": [
+              "Figure 2 — 表面散射模型",
+              "散射参数分布及表面内部多路径；原始物理模型示意，不是完整优化流程。",
+              "原文称多光谱；第6页NH-8相机400–950nm、5nm光谱分辨率明确密集波长观测联系，不与NIR-VIS两模态任务混同。",
+              "局部第6页说明真实材料、表面点光谱/重量及NH-8图像；完整数量和拆分待全文核验。",
+              "分析多次散射与吸收导致的光谱锐化；交替优化参数。第6页说明NH-8 1280×1024、400–950nm、5nm光谱分辨率及白参考标定。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "spectral-wetness-2017-cvpr2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Shimano_Wetness_and_Color_CVPR_2017_paper.html",
+            "year": 2017,
+            "relation": "采用CVPR2017正式版；预印本与扩展关系待核验。",
+            "doi": "10.1109/cvpr.2017.42"
+          }
+        ],
+        "methodFamilyId": "spectral-wetness-2017"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Shimano_Wetness_and_Color_CVPR_2017_paper.pdf",
+          "figureLabel": "Figure 2 — 表面散射模型",
+          "page": 3,
+          "caption": "散射参数分布及表面内部多路径；原始物理模型示意，不是完整优化流程。",
+          "verificationNote": "人工核验原图/算法与完整图注；PDF裁切，未重绘。此图为物理模型，不是完整优化流程。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              37,
+              83,
+              282,
+              230
+            ]
+          },
+          "path": "figures/spectral-wetness-2017/framework.png",
+          "width": 490,
+          "height": 294,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "1fab46801c2c5660dc5aff7263af47071f58685bc8737b96de46a79430e74e64",
+          "attribution": "Mihoko Shimano, Hiroki Okawa, Yuta Asano, Ryoma Bise, Ko Nishino, Imari Sato · CVPR 2017"
+        }
+      ]
+    },
+    {
+      "id": "faced-reflector-hsi-2017",
+      "shortTitle": "Faced Reflectors HSI",
+      "title": "One-Shot Hyperspectral Imaging Using Faced Reflectors",
+      "authors": "Tsuyoshi Takatani, Takahito Aoto, Yasuhiro Mukaigawa",
+      "year": 2017,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr.2017.288",
+      "representation": "Faced Reflectors HSI",
+      "tags": [
+        "spectral-instrument-design",
+        "computational-imaging",
+        "spectral-reconstruction"
+      ],
+      "summary": "利用滤片上多次反射的不同响应，在单次图像内获取互补光谱测量并优化恢复。",
+      "input": "带滤片面对反射器产生的单次RGB观测",
+      "output": "恢复的高光谱图像",
+      "mechanism": "利用滤片上多次反射的不同响应，在单次图像内获取互补光谱测量并优化恢复。",
+      "readingNote": "已读官方摘要及注明局部原文；非阅读全文。DOI题名/作者/年份已核验，Crossref页码与CVF PDF页脚不同，各自保留，未认定一致。预印本、代码数据许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2017/html/Takatani_One-Shot_Hyperspectral_Imaging_CVPR_2017_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Takatani_2017_CVPR,\nauthor = {Takatani, Tsuyoshi and Aoto, Takahito and Mukaigawa, Yasuhiro},\ntitle = {One-Shot Hyperspectral Imaging Using Faced Reflectors},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {July},\nyear = {2017}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-instrument-design",
+          "computational-imaging",
+          "spectral-reconstruction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "多反射改变滤片光谱，使单次曝光产生不同波长响应观测，直接恢复高光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用带滤片的面对反射器实现单次高光谱成像？",
+        "datasets": "摘要及局部图注为耦合反射镜/万花筒结构；真实与合成数据规模、完整实验设置待核验。",
+        "experimentSetting": "多个反射次数产生不同光谱，通过响应建模和优化恢复光谱；完整标定和材料实验待全文核验。",
+        "conclusions": "作者摘要报告简单可用硬件实现准确高光谱捕获；当前未复核定量精度。",
+        "limitations": "反射次数、滤片响应、视角差异和标定误差待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Takatani_One-Shot_Hyperspectral_Imaging_CVPR_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、会议年份",
+              "如何用带滤片的面对反射器实现单次高光谱成像？",
+              "作者摘要报告简单可用硬件实现准确高光谱捕获；当前未复核定量精度。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=One-Shot+Hyperspectral+Imaging+Using+Faced+Reflectors&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref 精确题名/完整作者/正式年份核对；登记页码另存，与CVF页脚不同",
+            "supports": [
+              "DOI、题名、完整作者及2017年会议",
+              "Crossref登记页码2692-2700；CVF原PDF首页页脚4039，页码差异待核验"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Takatani_One-Shot_Hyperspectral_Imaging_CVPR_2017_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF局部页码 1",
+            "supports": [
+              "Figure 1 — 面对反射器成像",
+              "照明、滤片与多次反射观测模型，优化恢复高光谱。",
+              "多反射改变滤片光谱，使单次曝光产生不同波长响应观测，直接恢复高光谱。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "faced-reflector-hsi-2017-cvpr2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Takatani_One-Shot_Hyperspectral_Imaging_CVPR_2017_paper.html",
+            "year": 2017,
+            "relation": "采用CVPR2017正式版；预印本与扩展关系待核验。",
+            "doi": "10.1109/cvpr.2017.288"
+          }
+        ],
+        "methodFamilyId": "faced-reflector-hsi-2017"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Takatani_One-Shot_Hyperspectral_Imaging_CVPR_2017_paper.pdf",
+          "figureLabel": "Figure 1 — 面对反射器成像",
+          "page": 1,
+          "caption": "照明、滤片与多次反射观测模型，优化恢复高光谱。",
+          "verificationNote": "人工核验原图/算法与完整图注；PDF裁切，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              305,
+              217,
+              550,
+              492
+            ]
+          },
+          "path": "figures/faced-reflector-hsi-2017/framework.png",
+          "width": 490,
+          "height": 550,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "150e35ef467bd126e8890de5193ae31de13f88d002163684b7013227cfdf4cf5",
+          "attribution": "Tsuyoshi Takatani, Takahito Aoto, Yasuhiro Mukaigawa · CVPR 2017"
+        }
+      ]
+    },
+    {
+      "id": "llrt-2017",
+      "shortTitle": "LLRT",
+      "title": "Hyper-Laplacian Regularized Unidirectional Low-Rank Tensor Recovery for Multispectral Image Denoising",
+      "authors": "Yi Chang, Luxin Yan, Sheng Zhong",
+      "year": 2017,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr.2017.625",
+      "representation": "LLRT",
+      "tags": [
+        "spectral-denoising",
+        "tensor-sparsity-regularization",
+        "nonlocal-spatial-priors"
+      ],
+      "summary": "分析各方向低秩性质，在非局部方向构造单向低秩恢复，以光谱hyper-Laplacian先验缓解振铃。",
+      "input": "含噪多光谱图像",
+      "output": "去噪多光谱图像",
+      "mechanism": "分析各方向低秩性质，在非局部方向构造单向低秩恢复，以光谱hyper-Laplacian先验缓解振铃。",
+      "readingNote": "已读官方摘要及注明局部原文；非阅读全文。DOI题名/作者/年份已核验，Crossref页码与CVF PDF页脚不同，各自保留，未认定一致。预印本、代码数据许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2017/html/Chang_Hyper-Laplacian_Regularized_Unidirectional_CVPR_2017_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Chang_2017_CVPR,\nauthor = {Chang, Yi and Yan, Luxin and Zhong, Sheng},\ntitle = {Hyper-Laplacian Regularized Unidirectional Low-Rank Tensor Recovery for Multispectral Image Denoising},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {July},\nyear = {2017}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-denoising",
+          "tensor-sparsity-regularization",
+          "nonlocal-spatial-priors"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "原称MSI；局部第5页明确CAVE、Harvard高光谱和AVIRIS评测，提供直接高光谱联系，BSD实验单独记录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何选择适当低秩方向并利用光谱先验减轻多光谱去噪振铃？",
+        "datasets": "局部第5页：CAVE/BSD为模拟，Harvard高光谱/AVIRIS为真实测试；具体规模和完整协议待核验。",
+        "experimentSetting": "单向非局部低秩与光谱hyper-Laplacian先验；Fig.1仅比较低秩构建流程，完整优化及参数待核验。",
+        "conclusions": "作者摘要报告降低处理成本与振铃并改善去噪；局部Fig.1是动机比较，不能视为完整LLRT框架。",
+        "limitations": "低秩方向、自相似、光谱连续性及波段不一致影响待全文核验。 原文代码主页为 http://www.escience.cn/people/changyi/index.html；当前HTTPS访问结果 SSLError，资源可用性与许可待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Chang_Hyper-Laplacian_Regularized_Unidirectional_CVPR_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、会议年份",
+              "如何选择适当低秩方向并利用光谱先验减轻多光谱去噪振铃？",
+              "作者摘要报告降低处理成本与振铃并改善去噪；局部Fig.1是动机比较，不能视为完整LLRT框架。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Hyper-Laplacian+Regularized+Unidirectional+Low-Rank+Tensor+Recovery+for+Multispectral+Image+Denoising&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref 精确题名/完整作者/正式年份核对；登记页码另存，与CVF页脚不同",
+            "supports": [
+              "DOI、题名、完整作者及2017年会议",
+              "Crossref登记页码5901-5909；CVF原PDF首页页脚4260，页码差异待核验"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Chang_Hyper-Laplacian_Regularized_Unidirectional_CVPR_2017_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF局部页码 3,5",
+            "supports": [
+              "Figure 1 — 矩阵与张量低秩流程比较",
+              "原图比较光谱、非局部矩阵及统一张量构建与奇异值收缩；用于方法动机，不是完整LLRT流程。",
+              "原称MSI；局部第5页明确CAVE、Harvard高光谱和AVIRIS评测，提供直接高光谱联系，BSD实验单独记录。",
+              "局部第5页：CAVE/BSD为模拟，Harvard高光谱/AVIRIS为真实测试；具体规模和完整协议待核验。",
+              "单向非局部低秩与光谱hyper-Laplacian先验；Fig.1仅比较低秩构建流程，完整优化及参数待核验。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "llrt-2017-cvpr2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Chang_Hyper-Laplacian_Regularized_Unidirectional_CVPR_2017_paper.html",
+            "year": 2017,
+            "relation": "采用CVPR2017正式版；预印本与扩展关系待核验。",
+            "doi": "10.1109/cvpr.2017.625"
+          }
+        ],
+        "methodFamilyId": "llrt-2017"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Chang_Hyper-Laplacian_Regularized_Unidirectional_CVPR_2017_paper.pdf",
+          "figureLabel": "Figure 1 — 矩阵与张量低秩流程比较",
+          "page": 3,
+          "caption": "原图比较光谱、非局部矩阵及统一张量构建与奇异值收缩；用于方法动机，不是完整LLRT流程。",
+          "verificationNote": "人工核验原图/算法与完整图注；PDF裁切，未重绘。此图为低秩流程比较，仅支持方法动机。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              45,
+              69,
+              290,
+              313
+            ]
+          },
+          "path": "figures/llrt-2017/framework.png",
+          "width": 490,
+          "height": 488,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "60db1ef62cb206ca3fb41e3c4abaf81e7b0d073f09d638218b0d02d084129957",
+          "attribution": "Yi Chang, Luxin Yan, Sheng Zhong · CVPR 2017"
+        }
+      ]
+    },
+    {
+      "id": "nlstf-2017",
+      "shortTitle": "NLSTF",
+      "title": "Hyperspectral Image Super-Resolution via Non-Local Sparse Tensor Factorization",
+      "authors": "Renwei Dian, Leyuan Fang, Shutao Li",
+      "year": 2017,
+      "venue": "CVPR",
+      "publicationName": "IEEE Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr.2017.411",
+      "representation": "NLSTF",
+      "tags": [
+        "spatial-super-resolution",
+        "tensor-dictionary-learning",
+        "sparse-dictionary-learning",
+        "nonlocal-spatial-priors"
+      ],
+      "summary": "将相似空间块分组共享张量字典，学习三模字典和稀疏核心，合成高空间分辨HSI。",
+      "input": "低空间分辨HSI与高空间分辨MSI",
+      "output": "高空间分辨HSI",
+      "mechanism": "将相似空间块分组共享张量字典，学习三模字典和稀疏核心，合成高空间分辨HSI。",
+      "readingNote": "已读官方摘要及注明局部原文；非阅读全文。DOI题名/作者/年份已核验，Crossref页码与CVF PDF页脚不同，各自保留，未认定一致。预印本、代码数据许可及完整实验待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2017/html/Dian_Hyperspectral_Image_Super-Resolution_CVPR_2017_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Dian_2017_CVPR,\nauthor = {Dian, Renwei and Fang, Leyuan and Li, Shutao},\ntitle = {Hyperspectral Image Super-Resolution via Non-Local Sparse Tensor Factorization},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {July},\nyear = {2017}\n}",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "tensor-dictionary-learning",
+          "sparse-dictionary-learning",
+          "nonlocal-spatial-priors"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "低空间分辨HSI与高空间分辨MSI融合，目标为高空间分辨HSI。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过非局部稀疏张量分解融合HSI和MSI进行空间超分辨？",
+        "datasets": "摘要报告多个数据实验；数据名称、规模、退化与拆分待全文核验。",
+        "experimentSetting": "相似立方体分组共享三模字典；低分辨HSI/高分辨MSI学习字典，稀疏核心编码恢复立方体。",
+        "conclusions": "作者摘要报告所比较方法上重建改善；性能与退化设置尚未完整复核。",
+        "limitations": "分组、配准、通道响应及字典/稀疏核心适用范围待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Dian_Hyperspectral_Image_Super-Resolution_CVPR_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、会议年份",
+              "如何通过非局部稀疏张量分解融合HSI和MSI进行空间超分辨？",
+              "作者摘要报告所比较方法上重建改善；性能与退化设置尚未完整复核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Hyperspectral+Image+Super-Resolution+via+Non-Local+Sparse+Tensor+Factorization&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref 精确题名/完整作者/正式年份核对；登记页码另存，与CVF页脚不同",
+            "supports": [
+              "DOI、题名、完整作者及2017年会议",
+              "Crossref登记页码3862-3871；CVF原PDF首页页脚5344，页码差异待核验"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Dian_Hyperspectral_Image_Super-Resolution_CVPR_2017_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF局部页码 4",
+            "supports": [
+              "Figure 2 — NLSTF 流程",
+              "分组、字典学习与变换、稀疏核心编码、立方体及整幅HSI恢复。",
+              "低空间分辨HSI与高空间分辨MSI融合，目标为高空间分辨HSI。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "nlstf-2017-cvpr2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Dian_Hyperspectral_Image_Super-Resolution_CVPR_2017_paper.html",
+            "year": 2017,
+            "relation": "采用CVPR2017正式版；预印本与扩展关系待核验。",
+            "doi": "10.1109/cvpr.2017.411"
+          }
+        ],
+        "methodFamilyId": "nlstf-2017"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2017/papers/Dian_Hyperspectral_Image_Super-Resolution_CVPR_2017_paper.pdf",
+          "figureLabel": "Figure 2 — NLSTF 流程",
+          "page": 4,
+          "caption": "分组、字典学习与变换、稀疏核心编码、立方体及整幅HSI恢复。",
+          "verificationNote": "人工核验原图/算法与完整图注；PDF裁切，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              45,
+              68,
+              590,
+              344
+            ]
+          },
+          "path": "figures/nlstf-2017/framework.png",
+          "width": 1090,
+          "height": 552,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "2b2f8e223a6f0283a1a8618d28a0909410b51af9d697eb26a8dfc98fa30ac001",
+          "attribution": "Renwei Dian, Leyuan Fang, Shutao Li · CVPR 2017"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -19507,7 +20121,8 @@
         "learned-hs-depth",
         "rlphcs-2015",
         "diy-hsi-2016",
-        "spectral-spatial-lowrank-2016"
+        "spectral-spatial-lowrank-2016",
+        "faced-reflector-hsi-2017"
       ],
       "history": [
         {
@@ -19535,7 +20150,9 @@
         "pnp-dip-2021",
         "learned-hs-depth",
         "dual-camera-hshs-2015",
-        "spectral-spatial-lowrank-2016"
+        "spectral-spatial-lowrank-2016",
+        "faced-reflector-hsi-2017",
+        "snapshot-hlf"
       ],
       "history": [
         {
@@ -19556,7 +20173,8 @@
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
         "hypertransformer-pansharpening",
-        "bayesian-hsi-sr-2015"
+        "bayesian-hsi-sr-2015",
+        "nlstf-2017"
       ],
       "history": [
         {
@@ -19665,7 +20283,8 @@
         "decomposable-nonlocal-tensor-denoising",
         "mnf-1988",
         "realistic-hsi-denoising-2021",
-        "itsreg-2016"
+        "itsreg-2016",
+        "llrt-2017"
       ],
       "history": [
         {
@@ -19690,7 +20309,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据本轮早期官方摘要与局部方法形成，边界待更多文献复核。",
       "evidencePaperIds": [
-        "decomposable-nonlocal-tensor-denoising"
+        "decomposable-nonlocal-tensor-denoising",
+        "nlstf-2017"
       ],
       "history": [
         {
@@ -19873,7 +20493,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据早期 TGRS 原文或机构摘要形成，边界随后续文献复核。",
       "evidencePaperIds": [
-        "osp-1994"
+        "osp-1994",
+        "illuminant-design-2017"
       ],
       "history": [
         {
@@ -19927,7 +20548,9 @@
         "event-bispectral-photometry",
         "learned-hs-depth",
         "dual-camera-hshs-2015",
-        "diy-hsi-2016"
+        "diy-hsi-2016",
+        "faced-reflector-hsi-2017",
+        "snapshot-hlf"
       ],
       "history": [
         {
@@ -20255,7 +20878,9 @@
       "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
       "evidencePaperIds": [
         "bayesian-hsi-sr-2015",
-        "dual-camera-hshs-2015"
+        "dual-camera-hshs-2015",
+        "nlstf-2017",
+        "snapshot-hlf"
       ],
       "history": [
         {
@@ -20315,7 +20940,8 @@
       "createdAt": "2026-10-08",
       "rationale": "由 CVPR2016 官方摘要与原始方法流程明确支持；边界后续复核。",
       "evidencePaperIds": [
-        "itsreg-2016"
+        "itsreg-2016",
+        "llrt-2017"
       ],
       "history": [
         {
@@ -20336,13 +20962,75 @@
       "rationale": "由 CVPR2016 官方摘要与原始方法流程明确支持；边界后续复核。",
       "evidencePaperIds": [
         "itsreg-2016",
-        "spectral-spatial-lowrank-2016"
+        "spectral-spatial-lowrank-2016",
+        "llrt-2017",
+        "nlstf-2017"
       ],
       "history": [
         {
           "date": "2026-10-08",
           "action": "created",
           "reason": "ITSReg与光谱空间低秩方法提供明确正则/非局部结构证据。"
+        }
+      ]
+    },
+    {
+      "id": "illumination-spectral-design",
+      "name": "照明光谱设计",
+      "dimension": "method",
+      "definition": "优化可控照明的波长响应，以提高材料分类或信息采集效率。",
+      "status": "provisional",
+      "color": "#91a5a1",
+      "createdAt": "2026-10-08",
+      "rationale": "由CVPR2017摘要和局部模型/原图形成；边界随更多文献复核。",
+      "evidencePaperIds": [
+        "illuminant-design-2017"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批研究明确对应方法、任务或应用。"
+        }
+      ]
+    },
+    {
+      "id": "surface-wetness-analysis",
+      "name": "表面湿度光谱分析",
+      "dimension": "application",
+      "definition": "利用湿润导致的波长相关散射与吸收估计表面湿度和干燥光谱。",
+      "status": "provisional",
+      "color": "#91a5a1",
+      "createdAt": "2026-10-08",
+      "rationale": "由CVPR2017摘要和局部模型/原图形成；边界随更多文献复核。",
+      "evidencePaperIds": [
+        "spectral-wetness-2017"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批研究明确对应方法、任务或应用。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-light-field",
+      "name": "高光谱光场成像",
+      "dimension": "task",
+      "definition": "采集和恢复空间、视角及波长共同组成的光场。",
+      "status": "provisional",
+      "color": "#91a5a1",
+      "createdAt": "2026-10-08",
+      "rationale": "由CVPR2017摘要和局部模型/原图形成；边界随更多文献复核。",
+      "evidencePaperIds": [
+        "snapshot-hlf"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批研究明确对应方法、任务或应用。"
         }
       ]
     }

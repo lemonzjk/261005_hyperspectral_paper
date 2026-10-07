@@ -896,6 +896,58 @@
       "htmlSha256": "04a5350f327c0b96e5e390bf445c2e1b7d9638c1e94bf65021964c5bc09bcbee",
       "candidateCount": 4,
       "reviewedCount": 4
+    },
+    {
+      "id": "cvpr-2017-title-optical-terms",
+      "venue": "CVPR",
+      "year": 2017,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T17:47:01.988054+00:00",
+      "method": "官方年度目录逐题名关键词扫描，再逐篇核验命中摘要",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "multi-spectral",
+        "spectral",
+        "spectrum"
+      ],
+      "url": "https://openaccess.thecvf.com/CVPR2017?day=all",
+      "pagination": "day=all；单页全年官方目录；无结果条数截断",
+      "titleCount": 783,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "指定五关键词十命中均核验官方摘要",
+      "gaps": [
+        "仅完成指定题名词；其他任务词、摘要全量和引文发现待补",
+        "Crossref登记页码与CVF PDF页脚不一致，分别保存待核验",
+        "浏览器工具访问CVF返回403，直接HTTP目录/摘要/PDF成功并保存证据",
+        "全文实验、代码数据许可、预印本及湿度TPAMI后续稿关系待核验"
+      ],
+      "sourceSnapshot": "sources/cvpr-2017-all-titles.json",
+      "htmlSha256": "cd286c83a1d8678ee504afc7a53c60172c19e97581af8d9b46d52865c9bf1d6b",
+      "candidateCount": 10,
+      "reviewedCount": 10
+    },
+    {
+      "id": "wetness-tpami-followup-relation",
+      "venue": "TPAMI",
+      "year": 2022,
+      "date": "2026-10-08",
+      "method": "CVPR候选Crossref精确题名查询发现后续题名，再以精确DOI核验出版元数据",
+      "keywords": [
+        "Wetness and Color",
+        "10.1109/TPAMI.2019.2903496"
+      ],
+      "url": "https://api.crossref.org/works/10.1109/TPAMI.2019.2903496",
+      "pagination": "单篇定向核验，不代表年度目录",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 0,
+      "status": "metadata_verified",
+      "statusLabel": "后续题名元数据已核验，扩展关系待原文确认",
+      "gaps": [
+        "预印本/会议/期刊扩展声明、作者及实验差异待查"
+      ],
+      "sourceSnapshot": "sources/crossref-10.1109_TPAMI.2019.2903496.json"
     }
   ],
   "candidates": [
@@ -2167,6 +2219,143 @@
       "reviewedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/Fu_Exploiting_Spectral-Spatial_Correlation_CVPR_2016_paper.json",
       "paperId": "spectral-spatial-lowrank-2016"
+    },
+    {
+      "title": "Designing Illuminant Spectral Power Distributions for Surface Classification",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Blasinski_Designing_Illuminant_Spectral_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要及局部原文确认波长建模和明确高光谱联系，分别标直接、多光谱或基础关系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Blasinski_Designing_Illuminant_Spectral_CVPR_2017_paper.json",
+      "paperId": "illuminant-design-2017"
+    },
+    {
+      "title": "SyncSpecCNN: Synchronized Spectral CNN for 3D Shape Segmentation",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Yi_SyncSpecCNN_Synchronized_Spectral_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要研究形状图的Laplace谱CNN；当前证据不满足光学高光谱总库范围，可由新证据重审。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Yi_SyncSpecCNN_Synchronized_Spectral_CVPR_2017_paper.json"
+    },
+    {
+      "title": "Snapshot Hyperspectral Light Field Imaging",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Xiong_Snapshot_Hyperspectral_Light_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "duplicate",
+      "reason": "原专题已有光场成员，按题名和作者去重，只补总库标签/证据。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Xiong_Snapshot_Hyperspectral_Light_CVPR_2017_paper.json",
+      "paperId": "snapshot-hlf"
+    },
+    {
+      "title": "Wetness and Color From a Single Multispectral Image",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Shimano_Wetness_and_Color_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要及局部原文确认波长建模和明确高光谱联系，分别标直接、多光谱或基础关系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Shimano_Wetness_and_Color_CVPR_2017_paper.json",
+      "paperId": "spectral-wetness-2017"
+    },
+    {
+      "title": "One-Shot Hyperspectral Imaging Using Faced Reflectors",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Takatani_One-Shot_Hyperspectral_Imaging_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要及局部原文确认波长建模和明确高光谱联系，分别标直接、多光谱或基础关系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Takatani_One-Shot_Hyperspectral_Imaging_CVPR_2017_paper.json",
+      "paperId": "faced-reflector-hsi-2017"
+    },
+    {
+      "title": "Hyper-Laplacian Regularized Unidirectional Low-Rank Tensor Recovery for Multispectral Image Denoising",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Chang_Hyper-Laplacian_Regularized_Unidirectional_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要及局部原文确认波长建模和明确高光谱联系，分别标直接、多光谱或基础关系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Chang_Hyper-Laplacian_Regularized_Unidirectional_CVPR_2017_paper.json",
+      "paperId": "llrt-2017"
+    },
+    {
+      "title": "Illuminant-Camera Communication to Observe Moving Objects Under Strong External Light by Spread Spectrum Modulation",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Sagawa_Illuminant-Camera_Communication_to_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要研究时间展频通信调制与外光抑制；当前证据不满足光学高光谱总库范围，可由新证据重审。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Sagawa_Illuminant-Camera_Communication_to_CVPR_2017_paper.json"
+    },
+    {
+      "title": "Grassmannian Manifold Optimization Assisted Sparse Spectral Clustering",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Wang_Grassmannian_Manifold_Optimization_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要研究图谱聚类及Grassmann优化；当前证据不满足光学高光谱总库范围，可由新证据重审。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Wang_Grassmannian_Manifold_Optimization_CVPR_2017_paper.json"
+    },
+    {
+      "title": "Hyperspectral Image Super-Resolution via Non-Local Sparse Tensor Factorization",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Dian_Hyperspectral_Image_Super-Resolution_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "included",
+      "reason": "官方摘要及局部原文确认波长建模和明确高光谱联系，分别标直接、多光谱或基础关系。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Dian_Hyperspectral_Image_Super-Resolution_CVPR_2017_paper.json",
+      "paperId": "nlstf-2017"
+    },
+    {
+      "title": "Not Afraid of the Dark: NIR-VIS Face Recognition via Cross-Spectral Hallucination and Low-Rank Embedding",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2017/html/Lezama_Not_Afraid_of_CVPR_2017_paper.html",
+      "venue": "CVPR",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "cvpr-2017-title-optical-terms",
+      "decision": "excluded",
+      "reason": "官方摘要研究NIR-VIS人脸两模态识别，未建立明确高光谱联系；当前证据不满足光学高光谱总库范围，可由新证据重审。",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Lezama_Not_Afraid_of_CVPR_2017_paper.json"
+    },
+    {
+      "title": "Estimation of Wetness and Color from a Single Multispectral Image",
+      "url": "https://doi.org/10.1109/TPAMI.2019.2903496",
+      "venue": "TPAMI",
+      "year": 2022,
+      "discoveredAt": "2026-10-08",
+      "searchId": "wetness-tpami-followup-relation",
+      "decision": "pending",
+      "reason": "与CVPR2017湿度方法相近的期刊后续题名；元数据已核验，正式扩展声明尚未取得，不新增独立方法。",
+      "evidencePath": "research/hyperspectral/sources/crossref-10.1109_TPAMI.2019.2903496.json"
     }
   ],
   "batches": [
@@ -2393,6 +2582,27 @@
         "全文实验、资源可用性/许可与预印本关系待核验",
         "正式卷期为2019，DOI含2018；在线日期、作者变更及会议扩展声明待核验",
         "2026-10-08：作者主页核验成功；IEEE页面及PDF验证页、开放索引无PDF，详见hshs-tpami-access-review.json。"
+      ]
+    },
+    {
+      "id": "cvpr-2017-optical-keywords",
+      "date": "2026-10-08",
+      "searchIds": [
+        "cvpr-2017-title-optical-terms",
+        "wetness-tpami-followup-relation"
+      ],
+      "new": 5,
+      "updated": 1,
+      "duplicates": 1,
+      "excluded": 4,
+      "pending": 1,
+      "categoriesAdded": 3,
+      "readingBoundary": "783官方题名十命中均读摘要；五新条目保存原图/算法/物理模型/动机比较，局部设置单独注明；只补一旧条目的library。六DOI题名作者年份核验，页码差异待查，非阅读全文。",
+      "gaps": [
+        "仅完成指定题名词；其他任务词、摘要全量和引文发现待补",
+        "Crossref登记页码与CVF PDF页脚不一致，分别保存待核验",
+        "浏览器工具访问CVF返回403，直接HTTP目录/摘要/PDF成功并保存证据",
+        "全文实验、代码数据许可、预印本及湿度TPAMI后续稿关系待核验"
       ]
     }
   ],
