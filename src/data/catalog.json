@@ -16552,6 +16552,262 @@
           "attribution": "Jonggyu Jang, Sangwoo Oh, Youjin Kim, Dongmin Seo, Youngchol Choi, Hyun Jong Yang · NeurIPS 2023"
         }
       ]
+    },
+    {
+      "id": "vca-2005",
+      "shortTitle": "VCA",
+      "title": "Vertex Component Analysis: A Fast Algorithm to Unmix Hyperspectral Data",
+      "authors": "José M. P. Nascimento, José M. Bioucas Dias",
+      "year": 2005,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/TGRS.2005.844293",
+      "representation": "单纯形几何端元模型",
+      "tags": [
+        "高光谱",
+        "spectral-unmixing",
+        "geometric-endmember-extraction"
+      ],
+      "summary": "利用端元构成单纯形顶点及仿射变换保持单纯形的性质，无监督提取高光谱混合数据中的端元。",
+      "input": "高光谱混合像元矩阵与端元数；VCA 核心算法假设每种端元至少存在一个纯像元",
+      "output": "估计的端元光谱及所选端元像元；丰度需结合后续估计，不能把端元提取等同完整解混",
+      "mechanism": "先按信噪比选择子空间投影，再沿与已选端元子空间正交的方向投影，迭代选择极值像元为新端元。",
+      "readingNote": "已核验摘要与正式出版元数据；注明的局部正文只用于对应事实，尚未阅读全文。代码、数据许可和其他版本待核验。",
+      "paper": "https://doi.org/10.1109/TGRS.2005.844293",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_pages",
+      "citation": "@article{vca2005,\n  title={Vertex Component Analysis: A Fast Algorithm to Unmix Hyperspectral Data},\n  author={José M. P. Nascimento and José M. Bioucas Dias},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  year={2005},\n  volume={43},\n  number={4},\n  pages={898--910},\n  doi={10.1109/TGRS.2005.844293}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "geometric-endmember-extraction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始摘要明确以光学高光谱像元或信号子空间为主要研究对象。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何从混合高光谱像元中以较低计算成本估计端元光谱？",
+        "datasets": "原文局部第 3、9–10 页确认 USGS 光谱合成数据和 AVIRIS Cuprite 真实数据；数据规模、完整设置与数据许可仍待全文核验。",
+        "experimentSetting": "局部方法页与实验段落确认模拟和真实数据，以及纯像元假设相关实验；尚未系统复核全部实验、参数和数值。",
+        "conclusions": "作者摘要报告与当时方法竞争且计算复杂度较低；当前未独立复核复杂度数量级及全表性能，不作普遍领先结论。",
+        "limitations": "原文第 2、4 页明确纯像元假设；第 10 页结论也指出该假设。端元数为算法输入，线性混合与噪声条件限制适用范围。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://doi.org/10.1109/TGRS.2005.844293",
+            "checkedAt": "2026-10-08",
+            "level": "出版社注册到 Crossref 的出版元数据",
+            "supports": [
+              "题名、作者缩写、年份、DOI、卷期页码"
+            ]
+          },
+          {
+            "url": "https://cise.ufl.edu/~pgader/HyperspectralImageAnalysis/NotesAndPapers/VCA.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文摘要与局部正文；PDF 页码 1,2,3,4,9,10,12",
+            "supports": [
+              "利用端元构成单纯形顶点及仿射变换保持单纯形的性质，无监督提取高光谱混合数据中的端元。",
+              "原文局部第 3、9–10 页确认 USGS 光谱合成数据和 AVIRIS Cuprite 真实数据；数据规模、完整设置与数据许可仍待全文核验。",
+              "原文第 2、4 页明确纯像元假设；第 10 页结论也指出该假设。端元数为算法输入，线性混合与噪声条件限制适用范围。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "vca-2005-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/TGRS.2005.844293",
+            "year": 2005,
+            "relation": "当前出版事实采用此期刊版本；早期会议或预印本版本尚待核验，不推定不存在。"
+          }
+        ],
+        "methodFamilyId": "vca-2005"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://cise.ufl.edu/~pgader/HyperspectralImageAnalysis/NotesAndPapers/VCA.pdf",
+          "figureLabel": "Fig. 1 — VCA 几何原理",
+          "page": 3,
+          "caption": "三端元混合数据的二维散点图及 VCA 算法的几何投影示意。",
+          "verificationNote": "人工核验原文 Fig. 1(a)(b) 与图注；裁切 PDF 第 3 页（印刷页 900）左栏，保留两个子图及原图注，未重绘。",
+          "path": "figures/vca-2005/framework.png",
+          "width": 783,
+          "height": 1278,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "f697aa2fd7cb92a01ccdbc5ff0bca82d3f30e10d9bc0406fab9675a4c89473dc",
+          "attribution": "José M. P. Nascimento, José M. Bioucas Dias · TGRS 2005"
+        }
+      ]
+    },
+    {
+      "id": "osp-1994",
+      "shortTitle": "OSP",
+      "title": "Hyperspectral Image Classification and Dimensionality Reduction: An Orthogonal Subspace Projection Approach",
+      "authors": "Joseph C. Harsanyi, Chein-I Chang",
+      "year": 1994,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/36.298007",
+      "representation": "正交子空间投影与材料响应",
+      "tags": [
+        "高光谱",
+        "spectral-dimensionality-reduction",
+        "spectral-material-detection"
+      ],
+      "summary": "先将像元投影到干扰光谱子空间的正交补，再匹配目标光谱；同时压缩波段维度并生成材料响应图。",
+      "input": "高光谱像元、目标材料光谱和待抑制的干扰材料光谱",
+      "output": "各目标材料的标量响应图；对多个目标组成降维后的材料图像序列",
+      "mechanism": "以正交子空间投影消除干扰材料分量，再以目标光谱匹配滤波，在原文线性模型与白噪声假设下最大化剩余目标信噪比。",
+      "readingNote": "已核验摘要与正式出版元数据；注明的局部正文只用于对应事实，尚未阅读全文。代码、数据许可和其他版本待核验。",
+      "paper": "https://doi.org/10.1109/36.298007",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_pages",
+      "citation": "@article{osp1994,\n  title={Hyperspectral Image Classification and Dimensionality Reduction: An Orthogonal Subspace Projection Approach},\n  author={Joseph C. Harsanyi and Chein-I Chang},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  year={1994},\n  volume={32},\n  number={4},\n  pages={779--785},\n  doi={10.1109/36.298007}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "spectral-material-detection"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始摘要明确以光学高光谱像元或信号子空间为主要研究对象。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在混合像元中抑制其他材料干扰，同时降低高光谱维度并检测目标材料？",
+        "datasets": "局部第 3–5 页确认植被/土壤光谱模拟与 AVIRIS Lunar Crater Volcanic Field 子场景；第 4 页写去除吸收和低信噪比波段后保留 158 波段。原始数据入口与完整实验待核验。",
+        "experimentSetting": "局部第 5 页 Fig. 7 为 200×200 子场景的六类材料响应；这里只核验输入、材料及图注，没有完整复核检测指标或所有设置。",
+        "conclusions": "作者摘要报告该两步算子适用于纯像元和混合像元，并能同时降维和分类；具体检测下限属于特定实验，未写成普遍保证。",
+        "limitations": "需要目标与干扰光谱；局部第 2 页线性混合模型假设光谱列线性独立及同方差白高斯噪声。模型失配与真实误差尚待全文复核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://doi.org/10.1109/36.298007",
+            "checkedAt": "2026-10-08",
+            "level": "出版社注册到 Crossref 的出版元数据",
+            "supports": [
+              "题名、作者缩写、年份、DOI、卷期页码"
+            ]
+          },
+          {
+            "url": "https://www2.umbc.edu/rssipl/pdf/TGRS/tgrs.7_94.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文摘要与局部正文；PDF 页码 1,2,3,4,5",
+            "supports": [
+              "先将像元投影到干扰光谱子空间的正交补，再匹配目标光谱；同时压缩波段维度并生成材料响应图。",
+              "局部第 3–5 页确认植被/土壤光谱模拟与 AVIRIS Lunar Crater Volcanic Field 子场景；第 4 页写去除吸收和低信噪比波段后保留 158 波段。原始数据入口与完整实验待核验。",
+              "需要目标与干扰光谱；局部第 2 页线性混合模型假设光谱列线性独立及同方差白高斯噪声。模型失配与真实误差尚待全文复核。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "osp-1994-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/36.298007",
+            "year": 1994,
+            "relation": "当前出版事实采用此期刊版本；早期会议或预印本版本尚待核验，不推定不存在。"
+          }
+        ],
+        "methodFamilyId": "osp-1994"
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "逐页检查 PDF 共 7 页的图版：Fig. 1–7 为输入光谱、模拟结果和 AVIRIS 材料响应，未见独立方法/框架图。仅方法与数据局部阅读，非完整全文复核。",
+        "sourceUrl": "https://www2.umbc.edu/rssipl/pdf/TGRS/tgrs.7_94.pdf",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "hysime-2008",
+      "shortTitle": "HySime",
+      "title": "Hyperspectral Subspace Identification",
+      "authors": "José M. Bioucas-Dias, José M. P. Nascimento",
+      "year": 2008,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/TGRS.2008.918089",
+      "representation": "最小均方误差信号子空间",
+      "tags": [
+        "高光谱",
+        "spectral-dimensionality-reduction"
+      ],
+      "summary": "估计信号和噪声相关矩阵，以最小均方误差准则选择特征向量子集，自动识别高光谱信号子空间。",
+      "input": "含噪高光谱观测；具体噪声估计实现待全文核验",
+      "output": "信号子空间维数及对应基向量",
+      "mechanism": "估计信号和噪声相关矩阵，再选择使信号子空间重建均方误差较小的特征值/特征向量子集；摘要称无监督且无需调参。",
+      "readingNote": "已核验摘要与正式出版元数据；注明的局部正文只用于对应事实，尚未阅读全文。代码、数据许可和其他版本待核验。",
+      "paper": "https://doi.org/10.1109/TGRS.2008.918089",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "institutional_abstract_and_publication_metadata",
+      "citation": "@article{hysime2008,\n  title={Hyperspectral Subspace Identification},\n  author={José M. Bioucas-Dias and José M. P. Nascimento},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  year={2008},\n  volume={46},\n  number={8},\n  pages={2435--2445},\n  doi={10.1109/TGRS.2008.918089}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始摘要明确以光学高光谱像元或信号子空间为主要研究对象。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何自动推断高光谱信号子空间，支持降维并减少下游计算与存储？",
+        "datasets": "机构摘要仅确认模拟与真实高光谱图像；具体名称、规模与入口待全文核验。",
+        "experimentSetting": "仅核验机构摘要与出版元数据；实验协议、噪声模型和数值待全文核验。",
+        "conclusions": "作者摘要报告模拟与真实图像上的良好表现；尚未阅读全文或独立复核性能数字。",
+        "limitations": "摘要未详述适用限制；噪声相关矩阵估计可靠性、模型条件与完整局限待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://doi.org/10.1109/TGRS.2008.918089",
+            "checkedAt": "2026-10-08",
+            "level": "出版社注册到 Crossref 的出版元数据",
+            "supports": [
+              "题名、作者缩写、年份、DOI、卷期页码"
+            ]
+          },
+          {
+            "url": "https://www.it.pt/Publications/PaperJournal/2933",
+            "checkedAt": "2026-10-08",
+            "level": "作者机构摘要与出版记录",
+            "supports": [
+              "估计信号和噪声相关矩阵，以最小均方误差准则选择特征向量子集，自动识别高光谱信号子空间。",
+              "作者、正式年份、卷期页码；不含已核验实验细节"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hysime-2008-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/TGRS.2008.918089",
+            "year": 2008,
+            "relation": "当前出版事实采用此期刊版本；早期会议或预印本版本尚待核验，不推定不存在。"
+          }
+        ],
+        "methodFamilyId": "hysime-2008"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "链接返回 HTML，实际 PDF 下载需 reCAPTCHA 与临时令牌；机构仓储另标 restrictedAccess/request-a-copy。已核验机构摘要，尚未获得原文方法图，继续其他来源。",
+        "sourceUrl": "https://www.it.pt/Publications/DownloadPaperJournal/2933",
+        "checkedAt": "2026-10-08"
+      }
     }
   ],
   "datasets": [
@@ -17033,6 +17289,87 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "数据、量化恢复或具体应用提供直接分类依据；边界暂定。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-unmixing",
+      "name": "光谱解混",
+      "dimension": "task",
+      "definition": "从混合像元估计材料端元或丰度；端元提取与丰度估计须注明实际输出。",
+      "status": "provisional",
+      "color": "#b8966f",
+      "createdAt": "2026-10-08",
+      "rationale": "根据早期 TGRS 原文或机构摘要形成，边界随后续文献复核。",
+      "evidencePaperIds": [
+        "vca-2005"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批文献为任务或方法提供直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-dimensionality-reduction",
+      "name": "光谱降维与子空间识别",
+      "dimension": "task",
+      "definition": "估计或投影光谱信号子空间，以减少波段维度并保留任务相关信息。",
+      "status": "provisional",
+      "color": "#789d9a",
+      "createdAt": "2026-10-08",
+      "rationale": "根据早期 TGRS 原文或机构摘要形成，边界随后续文献复核。",
+      "evidencePaperIds": [
+        "osp-1994",
+        "hysime-2008"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批文献为任务或方法提供直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-material-detection",
+      "name": "光谱材料检测与分类",
+      "dimension": "task",
+      "definition": "利用材料光谱识别像元中的目标材料，包括混合像元响应；与语义分割分别记录。",
+      "status": "provisional",
+      "color": "#a08da7",
+      "createdAt": "2026-10-08",
+      "rationale": "根据早期 TGRS 原文或机构摘要形成，边界随后续文献复核。",
+      "evidencePaperIds": [
+        "osp-1994"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批文献为任务或方法提供直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "geometric-endmember-extraction",
+      "name": "几何端元提取",
+      "dimension": "method",
+      "definition": "利用线性光谱混合的单纯形几何识别端元；明确各方法的纯像元等假设。",
+      "status": "provisional",
+      "color": "#ab966d",
+      "createdAt": "2026-10-08",
+      "rationale": "根据早期 TGRS 原文或机构摘要形成，边界随后续文献复核。",
+      "evidencePaperIds": [
+        "vca-2005"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批文献为任务或方法提供直接证据。"
         }
       ]
     }

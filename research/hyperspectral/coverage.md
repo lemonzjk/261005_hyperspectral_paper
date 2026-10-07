@@ -13,6 +13,10 @@
 | CVPR | 2014 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 540 / 10 / 10 | 指定关键词题名扫描及 10 个命中摘要审查完成；领域覆盖未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | arXiv | 2021–2022 | 2111.07910、2203.02149、2112.06238、2203.02503；四个指定 abs 页面；逐版历史全列，无搜索分页 | 4 / 0 / 4 | 定向元数据核验完成；跨分类检索未完成 | 仅查四个既有方法的提交历史；未核验逐版实验差异；其他 arXiv 论文及正式版追踪未完成 |
 | NeurIPS | 2023 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录，含主会及数据集评测 Track；无结果条数截断 | 3540 / 30 / 30 | 指定关键词题名扫描及 30 个命中摘要审查完成；其他主题与引文未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| TGRS | 1988 | A transformation for ordering multispectral data in terms of image quality with implications for noise removal；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 0 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
+| TGRS | 1994 | Hyperspectral Image Classification and Dimensionality Reduction: An Orthogonal Subspace Projection Approach、Minimum-volume transforms for remotely sensed data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 2 / 2 / 1 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
+| TGRS | 2005 | Vertex Component Analysis: A Fast Algorithm to Unmix Hyperspectral Data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
+| TGRS | 2008 | Hyperspectral Subspace Identification；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文检索；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -42,7 +46,7 @@
 | Information Fusion | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TSP | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TCI | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| TGRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| TGRS | journal | 最早可用目录至 2026 | 已做 1988/1994/2005/2008 早期主题与引文定向检索；年度全量仍未检索 |
 | Remote Sensing of Environment | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IGARSS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -72,6 +76,8 @@
   阅读边界：两届官方目录的指定关键词共 12 个候选全部逐篇核验摘要；新增两篇补读局部方法和实验，仍非完整全文阅读。
 - 2026-10-08 / neurips-2023-optical-review：新增 3，更新 0，去重 0，排除 27，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：官方年度目录 3,540 题名；指定五关键词 30 候选全部核验摘要；三篇新增区分主会与数据集评测 Track，实验均非全文核验。
+- 2026-10-08 / tgrs-early-unmixing-subspace：新增 3，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：VCA、OSP 摘要和局部方法/数据页；HySime 机构摘要与出版元数据。没有阅读全文。定向查找涉及 1988/1994/2005/2008，不代表年度系统检索。
 
 ## 未解决缺口
 
@@ -81,3 +87,4 @@
 - arXiv 跨分类、版本号、首次提交和更新日期尚待逐篇核验
 - 既有 214 篇总库关系、分类及阅读进度待复核
 - Hyper-Skin 网页摘要 330 与官方 PDF 采集正文 306 数量不一致，待作者或发布数据核验。
+- TGRS 早期批次仅定向主题/引文核验：MNF、Craig 尚待原始摘要，FCLS Crossref 请求遇 HTTP 429；HySime 原文与框架图受机构下载验证和仓储访问限制。
