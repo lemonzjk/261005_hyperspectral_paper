@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 174 篇：122 篇 verified、143 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 176 篇：124 篇 verified、145 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -239,3 +239,10 @@ PDF 哈希、页码、裁切坐标与真实下载协议见 sources/dual-angle-of
 - Single-view NIR-II FMT 的蔡夫鸿海南大学官方页成功 200，但为 2020 年旧介绍，只列较早代表作，没有 2025 TCI 同篇或 PDF 附件。保留 needs_access。IEEE 本篇正式记录为 document 11137413；同组其他设备或 STAR-Net 不可替代。
 
 本轮没有新原图。网站仍为 174 篇、122 篇有 143 张图；43 needs_access、9 no_framework。下一步使用尚未查过的同篇作者或机构全文入口，不重复猜已证明无附件的记录。
+
+
+## 文献扩充恢复与同步补图（2026-10-07）
+
+用户允许在现有框架全部初查后扩充文献，包含 arXiv。HS-3D-NeRF 的 v1 Figure 3 完整流程（PDF 第 3 页）与 DD-HGS 的作者版 Figure 2 已保存；两篇正式/预印本状态、版本和原始证据见 literature-handoff.md。累计 176 篇、124 篇有 145 张图；原有 43 needs_access 与 9 no_framework 未批量修改。
+
+补充旧来源核查：NASA Michelle Hofton 官方出版列表中 Sierra Biomass 2011、LVIS–AVIRIS 2008 同篇仅链 DOI，无该条目的 PDF 附件；NTRS 精确 Sierra 题名查询 200、零结果。Seungryong 旧站底层 GitHub 仓库 API 实际 404，未得到文件树，不能外推旧作者网站无附件。详见 sources/nasa-sierra-and-lat-repository-routes-2026-10-07.json。

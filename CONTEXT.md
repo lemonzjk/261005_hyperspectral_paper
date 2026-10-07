@@ -7,7 +7,7 @@
 - 构建 HS3D Atlas 高光谱三维视觉研究图谱，覆盖 CV、遥感、高光谱、光学重要会议与期刊。
 - 仅本地预览；不推送、不发布。每轮修改（含文献、文档、上下文）检查通过后必须本地 Git 提交。
 - 每次请求使用 caveman skill，默认 full，中文简洁沟通；文档与代码正常表达。
-- 用户已要求暂停并交接；后续扩充 CV/高光谱重要会议期刊与 arXiv 文献，新增论文同步查图。逐张保存，允许 PDF 裁切；失败保留原因。
+- 已恢复文献扩充，覆盖 CV/高光谱重要会议期刊与 arXiv；现有框架全部初查，缺图保留状态，新增论文同步查图。逐张保存，允许 PDF 裁切；失败保留原因。
 
 ## 运行与检查
 
@@ -18,7 +18,7 @@
 
 ## 当前状态
 
-- 174 篇论文、13 个主分类、5 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX、手机适配。
+- 176 篇论文、13 个主分类、5 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX、手机适配。
 - 浅色全宽首屏：交互合成高光谱点云，自然色/单波段/几何、450–950 nm、旋转/复位/材料选择；12,348 点，响应为概念示意。用户拒绝左侧大字、深色、摄影和抽象装饰。
 - 图谱默认「全景时间轴」：方向简述、彩色时间线和论文节点，最新年份淡色突出；桌面紧凑展示全部 13 个方向、每阶段最新论文与年份/来源/篇数。点标题看详情，点篇数或方向就地展开，再点收起，无页面跳转。手机按方向显示年代节点，无拖拽、缩放、横向或嵌套滚动。保留方向卡片、时间矩阵、全部论文及年度 SVG。阶段等宽不表示时长；篇数仅表示收录，节点连线不表示继承关系。
 - 框架图详情支持本地图、高清打开、图号、PDF 页码、原始来源及作者归属；未检索、待人工补充、全文未见独立框架图分别展示。
@@ -28,6 +28,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx`、`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 122 篇、143 张；43 篇需全文/人工补图、9 篇全文无独立框架。Fourier Fig.6、HoloSpec Fig.1 原图受限；ACFFN 作者目录有 49 篇其他 PDF，无同篇附件；两篇新融合候选留 survey 待核验。开放标签不代表取得原图，不据作者章节判正式论文无框架。
-- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；174 篇全部初查，无 pending；43 篇缺图仍可重试。新发现 HS-3D-NeRF、光谱 Gaussian 等线索待核验，尚未入库。几何示意注明不是完整流程，无图结论注明版本。
+- 框架图累计 124 篇、145 张；43 篇需全文/人工补图、9 篇全文无独立框架。Fourier Fig.6、HoloSpec Fig.1 原图受限；ACFFN 作者目录有 49 篇其他 PDF，无同篇附件；两篇新融合候选留 survey 待核验。开放标签不代表取得原图，不据作者章节判正式论文无框架。
+- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；176 篇全部初查，无 pending；43 篇缺图仍可重试。HS-3D-NeRF（arXiv）与 DD-HGS（3DV 2026）已入库并补图。几何示意注明不是完整流程，无图结论注明版本。
 - 文献调研另见 `research/survey.json`、`research/README.md`：IGARSS 扫描候选待核验，其中 CGCN 2023 已补 DOI、作者和卷页但缺原始摘要、专业期刊与引文追溯未完成；Eradiate（GMD 2026）留背景，PhotoniX 2024 串级单像素相机留候选。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
