@@ -1,6 +1,6 @@
 # 文献调研
 
-检索截止日期：2026-10-07。网站当前收录 187 篇论文、6 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
+检索截止日期：2026-10-07。网站当前收录 189 篇论文、6 个资源入口；调研仍在进行，不声明已经覆盖全部论文。
 
 ## 范围与场所
 
@@ -83,3 +83,7 @@ IGARSS 2023 的 Coupled Graph Convolution Network for Cross-Scene Multispectral 
 ## MS-ALS 与 IGARSS LiDAR 候选核验（2026-10-07）
 
 新增 ISPRS JPRS 2026 的国际树种分类基准 msals-tree-benchmark 与配套数据论文 msals-species-data（通过 arXiv v2 发现，已正式发表于 ISPRS Open JPRS；标专业期刊，不冒充 JPRS）。两篇共用 MS-ALS-SPECIES，6,326 个单木段、九树种、每系统三波长，列相关研究。新增第六个数据资源入口；作者与出版社声明公开 Zenodo DOI，本次 API 超时，不声称已下载核验许可。数据论文 Figure 3(a) 标注平台架构已保存；基准 34 页机构正式 PDF 已逐页检查，独立框架未见，记 no_framework，只针对正文版本。基准存在更正稿 PII S0924271626000742，内容 403 待核验，未引用最佳精度数值。2023 两个 IGARSS LiDAR 候选补正式 DOI 和作者，仍缺原始摘要；森林胁迫会议候选关联已收录 RSE 论文，待扩展关系。2025 波形候选的 Crossref 第一搜索结果为另一作者组合的 SSRN 论文，不合并 DOI。证据见 sources/msals-and-igarss-lidar-review-2026-10-07.json。
+
+补充 CMFNet（TGRS 2025）和 Fiducial HS3D Mapping（arXiv 2026）。CMFNet 的 IEEE 原始摘要及作者公开代码确认多尺度、GLFE、CMF 融合；读取 DSM/栅格，3D 卷积沿波段与二维邻域，归相关研究。作者压缩包没有框架或论文 PDF，出版社返回 HTTP 418，保留 needs_access。没有把多个其他领域同名 CMFNet 的图拿来替代。
+
+Fiducial HS3D Mapping 六页全文明确 RGB SfM、标记约束、正交渲染与二维单应/xyz 查表，输出真实三维光谱表面点云，归核心研究。保存 PDF 第 2 页完整 Figure 1。原稿首页注明 Ital-IA 2026 全国会议，按用户允许的 arXiv 版本补充，不称顶会；两个离体组织、同源重建真值和俯视投影限制保留。证据见 `sources/cmfnet-author-code-review-2026-10-07.json`、`sources/fiducial-hsi-mapping-review-2026-10-07.json`。SpecSwin3D 和二维 GaussianHSI 经原始摘要核验排除，不能因 3D/高斯题名进入三维几何清单。后续仍需原始全文核验的 TGRS 融合、RSE 三维辐射传输候选及目标场所目录补扫；清单尚未全面覆盖。

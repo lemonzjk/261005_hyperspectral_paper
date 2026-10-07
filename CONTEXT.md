@@ -17,7 +17,7 @@
 
 ## 当前状态
 
-- 187 篇论文、13 个主分类、6 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX。
+- 189 篇论文、13 个主分类、6 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX。
 - 浅色全宽首屏：交互合成高光谱点云，自然色/单波段/几何、450–950 nm、旋转/复位/材料选择；12,348 点，响应为概念示意。用户拒绝左侧大字、深色、摄影和抽象装饰。
 - 图谱默认「领域图与时间轴」：采集、重建、理解三列静态全景，13 个方向直接展示任务提示、输入/目标、总篇数与阶段篇数，主题配色及概念线图区分分组。点击方向跳至下方方向×年代时间轴，标题看详情、篇数就地展开。无需拖拽、缩放、横向或内部滚动；手机纵向排版，每行附年代标签。保留方向总览、时间矩阵、全部论文与年度 SVG；共用筛选。分组不表示方法继承，阶段等宽不表示时长；篇数仅表示收录分布。
 - 框架图详情支持本地图、高清打开、图号、PDF 页码、原始来源及作者归属；未检索、待人工补充、全文未见独立框架图分别展示。
@@ -27,6 +27,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx` / `src/atlas-overview.css`、`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 133 篇、157 张；44 篇需全文/人工补图、10 篇全文无独立框架。Fourier Fig.6、HoloSpec Fig.1 原图受限；ACFFN 作者目录无同篇附件；JSTARS 融合候选待核验。开放标签不代表取得原图，不据作者章节判正式论文无框架。
-- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；187 篇全部初查，无 pending；44 篇缺图仍可重试。新增 MS-ALS 树种基准与数据论文，共用三波长点云；新增标注平台图、数据入口，更正稿内容待核验。几何示意注明不是完整流程，无图结论注明版本。
+- 框架图累计 134 篇、158 张；45 篇需全文/人工补图、10 篇全文无独立框架。Fourier Fig.6、HoloSpec Fig.1 原图受限；ACFFN 作者目录无同篇附件；JSTARS 融合候选待核验。开放标签不代表取得原图，不据作者章节判正式论文无框架。
+- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；189 篇全部初查，无 pending；45 篇缺图仍可重试。新增 Fiducial HS3D Mapping（arXiv，真实组织表面点云）及完整 Figure 1，两个样本且无独立三维真值；CMFNet（TGRS）核验作者代码为栅格分类，原图受限。MS-ALS 数据与基准共用三波长点云，更正稿待核验。
 - 文献调研见 `research/survey.json`、`research/README.md`：IGARSS 候选继续待原始摘要与版本关系核验；2023 辐射校正与森林胁迫模拟已补正式 DOI，2025 波形提取排除题名近似的 SSRN 误匹配。专业期刊与引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。

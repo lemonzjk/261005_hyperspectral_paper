@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 187 篇；133 篇有 157 张框架图，44 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 189 篇；134 篇有 158 张框架图，45 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -53,3 +53,9 @@
 ## MS-ALS 与 IGARSS LiDAR 候选核验（2026-10-07）
 
 新增 ISPRS JPRS 2026 的国际树种分类基准 msals-tree-benchmark 与配套数据论文 msals-species-data（通过 arXiv v2 发现，已正式发表于 ISPRS Open JPRS；标专业期刊，不冒充 JPRS）。两篇共用 MS-ALS-SPECIES，6,326 个单木段、九树种、每系统三波长，列相关研究。新增第六个数据资源入口；作者与出版社声明公开 Zenodo DOI，本次 API 超时，不声称已下载核验许可。数据论文 Figure 3(a) 标注平台架构已保存；基准 34 页机构正式 PDF 已逐页检查，独立框架未见，记 no_framework，只针对正文版本。基准存在更正稿 PII S0924271626000742，内容 403 待核验，未引用最佳精度数值。2023 两个 IGARSS LiDAR 候选补正式 DOI 和作者，仍缺原始摘要；森林胁迫会议候选关联已收录 RSE 论文，待扩展关系。2025 波形候选的 Crossref 第一搜索结果为另一作者组合的 SSRN 论文，不合并 DOI。证据见 sources/msals-and-igarss-lidar-review-2026-10-07.json。
+
+## CMFNet 与标记辅助三维光谱映射
+
+- CMFNet（TGRS 2025，10.1109/TGRS.2025.3610348）：新增 fusion/相关研究。IEEE 原始摘要和作者 CMFNet.rar 代码确认 DSM/栅格输入、GLFE/CMF 双分支分类；不把 HSI 3D 卷积称为 xyz 卷积。正式全文未取得，未运行代码，不依配置选项推定全部实验。压缩包只有分类结果图，IEEE PDF/猜测图片返回 418，needs_access。证据 sources/cmfnet-author-code-review-2026-10-07.json。
+- Fiducial HS3D Mapping（arXiv:2606.14534v1，六页）：新增 pointcloud/核心研究，八作者、原文与完整 Figure 1（PDF 第 2 页）核验。RGB MASt3R-SfM、ArUco 约束、俯视渲染及二维单应/深度查表赋谱；原稿首页 Ital-IA 2026 不冒称 CV 顶会，按允许的 arXiv 版本补充。仅两个离体样本，配准误差在同源重建的标记角点评估，不视为独立表面或临床验证。证据 sources/fiducial-hsi-mapping-review-2026-10-07.json。
+- SpecSwin3D 与二维 GaussianHSI 原始摘要明确二维光谱恢复/超分辨，记 excluded_scope。下一步可查医学三维光谱映射引文的真实场所、RSE 辐射传输候选波段范围及余下 TGRS 原始摘要；总体检索仍未完成。

@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 187 篇：133 篇 verified、157 张图；44 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 189 篇：134 篇 verified、158 张图；45 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -265,3 +265,7 @@ Gas Plume NeRF（arXiv 2026）保存 Figure 2 权重计算子流程；明确不�
 ## MS-ALS 与 IGARSS LiDAR 候选核验（2026-10-07）
 
 新增 ISPRS JPRS 2026 的国际树种分类基准 msals-tree-benchmark 与配套数据论文 msals-species-data（通过 arXiv v2 发现，已正式发表于 ISPRS Open JPRS；标专业期刊，不冒充 JPRS）。两篇共用 MS-ALS-SPECIES，6,326 个单木段、九树种、每系统三波长，列相关研究。新增第六个数据资源入口；作者与出版社声明公开 Zenodo DOI，本次 API 超时，不声称已下载核验许可。数据论文 Figure 3(a) 标注平台架构已保存；基准 34 页机构正式 PDF 已逐页检查，独立框架未见，记 no_framework，只针对正文版本。基准存在更正稿 PII S0924271626000742，内容 403 待核验，未引用最佳精度数值。2023 两个 IGARSS LiDAR 候选补正式 DOI 和作者，仍缺原始摘要；森林胁迫会议候选关联已收录 RSE 论文，待扩展关系。2025 波形候选的 Crossref 第一搜索结果为另一作者组合的 SSRN 论文，不合并 DOI。证据见 sources/msals-and-igarss-lidar-review-2026-10-07.json。
+
+## 新增框架核验
+
+Fiducial HS3D Mapping 的 arXiv:2606.14534v1 六页全文已核验，Figure 1 从第 2 页裁切，完整保留双输入、几何重建、渲染、标记与配准查表输出。CMFNet 作者压缩包没有框架/PDF，仅分类图；IEEE 请求返回 418 HTML，needs_access，不能判定 no_framework。新增论文继续同步查图；权威状态仍为 figures.json。

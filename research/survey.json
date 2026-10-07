@@ -461,6 +461,15 @@
       "engine": "web + arXiv fulltext + CVF official PDF + author publication list + Crossref",
       "query": "hyperspectral three-dimensional imaging optical microcombs; spectral and polarization vision; joint 3D shape single-view spectro-polarimetric",
       "result": "新增微梳 3D 光谱全息（arXiv 2025）和 CVPR 2024 实景 Stokes 数据，保存三张原始系统图；OL 2026 SVSPI 仍待全文及既有平台版本关系核验。"
+    },
+    {
+      "date": "2026-10-07",
+      "engine": "web_and_author_repository",
+      "query": "CMFNet Cross Mamba full text framework; arXiv hyperspectral 3D reconstruction and point cloud 2025 2026",
+      "evidenceFiles": [
+        "sources/cmfnet-author-code-review-2026-10-07.json",
+        "sources/fiducial-hsi-mapping-review-2026-10-07.json"
+      ]
     }
   ],
   "candidates": [
@@ -578,9 +587,11 @@
       "year": 2025,
       "venue": "TGRS",
       "doi": "10.1109/tgrs.2025.3610348",
-      "url": "https://doi.org/10.1109/tgrs.2025.3610348",
-      "status": "pending_abstract",
-      "discovery": "Crossref publisher-deposited metadata"
+      "url": "https://doi.org/10.1109/TGRS.2025.3610348",
+      "status": "included",
+      "discovery": "Crossref publisher-deposited metadata",
+      "paperId": "cmfnet-cross-mamba",
+      "verificationLevel": "official_abstract_and_author_code"
     },
     {
       "title": "Dual-Branch Selective Multiscale Fusion Network for Hyperspectral and LiDAR Classification",
@@ -5390,10 +5401,11 @@
       "title": "Voronoi-guided Bilateral 2D Gaussian Splatting for Arbitrary-Scale Hyperspectral Image Super-Resolution",
       "url": "https://arxiv.org/abs/2604.17727",
       "status": "excluded_scope",
-      "note": "核对 arXiv 原始摘要：二维 HSI 任意倍率超分，目标是图像像素重建，不恢复三维空间几何。Gaussian 关键词不能作为三维收录依据。",
+      "note": "原始 arXiv 摘要明确为二维 Gaussian splatting 与高光谱超分辨率，不含真实三维几何。",
       "venue": "arXiv",
       "year": 2026,
-      "checkedAt": "2026-10-07"
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract"
     },
     {
       "title": "HyKey: hyperspectral keypoint detection and matching in minimally invasive surgery",
@@ -5477,6 +5489,25 @@
       "url": "https://arxiv.org/abs/2604.24370v2",
       "status": "included",
       "verificationLevel": "author_fulltext_and_publisher_metadata"
+    },
+    {
+      "title": "A Lightweight Fiducial-Based Pipeline for 3D Hyperspectral Mapping of ex-vivo Lumpectomy Specimens",
+      "paperId": "fiducial-hsi-mapping",
+      "year": 2026,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2606.14534",
+      "status": "included",
+      "verificationLevel": "full_text"
+    },
+    {
+      "title": "SpecSwin3D: Generating Hyperspectral Imagery from Multispectral Data via Transformer Networks",
+      "url": "https://arxiv.org/abs/2509.06122",
+      "venue": "arXiv",
+      "year": 2025,
+      "status": "excluded_scope",
+      "checkedAt": "2026-10-07",
+      "verificationLevel": "official_abstract",
+      "note": "原始 arXiv 摘要明确为五波段二维图像恢复 224 波段影像及分类/分割；3D shifted-window 沿空间与波段工作，未恢复 xyz 几何。"
     }
   ],
   "coverage": {

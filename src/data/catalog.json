@@ -9263,6 +9263,106 @@
           "attribution": "Matti Hyyppä, Klaara Salolahti, Eric Hyyppä, Xiaowei Yu, Josef Taher, Leena Matikainen, Matti Lehtomäki, Paula Litkey, Teemu Hakala, Harri Kaartinen, Juha Hyyppä, Antero Kukko · ISPRS Open JPRS 2026"
         }
       ]
+    },
+    {
+      "id": "cmfnet-cross-mamba",
+      "shortTitle": "CMFNet",
+      "title": "CMFNet: Cross Mamba Fusion Network for Hyperspectral and LiDAR Data Classification",
+      "authors": "Ziqi Li, Jiang Wu, Yonghong Zhang, Yu Yan",
+      "year": 2025,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "track": "fusion",
+      "representation": "HSI–LiDAR 融合",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "LiDAR",
+        "高程辅助分类",
+        "Mamba",
+        "全局局部特征",
+        "跨模态融合"
+      ],
+      "summary": "以双分支提取高光谱与 LiDAR 栅格特征，通过全局–局部特征提取及跨 Mamba 交互实现地物分类。",
+      "input": "高光谱影像与空间对齐的 LiDAR 栅格邻域；作者代码的 Trento 输入为 63 波段 HSI 和单通道 LiDAR。",
+      "output": "二维地物类别预测与分类图；不输出三维几何或逐点点云标签。",
+      "mechanism": "先进行多尺度卷积特征嵌入，再由 GLFE 模块融合全局和局部信息；CMF 模块扩展 Mamba，实现双模态交互及多层特征提取。作者代码将两分支池化、拼接后用于分类。",
+      "readingNote": "IEEE 原始摘要、出版方 Crossref 元数据及作者发布的代码压缩包共同核验。代码读取 Houston DSM、Trento LiDAR 栅格，HSI 分支的 3D 卷积处理波段×二维邻域，不是 xyz 空间卷积。摘要声明三套基准，代码支持分支不等于全文中的实验协议已经核验；未运行训练，未报告精度排名。正式全文尚未取得。注意存在多个其他领域同名 CMFNet，不能混用图或论文。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3610348",
+      "doi": "10.1109/TGRS.2025.3610348",
+      "code": "https://github.com/li-zi-qi/CMFNet",
+      "verificationLevel": "official_abstract_and_author_code",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{cmfnetcrossmamba,\n  title={CMFNet: Cross Mamba Fusion Network for Hyperspectral and LiDAR Data Classification},\n  author={Ziqi Li and Jiang Wu and Yonghong Zhang and Yu Yan},\n  year={2025},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  url={https://doi.org/10.1109/TGRS.2025.3610348},\n  doi={10.1109/TGRS.2025.3610348}\n}",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "作者 CMFNet.rar 下载 HTTP 200 并完整列出、解包核验：仅代码、MAT 数据、权重及 Trento 分类结果图，没有论文 PDF 或独立框架图。IEEE 正式 PDF 与猜测原图路径均返回 HTTP 418 HTML，不能核验原图、图号或判定全文无框架。其他领域同名 CMFNet 不混用。",
+        "sourceUrl": "https://github.com/li-zi-qi/CMFNet",
+        "checkedAt": "2026-10-07"
+      }
+    },
+    {
+      "id": "fiducial-hsi-mapping",
+      "shortTitle": "Fiducial HS3D Mapping",
+      "title": "A Lightweight Fiducial-Based Pipeline for 3D Hyperspectral Mapping of ex-vivo Lumpectomy Specimens",
+      "authors": "Anna Bicchi, Alberto Rota, Leonardo Passoni, Nicola Ancellotti, Andrea Peroni, Lorenzo Vinco, Dario Polli, Elena De Momi",
+      "year": 2026,
+      "venue": "arXiv",
+      "publicationName": "arXiv preprint arXiv:2606.14534v1",
+      "track": "pointcloud",
+      "representation": "光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱",
+        "三维点云",
+        "配准",
+        "ArUco",
+        "SfM",
+        "组织表面"
+      ],
+      "summary": "通过 ArUco 标记约束 RGB 三维重建，将单幅俯视高光谱观测映射到组织表面，得到带完整光谱属性的真实三维点云。",
+      "input": "至少 20 幅多视角 RGB 照片、一幅俯视 HSI 观测和四个已知尺寸的共面 ArUco 标记；原稿报告 290 波段、400–1700 nm。",
+      "output": "组织可见表面的三维光谱点云，每点包含 xyz 坐标及光谱；不是组织内部体成像或肿瘤分类。",
+      "mechanism": "MASt3R-SfM 恢复几何，用 ArUco 角点优化相机位姿与标记三维坐标、确定尺度；正交渲染产生俯视图与 xyz 查找图，16 个跨模态角点拟合二维单应，将光谱通过深度查表赋给三维表面。",
+      "readingNote": "arXiv:2606.14534v1 六页全文核验，首页标注 Ital-IA 2026 全国人工智能会议，当前按用户允许的 arXiv 版本补充，不冒充 CV 顶会。几何来自 RGB SfM，HSI 用于表面赋谱，且依赖俯视/近似正交投影条件；“免标定”仅指无需额外 HSI 内参或跨模态位姿恢复，仍需已知尺寸标记及 SfM 初始化。实验仅两个离体样本，误差在参与配准的 16 个标记角点上评估，三维参考由同一摄影测量重建产生，缺少独立表面真值。没有验证肿瘤分类或临床效果；减至 90% RGB 视图时三维误差显著增加。",
+      "paper": "https://arxiv.org/abs/2606.14534",
+      "doi": "10.48550/arXiv.2606.14534",
+      "verificationLevel": "full_text",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "citation": "@misc{fiducialhsimapping,\n  title={A Lightweight Fiducial-Based Pipeline for 3D Hyperspectral Mapping of ex-vivo Lumpectomy Specimens},\n  author={Anna Bicchi and Alberto Rota and Leonardo Passoni and Nicola Ancellotti and Andrea Peroni and Lorenzo Vinco and Dario Polli and Elena De Momi},\n  year={2026},\n  eprint={2606.14534},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2606.14534},\n  doi={10.48550/arXiv.2606.14534}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2606.14534v1",
+          "figureLabel": "Figure 1",
+          "caption": "RGB 多视角重建与 ArUco 约束、正交渲染、单幅 HSI 标记检测及二维配准/深度查表构成三维光谱点云生成流程。",
+          "verificationNote": "核对同题名 arXiv v1 PDF 第 2 页 Figure 1 及图注，保留两条输入分支、全部模块、箭头与输出；原稿首页标注 Ital-IA 2026，不冒充顶会正式排版。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              2122,
+              3000
+            ],
+            "pixelBox": [
+              240,
+              1270,
+              1888,
+              1942
+            ],
+            "renderCommand": "pdftoppm -f 2 -singlefile -scale-to 3000 -png"
+          },
+          "path": "figures/fiducial-hsi-mapping/framework-pipeline.png",
+          "width": 1648,
+          "height": 672,
+          "verifiedAt": "2026-10-07",
+          "sha256": "9273fe616d70769c7c27321905a9ae48a3bdd36ccc3110e88be92eb9a7723968",
+          "attribution": "Anna Bicchi, Alberto Rota, Leonardo Passoni, Nicola Ancellotti, Andrea Peroni, Lorenzo Vinco, Dario Polli, Elena De Momi · arXiv 2026"
+        }
+      ]
     }
   ],
   "datasets": [
