@@ -1430,20 +1430,89 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
+        "categoryIds": [
+          "joint-spectral-depth",
+          "spectral-instrument-design",
+          "computational-imaging",
+          "spectral-reconstruction",
+          "datasets-benchmarks"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接联合恢复波长光谱与几何深度；光谱通道与空间深度不能混为同一轴。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以一个学习衍射光学元件从单次曝光共同恢复光谱和深度？",
+        "datasets": "台式 HS-D 仪器采集真值数据；数量、拆分和开放许可待全文核验。",
+        "experimentSetting": "可微波动光学仿真与重建网络联合优化；作者搭建真实原型进行合成与真实实验。",
+        "conclusions": "作者摘要报告单次曝光同时恢复 HS-D；完整性能、标定和制造误差尚未复核。",
+        "limitations": "DOE 制造误差、PSF 标定、深度/光谱可辨识性及跨场景泛化待全文核验。",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Baek_Single-Shot_Hyperspectral-Depth_Imaging_With_Learned_Diffractive_Optics_ICCV_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份与页码",
+              "如何以一个学习衍射光学元件从单次曝光共同恢复光谱和深度？",
+              "作者摘要报告单次曝光同时恢复 HS-D；完整性能、标定和制造误差尚未复核。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2009.00463",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv 官方题名、作者及完整提交历史",
+            "supports": [
+              "首次提交日期、所有已显示版本的更新日期与正式版关联"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "learned-hs-depth-iccv2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Baek_Single-Shot_Hyperspectral-Depth_Imaging_With_Learned_Diffractive_Optics_ICCV_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 ICCV 2021 正式版；其他版本与全文差异待核验。"
+          },
+          {
+            "id": "learned-hs-depth-arxiv-v1",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2009.00463v1",
+            "year": 2020,
+            "relation": "CVF 官方链接、arXiv 题名与作者核对一致；记录该版日期，正式版与版本全文差异待比对，不计独立方法。",
+            "arxivId": "2009.00463",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2020-09-01T14:19:35Z",
+            "updatedAt": "2020-09-01T14:19:35Z",
+            "metadataStatus": "verified"
+          },
+          {
+            "id": "learned-hs-depth-arxiv-v2",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2009.00463v2",
+            "year": 2021,
+            "relation": "CVF 官方链接、arXiv 题名与作者核对一致；记录该版日期，正式版与版本全文差异待比对，不计独立方法。",
+            "arxivId": "2009.00463",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2020-09-01T14:19:35Z",
+            "updatedAt": "2021-03-14T13:18:38Z",
+            "metadataStatus": "verified"
+          },
+          {
+            "id": "learned-hs-depth-arxiv-v3",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2009.00463v3",
+            "year": 2021,
+            "relation": "CVF 官方链接、arXiv 题名与作者核对一致；记录该版日期，正式版与版本全文差异待比对，不计独立方法。",
+            "arxivId": "2009.00463",
+            "arxivVersion": "v3",
+            "firstSubmittedAt": "2020-09-01T14:19:35Z",
+            "updatedAt": "2021-08-15T11:26:30Z",
+            "metadataStatus": "verified"
+          }
+        ],
         "methodFamilyId": "learned-hs-depth"
       }
     },
@@ -17949,6 +18018,460 @@
           "attribution": "Bo Sun, Junchi Yan, Xiao Zhou, Yinqiang Zheng · CVPR 2021"
         }
       ]
+    },
+    {
+      "id": "pnp-dip-2021",
+      "shortTitle": "PnP-DIP",
+      "title": "Self-Supervised Neural Networks for Spectral Snapshot Compressive Imaging",
+      "authors": "Ziyi Meng, Zhenming Yu, Kun Xu, Xin Yuan",
+      "year": 2021,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "PnP-DIP",
+      "tags": [
+        "spectral-reconstruction",
+        "computational-imaging",
+        "plug-and-play",
+        "self-supervised-reconstruction"
+      ],
+      "summary": "将 DIP 与 plug-and-play 优化结合，以测量一致性更新未预训练网络，并可组合预训练去噪先验。",
+      "input": "单次光谱 SCI 压缩测量",
+      "output": "重建的高光谱立方体",
+      "mechanism": "将 DIP 与 plug-and-play 优化结合，以测量一致性更新未预训练网络，并可组合预训练去噪先验。",
+      "readingNote": "已读官方摘要，局部图注和方法页单独记录；未阅读全文。DOI、未列出的资源、完整实验、许可与版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2021/html/Meng_Self-Supervised_Neural_Networks_for_Spectral_Snapshot_Compressive_Imaging_ICCV_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Meng_2021_ICCV,\n    author    = {Meng, Ziyi and Yu, Zhenming and Xu, Kun and Yuan, Xin},\n    title     = {Self-Supervised Neural Networks for Spectral Snapshot Compressive Imaging},\n    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n    month     = {October},\n    year      = {2021},\n    pages     = {2622-2631}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "computational-imaging",
+          "plug-and-play",
+          "self-supervised-reconstruction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "针对光谱 SCI 的二维测量恢复空间—波长立方体；不将 SCI 的视频用例混入光谱实验。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何减少光谱快照重建对成对训练数据的依赖？",
+        "datasets": "摘要说明合成与真实数据；数据名称、规模和拆分待全文核验。",
+        "experimentSetting": "基础版本以未预训练 DIP 作测量自监督优化；另一个版本结合预训练深度去噪先验，二者不能混称全部免预训练。",
+        "conclusions": "作者摘要报告基础版本取得有竞争力结果，结合预训练先验可进一步改善；完整数值待复核。",
+        "limitations": "单测量优化成本、早停和泛化边界待核验；扩展版本仍依赖预训练去噪器。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Meng_Self-Supervised_Neural_Networks_for_Spectral_Snapshot_Compressive_Imaging_ICCV_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份与页码",
+              "如何减少光谱快照重建对成对训练数据的依赖？",
+              "作者摘要报告基础版本取得有竞争力结果，结合预训练先验可进一步改善；完整数值待复核。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2108.12654",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv 官方题名、作者及完整提交历史",
+            "supports": [
+              "首次提交日期、所有已显示版本的更新日期与正式版关联",
+              "官方 arXiv 摘要给出的代码链接；仓库可访问，许可与复现未核验"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Meng_Self-Supervised_Neural_Networks_for_Spectral_Snapshot_Compressive_Imaging_ICCV_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文 PDF 第 5 页局部方法/算法与图注",
+            "supports": [
+              "Algorithm 1 — 自监督光谱 SCI",
+              "优化迭代更新图像、去噪变量、DIP 网络及辅助变量；保留原始伪代码。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "pnp-dip-2021-iccv2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Meng_Self-Supervised_Neural_Networks_for_Spectral_Snapshot_Compressive_Imaging_ICCV_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 ICCV 2021 正式版；其他版本与全文差异待核验。"
+          },
+          {
+            "id": "pnp-dip-2021-arxiv-v1",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2108.12654v1",
+            "year": 2021,
+            "relation": "CVF 官方链接、arXiv 题名与作者核对一致；记录该版日期，正式版与版本全文差异待比对，不计独立方法。",
+            "arxivId": "2108.12654",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2021-08-28T14:17:38Z",
+            "updatedAt": "2021-08-28T14:17:38Z",
+            "metadataStatus": "verified"
+          }
+        ],
+        "methodFamilyId": "pnp-dip-2021"
+      },
+      "code": "https://github.com/mengziyi64/CASSI-Self-Supervised",
+      "arxiv": "2108.12654",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2021/papers/Meng_Self-Supervised_Neural_Networks_for_Spectral_Snapshot_Compressive_Imaging_ICCV_2021_paper.pdf",
+          "figureLabel": "Algorithm 1 — 自监督光谱 SCI",
+          "page": 5,
+          "caption": "优化迭代更新图像、去噪变量、DIP 网络及辅助变量；保留原始伪代码。",
+          "verificationNote": "人工核对原始方法图或算法伪代码与完整图注；原文裁切，未重绘；局部阅读不计阅读全文。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              305,
+              156,
+              550,
+              285
+            ]
+          },
+          "path": "figures/pnp-dip-2021/framework.png",
+          "width": 490,
+          "height": 258,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "9bb699142bb10d952b72928d25b37fc8012322cdc83e3d0f484c127e4125ffee",
+          "attribution": "Ziyi Meng, Zhenming Yu, Kun Xu, Xin Yuan · ICCV 2021"
+        }
+      ]
+    },
+    {
+      "id": "semantic-unsupervised-sr-2021",
+      "shortTitle": "Semantic Unsupervised SR",
+      "title": "Semantic-Embedded Unsupervised Spectral Reconstruction From Single RGB Images in the Wild",
+      "authors": "Zhiyu Zhu, Hui Liu, Junhui Hou, Huanqiang Zeng, Qingfu Zhang",
+      "year": 2021,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "Semantic Unsupervised SR",
+      "tags": [
+        "spectral-reconstruction",
+        "unsupervised-spectral-learning"
+      ],
+      "summary": "估计相机光谱响应并利用 RGB 重投影一致性、对抗学习、L1 梯度裁剪和语义嵌入约束光谱恢复。",
+      "input": "单张商业相机 RGB 图像；训练使用无配对 RGB/HSI",
+      "output": "恢复的高光谱图像",
+      "mechanism": "估计相机光谱响应并利用 RGB 重投影一致性、对抗学习、L1 梯度裁剪和语义嵌入约束光谱恢复。",
+      "readingNote": "已读官方摘要，局部图注和方法页单独记录；未阅读全文。DOI、未列出的资源、完整实验、许可与版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2021/html/Zhu_Semantic-Embedded_Unsupervised_Spectral_Reconstruction_From_Single_RGB_Images_in_the_ICCV_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Zhu_2021_ICCV,\n    author    = {Zhu, Zhiyu and Liu, Hui and Hou, Junhui and Zeng, Huanqiang and Zhang, Qingfu},\n    title     = {Semantic-Embedded Unsupervised Spectral Reconstruction From Single RGB Images in the Wild},\n    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n    month     = {October},\n    year      = {2021},\n    pages     = {2279-2288}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "unsupervised-spectral-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "RGB 是输入观测，研究目标为恢复高光谱图像；无配对训练仍使用真实 HSI 和语义信息。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用无配对 RGB/HSI 数据重建商业相机 RGB 的高光谱图像？",
+        "datasets": "摘要提及两个重建数据集及真实 RGB 视觉跟踪；具体数据名、数量与拆分待全文核验。",
+        "experimentSetting": "图注明确无配对且带语义标注 RGB 与真实 HSI 训练；估计相机响应、重投影、对抗训练与语义正则，完整训练细节待核验。",
+        "conclusions": "作者摘要报告相较无监督方法改善，并在部分设置超过所比较监督方法；不能扩展为所有场景结论。",
+        "limitations": "训练仍需真实 HSI 及 RGB 语义信息；相机先验、语义偏差及未知照明泛化待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Zhu_Semantic-Embedded_Unsupervised_Spectral_Reconstruction_From_Single_RGB_Images_in_the_ICCV_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份与页码",
+              "如何用无配对 RGB/HSI 数据重建商业相机 RGB 的高光谱图像？",
+              "作者摘要报告相较无监督方法改善，并在部分设置超过所比较监督方法；不能扩展为所有场景结论。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2108.06659",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv 官方题名、作者及完整提交历史",
+            "supports": [
+              "首次提交日期、所有已显示版本的更新日期与正式版关联"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Zhu_Semantic-Embedded_Unsupervised_Spectral_Reconstruction_From_Single_RGB_Images_in_the_ICCV_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文 PDF 第 3 页局部方法/算法与图注",
+            "supports": [
+              "Figure 1 — 无配对光谱重建流程",
+              "相机响应估计、光谱生成、语义嵌入及对抗判别；图注明确语义正则与判别器用于训练。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "semantic-unsupervised-sr-2021-iccv2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Zhu_Semantic-Embedded_Unsupervised_Spectral_Reconstruction_From_Single_RGB_Images_in_the_ICCV_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 ICCV 2021 正式版；其他版本与全文差异待核验。"
+          },
+          {
+            "id": "semantic-unsupervised-sr-2021-arxiv-v1",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2108.06659v1",
+            "year": 2021,
+            "relation": "CVF 官方链接、arXiv 题名与作者核对一致；记录该版日期，正式版与版本全文差异待比对，不计独立方法。",
+            "arxivId": "2108.06659",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2021-08-15T05:19:44Z",
+            "updatedAt": "2021-08-15T05:19:44Z",
+            "metadataStatus": "verified"
+          },
+          {
+            "id": "semantic-unsupervised-sr-2021-arxiv-v2",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2108.06659v2",
+            "year": 2021,
+            "relation": "CVF 官方链接、arXiv 题名与作者核对一致；记录该版日期，正式版与版本全文差异待比对，不计独立方法。",
+            "arxivId": "2108.06659",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2021-08-15T05:19:44Z",
+            "updatedAt": "2021-08-17T03:36:48Z",
+            "metadataStatus": "verified"
+          }
+        ],
+        "methodFamilyId": "semantic-unsupervised-sr-2021"
+      },
+      "code": "https://github.com/zbzhzhy/Unsupervised-Spectral-Reconstruction",
+      "arxiv": "2108.06659",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2021/papers/Zhu_Semantic-Embedded_Unsupervised_Spectral_Reconstruction_From_Single_RGB_Images_in_the_ICCV_2021_paper.pdf",
+          "figureLabel": "Figure 1 — 无配对光谱重建流程",
+          "page": 3,
+          "caption": "相机响应估计、光谱生成、语义嵌入及对抗判别；图注明确语义正则与判别器用于训练。",
+          "verificationNote": "人工核对原始方法图或算法伪代码与完整图注；原文裁切，未重绘；局部阅读不计阅读全文。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              45,
+              68,
+              550,
+              341
+            ]
+          },
+          "path": "figures/semantic-unsupervised-sr-2021/framework.png",
+          "width": 1010,
+          "height": 546,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "e3af400dc5a27c8f3d2c624898dbfb900989dbaf4b9aeb4b70026f0885b5ed3a",
+          "attribution": "Zhiyu Zhu, Hui Liu, Junhui Hou, Huanqiang Zeng, Qingfu Zhang · ICCV 2021"
+        }
+      ]
+    },
+    {
+      "id": "multispectral-illumination-unrolling-2021",
+      "shortTitle": "Illumination Unrolling",
+      "title": "Multispectral Illumination Estimation Using Deep Unrolling Network",
+      "authors": "Yuqi Li, Qiang Fu, Wolfgang Heidrich",
+      "year": 2021,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "Illumination Unrolling",
+      "tags": [
+        "spectral-illumination-estimation",
+        "deep-unfolding",
+        "transformer",
+        "datasets-benchmarks"
+      ],
+      "summary": "约束矩阵分解与 ADMM 深度展开，结合低秩、总变分及多头 Transformer 去噪模块。",
+      "input": "多光谱图像",
+      "output": "照明光谱分布及光谱反射率图像",
+      "mechanism": "约束矩阵分解与 ADMM 深度展开，结合低秩、总变分及多头 Transformer 去噪模块。",
+      "readingNote": "已读官方摘要，局部图注和方法页单独记录；未阅读全文。DOI、未列出的资源、完整实验、许可与版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2021/html/Li_Multispectral_Illumination_Estimation_Using_Deep_Unrolling_Network_ICCV_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Li_2021_ICCV,\n    author    = {Li, Yuqi and Fu, Qiang and Heidrich, Wolfgang},\n    title     = {Multispectral Illumination Estimation Using Deep Unrolling Network},\n    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n    month     = {October},\n    year      = {2021},\n    pages     = {2672-2681}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-illumination-estimation",
+          "deep-unfolding",
+          "transformer",
+          "datasets-benchmarks"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "原摘要明确多光谱图像的单一或多照明光谱估计；记录多光谱关联，不统一标为密集高光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何从多光谱图像分离单一或多个照明光谱和反射率？",
+        "datasets": "新建多光谱反射率图像数据用于合成训练与评测；数据规模、入口和许可待核验。",
+        "experimentSetting": "约束矩阵分解以 ADMM 展开为网络；局部 Fig. 2 显示矩阵分解、低秩、TV 和多头 Transformer 模块。",
+        "conclusions": "作者摘要报告合成和真实实验优于所比较光谱照明估计方法，并观察跨场景/光谱泛化；完整数值待核验。",
+        "limitations": "矩阵分解约束、光源数量及复杂材料适用范围待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Li_Multispectral_Illumination_Estimation_Using_Deep_Unrolling_Network_ICCV_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份与页码",
+              "如何从多光谱图像分离单一或多个照明光谱和反射率？",
+              "作者摘要报告合成和真实实验优于所比较光谱照明估计方法，并观察跨场景/光谱泛化；完整数值待核验。"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_Multispectral_Illumination_Estimation_Using_Deep_Unrolling_Network_ICCV_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文 PDF 第 4 页局部方法/算法与图注",
+            "supports": [
+              "Figure 2 — 照明估计展开网络",
+              "每阶段矩阵分解与低秩、TV、多头 Transformer 三个去噪模块，输出照明及反射率。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "multispectral-illumination-unrolling-2021-iccv2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Li_Multispectral_Illumination_Estimation_Using_Deep_Unrolling_Network_ICCV_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 ICCV 2021 正式版；其他版本与全文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "multispectral-illumination-unrolling-2021"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2021/papers/Li_Multispectral_Illumination_Estimation_Using_Deep_Unrolling_Network_ICCV_2021_paper.pdf",
+          "figureLabel": "Figure 2 — 照明估计展开网络",
+          "page": 4,
+          "caption": "每阶段矩阵分解与低秩、TV、多头 Transformer 三个去噪模块，输出照明及反射率。",
+          "verificationNote": "人工核对原始方法图或算法伪代码与完整图注；原文裁切，未重绘；局部阅读不计阅读全文。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 144,
+            "pdfRect": [
+              44,
+              102,
+              534,
+              247
+            ]
+          },
+          "path": "figures/multispectral-illumination-unrolling-2021/framework.png",
+          "width": 980,
+          "height": 290,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "faf72fcde7f0db03abd770c54fbc00baae2e6e5624027650ae79812630e5d9a1",
+          "attribution": "Yuqi Li, Qiang Fu, Wolfgang Heidrich · ICCV 2021"
+        }
+      ]
+    },
+    {
+      "id": "realistic-hsi-denoising-2021",
+      "shortTitle": "Realistic HSI Denoising",
+      "title": "Hyperspectral Image Denoising With Realistic Data",
+      "authors": "Tao Zhang, Ying Fu, Cheng Li",
+      "year": 2021,
+      "venue": "ICCV",
+      "publicationName": "IEEE/CVF International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "Realistic HSI Denoising",
+      "tags": [
+        "spectral-denoising",
+        "datasets-benchmarks",
+        "noise-model-calibration"
+      ],
+      "summary": "采集短/长曝光配对 HSI，建模并校准真实相机噪声，再合成较真实的训练数据。",
+      "input": "真实短曝光噪声 HSI；校准数据",
+      "output": "去噪 HSI、校准噪声模型与配对数据",
+      "mechanism": "采集短/长曝光配对 HSI，建模并校准真实相机噪声，再合成较真实的训练数据。",
+      "readingNote": "已读官方摘要，局部图注和方法页单独记录；未阅读全文。DOI、未列出的资源、完整实验、许可与版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Hyperspectral_Image_Denoising_With_Realistic_Data_ICCV_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Zhang_2021_ICCV,\n    author    = {Zhang, Tao and Fu, Ying and Li, Cheng},\n    title     = {Hyperspectral Image Denoising With Realistic Data},\n    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},\n    month     = {October},\n    year      = {2021},\n    pages     = {2248-2257}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-denoising",
+          "datasets-benchmarks",
+          "noise-model-calibration"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究高光谱相机噪声、真实配对数据及去噪；波长轴独立于空间轴。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何构建与真实相机噪声分布匹配的高光谱去噪训练数据？",
+        "datasets": "短曝光噪声 HSI 与长曝光参考 HSI 配对数据；室内/室外示例见 Fig. 3，数量和拆分待全文核验。",
+        "experimentSetting": "建立真实噪声模型并校准相机参数，用模型生成合成数据训练网络；图注检索与局部页面核验不替代完整实验阅读。",
+        "conclusions": "作者摘要报告模型合成数据训练可达到与真实配对数据训练相当效果；完整实验数值待核验。",
+        "limitations": "长曝光参考并非无条件无噪真值；跨相机、运动和不同噪声分布适用性待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Hyperspectral_Image_Denoising_With_Realistic_Data_ICCV_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX，非完整全文阅读",
+            "supports": [
+              "题名、作者、正式年份与页码",
+              "如何构建与真实相机噪声分布匹配的高光谱去噪训练数据？",
+              "作者摘要报告模型合成数据训练可达到与真实配对数据训练相当效果；完整实验数值待核验。"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Zhang_Hyperspectral_Image_Denoising_With_Realistic_Data_ICCV_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文图号检索及 PDF 第 1、2、3、5、7、8 页局部图注",
+            "supports": [
+              "全文检索图号并核对局部页面：Fig. 1/2 为噪声及去噪示例，Fig. 3 配对数据，Fig. 4 条纹噪声分析，Fig. 5 校准色卡，Fig. 6 噪声拟合，Fig. 7/8/9 对比结果；未见独立方法框架图。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "realistic-hsi-denoising-2021-iccv2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Hyperspectral_Image_Denoising_With_Realistic_Data_ICCV_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 ICCV 2021 正式版；其他版本与全文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "realistic-hsi-denoising-2021"
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "原文 PDF 已取得；检索并核对 Fig. 1–9：噪声/去噪示例、配对数据、条纹分析、校准色卡、分布拟合和结果比较，未见独立方法框架图。局部图注核验，不计完整全文阅读。",
+        "sourceUrl": "https://openaccess.thecvf.com/content/ICCV2021/papers/Zhang_Hyperspectral_Image_Denoising_With_Realistic_Data_ICCV_2021_paper.pdf",
+        "checkedAt": "2026-10-08"
+      }
     }
   ],
   "datasets": [
@@ -18164,7 +18687,10 @@
         "tlpln-2021",
         "dgsm-sci-2021",
         "sci-tv-ffdnet-2021",
-        "ircut-spectral-2021"
+        "ircut-spectral-2021",
+        "pnp-dip-2021",
+        "semantic-unsupervised-sr-2021",
+        "learned-hs-depth"
       ],
       "history": [
         {
@@ -18188,7 +18714,9 @@
         "hyplex-metasurface",
         "tlpln-2021",
         "dgsm-sci-2021",
-        "sci-tv-ffdnet-2021"
+        "sci-tv-ffdnet-2021",
+        "pnp-dip-2021",
+        "learned-hs-depth"
       ],
       "history": [
         {
@@ -18249,7 +18777,8 @@
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
         "mst-cassi",
-        "hypertransformer-pansharpening"
+        "hypertransformer-pansharpening",
+        "multispectral-illumination-unrolling-2021"
       ],
       "history": [
         {
@@ -18270,7 +18799,8 @@
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
         "herosnet-sci",
-        "dgsm-sci-2021"
+        "dgsm-sci-2021",
+        "multispectral-illumination-unrolling-2021"
       ],
       "history": [
         {
@@ -18311,7 +18841,8 @@
       "rationale": "根据本轮早期官方摘要与局部方法形成，边界待更多文献复核。",
       "evidencePaperIds": [
         "decomposable-nonlocal-tensor-denoising",
-        "mnf-1988"
+        "mnf-1988",
+        "realistic-hsi-denoising-2021"
       ],
       "history": [
         {
@@ -18357,7 +18888,10 @@
       "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
       "evidencePaperIds": [
         "hyper-skin-2023",
-        "m2sodai-2023"
+        "m2sodai-2023",
+        "multispectral-illumination-unrolling-2021",
+        "realistic-hsi-denoising-2021",
+        "learned-hs-depth"
       ],
       "history": [
         {
@@ -18567,7 +19101,8 @@
         "dd-cassi-2007",
         "sd-cassi-2008",
         "ircut-spectral-2021",
-        "event-bispectral-photometry"
+        "event-bispectral-photometry",
+        "learned-hs-depth"
       ],
       "history": [
         {
@@ -18667,7 +19202,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
       "evidencePaperIds": [
-        "sci-tv-ffdnet-2021"
+        "sci-tv-ffdnet-2021",
+        "pnp-dip-2021"
       ],
       "history": [
         {
@@ -18755,6 +19291,106 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "本批摘要明确对应任务、方法或应用。"
+        }
+      ]
+    },
+    {
+      "id": "self-supervised-reconstruction",
+      "name": "自监督光谱重建",
+      "dimension": "method",
+      "definition": "以测量一致性优化光谱逆问题，不依赖成对目标训练；预训练辅助先验单独说明。",
+      "status": "provisional",
+      "color": "#8d9ca8",
+      "createdAt": "2026-10-08",
+      "rationale": "由 ICCV 2021 官方摘要与注明的局部原文证据形成；边界随更多论文复核。",
+      "evidencePaperIds": [
+        "pnp-dip-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批论文提供对应任务或方法的直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "unsupervised-spectral-learning",
+      "name": "无配对光谱学习",
+      "dimension": "method",
+      "definition": "使用未配对 RGB 与光谱数据，结合成像模型或分布约束学习光谱映射。",
+      "status": "provisional",
+      "color": "#8d9ca8",
+      "createdAt": "2026-10-08",
+      "rationale": "由 ICCV 2021 官方摘要与注明的局部原文证据形成；边界随更多论文复核。",
+      "evidencePaperIds": [
+        "semantic-unsupervised-sr-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批论文提供对应任务或方法的直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-illumination-estimation",
+      "name": "光谱照明估计",
+      "dimension": "task",
+      "definition": "从波长相关图像估计照明光谱，可同时分离表面光谱反射率。",
+      "status": "provisional",
+      "color": "#8d9ca8",
+      "createdAt": "2026-10-08",
+      "rationale": "由 ICCV 2021 官方摘要与注明的局部原文证据形成；边界随更多论文复核。",
+      "evidencePaperIds": [
+        "multispectral-illumination-unrolling-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批论文提供对应任务或方法的直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "noise-model-calibration",
+      "name": "噪声建模与标定",
+      "dimension": "method",
+      "definition": "建立并校准光谱传感器噪声分布，用于合成数据或复原。",
+      "status": "provisional",
+      "color": "#8d9ca8",
+      "createdAt": "2026-10-08",
+      "rationale": "由 ICCV 2021 官方摘要与注明的局部原文证据形成；边界随更多论文复核。",
+      "evidencePaperIds": [
+        "realistic-hsi-denoising-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批论文提供对应任务或方法的直接证据。"
+        }
+      ]
+    },
+    {
+      "id": "joint-spectral-depth",
+      "name": "光谱与深度联合成像",
+      "dimension": "task",
+      "definition": "利用共同观测同时恢复波长光谱与空间几何深度。",
+      "status": "provisional",
+      "color": "#8d9ca8",
+      "createdAt": "2026-10-08",
+      "rationale": "由 ICCV 2021 官方摘要与注明的局部原文证据形成；边界随更多论文复核。",
+      "evidencePaperIds": [
+        "learned-hs-depth"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批论文提供对应任务或方法的直接证据。"
         }
       ]
     }
