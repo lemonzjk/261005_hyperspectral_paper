@@ -1961,20 +1961,41 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
+        "categoryIds": [
+          "computational-imaging",
+          "sparse-dictionary-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "官方摘要明确空间、角度、波长联合快照成像；既有三维专题成员事实保持原义。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用单相机同时获取空间、角度和波长光场？",
         "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
+        "experimentSetting": "官方摘要报告合成与实测实验；具体规模、指标与装置参数待查。",
+        "conclusions": "作者摘要报告谱编码反射镜阵列和学习光谱稀疏先验实现快照采集；完整精度待复核。",
         "limitations": "待核验",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Xue_Catadioptric_HyperSpectral_Light_ICCV_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要；非阅读全文",
+            "supports": [
+              "完整题名和五作者、ICCV2017",
+              "谱编码折反射镜阵列、预训练字典光谱稀疏先验、空间角度波长联合采集"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "catadioptric-hlf-iccv2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Xue_Catadioptric_HyperSpectral_Light_ICCV_2017_paper.html",
+            "year": 2017,
+            "relation": "原专题已收录；官方摘要复核，总库去重。其他版本关系待查。"
+          }
+        ],
         "methodFamilyId": "catadioptric-hlf"
       }
     },
@@ -21273,6 +21294,228 @@
           "attribution": "Charis Lanaras, Emmanuel Baltsavias, Konrad Schindler · ICCV 2015"
         }
       ]
+    },
+    {
+      "id": "filter-selection-2017",
+      "shortTitle": "Filter Selection",
+      "title": "Filter Selection for Hyperspectral Estimation",
+      "authors": "Boaz Arad, Ohad Ben-Shahar",
+      "year": 2017,
+      "venue": "ICCV",
+      "publicationName": "IEEE International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2017.342",
+      "representation": "Filter Selection",
+      "tags": [
+        "camera-response-design",
+        "spectral-reconstruction"
+      ],
+      "summary": "以高光谱估计误差评价候选滤片组合，通过演化搜索选择响应；支持自定义滤片和超过三通道的多光谱相机。",
+      "input": "候选光学滤片/相机响应族、训练光谱与其合成通道观测。",
+      "output": "用于高光谱估计的滤片组合。",
+      "mechanism": "以高光谱估计误差评价候选滤片组合，通过演化搜索选择响应；支持自定义滤片和超过三通道的多光谱相机。",
+      "readingNote": "已读官方摘要和注明局部原图/方法说明；未阅读全文。完整实验、版本差异、代码运行和数据许可待查。",
+      "paper": "https://openaccess.thecvf.com/content_iccv_2017/html/Arad_Filter_Selection_for_ICCV_2017_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Arad_2017_ICCV,\nauthor = {Arad, Boaz and Ben-Shahar, Ohad},\ntitle = {Filter Selection for Hyperspectral Estimation},\nbooktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},\nmonth = {Oct},\nyear = {2017}\n}",
+      "library": {
+        "categoryIds": [
+          "camera-response-design",
+          "spectral-reconstruction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学波长的高光谱估计；普通二维图像任务，不加入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何选择相机响应滤片以减少RGB或多通道到高光谱估计误差？",
+        "datasets": "摘要未列具体数据集；名称、规模、划分与数据许可待全文核验。",
+        "experimentSetting": "已核验官方摘要及第8页原图；完整参数与指标协议待查。",
+        "conclusions": "摘要声称响应选择带来超过33%的估计精度改善；第8页图展示三类滤片空间的响应。数值基准、度量与完整实验协议尚未复核。",
+        "limitations": "已知相机响应、训练光谱覆盖、跨照明/相机泛化与部署成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Arad_Filter_Selection_for_ICCV_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与完整BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、ICCV2017",
+              "以高光谱估计误差评价候选滤片组合，通过演化搜索选择响应；支持自定义滤片和超过三通道的多光谱相机。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Filter+Selection+for+Hyperspectral+Estimation&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果用于定位；非年度全量",
+            "supports": [
+              "DOI 10.1109/iccv.2017.342；页码3172-3180；题名与作者顺序和2017年一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2017/papers/Arad_Filter_Selection_for_ICCV_2017_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF第8页图及注明局部说明；非阅读全文",
+            "supports": [
+              "Figure 8 — 滤片响应设计结果",
+              "三个滤片空间内选出的响应曲线；这是优化结果比较，不是方法流程。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "filter-selection-2017-iccv2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Arad_Filter_Selection_for_ICCV_2017_paper.html",
+            "year": 2017,
+            "doi": "10.1109/iccv.2017.342",
+            "relation": "采用ICCV2017正式版；其他出版版本及正文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "filter-selection-2017"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2017/papers/Arad_Filter_Selection_for_ICCV_2017_paper.pdf",
+          "figureLabel": "Figure 8 — 滤片响应设计结果",
+          "caption": "三个滤片空间内选出的响应曲线；这是优化结果比较，不是方法流程。",
+          "verificationNote": "同名ICCV2017原文PDF第8页图像与完整图注核验；PDF裁切未重绘。仅滤片设计结果比较，非总体框架。",
+          "page": 8,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              196,
+              1524,
+              633
+            ]
+          },
+          "path": "figures/filter-selection-2017/framework.png",
+          "width": 1398,
+          "height": 437,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "892abc0d7469ac32b140ddb8e66ba3df67ac1ab2d4df70cc9522d932a0e97269",
+          "attribution": "Boaz Arad, Ohad Ben-Shahar · ICCV 2017"
+        }
+      ]
+    },
+    {
+      "id": "rgb-manifold-mapping-2017",
+      "shortTitle": "Manifold-Based Mapping",
+      "title": "From RGB to Spectrum for Natural Scenes via Manifold-Based Mapping",
+      "authors": "Yan Jia, Yinqiang Zheng, Lin Gu, Art Subpa-Asa, Antony Lam, Yoichi Sato, Imari Sato",
+      "year": 2017,
+      "venue": "ICCV",
+      "publicationName": "IEEE International Conference on Computer Vision",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/iccv.2017.504",
+      "representation": "Manifold-Based Mapping",
+      "tags": [
+        "spectral-reconstruction",
+        "nonlinear-spectral-manifold"
+      ],
+      "summary": "从训练光谱学习非线性低维流形和RGB到嵌入的映射，再由低维嵌入恢复光谱；嵌入的三维指特征维度，不是场景几何。",
+      "input": "已知相机光谱响应的单幅RGB图像与训练自然光谱。",
+      "output": "重建高光谱图像。",
+      "mechanism": "从训练光谱学习非线性低维流形和RGB到嵌入的映射，再由低维嵌入恢复光谱；嵌入的三维指特征维度，不是场景几何。",
+      "readingNote": "已读官方摘要和注明局部原图/方法说明；未阅读全文。完整实验、版本差异、代码运行和数据许可待查。",
+      "paper": "https://openaccess.thecvf.com/content_iccv_2017/html/Jia_From_RGB_to_ICCV_2017_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{Jia_2017_ICCV,\nauthor = {Jia, Yan and Zheng, Yinqiang and Gu, Lin and Subpa-Asa, Art and Lam, Antony and Sato, Yoichi and Sato, Imari},\ntitle = {From RGB to Spectrum for Natural Scenes via Manifold-Based Mapping},\nbooktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV)},\nmonth = {Oct},\nyear = {2017}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "nonlinear-spectral-manifold"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学波长的高光谱估计；普通二维图像任务，不加入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用自然光谱的低维非线性流形，从单幅RGB重建光谱？",
+        "datasets": "摘要未列具体数据集；名称、规模、划分与数据许可待全文核验。",
+        "experimentSetting": "已核验官方摘要及第2页原图、第3页训练/测试方法说明；完整参数与指标协议待查。",
+        "conclusions": "作者摘要报告优于所比较方法；第2页原图与第3页说明核验训练/测试两阶段。完整指标、训练划分和实测协议待查。",
+        "limitations": "已知相机响应、训练光谱覆盖、跨照明/相机泛化与部署成本待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Jia_From_RGB_to_ICCV_2017_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与完整BibTeX；非阅读全文",
+            "supports": [
+              "题名、作者、ICCV2017",
+              "从训练光谱学习非线性低维流形和RGB到嵌入的映射，再由低维嵌入恢复光谱；嵌入的三维指特征维度，不是场景几何。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=From+RGB+to+Spectrum+for+Natural+Scenes+via+Manifold-Based+Mapping&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref前两结果用于定位；非年度全量",
+            "supports": [
+              "DOI 10.1109/iccv.2017.504；页码4715-4723；题名与作者顺序和2017年一致"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_ICCV_2017/papers/Jia_From_RGB_to_ICCV_2017_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF第2页图及注明局部说明；非阅读全文",
+            "supports": [
+              "Figure 1",
+              "自然光谱降维、已知响应合成RGB、RGB到嵌入映射及流形光谱重建，保留训练/测试箭头。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "rgb-manifold-mapping-2017-iccv2017",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Jia_From_RGB_to_ICCV_2017_paper.html",
+            "year": 2017,
+            "doi": "10.1109/iccv.2017.504",
+            "relation": "采用ICCV2017正式版；其他出版版本及正文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "rgb-manifold-mapping-2017"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_ICCV_2017/papers/Jia_From_RGB_to_ICCV_2017_paper.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "自然光谱降维、已知响应合成RGB、RGB到嵌入映射及流形光谱重建，保留训练/测试箭头。",
+          "verificationNote": "同名ICCV2017原文PDF第2页图像与完整图注核验；PDF裁切未重绘。嵌入三维不是场景三维。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              189,
+              1524,
+              786
+            ]
+          },
+          "path": "figures/rgb-manifold-mapping-2017/framework.png",
+          "width": 1398,
+          "height": 597,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "ddc2d21b1926e5374b2a4cc1408779bf2494d41bf6c749f8eab580f854558b77",
+          "attribution": "Yan Jia, Yinqiang Zheng, Lin Gu, Art Subpa-Asa, Antony Lam, Yoichi Sato, Imari Sato · ICCV 2017"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -21474,7 +21717,7 @@
       "id": "spectral-reconstruction",
       "name": "光谱重建",
       "dimension": "task",
-      "definition": "从编码光学测量恢复二维空间—波长分布；RGB 引导光谱重建边界将在后续阅读中复核。",
+      "definition": "从编码光学观测、RGB或多通道相机测量恢复空间—波长分布；输入光谱响应与先验依论文单独核验。",
       "status": "provisional",
       "color": "#7a8fbe",
       "createdAt": "2026-10-08",
@@ -21496,13 +21739,20 @@
         "diy-hsi-2016",
         "spectral-spatial-lowrank-2016",
         "faced-reflector-hsi-2017",
-        "learned-filter-response-2018"
+        "learned-filter-response-2018",
+        "filter-selection-2017",
+        "rgb-manifold-mapping-2017"
       ],
       "history": [
         {
           "date": "2026-10-08",
           "action": "created",
           "reason": "多篇已核验摘要出现共同研究任务或方法。"
+        },
+        {
+          "date": "2026-10-08",
+          "action": "definition_updated",
+          "reason": "ICCV2017两篇论文明确RGB/滤片观测到高光谱估计，补充既有定义中待复核的边界。"
         }
       ]
     },
@@ -21527,7 +21777,8 @@
         "spectral-spatial-lowrank-2016",
         "faced-reflector-hsi-2017",
         "snapshot-hlf",
-        "mshcs-2015"
+        "mshcs-2015",
+        "catadioptric-hlf"
       ],
       "history": [
         {
@@ -22060,7 +22311,8 @@
       "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
       "evidencePaperIds": [
         "ircut-spectral-2021",
-        "learned-filter-response-2018"
+        "learned-filter-response-2018",
+        "filter-selection-2017"
       ],
       "history": [
         {
@@ -22269,7 +22521,8 @@
         "nlstf-2017",
         "snapshot-hlf",
         "rgb-guided-upsampling-2015",
-        "assdl-denoising-2015"
+        "assdl-denoising-2015",
+        "catadioptric-hlf"
       ],
       "history": [
         {
@@ -22572,6 +22825,26 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "原文明确提出并学习流形结构稀疏先验。"
+        }
+      ]
+    },
+    {
+      "id": "nonlinear-spectral-manifold",
+      "name": "非线性光谱流形",
+      "dimension": "method",
+      "definition": "学习自然光谱的低维非线性嵌入及观测映射，并从嵌入恢复高维光谱；不表示场景三维几何。",
+      "status": "provisional",
+      "color": "#cdb5ed",
+      "createdAt": "2026-10-08",
+      "rationale": "ICCV2017原图与局部方法说明明确非线性降维、RGB映射和流形重建；与流形结构稀疏压缩恢复分开。",
+      "evidencePaperIds": [
+        "rgb-manifold-mapping-2017"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "自然光谱低维嵌入与逆映射机制经原图核验，范围待后续阅读复核。"
         }
       ]
     }

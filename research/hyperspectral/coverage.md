@@ -35,9 +35,10 @@
 | ICCV | 2013 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 454 / 2 / 2 | 指定五关键词两命中均核验官方摘要；全领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器工具目录返回403，直接HTTP成功取得454题名与两篇官方摘要；新增文献仅摘要与局部页；完整实验、代码数据及期刊最终版差异待核验 |
 | TPAMI | 2016 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1109/tpami.2015.2473839；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 期刊扩展原文关系核验，作为版本归并 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
 | JSAP-OSA Joint Symposia | 2014 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1364/jsap.2014.20p_c4_1；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 官方摘要核验并按方法重述归并；不是独立方法 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
-| ICCV | 2015 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 526 / 6 / 6 | 指定五关键词六命中均核验官方摘要；年度领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器目录访问失败；直接HTTP成功取回官方526题名、六摘要和五原文PDF；完整实验、版本差异与资源运行/许可待核验；两项相关出版关系只核验元数据，待原文确认 |
-| IJCV | 2017 | Adaptive Spatial-Spectral Dictionary Learning for Hyperspectral Image Restoration、10.1007/s11263-016-0921-6；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 相关出版元数据已获得，原文与版本关系待核验 | 相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。；完整年度与其他研究问题未检索 |
-| IGARSS | 2014 | Coupled hyperspectral super-resolution and unmixing、10.1109/igarss.2014.6947016；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 相关出版元数据已获得，原文与版本关系待核验 | 相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。；完整年度与其他研究问题未检索 |
+| ICCV | 2015 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 526 / 6 / 6 | 指定五关键词六命中均核验官方摘要；年度领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器目录访问失败；直接HTTP成功取回官方526题名、六摘要和五原文PDF；完整实验、版本差异与资源运行/许可待核验；ASSDL期刊局部原文未证明扩展，IGARSS2014撤销未证明的CSU前序关联并保留独立候选 |
+| IJCV | 2017 | Adaptive Spatial-Spectral Dictionary Learning for Hyperspectral Image Restoration、10.1007/s11263-016-0921-6；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 作者PDF摘要及局部方法已核验；会议关系仍待原文比较 | 未找到明确扩展声明；去噪/超分辨内容及会议对应逐节比较待查；完整年度与其他研究问题未检索 |
+| IGARSS | 2014 | Coupled hyperspectral super-resolution and unmixing、10.1109/igarss.2014.6947016；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 作者元数据已核验；撤销未证明的前序关联，独立主题候选待原文 | 不是已证明的CSU前序版本；独立论文原文内容与关系待查；完整年度与其他研究问题未检索 |
+| ICCV | 2017 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 621 / 5 / 5 | 五关键词五命中全部核验官方摘要；年度领域覆盖未完成 | 其他任务关键词、全量摘要和引文发现待查；浏览器访问403，直接HTTP获取官方621题名与五摘要及两原文PDF；局部摘要/图与方法说明；完整实验、版本、代码运行和数据许可待查 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -122,6 +123,10 @@
   阅读边界：454题名两命中读官方摘要；新增反射/荧光分离与原Fig.3采集原理图，排除数学谱分割。2014专题摘要与2016期刊扩展归并为两个版本，不计独立方法。期刊作者接受稿第2/14页证明会议前序及新增处理，仅局部阅读。
 - 2026-10-08 / iccv-2015-optical-keywords：新增 5，更新 0，去重 0，排除 1，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：526题名六命中均读官方摘要，五新条目分别保存总体流程、照明设计比较、层次先验模型或原算法；五DOI题名作者年份核验。CSU作者代码MIT与CAVE样例权利分开。两相关出版元数据候选未推定扩展关系；全部非阅读全文。
+- 2026-10-08 / iccv-2017-optical-keywords：新增 2，更新 1，去重 1，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：621题名五命中：两篇新文献官方摘要、出版DOI及原图局部核验；既有光场文献仅补library。非阅读全文。
+- 2026-10-08 / publication-association-correction-2015：新增 0，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：ASSDL作者IJCV原文摘要与1–3页局部模型；关联未证明。IGARSS2014作者元数据与CSU不同，撤销未经证明的前序关联，保留独立主题候选。
 
 ## 未解决缺口
 

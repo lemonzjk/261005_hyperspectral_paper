@@ -1214,7 +1214,7 @@
       "gaps": [
         "其他任务词、全量摘要与引文发现未完成",
         "浏览器目录访问失败；直接HTTP成功取回官方526题名、六摘要和五原文PDF",
-        "完整实验、版本差异与资源运行/许可待核验；两项相关出版关系只核验元数据，待原文确认"
+        "完整实验、版本差异与资源运行/许可待核验；ASSDL期刊局部原文未证明扩展，IGARSS2014撤销未证明的CSU前序关联并保留独立候选"
       ],
       "directoryPages": [
         {
@@ -1234,7 +1234,7 @@
       "venue": "IJCV",
       "year": 2017,
       "date": "2026-10-08",
-      "method": "ICCV2015出版标识核验时发现相关登记记录；原文关系待审",
+      "method": "Crossref精确记录及作者站点IJCV原文摘要与第1–3页局部方法核验；会议关系待审",
       "keywords": [
         "Adaptive Spatial-Spectral Dictionary Learning for Hyperspectral Image Restoration",
         "10.1007/s11263-016-0921-6"
@@ -1244,10 +1244,10 @@
       "titleCount": 1,
       "candidateCount": 1,
       "reviewedCount": 0,
-      "status": "targeted_metadata_pending",
-      "statusLabel": "相关出版元数据已获得，原文与版本关系待核验",
+      "status": "targeted_relation_pending",
+      "statusLabel": "作者PDF摘要及局部方法已核验；会议关系仍待原文比较",
       "gaps": [
-        "相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。",
+        "未找到明确扩展声明；去噪/超分辨内容及会议对应逐节比较待查",
         "完整年度与其他研究问题未检索"
       ]
     },
@@ -1256,7 +1256,7 @@
       "venue": "IGARSS",
       "year": 2014,
       "date": "2026-10-08",
-      "method": "ICCV2015出版标识核验时发现相关登记记录；原文关系待审",
+      "method": "近题名登记候选的完整作者核验；移除未证明的CSU前序关联",
       "keywords": [
         "Coupled hyperspectral super-resolution and unmixing",
         "10.1109/igarss.2014.6947016"
@@ -1266,12 +1266,49 @@
       "titleCount": 1,
       "candidateCount": 1,
       "reviewedCount": 0,
-      "status": "targeted_metadata_pending",
-      "statusLabel": "相关出版元数据已获得，原文与版本关系待核验",
+      "status": "targeted_independent_candidate_pending",
+      "statusLabel": "作者元数据已核验；撤销未证明的前序关联，独立主题候选待原文",
       "gaps": [
-        "相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。",
+        "不是已证明的CSU前序版本；独立论文原文内容与关系待查",
         "完整年度与其他研究问题未检索"
       ]
+    },
+    {
+      "id": "iccv-2017-title-optical-terms",
+      "venue": "ICCV",
+      "year": 2017,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T22:15:52.577679+00:00",
+      "method": "官方年度目录逐题名关键词扫描，再逐篇核验命中摘要",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "multi-spectral",
+        "spectral",
+        "spectrum"
+      ],
+      "url": "https://openaccess.thecvf.com/ICCV2017?day=all",
+      "pagination": "day=all；单页全年官方目录；无结果条数截断",
+      "titleCount": 621,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "五关键词五命中全部核验官方摘要；年度领域覆盖未完成",
+      "gaps": [
+        "其他任务关键词、全量摘要和引文发现待查",
+        "浏览器访问403，直接HTTP获取官方621题名与五摘要及两原文PDF",
+        "局部摘要/图与方法说明；完整实验、版本、代码运行和数据许可待查"
+      ],
+      "directoryPages": [
+        {
+          "url": "https://openaccess.thecvf.com/ICCV2017?day=all",
+          "queriedAt": "2026-10-07T22:15:54.860717+00:00",
+          "htmlSha256": "c45dfab7b7ab4bd8acadabcc4912c75b5d505fa03b932b997f1267da73fb1a39",
+          "titleCount": 621
+        }
+      ],
+      "sourceSnapshot": "sources/iccv-2017-all-titles.json",
+      "htmlSha256": "c45dfab7b7ab4bd8acadabcc4912c75b5d505fa03b932b997f1267da73fb1a39",
+      "candidateCount": 5,
+      "reviewedCount": 5
     }
   ],
   "candidates": [
@@ -2906,10 +2943,12 @@
       "discoveredAt": "2026-10-08",
       "searchId": "assdl-ijcv-followup",
       "decision": "pending",
-      "reason": "相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。",
+      "reason": "已取得作者站点IJCV PDF；第1页摘要包含去噪和超分辨，第2–3页相同空间–光谱字典/局部非局部先验。关键词检索未见会议扩展声明，关系仍待进一步逐节比较；不能因作者相同直接归并。",
       "evidencePath": "research/hyperspectral/sources/crossref-assdl-ijcv-exact.json",
       "relatedPaperId": "assdl-denoising-2015",
-      "metadataNote": "IJCV正式卷期2017-04，在线2016-06-20；不能以在线年替代正式卷期年。"
+      "metadataNote": "IJCV正式卷期2017-04，在线2016-06-20；不能以在线年替代正式卷期年。",
+      "checkedAt": "2026-10-08",
+      "additionalEvidencePath": "research/hyperspectral/sources/assdl-ijcv-selected-pages-review.json"
     },
     {
       "title": "Coupled hyperspectral super-resolution and unmixing",
@@ -2919,10 +2958,73 @@
       "discoveredAt": "2026-10-08",
       "searchId": "csu-igarss-predecessor",
       "decision": "pending",
-      "reason": "相关题名与作者元数据候选；前序/扩展关系和内容差异需原文确认。",
+      "reason": "Crossref登记作者为Yongqiang Zhao、Chen Yi、Jingxiang Yang、Jonathan Cheung-Wai Chan，与Lanaras等CSU作者不同。移除未经证明的前序关联；作为独立主题候选，内容仍待原文核验。",
       "evidencePath": "research/hyperspectral/sources/crossref-lanaras-iccv2015-title.json",
-      "relatedPaperId": "csu-2015",
-      "metadataNote": "IGARSS2014登记记录；会议方法内容与ICCV2015差异待核验。"
+      "metadataNote": "IGARSS2014 DOI10.1109/IGARSS.2014.6947016，页2641-2644；题名相近不能证明同方法或版本关系。",
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "title": "Catadioptric HyperSpectral Light Field Imaging",
+      "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Xue_Catadioptric_HyperSpectral_Light_ICCV_2017_paper.html",
+      "venue": "ICCV",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "iccv-2017-title-optical-terms",
+      "decision": "duplicate",
+      "reason": "官方摘要明确空间、角度、波长联合快照成像；既有三维专题成员事实保持原义。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Xue_Catadioptric_HyperSpectral_Light_ICCV_2017_paper.json",
+      "paperId": "catadioptric-hlf"
+    },
+    {
+      "title": "Filter Selection for Hyperspectral Estimation",
+      "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Arad_Filter_Selection_for_ICCV_2017_paper.html",
+      "venue": "ICCV",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "iccv-2017-title-optical-terms",
+      "decision": "included",
+      "reason": "直接研究光学波长的高光谱估计；普通二维图像任务，不加入三维专题。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Arad_Filter_Selection_for_ICCV_2017_paper.json",
+      "paperId": "filter-selection-2017"
+    },
+    {
+      "title": "Learning Visual Attention to Identify People With Autism Spectrum Disorder",
+      "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Jiang_Learning_Visual_Attention_ICCV_2017_paper.html",
+      "venue": "ICCV",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "iccv-2017-title-optical-terms",
+      "decision": "excluded",
+      "reason": "Autism Spectrum Disorder指临床疾病类别，不是光学波长。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Jiang_Learning_Visual_Attention_ICCV_2017_paper.json"
+    },
+    {
+      "title": "From RGB to Spectrum for Natural Scenes via Manifold-Based Mapping",
+      "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Jia_From_RGB_to_ICCV_2017_paper.html",
+      "venue": "ICCV",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "iccv-2017-title-optical-terms",
+      "decision": "included",
+      "reason": "直接研究光学波长的高光谱估计；普通二维图像任务，不加入三维专题。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Jia_From_RGB_to_ICCV_2017_paper.json",
+      "paperId": "rgb-manifold-mapping-2017"
+    },
+    {
+      "title": "Scene Categorization With Spectral Features",
+      "url": "https://openaccess.thecvf.com/content_iccv_2017/html/Khan_Scene_Categorization_With_ICCV_2017_paper.html",
+      "venue": "ICCV",
+      "year": 2017,
+      "discoveredAt": "2026-10-08",
+      "searchId": "iccv-2017-title-optical-terms",
+      "decision": "excluded",
+      "reason": "摘要研究卷积特征的酉变换与去相关，以RGB场景分类为任务；不是光学波长谱测量。",
+      "checkedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/Khan_Scene_Categorization_With_ICCV_2017_paper.json"
     }
   ],
   "batches": [
@@ -3254,6 +3356,43 @@
         "完整实验、版本差异与资源运行/许可待核验；两项相关出版关系只核验元数据，待原文确认"
       ],
       "categoriesExpanded": 1
+    },
+    {
+      "id": "iccv-2017-optical-keywords",
+      "date": "2026-10-08",
+      "searchIds": [
+        "iccv-2017-title-optical-terms"
+      ],
+      "new": 2,
+      "updated": 1,
+      "duplicates": 1,
+      "excluded": 2,
+      "pending": 0,
+      "categoriesAdded": 1,
+      "readingBoundary": "621题名五命中：两篇新文献官方摘要、出版DOI及原图局部核验；既有光场文献仅补library。非阅读全文。",
+      "gaps": [
+        "其他任务关键词、全量摘要和引文发现待查",
+        "浏览器访问403，直接HTTP获取官方621题名与五摘要及两原文PDF",
+        "局部摘要/图与方法说明；完整实验、版本、代码运行和数据许可待查"
+      ]
+    },
+    {
+      "id": "publication-association-correction-2015",
+      "date": "2026-10-08",
+      "searchIds": [
+        "assdl-ijcv-followup",
+        "csu-igarss-predecessor"
+      ],
+      "new": 0,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 2,
+      "categoriesAdded": 0,
+      "readingBoundary": "ASSDL作者IJCV原文摘要与1–3页局部模型；关联未证明。IGARSS2014作者元数据与CSU不同，撤销未经证明的前序关联，保留独立主题候选。",
+      "gaps": [
+        "两候选仍待全文关系或独立原文核验；不计新增或去重方法"
+      ]
     }
   ],
   "gaps": [
