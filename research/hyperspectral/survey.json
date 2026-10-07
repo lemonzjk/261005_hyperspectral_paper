@@ -241,7 +241,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "已做 1988/1994/2005/2008 早期主题与引文定向检索；年度全量仍未检索"
+      "statusLabel": "已做 1988/1994/2001/2005/2008 早期主题与引文定向检索；年度全量仍未检索"
     },
     {
       "id": "remote-sensing-of-environment",
@@ -554,12 +554,12 @@
       "pagination": "精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页",
       "titleCount": 1,
       "candidateCount": 1,
-      "reviewedCount": 0,
+      "reviewedCount": 1,
       "status": "targeted_topic_review",
-      "statusLabel": "定向主题/引文检索；年度全量目录未检索",
+      "statusLabel": "定向主题/引文候选摘要核验完成；年度全量目录未检索",
       "gaps": [
         "该年度全部目录、其他任务词和完整引文链尚未检索",
-        "MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验"
+        "原始全文实验、代码/数据许可与其他版本待核验"
       ],
       "sourceSnapshot": "sources/tgrs-1988-early-unmixing-subspace-targets.json",
       "htmlSha256": "43fab264a4037025a16db36338e0bb00829ed3217cf24ea71cb6bb84efc7aef9"
@@ -579,12 +579,12 @@
       "pagination": "精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页",
       "titleCount": 2,
       "candidateCount": 2,
-      "reviewedCount": 1,
+      "reviewedCount": 2,
       "status": "targeted_topic_review",
-      "statusLabel": "定向主题/引文检索；年度全量目录未检索",
+      "statusLabel": "定向主题/引文候选摘要核验完成；年度全量目录未检索",
       "gaps": [
         "该年度全部目录、其他任务词和完整引文链尚未检索",
-        "MNF/Craig 原始摘要、FCLS 出版元数据及新条目全文/版本待核验"
+        "原始全文实验、代码/数据许可与其他版本待核验"
       ],
       "sourceSnapshot": "sources/tgrs-1994-early-unmixing-subspace-targets.json",
       "htmlSha256": "2237ee3f5b3c7d337b13c16bac04357e84147c5239cf66ff2d5426149eade25e"
@@ -636,6 +636,32 @@
       ],
       "sourceSnapshot": "sources/tgrs-2008-early-unmixing-subspace-targets.json",
       "htmlSha256": "9accf70d8055f668b81a69cea4654b5aa8fdf9a1373de3008b8d3aa05b206436"
+    },
+    {
+      "id": "tgrs-2001-fcls-targeted-review",
+      "venue": "TGRS",
+      "year": 2001,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-07T16:54:42.254547+00:00",
+      "method": "精确题名发现、作者机构原文及 Crossref DOI 交叉核验",
+      "keywords": [
+        "Fully constrained least squares linear spectral mixture analysis method for material quantification in hyperspectral imagery",
+        "FCLS",
+        "UFCLS"
+      ],
+      "url": "https://www2.umbc.edu/rssipl/pdf/TGRS/01/tgrs.3_01.pdf",
+      "pagination": "定向题名检索与 DOI 核对；Crossref 题名返回前三项，不代表完整年度或主题检索",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "targeted_topic_review",
+      "statusLabel": "定向主题核验完成；年度全量目录未检索",
+      "gaps": [
+        "该年度全部目录、其他关键词及完整引文尚未检索",
+        "全文实验、代码数据、早期会议版本待核验"
+      ],
+      "sourceSnapshot": "sources/fcls-title-crossref-query.json",
+      "htmlSha256": "b4ff9349a299a97b410c71da9769bfa269f487aee13183c7784db84ad42792af"
     }
   ],
   "candidates": [
@@ -1380,9 +1406,11 @@
       "year": 1988,
       "discoveredAt": "2026-10-08",
       "searchId": "tgrs-1988-early-unmixing-subspace-targets",
-      "decision": "pending",
-      "reason": "VCA 第 3 页与参考文献 [46] 建立光谱投影关联；仅核验出版元数据，原始摘要与多光谱/基础关系待复核。",
-      "evidencePath": "research/hyperspectral/sources/crossref-10.1109_36.3001.json"
+      "decision": "included",
+      "reason": "原文研究多光谱数据；VCA 原文第 3 页与参考文献 [46] 明确将其作为高光谱子空间投影方法。按有直接高光谱关联的多光谱基础方法收录。",
+      "evidencePath": "research/hyperspectral/sources/mnf-1988-review.json",
+      "paperId": "mnf-1988",
+      "reviewedAt": "2026-10-08"
     },
     {
       "url": "https://doi.org/10.1109/36.298007",
@@ -1404,9 +1432,11 @@
       "year": 1994,
       "discoveredAt": "2026-10-08",
       "searchId": "tgrs-1994-early-unmixing-subspace-targets",
-      "decision": "pending",
-      "reason": "VCA 第 1 页与参考文献 [34] 建立最小体积解混关联；原始光谱范围、摘要与基础方法关系待复核。",
-      "evidencePath": "research/hyperspectral/sources/crossref-10.1109_36.297973.json"
+      "decision": "included",
+      "reason": "出版社摘要明确描述多光谱遥感的线性混合；VCA 原文第 1 页与参考文献 [34] 将该最小体积变换作为高光谱几何解混前序工作。保留多光谱基础方法关系。",
+      "evidencePath": "research/hyperspectral/sources/craig-mvt-1994-review.json",
+      "paperId": "craig-mvt-1994",
+      "reviewedAt": "2026-10-08"
     },
     {
       "url": "https://doi.org/10.1109/TGRS.2005.844293",
@@ -1433,6 +1463,19 @@
       "evidencePath": "research/hyperspectral/sources/hysime-2008-review.json",
       "paperId": "hysime-2008",
       "reviewedAt": "2026-10-08"
+    },
+    {
+      "url": "https://doi.org/10.1109/36.911111",
+      "title": "Fully constrained least squares linear spectral mixture analysis method for material quantification in hyperspectral imagery",
+      "venue": "TGRS",
+      "year": 2001,
+      "discoveredAt": "2026-10-08",
+      "searchId": "tgrs-2001-fcls-targeted-review",
+      "decision": "included",
+      "reason": "原文摘要明确研究高光谱材料丰度量化，并报告真实高光谱实验；与多光谱前序方法分别标注。",
+      "paperId": "fcls-2001",
+      "reviewedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/fcls-2001-review.json"
     }
   ],
   "batches": [
@@ -1535,6 +1578,28 @@
         "FCLS 元数据请求 HTTP 429；待重试或改查出版社",
         "正式版与早期版本关联、全文实验和代码数据许可待核验"
       ]
+    },
+    {
+      "id": "tgrs-foundations-and-fcls",
+      "date": "2026-10-08",
+      "searchIds": [
+        "tgrs-1988-early-unmixing-subspace-targets",
+        "tgrs-1994-early-unmixing-subspace-targets",
+        "tgrs-2001-fcls-targeted-review"
+      ],
+      "new": 3,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 0,
+      "categoriesAdded": 0,
+      "readingBoundary": "MNF 原文摘要及局部图注；Craig 出版社索引摘要及 VCA 引文；FCLS 原文摘要、局部算法/数据说明。没有阅读全文。前批两个待核验候选已收录。",
+      "gaps": [
+        "年度目录和任务词全量未检索",
+        "Craig 原文框架图访问受限",
+        "MNF 图注为输入与结果，无独立框架图",
+        "全文实验、数据/代码许可及版本待复核"
+      ]
     }
   ],
   "gaps": [
@@ -1544,6 +1609,6 @@
     "arXiv 跨分类、版本号、首次提交和更新日期尚待逐篇核验",
     "既有 214 篇总库关系、分类及阅读进度待复核",
     "Hyper-Skin 网页摘要 330 与官方 PDF 采集正文 306 数量不一致，待作者或发布数据核验。",
-    "TGRS 早期批次仅定向主题/引文核验：MNF、Craig 尚待原始摘要，FCLS Crossref 请求遇 HTTP 429；HySime 原文与框架图受机构下载验证和仓储访问限制。"
+    "TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。"
   ]
 }
