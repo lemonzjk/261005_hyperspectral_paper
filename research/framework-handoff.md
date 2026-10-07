@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 192 篇：136 篇 verified、161 张图；46 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 193 篇：137 篇 verified、163 张图；46 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -273,3 +273,7 @@ Fiducial HS3D Mapping 的 arXiv:2606.14534v1 六页全文已核验，Figure 1 �
 Ghost HS3D LiDAR arXiv v1 18 页正文核验：保存第 4 页 Figure 1 原理与第 6 页 Figure 2 全部系统子图。概念中的建筑/汽车不是实际野外实验；原图保持完整，未拿测距/光谱性能结果替代流程。原稿提及补充图未取得，保留版本边界。
 
 FusDreamer 作者公开正式 PDF（14 页）的第 3 页 Figure 1 已保存完整架构和图例；仓库 img 中主要为分类/数据图，未拿来当框架。FRGFNet IEEE 正式 PDF 418、作者无同篇附件、准确仓库无命中，needs_access，不判无框架。
+
+## LiDAR 引导波段选择补充（2026-10-07）
+
+新增 LiDAR-Guided Band Selection（TGRS 2024，10.1109/TGRS.2024.3389651），原始元数据与 15 页作者稿核验。双分支自注意力与 LiDAR query 引导 HSI 波段选择，Houston 2013/Trento/MUUFL 的二维高度辅助分类，归相关研究。PDF 第 4 页完整 Figures 2、3 已保存；作者仓库示意图布局不同，未冒充相同 PDF 图。证据见 sources/lidar-guided-band-selection-review-2026-10-07.json。TMCFN 作者代码已查且无 PDF/图片，正文仍待核验；详见 sources/tmcfn-author-code-review-2026-10-07.json。调研尚未完成。

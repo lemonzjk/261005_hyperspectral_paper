@@ -9550,6 +9550,95 @@
           "attribution": "Jinping Wang, Weiwei Song, Hao Chen, Jinchang Ren, Huimin Zhao · TGRS 2025"
         }
       ]
+    },
+    {
+      "id": "lidar-guided-band-selection",
+      "shortTitle": "LiDAR-Guided Band Selection",
+      "title": "LiDAR-Guided Cross-Attention Fusion for Hyperspectral Band Selection and Image Classification",
+      "authors": "Judy X. Yang, Jun Zhou, Jing Wang, Hui Tian, Alan Wee-Chung Liew",
+      "year": 2024,
+      "venue": "TGRS",
+      "track": "fusion",
+      "representation": "HSI–LiDAR 融合",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "LiDAR",
+        "波段选择",
+        "交叉注意力",
+        "Transformer",
+        "地物分类"
+      ],
+      "summary": "以 LiDAR 高度特征查询高光谱各波段的特征，学习适合跨模态融合的波段重要性，再选择波段用于地物分类。",
+      "input": "空间对齐的 HSI 与 LiDAR DSM/高度栅格局部块，以及监督训练所需的地物类别标签。",
+      "output": "高光谱波段子集及二维地物分类图。",
+      "mechanism": "将每个波段的空间块作为 token，双分支自注意力学习各模态特征；LiDAR 提供 query，HSI 提供 key/value，跨注意力权重在多头间平均；可再对训练样本平均以选择统一波段子集，融合特征用于分类。",
+      "readingNote": "Crossref 正式 TGRS 2024 元数据与作者仓库引文核验；方法及 Figure 2、3 来自 15 页 arXiv:2404.03883v2 作者稿。Houston 2013、Trento、MUUFL 评测使用对齐的二维栅格，不输出三维几何。波段重要性随输入样本变化，统一子集需汇总训练样本，不能直接解释为无监督选带；选带后另有 SVM/CNN 分类对照，未运行训练复现。作者仓库总览包含额外训练/选带流程且图形布局不同，本站保存的是 PDF 原图，未把仓库文件名当论文图号。",
+      "paper": "https://doi.org/10.1109/TGRS.2024.3389651",
+      "doi": "10.1109/TGRS.2024.3389651",
+      "code": "https://github.com/Judyxyang/LiDAR-Guided-Band-Selection",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "verificationLevel": "author_full_text_and_publisher_metadata",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{lidarguidedbandselection,\n  title={LiDAR-Guided Cross-Attention Fusion for Hyperspectral Band Selection and Image Classification},\n  author={Judy X. Yang and Jun Zhou and Jing Wang and Hui Tian and Alan Wee-Chung Liew},\n  year={2024},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  url={https://doi.org/10.1109/TGRS.2024.3389651},\n  doi={10.1109/TGRS.2024.3389651}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2404.03883v2",
+          "figureLabel": "Figure 2",
+          "caption": "LiDAR 引导波段选择总体框架：局部块嵌入、双分支自注意力编码、融合注意力以及地物分类。",
+          "verificationNote": "逐项核对 arXiv:2404.03883v2 第 4 页同题名、作者与图注，保存完整原图模块和连线；采用 PDF 版本而非布局不同的作者仓库示意图。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              2473,
+              3200
+            ],
+            "pixelBox": [
+              150,
+              240,
+              2310,
+              905
+            ],
+            "renderCommand": "pdftoppm -f 4 -singlefile -scale-to 3200 -png"
+          },
+          "path": "figures/lidar-guided-band-selection/framework-overview.png",
+          "width": 2160,
+          "height": 665,
+          "verifiedAt": "2026-10-07",
+          "sha256": "ff1432c805c8c60ce1b4f9aa2ca144f8b6086b5d718a57d95bdd2cfdcfd4d7e9",
+          "attribution": "Judy X. Yang, Jun Zhou, Jing Wang, Hui Tian, Alan Wee-Chung Liew · TGRS 2024"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2404.03883v2",
+          "figureLabel": "Figure 3",
+          "caption": "完整网络结构：HSI/LiDAR 嵌入与自注意力、LiDAR query 与 HSI key/value 的跨模态融合，以及 MLP/Softmax 分类。",
+          "verificationNote": "逐项核对 arXiv:2404.03883v2 第 4 页同题名、作者与图注，保存完整原图模块和连线；采用 PDF 版本而非布局不同的作者仓库示意图。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              2473,
+              3200
+            ],
+            "pixelBox": [
+              1240,
+              1080,
+              2260,
+              2520
+            ],
+            "renderCommand": "pdftoppm -f 4 -singlefile -scale-to 3200 -png"
+          },
+          "path": "figures/lidar-guided-band-selection/framework-network.png",
+          "width": 1020,
+          "height": 1440,
+          "verifiedAt": "2026-10-07",
+          "sha256": "1c3302850ef73f5b23c8ca044dfd8e2dab3f30bd8b978cbe073c18581a0b0470",
+          "attribution": "Judy X. Yang, Jun Zhou, Jing Wang, Hui Tian, Alan Wee-Chung Liew · TGRS 2024"
+        }
+      ]
     }
   ],
   "datasets": [

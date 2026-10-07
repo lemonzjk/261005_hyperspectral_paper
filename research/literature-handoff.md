@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 192 篇；136 篇有 161 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 193 篇；137 篇有 163 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -71,3 +71,7 @@
 - FRGFNet（TGRS 2025，10.1109/TGRS.2025.3562246）：IEEE 原始摘要、正式元数据五作者核验，FRE 重建嵌入/跨模态注意力；Houston 2013、Augsburg、MUUFL，归 fusion/相关研究。作者主页写 2024 不替代正式卷年。IEEE PDF 418、准确仓库零命中、OpenAlex 无 PDF，框架 needs_access。具体输入通道与实验划分待全文，不称官方全文已读。
 - FusDreamer（TGRS 2025，10.1109/TGRS.2025.3554862）：作者公開 14 页正式 IEEE 排版、Crossref、代码 README 核验，HSI 与 LiDAR 为 M×N 栅格。LaMG 潜空间扩散、OK-CP 属性文本/CLIP、MuCO 多任务约束用于少标注分类，归相关研究；“世界模型”不是三维动态场景模拟。完整 Figure 1 位于 PDF 第 3 页，已裁切保存输入、全部模块及图例。代码当前已发布，未运行训练。证据 sources/frgfnet-fusdreamer-review-2026-10-07.json。
 - UCAFNet 的二手摘要不是原始方法证据，仍 pending_abstract。继续其他 TGRS 原始摘要和框架、目标场所逐年目录；现有扩充不等于全部论文已收集。
+
+## LiDAR 引导波段选择补充（2026-10-07）
+
+新增 LiDAR-Guided Band Selection（TGRS 2024，10.1109/TGRS.2024.3389651），原始元数据与 15 页作者稿核验。双分支自注意力与 LiDAR query 引导 HSI 波段选择，Houston 2013/Trento/MUUFL 的二维高度辅助分类，归相关研究。PDF 第 4 页完整 Figures 2、3 已保存；作者仓库示意图布局不同，未冒充相同 PDF 图。证据见 sources/lidar-guided-band-selection-review-2026-10-07.json。TMCFN 作者代码已查且无 PDF/图片，正文仍待核验；详见 sources/tmcfn-author-code-review-2026-10-07.json。调研尚未完成。
