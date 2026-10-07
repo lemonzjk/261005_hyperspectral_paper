@@ -61,6 +61,7 @@
 | ICML | 2020 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1084篇与全量元数据1084摘要URL集合完全一致；无条数截断 | 1084 / 7 / 7 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 | ICML | 2021 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1183篇与全量元数据1183摘要URL集合完全一致；无条数截断 | 1183 / 9 / 9 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 | NeurIPS | 2022 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录，含主会及数据集评测 Track；无结果条数截断 | 2834 / 19 / 19 | 指定五题名词19命中均已核验官方摘要；其他主题及全量摘要未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| arXiv | 2022–2023 | 2207.08051、2210.08181、2211.05314、2205.10102；四个当前abs完整历史；逐一核对8个分版本abs/PDF，无版本截断；非年度搜索 | 8 / 8 / 8 | 四篇八个版本日期及发表关联核验、局部差异已记；跨分类发现和全文差异未完成 | 所有版本图像/公式与完整实验差异仍待比对；许可证、数据/模型下载及代码执行未完成；其他论文及跨分类发现不在本次精确ID范围 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -189,6 +190,8 @@
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐篇阅读注明关键词并集候选的官方摘要。2021卫星影像候选追加局部原文及官方RGB加载器核验；未声明全文阅读。
 - 2026-10-08 / neurips-2022-optical-review：新增 4，更新 0，去重 0，排除 15，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：19份完整官方摘要已读；4新增仅摘要及注明局部原文页已读，不是阅读全文；每篇原图已裁切并目视核对。
+- 2026-10-08 / neurips-2022-arxiv-version-history：新增 0，更新 4，去重 8，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：8份PDF机器抽取用于定位变更；人工只读注明局部页，全文逐句/公式/图像和全部实验差异未完成。目录条目/方法数量不增加。
 
 ## 未解决缺口
 
@@ -202,4 +205,5 @@
 - 光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。
 - TGRS1994登记136题名两关键词组7候选：三条原摘要访问受限；雷达一条仅题名暂排除。森林原文首页已核验但PDF原图受限；出版社年度全量仍未证明。
 - ICML2013–2024十二主卷10951题名/摘要、84指定词命中全部处理（4新增、80排除）；其他任务词、正文、引文、workshop及更早/更晚年度未完成。三种通用方法有明确HSI应用；2014结构低秩的盲解混为未来工作，作者代码HSI入口/许可及2017/TPAMI2020后续稿归并待查。2021FMoW-WILDS候选的使用输入为RGB，已留官方加载器快照。
-- NeurIPS2022官方2834题名五词19命中处理：4新增、15排除。SatMAE/ARFNet为多光谱相关，DiSC为有HSI应用的通用基础，DAUHST为直接HSI；四篇原图已保存。其他词、全量摘要、版本差异和资源许可/复现待查。
+- NeurIPS2022官方2834题名五词19命中处理：4新增、15排除。SatMAE/ARFNet为多光谱相关，DiSC为有HSI应用的通用基础，DAUHST为直接HSI；四篇原图已保存。其他词、全量摘要、完整版本差异和资源许可/复现待查。
+- NeurIPS2022四篇8预印本元数据与局部差异核验：SatMAE SpaceNet v2→v1命名、v3附录长时训练；DAUHST v3增加MST++/CST基线及cs.CV→eess.IV主分类变动。全图/公式及完整实验仍待比对。

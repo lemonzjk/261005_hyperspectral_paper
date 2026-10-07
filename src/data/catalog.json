@@ -24352,7 +24352,7 @@
       "input": "卫星影像时间序列，或Sentinel-2多光谱波段分组。",
       "output": "掩码像素重建及用于分类/分割迁移的预训练表征。",
       "mechanism": "以MAE为基础，时间编码配合跨时独立掩码；多光谱分组采用独立patch embedding及谱组索引位置编码。",
-      "readingNote": "已读官方摘要和原PDF第1,2,4,5,6,7页；非阅读全文。作者项目及仓库README已访问，含数据/模型入口；未下载大数据、执行训练或核验全部许可。 定位相关预印本2207.08051，日期与版本差异待查。",
+      "readingNote": "已读官方摘要和原PDF第1,2,4,5,6,7页；非阅读全文。作者项目及仓库README已访问，含数据/模型入口；未下载大数据、执行训练或核验全部许可。 预印本2207.08051完整提交历史及3个版本的题名/作者/分类已核验，局部差异逐版记录；全文和全部实验差异待查。",
       "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/01c561df365429f33fcd7a7faa44c985-Abstract-Conference.html",
       "verifiedAt": "2026-10-08",
       "verificationLevel": "official_abstract_and_selected_original_pages",
@@ -24372,7 +24372,7 @@
         "datasets": "fMoW RGB/temporal和新fMoW-Sentinel；后者采集13波段，正文实验去掉B1/B9/B10，仅用10波段，分RGB+NIR、红边和SWIR三组。",
         "experimentSetting": "第6页fMoW-Sentinel记录712874训练、84939验证、84966测试图像；第7页比较分组与堆叠、独立/一致掩码及编码消融。时间与多光谱设置分别评估，不能合称已验证联合时谱HSI预训练。",
         "conclusions": "作者报告分类及遥感迁移收益；摘要最大增益与正文不同评估口径未统一，未录统一性能数字。",
-        "limitations": "谱编码依赖人为分组索引；采集13波段与主实验10波段必须分开。多光谱/时序验证不证明HSI或任意波长迁移。",
+        "limitations": "谱编码依赖人为分组索引；采集13波段与主实验10波段必须分开。多光谱/时序验证不证明HSI或任意波长迁移。 v1/v2将下游资源称SpaceNet v2，v3及会议正式版称v1；数据名称修订与v3附录新增长时预训练结果分别记录，不能混用。",
         "dataLinks": [
           "https://sustainlab-group.github.io/SatMAE/"
         ],
@@ -24405,6 +24405,15 @@
             "supports": [
               "作者项目及仓库README已访问，含数据/模型入口；未下载大数据、执行训练或核验全部许可。"
             ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2207.08051",
+            "checkedAt": "2026-10-08",
+            "level": "完整官方提交历史、分版本元数据/PDF戳及注明局部页",
+            "supports": [
+              "所有版本首次提交/更新日期、同题名作者及NeurIPS2022关系",
+              "v1正文标Preprint under review；后续v2明确会议页脚，增加项目链接及谱编码依赖人为分组索引的说明。；v2第8–9页仍称SpaceNet v2；v3及会议正式PDF第8–9页称SpaceNet v1，不能把两个资源名称等同。；v3第18页新增长时预训练Table 11（200 epochs），属于此预印本附录；未混入会议主表。PDF总页数v1/v2/v3为21/23/24，会议正式主文件15页，补充材料另提供。"
+            ]
           }
         ],
         "versions": [
@@ -24414,7 +24423,43 @@
             "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/01c561df365429f33fcd7a7faa44c985-Abstract-Conference.html",
             "year": 2022,
             "doi": "10.52202/068431-0015",
-            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+            "relation": "NeurIPS2022正式版；同题名/作者的arXiv关联已核验，局部差异记录于各预印本版本；正式版实验和原图保持本版本出处。"
+          },
+          {
+            "id": "satmae-2022-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2207.08051v1",
+            "year": 2022,
+            "arxivId": "2207.08051",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2022-07-17T01:35:29Z",
+            "updatedAt": "2022-07-17T01:35:29Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。v1正文标Preprint under review；后续v2明确会议页脚，增加项目链接及谱编码依赖人为分组索引的说明。"
+          },
+          {
+            "id": "satmae-2022-arxiv-v2",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2207.08051v2",
+            "year": 2022,
+            "arxivId": "2207.08051",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2022-07-17T01:35:29Z",
+            "updatedAt": "2022-10-20T01:04:57Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。v2第8–9页仍称SpaceNet v2；v3及会议正式PDF第8–9页称SpaceNet v1，不能把两个资源名称等同。"
+          },
+          {
+            "id": "satmae-2022-arxiv-v3",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2207.08051v3",
+            "year": 2023,
+            "arxivId": "2207.08051",
+            "arxivVersion": "v3",
+            "firstSubmittedAt": "2022-07-17T01:35:29Z",
+            "updatedAt": "2023-01-15T19:27:57Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。v3第18页新增长时预训练Table 11（200 epochs），属于此预印本附录；未混入会议主表。PDF总页数v1/v2/v3为21/23/24，会议正式主文件15页，补充材料另提供。"
           }
         ],
         "methodFamilyId": "satmae-2022"
@@ -24471,7 +24516,7 @@
       "input": "低空间分辨率多光谱影像及高分辨率PAN全色影像。",
       "output": "高空间分辨率多光谱影像。",
       "mechanism": "交替反向滤波过程展开成网络，以可学习多尺度高斯核模块代替固定滤波器，并在收缩映射条件下分析稳定性与收敛。",
-      "readingNote": "已读官方摘要和原PDF第1,2,3,6,8,15页；非阅读全文。原PDF未给确定代码URL，checklist称接收后发布；网页检索发现聚合索引，但尚未核验作者代码地址，代码/数据入口待核验。 定位相关预印本2210.08181，日期与版本差异待查。",
+      "readingNote": "已读官方摘要和原PDF第1,2,3,6,8,15页；非阅读全文。原PDF未给确定代码URL，checklist称接收后发布；网页检索发现聚合索引，但尚未核验作者代码地址，代码/数据入口待核验。 预印本2210.08181完整提交历史及1个版本的题名/作者/分类已核验，局部差异逐版记录；全文和全部实验差异待查。",
       "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/89ef9ce35c7833cba14bb2381ead6c54-Abstract-Conference.html",
       "verifiedAt": "2026-10-08",
       "verificationLevel": "official_abstract_and_selected_original_pages",
@@ -24514,6 +24559,15 @@
               "第6页Wald协议生成PAN128×128、LRMS32×32、HRMS128×128训练对；K=5、最大高斯核17、SGD2000epochs。确切样本数/波段数/公开数据入口待核验。",
               "收敛结论有收缩映射条件；第15页checklist明确未报告随机种子误差条，固定种子不能证明跨种子稳定。"
             ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2210.08181",
+            "checkedAt": "2026-10-08",
+            "level": "完整官方提交历史、分版本元数据/PDF戳及注明局部页",
+            "supports": [
+              "所有版本首次提交/更新日期、同题名作者及NeurIPS2022关系",
+              "单个v1与会议同题名同七作者，官方journal-reference为NeurIPS2022。文本抽取存在符号编码/排版差异，未证明图像或实验逐项等同。"
+            ]
           }
         ],
         "versions": [
@@ -24523,7 +24577,19 @@
             "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/89ef9ce35c7833cba14bb2381ead6c54-Abstract-Conference.html",
             "year": 2022,
             "doi": "10.52202/068431-1598",
-            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+            "relation": "NeurIPS2022正式版；同题名/作者的arXiv关联已核验，局部差异记录于各预印本版本；正式版实验和原图保持本版本出处。"
+          },
+          {
+            "id": "arfnet-2022-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2210.08181v1",
+            "year": 2022,
+            "arxivId": "2210.08181",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2022-10-15T03:56:05Z",
+            "updatedAt": "2022-10-15T03:56:05Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。单个v1与会议同题名同七作者，官方journal-reference为NeurIPS2022。文本抽取存在符号编码/排版差异，未证明图像或实验逐项等同。"
           }
         ],
         "methodFamilyId": "arfnet-2022"
@@ -24578,7 +24644,7 @@
       "input": "共享特征的两个数据矩阵；HSI案例为不同月份场景及October-change含篷布影像。",
       "output": "差异特征向量及其聚类；HSI案例为像元变化区域。",
       "mechanism": "分别构造特征相似图，用扩散子空间及投影剔除两图共有结构，再提取条件特有差异特征。",
-      "readingNote": "已读官方摘要和原PDF第1,3,4,7,9页；非阅读全文。原PDF第7页链接及作者仓库README已核验；公开说明覆盖玩具/MNIST，不宣称HSI已可复现，未运行。 定位相关预印本2211.05314，日期与版本差异待查。",
+      "readingNote": "已读官方摘要和原PDF第1,3,4,7,9页；非阅读全文。原PDF第7页链接及作者仓库README已核验；公开说明覆盖玩具/MNIST，不宣称HSI已可复现，未运行。 预印本2211.05314完整提交历史及1个版本的题名/作者/分类已核验，局部差异逐版记录；全文和全部实验差异待查。",
       "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a84953147312ea2e8b020e53a267321b-Abstract-Conference.html",
       "verifiedAt": "2026-10-08",
       "verificationLevel": "official_abstract_and_selected_original_pages",
@@ -24628,6 +24694,15 @@
             "supports": [
               "原PDF第7页链接及作者仓库README已核验；公开说明覆盖玩具/MNIST，不宣称HSI已可复现，未运行。"
             ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2211.05314",
+            "checkedAt": "2026-10-08",
+            "level": "完整官方提交历史、分版本元数据/PDF戳及注明局部页",
+            "supports": [
+              "所有版本首次提交/更新日期、同题名作者及NeurIPS2022关系",
+              "单个v1与会议同題名同三作者，官方comments为Accepted at NeurIPS2022。预印本22页含附录，会议主文件14页并另给补充材料；第17页附录E入口已读，具体全部噪声实验和数值仍待核验。"
+            ]
           }
         ],
         "versions": [
@@ -24637,7 +24712,19 @@
             "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a84953147312ea2e8b020e53a267321b-Abstract-Conference.html",
             "year": 2022,
             "doi": "10.52202/068431-1905",
-            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+            "relation": "NeurIPS2022正式版；同题名/作者的arXiv关联已核验，局部差异记录于各预印本版本；正式版实验和原图保持本版本出处。"
+          },
+          {
+            "id": "disc-2022-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2211.05314v1",
+            "year": 2022,
+            "arxivId": "2211.05314",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2022-11-10T03:32:17Z",
+            "updatedAt": "2022-11-10T03:32:17Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。单个v1与会议同題名同三作者，官方comments为Accepted at NeurIPS2022。预印本22页含附录，会议主文件14页并另给补充材料；第17页附录E入口已读，具体全部噪声实验和数值仍待核验。"
           }
         ],
         "methodFamilyId": "disc-2022"
@@ -24695,7 +24782,7 @@
       "input": "CASSI单次压缩观测及物理掩模/感知矩阵。",
       "output": "重建高光谱影像。",
       "mechanism": "DAUF从压缩观测和掩模估计各阶段参数，控制线性投影和去噪；HST以Half-Shuffle注意力结合局部与跨窗依赖。",
-      "readingNote": "已读官方摘要和原PDF第1,3,6,7,9页；非阅读全文。作者工具库README明确列本论文及代码/模型发布，多个方法共用仓库；未运行DAUHST或下载模型。 定位相关预印本2205.10102，日期与版本差异待查。",
+      "readingNote": "已读官方摘要和原PDF第1,3,6,7,9页；非阅读全文。作者工具库README明确列本论文及代码/模型发布，多个方法共用仓库；未运行DAUHST或下载模型。 预印本2205.10102完整提交历史及3个版本的题名/作者/分类已核验，局部差异逐版记录；全文和全部实验差异待查。",
       "paper": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/f621c2ead473ca36763696b712ffda01-Abstract-Conference.html",
       "verifiedAt": "2026-10-08",
       "verificationLevel": "official_abstract_and_selected_original_pages",
@@ -24716,7 +24803,7 @@
         "datasets": "CAVE32幅训练、KAIST中10场景测试；另测试已有CASSI系统采集5真实场景。",
         "experimentSetting": "第6–7页将450–650nm插值为28通道，仿真/真实训练裁块256×256/660×660，Adam300epochs、batch5、RMSE目标；多阶段去噪权重不共享。",
         "conclusions": "作者报告重建质量和计算开销优于所列比较方法；原表与模型阶段有关，未独立重跑，不把一个阶段的开销归给全部版本。",
-        "limitations": "已读局部页未全面核验噪声/硬件校准及跨系统泛化；仿真插值与真实观测评估需分开。版本全文差异、模型权重与数据许可待查。",
+        "limitations": "已读局部页未全面核验噪声/硬件校准及跨系统泛化；仿真插值与真实观测评估需分开。版本全文差异、模型权重与数据许可待查。 初稿14基线，v3及会议正式版16基线（新增MST++、CST）；不得用后期比较范围描述初稿。",
         "dataLinks": [
           "https://github.com/caiyuanhao1998/MST"
         ],
@@ -24749,6 +24836,15 @@
             "supports": [
               "作者工具库README明确列本论文及代码/模型发布，多个方法共用仓库；未运行DAUHST或下载模型。"
             ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2205.10102",
+            "checkedAt": "2026-10-08",
+            "level": "完整官方提交历史、分版本元数据/PDF戳及注明局部页",
+            "supports": [
+              "所有版本首次提交/更新日期、同题名作者及NeurIPS2022关系",
+              "v1 PDF页1标cs.CV和Preprint under review，摘要称代码/模型将公开，不能使用当前仓库状态代表初稿时可用。；v2页1改为明确GitHub仓库链接；页7仍为14个SOTA基线。与v1机器文本候选差异主要在资源表述，图像/公式完整等同未证明。；v3官方页和PDF改eess.IV主分类、cs.CV交叉分类，页1标NeurIPS2022并称资源公开；页7比较16基线，比v1/v2新增MST++与CST。各阶段性能和基线仍以对应版本为准。"
+            ]
           }
         ],
         "versions": [
@@ -24758,7 +24854,43 @@
             "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/f621c2ead473ca36763696b712ffda01-Abstract-Conference.html",
             "year": 2022,
             "doi": "10.52202/068431-2736",
-            "relation": "官方2022正式版；预印本候选与逐版差异另待核验。"
+            "relation": "NeurIPS2022正式版；同题名/作者的arXiv关联已核验，局部差异记录于各预印本版本；正式版实验和原图保持本版本出处。"
+          },
+          {
+            "id": "dauhst-2022-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2205.10102v1",
+            "year": 2022,
+            "arxivId": "2205.10102",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2022-05-20T11:37:44Z",
+            "updatedAt": "2022-05-20T11:37:44Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。v1 PDF页1标cs.CV和Preprint under review，摘要称代码/模型将公开，不能使用当前仓库状态代表初稿时可用。"
+          },
+          {
+            "id": "dauhst-2022-arxiv-v2",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2205.10102v2",
+            "year": 2022,
+            "arxivId": "2205.10102",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2022-05-20T11:37:44Z",
+            "updatedAt": "2022-06-16T06:50:38Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。v2页1改为明确GitHub仓库链接；页7仍为14个SOTA基线。与v1机器文本候选差异主要在资源表述，图像/公式完整等同未证明。"
+          },
+          {
+            "id": "dauhst-2022-arxiv-v3",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2205.10102v3",
+            "year": 2022,
+            "arxivId": "2205.10102",
+            "arxivVersion": "v3",
+            "firstSubmittedAt": "2022-05-20T11:37:44Z",
+            "updatedAt": "2022-10-17T02:40:44Z",
+            "metadataStatus": "verified",
+            "relation": "官方同题名及同作者，NeurIPS2022发表关联已核验；不计独立方法。v3官方页和PDF改eess.IV主分类、cs.CV交叉分类，页1标NeurIPS2022并称资源公开；页7比较16基线，比v1/v2新增MST++与CST。各阶段性能和基线仍以对应版本为准。"
           }
         ],
         "methodFamilyId": "dauhst-2022"
