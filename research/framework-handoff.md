@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 180 篇：128 篇 verified、150 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 182 篇：130 篇 verified、153 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -253,3 +253,5 @@ PDF 哈希、页码、裁切坐标与真实下载协议见 sources/dual-angle-of
 Gas Plume NeRF（arXiv 2026）保存 Figure 2 权重计算子流程；明确不是完整 NeRF 或气体层析架构。PhotoniX 2024 Cascaded Spectral ToF 保存正式版 Figure 3(a) 光谱采集系统和 Figure 6 级联概念，分别注明不包含完整 ToF 重建流程、并非所有概念维度同时实验实现。全文身份、页码、裁切与哈希已存数据文件。累计 178 篇，126 篇有 148 张图，原有 43 needs_access 与 9 no_framework 不变。
 
 - 2026-10-07 文献扩充同步保存 LGDWT-GS v2 Figure 4（PDF 第 5 页，共享几何多光谱分支）与 MS-Splatting v2 Figure 3（第 4 页，完整流程）。两篇标多光谱相关研究；MS 项目页展示图未冒充训练框架。当前 authoritative 状态已更新为 180 篇 / 128 篇有图 / 150 张。
+
+- 2026-10-07 扩充：HMAT（TGRS 2025）作者正式排版 Figure 1 第 3 页；HyKey（IJCARS 2026）正式 Springer Figures 2、3，分别完整网络与训练。共新增两篇、三张，当前 182 篇 / 130 篇有图 / 153 张，43 needs_access、9 no_framework、0 pending。

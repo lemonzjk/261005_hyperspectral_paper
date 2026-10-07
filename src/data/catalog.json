@@ -8880,6 +8880,120 @@
           "attribution": "Lukas Meyer, Josef Grün, Maximilian Weiherer, Bernhard Egger, Marc Stamminger, Linus Franke · Computer Graphics Forum 2026"
         }
       ]
+    },
+    {
+      "id": "hmat",
+      "shortTitle": "HMAT",
+      "title": "Joint Classification of Hyperspectral and LiDAR Data Using Hierarchical Multimodal Feature Aggregation-Based Multihead Axial Attention Transformer",
+      "authors": "Fei Zhu, Cuiping Shi, Kaijie Shi, Liguo Wang",
+      "year": 2025,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing, 63:5503817",
+      "track": "fusion",
+      "representation": "CNN + Transformer",
+      "scope": "相关研究",
+      "tags": [
+        "HSI–LiDAR",
+        "层级特征聚合",
+        "轴向注意力",
+        "高度辅助分类"
+      ],
+      "summary": "层级聚合高光谱空间–光谱特征与 LiDAR 高度特征，通过金字塔卷积和多头轴向注意力融合局部与全局信息，输出地物类别。",
+      "input": "对齐的高光谱影像与 LiDAR 单通道高度栅格，按像素邻域提取双模态图块。",
+      "output": "二维地物分类图与每个目标像素的类别预测。",
+      "mechanism": "通道调制后，HMFA 聚合不同层级和模态特征；PIP 金字塔与倒金字塔卷积提取局部多尺度结构，MHAA 轴向注意力建模全局依赖，最后自适应融合局部和全局预测。",
+      "readingNote": "核对作者公开的同题 17 页 TGRS 排版全文，卷 63、文章号 5503817、DOI 10.1109/TGRS.2025.3533475，2025-01-23 在线发表。Houston 2013、Trento、MUUFL 数据集的 LiDAR 输入是高度栅格；不重建三维几何，不处理带光谱的真实点云。网络的三维张量是特征层级/通道组织，不能解释为三维空间。保存 Figure 1 完整分类流程；细节模块图不替代总框架。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3533475",
+      "doi": "10.1109/TGRS.2025.3533475",
+      "verifiedAt": "2026-10-07",
+      "verificationLevel": "author_fulltext",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{hmat,\n  title={Joint Classification of Hyperspectral and LiDAR Data Using Hierarchical Multimodal Feature Aggregation-Based Multihead Axial Attention Transformer},\n  author={Fei Zhu and Cuiping Shi and Kaijie Shi and Liguo Wang},\n  year={2025},\n  journal={IEEE Transactions on Geoscience and Remote Sensing, 63:5503817},\n  url={https://doi.org/10.1109/TGRS.2025.3533475},\n  doi={10.1109/TGRS.2025.3533475}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://raw.githubusercontent.com/shi-cuiping/shi-cuiping.github.io/main/Files/SCI/45.Joint_Classification_of_Hyperspectral_and_LiDAR_Data_Using_Hierarchical_Multimodal_Feature_Aggregation-Based_Multihead_Axial_Attention_Transformer.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "HMAT 完整分类框架：双模态层级特征聚合 HMFA、PIP 局部卷积、MHAA 全局注意力、自适应分类融合及全部算子图例。",
+          "verificationNote": "核对作者公开的同题 TGRS 正式排版全文 PDF 第 3 页 Figure 1；保留完整网络、底部算子图例与 Transformer Encoder 结构。输出为二维类别图，不是三维点云重建。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              100,
+              110,
+              1170,
+              805
+            ]
+          },
+          "path": "figures/hmat/framework.png",
+          "width": 1070,
+          "height": 695,
+          "verifiedAt": "2026-10-07",
+          "sha256": "0067eca50a22f519df70f5fc23a38cfb777c58e7a938cd8d60a124b8bf6b9748",
+          "attribution": "Fei Zhu, Cuiping Shi, Kaijie Shi, Liguo Wang · TGRS 2025"
+        }
+      ]
+    },
+    {
+      "id": "hykey",
+      "shortTitle": "HyKey",
+      "title": "HyKey: hyperspectral keypoint detection and matching in minimally invasive surgery",
+      "authors": "Alexander Saikia, Chiara Di Vece, Zhehua Mao, Sierra Bonilla, Chloe He, Joao Ramalhinho, Tobias Czempiel, Sophia Bano, Danail Stoyanov",
+      "year": 2026,
+      "venue": "IJCARS",
+      "publicationName": "International Journal of Computer Assisted Radiology and Surgery, 21:1061–1069 (IPCAI 2026)",
+      "publicationStatus": "published",
+      "venueTier": "specialist",
+      "track": "registration",
+      "representation": "3D–2D CNN + geometric estimation",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱特征匹配",
+        "相机位姿",
+        "手术场景",
+        "极线监督"
+      ],
+      "summary": "利用 16 波段腹腔镜图像学习关键点与描述子，通过单应和极线几何监督改善低纹理组织的跨视角匹配及相对位姿估计，为三维重建提供对应关系。",
+      "input": "460–600 nm 的 16 波段腹腔镜 HSI；训练使用合成单应变换及带标定相机位姿的真实多视角图像对。",
+      "output": "关键点、置信度图与稠密描述子；互最近邻匹配后，通过标准几何估计获得相对相机位姿。",
+      "mechanism": "三组空间–光谱 3D 卷积聚合多层特征并上采样，2D 卷积头输出描述子和评分，DKD 实现可微关键点提取；训练联合单应重投影、描述子与可靠性损失，并对非平面真实图像对使用期望 Sampson 误差极线约束。",
+      "readingNote": "核对 arXiv:2604.17446v1 与正式 Springer 全文：2026-04-27 发表，IJCARS 21:1061–1069，DOI 10.1007/s11548-026-03633-z；合并成一条，不重复收录。因发现于用户允许的 arXiv 扩展范围而纳入，正式场所是手术影像专业期刊/IPCAI，不冒称 CV 顶会顶刊。方法训练输入为 HSI，RGB 用于对照；3D 卷积作用于空间–光谱张量，不代表直接输出三维表面。核心关联来自真实跨视角对应及相对位姿估计，尚未展示完整稠密三维重建或临床导航系统。离体羊器官数据声明公开，活体患者数据不公开；未下载数据或复现实验。作者仓库真实名称末尾有句点，论文无句点链接会重定向。Figures 2、3 分别为网络与完整训练流程。",
+      "paper": "https://doi.org/10.1007/s11548-026-03633-z",
+      "doi": "10.1007/s11548-026-03633-z",
+      "code": "https://github.com/alexsaikia/HyKey-Hyperspectral-Keypoint-Detection.",
+      "verifiedAt": "2026-10-07",
+      "verificationLevel": "official_fulltext",
+      "citation": "@article{saikia2026hykey,\n  title={HyKey: hyperspectral keypoint detection and matching in minimally invasive surgery},\n  author={Alexander Saikia and Chiara Di Vece and Zhehua Mao and Sierra Bonilla and Chloe He and Joao Ramalhinho and Tobias Czempiel and Sophia Bano and Danail Stoyanov},\n  journal={International Journal of Computer Assisted Radiology and Surgery},\n  volume={21},\n  pages={1061--1069},\n  year={2026},\n  doi={10.1007/s11548-026-03633-z},\n  url={https://doi.org/10.1007/s11548-026-03633-z}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://link.springer.com/article/10.1007/s11548-026-03633-z/figures/2",
+          "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11548-026-03633-z/MediaObjects/11548_2026_3633_Fig2_HTML.png",
+          "figureLabel": "Figure 2",
+          "caption": "空间–光谱 3D–2D 网络、特征聚合及可微关键点和描述子输出。",
+          "verificationNote": "核对正式 Springer 全文 Figure 2 图注及原图；是关键点网络/训练框架，不是完整稠密三维重建系统。",
+          "path": "figures/hykey/framework-network.png",
+          "width": 2032,
+          "height": 504,
+          "verifiedAt": "2026-10-07",
+          "sha256": "627e21a5fe2791214ac32474d59ca550c9ae7308dc77180450630037055f7d8a",
+          "attribution": "Alexander Saikia, Chiara Di Vece, Zhehua Mao, Sierra Bonilla, Chloe He, Joao Ramalhinho, Tobias Czempiel, Sophia Bano, Danail Stoyanov · IJCARS 2026"
+        },
+        {
+          "sourceUrl": "https://link.springer.com/article/10.1007/s11548-026-03633-z/figures/3",
+          "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11548-026-03633-z/MediaObjects/11548_2026_3633_Fig3_HTML.png",
+          "figureLabel": "Figure 3",
+          "caption": "单应合成视角与真实极线视角的联合训练流程；保留三个输入、共享 HyKey 预测、匹配及全部监督分支。",
+          "verificationNote": "核对正式 Springer 全文 Figure 3 图注及原图；是关键点网络/训练框架，不是完整稠密三维重建系统。",
+          "path": "figures/hykey/framework-training.png",
+          "width": 1501,
+          "height": 726,
+          "verifiedAt": "2026-10-07",
+          "sha256": "9d00af87cdcaa5f8607195210d18cd00181651daba8ee1f9bf6e191c213504f3",
+          "attribution": "Alexander Saikia, Chiara Di Vece, Zhehua Mao, Sierra Bonilla, Chloe He, Joao Ramalhinho, Tobias Czempiel, Sophia Bano, Danail Stoyanov · IJCARS 2026"
+        }
+      ]
     }
   ],
   "datasets": [

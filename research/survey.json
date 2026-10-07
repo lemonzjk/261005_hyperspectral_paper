@@ -449,6 +449,12 @@
       "engine": "web + arXiv fulltext + publisher Crossref + author repositories",
       "query": "Multi-Spectral Gaussian Splatting with Neural Color Representation; Towards Integrating Multi-Spectral Imaging with Gaussian Splatting; LGDWT-GS",
       "result": "新增 MS-Splatting（CGF/Eurographics 2026）、LGDWT-GS（arXiv v2），同步保存两张完整框架；VMV 保留场所候选；排除二维 GaussianHSI 超分。"
+    },
+    {
+      "date": "2026-10-07",
+      "engine": "web + arXiv + Springer fulltext + author PDF + Crossref",
+      "query": "hyperspectral 3D reconstruction arxiv 2026; Hierarchical Multimodal Feature Aggregation; HyKey",
+      "result": "新增 HMAT（TGRS 2025）与 HyKey（IJCARS/IPCAI 2026；已有 arXiv，合并正式版），保存三张框架。新增专业期刊/其他预印本引文线索仍待场所与全文核验。"
     }
   ],
   "candidates": [
@@ -3841,11 +3847,12 @@
       "title": "Hyperspectral images 3D reconstruction based on structure-from-motion and multi-view stereo",
       "url": "https://www.sciencedirect.com/science/article/pii/S0143816625007626",
       "venue": "Optics and Lasers in Engineering",
-      "status": "background_specialist",
-      "note": "出版商确认2026卷199、109578；内部推扫多视角采集，分割、环形匹配、光谱多通道代价及统计反射率融合产生真实光谱点云。400–1000 nm、300波段；仍为专业背景，不改列既定优先期刊。",
+      "status": "pending_fulltext",
+      "note": "出版社题名与摘要指向真实光谱点云；DOI 10.1016/j.optlaseng.2025.109578，正式卷 199（2026），尚需原始全文和场所政策核验，不能按 DOI 后缀记 2025 年。",
       "year": 2026,
       "doi": "10.1016/j.optlaseng.2025.109578",
-      "verificationLevel": "official_abstract"
+      "verificationLevel": "official_abstract",
+      "checkedAt": "2026-10-07"
     },
     {
       "title": "Fast, small and robust hyperspectral 3DGS based on spectral compression",
@@ -5263,11 +5270,12 @@
       "venue": "TGRS",
       "year": 2025,
       "authors": "Fei Zhu, Cuiping Shi, Kaijie Shi, Liguo Wang",
-      "url": "https://shi-cuiping.github.io/",
+      "url": "https://doi.org/10.1109/TGRS.2025.3533475",
       "fulltextCandidateUrl": "https://raw.githubusercontent.com/shi-cuiping/shi-cuiping.github.io/main/Files/SCI/45.Joint_Classification_of_Hyperspectral_and_LiDAR_Data_Using_Hierarchical_Multimodal_Feature_Aggregation-Based_Multihead_Axial_Attention_Transformer.pdf",
-      "status": "pending_fulltext",
-      "verificationLevel": "author_publication_list",
-      "note": "在补 ACFFN 原图时发现并即时登记。作者出版列表与公开仓库有对应 PDF 文件；仅核对书目和文件路径，尚未下载核验摘要、DOI、方法范围与框架。出版卷页/文章号为 63:5503817。待现有论文补图后续查；HSI–LiDAR 分类按高度辅助二维分类审查，不称真实三维重建。"
+      "status": "included",
+      "verificationLevel": "author_fulltext",
+      "note": "已读同题 TGRS 17 页全文，核对正式 DOI、作者和范围，保存 Figure 1；高度辅助二维分类，不是三维点云。",
+      "paperId": "hmat"
     },
     {
       "title": "Multilevel Feature Gated Fusion Based Spatial and Frequency Domain Attention Network for Joint Classification of Hyperspectral and LiDAR Data",
@@ -5342,6 +5350,33 @@
       "note": "核对 arXiv 原始摘要：二维 HSI 任意倍率超分，目标是图像像素重建，不恢复三维空间几何。Gaussian 关键词不能作为三维收录依据。",
       "venue": "arXiv",
       "year": 2026,
+      "checkedAt": "2026-10-07"
+    },
+    {
+      "title": "HyKey: hyperspectral keypoint detection and matching in minimally invasive surgery",
+      "paperId": "hykey",
+      "year": 2026,
+      "venue": "IJCARS",
+      "url": "https://doi.org/10.1007/s11548-026-03633-z",
+      "status": "included",
+      "verificationLevel": "official_fulltext"
+    },
+    {
+      "title": "Self-Calibrated Hyperspectral Neural Radiance Fields for 3D Reconstruction of Bone and Bone Analogues",
+      "url": "https://doi.org/10.64898/2026.06.17.732938",
+      "note": "搜索发现 bioRxiv 原始预印本 BoNeRF-HS；真实光谱 NeRF。尚非用户明确允许的 arXiv，也无当前目标期刊证据，保留预印本范围候选，待核验全文或正式版本。",
+      "venue": "bioRxiv",
+      "year": 2026,
+      "status": "pending_venue_policy",
+      "checkedAt": "2026-10-07"
+    },
+    {
+      "title": "A deep learning-based hyperspectral keypoint representation method and its application for 3D reconstruction",
+      "url": "https://link.springer.com/article/10.1007/s11548-026-03633-z",
+      "note": "HyKey 正式全文参考文献 13：Ma 等，IEEE Access 10:85266–85277（2022），HSSPN。仅为引文线索，原始摘要/全文和场所范围待核验，不将引用文献当原始来源。",
+      "venue": "IEEE Access",
+      "year": 2022,
+      "status": "pending_venue_policy",
       "checkedAt": "2026-10-07"
     }
   ],

@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 180 篇；128 篇有 150 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 182 篇；130 篇有 153 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -33,3 +33,9 @@
 - MS-Splatting：正式 Computer Graphics Forum / Eurographics 2026，DOI 10.1111/cgf.70337、e70337，2026-04-25；方法核验 arXiv:2506.03407v2 的 29 页作者稿。RGB 加四个离散波段，标相关研究；依赖联合 SfM，不能把无需预标定解释为无需相机参数。保存第 4 页 Figure 3 全流程；项目页所谓 Pipeline 实际为 Figure 1 展示图，未混用。
 - LGDWT-GS：arXiv:2601.17185v2，2026-05-04；四波段植物共享几何、伪 RGB 与 NIR 联合监督，局部及全局小波损失，标相关研究。页脚 2023 为模板残留，不冒称 IEEE 正式出版；作者仓库实际 master 分支可访问，保存第 5 页 Figure 4 多光谱框架。两篇均未运行训练复现。
 - 原稿哈希、出版社登记及来源纠错见 sources/ms-splatting-and-lgdwt-fulltext-2026-10-07.json。VMV 2025 比较论文保留场所候选；GaussianHSI 2026 为二维超分已排除。继续优先连续高光谱几何、专业期刊与引文追溯，覆盖仍未完成。
+
+## HMAT 与 HyKey 扩充
+
+- HMAT：TGRS 2025, 63:5503817，DOI 10.1109/TGRS.2025.3533475；作者公开正式排版 17 页 PDF 核验，Figure 1 第 3 页完整网络与算子图例已保存。输入是 HSI 与高度栅格，输出二维类别图，标 fusion/相关研究。原 pending_fulltext 候选已改 included。
+- HyKey：发现于 arXiv:2604.17446v1，已核对正式 IJCARS 2026, 21:1061–1069（2026-04-27），DOI 10.1007/s11548-026-03633-z，同文只收录一次；专业场所不冒称 CV 顶刊。16 波段 460–600 nm，空间–光谱特征与单应/极线监督支持真实相对位姿估计，标 registration/核心研究，不声称已输出完整稠密表面。正式 Springer Figures 2、3 原图已保存；仓库名末尾句点已纠正，未运行复现。
+- 全文哈希、出版社元数据与版本关系见 sources/hmat-and-hykey-fulltext-2026-10-07.json。仍待 JSTARS 融合候选与更多专业期刊/IGARSS；HyKey 引文 HSSPN（IEEE Access 2022）和 Optics and Lasers in Engineering 光谱 SfM 保留场所/全文候选。BoNeRF-HS 目前 bioRxiv，不自动等同用户允许的 arXiv。
