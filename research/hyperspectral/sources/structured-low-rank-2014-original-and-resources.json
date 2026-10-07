@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-08",
+  "paperId": "structured-low-rank-2014",
+  "pdfUrl": "https://proceedings.mlr.press/v32/haeffele14.pdf",
+  "pdfSha256": "7dd71a919976a7ec22fc5325e877873ab842e47c3dc9cc43ea99be3925d6fe87",
+  "readPages": [
+    1,
+    4,
+    7,
+    8
+  ],
+  "readingBoundary": "官方摘要与局部原文已读，非阅读全文",
+  "facts": [
+    "以projective tensor norm在矩阵分解的因子上施加低秩、稀疏或TV结构，使用交替近端与外推更新；特定秩亏局部极小点可推出乘积的全局最优。",
+    "原文第8页脚注称公开Moffet Field数据子集，256×256像元、180波段；原文传感器拼写AVARIS，对应AVIRIS名称及确切子集仍待原始资源核对。脚注明确本研究区域/波段可能与NucTV参考实验略有不同。",
+    "第7–8页使用逐波长随机相位空间卷积压缩观测；两因子列数设15，A初始化为0、Z每列仅一个随机位置为1；比较多个压缩率与噪声水平。NucTV表中数据改录自参考文献，不是本论文统一重跑。",
+    "第4页说明交替最小化不保证收敛到局部极小点，可能遇到非极小驻点；秩亏全局最优结论有条件。第8页将盲解混列为未来应用，未完成盲解混实验。"
+  ],
+  "codeResources": [
+    {
+      "url": "https://raw.githubusercontent.com/bhaeffele/ICML2014-FactorTVL1L2/master/README.md",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-08",
+      "content": "***************************************************************************\n\nOverview:\n\nThis is code to do structured matrix factorizations based on the\nformulation given in the \"Applications\" section of the paper:\n\nHaeffele, B., Young, E., and Vidal, R. \"Structured low-rank matrix \nfactorization: Optimality, algorithm, and applications to image \nprocessing.\" ICML. 2014.\n\nThe code here is a generalization of the formulation given in the\npaper as it also includes options to include additional 'non-factorized'\nvariables in the optimization and to put non-negative constraints on the \nfactorized variables.  This more general formulation is also shown to have \nsimilar properties regarding global optimality of local-minima as shown in \nthe following:\n\nHaeffele, Benjamin D., and Rene Vidal. \"Global Optimality in Tensor \nFactorization, Deep Learning, and Beyond.\" arXiv preprint arXiv:1506.07540\n2015.\n\nHistory:\n    Aug 13, 2015 - First distribution of the code.\n\n***************************************************************************\n\nFiles:\n\nFactorTVL1L2_v1.m - The main function.\n\nToyExample.m - A script with simulated data to show how to run the code.\n\nCalciumImagingExample.m - A script that calls the code with real Calcium \n    imaging data.\n\nImgs1375.mat - Real Calcium imaging data used in the calcium imaging \n    example script. The data were taken from awake mouse auditory cortex \n    transfected with GCaMP5G.  The x-axis of the image frame is \n    approximately 470 microns, and the y-axis is approximately 75 microns.  \n    The data were sampled with a frame rate of 5Hz.\n\nproximalTVL1L2.m - Function to calculate the proximal operator of the sum\n    of the L1, L2, and Total-Variation norms, as given in equation (19) of\n    the above paper.\n\nmexProximalL1TV.cpp - The proximalTVL1L2.m function calls this mex file to \n    calculate the proximal operator of the L1+TV term.  The calculation is\n    done by doing coordinate descent on the dual problem and checking the\n    duality gap for the stopping criteria.  See below for instuctions on\n    compiling.  Note that this mex file only gets called if TV \n    regularization is used, so for applications where TV \n    regularization is not needed it is not necessary to compile this.\n\nmexProximalL1TV.mexw64 - Compiled mex file for 64-bit windows.  Other \n    platforms will need to compile this file.\n\nL1TVprox.cpp/h - Library and header files for the mexProximalL1TV.cpp mex\n    function.\n\nGetLatticeIndex.m - Returns the pairs of neighboring indices for an\n    8-connected 2D lattice (i.e. neighboring pixels of an image of a \n    given size).\n\nMakeFourierD.m - Makes a dictionary of Fourier components as an example for\n    the ToyExample.m script and for fitting background signals in Calcium\n    imaging data.\n\nMakeD.m - Make a dictionary of decaying explonential signals for the use in\n    processing Calcium imaging data.\n***************************************************************************\n\nCompiling the mex file:\n\nThe implimentation was purposely written for ease of compilation (i.e. no \nexternal libraries, such as LAPACK, are required).  Assuming the mex C/C++\ncompiler is properly configured and that all of the source files are in the\ncurrent directory, the mex file should compile with the following command:\n\nmex mexProximalL1TV.cpp L1TVprox.cpp\n***************************************************************************\n\nContact:\n\nPlease send any questions or found bugs to Ben Haeffele\nbhaeffele@jhu.edu\n"
+    },
+    {
+      "url": "https://api.github.com/repos/bhaeffele/ICML2014-FactorTVL1L2/git/trees/master?recursive=1",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-08",
+      "treeSha": "9866fe00e1a6bcde309a8de87c10bb1a91148a3f",
+      "truncated": false,
+      "paths": [
+        ".gitattributes",
+        ".gitignore",
+        "CalciumImagingExample.m",
+        "FactorTVL1L2_v1.m",
+        "GetLatticeIndex.m",
+        "Imgs1375.mat",
+        "L1TVprox.cpp",
+        "L1TVprox.h",
+        "MakeD.m",
+        "MakeFourierD.m",
+        "README.md",
+        "ToyExample.m",
+        "mexProximalL1TV.cpp",
+        "mexProximalL1TV.mexw64",
+        "proximalTVL1L2.m"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/pdf/1708.07850v1",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-08"
+    }
+  ],
+  "relatedPublicationMetadata": [
+    {
+      "url": "https://www.cis.jhu.edu/~haeffele/publication/haeffele-pami-2019/",
+      "httpStatus": 403,
+      "checkedAt": "2026-10-08",
+      "sha256": "eb263f2530f396b207decd2f816c2f06de6c4d44013667fa4b841a9154db8e75",
+      "failureReason": "作者后续期刊页面HTTP403访问校验；web访问曾503。未取得该页内容。"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1109/TPAMI.2019.2900306",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-08",
+      "sha256": "da482c783a34210c4430178bccd2f2ffcb36f66fd192dc97e889bee3d5905608",
+      "metadata": {
+        "DOI": "10.1109/tpami.2019.2900306",
+        "title": [
+          "Structured Low-Rank Matrix Factorization: Global Optimality, Algorithms, and Applications"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-7544-7347",
+            "authenticated-orcid": false,
+            "given": "Benjamin D.",
+            "family": "Haeffele",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rene",
+            "family": "Vidal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2020,
+              6,
+              1
+            ]
+          ]
+        },
+        "published-online": null,
+        "volume": "42",
+        "issue": "6",
+        "page": "1468-1482",
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/1708.07850v1",
+      "httpStatus": 200,
+      "checkedAt": "2026-10-08",
+      "sha256": "c2be99877fad2934764e2aef2fbaba073d61913282845d1655c08c786b78f2e0",
+      "title": "Structured Low-Rank Matrix Factorization: Global Optimality, Algorithms, and Applications",
+      "authors": [
+        "Benjamin D. Haeffele",
+        "Rene Vidal"
+      ],
+      "version": "v1",
+      "firstSubmittedAt": "2017-08-25",
+      "updatedAt": "2017-08-25",
+      "history": "[v1] Fri, 25 Aug 2017 18:14:44 UTC"
+    }
+  ],
+  "relatedOriginal": {
+    "url": "https://arxiv.org/pdf/1708.07850v1",
+    "pdfSha256": "5d39485d3d7639b9f12f84cb6a09ec0fb08e2133637599f17c2ef539455918f5",
+    "readPages": [
+      1,
+      3,
+      14
+    ],
+    "facts": [
+      "两作者2017预印本；页3将ICML2014引用[13]称our prior work，页14参考文献精确对应会议三作者及页码",
+      "只证明前序研究关系，正式版本归并/扩展声明与最终TPAMI正文待查；不把JOURNAL OF LATEX CLASS FILES, AUGUST 2015模板页眉当发表年份"
+    ]
+  }
+}

@@ -24210,6 +24210,123 @@
           "attribution": "Florent Bouchard, Ammar Mian, Malik Tiomoko, Guillaume Ginolhac, Frederic Pascal · ICML 2024"
         }
       ]
+    },
+    {
+      "id": "structured-low-rank-2014",
+      "shortTitle": "Structured Low-Rank",
+      "title": "Structured Low-Rank Matrix Factorization: Optimality, Algorithm, and Applications to Image Processing",
+      "authors": "Benjamin D. Haeffele, Eric D. Young, René Vidal",
+      "year": 2014,
+      "venue": "ICML",
+      "publicationName": "Proceedings of the 31st International Conference on Machine Learning",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "Projective tensor norm matrix factorization",
+      "tags": [
+        "spectral-reconstruction",
+        "computational-imaging",
+        "low-rank-matrix-factorization"
+      ],
+      "summary": "以projective tensor norm在矩阵分解的因子上施加低秩、稀疏或TV结构，使用交替近端与外推更新；特定秩亏局部极小点可推出乘积的全局最优。",
+      "input": "通用结构矩阵；HSI应用为逐波长随机卷积得到的压缩观测。",
+      "output": "矩阵因子及其乘积；HSI应用输出恢复的光谱影像。",
+      "mechanism": "以projective tensor norm在矩阵分解的因子上施加低秩、稀疏或TV结构，使用交替近端与外推更新；特定秩亏局部极小点可推出乘积的全局最优。",
+      "readingNote": "已读官方摘要及原文第1、4、7–8页，保存原Algorithm 1；非阅读全文。PDF完整姓名含Benjamin D./Eric D.，PMLR书目省略中间名。代码README关联本论文并说明实现增加非因子变量和非负约束；当前完整目录树仅见通用/钙成像示例，HSI复现与代码许可待查。后续2017预印本引用会议为our prior work，正式TPAMI2020书目已定位；版本归并关系待核验。",
+      "paper": "https://proceedings.mlr.press/v32/haeffele14.html",
+      "code": "https://github.com/bhaeffele/ICML2014-FactorTVL1L2",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@InProceedings{pmlr-v32-haeffele14,\n  title = {Structured Low-Rank Matrix Factorization: Optimality, Algorithm, and Applications to Image Processing},\n  author = {Haeffele, Benjamin and Young, Eric and Vidal, Rene},\n  booktitle = {Proceedings of the 31st International Conference on Machine Learning},\n  year = {2014},\n  volume = {32},\n  number = {2},\n  pages = {2007--2015},\n  publisher = {PMLR},\n  url = {https://proceedings.mlr.press/v32/haeffele14.html}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "computational-imaging",
+          "low-rank-matrix-factorization"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "foundation",
+        "relationNote": "通用结构低秩分解的原摘要与实验明确连接HSI压缩恢复，另有钙成像分割；不把projective tensor norm中的tensor或影像维数当几何三维。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以低维因子直接施加结构约束，并减少高维影像恢复的优化变量？",
+        "datasets": "原文第8页脚注称公开Moffet Field数据子集，256×256像元、180波段；原文传感器拼写AVARIS，对应AVIRIS名称及确切子集仍待原始资源核对。脚注明确本研究区域/波段可能与NucTV参考实验略有不同。",
+        "experimentSetting": "第7–8页使用逐波长随机相位空间卷积压缩观测；两因子列数设15，A初始化为0、Z每列仅一个随机位置为1；比较多个压缩率与噪声水平。NucTV表中数据改录自参考文献，不是本论文统一重跑。",
+        "conclusions": "作者报告压缩恢复误差与NucTV参考结果相当或更好；数据子集和比较来源不完全统一，性能数字未独立复核。",
+        "limitations": "第4页说明交替最小化不保证收敛到局部极小点，可能遇到非极小驻点；秩亏全局最优结论有条件。第8页将盲解混列为未来应用，未完成盲解混实验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://proceedings.mlr.press/v32/haeffele14.html",
+            "checkedAt": "2026-10-08",
+            "level": "PMLR官方摘要与书目",
+            "supports": [
+              "Structured Low-Rank Matrix Factorization: Optimality, Algorithm, and Applications to Image Processing",
+              "ICML2014；PMLR 32(2):2007–2015",
+              "以projective tensor norm在矩阵分解的因子上施加低秩、稀疏或TV结构，使用交替近端与外推更新；特定秩亏局部极小点可推出乘积的全局最优。"
+            ]
+          },
+          {
+            "url": "https://proceedings.mlr.press/v32/haeffele14.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文第1、4、7–8页的作者、算法与HSI实验局部；非阅读全文",
+            "supports": [
+              "Benjamin D. Haeffele, Eric D. Young, René Vidal",
+              "Algorithm 1",
+              "原文第8页脚注称公开Moffet Field数据子集，256×256像元、180波段；原文传感器拼写AVARIS，对应AVIRIS名称及确切子集仍待原始资源核对。脚注明确本研究区域/波段可能与NucTV参考实验略有不同。",
+              "第7–8页使用逐波长随机相位空间卷积压缩观测；两因子列数设15，A初始化为0、Z每列仅一个随机位置为1；比较多个压缩率与噪声水平。NucTV表中数据改录自参考文献，不是本论文统一重跑。",
+              "第4页说明交替最小化不保证收敛到局部极小点，可能遇到非极小驻点；秩亏全局最优结论有条件。第8页将盲解混列为未来应用，未完成盲解混实验。"
+            ]
+          },
+          {
+            "url": "https://github.com/bhaeffele/ICML2014-FactorTVL1L2",
+            "checkedAt": "2026-10-08",
+            "level": "作者仓库README与未截断完整文件树；未执行代码",
+            "supports": [
+              "README引用三作者ICML2014论文；实现是应用公式的推广，增加非因子变量和非负约束",
+              "当前树含FactorTVL1L2_v1.m、ToyExample及CalciumImagingExample，未见HSI实验入口或LICENSE/COPYING文件；许可及高光谱复现待查"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "structured-low-rank-2014-icml2014",
+            "type": "会议正式版",
+            "url": "https://proceedings.mlr.press/v32/haeffele14.html",
+            "year": 2014,
+            "relation": "三作者会议正式版。后续两作者预印本及TPAMI论文的正式版本归并关系待核验，不混入其年份、作者或实验。"
+          }
+        ],
+        "methodFamilyId": "structured-low-rank-2014"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.mlr.press/v32/haeffele14.pdf",
+          "figureLabel": "Algorithm 1",
+          "caption": "结构低秩近似原始算法：两因子梯度、逐列近端算子与外推更新。",
+          "verificationNote": "ICML2014正式PDF第4页完整原Algorithm 1裁切，已目视核对；不是后续期刊版本算法。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              150,
+              180,
+              806,
+              975
+            ]
+          },
+          "path": "figures/structured-low-rank-2014/framework.png",
+          "width": 656,
+          "height": 795,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "887c777890904c61496cadae269aa0f82f21dd86f985e4dc53e179004e403fe5",
+          "attribution": "Benjamin D. Haeffele, Eric D. Young, René Vidal · ICML 2014"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -24442,7 +24559,8 @@
         "dssp-2019",
         "random-printed-mask-2019",
         "dispersive-blur-imager-2019",
-        "dnu-2020"
+        "dnu-2020",
+        "structured-low-rank-2014"
       ],
       "history": [
         {
@@ -24481,7 +24599,8 @@
         "mshcs-2015",
         "catadioptric-hlf",
         "random-printed-mask-2019",
-        "dispersive-blur-imager-2019"
+        "dispersive-blur-imager-2019",
+        "structured-low-rank-2014"
       ],
       "history": [
         {
@@ -25227,7 +25346,8 @@
       "evidencePaperIds": [
         "irss-lowrank-2015",
         "spectral-spatial-lowrank-2016",
-        "mhf-net-2019"
+        "mhf-net-2019",
+        "structured-low-rank-2014"
       ],
       "history": [
         {

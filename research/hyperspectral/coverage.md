@@ -50,6 +50,13 @@
 | ICML | 2023 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1828篇与全量元数据1828摘要URL集合完全一致；无条数截断 | 1828 / 4 / 4 | 指定题名/全量摘要词命中4全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 | ICML | 2024 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录2610篇与全量元数据2610摘要URL集合完全一致；无条数截断 | 2610 / 20 / 20 | 指定题名/全量摘要词命中20全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 | arXiv | 2024 | 2405.06558、Random matrix theory improved Fréchet mean of symmetric positive definite matrices；精确ID两个分版本页面；非arXiv年度/领域搜索 | 2 / 2 / 2 | 两个预印本版本日期已核验并归并；正文差异待查 | v1/v2与会议正文及实验差异待查；其他arXiv论文和更新不在此定向范围 |
+| ICML | 2014 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录310篇与全量元数据310摘要URL集合完全一致；无条数截断；完整单页含Cycle 1与Cycle 2两节 | 310 / 5 / 5 | 指定题名/全量摘要词命中5全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2015 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录270篇与全量元数据270摘要URL集合完全一致；无条数截断 | 270 / 5 / 5 | 指定题名/全量摘要词命中5全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2016 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录322篇与全量元数据322摘要URL集合完全一致；无条数截断 | 322 / 2 / 2 | 指定题名/全量摘要词命中2全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2017 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录434篇与全量元数据434摘要URL集合完全一致；无条数截断 | 434 / 3 / 3 | 指定题名/全量摘要词命中3全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| ICML | 2018 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录621篇与全量元数据621摘要URL集合完全一致；无条数截断 | 621 / 11 / 11 | 指定题名/全量摘要词命中11全部处理；其他词/全文/引用待查 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
+| arXiv | 2017 | Structured Low-Rank Matrix Factorization: Global Optimality, Algorithms, and Applications；一个定向相关版本目标；非年度目录或主题全量检索 | 1 / 1 / 0 | 前序引用关系与书目已定位；正式版本归并待查 | 最终TPAMI正文、明确扩展声明与版本实验差异待核验 |
+| TPAMI | 2020 | Structured Low-Rank Matrix Factorization: Global Optimality, Algorithms, and Applications；一个定向相关版本目标；非年度目录或主题全量检索 | 1 / 1 / 0 | 前序引用关系与书目已定位；正式版本归并待查 | 最终TPAMI正文、明确扩展声明与版本实验差异待核验 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -63,7 +70,7 @@
 | ICCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ECCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | NeurIPS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| ICML | conference | 最早可用目录至 2026 | 2013、2022–2024官方主卷指定题名/全量摘要词候选已处理；其他年份/关键词/正文未完成 |
+| ICML | conference | 最早可用目录至 2026 | 2013–2018、2022–2024主卷指定题名/全量摘要词候选已处理；其他年份/关键词/正文未完成 |
 | ICLR | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | AAAI | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IJCAI | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -158,6 +165,18 @@
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
 - 2026-10-08 / rmt-frechet-arxiv-version-association：新增 0，更新 0，去重 2，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：两个预印本版本候选归并到本批新建会议条目；官方日期已核验，作者仓库明确出版关联，非全文比对。
+- 2026-10-08 / icml-2014-early-pmlr-review：新增 1，更新 0，去重 0，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
+- 2026-10-08 / icml-2015-early-pmlr-review：新增 0，更新 0，去重 0，排除 5，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
+- 2026-10-08 / icml-2016-early-pmlr-review：新增 0，更新 0，去重 0，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
+- 2026-10-08 / icml-2017-early-pmlr-review：新增 0，更新 0，去重 0，排除 3，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
+- 2026-10-08 / icml-2018-early-pmlr-review：新增 0，更新 0，去重 0，排除 11，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
+- 2026-10-08 / structured-low-rank-related-publications-discovery：新增 0，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：后续arXiv原文页1/3/14确认前序引用；官方v1日期与Crossref正式期刊书目已核验。未证明正式版本归并，不把两作者内容混入会议三作者事实。
 
 ## 未解决缺口
 
@@ -171,3 +190,4 @@
 - 光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。
 - TGRS1994登记136题名两关键词组7候选：三条原摘要访问受限；雷达一条仅题名暂排除。森林原文首页已核验但PDF原图受限；出版社年度全量仍未证明。
 - ICML2013/2022–2024完成官方主卷目录与全量摘要指定词筛选：5954篇、36命中已处理；其他关键词、年度、workshop与正文/引文未完成。APT及RMT是通用方法的明确HSI应用，全文/复现仍待查。
+- ICML2014–2018五主卷1957题名及摘要、26词命中处理：新增结构低秩压缩恢复1、排除25；2014双Cycle均含。盲解混为未来工作；作者代码未见HSI实验入口，2017/2020后续稿的版本归并仍待原文确认。
