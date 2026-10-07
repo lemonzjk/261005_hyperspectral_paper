@@ -3045,3 +3045,23 @@ body {
 .figure-drop-zone strong { font-size: 15px; font-weight: 500; }
 .figure-drop-zone:focus-within { outline: 2px solid #c5e9ce; outline-offset: 3px; }
 .figure-upload .figure-drop-zone input { border: 0; background: none; padding: 6px 0; }
+
+/* Research scope remains visible alongside the shared search filters. */
+.scope-filter { flex: 1 1 100%; min-width: 0; margin: 0 0 8px; padding: 0; border: 0; }
+.scope-filter legend { padding: 0; margin-bottom: 12px; font-size: 13px; color: #c9d4ce; }
+.scope-filter > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.scope-filter label { position: relative; cursor: pointer; }
+.scope-filter input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.scope-filter label > span { display: flex; align-items: center; justify-content: center; gap: 14px; min-height: 42px; padding: 10px 16px; background: #1b2221; border: 1px solid #47524c; border-radius: 6px; color: #c5d1cb; font-size: 13px; }
+.scope-filter b { font: 12px ui-monospace, monospace; color: #b9c8bf; }
+.scope-filter input:checked + span { background: #344a3c; border-color: #95b99d; color: #f0f8ef; }
+.scope-filter input:checked + span b { color: #d6e9d9; }
+.scope-filter input:focus-visible + span { outline: 2px solid #d0e9d6; outline-offset: 3px; }
+.scope-filter label:hover > span { border-color: #adc5b3; }
+.scope-filter p { font-size: 11px; color: #aebdb4; margin-top: 10px; }
+@media (max-width: 600px) {
+  .scope-filter > div { gap: 6px; }
+  .scope-filter label { flex: 1; min-width: 0; }
+  .scope-filter label > span { font-size: 12px; gap: 6px; padding: 10px 6px; flex-wrap: wrap; }
+  .scope-filter b { font-size: 11px; }
+}
