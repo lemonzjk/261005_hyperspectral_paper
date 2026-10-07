@@ -4594,20 +4594,40 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
+        "categoryIds": [
+          "multimodal-spectral-correspondence"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "原三维专题成员的RGB–NIR跨光谱立体匹配；有限波段关联，不推定为密集高光谱方法。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何无深度监督联合跨波段图像转换与视差估计，并处理不可靠材料匹配？",
+        "datasets": "官方摘要报告车载RGB–NIR立体系统采集13.7小时城市及周边视频；通道响应、划分与许可待核验。",
+        "experimentSetting": "无深度监督，使用材料感知损失处理光源、玻璃和光泽表面；完整训练和评测设置待核验。",
+        "conclusions": "作者摘要报告匹配性能与实时速度；未复核完整指标。",
+        "limitations": "RGB–NIR有限波段；密集高光谱迁移和材料损失适用条件待核验。",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Zhi_Deep_Material-Aware_Cross-Spectral_CVPR_2018_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者、正式年份",
+              "RGB–NIR、13.7小时视频、材料感知损失与无深度监督"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "material-aware-stereo-cvpr2018",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Zhi_Deep_Material-Aware_Cross-Spectral_CVPR_2018_paper.html",
+            "year": 2018,
+            "relation": "采用CVPR2018正式版；其他版本待核验。"
+          }
+        ],
         "methodFamilyId": "material-aware-stereo"
       }
     },
@@ -19900,6 +19920,409 @@
           "attribution": "Renwei Dian, Leyuan Fang, Shutao Li · CVPR 2017"
         }
       ]
+    },
+    {
+      "id": "usdn-2018",
+      "shortTitle": "uSDN",
+      "title": "Unsupervised Sparse Dirichlet-Net for Hyperspectral Image Super-Resolution",
+      "authors": "Ying Qu, Hairong Qi, Chiman Kwan",
+      "year": 2018,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr.2018.00266",
+      "representation": "uSDN",
+      "tags": [
+        "spatial-super-resolution",
+        "unsupervised-hsi-fusion",
+        "dirichlet-abundance-prior"
+      ],
+      "summary": "两个编码器共享解码器；用稀疏Dirichlet表示满足非负、和为一约束，并减小跨模态表示的角度差异。",
+      "input": "低空间分辨HSI与高空间分辨MSI。",
+      "output": "高空间分辨HSI。",
+      "mechanism": "两个编码器共享解码器；用稀疏Dirichlet表示满足非负、和为一约束，并减小跨模态表示的角度差异。",
+      "readingNote": "已读官方摘要与注明的局部原文；未阅读全文。DOI、作者、正式年份已核验；完整实验、数据许可与版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2018/html/Qu_Unsupervised_Sparse_Dirichlet-Net_CVPR_2018_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Qu_2018_CVPR,\nauthor = {Qu, Ying and Qi, Hairong and Kwan, Chiman},\ntitle = {Unsupervised Sparse Dirichlet-Net for Hyperspectral Image Super-Resolution},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2018}\n}",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "unsupervised-hsi-fusion",
+          "dirichlet-abundance-prior"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接融合低空间分辨HSI与高空间分辨MSI，恢复高空间分辨HSI。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何不依赖高空间分辨HSI训练真值，实现低分辨HSI与高分辨MSI融合？",
+        "datasets": "官方摘要未列数据名称；原文第6页局部核验使用CAVE与Harvard，具体退化、划分及完整比较待全文复核。",
+        "experimentSetting": "未使用高空间分辨HSI训练真值；原文Fig.2呈现重建损失、共享权重及角度相似性损失。完整训练设置待核验。",
+        "conclusions": "作者摘要报告相较所比较方法的空间超分辨性能优势；尚未复核完整数值和公平性。",
+        "limitations": "配准、光谱响应、退化和优化稳定性的适用条件待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Qu_Unsupervised_Sparse_Dirichlet-Net_CVPR_2018_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者、会议年份",
+              "如何不依赖高空间分辨HSI训练真值，实现低分辨HSI与高分辨MSI融合？",
+              "两个编码器共享解码器；用稀疏Dirichlet表示满足非负、和为一约束，并减小跨模态表示的角度差异。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Unsupervised+Sparse+Dirichlet-Net+for+Hyperspectral+Image+Super-Resolution&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref元数据与CVF题名、作者、2018年份逐项核验",
+            "supports": [
+              "DOI 10.1109/cvpr.2018.00266；登记页码2511-2520"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Qu_Unsupervised_Sparse_Dirichlet-Net_CVPR_2018_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF指定局部页；非阅读全文",
+            "supports": [
+              "第3页Fig.2完整架构；第6页局部数据段核验CAVE与Harvard。未阅读全文。",
+              "直接融合低空间分辨HSI与高空间分辨MSI，恢复高空间分辨HSI。"
+            ]
+          },
+          {
+            "url": "https://raw.githubusercontent.com/aicip/uSDN/master/Readme.txt",
+            "checkedAt": "2026-10-08",
+            "level": "作者仓库Readme原始文本",
+            "supports": [
+              "明确引用本论文；Python3.5.1/TensorFlow1.8.0/scipy要求",
+              "仅供研究使用、All rights reserved；未运行代码、未推断数据许可"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1804.05042",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv原始题名、作者、Submission history",
+            "supports": [
+              "v1/v2/v3日期、首次提交与更新；不认定正文版本相同"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "usdn-2018-cvpr2018",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Qu_Unsupervised_Sparse_Dirichlet-Net_CVPR_2018_paper.html",
+            "year": 2018,
+            "doi": "10.1109/cvpr.2018.00266",
+            "relation": "使用CVPR2018正式版；各版本实验事实分开保存。"
+          },
+          {
+            "id": "usdn-2018-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1804.05042v1",
+            "year": 2018,
+            "arxivId": "1804.05042",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2018-04-13T17:17:05Z",
+            "updatedAt": "2018-04-13T17:17:05Z",
+            "relation": "arXiv题名、三作者与版本日期已核验；逐版正文及正式版差异待核验。"
+          },
+          {
+            "id": "usdn-2018-arxiv-v2",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1804.05042v2",
+            "year": 2018,
+            "arxivId": "1804.05042",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2018-04-13T17:17:05Z",
+            "updatedAt": "2018-07-12T07:55:42Z",
+            "relation": "arXiv题名、三作者与版本日期已核验；逐版正文及正式版差异待核验。"
+          },
+          {
+            "id": "usdn-2018-arxiv-v3",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1804.05042v3",
+            "year": 2018,
+            "arxivId": "1804.05042",
+            "arxivVersion": "v3",
+            "firstSubmittedAt": "2018-04-13T17:17:05Z",
+            "updatedAt": "2018-07-15T12:53:39Z",
+            "relation": "arXiv题名、三作者与版本日期已核验；逐版正文及正式版差异待核验。"
+          }
+        ],
+        "methodFamilyId": "usdn-2018"
+      },
+      "code": "https://github.com/aicip/uSDN",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Qu_Unsupervised_Sparse_Dirichlet-Net_CVPR_2018_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "uSDN简化架构：HSI和MSI编码器共享解码器，通过重建及角度相似性损失学习稀疏Dirichlet表示。",
+          "verificationNote": "核对同名原文PDF第3页Figure 2完整图像与图注；从原文裁切，未重绘。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              134,
+              196,
+              707,
+              619
+            ]
+          },
+          "path": "figures/usdn-2018/framework.png",
+          "width": 573,
+          "height": 423,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "44411867409532e0aa333837d6500638e0317ddfab239a34de46f3e816a42bfe",
+          "attribution": "Ying Qu, Hairong Qi, Chiman Kwan · CVPR 2018"
+        }
+      ]
+    },
+    {
+      "id": "learned-filter-response-2018",
+      "shortTitle": "Learned Filter Response",
+      "title": "Deeply Learned Filter Response Functions for Hyperspectral Reconstruction",
+      "authors": "Shijie Nie, Lin Gu, Yinqiang Zheng, Antony Lam, Nobutaka Ono, Imari Sato",
+      "year": 2018,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/CVPR.2018.00501",
+      "representation": "Learned Filter Response",
+      "tags": [
+        "spectral-reconstruction",
+        "camera-response-design",
+        "spectral-instrument-design"
+      ],
+      "summary": "把滤波器响应模拟为卷积层，端到端学习响应与重建映射，并加入物理约束制造干涉薄膜滤波器。",
+      "input": "设计阶段为高光谱训练图像；应用阶段为设计滤波器采集的少通道图像。",
+      "output": "学习的滤波器响应函数与重建高光谱图像。",
+      "mechanism": "把滤波器响应模拟为卷积层，端到端学习响应与重建映射，并加入物理约束制造干涉薄膜滤波器。",
+      "readingNote": "已读官方摘要与注明的局部原文；未阅读全文。DOI、作者、正式年份已核验；完整实验、数据许可与版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2018/html/Nie_Deeply_Learned_Filter_CVPR_2018_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Nie_2018_CVPR,\nauthor = {Nie, Shijie and Gu, Lin and Zheng, Yinqiang and Lam, Antony and Ono, Nobutaka and Sato, Imari},\ntitle = {Deeply Learned Filter Response Functions for Hyperspectral Reconstruction},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2018}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "camera-response-design",
+          "spectral-instrument-design"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "联合设计低通道相机响应和高光谱重建映射，输出密集高光谱；多光谱相机是输入硬件。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何联合优化相机光谱响应与重建网络，使少通道观测适合高光谱恢复？",
+        "datasets": "第5页局部核验CAVE及Harvard Natural/Mixed；数据许可、划分与完整指标待核验。",
+        "experimentSetting": "摘要提出三芯片与Bayer式单芯片2×2阵列；第8页真实硬件仅实现两通道滤波器和共轴双相机，不将三通道设计图当作已实现硬件。",
+        "conclusions": "作者摘要报告学习响应相较RGB相机的模拟重建优势，并报告实际滤波器制造与成像演示；完整数值待复核。",
+        "limitations": "第8页作者指出响应随训练数据集变化，全面数据库和更多视觉任务仍为后续工作；单芯片阵列的实际制造和完整泛化实验待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Nie_Deeply_Learned_Filter_CVPR_2018_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者、会议年份",
+              "如何联合优化相机光谱响应与重建网络，使少通道观测适合高光谱恢复？",
+              "把滤波器响应模拟为卷积层，端到端学习响应与重建映射，并加入物理约束制造干涉薄膜滤波器。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/CVPR.2018.00501",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref元数据与CVF题名、作者、2018年份逐项核验",
+            "supports": [
+              "DOI 10.1109/CVPR.2018.00501；登记页码4767-4776"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Nie_Deeply_Learned_Filter_CVPR_2018_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF指定局部页；非阅读全文",
+            "supports": [
+              "第2页Fig.1为完整设计/制造/应用框架；第5页数据段；第8页真实双通道硬件与数据依赖局限。未阅读全文。",
+              "联合设计低通道相机响应和高光谱重建映射，输出密集高光谱；多光谱相机是输入硬件。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "learned-filter-response-2018-cvpr2018",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Nie_Deeply_Learned_Filter_CVPR_2018_paper.html",
+            "year": 2018,
+            "doi": "10.1109/CVPR.2018.00501",
+            "relation": "使用CVPR2018正式版；各版本实验事实分开保存。"
+          }
+        ],
+        "methodFamilyId": "learned-filter-response-2018"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Nie_Deeply_Learned_Filter_CVPR_2018_paper.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "滤波器设计、制造与应用框架：卷积响应与光谱重建联合训练，设计响应用于硬件，再由少通道相机观测恢复高光谱。",
+          "verificationNote": "核对同名原文PDF第2页Figure 1完整图像与图注；从原文裁切，未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              189,
+              1555,
+              896
+            ]
+          },
+          "path": "figures/learned-filter-response-2018/framework.png",
+          "width": 1429,
+          "height": 707,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "41c68e80628752331cc67d331464a4d275a231d5ce10a7d11ee3d66087b39f53",
+          "attribution": "Shijie Nie, Lin Gu, Yinqiang Zheng, Antony Lam, Nobutaka Ono, Imari Sato · CVPR 2018"
+        }
+      ]
+    },
+    {
+      "id": "miid-subspace-2018",
+      "shortTitle": "MIID",
+      "title": "Multispectral Image Intrinsic Decomposition via Subspace Constraint",
+      "authors": "Qian Huang, Weixin Zhu, Yang Zhao, Linsen Chen, Yao Wang, Tao Yue, Xun Cao",
+      "year": 2018,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/cvpr.2018.00673",
+      "representation": "MIID",
+      "tags": [
+        "spectral-intrinsic-decomposition",
+        "spectral-dimensionality-reduction",
+        "datasets-benchmarks"
+      ],
+      "summary": "扩展Retinex模型，对着色和反射率光谱空间施加子空间约束，以交替投影分解观测。",
+      "input": "单张多光谱图像。",
+      "output": "光谱反射率与着色分量。",
+      "mechanism": "扩展Retinex模型，对着色和反射率光谱空间施加子空间约束，以交替投影分解观测。",
+      "readingNote": "已读官方摘要与注明的局部原文；未阅读全文。DOI、作者、正式年份已核验；完整实验、数据许可与版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content_cvpr_2018/html/Huang_Multispectral_Image_Intrinsic_CVPR_2018_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Huang_2018_CVPR,\nauthor = {Huang, Qian and Zhu, Weixin and Zhao, Yang and Chen, Linsen and Wang, Yao and Yue, Tao and Cao, Xun},\ntitle = {Multispectral Image Intrinsic Decomposition via Subspace Constraint},\nbooktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},\nmonth = {June},\nyear = {2018}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-intrinsic-decomposition",
+          "spectral-dimensionality-reduction",
+          "datasets-benchmarks"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "保留原论文多光谱称呼；第7页明确采集450–700nm的118通道，并以其中30通道计算图像处理和LMSE，构成密集光谱联系。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用子空间约束从单幅多光谱观测分离着色与反射率？",
+        "datasets": "摘要报告22场景及着色/反射率真值；第6–7页局部核验450–700nm的118通道采集、30通道处理，并提及MIT与Nayar数据库。原数据入口重定向至实验室首页，下载与许可待核验。",
+        "experimentSetting": "原文第7页所有图像处理和LMSE计算使用118通道中的30通道；第6页RGB MIT实验不使用子空间约束。完整参数和采集流程待阅读全文。",
+        "conclusions": "作者摘要报告所提分解有效；具体性能和比较条件仍待完整复核。",
+        "limitations": "第7页作者指出没有全局结构约束，局部着色与反射率均大幅变化时Retinex失效；全局约束计算成本仍待解决。",
+        "dataLinks": [
+          "https://cite.nju.edu.cn/MIID_dataset.html"
+        ],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Huang_Multispectral_Image_Intrinsic_CVPR_2018_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF官方摘要与BibTeX；非阅读全文",
+            "supports": [
+              "题名、完整作者、会议年份",
+              "如何利用子空间约束从单幅多光谱观测分离着色与反射率？",
+              "扩展Retinex模型，对着色和反射率光谱空间施加子空间约束，以交替投影分解观测。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Multispectral+Image+Intrinsic+Decomposition+via+Subspace+Constraint&rows=2",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref元数据与CVF题名、作者、2018年份逐项核验",
+            "supports": [
+              "DOI 10.1109/cvpr.2018.00673；登记页码6430-6439"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Huang_Multispectral_Image_Intrinsic_CVPR_2018_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文PDF指定局部页；非阅读全文",
+            "supports": [
+              "第2页Fig.1完整流程；第6–7页局部数据、30/118通道、RGB实验无子空间约束及全局结构局限。未阅读全文。",
+              "保留原论文多光谱称呼；第7页明确采集450–700nm的118通道，并以其中30通道计算图像处理和LMSE，构成密集光谱联系。"
+            ]
+          },
+          {
+            "url": "https://cite.nju.edu.cn/MIID_dataset.html",
+            "checkedAt": "2026-10-08",
+            "level": "原文入口的HTTPS访问核验",
+            "supports": [
+              "HTTP200但重定向到实验室首页；未取得数据文件或许可"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "miid-subspace-2018-cvpr2018",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Huang_Multispectral_Image_Intrinsic_CVPR_2018_paper.html",
+            "year": 2018,
+            "doi": "10.1109/cvpr.2018.00673",
+            "relation": "使用CVPR2018正式版；各版本实验事实分开保存。"
+          }
+        ],
+        "methodFamilyId": "miid-subspace-2018"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Huang_Multispectral_Image_Intrinsic_CVPR_2018_paper.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "MIID流程：光谱距离权重、着色与反射率子空间初始化，经交替投影迭代得到精细分解；图像以RGB呈现。",
+          "verificationNote": "核对同名原文PDF第2页Figure 1完整图像与图注；从原文裁切，未重绘。",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 200,
+            "pixelBox": [
+              126,
+              149,
+              1571,
+              731
+            ]
+          },
+          "path": "figures/miid-subspace-2018/framework.png",
+          "width": 1445,
+          "height": 582,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "5b4a717e9c6e7890ac3c6d49bf8e76790ba7e72104c09dfd5d2407c06390cd54",
+          "attribution": "Qian Huang, Weixin Zhu, Yang Zhao, Linsen Chen, Yao Wang, Tao Yue, Xun Cao · CVPR 2018"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -20122,7 +20545,8 @@
         "rlphcs-2015",
         "diy-hsi-2016",
         "spectral-spatial-lowrank-2016",
-        "faced-reflector-hsi-2017"
+        "faced-reflector-hsi-2017",
+        "learned-filter-response-2018"
       ],
       "history": [
         {
@@ -20174,7 +20598,8 @@
       "evidencePaperIds": [
         "hypertransformer-pansharpening",
         "bayesian-hsi-sr-2015",
-        "nlstf-2017"
+        "nlstf-2017",
+        "usdn-2018"
       ],
       "history": [
         {
@@ -20334,7 +20759,8 @@
         "m2sodai-2023",
         "multispectral-illumination-unrolling-2021",
         "realistic-hsi-denoising-2021",
-        "learned-hs-depth"
+        "learned-hs-depth",
+        "miid-subspace-2018"
       ],
       "history": [
         {
@@ -20468,7 +20894,8 @@
       "evidencePaperIds": [
         "osp-1994",
         "hysime-2008",
-        "mnf-1988"
+        "mnf-1988",
+        "miid-subspace-2018"
       ],
       "history": [
         {
@@ -20550,7 +20977,8 @@
         "dual-camera-hshs-2015",
         "diy-hsi-2016",
         "faced-reflector-hsi-2017",
-        "snapshot-hlf"
+        "snapshot-hlf",
+        "learned-filter-response-2018"
       ],
       "history": [
         {
@@ -20673,7 +21101,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
       "evidencePaperIds": [
-        "ircut-spectral-2021"
+        "ircut-spectral-2021",
+        "learned-filter-response-2018"
       ],
       "history": [
         {
@@ -20920,7 +21349,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
       "evidencePaperIds": [
-        "dasc-correspondence"
+        "dasc-correspondence",
+        "material-aware-stereo"
       ],
       "history": [
         {
@@ -21031,6 +21461,66 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "本批研究明确对应方法、任务或应用。"
+        }
+      ]
+    },
+    {
+      "id": "unsupervised-hsi-fusion",
+      "name": "无监督高光谱融合",
+      "dimension": "method",
+      "definition": "不依赖高空间分辨HSI训练真值，融合低空间分辨HSI与高空间分辨MSI。",
+      "status": "provisional",
+      "color": "#92a5a3",
+      "createdAt": "2026-10-08",
+      "rationale": "由CVPR2018已读摘要和注明局部原文形成；边界随后续阅读复核。",
+      "evidencePaperIds": [
+        "usdn-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批原文明确支持任务或方法标签。"
+        }
+      ]
+    },
+    {
+      "id": "dirichlet-abundance-prior",
+      "name": "Dirichlet丰度先验",
+      "dimension": "method",
+      "definition": "用Dirichlet型表示及稀疏约束编码光谱混合系数的非负和和为一性质。",
+      "status": "provisional",
+      "color": "#92a5a3",
+      "createdAt": "2026-10-08",
+      "rationale": "由CVPR2018已读摘要和注明局部原文形成；边界随后续阅读复核。",
+      "evidencePaperIds": [
+        "usdn-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批原文明确支持任务或方法标签。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-intrinsic-decomposition",
+      "name": "光谱本征分解",
+      "dimension": "task",
+      "definition": "从密集光谱观测分离反射率与着色，数据通道关系逐篇注明。",
+      "status": "provisional",
+      "color": "#92a5a3",
+      "createdAt": "2026-10-08",
+      "rationale": "由CVPR2018已读摘要和注明局部原文形成；边界随后续阅读复核。",
+      "evidencePaperIds": [
+        "miid-subspace-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批原文明确支持任务或方法标签。"
         }
       ]
     }

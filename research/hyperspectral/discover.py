@@ -9,7 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -22,6 +22,45 @@ def save(path, value):
     temporary = path.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
     temporary.replace(path)
+
+
+def fetch_directory(url, venue):
+    """Follow every day linked by a CVF index; a partial directory is a failure."""
+    pages = []
+
+    def fetch(page_url):
+        response = requests.get(page_url, timeout=45)
+        response.raise_for_status()
+        html = BeautifulSoup(response.text, 'html.parser')
+        selector = 'li a[href*="Abstract"]' if venue == 'NeurIPS' else '.ptitle a'
+        titles = [{'title': link.get_text(' ', strip=True), 'url': urljoin(page_url, link['href'])}
+                  for link in html.select(selector)]
+        pages.append({'url': page_url, 'queriedAt': datetime.now(timezone.utc).isoformat(),
+                      'htmlSha256': hashlib.sha256(response.content).hexdigest(), 'titleCount': len(titles)})
+        return html, titles
+
+    html, titles = fetch(url)
+    if titles:
+        return titles, pages
+    if venue == 'NeurIPS':
+        raise ValueError('No titles in official directory; coverage unverified')
+    parts = urlsplit(url)
+    index_url = f'{parts.scheme}://{parts.netloc}{parts.path}'
+    index, unused = fetch(index_url)
+    days = list(dict.fromkeys(urljoin(index_url, link['href']) for link in index.select('a[href*="day="]')
+                             if 'day=all' not in link['href']))
+    if not days:
+        raise ValueError('No titles or linked day directories; coverage unverified')
+    combined = {}
+    for day_url in days:
+        unused, daily = fetch(day_url)
+        if not daily:
+            raise ValueError(f'No titles in linked day directory: {day_url}; coverage unverified')
+        for paper in daily:
+            if paper['url'] in combined and combined[paper['url']]['title'] != paper['title']:
+                raise ValueError(f'Conflicting duplicate title: {paper["url"]}')
+            combined[paper['url']] = paper
+    return list(combined.values()), pages
 
 
 def main():
@@ -39,16 +78,13 @@ def main():
               'titleCount': 0, 'status': 'failed', 'statusLabel': '访问失败',
               'gaps': ['关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成']}
     try:
-        response = requests.get(url, timeout=45)
-        response.raise_for_status()
-        html = BeautifulSoup(response.text, 'html.parser')
-        titles = [{'title': link.get_text(' ', strip=True), 'url': urljoin(url, link['href'])}
-                  for link in html.select('li a[href*="Abstract"]' if args.venue == 'NeurIPS' else '.ptitle a')]
-        if not titles:
-            raise ValueError('No titles in official directory; coverage unverified')
-        digest = hashlib.sha256(response.content).hexdigest()
+        titles, pages = fetch_directory(url, args.venue)
+        digest = pages[0]['htmlSha256']
         snapshot = {'url': url, 'checkedAt': survey['cutoffDate'], 'htmlSha256': digest,
-                    'titleCount': len(titles), 'titles': titles}
+                    'titleCount': len(titles), 'pages': pages, 'titles': titles}
+        record['directoryPages'] = pages
+        if len(pages) > 1:
+            record['pagination'] = 'day=all 无题名；读取官方入口并遍历其全部日目录，按原文 URL 去重；无条数截断'
         path = ROOT / 'sources' / f'{args.venue.lower()}-{args.year}-all-titles.json'
         save(path, snapshot)
         record.update(titleCount=len(titles), sourceSnapshot=str(path.relative_to(ROOT)),
@@ -64,6 +100,14 @@ def main():
     except Exception as error:
         record['failureReason'] = str(error)
     prior = next((entry for entry in survey['searches'] if entry['id'] == identifier), None)
+    if record['status'] != 'failed' and prior:
+        failures = prior.get('retryFailures', [])
+        if prior['status'] == 'failed':
+            failures = [*failures, prior]
+        if failures:
+            record['retryFailures'] = failures
+        if prior['status'] == 'keyword_candidates_reviewed' and record['reviewedCount'] == record['candidateCount']:
+            record.update(status=prior['status'], statusLabel=prior['statusLabel'])
     survey['searches'] = [entry for entry in survey['searches'] if entry['id'] != identifier]
     if record['status'] == 'failed' and prior:
         prior.setdefault('retryFailures', []).append(record)
