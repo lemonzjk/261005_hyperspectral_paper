@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 193 篇；137 篇有 163 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 194 篇；138 篇有 165 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -75,3 +75,7 @@
 ## LiDAR 引导波段选择补充（2026-10-07）
 
 新增 LiDAR-Guided Band Selection（TGRS 2024，10.1109/TGRS.2024.3389651），原始元数据与 15 页作者稿核验。双分支自注意力与 LiDAR query 引导 HSI 波段选择，Houston 2013/Trento/MUUFL 的二维高度辅助分类，归相关研究。PDF 第 4 页完整 Figures 2、3 已保存；作者仓库示意图布局不同，未冒充相同 PDF 图。证据见 sources/lidar-guided-band-selection-review-2026-10-07.json。TMCFN 作者代码已查且无 PDF/图片，正文仍待核验；详见 sources/tmcfn-author-code-review-2026-10-07.json。调研尚未完成。
+
+## 三维多光谱训练策略与 CVF 同词排除（2026-10-07）
+
+新增 Towards Multi-Spectral GS（VMV 2025，arXiv:2509.00989v1，10.2312/vmv.20251237），核验 9 页正式全文与 17 页含补充作者稿；保存正式 PDF 第 1 页 Figure 1 和第 4 页 Figure 3。RGB 加红/绿/红边/NIR，相关三维多光谱补充阅读，VMV 不标目标顶会。与 MS-Splatting 是作者明确区分、共享代码的两篇；本篇是球谐表示与 Separate/Split/Joint 训练策略，不借用神经颜色表示。证据见 sources/towards-multispectral-gs-review-2026-10-07.json。另逐篇核验并排除 CVPR 2014 六篇图谱聚类/图匹配同词候选；原始摘要与决定见 sources/cvpr2014-graph-spectrum-scope-review-2026-10-07.json。CVF 其他候选与专业期刊追溯仍待继续。
