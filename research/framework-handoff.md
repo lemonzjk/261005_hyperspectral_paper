@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 176 篇：124 篇 verified、145 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 178 篇：126 篇 verified、148 张图；43 篇 needs_access；9 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
@@ -246,3 +246,8 @@ PDF 哈希、页码、裁切坐标与真实下载协议见 sources/dual-angle-of
 用户允许在现有框架全部初查后扩充文献，包含 arXiv。HS-3D-NeRF 的 v1 Figure 3 完整流程（PDF 第 3 页）与 DD-HGS 的作者版 Figure 2 已保存；两篇正式/预印本状态、版本和原始证据见 literature-handoff.md。累计 176 篇、124 篇有 145 张图；原有 43 needs_access 与 9 no_framework 未批量修改。
 
 补充旧来源核查：NASA Michelle Hofton 官方出版列表中 Sierra Biomass 2011、LVIS–AVIRIS 2008 同篇仅链 DOI，无该条目的 PDF 附件；NTRS 精确 Sierra 题名查询 200、零结果。Seungryong 旧站底层 GitHub 仓库 API 实际 404，未得到文件树，不能外推旧作者网站无附件。详见 sources/nasa-sierra-and-lat-repository-routes-2026-10-07.json。
+
+
+## 新论文同步补图（2026-10-07）
+
+Gas Plume NeRF（arXiv 2026）保存 Figure 2 权重计算子流程；明确不是完整 NeRF 或气体层析架构。PhotoniX 2024 Cascaded Spectral ToF 保存正式版 Figure 3(a) 光谱采集系统和 Figure 6 级联概念，分别注明不包含完整 ToF 重建流程、并非所有概念维度同时实验实现。全文身份、页码、裁切与哈希已存数据文件。累计 178 篇，126 篇有 148 张图，原有 43 needs_access 与 9 no_framework 不变。

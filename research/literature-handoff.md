@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 176 篇；124 篇有 145 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 178 篇；126 篇有 148 张框架图，43 篇 needs_access，9 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -13,10 +13,10 @@
 
 两篇原稿哈希与正式登记见 sources/hs3d-nerf-and-ddhgs-fulltext-2026-10-07.json。
 
-## 待核验方向
+## 本轮核验与剩余线索
 
-- Towards 3D Scene Understanding of Gas：尚需找到原始作者或 arXiv 入口，不能据二级介绍入库。
-- Cascaded compressed-sensing single-pixel camera for high-dimensional optical imaging：survey 有 PhotoniX 2024 候选 DOI 10.1186/s43074-024-00152-5；另命中 PMC9882592，须核对版本关系与三维任务，避免错配。
+- Gas Plume NeRF 已按 arXiv:2603.05473v1（2026）收录，四作者、在审声明和全文已核验。DIRSIG 合成 LWIR 场景，三维表示与新视角气体检测；不能外推真实气体浓度层析。Figure 2 为损失权重计算的局部方法示意（PDF 第 7 页），不是完整网络。作者代码 lanl/HSI-Nerfstudio 已核对 README，未安装复现。
+- Cascaded Spectral ToF 已按 PhotoniX 2024, 5:37 正式版收录，DOI 10.1186/s43074-024-00152-5。PMC9882592 是 2023 Research Square 预印本，不重复收录。正式全文用 500–650 nm 可调脉冲光源分次照明，恢复空间/波长/ToF；约 6 cm 是采样间隔而非精度。保存 Figure 3(a) 光谱系统（第 7 页）和 Figure 6 级联概念（第 12 页），未将概念图中的所有维度说成实验实现。
 - 石翠萍作者公开目录两篇 2025 HSI–LiDAR 融合候选见 survey.json，已有 PDF 文件路径，仍待全文及场所政策核验。
 - IGARSS 既有扫描候选、CVF/ECVA 扫描范围及专业期刊缺口见 survey.json 与 README.md；文献覆盖未完成，不能宣称全部收集。
 
@@ -25,3 +25,5 @@
 逐篇核对原始摘要/全文、作者、版本、正式场所、重复条目与三维任务。H×W×B 不是三维几何；高度辅助二维分类单列。用 research/record.py 立即记录，每条显式填写真实核验日期；该工具 updatedAt 仍硬编码，结束时复核 catalog 与 survey 日期。用 figures.py init 同步新论文，逐张 add 保存原图或 attempt 记录真实失败；只在完整全文图审查后判 no_framework。
 
 每轮更新 CONTEXT（最多 2000 字符、60 行），运行 validate；网站代码变更运行 build 与交互检查。完成后本地提交。
+
+本轮两篇全文哈希、正式版本关系与图号见 sources/gas-plume-nerf-and-cascaded-spectral-tof-2026-10-07.json。继续专业期刊、arXiv 与引文追溯；框架初查结束不等于文献搜集全面。

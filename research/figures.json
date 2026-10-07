@@ -156,6 +156,39 @@
       "paperUrl": "https://doi.org/10.1016/j.isprsjprs.2026.04.021"
     },
     {
+      "paperId": "gas-plume-nerf",
+      "status": "verified",
+      "attempts": [],
+      "year": 2026,
+      "title": "Towards 3D Scene Understanding of Gas Plumes in LWIR Hyperspectral Images Using Neural Radiance Fields",
+      "paperUrl": "https://arxiv.org/abs/2603.05473",
+      "figures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2603.05473v1",
+          "figureLabel": "Figure 2（arXiv v1，损失权重计算子流程）",
+          "caption": "自适应波段权重的三步计算：对训练图像渲染，计算逐像素逐通道残差，再平均并归一化得到各通道损失权重。",
+          "verificationNote": "核对同题名四作者 arXiv:2603.05473v1 第 7 页 Figure 2 与方法 3.1，保留三个步骤及全部坐标轴。此图是损失权重计算的局部方法示意，不是完整 NeRF 架构或气体三维重建流程；其中曲线说明权重计算，不是实验性能对比。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              145,
+              145,
+              1130,
+              535
+            ]
+          },
+          "path": "figures/gas-plume-nerf/framework-loss-weights.png",
+          "width": 985,
+          "height": 390,
+          "verifiedAt": "2026-10-07",
+          "sha256": "da382a39fbbf89b82b652368563dd9aa6be33e9fb71ce875d37e8d809be01daf",
+          "attribution": "Scout Jarman, Zigfried Hampel-Arias, Adra Carr, Kevin R. Moon · arXiv 2026"
+        }
+      ]
+    },
+    {
       "paperId": "gsff",
       "status": "verified",
       "attempts": [],
@@ -1014,6 +1047,62 @@
           "verifiedAt": "2026-10-06",
           "sha256": "7e0266d9e20ccc2febab9c8597dab0876879de175c02d6ee9d6c668e06994b59",
           "attribution": "Lanying Wang, Dening Lu, Linlin Xu, Derek T. Robinson, Weikai Tan, Qian Xie, Haiyan Guan, Michael A. Chapman, Jonathan Li · RSE 2024"
+        }
+      ]
+    },
+    {
+      "paperId": "cascaded-spc",
+      "status": "verified",
+      "attempts": [],
+      "year": 2024,
+      "title": "Cascaded compressed-sensing single-pixel camera for high-dimensional optical imaging",
+      "paperUrl": "https://link.springer.com/article/10.1186/s43074-024-00152-5",
+      "figures": [
+        {
+          "sourceUrl": "https://link.springer.com/content/pdf/10.1186/s43074-024-00152-5.pdf",
+          "figureLabel": "Figure 3(a)（光谱采集系统）",
+          "caption": "级联单像素光谱系统：旋转 Dove 棱镜和柱透镜将场景投影为一维，光栅将光谱映射到 DMD，编码后收集到单像素探测器。",
+          "verificationNote": "核对 PhotoniX 2024 5:37 原始 PDF 第 7 页 Figure 3(a) 及 Materials and methods。只取完整系统子图 a，不含 b–i 标定和结果。正文说明 spectral time-of-flight 实验使用该系统并配高速 APD 和数字采样器；图本身未画完整 ToF 激光照明和重建流程，不称完整三维算法框架。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              250,
+              165,
+              960,
+              400
+            ]
+          },
+          "path": "figures/cascaded-spc/framework-spectral-system.png",
+          "width": 710,
+          "height": 235,
+          "verifiedAt": "2026-10-07",
+          "sha256": "3c640ebb2a664e2fd97a66b27cc7322f3b83d8f73d1c766cdeee0ba58d047fb2",
+          "attribution": "Jongchan Park, Liang Gao · PhotoniX 2024"
+        },
+        {
+          "sourceUrl": "https://link.springer.com/content/pdf/10.1186/s43074-024-00152-5.pdf",
+          "figureLabel": "Figure 6（级联压缩概念框架）",
+          "page": 12,
+          "caption": "级联压缩的概念框架：多维光场通过多个阶段压缩到单像素测量；每阶段先将低维空间折叠，再把光谱等高维信息展开到空出的空间轴。",
+          "verificationNote": "核对 PhotoniX 2024 5:37 正式版 PDF 第 12 页 Figure 6，保留 a、b 全部概念示意。正文实际演示二维光谱与光谱 ToF；图中的全部光场维度和任意多级扩展是一般概念，不声称实验已同时测量所有维度。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              315,
+              175,
+              1000,
+              800
+            ]
+          },
+          "path": "figures/cascaded-spc/framework-cascaded-concept.png",
+          "width": 685,
+          "height": 625,
+          "verifiedAt": "2026-10-07",
+          "sha256": "3c808eef1b3e7f4328c889ad2ed67990c48754ad909333fc2c2dd7ea731c463e",
+          "attribution": "Jongchan Park, Liang Gao · PhotoniX 2024"
         }
       ]
     },

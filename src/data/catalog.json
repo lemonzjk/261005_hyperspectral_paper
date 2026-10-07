@@ -8617,6 +8617,157 @@
           "attribution": "Sunil Kumar Narayanan, Lingjun Zhao, Lu Gan, Yongsheng Chen · 3DV 2026"
         }
       ]
+    },
+    {
+      "id": "gas-plume-nerf",
+      "shortTitle": "Gas Plume NeRF",
+      "title": "Towards 3D Scene Understanding of Gas Plumes in LWIR Hyperspectral Images Using Neural Radiance Fields",
+      "authors": "Scout Jarman, Zigfried Hampel-Arias, Adra Carr, Kevin R. Moon",
+      "year": 2026,
+      "venue": "arXiv",
+      "track": "rendering",
+      "representation": "长波红外光谱 NeRF",
+      "scope": "核心研究",
+      "tags": [
+        "LWIR 高光谱",
+        "气体羽流",
+        "稀疏视角 NeRF"
+      ],
+      "summary": "将多视角长波红外高光谱图像整合为 NeRF 三维场景表示，并在渲染图像上执行气体羽流检测。",
+      "input": "DIRSIG 合成设施场景的多视角 LWIR 高光谱图像，含强六氟化硫羽流。",
+      "output": "三维辐射场、新视角高光谱渲染图像及其气体检测图。",
+      "mechanism": "以 Mip-NeRF 为基础，结合多通道密度与 RegNeRF 几何正则；联合 L2、SAM、自适应加权 L2 光谱损失，按训练渲染残差周期性更新波段权重，再对新视角图像执行 ACE 气体检测。",
+      "readingNote": "arXiv v1（2026-03-05）声明投稿 SPIE JARS、在审；本站按预印本收录，不宣称已发表顶刊。实验为 DIRSIG 合成场景，不能外推真实移动气体羽流；检测输出是渲染影像上的二维结果，不等于气体浓度的定量三维层析。",
+      "paper": "https://arxiv.org/abs/2603.05473",
+      "doi": "10.48550/arXiv.2603.05473",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "verifiedAt": "2026-10-07",
+      "verificationLevel": "author_fulltext",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2603.05473v1",
+          "note": "原始摘要、四作者、在审说明、合成数据边界及版本日期已核验。 已核对 v1 全文方法与 Figure 2；该图仅为损失计算子流程。"
+        },
+        {
+          "url": "https://github.com/lanl/HSI-Nerfstudio",
+          "note": "原始 arXiv 声明链接作者代码；README 实际 200，列 HSI Mip-NeRF/Nerfacto、多通道密度、几何正则、训练和复现实验脚本，并链接 Zenodo 18626884 数据。未安装或运行复现，不宣称可完全复现数值。"
+        }
+      ],
+      "citation": "@misc{gasplumenerf2026,\n  title={Towards 3D Scene Understanding of Gas Plumes in LWIR Hyperspectral Images Using Neural Radiance Fields},\n  author={Scout Jarman and Zigfried Hampel-Arias and Adra Carr and Kevin R. Moon},\n  year={2026},\n  eprint={2603.05473},\n  archivePrefix={arXiv},\n  url={https://arxiv.org/abs/2603.05473}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2603.05473v1",
+          "figureLabel": "Figure 2（arXiv v1，损失权重计算子流程）",
+          "caption": "自适应波段权重的三步计算：对训练图像渲染，计算逐像素逐通道残差，再平均并归一化得到各通道损失权重。",
+          "verificationNote": "核对同题名四作者 arXiv:2603.05473v1 第 7 页 Figure 2 与方法 3.1，保留三个步骤及全部坐标轴。此图是损失权重计算的局部方法示意，不是完整 NeRF 架构或气体三维重建流程；其中曲线说明权重计算，不是实验性能对比。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              145,
+              145,
+              1130,
+              535
+            ]
+          },
+          "path": "figures/gas-plume-nerf/framework-loss-weights.png",
+          "width": 985,
+          "height": 390,
+          "verifiedAt": "2026-10-07",
+          "sha256": "da382a39fbbf89b82b652368563dd9aa6be33e9fb71ce875d37e8d809be01daf",
+          "attribution": "Scout Jarman, Zigfried Hampel-Arias, Adra Carr, Kevin R. Moon · arXiv 2026"
+        }
+      ],
+      "code": "https://github.com/lanl/HSI-Nerfstudio"
+    },
+    {
+      "id": "cascaded-spc",
+      "shortTitle": "Cascaded Spectral ToF",
+      "title": "Cascaded compressed-sensing single-pixel camera for high-dimensional optical imaging",
+      "authors": "Jongchan Park, Liang Gao",
+      "year": 2024,
+      "venue": "PhotoniX",
+      "publicationName": "PhotoniX",
+      "track": "active",
+      "representation": "级联压缩光谱 ToF",
+      "scope": "核心研究",
+      "tags": [
+        "单像素成像",
+        "全波形高光谱 LiDAR",
+        "级联压缩"
+      ],
+      "summary": "通过级联光学降维与编码获取空间、光谱和飞行时间信号，使用单像素探测器联合恢复三维深度与光谱。",
+      "input": "Dove 棱镜与柱透镜投影、光栅色散、DMD 编码后的单像素全波形测量；光谱 ToF 实验使用可调脉冲照明。",
+      "output": "含空间、波长和飞行时间的四维数据及真实深度场景；另有二维光谱与光场成像示范。",
+      "mechanism": "先压缩一维空间，再将光谱映射到空出的空间轴，经第二级 Hadamard 编码和单像素检测；FISTA 与 L1 正则求解逆问题，保留高速探测的 ToF 信息。",
+      "readingNote": "正式版 PhotoniX 5:37（2024-11-07），不是 PMC9882592 中 2023 Research Square 预印本的出版年份。三维依据是正文 spectral time-of-flight 实验，不是 H×W×B 立方体。500–650 nm 可调脉冲源分 16 次照明，重建有 10 个光谱通道；约 6 cm 为轴向采样间隔，不等于精度。补充材料含模拟代码，完整实验实现/数据按作者申请，未称完全开源。",
+      "paper": "https://link.springer.com/article/10.1186/s43074-024-00152-5",
+      "doi": "10.1186/s43074-024-00152-5",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "verifiedAt": "2026-10-07",
+      "verificationLevel": "publisher_fulltext",
+      "sources": [
+        {
+          "url": "https://link.springer.com/article/10.1186/s43074-024-00152-5",
+          "note": "正式开放全文核验两作者、日期、5:37、级联测量、全波形光谱 ToF 和真实深度实验。"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9882592/",
+          "note": "同题名两作者早期 Research Square v1，2023-01-09；本站不重复收录。"
+        }
+      ],
+      "citation": "@article{cascadedspc2024,\n  title={Cascaded compressed-sensing single-pixel camera for high-dimensional optical imaging},\n  author={Jongchan Park and Liang Gao},\n  journal={PhotoniX},\n  volume={5},\n  pages={37},\n  year={2024},\n  doi={10.1186/s43074-024-00152-5},\n  url={https://link.springer.com/article/10.1186/s43074-024-00152-5}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://link.springer.com/content/pdf/10.1186/s43074-024-00152-5.pdf",
+          "figureLabel": "Figure 3(a)（光谱采集系统）",
+          "caption": "级联单像素光谱系统：旋转 Dove 棱镜和柱透镜将场景投影为一维，光栅将光谱映射到 DMD，编码后收集到单像素探测器。",
+          "verificationNote": "核对 PhotoniX 2024 5:37 原始 PDF 第 7 页 Figure 3(a) 及 Materials and methods。只取完整系统子图 a，不含 b–i 标定和结果。正文说明 spectral time-of-flight 实验使用该系统并配高速 APD 和数字采样器；图本身未画完整 ToF 激光照明和重建流程，不称完整三维算法框架。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              250,
+              165,
+              960,
+              400
+            ]
+          },
+          "path": "figures/cascaded-spc/framework-spectral-system.png",
+          "width": 710,
+          "height": 235,
+          "verifiedAt": "2026-10-07",
+          "sha256": "3c640ebb2a664e2fd97a66b27cc7322f3b83d8f73d1c766cdeee0ba58d047fb2",
+          "attribution": "Jongchan Park, Liang Gao · PhotoniX 2024"
+        },
+        {
+          "sourceUrl": "https://link.springer.com/content/pdf/10.1186/s43074-024-00152-5.pdf",
+          "figureLabel": "Figure 6（级联压缩概念框架）",
+          "page": 12,
+          "caption": "级联压缩的概念框架：多维光场通过多个阶段压缩到单像素测量；每阶段先将低维空间折叠，再把光谱等高维信息展开到空出的空间轴。",
+          "verificationNote": "核对 PhotoniX 2024 5:37 正式版 PDF 第 12 页 Figure 6，保留 a、b 全部概念示意。正文实际演示二维光谱与光谱 ToF；图中的全部光场维度和任意多级扩展是一般概念，不声称实验已同时测量所有维度。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pixelBox": [
+              315,
+              175,
+              1000,
+              800
+            ]
+          },
+          "path": "figures/cascaded-spc/framework-cascaded-concept.png",
+          "width": 685,
+          "height": 625,
+          "verifiedAt": "2026-10-07",
+          "sha256": "3c808eef1b3e7f4328c889ad2ed67990c48754ad909333fc2c2dd7ea731c463e",
+          "attribution": "Jongchan Park, Liang Gao · PhotoniX 2024"
+        }
+      ]
     }
   ],
   "datasets": [
