@@ -1,9 +1,9 @@
-import type { Paper } from './types';
+import type { Paper, PresentPaper } from './types';
 import { groupPapers } from './map-groups.ts';
 
 /** Year spacing expands with publication density so station labels never overlap. */
-export function timelineLayout(papers: Paper[]) {
-  const groups = groupPapers(papers, 'track');
+export function timelineLayout(papers: Paper[], present?: PresentPaper) {
+  const groups = groupPapers(papers, 'track', present);
   const years = [...new Set(papers.map(p => p.year))].sort((a, b) => a - b);
   let cursor = 260;
   const columns = years.map(year => {

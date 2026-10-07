@@ -1,11 +1,11 @@
 import { TimelineOverview } from './TimelineOverview';
 import { timelineLayout } from './timeline-layout';
-import type { Paper } from './types';
+import type { Paper, PresentPaper } from './types';
 
 /** Browsing follows document scrolling; the complete annual diagram is an export. */
-export function ResearchMap({ papers, onSelect }: { papers: Paper[]; onSelect: (paper: Paper) => void }) {
+export function ResearchMap({ papers, onSelect, present, filename = 'hs3d-research-timeline.svg' }: { papers: Paper[]; onSelect: (paper: Paper) => void; present?: PresentPaper; filename?: string }) {
   const exportSvg = () => {
-    const layout = timelineLayout(papers);
+    const layout = timelineLayout(papers, present);
     const escape = (value: string) => value.replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' })[character]!);
     const content = `<svg xmlns="http://www.w3.org/2000/svg" width="${layout.width}" height="${layout.height}" viewBox="0 0 ${layout.width} ${layout.height}">
       <rect width="100%" height="100%" fill="white"/>
@@ -18,9 +18,9 @@ export function ResearchMap({ papers, onSelect }: { papers: Paper[]; onSelect: (
     const url = URL.createObjectURL(new Blob([content], { type: 'image/svg+xml' }));
     const anchor = document.createElement('a');
     anchor.href = url;
-    anchor.download = 'hs3d-research-timeline.svg';
+    anchor.download = filename;
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
-  return <TimelineOverview key={papers.map(paper => paper.id).join(',')} papers={papers} onSelect={onSelect} onDetail={exportSvg}/>;
+  return <TimelineOverview key={papers.map(paper => paper.id).join(',')} papers={papers} onSelect={onSelect} onDetail={exportSvg} present={present}/>;
 }

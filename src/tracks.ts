@@ -15,4 +15,6 @@ export const tracks: { id: TrackId; name: string; en: string; color: string; des
   { id: 'volumetric', name: '三维光谱体成像', en: 'Spectral volumetric imaging', color: '#b66a87', description: '光声等体成像中的真实三维空间与波长联合恢复，区别于二维光谱立方体。' },
   { id: 'fusion', name: 'HSI 与高度信息融合', en: 'HSI & elevation fusion', color: '#a98166', description: '利用 LiDAR 或 DSM 高度辅助地物分类和检测；明确区分二维分类与三维点云任务。' },
 ];
-export const getTrack = (id: TrackId) => tracks.find(t => t.id === id)!;
+export const getTrack = (id: TrackId | undefined) => tracks.find(t => t.id === id) ?? { id: 'pending', name: '待分类', en: 'Pending', color: '#999999', description: '分类待核验' };
+
+export const present3d = (paper: import('./types').Paper) => ({ ...getTrack(paper.track), scope: paper.scope ?? '', groupId: paper.track ?? 'pending' });

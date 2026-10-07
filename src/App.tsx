@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { FrameworkFigures } from './FrameworkFigures';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
+import { collectionHref, useCollectionNavigation } from './collection-navigation';
+import { PaperDialog } from './PaperDialog';
 import { SpectralScene } from './SpectralScene';
 import rawCatalog from './data/catalog.json';
 import { getTrack, tracks } from './tracks';
@@ -9,15 +10,16 @@ import { PublicationFilter, type PublicationOption } from './PublicationFilter';
 import type { Dataset, Paper } from './types';
 
 const initialCatalog = rawCatalog as { updatedAt: string; papers: Paper[]; datasets: Dataset[] };
-const paperYears = initialCatalog.papers.map(p => p.year);
+const topicCatalog = { ...initialCatalog, papers: initialCatalog.papers.filter(paper => paper.collections.includes('hs3d')) };
+const paperYears = topicCatalog.papers.map(p => p.year);
 const years = Array.from({ length: Math.max(...paperYears) - Math.min(...paperYears) + 1 }, (_, i) => String(Math.max(...paperYears) - i));
-const venues = [...new Set(initialCatalog.papers.map(p => p.venue))].sort((a, b) => a.localeCompare(b));
+const venues = [...new Set(topicCatalog.papers.map(p => p.venue))].sort((a, b) => a.localeCompare(b));
 const publicationOptions: PublicationOption[] = venues.map(name => {
-  const papers = initialCatalog.papers.filter(paper => paper.venue === name);
+  const papers = topicCatalog.papers.filter(paper => paper.venue === name);
   return { name, fullName: papers.find(paper => paper.publicationName)?.publicationName ?? name, count: papers.length,
     kind: name === 'arXiv' ? 'preprint' : papers.some(paper => paper.citation.startsWith('@article')) ? 'journal' : 'conference' };
 });
-const representations = [...new Set(initialCatalog.papers.map(p => p.representation))];
+const representations = [...new Set(topicCatalog.papers.map(p => p.representation))];
 const repo = 'https://github.com/lemonzjk/261005_hyperspectral_paper';
 const views = [{ id: 'atlas', label: '研究图谱' }, { id: 'papers', label: '论文库' }, { id: 'datasets', label: '数据资源' }, { id: 'guide', label: '阅读指南' }] as const;
 type View = typeof views[number]['id'];
@@ -31,41 +33,14 @@ const initialYears = { start: readYear('yearFrom') || legacyYear, end: readYear(
 if (initialYears.start && initialYears.end && Number(initialYears.start) > Number(initialYears.end)) {
   [initialYears.start, initialYears.end] = [initialYears.end, initialYears.start];
 }
-const publicationLabels: Record<string, string> = { published: '正式发表', early_access: '在线先行', preprint: '预印本', accepted: '已接收 · 正式卷页待核验' };
 const arrow = <span aria-hidden="true">↗</span>;
 
 
 
-function PaperDialog({ paper, onClose, onUpdated }: { paper: Paper | null; onClose: () => void; onUpdated: (paper: Paper) => void }) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const [copied, setCopied] = useState(false);
-  const [copyError, setCopyError] = useState(false);
-  const citation = useRef<HTMLPreElement>(null);
-  useEffect(() => { setCopied(false); setCopyError(false); if (paper) dialog.current?.showModal(); else dialog.current?.close(); }, [paper]);
-  const copyCitation = async () => {
-    try { await navigator.clipboard.writeText(paper!.citation); setCopied(true); setCopyError(false); }
-    catch { setCopyError(true); const selection = window.getSelection(); const range = document.createRange(); if (citation.current) { range.selectNodeContents(citation.current); selection?.removeAllRanges(); selection?.addRange(range); } }
-  };
-  return <dialog className="paper-dialog" ref={dialog} onClose={onClose} onClick={e => { if (e.target === e.currentTarget) { const rect = e.currentTarget.getBoundingClientRect(); if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) onClose(); } }} aria-labelledby="dialog-title">
-    {paper && <><div className="dialog-top"><span className="eyebrow">PAPER NOTES / {paper.venue} {paper.year}</span><button className="close-button" onClick={onClose} aria-label="关闭论文详情">×</button></div>
-      <div className="dialog-tags"><span className="tag" style={{ '--track': getTrack(paper.track).color } as CSSProperties}>{getTrack(paper.track).name}</span><span className="tag">{paper.representation}</span><span className="tag">{paper.scope}</span>{paper.publicationStatus === 'early_access' && <span className="tag">在线先行 · 卷期待补</span>}</div>
-      <h2 id="dialog-title">{paper.shortTitle}</h2><p className="dialog-full-title">{paper.title}</p><p className="authors">{paper.authors}</p>
-      <div className="dialog-links"><a className="primary-button" href={paper.paper} target="_blank" rel="noreferrer">阅读论文 {arrow}</a>{paper.code && <a className="secondary-button" href={paper.code} target="_blank" rel="noreferrer">作者代码 {arrow}</a>}</div>
-      <dl className="publication-facts"><div><dt>出版来源</dt><dd>{paper.publicationName || paper.venue}</dd></div><div><dt>版本年份</dt><dd>{paper.year}{paper.publicationStatus && publicationLabels[paper.publicationStatus] && <span>{publicationLabels[paper.publicationStatus]}</span>}</dd></div>{paper.doi && <div><dt>DOI</dt><dd>{paper.doi}</dd></div>}</dl>
-      <p className="dialog-summary">{paper.summary}</p>
-      <FrameworkFigures key={paper.id} paper={paper} onUpdated={onUpdated}/>
-
-      <dl className="io-grid"><div><dt>输入 / INPUT</dt><dd>{paper.input}</dd></div><div><dt>输出 / OUTPUT</dt><dd>{paper.output}</dd></div></dl>
-      <h3>关键方法</h3><p>{paper.mechanism}</p><div className="tags">{paper.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-      <div className="reading-note"><h3>阅读关注</h3><p>{paper.readingNote}</p></div>
-      <details className="citation"><summary>BibTeX 引用</summary><pre ref={citation}>{paper.citation}</pre><button className="secondary-button" onClick={copyCitation}>{copied ? '已复制 ✓' : '复制引用'}</button>{copyError && <p role="status">已选中引用，请按 Ctrl/Cmd + C 复制。</p>}</details>
-      <div className="dialog-footer">来源：<a href={paper.paper} target="_blank" rel="noreferrer">原论文入口 {arrow}</a><span>条目核验 {paper.verifiedAt}</span></div>
-    </>}
-  </dialog>;
-}
 
 export default function App() {
-  const [catalog, setCatalog] = useState(initialCatalog);
+  useCollectionNavigation('hs3d');
+  const [catalog, setCatalog] = useState(topicCatalog);
   const [view, setView] = useState<View>(initialView);
   const [scope, setScope] = useState<ResearchScope>(scopeOptions.find(option => option.id === params.get('scope'))?.id ?? '');
   const [query, setQuery] = useState(params.get('q') ?? '');
@@ -84,9 +59,9 @@ export default function App() {
   const [representation, setRepresentation] = useState(representations.includes(params.get('representation') ?? '') ? params.get('representation')! : '');
   const [selected, setSelected] = useState<Paper | null>(catalog.papers.find(p => p.id === params.get('paper')) ?? null);
   useEffect(() => {
-    setCatalog(initialCatalog);
-    setSelected(current => current ? initialCatalog.papers.find(paper => paper.id === current.id) ?? null : null);
-  }, [initialCatalog]);
+    setCatalog(topicCatalog);
+    setSelected(current => current ? topicCatalog.papers.find(paper => paper.id === current.id) ?? null : null);
+  }, [rawCatalog]);
   const matchingOtherFilters = useMemo(() => catalog.papers.filter(p => (!yearFrom || p.year >= Number(yearFrom)) && (!yearTo || p.year <= Number(yearTo)) && (!selectedVenues.length || selectedVenues.includes(p.venue)) && (!representation || p.representation === representation) && query.toLowerCase().trim().split(/\s+/).every(word => `${p.shortTitle} ${p.title} ${p.authors} ${p.summary} ${p.tags.join(' ')} ${p.venue} ${getTrack(p.track).name}`.toLowerCase().includes(word))).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)), [catalog, query, yearFrom, yearTo, selectedVenues, representation]);
   const matchingPapers = useMemo(() => matchingOtherFilters.filter(paper => !track || paper.track === track), [matchingOtherFilters, track]);
   const scopeValue = scopeOptions.find(option => option.id === scope)!.value;
@@ -110,7 +85,7 @@ export default function App() {
   return <>
     <a className="skip-link" href="#main">跳到主要内容</a>
     <header className="site-header"><a className="brand" href={import.meta.env.BASE_URL} aria-label="HS3D Atlas 首页"><span className="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m16 3 12 7-12 7L4 10 16 3Z" stroke="currentColor" strokeWidth="1.3"/><path d="m4 16 12 7 12-7M4 22l12 7 12-7" stroke="currentColor" strokeWidth="1.3"/></svg></span><span>HS3D <b>Atlas</b><small>HYPERSPECTRAL 3D VISION</small></span></a>
-      <nav className="header-nav" aria-label="主导航">{views.map(v => <button key={v.id} className={view === v.id ? 'active' : ''} aria-current={view === v.id ? 'page' : undefined} onClick={() => navigate(v.id)}>{v.label}</button>)}<a className="library-link" href={`${import.meta.env.BASE_URL}docs/hyperspectral-library-prototype.html`}>高光谱调研 ↗</a></nav>
+      <nav className="header-nav" aria-label="主导航">{views.map(v => <button key={v.id} className={view === v.id ? 'active' : ''} aria-current={view === v.id ? 'page' : undefined} onClick={() => navigate(v.id)}>{v.label}</button>)}<a className="library-link" href={collectionHref('hyperspectral')}>高光谱调研 ↗</a></nav>
       <a className="github-link" aria-label="GitHub 仓库" href={repo} target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .8a11.3 11.3 0 0 0-3.57 22c.56.1.77-.24.77-.54v-2.1c-3.15.7-3.82-1.34-3.82-1.34-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.44-2.25 1.17-3.04-.12-.28-.51-1.44.11-3 0 0 .95-.3 3.11 1.16a10.8 10.8 0 0 1 5.66 0c2.16-1.46 3.1-1.16 3.1-1.16.63 1.56.24 2.72.12 3 .73.79 1.16 1.8 1.16 3.03 0 4.35-2.64 5.31-5.16 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.2.65.78.54A11.3 11.3 0 0 0 12 .8Z"/></svg><span className="github-label">GitHub {arrow}</span></a>
     </header>
     <main id="main">

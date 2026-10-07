@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { getTrack } from './tracks';
-import type { Paper } from './types';
+import { present3d } from './tracks';
+import type { Paper, PresentPaper } from './types';
 
 /** Annual groups share document scrolling and preserve every filtered paper. */
-export function AtlasOverview({ papers, ascending, showAll, onSelect }: {
-  papers: Paper[]; ascending: boolean; showAll: boolean; onSelect: (paper: Paper) => void;
+export function AtlasOverview({ papers, ascending, showAll, onSelect, present = present3d }: {
+  papers: Paper[]; ascending: boolean; showAll: boolean; onSelect: (paper: Paper) => void; present?: PresentPaper;
 }) {
   const [expanded, setExpanded] = useState<number[]>([]);
   const years = [...new Set(papers.map(paper => paper.year))].sort((a, b) => ascending ? a - b : b - a);
@@ -74,9 +74,9 @@ export function AtlasOverview({ papers, ascending, showAll, onSelect }: {
           <div className="annual-content">
             <div className="annual-papers">{visible.map((paper, index) => {
               const figure = paper.frameworkFigures?.[0];
-              const track = getTrack(paper.track);
+              const track = present(paper);
               return <button className="annual-paper" key={paper.id} data-timeline-paper={paper.id} style={{ '--track': track.color } as CSSProperties} onClick={() => onSelect(paper)} aria-label={`${paper.shortTitle}，${paper.venue} ${paper.year}，查看详情`}>
-                <div className="annual-paper-meta"><span>{paper.venue}</span><span className="annual-paper-number">{String(index + 1).padStart(2, '0')}</span>{paper.publicationStatus === 'accepted' && <small>已接收</small>}{paper.publicationStatus === 'preprint' && <small>预印本</small>}{paper.publicationStatus === 'early_access' && <small>在线先行</small>}<span className={`annual-scope${paper.scope === '核心研究' ? ' core' : ''}`}>{paper.scope}</span></div>
+                <div className="annual-paper-meta"><span>{paper.venue}</span><span className="annual-paper-number">{String(index + 1).padStart(2, '0')}</span>{paper.publicationStatus === 'accepted' && <small>已接收</small>}{paper.publicationStatus === 'preprint' && <small>预印本</small>}{paper.publicationStatus === 'early_access' && <small>在线先行</small>}<span className={`annual-scope${track.scope === '核心研究' ? ' core' : ''}`}>{track.scope}</span></div>
                 <div className="annual-paper-body"><div><h5>{paper.shortTitle}<span aria-hidden="true">↗</span></h5><p>{paper.summary}</p></div>{figure && <img src={`${import.meta.env.BASE_URL}${figure.path.replace(/^\//, '')}`} alt="" loading="lazy"/>}</div>
                 <footer><span className="annual-track"><i/>{track.name}</span><span>查看{figure ? figure.verificationStatus === 'pending' ? '上传图（待核验）' : '方法与原图' : '方法详情'} <span aria-hidden="true">↗</span></span></footer>
               </button>;

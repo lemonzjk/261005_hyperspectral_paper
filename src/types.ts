@@ -6,7 +6,9 @@ export interface FrameworkFigure {
 }
 export interface Paper {
   id: string; shortTitle: string; title: string; authors: string; year: number;
-  venue: string; track: TrackId; representation: string; scope: string;
+  venue: string; track?: TrackId; representation: string; scope?: string;
+  collections: ('hs3d' | 'hyperspectral')[];
+  library?: LibraryNotes;
   tags: string[]; summary: string; input: string; output: string; mechanism: string;
   readingNote: string; paper: string; code?: string; verifiedAt: string;
   citation: string; mapX?: number;
@@ -20,3 +22,25 @@ export interface Dataset {
   facts: { label: string; value: string }[]; paperIds: string[]; source: string;
   availability: string;
 }
+
+export interface LibraryCategory {
+  id: string; name: string; dimension: 'task' | 'method' | 'application';
+  definition: string; status: 'provisional' | 'confirmed' | 'retired';
+  color: string; createdAt: string; rationale: string; evidencePaperIds: string[];
+  history: { date: string; action: string; reason: string; redirectTo?: string[] }[];
+}
+export interface LibraryNotes {
+  categoryIds: string[]; classificationStatus: 'pending' | 'provisional' | 'confirmed';
+  relation: 'hyperspectral' | 'multispectral' | 'foundation' | 'pending'; relationNote: string;
+  readingProgress: 'title_only' | 'abstract_read' | 'full_text_read' | 'pending';
+  verificationStatus: 'pending' | 'abstract_verified' | 'full_text_verified';
+  researchQuestion: string; datasets: string; experimentSetting: string;
+  conclusions: string; limitations: string; dataLinks: string[];
+  evidence: { url: string; checkedAt: string; level: string; supports: string[] }[];
+  versions: { id: string; type: string; url: string; year: number; relation: string;
+    arxivId?: string; arxivVersion?: string; firstSubmittedAt?: string; updatedAt?: string;
+    metadataStatus?: string }[];
+  methodFamilyId: string;
+}
+export interface PaperPresentation { name: string; color: string; scope: string; groupId: string }
+export type PresentPaper = (paper: Paper) => PaperPresentation;
