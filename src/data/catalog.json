@@ -367,20 +367,43 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
-        "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "categoryIds": [
+          "spectral-photometric-geometry"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "单次多光谱观测恢复法线与反射率；官方摘要使用有限多波段，不统一标为高光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在同色度、空间变化反照率条件下使多光谱光度立体适定？",
+        "datasets": "合成与真实场景；官方数据和结果入口已记录，数量及许可待核验。",
+        "experimentSetting": "摘要：至少三点同色度配至少四光源，或两点配至少五光源；四个及以上波段可使用稳健估计，具体实验待核验。",
+        "conclusions": "作者摘要给出指定条件下法线和光谱反射率唯一恢复，并报告合成/真实验证。",
+        "limitations": "共享色度与光照数量是关键条件；条件放宽与实验边界待全文核验。",
+        "dataLinks": [
+          "https://github.com/GH-HOME/MultispectralPS"
+        ],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Guo_Multispectral_Photometric_Stereo_for_Spatially-Varying_Spectral_Reflectances_A_Well_Posed_CVPR_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX；全文未完整阅读",
+            "supports": [
+              "题名、作者、CVPR 2021 及页码",
+              "如何在同色度、空间变化反照率条件下使多光谱光度立体适定？",
+              "作者摘要给出指定条件下法线和光谱反射率唯一恢复，并报告合成/真实验证。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mps-well-posed-cvpr2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Guo_Multispectral_Photometric_Stereo_for_Spatially-Varying_Spectral_Reflectances_A_Well_Posed_CVPR_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 CVPR 官方版本记录；其他版本及全文差异待核验。"
+          }
+        ],
         "methodFamilyId": "mps-well-posed"
       }
     },
@@ -4281,20 +4304,42 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
+        "categoryIds": [
+          "spectral-data-restoration",
+          "photoacoustic-imaging"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "官方摘要明确三维体内部随波长变化的光吸收分布；四维为三空间轴与波长轴。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何由不完整、含复杂噪声的观测恢复四维高光谱光声数据？",
+        "datasets": "真实 HSPA 数据；数据集名称、样本和开放状态待全文核验。",
+        "experimentSetting": "分析深度与光谱可靠性并利用数据相关性恢复立方体；扫描模式、噪声与训练设置待核验。",
+        "conclusions": "作者摘要报告真实数据恢复效果；当前未复核完整数值。",
+        "limitations": "噪声、缺失扫描模式和跨样品泛化范围待全文核验。",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Liao_4D_Hyperspectral_Photoacoustic_Data_Restoration_With_Reliability_Analysis_CVPR_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX；全文未完整阅读",
+            "supports": [
+              "题名、作者、CVPR 2021 及页码",
+              "如何由不完整、含复杂噪声的观测恢复四维高光谱光声数据？",
+              "作者摘要报告真实数据恢复效果；当前未复核完整数值。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hspa-restoration-cvpr-cvpr2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Liao_4D_Hyperspectral_Photoacoustic_Data_Restoration_With_Reliability_Analysis_CVPR_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 CVPR 官方版本记录；其他版本及全文差异待核验。"
+          }
+        ],
         "methodFamilyId": "hspa-restoration-cvpr"
       }
     },
@@ -4353,20 +4398,42 @@
         "hyperspectral"
       ],
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
-        "relation": "pending",
-        "relationNote": "既有三维专题成员；总库中的高光谱、多光谱或基础方法关系需要逐篇复核。原专题 scope 保持原义。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
-        "researchQuestion": "待总库逐篇复核；现有专题笔记见摘要与输入输出。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
+        "categoryIds": [
+          "spectral-photometric-geometry",
+          "spectral-instrument-design"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "官方摘要明确两个波长的差分；属于双波长多光谱关联，不代表密集高光谱采集。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用事件相机和时序调制照明直接读取双波长光度差？",
+        "datasets": "原型系统与水中三维形状实验；样本规模和具体波长待全文核验。",
+        "experimentSetting": "摘要说明时序调制双波长照明与事件触发；完整标定和比较设置待核验。",
+        "conclusions": "作者原型实验支持双波长差分读出及水中三维任务可行性。",
+        "limitations": "介质吸收条件、事件噪声和适用波长范围待全文核验。",
         "dataLinks": [],
-        "evidence": [],
-        "versions": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Takatani_Event-Based_Bispectral_Photometry_Using_Temporally_Modulated_Illumination_CVPR_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX；全文未完整阅读",
+            "supports": [
+              "题名、作者、CVPR 2021 及页码",
+              "如何用事件相机和时序调制照明直接读取双波长光度差？",
+              "作者原型实验支持双波长差分读出及水中三维任务可行性。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "event-bispectral-photometry-cvpr2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Takatani_Event-Based_Bispectral_Photometry_Using_Temporally_Modulated_Illumination_CVPR_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 CVPR 官方版本记录；其他版本及全文差异待核验。"
+          }
+        ],
         "methodFamilyId": "event-bispectral-photometry"
       }
     },
@@ -17448,6 +17515,440 @@
           "attribution": "Ashwin Wagadarikar, Renu John, Rebecca Willett, David Brady · Applied Optics 2008"
         }
       ]
+    },
+    {
+      "id": "tlpln-2021",
+      "shortTitle": "TLPLN",
+      "title": "Learning Tensor Low-Rank Prior for Hyperspectral Image Reconstruction",
+      "authors": "Shipeng Zhang, Lizhi Wang, Lei Zhang, Hua Huang",
+      "year": 2021,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "TLPLN",
+      "tags": [
+        "spectral-reconstruction",
+        "computational-imaging",
+        "tensor-low-rank-learning"
+      ],
+      "summary": "CP 分解启发的秩一特征张量聚合成三维注意力，再纳入迭代优化恢复高光谱。",
+      "input": "CASSI 类快照压缩观测",
+      "output": "重建的高光谱图像",
+      "mechanism": "CP 分解启发的秩一特征张量聚合成三维注意力，再纳入迭代优化恢复高光谱。",
+      "readingNote": "已读官方摘要并核验局部方法图；未阅读全文。DOI、未列出的代码/数据、实验细节及版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Learning_Tensor_Low-Rank_Prior_for_Hyperspectral_Image_Reconstruction_CVPR_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Zhang_2021_CVPR,\n    author    = {Zhang, Shipeng and Wang, Lizhi and Zhang, Lei and Huang, Hua},\n    title     = {Learning Tensor Low-Rank Prior for Hyperspectral Image Reconstruction},\n    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n    month     = {June},\n    year      = {2021},\n    pages     = {12006-12015}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "computational-imaging",
+          "tensor-low-rank-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "研究对象是光学高光谱重建；空间轴与波长轴分别记录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用高光谱特征的低秩张量结构改善快照重建？",
+        "datasets": "合成与真实数据；具体数据集、样本和拆分待全文核验。",
+        "experimentSetting": "官方摘要说明合成和真实数据验证；完整训练、退化和比较设置待核验。",
+        "conclusions": "作者摘要报告重建改善；尚未复核完整数值与比较公平性。",
+        "limitations": "秩结构、退化模型及泛化边界待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Learning_Tensor_Low-Rank_Prior_for_Hyperspectral_Image_Reconstruction_CVPR_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX；全文未完整阅读",
+            "supports": [
+              "题名、作者、CVPR 2021 及页码",
+              "如何利用高光谱特征的低秩张量结构改善快照重建？",
+              "作者摘要报告重建改善；尚未复核完整数值与比较公平性。"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Learning_Tensor_Low-Rank_Prior_for_Hyperspectral_Image_Reconstruction_CVPR_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文 PDF 第 3 页局部方法图与图注；非完整全文阅读",
+            "supports": [
+              "Figure 2 — TLPLN 特征先验网络",
+              "特征编码、深度 CP 分解模块与特征解码；图中输入为退化 HSI，输出为细化 HSI。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "tlpln-2021-cvpr2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Learning_Tensor_Low-Rank_Prior_for_Hyperspectral_Image_Reconstruction_CVPR_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 CVPR 官方版本记录；其他版本及全文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "tlpln-2021"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Learning_Tensor_Low-Rank_Prior_for_Hyperspectral_Image_Reconstruction_CVPR_2021_paper.pdf",
+          "figureLabel": "Figure 2 — TLPLN 特征先验网络",
+          "page": 3,
+          "caption": "特征编码、深度 CP 分解模块与特征解码；图中输入为退化 HSI，输出为细化 HSI。",
+          "verificationNote": "人工核验原文 PDF 第 3 页图形与完整图注，原始裁切，未重绘；仅局部阅读。",
+          "path": "figures/tlpln-2021/framework.png",
+          "width": 1010,
+          "height": 356,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "4f31bb8c9ee702bd8342d85d11467083476f26bd6da85ce4027f42238eb909da",
+          "attribution": "Shipeng Zhang, Lizhi Wang, Lei Zhang, Hua Huang · CVPR 2021"
+        }
+      ]
+    },
+    {
+      "id": "dgsm-sci-2021",
+      "shortTitle": "DGSM-SCI",
+      "title": "Deep Gaussian Scale Mixture Prior for Spectral Compressive Imaging",
+      "authors": "Tao Huang, Weisheng Dong, Xin Yuan, Jinjian Wu, Guangming Shi",
+      "year": 2021,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "DGSM-SCI",
+      "tags": [
+        "spectral-reconstruction",
+        "computational-imaging",
+        "learned-statistical-priors",
+        "deep-unfolding"
+      ],
+      "summary": "在 MAP 框架中以 DCNN 学习 GSM 的尺度先验和局部均值，联合训练迭代参数与网络。",
+      "input": "CASSI 单次压缩图像",
+      "output": "重建的高光谱图像",
+      "mechanism": "在 MAP 框架中以 DCNN 学习 GSM 的尺度先验和局部均值，联合训练迭代参数与网络。",
+      "readingNote": "已读官方摘要并核验局部方法图；未阅读全文。DOI、未列出的代码/数据、实验细节及版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2021/html/Huang_Deep_Gaussian_Scale_Mixture_Prior_for_Spectral_Compressive_Imaging_CVPR_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Huang_2021_CVPR,\n    author    = {Huang, Tao and Dong, Weisheng and Yuan, Xin and Wu, Jinjian and Shi, Guangming},\n    title     = {Deep Gaussian Scale Mixture Prior for Spectral Compressive Imaging},\n    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n    month     = {June},\n    year      = {2021},\n    pages     = {16216-16225}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "computational-imaging",
+          "learned-statistical-priors",
+          "deep-unfolding"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "研究对象是光学高光谱重建；空间轴与波长轴分别记录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何将可学习 GSM 统计先验纳入 CASSI 高光谱重建？",
+        "datasets": "合成与真实数据；具体名称、规模和拆分待全文核验。",
+        "experimentSetting": "官方摘要为端到端联合训练；局部 Fig. 3 支持分阶段网络，完整实验设置待核验。",
+        "conclusions": "作者摘要报告优于所比较方法；当前未复核性能数字。",
+        "limitations": "统计先验适用性、噪声与测量模型迁移待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Huang_Deep_Gaussian_Scale_Mixture_Prior_for_Spectral_Compressive_Imaging_CVPR_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX；全文未完整阅读",
+            "supports": [
+              "题名、作者、CVPR 2021 及页码",
+              "如何将可学习 GSM 统计先验纳入 CASSI 高光谱重建？",
+              "作者摘要报告优于所比较方法；当前未复核性能数字。"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Huang_Deep_Gaussian_Scale_Mixture_Prior_for_Spectral_Compressive_Imaging_CVPR_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文 PDF 第 5 页局部方法图与图注；非完整全文阅读",
+            "supports": [
+              "Figure 3 — DGSM 网络结构",
+              "多阶段整体重建及测量、转置测量、权重和滤波器生成模块。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2103.07152",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv 官方元数据与完整提交历史",
+            "supports": [
+              "题名、作者、arXiv ID、首次提交与版本更新日期；未比对全文差异"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dgsm-sci-2021-cvpr2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Huang_Deep_Gaussian_Scale_Mixture_Prior_for_Spectral_Compressive_Imaging_CVPR_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 CVPR 官方版本记录；其他版本及全文差异待核验。"
+          },
+          {
+            "id": "dgsm-sci-2021-arxiv-v1",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2103.07152v1",
+            "year": 2021,
+            "relation": "CVF 官方链接与 arXiv 题名、作者及提交历史一致；与正式版全文差异待核验，不另计方法。",
+            "arxivId": "2103.07152",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2021-03-12T08:57:06Z",
+            "updatedAt": "2021-03-12T08:57:06Z",
+            "metadataStatus": "verified"
+          },
+          {
+            "id": "dgsm-sci-2021-arxiv-v2",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2103.07152v2",
+            "year": 2021,
+            "relation": "CVF 官方链接与 arXiv 题名、作者及提交历史一致；与正式版全文差异待核验，不另计方法。",
+            "arxivId": "2103.07152",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2021-03-12T08:57:06Z",
+            "updatedAt": "2021-03-30T08:24:38Z",
+            "metadataStatus": "verified"
+          }
+        ],
+        "methodFamilyId": "dgsm-sci-2021"
+      },
+      "code": "https://see.xidian.edu.cn/faculty/wsdong/Projects/DGSM-SCI.htm",
+      "arxiv": "2103.07152",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2021/papers/Huang_Deep_Gaussian_Scale_Mixture_Prior_for_Spectral_Compressive_Imaging_CVPR_2021_paper.pdf",
+          "figureLabel": "Figure 3 — DGSM 网络结构",
+          "page": 5,
+          "caption": "多阶段整体重建及测量、转置测量、权重和滤波器生成模块。",
+          "verificationNote": "人工核验原文 PDF 第 5 页图形与完整图注，原始裁切，未重绘；仅局部阅读。",
+          "path": "figures/dgsm-sci-2021/framework.png",
+          "width": 1010,
+          "height": 508,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "5993203f8d32937f5e1199d1ecfffe89525adcaeb9c1a1816480ed709a6593b7",
+          "attribution": "Tao Huang, Weisheng Dong, Xin Yuan, Jinjian Wu, Guangming Shi · CVPR 2021"
+        }
+      ]
+    },
+    {
+      "id": "sci-tv-ffdnet-2021",
+      "shortTitle": "SCI-TV-FFDNet",
+      "title": "Effective Snapshot Compressive-Spectral Imaging via Deep Denoising and Total Variation Priors",
+      "authors": "Haiquan Qiu, Yao Wang, Deyu Meng",
+      "year": 2021,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "SCI-TV-FFDNet",
+      "tags": [
+        "spectral-reconstruction",
+        "computational-imaging",
+        "plug-and-play"
+      ],
+      "summary": "在 plug-and-play 优化中结合加权 FFDNet 与 2DTV 或 3DTV 去噪器，并分析有条件收敛。",
+      "input": "单次快照压缩的高光谱测量",
+      "output": "重建的高光谱图像",
+      "mechanism": "在 plug-and-play 优化中结合加权 FFDNet 与 2DTV 或 3DTV 去噪器，并分析有条件收敛。",
+      "readingNote": "已读官方摘要并核验局部方法图；未阅读全文。DOI、未列出的代码/数据、实验细节及版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2021/html/Qiu_Effective_Snapshot_Compressive-Spectral_Imaging_via_Deep_Denoising_and_Total_Variation_CVPR_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Qiu_2021_CVPR,\n    author    = {Qiu, Haiquan and Wang, Yao and Meng, Deyu},\n    title     = {Effective Snapshot Compressive-Spectral Imaging via Deep Denoising and Total Variation Priors},\n    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n    month     = {June},\n    year      = {2021},\n    pages     = {9127-9136}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "computational-imaging",
+          "plug-and-play"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "研究对象是光学高光谱重建；空间轴与波长轴分别记录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何结合深度去噪和 TV 先验恢复快照压缩高光谱图像？",
+        "datasets": "摘要仅说明数值实验；数据集、规模及真实设备实验待全文核验。",
+        "experimentSetting": "比较多个方法，并提供不要求递减步长等条件下的收敛分析；具体假设与设置待核验。",
+        "conclusions": "作者摘要报告数值实验改善和条件性收敛分析；不能据此断言任意设置均收敛。",
+        "limitations": "收敛定理假设、超参数和实测适用范围待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Qiu_Effective_Snapshot_Compressive-Spectral_Imaging_via_Deep_Denoising_and_Total_Variation_CVPR_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX；全文未完整阅读",
+            "supports": [
+              "题名、作者、CVPR 2021 及页码",
+              "如何结合深度去噪和 TV 先验恢复快照压缩高光谱图像？",
+              "作者摘要报告数值实验改善和条件性收敛分析；不能据此断言任意设置均收敛。"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Qiu_Effective_Snapshot_Compressive-Spectral_Imaging_via_Deep_Denoising_and_Total_Variation_CVPR_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文 PDF 第 3 页局部方法图与图注；非完整全文阅读",
+            "supports": [
+              "Figure 2 — FFDNet 与 TV 后验组合示意",
+              "作者用后验等高线说明结合 FFDNet 与 TV 的优化目标；此图为方法概念图。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "sci-tv-ffdnet-2021-cvpr2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Qiu_Effective_Snapshot_Compressive-Spectral_Imaging_via_Deep_Denoising_and_Total_Variation_CVPR_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 CVPR 官方版本记录；其他版本及全文差异待核验。"
+          }
+        ],
+        "methodFamilyId": "sci-tv-ffdnet-2021"
+      },
+      "code": "https://github.com/ucker/SCI-TV-FFDNet",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2021/papers/Qiu_Effective_Snapshot_Compressive-Spectral_Imaging_via_Deep_Denoising_and_Total_Variation_CVPR_2021_paper.pdf",
+          "figureLabel": "Figure 2 — FFDNet 与 TV 后验组合示意",
+          "page": 3,
+          "caption": "作者用后验等高线说明结合 FFDNet 与 TV 的优化目标；此图为方法概念图。",
+          "verificationNote": "人工核验原文 PDF 第 3 页图形与完整图注，原始裁切，未重绘；仅局部阅读。",
+          "path": "figures/sci-tv-ffdnet-2021/framework.png",
+          "width": 490,
+          "height": 552,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "a1100efdeaaee1baeb88ce21a8c6fb0b19db237b5da497738143cd7475c9dc48",
+          "attribution": "Haiquan Qiu, Yao Wang, Deyu Meng · CVPR 2021"
+        }
+      ]
+    },
+    {
+      "id": "ircut-spectral-2021",
+      "shortTitle": "IR-Cut Spectral",
+      "title": "Tuning IR-Cut Filter for Illumination-Aware Spectral Reconstruction From RGB",
+      "authors": "Bo Sun, Junchi Yan, Xiao Zhou, Yinqiang Zheng",
+      "year": 2021,
+      "venue": "CVPR",
+      "publicationName": "IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "IR-Cut Spectral",
+      "tags": [
+        "spectral-reconstruction",
+        "spectral-instrument-design",
+        "camera-response-design"
+      ],
+      "summary": "联合设计 IR-cut 滤波响应与照明感知光谱网络；Fig. 2 的反射率和照明分支相乘形成输出。",
+      "input": "经设计 IR-cut 响应获取的 RGB 图像",
+      "output": "场景光谱及照明光谱",
+      "mechanism": "联合设计 IR-cut 滤波响应与照明感知光谱网络；Fig. 2 的反射率和照明分支相乘形成输出。",
+      "readingNote": "已读官方摘要并核验局部方法图；未阅读全文。DOI、未列出的代码/数据、实验细节及版本差异待核验。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2021/html/Sun_Tuning_IR-Cut_Filter_for_Illumination-Aware_Spectral_Reconstruction_From_RGB_CVPR_2021_paper.html",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_pages",
+      "citation": "@InProceedings{Sun_2021_CVPR,\n    author    = {Sun, Bo and Yan, Junchi and Zhou, Xiao and Zheng, Yinqiang},\n    title     = {Tuning IR-Cut Filter for Illumination-Aware Spectral Reconstruction From RGB},\n    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n    month     = {June},\n    year      = {2021},\n    pages     = {84-93}\n}",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "spectral-instrument-design",
+          "camera-response-design"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "研究对象是光学高光谱重建；RGB 为观测来源，输出目标为光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何调整现有 RGB 相机的 IR-cut 响应，提高光谱重建并恢复照明？",
+        "datasets": "日光照明下合成与真实图像；具体数据集和规模待全文核验。",
+        "experimentSetting": "摘要确认合成和真实日光实验；具体光源、滤片制造及训练设置待全文核验。",
+        "conclusions": "作者摘要报告滤片调整与照明感知重建的收益；当前未复核数值或制造成本。",
+        "limitations": "真实滤片制造约束、非日光和相机迁移边界待全文核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Sun_Tuning_IR-Cut_Filter_for_Illumination-Aware_Spectral_Reconstruction_From_RGB_CVPR_2021_paper.html",
+            "checkedAt": "2026-10-08",
+            "level": "CVF 官方摘要与 BibTeX；全文未完整阅读",
+            "supports": [
+              "题名、作者、CVPR 2021 及页码",
+              "如何调整现有 RGB 相机的 IR-cut 响应，提高光谱重建并恢复照明？",
+              "作者摘要报告滤片调整与照明感知重建的收益；当前未复核数值或制造成本。"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Sun_Tuning_IR-Cut_Filter_for_Illumination-Aware_Spectral_Reconstruction_From_RGB_CVPR_2021_paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文 PDF 第 3 页局部方法图与图注；非完整全文阅读",
+            "supports": [
+              "Figure 2 — IR-cut 设计与光谱恢复流程",
+              "光谱输入、滤片设计、RGB 合成与照明/反射率双分支恢复，分支乘积形成光谱输出。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2103.14708",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv 官方元数据与完整提交历史",
+            "supports": [
+              "题名、作者、arXiv ID、首次提交与版本更新日期；未比对全文差异"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ircut-spectral-2021-cvpr2021",
+            "type": "会议正式版",
+            "url": "https://openaccess.thecvf.com/content/CVPR2021/html/Sun_Tuning_IR-Cut_Filter_for_Illumination-Aware_Spectral_Reconstruction_From_RGB_CVPR_2021_paper.html",
+            "year": 2021,
+            "relation": "采用 CVPR 官方版本记录；其他版本及全文差异待核验。"
+          },
+          {
+            "id": "ircut-spectral-2021-arxiv-v1",
+            "type": "arXiv 预印本",
+            "url": "https://arxiv.org/abs/2103.14708v1",
+            "year": 2021,
+            "relation": "CVF 官方链接与 arXiv 题名、作者及提交历史一致；与正式版全文差异待核验，不另计方法。",
+            "arxivId": "2103.14708",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2021-03-26T19:42:21Z",
+            "updatedAt": "2021-03-26T19:42:21Z",
+            "metadataStatus": "verified"
+          }
+        ],
+        "methodFamilyId": "ircut-spectral-2021"
+      },
+      "arxiv": "2103.14708",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2021/papers/Sun_Tuning_IR-Cut_Filter_for_Illumination-Aware_Spectral_Reconstruction_From_RGB_CVPR_2021_paper.pdf",
+          "figureLabel": "Figure 2 — IR-cut 设计与光谱恢复流程",
+          "page": 3,
+          "caption": "光谱输入、滤片设计、RGB 合成与照明/反射率双分支恢复，分支乘积形成光谱输出。",
+          "verificationNote": "人工核验原文 PDF 第 3 页图形与完整图注，原始裁切，未重绘；仅局部阅读。",
+          "path": "figures/ircut-spectral-2021/framework.png",
+          "width": 1010,
+          "height": 280,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "f15a77070ce66d075a8cd91f7fab60789055075947f5a50807843f4dff6d7e2a",
+          "attribution": "Bo Sun, Junchi Yan, Xiao Zhou, Yinqiang Zheng · CVPR 2021"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -17659,7 +18160,11 @@
         "hdnet-sci",
         "mst-cassi",
         "herosnet-sci",
-        "hyplex-metasurface"
+        "hyplex-metasurface",
+        "tlpln-2021",
+        "dgsm-sci-2021",
+        "sci-tv-ffdnet-2021",
+        "ircut-spectral-2021"
       ],
       "history": [
         {
@@ -17680,7 +18185,10 @@
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
         "quantization-aware-doe",
-        "hyplex-metasurface"
+        "hyplex-metasurface",
+        "tlpln-2021",
+        "dgsm-sci-2021",
+        "sci-tv-ffdnet-2021"
       ],
       "history": [
         {
@@ -17761,7 +18269,8 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
-        "herosnet-sci"
+        "herosnet-sci",
+        "dgsm-sci-2021"
       ],
       "history": [
         {
@@ -18056,7 +18565,9 @@
         "spectral-zoom-2007",
         "uv-hyperspectral-flim-2007",
         "dd-cassi-2007",
-        "sd-cassi-2008"
+        "sd-cassi-2008",
+        "ircut-spectral-2021",
+        "event-bispectral-photometry"
       ],
       "history": [
         {
@@ -18103,6 +18614,147 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "光学早期成像研究提供直接任务/应用证据。"
+        }
+      ]
+    },
+    {
+      "id": "tensor-low-rank-learning",
+      "name": "张量低秩学习",
+      "dimension": "method",
+      "definition": "利用可学习的低秩张量或 CP 分解结构表达高光谱特征先验。",
+      "status": "provisional",
+      "color": "#889cac",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
+      "evidencePaperIds": [
+        "tlpln-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批摘要明确对应任务、方法或应用。"
+        }
+      ]
+    },
+    {
+      "id": "learned-statistical-priors",
+      "name": "学习统计先验",
+      "dimension": "method",
+      "definition": "从数据学习概率先验或其参数，并纳入光谱成像逆问题。",
+      "status": "provisional",
+      "color": "#889cac",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
+      "evidencePaperIds": [
+        "dgsm-sci-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批摘要明确对应任务、方法或应用。"
+        }
+      ]
+    },
+    {
+      "id": "plug-and-play",
+      "name": "Plug-and-Play 先验",
+      "dimension": "method",
+      "definition": "在光谱逆问题迭代中使用独立去噪器构成隐式先验。",
+      "status": "provisional",
+      "color": "#889cac",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
+      "evidencePaperIds": [
+        "sci-tv-ffdnet-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批摘要明确对应任务、方法或应用。"
+        }
+      ]
+    },
+    {
+      "id": "camera-response-design",
+      "name": "相机响应设计",
+      "dimension": "method",
+      "definition": "设计或学习相机滤片及通道响应，与光谱重建协同优化。",
+      "status": "provisional",
+      "color": "#889cac",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
+      "evidencePaperIds": [
+        "ircut-spectral-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批摘要明确对应任务、方法或应用。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-photometric-geometry",
+      "name": "光谱光度几何",
+      "dimension": "task",
+      "definition": "利用波长相关反射或介质吸收恢复表面法线或三维形状。",
+      "status": "provisional",
+      "color": "#889cac",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
+      "evidencePaperIds": [
+        "mps-well-posed",
+        "event-bispectral-photometry"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批摘要明确对应任务、方法或应用。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-data-restoration",
+      "name": "光谱数据复原",
+      "dimension": "task",
+      "definition": "利用空间与光谱相关性恢复含噪或不完整的光谱数据。",
+      "status": "provisional",
+      "color": "#889cac",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
+      "evidencePaperIds": [
+        "hspa-restoration-cvpr"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批摘要明确对应任务、方法或应用。"
+        }
+      ]
+    },
+    {
+      "id": "photoacoustic-imaging",
+      "name": "高光谱光声成像",
+      "dimension": "application",
+      "definition": "利用光吸收产生的光声观测获取和恢复空间—波长体数据。",
+      "status": "provisional",
+      "color": "#889cac",
+      "createdAt": "2026-10-08",
+      "rationale": "根据 CVPR 2021 官方摘要与局部方法图形成；更多文献加入后继续复核边界。",
+      "evidencePaperIds": [
+        "hspa-restoration-cvpr"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批摘要明确对应任务、方法或应用。"
         }
       ]
     }

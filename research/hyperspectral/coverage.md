@@ -21,6 +21,7 @@
 | Optics Letters | 2007 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，2 页；1141 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 1141 / 4 / 4 | Crossref 登记题名扫描完成，4 候选已处理（3 摘要、1 题名）；出版社年度覆盖未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成 |
 | Optics Express | 2007 | Single-shot compressive spectral imaging with a dual-disperser architecture、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
 | Applied Optics | 2008 | Single disperser design for coded aperture snapshot spectral imaging、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
+| CVPR | 2021 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 1660 / 11 / 11 | 五关键词题名命中 11 篇均已核验官方摘要 | 只完成指定五关键词题名扫描；其他任务词、摘要全文发现与引文检索待补；浏览器检索工具访问部分 CVF 页返回 403；直接 HTTP 请求成功并保存全部 11 篇官方证据；新条目 DOI、代码/数据可用性、全文实验与预印本/正式版差异待复核 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -86,6 +87,8 @@
   阅读边界：MNF 原文摘要及局部图注；Craig 出版社索引摘要及 VCA 引文；FCLS 原文摘要、局部算法/数据说明。没有阅读全文。前批两个待核验候选已收录。
 - 2026-10-08 / optical-2007-2008-imaging：新增 4，更新 0，去重 0，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：OL 2007 Crossref 登记 1141 条按六成像任务词扫描；四命中中三篇读官方摘要、一篇只按题名暂排除。两篇 CASSI 定向核验原文摘要与局部系统图，仍非全文阅读；SPIE 前序稿单列版本不计方法数。
+- 2026-10-08 / cvpr-2021-optical-keywords：新增 4，更新 3，去重 3，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：1660 个官方题名按五关键词筛选；11 命中均读官方摘要，4 新条目局部原图已核验，3 旧条目仅补总库 library。全部仍非完整全文阅读。两方法三 arXiv 版本日期已核验，全文差异待查。
 
 ## 未解决缺口
 
