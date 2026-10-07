@@ -1,0 +1,993 @@
+{
+  "checkedAt": "2026-10-07",
+  "papers": [
+    {
+      "id": "rsncc-registration",
+      "shortTitle": "RSNCC",
+      "title": "Multi-modal and Multi-spectral Registration for Natural Images",
+      "authors": "Xiaoyong Shen, Li Xu, Qi Zhang, Jiaya Jia",
+      "year": 2014,
+      "venue": "ECCV",
+      "track": "registration",
+      "representation": "跨光谱与跨模态稠密配准",
+      "scope": "相关研究",
+      "tags": [
+        "RGB–NIR",
+        "跨模态",
+        "稠密匹配",
+        "单应性"
+      ],
+      "summary": "采用稳健选择归一化互相关，先对齐整体变换，再估计局部像素对应。",
+      "input": "RGB–NIR、RGB–Depth、不同曝光、闪光/非闪光图像对。",
+      "output": "二维稠密对应与对齐图像；RGB–Depth 应用还用于深度恢复。",
+      "mechanism": "RSNCC 同时利用强度与梯度的自相关结构，稳健代价抑制结构变化和离群值；全局单应性优化后以正则化局部位移修正残差。",
+      "readingNote": "作者公开 16 页 ECCV 2014 正式稿及机构 DOI 核验，309–324。RGB–NIR 对应与 RGB–Depth 恢复分别实验，不能改写为从光谱直接恢复度量深度。Figure 5 是两阶段匹配的结果对比，全文未见独立框架流程图。",
+      "paper": "https://jiaya.me/file/papers/multispectral_registration.pdf",
+      "verificationLevel": "author_fulltext",
+      "sourceUrls": [
+        "https://repository.hkust.edu.hk/ir/Record/1783.1-141667"
+      ],
+      "doi": "10.1007/978-3-319-10593-2_21"
+    },
+    {
+      "id": "dsc-crossmodal",
+      "shortTitle": "DSC",
+      "title": "Deep Self-correlation Descriptor for Dense Cross-Modal Correspondence",
+      "authors": "Seungryong Kim, Dongbo Min, Stephen Lin, Kwanghoon Sohn",
+      "year": 2016,
+      "venue": "ECCV",
+      "track": "registration",
+      "representation": "跨光谱稠密对应描述子",
+      "scope": "相关研究",
+      "tags": [
+        "RGB–NIR",
+        "立体匹配",
+        "自相关",
+        "无需训练"
+      ],
+      "summary": "以层级自相关和圆形空间金字塔池化生成无需训练的跨模态稠密描述子。",
+      "input": "RGB–NIR、闪光/非闪光、不同曝光等图像对；另有 Middlebury 立体基准。",
+      "output": "稠密对应和立体视差，不是连续高光谱三维采集。",
+      "mechanism": "先随机采样局部块并计算自相关表面，经多层平均池化形成层级表征，再圆形空间金字塔池化、非线性门控和归一化；复用相关计算降低冗余。",
+      "readingNote": "作者 17 页正式稿与 Microsoft Research 摘要核验，ECCV 2016 679–695。Deep 是手工层级描述结构，论文明确 training-free，不写成训练 CNN。Figure 6 为 SSC/DSC 架构，相关表面中的第三轴不是空间深度。",
+      "paper": "https://seungryong.github.io/DSC/DSCdescriptor_ECCV2016.pdf",
+      "verificationLevel": "author_fulltext",
+      "relatedPaperIds": [
+        "dasc-correspondence"
+      ],
+      "sourceUrls": [
+        "https://www.microsoft.com/en-us/research/publication/deep-self-correlation-descriptor-dense-cross-modal-correspondence/"
+      ],
+      "doi": "10.1007/978-3-319-46484-8_41"
+    },
+    {
+      "id": "hcgfn-fusion",
+      "shortTitle": "HCGFN",
+      "title": "Heterogeneous Contrastive Graph Fusion Network for Classification of Hyperspectral and LiDAR Data",
+      "authors": "Haoyu Jing, Sensen Wu, Laifu Zhang, Fanen Meng, Yiming Yan, Yuanyuan Wang, Zhenhong Du",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "fusion",
+      "representation": "高光谱与高度辅助异质图分类",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "LiDAR",
+        "图网络",
+        "对比学习"
+      ],
+      "summary": "结合支路增强、局部对比学习和动态异质图，改善高光谱与 LiDAR 土地覆盖分类。",
+      "input": "配准 HSI 与 LiDAR；作者摘要列 Trento、MUUFL、Houston2013。",
+      "output": "二维土地覆盖类别图，不输出三维表面或高光谱点云。",
+      "mechanism": "分支增强提高单模态判别性，局部邻域对比学习利用自监督信号，动态异质图学习跨模态拓扑并以图卷积融合分类。",
+      "readingNote": "七作者与 TGRS 63:1–17 DOI 已由出版社登记核验；方法依据作者仓库原始摘要，未取得正式正文。仓库仍写 Submitting to TGRS，不能据旧 README 否认正式版本，也不能保证作者 pipeline.png 与出版图号完全相同；图号按作者资源标注。仅核心代码已公开，未运行复现。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3596265",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sourceUrls": [
+        "https://github.com/PharosEast/HCGFN"
+      ],
+      "code": "https://github.com/PharosEast/HCGFN",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "doi": "10.1109/TGRS.2025.3596265"
+    },
+    {
+      "id": "internal-pushbroom-sfm-mvs",
+      "shortTitle": "HSI SfM–MVS",
+      "title": "Hyperspectral images 3D reconstruction based on structure-from-motion and multi-view stereo",
+      "authors": "Chao Liu, Minghui Gu, Huansong Huang, Xin Zhang, Jiguo Li, Qingbin Jiao, Liang Xu, Mingyu Yang, Xin Tan",
+      "year": 2026,
+      "venue": "Optics and Lasers in Engineering",
+      "track": "geometry",
+      "representation": "多视角高光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱",
+        "SfM",
+        "MVS",
+        "内推扫",
+        "反射率融合"
+      ],
+      "summary": "面向内推扫高光谱图像调整 SfM–MVS，并将多视角反射率融合到几何点云。",
+      "input": "内推扫高光谱相机采集的环绕物体多视角光谱图像。",
+      "output": "带完整光谱反射率的三维点云。",
+      "mechanism": "先分割抑制背景/边缘噪声，以环形扫描的位置约束改善姿态匹配；光谱曲线趋势构造立体匹配代价，再用几何一致性、掩膜及冗余反射率统计融合深度与光谱。",
+      "readingNote": "出版社原始摘要与引言核验，199:109578，2026 年 4 月卷期；正文和原图尚未取得，波段数/误差不补猜。属于光学工程专业期刊补充收录，不笼统标成顶刊。相机采用图像空间内扫描，不能概括为所有外推扫图像直接满足透视模型。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0143816625007626",
+      "venueTier": "specialist",
+      "verificationLevel": "official_abstract",
+      "citation": "@article{internalpushbroomsfmmvs,\n  title={Hyperspectral images 3D reconstruction based on structure-from-motion and multi-view stereo},\n  author={Chao Liu and Minghui Gu and Huansong Huang and Xin Zhang and Jiguo Li and Qingbin Jiao and Liang Xu and Mingyu Yang and Xin Tan},\n  journal={Optics and Lasers in Engineering},\n  volume={199},\n  pages={109578},\n  year={2026},\n  doi={10.1016/j.optlaseng.2025.109578}\n}",
+      "doi": "10.1016/j.optlaseng.2025.109578"
+    },
+    {
+      "id": "tree-centric-carbon",
+      "shortTitle": "Tree-centric Carbon",
+      "title": "Tree-centric mapping of forest carbon density from airborne laser scanning and hyperspectral data",
+      "authors": "Michele Dalponte, David A. Coomes",
+      "year": 2016,
+      "venue": "Methods in Ecology and Evolution",
+      "track": "fusion",
+      "representation": "高光谱树种与三维冠层碳估计",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "ALS",
+        "单木",
+        "冠层高度",
+        "森林碳"
+      ],
+      "summary": "将激光扫描得到的单木高度/冠幅与高光谱树种结合，估计逐木生物量及森林碳密度。",
+      "input": "机载 ALS 与 65 波段 400–990 nm 高光谱影像，配合地面树木训练/验证。",
+      "output": "单木树种、高度、冠幅和碳密度图；不是新的连续光谱三维重建算法。",
+      "mechanism": "ALS 先形成冠层高度模型，以局部峰值与区域生长定位树冠，再利用冠层激光点生成二维冠幅；高光谱识别树种，回归胸径并经树种相关异速生长公式换算生物量和碳。",
+      "readingNote": "核验机构公开 10 页正式期刊全文，7(10):1236–1245，2016。摘要说 point-cloud region-growing，但实际 §ITC 以栅格 CHM 起始并提取 first-return 点，不写成直接全点云图分割。小树不可见需修正，模型依赖地面训练与树种异速公式。作为生态方法专业补充收录，不列统一顶刊。Figure 1 是系统流程。",
+      "paper": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/98250fa1-6f77-459a-a654-82cf53b771d4/content",
+      "venueTier": "specialist",
+      "verificationLevel": "author_fulltext",
+      "citation": "@article{treecentriccarbon,\n  title={Tree-centric mapping of forest carbon density from airborne laser scanning and hyperspectral data},\n  author={Michele Dalponte and David A. Coomes},\n  journal={Methods in Ecology and Evolution},\n  volume={7},\n  number={10},\n  pages={1236--1245},\n  year={2016},\n  doi={10.1111/2041-210X.12575}\n}",
+      "doi": "10.1111/2041-210X.12575"
+    },
+    {
+      "id": "eventspecps",
+      "shortTitle": "EventSpecPS",
+      "title": "EventSpecPS: Photometric Stereo with Multispectral Reflectance Using an Event Camera",
+      "authors": "Jingqian Wu, Bohan Yu, Jun Hoong Chan, Edmund Y. Lam, Boxin Shi",
+      "year": 2026,
+      "venue": "ECCV",
+      "track": "photometric",
+      "representation": "事件多光谱法线与反射率",
+      "scope": "相关研究",
+      "tags": [
+        "事件相机",
+        "八波段",
+        "光度立体",
+        "法线",
+        "绝对反射率"
+      ],
+      "summary": "用光谱/方向复用光照在一个事件流中编码并联合恢复表面法线与八波段反射率。",
+      "input": "已知时序的 24 LED 光环：8 光谱通道各重复 3 个方位，以及经标定恒定光照下的事件观测。",
+      "output": "表面法线场及绝对尺度八通道反射率；不直接输出度量深度或连续高光谱。",
+      "mechanism": "重复同波段方向约束消除反射率耦合；恒定光照打破相对事件的反射率尺度不确定性，再以事件光度约束、非负光谱因子和角度加权联合优化。",
+      "readingNote": "官方 ECCV 2026 接收目录及会议托管 18 页稿核验。出版商卷页/DOI 尚未核验，按已接收版本登记；Figure 1 第 2 页为系统对比，Figure 2 第 7 页为编码/解耦原理。理论依赖已知响应和光照条件，忽略荧光、互反射和次表面散射。代码已公开但数据未随仓库打包，未运行复现。",
+      "paper": "https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6973.pdf",
+      "publicationStatus": "accepted",
+      "verificationLevel": "official_full_text",
+      "code": "https://github.com/Wujingqian/EventSpecPS",
+      "sourceUrls": [
+        "https://eccv.ecva.net/Conferences/2026/AcceptedPapers"
+      ]
+    },
+    {
+      "id": "spoiler-multimodal-nerf",
+      "shortTitle": "SPoILeR",
+      "title": "Learning Spectral and Polarimetric Clues for One-to-Multimodal Novel View Synthesis",
+      "authors": "Federico Lincetto, Gianluca Agresti, Mattia Rossi, Piergiorgio Sartor, Pietro Zanuttigh",
+      "year": 2026,
+      "venue": "ECCV",
+      "track": "nerf",
+      "representation": "多光谱与偏振神经辐射场",
+      "scope": "相关研究",
+      "tags": [
+        "NeRF",
+        "多光谱",
+        "九通道",
+        "预训练",
+        "缺模态",
+        "偏振"
+      ],
+      "summary": "跨场景学习模态关联，随后仅以新场景 RGB 或少量其他模态微调，合成三维一致的多模态新视角。",
+      "input": "预训练使用多视角多模态场景；新场景通常只需 RGB，也研究少量 NIR/多光谱/偏振输入。",
+      "output": "RGB、单色、NIR、偏振和九通道多光谱新视角及场景几何表示。",
+      "mechanism": "将共享基场与场景系数字段分离，通过共享潜编码和模态解码器学习多模态先验；预训练交替优化共享/独立模块，微调冻结共享模块，并用潜空间几何、逆函数及亮度约束稳定未观测模态。",
+      "readingNote": "ECCV 2026 官方接收目录、实验室公告及作者 arXiv v1 全文核验；正式卷页/DOI 未取得，登记已接收版本。九通道来自 MMS-DATA 多光谱传感器，不能把 MST++ 比较基线 31 波段写成本文输出。RGB 推断光谱依赖预训练材料/受控曝光光照，不能冒充新场景真实光谱测量；不同传感器的 X-NeRF 实验还需至少一帧各模态重训解码器。",
+      "paper": "https://arxiv.org/abs/2607.02372",
+      "publicationStatus": "accepted",
+      "verificationLevel": "author_fulltext",
+      "project": "https://lttm.github.io/MultimodalStudio/pages/SPoILeR.html",
+      "relatedPaperIds": [
+        "multimodalstudio"
+      ],
+      "sourceUrls": [
+        "https://eccv.ecva.net/Conferences/2026/AcceptedPapers",
+        "https://medialab.dei.unipd.it/news/"
+      ]
+    },
+    {
+      "id": "multimodalstudio",
+      "shortTitle": "MultimodalStudio",
+      "title": "MultimodalStudio: A Heterogeneous Sensor Dataset and Framework for Neural Rendering across Multiple Imaging Modalities",
+      "authors": "Federico Lincetto, Gianluca Agresti, Mattia Rossi, Pietro Zanuttigh",
+      "year": 2025,
+      "venue": "CVPR",
+      "track": "nerf",
+      "representation": "异构多光谱与偏振神经辐射场",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱",
+        "NeRF",
+        "SDF",
+        "RAW",
+        "多模态",
+        "数据集"
+      ],
+      "summary": "提供五模态 32 场景数据和模块化神经渲染框架，通过共享几何/辐射表示实现跨模态信息传递。",
+      "input": "RGB、单色、NIR、偏振及多光谱相机的已标定多视角原始图像，允许不同内参、畸变和马赛克图案。",
+      "output": "对齐的多模态新视角、法线与深度；不是连续高光谱体扫描。",
+      "mechanism": "共享 SDF 几何与多分辨率辐射哈希场，按模态采样和监督相应通道；偏振估计固定参考系 Stokes 分量并转换到实际相机角度。",
+      "readingNote": "CVF 官方 10 页全文与四作者、10964–10973 核验。32 场景、5 模态、每模态 50 视角，250 帧/场景。模型支持可变通道不等于实测密集高光谱，Silios CMS-C1 为多光谱。论文 §5 明确缺少几何真值，未做几何数值评价；不能将渲染质量写成几何准确率。本文逐场景训练，SPoILeR 另学习跨场景缺模态先验，两者不当同一方法重复版本。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/html/Lincetto_MultimodalStudio_A_Heterogeneous_Sensor_Dataset_and_Framework_for_Neural_Rendering_CVPR_2025_paper.html",
+      "verificationLevel": "official_full_text",
+      "publicationName": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "project": "https://lttm.github.io/MultimodalStudio/",
+      "sourceUrls": [
+        "https://openaccess.thecvf.com/content/CVPR2025/papers/Lincetto_MultimodalStudio_A_Heterogeneous_Sensor_Dataset_and_Framework_for_Neural_Rendering_CVPR_2025_paper.pdf"
+      ],
+      "relatedPaperIds": [
+        "spoiler-multimodal-nerf"
+      ]
+    }
+  ],
+  "pdfEvidence": [
+    {
+      "sourceKey": "rsncc",
+      "pdfPageCount": 16,
+      "sha256": "9207298b02af1c90bc1a6154b81bd484456346f18e3036734012baad34027e61"
+    },
+    {
+      "sourceKey": "dsc",
+      "pdfPageCount": 17,
+      "sha256": "0f6c4769d314a9cf98535b72a03b8a4a88bbd86f69786057f38e20f8dc51f785"
+    },
+    {
+      "sourceKey": "tree-carbon",
+      "pdfPageCount": 10,
+      "sha256": "f109fd6d2091a11d0e826ed160dc4e69c79b7072a032eaec32019d482d14e479"
+    },
+    {
+      "sourceKey": "eventspecps",
+      "pdfPageCount": 18,
+      "sha256": "e72bea7270728a085c60f7a8440bc1f5729bb93955b3bcb3467c0e133f8e9143"
+    },
+    {
+      "sourceKey": "spoiler",
+      "pdfPageCount": 44,
+      "sha256": "63705551f97d249b13b7133fe547bc86242ae9330559aeb1af4cbad350f905ef"
+    },
+    {
+      "sourceKey": "multimodalstudio",
+      "pdfPageCount": 10,
+      "sha256": "a2217b303aebd1929cec789ce3049ea5254cd45a908f71ec3b2c9197c3289e5d"
+    },
+    {
+      "sourceKey": "shi-gated",
+      "pdfPageCount": 15,
+      "sha256": "6021d3b8e1229505226525f6110dcead4c17a6582e06e3a5f248cbf4d450e5a6"
+    }
+  ],
+  "hcgfnAuthorAbstract": "https://github.com/PharosEast/HCGFN",
+  "hcgfnPublisherMetadata": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          4
+        ]
+      ],
+      "date-time": "2026-09-04T16:24:44Z",
+      "timestamp": 1788539084497,
+      "version": "build-2803163510"
+    },
+    "reference-count": 59,
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2025-01-01T00:00:00Z",
+          "timestamp": 1735689600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2025-01-01T00:00:00Z",
+          "timestamp": 1735689600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-029"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              1,
+              1
+            ]
+          ],
+          "date-time": "2025-01-01T00:00:00Z",
+          "timestamp": 1735689600000
+        },
+        "content-version": "stm-asf",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.15223/policy-037"
+      }
+    ],
+    "funder": [
+      {
+        "DOI": "10.13039/501100001809",
+        "name": "National Natural Science Foundation of China",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "42225605"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "42225605"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100001809",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "DOI": "10.13039/501100001809",
+        "name": "National Natural Science Foundation of China",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "42001323"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "42001323"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100001809",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "DOI": "10.13039/501100012166",
+        "name": "National Key Research and Development Program of China",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "2021YFB3900902"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "2021YFB3900902"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100012166",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "name": "Provincial Key Research and Development Program of Zhejiang",
+        "award": [
+          "2021C01031"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "2021C01031"
+            ]
+          }
+        ]
+      },
+      {
+        "DOI": "10.13039/501100012226",
+        "name": "Fundamental Research Funds for the Central Universities",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "2022FZZX01-05"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "2022FZZX01-05"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100012226",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "name": "Deep-Time Digital Earth (DDE) Big Science Program and the Earth System Big Data Platform of the School of Earth Sciences, Zhejiang University"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "IEEE Trans. Geosci. Remote Sensing"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1109/tgrs.2025.3596265",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          6
+        ]
+      ],
+      "date-time": "2025-08-06T17:59:54Z",
+      "timestamp": 1754503194000
+    },
+    "page": "1-17",
+    "source": "Crossref",
+    "is-referenced-by-count": 4,
+    "title": [
+      "Heterogeneous Contrastive Graph Fusion Network for Classification of Hyperspectral and LiDAR Data"
+    ],
+    "prefix": "10.1109",
+    "volume": "63",
+    "author": [
+      {
+        "given": "Haoyu",
+        "family": "Jing",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Zhejiang Provincial Key Laboratory of GIS and the School of Earth Sciences, Zhejiang University, Hangzhou, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9322-0149",
+        "authenticated-orcid": false,
+        "given": "Sensen",
+        "family": "Wu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Zhejiang Provincial Key Laboratory of GIS and the School of Earth Sciences, Zhejiang University, Hangzhou, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0000-7982-1407",
+        "authenticated-orcid": false,
+        "given": "Laifu",
+        "family": "Zhang",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Zhejiang Provincial Key Laboratory of GIS and the School of Earth Sciences, Zhejiang University, Hangzhou, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0000-5269-0304",
+        "authenticated-orcid": false,
+        "given": "Fanen",
+        "family": "Meng",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Zhejiang Provincial Key Laboratory of GIS and the School of Earth Sciences, Zhejiang University, Hangzhou, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yiming",
+        "family": "Yan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Zhejiang Provincial Key Laboratory of GIS and the School of Earth Sciences, Zhejiang University, Hangzhou, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8108-2586",
+        "authenticated-orcid": false,
+        "given": "Yuanyuan",
+        "family": "Wang",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Ocean Academy, Zhejiang University, Zhoushan, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9449-0415",
+        "authenticated-orcid": false,
+        "given": "Zhenhong",
+        "family": "Du",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Zhejiang Provincial Key Laboratory of GIS and the School of Earth Sciences, Zhejiang University, Hangzhou, China"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "263",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TGRS.2016.2646420"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.rse.2015.04.032"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/jstars.2024.3510468"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/rs70912282"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/jstars.2020.3044250"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2020.3018732"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/jstars.2018.2869210"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.infrared.2020.103326"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2024.3355037"
+      },
+      {
+        "key": "ref10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2020.3016820"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2021.3124913"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2017.2756851"
+      },
+      {
+        "key": "ref13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/lgrs.2014.2350263"
+      },
+      {
+        "key": "ref14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/19479832.2015.1055833"
+      },
+      {
+        "key": "ref15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/igarss.2014.6946657"
+      },
+      {
+        "key": "ref16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/jstars.2015.2432037"
+      },
+      {
+        "key": "ref17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/lgrs.2018.2816958"
+      },
+      {
+        "key": "ref18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jag.2022.102926"
+      },
+      {
+        "key": "ref19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/lgrs.2017.2704625"
+      },
+      {
+        "key": "ref20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2020.2969024"
+      },
+      {
+        "key": "ref21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2020.2982064"
+      },
+      {
+        "key": "ref22",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tcyb.2018.2864670"
+      },
+      {
+        "key": "ref23",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2021.3065507"
+      },
+      {
+        "key": "ref24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2023.3286826"
+      },
+      {
+        "key": "ref25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tpami.2023.3275156"
+      },
+      {
+        "key": "ref26",
+        "article-title": "An image is worth 16×16 words: Trans-formers for image recognition at scale",
+        "volume-title": "Int. Conf. Learn. Represent",
+        "author": "Dosovitskiy"
+      },
+      {
+        "key": "ref27",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2021.3130716"
+      },
+      {
+        "key": "ref28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2022.3216319"
+      },
+      {
+        "key": "ref29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2022.3232498"
+      },
+      {
+        "key": "ref30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tip.2022.3162964"
+      },
+      {
+        "key": "ref31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jag.2022.102837"
+      },
+      {
+        "key": "ref32",
+        "article-title": "Semi-supervised classification with graph convolutional networks",
+        "author": "Kipf"
+      },
+      {
+        "key": "ref33",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/lgrs.2018.2869563"
+      },
+      {
+        "key": "ref34",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2019.2949180"
+      },
+      {
+        "key": "ref35",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2020.3015157"
+      },
+      {
+        "key": "ref36",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2023.3253248"
+      },
+      {
+        "key": "ref37",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2020.3047130"
+      },
+      {
+        "key": "ref38",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/igarss46834.2022.9883537"
+      },
+      {
+        "key": "ref39",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2022.3210398"
+      },
+      {
+        "key": "ref40",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2023.3325818"
+      },
+      {
+        "key": "ref41",
+        "article-title": "Graph attention networks",
+        "volume-title": "Int. Conf. Learn. Represent",
+        "author": "Veličković"
+      },
+      {
+        "key": "ref42",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.eswa.2024.123587"
+      },
+      {
+        "key": "ref43",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tpami.2012.120"
+      },
+      {
+        "key": "ref44",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tkde.2018.2872063"
+      },
+      {
+        "key": "ref45",
+        "first-page": "1",
+        "article-title": "Align before fuse: Vision and language representation learning with momentum distillation",
+        "volume-title": "Proc. 35th Int. Conf. Neural Inf. Process. Syst.",
+        "author": "Li"
+      },
+      {
+        "key": "ref46",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/cvpr42600.2020.00975"
+      },
+      {
+        "key": "ref47",
+        "article-title": "A simple framework for contrastive learning of visual representations",
+        "author": "Chen",
+        "year": "2020",
+        "journal-title": "arXiv:2002.05709"
+      },
+      {
+        "key": "ref48",
+        "first-page": "4116",
+        "article-title": "Contrastive multi-view rep-resentation learning on graphs",
+        "volume-title": "Proc. 37th Int. Conf. Mach. Learn.",
+        "volume": "2020",
+        "author": "Hassani"
+      },
+      {
+        "key": "ref49",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-3-031-01588-5"
+      },
+      {
+        "key": "ref50",
+        "article-title": "Geom-GCN: Geometric graph convolutional networks",
+        "author": "Pei",
+        "year": "2020",
+        "journal-title": "arXiv:2002.05287"
+      },
+      {
+        "key": "ref51",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1609/aaai.v35i12.17332"
+      },
+      {
+        "key": "ref52",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/icdm54844.2022.00169"
+      },
+      {
+        "key": "ref53",
+        "article-title": "A survey on graph structure learning: Progress and opportunities",
+        "author": "Zhu",
+        "year": "2021",
+        "journal-title": "arXiv:2103.03036"
+      },
+      {
+        "key": "ref54",
+        "article-title": "MUUFL Gulfport hyperspectral and LiDAR airborne data set",
+        "author": "Gader",
+        "year": "2013"
+      },
+      {
+        "key": "ref55",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/mgrs.2020.2979764"
+      },
+      {
+        "key": "ref56",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2004.831865"
+      },
+      {
+        "key": "ref57",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2004.842481"
+      },
+      {
+        "key": "ref58",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/lgrs.2019.2918719"
+      },
+      {
+        "key": "ref59",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tgrs.2021.3130716"
+      }
+    ],
+    "container-title": [
+      "IEEE Transactions on Geoscience and Remote Sensing"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "http://xplorestaging.ieee.org/ielx8/36/10807682/11115095.pdf?arnumber=11115095",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          25
+        ]
+      ],
+      "date-time": "2025-08-25T20:45:09Z",
+      "timestamp": 1756154709000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://ieeexplore.ieee.org/document/11115095/"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "references-count": 59,
+    "URL": "https://doi.org/10.1109/tgrs.2025.3596265",
+    "relation": {},
+    "ISSN": [
+      "0196-2892",
+      "1558-0644"
+    ],
+    "issn-type": [
+      {
+        "value": "0196-2892",
+        "type": "print"
+      },
+      {
+        "value": "1558-0644",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  }
+}

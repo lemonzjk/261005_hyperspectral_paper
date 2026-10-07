@@ -21,14 +21,14 @@ const initialYears = { start: readYear('yearFrom') || legacyYear, end: readYear(
 if (initialYears.start && initialYears.end && Number(initialYears.start) > Number(initialYears.end)) {
   [initialYears.start, initialYears.end] = [initialYears.end, initialYears.start];
 }
-const publicationLabels: Record<string, string> = { published: '正式发表', early_access: '在线先行', preprint: '预印本' };
+const publicationLabels: Record<string, string> = { published: '正式发表', early_access: '在线先行', preprint: '预印本', accepted: '已接收 · 正式卷页待核验' };
 const arrow = <span aria-hidden="true">↗</span>;
 
 
 function PaperCard({ paper, onSelect }: { paper: Paper; onSelect: (p: Paper) => void }) {
   const track = getTrack(paper.track);
   return <button className="paper-card" onClick={() => onSelect(paper)} style={{ '--track': track.color } as CSSProperties}>
-    <div className="card-top"><span className="venue-badge">{paper.venue} {paper.year}{paper.publicationStatus === 'early_access' ? ' · 在线先行' : ''}</span><span className="scope">{paper.venueTier === 'background' ? '补充阅读 · ' : ''}{paper.scope}</span></div>
+    <div className="card-top"><span className="venue-badge">{paper.venue} {paper.year}{paper.publicationStatus === 'early_access' ? ' · 在线先行' : paper.publicationStatus === 'accepted' ? ' · 已接收' : ''}</span><span className="scope">{paper.venueTier === 'background' ? '补充阅读 · ' : ''}{paper.scope}</span></div>
     <h3>{paper.shortTitle}<span aria-hidden="true">↗</span></h3><p className="paper-full-title">{paper.title}</p>
     <p className="paper-summary">{paper.summary}</p>
     <div className="paper-card-bottom"><span><i/>{track.name}</span><span>{paper.representation}</span></div>

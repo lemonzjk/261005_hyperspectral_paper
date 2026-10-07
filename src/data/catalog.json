@@ -665,28 +665,29 @@
       "year": 2026,
       "venue": "ECCV",
       "track": "geometry",
-      "representation": "事件光度立体",
+      "representation": "事件多光谱法线与反射率",
       "scope": "相关研究",
       "tags": [
-        "多光谱",
         "事件相机",
-        "表面法线",
+        "八波段",
+        "光度立体",
+        "法线",
         "绝对反射率"
       ],
-      "summary": "把光谱与照明方向复用到事件流中，联合恢复表面法线和绝对多光谱反射率。",
-      "input": "光谱-角度复用照明下的事件流",
-      "output": "表面法线与逐波段绝对反射率",
-      "mechanism": "配合光谱-角度编码装置与事件解码器；同波段多方向照明分离几何和反射率，标定的恒定照明项用于消除反射率尺度歧义。",
-      "readingNote": "ECCV 2026正式论文PDF和作者出版列表已核验。多光谱路线，关注标定常光项、光照设计以及荧光、互反射和次表面散射的模型假设。",
+      "summary": "用光谱/方向复用光照在一个事件流中编码并联合恢复表面法线与八波段反射率。",
+      "input": "已知时序的 24 LED 光环：8 光谱通道各重复 3 个方位，以及经标定恒定光照下的事件观测。",
+      "output": "表面法线场及绝对尺度八通道反射率；不直接输出度量深度或连续高光谱。",
+      "mechanism": "重复同波段方向约束消除反射率耦合；恒定光照打破相对事件的反射率尺度不确定性，再以事件光度约束、非负光谱因子和角度加权联合优化。",
+      "readingNote": "官方 ECCV 2026 接收目录及会议托管 18 页稿核验。出版商卷页/DOI 尚未核验，按已接收版本登记；Figure 1 第 2 页为系统对比，Figure 2 第 7 页为编码/解耦原理。理论依赖已知响应和光照条件，忽略荧光、互反射和次表面散射。代码已公开但数据未随仓库打包，未运行复现。",
       "paper": "https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6973.pdf",
       "code": "https://github.com/Wujingqian/EventSpecPS",
       "doi": "10.1007/978-3-032-37602-2_15",
       "publicationName": "Computer Vision – ECCV 2026",
-      "verificationLevel": "official_paper",
-      "verifiedAt": "2026-10-06",
-      "publicationStatus": "published",
+      "verificationLevel": "official_full_text",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "accepted",
       "venueTier": "target",
-      "citation": "@inproceedings{eventspecps,\n  title={EventSpecPS: Photometric Stereo with Multispectral Reflectance Using an Event Camera},\n  author={Jingqian Wu and Bohan Yu and Jun Hoong Chan and Edmund Y. Lam and Boxin Shi},\n  year={2026},\n  booktitle={Computer Vision – ECCV 2026},\n  url={https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6973.pdf},\n  doi={10.1007/978-3-032-37602-2_15}\n}",
+      "citation": "@inproceedings{eventspecps,\n  title={EventSpecPS: Photometric Stereo with Multispectral Reflectance Using an Event Camera},\n  author={Jingqian Wu and Bohan Yu and Jun Hoong Chan and Edmund Y. Lam and Boxin Shi},\n  year={2026},\n  booktitle={ECCV},\n  url={https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6973.pdf}\n}",
       "frameworkFigures": [
         {
           "sourceUrl": "https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6973.pdf",
@@ -710,7 +711,36 @@
           "verifiedAt": "2026-10-06",
           "sha256": "e84c2286cb1647d7b4230f3744a8ed2aac7496235c25945ee77ba3dbde62491e",
           "attribution": "Jingqian Wu, Bohan Yu, Jun Hoong Chan, Edmund Y. Lam, Boxin Shi · ECCV 2026"
+        },
+        {
+          "sourceUrl": "https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6973.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "EventSpecPS 系统及帧式/两阶段事件方案比较。",
+          "verificationNote": "官方会议 18 页稿第 2 页，完整保留 (a) 本文与 (b)(c) 比较系统；数值是原图示例，不概括全部测试。",
+          "pdfPage": 2,
+          "path": "figures/eventspecps/framework-system.png",
+          "width": 1055,
+          "height": 505,
+          "verifiedAt": "2026-10-07",
+          "sha256": "aa4d383f0519702c8bc3f47921aa059e9c01e4866b00f498768b610fe8073f29",
+          "attribution": "Jingqian Wu, Bohan Yu, Jun Hoong Chan, Edmund Y. Lam, Boxin Shi · ECCV 2026"
+        },
+        {
+          "sourceUrl": "https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/6973.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "光谱/角度复用光环及法线、反射率解耦原理。",
+          "verificationNote": "官方稿第 7 页，完整保留 a–c 光环设计、法线约束和反射率关系；恒定光照的尺度作用另见正文 Figure 4。",
+          "pdfPage": 7,
+          "path": "figures/eventspecps/framework-decoupling.png",
+          "width": 1060,
+          "height": 350,
+          "verifiedAt": "2026-10-07",
+          "sha256": "0821d0f9467eed034cc6e71d1ce5e37d8b4a85f5cd0ab4dbf552502c650b5592",
+          "attribution": "Jingqian Wu, Bohan Yu, Jun Hoong Chan, Edmund Y. Lam, Boxin Shi · ECCV 2026"
         }
+      ],
+      "sourceUrls": [
+        "https://eccv.ecva.net/Conferences/2026/AcceptedPapers"
       ]
     },
     {
@@ -10364,6 +10394,343 @@
           "attribution": "Zhaoqiang Wang, Lanxin Zhu, Hao Zhang, Guo Li, Chengqiang Yi, Yi Li, Yicong Yang, Yichen Ding, Mei Zhen, Shangbang Gao, Tzung K. Hsiai, Peng Fei · Nature Methods 2021"
         }
       ]
+    },
+    {
+      "id": "rsncc-registration",
+      "shortTitle": "RSNCC",
+      "title": "Multi-modal and Multi-spectral Registration for Natural Images",
+      "authors": "Xiaoyong Shen, Li Xu, Qi Zhang, Jiaya Jia",
+      "year": 2014,
+      "venue": "ECCV",
+      "track": "registration",
+      "representation": "跨光谱与跨模态稠密配准",
+      "scope": "相关研究",
+      "tags": [
+        "RGB–NIR",
+        "跨模态",
+        "稠密匹配",
+        "单应性"
+      ],
+      "summary": "采用稳健选择归一化互相关，先对齐整体变换，再估计局部像素对应。",
+      "input": "RGB–NIR、RGB–Depth、不同曝光、闪光/非闪光图像对。",
+      "output": "二维稠密对应与对齐图像；RGB–Depth 应用还用于深度恢复。",
+      "mechanism": "RSNCC 同时利用强度与梯度的自相关结构，稳健代价抑制结构变化和离群值；全局单应性优化后以正则化局部位移修正残差。",
+      "readingNote": "作者公开 16 页 ECCV 2014 正式稿及机构 DOI 核验，309–324。RGB–NIR 对应与 RGB–Depth 恢复分别实验，不能改写为从光谱直接恢复度量深度。Figure 5 是两阶段匹配的结果对比，全文未见独立框架流程图。",
+      "paper": "https://jiaya.me/file/papers/multispectral_registration.pdf",
+      "verificationLevel": "author_fulltext",
+      "sourceUrls": [
+        "https://repository.hkust.edu.hk/ir/Record/1783.1-141667"
+      ],
+      "doi": "10.1007/978-3-319-10593-2_21",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{rsnccregistration,\n  title={Multi-modal and Multi-spectral Registration for Natural Images},\n  author={Xiaoyong Shen and Li Xu and Qi Zhang and Jiaya Jia},\n  year={2014},\n  booktitle={ECCV},\n  url={https://jiaya.me/file/papers/multispectral_registration.pdf},\n  doi={10.1007/978-3-319-10593-2_21}\n}",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "已读作者 16 页全文及全部图表；Figure 5 是两阶段结果对比，未见独立系统流程框架。",
+        "sourceUrl": "https://jiaya.me/file/papers/multispectral_registration.pdf",
+        "checkedAt": "2026-10-07"
+      }
+    },
+    {
+      "id": "dsc-crossmodal",
+      "shortTitle": "DSC",
+      "title": "Deep Self-correlation Descriptor for Dense Cross-Modal Correspondence",
+      "authors": "Seungryong Kim, Dongbo Min, Stephen Lin, Kwanghoon Sohn",
+      "year": 2016,
+      "venue": "ECCV",
+      "track": "registration",
+      "representation": "跨光谱稠密对应描述子",
+      "scope": "相关研究",
+      "tags": [
+        "RGB–NIR",
+        "立体匹配",
+        "自相关",
+        "无需训练"
+      ],
+      "summary": "以层级自相关和圆形空间金字塔池化生成无需训练的跨模态稠密描述子。",
+      "input": "RGB–NIR、闪光/非闪光、不同曝光等图像对；另有 Middlebury 立体基准。",
+      "output": "稠密对应和立体视差，不是连续高光谱三维采集。",
+      "mechanism": "先随机采样局部块并计算自相关表面，经多层平均池化形成层级表征，再圆形空间金字塔池化、非线性门控和归一化；复用相关计算降低冗余。",
+      "readingNote": "作者 17 页正式稿与 Microsoft Research 摘要核验，ECCV 2016 679–695。Deep 是手工层级描述结构，论文明确 training-free，不写成训练 CNN。Figure 6 为 SSC/DSC 架构，相关表面中的第三轴不是空间深度。",
+      "paper": "https://seungryong.github.io/DSC/DSCdescriptor_ECCV2016.pdf",
+      "verificationLevel": "author_fulltext",
+      "relatedPaperIds": [
+        "dasc-correspondence"
+      ],
+      "sourceUrls": [
+        "https://www.microsoft.com/en-us/research/publication/deep-self-correlation-descriptor-dense-cross-modal-correspondence/"
+      ],
+      "doi": "10.1007/978-3-319-46484-8_41",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{dsccrossmodal,\n  title={Deep Self-correlation Descriptor for Dense Cross-Modal Correspondence},\n  author={Seungryong Kim and Dongbo Min and Stephen Lin and Kwanghoon Sohn},\n  year={2016},\n  booktitle={ECCV},\n  url={https://seungryong.github.io/DSC/DSCdescriptor_ECCV2016.pdf},\n  doi={10.1007/978-3-319-46484-8_41}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://seungryong.github.io/DSC/DSCdescriptor_ECCV2016.pdf",
+          "figureLabel": "Figure 6",
+          "caption": "SSC 与 DSC 描述子架构：层级自相关、圆形池化、非线性和归一化。",
+          "verificationNote": "作者正式 17 页稿第 8 页，裁切完整图示，保留 SSC/DSC 两行与输入；第三维为自相关表面。",
+          "pdfPage": 8,
+          "path": "figures/dsc-crossmodal/framework-descriptor.png",
+          "width": 1075,
+          "height": 565,
+          "verifiedAt": "2026-10-07",
+          "sha256": "8657b640e2a6f7bc42230be43cd0c5cb5a687fea1698dd632947bdebfaa2e743",
+          "attribution": "Seungryong Kim, Dongbo Min, Stephen Lin, Kwanghoon Sohn · ECCV 2016"
+        }
+      ]
+    },
+    {
+      "id": "hcgfn-fusion",
+      "shortTitle": "HCGFN",
+      "title": "Heterogeneous Contrastive Graph Fusion Network for Classification of Hyperspectral and LiDAR Data",
+      "authors": "Haoyu Jing, Sensen Wu, Laifu Zhang, Fanen Meng, Yiming Yan, Yuanyuan Wang, Zhenhong Du",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "fusion",
+      "representation": "高光谱与高度辅助异质图分类",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "LiDAR",
+        "图网络",
+        "对比学习"
+      ],
+      "summary": "结合支路增强、局部对比学习和动态异质图，改善高光谱与 LiDAR 土地覆盖分类。",
+      "input": "配准 HSI 与 LiDAR；作者摘要列 Trento、MUUFL、Houston2013。",
+      "output": "二维土地覆盖类别图，不输出三维表面或高光谱点云。",
+      "mechanism": "分支增强提高单模态判别性，局部邻域对比学习利用自监督信号，动态异质图学习跨模态拓扑并以图卷积融合分类。",
+      "readingNote": "七作者与 TGRS 63:1–17 DOI 已由出版社登记核验；方法依据作者仓库原始摘要，未取得正式正文。仓库仍写 Submitting to TGRS，不能据旧 README 否认正式版本，也不能保证作者 pipeline.png 与出版图号完全相同；图号按作者资源标注。仅核心代码已公开，未运行复现。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3596265",
+      "verificationLevel": "author_abstract_and_publisher_metadata",
+      "sourceUrls": [
+        "https://github.com/PharosEast/HCGFN"
+      ],
+      "code": "https://github.com/PharosEast/HCGFN",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "doi": "10.1109/TGRS.2025.3596265",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{hcgfnfusion,\n  title={Heterogeneous Contrastive Graph Fusion Network for Classification of Hyperspectral and LiDAR Data},\n  author={Haoyu Jing and Sensen Wu and Laifu Zhang and Fanen Meng and Yiming Yan and Yuanyuan Wang and Zhenhong Du},\n  year={2025},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  url={https://doi.org/10.1109/TGRS.2025.3596265},\n  doi={10.1109/TGRS.2025.3596265}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://raw.githubusercontent.com/PharosEast/HCGFN/main/assests/pipeline.png",
+          "figureLabel": "作者仓库 pipeline.png",
+          "caption": "支路增强、邻域对比学习与动态异质图的 HSI–LiDAR 分类流程。",
+          "verificationNote": "作者仓库原始 PNG，视觉检查输入、两个图支路、CLM、DHGSLM、GCN 与分类输出完整；未取得正式论文，图号与出版版关系不猜测。",
+          "path": "figures/hcgfn-fusion/framework-author-pipeline.png",
+          "width": 8057,
+          "height": 4711,
+          "verifiedAt": "2026-10-07",
+          "sha256": "b527b7d74b944cc40a5120ef71df3dc328ddc2e8154af53635671aa2914673e0",
+          "attribution": "Haoyu Jing, Sensen Wu, Laifu Zhang, Fanen Meng, Yiming Yan, Yuanyuan Wang, Zhenhong Du · TGRS 2025"
+        }
+      ]
+    },
+    {
+      "id": "internal-pushbroom-sfm-mvs",
+      "shortTitle": "HSI SfM–MVS",
+      "title": "Hyperspectral images 3D reconstruction based on structure-from-motion and multi-view stereo",
+      "authors": "Chao Liu, Minghui Gu, Huansong Huang, Xin Zhang, Jiguo Li, Qingbin Jiao, Liang Xu, Mingyu Yang, Xin Tan",
+      "year": 2026,
+      "venue": "Optics and Lasers in Engineering",
+      "track": "geometry",
+      "representation": "多视角高光谱点云",
+      "scope": "核心研究",
+      "tags": [
+        "高光谱",
+        "SfM",
+        "MVS",
+        "内推扫",
+        "反射率融合"
+      ],
+      "summary": "面向内推扫高光谱图像调整 SfM–MVS，并将多视角反射率融合到几何点云。",
+      "input": "内推扫高光谱相机采集的环绕物体多视角光谱图像。",
+      "output": "带完整光谱反射率的三维点云。",
+      "mechanism": "先分割抑制背景/边缘噪声，以环形扫描的位置约束改善姿态匹配；光谱曲线趋势构造立体匹配代价，再用几何一致性、掩膜及冗余反射率统计融合深度与光谱。",
+      "readingNote": "出版社原始摘要与引言核验，199:109578，2026 年 4 月卷期；正文和原图尚未取得，波段数/误差不补猜。属于光学工程专业期刊补充收录，不笼统标成顶刊。相机采用图像空间内扫描，不能概括为所有外推扫图像直接满足透视模型。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0143816625007626",
+      "venueTier": "specialist",
+      "verificationLevel": "official_abstract",
+      "citation": "@article{internalpushbroomsfmmvs,\n  title={Hyperspectral images 3D reconstruction based on structure-from-motion and multi-view stereo},\n  author={Chao Liu and Minghui Gu and Huansong Huang and Xin Zhang and Jiguo Li and Qingbin Jiao and Liang Xu and Mingyu Yang and Xin Tan},\n  journal={Optics and Lasers in Engineering},\n  volume={199},\n  pages={109578},\n  year={2026},\n  doi={10.1016/j.optlaseng.2025.109578}\n}",
+      "doi": "10.1016/j.optlaseng.2025.109578",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "出版社原始摘要和引言可读，正文/PDF 与独立原图未取得；保留待全文/人工补图。",
+        "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S0143816625007626",
+        "checkedAt": "2026-10-07"
+      }
+    },
+    {
+      "id": "tree-centric-carbon",
+      "shortTitle": "Tree-centric Carbon",
+      "title": "Tree-centric mapping of forest carbon density from airborne laser scanning and hyperspectral data",
+      "authors": "Michele Dalponte, David A. Coomes",
+      "year": 2016,
+      "venue": "Methods in Ecology and Evolution",
+      "track": "fusion",
+      "representation": "高光谱树种与三维冠层碳估计",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "ALS",
+        "单木",
+        "冠层高度",
+        "森林碳"
+      ],
+      "summary": "将激光扫描得到的单木高度/冠幅与高光谱树种结合，估计逐木生物量及森林碳密度。",
+      "input": "机载 ALS 与 65 波段 400–990 nm 高光谱影像，配合地面树木训练/验证。",
+      "output": "单木树种、高度、冠幅和碳密度图；不是新的连续光谱三维重建算法。",
+      "mechanism": "ALS 先形成冠层高度模型，以局部峰值与区域生长定位树冠，再利用冠层激光点生成二维冠幅；高光谱识别树种，回归胸径并经树种相关异速生长公式换算生物量和碳。",
+      "readingNote": "核验机构公开 10 页正式期刊全文，7(10):1236–1245，2016。摘要说 point-cloud region-growing，但实际 §ITC 以栅格 CHM 起始并提取 first-return 点，不写成直接全点云图分割。小树不可见需修正，模型依赖地面训练与树种异速公式。作为生态方法专业补充收录，不列统一顶刊。Figure 1 是系统流程。",
+      "paper": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/98250fa1-6f77-459a-a654-82cf53b771d4/content",
+      "venueTier": "specialist",
+      "verificationLevel": "author_fulltext",
+      "citation": "@article{treecentriccarbon,\n  title={Tree-centric mapping of forest carbon density from airborne laser scanning and hyperspectral data},\n  author={Michele Dalponte and David A. Coomes},\n  journal={Methods in Ecology and Evolution},\n  volume={7},\n  number={10},\n  pages={1236--1245},\n  year={2016},\n  doi={10.1111/2041-210X.12575}\n}",
+      "doi": "10.1111/2041-210X.12575",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/98250fa1-6f77-459a-a654-82cf53b771d4/content",
+          "figureLabel": "Figure 1",
+          "caption": "激光树冠与高光谱树种结合的单木碳估计系统。",
+          "verificationNote": "机构正式 10 页原稿第 2 页，保留 ALS、HSI、地面测量及输出全部分支；裁切仅移除正文/页脚。",
+          "pdfPage": 2,
+          "path": "figures/tree-centric-carbon/framework-tree-carbon.png",
+          "width": 1445,
+          "height": 390,
+          "verifiedAt": "2026-10-07",
+          "sha256": "f89348a4ce252e7b98a6a709f5d994c2c99347082e78b5076a368e2d6d6cd8ca",
+          "attribution": "Michele Dalponte, David A. Coomes · Methods in Ecology and Evolution 2016"
+        }
+      ]
+    },
+    {
+      "id": "spoiler-multimodal-nerf",
+      "shortTitle": "SPoILeR",
+      "title": "Learning Spectral and Polarimetric Clues for One-to-Multimodal Novel View Synthesis",
+      "authors": "Federico Lincetto, Gianluca Agresti, Mattia Rossi, Piergiorgio Sartor, Pietro Zanuttigh",
+      "year": 2026,
+      "venue": "ECCV",
+      "track": "rendering",
+      "representation": "多光谱与偏振神经辐射场",
+      "scope": "相关研究",
+      "tags": [
+        "NeRF",
+        "多光谱",
+        "九通道",
+        "预训练",
+        "缺模态",
+        "偏振"
+      ],
+      "summary": "跨场景学习模态关联，随后仅以新场景 RGB 或少量其他模态微调，合成三维一致的多模态新视角。",
+      "input": "预训练使用多视角多模态场景；新场景通常只需 RGB，也研究少量 NIR/多光谱/偏振输入。",
+      "output": "RGB、单色、NIR、偏振和九通道多光谱新视角及场景几何表示。",
+      "mechanism": "将共享基场与场景系数字段分离，通过共享潜编码和模态解码器学习多模态先验；预训练交替优化共享/独立模块，微调冻结共享模块，并用潜空间几何、逆函数及亮度约束稳定未观测模态。",
+      "readingNote": "ECCV 2026 官方接收目录、实验室公告及作者 arXiv v1 全文核验；正式卷页/DOI 未取得，登记已接收版本。九通道来自 MMS-DATA 多光谱传感器，不能把 MST++ 比较基线 31 波段写成本文输出。RGB 推断光谱依赖预训练材料/受控曝光光照，不能冒充新场景真实光谱测量；不同传感器的 X-NeRF 实验还需至少一帧各模态重训解码器。",
+      "paper": "https://arxiv.org/abs/2607.02372",
+      "publicationStatus": "accepted",
+      "verificationLevel": "author_fulltext",
+      "project": "https://lttm.github.io/MultimodalStudio/pages/SPoILeR.html",
+      "sourceUrls": [
+        "https://eccv.ecva.net/Conferences/2026/AcceptedPapers",
+        "https://medialab.dei.unipd.it/news/"
+      ],
+      "verifiedAt": "2026-10-07",
+      "venueTier": "target",
+      "citation": "@inproceedings{spoilermultimodalnerf,\n  title={Learning Spectral and Polarimetric Clues for One-to-Multimodal Novel View Synthesis},\n  author={Federico Lincetto and Gianluca Agresti and Mattia Rossi and Piergiorgio Sartor and Pietro Zanuttigh},\n  year={2026},\n  booktitle={ECCV},\n  url={https://arxiv.org/abs/2607.02372}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2607.02372v1",
+          "figureLabel": "Figure 2",
+          "caption": "共享基场、场景系数与多模态解码的辐射模块。",
+          "verificationNote": "作者 v1 PDF 第 5 页裁切；项目 JPG 右侧标签不完整，改用 PDF，完整保留 RGB 与其他模态输出及系数字段标签。",
+          "pdfPage": 5,
+          "path": "figures/spoiler-multimodal-nerf/framework-radiance.png",
+          "width": 785,
+          "height": 415,
+          "verifiedAt": "2026-10-07",
+          "sha256": "63257b1780efa815b7427a81ef40d58374dc0939b83c1691ebc9304ea0cc2e7e",
+          "attribution": "Federico Lincetto, Gianluca Agresti, Mattia Rossi, Piergiorgio Sartor, Pietro Zanuttigh · ECCV 2026"
+        },
+        {
+          "sourceUrl": "https://lttm.github.io/MultimodalStudio/static/images/spoiler/pre-training.jpg",
+          "figureLabel": "Figure 3 / 作者项目资源",
+          "caption": "预训练交替优化共享模块和场景系数的流程。",
+          "verificationNote": "作者项目原始 JPG，与 v1 PDF 第 5 页 Figure 3 对应；完整保留冻结/训练、场景切换及 80%/20% 迭代。此图是预训练步骤，不代表全部微调流程。",
+          "path": "figures/spoiler-multimodal-nerf/framework-pretraining.jpg",
+          "width": 4056,
+          "height": 2866,
+          "verifiedAt": "2026-10-07",
+          "sha256": "37c909bfc3fe344dcda4bcfe4ac5e0ca873e4a36859e89edaa8bd71d0e1d32ff",
+          "attribution": "Federico Lincetto, Gianluca Agresti, Mattia Rossi, Piergiorgio Sartor, Pietro Zanuttigh · ECCV 2026"
+        }
+      ],
+      "relatedPaperIds": [
+        "multimodalstudio"
+      ],
+      "code": "https://github.com/LTTM/MultimodalStudio"
+    },
+    {
+      "id": "multimodalstudio",
+      "shortTitle": "MultimodalStudio",
+      "title": "MultimodalStudio: A Heterogeneous Sensor Dataset and Framework for Neural Rendering across Multiple Imaging Modalities",
+      "authors": "Federico Lincetto, Gianluca Agresti, Mattia Rossi, Pietro Zanuttigh",
+      "year": 2025,
+      "venue": "CVPR",
+      "track": "rendering",
+      "representation": "异构多光谱与偏振神经辐射场",
+      "scope": "相关研究",
+      "tags": [
+        "多光谱",
+        "NeRF",
+        "SDF",
+        "RAW",
+        "多模态",
+        "数据集"
+      ],
+      "summary": "提供五模态 32 场景数据和模块化神经渲染框架，通过共享几何/辐射表示实现跨模态信息传递。",
+      "input": "RGB、单色、NIR、偏振及多光谱相机的已标定多视角原始图像，允许不同内参、畸变和马赛克图案。",
+      "output": "对齐的多模态新视角、法线与深度；不是连续高光谱体扫描。",
+      "mechanism": "共享 SDF 几何与多分辨率辐射哈希场，按模态采样和监督相应通道；偏振估计固定参考系 Stokes 分量并转换到实际相机角度。",
+      "readingNote": "CVF 官方 10 页全文与四作者、10964–10973 核验。32 场景、5 模态、每模态 50 视角，250 帧/场景。模型支持可变通道不等于实测密集高光谱，Silios CMS-C1 为多光谱。论文 §5 明确缺少几何真值，未做几何数值评价；不能将渲染质量写成几何准确率。本文逐场景训练，SPoILeR 另学习跨场景缺模态先验，两者不当同一方法重复版本。",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/html/Lincetto_MultimodalStudio_A_Heterogeneous_Sensor_Dataset_and_Framework_for_Neural_Rendering_CVPR_2025_paper.html",
+      "verificationLevel": "official_full_text",
+      "publicationName": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "project": "https://lttm.github.io/MultimodalStudio/",
+      "sourceUrls": [
+        "https://openaccess.thecvf.com/content/CVPR2025/papers/Lincetto_MultimodalStudio_A_Heterogeneous_Sensor_Dataset_and_Framework_for_Neural_Rendering_CVPR_2025_paper.pdf"
+      ],
+      "relatedPaperIds": [
+        "spoiler-multimodal-nerf"
+      ],
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@inproceedings{multimodalstudio,\n  title={MultimodalStudio: A Heterogeneous Sensor Dataset and Framework for Neural Rendering across Multiple Imaging Modalities},\n  author={Federico Lincetto and Gianluca Agresti and Mattia Rossi and Pietro Zanuttigh},\n  year={2025},\n  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n  url={https://openaccess.thecvf.com/content/CVPR2025/html/Lincetto_MultimodalStudio_A_Heterogeneous_Sensor_Dataset_and_Framework_for_Neural_Rendering_CVPR_2025_paper.html}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/CVPR2025/papers/Lincetto_MultimodalStudio_A_Heterogeneous_Sensor_Dataset_and_Framework_for_Neural_Rendering_CVPR_2025_paper.pdf",
+          "figureLabel": "Figure 4",
+          "pdfPage": 4,
+          "caption": "共享密度/SDF、辐射通道及 Stokes 偏振转换的实验流程。",
+          "verificationNote": "CVF 官方 10 页稿第 4 页，视觉核验并完整裁切输入坐标/方向、几何支路、全部辐射通道及偏振转换；不使用 Figure 2 场景照片冒充架构。",
+          "path": "figures/multimodalstudio/framework-multimodal-radiance.png",
+          "width": 800,
+          "height": 350,
+          "verifiedAt": "2026-10-07",
+          "sha256": "188a9d70e40d7192f544ca43287ad19a59e520af3b28a75a9f56ac18c86dba8d",
+          "attribution": "Federico Lincetto, Gianluca Agresti, Mattia Rossi, Pietro Zanuttigh · CVPR 2025"
+        }
+      ],
+      "code": "https://github.com/LTTM/MultimodalStudio"
     }
   ],
   "datasets": [
@@ -10531,6 +10898,33 @@
       ],
       "source": "https://doi.org/10.5281/zenodo.17077255",
       "availability": "作者与出版社明确给出公开 Zenodo 入口；本次 API 读取超时，未下载数据或核验文件与许可。"
+    },
+    {
+      "id": "mms-data",
+      "name": "MMS-DATA",
+      "subtitle": "Calibrated multi-view multimodal scenes",
+      "type": "真实采集",
+      "description": "32 个物体中心场景，RGB、单色、NIR、偏振和多光谱五模态；每模态 50 视角。含原始、处理后与去畸变版本，用于多模态新视角渲染，不是连续高光谱或完整几何真值数据。",
+      "facts": [
+        {
+          "label": "场景",
+          "value": "32"
+        },
+        {
+          "label": "模态",
+          "value": "5"
+        },
+        {
+          "label": "视角/模态",
+          "value": "50"
+        }
+      ],
+      "paperIds": [
+        "multimodalstudio",
+        "spoiler-multimodal-nerf"
+      ],
+      "source": "https://lttm.github.io/MultimodalStudio/pages/dataset.html",
+      "availability": "官方提供下载入口；使用 v1.1（已修复多光谱相机标定）；数据许可需另核验。"
     }
   ]
 }

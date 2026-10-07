@@ -10,7 +10,7 @@
 
 ## 权威状态
 
-- 当前 206 篇：143 篇 verified、172 张图；53 篇 needs_access；10 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
+- 当前 213 篇：148 篇 verified、180 张图；54 篇 needs_access；11 篇 no_framework；0 篇 pending。以下早期年度记录为历史核查过程，最新状态以 figures.json 为准。
 - 2026–2012 年初查完整。2020 年 4 篇有图；TMDE、Maize 重试失败已记 needs_access，不能据此判定没有图。
 - 2019 年 6 篇全部有图；HSPC Generation 含总流程与 NMF 细节两张。
 - 2018 年 Material-Aware Stereo、DART Tree Traits、HS-DSM Radiometry 有图；Fourier Multimodal 因出版社验证码、ResearchGate 403 需作者稿。VBRT 的 gr1–gr8 为离散几何/实验结果，未冒充框架，需全文进一步查。
