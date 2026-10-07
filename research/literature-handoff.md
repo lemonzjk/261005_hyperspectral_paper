@@ -4,7 +4,7 @@
 
 ## 当前基线
 
-网站收录 190 篇；135 篇有 160 张框架图，45 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
+网站收录 192 篇；136 篇有 161 张框架图，46 篇 needs_access，10 篇 no_framework，0 篇 pending。现有框架全部初查不等于来源已穷尽；新论文同步查图，旧缺图可遇到新公开入口时重试。
 
 ## 已完成的新论文
 
@@ -65,3 +65,9 @@
 - Ghost HS3D LiDAR（arXiv:2604.21742v1）：新增 lidar/核心研究，十作者及 18 页正文核验。真实 ToF 深度加 1100–1250 nm 光谱，Figures 1、2 保存第 4、6 页完整原理/系统；第 1 图注跨页但图本身不跨页。脉冲 GHz 点吞吐、高精度平均时间与光谱 5800 次相关分别记录，不合成 GHz 全谱帧率。96 点二维阵列/交错扫描、无模糊范围及前置透射样品边界保留。补充文件未取得，没有正式期刊版本证据。
 - RSE LAI 导数 10.1016/j.rse.2025.114785 的 HAL hal-05655059 API 无 fileMain_s；叶密度导数 10.1016/j.rse.2026.115572 登记未来 2026-11 卷 345、115572，无 published-online。均 pending_fulltext_scope，不能据场所/题名纳入，也不能推断全文无框架。
 - CVF ICCV 2025 双相机多光谱去马赛克 excluded_scope；Nature Communications 臭氧层析（2026 卷，2025 在线）原始全文明确二维水平分布，background_scope。证据 sources/ghost-hs3d-lidar-review-2026-10-07.json 与 sources/rtm-and-lidar-scope-review-2026-10-07.json。继续目标场所/引文扫描及原始全文核验，不声明全部覆盖。
+
+## FRGFNet 与 FusDreamer 融合候选
+
+- FRGFNet（TGRS 2025，10.1109/TGRS.2025.3562246）：IEEE 原始摘要、正式元数据五作者核验，FRE 重建嵌入/跨模态注意力；Houston 2013、Augsburg、MUUFL，归 fusion/相关研究。作者主页写 2024 不替代正式卷年。IEEE PDF 418、准确仓库零命中、OpenAlex 无 PDF，框架 needs_access。具体输入通道与实验划分待全文，不称官方全文已读。
+- FusDreamer（TGRS 2025，10.1109/TGRS.2025.3554862）：作者公開 14 页正式 IEEE 排版、Crossref、代码 README 核验，HSI 与 LiDAR 为 M×N 栅格。LaMG 潜空间扩散、OK-CP 属性文本/CLIP、MuCO 多任务约束用于少标注分类，归相关研究；“世界模型”不是三维动态场景模拟。完整 Figure 1 位于 PDF 第 3 页，已裁切保存输入、全部模块及图例。代码当前已发布，未运行训练。证据 sources/frgfnet-fusdreamer-review-2026-10-07.json。
+- UCAFNet 的二手摘要不是原始方法证据，仍 pending_abstract。继续其他 TGRS 原始摘要和框架、目标场所逐年目录；现有扩充不等于全部论文已收集。

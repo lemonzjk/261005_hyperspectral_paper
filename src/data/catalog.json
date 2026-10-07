@@ -9451,6 +9451,105 @@
           "attribution": "Jing Hu, Wending Huang, Tianjian Lv, Ming Yan, Zhaoyang Wen, Zijian Wang, Yuan Chen, Zhuoren Wan, Mei Yang, Heping Zeng · arXiv 2026"
         }
       ]
+    },
+    {
+      "id": "frgfnet",
+      "shortTitle": "FRGFNet",
+      "title": "Feature Reconstruction Guided Fusion Network for Hyperspectral and LiDAR Classification",
+      "authors": "Zhi Li, Ke Zheng, Lianru Gao, Nannan Zi, Chengrui Li",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "fusion",
+      "representation": "HSI–LiDAR 融合",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "LiDAR",
+        "特征重建",
+        "跨模态注意力",
+        "高程辅助分类"
+      ],
+      "summary": "通过特征分解与重建嵌入减少高光谱冗余，再以跨模态注意力融合 HSI 与 LiDAR 特征，实现地物分类。",
+      "input": "高光谱影像与对应 LiDAR/高度数据；摘要验证 Houston 2013、Augsburg 与 MUUFL。",
+      "output": "地物类别预测；不输出三维几何或逐点光谱点云标签。",
+      "mechanism": "FRE 通过特征分解重建 HSI 特征，并将重建信息加权嵌入分类特征；跨模态注意力模块实现两类特征的信息交换和语义对齐。",
+      "readingNote": "IEEE 原始摘要与 Crossref 出版元数据核验，正式发表为 2025 年卷 63、4408914，作者网页的 2024 年标签不替代正式登记。属于 HSI 与 LiDAR 高度辅助二维分类，具体 LiDAR 通道、特征分解公式和空间划分协议仍待正式全文。IEEE PDF 返回 HTTP 418，精确 FRGFNet 的 GitHub 仓库检索无结果，未取得可核验框架；不据摘要推定全文无图，不引用精度排名。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3562246",
+      "doi": "10.1109/TGRS.2025.3562246",
+      "verificationLevel": "official_abstract_and_publisher_metadata",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{frgfnet,\n  title={Feature Reconstruction Guided Fusion Network for Hyperspectral and LiDAR Classification},\n  author={Zhi Li and Ke Zheng and Lianru Gao and Nannan Zi and Chengrui Li},\n  year={2025},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  url={https://doi.org/10.1109/TGRS.2025.3562246},\n  doi={10.1109/TGRS.2025.3562246}\n}",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "IEEE 正式 PDF 请求返回 HTTP 418 HTML；作者发表列表仅链接 IEEE，无同篇 PDF 附件；准确 FRGFNet 的 GitHub 公开仓库检索 HTTP 200、零结果，OpenAlex 无公开 PDF。未取得可核验框架，不判定全文无图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/10970021",
+        "checkedAt": "2026-10-07"
+      }
+    },
+    {
+      "id": "fusdreamer",
+      "shortTitle": "FusDreamer",
+      "title": "FusDreamer: Label-Efficient Remote Sensing World Model for Multimodal Data Classification",
+      "authors": "Jinping Wang, Weiwei Song, Hao Chen, Jinchang Ren, Huimin Zhao",
+      "year": 2025,
+      "venue": "TGRS",
+      "track": "fusion",
+      "representation": "HSI–LiDAR 融合",
+      "scope": "相关研究",
+      "tags": [
+        "高光谱",
+        "LiDAR",
+        "文本提示",
+        "潜空间扩散",
+        "少标注分类",
+        "世界模型"
+      ],
+      "summary": "在共同潜空间融合 HSI、LiDAR 高度栅格和类别/物理属性文本提示，通过扩散生成、跨模态一致性与多任务约束提升少标注地物分类。",
+      "input": "空间对齐的高光谱影像、LiDAR DSM/高程栅格以及预先设计的类别和属性文本提示。",
+      "output": "二维地物分类图；不是三维场景重建、时序运动预测或无人标注的开放类别识别。",
+      "mechanism": "LaMG 利用交互潜空间扩散生成多模态特征；OK-CP 用预训练 CLIP 与属性提示对齐视觉/语言表示；MuCO 联合噪声预测、分类和文本–多模态一致性损失约束训练。",
+      "readingNote": "作者公开的 14 页正式 IEEE 排版全文、Crossref 与作者代码 README 核验，卷 63、5702314。正文明确 HSI 与 LiDAR 为二维空间栅格，评测 Houston 2013/2018、MUUFL、Trento，归高度辅助分类相关方向。“世界模型”在此用于潜表示和特征生成，不能称为几何重建或动态三维世界模拟；文本提示含已知类别及人为设计的属性描述，少标注不等于零标注。公开代码已发布，不再把原稿 will be released 视为当前未发布；未运行训练，结果不能外推未知区域。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3554862",
+      "doi": "10.1109/TGRS.2025.3554862",
+      "code": "https://github.com/Cimy-wang/FusDreamer",
+      "verificationLevel": "official_full_text_and_author_code",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "verifiedAt": "2026-10-07",
+      "publicationStatus": "published",
+      "venueTier": "target",
+      "citation": "@article{fusdreamer,\n  title={FusDreamer: Label-Efficient Remote Sensing World Model for Multimodal Data Classification},\n  author={Jinping Wang and Weiwei Song and Hao Chen and Jinchang Ren and Huimin Zhao},\n  year={2025},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  url={https://doi.org/10.1109/TGRS.2025.3554862},\n  doi={10.1109/TGRS.2025.3554862}\n}",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://h-chen.com/assets/paper/2025/FusDreamer_Label-Efficient_Remote_Sensing_World_Model_for_Multimodal_Data_Classification.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "FusDreamer 完整架构：HSI/LiDAR 潜空间生成、属性文本与 CLIP 编码、语义一致性投影，以及噪声/分类/一致性联合优化。",
+          "verificationNote": "核对同题名正式 IEEE 排版 PDF 第 3 页 Figure 1、卷 63、5702314、DOI 与全部五作者；保留全部输入、模块、损失、连线和右侧图例。作者公开副本与代码 README 相符，未以分类结果图替代框架。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              2473,
+              3200
+            ],
+            "pixelBox": [
+              190,
+              225,
+              2295,
+              1115
+            ],
+            "renderCommand": "pdftoppm -f 3 -singlefile -scale-to 3200 -png"
+          },
+          "path": "figures/fusdreamer/framework-network.png",
+          "width": 2105,
+          "height": 890,
+          "verifiedAt": "2026-10-07",
+          "sha256": "016fd138d73f5af54f579cf9245687139f78fb633cb09f2bf5d569f0d299a446",
+          "attribution": "Jinping Wang, Weiwei Song, Hao Chen, Jinchang Ren, Huimin Zhao · TGRS 2025"
+        }
+      ]
     }
   ],
   "datasets": [

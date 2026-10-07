@@ -17,7 +17,7 @@
 
 ## 当前状态
 
-- 190 篇论文、13 个主分类、6 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX。
+- 192 篇论文、13 个主分类、6 个资源入口。图谱、论文库、资源、指南；年份范围/单边/单年及出版来源筛选；URL 保存筛选和详情。出版全名、状态、DOI、BibTeX。
 - 浅色全宽首屏：交互合成高光谱点云，自然色/单波段/几何、450–950 nm、旋转/复位/材料选择；12,348 点，响应为概念示意。用户拒绝左侧大字、深色、摄影和抽象装饰。
 - 图谱默认「领域图与时间轴」：采集、重建、理解三列静态全景，13 个方向直接展示任务提示、输入/目标、总篇数与阶段篇数，主题配色及概念线图区分分组。点击方向跳至下方方向×年代时间轴，标题看详情、篇数就地展开。无需拖拽、缩放、横向或内部滚动；手机纵向排版，每行附年代标签。保留方向总览、时间矩阵、全部论文与年度 SVG；共用筛选。分组不表示方法继承，阶段等宽不表示时长；篇数仅表示收录分布。
 - 框架图详情支持本地图、高清打开、图号、PDF 页码、原始来源及作者归属；未检索、待人工补充、全文未见独立框架图分别展示。
@@ -27,6 +27,6 @@
 - `src/data/catalog.json`：论文、原始来源、核验状态和 frameworkFigures；`public/figures/<paper-id>/`：原图。
 - `research/figures.json`：全部论文按年份倒序的续接清单、已核验图、尝试与失败原因；`research/figures.py`：init/queue/add/attempt，即时逐张保存；`research/figures.md`：操作说明。
 - `src/App.tsx`、`src/styles.css`：页面与详情；`src/SpectralScene.tsx`、`src/spectral-scene.css`：首屏；`src/AtlasOverview.tsx` / `src/atlas-overview.css`、`src/DirectionOverview.tsx`、`src/TimelineOverview.tsx`、`src/TimelineRoutes.tsx`、`src/ResearchMap.tsx`：图谱。
-- 框架图累计 135 篇、160 张；45 篇需全文/人工补图、10 篇全文无独立框架。JSTARS 融合候选待核验，旧缺图来源详见交接。开放标签不代表取得原图，不据作者章节判正式论文无框架。
-- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；190 篇全部初查，无 pending；45 篇缺图仍可重试。新增 Ghost HS3D LiDAR（arXiv），18 页全文及原理/系统图核验；GHz 点吞吐不等于完整全谱帧率，光谱需多次相关。Fiducial Mapping 仅两个样本、无独立三维真值；CMFNet 为栅格分类。MS-ALS 更正稿待核验。
+- 框架图累计 136 篇、161 张；46 篇需全文/人工补图、10 篇全文无独立框架。JSTARS 融合候选待核验，旧缺图来源详见交接。开放标签不代表取得原图，不据作者章节判正式论文无框架。
+- 交接见 `research/literature-handoff.md`、`research/framework-handoff.md`；192 篇全部初查，无 pending；46 篇缺图可重试。新增 FRGFNet 与 FusDreamer（TGRS 2025，相关栅格分类），后者正式全文/代码核验并保存完整 Figure 1，前者缺全文原图。Ghost LiDAR 的 GHz 吞吐不等于全谱帧率；Fiducial Mapping 无独立三维真值；MS-ALS 更正稿待核验。
 - 文献调研见 `research/survey.json`、`research/README.md`：IGARSS 候选待原始摘要与版本核验；RSE 两篇冠层导数待全文光谱范围核验，2026 叶密度论文登记未来卷期不代表在线日期。臭氧层析正文仅二维水平分布，保留背景；专业期刊及引文追溯未完成。H×W×B 不等于三维几何；高度辅助二维分类与真实光谱点云区分。
