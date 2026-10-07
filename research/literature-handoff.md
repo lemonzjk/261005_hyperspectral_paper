@@ -87,3 +87,7 @@
 ## CVPR 2023 原始摘要筛查（2026-10-07）
 
 逐篇核验余下十篇 CVPR 2023 候选官方摘要：八篇 excluded_scope，MethaneMapper 与宽波段照明设计两篇保留 background_scope；本轮没有新增网站论文。CASSI 的 3D spectral cube 为 H×W×B，B 不是 xyz 深度；Meta-Explore/BASiS 的 spectral 分别是 Fourier/图特征空间。RGB–热红外视频分割仅有时间上下文，不能称三维光谱场景理解。两篇背景的摘要未定义几何任务，结论仅限摘要级证据，后续新全文证据允许复核。完整官方摘要、来源、状态与逐篇理由见 sources/cvpr2023-scope-review-2026-10-07.json。CVPR 待审候选仍有 87 篇；ICCV/ECCV、专业期刊与引文追溯仍未完成。
+
+## CVPR 2024 原始摘要与轴定义核验（2026-10-07）
+
+逐篇复核余下十六篇候选，均 excluded_scope；未新增网站论文。In2SET 的 11 页与 S2MAE 的 10 页官方全文另核对输入定义、方法及实验：其 3D 为两空间维加光谱，不是 xyz。FastMAC 的几何配准是真的，但 spectral 为图信号频率；FINER 与 Batch Normalization 的 spectral bias 是坐标网络频率，不是波长场景。详细摘要、理由、两份原稿哈希与定义线索见 sources/cvpr2024-scope-review-2026-10-07.json。CVPR 尚有 71 篇待审；全文追溯另发现 Simultaneous Depth and Spectral Imaging With a Cross-Modal Stereo System，TCSVT 28(3):812–817（2018），DOI 10.1109/TCSVT.2016.2616374。In2SET 引文写 2016，作者机构记录为正式卷年 2018，版本/全文/框架仍待核验，不据引文年份直接入库。
