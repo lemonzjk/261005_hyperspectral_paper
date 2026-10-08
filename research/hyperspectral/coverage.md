@@ -70,6 +70,7 @@
 | Remote Sensing of Environment | 2002 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；189 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 189 / 13 / 11 | 189登记题名六词13命中：7收录、4排除、2待核验；出版社全量未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；TIMS Etna/膨胀黏土完整原摘要或全文受限；其他关键词/全量摘要/引文、全文实验与版本差异尚未处理 |
 | Remote Sensing of Environment | 2002 | imaging spectrom、imaging spectroscop、narrowband、narrow-band、spectral mixture、endmember、atmospheric correction、radiometric calibration、spectral unmixing；复用rows=1000一页完整189登记题名，无条数截断；出版社年度全量尚未证明 | 189 / 5 / 3 | 九任务词5命中：新增1、排除2、待核验2；旧玉米候选另收录1 | CASI评论原文及森林色素完整原摘要受限；出版社全部目录、全量摘要、其他词与引文仍未完成 |
 | Optics Letters | 2008 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，2 页；1032 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 1032 / 4 / 3 | 1032登记题名两页六词4命中：新增2、排除1、待核验1；出版社全量未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Luo体全息成像实际光谱采样与高光谱关系、作者PDF访问待核验；两新增全文/原图、版本差异与资源许可待查 |
+| Optics Letters | 2009 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，2 页；1309 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 1309 / 7 / 7 | 1309登记题名两页六词7命中闭环：新增4、排除3；出版社年度全量未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；四新增全文、原图、代码/数据/许可和版本关系待核验；多光谱排除项可随新证据重审 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -109,7 +110,7 @@
 | Light: Science & Applications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Laser & Photonics Reviews | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Photonics Research | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| Optics Letters | journal | 最早可用目录至 2026 | 2007 Crossref 登记题名成像任务词扫描及 4 候选处理；出版社全量目录未证明 |
+| Optics Letters | journal | 最早可用目录至 2026 | 2007–2009年度Crossref登记题名六成像词已扫描；2008有待核验候选；出版社全量、其他年份/关键词未完成 |
 | Nature Communications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Nature Methods | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | arXiv | preprint | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -216,6 +217,8 @@
   阅读边界：九任务词完整189题名复扫5命中：TCARI/OSAVI原PDF收录、两多光谱原摘要排除、评论/森林2待核验。旧玉米完整原摘要收录，另两旧候选原摘要仍受限。2新增均非全文阅读；首图逐张目视为结果曲线，不当框架。
 - 2026-10-08 / ol-2008-crossref-optical-review：新增 2，更新 0，去重 0，排除 1，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：1032不同DOI与查询登记总数一致，rows1000两页逐题名六词4命中。2原始出版社摘要收录、1完整摘要排除、1作者PDF第一页范围未定。新增不是全文阅读；双光子密集激发扫描与九元素粗子集分别记录。原图/PDF受限，不以实验结果图或作者实验室后续照片冒充框架。
+- 2026-10-08 / ol-2009-crossref-optical-review：新增 4，更新 0，去重 0，排除 3，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：1309登记DOI两页六成像词逐题名扫描；7命中均读完整原始摘要。收录3直接HSI与1明确HSI关系的MSI分解。NTF作者PDF第一页索引只作关系证据，3D为张量阶数；量子点断层仅摘要数值结果。未阅读全文，原图订阅/验证页/作者证书错误逐项保留。
 
 ## 未解决缺口
 
@@ -237,3 +240,4 @@
 - RSE2002登记189题名六词13命中：累计收录7、排除4、待核验2（TIMS Etna、膨胀黏土原摘要不完整）。两机构PDF与已接收2001/正式2002版本边界留证。出版社年度完整性及其他词、全量摘要、引文仍未完成。
 - RSE2002九任务词5命中：TCARI/OSAVI收录1、排除2、CASI评论及森林色素2待核验；与六成像词并行，不能当年度所有论文覆盖。TCARI正式PDF已存，仅读摘要/局部方法；全文实验与资源待查。
 - OL2008登记1032题名两页六词4命中：新增HS-FTS与内源双光子2、排八通道系统1、Luo体全息1待范围/全文；原图与全文受限。双光子2008 BWG7会议摘要版本关系待核验，作者含额外Roman Stolper，不能自动合并。出版社年度全量/全量摘要/其他词与引用链仍待补。
+- OL2009六词登记题名7候选已闭环，4新增均非全文阅读。出版社年度全量/全量摘要/任务词仍未完成；四篇原图及资源、NTF最终PDF、会议版本关系待核验。
