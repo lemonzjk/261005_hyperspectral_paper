@@ -3796,17 +3796,17 @@
         "spectral unmixing"
       ],
       "url": "https://api.crossref.org/journals/1545-598X/works",
-      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审32条；余34项pending，非年度系统检索完成。",
+      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审33条；余33项pending，非年度系统检索完成。",
       "titleCount": 572,
       "candidateCount": 66,
-      "reviewedCount": 32,
+      "reviewedCount": 33,
       "status": "partial",
       "statusLabel": "指定题名组扫描完成，候选核验进行中",
       "sourceSnapshot": "sources/grsl-2015-optical-title-matches.json",
       "gaps": [
         "登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。",
         "出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。",
-        "本组剩余34候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
+        "本组剩余33候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
         "本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。"
       ]
     },
@@ -3877,7 +3877,8 @@
       "sourceSnapshot": "sources/whispers2014-crnn-official-abstract-cache.json",
       "gaps": [
         "技术日程全94页及出版社论文目录/DOI尚未全量核对。",
-        "原四页会议稿/原图与期刊直接扩展关系、实验差异待核验。"
+        "原四页会议稿/原图与期刊直接扩展关系、实验差异待核验。",
+        "2026-10-08再次下载官方94页PDF遇SSL EOF；未关闭TLS验证。主办方缓存可读，单篇核验不等于年度扫描；访问证据sources/whispers2014-program-repeat-access.json。"
       ]
     }
   ],
@@ -11104,10 +11105,10 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现",
+      "decision": "included",
+      "reason": "原文对象为光学高光谱影像，仅进入高光谱总库。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-sfsd-primary-decisions.json",
+      "readingBoundary": "Pengfeng Xiao本人2014-12-22上传期刊原排版完整摘要、§II及§III A–B局部已读；未阅读全文或取得本地PDF。",
       "accessReview": {
         "checkedAt": "2026-10-08",
         "primaryUrl": "https://ieeexplore.ieee.org/document/6842584",
@@ -11127,7 +11128,9 @@
           "evidencePath": "research/hyperspectral/sources/grsl2015-remaining39-hal-doi-query.json",
           "note": "单一机构存档精确DOI未命中，不表示无原稿、不提升核验、不排除。"
         }
-      ]
+      ],
+      "paperId": "sfsd-frequency-similarity-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "A New Sparsity-Based Band Selection Method for Target Detection of Hyperspectral Image",
@@ -11541,8 +11544,8 @@
       "discoveryReview": {
         "checkedAt": "2026-10-08",
         "status": "needs_primary_abstract",
-        "evidencePath": "research/hyperspectral/sources/grsl2015-representation-hal-attempts.json",
-        "note": "HAL题名查询零结果；二手摘要只作发现，原摘要/图仍待核验。"
+        "evidencePath": "research/hyperspectral/sources/grsl2015-eca-primary-access-cache.json",
+        "note": "ECA仅二手摘要和第三方工具箱线索；原IEEE机器人验证，未取得论文原文或作者机构完整摘要，继续pending，不按聚类二手概括升级。"
       },
       "sourceChecks": [
         {
@@ -13972,6 +13975,26 @@
         "GRSL光谱组34待核验、压缩组4；出版社目录及其他词/摘要未全量。",
         "WHISPERS2014目前仅单篇追踪；94页日程与出版社目录需全量扫描及逐篇筛选。",
         "两篇原PDF/方法图与代码数据未知，KCRT原摘要仍待访问。"
+      ]
+    },
+    {
+      "id": "grsl-2015-sfsd-original-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "grsl-2015-crossref-optical-titles"
+      ],
+      "new": 1,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 33,
+      "categoriesAdded": 1,
+      "figuresAdded": 0,
+      "readingBoundary": "SFSD作者本人上传完整期刊摘要与§II/§III局部；未阅读全文。频域处理对象仍为光学高光谱；Salinas参考来自全部标注像元，不能称独立泛化测试。",
+      "gaps": [
+        "GRSL光谱组33待核验、压缩组4；年度目录/其他词及摘要未全量。",
+        "原Fig.1/2机制图及PDF403；第二场景、零幅值稳定处理、代码数据和复现待核验。",
+        "ECA仍待原始摘要；官方WHISPERS PDF重复SSL EOF不影响其他来源推进。"
       ]
     }
   ],

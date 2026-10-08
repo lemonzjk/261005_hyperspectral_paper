@@ -16,8 +16,8 @@
 
 ## 当前状态
 
-- 总库373篇，311篇已复核分类，62篇暂定分类，146标签（任务70/方法60/应用16）。三维214篇不变；总库 ?collection=hyperspectral。
-- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱261、多光谱89、基础23。
+- 总库374篇，311篇已复核分类，63篇暂定分类，147标签（任务70/方法61/应用16）。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱262、多光谱89、基础23。
 - CVPR2013–2022、ICCV奇数年2013–2021、NeurIPS2023五词147题名命中闭环：增60重12排75；非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。19篇/41个arXiv日期核验；Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -26,11 +26,11 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词闭环增17排14待4。2019官方四期52项（51研究+1奖公告）逐题名/起始页匹配；另16行政记录及1未列目录索引。51研究项均尝试原来源，34已审17待核验；5医学项仅摘要片段，EPFL仅官方缓存；非年度HSI全量。Monash错标2009按正式2019。Fourier DOI、MSVI真值、正式稿差异待查。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖373篇、288张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖374篇、288张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt。
-- GRSL2015登记572题名：压缩词26命中增2重1排19待4；光谱词66命中已审32、待34，增28重3排1。最大间隔分类仅IEEE原摘要，新增不平衡标签。CRNN2015全文/Fig.3已核验；WHISPERS2014官方日程第79页原摘要核验，关联同族；会议全文/扩展关系及实验差异待查。94页日程未全量扫描，PDF下载受限。KCRT仍待原摘要；续审34项，补出版社目录/词/摘要。
+- GRSL2015登记572题名：压缩组26命中增2重1排19待4；光谱组66命中已审33、待33，增29重3排1。SFSD摘要/局部核验，新增频域相似性标签；Salinas类参考取全部标注均值，隔离待查，原图403。CRNN2015全文与WHISPERS2014摘要关联同族，会议全文/扩展关系待查。94页日程未全量扫描，下载SSL EOF；KCRT/ECA待原摘要。续审33项，补目录/词/摘要。

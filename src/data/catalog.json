@@ -39452,6 +39452,92 @@
         "sourceUrl": "https://ieeexplore.ieee.org/document/8077601/",
         "checkedAt": "2026-10-08"
       }
+    },
+    {
+      "id": "sfsd-frequency-similarity-2015",
+      "shortTitle": "SFSD",
+      "title": "Spectral Similarity Measure Using Frequency Spectrum for Hyperspectral Image Classification",
+      "authors": "Ke Wang, Bin Yong, Xingfa Gu, Pengfeng Xiao, Xueliang Zhang",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2014.2329183",
+      "representation": "光学光谱作DFT，取从直流开始的少量低阶幅值分量，将目标与参考幅值绝对差逐项除以目标幅值后求和，再以最小差异分配类别。",
+      "tags": [
+        "land-cover-classification",
+        "frequency-domain-spectral-similarity"
+      ],
+      "summary": "光学光谱作DFT，取从直流开始的少量低阶幅值分量，将目标与参考幅值绝对差逐项除以目标幅值后求和，再以最小差异分配类别。",
+      "input": "高光谱像元的光学光谱与类别/材料参考光谱。",
+      "output": "光谱相似性差异及像元分类；傅里叶频率为光学曲线的表示，不是另一个非光学研究对象。",
+      "mechanism": "光学光谱作DFT，取从直流开始的少量低阶幅值分量，将目标与参考幅值绝对差逐项除以目标幅值后求和，再以最小差异分配类别。",
+      "readingNote": "Pengfeng Xiao本人2014-12-22上传期刊原排版完整摘要、§II及§III A–B局部已读；未阅读全文或取得本地PDF。",
+      "paper": "https://doi.org/10.1109/lgrs.2014.2329183",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_sections",
+      "citation": "@article{sfsd_frequency_similarity_2015,\n  title = {Spectral Similarity Measure Using Frequency Spectrum for Hyperspectral Image Classification},\n  author = {Ke Wang and Bin Yong and Xingfa Gu and Pengfeng Xiao and Xueliang Zhang},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {1},\n  pages = {130--134},\n  doi = {10.1109/lgrs.2014.2329183}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "frequency-domain-spectral-similarity"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原文对象为光学高光谱影像，仅进入高光谱总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用光学波长曲线的傅里叶幅值比较材料/地物光谱，减少直接波段距离的限制？",
+        "datasets": "原摘要：USGS光谱库和两幅高光谱遥感影像；已读局部确认Salinas Valley 1998 AVIRIS，完整217×512/220波段、0.4–2.45 μm/3.7 m；实验取83×86六类子区。另一幅名称及具体版本/下载待核验。",
+        "experimentSetting": "原§II/§III A–B局部：以五种USGS光谱分析幅值与能量，示例重采样间隔0.002 μm、1385点；参数N按光谱半长的1/15取整。Salinas每类参考为真值图全部标注像元光谱均值，然后逐像元最小SFSD分类；比较SAM/SID/SCM/SGA/NED/ED/StS/SsS。原表未视觉核验，不抄性能数字。",
+        "conclusions": "原摘要和局部报告在所选光谱/影像中改善判别与分类；不把能量保留或在场景内分类当跨场景泛化证明。",
+        "limitations": "Salinas类参考使用全部标注像元均值，未给独立训练/测试隔离，应记录参考与待分类样本可能重叠，不能称独立测试。Eq.(5)分母为目标幅值，零/近零幅值的稳定处理及对称性未核验；高频截断可能丢失窄吸收特征。代码/数据、完整原表、第二场景及复现待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/264743770_Spectral_Similarity_Measure_Using_Frequency_Spectrum_for_Hyperspectral_Image_Classification",
+            "checkedAt": "2026-10-08",
+            "level": "期刊原排版完整摘要及明确局部，未阅读全文",
+            "supports": [
+              "光学光谱作DFT，取从直流开始的少量低阶幅值分量，将目标与参考幅值绝对差逐项除以目标幅值后求和，再以最小差异分配类别。",
+              "Pengfeng Xiao本人2014-12-22上传期刊原排版完整摘要、§II及§III A–B局部已读；未阅读全文或取得本地PDF。",
+              "原§II/§III A–B局部：以五种USGS光谱分析幅值与能量，示例重采样间隔0.002 μm、1385点；参数N按光谱半长的1/15取整。Salinas每类参考为真值图全部标注像元光谱均值，然后逐像元最小SFSD分类；比较SAM/SID/SCM/SGA/NED/ED/StS/SsS。原表未视觉核验，不抄性能数字。",
+              "Salinas类参考使用全部标注像元均值，未给独立训练/测试隔离，应记录参考与待分类样本可能重叠，不能称独立测试。Eq.(5)分母为目标幅值，零/近零幅值的稳定处理及对称性未核验；高频截断可能丢失窄吸收特征。代码/数据、完整原表、第二场景及复现待核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2014.2329183",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记书目，与原排版核对",
+            "supports": [
+              "Spectral Similarity Measure Using Frequency Spectrum for Hyperspectral Image Classification",
+              "Ke Wang, Bin Yong, Xingfa Gu, Pengfeng Xiao, Xueliang Zhang",
+              "12(1):130-134, 2015"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "sfsd-frequency-similarity-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2014.2329183",
+            "doi": "10.1109/lgrs.2014.2329183",
+            "year": 2015,
+            "relation": "正式2015年1月12(1):130–134；作者2014-12-22上传及版权2014不改正式卷期年份。2016同作者频域相似性论文仅发现相关工作，未核验完整版本/方法关系，不合并或沿用实验。"
+          }
+        ],
+        "methodFamilyId": "sfsd-frequency-similarity-2015"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "原Fig.1/2在131页、PDF第2页，低阶谐波/幅值能量机制示例；图注已核验，PDF403未取得图像，不声称完整框架图。",
+        "sourceUrl": "https://www.researchgate.net/publication/264743770_Spectral_Similarity_Measure_Using_Frequency_Spectrum_for_Hyperspectral_Image_Classification",
+        "checkedAt": "2026-10-08"
+      }
     }
   ],
   "datasets": [
@@ -42610,7 +42696,8 @@
         "kfkt-hyperspectral-classification-2013",
         "crnn-lrnn-classification-2015",
         "maximum-margin-imbalanced-hsi-2015",
-        "crnn-whispers-2014"
+        "crnn-whispers-2014",
+        "sfsd-frequency-similarity-2015"
       ],
       "history": [
         {
@@ -44170,6 +44257,26 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "依出版社原摘要形成类别不平衡方法维度，具体实现保留待全文核验。"
+        }
+      ]
+    },
+    {
+      "id": "frequency-domain-spectral-similarity",
+      "name": "频域光谱相似性",
+      "dimension": "method",
+      "definition": "将光学波长曲线转换为傅里叶等频域表征，再以幅值等分量定义相似性、距离或分类判据；区别光谱调制照明、空间频域处理及与光学高光谱无关的spectral研究。",
+      "status": "provisional",
+      "color": "#95b0af",
+      "createdAt": "2026-10-08",
+      "rationale": "SFSD原§II明确以光学高光谱曲线的DFT幅值构造分类距离，与既有高频光谱调制照明标签不同。",
+      "evidencePaperIds": [
+        "sfsd-frequency-similarity-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "按原文波长曲线表征机制形成标签，不按frequency/spectral字面排除光学高光谱论文。"
         }
       ]
     }
