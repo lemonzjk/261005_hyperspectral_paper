@@ -1,0 +1,212 @@
+{
+  "checkedAt": "2026-10-08",
+  "sourceInventory": "grsl-2015-crossref-titles.json",
+  "decisions": [
+    {
+      "candidate": {
+        "title": "FSPE: Visualization of Hyperspectral Imagery Using Faithful Stochastic Proximity Embedding",
+        "doi": "10.1109/lgrs.2014.2324631",
+        "url": "https://doi.org/10.1109/lgrs.2014.2324631",
+        "venue": "GRSL",
+        "year": 2015,
+        "searchId": "grsl-2015-crossref-optical-titles",
+        "discoveredAt": "2026-10-08",
+        "decision": "included",
+        "reason": "原始摘要确认直接高光谱对象；卷期年份与来源版本分别核验。",
+        "evidencePath": "research/hyperspectral/sources/grsl2015-early-decisions.json",
+        "readingBoundary": "读机构原稿完整原始摘要及注明§III/§IV/§V、图注索引局部；未完整逐页读图，不标全文已读。",
+        "paperId": "fspe-visualization-2015",
+        "verifiedAt": "2026-10-08"
+      },
+      "evidence": [
+        {
+          "url": "https://cronfa.swan.ac.uk/Record/cronfa18053/Download/0018053-15042015121236.pdf",
+          "checkedAt": "2026-10-08",
+          "level": "原始摘要及注明局部方法/实验/图注",
+          "supports": [
+            "以随迭代缩小的投影邻域修正随机邻近嵌入，减少原空间相距较远却显示相近颜色的点对；逐像素相关指标显示颜色可靠性。",
+            "原稿Fig.2及§V：Moffett Field的12个高光谱图块；精确数据下载、波段预处理待核验。",
+            "原稿索引§V与图注局部：对比PCA、ISOMAP、LLE、SPE和CDA；全局/逐像素距离相关指标，CPU/GPU实现及局部增强；完整配置和计时包含范围待核验。",
+            "降至三维颜色空间仍有固有信息损失，FSPE只减轻误导性颜色；作者将改进逐像素加权指标列为未来工作。代码入口受TLS/缓存错误，许可与复现未核验。",
+            "仓储封面写2014；实际论文页眉2015年1月12(1):18–22，与Crossref登记一致。2014版权/接受年份不替代正式卷期；online日期待核验。"
+          ]
+        },
+        {
+          "url": "https://api.crossref.org/journals/1545-598X/works",
+          "checkedAt": "2026-10-08",
+          "level": "登记书目，非摘要",
+          "supports": [
+            "FSPE: Visualization of Hyperspectral Imagery Using Faithful Stochastic Proximity Embedding",
+            "Safa A. Najim, Ik Soo Lim, Peter Wittek, Mark W. Jones",
+            "12(1):18-22，2015",
+            "10.1109/lgrs.2014.2324631"
+          ]
+        },
+        {
+          "url": "https://cronfa.swan.ac.uk/Record/cronfa18053/Download/0018053-15042015121236.pdf",
+          "checkedAt": "2026-10-08",
+          "level": "原稿参考文献[18]，代码地址未访问成功",
+          "supports": [
+            "原稿给出https://sites.google.com/site/fspedr/；入口、许可、代码内容及运行待核验。"
+          ]
+        }
+      ],
+      "primaryEvidencePath": "research/hyperspectral/sources/grsl2015-fspe-svmsub-primary-index.json",
+      "figureSearch": {
+        "status": "needs_access",
+        "url": "https://cronfa.swan.ac.uk/Record/cronfa18053/Download/0018053-15042015121236.pdf",
+        "note": "已检索原稿Fig.1–6图注，均为相关曲线、数据图块、显示结果/局部增强或计时，未发现独立框架；本地PDF多路线TLS失败，图版待目视确认。"
+      }
+    },
+    {
+      "candidate": {
+        "title": "Subspace-Based Support Vector Machines for Hyperspectral Image Classification",
+        "doi": "10.1109/lgrs.2014.2341044",
+        "url": "https://doi.org/10.1109/lgrs.2014.2341044",
+        "venue": "GRSL",
+        "year": 2015,
+        "searchId": "grsl-2015-crossref-optical-titles",
+        "discoveredAt": "2026-10-08",
+        "decision": "included",
+        "reason": "原始摘要确认直接高光谱对象；卷期年份与来源版本分别核验。",
+        "evidencePath": "research/hyperspectral/sources/grsl2015-early-decisions.json",
+        "readingBoundary": "原始PDF完整摘要、方法§II与实验§III/表I–II局部已读；Fig.1图版目视确认，未阅读全文。",
+        "paperId": "svmsub-hyperspectral-2015",
+        "verifiedAt": "2026-10-08"
+      },
+      "evidence": [
+        {
+          "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2015.GRSL.SVMSubspace.pdf",
+          "checkedAt": "2026-10-08",
+          "level": "原始摘要及注明局部方法/实验/图注",
+          "supports": [
+            "从训练样本估计各类别子空间，以类别投影构建非线性特征，再训练线性SVM；子空间用于混合像素和少样本分类。",
+            "原稿§III：AVIRIS Indian Pines 145×145、220波段；另一个200波段版本移除20个噪声波段；与256×256压缩子区实验分别记录。",
+            "原稿§III及表I/II：与经典SVM、MLRsub比较，五折交叉验证，50次Monte Carlo；第一实验共320训练样本，第二实验调整160–800。论文明确仅用光谱特征，未在本稿加入空间MRF。",
+            "单场景有限对照，原文将空间信息与更多条件列为未来工作。表II的560样本平均78.20与正文78.92不一致，暂不引用该性能数值。专用代码/数据入口、正式PDF来源差异待核验。",
+            "作者站正式排版PDF页眉2015年2月、12(2):349–353；接受/版权2014单独记录，未核验arXiv。"
+          ]
+        },
+        {
+          "url": "https://api.crossref.org/journals/1545-598X/works",
+          "checkedAt": "2026-10-08",
+          "level": "登记书目，非摘要",
+          "supports": [
+            "Subspace-Based Support Vector Machines for Hyperspectral Image Classification",
+            "Lianru Gao, Jun Li, Mahdi Khodadadzadeh, Antonio Plaza, Bing Zhang, Zhijian He, Huiming Yan",
+            "12(2):349-353，2015",
+            "10.1109/lgrs.2014.2341044"
+          ]
+        }
+      ],
+      "primaryEvidencePath": "research/hyperspectral/sources/grsl2015-sssvm.pdf",
+      "figureSearch": {
+        "status": "no_framework",
+        "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2015.GRSL.SVMSubspace.pdf",
+        "note": "原作者站五页PDF仅有Fig.1（第4页，分类结果图）及表I/II，已目视确认Fig.1为输出地图，未见独立框架或算法图；不作为方法图保存。"
+      }
+    }
+  ],
+  "pendingAccessReview": [
+    {
+      "title": "Kernel Collaborative Representation With Tikhonov Regularization for Hyperspectral Image Classification",
+      "doi": "10.1109/lgrs.2014.2325978",
+      "url": "https://doi.org/10.1109/lgrs.2014.2325978",
+      "venue": "GRSL",
+      "year": 2015,
+      "searchId": "grsl-2015-crossref-optical-titles",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
+      "readingBoundary": "仅题名发现",
+      "accessReview": {
+        "checkedAt": "2026-10-08",
+        "primaryUrl": "https://ieeexplore.ieee.org/document/6828714",
+        "sourceResolution": "原始Crossref响应resource.primary.URL，非猜测文献号",
+        "status": "needs_primary_abstract",
+        "evidencePaths": [
+          "research/hyperspectral/sources/grsl2015-first-ieee-index-access.json",
+          "research/hyperspectral/sources/grsl2015-early-primary-access.json"
+        ],
+        "note": "出版社返回JavaScript验证/页脚/缓存失败或HTTP418；二手发现未提升阅读核验状态。"
+      }
+    },
+    {
+      "title": "Spectral Similarity Measure Using Frequency Spectrum for Hyperspectral Image Classification",
+      "doi": "10.1109/lgrs.2014.2329183",
+      "url": "https://doi.org/10.1109/lgrs.2014.2329183",
+      "venue": "GRSL",
+      "year": 2015,
+      "searchId": "grsl-2015-crossref-optical-titles",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
+      "readingBoundary": "仅题名发现",
+      "accessReview": {
+        "checkedAt": "2026-10-08",
+        "primaryUrl": "https://ieeexplore.ieee.org/document/6842584",
+        "sourceResolution": "原始Crossref响应resource.primary.URL，非猜测文献号",
+        "status": "needs_primary_abstract",
+        "evidencePaths": [
+          "research/hyperspectral/sources/grsl2015-first-ieee-index-access.json",
+          "research/hyperspectral/sources/grsl2015-early-primary-access.json"
+        ],
+        "note": "出版社返回JavaScript验证/页脚/缓存失败或HTTP418；二手发现未提升阅读核验状态。"
+      }
+    },
+    {
+      "title": "A New Sparsity-Based Band Selection Method for Target Detection of Hyperspectral Image",
+      "doi": "10.1109/lgrs.2014.2337957",
+      "url": "https://doi.org/10.1109/lgrs.2014.2337957",
+      "venue": "GRSL",
+      "year": 2015,
+      "searchId": "grsl-2015-crossref-optical-titles",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
+      "readingBoundary": "仅题名发现",
+      "accessReview": {
+        "checkedAt": "2026-10-08",
+        "primaryUrl": "https://ieeexplore.ieee.org/document/6871325",
+        "sourceResolution": "原始Crossref响应resource.primary.URL，非猜测文献号",
+        "status": "needs_primary_abstract",
+        "evidencePaths": [
+          "research/hyperspectral/sources/grsl2015-first-ieee-index-access.json",
+          "research/hyperspectral/sources/grsl2015-early-primary-access.json"
+        ],
+        "note": "出版社返回JavaScript验证/页脚/缓存失败或HTTP418；二手发现未提升阅读核验状态。"
+      }
+    },
+    {
+      "title": "Collaborative-Representation-Based Nearest Neighbor Classifier for Hyperspectral Imagery",
+      "doi": "10.1109/lgrs.2014.2343956",
+      "url": "https://doi.org/10.1109/lgrs.2014.2343956",
+      "venue": "GRSL",
+      "year": 2015,
+      "searchId": "grsl-2015-crossref-optical-titles",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
+      "readingBoundary": "仅题名发现",
+      "accessReview": {
+        "checkedAt": "2026-10-08",
+        "primaryUrl": "https://ieeexplore.ieee.org/document/6877647",
+        "sourceResolution": "原始Crossref响应resource.primary.URL，非猜测文献号",
+        "status": "needs_primary_abstract",
+        "evidencePaths": [
+          "research/hyperspectral/sources/grsl2015-first-ieee-index-access.json",
+          "research/hyperspectral/sources/grsl2015-early-primary-access.json"
+        ],
+        "note": "出版社返回JavaScript验证/页脚/缓存失败或HTTP418；二手发现未提升阅读核验状态。"
+      }
+    }
+  ],
+  "gaps": [
+    "GRSL2015该光谱题名组剩60候选；本批KCRT/SFSD/稀疏波段/CRNN原摘要受限，待其他原始路线。",
+    "FSPE代码入口、图版本地文件、仓储2014与2015卷期差异；SVMsub表II/正文560样本性能数字冲突和专用代码/正式版差异待查。"
+  ]
+}
