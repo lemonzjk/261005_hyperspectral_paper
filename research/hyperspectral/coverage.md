@@ -117,6 +117,8 @@
 | WHISPERS | 2014 | recursive orthogonal vector projection、multilayer structured NMF、Ritz endmember number、binary partition tree local unmixing；物理61页四题名；BPT摘要续62页但不把后续页新题名视为已筛。累计45–61页55条51入2排2待，另CRNN。 | 4 / 4 / 4 | 四条闭环：2公开稿全文/2完整摘要；NMF同方法族1关联、BPT原图1；年度未完成 | ROVP及Ritz正式原PDF/原图与实验待核；机构403、出版页面202空白。；NMF会议四页稿缺完整层数/初始化/统计，期刊扩展声明及版本实验差异待核。；BPT原稿Fig.5 c=100正文对c=200图注冲突；Cuprite子集尺寸/波段未知，未移用NMF参数。；两公开稿与出版社最终版逐字差异、代码/数据缺口待核。 |
 | WHISPERS | 2014 | variational Bayes joint sparse abundance、intrinsic dimensionality residual change point、ant colony band selection；物理第62页三新题名全部；累计45–62页58条54入2排2待，另CRNN。年度174条未审完。 | 3 / 3 / 3 | 三条闭环：1作者稿全文/2完整摘要；维数评估方法标签1，原图缺口逐篇 | ID评估及ACO-BS两原PDF/原图/实验未知；出版页202空白。；近题名GRSL2014 DOI10.1109/lgrs.2014.2317352三作者与会议四作者，关系/方法内容待另核。；VB已知端元、同质窗口及真实无丰度真值边界；没有框架图，Algorithm1为伪代码；正式差异/代码/数据/arXiv待核。 |
 | WHISPERS | 2014 | firefly band selection、BFODPSO SVM feature selection、unsupervised deep feature extraction、wrapper intermediate spectral importance；物理63页四题名全部，wrapper跨64摘要已读但64新题名未计；累计45–63页62条58入2排2待，另CRNN。 | 4 / 4 / 4 | 四条完整摘要闭环；两个暂定方法标签；会议原稿/原图与近题名关系待核 | 四篇原会议PDF、框架/方法图及具体实验/专用代码数据未核；失败类型和入口已存。；Firefly两稿作者不同；FODSPO原题名对BFODPSO摘要保留，选择对象待核。；无监督特征不当无标签分类；2016 TGRS/arXiv1511.08131关系和会议Gustavo/后期Gustau拼写待核。；Wrapper与IWCIM2014 DOI10.1109/iwcim.2014.7008806关系/内容差异待另查。 |
+| WHISPERS | 2014 | EGO parametric reduction、ARCHER spatial-spectral features pansharpening、SCOPE GPP fluorescence sensitivity；物理64页3新题名全部，SCOPE摘要续65页；65新题名尚未计。累计45–64页65条61入2排2待，另CRNN。 | 3 / 3 / 3 | 三个会议原摘要闭环；年度目录仍未审完 | 三篇会议原PDF/原图和具体实验/代码数据待核。；EGO机构书目无附件；ARCHER相关学位全文未作会议版本证据。；SCOPE2014原模型2009单列基础工作，摘要跨页；五页会议不误记四页。 |
+| Biogeosciences | 2009 | SCOPE soil canopy radiance photosynthesis fluorescence energy balance；引用追溯单篇原方法，未扫描2009年度目录；原文21页仅读摘要及第3页。 | 1 / 1 / 1 | 原模型摘要/局部方法与图1已核，年度未检索 | 剩余正文/定量实验、原版代码和数据待核；Biogeosciences年度全量待检索。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -150,7 +152,7 @@
 | Remote Sensing of Environment | journal | 最早可用目录至 2026 | 2001年度Crossref登记集合六成像词已扫，4收录/2待核验；出版社全量、其他年/词未完成 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IGARSS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| WHISPERS | specialist_conference | 最早可用目录至 2026 | 2014正式目录174条，最新题名关联59、仅已追踪决定4、未审111；原始目录与动态进度分开保存。官方PDF45–63页62条58入2排2待及另CRNN；年度筛选未完成，其他年份待系统检索。 |
+| WHISPERS | specialist_conference | 最早可用目录至 2026 | 2014正式目录174条，最新题名关联62、仅已追踪决定4、未审108；原始目录与动态进度分开保存。官方PDF45–64页65条61入2排2待及另CRNN；年度筛选未完成，其他年份待系统检索。 |
 | Optica | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Nature Photonics | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Light: Science & Applications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -167,6 +169,7 @@
 | CVPR Workshops | workshop | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | JSAP-OSA Joint Symposia | specialist_conference_abstract | 最早可用目录至 2026 | 2014单篇同题名摘要定向核验并归并版本；年度目录未检索，不冒充顶会研究论文 |
 | GRSL | specialist_journal | 最早可用目录至 2026 | 见上方单篇/引文核验；其他年度/关键词未检索 |
+| Biogeosciences | specialist_journal | 最早可用目录至 2026 | 2009仅SCOPE原模型单篇追溯；年度未检索 |
 
 ## 已闭环批次
 
@@ -360,6 +363,8 @@
   阅读边界：VB作者四页全文，其余官方完整摘要；三维214篇不变。
 - 2026-10-08 / whispers-2014-feature-selection-page63-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：四篇官方完整原摘要；三维214篇不变。
+- 2026-10-08 / whispers-2014-page64-and-scope-original-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：三篇会议完整摘要；2009原模型摘要及单页方法。三维214篇不变。
 
 ## 未解决缺口
 
