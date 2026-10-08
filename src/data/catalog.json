@@ -44438,6 +44438,287 @@
           "sha256": "f7c9eae738fc67f50ef725e0ea56b774ad4fb4e63ad0d5a39867cb4df779e210"
         }
       ]
+    },
+    {
+      "id": "vb-joint-sparse-unmixing-2014",
+      "shortTitle": "Joint-sparse VB",
+      "title": "A variational Bayes algorithm for joint-sparse abundance estimation",
+      "authors": "Paris V. Giampouras, Konstantinos E. Themelis, Athanasios A. Rontogiannis, Konstantinos D. Koutroumbas",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077560",
+      "representation": "已知端元矩阵的线性混合下，以非负截断Gaussian/Gamma层级先验共享行精度，诱导Student-t行稀疏；mean-field变分Bayes联合估计丰度和精度。",
+      "tags": [
+        "spectral-unmixing",
+        "bayesian-sparse-inference",
+        "joint-sparse-regression"
+      ],
+      "summary": "已知端元矩阵的线性混合下，以非负截断Gaussian/Gamma层级先验共享行精度，诱导Student-t行稀疏；mean-field变分Bayes联合估计丰度和精度。",
+      "input": "滑动方窗中的高光谱像元矩阵与已知端元矩阵Φ。",
+      "output": "非负行稀疏丰度矩阵及噪声/稀疏精度；未另加和为一约束。",
+      "mechanism": "已知端元矩阵的线性混合下，以非负截断Gaussian/Gamma层级先验共享行精度，诱导Student-t行稀疏；mean-field变分Bayes联合估计丰度和精度。",
+      "readingNote": "作者机构四页原PDF全文及第3页Algorithm1版面已核；正式逐字差异待核。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077560",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_author_pdf_full_text_verified",
+      "citation": "@inproceedings{vb_joint_sparse_unmixing_2014,\n  title = {A variational Bayes algorithm for joint-sparse abundance estimation},\n  author = {Paris V. Giampouras and Konstantinos E. Themelis and Athanasios A. Rontogiannis and Konstantinos D. Koutroumbas},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077560}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "bayesian-sparse-inference",
+          "joint-sparse-regression"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学高光谱解混、维数评估或波段选择的专业workshop；仅总库。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何利用相邻高光谱像元的共同稀疏支持估计非负丰度？",
+        "datasets": "作者四页稿：USGS随机12端元合成150×150影像，25个20×20同质区、每像元至多5端元；真实Cuprite图示子区，VCA先提12端元。Cuprite子区尺寸/波段及合成噪声水平未给。",
+        "experimentSetting": "3×3窗口K=9，比较自身K=1与BiICE；合成RMSE/SRE、真实RE/SAM。Gamma超参数ρ/δ/κ/θ设10^-6。模拟用二阶矩≈均值平方并省略重建残差的后验协方差项，非精确后验；正文复杂度O(KN^2)/迭代。",
+        "conclusions": "本同质区域协议中共同稀疏变分估计优于逐像元版及BiICE所列指标；真实只比较重建/SAM，没有丰度真值，不能当真实丰度准确率验证。",
+        "limitations": "共享支持适合同质邻域，边界/异质窗口未充分评测；依赖已知端元、线性混合、i.i.d.Gaussian噪声。作者称无需参数微调但超参数及窗口仍有固定设置；迭代上限/停止阈值、运行时间和统计重复未知。仅作者原稿全文，正式逐字差异/代码/专用数据/arXiv待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方日程物理第62页完整原摘要",
+            "supports": [
+              "已知端元矩阵的线性混合下，以非负截断Gaussian/Gamma层级先验共享行精度，诱导Student-t行稀疏；mean-field变分Bayes联合估计丰度和精度。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077560",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记与官方摘要题名/作者核书目",
+            "supports": [
+              "A variational Bayes algorithm for joint-sparse abundance estimation",
+              "Paris V. Giampouras, Konstantinos E. Themelis, Athanasios A. Rontogiannis, Konstantinos D. Koutroumbas",
+              "正式2014，1–4页；登记创建日期不当发表日期。"
+            ]
+          },
+          {
+            "url": "https://members.noa.gr/tronto/whispers2014.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "作者机构原四页PDF全文",
+            "supports": [
+              "已知端元矩阵的线性混合下，以非负截断Gaussian/Gamma层级先验共享行精度，诱导Student-t行稀疏；mean-field变分Bayes联合估计丰度和精度。",
+              "作者四页稿：USGS随机12端元合成150×150影像，25个20×20同质区、每像元至多5端元；真实Cuprite图示子区，VCA先提12端元。Cuprite子区尺寸/波段及合成噪声水平未给。",
+              "3×3窗口K=9，比较自身K=1与BiICE；合成RMSE/SRE、真实RE/SAM。Gamma超参数ρ/δ/κ/θ设10^-6。模拟用二阶矩≈均值平方并省略重建残差的后验协方差项，非精确后验；正文复杂度O(KN^2)/迭代。",
+              "本同质区域协议中共同稀疏变分估计优于逐像元版及BiICE所列指标；真实只比较重建/SAM，没有丰度真值，不能当真实丰度准确率验证。",
+              "共享支持适合同质邻域，边界/异质窗口未充分评测；依赖已知端元、线性混合、i.i.d.Gaussian噪声。作者称无需参数微调但超参数及窗口仍有固定设置；迭代上限/停止阈值、运行时间和统计重复未知。仅作者原稿全文，正式逐字差异/代码/专用数据/arXiv待核。",
+              "页3Algorithm1为原伪代码，非框架/方法图；Fig.1/2仅场景及实验结果。"
+            ]
+          },
+          {
+            "url": "https://members.noa.gr/tronto/publications.html",
+            "checkedAt": "2026-10-08",
+            "level": "作者机构书目HTTP200精确题名条目和原PDF入口",
+            "supports": [
+              "列四位作者、WHISPERS2014 Lausanne June及whispers2014.pdf；当前条目无专用代码链接，代码仍待核。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "vb-joint-sparse-unmixing-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077560",
+            "doi": "10.1109/whispers.2014.8077560",
+            "year": 2014,
+            "relation": "正式2014四页会议；不同任务/近题名版本不按作者重合自动合并。"
+          },
+          {
+            "id": "vb-joint-sparse-unmixing-2014-author-pdf",
+            "type": "作者机构公开稿",
+            "url": "https://members.noa.gr/tronto/whispers2014.pdf",
+            "year": 2014,
+            "relation": "同题名、四作者及原摘要/四页对应会议；没有独立提交时间证据，未假造arXiv或发布日期。"
+          }
+        ],
+        "methodFamilyId": "vb-joint-sparse-unmixing-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "四页作者原稿全文及第3页Algorithm1版面已核。Fig.1/2仅场景/实验结果，Algorithm1为原伪代码；未含框架/方法图，保留原PDF及图检索原因。",
+        "sourceUrl": "https://members.noa.gr/tronto/whispers2014.pdf",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "id-residual-cpa-evaluation-2014",
+      "shortTitle": "ID RA/CPA evaluation",
+      "title": "Evaluation of intrinsic dimensionality methods using residual and change-point analyses",
+      "authors": "Amin Alizadeh Naeini, Saeid Homayouni, Mohammad Saadatseresht, Hossein Torabzadeh",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077493",
+      "representation": "结合Residual Analysis及Change-Point Analysis选择合理ID候选，再比较已有ID算法输出是否等于或接近候选；本版评估SML与O-GENE-AH。",
+      "tags": [
+        "spectral-dimensionality-reduction",
+        "endmember-number-estimation",
+        "residual-cpa-dimension-evaluation"
+      ],
+      "summary": "结合Residual Analysis及Change-Point Analysis选择合理ID候选，再比较已有ID算法输出是否等于或接近候选；本版评估SML与O-GENE-AH。",
+      "input": "高光谱影像及内在维数算法输出；残差/变化点序列构造待原稿。",
+      "output": "合理内在维数候选与既有估计的评估；与物理端元数对应待核。",
+      "mechanism": "结合Residual Analysis及Change-Point Analysis选择合理ID候选，再比较已有ID算法输出是否等于或接近候选；本版评估SML与O-GENE-AH。",
+      "readingNote": "官方日程物理第62页完整摘要及书目已核；未阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077493",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{id_residual_cpa_evaluation_2014,\n  title = {Evaluation of intrinsic dimensionality methods using residual and change-point analyses},\n  author = {Amin Alizadeh Naeini and Saeid Homayouni and Mohammad Saadatseresht and Hossein Torabzadeh},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077493}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "endmember-number-estimation",
+          "residual-cpa-dimension-evaluation"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学高光谱解混、维数评估或波段选择的专业workshop；仅总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以残差与变化点评估不同内在维数算法给出的高光谱维数候选？",
+        "datasets": "官方完整摘要：Pavia Center高光谱影像；尺寸、波段、噪声及子集待原PDF。",
+        "experimentSetting": "本版原摘要明确评估SML、O-GENE-AH；参数范围、残差度量、变化点检验、容差和真值依据待核。",
+        "conclusions": "作者提出用于评估ID输出的统计方案；完整摘要未给足够数值或证明所有ID算法均可靠，不声称自动得物理材料真值。",
+        "limitations": "变化点用于维数/残差评估，不是多时相遥感变化检测。ID与端元数不是无条件相等；容差和噪声敏感性待全文。近题名GRSL2014 DOI10.1109/lgrs.2014.2317352为三作者，本会议四作者，正式扩展/方法差异未核，不自动合并。代码、数据、arXiv和原图待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方日程物理第62页完整原摘要",
+            "supports": [
+              "结合Residual Analysis及Change-Point Analysis选择合理ID候选，再比较已有ID算法输出是否等于或接近候选；本版评估SML与O-GENE-AH。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077493",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记与官方摘要题名/作者核书目",
+            "supports": [
+              "Evaluation of intrinsic dimensionality methods using residual and change-point analyses",
+              "Amin Alizadeh Naeini, Saeid Homayouni, Mohammad Saadatseresht, Hossein Torabzadeh",
+              "正式2014，1–4页；登记创建日期不当发表日期。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "id-residual-cpa-evaluation-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077493",
+            "doi": "10.1109/whispers.2014.8077493",
+            "year": 2014,
+            "relation": "正式2014四页会议；不同任务/近题名版本不按作者重合自动合并。"
+          }
+        ],
+        "methodFamilyId": "id-residual-cpa-evaluation-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "官方第62页完整摘要与书目已核，出版页202空白；本版原PDF/原图未知，不移用三作者期刊图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077493",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "aco-band-selection-whispers-2014",
+      "shortTitle": "ACO-BS",
+      "title": "A new Ant colony optimization algorithm based band selection method",
+      "authors": "Xu Sun, Lina Yang, Qian Shen, Li Ni, Bing Zhang",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077594",
+      "representation": "以四种波段间距离将波段选择写为累计距离优化，设计蚂蚁路径转移概率及信息素更新，再以ML/SVM评测选定波段。",
+      "tags": [
+        "spectral-band-selection",
+        "swarm-metaheuristic-optimization"
+      ],
+      "summary": "以四种波段间距离将波段选择写为累计距离优化，设计蚂蚁路径转移概率及信息素更新，再以ML/SVM评测选定波段。",
+      "input": "高光谱波段及其相互距离；类别标签用于下游分类评价，选择阶段摘要称无监督。",
+      "output": "选定光谱波段子集。",
+      "mechanism": "以四种波段间距离将波段选择写为累计距离优化，设计蚂蚁路径转移概率及信息素更新，再以ML/SVM评测选定波段。",
+      "readingNote": "官方日程物理第62页完整摘要及书目已核；未阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077594",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{aco_band_selection_whispers_2014,\n  title = {A new Ant colony optimization algorithm based band selection method},\n  author = {Xu Sun and Lina Yang and Qian Shen and Li Ni and Bing Zhang},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077594}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-band-selection",
+          "swarm-metaheuristic-optimization"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究光学高光谱解混、维数评估或波段选择的专业workshop；仅总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以蚁群优化搜索无监督高光谱波段子集？",
+        "datasets": "官方完整摘要未给具体传感器、场景、尺寸及划分。",
+        "experimentSetting": "以Maximum Likelihood与SVM分类评测四种距离；摘要明确cosine与mutual information，另两种距离、选带数、蚂蚁/迭代/参数和训练划分未知。",
+        "conclusions": "作者在所用实验中报告选定波段改善分类，并称cosine距离优于其他三种、mutual information次之；无原表，不写幅度或一般最优性。",
+        "limitations": "启发式搜索无全局最优证明；实际计算/选择监督细节待全文。与同作者MAS-ACO端元提取任务/DOI不同，保留独立工作，不移用其合成实验或当重复。代码、专用数据、arXiv和原图待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方日程物理第62页完整原摘要",
+            "supports": [
+              "以四种波段间距离将波段选择写为累计距离优化，设计蚂蚁路径转移概率及信息素更新，再以ML/SVM评测选定波段。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077594",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记与官方摘要题名/作者核书目",
+            "supports": [
+              "A new Ant colony optimization algorithm based band selection method",
+              "Xu Sun, Lina Yang, Qian Shen, Li Ni, Bing Zhang",
+              "正式2014，1–4页；登记创建日期不当发表日期。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "aco-band-selection-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077594",
+            "doi": "10.1109/whispers.2014.8077594",
+            "year": 2014,
+            "relation": "正式2014四页会议；不同任务/近题名版本不按作者重合自动合并。"
+          }
+        ],
+        "methodFamilyId": "aco-band-selection-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "官方第62页完整摘要与书目已核，出版页202空白；本版原PDF/原图未知，不沿用同作者端元提取图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077594",
+        "checkedAt": "2026-10-08"
+      }
     }
   ],
   "datasets": [
@@ -45230,7 +45511,8 @@
         "endmember-soft-prior-unmixing-2014",
         "rovp-linear-unmixing-2014",
         "structured-mlnmf-whispers-2014",
-        "bpt-local-unmixing-2014"
+        "bpt-local-unmixing-2014",
+        "vb-joint-sparse-unmixing-2014"
       ],
       "history": [
         {
@@ -45285,7 +45567,8 @@
         "spatial-context-manifold-classification-2014",
         "sparse-collaborative-graphs-dr-2014",
         "grassmann-embedded-classification-2014",
-        "ritz-endmember-count-2014"
+        "ritz-endmember-count-2014",
+        "id-residual-cpa-evaluation-2014"
       ],
       "history": [
         {
@@ -46587,7 +46870,8 @@
         "mgsvm-fs-mm-lidar",
         "lidar-guided-band-selection",
         "multispectral-powders-2019",
-        "multispectral-skin-id-2019"
+        "multispectral-skin-id-2019",
+        "aco-band-selection-whispers-2014"
       ],
       "history": [
         {
@@ -48947,7 +49231,8 @@
         "mars-msl-hydrous-mineral-unmixing-2014",
         "mljsr-overcomplete-dictionary-unmixing-2014",
         "iw-nlsu-whispers-2014",
-        "wm-lattice-sparse-unmixing-2014"
+        "wm-lattice-sparse-unmixing-2014",
+        "vb-joint-sparse-unmixing-2014"
       ],
       "history": [
         {
@@ -49674,7 +49959,8 @@
       "createdAt": "2026-10-08",
       "rationale": "MAS–ACO原摘要明确蚂蚁代理与管理代理用于端元提取，形成可扩展方法标签。",
       "evidencePaperIds": [
-        "mas-aco-endmember-extraction-2014"
+        "mas-aco-endmember-extraction-2014",
+        "aco-band-selection-whispers-2014"
       ],
       "history": [
         {
@@ -49694,7 +49980,8 @@
       "createdAt": "2026-10-08",
       "rationale": "SSBUCS完整原摘要明确结构稀疏先验与Gibbs采样。",
       "evidencePaperIds": [
-        "ssbucs-unmixing-compressive-sensing-2014"
+        "ssbucs-unmixing-compressive-sensing-2014",
+        "vb-joint-sparse-unmixing-2014"
       ],
       "history": [
         {
@@ -49754,7 +50041,8 @@
       "createdAt": "2026-10-08",
       "rationale": "Ritz论文题名和原摘要直接研究端元数与信号子空间维数。",
       "evidencePaperIds": [
-        "ritz-endmember-count-2014"
+        "ritz-endmember-count-2014",
+        "id-residual-cpa-evaluation-2014"
       ],
       "history": [
         {
@@ -49821,6 +50109,26 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "BPT-LSU全文明确区域树、逐节点解混、两种误差剪枝及区域尺寸约束。"
+        }
+      ]
+    },
+    {
+      "id": "residual-cpa-dimension-evaluation",
+      "name": "残差与变化点维数评估",
+      "dimension": "method",
+      "definition": "用残差分析及变化点统计选择/评估光学高光谱内在维数候选；明确算法输出、容差及端元数对应，不混同影像时序变化检测。",
+      "status": "provisional",
+      "color": "#929eb4",
+      "createdAt": "2026-10-08",
+      "rationale": "官方原摘要明确Residual Analysis/Change-Point Analysis评估SML、O-GENE-AH维数。",
+      "evidencePaperIds": [
+        "id-residual-cpa-evaluation-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "官方原摘要明确Residual Analysis/Change-Point Analysis评估SML、O-GENE-AH维数。"
         }
       ]
     }
