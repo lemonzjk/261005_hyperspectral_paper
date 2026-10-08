@@ -36346,6 +36346,122 @@
           "attribution": "Chulhee Lee, Sungwook Youn, Taeuk Jeong, Eunjae Lee, Joan Serra-Sagristà · GRSL 2015"
         }
       ]
+    },
+    {
+      "id": "mlnmf-unmixing-2015",
+      "shortTitle": "MLNMF",
+      "title": "Spectral Unmixing of Hyperspectral Imagery Using Multilayer NMF",
+      "authors": "Roozbeh Rajabi, Hassan Ghassemian",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2014.2325874",
+      "arxivId": "1408.2810",
+      "representation": "逐层分解丰度矩阵，将端元签名表示为多个稀疏非负矩阵之积，并对各层签名及丰度加入L1/2稀疏约束。",
+      "tags": [
+        "spectral-unmixing"
+      ],
+      "summary": "逐层分解丰度矩阵，将端元签名表示为多个稀疏非负矩阵之积，并对各层签名及丰度加入L1/2稀疏约束。",
+      "input": "具有混合像素的非负高光谱观测矩阵。",
+      "output": "端元签名矩阵及逐像素丰度分数矩阵。",
+      "mechanism": "逐层分解丰度矩阵，将端元签名表示为多个稀疏非负矩阵之积，并对各层签名及丰度加入L1/2稀疏约束。",
+      "readingNote": "完整原始摘要及预印本第2页Fig.1/§II.C局部已核验；未阅读全文，不填写未读实验参数。",
+      "paper": "https://doi.org/10.1109/lgrs.2014.2325874",
+      "code": "https://github.com/roozbehrajabi/mlnmf",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "arxiv_original_abstract_and_selected_method_page",
+      "citation": "@article{mlnmf2015,\n  title = {Spectral Unmixing of Hyperspectral Imagery Using Multilayer NMF},\n  author = {Roozbeh Rajabi and Hassan Ghassemian},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {1},\n  pages = {38--42},\n  doi = {10.1109/lgrs.2014.2325874}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始摘要明确光学HSI端元和丰度解混；直接高光谱工作。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用多层稀疏非负分解改善混合高光谱像素的端元与丰度估计？",
+        "datasets": "原始摘要：基于USGS光谱库端元的合成数据，真实AVIRIS Cuprite；数据尺寸、子集与预处理待正文核验。",
+        "experimentSetting": "原始摘要以SAD/AAD量化结果；第2页局部核验逐层目标与乘法更新，完整参数、初始化、划分和统计协议待核验。",
+        "conclusions": "作者摘要报告多层分解较所比较方法更有效；尚未核验完整结果/数值，不推定普遍优势。",
+        "limitations": "原稿第2页§II.C明确非稀疏端元可用稀疏矩阵积表示的数学证明仍为开放问题；限定线性混合。层数/随机初值敏感性、专用数据、代码许可和正式版差异待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1408.2810",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv原始摘要及版本历史",
+            "supports": [
+              "Spectral Unmixing of Hyperspectral Imagery Using Multilayer NMF",
+              "Roozbeh Rajabi, Hassan Ghassemian",
+              "v1首次提交/最近更新2014-08-12T19:07:23Z，cs.CV；相关正式DOI 10.1109/lgrs.2014.2325874",
+              "USGS端元合成数据、AVIRIS Cuprite；SAD/AAD评估。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1408.2810v1",
+            "checkedAt": "2026-10-08",
+            "level": "原始预印本第2页方法及Fig.1局部",
+            "supports": [
+              "逐层分解丰度矩阵，将端元签名表示为多个稀疏非负矩阵之积，并对各层签名及丰度加入L1/2稀疏约束。",
+              "原文限定线性混合模型；非稀疏矩阵可分解为稀疏矩阵乘积的数学证明仍为开放问题。"
+            ]
+          },
+          {
+            "url": "https://raw.githubusercontent.com/roozbehrajabi/mlnmf/master/README.md",
+            "checkedAt": "2026-10-08",
+            "level": "作者代码仓库原始README，未运行代码",
+            "supports": [
+              "README明确引用同题名、同作者、正式GRSL2015 12(1):38–42和DOI；代码许可/运行/数据待查。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mlnmf-unmixing-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2014.2325874",
+            "doi": "10.1109/lgrs.2014.2325874",
+            "year": 2015,
+            "relation": "Crossref登记与作者代码README一致：12(1):38–42，2015年1月；DOI中的2014不是正式卷期年份。"
+          },
+          {
+            "id": "mlnmf-unmixing-2015-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1408.2810v1",
+            "year": 2014,
+            "arxivId": "1408.2810",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2014-08-12T19:07:23Z",
+            "updatedAt": "2014-08-12T19:07:23Z",
+            "metadataStatus": "verified",
+            "relation": "原始历史仅列v1；同作者、题名与相关DOI明确关联正式2015稿，正文实验差异待核验。"
+          }
+        ],
+        "methodFamilyId": "mlnmf"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1408.2810v1",
+          "figureLabel": "Fig. 1",
+          "page": 2,
+          "caption": "多层NMF分解：逐层分解丰度，端元矩阵为各层矩阵乘积。",
+          "verificationNote": "目视核对原始v1第2页各层矩阵、乘积公式及完整图注；原文裁切，非重绘。",
+          "cropDescription": "v1 PDF按长边1600像素渲染，裁切右栏原始Fig.1及图注。",
+          "path": "figures/mlnmf-unmixing-2015/framework-original.png",
+          "width": 520,
+          "height": 227,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "0e1b89454078080a73f88a2ab7e6716a938672401a2a9b336e2bcb89b93a68c4",
+          "attribution": "Roozbeh Rajabi, Hassan Ghassemian · arXiv v1 2014 / GRSL 2015"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -37111,7 +37227,8 @@
         "fast-nl-me-unmixing-2017",
         "dsplr-nmf-2017",
         "robust-msl-unmixing-2017",
-        "bayes-temporal-endmember-unmixing-2018"
+        "bayes-temporal-endmember-unmixing-2018",
+        "mlnmf-unmixing-2015"
       ],
       "history": [
         {
