@@ -1,0 +1,177 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "stm-local-neighborhood-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077627",
+      "decision": "included",
+      "programPdfPage": 80,
+      "readingBoundary": "官方物理80页完整摘要/四作者与正式DOI书目交叉匹配；题名查询429保留，精确DOI200；IEEE202空正文，未读全文。",
+      "figureBoundary": "IEEE202空响应，原会议PDF和方法图未取得，图号/页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "rf-band-selection-fusion-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077484",
+      "decision": "included",
+      "programPdfPage": 80,
+      "readingBoundary": "官方80页完整摘要与正式DOI三作者匹配；CiteSeer托管同题同作者原论文§2–4文本缓存选读，正常PDF访问404，不能当取得PDF或全文阅读。",
+      "figureBoundary": "原PDF404；作者页面发现Selected spectral bands using iterative feature elimination based on RF importance for all datasets图题，仅结果图线索，图号/页码未知，框架图未找到。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "edge-weighted-mrf-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077498",
+      "decision": "included",
+      "programPdfPage": 80,
+      "readingBoundary": "官方80页完整摘要七作者与正式DOI匹配；IEEE202空响应，未读全文。",
+      "figureBoundary": "原会议PDF未取得，独立方法图号与页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "energy-tree-abtsvm-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077499",
+      "decision": "included",
+      "programPdfPage": 80,
+      "readingBoundary": "官方80页完整摘要四作者与正式DOI匹配；IEEE202空正文，未读全文。",
+      "figureBoundary": "原会议PDF未取得，方法图号及页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "support-tensor-classification",
+      "name": "支持张量机分类",
+      "dimension": "method",
+      "definition": "以多维张量表示输入，通过多线性支持向量学习保留维度结构进行分类；具体优化与核逐篇核验，不自动等同低秩分解或三维几何。",
+      "rationale": "官方摘要明确STM以空间×空间×光谱邻域扩展SVM，已有低秩标签不足以表达。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "stm-local-neighborhood-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "官方摘要明确STM以空间×空间×光谱邻域扩展SVM，已有低秩标签不足以表达。"
+        }
+      ]
+    },
+    {
+      "id": "wrapper-selection-adjacent-band-fusion",
+      "name": "包装式波段选择与邻带融合",
+      "dimension": "method",
+      "definition": "以分类器评价包装式波段子集，并比较相邻相似光谱波段融合及其顺序；注明选择器和融合规则，不等同跨传感器融合。",
+      "rationale": "原论文文本明确RF重要性、迭代后向选择及邻带平均，需记录选择/融合次序。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "rf-band-selection-fusion-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "原论文文本明确RF重要性、迭代后向选择及邻带平均，需记录选择/融合次序。"
+        }
+      ]
+    },
+    {
+      "id": "adaptive-binary-tree-svm",
+      "name": "自适应二叉树SVM",
+      "dimension": "method",
+      "definition": "按类别可分性建立分层二叉决策并用SVM分类；树构造度量和节点训练逐篇核验，不等同随机森林。",
+      "rationale": "能源树种原摘要明确Jeffries–Matusita可分性引导ABTSVM。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "energy-tree-abtsvm-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "能源树种原摘要明确Jeffries–Matusita可分性引导ABTSVM。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-band-selection-fusion-ieee-access.json",
+      "sha256": "23c427b934f7108976deb3312509ec1db387ddc388f921066273dc34b5a342a3"
+    },
+    {
+      "path": "whispers2014-band-selection-fusion-original-access.json",
+      "sha256": "13649d13981ac103d050ecc841818f657b0533e1aeedd7de49d2261e932dc20a"
+    },
+    {
+      "path": "whispers2014-band-selection-fusion-query-access.json",
+      "sha256": "09c0ddb0e2210ab667ee0ba5c0c58c8a63acf05cd7a12fefd72e32fcd125b2a9"
+    },
+    {
+      "path": "whispers2014-edge-mrf-ieee-access.json",
+      "sha256": "f899bf3d76a7861b5da20bd51dfd33c544975ef6dba908610621fc03b0fc209c"
+    },
+    {
+      "path": "whispers2014-edge-mrf-query-access.json",
+      "sha256": "f359bf32ba40b5c1d20c033e9f523135f09d8d208defb0929398599f97c5853e"
+    },
+    {
+      "path": "whispers2014-energy-tree-svm-ieee-access.json",
+      "sha256": "3a23e78dbfcd033322ac96f7725d2362be8a547adb6bef2862d22624fa960964"
+    },
+    {
+      "path": "whispers2014-energy-tree-svm-query-access.json",
+      "sha256": "fad0bfeed2e6470f44258a80f6aeceab731cab3acd6426375976cc2bc36665b0"
+    },
+    {
+      "path": "whispers2014-page80-discovery-cache.json",
+      "sha256": "6577dde402818f91490481c9df5d395273099e2f3bf6e6d5b59604a3dccdb144"
+    },
+    {
+      "path": "whispers2014-page80-original-reading-cache.json",
+      "sha256": "5453468a163471bb1d9fdac1482a20a4fb5335f5ac00818b68b4fcb17f362f78"
+    },
+    {
+      "path": "whispers2014-page80-program-cache.json",
+      "sha256": "8f8df95b864670a1e9d486ea4509469527cb1be79bcf01bd2e32956872669423"
+    },
+    {
+      "path": "whispers2014-page80-resources-search-cache.json",
+      "sha256": "7c444ad925df57178785285b59ef764f2014d3c6b5158a8c55aa1904376c4c58"
+    },
+    {
+      "path": "whispers2014-stm-lpn-doi-access.json",
+      "sha256": "3b99b270354224608da0509a8523bde157d4ac87f6e7aacf0c8d6d79bfe95447"
+    },
+    {
+      "path": "whispers2014-stm-lpn-ieee-access.json",
+      "sha256": "3a78ec4e8f043ea55b1963b32d4df430d6ad5817559f21a70adf7f5e3f9fe8fe"
+    },
+    {
+      "path": "whispers2014-stm-lpn-query-access.json",
+      "sha256": "a9bec660ac76437ba4da337801bd6f7033ee55b7c1fc87119562621ba9bba7e7"
+    },
+    {
+      "path": "whispers2014-page80-toc-replay.json",
+      "sha256": "3bd7546288c9397bb089a881fadca19a82f112dda9f71773098bc7c4b16ae7ae"
+    }
+  ],
+  "qualityIssues": [
+    "四篇原PDF/框架图均未取得；原文缓存选读不是全文阅读。",
+    "Indian Pines缓存波段数/波长单位疑误，不猜修正。",
+    "STM空间空间光谱张量不属于物理三维；邻带融合不是跨传感器融合。",
+    "能源树克隆不强行解读为分类学亚种；姓名拼写遵原来源。",
+    "77页仍未核，页窗有缺口；174条目录仍有62未审。"
+  ]
+}

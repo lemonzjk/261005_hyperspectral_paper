@@ -138,6 +138,7 @@
 | WHISPERS | 2014 | noise reduction spectral unmixing curvelet、correlated noise residual estimation、NLPCA ANN CASI noise filtering；物理78页全部3题名；累计45–76及78页105题名100入3排2待，另CRNN；77页未核，非连续45–78。 | 3 / 3 / 3 | 78页三完整摘要闭环，77及年度目录仍有缺口 | 三会议全文/方法图、专用代码数据/arXiv未知；NLPCA CASI/SWIR仪器一致性待原稿。；噪声估计修改公式/输出未知，不用2017期刊机制填会议；去噪解混重建误差非真实丰度误差。；目录174条重放见sources/whispers2014-page78-toc-replay.json，沿用TRDF人工证据关联。；截至2026-10-08，实际核验2026-10-09；77页未核。 |
 | TGRS | 2015 | band-specific shearlet hyperspectral noise reduction；同策略家族单篇；非TGRS2015年度目录或全部摘要检索。 | 1 / 1 / 1 | 单篇原摘要/部分方法与算法原图闭环 | 未完整读所有公式/结果表/引用，直接扩展声明及作者稿/正式13页差异待核；代码数据/arXiv未知。；原图只本期刊作者稿，不反填会议curvelet软阈值；其余年份/场所继续系统检索。 |
 | WHISPERS | 2014 | collaborative k-nearest CRNN、SVM MLP marker minimum spanning forest、semisupervised transductive SVM spatial similarity；物理79页全部3題名；80页其他论文未审。累计45–76及78–79页108题名103入3排2待（CRNN现含在窗口），77页未核，非连续45–79完成。 | 3 / 3 / 3 | 79页3題名摘要闭环（2新1重），77及年度目录仍有缺口 | 两新会议原PDF/方法图与专用代码数据/arXiv未知；TSVM只作者网页选读，末句补齐不等于80页审完。；TSVM原表网页类名/数量错排风险、距离坐标定义与零距离/C/阈值待原PDF；不把一般LIBSVM当论文代码。；MSF不是随机森林；MPL按multi-layer perceptron记MLP并保留原摘要拼写。；NLPCA只更新作者全名，CASI/SWIR仍待核；目录重放见sources/whispers2014-page79-toc-replay.json。；截至2026-10-08，实际核验2026-10-09；77页未核。 |
+| WHISPERS | 2014 | support tensor local pixel neighborhood、band selection fusion hyperspectral classification、edge constrained MRF、energy tree species support vector machines；物理80页全部4题名。累计45–76及78–80页112题名107入3排2待；77未核，非连续45–80完成。 | 4 / 4 / 4 | 80页4题名摘要闭环；77页及年度目录仍有缺口 | 四篇原PDF/方法图与专用代码数据/arXiv未知；波段稿仅托管原文缓存部分选读。；波段稿缓存Indian Pines波段数与波长单位疑误，待原PDF，不默改或当已核数据。；STM数组三维不等同物理三维；同光谱邻带融合不等同多传感器融合；克隆不等同分类学亚种。；目录174条关联107、已有决定5、未审62；TRDF保留题名拼写冲突人工关联。自动106/5/63，详见page80-toc-replay.json。；检索截止2026-10-08，实际核验2026-10-09；续81页及77缺口，年度未完成。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -412,6 +413,8 @@
   阅读边界：四完整原摘要；期刊另部分方法/实验选读和原算法核验，不提升全文阅读状态；77页未知，不因连续编号推定已审。三维214/原476篇对象不改。
 - 2026-10-09 / whispers-2014-program-page79-classification-review：新增 2，更新 1，去重 1，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：两新会议完整摘要，TSVM另作者网页部分选读；NLPCA只书目全名，CRNN复核去重，三维214篇不改。
+- 2026-10-09 / whispers-2014-program-page80-classification-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四篇完整官方摘要；波段论文原文缓存部分选读，均不标阅读全文。保留旧482对象及三维214篇。
 
 ## 未解决缺口
 
