@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import rawCatalog from './data/catalog.json';
 import survey from '../research/hyperspectral/survey.json';
+import { HyperspectralDemo } from './HyperspectralDemo';
 import { PaperCard } from './PaperCard';
 import { PaperDialog } from './PaperDialog';
 import { ResearchMap } from './ResearchMap';
@@ -65,7 +66,7 @@ export default function HyperspectralLibrary() {
   return <>
     <a className="skip-link" href="#main">跳到主要内容</a>
     <header className="site-header"><a className="brand" href="?collection=hyperspectral"><span>HSI <b>Research</b></span></a><nav className="header-nav" aria-label="高光谱调研导航"><button className={view === 'atlas' ? 'active' : ''} aria-current={view === 'atlas' ? 'page' : undefined} onClick={() => setView('atlas')}>研究图谱</button><button className={view === 'papers' ? 'active' : ''} aria-current={view === 'papers' ? 'page' : undefined} onClick={() => setView('papers')}>论文库</button><a className="library-link" href={collectionHref('hs3d')}>返回三维视觉专题 ↗</a></nav></header>
-    <main id="main" className="workspace hyperspectral-library"><div className="section-heading"><div><span className="eyebrow">HYPERSPECTRAL RESEARCH</span><h2>高光谱调研<span>Research collection</span></h2><p className="section-description">已调研论文，持续整理。覆盖成像、处理、学习与应用。</p></div><div className="view-toggle" aria-label="论文展示方式"><button className={view === 'atlas' ? 'active' : ''} onClick={() => setView('atlas')}>时间轴</button><button className={view === 'papers' ? 'active' : ''} onClick={() => setView('papers')}>论文卡片</button></div></div>
+    <main id="main" className="workspace hyperspectral-library"><HyperspectralDemo/><div className="section-heading"><div><span className="eyebrow">HYPERSPECTRAL RESEARCH</span><h2>高光谱调研<span>Research collection</span></h2><p className="section-description">已调研论文，持续整理。覆盖成像、处理、学习与应用。</p></div><div className="view-toggle" aria-label="论文展示方式"><button className={view === 'atlas' ? 'active' : ''} onClick={() => setView('atlas')}>时间轴</button><button className={view === 'papers' ? 'active' : ''} onClick={() => setView('papers')}>论文卡片</button></div></div>
       <p className="section-intro">当前收录 {papers.length} 篇条目。分类随摘要与全文阅读形成；全部数量指本站收录。现有条目已逐篇复核分类；阅读与来源核验进度单独记录。</p>
       <details className="library-coverage"><summary>检索覆盖与缺口 · 截止 {survey.cutoffDate}</summary><p>{survey.coverageNote}</p><div className="coverage-table"><table><thead><tr><th>场所 / 年份</th><th>方式与范围</th><th>状态与缺口</th></tr></thead><tbody>{survey.searches.map(search => <tr key={search.id}><td>{search.venue} · {search.year}</td><td>{search.method}<br/>{search.titleCount} 个题名 · {search.keywords.join(' / ')}<br/>{search.pagination}</td><td>{search.statusLabel}<br/>{search.gaps.join('；')}</td></tr>)}{survey.venuePlan.map(venue => <tr key={venue.id}><td>{venue.name} · 早期目录至 {survey.cutoffDate.slice(0, 4)}</td><td>{venue.kind} · {venue.plannedMethod}</td><td>{venue.statusLabel}</td></tr>)}</tbody></table></div></details>
       <div className={`explorer${view === 'atlas' ? ' timeline-explorer' : ''}`}><aside className="explorer-sidebar">

@@ -1,12 +1,12 @@
 # 项目上下文
 
-更新：2026-10-08。上限：2,000 个 Unicode 字符、60 行。
+更新：2026-10-08。上限2,000字符、60行。
 
 ## 目标与约定
 
 - HS3D Atlas 三维专题与独立高光谱总库。总库覆盖整个光学高光谱领域，含二维成像、处理、学习及应用；按覆盖矩阵推进，不以数量结束。
 - 仅本地预览，不推送、不发布；检查通过后本地提交。每次请求 caveman full、中文简洁；代码与文档正常表达。
-- 两页以三维视觉布局/样式为共同基准，共用时间轴、卡片、筛选、详情及CSS，后续UI同步；本轮不改补充模块或样式。三维13方向与范围不变。
+- 两页以三维视觉布局/样式为共同基准，共用时间轴、卡片、筛选、详情及CSS，后续UI同步。三维13方向与范围不变。
 
 ## 运行与检查
 
@@ -15,6 +15,8 @@
 - 数据/上下文修改运行 npm run validate；网站修改运行 npm run build；交互需浏览器检查。
 
 ## 当前状态
+
+- HyperspectralDemo：总库顶部波段/取样/曲线交互；模拟数据，与三维页共用 spectral-response.ts。
 
 - 总库311篇均已复核归类，原205篇待分类清零；114标签（任务58/方法40/应用16）。任务按筛选后篇数降序，同数保留原序。三维214篇不变；总库 ?collection=hyperspectral。
 - 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱211、多光谱80、基础20。
@@ -33,4 +35,4 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；详细说明见 README.md 和 research/。
-- 下一步补RSE2001/2002受限候选、遥感/光学年度与任务词；复核两TPAMI及NGmeet正式元数据、IGARSS候选、全文实验与资源。访问失败留证，继续可用来源。
+- 下一步补受限候选、年度覆盖与任务词；复核TPAMI、NGmeet、IGARSS元数据及全文。访问失败留证。

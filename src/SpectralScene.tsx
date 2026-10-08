@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import "./spectral-scene.css";
 
-type Material = "vegetation" | "rock" | "water";
+import { response, type Material } from "./spectral-response";
 type Mode = "natural" | "band" | "geometry";
 interface Point {
   x: number;
@@ -54,18 +54,6 @@ const presets = [
   { value: 850, name: "近红外" },
 ];
 
-// Analytical examples, not measured reflectance or material identification results.
-function response(material: Material, wavelength: number) {
-  if (material === "vegetation")
-    return (
-      0.09 +
-      0.12 * Math.exp(-(((wavelength - 550) / 42) ** 2)) +
-      0.64 / (1 + Math.exp(-(wavelength - 720) / 16))
-    );
-  if (material === "water")
-    return 0.04 + 0.15 * Math.exp(-(((wavelength - 490) / 95) ** 2));
-  return 0.3 + 0.00055 * (wavelength - 450) + 0.05 * Math.sin(wavelength / 105);
-}
 const points: Point[] = [];
 for (let row = 0; row < 98; row++) {
   for (let column = 0; column < 126; column++) {
