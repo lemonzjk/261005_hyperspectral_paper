@@ -78,6 +78,8 @@
 | Optics Letters | 2010 | cassi、coded aperture、snapshot、imaging spectrom、imaging spectroscop、spectral reconstruction、spectrum reconstruction、spectral unmixing、band selection、pansharpening、spectral super-resolution、fourier transform imaging、spectral mixture、endmember、spectral image、spectropolarimet；离线全扫1417登记DOI；原2页，原登记集合边界保持；非出版社全量 | 1417 / 6 / 5 | 补扫16系统/重建词；6候选：增3、重0、排2、待核验1；非年度全量 | 出版社年度卷期全目录未交叉核验；全量摘要与其他任务词、引文未完成；非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录 |
 | TCI | 2015 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；41 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 41 / 2 / 2 | 41登记DOI六词2命中均收录；包含非研究条目，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；登记集合包含目录/说明，不称41研究论文；全量摘要尚未读 |
 | TCI | 2015 | spectral、compressive、coded aperture、unmixing；离线全扫41个不同登记DOI；原rows1000一页；包含目录/出版说明，不当作41篇研究论文 | 41 / 4 / 4 | 41登记题名四词4候选闭环：新增3、排除1；出版社年度全量未证明 | 出版社全部卷期/全量摘要未核验；其余词、引文与全文实验、最终版差异待核验 |
+| TCI | 2016 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 3 / 2 | 63登记题名六词3命中：2收录、1原摘要受限；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
+| TCI | 2016 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 5 / 4 | 四词5命中：新2、排2、原摘要受限1；Fourier正式出版按TIP记录 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -232,6 +234,8 @@
   阅读边界：四年度4899登记题名补扫16个系统/重建词，11命中均读完整原始摘要；4新文献、1重复、4排除、2待关系核验。2007非成像Mueller为2023原始研究明确引用的HSI基础；2013公式勘误归并，不计新方法。Dyson两设计波长不等于两观测波段；2010静态谱偏振装置仅一维空间。局部设计表与作者PDF第一页索引非全文。
 - 2026-10-08 / tci-2015-unmixing-abstract-figure-review：新增 3，更新 0，去重 0，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：2015年度41登记DOI一页完整获取；六词2命中与四词4命中并集4，增3排1，跨组重复命中不重复计数。三篇原摘要、局部模型图与6个arXiv版本日期核验；HUT-AMP原期刊图，RCA/RBLU原图来源标v2预印本。未阅读全文，不混用正式/预印本实验。
+- 2026-10-08 / tci-2016-spectral-compressive-review：新增 2，更新 0，去重 0，排除 2，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：63登记DOI含目录/说明；六词3、四词5并集5，跨词组重复不计新方法。彩色CASSI原PDF摘要/第1页原图；Fourier正式TIP原摘要。其余受限候选不依据二手摘要升级。
 
 ## 未解决缺口
 
