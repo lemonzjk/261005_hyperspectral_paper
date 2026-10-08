@@ -120,6 +120,7 @@
 | WHISPERS | 2014 | EGO parametric reduction、ARCHER spatial-spectral features pansharpening、SCOPE GPP fluorescence sensitivity；物理64页3新题名全部，SCOPE摘要续65页；65新题名尚未计。累计45–64页65条61入2排2待，另CRNN。 | 3 / 3 / 3 | 三个会议原摘要闭环；年度目录仍未审完 | 三篇会议原PDF/原图和具体实验/代码数据待核。；EGO机构书目无附件；ARCHER相关学位全文未作会议版本证据。；SCOPE2014原模型2009单列基础工作，摘要跨页；五页会议不误记四页。 |
 | Biogeosciences | 2009 | SCOPE soil canopy radiance photosynthesis fluorescence energy balance；引用追溯单篇原方法，未扫描2009年度目录；原文21页仅读摘要及第3页。 | 1 / 1 / 1 | 原模型摘要/局部方法与图1已核，年度未检索 | 剩余正文/定量实验、原版代码和数据待核；Biogeosciences年度全量待检索。 |
 | WHISPERS | 2014 | vegetation oil-gas microseepage CASI、APEX ecosystem services mapping、BREFCOR BRDF HYSPEX CASI APEX；物理65页三题名全审，前页SCOPE跨页摘要已处理不重复；累计45–65页68条64入2排2待，另CRNN。 | 3 / 3 / 3 | 两原摘要及一完整原稿文字闭环；四个暂定分类标签，年度仍未审完 | 油气/ES会议原稿和原图、具体实验/资源待核；油气姓/名字段归一待原作者核验。；BREFCOR图1–6文字均为结果，原图/保存PDF受限；原版代码数据/arXiv未核。；ES海报、2015 IGARSS及BREFCOR原方法TGRS关系需分别核正文，不能移用实验/原图或标正式扩展。 |
+| WHISPERS | 2014 | GFLEX geostationary fluorescence multispectral、Fabry Perot fluorescence microscopy、USGS PRISM ENVI IDL spectral material analysis；物理66页3题名全部，累计45–66页71条67入2排2待，另CRNN；下一页67新题名未审。 | 3 / 3 / 3 | 三完整摘要闭环、一个方法标签；一旧条目姓名修正，年度仍未审完 | 三会议原稿、框架/方法图及实验细节/专用资源/arXiv未核。；GFLEX HAL2016字段和作者菜单顺序有冲突；显微作者顺序/题名拼写及相关AO/OE正式关系待核。；PRISM2011软件为关联入口，会议版本/手册关系与具体实验待全文。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -153,7 +154,7 @@
 | Remote Sensing of Environment | journal | 最早可用目录至 2026 | 2001年度Crossref登记集合六成像词已扫，4收录/2待核验；出版社全量、其他年/词未完成 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IGARSS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| WHISPERS | specialist_conference | 最早可用目录至 2026 | 2014正式目录174条，最新题名关联65、仅已追踪决定4、未审105；原始目录与动态进度分开保存。官方PDF45–65页68条64入2排2待及另CRNN；年度筛选未完成，其他年份待系统检索。 |
+| WHISPERS | specialist_conference | 最早可用目录至 2026 | 2014正式目录174条，最新题名关联68、仅已追踪决定4、未审102；原始目录与动态进度分开保存。官方PDF45–66页71条67入2排2待及另CRNN；年度筛选未完成，其他年份待系统检索。 |
 | Optica | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Nature Photonics | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Light: Science & Applications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -368,6 +369,8 @@
   阅读边界：三篇会议完整摘要；2009原模型摘要及单页方法。三维214篇不变。
 - 2026-10-08 / whispers-2014-program-page65-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：两篇完整官方摘要；一篇作者原稿四页完整文字，图像未核。三维214篇不变。
+- 2026-10-08 / whispers-2014-program-page66-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：三会议完整官方摘要；油气姓名按独立官方日程页核归一。三维214篇不变。
 
 ## 未解决缺口
 
