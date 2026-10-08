@@ -1,0 +1,1005 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="author" content="IT - Instituto de Telecomunicações" />
+    
+        <meta name="description" content="IT - Instituto de Telecomunicações, exists to create and disseminate scientific knowledge in the field of telecommunications." />
+    
+<meta name="verify-v1" content="vf4BlwYFH0Yt0PijHq/yvoqhApX6xAbfXLCe4Rtj8+U=" /><meta name="language" content="English" /><meta name="copyright" content="IT - Instituto de Telecomunicações" /><meta name="reply-to" content="webmaster@av.it.pt" /><meta name="document-classification" content="Telecommunications" /><meta name="document-type" content="Web Page" /><meta name="document-rating" content="General" /><meta name="keywords" content="Thematic Lines, Wireless communications, Optical Communications, Networks and Services, Basic Sciences and Enabling Technologies, scientific knowledge, telecomunicacao, research in telecommunications, Portugal, Aveiro, Coimbra, Lisboa, Covilhã, ISCTE-IUL, Leiria, Porto, telecomunicações pt, instituto das telecomunicações, telecomunicações lisboa, telecomunicações pt, pt telecomunicações" /><meta name="cache-control" content="Public" /><meta name="google-site-verification" content="FV5cnkifsX5mEyzHT-ypYkz1Ctiz90FL52yizckY3l8" /><meta name="robots" content="index, follow" /><meta http-equiv="Window-target" content="_top" /><meta http-equiv="Content-Language" content="EN" /><meta http-equiv="expires" content="0" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+
+    <title>Image Restoration and Reconstruction using Targeted Plug-and-Play Priors</title>
+    <!-- Bootstrap core CSS -->
+    <!--<link href="../../Views/Shared/css/bootstrap.min.css" rel="stylesheet" />-->
+
+    <!-- Custom styles for this template -->
+     rel="stylesheet">
+    <link href="/css/footer-styles.css?v=20251023223528" rel="stylesheet">
+    <link href="/css/style_new.css?v=20260908223914" rel="stylesheet" />
+    <link href="/css/custom.css?v=20220122190658" rel="stylesheet">
+
+    <link href="/css/jquery-ui-1.10.4.custom.min.css?v=20190227225608" rel="stylesheet">
+    
+    <link href="/css/itConsent.css?v=20260914235706" rel="stylesheet">
+
+    <!-- Resources -->
+    <link href="/fonts/font-awesome-6.3.0/css/fontawesome.min.css?v=20230311193358" rel="stylesheet">
+    <link href="/fonts/font-awesome-4.1.0/css/font-awesome.min.css?v=20190227225622" rel="stylesheet">
+    <link href="/css/animate.css?v=20190227225608" rel="stylesheet">
+    <link href="/css/lightbox.css?v=20190227225608" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" type="text/css" /><link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet" type="text/css" />
+
+    <script src="/js/flickity.pkgd.js?v=20200326091030"></script>
+    <link href="/css/flickity.css?v=20201123160226" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        th[data-sort] {
+            cursor: pointer;
+        }
+    </style>
+    <!-- JQuery -->
+    <script src="/js/jquery-1.11.0.min.js?v=20190227225610" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            /* For JQuery UI tooltips*/
+            //$(document).tooltip();
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        function subscribeNewsletter()
+        {
+            itAjaxPost('/Home/GetCaptchaPartial', { callback: 'subscribeNewsletterCaptchaValidation' }, function (result)
+            {
+                $('body').append(result);
+            })
+        }
+
+        function subscribeNewsletterCaptchaValidation(captchaToken)
+        {
+            //console.log('$("#subscribe-email").val()');
+            //console.log($("#subscribe-email").val());
+            //console.log(b64EncodeUnicode($("#subscribe-email").val()));
+
+            var postData =
+            {
+                recaptcha_response_field: captchaToken,
+                emailB64: b64EncodeUnicode($("#subscribe-email").val())
+            };
+
+            $("#subscribeNewsletterBtn").attr('disabled', 'disabled');
+            itAjaxPost('/Home/DoSubscribeNewsletter', postData,
+                function ()
+                {
+                    bootbox.alert('Thank you for subscribing to our Newsletter. You need to validate your request by activating the confirmation link in the e-mail that we have just sent to the indicated address.');
+                },
+                function (error)
+                {
+                    $("#subscribeNewsletterBtn").removeAttr('disabled');
+                    if ((error.Message != null) && (error.Message != ''))
+                    {
+                        bootbox.alert(error.Message);
+                    }
+                    else
+                    {
+                        bootbox.alert('Your request failed. Please try again later.');
+                    }
+
+                });
+        }
+    </script>
+    
+   
+
+    
+
+    <!-- Load google recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <script>
+        $(document).ready(function ()
+        {
+        })
+
+        function setCaptchaResponse(captchaResponse) { $("#itCaptchaResponse").val(captchaResponse); }
+
+        function confirmPaperDownload()
+        {
+            
+        }
+    </script>
+
+
+
+    <!-- Share This Buttons-->
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5aef6749e12a39001287dcd6&product=custom-share-buttons"></script>
+</head>
+
+<body class="boxed-layout container">
+
+    <!-- Navigation -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img src="/img/IT-30years-logo_01_website.png" alt="IT logo"></a>
+                <!-- Temporary change for the 30th aniversary of IT. Should revert somewhere in 2023 -->
+                
+                <!-- Temporary change for the 25th aniversary of IT. Should revert somewhere in 2018 -->
+                
+            </div>
+            <div class="collapse navbar-collapse">
+
+                <!-- Topbar -->
+                <div class="topbar">
+                    <div class="container">
+                        <!-- Topbar Navigation -->
+                        <ul class="loginbar pull-right">
+                            
+                            
+                            
+                            
+                            <li class="topbar-devider"></li>
+                            <li><a href="/Home/ContactUs">Contact us</a></li>
+                            <li class="topbar-devider"></li>
+                            <li><a href="/Home/IntranetPortals">Intranet login</a></li>
+                            
+                        </ul>
+                        <!-- End Topbar Navigation -->
+                    </div>
+                </div>
+                <!-- End Topbar -->
+
+                <!-- Main Navbar -->
+                <ul class="nav navbar-nav navbar-right" id="menu">
+                    <li class="dropdown submenu" id="submenu_AboutIT">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About us <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AboutIT/Overview">Overview</a></li>
+                            <li><a href="/AboutIT/History">History</a></li>
+                            <li><a href="/AboutIT/Organization">Organization</a></li>
+                            <li><a href="/AboutIT/PartnershipsInstitutionalAssociatedPartners">Partnerships</a></li>
+                            <li><a href="/AboutIT/KeyITIndicators">Facts and Figures</a></li>                            
+                        </ul>
+                    </li>
+
+                    <li class="dropdown submenu" id="submenu_ITSites">
+                        <a href="/ITSites" class="dropdown-toggle" data-toggle="dropdown">IT Sites <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ITSites/Index/3">IT Aveiro</a></li>
+                            <li><a href="/ITSites/Index/2">IT Coimbra</a></li>
+                            <li><a href="/ITSites/Index/1">IT Lisboa</a></li>
+                            <li><a href="/ITSites/Index/6">IT Branch - Covilh&atilde;</a></li>
+                            <li><a href="/ITSites/Index/8">IT Branch - ISCTE-IUL</a></li>
+                            <li><a href="/ITSites/Index/7">IT Branch - Leiria</a></li>
+                            <li><a href="/ITSites/Index/5">IT Branch - Porto</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown submenu" id="submenu_ScientificAreas">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research &amp; Innovation<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ThematicLines">Thematic Lines</a>
+                            </li>
+                            <li><a href="/ResearchImpact">Research Impact</a></li>
+                            <li><a href="/Home/ResearchLandmarks">Research Landmarks</a></li>
+                            
+                            <li><a href="/Home/LaboratoryFacilities">Lab Infrastructure</a></li>
+                            <li><a href="/TechnologyTransfer">Technology Transfer</a></li>
+                            
+                            <li><a href="/AboutIT/PartnershipsStartUpsAndSpinOffs">Start-ups &amp; Spin-offs</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown submenu" id="submenu_NewsAndEvents">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">News &amp; Events <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/News/IndexMosaic">News</a></li>
+                            
+                            <li><a href="/Events">Upcoming Events</a></li>
+                            <li><a href="/Events/PastEvents">Past Events</a></li>
+                            <li><a disabled="disabled" style="cursor:not-allowed" href="#">Outreach Activities</a></li>
+                            <li><a href="/Clipping">Media Coverage</a></li>
+                            <li><a href="/Newsletters">Newsletters</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown submenu" id="submenu_Positions">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Work With Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Positions/PostDocs">Positions for Doctorates</a></li>
+                            <li><a href="/Positions/OtherResearchPositions">Other research positions</a></li>
+                            <li><a href="/Positions/OtherContractPositions">Other contract positions</a></li>
+                            <li><a href="/Positions/WhyWorkAtIT">Why choose IT</a></li>
+                            <li><a href="/Testimonials/IndexMosaic">Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown submenu" id="submenu_Resources">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AboutIT/AnnualReports">Annual Reports</a></li>                            
+                            <li><a href="https://www.it.pt/docs/Política_de_Qualidade_2020_(V20.2)_-_Publicado.pdf" target="_blank">Quality Policy</a></li>
+                            <li><a href="/docs/Código de Ética e Conduta - IT.pdf" target="_blank">Code of Conduct</a></li>
+                            <li><a href="/docs/Gender_Equality_Plan_SKM_C224e23090512560.pdf" target="_blank">Gender Equality</a></li>
+                            <li><a href="/docs/IT_Sustainability_statement.pdf" target="_blank">Sustainability</a></li>
+                            <li><a href="/docs/Privacy_Statement_of_Instituto_de_Telecomunicacoes.pdf" target="_blank">Privacy Policy</a></li>
+                            
+                            <li><a href="/AboutIT/CookiePolicy">Cookie Policy</a></li>
+                            <li><a href="#" data-it-consent-open="1">Cookie Preferences</a></li>
+                            <li><a href="/docs/Corruption Prevention Plan.pdf" target="_blank">Corruption Prevention Plan</a></li>
+                            <li><a href="/AboutIT/Administrative">Support Staff</a></li>
+                            <li><a href="https://canaldenuncia.av.it.pt" target="_blank">Complaints Channel</a></li>
+                            <li><a href="/AboutIT/PressKit">Press Kit</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Navbar Search -->
+                    <li class="hidden-xs" id="navbar-search">
+                        <a href="#" title="Search">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <div class="hidden" id="navbar-search-box">
+                            <div class="input-group">
+
+                                <script>
+
+                                    (function ()
+                                    {
+                                        var cx = '010645856917850483530:nx4q_7_i8pw';
+                                        var gcse = document.createElement('script');
+                                        gcse.type = 'text/javascript';
+                                        gcse.async = true;
+                                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+                                        var s = document.getElementsByTagName('script')[0];
+                                        s.parentNode.insertBefore(gcse, s);
+                                    })();
+
+                                </script>
+
+                                <gcse:searchbox-only resultsurl="https://www.it.pt/Home/SearchResults"></gcse:searchbox-only>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+          
+                <!-- Mobile Search -->
+                
+                <form id="mobile-search" class="navbar-form navbar-right visible-xs" role="search" method="get" action="https://www.it.pt/Home/SearchResults">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-red" type="submit">Search!</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <!-- / .navigation -->
+
+    
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Topic Header -->
+        <div class="topic">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 heading">
+                        Creating and sharing knowledge in communications and information technology
+                    </div>
+                    <div class="col-sm-12">
+                        
+
+<ol class="breadcrumb pull-right hidden-xs">
+
+        <li >
+            
+                <a href="/">
+            Home
+            
+            </a>
+            
+
+        </li>            
+
+        <li >
+            
+                <a href="/ScientificAreas">
+            Thematic Lines
+            
+            </a>
+            
+
+        </li>            
+
+        <li >
+            
+                <a href="/ScientificAreas/Index/5">
+            Information and Data Sciences
+            
+            </a>
+            
+
+        </li>            
+
+        <li class="active">
+            Image Restoration and Reconstruction using Targeted Plug-and-Play Priors
+            
+
+        </li>            
+
+
+</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    <!-- Slider -->
+    <div class="sites-slider">
+        <div id="sites-slider" class="carousel fadeIn" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active site-8" id="site-8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h4>PUBLICATIONS</h4>
+                                <h1 class="first-child animated fadeIn delay-1">Journal Paper</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / .slider -->
+
+    
+
+    <div class="container white">
+        <div class="row">
+            <div class="col-sm-12 page-header">
+                <h3>Information and Data Sciences</h3>
+            </div>
+
+            <div class="container top-space">
+                <!-- Area content -->
+                <div class="col-sm-12">
+                    <h3 class="headline">Image Restoration and Reconstruction using Targeted Plug-and-Play Priors</h3>
+
+                    <p>
+                        
+                                <a href="/Members/Index/15372">Teodoro, A. M.</a>
+                          ; 
+                                <a href="/Members/Index/396">Bioucas-Dias, J.</a>
+                          ; 
+                                <a href="/Members/Index/406">Figueiredo, M. A. T.</a>
+                        
+                    </p>
+
+                    <p>
+                        IEEE Transactions on Computational Imaging Vol. 5, Nº 4, pp. 675 - 686, December, 2019.
+                    </p>
+
+                    <p>
+                        ISSN (print): 2573-0436
+                        <br />
+                        ISSN (online): 2333-9403
+                    </p>
+
+                    <p>
+                        
+                        Scimago Journal Ranking: 1,53 (in 2019)
+                    </p>
+                    <p>
+                        Digital Object Identifier: <a href="http://dx.doi.org/10.1109/TCI.2019.2914773" target="_blank">10.1109/TCI.2019.2914773</a>
+                    </p>
+                    
+
+                    <div class="panel panel-default">
+                        
+                        <div style="position:relative">
+                            <p style="position:absolute; top:-83px; right:0px;">
+                                <img src="/Images/UNSDG/UNSDG_09.png" style="height:80px; margin-left:10px" title="United Nations Strategic Development Goal - Industry, Innovation and Infrastructure"/>
+                            </p>
+                        </div>
+                        
+                        <div class="panel-heading">
+                            Abstract
+                        </div>
+                        <div class="panel-body">
+                            Leveraging current state-of-the-art denoisers to tackle other inverse problems in imaging is a challenging task, which has recently been the topic of significant research effort. In this paper, we present several contributions to this research front, based on two fundamental building blocks: 1) the recently proposed plug-and-play framework, which allows combining iterative algorithms for imaging inverse problems with state-of-the-art image denoisers, used in black-box fashion; and 2) patch-based denoisers, using Gaussian mixture models (GMM). We exploit the adaptability of GMM to learn class-adapted denoisers, which opens the door to embedding a patch classification step in the algorithmic loop, yielding simultaneous restoration and semantic segmentation. We apply the proposed approach to several standard imaging inverse problems (deblurring, compressive sensing reconstruction, and super-resolution), obtaining results that are competitive with the state of the art.                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / .container -->
+
+        </div>
+        <!-- / .row -->
+
+    </div>
+
+
+    </div>
+    <!-- / .wrapper -->
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- About IT -->
+                <div class="col-sm-8" style="margin-bottom: 30px;">
+                    <span class="footer-logos">
+                        <img src="/img/funding/IT_Barra-cofianciamento COMPETE-2030.png" style="width: 100%; height:auto;" alt="Compete2030 / Lisboa2030 / Centro2030 / Norte2030 / Portugal2030 / UE"><br>
+                        <a href="https://recuperarportugal.gov.pt/"><img src="/img/funding/IT_Barra-cofianciamento_PRR_UE-NextGen_Recuperar-Portugal.png" style="width: 100%; height:auto;" alt="PRR / República Portuguesa / Next Generation EU / Recuperar Portugal"></a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4" style="padding-top: 5px; padding-bottom: 25px;">
+                    <span class="footer-logos">
+                        <a href="http://www.fct.pt/index.phtml.en" title="FCT"><img src="/img/funding/2022_FCT_Logo_B_horizontal_branco.png" alt="FCT"></a>
+                    </span>
+                    <span>
+                        <p style="padding-top: 30px;">UID/50008/2025</p>
+                        <p><a href="https://www.it.pt/AutomaticPage/Index/3441">Integrated with ORCID</a></p>
+                    </span>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="col-sm-4" style="padding-bottom: 25px;">
+                    <h4>Contact Us</h4>
+                    
+                    <p>Instituto de Telecomunicações<br />
+                        Universidade de Aveiro, Campus Universitário de Santiago<br />
+                        3810 - 193 Aveiro - Portugal</p>
+                    <p>Phone: +351 234377900</p>
+                    Email: <a href="mailto:it@lx.it.pt">it@lx.it.pt</a><a href="#"></a>
+                </div>
+                <!-- Newsletter -->
+                <div class="col-sm-4">
+                    <h4>Newsletter</h4>
+                    <p>
+                        Enter your e-mail  to subscribe to our  newsletter.
+                        <br>
+                    </p>
+                    <form class="form" role="form">
+                        <div class="row">
+                            <div class="col-sm-10" style="padding-left: 16px;">
+                                <div class="input-group">
+                                    <label class="sr-only" for="subscribe-email">Email address</label>
+                                    <input type="email" class="form-control" id="subscribe-email" placeholder="Enter your email">
+                                    <span class="input-group-btn">
+                                        <button id="subscribeNewsletterBtn" type="button" class="btn btn-default" onclick="subscribeNewsletter()" style="margin-left:-1!important;height:40px">OK</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row" style="padding: 20px 0 0 16px;">
+                        <div class="social">
+                            <ul class="list-inline">
+                                <li><a href="https://www.linkedin.com/company/institutotelecomunicacoes/" class="linkedin" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.facebook.com/InstitutoDeTelecomunicacoes/" class="facebook" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/institutotelecomunicacoes" class="instagram" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.youtube.com/user/itelecomunicacoesPT" class="youtube" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="https://twitter.com/itnewspt" class="twitter" target="_blank"><i class="fa fa-twitter" title="Twitter"></i></a></li>
+                                
+
+                                
+                                <li><a href="https://www.flickr.com/photos/institutotelecomunicacoes" class="flickr" target="_blank" title="flickr"><i class="fa fa-flickr"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="copyright">
+                    &copy; 2026, IT - Instituto de Telecomunica&ccedil;&otilde;es | All Rights Reserved
+              
+                </div>
+            </div>
+        </div>
+        <!-- / .row -->
+    </div>
+    <!-- / .container -->
+
+    <!-- Google Custom Search styles
+    ================================================== -->
+    <style>
+        .gsc-input-box {
+            height: 28px;
+        }
+
+        /* Ticket #1128 - mobile search: the theme's .btn (font-size 1.2em !important + margin) inherits
+           font-size 0 from .input-group-btn (label invisible) and pushes the table past the screen edge */
+        #mobile-search {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        #mobile-search .input-group {
+            display: flex;
+            width: 100%;
+        }
+
+        #mobile-search .input-group .form-control {
+            flex: 1 1 auto;
+            min-width: 0;
+            width: auto;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-right: 0;
+            border-radius: 20px 0 0 20px;
+        }
+
+        #mobile-search .input-group-btn {
+            display: block;
+            width: auto;
+            font-size: 14px;
+        }
+
+        #mobile-search .input-group-btn > .btn {
+            height: 40px;
+            margin: 0;
+            padding: 0 18px !important;
+            font-size: 14px !important;
+            border-radius: 0 20px 20px 0 !important;
+        }
+
+        .cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+            width: auto !important;
+            height: auto !important;
+            margin: 3px 0 0 0px;
+            border-color: #e31522;
+            background-color: #d91822;
+            background-image: none;
+            filter: none;
+        }
+
+        .cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+            padding: 6px 22px 6px 22px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .gsc-search-box-tools .gsc-search-box .gsc-input {
+            padding-right: 0px;
+        }
+
+        .gsst_b {
+            padding: 2px 1px 0px 2px;
+        }
+
+        .gsc-selected-option-container {
+            background: #2babcf;
+            border-radius: 3px;
+            color: white;
+            width: 100px !important;
+        }
+
+        .gs-result .gs-title, .gs-result .gs-title * {
+            text-decoration: none;
+        }
+
+        .gsc-results .gsc-cursor-box {
+            margin-left: 0px;
+        }
+
+            .gsc-results .gsc-cursor-box .gsc-cursor-page {
+                position: relative;
+                display: inline-block;
+                padding-left: 0;
+                margin: 5px 3px 20px 0;
+                border-radius: 4px;
+                float: left;
+                padding: 6px 11px;
+                text-decoration: none;
+                color: #4180BF;
+                background-color: #ffffff;
+                border: 1px solid #dddddd;
+                margin-left: -1px;
+            }
+
+                .gsc-results .gsc-cursor-box .gsc-cursor-page:hover {
+                    background-color: #f6f6f6;
+                    border: 1px solid #dddddd;
+                }
+
+            .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+                color: #ffffff;
+                background-color: #428bca;
+                border-color: #4180BF;
+                cursor: default;
+            }
+
+                .gsc-results .gsc-cursor-box .gsc-cursor-current-page:hover {
+                    background-color: #777;
+                    border-color: #222;
+                    cursor: default;
+                }
+
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #DDDDDE;
+            border-radius: 8px;
+        }
+
+        .boxscroll::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .boxscroll::-webkit-scrollbar-thumb {
+            background: #EDEDEE;
+            border-radius: 8px;
+        }
+    </style>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-ui-1.10.4.custom.min.js?v=20190227225610" type="text/javascript"></script>
+
+    
+    <script src="/js/bootstrap.min.js?v=20190227225610"></script>
+    <script src="/js/scrolltopcontrol.js?v=20190227225610"></script>
+    <script src="/js/lightbox-2.6.min.js?v=20190227225610"></script>
+    <script src="/js/custom.js?v=20201209201254"></script>
+    <script src="/js/index.js?v=20190227225610"></script>
+
+    <script src="/js/jquery.base64.js?v=20190227225610" type="text/javascript"></script>
+    <script src="/js/bootbox.min.js?v=20190227225610" type="text/javascript"></script>
+
+
+    <script src="/js/jquery.browser.min.js?v=20190227225610" type="text/javascript"></script>
+    <script src="/js/Common.js?v=20260302011130" type="text/javascript"></script>
+    <!--//EPocas, 20220207 - Ticker #917 - Disable Nice Scroll-->
+    
+
+    <script src="/js/jquery.blockUI.js?v=20190227225608" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function ()
+        {
+            //EPocas, 20220207 - Ticker #917 - Disable Nice Scroll
+            //var nice = $("html").niceScroll({ enablemousewheel :true});  // page scroll (body)
+            //$("#boxscroll").niceScroll({ touchbehavior: false });
+        });
+    </script>
+
+    <!-- DX CHarts -->
+    <script src="/js/DX/knockout-3.1.0.js?v=20190227225610" type="text/javascript" language="javascript"></script>
+    <script src="/js/DX/globalize.min.js?v=20190227225610" type="text/javascript" language="javascript"></script>
+    <script src="/js/DX/15.2.5/dx.webappjs.js?v=20190227225610" type="text/javascript" language="javascript"></script>
+    <script src="/js/DX/15.2.5/dx.chartjs.js?v=20190227225610" type="text/javascript" language="javascript"></script>
+
+    <!-- For Date picker-->
+    <script src="/js/Editors/jquery.datePickerAutoFill.js?v=20240405223648" type="text/javascript"></script>
+
+    <!-- For Month and year picker-->
+    <script src="/js/Editors/jquery.mtz.monthpicker.js?v=20190227225610" type="text/javascript"></script>
+    <script src="/js/Editors/jquery.monthPickerAutoFillWithoutCalendar.js?v=20190227225610" type="text/javascript"></script>
+
+    <!-- Fine Uploader  -->
+    <link href="/js/FineUploader/fine-uploader-new.css?v=20190227225610" rel="stylesheet">
+    <script src="/js/FineUploader/jquery.fine-uploader.js?v=20190227225610"></script>
+
+    <!-- Table Sorter -->
+    <script src="/js/JQueryTableSorter/jQuery.stupidTable.js?v=20190227225610" type="text/javascript"></script>
+
+    
+    
+
+<div id="it-consent" class="it-consent" hidden="hidden" role="dialog" aria-modal="true" aria-labelledby="it-consent-title">
+    <div class="it-consent__panel">
+
+        
+        <div id="it-consent-intro">
+            <h2 id="it-consent-title">Cookies on this website</h2>
+            <p>
+                We use cookies that are strictly necessary for this website to work. We would also like to use
+                analytics cookies to understand how the site is used, and video cookies when you choose to play
+                a video hosted by YouTube. These are only set if you agree.
+            </p>
+            <p>
+                You can change or withdraw your choice at any time. See our
+                <a href="/AboutIT/CookiePolicy">Cookie Policy</a> for the full list of cookies, what each one does and
+                how long it lasts.
+            </p>
+
+            <div class="it-consent__actions">
+                
+                <button type="button" class="it-consent__btn it-consent__btn--primary" data-it-consent="reject">Reject all</button>
+                <button type="button" class="it-consent__btn it-consent__btn--secondary" data-it-consent="manage">Manage preferences</button>
+                <button type="button" class="it-consent__btn it-consent__btn--primary" data-it-consent="accept">Accept all</button>
+            </div>
+        </div>
+
+        
+        <div id="it-consent-prefs" hidden="hidden">
+            <h2>Manage cookie preferences</h2>
+            <p>
+                Choose which categories you allow. Analytics and video cookies are off unless you switch them on.
+                Full details are in our <a href="/AboutIT/CookiePolicy">Cookie Policy</a>.
+            </p>
+
+            
+            <div class="it-consent__category">
+                <div class="it-consent__category-head">
+                    <h3>Strictly necessary cookies</h3>
+                    <label class="it-consent__toggle">
+                        
+                        <input type="checkbox" checked="checked" disabled="disabled" />Always active
+                        
+                    </label>
+                </div>
+                <p>Needed for the website to work: they keep your session and remember the cookie choices you make here. They cannot be switched off.</p>
+
+                
+                <details class="it-consent__details">
+                    <summary>See the 2 items in this category</summary>
+                    <table class="it-consent__table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Set by</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td><code>ASP.NET_SessionId</code></td>
+                                <td>Cookie</td>
+                                <td>Instituto de Telecomunica&#231;&#245;es</td>
+                                <td>Session (deleted when you close the browser)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>it_cookie_consent</code></td>
+                                <td>Cookie</td>
+                                <td>Instituto de Telecomunica&#231;&#245;es</td>
+                                <td>12 months</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </details>
+                
+            </div>
+            
+            <div class="it-consent__category">
+                <div class="it-consent__category-head">
+                    <h3>Analytics cookies</h3>
+                    <label class="it-consent__toggle">
+                        
+                        <input type="checkbox" data-it-category="analytics" />Allow
+                        
+                    </label>
+                </div>
+                <p>Let us count visits and see which pages are read, so we can improve the website. The information is collected by Google Analytics and does not identify you by name.</p>
+
+                
+                <details class="it-consent__details">
+                    <summary>See the 2 items in this category</summary>
+                    <table class="it-consent__table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Set by</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td><code>_ga</code></td>
+                                <td>Cookie</td>
+                                <td>Google Analytics</td>
+                                <td>13 months</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>_ga_1P84PH2BSW</code></td>
+                                <td>Cookie</td>
+                                <td>Google Analytics</td>
+                                <td>13 months</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </details>
+                
+            </div>
+            
+            <div class="it-consent__category">
+                <div class="it-consent__category-head">
+                    <h3>Embedded content cookies (video and maps)</h3>
+                    <label class="it-consent__toggle">
+                        
+                        <input type="checkbox" data-it-category="targeting" />Allow
+                        
+                    </label>
+                </div>
+                <p>Set by YouTube or Google Maps when you choose to load a video or a map embedded in one of our pages. Until you load one, nothing is set and neither provider is contacted.</p>
+
+                
+                <details class="it-consent__details">
+                    <summary>See the 8 items in this category</summary>
+                    <table class="it-consent__table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Set by</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td><code>VISITOR_INFO1_LIVE</code></td>
+                                <td>Cookie</td>
+                                <td>YouTube (Google)</td>
+                                <td>6 months</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>VISITOR_PRIVACY_METADATA</code></td>
+                                <td>Cookie</td>
+                                <td>YouTube (Google)</td>
+                                <td>6 months</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>YSC</code></td>
+                                <td>Cookie</td>
+                                <td>YouTube (Google)</td>
+                                <td>Session (deleted when you close the browser)</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>__Secure-ROLLOUT_TOKEN</code></td>
+                                <td>Cookie</td>
+                                <td>YouTube (Google)</td>
+                                <td>6 months</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>lastExternalReferrer</code></td>
+                                <td>Local storage</td>
+                                <td>YouTube (Google)</td>
+                                <td>Until you clear your browser data</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>lastExternalReferrerTime</code></td>
+                                <td>Local storage</td>
+                                <td>YouTube (Google)</td>
+                                <td>Until you clear your browser data</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>yt-remote-* / unique identifier</code></td>
+                                <td>Local storage</td>
+                                <td>YouTube (Google)</td>
+                                <td>Until you clear your browser data</td>
+                            </tr>
+                            
+                            <tr>
+                                <td><code>NID and other Google cookies</code></td>
+                                <td>Cookie</td>
+                                <td>Google Maps</td>
+                                <td>Up to 6 months</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </details>
+                
+            </div>
+            
+
+            <div class="it-consent__actions">
+                <button type="button" class="it-consent__btn it-consent__btn--primary" data-it-consent="reject">Reject all</button>
+                <button type="button" class="it-consent__btn it-consent__btn--secondary" data-it-consent="save">Save my choices</button>
+                <button type="button" class="it-consent__btn it-consent__btn--primary" data-it-consent="accept">Accept all</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    //Consumed by itConsent.js. Version comes from CookieCatalog so that bumping the catalog server-side
+    //invalidates every stored consent and re-prompts every visitor.
+    window.itConsentConfig = {
+        cookieName: 'it_cookie_consent',
+        version: 1,
+        lifetimeMonths: 12,
+        policyUrl: '/AboutIT/CookiePolicy'
+    };
+</script>
+<script src="/js/itConsent.js?v=20260915" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    //Google Analytics (GA4). Deliberately NOT emitted into <head>: the tag is injected only once the visitor
+    //has granted the analytics category, so no Google script is contacted and no _ga cookie exists before then.
+    window.itConsent.onGrant('analytics', function () {
+        var tag = document.createElement('script');
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-1P84PH2BSW';
+        document.head.appendChild(tag);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag('js', new Date());
+        gtag('config', 'G-1P84PH2BSW');
+    });
+</script>
+
+</body>
+</html>
