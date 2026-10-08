@@ -3796,17 +3796,17 @@
         "spectral unmixing"
       ],
       "url": "https://api.crossref.org/journals/1545-598X/works",
-      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审28条；余38项pending，非年度系统检索完成。",
+      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审29条；余37项pending，非年度系统检索完成。",
       "titleCount": 572,
       "candidateCount": 66,
-      "reviewedCount": 28,
+      "reviewedCount": 29,
       "status": "partial",
       "statusLabel": "指定题名组扫描完成，候选核验进行中",
       "sourceSnapshot": "sources/grsl-2015-optical-title-matches.json",
       "gaps": [
         "登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。",
         "出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。",
-        "本组剩余38候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
+        "本组剩余37候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
         "本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。"
       ]
     },
@@ -3832,6 +3832,29 @@
       "gaps": [
         "TGRS2015官方目录及全量摘要/其他关键词矩阵尚未完成",
         "机构记录无fileMain，原PDF/原图及代码数据待取得"
+      ]
+    },
+    {
+      "id": "mpe-2013-kfkt-primary-title-trace",
+      "venue": "MPE",
+      "year": 2013,
+      "keywordGroup": "kfkt-classification-title-trace",
+      "date": "2026-10-08",
+      "method": "GRSL2015方法检索追踪较早同族论文；按出版社完整原摘要与DOI逐篇核验",
+      "keywords": [
+        "hyperspectral classification Fukunaga Koontz"
+      ],
+      "url": "https://onlinelibrary.wiley.com/doi/10.1155/2013/471915",
+      "pagination": "单篇题名/方法族追踪；未扫描该期刊年度目录",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "单篇同族追踪闭环，非年度系统检索",
+      "sourceSnapshot": "sources/kfkt2013-publisher-abstract-cache.json",
+      "gaps": [
+        "MPE年度目录/摘要尚未系统检索，专业期刊来源不标为顶刊",
+        "原PDF403、原图/实验细节/代码数据及版本差异待核验"
       ]
     }
   ],
@@ -11577,10 +11600,10 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现",
+      "decision": "included",
+      "reason": "原文对象为光学高光谱影像，仅进入高光谱总库。",
+      "evidencePath": "research/hyperspectral/sources/kfkt2013-2015-primary-decisions.json",
+      "readingBoundary": "Semih Dinc本人上传期刊原排版完整摘要及引言/§III局部缓存已读；直接原稿页429，未取得PDF、未逐页阅读全文或复现。",
       "discoveryReview": {
         "checkedAt": "2026-10-08",
         "status": "needs_primary_abstract",
@@ -11595,7 +11618,9 @@
           "evidencePath": "research/hyperspectral/sources/grsl2015-remaining39-hal-doi-query.json",
           "note": "单一机构存档精确DOI未命中，不表示无原稿、不提升核验、不排除。"
         }
-      ]
+      ],
+      "paperId": "kfkt-small-sample-classification-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "Nonlinear PCA for Visible and Thermal Hyperspectral Images Quality Enhancement",
@@ -12224,11 +12249,8 @@
       "discoveryReview": {
         "checkedAt": "2026-10-08",
         "status": "needs_primary_abstract",
-        "evidencePaths": [
-          "research/hyperspectral/sources/grsl2015-four-discovery.json",
-          "research/hyperspectral/sources/grsl2015-four-followup-access.json"
-        ],
-        "note": "作者/机构路线逐篇继续：自编码器作者页只有书目，HAL精确检索0命中；ELML只有二手发现；邻域图作者明确关联2014 workshop，但原稿和前序PDF失效/受限，尚不提升阅读状态。"
+        "evidencePath": "research/hyperspectral/sources/kfkt-ssae-primary-discovery.json",
+        "note": "CSU作者机构仅书目，无原摘要/原图；二手摘要不提升核验，正式12(12)与页面发布日期区分。"
       },
       "sourceChecks": [
         {
@@ -12390,6 +12412,21 @@
       "paperId": "rs-emap-ensembles-2015",
       "readingBoundary": "HAL机构记录完整原摘要已读；记录为notice无fileMain，未读原PDF、未复现。按题名追踪发现，与GRSL3-D形态学候选不是同篇。",
       "evidencePath": "research/hyperspectral/sources/grsl2015-representation-primary-decisions.json"
+    },
+    {
+      "title": "Hyperspectral Image Classification Using Kernel Fukunaga-Koontz Transform",
+      "doi": "10.1155/2013/471915",
+      "url": "https://doi.org/10.1155/2013/471915",
+      "venue": "MPE",
+      "year": 2013,
+      "searchId": "mpe-2013-kfkt-primary-title-trace",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "paperId": "kfkt-hyperspectral-classification-2013",
+      "verifiedAt": "2026-10-08",
+      "reason": "出版社原摘要明确直接HSI分类；同族不同工作关联，非相同版本或独立方法数量。",
+      "readingBoundary": "出版社完整原摘要、引言及结论缓存已读；出版社原PDF403，未阅读全文或复现。",
+      "evidencePath": "research/hyperspectral/sources/kfkt2013-2015-primary-decisions.json"
     }
   ],
   "batches": [
@@ -13827,6 +13864,26 @@
       "gaps": [
         "光谱组38待核验，压缩组4；HAL索引缺口之外继续作者/出版社路线。",
         "HU Type预印本标记与正式卷期冲突已保留；原图、代表构造、数据代码及正式稿仍待核验。"
+      ]
+    },
+    {
+      "id": "kfkt-2013-2015-classification-family-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "grsl-2015-crossref-optical-titles",
+        "mpe-2013-kfkt-primary-title-trace"
+      ],
+      "new": 2,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 37,
+      "categoriesAdded": 1,
+      "figuresAdded": 0,
+      "readingBoundary": "2015作者原稿完整摘要和方法/实验局部；2013出版社完整原摘要及引言/结论局部。未阅读全文；同方法族两工作关联，不混作者/实验或声称同篇版本。",
+      "gaps": [
+        "GRSL光谱组37待核验，压缩组4；出版社年度目录/其他词和摘要尚未全量完成。",
+        "2015原页429、2013原PDF403；原图、完整实验协议、代码数据及直接版本关系待核验。"
       ]
     }
   ],
