@@ -16,8 +16,8 @@
 
 ## 当前状态
 
-- 总库452篇，311篇已复核分类，141篇暂定分类，192标签（任务86/方法85/应用21）。三维214篇不变；总库 ?collection=hyperspectral。
-- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱333、多光谱92、基础27。
+- 总库455篇，311篇已复核分类，144篇暂定分类，194标签（任务86/方法87/应用21）。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱336、多光谱92、基础27。
 - CVPR2013–2022、ICCV2013–2021奇数年、NeurIPS2023五词147命中闭环；非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。19篇/41个arXiv日期核验；Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -26,11 +26,11 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词闭环增17排14待4。2019官方四期52项（51研究+1奖公告）逐题名/起始页匹配；另16行政记录及1未列目录索引。51研究项均尝试原来源，34已审17待核验；5医学项仅摘要片段，EPFL仅官方缓存；非年度HSI全量。Monash错标2009按正式2019。Fourier DOI、MSVI真值、正式稿差异待查。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖452篇、294张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖455篇、294张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt。
-- GRSL2015光谱66命中已审33待33，压缩待4。WHISPERS2014官方PDF45–69页80条76入2排2待；另CRNN。A-SCOPE模型敏感性、HSI多尺度稀疏表示和RDWT主动学习摘要核验；后者2014页上传2016期刊稿/图，分开记录。新增模型敏感性/表示/主动选择及小波多视图标签，扩展字典定义。原稿/版本/原图缺口见coverage.md。正式目录174条本批关联77/决定4/未审93，年度未审完；续审70页及其余目录。
+- GRSL2015光谱66命中已审33待33，压缩待4。WHISPERS2014官方PDF45–70页83条79入2排2待；另CRNN。LMNN主动学习、SAE和受约束α-tree分类摘要核验；两原稿方法/设置选读未升全文。METU漏Gedik及Merciol姓氏错写，以登记/原稿交叉核；新增监督度量/SAE标签。原稿/版本/原图缺口见coverage.md。正式目录174条本批关联80/决定4/未审90，年度未审完；续审71页及其余目录。

@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "active-metric-learning-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077529",
+      "decision": "included",
+      "programPdfPage": 70,
+      "readingBoundary": "主办方物理70页完整摘要、出版社原摘要及作者会议原稿§2–3.2选读；未完整阅读全文/复算公式。",
+      "figureBoundary": "作者原会议稿文字确认图1(a)/(b)为传统/主动度量学习流程；公开PDF链接工具Internal Error，图像与确切页码未取得。IEEE202空响应；不转移2016 TGRS同类流程图。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；近似题名TGRS/IGARSS稿保留相关未确认关系。"
+    },
+    {
+      "paperId": "sae-hyperspectral-classification-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077532",
+      "decision": "included",
+      "programPdfPage": 70,
+      "readingBoundary": "主办方物理70页与METU完整原摘要及正式三作者书目核验；未取得会议原稿。",
+      "figureBoundary": "METU页面只有原摘要/书目，列出的Term Project Upload Guide是提交指南，非论文PDF；IEEE202空响应，原方法图/图号/页码未知。不同SAE论文原图不替代。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；近似题名TGRS/IGARSS稿保留相关未确认关系。"
+    },
+    {
+      "paperId": "alpha-connectivity-metric-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077559",
+      "decision": "included",
+      "programPdfPage": 70,
+      "readingBoundary": "官方物理70页题名/摘要首段；另读作者原稿完整摘要及§2–4，补足窗口尾部，公式/图件缺失保持摘要已核验。",
+      "figureBoundary": "作者原会议稿图1为Pavia Center及分类正确/错误结果图；本次公开PDF工具Internal Error，未取得图像/确切页码，未确认框架图。RG重复上传不计新稿；不把文本生成图充原图。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；近似题名TGRS/IGARSS稿保留相关未确认关系。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "supervised-metric-learning",
+      "name": "监督度量学习",
+      "dimension": "method",
+      "definition": "利用类别或成对约束学习光谱特征空间的距离/线性变换，服务降维、邻域判别或空间层级构造；具体LMNN或其他目标按论文核验，不将全部度量学习当同一种算法。",
+      "rationale": "本批LMNN主动学习及知识驱动α-tree分别以标签学习距离，建立可跨任务复用的方法维度。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "active-metric-learning-whispers-2014",
+        "alpha-connectivity-metric-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "本批LMNN主动学习及知识驱动α-tree分别以标签学习距离，建立可跨任务复用的方法维度。"
+        }
+      ]
+    },
+    {
+      "id": "stacked-autoencoder",
+      "name": "堆叠自编码器",
+      "dimension": "method",
+      "definition": "通过多层自编码器学习光谱特征，并按任务进行监督微调或解码；无监督预训练不自动等于跨数据可迁移基础模型，微调与分类器需逐篇记录。",
+      "rationale": "2014 SAE原摘要明确无监督表征、标签微调和softmax分类，不用其他论文的DBN或架构补写。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "sae-hyperspectral-classification-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2014 SAE原摘要明确无监督表征、标签微调和softmax分类，不用其他论文的DBN或架构补写。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-page70-program-cache.json",
+      "sha256": "a10818cf05684b06ebbae8d661661a19a61cc09872a921c1b210ddba61a9acca"
+    },
+    {
+      "path": "whispers2014-page70-author-reading-cache.json",
+      "sha256": "38d7521889032302d044b58b90361722487d20af2b0a39a8cbdb7b39d2409a0e"
+    },
+    {
+      "path": "whispers2014-stacked-autoencoders-institution-access.json",
+      "sha256": "51d7c6961a50d353ebc1a386f89cedd1d8a65ea4a54e57de85c6bac0db1459e3"
+    }
+  ],
+  "qualityIssues": [
+    "METU遗漏Gedik，不把简化机构引文当完整作者名单；Crossref A/B/C不无证据删除。",
+    "Merciol原稿/主页/登记一致，TOC Mericol及program Mercier单独记录错误。",
+    "作者会议原稿选读可记录直接确认的方法/设置，但缺公式图件不当完整阅读全文，不编造准确率。",
+    "原图链接失败逐篇保留；图1流程或分类结果的用途区别记录，不借相关期刊替代。"
+  ]
+}

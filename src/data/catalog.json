@@ -46845,6 +46845,290 @@
         "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077528",
         "checkedAt": "2026-10-09"
       }
+    },
+    {
+      "id": "active-metric-learning-whispers-2014",
+      "shortTitle": "Active-metric learning",
+      "title": "Combining active and metric learning for hyperspectral image classification",
+      "authors": "Edoardo Pasolli, Hsiuhan Lexie Yang, Melba M. Crawford",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077529",
+      "representation": "把LMNN标签驱动降维与k-NN分类/主动采样结合，在新增标签后更新特征空间；原稿§2.2通过不同k预测的投票分歧选择样本。",
+      "tags": [
+        "land-cover-classification",
+        "active-sample-selection",
+        "spectral-dimensionality-reduction",
+        "supervised-metric-learning"
+      ],
+      "summary": "把LMNN标签驱动降维与k-NN分类/主动采样结合，在新增标签后更新特征空间；原稿§2.2通过不同k预测的投票分歧选择样本。",
+      "input": "高光谱像元及初始标签、随后由用户提供的主动查询标签。",
+      "output": "低维特征、待标注样本与地物类别；不当无需人工标签的自学习。",
+      "mechanism": "把LMNN标签驱动降维与k-NN分类/主动采样结合，在新增标签后更新特征空间；原稿§2.2通过不同k预测的投票分歧选择样本。",
+      "readingNote": "主办方物理70页完整摘要、出版社原摘要及作者会议原稿§2–3.2选读；未完整阅读全文/复算公式。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077529",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{active_metric_learning_whispers_2014,\n  title = {Combining active and metric learning for hyperspectral image classification},\n  author = {Edoardo Pasolli and Hsiuhan Lexie Yang and Melba M. Crawford},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077529}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "active-sample-selection",
+          "spectral-dimensionality-reduction",
+          "supervised-metric-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "需要用户标签与有监督初始化；原稿公式乱码/图件未取得，保持摘要核验及选读状态。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何同时更新有监督降维空间和主动标注样本，以缓解HSI高维与标签稀缺？",
+        "datasets": "作者原会议稿§3.1：KSC/AVIRIS，1996年3月、18m，去噪/吸收后176波段，5211标注像元/13类；本版非2016期刊多数据集。",
+        "experimentSetting": "作者原稿§3.2选读：7维表示、LMNN邻居参数3、1NN分类，主动采样k取1/3/5；每类5初始样本，每轮增10，10次运行。比较PCA、Isomap、仅初始LMNN及原空间1NN/SVM；公式/图件缺失不复算数值。",
+        "conclusions": "作者报告联动更新特征与样本优于独立处理，并讨论分类与耗时权衡；训练需度量学习成本，单KSC实验不证明全部HSI场景。",
+        "limitations": "需要用户标签与有监督初始化；原稿公式乱码/图件未取得，保持摘要核验及选读状态。2016 TGRS DOI 10.1109/tgrs.2015.2490482为同作者相关稿，正式2016与在线/DOI2015分开，明确扩展及实验差异待核。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理70页完整原摘要缓存",
+            "supports": [
+              "Combining active and metric learning for hyperspectral image classification",
+              "前两条官方完整摘要；第三条官方题名/摘要首段，完整摘要另据作者原稿。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077529",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "Edoardo Pasolli, Hsiuhan Lexie Yang, Melba M. Crawford",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://www.researchgate.net/publication/263662399_Combining_Active_and_Metric_Learning_for_Hyperspectral_Image_Classification",
+            "checkedAt": "2026-10-09",
+            "level": "作者原稿选读（非完整全文）",
+            "supports": [
+              "主办方物理70页完整摘要、出版社原摘要及作者会议原稿§2–3.2选读；未完整阅读全文/复算公式。",
+              "作者原稿§3.2选读：7维表示、LMNN邻居参数3、1NN分类，主动采样k取1/3/5；每类5初始样本，每轮增10，10次运行。比较PCA、Isomap、仅初始LMNN及原空间1NN/SVM；公式/图件缺失不复算数值。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "active-metric-learning-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077529",
+            "doi": "10.1109/whispers.2014.8077529",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "active-metric-learning-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "作者原会议稿文字确认图1(a)/(b)为传统/主动度量学习流程；公开PDF链接工具Internal Error，图像与确切页码未取得。IEEE202空响应；不转移2016 TGRS同类流程图。",
+        "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077529",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "sae-hyperspectral-classification-whispers-2014",
+      "shortTitle": "SAE HSI classification",
+      "title": "Hyperspectral classification using stacked autoencoders with deep learning",
+      "authors": "A. Okan Bilge Ozdemir, B. Ekin Gedik, C. Yasemin Yardimci Cetin",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077532",
+      "representation": "以堆叠自编码器无监督学习内在特征，再用标签微调，最后通过softmax输出高光谱类别。",
+      "tags": [
+        "land-cover-classification",
+        "spectral-dimensionality-reduction",
+        "stacked-autoencoder"
+      ],
+      "summary": "以堆叠自编码器无监督学习内在特征，再用标签微调，最后通过softmax输出高光谱类别。",
+      "input": "Pavia University高光谱及用于微调的类别标签；采样/划分未知。",
+      "output": "学习的特征表示与像元类别，非光谱成像重建或已验证跨场景基础模型。",
+      "mechanism": "以堆叠自编码器无监督学习内在特征，再用标签微调，最后通过softmax输出高光谱类别。",
+      "readingNote": "主办方物理70页与METU完整原摘要及正式三作者书目核验；未取得会议原稿。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077532",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{sae_hyperspectral_classification_whispers_2014,\n  title = {Hyperspectral classification using stacked autoencoders with deep learning},\n  author = {A. Okan Bilge Ozdemir and B. Ekin Gedik and C. Yasemin Yardimci Cetin},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077532}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "spectral-dimensionality-reduction",
+          "stacked-autoencoder"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "有监督微调仍需标签，不能因无监督预训练标成基础模型。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "堆叠自编码器的无监督特征学习、标签微调如何用于高维HSI分类？",
+        "datasets": "Pavia University；原摘要未给波段处理、类别/样本数和划分，不能移用其他SAE论文协议。",
+        "experimentSetting": "官方完整摘要与METU机构一致，声称参数优化开展多组实验；隐藏层数/宽度、损失、训练预算、标签比例、空间信息与准确率待会议原稿。",
+        "conclusions": "作者称结果与当时技术具有竞争力；原摘要未给数字或完整对照，关于没有前期深度HSI工作的表述只作作者历史主张，未独立核实优先权。",
+        "limitations": "有监督微调仍需标签，不能因无监督预训练标成基础模型。METU只有两位作者并漏Gedik，正式书目/原日程有三位，采用三作者；注册中的A/B/C保留，不凭空判断为列表标号。2015 SAE主动学习不同作者/题名，未证实扩展。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理70页完整原摘要缓存",
+            "supports": [
+              "Hyperspectral classification using stacked autoencoders with deep learning",
+              "前两条官方完整摘要；第三条官方题名/摘要首段，完整摘要另据作者原稿。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077532",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "A. Okan Bilge Ozdemir, B. Ekin Gedik, C. Yasemin Yardimci Cetin",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://open.metu.edu.tr/handle/11511/53347",
+            "checkedAt": "2026-10-09",
+            "level": "作者机构完整原摘要及书目",
+            "supports": [
+              "主办方物理70页与METU完整原摘要及正式三作者书目核验；未取得会议原稿。",
+              "官方完整摘要与METU机构一致，声称参数优化开展多组实验；隐藏层数/宽度、损失、训练预算、标签比例、空间信息与准确率待会议原稿。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "sae-hyperspectral-classification-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077532",
+            "doi": "10.1109/whispers.2014.8077532",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "sae-hyperspectral-classification-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "METU页面只有原摘要/书目，列出的Term Project Upload Guide是提交指南，非论文PDF；IEEE202空响应，原方法图/图号/页码未知。不同SAE论文原图不替代。",
+        "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077532",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "alpha-connectivity-metric-whispers-2014",
+      "shortTitle": "Constrained alpha-tree features",
+      "title": "Hyperspectral image classification from multiscale description with constrained connectivity and metric learning",
+      "authors": "Sebastien Lefevre, Laetitia Chapel, Francois Merciol",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077559",
+      "representation": "以标签约束学习Mahalanobis距离构建知识驱动α-tree，按全局范围约束采样(α,ω)连通区域；原稿以包围球直径近似范围并提取树特征供SVM分类。",
+      "tags": [
+        "land-cover-classification",
+        "morphological-profiles",
+        "supervised-metric-learning"
+      ],
+      "summary": "以标签约束学习Mahalanobis距离构建知识驱动α-tree，按全局范围约束采样(α,ω)连通区域；原稿以包围球直径近似范围并提取树特征供SVM分类。",
+      "input": "高光谱影像及用于度量和分类学习的标签/成对约束。",
+      "output": "多尺度空间光谱区域特征及像元类别，非端元/丰度解混或新影像采集。",
+      "mechanism": "以标签约束学习Mahalanobis距离构建知识驱动α-tree，按全局范围约束采样(α,ω)连通区域；原稿以包围球直径近似范围并提取树特征供SVM分类。",
+      "readingNote": "官方物理70页题名/摘要首段；另读作者原稿完整摘要及§2–4，补足窗口尾部，公式/图件缺失保持摘要已核验。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077559",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "author_original_abstract_verified",
+      "citation": "@inproceedings{alpha_connectivity_metric_whispers_2014,\n  title = {Hyperspectral image classification from multiscale description with constrained connectivity and metric learning},\n  author = {Sebastien Lefevre and Laetitia Chapel and Francois Merciol},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077559}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "morphological-profiles",
+          "supervised-metric-learning"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "全局范围用近似上估，距离依赖标签；学习距离不等于LMNN。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何缓解高维α-tree串链效应并由受约束连通区域提取空间光谱分类特征？",
+        "datasets": "作者原会议稿§4：Pavia University与Pavia Center；同一5%随机标注像元用于度量和分类训练。公开专用数据划分/代码未确认。",
+        "experimentSetting": "作者原稿§2–4选读：must-link/cannot-link学习距离，10个ω取值提取树特征，RBF SVM网格搜索/重复随机子采样，10次实验，与仅光谱特征比较；精确参数网格、图件与公式复核待PDF。",
+        "conclusions": "作者报告树特征改善像元分类并减少孤立错误；结论明确仍需更深入比较其他空间光谱方法，不宣称普遍最优或精确全局范围计算。",
+        "limitations": "全局范围用近似上估，距离依赖标签；学习距离不等于LMNN。目录Mericol和程序部分Mercier是姓氏冲突，作者原稿、主页和出版社均Merciol，采用后者。RG重复上传页不是新版本/新方法。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理70页完整原摘要缓存",
+            "supports": [
+              "Hyperspectral image classification from multiscale description with constrained connectivity and metric learning",
+              "前两条官方完整摘要；第三条官方题名/摘要首段，完整摘要另据作者原稿。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077559",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "Sebastien Lefevre, Laetitia Chapel, Francois Merciol",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://www.researchgate.net/publication/278798234_Hyperspectral_image_classification_from_multiscale_description_with_constrained_connectivity_and_metric_learning",
+            "checkedAt": "2026-10-09",
+            "level": "作者原稿选读（非完整全文）",
+            "supports": [
+              "官方物理70页题名/摘要首段；另读作者原稿完整摘要及§2–4，补足窗口尾部，公式/图件缺失保持摘要已核验。",
+              "作者原稿§2–4选读：must-link/cannot-link学习距离，10个ω取值提取树特征，RBF SVM网格搜索/重复随机子采样，10次实验，与仅光谱特征比较；精确参数网格、图件与公式复核待PDF。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "alpha-connectivity-metric-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077559",
+            "doi": "10.1109/whispers.2014.8077559",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "alpha-connectivity-metric-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "作者原会议稿图1为Pavia Center及分类正确/错误结果图；本次公开PDF工具Internal Error，未取得图像/确切页码，未确认框架图。RG重复上传不计新稿；不把文本生成图充原图。",
+        "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077559",
+        "checkedAt": "2026-10-09"
+      }
     }
   ],
   "datasets": [
@@ -47698,7 +47982,9 @@
         "id-residual-cpa-evaluation-2014",
         "bfodpso-feature-selection-2014",
         "unsupervised-sparse-deep-hsi-whispers-2014",
-        "ego-parametric-reduction-whispers-2014"
+        "ego-parametric-reduction-whispers-2014",
+        "active-metric-learning-whispers-2014",
+        "sae-hyperspectral-classification-whispers-2014"
       ],
       "history": [
         {
@@ -50087,7 +50373,10 @@
         "tama-tree-hsi-lidar-classification-2014",
         "unsupervised-sparse-deep-hsi-whispers-2014",
         "worldview3-prelaunch-information-2014",
-        "wavelet-multiview-active-whispers-2014"
+        "wavelet-multiview-active-whispers-2014",
+        "active-metric-learning-whispers-2014",
+        "sae-hyperspectral-classification-whispers-2014",
+        "alpha-connectivity-metric-whispers-2014"
       ],
       "history": [
         {
@@ -51504,7 +51793,8 @@
         "generalized-graph-fusion-2015",
         "extended-self-dual-profiles-2015",
         "rs-emap-ensembles-2015",
-        "bfodpso-feature-selection-2014"
+        "bfodpso-feature-selection-2014",
+        "alpha-connectivity-metric-whispers-2014"
       ],
       "history": [
         {
@@ -52608,7 +52898,8 @@
       "color": "#93afa1",
       "createdAt": "2026-10-09",
       "evidencePaperIds": [
-        "wavelet-multiview-active-whispers-2014"
+        "wavelet-multiview-active-whispers-2014",
+        "active-metric-learning-whispers-2014"
       ],
       "history": [
         {
@@ -52635,6 +52926,47 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "2014小波主动学习原摘要明确RDWT产生多视图，区别用于压缩的wavelet-coding。"
+        }
+      ]
+    },
+    {
+      "id": "supervised-metric-learning",
+      "name": "监督度量学习",
+      "dimension": "method",
+      "definition": "利用类别或成对约束学习光谱特征空间的距离/线性变换，服务降维、邻域判别或空间层级构造；具体LMNN或其他目标按论文核验，不将全部度量学习当同一种算法。",
+      "rationale": "本批LMNN主动学习及知识驱动α-tree分别以标签学习距离，建立可跨任务复用的方法维度。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "active-metric-learning-whispers-2014",
+        "alpha-connectivity-metric-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "本批LMNN主动学习及知识驱动α-tree分别以标签学习距离，建立可跨任务复用的方法维度。"
+        }
+      ]
+    },
+    {
+      "id": "stacked-autoencoder",
+      "name": "堆叠自编码器",
+      "dimension": "method",
+      "definition": "通过多层自编码器学习光谱特征，并按任务进行监督微调或解码；无监督预训练不自动等于跨数据可迁移基础模型，微调与分类器需逐篇记录。",
+      "rationale": "2014 SAE原摘要明确无监督表征、标签微调和softmax分类，不用其他论文的DBN或架构补写。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "sae-hyperspectral-classification-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2014 SAE原摘要明确无监督表征、标签微调和softmax分类，不用其他论文的DBN或架构补写。"
         }
       ]
     }
