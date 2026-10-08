@@ -3796,17 +3796,17 @@
         "spectral unmixing"
       ],
       "url": "https://api.crossref.org/journals/1545-598X/works",
-      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审25条；余41项pending，非年度系统检索完成。",
+      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审27条；余39项pending，非年度系统检索完成。",
       "titleCount": 572,
       "candidateCount": 66,
-      "reviewedCount": 25,
+      "reviewedCount": 27,
       "status": "partial",
       "statusLabel": "指定题名组扫描完成，候选核验进行中",
       "sourceSnapshot": "sources/grsl-2015-optical-title-matches.json",
       "gaps": [
         "登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。",
         "出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。",
-        "本组剩余41候选；出版社年度目录、其他关键词和摘要范围尚未完成。"
+        "本组剩余39候选；出版社年度目录、其他关键词和摘要范围尚未完成。"
       ]
     },
     {
@@ -11490,7 +11490,13 @@
       "decision": "pending",
       "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
       "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现"
+      "readingBoundary": "仅题名发现",
+      "discoveryReview": {
+        "checkedAt": "2026-10-08",
+        "status": "needs_primary_abstract",
+        "evidencePath": "research/hyperspectral/sources/grsl2015-band-water-lidar-discovery.json",
+        "note": "列子集波段选择仅发现二手摘要及书目，尚未取得原稿/作者机构完整摘要，保留pending。"
+      }
     },
     {
       "title": "Real-Time Implementation of the Sparse Multinomial Logistic Regression for Hyperspectral Image Classification on GPUs",
@@ -11515,10 +11521,12 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现"
+      "decision": "included",
+      "reason": "四个离散接收波长的多光谱LiDAR，与高光谱主动成像相关；原文将光栅扩展至高光谱作为未来方向。仅总库，不自动加入三维专题。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-water-lidar-primary-decisions.json",
+      "readingBoundary": "Wang Li本人上传期刊原排版完整摘要及§II–V局部已读；未取得本地PDF、未逐页阅读全文或复现。",
+      "paperId": "four-channel-waveform-lidar-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "Hybrid Compression of Hyperspectral Images Based on PCA With Pre-Encoding Discriminant Information",
@@ -11845,10 +11853,12 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现"
+      "decision": "included",
+      "reason": "以光学高光谱影像为主输入的水深/浊度研究，仅进入总库。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-water-lidar-primary-decisions.json",
+      "readingBoundary": "Zhigang Pan本人上传原稿完整摘要及§II–V局部已读；未取得本地PDF、未逐页阅读全文或复现。",
+      "paperId": "svr-water-depth-turbidity-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "Similarity-Guided and &lt;inline-formula&gt; &lt;tex-math notation=\"LaTeX\"&gt;$\\ell_p$&lt;/tex-math&gt;&lt;/inline-formula&gt;-Regularized Sparse Unmixing of Hyperspectral Data",
@@ -13413,6 +13423,28 @@
       "gaps": [
         "光谱组41待核验、压缩组4待核验；非出版社年度全量或全量摘要检索完成。",
         "原Fig.1/Algorithm 1图像未取得；专用代码/数据、前序版本和全文实验仍待核验。"
+      ]
+    },
+    {
+      "id": "grsl-2015-water-svr-multispectral-waveform-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "grsl-2015-crossref-optical-titles"
+      ],
+      "new": 2,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 39,
+      "categoriesAdded": 1,
+      "categoriesUpdated": [
+        "support-vector-machines"
+      ],
+      "figuresAdded": 0,
+      "readingBoundary": "两篇作者本人上传完整原摘要/局部，未阅读全文。水深稿预分页版本与正式卷期分开；LiDAR四接收通道属于多光谱，点云生成仅潜力，不自动加入三维专题。",
+      "gaps": [
+        "GRSL光谱组39待核验，压缩组4待核验；出版社目录和其他词/摘要未全量完成。",
+        "两篇原图下载403；正式稿差异、数据/代码及独立复现待核验。"
       ]
     }
   ],
