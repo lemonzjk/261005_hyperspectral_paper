@@ -129,6 +129,7 @@
 | WHISPERS | 2014 | TRDF subpixel forward modeling、industrial flare hyperspectral infrared、MODTRAN PLUME TRACKER multispectral；物理72页三题名全部；物理73页仅借延续摘要，其余尚待审。累计45–72页90题名86入2排2待，另CRNN。 | 3 / 4 / 4 | 3新论文原摘要闭环，1跨页重复；年度未完成 | 三正式四页论文及专用代码/数据/arXiv未知；TRDF图明确为会议演示，不替代正式论文图件。；Crossref题名Funtions与日程Riesenberg拼写冲突保留；展示采用官方题名/正式作者登记。；正式目录174条自动题名匹配86关联/4决定/84未审；TRDF原目录Funtions拼写冲突人工核作者/DOI关联后87/4/83，审计快照保留自动/人工差异；其他场所/年份仍待补。；截止2026-10-08，实际核验2026-10-09。 |
 | WHISPERS | 2014 | GLUP blind self-dictionary group Lasso、MODTRAN6 line-by-line API、diffuse interstellar bands optical spectroscopy scope；物理73页三题名全部；累计45–73页93题名88入3排2待，另CRNN。延续摘要不计新题名。 | 3 / 4 / 4 | 本页2入1排1跨页重复；非年度完成 | GLUP未完整阅读/复现，合成评价端元真值数量参与后处理；MODTRAN6四页原稿/原图受限。；SPIE同名稿具体关系/差异待核；不把其他年份报告当本稿原图。；目录人工冲突关联和最新重放见sources/whispers2014-page73-toc-replay.json；其他场所年份仍按覆盖矩阵待补。；截止2026-10-08，实际核验2026-10-09。 |
 | TIP | 2014 | Blind and Fully Constrained Unmixing、GLUP NGLUP heteroscedastic、arXiv1403.0289；仅同方法族单篇追踪，非TIP年度全量或期次扫描。 | 1 / 1 / 1 | 单篇方法族追踪闭环 | TIP正式出版社PDF与作者稿版本差异、完整实验/图表/推导待核。；仅arXiv v1元数据核验，未完整阅读该14页预印本；不复用作者九页图件为v1。；TIP2014其他期次与关键词年度矩阵仍待系统检索。 |
+| WHISPERS | 2014 | non-Euclidean distance geometry DMaxD、Hapke manifold clustering、consensus unmixing、eigendecompositions sum-to-one；物理74页全部4题名；75页仅借延续摘要，其余未审。本批后累计45–74页97题名92入3排2待，另CRNN。 | 4 / 4 / 4 | 四完整摘要闭环，年度目录仍未审完 | 后三篇正式全文/图件未取得，代码/数据/arXiv未知；DMaxD数学/完整实验和相关JSTARS2015版本差异待核。；流形稿仅Hapke模拟，不移用后续真实实验；特征分解稿输出谱分量总数而非完整丰度或材料数。；正式目录174条重放见sources/whispers2014-page74-toc-replay.json，沿用TRDF题名冲突人工证据关联。；截止2026-10-08，实际核验2026-10-09。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -393,6 +394,8 @@
   阅读边界：三完整原摘要，TRDF演示文稿选读非正式全文；三维214篇原对象保持不变。
 - 2026-10-09 / whispers-2014-program-page73-and-tip-family-review：新增 3，更新 0，去重 1，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：三篇原摘要；GLUP会议和TIP原稿部分方法/设置选读；两篇同方法族、arXiv不另计独立方法。三维214篇不变。
+- 2026-10-09 / whispers-2014-program-page74-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四完整原摘要；第一会议稿选读与两原图核验，不提升全文阅读状态；原三维214篇不变。
 
 ## 未解决缺口
 

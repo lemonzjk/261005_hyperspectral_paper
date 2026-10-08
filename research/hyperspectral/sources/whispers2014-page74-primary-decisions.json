@@ -1,0 +1,162 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "noneuclidean-unmixing-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077549",
+      "decision": "included",
+      "programPdfPage": 74,
+      "readingBoundary": "官方74页完整摘要及作者四页稿摘要、§2算法/§3距离/§4设置选读；原Fig1与Algorithm1逐图核，未完整阅读全文。",
+      "figureBoundary": "作者四页会议稿物理2页Fig1标准MaxD核心几何示意和Algorithm1 DMaxD两原图；保留原编号，不移用2015期刊。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；后续同族版本关系待核。"
+    },
+    {
+      "paperId": "manifold-intimate-mixtures-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077563",
+      "decision": "included",
+      "programPdfPage": 74,
+      "readingBoundary": "官方74页完整原摘要及正式两作者/DOI书目；未取得会议四页正文。",
+      "figureBoundary": "IEEE202空响应，作者原会议稿未找到，原方法图/图号/页码未知；不借2015/2016图件。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；后续同族版本关系待核。"
+    },
+    {
+      "paperId": "consensus-unmixing-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077614",
+      "decision": "included",
+      "programPdfPage": 74,
+      "readingBoundary": "官方74页完整摘要、正式两作者/DOI书目；作者机构2014学位论文摘要交叉核共识贡献，未取得本会议四页原稿。",
+      "figureBoundary": "IEEE202空响应；机构论文目录有学位PDF链接但本批未读，不提取其图冒充四页会议图，会议图号/页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；后续同族版本关系待核。"
+    },
+    {
+      "paperId": "eigen-sumone-characterization-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077643",
+      "decision": "included",
+      "programPdfPage": 74,
+      "readingBoundary": "官方74页題名/四作者、75页延续完整摘要和正式DOI；作者列表缓存交叉核，完整正文未读。",
+      "figureBoundary": "IEEE202空响应；IRAP主页SSL核验失败不绕过，未取得此四页原稿，模型/方法图号页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；后续同族版本关系待核。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "distance-geometry-unmixing",
+      "name": "距离几何解混",
+      "dimension": "method",
+      "definition": "将端元选择/几何解混写成样本间距离运算，允许按物理非线性或噪声结构替换距离；明确纯像元和端元数假设，不等于所有核或流形学习。",
+      "rationale": "DMaxD以Cayley–Menger距离矩阵替代坐标，并展示不同距离对应混合/噪声情形，需要区别普通线性单纯形端元提取。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "noneuclidean-unmixing-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "DMaxD以Cayley–Menger距离矩阵替代坐标，并展示不同距离对应混合/噪声情形，需要区别普通线性单纯形端元提取。"
+        }
+      ]
+    },
+    {
+      "id": "mixture-manifold-clustering",
+      "name": "混合流形聚类",
+      "dimension": "method",
+      "definition": "识别具有共享端元的多个非线性混合流形并分别嵌入/解混；保留交界和密度变化假设，区别单一流形特征降维或普通语义分类。",
+      "rationale": "本批Hapke混合摘要明确先聚类不同混合，再修改ISOMAP逐簇解混，既有分类嵌入标签不足以描述研究对象。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "manifold-intimate-mixtures-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "本批Hapke混合摘要明确先聚类不同混合，再修改ISOMAP逐簇解混，既有分类嵌入标签不足以描述研究对象。"
+        }
+      ]
+    },
+    {
+      "id": "consensus-endmember-selection",
+      "name": "共识端元选择",
+      "dimension": "method",
+      "definition": "对多个解混算法或参数/端元数运行产生的结果进行共识分析，选择一致端元；具体聚类/合并规则需逐稿核验，不沿用集成分类器标签。",
+      "rationale": "Jenzri/Frigui原摘要明确跨算法与端元数的共识提取，区别单次端元估计。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "consensus-unmixing-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Jenzri/Frigui原摘要明确跨算法与端元数的共识提取，区别单次端元估计。"
+        }
+      ]
+    },
+    {
+      "id": "mixing-model-characterization",
+      "name": "混合模型预诊断",
+      "dimension": "task",
+      "definition": "在实际解混前从混合观测诊断系数和、线性/线性二次项等模型属性，帮助选模型/设置；模型诊断不是已输出完整端元和丰度。",
+      "rationale": "Deville等原摘要输出混合模型属性和单谱/双谱数量，不能强制标成完整解混结果或把双谱数等同材料端元数。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "eigen-sumone-characterization-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Deville等原摘要输出混合模型属性和单谱/双谱数量，不能强制标成完整解混结果或把双谱数等同材料端元数。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-page74-program-cache.json",
+      "sha256": "645374f235dbf65b7128dc0954ce7580155190eb393064147f3267b96913616a"
+    },
+    {
+      "path": "whispers2014-page75-continuation-cache.json",
+      "sha256": "d2d370c7429ef2c9f2370a7576d43364efcb10472b973e02944a3ab37efc1b65"
+    },
+    {
+      "path": "whispers2014-noneuclidean-author.pdf",
+      "sha256": "6653c09f2a150c5bdd5e804c7550944033471ef0c0ef418996d0755980db5fa5"
+    },
+    {
+      "path": "whispers2014-consensus-thesis-page-access.json",
+      "sha256": "6fe50b1c2fc5bb11f2a48eca16425e6771a1573d5ba85aa4fe0e9d402f3ce528"
+    },
+    {
+      "path": "whispers2014-deville-author-page-access.json",
+      "sha256": "6f65d2b0f9559c1aa303b73b00854025c2883e27d44438f42c3d23d15b78b94e"
+    },
+    {
+      "path": "whispers2014-deville-author-list-cache.json",
+      "sha256": "47a81fd002775314dd69807ac87af1dcfcef326417bafe63f79fdb1f496a9234"
+    }
+  ],
+  "qualityIssues": [
+    "DMaxD输入M，不当自动端元数量估计；USGS最近谱角不当真实丰度/端元真值。",
+    "流形混合只模拟，不导入2015/2016版真实数据和低秩算法。",
+    "共识论文不因optimal宣称全局最优，学位稿上下文/目标检测贡献不移到会议。",
+    "单谱/双谱总数不等于材料端元数；日程Briotet采用Briottet并记冲突。",
+    "JSTARS正式2015与DOI2014分开；RG自存DOI不是正式会议DOI。",
+    "原图取作者四页会议物理2页Fig1/Algorithm1，不用相似期刊图。"
+  ]
+}

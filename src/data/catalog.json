@@ -48174,6 +48174,413 @@
           "attribution": "Rita Ammanouil, André Ferrari, Cédric Richard, David Mary · TIP 2014"
         }
       ]
+    },
+    {
+      "id": "noneuclidean-unmixing-whispers-2014",
+      "shortTitle": "DMaxD non-Euclidean unmixing",
+      "title": "Nonlinear unmixing by using non-euclidean metrics in a linear unmixing chain",
+      "authors": "Rob Heylen, Paul Scheunders, Anand Rangarajan, Paul Gader",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077549",
+      "representation": "把最大正交投影与单纯形投影改写为距离几何；作者稿DMaxD以Cayley–Menger矩阵选择端元，可替换欧氏、Mahalanobis、Hapke单次散射反照率或图测地距离。",
+      "tags": [
+        "spectral-unmixing",
+        "nonlinear-spectral-unmixing",
+        "distance-geometry-unmixing"
+      ],
+      "summary": "把最大正交投影与单纯形投影改写为距离几何；作者稿DMaxD以Cayley–Menger矩阵选择端元，可替换欧氏、Mahalanobis、Hapke单次散射反照率或图测地距离。",
+      "input": "高光谱观测、所需端元数M与选定距离；依赖纯像元，不是自动估计全部材料数。",
+      "output": "端元索引/光谱及依所选混合几何的丰度；改变距离会改变端元集合。",
+      "mechanism": "把最大正交投影与单纯形投影改写为距离几何；作者稿DMaxD以Cayley–Menger矩阵选择端元，可替换欧氏、Mahalanobis、Hapke单次散射反照率或图测地距离。",
+      "readingNote": "官方74页完整摘要及作者四页稿摘要、§2算法/§3距离/§4设置选读；原Fig1与Algorithm1逐图核，未完整阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077549",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{noneuclidean_unmixing_whispers_2014,\n  title = {Nonlinear unmixing by using non-euclidean metrics in a linear unmixing chain},\n  author = {Rob Heylen and Paul Scheunders and Anand Rangarajan and Paul Gader},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077549}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "nonlinear-spectral-unmixing",
+          "distance-geometry-unmixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "距离/混合模型选择和纯像元假设重要，算法仍输入端元数；未完整复核全部数学与图表。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何保留几何端元提取/解混链而用不同距离处理非线性混合或有色噪声？",
+        "datasets": "作者四页会议稿§4：Cuprite，提取10端元，USGS谱库仅用于事后最近谱角匹配；不把谱库匹配当端元真值。",
+        "experimentSetting": "作者稿§2–4选读：DMaxD输入M；图测地示例K=10，比较线性/Mahalanobis/SSA距离，原图显示端元谱及丰度。具体Cuprite预处理、样本范围、误差真值与完整参数未全面核。",
+        "conclusions": "作者报告所试距离产生不同矿物集合，图距离在所用谱库匹配指标中较小；不能据最近谱库谱角宣称真实丰度精度或普遍优于线性解混。",
+        "limitations": "距离/混合模型选择和纯像元假设重要，算法仍输入端元数；未完整复核全部数学与图表。RG自存DOI10.13140/2.1.4540.5126与正式IEEE DOI分开；JSTARS DOI10.1109/jstars.2014.2375342正式2015六月同四作者相关稿，明确扩展和实验增补待核，不混用。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理74页完整原摘要缓存",
+            "supports": [
+              "Nonlinear unmixing by using non-euclidean metrics in a linear unmixing chain",
+              "把最大正交投影与单纯形投影改写为距离几何；作者稿DMaxD以Cayley–Menger矩阵选择端元，可替换欧氏、Mahalanobis、Hapke单次散射反照率或图测地距离。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077549",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "Rob Heylen, Paul Scheunders, Anand Rangarajan, Paul Gader",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://www.cise.ufl.edu/~anand/pdf/whispers2014_heylen.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "作者稿选读/原图核验",
+            "supports": [
+              "官方74页完整摘要及作者四页稿摘要、§2算法/§3距离/§4设置选读；原Fig1与Algorithm1逐图核，未完整阅读全文。",
+              "作者稿§2–4选读：DMaxD输入M；图测地示例K=10，比较线性/Mahalanobis/SSA距离，原图显示端元谱及丰度。具体Cuprite预处理、样本范围、误差真值与完整参数未全面核。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "noneuclidean-unmixing-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077549",
+            "doi": "10.1109/whispers.2014.8077549",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          },
+          {
+            "id": "noneuclidean-jstars2015-related",
+            "type": "相关期刊稿，直接扩展声明待核",
+            "url": "https://doi.org/10.1109/jstars.2014.2375342",
+            "doi": "10.1109/jstars.2014.2375342",
+            "year": 2015,
+            "relation": "同四作者、近似题名；登记正式2015六月2655–2664，DOI2014不改卷期年。原摘要/完整机制与扩展差异待核，不计新方法。"
+          }
+        ],
+        "methodFamilyId": "distance-geometry-unmixing"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.cise.ufl.edu/~anand/pdf/whispers2014_heylen.pdf",
+          "page": 2,
+          "verificationNote": "作者公开四页原会议稿题名/四作者与正式书目一致；物理2页逐图核Fig1完整(a)–(c)/原图注与Algorithm1完整输入输出/1–13行；不移用2015期刊图或宣称全文已读。",
+          "figureLabel": "Fig. 1",
+          "caption": "原会议稿：标准MaxD添加第三端元的几何示意，是DMaxD方法所用核心步骤的解释；不将原图重标为完整新流程。",
+          "cropDescription": "物理2页160dpi渲染，像素框(105,145,680,590)，完整(a)–(c)和原Fig1图注。",
+          "path": "figures/noneuclidean-unmixing-whispers-2014/framework-author-fig1-maxd-geometry.png",
+          "width": 575,
+          "height": 445,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-09",
+          "sha256": "8930fd8e4a7fe91d8f2ffae384d1e3ab987ff88db4943656161cb9d131be2010",
+          "attribution": "Rob Heylen, Paul Scheunders, Anand Rangarajan, Paul Gader · WHISPERS 2014"
+        },
+        {
+          "sourceUrl": "https://www.cise.ufl.edu/~anand/pdf/whispers2014_heylen.pdf",
+          "page": 2,
+          "verificationNote": "作者公开四页原会议稿题名/四作者与正式书目一致；物理2页逐图核Fig1完整(a)–(c)/原图注与Algorithm1完整输入输出/1–13行；不移用2015期刊图或宣称全文已读。",
+          "figureLabel": "Algorithm 1: DMaxD",
+          "caption": "DMaxD原算法：输入数据、端元数M与距离函数，按距离矩阵递增选择端元。算法输入M，不是自动端元数估计。",
+          "cropDescription": "物理2页160dpi渲染，像素框(690,815,1250,1345)，完整算法标题、输入输出和1–13行。",
+          "path": "figures/noneuclidean-unmixing-whispers-2014/framework-author-algorithm1-dmaxd.png",
+          "width": 560,
+          "height": 530,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-09",
+          "sha256": "8c18ddec913d929406cef5977314552ce7b083196d3d6ad95a57544f78bcc89a",
+          "attribution": "Rob Heylen, Paul Scheunders, Anand Rangarajan, Paul Gader · WHISPERS 2014"
+        }
+      ]
+    },
+    {
+      "id": "manifold-intimate-mixtures-whispers-2014",
+      "shortTitle": "Hapke mixture-manifold clustering",
+      "title": "Unmixing multiple intimate mixtures using manifold clustering",
+      "authors": "A. M. Saranathan, M. Parente",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077563",
+      "representation": "将Hapke紧密混合的颗粒尺寸、丰度和照明/观测角映射视为低维流形；学习局部线性近似的几何分离来聚类，逐簇使用考虑从亮端元到暗端元密度梯度的修改ISOMAP进行解混。",
+      "tags": [
+        "nonlinear-spectral-unmixing",
+        "mixture-manifold-clustering"
+      ],
+      "summary": "将Hapke紧密混合的颗粒尺寸、丰度和照明/观测角映射视为低维流形；学习局部线性近似的几何分离来聚类，逐簇使用考虑从亮端元到暗端元密度梯度的修改ISOMAP进行解混。",
+      "input": "Hapke模拟的多种紧密混合光谱，允许共享端元；具体颗粒/角度采样参数未知。",
+      "output": "不同混合簇、嵌入与解混结果；不表示新三维场景重建。",
+      "mechanism": "将Hapke紧密混合的颗粒尺寸、丰度和照明/观测角映射视为低维流形；学习局部线性近似的几何分离来聚类，逐簇使用考虑从亮端元到暗端元密度梯度的修改ISOMAP进行解混。",
+      "readingNote": "官方74页完整原摘要及正式两作者/DOI书目；未取得会议四页正文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077563",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{manifold_intimate_mixtures_whispers_2014,\n  title = {Unmixing multiple intimate mixtures using manifold clustering},\n  author = {A. M. Saranathan and M. Parente},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077563}\n}\n",
+      "library": {
+        "categoryIds": [
+          "nonlinear-spectral-unmixing",
+          "mixture-manifold-clustering"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "混合流形局部近似与密度梯度建模依赖Hapke场景；仅模拟验证。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "含共享端元的多种紧密混合如何先分离混合流形，再逐簇嵌入并解混？",
+        "datasets": "官方摘要明确因真实紧密混合真值不足，仅测试若干Hapke版本生成的模拟数据；数据名称、端元谱和样本数未知。",
+        "experimentSetting": "原摘要确认模拟验证；聚类代价、邻域、ISOMAP密度修正公式、对照和误差数值均待正式四页稿，不移用2015/2016同作者论文的真实实验。",
+        "conclusions": "作者提出分簇再嵌入的流程处理多种紧密混合；摘要无可核定量性能，模拟结果不能视为现场真实混合验证。",
+        "limitations": "混合流形局部近似与密度梯度建模依赖Hapke场景；仅模拟验证。后续同作者IGARSS2015及WHISPERS2016涉及不同NNMF/局部低秩方法，版本/扩展关系待原文，不按同作者强制合并。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理74页完整原摘要缓存",
+            "supports": [
+              "Unmixing multiple intimate mixtures using manifold clustering",
+              "将Hapke紧密混合的颗粒尺寸、丰度和照明/观测角映射视为低维流形；学习局部线性近似的几何分离来聚类，逐簇使用考虑从亮端元到暗端元密度梯度的修改ISOMAP进行解混。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077563",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "A. M. Saranathan, M. Parente",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/document/8077563/",
+            "checkedAt": "2026-10-09",
+            "level": "正常访问失败，不额外提供正文证据",
+            "supports": [
+              "官方74页完整原摘要及正式两作者/DOI书目；未取得会议四页正文。",
+              "原摘要确认模拟验证；聚类代价、邻域、ISOMAP密度修正公式、对照和误差数值均待正式四页稿，不移用2015/2016同作者论文的真实实验。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "manifold-intimate-mixtures-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077563",
+            "doi": "10.1109/whispers.2014.8077563",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "manifold-intimate-mixtures-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "IEEE正常公开页面202空响应，官方摘要完整但会议原四页全文未取得，方法图/图号/页码未知，不借2015/2016同作者图件。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077563/",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "consensus-unmixing-whispers-2014",
+      "shortTitle": "Consensus unmixing",
+      "title": "Robust unmixing using consensus analysis",
+      "authors": "Hamdi Jenzri, Hichem Frigui",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077614",
+      "representation": "运行多个解混算法和不同指定端元数，用共识分析合并结果，以跨运行的一致性识别稳健端元；原摘要没有给具体聚类/合并公式。",
+      "tags": [
+        "spectral-unmixing",
+        "endmember-number-estimation",
+        "consensus-endmember-selection"
+      ],
+      "summary": "运行多个解混算法和不同指定端元数，用共识分析合并结果，以跨运行的一致性识别稳健端元；原摘要没有给具体聚类/合并公式。",
+      "input": "模拟/真实高光谱数据和多个算法/端元数配置产生的端元集合。",
+      "output": "共识端元集合；不能从摘要推断准确材料数、完整丰度解或上下文目标检测结果。",
+      "mechanism": "运行多个解混算法和不同指定端元数，用共识分析合并结果，以跨运行的一致性识别稳健端元；原摘要没有给具体聚类/合并公式。",
+      "readingNote": "官方74页完整摘要、正式两作者/DOI书目；作者机构2014学位论文摘要交叉核共识贡献，未取得本会议四页原稿。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077614",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{consensus_unmixing_whispers_2014,\n  title = {Robust unmixing using consensus analysis},\n  author = {Hamdi Jenzri and Hichem Frigui},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077614}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "endmember-number-estimation",
+          "consensus-endmember-selection"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "依赖基算法结果的多样性/一致性，可能共有偏差；具体稳定性机制未核。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何综合多个解混算法及不同端元数的运行，寻找稳定一致的端元？",
+        "datasets": "原摘要提及模拟及真实HSI，未给名称/波段/数量；同作者学位论文不能替代本会议版实验协议。",
+        "experimentSetting": "比较多个解混运行的共识；基算法、端元数范围、共识阈值、重复数与评估指标待四页会议正文。",
+        "conclusions": "作者摘要称多运行共识能识别稳健端元；没有数字，不把“optimal”当全局最优保证。",
+        "limitations": "依赖基算法结果的多样性/一致性，可能共有偏差；具体稳定性机制未核。原2014学位论文包含共识解混，但还含上下文/目标检测等独立贡献，只作关联证据，不转移整篇学位结论或图件。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理74页完整原摘要缓存",
+            "supports": [
+              "Robust unmixing using consensus analysis",
+              "运行多个解混算法和不同指定端元数，用共识分析合并结果，以跨运行的一致性识别稳健端元；原摘要没有给具体聚类/合并公式。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077614",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "Hamdi Jenzri, Hichem Frigui",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://ir.library.louisville.edu/etd/683/",
+            "checkedAt": "2026-10-09",
+            "level": "作者机构学位摘要关联核验，非会议版全文",
+            "supports": [
+              "官方74页完整摘要、正式两作者/DOI书目；作者机构2014学位论文摘要交叉核共识贡献，未取得本会议四页原稿。",
+              "比较多个解混运行的共识；基算法、端元数范围、共识阈值、重复数与评估指标待四页会议正文。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "consensus-unmixing-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077614",
+            "doi": "10.1109/whispers.2014.8077614",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "consensus-unmixing-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "IEEE202空响应，本会议四页原稿未取得；机构学位摘要确认相关共识贡献，不能提取学位图冒充会议图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077614/",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "eigen-sumone-characterization-whispers-2014",
+      "shortTitle": "Eigenanalysis before unmixing",
+      "title": "Characterization of hyperspectral images prior to unmixing, based on eigendecompositions and sum-to-one condition",
+      "authors": "Yannick Deville, Charlotte Revel, Xavier Briottet, Veronique Achard",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077643",
+      "representation": "分别从影像作为光谱/空间函数时的相关和协方差矩阵特征值，判别混合系数总和是否跨像元一致，区分单谱线性混合与含单谱乘积双谱的线性二次混合，并估计单谱/双谱总数。",
+      "tags": [
+        "mixing-model-characterization",
+        "endmember-number-estimation"
+      ],
+      "summary": "分别从影像作为光谱/空间函数时的相关和协方差矩阵特征值，判别混合系数总和是否跨像元一致，区分单谱线性混合与含单谱乘积双谱的线性二次混合，并估计单谱/双谱总数。",
+      "input": "观测高光谱混合影像；验证用真实纯谱生成的合成混合。",
+      "output": "系数和与混合模型诊断、单谱/双谱总数量；含双谱时不直接等于纯材料端元数，非完整丰度解。",
+      "mechanism": "分别从影像作为光谱/空间函数时的相关和协方差矩阵特征值，判别混合系数总和是否跨像元一致，区分单谱线性混合与含单谱乘积双谱的线性二次混合，并估计单谱/双谱总数。",
+      "readingNote": "官方74页題名/四作者、75页延续完整摘要和正式DOI；作者列表缓存交叉核，完整正文未读。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077643",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{eigen_sumone_characterization_whispers_2014,\n  title = {Characterization of hyperspectral images prior to unmixing, based on eigendecompositions and sum-to-one condition},\n  author = {Yannick Deville and Charlotte Revel and Xavier Briottet and Veronique Achard},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077643}\n}\n",
+      "library": {
+        "categoryIds": [
+          "mixing-model-characterization",
+          "endmember-number-estimation"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原四页论文/公式图件未取得；日程Briotet与正式作者列表Briottet不一致，采用登记与作者主页缓存一致的Briottet。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "解混前如何由混合观测判断系数和条件、线性/线性二次模型及参与光谱源数？",
+        "datasets": "官方75页延续摘要：真实纯谱的合成混合；谱库名称、材料清单和实际影像传感器未知。",
+        "experimentSetting": "原摘要确认相关/协方差特征值比较及光谱/空间双视角；噪声设置、阈值、矩阵构造、样本规模、评价统计待正式原文。",
+        "conclusions": "作者报告能在合成混合验证模型属性与谱分量数；不能当真实空间混合/噪声条件全部已验证，单谱乘积的计数不是独立材料数。",
+        "limitations": "原四页论文/公式图件未取得；日程Briotet与正式作者列表Briottet不一致，采用登记与作者主页缓存一致的Briottet。IRAP作者主页正常访问SSL证书错误记录，不绕过TLS；后续线性二次NMF稿不自动当直接扩展。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理74页题名/作者、75页延续完整摘要缓存",
+            "supports": [
+              "Characterization of hyperspectral images prior to unmixing, based on eigendecompositions and sum-to-one condition",
+              "分别从影像作为光谱/空间函数时的相关和协方差矩阵特征值，判别混合系数总和是否跨像元一致，区分单谱线性混合与含单谱乘积双谱的线性二次混合，并估计单谱/双谱总数。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077643",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "Yannick Deville, Charlotte Revel, Xavier Briottet, Veronique Achard",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。",
+              "Briottet采用正式登记，日程Briotet错误保留。"
+            ]
+          },
+          {
+            "url": "https://userpages.irap.omp.eu/~ydeville/publi.html",
+            "checkedAt": "2026-10-09",
+            "level": "正常访问失败，不额外提供正文证据",
+            "supports": [
+              "官方74页題名/四作者、75页延续完整摘要和正式DOI；作者列表缓存交叉核，完整正文未读。",
+              "原摘要确认相关/协方差特征值比较及光谱/空间双视角；噪声设置、阈值、矩阵构造、样本规模、评价统计待正式原文。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "eigen-sumone-characterization-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077643",
+            "doi": "10.1109/whispers.2014.8077643",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "eigen-sumone-characterization-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "IEEE202空响应；IRAP主页SSL失败不绕过TLS，官方74/75页摘要完整，四页原模型/方法图未知。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077643/",
+        "checkedAt": "2026-10-09"
+      }
     }
   ],
   "datasets": [
@@ -48975,7 +49382,9 @@
         "vb-joint-sparse-unmixing-2014",
         "local-unmixing-superresolution-whispers-2014",
         "glup-whispers-2014",
-        "glup-nglup-tip-2014"
+        "glup-nglup-tip-2014",
+        "noneuclidean-unmixing-whispers-2014",
+        "consensus-unmixing-whispers-2014"
       ],
       "history": [
         {
@@ -52427,7 +52836,9 @@
       "evidencePaperIds": [
         "spatial-rca-unmixing-2015",
         "fast-nl-me-unmixing-2017",
-        "vegetation-nonlinear-model-comparison-whispers-2014"
+        "vegetation-nonlinear-model-comparison-whispers-2014",
+        "noneuclidean-unmixing-whispers-2014",
+        "manifold-intimate-mixtures-whispers-2014"
       ],
       "history": [
         {
@@ -53558,7 +53969,9 @@
         "ritz-endmember-count-2014",
         "id-residual-cpa-evaluation-2014",
         "glup-whispers-2014",
-        "glup-nglup-tip-2014"
+        "glup-nglup-tip-2014",
+        "consensus-unmixing-whispers-2014",
+        "eigen-sumone-characterization-whispers-2014"
       ],
       "history": [
         {
@@ -54133,6 +54546,86 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "GLUP会议稿和同作者期刊稿明确观测自字典、l2,1行稀疏与单位和/非负约束，区别既有固定端元联合稀疏回归标签。"
+        }
+      ]
+    },
+    {
+      "id": "distance-geometry-unmixing",
+      "name": "距离几何解混",
+      "dimension": "method",
+      "definition": "将端元选择/几何解混写成样本间距离运算，允许按物理非线性或噪声结构替换距离；明确纯像元和端元数假设，不等于所有核或流形学习。",
+      "rationale": "DMaxD以Cayley–Menger距离矩阵替代坐标，并展示不同距离对应混合/噪声情形，需要区别普通线性单纯形端元提取。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "noneuclidean-unmixing-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "DMaxD以Cayley–Menger距离矩阵替代坐标，并展示不同距离对应混合/噪声情形，需要区别普通线性单纯形端元提取。"
+        }
+      ]
+    },
+    {
+      "id": "mixture-manifold-clustering",
+      "name": "混合流形聚类",
+      "dimension": "method",
+      "definition": "识别具有共享端元的多个非线性混合流形并分别嵌入/解混；保留交界和密度变化假设，区别单一流形特征降维或普通语义分类。",
+      "rationale": "本批Hapke混合摘要明确先聚类不同混合，再修改ISOMAP逐簇解混，既有分类嵌入标签不足以描述研究对象。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "manifold-intimate-mixtures-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "本批Hapke混合摘要明确先聚类不同混合，再修改ISOMAP逐簇解混，既有分类嵌入标签不足以描述研究对象。"
+        }
+      ]
+    },
+    {
+      "id": "consensus-endmember-selection",
+      "name": "共识端元选择",
+      "dimension": "method",
+      "definition": "对多个解混算法或参数/端元数运行产生的结果进行共识分析，选择一致端元；具体聚类/合并规则需逐稿核验，不沿用集成分类器标签。",
+      "rationale": "Jenzri/Frigui原摘要明确跨算法与端元数的共识提取，区别单次端元估计。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "consensus-unmixing-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Jenzri/Frigui原摘要明确跨算法与端元数的共识提取，区别单次端元估计。"
+        }
+      ]
+    },
+    {
+      "id": "mixing-model-characterization",
+      "name": "混合模型预诊断",
+      "dimension": "task",
+      "definition": "在实际解混前从混合观测诊断系数和、线性/线性二次项等模型属性，帮助选模型/设置；模型诊断不是已输出完整端元和丰度。",
+      "rationale": "Deville等原摘要输出混合模型属性和单谱/双谱数量，不能强制标成完整解混结果或把双谱数等同材料端元数。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "eigen-sumone-characterization-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Deville等原摘要输出混合模型属性和单谱/双谱数量，不能强制标成完整解混结果或把双谱数等同材料端元数。"
         }
       ]
     }
