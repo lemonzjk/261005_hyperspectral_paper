@@ -16,8 +16,8 @@
 
 ## 当前状态
 
-- 总库385篇，311篇已复核分类，74篇暂定分类，154标签（任务73/方法62/应用19）。三维214篇不变；总库 ?collection=hyperspectral。
-- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱273、多光谱89、基础23。
+- 总库390篇，311篇已复核分类，79篇暂定分类，157标签（任务74/方法64/应用19）。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱278、多光谱89、基础23。
 - CVPR2013–2022、ICCV奇数年2013–2021、NeurIPS2023五词147题名命中闭环：增60重12排75；非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。19篇/41个arXiv日期核验；Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -26,11 +26,11 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词闭环增17排14待4。2019官方四期52项（51研究+1奖公告）逐题名/起始页匹配；另16行政记录及1未列目录索引。51研究项均尝试原来源，34已审17待核验；5医学项仅摘要片段，EPFL仅官方缓存；非年度HSI全量。Monash错标2009按正式2019。Fourier DOI、MSVI真值、正式稿差异待查。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖385篇、290张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖390篇、290张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt。
-- GRSL2015光谱66命中已审33待33，压缩组待4。WHISPERS2014官方PDF45–48页十二条10入1排1待；另CRNN单篇。NIR分选四页作者稿全文/装置图核验，只定性、非重量/胶原含量；矿物三作者按TAU/登记，Lund2017在线与2014会期分开。错配不确定性仍待原摘要；水体/标定错附版本不混用。94页/年度目录待全量，续审其余页与GRSL。
+- GRSL2015光谱66命中已审33待33，压缩组待4。WHISPERS2014官方PDF45–50页十八条15入2排1待；另CRNN单篇。湖泊正式十作者修复串页；UAV火山高光谱仅未来应用，四页作者稿排除（正式登记六页）。农业融合输出谱段待查；Rikola24波段按原摘要。错配不确定性待原摘要，水体/标定错附版本不混用；NIR分选仅定性。94页/年度目录、其余原稿原图待全量，续审其余页及GRSL。
