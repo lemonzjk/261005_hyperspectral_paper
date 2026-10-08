@@ -1,0 +1,371 @@
+A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0034425701002115)
+citeturn12search0 [wordlim: 200] Crawled: last month; # A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data ... This paper reports on experimental work to test the feasibility of using reference imaging spectrometer data (hereafter referred to as “hyperspectral” data) to carry out vicarious calibrations for multiple sensors. ... Such an approach has the potential to provide more systematic vicarious calibration updates for numerous satellite sensor systems and it would represent an important step towards a cal–val infrastructure beneficial to mainstream users (Teillet et al., 1997).
+
+## Remote Sensing of Environment
+
+Date: September 2001
+
+Pages: 304-327
+
+Volume: Volume 77, Issue 3
+
+## Published by: Elsevier
+
+Get rights and content
+
+# A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data
+
+Author links open overlay panel P.M Teillet ^{a}, G Fedosejevs ^{a}, R.P Gauthier ^{a}, N.T O'Neill ^{b}, K.J Thome ^{c}, S.F Biggar ^{c}, H Ripley ^{d}, A Meygret ^{e}
+
+Show more
+
+Cite
+
+Add to Mendeley
+
+Share
+
+10.1016/S0034-4257(01)00211-5
+
+## Abstract
+
+The paper describes a new methodology that uses spatially extensive hyperspectral imagery as reference data to carry out vicarious radiometric calibrations for multiple satellite sensors. The methodology has been validated using data from a campaign at the Railroad Valley playa test site in Nevada in June 1998. The proof of concept has been further tested based on data acquisition campaigns at the Newell County rangeland test site in Alberta in August and October 1998. The rangeland test site in the Newell County region of Alberta is tested for its suitability as a calibration test site for satellite sensor systems. All three campaigns included ground-based measurements, satellite imagery, and airborne hyperspectral data. The airborne hyperspectral sensor data were acquired using the Airborne Visible and Infrared Imaging Spectrometer (AVIRIS) at Railroad Valley and the Compact Airborne Spectrographic Imager (casi) in all three campaigns. This paper describes the formulation and implementation of the new methodology, and radiometric calibration monitoring results obtained for five different sensors: NOAA-14 AVHRR, OrbView-2 SeaWiFS, SPOT-4 VGT, SPOT-1/2 HRV, and Landsat-5 TM. The results indicate that the nominal on-orbit radiometric calibrations of all the satellite sensors fit within their predicted uncertainties. The combination of both lower-reflectance and higher-reflectance test sites is shown to improve the quality of the calibration monitoring results. In particular, the combined QUASAR monitoring results obtained from the three airborne data acquisition days at the two test sites, encompassing five satellite sensors and a total of 40 spectral band cases, yield a correlation between QUASAR-based and nominal TOA radiances characterized by y=1.026x−1.26, and r^{2}=0.990. Temporal extensions of QUASAR data sets to calibrate satellite sensors imaging the test site one or more days away from the airborne data acquisition day yield mixed results.
+
+## Introduction
+
+Remote sensing calibration and validation (cal–val) are critical aspects of Earth observation measurements and the associated methods used to retrieve terrestrial parameters that are not compromised by sensor and data processing effects. The challenge is to ensure that the measurements and methods yield self-consistent and accurate geophysical parameters, even though the measurements are made with a variety of different satellite sensors under different observational conditions and the geophysical parameter retrieval methodologies vary.
+
+Sensor radiometric calibration, the most fundamental part of the cal–val process, is a broad and complex field that imposes the greatest limitations on quantitative applications of remote sensing Teillet, 1997, Teillet et al., 1997. The methods and instrumentation involved can be grouped into three domains (Dinguirard & Slater, 1999): on the ground prior to launch, onboard the spacecraft post-launch, and vicarious or indirect approaches using Earth scenes imaged in-flight. Whereas preflight methods encompass a vast array of painstaking sensor characterizations in the laboratory (e.g., Guenther et al., 1996) and occasionally outdoors (Biggar, Slater, Thome, Holmes, & Barnes, 1993), onboard and vicarious calibrations are devoted primarily to the monitoring of the radiometric responsivities or gain coefficients of sensor spectral bands over time. Advantages and disadvantages of these three categories of approaches have been discussed by Dinguirard and Slater (1999). In all cases, the objective is traceability of data calibration accuracies to the International System of Units (SI) for science users and data products with consistent quality for the broader user community.
+
+To date, Earth observation satellite sensors have been susceptible to significant post-launch changes in their performance characteristics. These changes arise as a result of many factors, including the rigours of the launch itself, the space environment in Earth orbit in general, the operating environment of the spacecraft, and aging of the sensors and their subsystems. This paper reports on experimental work to test the feasibility of using reference imaging spectrometer data (hereafter referred to as “hyperspectral” data) to carry out vicarious calibrations for multiple sensors. The domain of interest and applicability is that of optical sensors with spectral bands in the range encompassed by the “reference” hyperspectral sensor. The approach has the greatest potential for large footprint sensors (with spatial resolutions on the order of 1 km) since ground reference data are difficult to acquire over large areas, but it is equally applicable to small footprint sensors (with spatial resolutions on the order of tens of meters). Thus, the idea is to obtain reference data sets that are more generally applicable because of their more complete spectral coverage and more extensive spatial coverage compared to vicarious calibration methods used to date. Such an approach has the potential to provide more systematic vicarious calibration updates for numerous satellite sensor systems and it would represent an important step towards a cal–val infrastructure beneficial to mainstream users (Teillet et al., 1997). The approach is referred to as quality assurance and stability reference (QUASAR) monitoring.
+
+The QUASAR monitoring approach is a hybrid of reflectance-based and radiance-based methods that have been developed for the post-launch, vicarious radiometric calibration of satellite sensors Slater et al., 1987, Slater et al., 1996, Thome et al., 1997. These methods predict the radiances at the top of the atmosphere (TOA) for a selected ground test site with the help of atmospheric radiative transfer code calculations. The reflectance-based approach typically uses ground-based measurements of surface reflectance and atmospheric characteristics to constrain these calculations. Test site coverage is focused on smaller areas (a few hundreds of meters) or a limited number of transects across larger areas. In the radiance-based approach, measurements of upwelling radiance from the test site are made using a well-calibrated, aircraft-based radiometer or spectrometer, usually not an imaging sensor. These radiances are then used to constrain the radiative transfer calculations to predict the radiances at the satellite sensor to be calibrated.
+
+In the QUASAR method (Fig. 1), airborne hyperspectral image data are acquired over a spatially extensive test site and corrected for atmospheric effects to yield a surface spectral reflectance map. A further atmospheric computation is used to predict spectral radiances at the TOA, from which band-integrated radiances are obtained using relative spectral response profiles for the satellite sensor spectral bands being monitored.
+
+The hyperspectral and spatially extensive nature of the resulting benchmark data set makes it possible to attempt vicarious calibrations for any sensor(s) with appropriate characteristics that imaged the test site on the same day, or within a day or two if atmospheric and surface conditions have not changed significantly. Appropriate sensors include any with footprints (i.e., pixel sizes) that fit comfortably within the test site and with one or more spectral bands encompassed by the wavelength coverage of the reference hyperspectral sensor. Spectral bands outside the wavelength range of the reference sensor can be monitored using interband relative calibration methods. Thus, the key application of QUASAR is the monitoring and updating of sensor radiometric calibration coefficients for many satellite sensors, including those with large footprint sizes, between infrequent high-accuracy updates.
+
+A well-calibrated hyperspectral reference sensor in orbit would be ideal for this purpose, but the airborne approach is useful in the meantime for methodology prototyping and early operations while waiting for satellite hyperspectral sensors to become routinely available. Once a validated methodology becomes operational, the benchmark data sets could readily be disseminated to a wide audience on a rapid and frequent basis. Summary statistics could be made available as quickly as possible on an Internet Web site and the full data sets could be distributed at a later time on CD-ROM by purchase/subscription or by direct provision to stakeholders.
+
+During the proof-of-concept phase, ground-based measurements of surface reflectance and atmospheric parameters are made for validation purposes. Operational QUASAR monitoring based on satellite hyperspectral reference data in the future could conceivably rely on sunphotometer and surface radiance measurements acquired by automated instrumentation. Because of the hyperspectral and spatially extensive nature of QUASAR data sets, the approach has the potential to eventually be adapted to the validation of geophysical and biophysical parameters derived from remotely sensed data.
+
+This paper highlights the new QUASAR methodology, the data sets generated to date, and the first calibration monitoring results obtained for five well-known Earth observation satellite sensors. QUASAR monitoring data acquisition campaigns took place at the Railroad Valley playa test site in Nevada on June 17, 1998 and at the Newell County rangeland test site in Alberta on August 4, 1998 and October 4, 1998. Ground-based measurements, satellite imagery, and airborne hyperspectral data were acquired in all cases. The airborne imagery was obtained using the Compact Airborne Spectrographic Imager (casi) for all three campaigns and the Airborne Visible Infrared Imaging Spectrometer (AVIRIS) in addition for the Railroad Valley campaign. The ground-based measurements included spectral data obtained using the GER3700 spectrometer for all three campaigns and the ASD FieldSpec Pro FR spectrometer in addition for the Railroad Valley campaign.
+
+The airborne hyperspectral data sets were used to generate radiometric calibration estimates for selected spectral bands of the Earth observation sensors that imaged the test sites on or near each of the three airborne data acquisition dates. The principal results consist of comparisons of TOA spectral band radiances predicted by QUASAR with nominal values obtained from the actual satellite sensor image data. The satellite sensors and the relevant spectral bands are as follows:
+
+  * •
+
+National Oceanic and Atmospheric Administration's (NOAA) Advanced Very-High-Resolution Radiometer (AVHRR) (spectral band 1);
+
+  * •
+
+Landsat Thematic Mapper (TM) (spectral bands 1–4);
+
+  * •
+
+SPOT-1 and-2 Haute resolution visible (HRV) (spectral bands 1–3);
+
+  * •
+
+SPOT-4 Vegetation (VGT) (spectral bands 1–3 (i.e., B0, B2, and B3)); and
+
+  * •
+
+OrbView-2 Sea-viewing Wide-Field-of-View Sensor (SeaWiFS) (spectral bands 1–8).
+
+Data sets both on and near the day of airborne data acquisition are included and provide challenging scenarios for an initial test of the feasibility of the QUASAR monitoring approach. This is in keeping with the philosophy of the QUASAR experiment to relax the constraints on the generation of benchmark data sets in favour of more frequent radiometric calibration updates.
+
+The QUASAR data flow scheme is summarized in Fig. 6, which is a more detailed version of the conceptual data flow depicted in Fig. 1. A few general points should be made before describing the data processing and analysis steps individually. Multiple flight line processing steps pertain to casi data only since the AVIRIS data involve one flight line. Unless otherwise indicated, all other processing steps are applied to both casi and AVIRIS data sets, although the text concentrates primarily on
+
+--------------------------------------------------------------------------------
+A VNIR/SWIR atmospheric correction algorithm for hyperspectral imagery with adjacency effect - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S003442570100219X)
+citeturn12search1 [wordlim: 200] Crawled: 3 months ago; # A VNIR/SWIR atmospheric correction algorithm for hyperspectral imagery with adjacency effect ... To determine the scene content of an image with confidence, the atmosphere must be characterized to sufficient accuracy to obtain ground reflectance units to one reflectance unit or to estimate temperature parameters to a half kelvin. ... This algorithm utilizes existing atmospheric correction techniques, is radiometrically correct, is modular so that additional techniques may be added, and includes new treatments for the computation of adjacency-effect aerosol scattering. ... HYDICE is a 210-band VNIR/SWIR hyperspectral sensor with bandwidths ranging from 2 to 15 nm (Rickard, 1993).
+
+## Remote Sensing of Environment
+
+Date: December 2001
+
+Pages: 252-263
+
+Volume: Volume 78, Issue 3
+
+## Published by: Elsevier
+
+# A VNIR/SWIR atmospheric correction algorithm for hyperspectral imagery with adjacency effect
+
+Author links open overlay panel Lee C. Sanders ^{a}, John R. Schott ^{b}, Rolando Raqueño ^{b}
+
+
+10.1016/S0034-4257(01)00219-X
+
+Access through your organizationPurchase PDF
+
+
+## Abstract
+
+Radiometrically calibrated hyperspectral imagery contains information relating to the material properties of a surface target and the atmospheric layers between the surface target and the sensor. All atmospheric layers contain well-mixed molecular gases, aerosol particles, and water vapor, and information about these constituents may be extracted from hyperspectral imagery by using specially designed algorithms. This research describes a total sensor radiance-to-ground reflectance inversion program. An equivalent surface-pressure depth can be extracted using the Non-Linear Least-Squares Spectral Fit (NLLSSF) technique on the 760-nm oxygen band. Two different methods, the Atmospheric Pre-Corrected Differential Absorption (APDA) and NLLSSF, can be used to derive total columnar water vapor using the radiative transfer model MODTRAN 4.0. Atmospheric visibility can be derived via the NLLSSF technique from the 400–700-nm bands or using an approach that uses the upwelled radiance fit from the Regression Intersection Method from 550 to 700 nm. A new numerical approximation technique is also introduced to calculate the effect of the target surround on the sensor-received radiance. The recovered spectral reflectances for each technique are compared to reflectance panels with well-characterized ground truth.
+
+## Keywords
+
+Atmospheric correction
+
+;
+
+Hyperspectral
+
+;
+
+Inversion
+
+;
+
+Reflectance
+
+;
+
+NLLSSF
+
+;
+
+APDA
+
+
+## Introduction
+
+For many years, the astronomical community has used spectroscopy to determine the chemical composition of stellar objects. The atomic and molecular constituents of stars, planets, and nebulae have been revealed by their unique spectra that, in turn, are due to their different properties of absorption and emission of electromagnetic energy. The spectral signatures of these elements arise from their electronic, vibrational, and rotational transitions. Similar information is being extracted from air- and space-borne instruments to access properties about the earth's surface structure and the composition of the atmosphere.
+
+It would be useful if the controlled approach of spectroscopy could be applied to airborne or space-based imaging spectrometry of the earth. The calculus of atmospheric characterization and identification of the constituents of ground objects would be simplified. Unfortunately, this calculation is not trivial. The earth's atmosphere is a complex mix of molecular and larger sized compounds that are in flux spatially and temporally. To determine the scene content of an image with confidence, the atmosphere must be characterized to sufficient accuracy to obtain ground reflectance units to one reflectance unit or to estimate temperature parameters to a half kelvin.
+
+To date, the best methods for extracting atmospheric information rely heavily on the combination of ground truth measurements of targets in the scene and ground-based atmospheric measurements (for aerosol and water vapor determination) made with sun-photometers and radiosondes. Obtaining ground truth is an expensive, laborious, and time-consuming task. For physical and economic reasons, few multispectral or imaging spectrometer missions measure actual conditions simultaneously with image acquisition. To fill this computational void, algorithms have been developed to extract atmospheric data directly from the spectra of individual pixels in the hyperspectral image. All such algorithms use some form of radiative transfer model of the atmosphere.
+
+This study was undertaken to contribute to the precision of atmospheric characterization by developing a total inversion algorithm that derives the estimated ground reflectance of an object from the calibrated radiance at the sensor. This algorithm utilizes existing atmospheric correction techniques, is radiometrically correct, is modular so that additional techniques may be added, and includes new treatments for the computation of adjacency-effect aerosol scattering.
+
+
+## Section snippets
+
+### Components of the atmospheric correction algorithm
+
+Presently, there are different methods that are considered to be “state of the art” for hyperspectral information extraction: the Non-Linear Least-Squares Spectral Fit (NLLSSF) method for surface-pressure depth, columnar water vapor, and atmospheric visibility described by Green, Carrére, and Conel (1989), and the Atmospheric Pre-Corrected Differential Absoprtion (APDA) method for columnar water vapor developed by Borel and Schläpfer (1998). These algorithms have been tested in
+
+### The APDA technique
+
+The APDA method (Schläpfer, Borel, Keller, & Itten, 1998) is a technique that is a further refinement of the Continuum Interpolated Band Ratio (CIBR) method Bruegge et al., 1990, Green et al., 1989 and the ATREM method (Gao, Goetz, Westwater, Conel, & Green, 1993). The governing radiometric equation for this algorithm is (Eq. (1)):$\text{L(λ)=ρ(λ)}\text{1}\text{π}\text{E}{}_{0}\text{(λ)}\text{cos}\text{(σ)τ}{}_{1}\text{(λ)τ}{}_{2}\text{(λ)+L}{}_{\mathrm{\text{atm}}}\text{(λ)}$where L(λ) is the radiance from one specific channel, ρ(λ) is the reflectance of the ground (including adjacency effects), E_{0}(λ
+
+### The NLLSSF model
+
+The NLLSSF technique developed by Green et al. (1989) resembles the ATREM method (Gao et al., 1993) in that it is a complete atmospheric correction that inverts the governing radiative transfer equation to solve for surface reflectance. The NLLSSF technique is a curve-fitting routine for atmospheric spectral features (Green, Roberts, & Conel, 1996), which relies on the assumption that the reflectance is a linear function of wavelength with the addition of a nonlinear scaling term to account for
+
+### NLLSSF surface-pressure height
+
+The total radiance reaching a hyperspectral sensor is a function of the absorption by well-mixed gases in the atmosphere in both source-to-target and target-to-sensor paths. One of the strongest atmospheric gas absorption features is due to oxygen and spans the spectral range from about 745 to 785 nm, with its peaks located at approximately 760 nm. The oxygen band strength is calibrated to surface-pressure elevation using the oxygen band model in the MODTRAN 4.0 radiative transfer code. 
+### The radiometry LUT and the atmospheric correction algorithm
+
+In order to finally solve Eq. (5) or (9) for estimated ground reflectance, a quick overview is needed of the steps in the comprehensive atmospheric correction algorithm.
+
+Once the LUT has been generated by MODTRAN for a specified range of atmospheric cases, the first pass of the comprehensive algorithm can begin. The sequence of the atmospheric characterization thus consists of the following steps:
+
+  * 1.
+
+estimation of terrain height (z);
+
+  * 2.
+
+determination of aerosol properties (by estimating the atmospheric
+
+### Results and discussion of inversion from sensor radiance to ground reflectance units
+
+The total inversion of sensor radiance to estimated ground reflectance was performed on eight hyperspectral images from four different geographical locations and environmental conditions (Sanders, 1999). The HYDICE ARM site acquisition Run 29 is presented here as an example. HYDICE is a 210-band VNIR/SWIR hyperspectral sensor with bandwidths ranging from 2 to 15 nm (Rickard, 1993). In all of the following plots, the definition of spectral reflectance error is the recovered reflectance from the
+
+### HYDICE Run 29 ARMS site image
+
+The atmospheric characterization and reflectance inversion tools were applied to a June 24, 1997 HYDICE data collection over the DOE ARM site in OK. Because of this location, the MODTRAN aerosol selected for the LUT used by the inversion algorithm was the rural model. For this collection, several well-characterized gray reflective panels were deployed for ground truth.
+
+These panels had nominal reflectance of 2%, 4%, 8%, 16%, 32%, and 64%. The actual spectral values were measured in the field at
+
+### Conclusion
+
+A complete modular algorithm for inverting hyperspectral imagery from sensor radiance to ground reflectance has been constructed and validated. This algorithm incorporates existing and new methodologies for estimating the atmospheric parameters of surface-pressure depth, aerosol-dependent visibility, and columnar water vapor. It provides a much-needed tool for removing the atmosphere from hyperspectral images and facilitates the analysis of ground reflectance imagery.
+
+A new concept has been
+
+## References (17)
+
+  * D. Schläpfer et al.
+
+### Atmospheric Precorrected Differential Absorption technique to retrieve water vapor
+
+### Remote Sensing Of Environment
+
+(1998)
+
+  * C.J. Bruegge et al.
+
+### In-situ atmospheric water-vapor retrieval in support of AVIRIS validation,
+
+### Imaging Spectroscopy of the Terrestrial Environment, SPIE
+
+(1990)
+
+  * R.E. Crippen
+
+### The Regression Intersection Method of adjusting image data for band ratioing
+
+### International Journal of Remote Sensing
+
+(1987)
+
+  * B.C. Gao et al.
+
+### Possible near-IR channels for remote sensing precipitable water vapor from geostationary satellite platforms
+
+### Journal of Applied Meteorology
+
+(1993)
+
+  * R.O. Green et al.
+
+### Measurement of atmospheric water vapor using the airborne visible/infrared imaging spectrometer. Image Processing '89
+
+### American Society of Photogrammetry and Remote Sensing
+
+(1989)
+
+  * R.O. Green et al.
+
+### An inversion algorithm for retrieval of atmospheric and leaf water absorption from AVIRIS radiance with compensation for atmospheric scattering
+
+  * R.O. Green et al.
+
+### Characterization of the atmosphere for the inversion of AVIRIS calibrated radiance to apparent surface reflectance
+
+### Summaries of the Sixth Annual JPL Airborne Earth Science Workshop
+
+(1996)
+
+  * F.X. Kneisys et al.
+
+### The MODTRAN 2/3 and LOWTRAN 7 model
+
+(1995)
+
+There are more references available in the full text version of this article.--------------------------------------------------------------------------------
+A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425701002115)
+citeturn12search2 [wordlim: 200] Crawled: last month; Remote sensing calibration and validation (cal–val) are critical aspects of Earth observation measurements and the associated methods used to retrieve terrestrial parameters that are not compromised by sensor and data processing effects. ... This paper reports on experimental work to test the feasibility of using reference imaging spectrometer data (hereafter referred to as “hyperspectral” data) to carry out vicarious calibrations for multiple sensors. ... Such an approach has the potential to provide more systematic vicarious calibration updates for numerous satellite sensor systems and it would represent an important step towards a cal–val infrastructure beneficial to mainstream users (Teillet et al., 1997). ... Slater (University of Arizona), a world leader and catalyst for innovative research in the field of radiometric calibration of Earth observation sensors.
+## Introduction
+
+Remote sensing calibration and validation (cal–val) are critical aspects of Earth observation measurements and the associated methods used to retrieve terrestrial parameters that are not compromised by sensor and data processing effects. The challenge is to ensure that the measurements and methods yield self-consistent and accurate geophysical parameters, even though the measurements are made with a variety of different satellite sensors under different observational conditions and the geophysical parameter retrieval methodologies vary.
+
+Sensor radiometric calibration, the most fundamental part of the cal–val process, is a broad and complex field that imposes the greatest limitations on quantitative applications of remote sensing Teillet, 1997, Teillet et al., 1997. The methods and instrumentation involved can be grouped into three domains (Dinguirard & Slater, 1999): on the ground prior to launch, onboard the spacecraft post-launch, and vicarious or indirect approaches using Earth scenes imaged in-flight. 
+This paper reports on experimental work to test the feasibility of using reference imaging spectrometer data (hereafter referred to as “hyperspectral” data) to carry out vicarious calibrations for multiple sensors. The domain of interest and applicability is that of optical sensors with spectral bands in the range encompassed by the “reference” hyperspectral sensor. The approach has the greatest potential for large footprint sensors (with spatial resolutions on the order of 1 km) since ground reference data are difficult to acquire over large areas, but it is equally applicable to small footprint sensors (with spatial resolutions on the order of tens of meters). Thus, the idea is to obtain reference data sets that are more generally applicable because of their more complete spectral coverage and more extensive spatial coverage compared to vicarious calibration methods used to date. Such an approach has the potential to provide more systematic vicarious calibration updates for numerous satellite sensor systems and it would represent an important step towards a cal–val infrastructure beneficial to mainstream users (Teillet et al., 1997). 
+In the QUASAR method (Fig. 1), airborne hyperspectral image data are acquired over a spatially extensive test site and corrected for atmospheric effects to yield a surface spectral reflectance map. A further atmospheric computation is used to predict spectral radiances at the TOA, from which band-integrated radiances are obtained using relative spectral response profiles for the satellite sensor spectral bands being monitored.
+
+The hyperspectral and spatially extensive nature of the resulting benchmark data set makes it possible to attempt vicarious calibrations for any sensor(s) with appropriate characteristics that imaged the test site on the same day, or within a day or two if atmospheric and surface conditions have not changed significantly. Appropriate sensors include any with footprints (i.e., pixel sizes) that fit comfortably within the test site and with one or more spectral bands encompassed by the wavelength coverage of the reference hyperspectral sensor. Spectral bands outside the wavelength range of the reference sensor can be monitored using interband relative calibration methods. Operational QUASAR monitoring based on satellite hyperspectral reference data in the future could conceivably rely on sunphotometer and surface radiance measurements acquired by automated instrumentation. Because of the hyperspectral and spatially extensive nature of QUASAR data sets, the approach has the potential to eventually be adapted to the validation of geophysical and biophysical parameters derived from remotely sensed data.
+
+This paper highlights the new QUASAR methodology, the data sets generated to date, and the first calibration monitoring results obtained for five well-known Earth observation satellite sensors. QUASAR monitoring data acquisition campaigns took place at the Railroad Valley playa test site in Nevada on June 17, 1998 and at the Newell County rangeland test site in Alberta on August 4, 1998 and October 4, 1998. Ground-based measurements, satellite imagery, and airborne hyperspectral data were acquired in all cases. The airborne imagery was obtained using the Compact Airborne Spectrographic Imager (casi) for all three campaigns and the Airborne Visible Infrared Imaging Spectrometer (AVIRIS) in addition for the Railroad Valley campaign. The ground-based measurements included spectral data obtained using the GER3700 spectrometer for all three campaigns and the ASD FieldSpec Pro FR spectrometer in addition for the Railroad Valley campaign.
+
+The airborne hyperspectral data sets were used to generate radiometric calibration estimates for selected spectral bands of the Earth observation sensors that imaged the test sites on or near each of the three airborne data acquisition dates. The principal results consist of comparisons of TOA spectral band radiances predicted by QUASAR with nominal values obtained from the actual satellite sensor image data. The satellite sensors and the relevant spectral bands are as follows:
+
+  * •
+
+National Oceanic and Atmospheric Administration's (NOAA) Advanced Very-High-Resolution Radiometer (AVHRR) (spectral band 1);
+
+  * •
+
+Landsat Thematic Mapper (TM) (spectral bands 1–4);
+
+  * •
+
+SPOT-1 and-2 Haute resolution visible (HRV) (spectral bands 1–3);
+
+  * •
+
+SPOT-4 Vegetation (VGT) (spectral bands 1–3 (i.e., B0, B2, and B3)); and
+
+  * •
+
+OrbView-2 Sea-viewing Wide-Field-of-View Sensor (SeaWiFS) (spectral bands 1–8).
+
+Data sets both on and near the day of airborne data acquisition are included and provide challenging scenarios for an initial test of the feasibility of the QUASAR monitoring approach. This is in keeping with the philosophy of the QUASAR experiment to relax the constraints on the generation of benchmark data sets in favour of more frequent radiometric calibration updates.
+
+--------------------------------------------------------------------------------
+Kurtis John Thome | ScienceDirect (https://www.sciencedirect.com/author/7006460453/kurtis-john-thome)
+citeturn12search3 [wordlim: 200] Crawled: 5 months ago; A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data ... The paper describes a new methodology that uses spatially extensive hyperspectral imagery as reference data to carry out vicarious radiometric calibrations for multiple satellite sensors. ... The rangeland test site in the Newell County region of Alberta is tested for its suitability as a calibration test site for satellite sensor systems.
+  * Research article Abstract only
+
+A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data
+
+P.M. Teillet, … K.J. Thome, … A. Meygret
+
+Remote Sensing of Environment • Volume 77, Issue 3 • September 2001
+
+    * View abstract
+
+The paper describes a new methodology that uses spatially extensive hyperspectral imagery as reference data to carry out vicarious radiometric calibrations for multiple satellite sensors. The methodology has been validated using data from a campaign at the Railroad Valley playa test site in Nevada in June 1998. The proof of concept has been further tested based on data acquisition campaigns at the Newell County rangeland test site in Alberta in August and October 1998. The rangeland test site in the Newell County region of Alberta is tested for its suitability as a calibration test site for satellite sensor systems. All three campaigns included ground-based measurements, satellite imagery, and airborne hyperspectral data. --------------------------------------------------------------------------------
+Traceable radiometry underpinning terrestrial- and helio-studies (TRUTHS) - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0273117703905515)
+citeturn12search4 [wordlim: 200] Published: 22.9 years ago; Crawled: 6 months ago; ### A generalized approach to the vicarious calibration of multiple earth observation sensors using hyperspectral data
+
+(1999)
+
+  * P.M. Teillet et al.
+
+### A generalized approach to the vicarious calibration of multiple earth observation sensors using hyperspectral data
+
+### Remote Sensing of Environment
+
+(2001)
+
+  * P.M. Teillet et al.
+
+### Radiometric crosscalibration of the Landsat-7 ETM+ and Landsat-5 TM sensors based on tandem data sets
+
+### Remote Sensing ofEnvironment
+
+(2001)
+
+  * W.A. Abdou et al.
+
+### Vicarious calibration experiment in support of the Multi-angle Imaging Spectro Radiometer
+
+### IEEE Trans. Geosci. Remote sens.
+
+(2002)
+
+  * C.J. Bruegge et al.
+
+### Early validation of the Multi-angle Imaging Spectro Radiometer (MISR) radiometric scale
+
+### IEEE Trans. Geosci. Remote sens.
+
+(2002)
+
+There are more references available in the full text version of this article.
+
+## Cited by (50)
+
+  * ### Advanced radiometry measurements and Earth science applicationswith the Airborne Prism Experiment (APEX)
+
+2015, Remote Sensing of Environment
+
+Citation Excerpt :
+
+Finally, the power distribution unit connects the aircraft power supply with all APEX instruments requiring power. --------------------------------------------------------------------------------
+Detection of single graves by airborne hyperspectral imaging - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0379073814003442)
+citeturn12search5 [wordlim: 200] Published: 11.9 years ago; Crawled: 2 months ago; ### A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data ... * ITRES Research Ltd., SASI Data Standard Processing.
+--------------------------------------------------------------------------------
+On the reproducibility of field-measured reflectance factors in the context of vegetation studies - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425711000897)
+citeturn12search6 [wordlim: 200] Published: 15.2 years ago; Crawled: 2 months ago; ### A generalised approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data
+--------------------------------------------------------------------------------
+Detection of single graves by airborne hyperspectral imaging - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0379073814003442)
+citeturn12search7 [wordlim: 200] Published: 11.9 years ago; Crawled: last month; ### A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data ... * ITRES Research Ltd., SASI Data Standard Processing.
+--------------------------------------------------------------------------------
+Status and application of advanced airborne hyperspectral imaging technology: A review - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S1350449519307649)
+citeturn12search8 [wordlim: 200] Published: 6.8 years ago; Crawled: last month; ### A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data
+--------------------------------------------------------------------------------
+A scheme to quantify the adjacency effect of shortwave radiation from highly reflective surfaces - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0034425726003718)
+citeturn12search9 [wordlim: 200] Crawled: last month; Based on the geometric series approach, the correction model fully characterizes the multiple scattering processes between the surface and the atmosphere. ... ### A VNIR/SWIR atmospheric correction algorithm for hyperspectral imagery with adjacency effect ... ### An adaptive atmospheric correction algorithm for the effective adjacency effect correction of submeter-scale spatial resolution optical satellite images: application to a WorldView-3 panchromatic image
+--------------------------------------------------------------------------------
+Quality assessment of several methods to recover surface reflectance using synthetic imaging spectroscopy data - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425704000410)
+citeturn12search10 [wordlim: 200] Published: 22.5 years ago; Crawled: last month; In the field of remote sensing, the IS technique is opening up a new frontier, by promising near-laboratory accuracy of reflectance information for every pixel in an image (Goetz, 1992). ... ### A VNIR/SWIR atmospheric correction algorithm for hyperspectral imagery with adjacency effects ... ### Effect of Landsat 5 Thematic Mapper and Landsat 7 Enhanced Thematic Mapper Plus radiometric and geometric calibrations and corrections on landscape characterization
+--------------------------------------------------------------------------------
+Influence of adjacency effect on high-spatial-resolution thermal infrared imagery: Implication for radiative transfer simulation and land surface temperature retrieval - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425720302224)
+citeturn12search11 [wordlim: 200] Crawled: 2 months ago; This paper is organized as follows: Section 2 introduces the TIR RTE and the methods for the estimation of atmospheric parameters and PSF; Section 3 presents the results for the analysis of the adjacency effect using simulation and actual satellite data; Section 4 gives the results for LST retrieval with adjacency effect correction; Section 5 discusses the influence of the adjacency effect on radiative transfer simulation and LST retrieval; and the final section provides the conclusions of this study. ... ### A VNIR/SWIR atmospheric correction algorithm for hyperspectral imagery with adjacency effect ... ### Simulation of Sentinel-3 images by four-stream surface-atmosphere radiative transfer modeling in the optical and thermal domains

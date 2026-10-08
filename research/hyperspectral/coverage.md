@@ -65,6 +65,7 @@
 | NeurIPS | 2021 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 2334 / 14 / 14 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | NeurIPS | 2020 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 1898 / 9 / 9 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | NeurIPS | 2019 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 1428 / 5 / 5 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| Remote Sensing of Environment | 2001 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；133 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 133 / 6 / 4 | Crossref133登记题名指定六词扫描；4收录、2访问/范围待核验；出版社全量未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Broge完整摘要/原图与Key完整作者/摘要/高光谱联系受限；四新增完整PDF/实验/资源许可及两原图页码待核验 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -95,7 +96,7 @@
 | TSP | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TCI | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TGRS | journal | 最早可用目录至 2026 | 1988/1994/2001/2005/2008基础主题及2022单篇期刊扩展定向核验；年度全量未检索 |
-| Remote Sensing of Environment | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| Remote Sensing of Environment | journal | 最早可用目录至 2026 | 2001年度Crossref登记集合六成像词已扫，4收录/2待核验；出版社全量、其他年/词未完成 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IGARSS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | WHISPERS | specialist_conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -201,6 +202,8 @@
   阅读边界：官方目录1898题名指定五词扫描；9命中的完整官方摘要已读，依当前证据逐篇排除。未读全文，不推定题名未命中论文不相关。
 - 2026-10-08 / neurips-2019-optical-review：新增 0，更新 0，去重 0，排除 5，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：官方目录1428题名指定五词扫描；5命中的完整官方摘要已读，依当前证据逐篇排除。未读全文，不推定题名未命中论文不相关。
+- 2026-10-08 / rse-2001-crossref-optical-review：新增 4，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：133不同DOI与Crossref登记总数一致；六题名成像词6命中全部筛查。4篇完整官方/机构摘要收录，2篇仅局部原摘要/引言留待核验。两张出版社原始方法图已核对，PDF页码未知；非全文阅读。
 
 ## 未解决缺口
 
@@ -218,3 +221,4 @@
 - NeurIPS2022四篇8预印本元数据与局部差异核验：SatMAE SpaceNet v2→v1命名、v3附录长时训练；DAUHST v3增加MST++/CST基线及cs.CV→eess.IV主分类变动。全图/公式及完整实验仍待比对。
 - NeurIPS2021官方2334题名五词14命中闭环：T3SC新增1、排除13。仅指定题名组完成；全量摘要/任务词/引文未完成，T3SC附录实验、DOI、许可和正式版差异待核验。
 - NeurIPS2019/2020指定五词题名扫描分别1428/1898条，5/9命中摘要全部排除；未扫全量摘要，不能推定年度无HSI论文。年度目录记录不再未经核对宣称包含独立数据集Track。
+- RSE2001 Crossref登记133题名六词6命中：4新增（RBVC、VNIR/SWIR大气校正、荒漠MESMA限度、QUASAR）、2待核验（Broge/Key局部摘要/引言）。2原图取得但PDF页码未知，另2方法图受限。出版社目录、任务词、全量摘要、资源许可和全文未完成。

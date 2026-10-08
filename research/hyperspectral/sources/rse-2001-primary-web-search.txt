@@ -1,0 +1,281 @@
+Vicarious calibration of airborne hyperspectral sensors in operational environments - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425700001942)
+citeturn8search0 [wordlim: 200] Crawled: last month; A reflectance-based vicarious calibration (RBVC) method has been used to correct the radiometric coefficients for hyperspectral data obtained with the Probe 1 sensor over the Raglan region of northern Quebec, and to perform a radiance renormalisation for compact airborne spectrographic imager (casi) data obtained over Goose Bay, Labrador. ... This represents a novel use of the RBVC method for validation and correction of the sensor's radiometric calibration at the time of data acquisition, applied in an operational setting that lacks a large, bright and homogeneous calibration target and well-characterized atmospheric conditions. ... Vicarious calibration provides a method for the absolute calibration of remote sensing sensors via reference to accurate spectral measurements made separately from the airborne sensor.
+
+## Remote Sensing of Environment
+
+Date: April 2001
+
+Pages: 81-92
+
+Volume: Volume 76, Issue 1
+
+## Published by: Elsevier
+
+# Vicarious calibration of airborne hyperspectral sensors in operational environments
+
+Author links open overlay panel Jeff Secker ^{a}, Karl Staenz ^{b}, Robert P Gauthier ^{b}, Paul Budkewitsch ^{b}
+
+Show more
+
+Cite
+
+Add to Mendeley
+
+Share
+
+10.1016/S0034-4257(00)00194-2
+
+Access through your organizationPurchase PDF
+
+
+## Abstract
+
+A reflectance-based vicarious calibration (RBVC) method has been used to correct the radiometric coefficients for hyperspectral data obtained with the Probe 1 sensor over the Raglan region of northern Quebec, and to perform a radiance renormalisation for compact airborne spectrographic imager (casi) data obtained over Goose Bay, Labrador. It relies on the simultaneous acquisition of ground-based reflectance spectra for at least one calibration site within the hyperspectral flight line. The RBVC method yields a new set of radiometric coefficients that convert the hyperspectral data from digital numbers (DNs) to radiances, and that are applicable to flight lines taken under different conditions. For both the Raglan and the Goose Bay projects, the calibration site was a gravel airstrip, and ground-based reflectance measurements were made with a GER3700 field spectrometer using a Spectralon panel for reference. This represents a novel use of the RBVC method for validation and correction of the sensor's radiometric calibration at the time of data acquisition, applied in an operational setting that lacks a large, bright and homogeneous calibration target and well-characterized atmospheric conditions. Analysis of the errors involved in correcting the radiometric coefficients yielded a total relative error (averaged over wavelength) of 3.9–5.6% on the final reflectance spectra.
+
+## Introduction
+
+The sensors used to acquire airborne hyperspectral data, such as airborne visible/infrared imaging spectrometer (AVIRIS; Vane et al., 1993), compact airborne spectrographic imager (casi; Anger et al., 1996, Babey & Anger, 1989), SWIR full spectrum imager (SFSI; Neville, Rowlands, Marois,& Powell, 1995) and Probe 1 are complex optomechanical devices. During their transport, installation and operation, these sensors can be subjected to significant stresses. If these stresses occur between the laboratory calibration and the overflight, and if any minute misalignments occur as a result, then it is possible that the laboratory calibration (both spectral registration and radiometric coefficients) will not be appropriate to data acquired during the overflight. If this occurs, the errors in the calibration will not be detected until the data have been acquired and a preliminary analysis has been performed.
+
+Vicarious calibration provides a method for the absolute calibration of remote sensing sensors via reference to accurate spectral measurements made separately from the airborne sensor. This is an absolute calibration method that yields a new set of radiometric coefficients that can be used to replace those derived in the laboratory Dinguirard & Slater, 1999, Slater et al., 1987.
+
+With the reflectance-based vicarious calibration (RBVC) method, the at-sensor radiometric data are calibrated by comparison against accurate ground-based measurements for a target located within the overflight area. The RBVC method is most often discussed in the context of satellite sensors as a method to monitor the radiometric calibration Markham et al., 1997, Slater et al., 1987, Teillet et al., 1990, Thome et al., 1998, Thome et al., 1997. As well, it provides a useful and necessary way to monitor and verify the calibration coefficients for airborne hyperspectral data, and it has been used in this capacity for AVIRIS Green et al., 1996, Vane et al., 1993. While the vicarious calibration of AVIRIS data performs well under ideal conditions, these conditions are not always met during the course of hyperspectral surveys, and the RBVC method must be evaluated for use in operational environments.
+
+In truly operational settings, the accuracy of the vicarious calibration is reduced considerably due to several factors: (a) the difficulty inherent in locating a sufficiently large and homogeneous target within the overflight path (in fact this may not be possible); (b) the practical limitations on the number of ground-based reflectance measurements that can be made to characterize the calibration target, and (c) an inability to fully characterize the atmospheric conditions at time of overflight. However, provided that there is simultaneous acquisition of field spectra for an area within the overflight path, the RBVC method can be used successfully with the additional advantage that the calibration is performed at the time of the data acquisition.
+
+In this paper an implementation of the RBVC method for hyperspectral data is described, the result of which is a corrected set of radiometric coefficients. This is an iterative numerical technique that adjusts the radiometric coefficients to reduce the absolute difference between the ground-based (calibrating) reflectance spectrum and the reflectance spectrum extracted from the hyperspectral data to within a specified tolerance. This method is implemented in the imaging spectrometer and data analysis system (ISDAS; Staenz, Szeredi, & Schwarz, 1998) software developed at the Canada Centre for Remote Sensing (CCRS).
+
+This methodology has been applied to two different hyperspectral data sets obtained in northern Canada, both of which required corrections to the radiometric coefficients. These are: 128-band Probe 1 data obtained near Raglan Lake on the eastern end of the Cape Smith fold belt in northern Quebec, and 72-band casi data obtained near Goose Bay, Labrador. The objective of the Raglan project is to use hyperspectral and ground-based data together with spectral unmixing techniques to create mineral maps of the exposed rock in this barren region of northern Quebec (Staenz, Nadeau, Secker, & Budkewitsch, 2000). For the Goose Bay project, the casi hyperspectral data will be used to establish a land-use baseline prior to flooding of the lower Churchhill river (Pollock et al., 2000). In both cases, ground-based reflectance data were obtained simultaneously with the overflight using a field spectrometer.
+
+### Ground-based data acquisition and preprocessing
+
+Field research done in support of the Raglan and Goose Bay hyperspectral projects included the acquisition of ground-based reflectance spectra using the GER3700 portable field spectrometer, which has 704 channels spanning the wavelength interval between 350 and 2490 nm. For each of these studies, the field spectrometer was configured with a 10° field of view (FOV) lens, giving a 0.26-m diameter ground FOV from a height of 1.5 m.
+
+The Kattiniq–Donaldson airstrip, located within the Probe 1 flight
+
+### Data acquisition
+
+The hyperspectral data for the Raglan project was obtained with the Probe 1 sensor in July 1998 (Table 1). The Probe 1 is a high signal-to-noise sensor with 128 spectral bands spanning the wavelength range from 440 to 2500 nm, with bandwidths between 11 and 22 nm full width at half maximum (FWHM). It is a whiskbroom scanner with four linear 32-element detectors; a Si photodiode detector for the 440–900 nm (VNIR) range, and three InSb detectors for the 900–1350 nm (NIR), 1390–1800 nm (SWIR1) and
+
+### Reflectance-based vicarious calibration
+
+The RBVC method as implemented in ISDAS is illustrated in Fig. 6. Vertically down the right side, the processing flow for the field reflectance spectra is illustrated. The left side illustrates the processing flow for the airborne hyperspectral data. The control module for the RBVC method is illustrated at the bottom centre. It takes as input the resampled mean field reflectance spectrum and the airborne hyperspectral reflectance spectrum for the calibration site, together with the initial
+
+### Error analysis and budget
+
+The reflectance spectra based upon the corrected radiometric coefficients and plotted in Fig. 7, Fig. 8, Fig. 9 are free of the obvious problems visible in the original data. However, their accuracy remains to be assessed. Here, the total uncertainty inherent in the reflectance spectra is evaluated by estimating the uncertainty arising due to each component of the RBVC method. For the most part these uncertainties vary with wavelength, and for the purpose of providing a single representative
+
+### Discussion
+
+The RBVC method as applied in this paper provides a fast and powerful technique for correcting the radiometric coefficients — or to perform a radiance renormalisation — of airborne hyperspectral data. When applied in the operational setting of northern Canada, the RBVC method yields corrected coefficients and final reflectance spectra that are sufficiently accurate for further analysis. The coefficients corrected via the RBVC method can then be used to convert the raw hyperspectral data (DN) to
+
+### Conclusions
+
+The RBVC method provides a fast and powerful technique for correcting the radiometric coefficients — or to perform a radiance renormalisation — of airborne hyperspectral data in operational settings. If the hyperspectral overflights are supported by field measurements of reflectance spectra, then it is a minimal additional effort to locate and measure a homogeneous target within the overflight area. This provides the data necessary to check the radiometric calibration, and to correct the
+
+## Acknowledgements
+
+The authors wish to thank J. Gingerich (Noranda Mining and Exploration) and R. Moore (Falconbridge) for making the Probe 1 data over the Kattiniq/Donaldson airstrip available to CCRS. Thanks to M. Peshko (Noranda Mining and Exploration), and L. McBean and J. Wong (Falconbridge) for their technical support. As well, we would like to thank R. Neville, D. Hodgson, F. Vachon and J.-C. Deguise for their comments and assistance. The authors acknowledge the financial support of Barrick Gold, Cameco,
+
+## References (21)
+
+  * M Dinguirard et al.
+
+### Calibration of space — multispectral imaging sensors: a review
+
+### Remote Sensing of Environment
+
+(1999)
+
+  * P.N Slater et al.
+
+### Reflectance- and radiance-based methods for the in-flight absolute calibration of multispectral sensors
+
+### Remote Sensing of Environment
+
+(1987)
+
+  * P.M Teillet et al.
+
+### Three methods for the absolute calibration of the NOAA AVHRR sensors in-flight
+
+### Remote Sensing of Environment
+
+(1990)
+
+  * G Vane et al.
+
+### The airborne visible/infrared imaging spectrometer (AVIRIS)
+
+### Remote Sensing of Environment
+
+(1993)
+
+  * G.P Anderson et al.
+
+### MODTRAN3: an update on recent validations against airborne high resolution interferometer measurement
+
+  * C.D Anger et al.
+
+### Extended operational capabilities of casi
+
+  * S.K Babey et al.
+
+### A compact airborne spectral imager
+
+  * Berk, A., Bernstein, L. S., Robertson, D. C. (1989). MODTRAN: a moderate resolution model for LOWTRAN7. Final Report,…
+  * B.-C Gao et al.
+
+### Column atmospheric water vapour and vegetation liquid water retrievals from airborne imaging spectrometer data
+
+### Journal of Geophysical Research
+
+(1990)
+
+  * R.O Green et al.
+
+### An inversion algorithm for retrieval of atmospheric and leaf water absorption from AVIRIS radiance with compensation for atmospheric scattering
+
+There are more references available in the full text version of this article.--------------------------------------------------------------------------------
+A Comparison of Multispectral and Multitemporal Information in High Spatial Resolution Imagery for Classification of Individual Tree Species in a Temperate Hardwood Forest - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0034425700001590)
+citeturn8search1 [wordlim: 200] Crawled: last month; Although there is a general trend of improvement in resolution of each of these attributes for new sensors, trade-offs in data volume and instrument design have resulted in a tendency for high-resolution sensors to emphasize one of the four main characteristics (spatial, spectral, temporal, or radiometric) at the expense of the other properties. ... Multispectral data, shown on the left side of Fig. 1, involves a different trade-off and a coarser spatial resolution. ... Although there are a number of aircraft-deployed high spatial resolution hyperspectral sensors [for example, the Hyperspectral Digital Imagery Collection Experiment (HYDICE)] (Basedow et al., 1994), the cost of acquisition limits the frequency with which such imagery can be acquired for most practical applications. ... Over the last four decades, advances in remote sensing technology have enabled the classification of tree species from several sensor types. ... Initially, for the detection of the individual trees only, the lidar data are first inserted in a 2D digital image, with the height as the pixel value or brightness level.
+## Introduction
+
+In recent years imagery from a wide range of sensors has become available (Kramer, 1996). This trend is likely to accelerate in the near future (Sheffner and Stoney, 1999), thus extending the range of image options even further. The choice of the most appropriate data will depend on the relationship between the project aim and the available imagery's resolution and extent. Resolution and extent are not merely spatial attributes, but also incorporate spectral, temporal, and radiometric characteristics. Although there is a general trend of improvement in resolution of each of these attributes for new sensors, trade-offs in data volume and instrument design have resulted in a tendency for high-resolution sensors to emphasize one of the four main characteristics (spatial, spectral, temporal, or radiometric) at the expense of the other properties.
+
+Figure 1 illustrates schematically the trade-offs that data users have to make in selecting imagery for a particular project. For example, if the highest spatial resolution is required, one is generally limited to panchromatic, single-band data, such as the 1-meter instantaneous field of view (IFOV) IKONOS-2 imagery. ## Recommended articles
+
+### Based on reading popularity
+
+## Cited by (214)
+
+  * Show abstract
+
+Spatially explicit information on tree species composition of managed and natural forests, plantations and urban vegetation provides valuable information for nature conservationists as well as for forest and urban managers and is frequently required over large spatial extents. Over the last four decades, advances in remote sensing technology have enabled the classification of tree species from several sensor types.
+
+While studies using remote sensing data to classify and map tree species reach back several decades, a recent review on the status, potentials, challenges and outlooks in this realm is missing. Here, we search for major trends in remote sensing techniques for tree species classification and discuss the effectiveness of different sensors and algorithms based on a literature review.
+
+This review demonstrates that the number of studies focusing on tree species classification has increased constantly over the last four decades and promising local scale approaches have been presented for several sensor types. 
+  * Show abstract
+
+Remote sensing techniques have been seen as valuable and low-cost tools for frequent forest inventory purposes. However, estimation errors of relevant forest structure variables remain too high for operational use of high spatial resolution satellite imagery, such as Landsat TM/ETM and SPOT HRV, in temperate forests. Very high spatial resolution images that have been acquired by new commercial satellites, such as IKONOS-2 or QuickBird, are expected to reduce estimation errors to a level that is acceptable by foresters. This study assessed the capability of 1-m resolution IKONOS-2 imagery to estimate the five main forest variables—age, top height, circumference, stand density and basal area—in even-aged common spruce stands. They were estimated on the basis of texture features that were derived from the grey-level co-occurrence matrix (GLCM). The coefficients of determination, R^{2}, of the best models ranged from 0.76 to 0.82 for top height, circumference, stand density and age variables. Basal area was found to be weakly correlated to texture variables (R^{2} = 0.35). Relative prediction errors of four out of the five studied forest variables were comparable to the usual sampling inventory errors (top height: 10%; circumference: 15%; basal area: 16%; age: 18%), but the stand density estimation error (29%) remained too high for use in forest planning. The sensitivity analysis to the GLCM parameters showed that the most important parameters were the texture feature, the displacement and the window size. The orientation parameter had minimal effects on the R^{2} values, even if it influenced the values of the texture features.
+
+  * Show abstract
+
+We investigated the utility of high spectral and spatial resolution imagery for the automated species-level classification of individual tree crowns (ITCs) in a tropical rain forest (TRF). Laboratory spectrometer and airborne reflectance spectra (161 bands, 437–2434 nm) were acquired from seven species of emergent trees. Analyses focused on leaf-, pixel- and crown-scale spectra. We first described the spectral regions and factors that most influence spectral separability among species. Next, spectral-based species classification was performed using linear discriminant analysis (LDA), maximum likelihood (ML) and spectral angle mapper (SAM) classifiers applied to combinations of bands from a stepwise-selection procedure. Optimal regions of the spectrum for species discrimination varied with scale. However, near-infrared (700–1327 nm) bands were consistently important regions across all scales. Bands in the visible region (437–700 nm) and shortwave infrared (1994–2435 nm) were more important at pixel and crown scales. Overall classification accuracy decreased from leaf scales measured in the laboratory to pixel and crown scales measured from the airborne sensor. Leaf-scale classification using LDA and 40 bands had 100% overall accuracy. Pixel-scale spectra from sunlit regions of crowns were classified with 88% overall accuracy using a ML classifier and 60 bands. The highest crown-scale (ITC) accuracy was 92% with LDA and 30 bands. Producer's accuracies ranged from 70% to 100% and User's accuracies ranged from 81% to 100%. The SAM classifier performed poorly at all scales and spectral regions of analysis. ITCs were also classified using an object-based approach in which crown species labels were assigned according to the majority class of classified pixels within a crown. An overall accuracy of 86% was achieved with an object-based LDA classifier applied to 30 bands of data. Object-based and crown-scale ITC classifications were significantly more accurate with 10 narrow-bands relative to accuracies achieved with simulated multispectral, broadband data. We concluded that high spectral and spatial resolution imagery acquired over TRF canopy has substantial potential for automated ITC species discrimination.
+
+  * Show abstract
+
+Leaf-off individual trees in a deciduous forest in the eastern USA are detected and analysed in small footprint, high sampling density lidar data. The data were acquired February 1, 2001, using a SAAB TopEye laser profiling system, with a sampling density of approximately 12 returns per square meter. The sparse and complex configuration of the branches of the leaf-off forest provides sufficient returns to allow the detection of the trees as individual objects and to analyse their vertical structures. Initially, for the detection of the individual trees only, the lidar data are first inserted in a 2D digital image, with the height as the pixel value or brightness level. The empty pixels are interpolated, and height outliers are removed. Gaussian smoothing at different scales is performed to create a three-dimensional scale-space structure. Blob signatures based on second-order image derivatives are calculated, and then normalised so they can be compared at different scale-levels. The grey-level blobs with the strongest normalised signatures are selected within the scale-space structure. The support regions of the blobs are marked one-at-a-time in the segmentation result image with higher priority for stronger blobs. The segmentation results of six individual hectare plots are assessed by a computerised, objective method that makes use of a ground reference data set of the individual tree crowns. For analysis of individual trees, a subset of the original laser returns is selected within each tree crown region of the canopy reference map. Indices based on moments of the first four orders, maximum value and number of canopy and ground returns, are estimated. The indices are derived separately for height and laser reflectance of branches for the two echoes. Significant differences (p<0.05) are detected for numerous indices for three major native species groups: oaks (Quercus spp.), red maple (Acer rubrum) and yellow poplar (Liriodendron tuliperifera). Tree species classification results of different indices suggest a moderate to high degree of accuracy using single or multiple variables. Furthermore, the maximum tree height is compared to ground reference tree height for 48 sample trees and a 1.1-m standard error (R^{2}=68% (adj.)) within the test-site is observed.
+
+View all citing articles on Scopus
+
+Copyright © 2001 Elsevier Science Inc. All rights reserved.--------------------------------------------------------------------------------
+Comparing prediction power and stability of broadband and hyperspectral vegetation indices for estimation of green leaf area index and canopy chlorophyll density - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425700001978)
+citeturn8search2 [wordlim: 200] Published: 25.5 years ago; Crawled: 2 months ago; Analyses based on both simulated and real hyperspectral data were carried out to compare performances of existing vegetation indices (Normalized Difference Vegetation Index [NDVI], Renormalized Difference Vegetation Index [RDVI], Modified Simple Ratio [MSR], Soil-Adjusted Vegetation Index [SAVI], Soil and Atmospherically Resistant Vegetation Index [SARVI], MSAVI, Triangular Vegetation Index [TVI], and Modified Chlorophyll Absorption Ratio Index [MCARI]) and to design new ones (MTVI1, MCARI1, MTVI2, and MCARI2) that are both less sensitive to chlorophyll content variations and linearly related to green LAI. ... Prediction power analysis of proposed algorithms based on MCARI2 and MTVI2 resulted in agreements between modeled and ground measurement of non-destructive LAI, with coefficients of determination (r^{2}) being 0.98 for soybean, 0.89 for corn, and 0.74 for wheat. ... This comparison showed that the narrow-band indices related to LAI and Chl_{conc}, and to some extent also Chl_{density} and N_{density}, were optimal and could not be significantly improved by PLS using the information from all wavelengths in the hyperspectral region.
+The aim of the paper was to present a method for minimizing the effect of leaf chlorophyll content on the prediction of green LAI, and to develop new algorithms that adequately predict the LAI of crop canopies. Analyses based on both simulated and real hyperspectral data were carried out to compare performances of existing vegetation indices (Normalized Difference Vegetation Index [NDVI], Renormalized Difference Vegetation Index [RDVI], Modified Simple Ratio [MSR], Soil-Adjusted Vegetation Index [SAVI], Soil and Atmospherically Resistant Vegetation Index [SARVI], MSAVI, Triangular Vegetation Index [TVI], and Modified Chlorophyll Absorption Ratio Index [MCARI]) and to design new ones (MTVI1, MCARI1, MTVI2, and MCARI2) that are both less sensitive to chlorophyll content variations and linearly related to green LAI. Thorough analyses showed that the above existing vegetation indices were either sensitive to chlorophyll concentration changes or affected by saturation at high LAI levels. Conversely, two of the spectral indices developed as a part of this study, a modified triangular vegetation index (MTVI2) and a modified chlorophyll absorption ratio index (MCARI2), proved to be the best predictors of green LAI. Related predictive algorithms were tested on CASI (Compact Airborne Spectrographic Imager) hyperspectral images and, then, validated using ground truth measurements. The latter were collected simultaneously with image acquisition for different crop types (soybean, corn, and wheat), at different growth stages, and under various fertilization treatments. Prediction power analysis of proposed algorithms based on MCARI2 and MTVI2 resulted in agreements between modeled and ground measurement of non-destructive LAI, with coefficients of determination (r^{2}) being 0.98 for soybean, 0.89 for corn, and 0.74 for wheat. The corresponding RMSE for LAI were estimated at 0.28, 0.46, and 0.85, respectively.
+
+  * Show abstract
+
+Hyperspectral reflectance (438 to 884 nm) data were recorded at five different growth stages of winter wheat in a field experiment including two cultivars, three plant densities, and four levels of N application. All two-band combinations in the normalized difference vegetation index (λ1−λ2)/(λ1+λ2) were subsequently used in a linear regression analysis against green biomass (GBM, g fresh weight m^{−2} soil), leaf area index (LAI, m^{2} green leaf m^{−2} soil), leaf chlorophyll concentration (Chl_{conc}, mg chlorophyll g^{−1} leaf fresh weight), leaf chlorophyll density (Chl_{density}, mg chlorophyll m^{−2} soil), leaf nitrogen concentration (N_{conc}, mg nitrogen g^{−1} leaf dry weight), and leaf nitrogen density (N_{density}, g nitrogen m^{−2} soil). --------------------------------------------------------------------------------
+Detection of single graves by airborne hyperspectral imaging - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0379073814003442)
+citeturn8search3 [wordlim: 200] Published: 11.9 years ago; Crawled: last month; ### Vicarious calibration of airborne hyperspectral sensors in operational environments ... ### A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data ... ### Geo-atmospheric processing of airborne imaging spectrometry data.
+
+### Forensic Sci. Int.
+
+(2012)
+
+  * B.K. Alsberg
+
+### Is sensing spatially distributed chemical information using sensory substitution with hyperspectral imaging possible
+
+### Chemom. Intell. Lab. Syst.
+
+(2012)
+
+  * D. Goltz et al.
+
+### Assessing stains on historical documents using hyperspectral imaging
+
+### J. Cult. Herit.
+
+(2010)
+
+  * M. Kubik
+
+### Hyperspectral imaging: a new technique for the non-invasive study of artworks
+
+  * J. Secker et al.
+
+### Vicarious calibration of airborne hyperspectral sensors in operational environments
+
+### Remote Sens. Environ.
+
+(2001)
+
+  * P.M. Teillet et al.
+
+### A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data
+
+### Remote Sens. Environ.
+
+(2001)
+
+  * D.A. Sims et al.
+
+### Relationships between leaf pigment content and spectral reflectance across a wide range of species, leaf structures and developmental stages
+
+### Remote Sens. Environ.
+
+(2002)
+
+  * M. Kalacska et al.
+
+### Remote sensing as a tool for the detection of clandestine mass graves
+
+### Can. Soc. Forensic Sci. J.
+
+(2006)
+
+  * M.E. Kalacska et al.
+
+### The application of remote sensing for detecting mass graves: an experimental animal case study from Costa Rica
+
+### J. Forensic Sci.
+
+(2009)
+
+* G.B. Bailey et al.
+
+### AVIRIS data characteristics and their effects on spectral discrimination of rocks exposed in the Drum Mountains, Utah: results of a preliminary study
+
+* ITRES Research Ltd., SASI Data Standard Processing. Calgary, AB. p....
+* R. Richter et al.
+
+### Geo-atmospheric processing of airborne imaging spectrometry data. Part 2: Atmospheric/topographic correction
+
+### Int. J. Remote Sens.
+
+(2002)--------------------------------------------------------------------------------
+A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0034425701002115)
+citeturn8search4 [wordlim: 200] Crawled: last month; # A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data ... The airborne hyperspectral sensor data were acquired using the Airborne Visible and Infrared Imaging Spectrometer (AVIRIS) at Railroad Valley and the Compact Airborne Spectrographic Imager (casi) in all three campaigns. ... During the proof-of-concept phase, ground-based measurements of surface reflectance and atmospheric parameters are made for validation purposes.
+--------------------------------------------------------------------------------
+Determining temporal windows for crop discrimination with remote sensing: a case study in south-eastern Australia - ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0168169904000948)
+citeturn8search5 [wordlim: 200] Crawled: 2 months ago; This research was funded by the Cooperative Research Centre for Sustainable Rice Production, Project 1105 and CSIRO Land and Water. ... ### A comparison of multispectral and multitemporal information in high spatial resolution imagery for classification of individual tree species in a temperate hardwood forest ... ### A comparison of single date and multitemporal satellite image classification in a semi-arid grassland
+--------------------------------------------------------------------------------
+A comparison of methods for monitoring multitemporal vegetation change using Thematic Mapper imagery - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425701002966)
+citeturn8search6 [wordlim: 200] Crawled: 3 months ago; # A comparison of methods for monitoring multitemporal vegetation change using Thematic Mapper imagery ... We compared the ability of two linear change enhancement techniques, the Multitemporal Kauth Thomas (MKT) and Multitemporal Spectral Mixture Analysis (MSMA), and two classification techniques, maximum likelihood (ML) and decision tree (DT), to accurately identify changes in vegetation cover in a southern California study area between 1990 and 1996. ... Among the large variety of forested ecosystems, Mediterranean-type ecosystems (MTEs) comprise a vegetation form with worldwide importance and distribution and are of special interest to global change research in terms of biodiversity, desertification, water resources, and urbanization Hill et al., 1995, Moreno & Oechel, 1995, Sala et al., 2000, Verstraete & Schwartz, 1991. ... Satellite imagery, however, provides a viable source of data from which updated landcover information can be extracted in order to inventory and monitor changes in vegetation cover in southern California Franklin & Woodcock, 1997, Franklin et al., 2000, Roberts et al., 1997. ... Most studies in MTEs have employed the two most widely used change detection approaches, image differencing and postclassification comparison, producing varied results.
+--------------------------------------------------------------------------------
+Mário R. Caetano | ScienceDirect (https://www.sciencedirect.com/author/35567666900/mario-r-caetano)
+citeturn8search7 [wordlim: 200] Crawled: 4 months ago;   * Research article Abstract onlyContribution of multispectral and multitemporal information from MODIS images to land cover classification ... The goal of this study is to evaluate the relative usefulness of high spectral and temporal resolutions of MODIS imagery data for land cover classification.
+--------------------------------------------------------------------------------
+Comparison of simulated hyperspectral HyspIRI and multispectral Landsat 8 and Sentinel-2 imagery for multi-seasonal, regional land-cover mapping - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425717303929)
+citeturn8search8 [wordlim: 200] Crawled: 5 months ago; # Comparison of simulated hyperspectral HyspIRI and multispectral Landsat 8 and Sentinel-2 imagery for multi-seasonal, regional land-cover mapping ... Primary study objectives were to assess differences in map accuracy related to Multiple Endmember Spectral Mixture Analysis (MESMA) and Random Forests (RF) classifiers, spectral resolution (hyperspectral vs. multispectral), and temporal resolution (multi-seasonal vs. summer). ... This result indicates that repeat image acquisitions from satellite sensors are important for land-cover classification, irrespective of sensor spectral resolution. ... These findings point to the need of additional land-cover mapping research with machine learning and hyperspectral data that span the spatial and temporal scales afforded by a satellite.
+--------------------------------------------------------------------------------
+Temporal Comparison - an overview | ScienceDirect Topics (https://www.sciencedirect.com/topics/computer-science/temporal-comparison)
+citeturn8search9 [wordlim: 200] Crawled: last month; Moreover, for some CNN approaches, e.g. image classification, it would not be meaningful to make a single prediction for an entire raster, but, instead, make multiple smaller-scaled predictions to reveal the spatial variation within the area covered by the raster. ... Regarding spectral resolution of passive optical sensors, the literature search revealed that with 52% the largest share of studies used RGB imagery, whereas only 31% used multispectral (defined as RGB and at least one additional band) and only 9% used hyperspectral data (defined here as > 20 spectral bands). ... Multimodal remote sensing analysis or data fusion is the combination of acquisitions of different sensors types (LiDAR, SAR, passive optical). ... Section 3.5.2), or the viewing geometries and acquisitions modes may not be directly compatible, e.g., oblique SAR vs. nadir optical data. ... A case study on this seminal technique was presented by Brook et al. (2020), who used a multi-scale pan-sharpening algorithm (Yuan et al., 2018) to fuse both multispectral and -temporal information from Sentinel-2 satellite data with the high spatial information from UAV-imagery at the centimetre scale.
+--------------------------------------------------------------------------------
+A comparison of STARFM and an unmixing-based algorithm for Landsat and MODIS data fusion - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0034425714003551)
+citeturn8search10 [wordlim: 200] Published: 11.8 years ago; Crawled: 2 months ago; Landsat TM, ETM + and OLI sensors have a spatial resolution of 30 m for the multispectral bands, which is adequate for many environmental applications. ... By applying multi-sensor data fusion, or spatial downscaling, two data sets are combined to create a result which exceeds the physical limitations of the individual input data sets (Lunetta, Lyon, Guindon, & Elvidge, 1998), and contains more information than the original input images (Ehlers, 1991, Pohl and Van Genderen, 1998). ... Including the Bayesian theorem into fusing processes has been previously developed to optimally weight the spectral and panchromatic information in image-sharpening techniques (Fasbender, Radoux, & Bogaert, 2008). ... Furthermore, we propose a new data fusion method, the Spatial and Temporal Reflectance Unmixing Model (STRUM), which combines the main features of STARFM (i.e. maintaining the spatial fine details and spectral characteristics of Landsat) and unmixing-based fusion methods (i.e. incorporating the temporal signatures of MODIS) to obtain temporally stable synthetic imagery at Landsat spatial resolution.
+--------------------------------------------------------------------------------
+Radiometric calibration of AVIRIS-NG sensor using Indian desert sites - ScienceDirect (https://www.sciencedirect.com/science/article/abs/pii/S0273117723000388)
+citeturn8search11 [wordlim: 200] Published: 2.7 years ago; Crawled: last month; This manuscript describes reflectance-based vicarious calibration exercise of the Airborne Visible InfraRed Imaging Spectrometer - Next Generation (AVIRIS-NG) sensor during its second phase of observation campaigns over the Indian subcontinent.Vicarious calibration methods are one of the significant approaches that have been practiced successfully for the absolute radiometric calibration of various spaceborne and airborne sensors to ascertain its desired performance in terms of data quality and its accuracy. ... The airborne hyperspectral data from AVIRIS-NG sensor provides an unique opportunity to understand the Earth system components using atmospheric and surface absorption features from spectroscopic measurements.
