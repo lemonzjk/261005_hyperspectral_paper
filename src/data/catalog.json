@@ -24922,6 +24922,147 @@
           "attribution": "Yuanhao Cai, Jing Lin, Haoqian Wang, Xin Yuan, Henghui Ding, Yulun Zhang, Radu Timofte, Luc Van Gool · NeurIPS 2022"
         }
       ]
+    },
+    {
+      "id": "t3sc-2021",
+      "shortTitle": "T3SC",
+      "title": "A Trainable Spectral-Spatial Sparse Coding Model for Hyperspectral Image Restoration",
+      "authors": "Théo Bodrito, Alexandre Zouaoui, Jocelyn Chanussot, Julien Mairal",
+      "year": 2021,
+      "venue": "NeurIPS",
+      "publicationName": "Advances in Neural Information Processing Systems 34",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "两层可训练稀疏编码：传感器专用光谱层与低秩空谱字典层，附按波段噪声自适应和盲波段自监督分支。",
+      "tags": [
+        "spectral-denoising",
+        "spectral-data-restoration",
+        "sparse-dictionary-learning",
+        "low-rank-matrix-factorization",
+        "deep-unfolding",
+        "self-supervised-reconstruction"
+      ],
+      "summary": "两层可训练稀疏编码：传感器专用光谱层与低秩空谱字典层，附按波段噪声自适应和盲波段自监督分支。",
+      "input": "有噪高光谱影像；训练区分有真值监督和盲波段自监督。",
+      "output": "复原高光谱影像。",
+      "mechanism": "两层可训练稀疏编码：传感器专用光谱层与低秩空谱字典层，附按波段噪声自适应和盲波段自监督分支。",
+      "readingNote": "已读官方完整摘要及正式PDF第1、5–8页局部；非阅读全文。作者仓库README可访问，未执行代码、下载数据或模型；许可证待核验。",
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2b515e2bdd63b7f034269ad747c93a42-Abstract.html",
+      "code": "https://github.com/inria-thoth/T3SC",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_abstract_and_selected_original_pages",
+      "citation": "@inproceedings{NEURIPS2021_2b515e2b,\n author = {Bodrito, Theo and Zouaoui, Alexandre and Chanussot, Jocelyn and Mairal, Julien},\n booktitle = {Advances in Neural Information Processing Systems},\n editor = {M. Ranzato and A. Beygelzimer and Y. Dauphin and P.S. Liang and J. Wortman Vaughan},\n pages = {5430--5442},\n publisher = {Curran Associates, Inc.},\n title = {A Trainable Spectral-Spatial Sparse Coding Model for Hyperspectral Image Restoration},\n url = {https://proceedings.neurips.cc/paper_files/paper/2021/file/2b515e2bdd63b7f034269ad747c93a42-Paper.pdf},\n volume = {34},\n year = {2021}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-denoising",
+          "spectral-data-restoration",
+          "sparse-dictionary-learning",
+          "low-rank-matrix-factorization",
+          "deep-unfolding",
+          "self-supervised-reconstruction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接以高光谱去噪与复原为对象；光谱层和空谱字典层分别建模通道与空间结构。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何结合稀疏编码先验与端到端学习，在少量干净高光谱训练样本下复原退化影像？",
+        "datasets": "主实验为ICVL和Washington DC Mall；其他数据在附录，待核验。",
+        "experimentSetting": "官方PDF第7页：ICVL用100幅训练、50幅测试，并避免同场景泄漏；DC Mall按子图划分。测试含合成高斯、波段相关及条纹噪声；完整配置待核验。",
+        "conclusions": "作者报告监督分支在所测设置表现良好；未独立复现。",
+        "limitations": "第8页明确自监督分支在复杂噪声下弱于其独立同分布高斯设置；真实Urban实验未用传感器相关的噪声自适应分支。完整附录和跨版本差异待核验。",
+        "dataLinks": [
+          "https://github.com/inria-thoth/T3SC"
+        ],
+        "evidence": [
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2b515e2bdd63b7f034269ad747c93a42-Abstract.html",
+            "checkedAt": "2026-10-08",
+            "level": "官方完整摘要与BibTeX",
+            "supports": [
+              "题名、四作者、NeurIPS2021卷34页5430–5442；正式BibTeX未列DOI，DOI待核验"
+            ]
+          },
+          {
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/2b515e2bdd63b7f034269ad747c93a42-Paper.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "原文局部第1、5–8页；非阅读全文",
+            "supports": [
+              "两层可训练稀疏编码：传感器专用光谱层与低秩空谱字典层，附按波段噪声自适应和盲波段自监督分支。",
+              "主实验为ICVL和Washington DC Mall；其他数据在附录，待核验。",
+              "官方PDF第7页：ICVL用100幅训练、50幅测试，并避免同场景泄漏；DC Mall按子图划分。测试含合成高斯、波段相关及条纹噪声；完整配置待核验。",
+              "第8页明确自监督分支在复杂噪声下弱于其独立同分布高斯设置；真实Urban实验未用传感器相关的噪声自适应分支。完整附录和跨版本差异待核验。"
+            ]
+          },
+          {
+            "url": "https://github.com/inria-thoth/T3SC",
+            "checkedAt": "2026-10-08",
+            "level": "作者仓库README；未运行或下载数据",
+            "supports": [
+              "官方实现；README说明ICVL/DCMall自动下载入口及model.beta=1设置；数据可用性与许可待核验"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2111.09708",
+            "checkedAt": "2026-10-08",
+            "level": "官方摘要及完整提交历史",
+            "supports": [
+              "2111.09708仅v1，2021-11-18 14:16:04 UTC；eess.IV主类，cs.CV/cs.LG交叉分类；期刊参考字段明确NeurIPS2021"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "t3sc-2021-neurips2021",
+            "type": "会议正式版",
+            "url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2b515e2bdd63b7f034269ad747c93a42-Abstract.html",
+            "year": 2021,
+            "relation": "正式会议版；预印本关系由同题名、四作者及arXiv发表声明核验。"
+          },
+          {
+            "id": "t3sc-2021-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2111.09708v1",
+            "year": 2021,
+            "arxivId": "2111.09708",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2021-11-18T14:16:04Z",
+            "updatedAt": "2021-11-18T14:16:04Z",
+            "metadataStatus": "verified",
+            "relation": "同题名及四作者，官方发表声明NeurIPS2021；eess.IV并交叉cs.CV/cs.LG；最终版正文差异未比对。"
+          }
+        ],
+        "methodFamilyId": "t3sc-2021"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2021/file/2b515e2bdd63b7f034269ad747c93a42-Paper.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "T3SC两层稀疏编码架构原图。",
+          "verificationNote": "NeurIPS2021正式PDF第5页原Fig.1；传感器专用光谱层、空谱低秩字典层和噪声估计分支，含完整原图注；非生成示意图。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderScaleTo": 1600,
+            "pixelBox": [
+              208,
+              138,
+              1040,
+              630
+            ]
+          },
+          "path": "figures/t3sc-2021/framework.png",
+          "width": 832,
+          "height": 492,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "2bab5638b29b1d4c5c2c43cef74649bc4f52d8a42905ea5e963d7903042bf104",
+          "attribution": "Théo Bodrito, Alexandre Zouaoui, Jocelyn Chanussot, Julien Mairal · NeurIPS 2021"
+        }
+      ]
     }
   ],
   "datasets": [
