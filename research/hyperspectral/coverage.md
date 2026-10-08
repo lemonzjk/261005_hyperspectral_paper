@@ -80,8 +80,10 @@
 | TCI | 2015 | spectral、compressive、coded aperture、unmixing；离线全扫41个不同登记DOI；原rows1000一页；包含目录/出版说明，不当作41篇研究论文 | 41 / 4 / 4 | 41登记题名四词4候选闭环：新增3、排除1；出版社年度全量未证明 | 出版社全部卷期/全量摘要未核验；其余词、引文与全文实验、最终版差异待核验 |
 | TCI | 2016 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 3 / 2 | 63登记题名六词3命中：2收录、1原摘要受限；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
 | TCI | 2016 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 5 / 4 | 四词5命中：新2、排2、原摘要受限1；Fourier正式出版按TIP记录 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
-| TCI | 2017 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 11 / 10 | 102登记题名11命中，10已处理；并集新增8、排7、待2，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；2候选完整摘要或HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
-| TCI | 2017 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 17 / 15 | 102登记题名17命中，15已处理；并集新增8、排7、待2，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；2候选完整摘要或HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
+| TCI | 2017 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 11 / 10 | 102登记题名11命中，10已处理；并集新增8、排8、待1，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；1候选HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
+| TCI | 2017 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 17 / 16 | 102登记题名17命中，16已处理；并集新增8、排8、待1，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；1候选HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
+| TCI | 2018 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；75 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 75 / 2 / 2 | 75登记题名六词2命中已收录；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；原始摘要受限反射率恢复候选待核验；出版社全量、其他词和全文实验/版本差异待查 |
+| TCI | 2018 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；75 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 75 / 4 / 3 | 75登记题名四词4命中：新增2、排1、待1；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；原始摘要受限反射率恢复候选待核验；出版社全量、其他词和全文实验/版本差异待查 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -240,6 +242,10 @@
   阅读边界：63登记DOI含目录/说明；六词3、四词5并集5，跨词组重复不计新方法。彩色CASSI原PDF摘要/第1页原图；Fourier正式TIP原摘要。其余受限候选不依据二手摘要升级。
 - 2026-10-08 / tci-2017-spectral-compressive-review：新增 8，更新 0，去重 0，排除 7，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：六词11与四词17并集17；跨组重复不计独立方法。8篇原始摘要及注明局部原图页；4个arXiv版本历史核验。作者上传原稿、预印本、期刊版分开，未阅读全文。 PPID局部数据建模与Fig.11已读；本批5张原方法图。
+- 2026-10-08 / tci-2016-2017-candidate-followup：新增 0，更新 0，去重 0，排除 1，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：定向复核三个旧候选：JEDI作者原始摘要排除；LSSHUCS和反射估计仍待原始摘要/HSI关联，不额外增加候选。
+- 2026-10-08 / tci-2018-spectral-compressive-review：新增 2，更新 0，去重 0，排除 1，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：六词2与四词4并集4；跨组重复命中不计新方法。两篇原始摘要、局部方法页/实验段、5个arXiv日期与作者README核验；未阅读全文，正式/预印本实验不混用。
 
 ## 未解决缺口
 
