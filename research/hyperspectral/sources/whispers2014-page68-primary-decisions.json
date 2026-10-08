@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "airflex-o2-atmospheric-correction-2014",
+      "doi": "10.1109/whispers.2014.8077642",
+      "decision": "included",
+      "programPdfPage": 68,
+      "readingBoundary": "官方第68页完整摘要、正式书目及作者上传原会议稿§1–3.2文字；公式/图像缺失，保持摘要已核验。",
+      "figureBoundary": "作者上传原稿可选读文字；公开PDF链接工具Internal Error，公式和图像未取得，已见图标题均为带深/反射率结果曲线，方法图未确认。IEEE202空响应；不借2015期刊图。",
+      "relation": "multispectral",
+      "deduplication": "DOI/题名/作者核全库无重复；近似题名TGRS/IGARSS稿保留相关未确认关系。"
+    },
+    {
+      "paperId": "flex-sentinel3-fluorescence-retrieval-2014",
+      "doi": "10.1109/whispers.2014.8077504",
+      "decision": "included",
+      "programPdfPage": 68,
+      "readingBoundary": "官方第68页及作者机构完整摘要与书目已核验，未取得本四页会议原稿。",
+      "figureBoundary": "机构无附文件，IEEE202空响应；同年四月不同题名/作者序列海报不是本会议版本，不能转移图件。方法图号/页码待原稿。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；近似题名TGRS/IGARSS稿保留相关未确认关系。"
+    },
+    {
+      "paperId": "sif-multiscale-remote-sensing-2014",
+      "doi": "10.1109/whispers.2014.8077542",
+      "decision": "included",
+      "programPdfPage": 68,
+      "readingBoundary": "官方第68页和Twente完整摘要及十九作者核验，未阅读全文；机构日期与会议时间区分。",
+      "figureBoundary": "Twente全文链接明确access via login/ezproxy，未登录取得；不绕过登录直取目标PDF。IEEE202空响应，原方法图/图号/页码待核验。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；近似题名TGRS/IGARSS稿保留相关未确认关系。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "spectral-fitting-retrieval",
+      "name": "光谱拟合反演",
+      "dimension": "method",
+      "definition": "以光学观测光谱及物理/参数化模型拟合反演目标量；区分荧光、反射和大气成分，记录初始化与观测层级，不能把完整荧光谱当完整反射谱。",
+      "rationale": "FLEX/Sentinel-3会议原摘要明确由O2带初值初始化SFM，反演冠层完整荧光谱；作为方法标签，不与荧光任务或农业应用混合。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "flex-sentinel3-fluorescence-retrieval-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2014 FLEX/Sentinel-3原摘要明确SFM拟合及初始化，独立建立方法维度。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-page68-program-cache.json",
+      "sha256": "4b0e0c510f88e08c6c3bfe1398876f35a6faa4849762f85cda3111d6cabe58cf"
+    },
+    {
+      "path": "whispers2014-o2-correction-author-text-cache.json",
+      "sha256": "dd2b0e4cbdbf50e987d423823a73a607f40d6e137ad2478061647439fbd0b6d4"
+    },
+    {
+      "path": "whispers2014-o2-correction-matched-crossref.json",
+      "sha256": "1590304825051bf9a91e2e0d1e4d1f16a9f70f2b81f3b83ec41bf622d1ebed20"
+    },
+    {
+      "path": "whispers2014-flex-retrieval-institution-access.json",
+      "sha256": "d85473fac7760e1a064db936b18033dedc56a32a7642884dc5c41a6715a462cd"
+    },
+    {
+      "path": "whispers2014-fluorescence-scales-institution-access.json",
+      "sha256": "e01e0c983f9a1daa5c3e18e174d64160c9f6aae381cbead91225557db28d5017"
+    }
+  ],
+  "qualityIssues": [
+    "AirFLEX六通道归多光谱关联，不因WHISPERS会场统一当HSI。",
+    "2014会议DOI与2015 TGRS/IGARSS分开，初次检索错误匹配可审计。",
+    "SFM输出完整荧光谱，非完整反射谱或直接GPP。",
+    "多尺度概览非统一新算法，机构登录不可绕过。"
+  ]
+}
