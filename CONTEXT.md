@@ -16,8 +16,8 @@
 
 ## 当前状态
 
-- 总库469篇，311篇已复核分类，158篇暂定分类，203标签（任务87/方法94/应用22）。三维214篇不变；总库 ?collection=hyperspectral。
-- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱347、多光谱93、基础29。
+- 总库472篇，311篇已复核分类，161篇暂定分类，205标签（任务87/方法96/应用22）。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱349、多光谱93、基础30。
 - CVPR2013–2022、ICCV2013–2021奇数年、NeurIPS2023五词147命中闭环；非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。19篇/41个arXiv日期核验；Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -26,11 +26,11 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词闭环增17排14待4。2019官方四期52项（51研究+1奖公告）逐题名/起始页匹配；另16行政记录及1未列目录索引。51研究项均尝试原来源，34已审17待核验；5医学项仅摘要片段，EPFL仅官方缓存；非年度HSI全量。Monash错标2009按正式2019。Fourier DOI、MSVI真值、正式稿差异待查。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖469篇、300张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖472篇、301张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt。
-- GRSL2015光谱66命中已审33待33，压缩待4。WHISPERS2014官方PDF45–74页97题名92入3排2待；另CRNN。本批解混4入、增标签4/原图2。DMaxD输入M，USGS谱角非丰度真值。流形稿仅模拟；共识学位贡献不移到会议；预诊断单谱/双谱数量非材料数，Briotet采用Briottet并记冲突。原稿/版本/原图缺口见coverage.md。目录174条关联93/决定5/未审76，含TRDF人工冲突关联；75页仅借跨页摘要，续审其余。
+- GRSL2015光谱66命中已审33待33，压缩待4。WHISPERS2014官方PDF45–75页99题名94入3排2待；另CRNN。目录174条关联95/决定5/未审74，含TRDF人工冲突关联。黏粒会议与RSE2015同族，RSE增10m，不混参数/图件。SMOTE为点光谱基础关系，现场F用于训练合成和评价，非独立测试；arXiv2017上传最终2014会议版，原算法已存。黏粒原图受限；全文、版本、其余年份/场所缺口见coverage.md，续审76页。

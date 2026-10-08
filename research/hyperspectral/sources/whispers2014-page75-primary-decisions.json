@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "clay-resolution-sensitivity-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077578",
+      "decision": "included",
+      "programPdfPage": 75,
+      "readingBoundary": "官方75页完整摘要及正式五作者；作者上传会议稿§2方法与§3部分数据选读，原PDF/完整图表未取得。",
+      "figureBoundary": "作者上传稿Fig.1 Procedure overview已定位；原PDF与原PNG链接均404，确切PDF页码/可保存图件未知，不借RSE图。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；会议与期刊同族分别保留版本边界。"
+    },
+    {
+      "paperId": "smote-soil-calibration-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077584",
+      "decision": "included",
+      "programPdfPage": 75,
+      "readingBoundary": "官方75页/原arXiv完整摘要；4页作者最终会议版§2–3选读并核原SMOTE算法，arXiv唯一v1日期核验；未完整阅读全部图表/公式/引用。",
+      "figureBoundary": "作者最终会议版物理2页Algorithm: SMOTE无编号原算法；保存完整算法，并明确2017上传的2014会议稿，不生成框架图。",
+      "relation": "foundation",
+      "deduplication": "DOI/题名/作者核全库无重复；会议与期刊同族分别保留版本边界。"
+    },
+    {
+      "paperId": "clay-resolution-sensitivity-rse-2015",
+      "doi": "10.1016/j.rse.2015.02.019",
+      "decision": "included",
+      "programPdfPage": null,
+      "readingBoundary": "出版社完整原摘要、五作者和Crossref正式2015七月164:1–15；网页正文仅预览未完整读，未取得正式PDF。",
+      "figureBoundary": "出版社正常HTTP403受限，工具失败；期刊专用框架图及页码未知，不移用四页会议Procedure overview。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；会议与期刊同族分别保留版本边界。"
+    },
+    {
+      "paperId": "eigen-sumone-characterization-whispers-2014",
+      "decision": "duplicate",
+      "reason": "仅跨页延续摘要。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "partial-least-squares-regression",
+      "name": "偏最小二乘光谱回归",
+      "dimension": "method",
+      "definition": "由光谱预测连续物理/化学属性，联合预测变量和响应的潜在结构构建PLS回归；区别PLS判别分类，预处理/组分选择和校准域逐篇核验。",
+      "rationale": "两土壤会议稿及RSE相关稿均有原文PLSR依据；现有PLS判别标签不能代替连续属性回归。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "clay-resolution-sensitivity-whispers-2014",
+        "smote-soil-calibration-whispers-2014",
+        "clay-resolution-sensitivity-rse-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "两土壤会议稿及RSE相关稿均有原文PLSR依据；现有PLS判别标签不能代替连续属性回归。"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-minority-oversampling",
+      "name": "少数样本合成过采样",
+      "dimension": "method",
+      "definition": "在稀少样本及近邻之间插值生成合成光谱/标签，扩充分类或回归校准；标明合成来源与评估隔离，不视为新增独立测量或保证无泄漏。",
+      "rationale": "SMOTE作者最终会议版明确谱与SOC插值及N/k参数，同时暴露现场F用于训练扩充和评价，需独立记录方法及边界。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "smote-soil-calibration-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "SMOTE作者最终会议版明确谱与SOC插值及N/k参数，同时暴露现场F用于训练扩充和评价，需独立记录方法及边界。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-page75-program-cache.json",
+      "sha256": "4b4d0e5766d5303fa82c1c090e91a61b8089b31dcce6c2683f917c4297868e37"
+    },
+    {
+      "path": "whispers2014-smote-arxiv-access.json",
+      "sha256": "6c9aaec56b74353f16743321088cf3c810395889236cbd91e864194b354659e0"
+    },
+    {
+      "path": "whispers2014-smote-arxiv-v1.pdf",
+      "sha256": "5736943420a3a348a611863d838f2901f0d6967d4132c3f8ed9358f5b585a795"
+    },
+    {
+      "path": "whispers2014-clay-author-reading-cache.json",
+      "sha256": "22ece138c176e8d27dcf04fe99ca23a262817a732f21780510c26f5202a42d6f"
+    },
+    {
+      "path": "rse2015-clay-official-abstract-cache.json",
+      "sha256": "7af5204e32544d7f6cfa30127a07bd8128df88d0462e3e73b1d85fe00ef8d46d"
+    },
+    {
+      "path": "whispers2014-clay-figure-link-access.json",
+      "sha256": "ef4827c82fcdefb91855bbc7a83c8e90fa96695b18caedb3acc4c34ef90d94f7"
+    },
+    {
+      "path": "whispers2014-clay-figure-image-access.json",
+      "sha256": "7a17410f853f29a4a830f62ba4ea5c7084824b1fb52089678a2ea0883c78e66a"
+    },
+    {
+      "path": "whispers2014-clay-rse-official-access.json",
+      "sha256": "b3a2d9a9f14ce2bcd78767d0a6bcde396d74cf92ea912177f01399577d1cd0ef"
+    },
+    {
+      "path": "whispers2014-page75-toc-replay.json",
+      "sha256": "5c94a51cc1bd83ff9141c5ab62687e0e6be1ed029c5a52d892ba550a5eef1ca5"
+    }
+  ],
+  "qualityIssues": [
+    "SMOTE使用现场F生成含SOC的训练合成，又评价同一F并按F表现选择合成集；不当独立未见泛化证明。",
+    "摘要air-dried与方法45°C烘干记差异，1nm采样不等于光学分辨率。",
+    "SMOTE唯一arXiv v1 2017上传作者最终2014会议版，正式年不改；官方comments/页脚已有直接版本关系。",
+    "黏粒模拟星载不是真在轨；RSE有10m、会议未列，定性无差异/轻微差异分别保留。",
+    "原Procedure overview作者上传归会议，图号已知页码/原PNG未取得，不移到RSE。"
+  ]
+}
