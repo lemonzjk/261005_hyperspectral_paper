@@ -102,6 +102,7 @@
 | WHISPERS | 2014 | collaborative representation k nearest hyperspectral；官方技术日程共94页，仅逐篇核验第79页CRNN条目；未全量扫描会议论文/摘要 | 1 / 1 / 1 | 单篇方法族追踪闭环，非年度系统检索 | 技术日程全94页及出版社论文目录/DOI尚未全量核对。；原四页会议稿/原图与期刊直接扩展关系、实验差异待核验。；2026-10-08再次下载官方94页PDF遇SSL EOF；未关闭TLS验证。主办方缓存可读，单篇核验不等于年度扫描；访问证据sources/whispers2014-program-repeat-access.json。 |
 | EJRS | 2018 | Nonlinear PCA for Visible and Thermal Hyperspectral Images Quality Enhancement、Licciardi Chanussot nonlinear PCA dimensionality reduction、10.1080/22797254.2018.1441670；仅核验一篇16页论文及指定章节；未扫描EJRS年度目录 | 1 / 1 / 1 | 单篇引用追踪闭环，非年度系统检索 | EJRS年度题名/摘要与其他词尚未系统扫描。；全文阅读、代码/数据和2015前序原摘要仍待核验。 |
 | WHISPERS | 2014 | hyperspectral、reflectance、flat field、spectral super-resolution、oil steel、radiative transfer、volcanic SO2；PDF第45–46页全部六个论文摘要逐项筛选；额外第47页X射线和大气不确定性两项范围/错配审查。其他页未全量逐篇处理；没有用投稿205数作发表总数 | 8 / 8 / 7 | 两页六篇闭环，另排除1/待核验1；非年度目录完成 | 94页程序的其余页与出版社年度目录/正式DOI尚未全量核对。；第47页不确定性及第42页核图降维摘要错配，须查原稿，不能盲信官方摘要。；六篇会议原PDF/原图与完整版本差异待核验；水体和标定RG所附长稿不是本会议版本。；官方PDF当前再次下载为代理连接错误，保留可读官方缓存；未关闭TLS验证。 |
+| WHISPERS | 2014 | hyperspectral、crop residue、fossil bone、mineral mapping、mine flooding、CO2 NLTE；PDF第47–48页六个条目全部追踪；其中四个新候选全闭环，X射线排除及错配大气不确定性引用前批决定。累计第45–48页十二条10入/1排/1待；其余页未全量 | 6 / 4 / 4 | 两页六条追踪，新四篇闭环、复用旧排1/待1；非年度全量 | 94页其余页与出版社年度目录/DOI仍待全量核对，官方节目题名/作者可能不同于正式稿。；不确定性原摘要仍待访问；不得以二手正确摘要提升核验。；三篇四页原稿/原图、各论文代码/数据及期刊扩展差异待核验。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -315,6 +316,8 @@
   阅读边界：机构存档原排版PDF已下载；完整摘要、方法、实验设置及结论局部已读，Fig.1视觉核验；未逐页阅读全文、核验全部实验图表或复现。
 - 2026-10-08 / whispers-2014-applications-pages-45-46-review：新增 6，更新 0，去重 0，排除 1，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：六篇仅主办方完整原摘要；官网不是事实无误保证。水体五类K-means不混用2015四类FCM，标定长稿不当原四页稿；不按相关题名数增加独立方法数。
+- 2026-10-08 / whispers-2014-applications-pages-47-48-review：新增 4，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：NIR分选四页机构作者稿全文已读；矿物机构摘要与正式三作者核验，其余仅完整原摘要。复用旧排除/待核验不重复计数，不把定性分选当定量估计。
 
 ## 未解决缺口
 
