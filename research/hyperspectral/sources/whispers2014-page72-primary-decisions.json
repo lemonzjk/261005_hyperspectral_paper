@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "trdf-target-modeling-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077615",
+      "decision": "included",
+      "programPdfPage": 72,
+      "readingBoundary": "官方物理72页完整摘要；原26页会议演示文稿封面、方法7–9页、结论23页及未来工作24页选读；不记完整全文已读。",
+      "figureBoundary": "原Sandia会议演示文稿物理/标注第8页Methodology空间分辨率研究图，保存整页并明确无论文图号，不冒充正式四页论文图件。",
+      "relation": "foundation",
+      "deduplication": "DOI/题名/作者核全库无重复；演示/登记同稿不另计方法。"
+    },
+    {
+      "paperId": "flare-forward-model-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077617",
+      "decision": "included",
+      "programPdfPage": 72,
+      "readingBoundary": "官方物理72页完整摘要及单作者正式书目核验；未取得四页论文。",
+      "figureBoundary": "IEEE202空响应，官方日程只有摘要；原方法图、图号、页码未知，记录访问缺口。",
+      "relation": "hyperspectral",
+      "deduplication": "DOI/题名/作者核全库无重复；演示/登记同稿不另计方法。"
+    },
+    {
+      "paperId": "modtran-plume-model-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077492",
+      "decision": "included",
+      "programPdfPage": 72,
+      "readingBoundary": "物理72页题名/作者与73页延续完整摘要；出版社DOI书目交叉核验，未取得四页原稿。",
+      "figureBoundary": "IEEE202空响应，完整摘要没有图件；未取得原模型图/图号/页码，不用其他MODTRAN版本图替代。",
+      "relation": "multispectral",
+      "deduplication": "DOI/题名/作者核全库无重复；演示/登记同稿不另计方法。"
+    },
+    {
+      "paperId": "local-unmixing-superresolution-whispers-2014",
+      "decision": "duplicate",
+      "programPdfPage": 72,
+      "reason": "71页已录论文延续摘要，旧记录完整保持。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "object-trdf-modeling",
+      "name": "物体三方向反射建模",
+      "dimension": "method",
+      "definition": "同时考虑照明、观测与物体姿态，模拟具有三维形状物体的光谱反射和阴影/闪光；用于前向光谱分析，不等于三维重建或已实现目标检测器。",
+      "rationale": "TRDF原摘要与Sandia原演示文稿明确三种几何变化，区别平面BRDF与通用辐射传输。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "trdf-target-modeling-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "TRDF原摘要与Sandia原演示文稿明确三种几何变化，区别平面BRDF与通用辐射传输。"
+        }
+      ]
+    },
+    {
+      "id": "industrial-flare-emissions",
+      "name": "工业火炬排放监测",
+      "dimension": "application",
+      "definition": "以光学光谱遥感分析工业废气燃烧火炬的分子排放和燃烧效率；区分前向模型、反演算法与实际现场验证，不包括天体耀斑。",
+      "rationale": "本批原摘要明确石油炼制火炬和高光谱红外测量，补充此前工业质量检测标签未涵盖的排放场景。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "flare-forward-model-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "本批原摘要明确石油炼制火炬和高光谱红外测量，补充此前工业质量检测标签未涵盖的排放场景。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-page72-program-cache.json",
+      "sha256": "8843d15b601124d6b048f1817d17a4502b7aba425a62c24ff505a1e6d782e446"
+    },
+    {
+      "path": "whispers2014-page73-continuation-cache.json",
+      "sha256": "07a24b30aa115b038abc855a52747d476a6aaad311ddc2bf928574da615cbf45"
+    }
+  ],
+  "qualityIssues": [
+    "TRDF登记Funtions拼写按原日程与作者演示文稿Functions显示；作者两人一致。",
+    "火山稿日程Riesenberg与正式登记Riestenberg不一致，采用登记，原错误不覆盖。",
+    "TRDF演示方法/几何模型不等于已实现目标检测或三维重建；火炬前向输出不是现场燃烧效率。",
+    "多光谱火山稿明确关系；第三摘要跨页不代表物理73页其他论文已审。",
+    "Crossref题名查询429保留失败；正常已知DOI元数据200提供第三正式书目。",
+    "正式TOC也写Funtions：精确程序重放仅86关联，人工核两作者/DOI后本批快照87关联；自动/人工计数均保留。"
+  ]
+}
