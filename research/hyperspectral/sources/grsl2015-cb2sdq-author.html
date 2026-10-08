@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Embedded Quantization for Bitplane Image Coding</title>
+		<meta name="author" content="Francesc Auli-Llinas" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="/~francesc/.web/css/blue.css" />
+	</head>
+
+	<body>
+
+		<table class="tcontent_table" style="width:80%;">
+			<tr>
+				<td style="width:5%"></td>
+				<td style="width:110px;text-align:right;">
+					<img src="/~francesc/research/embedded_quantization/2sdq.png" style="width:110px;height:110px;" alt="" />
+				</td>
+				<td style="width:15px"></td>
+				<td class="tcontent_title">
+					<br />Embedded Quantization for Bitplane Image Coding<br /><br />
+				</td>
+				<td style="width:15px"></td>
+				<td style="width:110px;text-align:right;">
+					<img class="flip" src="/~francesc/research/embedded_quantization/embeddedQuantization.png" style="width:110px;height:110px;" alt="" />
+				</td>
+				<td style="width:5%"></td>
+			</tr>
+		</table>
+
+		<table class="tcontent_table" style="width:90%;">
+			<tr><td class="tcontent_table_textL">
+				<p>Fundamental to any image coding system is the embedded quantization scheme. Embedded quantization permits the transmission of the image quality progressively, which is a feature employed in many applications. Even though that the (transformed) image data commonly have non-uniform densities, most image coding systems employ a quantizer that produces uniform quantization intervals. This line of research explores the use of non-uniform quantizers for the coding of wavelet-transformed images. The first step in this line was the introduction and assessment of the so-called General Embedded Quantization (GEQ) schemes. GEQ is ideal to evaluate coding performance and complexity of quantizers from a theoretical point of view. Such an evaluation led to a particular scheme called 2-Step Scalar Deadzone Quantization (2SDQ) that can be easily introduced in codecs reducing their computational complexity. A particular form of 2SDQ called cell-based 2SDQ was applied in a remote sensing scenario to enhance the transmission of hyperspectral images.</p>
+			</td></tr>
+
+			<tr><td style="height:20px"></td></tr>
+			<tr><td class="tcontent_table_title">
+				GENERAL EMBEDDED QUANTIZATION FOR WAVELET-BASED LOSSY IMAGE CODING
+			</td></tr>
+			<tr><td class="tcontent_table_border"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<p><b>ABSTRACT:</b> Embedded quantization is a mechanism employed by many lossy image codecs to progressively refine the distortion of a (transformed) image. Currently, the most common approach to do so in the context of wavelet-based image coding is to couple uniform scalar deadzone quantization (USDQ) with bitplane coding (BPC). USDQ+BPC is convenient for its practicality and has proved to achieve competitive coding performance. But the quantizer established by this scheme does not allow major variations. This paper introduces a multistage quantization scheme named general embedded quantization (GEQ) that provides more flexibility to the quantizer. GEQ schemes can be devised for specific decoding rates achieving optimal coding performance. Practical approaches of GEQ schemes achieve coding performance similar to that of USDQ+BPC while requiring fewer quantization stages. The performance achieved by GEQ is evaluated in this paper through experimental results carried out in the framework of modern image coding systems.</p>
+				<p>An important aspect evaluated in the manuscript is the formation of GEQ schemes. The two video sequences provided below extend some of the figures in the manuscript showing the performance of GEQ schemes that employ different thresholds, and the coding performance achieved by the best GEQ schemes as compared with conventional USDQ+BPC:</p>
+			</td></tr>
+		</table>
+
+		<table class="tcontent_table" style="width:90%;">
+			<tr><td colspan="2" class="tcontent_table_space"></td></tr>
+			<tr>
+				<td class="tcontent_table_textS" style="background:#cccccc;text-align:center;padding:5px;">
+					<b>PERFORMANCE OF GEQ SCHEMES</b>
+				</td>
+				<td class="tcontent_table_textS" style="background:#cccccc;text-align:center;padding:5px;">
+					<b>COMPARISON OF GEQ WITH USDQ+BPC</b>
+				</td>
+			</tr>
+			<tr><td colspan="2" class="tcontent_table_space"></td></tr>
+			<tr>
+				<td style="background:#cccccc;text-align:center;padding:3px;">
+					<video width="99%" controls>
+						<source src="/~francesc/research/embedded_quantization/performance.mp4" type="video/mp4">
+						<source src="/~francesc/research/embedded_quantization/performance.ogv" type="video/ogg">
+						browser error
+					</video>
+				</td>
+				<td style="background:#cccccc;text-align:center;padding:3px;">
+					<video width="99%" controls>
+						<source src="/~francesc/research/embedded_quantization/quantizers.mp4" type="video/mp4">
+						<source src="/~francesc/research/embedded_quantization/quantizers.ogv" type="video/ogg">
+						browser error
+					</video>
+				</td>
+			</tr>
+			<tr>
+				<td class="tcontent_table_textS" style="background:#cccccc;text-align:center;padding:5px;">
+					download: <a href="/~francesc/research/embedded_quantization/performance.avi" target="_blank">video.avi</a><sub>30M</sub>
+				</td>
+				<td class="tcontent_table_textS" style="background:#cccccc;text-align:center;padding:5px;">
+					download: <a href="/~francesc/research/embedded_quantization/quantizers.avi" target="_blank">video.avi</a><sub>18M</sub>
+				</td>
+			</tr>
+		</table>
+
+		<br />
+
+		<table class="tcontent_table" style="width:90%;">
+			<tr><td class="tcontent_table_space"></td></tr>
+			<tr><td style="height:10px"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<b>PAPER:</b> F. Auli-Llinas, <i>General embedded quantization for wavelet-based lossy image coding,</i> IEEE Trans. Signal Process., vol. 61, no. 6, pp. 1561-1574, Mar. 2013. (DOI:<a href="https://doi.org/10.1109/TSP.2012.2236323" target="_blank">10.1109/TSP.2012.2236323</a>, <a href="/~francesc/research/embedded_quantization/2013_03-IEEE_TSP.pdf" target="_blank">doc.pdf</a><sub>792K</sub>)
+			</td></tr>
+			<tr><td style="height:10px"></td></tr>
+			<tr><td class="tcontent_table_space"></td></tr>
+			<tr><td style="height:10px"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<b>PRESENTATION:</b> <a href="/~francesc/research/embedded_quantization/2013_03-Slides-Embedded_quantization.pptx" target="_blank">slides.pptx</a><sub>40M</sub>
+			</td></tr>
+
+
+			<tr><td style="height:30px"></td></tr>
+			<tr><td class="tcontent_table_title">
+				2-STEP SCALAR DEADZONE QUANTIZATION FOR BITPLANE IMAGE CODING
+			</td></tr>
+			<tr><td class="tcontent_table_border"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<p><b>ABSTRACT:</b> Modern lossy image coding systems generate a quality progressive codestream that, truncated at increasing rates, produces an image with decreasing distortion. Quality progressivity is commonly provided by an embedded quantizer that employs uniform scalar deadzone quantization (USDQ) together with a bitplane coding strategy. This paper introduces a 2-step scalar deadzone quantization (2SDQ) scheme that achieves same coding performance as that of USDQ while reducing the coding passes and the emitted symbols of the bitplane coding engine. This serves to reduce the computational costs of the codec and/or to code high dynamic range images. The main insights behind 2SDQ are the use of two quantization step sizes that approximate wavelet coefficients with more or less precision depending on their density, and a rate-distortion optimization technique that adjusts the distortion decreases produced when coding 2SDQ indices. The integration of 2SDQ in current codecs is straightforward. The applicability and efficiency of 2SDQ is demonstrated within the framework of JPEG2000.</p>
+			</td></tr>
+			<tr><td class="tcontent_table_space"></td></tr>
+			<tr><td style="height:10px"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<b>PAPER:</b> F. Auli-Llinas, <i>2-step scalar deadzone quantization for bitplane image coding,</i> IEEE Trans. Image Process., vol. 22, no. 12, pp. 4678-4688, Dec. 2013. (DOI:<a href="https://doi.org/10.1109/TIP.2013.2277801" target="_blank">10.1109/TIP.2013.2277801</a>, <a href="/~francesc/research/embedded_quantization/2013_12-IEEE_TIP.pdf" target="_blank">doc.pdf</a><sub>409K</sub>)
+			</td></tr>
+			<tr><td style="height:10px"></td></tr>
+			<tr><td class="tcontent_table_space"></td></tr>
+			<tr><td style="height:10px"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<b>PRESENTATION:</b> <a href="/~francesc/research/embedded_quantization/2013_12-Slides-2_step_scalar_deadzone_quantization.pptx" target="_blank">slides.pptx</a><sub>11M</sub>
+			</td></tr>
+
+
+			<tr><td style="height:30px"></td></tr>
+			<tr><td class="tcontent_table_title">
+				CELL-BASED 2-STEP SCALAR DEADZONE QUANTIZATION FOR HIGH BIT-DEPTH HYPERSPECTRAL IMAGE CODING
+			</td></tr>
+			<tr><td class="tcontent_table_border"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<p><b>ABSTRACT:</b> Remote sensing images often need to be coded and/or transmitted with constrained computational resources. Among other features, such images commonly have high spatial, spectral, and bit-depth resolution, which may render difficult their handling. This paper introduces an embedded quantization scheme based on 2-step scalar deadzone quantization (2SDQ) that enhances the quality of transmitted images when coded with a constrained number of bits. The proposed scheme is devised for use in JPEG2000. It is named cell-based 2SDQ since it uses cells, i.e., small sets of wavelet coefficients within the codeblocks defined by JPEG2000. Cells permit a finer discrimination of coefficients in which to apply the proposed quantizer. Experimental results indicate that the proposed scheme is especially beneficial for high bit-depth hyperspectral images.</p>
+			</td></tr>
+			<tr><td class="tcontent_table_space"></td></tr>
+			<tr><td style="height:10px"></td></tr>
+			<tr><td class="tcontent_table_textM">
+				<b>PAPER:</b> J. Bartrina-Rapesta and F. Auli-Llinas, <i>Cell-based 2-step scalar deadzone quantization for high bit-depth hyperspectral image coding,</i> IEEE Geosci. Remote Sens. Lett., vol. 12, no. 9, pp. 1893-1897, Sep. 2015. (DOI:<a href="https://doi.org/10.1109/LGRS.2015.2436438" target="_blank">10.1109/LGRS.2015.2436438</a>, <a href="/~francesc/research/embedded_quantization/2015_09-IEEE_GRSL.pdf" target="_blank">doc.pdf</a><sub>139K</sub>)
+			</td></tr>
+		</table>
+
+		<br /><br />
+	</body>
+</html>
