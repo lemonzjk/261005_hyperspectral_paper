@@ -125,6 +125,7 @@
 | WHISPERS | 2014 | O2-B O2-A AirFLEX atmospheric correction、FLEX Sentinel-3 fluorescence SFM、sun-induced chlorophyll fluorescence different scales；物理68页三新条目全部；累计45–68页77条73入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整摘要闭环，六通道MS与HSI区分；年度仍未审完 | 原会议PDF/方法图、专用代码数据、arXiv及完整实验/性能待核；Twente全文需登录，保留限制。；AirFLEX公式图件缺失未标全文；2015 TGRS/IGARSS相关稿未核明确扩展，不混用。；正式题名O&lt;inf&gt;实体显示清理；作者用出版社登记与机构核验，程序OCR不能直接当权威作者名单。；截止2026-10-08，实际核验2026-10-09。；正式目录174条本批重放：74已关联、4另有决定、96未审；sources/whispers2014-page68-toc-replay.json。规范题名关联不等于完整作者/DOI/原文逐项已核验。 |
 | WHISPERS | 2014 | A-SCOPE Saltelli global sensitivity、HSI learned multiscale dictionaries quadtree、RDWT multiview active learning；物理69页三新条目全部；累计45–69页80条76入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整原摘要闭环，版本冲突和原图边界保留；年度未审完 | 三会议原PDF/图号页码、代码数据及arXiv待核；摘要不给的性能/参数不补写。；A-SCOPE RAQRS错配与2015 RSE版本关系待核；小波2016 JSTARS与2014同族但图件、方法维度和四数据集不混用。；正式目录174条本批重放77关联、4决定、93未审；sources/whispers2014-page69-toc-replay.json。；截止2026-10-08，实际核验2026-10-09。 |
 | WHISPERS | 2014 | LMNN active metric learning k-NN、stacked autoencoder hyperspectral Pavia、alpha-tree constrained connectivity metric learning；物理70页三条全部；累计45–70页83条79入2排2待，另CRNN。正式目录和其余年度仍未审完。 | 3 / 3 / 3 | 三完整摘要闭环，作者冲突及选读边界保留；年度未审完 | 原PDF/公式图件、代码数据及arXiv待核。两个作者原稿选读不能升全文已读。；第一篇2016 TGRS正式/在线年和扩展差异待核；SAE三作者采用完整名单，机构两作者不替代。；正式目录174条本批重放80关联、4决定、90未审；sources/whispers2014-page70-toc-replay.json。； cutoff2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | hyperspectral PAN parallel level lines ADMM、J-SparseFI-HM automated multispectral SRF、SIM-GA SWIR VNIR hypersharpening、local spectral unmixing superresolution；物理71页四题名全部；第四原摘要跨下一页，用作者原稿补核但不宣称72页审完。累计45–71页87条83入2排2待，另CRNN。正式目录/全年仍未审完。 | 4 / 4 / 4 | 四完整摘要闭环及一预印本原算法图；年度未审完 | 正式会议原PDF/图和原作者稿差异、代码数据仍待核；TVLCSP两公开稿标题/实现细节分别保留。；J-SparseFI-HM前期版本、hypersharpening2015/2018扩展差异、局部解混端元数矛盾与ASTER无HR真值评价待核。；正式目录174条重放84关联、4决定、86未审；sources/whispers2014-page71-toc-replay.json。；截止2026-10-08，实际核验2026-10-09。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -383,6 +384,8 @@
   阅读边界：三完整会议摘要已核验；另外期刊选读只用于小波版本甄别。三维214篇不变。
 - 2026-10-09 / whispers-2014-program-page70-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：三完整原摘要，两会议稿另选读方法/设置；不提升全文状态，三维214篇不变。
+- 2026-10-09 / whispers-2014-program-page71-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四完整原摘要，两稿另选读；arXiv v1方法图不冒充正式会议图，三维214篇不变。
 
 ## 未解决缺口
 

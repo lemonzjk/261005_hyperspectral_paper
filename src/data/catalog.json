@@ -47129,6 +47129,395 @@
         "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077559",
         "checkedAt": "2026-10-09"
       }
+    },
+    {
+      "id": "tvlcsp-parallel-level-lines-whispers-2014",
+      "shortTitle": "TVLCSP",
+      "title": "Hyperspectral pan-sharpening: A variational convex constrained formulation to impose parallel level lines, solved with ADMM",
+      "authors": "Alexis Huck, Francois de Vieilleville, Pierre Weiss, Manuel Grizonnet",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077650",
+      "representation": "在凸变分约束问题中鼓励光谱通道等值线与PAN平行，结合逐通道全变分及噪声驱动的PAN/HSI数据一致性约束，通过ADMM求解。",
+      "tags": [
+        "spatial-super-resolution",
+        "parallel-level-line-regularization"
+      ],
+      "summary": "在凸变分约束问题中鼓励光谱通道等值线与PAN平行，结合逐通道全变分及噪声驱动的PAN/HSI数据一致性约束，通过ADMM求解。",
+      "input": "低空间分辨率HSI、高空间分辨率PAN及传感器PSF/光谱响应/噪声参数。",
+      "output": "高空间分辨率HSI，非三维表面或新增光谱通道。",
+      "mechanism": "在凸变分约束问题中鼓励光谱通道等值线与PAN平行，结合逐通道全变分及噪声驱动的PAN/HSI数据一致性约束，通过ADMM求解。",
+      "readingNote": "官方搜索缓存完整摘要、arXiv完整摘要/日期及关联说明，作者会议PDF§2–4选读；原算法图核验，未完整阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077650",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{tvlcsp_parallel_level_lines_whispers_2014,\n  title = {Hyperspectral pan-sharpening: A variational convex constrained formulation to impose parallel level lines, solved with ADMM},\n  author = {Alexis Huck and Francois de Vieilleville and Pierre Weiss and Manuel Grizonnet},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077650}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "parallel-level-line-regularization"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "需要物理响应/噪声假设，弱梯度区依赖全变分。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用PAN等值线几何、噪声约束及全变分恢复高空间分辨率HSI？",
+        "datasets": "作者公开会议稿§4：AVIRIS Cuprite与由Pléiades项目数据构建的Namibia HypXim模拟场景；不当HypXim真实在轨数据。",
+        "experimentSetting": "作者稿选读明确Cuprite去除吸收波段，q=4与小波比较；HypXim模拟q=2/4/6，仅PAN覆盖的20通道展示结果，PSF设谱/空间不变Gaussian，参照含噪。arXiv v1第2页另提供详细TVLCSP procedure，作者会议稿省略实现。",
+        "conclusions": "作者报告在模拟融合中得到有效空间/光谱恢复；HypXim参数近似与有噪参照降低性能度量可信度，不将Cuprite结果推广到全部通道/真实卫星。",
+        "limitations": "需要物理响应/噪声假设，弱梯度区依赖全变分。作者会议稿标题短于登记，摘要称fit-to-P term而正文式5为观测约束；保留该表述差异。arXiv明确为会议详细版，同一方法不计两篇；公式/图像未全部阅读，不标全文。 本版专用代码/数据未知，待核验；arXiv v1提交及关联已核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "官方技术日程搜索缓存，原摘要/题名范围分别记录",
+            "supports": [
+              "Hyperspectral pan-sharpening: A variational convex constrained formulation to impose parallel level lines, solved with ADMM",
+              "官方搜索返回前三完整原摘要、第四题名/作者；第四完整摘要以作者原稿补核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077650",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "Alexis Huck, Francois de Vieilleville, Pierre Weiss, Manuel Grizonnet",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1405.2403",
+            "checkedAt": "2026-10-09",
+            "level": "作者原稿选读（非完整全文）",
+            "supports": [
+              "官方搜索缓存完整摘要、arXiv完整摘要/日期及关联说明，作者会议PDF§2–4选读；原算法图核验，未完整阅读全文。",
+              "作者稿选读明确Cuprite去除吸收波段，q=4与小波比较；HypXim模拟q=2/4/6，仅PAN覆盖的20通道展示结果，PSF设谱/空间不变Gaussian，参照含噪。arXiv v1第2页另提供详细TVLCSP procedure，作者会议稿省略实现。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "tvlcsp-parallel-level-lines-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077650",
+            "doi": "10.1109/whispers.2014.8077650",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          },
+          {
+            "id": "tvlcsp-parallel-level-lines-whispers-2014-arxiv-v1",
+            "type": "arXiv预印本详细版",
+            "url": "https://arxiv.org/abs/1405.2403v1",
+            "year": 2014,
+            "arxivId": "1405.2403",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2014-05-10T07:38:19Z",
+            "updatedAt": "2014-05-10T07:38:19Z",
+            "metadataStatus": "verified",
+            "relation": "arXiv原页明确为WHISPERS2014详细版，同四作者；一版无后续更新，会议作者稿省略的procedure在预印本中给出，不计第二方法。"
+          }
+        ],
+        "methodFamilyId": "tvlcsp-hyperspectral-pansharpening"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1405.2403v1",
+          "figureLabel": "TVLCSP procedure（原文无编号）",
+          "page": 2,
+          "caption": "TVLCSP算法：初始化、ADMM更新、数据约束投影及停止循环。来源为arXiv v1详细版，非正式会议框架图。",
+          "verificationNote": "已核对arXiv1405.2403v1（2014-05-10）第2页原始procedure并视觉检查完整1–38行；官方摘要关联WHISPERS2014。作者会议稿省略该实现。保留原文无编号及公式，不改绘；这是一幅原始算法图，不称Figure 1。",
+          "cropDescription": "pdftoppm 180dpi渲染原PDF第2页，裁右栏(770,120,1430,1420)，保留procedure 1–38行；无重新排版/生成。",
+          "path": "figures/tvlcsp-parallel-level-lines-whispers-2014/framework-arxiv-v1-procedure.png",
+          "width": 660,
+          "height": 1300,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-09",
+          "sha256": "37dd8fab7b3c174da03e00bd5d4485f8a36bf145932e1e84b6297b570e9ae65f",
+          "attribution": "Alexis Huck, Francois de Vieilleville, Pierre Weiss, Manuel Grizonnet · WHISPERS 2014"
+        }
+      ]
+    },
+    {
+      "id": "jsparsefi-hm-automated-whispers-2014",
+      "shortTitle": "J-SparseFI-HM automated",
+      "title": "The J-SparseFI-HM Hyperspectral resolution enhancement method — Now fully automated",
+      "authors": "Claas Grohnfeldt, Xiao Xiang Zhu, Richard Bamler",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077507",
+      "representation": "扩展J-SparseFI-HM为自动化并行流程，联合估计可调数量的高分辨率HSI波段；以MSI光谱响应函数生成决策矩阵，逐束确定一个或多个引导MSI波段。",
+      "tags": [
+        "spatial-super-resolution",
+        "joint-sparse-image-fusion"
+      ],
+      "summary": "扩展J-SparseFI-HM为自动化并行流程，联合估计可调数量的高分辨率HSI波段；以MSI光谱响应函数生成决策矩阵，逐束确定一个或多个引导MSI波段。",
+      "input": "低分辨率HSI、高分辨率MSI及MSI光谱响应函数；本实验输入由同一HySpex参考合成。",
+      "output": "空间增强HSI光谱束与完整融合影像，非丰度/端元分类。",
+      "mechanism": "扩展J-SparseFI-HM为自动化并行流程，联合估计可调数量的高分辨率HSI波段；以MSI光谱响应函数生成决策矩阵，逐束确定一个或多个引导MSI波段。",
+      "readingNote": "官方搜索缓存及DLR完整原摘要、作者和2014四页会议DOI核验，未阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077507",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{jsparsefi_hm_automated_whispers_2014,\n  title = {The J-SparseFI-HM Hyperspectral resolution enhancement method — Now fully automated},\n  author = {Claas Grohnfeldt and Xiao Xiang Zhu and Richard Bamler},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077507}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "joint-sparse-image-fusion"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要明确扩展先前J-SparseFI-HM，归该方法族；先前具体DOI/版本及差异待核。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何自动选择多光谱引导波段并并行估计高分辨率HSI光谱束？",
+        "datasets": "0.75m机载VNIR HySpex参考，合成WorldView-2 MSI和10倍下采样HSI；不当真实WV2与HySpex异平台配准实验。",
+        "experimentSetting": "DLR与官方完整摘要确认SuperMUC测试、可调光谱束、SRF决策矩阵与三种对照；对照名称、误差、并行节点/耗时、字典训练与划分待原稿。",
+        "conclusions": "作者提出自动/并行扩展并比较三种分辨率增强方法；摘要无量化精度/加速保证，合成数据不证明全部跨传感器真实场景。",
+        "limitations": "原摘要明确扩展先前J-SparseFI-HM，归该方法族；先前具体DOI/版本及差异待核。无需人工选引导波段不意味着无SRF或完全盲融合。DLR明确不供全文，旧网站地址不保证可访问原稿。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "官方技术日程搜索缓存，原摘要/题名范围分别记录",
+            "supports": [
+              "The J-SparseFI-HM Hyperspectral resolution enhancement method — Now fully automated",
+              "官方搜索返回前三完整原摘要、第四题名/作者；第四完整摘要以作者原稿补核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077507",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "Claas Grohnfeldt, Xiao Xiang Zhu, Richard Bamler",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://elib.dlr.de/89643/",
+            "checkedAt": "2026-10-09",
+            "level": "作者机构完整原摘要及书目",
+            "supports": [
+              "官方搜索缓存及DLR完整原摘要、作者和2014四页会议DOI核验，未阅读全文。",
+              "DLR与官方完整摘要确认SuperMUC测试、可调光谱束、SRF决策矩阵与三种对照；对照名称、误差、并行节点/耗时、字典训练与划分待原稿。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "jsparsefi-hm-automated-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077507",
+            "doi": "10.1109/whispers.2014.8077507",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "jsparsefi-hm"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "DLR明确Full text not available/Open Access No且无PDF附件，IEEE202空响应；本会议原图/图号/页码未知，后续J-SparseFI期刊图不能自动替代。",
+        "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077507",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "hypersharpening-simga-first-whispers-2014",
+      "shortTitle": "SIM-GA hypersharpening",
+      "title": "Hyper-sharpening of hyperspectral data: A first approach",
+      "authors": "M. Selva, B. Aiazzi, F. Butera, L. Chiarantini, S. Baronti",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077543",
+      "representation": "针对更新SIM-GA的PAN与VNIR/SWIR两光谱仪，比较不同融合路径并提出将SWIR增强至VNIR空间分辨率的hypersharpening方案。",
+      "tags": [
+        "spatial-super-resolution"
+      ],
+      "summary": "针对更新SIM-GA的PAN与VNIR/SWIR两光谱仪，比较不同融合路径并提出将SWIR增强至VNIR空间分辨率的hypersharpening方案。",
+      "input": "SIM-GA的VNIR、SWIR及PAN配置；本方案具体使用哪些引导组合需原稿，不默认全用PAN。",
+      "output": "VNIR空间尺度的增强SWIR高光谱数据，非将SWIR直接重建为VNIR光谱范围。",
+      "mechanism": "针对更新SIM-GA的PAN与VNIR/SWIR两光谱仪，比较不同融合路径并提出将SWIR增强至VNIR空间分辨率的hypersharpening方案。",
+      "readingNote": "官方搜索返回完整原摘要及CNR直接200机构摘要/作者核验；网页工具403，未阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077543",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{hypersharpening_simga_first_whispers_2014,\n  title = {Hyper-sharpening of hyperspectral data: A first approach},\n  author = {M. Selva and B. Aiazzi and F. Butera and L. Chiarantini and S. Baronti},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077543}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "2015 JSTARS DOI 10.1109/jstars.2015.2440092为不同题名相关稿，2018改善稿亦引用2014起点；本轮未核明确扩展/公式差异，不把后续WorldView-3实测或图挪到会议版。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "SIM-GA不同分辨率的VNIR/SWIR与PAN如何融合，尤其如何把SWIR增强至VNIR尺度？",
+        "datasets": "SIM-GA数据/配置；摘要未给场景、日期、通道数、实际分辨率比例或真值协议。",
+        "experimentSetting": "官方与CNR完整原摘要一致，明确三种成像单元及不同分辨率比；合成引导波段、回归/增益公式、评价数据和误差数值未知，不由2015/2018稿补写。",
+        "conclusions": "作者称新方案优于既有方法；未核性能数字/对照，二维HSI正常收录，不能推断普遍最优。",
+        "limitations": "2015 JSTARS DOI 10.1109/jstars.2015.2440092为不同题名相关稿，2018改善稿亦引用2014起点；本轮未核明确扩展/公式差异，不把后续WorldView-3实测或图挪到会议版。分类仅任务暂定，摘要不足以赋具体方法标签。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "官方技术日程搜索缓存，原摘要/题名范围分别记录",
+            "supports": [
+              "Hyper-sharpening of hyperspectral data: A first approach",
+              "官方搜索返回前三完整原摘要、第四题名/作者；第四完整摘要以作者原稿补核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077543",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "M. Selva, B. Aiazzi, F. Butera, L. Chiarantini, S. Baronti",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://iris.cnr.it/handle/20.500.14243/261354",
+            "checkedAt": "2026-10-09",
+            "level": "作者机构完整原摘要及书目",
+            "supports": [
+              "官方搜索返回完整原摘要及CNR直接200机构摘要/作者核验；网页工具403，未阅读全文。",
+              "官方与CNR完整原摘要一致，明确三种成像单元及不同分辨率比；合成引导波段、回归/增益公式、评价数据和误差数值未知，不由2015/2018稿补写。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hypersharpening-simga-first-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077543",
+            "doi": "10.1109/whispers.2014.8077543",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "hypersharpening-simga-first-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "CNR直接200无PDF/下载附件，网页工具403；IEEE202空响应。2015 JSTARS/2018改善稿不是本会议版本，原图/图号/页码未知。",
+        "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077543",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "local-unmixing-superresolution-whispers-2014",
+      "shortTitle": "Local unmixing HSI superresolution",
+      "title": "Super-resolution of hyperspectral images using local spectral unmixing",
+      "authors": "G. Licciardi, M.A. Veganzones, M. Simoes, J. Bioucas, J. Chanussot",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077569",
+      "representation": "分块光谱降采样HSI并用N-FINDR提取局部端元，以MSI和局部字典做非负约束最小二乘/SUnSAL估计丰度，再映射回原HSI端元重建空间增强影像。",
+      "tags": [
+        "spatial-super-resolution",
+        "spectral-unmixing"
+      ],
+      "summary": "分块光谱降采样HSI并用N-FINDR提取局部端元，以MSI和局部字典做非负约束最小二乘/SUnSAL估计丰度，再映射回原HSI端元重建空间增强影像。",
+      "input": "同场景HSI与MSI、光谱响应矩阵及局部影像块；需跨传感器端元可对应假设。",
+      "output": "局部端元、MSI丰度与空间增强HSI，所谓空间/光谱super-resolution不等于超出HSI原通道的新光谱采样。",
+      "mechanism": "分块光谱降采样HSI并用N-FINDR提取局部端元，以MSI和局部字典做非负约束最小二乘/SUnSAL估计丰度，再映射回原HSI端元重建空间增强影像。",
+      "readingNote": "官方物理71页题名/作者、作者原稿完整摘要及§2–3选读；HAL封面记录但直接入口不可访问，公式/图件未全核，未阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077569",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "author_original_abstract_verified",
+      "citation": "@inproceedings{local_unmixing_superresolution_whispers_2014,\n  title = {Super-resolution of hyperspectral images using local spectral unmixing},\n  author = {G. Licciardi and M.A. Veganzones and M. Simoes and J. Bioucas and J. Chanussot},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077569}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原稿称局部端元应少于MSI波段数，设置却分别10端元/9ALI通道、4端元/3ASTER通道，保留可识别性/参数矛盾待核。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "局部端元和MSI丰度如何改善高分辨率HSI融合并缓解全局字典不适定性？",
+        "datasets": "作者原会议稿§3：Paris Hyperion/ALI与2002-07-31 San Francisco Hyperion/ASTER；ALI/Hyperion原生同为30m，前者以降采样HSI的Wald协议比较，后者用ASTER前三VNIR通道。",
+        "experimentSetting": "作者原稿选读：Hyperion/ALI将HSIGaussian模糊/4倍降采样，比较不同局部窗口与全局方案；Hyperion/ASTER只用前三15m通道及50波段VNIR HSI，不再降采样，无完整HR-HSI真值。两方案评价条件区别记录。",
+        "conclusions": "作者报告局部融合改善光谱一致性并讨论小窗口/端元近似造成空间模糊；表值及无真值评价不作独立性能证明。",
+        "limitations": "原稿称局部端元应少于MSI波段数，设置却分别10端元/9ALI通道、4端元/3ASTER通道，保留可识别性/参数矛盾待核。HAL封面v1提交2014-06-19与RG上传2015不同；原PDF访问失败不升全文状态。 本版专用代码/数据和arXiv未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "官方技术日程搜索缓存，原摘要/题名范围分别记录",
+            "supports": [
+              "Super-resolution of hyperspectral images using local spectral unmixing",
+              "官方搜索返回前三完整原摘要、第四题名/作者；第四完整摘要以作者原稿补核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077569",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记交叉核验",
+            "supports": [
+              "G. Licciardi, M.A. Veganzones, M. Simoes, J. Bioucas, J. Chanussot",
+              "2014专业workshop1–4页，非顶会/期刊；登记创建日期不是发表年份。"
+            ]
+          },
+          {
+            "url": "https://www.researchgate.net/publication/280700707_Super-resolution_of_hyperspectral_images_using_local_spectral_unmixing",
+            "checkedAt": "2026-10-09",
+            "level": "作者原稿选读（非完整全文）",
+            "supports": [
+              "官方物理71页题名/作者、作者原稿完整摘要及§2–3选读；HAL封面记录但直接入口不可访问，公式/图件未全核，未阅读全文。",
+              "作者原稿选读：Hyperion/ALI将HSIGaussian模糊/4倍降采样，比较不同局部窗口与全局方案；Hyperion/ASTER只用前三15m通道及50波段VNIR HSI，不再降采样，无完整HR-HSI真值。两方案评价条件区别记录。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "local-unmixing-superresolution-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077569",
+            "doi": "10.1109/whispers.2014.8077569",
+            "year": 2014,
+            "relation": "正式2014四页会议；后续相关稿未取得明确扩展声明，不自动合并或混用实验/原图。"
+          }
+        ],
+        "methodFamilyId": "local-unmixing-superresolution-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "作者原稿图1/2为Hyperion-ALI/ASTER假彩色融合结果，未确认方法图；HAL v1网页工具不可访问，公开RG PDF404。图像/确切页码待取得，不依据文字生成。",
+        "sourceUrl": "https://doi.org/10.1109/whispers.2014.8077569",
+        "checkedAt": "2026-10-09"
+      }
     }
   ],
   "datasets": [
@@ -47485,7 +47874,11 @@
         "mftn-2024",
         "arfnet-2022",
         "fabry-perot-compressive-strategies-2018",
-        "archer-spatial-spectral-features-2014"
+        "archer-spatial-spectral-features-2014",
+        "tvlcsp-parallel-level-lines-whispers-2014",
+        "jsparsefi-hm-automated-whispers-2014",
+        "hypersharpening-simga-first-whispers-2014",
+        "local-unmixing-superresolution-whispers-2014"
       ],
       "history": [
         {
@@ -47923,7 +48316,8 @@
         "rovp-linear-unmixing-2014",
         "structured-mlnmf-whispers-2014",
         "bpt-local-unmixing-2014",
-        "vb-joint-sparse-unmixing-2014"
+        "vb-joint-sparse-unmixing-2014",
+        "local-unmixing-superresolution-whispers-2014"
       ],
       "history": [
         {
@@ -52967,6 +53361,46 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "2014 SAE原摘要明确无监督表征、标签微调和softmax分类，不用其他论文的DBN或架构补写。"
+        }
+      ]
+    },
+    {
+      "id": "parallel-level-line-regularization",
+      "name": "平行等值线几何先验",
+      "dimension": "method",
+      "definition": "以高分辨率PAN等引导影像的等值线/梯度方向约束光谱通道几何，并配合正则及观测一致性；并非恢复场景三维几何，零梯度、响应及噪声假设需逐篇记录。",
+      "rationale": "TVLCSP原摘要明确平行等值线与全变分，作者稿进一步说明几何方向及物理噪声约束。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "tvlcsp-parallel-level-lines-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "TVLCSP原摘要明确平行等值线与全变分，作者稿进一步说明几何方向及物理噪声约束。"
+        }
+      ]
+    },
+    {
+      "id": "joint-sparse-image-fusion",
+      "name": "联合稀疏影像融合",
+      "dimension": "method",
+      "definition": "以联合稀疏表示或共享支持同时估计光谱影像的多个输出通道，用于跨空间/光谱分辨率融合；不同于给定端元字典的稀疏丰度回归，字典、波段映射及并行策略须按版本核验。",
+      "rationale": "J-SparseFI-HM以可调光谱束联合估计，SRF决策矩阵自动选MSI波段，不应套用端元丰度回归标签。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "jsparsefi-hm-automated-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "J-SparseFI-HM以可调光谱束联合估计，SRF决策矩阵自动选MSI波段，不应套用端元丰度回归标签。"
         }
       ]
     }
