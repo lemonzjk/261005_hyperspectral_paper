@@ -13,6 +13,7 @@ export function HyperspectralDemo() {
   const [wavelength, setWavelength] = useState(850);
   const [material, setMaterial] = useState<Material>('vegetation');
   const [natural, setNatural] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(() => window.matchMedia('(min-width: 901px)').matches);
   const selected = materials.find(item => item.id === material)!;
   const level = response(material, wavelength);
   const fill = (id: Material) => {
@@ -21,10 +22,10 @@ export function HyperspectralDemo() {
     return `rgb(${value}, ${value}, ${value})`;
   };
   const cursor = 36 + (wavelength - 450) / 500 * 284;
-  return <section className="hsi-demo" aria-labelledby="hsi-demo-title">
+  return <section className="hsi-demo" data-panel-open={panelOpen} aria-labelledby="hsi-demo-title">
     <header className="hsi-demo-header">
       <div><span className="eyebrow">HYPERSPECTRAL EXPLORER</span><h1 id="hsi-demo-title">一张图像，不止三种颜色。</h1><p>每个像素都有一条光谱。切换波段，看看同一场景如何变化。</p></div>
-      <button type="button" onClick={() => { setWavelength(850); setMaterial('vegetation'); setNatural(false); }}>重置演示 ↺</button>
+      <div className="hsi-demo-actions"><button type="button" aria-expanded={panelOpen} aria-controls="hsi-demo-controls" onClick={() => setPanelOpen(open => !open)}>{panelOpen ? '收起控制' : '展开控制'} <span aria-hidden="true">{panelOpen ? '−' : '+'}</span></button><button type="button" onClick={() => { setWavelength(850); setMaterial('vegetation'); setNatural(false); }}>重置演示 ↺</button></div>
     </header>
     <div className="hsi-demo-body">
       <div className="hsi-demo-scene">
@@ -52,7 +53,7 @@ export function HyperspectralDemo() {
         </svg>
         <div className="hsi-demo-view"><button type="button" aria-pressed={!natural} onClick={() => setNatural(false)}>单波段</button><button type="button" aria-pressed={natural} onClick={() => setNatural(true)}>场景配色</button><span>同一场景 · 不同波段</span></div>
       </div>
-      <div className="hsi-demo-controls">
+      <div id="hsi-demo-controls" className="hsi-demo-controls" hidden={!panelOpen}>
         <label className="hsi-demo-label" htmlFor="hsi-band"><span>02 / 选择波段</span><output>{wavelength} <small>nm</small></output></label>
         <input id="hsi-band" type="range" min="450" max="950" step="5" value={wavelength} onChange={event => { setWavelength(Number(event.target.value)); setNatural(false); }}/>
         <div className="hsi-demo-scale"><span>450 · 可见光</span><span>近红外 · 950 nm</span></div>
@@ -71,6 +72,6 @@ export function HyperspectralDemo() {
         <p className="hsi-demo-note">{selected.note}</p>
       </div>
     </div>
-    <footer>原理示意 · 场景与曲线均为模拟数据，不代表实测光谱。<span>二维空间 + 多个波段 = 高光谱数据立方体</span></footer>
+    <footer><div>原理示意 · 场景与曲线均为模拟数据，不代表实测光谱。<span>二维空间 + 多个波段 = 高光谱数据立方体</span></div><button type="button" onClick={() => { const target = document.getElementById('hsi-research'); target?.scrollIntoView(); target?.focus({ preventScroll: true }); }}>探索论文库 <span aria-hidden="true">↓</span></button></footer>
   </section>;
 }
