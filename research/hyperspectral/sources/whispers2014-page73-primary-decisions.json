@@ -1,0 +1,106 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "glup-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077546",
+      "decision": "included",
+      "programPdfPage": 73,
+      "readingBoundary": "官方物理73页完整摘要；作者四页会议稿摘要、引言、§2模型开头、§3设置与§4结论选读，图1逐图核验；公式推导/参考文献及图2未全面阅读，不记完整全文。",
+      "relation": "hyperspectral",
+      "figureBoundary": "作者会议原稿物理3页Fig.1行稀疏丰度矩阵原图，说明方法选择非零行，明确为方法结果示意而非网络/流程框架图。",
+      "methodFamilyId": "glup-self-dictionary-unmixing"
+    },
+    {
+      "paperId": "modtran6-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077573",
+      "decision": "included",
+      "programPdfPage": 73,
+      "readingBoundary": "官方物理73页完整摘要与正式六作者/DOI书目核验；未取得会议四页论文。",
+      "relation": "foundation",
+      "figureBoundary": "IEEE202空响应，官方日程只有摘要；方法图号/页码未知，不以其他年份或HyspIRI逐线报告替代。",
+      "methodFamilyId": "modtran6-whispers-2014"
+    },
+    {
+      "paperId": "glup-nglup-tip-2014",
+      "doi": "10.1109/tip.2014.2362056",
+      "decision": "included",
+      "programPdfPage": null,
+      "readingBoundary": "arXiv官方完整摘要/四作者/唯一v1日期及正式TIP书目；作者九页期刊稿摘要、引言和§II–III/Algorithm2选读，§IV仅开头与小节，非完整全文。",
+      "relation": "hyperspectral",
+      "figureBoundary": "作者九页期刊稿物理/标注第4页Algorithm2 NGLUP原算法，明确作者稿版本标识待核，不当14页arXiv v1或四页会议图件。",
+      "methodFamilyId": "glup-self-dictionary-unmixing"
+    },
+    {
+      "title": "Spectral modeling of the diffuse interstellar bands",
+      "doi": "10.1109/whispers.2014.8077570",
+      "decision": "excluded",
+      "reason": "真实光学天体光谱研究：星际吸收谱带拟合与分子载体歧义，原摘要没有高光谱成像数据/系统或已证明HSI基础联系；不因spectral或WHISPERS场所自动收录，也不误称图谱/频域工作。",
+      "programPdfPage": 73,
+      "readingBoundary": "主办方完整原摘要和五作者/DOI登记，未读四页全文；未来若证实成像联系可重审。"
+    },
+    {
+      "paperId": "modtran-plume-model-whispers-2014",
+      "decision": "duplicate",
+      "reason": "已录稿延续摘要，旧对象保持。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "self-dictionary-group-sparse-unmixing",
+      "name": "自字典组稀疏解混",
+      "dimension": "method",
+      "definition": "以影像观测自身或其子集作为候选谱字典，以丰度矩阵行组稀疏同时选择端元并估计丰度；记录纯像元存在和噪声假设，不等同于已知外部端元的稀疏回归。",
+      "rationale": "GLUP会议稿和同作者期刊稿明确观测自字典、l2,1行稀疏与单位和/非负约束，区别既有固定端元联合稀疏回归标签。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "glup-whispers-2014",
+        "glup-nglup-tip-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "GLUP会议稿和同作者期刊稿明确观测自字典、l2,1行稀疏与单位和/非负约束，区别既有固定端元联合稀疏回归标签。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-page73-program-cache.json",
+      "sha256": "000a1a5b38440e9a9a3f41ee534bf5144cdbc70989a5d59f9a422906c66aa700"
+    },
+    {
+      "path": "whispers2014-glup-author.pdf",
+      "sha256": "b691606d01cd80497fecce6242930f85c9b66f1aad055c3d2dd5967858320cad"
+    },
+    {
+      "path": "whispers2014-glup-tip-author.pdf",
+      "sha256": "5e474d681167f32d251e95c30c8b826852cb9fa837a437c848db35bedbbaf9e1"
+    },
+    {
+      "path": "whispers2014-glup-arxiv-access.json",
+      "sha256": "64aedfba65ac57fe725676fdcaf7b2bbe1e9089ebdd4f0d339a50c6b823341d2"
+    },
+    {
+      "path": "whispers2014-glup-code-access.json",
+      "sha256": "9eb090f02708f0c0e7376683144c30af12c672817bc4c54e1c831a4896b2eae8"
+    },
+    {
+      "path": "glup-tip2014-arxiv-v1.pdf",
+      "sha256": "a1590c1ef18d0450515e7232649406733ec3d0b7b54b29f5c6dc1bb6e9d4e2c0"
+    }
+  ],
+  "qualityIssues": [
+    "会议GLUP8端元合成评价保留8行，真值数量参与，不能夸大自动数目估计；Pavia重建误差不是端元/丰度真值精度。",
+    "TIP早于六月会议的arXiv v1以及正式12月发表分开；同机制归方法族而非无证据直接扩展。",
+    "两图分别为会议Fig1矩阵和作者期刊稿Algorithm2，保留版本/图号/页码。",
+    "DIB是真光学光谱研究，排除原因是缺明确HSI成像关联而非把spectral误判图谱。",
+    "所有正式年份采用书目2014，不把索引创建日期当发表日期。",
+    "arXiv v1实际下载14页并核页首标识；PDF内部2018生成日期不当提交日期，未读全文。"
+  ]
+}

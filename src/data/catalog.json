@@ -47815,6 +47815,365 @@
         "sourceUrl": "https://ieeexplore.ieee.org/document/8077492/",
         "checkedAt": "2026-10-09"
       }
+    },
+    {
+      "id": "glup-whispers-2014",
+      "shortTitle": "GLUP (WHISPERS)",
+      "title": "GLUP: Yet another algorithm for blind unmixing of hyperspectral data",
+      "authors": "Rita Ammanouil, André Ferrari, Cédric Richard, David Mary",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077546",
+      "representation": "以观测自身为谱字典，用l2,1组Lasso产生丰度矩阵的行稀疏，施加非负与和为一约束，以ADMM解凸目标；假定端元存在于场景且字典噪声对分解影响较小。",
+      "tags": [
+        "spectral-unmixing",
+        "endmember-number-estimation",
+        "self-dictionary-group-sparse-unmixing"
+      ],
+      "summary": "以观测自身为谱字典，用l2,1组Lasso产生丰度矩阵的行稀疏，施加非负与和为一约束，以ADMM解凸目标；假定端元存在于场景且字典噪声对分解影响较小。",
+      "input": "高光谱观测及其候选纯像元子集；无需外部谱库，但并非无纯像元假设。",
+      "output": "选出的端元光谱、丰度与行稀疏端元数量；真实场景全图丰度另用FCLS估计。",
+      "mechanism": "以观测自身为谱字典，用l2,1组Lasso产生丰度矩阵的行稀疏，施加非负与和为一约束，以ADMM解凸目标；假定端元存在于场景且字典噪声对分解影响较小。",
+      "readingNote": "官方物理73页完整摘要；作者四页会议稿摘要、引言、§2模型开头、§3设置与§4结论选读，图1逐图核验；公式推导/参考文献及图2未全面阅读，不记完整全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077546",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{glup_whispers_2014,\n  title = {GLUP: Yet another algorithm for blind unmixing of hyperspectral data},\n  author = {Rita Ammanouil and André Ferrari and Cédric Richard and David Mary},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077546}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "endmember-number-estimation",
+          "self-dictionary-group-sparse-unmixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究高光谱盲解混；仅总库，会议与期刊同方法族分别记录版本边界。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "未知端元光谱和数量时，如何由影像自身观测同时提取纯端元和丰度？",
+        "datasets": "会议作者原稿§3：USGS的8个端元/420谱带合成200像元；Pavia Center ROSIS 102波段430–860nm，使用1096×492左部影像。",
+        "experimentSetting": "会议稿§3选读：合成丰度Dirichlet单位参数、加性Gaussian噪声、40/20dB重复100次；低SNR仍按已知8端元保留最大均值的8行，不能把该评价当完全无监督自动计数。实图随机200像元提取6端元，同子集NFINDR/SDSOMP预设6，再FCLS全图重建。",
+        "conclusions": "作者报告此合成设置与Pavia重建中相对NFINDR/SDSOMP改善，伴随较大计算成本；未全面核数学/全部图表，不写性能数字。",
+        "limitations": "需纯像元在候选中，高噪声时自字典近似可能失效；合成评价选择8行使用真值数量，真实重建误差非有真值的丰度误差。同作者TIP2014含NGLUP噪声模型和Cuprite实验，不向会议稿移用。arXiv1403.0289属于TIP相关题名，不冒充会议预印本。 会议专用作者Matlab代码包公开200，文件清单含Pavia.mat与GLUP.m；未执行，不承诺许可/依赖或复现结果。",
+        "dataLinks": [
+          "https://www.cedric-richard.fr/Matlab/ammanouil2014glup.zip"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理73页完整原摘要缓存",
+            "supports": [
+              "以观测自身为谱字典，用l2,1组Lasso产生丰度矩阵的行稀疏，施加非负与和为一约束，以ADMM解凸目标；假定端元存在于场景且字典噪声对分解影响较小。",
+              "官方物理73页完整摘要；作者四页会议稿摘要、引言、§2模型开头、§3设置与§4结论选读，图1逐图核验；公式推导/参考文献及图2未全面阅读，不记完整全文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077546",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记书目交叉核验",
+            "supports": [
+              "GLUP: Yet another algorithm for blind unmixing of hyperspectral data",
+              "Rita Ammanouil, André Ferrari, Cédric Richard, David Mary",
+              "WHISPERS2014专业workshop1–4页。"
+            ]
+          },
+          {
+            "url": "https://www.cedric-richard.fr/Articles/ammanouil2014glup.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "作者原PDF选读，完整全文未读",
+            "supports": [
+              "官方物理73页完整摘要；作者四页会议稿摘要、引言、§2模型开头、§3设置与§4结论选读，图1逐图核验；公式推导/参考文献及图2未全面阅读，不记完整全文。",
+              "会议稿§3选读：合成丰度Dirichlet单位参数、加性Gaussian噪声、40/20dB重复100次；低SNR仍按已知8端元保留最大均值的8行，不能把该评价当完全无监督自动计数。实图随机200像元提取6端元，同子集NFINDR/SDSOMP预设6，再FCLS全图重建。"
+            ]
+          },
+          {
+            "url": "https://www.cedric-richard.fr/Matlab/ammanouil2014glup.zip",
+            "checkedAt": "2026-10-09",
+            "level": "公开作者代码包200，文件清单核验",
+            "supports": [
+              "130460151字节；含Matlab实现/ReadMe/Pavia.mat与预编译qpas，未执行。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "glup-whispers-2014-published",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077546",
+            "doi": "10.1109/whispers.2014.8077546",
+            "year": 2014,
+            "relation": "2014正式四页会议稿；不以2017登记创建日期改年。"
+          },
+          {
+            "id": "glup-tip2014-related",
+            "type": "同方法族期刊稿，直接扩展声明待核",
+            "url": "https://doi.org/10.1109/tip.2014.2362056",
+            "doi": "10.1109/tip.2014.2362056",
+            "year": 2014,
+            "relation": "原两稿同四作者与自字典GLUP目标核一致；TIP另有NGLUP/异方差和Cuprite，会议为Pavia；不混结果或认定独立方法。"
+          }
+        ],
+        "methodFamilyId": "glup-self-dictionary-unmixing"
+      },
+      "code": "https://www.cedric-richard.fr/Matlab/ammanouil2014glup.zip",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.cedric-richard.fr/Articles/ammanouil2014glup.pdf",
+          "figureLabel": "Fig. 1（方法行稀疏结果示意，非流程图）",
+          "page": 3,
+          "caption": "会议原稿Fig.1：GLUP估计丰度矩阵的行稀疏，非零行用于选择端元。原方法结果示意，不是网络架构或流程框架。",
+          "verificationNote": "作者公开四页原稿题名/四作者与WHISPERS书目一致；逐图核物理3页Fig.1，裁切保留标题、两轴、灰度尺与原图注；不从期刊稿转移。",
+          "cropDescription": "四页作者原稿物理3页170dpi渲染，像素框(140,155,680,695)，完整Fig.1及图注，无拼接。",
+          "path": "figures/glup-whispers-2014/framework-author-fig1-row-sparsity.png",
+          "width": 540,
+          "height": 540,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-09",
+          "sha256": "a3eab19d0ec49a286969aabed2eda0db75efce801959c700bdfc69106875ba00",
+          "attribution": "Rita Ammanouil, André Ferrari, Cédric Richard, David Mary · WHISPERS 2014"
+        }
+      ]
+    },
+    {
+      "id": "modtran6-whispers-2014",
+      "shortTitle": "MODTRAN6 upgrade (WHISPERS)",
+      "title": "MODTRAN® 6: A major upgrade of the MODTRAN® radiative transfer code",
+      "authors": "A. Berk, P. Conforti, R. Kennett, T. Perkins, F. Hawes, J. van den Bosch",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077573",
+      "representation": "MODTRAN6引入逐线高分辨率辐射传输、辅助物理工具及光学散射代码耦合以支持自定义气溶胶/云；重构模块化面向对象架构并提供应用接口。",
+      "tags": [
+        "spectral-radiative-transfer",
+        "radiative-transfer-modeling"
+      ],
+      "summary": "MODTRAN6引入逐线高分辨率辐射传输、辅助物理工具及光学散射代码耦合以支持自定义气溶胶/云；重构模块化面向对象架构并提供应用接口。",
+      "input": "大气状态、谱线与气溶胶/云等光学条件；实际HSI场景或波段配置原摘要未给。",
+      "output": "大气透过率与辐亮度计算及可集成的模型接口；不是HSI分类、三维重建或新测量数据集。",
+      "mechanism": "MODTRAN6引入逐线高分辨率辐射传输、辅助物理工具及光学散射代码耦合以支持自定义气溶胶/云；重构模块化面向对象架构并提供应用接口。",
+      "readingNote": "官方物理73页完整摘要与正式六作者/DOI书目核验；未取得会议四页论文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077573",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{modtran6_whispers_2014,\n  title = {MODTRAN® 6: A major upgrade of the MODTRAN® radiative transfer code},\n  author = {A. Berk and P. Conforti and R. Kennett and T. Perkins and F. Hawes and J. van den Bosch},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077573}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-radiative-transfer",
+          "radiative-transfer-modeling"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "foundation",
+        "relationNote": "高光谱光学大气仿真相关基础辐射传输模型，单列foundation，不自动进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何改善用于光学测量和成像仿真的大气透过率/辐亮度模型的谱分辨率、物理模块和调用接口？",
+        "datasets": "完整原摘要未给验证数据、传感器、场景或基准，待会议原论文。",
+        "experimentSetting": "原摘要确认逐线算法及物理模块/接口升级；谱线库版本、波数步长、散射近似、速度/误差及验证协议未知。",
+        "conclusions": "作者提出新的模型架构与更高谱分辨率计算能力；未核验定量精度/性能，不移用2017验证论文或2014年10月HyspIRI报告。",
+        "limitations": "与高光谱光学成像明确相关的大气辐射传输基础模型，单列foundation；升级稿不自动覆盖所有高光谱任务。IEEE202空响应；同名同作者SPIE DOI 10.1117/12.2050433登记查询429且原稿未取得，版本关系/篇幅/实验差异待核，不宣称正式扩展或另计独立方法。 本版本专用代码/数据链接与完整实验仍待核验。 本稿arXiv记录未知，待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理73页完整原摘要缓存",
+            "supports": [
+              "MODTRAN6引入逐线高分辨率辐射传输、辅助物理工具及光学散射代码耦合以支持自定义气溶胶/云；重构模块化面向对象架构并提供应用接口。",
+              "官方物理73页完整摘要与正式六作者/DOI书目核验；未取得会议四页论文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077573",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记书目交叉核验",
+            "supports": [
+              "MODTRAN® 6: A major upgrade of the MODTRAN® radiative transfer code",
+              "A. Berk, P. Conforti, R. Kennett, T. Perkins, F. Hawes, J. van den Bosch",
+              "WHISPERS2014专业workshop1–4页。"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/document/8077573/",
+            "checkedAt": "2026-10-09",
+            "level": "正常访问202空响应，不额外支持内容",
+            "supports": [
+              "官方物理73页完整摘要与正式六作者/DOI书目核验；未取得会议四页论文。",
+              "原摘要确认逐线算法及物理模块/接口升级；谱线库版本、波数步长、散射近似、速度/误差及验证协议未知。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "modtran6-whispers-2014-published",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077573",
+            "doi": "10.1109/whispers.2014.8077573",
+            "year": 2014,
+            "relation": "2014正式四页会议稿；不以2017登记创建日期改年。"
+          }
+        ],
+        "methodFamilyId": "modtran6-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "正常IEEE公开访问202空响应，主办方日程只有摘要；原四页模型/方法图与页码未知，同名SPIE正文也未取得，不转用2014年10月HyspIRI或2017验证稿图件。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077573/",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "glup-nglup-tip-2014",
+      "shortTitle": "GLUP / NGLUP (TIP)",
+      "title": "Blind and Fully Constrained Unmixing of Hyperspectral Images",
+      "authors": "Rita Ammanouil, André Ferrari, Cédric Richard, David Mary",
+      "year": 2014,
+      "venue": "TIP",
+      "publicationName": "IEEE Transactions on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tip.2014.2362056",
+      "representation": "作者期刊稿提供两种自字典组稀疏模型：近似Gaussian情形的凸GLUP/ADMM，以及考虑字典噪声的非凸NGLUP，以迭代重加权最小二乘更新权重并交替ADMM；NGLUP用GLUP初始化降低差局部极小值风险。",
+      "tags": [
+        "spectral-unmixing",
+        "endmember-number-estimation",
+        "self-dictionary-group-sparse-unmixing"
+      ],
+      "summary": "作者期刊稿提供两种自字典组稀疏模型：近似Gaussian情形的凸GLUP/ADMM，以及考虑字典噪声的非凸NGLUP，以迭代重加权最小二乘更新权重并交替ADMM；NGLUP用GLUP初始化降低差局部极小值风险。",
+      "input": "高光谱观测及候选观测子字典；假定纯端元存在但可含噪声，非外部固定谱库。",
+      "output": "端元及丰度估计、选择出的端元数量；精确阈值与可识别性须依具体设置核验。",
+      "mechanism": "作者期刊稿提供两种自字典组稀疏模型：近似Gaussian情形的凸GLUP/ADMM，以及考虑字典噪声的非凸NGLUP，以迭代重加权最小二乘更新权重并交替ADMM；NGLUP用GLUP初始化降低差局部极小值风险。",
+      "readingNote": "arXiv官方完整摘要/四作者/唯一v1日期及正式TIP书目；作者九页期刊稿摘要、引言和§II–III/Algorithm2选读，§IV仅开头与小节，非完整全文。",
+      "paper": "https://doi.org/10.1109/tip.2014.2362056",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "publisher_and_author_abstract_verified",
+      "citation": "@article{glup_nglup_tip_2014,\n  title = {Blind and Fully Constrained Unmixing of Hyperspectral Images},\n  author = {Rita Ammanouil and André Ferrari and Cédric Richard and David Mary},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2014},\n  pages = {5510--5518},\n  volume = {23},\n  number = {12},\n  doi = {10.1109/tip.2014.2362056}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "endmember-number-estimation",
+          "self-dictionary-group-sparse-unmixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "直接研究高光谱盲解混；仅总库，会议与期刊同方法族分别记录版本边界。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "纯端元及数量未知且观测自字典含噪声时，如何联合选择端元/丰度并处理噪声引起的异方差？",
+        "datasets": "作者期刊稿§IV小节题名和开头：USGS光谱合成数据及真实Cuprite；未完整核该版所有采样、预处理、参数和统计表，不沿用会议Pavia协议。",
+        "experimentSetting": "期刊作者稿摘要、引言及§II–III方法选读；原文§III明确非凸性、GLUP热启动与交替权重更新，第4页Algorithm2逐图核验。实验仅读§IV开头/小节定位，不抄其他版本实验数字。",
+        "conclusions": "作者摘要称合成及实测数据支持方法有效；非凸NGLUP可能落入较差局部极小值，全面定量表/复现仍待核验。",
+        "limitations": "仍依赖纯像元，非凸求解不保证全局最优。arXiv1403.0289 v1只有2014-03-03首次提交；正式TIP2014年12月23(12):5510–5518区分预印本。作者九页PDF具体最终/接受版本标识未确认，不与14页arXiv v1或会议4页混图。会议同作者同GLUP机制归同方法族，但未发现明确扩展声明；不按版本数统计独立方法。 本版本专用代码/数据链接与完整实验仍待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://api.crossref.org/works/10.1109/tip.2014.2362056",
+            "checkedAt": "2026-10-09",
+            "level": "正式出版社登记书目交叉核验",
+            "supports": [
+              "Blind and Fully Constrained Unmixing of Hyperspectral Images",
+              "Rita Ammanouil, André Ferrari, Cédric Richard, David Mary",
+              "TIP2014年12月23(12):5510–5518；创建日期不是正式发表日。"
+            ]
+          },
+          {
+            "url": "https://www.cedric-richard.fr/Articles/ammanouil2014blind.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "作者原PDF选读，完整全文未读",
+            "supports": [
+              "arXiv官方完整摘要/四作者/唯一v1日期及正式TIP书目；作者九页期刊稿摘要、引言和§II–III/Algorithm2选读，§IV仅开头与小节，非完整全文。",
+              "期刊作者稿摘要、引言及§II–III方法选读；原文§III明确非凸性、GLUP热启动与交替权重更新，第4页Algorithm2逐图核验。实验仅读§IV开头/小节定位，不抄其他版本实验数字。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1403.0289",
+            "checkedAt": "2026-10-09",
+            "level": "arXiv官方完整摘要与历史",
+            "supports": [
+              "同四作者、TIP正式DOI关联；唯一v1首次/更新2014-03-03T02:06:36Z。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1403.0289v1",
+            "checkedAt": "2026-10-09",
+            "level": "正常公开v1 PDF书目/页数核验，正文未完整阅读",
+            "supports": [
+              "14页；第一页明确v1和2014-03-03；内部PDF2018生成时间不改变提交日期。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "glup-nglup-tip-2014-published",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/tip.2014.2362056",
+            "doi": "10.1109/tip.2014.2362056",
+            "year": 2014,
+            "relation": "正式TIP期刊稿，预印本和作者稿各自标明，不混用实验/图件。"
+          },
+          {
+            "id": "glup-tip-arxiv-v1",
+            "type": "预印本",
+            "url": "https://arxiv.org/abs/1403.0289v1",
+            "arxivId": "1403.0289",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2014-03-03T02:06:36Z",
+            "updatedAt": "2014-03-03T02:06:36Z",
+            "metadataStatus": "verified",
+            "year": 2014,
+            "relation": "官方仅v1，stat.AP/stat.ML，正式DOI关联TIP2014；该日期不是WHISPERS投稿/发表日期。"
+          },
+          {
+            "id": "glup-tip-author-manuscript",
+            "type": "作者期刊稿（具体最终/接收版本待核）",
+            "url": "https://www.cedric-richard.fr/Articles/ammanouil2014blind.pdf",
+            "year": 2014,
+            "relation": "九页作者稿与正式题名/作者相同；Algorithm2取本稿物理4页，非14页arXiv v1或会议4页。"
+          },
+          {
+            "id": "glup-whispers2014-related",
+            "type": "同方法族专业会议稿，直接扩展声明待核",
+            "url": "https://doi.org/10.1109/whispers.2014.8077546",
+            "doi": "10.1109/whispers.2014.8077546",
+            "year": 2014,
+            "relation": "同GLUP模型会议4页；arXiv v1早于六月会议，不能仅凭月份认定TIP由会议扩展。"
+          }
+        ],
+        "methodFamilyId": "glup-self-dictionary-unmixing"
+      },
+      "arxiv": "https://arxiv.org/abs/1403.0289",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.cedric-richard.fr/Articles/ammanouil2014blind.pdf",
+          "figureLabel": "Algorithm 2（作者九页期刊稿）",
+          "page": 4,
+          "caption": "作者期刊稿NGLUP原算法：GLUP初始化、权重更新、内部ADMM及残差检查。明确为作者九页稿第4页，非14页arXiv v1或四页会议稿。",
+          "verificationNote": "公开九页作者稿题名/四作者与TIP2014登记及arXiv题名一致；原稿具体接受/最终版本标识待核。目视核Algorithm2标题与完整1–24行；所有公式保留，不称全部数学推导已读。",
+          "cropDescription": "作者九页稿物理/标注4页160dpi渲染，像素框(690,915,1265,1640)，完整Algorithm2和上下边线，无拼接。",
+          "path": "figures/glup-nglup-tip-2014/framework-author-algorithm2-nglup.png",
+          "width": 575,
+          "height": 725,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-09",
+          "sha256": "a578e30381de2e0dc1706b071dc78b29e33c8f67edd4dc97cd0cb80dcd762a76",
+          "attribution": "Rita Ammanouil, André Ferrari, Cédric Richard, David Mary · TIP 2014"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -48614,7 +48973,9 @@
         "structured-mlnmf-whispers-2014",
         "bpt-local-unmixing-2014",
         "vb-joint-sparse-unmixing-2014",
-        "local-unmixing-superresolution-whispers-2014"
+        "local-unmixing-superresolution-whispers-2014",
+        "glup-whispers-2014",
+        "glup-nglup-tip-2014"
       ],
       "history": [
         {
@@ -51190,7 +51551,8 @@
         "ascope-global-sensitivity-whispers-2014",
         "trdf-target-modeling-whispers-2014",
         "flare-forward-model-whispers-2014",
-        "modtran-plume-model-whispers-2014"
+        "modtran-plume-model-whispers-2014",
+        "modtran6-whispers-2014"
       ],
       "history": [
         {
@@ -51536,7 +51898,8 @@
         "ascope-global-sensitivity-whispers-2014",
         "trdf-target-modeling-whispers-2014",
         "flare-forward-model-whispers-2014",
-        "modtran-plume-model-whispers-2014"
+        "modtran-plume-model-whispers-2014",
+        "modtran6-whispers-2014"
       ],
       "history": [
         {
@@ -53193,7 +53556,9 @@
       "rationale": "Ritz论文题名和原摘要直接研究端元数与信号子空间维数。",
       "evidencePaperIds": [
         "ritz-endmember-count-2014",
-        "id-residual-cpa-evaluation-2014"
+        "id-residual-cpa-evaluation-2014",
+        "glup-whispers-2014",
+        "glup-nglup-tip-2014"
       ],
       "history": [
         {
@@ -53747,6 +54112,27 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "本批原摘要明确石油炼制火炬和高光谱红外测量，补充此前工业质量检测标签未涵盖的排放场景。"
+        }
+      ]
+    },
+    {
+      "id": "self-dictionary-group-sparse-unmixing",
+      "name": "自字典组稀疏解混",
+      "dimension": "method",
+      "definition": "以影像观测自身或其子集作为候选谱字典，以丰度矩阵行组稀疏同时选择端元并估计丰度；记录纯像元存在和噪声假设，不等同于已知外部端元的稀疏回归。",
+      "rationale": "GLUP会议稿和同作者期刊稿明确观测自字典、l2,1行稀疏与单位和/非负约束，区别既有固定端元联合稀疏回归标签。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "glup-whispers-2014",
+        "glup-nglup-tip-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "GLUP会议稿和同作者期刊稿明确观测自字典、l2,1行稀疏与单位和/非负约束，区别既有固定端元联合稀疏回归标签。"
         }
       ]
     }
