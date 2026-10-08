@@ -123,6 +123,7 @@
 | WHISPERS | 2014 | GFLEX geostationary fluorescence multispectral、Fabry Perot fluorescence microscopy、USGS PRISM ENVI IDL spectral material analysis；物理66页3题名全部，累计45–66页71条67入2排2待，另CRNN；下一页67新题名未审。 | 3 / 3 / 3 | 三完整摘要闭环、一个方法标签；一旧条目姓名修正，年度仍未审完 | 三会议原稿、框架/方法图及实验细节/专用资源/arXiv未核。；GFLEX HAL2016字段和作者菜单顺序有冲突；显微作者顺序/题名拼写及相关AO/OE正式关系待核。；PRISM2011软件为关联入口，会议版本/手册关系与具体实验待全文。 |
 | WHISPERS | 2014 | WorldView-3 AVIRIS information content、camera sensitivity NEI hyperspectral selection、HyPlant airborne O2-A fluorescence；物理67页三新条目全部，累计45–67页74条70入2排2待，另CRNN。年度目录和其他页未审完。 | 3 / 3 / 3 | 三完整摘要闭环，MS/基础/HSI分别标关系；年度仍未审完 | 三会议原PDF/原图、代码数据及arXiv待核；NEI公式缺失，不复算表值。；WV3模拟响应/噪声和分类协议、荧光大气补偿模型/误差及相关期刊版本差异待原稿。；检索截止保持2026-10-08，核验日期2026-10-09；不纳入截止后新发表版本。 |
 | WHISPERS | 2014 | O2-B O2-A AirFLEX atmospheric correction、FLEX Sentinel-3 fluorescence SFM、sun-induced chlorophyll fluorescence different scales；物理68页三新条目全部；累计45–68页77条73入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整摘要闭环，六通道MS与HSI区分；年度仍未审完 | 原会议PDF/方法图、专用代码数据、arXiv及完整实验/性能待核；Twente全文需登录，保留限制。；AirFLEX公式图件缺失未标全文；2015 TGRS/IGARSS相关稿未核明确扩展，不混用。；正式题名O&lt;inf&gt;实体显示清理；作者用出版社登记与机构核验，程序OCR不能直接当权威作者名单。；截止2026-10-08，实际核验2026-10-09。；正式目录174条本批重放：74已关联、4另有决定、96未审；sources/whispers2014-page68-toc-replay.json。规范题名关联不等于完整作者/DOI/原文逐项已核验。 |
+| WHISPERS | 2014 | A-SCOPE Saltelli global sensitivity、HSI learned multiscale dictionaries quadtree、RDWT multiview active learning；物理69页三新条目全部；累计45–69页80条76入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整原摘要闭环，版本冲突和原图边界保留；年度未审完 | 三会议原PDF/图号页码、代码数据及arXiv待核；摘要不给的性能/参数不补写。；A-SCOPE RAQRS错配与2015 RSE版本关系待核；小波2016 JSTARS与2014同族但图件、方法维度和四数据集不混用。；正式目录174条本批重放77关联、4决定、93未审；sources/whispers2014-page69-toc-replay.json。；截止2026-10-08，实际核验2026-10-09。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -377,6 +378,8 @@
   阅读边界：三会议完整原摘要，NEI另选读作者原稿文字核HSI基础关系；公式/图像缺失未升全文状态。三维214篇不变。
 - 2026-10-09 / whispers-2014-program-page68-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：三完整原摘要核验；AirFLEX另选读作者原稿确认六通道，不升全文。三维214篇不变。
+- 2026-10-09 / whispers-2014-program-page69-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：三完整会议摘要已核验；另外期刊选读只用于小波版本甄别。三维214篇不变。
 
 ## 未解决缺口
 
