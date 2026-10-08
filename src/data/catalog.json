@@ -39072,6 +39072,189 @@
         "sourceUrl": "https://downloads.hindawi.com/journals/MPE/2013/471915.pdf",
         "checkedAt": "2026-10-08"
       }
+    },
+    {
+      "id": "crnn-lrnn-classification-2015",
+      "shortTitle": "CRNN / LRNN",
+      "title": "Collaborative-Representation-Based Nearest Neighbor Classifier for Hyperspectral Imagery",
+      "authors": "Wei Li, Qian Du, Fan Zhang, Wei Hu",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2014.2343956",
+      "representation": "距离加权Tikhonov正则的l2协同表示：CRNN由所有训练样本表示后选k个最大系数投票；LRNN在每类先按欧氏距离选k个样本，再按类内协同重建残差分类。",
+      "tags": [
+        "land-cover-classification",
+        "collaborative-representation"
+      ],
+      "summary": "距离加权Tikhonov正则的l2协同表示：CRNN由所有训练样本表示后选k个最大系数投票；LRNN在每类先按欧氏距离选k个样本，再按类内协同重建残差分类。",
+      "input": "逐像元高光谱向量及各类已标注训练样本。",
+      "output": "像元类别标签；不估计材料丰度或空间三维几何。",
+      "mechanism": "距离加权Tikhonov正则的l2协同表示：CRNN由所有训练样本表示后选k个最大系数投票；LRNN在每类先按欧氏距离选k个样本，再按类内协同重建残差分类。",
+      "readingNote": "原排版5页正文、公式、结论和参考文献完整已读；Table II/III及Fig.3视觉核验，未独立复现。",
+      "paper": "https://doi.org/10.1109/lgrs.2014.2343956",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_full_text_verified",
+      "citation": "@article{crnn_lrnn_classification_2015,\n  title = {Collaborative-Representation-Based Nearest Neighbor Classifier for Hyperspectral Imagery},\n  author = {Wei Li and Qian Du and Fan Zhang and Wei Hu},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {2},\n  pages = {389--393},\n  doi = {10.1109/lgrs.2014.2343956}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "collaborative-representation"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原文对象为光学高光谱影像，仅进入高光谱总库。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何用协同表示提高少量标注条件下近邻光谱分类的判别能力？",
+        "datasets": "ROSIS University of Pavia：610×340、103波段、0.43–0.86 μm、1.3 m、9类；HyMap Purdue：377×512、126波段、0.45–2.5 μm、3.5 m、6类。具体公开数据版本及训练索引待核验。",
+        "experimentSetting": "原§IV完整：Pavia每类随机50训练/650测试，Purdue每类10训练、总5635测试；λ按给定范围以有标签样本留一交叉验证调优；各实验随机重复20次。比较k-NN/LMNN与正则矩阵替换为单位阵的CRNN-I/LRNN-I。Pavia最优k为7/30/3/5，Purdue为1/8/1/1（CRNN/LRNN/k-NN/LMNN）；k是否独立验证选择未明确，不能当空间独立划分。",
+        "conclusions": "原Table II/III已视觉核验：Pavia CRNN/LRNN平均OA分别84.58±0.41%/86.63±0.37%，Purdue90.57±1.08%/92.59±1.04%；仅上述采样与调参条件，未独立复现。",
+        "limitations": "有监督训练；逐像元随机采样不证明空间或跨场景泛化。CRNN使用最大带符号系数，不是最大绝对值，也不是直接欧氏近邻。原Eq.(4)/(8)惩罚写λ、闭式Eq.(6)/(10)写λ²，实现约定未取得代码核对；最优k选择独立性未知。没有显式空间正则，不能归类联合稀疏/解混。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://citeseerx.ist.psu.edu/document?doi=388f8419ef4fe5fed27ada963f0f1dad31bf5980&repid=rep1&type=pdf",
+            "checkedAt": "2026-10-08",
+            "level": "完整期刊原PDF五页及原表/方法图视觉核验；未复现",
+            "supports": [
+              "距离加权Tikhonov正则的l2协同表示：CRNN由所有训练样本表示后选k个最大系数投票；LRNN在每类先按欧氏距离选k个样本，再按类内协同重建残差分类。",
+              "原排版5页正文、公式、结论和参考文献完整已读；Table II/III及Fig.3视觉核验，未独立复现。",
+              "原§IV完整：Pavia每类随机50训练/650测试，Purdue每类10训练、总5635测试；λ按给定范围以有标签样本留一交叉验证调优；各实验随机重复20次。比较k-NN/LMNN与正则矩阵替换为单位阵的CRNN-I/LRNN-I。Pavia最优k为7/30/3/5，Purdue为1/8/1/1（CRNN/LRNN/k-NN/LMNN）；k是否独立验证选择未明确，不能当空间独立划分。",
+              "有监督训练；逐像元随机采样不证明空间或跨场景泛化。CRNN使用最大带符号系数，不是最大绝对值，也不是直接欧氏近邻。原Eq.(4)/(8)惩罚写λ、闭式Eq.(6)/(10)写λ²，实现约定未取得代码核对；最优k选择独立性未知。没有显式空间正则，不能归类联合稀疏/解混。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2014.2343956",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记书目，与原排版核对",
+            "supports": [
+              "Collaborative-Representation-Based Nearest Neighbor Classifier for Hyperspectral Imagery",
+              "Wei Li, Qian Du, Fan Zhang, Wei Hu",
+              "12(2):389-393, 2015"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "crnn-lrnn-classification-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2014.2343956",
+            "doi": "10.1109/lgrs.2014.2343956",
+            "year": 2015,
+            "relation": "正式2015年2月12(2):389–393；版权/DOI含2014不改正式年份。WHISPERS2014同作者近题名候选仅会议目录证据，原稿和直接扩展关系未核验，不把它当已核验预印本。"
+          }
+        ],
+        "methodFamilyId": "crnn-lrnn-classification-2015"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://citeseerx.ist.psu.edu/document?doi=388f8419ef4fe5fed27ada963f0f1dad31bf5980&repid=rep1&type=pdf",
+          "figureLabel": "Fig. 3",
+          "page": 4,
+          "caption": "原Fig.3：欧氏距离与距离加权Tikhonov协同系数的对比，Pavia九类、每类50训练样本；方法机制示例，并非完整流程图。",
+          "verificationNote": "核验期刊原排版392页（PDF第4页）Fig.3及图注；从原PDF渲染后裁切，保留两子图和原图注。全文未提供完整框架图。",
+          "cropDescription": "PDF第4页1800高渲染图，像素矩形(83,140)–(1270,671)，仅Fig.3与图注。",
+          "path": "figures/crnn-lrnn-classification-2015/framework-fig3-original.png",
+          "width": 1187,
+          "height": 531,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "c0a70d8ee8b2ced57369595303f8f56a0d9828f037041f71c28164a2c3fdb10c",
+          "attribution": "Wei Li, Qian Du, Fan Zhang, Wei Hu · GRSL 2015"
+        }
+      ]
+    },
+    {
+      "id": "joint-pan-ms-registration-fusion-2015",
+      "shortTitle": "Joint PAN/MS registration–fusion",
+      "title": "Joint Image Registration and Fusion for Panchromatic and Multispectral Images",
+      "authors": "Qian Zhang, Zhiguo Cao, Zhongwen Hu, Yonghong Jia, Xiaoliang Wu",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2014.2346398",
+      "representation": "SIFT或SIFT+NCC初始化六参数仿射配准，以融合后ERGAS为目标，由downhill simplex反复更新配准并重新融合。",
+      "tags": [
+        "optical-image-registration",
+        "multispectral-pansharpening"
+      ],
+      "summary": "SIFT或SIFT+NCC初始化六参数仿射配准，以融合后ERGAS为目标，由downhill simplex反复更新配准并重新融合。",
+      "input": "高空间分辨率PAN与未准确配准的四波段MS影像。",
+      "output": "更新的仿射参数、已配准MS和全色锐化MS；不是高光谱输出。",
+      "mechanism": "SIFT或SIFT+NCC初始化六参数仿射配准，以融合后ERGAS为目标，由downhill simplex反复更新配准并重新融合。",
+      "readingNote": "Qian Zhang本人2014-11-04上传期刊原排版完整摘要及§II、§III A–C局部已读；未阅读全文或视觉核验所有图表。",
+      "paper": "https://doi.org/10.1109/lgrs.2014.2346398",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_sections",
+      "citation": "@article{joint_pan_ms_registration_fusion_2015,\n  title = {Joint Image Registration and Fusion for Panchromatic and Multispectral Images},\n  author = {Qian Zhang and Zhiguo Cao and Zhongwen Hu and Yonghong Jia and Xiaoliang Wu},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {3},\n  pages = {467--471},\n  doi = {10.1109/lgrs.2014.2346398}\n}\n",
+      "library": {
+        "categoryIds": [
+          "optical-image-registration",
+          "multispectral-pansharpening"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "四波段MS与PAN联合配准/锐化，与高光谱融合的配准问题相关，但未核验高光谱实验；仅总库，不进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何联合优化配准和全色锐化，减少配准误差对融合质量的影响？",
+        "datasets": "武汉ZY-3：PAN2.1 m、MS5.8 m；Hobart GeoEye-1：PAN0.5 m、MS2 m。两组MS均蓝/绿/红/近红外四波段；PAN1024×1024，MS分别745×747和503×460。下载链接及完整影像来源待核验。",
+        "experimentSetting": "原§II及§III A–C局部：PCA将MS变单波段提SIFT，RANSAC/最小二乘初始化；SVR指synthetic variable ratio融合，不是支持向量回归。JPSF/JPSN对应SIFT/SIFT+NCC联合流程，与分离SSF/SSN比较；最多100迭代、容差10^-5、λ=0.1；10人工控制点评估RMSE，RMS_LOO及21×21 NCC另评估。原表未视觉核验，不抄数字。",
+        "conclusions": "作者在两组PAN/MS影像报告联合流程改善配准和融合；此为原摘要及局部陈述，完整表格及复现待核验。",
+        "limitations": "原§III A忽略小范围地形高度影响，不能推定大范围复杂地形泛化。优化ERGAS比较融合MS与重采样的已配准MS，而非独立高分辨率真值；不把该目标当真实光谱精度证明。仅四波段多光谱，未展示高光谱实验。完整原PDF、代码/数据和计时公平性待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/265856030_Joint_Image_Registration_and_Fusion_for_Panchromatic_and_Multispectral_Images",
+            "checkedAt": "2026-10-08",
+            "level": "期刊原排版完整摘要及明确局部，未阅读全文",
+            "supports": [
+              "SIFT或SIFT+NCC初始化六参数仿射配准，以融合后ERGAS为目标，由downhill simplex反复更新配准并重新融合。",
+              "Qian Zhang本人2014-11-04上传期刊原排版完整摘要及§II、§III A–C局部已读；未阅读全文或视觉核验所有图表。",
+              "原§II及§III A–C局部：PCA将MS变单波段提SIFT，RANSAC/最小二乘初始化；SVR指synthetic variable ratio融合，不是支持向量回归。JPSF/JPSN对应SIFT/SIFT+NCC联合流程，与分离SSF/SSN比较；最多100迭代、容差10^-5、λ=0.1；10人工控制点评估RMSE，RMS_LOO及21×21 NCC另评估。原表未视觉核验，不抄数字。",
+              "原§III A忽略小范围地形高度影响，不能推定大范围复杂地形泛化。优化ERGAS比较融合MS与重采样的已配准MS，而非独立高分辨率真值；不把该目标当真实光谱精度证明。仅四波段多光谱，未展示高光谱实验。完整原PDF、代码/数据和计时公平性待核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2014.2346398",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记书目，与原排版核对",
+            "supports": [
+              "Joint Image Registration and Fusion for Panchromatic and Multispectral Images",
+              "Qian Zhang, Zhiguo Cao, Zhongwen Hu, Yonghong Jia, Xiaoliang Wu",
+              "12(3):467-471, 2015"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "joint-pan-ms-registration-fusion-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2014.2346398",
+            "doi": "10.1109/lgrs.2014.2346398",
+            "year": 2015,
+            "relation": "正式2015年3月12(3):467–471；作者2014-11-04存档是标有2015卷期的期刊排版，不能按上传时间改成2014发表。其他会议版/arXiv关系未知。"
+          }
+        ],
+        "methodFamilyId": "joint-pan-ms-registration-fusion-2015"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "作者Qian Zhang原Fig.1流程位于468页、PDF第2页；图页已核验，原图直接403，访问记录sources/grsl2015-joint-registration-figure-access.json。",
+        "sourceUrl": "https://www.researchgate.net/figure/Workflow-of-the-proposed-approach_fig1_265856030",
+        "checkedAt": "2026-10-08"
+      }
     }
   ],
   "datasets": [
@@ -41506,7 +41689,8 @@
       "createdAt": "2026-10-08",
       "rationale": "NeurIPS2022正式摘要和注明原文页支持；由实际方法/任务形成暂定标签。",
       "evidencePaperIds": [
-        "arfnet-2022"
+        "arfnet-2022",
+        "joint-pan-ms-registration-fusion-2015"
       ],
       "history": [
         {
@@ -42226,7 +42410,8 @@
         "rs-emap-ensembles-2015",
         "redundancy-relevance-decoupling-2015",
         "kfkt-small-sample-classification-2015",
-        "kfkt-hyperspectral-classification-2013"
+        "kfkt-hyperspectral-classification-2013",
+        "crnn-lrnn-classification-2015"
       ],
       "history": [
         {
@@ -43622,21 +43807,27 @@
     },
     {
       "id": "collaborative-representation",
-      "name": "协同表示与残差判别",
+      "name": "协同表示与分类判别",
       "dimension": "method",
-      "definition": "通过带正则的训练样本线性组合重建像素，并以按类别残差判别；明确区分l2协同表示与l1稀疏约束，可含邻域/核空间扩展。",
+      "definition": "通过带正则的训练样本线性组合重建像素，以协同系数投票或按类别残差分类；明确区分l2协同表示与l1稀疏约束，可含邻域/核空间扩展。",
       "status": "provisional",
       "color": "#ab9bbe",
       "createdAt": "2026-10-08",
       "rationale": "由本批原始摘要及明确阅读的局部方法形成；后续多篇证据增加后复核边界。",
       "evidencePaperIds": [
-        "wjcr-hyperspectral-2015"
+        "wjcr-hyperspectral-2015",
+        "crnn-lrnn-classification-2015"
       ],
       "history": [
         {
           "date": "2026-10-08",
           "action": "created",
           "reason": "本批方法机制不同，按实际证据新增暂定方法标签。"
+        },
+        {
+          "date": "2026-10-08",
+          "action": "definition_expanded",
+          "reason": "原CRNN使用最大协同系数投票、LRNN使用类内残差，扩展判别定义并保留稳定ID；不等同联合稀疏解混。"
         }
       ]
     },
@@ -43738,6 +43929,26 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "根据同族两篇实际方法形成暂定标签，版本/工作数量不作独立方法数。"
+        }
+      ]
+    },
+    {
+      "id": "optical-image-registration",
+      "name": "光学影像配准",
+      "dimension": "task",
+      "definition": "估计并优化光学多/高光谱与引导影像之间的几何对应；记录变换模型、参考与感知影像和精度证据，区别只假设预配准或仅完成融合的工作。",
+      "status": "provisional",
+      "color": "#87aabd",
+      "createdAt": "2026-10-08",
+      "rationale": "本批原文将配准参数优化作为明确输出，现有非配准光谱融合不能表达该任务。",
+      "evidencePaperIds": [
+        "joint-pan-ms-registration-fusion-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "按原方法实际任务形成独立标签，不预设分类数量。"
         }
       ]
     }

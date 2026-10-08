@@ -3796,17 +3796,17 @@
         "spectral unmixing"
       ],
       "url": "https://api.crossref.org/journals/1545-598X/works",
-      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审29条；余37项pending，非年度系统检索完成。",
+      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审31条；余35项pending，非年度系统检索完成。",
       "titleCount": 572,
       "candidateCount": 66,
-      "reviewedCount": 29,
+      "reviewedCount": 31,
       "status": "partial",
       "statusLabel": "指定题名组扫描完成，候选核验进行中",
       "sourceSnapshot": "sources/grsl-2015-optical-title-matches.json",
       "gaps": [
         "登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。",
         "出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。",
-        "本组剩余37候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
+        "本组剩余35候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
         "本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。"
       ]
     },
@@ -11162,10 +11162,10 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现",
+      "decision": "included",
+      "reason": "原文对象为光学高光谱影像，仅进入高光谱总库。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-crnn-registration-primary-decisions.json",
+      "readingBoundary": "原排版5页正文、公式、结论和参考文献完整已读；Table II/III及Fig.3视觉核验，未独立复现。",
       "accessReview": {
         "checkedAt": "2026-10-08",
         "primaryUrl": "https://ieeexplore.ieee.org/document/6877647",
@@ -11185,7 +11185,9 @@
           "evidencePath": "research/hyperspectral/sources/grsl2015-remaining39-hal-doi-query.json",
           "note": "单一机构存档精确DOI未命中，不表示无原稿、不提升核验、不排除。"
         }
-      ]
+      ],
+      "paperId": "crnn-lrnn-classification-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "Discriminative Spectral–Spatial Margin-Based Semisupervised Dimensionality Reduction of Hyperspectral Data",
@@ -11217,10 +11219,10 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现",
+      "decision": "included",
+      "reason": "四波段MS与PAN联合配准/锐化，与高光谱融合的配准问题相关，但未核验高光谱实验；仅总库，不进入三维专题。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-crnn-registration-primary-decisions.json",
+      "readingBoundary": "Qian Zhang本人2014-11-04上传期刊原排版完整摘要及§II、§III A–C局部已读；未阅读全文或视觉核验所有图表。",
       "sourceChecks": [
         {
           "checkedAt": "2026-10-08",
@@ -11229,7 +11231,9 @@
           "evidencePath": "research/hyperspectral/sources/grsl2015-remaining39-hal-doi-query.json",
           "note": "单一机构存档精确DOI未命中，不表示无原稿、不提升核验、不排除。"
         }
-      ]
+      ],
+      "paperId": "joint-pan-ms-registration-fusion-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "Imbalanced Hyperspectral Image Classification Based on Maximum Margin",
@@ -13884,6 +13888,29 @@
       "gaps": [
         "GRSL光谱组37待核验，压缩组4；出版社年度目录/其他词和摘要尚未全量完成。",
         "2015原页429、2013原PDF403；原图、完整实验协议、代码数据及直接版本关系待核验。"
+      ]
+    },
+    {
+      "id": "grsl-2015-crnn-registration-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "grsl-2015-crossref-optical-titles"
+      ],
+      "new": 2,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 35,
+      "categoriesAdded": 1,
+      "categoriesUpdated": [
+        "collaborative-representation"
+      ],
+      "figuresAdded": 1,
+      "readingBoundary": "CRNN/LRNN原五页全文与原表/方法机制图核验；联合配准仅作者期刊稿摘要和明确局部。四波段MS关系单列，SVR融合与支持向量回归区分。",
+      "gaps": [
+        "光谱组35待核验、压缩组4待核验；年度出版社目录及其他词/摘要未完成。",
+        "WHISPERS2014近题名仅目录，不据此合并版本或虚构差异。",
+        "联合配准原图403；两篇代码/数据及独立复现待核验。"
       ]
     }
   ],
