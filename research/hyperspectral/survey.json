@@ -99,6 +99,16 @@
           "spectropolarimet"
         ],
         "status": "active"
+      },
+      {
+        "id": "spectral-compressive-title",
+        "keywords": [
+          "spectral",
+          "compressive",
+          "coded aperture",
+          "unmixing"
+        ],
+        "status": "active"
       }
     ]
   },
@@ -281,7 +291,7 @@
       "years": "earliest_available_to_cutoff",
       "defaultAnnualStatus": "not_searched",
       "plannedMethod": "官方目录逐年扫描；题名/摘要交叉检索；引文追溯",
-      "statusLabel": "尚未独立系统检索；见上方已执行年度记录"
+      "statusLabel": "2015年度41登记DOI六成像词及光谱/压缩词扫描；3HSI收录1无HSI关系排除；非出版社全量，其他年度未检索"
     },
     {
       "id": "tgrs",
@@ -3118,6 +3128,63 @@
         "出版社年度卷期全目录未交叉核验",
         "全量摘要与其他任务词、引文未完成",
         "非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录"
+      ]
+    },
+    {
+      "id": "ieee-transactions-on-computational-imaging-2015-crossref-imaging-terms",
+      "venue": "TCI",
+      "year": 2015,
+      "keywordGroup": "optical-imaging-title",
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-08T04:54:17.278943+00:00",
+      "method": "Crossref 出版社登记元数据年度集合，按游标完整分页并逐题名扫描成像任务词",
+      "keywords": [
+        "hyperspectral",
+        "multispectral",
+        "spectral imaging",
+        "coded aperture",
+        "compressive imaging",
+        "compressive spectral"
+      ],
+      "url": "https://api.crossref.org/journals/2333-9403/works",
+      "pagination": "rows=1000，1 页；41 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验",
+      "titleCount": 41,
+      "candidateCount": 2,
+      "reviewedCount": 2,
+      "status": "metadata_title_scan_complete",
+      "statusLabel": "41登记DOI六词2命中均收录；包含非研究条目，非出版社年度全量",
+      "sourceSnapshot": "sources/ieee-transactions-on-computational-imaging-2015-crossref-titles.json",
+      "htmlSha256": "b751247503ed5d1e63e143f13b4348712be833432c9bde1dd0c4602dc0fddee9",
+      "gaps": [
+        "Crossref 未登记论文及出版日期/卷期年度差异尚未核对",
+        "出版社全部目录、全量摘要、其他关键词和引文尚未完成",
+        "登记集合包含目录/说明，不称41研究论文；全量摘要尚未读"
+      ]
+    },
+    {
+      "id": "tci-2015-crossref-spectral-compressive-terms",
+      "venue": "TCI",
+      "year": 2015,
+      "keywordGroup": "spectral-compressive-title",
+      "date": "2026-10-08",
+      "method": "离线补扫完整Crossref年度登记题名，光谱与压缩词并集；原始摘要逐篇筛选",
+      "keywords": [
+        "spectral",
+        "compressive",
+        "coded aperture",
+        "unmixing"
+      ],
+      "url": "https://api.crossref.org/journals/2333-9403/works",
+      "pagination": "离线全扫41个不同登记DOI；原rows1000一页；包含目录/出版说明，不当作41篇研究论文",
+      "titleCount": 41,
+      "candidateCount": 4,
+      "reviewedCount": 4,
+      "status": "metadata_title_scan_complete",
+      "statusLabel": "41登记题名四词4候选闭环：新增3、排除1；出版社年度全量未证明",
+      "sourceSnapshot": "sources/ieee-transactions-on-computational-imaging-2015-crossref-titles.json",
+      "gaps": [
+        "出版社全部卷期/全量摘要未核验",
+        "其余词、引文与全文实验、最终版差异待核验"
       ]
     }
   ],
@@ -7886,6 +7953,89 @@
       "verifiedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/ol-system-10.1364_ol.35.004163-decision.json",
       "readingBoundary": "完整原始摘要，非全文；2009在线/2010卷期边界单列"
+    },
+    {
+      "title": "Hyperspectral Unmixing Via Turbo Bilinear Approximate Message Passing",
+      "url": "https://doi.org/10.1109/tci.2015.2465161",
+      "venue": "IEEE Transactions on Computational Imaging",
+      "year": 2015,
+      "searchId": "ieee-transactions-on-computational-imaging-2015-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原始摘要与DOI/题名/完整作者核验直接HSI对象；当前批次跨两关键词组重复命中仅计一个新增条目。",
+      "paperId": "hutamp-2015",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/hutamp-2015-review.json",
+      "readingBoundary": "原摘要与注明局部方法原图页，非全文"
+    },
+    {
+      "title": "Bayesian Nonlinear Hyperspectral Unmixing With Spatial Residual Component Analysis",
+      "url": "https://doi.org/10.1109/tci.2015.2481603",
+      "venue": "IEEE Transactions on Computational Imaging",
+      "year": 2015,
+      "searchId": "ieee-transactions-on-computational-imaging-2015-crossref-imaging-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原始摘要与DOI/题名/完整作者核验直接HSI对象；当前批次跨两关键词组重复命中仅计一个新增条目。",
+      "paperId": "spatial-rca-unmixing-2015",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/spatial-rca-unmixing-2015-review.json",
+      "readingBoundary": "原摘要与注明局部方法原图页，非全文"
+    },
+    {
+      "title": "Robust Linear Spectral Unmixing Using Anomaly Detection",
+      "url": "https://doi.org/10.1109/tci.2015.2455411",
+      "venue": "TCI",
+      "year": 2015,
+      "searchId": "tci-2015-crossref-spectral-compressive-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原始摘要与DOI/题名/完整作者核验直接HSI对象；当前批次跨两关键词组重复命中仅计一个新增条目。",
+      "paperId": "robust-linear-unmixing-anomaly-2015",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/robust-linear-unmixing-anomaly-2015-review.json",
+      "readingBoundary": "原摘要与注明局部方法原图页，非全文"
+    },
+    {
+      "title": "Hyperspectral Unmixing Via Turbo Bilinear Approximate Message Passing",
+      "url": "https://doi.org/10.1109/tci.2015.2465161",
+      "venue": "TCI",
+      "year": 2015,
+      "searchId": "tci-2015-crossref-spectral-compressive-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原始摘要与DOI/题名/完整作者核验直接HSI对象；当前批次跨两关键词组重复命中仅计一个新增条目。",
+      "paperId": "hutamp-2015",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/hutamp-2015-review.json",
+      "readingBoundary": "原摘要与注明局部方法原图页，非全文"
+    },
+    {
+      "title": "Bayesian Nonlinear Hyperspectral Unmixing With Spatial Residual Component Analysis",
+      "url": "https://doi.org/10.1109/tci.2015.2481603",
+      "venue": "TCI",
+      "year": 2015,
+      "searchId": "tci-2015-crossref-spectral-compressive-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原始摘要与DOI/题名/完整作者核验直接HSI对象；当前批次跨两关键词组重复命中仅计一个新增条目。",
+      "paperId": "spatial-rca-unmixing-2015",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/spatial-rca-unmixing-2015-review.json",
+      "readingBoundary": "原摘要与注明局部方法原图页，非全文"
+    },
+    {
+      "title": "Compressive Deconvolution in Random Mask Imaging",
+      "url": "https://doi.org/10.1109/tci.2015.2485941",
+      "venue": "TCI",
+      "year": 2015,
+      "searchId": "tci-2015-crossref-spectral-compressive-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "原始arXiv摘要为随机相位掩模下二维信号压缩反卷积与恢复保证；当前没有HSI对象或明确关联，不能因compressive与coded mask自动收录。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/tci-2015-random-mask-decision.json",
+      "readingBoundary": "完整原始arXiv摘要，非全文"
     }
   ],
   "batches": [
@@ -8835,6 +8985,27 @@
         "四新增完整实验、原图、代码与数据/许可及版本待核验",
         "出版社年度卷期目录、全量摘要、其他词与引文未完成"
       ]
+    },
+    {
+      "id": "tci-2015-unmixing-abstract-figure-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "ieee-transactions-on-computational-imaging-2015-crossref-imaging-terms",
+        "tci-2015-crossref-spectral-compressive-terms"
+      ],
+      "new": 3,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 1,
+      "pending": 0,
+      "categoriesAdded": 3,
+      "readingBoundary": "2015年度41登记DOI一页完整获取；六词2命中与四词4命中并集4，增3排1，跨组重复命中不重复计数。三篇原摘要、局部模型图与6个arXiv版本日期核验；HUT-AMP原期刊图，RCA/RBLU原图来源标v2预印本。未阅读全文，不混用正式/预印本实验。",
+      "gaps": [
+        "IEEE全部卷期与全量摘要尚未核验，41登记项含非研究条目",
+        "RBLU登记2015年6月卷期与机构2015-07-10 early-online先后差异待核对",
+        "RCA v2 PDF页脚2018编译日期与2015提交元数据分开；版本全文差异待查",
+        "完整实验、资源许可与会议前序关系待核验"
+      ]
     }
   ],
   "gaps": [
@@ -8858,6 +9029,7 @@
     "OL2008登记1032题名两页六词4命中：新增HS-FTS与内源双光子2、排八通道系统1、Luo体全息1待范围/全文；原图与全文受限。双光子2008 BWG7会议摘要版本关系待核验，作者含额外Roman Stolper，不能自动合并。出版社年度全量/全量摘要/其他词与引用链仍待补。",
     "OL2009六词登记题名7候选已闭环，4新增均非全文阅读。出版社年度全量/全量摘要/任务词仍未完成；四篇原图及资源、NTF最终PDF、会议版本关系待核验。",
     "OL2010登记1417题名六词4候选闭环：增1排3。350–1000nm反射平台仅摘要核验；全文、原图、性能、资源与版本待查；出版社年度全量、其他任务词和引文尚未完成。",
-    "OL2007–2010额外16系统/重建词4899题名11命中：增4重1排4待2。2007Mueller关联2013勘误；2009在线/2010卷期单快照荧光非HSI，年度边界不混用；两非成像偏振候选HSI关系待原文。"
+    "OL2007–2010额外16系统/重建词4899题名11命中：增4重1排4待2。2007Mueller关联2013勘误；2009在线/2010卷期单快照荧光非HSI，年度边界不混用；两非成像偏振候选HSI关系待原文。",
+    "TCI2015 41登记DOI两词组并集4候选增3排1；原图3均有确切PDF版本。期刊全目录/全量摘要未证明；RBLU登记六月与机构七月early-online差异、RCA v2 PDF编译页脚及所有实验/版本差异待查。"
   ]
 }

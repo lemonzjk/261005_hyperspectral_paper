@@ -76,6 +76,8 @@
 | Optics Letters | 2008 | cassi、coded aperture、snapshot、imaging spectrom、imaging spectroscop、spectral reconstruction、spectrum reconstruction、spectral unmixing、band selection、pansharpening、spectral super-resolution、fourier transform imaging、spectral mixture、endmember、spectral image、spectropolarimet；离线全扫1032登记DOI；原2页，原登记集合边界保持；非出版社全量 | 1032 / 2 / 1 | 补扫16系统/重建词；2候选：增0、重0、排1、待核验1；非年度全量 | 出版社年度卷期全目录未交叉核验；全量摘要与其他任务词、引文未完成；非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录 |
 | Optics Letters | 2009 | cassi、coded aperture、snapshot、imaging spectrom、imaging spectroscop、spectral reconstruction、spectrum reconstruction、spectral unmixing、band selection、pansharpening、spectral super-resolution、fourier transform imaging、spectral mixture、endmember、spectral image、spectropolarimet；离线全扫1309登记DOI；原2页，原登记集合边界保持；非出版社全量 | 1309 / 2 / 2 | 补扫16系统/重建词；2候选：增0、重1、排1、待核验0；非年度全量 | 出版社年度卷期全目录未交叉核验；全量摘要与其他任务词、引文未完成；非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录 |
 | Optics Letters | 2010 | cassi、coded aperture、snapshot、imaging spectrom、imaging spectroscop、spectral reconstruction、spectrum reconstruction、spectral unmixing、band selection、pansharpening、spectral super-resolution、fourier transform imaging、spectral mixture、endmember、spectral image、spectropolarimet；离线全扫1417登记DOI；原2页，原登记集合边界保持；非出版社全量 | 1417 / 6 / 5 | 补扫16系统/重建词；6候选：增3、重0、排2、待核验1；非年度全量 | 出版社年度卷期全目录未交叉核验；全量摘要与其他任务词、引文未完成；非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录 |
+| TCI | 2015 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；41 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 41 / 2 / 2 | 41登记DOI六词2命中均收录；包含非研究条目，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；登记集合包含目录/说明，不称41研究论文；全量摘要尚未读 |
+| TCI | 2015 | spectral、compressive、coded aperture、unmixing；离线全扫41个不同登记DOI；原rows1000一页；包含目录/出版说明，不当作41篇研究论文 | 41 / 4 / 4 | 41登记题名四词4候选闭环：新增3、排除1；出版社年度全量未证明 | 出版社全部卷期/全量摘要未核验；其余词、引文与全文实验、最终版差异待核验 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -104,7 +106,7 @@
 | Pattern Recognition | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Information Fusion | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TSP | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| TCI | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
+| TCI | journal | 最早可用目录至 2026 | 2015年度41登记DOI六成像词及光谱/压缩词扫描；3HSI收录1无HSI关系排除；非出版社全量，其他年度未检索 |
 | TGRS | journal | 最早可用目录至 2026 | 1988/1994/2001/2005/2008基础主题及2022单篇期刊扩展定向核验；年度全量未检索 |
 | Remote Sensing of Environment | journal | 最早可用目录至 2026 | 2001年度Crossref登记集合六成像词已扫，4收录/2待核验；出版社全量、其他年/词未完成 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -228,6 +230,8 @@
   阅读边界：Crossref年度1417登记DOI两页全取并扫描指定六成像词；4命中全部读取完整出版社摘要。收录反射式UV–VIS–NIR傅里叶高光谱平台，三MSI器件/FLIM论文因缺少明确HSI关系暂排除并保留重审。新论文不是阅读全文，定向原图检索失败逐篇保存。
 - 2026-10-08 / ol-2007-2010-system-reconstruction-review：新增 4，更新 0，去重 1，排除 4，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：四年度4899登记题名补扫16个系统/重建词，11命中均读完整原始摘要；4新文献、1重复、4排除、2待关系核验。2007非成像Mueller为2023原始研究明确引用的HSI基础；2013公式勘误归并，不计新方法。Dyson两设计波长不等于两观测波段；2010静态谱偏振装置仅一维空间。局部设计表与作者PDF第一页索引非全文。
+- 2026-10-08 / tci-2015-unmixing-abstract-figure-review：新增 3，更新 0，去重 0，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：2015年度41登记DOI一页完整获取；六词2命中与四词4命中并集4，增3排1，跨组重复命中不重复计数。三篇原摘要、局部模型图与6个arXiv版本日期核验；HUT-AMP原期刊图，RCA/RBLU原图来源标v2预印本。未阅读全文，不混用正式/预印本实验。
 
 ## 未解决缺口
 
@@ -252,3 +256,4 @@
 - OL2009六词登记题名7候选已闭环，4新增均非全文阅读。出版社年度全量/全量摘要/任务词仍未完成；四篇原图及资源、NTF最终PDF、会议版本关系待核验。
 - OL2010登记1417题名六词4候选闭环：增1排3。350–1000nm反射平台仅摘要核验；全文、原图、性能、资源与版本待查；出版社年度全量、其他任务词和引文尚未完成。
 - OL2007–2010额外16系统/重建词4899题名11命中：增4重1排4待2。2007Mueller关联2013勘误；2009在线/2010卷期单快照荧光非HSI，年度边界不混用；两非成像偏振候选HSI关系待原文。
+- TCI2015 41登记DOI两词组并集4候选增3排1；原图3均有确切PDF版本。期刊全目录/全量摘要未证明；RBLU登记六月与机构七月early-online差异、RCA v2 PDF编译页脚及所有实验/版本差异待查。
