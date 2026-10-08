@@ -62,6 +62,21 @@
           "compressive spectral"
         ],
         "status": "active"
+      },
+      {
+        "id": "rse-calibration-unmixing-temperature-title",
+        "keywords": [
+          "imaging spectrom",
+          "imaging spectroscop",
+          "narrowband",
+          "narrow-band",
+          "spectral mixture",
+          "endmember",
+          "atmospheric correction",
+          "radiometric calibration",
+          "spectral unmixing"
+        ],
+        "status": "active"
       }
     ]
   },
@@ -2724,17 +2739,51 @@
       "pagination": "rows=1000，1 页；133 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验",
       "titleCount": 133,
       "candidateCount": 6,
-      "reviewedCount": 4,
-      "status": "metadata_title_scan_complete",
-      "statusLabel": "Crossref133登记题名指定六词扫描；4收录、2访问/范围待核验；出版社全量未证明",
+      "reviewedCount": 6,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "133登记题名六词6命中已闭环：5收录、1排除；出版社全量未证明",
       "sourceSnapshot": "sources/remote-sensing-of-environment-2001-crossref-titles.json",
       "htmlSha256": "267f2cff2c082ce259ecd06339df987e17425b7069480df2c627e011956408af",
       "gaps": [
         "Crossref 未登记论文及出版日期/卷期年度差异尚未核对",
         "出版社全部目录、全量摘要、其他关键词和引文尚未完成",
-        "Broge完整摘要/原图与Key完整作者/摘要/高光谱联系受限",
-        "四新增完整PDF/实验/资源许可及两原图页码待核验"
+        "四新增完整PDF/实验/资源许可及两原图页码待核验",
+        "Broge原图、完整PDF与外部验证待查；历史批次的2待核验已在续接批次解决"
       ]
+    },
+    {
+      "id": "rse-2001-deposited-title-task-terms",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "date": "2026-10-08",
+      "queriedAt": "2026-10-08T02:25:35.742153+00:00",
+      "method": "复用已获取并核对登记总数的年度元数据，133题名逐条执行九任务词；不重新声明出版社全量",
+      "keywords": [
+        "imaging spectrom",
+        "imaging spectroscop",
+        "narrowband",
+        "narrow-band",
+        "spectral mixture",
+        "endmember",
+        "atmospheric correction",
+        "radiometric calibration",
+        "spectral unmixing"
+      ],
+      "url": "https://api.crossref.org/journals/0034-4257/works",
+      "pagination": "复用133不同DOI年度登记集合（原检索rows=1000一页），全部133题名，无条数截断",
+      "titleCount": 133,
+      "candidateCount": 11,
+      "reviewedCount": 9,
+      "status": "metadata_title_scan_complete",
+      "statusLabel": "133登记题名九任务词11命中：新增1、去重1、排除7、待核验2；不是年度全领域完成",
+      "sourceSnapshot": "sources/rse-2001-task-title-rescan.json",
+      "gaps": [
+        "出版社年度全量和未登记/日期差异尚未核对",
+        "其他任务词、全量摘要、原文与引文尚未完成",
+        "METEOSAT与Hu跨标定原摘要/范围仍受限",
+        "DAIS性能单位疑似错配，PDF/原图待核验"
+      ],
+      "keywordGroup": "rse-calibration-unmixing-temperature-title"
     }
   ],
   "candidates": [
@@ -6697,11 +6746,12 @@
       "year": 2001,
       "searchId": "remote-sensing-of-environment-2001-crossref-imaging-terms",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅取得出版社原摘要前两句及书目；abs页面返回的完整段落实际属于后续引用论文，已识别并排除其事实。Crossref无摘要、Elsevier META_ABS需API凭据。需完整原摘要/原PDF，不从二手转述补实验。",
-      "evidencePath": "research/hyperspectral/sources/rse-2001-broge-key-web-search.txt",
+      "decision": "included",
+      "reason": "完整原始摘要证实PROSPECT+SAIL高光谱模拟与植被指数研究；原作者和正式卷期已核验，关闭原访问缺口。",
+      "evidencePath": "research/hyperspectral/sources/broge-vegetation-indices-2001-review.json",
       "verifiedAt": "2026-10-08",
-      "readingBoundary": "题名、书目及原摘要开头；非完整摘要"
+      "readingBoundary": "完整原始摘要，未阅读全文",
+      "paperId": "broge-vegetation-indices-2001"
     },
     {
       "title": "A Comparison of Multispectral and Multitemporal Information in High Spatial Resolution Imagery for Classification of Individual Tree Species in a Temperate Hardwood Forest",
@@ -6710,11 +6760,11 @@
       "year": 2001,
       "searchId": "remote-sensing-of-environment-2001-crossref-imaging-terms",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "出版社索引仅有本论文引言而无完整原摘要；HYDICE提及属于数据选择背景，未证实实际高光谱实验或足够明确方法关联。登记作者仅T Key，完整作者需原文核验；后续推荐/引用摘要不属于本论文。",
-      "evidencePath": "research/hyperspectral/sources/rse-2001-primary-web-search.txt",
+      "decision": "excluded",
+      "reason": "原摘要明确35mm真彩/伪彩航空照片、四色波段与九个日期用于树种分类；完整作者Thomas Key、Timothy A. Warner、James B. McGraw、Mary Ann Fajvan核验。引言HYDICE仅背景，不足以建立高光谱方法/实验联系；未来有明确基础关系证据可复审，不因二维排除。",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-broge-key-retry.txt",
       "verifiedAt": "2026-10-08",
-      "readingBoundary": "题名、登记书目与部分引言；非完整摘要"
+      "readingBoundary": "完整原摘要及部分引言；非全文"
     },
     {
       "title": "A generalized approach to the vicarious calibration of multiple Earth observation sensors using hyperspectral data",
@@ -6728,6 +6778,151 @@
       "paperId": "quasar-calibration-2001",
       "verifiedAt": "2026-10-08",
       "evidencePath": "research/hyperspectral/sources/quasar-calibration-2001-review.json"
+    },
+    {
+      "title": "Erratum to “Atmospheric Correction of SeaWiFS Imagery over Turbid Coastal Waters: A Practical Method” [Remote Sens. Environ. 74(2):195—206]",
+      "url": "https://doi.org/10.1016/s0034-4257(01)00196-1",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "登记题名明确原SeaWiFS论文勘误，不是独立研究方法；不把勘误计为新方法。更正具体内容和原论文高光谱关系仍未核验。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-title-rescan.json",
+      "readingBoundary": "出版社登记题名和元数据；未读取勘误原文"
+    },
+    {
+      "title": "A VNIR/SWIR atmospheric correction algorithm for hyperspectral imagery with adjacency effect",
+      "url": "https://doi.org/10.1016/s0034-4257(01)00219-x",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "duplicate",
+      "reason": "DOI、题名和作者与已收录VNIR/SWIR邻接大气校正相同；不重复新增。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-abstracts.txt",
+      "paperId": "adjacency-atmospheric-correction-2001",
+      "readingBoundary": "已核验摘要的同一正式版"
+    },
+    {
+      "title": "An error and sensitivity analysis of atmospheric resistant vegetation indices derived from dark target-based atmospheric correction",
+      "url": "https://doi.org/10.1016/s0034-4257(01)00223-1",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "原摘要研究MODIS多光谱ARVI/EVI与暗目标大气校正误差，未建立明确高光谱数据、系统或基础应用关系。 当前证据范围内排除，出现明确联系可复审；不因多光谱或二维本身排除。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-abstracts.txt",
+      "readingBoundary": "完整出版社原摘要，非全文"
+    },
+    {
+      "title": "Retrieval of columnar water vapour over land from backscattered solar radiation using the Medium Resolution Imaging Spectrometer",
+      "url": "https://doi.org/10.1016/s0034-4257(01)00218-8",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "原摘要用MERIS两选定通道与MOS检验水汽反演，未建立高光谱对象联系；不能仅凭Imaging Spectrometer名称标作高光谱。 当前证据范围内排除，出现明确联系可复审；不因多光谱或二维本身排除。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-abstracts-2.txt",
+      "readingBoundary": "完整出版社原摘要，非全文"
+    },
+    {
+      "title": "Influence of Land Surface Parameters and Atmosphere on METEOSAT Brightness Temperatures and Generation of Land Surface Temperature Maps by Temporally and Spatially Interpolating Atmospheric Correction",
+      "url": "https://doi.org/10.1016/s0034-4257(00)00154-1",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "KIT作者机构书目补齐Schädlich/Göttsche/Olesen；外链仅旧ScienceDirect付费PDF入口，原摘要/全文仍受限。METEOSAT对象的实际光谱范围与高光谱基础关系尚未由原文核验，不用第三方摘要替代。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-meteosat-institution.json",
+      "readingBoundary": "作者机构书目；未读取原摘要"
+    },
+    {
+      "title": "Absolute radiometric calibration of Landsat 7 ETM+ using the reflectance-based method",
+      "url": "https://doi.org/10.1016/s0034-4257(01)00247-4",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "原摘要研究Landsat7 ETM+反射率法标定，未建立高光谱参考数据或明确基础联系。 当前证据范围内排除，出现明确联系可复审；不因多光谱或二维本身排除。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-abstracts-2.txt",
+      "readingBoundary": "完整出版社原摘要，非全文"
+    },
+    {
+      "title": "Atmospheric correction and cross-calibration of LANDSAT-7/ETM+ imagery over aquatic environments: A multiplatform approach using SeaWiFS/MODIS",
+      "url": "https://doi.org/10.1016/s0034-4257(01)00252-8",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "pending",
+      "reason": "作者机构与出版社部分引言核对Landsat7/ETM+、SeaWiFS/MODIS书目；尚未取得完整原摘要，未证实高光谱直接/基础关系。推荐OLI论文摘要不能替代本论文。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-abstracts-2.txt",
+      "readingBoundary": "书目及部分原引言；未读取完整原摘要"
+    },
+    {
+      "title": "Narrowband to broadband conversions of land surface albedo I",
+      "url": "https://doi.org/10.1016/s0034-4257(00)00205-4",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "原摘要研究多种宽/窄带多光谱卫星的宽带反照率换算，未建立高光谱应用联系；不是把narrowband排除出整个总库。 当前证据范围内排除，出现明确联系可复审；不因多光谱或二维本身排除。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-discovery.txt",
+      "readingBoundary": "完整出版社原摘要，非全文"
+    },
+    {
+      "title": "Definition of Spatially Variable Spectral Endmembers by Locally Calibrated Multivariate Regression Analyses",
+      "url": "https://doi.org/10.1016/s0034-4257(00)00153-x",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "原摘要实际使用NOAA AVHRR多时相NDVI轮廓与土地覆盖比例构造端元；此处维度为时间，未建立波长高光谱研究联系。 当前证据范围内排除，出现明确联系可复审；不因多光谱或二维本身排除。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-abstracts.txt",
+      "readingBoundary": "完整出版社原摘要，非全文"
+    },
+    {
+      "title": "Unified approach to absolute radiometric calibration in the solar-reflective range",
+      "url": "https://doi.org/10.1016/s0034-4257(01)00210-3",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "excluded",
+      "reason": "原摘要讨论太阳反射区通用SRBC标定，未建立明确高光谱系统/数据或基础应用关系。 当前证据范围内排除，出现明确联系可复审；不因多光谱或二维本身排除。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/rse-2001-task-primary-abstracts.txt",
+      "readingBoundary": "完整出版社原摘要，非全文"
+    },
+    {
+      "title": "Temperature and emissivity separation from calibrated data of the Digital Airborne Imaging Spectrometer",
+      "url": "https://doi.org/10.1016/s0034-4257(00)00207-8",
+      "venue": "Remote Sensing of Environment",
+      "year": 2001,
+      "searchId": "rse-2001-deposited-title-task-terms",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "完整原摘要与引言证实DAIS热子通道ANEM；与高光谱成像仪的关系由1996原论文证实，以多光谱相关收录。",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/dais-anem-2001-review.json",
+      "paperId": "dais-anem-2001",
+      "readingBoundary": "完整原摘要、引言及选段；非全文"
     }
   ],
   "batches": [
@@ -7538,6 +7733,26 @@
         "Broge/Key完整原摘要、作者与范围证据待访问；不能用引用论文摘要冒充",
         "四新增完整实验/版本/许可，以及两方法图页码仍待核验"
       ]
+    },
+    {
+      "id": "rse-2001-task-review-and-pending-resolution",
+      "date": "2026-10-08",
+      "searchIds": [
+        "remote-sensing-of-environment-2001-crossref-imaging-terms",
+        "rse-2001-deposited-title-task-terms"
+      ],
+      "new": 2,
+      "updated": 0,
+      "duplicates": 1,
+      "excluded": 8,
+      "pending": 2,
+      "categoriesAdded": 2,
+      "readingBoundary": "旧两候选完整官方原摘要解决：Broge收录、Key排除。九任务词133登记题名全扫11命中：DAIS热子通道相关收录、同DOI去重1、排除7、两原摘要仍受限。排除7含6完整摘要及1勘误题名；不把书目阅读称摘要核验。两新增未阅读全文，原图与页码未核验。",
+      "gaps": [
+        "出版社目录和全量摘要尚未覆盖，其他词及引文仍待查",
+        "METEOSAT/Hu原摘要与高光谱关系仍待核验",
+        "Broge/DAIS原图、PDF、资源/版本；DAIS误差单位冲突待核验"
+      ]
     }
   ],
   "gaps": [
@@ -7555,6 +7770,6 @@
     "NeurIPS2022四篇8预印本元数据与局部差异核验：SatMAE SpaceNet v2→v1命名、v3附录长时训练；DAUHST v3增加MST++/CST基线及cs.CV→eess.IV主分类变动。全图/公式及完整实验仍待比对。",
     "NeurIPS2021官方2334题名五词14命中闭环：T3SC新增1、排除13。仅指定题名组完成；全量摘要/任务词/引文未完成，T3SC附录实验、DOI、许可和正式版差异待核验。",
     "NeurIPS2019/2020指定五词题名扫描分别1428/1898条，5/9命中摘要全部排除；未扫全量摘要，不能推定年度无HSI论文。年度目录记录不再未经核对宣称包含独立数据集Track。",
-    "RSE2001 Crossref登记133题名六词6命中：4新增（RBVC、VNIR/SWIR大气校正、荒漠MESMA限度、QUASAR）、2待核验（Broge/Key局部摘要/引言）。2原图取得但PDF页码未知，另2方法图受限。出版社目录、任务词、全量摘要、资源许可和全文未完成。"
+    "RSE2001登记133题名六成像词+九任务词已逐条扫描。六词候选5收录1排除；任务词11候选1收录1去重7排除2待核验（METEOSAT/Hu原摘要受限）。出版社年度完整目录/全量摘要、其他词和引文未完成；Broge/DAIS原图及DAIS误差单位冲突待核验。"
   ]
 }
