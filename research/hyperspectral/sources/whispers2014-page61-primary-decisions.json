@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "rovp-linear-unmixing-2014",
+      "doi": "10.1109/whispers.2014.8077497",
+      "decision": "included",
+      "programPdfPages": [
+        61
+      ],
+      "readingBoundary": "官方日程物理第61页原摘要及书目已核；BPT摘要跨至62页。未阅读全文。",
+      "deduplication": "规范DOI、题名、作者核全库；独立会议版保留。同族关系不作为新方法计数。"
+    },
+    {
+      "paperId": "structured-mlnmf-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077521",
+      "decision": "included",
+      "programPdfPages": [
+        61
+      ],
+      "readingBoundary": "arXiv v1四页全文已读；正式2014与预印本2015日期分开；出版社最终差异待核。",
+      "deduplication": "规范DOI、题名、作者核全库；独立会议版保留。同族关系不作为新方法计数。"
+    },
+    {
+      "paperId": "ritz-endmember-count-2014",
+      "doi": "10.1109/whispers.2014.8077553",
+      "decision": "included",
+      "programPdfPages": [
+        61
+      ],
+      "readingBoundary": "官方日程物理第61页原摘要及书目已核；BPT摘要跨至62页。未阅读全文。",
+      "deduplication": "规范DOI、题名、作者核全库；独立会议版保留。同族关系不作为新方法计数。"
+    },
+    {
+      "paperId": "bpt-local-unmixing-2014",
+      "doi": "10.1109/whispers.2014.8077555",
+      "decision": "included",
+      "programPdfPages": [
+        61,
+        62
+      ],
+      "readingBoundary": "HAL v1五页文件（封面+四页论文）全文已读，原图第3页；出版社最终差异待核。",
+      "deduplication": "规范DOI、题名、作者核全库；独立会议版保留。同族关系不作为新方法计数。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "endmember-number-estimation",
+      "dimension": "task",
+      "definition": "以材料端元或光谱源数量为估计输出；与单个信号子空间维数的对应逐篇注明，不等同于不同子空间的数量或语义类别数。",
+      "rationale": "Ritz论文题名和原摘要直接研究端元数与信号子空间维数。"
+    },
+    {
+      "id": "recursive-orthogonal-projection",
+      "dimension": "method",
+      "definition": "以逐向量递归更新光学高光谱正交投影以处理解混或检测；向量/子空间公式、运算节省和硬件实现须逐篇核验。",
+      "rationale": "ROVP原摘要明确向量积及递归正交投影。"
+    },
+    {
+      "id": "ritz-subspace-identification",
+      "dimension": "method",
+      "definition": "利用特征对计算中的Ritz量选择光学高光谱信号子空间维数或估计端元数；矩阵、阈值及维数与源数的对应逐篇注明。",
+      "rationale": "原摘要明确restarted Arnoldi/Lanczos中的Ritz量与维数选择。"
+    },
+    {
+      "id": "hierarchical-region-unmixing",
+      "dimension": "method",
+      "definition": "以区域层级表示和剪枝选择局部解混分区，逐区域估计端元/丰度以表达空间光谱变异；层级分区与神经图学习区别记录。",
+      "rationale": "BPT-LSU全文明确区域树、逐节点解混、两种误差剪枝及区域尺寸约束。"
+    }
+  ],
+  "methodFamilyLinks": [
+    {
+      "methodFamilyId": "mlnmf",
+      "paperIds": [
+        "structured-mlnmf-whispers-2014",
+        "mlnmf-unmixing-2015"
+      ],
+      "boundary": "两稿相同作者及多层丰度分解/端元矩阵乘积/L1/2目标，归mlnmf方法族；未核正式期刊扩展声明，不把期刊页2框图或完整参数移用会议版。"
+    }
+  ],
+  "sourceFiles": [
+    "whispers2014-structured-mlnmf-arxiv-v1.pdf",
+    "whispers2014-bpt-hal-v1.pdf"
+  ],
+  "pdfSha256": {
+    "whispers2014-structured-mlnmf-arxiv-v1.pdf": "433efc68899cd94763b104f3942254a2fb79ffb6c3f007f7111be09773003a66",
+    "whispers2014-bpt-hal-v1.pdf": "9269b4c8e8fb38a21a7f9b48343e067596df0c126cefd6070f982d7ad3777c7c"
+  },
+  "accessIssues": [
+    "BPT旧UMBC链接404，网页工具索引文本可读但截图失败；HAL v1最初SSL异常，旧HAL入口随后HTTP200取原PDF。",
+    "Ritz作者存储库403，仅官方缓存完整摘要；ROVP出版页202空白。",
+    "NMF原稿只有混合像元概念图/结果，无多层方法框图。"
+  ],
+  "qualityIssues": [
+    "ROVP总题名表与详细摘要/Crossref作者末两人顺序不一致，采用后两者；未借后续GPU论文充当2014硬件实验。",
+    "Ritz端元数/子空间维数不归不同子空间数量标签；对应待原稿。",
+    "NMF2014会议/2015预印本/2015期刊以及另一2014预印本日期、实验、图片分别保存。",
+    "BPT Fig.5正文c=100与图注c=200冲突保留；Cuprite尺寸/波段未知，未来并行化不当已实现。"
+  ]
+}

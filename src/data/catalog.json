@@ -36389,7 +36389,7 @@
         "datasets": "原始摘要：基于USGS光谱库端元的合成数据，真实AVIRIS Cuprite；数据尺寸、子集与预处理待正文核验。",
         "experimentSetting": "原始摘要以SAD/AAD量化结果；第2页局部核验逐层目标与乘法更新，完整参数、初始化、划分和统计协议待核验。",
         "conclusions": "作者摘要报告多层分解较所比较方法更有效；尚未核验完整结果/数值，不推定普遍优势。",
-        "limitations": "原稿第2页§II.C明确非稀疏端元可用稀疏矩阵积表示的数学证明仍为开放问题；限定线性混合。层数/随机初值敏感性、专用数据、代码许可和正式版差异待核验。",
+        "limitations": "原稿第2页§II.C明确非稀疏端元可用稀疏矩阵积表示的数学证明仍为开放问题；限定线性混合。层数/随机初值敏感性、专用数据、代码许可和正式版差异待核验。 同族2014会议版原稿已核；正式扩展声明和两版本实验增补未逐项核验。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36419,6 +36419,14 @@
             "supports": [
               "README明确引用同题名、同作者、正式GRSL2015 12(1):38–42和DOI；代码许可/运行/数据待查。"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1506.01596v1",
+            "checkedAt": "2026-10-08",
+            "level": "会议四页全文与期刊原摘要及第2页方法交叉",
+            "supports": [
+              "两稿相同作者、多层丰度分解/端元矩阵乘积及L1/2目标归同方法族，会议正式2014、期刊正式2015；阅读状态及实验不跨版提升。"
+            ]
           }
         ],
         "versions": [
@@ -36441,6 +36449,14 @@
             "updatedAt": "2014-08-12T19:07:23Z",
             "metadataStatus": "verified",
             "relation": "原始历史仅列v1；同作者、题名与相关DOI明确关联正式2015稿，正文实验差异待核验。"
+          },
+          {
+            "id": "structured-mlnmf-whispers-2014-related-conference",
+            "type": "同族会议正式稿",
+            "url": "https://doi.org/10.1109/whispers.2014.8077521",
+            "doi": "10.1109/whispers.2014.8077521",
+            "year": 2014,
+            "relation": "两稿相同作者及多层丰度分解/端元矩阵乘积/L1/2目标，归mlnmf方法族；未核正式期刊扩展声明，不把期刊页2框图或完整参数移用会议版。"
           }
         ],
         "methodFamilyId": "mlnmf"
@@ -44011,6 +44027,417 @@
         "sourceUrl": "https://www.biw.kuleuven.be/nonlinear-mixing/Whispers_2014_NL.pdf",
         "checkedAt": "2026-10-08"
       }
+    },
+    {
+      "id": "rovp-linear-unmixing-2014",
+      "shortTitle": "ROVP",
+      "title": "Recursive orthogonal vector projection algorithm for linear spectral unmixing",
+      "authors": "Meiping Song, Yao Li, Lifu Zhang, Chein-I Chang",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077497",
+      "representation": "以向量积构造正交投影，逐向量递归处理，避免直接矩阵乘法/求逆及重复使用先前处理的向量。",
+      "tags": [
+        "spectral-unmixing",
+        "recursive-orthogonal-projection"
+      ],
+      "summary": "以向量积构造正交投影，逐向量递归处理，避免直接矩阵乘法/求逆及重复使用先前处理的向量。",
+      "input": "高光谱光谱向量与线性解混所需端元信息；具体先验接口待原稿。",
+      "output": "线性解混结果及递归投影表示；具体丰度约束待原稿。",
+      "mechanism": "以向量积构造正交投影，逐向量递归处理，避免直接矩阵乘法/求逆及重复使用先前处理的向量。",
+      "readingNote": "官方日程物理第61页原摘要及书目已核；BPT摘要跨至62页。未阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077497",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{rovp_linear_unmixing_2014,\n  title = {Recursive orthogonal vector projection algorithm for linear spectral unmixing},\n  author = {Meiping Song and Yao Li and Lifu Zhang and Chein-I Chang},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077497}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "recursive-orthogonal-projection"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱解混/子空间识别为主要对象的专业workshop；仅总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以递归向量正交投影降低线性高光谱解混的矩阵运算成本？",
+        "datasets": "官方完整摘要未说明实验数据名称、传感器及场景。",
+        "experimentSetting": "摘要强调运算复杂度；原PDF未取得，具体复杂度式、计时、精度和比较协议待核。",
+        "conclusions": "作者摘要主张递归OVP比所比较算法计算成本更低；不据此写实测加速比或GPU/FPGA实现。",
+        "limitations": "FPGA/GPU仅为作者未来应用方向，未核本版硬件实现。线性模型及数值稳定性待原稿；代码、数据、arXiv和原图待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方日程PDF物理61–62页完整原摘要",
+            "supports": [
+              "以向量积构造正交投影，逐向量递归处理，避免直接矩阵乘法/求逆及重复使用先前处理的向量。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077497",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记与官方题名核正式书目",
+            "supports": [
+              "Recursive orthogonal vector projection algorithm for linear spectral unmixing",
+              "2014，1–4页；ROVP官方总题名表与详细摘要作者末两人顺序不同，以Crossref及详细摘要为当前顺序。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "rovp-linear-unmixing-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077497",
+            "doi": "10.1109/whispers.2014.8077497",
+            "year": 2014,
+            "relation": "正式2014四页会议；原稿与正式差异单列。"
+          }
+        ],
+        "methodFamilyId": "rovp-linear-unmixing-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "官方完整摘要已核，出版页202空白；原PDF/原图未取得。未来FPGA/GPU方向不当原硬件框图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077497",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "structured-mlnmf-whispers-2014",
+      "shortTitle": "MLNMF (WHISPERS)",
+      "title": "Multilayer structured NMF for spectral unmixing of hyperspectral images",
+      "authors": "Roozbeh Rajabi, Hassan Ghassemian",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077521",
+      "representation": "逐层分解丰度矩阵，端元矩阵由各层非负矩阵相乘；每层目标含端元及丰度L1/2稀疏项，以乘法更新并用FCLS考虑和为一约束。",
+      "tags": [
+        "spectral-unmixing",
+        "low-rank-matrix-factorization"
+      ],
+      "summary": "逐层分解丰度矩阵，端元矩阵由各层非负矩阵相乘；每层目标含端元及丰度L1/2稀疏项，以乘法更新并用FCLS考虑和为一约束。",
+      "input": "非负高光谱观测矩阵；线性混合模型。",
+      "output": "材料端元与逐像元丰度。",
+      "mechanism": "逐层分解丰度矩阵，端元矩阵由各层非负矩阵相乘；每层目标含端元及丰度L1/2稀疏项，以乘法更新并用FCLS考虑和为一约束。",
+      "readingNote": "arXiv v1四页全文已读；正式2014与预印本2015日期分开；出版社最终差异待核。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077521",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_author_pdf_full_text_verified",
+      "citation": "@inproceedings{structured_mlnmf_whispers_2014,\n  title = {Multilayer structured NMF for spectral unmixing of hyperspectral images},\n  author = {Roozbeh Rajabi and Hassan Ghassemian},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077521}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "low-rank-matrix-factorization"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱解混/子空间识别为主要对象的专业workshop；仅总库。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何以多层NMF及端元/丰度稀疏约束改进线性混合像元的解混？",
+        "datasets": "本版原预印本：USGS库六材料合成数据；AVIRIS Cuprite子集250×191像元/188波段，图4/5列12材料谱与丰度。",
+        "experimentSetting": "合成SNR15–45dB以rmsSAD/rmsAAD比较VCA、L1/2-NMF；真实表1以rmsSAD比较VCA、SISAL、L1/2-NMF、MLNMF。层数、正则参数、初始化和重复次数未在本四页稿完整交代，不用期刊参数补写。",
+        "conclusions": "作者在本合成与Cuprite协议中报告改善；表1本版MLNMF rmsSAD为0.0981、VCA0.1047、SISAL0.1237、L1/2-NMF0.1138，仅适用于该稿本协议。",
+        "limitations": "限定线性混合；原稿称稀疏矩阵乘积为何改善NMF仍为开放问题。实验协议不完整；仅原预印本全文，出版社逐字差异和专用会议代码待核。Fig.1为混合像元概念，其余为谱/结果，无多层方法框图。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方日程PDF物理61–62页完整原摘要",
+            "supports": [
+              "逐层分解丰度矩阵，端元矩阵由各层非负矩阵相乘；每层目标含端元及丰度L1/2稀疏项，以乘法更新并用FCLS考虑和为一约束。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077521",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记与官方题名核正式书目",
+            "supports": [
+              "Multilayer structured NMF for spectral unmixing of hyperspectral images",
+              "Roozbeh Rajabi, Hassan Ghassemian"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1506.01596v1",
+            "checkedAt": "2026-10-08",
+            "level": "原作者公开稿全文；页码/稿本边界明确",
+            "supports": [
+              "逐层分解丰度矩阵，端元矩阵由各层非负矩阵相乘；每层目标含端元及丰度L1/2稀疏项，以乘法更新并用FCLS考虑和为一约束。",
+              "本版原预印本：USGS库六材料合成数据；AVIRIS Cuprite子集250×191像元/188波段，图4/5列12材料谱与丰度。",
+              "合成SNR15–45dB以rmsSAD/rmsAAD比较VCA、L1/2-NMF；真实表1以rmsSAD比较VCA、SISAL、L1/2-NMF、MLNMF。层数、正则参数、初始化和重复次数未在本四页稿完整交代，不用期刊参数补写。",
+              "作者在本合成与Cuprite协议中报告改善；表1本版MLNMF rmsSAD为0.0981、VCA0.1047、SISAL0.1237、L1/2-NMF0.1138，仅适用于该稿本协议。",
+              "限定线性混合；原稿称稀疏矩阵乘积为何改善NMF仍为开放问题。实验协议不完整；仅原预印本全文，出版社逐字差异和专用会议代码待核。Fig.1为混合像元概念，其余为谱/结果，无多层方法框图。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1506.01596",
+            "checkedAt": "2026-10-08",
+            "level": "arXiv原始历史及元数据",
+            "supports": [
+              "唯一v1，首次/最近更新2015-06-04T13:53:33Z，cs.CV，4 pages conference；未把2015提交当2014提交。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "structured-mlnmf-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077521",
+            "doi": "10.1109/whispers.2014.8077521",
+            "year": 2014,
+            "relation": "正式2014四页会议；原稿与正式差异单列。"
+          },
+          {
+            "id": "structured-mlnmf-whispers-2014-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1506.01596v1",
+            "year": 2015,
+            "arxivId": "1506.01596",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2015-06-04T13:53:33Z",
+            "updatedAt": "2015-06-04T13:53:33Z",
+            "metadataStatus": "verified",
+            "relation": "同题名/同作者四页会议稿，仅v1；摘要页未列正式DOI，原PDF内容与2014完整会议摘要一致。正式逐字差异待核。"
+          },
+          {
+            "id": "mlnmf-unmixing-2015-related-journal",
+            "type": "同族期刊正式稿",
+            "url": "https://doi.org/10.1109/lgrs.2014.2325874",
+            "doi": "10.1109/lgrs.2014.2325874",
+            "year": 2015,
+            "relation": "两稿相同作者及多层丰度分解/端元矩阵乘积/L1/2目标，归mlnmf方法族；未核正式期刊扩展声明，不把期刊页2框图或完整参数移用会议版。"
+          }
+        ],
+        "methodFamilyId": "mlnmf"
+      },
+      "arxivId": "1506.01596",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "四页原v1全文核，Fig.1是混合像元概念、Fig.2/4光谱、Fig.3结果、Fig.5丰度图；未含多层方法框图。期刊Fig.1不移用会议版。",
+        "sourceUrl": "https://arxiv.org/pdf/1506.01596v1",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "ritz-endmember-count-2014",
+      "shortTitle": "Ritz endmember count",
+      "title": "On the use of ritz values for calculating the number of endmembers in hyperspectral images",
+      "authors": "Raul Guerra, Sebastian Lopez, Gustavo M. Callico, Jose F. Lopez, Roberto Sarmiento",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077553",
+      "representation": "由restarted Arnoldi/Lanczos等方法计算较多特征值/特征向量及各自Ritz量，再据Ritz量选择信号子空间维数，用于端元数估计。",
+      "tags": [
+        "spectral-dimensionality-reduction",
+        "endmember-number-estimation",
+        "ritz-subspace-identification"
+      ],
+      "summary": "由restarted Arnoldi/Lanczos等方法计算较多特征值/特征向量及各自Ritz量，再据Ritz量选择信号子空间维数，用于端元数估计。",
+      "input": "高光谱观测及相应特征对计算矩阵；矩阵构造待原稿。",
+      "output": "信号子空间维数/估计端元数；两者数学对应待正文核验。",
+      "mechanism": "由restarted Arnoldi/Lanczos等方法计算较多特征值/特征向量及各自Ritz量，再据Ritz量选择信号子空间维数，用于端元数估计。",
+      "readingNote": "官方日程物理第61页原摘要及书目已核；BPT摘要跨至62页。未阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077553",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{ritz_endmember_count_2014,\n  title = {On the use of ritz values for calculating the number of endmembers in hyperspectral images},\n  author = {Raul Guerra and Sebastian Lopez and Gustavo M. Callico and Jose F. Lopez and Roberto Sarmiento},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077553}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "endmember-number-estimation",
+          "ritz-subspace-identification"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱解混/子空间识别为主要对象的专业workshop；仅总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用特征对计算中的Ritz量估计高光谱信号子空间维数及端元数？",
+        "datasets": "完整原摘要确认合成和真实高光谱实验；场景、波段及仪器未交代。",
+        "experimentSetting": "原摘要比较HySIME和Virtual Dimensionality；阈值、噪声、维数上界、重复与计时待原PDF。",
+        "conclusions": "作者在所用数据报告端元数估计优于HySIME和VD；尚无原表，不写精度幅度或泛化结论。",
+        "limitations": "估计的是子空间维数/端元数，并非不同子空间的数量或语义类数；对应及阈值待核。机构页面直访403，完整摘要来自机构官方搜索缓存及官方日程；代码、数据、arXiv和原图待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方日程PDF物理61–62页完整原摘要",
+            "supports": [
+              "由restarted Arnoldi/Lanczos等方法计算较多特征值/特征向量及各自Ritz量，再据Ritz量选择信号子空间维数，用于端元数估计。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077553",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记与官方题名核正式书目",
+            "supports": [
+              "On the use of ritz values for calculating the number of endmembers in hyperspectral images",
+              "Raul Guerra, Sebastian Lopez, Gustavo M. Callico, Jose F. Lopez, Roberto Sarmiento"
+            ]
+          },
+          {
+            "url": "https://accedacris.ulpgc.es/handle/10553/44977",
+            "checkedAt": "2026-10-08",
+            "level": "作者大学正式存储库完整摘要的官方搜索缓存；直访403",
+            "supports": [
+              "On the use of ritz values for calculating the number of endmembers in hyperspectral images",
+              "由restarted Arnoldi/Lanczos等方法计算较多特征值/特征向量及各自Ritz量，再据Ritz量选择信号子空间维数，用于端元数估计。",
+              "原页面当前受限，不宣称读取原PDF。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ritz-endmember-count-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077553",
+            "doi": "10.1109/whispers.2014.8077553",
+            "year": 2014,
+            "relation": "正式2014四页会议；原稿与正式差异单列。"
+          }
+        ],
+        "methodFamilyId": "ritz-endmember-count-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "机构完整摘要缓存可读，直访403；原PDF/原图未取得。",
+        "sourceUrl": "https://accedacris.ulpgc.es/handle/10553/44977",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "bpt-local-unmixing-2014",
+      "shortTitle": "BPT-LSU",
+      "title": "Binary partition tree-based local spectral unmixing",
+      "authors": "Lucas Drumetz, Miguel Angel Veganzones, Ruben Marrero, Guillaume Tochon, Mauro Dalla Mura, Antonio Plaza, Jocelyn Chanussot",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077555",
+      "representation": "以区域平均光谱与SAD合并相邻区域构造BPT；逐节点VCA提取端元并估计丰度，按平均或最大重建误差剪枝。局部端元可事后聚类为光谱束。",
+      "tags": [
+        "spectral-unmixing",
+        "hierarchical-region-unmixing"
+      ],
+      "summary": "以区域平均光谱与SAD合并相邻区域构造BPT；逐节点VCA提取端元并估计丰度，按平均或最大重建误差剪枝。局部端元可事后聚类为光谱束。",
+      "input": "高光谱影像、区域最小尺寸约束及稀疏参数。",
+      "output": "局部分区、区域端元及丰度；可事后形成光谱束。",
+      "mechanism": "以区域平均光谱与SAD合并相邻区域构造BPT；逐节点VCA提取端元并估计丰度，按平均或最大重建误差剪枝。局部端元可事后聚类为光谱束。",
+      "readingNote": "HAL v1五页文件（封面+四页论文）全文已读，原图第3页；出版社最终差异待核。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077555",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_author_pdf_full_text_verified",
+      "citation": "@inproceedings{bpt_local_unmixing_2014,\n  title = {Binary partition tree-based local spectral unmixing},\n  author = {Lucas Drumetz and Miguel Angel Veganzones and Ruben Marrero and Guillaume Tochon and Mauro Dalla Mura and Antonio Plaza and Jocelyn Chanussot},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077555}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "hierarchical-region-unmixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱解混/子空间识别为主要对象的专业workshop；仅总库。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何通过局部区域解混缓解多混合及照明/大气引起的端元光谱变化？",
+        "datasets": "HAL v1：真实NASA AVIRIS Cuprite；未给子集行列/保留波段数，不能沿用NMF的250×191/188。",
+        "experimentSetting": "每区VCA运行10次，选最大单纯形体积端元；丰度稀疏τ=0或10^-3；平均/最大RMSE或SAD剪枝，最小区域c=100–1000/步长5。比较全图GSU；原文报4核2.80GHz Xeon约28分钟构树并填解混信息。",
+        "conclusions": "所测Cuprite多数LSU设置降低平均重建误差；最大RMSE剪枝加稀疏约束时平均SAD反而更差。平均误差剪枝多数较好；重建误差不足以证明丰度真值更准。",
+        "limitations": "仅一个真实场景，丰度真值和合成评估留作未来；填充节点解混成本高，未来并行化不算已实现。Fig.5正文c=100与图注c=200冲突，未自行择一。代码、专用数据及出版社最终差异待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "官方日程PDF物理61–62页完整原摘要",
+            "supports": [
+              "以区域平均光谱与SAD合并相邻区域构造BPT；逐节点VCA提取端元并估计丰度，按平均或最大重建误差剪枝。局部端元可事后聚类为光谱束。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077555",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记与官方题名核正式书目",
+            "supports": [
+              "Binary partition tree-based local spectral unmixing",
+              "Lucas Drumetz, Miguel Angel Veganzones, Ruben Marrero, Guillaume Tochon, Mauro Dalla Mura, Antonio Plaza, Jocelyn Chanussot"
+            ]
+          },
+          {
+            "url": "https://hal.science/hal-01010427/document",
+            "checkedAt": "2026-10-08",
+            "level": "原作者公开稿全文；页码/稿本边界明确",
+            "supports": [
+              "以区域平均光谱与SAD合并相邻区域构造BPT；逐节点VCA提取端元并估计丰度，按平均或最大重建误差剪枝。局部端元可事后聚类为光谱束。",
+              "HAL v1：真实NASA AVIRIS Cuprite；未给子集行列/保留波段数，不能沿用NMF的250×191/188。",
+              "每区VCA运行10次，选最大单纯形体积端元；丰度稀疏τ=0或10^-3；平均/最大RMSE或SAD剪枝，最小区域c=100–1000/步长5。比较全图GSU；原文报4核2.80GHz Xeon约28分钟构树并填解混信息。",
+              "所测Cuprite多数LSU设置降低平均重建误差；最大RMSE剪枝加稀疏约束时平均SAD反而更差。平均误差剪枝多数较好；重建误差不足以证明丰度真值更准。",
+              "仅一个真实场景，丰度真值和合成评估留作未来；填充节点解混成本高，未来并行化不算已实现。Fig.5正文c=100与图注c=200冲突，未自行择一。代码、专用数据及出版社最终差异待核。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "bpt-local-unmixing-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077555",
+            "doi": "10.1109/whispers.2014.8077555",
+            "year": 2014,
+            "relation": "正式2014四页会议；原稿与正式差异单列。"
+          },
+          {
+            "id": "bpt-local-unmixing-2014-hal-v1",
+            "type": "HAL作者公开稿",
+            "url": "https://hal.science/hal-01010427v1",
+            "year": 2014,
+            "relation": "HAL v1封面注明提交2014-06-19和WHISPERS2014；1页存储库封面+4页正文。"
+          }
+        ],
+        "methodFamilyId": "bpt-local-unmixing-2014"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://hal.science/hal-01010427/document",
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "caption": "BPT相邻区域合并与二叉树构造；用于局部解混的分层区域表示。",
+          "verificationNote": "目视核原HAL v1物理第3页（正文第2页）Fig.1及完整图注；原文裁切，源PDF存档，含HAL封面。",
+          "cropDescription": "HAL v1第3页长边1800像素渲染，裁切(158,802,643,1116)完整BPT示意和图注。",
+          "attribution": "Lucas Drumetz, Miguel Angel Veganzones, Ruben Marrero, Guillaume Tochon, Mauro Dalla Mura, Antonio Plaza, Jocelyn Chanussot · WHISPERS 2014",
+          "path": "figures/bpt-local-unmixing-2014/framework.png",
+          "width": 485,
+          "height": 314,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "f7c9eae738fc67f50ef725e0ea56b774ad4fb4e63ad0d5a39867cb4df779e210"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -44800,7 +45227,10 @@
         "mas-aco-endmember-extraction-2014",
         "iw-nlsu-whispers-2014",
         "wm-lattice-sparse-unmixing-2014",
-        "endmember-soft-prior-unmixing-2014"
+        "endmember-soft-prior-unmixing-2014",
+        "rovp-linear-unmixing-2014",
+        "structured-mlnmf-whispers-2014",
+        "bpt-local-unmixing-2014"
       ],
       "history": [
         {
@@ -44854,7 +45284,8 @@
         "spectral-graph-techniques-overview-2014",
         "spatial-context-manifold-classification-2014",
         "sparse-collaborative-graphs-dr-2014",
-        "grassmann-embedded-classification-2014"
+        "grassmann-embedded-classification-2014",
+        "ritz-endmember-count-2014"
       ],
       "history": [
         {
@@ -45494,7 +45925,8 @@
         "t3sc-2021",
         "dsplr-nmf-2017",
         "grmr-snapshot-demosaicing-2019",
-        "rare-endmember-multitemporal-nmf-2014"
+        "rare-endmember-multitemporal-nmf-2014",
+        "structured-mlnmf-whispers-2014"
       ],
       "history": [
         {
@@ -49309,6 +49741,86 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "半监督解混原摘要以端元先验软正则为核心。"
+        }
+      ]
+    },
+    {
+      "id": "endmember-number-estimation",
+      "name": "端元数估计",
+      "dimension": "task",
+      "definition": "以材料端元或光谱源数量为估计输出；与单个信号子空间维数的对应逐篇注明，不等同于不同子空间的数量或语义类别数。",
+      "status": "provisional",
+      "color": "#929eb4",
+      "createdAt": "2026-10-08",
+      "rationale": "Ritz论文题名和原摘要直接研究端元数与信号子空间维数。",
+      "evidencePaperIds": [
+        "ritz-endmember-count-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "Ritz论文题名和原摘要直接研究端元数与信号子空间维数。"
+        }
+      ]
+    },
+    {
+      "id": "recursive-orthogonal-projection",
+      "name": "递归正交投影",
+      "dimension": "method",
+      "definition": "以逐向量递归更新光学高光谱正交投影以处理解混或检测；向量/子空间公式、运算节省和硬件实现须逐篇核验。",
+      "status": "provisional",
+      "color": "#929eb4",
+      "createdAt": "2026-10-08",
+      "rationale": "ROVP原摘要明确向量积及递归正交投影。",
+      "evidencePaperIds": [
+        "rovp-linear-unmixing-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "ROVP原摘要明确向量积及递归正交投影。"
+        }
+      ]
+    },
+    {
+      "id": "ritz-subspace-identification",
+      "name": "Ritz子空间识别",
+      "dimension": "method",
+      "definition": "利用特征对计算中的Ritz量选择光学高光谱信号子空间维数或估计端元数；矩阵、阈值及维数与源数的对应逐篇注明。",
+      "status": "provisional",
+      "color": "#929eb4",
+      "createdAt": "2026-10-08",
+      "rationale": "原摘要明确restarted Arnoldi/Lanczos中的Ritz量与维数选择。",
+      "evidencePaperIds": [
+        "ritz-endmember-count-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "原摘要明确restarted Arnoldi/Lanczos中的Ritz量与维数选择。"
+        }
+      ]
+    },
+    {
+      "id": "hierarchical-region-unmixing",
+      "name": "分层区域解混",
+      "dimension": "method",
+      "definition": "以区域层级表示和剪枝选择局部解混分区，逐区域估计端元/丰度以表达空间光谱变异；层级分区与神经图学习区别记录。",
+      "status": "provisional",
+      "color": "#929eb4",
+      "createdAt": "2026-10-08",
+      "rationale": "BPT-LSU全文明确区域树、逐节点解混、两种误差剪枝及区域尺寸约束。",
+      "evidencePaperIds": [
+        "bpt-local-unmixing-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "BPT-LSU全文明确区域树、逐节点解混、两种误差剪枝及区域尺寸约束。"
         }
       ]
     }
