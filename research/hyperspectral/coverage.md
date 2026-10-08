@@ -132,6 +132,8 @@
 | WHISPERS | 2014 | non-Euclidean distance geometry DMaxD、Hapke manifold clustering、consensus unmixing、eigendecompositions sum-to-one；物理74页全部4题名；75页仅借延续摘要，其余未审。本批后累计45–74页97题名92入3排2待，另CRNN。 | 4 / 4 / 4 | 四完整摘要闭环，年度目录仍未审完 | 后三篇正式全文/图件未取得，代码/数据/arXiv未知；DMaxD数学/完整实验和相关JSTARS2015版本差异待核。；流形稿仅Hapke模拟，不移用后续真实实验；特征分解稿输出谱分量总数而非完整丰度或材料数。；正式目录174条重放见sources/whispers2014-page74-toc-replay.json，沿用TRDF题名冲突人工证据关联。；截止2026-10-08，实际核验2026-10-09。 |
 | WHISPERS | 2014 | clay content atmospheric spatial resolution、VIS-NIR SMOTE PLS calibration；物理75页两新题名全部，延续摘要不计新题名；累计45–75页99题名94入3排2待，另CRNN。 | 2 / 3 / 3 | 两题名摘要闭环、1跨页重复；年度未完成 | 黏粒会议Fig1已定位但原PDF/PNG404；SMOTE部分选读非完整全文，代码/数据未核。；SMOTE点光谱单列foundation；F谱和SOC被训练合成及评价重用，不能把数字作独立测试泛化。；目录174条重放及人工TRDF拼写关联见sources/whispers2014-page75-toc-replay.json；其他场所/年份继续按矩阵推进。；截止2026-10-08，实际核验2026-10-09。 |
 | RSE | 2015 | clay content sensitivity、AISA-DUAL PLSR spatial resolution；同族单篇追踪，非RSE2015年度目录或摘要全量。 | 1 / 1 / 1 | 单篇摘要核验闭环 | 正式15页稿/原图/代码数据及明确扩展差异待核；不移用会议图和参数。；RSE2015其他期次、任务词与全量年度检索未完成。 |
+| WHISPERS | 2014 | surface emissivity Hyper-Cam、emissive thermal plant species、airborne thermal infrared gases；物理76页全部3题名；累计45–76页102题名97入3排2待，另CRNN。 | 3 / 3 / 3 | 三完整原摘要闭环，年度目录未完成 | 第一PDF仅结果Fig1/2无框架；两其他会议原稿/方法图与代码数据/arXiv未知。；植物会议七作者和未知设置不借2016五作者期刊；gas两SPIE作者异，原摘要/版差未核。；目录174条重放见sources/whispers2014-page76-toc-replay.json，TRDF人工冲突关联保留。；截至2026-10-08，实际核验2026-10-09。 |
+| IJAEOG | 2016 | emissive thermal infrared plant species；单篇同任务家族追踪；非2016年度目录或所有关键词检索。 | 1 / 1 / 1 | 单篇原摘要及部分方法核验闭环 | 未完整读全部公式/结果表/引用，正式扩展关系及会议差异待核；代码数据/arXiv未知。；本版5原图均结果图，无独立框架/方法图；其余场所/年份待系统检索。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -400,6 +402,8 @@
   阅读边界：四完整原摘要；第一会议稿选读与两原图核验，不提升全文阅读状态；原三维214篇不变。
 - 2026-10-09 / whispers-2014-program-page75-and-rse-family-review：新增 3，更新 0，去重 1，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：三原摘要闭环，两个会议稿另选读；SMOTE平台上传2017但正式会议2014，黏粒两正式稿同族而非独立方法。原三维214篇不变。
+- 2026-10-09 / whispers-2014-program-page76-and-plant-family-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四完整原摘要；第一会议和期刊另选读并检查全部原图，无独立框架/方法图如实记录；三维214篇/原472篇对象不改。
 
 ## 未解决缺口
 
