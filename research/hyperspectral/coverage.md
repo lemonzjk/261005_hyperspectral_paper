@@ -67,6 +67,7 @@
 | NeurIPS | 2019 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 1428 / 5 / 5 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | Remote Sensing of Environment | 2001 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；133 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 133 / 6 / 6 | 133登记题名六词6命中已闭环：5收录、1排除；出版社全量未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；四新增完整PDF/实验/资源许可及两原图页码待核验；Broge原图、完整PDF与外部验证待查；历史批次的2待核验已在续接批次解决 |
 | Remote Sensing of Environment | 2001 | imaging spectrom、imaging spectroscop、narrowband、narrow-band、spectral mixture、endmember、atmospheric correction、radiometric calibration、spectral unmixing；复用133不同DOI年度登记集合（原检索rows=1000一页），全部133题名，无条数截断 | 133 / 11 / 9 | 133登记题名九任务词11命中：新增1、去重1、排除7、待核验2；不是年度全领域完成 | 出版社年度全量和未登记/日期差异尚未核对；其他任务词、全量摘要、原文与引文尚未完成；METEOSAT与Hu跨标定原摘要/范围仍受限；DAIS性能单位疑似错配，PDF/原图待核验 |
+| Remote Sensing of Environment | 2002 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；189 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 189 / 13 / 10 | 189登记题名六词13命中：6新增、4排除、3待核验；出版社年度全量未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；玉米胁迫/TIMS Etna/膨胀黏土完整原摘要或全文受限；其他关键词/全量摘要/引文、全文实验与版本差异尚未处理 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -207,6 +208,8 @@
   阅读边界：133不同DOI与Crossref登记总数一致；六题名成像词6命中全部筛查。4篇完整官方/机构摘要收录，2篇仅局部原摘要/引言留待核验。两张出版社原始方法图已核对，PDF页码未知；非全文阅读。
 - 2026-10-08 / rse-2001-task-review-and-pending-resolution：新增 2，更新 0，去重 1，排除 8，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：旧两候选完整官方原摘要解决：Broge收录、Key排除。九任务词133登记题名全扫11命中：DAIS热子通道相关收录、同DOI去重1、排除7、两原摘要仍受限。排除7含6完整摘要及1勘误题名；不把书目阅读称摘要核验。两新增未阅读全文，原图与页码未核验。
+- 2026-10-08 / rse-2002-crossref-optical-review：新增 6，更新 0，去重 0，排除 4，待处理 3。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：189 DOI与登记总数一致，一页逐题名六词13命中逐篇处理。6原始出版社/机构摘要收录；4排除含3完整摘要及1明确Landsat原引言/方法；3局部原摘要留待核验。2机构PDF取得，读摘要/局部方法/图注，非全文阅读。所有新增原gr1逐张目视，2张方法/观测示意已保存，其余是结果/地图。
 
 ## 未解决缺口
 
@@ -225,3 +228,4 @@
 - NeurIPS2021官方2334题名五词14命中闭环：T3SC新增1、排除13。仅指定题名组完成；全量摘要/任务词/引文未完成，T3SC附录实验、DOI、许可和正式版差异待核验。
 - NeurIPS2019/2020指定五词题名扫描分别1428/1898条，5/9命中摘要全部排除；未扫全量摘要，不能推定年度无HSI论文。年度目录记录不再未经核对宣称包含独立数据集Track。
 - RSE2001登记133题名六成像词+九任务词已逐条扫描。六词候选5收录1排除；任务词11候选1收录1去重7排除2待核验（METEOSAT/Hu原摘要受限）。出版社年度完整目录/全量摘要、其他词和引文未完成；Broge/DAIS原图及DAIS误差单位冲突待核验。
+- RSE2002登记189题名六词13命中：新增6、排除4、待核验3（玉米胁迫、TIMS Etna、膨胀黏土原摘要不完整）。两机构PDF与已接收2001/正式2002版本边界留证。出版社年度完整性及其他词、全量摘要、引文仍未完成。
