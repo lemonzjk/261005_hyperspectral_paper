@@ -1,5 +1,9 @@
 import type { LibraryCategory, Paper, PresentPaper } from './types';
 
+/** Stable sorting preserves catalog order when paper counts are equal. */
+export const sortByPaperCount = <T extends { id: string }>(items: T[], count: (id: string) => number): T[] =>
+  [...items].sort((a, b) => count(b.id) - count(a.id));
+
 export const libraryPresentation = (categories: LibraryCategory[]): PresentPaper => paper => {
   const labels = categories.filter(category => paper.library?.categoryIds.includes(category.id));
   return {

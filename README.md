@@ -45,6 +45,10 @@ npm run preview
 
 总库按逐篇阅读形成任务、方法和应用标签，支持待分类、多标签并集、年份范围、出版来源多选、关键词及阅读进度。详情记录输入输出、方法、实验待核验字段、证据和版本；BibTeX 与 SVG 导出使用当前总库筛选结果。检索覆盖面板区分指定关键词扫描、主题检索和未检索范围。
 
+2026-10-08 已复核现有 311 篇的分类，补齐原有 205 篇待分类条目。现有 114 个标签按研究任务（58）、方法（40）和应用（16）区分。左侧研究任务按当前筛选范围内的论文数降序排列，数量相同保留目录顺序。归类以实际输入、输出及既有来源笔记为依据，原阅读进度、实验待核验字段和来源证据分别保留；分类确认不等于阅读全文。逐篇依据保存在 `library.classificationReview`，复核范围及额外原始来源检查见 [分类审计](research/hyperspectral/classification-audit.json)。
+
+两页继续使用同一套布局、核心展示组件与共享样式。总库的分类数据及排序独立，现有补充模块不另做视觉改版；后续优化三维视觉页面的共享 UI 时，同时检查总库同步结果。
+
 总库的检索规则、候选决定、覆盖与后续计划见 [research/hyperspectral/README.md](research/hyperspectral/README.md) 和 [覆盖表](research/hyperspectral/coverage.md)。文献事实仍统一维护在目录中；新普通高光谱条目使用 `collections: ["hyperspectral"]`，分类由 `libraryCategories` 与 `library.categoryIds` 保存。
 
 ## 维护文献

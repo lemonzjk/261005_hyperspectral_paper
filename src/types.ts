@@ -31,6 +31,10 @@ export interface LibraryCategory {
 }
 export interface LibraryNotes {
   categoryIds: string[]; classificationStatus: 'pending' | 'provisional' | 'confirmed';
+  classificationReview?: {
+    reviewedAt: string; basis: 'catalog_evidence' | 'catalog_and_primary_source'; rationale: string;
+    evidenceFields: string[]; evidenceDigest: string; sourceUrls: string[];
+  };
   relation: 'hyperspectral' | 'multispectral' | 'foundation' | 'pending'; relationNote: string;
   readingProgress: 'title_only' | 'abstract_read' | 'full_text_read' | 'pending';
   verificationStatus: 'pending' | 'abstract_verified' | 'full_text_verified';

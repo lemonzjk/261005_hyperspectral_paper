@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { tracks as trackDefinitions } from '../src/tracks.ts';
 import { timelineLayout } from '../src/timeline-layout.ts';
 import { groupPapers } from '../src/map-groups.ts';
-import { filterLibrary, libraryPresentation, readLibraryFilters } from '../src/library.ts';
+import { filterLibrary, libraryPresentation, readLibraryFilters, sortByPaperCount } from '../src/library.ts';
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
 const contextCharacters = [...context].length;
@@ -118,6 +118,7 @@ for (const category of categories) {
   assert(['provisional', 'confirmed', 'retired'].includes(category.status), 'Invalid category status');
   assert(category.definition?.trim() && category.rationale?.trim() && category.history.length, 'Category needs definition and change rationale');
   assert(category.evidencePaperIds.length && category.evidencePaperIds.every(id => ids.has(id)), 'Category needs known evidence papers');
+  assert.deepEqual([...category.evidencePaperIds].sort(), catalog.papers.filter(paper => paper.library?.categoryIds.includes(category.id)).map(paper => paper.id).sort(), `Category evidence and assignments differ: ${category.id}`);
 }
 const libraryPapers = catalog.papers.filter(paper => paper.collections.includes('hyperspectral'));
 for (const paper of libraryPapers) {
@@ -132,11 +133,53 @@ for (const paper of libraryPapers) {
   for (const key of ['researchQuestion', 'datasets', 'experimentSetting', 'conclusions', 'limitations', 'methodFamilyId']) assert(notes[key]?.trim(), `Missing library note ${key}: ${paper.id}`);
   if (notes.verificationStatus !== 'pending') assert(notes.evidence.length, `Verified note lacks evidence: ${paper.id}`);
   for (const evidence of notes.evidence) assert(new URL(evidence.url).protocol === 'https:' && evidence.supports.length && /^\d{4}-\d{2}-\d{2}$/.test(evidence.checkedAt), `Invalid evidence: ${paper.id}`);
+  if (notes.classificationReview) {
+    const review = notes.classificationReview;
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(review.reviewedAt) && review.rationale.trim(), `Missing classification rationale: ${paper.id}`);
+    assert(['catalog_evidence', 'catalog_and_primary_source'].includes(review.basis), `Unknown classification evidence basis: ${paper.id}`);
+    assert(notes.categoryIds.some(id => categories.find(category => category.id === id)?.dimension === 'task'), `Reviewed paper lacks a research task: ${paper.id}`);
+    assert.notEqual(notes.relation, 'pending', `Reviewed paper lacks an optical relationship: ${paper.id}`);
+    assert.deepEqual(review.evidenceFields, ['title', 'summary', 'input', 'output', 'mechanism', 'readingNote'], `Incomplete classification evidence: ${paper.id}`);
+    assert.equal(review.evidenceDigest, createHash('sha256').update(JSON.stringify(review.evidenceFields.map(field => paper[field]))).digest('hex'), `Classification needs review after evidence changed: ${paper.id}`);
+    const sourceUrls = [paper.paper, ...notes.evidence.map(evidence => evidence.url)];
+    assert(review.sourceUrls.length && review.sourceUrls.every(url => sourceUrls.includes(url)), `Untraceable classification source: ${paper.id}`);
+  }
   for (const version of notes.versions) {
     assert(new URL(version.url).protocol === 'https:' && Number.isInteger(version.year) && version.relation, `Invalid version: ${paper.id}`);
     if (version.arxivId) assert(version.metadataStatus || (version.arxivVersion && version.firstSubmittedAt && version.updatedAt), `Missing arXiv version audit state: ${paper.id}`);
   }
 }
+// The review has a fixed scope; future additions can still enter as pending.
+const classificationAudit = JSON.parse(readFileSync(new URL('../research/hyperspectral/classification-audit.json', import.meta.url)));
+assert.equal(new Set(classificationAudit.reviewedPaperIds).size, classificationAudit.reviewedPaperIds.length, 'Duplicate classification audit entry');
+for (const id of classificationAudit.reviewedPaperIds) {
+  const paper = libraryPapers.find(paper => paper.id === id);
+  assert(paper?.library.classificationReview && paper.library.classificationStatus !== 'pending', `Reviewed entry missing its classification: ${id}`);
+}
+for (const check of classificationAudit.sourceChecks) {
+  const paper = libraryPapers.find(paper => paper.id === check.paperId);
+  assert(paper.library.evidence.some(evidence => evidence.url === check.url && evidence.level === check.level && check.supports.every(support => evidence.supports.includes(support))), `Classification source check missing: ${check.paperId}`);
+}
+// Exercise distinctions that motivated this review, not just label existence.
+const classificationCases = [
+  ['hmat', ['hsi-lidar-classification', 'transformer'], ['surface-reconstruction', 'pointcloud-classification']],
+  ['spectralmoe-dgss', ['semantic-segmentation', 'domain-adaptation'], ['hsi-lidar-classification']],
+  ['s4dr-net', ['representation-learning', 'pointcloud-classification'], ['surface-reconstruction']],
+  ['optimized-cnn-mslidar', ['land-cover-classification'], ['pointcloud-classification']],
+  ['mst-cassi', ['spectral-reconstruction', 'transformer'], ['volumetric-imaging', 'computational-imaging']],
+  ['hspa-restoration-cvpr', ['volumetric-imaging', 'spectral-data-restoration'], []],
+  ['fiducial-hsi-mapping', ['spectral-pointcloud-generation', 'biomedical-imaging'], ['volumetric-imaging']],
+  ['understory-hsl', ['soil-property-estimation', 'spectral-radiative-transfer'], ['vegetation-biophysical-estimation']],
+  ['leaf-incidence-hsl', ['radiometric-calibration'], ['vegetation-biophysical-estimation']],
+  ['satmae-2022', ['representation-learning', 'datasets-benchmarks'], ['spectral-reconstruction']],
+  ['dimensional-dilemma', ['spectral-pointcloud-generation', 'pointcloud-classification'], ['datasets-benchmarks']],
+];
+for (const [id, included, excluded] of classificationCases) {
+  const labels = libraryPapers.find(paper => paper.id === id).library.categoryIds;
+  assert(included.every(label => labels.includes(label)) && excluded.every(label => !labels.includes(label)), `Classification boundary regression: ${id}`);
+}
+assert.equal(libraryPapers.find(paper => paper.id === 'spectralnerf').library.relation, 'multispectral');
+console.log(`Classification review valid: ${classificationAudit.reviewedPaperIds.length} papers with task assignments and traceable evidence.`);
 // Detect cross-entry versions before their counts can be mistaken for separate methods.
 const normalizeTitle = value => value.normalize('NFKD').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
 function assertDistinctMethods(papers) {
@@ -173,6 +216,15 @@ console.log('Identity audit valid: normalized titles, DOIs, arXiv IDs and explic
 
 // Test union semantics, counts independent of category selection, URL roundtrip, and SVG coverage.
 const blank = { query: '', yearFrom: '', yearTo: '', venues: [], categoryIds: [], pending: false, reading: '' };
+const sortingFixture = [{ id: 'first' }, { id: 'second' }, { id: 'third' }];
+assert.deepEqual(sortByPaperCount(sortingFixture, id => id === 'first' ? 1 : 3).map(item => item.id), ['second', 'third', 'first'], 'Sort by descending count with stable ties');
+assert.deepEqual(sortingFixture.map(item => item.id), ['first', 'second', 'third'], 'Sorting must not mutate catalog order');
+for (const scope of [blank, { ...blank, query: 'LiDAR' }, { ...blank, yearFrom: '2022', venues: ['CVPR'] }]) {
+  const base = filterLibrary(libraryPapers, scope, categories, true);
+  const count = id => base.filter(paper => paper.library.categoryIds.includes(id)).length;
+  const sorted = sortByPaperCount(categories.filter(category => category.dimension === 'task'), count);
+  assert(sorted.every((category, index) => index === 0 || count(sorted[index - 1].id) >= count(category.id)), 'Tasks must follow current filtered counts');
+}
 const present = libraryPresentation(categories);
 assert.equal(filterLibrary(libraryPapers, blank, categories).length, libraryPapers.length);
 const layout = timelineLayout(libraryPapers, present);
