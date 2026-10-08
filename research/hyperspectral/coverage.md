@@ -111,6 +111,7 @@
 | WHISPERS | 2014 | VIR Vesta、hydrous minerals、nonlinear vegetated unmixing；第55页三条全部摘要入库；累计45–55页34条30入2排2待，另CRNN。正式目录174条尚未逐篇审完。 | 3 / 3 / 3 | 一页三条摘要闭环；原稿/版本待核 | 三篇原稿/原图、矿物真值/观测编号及代码数据未知。；同年JSTARS与会议版及Mars2015/2016稿关系待核；不混用结果。；作者PDF超时，GitHub猜测同路径404非PDF，CiteSeer镜像失败；其余来源继续推进。 |
 | WHISPERS | 2014 | rare endmember NMF、joint sparsity、robust MUSIC、number of subspaces；第56页四条全部入库；累计45–56页38条34入2排2待，另CRNN。正式目录174条尚未逐篇审完。 | 4 / 4 / 4 | 四条闭环，1作者稿全文/3摘要；年度仍待 | 其余三篇原稿/原图及代码数据未知；2015/2016相关期刊扩展声明待查。；DLR全文仅真实定性实验；论文m/n符号倒置与Fig.2图注不一致已保留，不虚构真值/误差图。；正式年度未全部筛选；节目单与论文集作者/版本差异需逐篇核。 |
 | WHISPERS | 2014 | crop vitality APEX、rice red-edge biomass、tree species LiDAR；第57页三条全部入库；累计45–57页41条37入2排2待，另CRNN。174条正式目录年度未审完。 | 3 / 3 / 3 | 三条闭环，2作者稿全文/1摘要；年度仍待 | 水稻本版原稿/原图、数据划分和误差数值待查；KUPS直接open失败但书目缓存可核。；APEX产品定义/指标互相关限制解释，树种随机像元验证不代表独立树冠推广。；专用代码数据和相关期刊扩展声明、正式年度其余条目待核。 |
+| WHISPERS | 2014 | tea plant varieties、robust vegetation indices multi-correlation、geometric matched filter；物理第58页三条；累计45–58页44条40入2排2待，另CRNN。174条正式目录年度未审完。 | 3 / 3 / 3 | 三条原始摘要闭环；MCMS官方摘要错配已纠正，原PDF/图待访问 | 三条会议原稿和原图待取得；MCMS Fig.1作者上传发现但RG403，KUPS无全文。；MCMS留出单位、HyperCor当前代码许可；茶树2014/2020及GMF2014/2015正式扩展和实验差异待核。；年度其余条目及其他年份尚未系统完成。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -144,7 +145,7 @@
 | Remote Sensing of Environment | journal | 最早可用目录至 2026 | 2001年度Crossref登记集合六成像词已扫，4收录/2待核验；出版社全量、其他年/词未完成 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | IGARSS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| WHISPERS | specialist_conference | 最早可用目录至 2026 | 2014正式目录174条，最新题名关联38、仅已追踪决定4、未审132；原始目录与动态进度分开保存。官方PDF45–57页逐篇追踪及CRNN，年度筛选未完成；其他年份待系统检索。 |
+| WHISPERS | specialist_conference | 最早可用目录至 2026 | 2014正式目录174条，最新题名关联41、仅已追踪决定4、未审129；原始目录与动态进度分开保存。官方PDF45–58页44条40入2排2待及另CRNN；年度筛选未完成，其他年份待系统检索。 |
 | Optica | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Nature Photonics | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Light: Science & Applications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -342,6 +343,8 @@
   阅读边界：四篇入库：MLJSR四页作者稿全文，其余三篇原摘要；无强行方法图或跨版本实验。
 - 2026-10-08 / whispers-2014-vegetation-page57-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：APEX与树种作者四页全文；水稻完整原摘要；只入总库，三维保持214篇。
+- 2026-10-08 / whispers-2014-vegetation-unmixing-page58-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：三条仅原始摘要；GMF期刊增加方法族关联，不提升阅读状态；三维214篇。
 
 ## 未解决缺口
 
