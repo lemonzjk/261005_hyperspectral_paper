@@ -1,0 +1,232 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "ssf-spectral-angle-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077514",
+      "decision": "included",
+      "programPdfPage": 81,
+      "readingBoundary": "官方物理81页完整摘要、两作者和正式DOI匹配；IEEE202空正文，未取得原PDF。",
+      "figureBoundary": "IEEE202空响应；原PDF未取得，方法图号/页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "game-band-ensemble-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077530",
+      "decision": "included",
+      "programPdfPage": 81,
+      "readingBoundary": "官方81页完整摘要与单作者DOI匹配；CiteSeer同题单作者原文第一页缓存补概念，但PDF正常访问404。IEEE202，不标阅读全文。",
+      "figureBoundary": "托管PDF404、IEEE202；只第一页文字，原方法图未取得，不采用其他博弈论文图。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "npfs-gmm-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077536",
+      "decision": "included",
+      "programPdfPage": 81,
+      "readingBoundary": "官方81页完整摘要与三作者首字母/DOI匹配；作者HAL CV明确Mathieu Fauvel、Anthony Zullo、Frédéric Ferraty全名及hal-02797359v1会议记录。原PDF未取得。",
+      "figureBoundary": "HAL原稿404、IEEE202；会议图号及页码未知，不移用2015期刊图。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "sdsp-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077558",
+      "decision": "included",
+      "programPdfPage": 81,
+      "readingBoundary": "官方81页末题名/五作者；摘要跨页用取得的作者4页原PDF核完整摘要，§2–4选读并核原Fig3在物理页2。会议五作者，相关期刊三作者2015在线/2016卷期分开；不混用图与实验。",
+      "figureBoundary": "已取得原会议PDF，Fig3物理页2为光谱分区方法示例；六图未发现独立完整流程，不能借2016期刊Fig1当会议图。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "spectral-angle-neighborhood-filtering",
+      "name": "谱角邻域滤波",
+      "dimension": "method",
+      "definition": "利用中心像元与局部邻居的光谱角距离进行空间光谱滤波；具体权重、窗口及后续分类器逐篇核验，不自动等同双边或引导滤波。",
+      "rationale": "SSF官方摘要明确谱角邻域距离，但未给足以映射已有特定滤波器的公式。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "ssf-spectral-angle-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "SSF官方摘要明确谱角邻域距离，但未给足以映射已有特定滤波器的公式。"
+        }
+      ]
+    },
+    {
+      "id": "game-theoretic-spectral-ensembles",
+      "name": "博弈式波段分组与分类集成",
+      "dimension": "method",
+      "definition": "将波段分组或分类器决策建模为竞争/合作博弈，以均衡或联盟规则产生分组/融合结果；注明玩家、效用与理性假设，不泛指所有集成或波段选择。",
+      "rationale": "Bruce原摘要同时描述互熵冲突过滤/Nash均衡与加权多数联盟博弈。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "game-band-ensemble-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Bruce原摘要同时描述互熵冲突过滤/Nash均衡与加权多数联盟博弈。"
+        }
+      ]
+    },
+    {
+      "id": "gaussian-mixture-feature-selection",
+      "name": "高斯混合判别特征选择",
+      "dimension": "method",
+      "definition": "以高斯混合分类模型及正确分类率估计迭代选择光谱特征，利用模型更新/边缘化加速；不等同高斯过程、核高斯或无监督聚类。",
+      "rationale": "NPFS原摘要明确GMM判别正确率及边缘化子模型。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "npfs-gmm-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "NPFS原摘要明确GMM判别正确率及边缘化子模型。"
+        }
+      ]
+    },
+    {
+      "id": "spectrometer-driven-band-partition",
+      "name": "光谱仪驱动波段分区",
+      "dimension": "method",
+      "definition": "依据成像系统的子光谱仪物理范围将波段重分配为多个分类子序列，并融合各序列分类；区别随机子空间、丢弃波段的选择及新硬件采集。",
+      "rationale": "五作者会议原稿明确物理范围分区、MLRsub概率平均和MRF，随机标签不能替代仪器依据。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "sdsp-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "五作者会议原稿明确物理范围分区、MLRsub概率平均和MRF，随机标签不能替代仪器依据。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-game-band-ieee-access.json",
+      "sha256": "4e4154993c9cbae8cb04fa796bdde808f8fdd602b0ad6b2503eec19cca1c0fc5"
+    },
+    {
+      "path": "whispers2014-game-band-original-access.json",
+      "sha256": "23434ff5d50d086b13ab090d64270dd7c53e2a3021d1ad30c5889767f9b2758f"
+    },
+    {
+      "path": "whispers2014-game-band-query-access.json",
+      "sha256": "4a2bea6801ab658df670712705ad3fedae6e2d16a8255ec9258000779ad064df"
+    },
+    {
+      "path": "whispers2014-npfs-hal-access.json",
+      "sha256": "b9f3756ede706981d03b71f5cc1e2898ffa1e7e5842dadee028a9f16a8f8ad80"
+    },
+    {
+      "path": "whispers2014-npfs-ieee-access.json",
+      "sha256": "7593c10d292e718a40e9754be1e6640557ac7b5132e04a9fe066d85d1a77176a"
+    },
+    {
+      "path": "whispers2014-npfs-query-access.json",
+      "sha256": "68666fc7611915c6dcdacb7b720053f69df93177925cbdafcd81b0a0f277435d"
+    },
+    {
+      "path": "whispers2014-page81-code-arxiv-cache.json",
+      "sha256": "f4a69f0cf2d40e58aff304a69b61a58da6a54090ee15c70085747b4f5763818d"
+    },
+    {
+      "path": "whispers2014-page81-discovery-cache.json",
+      "sha256": "e5095caf65110842d765602b3d72b9eed034904b1607ed4a76d006a76e4ea6de"
+    },
+    {
+      "path": "whispers2014-page81-npfs-hal-tool-cache.json",
+      "sha256": "d22787bf6a716eab21d6b5537d658633bffa73d7849a79734f4d8f5b507adc68"
+    },
+    {
+      "path": "whispers2014-page81-original-reading-cache.json",
+      "sha256": "efbde198e1f158e577ac5b73a0d08f6d68b9e9f5aa6c2773ae4f1c37125e4f4b"
+    },
+    {
+      "path": "whispers2014-page81-program-cache.json",
+      "sha256": "efa2d8a500d98fdfba4650813fb2fcd862745fb646ff97a5e801185ae52da49a"
+    },
+    {
+      "path": "whispers2014-page81-resources-search-cache.json",
+      "sha256": "7fd06c319402da3b9be47d824acc8c8af882133a24f7f47e005e466bfc652a57"
+    },
+    {
+      "path": "whispers2014-sdsp-author-original.pdf",
+      "sha256": "43b32c8a64f6f401c2de663dc6d800862fd3d5790ca4c826565f24d42b22136e"
+    },
+    {
+      "path": "whispers2014-sdsp-ieee-access.json",
+      "sha256": "bb3c89a3451f7cbc15499c05d675350c01463bb949f61accb429ce81e9572213"
+    },
+    {
+      "path": "whispers2014-sdsp-journal-doi-access.json",
+      "sha256": "37829c390cc7e86cf5ae363b9c1f33ccaa563eb263c8f35b089b5fb0f300b13e"
+    },
+    {
+      "path": "whispers2014-sdsp-original-access.json",
+      "sha256": "292e7e93158f763bd140c2e33e6002580503473e8fbb704340920e4b37c80aa8"
+    },
+    {
+      "path": "whispers2014-sdsp-original-reading.json",
+      "sha256": "513fe5319cf85c08355e8b929b10e0e953261d64a8c85809562adbf46dda10ad"
+    },
+    {
+      "path": "whispers2014-sdsp-query-access.json",
+      "sha256": "59b3892c683e07631ef4f383171feab761804b2834d02cb30ae2531ba188ea2c"
+    },
+    {
+      "path": "whispers2014-ssf-ieee-access.json",
+      "sha256": "e481fab1192bfcecdd244282f37234e617b6e5826c29944550f579e9c5e2ac23"
+    },
+    {
+      "path": "whispers2014-ssf-query-access.json",
+      "sha256": "6bbc6246952462f02c8e39326e71af4c77550d1536d6e3935a4a3d35e93ccd06"
+    },
+    {
+      "path": "whispers2014-page81-toc-replay.json",
+      "sha256": "9df517a8240e35c00e7475cbc7967858a04e2a95838e970c15ad1a4d045c5fd3"
+    }
+  ],
+  "qualityIssues": [
+    "SD-SP查询首项期刊，不误用会议作者/年份。会议五作者仅AVIRIS；期刊三作者2015在线2016卷期且含DAIS。",
+    "原220与5×42差额和重采样映射未解释，待核。",
+    "SD-SP Fig3是光谱子序列方法示例，无独立完整流程；保留原图出处物理页2，不套期刊图。",
+    "博弈原摘要三种与枚举两项不一致；未读其全文，不造第三项。",
+    "NPFS姓名由作者HAL CV核全名；404不当PDF，2015期刊实验不移用。",
+    "77仍未核，116题名页窗有缺口，目录58条未审。"
+  ],
+  "figureRecord": {
+    "paperId": "sdsp-whispers-2014",
+    "filename": "framework-figure3-author.png",
+    "sourceUrl": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2014.WHISPERS.Partitioning.pdf",
+    "figureLabel": "Fig. 3 · 光谱分区方法示例（作者会议稿）",
+    "page": 2,
+    "caption": "同一Indian Pines像元的完整光谱及五个重采样子序列。方法示例，不是完整分类框架图。",
+    "verificationNote": "取得五作者四页会议原PDF，题名/作者与官方目录和DOI匹配；目视物理页2及裁切后图件，保留(a)(b)、图例、坐标和Fig3原图题。未发现独立完整流程，不移用三作者2016期刊Fig1；原稿220与5×42的波段差额仍待核。",
+    "cropDescription": "pdftoppm 200dpi渲染物理页2为1700×2200，裁切原坐标(871,1396,1574,1812)，无重绘。"
+  }
+}
