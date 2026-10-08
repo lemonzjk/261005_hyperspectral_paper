@@ -1,0 +1,198 @@
+{
+  "checkedAt": "2026-10-08",
+  "endpoint": "https://api.archives-ouvertes.fr/search/",
+  "initialError": "原请求doiId未指定字段后缀，返回200 error而非有效零结果；不作为无收录证据。",
+  "correction": "使用doiId_s:\"DOI\"；doiId_s返回numFound0，仅针对该DOI的HAL索引，不能推定原文不存在；改按题名检索。",
+  "queries": [
+    "title_t:(Nonlinear AND PCA AND thermal)",
+    "title_t:(classification AND morphological AND hyperspectral) AND producedDateY_i:2015",
+    "title_t:(principal AND component AND reconstruction AND anomaly)",
+    "title_t:\"Exemplar Component Analysis\""
+  ],
+  "readingBoundary": "零结果和题名目录；TGRS2015随机子空间EMAP为不同题名，发现候选而非GRSL3D-MP原文。",
+  "attempts": [
+    {
+      "file": "grsl2015-3dmp-hal-corrected.json",
+      "response": {
+        "response": {
+          "numFound": 0,
+          "start": 0,
+          "maxScore": 0.0,
+          "numFoundExact": true,
+          "docs": []
+        }
+      },
+      "attemptType": "corrected_doi_field"
+    },
+    {
+      "file": "grsl2015-3dmp-hal-retry.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    },
+    {
+      "file": "grsl2015-3dmp-hal-title.json",
+      "response": {
+        "response": {
+          "numFound": 1,
+          "start": 0,
+          "maxScore": 14.858994,
+          "numFoundExact": true,
+          "docs": [
+            {
+              "title_s": [
+                "Random Subspace Ensembles for Hyperspectral Image Classification With Extended Morphological Attribute Profiles"
+              ],
+              "abstract_s": [
+                "Classification is one of the most important techniques to the analysis of hyperspectral remote sensing images. Nonetheless, there are many challenging problems arising in this task. Two common issues are the curse of dimensionality and the spatial information modeling. In this paper, we present a new general framework to train series of effective classifiers with spatial information for classifying hyperspectral data. The proposed framework is based on the two key observations: 1) the curse of dimensionality and the high feature-to-instance ratio can be alleviated by using random subspace (RS) ensembles; and 2) the spatial-contextual information is modeled by the extended multiattribute profiles (EMAPs). Two fast learning algorithms, i.e., decision tree (DT) and extreme learning machine (ELM), are selected as the base classifiers. Six RS ensemble methods, namely, RS with DT, random forest (RF), rotation forest, rotation RF (RoRF), RS with ELM (RSELM), and rotation subspace with ELM (RoELM), are constructed by the multiple base learners. Experimental results on both simulated and real hyperspectral data verify the effectiveness of the RS ensemble methods for the classification of both spectral and spatial information (EMAPs). On the University of Pavia Reflective Optics Spectrographic Imaging System image, our proposed approaches, i.e., both RSELM and RoELM with EMAPs, achieve the state-of-the-art performances, which demonstrates the advantage of the proposed methods. The key parameters in RS ensembles and the computational complexity are also investigated in this paper."
+              ],
+              "authFullName_s": [
+                "Junshi Xia",
+                "Mauro Dalla Mura",
+                "Jocelyn Chanussot",
+                "Peijun Du",
+                "Xiyan He"
+              ],
+              "halId_s": "hal-01246605",
+              "uri_s": "https://univ-grenoble-alpes.hal.science/hal-01246605v1",
+              "doiId_s": "10.1109/TGRS.2015.2409195",
+              "submittedDate_tdate": "2015-12-18T17:36:20Z"
+            }
+          ]
+        }
+      },
+      "attemptType": "title_search"
+    },
+    {
+      "file": "grsl2015-3dmp-hal.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    },
+    {
+      "file": "grsl2015-eca-hal-title.json",
+      "response": {
+        "response": {
+          "numFound": 0,
+          "start": 0,
+          "maxScore": 0.0,
+          "numFoundExact": true,
+          "docs": []
+        }
+      },
+      "attemptType": "title_search"
+    },
+    {
+      "file": "grsl2015-kcrt-hal-corrected.json",
+      "response": {
+        "response": {
+          "numFound": 0,
+          "start": 0,
+          "maxScore": 0.0,
+          "numFoundExact": true,
+          "docs": []
+        }
+      },
+      "attemptType": "corrected_doi_field"
+    },
+    {
+      "file": "grsl2015-kcrt-hal.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    },
+    {
+      "file": "grsl2015-nlpca-hal-basic.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    },
+    {
+      "file": "grsl2015-nlpca-hal-corrected.json",
+      "response": {
+        "response": {
+          "numFound": 0,
+          "start": 0,
+          "maxScore": 0.0,
+          "numFoundExact": true,
+          "docs": []
+        }
+      },
+      "attemptType": "corrected_doi_field"
+    },
+    {
+      "file": "grsl2015-nlpca-hal-full.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    },
+    {
+      "file": "grsl2015-nlpca-hal-retry.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    },
+    {
+      "file": "grsl2015-nlpca-hal-title.json",
+      "response": {
+        "response": {
+          "numFound": 0,
+          "start": 0,
+          "maxScore": 0.0,
+          "numFoundExact": true,
+          "docs": []
+        }
+      },
+      "attemptType": "title_search"
+    },
+    {
+      "file": "grsl2015-nlpca-hal.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    },
+    {
+      "file": "grsl2015-pcre-hal-title.json",
+      "response": {
+        "response": {
+          "numFound": 0,
+          "start": 0,
+          "maxScore": 0.0,
+          "numFoundExact": true,
+          "docs": []
+        }
+      },
+      "attemptType": "title_search"
+    },
+    {
+      "file": "grsl2015-wjcr-hal.json",
+      "response": {
+        "error": {
+          "msg": "Error. See help : /docs"
+        }
+      },
+      "attemptType": "invalid_doi_field"
+    }
+  ]
+}

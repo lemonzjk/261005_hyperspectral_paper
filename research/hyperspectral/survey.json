@@ -3799,14 +3799,38 @@
       "pagination": "单页rows1000实际572；66词命中全部留存，当前已审20条；余46项pending，非年度系统检索完成。",
       "titleCount": 572,
       "candidateCount": 66,
-      "reviewedCount": 21,
+      "reviewedCount": 23,
       "status": "partial",
       "statusLabel": "指定题名组扫描完成，候选核验进行中",
       "sourceSnapshot": "sources/grsl-2015-optical-title-matches.json",
       "gaps": [
         "登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。",
         "出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。",
-        "本组剩余45候选；出版社年度目录、其他关键词和摘要范围尚未完成。"
+        "本组剩余43候选；出版社年度目录、其他关键词和摘要范围尚未完成。"
+      ]
+    },
+    {
+      "id": "tgrs-2015-random-subspace-hal-title-trace",
+      "venue": "TGRS",
+      "year": 2015,
+      "keywordGroup": "morphological-ensemble-title-trace",
+      "date": "2026-10-08",
+      "method": "为GRSL3D-MP检索HAL题名/年份时发现不同的TGRS方法；按机构完整原摘要与DOI逐篇核验",
+      "keywords": [
+        "classification morphological hyperspectral",
+        "random subspace ensembles"
+      ],
+      "url": "https://api.archives-ouvertes.fr/search/",
+      "pagination": "HAL题名/2015过滤返回1项，随后按halId检索；单篇追踪，不表示TGRS年度目录/摘要已扫描",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "单篇机构/题名追踪闭环，非年度系统检索",
+      "sourceSnapshot": "sources/tgrs2015-rs-emap-hal.json",
+      "gaps": [
+        "TGRS2015官方目录及全量摘要/其他关键词矩阵尚未完成",
+        "机构记录无fileMain，原PDF/原图及代码数据待取得"
       ]
     }
   ],
@@ -10979,6 +11003,12 @@
           "research/hyperspectral/sources/grsl2015-early-primary-access.json"
         ],
         "note": "出版社返回JavaScript验证/页脚/缓存失败或HTTP418；二手发现未提升阅读核验状态。"
+      },
+      "discoveryReview": {
+        "checkedAt": "2026-10-08",
+        "status": "needs_primary_abstract",
+        "evidencePath": "research/hyperspectral/sources/grsl2015-representation-hal-attempts.json",
+        "note": "HAL正确DOI查询零结果；作者/原文路线未取得完整原摘要，继续待核验。"
       }
     },
     {
@@ -11313,8 +11343,8 @@
       "discoveryReview": {
         "checkedAt": "2026-10-08",
         "status": "needs_primary_abstract",
-        "evidencePath": "research/hyperspectral/sources/grsl2015-next-discovery.json",
-        "note": "题名/作者与二手摘要或引用链有发现；尚未取得该论文原始摘要，不提升阅读状态，后续按作者/机构路线继续。"
+        "evidencePath": "research/hyperspectral/sources/grsl2015-representation-hal-attempts.json",
+        "note": "HAL题名查询零结果；二手摘要只作发现，原摘要/图仍待核验。"
       }
     },
     {
@@ -11353,10 +11383,12 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现"
+      "decision": "included",
+      "reason": "原始来源明确以光学高光谱影像处理/分类/检测为对象；仅总库，3-D谱立方体处理不自动进入三维专题。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-representation-primary-decisions.json",
+      "readingBoundary": "5页原期刊PDF的完整摘要、§II B、Fig.1及§III局部已读；未阅读全文或复现。",
+      "paperId": "wjcr-hyperspectral-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "Fast and Reliable Noise Estimation for Hyperspectral Subspace Identification",
@@ -11403,7 +11435,13 @@
       "decision": "pending",
       "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
       "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现"
+      "readingBoundary": "仅题名发现",
+      "discoveryReview": {
+        "checkedAt": "2026-10-08",
+        "status": "needs_primary_abstract",
+        "evidencePath": "research/hyperspectral/sources/grsl2015-representation-hal-attempts.json",
+        "note": "HAL正确DOI及题名检索零结果，仅该索引查询；ResearchGate只书目，未取得原摘要。"
+      }
     },
     {
       "title": "Improving Backscatter Intensity Calibration for Multispectral LiDAR",
@@ -11549,16 +11587,18 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现",
+      "decision": "included",
+      "reason": "原始来源明确以光学高光谱影像处理/分类/检测为对象；仅总库，3-D谱立方体处理不自动进入三维专题。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-representation-primary-decisions.json",
+      "readingBoundary": "AFIT机构页只提供摘要摘录；已转核Trevor J. Bihl本人上传期刊原稿的完整摘要、§III及§IV开头局部。未逐页阅读全文、未复现；原PDF下载链接未取得。",
       "discoveryReview": {
         "checkedAt": "2026-10-08",
         "status": "needs_primary_abstract",
         "evidencePath": "research/hyperspectral/sources/grsl2015-next-discovery.json",
         "note": "题名/作者与二手摘要或引用链有发现；尚未取得该论文原始摘要，不提升阅读状态，后续按作者/机构路线继续。"
-      }
+      },
+      "paperId": "giprebad-hyperspectral-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "A New Approach to Segmentation of Multispectral Remote Sensing Images Based on MRF",
@@ -11904,7 +11944,13 @@
       "decision": "pending",
       "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
       "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现"
+      "readingBoundary": "仅题名发现",
+      "discoveryReview": {
+        "checkedAt": "2026-10-08",
+        "status": "needs_primary_abstract",
+        "evidencePath": "research/hyperspectral/sources/grsl2015-representation-hal-attempts.json",
+        "note": "HAL题名/2015查询返回不同TGRS论文，已另收录；非本GRSL原摘要。"
+      }
     },
     {
       "title": "Prediction of Water Depth From Multispectral Satellite Imagery—The Regression Kriging Alternative",
@@ -11940,6 +11986,21 @@
         ],
         "note": "作者/机构路线逐篇继续：自编码器作者页只有书目，HAL精确检索0命中；ELML只有二手发现；邻域图作者明确关联2014 workshop，但原稿和前序PDF失效/受限，尚不提升阅读状态。"
       }
+    },
+    {
+      "title": "Random Subspace Ensembles for Hyperspectral Image Classification With Extended Morphological Attribute Profiles",
+      "doi": "10.1109/tgrs.2015.2409195",
+      "url": "https://univ-grenoble-alpes.hal.science/hal-01246605v1",
+      "venue": "TGRS",
+      "year": 2015,
+      "searchId": "tgrs-2015-random-subspace-hal-title-trace",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "原始来源明确以光学高光谱影像处理/分类/检测为对象；仅总库，3-D谱立方体处理不自动进入三维专题。",
+      "verifiedAt": "2026-10-08",
+      "paperId": "rs-emap-ensembles-2015",
+      "readingBoundary": "HAL机构记录完整原摘要已读；记录为notice无fileMain，未读原PDF、未复现。按题名追踪发现，与GRSL3-D形态学候选不是同篇。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-representation-primary-decisions.json"
     }
   ],
   "batches": [
@@ -13293,6 +13354,26 @@
       "gaps": [
         "光谱组45候选、压缩组4候选（跨组可重叠），其余年度与摘要尚未完成。",
         "多光谱LiDAR原PDF/原图、代码/数据、训练划分及户外泛化待核验；移除日期/原因待原通知。"
+      ]
+    },
+    {
+      "id": "grsl-tgrs-2015-collaborative-residual-ensemble-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "grsl-2015-crossref-optical-titles",
+        "tgrs-2015-random-subspace-hal-title-trace"
+      ],
+      "new": 3,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 43,
+      "categoriesAdded": 3,
+      "figuresAdded": 1,
+      "readingBoundary": "WJCR原期刊PDF完整摘要/方法实验局部及原Fig.1；GIPREBAD作者本人上传原稿完整摘要/局部；RS-EMAP仅机构完整原摘要。均非全文/复现。JCR前序误记书目按正式DOI核对，2014硕士论文只关联且不完整下载不作原图。",
+      "gaps": [
+        "GRSL光谱组剩43候选，压缩组剩4；其他任务词、全量摘要和出版社目录尚未完成。",
+        "WJCR训练/测试参数公平性、GIPREBAD原表/训练图、RS-EMAP原PDF与原图、专用代码/数据及版本差异待核验。"
       ]
     }
   ],

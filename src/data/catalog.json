@@ -38141,6 +38141,303 @@
         "sourceUrl": "https://irsip.whu.edu.cn/resultsv2/paper/p50.pdf",
         "checkedAt": "2026-10-08"
       }
+    },
+    {
+      "id": "wjcr-hyperspectral-2015",
+      "shortTitle": "WJCR",
+      "title": "Hyperspectral Image Classification Using Weighted Joint Collaborative Representation",
+      "authors": "Mingming Xiong, Qiong Ran, Wei Li, Jinyi Zou, Qian Du",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2015.2388703",
+      "representation": "以归一化高斯光谱相似权重聚合邻域，代替JCR等权平均，再作按类别的Tikhonov正则协同表示及最小残差判别。使用l2协同表示，不标为l1稀疏编码。",
+      "tags": [
+        "land-cover-classification",
+        "collaborative-representation"
+      ],
+      "summary": "以归一化高斯光谱相似权重聚合邻域，代替JCR等权平均，再作按类别的Tikhonov正则协同表示及最小残差判别。使用l2协同表示，不标为l1稀疏编码。",
+      "input": "高光谱影像、像素邻域及有类别标签的训练样本。",
+      "output": "二维地物类别图及按类别重建残差。",
+      "mechanism": "以归一化高斯光谱相似权重聚合邻域，代替JCR等权平均，再作按类别的Tikhonov正则协同表示及最小残差判别。使用l2协同表示，不标为l1稀疏编码。",
+      "readingNote": "5页原期刊PDF的完整摘要、§II B、Fig.1及§III局部已读；未阅读全文或复现。",
+      "paper": "https://doi.org/10.1109/lgrs.2015.2388703",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_sections",
+      "citation": "@article{wjcr_hyperspectral_2015,\n  title = {Hyperspectral Image Classification Using Weighted Joint Collaborative Representation},\n  author = {Mingming Xiong and Qiong Ran and Wei Li and Jinyi Zou and Qian Du},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {6},\n  pages = {1209--1213},\n  doi = {10.1109/lgrs.2015.2388703}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "collaborative-representation"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始来源明确以光学高光谱影像处理/分类/检测为对象；仅总库，3-D谱立方体处理不自动进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何减弱异质区域内不相似邻域像素对协同表示分类的影响？",
+        "datasets": "原期刊PDF§III A：ROSIS University of Pavia，610×340、去除波段后103通道；HyMap Purdue子区377×512、126波段、6类。具体公开数据版本/获取链接待核验。",
+        "experimentSetting": "完整摘要、§II B、Fig.1及§III局部：Pavia/Purdue选择21×21/13×13窗口，λ分别10^-3/10^-2；表I/II分别30/10训练样本每类，20次随机抽样平均。参数选择是否独立于测试集、分类统计及全文公平性未完整核验，未复现。",
+        "conclusions": "作者摘要及局部比较报告两场景优于原JCR及所比较分类器；优势限于原实验与训练样本设置，不声明跨场景普遍最优。",
+        "limitations": "局部窗口与正则参数依数据选择；高斯权重不等于所有异质区域都能分离。运行时间比较涉及MATLAB与SVM MEX实现，不能直接解释为等实现硬件优势；专用代码、数据划分、许可及复现待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://citeseerx.ist.psu.edu/document?doi=e06c033a40af1ae749076c876ca626c8d3e5e559&repid=rep1&type=pdf",
+            "checkedAt": "2026-10-08",
+            "level": "完整原摘要及明确注明的局部阅读，非全文/复现",
+            "supports": [
+              "以归一化高斯光谱相似权重聚合邻域，代替JCR等权平均，再作按类别的Tikhonov正则协同表示及最小残差判别。使用l2协同表示，不标为l1稀疏编码。",
+              "5页原期刊PDF的完整摘要、§II B、Fig.1及§III局部已读；未阅读全文或复现。",
+              "原期刊PDF§III A：ROSIS University of Pavia，610×340、去除波段后103通道；HyMap Purdue子区377×512、126波段、6类。具体公开数据版本/获取链接待核验。",
+              "完整摘要、§II B、Fig.1及§III局部：Pavia/Purdue选择21×21/13×13窗口，λ分别10^-3/10^-2；表I/II分别30/10训练样本每类，20次随机抽样平均。参数选择是否独立于测试集、分类统计及全文公平性未完整核验，未复现。",
+              "局部窗口与正则参数依数据选择；高斯权重不等于所有异质区域都能分离。运行时间比较涉及MATLAB与SVM MEX实现，不能直接解释为等实现硬件优势；专用代码、数据划分、许可及复现待核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2015.2388703",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记书目，与原期刊PDF/作者机构记录相核对",
+            "supports": [
+              "Hyperspectral Image Classification Using Weighted Joint Collaborative Representation",
+              "Mingming Xiong, Qiong Ran, Wei Li, Jinyi Zou, Qian Du",
+              "12(6):1209-1213, 2015"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "wjcr-hyperspectral-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2015.2388703",
+            "doi": "10.1109/lgrs.2015.2388703",
+            "year": 2015,
+            "relation": "期刊原排版2015年6月12(6):1209–1213；CiteSeerX为原文存档镜像，不是新预印本或独立版本。原文[14]的场所/卷页记载不一致，前序正确DOI和卷页另按出版社登记核对。"
+          },
+          {
+            "id": "jcr-2014-predecessor",
+            "type": "前序期刊方法",
+            "url": "https://doi.org/10.1109/jstars.2014.2306956",
+            "doi": "10.1109/jstars.2014.2306956",
+            "year": 2014,
+            "relation": "2015正文明确改进原JCR；前序2作者Wei Li/Qian Du、JSTARS7(6):2200–2208按出版社登记，原文[14]卷页场所误记单独留证，不混用2014与2015实验。前序正文待读。"
+          }
+        ],
+        "methodFamilyId": "jcr-weighted-family"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://citeseerx.ist.psu.edu/document?doi=e06c033a40af1ae749076c876ca626c8d3e5e559&repid=rep1&type=pdf",
+          "figureLabel": "Fig. 1",
+          "page": 2,
+          "caption": "中心像素与5×5异质邻域及空间权重示意；用于解释WJCR的相似性加权机制。",
+          "verificationNote": "目视核对原期刊1210页（PDF第2页）完整(a)/(b)及图注；图示为方法原图，非完整系统流程，原文直接裁切。",
+          "cropDescription": "原期刊PDF按长边1600像素渲染，裁切右上两面板及原图注。",
+          "path": "figures/wjcr-hyperspectral-2015/framework-original.png",
+          "width": 522,
+          "height": 320,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "0c7dbdb6aa3244b4eb92a480732d4128cd4a82f09a3d4c4a42fca20b63f8f181",
+          "attribution": "Mingming Xiong, Qiong Ran, Wei Li, Jinyi Zou, Qian Du · GRSL 2015"
+        }
+      ]
+    },
+    {
+      "id": "giprebad-hyperspectral-2015",
+      "shortTitle": "GIPREBAD",
+      "title": "Principal Component Reconstruction Error for Hyperspectral Anomaly Detection",
+      "authors": "James A. Jablonski, Trevor J. Bihl, Kenneth W. Bauer",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2015.2421813",
+      "representation": "以PCA子空间重建的Q残差作为异常分数，迭代排除已检出异常以重估背景，最后利用零频数直方图阈值检测；与局部RX或协同表示方法区分。",
+      "tags": [
+        "hyperspectral-anomaly-detection",
+        "subspace-reconstruction-residuals"
+      ],
+      "summary": "以PCA子空间重建的Q残差作为异常分数，迭代排除已检出异常以重估背景，最后利用零频数直方图阈值检测；与局部RX或协同表示方法区分。",
+      "input": "二维高光谱影像的光谱像素矩阵，无给定目标光谱。",
+      "output": "Q异常分数与由阈值选出的异常像素。",
+      "mechanism": "以PCA子空间重建的Q残差作为异常分数，迭代排除已检出异常以重估背景，最后利用零频数直方图阈值检测；与局部RX或协同表示方法区分。",
+      "readingNote": "AFIT机构页只提供摘要摘录；已转核Trevor J. Bihl本人上传期刊原稿的完整摘要、§III及§IV开头局部。未逐页阅读全文、未复现；原PDF下载链接未取得。",
+      "paper": "https://doi.org/10.1109/lgrs.2015.2421813",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_sections",
+      "citation": "@article{giprebad_hyperspectral_2015,\n  title = {Principal Component Reconstruction Error for Hyperspectral Anomaly Detection},\n  author = {James A. Jablonski and Trevor J. Bihl and Kenneth W. Bauer},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {8},\n  pages = {1725--1729},\n  doi = {10.1109/lgrs.2015.2421813}\n}\n",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-anomaly-detection",
+          "subspace-reconstruction-residuals"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始来源明确以光学高光谱影像处理/分类/检测为对象；仅总库，3-D谱立方体处理不自动进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何将PCA降维的重建残差直接用于无目标先验的高光谱异常检测？",
+        "datasets": "作者上传期刊原文§IV开头：HYDICE Forest I与Desert II Radiance，光谱采样10 nm；原表II的图像尺寸/有效波段未目视核验，不补写。",
+        "experimentSetting": "完整原摘要和§III/§IV开头局部：以七幅独立训练图枚举参数并按ROC面积选择；RX窗口25/10 PCs、LRX线长2n/10 PCs、SVDD RBF σ=905。原表格、硬件计时、训练图划分及全部敏感性未完整核验，未复现。",
+        "conclusions": "作者原摘要报告在HYDICE数据上相对RX/LRX/SVDD有竞争力；不搬用二手性能数字，不从潜在实时应用推定已部署实时系统。",
+        "limitations": "背景子空间和主成分保留准则、迭代上限及直方图分箱影响检测；原文指出窄箱可增加假阳性、混合像素可有较低Q值。代码、原表/划分与公平计时待核验；2014论文与2015期刊实验不能互换。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/277348519_Principal_Component_Reconstruction_Error_for_Hyperspectral_Anomaly_Detection",
+            "checkedAt": "2026-10-08",
+            "level": "完整原摘要及明确注明的局部阅读，非全文/复现",
+            "supports": [
+              "以PCA子空间重建的Q残差作为异常分数，迭代排除已检出异常以重估背景，最后利用零频数直方图阈值检测；与局部RX或协同表示方法区分。",
+              "AFIT机构页只提供摘要摘录；已转核Trevor J. Bihl本人上传期刊原稿的完整摘要、§III及§IV开头局部。未逐页阅读全文、未复现；原PDF下载链接未取得。",
+              "作者上传期刊原文§IV开头：HYDICE Forest I与Desert II Radiance，光谱采样10 nm；原表II的图像尺寸/有效波段未目视核验，不补写。",
+              "完整原摘要和§III/§IV开头局部：以七幅独立训练图枚举参数并按ROC面积选择；RX窗口25/10 PCs、LRX线长2n/10 PCs、SVDD RBF σ=905。原表格、硬件计时、训练图划分及全部敏感性未完整核验，未复现。",
+              "背景子空间和主成分保留准则、迭代上限及直方图分箱影响检测；原文指出窄箱可增加假阳性、混合像素可有较低Q值。代码、原表/划分与公平计时待核验；2014论文与2015期刊实验不能互换。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2015.2421813",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记书目，与原期刊PDF/作者机构记录相核对",
+            "supports": [
+              "Principal Component Reconstruction Error for Hyperspectral Anomaly Detection",
+              "James A. Jablonski, Trevor J. Bihl, Kenneth W. Bauer",
+              "12(8):1725-1729, 2015"
+            ]
+          },
+          {
+            "url": "https://scholar.afit.edu/facpub/2113/",
+            "checkedAt": "2026-10-08",
+            "level": "作者机构书目/摘要摘录，与作者上传原文交叉核对；不足以单独核验完整摘要",
+            "supports": [
+              "作者、DOI、正式卷期页码、机构仅提供Excerpt"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "giprebad-hyperspectral-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2015.2421813",
+            "doi": "10.1109/lgrs.2015.2421813",
+            "year": 2015,
+            "relation": "正式2015年8月12(8):1725–1729；机构页面2015-04-30为页面出版日期，不替换卷期月；作者上传2015-06-17非首次提交日期。原文[34]2014硕士论文关联前序，不按独立方法新增。"
+          },
+          {
+            "id": "giprebad-thesis-2014",
+            "type": "前序硕士论文",
+            "url": "https://scholar.afit.edu/etd/676/",
+            "year": 2014,
+            "relation": "期刊[34]明确引用Jablonski单作者2014论文AFIT-ENS-14-M-11；覆盖多个PCA检测方法及参数优化，比2015期刊范围更广。机构下载403、CiteSeer仅收到1MB不完整PDF，不能标记全文或引用Fig.35原图。"
+          }
+        ],
+        "methodFamilyId": "giprebad"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "作者上传原文文本可读；期刊Fig.2/3为异常分数及直方图方法诊断，未取得原图/PDF下载。前序2014硕士论文Fig.35伪代码线索仅收到1MB不完整PDF，无法解析，不作期刊新流程原图。",
+        "sourceUrl": "https://www.researchgate.net/publication/277348519_Principal_Component_Reconstruction_Error_for_Hyperspectral_Anomaly_Detection",
+        "checkedAt": "2026-10-08"
+      }
+    },
+    {
+      "id": "rs-emap-ensembles-2015",
+      "shortTitle": "RS-EMAP ensembles",
+      "title": "Random Subspace Ensembles for Hyperspectral Image Classification With Extended Morphological Attribute Profiles",
+      "authors": "Junshi Xia, Mauro Dalla Mura, Jocelyn Chanussot, Peijun Du, Xiyan He",
+      "year": 2015,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2015.2409195",
+      "representation": "用扩展多属性剖面EMAP表达空间信息，以随机子空间/旋转子空间组合决策树或ELM基分类器，比较六种集成方案；不混同GRSL2015的3-D形态学剖面论文。",
+      "tags": [
+        "land-cover-classification",
+        "morphological-profiles",
+        "random-subspace-ensembles"
+      ],
+      "summary": "用扩展多属性剖面EMAP表达空间信息，以随机子空间/旋转子空间组合决策树或ELM基分类器，比较六种集成方案；不混同GRSL2015的3-D形态学剖面论文。",
+      "input": "高光谱像素光谱或扩展多属性剖面特征及分类训练样本。",
+      "output": "二维高光谱地物分类结果与集成分类器。",
+      "mechanism": "用扩展多属性剖面EMAP表达空间信息，以随机子空间/旋转子空间组合决策树或ELM基分类器，比较六种集成方案；不混同GRSL2015的3-D形态学剖面论文。",
+      "readingNote": "HAL机构记录完整原摘要已读；记录为notice无fileMain，未读原PDF、未复现。按题名追踪发现，与GRSL3-D形态学候选不是同篇。",
+      "paper": "https://doi.org/10.1109/tgrs.2015.2409195",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "institution_original_abstract",
+      "citation": "@article{rs_emap_ensembles_2015,\n  title = {Random Subspace Ensembles for Hyperspectral Image Classification With Extended Morphological Attribute Profiles},\n  author = {Junshi Xia and Mauro Dalla Mura and Jocelyn Chanussot and Peijun Du and Xiyan He},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2015},\n  volume = {53},\n  number = {9},\n  pages = {4768--4786},\n  doi = {10.1109/tgrs.2015.2409195}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "morphological-profiles",
+          "random-subspace-ensembles"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始来源明确以光学高光谱影像处理/分类/检测为对象；仅总库，3-D谱立方体处理不自动进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在高维且有限训练实例的高光谱分类中结合空间属性信息与集成分类器？",
+        "datasets": "机构完整原摘要：模拟及真实高光谱数据，明确列举University of Pavia ROSIS；其他数据名称、尺寸、波段、类别和获取版本待全文核验。",
+        "experimentSetting": "仅完整机构原摘要：六种随机子空间集成方案，讨论关键参数和计算复杂度；训练/测试划分、重复次数、模型容量、参数及时间测量设置待核验。",
+        "conclusions": "作者摘要报告EMAP与RSELM/RoELM在所用Pavia数据有竞争力；不复述未读实验表中的性能或把摘要最优声明推广到当前方法。",
+        "limitations": "机构记录为notice且无公开fileMain，未阅读全文；原图、类别标签处理、容量/公平性、专用代码、数据版本、许可和复现待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://univ-grenoble-alpes.hal.science/hal-01246605v1",
+            "checkedAt": "2026-10-08",
+            "level": "机构原始完整摘要；非PDF全文",
+            "supports": [
+              "用扩展多属性剖面EMAP表达空间信息，以随机子空间/旋转子空间组合决策树或ELM基分类器，比较六种集成方案；不混同GRSL2015的3-D形态学剖面论文。",
+              "HAL机构记录完整原摘要已读；记录为notice无fileMain，未读原PDF、未复现。按题名追踪发现，与GRSL3-D形态学候选不是同篇。",
+              "机构完整原摘要：模拟及真实高光谱数据，明确列举University of Pavia ROSIS；其他数据名称、尺寸、波段、类别和获取版本待全文核验。",
+              "仅完整机构原摘要：六种随机子空间集成方案，讨论关键参数和计算复杂度；训练/测试划分、重复次数、模型容量、参数及时间测量设置待核验。",
+              "机构记录为notice且无公开fileMain，未阅读全文；原图、类别标签处理、容量/公平性、专用代码、数据版本、许可和复现待核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2015.2409195",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记书目，与原期刊PDF/作者机构记录相核对",
+            "supports": [
+              "Random Subspace Ensembles for Hyperspectral Image Classification With Extended Morphological Attribute Profiles",
+              "Junshi Xia, Mauro Dalla Mura, Jocelyn Chanussot, Peijun Du, Xiyan He",
+              "53(9):4768-4786, 2015"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "rs-emap-ensembles-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/tgrs.2015.2409195",
+            "doi": "10.1109/tgrs.2015.2409195",
+            "year": 2015,
+            "relation": "出版社登记正式2015年9月53(9):4768–4786；HAL v1于2015-12-18存档，存档日不替换发表年。预印本/正式稿逐页差异及arXiv ID待核验。"
+          }
+        ],
+        "methodFamilyId": "rs-emap"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "HAL原摘要已核验，记录submitType为notice、无fileMain；原PDF与方法图待其他原始来源，未生成替代图。",
+        "sourceUrl": "https://univ-grenoble-alpes.hal.science/hal-01246605v1",
+        "checkedAt": "2026-10-08"
+      }
     }
   ],
   "datasets": [
@@ -41273,7 +41570,9 @@
         "gpu-lorsal-smlr-2015",
         "pgpda-hyperspectral-2015",
         "extended-self-dual-profiles-2015",
-        "multispectral-lidar-ratio-calibration-2015"
+        "multispectral-lidar-ratio-calibration-2015",
+        "wjcr-hyperspectral-2015",
+        "rs-emap-ensembles-2015"
       ],
       "history": [
         {
@@ -42203,7 +42502,8 @@
       "createdAt": "2026-10-08",
       "rationale": "TCI2015原始摘要、因子图与概率模型明确支持这些任务/先验，全文后复核边界。",
       "evidencePaperIds": [
-        "robust-linear-unmixing-anomaly-2015"
+        "robust-linear-unmixing-anomaly-2015",
+        "giprebad-hyperspectral-2015"
       ],
       "history": [
         {
@@ -42624,7 +42924,8 @@
       "rationale": "ESDAP原方法/流程图与GGF已核验的HSI/LiDAR形态剖面提供直接依据。",
       "evidencePaperIds": [
         "generalized-graph-fusion-2015",
-        "extended-self-dual-profiles-2015"
+        "extended-self-dual-profiles-2015",
+        "rs-emap-ensembles-2015"
       ],
       "history": [
         {
@@ -42651,6 +42952,66 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "依据GRSL2015多波长LiDAR标定方法形成，后续论文增加后再复核。"
+        }
+      ]
+    },
+    {
+      "id": "collaborative-representation",
+      "name": "协同表示与残差判别",
+      "dimension": "method",
+      "definition": "通过带正则的训练样本线性组合重建像素，并以按类别残差判别；明确区分l2协同表示与l1稀疏约束，可含邻域/核空间扩展。",
+      "status": "provisional",
+      "color": "#ab9bbe",
+      "createdAt": "2026-10-08",
+      "rationale": "由本批原始摘要及明确阅读的局部方法形成；后续多篇证据增加后复核边界。",
+      "evidencePaperIds": [
+        "wjcr-hyperspectral-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批方法机制不同，按实际证据新增暂定方法标签。"
+        }
+      ]
+    },
+    {
+      "id": "subspace-reconstruction-residuals",
+      "name": "子空间重建残差检测",
+      "dimension": "method",
+      "definition": "由背景子空间重建与原光谱的误差构造异常分数，可迭代重估背景并设计检测阈值；不把降维后另接独立分类器混为相同检测机制。",
+      "status": "provisional",
+      "color": "#ab9bbe",
+      "createdAt": "2026-10-08",
+      "rationale": "由本批原始摘要及明确阅读的局部方法形成；后续多篇证据增加后复核边界。",
+      "evidencePaperIds": [
+        "giprebad-hyperspectral-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批方法机制不同，按实际证据新增暂定方法标签。"
+        }
+      ]
+    },
+    {
+      "id": "random-subspace-ensembles",
+      "name": "随机子空间与旋转集成",
+      "dimension": "method",
+      "definition": "以不同特征子空间或旋转坐标训练多个分类器并形成集成；基分类器、特征来源和训练监督分别注明，区别随机投影后单分类器。",
+      "status": "provisional",
+      "color": "#ab9bbe",
+      "createdAt": "2026-10-08",
+      "rationale": "由本批原始摘要及明确阅读的局部方法形成；后续多篇证据增加后复核边界。",
+      "evidencePaperIds": [
+        "rs-emap-ensembles-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "本批方法机制不同，按实际证据新增暂定方法标签。"
         }
       ]
     }
