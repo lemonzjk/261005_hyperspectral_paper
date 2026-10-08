@@ -36112,6 +36112,240 @@
           "attribution": "Francesc Aulí-Llinàs · TIP 2013"
         }
       ]
+    },
+    {
+      "id": "embedded-two-stage-hsi-2015",
+      "shortTitle": "Embedded Two-Stage",
+      "title": "A Fully Embedded Two-Stage Coder for Hyperspectral Near-Lossless Compression",
+      "authors": "Jente Beerten, Ian Blanes, Joan Serra-Sagristà",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2015.2425548",
+      "representation": "KLT光谱变换与JPEG2000有损层配合原像素域残差；残差均匀量化、整数映射、逐位平面算术编码形成可截断的近无损层。",
+      "tags": [
+        "image-compression",
+        "near-lossless-coding",
+        "wavelet-coding"
+      ],
+      "summary": "KLT光谱变换与JPEG2000有损层配合原像素域残差；残差均匀量化、整数映射、逐位平面算术编码形成可截断的近无损层。",
+      "input": "AVIRIS/Hyperion高光谱立方体及最大绝对误差容限δ。",
+      "output": "可渐进截断的两层码流与满足目标误差界的重建高光谱影像。",
+      "mechanism": "KLT光谱变换与JPEG2000有损层配合原像素域残差；残差均匀量化、整数映射、逐位平面算术编码形成可截断的近无损层。",
+      "readingNote": "已读完整作者摘要、方法§II/III与实验§III/IV及图表局部；保守记摘要已读，非完整逐页全文核验。",
+      "paper": "https://doi.org/10.1109/lgrs.2015.2425548",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "author_original_abstract_and_selected_pages",
+      "citation": "@article{embedded_two_stage_hsi_2015,\n  title = {A Fully Embedded Two-Stage Coder for Hyperspectral Near-Lossless Compression},\n  author = {Jente Beerten and Ian Blanes and Joan Serra-Sagristà},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {8},\n  pages = {1775--1779},\n  doi = {10.1109/lgrs.2015.2425548}\n}\n",
+      "library": {
+        "categoryIds": [
+          "image-compression",
+          "near-lossless-coding",
+          "wavelet-coding"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始作者摘要、实验明确使用光学高光谱立方体；仅加入总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何让高光谱近无损码流支持渐进传输，同时控制平均失真与最大绝对误差？",
+        "datasets": "作者稿表I：4幅AVIRIS（Hawaii/Maine/Yellowstone辐射及未标定）和5幅Hyperion（Agricultural/Coral Reef/Urban标定、Erta Ale/Lake Monona未标定）；技术场景ID及尺寸见原表。",
+        "experimentSetting": "作者稿§IV及表I/II：224或242波段，Hawaii/Maine为12位，其余16位；JPEG2000 BOI、5级不可逆9/7空间变换，残差Java算术编码。δ=0/1/5/32/128，对照M-CALIC、预量化MC-JPEG2000；CCSDS-123+量化结果引自文献[34]，不能视为全部统一重跑。",
+        "conclusions": "作者报告AVIRIS近无损编码与渐进SNR/PAE表现有竞争力；δ=0退化为无损。Hyperion标定场景在δ≤5时M-CALIC可更好；不能将摘要的整体优势扩大为所有数据/容限。",
+        "limitations": "KLT为主要高成本操作之一；作者承认δ=0/3时更大有损层可能略降总码率，估计最优并非已证明全局精确。未复现，正式稿逐页差异与专用代码发布待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://ddd.uab.cat/pub/artpub/2015/144517/ieegeorem_a2015m8v12n8p1775.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "作者原稿摘要、局部方法/实验与图注",
+            "supports": [
+              "KLT光谱变换与JPEG2000有损层配合原像素域残差；残差均匀量化、整数映射、逐位平面算术编码形成可截断的近无损层。",
+              "作者稿表I：4幅AVIRIS（Hawaii/Maine/Yellowstone辐射及未标定）和5幅Hyperion（Agricultural/Coral Reef/Urban标定、Erta Ale/Lake Monona未标定）；技术场景ID及尺寸见原表。",
+              "作者稿§IV及表I/II：224或242波段，Hawaii/Maine为12位，其余16位；JPEG2000 BOI、5级不可逆9/7空间变换，残差Java算术编码。δ=0/1/5/32/128，对照M-CALIC、预量化MC-JPEG2000；CCSDS-123+量化结果引自文献[34]，不能视为全部统一重跑。",
+              "作者报告AVIRIS近无损编码与渐进SNR/PAE表现有竞争力；δ=0退化为无损。Hyperion标定场景在δ≤5时M-CALIC可更好；不能将摘要的整体优势扩大为所有数据/容限。",
+              "KLT为主要高成本操作之一；作者承认δ=0/3时更大有损层可能略降总码率，估计最优并非已证明全局精确。未复现，正式稿逐页差异与专用代码发布待核验。"
+            ]
+          },
+          {
+            "url": "https://ddd.uab.cat/record/144517",
+            "checkedAt": "2026-10-08",
+            "level": "作者机构原始书目和存档版本",
+            "supports": [
+              "A Fully Embedded Two-Stage Coder for Hyperspectral Near-Lossless Compression",
+              "Jente Beerten, Ian Blanes, Joan Serra-Sagristà",
+              "2015；12(8):1775–1779"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/journals/1545-598X/works",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref登记年度集合（书目，非摘要）",
+            "supports": [
+              "10.1109/lgrs.2015.2425548",
+              "A Fully Embedded Two-Stage Coder for Hyperspectral Near-Lossless Compression",
+              "2015"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "embedded-two-stage-hsi-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2015.2425548",
+            "doi": "10.1109/lgrs.2015.2425548",
+            "year": 2015,
+            "relation": "正式卷期2015年；作者存档稿页眉/模板日期不替换发表日期。"
+          },
+          {
+            "id": "embedded-two-stage-hsi-2015-author",
+            "type": "作者机构存档稿",
+            "url": "https://ddd.uab.cat/pub/artpub/2015/144517/ieegeorem_a2015m8v12n8p1775.pdf",
+            "year": 2015,
+            "relation": "作者post-print，已核验来源；无已确认arXiv ID，首次提交日及与正式排版差异待核验。"
+          }
+        ],
+        "methodFamilyId": "embedded-two-stage-hsi-2015"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://ddd.uab.cat/pub/artpub/2015/144517/ieegeorem_a2015m8v12n8p1775.pdf",
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "caption": "两阶段编码器：光谱变换/小波有损层与像素残差量化/熵编码层。",
+          "verificationNote": "原稿第3页Fig.1；完整图及图注目视核验。",
+          "cropDescription": "作者原稿按长边1600像素渲染，裁切完整原图及图注；非重绘。",
+          "path": "figures/embedded-two-stage-hsi-2015/framework-original.png",
+          "width": 987,
+          "height": 139,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "f4ca2440aee2314c7190f7b3d49f5d9e5bfc90eb4f22a0432ce51148c10db6a8",
+          "attribution": "Jente Beerten, Ian Blanes, Joan Serra-Sagristà · GRSL 2015"
+        }
+      ]
+    },
+    {
+      "id": "discriminant-pca-compression-2015",
+      "shortTitle": "Discriminant PCA Coding",
+      "title": "Hybrid Compression of Hyperspectral Images Based on PCA With Pre-Encoding Discriminant Information",
+      "authors": "Chulhee Lee, Sungwook Youn, Taeuk Jeong, Eunjae Lee, Joan Serra-Sagristà",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2015.2409897",
+      "representation": "先以DBFE提取判别特征并编码特征图，重建后相减得到残差，再对残差PCA压缩；解码时叠加特征重建与残差重建。",
+      "tags": [
+        "image-compression",
+        "spectral-dimensionality-reduction",
+        "land-cover-classification"
+      ],
+      "summary": "先以DBFE提取判别特征并编码特征图，重建后相减得到残差，再对残差PCA压缩；解码时叠加特征重建与残差重建。",
+      "input": "高光谱影像、训练类别及判别特征提取/码率设置。",
+      "output": "特征图和残差PCA双路码流，以及用于地物分类的重建光谱影像。",
+      "mechanism": "先以DBFE提取判别特征并编码特征图，重建后相减得到残差，再对残差PCA压缩；解码时叠加特征重建与残差重建。",
+      "readingNote": "已读完整作者摘要、方法§II/III与实验§III/IV及图表局部；保守记摘要已读，非完整逐页全文核验。",
+      "paper": "https://doi.org/10.1109/lgrs.2015.2409897",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "author_original_abstract_and_selected_pages",
+      "citation": "@article{discriminant_pca_compression_2015,\n  title = {Hybrid Compression of Hyperspectral Images Based on PCA With Pre-Encoding Discriminant Information},\n  author = {Chulhee Lee and Sungwook Youn and Taeuk Jeong and Eunjae Lee and Joan Serra-Sagristà},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {7},\n  pages = {1491--1495},\n  doi = {10.1109/lgrs.2015.2409897}\n}\n",
+      "library": {
+        "categoryIds": [
+          "image-compression",
+          "spectral-dimensionality-reduction",
+          "land-cover-classification"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原始作者摘要、实验明确使用光学高光谱立方体；仅加入总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在高光谱压缩中保留能量较低但影响分类的判别信息？",
+        "datasets": "作者稿§III：Indian Pine AVIRIS，原文写2166×614、220波段；实验为256×256子区、15类。此子区不得替换为常用145×145基准。",
+        "experimentSetting": "作者稿§III/表I–III：Gaussian ML分类器；约一半样本训练、一半测试（表I有奇数取整），分类合并波段为20特征；0.1–0.8 bpppb，10/15/20/25判别特征，比较1D+2D JPEG2000与subPCA，报告采用特征:残差1:9码率分配。未复现。",
+        "conclusions": "作者报告判别特征保留提高分类准确率；正文指出subPCA对照SNR最好，提出方法SNR次之，不能概括为所有指标均优。码率分配影响重建与分类权衡。",
+        "limitations": "依赖类别训练信息及协方差可逆性，文中使用波段合并/扩展；单一子区实验不能证明跨场景泛化。正式稿逐页差异、代码及数据下载入口待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://ddd.uab.cat/pub/artpub/2015/144616/ieegeorem_a2015m7v12n7p1491.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "作者原稿摘要、局部方法/实验与图注",
+            "supports": [
+              "先以DBFE提取判别特征并编码特征图，重建后相减得到残差，再对残差PCA压缩；解码时叠加特征重建与残差重建。",
+              "作者稿§III：Indian Pine AVIRIS，原文写2166×614、220波段；实验为256×256子区、15类。此子区不得替换为常用145×145基准。",
+              "作者稿§III/表I–III：Gaussian ML分类器；约一半样本训练、一半测试（表I有奇数取整），分类合并波段为20特征；0.1–0.8 bpppb，10/15/20/25判别特征，比较1D+2D JPEG2000与subPCA，报告采用特征:残差1:9码率分配。未复现。",
+              "作者报告判别特征保留提高分类准确率；正文指出subPCA对照SNR最好，提出方法SNR次之，不能概括为所有指标均优。码率分配影响重建与分类权衡。",
+              "依赖类别训练信息及协方差可逆性，文中使用波段合并/扩展；单一子区实验不能证明跨场景泛化。正式稿逐页差异、代码及数据下载入口待核验。"
+            ]
+          },
+          {
+            "url": "https://ddd.uab.cat/record/144616",
+            "checkedAt": "2026-10-08",
+            "level": "作者机构原始书目和存档版本",
+            "supports": [
+              "Hybrid Compression of Hyperspectral Images Based on PCA With Pre-Encoding Discriminant Information",
+              "Chulhee Lee, Sungwook Youn, Taeuk Jeong, Eunjae Lee, Joan Serra-Sagristà",
+              "2015；12(7):1491–1495"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/journals/1545-598X/works",
+            "checkedAt": "2026-10-08",
+            "level": "Crossref登记年度集合（书目，非摘要）",
+            "supports": [
+              "10.1109/lgrs.2015.2409897",
+              "Hybrid Compression of Hyperspectral Images Based on PCA With Pre-Encoding Discriminant Information",
+              "2015"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "discriminant-pca-compression-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2015.2409897",
+            "doi": "10.1109/lgrs.2015.2409897",
+            "year": 2015,
+            "relation": "正式卷期2015年；作者存档稿页眉/模板日期不替换发表日期。"
+          },
+          {
+            "id": "discriminant-pca-compression-2015-author",
+            "type": "作者机构存档稿",
+            "url": "https://ddd.uab.cat/pub/artpub/2015/144616/ieegeorem_a2015m7v12n7p1491.pdf",
+            "year": 2015,
+            "relation": "作者post-print，已核验来源；无已确认arXiv ID，首次提交日及与正式排版差异待核验。"
+          }
+        ],
+        "methodFamilyId": "discriminant-pca-compression-2015"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://ddd.uab.cat/pub/artpub/2015/144616/ieegeorem_a2015m7v12n7p1491.pdf",
+          "figureLabel": "Fig. 1",
+          "page": 2,
+          "caption": "保留判别信息的双路高光谱压缩：(a)编码；(b)解码。",
+          "verificationNote": "原稿第2页Fig.1(a)/(b)完整框架及图注目视核验；仓储原PDF自身含黄色高亮，保留原样。",
+          "cropDescription": "作者原稿按长边1600像素渲染，裁切完整原图及图注；非重绘。",
+          "path": "figures/discriminant-pca-compression-2015/framework-original.png",
+          "width": 480,
+          "height": 655,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "58401d0e3b9c33b5a82c6a9efa22d2714211fa275c564b1917e89240b6a0de13",
+          "attribution": "Chulhee Lee, Sungwook Youn, Taeuk Jeong, Eunjae Lee, Joan Serra-Sagristà · GRSL 2015"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -36918,7 +37152,8 @@
         "osp-1994",
         "hysime-2008",
         "mnf-1988",
-        "ngmeet-2019"
+        "ngmeet-2019",
+        "discriminant-pca-compression-2015"
       ],
       "history": [
         {
@@ -39218,7 +39453,8 @@
         "hcgfn-fusion",
         "tree-centric-carbon",
         "forest-canopy-unmixing-1994",
-        "datl-hyperspectral-adaptation-2017"
+        "datl-hyperspectral-adaptation-2017",
+        "discriminant-pca-compression-2015"
       ],
       "history": [
         {
@@ -40296,7 +40532,9 @@
       "evidencePaperIds": [
         "cb2sdq-hyperspectral-2015",
         "geq-image-coding-2013",
-        "2sdq-bitplane-coding-2013"
+        "2sdq-bitplane-coding-2013",
+        "embedded-two-stage-hsi-2015",
+        "discriminant-pca-compression-2015"
       ],
       "history": [
         {
@@ -40325,6 +40563,46 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "HSI压缩任务及其明确引用的编码基础形成新方向；后续扩展再复核边界。"
+        }
+      ]
+    },
+    {
+      "id": "near-lossless-coding",
+      "name": "近无损误差控制编码",
+      "dimension": "method",
+      "definition": "以逐像素最大绝对误差界控制高光谱压缩，支持近无损或无损重建；平均失真优化与最大误差界分别记录。",
+      "status": "provisional",
+      "color": "#739f91",
+      "createdAt": "2026-10-08",
+      "rationale": "GRSL2015作者稿方法与Fig.1支持；由调研形成，后续补充复核。",
+      "evidencePaperIds": [
+        "embedded-two-stage-hsi-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "两阶段高光谱压缩的明确方法依据。"
+        }
+      ]
+    },
+    {
+      "id": "wavelet-coding",
+      "name": "小波与变换域编码",
+      "dimension": "method",
+      "definition": "通过空间小波及光谱变换压缩高光谱数据；编码与光学压缩采集分别标注。",
+      "status": "provisional",
+      "color": "#739f91",
+      "createdAt": "2026-10-08",
+      "rationale": "GRSL2015作者稿方法与Fig.1支持；由调研形成，后续补充复核。",
+      "evidencePaperIds": [
+        "embedded-two-stage-hsi-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "两阶段高光谱压缩的明确方法依据。"
         }
       ]
     }
