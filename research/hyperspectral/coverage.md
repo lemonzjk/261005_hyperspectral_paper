@@ -134,6 +134,9 @@
 | RSE | 2015 | clay content sensitivity、AISA-DUAL PLSR spatial resolution；同族单篇追踪，非RSE2015年度目录或摘要全量。 | 1 / 1 / 1 | 单篇摘要核验闭环 | 正式15页稿/原图/代码数据及明确扩展差异待核；不移用会议图和参数。；RSE2015其他期次、任务词与全量年度检索未完成。 |
 | WHISPERS | 2014 | surface emissivity Hyper-Cam、emissive thermal plant species、airborne thermal infrared gases；物理76页全部3题名；累计45–76页102题名97入3排2待，另CRNN。 | 3 / 3 / 3 | 三完整原摘要闭环，年度目录未完成 | 第一PDF仅结果Fig1/2无框架；两其他会议原稿/方法图与代码数据/arXiv未知。；植物会议七作者和未知设置不借2016五作者期刊；gas两SPIE作者异，原摘要/版差未核。；目录174条重放见sources/whispers2014-page76-toc-replay.json，TRDF人工冲突关联保留。；截至2026-10-08，实际核验2026-10-09。 |
 | IJAEOG | 2016 | emissive thermal infrared plant species；单篇同任务家族追踪；非2016年度目录或所有关键词检索。 | 1 / 1 / 1 | 单篇原摘要及部分方法核验闭环 | 未完整读全部公式/结果表/引用，正式扩展关系及会议差异待核；代码数据/arXiv未知。；本版5原图均结果图，无独立框架/方法图；其余场所/年份待系统检索。 |
+| WHISPERS | 2014 | 77 Abstract、Session FRI-P-A、Recent Advances in Data Compression Vitulli；只尝试物理77页；未取得足够原页证据，未知该页题名数。 | 0 / 0 / 0 | 77页未核，不能认定无论文 | 物理77页原内容与是否有论文/专题讲座需重新取官方PDF/原页；不纳入已审页窗。 |
+| WHISPERS | 2014 | noise reduction spectral unmixing curvelet、correlated noise residual estimation、NLPCA ANN CASI noise filtering；物理78页全部3题名；累计45–76及78页105题名100入3排2待，另CRNN；77页未核，非连续45–78。 | 3 / 3 / 3 | 78页三完整摘要闭环，77及年度目录仍有缺口 | 三会议全文/方法图、专用代码数据/arXiv未知；NLPCA CASI/SWIR仪器一致性待原稿。；噪声估计修改公式/输出未知，不用2017期刊机制填会议；去噪解混重建误差非真实丰度误差。；目录174条重放见sources/whispers2014-page78-toc-replay.json，沿用TRDF人工证据关联。；截至2026-10-08，实际核验2026-10-09；77页未核。 |
+| TGRS | 2015 | band-specific shearlet hyperspectral noise reduction；同策略家族单篇；非TGRS2015年度目录或全部摘要检索。 | 1 / 1 / 1 | 单篇原摘要/部分方法与算法原图闭环 | 未完整读所有公式/结果表/引用，直接扩展声明及作者稿/正式13页差异待核；代码数据/arXiv未知。；原图只本期刊作者稿，不反填会议curvelet软阈值；其余年份/场所继续系统检索。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -404,6 +407,8 @@
   阅读边界：三原摘要闭环，两个会议稿另选读；SMOTE平台上传2017但正式会议2014，黏粒两正式稿同族而非独立方法。原三维214篇不变。
 - 2026-10-09 / whispers-2014-program-page76-and-plant-family-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：四完整原摘要；第一会议和期刊另选读并检查全部原图，无独立框架/方法图如实记录；三维214篇/原472篇对象不改。
+- 2026-10-09 / whispers-2014-program-page78-and-shearlet-family-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四完整原摘要；期刊另部分方法/实验选读和原算法核验，不提升全文阅读状态；77页未知，不因连续编号推定已审。三维214/原476篇对象不改。
 
 ## 未解决缺口
 

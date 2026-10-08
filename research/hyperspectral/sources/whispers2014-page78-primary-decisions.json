@@ -1,0 +1,200 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "band-targeted-curvelet-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077632",
+      "decision": "included",
+      "programPdfPage": 78,
+      "readingBoundary": "官方物理78页完整原摘要、Crossref三作者/DOI/正式2014六月1–4页与目录核验；原IEEE202，作者列表403；未读会议正文。",
+      "figureBoundary": "原会议稿未取得，方法图号/页码未知；不移用2015期刊Algorithm1。",
+      "relation": "hyperspectral",
+      "deduplication": "本轮独立DOI对象核全库无重复；会议/期刊共享作者和分波段框架但变换/规则不同，关联家族不宣称同版或重复发表。"
+    },
+    {
+      "paperId": "correlated-noise-estimation-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077550",
+      "decision": "included",
+      "programPdfPage": 78,
+      "readingBoundary": "官方物理78页完整原摘要、正式Crossref三作者/DOI及2014六月1–4页；IEEE202空响应，未取得原稿。",
+      "figureBoundary": "原会议PDF未取得，图号和页码未知；不借2017修改残差期刊或2018协方差论文图。",
+      "relation": "hyperspectral",
+      "deduplication": "本轮独立DOI对象核全库无重复；会议/期刊共享作者和分波段框架但变换/规则不同，关联家族不宣称同版或重复发表。"
+    },
+    {
+      "paperId": "nlpca-noise-filtering-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077576",
+      "decision": "included",
+      "programPdfPage": 78,
+      "readingBoundary": "官方物理78页完整摘要、两首字母作者；初次Crossref题名429保留，已知精确DOI200核正式2014六月1–4页；IEEE202，未读原稿。",
+      "figureBoundary": "原会议PDF未取得，方法图号/页码未知；不生成ANN示意图冒充原图。",
+      "relation": "hyperspectral",
+      "deduplication": "本轮独立DOI对象核全库无重复；会议/期刊共享作者和分波段框架但变换/规则不同，关联家族不宣称同版或重复发表。"
+    },
+    {
+      "paperId": "band-specific-shearlet-tgrs-2015",
+      "doi": "10.1109/tgrs.2015.2417098",
+      "decision": "included",
+      "programPdfPage": null,
+      "readingBoundary": "机构作者稿正常HTTP200（工具失败另记）；首页完整摘要/三作者与正式DOI2015九月TGRS53(9):5054–5066核验。选读§III/部分§IV及原Algorithm1，未完整阅读全文；作者稿编号4在物理5页，不填正式页码。",
+      "figureBoundary": "作者原Algorithm1（物理5页、作者标4页）完整裁切目视核验；1页封面+14作者页，图仅本期刊作者版，不移用2014会议。",
+      "relation": "hyperspectral",
+      "deduplication": "本轮独立DOI对象核全库无重复；会议/期刊共享作者和分波段框架但变换/规则不同，关联家族不宣称同版或重复发表。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "band-adaptive-transform-denoising",
+      "name": "按波段区分的变换域去噪",
+      "dimension": "method",
+      "definition": "根据波段噪声/相邻谱相关性区分低噪与高噪或混合噪声，分别做变换域阈值与邻近低噪系数恢复；具体curvelet/shearlet及软/硬阈值逐版注明，不能混用。",
+      "rationale": "78页Karami会议摘要及2015作者期刊稿共有按波段区分策略，分别使用curvelet软阈值和shearlet阈值。现有变换编码或小波多视图标签不能替代去噪方法。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "band-targeted-curvelet-whispers-2014",
+        "band-specific-shearlet-tgrs-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "78页Karami会议摘要及2015作者期刊稿共有按波段区分策略，分别使用curvelet软阈值和shearlet阈值。现有变换编码或小波多视图标签不能替代去噪方法。"
+        }
+      ]
+    },
+    {
+      "id": "regression-residual-noise-estimation",
+      "name": "回归残差噪声估计与修正",
+      "dimension": "method",
+      "definition": "通过波段回归残差推断光谱噪声，并可针对谱间噪声相关性修改估计；记录相关性/信号依赖假设、估计输出和修正机制，摘要未给公式时保留未知。",
+      "rationale": "Mahmood会议完整摘要明确常规残差估计受谱间相关噪声影响及修改思路；需要区别噪声估计任务与具体残差方法。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "correlated-noise-estimation-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Mahmood会议完整摘要明确常规残差估计受谱间相关噪声影响及修改思路；需要区别噪声估计任务与具体残差方法。"
+        }
+      ]
+    },
+    {
+      "id": "neural-nonlinear-component-analysis",
+      "name": "神经网络非线性成分分析",
+      "dimension": "method",
+      "definition": "通过人工神经网络实现非线性主成分/特征提取及重建，用于光谱降维或观测去噪；网络架构、训练和成分数逐篇核验，不自动当线性PCA或当前深度基础模型。",
+      "rationale": "Piscini/Licciardi原摘要明确NLPCA由ANN实现并重建去噪；不套用不相关线性降维或新神经模型标签。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "nlpca-noise-filtering-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Piscini/Licciardi原摘要明确NLPCA由ANN实现并重建去噪；不套用不相关线性降维或新神经模型标签。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "tgrs2015-shearlet-primary-cache.json",
+      "sha256": "32d7fe8f74c67900b1e1c339d4f388b6b87ebf350402a2e5bab48cdf7b10112a"
+    },
+    {
+      "path": "whispers2014-correlated-noise-ieee-access.json",
+      "sha256": "19b976b6fb265f25ae9d0b1bf0b86eac25b2638b102006391e20e53ffefebcdc"
+    },
+    {
+      "path": "whispers2014-correlated-noise-query-access.json",
+      "sha256": "22fcde28144eb01fddfffd2ec37f982295ba33aeaa4ec67f0310762ef16dbd1e"
+    },
+    {
+      "path": "whispers2014-nlpca-noise-doi-access.json",
+      "sha256": "77827fbf2560f4814e3453d98daa10e09cba38df0e800cbcf660b39409e3b493"
+    },
+    {
+      "path": "whispers2014-nlpca-noise-ieee-access.json",
+      "sha256": "26d473a29827792870c81ca799653402a7d909834f43670028fc14d0e3040676"
+    },
+    {
+      "path": "whispers2014-nlpca-noise-query-access.json",
+      "sha256": "0f21a0db9dadcd43193a332dab3780441252b0daf1bfa14c3d3533bd8d4d20c5"
+    },
+    {
+      "path": "whispers2014-page77-access-gap.json",
+      "sha256": "dd1c3ac8051e44fcf05240f31dfce2425eba7590186aeab44272809747140249"
+    },
+    {
+      "path": "whispers2014-page78-discovery-cache.json",
+      "sha256": "c6701756bd58482328c26ca5b14b2e9c42dc2acab78486ffed01f6f4da6696e4"
+    },
+    {
+      "path": "whispers2014-page78-original-search-cache.json",
+      "sha256": "e764a49fd5dc87cce5883d2fac4d5e7834e1d16229b9340e4e2ef57c36019068"
+    },
+    {
+      "path": "whispers2014-page78-program-cache.json",
+      "sha256": "c94c4955691ade9f14e2b4d2bbb24fb68b9190bb12d017848c3fb47295c0fade"
+    },
+    {
+      "path": "whispers2014-page78-resources-search-cache.json",
+      "sha256": "b19860a95e544bc314e45737ead3773a85e184dc6e0030b5391fb0860883dc69"
+    },
+    {
+      "path": "whispers2014-shearlet-tgrs2015-author-access.json",
+      "sha256": "4633390050d6ea32af05d067bf51c077c2bc55288af053a01c890037423e7bbb"
+    },
+    {
+      "path": "whispers2014-shearlet-tgrs2015-author.pdf",
+      "sha256": "3cbde911f9e43506aefb96adecf82b1bf1a3bd25ebe73a355af2150f25d51ac9"
+    },
+    {
+      "path": "whispers2014-shearlet-tgrs2015-query-access.json",
+      "sha256": "f20099361b123755d1897c34d464f595e76431f5844988d76e726f3283804d8a"
+    },
+    {
+      "path": "whispers2014-targeted-noise-author-list-access.json",
+      "sha256": "b36ec01a14d1dc2a60ba06a7b1ecbafcf96553f8bb5bb8a78bf401d95b2bf633"
+    },
+    {
+      "path": "whispers2014-targeted-noise-ieee-access.json",
+      "sha256": "41410a1805e96e23aead784b20f8cb06fb50dd5cfee2babddf34ae27070692c8"
+    },
+    {
+      "path": "whispers2014-targeted-noise-query-access.json",
+      "sha256": "bf218617485dd383fec31637580990ed7c16a2e10f63f221655601bccd04f5c7"
+    },
+    {
+      "path": "whispers2014-page78-toc-replay.json",
+      "sha256": "932ebca642f6da26535fc675e542129a5378f139379e4d4cd90359f2d2d54bc7"
+    },
+    {
+      "path": "whispers2014-page78-figure-inspection.json",
+      "sha256": "72c3d35aa79252115621749e657b6592ebac6e19f5d80c07859cd9ebeac5221b"
+    },
+    {
+      "path": "whispers2014-shearlet-tool-search-access.json",
+      "sha256": "a8d5dd44cf2d2efa01e5da482ac976a69dde2112d1726b18b45f5affc02d85a2"
+    }
+  ],
+  "qualityIssues": [
+    "77页未确认，105題名累计只45–76及78；不把Overview或检索无命中当页面无论文。",
+    "会议mirror-extended curvelet软阈值，期刊NSST及作者方法硬阈值，不混变换/真实实验/原图。",
+    "期刊15物理页含封面+14作者页，正式TGRS13页5054–5066不同；原Algorithm1物理5/作者编号4。",
+    "NLPCA官方摘要CASI与SWIR并存，仅记仪器谱段一致性待核，不补Houston场景或CASI SWIR覆盖。",
+    "噪声估计不是复原影像，输出协方差范围未知；后续2017/2018修正残差稿未读不移用。",
+    "谱解混重建误差不是丰度真值，HYDICE端元来自纯像元，真实丰度未知。",
+    "正常HTTP200取得作者稿与工具robots/超时失败分别保存，不关闭TLS/绕过权限。"
+  ]
+}
