@@ -16,9 +16,9 @@
 
 ## 当前状态
 
-- HyperspectralDemo：满屏原理交互、模拟数据，共用spectral-response.ts。
-- 总库335篇，原311篇已复核归类，新增24篇暂定分类，123标签（任务63/方法44/应用16）。任务按篇数降序。三维214篇不变；总库 ?collection=hyperspectral。
-- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱228、多光谱86、基础21。
+- HyperspectralDemo原理交互使用模拟数据，共用spectral-response.ts。
+- 总库337篇，原311篇已复核归类，新增26篇暂定分类，123标签（任务63/方法44/应用16）。任务按篇数降序。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱230、多光谱86、基础21。
 - CVPR2013–2022、ICCV2013/2015/2017/2019/2021、NeurIPS2023指定五词147题名命中闭环：增60、重12、排75；非年度全领域完成。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。19篇/41个arXiv日期核验；Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -26,12 +26,12 @@
 - TGRS1994仍3受限候选，出版社全量待查。
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记题名六成像词及16系统/重建词已扫；后者4899题名11命中增4重1排4待2。Mueller2007按HSI基础收录并关联2013勘误；Dyson两设计波长不是两观测通道。原图受限，非出版社年度全量。
-- TCI2015–2018登记41/63/102/75DOI（含目录），两词组并集4/5/17/4命中；累计增15排12待3，分年见coverage。存12原图、15预印本日期；非全文/出版社全量。JEDI已排，LSSHUCS及反射率候选待核验；Fourier两DOI关系待查。增端元时变标签。MSVI/MSRC用CAVE并有局部实测，实测缺标定/真值，不能证实光谱精度；代码未运行。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖335篇、270张图，缺图状态逐篇记录。
+- TCI2015–2019登记41/63/102/75/69DOI（含目录），两词组并集4/5/17/4/5命中；累计增17排14待4，分年见coverage。存14原图、16预印本日期；非全文/出版社全量。JEDI/ASSIST已排，LSSHUCS、反射率与去噪待核验；Fourier两DOI关系待查。MSVI实测缺标定/真值；GRMR存档2018、正式2019，README年误写；代码未运行。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖337篇、272张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；详细说明见 README.md 和 research/。
-- 下一步补OL卷期目录与受限关系候选，推进其他场所的年度目录；补受限候选、TCI/TPAMI/NGmeet全文及版本。访问失败留证。
+- 下一步补TCI/OL卷期目录及受限候选，推进其他场所；补受限候选、TCI/TPAMI/NGmeet全文及版本。访问失败留证。
