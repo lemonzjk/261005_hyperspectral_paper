@@ -96,9 +96,10 @@
 | TSP | 2013 | embedded quantization、hyperspectral image coding、2SDQ/GEQ；单篇题名/DOI定向核验及参考文献[4]/[5]追踪；不表示全年目录/摘要已扫描 | 1 / 1 / 1 | 单篇引文/作者来源闭环，非年度系统检索 | 本场所本年度官方目录与全量关键词矩阵尚未完成；正式排版差异、专用代码/数据链接及独立复现待核验 |
 | TIP | 2013 | embedded quantization、hyperspectral image coding、2SDQ/GEQ；单篇题名/DOI定向核验及参考文献[4]/[5]追踪；不表示全年目录/摘要已扫描 | 1 / 1 / 1 | 单篇引文/作者来源闭环，非年度系统检索 | 本场所本年度官方目录与全量关键词矩阵尚未完成；正式排版差异、专用代码/数据链接及独立复现待核验 |
 | GRSL | 2015 | compress、coding、quantiz、rate allocation、decorrelation；ISSN1545-598X，from/until-pub-date2015，rows1000，一页572；26词命中全部登记决定，5待核验。 | 572 / 26 / 22 | 登记题名指定压缩词扫描完成；21决定、5待核验，非年度全量 | 出版社2015完整目录、全量摘要及更多任务词尚未完成；572仅为Crossref登记日期集合。；5待核验：运动目标成像、移除通知原文、ripplet融合、参考影像重建、多核能耗压缩的有效状态/HSI关系。；两新增专用代码/数据、正式稿差异与独立复现待查。；本组剩余4候选；出版社年度目录、其他关键词和摘要范围尚未完成。 |
-| GRSL | 2015 | hyperspectral、multispectral、multi-spectral、spectral imaging、spectral unmixing；单页rows1000实际572；66词命中全部留存，当前已审31条；余35项pending，非年度系统检索完成。 | 572 / 66 / 31 | 指定题名组扫描完成，候选核验进行中 | 登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。；出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。；本组剩余35候选；出版社年度目录、其他关键词和摘要范围尚未完成。；本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。 |
+| GRSL | 2015 | hyperspectral、multispectral、multi-spectral、spectral imaging、spectral unmixing；单页rows1000实际572；66词命中全部留存，当前已审32条；余34项pending，非年度系统检索完成。 | 572 / 66 / 32 | 指定题名组扫描完成，候选核验进行中 | 登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。；出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。；本组剩余34候选；出版社年度目录、其他关键词和摘要范围尚未完成。；本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。 |
 | TGRS | 2015 | classification morphological hyperspectral、random subspace ensembles；HAL题名/2015过滤返回1项，随后按halId检索；单篇追踪，不表示TGRS年度目录/摘要已扫描 | 1 / 1 / 1 | 单篇机构/题名追踪闭环，非年度系统检索 | TGRS2015官方目录及全量摘要/其他关键词矩阵尚未完成；机构记录无fileMain，原PDF/原图及代码数据待取得 |
 | MPE | 2013 | hyperspectral classification Fukunaga Koontz；单篇题名/方法族追踪；未扫描该期刊年度目录 | 1 / 1 / 1 | 单篇同族追踪闭环，非年度系统检索 | MPE年度目录/摘要尚未系统检索，专业期刊来源不标为顶刊；原PDF403、原图/实验细节/代码数据及版本差异待核验 |
+| WHISPERS | 2014 | collaborative representation k nearest hyperspectral；官方技术日程共94页，仅逐篇核验第79页CRNN条目；未全量扫描会议论文/摘要 | 1 / 1 / 1 | 单篇方法族追踪闭环，非年度系统检索 | 技术日程全94页及出版社论文目录/DOI尚未全量核对。；原四页会议稿/原图与期刊直接扩展关系、实验差异待核验。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -304,6 +305,8 @@
   阅读边界：2015作者原稿完整摘要和方法/实验局部；2013出版社完整原摘要及引言/结论局部。未阅读全文；同方法族两工作关联，不混作者/实验或声称同篇版本。
 - 2026-10-08 / grsl-2015-crnn-registration-review：新增 2，更新 0，去重 0，排除 0，待处理 35。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：CRNN/LRNN原五页全文与原表/方法机制图核验；联合配准仅作者期刊稿摘要和明确局部。四波段MS关系单列，SVR融合与支持向量回归区分。
+- 2026-10-08 / grsl-2015-margin-whispers-crnn-review：新增 2，更新 1，去重 0，排除 0，待处理 34。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：最大间隔仅IEEE完整原摘要缓存；CRNN2014仅官方技术日程完整摘要。关联同族2015期刊但不宣称已证实正式扩展，不混用实验；两书目不计两种独立方法。
 
 ## 未解决缺口
 

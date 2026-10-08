@@ -3796,17 +3796,17 @@
         "spectral unmixing"
       ],
       "url": "https://api.crossref.org/journals/1545-598X/works",
-      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审31条；余35项pending，非年度系统检索完成。",
+      "pagination": "单页rows1000实际572；66词命中全部留存，当前已审32条；余34项pending，非年度系统检索完成。",
       "titleCount": 572,
       "candidateCount": 66,
-      "reviewedCount": 31,
+      "reviewedCount": 32,
       "status": "partial",
       "statusLabel": "指定题名组扫描完成，候选核验进行中",
       "sourceSnapshot": "sources/grsl-2015-optical-title-matches.json",
       "gaps": [
         "登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。",
         "出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。",
-        "本组剩余35候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
+        "本组剩余34候选；出版社年度目录、其他关键词和摘要范围尚未完成。",
         "本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。"
       ]
     },
@@ -3855,6 +3855,29 @@
       "gaps": [
         "MPE年度目录/摘要尚未系统检索，专业期刊来源不标为顶刊",
         "原PDF403、原图/实验细节/代码数据及版本差异待核验"
+      ]
+    },
+    {
+      "id": "whispers-2014-crnn-official-abstract-trace",
+      "venue": "WHISPERS",
+      "year": 2014,
+      "keywordGroup": "crnn-title-version-trace",
+      "date": "2026-10-08",
+      "method": "GRSL2015作者/题名追踪；Crossref登记与主办方94页日程中的第79页完整摘要核对",
+      "keywords": [
+        "collaborative representation k nearest hyperspectral"
+      ],
+      "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+      "pagination": "官方技术日程共94页，仅逐篇核验第79页CRNN条目；未全量扫描会议论文/摘要",
+      "titleCount": 1,
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "keyword_candidates_reviewed",
+      "statusLabel": "单篇方法族追踪闭环，非年度系统检索",
+      "sourceSnapshot": "sources/whispers2014-crnn-official-abstract-cache.json",
+      "gaps": [
+        "技术日程全94页及出版社论文目录/DOI尚未全量核对。",
+        "原四页会议稿/原图与期刊直接扩展关系、实验差异待核验。"
       ]
     }
   ],
@@ -11031,8 +11054,8 @@
       "discoveryReview": {
         "checkedAt": "2026-10-08",
         "status": "needs_primary_abstract",
-        "evidencePath": "research/hyperspectral/sources/grsl2015-representation-hal-attempts.json",
-        "note": "HAL正确DOI查询零结果；作者/原文路线未取得完整原摘要，继续待核验。"
+        "evidencePath": "research/hyperspectral/sources/whispers2014-kcrt-primary-access.json",
+        "note": "KCRT仅二手摘要；原IEEE机器人验证/202空响应，未取得原稿或作者机构完整摘要，继续pending。"
       },
       "sourceChecks": [
         {
@@ -11243,10 +11266,10 @@
       "year": 2015,
       "searchId": "grsl-2015-crossref-optical-titles",
       "discoveredAt": "2026-10-08",
-      "decision": "pending",
-      "reason": "仅发现登记题名；原始摘要、对象/关系、版本、资源及原图仍需逐篇核验。",
-      "evidencePath": "research/hyperspectral/sources/grsl2015-optical-decisions.json",
-      "readingBoundary": "仅题名发现",
+      "decision": "included",
+      "reason": "原文对象为光学高光谱影像，仅进入高光谱总库。",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-margin-whispers-primary-decisions.json",
+      "readingBoundary": "IEEE出版社完整摘要缓存已读，登记卷期核对；直接页面202空响应/工具访问失败，未阅读全文。",
       "sourceChecks": [
         {
           "checkedAt": "2026-10-08",
@@ -11255,7 +11278,9 @@
           "evidencePath": "research/hyperspectral/sources/grsl2015-remaining39-hal-doi-query.json",
           "note": "单一机构存档精确DOI未命中，不表示无原稿、不提升核验、不排除。"
         }
-      ]
+      ],
+      "paperId": "maximum-margin-imbalanced-hsi-2015",
+      "verifiedAt": "2026-10-08"
     },
     {
       "title": "Generalized Graph-Based Fusion of Hyperspectral and LiDAR Data Using Morphological Features",
@@ -12431,6 +12456,21 @@
       "reason": "出版社原摘要明确直接HSI分类；同族不同工作关联，非相同版本或独立方法数量。",
       "readingBoundary": "出版社完整原摘要、引言及结论缓存已读；出版社原PDF403，未阅读全文或复现。",
       "evidencePath": "research/hyperspectral/sources/kfkt2013-2015-primary-decisions.json"
+    },
+    {
+      "title": "Collaborative representation based k-nearest neighbor classifier for hyperspectral imagery",
+      "doi": "10.1109/whispers.2014.8077601",
+      "url": "https://doi.org/10.1109/whispers.2014.8077601",
+      "venue": "WHISPERS",
+      "year": 2014,
+      "searchId": "whispers-2014-crnn-official-abstract-trace",
+      "discoveredAt": "2026-10-08",
+      "decision": "included",
+      "reason": "以光学高光谱分类为主要任务的专业workshop工作；仅总库，不自动进入三维专题。",
+      "paperId": "crnn-whispers-2014",
+      "verifiedAt": "2026-10-08",
+      "evidencePath": "research/hyperspectral/sources/grsl2015-margin-whispers-primary-decisions.json",
+      "readingBoundary": "官方技术日程第79页完整摘要及作者核验；未取得会议四页原论文，不当阅读全文。"
     }
   ],
   "batches": [
@@ -13911,6 +13951,27 @@
         "光谱组35待核验、压缩组4待核验；年度出版社目录及其他词/摘要未完成。",
         "WHISPERS2014近题名仅目录，不据此合并版本或虚构差异。",
         "联合配准原图403；两篇代码/数据及独立复现待核验。"
+      ]
+    },
+    {
+      "id": "grsl-2015-margin-whispers-crnn-review",
+      "date": "2026-10-08",
+      "searchIds": [
+        "grsl-2015-crossref-optical-titles",
+        "whispers-2014-crnn-official-abstract-trace"
+      ],
+      "new": 2,
+      "updated": 1,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 34,
+      "categoriesAdded": 1,
+      "figuresAdded": 0,
+      "readingBoundary": "最大间隔仅IEEE完整原摘要缓存；CRNN2014仅官方技术日程完整摘要。关联同族2015期刊但不宣称已证实正式扩展，不混用实验；两书目不计两种独立方法。",
+      "gaps": [
+        "GRSL光谱组34待核验、压缩组4；出版社目录及其他词/摘要未全量。",
+        "WHISPERS2014目前仅单篇追踪；94页日程与出版社目录需全量扫描及逐篇筛选。",
+        "两篇原PDF/方法图与代码数据未知，KCRT原摘要仍待访问。"
       ]
     }
   ],
