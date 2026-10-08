@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-10-08",
+  "decisions": [
+    {
+      "candidate": {
+        "title": "Extended Self-Dual Attribute Profiles for the Classification of Hyperspectral Images",
+        "doi": "10.1109/lgrs.2015.2419629",
+        "url": "https://doi.org/10.1109/lgrs.2015.2419629",
+        "venue": "GRSL",
+        "year": 2015,
+        "searchId": "grsl-2015-crossref-optical-titles",
+        "discoveredAt": "2026-10-08",
+        "decision": "included",
+        "reason": "原始完整摘要确认直接HSI对象；版本与阅读边界分别记录。",
+        "evidencePath": "research/hyperspectral/sources/grsl2015-esdap-primary-decisions.json",
+        "readingBoundary": "HAL接受稿完整摘要、§III–IV局部和Fig.3原始流程图已读；未阅读全文。",
+        "discoveryReview": {
+          "checkedAt": "2026-10-08",
+          "status": "needs_primary_abstract",
+          "evidencePath": "research/hyperspectral/sources/grsl2015-next-discovery.json",
+          "note": "题名/作者与二手摘要或引用链有发现；尚未取得该论文原始摘要，不提升阅读状态，后续按作者/机构路线继续。"
+        },
+        "paperId": "extended-self-dual-profiles-2015",
+        "verifiedAt": "2026-10-08"
+      },
+      "evidence": [
+        {
+          "url": "https://hal.science/hal-01259781/document",
+          "checkedAt": "2026-10-08",
+          "level": "完整原摘要与实际注明的局部原稿",
+          "supports": [
+            "先用监督NWFE提取HSI特征，再以包含树上的自对偶属性滤波构造ESDAP，第二次NWFE压缩属性特征；以SVM或随机森林分类，并与EAP比较。",
+            "接受稿§IV A/表I–II：Indian Pines 145×145、200波段、16类；Pavia 103通道、9类，稿内空间大小写640×340，待原始数据和正式稿核验。",
+            "接受稿§IV局部及Fig.3：首轮NWFE保留超过99%方差，属性处理后选10特征公平比较；Indian Pines每类10%训练、十次随机重复，Pavia使用给定训练集；SVM十折调参及RF150树，原稿阈值人工按场景选择。",
+            "NWFE使用训练标签，不能因特征处理写成无监督；阈值人工选取，跨场景泛化和现代比较待核验。Pavia空间大小记载、正式稿差异、代码/数据/许可与复现待查。",
+            "正式2015年8月12(8):1690–1694、DOI与HAL封面/机构记录一致；HAL v1于2016-01-20存档，存档日期不替代正式2015。原始接受稿与正式排版差异未完整核验。"
+          ]
+        },
+        {
+          "url": "https://api.crossref.org/journals/1545-598X/works",
+          "checkedAt": "2026-10-08",
+          "level": "登记书目，非摘要",
+          "supports": [
+            "Extended Self-Dual Attribute Profiles for the Classification of Hyperspectral Images",
+            "Gabriele Cavallaro, Mauro Dalla Mura, Jon Atli Benediktsson, Lorenzo Bruzzone",
+            "12(8):1690-1694，2015",
+            "10.1109/lgrs.2015.2419629"
+          ]
+        }
+      ],
+      "primaryEvidencePath": "research/hyperspectral/sources/grsl2015-esdap.pdf",
+      "sha256": "eecaf7127d206142e7d9cc1ae54b8f5fb94584073d9dd0f792ae609e2ea777c6"
+    }
+  ],
+  "classificationUpdates": [
+    {
+      "paperId": "generalized-graph-fusion-2015",
+      "categoryAdded": "morphological-profiles",
+      "basis": "此前已核验原摘要及§II形态学特征，非新增研究事实。"
+    }
+  ],
+  "gaps": [
+    "GRSL2015光谱题名组剩46候选；出版社目录、其他任务词/摘要及引用链尚未全扫。",
+    "ESDAP作者稿Pavia640×340、手工属性阈值及正式版/代码/许可待核验；邻域图2014 workshop与2015期刊的原稿/版本差异受限。自编码器和ELML原始摘要待其他路线。"
+  ]
+}

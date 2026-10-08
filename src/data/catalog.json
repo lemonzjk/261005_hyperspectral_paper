@@ -36893,7 +36893,8 @@
         "hsi-lidar-classification",
         "land-cover-classification",
         "spectral-dimensionality-reduction",
-        "graph-learning"
+        "graph-learning",
+        "morphological-profiles"
       ],
       "summary": "从HSI与LiDAR生成形态学特征，以堆叠特征点距离给融合图边赋权，联合特征融合与降维，改进先前二值边图。",
       "input": "高光谱影像、同区域LiDAR高程影像及形态学特征。",
@@ -36909,7 +36910,8 @@
           "hsi-lidar-classification",
           "land-cover-classification",
           "spectral-dimensionality-reduction",
-          "graph-learning"
+          "graph-learning",
+          "morphological-profiles"
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
@@ -37940,6 +37942,205 @@
           "attribution": "Mathieu Fauvel, Charles Bouveyron, Stéphane Girard · GRSL 2015"
         }
       ]
+    },
+    {
+      "id": "extended-self-dual-profiles-2015",
+      "shortTitle": "ESDAP",
+      "title": "Extended Self-Dual Attribute Profiles for the Classification of Hyperspectral Images",
+      "authors": "Gabriele Cavallaro, Mauro Dalla Mura, Jon Atli Benediktsson, Lorenzo Bruzzone",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2015.2419629",
+      "representation": "先用监督NWFE提取HSI特征，再以包含树上的自对偶属性滤波构造ESDAP，第二次NWFE压缩属性特征；以SVM或随机森林分类，并与EAP比较。",
+      "tags": [
+        "land-cover-classification",
+        "spectral-dimensionality-reduction",
+        "morphological-profiles",
+        "support-vector-machines"
+      ],
+      "summary": "先用监督NWFE提取HSI特征，再以包含树上的自对偶属性滤波构造ESDAP，第二次NWFE压缩属性特征；以SVM或随机森林分类，并与EAP比较。",
+      "input": "高光谱影像、训练像素类别及形态属性/阈值。",
+      "output": "光谱–空间特征与二维地物分类图。",
+      "mechanism": "先用监督NWFE提取HSI特征，再以包含树上的自对偶属性滤波构造ESDAP，第二次NWFE压缩属性特征；以SVM或随机森林分类，并与EAP比较。",
+      "readingNote": "HAL接受稿完整摘要、§III–IV局部和Fig.3原始流程图已读；未阅读全文。 未取得的代码、数据和版本日期明确待核验。",
+      "paper": "https://doi.org/10.1109/lgrs.2015.2419629",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "institution_original_abstract_and_selected_pages",
+      "citation": "@article{extended_self_dual_profiles_2015,\n  title = {Extended Self-Dual Attribute Profiles for the Classification of Hyperspectral Images},\n  author = {Gabriele Cavallaro and Mauro Dalla Mura and Jon Atli Benediktsson and Lorenzo Bruzzone},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {8},\n  pages = {1690--1694},\n  doi = {10.1109/lgrs.2015.2419629}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "spectral-dimensionality-reduction",
+          "morphological-profiles",
+          "support-vector-machines"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要明确以光学高光谱数据或观测为主要研究对象；仅总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用自对偶形态属性剖面提取光谱–空间特征，同时控制高维特征数量？",
+        "datasets": "接受稿§IV A/表I–II：Indian Pines 145×145、200波段、16类；Pavia 103通道、9类，稿内空间大小写640×340，待原始数据和正式稿核验。",
+        "experimentSetting": "接受稿§IV局部及Fig.3：首轮NWFE保留超过99%方差，属性处理后选10特征公平比较；Indian Pines每类10%训练、十次随机重复，Pavia使用给定训练集；SVM十折调参及RF150树，原稿阈值人工按场景选择。",
+        "conclusions": "作者报告ESDAP提供有效空间特征，优势随场景、属性与分类器变化；不从部分表格推导统一最优。",
+        "limitations": "NWFE使用训练标签，不能因特征处理写成无监督；阈值人工选取，跨场景泛化和现代比较待核验。Pavia空间大小记载、正式稿差异、代码/数据/许可与复现待查。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://hal.science/hal-01259781/document",
+            "checkedAt": "2026-10-08",
+            "level": "完整原摘要与实际注明的局部原稿",
+            "supports": [
+              "先用监督NWFE提取HSI特征，再以包含树上的自对偶属性滤波构造ESDAP，第二次NWFE压缩属性特征；以SVM或随机森林分类，并与EAP比较。",
+              "接受稿§IV A/表I–II：Indian Pines 145×145、200波段、16类；Pavia 103通道、9类，稿内空间大小写640×340，待原始数据和正式稿核验。",
+              "接受稿§IV局部及Fig.3：首轮NWFE保留超过99%方差，属性处理后选10特征公平比较；Indian Pines每类10%训练、十次随机重复，Pavia使用给定训练集；SVM十折调参及RF150树，原稿阈值人工按场景选择。",
+              "NWFE使用训练标签，不能因特征处理写成无监督；阈值人工选取，跨场景泛化和现代比较待核验。Pavia空间大小记载、正式稿差异、代码/数据/许可与复现待查。",
+              "正式2015年8月12(8):1690–1694、DOI与HAL封面/机构记录一致；HAL v1于2016-01-20存档，存档日期不替代正式2015。原始接受稿与正式排版差异未完整核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/journals/1545-598X/works",
+            "checkedAt": "2026-10-08",
+            "level": "登记书目，非摘要",
+            "supports": [
+              "Extended Self-Dual Attribute Profiles for the Classification of Hyperspectral Images",
+              "Gabriele Cavallaro, Mauro Dalla Mura, Jon Atli Benediktsson, Lorenzo Bruzzone",
+              "12(8):1690-1694，2015",
+              "10.1109/lgrs.2015.2419629"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "extended-self-dual-profiles-2015-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1109/lgrs.2015.2419629",
+            "doi": "10.1109/lgrs.2015.2419629",
+            "year": 2015,
+            "relation": "正式2015年8月12(8):1690–1694、DOI与HAL封面/机构记录一致；HAL v1于2016-01-20存档，存档日期不替代正式2015。原始接受稿与正式排版差异未完整核验。"
+          },
+          {
+            "id": "extended-self-dual-profiles-2015-institution-copy",
+            "type": "机构原始存档",
+            "url": "https://hal.science/hal-01259781/document",
+            "year": 2016,
+            "relation": "正式2015年8月12(8):1690–1694、DOI与HAL封面/机构记录一致；HAL v1于2016-01-20存档，存档日期不替代正式2015。原始接受稿与正式排版差异未完整核验。"
+          }
+        ],
+        "methodFamilyId": "extended-self-dual-profiles-2015"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://hal.science/hal-01259781/document",
+          "figureLabel": "Fig. 3",
+          "page": 4,
+          "caption": "两阶段监督NWFE的光谱–空间分类流程：EAP/ESDAP分支、10特征与SVM分类。",
+          "verificationNote": "接受稿PDF第4页（正文第3页）及裁切原图分别目视确认；保留完整流程和原图注，未重绘。",
+          "cropDescription": "以2600像素页面长边渲染，裁切右栏中下部流程图与原图注。",
+          "path": "figures/extended-self-dual-profiles-2015/framework.png",
+          "width": 874,
+          "height": 226,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "571a04a86615967dd4f7b1ad807f2734fd6e013f93e0910948ebad978c71a173",
+          "attribution": "Gabriele Cavallaro, Mauro Dalla Mura, Jon Atli Benediktsson, Lorenzo Bruzzone · GRSL 2015"
+        }
+      ]
+    },
+    {
+      "id": "multispectral-lidar-ratio-calibration-2015",
+      "shortTitle": "LiDAR spectral ratio",
+      "title": "Improving Backscatter Intensity Calibration for Multispectral LiDAR",
+      "authors": "Shuo Shi, Shalei Song, Wei Gong, Lin Du, Bo Zhu, Xin Huang",
+      "year": 2015,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2015.2405573",
+      "representation": "利用同步、共轴的多波长回波比和同距离白板参照标定，减弱共同传感器、入射角及粗糙度因素；由标定后的光谱比构建植被指数。",
+      "tags": [
+        "radiometric-calibration",
+        "land-cover-classification",
+        "spectral-ratio-calibration"
+      ],
+      "summary": "利用同步、共轴的多波长回波比和同距离白板参照标定，减弱共同传感器、入射角及粗糙度因素；由标定后的光谱比构建植被指数。",
+      "input": "同步多波长LiDAR回波强度、同距离白板参考与测量几何。",
+      "output": "标定光谱比、植被指数及目标分类结果。",
+      "mechanism": "利用同步、共轴的多波长回波比和同距离白板参照标定，减弱共同传感器、入射角及粗糙度因素；由标定后的光谱比构建植被指数。",
+      "readingNote": "机构原PDF缓存的完整摘要、§I–III方法及§IV–V实验/结论局部已读；未取得本地PDF、未逐页阅读全文或复现。Fig.1在期刊1422页（PDF第2页），缓存有图注，下载403且截图Cache miss，原图待取得。",
+      "paper": "https://doi.org/10.1109/lgrs.2015.2405573",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "institution_pdf_cached_abstract_and_selected_sections",
+      "citation": "@article{multispectral_lidar_ratio_calibration_2015,\n  title = {Improving Backscatter Intensity Calibration for Multispectral LiDAR},\n  author = {Shuo Shi and Shalei Song and Wei Gong and Lin Du and Bo Zhu and Xin Huang},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2015},\n  volume = {12},\n  number = {7},\n  pages = {1421--1425},\n  doi = {10.1109/LGRS.2015.2405573}\n}\n",
+      "library": {
+        "categoryIds": [
+          "radiometric-calibration",
+          "land-cover-classification",
+          "spectral-ratio-calibration"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "四离散波长556/670/700/780 nm的多光谱LiDAR，不是连续高光谱测量；原文引言及参考文献[4]明确联系全波形高光谱LiDAR。仅总库，不自动进入三维专题。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何简化多光谱LiDAR强度标定，降低入射角与表面粗糙度对光谱特征的影响？",
+        "datasets": "机构缓存§IV：暗室10 m，悬铃木健康叶/落叶、土壤、水泥四目标，入射角0–80°及四档土壤表面粗糙度；未核验公开数据集。",
+        "experimentSetting": "完整原始摘要和注明局部阅读：四波长共轴同步照明，同距离99% Labsphere白板参照；由光谱比计算NDVI/GNDVI/SRPI并与780 nm单波长作SVM分类对照。训练/测试划分、核参数与重复次数未核验，不把同一波长比的校准效果等同四类可分性。",
+        "conclusions": "作者报告实验条件下光谱比比单波长强度更稳定，植被指数改善四目标分类；只记录局部原文的定性结论，不推断跨距离、户外或高光谱普遍有效。",
+        "limitations": "依赖波束对齐、稳定激光功率及大气条件和参照板；实验为四波长暗室原型，不能称为已验证高光谱或野外泛化。原PDF、代码/数据发布、分类划分、图像及再使用许可待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://irsip.whu.edu.cn/resultsv2/paper/p50.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "机构原PDF缓存完整摘要及注明局部，非本地全文/复现",
+            "supports": [
+              "利用同步、共轴的多波长回波比和同距离白板参照标定，减弱共同传感器、入射角及粗糙度因素；由标定后的光谱比构建植被指数。",
+              "机构原PDF缓存的完整摘要、§I–III方法及§IV–V实验/结论局部已读；未取得本地PDF、未逐页阅读全文或复现。Fig.1在期刊1422页（PDF第2页），缓存有图注，下载403且截图Cache miss，原图待取得。",
+              "四离散波长556/670/700/780 nm的多光谱LiDAR，不是连续高光谱测量；原文引言及参考文献[4]明确联系全波形高光谱LiDAR。仅总库，不自动进入三维专题。",
+              "机构缓存§IV：暗室10 m，悬铃木健康叶/落叶、土壤、水泥四目标，入射角0–80°及四档土壤表面粗糙度；未核验公开数据集。",
+              "完整原始摘要和注明局部阅读：四波长共轴同步照明，同距离99% Labsphere白板参照；由光谱比计算NDVI/GNDVI/SRPI并与780 nm单波长作SVM分类对照。训练/测试划分、核参数与重复次数未核验，不把同一波长比的校准效果等同四类可分性。",
+              "作者报告实验条件下光谱比比单波长强度更稳定，植被指数改善四目标分类；只记录局部原文的定性结论，不推断跨距离、户外或高光谱普遍有效。",
+              "依赖波束对齐、稳定激光功率及大气条件和参照板；实验为四波长暗室原型，不能称为已验证高光谱或野外泛化。原PDF、代码/数据发布、分类划分、图像及再使用许可待核验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/journals/1545-598X/works",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记目录，与原PDF缓存书目核对",
+            "supports": [
+              "正式2015年7月12(7):1421–1425；在线2015-03-03与当前版本2015-03-24来自原第一页，不能替换正式卷期年。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "multispectral-lidar-ratio-calibration-2015-journal",
+            "type": "期刊正式版",
+            "doi": "10.1109/lgrs.2015.2405573",
+            "url": "https://doi.org/10.1109/lgrs.2015.2405573",
+            "year": 2015,
+            "relation": "机构PDF缓存显示正式排版12(7):1421–1425；未核验独立预印本或arXiv ID。"
+          }
+        ],
+        "methodFamilyId": "lidar-spectral-ratio-calibration"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "原文缓存Fig.1位于PDF第2页/期刊1422页；直接下载HTTP403，Web截图Cache miss。保留原图线索，不生成图像。",
+        "sourceUrl": "https://irsip.whu.edu.cn/resultsv2/paper/p50.pdf",
+        "checkedAt": "2026-10-08"
+      }
     }
   ],
   "datasets": [
@@ -38759,7 +38960,8 @@
         "svmsub-hyperspectral-2015",
         "generalized-graph-fusion-2015",
         "hysime-qr-noise-2015",
-        "hysure-subspace-2015"
+        "hysure-subspace-2015",
+        "extended-self-dual-profiles-2015"
       ],
       "history": [
         {
@@ -40424,7 +40626,8 @@
         "hylite-outcrop-illumination",
         "rbvc-airborne-2001",
         "quasar-calibration-2001",
-        "dais-anem-2001"
+        "dais-anem-2001",
+        "multispectral-lidar-ratio-calibration-2015"
       ],
       "history": [
         {
@@ -41068,7 +41271,9 @@
         "generalized-graph-fusion-2015",
         "gpu-svm-composite-kernels-2015",
         "gpu-lorsal-smlr-2015",
-        "pgpda-hyperspectral-2015"
+        "pgpda-hyperspectral-2015",
+        "extended-self-dual-profiles-2015",
+        "multispectral-lidar-ratio-calibration-2015"
       ],
       "history": [
         {
@@ -42252,7 +42457,8 @@
       "rationale": "SVMsub原始方法明确将类别子空间非线性映射与线性SVM结合。",
       "evidencePaperIds": [
         "svmsub-hyperspectral-2015",
-        "gpu-svm-composite-kernels-2015"
+        "gpu-svm-composite-kernels-2015",
+        "extended-self-dual-profiles-2015"
       ],
       "history": [
         {
@@ -42404,6 +42610,47 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "PGPDA原方法和npGP1图支持此分类模型家族。"
+        }
+      ]
+    },
+    {
+      "id": "morphological-profiles",
+      "name": "形态学属性与多尺度剖面",
+      "dimension": "method",
+      "definition": "以形态学开闭、连通属性滤波或包含树构造多尺度空间特征剖面，并与光谱或高程特征结合；不因使用普通邻域就归此类。",
+      "status": "provisional",
+      "color": "#9aa4c2",
+      "createdAt": "2026-10-08",
+      "rationale": "ESDAP原方法/流程图与GGF已核验的HSI/LiDAR形态剖面提供直接依据。",
+      "evidencePaperIds": [
+        "generalized-graph-fusion-2015",
+        "extended-self-dual-profiles-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "ESDAP原方法/流程图与GGF已核验的HSI/LiDAR形态剖面提供直接依据。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-ratio-calibration",
+      "name": "多波长光谱比标定",
+      "dimension": "method",
+      "definition": "利用同步多波长回波比、参照目标及共同因素消除来标定光谱特征；与直接恢复绝对反射率或单波长强度校正区分，离散波长需注明多光谱关系。",
+      "status": "provisional",
+      "color": "#b49bc1",
+      "createdAt": "2026-10-08",
+      "rationale": "本篇原始方法局部表明光谱比及共因子消除是主要标定机制，形成暂定方法标签。",
+      "evidencePaperIds": [
+        "multispectral-lidar-ratio-calibration-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "依据GRSL2015多波长LiDAR标定方法形成，后续论文增加后再复核。"
         }
       ]
     }
