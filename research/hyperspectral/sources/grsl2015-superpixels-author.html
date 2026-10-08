@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+	    <script>
+        (function (exports, d) {
+            var _isReady = false,
+                _event,
+                _fns = [];
+
+            function onReady(event) {
+                d.removeEventListener("DOMContentLoaded", onReady);
+                _isReady = true;
+                _event = event;
+                _fns.forEach(function (_fn) {
+                    var fn = _fn[0],
+                        context = _fn[1];
+                    fn.call(context || exports, window.jQuery);
+                });
+            }
+
+            function onReadyIe(event) {
+                if (d.readyState === "complete") {
+                    d.detachEvent("onreadystatechange", onReadyIe);
+                    _isReady = true;
+                    _event = event;
+                    _fns.forEach(function (_fn) {
+                        var fn = _fn[0],
+                            context = _fn[1];
+                        fn.call(context || exports, event);
+                    });
+                }
+            }
+
+            d.addEventListener && d.addEventListener("DOMContentLoaded", onReady) ||
+            d.attachEvent && d.attachEvent("onreadystatechange", onReadyIe);
+
+            function domReady(fn, context) {
+                if (_isReady) {
+                    fn.call(context, _event);
+                }
+
+                _fns.push([fn, context]);
+            }
+
+            exports.mesmerizeDomReady = domReady;
+        })(window, document);
+    </script>
+	<title>Publications &#8211; Machine Learning and Signal Processing Laboratory</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Machine Learning and Signal Processing Laboratory &raquo; Feed" href="https://machinelearning.ee.uh.edu/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Machine Learning and Signal Processing Laboratory &raquo; Comments Feed" href="https://machinelearning.ee.uh.edu/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://machinelearning.ee.uh.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmachinelearning.ee.uh.edu%2Fpublications%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://machinelearning.ee.uh.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmachinelearning.ee.uh.edu%2Fpublications%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='mesmerize-parent-css' href='https://machinelearning.ee.uh.edu/wp-content/themes/mesmerize/style.min.css?ver=a00eb665f93ae13a0d782f74cb0af05a' media='all' />
+<link rel='stylesheet' id='mesmerize-style-css' href='https://machinelearning.ee.uh.edu/wp-content/themes/highlight/style.min.css?ver=1.0.69' media='all' />
+<style id="mesmerize-style-inline-css">
+img.logo.dark, img.custom-logo{width:auto;max-height:70px !important;}
+/** cached kirki style */.header-homepage:not(.header-slide).color-overlay:before{background:#000000;}.header-homepage:not(.header-slide) .background-overlay,.header-homepage:not(.header-slide).color-overlay::before{opacity:0.7;}.header-homepage-arrow{font-size:calc( 50px * 0.84 );bottom:20px;background:rgba(255,255,255,0);}.header-homepage-arrow > i.fa{width:50px;height:50px;}.header-homepage-arrow > i{color:#ffffff;}.mesmerize-front-page .header-separator .svg-white-bg{fill:rgb(255,255,255)!important;}.mesmerize-front-page .header-separator svg{height:27px!important;}body .header .svg-white-bg{fill:#ffffff!important;}.mesmerize-inner-page .header .svg-accent{stroke:#FF9800!important;}.header-separator svg{height:88px!important;}.header-homepage .header-description-row{padding-top:3%;padding-bottom:5%;}.inner-header-description{padding-top:5%;padding-bottom:4%;}@media screen and (max-width:767px){.header-homepage .header-description-row{padding-top:10%;padding-bottom:10%;}}@media only screen and (min-width: 768px){.header-content .align-holder{width:54%!important;}.inner-header-description{text-align:center!important;}}
+/*# sourceURL=mesmerize-style-inline-css */
+</style>
+<link rel='stylesheet' id='mesmerize-style-bundle-css' href='https://machinelearning.ee.uh.edu/wp-content/themes/mesmerize/assets/css/theme.bundle.min.css?ver=1.0.69' media='all' />
+<link rel='stylesheet' id='mesmerize-fonts-css' href="" data-href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%7CMuli%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%2C700%2C700italic%2C900%2C900italic%7CPlayfair+Display%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Clatin-ext&#038;display=swap' media='all' />
+<script data-wp-strategy="defer" defer id="stop-user-enumeration-js" src="https://machinelearning.ee.uh.edu/wp-content/plugins/stop-user-enumeration/frontend/js/frontend.js?ver=1.7.9"></script>
+<script id="jquery-core-js" src="https://machinelearning.ee.uh.edu/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://machinelearning.ee.uh.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="jquery-js-after">
+(function () {
+            function setHeaderTopSpacing() {
+
+                setTimeout(function() {
+                  var headerTop = document.querySelector('.header-top');
+                  var headers = document.querySelectorAll('.header-wrapper .header,.header-wrapper .header-homepage');
+
+                  for (var i = 0; i < headers.length; i++) {
+                      var item = headers[i];
+                      item.style.paddingTop = headerTop.getBoundingClientRect().height + "px";
+                  }
+
+                    var languageSwitcher = document.querySelector('.mesmerize-language-switcher');
+
+                    if(languageSwitcher){
+                        languageSwitcher.style.top = "calc( " +  headerTop.getBoundingClientRect().height + "px + 1rem)" ;
+                    }
+                    
+                }, 100);
+
+             
+            }
+
+            window.addEventListener('resize', setHeaderTopSpacing);
+            window.mesmerizeSetHeaderTopSpacing = setHeaderTopSpacing
+            mesmerizeDomReady(setHeaderTopSpacing);
+        })();
+    
+    
+//# sourceURL=jquery-js-after
+</script>
+<link rel="https://api.w.org/" href="https://machinelearning.ee.uh.edu/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://machinelearning.ee.uh.edu/wp-json/wp/v2/pages/8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://machinelearning.ee.uh.edu/xmlrpc.php?rsd" />
+
+<link rel="canonical" href="https://machinelearning.ee.uh.edu/publications/" />
+<link rel='shortlink' href='https://machinelearning.ee.uh.edu/?p=8' />
+        <style data-name="header-gradient-overlay">
+            .header .background-overlay {
+                background: linear-gradient(135deg , rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+            }
+        </style>
+        <script type="text/javascript" data-name="async-styles">
+        (function () {
+            var links = document.querySelectorAll('link[data-href]');
+            for (var i = 0; i < links.length; i++) {
+                var item = links[i];
+                item.href = item.getAttribute('data-href')
+            }
+        })();
+    </script>
+		<style id="page-content-custom-styles">
+			</style>
+	    <style data-name="background-content-colors">
+        .mesmerize-inner-page .page-content,
+        .mesmerize-inner-page .content,
+        .mesmerize-front-page.mesmerize-content-padding .page-content {
+            background-color: #ffffff;
+        }
+    </style>
+    </head>
+
+<body class="wp-singular page-template-default page page-id-8 wp-theme-mesmerize wp-child-theme-highlight mesmerize-inner-page">
+<style>
+.screen-reader-text[href="#page-content"]:focus {
+   background-color: #f1f1f1;
+   border-radius: 3px;
+   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+   clip: auto !important;
+   clip-path: none;
+   color: #21759b;
+
+}
+</style>
+<a class="skip-link screen-reader-text" href="#page-content">Skip to content</a>
+
+<div  id="page-top" class="header-top">
+		<div class="navigation-bar logo-above-menu "  data-sticky='0'  data-sticky-mobile='1'  data-sticky-to='top' >
+    <div class="navigation-wrapper ">
+        <div class="row basis-auto between-xs">
+	        <div class="logo_col col-xs col-sm-12 center-sm">
+	            <a class="text-logo" data-type="group"  data-dynamic-mod="true" href="https://machinelearning.ee.uh.edu/">Machine<span style="font-weight: 300;" class="span12"> Learning</span> and<span style="font-weight: 300;" class="span12"> Signal</span> Processing<span style="font-weight: 300;" class="span12"> Laboratory</span></a>	        </div>
+	        <div class="main_menu_col col-xs-fit col-sm">
+	            <div id="mainmenu_container" class="row"><ul id="main_menu" class="active-line-bottom main-menu dropdown-menu"><li id="menu-item-230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230"><a href="https://machinelearning.ee.uh.edu/people">People</a></li>
+<li id="menu-item-56" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-56"><a href="https://machinelearning.ee.uh.edu/recent-research-highlights">Research</a>
+<ul class="sub-menu">
+	<li id="menu-item-879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://machinelearning.ee.uh.edu/recent-research-highlights/">Research Highlights</a></li>
+	<li id="menu-item-828" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-828"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest">Datasets</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1101"><a href="https://machinelearning.ee.uh.edu/2018-ieee-grss-data-fusion-challenge-fusion-of-multispectral-lidar-and-hyperspectral-data/">2018 IEEE GRSS Data Fusion Challenge – Fusion of Multispectral LiDAR and Hyperspectral Data</a></li>
+		<li id="menu-item-829" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-829"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest">2013 IEEE GRSS Data Fusion Contest</a>
+		<ul class="sub-menu">
+			<li id="menu-item-832" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-832"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest">Hyperspectral and LiDAR Dataset</a></li>
+			<li id="menu-item-830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-830"><a href="https://machinelearning.ee.uh.edu/795-2">Contest Results &#8211; Best Paper Challenge</a></li>
+			<li id="menu-item-831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-831"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest-results">Contest Results &#8211; Classification Challenge</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-329" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-329"><a href="https://machinelearning.ee.uh.edu/internal-research-blog-2">Internal Resources</a>
+	<ul class="sub-menu">
+		<li id="menu-item-778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="https://machinelearning.ee.uh.edu/literature/">Journal Club and Relevant Reading Material</a></li>
+		<li id="menu-item-335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-335"><a href="https://machinelearning.ee.uh.edu/code-changelog/">Code Changelog</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-22"><a href="https://machinelearning.ee.uh.edu/publications/" aria-current="page">Publications</a>
+<ul class="sub-menu">
+	<li id="menu-item-101" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-101"><a href="https://machinelearning.ee.uh.edu/publications#books" aria-current="page">Books and Book Chapters</a></li>
+	<li id="menu-item-100" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-100"><a href="https://machinelearning.ee.uh.edu/publications#journals" aria-current="page">Journal Articles</a></li>
+	<li id="menu-item-102" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-102"><a href="https://machinelearning.ee.uh.edu/publications#conferences" aria-current="page">Conference Papers</a></li>
+</ul>
+</li>
+<li id="menu-item-426" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-426"><a href="https://machinelearning.ee.uh.edu/multi-dimensional-image-processing-course-outline">Teaching</a>
+<ul class="sub-menu">
+	<li id="menu-item-1066" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1066"><a href="https://machinelearning.ee.uh.edu/sparse-representations-for-signal-processing/">Sparse Representations for Signal Processing</a></li>
+	<li id="menu-item-991" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-991"><a href="http://www.uh.edu/blackboard/">Introduction to Stochastic Processes</a></li>
+</ul>
+</li>
+</ul></div>    <a href="#" data-component="offcanvas" data-target="#offcanvas-wrapper" data-direction="right" data-width="300px" data-push="false">
+        <div class="bubble"></div>
+        <i class="fa fa-bars"></i>
+    </a>
+    <div id="offcanvas-wrapper" class="hide force-hide  offcanvas-right">
+        <div class="offcanvas-top">
+            <div class="logo-holder">
+                <a class="text-logo" data-type="group"  data-dynamic-mod="true" href="https://machinelearning.ee.uh.edu/">Machine<span style="font-weight: 300;" class="span12"> Learning</span> and<span style="font-weight: 300;" class="span12"> Signal</span> Processing<span style="font-weight: 300;" class="span12"> Laboratory</span></a>            </div>
+        </div>
+        <div id="offcanvas-menu" class="menu-top-menu-container"><ul id="offcanvas_menu" class="offcanvas_menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230"><a href="https://machinelearning.ee.uh.edu/people">People</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-56"><a href="https://machinelearning.ee.uh.edu/recent-research-highlights">Research</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-879"><a href="https://machinelearning.ee.uh.edu/recent-research-highlights/">Research Highlights</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-828"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest">Datasets</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1101"><a href="https://machinelearning.ee.uh.edu/2018-ieee-grss-data-fusion-challenge-fusion-of-multispectral-lidar-and-hyperspectral-data/">2018 IEEE GRSS Data Fusion Challenge – Fusion of Multispectral LiDAR and Hyperspectral Data</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-829"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest">2013 IEEE GRSS Data Fusion Contest</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-832"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest">Hyperspectral and LiDAR Dataset</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-830"><a href="https://machinelearning.ee.uh.edu/795-2">Contest Results &#8211; Best Paper Challenge</a></li>
+			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-831"><a href="https://machinelearning.ee.uh.edu/2013-ieee-grss-data-fusion-contest-results">Contest Results &#8211; Classification Challenge</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-329"><a href="https://machinelearning.ee.uh.edu/internal-research-blog-2">Internal Resources</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-778"><a href="https://machinelearning.ee.uh.edu/literature/">Journal Club and Relevant Reading Material</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-335"><a href="https://machinelearning.ee.uh.edu/code-changelog/">Code Changelog</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-22"><a href="https://machinelearning.ee.uh.edu/publications/" aria-current="page">Publications</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-101"><a href="https://machinelearning.ee.uh.edu/publications#books" aria-current="page">Books and Book Chapters</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-100"><a href="https://machinelearning.ee.uh.edu/publications#journals" aria-current="page">Journal Articles</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-102"><a href="https://machinelearning.ee.uh.edu/publications#conferences" aria-current="page">Conference Papers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-426"><a href="https://machinelearning.ee.uh.edu/multi-dimensional-image-processing-course-outline">Teaching</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1066"><a href="https://machinelearning.ee.uh.edu/sparse-representations-for-signal-processing/">Sparse Representations for Signal Processing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-991"><a href="http://www.uh.edu/blackboard/">Introduction to Stochastic Processes</a></li>
+</ul>
+</li>
+</ul></div>
+            </div>
+    	        </div>
+	    </div>
+    </div>
+</div>
+</div>
+
+<div id="page" class="site">
+    <div class="header-wrapper">
+        <div  class='header  color-overlay  plum_plate' style=''>
+            <div class="background-overlay"></div>								    <div class="inner-header-description gridContainer">
+        <div class="row header-description-row">
+    <div class="col-xs col-xs-12">
+        <h1 class="hero-title">
+            Publications        </h1>
+                    <p class="header-subtitle"></p>
+            </div>
+        </div>
+    </div>
+        <script>
+		if (window.mesmerizeSetHeaderTopSpacing) {
+			window.mesmerizeSetHeaderTopSpacing();
+		}
+    </script>
+                <div class="header-separator header-separator-bottom "><svg class="mesmerize" preserveAspectRatio="none" width="1000" height="100" viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg">
+
+    <g fill="none">
+        <path class="svg-white-bg" d="M-1.23 78.87c186.267-24.436 314.878-36.485 385.833-36.147 106.432.506 167.531 21.933 236.417 21.933s183.312-50.088 254.721-55.62c47.606-3.688 89.283 2.613 125.03 18.901v72.063l-1002 1.278v-22.408z" fill="#000"/>
+        <path class="svg-accent" d="M-1.23 87.791c171.627-34.447 300.773-52.658 387.438-54.634 129.998-2.964 166.902 40.422 235.909 40.422s175.29-63.463 246.825-68.994c47.69-3.687 91.633 10.063 131.828 41.25" stroke="#50E3C2" stroke-width="1"/>
+    </g>
+</svg></div>        </div>
+    </div>
+
+    <div id='page-content' class="page-content">
+        <div class="gridContainer content">
+            <div id="post-8" class="post-8 page type-page status-publish hentry">
+  <div>
+   <p style="text-align: justify;" align="justify"><a name="books"></a><strong>Books and Book Chapters</strong></p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, J. Chanussot (<em>Editors</em>), <em><a href="http://www.springerlink.com/content/978-3-642-14211-6/contents/" target="_blank" rel="noopener">Optical Remote Sensing &#8211; Advances in Signal Processing and Exploitation Techniques</a></em>, Springer Verlag, Berlin, March 2011. (ISBN: 978-3-642-14211-6)</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, J. Chanussot, &#8220;<a href="http://www.springerlink.com/content/978-3-642-14211-6" target="_blank" rel="noopener">Introduction &#8211; Signal Processing and Exploitation for Optical Remote Sensing</a>,&#8221; Chapter 1 in <em>Optical Remote Sensing &#8211; Advances in Signal Processing and Exploitation Techniques</em>, Springer Verlag, Berlin, March 2011. (ISBN: 978-3-642-14211-6)</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;<a href="http://www.springerlink.com/content/978-3-642-14211-6">A Divide-and-Conquer Paradigm for Hyperspectral Classification and Target Recognition</a>,&#8221; Chapter 7 in <em>Optical Remote Sensing &#8211; Advances in Signal Processing and Exploitation Techniques</em>, Springer Verlag, Berlin, March 2011. (ISBN: 978-3-642-14211-6)</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, J.E. Ball, &#8220;<a href="http://www.sciyo.com/articles/show/title/information-fusion-in-a-high-dimensional-feature-space-for-robust-computer-aided-diagnosis-using-dig" target="_blank" rel="noopener">Information Fusion in a High Dimensional Feature Space for Robust Computer Aided Diagnosis using Digital Mammograms</a>,&#8221; Chapter 9 in <em>New Developments in Biomedical Engineering</em>, Edited by: D. Campolo, In-Tech Publishers, Croatia, January 2010. (ISBN: 978-953-7619-57-2)</p>
+<p style="text-align: justify;"><a name="journals"></a><strong>Peer Reviewed Journal Publications</strong></p>
+<p>N. Makkar, L. Yang and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/9633185">Adversarial Learning Based Discriminative Domain Adaptation for Geospatial Image Analysis</a>,&#8221; in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, vol. 15, pp. 150-162, 2022, doi: 10.1109/JSTARS.2021.3132259.</p>
+<p>R. Mankar, C. Gajjela, F. Shahraki, S. Prasad, D. Mayerich, R. Reddy, &#8220;<a href="https://pubs.rsc.org/en/content/articlehtml/2021/an/d1an00103e?casa_token=igvuRrdZ3rYAAAAA:1zsC8IKmFaKu3HzPaWF7uDBSVdmU9R2RWO4-4qLCW1vjSVXBU4A6wYWd3UeHj_psma5Vt9Ry0AZilWqh">Multi-modal image sharpening in fourier transform infrared (FTIR) microscopy</a>,&#8221; <i>Analyst</i>, <i>146</i>(15), pp 4822-4834, 2021</p>
+<p>K. Safari, S. Prasad and D. Labate, &#8220;<a href="https://ieeexplore.ieee.org/document/8970377">A Multiscale Deep Learning Approach for High-Resolution Hyperspectral Image Classification</a>,&#8221; in <em>IEEE Geoscience and Remote Sensing Letters</em>, vol. 18, no. 1, pp. 167-171, Jan. 2021, doi: 10.1109/LGRS.2020.2966987.</p>
+<p>S. Mukherjee,  S. Prasad. &#8220;<a href="https://www.sciencedirect.com/science/article/pii/S1077314218303011?casa_token=RHP3BUhtRCcAAAAA:rimuZjdHnYRYklgV7GRjTMpKUGw1ZYt_jxhREhAWC2RH3-gJNXGi6AgGOt7VP7b9pkYCmUcB-iE7">A spatial–spectral semisupervised deep learning framework using siamese networks and angular loss</a>.&#8221; <i>Computer Vision and Image Understanding</i> 194 (2020): 102943.</p>
+<p>Y Xu, B Du, L Zhang, D Cerra, M Pato, E Carmona, S Prasad, N Yokoya, <em>et al</em> &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8727489">Advanced Multi-Sensor Optical Remote Sensing for Urban Land Use and Land Cover Classification: Outcome of the 2018 IEEE GRSS Data Fusion Contest</a>,&#8221; in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, vol. 12, no. 6, pp. 1709-1724, June 2019, doi: 10.1109/JSTARS.2019.2911113.</p>
+<p>B. Le Saux, N. Yokoya, R. Hänsch and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8573970">Advanced Multisource Optical Remote Sensing for Urban Land Use and Land Cover Classification [Technical Committees]</a>,&#8221; in <em>IEEE Geoscience and Remote Sensing Magazine</em>, vol. 6, no. 4, pp. 85-89, Dec. 2018</p>
+<p>L. Yan, M. Cui and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8357935">Joint Euclidean and Angular Distance-Based Embeddings for Multisource Image Analysis</a>,&#8221; in <em>IEEE Geoscience and Remote Sensing Letters</em>, vol. 15, no. 7, pp. 1110-1114, July 2018, doi: 10.1109/LGRS.2018.2827845.</p>
+<p>X. Zhou and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8356196">Deep Feature Alignment Neural Networks for Domain Adaptation of Hyperspectral Data</a>,&#8221; in <em>IEEE Transactions on Geoscience and Remote Sensing</em>, vol. 56, no. 10, pp. 5863-5872, Oct. 2018, doi: 10.1109/TGRS.2018.2827308.</p>
+<p>S. Prasad, W. Liao, M. He, J. Chanussot, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8334683">Foreword to the Special Issue on Hyperspectral Remote Sensing and Imaging Spectroscopy</a>,&#8221; in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, vol. 11, no. 4,  April 2018</p>
+<p>S. Mukherjee, M. Cui and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8214279">Spatially Constrained Semisupervised Local Angular Discriminant Analysis for Hyperspectral Images</a>,&#8221; in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, vol. 11, no. 4, pp. 1203-1212, April 2018</p>
+<p>H. Wu and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8105856">Semi-Supervised Deep Learning Using Pseudo Labels for Hyperspectral Image Classification</a>,&#8221; in <em>IEEE Transactions on Image Processing</em>, vol. 27, no. 3, pp. 1259-1270, March 2018</p>
+<p>H. Wu, S. Prasad. &#8220;<a href="https://www.sciencedirect.com/science/article/pii/S0031320317303473">Semi-supervised dimensionality reduction of hyperspectral imagery using pseudo-labels</a>.&#8221; <i>Pattern Recognition</i> 74 (2018): 212-224.</p>
+<p>R. Mankar, M. J. Walsh, R. Bhargava, S. Prasad,  &amp; D. Mayerich, &#8220;Selecting optimal features from Fourier transform infrared spectroscopy for discrete-frequency imaging&#8221;, <i>Analyst</i>, <i>143</i>(5), 1147-1156.</p>
+<p>X. Zhou and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/8036243">Domain Adaptation for Robust Classification of Disparate Hyperspectral Images</a>,&#8221; in <em>IEEE Transactions on Computational Imaging</em>, vol. 3, no. 4, pp. 822-836, Dec. 2017</p>
+<p>X. Zhou and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/abstract/document/7956153">Active and Semisupervised Learning With Morphological Component Analysis for Hyperspectral Image Classification</a>,&#8221; in <em>IEEE Geoscience and Remote Sensing Letters</em>, vol. 14, no. 8, pp. 1348-1352, Aug. 2017</p>
+<p style="text-align: justify;">S. Prasad, D. Labate, M. Cui, Y. Zhang, &#8220;<a href="http://ieeexplore.ieee.org/document/7915771/" target="_blank" rel="noopener">Morphologically Decoupled Structured Sparsity for Rotation-Invariant Hyperspectral Image Analysis</a>,&#8221; in the <em>IEEE Transactions on Geoscience and Remote Sensing</em>, vol. 55, no. 8, pp. 4355-4366, Aug. 2017 (*<em><strong>Featured on Journal Cover</strong></em>).</p>
+<p style="text-align: justify;">H. Wu, S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/document/8105856">Semi-supervised Deep Learning using Pseudo Labels for Hyperspectral Image Classification</a>,&#8221; in the <em>IEEE Transactions on Image Processing</em>, vol. 27, No. 3, pp 1259 &#8211; 1270, March 2018.</p>
+<p style="text-align: justify;">X. Zhou and S. Prasad, &#8220;<a href="https://ieeexplore.ieee.org/document/8356196">Deep Feature Alignment Neural Networks for Domain Adaptation of Hyperspectral Data</a>,&#8221; in <em>IEEE Transactions on Geoscience and Remote Sensing</em>, vol. 56, no. 10, pp. 5863-5872, Oct. 2018.</p>
+<p style="text-align: justify;">H. Wu, S. Prasad, &#8220;<a href="http://www.sciencedirect.com/science/article/pii/S0031320317303473" target="_blank" rel="noopener">Semi-Supervised Dimensionality Reduction of Hyperspectral Imagery using Pseudo-Labels</a>,&#8221; <em>Pattern Recognition</em>, Vol. 74, pp 212-224,  February 2018.</p>
+<p style="text-align: justify;">X. Zhou, S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/document/8036243/" target="_blank" rel="noopener">Domain Adaptation for Robust Classification of Disparate Hyperspectral Images</a>,&#8221; in the <em>IEEE Transactions on Computational Imaging</em>, Vol. 3, No.5, pp 822 &#8211; 836, December 2017.</p>
+<p style="text-align: justify;">X. Zhou and S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/abstract/document/7956153/" target="_blank" rel="noopener">Active and Semisupervised Learning With Morphological Component Analysis for Hyperspectral Image Classification</a>,&#8221; in <em>IEEE Geoscience and Remote Sensing Letters</em>, vol. 14, no. 8, pp. 1348-1352, Aug. 2017.</p>
+<p style="text-align: justify;">Y. Zhang, S. Prasad, A. Kilicarslan, J. L. Contreras-Vidal, &#8220;<a href="https://www.frontiersin.org/articles/10.3389/fnins.2017.00170/full" target="_blank" rel="noopener">Multiple Kernel Based Region Importance Learning for Neural Classification of Gait States from EEG Signals</a>,&#8221; in <i>Frontiers in neuroscience</i>,  April 2017.</p>
+<p style="text-align: justify;">H. Wu, S. Prasad, &#8220;Convolutional Recurrent Neural Networks for Hyperspectral Data Classification,&#8221; in <em>Remote Sensing</em>, Vol. 9, No. 3, March 2017.</p>
+<p>M. Cui, S. Prasad, &#8220;<a href="http://www.sciencedirect.com/science/article/pii/S0167865516302197" target="_blank" rel="noopener">Sparse Representation-Based Classification: Orthogonal Least Squares or Orthogonal Matching Pursuit?</a>&#8220;, in<em> Pattern Recognition Letters</em>, Vol. 84, pp 120-126, Dec. 2016.</p>
+<p>J. Guo, X. Zhou, J. Li, A. Plaza and S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/abstract/document/7582397/" target="_blank" rel="noopener">Superpixel-Based Active Learning and Online Feature Importance Learning for Hyperspectral Image Analysis</a>,&#8221; in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, vol. 10, no. 1, pp. 347-359, Jan. 2017.</p>
+<p>Y. Zhang, S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7387762" target="_blank" rel="noopener">Multisource Geospatial Data Fusion via Local Joint Sparse Representation</a>,&#8221; in the IEEE Transactions on Geoscience and Remote Sensing, Vol. 54, No. 6, pp. 3265-3276, June 2016.</p>
+<p>X. Zhou, S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7458122" target="_blank" rel="noopener">Wavelet-Domain Multiview Active Learning for Spatial-Spectral Hyperspectral Image Classification</a>,&#8221; in <i>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</i> , 2016.</p>
+<p>H. Wu, S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7462220" target="_blank" rel="noopener">Dirichlet Process Based Active Learning and Discovery of Unknown Classes for Hyperspectral Image Classification</a>,&#8221; in <em>IEEE Transactions on Geoscience and Remote Sensing</em>, vol. 54, no. 8, pp. 4882-4895, Aug. 2016.</p>
+<p>M. Dalla Mura, S. Prasad, F. Pacifici, P. Gamba, J. Chanussot and J. A. Benediktsson, &#8220;<a href="http://ieeexplore.ieee.org/abstract/document/7194740/" target="_blank" rel="noopener">Challenges and Opportunities of Multimodality and Data Fusion in Remote Sensing</a>,&#8221; in <em>Proceedings of the IEEE</em>, vol. 103, no. 9, pp. 1585-1601, Sept. 2015.</p>
+<p>M. Cui, S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7079485" target="_blank" rel="noopener">Angular Discriminant Analysis for Hyperspectral Image Classification</a>&#8220;, in <em>IEEE Journal of Selected Topics in Signal Processing</em>, Vol. 9, No. 6, pp. 1003-1015, Sept. 2015.</p>
+<p>M. Cui, S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6957565" target="_blank" rel="noopener">Class-Dependent Sparse Representation Classifier for Robust Hyperspectral Image Classification</a>&#8220;, in <em>IEEE Transactions on Geoscience and Remote Sensing</em>, vol. 53, no. 5, pp 2683-2695, May 2015.</p>
+<p class="p1"><span class="s1">T. Priya, S. Prasad, H. Wu, “<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7008434" target="_blank" rel="noopener">Superpixels for Spatially Reinforced Bayesian Classification of Hyperspectral Images</a>,” in the <i>IEEE Geoscience and Remote Sensing Letters</i>, vol. 12, no. 5, pp<span class="Apple-converted-space">  </span>1071-1075, January 2015.</span></p>
+<p>Y. Zhang, H. Yang, S. Prasad, E. Pasolli, J. Jung, M. Crawford, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6960863" target="_blank" rel="noopener">Ensemble Multiple Kernel Active Learning For Classification of Multisource Remote Sensing Data</a>&#8220;, in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>,  vol. 8, no. 2, pp 845-858, February 2015.</p>
+<p>Y. Zhang, S. Prasad, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6897949" target="_blank" rel="noopener">Locality Preserving Composite Kernel Feature Extraction for Multi-Source Geospatial Image Analysis</a>,&#8221; in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>,  vol. 8, no. 3, pp 1385-1392, March 2015.</p>
+<p>T. C. Bulea, S. Prasad, A. Kilicarslan, J. L.  Contreras-Vidal, &#8220;Sitting and standing intention can be decoded from scalp EEG recorded prior to movement execution,&#8221; in <i>Frontiers in neuroscience</i>, <i>8, November 2014</i>.</p>
+<p>J. Jung, E. Pasolli, S. Prasad, J. Tilton, M. Crawford, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6695775" target="_blank" rel="noopener">A Framework for Land Cover Classification Using Discrete Return LiDAR Data: Adopting Pseudo-Waveform and Hierarchical Segmentation</a>,&#8221; in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, Vol. 7, No. 2, pp 491-502, February 2014.</p>
+<p>D. Lunga, S. Prasad, M. Crawford, O. Ersoy, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6678226" target="_blank" rel="noopener">Manifold-Learning-Based Feature Extraction for Classification of Hyperspectral Data</a>,&#8221; in the <em>IEEE Signal Processing Magazine</em>, Vol. 31, No. 1, pp 55-66, January 2014.</p>
+<p>S. Prasad, M. Cui, W. Li, J. E. Fowler, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6497492" target="_blank" rel="noopener">Segmented Mixture-of-Gaussian Classiﬁcation for Hyperspectral Image Analysis</a>,&#8221; in the <em>IEEE <em>Geoscience and Remote Sensing</em> Letters</em>, Volume 11, No. 1, pp 138-142, January 2014.</p>
+<p>W. Li, S. Prasad, J. E. Fowler, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6497493" target="_blank" rel="noopener">Hyperspectral Image Classiﬁcation Using Gaussian Mixture Models and Markov Random Fields</a>,&#8221; in the <em>IEEE <em>Geoscience and Remote Sensing</em> Letters</em>, Vol. 11, No. 1, 153 &#8211; 157, January 2014.</p>
+<p>Z. Ye, S. Prasad, W. Li, J. E. Fowler, M. He, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6497494" target="_blank" rel="noopener">Classification Based on 3-D DWT and Decision Fusion for Hyperspectral Image Analysis</a>,&#8221; in the <em>IEEE <em>Geoscience and Remote Sensing</em> Letters</em>, Vol. 11, No. 1, pp 173-177, January 2014.</p>
+<p>W. Li, S. Prasad, J. E. Fowler, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6472770" target="_blank" rel="noopener">Integration of Spectral-Spatial Information for Hyperspectral Image Reconstruction from Compressive Random Projections</a>,&#8221; in the <em>IEEE <em>Geoscience and Remote Sensing</em> Letters</em>, Vol 10, No. 6, pp 1379 &#8211; 1383, November 2013.</p>
+<p>S. Samiappan, S. Prasad, L. Bruce, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6414604" target="_blank" rel="noopener">Non-Uniform Random Feature Selection and Kernel Density Scoring with SVM based Ensemble Classification for Hyperspectral Image Analysis</a>,&#8221; in the <em><em>IEEE <em>Journal on Selected Topics in Applied Earth Observations and Remote Sensing</em></em></em>, Vol 6, No. 2, pp 792 &#8211; 800, April 2013.</p>
+<p>W. Li, S. Prasad, J. E. Fowler, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6472758" target="_blank" rel="noopener">Noise-Adjusted Subspace Discriminant Analysis for Hyperspectral-Image Classification</a>&#8221; in the <em>IEEE <em>Geoscience and Remote Sensing</em> Letters</em>, Vol 10, No. 6, pp 1374-1378,  November 2013.</p>
+<p>W. Li, S. Prasad, J. E. Fowler &#8220;<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&amp;arnumber=6241415&amp;contentType=Early+Access+Articles&amp;searchField%3DSearch_All%26queryText%3DClassification+and+Reconstructions+from+Random+Projections+for+Hyperspectral+Image+Analysis" target="_blank" rel="noopener">Classification and Reconstructions from Random Projections for Hyperspectral Image Analysis</a>&#8221; in the <em>IEEE <em>Transactions on Geoscience and Remote Sensing</em></em>, Vol. 51, No. 2, pp 833-843, February 2013.</p>
+<p><span style="text-align: justify;">S. Prasad, W. Li, J. E. Fowler, L.M. Bruce &#8220;</span><a style="text-align: justify;" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6165351" target="_blank" rel="noopener">Information Fusion in the Redundant Wavelet Transform Domain for Noise Robust Hyperspectral Classification</a><span style="text-align: justify;">&#8221; in the </span><em style="text-align: justify;"> IEEE <em>Transactions on Geoscience and Remote Sensing</em></em><span style="text-align: justify;">, Vol 50, No. 9, pp 3474-3486,  September 2012.</span></p>
+<p style="text-align: justify;">M. Cui, S. Prasad, M. Mahrooghy, J. Aanstoos, M.A. Lee, L.M. Bruce &#8220;<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6204200&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fstamp%2Fstamp.jsp%3Ftp%3D%26arnumber%3D6204200" target="_blank" rel="noopener">Decision Fusion of Textural Features Derived from Polarimetric Data for Levee Assessment</a>&#8221; in the <em> IEEE <em>Journal on Selected Topics in Applied Earth Observations and Remote Sensing</em></em>, Vol. 5, No. 3, pp 970-976, June 2012.</p>
+<p style="text-align: justify;">W. Li, S. Prasad, J. E. Fowler, L.M. Bruce &#8220;<a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6032745&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fstamp%2Fstamp.jsp%3Ftp%3D%26arnumber%3D6032745">Locality Preserving Dimensionality Reduction and Classification for Hyperspectral Image Analysis</a>&#8221; in the <em> IEEE <em>Transactions on Geoscience and Remote Sensing</em></em>, vol. 50, no. 4, pp 1185-1198, April 2012.</p>
+<p style="text-align: justify;">W. Li, S. Prasad, J. E. Fowler, and L. M. Bruce, “<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=5765424" target="_blank" rel="noopener">Locality-Preserving Discriminant Analysis in Kernel-Induced Feature Spaces for Hyperspectral Image Classification,” </a>in <em>IEEE Geoscience and Remote Sensing Letters</em>, vol. 8, no. 5, pp 895-898, September 2011.</p>
+<p style="text-align: justify;">H.Kalluri, S. Prasad, L.M. Bruce &#8220;<a href="http://ieeexplore.ieee.org//xpls/abs_all.jsp?arnumber=5595496" target="_blank" rel="noopener">Decision Level Fusion of Spectral Reflectance and Derivative Information for Robust Hyperspectral Land Cover Classification</a>,&#8221; in the <em>IEEE Transactions on Geoscience and Remote Sensing</em>, vol.48, no.11, pp.4047-4058, November, 2010.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=5136189&amp;isnumber=5153590">Information Fusion in Kernel Induced Spaces for Robust Sub-Pixel Hyperspectral ATR</a>,&#8221; in the <em> IEEE Geoscience and Remote Sensing Letters </em>&#8211; Vol. 6 no. 3 &#8211; pp 572-576, July, 2009.</p>
+<p style="text-align: justify;">G. Licciardi, F. Pacifici, D. Tuia, S. Prasad, T. West, F. Giacco, C. Thiel, J. Inglada, E. Christophe, J. Chanussot, P. Gamba, &#8220;<a href="http://ieeexplore.ieee.org/search/srchabstract.jsp?tp=&amp;arnumber=5286249&amp;queryText%3D%28Authors:Prasad,+S%29%26openedRefinements%3D*%26matchBoolean%3Dtrue%26searchField%3DSearch+All">Decision Fusion for the Classification of Hyperspectral Data: Outcome of the 2008 GRS-S Data Fusion Contest</a>,&#8221; in the <em>IEEE Transactions on Geoscience and Remote Sensing </em>&#8211; Vol. 47 no. 11 &#8211; pp 3857-3865, November, 2009.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=4490066&amp;isnumber=4490048">Decision Fusion with Confidence-based Weight Assignment for Hyperspectral Target Recognition</a>,&#8221; in the IEEE Transactions on Geoscience and Remote Sensing, vol. 46, No. 5, May 2008.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=4656486&amp;isnumber=4656438">Limitations of Principal Components Analysis for Hyperspectral Target Recognition</a>,&#8221; in the IEEE Geoscience and Remote Sensing Letters, Vol. 5, Issue 4, pp 625-629, October 2008.</p>
+<p style="text-align: justify;"><a name="conferences"></a><strong>Peer Reviewed Conference Publications</strong></p>
+<p style="text-align: justify;">Y. Zhang, H.L. Yang, D. Lunga, S. Prasad, M. Crawford, &#8220;Context Dependent Manifold Learning for Hyperspectral Image Classification,&#8221; in <em>Proceedings of the 2014 Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)</em>, 25-27 June,  Lausanne, Switzerland, 2014</p>
+<p style="text-align: justify;">X. Zhou, S. Prasad, and M. M. Crawford, &#8220;Wavelet domain multi-view active learning for hyperspectral image analysis&#8221;, in <em>Proceedings of the 2014 IEEE Workshop on Hyperspectral Image and Signal Process.: Evolution in Remote Sensing (WHISPERS)</em>, 25-27 June, Lausanne, Switzerland, 2014.</p>
+<p style="text-align: justify;">X. Zhou, S. Prasad, and M. M. Crawford, &#8220;Wavelet domain active learning for robust classification of full-waveform LiDAR data.&#8221; in <em>Proceedings of the</em> 2014 IEEE International <em>Geosciences and Remote Sensing Symposium (IGARSS),  </em>pp. 3566-3569,<em>Quebec</em>, Canada, <em>July 13-18, 2014</em>.</p>
+<p style="text-align: justify;">M. Cui, S. Prasad. &#8220;Sparsity promoting dimensionality reduction for classification of high dimensional hyperspectral images.&#8221; in <em>Proceedings of the IEEE</em> <em>Conference on Acoustics, Speech and Signal Processing (ICASSP), </em>pp<em> </em>2154 &#8211; 2158, Vancouver, Canada, 2013.</p>
+<p style="text-align: justify;">M. Cui, S. Prasad, &#8220;Multi-Scale Sparse Representation Classification for Robust Hyperspectral Image Analysis,&#8221; in proceedings of the 1&#8217;st <em>IEEE Global Conference on Signal and Image Processing (GlobalSIP) on New Sensing and Inference Methods</em>, pp. 969-972, December 2013.</p>
+<p style="text-align: justify;">H. Wu, S. Prasad, &#8220;Infinite Gaussian Mixture Models for Robust Decision Fusion of Hyperspectral Imagery and Full Waveform LiDAR Data,&#8221; in proceedings of the 1&#8217;st <em>IEEE Global Conference on Signal and Image Processing (GlobalSIP) on New Sensing and Inference Methods</em>, pp 1025 &#8211; 1028, December 2013.</p>
+<p style="text-align: justify;">S. Prasad, M. Cui, &#8220;Sparse Representations for Classification of High Dimensional Multi-Sensor Geospatial Data,&#8221; in proceedings of the 47&#8217;th <em>IEEE Asilomar Conference on Signals, Systems and Computers</em>, November 2013.</p>
+<p style="text-align: justify;">H. H. Yang, Y. Zhang, S. Prasad, M.M. Crawford, “Multi-Kernel active learning for robust geo-spatial image analysis,” in <em>Proceedings of the 2013 IEEE Geoscience and Remote Sensing Symposium</em>, Melbourne, Australia, July 22-26, 2013.</p>
+<p style="text-align: justify;">M. Cui, S. Prasad, L. M. Bruce, R. Shrestha, &#8220;Robust Spatial-Spectral Hyperspectral Image Classification for Vegetation Stress Detection,&#8221; in proceedings of the <em>IEEE Geosciences and Remote Sensing Symposium</em>, Munich, Germany, 2012.</p>
+<p style="text-align: justify;">M. Lee, L. Bruce, J. Aanstoos, S. Prasad, &#8220;Application of Omni-Directional Texture Analysis to SAR Images for Levee Landslide Detection,&#8221; in proceedings of the <em>IEEE Geosciences and Remote Sensing Symposium</em>, Munich, Germany, 2012.</p>
+<p style="text-align: justify;">W. Li, S. Prasad, J. Fowler, M. Cui, &#8220;Locality Preserving Nonnegative Matrix Factorization for Hyperspectral Image Classification,&#8221; in proceedings of the <em>IEEE Geosciences and Remote Sensing Symposium</em>, Munich, Germany, 2012.</p>
+<p style="text-align: justify;">W. Li, S. Prasad, J. Fowler, M. Cui, &#8220;Locality-Preserving Discriminant Analysis for Hyperspectral Image Classification Using Local Spatial Information,&#8221; in proceedings of the <em>IEEE Geosciences and Remote Sensing Symposium</em>, Munich, Germany, 2012.</p>
+<p style="text-align: justify;">W. Li, S. Prasad, Z. Ye, J. Fowler, Q. Du, &#8220;Noise-Adjusted Subspace Linear Discriminant Analysis for Hyperspectral Image Classification,&#8221; in proceedings of the <em>3&#8217;d IEEE Workshop on Hyperspectral Signal and Image Processing: Evolution in Remote Sensing</em>, Shanghai, China, 2012.</p>
+<p style="text-align: justify;">Z. Ye, S. Prasad, W. Li, J. Fowler, M. He, &#8220;Locality-Preserving Discriminant Analysis and Gaussian Mixture Models for Spectral-Spatial Classification of Hyperspectral Imagery,&#8221; in proceedings of the <em>3&#8217;d IEEE Workshop on Hyperspectral Signal and Image Processing: Evolution in Remote Sensing</em>, Shanghai, China, 2012.</p>
+<p style="text-align: justify;">W. Li, S. Prasad, J. Fowler, L.M. Bruce, &#8220;Class Dependent Compressive-Projection Principal Component Analysis for Hyperspectral Image Reconstruction,&#8221; in proceedings of the <em>3&#8217;d IEEE Workshop on Hyperspectral Signal and Image Processing: Evolution in Remote Sensing</em>, 2011.</p>
+<p style="text-align: justify;">W. Li, S. Prasad, J. Fowler, L.M. Bruce, &#8220;A Multi-Modal Pattern Classification Framework for Hyperspectral Image Analysis,&#8221; in proceedings of the <em>3&#8217;d IEEE Workshop on Hyperspectral Signal and Image Processing: Evolution in Remote Sensing</em>, 2011.</p>
+<p style="text-align: justify;">M.A. Lee, L.M. Bruce, S. Prasad, &#8220;Concurrent Spatial-Spectral Band Grouping: Providing a Spatial Context for Spectral Band Grouping,&#8221; in proceedings of the <em>3&#8217;d IEEE Workshop on Hyperspectral Signal and Image Processing: Evolution in Remote Sensing</em>, 2011.</p>
+<p style="text-align: justify;">S. Samiappan, S. Prasad, L.M. Bruce, E. Hansen &#8220;Branch and Bound based Feature Elimination for Support Vector Machine based Classification of Hyperspectral Images,&#8221; in proceedings of the<em>IEEE Geoscience and Remote Sensing Symposium</em>, 2011.</p>
+<p style="text-align: justify;">S. Samiappan, S. Prasad, L.M. Bruce, &#8220;Automated Hyperspectral Imagery Analysis via Support Vector Machines based Multi-Classier System with Non-Uniform Random Feature Selection,&#8221; in proceedings of the <em>Geoscience and Remote Sensing Symposium</em>, 2011.</p>
+<p style="text-align: justify;">M. Cui, S. Prasad, M. Mahrooghy, L.M. Bruce, J. Aanstoos, &#8220;Genetic Algorithms and Linear Discriminant Analysis based Dimensionality Reduction for Remotely Sensed Image Analysis,&#8221; in proceedings of the <em>Geoscience and Remote Sensing Symposium</em>, 2011.</p>
+<p style="text-align: justify;">H. Kalluri, S. Prasad, L.M. Bruce, S. Samiappan, &#8220;Data Dependant Adaptation for Improved Classification of Hyperspectral Imagery,&#8221; <em>Proceedings of the IEEE Geoscience and Remote Sensing Symposium</em>, Honolulu, Hawaii, 2010.</p>
+<p style="text-align: justify;">S. Samiappan, S. Prasad, and L.M. Bruce, &#8220;NASAs Upcoming HyspIRI Mission Precision Vegetation Mapping with Limited Ground Truth,&#8221; <em>Proceedings of the IEEE Geoscience and Remote Sensing Symposium</em>, Honolulu, Hawaii, 2010.</p>
+<p style="text-align: justify;">M. A. Lee, S. Prasad, L. M. Bruce, T. R. West, D. Reynolds, T. Irby, and H. Kalluri, &#8220;Sensitivity of Hyperspectral Classification Algorithms to Training Sample Size,&#8221; in proceedings of<em> the IEEE Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing</em>, Grenoble, France, 2009.</p>
+<p style="text-align: justify;">H. Kalluri, S. Prasad, L.M. Bruce, &#8220;Fusion of Spectral Reflectance and Derivative Information for Robust Hyperspectral Land Cover Classification,&#8221; in proceedings of<em> the IEEE Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing</em>, Grenoble, France, 2009.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, J.E. Ball, &#8220;A Multi-classifier and Decision Fusion Framework for Robust Classification of Mammographic Masses,&#8221; in proceedings of IEEE Engineering in Medicine and Biology Conference, Vancouver, Canada, August 2008.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;Multiple Kernel Discriminant Analysis and Decision Fusion for Robust Sub-pixel Hyperspectral Target Recognition,&#8221; in the proceedings of the IEEE Geoscience and Remote Sensing Symposium, Boston, MA, July 2008. ( 2008 Mikio Takagi Student Prize Award for Best Student Paper )</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;Overcoming the Small Sample Size Problem in Hyperspectral Classification and Detection Tasks,&#8221; in the proceedings of the IEEE Geoscience and Remote Sensing Symposium, Boston, MA, July 2008.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, H. Kalluri &#8220;A Robust Multi-Classifier Decision Fusion Framework for Hyperspectral, Multi-Temporal Classification,&#8221; in the proceedings of the IEEE Geoscience and Remote Sensing Symposium, Boston, MA, July 2008.</p>
+<p style="text-align: justify;">T. West, L.M. Bruce, S. Prasad, &#8220;Wavelet Packet Tree Pruning Metrics for Hyperspectral Feature Extraction,&#8221; in the proceedings of the IEEE Geoscience and Remote Sensing Symposium, Boston, MA, July 2008.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;Hyperspectral Feature Space Partitioning via Mutual Information for Data Fusion ,&#8221; Proceedings of the IEEE Geoscience and Remote Sensing Symposium , Barcelona, Spain, July 2007.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;Limitations of Subspace LDA in Hyperspectral Target Recognition Applications,&#8221; Proceedings of the IEEE Geoscience and Remote Sensing Symposium , Barcelona, Spain, July 2007.</p>
+<p style="text-align: justify;">T. West, L.M. Bruce, S. Prasad, &#8220;Multiclassifiers and Decision Fusion in the Wavelet Domain for Exploitation of Hyperspectral Data,&#8221; Proceedings of the IEEE Geoscience and Remote Sensing Symposium, Barcelona, Spain, July 2007.</p>
+<p style="text-align: justify;">J.E. Ball, L.M. Bruce, S. Prasad, T.R. West, &#8220;Level Set Hyperspectral Image Segmentation using Spectral Information Divergence (SID) based Best Band Selection,&#8221; Proceedings of the IEEE Geoscience and Remote Sensing Symposium , Barcelona, Spain, July 2007.</p>
+<p style="text-align: justify;">S. Prasad, L.M. Bruce, &#8220;Information Theoretic Partitioning and Confidence based Weight Assignment for Multi-Classifier Decision Level Fusion in Hyperspectral Target Recognition Applications,&#8221; Proceedings of the  SPIE Defense and Security Symposium, Orlando, Florida, USA, April 2007.</p>
+  </div>
+    </div>
+        </div>
+    </div>
+
+<div  class='footer footer-contact-boxes'>
+    <div  class='footer-content'>
+        <div class="gridContainer">
+            <div class="row text-center">
+                <div class="col-sm-3">
+                        <div data-type="group"  data-dynamic-mod="true">
+        <i class="big-icon fa fa-map-marker"></i>
+        <p>
+            University of Houston
+Dept. of Electrical &amp; Computer Engineering
+Engineering Building 1, Room N308
+4226 Martin Luther King Boulevard
+Houston, TX 77204-4005        </p>
+    </div>
+                    </div>
+                <div class="col-sm-3">
+                        <div data-type="group"  data-dynamic-mod="true">
+        <i class="big-icon fa fa-envelope-o"></i>
+        <p>
+            sprasad2@uh.edu        </p>
+    </div>
+                    </div>
+                <div class="col-sm-3">
+                        <div data-type="group"  data-dynamic-mod="true">
+        <i class="big-icon fa fa-phone"></i>
+        <p>
+            +1 (713)-743-4743        </p>
+    </div>
+                    </div>
+                <div class="col-sm-3 footer-bg-accent">
+                    <div>
+                            <div data-type="group"  data-dynamic-mod="true" class="footer-social-icons">
+                      <a target="_blank"  class="social-icon" href="https://www.linkedin.com/in/saurabh-prasad-2675a217/">
+                  <i class="fa fa-linkedin-square"></i>
+              </a>
+              
+    </div>
+
+                        </div>
+                    <p  class="copyright">&copy;&nbsp;&nbsp;2026&nbsp;Machine Learning and Signal Processing Laboratory.&nbsp;Built using WordPress and the <a target="_blank" href="https://extendthemes.com/go/built-with-highlight/" rel="nofollow" class="mesmerize-theme-link">Highlight Theme</a></p>                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/highlight/*","/wp-content/themes/mesmerize/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <script>
+        /(trident|msie)/i.test(navigator.userAgent) && document.getElementById && window.addEventListener && window.addEventListener("hashchange", function () {
+            var t, e = location.hash.substring(1);
+            /^[A-z0-9_-]+$/.test(e) && (t = document.getElementById(e)) && (/^(?:a|select|input|button|textarea)$/i.test(t.tagName) || (t.tabIndex = -1), t.focus())
+        }, !1);
+    </script>
+	<script id="imagesloaded-js"  defer="defer" src="https://machinelearning.ee.uh.edu/wp-includes/js/imagesloaded.min.js?ver=5.0.0"></script>
+<script id="masonry-js"  defer="defer" src="https://machinelearning.ee.uh.edu/wp-includes/js/masonry.min.js?ver=4.2.2"></script>
+<script id="mesmerize-theme-js"  defer="defer" src="https://machinelearning.ee.uh.edu/wp-content/themes/mesmerize/assets/js/theme.bundle.min.js?ver=1.0.69"></script>
+<script id="theme-child-js" src="https://machinelearning.ee.uh.edu/wp-content/themes/highlight/assets/js/theme-child.js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://machinelearning.ee.uh.edu/wp-includes/js/wp-emoji-release.min.js?ver=a00eb665f93ae13a0d782f74cb0af05a"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://machinelearning.ee.uh.edu/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+</html>

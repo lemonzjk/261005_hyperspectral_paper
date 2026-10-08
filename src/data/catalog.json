@@ -39538,6 +39538,112 @@
         "sourceUrl": "https://www.researchgate.net/publication/264743770_Spectral_Similarity_Measure_Using_Frequency_Spectrum_for_Hyperspectral_Image_Classification",
         "checkedAt": "2026-10-08"
       }
+    },
+    {
+      "id": "nlpca-spectral-reduction-2018",
+      "shortTitle": "NLPCA spectral reduction",
+      "title": "Spectral transformation based on nonlinear principal component analysis for dimensionality reduction of hyperspectral images",
+      "authors": "Giorgio Licciardi, Jocelyn Chanussot",
+      "year": 2018,
+      "venue": "EJRS",
+      "publicationName": "European Journal of Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1080/22797254.2018.1441670",
+      "representation": "自关联MLP含三个隐层及低维瓶颈，以输入光谱自身为重建目标；编码得到非线性分量，再解码回原波段。分量不按方差排序。",
+      "tags": [
+        "spectral-dimensionality-reduction",
+        "nonlinear-spectral-manifold",
+        "spectral-denoising"
+      ],
+      "summary": "自关联MLP含三个隐层及低维瓶颈，以输入光谱自身为重建目标；编码得到非线性分量，再解码回原波段。分量不按方差排序。",
+      "input": "光学高光谱像元；各波段作为网络输入，观测光谱自身作为训练目标。",
+      "output": "低维非线性光谱分量与原波段空间的重建影像。",
+      "mechanism": "自关联MLP含三个隐层及低维瓶颈，以输入光谱自身为重建目标；编码得到非线性分量，再解码回原波段。分量不按方差排序。",
+      "readingNote": "机构存档原排版PDF已下载；完整摘要、方法、实验设置及结论局部已读，Fig.1视觉核验；未逐页阅读全文、核验全部实验图表或复现。",
+      "paper": "https://doi.org/10.1080/22797254.2018.1441670",
+      "verifiedAt": "2026-10-08",
+      "verificationLevel": "original_abstract_and_selected_sections",
+      "citation": "@article{nlpca_spectral_reduction_2018,\n  title = {Spectral transformation based on nonlinear principal component analysis for dimensionality reduction of hyperspectral images},\n  author = {Giorgio Licciardi and Jocelyn Chanussot},\n  journal = {European Journal of Remote Sensing},\n  year = {2018},\n  volume = {51},\n  number = {1},\n  pages = {375--390},\n  doi = {10.1080/22797254.2018.1441670}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "nonlinear-spectral-manifold",
+          "spectral-denoising"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "主要任务含ROSIS、Hyperion与HySpex光学高光谱降维；额外SEM/EDX实验是X射线及背散射电子数据，不统一称光学HSI。仅进入总库。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用可解码的非线性瓶颈保留光谱信息并减少传输维度，比较线性PCA的重建失真？",
+        "datasets": "ROSIS Pavia University（103波段、340×610）；2008 Hyperion Campi Flegrei（预处理后155波段、100×100）；HySpex近距离植被（160波段、364×365）。另有15通道SEM/EDX种子实验，非光学高光谱；精确公开下载版本待核验。",
+        "experimentSetting": "以SNR/SAM及光谱分量数比较PCA，主要评估光谱变换，未构建完整空间编码器。概述称约60%随机像元训练；ROSIS又称120000样本及其中60%，口径待澄清；Hyperion为60%，HySpex实际9395像元。评估含训练场景，不当独立跨场景测试。",
+        "conclusions": "作者报告若干场景中用较少分量达到较好重建，并抑制噪声/条带；低噪声HySpex与PCA相近。原表尚未全部视觉核验，不记录性能幅度或普遍优势。",
+        "limitations": "网络拓扑搜索和训练耗时；投影阶段可比不代表总耗时优于PCA。输入自身作目标，重建残差不能直接证明完全去噪。同传感器复用为作者主张，跨场景验证未知。专用代码/数据链接、arXiv、训练计数差异及完整复现待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://opinvisindi.is/bitstream/20.500.11815/1108/1/Spectral%20transformation%20based%20on%20nonlinear%20principal%20component%20analysis%20for%20dimensionality%20reduction%20of%20hyperspectral%20images.pdf",
+            "checkedAt": "2026-10-08",
+            "level": "已保存机构原排版PDF；完整摘要及指定章节，Fig.1视觉核验",
+            "supports": [
+              "375–390页、2018、两位作者及DOI",
+              "§2自关联瓶颈、身份重建及不按方差排序",
+              "§3实际训练抽样差异、三组光学影像及非光学SEM实验",
+              "§4训练耗时与投影阶段成本区分"
+            ]
+          },
+          {
+            "url": "https://www.tandfonline.com/doi/full/10.1080/22797254.2018.1441670",
+            "checkedAt": "2026-10-08",
+            "level": "出版社完整摘要及局部缓存；直接访问403",
+            "supports": [
+              "正式发表与在线2018-03-03；非arXiv",
+              "四组实验与光谱去相关目标"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1080/22797254.2018.1441670",
+            "checkedAt": "2026-10-08",
+            "level": "出版社登记卷期，与原PDF核对",
+            "supports": [
+              "51(1):375–390；年度登记2018-01-01不当精确在线日"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "nlpca-spectral-reduction-2018-journal",
+            "type": "期刊正式版",
+            "url": "https://doi.org/10.1080/22797254.2018.1441670",
+            "doi": "10.1080/22797254.2018.1441670",
+            "year": 2018,
+            "relation": "正式2018卷51(1):375–390；出版社在线2018-03-03。机构PDF为同一期刊排版，非独立方法。引用2015 NLPCA质量增强稿，不据引用认定正式扩展。"
+          }
+        ],
+        "methodFamilyId": "nlpca-spectral-reduction-2018"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://opinvisindi.is/bitstream/20.500.11815/1108/1/Spectral%20transformation%20based%20on%20nonlinear%20principal%20component%20analysis%20for%20dimensionality%20reduction%20of%20hyperspectral%20images.pdf",
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "caption": "原Fig.1：光谱编码与解码网络，左为mapping、右为demapping。",
+          "verificationNote": "机构存档期刊原PDF第3页，期刊页码377；已视觉核验两网络和瓶颈及原图注。原稿本地保存，裁切保留原图，不重绘。",
+          "cropDescription": "pdftoppm等比例渲染2500px页高；裁切像素(167,1583,1592,2358)，含原图注。",
+          "path": "figures/nlpca-spectral-reduction-2018/framework-fig1-original.png",
+          "width": 1425,
+          "height": 775,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-08",
+          "sha256": "f31d71b1f45b5a5ca747e64fa79c2c0d97b5487dfc84996ab4b886ea4bf3f4f5",
+          "attribution": "Giorgio Licciardi, Jocelyn Chanussot · EJRS 2018"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -40064,7 +40170,8 @@
         "assdl-denoising-2015",
         "ngmeet-2019",
         "eapt-tensor-rpca-2022",
-        "t3sc-2021"
+        "t3sc-2021",
+        "nlpca-spectral-reduction-2018"
       ],
       "history": [
         {
@@ -40360,7 +40467,8 @@
         "hysime-qr-noise-2015",
         "hysure-subspace-2015",
         "extended-self-dual-profiles-2015",
-        "redundancy-relevance-decoupling-2015"
+        "redundancy-relevance-decoupling-2015",
+        "nlpca-spectral-reduction-2018"
       ],
       "history": [
         {
@@ -41469,7 +41577,8 @@
       "createdAt": "2026-10-08",
       "rationale": "ICCV2017原图与局部方法说明明确非线性降维、RGB映射和流形重建；与流形结构稀疏压缩恢复分开。",
       "evidencePaperIds": [
-        "rgb-manifold-mapping-2017"
+        "rgb-manifold-mapping-2017",
+        "nlpca-spectral-reduction-2018"
       ],
       "history": [
         {
