@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "svm-mlp-msf-marker-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077630",
+      "decision": "included",
+      "programPdfPage": 79,
+      "readingBoundary": "官方79页完整摘要与五作者，正式Crossref DOI/2014六月1–4页、官方目录及作者机构CV交叉核验；IEEE202空响应，未读原会议正文。",
+      "figureBoundary": "原会议PDF未取得，方法图号/页码未知；不借Tarabalka前作框架。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "spatial-tsvm-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077540",
+      "decision": "included",
+      "programPdfPage": 79,
+      "readingBoundary": "官方79页摘要页末截断，作者本人上传2014会议全文文本补完整摘要；§2–3部分方法/设置/局限选读。IEEE202、作者页正常403和PDF下载工具失败保留，不标阅读全文或已取得原PDF。",
+      "figureBoundary": "作者文本定位Fig1/2为分类学习曲线；原PDF未取得，页码及独立方法图未知，不用网页表格缩略图冒充框架。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "nlpca-noise-filtering-whispers-2014",
+      "decision": "updated",
+      "reason": "官方题名目录核作者全名，替换首字母并更新BibTeX；原机制/分类/阅读/核验状态不变。",
+      "evidence": "whispers2014-page79-discovery-resources-cache.json"
+    },
+    {
+      "paperId": "crnn-whispers-2014",
+      "decision": "duplicate",
+      "reason": "79页原CRNN同DOI/四作者。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "marker-minimum-spanning-forest",
+      "name": "标记引导最小生成森林分割",
+      "dimension": "method",
+      "definition": "从可信分类像元选择标记，生长最小生成森林形成谱空间分割/分类；标明标记来源与融合策略，不等同随机森林集成分类。",
+      "rationale": "Akbari官方摘要明确SVM/MLP及其结合选标记，再构建MSF；现有随机森林标签不能替代图分割。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "svm-mlp-msf-marker-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Akbari官方摘要明确SVM/MLP及其结合选标记，再构建MSF；现有随机森林标签不能替代图分割。"
+        }
+      ]
+    },
+    {
+      "id": "spatial-transductive-svm",
+      "name": "空间相似辅助直推SVM",
+      "dimension": "method",
+      "definition": "借空间相似或邻近关系为未标注样本建立标签/置信惩罚并用于直推SVM；距离定义、标注/未标注数据和样本选择逐篇核验，不能把全部半监督算法标成TSVM。",
+      "rationale": "Huo官方与作者摘要/方法明确TSVM和空间相似、距离阈值及距离反比惩罚，需要区别普通SVM与未标注数据利用。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "spatial-tsvm-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Huo官方与作者摘要/方法明确TSVM和空间相似、距离阈值及距离反比惩罚，需要区别普通SVM与未标注数据利用。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-msf-marker-ieee-access.json",
+      "sha256": "e9c9220fa93df701f4e1187e36266b312060fa66d3c18fdd5aceec07aa3b466d"
+    },
+    {
+      "path": "whispers2014-msf-marker-query-access.json",
+      "sha256": "100acfbb47a1e651167e70cfec92a5be54ebfbce4320be078020685bad1754b5"
+    },
+    {
+      "path": "whispers2014-page79-discovery-resources-cache.json",
+      "sha256": "4beff54009568314a7365227abc1b704240b4f26fb4201f9f1a43e852d6f35ed"
+    },
+    {
+      "path": "whispers2014-page79-primary-reading-cache.json",
+      "sha256": "fa321fa2644369bc43b5f30201727fb1bbfe90133c87fee7fa911683b473c827"
+    },
+    {
+      "path": "whispers2014-page79-program-cache.json",
+      "sha256": "437196abcd738b10fbd95083474a7398be9e6d87d182bccedc509802e6051630"
+    },
+    {
+      "path": "whispers2014-spatial-tsvm-author-access.json",
+      "sha256": "92862b617eade0c1a530c066e3b1a580a4b67772dae40453acdc905a34d1780e"
+    },
+    {
+      "path": "whispers2014-spatial-tsvm-ieee-access.json",
+      "sha256": "1b895c7a705bc9c07d6d99e43c89919ccedc4ddf7412e3b2d03a96f74724a184"
+    },
+    {
+      "path": "whispers2014-spatial-tsvm-query-access.json",
+      "sha256": "183222a6574a7c17149253c477719e9cfd68e960fa6e158f9dc8d5213fff6430"
+    },
+    {
+      "path": "whispers2014-page79-toc-replay.json",
+      "sha256": "812b9990ca3096f1af7a99b993739a53a712bc3f9745dc847601cd3340203cba"
+    }
+  ],
+  "qualityIssues": [
+    "MSF最小生成森林不同随机森林；原摘要MPL统一MLP并保留拼写。",
+    "TSVM末句作者原摘要补，不把80其他题名视为已审。",
+    "作者2018上传2014会议稿分年；未取得原PDF/原图页码，不升级全文阅读。",
+    "网页Indian Pine表类名/计数可错排；不写逐类统计，距离坐标定义和零距离惩罚待原稿。",
+    "NLPCA全名有官方题名目录明确依据，更新书目不提升方法/实验/CASI SWIR核验。",
+    "CRNN从额外既存条目纳入页窗累计，108题名103入含CRNN；77仍未核。"
+  ]
+}
