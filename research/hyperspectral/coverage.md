@@ -12,7 +12,7 @@
 | CVPR | 2013 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 471 / 2 / 2 | 指定关键词题名扫描及 2 个命中摘要审查完成；领域覆盖未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | CVPR | 2014 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 540 / 10 / 10 | 指定关键词题名扫描及 10 个命中摘要审查完成；领域覆盖未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | arXiv | 2021–2022 | 2111.07910、2203.02149、2112.06238、2203.02503；四个指定 abs 页面；逐版历史全列，无搜索分页 | 4 / 0 / 4 | 定向元数据核验完成；跨分类检索未完成 | 仅查四个既有方法的提交历史；未核验逐版实验差异；其他 arXiv 论文及正式版追踪未完成 |
-| NeurIPS | 2023 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录，含主会及数据集评测 Track；无结果条数截断 | 3540 / 30 / 30 | 指定关键词题名扫描及 30 个命中摘要审查完成；其他主题与引文未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| NeurIPS | 2023 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 3540 / 30 / 30 | 指定关键词题名扫描及 30 个命中摘要审查完成；其他主题与引文未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | TGRS | 1988 | A transformation for ordering multispectral data in terms of image quality with implications for noise removal；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文候选摘要核验完成；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验 |
 | TGRS | 1994 | Hyperspectral Image Classification and Dimensionality Reduction: An Orthogonal Subspace Projection Approach、Minimum-volume transforms for remotely sensed data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 2 / 2 / 2 | 定向主题/引文候选摘要核验完成；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验 |
 | TGRS | 2005 | Vertex Component Analysis: A Fast Algorithm to Unmix Hyperspectral Data；精确题名/DOI 与引文定向查找；不构成年度目录或搜索引擎完整分页 | 1 / 1 / 1 | 定向主题/引文候选摘要核验完成；年度全量目录未检索 | 该年度全部目录、其他任务词和完整引文链尚未检索；原始全文实验、代码/数据许可与其他版本待核验 |
@@ -60,9 +60,11 @@
 | ICML | 2019 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录773篇与全量元数据773摘要URL集合完全一致；无条数截断 | 773 / 6 / 6 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 | ICML | 2020 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1084篇与全量元数据1084摘要URL集合完全一致；无条数截断 | 1084 / 7 / 7 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
 | ICML | 2021 | 题名：hyperspectral、multispectral、multi-spectral、spectral、spectrum；摘要：hyperspectral、hyper-spectral、multispectral、multi-spectral、spectral imaging、imaging spectroscopy、spectral reconstruction、spectral unmixing、remote sensing、earth observation、satellite imagery；单页目录1183篇与全量元数据1183摘要URL集合完全一致；无条数截断 | 1183 / 9 / 9 | 指定题名/摘要词并集候选均已复核；不代表全主题/全文完成 | 仅完成注明关键词的题名/摘要筛选；其他任务词、正文与引用链仍待查；其他年度、workshop或独立分卷不在此卷覆盖声明中 |
-| NeurIPS | 2022 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录，含主会及数据集评测 Track；无结果条数截断 | 2834 / 19 / 19 | 指定五题名词19命中均已核验官方摘要；其他主题及全量摘要未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| NeurIPS | 2022 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 2834 / 19 / 19 | 指定五题名词19命中均已核验官方摘要；其他主题及全量摘要未完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 | arXiv | 2022–2023 | 2207.08051、2210.08181、2211.05314、2205.10102；四个当前abs完整历史；逐一核对8个分版本abs/PDF，无版本截断；非年度搜索 | 8 / 8 / 8 | 四篇八个版本日期及发表关联核验、局部差异已记；跨分类发现和全文差异未完成 | 所有版本图像/公式与完整实验差异仍待比对；许可证、数据/模型下载及代码执行未完成；其他论文及跨分类发现不在本次精确ID范围 |
-| NeurIPS | 2021 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录，含主会及数据集评测 Track；无结果条数截断 | 2334 / 14 / 14 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| NeurIPS | 2021 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 2334 / 14 / 14 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| NeurIPS | 2020 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 1898 / 9 / 9 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
+| NeurIPS | 2019 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断 | 1428 / 5 / 5 | 指定五关键词题名扫描及全部命中摘要审查完成 | 关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -75,7 +77,7 @@
 | CVPR | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ICCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ECCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| NeurIPS | conference | 最早可用目录至 2026 | 2022/2023指定五词题名命中已逐篇处理；其他年度、摘要全量及任务词待查 |
+| NeurIPS | conference | 最早可用目录至 2026 | 2019–2023指定五词题名命中已逐篇处理；其他年度、摘要全量及任务词待查 |
 | ICML | conference | 最早可用目录至 2026 | 2013–2024十二主卷指定题名/全量摘要词候选已处理；其他年份/关键词/正文未完成 |
 | ICLR | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | AAAI | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -195,6 +197,10 @@
   阅读边界：8份PDF机器抽取用于定位变更；人工只读注明局部页，全文逐句/公式/图像和全部实验差异未完成。目录条目/方法数量不增加。
 - 2026-10-08 / neurips-2021-optical-review：新增 1，更新 0，去重 0，排除 13，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：14份官方完整摘要逐篇审查；T3SC仅摘要及注明局部第1、5–8页阅读，非阅读全文；原Fig.1已目视核对并保存。arXiv仅v1提交日期与发表声明核验，非正文比对。
+- 2026-10-08 / neurips-2020-optical-review：新增 0，更新 0，去重 0，排除 9，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录1898题名指定五词扫描；9命中的完整官方摘要已读，依当前证据逐篇排除。未读全文，不推定题名未命中论文不相关。
+- 2026-10-08 / neurips-2019-optical-review：新增 0，更新 0，去重 0，排除 5，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：官方目录1428题名指定五词扫描；5命中的完整官方摘要已读，依当前证据逐篇排除。未读全文，不推定题名未命中论文不相关。
 
 ## 未解决缺口
 
@@ -211,3 +217,4 @@
 - NeurIPS2022官方2834题名五词19命中处理：4新增、15排除。SatMAE/ARFNet为多光谱相关，DiSC为有HSI应用的通用基础，DAUHST为直接HSI；四篇原图已保存。其他词、全量摘要、完整版本差异和资源许可/复现待查。
 - NeurIPS2022四篇8预印本元数据与局部差异核验：SatMAE SpaceNet v2→v1命名、v3附录长时训练；DAUHST v3增加MST++/CST基线及cs.CV→eess.IV主分类变动。全图/公式及完整实验仍待比对。
 - NeurIPS2021官方2334题名五词14命中闭环：T3SC新增1、排除13。仅指定题名组完成；全量摘要/任务词/引文未完成，T3SC附录实验、DOI、许可和正式版差异待核验。
+- NeurIPS2019/2020指定五词题名扫描分别1428/1898条，5/9命中摘要全部排除；未扫全量摘要，不能推定年度无HSI论文。年度目录记录不再未经核对宣称包含独立数据集Track。

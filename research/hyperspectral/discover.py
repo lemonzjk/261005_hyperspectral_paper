@@ -74,7 +74,7 @@ def main():
     record = {'id': identifier, 'venue': args.venue, 'year': args.year,
               'date': survey['cutoffDate'], 'queriedAt': datetime.now(timezone.utc).isoformat(),
               'method': '官方年度目录逐题名关键词扫描，再逐篇核验命中摘要', 'keywords': KEYWORDS,
-              'url': url, 'pagination': '单页官方年度目录，含主会及数据集评测 Track；无结果条数截断' if args.venue == 'NeurIPS' else 'day=all；单页全年官方目录；无结果条数截断',
+              'url': url, 'pagination': '单页官方年度目录；集合以该目录实际列出论文为限，未另扫Track/Workshop；无结果条数截断' if args.venue == 'NeurIPS' else 'day=all；单页全年官方目录；无结果条数截断',
               'titleCount': 0, 'status': 'failed', 'statusLabel': '访问失败',
               'gaps': ['关键词未命中论文、参考文献和后续引用、摘要全量检索尚未完成']}
     try:
