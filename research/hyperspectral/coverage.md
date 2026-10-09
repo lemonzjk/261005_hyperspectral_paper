@@ -233,6 +233,7 @@
 | ORCID author works | 2018 | Jun Zhou 2018 hyperspectral、hyperspectral denoising、hyperspectral classification、hyperspectral unmixing、hyperspectral imaging；ORCID orders 114–144; not a complete 2018 venue scan. | 31 / 31 / 31 | 作者来源组范围完成；非年度系统检索 | 16篇摘要/作者稿/机构来源局部，1篇仅题名/目录；正式版全文、图版、代码和2018后续版本仍待。 |
 | ORCID author works | 2019 | Jun Zhou 2019 hyperspectral、hyperspectral restoration、hyperspectral classification、hyperspectral unmixing；ORCID orders 106–113; not a complete 2019 venue scan. | 8 / 8 / 8 | 作者来源组范围完成；非年度系统检索 | 7篇摘要/作者来源局部，正式版全文、图版、代码和版本差异仍待。 |
 | ORCID author works | 2020 | Jun Zhou 2020 hyperspectral、hyperspectral unmixing、hyperspectral classification、hyperspectral tracking；ORCID orders 97–105; not a complete 2020 venue scan. | 9 / 9 / 9 | 作者来源组范围完成；非年度系统检索 | 7篇摘要/作者来源局部，正式版全文、图版、代码和版本差异仍待。 |
+| ORCID author works | 2021 | Jun Zhou 2021 hyperspectral、hyperspectral classification、hyperspectral anomaly、hyperspectral LiDAR、hyperspectral depth；ORCID orders 89–96; not a complete 2021 venue scan. | 8 / 8 / 8 | 作者来源组范围完成；非年度系统检索 | 6篇摘要/作者来源局部，正式版全文、图版、代码和版本差异仍待。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -589,6 +590,8 @@
   阅读边界：7篇以作者论文、出版社摘要、DBLP或公开索引核验；1篇VHR遥感目标检测排除；不标全文。
 - 2026-10-10 / jun-zhou-orcid-2020-97-105：新增 7，更新 0，去重 0，排除 2，待处理 119。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：7篇以作者稿、出版社摘要、机构完整摘要或IEEE摘要核验；2篇非高光谱皮肤/农业目标检测排除；不标全文。
+- 2026-10-10 / jun-zhou-orcid-2021-89-96：新增 6，更新 0，去重 0，排除 2，待处理 111。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：6篇以机构/出版社摘要、PubMed、OpenAlex或作者来源核验；2篇通用立体/参数高效网络排除；不标全文。
 
 ## 未解决缺口
 
