@@ -638,6 +638,12 @@
 - 三条 Scholar 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；仍保留 `classificationStatus=provisional`，未把摘要性能扩展为全文结论。
 - 2025 Scholar差集累计12条摘要级核验；其余新增项及 ORCID 2025 直接高光谱条目仍待摘要或全文。证据见 `sources/jun-zhou-2025-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2025-abstract-followup-1
+
+- 更新4篇，不新增目录论文，不改变三维214对象。SSIT读取 ScienceDirect 开放摘要；ADLKAN、HSLiNets读取 Griffith 作者稿摘要；LDCLNet读取公开摘要镜像并保留 IEEE 记录入口。
+- 四条 ORCID 2025 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；ADLKAN/HSLiNets作者稿版本差异、LDCLNet镜像边界单列，未标阅读全文。
+- ORCID 2025 直接高光谱条目已有4篇摘要级核验；其余4篇仍待摘要或全文。证据见 `sources/jun-zhou-2025-abstract-followup-2.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
