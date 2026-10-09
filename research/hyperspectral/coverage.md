@@ -746,6 +746,12 @@
 - 5条 Scholar 2010/2023–2024 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
 - Scholar 新增项已有36条摘要级核验，仍有5条题名暂定。证据见 `sources/jun-zhou-scholar-next-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-scholar-final-abstract-followup
+
+- 更新4篇，不新增目录论文，不改变三维214对象。补读 CasFormer、跨模态 HSI-LiDAR 分类、选择性状态空间多阶段融合和 LiDAR 引导无监督选带的公开摘要。
+- 4条 Scholar 2024–2026/SSRN 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；其中 SSRN 仍是预印本摘要边界，正式版本、全文、代码和完整实验仍待核验。
+- Scholar 新增项已有40条摘要级核验，仍有1条题名暂定。证据见 `sources/jun-zhou-scholar-final-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
