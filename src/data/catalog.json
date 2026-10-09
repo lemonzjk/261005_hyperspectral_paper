@@ -23,7 +23,7 @@
       "mechanism": "联合建模位置、方向和波长相关的辐射与透射光谱，探索高光谱超分辨率与成像传感器仿真。",
       "readingNote": "关注光谱表示的选择、透射建模与实验中的相机设置。年份按已核验的 arXiv 2024 版本记录，后续发表版本待补充。 当前条目保留 arXiv 版本，属于补充阅读；正式会议版本待核验。",
       "paper": "https://arxiv.org/abs/2403.14839",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-10",
       "citation": "@misc{chen2024hyperspectral,\n  title={Hyperspectral Neural Radiance Fields},\n  author={Chen, Gerry and Narayanan, Sunil Kumar and Ottou, Thomas Gautier and Missaoui, Benjamin and Muriki, Harsh and Pradalier, Cédric and Chen, Yongsheng},\n  year={2024},\n  eprint={2403.14839},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2403.14839}\n}",
       "venueTier": "background",
       "publicationStatus": "preprint",
@@ -64,15 +64,25 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "现有来源笔记明确涉及高光谱观测、光谱恢复或密集波长建模；具体模态以本条输入输出为准。 依据：多视角高光谱图像",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
         "researchQuestion": "在三维空间与观察方向上建立波长相关的辐射和透射表示，将神经辐射场扩展到高光谱场景。",
         "datasets": "待核验",
         "experimentSetting": "待核验",
         "conclusions": "待总库逐篇复核",
         "limitations": "待核验",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2403.14839",
+            "checkedAt": "2026-10-10",
+            "level": "arXiv公开摘要",
+            "supports": [
+              "完整公开摘要正文",
+              "摘要级方法、数据范围和结论"
+            ]
+          }
+        ],
         "versions": [],
         "methodFamilyId": "hs-nerf",
         "classificationReview": {
@@ -92,7 +102,8 @@
             "https://arxiv.org/abs/2403.14839"
           ]
         }
-      }
+      },
+      "verificationLevel": "official_abstract"
     },
     {
       "id": "spectralnerf",
@@ -116,7 +127,7 @@
       "readingNote": "作为光谱渲染相关研究收录。阅读时区分光谱建模与真实高光谱观测驱动的三维重建，具体采集和训练设置以原文为准。",
       "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/28099",
       "code": "https://github.com/liru0126/SpectralNeRF",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-10",
       "citation": "@inproceedings{li2024spectralnerf,\n  title={SpectralNeRF: Physically Based Spectral Rendering with Neural Radiance Field},\n  author={Li, Ru and Liu, Jia and Liu, Guanghui and Zhang, Shengping and Zeng, Bing and Liu, Shuaicheng},\n  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},\n  volume={38},\n  number={4},\n  pages={3154--3162},\n  year={2024},\n  doi={10.1609/aaai.v38i4.28099}\n}",
       "frameworkFigures": [
         {
@@ -179,8 +190,8 @@
         "classificationStatus": "confirmed",
         "relation": "multispectral",
         "relationNote": "正式论文第5页真实数据使用8个滤片（400–750 nm，中心间隔50 nm）；合成数据使用11个离散光谱图。归为多光谱关联的新视角合成，不标为密集高光谱采集。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
         "researchQuestion": "先生成不同波长下的光谱图，再融合为 RGB 图像，以光谱渲染视角建模新视角合成。",
         "datasets": "待核验",
         "experimentSetting": "待核验",
@@ -195,6 +206,15 @@
             "supports": [
               "第5页真实采集采用8个滤片，400–750 nm、中心间隔50 nm；第3页合成渲染采用11个离散光谱图，归为多光谱关联的新视角合成。",
               "第2页贡献及第5页数据节说明8个合成场景与2个真实场景，支持数据集标签；未据此宣称已完成全文阅读。"
+            ]
+          },
+          {
+            "url": "https://ojs.aaai.org/index.php/AAAI/article/view/28099",
+            "checkedAt": "2026-10-10",
+            "level": "官方会议/期刊公开摘要",
+            "supports": [
+              "完整公开摘要正文",
+              "摘要级方法、数据范围和结论"
             ]
           }
         ],
@@ -218,7 +238,8 @@
             "https://ojs.aaai.org/index.php/AAAI/article/download/28099/28203"
           ]
         }
-      }
+      },
+      "verificationLevel": "official_abstract"
     },
     {
       "id": "hypergs",
@@ -242,7 +263,7 @@
       "mechanism": "在三维高斯中表示潜在高光谱特征，并通过密度控制和剪枝支持高光谱场景优化。",
       "readingNote": "关注潜在光谱表示如何解码、密度控制与剪枝设计，以及真实与合成数据的评测差异。代码开放状态尚未核验。",
       "paper": "https://openaccess.thecvf.com/content/CVPR2025/html/Thirgood_HyperGS_Hyperspectral_3D_Gaussian_Splatting_CVPR_2025_paper.html",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-10",
       "citation": "@inproceedings{thirgood2025hypergs,\n  title={HyperGS: Hyperspectral 3D Gaussian Splatting},\n  author={Thirgood, Christopher and Mendez, Oscar and Ling, Erin and Storey, Jon and Hadfield, Simon},\n  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n  pages={5970--5979},\n  year={2025},\n  url={https://openaccess.thecvf.com/content/CVPR2025/html/Thirgood_HyperGS_Hyperspectral_3D_Gaussian_Splatting_CVPR_2025_paper.html}\n}",
       "frameworkFigures": [
         {
@@ -281,15 +302,25 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "现有来源笔记明确涉及高光谱观测、光谱恢复或密集波长建模；具体模态以本条输入输出为准。 依据：多视角高光谱观测",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
         "researchQuestion": "将高光谱信息纳入三维高斯场景表示，探索高光谱场景的新视角渲染。",
         "datasets": "待核验",
         "experimentSetting": "待核验",
         "conclusions": "待总库逐篇复核",
         "limitations": "待核验",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Thirgood_HyperGS_Hyperspectral_3D_Gaussian_Splatting_CVPR_2025_paper.html",
+            "checkedAt": "2026-10-10",
+            "level": "官方会议/期刊公开摘要",
+            "supports": [
+              "完整公开摘要正文",
+              "摘要级方法、数据范围和结论"
+            ]
+          }
+        ],
         "versions": [],
         "methodFamilyId": "hypergs",
         "classificationReview": {
@@ -309,7 +340,8 @@
             "https://openaccess.thecvf.com/content/CVPR2025/html/Thirgood_HyperGS_Hyperspectral_3D_Gaussian_Splatting_CVPR_2025_paper.html"
           ]
         }
-      }
+      },
+      "verificationLevel": "official_abstract"
     },
     {
       "id": "unmix-nerf",
@@ -332,7 +364,7 @@
       "mechanism": "通过漫反射与镜面反射分量建模光谱反射率；学习全局端元字典表示纯材料光谱，以每点丰度描述材料分布。",
       "readingNote": "关注端元字典与逐点丰度的学习、无监督材料分割，以及材料编辑与光照变化的关系。具体训练和采集条件需结合全文确认。",
       "paper": "https://openaccess.thecvf.com/content/ICCV2025/html/Perez_UnMix-NeRF_Spectral_Unmixing_Meets_Neural_Radiance_Fields_ICCV_2025_paper.html",
-      "verifiedAt": "2026-10-05",
+      "verifiedAt": "2026-10-10",
       "citation": "@inproceedings{perez2025unmixnerf,\n  title={UnMix-NeRF: Spectral Unmixing Meets Neural Radiance Fields},\n  author={Perez, Fabian and Rojas, Sara and Hinojosa, Carlos and Rueda-Chacón, Hoover and Ghanem, Bernard},\n  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},\n  pages={26284--26293},\n  year={2025},\n  url={https://openaccess.thecvf.com/content/ICCV2025/html/Perez_UnMix-NeRF_Spectral_Unmixing_Meets_Neural_Radiance_Fields_ICCV_2025_paper.html}\n}",
       "frameworkFigures": [
         {
@@ -373,15 +405,25 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "现有来源笔记明确涉及高光谱观测、光谱恢复或密集波长建模；具体模态以本条输入输出为准。 依据：高光谱场景观测",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
         "researchQuestion": "将光谱解混融入神经辐射场，联合实现高光谱新视角合成和无监督材料分割。",
         "datasets": "待核验",
         "experimentSetting": "待核验",
         "conclusions": "待总库逐篇复核",
         "limitations": "待核验",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Perez_UnMix-NeRF_Spectral_Unmixing_Meets_Neural_Radiance_Fields_ICCV_2025_paper.html",
+            "checkedAt": "2026-10-10",
+            "level": "官方会议/期刊公开摘要",
+            "supports": [
+              "完整公开摘要正文",
+              "摘要级方法、数据范围和结论"
+            ]
+          }
+        ],
         "versions": [],
         "methodFamilyId": "unmix-nerf",
         "classificationReview": {
@@ -401,7 +443,8 @@
             "https://openaccess.thecvf.com/content/ICCV2025/html/Perez_UnMix-NeRF_Spectral_Unmixing_Meets_Neural_Radiance_Fields_ICCV_2025_paper.html"
           ]
         }
-      }
+      },
+      "verificationLevel": "official_abstract"
     },
     {
       "id": "mps-well-posed",
@@ -945,7 +988,7 @@
       "readingNote": "关注空间-光谱耦合、标定和采集时间。原型实验报告18.8 nm FWHM和1 mm深度误差，不能当作所有场景下的通用精度。",
       "paper": "https://openaccess.thecvf.com/content/CVPR2024/html/Shin_Dispersed_Structured_Light_for_Hyperspectral_3D_Imaging_CVPR_2024_paper.html",
       "publicationName": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
-      "verifiedAt": "2026-10-06",
+      "verifiedAt": "2026-10-10",
       "verificationLevel": "official_abstract",
       "publicationStatus": "published",
       "venueTier": "target",
@@ -990,15 +1033,25 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "现有来源笔记明确涉及高光谱观测、光谱恢复或密集波长建模；具体模态以本条输入输出为准。 依据：色散投影图案与相机观测",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
         "researchQuestion": "在投影仪前加入薄衍射光栅，让结构光随波长色散，以紧凑系统联合恢复光谱和深度。",
         "datasets": "待核验",
         "experimentSetting": "待核验",
         "conclusions": "待总库逐篇复核",
         "limitations": "待核验",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Shin_Dispersed_Structured_Light_for_Hyperspectral_3D_Imaging_CVPR_2024_paper.html",
+            "checkedAt": "2026-10-10",
+            "level": "官方会议/期刊公开摘要",
+            "supports": [
+              "完整公开摘要正文",
+              "摘要级方法、数据范围和结论"
+            ]
+          }
+        ],
         "versions": [],
         "methodFamilyId": "dsl",
         "classificationReview": {
@@ -1043,7 +1096,7 @@
       "readingNote": "实验原型报告6.6 fps、15.5 nm FWHM和4 mm深度误差；比较时需核对采集协议与场景条件。",
       "paper": "https://openaccess.thecvf.com/content/CVPR2025/html/Shin_Dense_Dispersed_Structured_Light_for_Hyperspectral_3D_Imaging_of_Dynamic_CVPR_2025_paper.html",
       "publicationName": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
-      "verifiedAt": "2026-10-06",
+      "verifiedAt": "2026-10-10",
       "verificationLevel": "official_abstract",
       "publicationStatus": "published",
       "venueTier": "target",
@@ -1088,15 +1141,25 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "现有来源笔记明确涉及高光谱观测、光谱恢复或密集波长建模；具体模态以本条输入输出为准。 依据：RGB投影仪与衍射光栅产生的照明、双目RGB图像",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
         "researchQuestion": "利用光谱复用的密集色散结构光，减少投影图案数量，实现动态场景的深度与光谱联合测量。",
         "datasets": "待核验",
         "experimentSetting": "待核验",
         "conclusions": "待总库逐篇复核",
         "limitations": "待核验",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shin_Dense_Dispersed_Structured_Light_for_Hyperspectral_3D_Imaging_of_Dynamic_CVPR_2025_paper.html",
+            "checkedAt": "2026-10-10",
+            "level": "官方会议/期刊公开摘要",
+            "supports": [
+              "完整公开摘要正文",
+              "摘要级方法、数据范围和结论"
+            ]
+          }
+        ],
         "versions": [],
         "methodFamilyId": "ddsl",
         "classificationReview": {
