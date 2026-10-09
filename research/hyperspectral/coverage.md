@@ -235,6 +235,7 @@
 | ORCID author works | 2020 | Jun Zhou 2020 hyperspectral、hyperspectral unmixing、hyperspectral classification、hyperspectral tracking；ORCID orders 97–105; not a complete 2020 venue scan. | 9 / 9 / 9 | 作者来源组范围完成；非年度系统检索 | 7篇摘要/作者来源局部，正式版全文、图版、代码和版本差异仍待。 |
 | ORCID author works | 2021 | Jun Zhou 2021 hyperspectral、hyperspectral classification、hyperspectral anomaly、hyperspectral LiDAR、hyperspectral depth；ORCID orders 89–96; not a complete 2021 venue scan. | 8 / 8 / 8 | 作者来源组范围完成；非年度系统检索 | 6篇摘要/作者来源局部，正式版全文、图版、代码和版本差异仍待。 |
 | ORCID author works | 2022 | Jun Zhou 2022 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral unmixing、hyperspectral fusion；ORCID orders 70–88; not a complete 2022 venue scan. | 19 / 19 / 19 | 作者来源组范围完成；16篇仅题名暂定，非年度系统检索 | 16篇摘要与全文待补；正式版本、图版、代码和差异仍待。 |
+| ORCID author works | 2023 | Jun Zhou 2023 hyperspectral、hyperspectral denoising、hyperspectral tracking、hyperspectral classification；ORCID orders 60–69; not a complete 2023 venue scan. | 10 / 10 / 10 | 作者来源组范围完成；8篇仅题名暂定，非年度系统检索 | 8篇摘要与全文待补；正式版本、图版、代码和差异仍待。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -595,6 +596,8 @@
   阅读边界：6篇以机构/出版社摘要、PubMed、OpenAlex或作者来源核验；2篇通用立体/参数高效网络排除；不标全文。
 - 2026-10-10 / jun-zhou-orcid-2022-70-88：新增 16，更新 0，去重 0，排除 3，待处理 92。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：16篇以题名与Crossref正式书目核验，先标暂定；3篇综述/RGB-D/人员重识别排除；摘要与全文待补。
+- 2026-10-10 / jun-zhou-orcid-2023-60-69：新增 8，更新 0，去重 0，排除 2，待处理 82。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：8篇以题名与Crossref正式书目核验，先标暂定；2篇通用学习/人员重识别排除；摘要与全文待补。
 
 ## 未解决缺口
 
