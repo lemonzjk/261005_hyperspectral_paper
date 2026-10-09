@@ -824,6 +824,12 @@
 - 3条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/field-spectral-semantic-scholar-followup.json`。
 
+## 2026-10-10 / field-spectral-forest-abstract-followup
+
+- 更新8篇，不新增目录论文，不改变三维214对象。补读 Raman/光场/光片显微、活细胞、多光谱内禀分解、森林生化和 HSI-LiDAR 标定摘要。
+- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/field-spectral-forest-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

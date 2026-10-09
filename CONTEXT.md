@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：263组ORCID书目均已有范围决定（128入、10关联既有、125排、0待）；周峻尾项已清；本批34篇领域摘要已补。Scholar387条，题名差集新增41条（41条公开核验）；ORCID/Scholar摘要补充：2022年20条、2023年8条、2024年14条、2025年12条，Jun Zhou 2026条目5条；DBLP SPARQL精确作者364条，关键词差集2条摘要预印本、1条CEUR全文身份核验；网页导出仍是验证页。详见jun-zhou.md、inventory、sources。
+- 作者优先：263组ORCID书目均已有范围决定（128入、10关联既有、125排、0待）；周峻尾项已清；本批42篇领域摘要已补。Scholar387条，题名差集新增41条（41条公开核验）；ORCID/Scholar摘要补充：2022年20条、2023年8条、2024年14条、2025年12条，Jun Zhou 2026条目5条；DBLP SPARQL精确作者364条，关键词差集2条摘要预印本、1条CEUR全文身份核验；网页导出仍是验证页。详见jun-zhou.md、inventory、sources。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
