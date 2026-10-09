@@ -710,6 +710,12 @@
 - 4条 Scholar 2022 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；材料引导 Siamese 记录仍仅题名，未强行外推摘要内容。
 - Scholar 新增项已有16条摘要级核验；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-2022-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-scholar-2021-abstract-followup
+
+- 更新3篇，不新增目录论文，不改变三维214对象。SST-Net、NMF-SAE 与甘蔗黑穗病检测补公开摘要证据。
+- 3条 Scholar 2021 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；BAE-Net 等记录仍仅题名，未从相关论文外推方法。
+- Scholar 新增项已有19条摘要级核验；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-2021-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

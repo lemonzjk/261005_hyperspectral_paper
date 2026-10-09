@@ -123,9 +123,9 @@ DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不�
 
 ## Scholar题名差集初筛
 
-Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增41条高光谱/多光谱书目，均以 Scholar 书目核验后入库；其中24条为题名暂定、16条补有摘要级核验（9条 arXiv、3条 ScienceDirect/CVF、4条2022公开摘要）；STRL报告另有三页 CEUR 全文核验。132条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，待审清零。
+Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增41条高光谱/多光谱书目，均以 Scholar 书目核验后入库；其中24条为题名暂定、19条补有摘要级核验（9条 arXiv、3条 ScienceDirect/CVF、4条2022公开摘要、3条2021公开摘要）；STRL报告另有三页 CEUR 全文核验。132条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，待审清零。
 
-新增项覆盖计算高光谱成像、目标跟踪、光谱—LiDAR分类、异常检测、解混、去噪、农业/生物医学分类和挑战基准；多光谱SIFT配准单列为 multispectral 关系，不因同作者自动视作高光谱。Scholar题名变体与正式标题按 DOI/题名版本归并，避免重复计数。逐项记录见 `sources/jun-zhou-scholar-screening.json`，原始分页见 `sources/jun-zhou-scholar-pages-0-387.json`；9条 arXiv记录及4条2022公开摘要已补来源核验，仍未完成全文；其余新增条目尚未完成摘要和全文核验。
+新增项覆盖计算高光谱成像、目标跟踪、光谱—LiDAR分类、异常检测、解混、去噪、农业/生物医学分类和挑战基准；多光谱SIFT配准单列为 multispectral 关系，不因同作者自动视作高光谱。Scholar题名变体与正式标题按 DOI/题名版本归并，避免重复计数。逐项记录见 `sources/jun-zhou-scholar-screening.json`，原始分页见 `sources/jun-zhou-scholar-pages-0-387.json`；9条 arXiv记录、4条2022公开摘要及3条2021公开摘要已补来源核验，仍未完成全文；其余新增条目尚未完成摘要和全文核验。
 
 下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
