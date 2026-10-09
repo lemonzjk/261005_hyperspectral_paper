@@ -680,6 +680,12 @@
 - 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 IEEE 官方摘要、ResearchGate 公开摘要和 Griffith 作者仓储章节摘要，均未阅读全文。
 - ORCID 2022 其余直接高光谱条目仍需摘要、全文和版本核验。证据见 `sources/jun-zhou-2022-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-2
+
+- 更新4篇，不新增目录论文，不改变三维214对象。MAC-Net、NSSNN、SMDS-Net 与 SNMF-Net 补公开摘要证据。
+- 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括公开摘要镜像、ResearchGate、相关 arXiv 摘要和作者公开 PDF，均未阅读全文。
+- ORCID 2022 已有8条直接高光谱记录取得摘要级核验；其余记录与正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-2.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

@@ -67409,16 +67409,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2021.3131878",
-      "representation": "题名确认高光谱影像相关任务，方法细节待摘要核验。",
+      "representation": "高光谱去噪：MAC-Net 将光谱低秩模型与空间深度先验结合，在非局部 U-Net 中联合利用局部/非局部空间和光谱结构。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像处理、学习或应用，保留待补摘要。",
-      "input": "高光谱影像或高光谱与其他光学数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2021.3131878",
+      "summary": "MAC-Net 先建立光谱低秩模型，再嵌入非局部 U-Net，并把优化与去噪过程展开为可学习网络，以提升泛化并减少训练样本需求。",
+      "input": "含噪高光谱影像。",
+      "output": "去噪高光谱影像。",
+      "mechanism": "光谱低秩模型刻画跨波段相关，非局部 U-Net 捕获长程空间相似性；优化流程展开成 MAC-Net。",
+      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "paper": "https://scispace.com/papers/mac-net-model-aided-nonlocal-neural-network-for-303mgt34",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -67426,16 +67426,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，保留高光谱关系；摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何结合光谱低秩和非局部空间先验提升高光谱去噪的解释性与泛化？",
+        "datasets": "公开摘要报告在自然和遥感高光谱影像上实验；数据名称、噪声设置和指标待全文核验。",
+        "experimentSetting": "谱低秩模型与非局部 U-Net 混合，模型驱动步骤展开为网络。",
+        "conclusions": "公开摘要报告优于模型驱动和深度学习对比方法，并降低对训练样本的依赖；具体指标待全文核验。",
+        "limitations": "摘要镜像未给出完整网络、数据统计、代码实际可用状态和消融。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://scispace.com/papers/mac-net-model-aided-nonlocal-neural-network-for-303mgt34",
+            "checkedAt": "2026-10-10",
+            "level": "公开摘要镜像",
+            "supports": [
+              "光谱低秩与非局部U-Net",
+              "模型优化展开为网络",
+              "自然与遥感HSI实验"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2021.3131878",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-77-hsi-2022-published",
@@ -67443,7 +67462,7 @@
             "url": "https://doi.org/10.1109/tgrs.2021.3131878",
             "doi": "10.1109/tgrs.2021.3131878",
             "year": 2022,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2022-title-77"
@@ -67464,16 +67483,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2022.3217097",
-      "representation": "题名确认高光谱影像相关任务，方法细节待摘要核验。",
+      "representation": "高光谱去噪：NSSNN 在残差 U-Net 中嵌入空间—光谱循环块和非局部自相似块，同时建模空间—光谱、全局光谱及长程空间相关。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像处理、学习或应用，保留待补摘要。",
-      "input": "高光谱影像或高光谱与其他光学数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2022.3217097",
+      "summary": "NSSNN 以 3D 卷积、轻量循环和 highway 网络提取空间—光谱及全局光谱关系，以 crisscross attention 捕获非局部空间上下文。",
+      "input": "含噪高光谱影像。",
+      "output": "去噪高光谱影像。",
+      "mechanism": "残差 U-Net 集成 SSR 块与 NSS 块；SSR 块建模空间—光谱/全局光谱相关，NSS 块用 crisscross attention 建模长程空间。",
+      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "paper": "https://www.researchgate.net/publication/365116412_Nonlocal_Spatial-Spectral_Neural_Network_for_Hyperspectral_Image_Denoising",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -67481,16 +67500,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，保留高光谱关系；摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在统一网络中同时利用空间—光谱、全局光谱和非局部空间相关？",
+        "datasets": "公开摘要报告合成和真实数据集实验；数据名称、噪声设置和指标待全文核验。",
+        "experimentSetting": "残差 U-Net、SSR 块、NSS 块联合进行高光谱去噪。",
+        "conclusions": "公开摘要报告在合成和真实数据上优于对比方法，并提供代码仓库；逐项指标待全文核验。",
+        "limitations": "摘要未给出完整训练配置、数据统计、速度和代码复现细节。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/365116412_Nonlocal_Spatial-Spectral_Neural_Network_for_Hyperspectral_Image_Denoising",
+            "checkedAt": "2026-10-10",
+            "level": "ResearchGate公开摘要",
+            "supports": [
+              "SSR块的3D卷积/循环/highway",
+              "NSS块crisscross attention",
+              "合成与真实HSI去噪"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2022.3217097",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-78-hsi-2022-published",
@@ -67498,7 +67536,7 @@
             "url": "https://doi.org/10.1109/tgrs.2022.3217097",
             "doi": "10.1109/tgrs.2022.3217097",
             "year": 2022,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2022-title-78"
@@ -67519,16 +67557,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tip.2022.3196826",
-      "representation": "题名确认高光谱影像相关任务，方法细节待摘要核验。",
+      "representation": "高光谱去噪：SMDS-Net 从子空间多维稀疏模型展开可解释网络，联合利用空间冗余、光谱低秩性和光谱—空间结构。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像处理、学习或应用，保留待补摘要。",
-      "input": "高光谱影像或高光谱与其他光学数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tip.2022.3196826",
+      "summary": "SMDS-Net 先将高光谱影像投影到低维正交子空间，再用多维字典稀疏表示，并把去噪与优化步骤端到端展开为可学习网络。",
+      "input": "含噪高光谱影像。",
+      "output": "去噪高光谱影像。",
+      "mechanism": "子空间投影、多维稀疏编码、字典学习与阈值参数共同对应 SMDS 模型的优化步骤，并端到端训练。",
+      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "paper": "https://arxiv.org/abs/2012.01829",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -67536,16 +67574,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，保留高光谱关系；摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何把空间冗余、光谱低秩和光谱—空间结构融入可解释高光谱去噪网络？",
+        "datasets": "官方 arXiv 摘要报告合成和真实高光谱影像实验；数据名称、噪声设置和指标待正式全文核验。",
+        "experimentSetting": "SMDS 模型展开为端到端网络，学习字典与阈值等关键变量。",
+        "conclusions": "官方摘要报告具有较强去噪能力和可解释性；正式期刊版本数值和差异待核验。",
+        "limitations": "证据来自相关 arXiv 预印本摘要；正式 TIP 版本、完整实验、代码许可和复现待核验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2012.01829",
+            "checkedAt": "2026-10-10",
+            "level": "official arXiv abstract",
+            "supports": [
+              "子空间多维稀疏模型",
+              "SMDS优化展开与端到端参数",
+              "合成/真实HSI与可解释性"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tip.2022.3196826",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-79-hsi-2022-published",
@@ -67553,7 +67610,7 @@
             "url": "https://doi.org/10.1109/tip.2022.3196826",
             "doi": "10.1109/tip.2022.3196826",
             "year": 2022,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2022-title-79"
@@ -67574,16 +67631,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2021.3081177",
-      "representation": "题名确认高光谱影像相关任务，方法细节待摘要核验。",
+      "representation": "高光谱解混：SNMF-Net 将 Lp 稀疏约束非负矩阵分解展开为交替端元—丰度网络，结合线性光谱混合模型、优化算法和稀疏先验。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像处理、学习或应用，保留待补摘要。",
-      "input": "高光谱影像或高光谱与其他光学数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2021.3081177",
+      "summary": "SNMF-Net 交替预测端元和丰度，网络参数与 Lp-NMF 的交替优化步骤对应，保持物理可解释性并支持端到端学习。",
+      "input": "高光谱像元光谱。",
+      "output": "端元光谱与丰度分布。",
+      "mechanism": "基于线性光谱混合模型，交替 End-Net 和 Abun-Net 展开 Lp-NMF 优化，融入非负性、稀疏性等先验。",
+      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "paper": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
@@ -67591,16 +67648,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，保留高光谱关系；摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何把线性混合模型和稀疏 NMF 优化展开为可解释的高光谱解混网络？",
+        "datasets": "作者公开 PDF 摘要报告合成与真实 HSI 实验；具体数据集、约束设置和指标待全文核验。",
+        "experimentSetting": "观察光谱输入后交替估计端元和丰度，并与多种解混方法比较。",
+        "conclusions": "作者摘要报告在合成和真实数据上优于多种方法；逐项性能、消融和泛化待全文核验。",
+        "limitations": "公开 PDF 为作者版本；正式出版版本差异、代码许可和完整实验边界待核验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "作者公开PDF摘要",
+            "supports": [
+              "Lp-NMF展开的交替架构",
+              "端元/丰度交替预测",
+              "合成与真实HSI解混"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2021.3081177",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-80-hsi-2022-published",
@@ -67608,7 +67684,7 @@
             "url": "https://doi.org/10.1109/tgrs.2021.3081177",
             "doi": "10.1109/tgrs.2021.3081177",
             "year": 2022,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2022-title-80"
