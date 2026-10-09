@@ -1,0 +1,255 @@
+      HYPERSPECTRAL IMAGE VISUALIZATION WITH A 3-D SELF-ORGANIZING MAP
+
+                                                 Johannes Jordan, Elli Angelopoulou
+
+                        Pattern Recognition Lab, University of Erlangen-Nuremberg, Germany
+                               johannes.jordan@cs.fau.de, elli.angelopoulou@cs.fau.de
+
+
+                             ABSTRACT
+False-color visualization is a powerful component of interactive hyper-
+spectral image analysis. We propose a novel unsupervised technique
+for false coloring that is based on self-organizing map (SOM) dimen-
+sionality reduction. We first train a modified 3-dimensional SOM on
+the image data. Instead of a single answer, our SOM returns several
+answers to each data query. Then we employ a novel rank-based
+linear weighting to create a meaningful RGB representation of the
+query result. We analyze and compare our visualization results on
+publicly available remote sensing and laboratory image data. The                 (a) Composite of three bands        (b) ground truth labels
+obtained false coloring is superior to established principal component
+based false coloring while retaining computational efficiency.
+   Index Terms— Hyperspectral imaging, Self-organizing feature
+maps, Visualization, False Coloring
+
+                       1. INTRODUCTION
+
+In a hyperspectral image (HSI) we essentially observe high dimen-
+sional data points that share a spatial relation. Visualizing the data is
+                                                                                    (c) PCA visualization          (d) 3D SOM visualization
+important where a manual observer is needed for interpretation, or for
+evaluation of an automated interpretation. While many approaches            Fig. 1. 220-band AVIRIS indian pines image. The proposed visual-
+concentrate on the data points without spatial context, some methods        ization is more feature-rich when compared to PCA false coloring.
+create a display that follows the spatial layout of the image. The
+most simple form is an intensity image that presents a single data
+channel. However, the tri-chromatic human color perception allows           coloring, our method produces superior results in multiple image
+us to distinguish three channels per pixel. The process of creating a       capture modalities.
+color image from several channels of data is called false coloring.
+     Three categories of false coloring are very common in HSI analy-          2. UNSUPERVISED FALSE-COLOR VISUALIZATION
+sis. First, three bands from the image are selected and then mapped to
+R, G, B color channels. Second, dimensionality reduction on the image       Very prominent in false coloring are PCA-based methods. For PCA,
+data as a whole is performed, leading to three bands that cover most        eigenvalues are computed and sorted. The eigenvectors corresponding
+information in the image and are mapped to R, G, B. Third, intermedi-       to the three largest eigenvalues form a linear transformation to three
+ate data values are computed through other means, e.g. classification       bands used as R, G, B after automatic white-balancing is performed [5].
+of pixels. Then, a combination of classification results forms the          Tyo et al. [3] propose a transform of the three principal components
+false-color image. The scope of this paper is the second category.          to HSV colorspace in an opponent-color fashion. Unfortunately, the
+     Our work lies in the context of interactive HSI analysis sys-          method needs supervision for defining offsets to the second and third
+tems [1]. We strive for an unsupervised false-coloring method that          principal component. A notable derivation from PCA-based methods
+aids the user when exploring an image without prior knowledge. The          is described by Cui et al. [4] and also operates in HSV color space.
+method needs to be fast to compute to be helpful in an interactive          To maximize spectral distance preservation, principle components
+setting. We present a novel approach that fulfills these properties.        form only H, S components. The V component is then calculated by
+We employ the self-organizing map (SOM) [2], which is a well-               optimizing a L2 -based distance similarity objective. However, the
+understood tool for topology-preserving dimensionality reduction.           informative value of the Euclidean distance for spectral similarity
+The SOM is often used for visualization of multivariate data, however,      is arguable. The independent component analysis (ICA) [6] based
+typically in a way that identifies clusters in the underlying variable      visualization is a linear transformation similar to PCA that seeks
+distribution, not taking the image layout into account. We show how         mutually independent components in the data. However, it is not
+we can obtain a high-quality false coloring based on a 3D SOM. We           clear how to rank the significance of different channels [4].
+obtain a meaningful coloring directly from the data without clustering           Another approach to unsupervised false-color visualization lies
+or incorporating prior knowledge. See Figure 1 for a remote sensing         in nonlinear dimensionality reduction techniques. Most prominent
+example. When compared to the established unsupervised PCA false            in this field is ISOMAP [7]. It seeks a manifold coordinate system
+that preserves geodesic distances in feature space. False-color images            A mapping back to the spatial layout of a multispectral image
+are created based on coordinates. Unfortunately, even after several          was first proposed by Manduca [12]. However, they use a 1D SOM
+improvements to algorithm complexity were made, ISOMAP still                 to produce a grayscale display. Most similar to our method is recent
+takes minutes to hours to compute [7, 4].                                    work that uses a 3D SOM for color-coded visualization of data in
+     We compare the proposed method to PCA, as both methods share            its original spatial layout. Gorricha and Lobo [11] train a SOM on
+that they are unsupervised and fast to compute. While the PCA is             geo-referenced data to color geographic elements. Fonville et al. [13]
+a linear transformation, we base our method on the SOM, which is             compare a 3D SOM with other data mappings for visualization of
+a nonlinear dimensionality reduction technique. However, a SOM               mass spectrometry imaging data.
+can be trained on a HSI within seconds in contrast to other nonlinear             Our work differs from these as we apply the method in the hyper-
+methods [8].                                                                 spectral domain. To do so, we train considerably larger SOMs and
+                                                                             propose a new method of processing several BMUs per look-up that
+                 3. SELF-ORGANIZING MAPS                                     leads to much higher quality RGB output.
+
+The self-organizing map [2] was invented by Kohonen in 1982. The                                   4. 3D SOM VISUALIZATION
+SOM can be used for reducing dimensionality of high-dimensional
+data points in a manner that preserves feature space topology [8].           Typically, SOM neurons are layed out in a 1D or 2D lattice, which
+A straightforward implementation and considerably short learning             is 2-connected, or 4-connected, respectively. A common deviation
+times make the SOM viable for several tasks in HSI analysis [9].             for the 2D SOM is a hexagon lattice. A 3D SOM is rarely used in the
+     A SOM consists of an artificial neural network. The network is          literature. When it is, a 6-connected lattice is constructed. Our SOM
+trained using unsupervised learning to convert the nonlinear statis-         is
+                                                                             √  cubic, such as the side length n0 of the lattice in each dimension is
+tical relationship between high-dimensional data into simpler geo-            3
+                                                                                n. With this topology, we obtain location vectors r(c) ∈ Z3 with
+                                                                               (c)
+metric relationships. In other words, observed spectra are put into a        ri ∈ [1, n0 ]. We exploit this fact to compute a HSI false coloring.
+topological relation that should best resemble their topology in the               First, the SOM is trained on samples from the image. Then, the
+high-dimensional space.                                                      false-color values r, g, b of a pixel v are obtained as
+     We define the data of a HSI in the form vx,y ∈ Rd , whereas d is
+                                                                                               (c(v) )                     (c(v) )                         (c(v) )
+the number of spectral bands in the input image and vx,y corresponds                          r1                          r2                              r3
+                                                                                     rx,y =              ,     gx,y =                ,      . (3)bx,y =
+to an image pixel at position x, y. We omit subscript x, y from here                           n0                 n0                  n0
+on for clearer presentation. The SOM consists of n model vectors                  While this method can give a meaningful result on a per-pixel
+mi ∈ Rd (also called neurons). Let d(v, mi ) denote a distance               basis, the output suffers from quantization effects. A typical SOM is
+function for v and mi . The common choice for d(·) is the Euclidean          trained with 28 neurons only, while we can display 224 unique colors.
+distance, which is fine for learning the manifold. The best fit of v in      To solve this problem and provide further accentuation of the data, we
+the SOM, and therefore its best matching unit (BMU) mc , has the             introduce a weighted interpolation scheme when querying the SOM.
+index                                                                        We first obtain a vector of BMU indices
+                     c(v) = argmin d(v, mi ) .                      (1)                                                   C
+                                 i                                                                                        X
+During training, s vectors from the input image (or any other source)                              c(v) = argmin               d(v, mij ) ,                          (4)
+                                                                                                                    i
+                                                                                                                           j
+are randomly selected and fed into the SOM. After the BMU of input
+v(t), 1 ≤ t ≤ s, is determined, a neighborhood function hc,i defines         where C is the number of desired BMUs, in analogy to [14]. Then,
+the influence of v(t) on the model vectors mi . As suggested in the          for each pixel v, we calculate location r0 as
+literature [2],                                                                                                     C
+                                                    2
+                                                                                                                   X            (v)
+                                       r (c)
+                                             −  r(i)                                                         r0 =        wj · r(cj       )
+                                                                                                                                             ,                       (5)
+             hc,i (t) = α(t) · exp −                   ,        (2)
+                                                                                                                  j
+                                          2σ 2 (t)                           given
+                                                                                        ∀wj , j < C :                  wj        =               2wj+1
+                                                                                                                    PC
+                                                                                                                   j=1 wj        =               1                   (6)
+where r(c) , r(i) are location vectors of neurons c and i, respectively.               ∀mcj , j < C :           d(v, mcj )       <               d(v, mcj+1 ) ,
+The location r(c) of a neuron mc in the SOM is determined by
+the SOM topology and is a bijective mapping of c. The learning-              which expresses that the BMUs are sorted according to distance to
+rate factor α(t) is a user-adjustable parameter that is monotonically        the query vector, and weighted by their rank, where the weight for
+decreasing. The kernel width σ(t) describes how far the influence of a       rank j is always twice as high as the weight for subsequent rank j + 1.
+sample vector reaches in the SOM topology and is also monotonically          We finally obtain
+                                                                                                    r0              r0             r0
+decreasing. While in the early training phase the SOM seeks a rough                        rx,y = 10 , gx,y = 20 , bx,y = 30 .                   (7)
+global ordering, in the later phase local regions are smoothed out.                                 n               n              n
+                                                                                 Figure 2 shows an example multispectral image, (a), and false
+3.1. SOM for Visualization                                                   colorings obtained by a SOM with (b) C = 1, resembling traditional
+                                                                             SOM BMU lookup, (c) C = 10 and wj = C1 , ∀j, resembling an
+One major application of the SOM is in fact data visualization. Sev-         unweighted approach, and (d) C = 10, wj determined as in Eq. 6. We
+eral well developed SOM-based techniques exist [10]. Typically, the          observe that the traditional lookup of a single BMU depicted in 2(b)
+data is visualized in the layout of the neuronal network, e.g. the           captures different materials, specular highlights and shadows well, but
+U-matrix that encodes a neuron’s distance to its neighbors and helps         suffers from quantization effects. When adding more BMUs as in 2(c),
+to manually identify clusters in the data. If the input data has a spatial   a smooth display is obtained at the expense of significant details.
+context, a color-coding of a 1D or 2D SOM may be back-projected,             Finally, our proposed weighting scheme displayed in 2(d) preserves
+e.g. for visualization of geo-referenced data on a map [11].                 most detail of all three methods in an artifact-free presentation.
+                                                                             distinguish, and some classes lack separation (e.g. water vs. road).
+                                                                             In general we found that PCA often contrasts well a single class of
+                                                                             pixels in the image (here a rooftop in white) at the expense of a good
+                                                                             general contrast between other classes. The same effect is visible in
+                                                                             Fig. 1. The PCA catches the steel tower in the upper right, but not
+                                                                             more subtle differences between crop classes, effectively providing
+                                                                             no benefit over the three-band composite in Fig. 1(a). While the SOM
+                                                                             visualization illustrates the same effects as the other false-colorings,
+                                                                             it also helps distinguish several of the classes shown in Fig. 1(b).
+                                                                                  Quantitative Measures. A measure of the information content
+                                                                             of R, G, B components, and therefore richness of the information, is
+  (a) Color matching functions               (b) SOM, single BMU             per-component entropy. Entropy is increased by the proposed SOM in
+                                                                             comparison to both alternatives shown in Fig. 2(b,c). Entropy is also
+                                                                             consistently higher for SOM than for PCA and PCA has the problem
+                                                                             that information content is uneven between components. Exemplary
+                                                                             entropy values ER , EG , EB are denoted below Fig. 4(a), 4(b).
+                                                                                  On an Intel Core i7-2600 CPU, SOM training time in seconds is
+                                                                             10 s for the lab images, and 18 s for the remote sensing images due to
+                                                                             higher spectral dimensionality. Spatial size is irrelevant. For SOMs
+                                                                             of reduced size n = 63 , training times are 3 s, and 5 s, respectively.
+                                                                                  Limitations. As the SOM sees a random set of pixels during
+                                                                             training, the topology can significantly change in several runs. For an
+                                                                             example see the different SOMs used in Figures 2, 3. Color difference
+                                                                             between two image segments can change heavily, in consistence with
+  (c) SOM, 10 averaged BMUs            (d) SOM, 10 rank-weighted BMUs
+                                                                             this method not being distance preserving. However, our observation
+Fig. 2. 31-band fake and real peppers image [15] and corresponding           is that the SOM always captures the details we specifically look for
+false-color visualizations. Results are zoomed-in for better visibility.     when evaluating the results.
+
+                 5. EXPERIMENTAL RESULTS                                                             6. CONCLUSIONS
+
+We examine our new method on a range of images from two cap-                 The SOM is known as a valuable tool for HSI analysis. It has the prop-
+ture modalities: Laboratory images taken with tunable filters on the         erties of being faster to compute than other nonlinear dimensionality
+ground and remote sensing images taken by AVIRIS and HYDICE                  reduction methods while retaining a more accurate representation
+sensors. The lab image shown in Figures 2, 3 has a resolution of             of feature space topology than linear methods. We propose a SOM
+508×512 pixels and covers the spectral range of 400 nm − 700 nm.             specialized for false-color visualization. Our SOM is 3-dimensional,
+For the lab images only, we operate on the spectral gradient space [16]      holds a high number of neurons, and returns a linear combination
+to reduce the dominance of geometric effects, at the expense of an           of best matching units (BMUs) in the final data queries instead of
+amplified noise level. The AVIRIS image shown in Figure 1 holds              one single BMU. The proposed rank-based BMU weighting scheme
+145×145 pixels with the spectral range of 400 nm−2500 nm, while              retains details without quantization or smoothing artifacts.
+the HYDICE image shown in Figure 4 holds 1280×307 pixels with                     As the SOM learns from the raw data, and the weighted SOM
+the spectral range of 400 nm − 2475 nm.                                      results do not undergo further post-processing, our method is almost
+     Parameter setting. Each SOM is trained with n = 103 , s =               parameter-less, yet effective. We obtain a high-quality visualization
+100 000, C = 5. The SOM quality can be assessed by comparing                 that is helpful in several application scenarios. It is available within
+spectral distributions of SOM and image. We see a good match in              the open-source Gerbil HSI analysis framework at http://gerbil.sf.net.
+Fig. 3(c,e). We found that a size n of at least 63 is needed to preserve          Acknowledgement. We gratefully acknowledge funding of this
+all details in the image. Good choices for learning rate and kernel          work by the German Research Foundation (GRK 1773).
+width of the SOM are easy to find [2] and we did not particularly
+fine-tune them as well as s. Parameter C is not significant for C ≥ 5.
+     Qualitative Assessment. Our goal for the image shown in Fig. 3          References
+is a visualization that overcomes metamerism and therefore needs to
+significantly contrast with true color. We find that different materials      [1] J. Jordan and E. Angelopoulou, “Gerbil - A Novel Software
+of the peppers, three of which are plastic, are well separated by the             Framework for Visualization and Analysis in the Multispectral
+SOM. You can discern plastic peppers from organic ones by looking                 Domain,” VMV 2010: Vision, Modeling and Visualization, pp.
+at the coloring of their stems. Also, reflectance effects such as inter-          259–266, 2010.
+reflections, specular highlights and shadowed regions are captured.           [2] T. Kohonen, Self-organizing maps, vol. 30 of Springer series in
+The PCA visualization fails to distinguish the yellow peppers and the             information sciences, Springer, 3rd edition, 2001.
+separation of the shadow on the backdrop is weak.                             [3] J.S. Tyo, A. Konsolakis, D.I. Diersen, and R.C. Olsen,
+     In the remote sensing image depicted in Fig. 4 the SOM provides              “Principal-components-based display strategy for spectral im-
+a good separation of the classes grass, tree, roof, road, trail and water.        agery,” IEEE Trans. Geosc. Remote Sensing, vol. 41, no. 3, pp.
+We can also read more subtle details from the visualization, such as              708–718, 2003.
+different roof types or different grass segments. For this image, the         [4] M. Cui, A. Razdan, J. Hu, and P. Wonka, “Interactive hyper-
+PCA also performs well. However, some structure is not as easy to                 spectral image visualization using convex optimization,” IEEE
+                                                                             (c) Spectral gradient distribution            (e) SOM vector distribution
+
+
+
+
+                                                                         (d) Color-coded spectral gradient vectors        (f) Color-coded SOM vectors
+ (a) PCA false-color visualization   (b) SOM false-color visualization
+
+Fig. 3. 31-band fake and real peppers image [15] depicting three organic and three plastic peppers. Left: Visualization results. Top right:
+Parallel coordinate plots of the image’s spectral gradient distribution, and neuron vector distribution of the SOM trained on the image. Bottom
+right: Spectral gradient and SOM vectors colored in the same way as in (b). Parallel coordinate plots created with the Gerbil software [1].
+
+
+
+
+                                                                                                                       (c) Spectral distribution
+
+
+
+              (a) PCA false-color visualization, ER = 0.535, EG = 0.753, EB = 0.761
+
+
+
+                                                                                                                     (d) Color-coded SOM vectors
+
+
+
+
+             (b) SOM false-color visualization, ER = 0.957, EG = 0.921, EB = 0.932
+                                                                                                                  (e) Color-coded spectral vectors
+
+Fig. 4. 191-band Washington D.C. Mall remote sensing image. Left: Visualization results. Top right: Parallel coordinate plot of the image’s
+spectral distribution. Top bottom: Parallel coordinate plots of the neuron vectors of the SOM trained on the image, and the image’s spectral
+vectors colored in the same way as in (b). Parallel coordinate plots created with the Gerbil software [1].
+
+     Trans. Geosc. Remote Sensing, vol. 47, no. 6, pp. 1673–1684,                   of clusters in geo-referenced data using self-organizing maps,”
+     2009.                                                                          Computers & Geosciences, vol. 43, pp. 177 – 186, 2012.
+ [5] N.P. Jacobson and M.R. Gupta, “Design goals and solutions for             [12] A. Manduca, “Multispectral image visualization with nonlinear
+     display of hyperspectral images,” IEEE Trans. Geosc. Remote                    projections,” IEEE Trans. Image Processing, vol. 5, no. 10, pp.
+     Sensing, vol. 43, no. 11, pp. 2684–2692, 2005.                                 1486 –1490, oct 1996.
+ [6] J. Wang and C.-I Chang, “Independent component analysis-                  [13] J. Fonville, C. Carter, L. Pizarro, R. Steven, A. Palmer, R. Grif-
+     based dimensionality reduction with applications in hyperspec-                 fiths, P. Lalor, J. Lindon, J. Nicholson, E. Holmes, and J. Bunch,
+     tral image analysis,” IEEE Trans. Geosc. Remote Sensing, vol.                  “Hyperspectral visualization of mass spectrometry imaging data,”
+     44, no. 6, pp. 1586 – 1600, june 2006.                                         Analytical Chemistry, vol. 85, no. 3, pp. 1415–1423, 2013.
+ [7] C. M. Bachmann, T. L. Ainsworth, and R. A. Fusina, “Improved              [14] M. Sjöberg and J. Laaksonen, “Optimal combination of SOM
+     manifold coordinate representations of large-scale hyperspectral               search in best-matching units and map neighborhood,” in Ad-
+     scenes,” IEEE Trans. Geosc. Remote Sensing, vol. 44, no. 10,                   vances in Self-Organizing Maps, vol. 5629 of Lecture Notes in
+     pp. 2786–2803, 2006.                                                           Computer Science, pp. 281–289. Springer, 2009.
+ [8] J.A. Lee and M. Verleysen, Nonlinear dimensionality reduction,            [15] F. Yasuma, T. Mitsunaga, D. Iso, and S. K. Nayar, “Generalized
+     Springer, 2007.                                                                Assorted Pixel Camera: Post-Capture Control of Resolution,
+ [9] T. Villmann, E. Merényi, and B. Hammer, “Neural maps in                        Dynamic Range and Spectrum,” IEEE Trans. Image Processing,
+     remote sensing image analysis,” Neural Networks, vol. 16, no.                  vol. 19, no. 9, pp. 2241–2253, Sept. 2010.
+     3, pp. 389–403, 2003.                                                     [16] Elli Angelopoulou, Sang W. Lee, and Ruzena Bajcsy, “Spec-
+[10] J. Vesanto, “Som-based data visualization methods,” Intelligent                tral gradient: a material descriptor invariant to geometry and
+     data analysis, vol. 3, no. 2, pp. 111–126, 1999.                               incident illumination,” in Computer Vision, 1999 Seventh IEEE
+[11] J. Gorricha and V. Lobo, “Improvements on the visualization                    International Conference on, 1999, vol. 2, pp. 861–867.
+

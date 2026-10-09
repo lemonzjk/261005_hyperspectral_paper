@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www5.cs.fau.de/en/our-team/jordan-johannes/projects/visualization/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2020 09:46:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2016 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+<base  />
+
+<title>Multispectral Image Visualization</title>
+<meta name="generator" content="TYPO3 CMS" />
+<meta name="AUTHOR" content="Lehrstuhl für Mustererkennung, Friedrich-Alexander-Universität Erlangen-Nürnberg" />
+<meta name="COPYRIGHT" content="Copyright (c) LME" />
+<meta name="KEYWORDS" content="Medical Image Processing, Pattern Recognition, Medizinische Bildverarbeitung, Mustererkennung, Segmentierung, Registrierung, Rekonstruktion, Rechnersehen, Computer Vision, Ophthalmology, Sprachverarbeitung, Spracherkennung, Segmentation, Registration, Reconstruction, MRI, CT, US, SPECT, PET, X-ray, Magnetic Resonance Imaging, Computed Tomography, Ultrasound, Röntgen, Speech recognition" />
+
+
+<link rel="stylesheet" type="text/css" href="https://www5.cs.fau.de/typo3temp/stylesheet_74b638b6c1.css?1438613884" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www5.cs.fau.de/templates/main/css/inf5.css?1359455647" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www5.cs.fau.de/templates/js/fancybox/jquery.fancybox-1.3.4.css?1334874465" media="all" />
+
+
+
+
+<script src="javascripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="https://www5.cs.fau.de/typo3temp/javascript_dd82474708.js?1438613867" type="text/javascript"></script>
+
+
+
+
+
+
+</head>
+<body>
+
+
+<!--
+	<link rel="shortcut icon" href="/favicon.ico" />
+-->
+	<table border="0" style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0">
+		<tr>
+			<td colspan="3" class="spacer-1"><a name="TOP"></a></td>
+		</tr>
+
+		<tr id="top-buttons">
+			<td id="top-buttons-links">
+				<a href="http://www.uni-erlangen.de/" target="_top">
+					<img alt="Friedrich-Alexander-Universit&auml;t" src="https://www5.cs.fau.de/images/top_fau_font.gif" border="0" height="32" width="200" align="top" />
+				</a>
+			</td>
+			<td id="top-buttons-mitte">
+				<div style="float: left;">
+					<a target="_blank" href="https://www5.cs.fau.de/index.php?id=2327&amp;type=98&amp;L="><img alt="Print" src="https://www5.cs.fau.de/images/top_drucken.en.gif" border="0" height="32" width="63" align="top" /></a>
+				</div>
+				<div style="float: left; margin-left:23px;">
+					<a href="http://univis.uni-erlangen.de/" target="_blank">
+						<img alt="Univis" src="https://www5.cs.fau.de/images/top_univis.gif" border="0" height="32" width="59" align="top" />
+					</a>
+				</div>
+				<div style="float: left; margin-left:23px;">
+					<a href="https://www5.cs.fau.de/index.php?id=2">
+						<img alt="Search" src="https://www5.cs.fau.de/images/top_suche.en.gif" border="0" height="32" width="59" align="top" />
+					</a>
+				</div>
+				<div style="float: left; margin-left:23px; margin-top:14px;">
+					
+				</div>
+				<div style="float: right; margin-left:23px; margin-top:7px;">
+					&nbsp;
+				</div>
+			</td>
+			<td id="top-buttons-rechts">
+				<img alt="FAU-Logo" src="https://www5.cs.fau.de/images/top_fau_seal.gif" border="0" height="32" width="103" align="top" />
+			</td>
+		</tr>
+
+		<tr id="top-banner-tf">
+			<td style="width: 200px;">
+				<a href="http://www.techfak.uni-erlangen.de/" target="_top">
+					<img alt="Techn. Fakult&auml;t" src="https://www5.cs.fau.de/images/logo_techfak3.gif" border="0" height="49" width="200" align="top" />
+				</a>
+			</td>
+			<td>
+				<a href="https://prl.tf.fau.de" style="background:#FF0000;font-size:40px;font-weight:bold;color:#FFF">Website deprecated and outdated. Click here for the new site.</a>
+			</td>
+			<td style="width: 103px; text-align: right;">
+				<img alt="FAU-Logo" src="https://www5.cs.fau.de/images/seal_2.gif" border="0" height="49" width="103" align="top" />
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3" class="spacer-2" />
+		</tr>
+
+		<tr>
+			<td id="linke-spalte">
+				<div id="logo-box">
+					<a href="https://www5.cs.fau.de/">
+						<img border="0" alt="Lehrstuhl f&uuml;r Mustererkennung" src="https://www5.cs.fau.de/images/lme.jpg" />
+					</a>
+				</div>
+				<div id="nav-box">
+					<div class="titel">
+						<a href="https://www5.cs.fau.de/">Department of Computer Science 5</a>
+					</div>
+					<div id="left-menu" class="gruppe"><ul><li class="left-level-1-act"><a href="https://www5.cs.fau.de/nc/en/our-team/" title="Our Team">Our Team</a><ul><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li class="left-level-2-act"><a href="../../index.html" title="Jordan, Johannes">Jordan, Johannes</a><ul><li class="left-level-3-act"><a href="../index.html" title="Projects">Projects</a><ul><li class="left-level-4-act"><a href="index.html" title="Multispectral Image Visualization">Visualization</a></li><li class="left-level-4-no"><a href="../segmentation/index.html" title="Multispectral Image Segmentation">Segmentation</a></li><li class="left-level-4-no"><a href="../preprocessing/index.html" title="Multispectral Image Preprocessing">Preprocessing</a></li></ul></li><li class="left-level-3-no"><a href="../../lectures/index.html" title="Lectures">Lectures</a></li><li class="left-level-3-no"><a href="../../publications/index.html" title="Publications">Publications</a></li><li class="left-level-3-no"><a href="../../theses/index.html" title="Theses">Theses</a></li><li class="left-level-3-no"><a href="../../curriculum-vitae/index.html" title="Curriculum Vitae">Curriculum Vitae</a></li></ul></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li><li style="display:none;"></li></ul></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/research/" title="Research">Research</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/publications/2019/" title="Publications">Publications</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/research/software/" title="Free Software">Free Software</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/research/data/" title="Data">Data</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/lectures/ws-1920/" title="Courses">Courses</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/curriculum/" title="Wahlpflichtmodule der Vertiefungsrichtung Mustererkennung">Curriculum</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/theses/" title="Theses">Theses</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/nc/en/press-releases/" title="Press Releases">Press Releases</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/cooperations/" title="Cooperations">Cooperations</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/open-positions/" title="Open Positions">Open Positions</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/lme-videos/" title="LME Videos">LME Videos</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/phd-gallery/" title="Ph.D. Gallery">Ph.D. Gallery</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/contact/" title="Contact">Contact</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/intranet/" title="Intranet">Intranet</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/impressum/" title="Impressum">Impressum</a></li><li class="left-level-1-no"><a href="https://www5.cs.fau.de/en/datenschutzerklaerung/" title="Datenschutzerklärung">Datenschutzerklärung</a></li></ul></div>
+					
+
+
+	<!--
+
+		BEGIN: Content of extension "univis2web", plugin "tx_univis2web_pi8"
+
+	-->
+	<div class="tx-univis2web-pi8">
+		
+	<div id="kontakt-box" align="left">
+		<h1>Contact</h1>
+		<div align="left">
+			<div class="univis2web">      <div class="mail" rel="Person.tech.IMMD.IMMD5.jordan">            <div style="height: 24px; min-width:100px;" class="con"><img width="24" height="24" src="https://www5.cs.fau.de/images/email.gif" alt="E-Mail logo" /></div></div></div>
+		</div>
+		<div align="left">
+			<img alt="Telefon" style="margin-right: 1mm;" align="middle" border="0" src="https://www5.cs.fau.de/images/telefon.gif" />
+			+49 9131 85 27891
+		</div>
+		<div align="left">
+			<img alt="Fax" style="margin-right: 1mm;" align="middle" border="0" src="https://www5.cs.fau.de/images/fax.gif" />
+			+49 9131 85 27270
+		</div>
+		<div align="left">
+			<img alt='Room' style='margin-right: 1mm;' align='middle' border='0' src='https://www5.cs.fau.de/images/room.gif' />
+			<a class="lightbox" title="09.157" href="https://www5.cs.fau.de/images/maps/09.157.gif">09.157</a></div>
+		<h1>Address</h1>
+		<div align="left">
+			Universit&auml;t Erlangen-N&uuml;rnberg<br />
+			Chair of Computer Science 5 (Pattern Recognition)<br />
+			Martensstrasse 3<br />91058 Erlangen<br>Germany
+		</div>
+		<div style="margin-top: 0.75em;">
+			<a href="https://www5.cs.fau.de/en/contact/driving-directions/">Driving directions</a>
+		</div>
+	</div>
+  
+	</div>
+	
+	<!-- END: Content of extension "univis2web", plugin "tx_univis2web_pi8" -->
+
+	
+                                        <div id="power" style="text-align:center; font-size:x-small; margin-top:5em;">
+						<hr />
+						<b>Powered by</b><br />
+
+                                                <a href="../../../schaller-christian/private/univis2typo3-a-generic-univis-connection-to-typo3/index.html"><img alt="UnivIS2Typo3" src="https://www5.cs.fau.de/fileadmin/images/univis2typo3-100_01.png" /></a>
+                                        </div>
+				</div>
+			</td>
+			<td colspan="2" id="rechte-spalte">
+				<div id="pfad-info"><b><a href="http://www.informatik.uni-erlangen.de/">Dept. of Computer Sc.</a> &raquo; <a href="http://www5.informatik.uni-erlangen.de/">Pattern Recognition</a> &raquo;</b>&nbsp;<a href="https://www5.cs.fau.de/nc/en/our-team/" target="_self">Our Team</a>&nbsp;&raquo;&nbsp;<a href="../../index.html" target="_self">Jordan, Johannes</a>&nbsp;&raquo;&nbsp;<a href="../index.html" target="_self">Projects</a>&nbsp;&raquo;&nbsp;<a href="index.html" target="_self">Visualization</a>&nbsp;</div>
+				
+
+
+	<!--
+
+		BEGIN: Content of extension "univis2web", plugin "tx_univis2web_pi8"
+
+	-->
+	<div class="tx-univis2web-pi8">
+		<!--Array
+(
+    [0] => Array
+        (
+            [title] => Dipl.-Inf.
+            [atitle] => 
+            [firstname] => Johannes
+            [lastname] => Jordan
+            [key] => Person.tech.IMMD.IMMD5.jordan
+            [person_url] => http://www5.cs.fau.de/~jordan
+            [tx_lme_vision] => 
+            [tx_lme_vision_en] => Hyperspectral cameras are a core technology in remote sensing. Recently, multispectral and hyperspectral sensors became increasingly applicable to other fields, e.g. cultural heritage and medical diagnosis. A camera that can see more information than the human eye is fascinating. My vision is that we can access this unseen information easily and intuitively with the help of novel processing and visualization systems. 
+            [tx_lme_image] => lme_II_32-220x230.jpg
+            [description] => ehemalige Mitarbeiter
+            [description_en] => Alumni
+            [job_url] => ehemalige Mitarbeiter
+            [job_url_en] => Alumni
+            [job_key] => ehemalige Mitarbeiter
+            [url] => http://www5.cs.fau.de
+            [name] => Lehrstuhl für Informatik 5 (Mustererkennung)
+            [name_en] => Chair of Computer Science 5 (Pattern Recognition)
+            [oh_office] => 
+            [oh_starttime] => 
+            [oh_endtime] => 
+            [oh_desc] => 
+            [oh_desc_en] => 
+            [office] => 09.157
+            [person_key] => Person.tech.IMMD.IMMD5.jordan
+            [tel] => +49 9131 85 27891
+            [fax] => +49 9131 85 27270
+            [street] => Martensstrasse 3
+            [ort] => 91058 Erlangen
+            [email] => johannes.jordan@cs.fau.de
+            [nr] => 0
+            [fullName] => Dipl.-Inf. Johannes Jordan
+            [person_link] => <a href="http://www5.cs.fau.de/~jordan">Dipl.-Inf. Johannes Jordan</a>
+            [person_position] => Ehemaliger Wissenschaftler  des <a href="http://www5.cs.fau.de">Lehrstuhl für Informatik 5 (Mustererkennung)</a>  der Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg
+            [person_position_en] => Alumnus of  the <a href=http://www5.cs.fau.de>Pattern Recognition Lab</a> of the Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg
+            [room_link] => <a class="lightbox" title="09.157" href="/images/maps/09.157.gif">09.157</a>
+            [image] => <img src="fileadmin/Persons/JordanJohannes/lme_II_32-220x230.jpg" width="220" height="230"   alt=""  border="0" />
+            [officehour] => 
+        )
+
+)
+-->
+	<div id="personalPage" style="width:1000px;">
+		<div style="float:left;padding:1em;"><img src="https://www5.cs.fau.de/fileadmin/Persons/JordanJohannes/lme_II_32-220x230.jpg" width="220" height="230"   alt=""  border="0" /></div>
+		<div style="float:left;width:70%;">
+			<h1>Dipl.-Inf. Johannes Jordan</h1>
+			<h2>Alumnus of  the <a href=http://www5.cs.fau.de/>Pattern Recognition Lab</a> of the Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg</h2>
+			<div class="shadow-container2" style="margin-bottom:30px;"><div class="heading">Hyperspectral cameras are a core technology in remote sensing. Recently, multispectral and hyperspectral sensors became increasingly applicable to other fields, e.g. cultural heritage and medical diagnosis. A camera that can see more information than the human eye is fascinating. My vision is that we can access this unseen information easily and intuitively with the help of novel processing and visualization systems. </div></div>
+			
+		</div>
+	</div>
+  
+	</div>
+	
+	<!-- END: Content of extension "univis2web", plugin "tx_univis2web_pi8" -->
+
+	
+			        <div style="clear: both; padding: 0px; width: 1000px;">
+					<!--TYPO3SEARCH_begin-->
+	<!--  CONTENT ELEMENT, uid:6759/text [begin] -->
+		<div id="c6759" class="csc-default">
+		<!--  Header: [begin] -->
+			<div class="csc-header csc-header-n1"><h1 class="csc-firstHeader">Multispectral Image Visualization</h1></div>
+		<!--  Header: [end] -->
+			
+		<!--  Text: [begin] -->
+			<p class="bodytext">When we take an image, it is a natural desire to look at it with our eyes. However, a multispectral camera captures a wealth of information about the scene, and presenting this information visually is a challenging task.
+</p>
+<p class="bodytext">Two common approaches to visualization of high dimensional data are</p><ol><li>interactive visualization, where the user can manipulate the display to explore data step-by-step,</li><li>dimensionality reduction, where a low-dimensional representation of the most important information in the&nbsp;data is presented to the user.</li></ol><p class="bodytext">For our multispectral image analysis framework, we research both areas to find new answers to the question of how a user can&nbsp;intuitively and efficiently inspect an&nbsp;image.
+</p>
+<p class="bodytext">&nbsp;</p>
+		<!--  Text: [end] -->
+			</div>
+	<!--  CONTENT ELEMENT, uid:6759/text [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:6773/textpic [begin] -->
+		<div id="c6773" class="csc-default"><div class="shadow-container2"><div class="heading"><b>Interactive Visualization via Parallel Coordinates</b><br /></div>
+		<!--  Image block: [begin] -->
+			<div class="container"><div class="csc-textpic csc-textpic-center csc-textpic-above csc-textpic-equalheight"><div class="csc-textpic-imagewrap"><div class="csc-textpic-center-outer"><div class="csc-textpic-center-inner"><div class="csc-textpic-imagerow csc-textpic-imagerow-last"><div class="csc-textpic-imagecolumn csc-textpic-firstcol"><div class="csc-textpic-image csc-textpic-last"><table><caption class="csc-textpic-caption csc-textpic-caption-c">true-color display of 31-band image</caption><tbody><tr><td><a href="https://www5.cs.fau.de/fileadmin/_migrated/pics/fake_and_real_peppers.png" title="true-color display of 31-band image" class="lightbox" rel="lightbox6773"><img src="https://www5.cs.fau.de/fileadmin/_processed_/csm_fake_and_real_peppers_2d46894638.png" width="210" height="210" alt="" border="0" /></a></td></tr></tbody></table></div></div>
+<div class="csc-textpic-imagecolumn csc-textpic-lastcol"><div class="csc-textpic-image csc-textpic-last"><table><caption class="csc-textpic-caption csc-textpic-caption-c">parallel-coordinates visualization of entire image</caption><tbody><tr><td><a href="https://www5.cs.fau.de/fileadmin/_migrated/pics/peppers-distribution.png" title="parallel-coordinates visualization of entire image" class="lightbox" rel="lightbox6773"><img src="https://www5.cs.fau.de/fileadmin/_processed_/csm_peppers-distribution_568c032664.png" width="485" height="210" alt="" border="0" /></a></td></tr></tbody></table></div></div></div></div></div></div><div class="csc-textpic-text">
+		<!--  Text: [begin] -->
+			<p class="bodytext">&nbsp;</p>
+<p class="bodytext">Existing approaches on depicting a multispectral image in its entirety are bound to the spatial layout of the image. The image data is seen as a cube, with the z-axis corresponding to image bands, which are stacked on top of each other. Use of modern volume rendering techniques can help to make this representation useful in some scenarios. However in most cases, where there is no sparsity in pixels of interest, a very cluttered view is obtained that reveals the shortcomings of a simple arrangement of high-dimensional data into a 3D scene.
+</p>
+<p class="bodytext">Other methods, such as scatter plots or false-coloring, rely on dimensionality reduction. While the visualization of reduced data is helpful in many applications, it is hard to preserve subtle details that are of interest in applications like reflectance analysis. On the contrary, a good visualization of the original data helps the observer to judge how well a dimensionality reduction method fits a specific application.
+</p>
+<p class="bodytext">In this work, we define a new workflow in exploring a multispectral image. The user navigates through two different data representations at once.&nbsp;Parallel coordinates are used to visualize the spectral distribution in the image. The visualization is highly dynamic and interacts with the topological representations of the image (e.g., a grayscale depiction of a single image band). As a result, and in combination with <a href="../segmentation/index.html" title="Opens internal link in current window" target="_top" class="internal-link"><img src="https://www5.cs.fau.de/typo3/sysext/rtehtmlarea/res/accessibilityicons/img/internal_link.gif" alt="Opens internal link in current window" />user-guided segmentation</a>, the image is explored step-by-step.
+</p>
+<p class="bodytext">The main contributions of this work are a fast, interactive parallel-coordinates representation of the scene, as well as putting this visualization into a capable&nbsp;user interface that fosters&nbsp;<i>interactive</i> visualization.
+</p>
+<p class="bodytext">&nbsp;</p>
+<p class="bodytext"><b>Publications:</b></p><div class="authors" style="font-variant: small-caps; "><p class="bodytext"><span style="color: rgb(0, 26, 89); "><a href="http://www5.cs.fau.de/~jordan" target="_blank">Jordan, Johannes</a></span>;&nbsp;<span style="color: rgb(0, 26, 89); "><a href="http://www5.cs.fau.de/~elli/" target="_blank">Angelopoulou, Elli</a></span>.&nbsp;<span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; "><b><span style="color: rgb(0, 26, 89); "><a href="http://www5.informatik.uni-erlangen.de/Forschung/Publikationen/2010/Jordan10-GAN.pdf" target="_blank">Gerbil - A Novel Software Framework for Visualization and Analysis in the Multispectral Domain</a></span></b></span>.&nbsp;<span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; ">VMV 2010: Vision, Modeling &amp; Visualization (15th International Workshop on Vision, Modeling &amp; Visualization), Siegen, 15.-17.11.2010, vol. 1, pp. 259-266, 2010</span></p></div>
+		<!--  Text: [end] -->
+			</div></div></div>
+		<!--  Image block: [end] -->
+			<div style="clear:both"></div></div></div>
+	<!--  CONTENT ELEMENT, uid:6773/textpic [end] -->
+		
+	<!--  CONTENT ELEMENT, uid:6772/textpic [begin] -->
+		<div id="c6772" class="csc-default"><div class="shadow-container2"><div class="heading"><b>False-Color Visualization</b><br /></div>
+		<!--  Image block: [begin] -->
+			<div class="container"><div class="csc-textpic csc-textpic-center csc-textpic-above csc-textpic-equalheight"><div class="csc-textpic-imagewrap"><div class="csc-textpic-center-outer"><div class="csc-textpic-center-inner"><div class="csc-textpic-imagerow csc-textpic-imagerow-last"><div class="csc-textpic-imagecolumn csc-textpic-firstcol"><div class="csc-textpic-image csc-textpic-last"><table><caption class="csc-textpic-caption csc-textpic-caption-c">true-color display of 31-band image</caption><tbody><tr><td><a href="https://www5.cs.fau.de/fileadmin/_migrated/pics/rgb_01.png" title="true-color display of 31-band image" class="lightbox" rel="lightbox6772"><img src="https://www5.cs.fau.de/fileadmin/_processed_/csm_rgb_01_53a02cc8b1.png" width="254" height="256" alt="" border="0" /></a></td></tr></tbody></table></div></div>
+<div class="csc-textpic-imagecolumn"><div class="csc-textpic-image csc-textpic-last"><table><caption class="csc-textpic-caption csc-textpic-caption-c">PCA false-coloring (spectral gradient)</caption><tbody><tr><td><a href="https://www5.cs.fau.de/fileadmin/_migrated/pics/rgb_pca_wb.png" title="PCA false-coloring (spectral gradient)" class="lightbox" rel="lightbox6772"><img src="https://www5.cs.fau.de/fileadmin/_processed_/csm_rgb_pca_wb_9b85edfab7.png" width="254" height="256" alt="" border="0" /></a></td></tr></tbody></table></div></div>
+<div class="csc-textpic-imagecolumn csc-textpic-lastcol"><div class="csc-textpic-image csc-textpic-last"><table><caption class="csc-textpic-caption csc-textpic-caption-c">our false-coloring (spectral gradient)</caption><tbody><tr><td><a href="https://www5.cs.fau.de/fileadmin/_migrated/pics/rgb_som10.png" title="our false-coloring (spectral gradient)" class="lightbox" rel="lightbox6772"><img src="https://www5.cs.fau.de/fileadmin/_processed_/csm_rgb_som10_78c58f6680.png" width="254" height="256" alt="" border="0" /></a></td></tr></tbody></table></div></div></div></div></div></div><div class="csc-textpic-text">
+		<!--  Text: [begin] -->
+			<div><p class="bodytext">&nbsp;</p>
+<p class="bodytext">False-color visualization is a powerful component of interactive hyperspectral image analysis. In a false-color image, the user can find relevant information and distinction between data points directly in the spatial layout of the captured scene. In the example above, half of the peppers are plastic, but share colors with&nbsp;the&nbsp;organic peppers in the true-color representation.
+</p>
+<p class="bodytext">Three categories of false coloring are very common in hyperspectral image analysis.</p><ol><li>Three bands from the image are selected and then mapped to&nbsp;<strong>R</strong>, <strong>G</strong>, <strong>B</strong> color channels.</li><li>Dimensionality reduction on the image&nbsp;data as a whole is performed, leading to three bands that cover most&nbsp;information in the image and are mapped to R, G, B.</li><li>Intermediate data values are computed through other means, e.g. classification&nbsp;of pixels. Then, a combination of classification results forms the&nbsp;false-color image.</li></ol><p class="bodytext">We investigate&nbsp;a novel unsupervised technique&nbsp;for false coloring that belongs to the second category. It&nbsp;is based on the&nbsp;non-linear&nbsp;self-organizing map (SOM) dimensionality reduction. We first train a modified 3-dimensional SOM on&nbsp;the image data. Instead of a single answer, our SOM returns several&nbsp;answers to each data query. Then we employ a novel rank-based&nbsp;linear weighting to create a meaningful RGB representation of the&nbsp;query result. The result of this adaptation is a high-quality visualization that is helpful in several application scenarios.</p><div><p class="bodytext">&nbsp;</p>
+<p class="bodytext"><b>Publications:</b></p><div style="font-variant: small-caps; "><p class="bodytext"><span style="color: rgb(0, 26, 89); "><a href="http://www5.cs.fau.de/~jordan" target="_blank">Jordan, Johannes</a></span>;&nbsp;<span style="color: rgb(0, 26, 89); "><a href="http://www5.cs.fau.de/~elli/" target="_blank">Angelopoulou, Elli</a></span>.&nbsp;<span style="font-variant: normal; "><b>Hyperspectral Image Visualization With a 3-D Self-Organizing Map</b>. IEEE 5th&nbsp;Workshop&nbsp;on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), <i>to appear</i></span></p></div></div></div>
+		<!--  Text: [end] -->
+			</div></div></div>
+		<!--  Image block: [end] -->
+			<div style="clear:both"></div></div></div>
+	<!--  CONTENT ELEMENT, uid:6772/textpic [end] -->
+		<!--TYPO3SEARCH_end-->
+        			</div>
+			</td>
+		</tr>
+	</table>
+
+<script src="https://www5.cs.fau.de/templates/js/fancybox/jquery.easing-1.3.pack.js?1334872877" type="text/javascript"></script>
+<script src="https://www5.cs.fau.de/templates/js/fancybox/jquery.fancybox-1.3.4.pack.js?1334872877" type="text/javascript"></script>
+<script src="https://www5.cs.fau.de/templates/js/fancybox/enable_fancybox.js?1353524102" type="text/javascript"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www5.cs.fau.de/en/our-team/jordan-johannes/projects/visualization/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2020 09:46:51 GMT -->
+</html>

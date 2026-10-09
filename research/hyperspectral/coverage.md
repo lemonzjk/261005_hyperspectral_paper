@@ -162,6 +162,7 @@
 | WHISPERS | 2013 | Low rank representation bilinear abundance estimation、Removal salt-and-pepper noise THEMIS radiance emissivity、Iterative estimation number autofluorescence components、exact titles + pdf code arxiv；正式目录顺序7–9，3项逐审；累计9/161，152未审。定向搜索未穷尽搜索分页，不作完整年度关键词扫描。 | 161 / 3 / 3 | 第7–9项3入；累计8入1待，152未审 | WHISPERS2013目录161累计顺序1–9已审：8入1待，余152未审；年度摘要、全文、其他词和引文仍未完成。；低秩解混仅读原作者2013演示的指定页，论文摘要/全文/原图仍待核；THEMIS作者稿已读，正式版差异待核；m-FLIM仅机构摘要，全文/原图待核。；三篇专用代码、原数据、arXiv及相关期刊扩展身份未核。不把作者演示或另篇后续稿实验当成已核论文结果。；HERF/NMF仅题名，Sava/ICA仅摘要；油膜2013/2014/页首2012身份、早期条目的原图及全文待核。 |
 | WHISPERS | 2013 | variance analysis differentiate similar classes hyperspectral、multiscale spectral-spatial Multilinear PCA contourlet、combined optical imagers unmixing fusion、exact titles + pdf code arxiv；正式目录顺序10–12，3项逐审；累计12/161，149未审。定向搜索未穷尽分页，不作年度关键词全量。 | 161 / 3 / 3 | 第10–12项3入；累计11入1待，149未审 | WHISPERS2013目录161累计顺序1–12已审：11入1待，余149未审；年度摘要、全文、其他词和引文仍未完成。；方差区分与MPCA/contourlet仅题名待分类；作者学位论文和IGARSS等相近稿没有直接版本身份声明，不借其摘要、实验或图片。；组合成像器四页作者全文与Fig.1已核，正式版差异、CASI原数据及本设计模拟专用代码待核；CNMF2016代码是基础算法而非复现证明。；既有油膜身份、NMF/HERF题名、低秩演示与m-FLIM摘要对应论文全文/原图、后续扩展声明和arXiv追踪仍待核。 |
 | WHISPERS | 2013 | exact titles + author pdf、edge-weighting graph commute time hyperspectral anomaly、pyroxene PCA optical mineral mixtures、regression framework background estimation code arxiv；完整161项目录第13–15项，3项逐审；累计15/161。定向搜索未穷尽结果分页，非年度关键词全量。 | 161 / 3 / 3 | 第13–15项2入1待；累计13入2待，146未审 | WHISPERS2013目录161累计顺序1–15已审：13入2待，余146未审；年度摘要、全文、其他词与引文仍未完成。；第14项辉石混合原始光学范围/摘要待核，二次摘要不当事实；第13项原PDF/方法图受限，只核作者摘要与部分缓存正文，公式OCR错误不抄。；第15项作者全文只有输入样例图无方法图；正式版差异、代码和数据直接地址待核，实际目标检测为未来工作。；此前方差/MPCA题名待分类、油膜身份、NMF/HERF、低秩演示/m-FLIM全文原图、CNMF设计模拟代码和CASI数据、扩展声明仍待核。 |
+| WHISPERS | 2013 | exact titles + authors pdf、spatial-spectral multiple kernel hyperspectral classification code arxiv、3D self-organizing map false color Gerbil、improving performance sparse unmixing code arxiv；完整目录第16–18项3项；累计18/161，143未审。定向引擎检索未穷尽分页，不称年度完整。 | 161 / 3 / 3 | 第16–18项3入；累计16入2待，143未审 | WHISPERS2013目录161累计顺序1–18已审：16入2待，余143未审；非年度全领域检索完成。；第16/18项仅题名待分类，原摘要、全文、原图与代码/数据仍待核；二次摘要不当原始证据，MKL的LSMSC混入/多作者错标不继承。；第17项作者全文/原Fig.2已核，SOM三维不是场景几何；Gerbil代码未锁定2013或运行，原数据入口、正式版差异与2016扩展具体身份/差异待核。；保留第14项辉石混合范围、边权异常原PDF/图、方差/MPCA分类、油膜、NMF/HERF、低秩/m-FLIM全文原图、CNMF模拟代码/CASI数据等此前缺口。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -482,6 +483,8 @@
   阅读边界：3新增：组合相机设计作者全文/原Fig.1，另2仅题名待分类；1方法标签来自原稿，引用CNMF基础算法不宣称本稿新算法。旧552论文及三维专题保持原对象。
 - 2026-10-09 / whispers-2013-proceedings-orders-13-to-15-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：2新增：作者原摘要与四页全文分别记录；辉石混合待原始范围核验。3暂定标签，未新增图片；旧555论文对象与三维范围不变。
+- 2026-10-09 / whispers-2013-proceedings-orders-16-to-18-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：3新增：SOM四页作者全文、另2仅题名待分类。1新暂定方法标签、1原方法对照图。旧557论文对象和三维214范围不变。
 
 ## 未解决缺口
 
@@ -518,4 +521,4 @@
 - GRSL2015光谱题名组剩46候选；出版社目录、其他任务词/摘要及引用链尚未全扫。
 - ESDAP作者稿Pavia640×340、手工属性阈值及正式版/代码/许可待核验；邻域图2014 workshop与2015期刊的原稿/版本差异受限。自编码器和ELML原始摘要待其他路线。
 - WHISPERS2014目录174已逐项决定165入3排6待，0未审；核化图原摘要错配仅题名待分类。41–93页已筛，94及其他早页、原图/全文/版本关系仍待核，目录闭环不作年度全量声明。
-- WHISPERS2013目录161累计顺序1–15已审：13入2待，余146未审；年度摘要、全文、其他词与引文仍未完成。 第14项辉石混合原始光学范围/摘要待核，二次摘要不当事实；第13项原PDF/方法图受限，只核作者摘要与部分缓存正文，公式OCR错误不抄。 第15项作者全文只有输入样例图无方法图；正式版差异、代码和数据直接地址待核，实际目标检测为未来工作。 此前方差/MPCA题名待分类、油膜身份、NMF/HERF、低秩演示/m-FLIM全文原图、CNMF设计模拟代码和CASI数据、扩展声明仍待核。
+- WHISPERS2013目录161累计顺序1–18已审：16入2待，余143未审；非年度全领域检索完成。 第16/18项仅题名待分类，原摘要、全文、原图与代码/数据仍待核；二次摘要不当原始证据，MKL的LSMSC混入/多作者错标不继承。 第17项作者全文/原Fig.2已核，SOM三维不是场景几何；Gerbil代码未锁定2013或运行，原数据入口、正式版差异与2016扩展具体身份/差异待核。 保留第14项辉石混合范围、边权异常原PDF/图、方差/MPCA分类、油膜、NMF/HERF、低秩/m-FLIM全文原图、CNMF模拟代码/CASI数据等此前缺口。
