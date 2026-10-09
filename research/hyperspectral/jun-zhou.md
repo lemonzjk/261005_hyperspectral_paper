@@ -117,17 +117,17 @@ ICPR2014三作者、70–75页、封面加6页；原Figure1在PDF4。HSI/RGB少�
 
 ## DBLP精确作者差集初筛
 
-通过 DBLP SPARQL `authoredBy` 精确关联 person ID `99/3847-1`，取得364条去重发表记录；DBLP网页及 XML/BibTeX 导出仍返回验证页；SPARQL精确作者查询可用。对题名含 hyperspectral、spectral、LiDAR、multispectral 或 unmixing 的8条差集逐项核对：HSLiNets预印本与正式论文归同一方法族，CRF/材料跟踪两条预印本由目录正式记录覆盖，4条通用SAR/城市LiDAR、编辑和勘误记录排除，新增2条预印本并完成 arXiv 摘要级核验：HSIMamba、《Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning》。STRL@IJCAI题名保留待审：DBLP作者链接指向disambiguation PID 99/3847，不并入目标作者。
+通过 DBLP SPARQL `authoredBy` 精确关联 person ID `99/3847-1`，取得364条去重发表记录；DBLP网页及 XML/BibTeX 导出仍返回验证页；SPARQL精确作者查询可用。对题名含 hyperspectral、spectral、LiDAR、multispectral 或 unmixing 的8条差集逐项核对：HSLiNets预印本与正式论文归同一方法族，CRF/材料跟踪两条预印本由目录正式记录覆盖，4条通用SAR/城市LiDAR、编辑和勘误记录排除，新增2条预印本并完成 arXiv 摘要级核验：HSIMamba、《Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning》；另以 CEUR 三页全文确认 STRL@IJCAI 高光谱跟踪报告的作者为目标 Jun Zhou（PDF明示 Griffith 与 ORCID 0000-0001-5822-8233）。
 
 DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不把预印本当作正式发表；非关键词的356条 DBLP 记录仍需按任务逐项审查。详情见 `sources/jun-zhou-dblp-sparql.json`、`jun-zhou-dblp-screening.json` 和 `jun-zhou-dblp-arxiv-metadata.json`。
 
 ## Scholar题名差集初筛
 
-Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增41条高光谱/多光谱书目，均以 Scholar 书目核验后入库；其中32条为题名暂定、9条补有 arXiv 原站摘要核验；132条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，1条待补正式书目、摘要与作者归属。
+Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增41条高光谱/多光谱书目，均以 Scholar 书目核验后入库；其中32条为题名暂定、9条补有 arXiv 原站摘要核验；STRL报告另有三页 CEUR 全文核验。132条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，待审清零。
 
 新增项覆盖计算高光谱成像、目标跟踪、光谱—LiDAR分类、异常检测、解混、去噪、农业/生物医学分类和挑战基准；多光谱SIFT配准单列为 multispectral 关系，不因同作者自动视作高光谱。Scholar题名变体与正式标题按 DOI/题名版本归并，避免重复计数。逐项记录见 `sources/jun-zhou-scholar-screening.json`，原始分页见 `sources/jun-zhou-scholar-pages-0-387.json`；9条 arXiv记录已补原站摘要核验，仍未完成全文；其余新增条目尚未完成摘要和全文核验。
 
-下一步继续处理1条待审 Scholar 记录，并扫描 DBLP HTML目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
+下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
 ## 2024–2026高光谱来源组筛选
 
