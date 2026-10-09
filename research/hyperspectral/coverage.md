@@ -189,6 +189,15 @@
 | ICIP | 2013 | Salient object detection in hyperspectral imagery、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
 | IGARSS | 2013 | Semi-supervised hyperspectral band selection via sparse linear regression and hypergraph models、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
 | DICTA | 2013 | Soil Biochar Quantification via Hyperspectral Unmixing、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
+| DICTA | 2013 | A 3D Polygonal Line Chains Matching Method for Face Recognition、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=2；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| GRSL | 2013 | Hierarchical Remote Sensing Image Analysis via Graph Laplacian Energy、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=2；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| ICIP | 2013 | Label propagation hashing based on p-stable distribution and coordinate descent、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=3；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| DICTA | 2013 | Learning Discriminative Local Patterns with Unrestricted Structure for Face Recognition、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=1；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| ICIP | 2013 | Manifold alignment based color transfer for multiview image stitching、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=3；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| IGARSS | 2013 | Marginalized kernel-based feature fusion method for VHR object classification、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=1；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| TIP | 2013 | Object Detection Via Structural Feature Selection and Shape Model、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=5；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| ICIP | 2013 | Pavement crack detection based on saliency and statistical features、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=2；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
+| IPDPS Workshops | 2013 | Use of SIMD Vector Operations to Accelerate Application Code Performance on Low-Powered ARM and Intel Platforms、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope / original input / version；Griffith查询size30，第0页，totalPages=1、totalElements=1；逐项精确题名匹配。不是该场所年度完整目录。 | 1 / 1 / 1 | 来源限定作者单篇范围审查排除1；非年度系统检索 | ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。；普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。；2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -525,6 +534,8 @@
   阅读边界：六组2012闭环筛选：2仅题名入库、4普通记录关联/对象图像暂排；另2010多光谱关系待核。无摘要/方法图时不补造字段或标签。
 - 2026-10-09 / jun-zhou-2013-six-hsi-primary-abstracts：新增 6，更新 0，去重 0，排除 0，待处理 240。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：新增6均原摘要核验；5公开原稿局部阅读、1机构摘要。新增1任务4方法标签、2方法示意图。保留两会议/期刊版本边界，三维214对象不变。
+- 2026-10-09 / jun-zhou-2013-nine-other-scope：新增 0，更新 0，去重 0，排除 9，待处理 231。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：9篇公开原摘要/输入局部排除；1条2012排除的会议/期刊扩展证据更新。ORCID2013范围筛选16组7入9排，仅该来源组闭环。
 
 ## 未解决缺口
 
@@ -567,7 +578,9 @@
 - 2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。
 - 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。
 - DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。
-- 周峻263组：已入16、关联既有1、排6、待240；页面17篇，尚未收全。
-- ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。
 - 两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。
 - 2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。
+- 周峻263组：已入16、关联既有1、排15、待231；页面17篇，仍未收全。
+- ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。
+- 普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。
+- 2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。
