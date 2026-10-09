@@ -17,7 +17,7 @@
 ## 当前状态
 
 - 总库569篇，311篇已复核分类，244篇暂定、14篇待分类，280标签（任务94/方法163/应用23）。三维214篇不变；总库 ?collection=hyperspectral。
-- 两页作者筛选支持姓名片段/补全、忽略大小写/重音，与其他条件相交，URL恢复；总库标签多选并集；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；高光谱440、多光谱95、基础34。
+- 两页作者筛选支持片段/补全及URL恢复；库内完整姓名在普通搜索/作者筛选均按同一完整作者匹配，避免跨作者拼词/子串误匹配；总库标签多选并集；共享原图及SVG/BibTeX导出。分类依据逐篇记录；高光谱440、多光谱95、基础34。
 - CVPR2013–2022、ICCV2013–2021奇数年主题检索闭环，非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -33,4 +33,4 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt。
-- GRSL2015光谱66已审33待33。WHISPERS2014目录174为165入3排6待，42摘要错配，94/早页待核。WHISPERS2013目录161已审1–27：25入2待，余134。非高斯检测机构摘要已核，SPIE同题版本关系待核；SOM分类/字典随机子空间仅题名待分类。原图受限，不借相近SOM/EMAP稿实验。林业PDF受限；青海湖谱采样、辉石范围、旧题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、演示/摘要全文、CNMF代码/CASI数据仍待核。续2013顺序28起；非年度全量。
+- GRSL2015光谱66已审33待33。WHISPERS2014目录174为165入3排6待，42摘要错配，94/早页待核。WHISPERS2013目录161已审1–27：25入2待，余134。非高斯检测机构摘要已核，SPIE同题版本关系待核；SOM分类/字典随机子空间仅题名待分类。原图受限。林业PDF受限；青海湖谱采样、辉石范围、旧题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、演示/摘要全文、CNMF代码/CASI数据仍待核。续2013顺序28起；非年度全量。

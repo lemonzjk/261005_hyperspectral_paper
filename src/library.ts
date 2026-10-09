@@ -1,5 +1,5 @@
 import type { LibraryCategory, Paper, PresentPaper } from './types';
-import { matchesAuthor } from './authors.ts';
+import { createAuthorMatcher, createPaperQueryMatcher } from './authors.ts';
 
 /** Stable sorting preserves catalog order when paper counts are equal. */
 export const sortByPaperCount = <T extends { id: string }>(items: T[], count: (id: string) => number): T[] =>
@@ -23,14 +23,16 @@ export interface LibraryFilters {
 /** Categories use union; other filter dimensions use intersection. */
 export function filterLibrary(papers: Paper[], filters: LibraryFilters, categories: LibraryCategory[], excludeCategories = false) {
   const present = libraryPresentation(categories);
+  const authorMatches = createAuthorMatcher(filters.author, papers);
+  const queryMatches = createPaperQueryMatcher(filters.query, papers);
   return papers.filter(paper => paper.collections.includes('hyperspectral') &&
     (!filters.yearFrom || paper.year >= Number(filters.yearFrom)) &&
     (!filters.yearTo || paper.year <= Number(filters.yearTo)) &&
     (!filters.venues.length || filters.venues.includes(paper.venue)) &&
     (!filters.reading || paper.library?.readingProgress === filters.reading) &&
-    matchesAuthor(paper.authors, filters.author) &&
-    filters.query.trim().toLowerCase().split(/\s+/).every(word =>
-      `${paper.title} ${paper.shortTitle} ${paper.authors} ${paper.summary} ${paper.venue} ${paper.doi ?? ''} ${paper.tags.join(' ')} ${present(paper).name} ${paper.library?.researchQuestion ?? ''}`.toLowerCase().includes(word)) &&
+    authorMatches(paper.authors) &&
+    queryMatches(paper.authors,
+      `${paper.title} ${paper.shortTitle} ${paper.authors} ${paper.summary} ${paper.venue} ${paper.doi ?? ''} ${paper.tags.join(' ')} ${present(paper).name} ${paper.library?.researchQuestion ?? ''}`) &&
     (excludeCategories || (filters.pending ? !paper.library?.categoryIds.length :
       !filters.categoryIds.length || filters.categoryIds.some(id => paper.library?.categoryIds.includes(id))))
   ).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle));

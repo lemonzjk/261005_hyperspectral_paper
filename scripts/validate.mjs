@@ -5,7 +5,7 @@ import { tracks as trackDefinitions } from '../src/tracks.ts';
 import { timelineLayout } from '../src/timeline-layout.ts';
 import { groupPapers } from '../src/map-groups.ts';
 import { filterLibrary, libraryPresentation, readLibraryFilters, sortByPaperCount } from '../src/library.ts';
-import { matchesAuthor, splitAuthors } from '../src/authors.ts';
+import { matchesAuthor, splitAuthors, createAuthorMatcher, createPaperQueryMatcher } from '../src/authors.ts';
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
 const contextCharacters = [...context].length;
@@ -228,6 +228,14 @@ const authorFixture = libraryPapers.slice(0, 2).map((paper, index) => ({ ...pape
 assert.deepEqual(filterLibrary(authorFixture, { ...blank, author: 'Plaza', yearFrom: '2024' }, categories).map(paper => paper.id), [authorFixture[0].id], 'Author filter uses authors only and intersects with years');
 assert.equal(filterLibrary(authorFixture, { ...blank, author: 'Plaza', yearFrom: '2025' }, categories).length, 0, 'Year filter may exclude an author match');
 assert.equal(readLibraryFilters('?author=Rupert%20M%C3%BCller', categories, libraryPapers).author, 'Rupert Müller', 'Author URL preserves Unicode');
+const nameFixture = ['Jun Zhou', 'Jun Zhang, Jiadong Zhou', 'Junchi Zhou', 'Chengjun Zhou'].map(authors => ({ authors }));
+const exactAuthor = createAuthorMatcher('Jun Zhou', nameFixture);
+assert.deepEqual(nameFixture.filter(paper => exactAuthor(paper.authors)).map(paper => paper.authors), ['Jun Zhou'], 'Complete author names must not match substrings of other names');
+const nameSearch = createPaperQueryMatcher('Jun Zhou', nameFixture);
+assert.deepEqual(nameFixture.filter(paper => nameSearch(paper.authors, paper.authors + ' Jun Zhou in title')).map(paper => paper.authors), ['Jun Zhou'], 'Main search recognizes full author names and rejects cross-author matches');
+assert(createPaperQueryMatcher('spectral unmixing', nameFixture)('Jun Zhou', 'A spectral method for unmixing'), 'Ordinary multiword keyword search remains available');
+const junZhou = libraryPapers.filter(paper => splitAuthors(paper.authors).some(author => author.toLowerCase() === 'jun zhou')).map(paper => paper.id).sort();
+assert.deepEqual(filterLibrary(libraryPapers, { ...blank, query: 'Jun Zhou' }, categories).map(paper => paper.id).sort(), junZhou, 'Real catalog regression for Jun Zhou in main search');
 const sortingFixture = [{ id: 'first' }, { id: 'second' }, { id: 'third' }];
 assert.deepEqual(sortByPaperCount(sortingFixture, id => id === 'first' ? 1 : 3).map(item => item.id), ['second', 'third', 'first'], 'Sort by descending count with stable ties');
 assert.deepEqual(sortingFixture.map(item => item.id), ['first', 'second', 'third'], 'Sorting must not mutate catalog order');

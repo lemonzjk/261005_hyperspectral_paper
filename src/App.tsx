@@ -7,7 +7,7 @@ import { getTrack, tracks } from './tracks';
 import { ResearchMap } from './ResearchMap';
 import { PaperCard } from './PaperCard';
 import { AuthorFilter } from './AuthorFilter';
-import { matchesAuthor } from './authors';
+import { createAuthorMatcher, createPaperQueryMatcher } from './authors';
 import { PublicationFilter, type PublicationOption } from './PublicationFilter';
 import type { Dataset, Paper } from './types';
 
@@ -65,7 +65,9 @@ export default function App() {
     setCatalog(topicCatalog);
     setSelected(current => current ? topicCatalog.papers.find(paper => paper.id === current.id) ?? null : null);
   }, [rawCatalog]);
-  const matchingOtherFilters = useMemo(() => catalog.papers.filter(p => matchesAuthor(p.authors, author) && (!yearFrom || p.year >= Number(yearFrom)) && (!yearTo || p.year <= Number(yearTo)) && (!selectedVenues.length || selectedVenues.includes(p.venue)) && (!representation || p.representation === representation) && query.toLowerCase().trim().split(/\s+/).every(word => `${p.shortTitle} ${p.title} ${p.authors} ${p.summary} ${p.tags.join(' ')} ${p.venue} ${getTrack(p.track).name}`.toLowerCase().includes(word))).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)), [catalog, query, author, yearFrom, yearTo, selectedVenues, representation]);
+  const authorMatches = useMemo(() => createAuthorMatcher(author, initialCatalog.papers), [author]);
+  const queryMatches = useMemo(() => createPaperQueryMatcher(query, initialCatalog.papers), [query]);
+  const matchingOtherFilters = useMemo(() => catalog.papers.filter(p => authorMatches(p.authors) && (!yearFrom || p.year >= Number(yearFrom)) && (!yearTo || p.year <= Number(yearTo)) && (!selectedVenues.length || selectedVenues.includes(p.venue)) && (!representation || p.representation === representation) && queryMatches(p.authors, `${p.shortTitle} ${p.title} ${p.authors} ${p.summary} ${p.tags.join(' ')} ${p.venue} ${getTrack(p.track).name}`)).sort((a, b) => b.year - a.year || a.shortTitle.localeCompare(b.shortTitle)), [catalog, queryMatches, authorMatches, yearFrom, yearTo, selectedVenues, representation]);
   const matchingPapers = useMemo(() => matchingOtherFilters.filter(paper => !track || paper.track === track), [matchingOtherFilters, track]);
   const scopeValue = scopeOptions.find(option => option.id === scope)!.value;
   // Direction counts include every active filter except the direction itself.
