@@ -800,6 +800,12 @@
 - 7条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/field-3d-abstract-followup.json`。
 
+## 2026-10-10 / field-3d-lidar-abstract-followup
+
+- 更新8篇，不新增目录论文，不改变三维214对象。补读高光谱3D点云、UAV波段配准、宽带结构光、全波形高光谱LiDAR、光场层析、森林融合和OTVCA摘要。
+- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/field-3d-lidar-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
