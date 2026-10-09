@@ -117,11 +117,11 @@ ICPR2014三作者、70–75页、封面加6页；原Figure1在PDF4。HSI/RGB少�
 
 ## Scholar题名差集初筛
 
-Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增20条高光谱/多光谱书目，均以 Scholar 与 Crossref 书目核验后入库，状态为题名暂定；129条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，25条待补正式书目、摘要与作者归属。
+Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增32条高光谱/多光谱书目，均以 Scholar 与 Crossref 书目核验后入库，状态为题名暂定；129条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，24条待补正式书目、摘要与作者归属。
 
 新增项覆盖计算高光谱成像、目标跟踪、光谱—LiDAR分类、异常检测、解混、去噪、农业/生物医学分类和挑战基准；多光谱SIFT配准单列为 multispectral 关系，不因同作者自动视作高光谱。Scholar题名变体与正式标题按 DOI/题名版本归并，避免重复计数。逐项记录见 `sources/jun-zhou-scholar-screening.json`，原始分页见 `sources/jun-zhou-scholar-pages-0-387.json`；尚未完成新增条目的摘要和全文核验。
 
-下一步继续处理25条待审 Scholar 记录，并扫描 DBLP HTML目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
+下一步继续处理24条待审 Scholar 记录，并扫描 DBLP HTML目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
 ## 2024–2026高光谱来源组筛选
 
