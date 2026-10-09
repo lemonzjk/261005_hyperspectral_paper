@@ -794,6 +794,12 @@
 - `lidar-guided-band-selection` 由 `pending` / `pending` 修正为 `full_text_read` / `full_text_verified`；正式IEEE版差异、完整代码运行和独立复现仍待核验。
 - 证据见 `sources/jun-zhou-lidar-guided-fulltext-followup.json` 与既有 `research/sources/lidar-guided-band-selection-review-2026-10-07.json`。
 
+## 2026-10-10 / field-3d-abstract-followup
+
+- 更新7篇，不新增目录论文，不改变三维214对象。补读高光谱3D成像、光场立体、HSI-LiDAR分类、偏振BRDF、数字全息和地质点云基准摘要。
+- 7条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/field-3d-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
