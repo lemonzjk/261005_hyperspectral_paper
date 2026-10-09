@@ -842,6 +842,12 @@
 - 6条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/field-hyperspectral-nerf-structured-light-abstract-followup.json`。
 
+## 2026-10-10 / field-multispectral-pointcloud-abstract-followup
+
+- 更新8篇，不新增目录论文，不改变三维214对象。补读DART森林树冠成像光谱、机载高光谱点云检测、HSL边缘效应及多光谱点云生成/分类摘要。
+- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/field-multispectral-pointcloud-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
