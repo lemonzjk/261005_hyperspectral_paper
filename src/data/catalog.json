@@ -69573,16 +69573,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2026.3660734",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "联邦高光谱分类：本地扩散模型生成合成高光谱样本，再用类别感知增强缓解类别缺失与客户端非IID。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID 2026题名、Crossref正式DOI核验；仅题名阅读。",
+      "summary": "FedDA-HSI 在不共享原始数据的联邦场景中，本地生成合成高光谱样本，并针对缺失或少数类别做类别感知增强，以改善异构客户端分类。",
+      "input": "多源联邦客户端的高光谱影像；客户端数据存在稀缺、类别不平衡及非IID分布。",
+      "output": "联邦高光谱图像分类结果。",
+      "mechanism": "联邦扩散数据增强在本地生成高光谱样本；类别感知策略补充缺失或少数类别；聚合模型学习跨客户端共享知识。",
+      "readingNote": "ORCID 2026题名、Crossref正式DOI及DPI机构仓储摘要核验；未阅读全文。",
       "paper": "https://api.crossref.org/works/10.1109/tgrs.2026.3660734",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
@@ -69590,16 +69590,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与机构摘要均明确联邦高光谱分类。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在不共享原始数据的联邦场景中，用扩散增强改善非IID高光谱分类？",
+        "datasets": "摘要称在多个基准高光谱数据集上实验；具体数据集、划分和数值待全文核验。",
+        "experimentSetting": "机构摘要：联邦客户端数据稀缺、类别不平衡且非IID；扩散样本在本地生成后聚合模型。",
+        "conclusions": "摘要报告异构条件下分类性能改善；具体增益和消融待全文核验。",
+        "limitations": "摘要未给出完整客户端配置、数据名称、隐私威胁模型、代码和逐项实验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://era.dpi.qld.gov.au/id/eprint/15536/",
+            "checkedAt": "2026-10-10",
+            "level": "DPI机构仓储公开摘要；全文未附",
+            "supports": [
+              "FedDA-HSI题名、作者、IEEE TGRS 2026 DOI",
+              "联邦扩散生成与类别感知增强机制",
+              "多基准高光谱数据集及异构条件性能改善"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2026.3660734",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-13-hsi-2026-published",
@@ -69682,16 +69701,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2026.3705304",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "零样本高光谱分类：先把高光谱波段光谱插值为 RGB 输入 CLIP 生成伪标签，再进行噪声标签学习与光谱信息细化。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID 2026题名、Crossref正式DOI核验；仅题名阅读。",
+      "summary": "SPECIAL 将高光谱数据光谱插值到 RGB 以调用 CLIP 生成带置信度的伪标签，再用多尺度融合、光谱信息和标签细化减弱噪声，完成零样本高光谱分类。",
+      "input": "高光谱影像立方体及类别文本/CLIP先验；不依赖人工像素标注训练。",
+      "output": "高光谱像素零样本分类标签。",
+      "mechanism": "伪标签生成阶段用光谱插值和多尺度 CLIP 预测；噪声标签学习阶段引入光谱信息并细化标签。",
+      "readingNote": "ORCID 2026题名、Crossref正式DOI与 arXiv:2501.16222 官方摘要核验；正式版作者列表与预印本作者列表存在差异，未阅读全文。",
       "paper": "https://api.crossref.org/works/10.1109/tgrs.2026.3705304",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
@@ -69699,16 +69718,37 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
-        "dataLinks": [],
-        "evidence": [],
+        "relationNote": "正式题名与 arXiv 摘要均明确零样本高光谱分类；预印本仅作方法摘要证据。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何借助 RGB 视觉语言模型完成无需人工标注的高光谱分类？",
+        "datasets": "arXiv 摘要称在三个基准高光谱数据集上实验；具体数据集、划分和数值待全文核验。",
+        "experimentSetting": "官方摘要：光谱插值生成 RGB 波段，CLIP 产生伪标签，再以多尺度置信度融合和噪声标签学习细化。",
+        "conclusions": "摘要报告在零样本高光谱分类中优于现有方法；具体对比和消融待全文核验。",
+        "limitations": "正式版与 arXiv 预印本作者列表不同；完整正文、版本差异、代码运行和数据许可待核验。",
+        "dataLinks": [
+          "https://github.com/LiPang/SPECIAL"
+        ],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2501.16222",
+            "checkedAt": "2026-10-10",
+            "level": "arXiv官方摘要；未阅读全文",
+            "supports": [
+              "SPECIAL两阶段方法",
+              "高光谱到RGB的光谱插值与CLIP伪标签",
+              "三基准数据集和零样本分类结论"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2026.3705304",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-19-hsi-2026-published",
@@ -69716,7 +69756,19 @@
             "url": "https://doi.org/10.1109/tgrs.2026.3705304",
             "doi": "10.1109/tgrs.2026.3705304",
             "year": 2026,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式 TGRS 记录；摘要方法证据来自同题较早 arXiv 预印本，作者列表差异单列。"
+          },
+          {
+            "id": "zhou-19-hsi-2026-arxiv-2501-16222-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2501.16222v1",
+            "arxivId": "2501.16222",
+            "arxivVersion": "v1",
+            "year": 2025,
+            "firstSubmittedAt": "2025-01-27T17:13:03Z",
+            "updatedAt": "2025-01-27T17:13:03Z",
+            "metadataStatus": "verified",
+            "relation": "官方摘要方法证据；预印本作者列表与正式2026版不同，不将作者差异或版本差异抹平。"
           }
         ],
         "methodFamilyId": "zhou-2026-title-19"

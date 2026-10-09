@@ -614,6 +614,12 @@
 - ORCID inventory 的聚合决定计数同步为 128 收录、10 关联既有、125 排除、0 待审；263 组均有决定。未新增目录论文，三维214对象、其余总库事实不变。
 - `npm run validate`、`npm run build` 通过；构建仍有大 chunk 警告。
 
+## 2026-10-10 / jun-zhou-orcid-2026-abstract-followup
+
+- 更新 2 篇，不新增目录论文，不改变三维214对象。FedDA-HSI 读取 DPI 机构仓储摘要；SPECIAL 读取 arXiv 官方摘要。
+- 两条目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式2026 DOI、作者事实保留，SPECIAL 的预印本作者列表差异单列。
+- 其余 2026 直接高光谱条目仍待摘要或全文；证据见 `sources/jun-zhou-2026-abstracts.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
