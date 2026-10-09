@@ -56321,6 +56321,198 @@
           "attribution": "Naoto Yokoya, Akira Iwasaki · WHISPERS 2014"
         }
       ]
+    },
+    {
+      "id": "emap-fusion-whispers-2013",
+      "shortTitle": "EMAP decision fusion",
+      "title": "Decision fusion based on extended multi-attribute profiles for hyperspectral image classification",
+      "authors": "Benqin Song, Jun Li, Peijun Li, Antonio Plaza",
+      "year": 2013,
+      "venue": "WHISPERS",
+      "publicationName": "2013 5th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2013.8080592",
+      "representation": "PCA特征上构造面积、惯性矩、对角线长度、标准差四EAP，组合全EMAP；分别SVM分类形成五路规则影像，堆叠后末级RBF SVM。二元超平面距离用作规则值，OAO及多数投票用于类决策。",
+      "tags": [
+        "land-cover-classification",
+        "morphological-profiles",
+        "svm-rule-image-stacking"
+      ],
+      "summary": "PCA特征上构造面积、惯性矩、对角线长度、标准差四EAP，组合全EMAP；分别SVM分类形成五路规则影像，堆叠后末级RBF SVM。二元超平面距离用作规则值，OAO及多数投票用于类决策。",
+      "input": "单幅ROSIS Pavia University高光谱影像及少量标注；不是HSI–LiDAR多传感器数据。",
+      "output": "九类土地覆盖分类图和分类规则影像。",
+      "mechanism": "PCA特征上构造面积、惯性矩、对角线长度、标准差四EAP，组合全EMAP；分别SVM分类形成五路规则影像，堆叠后末级RBF SVM。二元超平面距离用作规则值，OAO及多数投票用于类决策。",
+      "readingNote": "作者原稿四页全文、公式、Table1和两图已读；Fig.1物理2页方法框架原图已逐页查看并裁切。",
+      "paper": "https://doi.org/10.1109/whispers.2013.8080592",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "author_pdf_full_text_verified",
+      "citation": "@inproceedings{emap_fusion_whispers_2013,\n  title = {Decision fusion based on extended multi-attribute profiles for hyperspectral image classification},\n  author = {Benqin Song and Jun Li and Peijun Li and Antonio Plaza},\n  booktitle = {2013 5th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2013},\n  pages = {1--4},\n  doi = {10.1109/whispers.2013.8080592}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "morphological-profiles",
+          "svm-rule-image-stacking"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "原稿主要处理单幅光学高光谱影像分类；仅总库，不自动进入三维专题。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何利用不同形态属性的互补决策改善少标注高光谱土地覆盖分类？",
+        "datasets": "原稿§3.1：2001 ROSIS Pavia University，610×340，1.3m空间分辨率，去12波段后103波段，42776标注、9类。原始下载地址与具体划分索引待核。",
+        "experimentSetting": "前三PCA分量；RBF SVM、OAO，参数交叉验证。每类5/10/15/20训练样本，对照原光谱、PCA、四EAP及EMAP，Table1十次Monte Carlo均值±标准差；训练是否从测试排除、属性阈值/软件配置未明确。",
+        "conclusions": "Table1：每类5样本时融合OA79.28±4.79%、EMAP72.77±10.11%；20样本时94.45±2.93%与94.38±3.19%，差距随标注增加缩小。只是此场景十次结果，未给显著性检验，不能推广为所有数据集均占优。Fig.2单次地图75.31%与Table1均值不同，分别保留。",
+        "limitations": "单一场景，其他数据实验列为未来工作；局部空间相关及末级SVM训练细节影响复现。二次引用错误提到HSI–LiDAR，原稿没有LiDAR输入，不能继承该说法。作者归档umbc.edu迁移失效/超时，www2同路径原PDF200已核四作者题名。代码、数据划分、arXiv和IEEE正式版差异待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.proceedings.com/content/036/036283webtoc.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "会议正式论文集完整目录原PDF题名与作者核验",
+            "supports": [
+              "Decision fusion based on extended multi-attribute profiles for hyperspectral image classification",
+              "Benqin Song, Jun Li, Peijun Li, Antonio Plaza"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2013.8080592",
+            "checkedAt": "2026-10-09",
+            "level": "出版社登记精确DOI核验",
+            "supports": [
+              "正式2013专业workshop；登记创建2017不当发表年份。",
+              "Decision fusion based on extended multi-attribute profiles for hyperspectral image classification"
+            ]
+          },
+          {
+            "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2013.WHISPERS.Fusion.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "作者四页原稿全文、公式与全部原图核验",
+            "supports": [
+              "原稿§3.1：2001 ROSIS Pavia University，610×340，1.3m空间分辨率，去12波段后103波段，42776标注、9类。原始下载地址与具体划分索引待核。",
+              "前三PCA分量；RBF SVM、OAO，参数交叉验证。每类5/10/15/20训练样本，对照原光谱、PCA、四EAP及EMAP，Table1十次Monte Carlo均值±标准差；训练是否从测试排除、属性阈值/软件配置未明确。",
+              "Table1：每类5样本时融合OA79.28±4.79%、EMAP72.77±10.11%；20样本时94.45±2.93%与94.38±3.19%，差距随标注增加缩小。只是此场景十次结果，未给显著性检验，不能推广为所有数据集均占优。Fig.2单次地图75.31%与Table1均值不同，分别保留。",
+              "作者原稿四页全文、公式、Table1和两图已读；Fig.1物理2页方法框架原图已逐页查看并裁切。",
+              "单幅高光谱的属性剖面决策融合，无LiDAR输入。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "emap-fusion-whispers-2013-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2013.8080592",
+            "doi": "10.1109/whispers.2013.8080592",
+            "year": 2013,
+            "relation": "正式2013六月会议版；目录连续起始页不是各稿内部页码。"
+          },
+          {
+            "id": "emap-fusion-whispers-2013-author",
+            "type": "作者原稿",
+            "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2013.WHISPERS.Fusion.pdf",
+            "year": 2013,
+            "relation": "本题名四作者会议稿全文已核，与IEEE正式版细节差异待核。"
+          }
+        ],
+        "methodFamilyId": "emap-fusion-whispers-2013"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2013.WHISPERS.Fusion.pdf",
+          "figureLabel": "Fig. 1",
+          "page": 2,
+          "caption": "Schematic diagram of the decision fusion strategy.",
+          "verificationNote": "作者原稿四页全文、Table1与两图已读。Fig.1是四EAP及整EMAP的五路SVM规则影像堆叠，再末级SVM分类；输入单幅高光谱，无LiDAR。保留完整图注与所有分支。",
+          "cropDescription": "原作者PDF物理第2页160dpi裁切(715,1170)-(1260,1460)，完整框架与图注。",
+          "path": "figures/emap-fusion-whispers-2013/framework-fig1.png",
+          "width": 545,
+          "height": 290,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-09",
+          "sha256": "a9bd5f811dcfd36bae10653826941630d5cab4ec2c66924b4fc9d7620d500533",
+          "attribution": "Benqin Song, Jun Li, Peijun Li, Antonio Plaza · WHISPERS 2013"
+        }
+      ]
+    },
+    {
+      "id": "bilinear-nmf-whispers-2013",
+      "shortTitle": "Bilinear–bilinear NMF",
+      "title": "A non-negative matrix factorization method for bilinear-bilinear unmixing of hyperspectral images",
+      "authors": "Olivier Eches, Mireille Guillaume",
+      "year": 2013,
+      "venue": "WHISPERS",
+      "publicationName": "2013 5th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2013.8080593",
+      "representation": "正式题名及两作者已核；本会议稿正确原摘要/全文未取得，不采用二次摘要作为方法事实。",
+      "tags": [],
+      "summary": "正式题名及两作者已核；本会议稿正确原摘要/全文未取得，不采用二次摘要作为方法事实。",
+      "input": "待核验；题名明确为高光谱影像。",
+      "output": "待核验；不从同题材2014期刊推断本稿端元与丰度设置。",
+      "mechanism": "正式题名及两作者已核；本会议稿正确原摘要/全文未取得，不采用二次摘要作为方法事实。",
+      "readingNote": "已核完整目录题名/作者及精确正式DOI；阅读仅题名、待分类。",
+      "paper": "https://doi.org/10.1109/whispers.2013.8080593",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_title_metadata_verified",
+      "citation": "@inproceedings{bilinear_nmf_whispers_2013,\n  title = {A non-negative matrix factorization method for bilinear-bilinear unmixing of hyperspectral images},\n  author = {Olivier Eches and Mireille Guillaume},\n  booktitle = {2013 5th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2013},\n  pages = {1--4},\n  doi = {10.1109/whispers.2013.8080593}\n}\n",
+      "library": {
+        "categoryIds": [],
+        "classificationStatus": "pending",
+        "relation": "hyperspectral",
+        "relationNote": "正式题名明确以光学高光谱影像解混为对象，具体方法与实验待核。",
+        "readingProgress": "title_only",
+        "verificationStatus": "pending",
+        "researchQuestion": "题名指向高光谱双线性解混的非负矩阵分解，具体模型与研究问题待本会议稿原摘要核验。",
+        "datasets": "待核验；未取得本会议稿匹配原摘要。",
+        "experimentSetting": "待核验；不借2014LGRS或作者其他SSP算法实验。",
+        "conclusions": "待核验；未核原稿结果。",
+        "limitations": "二次摘要仅发现。HAL检索只找到2014两作者LGRS另稿，未取得会议文件；作者GitHub只列期刊/SSP工具，不能把SSP代码当本稿代码。2014直接扩展声明及方法族身份待核，不先合并版本，亦不按题名宣布新的独立方法。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.proceedings.com/content/036/036283webtoc.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "会议正式论文集完整目录原PDF题名与作者核验",
+            "supports": [
+              "A non-negative matrix factorization method for bilinear-bilinear unmixing of hyperspectral images",
+              "Olivier Eches, Mireille Guillaume"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2013.8080593",
+            "checkedAt": "2026-10-09",
+            "level": "出版社登记精确DOI核验",
+            "supports": [
+              "正式2013专业workshop；登记创建2017不当发表年份。",
+              "A non-negative matrix factorization method for bilinear-bilinear unmixing of hyperspectral images"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "bilinear-nmf-whispers-2013-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2013.8080593",
+            "doi": "10.1109/whispers.2013.8080593",
+            "year": 2013,
+            "relation": "正式2013六月会议版；目录连续起始页不是各稿内部页码。"
+          }
+        ],
+        "methodFamilyId": "bilinear-nmf-whispers-2013"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "IEEE正文202空/PDF418；HAL仅找到2014期刊另稿，会议原摘要与原图未知。作者SSP仓库不等于本稿代码，不借2014期刊或其他方法图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8080593/",
+        "checkedAt": "2026-10-09"
+      }
     }
   ],
   "datasets": [
@@ -59659,7 +59851,8 @@
         "mean-map-opls-whispers-2014",
         "ssa-noise-whispers-2014",
         "modularity-eigenmaps-whispers-2014",
-        "dlsr-classification-whispers-2014"
+        "dlsr-classification-whispers-2014",
+        "emap-fusion-whispers-2013"
       ],
       "history": [
         {
@@ -61131,7 +61324,8 @@
         "extended-self-dual-profiles-2015",
         "rs-emap-ensembles-2015",
         "bfodpso-feature-selection-2014",
-        "alpha-connectivity-metric-whispers-2014"
+        "alpha-connectivity-metric-whispers-2014",
+        "emap-fusion-whispers-2013"
       ],
       "history": [
         {
@@ -63817,6 +64011,26 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "从原稿明确初始化机制形成方法标签，复用空间超分辨率与材料检测任务标签。"
+        }
+      ]
+    },
+    {
+      "id": "svm-rule-image-stacking",
+      "name": "SVM规则影像堆叠决策融合",
+      "dimension": "method",
+      "definition": "对多个属性剖面及其组合分别训练SVM，将分类规则影像堆叠后交给末级SVM；规则值和类决策方式按原稿核验，不泛指传感器融合或直接特征拼接。",
+      "rationale": "2013作者原稿§2.2及Fig.1明确四EAP与整EMAP的五路SVM输出和末级SVM，新增方法标签；复用土地覆盖分类与形态剖面标签。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "emap-fusion-whispers-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "根据原稿五路规则影像堆叠机制形成标签，不误标HSI–LiDAR融合。"
         }
       ]
     }

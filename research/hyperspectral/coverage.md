@@ -156,6 +156,8 @@
 | WHISPERS | 2014 | Adaptive LLE materials、Modularity Eigenmaps、DRR infrared sounding、Dione/Rhea terrain spectra、OMEGA 1 µm mineralogy；TOC37/75/167/143/170；物理41全部4与43全部3题名，前批2篇不重复。 | 5 / 5 / 5 | 41/43页闭环，目录8条及94待核 | 目录174关联159/跟踪7/未审8；41页四题名与43页三题名全部筛选，既有Uto/MGM不重复新增。；物理45–93页158直接题名+恢复配准1，另41/43全7，共159入3排4待；42/44/94及其他早页未系统核，非年度全量。；四新篇仅摘要；原全文/方法图、代码/数据与arXiv持续核验；Dione/Rhea输入暂基础关系。；DRR输入通道文字/维数及OMEGA目录页数/登记冲突保留；4范围pending延续。 |
 | WHISPERS | 2014 | ChemCam LIBS preprocessing denoising continuum band selection、CRISM alteration mineral reduction ratioing、meteorite mafic mineral neural network reflectance；TOC38/53/57；物理44全部3题名及原摘要，2入1待；42/94仍未核。 | 3 / 3 / 3 | 44页2入1待；目录5项及年度缺口待补 | 44页三题名已筛：2入1待；目录174关联161/跟踪8/未审5；累计161入3排5待，不作年度完成。；42/94及其他早页待系统核。原数据、代码、arXiv和相关CoTCAT版本身份待追踪。；ChemCam基础关系待作者原稿/综述核验；只引用或同会场不作为身份结论。；CRISM原稿探测器命名及图2观测号拼写保留；矿物定量MLP的实验与图示层数分开。 |
 | WHISPERS | 2014 | dictionary learning sparse representation 75%、kernelized sparse graph embedded dimensionality reduction、SPIM preliminary characterization、unmixing super-resolution target detection、vegetation spectral sampling wet dry tropics；目录顺序93/97/103/120/139，逐项5决定；物理42三题名全部筛；94未系统核。 | 5 / 5 / 5 | 目录最后5项4入1待；174项决定闭环，年度内容缺口保留 | 目录174项已有165入库关联、9跟踪决定（3排6待）、0未审；这是目录逐项决定闭环，不是年度全文/主题/引文完成。；42页全部3题名已筛；核化图论文原摘要错配，入库仅题名/待分类，正确原摘要与全文待核。；94及其他早页尚未系统核；植被采样直接HSI关系、其他5旧待核候选继续保留。；会议原图/代码/数据/arXiv、SPIM2013/2015与核化图2015扩展身份待核；不借异稿数据或图。 |
+| WHISPERS | 2013 | all proceedings titles、oil presence thickness steel coils、EMAP decision fusion classification、bilinear bilinear nonnegative unmixing；原目录PDF全部页解析161项；逐篇筛选顺序1–3，158项未审。 | 161 / 3 / 3 | 完整题名目录已取得；首3项2入1待，其余158未审 | 161项目录全部下载解析；仅首3项2入1待，其余158尚未逐篇审查；目录存在不等于年度内容完成。；EMAP四页原稿全文及Fig1已读；单场景、参数/测试划分细节和代码数据待核，不能继承二次引用的LiDAR输入。；双线性NMF仅题名待分类，会议原摘要/全文和2014期刊扩展身份待核；作者SSP仓库不是本稿已核代码。；油膜2013原稿受限，SFPT日期/版本身份待核；正式IEEE版及全年度摘要/引文/原图仍有缺口。 |
+| WHISPERS | 2014 | atmospheric condition uncertainty、statistical moments sub-pixel target tracks、floodplain CASI LiDAR reference、wet dry tropics vegetation；定向4候选；不构成年目录扫描；2014官方第94页仍未取得。 | 4 / 4 / 4 | 四个既有待核项补检，决定仍待核；无新增论文 | 2014待核6项仍未解决；本次只补检其中4项。；CASI名称不能代替实际波段配置；植被2014原稿与日期/版本身份未取得。；第94页及其他早页、全文、原图与引用关系待补。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -466,6 +468,8 @@
   阅读边界：CRISM和陨石MLP原稿全文、公式与全部原图已读；后者仅实验室基础关系。CRISM无框架图，MLP原Fig1已裁切。ChemCam完整摘要已核，范围pending。旧538论文及三维214不改。
 - 2026-10-09 / whispers-2014-proceedings-toc-final-five-review-review：新增 4，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：4新增：DLSR/SPIM原摘要，扩展CNMF原稿全文，核化图仅题名待分类；植被采样关系待核。方法图为作者稿Fig.2物理2页。旧540论文和三维214保持原对象。
+- 2026-10-09 / whispers-2013-proceedings-first-three-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：EMAP作者原稿全文/表/两图已读；双线性NMF仅题名待分类；油膜2013关系待核。旧544论文与三维214保持原对象。2014四旧pending补检没有新原稿证据，保留决定。
 
 ## 未解决缺口
 
@@ -502,3 +506,4 @@
 - GRSL2015光谱题名组剩46候选；出版社目录、其他任务词/摘要及引用链尚未全扫。
 - ESDAP作者稿Pavia640×340、手工属性阈值及正式版/代码/许可待核验；邻域图2014 workshop与2015期刊的原稿/版本差异受限。自编码器和ELML原始摘要待其他路线。
 - WHISPERS2014目录174已逐项决定165入3排6待，0未审；核化图原摘要错配仅题名待分类。41–93页已筛，94及其他早页、原图/全文/版本关系仍待核，目录闭环不作年度全量声明。
+- WHISPERS2013完整目录161已取，首3项2入1待，其余158尚未逐审；EMAP全文及Fig1已核，双线性NMF仅题名待分类；油膜海报日期/版本身份、会议原稿和2014期刊扩展关系待核。
