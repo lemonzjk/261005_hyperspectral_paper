@@ -148,11 +148,11 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 ## 2022高光谱来源组筛选
 
-新增16篇、排除3篇；2022 ORCID来源组19组现已完成范围决定。16篇题名直接指向高光谱分类、融合、域适配、复原、去噪、解混、跟踪、边界检测、选带或农业制图，其中 ALN、GSFus、GF-3DDA、两阶段自监督恢复、MAC-Net、NSSNN、SMDS-Net、SNMF-Net、TSCFW、光谱—空间边界检测、SDRN、S3FGCN、跨传感器杂草制图、MGRSR 和 UMsDFL 已取得摘要级方法证据；仅 `zhou-81-hsi-2022` 仍待摘要核验，其余正式版本、全文、代码和完整实验待核验。
+新增16篇、排除3篇；2022 ORCID来源组19组现已完成范围决定。16篇题名直接指向高光谱分类、融合、域适配、复原、去噪、解混、跟踪、边界检测、选带或农业制图，其中 ALN、GSFus、GF-3DDA、两阶段自监督恢复、MAC-Net、NSSNN、SMDS-Net、SNMF-Net、TSCFW、光谱—空间边界检测、SDRN、S3FGCN、跨传感器杂草制图、MGRSR 和 UMsDFL 已取得摘要级方法证据；16条均已取得摘要级方法证据，正式版本、全文、代码和完整实验待核验。
 
 - 排除CNN综述、RGB-D疲劳检测和通用人员重识别。题名筛选不替代摘要阅读，不从方法名称外推数据、性能或版本关系。
 
-逐项决定见 `sources/jun-zhou-2022-decisions.json`；摘要补充见 `sources/jun-zhou-2022-abstract-followup.json`、`sources/jun-zhou-2022-abstract-followup-2.json`、`sources/jun-zhou-2022-abstract-followup-3.json`、`sources/jun-zhou-2022-abstract-followup-4.json`，Crossref响应和来源访问见 `sources/`。下一步补齐其余2022暂定条目与全文边界，处理早年待审组，并继续Scholar/DBLP目录差集。
+逐项决定见 `sources/jun-zhou-2022-decisions.json`；摘要补充见 `sources/jun-zhou-2022-abstract-followup.json`、`sources/jun-zhou-2022-abstract-followup-2.json`、`sources/jun-zhou-2022-abstract-followup-3.json`、`sources/jun-zhou-2022-abstract-followup-4.json`、`sources/jun-zhou-2022-abstract-followup-5.json`，Crossref响应和来源访问见 `sources/`。下一步核验2022正式版本与全文边界，处理早年待审组，并继续Scholar/DBLP目录差集。
 
 ## 2021高光谱来源组筛选
 

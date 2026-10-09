@@ -698,6 +698,12 @@
 - 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；跨传感器杂草制图保留多波段/跨传感器边界，未阅读全文。
 - ORCID 2022 直接高光谱条目已有15篇摘要级核验；`zhou-81-hsi-2022` 及正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-4.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-5
+
+- 更新1篇，不新增目录论文，不改变三维214对象。SCFus 补 ResearchGate 作者主页公开摘要片段证据。
+- `zhou-81-hsi-2022` 由 `title_only` 更新为 `abstract_read` / `abstract_verified`；保留摘要片段边界与 Crossref 正式书目，未阅读全文。
+- ORCID 2022 直接高光谱条目摘要级核验已完成；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-5.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
