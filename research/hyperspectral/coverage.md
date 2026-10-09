@@ -207,6 +207,15 @@
 | ICPR | 2014 | Face Recognition Using 3D Directional Corner Points、Jun Zhou; hyperspectral / input / versions / code arxiv；公开机构size30，第0页，totalPages=1、totalElements=2，精确题名匹配；不是场所年度全量。 | 1 / 1 / 1 | 作者单篇来源范围审查；非年度系统检索 | ORCID2014八组来源范围筛选完成1入7排；另核2016近题1篇。不是完整作者年份或场所年度检索。；ICPR2014/TGRS2016共享概念方法族，明确期刊扩展声明及首次online日期待核；2013 RGB拼接基础继承关系仍待进一步原文证据。；2012两篇仅题名、2013生物炭正文/原图、旧年非题名命中摘要、DBLP/Scholar/机构目录差集及作者arXiv全量仍待查。 |
 | DSAA | 2014 | Semi-randomized hashing for large scale data retrieval、Jun Zhou; hyperspectral / input / versions / code arxiv；公开机构size30，第0页，totalPages=1、totalElements=1，精确题名匹配；不是场所年度全量。 | 1 / 1 / 1 | 作者单篇来源范围审查；非年度系统检索 | ORCID2014八组来源范围筛选完成1入7排；另核2016近题1篇。不是完整作者年份或场所年度检索。；ICPR2014/TGRS2016共享概念方法族，明确期刊扩展声明及首次online日期待核；2013 RGB拼接基础继承关系仍待进一步原文证据。；2012两篇仅题名、2013生物炭正文/原图、旧年非题名命中摘要、DBLP/Scholar/机构目录差集及作者arXiv全量仍待查。 |
 | TGRS | 2014 | VHR Object Detection Based on Structural Feature Extraction and Query Expansion、Jun Zhou; hyperspectral / input / versions / code arxiv；公开机构size30，第0页，totalPages=1、totalElements=4，精确题名匹配；不是场所年度全量。 | 1 / 1 / 1 | 作者单篇来源范围审查；非年度系统检索 | ORCID2014八组来源范围筛选完成1入7排；另核2016近题1篇。不是完整作者年份或场所年度检索。；ICPR2014/TGRS2016共享概念方法族，明确期刊扩展声明及首次online日期待核；2013 RGB拼接基础继承关系仍待进一步原文证据。；2012两篇仅题名、2013生物炭正文/原图、旧年非题名命中摘要、DBLP/Scholar/机构目录差集及作者arXiv全量仍待查。 |
+| FG | 2015 | 3D local derivative pattern for hyperspectral face recognition、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=2；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| WACV | 2015 | 3D Reconstruction from Hyperspectral Images、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=3；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| IGARSS | 2015 | Band weighting and selection based on hyperplane margin maximization for hyperspectral image classification、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=2；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| DICTA | 2014 | Dual Graph Regularized NMF for Hyperspectral Unmixing、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=4；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| ICIP | 2015 | Multilayer manifold and sparsity constrainted nonnegative matrix factorization for hyperspectral unmixing、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=4；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| TGRS | 2015 | Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=3；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| DICTA | 2015 | Relative Depth Estimation from Hyperspectral Data、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=1；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| JSTARS | 2015 | Semisupervised Hyperspectral Band Selection Via Spectral–Spatial Hypergraph Model、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=2；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| TGRS | 2015 | Multi-task sparse nonnegative matrix factorization for joint spectral-spatial hyperspectral imagery denoising、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=3；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -547,6 +556,8 @@
   阅读边界：9篇公开原摘要/输入局部排除；1条2012排除的会议/期刊扩展证据更新。ORCID2013范围筛选16组7入9排，仅该来源组闭环。
 - 2026-10-09 / jun-zhou-2014-scope-and-2016-natural-color：新增 2，更新 0，去重 0，排除 7，待处理 222。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：九篇原摘要和指定局部；两篇显示论文原Figure1保存。三维214对象不变。
+- 2026-10-09 / jun-zhou-2015-eight-hsi-and-one-duplicate：新增 8，更新 2，去重 1，排除 0，待处理 213。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：8摘要新增、2旧会议版本证据更新、1同DOI关联；7原稿指定局部，1机构摘要。ORCID2015余十组未审，三维214不变。
 
 ## 未解决缺口
 
@@ -594,7 +605,10 @@
 - ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。
 - 普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。
 - 2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。
-- 周峻263组：已入18、关联既有1、排22、待222；页面19篇，尚未收全。
 - ORCID2014八组来源范围筛选完成1入7排；另核2016近题1篇。不是完整作者年份或场所年度检索。
 - ICPR2014/TGRS2016共享概念方法族，明确期刊扩展声明及首次online日期待核；2013 RGB拼接基础继承关系仍待进一步原文证据。
 - 2012两篇仅题名、2013生物炭正文/原图、旧年非题名命中摘要、DBLP/Scholar/机构目录差集及作者arXiv全量仍待查。
+- 周峻263组：已入26、关联既有2、排22、待213；页面27篇，尚未收全。
+- ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。
+- 2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。
+- 2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。
