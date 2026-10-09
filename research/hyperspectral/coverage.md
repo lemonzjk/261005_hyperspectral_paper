@@ -151,6 +151,7 @@
 | WHISPERS | 2014 | nonlinear plume gas radiative transfer CONLIE、e-FAST water vapour visibility HyMap sensitivity、hyperspectral ultrasound skin thickness validation；物理90页3新题名均入；皮肤摘要读91续文但其他91题名未审。累计45–76及78–90页145直接题名+恢复1=146，139入3排4待；77未核。TOC174关联139/决定7/未审28，自动138/7/29，TRDF人工关联保留。 | 3 / 3 / 3 | 90页3新题名已审；77/91及年度遗漏待补 | 羽流作者全文文字完整已读，排版PDF与正式稿差异未核；Fig1作者图下载403/网页404，页码未知，尚无可展示原图。；羽流合成垂直先验含真值结构，实测用估计释放温度约束且无独立浓度精度表，不将已核单例数字概括为无先验普遍提升。；e-FAST会议全文受限，HyMap场地、采样与指数阶数未知；大于0.8不能当一阶可加贡献；Twente后续博士书目不解决另一论文摘要错配。；皮肤48条光谱不是48患者；2015期刊六患者只期刊事实，直接会议扩展声明和两稿全文/图差异待核。；三篇代码数据及本稿arXiv未找到，原图续接逐篇登记；继续91、补77和目录28遗漏，年度全域/引文闭环未完成。 |
 | WHISPERS | 2014 | extended linear mixing spectral variability bundles CLS、cone non-negativity singular vectors endmember extraction、ANN nonlinearity order polytope decomposition unmixing；91页3新题名均入，ANN摘要读92续文；累计45–76及78–91页148直接题名+恢复1=149，142入3排4待；77未核。TOC174关联142/决定7/未审25，自动141/7/26，TRDF人工消歧保留。 | 3 / 3 / 3 | 91页3新题名已审；77/92及年度遗漏待补 | ELMM日程多R. Marrero按作者原PDF/正式登记/TOC七作者核定；共同尺度假设、式7全约束L1常数与代码/稀疏解释待核。；ELMM四幅图为数据/结果无框架图；2016作者代码明确后作，不能当2014本稿代码。2015五作者/2016六作者算法版本差异和扩展关系未核。；锥端元会议原全文/图受限，原数学定义、参数、对比数字及代码数据/arXiv未知，不将伪秩等同组分数。；ANN–POD会议Fig1页2原图已存；合成训练可不依赖真实丰度真值，但仍需端元/阶数范围；Hapke模型失配表现差保留，10端元与5端元实验分开。；ANN2015期刊原首页明确enhanced version，只追踪同族；期刊全文差异、代码数据与本稿arXiv待核。；继续92、补77和目录25遗漏，已有4范围pending延续；年度全域/引用闭环未完成。 |
 | WHISPERS | 2014 | polynomial postnonlinear polytope decomposition、GRENDEL graph cuts piecewise convex unmixing、DART airborne at-sensor radiance imaging spectroscopy；物理92页3新题名全部审；页首ANN续摘要不计。累计45–76及78–92页151直接题名+恢复配准1=152，145入3排4待；77仍未核。TOC174关联145/决定7/未审22，自动144/7/23，TRDF人工消歧保留。 | 3 / 3 / 3 | 92页3新题名已审；77/93和年度遗漏待补 | POD原四页稿/图/代码/数据待核；ANN–POD是已收录下游组合方法，不倒填其阶数训练和实验。；GRENDEL作者稿五页与正式四页差异未核；NEON无端元真值，Pavia参考类别均值非实测纯端元。四图均数据/结果，无框架图。；DART机载稿全文/图受限；机构博士论文附录仅发现与局部索引核对，未阅读全文；RSE2015三作者与本五作者扩展关系待核。；继续93、补77及TOC22遗漏；现有4范围pending延续。年度全域与引用闭环仍未完成。 |
+| WHISPERS | 2014 | opaque broken clouds MCScene reflectance adjacency、FLEX Sentinel-3 configurable passive hyperspectral scene generator、Lagrangian hydrodynamic particle mass concentration hyperspectral simulator、MCScene CameoSim real scene comparison；物理93页4新题名全部审；累计45–76及78–93页155直接题名+恢复配准1=156，149入3排4待；77仍未核。TOC174关联149/决定7/未审18，自动148/7/19，TRDF人工消歧保留。 | 4 / 4 / 4 | 93页4新题名已审；77/94与年度遗漏待补 | 四篇正式原全文/图均受限；海洋作者上传正文文本已读但图片公式缺失，不标全文核验。Fig1已发现，原图403及页码待核。；碎云二次TLDR混入2018分区目标检测结果，未采用；MCScene覆盖UV–LWIR不代表本反演实验全光谱。；FLEX会议6作者/相关2018期刊7作者与正式年分开；扩展关系未核。仿真器对比不借后续CHIMES数据或误差。；本稿代码、实验数据和arXiv未找到已核链接；海洋首作者Eloy/Emerson冲突按原稿E.保留，待机构身份核验。；继续94、补77及目录18遗漏；4范围pending延续，年度全域/引用闭环未完成。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -451,6 +452,8 @@
   阅读边界：ELMM/ANN两篇作者四页原PDF全文读，锥端元完整摘要已核。ANN会议Fig1页2裁切；ELMM四图无框架，锥稿图受限。ANN2015原首页明确扩展同方法族，ELMM2015/2016仅后作关系；旧518与三维214不改。
 - 2026-10-09 / whispers-2014-program-page92-pod-grendel-atsensor-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：GRENDEL作者5页全文已读、4图检查均无框架；正式4页差异待核。POD/DART两篇完整原摘要已核，全文/图待获取。三篇仅总库，旧521与三维214对象不改。
+- 2026-10-09 / whispers-2014-program-page93-clouds-flex-marine-comparison-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四篇完整原摘要已核；海洋作者上传网页第1–5节文本已读，公式图像与PDF受限，不标阅读全文。发现作者上传Fig1但下载403，其他原图未知。三方法标签新增，旧524与三维214对象不改。
 
 ## 未解决缺口
 
