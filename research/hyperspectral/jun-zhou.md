@@ -131,20 +131,20 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 ## 2024–2026高光谱来源组筛选
 
-2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 ORCID 2024 已有14篇、ORCID 2025已有8篇直接高光谱记录补摘要级核验；ORCID 2026 的 FedDA-HSI、SPECIAL、HOT综述、STU、频率偏置校准网络也已补公开摘要，其余仍保留题名暂定状态。
+2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 2024 年高光谱关系记录有14篇摘要级核验（ORCID直接记录10篇，另4篇来自既有来源），ORCID 2025已有8篇直接高光谱记录补摘要级核验；ORCID 2026 的 FedDA-HSI、SPECIAL、HOT综述、STU、频率偏置校准网络也已补公开摘要，其余仍保留题名暂定状态。
 
-- 2024收录高光谱农业、解混、分类、去噪、LiDAR融合和视频跟踪；其中 ORCID 十四篇已补摘要级核验；2025收录去噪、少样本分类、LiDAR融合、视频跟踪、异常检测和医学分类，其中 ORCID 八篇与 Scholar 差集三篇已补摘要级核验；2026收录医疗高光谱、异常/目标跟踪综述、选带、分类和解混。
+- 2024收录高光谱农业、解混、分类、去噪、LiDAR融合和视频跟踪；其中 ORCID 直接记录10篇、既有来源4篇已补摘要级核验；2025收录去噪、少样本分类、LiDAR融合、视频跟踪、异常检测和医学分类，其中 ORCID 八篇与 Scholar 差集三篇已补摘要级核验；2026收录医疗高光谱、异常/目标跟踪综述、选带、分类和解混。
 - 通用视觉、RGB-D、普通遥感、变化检测、红外可见光融合及其他无明确高光谱输入记录排除；2024 LiDAR-Guided Cross-Attention Fusion 已是既有目录条目，按重复登记处理。
 
 逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2024摘要补充见 `sources/jun-zhou-2024-abstract-followup.json`、`sources/jun-zhou-2024-abstract-followup-2.json`、`sources/jun-zhou-2024-abstract-followup-3.json`；2025摘要补充见 `sources/jun-zhou-2025-abstract-followup.json`、`sources/jun-zhou-2025-abstract-followup-2.json`、`sources/jun-zhou-2025-abstract-followup-3.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
 
 ## 2023高光谱来源组筛选
 
-新增8篇、排除2篇；2023 ORCID来源组10组完成范围决定。8篇题名直接指向高光谱跟踪、去噪、少样本分类、波段注意力或跨域表示，均以题名和Crossref正式书目入库为暂定状态，等待摘要核验。
+新增8篇、排除2篇；2023 ORCID来源组10组完成范围决定。8篇题名直接指向高光谱跟踪、去噪、少样本分类、波段注意力或跨域表示，均已取得公开摘要级方法证据并更新目录；正式版本、全文、代码和完整实验仍待核验。
 
 - 排除通用零样本学习和人员重识别。题名筛选不替代摘要阅读，不从方法名称外推数据、性能或版本关系。
 
-逐项决定见 `sources/jun-zhou-2023-decisions.json`；Crossref响应和来源访问见 `sources/`。下一步补齐2022–2023暂定条目的摘要，处理ORCID 2024及早年待审组，并继续Scholar/DBLP目录差集。
+逐项决定见 `sources/jun-zhou-2023-decisions.json`；摘要补充见 `sources/jun-zhou-2023-abstract-followup.json`，Crossref响应和来源访问见 `sources/`。下一步补齐2022及更早暂定条目的摘要，处理早年待审组，并继续Scholar/DBLP目录差集。
 
 ## 2022高光谱来源组筛选
 

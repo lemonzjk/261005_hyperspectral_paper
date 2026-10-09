@@ -668,6 +668,12 @@
 - 两条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；SSUMamba正式2024版与预印本边界单列，未阅读全文。
 - ORCID 2024 八个直接高光谱来源组全部完成摘要级或正式题名证据；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2024-abstract-followup-3.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2023-abstract-followup
+
+- 更新8篇，不新增目录论文，不改变三维214对象。Background-Aware Band Selection、DPNet-S/U、SEE-Net、MTSR、S⁴GPN、SiamBAG、S³ARN 与多域通用表示均补公开摘要证据。
+- 8条 ORCID 2023 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 IEEE 官方摘要、ResearchGate、CoLab 公开摘要镜像及作者稿摘要，均未阅读全文。
+- ORCID 2023 直接高光谱条目摘要范围已闭环；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2023-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

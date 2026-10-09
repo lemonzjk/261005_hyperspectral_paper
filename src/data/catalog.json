@@ -67991,16 +67991,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/lgrs.2023.3326148",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱视频目标跟踪：比较每个波段中目标与局部背景区域的差异，选择最具判别力的三个波段组成三通道输入。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/lgrs.2023.3326148",
+      "summary": "该方法以目标—局部背景的跨波段差异评分进行背景感知选带，将得分最高的三个波段组成三通道图像后交给目标跟踪器，以降低高光谱视频建模复杂度。",
+      "input": "高光谱视频帧、目标区域及其局部背景区域。",
+      "output": "三波段三通道输入和目标跟踪结果。",
+      "mechanism": "逐波段比较目标与对应局部区域并计算不相似度，按分数选出前三个波段，再用三通道图像进行跟踪。",
+      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
+      "paper": "https://www.researchgate.net/publication/374895665_Background-Aware_Band_Selection_for_Object_Tracking_in_Hyperspectral_Videos",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
@@ -68008,16 +68008,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用目标—背景差异选择少量波段并降低高光谱视频跟踪复杂度？",
+        "datasets": "公开摘要称在基准高光谱目标跟踪数据集上验证；数据名称、划分和指标待全文核验。",
+        "experimentSetting": "逐波段目标/局部区域不相似度评分；前三波段组成三通道图像后输入跟踪器。",
+        "conclusions": "公开摘要报告方法兼具效率和有效性；逐项性能、消融及跨场景泛化待全文核验。",
+        "limitations": "摘要未给出跟踪器具体结构、阈值、数据统计、代码和完整实验配置。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/374895665_Background-Aware_Band_Selection_for_Object_Tracking_in_Hyperspectral_Videos",
+            "checkedAt": "2026-10-10",
+            "level": "ResearchGate公开摘要",
+            "supports": [
+              "目标—局部区域不相似度选带",
+              "选取前三波段组成三通道图像",
+              "基准高光谱视频跟踪实验与效率结论"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2023.3326148",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-62-hsi-2023-published",
@@ -68025,7 +68044,7 @@
             "url": "https://doi.org/10.1109/lgrs.2023.3326148",
             "doi": "10.1109/lgrs.2023.3326148",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-62"
@@ -68046,16 +68065,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2023.3318001",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱去噪：将稀疏表示模型和卷积网络参数化为 DPNet-S，并以 U-Net 替代软阈值形成 DPNet-U，直接恢复整幅高光谱影像。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2023.3318001",
+      "summary": "DPNet 将稀疏表示去噪模型展开为可学习网络：DPNet-S 用卷积、反卷积和软收缩提取稀疏特征并重建影像，DPNet-U 用 U-Net 建模更一般的高光谱先验。",
+      "input": "合成或真实噪声高光谱影像。",
+      "output": "整幅去噪高光谱影像。",
+      "mechanism": "稀疏优化器与影像重建器参数化稀疏表示去噪流程；DPNet-U 以 U-Net 替换软收缩算子并直接学习模型参数。",
+      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
+      "paper": "https://www.researchgate.net/publication/374100628_Deep_Parameterized_Neural_Networks_for_Hyperspectral_Image_Denoising",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -68063,16 +68082,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何把稀疏表示去噪流程参数化为可学习的整幅高光谱去噪网络？",
+        "datasets": "公开摘要报告合成和真实高光谱影像实验；数据名称、噪声设置和划分待全文核验。",
+        "experimentSetting": "比较 DPNet-S、DPNet-U 与现有方法；网络由稀疏优化和重建步骤展开得到。",
+        "conclusions": "公开摘要报告两种网络取得有竞争力的去噪结果，并降低对训练样本数量的依赖；具体指标待全文核验。",
+        "limitations": "摘要未给出完整网络深度、噪声模型、数据统计、代码现状和复现实验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/374100628_Deep_Parameterized_Neural_Networks_for_Hyperspectral_Image_Denoising",
+            "checkedAt": "2026-10-10",
+            "level": "ResearchGate公开摘要",
+            "supports": [
+              "DPNet-S稀疏优化器/重建器",
+              "DPNet-U以U-Net替代软收缩",
+              "合成与真实高光谱去噪及代码链接"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2023.3318001",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-63-hsi-2023-published",
@@ -68080,7 +68118,7 @@
             "url": "https://doi.org/10.1109/tgrs.2023.3318001",
             "doi": "10.1109/tgrs.2023.3318001",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-63"
@@ -68101,16 +68139,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tip.2023.3263109",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱视频目标跟踪：SEE-Net 以参数化光谱自表达模块学习波段重要性，把帧拆成多组三通道伪彩色图并加权集成跟踪结果。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tip.2023.3263109",
+      "summary": "SEE-Net 用光谱自表达关系估计波段重要性，无需迭代优化；各组伪彩色跟踪器分别定位后按重要性加权，并抑制低重要性组的不可靠结果。",
+      "input": "高光谱视频帧及其多组三通道伪彩色波段组。",
+      "output": "加权集成的目标位置与跟踪结果。",
+      "mechanism": "参数化光谱自表达模块映射波段重要性；按重要性分组生成三通道伪彩色图；多个深度跟踪器输出经加权集成并过滤低重要性结果。",
+      "readingNote": "ORCID题名、Crossref正式书目与 IEEE Xplore 官方摘要核验；未阅读全文。",
+      "paper": "https://doi.org/10.1109/TIP.2023.3263109",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
@@ -68118,16 +68156,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何学习波段重要性并集成多组三通道跟踪器以提升高光谱视频跟踪？",
+        "datasets": "官方摘要报告在高光谱目标跟踪基准上达到先进结果；数据名称、划分和指标待全文核验。",
+        "experimentSetting": "光谱自表达估计波段重要性；多组三通道伪彩色跟踪器并行输出后加权集成。",
+        "conclusions": "官方摘要报告达到先进跟踪性能并抑制低重要性组的不可靠输出；逐项性能和消融待全文核验。",
+        "limitations": "摘要未给出网络主干、分组数量、训练配置、数据统计和代码复现实验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://doi.org/10.1109/TIP.2023.3263109",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE Xplore官方摘要",
+            "supports": [
+              "参数化光谱自表达与波段重要性",
+              "多组三通道伪彩色跟踪器加权集成",
+              "低重要性输出抑制与先进性能结论"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tip.2023.3263109",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-64-hsi-2023-published",
@@ -68135,7 +68192,7 @@
             "url": "https://doi.org/10.1109/tip.2023.3263109",
             "doi": "10.1109/tip.2023.3263109",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-64"
@@ -68156,16 +68213,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2023.3300542",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱去噪：将多任务稀疏表示模型的迭代优化展开为可解释网络，以共享稀疏系数编码跨波段共性结构，以非共享系数保留波段细节。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2023.3300542",
+      "summary": "MTSR 网络包含共享稀疏表示、非共享稀疏表示和影像重建三个模块，分别捕获跨波段共同结构、单波段特有细节并恢复干净高光谱影像。",
+      "input": "合成或真实噪声高光谱影像。",
+      "output": "去噪高光谱影像。",
+      "mechanism": "把多任务稀疏表示模型的迭代求解展开为网络，模块间沿优化算法的特定操作连接，保留明确的模型解释。",
+      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
+      "paper": "https://www.researchgate.net/publication/372841359_Multitask_Sparse_Representation_Model_Inspired_Network_for_Hyperspectral_Image_Denoising",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -68173,16 +68230,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在可解释展开网络中同时建模跨波段共性结构和单波段细节？",
+        "datasets": "公开摘要报告合成和真实数据集实验；数据名称、噪声设置和划分待全文核验。",
+        "experimentSetting": "共享/非共享稀疏表示与影像重建模块按迭代优化流程连接，并与现有去噪方法比较。",
+        "conclusions": "公开摘要报告在合成和真实数据上取得优于对比方法的视觉与定量结果；具体指标待全文核验。",
+        "limitations": "摘要未给出展开层数、噪声模型、数据统计、代码状态和完整消融。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/372841359_Multitask_Sparse_Representation_Model_Inspired_Network_for_Hyperspectral_Image_Denoising",
+            "checkedAt": "2026-10-10",
+            "level": "ResearchGate公开摘要",
+            "supports": [
+              "共享与非共享稀疏表示",
+              "SSR/USR/IR三模块",
+              "合成与真实高光谱去噪实验"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2023.3300542",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-65-hsi-2023-published",
@@ -68190,7 +68266,7 @@
             "url": "https://doi.org/10.1109/tgrs.2023.3300542",
             "doi": "10.1109/tgrs.2023.3300542",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-65"
@@ -68211,16 +68287,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2023.3297216",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "少样本高光谱分类：S⁴GPN 将原型网络、自监督学习和特征融合串联，并以图卷积网络提取光谱信息、DenseNet 提取空间信息。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2023.3297216",
+      "summary": "S⁴GPN 在原型网络阶段学习监督信息，在自监督阶段分别增强光谱和空间数据并采用 SimSiam，再融合两阶段特征以提升少样本分类表示。",
+      "input": "少样本标注的高光谱影像及光谱、空间增强样本。",
+      "output": "高光谱像素或 patch 的类别预测。",
+      "mechanism": "原型网络、光谱/空间自监督和融合三个阶段共享结构化特征提取器；GCN提取光谱信息，DenseNet提取空间信息。",
+      "readingNote": "ORCID题名、Crossref正式书目与公开摘要镜像核验；未阅读全文。",
+      "paper": "https://colab.ws/articles/10.1109%2Ftgrs.2023.3297216",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
@@ -68228,16 +68304,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何结合原型学习与光谱—空间自监督表示提升少样本高光谱分类？",
+        "datasets": "公开摘要报告在四个数据集上实验；具体数据集、划分和指标待全文核验。",
+        "experimentSetting": "原型网络监督阶段、自监督阶段和融合阶段逐步训练；光谱与空间增强分别输入 SimSiam。",
+        "conclusions": "公开摘要报告 S⁴GPN 优于对比方法；逐数据集数值、消融和跨域泛化待全文核验。",
+        "limitations": "摘要镜像未给出完整训练配置、样本数、增强细节、代码和许可。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://colab.ws/articles/10.1109%2Ftgrs.2023.3297216",
+            "checkedAt": "2026-10-10",
+            "level": "公开摘要镜像",
+            "supports": [
+              "原型网络/自监督/融合三阶段",
+              "SimSiam光谱与空间增强",
+              "GCN与DenseNet及四数据集结果"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2023.3297216",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-66-hsi-2023-published",
@@ -68245,7 +68340,7 @@
             "url": "https://doi.org/10.1109/tgrs.2023.3297216",
             "doi": "10.1109/tgrs.2023.3297216",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-66"
@@ -68266,16 +68361,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2023.3285802",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱视频目标跟踪：SiamBAG 用波段注意力将高光谱帧分组为总权重近似的多组三通道伪彩色图，并以 Siamese 网络联合分类、回归和尺度调整。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2023.3285802",
+      "summary": "SiamBAG 借助大规模彩色跟踪数据训练深度网络；波段注意力生成分组权重，直方图均衡后的多组伪彩色图输入 SiamBAG，再融合响应图并反馈尺度分支细化位置。",
+      "input": "高光谱视频模板/搜索帧及波段分组后的三通道伪彩色图。",
+      "output": "目标位置、回归框和尺度调整后的跟踪结果。",
+      "mechanism": "波段注意力分组并近似平衡各组权重；分类分支融合各组响应图，回归分支给出初始位置，尺度分支利用模板/检测特征相似度反馈细化。",
+      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
+      "paper": "https://www.researchgate.net/publication/371556153_SiamBAG_Band_Attention_Grouping-based_Siamese_Object_Tracking_Network_for_Hyperspectral_Videos",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
@@ -68283,16 +68378,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用波段注意力分组和 Siamese 多分支网络进行高光谱视频跟踪？",
+        "datasets": "公开摘要报告使用大规模彩色目标跟踪数据训练，并在高光谱跟踪基准上取得先进结果；具体数据待全文核验。",
+        "experimentSetting": "多组三通道伪彩色图经直方图均衡后输入分类、回归和尺度调整分支，响应按组权重融合。",
+        "conclusions": "公开摘要报告跟踪性能优于对比方法，并提供代码仓库；逐项指标和消融待全文核验。",
+        "limitations": "摘要未给出训练数据清单、分组数量、网络细节、数据统计和代码复现状态。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/371556153_SiamBAG_Band_Attention_Grouping-based_Siamese_Object_Tracking_Network_for_Hyperspectral_Videos",
+            "checkedAt": "2026-10-10",
+            "level": "ResearchGate公开摘要",
+            "supports": [
+              "波段注意力分组伪彩色图",
+              "分类/回归/尺度调整三分支",
+              "公开代码与先进跟踪结论"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2023.3285802",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-67-hsi-2023-published",
@@ -68300,7 +68414,7 @@
             "url": "https://doi.org/10.1109/tgrs.2023.3285802",
             "doi": "10.1109/tgrs.2023.3285802",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-67"
@@ -68321,16 +68435,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/jstars.2022.3225928",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱分类：S³ARN 以多感受野 split-attention 融合光谱和空间特征，在瓶颈残差块中生成注意力掩码，强调有用波段与邻域像素。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/jstars.2022.3225928",
+      "summary": "S³ARN 在残差瓶颈结构中分别建立光谱和空间 split-attention 分支，融合多感受野特征并抑制冗余波段和邻域信息，以降低过拟合和参数开销。",
+      "input": "高光谱影像 patch。",
+      "output": "像素或 patch 的地物类别预测。",
+      "mechanism": "split attention 融合多感受野；光谱和空间注意力残差分支生成掩码，同时强调有用波段与邻域像素；瓶颈结构减少参数。",
+      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 作者稿摘要核验；仅读摘要，未阅读全文。",
+      "paper": "https://www.researchgate.net/publication/365952167_Spatial-Spectral_Split_Attention_Residual_Network_for_Hyperspectral_Image_Classification",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
@@ -68338,16 +68452,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用光谱—空间 split attention 和瓶颈残差结构抑制冗余并提升高光谱分类？",
+        "datasets": "作者稿摘要报告在三个基准数据集上实验；数据名称、划分和指标待全文核验。",
+        "experimentSetting": "光谱/空间 split-attention 残差分支与多感受野特征融合，在三套基准数据上比较分类性能。",
+        "conclusions": "作者稿摘要报告 S³ARN 有效提升高光谱分类表现并降低训练参数；逐项性能和消融待全文核验。",
+        "limitations": "摘要未给出完整网络配置、数据统计、训练成本、代码和许可细节。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/365952167_Spatial-Spectral_Split_Attention_Residual_Network_for_Hyperspectral_Image_Classification",
+            "checkedAt": "2026-10-10",
+            "level": "ResearchGate作者稿摘要",
+            "supports": [
+              "多感受野 split attention",
+              "光谱/空间注意力掩码与瓶颈残差",
+              "三基准数据集分类结果"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/jstars.2022.3225928",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-68-hsi-2023-published",
@@ -68355,7 +68488,7 @@
             "url": "https://doi.org/10.1109/jstars.2022.3225928",
             "doi": "10.1109/jstars.2022.3225928",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-68"
@@ -68376,16 +68509,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2023.3264736",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "跨域高光谱分类：通用卷积网络共享跨数据域的大部分参数，仅配置少量域特定参数处理域偏移，并采用两步训练。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2023.3264736",
+      "summary": "该方法以单一网络同时学习多个高光谱数据域的通用表示，通过共享参数学习共性知识、少量域特定参数适应域偏移，再用两步训练充分利用网络容量。",
+      "input": "来自多个数据域的高光谱影像。",
+      "output": "多域高光谱影像分类结果。",
+      "mechanism": "通用卷积网络共享大部分参数并为各域配置少量参数；两步训练策略提升多域联合学习效果。",
+      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
+      "paper": "https://www.researchgate.net/publication/369837851_Towards_Universal_Representation_Learning_for_Multi-domain_Hyperspectral_Image_Classification",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
@@ -68393,16 +68526,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用共享与域特定参数在一个网络中学习可迁移的多域高光谱分类表示？",
+        "datasets": "公开摘要报告在七个高光谱影像数据集上实验；具体数据集、划分和指标待全文核验。",
+        "experimentSetting": "多域联合训练；大部分参数共享、少量域特定参数适配域偏移，并与独立单域网络比较。",
+        "conclusions": "公开摘要报告通用网络优于多个独立单域专用网络；逐数据集数值、消融和新域泛化待全文核验。",
+        "limitations": "摘要未给出域参数规模、完整训练流程、数据统计、代码和许可细节。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/369837851_Towards_Universal_Representation_Learning_for_Multi-domain_Hyperspectral_Image_Classification",
+            "checkedAt": "2026-10-10",
+            "level": "ResearchGate公开摘要",
+            "supports": [
+              "共享/域特定参数设计",
+              "两步训练策略",
+              "七个高光谱数据集与独立模型比较"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2023.3264736",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-69-hsi-2023-published",
@@ -68410,7 +68562,7 @@
             "url": "https://doi.org/10.1109/tgrs.2023.3264736",
             "doi": "10.1109/tgrs.2023.3264736",
             "year": 2023,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2023-title-69"
