@@ -764,6 +764,12 @@
 - `multiple-graph-nmf-whispers-2015` 由 `title_only` 更新为 `abstract_read` / `abstract_verified`；确认多尺度多图正则化 NMF、合成/真实数据结论，未阅读全文。
 - 正式会议版本、完整图构造、数据集、代码和逐项实验指标仍待核验。证据见 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-early-abstract-followup
+
+- 更新3篇，不新增目录论文，不改变三维214对象。通过 OpenAlex 公开摘要索引补读 NSP/KUM 异常检测、Shearlet 异常检测和 Material Boundary 三篇摘要。
+- 三条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；分类仍待审计，正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/jun-zhou-early-abstract-followup.json`；OpenAlex为二级摘要来源，摘要中的来源缺字按原文保留。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

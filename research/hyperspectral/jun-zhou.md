@@ -41,10 +41,10 @@
 
 ## 2012来源限定范围筛选
 
-本轮新增2、更新0、去重0、排除4，另2010多光谱配准保留待核；新增分类0、原图0。累计263组：已入10、关联既有1、排6、待246。页面Jun Zhou 11篇，其中2篇只有正式题名核验；数量不代表全部成果或独立方法数。
+本轮新增0、更新3、去重0、排除4，另2010多光谱配准保留待核；新增分类0、原图0。累计263组：已入10、关联既有1、排6、待246。页面Jun Zhou 11篇，其中2012两篇已补摘要级公开证据；数量不代表全部成果或独立方法数。
 
-- ICICEE2012非下采样金字塔/核非锐化异常检测：10.1109/ICICEE.2012.350，1320–1323，五作者姓在前规范显示但保留顺序。ORCID目标身份关联已核，单篇机构待原文。IEEE入口202、原PDF不可得，仅题名入库并待分类。
-- SPIE AOMATT2012 Shearlet异常检测：10.1117/12.978636，卷8419、文章号84190I（大写I）。旧作者CV与登记六作者对应，ORCID原条目缺DOI已补。HTTP200实为Incapsula失败HTML；第三方摘要仅供发现，不借HYDICE、RX流程或性能作已核事实。仅题名入库，两稿版本关系未确认。
+- ICICEE2012非下采样金字塔/核非锐化异常检测：10.1109/ICICEE.2012.350，1320–1323。OpenAlex公开摘要索引补出NSPD多尺度子带、核非锐化掩蔽、RX及真实/合成数据比较；仅摘要级，全文、数据集和分类待核。
+- SPIE AOMATT2012 Shearlet异常检测：10.1117/12.978636，卷8419、文章号84190I（大写I）。OpenAlex公开摘要索引补出多尺度方向性Shearlet、四阶偏微分方程、核RX、HYDICE及相对原RX结论；仅摘要级，SPIE全文和版本关系待核。
 - ADMA/PAKDD两篇群记录关联：出版社原摘要明确数据库/历史普查范围，排除。SSPR/SPR增量部件模型、ICPR轮廓检测原摘要为普通对象图像，当前无明确高光谱联系，暂排除并保留重审。ICPR官方原稿现404，仅搜索缓存首屏可读；不移用2013期刊实验。
 - IGARSS2010多光谱配准：原作者稿为Landsat多光谱，SIFT空间邻域与局部加权映射；真实多光谱联系明确，但与高光谱的基础关系尚无证据，保留待核，不因同作者自动收录。
 
@@ -181,6 +181,10 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 逐项决定见 `sources/jun-zhou-2019-decisions.json`；来源访问见 `sources/jun-zhou-2019-primary-access.json`，Crossref响应保存在 `sources/`。本批摘要或局部来源核验，不标全文。下一步处理ORCID 2020及早年待审组，并继续Scholar/DBLP目录差集。
 
+## 早期摘要补充
+
+2012两篇异常检测及2017材料边界检测已通过OpenAlex二级摘要索引补读，仍不等同正式全文；2018边界检测保持书目级。详见 `sources/jun-zhou-early-abstract-followup.json`。
+
 ## 2018高光谱来源组筛选
 
 新增16篇、关联既有2篇、排除13篇；2018 ORCID来源组31组现已闭环。正式期刊年份与ORCID登记年份有差异时按正式记录入库，例如异常检测论文正式出版年为2019；不把版本年份混作新增论文。
@@ -196,7 +200,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 新增11篇、排除6篇；WHISPERS 2015两条为既有版本。2017 ORCID来源组19组现为13篇收录、6篇排除、0篇待审；其中材料边界会议稿仅题名/目录核验，保留待分类状态。
 
 - 收录跨场景字典域适配、矩阵—向量非负张量盲解混、控制采样、解混引导深特征、残差高光谱超分辨率、差分权重选带、结构一致性稀疏编码、非局部张量去噪、区域结构NMF及森林凋落物PLSR。
-- Material Based Boundary Detection 仅有Crossref和DICTA目录，确认高光谱对象但未取得摘要，暂不补方法、数据或性能。
+- Material Based Boundary Detection 的OpenAlex公开摘要索引补出联合光谱—空间特征、PDF共现、亲和矩阵和谱聚类边界；仅摘要级，分类仍待定，IEEE全文和数据细节待核。
 - 微流控综述、点云电力塔检测、通用哈希、黑色素瘤图正则NMF、三维人脸曲线匹配无明确高光谱关系，排除。
 - 2017两条WHISPERS记录的正式论文已在2015版本审计纳入，不重复计数。
 
@@ -237,4 +241,4 @@ WHISPERS 版本年份差集
 
 Scholar 分页和 DBLP 记录补出两条 ORCID 登记年份为2017、正式 DOI/会议为2015的高光谱论文：《Multiple graph regularized NMF for hyperspectral unmixing》（DOI 10.1109/WHISPERS.2015.8075468）与《On the sampling strategies for evaluation of joint spectral-spatial information based classifiers》（DOI 10.1109/WHISPERS.2015.8075474）。前者已取得 Griffith 作者仓储接受稿摘要，核实多尺度多图正则化 NMF 机制；后者取得机构作者稿和摘要，已核光谱—空间分类评估问题。两篇不与 ORCID 2017 年份重复计数，版本差异保留在 `sources/jun-zhou-whispers-2015-version-audit.json`；Multiple Graph 摘要补充见 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json`。
 
-本批仅摘要或作者稿指定局部核验，未标全文阅读；逐条决定、来源链接及阅读边界见 `sources/jun-zhou-2015-remainder-decisions.json`。ORCID 2015 十九组现已完成来源组筛选（13收录、1同DOI重复、7排除；其中两条 ORCID 2017 年份按 WHISPERS 2015 DOI/正式目录解析）；这不等于作者2015所有成果或任一场所年度全量检索。Scholar分页已取得387条记录；2015两篇 WHISPERS 条目与 ORCID 2017 年份不一致，需按 DOI/正式目录核版本。下一步处理 ORCID 2017 及早年待审组，并补 DBLP 完整目录差集及早年无题名命中。
+本批仅摘要或作者稿指定局部核验，未标全文阅读；本批阅读边界见 `sources/jun-zhou-2015-remainder-decisions.json`；三篇早期摘要补充见 `sources/jun-zhou-early-abstract-followup.json`。ORCID 2015 十九组现已完成来源组筛选（13收录、1同DOI重复、7排除；其中两条 ORCID 2017 年份按 WHISPERS 2015 DOI/正式目录解析）；这不等于作者2015所有成果或任一场所年度全量检索。Scholar分页已取得387条记录；2015两篇 WHISPERS 条目与 ORCID 2017 年份不一致，需按 DOI/正式目录核版本。下一步处理 ORCID 2017 及早年待审组，并补 DBLP 完整目录差集及早年无题名命中。

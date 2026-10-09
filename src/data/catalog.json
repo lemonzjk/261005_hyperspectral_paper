@@ -59599,7 +59599,7 @@
     },
     {
       "id": "nsp-kum-anomaly-icicee-2012",
-      "shortTitle": "NSP/KUM anomaly · title only",
+      "shortTitle": "NSP/KUM anomaly",
       "title": "Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image",
       "authors": "Huixin Zhou, Shenghui Rong, Hanlin Qin, Rui Lai, Jun Zhou",
       "year": 2012,
@@ -59611,29 +59611,29 @@
         "hyperspectral"
       ],
       "doi": "10.1109/ICICEE.2012.350",
-      "representation": "题名指向非下采样金字塔分解与核非锐化掩蔽；实际步骤、优化和适用条件待原摘要/全文核验。",
+      "representation": "以非下采样金字塔分解生成多尺度子带，用改进核非锐化掩蔽预测背景，再在特征空间用RX检测异常；公开摘要显示同时利用空间与光谱信息。",
       "tags": [],
-      "summary": "已核正式题名、作者与DOI；题名明确高光谱异常检测。未取得可核原摘要/全文，方法、数据与结论待核验。",
-      "input": "待核验；题名明确高光谱影像，传感器/波段/先验未知。",
-      "output": "待核验；题名明确异常检测，具体输出与阈值未知。",
-      "mechanism": "题名指向非下采样金字塔分解与核非锐化掩蔽；实际步骤、优化和适用条件待原摘要/全文核验。",
-      "readingNote": "仅正式题名/书目核验，未核原摘要，未阅读全文。出版社登记与会议目录姓名使用Zhou Hui-xin等姓在前写法，规范显示不改变作者顺序；周峻ORCID收录支持目标作者归属，单篇正式稿机构仍待核。",
+      "summary": "公开摘要显示：算法以非下采样金字塔分解（NSPD）构造多尺度子带，利用邻域系数相关性和改进核非锐化掩蔽抑制背景，最后在特征空间用RX检测；在真实与合成高光谱数据上报告低虚警和较好检测表现。",
+      "input": "无异常/背景先验的真实与合成高光谱影像；摘要未给出具体传感器与数据集名称。",
+      "output": "异常目标检测结果/异常图；具体阈值与指标待全文。",
+      "mechanism": "先用NSPD分解多尺度子带，再按同一波段不同尺度邻域系数相关性预测背景，并用改进核非锐化掩蔽滤波器降低异常数据影响；最后在特征空间运行RX算子。",
+      "readingNote": "Crossref核对正式DOI书目；OpenAlex公开摘要索引重建原摘要，属于二级摘要证据。已读摘要，不等同出版社全文；摘要提到真实与合成数据及RX对比，未补具体数据集、参数或性能数字。",
       "paper": "https://doi.org/10.1109/ICICEE.2012.350",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "official_title_metadata_verified",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "abstract_verified_secondary_index",
       "citation": "@inproceedings{nsp_kum_anomaly_icicee_2012,\n  title = {Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image},\n  author = {Huixin Zhou and Shenghui Rong and Hanlin Qin and Rui Lai and Jun Zhou},\n  booktitle = {2012 International Conference on Industrial Control and Electronics Engineering},\n  year = {2012},\n  pages = {1320--1323},\n  doi = {10.1109/ICICEE.2012.350}\n}\n",
       "library": {
         "categoryIds": [],
         "classificationStatus": "pending",
         "relation": "hyperspectral",
-        "relationNote": "正式题名明确光学高光谱影像异常检测；研究细节与任务/方法标签待原摘要核验，不新增三维专题。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名指向高光谱异常检测；完整研究问题待原摘要核验。",
-        "datasets": "待核验；不采用第三方摘要的HYDICE或其他论文AVIRIS作为已核事实。",
-        "experimentSetting": "待核验；未读原摘要/正文，不记录划分、指标或性能数字。",
-        "conclusions": "待核验；未取得原摘要或实验，不能声称改进效果。",
-        "limitations": "IEEE出版社入口202，PDF请求未取得原文；不把其他NSCT/SVDD论文当成本稿。 出版社登记与会议目录姓名使用Zhou Hui-xin等姓在前写法，规范显示不改变作者顺序；周峻ORCID收录支持目标作者归属，单篇正式稿机构仍待核。 原图、全文、代码、数据和arXiv未知，未知不表示不存在；两稿不因作者/任务接近自动认定同方法族。",
+        "relationNote": "正式题名和公开摘要明确光学高光谱影像异常检测；完整实验、方法标签与三维专题归类待进一步审计。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在无异常/背景先验下结合多尺度空间—光谱信息检测高光谱异常？",
+        "datasets": "摘要仅称真实与合成高光谱数据；具体数据集待全文。",
+        "experimentSetting": "摘要级核验：真实与合成高光谱数据，并与经典RX比较；参数、指标和划分待全文。",
+        "conclusions": "摘要报告相较经典RX有较好检测表现和较低虚警；不外推具体数值。",
+        "limitations": "仅公开二级摘要与正式书目，未取得IEEE全文；不补具体数据集、参数、阈值、图版或代码。",
         "dataLinks": [],
         "evidence": [
           {
@@ -59661,6 +59661,15 @@
             "supports": [
               "1320页；五作者姓在前拼写与登记一致。"
             ]
+          },
+          {
+            "url": "https://api.openalex.org/works/https://doi.org/10.1109/ICICEE.2012.350",
+            "checkedAt": "2026-10-10",
+            "level": "OpenAlex公开摘要索引（二级摘要证据）",
+            "supports": [
+              "公开摘要正文（按倒排索引位置重建）",
+              "摘要级方法、数据范围和结论"
+            ]
           }
         ],
         "versions": [
@@ -59684,7 +59693,7 @@
     },
     {
       "id": "shearlet-anomaly-aomatt-2012",
-      "shortTitle": "Shearlet anomaly · title only",
+      "shortTitle": "Shearlet anomaly",
       "title": "Shearlet transform based anomaly detection for hyperspectral image",
       "authors": "Huixin Zhou, Xiaoxue Niu, Hanlin Qin, Jun Zhou, Rui Lai, Bingjian Wang",
       "year": 2012,
@@ -59696,29 +59705,29 @@
         "hyperspectral"
       ],
       "doi": "10.1117/12.978636",
-      "representation": "题名指向Shearlet变换；实际步骤、优化和适用条件待原摘要/全文核验。",
+      "representation": "以多尺度方向性Shearlet变换分解高光谱影像，用四阶偏微分方程修正子带系数并以核RX检测异常，再重建异常图。",
       "tags": [],
-      "summary": "已核正式题名、作者与DOI；题名明确高光谱异常检测。未取得可核原摘要/全文，方法、数据与结论待核验。",
-      "input": "待核验；题名明确高光谱影像，传感器/波段/先验未知。",
-      "output": "待核验；题名明确异常检测，具体输出与阈值未知。",
-      "mechanism": "题名指向Shearlet变换；实际步骤、优化和适用条件待原摘要/全文核验。",
-      "readingNote": "仅正式题名/书目核验，未核原摘要，未阅读全文。作者旧CV明确列本题名及六作者；出版社登记2012-10-15、卷8419、文章号84190I（末位大写I）；ORCID原条目无DOI，本轮补精确登记，登记2012-11-13不是发表日期。",
+      "summary": "公开摘要显示：将高光谱影像经多尺度方向性Shearlet变换分解，在各子带用四阶偏微分方程抑制背景、增强异常，再用核RX检测并重建异常图；HYDICE实验相较原始RX报告更好的检测表现和更低虚警。",
+      "input": "高光谱影像；摘要明确使用HYDICE数据验证，但完整数据协议待全文。",
+      "output": "重建后的异常信号图/异常检测结果。",
+      "mechanism": "先经多尺度方向性Shearlet滤波器组分解原始影像；再用四阶偏微分方程修正子带系数以抑制背景并增强异常；各子带采用核RX检测，最后合并修正子带重建异常图。",
+      "readingNote": "Crossref核对正式DOI书目；OpenAlex公开摘要索引重建原摘要，属于二级摘要证据。已读摘要，不等同SPIE全文；HYDICE、核RX和性能比较仅记录摘要明确内容。",
       "paper": "https://doi.org/10.1117/12.978636",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "official_title_metadata_verified",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "abstract_verified_secondary_index",
       "citation": "@inproceedings{shearlet_anomaly_aomatt_2012,\n  title = {Shearlet transform based anomaly detection for hyperspectral image},\n  author = {Huixin Zhou and Xiaoxue Niu and Hanlin Qin and Jun Zhou and Rui Lai and Bingjian Wang},\n  booktitle = {6th International Symposium on Advanced Optical Manufacturing and Testing Technologies: Optoelectronic Materials and Devices for Sensing, Imaging, and Solar Energy},\n  year = {2012},\n  pages = {84190I},\n  doi = {10.1117/12.978636}\n}\n",
       "library": {
         "categoryIds": [],
         "classificationStatus": "pending",
         "relation": "hyperspectral",
-        "relationNote": "正式题名明确光学高光谱影像异常检测；研究细节与任务/方法标签待原摘要核验，不新增三维专题。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名指向高光谱异常检测；完整研究问题待原摘要核验。",
-        "datasets": "待核验；不采用第三方摘要的HYDICE或其他论文AVIRIS作为已核事实。",
-        "experimentSetting": "待核验；未读原摘要/正文，不记录划分、指标或性能数字。",
-        "conclusions": "待核验；未取得原摘要或实验，不能声称改进效果。",
-        "limitations": "SPIE DOI返回HTTP200但实际Incapsula请求失败HTML，不是可读原摘要或原文；第三方摘要仅发现，不作方法/实验核验证据。 作者旧CV明确列本题名及六作者；出版社登记2012-10-15、卷8419、文章号84190I（末位大写I）；ORCID原条目无DOI，本轮补精确登记，登记2012-11-13不是发表日期。 原图、全文、代码、数据和arXiv未知，未知不表示不存在；两稿不因作者/任务接近自动认定同方法族。",
+        "relationNote": "正式题名和公开摘要明确光学高光谱影像异常检测；完整实验、方法标签与三维专题归类待进一步审计。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用多尺度方向性Shearlet子带与核RX完成高光谱异常检测？",
+        "datasets": "摘要明确HYDICE；完整版本、样本和协议待全文。",
+        "experimentSetting": "摘要级核验：HYDICE实验并与原始RX比较；参数、指标和划分待全文。",
+        "conclusions": "摘要报告相较原始RX有较好检测表现和较低虚警；不外推具体数值。",
+        "limitations": "仅公开二级摘要与正式书目，未取得SPIE全文；不补具体数据规模、参数、图版或代码。",
         "dataLinks": [],
         "evidence": [
           {
@@ -59745,6 +59754,15 @@
             "level": "作者原CV题名与作者身份核验",
             "supports": [
               "作者旧CV明确列本题名及六作者；出版社登记2012-10-15、卷8419、文章号84190I（末位大写I）；ORCID原条目无DOI，本轮补精确登记，登记2012-11-13不是发表日期。"
+            ]
+          },
+          {
+            "url": "https://api.openalex.org/works/https://doi.org/10.1117/12.978636",
+            "checkedAt": "2026-10-10",
+            "level": "OpenAlex公开摘要索引（二级摘要证据）",
+            "supports": [
+              "公开摘要正文（按倒排索引位置重建）",
+              "摘要级方法、数据范围和结论"
             ]
           }
         ],
@@ -63465,28 +63483,28 @@
         "hyperspectral"
       ],
       "doi": "10.1109/dicta.2017.8227462",
-      "representation": "题名和官方DICTA目录确认近距离高光谱材料边界检测；摘要/全文待取得。",
+      "representation": "以联合光谱—空间特征的统计共现方法检测高光谱影像材料边界：邻域像素对的概率密度构造亲和矩阵，再用谱聚类生成边界。",
       "tags": [],
-      "summary": "面向高光谱影像的材料边界检测论文；方法细节待核。",
-      "input": "高光谱影像；具体输入待核。",
-      "output": "材料边界图；具体输出待核。",
-      "mechanism": "待取得摘要/全文后核验。",
-      "readingNote": "Crossref、官方DICTA目录和ResearchGate书目确认题名、作者、会议与DOI；未取得原摘要或全文，保持待分类。",
+      "summary": "公开摘要显示：针对高光谱影像边界检测，使用邻域像素对联合光谱—空间特征的概率密度估计共现关系，以PDF值构造全像素亲和矩阵，再用谱聚类生成边界；在真实高光谱数据集上与两种方法比较并报告有效性。",
+      "input": "真实高光谱影像及每个像素的联合光谱—空间特征；具体数据集与协议待全文。",
+      "output": "对象边界图。",
+      "mechanism": "对邻域像素对估计联合特征的概率密度；边界处共现较少、区域内部重复较多，据此构造像素亲和矩阵并执行谱聚类得到边界。",
+      "readingNote": "Crossref和DICTA官方目录核对正式书目；OpenAlex公开摘要索引重建摘要，属于二级摘要证据。已读摘要，不等同IEEE全文；摘要中的“the that”语句疑似来源文本缺字，保留来源原文含义，不擅自修订实验细节。",
       "paper": "https://doi.org/10.1109/dicta.2017.8227462",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "official_program_and_publisher_metadata",
+      "verificationLevel": "abstract_verified_secondary_index",
       "library": {
         "categoryIds": [],
         "classificationStatus": "pending",
         "relation": "hyperspectral",
-        "relationNote": "题名直接指向高光谱影像材料边界检测；方法和实验待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "待取得摘要后确认高光谱材料边界检测问题。",
-        "datasets": "待核验。",
-        "experimentSetting": "仅题名、作者、官方目录、Crossref和书目页核验。",
-        "conclusions": "待核验。",
-        "limitations": "未取得摘要或全文，不补造解混、数据集和性能。",
+        "relationNote": "题名和公开摘要明确高光谱影像材料边界检测；完整实验与任务/方法标签待进一步审计。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用联合光谱—空间特征与统计共现构造高光谱材料边界？",
+        "datasets": "摘要仅称真实高光谱影像数据集；名称、规模和协议待全文。",
+        "experimentSetting": "摘要级核验：真实高光谱数据集，与两种替代方法比较；参数、指标和划分待全文。",
+        "conclusions": "摘要报告方法能有效探索高光谱对象边界；不外推具体数字。",
+        "limitations": "仅公开二级摘要、DICTA目录与正式书目，未取得IEEE全文；不补数据集、参数、图版或代码。",
         "dataLinks": [],
         "evidence": [
           {
@@ -63503,6 +63521,15 @@
             "level": "Crossref",
             "supports": [
               "正式题名、作者和DOI。"
+            ]
+          },
+          {
+            "url": "https://api.openalex.org/works/https://doi.org/10.1109/dicta.2017.8227462",
+            "checkedAt": "2026-10-10",
+            "level": "OpenAlex公开摘要索引（二级摘要证据）",
+            "supports": [
+              "公开摘要正文（按倒排索引位置重建）",
+              "摘要级方法、数据范围和结论"
             ]
           }
         ],
