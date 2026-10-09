@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | ORCID公共API | person、works以及269个唯一put-code分三批1–100/101–200/201–269读取；逐项核对返回ID | 263组269条书目拉取完成，无缺失ID；135组题名直接命中、128组无命中；逐篇决定见下 | 书目完整不等于作者全部成果或光谱范围审查完成；无摘要，外部来源有日期/类型/姓名简写差异 |
 | DBLP | 用户所给身份页面与ORCID对应；HTML可读；XML各镜像尝试留证 | 仅身份与局部页面核验 | HTTP200导出其实是HTML验证页，不是XML成功；完整HTML目录尚未扫描 |
-| Google Scholar | 用户主页首屏请求cstart=0/pagesize=100 | HTTP429，未取得目录 | 所有后续分页及来源独有记录待核，不宣称分页完成 |
+| Google Scholar | 用户主页 cstart=0/100/200/300、pagesize=100 | HTTP200，取得387条记录、384个唯一题名（381个题名-年份组合）；原始HTML与解析快照已保存 | 引用元数据、作者归属及 Scholar 独有条目仍需逐篇核；页面列项不等于正式书目全集 |
 | 作者ANU旧主页 | publication.html完整旧页面，列项2001–2012，逐篇追踪公开PDF | 本批5篇原稿及DOI核验 | 主页中的Accepted年份、作者顺序及拼写可能与正式版不同；不覆盖当前所有成果 |
 | Griffith当前主页 | ORCID提供的个人页 | 仅取得JS页面壳 | 当前完整论文目录尚未取得 |
 
@@ -26,7 +26,7 @@
 
 ## 继续顺序
 
-当前263组已入26、关联既有2、排22、待213；页面27篇。ORCID2012–2014来源组已审，2015十九组本批审九组，余十组逐篇；核验2010多光谱配准、早年非题名命中、2014/2016自然色正式版本关系。对照DBLP完整目录、当前机构/作者主页、引用链与arXiv，形成来源差集后继续补漏。早期作者专题检索只构成相应场所×年份×题名记录，不替代年度系统检索。
+当前263组已入31、关联既有2、排29、待200；页面32篇。ORCID2012–2015来源组已筛完；核验2010多光谱配准、早年非题名命中、2014/2016自然色正式版本关系。对照DBLP完整目录、当前机构/作者主页、引用链与arXiv，形成来源差集后继续补漏。早期作者专题检索只构成相应场所×年份×题名记录，不替代年度系统检索。
 
 ## 2008–2013原稿范围与版本续接
 
@@ -90,7 +90,7 @@ TIP2013轮廓结构原稿明确“extends from”ICPR2012并以[21]列其六作�
 | 2012 | 6 | 2 | 0 | 4 | 0 | 已拉取来源组筛选完成 |
 | 2013 | 16 | 7 | 0 | 9 | 0 | 已拉取来源组筛选完成 |
 | 2014 | 8 | 1 | 0 | 7 | 0 | 已拉取来源组筛选完成 |
-| 2015 | 19 | 8 | 1 | 0 | 10 | 逐篇部分审查 |
+| 2015 | 19 | 13 | 1 | 7 | 0 | 来源组范围筛选完成 |
 | 2016 | 15 | 1 | 0 | 0 | 14 | 逐篇部分审查 |
 | 2017 | 19 | 0 | 0 | 0 | 19 | 仅书目拉取，未审 |
 | 2018 | 31 | 0 | 0 | 0 | 31 | 仅书目拉取，未审 |
@@ -117,7 +117,7 @@ ICPR2014三作者、70–75页、封面加6页；原Figure1在PDF4。HSI/RGB少�
 
 ## 2015高光谱原摘要与版本批次
 
-新增8、更新2旧会议版本证据、去重1、排除0；新增7方法标签，保存4原图。累计263组26入、关联既有2、22排、213待；页面27篇。2015来源十九组审九组，余十组没有按题名无命中排除，不宣称作者年份/场所年度完成。
+新增8、更新2旧会议版本证据、去重1、排除0；新增7方法标签，保存4原图。累计263组26入、关联既有2、22排、213待；页面27篇。该批只审2015来源十九组中的九组。
 
 FG2015 3D LDP的三维为x/y/λ，输出身份特征不是面部几何，原Figure3 PDF4。WACV逐波段SfM和3D注册真正输出几何，但仍只总库；AOTF及自采模型与Stanford纯几何验证分开，9页图版只有输入/结果及文字算法。IGARSS逐类SVM间隔权重选带为Indian Pines/Salinas，原5页图版无独立框架。DICTA双图正式2014-11，源ORCID/封面2015不同；空间/特征图、Urban实测和合成，9页图版无框架。
 
@@ -125,4 +125,14 @@ ICIP MMSNMF原Figure1 PDF3；端元与丰度各自图，不误作空间/特征�
 
 DICTA相对深度只机构完整摘要，边缘直方图散焦与邻域谱差生成相对稀疏深度，合并/归一化/光滑；传感器、数据、误差和原图未知。JSTARS五作者原稿终于匹配：初始Semisupervised查询2结果无精确匹配，Semi-supervised变体精确匹配后下载；Figure1 PDF5/稿内4只展示超图构造。原引言[20]/[21]对应两2013会议且指出未考虑空间关系，本稿加入空间和组稀疏，三数据APHI/Indian Pines/Washington。补旧会议关联同方法族，不借期刊数据/作者或假称已核正式扩展声明。八篇均只摘要及记录局部，不标全文，未报未核性能数值。
 
-其余2015条目仅发现/下载，见源文件；同题章节2016/2019不同DOI必须精确选版，Preface题名返回42页通用结果不以首屏认作完整。下一步余十组原摘要及正式年份、重复书/序言和跨维图匹配关系，继续补原图/正式版/外部目录差集。
+2015余十组首轮决定
+
+本批新增3、排除7、待审0：新增《A Large Margin Learning Method for Matching Images of Natural Objects with Different Dimensions》书章节、《Automatic Estimation of Soil Biochar Quantity via Hyperspectral Imaging》书章节及《Learning Graph Model for Different Dimensions Image Matching》GbRPR会议论文。三篇均明确以高光谱影像为输入或匹配对象；前两篇保留章节原始DOI与摘要边界，GbRPR条目保留作者稿和正式页码。
+
+《An Incremental Structured Part Model for Object Recognition》《Local and Global Regularized Sparse Coding for Data Representation》及《Object Classification via Feature Fusion Based Marginalized Kernels》分别核到通用目标识别、通用稀疏编码和QuickBird VHR实验，未因 spectral/spatial 字样收录。《Isometric Mapping Hashing》为通用流形哈希；两条Preface/整书记录不是独立论文，均排除。《Automatic estimation...》的2015 ch011与后续2018 ch073是不同书籍、不同DOI，禁止混用摘要、页码和实验事实。
+
+WHISPERS 版本年份差集
+
+Scholar 分页和 DBLP 记录补出两条 ORCID 登记年份为2017、正式 DOI/会议为2015的高光谱论文：《Multiple graph regularized NMF for hyperspectral unmixing》（DOI 10.1109/WHISPERS.2015.8075468）与《On the sampling strategies for evaluation of joint spectral-spatial information based classifiers》（DOI 10.1109/WHISPERS.2015.8075474）。前者由题名、官方技术程序和DBLP确认，摘要/全文待取得，条目保持待分类；后者取得机构作者稿和摘要，已核光谱—空间分类评估问题。两篇不与 ORCID 2017 年份重复计数，版本差异保留在 `sources/jun-zhou-whispers-2015-version-audit.json`。
+
+本批仅摘要或作者稿指定局部核验，未标全文阅读；逐条决定、来源链接及阅读边界见 `sources/jun-zhou-2015-remainder-decisions.json`。ORCID 2015 十九组现已完成来源组筛选（13收录、1同DOI重复、7排除；其中两条 ORCID 2017 年份按 WHISPERS 2015 DOI/正式目录解析）；这不等于作者2015所有成果或任一场所年度全量检索。Scholar分页已取得387条记录；2015两篇 WHISPERS 条目与 ORCID 2017 年份不一致，需按 DOI/正式目录核版本。下一步转入 ORCID 2016 的14个待审组，并补 DBLP 完整目录差集及早年无题名命中。

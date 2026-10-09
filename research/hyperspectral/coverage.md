@@ -216,6 +216,18 @@
 | DICTA | 2015 | Relative Depth Estimation from Hyperspectral Data、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=1；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
 | JSTARS | 2015 | Semisupervised Hyperspectral Band Selection Via Spectral–Spatial Hypergraph Model、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=2；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
 | TGRS | 2015 | Multi-task sparse nonnegative matrix factorization for joint spectral-spatial hyperspectral imagery denoising、Jun Zhou; optical hyperspectral; original abstract; versions；机构size30，第0页，totalPages=1、totalElements=3；逐项精确题名/DOI匹配。不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇摘要闭环或同DOI去重；非年度系统检索 | ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。；2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。；2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。 |
+| Computer Vision and Pattern Recognition in Environmental Informatics | 2015 | A large margin learning method for matching images of natural objects with different dimensions、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：included; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| Neurocomputing | 2015 | An incremental structured part model for object recognition、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| Computer Vision and Pattern Recognition in Environmental Informatics | 2015 | Automatic estimation of soil biochar quantity via hyperspectral imaging、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：included; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| ORCID author source | 2015 | Computer Vision and Pattern Recognition in Environmental Informatics、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| Graph-based Representations in Pattern Recognition | 2015 | Isometric mapping hashing、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics) | 2015 | Learning graph model for different dimensions image matching、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：included; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| Neurocomputing | 2015 | Local and global regularized sparse coding for data representation、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| IEEE Geoscience and Remote Sensing Letters | 2015 | Object classification via feature fusion based marginalized kernels、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| Computer Vision and Pattern Recognition in Environmental Informatics | 2015 | Preface、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| Computer Vision and Pattern Recognition in Environmental Informatics | 2015 | Preface、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
+| WHISPERS | 2015 | Multiple graph regularized NMF for hyperspectral unmixing、Jun Zhou Scholar ORCID DBLP version audit；Scholar单条目与作者来源交叉核对；不是年度全量。 | 1 / 1 / 1 | 作者版本差集：included；非年度系统检索 | ORCID登记年份与正式会议年份差异已保留；完整PDF/摘要及正式页码仍待。 |
+| WHISPERS | 2015 | On the sampling strategies for evaluation of joint spectral-spatial information based classifiers、Jun Zhou Scholar ORCID DBLP version audit；Scholar单条目与作者来源交叉核对；不是年度全量。 | 1 / 1 / 1 | 作者版本差集：included；非年度系统检索 | ORCID登记年份与正式会议年份差异已保留；完整PDF/摘要及正式页码仍待。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -558,6 +570,10 @@
   阅读边界：九篇原摘要和指定局部；两篇显示论文原Figure1保存。三维214对象不变。
 - 2026-10-09 / jun-zhou-2015-eight-hsi-and-one-duplicate：新增 8，更新 2，去重 1，排除 0，待处理 213。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：8摘要新增、2旧会议版本证据更新、1同DOI关联；7原稿指定局部，1机构摘要。ORCID2015余十组未审，三维214不变。
+- 2026-10-09 / jun-zhou-2015-remainder-ten：新增 5，更新 0，去重 0，排除 7，待处理 200。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：十组均完成摘要/书目范围决定；三篇新增条目，七篇排除。新增条目未取得或未逐页核完整全文。
+- 2026-10-10 / jun-zhou-whispers-2015-version-audit：新增 2，更新 0，去重 0，排除 0，待处理 200。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：两条 ORCID 2017 登记记录按 Scholar、DBLP、DOI、作者来源和官方程序解析为 WHISPERS 2015；一篇摘要局部核验，一篇题名/程序核验。
 
 ## 未解决缺口
 

@@ -16,7 +16,7 @@
 
 ## 当前状态
 
-- 总库595篇，335篇已复核分类，244篇暂定、16篇待分类，301标签（任务97/方法181/应用23）。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库600篇，335篇已复核分类，244篇暂定、16篇待分类，301标签（任务97/方法181/应用23）。三维214篇不变；总库 ?collection=hyperspectral。
 - 作者筛选支持片段/补全及URL恢复；完整姓名在搜索/作者筛选按同一完整作者匹配，避免跨作者/子串误匹配。总库标签多选并集；两页隐藏零计数侧栏，共享原图及SVG/BibTeX导出。分类逐篇留证；高光谱466、多光谱95、基础34。
 - CVPR2013–2022/ICCV2013–2021奇数年主题闭环，非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。Hyper-Skin330/306与版本差异待查。
@@ -32,5 +32,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 优先周峻（ORCID0000-0001-5822-8233、DBLP99/3847-1）：263组269书目，已入26、关联既有2、排22、待213；页面27篇。ORCID2012–2014仅来源组已审；背景引用HSI不自动收录。2012两篇仅题名；2015十九组审九余十；MTSNMF同DOI去重，双图DICTA正式2014；选带三版本分开。Scholar429、DBLP导出验证页；未收全。见jun-zhou.md/作者inventory；续2015余十组、旧年无命中摘要及目录/版本差集。
+- 优先周峻（ORCID0000-0001-5822-8233、DBLP99/3847-1）：263组269书目，已入31、关联既有2、排29、待200；页面32篇。ORCID2012–2015来源组已筛；背景引用HSI不自动收录。2012两篇仅题名；2015十九组已筛13入1重7排；MTSNMF同DOI去重，双图DICTA正式2014；选带三版本分开。Scholar已取得387条分页记录；DBLP导出仍是验证页。见jun-zhou.md/作者inventory；续2016余14组、旧年无命中摘要及目录/版本差集。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
