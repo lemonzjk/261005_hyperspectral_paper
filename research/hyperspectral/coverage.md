@@ -752,6 +752,12 @@
 - 4条 Scholar 2024–2026/SSRN 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；其中 SSRN 仍是预印本摘要边界，正式版本、全文、代码和完整实验仍待核验。
 - Scholar 新增项已有40条摘要级核验，仍有1条题名暂定。证据见 `sources/jun-zhou-scholar-final-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-scholar-hot2024-followup
+
+- 更新1条，不新增目录论文，不改变三维214对象。HOT2024 由官方项目页面和组织方 CFP 核验。
+- 该 Scholar 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；证据属于竞赛/基准项目说明，不等同于正式论文全文。
+- Scholar 新增项已有41条公开摘要或项目说明级核验；正式论文版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-hot2024-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
