@@ -939,3 +939,7 @@ DBLP精确作者364条记录中，除既有168条决定外，按规范化题名�
 ### 2026-10-10：DBLP 非关键词 Bidfuse 模态排除
 
 复核 ICIP 2024 的 Bidfuse：作者代码仓库明确任务是红外-可见光图像融合，使用 MSRS/M3FD 等配对红外与可见光影像，未确认光学高光谱或多光谱波段输入，故标记 excluded，不加入目录。证据见 `sources/jun-zhou-dblp-bidfuse-exclusion-2024.json`。
+
+### 2026-10-10：DBLP 通用视觉/航拍记录排除
+
+复核10条DBLP作者差集记录：InsTaG、TalkingGaussian、DNGaussian为普通视频/三维辐射场任务，Privacy-Aware为视频异常检测，另有两条普通航拍复原和一条UAV目标检测。arXiv摘要、Crossref及既有ORCID逐项决定均未确认光学高光谱输入，全部标记 excluded。证据见 `sources/jun-zhou-dblp-general-vision-exclusions-2026-10-10.json`。
