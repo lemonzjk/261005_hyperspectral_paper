@@ -626,6 +626,12 @@
 - 两条目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；STU 证据保留“公开镜像、未阅读全文”边界。
 - 2026 直接高光谱条目累计 4 篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2026-abstracts-2.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2026-abstract-followup-3
+
+- 更新 1 篇，不新增目录论文，不改变三维214对象。Frequency-Aware Bias Calibration Attention Network 读取公开摘要镜像。
+- 目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源标明公开镜像，未阅读全文。
+- 2026 直接高光谱条目累计 5 篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2026-abstracts-3.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
