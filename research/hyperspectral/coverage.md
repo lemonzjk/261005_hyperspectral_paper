@@ -153,6 +153,7 @@
 | WHISPERS | 2014 | polynomial postnonlinear polytope decomposition、GRENDEL graph cuts piecewise convex unmixing、DART airborne at-sensor radiance imaging spectroscopy；物理92页3新题名全部审；页首ANN续摘要不计。累计45–76及78–92页151直接题名+恢复配准1=152，145入3排4待；77仍未核。TOC174关联145/决定7/未审22，自动144/7/23，TRDF人工消歧保留。 | 3 / 3 / 3 | 92页3新题名已审；77/93和年度遗漏待补 | POD原四页稿/图/代码/数据待核；ANN–POD是已收录下游组合方法，不倒填其阶数训练和实验。；GRENDEL作者稿五页与正式四页差异未核；NEON无端元真值，Pavia参考类别均值非实测纯端元。四图均数据/结果，无框架图。；DART机载稿全文/图受限；机构博士论文附录仅发现与局部索引核对，未阅读全文；RSE2015三作者与本五作者扩展关系待核。；继续93、补77及TOC22遗漏；现有4范围pending延续。年度全域与引用闭环仍未完成。 |
 | WHISPERS | 2014 | opaque broken clouds MCScene reflectance adjacency、FLEX Sentinel-3 configurable passive hyperspectral scene generator、Lagrangian hydrodynamic particle mass concentration hyperspectral simulator、MCScene CameoSim real scene comparison；物理93页4新题名全部审；累计45–76及78–93页155直接题名+恢复配准1=156，149入3排4待；77仍未核。TOC174关联149/决定7/未审18，自动148/7/19，TRDF人工消歧保留。 | 4 / 4 / 4 | 93页4新题名已审；77/94与年度遗漏待补 | 四篇正式原全文/图均受限；海洋作者上传正文文本已读但图片公式缺失，不标全文核验。Fig1已发现，原图403及页码待核。；碎云二次TLDR混入2018分区目标检测结果，未采用；MCScene覆盖UV–LWIR不代表本反演实验全光谱。；FLEX会议6作者/相关2018期刊7作者与正式年分开；扩展关系未核。仿真器对比不借后续CHIMES数据或误差。；本稿代码、实验数据和arXiv未找到已核链接；海洋首作者Eloy/Emerson冲突按原稿E.保留，待机构身份核验。；继续94、补77及目录18遗漏；4范围pending延续，年度全域/引用闭环未完成。 |
 | WHISPERS | 2014 | Joint denoising/unmixing、Adapted MGM、Forest manifold regression、SSA spectral denoising、3-D cube wavelets；TOC顺序1/5/23/101/107，物理77全部3题名；物理41和43各1篇定向，不计整页完成。 | 5 / 5 / 5 | 77页闭环及目录5缺口已审，94及13目录条目待核 | 物理94页超时/截图未成功，直接下载连接拒绝；仍未核，不据目录猜页内容。；目录174关联154/跟踪7/未审13；45–93页158直接题名+恢复配准1，另41/43定向2，共154入3排4待，非年度全量。；41/43仅各1篇定向筛选，其余摘要虽在缓存，未计已审；四范围pending延续。；除SSA作者稿，四篇全文与方法图待核；代码/数据/arXiv及相关期刊扩展身份持续追踪。 |
+| WHISPERS | 2014 | Adaptive LLE materials、Modularity Eigenmaps、DRR infrared sounding、Dione/Rhea terrain spectra、OMEGA 1 µm mineralogy；TOC37/75/167/143/170；物理41全部4与43全部3题名，前批2篇不重复。 | 5 / 5 / 5 | 41/43页闭环，目录8条及94待核 | 目录174关联159/跟踪7/未审8；41页四题名与43页三题名全部筛选，既有Uto/MGM不重复新增。；物理45–93页158直接题名+恢复配准1，另41/43全7，共159入3排4待；42/44/94及其他早页未系统核，非年度全量。；四新篇仅摘要；原全文/方法图、代码/数据与arXiv持续核验；Dione/Rhea输入暂基础关系。；DRR输入通道文字/维数及OMEGA目录页数/登记冲突保留；4范围pending延续。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -457,6 +458,8 @@
   阅读边界：四篇完整原摘要已核；海洋作者上传网页第1–5节文本已读，公式图像与PDF受限，不标阅读全文。发现作者上传Fig1但下载403，其他原图未知。三方法标签新增，旧524与三维214对象不改。
 - 2026-10-09 / whispers-2014-toc-gap1-and-program-page77-review：新增 5，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：五篇摘要已核；SSA作者接收稿全文、公式及原图已读，无方法框架图；另四篇未读全文。五方法标签暂定，旧528论文及三维214保持。
+- 2026-10-09 / whispers-2014-toc-gap2-and-program-pages41-43-review：新增 5，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：五篇完整摘要核验；DRR作者会议稿全文已读并裁切未编号原方案；其他四篇未读全文。原533论文及三维214保持。
 
 ## 未解决缺口
 
