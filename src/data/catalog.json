@@ -70768,16 +70768,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/icip40778.2020.9191105",
-      "representation": "Scholar差集题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱目标跟踪：BAE-Net 以自编码器式波段注意力学习波段依赖和权重，将高光谱帧分成多个三通道图像，再用深度彩色跟踪器和集成学习定位目标。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "Google Scholar 主页记录与 Crossref 正式书目核验；当前仅题名/书目信息阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/icip40778.2020.9191105",
+      "summary": "BAE-Net 用波段注意力块生成波段权重，按权重构造多组三通道伪彩色图，分别输入彩色视频跟踪网络形成弱跟踪器，最后融合弱跟踪结果；摘要报告在高光谱数据集上有效。",
+      "input": "高光谱视频帧及其多波段关系。",
+      "output": "目标位置/跟踪结果。",
+      "mechanism": "自编码器式波段注意力块学习波段依赖与权重；波段分组形成三通道图；深度彩色跟踪器产生多个弱跟踪器，集成学习融合定位。",
+      "readingNote": "Google Scholar 题名差集、Crossref正式书目与IEEE SPS公开摘要核验；未阅读全文。",
+      "paper": "https://resourcecenter.ieee.org/conferences/icip-2020/icip20vid101",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
@@ -70785,16 +70785,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral 或高光谱任务词，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示光谱影像任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅 Scholar、作者信息和正式书目核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与公开摘要均明确高光谱目标跟踪任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用波段注意力和伪彩色分组把有限高光谱视频训练数据迁移到深度目标跟踪？",
+        "datasets": "官方摘要仅称在高光谱数据集上实验；数据集名称、规模、划分和指标待全文核验。",
+        "experimentSetting": "波段注意力分组、多组三通道图、彩色跟踪网络与弱跟踪器集成。",
+        "conclusions": "官方摘要报告 BAE-Net 在高光谱数据集上具有有效性和优势。",
+        "limitations": "摘要未给出数据集、波段分组数量、网络配置、运行速度、代码和逐项指标。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://resourcecenter.ieee.org/conferences/icip-2020/icip20vid101",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE SPS公开摘要",
+            "supports": [
+              "波段依赖与波段权重学习",
+              "三通道图分组、彩色跟踪器与弱跟踪器集成",
+              "高光谱数据集有效性结论"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/icip40778.2020.9191105",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、会议、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020-published",
@@ -70802,7 +70821,7 @@
             "url": "https://doi.org/10.1109/icip40778.2020.9191105",
             "doi": "10.1109/icip40778.2020.9191105",
             "year": 2020,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020"
