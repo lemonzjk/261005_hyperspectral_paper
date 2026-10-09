@@ -866,6 +866,10 @@
 - 记录更新为 `abstract_read` / `abstract_verified`；正式全文、原图、完整实验和资源仍待核验。
 - 证据见 `sources/jun-zhou-dblp-whispers-weed-2019-followup.json`。
 
+### 2026-10-10：DBLP—ORCID非关键词交叉回填
+
+DBLP精确作者364条记录中，除既有168条决定外，按规范化题名与ORCID逐年决定文件交叉核对，新增100条 `excluded` 决定；这些记录的ORCID原决定均明确未确认高光谱输入或属于通用视觉、RGB/VHR、点云等范围。该批不新增目录论文，保留逐条原理由和来源文件；剩余96条DBLP记录没有ORCID同题决定，仍需独立审查。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
