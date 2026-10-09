@@ -1,0 +1,189 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "sparse-pca-anomaly-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077604",
+      "decision": "included",
+      "programPdfPage": 87,
+      "readingBoundary": "主办方87页完整摘要四作者与精确DOI200匹配；初题名查询429保留，未读全文。",
+      "figureBoundary": "原PDF/方法图未取得，图号/页码未知，不从搜索文字生成图。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "unmixing-chain-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077511",
+      "decision": "included",
+      "programPdfPage": 87,
+      "readingBoundary": "主办方87页完整摘要；作者UMBC托管四页原稿§1–5全文阅读，原Fig1物理页2目视。正式IEEE差异待核。",
+      "figureBoundary": "原Fig1物理页2为有谱库时的协同矩阵表示示意，已裁切；不是三个阶段完整流程。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "hierarchical-sparse-classifier-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077531",
+      "decision": "included",
+      "programPdfPage": 87,
+      "readingBoundary": "官方87页完整摘要五作者及正式DOI200匹配，未取得会议全文。",
+      "figureBoundary": "IEEE202空响应，原PDF/图未取得；博士稿提及题名不是本作框架原图来源。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "l0-regularized-svd-anomaly-band-selection",
+      "name": "l0正则SVD异常选带",
+      "dimension": "method",
+      "definition": "以l0稀疏正则的SVD/PCA联合辨识离群观测和相关波段；优化、支持集及异常统计量逐篇核验，不等同lasso-PCA或仅低秩背景重建。",
+      "rationale": "原摘要明确序贯l0优化和同时离群/重要波段选择，既有异常重建与选带任务标签不能替代联合机制。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "sparse-pca-anomaly-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "原摘要明确序贯l0优化和同时离群/重要波段选择，既有异常重建与选带任务标签不能替代联合机制。"
+        }
+      ]
+    },
+    {
+      "id": "mmv-collaborative-unmixing-chain",
+      "name": "MMV协同解混链",
+      "dimension": "method",
+      "definition": "改变观测和字典矩阵配置，将选带、端元提取和丰度反演分别写为多测量向量行组稀疏问题并复用求解器；约束及各阶段先验按原稿说明，非单一给定字典丰度回归。",
+      "rationale": "作者四页稿明确CLSUnSAL分别采用转置自字典、影像自字典和参考/提取谱库，ANC保留而ASC不采用。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "unmixing-chain-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "作者四页稿明确CLSUnSAL分别采用转置自字典、影像自字典和参考/提取谱库，ANC保留而ASC不采用。"
+        }
+      ]
+    },
+    {
+      "id": "hierarchical-sparse-code-classification",
+      "name": "层级稀疏码分类",
+      "dimension": "method",
+      "definition": "结合学习阶段稀疏编码的层级信息与重建误差判别光谱类别；层级的实际定义/构造逐稿核验，不自动等同空间分区树、分类标签树或深度网络。",
+      "rationale": "Marcos Gonzalez原摘要明确同时利用字典重建与稀疏编码层级信息，具体树结构未核，不沿用二叉SVM或区域解混。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "hierarchical-sparse-classifier-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Marcos Gonzalez原摘要明确同时利用字典重建与稀疏编码层级信息，具体树结构未核，不沿用二叉SVM或区域解混。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-canopy-dust-query-access.json",
+      "sha256": "b8c41c9b3ad11c478ce13f0814827aae8711c4970e6898402c19b427be2b90ef"
+    },
+    {
+      "path": "whispers2014-hierarchical-sparse-classifier-doi-access.json",
+      "sha256": "4339e61b6c2c105690abe7f83986d546c9169c8463e0ec6505969047311068a9"
+    },
+    {
+      "path": "whispers2014-hierarchical-sparse-classifier-ieee-access.json",
+      "sha256": "24c8585eefb72d5c3078467d07c772f75e834489545e6b1136527e09bae86e66"
+    },
+    {
+      "path": "whispers2014-hierarchical-sparse-classifier-query-access.json",
+      "sha256": "e2ad0ef857345ab30f2f9c6813672553606d3d632430f8d9ce190afd562fff7f"
+    },
+    {
+      "path": "whispers2014-page87-code-access-cache.json",
+      "sha256": "8e3502958d8dfaab500350766d6a5e807c8a76ab70796ac9f0b24ea9c0f9abdf"
+    },
+    {
+      "path": "whispers2014-page87-discovery-cache.json",
+      "sha256": "269a3f4488642f471a0b5788f029e30a74cf73e4011227e7d986364b3c99f9a6"
+    },
+    {
+      "path": "whispers2014-page87-followup-cache.json",
+      "sha256": "70f872ef1ceba612f2205d04b4bf23042e05c20a5ca63d9a1d9ec88aa015fdc0"
+    },
+    {
+      "path": "whispers2014-page87-links-cache.json",
+      "sha256": "55e03cf44eaf58df19c660d93185a525169d3fa0dd41e91105874a6fff2bc22b"
+    },
+    {
+      "path": "whispers2014-page87-overview-cache.json",
+      "sha256": "5ebbbe98bc9ef8dc0ac3bb0d9bffafa51293e2ea40e4ffbeedc8105435e8b69d"
+    },
+    {
+      "path": "whispers2014-page87-program-cache.json",
+      "sha256": "47f22eb5263425d5677faeceb04eb9c61dc707a016a22b411f189628895a9cca"
+    },
+    {
+      "path": "whispers2014-page87-resources-cache.json",
+      "sha256": "65af86399e1b7f4787d1f417c02c8ce154322e2df1fb9d264be6a05202c5ff45"
+    },
+    {
+      "path": "whispers2014-sparse-pca-anomaly-doi-access.json",
+      "sha256": "1cd86b1f3200c617a787ec490788d23d1124b204cfb674ebf9bf0558782cccca"
+    },
+    {
+      "path": "whispers2014-sparse-pca-anomaly-ieee-access.json",
+      "sha256": "36cd2985239e959cd8bf6e60d23e8515611d05b022e47cbf3d15d4a87b323a9b"
+    },
+    {
+      "path": "whispers2014-sparse-pca-anomaly-query-access.json",
+      "sha256": "0c79797d36747faf431c5d3ddc15dee05222b0ba73cc3641e02e627f2897e464"
+    },
+    {
+      "path": "whispers2014-unmixing-chain-author-access.json",
+      "sha256": "3fd0b030410b7743f3471c7da71a2eec93c941ee5d6dba0c286d6cb944019ff6"
+    },
+    {
+      "path": "whispers2014-unmixing-chain-author.pdf",
+      "sha256": "044dc385c7d005fbe43b0009b8e197ebb2b49e7140eaa4b01472ce3f088ce18f"
+    },
+    {
+      "path": "whispers2014-unmixing-chain-doi-access.json",
+      "sha256": "bd6d742937b5301bd797306485b2b6aca656a0f69d9609a76a94cf0cd3abc028"
+    },
+    {
+      "path": "whispers2014-unmixing-chain-ieee-access.json",
+      "sha256": "576d6bc16a443e157aa5400fa186bda7963f1b05e39a98ff82006f2f31f1dd7e"
+    },
+    {
+      "path": "whispers2014-unmixing-chain-query-access.json",
+      "sha256": "79be4370ecff7b603c14dbb1df47d3d800169486365acd624c1cb7e06eddec5f"
+    },
+    {
+      "path": "whispers2014-page87-toc-replay.json",
+      "sha256": "76da4cfb30df1f922ada9984fa0377f41cb5037eb138eb9a82ab95011e675362"
+    }
+  ],
+  "qualityIssues": [
+    "三篇只总库，旧505与三维214不变。",
+    "l0正则序贯PCA不套lasso；Pang以正式署名核定，SPCA资源只线索。",
+    "解混链作者四页已读，真值谱库筛选123端元谱、100子图约2500像元限制、经验正则与ASC缺失保留。",
+    "原Table1 SRE为光谱重建；Fig1是有谱库的协同矩阵示意，不是三阶段完整流程。",
+    "TGRS2014三作者基础算法不是六作者会议原稿版本；引用的arXiv1102.3288是前人，不写本文预印本ID。",
+    "层级稀疏码定义/结构未核，博士稿引用不是本作正文。",
+    "dust额外发现原摘要在88页，不计本批87页3题名，后续审查；77及年度39遗漏待补。"
+  ]
+}
