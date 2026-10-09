@@ -674,6 +674,12 @@
 - 8条 ORCID 2023 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 IEEE 官方摘要、ResearchGate、CoLab 公开摘要镜像及作者稿摘要，均未阅读全文。
 - ORCID 2023 直接高光谱条目摘要范围已闭环；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2023-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-1
+
+- 更新4篇，不新增目录论文，不改变三维214对象。ALN、GSFus、GF-3DDA 与两阶段自监督 HSI 恢复补公开摘要证据。
+- 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 IEEE 官方摘要、ResearchGate 公开摘要和 Griffith 作者仓储章节摘要，均未阅读全文。
+- ORCID 2022 其余直接高光谱条目仍需摘要、全文和版本核验。证据见 `sources/jun-zhou-2022-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
