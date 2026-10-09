@@ -183,6 +183,12 @@
 | ICICEE | 2012 | Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：included；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
 | SPIE · AOMATT | 2012 | Shearlet transform based anomaly detection for hyperspectral image、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：included；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
 | IGARSS | 2010 | Multi-spectral remote sensing image registration via spatial relationship analysis on sift keypoints、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 0 | 作者题名范围审查：pending；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| ICCV Workshops | 2013 | 3D Plant Modelling via Hyperspectral Imaging、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
+| ICIP | 2013 | A hypergraph based semi-supervised band selection method for hyperspectral image classification、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
+| TIP | 2013 | Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
+| ICIP | 2013 | Salient object detection in hyperspectral imagery、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
+| IGARSS | 2013 | Semi-supervised hyperspectral band selection via sparse linear regression and hypergraph models、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
+| DICTA | 2013 | Soil Biochar Quantification via Hyperspectral Unmixing、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -517,6 +523,8 @@
   阅读边界：3新增作者原摘要/局部页，3既有版本关系更新，2普通RGB原稿排除。新增2方法标签、扩充1稳定标签定义；2原方法图。正式2013与2012作者稿分列；不将出版记录当独立方法数量。
 - 2026-10-09 / jun-zhou-2012-scope-and-ms-boundary：新增 2，更新 0，去重 0，排除 4，待处理 246。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：六组2012闭环筛选：2仅题名入库、4普通记录关联/对象图像暂排；另2010多光谱关系待核。无摘要/方法图时不补造字段或标签。
+- 2026-10-09 / jun-zhou-2013-six-hsi-primary-abstracts：新增 6，更新 0，去重 0，排除 0，待处理 240。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：新增6均原摘要核验；5公开原稿局部阅读、1机构摘要。新增1任务4方法标签、2方法示意图。保留两会议/期刊版本边界，三维214对象不变。
 
 ## 未解决缺口
 
@@ -557,6 +565,9 @@
 - 周峻Scholar429、DBLP导出HTML验证页；作者旧主页仅覆盖2001–2012列项。其他来源全量对照、128无关键词项摘要、版本关系、完整实验和原图仍待核验。
 - 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。
 - 2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。
-- 周峻263组：已入10、关联既有1、排6、待246；作者页面11篇，书目组不是独立方法数量。
 - 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。
 - DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。
+- 周峻263组：已入16、关联既有1、排6、待240；页面17篇，尚未收全。
+- ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。
+- 两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。
+- 2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。
