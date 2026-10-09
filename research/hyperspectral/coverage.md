@@ -662,6 +662,12 @@
 - 四条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；SSRT-UNet的正式2024记录与2023预印本边界单列，镜像来源未提升为全文。
 - ORCID 2024 直接高光谱条目已有12篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2024-abstract-followup-2.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-3
+
+- 更新2篇，不新增目录论文，不改变三维214对象。SSUMamba读取 arXiv 官方预印本摘要；SSLKA读取公开摘要镜像并保留 IEEE 正式记录。
+- 两条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；SSUMamba正式2024版与预印本边界单列，未阅读全文。
+- ORCID 2024 八个直接高光谱来源组全部完成摘要级或正式题名证据；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2024-abstract-followup-3.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

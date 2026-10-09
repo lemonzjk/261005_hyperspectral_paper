@@ -69027,32 +69027,51 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3446812",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱去噪：空间—光谱连续扫描 Mamba 按多种行/列/波段顺序生成序列，以双向状态空间模型捕获长程依赖并用3D卷积补充局部建模。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID 2024题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2024.3446812",
+      "summary": "SSUMamba 将 Mamba 适配到三维高光谱去噪，通过空间—光谱连续扫描交替行、列和波段顺序，并用双向状态空间模型建模长程依赖；3D卷积增强局部空间—光谱特征。",
+      "input": "含噪高光谱影像。",
+      "output": "去噪高光谱影像。",
+      "mechanism": "空间—光谱连续扫描生成六种序列顺序；双向状态空间模型处理长程依赖；相邻扫描间重排保持连续性；3D卷积补充局部建模。",
+      "readingNote": "ORCID题名、Crossref正式书目、IEEE Xplore记录与 arXiv:2405.01726 官方摘要核验；正式版与预印本版本边界保留，未阅读全文。",
+      "paper": "https://ieeexplore.ieee.org/document/10643108/",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising"
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与 arXiv 官方摘要均明确高光谱影像去噪。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以线性复杂度建模三维高光谱的长程空间—光谱依赖并降低去噪内存？",
+        "datasets": "arXiv摘要报告高光谱去噪实验；具体合成/真实数据和指标待正式全文核验。",
+        "experimentSetting": "SSCS Mamba、双向状态空间模型和3D卷积；代码链接为 GitHub/lronkitty/SSUMamba。",
+        "conclusions": "arXiv摘要报告较低批次内存和优于 Transformer 方法的去噪结果；数值和消融待核验。",
+        "limitations": "正式版全文、噪声协议、运行速度、数据许可和代码复现待核验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2405.01726",
+            "checkedAt": "2026-10-10",
+            "level": "official arXiv abstract for formal related preprint",
+            "supports": [
+              "SSCS空间—光谱连续扫描和双向SSM",
+              "3D卷积局部空间—光谱建模",
+              "内存效率与去噪结果结论"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2024.3446812",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-56-hsi-2024-published",
@@ -69060,7 +69079,18 @@
             "url": "https://doi.org/10.1109/tgrs.2024.3446812",
             "doi": "10.1109/tgrs.2024.3446812",
             "year": 2024,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+          },
+          {
+            "id": "zhou-56-hsi-2024-arxiv-2405-01726-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2405.01726",
+            "arxivId": "2405.01726",
+            "arxivVersion": "v1",
+            "year": 2024,
+            "firstSubmittedAt": "2024-05-02T20:44:26Z",
+            "metadataStatus": "verified",
+            "relation": "官方摘要方法证据；正式2024版与预印本版本边界保留，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2024-title-56"
@@ -69081,32 +69111,51 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3362356",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱分类：两个协同光谱—空间大卷积核注意力块分别生成光谱和空间注意力图，再融合两域特征捕获局部上下文与长程依赖。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "ORCID 2024题名、Crossref正式DOI核验；仅题名阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/tgrs.2024.3362356",
+      "summary": "SSLKA 针对自注意力忽略通道适应性的问题，用两个连续协同光谱—空间注意力块和大卷积核同时提取光谱、空间特征，并融合两类注意力图改善高光谱分类。",
+      "input": "高光谱影像像元及其空间—光谱局部邻域。",
+      "output": "高光谱地物类别预测。",
+      "mechanism": "光谱注意力分支和空间注意力分支分别生成注意力图；大卷积核捕获局部上下文与长程依赖；连续协同块融合空间和光谱特征。",
+      "readingNote": "ORCID题名、Crossref正式书目、IEEE Xplore记录与公开摘要镜像核验；未阅读全文。",
+      "paper": "https://ieeexplore.ieee.org/document/10422824/",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification"
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示高光谱任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅题名、作者和正式DOI核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与 IEEE/公开摘要均明确高光谱影像分类。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何同时提高高光谱分类的空间与通道适应性并捕获长程依赖？",
+        "datasets": "公开摘要仅称使用常用基准数据集；具体名称、划分和指标待全文核验。",
+        "experimentSetting": "两个协同光谱—空间大核注意力块；与多种先进方法比较。",
+        "conclusions": "公开摘要报告在总体准确率、平均准确率和Kappa上优于若干先进方法；逐项数值和消融待正式版核验。",
+        "limitations": "摘要来源含公开镜像；完整数据集、训练配置、代码和数据许可待核验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.researchgate.net/publication/377988483_Spectral-Spatial_Large_Kernel_Attention_Network_for_Hyperspectral_Image_Classification",
+            "checkedAt": "2026-10-10",
+            "level": "public abstract mirror with IEEE metadata",
+            "supports": [
+              "SSLKA协同光谱—空间大核注意力",
+              "光谱/空间分支融合与长程依赖",
+              "公开摘要的分类性能结论"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2024.3362356",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-57-hsi-2024-published",
@@ -69114,7 +69163,7 @@
             "url": "https://doi.org/10.1109/tgrs.2024.3362356",
             "doi": "10.1109/tgrs.2024.3362356",
             "year": 2024,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-2024-title-57"
