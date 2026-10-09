@@ -1,6 +1,6 @@
 # 高光谱全领域检索覆盖
 
-截止日期：2026-10-08。状态：持续调研。
+截止日期：2026-10-09。状态：持续调研。
 
 总库独立检索自 2026-10-08 开始。以下题名扫描仅证明指定关键词在指定官方目录内的检索范围；三维专题旧检索结果只用于发现，不继承其二维排除决定或覆盖声明。各场所未列年份默认尚未检索，早期目录与引用追溯均保留缺口。
 
@@ -166,6 +166,11 @@
 | WHISPERS | 2013 | water reflectance spectra chlorophyll Qinghai Lake pdf code arxiv、data-noise tolerant multi-temporal hyperspectral classification Hemissi Farah、spatial filter framework target detection hyperspectral Zhang Du code arxiv、exact titles author institution sources；完整目录第19–21项3项；累计21/161，140未审。Crossref题名发现rows=5，不为完整检索；精确DOI核本项。引擎定向检索未穷尽分页。 | 161 / 3 / 3 | 第19–21项3入待分类；累计19入2待，140未审 | WHISPERS2013目录161累计顺序1–21已审：19入2待，余140未审；目录题名筛选不当年度摘要/全文或全领域完成。；第19–21项仅正式题名/书目待分类；青海湖光学谱研究暂标基础关系，具体高光谱分辨率/采样待原摘要。原稿、实验、原图与代码/数据/arXiv仍待核。；同作者2014正则化检测、2013 TGRS谱签名、2014 GR-RBM和不同湖泊相近题名未证明版本身份，不借方法、实验或图片；Bo Du同名作者需消歧。；此前辉石混合范围、边权异常原稿原图、各题名分类、油膜/NMF/HERF、演示/摘要全文、SOM/Gerbil源码版本/扩展、CNMF模拟代码和CASI数据仍待核。 |
 | WHISPERS | 2013 | multi-element scanning spectrometer geometric distortion FISS pdf code arxiv、shadow propagation forestry hyperspectral LiDAR institution code arxiv、imaging spectrometer carbon dioxide methane plumes Dennison pdf code arxiv；完整目录第22–24项3项逐审，累计24/161；137未审。题名发现rows=5仅定位，精确DOI核本项；定向引擎检索未穷尽分页。 | 161 / 3 / 3 | 第22–24项3入；累计22入2待，137未审 | WHISPERS2013目录161累计顺序1–24已审：22入2待，余137未审；非年度全领域或全文检索完成。；林业阴影仅机构原稿缓存摘要/部分正文，5页PDF未取得；标open access但下载跳登录HTML，INBO文件403，不把HTTP200登录页算论文。原Fig.1与页码、代码/数据及全文实验待核。；第22/24项仅题名待分类；FISS和MODTRAN等二次摘要细节未采纳，八作者RSE与后续气体论文的引用不当扩展声明。；此前辉石范围、题名分类、边权异常原稿原图、SOM/Gerbil源码/扩展、油膜/NMF/HERF、演示/摘要全文、CNMF模拟代码和CASI数据仍待核。 |
 | WHISPERS | 2013 | Tidhar Rotman inhomogeneous inhomogenous non-Gaussian density estimation pdf code arxiv figure、Classification of hyperspectral images with Self Organizing Map May Stéphane CNES pdf code dataset arxiv、Random subspace ensemble dictionary learned sparse representation Xue Du Su pdf code dataset arxiv；完整目录第25–27项3项逐审，累计27/161；134未审。定向引擎检索若干查询，未穷尽分页，不视作全主题覆盖。 | 161 / 3 / 3 | 第25–27项3入；累计25入2待，134未审；另SPIE版本关系待核 | WHISPERS2013目录161累计顺序1–27已审：25入2待，余134未审；非年度全领域或全文检索完成。；第25项机构原摘要直接可读，全文/原图未取得；同题SPIE DOI10.1117/12.2016452关系候选待核，不合并日期实验或图。；第26/27项仅题名待分类；SOM作者以官方程序纠正为Stéphane May，登记倒置另存；2001/2019 SOM及2015 EMAP随机子空间实验不借用。；此前林业原PDF跳登录/403、成像仪/气体/青海湖范围、辉石、题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、CNMF代码/CASI数据等缺口保留。 |
+| CVPR Workshops / OTCBVS | 2009 | An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 作者主页原稿为10页，正式目录112–119为8页；未逐页比对正式版，图号及页码仅指下载作者稿。2011 harmonic analysis 章节及2008 stable distributions 论文的扩展关系待核，不自动合并。；全文、资源及正式版差异仍待核验。 |
+| ICIP | 2010 | Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 原稿题头及 DOI 登记均为 Regisration 拼写，保留登记题名，作者主页正常拼写 Registration 作为别名。作者顺序按原稿/精确 DOI，不采用旧主页不同顺序。仅7组人工扰动实验；全文公式、非仿射/动态场景泛化和代码待核。；全文、资源及正式版差异仍待核验。 |
+| TGRS | 2011 | Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。；全文、资源及正式版差异仍待核验。 |
+| ICCV | 2011 | Material-specific user colour profiles from imaging spectroscopy data、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 依赖材料/典型光源库及用户输入；完整算法、用户评价、公开代码/数据与正式版差异待核。Figure 1 是编辑结果示例，方法框架是 Figure 2，不混记图号。；全文、资源及正式版差异仍待核验。 |
+| IGARSS | 2011 | Structured sparse model based feature selection and classification for hyperspectral imagery、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 随机像元划分可能受空间邻近影响，独立地块泛化待核；期刊近题 structured sparse logistic regression / 3D wavelet 版本关系待明确原稿声明。只有两幅输入和结果曲线图，无独立框架图。；全文、资源及正式版差异仍待核验。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -494,6 +499,8 @@
   阅读边界：3新增：1机构原稿缓存摘要、2仅题名待分类；复用2标签，无新增图。原563论文及三维214对象保留。
 - 2026-10-09 / whispers-2013-proceedings-orders-25-to-27-review：新增 3，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：3新增：1机构原摘要、2仅题名待分类；复用1任务标签、新增1暂定方法标签，无新增图。另SPIE同题关系候选待核。原566论文及三维214对象保留。
+- 2026-10-09 / jun-zhou-early-author-2009-2011：新增 5，更新 0，去重 1，排除 0，待处理 257。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：作者263组269书目公共API完整拉取；本批5篇原稿摘要及局部页核验、1篇匹配既有条目，未宣称阅读全文。新增6确认标签，2张原方法图。原569篇事实和三维214成员保留。
 
 ## 未解决缺口
 
@@ -531,3 +538,5 @@
 - ESDAP作者稿Pavia640×340、手工属性阈值及正式版/代码/许可待核验；邻域图2014 workshop与2015期刊的原稿/版本差异受限。自编码器和ELML原始摘要待其他路线。
 - WHISPERS2014目录174已逐项决定165入3排6待，0未审；核化图原摘要错配仅题名待分类。41–93页已筛，94及其他早页、原图/全文/版本关系仍待核，目录闭环不作年度全量声明。
 - WHISPERS2013目录161累计顺序1–27已审：25入2待，余134未审；非年度全领域或全文检索完成。 第25项机构原摘要直接可读，全文/原图未取得；同题SPIE DOI10.1117/12.2016452关系候选待核，不合并日期实验或图。 第26/27项仅题名待分类；SOM作者以官方程序纠正为Stéphane May，登记倒置另存；2001/2019 SOM及2015 EMAP随机子空间实验不借用。 此前林业原PDF跳登录/403、成像仪/气体/青海湖范围、辉石、题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、CNMF代码/CASI数据等缺口保留。
+- 周峻作者调研：ORCID263组269条公开书目全量拉取，5新增1既有，257组待逐篇筛选；135题名直接命中与128无命中仅发现状态，不是全部高光谱论文数。
+- 周峻Scholar429、DBLP导出HTML验证页；作者旧主页仅覆盖2001–2012列项。其他来源全量对照、128无关键词项摘要、版本关系、完整实验和原图仍待核验。
