@@ -123,7 +123,7 @@ DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不�
 
 ## Scholar题名差集初筛
 
-Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增41条高光谱/多光谱书目，均以 Scholar 书目核验后入库；其中32条为题名暂定、9条补有 arXiv 原站摘要核验；STRL报告另有三页 CEUR 全文核验。132条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，待审清零。
+Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增41条高光谱/多光谱书目，均以 Scholar 书目核验后入库；其中28条为题名暂定、12条补有摘要级核验（9条 arXiv、3条 ScienceDirect/CVF）；STRL报告另有三页 CEUR 全文核验。132条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，待审清零。
 
 新增项覆盖计算高光谱成像、目标跟踪、光谱—LiDAR分类、异常检测、解混、去噪、农业/生物医学分类和挑战基准；多光谱SIFT配准单列为 multispectral 关系，不因同作者自动视作高光谱。Scholar题名变体与正式标题按 DOI/题名版本归并，避免重复计数。逐项记录见 `sources/jun-zhou-scholar-screening.json`，原始分页见 `sources/jun-zhou-scholar-pages-0-387.json`；9条 arXiv记录已补原站摘要核验，仍未完成全文；其余新增条目尚未完成摘要和全文核验。
 
@@ -131,12 +131,12 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 ## 2024–2026高光谱来源组筛选
 
-2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 FedDA-HSI、SPECIAL、HOT综述、STU 与频率偏置校准网络已补公开摘要，更新为摘要级核验，其余仍保留题名暂定状态。
+2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 ORCID 2026 的 FedDA-HSI、SPECIAL、HOT综述、STU 与频率偏置校准网络已补公开摘要，更新为摘要级核验，其余仍保留题名暂定状态。
 
-- 2024收录高光谱农业、解混、分类、去噪、LiDAR融合和视频跟踪；2025收录去噪、少样本分类、LiDAR融合和视频跟踪；2026收录医疗高光谱、异常/目标跟踪综述、选带、分类和解混。
+- 2024收录高光谱农业、解混、分类、去噪、LiDAR融合和视频跟踪；2025收录去噪、少样本分类、LiDAR融合、视频跟踪、异常检测和医学分类；其中 Scholar 差集三篇已补摘要级核验；2026收录医疗高光谱、异常/目标跟踪综述、选带、分类和解混。
 - 通用视觉、RGB-D、普通遥感、变化检测、红外可见光融合及其他无明确高光谱输入记录排除；2024 LiDAR-Guided Cross-Attention Fusion 已是既有目录条目，按重复登记处理。
 
-逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
+逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2025 Scholar摘要补充见 `sources/jun-zhou-2025-abstract-followup.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
 
 ## 2023高光谱来源组筛选
 

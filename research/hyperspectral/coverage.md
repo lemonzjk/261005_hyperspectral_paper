@@ -632,6 +632,12 @@
 - 目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源标明公开镜像，未阅读全文。
 - 2026 直接高光谱条目累计 5 篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2026-abstracts-3.json`。
 
+## 2026-10-10 / jun-zhou-scholar-2025-abstract-followup
+
+- 更新3篇，不新增目录论文，不改变三维214对象。MFTNet读取 ScienceDirect 官方摘要；DaSSP-Net读取 ScienceDirect 文章页面的方法与实验摘要信息；黑色素瘤分类读取 CVF 官方会议 PDF 摘要。
+- 三条 Scholar 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；仍保留 `classificationStatus=provisional`，未把摘要性能扩展为全文结论。
+- 2025 Scholar差集累计12条摘要级核验；其余新增项及 ORCID 2025 直接高光谱条目仍待摘要或全文。证据见 `sources/jun-zhou-2025-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

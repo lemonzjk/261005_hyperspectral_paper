@@ -70168,16 +70168,16 @@
         "hyperspectral"
       ],
       "doi": "10.1016/j.patcog.2025.111389",
-      "representation": "Scholar差集题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "多域高光谱目标跟踪：以域适配器保留域特定分布，以空间—光谱提示把不同波段数编码为统一表示并适配基础模型。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "Google Scholar 主页记录与 Crossref 正式书目核验；当前仅题名/书目信息阅读。",
-      "paper": "https://api.crossref.org/works/10.1016/j.patcog.2025.111389",
+      "summary": "DaSSP-Net 面向 VIS、NIR 和 RedNIR 等多域高光谱视频，使用域适配器与波段数不变的空间—光谱提示模块，将统一表示送入基础模型；两阶段训练兼顾共享表示和域特定信息。",
+      "input": "多域高光谱视频，波段数和分布因传感器域而异。",
+      "output": "高光谱视频目标位置与跟踪置信度。",
+      "mechanism": "空间—光谱提示模块提取全局空间—光谱相关并编码任意波段数为固定长度，基础模型只需约1%参数适配；域适配器学习域特定分布；先跨域共训，再逐域微调适配器。",
+      "readingNote": "Google Scholar 主页记录、Crossref正式书目与 ScienceDirect 文章页面核验；页面提供方法和实验摘要信息，未阅读全文。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0031320325000494",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
@@ -70186,16 +70186,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral 或高光谱任务词，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示光谱影像任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅 Scholar、作者信息和正式书目核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与 ScienceDirect 文章页面均明确多域高光谱目标跟踪。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用单一模型学习跨不同波段数和分布的高光谱视频跟踪表示？",
+        "datasets": "HOT2020、HOT2022、HOT2023 和 IMEC25；页面报告四个数据集 AUC 分别为0.682、0.554、0.678、0.705。",
+        "experimentSetting": "VIS、NIR、RedNIR 多域联合训练；空间—光谱提示与域适配器分两阶段优化。",
+        "conclusions": "页面报告 DaSSP-Net 在四个数据集取得有竞争力的跟踪性能，并可新增域适配器而避免重训全部参数。",
+        "limitations": "未阅读全文；训练细节、基线、标注统计、代码、域新增成本和逐项消融仍待核验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/S0031320325000494",
+            "checkedAt": "2026-10-10",
+            "level": "ScienceDirect文章页面/摘要信息",
+            "supports": [
+              "DaSSP-Net域适配器与空间—光谱提示",
+              "任意波段数统一表示、约1%参数适配",
+              "HOT2020/HOT2022/HOT2023/IMEC25与AUC报告"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.patcog.2025.111389",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-scholar-multi-domain-universal-representation-lear-2025-published",
@@ -70203,7 +70222,7 @@
             "url": "https://doi.org/10.1016/j.patcog.2025.111389",
             "doi": "10.1016/j.patcog.2025.111389",
             "year": 2025,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-scholar-multi-domain-universal-representation-lear-2025"
@@ -70279,16 +70298,16 @@
         "hyperspectral"
       ],
       "doi": "10.1016/j.jag.2025.104355",
-      "representation": "Scholar差集题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "高光谱异常检测：把潜在特征按频率分解，用高频支路突出异常、低频支路恢复背景，再融合两类重建结果。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "Google Scholar 主页记录与 Crossref 正式书目核验；当前仅题名/书目信息阅读。",
-      "paper": "https://api.crossref.org/works/10.1016/j.jag.2025.104355",
+      "summary": "MFTNet 针对高光谱异常检测中的背景重建问题，分解编码特征为高频异常与低频背景，增强高频异常并用自注意力融合编码/低频特征恢复背景，最终平均两路检测图。",
+      "input": "高光谱影像立方体；异常目标通常呈高频属性，背景通常呈低频属性。",
+      "output": "高光谱异常检测图。",
+      "mechanism": "多尺度频率分解模块拆出高频异常和低频背景；高频增强模块突出异常；自注意力融合编码特征与低频特征恢复背景；分别重建异常/背景并平均两路检测结果。",
+      "readingNote": "Google Scholar 主页记录、Crossref正式书目与 ScienceDirect 官方摘要核验；摘要称在六个数据集与13个基线比较，未阅读全文。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S1569843225000020",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-anomaly-detection",
@@ -70296,16 +70315,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral 或高光谱任务词，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示光谱影像任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅 Scholar、作者信息和正式书目核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与 ScienceDirect 官方摘要均明确高光谱异常检测。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用异常与背景的频率属性改善高光谱异常检测中的重建质量？",
+        "datasets": "官方摘要报告六个数据集；具体数据集名称、划分和指标待全文核验。",
+        "experimentSetting": "MFTNet 与13个基线比较，其中包括7个深度学习方法；异常和背景分别重建后平均检测图。",
+        "conclusions": "官方摘要报告 MFTNet 获得有竞争力的检测结果；逐数据集数值和消融待全文核验。",
+        "limitations": "摘要未给出完整频率分解实现、训练配置、数据许可、代码实际可用性和逐项实验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/S1569843225000020",
+            "checkedAt": "2026-10-10",
+            "level": "ScienceDirect官方摘要",
+            "supports": [
+              "MFTNet多尺度频率分解、高频异常/低频背景双流机制",
+              "六数据集与13基线比较",
+              "代码仓库链接"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.jag.2025.104355",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025-published",
@@ -70313,7 +70351,7 @@
             "url": "https://doi.org/10.1016/j.jag.2025.104355",
             "doi": "10.1016/j.jag.2025.104355",
             "year": 2025,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025"
@@ -71094,16 +71132,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/wacv61041.2025.00632",
-      "representation": "Scholar差集题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "医学高光谱分类：协同稀疏解混减少冗余，像素级打乱与交互相似性混合注意力联合建模光谱和空间信息。",
       "tags": [],
-      "summary": "题名直接指向高光谱影像任务，保留暂定记录。",
-      "input": "高光谱影像或高光谱相关多源数据；具体设置待摘要。",
-      "output": "题名所示任务输出；具体定义待摘要。",
-      "mechanism": "摘要和全文待核，不从题名外推算法细节。",
-      "readingNote": "Google Scholar 主页记录与 Crossref 正式书目核验；当前仅题名/书目信息阅读。",
-      "paper": "https://api.crossref.org/works/10.1109/wacv61041.2025.00632",
+      "summary": "该 WACV 2025 方法针对组织高光谱黑色素瘤分类，结合协同稀疏解混、像素级打乱和交互相似性混合注意力，在组织学核验的公开数据集上缓解光谱冗余与空间—光谱融合困难。",
+      "input": "组织学核验的皮肤/黑色素瘤高光谱图像。",
+      "output": "黑色素瘤病灶分类结果。",
+      "mechanism": "协同稀疏解混建模材料成分；像素级打乱增强样本关系；交互相似性混合注意力融合空间与光谱信息，并以有限训练数据评估鲁棒性。",
+      "readingNote": "Google Scholar 主页记录、DBLP/CVF正式会议记录与 CVF 官方PDF摘要核验；摘要报告20%训练数据下73.34%总体准确率，未阅读全文。",
+      "paper": "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "biomedical-imaging",
@@ -71111,16 +71149,35 @@
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "题名直接包含 hyperspectral 或高光谱任务词，摘要待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "题名所示光谱影像任务与方法如何工作？",
-        "datasets": "摘要待核。",
-        "experimentSetting": "仅 Scholar、作者信息和正式书目核验。",
-        "conclusions": "待摘要或全文核验。",
-        "limitations": "摘要、实验、代码、数据和版本差异待查。",
+        "relationNote": "题名与 CVF 官方摘要均明确医学高光谱黑色素瘤分类。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在有限标注和病灶/色素重叠条件下提高黑色素瘤高光谱分类？",
+        "datasets": "CVF 摘要称使用公开且经组织学核验的数据集；具体名称、样本划分和许可待全文核验。",
+        "experimentSetting": "比较不同训练数据比例和现有方法；摘要报告仅用20%训练数据时总体准确率73.34%。",
+        "conclusions": "官方摘要报告该方法可处理病灶与色素区域重叠，并优于比较方法；完整指标和统计显著性待全文核验。",
+        "limitations": "摘要未给出数据集名称、类别定义、预处理、完整指标、代码运行和临床外部验证。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "CVF官方会议PDF摘要",
+            "supports": [
+              "协同稀疏解混、像素级打乱和交互相似性混合注意力",
+              "公开组织学核验数据集",
+              "20%训练数据下73.34%总体准确率"
+            ]
+          },
+          {
+            "url": "https://dblp.org/rec/conf/wacv/EkongZS025.html",
+            "checkedAt": "2026-10-10",
+            "level": "DBLP正式会议书目",
+            "supports": [
+              "WACV 2025页码、作者和正式DOI"
+            ]
+          }
+        ],
         "versions": [
           {
             "id": "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025-published",
@@ -71128,7 +71185,7 @@
             "url": "https://doi.org/10.1109/wacv61041.2025.00632",
             "doi": "10.1109/wacv61041.2025.00632",
             "year": 2025,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
