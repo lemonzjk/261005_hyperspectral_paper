@@ -1,4 +1,5 @@
 import type { LibraryCategory, Paper, PresentPaper } from './types';
+import { matchesAuthor } from './authors.ts';
 
 /** Stable sorting preserves catalog order when paper counts are equal. */
 export const sortByPaperCount = <T extends { id: string }>(items: T[], count: (id: string) => number): T[] =>
@@ -15,7 +16,7 @@ export const libraryPresentation = (categories: LibraryCategory[]): PresentPaper
 };
 
 export interface LibraryFilters {
-  query: string; yearFrom: string; yearTo: string; venues: string[];
+  query: string; author: string; yearFrom: string; yearTo: string; venues: string[];
   categoryIds: string[]; pending: boolean; reading: string;
 }
 
@@ -27,6 +28,7 @@ export function filterLibrary(papers: Paper[], filters: LibraryFilters, categori
     (!filters.yearTo || paper.year <= Number(filters.yearTo)) &&
     (!filters.venues.length || filters.venues.includes(paper.venue)) &&
     (!filters.reading || paper.library?.readingProgress === filters.reading) &&
+    matchesAuthor(paper.authors, filters.author) &&
     filters.query.trim().toLowerCase().split(/\s+/).every(word =>
       `${paper.title} ${paper.shortTitle} ${paper.authors} ${paper.summary} ${paper.venue} ${paper.doi ?? ''} ${paper.tags.join(' ')} ${present(paper).name} ${paper.library?.researchQuestion ?? ''}`.toLowerCase().includes(word)) &&
     (excludeCategories || (filters.pending ? !paper.library?.categoryIds.length :
@@ -41,7 +43,7 @@ export function readLibraryFilters(search: string, categories: LibraryCategory[]
   let yearTo = year('yearTo') || year('year');
   if (yearFrom && yearTo && Number(yearFrom) > Number(yearTo)) [yearFrom, yearTo] = [yearTo, yearFrom];
   const pending = params.get('classification') === 'pending';
-  return { query: params.get('q') ?? '', yearFrom, yearTo,
+  return { query: params.get('q') ?? '', author: params.get('author') ?? '', yearFrom, yearTo,
     venues: [...new Set(params.getAll('venue').filter(venue => papers.some(paper => paper.venue === venue)))],
     categoryIds: pending ? [] : [...new Set(params.getAll('category').filter(id => categories.some(category => category.id === id)))],
     pending, reading: ['pending', 'title_only', 'abstract_read', 'full_text_read'].includes(params.get('reading') ?? '') ? params.get('reading')! : '',

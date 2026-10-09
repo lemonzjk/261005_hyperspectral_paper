@@ -5,6 +5,7 @@ import { tracks as trackDefinitions } from '../src/tracks.ts';
 import { timelineLayout } from '../src/timeline-layout.ts';
 import { groupPapers } from '../src/map-groups.ts';
 import { filterLibrary, libraryPresentation, readLibraryFilters, sortByPaperCount } from '../src/library.ts';
+import { matchesAuthor, splitAuthors } from '../src/authors.ts';
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
 const contextCharacters = [...context].length;
@@ -215,7 +216,18 @@ assertDistinctMethods([versionParent, { ...versionChild, library: { ...versionCh
 console.log('Identity audit valid: normalized titles, DOIs, arXiv IDs and explicit version families.');
 
 // Test union semantics, counts independent of category selection, URL roundtrip, and SVG coverage.
-const blank = { query: '', yearFrom: '', yearTo: '', venues: [], categoryIds: [], pending: false, reading: '' };
+const blank = { query: '', author: '', yearFrom: '', yearTo: '', venues: [], categoryIds: [], pending: false, reading: '' };
+assert(matchesAuthor('Janja Avbelj, Rupert Müller', 'MULLER'), 'Author matching ignores case and diacritics');
+assert(matchesAuthor('Antonio Plaza; Qian Du', 'Plaza Antonio'), 'Name words may be entered in either order');
+assert(!matchesAuthor('Antonio Plaza, Qian Du', 'Antonio Du'), 'Do not combine names of different coauthors');
+assert.deepEqual(splitAuthors('Qian Du and Antonio Plaza, et al.'), ['Qian Du', 'Antonio Plaza']);
+const authorFixture = libraryPapers.slice(0, 2).map((paper, index) => ({ ...paper,
+  authors: index ? 'Qian Du' : 'Antonio Plaza', title: index ? 'Antonio Plaza study' : paper.title,
+  year: 2024,
+}));
+assert.deepEqual(filterLibrary(authorFixture, { ...blank, author: 'Plaza', yearFrom: '2024' }, categories).map(paper => paper.id), [authorFixture[0].id], 'Author filter uses authors only and intersects with years');
+assert.equal(filterLibrary(authorFixture, { ...blank, author: 'Plaza', yearFrom: '2025' }, categories).length, 0, 'Year filter may exclude an author match');
+assert.equal(readLibraryFilters('?author=Rupert%20M%C3%BCller', categories, libraryPapers).author, 'Rupert Müller', 'Author URL preserves Unicode');
 const sortingFixture = [{ id: 'first' }, { id: 'second' }, { id: 'third' }];
 assert.deepEqual(sortByPaperCount(sortingFixture, id => id === 'first' ? 1 : 3).map(item => item.id), ['second', 'third', 'first'], 'Sort by descending count with stable ties');
 assert.deepEqual(sortingFixture.map(item => item.id), ['first', 'second', 'third'], 'Sorting must not mutate catalog order');
