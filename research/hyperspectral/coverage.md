@@ -228,6 +228,7 @@
 | Computer Vision and Pattern Recognition in Environmental Informatics | 2015 | Preface、Jun Zhou ORCID0000-0001-5822-8233; hyperspectral scope；ORCID 2015余十组逐项精确审查，不是场所年度全量。 | 1 / 1 / 1 | 作者来源单篇审查：excluded; 非年度系统检索 | DBLP完整目录、Scholar后续分页、机构作者主页差集与旧年无题名命中仍待。 |
 | WHISPERS | 2015 | Multiple graph regularized NMF for hyperspectral unmixing、Jun Zhou Scholar ORCID DBLP version audit；Scholar单条目与作者来源交叉核对；不是年度全量。 | 1 / 1 / 1 | 作者版本差集：included；非年度系统检索 | ORCID登记年份与正式会议年份差异已保留；完整PDF/摘要及正式页码仍待。 |
 | WHISPERS | 2015 | On the sampling strategies for evaluation of joint spectral-spatial information based classifiers、Jun Zhou Scholar ORCID DBLP version audit；Scholar单条目与作者来源交叉核对；不是年度全量。 | 1 / 1 / 1 | 作者版本差集：included；非年度系统检索 | ORCID登记年份与正式会议年份差异已保留；完整PDF/摘要及正式页码仍待。 |
+| ORCID author works | 2016 | Jun Zhou 2016 hyperspectral、Nonnegative Matrix Factorization、hyperspectral image classification、hyperspectral unmixing；ORCID orders 164–178; not a complete 2016 venue scan. | 15 / 15 / 15 | 作者来源组范围完成；非年度系统检索 | 7篇作者稿/摘要局部，1篇公开摘要无正文；正式版全文、图版和代码仍待。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -574,6 +575,8 @@
   阅读边界：十组均完成摘要/书目范围决定；三篇新增条目，七篇排除。新增条目未取得或未逐页核完整全文。
 - 2026-10-10 / jun-zhou-whispers-2015-version-audit：新增 2，更新 0，去重 0，排除 0，待处理 200。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：两条 ORCID 2017 登记记录按 Scholar、DBLP、DOI、作者来源和官方程序解析为 WHISPERS 2015；一篇摘要局部核验，一篇题名/程序核验。
+- 2026-10-10 / jun-zhou-orcid-2016-164-178：新增 7，更新 0，去重 1，排除 7，待处理 186。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：7篇以作者稿/公开摘要和正式DOI核验；1篇仅公开摘要；不标全文。
 
 ## 未解决缺口
 

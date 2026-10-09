@@ -62075,6 +62075,698 @@
       "venueTier": "conference",
       "tags": [],
       "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "partially-known-endmember-nmf-tgrs-2016",
+      "shortTitle": "Partially-known endmember NMF",
+      "title": "Nonnegative-Matrix-Factorization-Based Hyperspectral Unmixing With Partially Known Endmembers",
+      "authors": "Lei Tong, Jun Zhou, Yuntao Qian, Xiao Bai, Yongsheng Gao",
+      "year": 2016,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2016.2586110",
+      "representation": "在NMF高光谱解混中加入部分已知端元谱约束，通过优化同时估计端元和丰度。",
+      "tags": [],
+      "summary": "针对部分端元光谱先验可用的高光谱解混任务，将已知端元信息作为约束传播到NMF优化过程。",
+      "input": "高光谱影像、部分已知端元光谱及待估计端元/丰度。",
+      "output": "端元谱与像元丰度估计。",
+      "mechanism": "以已知端元谱构造约束矩阵，最小化重建误差与先验差异，并用乘法更新优化NMF。",
+      "readingNote": "Griffith作者稿摘要与方法局部核验；正式TGRS54(11):6531–6544。作者稿标注2016-06-17 draft，未将局部阅读记为全文。",
+      "paper": "https://research-repository.griffith.edu.au/bitstream/10072/100457/1/TongPUB2302.pdf",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "citation": "@article{partially_known_endmember_nmf_tgrs_2016,\n  title = {Nonnegative-Matrix-Factorization-Based Hyperspectral Unmixing With Partially Known Endmembers},\n  author = {Lei Tong and Jun Zhou and Yuntao Qian and Xiao Bai and Yongsheng Gao},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2016},\n  pages = {6531--6544},\n  doi = {10.1109/tgrs.2016.2586110}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "low-rank-matrix-factorization",
+          "endmember-prior-regularization"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "作者摘要直接以高光谱解混为研究对象；普通NMF背景不单列为基础方法。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用部分已知端元先验改善非负矩阵分解高光谱解混？",
+        "datasets": "作者摘要报告合成与真实数据；具体影像名称、规模和划分待完整正文核验。",
+        "experimentSetting": "作者稿摘要、第II节模型与第III节方法局部核验；未逐项复核全部参数、表格和结果。",
+        "conclusions": "作者报告先验约束NMF在合成和真实数据上优于若干有/无先验基线；性能数值待全文核验。",
+        "limitations": "作者稿为draft；正式版与作者稿差异、先验误差敏感性及数据下载入口待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstream/10072/100457/1/TongPUB2302.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "作者稿摘要与方法局部",
+            "supports": [
+              "摘要明确部分已知端元高光谱解混、先验约束及合成/真实数据实验。",
+              "方法局部给出已知端元矩阵约束和NMF乘法更新。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2016.2586110",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref DOI书目",
+            "supports": [
+              "正式题名、作者、TGRS卷期、2016年及页码6531–6544。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "partially-known-endmember-nmf-tgrs-2016-published",
+            "type": "正式期刊版",
+            "url": "https://doi.org/10.1109/tgrs.2016.2586110",
+            "doi": "10.1109/tgrs.2016.2586110",
+            "year": 2016,
+            "relation": "正式TGRS54(11):6531–6544。"
+          },
+          {
+            "id": "partially-known-endmember-nmf-tgrs-2016-source",
+            "type": "Griffith作者稿",
+            "url": "https://research-repository.griffith.edu.au/bitstream/10072/100457/1/TongPUB2302.pdf",
+            "year": 2016,
+            "relation": "作者稿；局部页码只对应本PDF。"
+          }
+        ],
+        "methodFamilyId": "partially-known-endmember-nmf-tgrs-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-10",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "f3d5376afa900b67a7c4515c92c11476c0596c20d7da12956a80733ed14081d7",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/bitstream/10072/100457/1/TongPUB2302.pdf",
+            "https://api.crossref.org/works/10.1109/tgrs.2016.2586110"
+          ]
+        }
+      }
+    },
+    {
+      "id": "svm-band-weighting-lgrs-2016",
+      "shortTitle": "Interclass-distance band weighting",
+      "title": "Band Weighting via Maximizing Interclass Distance for Hyperspectral Image Classification",
+      "authors": "Cheng Yan, Xiao Bai, Peng Ren, Lu Bai, Wenzhong Tang, Jun Zhou",
+      "year": 2016,
+      "venue": "GRSL",
+      "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/lgrs.2016.2553699",
+      "representation": "以多类二元SVM分类间隔为目标学习逐类波段权重，再按权重分类。",
+      "tags": [],
+      "summary": "通过最大化类间光谱距离学习每类波段权重，避免直接丢弃可能有用的光谱波段，用于高光谱分类。",
+      "input": "带标签高光谱样本与全部光谱波段。",
+      "output": "逐类波段权重和分类结果。",
+      "mechanism": "训练二元SVM，按修改后的分类分数平衡训练波段，重写SVM目标得到权重向量，再以最大分数类别输出。",
+      "readingNote": "Griffith公开作者稿摘要和正文局部核验；正式GRSL13(7):922–925，未标全文。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "citation": "@article{svm_band_weighting_lgrs_2016,\n  title = {Band Weighting via Maximizing Interclass Distance for Hyperspectral Image Classification},\n  author = {Cheng Yan and Xiao Bai and Peng Ren and Lu Bai and Wenzhong Tang and Jun Zhou},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2016},\n  pages = {922--925},\n  doi = {10.1109/lgrs.2016.2553699}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-band-selection",
+          "land-cover-classification",
+          "svm-margin-band-weighting"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "作者摘要明确多类高光谱遥感影像分类；波段权重与选带均服务光学高光谱输入。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用类间距离学习保留光谱信息的逐类波段权重？",
+        "datasets": "作者摘要报告两个基准数据集；完整数据集名称和划分待全文核验。",
+        "experimentSetting": "作者稿摘要和方法局部核验；未逐项复核全部SVM参数、表格与数值。",
+        "conclusions": "作者报告两个基准数据集上的分类有效性；不将结果推广到所有分类器。",
+        "limitations": "作者稿与正式版页码需分开；实验协议、参数敏感性和代码入口待核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith作者稿摘要与正文局部",
+            "supports": [
+              "摘要明确多类高光谱分类、二元SVM和最大化类间光谱距离。",
+              "正文明确逐类波段权重及两个基准数据集实验。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1109/lgrs.2016.2553699",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE DOI书目",
+            "supports": [
+              "正式题名、作者、GRSL身份和页码922–925。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "svm-band-weighting-lgrs-2016-published",
+            "type": "正式期刊版",
+            "url": "https://doi.org/10.1109/lgrs.2016.2553699",
+            "doi": "10.1109/lgrs.2016.2553699",
+            "year": 2016,
+            "relation": "正式GRSL13(7):922–925。"
+          },
+          {
+            "id": "svm-band-weighting-lgrs-2016-source",
+            "type": "Griffith作者稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
+            "year": 2016,
+            "relation": "作者稿；局部页码只对应本PDF。"
+          }
+        ],
+        "methodFamilyId": "svm-band-weighting-lgrs-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-10",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d8073fc0db9e6a02383835f1ea4718efa7005fd561d281ec30894e6158ea6967",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
+            "https://doi.org/10.1109/lgrs.2016.2553699"
+          ]
+        }
+      }
+    },
+    {
+      "id": "crf-cnn-hsi-igarss-2016",
+      "shortTitle": "CNN-CRF HSI segmentation",
+      "title": "CRF learning with CNN features for hyperspectral image segmentation",
+      "authors": "Fahim Irfan Alam, Jun Zhou, Alan Wee-Chung Liew, Xiuping Jia",
+      "year": 2016,
+      "venue": "IGARSS",
+      "publicationName": "2016 IEEE International Geoscience and Remote Sensing Symposium",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/igarss.2016.7730798",
+      "representation": "先以光谱—空间特征生成超像素，再用CNN标注，并将高斯成对势CRF均值场推理展开为可学习网络层。",
+      "tags": [],
+      "summary": "将超像素级CNN和条件随机场联合，用于高光谱影像光谱—空间分割。",
+      "input": "高光谱影像及由光谱、空间特征生成的超像素。",
+      "output": "超像素/影像语义分割标签。",
+      "mechanism": "CNN提取超像素标签，CRF以高斯成对势约束空间一致性，均值场推理重写为循环网络层并端到端结合。",
+      "readingNote": "Griffith作者稿摘要、引言和方法开头局部核验；正式IGARSS2016:6890–6893，未标全文。",
+      "paper": "https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "citation": "@inproceedings{crf_cnn_hsi_igarss_2016,\n  title = {CRF learning with CNN features for hyperspectral image segmentation},\n  author = {Fahim Irfan Alam and Jun Zhou and Alan Wee-Chung Liew and Xiuping Jia},\n  booktitle = {2016 IEEE International Geoscience and Remote Sensing Symposium},\n  year = {2016},\n  pages = {6890--6893},\n  doi = {10.1109/igarss.2016.7730798}\n}\n",
+      "library": {
+        "categoryIds": [
+          "semantic-segmentation",
+          "representation-learning"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "作者摘要直接以高光谱影像光谱—空间分割为对象；CRF/CNN是影像分割机制。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何把CNN特征与CRF空间一致性联合用于高光谱影像分割？",
+        "datasets": "摘要未列完整数据集名称；公开作者稿局部不足以确认规模和划分。",
+        "experimentSetting": "作者稿摘要、引言及方法开头局部核验；预备结果不补成完整性能结论。",
+        "conclusions": "作者报告联合CNN-CRF框架具有初步有效性；具体比较与数值待全文。",
+        "limitations": "论文为IGARSS短文，摘要使用“preliminary results”；不能把初步结果等同成熟基准结论。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith作者稿摘要与方法局部",
+            "supports": [
+              "摘要明确高光谱光谱—空间分割、超像素、CNN和CRF均值场展开。",
+              "引言明确CRF与CNN联合并用于超像素级标注。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1109/igarss.2016.7730798",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE DOI书目",
+            "supports": [
+              "正式题名、作者、IGARSS2016身份和页码6890–6893。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "crf-cnn-hsi-igarss-2016-published",
+            "type": "正式会议版",
+            "url": "https://doi.org/10.1109/igarss.2016.7730798",
+            "doi": "10.1109/igarss.2016.7730798",
+            "year": 2016,
+            "relation": "正式IGARSS2016:6890–6893。"
+          },
+          {
+            "id": "crf-cnn-hsi-igarss-2016-source",
+            "type": "Griffith作者稿",
+            "url": "https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf",
+            "year": 2016,
+            "relation": "作者稿；局部页码只对应本PDF。"
+          }
+        ],
+        "methodFamilyId": "crf-cnn-hsi-igarss-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-10",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "0bb5ed9a1248657e27bfb2f6da34676bf4bf5380a7a79e01555c4d22c5dde6dc",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf",
+            "https://doi.org/10.1109/igarss.2016.7730798"
+          ]
+        }
+      }
+    },
+    {
+      "id": "weighted-band-selection-igarss-2016",
+      "shortTitle": "One-class SVM band selection",
+      "title": "Discriminative weighted band selection via one-class SVM for hyperspectral imagery",
+      "authors": "Yu Tang, Enlong Fan, Cheng Yan, Xiao Bai, Jun Zhou",
+      "year": 2016,
+      "venue": "IGARSS",
+      "publicationName": "2016 IEEE International Geoscience and Remote Sensing Symposium",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/igarss.2016.7729714",
+      "representation": "以一类SVM学习光谱样本的判别权重，再按权重选择高光谱波段。",
+      "tags": [],
+      "summary": "提出基于一类SVM的判别加权选带方法，利用光谱类内/类间信息减少高光谱波段冗余。",
+      "input": "高光谱影像光谱样本与候选波段。",
+      "output": "判别波段权重及选定波段集合。",
+      "mechanism": "以一类SVM目标优化带权光谱表示，按学习到的权重排序和筛选波段。",
+      "readingNote": "Griffith作者稿摘要与局部正文核验；正式IGARSS2016:2765–2768，未标全文。",
+      "paper": "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "citation": "@inproceedings{weighted_band_selection_igarss_2016,\n  title = {Discriminative weighted band selection via one-class SVM for hyperspectral imagery},\n  author = {Yu Tang and Enlong Fan and Cheng Yan and Xiao Bai and Jun Zhou},\n  booktitle = {2016 IEEE International Geoscience and Remote Sensing Symposium},\n  year = {2016},\n  pages = {2765--2768},\n  doi = {10.1109/igarss.2016.7729714}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-band-selection",
+          "svm-margin-band-weighting"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "标题和作者稿摘要直接指向高光谱影像波段选择；分类标签保留为选带及SVM机制。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用一类SVM学习判别波段权重并选择高光谱波段？",
+        "datasets": "作者稿摘要提及高光谱影像实验；数据集名称、规模与划分待完整正文核验。",
+        "experimentSetting": "作者稿摘要及方法局部核验；未逐项复核全部参数、比较基线和结果表。",
+        "conclusions": "作者报告一类SVM加权选带有效；具体性能和跨数据集稳定性待全文。",
+        "limitations": "IGARSS短文全文尚未逐页核验；不将摘要方法扩展为所有一类分类任务。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith作者稿摘要与正文局部",
+            "supports": [
+              "摘要明确高光谱影像判别加权选带及一类SVM机制。",
+              "正文局部支持按波段权重筛选并用于高光谱任务。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1109/igarss.2016.7729714",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE DOI书目",
+            "supports": [
+              "正式题名、作者、IGARSS2016身份和页码2765–2768。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "weighted-band-selection-igarss-2016-published",
+            "type": "正式会议版",
+            "url": "https://doi.org/10.1109/igarss.2016.7729714",
+            "doi": "10.1109/igarss.2016.7729714",
+            "year": 2016,
+            "relation": "正式IGARSS2016:2765–2768。"
+          },
+          {
+            "id": "weighted-band-selection-igarss-2016-source",
+            "type": "Griffith作者稿",
+            "url": "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
+            "year": 2016,
+            "relation": "作者稿；局部页码只对应本PDF。"
+          }
+        ],
+        "methodFamilyId": "weighted-band-selection-igarss-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-10",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "531267d7d17832fd818106e1b6316dddae8bf107233dfd96d111075ec0b2fe7e",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
+            "https://doi.org/10.1109/igarss.2016.7729714"
+          ]
+        }
+      }
+    },
+    {
+      "id": "endmember-sparse-graph-nmf-icip-2016",
+      "shortTitle": "Endmember sparse-graph NMF",
+      "title": "Nonnegative matrix factorization with endmember sparse graph learning for hyperspectral unmixing",
+      "authors": "Bin Qian, Jun Zhou, Lei Tong, Xiaobo Shen, Fan Liu",
+      "year": 2016,
+      "venue": "ICIP",
+      "publicationName": "2016 IEEE International Conference on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/icip.2016.7532677",
+      "representation": "将端元稀疏图学习嵌入NMF，在解混同时学习端元关系，并可加入丰度平滑约束。",
+      "tags": [],
+      "summary": "提出端元稀疏图学习NMF，在估计端元和丰度的同时学习端元几何关系，用于高光谱解混。",
+      "input": "高光谱影像像元矩阵及端元候选关系。",
+      "output": "端元谱、丰度矩阵和端元稀疏图。",
+      "mechanism": "把端元稀疏图结构整合进NMF，交替执行图学习与矩阵分解，并扩展丰度平滑约束。",
+      "readingNote": "Griffith作者稿摘要与方法局部核验；正式ICIP2016:1843–1847，未标全文。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4256ac55-5a64-5482-bcaf-fd0d51e00bf0/content",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "citation": "@inproceedings{endmember_sparse_graph_nmf_icip_2016,\n  title = {Nonnegative Matrix Factorization with Endmember Sparse Graph Learning for Hyperspectral Unmixing},\n  author = {Bin Qian and Jun Zhou and Lei Tong and Xiaobo Shen and Fan Liu},\n  booktitle = {2016 IEEE International Conference on Image Processing},\n  year = {2016},\n  pages = {1843--1847},\n  doi = {10.1109/icip.2016.7532677}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "low-rank-matrix-factorization",
+          "graph-learning"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "作者稿摘要明确高光谱解混；图学习标签描述端元关系约束，不改变解混任务主类。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在NMF解混中同时学习端元稀疏图结构？",
+        "datasets": "摘要报告合成与真实数据；具体数据集和规模待全文核验。",
+        "experimentSetting": "作者稿摘要和方法局部核验；未逐项复核优化参数、基线和结果表。",
+        "conclusions": "作者报告端元图学习及丰度平滑在合成、真实数据上有效；具体数值待全文。",
+        "limitations": "ICIP短文与作者稿版本差异待逐页核对；不能把图学习效果推广为所有NMF任务。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4256ac55-5a64-5482-bcaf-fd0d51e00bf0/content",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith作者稿摘要与方法局部",
+            "supports": [
+              "摘要明确高光谱解混、端元稀疏图学习和NMF。",
+              "方法局部说明同步图学习、矩阵分解与丰度平滑扩展。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1109/icip.2016.7532677",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE DOI书目",
+            "supports": [
+              "正式题名、作者、ICIP2016身份和页码1843–1847。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "endmember-sparse-graph-nmf-icip-2016-published",
+            "type": "正式会议版",
+            "url": "https://doi.org/10.1109/icip.2016.7532677",
+            "doi": "10.1109/icip.2016.7532677",
+            "year": 2016,
+            "relation": "正式ICIP2016:1843–1847。"
+          },
+          {
+            "id": "endmember-sparse-graph-nmf-icip-2016-source",
+            "type": "Griffith作者稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4256ac55-5a64-5482-bcaf-fd0d51e00bf0/content",
+            "year": 2016,
+            "relation": "作者稿；局部页码只对应本PDF。"
+          }
+        ],
+        "methodFamilyId": "endmember-sparse-graph-nmf-icip-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-10",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "4cc3d83c9e7d38f2839726ab0ca2daf062cdfdda283a25408493d6f59cddfd1a",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4256ac55-5a64-5482-bcaf-fd0d51e00bf0/content",
+            "https://doi.org/10.1109/icip.2016.7532677"
+          ]
+        }
+      }
+    },
+    {
+      "id": "structured-discriminative-nmf-icip-2016",
+      "shortTitle": "Structured discriminative NMF",
+      "title": "Structured Discriminative Nonnegative Matrix Factorization for hyperspectral unmixing",
+      "authors": "Xue Li, Jun Zhou, Lei Tong, Xun Yu, Jianhui Guo, Chunxia Zhao",
+      "year": 2016,
+      "venue": "ICIP",
+      "publicationName": "2016 IEEE International Conference on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/icip.2016.7532678",
+      "representation": "在NMF中加入结构判别正则，同时建模光谱响应局部亲和与远距离排斥，并施加丰度稀疏约束。",
+      "tags": [],
+      "summary": "提出结构判别NMF以保留高光谱数据结构，联合局部亲和、远距离排斥和丰度稀疏性改善解混。",
+      "input": "高光谱影像混合像元及光谱响应关系。",
+      "output": "端元谱与丰度估计。",
+      "mechanism": "以结构判别正则描述局部相似和远距离排斥，再以稀疏约束优化NMF解混。",
+      "readingNote": "Scispace公开摘要、Crossref书目和ICIP页码核验；未取得可下载全文，不标全文阅读。",
+      "paper": "https://scispace.com/papers/structured-discriminative-nonnegative-matrix-factorization-218fqxy2s4",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "abstract_verified_secondary_index",
+      "citation": "@inproceedings{structured_discriminative_nmf_icip_2016,\n  title = {Structured Discriminative Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Xue Li and Jun Zhou and Lei Tong and Xun Yu and Jianhui Guo and Chunxia Zhao},\n  booktitle = {2016 IEEE International Conference on Image Processing},\n  year = {2016},\n  pages = {1848--1852},\n  doi = {10.1109/icip.2016.7532678}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "low-rank-matrix-factorization",
+          "graph-learning"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "公开摘要直接以高光谱解混为对象；完整论文待取得，不补造实验细节。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在NMF解混中同时保留局部亲和、远距离排斥和丰度稀疏结构？",
+        "datasets": "摘要仅说明合成和真实数据；具体数据集待全文核验。",
+        "experimentSetting": "公开摘要、Crossref和ICIP页码核验；未取得正文。",
+        "conclusions": "摘要报告相对多种方法的解混性能改善；具体指标和实验协议待正文。",
+        "limitations": "当前证据主要为公开摘要和书目，来源页并非出版社全文；分类确认不等同全文阅读。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://scispace.com/papers/structured-discriminative-nonnegative-matrix-factorization-218fqxy2s4",
+            "checkedAt": "2026-10-10",
+            "level": "公开摘要页",
+            "supports": [
+              "摘要明确高光谱解混、结构判别正则、局部亲和、远距离排斥和稀疏约束。",
+              "公开页登记ICIP2016、页码1848–1852和作者。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1109/icip.2016.7532678",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE DOI书目",
+            "supports": [
+              "正式题名、作者、ICIP2016身份和DOI。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "structured-discriminative-nmf-icip-2016-published",
+            "type": "正式会议版",
+            "url": "https://doi.org/10.1109/icip.2016.7532678",
+            "doi": "10.1109/icip.2016.7532678",
+            "year": 2016,
+            "relation": "正式ICIP2016:1848–1852。"
+          }
+        ],
+        "methodFamilyId": "structured-discriminative-nmf-icip-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-10",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "76dff1851e44a95e80d485b4fba307fcb9f3734c8054ef52db6c0911f6ff4575",
+          "sourceUrls": [
+            "https://scispace.com/papers/structured-discriminative-nonnegative-matrix-factorization-218fqxy2s4",
+            "https://doi.org/10.1109/icip.2016.7532678"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tensor-morphological-profile-icip-2016",
+      "shortTitle": "Tensor morphological profile",
+      "title": "Tensor morphological profile for hyperspectral image classification",
+      "authors": "Jie Liang, Jun Zhou, Yongsheng Gao",
+      "year": 2016,
+      "venue": "ICIP",
+      "publicationName": "2016 IEEE International Conference on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/icip.2016.7532748",
+      "representation": "把高光谱立方体作为高阶张量，定义对应阶数的形态学剖面，提取融合光谱—空间结构。",
+      "tags": [],
+      "summary": "提出张量形态学剖面，把传统二维形态学扩展到高维高光谱张量，用于光谱—空间分类特征提取。",
+      "input": "高光谱图像张量及其光谱—空间结构。",
+      "output": "张量形态学剖面特征和地物分类结果。",
+      "mechanism": "对高阶张量执行对应阶数形态学操作，构建张量形态学剖面，再用于高光谱分类。",
+      "readingNote": "Griffith作者稿摘要、Pavia University图示与正文局部核验；正式ICIP2016:2197–2201，未标全文。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "citation": "@inproceedings{tensor_morphological_profile_icip_2016,\n  title = {Tensor Morphological Profile for Hyperspectral Image Classification},\n  author = {Jie Liang and Jun Zhou and Yongsheng Gao},\n  booktitle = {2016 IEEE International Conference on Image Processing},\n  year = {2016},\n  pages = {2197--2201},\n  doi = {10.1109/icip.2016.7532748}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "morphological-profiles"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "作者稿摘要直接研究高光谱影像分类；张量形态学是光谱—空间特征方法。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何把高光谱图像的高阶光谱—空间结构纳入形态学剖面？",
+        "datasets": "作者稿摘要报告两个常用高光谱影像；Pavia University图示，第二数据集名称及规模待全文核验。",
+        "experimentSetting": "作者稿摘要、Pavia University图示和正文局部核验；未逐项复核分类器、采样、参数及结果表。",
+        "conclusions": "作者报告张量形态学剖面在两个高光谱影像上持续优于扩展形态学剖面；具体数值待全文。",
+        "limitations": "作者稿与正式ICIP版页码关系待逐页核对；不能将形态学优势推广到所有传感器或分类器。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith作者稿摘要与正文局部",
+            "supports": [
+              "摘要明确张量形态学剖面、高光谱分类及融合光谱—空间结构。",
+              "Pavia University图示和摘要报告两个常用高光谱影像实验。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1109/icip.2016.7532748",
+            "checkedAt": "2026-10-10",
+            "level": "IEEE DOI书目",
+            "supports": [
+              "正式题名、作者、ICIP2016身份和页码2197–2201。"
+            ]
+          },
+          {
+            "url": "https://dblp.org/rec/conf/icip/LiangZG16",
+            "checkedAt": "2026-10-10",
+            "level": "DBLP书目",
+            "supports": [
+              "作者、论文身份和ICIP2016页码2197–2201。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "tensor-morphological-profile-icip-2016-published",
+            "type": "正式会议版",
+            "url": "https://doi.org/10.1109/icip.2016.7532748",
+            "doi": "10.1109/icip.2016.7532748",
+            "year": 2016,
+            "relation": "正式ICIP2016:2197–2201。"
+          },
+          {
+            "id": "tensor-morphological-profile-icip-2016-source",
+            "type": "Griffith作者稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
+            "year": 2016,
+            "relation": "作者稿；局部页码只对应本PDF。"
+          }
+        ],
+        "methodFamilyId": "tensor-morphological-profile-icip-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-10",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b2946584c122c422f70b16af8c8d9dfc21ff082a1784a956a48731bb2d072d43",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
+            "https://doi.org/10.1109/icip.2016.7532748",
+            "https://dblp.org/rec/conf/icip/LiangZG16"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -62472,7 +63164,8 @@
         "hyplex-metasurface",
         "spectral-graph-techniques-overview-2014",
         "svm-mlp-msf-marker-whispers-2014",
-        "segsalsa-whispers-2014"
+        "segsalsa-whispers-2014",
+        "crf-cnn-hsi-igarss-2016"
       ],
       "history": [
         {
@@ -62918,7 +63611,10 @@
         "biochar-unmix-dicta-2013",
         "dual-graph-nmf-dicta-2014",
         "mmsnmf-icip-2015",
-        "biochar-unmix-cvprei-2015"
+        "biochar-unmix-cvprei-2015",
+        "partially-known-endmember-nmf-tgrs-2016",
+        "endmember-sparse-graph-nmf-icip-2016",
+        "structured-discriminative-nmf-icip-2016"
       ],
       "history": [
         {
@@ -63644,7 +64340,10 @@
         "rare-endmember-multitemporal-nmf-2014",
         "structured-mlnmf-whispers-2014",
         "dual-graph-nmf-dicta-2014",
-        "mmsnmf-icip-2015"
+        "mmsnmf-icip-2015",
+        "partially-known-endmember-nmf-tgrs-2016",
+        "endmember-sparse-graph-nmf-icip-2016",
+        "structured-discriminative-nmf-icip-2016"
       ],
       "history": [
         {
@@ -64332,7 +65031,9 @@
         "hypergraph-band-icip-2013",
         "hypergraph-sparse-band-igarss-2013",
         "svm-margin-band-igarss-2015",
-        "spectral-spatial-hypergraph-jstars-2015"
+        "spectral-spatial-hypergraph-jstars-2015",
+        "svm-band-weighting-lgrs-2016",
+        "weighted-band-selection-igarss-2016"
       ],
       "history": [
         {
@@ -65453,7 +66154,9 @@
         "hypergraph-sparse-band-igarss-2013",
         "svm-margin-band-igarss-2015",
         "spectral-spatial-hypergraph-jstars-2015",
-        "sampling-spectral-spatial-whispers-2015"
+        "sampling-spectral-spatial-whispers-2015",
+        "svm-band-weighting-lgrs-2016",
+        "tensor-morphological-profile-icip-2016"
       ],
       "history": [
         {
@@ -65771,7 +66474,8 @@
       "rationale": "逐篇复核现有论文的研究问题、输入输出和方法后建立；不继承三维专题的track分类。",
       "evidencePaperIds": [
         "s4dr-net",
-        "satmae-2022"
+        "satmae-2022",
+        "crf-cnn-hsi-igarss-2016"
       ],
       "history": [
         {
@@ -66093,7 +66797,9 @@
         "sparse-collaborative-graphs-dr-2014",
         "multifeature-label-propagation-2014",
         "large-margin-hsi-matching-cvprei-2015",
-        "hsi-graph-matching-gbrpr-2015"
+        "hsi-graph-matching-gbrpr-2015",
+        "endmember-sparse-graph-nmf-icip-2016",
+        "structured-discriminative-nmf-icip-2016"
       ],
       "history": [
         {
@@ -66942,7 +67648,8 @@
         "rs-emap-ensembles-2015",
         "bfodpso-feature-selection-2014",
         "alpha-connectivity-metric-whispers-2014",
-        "emap-fusion-whispers-2013"
+        "emap-fusion-whispers-2013",
+        "tensor-morphological-profile-icip-2016"
       ],
       "history": [
         {
@@ -67638,7 +68345,8 @@
       "createdAt": "2026-10-08",
       "rationale": "半监督解混原摘要以端元先验软正则为核心。",
       "evidencePaperIds": [
-        "endmember-soft-prior-unmixing-2014"
+        "endmember-soft-prior-unmixing-2014",
+        "partially-known-endmember-nmf-tgrs-2016"
       ],
       "history": [
         {
@@ -70220,7 +70928,9 @@
       "createdAt": "2026-10-09",
       "rationale": "周峻2015来源组原摘要与指定局部方法形成；没有固定分类数量。",
       "evidencePaperIds": [
-        "svm-margin-band-igarss-2015"
+        "svm-margin-band-igarss-2015",
+        "svm-band-weighting-lgrs-2016",
+        "weighted-band-selection-igarss-2016"
       ],
       "history": [
         {
