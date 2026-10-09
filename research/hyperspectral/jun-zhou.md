@@ -181,6 +181,10 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 逐项决定见 `sources/jun-zhou-2019-decisions.json`；来源访问见 `sources/jun-zhou-2019-primary-access.json`，Crossref响应保存在 `sources/`。本批摘要或局部来源核验，不标全文。下一步处理ORCID 2020及早年待审组，并继续Scholar/DBLP目录差集。
 
+## WHISPERS尾部摘要补充
+
+WHISPERS 2013–2014剩余14篇题名级高光谱记录已通过OpenAlex公开摘要索引补读，覆盖分类、解混、检测、成像光谱仪与环境应用；均不等同正式全文，分类保留待审。详见 `sources/jun-zhou-whispers-tail-abstract-followup.json`。
+
 ## 早期摘要补充
 
 2012两篇异常检测及2017材料边界检测已通过OpenAlex二级摘要索引补读；2018边界检测再由Griffith机构摘要补读，均不等同正式全文。详见 `sources/jun-zhou-early-abstract-followup.json` 与 `sources/jun-zhou-2018-boundary-abstract-followup.json`。

@@ -782,6 +782,12 @@
 - 两条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/jun-zhou-2026-title-followup.json`。
 
+## 2026-10-10 / jun-zhou-whispers-tail-abstract-followup
+
+- 更新14篇，不新增目录论文，不改变三维214对象。通过 OpenAlex 公开摘要索引补读 WHISPERS 2013–2014 尾部的分类、解混、检测、成像光谱仪和环境应用记录。
+- 14条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；分类仍待审计，正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/jun-zhou-whispers-tail-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
