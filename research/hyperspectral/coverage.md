@@ -176,6 +176,13 @@
 | TGRS | 2013 | Hyperspectral Image Classification Based on Structured Sparse Logistic Regression and Three-Dimensional Wavelet Texture Features、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：入库1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
 | DICTA | 2008 | Texture Descriptors via Stable Distributions、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：排除1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
 | ECCV | 2010 | Object of Interest Detection by Saliency Learning、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：排除1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
+| ADMA | 2012 | A bag reconstruction method for multiple instance classification and group record linkage、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：excluded；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| PAKDD | 2012 | Multiple instance learning for group record linkage、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：excluded；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| SSPR / SPR | 2012 | An incremental structured part model for image classification、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：excluded；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| ICPR | 2012 | Object detection via foreground contour feature selection and part-based shape model、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：excluded；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| ICICEE | 2012 | Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：included；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| SPIE · AOMATT | 2012 | Shearlet transform based anomaly detection for hyperspectral image、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：included；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| IGARSS | 2010 | Multi-spectral remote sensing image registration via spatial relationship analysis on sift keypoints、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 0 | 作者题名范围审查：pending；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -508,6 +515,8 @@
   阅读边界：作者263组269书目公共API完整拉取；本批5篇原稿摘要及局部页核验、1篇匹配既有条目，未宣称阅读全文。新增6确认标签，2张原方法图。原569篇事实和三维214成员保留。
 - 2026-10-09 / jun-zhou-followup-scope-and-versions-2008-2013：新增 3，更新 3，去重 0，排除 2，待处理 252。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：3新增作者原摘要/局部页，3既有版本关系更新，2普通RGB原稿排除。新增2方法标签、扩充1稳定标签定义；2原方法图。正式2013与2012作者稿分列；不将出版记录当独立方法数量。
+- 2026-10-09 / jun-zhou-2012-scope-and-ms-boundary：新增 2，更新 0，去重 0，排除 4，待处理 246。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：六组2012闭环筛选：2仅题名入库、4普通记录关联/对象图像暂排；另2010多光谱关系待核。无摘要/方法图时不补造字段或标签。
 
 ## 未解决缺口
 
@@ -546,6 +555,8 @@
 - WHISPERS2014目录174已逐项决定165入3排6待，0未审；核化图原摘要错配仅题名待分类。41–93页已筛，94及其他早页、原图/全文/版本关系仍待核，目录闭环不作年度全量声明。
 - WHISPERS2013目录161累计顺序1–27已审：25入2待，余134未审；非年度全领域或全文检索完成。 第25项机构原摘要直接可读，全文/原图未取得；同题SPIE DOI10.1117/12.2016452关系候选待核，不合并日期实验或图。 第26/27项仅题名待分类；SOM作者以官方程序纠正为Stéphane May，登记倒置另存；2001/2019 SOM及2015 EMAP随机子空间实验不借用。 此前林业原PDF跳登录/403、成像仪/气体/青海湖范围、辉石、题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、CNMF代码/CASI数据等缺口保留。
 - 周峻Scholar429、DBLP导出HTML验证页；作者旧主页仅覆盖2001–2012列项。其他来源全量对照、128无关键词项摘要、版本关系、完整实验和原图仍待核验。
-- 周峻263组已收8、关联既有1、排2、待252；题名135直接命中/128无命中仅发现状态，尚未收全。
 - 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。
 - 2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。
+- 周峻263组：已入10、关联既有1、排6、待246；作者页面11篇，书目组不是独立方法数量。
+- 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。
+- DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。
