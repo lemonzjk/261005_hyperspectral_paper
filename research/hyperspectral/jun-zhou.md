@@ -117,9 +117,9 @@ ICPR2014三作者、70–75页、封面加6页；原Figure1在PDF4。HSI/RGB少�
 
 ## DBLP精确作者差集初筛
 
-通过 DBLP SPARQL `authoredBy` 精确关联 person ID `99/3847-1`，取得364条去重发表记录；DBLP网页及 XML/BibTeX 导出仍返回验证页；SPARQL精确作者查询可用。对题名含 hyperspectral、spectral、LiDAR、multispectral 或 unmixing 的8条差集逐项核对：HSLiNets预印本与正式论文归同一方法族，CRF/材料跟踪两条预印本由目录正式记录覆盖，4条通用SAR/城市LiDAR、编辑和勘误记录排除，新增2条预印本并完成 arXiv 摘要级核验：HSIMamba、《Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning》；另以 CEUR 三页全文确认 STRL@IJCAI 高光谱跟踪报告的作者为目标 Jun Zhou（PDF明示 Griffith 与 ORCID 0000-0001-5822-8233）。
+通过 DBLP SPARQL `authoredBy` 精确关联 person ID `99/3847-1`，取得364条去重发表记录；DBLP网页及 XML/BibTeX 导出仍返回验证页；SPARQL精确作者查询可用。对题名含 hyperspectral、spectral、LiDAR、multispectral 或 unmixing 的8条差集逐项核对：HSLiNets预印本与正式论文归同一方法族，CRF/材料跟踪两条预印本由目录正式记录覆盖，4条通用SAR/城市LiDAR、编辑和勘误记录排除，新增2条预印本并完成 arXiv 摘要级核验：HSIMamba、《Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning》；另以 CEUR 三页全文确认 STRL@IJCAI 高光谱跟踪报告的作者为目标 Jun Zhou（PDF明示 Griffith 与 ORCID 0000-0001-5822-8233）。本轮再补审一条非题名关键词的 WHISPERS 2019 杂草分类论文，完成公开摘要级核验并入库。
 
-DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不把预印本当作正式发表；非关键词的356条 DBLP 记录仍需按任务逐项审查。详情见 `sources/jun-zhou-dblp-sparql.json`、`jun-zhou-dblp-screening.json` 和 `jun-zhou-dblp-arxiv-metadata.json`。
+DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不把预印本当作正式发表；关键词与本轮场所补充共168条记录已有决定，余196条DBLP记录仍需按任务逐项审查。详情见 `sources/jun-zhou-dblp-sparql.json`、`jun-zhou-dblp-screening.json` 和 `jun-zhou-dblp-arxiv-metadata.json`。
 
 ## Scholar题名差集初筛
 
@@ -129,7 +129,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
-截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共179篇：177篇为 `abstract_read` / `abstract_verified`，2篇为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
+截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共180篇：178篇为 `abstract_read` / `abstract_verified`，2篇为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
 
 ## 2024–2026高光谱来源组筛选
 

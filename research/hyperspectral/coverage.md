@@ -860,6 +860,12 @@
 - 9条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/field-hsl-radiometry-unmixing-followup.json`。
 
+## 2026-10-10 / jun-zhou-dblp-whispers-weed-2019-followup
+
+- DBLP精确作者364条中补审1条非题名关键词的WHISPERS 2019高光谱杂草分类记录，新增1篇目录论文；官方程序、DBLP与公开二级摘要确认作者和任务。
+- 记录更新为 `abstract_read` / `abstract_verified`；正式全文、原图、完整实验和资源仍待核验。
+- 证据见 `sources/jun-zhou-dblp-whispers-weed-2019-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
