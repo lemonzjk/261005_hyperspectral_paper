@@ -64314,28 +64314,28 @@
       "collections": [
         "hyperspectral"
       ],
-      "representation": "题名和正式目录确认高光谱影像边界检测；方法摘要待补。",
+      "representation": "以多种光谱相似度构造稀疏光谱—空间亲和矩阵，求解谱聚类最小特征向量并用形态学腐蚀检测边界，融合得到边界图。",
       "tags": [],
-      "summary": "确认作者在高光谱影像边界检测方向的会议论文。",
-      "input": "高光谱影像。",
-      "output": "影像边界。",
-      "mechanism": "公开信息尚不足以可靠重建方法细节。",
-      "readingNote": "仅Crossref和ACCV目录核验；正式LNCS页416–426，保留待分类。",
+      "summary": "机构仓储摘要显示：对近距离高光谱影像以多种光谱相似度构造邻域稀疏光谱—空间亲和矩阵，求解谱聚类最小特征向量后做形态学腐蚀检测边界，并融合各特征向量得到边界图；在真实高光谱数据集上与三种方法比较并报告更好表现。",
+      "input": "近距离高光谱影像及邻域像素光谱响应；摘要未给出数据集名称与协议。",
+      "output": "最终高光谱边界图。",
+      "mechanism": "用多种光谱相似度建立局部稀疏光谱—空间亲和矩阵；谱聚类求最小特征值对应特征向量；对各特征向量施加形态学腐蚀检测边界，再融合得到最终边界图。",
+      "readingNote": "Griffith Research Repository OAI摘要核验，Crossref与LNCS书目核对DOI和正式记录；已读机构摘要，不等同Springer全文。记录真实高光谱数据集和三种替代方法比较，但不补数据集名称、参数或性能数字。",
       "paper": "https://doi.org/10.1007/978-3-319-97785-0_40",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "bibliography_verified",
+      "verificationLevel": "institutional_abstract_and_publisher_metadata",
       "library": {
         "categoryIds": [],
         "classificationStatus": "pending",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "如何利用高光谱数据解决该记录的任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "relationNote": "题名和机构摘要明确高光谱影像边界检测；完整实验与任务/方法标签待进一步审计。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用光谱—空间亲和与谱聚类从近距离高光谱影像生成边界图？",
+        "datasets": "机构摘要仅称真实高光谱数据集；名称、规模和协议待全文。",
+        "experimentSetting": "机构摘要级核验：真实高光谱数据集，与三种替代方法比较；参数、指标和划分待全文。",
+        "conclusions": "机构摘要报告方法优于三种替代方法，并能处理若干彩色图像方法难以处理的场景；不外推具体数字。",
+        "limitations": "仅机构仓储摘要与正式书目，未取得Springer全文；不补数据集、参数、图版或代码。",
         "dataLinks": [],
         "evidence": [
           {
@@ -64344,6 +64344,15 @@
             "level": "Crossref与会议目录",
             "supports": [
               "题名、作者、正式会议卷和页码。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/oai/request?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:research-repository.griffith.edu.au:10072/382844",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith Research Repository OAI机构摘要",
+            "supports": [
+              "完整公开摘要正文",
+              "近距离高光谱边界检测、稀疏光谱—空间亲和、谱聚类、形态学腐蚀和三种替代方法比较"
             ]
           }
         ],

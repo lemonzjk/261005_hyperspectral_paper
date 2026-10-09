@@ -183,14 +183,14 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 ## 早期摘要补充
 
-2012两篇异常检测及2017材料边界检测已通过OpenAlex二级摘要索引补读，仍不等同正式全文；2018边界检测保持书目级。详见 `sources/jun-zhou-early-abstract-followup.json`。
+2012两篇异常检测及2017材料边界检测已通过OpenAlex二级摘要索引补读；2018边界检测再由Griffith机构摘要补读，均不等同正式全文。详见 `sources/jun-zhou-early-abstract-followup.json` 与 `sources/jun-zhou-2018-boundary-abstract-followup.json`。
 
 ## 2018高光谱来源组筛选
 
 新增16篇、关联既有2篇、排除13篇；2018 ORCID来源组31组现已闭环。正式期刊年份与ORCID登记年份有差异时按正式记录入库，例如异常检测论文正式出版年为2019；不把版本年份混作新增论文。
 
 - 收录高光谱—LiDAR判别相关融合、非局部非负Tucker去噪、光谱—空间SIFT配准、皮肤镜数据集、坚果品质检测、波段权重网络、异常成分检测、重加权稀疏低秩张量去噪、异构高光谱—LiDAR融合、土壤碳氮同位素估计、材料显著目标检测、高光谱视频跟踪、超像素张量解混、三元组深特征分类和森林凋落物碳官能团估计。
--《An Efficient Method for Boundary Detection from Hyperspectral Imagery》只有Crossref与ACCV目录，保留高光谱关系但分类状态为待定，不补方法、数据或性能。
+-《An Efficient Method for Boundary Detection from Hyperspectral Imagery》已由Griffith Research Repository OAI机构摘要补读：稀疏光谱—空间亲和、谱聚类、形态学腐蚀与三种替代方法比较均有摘要依据；正式Springer全文和分类仍待核。
 - 136号记录是已入库ICIP 2017非局部张量去噪的重复登记；137号记录与JSTARS 2018非负Tucker正式记录重复，均不重复计数。通用哈希、子空间检索、单应性、人脸、液滴和产品量化等13组排除。
 
 逐项决定见 `sources/jun-zhou-2018-decisions.json`；来源访问和下载状态见 `sources/jun-zhou-2018-primary-access.json`，Crossref响应及局部PDF保存在 `sources/`。本批摘要、作者稿或短文局部核验，不标全文。下一步处理ORCID 2019及早年待审组，并继续Scholar/DBLP目录差集。
