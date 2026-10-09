@@ -17909,7 +17909,7 @@
       "code": "https://github.com/Judyxyang/LiDAR-Guided-Band-Selection",
       "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
       "verificationLevel": "author_full_text_and_publisher_metadata",
-      "verifiedAt": "2026-10-07",
+      "verifiedAt": "2026-10-10",
       "publicationStatus": "published",
       "venueTier": "target",
       "citation": "@article{lidarguidedbandselection,\n  title={LiDAR-Guided Cross-Attention Fusion for Hyperspectral Band Selection and Image Classification},\n  author={Judy X. Yang and Jun Zhou and Jing Wang and Hui Tian and Alan Wee-Chung Liew},\n  year={2024},\n  journal={IEEE Transactions on Geoscience and Remote Sensing},\n  url={https://doi.org/10.1109/TGRS.2024.3389651},\n  doi={10.1109/TGRS.2024.3389651}\n}",
@@ -17982,15 +17982,42 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "现有来源笔记明确涉及高光谱观测、光谱恢复或密集波长建模；具体模态以本条输入输出为准。 依据：空间对齐的 HSI 与 LiDAR DSM/高度栅格局部块，以及监督训练所需的地物类别标签。",
-        "readingProgress": "pending",
-        "verificationStatus": "pending",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "以 LiDAR 高度特征查询高光谱各波段的特征，学习适合跨模态融合的波段重要性，再选择波段用于地物分类。",
-        "datasets": "待核验",
-        "experimentSetting": "待核验",
-        "conclusions": "待总库逐篇复核",
-        "limitations": "待核验",
+        "datasets": "Houston 2013、Trento、MUUFL 三个空间配对的高光谱—LiDAR数据集。",
+        "experimentSetting": "已审作者稿全文：跨注意力选带，LiDAR引导HSI波段选择，并以SVM/CNN融合分类对照；完整参数与复现实验边界见作者稿。",
+        "conclusions": "作者稿报告LiDAR引导跨注意力能减少波段冗余，并以较少波段结合LiDAR超过若干状态方法；不外推未复现的数字。",
+        "limitations": "已读15页作者稿及指定方法/框架页；正式IEEE版与作者稿差异、完整代码运行和独立复现仍待核验。",
         "dataLinks": [],
-        "evidence": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/pdf/2404.03883v2",
+            "checkedAt": "2026-10-10",
+            "level": "作者稿全文审阅记录对应的公开全文",
+            "supports": [
+              "15页arXiv v2全文",
+              "方法页4–6和框架页4",
+              "Houston 2013、Trento、MUUFL配对数据集及实验边界"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2404.03883v2",
+            "checkedAt": "2026-10-10",
+            "level": "作者公开全文",
+            "supports": [
+              "全文方法与实验核验"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2024.3389651",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref正式书目",
+            "supports": [
+              "正式TGRS记录、DOI和页码"
+            ]
+          }
+        ],
         "versions": [],
         "methodFamilyId": "lidar-guided-band-selection",
         "classificationReview": {

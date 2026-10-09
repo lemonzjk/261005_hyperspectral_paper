@@ -788,6 +788,12 @@
 - 14条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；分类仍待审计，正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/jun-zhou-whispers-tail-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-lidar-guided-fulltext-followup
+
+- 修正1篇状态，不新增目录论文，不改变三维214对象。已有15页 arXiv 作者稿、方法页和两张框架图审阅记录，补齐 LiDAR-Guided Band Selection 的阅读状态。
+- `lidar-guided-band-selection` 由 `pending` / `pending` 修正为 `full_text_read` / `full_text_verified`；正式IEEE版差异、完整代码运行和独立复现仍待核验。
+- 证据见 `sources/jun-zhou-lidar-guided-fulltext-followup.json` 与既有 `research/sources/lidar-guided-band-selection-review-2026-10-07.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

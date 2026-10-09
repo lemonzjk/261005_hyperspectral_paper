@@ -135,6 +135,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 - 2024收录高光谱农业、解混、分类、去噪、LiDAR融合和视频跟踪；其中 ORCID 直接记录10篇、既有来源4篇已补摘要级核验；2025收录去噪、少样本分类、LiDAR融合、视频跟踪、异常检测和医学分类，其中 ORCID 八篇与 Scholar 差集三篇已补摘要级核验；2026收录医疗高光谱、异常/目标跟踪综述、选带、分类和解混。
 - 通用视觉、RGB-D、普通遥感、变化检测、红外可见光融合及其他无明确高光谱输入记录排除；2024 LiDAR-Guided Cross-Attention Fusion 已是既有目录条目，按重复登记处理。
+- LiDAR-Guided Cross-Attention Fusion 已核对既有15页 arXiv 作者稿、方法页和框架图，目录阅读状态现为全文级；正式IEEE版差异与独立复现仍待核。
 
 逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2024摘要补充见 `sources/jun-zhou-2024-abstract-followup.json`、`sources/jun-zhou-2024-abstract-followup-2.json`、`sources/jun-zhou-2024-abstract-followup-3.json`；2025摘要补充见 `sources/jun-zhou-2025-abstract-followup.json`、`sources/jun-zhou-2025-abstract-followup-2.json`、`sources/jun-zhou-2025-abstract-followup-3.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`、`sources/jun-zhou-2026-title-followup.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
 
