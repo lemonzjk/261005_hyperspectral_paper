@@ -171,6 +171,11 @@
 | TGRS | 2011 | Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。；全文、资源及正式版差异仍待核验。 |
 | ICCV | 2011 | Material-specific user colour profiles from imaging spectroscopy data、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 依赖材料/典型光源库及用户输入；完整算法、用户评价、公开代码/数据与正式版差异待核。Figure 1 是编辑结果示例，方法框架是 Figure 2，不混记图号。；全文、资源及正式版差异仍待核验。 |
 | IGARSS | 2011 | Structured sparse model based feature selection and classification for hyperspectral imagery、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 随机像元划分可能受空间邻近影响，独立地块泛化待核；期刊近题 structured sparse logistic regression / 3D wavelet 版本关系待明确原稿声明。只有两幅输入和结果曲线图，无独立框架图。；全文、资源及正式版差异仍待核验。 |
+| DICTA | 2010 | L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：入库1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
+| Springer · Book chapter | 2011 | Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：入库1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
+| TGRS | 2013 | Hyperspectral Image Classification Based on Structured Sparse Logistic Regression and Three-Dimensional Wavelet Texture Features、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：入库1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
+| DICTA | 2008 | Texture Descriptors via Stable Distributions、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：排除1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
+| ECCV | 2010 | Object of Interest Detection by Saliency Learning、Jun Zhou ORCID0000-0001-5822-8233; original pdf / version / code / arxiv；作者范围单篇审查，不是该场所年度全量。 | 1 / 1 / 1 | 作者题名/版本主题检索：排除1；非年度系统覆盖 | 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。；2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -501,6 +506,8 @@
   阅读边界：3新增：1机构原摘要、2仅题名待分类；复用1任务标签、新增1暂定方法标签，无新增图。另SPIE同题关系候选待核。原566论文及三维214对象保留。
 - 2026-10-09 / jun-zhou-early-author-2009-2011：新增 5，更新 0，去重 1，排除 0，待处理 257。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：作者263组269书目公共API完整拉取；本批5篇原稿摘要及局部页核验、1篇匹配既有条目，未宣称阅读全文。新增6确认标签，2张原方法图。原569篇事实和三维214成员保留。
+- 2026-10-09 / jun-zhou-followup-scope-and-versions-2008-2013：新增 3，更新 3，去重 0，排除 2，待处理 252。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：3新增作者原摘要/局部页，3既有版本关系更新，2普通RGB原稿排除。新增2方法标签、扩充1稳定标签定义；2原方法图。正式2013与2012作者稿分列；不将出版记录当独立方法数量。
 
 ## 未解决缺口
 
@@ -538,5 +545,7 @@
 - ESDAP作者稿Pavia640×340、手工属性阈值及正式版/代码/许可待核验；邻域图2014 workshop与2015期刊的原稿/版本差异受限。自编码器和ELML原始摘要待其他路线。
 - WHISPERS2014目录174已逐项决定165入3排6待，0未审；核化图原摘要错配仅题名待分类。41–93页已筛，94及其他早页、原图/全文/版本关系仍待核，目录闭环不作年度全量声明。
 - WHISPERS2013目录161累计顺序1–27已审：25入2待，余134未审；非年度全领域或全文检索完成。 第25项机构原摘要直接可读，全文/原图未取得；同题SPIE DOI10.1117/12.2016452关系候选待核，不合并日期实验或图。 第26/27项仅题名待分类；SOM作者以官方程序纠正为Stéphane May，登记倒置另存；2001/2019 SOM及2015 EMAP随机子空间实验不借用。 此前林业原PDF跳登录/403、成像仪/气体/青海湖范围、辉石、题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、CNMF代码/CASI数据等缺口保留。
-- 周峻作者调研：ORCID263组269条公开书目全量拉取，5新增1既有，257组待逐篇筛选；135题名直接命中与128无命中仅发现状态，不是全部高光谱论文数。
 - 周峻Scholar429、DBLP导出HTML验证页；作者旧主页仅覆盖2001–2012列项。其他来源全量对照、128无关键词项摘要、版本关系、完整实验和原图仍待核验。
+- 周峻263组已收8、关联既有1、排2、待252；题名135直接命中/128无命中仅发现状态，尚未收全。
+- 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。
+- 2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。
