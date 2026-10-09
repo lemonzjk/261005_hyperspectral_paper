@@ -866,6 +866,10 @@
 - 记录更新为 `abstract_read` / `abstract_verified`；正式全文、原图、完整实验和资源仍待核验。
 - 证据见 `sources/jun-zhou-dblp-whispers-weed-2019-followup.json`。
 
+### 2026-10-10：DBLP 非关键词多光谱热红外补录
+
+补录 Jun Zhou 合作的 Himawari-8 农业干旱论文：UTS 开放原文明确使用约 11/12 μm 双分裂窗热红外通道。该论文按多光谱热红外关联进入总库，明确不标为光学高光谱；DBLP 决定为 included，完整全文与数据协议仍待核验。
+
 ### 2026-10-10：DBLP—目录版本交叉匹配
 
 再按规范化题名和 DOI 将 5 条 DBLP 记录与目录既有论文匹配，标为 `duplicate_existing`；其中包含杂草分类、反射率估计和材料颜色等已有作者记录，不新增论文。DBLP 尚有 91 条记录未形成独立决定。

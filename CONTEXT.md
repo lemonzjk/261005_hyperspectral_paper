@@ -17,7 +17,7 @@
 
 ## 当前状态
 
-- 总库749篇，391篇分类确认（审计335篇）、339篇暂定、19篇待分类，301标签（任务97/方法181/应用23）。三维214篇；状态一致性审计；总库?collection=hyperspectral。
+- 总库750篇，391篇分类确认（审计335篇）、340篇暂定、19篇待分类，301标签（任务97/方法181/应用23）。三维214篇；状态一致性审计；总库?collection=hyperspectral。
 - 作者筛选支持片段补全及URL恢复；搜索/作者筛选的完整姓名须匹配同一作者。总库标签多选并集；两页隐藏零计数侧栏，共享原图及SVG/BibTeX导出。分类逐篇留证；高光谱618、多光谱96、基础34。
 - CVPR2013–2022/ICCV2013–2021奇数年主题闭环，非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。Hyper-Skin330/306与版本差异待查。
@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：周峻高/多光谱目录180篇均有摘要级证据（其中2篇全文级），无作者待读项；Scholar/DBLP/ORCID来源差集与非关键词记录仍待审；DBLP关键词、专题补充、ORCID交叉回填及目录匹配已决定273条，余91条非关键词记录待逐条审查。当前领域摘要已补81篇。
+- 作者优先：周峻高/多光谱目录181篇均有摘要级证据（其中2篇全文级），无作者待读项；Scholar/DBLP/ORCID来源差集与非关键词记录仍待审；DBLP关键词、专题补充、ORCID交叉回填、目录匹配及本轮热红外补录已决定274条，余90条非关键词记录待逐条审查。当前领域摘要已补82篇。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
