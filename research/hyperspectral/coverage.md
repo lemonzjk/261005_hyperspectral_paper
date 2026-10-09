@@ -866,6 +866,10 @@
 - 记录更新为 `abstract_read` / `abstract_verified`；正式全文、原图、完整实验和资源仍待核验。
 - 证据见 `sources/jun-zhou-dblp-whispers-weed-2019-followup.json`。
 
+### 2026-10-10：DBLP 非关键词 MODIS 温度/发射率补录
+
+补录 Jun Zhou 合作的 MODIS 双分裂窗方向发射率论文：ScienceDirect 摘要明确约 11/12 μm 通道、方向发射率查找表和地面验证。按多光谱热红外关联进入总库，明确不标为光学高光谱；完整全文与代码仍待核验。
+
 ### 2026-10-10：DBLP 非关键词多光谱热红外补录
 
 补录 Jun Zhou 合作的 Himawari-8 农业干旱论文：UTS 开放原文明确使用约 11/12 μm 双分裂窗热红外通道。该论文按多光谱热红外关联进入总库，明确不标为光学高光谱；DBLP 决定为 included，完整全文与数据协议仍待核验。

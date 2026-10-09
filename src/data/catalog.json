@@ -75813,6 +75813,86 @@
         ],
         "methodFamilyId": "himawari-thermal-drought-monitoring"
       }
+    },
+    {
+      "id": "zhou-modis-angular-emissivity-lst-2019",
+      "shortTitle": "MODIS angular emissivity LST",
+      "title": "Influence of emissivity angular variation on land surface temperature retrieved using the generalized split-window algorithm",
+      "authors": "Tian Hu, Hua Li, Biao Cao, Albert I.J.M. van Dijk, Luigi J. Renzullo, Zhihong Xu, Jun Zhou, Yongming Du, Qinhuo Liu",
+      "year": 2019,
+      "venue": "International Journal of Applied Earth Observation and Geoinformation",
+      "publicationName": "International Journal of Applied Earth Observation and Geoinformation",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1016/j.jag.2019.101917",
+      "representation": "从MYD21A1方向发射率查找表修正MODIS广义分裂窗算法，量化观测角度变化对地表温度反演的影响。",
+      "tags": [],
+      "summary": "利用MODIS MYD21A1产品构建双分裂窗方向发射率查找表，并将其代入广义分裂窗算法，比较方向发射率与分类发射率对地表温度反演的影响。",
+      "input": "MODIS MYD21A1地表温度/发射率产品、约11和12 μm双分裂窗通道、SURFRAD与HiWATER地面观测。",
+      "output": "方向发射率查找表、地表温度反演结果及角度变化误差评估。",
+      "mechanism": "从MYD21A1提取不同地表类型的方向发射率，在模拟和MODIS观测中替换分类发射率，并以分裂窗算法反演LST。",
+      "readingNote": "ScienceDirect出版社摘要与方法/结果局部、DBLP书目和正式DOI核验；双通道热红外按多光谱遥感关联收录，不标为光学高光谱；未阅读全文。",
+      "paper": "https://www.sciencedirect.com/science/article/pii/S0303243419301795",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "primary_abstract_and_selected_pages",
+      "citation": "@article{zhou_modis_angular_emissivity_lst_2019,\n  title = {Influence of emissivity angular variation on land surface temperature retrieved using the generalized split-window algorithm},\n  author = {Tian Hu and Hua Li and Biao Cao and Albert I. J. M. van Dijk and Luigi J. Renzullo and Zhihong Xu and Jun Zhou and Yongming Du and Qinhuo Liu},\n  journal = {International Journal of Applied Earth Observation and Geoinformation},\n  year = {2019},\n  volume = {82},\n  article = {101917},\n  doi = {10.1016/j.jag.2019.101917}\n}",
+      "library": {
+        "categoryIds": [
+          "temperature-emissivity-separation"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "出版社摘要明确MODIS双分裂窗热红外通道（约11/12 μm）和地表温度/发射率反演；不是光学高光谱输入。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何把方向发射率角度变化纳入双分裂窗算法以提高地表温度反演？",
+        "datasets": "MYD21A1、MODIS双通道、SURFRAD与HiWATER观测；完整筛选、样本量和校准细节待全文核验。",
+        "experimentSetting": "出版社摘要和方法/结果局部确认查找表、模拟及地面验证；完整统计参数待全文。",
+        "conclusions": "摘要报告观测角度大于40°时忽略方向发射率会造成明显误差，使用方向发射率可改善LST精度；不外推到其他传感器。",
+        "limitations": "完整正式全文、查找表构建细节、代码、数据协议和版本差异仍待核验。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/S0303243419301795",
+            "checkedAt": "2026-10-10",
+            "level": "ScienceDirect出版社摘要与局部全文",
+            "supports": [
+              "摘要明确MYD21A1、MODIS约11/12 μm双分裂窗通道、方向发射率查找表、广义分裂窗算法和SURFRAD/HiWATER验证。",
+              "摘要报告VZA大于40°时角度发射率影响增强，方向发射率提高LST精度。"
+            ]
+          },
+          {
+            "url": "https://dblp.org/rec/journals/aeog/HuLCDRXZDL19",
+            "checkedAt": "2026-10-10",
+            "level": "DBLP精确作者书目",
+            "supports": [
+              "Jun Zhou作者归属、正式题名、期刊卷82和文章号101917。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1016/j.jag.2019.101917",
+            "checkedAt": "2026-10-10",
+            "level": "正式DOI书目",
+            "supports": [
+              "正式DOI和出版记录。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "zhou-modis-angular-emissivity-lst-2019-published",
+            "type": "正式期刊版",
+            "url": "https://doi.org/10.1016/j.jag.2019.101917",
+            "doi": "10.1016/j.jag.2019.101917",
+            "year": 2019,
+            "relation": "正式记录；摘要及局部全文已核，未阅读全文。"
+          }
+        ],
+        "methodFamilyId": "angular-emissivity-lst-retrieval"
+      }
     }
   ],
   "datasets": [
@@ -78769,7 +78849,8 @@
         "dais-anem-2001",
         "flaash-ir-hypercam-whispers-2014",
         "shape-thermal-radiation",
-        "thermal-plant-species-jag-2016"
+        "thermal-plant-species-jag-2016",
+        "zhou-modis-angular-emissivity-lst-2019"
       ],
       "history": [
         {

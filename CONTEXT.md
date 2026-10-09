@@ -17,7 +17,7 @@
 
 ## 当前状态
 
-- 总库750篇，391篇分类确认（审计335篇）、340篇暂定、19篇待分类，301标签（任务97/方法181/应用23）。三维214篇；状态一致性审计；总库?collection=hyperspectral。
+- 总库751篇，391篇分类确认（审计335篇）、341篇暂定、19篇待分类，301标签（任务97/方法181/应用23）。三维214篇；状态一致性审计；总库?collection=hyperspectral。
 - 作者筛选支持片段补全及URL恢复；搜索/作者筛选的完整姓名须匹配同一作者。总库标签多选并集；两页隐藏零计数侧栏，共享原图及SVG/BibTeX导出。分类逐篇留证；高光谱618、多光谱96、基础34。
 - CVPR2013–2022/ICCV2013–2021奇数年主题闭环，非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。Hyper-Skin330/306与版本差异待查。
@@ -26,12 +26,12 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词增17排14待4。2019官方51研究中34已审17待核；5医学仅摘要片段，非年度全量。日期、DOI、真值及资源差异见coverage.md。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖749篇、329张图。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖751篇、329张图。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：周峻高/多光谱目录181篇均有摘要级证据（其中2篇全文级），无作者待读项；Scholar/DBLP/ORCID来源差集与非关键词记录仍待审；DBLP关键词、专题补充、ORCID交叉回填、目录匹配及本轮热红外补录已决定274条，余90条非关键词记录待逐条审查。当前领域摘要已补82篇。
+- 作者优先：周峻高/多光谱目录182篇均有摘要级证据（其中2篇全文级），无作者待读项；Scholar/DBLP/ORCID来源差集与非关键词记录仍待审；DBLP关键词、专题补充、ORCID交叉回填、目录匹配及本轮热红外补录已决定275条，余89条非关键词记录待逐条审查。当前领域摘要已补83篇。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
