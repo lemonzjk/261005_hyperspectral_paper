@@ -141,6 +141,7 @@
 | WHISPERS | 2014 | support tensor local pixel neighborhood、band selection fusion hyperspectral classification、edge constrained MRF、energy tree species support vector machines；物理80页全部4题名。累计45–76及78–80页112题名107入3排2待；77未核，非连续45–80完成。 | 4 / 4 / 4 | 80页4题名摘要闭环；77页及年度目录仍有缺口 | 四篇原PDF/方法图与专用代码数据/arXiv未知；波段稿仅托管原文缓存部分选读。；波段稿缓存Indian Pines波段数与波长单位疑误，待原PDF，不默改或当已核数据。；STM数组三维不等同物理三维；同光谱邻带融合不等同多传感器融合；克隆不等同分类学亚种。；目录174条关联107、已有决定5、未审62；TRDF保留题名拼写冲突人工关联。自动106/5/63，详见page80-toc-replay.json。；检索截止2026-10-08，实际核验2026-10-09；续81页及77缺口，年度未完成。 |
 | WHISPERS | 2014 | spectral spatial filtering spectral angle、game theory band grouping classifier ensemble、nonlinear parsimonious feature selection GMM、spectrometer driven spectral partitioning；物理81页全部4题名，SD-SP用作者原稿补摘要；不将82页其他论文视为已审。累计45–76及78–81页116题名111入3排2待；77页未核。Crossref每查询3条只用于身份匹配，不视年度全量。 | 4 / 4 / 4 | 81页4题名摘要闭环；77及年度目录仍未完成 | SSF/博弈/NPFS原PDF与方法图受限；代码/arXiv未知，Purdue仅原稿数据入口，当前访问及版本待核。；博弈摘要称三种却只枚举两项；不补造第三项。NPFS不套2015期刊特征数/实验。；SD-SP原220与5×42重采样映射未解释；Fig3只是方法示例，无独立会议框架图；期刊三作者/2015在线2016卷期及DAIS实验分开。；目录174条关联111/已有决定5/未审58；自动110/5/59，TRDF人工拼写关联见page81-toc-replay.json。；截至2026-10-08，实际核验2026-10-09。续82页并补77、目录遗漏与版本差异。 |
 | WHISPERS | 2014 | slow feature hyperspectral change、clustering partial least squares soil predictions、simultaneous least squares satellite registration、official program title abstract author mismatch；82页两直接新题名＋一错配摘要恢复题名；SD-SP页首属81页续接，既存不重复计。累计45–76及78–82页118直接题名+恢复配准题名1=119项，113入3排3待。77未核，83页未审，不冒充连续窗口完成。 | 3 / 3 / 3 | 82页两题名摘要闭环并恢复错配身份；配准HSI关系待核 | 两新原PDF/图、专用代码数据/arXiv未取得；SFA不使用2015 SFA/RX期刊Hyperion及2019深度代码。；PLS正文按212土壤样本真实原摘要收录；留一CV并非外部测试，嵌套选参/聚类隔离、原表性能对应待核。；恢复配准论文只确认多光谱Landsat TM，明确HSI联系仍待；其机构PDFrestricted，不把错配PLS摘要当HSI证据。；目录174条关联113/决定6/未审55；自动112/6/56，TRDF人工关联见page82-toc-replay.json。；实际核验2026-10-09，截至2026-10-08；77/83及年度遗漏仍未完成。 |
+| WHISPERS | 2014 | local density background estimation LDAS、linear spectral mixing Kalman subpixel tracking、eFUMI multiple instance target characterization、hyperspectral stereo disparity change；物理83页全部4題名。累计45–76及78–83页122直接題名+恢复配准題名1=123项，117入3排3待；77页未核，84页未审。每题Crossref3条仅身份匹配，不作为年度全扫。 | 4 / 4 / 4 | 83页4题名摘要闭环；77及年度遗漏待补 | LDBE/Kalman/eFUMI会议原PDF/原图与专用数据/arXiv未知。KalmanO. Duran不凭机构同姓猜全名。；eFUMI官方代码对应2015期刊/2019发布，2014精确代码/直接扩展差异待核；2016实例影响/心搏论文不是会议预印本。；双目稿§2–5局部读，Fig1是系统照片；固定机位/短时差与原谱分辨率/通道间隔区别保留，正式版差异与泛化待核。；目录174条关联117/决定6/未审51；自动116/6/52，TRDF人工拼写关联见page83-toc-replay.json。；实际核验2026-10-09，截至2026-10-08；三维214成员不改，续84页、补77及年度目录。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -421,6 +422,8 @@
   阅读边界：四篇完整摘要；SD-SP作者PDF局部选读、原方法示例Fig3；其他不标全文。旧486对象及三维214保持。
 - 2026-10-09 / whispers-2014-program-page82-change-soil-mismatch-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：SFA官方完整摘要；PLS托管原论文完整摘要和§1选读。配准身份恢复、HSI关系待核；SD-SP续接不算新的重复方法。旧490及三维214保持。
+- 2026-10-09 / whispers-2014-program-page83-detection-tracking-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四篇完整官方摘要；双目原PDF§2–5选读，原Fig1系统照片。旧492与三维214不改。
 
 ## 未解决缺口
 

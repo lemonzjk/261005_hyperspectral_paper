@@ -1,0 +1,253 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "ldbe-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077619",
+      "decision": "included",
+      "programPdfPage": 83,
+      "readingBoundary": "官方83页完整摘要与两作者、DOI书目匹配；IEEE202空正文，未读原PDF。",
+      "figureBoundary": "原PDF未取得，方法图号与页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "kalman-subpixel-tracking-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077517",
+      "decision": "included",
+      "programPdfPage": 83,
+      "readingBoundary": "官方83页完整摘要与O. Duran；正常精确DOI复核200确认同题/单作者/2014。未读全文。",
+      "figureBoundary": "IEEE202空响应，原PDF和方法图未取得。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "efumi-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077525",
+      "decision": "included",
+      "programPdfPage": 83,
+      "readingBoundary": "官方83页完整摘要、作者实验室同题完整摘要/引文及正式DOI两作者匹配；未读会议全文。",
+      "figureBoundary": "IEEE202；作者官方论文页无可取得会议PDF链接，原图号/页码未知，不移用仓库2015期刊图。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    },
+    {
+      "paperId": "stereo-change-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077541",
+      "decision": "included",
+      "programPdfPage": 83,
+      "readingBoundary": "官方83页完整摘要五作者与正式DOI匹配；作者2017目录托管四页2014稿已取得，§2–5选读，原Fig1物理页1是系统照片而非完整方法流程。只总库，原三维214成员不变。",
+      "figureBoundary": "已取得作者原PDF；Fig1物理页1为双目扫描系统原照片，图号/页码目视确认，不冒称完整流程图。",
+      "relation": "hyperspectral",
+      "deduplication": "独立DOI/题名/作者全库无重复；不把相近前作或作者上传年当新版本方法。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "hyperspectral-target-tracking",
+      "name": "光谱目标时序跟踪",
+      "dimension": "task",
+      "definition": "在光学多/高光谱序列中估计目标随时间的位置或状态，包括亚像元目标；记录光谱观测与运动输出，不将单帧异常响应或变化图当轨迹。",
+      "rationale": "Duran原摘要明确线性混合模型与Kalman滤波跟踪亚像元目标，现有单帧检测标签不能替代。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "kalman-subpixel-tracking-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Duran原摘要明确线性混合模型与Kalman滤波跟踪亚像元目标，现有单帧检测标签不能替代。"
+        }
+      ]
+    },
+    {
+      "id": "local-density-background-estimation",
+      "name": "局部密度背景估计",
+      "dimension": "method",
+      "definition": "以光谱距离的局部密度异常评分筛选背景像元后估计背景统计；阈值、邻域和统计模型逐篇核验，不自动等同LOF或高斯混合。",
+      "rationale": "LDBE原摘要明确LDAS衡量背景概率并排除非背景像元。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "ldbe-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "LDBE原摘要明确LDAS衡量背景概率并排除非背景像元。"
+        }
+      ]
+    },
+    {
+      "id": "kalman-spectral-unmixing-tracking",
+      "name": "Kalman光谱解混跟踪",
+      "dimension": "method",
+      "definition": "将线性光谱混合观测与Kalman状态更新结合跟踪目标；运动模型、状态、噪声和关联逐篇核验，不泛指所有滤波或独立逐帧解混。",
+      "rationale": "Duran原摘要将时间引入解混并使用KF跟踪，具体状态公式未核。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "kalman-subpixel-tracking-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Duran原摘要将时间引入解混并使用KF跟踪，具体状态公式未核。"
+        }
+      ]
+    },
+    {
+      "id": "multiple-instance-mixture-signatures",
+      "name": "多实例混合概念学习",
+      "dimension": "method",
+      "definition": "以区域/包级存在标签学习目标及非目标混合概念、丰度与背景概念数；实例可为概念凸组合，区别普通MIL类别判别和精确像元标签解混。",
+      "rationale": "eFUMI官方及作者摘要明确弱区域标签、凸混合、未知目标位置与丰度。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "efumi-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "eFUMI官方及作者摘要明确弱区域标签、凸混合、未知目标位置与丰度。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-stereo-change-fusion",
+      "name": "光谱与视差变化融合",
+      "dimension": "method",
+      "definition": "将多时相光谱变化与双目视差/深度变化结合判别场景变化；记录匹配、归一化、权重及同机位假设，不把直接恢复光谱/三维形状作为必然输出。",
+      "rationale": "Karaca作者稿明确SAD、分段加权多波段Census匹配、视差变化掩膜及等权融合。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "stereo-change-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Karaca作者稿明确SAD、分段加权多波段Census匹配、视差变化掩膜及等权融合。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-efumi-doi-access.json",
+      "sha256": "94708f4f5da67ffcffbedebfa76429c4124bda05dee2415b3198f6d113bf6d89"
+    },
+    {
+      "path": "whispers2014-efumi-ieee-access.json",
+      "sha256": "36a92d0b7d8a0e6dc3db4ec345909e0f7d7969b7fc12236ac0acd3cfad5a2829"
+    },
+    {
+      "path": "whispers2014-efumi-query-access.json",
+      "sha256": "e8d850c528da9cdb8377890465b18fea1a94e776a6fb1b5aa224c159bdb97f32"
+    },
+    {
+      "path": "whispers2014-kalman-track-doi-access.json",
+      "sha256": "c81e706691bc51488568e58aa5bbfbb2f7774dc37701e0469ceac78934129885"
+    },
+    {
+      "path": "whispers2014-kalman-track-doi-recheck-access.json",
+      "sha256": "392327da6e1c10eb25634dbf8d794353b4497b5e4e1ebdeaf5782b851f5ab631"
+    },
+    {
+      "path": "whispers2014-kalman-track-ieee-access.json",
+      "sha256": "7b5c05de433a87dcbf5460661d2759137898cc8d51a908c3f4426801f7615228"
+    },
+    {
+      "path": "whispers2014-kalman-track-query-access.json",
+      "sha256": "3af94c8fd8a3a8ea551bb02b49f48308b55e3346c91fddb19b2bcf7a60831fdb"
+    },
+    {
+      "path": "whispers2014-ldbe-ieee-access.json",
+      "sha256": "2e8df985086e8c26003b9f13d26a3d0bfbeb8e74ed2efcd7867c54b5ce626daa"
+    },
+    {
+      "path": "whispers2014-ldbe-query-access.json",
+      "sha256": "a1830ed37e54d68031c1b0d33e390cadbbf31af060499749c0d03eae906906bf"
+    },
+    {
+      "path": "whispers2014-page83-discovery-cache.json",
+      "sha256": "4f70379bfa0fa05fd7d61eb2c5497e55b83e54d232d7ab246d8be98a283db0c8"
+    },
+    {
+      "path": "whispers2014-page83-metadata-cache.json",
+      "sha256": "5c9bb70f1e6847f22a031d8ebff51920f5b066068d9f6e412dd16b222190ad9c"
+    },
+    {
+      "path": "whispers2014-page83-original-reading-cache.json",
+      "sha256": "2cf4db7c3d9877b632edc1405680312481d7e16c37c9a947e80e98b59560cca7"
+    },
+    {
+      "path": "whispers2014-page83-primary-cache.json",
+      "sha256": "3d815d7c3b53b55abc977c8bc671ae02ff863bc8c6375df8e7d13203e4d507cb"
+    },
+    {
+      "path": "whispers2014-page83-program-cache.json",
+      "sha256": "46b718c980ee936a404d68d050a7793a288131983d7a635ffe48b264e9b8a1c1"
+    },
+    {
+      "path": "whispers2014-page83-resources-search-cache.json",
+      "sha256": "45a4a0d5934de678ffe5a53607f88ccac183794e73282628c0f623958f613c2e"
+    },
+    {
+      "path": "whispers2014-stereo-change-author-original.pdf",
+      "sha256": "4a9b8f7c48626c092c01e9d681f6737f96dd69496745869774f84e0962f6369c"
+    },
+    {
+      "path": "whispers2014-stereo-change-ieee-access.json",
+      "sha256": "7bd011da124cbafeedb0bec086477d31cc4975073ed85034fdf59eb58a565b8e"
+    },
+    {
+      "path": "whispers2014-stereo-change-original-access.json",
+      "sha256": "ad94cc268d696e4d0c3bfb3ad65c7ff4f48f27d2974e977bb1c458c75066641f"
+    },
+    {
+      "path": "whispers2014-stereo-change-original-reading.json",
+      "sha256": "01ef8ff90acdd1fc5557c57730a41fe4ab5c00c39e7260c7c2c05ec03398ae42"
+    },
+    {
+      "path": "whispers2014-stereo-change-query-access.json",
+      "sha256": "aeaa0c556ee1cf1e5ae9682709e29a4360609ed1c73f71f14efa341fc4a46cea"
+    },
+    {
+      "path": "whispers2014-page83-toc-replay.json",
+      "sha256": "44c9ae1744850f2462835faf76f81323c83f5a7b47a4a42ed7c253199fcce882"
+    }
+  ],
+  "qualityIssues": [
+    "4篇真实光学高光谱，均只总库，不自动纳入三维专题。",
+    "LDBE基于LDAS，不按名字套LOF公式/概率校准。",
+    "Kalman元数据429后正常精确DOI200；保留O. Duran，未知运动/观测与滤波变体。",
+    "eFUMI区域弱标签与凸混合，不等普通MIL分类；相关2015/2019代码有明确来源，2014精确版本未知。",
+    "作者2017托管PDF不改双目2014会议年；Fig1原系统照片非完整流程，2.8nm不是300通道采样间隔。",
+    "双目不需跨时相配准仅固定系统假设，仍做左右几何校正。",
+    "122直接题名+恢复1=123；117入3排3待，77页未核。"
+  ],
+  "figureRecord": {
+    "paperId": "stereo-change-whispers-2014",
+    "filename": "framework-figure1-author-system.png",
+    "sourceUrl": "https://ackaraca.wordpress.com/wp-content/uploads/2017/01/whispers_2014_submission_160.pdf",
+    "figureLabel": "Figure 1 · 双目高光谱系统（作者稿）",
+    "page": 1,
+    "caption": "作者原地面双目高光谱系统照片，包含旋转平台、推扫相机对及笔记本；系统图，不是完整算法流程。",
+    "verificationNote": "取得四页五作者原稿，题名/作者与正式2014 DOI及日程匹配；目视原页及裁切，完整保留双目设备、笔记本和Fig1原图题，无重绘。PDF2017创建/上传不改2014会议年；仅系统原图，不据照片猜设备品牌。",
+    "cropDescription": "pdftoppm 200dpi渲染物理页1为1653×2339，裁切(877,1284,1491,1558)，保留原照片与图题。"
+  }
+}
