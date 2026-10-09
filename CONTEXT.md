@@ -16,8 +16,8 @@
 
 ## 当前状态
 
-- 总库540篇，311篇已复核分类，229篇暂定分类，267标签（任务93/方法151/应用23）。三维214篇不变；总库 ?collection=hyperspectral。
-- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱414、多光谱93、基础33。
+- 总库544篇，311篇已复核分类，232篇暂定、1篇待分类，268标签（任务93/方法152/应用23）。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱418、多光谱93、基础33。
 - CVPR2013–2022、ICCV2013–2021奇数年主题检索闭环，非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。19篇/41个arXiv日期核验；Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -26,11 +26,11 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词闭环增17排14待4。2019官方四期52项（51研究+1奖公告）逐题名/起始页匹配；另16行政记录及1未列目录索引。51研究项均尝试原来源，34已审17待核验；5医学项仅摘要片段，EPFL仅官方缓存；非年度HSI全量。Monash错标2009按正式2019。Fourier DOI、MSVI真值、正式稿差异待查。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖540篇、311张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖544篇、312张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt。
-- GRSL2015光谱66已审33待33，压缩待4。WHISPERS2014日程41及43–93页168题名，恢复配准1，共161入3排5待。目录174关联161/决定8/未审5，TRDF人工关联保留；42/94及早页待核。新增CRISM与陨石MLP2篇/4标签/1原图，原稿全文已读；CRISM四图非框架，MLP原Fig1示意六层，实际1层40神经元，实验室验证标基础关系。ChemCam LIBS关系待核不入库，原稿/综述受限。续目录5遗漏、42/94；代码数据、版本及CASI关系待核。
+- GRSL2015光谱66已审33待33，压缩待4。WHISPERS2014目录174逐项165入3排6待、未审0，TRDF人工关联保留；日程41–93页171题名另恢复配准1，目录补2。42页核化图摘要错配，仅题名入库待分类；植被稿关系待核。DLSR/SPIM摘要、扩展CNMF四页原稿已读及Fig2入库，复用CNMF方法族。94/早页、代码数据、原图及扩展身份待核；目录闭环不等于年度全量。
