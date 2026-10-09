@@ -13,7 +13,7 @@
 - React 19、TypeScript、Vite 7；Node.js 22.12+。
 - npm run dev -- --port 5173；远程需转发。
 - 数据/上下文：npm run validate；网站：npm run build；交互：浏览器检查。
-- 构建JS约4.05MB（gzip0.87MB），有体积警告。
+- 构建JS约4.5MB（gzip约0.92MB），有体积警告。
 
 ## 当前状态
 
@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：263组ORCID书目，2012–2026来源组已筛；2015组13入1重7排。Scholar387条，题名差集新增41条（9条摘要核验）；DBLP SPARQL精确作者364条，关键词差集2条摘要预印本、1条身份待核；网页导出仍是验证页。详见jun-zhou.md、inventory、sources。
+- 作者优先：263组ORCID书目均已有范围决定（128入、10关联既有、125排、0待）；早期尾项与2010多光谱配准决定已归档。Scholar387条，题名差集新增41条（9条摘要核验）；DBLP SPARQL精确作者364条，关键词差集2条摘要预印本、1条CEUR全文身份核验；网页导出仍是验证页。详见jun-zhou.md、inventory、sources。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
