@@ -620,6 +620,12 @@
 - 两条目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式2026 DOI、作者事实保留，SPECIAL 的预印本作者列表差异单列。
 - 其余 2026 直接高光谱条目仍待摘要或全文；证据见 `sources/jun-zhou-2026-abstracts.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2026-abstract-followup-2
+
+- 更新 2 篇，不新增目录论文，不改变三维214对象。HOT 综述读取 Springer 官方开放摘要；STU 读取公开摘要镜像。
+- 两条目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；STU 证据保留“公开镜像、未阅读全文”边界。
+- 2026 直接高光谱条目累计 4 篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2026-abstracts-2.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

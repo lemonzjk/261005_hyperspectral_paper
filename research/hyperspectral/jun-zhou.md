@@ -101,7 +101,7 @@ TIP2013轮廓结构原稿明确“extends from”ICPR2012并以[21]列其六作�
 | 2023 | 10 | 8 | 0 | 2 | 0 | 来源组筛选完成 |
 | 2024 | 21 | 10 | 1 | 10 | 0 | 来源组筛选完成 |
 | 2025 | 17 | 8 | 0 | 9 | 0 | 来源组筛选完成 |
-| 2026 | 21 | 7 | 0 | 14 | 0 | 来源组筛选完成；2篇摘要核验 |
+| 2026 | 21 | 7 | 0 | 14 | 0 | 来源组筛选完成；4篇摘要核验 |
 
 263组 ORCID 来源组现在均有范围决定；这不是全年作者或期刊/会议系统覆盖完成。下一步处理 DBLP 非关键词目录、旧年无题名命中摘要、近题版本及 Scholar/机构差集。
 
@@ -131,12 +131,12 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 ## 2024–2026高光谱来源组筛选
 
-2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 FedDA-HSI 与 SPECIAL 已补机构/arXiv摘要，更新为摘要级核验，其余仍保留题名暂定状态。
+2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 FedDA-HSI、SPECIAL、HOT综述与 STU 已补公开摘要，更新为摘要级核验，其余仍保留题名暂定状态。
 
 - 2024收录高光谱农业、解混、分类、去噪、LiDAR融合和视频跟踪；2025收录去噪、少样本分类、LiDAR融合和视频跟踪；2026收录医疗高光谱、异常/目标跟踪综述、选带、分类和解混。
 - 通用视觉、RGB-D、普通遥感、变化检测、红外可见光融合及其他无明确高光谱输入记录排除；2024 LiDAR-Guided Cross-Attention Fusion 已是既有目录条目，按重复登记处理。
 
-逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
+逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
 
 ## 2023高光谱来源组筛选
 
