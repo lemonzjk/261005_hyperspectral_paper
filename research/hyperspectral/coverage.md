@@ -231,6 +231,7 @@
 | ORCID author works | 2016 | Jun Zhou 2016 hyperspectral、Nonnegative Matrix Factorization、hyperspectral image classification、hyperspectral unmixing；ORCID orders 164–178; not a complete 2016 venue scan. | 15 / 15 / 15 | 作者来源组范围完成；非年度系统检索 | 7篇作者稿/摘要局部，1篇公开摘要无正文；正式版全文、图版和代码仍待。 |
 | ORCID author works | 2017 | Jun Zhou 2017 hyperspectral、hyperspectral unmixing、hyperspectral classification、hyperspectral denoising；ORCID orders 145–163; not a complete 2017 venue scan. | 19 / 19 / 19 | 作者来源组范围完成；非年度系统检索 | 10篇摘要/作者稿局部，1篇目录/书目待全文；正式版全文、图版和代码仍待。 |
 | ORCID author works | 2018 | Jun Zhou 2018 hyperspectral、hyperspectral denoising、hyperspectral classification、hyperspectral unmixing、hyperspectral imaging；ORCID orders 114–144; not a complete 2018 venue scan. | 31 / 31 / 31 | 作者来源组范围完成；非年度系统检索 | 16篇摘要/作者稿/机构来源局部，1篇仅题名/目录；正式版全文、图版、代码和2018后续版本仍待。 |
+| ORCID author works | 2019 | Jun Zhou 2019 hyperspectral、hyperspectral restoration、hyperspectral classification、hyperspectral unmixing；ORCID orders 106–113; not a complete 2019 venue scan. | 8 / 8 / 8 | 作者来源组范围完成；非年度系统检索 | 7篇摘要/作者来源局部，正式版全文、图版、代码和版本差异仍待。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -583,6 +584,8 @@
   阅读边界：10篇以作者稿/机构摘要和正式书目局部核验；1篇只核验官方目录与题名；不标全文。
 - 2026-10-10 / jun-zhou-orcid-2018-114-144：新增 16，更新 0，去重 2，排除 13，待处理 136。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：16篇以作者稿、机构摘要、出版社摘要、arXiv或正式会议来源核验；边界检测论文仅题名/目录并保留待分类；不标全文。
+- 2026-10-10 / jun-zhou-orcid-2019-106-113：新增 7，更新 0，去重 0，排除 1，待处理 128。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：7篇以作者论文、出版社摘要、DBLP或公开索引核验；1篇VHR遥感目标检测排除；不标全文。
 
 ## 未解决缺口
 
@@ -633,7 +636,7 @@
 - ORCID2014八组来源范围筛选完成1入7排；另核2016近题1篇。不是完整作者年份或场所年度检索。
 - ICPR2014/TGRS2016共享概念方法族，明确期刊扩展声明及首次online日期待核；2013 RGB拼接基础继承关系仍待进一步原文证据。
 - 2012两篇仅题名、2013生物炭正文/原图、旧年非题名命中摘要、DBLP/Scholar/机构目录差集及作者arXiv全量仍待查。
-- 周峻263组：已入65、关联既有4、排55、待136；页面66篇；ORCID 2018来源组已闭环，仍非作者全年全量。
+- 周峻263组：已入26、关联既有2、排22、待213；页面27篇，尚未收全。
 - ORCID2015十九组本批审九组8入1重，余十组仍待；不是作者2015全部成果或任一场所年度完整检索。
 - 2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。
 - 2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。
