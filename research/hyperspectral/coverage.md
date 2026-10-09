@@ -159,6 +159,7 @@
 | WHISPERS | 2013 | all proceedings titles、oil presence thickness steel coils、EMAP decision fusion classification、bilinear bilinear nonnegative unmixing；原目录PDF全部页解析161项；逐篇筛选顺序1–3，158项未审。 | 161 / 3 / 3 | 完整题名目录已取得；首3项2入1待，其余158未审 | 161项目录全部下载解析；仅首3项2入1待，其余158尚未逐篇审查；目录存在不等于年度内容完成。；EMAP四页原稿全文及Fig1已读；单场景、参数/测试划分细节和代码数据待核，不能继承二次引用的LiDAR输入。；双线性NMF仅题名待分类，会议原摘要/全文和2014期刊扩展身份待核；作者SSP仓库不是本稿已核代码。；油膜2013原稿受限，SFPT日期/版本身份待核；正式IEEE版及全年度摘要/引文/原图仍有缺口。 |
 | WHISPERS | 2014 | atmospheric condition uncertainty、statistical moments sub-pixel target tracks、floodplain CASI LiDAR reference、wet dry tropics vegetation；定向4候选；不构成年目录扫描；2014官方第94页仍未取得。 | 4 / 4 / 4 | 四个既有待核项补检，决定仍待核；无新增论文 | 2014待核6项仍未解决；本次只补检其中4项。；CASI名称不能代替实际波段配置；植被2014原稿与日期/版本身份未取得。；第94页及其他早页、全文、原图与引用关系待补。 |
 | WHISPERS | 2013 | spatial regularization semisupervised HERF、Sava two band reflectance chlorophyll、ICA FastICA Infomax JADE FS SVM；正式目录顺序4–6，3项逐审；累计6/161，155未审。定向搜索不是完整年度关键词扫描。 | 161 / 3 / 3 | 第4–6项3入；累计5入1待，155未审 | WHISPERS2013目录161累计顺序1–6已审：5入1待，余155未审；年度摘要、全文、其他词、引文仍未完成。；HERF仅题名待分类；作者slides/basic code线索受限，2015/2016后续稿扩展声明及2013原摘要/图仍待核。；Sava与ICA只核摘要；三篇会议原图、全文实验、专用代码/数据、arXiv及后续版本关系待核。不借2014 ICA、2016 FEB结果或原图。；2013官方37页日程工具缓存可读，直连三次TLS失败；未拿到实际原PDF，不宣布日程全部页已读或有论文摘要。 |
+| WHISPERS | 2013 | Low rank representation bilinear abundance estimation、Removal salt-and-pepper noise THEMIS radiance emissivity、Iterative estimation number autofluorescence components、exact titles + pdf code arxiv；正式目录顺序7–9，3项逐审；累计9/161，152未审。定向搜索未穷尽搜索分页，不作完整年度关键词扫描。 | 161 / 3 / 3 | 第7–9项3入；累计8入1待，152未审 | WHISPERS2013目录161累计顺序1–9已审：8入1待，余152未审；年度摘要、全文、其他词和引文仍未完成。；低秩解混仅读原作者2013演示的指定页，论文摘要/全文/原图仍待核；THEMIS作者稿已读，正式版差异待核；m-FLIM仅机构摘要，全文/原图待核。；三篇专用代码、原数据、arXiv及相关期刊扩展身份未核。不把作者演示或另篇后续稿实验当成已核论文结果。；HERF/NMF仅题名，Sava/ICA仅摘要；油膜2013/2014/页首2012身份、早期条目的原图及全文待核。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -473,6 +474,8 @@
   阅读边界：EMAP作者原稿全文/表/两图已读；双线性NMF仅题名待分类；油膜2013关系待核。旧544论文与三维214保持原对象。2014四旧pending补检没有新原稿证据，保留决定。
 - 2026-10-09 / whispers-2013-proceedings-next-three-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：三篇新增：HERF仅题名待分类，Sava作者摘要和ICA机构摘要已核；三原图均受限逐篇留原因。旧546论文与三维214原对象不变。
+- 2026-10-09 / whispers-2013-proceedings-orders-7-to-9-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：3新增：THEMIS作者全文，m-FLIM原摘要，低秩作者演示指定页；2原方法示例包含1张论文Fig.1与1张会议幻灯片无图号图，来源分开。旧549论文及三维专题原对象不变。
 
 ## 未解决缺口
 
@@ -509,4 +512,4 @@
 - GRSL2015光谱题名组剩46候选；出版社目录、其他任务词/摘要及引用链尚未全扫。
 - ESDAP作者稿Pavia640×340、手工属性阈值及正式版/代码/许可待核验；邻域图2014 workshop与2015期刊的原稿/版本差异受限。自编码器和ELML原始摘要待其他路线。
 - WHISPERS2014目录174已逐项决定165入3排6待，0未审；核化图原摘要错配仅题名待分类。41–93页已筛，94及其他早页、原图/全文/版本关系仍待核，目录闭环不作年度全量声明。
-- WHISPERS2013目录161累计顺序1–6已审：5入1待，余155未审；年度摘要、全文、其他词、引文仍未完成。 HERF仅题名待分类；作者slides/basic code线索受限，2015/2016后续稿扩展声明及2013原摘要/图仍待核。 Sava与ICA只核摘要；三篇会议原图、全文实验、专用代码/数据、arXiv及后续版本关系待核。不借2014 ICA、2016 FEB结果或原图。
+- WHISPERS2013目录161累计顺序1–9已审：8入1待，余152未审；年度摘要、全文、其他词和引文仍未完成。 低秩解混仅读原作者2013演示的指定页，论文摘要/全文/原图仍待核；THEMIS作者稿已读，正式版差异待核；m-FLIM仅机构摘要，全文/原图待核。 三篇专用代码、原数据、arXiv及相关期刊扩展身份未核。不把作者演示或另篇后续稿实验当成已核论文结果。 HERF/NMF仅题名，Sava/ICA仅摘要；油膜2013/2014/页首2012身份、早期条目的原图及全文待核。

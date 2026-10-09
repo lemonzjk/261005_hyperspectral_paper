@@ -1,0 +1,260 @@
+     REMOVAL OF SALT-AND-PEPPER NOISE IN THEMIS INFRARED RADIANCE AND
+            EMISSIVITY SPECTRAL DATA OF THE MARTIAN SURFACE
+
+                                   K. J. Nowicki1, C. S. Edwards2, P. R. Christensen3
+      1
+          Southwest Research Institute, Boulder, CO (keith.nowicki@swri.org); 2California Institute of
+                     Technology, Pasadena, CA; 3Arizona State University, Tempe, AZ.
+                        ABSTRACT
+The quality of false color images of THEMIS multispectral
+infrared data is significantly reduced by the presence of
+white noise. Presented here is the description of the
+algorithm developed for the removal of white noise from
+THEMIS data to produce higher quality false color imagery
+in radiance and emissivity without loss of spatial resolution.
+The algorithm utilizes inter-band correlations of surface
+features and principal component analysis techniques to
+separate noise from the radiation originating from the planet
+surface. This algorithm is a standard process available to
+users of THEMIS data for the production of false color
+imagery.
+
+   Index Terms – Salt-and-Pepper Noise Removal,
+THEMIS, Remote Sensing, Principle Component Analysis
+
+                     1. INTRODUCTION
+Electro-optical imaging systems are afflicted with a variety
+of noises, the origin and manifestation of which depend
+upon the design of their optical train, method of electronic
+control and readout, the physical means by which they
+acquire the signal, etc. Out of this variety of noises that may
+be present, the noise alternatively known as white noise,
+speckle or salt-and-pepper noise is ubiquitous [e.g. 1].
+Compensation for this noise is accomplished by increasing
+signal-to-noise ratios (SNR) through methods such as signal
+pre-amplification or increasing integration. However, in
+cases where image analysis is performed close to the level
+of the noise to extract increasingly subtle signals from the
+data, white noise becomes a serious impediment to image
+interpretation. In multispectral data, false color images are
+often produced to visibly differentiate compositional
+variations in the scene. Additionally, colors are commonly
+stretched to exaggerate and emphasize these subtle spectral
+differences. One such stretch, the decorrelation stretch
+(DCS), is useful for multispectral data where differences
+between spectral bandpasses are minimal and other, gentler          Figure 1. A section of THEMIS image I48021012, shown as
+stretches yield little visible differentiation of regions [2]. In   a DCS of bands 8, 7, and 5. A) Original data. B) FFCS data.
+DCS images, white noise is amplified along with real color          C) Final data. D) CN data. E) RN data. The visible spectral
+differences and may render the false color image too grainy         features in 1D are a direct result of spectral smearing. These
+and variegated to use. In Thermal Emission Imaging System           remnant features are removed by using a PCA of Figure 1D
+(THEMIS, [3]) multispectral infrared data, decorrelation            and zeroing the first component. The reverse transformation
+stretched false color images are significantly degraded due         to radiance data results in Figure 1E.
+to white noise amplification. Presented here is an algorithm       There can only be as many components as there are original
+to remove white noise from multispectral data utilizing            vectors.
+inter-band information. Although the following discussion               The algorithm presented here utilizes PCA implicitly
+uses THEMIS data for demonstrative purposes, the                   and explicitly. The algorithm works well on multispectral
+algorithm described may be applied to any multi- or hyper-         data sets where the first principal component is much larger
+spectral data set where differences between spectral bands         than the subsequent components. In the case of multispectral
+are minimal.                                                       images, this intuitively means that the smaller the
+                                                                   differences between images of unique bandpasses the
+1.1 White Noise Removal Techniques                                 greater the efficacy of the algorithm in removing white
+In images with only a single band, removal of white noise is       noise and leaving real image content unaltered.
+difficult and techniques are reliant on smoothing operations       Furthermore, the algorithm utilizes PCA on the separated
+using low-pass filters where pixels are averaged together          speckle image to guarantee the purity of white noise once it
+increasing SNR at the expense of lowered spatial resolution.       has been separated from the real scene content.
+In the ideal case, a flat-field image with no variability in the
+content of the scene, a low-pass filter will perfectly remove                               2. METHOD
+the high frequency corruption of white noise. However, low-        The technique is based upon the principle of rotating the
+pass filtering will blur sharp features in images with real        data into some alternate image space where a low-pass filter
+content, smearing boundaries and degrading the spatial             may be applied and then transformed back to the original
+resolution of the image. Numerous variants of low-pass             space where the filtering does not manifest as a reduction in
+filtering of single-band images, in both image space and           spatial resolution. Furthermore, the algorithm utilizes
+Fourier space, have been published [4]. Another method to          knowledge about the statistical characteristics of speckle to
+reduce white noise in single band imagery is to average            aid in differentiating it from similarly high frequency, real
+multiple images of identical spectral bandpass of an               information in the data.
+identical scene. This accomplishes the same result as time              The sum of the radiance of all sufficiently similar bands
+integration; signal is amplified while white noise remains         is computed and is called the Total Signal (TS). In
+constant in amplitude. Although this technique is highly           THEMIS, the atmosphere is opaque in certain bands and the
+successful in reducing the noise, the acquisition of multiple      image is fundamentally different in content from those
+images or longer integration times may not be practical or         measuring the surface. These bands have been eliminated
+possible, especially for spaceborne or airborne instruments.       from the set on which the algorithm is applied. This
+      Some spectral data permit a limited flexibility in           algorithm is not very successful with datasets comprised
+separating white noise from target signal. In cases where          solely of atmospheric observations because the algorithm
+intra-band variations are small, multiple spectral passes          benefits from the existence of strong surface features
+supply semi-identical images which can be used to similar          common in all bands and atmospheric data generally
+effect as identical bandpass scene averaging. It is necessary      contains very few strong inter-band correlations.
+to differentiate between real variations in content between             The radiance data is transformed into Fractional
+scenes of different bandpass and speckle.                          Contribution Space (FCS) where each band is a divided by
+      The goal of the algorithm presented in this work is to       the TS to produce numbers between 0 and 1. FCS was
+reduce the white noise in THEMIS radiance and emissivity           chosen because it is a simple transformation, requires few
+data cubes in every band without a loss in spatial resolution.     processing resources and is easy to visualize and
+Radiance may be linearly, and thus reversibly,                     comprehend. Although this algorithm may be applied to any
+deconstructed into the component vectors of emissivity and         generalized multispectral or appropriately redundant data
+temperature. THEMIS data for this work have been fully             set, care must be taken in the calculation of the FCS. Several
+processed through the standard calibration and processing          data sets, especially after advanced processing, may produce
+procedures [3, 5, 6].                                              negative values and thus the sum does not equal the sum of
+                                                                   the absolute value of the data.
+1.2 Principal Component Analysis                                        Each of these fractional components is then
+Principal Component Analysis (PCA) is a powerful                   independently low-pass filtered with a NxN square box filter
+mathematical tool to quantitatively describe specific              to remove speckle and produce the Filtered FCS (FFCS).
+attributes of possibly correlated variables. PCA calculates        Various filter kernel sizes and shapes can be applied to
+the eigenvectors of a covariation matrix of N vectors              remove the contribution of high-frequency information.
+producing another set of N vectors ordered by decreasing           Generally, a uniform, square kernel size where N = 5 to 9
+covariance [7]. The first principal component quantifies the       allows for greater than a 20x reduction of the amplitude of
+largest similarity amongst the vector set. The second              white noise spikes relative to the mean. This is sufficient for
+principal component performs the same operation on the             cosmetic restoration of the DCS images of THEMIS data
+residual after the first component is removed, and so on.          and the later steps of the algorithm have an inherent
+                                                                   flexibility capable of accommodating a wide range of kernel
+          80000
+                       Histogram of White Noise per Band as Percentage of Signal
+                                                                                                resulting in the white noise free data product (Figure 1C). A
+                                                                                       Band 1
+                                                                                       Band 2
+                                                                                       Band 3
+                                                                                                PCA performed on the RN yields a set of approximately
+          70000                                                                        Band 4
+                                                                                       Band 5
+                                                                                                equivalent eigenvalues and vectors that, when stretched for
+                                                                                       Band 6
+                                                                                       Band 7   visual inspection, are all composed of unique white noise.
+          60000                                                                        Band 8
+                                                                                       Band 9   The algorithm, by removing the first principal component of
+          50000                                                                                 the CN will re-introduce a portion of the white noise but
+                                                                                                reduced by a factor of 1/N. The total reduction of the white
+Counts
+
+
+
+
+          40000
+                                                                                                noise in the original data can will consequently be (N-1)/N.
+          30000
+                                                                                                The greater the number of bands available to the algorithm,
+                                                                                                the more efficient the removal of white noise will be.
+          20000
+
+                                                                                                                         3. RESULTS
+          10000
+                                                                                                The algorithm was developed to remove color speckle from
+             0                                                                                  thermal emission imagery in both radiance and emissivity
+                  -3    -2           -1            0            1           2      3
+                                   Percentage of Surface Radiance                               space. This algorithm has been applied to tens of thousands
+                                                                                                of THEMIS images over the course of its development and
+         Figure 2: The white noise per band removed by the
+                                                                                                has yielded high quality results (Figure 1) without the
+         algorithm as a percentage of the average of the THEMIS
+                                                                                                introduction of any significant image artifacts. After the
+         infrared signal.
+                                                                                                application of this algorithm, small-scale surface differences
+         sizes. Of course, this low-pass filtering will remove real                             are significantly easier to differentiate (Figure 1C) than in
+         high-frequency information contained in the data along with                            the original, unprocessed data (Figure 1A).
+         speckle, but the vast majority of the surface signal is                                     In an assessment of quantitative effects on the imagery,
+         segregated from white noise. Because filtering will raise and                          this algorithm was applied to the 9 surface-viewing bands of
+         lower values, oftentimes in the same direction in all bands,                           THEMIS imagery of Mars. In a study of four THEMIS
+         the FFCS is normalized to ensure the summation across all                              images chosen for high spectral variability, we calculated
+         bands is unity.                                                                        the signal contribution of speckle extracted from surface
+               The FFCS is then rotated back into radiance units by                             data containing moderate geomorphological variation. The
+         multiplication with the TS. The spatial resolution of the                              standard deviation of the distribution was approximately 1%
+         FFCS is not significantly degraded, as would have been the                             for bands 1 and 2 and less than 0.5% for the other bands
+         result of applying the low-pass filter directly to the radiance                        (Figures 2 and 3). In spectral radiance units for one case,
+         data. Instead, artifacts introduced as spectral differences can                        this translates to speckle signal of amplitude 2e-6 for average
+         be observed on light/dark boundaries. The rotation into                                surface radiance signal of 4e-4 (in band 4), corresponding to
+         another space allowed for the retention of spatial resolution                          an average surface temperature of 260 K.
+         (i.e. the sum of signal across bands in any given pixel) at the
+         cost of band-independent signal averages (or colors in                                                       4. DISCUSSION
+         stretched images).                                                                     At the point that the algorithm transforms the FFCS back
+               The FFCS (Figure 1B) is then subtracted from the                                 into radiance units the colors of boundary pixels are clean of
+         original radiance data to obtain Concentrated Noise (CN,
+         Figure 1D) vectors, so called because the speckle is                                                 1.2
+                                                                                                                            Standard Deviation of the Contribution of White Noise to Spectral Band
+
+
+         completely contained within these vectors and is mixed with
+                                                                                                              1.1
+         only residual surface signal. The goal of the algorithm from
+         this point forward is to confidently remove all valuable                                              1
+
+
+         signal from the CN and thereby restore it to the “cleaned”                                           0.9
+
+         data vector. The algorithm utilizes the fact that white noise                                        0.8
+                                                                                                 Percentage
+
+
+
+
+         will have a normal distribution centered on zero and will                                            0.7
+         contain no inter-band correlations. To separate the speckle
+         from high frequency signal removed erroneously from the                                              0.6
+
+
+         data, a PCA is performed on the CN. The first component is                                           0.5
+
+         dominated by spatially correlated information, which is                                              0.4
+
+         derived solely from the surface data. Subsequent principle                                           0.3
+         components are generally free of surface information and
+                                                                                                              0.2
+         are therefore the principal components of speckle. The first                                               1   2            3            4            5           6           7             8   9
+                                                                                                                                                      THEMIS Spectral Band
+         component is set to zero and the remaining components are
+         re-transformed into radiance space where only white noise                                  Figure 3: The standard deviation of the white noise
+         remains which is called Reduced Noise (RN, Figure 1E).                                     removed by the algorithm per THEMIS band as a
+         The RN is subsequently subtracted from the original data                                   percentage of the average of the original data.
+white noise but are no longer true to the local average of the         The algorithm may induce errors across morphological
+unfiltered data. However, after the completion of the             or compositional boundaries. In general, in thermal infrared
+algorithm, the local averages on the scale of the low-pass        data, temperature boundaries produced by solar shadows are
+filter kernel are identical between the cleaned and the           much greater in magnitude than compositional boundaries
+original data. The residual white noise is reduced on average     and offer a greater opportunity for the algorithm to induce
+to 1/N times the amplitude of speckle in any individual           error. Error was calculated on the six greatest temperature
+band. This is due to the fact that white noise follows a          differentials found in a selection of 10 THEMIS images
+normal distribution centered on zero and sums of multiple         where error was detected. All six locations are at the edge of
+white noise images will yield the same distribution. This         craters at the boundary between the face facing the sun and
+distribution, although having a greater extent in the wings, is   the interior wall of the crater in the shade. In all cases, the
+divided by the number of bands and thus reduces outliers          error was contained to one width of the low-pass filter from
+inverse-proportionally. Small events are likewise reduced in      the boundary pixel.
+amplitude and the result is that the majority of the speckle
+occurrences are significantly damped.                                                  6. CONCLUSIONS
+      The color change in light/dark boundary pixels is an        The algorithm presented in this work successfully removes
+expected side effect of rotating the radiance image into FCS.     white or randomly distributed noise from multispectral
+When a low-pass filter is applied to FCS data, the                THEMIS data and is a valuable tool in generating images
+assumption is that any color change between adjacent pixels       for visual analysis. The algorithm retains much of the
+should be negligible. This is an incorrect assumption as          original spectral character of the data and allows for a
+geologic units often have very sharp boundaries (Figure 1),       significantly better assessment of small-scale spectrally
+particularly at topographic barriers. However, because the        distinct features. Furthermore, this algorithm has been
+algorithm deals with every band independently and requires        applied to the more than twenty-five thousand THEMIS
+the Total Signal to be constant, blurring of light/dark           thermal infrared images without any major introduction of
+boundaries does not occur when FFCS data is rotated back          artifacts. These data are provided to the public as a browse
+into the original space. Instead, the low-pass filter leads to    product to quickly assess the spectral variability in images.
+an offset in spectral character or color when viewed as a
+DCS image. This color offset is a notably less severe                                   7. REFERENCES
+corruption of the data when compared with applying a low-         [1] J. S. Lim, Two Dimensional Signal and Image
+pass filter directly to radiance data, as offsets are often           Processing, Prentice Hall, New Jersey, ch. 8 and 9, 1990.
+comparable across bands. For example, if one pixel is             [2] A. R. Gillespie, A. B. Kahle, and R. E. Walker, “Color
+adjacent to a pixel that is darker, averaging will cause signal       enhancement of highly correlated images. I.
+depression in the first and elevation in the latter. Due to the       Decorrelation and HSI contrast stretches,” Remote
+nature of thermal radiation, the offset will almost certainly         Sensing Environ., vol. 20, 209-235, 1986.
+be comparable across all thermal bandpasses for the same          [3] P. R. Christensen, B. M. Jakosky, H. H. Kieffer, M. C.
+pixel. After the re-normalization operation is performed              Malin, H. Y. McSween, Jr., K. Nealson, G. L. Mehall, S.
+across all bands to return the sum of FFCS to unity, the              H. Silverman, S. Ferry, M. Caplinger, and M. Ravine,
+color offsets in each band retain their relative ratios. Since        “The Thermal Emission Imaging System (THEMIS) for
+the primary goal is to remove color speckle from stretched            the Mars 2001 Odyssey Mission,” Space Science
+color images; this operation is best done when hue is                 Reviews, vol. 110, no. 1, 85-130, 2004.
+separated from saturation.                                        [4] Y. Dong, B. Forster, A. Milne, and G. Morgan, “Speckle
+                                                                      suppression using recursive wavelet transforms,”
+                         5. ERROR                                     International Journal of Remote Sensing, vol. 19, no. 2,
+The induced error of the algorithm depends upon the                   317-330, 1998.
+morphology of the surface of the planet. Errors were              [5] J. L. Bandfield, A. D. Rogers, M. D. Smith, and
+measured by comparing areal averages of data before and               P.R.Christensen, “Atmospheric correction and surface
+after the algorithm was applied. Over regions of negligible           spectral unit mapping using Thermal Emission Imaging
+morphological variation, the algorithm has an insignificant           System data,” J. Geophys. Res., vol. 109, E10008, 2004.
+effect on averages of areas greater than twice the smoothing      [6] C. S. Edwards, K. J. Nowicki, P. R. Christensen, J. Hill,
+filter used. In THEMIS data, ten regions selected for                 N. Gorelick, and K. Murray, “Mosaicking of global
+homogeneous surface composition and morphology showed                 planetary image datasets: 1. Techniques and data
+differences of averages between the original data and post-           processing for Thermal Emission Imaging System
+algorithm to be less than 0.07% for areas the size of the low-        (THEMIS) multi-spectral data,” J. Geophys. Res., vol.
+pass filter kernel. The differences rapidly approach zero as          116, no. E10, E10008, 2011.
+area size increases. This demonstrates that the algorithm         [7] T. M. Lillesand, R. W. Kiefer, and J. W. Chipman,
+may be applied to calibrated data with bland surface targets          Remote Sensing and Image Interpretation, 6th ed.,
+without concern for increasing error.                                 Wiley, New Jersey, ch. 5 and 7, 2008.
+

@@ -1,0 +1,670 @@
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+
+
+
+
+                  Low Rank Representation For Bilinear
+                    Abundance Estimation Problem
+
+           Qing Qu∗ , Xiaoxia Sun∗ , Nasser Nasrabadi† , Trac D. Tran∗
+
+            ∗ The Johns Hopkins University, 3400 N. Charles Street, Baltimore, MD, 21218
+           † U.S. Army Research Laboratory, 2800 Powder Mill Road, Adelphi, MD, 20783
+
+
+
+
+              IEEE WHISPERS , 25-28 June 2013, Gainesville, USA
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+
+
+
+
+      Outline
+
+
+       1    Introduction
+
+       2    Abundance Estimation for GBM
+
+       3    Joint Sparse and Low Rank Representation Model
+
+       4    Experiment Results
+
+       5    Conclusion
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Introduction
+
+
+
+      Motivations and Proposals
+
+       The spectral unmixing problem consists of two major steps1 :
+                  Extraction of pure endmembers;
+                  Estimations of the abundance maps.
+
+       Main contributions
+       In this work, we assume that the pure endmembers are known
+       or can be extracted automatically, our contributions are
+                  We introduced a simple but very effective abundance
+                  estimation method for bilinear mixture models;
+                  We proposed joint sparse and low rank models to
+                  capture the spatial information in the hyperspectral
+                  data.
+       1
+                 N. Keshava, and J. F. Mustard,“Spectral unmixing,” IEEE Signal Process. Mag.,
+                 vol. 19, no. 1, pp. 44-57, Jan. 2002.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Introduction
+
+
+
+      Linear Mixture Model
+       Suppose we have
+                 A hyperspectral data cube Y = [y1 , y2 , . . . , yN ] ∈ RL×N with L
+                 spectral bands;
+                 A pure endmember dictionary A = [a1 , a2 , ..., aR ] ∈ RL×R .
+       Each pixel sepctrum yk (1 ≤ k ≤ N) is a linear combination of R pure
+       endmembers
+                                            R
+                                            X
+                                    yk =           ai xik + nk = Axk + nk ,            (1)
+                                             i=1
+       where nk is the Gaussian white noise. xi is the abundance map
+       assumed to satisfy
+            (A1) Abundance nonnegative constraint: xik ≥ 0, ∀i ∈ 1, 2, ..., R,
+                                                  X R
+            (A2) Abundance sum-to-one constraint:      xik = 1.
+                                                                          i=1
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Introduction
+
+
+
+      l1 -regression for LMM
+
+       Recent research showed that the abundance estimation
+       problem could be formulated in a sparse regression framework
+
+                 min ||xk ||0 , s.t. ||yk − Axk ||2 ≤ 1 , xk ≥ 0, 1T xk = 1,        (2)
+                  xk
+
+       Instead of minimizing the l0 -norm, we solve the following lasso
+       problem
+
+                            1
+                         min ||yk − Axk ||22 + λ1 ||xk ||1 , s.t. xk ≥ 0,            (3)
+                         xk 2
+
+       where the sum-to-one constraint cannot be enforced because
+       of the nonnegativity constraint and l1 -norm.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Introduction
+
+
+
+
+                  Guo et. al. 2 proposed supervised method by use a small
+                  dictionary A by some endmember detection method so that the
+                  system is over-determined, and the solution is known to be more
+                  stable and robust.
+                  Iordache et. al. 3 proposed a semi-supervised method with a
+                  huge over-complete dictionary A from the standard USGS
+                  library, bypassing the endmember extraction step. Because the
+                  mutual coherence of dictionary A is too high (near unitary), the
+                  uniqueness of the solution cannot be guaranteed.
+                  They solve the l1 minimization problem by the nonnegative
+                  constraint alternating direction method of multipliers (ADMM)4
+                  These methods are based on the LMM so that they cannot
+                  handle the wide existing non-linearities in the mixing
+                  scheme.
+       2
+                 Z. Guo et. al., ” L1 unmixing and its application to hyperspectral image enhancement”, in Proc. SPIE Conf.
+                 Algorithms Technol. Multispectral, Hyperspectral, Ultraspectral Imaging XV, Orlando, Florida, 2009.
+       3
+                 Iordache et. al., “Sparse unmixing of hyperspectral data,” IEEE Trans. Geosci. and Remote Sens., vol. 49, no.
+                 6, pp. 2014-2039, Jun. 2011.
+       4
+                 S. Boyd et. al., “Distributed optimization and statistical learning via the alternating direction method of multipli-
+                 ers,” Foundations and Trends in Machine Learning, vol. 3, no. 1, pp. 1-122, Nov. 2010.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Abundance Estimation for GBM
+
+
+
+      Generalized Bilinear Mixture Model
+
+       To model the nonlinearities in hyperpsectral images, the generalized
+       bilinear model (GBM) 5 has been proposed which assumes that each
+       observed pixel yk (1 ≤ k ≤ N) can be expressed as
+                                               R−1
+                                               X X R
+                             yk = Axk +                      γijk xik xjk ai     aj + nk ,   (4)
+                                                i=1 j=i+1
+
+       where 0 ≤ γijk ≤ 1 (1 ≤ i < j ≤ R) is an interaction parameter, and
+       denotes the Hadamard product operation.
+              GBM introduces a bilinear term to LMM;
+              GBM takes the scattering effects into account by the
+              second-order bilinear components.
+
+       5
+             Halimi et. al. , “Nonlinear unmixing of hyperspectral images using a generalized
+             bilinear model,” IEEE Trans. Geosci. and Remote Sens., vol. 49, no. 11, pp.
+             4153-4162, Nov. 2011.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Abundance Estimation for GBM
+
+
+
+      l1 -regression for GBM
+
+
+       By taking a closer look, the GBM could be viewed as
+                                            R                 R  ∗
+                                            X                 X
+                                   yk =           xik ai +           elk bl + nk ,   (5)
+                                            i=1                l=1
+
+       where R ∗ = 21 R(R + 1) and
+
+                         elk = γijk xik xjk , bl = ai aj ,
+                                 (2R − i − 2)(i − 1)                                 (6)
+                         l =j+                         , 1 ≤ i < j ≤ R.
+                                              2
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Abundance Estimation for GBM
+
+
+
+      l1 -regression for GBM
+
+       Therefore, we transform the bilinear problem into a linear
+       problem by
+
+                                       yk      = Axk + Bek + nk ,
+                                                        
+                                                        x
+                                               = [A, B] k + nk ,
+                                                        ek
+                                               = Mφk + nk .                          (7)
+
+       where M and φk are the composite dictionary and composite
+       abundance, respectively. Similarly, the bilinear abundance
+       estimation problem could be solved by
+
+                           1
+                        min ||yk − Mφk ||22 + λ01 ||φk ||1 , s.t. φk ≥ 0,            (8)
+                        φk 2
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Abundance Estimation for GBM
+
+
+
+      Enforcing the sum-to-one constraint
+
+
+
+       Though the sum-to-one constraint cannot be enforced in the
+       LMM, it can be enforced in our framework because we are
+       minimizing the l1 -norm of φk rather than xk .
+
+                                       1
+                                  min ||yk − Mφk ||22 + λ01 ||φk ||1 ,
+                                  φk 2                                               (9)
+                                  s.t. φk ≥ 0, kT φk = 1,
+                                                                           ∗
+       where k = [1T , 0T ]T (1 ∈ RR and 0 ∈ RR ).
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Abundance Estimation for GBM
+
+
+
+
+       Instead of solving the equality constraint problem exactly, we
+       approximately solve the following problem
+                                         
+                         1 yk          M
+                   min ||        −            φk ||22 + λ01 ||φk ||1 , (10)
+                   φk ≥0 2   δ1      δ 1 kT
+       where δ1 > 0 is a regularization parameter and it is still a
+       nonnegative constraint sparse regression problem that can be
+       efficiently solved by a nonnegative constraint l1 -minimization
+       algorithm (i.e., nonnegative constraint ADMM).
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Joint Sparse and Low Rank Representation Model
+
+
+
+      Joint Sparse Regression
+
+              Given the data Y contain N pixels in a sliding window,
+              these pixels which are in a small neighbourhood are
+              supposed to share very similar endmembers (or support
+              set).
+              Thus, we further propose to solve the following joint sparse
+              regression problem as
+                                            
+                           1     Y        M
+                       min ||         −          Φ||2F + λ2 ||Φ||1,2 , (11)
+                       Φ≥0 2   δ2 1T     δ2 kT
+
+              where δ2 > 0, λ2 > 0, || · ||F P  is the Frobenius norm, and
+                                                       ∗
+              Φ = [φ1 , · · · , φN ]. ||Φ||1,2 = R+R
+                                                   i=1   ||φi ||2 and φi ∈ RN is
+              the i-th row of the matrix Φ.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Joint Sparse and Low Rank Representation Model
+
+
+
+
+              For the single measurement vector (SMV) problem
+                                         
+                              1 y       M
+                         min || k −           φk ||22 + λ01 ||φk ||1 ,                 (12)
+                        φk ≥0 2  δ1   δ1 kT
+
+              we use a nonnegative constraint SMV-ADMM to solve the
+              problem;
+              For the multiple measurement vector (MMV) problem
+                                             
+                            1     Y        M
+                       min ||          −          Φ||2F + λ2 ||Φ||1,2 , (13)
+                       Φ≥0 2    δ2 1T     δ2 kT
+
+              we propose an nonnegative constraint MMV-ADMM to find
+              the solution 6 ;
+
+       6
+             Q. Qu, N. Nasrabadi, and T. Tran, “Hyperspectral Abundance Estimation for the
+             Generalized Bilinear Model with Joint Sparsity Constraint”, ICASSP 2013, Vancou-
+             ver, May 2013, to be appear.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Joint Sparse and Low Rank Representation Model
+
+
+
+      Joint Sparse Regression
+
+
+
+              The proposed joint-sparsity assumption forces all the
+              pixels in the sliding window to share the same support set.
+              The joint-sparsity constraint is very effective for unmixing
+              homogenous regions, where most of the pixels consist of
+              very similar types of endmembers.
+              However, when the sliding window contains sub-pixel
+              targets or noncontiguous materials, such a strict spatial
+              constraint might limit the ability to accurately estimate the
+              proportions of endmembers.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Joint Sparse and Low Rank Representation Model
+
+
+
+
+                                      (a) Original Image                    (b) SMV−ADMM
+
+                                                           Pure Pixel
+                                                           Mixture of 2
+                                                           endmembers
+                                                           Mixture of 3
+                                                           endmembers
+                                                           Mixture of 4
+                                                           endmembers
+                       Background
+                                                           Mixture of 5
+                                                           endmembers
+
+
+
+                                    (c) Joint MMV−ADMM                    (d) Low Rank Recovery
+
+                                                             Boundary
+                                                             aliasing
+
+
+
+
+       Figure : The original and the reconstructed synthetic false-color
+       hyperspectral images of the 1st, 112nd and 224th bands
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Joint Sparse and Low Rank Representation Model
+
+
+
+      Low Rank Representation Model
+
+
+       Theorem
+       Assume matrices Y ∈ RL×N , A ∈ RL×R and X ∈ RR×N which
+       satisfy Y = AX. If rank(Y) = r ≤ N, rank(A) = R, then we have
+
+                                         rank(X) = rank(Y) = r .                     (14)
+
+              The theorem tells us that if the data Y is highly correlated,
+              the rank of the abundance matrix X is low.
+              Instead of joint sparse regression, we propose to minimize
+              the rank of the abundance matrix according to the theorem.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Joint Sparse and Low Rank Representation Model
+
+
+
+      Low Rank Representation Model
+
+       For the GBM, we need to solve the following problem
+
+                                min rank(X) + λ3 ||E||0 ,
+                             X≥0,E≥0                                                 (15)
+                             s.t. ||Y − AX − BE||F ≤ , 1T X = 1T ,
+
+       Because the problem is NP-hard, we solve the following
+       problem
+
+                           min ||X||∗ + λ3 ||E||1 ,
+                         X≥0,E≥0
+                                                                                     (16)
+                                                     
+                                    Y         A          B
+                          s.t. ||        −          X −     E||F ≤ ,
+                                  δ3 1T     δ3 1T        0T
+
+       where || · ||∗ denotes the nuclear norm of a matrix.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Joint Sparse and Low Rank Representation Model
+
+
+
+
+              For the low rank recovery (LRR) problem,
+
+                            min ||X||∗ + λ3 ||E||1 ,
+                          X≥0,E≥0
+                                                                                        (17)
+                                                     
+                                     Y        A          B
+                           s.t. ||        −         X −     E||F ≤ ,
+                                   δ3 1T    δ3 1T        0T
+
+              we proposed an inexact augmented Lagrangian multipliers
+              algorithm to solve this problem7
+
+
+
+
+       7
+             Q. Qu, X. Sun, N. Nasrabdai, T. Tran, “Low Rank Representation for bilinear abun-
+             dance Estimation problem”, WHISPERS 2013, Gainsville.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+      Metrics for Performance Evaluation
+
+                                          v
+                                          u
+                                          u 1 Xn
+                                   RMSE = t      ||xi − x̂i ||2 ,                            (18)
+                                            nR
+                                                              i=1
+                                                                                     !
+                                                                  E[||X||22 ]
+                                SRE = 10 log10                                           ,   (19)
+                                                               E[||X − X̂||22 ]
+                                           v
+                                           u
+                                           u1 X n
+                                      RE = t      ||yi − ŷi ||22 ,                          (20)
+                                             nL
+                                                           i=1
+                                                             n
+                                                        1X
+                                          SAM =            θ[yi , ŷi ],                     (21)
+                                                        n
+                                                            i=1
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+      Experiment Setting for Synthetic Data
+
+              Pick 12 pure endmembers from USGS library to form the
+              dictionary A.
+              Generate each pixel by mixing 3 or 4 randomly selected
+              endmembers in A following Dirichlet distribution and sum-to-one
+              constraint.
+              Add Gaussian white noise with SNR = 40dB to the synthetic
+              data.
+              We compare our proposed algorithms with FCLS 8 ,
+              CSUnSAL+6 , KFCLS 9 , SK-Hypo 10 , GDA 11 .
+       8
+             J. M. Bioucas-Dias et. al. “Alternating direction algorithms for constrained sparse regression: application to
+             hyperspectral unmixing,” WHISPERS, Reykjavik, Iceland, pp. 1-4, Jun. 2010.
+       9
+             J. Broadwater et. al., “Kernel fully constrained least squares abundance estimates,” IGARSS, Barcelona,
+             Spain, pp. 4041-4044, Jul. 2007.
+       10
+             Chen et. al. , “Nonlinear unmixing of hyperspectral data based on a linear-mixture/nonlinear-fluctuation model,”
+             IEEE Trans. Signal Process., vol. 61, no. 2, pp. 480-492, Jan. 2013.
+       11
+             Halimi et. al., “Nonlinear unmixing of hyperspectral images using a generalized bilinear model,” IEEE Trans.
+             Geosci. and Remote Sens., vol. 49, no. 11, pp. 4153-4162, Nov. 2011.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+
+               Table : Comparison on Synthetic Hyperspectral Image
+                                                             Estimation Algorithm
+       Criteria         Model
+                                    FCLS           KFCLS      CSUnSAL+ GDA              SMV-ADMM
+                        LMM         41.4160        8.7507     38.9119         41.3122   37.8415
+      SRE (dB)
+                        GBM         11.6985        4.0998     13.1667         10.6583   22.4512
+                        LMM         0.0684         N.A.       0.0733          0.0674    0.1031
+    RE (×10−2 )
+                        GBM         3.5478         N.A.       0.9300          3.7415    0.5513
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+      Bilinear Abundance Estimation
+
+
+
+
+       Figure : The comparison of estimated abundance X and the bilinear
+       coefficient E for the proposed methods
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+      Bilinear Abundance Estimation
+
+                                            Original                                 SMV−ADMM                                  MMV−ADMM                                      LRR
+
+
+                                    2                                        2                                         2                                         2
+
+
+
+                                    4                                        4                                         4                                         4
+                       Endmember
+
+
+
+
+                                                                Endmember
+
+
+
+
+                                                                                                          Endmember
+
+
+
+
+                                                                                                                                                    Endmember
+                                    6                                        6                                         6                                         6
+
+
+
+                                    8                                        8                                         8                                         8
+
+
+
+                                   10                                       10                                        10                                        10
+
+
+
+                                   12                                       12                                        12                                        12
+                                        2   4           6   8                    2    4           6   8                    2    4           6   8                    2   4           6   8
+                                                Pixel                                     Pixel                                     Pixel                                    Pixel
+
+
+
+
+                                   10                                       10                                        10                                        10
+
+
+                                   20                                       20                                        20                                        20
+
+
+                                   30                                       30                                        30                                        30
+                       Endmember
+
+
+
+
+                                                                Endmember
+
+
+
+
+                                                                                                          Endmember
+
+
+
+
+                                                                                                                                                    Endmember
+                                   40                                       40                                        40                                        40
+
+
+                                   50                                       50                                        50                                        50
+
+
+                                   60                                       60                                        60                                        60
+
+
+                                   70                                       70                                        70                                        70
+
+
+                                        2   4           6   8                    2    4           6   8                    2    4           6   8                    2   4           6   8
+                                                Pixel                                     Pixel                                     Pixel                                    Pixel
+
+
+
+
+       Figure : The comparison of estimated abundance X and the bilinear
+       coefficient E for the proposed methods
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+
+       Figure : A comparison of abundance estimation result on a synthetic
+       image.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+
+           Table : Comparison of Unmixing Results for the synthetic image
+
+                                                 SMV                MMV              Low Rank
+                        Algorithm
+                                                -ADMM             -ADMM              Recovery
+                        SRE (dB)                12.9585           14.1834             20.2845
+                       RMSE (10−2 )             1.0680             0.9276             0.4595
+                        RE (10−3 )              5.4922             5.4531             5.2966
+                       SAM (10−2 )              1.0492             1.0268             1.0051
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+      Experiments on Cuprite Image
+
+
+
+
+                   Figure : The target scene and the pure endmembers.
+
+
+       The pure endmembers are extracted by Vertex Component
+       Analysis (VCA)12
+       12
+             Nascimento et. al. , “Vertex component analysis: A fast algorithm to unmix hy-
+             perspectral data,” IEEE Trans. Geosci. and Remote Sens., vol. 43, no. 4, pp.
+             898-910, Apr. 2005.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Experiment Results
+
+
+
+
+       Table : Comparison of the reconstruction error for all algorithms on
+       the real hyperspectral image
+
+ Model            Algorithm           µRE (×10−3 )         σRE (×10−7 )        µSAM (×10−2 )   σSAM (×10−6 )
+                  FCLS                7.5587               12.4031             2.2560          16.4715
+ LMM
+                  CSUnSAL+            6.4522               7.7908              1.9820          9.8041
+ PPNMM            GDA                 6.3501               7.8927              1.9085          9.2313
+ Non-linear       SK-Hypo             6.0827               1.4760              1.8863          2.0917
+                  SMV-ADMM            5.7820               11.3906             1.7974          12.6686
+ GBM              MMV-ADMM            5.6314               11.9591             1.7559          13.1640
+                  LRR                 4.1707               1.3997              1.3023          1.7020
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Conclusion
+
+
+
+      Conclusion
+
+               In this work, we have proposed several simple but effective
+               sparsity and low rank based abundance estimation
+               algorithms demonstrated by extensive simulations.
+               The proposed LRR algorithm is currently computationally
+               expensive. We can solve it more efficiently by the
+               linearized augmented Lagrangian method13
+               Without the ground truth abundance, the comparisons on
+               real dataset are currently based on signal reconstruction
+               error and somehow heuristic. More demonstrations on real
+               dataset needs further investigation.
+
+
+
+       13
+               Z. Lin et. al. “Linearized Alternating Direction Method with Adaptive
+               Penalty for Low-Rank Representation”, NIPS, Spain, 2011.
+Joint Sparse and Low Rank Representation For Bilinear Abundance Estimation Problem
+  Conclusion
+
+
+
+
+                                             Thanks!
+

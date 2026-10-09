@@ -1,0 +1,217 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "bilinear-lowrank-whispers-2013",
+      "title": "Low rank representation for bilinear abundance estimation problem",
+      "doi": "10.1109/whispers.2013.8080597",
+      "authors": "Qing Qu, Xiaoxia Sun, Nasser Nasrabadi, Trac D. Tran",
+      "tocOrder": 7,
+      "decision": "included",
+      "readingBoundary": "阅读作者会议演示第1、3–18、20、25–29页及15页方法示例；不是论文全文或论文摘要，readingProgress与verificationStatus仍pending。",
+      "relation": "hyperspectral",
+      "classificationStatus": "provisional",
+      "deduplication": "精确DOI、归一化题名与作者核对，全库无重复；后续稿扩展身份待核，不因题材相近自动合并。",
+      "figureBoundary": "作者2013演示15页无图号原方法示例；会议论文原图仍待核。"
+    },
+    {
+      "paperId": "themis-fcs-pca-whispers-2013",
+      "title": "Removal of salt-and-pepper noise in THEMIS infrared radiance and emissivity spectral data of the martian surface",
+      "doi": "10.1109/whispers.2013.8080598",
+      "authors": "K. J. Nowicki, C. S. Edwards, P. R. Christensen",
+      "tocOrder": 8,
+      "decision": "included",
+      "readingBoundary": "四页作者原稿全文、第1–3图和参考文献已读；出版社正式PDF未取得。",
+      "relation": "multispectral",
+      "classificationStatus": "provisional",
+      "deduplication": "精确DOI、归一化题名与作者核对，全库无重复；后续稿扩展身份待核，不因题材相近自动合并。",
+      "figureBoundary": "作者四页原稿Fig.1，物理1页方法中间结果示例。"
+    },
+    {
+      "paperId": "autofluorescence-count-whispers-2013",
+      "title": "Iterative estimation of the number of autofluorescence components in a biological sample",
+      "doi": "10.1109/whispers.2013.8080599",
+      "authors": "O. Gutierrez-Navarro, Daniel U. Campos-Delgado, E. R. Arce-Santana, M. O. Mendez, Javier A. Jo",
+      "tocOrder": 9,
+      "decision": "included",
+      "readingBoundary": "机构完整原摘要与关键词已读，会议全文未取得。",
+      "relation": "multispectral",
+      "classificationStatus": "provisional",
+      "deduplication": "精确DOI、归一化题名与作者核对，全库无重复；后续稿扩展身份待核，不因题材相近自动合并。",
+      "figureBoundary": "会议全文受限，原图未取得，机构无附件。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "bilinear-abundance-nuclear-norm",
+      "name": "双线性丰度核范数恢复",
+      "dimension": "method",
+      "definition": "在双线性混合的端元与交互字典上，以丰度矩阵核范数和交互系数稀疏惩罚恢复非负系数；和强制邻域同支持的联合稀疏回归区分，正式论文实现逐篇核验。",
+      "rationale": "同题四作者2013会议幻灯片17–18页明确核范数、l1交互项与非精确增广拉格朗日求解；仅作为原演示方法依据，不提升会议论文阅读状态。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "bilinear-lowrank-whispers-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "同题四作者2013会议幻灯片17–18页明确核范数、l1交互项与非精确增广拉格朗日求解；仅作为原演示方法依据，不提升会议论文阅读状态。"
+        }
+      ]
+    },
+    {
+      "id": "fractional-contribution-pca-denoising",
+      "name": "分数贡献空间与噪声PCA去噪",
+      "dimension": "method",
+      "definition": "以相似波段总信号归一化各波段，在分数贡献空间低通并重新归一化；将原数据与重建之差的第一主成分置零，逆变换得到待去除噪声。应用依赖波段间强相关，不能把它等同于直接滤波原影像或通用脉冲噪声算法。",
+      "rationale": "THEMIS作者四页原稿第2节及Fig.1明确各中间量，正文明确可用于符合相关性条件的多/高光谱。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "themis-fcs-pca-whispers-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "THEMIS作者四页原稿第2节及Fig.1明确各中间量，正文明确可用于符合相关性条件的多/高光谱。"
+        }
+      ]
+    },
+    {
+      "id": "iterative-endmember-redundancy-test",
+      "name": "迭代端元非冗余检验",
+      "dimension": "method",
+      "definition": "交替盲端元/丰度提取与最优近似评价，以阈值检验端元冗余并估计光谱源数量；阈值、优化和时间轴处理须按具体原稿核验。",
+      "rationale": "2013机构原摘要明确两步迭代与非冗余阈值；实际多光谱FLIM与关键词高光谱解混关系单列。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "autofluorescence-count-whispers-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2013机构原摘要明确两步迭代与非冗余阈值；实际多光谱FLIM与关键词高光谱解混关系单列。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "research/hyperspectral/sources/whispers2013-8080597-ieee-html-access.json",
+      "sha256": "720b35226d0c3d3dcb4fd6a1a027a0cdd52cc3f8200b102cd903a54884717cab",
+      "bytes": 258
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-8080597-ieee-pdf-access.json",
+      "sha256": "251585495fb7612a89b8186cbcd0859da04af58ebde4fb264ef774694efddc85",
+      "bytes": 285
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-8080598-ieee-html-access.json",
+      "sha256": "d2a8a1bccf330a72e733e1bf99eb7a867373635a82a62b66f993634704aad780",
+      "bytes": 258
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-8080598-ieee-pdf-access.json",
+      "sha256": "3794880b2001d6d4dae67964ba7128bb8c8b8d94c02164c36c08f6c969666b81",
+      "bytes": 285
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-8080599-ieee-html-access.json",
+      "sha256": "9e7d917511bb28717e08d53b6e590e81cfff0e65e87f5129c9232e16a1c9ce62",
+      "bytes": 258
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-8080599-ieee-pdf-access.json",
+      "sha256": "7ef538d3ccb45abcf6bb8f974cbd7f1fc9a640bc84eb638189f9061bcef72572",
+      "bytes": 285
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-autofluorescence-doi-access.json",
+      "sha256": "c2066d0cfb41b494e9d909665eaf0311910bce5a6b05f7bf6c88e19508841558",
+      "bytes": 7674
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-autofluorescence-institution-access.json",
+      "sha256": "ba3d38d168a2af4c043867c1641eddc35f1e5447b60acb4d27f6d7d37fcfcb2e",
+      "bytes": 198
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-autofluorescence-institution.html",
+      "sha256": "650b1ad59a28d49cd62faae60dce934925b22feb8b6a5229b29c607af47f359a",
+      "bytes": 52025
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-autofluorescence-institution.txt",
+      "sha256": "a209b8025e6a8d3ed419a2c1f75ebbf792a7400a0b66c4a7586a37952875597c",
+      "bytes": 4909
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-lowrank-doi-access.json",
+      "sha256": "27082af913a6626365cf481f19fcc064cc1e823e7f2d7401a202d18ec504a27b",
+      "bytes": 218
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-lowrank-doi-retry-access.json",
+      "sha256": "888611f5e7f5f77770e988e1c8f66e66b3860f956d6c6d3cba48cfe7b7c75aea",
+      "bytes": 6118
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-lowrank-slides-access.json",
+      "sha256": "8d087353cf69ddc336caaf21548416920f50f1fffab1a9fb1f2ef1239676586d",
+      "bytes": 278
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-lowrank-slides.pdf",
+      "sha256": "76289407ac2cc5ddea489218aec1d3870b34098568a9a8f74bc3a801d02c086d",
+      "bytes": 4596909
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-themis-author-access.json",
+      "sha256": "a8de25c547f055379cce18a2e3bb8124315e9219d639babdc663a14cd5ffae07",
+      "bytes": 258
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-themis-author-retry-access.json",
+      "sha256": "8ca9604fc8041635e5d347a325d167f8157dbbd867e7ab4d2c40ed1e85e13adf",
+      "bytes": 262
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-themis-author-retry.pdf",
+      "sha256": "53efbc321ffbad0954822acfb32936fe7ab8b4315758564caf90adf032fb62c8",
+      "bytes": 4166146
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-themis-doi-access.json",
+      "sha256": "cb5688879735b1f3bd8cd337c963a003891fccde4eb78648a9d77d50f267bb5d",
+      "bytes": 5095
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-themis-author-text.txt",
+      "sha256": "a2606fc8d117fff94c01ec968c7f0ae08afb93dc13ce046272b2ba71da62c919",
+      "bytes": 25850
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-lowrank-slides-text.txt",
+      "sha256": "aa85c36157b9b2d89ec0e67b975c943da29cde61688574241c7d0c18b868e8a2",
+      "bytes": 28653
+    }
+  ],
+  "qualityIssues": [
+    "WHISPERS2013目录161累计顺序1–9已审：8入1待，余152未审；年度摘要、全文、其他词和引文仍未完成。",
+    "低秩解混仅读原作者2013演示的指定页，论文摘要/全文/原图仍待核；THEMIS作者稿已读，正式版差异待核；m-FLIM仅机构摘要，全文/原图待核。",
+    "三篇专用代码、原数据、arXiv及相关期刊扩展身份未核。不把作者演示或另篇后续稿实验当成已核论文结果。",
+    "HERF/NMF仅题名，Sava/ICA仅摘要；油膜2013/2014/页首2012身份、早期条目的原图及全文待核。"
+  ],
+  "directoryBoundary": "WHISPERS2013目录161累计顺序1–9已审：8入1待，余152未审；年度摘要、全文、其他词和引文仍未完成。",
+  "readingBoundary": "完整PDF存档不表示全部内容已读；低秩原作者30页演示只读记录的指定页，不标会议全文。THEMIS四页作者全文已读。"
+}

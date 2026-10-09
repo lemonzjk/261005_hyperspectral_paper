@@ -16,8 +16,8 @@
 
 ## 当前状态
 
-- 总库549篇，311篇已复核分类，235篇暂定、3篇待分类，271标签（任务93/方法155/应用23）。三维214篇不变；总库 ?collection=hyperspectral。
-- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱423、多光谱93、基础33。
+- 总库552篇，311篇已复核分类，238篇暂定、3篇待分类，274标签（任务93/方法158/应用23）。三维214篇不变；总库 ?collection=hyperspectral。
+- 总库标签多选并集、阅读/年份/来源筛选和URL往返恢复；共享原图及SVG/BibTeX导出。classificationReview记录逐篇依据；分类确认不提升原阅读/核验状态；高光谱424、多光谱95、基础33。
 - CVPR2013–2022、ICCV2013–2021奇数年主题检索闭环，非年度全量。
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。19篇/41个arXiv日期核验；Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
@@ -26,11 +26,11 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词闭环增17排14待4。2019官方四期52项（51研究+1奖公告）逐题名/起始页匹配；另16行政记录及1未列目录索引。51研究项均尝试原来源，34已审17待核验；5医学项仅摘要片段，EPFL仅官方缓存；非年度HSI全量。Monash错标2009按正式2019。Fourier DOI、MSVI真值、正式稿差异待查。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖549篇、313张图，缺图状态逐篇记录。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖552篇、315张图，缺图状态逐篇记录。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt。
-- GRSL2015光谱66已审33待33，压缩待4。WHISPERS2014目录174为165入3排6待，42页摘要错配仅题名，94/早页与范围关系待核。WHISPERS2013目录161累计审1–6：5入1待、余155未审；EMAP全文及Fig1已核，单HSI无LiDAR；NMF/HERF仅题名待分类，Sava/ICA原摘要已核，油膜日期/版本待核。三新增原图受限，2014ICA/2016水质结果不混用。续2013顺序7起；目录不当年度全量。
+- GRSL2015光谱66已审33待33，压缩待4。WHISPERS2014目录174为165入3排6待，42摘要错配，94/早页待核。WHISPERS2013目录161已审1–9：8入1待，余152。EMAP与THEMIS作者全文/原图已核；THEMIS实为多光谱且明确HSI适用，m-FLIM多光谱仅摘要；低秩解混仅读作者会议演示，方法示例图单列来源。油膜、NMF/HERF、后续扩展及论文原图待核。续2013顺序10起；目录不当年度全量。
