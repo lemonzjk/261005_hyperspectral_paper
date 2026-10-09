@@ -1,0 +1,252 @@
+                    REGRESSION FRAMEWORK FOR BACKGROUND ESTIMATION
+                                IN REMOTE SENSING IMAGERY
+
+                                                James Theiler and Brendt Wohlberg
+
+                            Los Alamos National Laboratory, Los Alamos, NM 87545 USA
+
+
+                            ABSTRACT                                      that does not include the pixel itself, and in some cases avoids a
+                                                                          “guard ring” of pixels in the immediate neighborhood of i). The tra-
+A key component in any target or anomaly detection algorithm is           ditional approach is to estimate xi with the average of those neigh-
+the characterization of the background. We investigate several ap-        bors:
+proaches for estimating the background level at a given pixel, based                                       1 X
+on both the local neighborhood around that pixel and on the global                                 x̂i =            xj                     (1)
+                                                                                                          |Ni | j∈N
+context of the full image. By framing this as a regression problem,                                                i
+
+we can compare a variety of background estimation schemes, from           In our regression approach, we seek a function f , learned from the
+standard signal processing approaches long used in the hyperspec-         entire image, such that
+tral image analysis community to more sophisticated nonlinear ap-
+proaches that have recently been developed in the image process-                                  x̂i = f ({xj }j∈Ni ) .                     (2)
+ing community. These comparisons are performed on a range of
+images including single band, standard red-green-blue, eight-band              Background estimation – though it’s typically not called that – is
+WorldView-2, and 126-band hyperspectral HyMap imagery.                    also an important part of classical image processing. It arises both in
+                                                                          noise reduction [12] (where the “background” at a pixel location is
+    Index Terms— Target, Anomaly, Background, Regression, Hy-
+                                                                          the noise-free pixel value) and in the “inpainting” problem [13, 14,
+perspectral, Image, Processing
+                                                                          15] (where one seeks to fill in – or to “paint in” – pixel values that
+                                                                          are for some reason unavailable). In both cases, one seeks to exploit
+                       1. INTRODUCTION                                    spatial structure in the image in order to estimate a pixel value based
+                                                                          on the values of its neighbors. Our problem is perhaps a little closer
+To detect small targets in large images, it is important that the back-   to the inpainting problem. For each pixel in the scene, we remove the
+ground be well estimated. A number of standard detection algo-            pixel, in-paint a replacement, and measure the difference between
+rithms – adaptive matched filter (AMF) [1, 2, 3], adaptive coherence      the original pixel and its inpainted replacement. If the two are very
+estimator (ACE) [4, 5], finite target matched filter (FTMF) [6] – be-     different, then that pixel is a candidate for a target location.
+gin with the assumption that the background is a multivariate Gaus-
+sian, whose mean µ and covariance R are estimated from the full
+dataset. This assumption is highly restrictive, and amounts to es-                       2. REGRESSION ALGORITHMS
+timating the background at a given pixel by the global mean of all
+the pixels in the entire image. A natural way to improve this esti-       The simplest algorithm, and the baseline for the studies presented
+mate is to compute the mean (and, possibly, the covariance) from a        here, is the local averaging algorithm in Eq. (1) that estimates the
+moving window centered on the pixel of interest. The venerable RX         value of the central pixel as the arithmetic average of the pixels in
+algorithm [7, 8] takes this approach.                                     the annulus.
+     Matteoli et al. [9] recommend a smaller window for estimating             Our nonlinear algorithms are also based on an annulus around
+the mean µ and a larger window for estimating the covariance R.           a pixel, but they exploit statistics that we can learn from the rest of
+The limit of large covariance window size – so that a global co-          the image regarding the relationship of the of pixels in an annulus to
+variance estimator is used along with the local estimates of mean –       the pixel in the center. The simplest of these nonlinear algorithms is
+is sometimes called “semilocal” estimation. Cohen et al. [10, 11]         based on k-nearest neighbors. The idea is to identify the k patches in
+investigated a variety of algorithms and a variety of background es-      the image that are most similar to the annulus that surrounds the pixel
+timators. Even taking into account the contaminating effects of the       of interest. The center pixels for those k patches are then prototypes
+target on the background, including both pixel phasing and optical        for the pixel of interest. In our implementation, we took k = 3, and
+blurring, it was found that using smaller annuli produced better de-      used the median of those prototypes as our estimator for the pixel
+tectors.                                                                  of interest. (We also tried using a mean, and obtained essentially
+     But all of these methods are based on local averaging to esti-       identical results.)
+mate µ. Our hypothesis is that better performance may be achieved              We also considered two other nonlinear algorithms that em-
+by treating the problem as a (linear or nonlinear) regression. For        ployed more sophisticated combinations of these nearest neighbor
+a given pixel at position i, we want to estimate its value (which is      patches. In the non-local mean (NLM) [16] algorithm, the simple
+vector-valued for multispectral and hyperspectral imagery) based on       mean (or median) is replaced by a weighted mean, with the weights
+the pixels in its neighborhood Ni (this is usually an annular region      chosen to depend on the dis-similarity of the neighbor patches with
+                                                                          the patch of interest. In particular, if dim is the dis-similarity of
+    Both authors are funded by the Laboratory Directed Research and De-   patches Ni and Nm (measured as the mean of squared differences
+velopment (LDRD) program at Los Alamos National Laboratory.               of the pixels in those annular patches), then the weight is given by
+     (a) Lena            (b) Parrots                (c) Boat              ek as the kth pixel of n total, then
+                                                                                                          N
+                                                                                                      1X T
+                                                                                             MSE =      ek ek = heT ei.                      (4)
+                                                                                                      n
+                                                                                                         k=1
+
+                                                                          Often this is expressed in terms of decibels with respect to the vari-
+                 (d) WorldView-2                      (e) HyMap           ance of the image:
+
+                                                                                    SNR(dB) = −10 log10 heT ei + 10 log10 hxT xi.            (5)
+
+                                                                                                     3. IMAGERY
+
+                                                                          We used five images in this study; three of them, shown in Fig. 1(a,b,c),
+                                                                          are popular choices for standard image processing algorithms. Two
+                                                                          of them, shown in Fig. 1(d,e) are obtained from remote sensing
+                                                                          imagers; one is eight-band multispectral, and one is 126-band hy-
+                                                                          perspectral.
+                                                                               Lena is a single-band (“black and white”) 512×512 pixel image
+                                                                          (with an interesting history [19]) that includes edges, textures, gradi-
+                                                                          ents. The Parrots and Boat images are three band (red, green, blue)
+                                                                          color 512×768 pixel images [20]. A WorldView2 [21, 22] image
+                                                                          was provided to us by Digital Globe; this 512×512 crop is from a
+                                                                          much larger image taken of Omaha, Nebraska. We used the blind
+                                                                          reflectance dataset from the RIT blind test [23] as our hyperspectral
+Fig. 1. Three of the images (a,b,c) used in this study are popular        sample; there are 126 channels and 280×800 pixels.
+choices for comparing standard image processing algorithms, and
+two of the images (d,e) are remote sensing images. (a) Lena is a sin-
+gle band (black and white) image, and (b) Parrots and (c) Boat are             4. EXPERIMENTS WITH SINGLE BAND IMAGES
+both three-band (red, green, blue) images. (d) WorldView-2 is a mul-
+tispectral image with eight bands, and (e) HyMap is a hyperspectral       For a single band image (or for a single band in a multispectral im-
+data cube, with 126 spectral channels.                                    age), all the information is spatial, and by comparing local averaging
+                                                                          to nonlocal methods, we test how much information is in the spatial
+                                                                          structure of an image. Intuitively, we know that images have a lot of
+                                                                          spatial structure, and our eye is well practiced at picking out subtle
+wim = exp(−αdim ), and the estimator for the pixel of interest            spatial clues. But is remote sensing imagery qualitatively different
+becomes                                                                   from other kinds of imagery – e.g., the images that are taken of peo-
+                   X           X
+             x̂i =     wim xm        wim .                 (3)            ple or their pets and that show up in places like ImageNet [24]? We
+                           m              m                               know that remote sensing routinely employs spectral ranges that are
+                                                                          unavailable in snapshot photography, but the other half of the ques-
+We have found the the performance does not depend too sensitively         tion is: are the spatial statistics of remote sensing imagery funda-
+on α, but it is nonetheless a parameter that must be estimated. We        mentally different from those of ImageNet style images? It is not ob-
+do this by taking a smaller sub-image and searching for an α that         vious that the kinds of images for which image processing tools such
+optimizes ||x̂i − xi ||2 , averaged over the sub-image.                   as nonlocal mean were designed will have utility in remote sensing
+     Finally, we consider a non-local sparse (NLS) representation.        images. The single band experiments test this question. What we
+This is Psimilar to NLM, but for NLS weights are fit directly so that     observe in Table 1 is that the nonlocal estimators consistently out-
+Ni ≈       m wim Nm , subject to a sparsity constraint on wim [17].       perform local averaging.
+That is, the annular patch of interest is fit with a linear combination        This table also shows that a smaller annular patch generally out-
+of near neighbor patches, and that linear combination is then applied     performs larger patches; this result was also observed by Cohen et
+to the central pixels in order to provide an estimate x̂i .               al. [10] in their experiments. The effect is quite striking for local
+     All of these non-local algorithms require a search for near          averaging, whereas the nonlocal estimators were seen to be more ro-
+neighbors in patch space; this is much more computationally ex-           bust to increasing patch size. For the remaining experiments, we use
+pensive than the purely local averaging. We were able to speed up         a small annulus: Ni is a 3 × 3 patch of pixels with the center pixel
+the computation by using the Generalized PatchMatch algorithm of          missing.
+Barnes et al. [18].
+     Although we ultimately care about target or anomaly detection        5. MULTISPECTRAL AND HYPERSPECTRAL IMAGERY
+performance, our focus here will be on the intermediate question of
+how precisely we can estimate the background; specifically, we will       As we move from single band to RGB, it is feasible to treat each
+use the mean squared error (MSE) of the background estimate rela-         pixel as a three-component vector of values, and to apply the nonlo-
+tive to the actual background value. This is the most straightforward     cal regression to these vectors. The results, shown in Table 2, echo
+from a regression point of view. Suppose e = x − x̂ is the error in       those seen in Table 1 for the single band images.
+an estimate x̂ of x. Here, e is a vector with a number of elements             To avoid searching in higher dimensional spaces, an alternative
+equal to the number of spectral channels in the image. If we write        approach is to treat each of the bands independently, and to apply
+Table 1. Average SNR(dB) for various regression schemes applied          Table 2. Average SNR(dB) for various regression schemes applied
+to single bands of the images; shown here are results are based on       to three bands of the images; results here are for a 3×3 annular patch.
+two different patch sizes.
+                                                                                                    (a) bands together
+                       (a) 3×3 annular patch                                                           Avg.    kNN NLMean           NLSparse
+                          Avg.   kNN NLMean             NLSparse                     Parrots          20.13 25.60      25.47           24.66
+      Lena (band 2)      17.47 22.78         23.10         20.88                        Boat          12.05 17.62      18.63           16.49
+    Parrots (band 2)     18.93 25.39         24.76         24.13           WV-2 (bands 1,2,3)         12.94 16.06      17.54           15.64
+      Boat (band 2)      12.42 18.46         19.06         17.24          HyMap (bands 1,2,3)         16.04 19.49      20.24           21.83
+     WV-2 (band 3)       12.34 16.67         16.93         15.40
+   HyMap (band 20)       17.79 21.39         22.23         23.44                                    (b) band-by-band
+                                                                                                      Avg.    kNN NLMean            NLSparse
+                     (b) 5×5 annular patch                                           Parrots         20.13 26.48     25.26             23.59
+                       Avg.    kNN NLMean               NLSparse                        Boat         12.05 18.10     17.93             16.50
+      Lena (band 2) 14.29 20.14            19.68           19.28           WV-2 (bands 1,2,3)        12.94 17.24     17.79             15.95
+    Parrots (band 2) 15.73 22.60           21.33           23.18          HyMap (bands 1,2,3)        16.04 19.66     19.13             22.45
+      Boat (band 2) 10.09 15.73            15.16           15.88
+     WV-2 (band 3)      9.37 14.38         13.94           14.76
+   HyMap (band 20) 12.39 18.05             18.95           23.81
+                                                                         Table 3. Average SNR(dB) for local averaging and nonlocal k-
+                       (c) 7×7 annular patch                             Nearest-Neighbors applied to all the bands in the images, but using
+                          Avg.   kNN NLMean             NLSparse         a hybrid scheme that applies the nonlocal method only to the first
+      Lena (band 2)      12.46 19.18         18.33         18.98         three principal components, and applies local averaging to the rest.
+    Parrots (band 2)     14.20 21.54         19.41         22.98
+      Boat (band 2)       9.24 14.73         13.44         15.15                            Avg.      Hybrid kNN        Hybrid kNN
+     WV-2 (band 3)        8.23 13.42         11.87         14.99                                      band-by-band      bands together
+   HyMap (band 20)        9.81 16.77         16.06         23.68                 Parrots    20.13     26.53             25.82
+                                                                                   Boat     12.05     18.13             17.83
+                                                                                  WV-2      16.80     20.80             19.75
+                                                                                 HyMap      19.63     22.63             21.28
+the estimation one component at a time. This is a simpler approach
+(though more expensive), and as Table 2(b) shows, its performance is
+comparable to (perhaps even better than) the approach in Table 2(a)
+based on treating all three bands together. Further, since we have       target detection performance. Future efforts will consider the utility
+already demonstrated that individual spectral components (i.e., indi-    of these nonlocal estimators in the context of specific target detec-
+vidual bands) are better predicted using nonlinear methods, we can       tion scenarios. Target implantation [25, 10, 11] provides a direct
+be confident that this result will obtain for multispectral and hyper-   approach for producing reliable scenarios, when the target signa-
+spectral images as well.                                                 ture is known, but volume-based approaches have also been sug-
+     The fact that single band performance improvements can always       gested [26, 27], particularly for anomaly detection (when the target
+be applied band-by-band to a full image provides a path to achieving     signature is unknown).
+lower MSE on hyperspectral images. The nonlinear methods, how-                Also, the work described here concentrated on estimating the
+ever, are more expensive, and this expense becomes significant in an     mean value of the estimated background. While it is possible to
+image with 100+ spectral bands.                                          employ a locally varying mean with a global covariance, there is op-
+     We have employed a hybrid algorithm in which PCA is applied         portunity for further improvement by considering methods to locally
+first to the image, and nonlinear band-by-band estimation of the first   estimate the covariance as well [28, 29, 30, 31].
+few components is performed. Simple local averaging is performed              An alternative approach to local patches for nonlinear regression
+on the remaining bands, the results are combined, and the PCA is in-     is to use kernel methods [32, 33, 34]; it is not clear how these meth-
+verted. Table 3 shows that the nonlinear improvements to only a few      ods compare, both in terms of theoretical similarities and in terms of
+principal components are enough to substantially improve the perfor-     practical target detection performance.
+mance vis-a-vis local averaging for all the bands. Table 3 also com-
+pares band-by-band regression for the three principal components to
+a scheme that treats those three bands as a three-component vector.                                7. REFERENCES
+As we saw in the RGB case, the band-by-band approach gives better
+                                                                          [1] I. S. Reed, J. D. Mallett, and L. E. Brennan, “Rapid conver-
+performance. Here, the bands are nominally independent (they are
+                                                                              gence rate in adaptive arrays,” IEEE Trans. Aerospace and
+uncorrelated, at least) and so we might expect band-by-band to work
+                                                                              Electronic Systems, vol. 10, pp. 853–863, 1974.
+particularly well.
+                                                                          [2] E. J. Kelly, “An adaptive detection algorithm,” IEEE Trans.
+                                                                              Aerospace and Electronic Systems, vol. 22, pp. 115–127, 1986.
+                       6. FUTURE WORK
+                                                                          [3] F. C. Robey, D. R. Fuhrmann, E. J. Kelly, and R. Nitzberg,
+Although mean squared error provides one way to evaluate perfor-              “A CFAR adaptive matched filter detector,” IEEE Trans.
+mance, we ultimately prefer an approach that more directly maps to            Aerospace and Electronic Systems, vol. 28, pp. 208–216, 1992.
+ [4] L. L. Scharf and L. T. McWhorter, “Adaptive matched sub-            [20] “Kodak lossless true color image suite,” http://r0k.us/
+     space detectors and adaptive coherence estimators,” Proc. 30th           graphics/kodak/.
+     Asilomar Conference on Signals, Systems, and Computers, pp.         [21] G. Marchisio, F. Pacifici, and C. Padwick, “On the relative
+     1114–1117, 1996.                                                         predictive value of the new spectral bands in the WorldView-
+ [5] S. Kraut, L. L. Scharf, and R. W. Butler, “The Adaptive Coher-           2 sensor,” Proc. IEEE International Geoscience and Remote
+     ence Estimator: a uniformly most-powerful-invariant adaptive             Sensing Symposium (IGARSS), pp. 2723–2726, 2010.
+     detection statistic,” IEEE Trans. Signal Processing, vol. 53, pp.   [22] N. T. Anderson and G. B. Marchisio, “Worldview-2 and
+     427–438, 2005.                                                           the evolution of the DigitalGlobe remote sensing satellite
+ [6] A. Schaum and A. Stocker, “Spectrally selective target de-               constellation: introductory paper for the special session on
+     tection,” Proc. ISSSR (International Symposium on Spectral               WorldView-2,” Proc. SPIE, vol. 8390, 2012.
+     Sensing Research), p. 23, 1997.                                     [23] D. Snyder, J. Kerekes, I. Fairweather, R. Crabtree, J. Shive,
+ [7] I. S. Reed and X. Yu, “Adaptive multiple-band CFAR detection             and S. Hager, “Development of a web-based application to
+     of an optical pattern with unknown spectral distribution,” IEEE          evaluate target finding algorithms,” Proc. IEEE International
+     Trans. Acoustics, Speech, and Signal Processing, vol. 38, pp.            Geoscience and Remote Sensing Symposium (IGARSS), vol. 2,
+     1760–1770, 1990.                                                         pp. 915–918, 2008.
+ [8] A. D. Stocker, I. S. Reed, and X. Yu, “Multi-dimensional signal     [24] J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, and L. Fei-
+     processing for electro-optical target detection,” Proc. SPIE,            Fei, “Imagenet: A large-scale hierarchical image database,” in
+     vol. 1305, pp. 218–231, 1990.                                            IEEE Computer Vision and Pattern Recognition (CVPR), 2009.
+ [9] S. Matteoli, M. Diani, and G. Corsini, “A tutorial overview         [25] W. F. Basener, E. Nance, and J. Kerekes, “The target im-
+     of anomaly detection in hyperspectral images,” IEEE A&E                  plant method for predicting target difficulty and detector per-
+     Systems Magazine, vol. 25, pp. 5–27, 2010.                               formance in hyperspectral imagery,” Proc. SPIE, vol. 8048, pp.
+[10] Y. Cohen, D. G. Blumberg, and S. R. Rotman, “Subpixel                    80481H, 2011.
+     hyperspectral target detection using local spectral and spatial     [26] J. Theiler and D. Hush, “Statistics for characterizing data on
+     information,” J. Applied Remote Sensing, vol. 6, no. 1, pp.              the periphery,” Proc. IEEE International Geoscience and Re-
+     063508, 2012.                                                            mote Sensing Symposium (IGARSS), pp. 4764–4767, 2010.
+[11] Y. Cohen, Y. August, D. G. Blumberg, and S. R. Rotman,              [27] J. Theiler,    “Ellipsoid-simplex hybrid for hyperspectral
+     “Evaluating sub-pixel target detection algorithms in hyper-              anomaly detection,” Proc. 3rd IEEE Workshop on Hyperspec-
+     spectral imagery,” J. Electrical and Computer Engineering,               tral Image and Signal Processing: Evolution in Remote Sens-
+     vol. 2012, 2012.                                                         ing (WHISPERS), 2011.
+[12] P. Milanfar, “A tour of modern image filtering: New insights        [28] P. V. Villeneuve, H. A. Fry, J. Theiler, B. W. Smith, and A. D.
+     and methods, both practical and theoretical,” IEEE Signal Pro-           Stocker, “Improved matched-filter detection techniques,” Proc.
+     cessing Magazine, vol. 30, pp. 106–128, Jan 2013.                        SPIE, vol. 3753, pp. 278–285, 1999.
+[13] M. Bertalmı́o, G. Sapiro, V. Caselles, and C. Ballester, “Im-       [29] C. E. Caefer, J. Silverman, O. Orthal, D. Antonelli, Y. Sharoni,
+     age inpainting,” in SIGGRAPH ’00: Proceedings of the                     and S. R. Rotman, “Improved covariance matrices for point
+     27th annual conference on Computer graphics and interactive              target detection in hyperspectral data,” Optical Engineering,
+     techniques, New York, NY, USA, 2000, pp. 417–424, ACM                    vol. 47, pp. 076402, 2008.
+     Press/Addison-Wesley Publishing Co.
+                                                                         [30] G. Cao and C. A. Bouman, “Covariance estimation for high
+[14] Z. Xu and J. Sun, “Image inpainting by patch propagation                 dimensional data vectors using the sparse matrix transform,”
+     using patch sparsity,” IEEE Transactions on Image Processing,            in Advances in Neural Information Processing, Daphne Koller,
+     vol. 19, no. 5, pp. 1153–1165, 2010.                                     Yoshua Bengio, Dale Schuurmans, Léon Bottou, and Aron Cu-
+[15] B. Wohlberg, “Inpainting by joint optimization of linear com-            lotta, Eds. 2009, pp. 225–232, MIT Press.
+     binations of exemplars,” IEEE Signal Processing Letters, vol.       [31] L. Bachega, J. Theiler, and C. A. Bouman, “Evaluating and
+     18, no. 1, pp. 75–78, Jan. 2011.                                         improving local hyperspectral anomaly detectors,” Proc. 40th
+[16] A. Buades, B. Coll, and J.-M. Morel, “Image denoising by                 IEEE Applied Imagery Pattern Recognition (AIPR) Workshop,
+     non-local averaging,” in Proc. IEEE Int. Conf. on Acoustics,             2011.
+     Speech, and Signal Processing, March 2005, vol. 2, pp. 25–28.       [32] D. Tax and R. Duin, “Data domain description by support vec-
+[17] Y. C. Pati, R. Rezaiifar, and P. S. Krishnaprasad, “Orthogonal           tors,” in Proc. ESANN99, M Verleysen, Ed., Brussels, 1999,
+     matching pursuit: recursive function approximation with ap-              pp. 251–256, D. Facto Press.
+     plications to wavelet decomposition,” in Conference Record of       [33] H. Kwon and N. M. Nasrabadi, “Kernel-based subpixel tar-
+     The Twenty-Seventh Asilomar Conference on Signals, Systems               get detection in hyperspectral images,” Proc. IEEE Intl. Conf.
+     and Computers, November 1993, pp. 40–44.                                 Neural Networks, pp. 717–721, 2004.
+[18] C. Barnes, E. Shechtman, D. B. Goldman, and Adam Finkel-            [34] H. Kwon and N. M. Nasrabadi, “Kernel RX: a new nonlinear
+     stein, “The generalized PatchMatch correspondence algo-                  anomaly detector,” Proc. SPIE, vol. 5806, pp. 35–46, 2005.
+     rithm,” in European Conference on Computer Vision (ECCV),
+     2010.
+[19] D. C. Munson, “A note on Lena,” IEEE Trans. Image Process-
+     ing, vol. 5, 1996.
+

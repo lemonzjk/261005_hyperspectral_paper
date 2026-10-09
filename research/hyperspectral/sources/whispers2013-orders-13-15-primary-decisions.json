@@ -1,0 +1,254 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "edge-weighting-anomaly-whispers-2013",
+      "title": "Assessing the impact of the edge-weighting function in a graph-based approach to anomaly detection",
+      "doi": "10.1109/whispers.2013.8080603",
+      "authors": "James A. Albano, Amanda K. Ziemann, David W. Messinger",
+      "tocOrder": 13,
+      "decision": "included",
+      "readingBoundary": "已核作者原摘要；缓存原文方法/实验段仅部分核验，不宣称已读并核四页PDF。",
+      "classificationStatus": "provisional",
+      "deduplication": "精确DOI、归一化题名与作者交叉核对，无重复；2012基础稿/2015对称回归不自动合并。",
+      "figureBoundary": "作者Fig.2方法图下载403，原图与页码待核，不生成替代图。"
+    },
+    {
+      "paperId": "background-regression-whispers-2013",
+      "title": "Regression framework for background estimation in remote sensing imagery",
+      "doi": "10.1109/whispers.2013.8080605",
+      "authors": "James Theiler, Brendt Wohlberg",
+      "tocOrder": 15,
+      "decision": "included",
+      "readingBoundary": "作者四页PDF全文、Fig.1、Tables1–3及参考文献已读，四页渲染目视检查；IEEE正式版差异未核。",
+      "classificationStatus": "provisional",
+      "deduplication": "精确DOI、归一化题名与作者交叉核对，无重复；2012基础稿/2015对称回归不自动合并。",
+      "figureBoundary": "完整原稿无方法/框架图，Fig.1仅输入样例。"
+    },
+    {
+      "title": "Spectral mixture decomposition using principal component analysis applied to pyroxene mixtures",
+      "doi": "10.1109/whispers.2013.8080604",
+      "tocOrder": 14,
+      "decision": "pending",
+      "reason": "已核正式题名、两作者、2013年与DOI；疑似实验室矿物反射光谱混合，原摘要/全文未取得，不能仅据二次摘要确认光学范围与PCA结论。非排除；后续核原始光学研究对象后可入基础关系或HSI范围。IEEE正文202空/PDF418；不借同作者后来LPSC稿的摘要、数据或图。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "edge-weighted-commute-time-anomaly",
+      "name": "边权与通勤时间异常检测",
+      "dimension": "method",
+      "definition": "以光学光谱像元相似图建模背景，将图结构经通勤时间距离映射到向量空间后进行异常检测；逐稿记录边权选择、数值稳定性及检测器，不等同于图神经网络。",
+      "rationale": "第13项作者原摘要明确比较倒欧氏距离与热核边权并进行图结构保持变换和RX；关键词为Commute Time Distance，分类暂定，公式与原PDF待核。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "edge-weighting-anomaly-whispers-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "第13项作者原摘要明确比较倒欧氏距离与热核边权并进行图结构保持变换和RX；关键词为Commute Time Distance，分类暂定，公式与原PDF待核。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-background-estimation",
+      "name": "光谱背景估计",
+      "dimension": "task",
+      "definition": "利用光学多/高光谱影像的邻域或全局上下文估计目标像元的无目标背景值；背景预测误差评价与实际目标/异常检出评价分别记录。",
+      "rationale": "第15项四页原稿直接评估中心像元背景预测误差，实际目标检测为未来工作；不能直接归为已经验证目标检测任务。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "background-regression-whispers-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "第15项四页原稿直接评估中心像元背景预测误差，实际目标检测为未来工作；不能直接归为已经验证目标检测任务。"
+        }
+      ]
+    },
+    {
+      "id": "nonlocal-annulus-background-regression",
+      "name": "非局部环域背景回归",
+      "dimension": "method",
+      "definition": "从整幅影像学习环域邻居到中心像元的回归，用相似补丁中心的近邻、加权均值或稀疏线性组合预测背景；可在少量PCA分量上非线性回归，其余局部平均，最后逆变换。",
+      "rationale": "第15项原稿第2/5节明确kNN、NLM、NLS与PCA混合背景预测；不与跨波段噪声回归或2015对称回归混淆。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "background-regression-whispers-2013"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "第15项原稿第2/5节明确kNN、NLM、NLS与PCA混合背景预测；不与跨波段噪声回归或2015对称回归混淆。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-author-figure-page.json",
+      "sha256": "d319d780a94e40599b5fc499f80087328c9563a88931a9a79053aaf2aa8daed4",
+      "bytes": 6802
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-author-pdf-access.json",
+      "sha256": "6a03ad55f5b0d62fd7a6248abacc74b88dc1500f1c1ec2355603ae6ea7fc8520",
+      "bytes": 714
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-author-web-text.json",
+      "sha256": "50356932e2def11e642ff67d0230648f395b623ef2f083883ace2d45ad519175",
+      "bytes": 29942
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-doi-access.json",
+      "sha256": "473879a2f2e3becc52e932132d879bc7b2d757a0080aa2442e71dd5f3037ac6f",
+      "bytes": 6277
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-figure-access.json",
+      "sha256": "3a561690ef1e1f3ca06d2b45d2a6c97d42052d22a29f1da3a3ee473916d34722",
+      "bytes": 338
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-ieee-html-access.json",
+      "sha256": "8558f4ad7828354079ecb49c6e37147a073481bc6ef40a5cdde25d0f83143ecf",
+      "bytes": 188
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-ieee-pdf-access.json",
+      "sha256": "12d95e37ccba9fdff95e404f1f5ce00fd2fbbccff6dbb92e0a77ccc1f4a6ef43",
+      "bytes": 230
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-institution-list-access.json",
+      "sha256": "2666a2c03fdf994ae0c9c632b877d3878c4d408e46a0e8e934733bf3a39aaeff",
+      "bytes": 265
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-institution-list.html",
+      "sha256": "21f5a69fae817f0977a17455cfb5a274688d50c7798010aac249569e5941b049",
+      "bytes": 102098
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-institution-list.txt",
+      "sha256": "3faea6484dc9784380ebe82e5323973c32e306cf0526364c792f9291f5fec14d",
+      "bytes": 30428
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-edge-rg-access.json",
+      "sha256": "0ed044f01ec33ffc59c217cae20e22b5baaed46042b1fe511435719c1147fac4",
+      "bytes": 400
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-pyroxene-doi-access.json",
+      "sha256": "fa5048c144c59293c1008f7754f7191791ab1d741a686973ed66a91e22628a62",
+      "bytes": 6277
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-pyroxene-ieee-html-access.json",
+      "sha256": "7ca5a798fd09b8a0150877f8b5a1c8b60ee04b3087f06fafd05a4d590ded0a00",
+      "bytes": 188
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-pyroxene-ieee-pdf-access.json",
+      "sha256": "b7f635cbfae530d16e527dd1e108e5df3fdd4c64096efe056566580e61deaf08",
+      "bytes": 230
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-author-access.json",
+      "sha256": "1d6d714ff9e7b589c1d77c3b0a4a4055950623e893c67c7be00268a2c94855f1",
+      "bytes": 239
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-author-list-access.json",
+      "sha256": "494fd2afa1d81acec718cdbe216a2cf13ab0cb7343af09cee06a8c0c569852d5",
+      "bytes": 319
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-author-text.txt",
+      "sha256": "dce6e25777d49563e2a3d2038212bbe37830028f76573045d4ff4e596b5a52e7",
+      "bytes": 29731
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-author.html",
+      "sha256": "01f84fad7305eaae2e6ff675e9672fdd7f5af891e2ee03057bcd9c4f09d9fe17",
+      "bytes": 5224
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-author.txt",
+      "sha256": "85da131c1fb94c739d4e04b7ae4e051753c2457a7c19ec41c5a2c90cc2dad3e5",
+      "bytes": 1849
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-doi-access.json",
+      "sha256": "147e9fddc9c8d73b8181e25b6785e0f5ea3fa1042c1ab9edb4c0c9c8298b9c22",
+      "bytes": 218
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-doi-retry-access.json",
+      "sha256": "50a80fc2e6a8c03e5c236e895b18ff90df739bc049d30effe29d433cd95906d6",
+      "bytes": 10314
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-ieee-html-access.json",
+      "sha256": "c12b9ecb90faa83fa7585bcf6eeaa074ed007fde800055fbc8717fe117bc1cd9",
+      "bytes": 188
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-ieee-pdf-access.json",
+      "sha256": "6c3bb15e72e0203ca234d4eef067f35f1bd7ab137f7efbb2ebde2e76b24e97a7",
+      "bytes": 230
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-paper-access.json",
+      "sha256": "b33eca2158a7c17f3a6901f482e59e9a82aa1bc32d7fcc96f8033edc5b60c611",
+      "bytes": 248
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-paper.pdf",
+      "sha256": "5a09b4e809509c5b7e0fcc4ddc93b5cd6b4f549325e09279bc347d8b022ac09a",
+      "bytes": 3211273
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-wohlberg-list-access.json",
+      "sha256": "0e1731393a1bdd08c6cea5e5ed899b3745d53c5980497c051e92a8de4ce9805d",
+      "bytes": 184
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-wohlberg-list.html",
+      "sha256": "5aa265b85694d1414b85ce1145c1174d16be1757f2d7a19e4180fc563c31a049",
+      "bytes": 81083
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2013-regression-wohlberg-list.txt",
+      "sha256": "98e405453eeb129060aff5bb070ba1c34e5f2b3469bd25520b3e58b00a44b2a3",
+      "bytes": 44811
+    }
+  ],
+  "qualityIssues": [
+    "WHISPERS2013目录161累计顺序1–15已审：13入2待，余146未审；年度摘要、全文、其他词与引文仍未完成。",
+    "第14项辉石混合原始光学范围/摘要待核，二次摘要不当事实；第13项原PDF/方法图受限，只核作者摘要与部分缓存正文，公式OCR错误不抄。",
+    "第15项作者全文只有输入样例图无方法图；正式版差异、代码和数据直接地址待核，实际目标检测为未来工作。",
+    "此前方差/MPCA题名待分类、油膜身份、NMF/HERF、低秩演示/m-FLIM全文原图、CNMF设计模拟代码和CASI数据、扩展声明仍待核。"
+  ],
+  "directoryBoundary": "WHISPERS2013目录161累计顺序1–15已审：13入2待，余146未审；年度摘要、全文、其他词与引文仍未完成。",
+  "queries": [
+    "\"Spectral mixture decomposition\" \"pyroxene\" author pdf",
+    "\"Regression framework for background estimation\" code arxiv",
+    "\"Assessing the impact of the edge-weighting\" arxiv code"
+  ],
+  "queryBoundary": "本轮web-discovery存档含精确查询结果；此前跨中断定向查询原始响应未保留，已保存HTTP访问凭据；不把搜索引擎返回结果当穷尽。"
+}
