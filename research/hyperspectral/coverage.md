@@ -650,6 +650,18 @@
 - 四条 ORCID 2025 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；镜像来源、未阅读全文边界和摘要性能保留在目录证据中。
 - ORCID 2025 八条直接高光谱记录均已取得摘要级或题名范围证据；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2025-abstract-followup-3.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-1
+
+- 更新4篇，不新增目录论文，不改变三维214对象。甘蔗病害记录读取 ScienceDirect 开放摘要；DiffUn读取 Griffith 作者稿；FSHyperRGAN读取 IEEE Xplore 摘要；Hy-Tracker读取 arXiv 官方预印本摘要。
+- 四条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；Hy-Tracker 的正式2024记录与2023预印本版本边界单列，未阅读全文。
+- ORCID 2024 直接高光谱条目已有8篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2024-abstract-followup.json`。
+
+## 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-2
+
+- 更新4篇，不新增目录论文，不改变三维214对象。SSRT-UNet读取 arXiv 官方预印本摘要；MMF-Net读取 IEEE Xplore 摘要；ILRNet、PN-ResCapsNet读取公开摘要镜像。
+- 四条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；SSRT-UNet的正式2024记录与2023预印本边界单列，镜像来源未提升为全文。
+- ORCID 2024 直接高光谱条目已有12篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2024-abstract-followup-2.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
