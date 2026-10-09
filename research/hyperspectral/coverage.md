@@ -713,7 +713,7 @@
 ## 2026-10-10 / jun-zhou-scholar-2021-abstract-followup
 
 - 更新3篇，不新增目录论文，不改变三维214对象。SST-Net、NMF-SAE 与甘蔗黑穗病检测补公开摘要证据。
-- 3条 Scholar 2021 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；BAE-Net 等记录仍仅题名，未从相关论文外推方法。
+- 3条 Scholar 2021 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；当时其余记录仍仅题名，未从相关论文外推方法。
 - Scholar 新增项已有19条摘要级核验；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-2021-abstract-followup.json`。
 
 ## 2026-10-10 / jun-zhou-scholar-2020-abstract-followup
@@ -721,6 +721,12 @@
 - 更新1篇，不新增目录论文，不改变三维214对象。BAE-Net 补 IEEE SPS 公开摘要证据。
 - 1条 Scholar 2020 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；仍保留正式版本、全文、代码和完整实验边界。
 - Scholar 新增项已有20条摘要级核验；证据见 `sources/jun-zhou-scholar-2020-abstract-followup.json`。
+
+## 2026-10-10 / jun-zhou-scholar-2019-abstract-followup
+
+- 更新4篇，不新增目录论文，不改变三维214对象。补读 ISTA 深度展开解混、草本杂草形状—纹理分类、局部—非局部高光谱分类和动态材料感知跟踪的公开摘要。
+- 4条 Scholar 2019 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
+- Scholar 新增项已有24条摘要级核验，仍有17条题名暂定。证据见 `sources/jun-zhou-scholar-2019-abstract-followup.json`。
 
 ## 未解决缺口
 
