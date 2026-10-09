@@ -854,6 +854,12 @@
 - 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/field-spectral-lidar-forest-followup.json`。
 
+## 2026-10-10 / field-hsl-radiometry-unmixing-followup
+
+- 更新9篇，不新增目录论文，不改变三维214对象。补读HSL入射角/距离与弱信号校正、全波形分解、多光谱LiDAR特征选择/分类、树木参数反演及LiDAR辅助高光谱解混摘要。
+- 9条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/field-hsl-radiometry-unmixing-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
