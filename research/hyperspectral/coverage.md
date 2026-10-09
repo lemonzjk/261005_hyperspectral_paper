@@ -704,6 +704,12 @@
 - `zhou-81-hsi-2022` 由 `title_only` 更新为 `abstract_read` / `abstract_verified`；保留摘要片段边界与 Crossref 正式书目，未阅读全文。
 - ORCID 2022 直接高光谱条目摘要级核验已完成；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-5.json`。
 
+## 2026-10-10 / jun-zhou-scholar-2022-abstract-followup
+
+- 更新4篇，不新增目录论文，不改变三维214对象。深度强化选带、模型启发解混、MTSNN 与空间—光谱稀疏去噪补公开摘要证据。
+- 4条 Scholar 2022 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；材料引导 Siamese 记录仍仅题名，未强行外推摘要内容。
+- Scholar 新增项已有16条摘要级核验；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-2022-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
