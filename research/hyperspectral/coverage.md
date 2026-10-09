@@ -692,6 +692,12 @@
 - 3条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 BIT、OpenAlex 和 ResearchGate 公开摘要，均未阅读全文。
 - ORCID 2022 已有11条直接高光谱记录取得摘要级核验；zhou-81 及其余记录与正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-3.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-4
+
+- 更新4篇，不新增目录论文，不改变三维214对象。S3FGCN、跨传感器杂草制图、MGRSR 与 UMsDFL 均补 ResearchGate 公开摘要证据。
+- 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；跨传感器杂草制图保留多波段/跨传感器边界，未阅读全文。
+- ORCID 2022 直接高光谱条目已有15篇摘要级核验；`zhou-81-hsi-2022` 及正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-4.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
