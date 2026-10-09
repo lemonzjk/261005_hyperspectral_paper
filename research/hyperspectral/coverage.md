@@ -146,6 +146,7 @@
 | WHISPERS | 2014 | MERIS HICO NIR-red chlorophyll、Starnberger See inverse radiative transfer bathymetry、HICO level-2 atmospheric correction water quality；物理85页全部3题名；本session续86页2篇尚未审。累计45–76及78–85页128直接题名+恢复1=129项，123入3排3待，77未核。TOC174关联123/决定6/未审45；自动122/6/46，TRDF人工关联保留。 | 3 / 3 / 3 | 85页3题名闭环；本session续86页及年度遗漏未审 | NIR-red MERIS多光谱/HICO高光谱分别记录；5.5%为实测总范围归一化且精确统计量未知，不能叫MAPE或HICO精度。；水深37cm是实测RMSE，10–25/35–65cm是潜在去偏精度；4148总匹配与0–8m3947、62浅区标定分开。单一底反射率、图2/3文内错引及正式版差异待核。；HICO工具箱R²0.95不是95%准确率；场景、匹配数、大气模型、专用软件/数据未知，2015再标定稿不补写2014实现。；NIR-red/HICO会议原PDF/图、精确代码数据/arXiv未知；WASI历史手册/后续软件下载线索不当2014复现代码。；86页前两篇属本session后续，继续该页；77及年度45未审条目待补。 |
 | WHISPERS | 2014 | Helgoland EnMAP WASI-2D benthic bathymetry、Italy lake optical properties future satellite sensors、joint sparse collaborative representation target detection；物理86页全部3题名，前2题是水体session续篇，第3题开启稀疏session，后续87未审。累计45–76及78–86页131直接题名+恢复1=132，126入3排3待；77未核。目录174关联126/决定6/未审42，自动125/6/43，TRDF人工关联保留。 | 3 / 3 / 3 | 86页3题名完整摘要闭环；77/87及年度遗漏未审 | 三篇会议原PDF/原图、专用代码/数据/arXiv未知；Helgoland是六页不套四页，模拟EnMAP而非在轨数据，历史Dörnhöfer署名不改。；意大利摘要将MERIS纳入hyperspectral表述，库内注明其多光谱属性；未来任务仅2014语境，算法/数据细节未知。CNR实时分页漂移不能当原文。；检测标题joint不据此加邻域共享支持；PR2015三作者与会议两作者分开，引用19身份和直接扩展差异待核；不搬双窗/正则及期刊实验。；续87页、补77及42条年度目录遗漏；全领域矩阵仍未完成。 |
 | WHISPERS | 2014 | l0 sparse PCA anomaly important bands、MMV collaborative sparse unmixing chain CLSUnSAL、hierarchical sparse dictionary classification；物理87页全部3题名；日程Brook dust摘要续88页未计本批。累计45–76及78–87页134直接题名+恢复1=135，129入3排3待；77未核。TOC174关联129/决定6/未审39，自动128/6/40，TRDF人工关联保留。 | 3 / 3 / 3 | 87页3题名闭环；77/88及年度遗漏待补 | PCA/层级分类会议原PDF/原图与专用资源未知。PCA Pam/Pang拼写冲突以正式Pang核定；作者上传SPCA数据线索未取得，不能当已核资源。；解混链真值谱库辅助选端元、分块内存限制及不施加ASC明确记录；SRE光谱重建不当丰度误差，l0凸代理不称任意数据等价。；CLSUnSAL原算法引用10与本文三阶段配置分别关联；SUnSAL/C-SUnSAL及引用1102.3288前作不是本文代码/预印本，精确代码/数据未知。；层级稀疏码实际层级构造未知，不套空间树/深度网络；合作者博士稿仅题名引用不是会议正文。；日程dust题名的完整摘要在物理88页，续该页；77及39条年度目录遗漏待查。 |
+| WHISPERS | 2014 | settle dust green canopy sparse unmixing L1/2 NMF OMP、morphological covariance principal component analysis、Dirichlet robust regularized covariance anomaly detection、pure pixel SPA preconditioning；物理88页全部4题名；累计45–76及78–88页138直接题名+恢复1=139，133入3排3待；77未核。TOC174关联133/决定6/未审35，自动132/6/36，TRDF人工关联保留。 | 4 / 4 / 4 | 88页4题名闭环；77/89及年度遗漏待补 | 三篇四页会议原PDF/图未取得；不能用期刊/长稿图冒充会议图。；dust仅会议Anna Brook，2016期刊两作者七算法；OMP非线性混合方程/尘物理单位、真值与精确代码数据待核。；MorphPCA会议正文1610行与扩展610冲突，不擅自纠正；独立假设、折空间分离与类别指标定义未知；原Fig2是形态表示示例，不是流程图。；协方差会议末作者倒置以同作者期刊正式Pang消歧；RX/实验因素仅期刊长稿摘要，不写会议实验。；SPA唯一arXiv v1的25页长稿/2015期刊与四页会议差异待核；作者代码对应2015稿，Hubble/Vavasis前作不混。；继续物理89页并补77及目录35遗漏；全年度原目录/引文仍未完成。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -436,6 +437,8 @@
   阅读边界：三篇主办方完整摘要；PR出版社引言缓存只核版本声明，不标全文。原502对象与三维214不改。
 - 2026-10-09 / whispers-2014-program-page87-sparse-anomaly-unmixing-classification-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：三篇完整官方摘要；解混链作者四页§1–5全文阅读、原Fig1协同矩阵示意，不是全链框架。旧505对象与三维214不改。
+- 2026-10-09 / whispers-2014-program-page88-dust-morphology-covariance-spa-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：四篇完整官方摘要；MorphPCA作者四页正文§1–6全文及Fig2物理4页。其余会议未全文读，四相关期刊与SPA arXiv只关联，不计新增方法。旧508对象与三维214不改。
 
 ## 未解决缺口
 
