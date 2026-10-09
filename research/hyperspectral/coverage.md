@@ -776,6 +776,12 @@
 - 该记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；分类仍待审计，正式Springer全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/jun-zhou-2018-boundary-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-2026-title-followup
+
+- 更新2篇，不新增目录论文，不改变三维214对象。用 Semantic Scholar 与 OpenAlex 公开摘要交叉补读医学高光谱少样本分类、信息熵选带与噪声抑制两篇记录。
+- 两条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/jun-zhou-2026-title-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
