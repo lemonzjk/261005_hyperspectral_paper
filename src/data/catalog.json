@@ -62008,51 +62008,44 @@
       "venue": "WHISPERS",
       "publicationName": "2015 7th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing",
       "doi": "10.1109/WHISPERS.2015.8075468",
-      "representation": "待核：题名指向多图正则化非负矩阵分解高光谱解混。",
-      "summary": "题名和官方WHISPERS项目确认多图正则化NMF用于高光谱解混；摘要与完整方法待取得。",
-      "input": "高光谱影像；具体输入设置待核验。",
-      "output": "端元与丰度估计；完整输出定义待核验。",
-      "mechanism": "多图正则化NMF；图构造、稀疏约束和优化细节待核验。",
-      "readingNote": "Scholar、ORCID、DBLP及WHISPERS官方技术程序确认题名、作者、DOI、会议和2015年份；未取得摘要/PDF，保留待核状态，不补造方法或实验事实。",
-      "paper": "https://doi.org/10.1109/WHISPERS.2015.8075468",
-      "verificationLevel": "official_program_and_publisher_metadata",
+      "representation": "高光谱解混：以不同尺度构造多个图，并在线性组合中学习图权重，用多图正则化 NMF 逼近数据流形与一致性。",
+      "summary": "提出多图正则化 NMF 高光谱解混方法：从不同近邻尺度构造多个图，以线性组合近似数据流形和一致性；合成与真实数据实验显示优于多种先进解混方法。",
+      "input": "混合高光谱影像像元。",
+      "output": "端元矩阵与丰度矩阵。",
+      "mechanism": "在 NMF 中加入多个不同尺度近邻图的线性组合，联合优化图权重与分解参数，以避免单图选择和固定参数限制。",
+      "readingNote": "Scholar、ORCID、DBLP、WHISPERS程序与 Griffith 作者仓储接受稿摘要核验；未阅读全文。",
+      "paper": "https://research-repository.griffith.edu.au/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/download",
+      "verificationLevel": "author_pdf_abstract_verified",
       "citation": "@inproceedings{multiple_graph_nmf_whispers_2015,\n  title = {Multiple Graph Regularized NMF for Hyperspectral Unmixing},\n  author = {Lei Tong and Jun Zhou and Yuntao Qian and Yongsheng Gao},\n  booktitle = {2015 7th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing},\n  year = {2015},\n  pages = {1--4},\n  doi = {10.1109/WHISPERS.2015.8075468}\n}\n",
       "library": {
         "categoryIds": [],
         "classificationStatus": "pending",
         "relation": "hyperspectral",
-        "relationNote": "题名直接指向高光谱解混；摘要、输入输出和方法细节待核。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "待取得摘要后确认多图正则化NMF高光谱解混的具体问题。",
-        "datasets": "待核验。",
-        "experimentSetting": "仅题名、作者、DOI、官方会议技术程序和DBLP书目核验。",
-        "conclusions": "待核验。",
-        "limitations": "未取得摘要或全文，不能记录图构造、数据集或性能。",
+        "relationNote": "题名与作者仓储摘要均明确高光谱解混任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用多尺度多图正则化 NMF 逼近高光谱数据流形并提升解混？",
+        "datasets": "摘要仅称合成与真实数据；名称、规模、划分和指标待全文核验。",
+        "experimentSetting": "多尺度近邻图线性组合、多图权重优化与 NMF 端元/丰度分解。",
+        "conclusions": "作者摘要报告方法在合成和真实数据上优于多种先进高光谱解混方法。",
+        "limitations": "摘要未给出数据集名称、图构造细节、迭代参数、逐项指标、代码和完整实验。",
         "dataLinks": [],
         "evidence": [
           {
-            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2015_technical_program.pdf",
+            "url": "https://research-repository.griffith.edu.au/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/download",
             "checkedAt": "2026-10-10",
-            "level": "官方技术程序",
+            "level": "Griffith作者仓储接受稿摘要",
             "supports": [
-              "列出题名、作者和WHISPERS2015会场。"
+              "多尺度多图正则化NMF机制",
+              "合成与真实数据有效性结论"
             ]
           },
           {
-            "url": "https://dblp.org/rec/conf/whispers/TongZQG15",
+            "url": "https://api.crossref.org/works/10.1109/WHISPERS.2015.8075468",
             "checkedAt": "2026-10-10",
-            "level": "DBLP书目",
+            "level": "Crossref正式书目",
             "supports": [
-              "列出作者、WHISPERS2015、DOI和页码1–4。"
-            ]
-          },
-          {
-            "url": "https://doi.org/10.1109/WHISPERS.2015.8075468",
-            "checkedAt": "2026-10-10",
-            "level": "IEEE DOI书目",
-            "supports": [
-              "精确DOI和论文身份。"
+              "正式题名、作者、会议、DOI和出版年份"
             ]
           }
         ],
@@ -62063,7 +62056,7 @@
             "url": "https://doi.org/10.1109/WHISPERS.2015.8075468",
             "doi": "10.1109/WHISPERS.2015.8075468",
             "year": 2015,
-            "relation": "正式WHISPERS2015；页码以DBLP书目登记1–4，正文待取得。"
+            "relation": "正式WHISPERS2015记录；已取得作者稿摘要级方法证据，未阅读全文。"
           }
         ],
         "methodFamilyId": "multiple-graph-nmf-whispers-2015"

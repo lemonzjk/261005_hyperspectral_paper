@@ -758,6 +758,12 @@
 - 该 Scholar 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；证据属于竞赛/基准项目说明，不等同于正式论文全文。
 - Scholar 新增项已有41条公开摘要或项目说明级核验；正式论文版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-hot2024-followup.json`。
 
+## 2026-10-10 / jun-zhou-2015-multiple-graph-abstract-followup
+
+- 更新1篇，不新增目录论文，不改变三维214对象。取得 Griffith 作者仓储接受稿摘要。
+- `multiple-graph-nmf-whispers-2015` 由 `title_only` 更新为 `abstract_read` / `abstract_verified`；确认多尺度多图正则化 NMF、合成/真实数据结论，未阅读全文。
+- 正式会议版本、完整图构造、数据集、代码和逐项实验指标仍待核验。证据见 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
