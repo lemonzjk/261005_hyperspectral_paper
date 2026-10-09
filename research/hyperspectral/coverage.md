@@ -236,6 +236,9 @@
 | ORCID author works | 2021 | Jun Zhou 2021 hyperspectral、hyperspectral classification、hyperspectral anomaly、hyperspectral LiDAR、hyperspectral depth；ORCID orders 89–96; not a complete 2021 venue scan. | 8 / 8 / 8 | 作者来源组范围完成；非年度系统检索 | 6篇摘要/作者来源局部，正式版全文、图版、代码和版本差异仍待。 |
 | ORCID author works | 2022 | Jun Zhou 2022 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral unmixing、hyperspectral fusion；ORCID orders 70–88; not a complete 2022 venue scan. | 19 / 19 / 19 | 作者来源组范围完成；16篇仅题名暂定，非年度系统检索 | 16篇摘要与全文待补；正式版本、图版、代码和差异仍待。 |
 | ORCID author works | 2023 | Jun Zhou 2023 hyperspectral、hyperspectral denoising、hyperspectral tracking、hyperspectral classification；ORCID orders 60–69; not a complete 2023 venue scan. | 10 / 10 / 10 | 作者来源组范围完成；8篇仅题名暂定，非年度系统检索 | 8篇摘要与全文待补；正式版本、图版、代码和差异仍待。 |
+| ORCID author works | 2024 | Jun Zhou 2024 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2024 source groups; not a complete 2024 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
+| ORCID author works | 2025 | Jun Zhou 2025 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2025 source groups; not a complete 2025 venue scan. | 17 / 17 / 17 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
+| ORCID author works | 2026 | Jun Zhou 2026 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2026 source groups; not a complete 2026 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -598,6 +601,12 @@
   阅读边界：16篇以题名与Crossref正式书目核验，先标暂定；3篇综述/RGB-D/人员重识别排除；摘要与全文待补。
 - 2026-10-10 / jun-zhou-orcid-2023-60-69：新增 8，更新 0，去重 0，排除 2，待处理 82。更新与去重可指同一条目，不能相加为新增数量。
   阅读边界：8篇以题名与Crossref正式书目核验，先标暂定；2篇通用学习/人员重识别排除；摘要与全文待补。
+- 2026-10-10 / jun-zhou-orcid-2024-scope：新增 10，更新 0，去重 1，排除 10，待处理 23。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：10篇直接高光谱题名以Crossref书目入库为暂定；其余范围组按题名排除或去重；摘要与全文待补。
+- 2026-10-10 / jun-zhou-orcid-2025-scope：新增 8，更新 0，去重 0，排除 9，待处理 23。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：8篇直接高光谱题名以Crossref书目入库为暂定；其余范围组按题名排除或去重；摘要与全文待补。
+- 2026-10-10 / jun-zhou-orcid-2026-scope：新增 7，更新 0，去重 0，排除 14，待处理 23。更新与去重可指同一条目，不能相加为新增数量。
+  阅读边界：7篇直接高光谱题名以Crossref书目入库为暂定；其余范围组按题名排除或去重；摘要与全文待补。
 
 ## 未解决缺口
 
