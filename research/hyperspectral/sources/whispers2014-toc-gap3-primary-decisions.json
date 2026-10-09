@@ -1,0 +1,226 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "crism-alteration-reduction-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077535",
+      "title": "Data reduction of CRISM data to highlight alteration minerals",
+      "decision": "included",
+      "programPdfPage": 44,
+      "tocOrder": 53,
+      "relation": "hyperspectral",
+      "readingBoundary": "HAL本题名原四页论文全文、公式和四图已读，PDF物理第1页为2021存档封面，论文第1–4页为PDF第2–5页；作者初名与封面全名分开。",
+      "figureBoundary": "原稿四图逐页查看：Fig.1论文2/PDF3为比值结果，Fig.2与3论文3/PDF4为吸收中心与去噪结果，Fig.4论文4/PDF5为合成结果；无方法框架图。",
+      "deduplication": "全库精确DOI/题名/作者核对无重复，旧538论文及三维专题不改。"
+    },
+    {
+      "paperId": "meteorite-neural-minerals-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077539",
+      "title": "Mineralogical characterization using neural networks: Composition of mafic minerals in martian meteorites from their spectra",
+      "decision": "included",
+      "programPdfPage": 44,
+      "tocOrder": 57,
+      "relation": "foundation",
+      "readingBoundary": "作者ETH主页四页会议稿全文、公式及三图已读；题名/四作者与DOI和日程对应，索引误称X-ray未采用。正式IEEE版受限。",
+      "figureBoundary": "原稿Fig.1(a/b)物理第2页：MLP与单神经元示意；原PDF裁切，完整保留图注。六层示意不是实验一层40神经元，Fig.2/3为结果不当框架图。",
+      "deduplication": "全库精确DOI/题名/作者核对无重复，旧538论文及三维专题不改。"
+    },
+    {
+      "title": "Revisiting the preprocessing procedures for elemental concentration estimation based on chemcam libs on mars rover",
+      "doi": "10.1109/whispers.2014.8077520",
+      "decision": "pending",
+      "programPdfPage": 44,
+      "tocOrder": 38,
+      "reason": "明确为ChemCam LIBS一维原子发射光谱去噪/连续谱移除/波段选择，原摘要未证实成像高光谱数据或直接迁移关系。专业会议来源不等于HSI身份。作者2018高光谱综述引用此稿仅发现，受访问验证限制；留待核，不先排除所有光学LIBS。",
+      "authors": "Wei Wang, Shuangjiang Li, Hairong Qi, Bulent Ayhan, Chiman Kwan, Steven Vance",
+      "figureBoundary": "CiteSeer索引首图为LIBS光谱结果，原方法图未核；候选未进图队列，不借图。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "quartile-median-crism-denoising",
+      "name": "四分位与中值CRISM去噪",
+      "dimension": "method",
+      "definition": "在CAT预处理后通过四分位围栏识别异常波段，再用中值、移动中值及移动均值去噪；记录弱吸收丢失风险。",
+      "rationale": "第44页对应原稿全文明确机制和定量任务，据证据新增。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "crism-alteration-reduction-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "依据2014会议作者原稿全文，未强套三维专题方向。"
+        }
+      ]
+    },
+    {
+      "id": "column-neutral-spectrum-ratioing",
+      "name": "逐列中性光谱比值校正",
+      "dimension": "method",
+      "definition": "在每个探测器列中选择相邻波段变化最小的光谱作分母，进行自动光谱比值处理，区别于全局或逐列中值分母。",
+      "rationale": "第44页对应原稿全文明确机制和定量任务，据证据新增。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "crism-alteration-reduction-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "依据2014会议作者原稿全文，未强套三维专题方向。"
+        }
+      ]
+    },
+    {
+      "id": "density-weighted-mineral-mlp",
+      "name": "密度加权矿物光谱MLP",
+      "dimension": "method",
+      "definition": "由已知组分实验室光谱训练MLP，对训练组分空间稀疏样本提高权重，预测矿物模式或化学组分；不预设示意图层数为实际架构。",
+      "rationale": "第44页对应原稿全文明确机制和定量任务，据证据新增。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "meteorite-neural-minerals-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "依据2014会议作者原稿全文，未强套三维专题方向。"
+        }
+      ]
+    },
+    {
+      "id": "mineral-composition-estimation",
+      "name": "矿物组分定量估计",
+      "dimension": "task",
+      "definition": "从光学光谱估计矿物模式丰度或矿物化学组成；区分实验室验证和影像应用。",
+      "rationale": "第44页对应原稿全文明确机制和定量任务，据证据新增。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "meteorite-neural-minerals-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "依据2014会议作者原稿全文，未强套三维专题方向。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "research/hyperspectral/sources/whispers2014-toc-gap3-code-scope-search-cache.json",
+      "sha256": "9ce635e151d8300aed8dfbf3566d4d5a9bb83f5a4e2c89887c3f4df967888efb"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-toc-gap3-primary-cache.json",
+      "sha256": "37b83c0cb407a3216ccd7f6092f9eaba65a897ee505f1115c51c3f25668859a9"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-toc-gap3-original-cache.json",
+      "sha256": "1290abb898a23eb91fd417e267b3efbcd1a1dcbba3d42cd90c07b01ec3acdb5e"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-toc-gap3-discovery-cache.json",
+      "sha256": "a0d2515481f5bb87920d92ee046980a07ddacc5da31d42532a810042cf2548c9"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-toc-gap3-toc-replay.json",
+      "sha256": "d8aec8c2bb35c2a756fa69e8abe70c920632fa2e430a961af232d0d1fd7b0d06"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-toc-gap3-chemcam-relation-access-cache.json",
+      "sha256": "d584edd4145396dabd6a6ed0d4ecfb00cd10dc12a66a1a44a99ab8005c5c83a1"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-toc-gap3-program-cache.json",
+      "sha256": "1649cd51aa4a61fc6e4d4ec874fead0343e315ef37d250b7b2d8c1c72b865e9a"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-chemcam-preprocessing-archive-access.json",
+      "sha256": "a16084fd0091d8c2d7f107504e0e8e284d32eb8f694da7cce1a248a3e44954e7"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-chemcam-preprocessing-doi-access.json",
+      "sha256": "8a21a76ff0a9d30929e849f2f1ccfb84bc7c7c3fe44e18004310362a0dda83fb"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-chemcam-preprocessing-pdf-access.json",
+      "sha256": "2a5b8bcfd0936c5ba8f0d9d8cd2fc7eec3ce1de0b941e6acbc51ac8fd1cf03e1"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-chemcam-preprocessing-ieee-access.json",
+      "sha256": "83af94c81b5158f4ebd69127b42bf6fbd3ae9621894c56dac7af58dbe600e8c1"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-crism-alteration-reduction-ieee-access.json",
+      "sha256": "f93a2aa74da732001fab354730285d3fabdd9b03477f894b5ed48b676a710178"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-crism-alteration-reduction-hal-access.json",
+      "sha256": "8fb1a144016ba41f7f57b757bf55896ee6b83ce497bf5f52fd657d96f6b1654c"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-crism-alteration-reduction-author.pdf",
+      "sha256": "ff02d2405a5fc7c92332ea9802121bb32de692e50074566df4a2586fd5000d53"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-crism-alteration-reduction-pdf-access.json",
+      "sha256": "cec0654f1168c71a653f2dc282b897559f35c6623096e3cc0c0beefbabcfa102"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-crism-alteration-reduction-doi-access.json",
+      "sha256": "adbb058f57cb00092350a94e6010d5e72376d7baa22d17b79514695e12ee8e3e"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-crism-alteration-reduction-author-access.json",
+      "sha256": "53ebd9e3749ddb5926c4ede3148536bfb7cabc49d3d97f589e05aed91d8c085f"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-meteorite-neural-minerals-author-retry-access.json",
+      "sha256": "671ffad83ecad7a2933382072a4cc56b80aeb40fcb22b29e4df86d04a89c87be"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-meteorite-neural-minerals-author.pdf",
+      "sha256": "50fbf2a9e897a5e016bbf19da9cd87112de6a2a677dfcdfaa6545788d4b4a62a"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-meteorite-neural-minerals-ieee-access.json",
+      "sha256": "fe337b8d05b78408bc871d54c7a143d8b0a6f90dafa15511d3feed64b2af0181"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-meteorite-neural-minerals-pdf-access.json",
+      "sha256": "7b0153cb69758a9a03cbbd3268b0212d95a60da3c1d057a66111326aa24c75b0"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-meteorite-neural-minerals-author-access.json",
+      "sha256": "2780db28e4d9479fab9d835a5857fff9ad3c2cc0d136186dbdb184d2821c3de8"
+    },
+    {
+      "path": "research/hyperspectral/sources/whispers2014-meteorite-neural-minerals-doi-access.json",
+      "sha256": "b1dbd3be5816d1df6f7ccf00991d5a0f0c0c8988eaa591644aa9fbc7af1738ab"
+    },
+    {
+      "path": "public/figures/meteorite-neural-minerals-whispers-2014/framework-original-mlp-fig1.png",
+      "sha256": "eed19c263cf22f07f3c5471716c33d3b465bc7c5357d49a6826be2e01b18962e"
+    }
+  ],
+  "qualityIssues": [
+    "44页三题名已筛：2入1待；目录174关联161/跟踪8/未审5；累计161入3排5待，不作年度完成。",
+    "42/94及其他早页待系统核。原数据、代码、arXiv和相关CoTCAT版本身份待追踪。",
+    "ChemCam基础关系待作者原稿/综述核验；只引用或同会场不作为身份结论。",
+    "CRISM原稿探测器命名及图2观测号拼写保留；矿物定量MLP的实验与图示层数分开。"
+  ]
+}
