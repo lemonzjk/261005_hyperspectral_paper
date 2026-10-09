@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 优先周峻（ORCID0000-0001-5822-8233、DBLP99/3847-1）：263组269书目，已入134、关联既有5、排98、待23；页面135篇。ORCID2012–2018来源组已筛；背景引用HSI不自动收录。2012两篇仅题名；2015十九组已筛13入1重7排；MTSNMF同DOI去重，双图DICTA正式2014；选带三版本分开。Scholar已取得387条分页记录；DBLP导出仍是验证页。见jun-zhou.md/作者inventory；ORCID2018–2026已筛；旧年无命中摘要及目录/版本差集待查。
+- 优先周峻（ORCID0000-0001-5822-8233、DBLP99/3847-1）：263组269书目，已入134、关联既有5、排98、待23；页面135篇。ORCID2012–2026来源组已筛；背景引用HSI不自动收录。2012两篇仅题名；2015十九组已筛13入1重7排；MTSNMF同DOI去重，双图DICTA正式2014；选带三版本分开。Scholar已取得387条分页记录；DBLP导出仍是验证页。见jun-zhou.md/作者inventory；ORCID2018–2026已筛；旧年无命中摘要及目录/版本差集待查。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
