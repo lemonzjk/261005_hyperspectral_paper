@@ -53378,6 +53378,343 @@
         "sourceUrl": "https://ieeexplore.ieee.org/document/8077610/",
         "checkedAt": "2026-10-09"
       }
+    },
+    {
+      "id": "conlie-plume-whispers-2014",
+      "shortTitle": "CONLIE / Plume Retrieval",
+      "title": "A non-linear optimal estimator for plume concentration retrieval, using airborne hyperspectral measurement",
+      "authors": "Ramzi Idoughi, Pierre-Yves Foucher, Marc-André Gagnon, Laurent Poutier, Véronique Achard, Xavier Briottet",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077491",
+      "representation": "CONLIE（Constrained Optimal Non-Linear Iterative Estimation）以分层气体辐射传输、MODTRAN和PNNL吸收谱建模，最小化噪声加权辐亮度残差与先验正则，使用Levenberg–Marquardt迭代；用线性反演初始化并加入垂直或空间/温度约束。",
+      "tags": [
+        "atmospheric-tracegas-retrieval",
+        "radiative-transfer-modeling",
+        "constrained-nonlinear-optimal-estimation",
+        "atmospheric-gas-monitoring"
+      ],
+      "summary": "CONLIE（Constrained Optimal Non-Linear Iterative Estimation）以分层气体辐射传输、MODTRAN和PNNL吸收谱建模，最小化噪声加权辐亮度残差与先验正则，使用Levenberg–Marquardt迭代；用线性反演初始化并加入垂直或空间/温度约束。",
+      "input": "热红外高光谱辐亮度、检测的羽流像元、地面/大气参数及参数先验；实测用羽流内外分类估无羽流背景，温度–发射率分离和邻近气象站重建大气。",
+      "output": "各羽流像元/层的气体浓度和相对大气温差，以及积分柱浓度；不是只检测羽流位置。",
+      "mechanism": "CONLIE（Constrained Optimal Non-Linear Iterative Estimation）以分层气体辐射传输、MODTRAN和PNNL吸收谱建模，最小化噪声加权辐亮度残差与先验正则，使用Levenberg–Marquardt迭代；用线性反演初始化并加入垂直或空间/温度约束。",
+      "readingNote": "主办方90页完整摘要，精确正式DOI及作者机构目录核验；作者于2015-04-07上传的2014稿完整文字§1–5（含六图图注、公式及四参考）已读。正文实测与摘要未来时态分别记录；未核排版/正式稿差异，不将全文文字提取称原PDF阅读。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077491",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "author_full_text_extract_verified",
+      "citation": "@inproceedings{conlie_plume_whispers_2014,\n  title = {A non-linear optimal estimator for plume concentration retrieval, using airborne hyperspectral measurement},\n  author = {Ramzi Idoughi and Pierre-Yves Foucher and Marc-André Gagnon and Laurent Poutier and Véronique Achard and Xavier Briottet},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077491}\n}\n",
+      "library": {
+        "categoryIds": [
+          "atmospheric-tracegas-retrieval",
+          "radiative-transfer-modeling",
+          "constrained-nonlinear-optimal-estimation",
+          "atmospheric-gas-monitoring"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱羽流反演、大气校正敏感性或活体皮肤厚度估计为主要研究对象；仅总库，原三维专题成员不变。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何在异质地面和有垂直结构的工业羽流中联合反演温度与气体浓度？",
+        "datasets": "作者稿§3：合成SO2工业场景，86 g/s高斯羽流，8–12.5 µm/5 cm⁻¹；地面发射率加0.5%标准差高斯噪声，温度加1–3 K。§4：Telops停车场手工乙烯释放，Hyper-Cam 85波段，7.79–11.55 µm/6 cm⁻¹。原始数据下载未找到。",
+        "experimentSetting": "合成源像元以真值设置高斯垂直分布的标准差和峰值高度，对比线性初始化与CONLIE；实测因初始温度估计为负而加入释放温度约束，估为地面温度低11°C。实测无独立浓度真值误差表，未实现同时垂直与空间约束的普遍验证。",
+        "conclusions": "作者原稿§3.3源像元真值1200 ppm·m，线性2623、CONLIE1265，原文约118%与5%误差；这些是已知垂直分布参数的单例，不能概括全场景提升。§4.3实测温度约束使反演曲线改善，未给真值精度。",
+        "limitations": "原稿假设像元地面平坦均匀Lambertian、羽流层内温度/浓度均匀、全场大气剖面相同，LWIR忽略太阳与气体散射。合成先验含真值结构；实测释放温度估计不精确，更真实空间约束及垂直/空间联合实测仍为后续工作。作者上传原全文文字§1–5已读，排版PDF/原图未下载，图号1但页码未知；IEEE202空响应/PDF418、RG下载403保留。代码和本稿arXiv未知。作者姓名Xavier日程Briotet按正式登记/作者页Briottet核定。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理90页题名/作者，羽流和e-FAST完整摘要；皮肤摘要跨91页",
+            "supports": [
+              "A non-linear optimal estimator for plume concentration retrieval, using airborne hyperspectral measurement",
+              "完整官方摘要与逐篇读取边界见缓存；90页开头洪泛区摘要不重计题名。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077491",
+            "checkedAt": "2026-10-09",
+            "level": "正式会议登记与原目录摘要交叉核验",
+            "supports": [
+              "正式2014专业workshop，1-4页；2017登记不改2014会议年份。",
+              "Ramzi Idoughi, Pierre-Yves Foucher, Marc-André Gagnon, Laurent Poutier, Véronique Achard, Xavier Briottet"
+            ]
+          },
+          {
+            "url": "https://www.researchgate.net/publication/274638002_A_non-linear_optimal_estimator_for_plume_concentration_retrieval_using_airborne_hyperspectral_measurement",
+            "checkedAt": "2026-10-09",
+            "level": "作者上传原全文完整文字§1–5已读，非排版PDF",
+            "supports": [
+              "主办方90页完整摘要，精确正式DOI及作者机构目录核验；作者于2015-04-07上传的2014稿完整文字§1–5（含六图图注、公式及四参考）已读。正文实测与摘要未来时态分别记录；未核排版/正式稿差异，不将全文文字提取称原PDF阅读。",
+              "CONLIE（Constrained Optimal Non-Linear Iterative Estimation）以分层气体辐射传输、MODTRAN和PNNL吸收谱建模，最小化噪声加权辐亮度残差与先验正则，使用Levenberg–Marquardt迭代；用线性反演初始化并加入垂直或空间/温度约束。",
+              "作者上传Fig1为无/有气体羽流热红外辐射预算机制图，确切PDF页码未知；RG原图下载403、网页图链接404，IEEE原PDF418，未保存可展示原图。"
+            ]
+          },
+          {
+            "url": "https://vccimaging.org/People/idoughr/",
+            "checkedAt": "2026-10-09",
+            "level": "作者机构目录及六作者/会议日期",
+            "supports": [
+              "2014-06-24至27；Briottet拼写按作者目录与正式登记核定。",
+              "2016 Background Radiance Estimation五作者后作另列，未证实会议扩展，未借实验。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "conlie-plume-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077491",
+            "doi": "10.1109/whispers.2014.8077491",
+            "year": 2014,
+            "relation": "正式2014四页会议；相关后作不混作者、年份、实验或原图。"
+          },
+          {
+            "id": "conlie-plume-whispers-2014-author-upload",
+            "type": "作者上传2014稿，非独立方法",
+            "url": "https://www.researchgate.net/publication/274638002_A_non-linear_optimal_estimator_for_plume_concentration_retrieval_using_airborne_hyperspectral_measurement",
+            "year": 2014,
+            "relation": "RG页面明确作者Ramzi Idoughi上传2015-04-07，上传日期不是发表年；题名/六作者与正式稿一致，原文字§1–5已读，排版PDF与正式稿差异待核。"
+          }
+        ],
+        "methodFamilyId": "conlie-plume-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "作者上传Fig1辐射预算机制图，原下载403/网页图404，IEEE原PDF418；作者全文文字已读，PDF页码未知，无可展示原图。",
+        "sourceUrl": "https://www.researchgate.net/publication/274638002/figure/download/fig1/AS%3A294735425097739%401447281809970/Radiative-budget-in-the-infrared-thermal-domain-in-absence-left-and-presence-right-of.png",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "atmospheric-efast-whispers-2014",
+      "shortTitle": "e-FAST / Atmospheric Correction",
+      "title": "Global sensitivity analysis of water vapour and visibility for atmospheric correction",
+      "authors": "Nitin Bhatia, Jan Biesemans, Valentyn Tolpekin, Ils Reusen, Sindy Sterckx, Alfred Stein",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077515",
+      "representation": "以e-FAST量化水汽浓度与能见度对大气校正过程的敏感性，考察图像估计的参数不确定性传播至地表反射率。",
+      "tags": [
+        "atmospheric-correction",
+        "model-sensitivity-analysis",
+        "extended-fast-sensitivity"
+      ],
+      "summary": "以e-FAST量化水汽浓度与能见度对大气校正过程的敏感性，考察图像估计的参数不确定性传播至地表反射率。",
+      "input": "HyMap高光谱传感器辐亮度及图像方法估计的水汽浓度、能见度；参数分布与范围待全文。",
+      "output": "波长相关的参数敏感性指数和相对重要性；大气校正输出为地表反射率，不能当分类准确率。",
+      "mechanism": "以e-FAST量化水汽浓度与能见度对大气校正过程的敏感性，考察图像估计的参数不确定性传播至地表反射率。",
+      "readingNote": "主办方90页完整摘要、六作者及会议精确DOI核验；博士论文书目选段仅交叉题名，不当本稿阅读全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077515",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{atmospheric_efast_whispers_2014,\n  title = {Global sensitivity analysis of water vapour and visibility for atmospheric correction},\n  author = {Nitin Bhatia and Jan Biesemans and Valentyn Tolpekin and Ils Reusen and Sindy Sterckx and Alfred Stein},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077515}\n}\n",
+      "library": {
+        "categoryIds": [
+          "atmospheric-correction",
+          "model-sensitivity-analysis",
+          "extended-fast-sensitivity"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱羽流反演、大气校正敏感性或活体皮肤厚度估计为主要研究对象；仅总库，原三维专题成员不变。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "运行式大气校正中，水汽浓度与能见度的不确定性对地表反射率有多大影响？",
+        "datasets": "官方摘要明确HyMap数据；场地、获取日期、波段数、公开数据链接和校正软件未知。",
+        "experimentSetting": "在运行式处理链上对两参数做e-FAST敏感性分析；样本数、参数分布、范围和指数一阶/总阶定义待会议全文。",
+        "conclusions": "官方完整摘要报告两参数有大于0.8且随波长变化的敏感性指数，建议改进估计降低不确定性；指数阶数未知，不能将两值相加或称一阶解释率。",
+        "limitations": "只摘要核验；指数定义/交互与参数范围、HyMap场地及实验复现待原会议全文。IEEE202空响应/PDF418，Twente2018博士论文公开PDF403，其书目缓存只佐证两个2014题名独立，不能替代本稿实验或修复另一待核稿的错配摘要。代码、数据、本稿arXiv和原图未知。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理90页题名/作者，羽流和e-FAST完整摘要；皮肤摘要跨91页",
+            "supports": [
+              "Global sensitivity analysis of water vapour and visibility for atmospheric correction",
+              "完整官方摘要与逐篇读取边界见缓存；90页开头洪泛区摘要不重计题名。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077515",
+            "checkedAt": "2026-10-09",
+            "level": "正式会议登记与原目录摘要交叉核验",
+            "supports": [
+              "正式2014专业workshop，1-4页；2017登记不改2014会议年份。",
+              "Nitin Bhatia, Jan Biesemans, Valentyn Tolpekin, Ils Reusen, Sindy Sterckx, Alfred Stein"
+            ]
+          },
+          {
+            "url": "https://library.itc.utwente.nl/papers_2018/phd/bhatia.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "博士论文作者书目选段，仅交叉同题身份，原PDF403",
+            "supports": [
+              "主办方90页完整摘要、六作者及会议精确DOI核验；博士论文书目选段仅交叉题名，不当本稿阅读全文。",
+              "以e-FAST量化水汽浓度与能见度对大气校正过程的敏感性，考察图像估计的参数不确定性传播至地表反射率。",
+              "IEEE202空响应/PDF418，Twente后续博士论文原PDF403；未取得本会议图号/页码，不从同作者后作借图。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "atmospheric-efast-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077515",
+            "doi": "10.1109/whispers.2014.8077515",
+            "year": 2014,
+            "relation": "正式2014四页会议；相关后作不混作者、年份、实验或原图。"
+          }
+        ],
+        "methodFamilyId": "atmospheric-efast-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "会议IEEE202空响应/PDF418，博士论文PDF403；官方完整摘要已核，本稿原图号/页码未知，不借后作图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077515/",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "skin-thickness-whispers-2014",
+      "shortTitle": "HSI / Ultrasound Skin Thickness",
+      "title": "Cross validating hyperspectral with Ultrasound-based skin thickness estimation",
+      "authors": "Saurabh Vyas, Jon Meyerle, Philippe Burlina",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077565",
+      "representation": "结合人类皮肤物理模型、机器学习和高光谱成像估计组织参数，并建立超声厚度参照的验证协议；具体学习器、物理模型和训练流程待2014会议全文。",
+      "tags": [
+        "biomedical-parameter-estimation",
+        "radiative-transfer-modeling",
+        "skin-analysis",
+        "biomedical-imaging"
+      ],
+      "summary": "结合人类皮肤物理模型、机器学习和高光谱成像估计组织参数，并建立超声厚度参照的验证协议；具体学习器、物理模型和训练流程待2014会议全文。",
+      "input": "活体皮肤高光谱签名；超声用于厚度参照，不是以超声代替光学HSI输入。",
+      "output": "皮肤厚度估计；一般模型另涉及黑素体、胶原、氧饱和度和血容量，但本研究摘要只验证厚度。",
+      "mechanism": "结合人类皮肤物理模型、机器学习和高光谱成像估计组织参数，并建立超声厚度参照的验证协议；具体学习器、物理模型和训练流程待2014会议全文。",
+      "readingNote": "主办方90页题名/三作者，摘要在91页；JHU作者机构完整同摘要交叉核，精确会议DOI200。2015期刊原摘要/元数据只核版本关系，未读会议或期刊全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077565",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{skin_thickness_whispers_2014,\n  title = {Cross validating hyperspectral with Ultrasound-based skin thickness estimation},\n  author = {Saurabh Vyas and Jon Meyerle and Philippe Burlina},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077565}\n}\n",
+      "library": {
+        "categoryIds": [
+          "biomedical-parameter-estimation",
+          "radiative-transfer-modeling",
+          "skin-analysis",
+          "biomedical-imaging"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱羽流反演、大气校正敏感性或活体皮肤厚度估计为主要研究对象；仅总库，原三维专题成员不变。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以活体高光谱估计皮肤厚度，并用超声参照验证估计？",
+        "datasets": "2014官方/作者机构摘要：48条活体高光谱签名配超声参照；受试者人数、位置、采集波段及划分未知，不把48签名写成48患者。2015同作者期刊摘要另给6患者，暂不倒填会议。",
+        "experimentSetting": "用超声参照交叉验证高光谱厚度估计，摘要给平均绝对误差；cross validating不自动意味着k折机器学习划分，具体协议、厚度定义与超声分辨率待全文。",
+        "conclusions": "会议完整摘要报告相对超声参照的皮肤厚度MAE小于0.1 mm；未核分组结果、置信区间或肿瘤诊断性能，不等同临床筛查有效性。",
+        "limitations": "2014会议原全文/原图、代码数据与arXiv未知。2015 Computers in Biology and Medicine同三作者、同48条光谱及超声机制；仅同方法族关联，直接扩展声明与两稿差异未核。期刊正式2015-02、PubMed在线2014-12-23分开记录；六患者只期刊摘要事实，不借入会议实验。JHU书目日2014-06-28与会期24–27不同，保留正式年份不宣称上网日。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理90页题名/作者，羽流和e-FAST完整摘要；皮肤摘要跨91页",
+            "supports": [
+              "Cross validating hyperspectral with Ultrasound-based skin thickness estimation",
+              "完整官方摘要与逐篇读取边界见缓存；90页开头洪泛区摘要不重计题名。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077565",
+            "checkedAt": "2026-10-09",
+            "level": "正式会议登记与原目录摘要交叉核验",
+            "supports": [
+              "正式2014专业workshop，1-4页；2017登记不改2014会议年份。",
+              "Saurabh Vyas, Jon Meyerle, Philippe Burlina"
+            ]
+          },
+          {
+            "url": "https://pure.johnshopkins.edu/en/publications/cross-validating-hyperspectral-with-ultrasound-based-skin-thickne/",
+            "checkedAt": "2026-10-09",
+            "level": "作者机构完整会议摘要/DOI核验",
+            "supports": [
+              "主办方90页题名/三作者，摘要在91页；JHU作者机构完整同摘要交叉核，精确会议DOI200。2015期刊原摘要/元数据只核版本关系，未读会议或期刊全文。",
+              "结合人类皮肤物理模型、机器学习和高光谱成像估计组织参数，并建立超声厚度参照的验证协议；具体学习器、物理模型和训练流程待2014会议全文。",
+              "会议IEEE连接失败/PDF418，JHU只摘要和DOI；未取得本会议原图/页码，不借2015九页期刊稿或2013不同数据实验图。"
+            ]
+          },
+          {
+            "url": "https://pure.johnshopkins.edu/en/publications/non-invasive-estimation-of-skin-thickness-from-hyperspectral-imag-3/",
+            "checkedAt": "2026-10-09",
+            "level": "作者机构2015期刊完整摘要，关系核验，非会议实验",
+            "supports": [
+              "同三作者同48光谱/超声厚度研究，六患者为期刊摘要事实；直接会议扩展声明未核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.compbiomed.2014.12.010",
+            "checkedAt": "2026-10-09",
+            "level": "期刊正式卷期/页码/作者登记",
+            "supports": [
+              "Computers in Biology and Medicine57:173–181，2015-02；与2014会议四页区分。"
+            ]
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25561244/",
+            "checkedAt": "2026-10-09",
+            "level": "期刊书目与原摘要",
+            "supports": [
+              "在线2014-12-23、正式2015-02；期刊摘要给六患者，不倒填会议人数。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "skin-thickness-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077565",
+            "doi": "10.1109/whispers.2014.8077565",
+            "year": 2014,
+            "relation": "正式2014四页会议；相关后作不混作者、年份、实验或原图。"
+          },
+          {
+            "id": "skin-thickness-cbm-2015-related",
+            "type": "同方法族期刊工作，直接扩展待核",
+            "url": "https://doi.org/10.1016/j.compbiomed.2014.12.010",
+            "doi": "10.1016/j.compbiomed.2014.12.010",
+            "year": 2015,
+            "relation": "Non-invasive estimation of skin thickness from hyperspectral imaging and validation using echography；同三作者与48光谱/超声参照机制，六患者只期刊摘要。正式2015-02、在线2014-12-23；未核会议扩展声明/原稿差异，不计独立方法。"
+          }
+        ],
+        "methodFamilyId": "skin-thickness-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "会议IEEE连接失败/PDF418，JHU只摘要/DOI；原图号/页码未知，不以2015期刊或2013稿图冒充。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077565/",
+        "checkedAt": "2026-10-09"
+      }
     }
   ],
   "datasets": [
@@ -54049,13 +54386,14 @@
       "id": "skin-analysis",
       "name": "皮肤光谱分析",
       "dimension": "application",
-      "definition": "面部皮肤高光谱采集、重建和成分分析；不等同于临床诊断有效性。",
+      "definition": "皮肤高光谱采集、重建和成分/结构分析，含面部及其他身体部位；参数验证不等同临床诊断有效性。",
       "status": "confirmed",
       "color": "#b5899a",
       "createdAt": "2026-10-08",
       "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
       "evidencePaperIds": [
-        "hyper-skin-2023"
+        "hyper-skin-2023",
+        "skin-thickness-whispers-2014"
       ],
       "history": [
         {
@@ -54067,6 +54405,12 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-09",
+          "action": "definition_expanded",
+          "previousDefinition": "面部皮肤高光谱采集、重建和成分分析；不等同于临床诊断有效性。",
+          "reason": "2014活体皮肤厚度估计未限定面部；扩展应用边界，稳定ID及Hyper-Skin已有归类不变。"
         }
       ]
     },
@@ -56018,7 +56362,8 @@
         "airflex-o2-atmospheric-correction-2014",
         "flex-sentinel3-fluorescence-retrieval-2014",
         "flaash-ir-hypercam-whispers-2014",
-        "hico-toolbox-whispers-2014"
+        "hico-toolbox-whispers-2014",
+        "atmospheric-efast-whispers-2014"
       ],
       "history": [
         {
@@ -56968,7 +57313,8 @@
       "rationale": "逐篇复核现有论文的研究问题、输入输出和方法后建立；不继承三维专题的track分类。",
       "evidencePaperIds": [
         "luminescence-3d-thermal",
-        "hsi-sdoct-hemodynamics-2009"
+        "hsi-sdoct-hemodynamics-2009",
+        "skin-thickness-whispers-2014"
       ],
       "history": [
         {
@@ -57156,7 +57502,9 @@
         "modtran-plume-model-whispers-2014",
         "modtran6-whispers-2014",
         "starnberg-bathymetry-whispers-2014",
-        "helgoland-benthic-whispers-2014"
+        "helgoland-benthic-whispers-2014",
+        "conlie-plume-whispers-2014",
+        "skin-thickness-whispers-2014"
       ],
       "history": [
         {
@@ -57487,7 +57835,8 @@
         "uv-hyperspectral-flim-2007",
         "intrinsic-two-photon-hsi-2008",
         "hsi-sdoct-hemodynamics-2009",
-        "excitation-fluorescence-tomography-2009"
+        "excitation-fluorescence-tomography-2009",
+        "skin-thickness-whispers-2014"
       ],
       "history": [
         {
@@ -57573,7 +57922,8 @@
         "flare-forward-model-whispers-2014",
         "modtran-plume-model-whispers-2014",
         "airborne-thermal-gases-whispers-2014",
-        "bpt-plume-tracking-whispers-2014"
+        "bpt-plume-tracking-whispers-2014",
+        "conlie-plume-whispers-2014"
       ],
       "history": [
         {
@@ -58068,7 +58418,8 @@
       "evidencePaperIds": [
         "sciamachy-tracegas-unmixing-2015",
         "iasi-volcanic-so2-plume-2014",
-        "airborne-thermal-gases-whispers-2014"
+        "airborne-thermal-gases-whispers-2014",
+        "conlie-plume-whispers-2014"
       ],
       "history": [
         {
@@ -59207,7 +59558,8 @@
       "color": "#93afa1",
       "createdAt": "2026-10-09",
       "evidencePaperIds": [
-        "ascope-global-sensitivity-whispers-2014"
+        "ascope-global-sensitivity-whispers-2014",
+        "atmospheric-efast-whispers-2014"
       ],
       "history": [
         {
@@ -60285,6 +60637,46 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "海洋颗粒会议官方摘要明确Mie-Lorentz/T-matrix内禀光学性质计算和遗传搜索，具体码库/参数未核。"
+        }
+      ]
+    },
+    {
+      "id": "constrained-nonlinear-optimal-estimation",
+      "name": "约束非线性最优估计",
+      "dimension": "method",
+      "definition": "以非线性光学前向模型、观测噪声加权残差和参数先验构造最优估计，迭代求解物理量；注明初始化和约束来源，不能把先验真值辅助实验当无先验实测精度。",
+      "rationale": "CONLIE作者全文§2.2确认辐射传输残差、先验正则及Levenberg–Marquardt求解；现有辐射传输标签不表达该反演机制。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "conlie-plume-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "CONLIE作者全文§2.2确认辐射传输残差、先验正则及Levenberg–Marquardt求解；现有辐射传输标签不表达该反演机制。"
+        }
+      ]
+    },
+    {
+      "id": "extended-fast-sensitivity",
+      "name": "扩展FAST敏感性分析",
+      "dimension": "method",
+      "definition": "以扩展傅里叶振幅敏感性测试（e-FAST）分析光学模型参数对输出的影响；具体采样、输入分布和指数阶数逐稿核验，不把未知指数误当一阶可加贡献。",
+      "rationale": "Bhatia等官方摘要明确e-FAST；既有参数敏感性任务不表达求解方法。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "atmospheric-efast-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Bhatia等官方摘要明确e-FAST；既有参数敏感性任务不表达求解方法。"
         }
       ]
     }
