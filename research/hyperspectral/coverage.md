@@ -644,6 +644,12 @@
 - 四条 ORCID 2025 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；ADLKAN/HSLiNets作者稿版本差异、LDCLNet镜像边界单列，未标阅读全文。
 - ORCID 2025 直接高光谱条目已有4篇摘要级核验；其余4篇仍待摘要或全文。证据见 `sources/jun-zhou-2025-abstract-followup-2.json`。
 
+## 2026-10-10 / jun-zhou-orcid-2025-abstract-followup-2
+
+- 更新4篇，不新增目录论文，不改变三维214对象。SUIT、SSTCF读取 IEEE Xplore 官方摘要；SSSGAN、UBSTrack读取公开摘要镜像。
+- 四条 ORCID 2025 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；镜像来源、未阅读全文边界和摘要性能保留在目录证据中。
+- ORCID 2025 八条直接高光谱记录均已取得摘要级或题名范围证据；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2025-abstract-followup-3.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

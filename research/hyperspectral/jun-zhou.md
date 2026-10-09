@@ -131,12 +131,12 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 ## 2024–2026高光谱来源组筛选
 
-2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 ORCID 2025 的 SSIT、ADLKAN、HSLiNets、LDCLNet 与 ORCID 2026 的 FedDA-HSI、SPECIAL、HOT综述、STU、频率偏置校准网络已补公开摘要，更新为摘要级核验，其余仍保留题名暂定状态。
+2024–2026共59组完成范围决定：新增26篇、关联既有1篇、排除33篇。26篇直接高光谱题名已以Crossref正式书目入库；其中 ORCID 2025 的八篇直接高光谱记录均已补摘要或保留题名范围证据，其中 SSIT、ADLKAN、HSLiNets、LDCLNet、SUIT、SSTCF、SSSGAN、UBSTrack 已更新为摘要级核验；ORCID 2026 的 FedDA-HSI、SPECIAL、HOT综述、STU、频率偏置校准网络也已补公开摘要，其余仍保留题名暂定状态。
 
 - 2024收录高光谱农业、解混、分类、去噪、LiDAR融合和视频跟踪；2025收录去噪、少样本分类、LiDAR融合、视频跟踪、异常检测和医学分类；其中 ORCID 四篇与 Scholar 差集三篇已补摘要级核验；2026收录医疗高光谱、异常/目标跟踪综述、选带、分类和解混。
 - 通用视觉、RGB-D、普通遥感、变化检测、红外可见光融合及其他无明确高光谱输入记录排除；2024 LiDAR-Guided Cross-Attention Fusion 已是既有目录条目，按重复登记处理。
 
-逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2025摘要补充见 `sources/jun-zhou-2025-abstract-followup.json`、`sources/jun-zhou-2025-abstract-followup-2.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
+逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2025摘要补充见 `sources/jun-zhou-2025-abstract-followup.json`、`sources/jun-zhou-2025-abstract-followup-2.json`、`sources/jun-zhou-2025-abstract-followup-3.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
 
 ## 2023高光谱来源组筛选
 
