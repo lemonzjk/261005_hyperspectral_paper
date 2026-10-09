@@ -734,6 +734,12 @@
 - 3条 Scholar 2019 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
 - Scholar 新增项已有27条摘要级核验，仍有14条题名暂定。证据见 `sources/jun-zhou-scholar-2019-abstract-followup-2.json`。
 
+## 2026-10-10 / jun-zhou-scholar-mixed-abstract-followup
+
+- 更新4篇，不新增目录论文，不改变三维214对象。补读非局部低秩解混、单图模型驱动去噪、高光谱—LiDAR残差注意力分类和材料引导 Siamese 跟踪的公开摘要。
+- 4条 Scholar 2020–2022 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
+- Scholar 新增项已有31条摘要级核验，仍有10条题名暂定。证据见 `sources/jun-zhou-scholar-mixed-abstract-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
