@@ -1,0 +1,923 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="nexus-font-support">
+
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="google" content="nositelinkssearchbox"/>
+    <meta name="tdm-reservation" content="0">
+    <title>
+        Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation
+      -  Ben-Gurion University Research Portal</title>
+    
+    
+    
+
+
+
+<meta property="og:site_name" content="Ben-Gurion University Research Portal">
+
+
+    <meta property="og:title" content="Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation"/>
+
+
+<meta property="og:url" content="https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/">
+<meta property="og:locale" content="en_US">
+
+
+
+
+    
+        <meta property="og:image" content="https://cris.bgu.ac.il/skin/headerImage/">
+    
+
+
+
+
+    
+        <meta property="og:type" content="article">
+    
+
+    
+
+    
+
+
+    <link rel="stylesheet" href="/assets/application-d8c4196ba42289b701050fcf209ab3eb.css" />
+    <!-- OneTrust Cookies Consent Notice start -->
+<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="20719709-abae-4e45-b12f-af18d63e9b7d" data-document-language="true"></script>
+<script type="text/javascript">
+    document.cookieConsentBannerShowAll = true;
+    function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end -->
+    
+        <link rel="shortcut icon" href="/skin/favIcon/"/>
+    
+    <link href="/skin/css/" rel="stylesheet"/>
+    
+    <script src="/skin/script/" type="text/javascript"></script>
+    <script type="text/javascript" src="/assets/application-d9c3c96b32ee7877543159e1191a25d2.js" ></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/assets/html5shiv.min-ca5300beead9a4a9d2c9c584a9016410.js" ></script>
+    <script type="text/javascript" src="/assets/respond.min-678d372b349e434d9923e1b591f14a1e.js" ></script>
+    <![endif]-->
+    
+        
+        
+        <meta name="citation_title" content="Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation"></meta><meta name="citation_inbook_title" content="Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX"></meta><meta name="citation_author" content="G. A. Tidhar"></meta><meta name="citation_author_institution" content="Dept. of Elec. and Comp. Engineering"></meta><meta name="citation_author_institution" content="Ben-Gurion University of the Negev"></meta><meta name="citation_author" content="S. R. Rotman"></meta><meta name="citation_author_institution" content="Department of Electrical &amp; Computer Engineering"></meta><meta name="citation_publication_date" content="2013/08/12"></meta><meta name="citation_doi" content="10.1117/12.2016452"></meta><meta name="citation_language" content="English"></meta><meta name="citation_keywords" content="Density-estimation; Graph; Hyperspectral; Non-parametric; Target-detection"></meta><meta name="citation_firstpage" content="87431A"></meta><meta name="citation_conference_title" content="Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX"></meta>
+        <script src="/assets/Chart.min-27bff060c3e539ceb22e763c8f2e9e10.js"></script>
+        <script src="/assets/jquery.content-chart-9c09bb79ba3fc3829b6478d0e114f737.js"></script>
+        
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://www.googletagmanager.com/gtag/js?id=G-CWJ9SKL9GK" class="optanon-category-2" type="text/plain" async=""></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CWJ9SKL9GK', {'cookie_domain' : document.location.hostname, 'anonymize_ip': true });
+</script>
+    <script src="//assets.adobedtm.com/4a848ae9611a/ea83f870454d/launch-af020409b299.min.js" class="optanon-category-2" type="text/plain" async=""></script>
+    
+    
+</head>
+
+<body class="webkit" data-page="publications">
+
+<div id="aria-polite" aria-live="polite"></div>
+<div id="aria-assertive" aria-live="assertive"></div>
+
+<a href="#main-navigation" class="sr-only sr-only-focusable">Skip to main navigation</a>
+
+    <a href="#main-search" class="sr-only sr-only-focusable">Skip to search</a>
+
+<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+
+
+
+
+
+
+    <header class="header" id="page-header">
+        <div class="primary  ">
+            <div class="container">
+                
+                <a href="/en/" class="logo">
+                    
+                        <span class="sr-only">Ben-Gurion University Research Portal Home</span>
+                        <img src="/skin/headerImage/" alt="Ben-Gurion University Research Portal Logo"/>
+                    
+                </a>
+                
+                    <ul class="header-tools ">
+                        
+                            <li class="help-and-faq">
+                                <a href="https://libguides.bgu.ac.il/guides/PURE" target="_blank">
+                                    <i class="icon icon-lifebuoy" aria-hidden="true"></i>
+                                    <span class="label">Help &amp; FAQ</span>
+                                    <span class="sr-only">&nbsp; Link opens in a new tab</span>
+                                </a>
+                            </li>
+                        
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        </div>
+
+        
+            <div class="header-search">
+                
+<form action="/en/searchAll/index/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/" method="get"
+      class="search-form" id="search-everything">
+
+    <div class="global-search-wrapper">
+        <div class="global-search mini">
+            <div class="field-button-wrapper">
+                <div class="search-cell search-field">
+                    <label for="main-search" class="sr-only">Search content at Ben-Gurion University Research Portal</label>
+                    <input id="main-search" class="search-field" value="" name="search"
+                           placeholder="Search"/>
+                </div>
+
+                <div class="search-submit">
+                    <button type="submit" aria-label="Search">
+                        <i class="icon icon-magnifying-glass" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $(function () {
+        var searchForm = $("#search-everything");
+        var searchField = $(".search-field", searchForm);
+        searchForm.on("submit", function () {
+            var field = searchField.find("input");
+            var searchString = field.val();
+
+            // No enter key submit nothing :-)
+            if (!searchString) return false;
+
+            if (searchString.length >= 200) {
+                searchForm.attr("method", "post");
+                searchForm.attr("action", "/en/concepts/copypaste/");
+                field.attr("name", "text");
+            }
+        });
+    });
+</script>
+            </div>
+        
+
+
+        
+        
+            <div class="subMenu">
+                <div class="secondary">
+                    <div class="container">
+                        <nav id="main-navigation" aria-label="Main navigation" class="content-navigation three-third">
+                            <ul data-value="More" role="menubar" aria-label="Main navigation">
+                                <li class="" role="none">
+                                    <a href="/en/" role="menuitem" tabindex="-1">Home</a>
+                                </li>
+
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/persons/"><span>Profiles</span></a>
+                                    </li>
+                                
+                                    <li class="selected" role="none">
+                                        <a class="portal_link" tabindex="0" role="menuitem" href="/en/publications/"><span>Research output</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/organisations/"><span>Research units</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/prizes/"><span>Prizes</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/clippings/"><span>Press/Media</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/studentTheses/"><span>Student theses</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/projects/"><span>Projects</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/activities/"><span>Activities</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/datasets/"><span>Datasets</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/en/equipments/"><span>Research Labs</span></a>
+                                    </li>
+                                
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        
+    </header>
+
+    <main id="page-content">
+        
+    <div class="page-section page-section-publications page-section-publications-view ">
+
+        
+        
+        
+        
+        <section
+                class="page-section-header page-section-header-publications page-section-header-publications-view
+                 no-backdrop-image"
+                data-stickyheader=""
+                style="">
+            
+            
+        
+
+
+<div class="container">
+    <div class="row">
+        <div class="introduction no-metrics">
+            <div class="rendering"><h1><span dir="auto">Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation</span></h1></div>
+            <div class="rendering rendering_researchoutput  rendering_researchoutput_associatespersonsclassifiedportal rendering_contributiontobookanthology rendering_associatespersonsclassifiedportal rendering_contributiontobookanthology_associatespersonsclassifiedportal"><ul class="relations persons"><li>G. A. Tidhar</li><li>, S. R. Rotman</li></div>
+            <div class="rendering rendering_researchoutput  rendering_researchoutput_associatesorganisationsportal rendering_contributiontobookanthology rendering_associatesorganisationsportal rendering_contributiontobookanthology_associatesorganisationsportal"><ul class="relations organisations"><li class="department"><a rel="Organisation" href="https://cris.bgu.ac.il/en/organisations/department-of-electrical-computer-engineering/" class="link"><span dir="auto">Department of Electrical &amp; Computer Engineering</span></a></li></ul></div>
+            
+            <div class="rendering rendering_researchoutput  rendering_researchoutput_publicationcontenttyperendererportalng rendering_contributiontobookanthology rendering_publicationcontenttyperendererportalng rendering_contributiontobookanthology_publicationcontenttyperendererportalng"><p dir="auto" class="type"><span class="type_family">Research output<span class="type_family_sep">: </span></span><span class="type_classification_parent">Chapter in Book/Report/Conference proceeding<span class="type_parent_sep"> › </span></span><span class="type_classification">Conference contribution</span><span class="type_classification"><span class="type_parent_sep"> › </span>peer-review</span></p></div>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="publication-metrics" role="region" aria-label="Publication metrics section">
+        
+            <div class="metrics-container">
+                
+                    <div class="metrics-wrap metrics-top one">
+                        
+                            <div class="metric scopus-citations">
+                                
+                                <span class="count">8</span>
+                                
+                                <span class="label">Scopus 
+ citations</span>
+                            </div>
+                        
+                        
+                    </div>
+                
+                
+                    <div class="metrics-wrap metrics-bottom ">
+                        
+                            <div class="metric metric-plum-x">
+                                <a href="https://plu.mx/plum/a/?doi=10.1117/12.2016452" class="plumx-plum-print-popup" data-on-empty="plumXError" data-on-fail="plumXError" data-on-success="plumXSuccess" data-popup="left" data-hide-when-empty="true" data-site="plum"
+                                   data-badge="false"></a>
+                            </div>
+                        
+
+                        
+                            <div class="metric metric-altmetric">
+                                
+                                    <div data-badge-popover="top" data-badge-type="donut" data-doi="10.1117/12.2016452" data-hide-no-mentions="true" data-link-target='_blank'
+                                         class="altmetric-embed"></div>
+                                
+                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+    </div>
+
+
+    </div>
+
+</div>
+<div class="subMenu">
+    <div class="content-profile-navigation">
+    <div class="container">
+        <nav role="navigation">
+            <ul role="menubar">
+                <li class="selected" role="none">
+                    <a class="portal_link" role="menuitem" href="/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/"><span>
+                        <i class="icon icon-publication" aria-hidden="true"></i>
+                        <span class="label">Overview</span>
+                    </span></a>
+                </li>
+                
+                    <li class="" role="none">
+                        <a class="portal_link" role="menuitem" href="/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/fingerprints/"><span>
+                            <i class="icon icon-fingerprint" aria-hidden="true"></i>
+                            <span class="label">Fingerprint</span>
+                        </span></a>
+                    </li>
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+
+            </ul>
+        </nav>
+    </div>
+    </div>
+</div>
+
+    
+        </section>
+
+        <div id="main-content"
+             class="page-section-content page-section-content-publications page-section-content-publications-view   ">
+            
+        <section class="page-section content-relation-section">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="content-content publication-content">
+                        
+                        
+                            <h2 class="subheader">Abstract</h2>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_abstractportal rendering_contributiontobookanthology rendering_abstractportal rendering_contributiontobookanthology_abstractportal"><div dir="auto" class="textblock"><p>Performance of algorithms for target signal detection in Hyperspectral Imagery (HSI) is often deteriorated when the data is neither statistically homogeneous nor Gaussian or when its Joint Probability Density (JPD) does not match any presumed particular parametric model. In this paper we propose a novel detection algorithm which first attempts at dividing data domain into mostly Gaussian and mostly Non-Gaussian (NG) subspaces, and then estimates the JPD of the NG subspace with a non-parametric Graph-based estimator. It then combines commonly used detection algorithms operating on the mostly-Gaussian sub-space and an LRT calculated directly with the estimated JPD of the NG sub-space, to detect anomalies and known additive-type target signals. The algorithm performance is compared to commonly used algorithms and is found to be superior in some important cases.</p></div></div>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_detailsportal rendering_contributiontobookanthology rendering_detailsportal rendering_contributiontobookanthology_detailsportal"><div class="conference"><table class="properties"><tbody><tr class="language"><th scope="row">Original language</th><td dir="auto">English</td></tr><tr><th scope="row">Title of host publication</th><td dir="auto">Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX</td></tr><tr class="digital_object_identifiers"><th scope="row">DOIs</th><td dir="auto"><ul class="relations digital_object_identifiers"><li><a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1117/12.2016452" class="link"><span dir="auto">https://doi.org/10.1117/12.2016452</span></a> </li></ul></td></tr><tr class="status"><th scope="row">State</th><td dir="auto"><span dir="auto" class="prefix">Published - </span><span dir="auto" class="date">12 Aug 2013</span></td></tr><tr class="event"><th scope="row">Event</th><td dir="auto"><a rel="Event" href="#" class="link"><span dir="auto"><span dir="auto" class="prefix">Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX</span></a> - Baltimore, MD, United States<br />Duration: <span dir="auto" class="date">29 Apr 2013</span> → <span dir="auto" class="date">2 May 2013</span></span></td></tr></tbody></table></div><div class="publication-series"><h3 class="subheader">Publication series</h3><table class="properties"><tbody><tr><th scope="row">Name</th><td dir="auto">Proceedings of SPIE - The International Society for Optical Engineering</td></tr><tr><th scope="row">Volume</th><td dir="auto">8743</td></tr><tr><th scope="row">ISSN (Print)</th><td dir="auto">0277-786X</td></tr><tr><th scope="row">ISSN (Electronic)</th><td dir="auto">1996-756X</td></tr></tbody></table></div><h3 class="subheader">Conference</h3><table class="properties"><tbody><tr><th scope="row">Conference</th><td dir="auto">Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX</td></tr><tr><th scope="row">Country/Territory</th><td dir="auto">United States</td></tr><tr><th scope="row">City</th><td dir="auto">Baltimore, MD</td></tr><tr class="period"><th scope="row">Period</th><td dir="auto"><span dir="auto" class="date">29/04/13</span> → <span dir="auto" class="date">2/05/13</span></td></tr></tbody></table></div>
+                        
+
+                        
+
+                        
+
+                        <div class="rendering rendering_keywordable rendering_expertkeywordgrouspbytypeportal rendering_keywordable_expertkeywordgrouspbytypeportal"><div class="keyword-group"><h2 class="subheader">Keywords</h2><ul class="relations keywords"><li class="userdefined-keyword"><span dir="auto">Density-estimation</span></li><li class="userdefined-keyword"><span dir="auto">Graph</span></li><li class="userdefined-keyword"><span dir="auto">Hyperspectral</span></li><li class="userdefined-keyword"><span dir="auto">Non-parametric</span></li><li class="userdefined-keyword"><span dir="auto">Target-detection</span></li></ul></div><div class="keyword-group"><h2 class="subheader">ASJC Scopus subject areas</h2><ul class="relations keywords"><li><span dir="auto">Electronic, Optical and Magnetic Materials</span></li><li><span dir="auto">Condensed Matter Physics</span></li><li><span dir="auto">Computer Science Applications</span></li><li><span dir="auto">Applied Mathematics</span></li><li><span dir="auto">Electrical and Electronic Engineering</span></li></ul></div></div>
+
+                    </div>
+
+                    <div class="content-sidebar publication-sidebar">
+                        
+                            <h2 class="subheader">Access to Document</h2>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_publicationaccessrenderer rendering_contributiontobookanthology rendering_publicationaccessrenderer rendering_contributiontobookanthology_publicationaccessrenderer"><ul class="dois"><li><div class="doi"><a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1117/12.2016452" class="link"><span dir="auto">10.1117/12.2016452</span></a></div></li></ul></div>
+
+                        
+
+                        
+
+                        
+                            <h2 class="subheader">Other files and links</h2>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_publicationotherfilesandlinksrenderer rendering_contributiontobookanthology rendering_publicationotherfilesandlinksrenderer rendering_contributiontobookanthology_publicationotherfilesandlinksrenderer"><ul class="links"><li><div class="link"><a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://www.scopus.com/pages/publications/84881124995" class="link"><span dir="auto">Link to publication in Scopus</span></a></div></li></ul></div>
+
+                        
+
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+            <section class="page-section content-relation-section publication-fingerprint">
+                <div class="container">
+                    <div class="header">
+                        <h2 class="section-title">
+                            <i class="icon icon-fingerprint" aria-hidden="true"></i>
+                            <span class="title">Fingerprint</span>
+                        </h2>
+                        <span class="sub-title">
+                            Dive into the research topics of 'Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation'. Together they form a unique fingerprint.
+                        </span>
+                    </div>
+
+                    <ul class="publication-top-concepts" role="menubar"  aria-label="Related fingerprints">
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="4d20d843-5a92-40c7-b274-a26a3ad102c5"
+            data-concept-uuid="4d20d843-5a92-40c7-b274-a26a3ad102c5"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Data-centric</span>
+            <span class="thesauri">Keyphrases</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="179145f4-783e-4b62-b8b3-12846591e2bb"
+            data-concept-uuid="179145f4-783e-4b62-b8b3-12846591e2bb"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Hyperspectral</span>
+            <span class="thesauri">Keyphrases</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="7247867b-8f46-45d2-966c-c59dac08e862"
+            data-concept-uuid="7247867b-8f46-45d2-966c-c59dac08e862"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Non-Gaussian</span>
+            <span class="thesauri">Keyphrases</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="8d759b57-dd9b-454b-8f44-f8e3dc0f0809"
+            data-concept-uuid="8d759b57-dd9b-454b-8f44-f8e3dc0f0809"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Target Detection</span>
+            <span class="thesauri">Keyphrases</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="0274f5dc-074f-4dd0-a239-ef7ec17a85fe"
+            data-concept-uuid="0274f5dc-074f-4dd0-a239-ef7ec17a85fe"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Nonparametric Density Estimation</span>
+            <span class="thesauri">Keyphrases</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="19059b7c-6016-48bc-bc90-280b3dba1815"
+            data-concept-uuid="19059b7c-6016-48bc-bc90-280b3dba1815"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Gaussians</span>
+            <span class="thesauri">Engineering</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="775ca46f-95c9-4f39-a11c-8764c53ee2a4"
+            data-concept-uuid="775ca46f-95c9-4f39-a11c-8764c53ee2a4"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Target Tracking</span>
+            <span class="thesauri">Engineering</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                            <li class="concept-badge-large-container dropdown-overflow" role="none">
+
+    <button tabindex="0"
+            class="concept-badge-large dropdown-toggle"
+            type="button"
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="896da890-a37b-425f-ac16-f79b697d660a"
+            data-concept-uuid="896da890-a37b-425f-ac16-f79b697d660a"
+            data-rank-size="32"
+            data-rank-thickness="8"
+            data-rank-value="1.0"
+            data-summary="true"
+            data-summary-url="/en/concepts/summary/">
+        <span class="concept-wrapper" title="100%">
+            <span class="rank"></span>
+            <span class="concept">Hyperspectral Data</span>
+            <span class="thesauri">Engineering</span>
+            <span class="value sr-only">100%</span>
+        </span>
+    </button>
+
+    <div class="dropdown-container"></div>
+
+</li>
+                        
+                    </ul>
+                    <div class="footer">
+                        <div class="view-all align-center">
+                            <a class="portal_link btn-primary btn-large btn-content-link" href="/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/fingerprints/"><span>
+                                View full fingerprint
+                                <i class="icon icon-right-open-mini" aria-hidden="true"></i>
+                            </span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <section class="page-section cite">
+            <div class="container">
+                <section class="publication-cite" aria-labelledby="publications-cite-title">
+    <h2 class="subheader" id="publications-cite-title">Cite this</h2>
+    <ul class="tabs" role="tablist" aria-label="Cite this">
+        
+            <li class="selected" role="tab" id="tab-0" aria-controls="cite-apa" tabindex="-1"  aria-selected="false" >
+                APA
+            </li>
+        
+            <li class="" role="tab" id="tab-1" aria-controls="cite-author" tabindex="-1"  aria-selected="false" >
+                Author
+            </li>
+        
+            <li class="" role="tab" id="tab-2" aria-controls="cite-BIBTEX" tabindex="-1"  aria-selected="false" >
+                BIBTEX
+            </li>
+        
+            <li class="" role="tab" id="tab-3" aria-controls="cite-harvard" tabindex="-1"  aria-selected="false" >
+                Harvard
+            </li>
+        
+            <li class="" role="tab" id="tab-4" aria-controls="cite-standard" tabindex="-1"  aria-selected="false" >
+                Standard
+            </li>
+        
+            <li class="" role="tab" id="tab-5" aria-controls="cite-RIS" tabindex="-1"  aria-selected="false" >
+                RIS
+            </li>
+        
+            <li class="" role="tab" id="tab-6" aria-controls="cite-vancouver" tabindex="-1"  aria-selected="false" >
+                Vancouver
+            </li>
+        
+    </ul>
+    <div class="tab-container">
+        
+            <div id="cite-apa" class="tab selected" role="tabpanel" aria-labelledby="tab-0" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_apa rendering_contributiontobookanthology rendering_apa rendering_contributiontobookanthology_apa">Tidhar, G. A., &amp; Rotman, S. R. (2013). <a rel="ContributionToBookAnthology" href="https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/" class="link"><span>Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation</span></a>. In <em>Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX </em>Article 87431A (Proceedings of SPIE - The International Society for Optical Engineering; Vol. 8743). <a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1117/12.2016452" class="link"><span>https://doi.org/10.1117/12.2016452</span></a></div>
+            </div>
+        
+            <div id="cite-author" class="tab " role="tabpanel" aria-labelledby="tab-1" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_author rendering_contributiontobookanthology rendering_author rendering_contributiontobookanthology_author">Tidhar, G. A. ; Rotman, S. R. / <a rel="ContributionToBookAnthology" href="https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/" class="link"><span><strong>Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation</strong></span></a>. Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX. 2013. (Proceedings of SPIE - The International Society for Optical Engineering).</div>
+            </div>
+        
+            <div id="cite-BIBTEX" class="tab " role="tabpanel" aria-labelledby="tab-2" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_bibtex rendering_contributiontobookanthology rendering_bibtex rendering_contributiontobookanthology_bibtex"><div>@inproceedings{03ef5c6225174412ab5719d118019472,</div><div>  title     = "Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation",</div><div>  abstract  = "Performance of algorithms for target signal detection in Hyperspectral Imagery (HSI) is often deteriorated when the data is neither statistically homogeneous nor Gaussian or when its Joint Probability Density (JPD) does not match any presumed particular parametric model. In this paper we propose a novel detection algorithm which first attempts at dividing data domain into mostly Gaussian and mostly Non-Gaussian (NG) subspaces, and then estimates the JPD of the NG subspace with a non-parametric Graph-based estimator. It then combines commonly used detection algorithms operating on the mostly-Gaussian sub-space and an LRT calculated directly with the estimated JPD of the NG sub-space, to detect anomalies and known additive-type target signals. The algorithm performance is compared to commonly used algorithms and is found to be superior in some important cases.",</div><div>  keywords  = "Density-estimation, Graph, Hyperspectral, Non-parametric, Target-detection",</div><div>  author    = "Tidhar, \{G. A.\} and Rotman, \{S. R.\}",</div><div>  year      = "2013",</div><div>  month     = aug,</div><div>  day       = "12",</div><div>  doi       = "10.1117/12.2016452",</div><div>  language  = "English",</div><div>  isbn      = "9780819495341",</div><div>  series    = "Proceedings of SPIE - The International Society for Optical Engineering",</div><div>  booktitle = "Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX",</div><div>  note      = "Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX ; Conference date: 29-04-2013 Through 02-05-2013",</div><p>}</p></div>
+            </div>
+        
+            <div id="cite-harvard" class="tab " role="tabpanel" aria-labelledby="tab-3" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_harvard rendering_contributiontobookanthology rendering_harvard rendering_contributiontobookanthology_harvard">Tidhar, GA &amp; Rotman, SR 2013, <a rel="ContributionToBookAnthology" href="https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/" class="link harvard_title"><span>Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation</span></a>. in <em>Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX.</em>, 87431A, Proceedings of SPIE - The International Society for Optical Engineering, vol. 8743, Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX, Baltimore, MD, United States, <span class="date">29/04/13</span>. <a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1117/12.2016452" class="link"><span>https://doi.org/10.1117/12.2016452</span></a></div>
+            </div>
+        
+            <div id="cite-standard" class="tab " role="tabpanel" aria-labelledby="tab-4" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_standard rendering_contributiontobookanthology rendering_standard rendering_contributiontobookanthology_standard"><a rel="ContributionToBookAnthology" href="https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/" class="link"><span><strong>Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation.</strong></span></a> / Tidhar, G. A.; Rotman, S. R. <br />Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX. 2013. 87431A (Proceedings of SPIE - The International Society for Optical Engineering; Vol. 8743).<p class="type"><span class="type_family">Research output<span class="type_family_sep">: </span></span><span class="type_classification_parent">Chapter in Book/Report/Conference proceeding<span class="type_parent_sep"> › </span></span><span class="type_classification">Conference contribution</span><span class="type_classification"><span class="type_parent_sep"> › </span>peer-review</span></p></div>
+            </div>
+        
+            <div id="cite-RIS" class="tab " role="tabpanel" aria-labelledby="tab-5" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_ris rendering_contributiontobookanthology rendering_ris rendering_contributiontobookanthology_ris"><p>TY  - GEN</p><p>T1  - Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation</p><p>AU  - Tidhar, G. A.</p><p>AU  - Rotman, S. R.</p><p>PY  - 2013/8/12</p><p>Y1  - 2013/8/12</p><p>N2  - Performance of algorithms for target signal detection in Hyperspectral Imagery (HSI) is often deteriorated when the data is neither statistically homogeneous nor Gaussian or when its Joint Probability Density (JPD) does not match any presumed particular parametric model. In this paper we propose a novel detection algorithm which first attempts at dividing data domain into mostly Gaussian and mostly Non-Gaussian (NG) subspaces, and then estimates the JPD of the NG subspace with a non-parametric Graph-based estimator. It then combines commonly used detection algorithms operating on the mostly-Gaussian sub-space and an LRT calculated directly with the estimated JPD of the NG sub-space, to detect anomalies and known additive-type target signals. The algorithm performance is compared to commonly used algorithms and is found to be superior in some important cases.</p><p>AB  - Performance of algorithms for target signal detection in Hyperspectral Imagery (HSI) is often deteriorated when the data is neither statistically homogeneous nor Gaussian or when its Joint Probability Density (JPD) does not match any presumed particular parametric model. In this paper we propose a novel detection algorithm which first attempts at dividing data domain into mostly Gaussian and mostly Non-Gaussian (NG) subspaces, and then estimates the JPD of the NG subspace with a non-parametric Graph-based estimator. It then combines commonly used detection algorithms operating on the mostly-Gaussian sub-space and an LRT calculated directly with the estimated JPD of the NG sub-space, to detect anomalies and known additive-type target signals. The algorithm performance is compared to commonly used algorithms and is found to be superior in some important cases.</p><p>KW  - Density-estimation</p><p>KW  - Graph</p><p>KW  - Hyperspectral</p><p>KW  - Non-parametric</p><p>KW  - Target-detection</p><p>UR  - https://www.scopus.com/pages/publications/84881124995</p><p>U2  - 10.1117/12.2016452</p><p>DO  - 10.1117/12.2016452</p><p>M3  - Conference contribution</p><p>AN  - SCOPUS:84881124995</p><p>SN  - 9780819495341</p><p>T3  - Proceedings of SPIE - The International Society for Optical Engineering</p><p>BT  - Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX</p><p>T2  - Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX</p><p>Y2  - 29 April 2013 through 2 May 2013</p><p>ER  - </p></div>
+            </div>
+        
+            <div id="cite-vancouver" class="tab " role="tabpanel" aria-labelledby="tab-6" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_vancouver rendering_contributiontobookanthology rendering_vancouver rendering_contributiontobookanthology_vancouver">Tidhar GA, Rotman SR. <span class="title"><a rel="ContributionToBookAnthology" href="https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/" class="link"><span>Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation</span></a></span>. In Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XIX. 2013. 87431A. (Proceedings of SPIE - The International Society for Optical Engineering). doi: 10.1117/12.2016452</div>
+            </div>
+        
+
+        <script>
+            $(function() {
+                $(".tab-container .rendering a:not([href^='http://dx.doi.org'])").contents().unwrap();
+            });
+        </script>
+    </div>
+</section>
+
+            </div>
+        </section>
+        <script>
+    $(function () {
+        if($('.publication-sidebar').length > 0){
+            if($('a.document-link').length === 0){
+                $(".metrics-top").addClass("one");
+                $('div.metrics-downloads').remove();
+            }
+        }
+    });
+
+    function plumXError(e) {
+        $(e).closest('.metric-plum-x').closest('.metrics-bottom').addClass('one');
+        $(e).closest('.metric-plum-x').remove();
+    }
+    $('div.altmetric-embed').on('altmetric:hide', function () {
+        $(this).closest('.metric-altmetric').closest('.metrics-bottom').addClass('one');
+        $(this).closest('.metric-altmetric').remove();
+    });
+</script>
+        
+
+
+
+    
+    
+    
+    
+    
+    
+
+    
+        
+        
+        
+    
+
+    <div class="share-box">
+        <ul>
+            <li class="icon-share"></li>
+            <li><a aria-label="Share on Facebook"
+                   href="https://www.facebook.com/sharer.php?u=https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1117%2F12.2016452&p[summary]=Check+out+this+research+output+at+Ben-Gurion+University+Research+Portal%3A+Target+detection+in+inhomogeneous+non-gaussian+hyperspectral+data%2C+based+on+non-parametric+density+estimation"
+                   class="icon-facebook"
+                   onclick="window.location.origin('https://www.facebook.com/sharer.php?u=https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1117%2F12.2016452&p[summary]=Check+out+this+research+output+at+Ben-Gurion+University+Research+Portal%3A+Target+detection+in+inhomogeneous+non-gaussian+hyperspectral+data%2C+based+on+non-parametric+density+estimation', 'Facebook', 'width=600,height=600,scrollbars=no,resizable=no');
+                   return false;" target="popup"></a></li>
+            <li><a aria-label="Share on Twitter"
+                   href="https://twitter.com/intent/tweet?url=https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1117%2F12.2016452&text=Check+out+this+research+output+at+Ben-Gurion+University+Research+Portal%3A+Target+detection+in+inhomogeneous+non-gaussian+hyperspectral+data%2C+based+on+non-parametric+density+estimation"
+                   onclick="window.location.origin('https://twitter.com/intent/tweet?url=https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1117%2F12.2016452&text=Check+out+this+research+output+at+Ben-Gurion+University+Research+Portal%3A+Target+detection+in+inhomogeneous+non-gaussian+hyperspectral+data%2C+based+on+non-parametric+density+estimation doi%3A10.1117%2F12.2016452', 'Twitter', 'width=600,height=600,scrollbars=no,resizable=no');
+                   return false;" class="twitter" target="popup"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 300 271">
+                    
+                    <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"></path>
+                </svg></a></li>
+            <li><a aria-label="Share on LinkedIn"
+                   href="https://www.linkedin.com/shareArticle?mini=true&url=https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1117%2F12.2016452&summary=Check+out+this+research+output+at+Ben-Gurion+University+Research+Portal%3A+Target+detection+in+inhomogeneous+non-gaussian+hyperspectral+data%2C+based+on+non-parametric+density+estimation"
+                   onclick="window.location.origin('https://www.linkedin.com/shareArticle?mini=true&url=https://cris.bgu.ac.il/en/publications/target-detection-in-inhomogeneous-non-gaussian-hyperspectral-data/%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1117%2F12.2016452&summary=Check+out+this+research+output+at+Ben-Gurion+University+Research+Portal%3A+Target+detection+in+inhomogeneous+non-gaussian+hyperspectral+data%2C+based+on+non-parametric+density+estimation doi%3A10.1117%2F12.2016452', 'LinkedIn', 'width=600,height=600,scrollbars=no,resizable=no');
+                   return false;" class="icon-linkedin" target="popup"></a></li>
+            <li><a aria-label="Share by email" href="/cdn-cgi/l/email-protection#18276b6d7a727d7b6c254c796a7f7d6c3d2a287c7d6c7d7b6c7177763d2a2871763d2a287176707775777f7d767d776d6b3d2a28767776357f796d6b6b7179763d2a287061687d6a6b687d7b6c6a79743d2a287c796c793d2a5b3d2a287a796b7d7c3d2a2877763d2a287677763568796a79757d6c6a717b3d2a287c7d766b716c613d2a287d6b6c7175796c7177763e7a777c61255b707d7b733d2a28776d6c3d2a286c70716b3d2a286a7d6b7d796a7b703d2a28776d6c686d6c3d2a28796c3d2a285a7d76355f6d6a7177763d2a284d76716e7d6a6b716c613d2a284a7d6b7d796a7b703d2a2848776a6c79743d2b593d2a284c796a7f7d6c3d2a287c7d6c7d7b6c7177763d2a2871763d2a287176707775777f7d767d776d6b3d2a28767776357f796d6b6b7179763d2a287061687d6a6b687d7b6c6a79743d2a287c796c793d2a5b3d2a287a796b7d7c3d2a2877763d2a287677763568796a79757d6c6a717b3d2a287c7d766b716c613d2a287d6b6c7175796c717776386438706c6c686b2237377b6a716b367a7f6d36797b367174377d7637686d7a74717b796c7177766b376c796a7f7d6c357c7d6c7d7b6c717776357176357176707775777f7d767d776d6b35767776357f796d6b6b717976357061687d6a6b687d7b6c6a7974357c796c7937276d6c75476b776d6a7b7d257d757971743e797568236d6c7547757d7c716d75257d757971743e797568236d6c75477b79756879717f76256b70796a7d74717673" class="icon-email"></a></li>
+        </ul>
+    </div>
+
+
+
+
+    
+        </div>
+    </div>
+
+    <div id="new-modal-overlay"></div>
+    
+    </main>
+
+    <footer id="page-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="content-navigation three-third">
+                    <div dir="ltr" class="footer-columns">
+                        
+                        <div class="footer-column">
+                            <p>
+                                Powered by <a href="http://www.elsevier.com/online-tools/research-intelligence/products-and-services/pure" target="_blank">Pure <span class="sr-only">Link opens in a new tab</span></a>, <a href="http://www.scopus.com/" target="_blank">Scopus <span class="sr-only">Link opens in a new tab</span></a> & <a href="https://www.elsevier.com/products/elsevier-fingerprint-engine" target="_blank">Elsevier Fingerprint Engine&trade; <span class="sr-only">Link opens in a new tab</span></a>
+                            </p>
+
+                            <p>
+                                All content on this site: Copyright &copy; 2026 Ben-Gurion University Research Portal, its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply
+                            </p>
+
+                            <p>We use cookies to help provide and enhance our service and tailor content. By continuing you agree to the <a href="/en/about/cookies/">use of cookies</a></p>
+                            <p><button id="ot-sdk-btn" class="ot-sdk-show-settings"></button></p>
+                            
+                                <p><a href="https://cris.bgu.ac.il/admin/workspace.xhtml" rel="nofollow" target="_blank">Log in to Pure <span class="sr-only">&nbsp; Link opens in a new tab</span></a></p>
+                            
+                            <p>Ben-Gurion University Research Portal is maintained by <a href="https://in.bgu.ac.il/en/aranne">Aranne Library</a> staff</p>
+                        </div>
+
+                        <div class="footer-column">
+                            
+                            
+                            
+                                <p><a href="/en/web-accessibility/" rel="nofollow" target="_blank">About web accessibility <span class="sr-only">&nbsp; Link opens in a new tab</span></a></p>
+                            
+
+                            <p>
+                                
+                            </p>
+
+                            <p>
+                                
+                            </p>
+
+                            <p>
+                                <a href="https://elsevier.responsibledisclosure.com/hc/en-us/requests/new" target="_blank" rel="nofollow">Report vulnerability <span class="sr-only">&nbsp; Link opens in a new tab</span></a>
+                            </p>
+                        </div>
+
+                        
+                            <div class="footer-column">
+                                
+                                    
+                                        <p>
+                                            <a href="/en/contact/index/"> Contact us</a>
+                                        </p>
+                                    
+                                
+
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="back-to-top">
+            <a href="#" class="back-to-top" aria-label="Go to top"><i class="icon icon-up-open"></i></a>
+        </div>
+    </footer>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="//d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+
+    
+
+    
+
+
+<script>window.appData = window.appData || [];</script><script type="text/javascript">
+try {(function() {
+appData.push({...{"page":{"businessUnit":"ELS:RP:ST","cmsName":"Pure Portal","environment":"prod","language":"en","loadTime":"222","loadTimestamp":"1791476597285","name":"pure portal:publications:view","noTracking":"false","productName":"PR","type":"CP-CA"},"visitor":{"accountId":"","accountName":"pr:Ben-Gurion University of the Negev","ipAddress":"","accessType":"pr:ANON_GUEST","loginStatus":"anonymous"},"content":[{"id":"03ef5c62-2517-4412-ab57-19d118019472","title":"Target detection in inhomogeneous non-gaussian hyperspectral data, based on non-parametric density estimation","recordType":"researchoutput"}]}, event: "pageLoad"});})();} catch(e) {if(console) { console.log(e) } }</script>
+<script>function trackPage(){try {(function() {
+window.appData = window.appData || [];
+})();} catch(e) {if(console) { console.log(e) } }}</script>
+
+</body>
+</html>
+
