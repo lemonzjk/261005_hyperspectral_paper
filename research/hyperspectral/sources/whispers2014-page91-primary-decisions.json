@@ -1,0 +1,216 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "elmm-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077595",
+      "decision": "included",
+      "programPdfPage": 91,
+      "abstractPdfPage": 91,
+      "readingBoundary": "主办方91页完整摘要，正式DOI/TOC与UMBC作者四页PDF§1–7全读；作者数冲突保留。2015/2016仅官方摘要/书目和作者代码关系，不混全文实验。",
+      "figureBoundary": "四页作者PDF全部检查：Fig1页2为Cuprite数据，Fig2/4页3为谱和活跃端元统计，Fig3页4为重建误差；无框架/方法图，记no_framework，不用结果图冒充。",
+      "relation": "hyperspectral",
+      "deduplication": "会议DOI/题名/作者全库无重复；ANN2015明确扩展同族，不另计方法；ELMM后续五/六作者算法不冒充2014七作者稿。"
+    },
+    {
+      "paperId": "cone-endmembers-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077598",
+      "decision": "included",
+      "programPdfPage": 91,
+      "abstractPdfPage": 91,
+      "readingBoundary": "主办方91页完整摘要、John Gruninger/Hoang Dothe，与精确正式DOI及TOC二作者交叉；会议全文未读。",
+      "figureBoundary": "IEEE202空响应/PDF418，作者/机构原PDF检索无可用本稿；原图号/页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "会议DOI/题名/作者全库无重复；ANN2015明确扩展同族，不另计方法；ELMM后续五/六作者算法不冒充2014七作者稿。"
+    },
+    {
+      "paperId": "ann-pod-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077626",
+      "decision": "included",
+      "programPdfPage": 91,
+      "abstractPdfPage": 92,
+      "readingBoundary": "主办方91页题名/作者，摘要跨92；UMBC作者四页PDF§1–5全读，Fig1页2裁切。2015原首页/DOI确认正式扩展但未读该期刊全文。",
+      "figureBoundary": "会议作者原PDF第2页Fig1框架图完整裁切，含图注；原PDF保存在sources，未借2015期刊图。",
+      "relation": "hyperspectral",
+      "deduplication": "会议DOI/题名/作者全库无重复；ANN2015明确扩展同族，不另计方法；ELMM后续五/六作者算法不冒充2014七作者稿。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "extended-linear-mixing",
+      "name": "扩展线性混合与光谱变异",
+      "dimension": "method",
+      "definition": "以像元相关端元变化函数扩展线性混合；光谱bundles可隐式表征变异，尺度/CLS为有假设的特例。区分跨时端元变化、非线性材料相互作用与后续盲解混算法。",
+      "rationale": "2014 ELMM作者全文定义像元相关变化函数，已有端元时变标签不覆盖此空间光谱变化机制。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "elmm-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2014 ELMM作者全文定义像元相关变化函数，已有端元时变标签不覆盖此空间光谱变化机制。"
+        }
+      ]
+    },
+    {
+      "id": "cone-nonnegative-endmember-extraction",
+      "name": "锥非负约束端元提取",
+      "dimension": "method",
+      "definition": "以奇异向量和齐次线性不等式表示光谱数据锥，通过非冗余约束识别其极端结构并提取端元；不假定伪秩等于材料数，原公式及极点/极射线定义逐稿核验。",
+      "rationale": "Gruninger/Dothe完整官方摘要明确锥与非冗余不等式，不能硬套单纯形几何端元提取标签。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "cone-endmembers-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Gruninger/Dothe完整官方摘要明确锥与非冗余不等式，不能硬套单纯形几何端元提取标签。"
+        }
+      ]
+    },
+    {
+      "id": "ann-order-polytope-unmixing",
+      "name": "神经阶数估计与多胞体解混",
+      "dimension": "method",
+      "definition": "先由提取端元生成已知阶数的多项式训练谱，ANN估计每像元非线性阶数，再由多胞体分解求混合系数；区别直接以ANN预测丰度，说明合成训练与场景真值依赖。",
+      "rationale": "2014作者全文及Fig1确认ANN阶数估计到POD流程，不等同一般神经特征提取或分类集成。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "ann-pod-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2014作者全文及Fig1确认ANN阶数估计到POD流程，不等同一般神经特征提取或分类集成。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-ann-pod-author-access.json",
+      "sha256": "96750dd9bdfd0222138ec46c681197dc59e3f3001ff3bd27c43ee929ef889bcf"
+    },
+    {
+      "path": "whispers2014-ann-pod-author.pdf",
+      "sha256": "75680092fc97a9c3856d1faa76fa5f5fe5e23c886617cfcd678a68dbb633f7e6"
+    },
+    {
+      "path": "whispers2014-ann-pod-doi-access.json",
+      "sha256": "bc0d2fdfd4263b0a7c9a70e3bb1e6c3afa91c72c1b3f87efdbf9e7f5f59efadf"
+    },
+    {
+      "path": "whispers2014-ann-pod-ieee-access.json",
+      "sha256": "48c04cf7d1179b6bba2bfb6e700f9ca39cd248a286c62e04a0de14c84e17ab7e"
+    },
+    {
+      "path": "whispers2014-ann-pod-jstars-author-access.json",
+      "sha256": "391a25d881b9772a7c850ca338a73a5ca23b17799e9d265ea2e3d442933c3b5d"
+    },
+    {
+      "path": "whispers2014-ann-pod-jstars-author.pdf",
+      "sha256": "2408d0e0c2dee15a40466acaa434ce1e8fc590a0ee1cd1502b2c931b9ed5124d"
+    },
+    {
+      "path": "whispers2014-ann-pod-jstars-doi-access.json",
+      "sha256": "a59553d07e3329bd7916eebc12dc1f0d966b89980162ab45d0bf891aee67f2c4"
+    },
+    {
+      "path": "whispers2014-ann-pod-pdf-access.json",
+      "sha256": "9bfcd02d7564990620e8b4890b048dc795848f0ac3a01bbb901a0eb591d85349"
+    },
+    {
+      "path": "whispers2014-cone-endmembers-doi-access.json",
+      "sha256": "e2437ebd7365abec0e598952dedd7d4a83e43a9b02950a55b23ab2ba9370a8f1"
+    },
+    {
+      "path": "whispers2014-cone-endmembers-ieee-access.json",
+      "sha256": "411dc0d36d5bb7ea96840d1ab08249bf115a0b3f28a558342ea7d1766a60c3ca"
+    },
+    {
+      "path": "whispers2014-cone-endmembers-pdf-access.json",
+      "sha256": "3b8f901d748cbdfda282f166f37dcdd8a6755717952dfbd8ad42c58ce2efac73"
+    },
+    {
+      "path": "whispers2014-elmm-author-access.json",
+      "sha256": "ff25a2b03bcccbafa7eaf1cc3e7278ae0d950a01e0469d6b483c9aca844452ca"
+    },
+    {
+      "path": "whispers2014-elmm-author.pdf",
+      "sha256": "4d4a159605fd154d14a168def82403c8b72d0bb266932f7e5f76420fb87b4e96"
+    },
+    {
+      "path": "whispers2014-elmm-doi-access.json",
+      "sha256": "67649078d2ad0c65099d1c37d4db97ac0f52da00be54c961e45fb7b4d88bbd80"
+    },
+    {
+      "path": "whispers2014-elmm-followup-resources-cache.json",
+      "sha256": "283c729abc2bb2b41e20a3c04ed3c2a20219390fa01af74c856dc7ed6c68cd9f"
+    },
+    {
+      "path": "whispers2014-elmm-ieee-access.json",
+      "sha256": "828976aaf42ebc4cca19b7e3a1f564d84d227e6b94f9e776b7eb32338528bc16"
+    },
+    {
+      "path": "whispers2014-elmm-pdf-access.json",
+      "sha256": "715944f18ec90604e325a6bcadad87be3ddc3663ab7981c6aac983c0dc80e3f6"
+    },
+    {
+      "path": "whispers2014-elmm-tip2016-doi-access.json",
+      "sha256": "dd9799c8c7bdfac06c32035c98c068e3e5acb00517f301146276f7a6a989acdb"
+    },
+    {
+      "path": "whispers2014-elmm-tip2016-original-access.json",
+      "sha256": "43566ef9ae16bfd3bd667adb3c4560cb09748530b8713ff36e5a098f52bb5c2f"
+    },
+    {
+      "path": "whispers2014-elmm-whispers2015-doi-access.json",
+      "sha256": "28512441a483d785460e982a5b2eb147fecd8c0c448113ba3f57d0165e5e3ebf"
+    },
+    {
+      "path": "whispers2014-page91-discovery-cache.json",
+      "sha256": "90cad11807e1f849378f32691d319b2ef00b76fd9fc969d586bbb28277b031f9"
+    },
+    {
+      "path": "whispers2014-page91-program-cache.json",
+      "sha256": "10aaa0602e3bcfd5a5d3f91559b2426e3631271dd7031f775c575790941188ab"
+    },
+    {
+      "path": "whispers2014-page91-program-resources-cache.json",
+      "sha256": "badcb16e89277a9c6c592ddc9b8eaf9702d7a4d0dd22b4912f04cd0c1deaa836"
+    },
+    {
+      "path": "whispers2014-page91-program92-continuation-cache.json",
+      "sha256": "2465b32a72f7d20c579b58c22b0f110ba465d191663ee0766d95a21c46423638"
+    },
+    {
+      "path": "whispers2014-page91-scope-version-cache.json",
+      "sha256": "da8453655e01b2c776d01e5ee60faf8464ea0093d472df1b4898da1321d40ce6"
+    },
+    {
+      "path": "whispers2014-page91-toc-replay.json",
+      "sha256": "737e57739a609f4a284bdb505be9ad5b25cf8b4789b89ae4b99dd3eafffed887"
+    }
+  ],
+  "qualityIssues": [
+    "三篇仅总库，旧518对象与三维214保持。",
+    "ELMM作者冲突按正式七作者原稿，不把R. Marrero强加；后作五/六作者分开。",
+    "式7非负+和为1时L1为常数是依据原式的本库推论，代码待核，不改作者结果。",
+    "ELMM无框架图，不把谱/结果图或后作图冒充；锥原图受限逐篇续接。",
+    "ANN合成阶数训练依赖端元/阶数范围，无场景丰度真值不等于无训练/无先验。",
+    "ANN2015原首页明确增强版本，但只核关系/摘要，不借其全文图实验。",
+    "92只读ANN续摘要，其他题名待下一批。"
+  ]
+}

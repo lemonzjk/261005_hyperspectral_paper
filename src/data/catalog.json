@@ -53715,6 +53715,356 @@
         "sourceUrl": "https://ieeexplore.ieee.org/document/8077565/",
         "checkedAt": "2026-10-09"
       }
+    },
+    {
+      "id": "elmm-whispers-2014",
+      "shortTitle": "ELMM (2014)",
+      "title": "A new extended linear mixing model to address spectral variability",
+      "authors": "M. A. Veganzones, L. Drumetz, G. Tochon, M. Dalla Mura, A. Plaza, J. Bioucas-Dias, J. Chanussot",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077595",
+      "representation": "ELMM令端元变化为像元相关函数f_j(e_i)。谱bundles隐式包含变化；尺度特例f_j(e_i)=λ_ij e_i下，非负CLS估组合权重。假设同像元所有端元共用λ_j，按系数和估尺度再归一化得到丰度；SUnSAL求解实验的FCLS/CLS与稀疏变体。",
+      "tags": [
+        "spectral-unmixing",
+        "extended-linear-mixing"
+      ],
+      "summary": "ELMM令端元变化为像元相关函数f_j(e_i)。谱bundles隐式包含变化；尺度特例f_j(e_i)=λ_ij e_i下，非负CLS估组合权重。假设同像元所有端元共用λ_j，按系数和估尺度再归一化得到丰度；SUnSAL求解实验的FCLS/CLS与稀疏变体。",
+      "input": "高光谱影像、参考端元或影像提取的光谱bundles；实验VCA全图/重采样/滑窗提取。",
+      "output": "丰度、光谱重建及尺度因子特例解释；不是2015/2016后续盲解混算法的全部输出。",
+      "mechanism": "ELMM令端元变化为像元相关函数f_j(e_i)。谱bundles隐式包含变化；尺度特例f_j(e_i)=λ_ij e_i下，非负CLS估组合权重。假设同像元所有端元共用λ_j，按系数和估尺度再归一化得到丰度；SUnSAL求解实验的FCLS/CLS与稀疏变体。",
+      "readingNote": "主办方91页完整摘要，正式DOI/TOC与UMBC作者四页PDF§1–7全读；作者数冲突保留。2015/2016仅官方摘要/书目和作者代码关系，不混全文实验。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077595",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "author_pdf_full_text_verified",
+      "citation": "@inproceedings{elmm_whispers_2014,\n  title = {A new extended linear mixing model to address spectral variability},\n  author = {M. A. Veganzones and L. Drumetz and G. Tochon and M. Dalla Mura and A. Plaza and J. Bioucas-Dias and J. Chanussot},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077595}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "extended-linear-mixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱混合、端元或非线性系数估计为主要研究对象；仅总库，原三维专题成员和事实不变。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何把同材料在不同像元的光谱变化纳入线性混合，并解释bundles与CLS的联系？",
+        "datasets": "AVIRIS Cuprite矿区；USGS光谱库的Alunite、Buddinggtonite、Calcite、Kaolinite、Muscovite用于谱角对应。VCA全图17端元，重采样bundle1669、滑窗bundle1353条谱；影像尺寸、日期与直接数据下载未知。",
+        "experimentSetting": "E/R/W三组端元配FCLS或CLS，稀疏系数t=0、10⁻⁴、10⁻³、10⁻²；以平均RMSE/谱角重建误差、正丰度谱数比较，未提供独立丰度真值精度表。公式7印有非负、和为1及L1项；本库推论：该全约束情形L1为常数，其实现/稀疏解释待代码核对，不能擅自修改原结果。",
+        "conclusions": "作者报告谱bundles和CLS互补，滑窗bundle在本Cuprite重建比较最好；过强稀疏参数可变差。重建误差改善不等同丰度或材料真值精度；不从图3估读未给表格数字。",
+        "limitations": "CLS共同尺度假设限照明/地形近似，空间平滑、波长相关变异和非确定性模型仍列未来方向。公式7全约束L1常数问题是本库基于原式的待核疑点，非已证实代码错误。主办方多列R. Marrero，原PDF/正式登记/TOC均7作者，按正式稿。HAL访问拒绝，2014四页作者稿已读；2015五作者会议和2016六作者TIP只关联后续算法，扩展关系未知，其代码不是本2014实验证明。2014本稿arXiv/确切代码未找到。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理91页全部3新题名；ANN–POD摘要跨92页",
+            "supports": [
+              "A new extended linear mixing model to address spectral variability",
+              "页首90皮肤摘要不重计，92其他题名未审；ELMM日程多列R. Marrero的作者冲突保留。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077595",
+            "checkedAt": "2026-10-09",
+            "level": "正式会议登记与TOC/原摘要交叉核验",
+            "supports": [
+              "正式2014专业workshop，1-4页；2017登记不改会议年。",
+              "M. A. Veganzones, L. Drumetz, G. Tochon, M. Dalla Mura, A. Plaza, J. Bioucas-Dias, J. Chanussot"
+            ]
+          },
+          {
+            "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2014.WHISPERS.Mixing.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "作者原PDF全文核验",
+            "supports": [
+              "主办方91页完整摘要，正式DOI/TOC与UMBC作者四页PDF§1–7全读；作者数冲突保留。2015/2016仅官方摘要/书目和作者代码关系，不混全文实验。",
+              "ELMM令端元变化为像元相关函数f_j(e_i)。谱bundles隐式包含变化；尺度特例f_j(e_i)=λ_ij e_i下，非负CLS估组合权重。假设同像元所有端元共用λ_j，按系数和估尺度再归一化得到丰度；SUnSAL求解实验的FCLS/CLS与稀疏变体。",
+              "四页作者PDF全部检查：Fig1页2为Cuprite数据，Fig2/4页3为谱和活跃端元统计，Fig3页4为重建误差；无框架/方法图，记no_framework，不用结果图冒充。"
+            ]
+          },
+          {
+            "url": "https://github.com/ldrumetz/ELMM_hyperspectral_Unmixing_code",
+            "checkedAt": "2026-10-09",
+            "level": "作者后续算法代码README，非2014原代码",
+            "supports": [
+              "README列TIP2016和2020/GRSL后作，含DFC2013 Houston示例；不当2014 Cuprite实验数据。"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/document/7488216/",
+            "checkedAt": "2026-10-09",
+            "level": "2016后续算法完整出版社摘要/书目",
+            "supports": [
+              "六作者、TIP2016论文与2014概念稿区分，未读2016全文。"
+            ]
+          },
+          {
+            "url": "https://hal.science/hal-01010424",
+            "checkedAt": "2026-10-09",
+            "level": "机构原稿访问拒绝，未从反机器人页读取论文",
+            "supports": [
+              "HAL作者CV索引列本2014稿hal-01010424v1；UMBC原PDF可访问，HAL日期/版本差异待核。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "elmm-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077595",
+            "doi": "10.1109/whispers.2014.8077595",
+            "year": 2014,
+            "relation": "正式2014四页会议；原文/后作的作者、年份、实验与图按版本分开。"
+          },
+          {
+            "id": "elmm-whispers2015-related",
+            "type": "2015后续盲解混算法，非已核2014扩展",
+            "url": "https://doi.org/10.1109/whispers.2015.8075417",
+            "doi": "10.1109/whispers.2015.8075417",
+            "year": 2015,
+            "relation": "五作者Drumetz/Henrot/Veganzones/Chanussot/Jutten，提出对既有ELMM的尺度估计盲解混算法；原官方摘要/DOI确认，非2014七作者同稿，未混实验。"
+          },
+          {
+            "id": "elmm-tip2016-related",
+            "type": "2016后续ELMM算法期刊，非已核2014扩展",
+            "url": "https://doi.org/10.1109/tip.2016.2579259",
+            "doi": "10.1109/tip.2016.2579259",
+            "year": 2016,
+            "relation": "六作者Drumetz/Veganzones/Henrot/Phlypo/Chanussot/Jutten，TIP25(8):3890–3905，正式2016-08，官方页面出版2016-06-09。空间一致尺度算法与2014概念稿分开；2015到2016直接扩展尚待全文。",
+            "codeUrl": "https://github.com/ldrumetz/ELMM_hyperspectral_Unmixing_code",
+            "codeRelation": "作者README明确关联TIP2016及后作；未核本2014四页会议代码/复现实验，不倒用Houston示例数据。"
+          }
+        ],
+        "methodFamilyId": "elmm-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "四页作者稿全文及全部四图核验：Fig1页2数据，Fig2/4页3谱与统计，Fig3页4结果，无框架/方法图，不以结果图代替。",
+        "sourceUrl": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2014.WHISPERS.Mixing.pdf",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "cone-endmembers-whispers-2014",
+      "shortTitle": "Cone Non-negativity / Endmembers",
+      "title": "End-member extraction using cone non-negativity constraints",
+      "authors": "John Gruninger, Hoang Dothe",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077598",
+      "representation": "以奇异向量与齐次线性不等式表示数据锥，将组分数联系到锥的极端结构，识别非冗余不等式提取端元；不是预设材料数等于矩阵伪秩的普通分解。",
+      "tags": [
+        "spectral-unmixing",
+        "cone-nonnegative-endmember-extraction"
+      ],
+      "summary": "以奇异向量与齐次线性不等式表示数据锥，将组分数联系到锥的极端结构，识别非冗余不等式提取端元；不是预设材料数等于矩阵伪秩的普通分解。",
+      "input": "高光谱数据矩阵；原摘要示例为AVIRIS Cuprite，预处理/子空间维数未知。",
+      "output": "端元/唯一组分；丰度估计、端元数选择具体规则和光谱图待原全文。",
+      "mechanism": "以奇异向量与齐次线性不等式表示数据锥，将组分数联系到锥的极端结构，识别非冗余不等式提取端元；不是预设材料数等于矩阵伪秩的普通分解。",
+      "readingNote": "主办方91页完整摘要、John Gruninger/Hoang Dothe，与精确正式DOI及TOC二作者交叉；会议全文未读。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077598",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "official_program_abstract_verified",
+      "citation": "@inproceedings{cone_endmembers_whispers_2014,\n  title = {End-member extraction using cone non-negativity constraints},\n  author = {John Gruninger and Hoang Dothe},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077598}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "cone-nonnegative-endmember-extraction"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱混合、端元或非线性系数估计为主要研究对象；仅总库，原三维专题成员和事实不变。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过数据锥的非负约束提取端元，而不把数据伪秩强制等同材料数量？",
+        "datasets": "官方摘要明确AVIRIS Cuprite矿区影像；尺寸、波段、日期、真值与数据链接未知。",
+        "experimentSetting": "以Cuprite示例展示非负约束分解；比较基线、噪声设置、端元数/误差数字待原会议全文。",
+        "conclusions": "完整摘要确认方法及Cuprite应用，没有性能数字；不能从摘要断言优于VCA或有丰度真值精度。",
+        "limitations": "仅摘要已核验；原文extreme points具体极点/极射线数学定义待全文，不臆写公式、纯像元假设或性能。IEEE202空响应/PDF418；题名/作者/机构/代码/data/arXiv交叉查未取得原PDF或图，图号/页码未知；第三方额外作者占位不采用。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理91页全部3新题名；ANN–POD摘要跨92页",
+            "supports": [
+              "End-member extraction using cone non-negativity constraints",
+              "页首90皮肤摘要不重计，92其他题名未审；ELMM日程多列R. Marrero的作者冲突保留。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077598",
+            "checkedAt": "2026-10-09",
+            "level": "正式会议登记与TOC/原摘要交叉核验",
+            "supports": [
+              "正式2014专业workshop，1-4页；2017登记不改会议年。",
+              "John Gruninger, Hoang Dothe"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/document/8077598/",
+            "checkedAt": "2026-10-09",
+            "level": "会议原PDF受限，主办方完整摘要已核",
+            "supports": [
+              "主办方91页完整摘要、John Gruninger/Hoang Dothe，与精确正式DOI及TOC二作者交叉；会议全文未读。",
+              "以奇异向量与齐次线性不等式表示数据锥，将组分数联系到锥的极端结构，识别非冗余不等式提取端元；不是预设材料数等于矩阵伪秩的普通分解。",
+              "IEEE202空响应/PDF418，作者/机构原PDF检索无可用本稿；原图号/页码未知。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "cone-endmembers-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077598",
+            "doi": "10.1109/whispers.2014.8077598",
+            "year": 2014,
+            "relation": "正式2014四页会议；原文/后作的作者、年份、实验与图按版本分开。"
+          }
+        ],
+        "methodFamilyId": "cone-endmembers-whispers-2014"
+      },
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "IEEE202空响应/PDF418，题名/作者/机构交叉检索未取得本稿原全文/图；图号及页码未知。",
+        "sourceUrl": "https://ieeexplore.ieee.org/document/8077598/",
+        "checkedAt": "2026-10-09"
+      }
+    },
+    {
+      "id": "ann-pod-whispers-2014",
+      "shortTitle": "ANN–POD (WHISPERS)",
+      "title": "Integrating multiple nonlinear estimators into hyperspectral unmixing",
+      "authors": "Andrea Marinoni, Javier Plaza, Antonio Plaza, Paolo Gamba",
+      "year": 2014,
+      "venue": "WHISPERS",
+      "publicationName": "2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+      "publicationStatus": "published",
+      "venueTier": "workshop",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/whispers.2014.8077626",
+      "representation": "从EEA端元生成多项式合成训练/测试谱，以两隐层MLP估阶数，Bayesian regularization backpropagation/Levenberg–Marquardt训练；ANN阶数驱动POD以薄QR解线性方程的多项式系数。图1明确ANN到阶数再POD，区别直接ANN丰度回归。",
+      "tags": [
+        "spectral-unmixing",
+        "nonlinear-spectral-unmixing",
+        "ann-order-polytope-unmixing"
+      ],
+      "summary": "从EEA端元生成多项式合成训练/测试谱，以两隐层MLP估阶数，Bayesian regularization backpropagation/Levenberg–Marquardt训练；ANN阶数驱动POD以薄QR解线性方程的多项式系数。图1明确ANN到阶数再POD，区别直接ANN丰度回归。",
+      "input": "高光谱影像、EEA提取的端元及候选非线性阶数范围；ANN阶数训练用端元合成的已知阶数谱，不需要该真实场景丰度真值。",
+      "output": "逐像元非线性阶数、POD多项式混合系数和重建；矿物丰度示例另用FCLSU估计，不能把所有系数当传统单一丰度。",
+      "mechanism": "从EEA端元生成多项式合成训练/测试谱，以两隐层MLP估阶数，Bayesian regularization backpropagation/Levenberg–Marquardt训练；ANN阶数驱动POD以薄QR解线性方程的多项式系数。图1明确ANN到阶数再POD，区别直接ANN丰度回归。",
+      "readingNote": "主办方91页题名/作者，摘要跨92；UMBC作者四页PDF§1–5全读，Fig1页2裁切。2015原首页/DOI确认正式扩展但未读该期刊全文。",
+      "paper": "https://doi.org/10.1109/whispers.2014.8077626",
+      "verifiedAt": "2026-10-09",
+      "verificationLevel": "author_pdf_full_text_verified",
+      "citation": "@inproceedings{ann_pod_whispers_2014,\n  title = {Integrating multiple nonlinear estimators into hyperspectral unmixing},\n  author = {Andrea Marinoni and Javier Plaza and Antonio Plaza and Paolo Gamba},\n  booktitle = {2014 6th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)},\n  year = {2014},\n  pages = {1--4},\n  doi = {10.1109/whispers.2014.8077626}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "nonlinear-spectral-unmixing",
+          "ann-order-polytope-unmixing"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "以光学高光谱混合、端元或非线性系数估计为主要研究对象；仅总库，原三维专题成员和事实不变。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "没有真实场景子像元丰度真值时，如何选择POD多项式非线性阶数？",
+        "datasets": "合成Hapke火星陨坑186×174像元、16波段400–1100 nm，Basalt/Palagonite/Tephra。实测2001 Istanbul Hyperion400×400，198校准波段426.82–2395.5 nm；数据直接下载未知。",
+        "experimentSetting": "陨坑以POD p=3加FCLSU比矿物分数误差，直接ANN用真实分数训练；真实Istanbul比较先用OSP10端元，联合ANN–POD另用ATGP5端元。阶数估计重复10次多数投票，Fig5改变合成训练样本数至4000并对比固定p=3/4/5；不能合并两种端元实验。",
+        "conclusions": "Hapke陨坑与多项式POD模型失配，作者明确报告POD表现差、用真值训练的ANN较好。Istanbul固定POD p=4重建RE约1.2×10⁻³，直接ANN约0.035，是10端元分支；联合5端元分支4000合成样本时优于固定POD。重建不等同真实丰度精度，不声称所有场景无训练最优。",
+        "limitations": "需要提取端元与阶数范围，合成训练质量/模型适配影响结果；无真实场景丰度真值不等于无监督ANN或无任何先验。多项式不适合任意Hapke/非多项式混合，端元提取/训练样本数影响比较；精确隐藏节点数/全部复现参数与代码、数据、本稿arXiv未知。2015 JSTARS原首页明确enhanced version，11页期刊只读扩展声明/摘要，未把其图/实验当会议。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ieee-whispers.com/wp-content/uploads/2017/11/whispers_2014_technical_program.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "主办方物理91页全部3新题名；ANN–POD摘要跨92页",
+            "supports": [
+              "Integrating multiple nonlinear estimators into hyperspectral unmixing",
+              "页首90皮肤摘要不重计，92其他题名未审；ELMM日程多列R. Marrero的作者冲突保留。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/whispers.2014.8077626",
+            "checkedAt": "2026-10-09",
+            "level": "正式会议登记与TOC/原摘要交叉核验",
+            "supports": [
+              "正式2014专业workshop，1-4页；2017登记不改会议年。",
+              "Andrea Marinoni, Javier Plaza, Antonio Plaza, Paolo Gamba"
+            ]
+          },
+          {
+            "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2014.WHISPERS.Nonlinear.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "作者原PDF全文核验",
+            "supports": [
+              "主办方91页题名/作者，摘要跨92；UMBC作者四页PDF§1–5全读，Fig1页2裁切。2015原首页/DOI确认正式扩展但未读该期刊全文。",
+              "从EEA端元生成多项式合成训练/测试谱，以两隐层MLP估阶数，Bayesian regularization backpropagation/Levenberg–Marquardt训练；ANN阶数驱动POD以薄QR解线性方程的多项式系数。图1明确ANN到阶数再POD，区别直接ANN丰度回归。",
+              "会议作者原PDF第2页Fig1框架图完整裁切，含图注；原PDF保存在sources，未借2015期刊图。"
+            ]
+          },
+          {
+            "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2015.JSTARS.Nonlinear.pdf",
+            "checkedAt": "2026-10-09",
+            "level": "2015期刊原PDF仅首页摘要/扩展声明",
+            "supports": [
+              "首页明确引用本会议并声明enhanced version；11页正式期刊元数据精确DOI核验，未阅读全文。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ann-pod-whispers-2014-proceedings",
+            "type": "专业workshop正式版",
+            "url": "https://doi.org/10.1109/whispers.2014.8077626",
+            "doi": "10.1109/whispers.2014.8077626",
+            "year": 2014,
+            "relation": "正式2014四页会议；原文/后作的作者、年份、实验与图按版本分开。"
+          },
+          {
+            "id": "ann-pod-jstars-2015-extension",
+            "type": "原稿明确声明会议扩展版",
+            "url": "https://doi.org/10.1109/jstars.2015.2427517",
+            "doi": "10.1109/jstars.2015.2427517",
+            "year": 2015,
+            "relation": "Nonlinear Hyperspectral Unmixing Using Nonlinearity Order Estimation and Polytope Decomposition，JSTARS8(6):2644–2654；同四作者，原首页明确enhanced version of本2014会议。正式2015-06、原首页在线2015-05-14/当前版2015-07-30分开；只读首页摘要/扩展声明，期刊全实验和图未混会议。"
+          }
+        ],
+        "methodFamilyId": "ann-pod-whispers-2014"
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Conferences/2014.WHISPERS.Nonlinear.pdf",
+          "figureLabel": "Fig. 1",
+          "page": 2,
+          "caption": "Scheme of the proposed framework for nonlinear spectral unmixing.",
+          "verificationNote": "核验2014四页会议作者原PDF第2页Fig1，EEA输入/ANN阶数估计/POD/丰度图流程及图注完整；未借2015期刊图。",
+          "cropDescription": "原PDF第2页渲染1131×1600像素，裁切框(180,135,1000,380)，保留完整原框架和图注；无重绘。",
+          "path": "figures/ann-pod-whispers-2014/framework-whispers2014-fig1.png",
+          "width": 820,
+          "height": 245,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-09",
+          "sha256": "e6a22cc9362a3459e06d5d8d2f384e338311266d599fe5aa6c46e349b26d0383",
+          "attribution": "Andrea Marinoni, Javier Plaza, Antonio Plaza, Paolo Gamba · WHISPERS 2014"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -54535,7 +54885,10 @@
         "helgoland-benthic-whispers-2014",
         "unmixing-chain-whispers-2014",
         "canopy-dust-whispers-2014",
-        "preconditioned-spa-whispers-2014"
+        "preconditioned-spa-whispers-2014",
+        "elmm-whispers-2014",
+        "cone-endmembers-whispers-2014",
+        "ann-pod-whispers-2014"
       ],
       "history": [
         {
@@ -58046,7 +58399,8 @@
         "fast-nl-me-unmixing-2017",
         "vegetation-nonlinear-model-comparison-whispers-2014",
         "noneuclidean-unmixing-whispers-2014",
-        "manifold-intimate-mixtures-whispers-2014"
+        "manifold-intimate-mixtures-whispers-2014",
+        "ann-pod-whispers-2014"
       ],
       "history": [
         {
@@ -60677,6 +61031,66 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "Bhatia等官方摘要明确e-FAST；既有参数敏感性任务不表达求解方法。"
+        }
+      ]
+    },
+    {
+      "id": "extended-linear-mixing",
+      "name": "扩展线性混合与光谱变异",
+      "dimension": "method",
+      "definition": "以像元相关端元变化函数扩展线性混合；光谱bundles可隐式表征变异，尺度/CLS为有假设的特例。区分跨时端元变化、非线性材料相互作用与后续盲解混算法。",
+      "rationale": "2014 ELMM作者全文定义像元相关变化函数，已有端元时变标签不覆盖此空间光谱变化机制。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "elmm-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2014 ELMM作者全文定义像元相关变化函数，已有端元时变标签不覆盖此空间光谱变化机制。"
+        }
+      ]
+    },
+    {
+      "id": "cone-nonnegative-endmember-extraction",
+      "name": "锥非负约束端元提取",
+      "dimension": "method",
+      "definition": "以奇异向量和齐次线性不等式表示光谱数据锥，通过非冗余约束识别其极端结构并提取端元；不假定伪秩等于材料数，原公式及极点/极射线定义逐稿核验。",
+      "rationale": "Gruninger/Dothe完整官方摘要明确锥与非冗余不等式，不能硬套单纯形几何端元提取标签。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "cone-endmembers-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Gruninger/Dothe完整官方摘要明确锥与非冗余不等式，不能硬套单纯形几何端元提取标签。"
+        }
+      ]
+    },
+    {
+      "id": "ann-order-polytope-unmixing",
+      "name": "神经阶数估计与多胞体解混",
+      "dimension": "method",
+      "definition": "先由提取端元生成已知阶数的多项式训练谱，ANN估计每像元非线性阶数，再由多胞体分解求混合系数；区别直接以ANN预测丰度，说明合成训练与场景真值依赖。",
+      "rationale": "2014作者全文及Fig1确认ANN阶数估计到POD流程，不等同一般神经特征提取或分类集成。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "ann-pod-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2014作者全文及Fig1确认ANN阶数估计到POD流程，不等同一般神经特征提取或分类集成。"
         }
       ]
     }
