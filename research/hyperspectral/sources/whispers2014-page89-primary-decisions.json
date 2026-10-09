@@ -1,0 +1,302 @@
+{
+  "checkedAt": "2026-10-09",
+  "cutoffDate": "2026-10-08",
+  "decisions": [
+    {
+      "paperId": "segsalsa-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077490",
+      "decision": "included",
+      "programPdfPage": 89,
+      "readingBoundary": "主办方89页完整摘要/三作者、精确会议DOI核验。NYU作者目录独立链接2014原稿，CMU TLS失败后公开PDF尝试404；CiteSeer404。原稿缓存片段非全文阅读。",
+      "figureBoundary": "会议IEEE202空响应/PDF418；作者CMU链接404，CiteSeer404，未取得2014原图。STR2015图不能冒充2014图。",
+      "relation": "hyperspectral",
+      "deduplication": "会议DOI/题名/作者全库无重复；后作分别追踪，不借其图与实验或当本稿预印本。"
+    },
+    {
+      "paperId": "mean-map-opls-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077551",
+      "decision": "included",
+      "programPdfPage": 89,
+      "readingBoundary": "官方89页完整摘要、作者机构WUR同题两作者与DOI交叉核验；未读会议全文。",
+      "figureBoundary": "IEEE202空响应/PDF418，机构页只给摘要和DOI；精确题名/作者原图与代码/data/arXiv搜索未取得本稿原图，图号/页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "会议DOI/题名/作者全库无重复；后作分别追踪，不借其图与实验或当本稿预印本。"
+    },
+    {
+      "paperId": "marine-particle-inversion-whispers-2014",
+      "doi": "10.1109/whispers.2014.8077610",
+      "decision": "included",
+      "programPdfPage": 89,
+      "readingBoundary": "官方89页完整摘要、正式会议DOI200及TOC三作者核验；初查询429转书目查询3条与精确DOI。2016出版社原PDF仅选段确认前作关系，会议未全文读。",
+      "figureBoundary": "会议IEEE202空响应/PDF418，未取得四页会议原图；2016两作者Fig3不是会议原图，图号/页码未知。",
+      "relation": "hyperspectral",
+      "deduplication": "会议DOI/题名/作者全库无重复；后作分别追踪，不借其图与实验或当本稿预印本。"
+    },
+    {
+      "doi": "10.1109/whispers.2014.8077590",
+      "title": "Object-based random forest classification for mapping floodplain vegetation structure from nation-wide CIR AND LiDAR datasets",
+      "decision": "pending",
+      "programPdfPage": 89,
+      "reason": "作者WUR四页全文§1–5已读，§2.2明确四波段Blue/Green/Red/NIR CIR+AHN2 LiDAR，无直接HSI实验；§1/参考2连接CASI+LiDAR前作，其实际光谱配置与方法依承待核。不能仅因WHISPERS场所纳入，亦不因二维/多光谱直接排除；暂列范围待核验。",
+      "sourceUrl": "https://edepot.wur.nl/350791",
+      "readingBoundary": "四页§1–5及六幅图图注全文读；原图已在PDF留存，但未入库不展示。",
+      "nextAction": "逐篇核验参考2 Geerling等2009 CASI配置/方法关系，区分HSI关联和仅一般四波段CIR+LiDAR。"
+    }
+  ],
+  "classificationChanges": [
+    {
+      "id": "hidden-field-convex-segmentation",
+      "name": "隐场凸分割",
+      "dimension": "method",
+      "definition": "在贝叶斯分割中以连续隐场决定离散类别概率，将指定模型的推断写为凸优化；正则、统计链接及求解器按原版本核验，不宣称任意整数分割都可精确凸化。",
+      "rationale": "Condessa等会议官方摘要明确实值隐场和SegSALSA凸推断，既有语义分割任务标签不表达此机制。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "segsalsa-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Condessa等会议官方摘要明确实值隐场和SegSALSA凸推断，既有语义分割任务标签不表达此机制。"
+        }
+      ]
+    },
+    {
+      "id": "mean-map-opls-reduction",
+      "name": "均值映射核OPLS降维",
+      "dimension": "method",
+      "definition": "将可变尺寸影像patch通过均值映射核嵌入RKHS，使用正交化偏最小二乘学习监督判别子空间；不是PCA、无监督流形或仅核SVM。",
+      "rationale": "Volpi/Tuia完整摘要明确patch均值映射核与orthonormalized partial least squares监督降维。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "mean-map-opls-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Volpi/Tuia完整摘要明确patch均值映射核与orthonormalized partial least squares监督降维。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-refractive-index-inversion",
+      "name": "光谱复折射率反演",
+      "dimension": "task",
+      "definition": "以波长相关光学观测和物理模型反演材料/颗粒复折射率签名；说明散射几何、粒径分布及输入，不能当光谱分类或只估水质浓度。",
+      "rationale": "Sánchez等以高光谱复折射率签名为输出，海洋颗粒反演不能强行套水体分型/叶绿素任务。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "marine-particle-inversion-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "Sánchez等以高光谱复折射率签名为输出，海洋颗粒反演不能强行套水体分型/叶绿素任务。"
+        }
+      ]
+    },
+    {
+      "id": "scattering-genetic-inversion",
+      "name": "散射模型遗传反演",
+      "dimension": "method",
+      "definition": "结合Lorenz–Mie/T-matrix等光学前向散射计算与遗传优化反演光谱性质；粒形、分布、适用波段与优化参数逐稿核验，不把通用遗传选带归入。",
+      "rationale": "海洋颗粒会议官方摘要明确Mie-Lorentz/T-matrix内禀光学性质计算和遗传搜索，具体码库/参数未核。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "marine-particle-inversion-whispers-2014"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "海洋颗粒会议官方摘要明确Mie-Lorentz/T-matrix内禀光学性质计算和遗传搜索，具体码库/参数未核。"
+        }
+      ]
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": "whispers2014-floodplain-cir-lidar-doi-access.json",
+      "sha256": "ffcad0f5efbf9c95061d7fa2558ae6c7f9bea4c404bdb7a2cc4ec3dfe2c6774c"
+    },
+    {
+      "path": "whispers2014-floodplain-cir-lidar-ieee-access.json",
+      "sha256": "45aae06af111bd483c99b5abdbdaa8f16a050edf606629be90b28a68e19edf03"
+    },
+    {
+      "path": "whispers2014-floodplain-cir-lidar-pdf-access.json",
+      "sha256": "303bd11391cb5dc05f234de93a63969d6ac991907c2f16f75cba02d6b1cc34ac"
+    },
+    {
+      "path": "whispers2014-floodplain-cir-lidar-query-access.json",
+      "sha256": "239b1ed34262fd29641ca7b524821dc3a17d0be6ee6be14df419a0aa7ed0439a"
+    },
+    {
+      "path": "whispers2014-floodplain-original-access.json",
+      "sha256": "bcb2942f4bf3efa45bed71c43ca89a9b0f03b575ddb98f294fb8c9eee921dd26"
+    },
+    {
+      "path": "whispers2014-floodplain-original.pdf",
+      "sha256": "9800b1b7ebe5b2ab1696be5f491133b1dc91ef8cfa4ebd5c3e8ed219a3c98187"
+    },
+    {
+      "path": "whispers2014-marine-bg-access.json",
+      "sha256": "fa4c070eab47ca4119dbad0daa8c26348c0e2978e1431be405a5943955145eff"
+    },
+    {
+      "path": "whispers2014-marine-bg.pdf",
+      "sha256": "62db975b92d5edb18ceb7550d8b35c843f79cc92e2ebcd0730bcac429d435ae3"
+    },
+    {
+      "path": "whispers2014-marine-bibliographic-query-access.json",
+      "sha256": "75e7fb6154db6d534c7c3f11700406a20304e846a35f3d5170ddad6fc3e93749"
+    },
+    {
+      "path": "whispers2014-marine-dblp-access.json",
+      "sha256": "e47ec813510ed597ee81d40c2045f68597777d90cd6be3b95e6c4143b6d89182"
+    },
+    {
+      "path": "whispers2014-marine-particle-inversion-doi-access.json",
+      "sha256": "4680e2e8a7cd9fcce6d11b2cd3164f3fb515c0f8b4fac3fd9d883cbe7f989616"
+    },
+    {
+      "path": "whispers2014-marine-particle-inversion-ieee-access.json",
+      "sha256": "860081d7a6d979c9a68794fd43e37177ff90131b21a47e100d7425bb6ca60f52"
+    },
+    {
+      "path": "whispers2014-marine-particle-inversion-pdf-access.json",
+      "sha256": "385ab235ef87a80e8c374436088b94f4d71ca5b8d713d818e972920064908afd"
+    },
+    {
+      "path": "whispers2014-marine-particle-inversion-query-access.json",
+      "sha256": "a5f55873284bc1494368f3196cb0f60b20656f7d6d7fbbd5df466dd3282d36a0"
+    },
+    {
+      "path": "whispers2014-mean-map-opls-doi-access.json",
+      "sha256": "a4f8eda4c780067925922816065175455b16bc5c81cebd2213e04efddc709700"
+    },
+    {
+      "path": "whispers2014-mean-map-opls-ieee-access.json",
+      "sha256": "b4df83160cafab183edb04eec39902fe903173a5aff2420f9416a0e1b24c3518"
+    },
+    {
+      "path": "whispers2014-mean-map-opls-pdf-access.json",
+      "sha256": "3a16252fc8f88c22a5fe34f4b7f07f7c40814ed19f368f981ee0f817e574f340"
+    },
+    {
+      "path": "whispers2014-mean-map-opls-query-access.json",
+      "sha256": "797cd1f8112f0780aecf03289af3ef8f037bcda82ea1b97806a2a518a78c58cf"
+    },
+    {
+      "path": "whispers2014-mean-map-wur-access.json",
+      "sha256": "887217c138c822ff47525e6f12a857676ae59a845bd5863efd4872727e5bd697"
+    },
+    {
+      "path": "whispers2014-page89-author-cache.json",
+      "sha256": "2fc7e75163e941397ebcae1373c98a8a5d6577fc60cb6238e823e1b30ab6fd9c"
+    },
+    {
+      "path": "whispers2014-page89-codes-cache.json",
+      "sha256": "c665c8feb88f0c15af8b93ad458281b431c71af6fe36c80c6ba390c22391449e"
+    },
+    {
+      "path": "whispers2014-page89-discover-cache.json",
+      "sha256": "742cef160eb2e1dd7cfa2acfea3d20518f374ddbf05426da1d0d2c01b15d8598"
+    },
+    {
+      "path": "whispers2014-page89-followup-cache.json",
+      "sha256": "7638fb327eb662db3b7349258c0ec9623b9b76d86152c45c1e67dcbccf4fc840"
+    },
+    {
+      "path": "whispers2014-page89-identity-cache.json",
+      "sha256": "8c513df098cfc2959ab4b183f82c649b5f035b2220486f2a0cac3cd94811f963"
+    },
+    {
+      "path": "whispers2014-page89-links-cache.json",
+      "sha256": "7a852adba670cf54f0a5917e3bef1ac9d49ef722b8b323ce53ab581c483f0504"
+    },
+    {
+      "path": "whispers2014-page89-original-cache.json",
+      "sha256": "2e80b49337b09682e0b46d08b8d0d2df6b56ab39afd2100352adc9af4f1ae60a"
+    },
+    {
+      "path": "whispers2014-page89-pdf-cache.json",
+      "sha256": "ecc264a9d7e53299fa5f97030005acb0cc0cffe97c22820f7e88d527eca22b90"
+    },
+    {
+      "path": "whispers2014-page89-program-cache.json",
+      "sha256": "a9350ff98396830039ed25b35659ae10c13974c01235e393f773ffe94a7533c0"
+    },
+    {
+      "path": "whispers2014-page89-resources-cache.json",
+      "sha256": "837c5e17366d2582e45dac6d415072e21d2e2c2c7662b0d70f8f9133ec237c93"
+    },
+    {
+      "path": "whispers2014-page89-scope-cache.json",
+      "sha256": "898681f7135ef00c7e74cbe7e6f336546c900a3377b6524cf4028e4495639ef0"
+    },
+    {
+      "path": "whispers2014-page89-segsalsa-cache.json",
+      "sha256": "56d136568c8dc57deb623067833c5ea2a00728cd349ba71e1ffd93c937e5e578"
+    },
+    {
+      "path": "whispers2014-segsalsa-cmu-access.json",
+      "sha256": "45660746e2901a66ff3d0c448bba133be81f6dad23d66933a316ee60ece81793"
+    },
+    {
+      "path": "whispers2014-segsalsa-cmu-tls-retry-access.json",
+      "sha256": "42748fb28a1d2615ec97b50581921cde104b8acad6366ac67b81fa003e7f381e"
+    },
+    {
+      "path": "whispers2014-segsalsa-doi-access.json",
+      "sha256": "b22355d3ef69997c7e5e9a03c91c538ad82929eb3f4e852f40e7f417edd0f2aa"
+    },
+    {
+      "path": "whispers2014-segsalsa-ieee-access.json",
+      "sha256": "8afa17cdada698313b6e7cc28f409d7d6995f88e93ac227d8c1c2aa8760cd5ea"
+    },
+    {
+      "path": "whispers2014-segsalsa-original-access.json",
+      "sha256": "7f1b59bf88d7bb87ee1ff179278cb9993a32ebbfd10cbc67eb084a89d55f696e"
+    },
+    {
+      "path": "whispers2014-segsalsa-pdf-access.json",
+      "sha256": "90b217a23223003ce350799ccce4139fb417467576a66b6a3416f6afc20e959e"
+    },
+    {
+      "path": "whispers2014-segsalsa-query-access.json",
+      "sha256": "150b2ca123eb50e6ad867a3e7d876d2b3e2a62ddc358bf103b5763064bf99ecf"
+    },
+    {
+      "path": "whispers2014-segsalsa-str-arxiv-access.json",
+      "sha256": "7721904fa0e17447861aa18505e4fe8dd6eb2ec3336d4ac4a059b22b31642476"
+    },
+    {
+      "path": "whispers2014-segsalsa-str-doi-access.json",
+      "sha256": "cb309830d27e798f4f9f5b8d987ec9daa9dfa11d59b9d9db038d409857c8b148"
+    },
+    {
+      "path": "whispers2014-page89-toc-replay.json",
+      "sha256": "85ed083f41b93af92057c9b5193ebd3e205245bfb6b6c702c775c449cd0462c9"
+    }
+  ],
+  "qualityIssues": [
+    "三篇只总库，旧512与三维214不改。",
+    "SegSALSA2015STR为后续算法改进不是2014同稿arXiv；原稿缓存片段不升全文状态。",
+    "核OPLS两个基准未知，不借同作者其他论文；机构日期与会期冲突不改正式年份。",
+    "海洋复折射率为光学高光谱建模，非图谱spectral；J. Piera按TOC/DOI消歧，E. Zafra保留初名。",
+    "Biogeosciences2016只有关系段阅读，非会议扩展声明/全文实验；三作者与两作者分开。",
+    "洪泛区四波段CIR+LiDAR作者全文已读但CASI前作关系尚待核，保留范围pending；年度不闭合。"
+  ]
+}
