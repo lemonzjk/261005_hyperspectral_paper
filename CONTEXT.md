@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：周峻高/多光谱目录182篇均有摘要级证据（其中2篇全文级），无作者待读项；Scholar/DBLP/ORCID来源差集与非关键词记录仍待审；DBLP关键词、专题补充、ORCID交叉回填、目录匹配及本轮热红外补录已决定285条，余79条非关键词记录待逐条审查。当前领域摘要已补83篇。
+- 作者优先：周峻高/多光谱目录182篇均有摘要级证据（其中2篇全文级），无作者待读项；Scholar/DBLP/ORCID来源差集与非关键词记录仍待审；DBLP关键词、专题补充、ORCID交叉回填、目录匹配及本轮热红外补录已决定287条，余77条非关键词记录待逐条审查。当前领域摘要已补83篇。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。

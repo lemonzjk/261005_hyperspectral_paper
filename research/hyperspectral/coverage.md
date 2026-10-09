@@ -943,3 +943,7 @@ DBLP精确作者364条记录中，除既有168条决定外，按规范化题名�
 ### 2026-10-10：DBLP 通用视觉/航拍记录排除
 
 复核10条DBLP作者差集记录：InsTaG、TalkingGaussian、DNGaussian为普通视频/三维辐射场任务，Privacy-Aware为视频异常检测，另有两条普通航拍复原和一条UAV目标检测。arXiv摘要、Crossref及既有ORCID逐项决定均未确认光学高光谱输入，全部标记 excluded。证据见 `sources/jun-zhou-dblp-general-vision-exclusions-2026-10-10.json`。
+
+### 2026-10-10：DBLP RemoteTrimmer 版本复核
+
+复核 RemoteTrimmer 的 CoRR 与 ICASSP 两条版本记录。arXiv 全文实验使用 EuroSAT 与 UC Merced Land-Use，但没有说明实际使用多光谱波段、波段选择或光谱立方体处理；EuroSAT 潜在多光谱版本不足以证明本文输入，故两条均标记 excluded。证据见 `sources/jun-zhou-dblp-remotetrimmer-followup-2025.json`。
