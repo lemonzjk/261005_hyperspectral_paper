@@ -848,6 +848,12 @@
 - 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
 - 证据见 `sources/field-multispectral-pointcloud-abstract-followup.json`。
 
+## 2026-10-10 / field-spectral-lidar-forest-followup
+
+- 更新8篇，不新增目录论文，不改变三维214对象。补读多光谱光度立体、事件相机光度立体、地面HSL距离效应、HSL地下土壤、全波形分解及森林/城市融合摘要。
+- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
+- 证据见 `sources/field-spectral-lidar-forest-followup.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索

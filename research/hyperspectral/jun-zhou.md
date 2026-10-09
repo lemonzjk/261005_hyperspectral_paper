@@ -125,9 +125,11 @@ DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不�
 
 Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spectroscopy 或 LiDAR 的178条作初筛。新增41条高光谱/多光谱书目，均以 Scholar 书目核验后入库；41条均已补公开摘要或项目说明级核验（9条 arXiv、3条 ScienceDirect/CVF、5条2022公开摘要、5条2021公开摘要、2条2020公开摘要、7条2019公开摘要、5条2010/2023/2024公开摘要、2条2024公开摘要、1条2025公开摘要、1条2026公开摘要、1条HOT2024官方CFP）；STRL报告另有三页 CEUR 全文核验。132条规范化题名与现有目录重复，5条为专利、勘误、通用LiDAR/光谱或编辑性记录而排除，待审清零。
 
-新增项覆盖计算高光谱成像、目标跟踪、光谱—LiDAR分类、异常检测、解混、去噪、农业/生物医学分类和挑战基准；多光谱SIFT配准单列为 multispectral 关系，不因同作者自动视作高光谱。Scholar题名变体与正式标题按 DOI/题名版本归并，避免重复计数。逐项记录见 `sources/jun-zhou-scholar-screening.json`，2019摘要补充见 `sources/jun-zhou-scholar-2019-abstract-followup.json`、`sources/jun-zhou-scholar-2019-abstract-followup-2.json`，原始分页见 `sources/jun-zhou-scholar-pages-0-387.json`；9条 arXiv记录、4条2022公开摘要、3条2021公开摘要、1条2020公开摘要及7条2019公开摘要、4条2020–2022公开摘要、5条2010/2023/2024公开摘要、4条2024–2026公开摘要和1条HOT2024官方CFP已补来源核验，仍未完成全文；其余新增条目尚未完成摘要和全文核验。
+新增项覆盖计算高光谱成像、目标跟踪、光谱—LiDAR分类、异常检测、解混、去噪、农业/生物医学分类和挑战基准；多光谱SIFT配准单列为 multispectral 关系，不因同作者自动视作高光谱。Scholar题名变体与正式标题按 DOI/题名版本归并，避免重复计数。逐项记录见 `sources/jun-zhou-scholar-screening.json`，2019摘要补充见 `sources/jun-zhou-scholar-2019-abstract-followup.json`、`sources/jun-zhou-scholar-2019-abstract-followup-2.json`，原始分页见 `sources/jun-zhou-scholar-pages-0-387.json`；9条 arXiv记录、4条2022公开摘要、3条2021公开摘要、1条2020公开摘要及7条2019公开摘要、4条2020–2022公开摘要、5条2010/2023/2024公开摘要、4条2024–2026公开摘要和1条HOT2024官方CFP已补来源核验，仍未完成全文；其余新增条目已完成摘要级状态核验；正式全文、版本差异和资源仍待逐篇核验。
 
 下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
+
+截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共179篇：177篇为 `abstract_read` / `abstract_verified`，2篇为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
 
 ## 2024–2026高光谱来源组筛选
 
@@ -137,7 +139,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 - 通用视觉、RGB-D、普通遥感、变化检测、红外可见光融合及其他无明确高光谱输入记录排除；2024 LiDAR-Guided Cross-Attention Fusion 已是既有目录条目，按重复登记处理。
 - LiDAR-Guided Cross-Attention Fusion 已核对既有15页 arXiv 作者稿、方法页和框架图，目录阅读状态现为全文级；正式IEEE版差异与独立复现仍待核。
 
-逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2024摘要补充见 `sources/jun-zhou-2024-abstract-followup.json`、`sources/jun-zhou-2024-abstract-followup-2.json`、`sources/jun-zhou-2024-abstract-followup-3.json`；2025摘要补充见 `sources/jun-zhou-2025-abstract-followup.json`、`sources/jun-zhou-2025-abstract-followup-2.json`、`sources/jun-zhou-2025-abstract-followup-3.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`、`sources/jun-zhou-2026-title-followup.json`，Crossref响应保存在 `sources/`。下一步补齐其余2022–2026暂定条目摘要，继续Scholar/DBLP目录差集。
+逐年决定见 `sources/jun-zhou-2024-decisions.json`、`jun-zhou-2025-decisions.json`、`jun-zhou-2026-decisions.json`；2024摘要补充见 `sources/jun-zhou-2024-abstract-followup.json`、`sources/jun-zhou-2024-abstract-followup-2.json`、`sources/jun-zhou-2024-abstract-followup-3.json`；2025摘要补充见 `sources/jun-zhou-2025-abstract-followup.json`、`sources/jun-zhou-2025-abstract-followup-2.json`、`sources/jun-zhou-2025-abstract-followup-3.json`；2026摘要补充见 `sources/jun-zhou-2026-abstracts.json`、`sources/jun-zhou-2026-abstracts-2.json`、`sources/jun-zhou-2026-abstracts-3.json`、`sources/jun-zhou-2026-title-followup.json`，Crossref响应保存在 `sources/`。下一步补齐正式全文与版本差异，继续Scholar/DBLP目录差集；当前目录中的作者高光谱/多光谱记录已无待读项。
 
 ## 2023高光谱来源组筛选
 
