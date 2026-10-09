@@ -728,6 +728,12 @@
 - 4条 Scholar 2019 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
 - Scholar 新增项已有24条摘要级核验，仍有17条题名暂定。证据见 `sources/jun-zhou-scholar-2019-abstract-followup.json`。
 
+## 2026-10-10 / jun-zhou-scholar-2019-abstract-followup-2
+
+- 更新3篇，不新增目录论文，不改变三维214对象。补读活/死细胞高光谱分类、注意力波段加权选带和丰度引导超像素分类的公开摘要。
+- 3条 Scholar 2019 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
+- Scholar 新增项已有27条摘要级核验，仍有14条题名暂定。证据见 `sources/jun-zhou-scholar-2019-abstract-followup-2.json`。
+
 ## 未解决缺口
 
 - 其他场所逐年目录尚未检索
