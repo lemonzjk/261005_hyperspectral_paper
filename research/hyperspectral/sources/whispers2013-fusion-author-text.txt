@@ -1,0 +1,331 @@
+                           DESIGN OF COMBINED OPTICAL IMAGERS
+                     USING UNMIXING-BASED HYPERSPECTRAL DATA FUSION
+
+                                            Naoto Yokoya1,2 and Akira Iwasaki1
+          1
+              Research Center for Advanced Science and Technology, The University of Tokyo, Japan
+                               2
+                                 Japan Society for the Promotion of Science, Japan
+                                      Email: yokoya@sal.rcast.u-tokyo.ac.jp
+
+
+                         ABSTRACT                                   spatial-resolution and high-spectral-resolution imagery with
+Unmixing-based hyperspectral and multispectral data fusion          small spectral errors [6]. Combining several sensors using
+enables the production of high-spatial-resolution and hyper-        data fusion software can overcome the limitations of individ-
+spectral imagery with small spectral errors. In this work,          ual hardware. This technology may usher in a breakthrough
+we present sensor design of combined optical imagers using          in the sensor design of satellite optical imagers. Although in-
+unmixing-based data fusion, which aims to fuse hyperspectral        dividual conventional optical sensors were designed to max-
+and multispectral sensors and improve the performance of the        imize each of their performances according to their mission,
+final fused data. Owing to the degeneracy of the data cloud         data fusion can be a powerful option for sensor design, which
+and additive noise, there is an optimal range in the relation-      aims to fuse several sensors and improve the performance of
+ship of spatial resolutions between two imagers.                    the final fused data. Therefore, hyperspectral data obtained
+                                                                    by data fusion expands the possibilities of data specifications
+    Index Terms— hyperspectral and multispectral data fu-           and allows a wide variety of applications. The main functions
+sion, unmixing, sensor design                                       of satellite hyperspectral sensors are in the management of
+                                                                    agricultural and forest ecosystems, disaster monitoring, wa-
+                    1. INTRODUCTION                                 ter assessment, and mineral exploration [1]–[5]. The spatial
+                                                                    resolutions of spaceborne hyperspectral sensors are approx-
+There are hardware limitations in the sensor design of optical      imately 30–60 m GSD, which limits satellite hyperspectral
+imagers owing to the trade-offs between spatial resolution,         imaging applications, such as urban land cover classification
+spectral resolution, swath width, and signal-to-noise ratio         of loads and buildings for hazard assessment, and crown-level
+(SNR). For instance, with the same number of detectors in           tree classification in forests for ecosystem monitoring. When
+the cross-track direction, if the spatial resolution is enhanced,   satellite hyperspectral imagery can be sharpened to 1–5 m
+the swath width and SNR decrease owing to the limited               GSD by fusing with multispectral and panchromatic data with
+number of detectors and the lack of photons, respectively.          a small spectral distortion, it will enable killer applications of
+Several countries are now developing hyperspectral imaging          hyperspectral remote sensing. In this work, we demonstrate a
+cameras as next-generation earth-observing sensors, such as         sensor design of hyperspectral and multispectral imaging sys-
+HISUI, EnMAP, PRISMA, HyspIRI, and HYPXIM [1]–[5].                  tem using unmixing-based hyperspectral data fusion by ex-
+Generally, to maintain better SNRs than multispectral and           amining the performance of fused data with different sensor
+panchromatic sensors, the spatial resolution of hyperspec-          designs.
+tral sensors is lower than that of conventional imagers. For
+example, HISUI, which is a Japanese next-generation earth-
+                                                                       2. UNMIXING-BASED HYPERSPECTRAL AND
+observing imager, consists of hyperspectral and multispectral
+                                                                            MULTISPECTRAL DATA FUSION
+cameras that have 30 and 5 m ground sampling distances
+(GSDs), respectively. PRISMA, which is the satellite remote         The aim of hyperspectral and multispectral data fusion is to
+sensing hyperspectral mission developed by Italy, is com-           estimate unobservable high-spatial-resolution hyperspectral
+posed of hyperspectral and panchromatic imagers that have           data from observable low-spatial-resolution hyperspectral
+30 and 5 m GSDs, respectively. Ideally, high resolutions both       data and high-spatial-resolution multispectral data, which
+in spatial and spectral domains are desirable for optical re-       have the trade-off between spectral and spatial resolutions.
+mote sensing data to obtain better understanding of an object       We consider the following assumptions for this problem:
+or phenomenon on Earth.
+    Unmixing-based data fusion of hyperspectral and other               • Multiple optical imagers are mounted on the same
+conventional optical sensors enables the production of high-              platform and can obtain images under the same atmo-
+      spheric and illumination conditions.                                                                Endmember
+                                                                    Hyperspectral data                      spectra       Abundance maps
+
+   • Observed images are taken over the same areas and ge-
+
+
+
+
+                                                                                                                             …
+     ometrically coregistered in preprocessing.
+                                                                                         Unmixing
+
+
+
+
+                                                                                                                …
+   • Relative sensor characteristics, such as SRF and PSF
+     are known.
+                                                                                             Relative spectral                       Relative point
+     Unmixing-based hyperspectral and multispectral data                                    response function                       spread function
+fusion, named coupled nonnegative matrix factorization              Multispectral data
+(CNMF), is composed of alternating unmixing for two im-
+
+
+
+
+                                                                                                                             …
+ages, which is based on a linear spectral mixture model
+[6]. First, the algorithm starts from the unmixing of the hy-                            Unmixing
+
+
+
+
+                                                                                                                …
+perspectral data to estimate endmember spectra taking the
+advantage of high spectral resolution. Next, the multispec-
+tral data is unmixed after initializing the endmember spectra
+and the abundance fractions by using the unmixing results
+of the hyperspectral data. The sequential unmixing for hy-
+perspectral data is processed after initializing the abundance                        High spatial resolution
+fractions by using the unmixing results of the multispectral                           hyperspectral data
+data. After that, two data are alternately unmixed until con-
+vergence and the fused data can be obtained by combining the
+endmember spectra and the high spatial resolution abundance
+maps. Fig. 1 shows the illustration of the algorithm. When         Fig. 1. Illustration of unmixing-based hyperspectral and mul-
+the nonnegative matrix factorization (NMF) [7] is used for         tispectral data fusion
+the unmixing process, each unmixing converges to a local
+minimum, and therefore the initialization is important for the             Design 1            Design 2             Design 3           Design 4
+unmixing. Relative spectral response functions are used to
+initialize the endmember spectra in the multispectral unmix-
+                                                                   90km
+ing and relative point spread functions are used to initialize
+the abundance maps in the hyperspectral unmixing. CNMF                        10km
+uses the advantages of hyperspectral and multispectral data,
+                                                                              90km                20km                30km               60km
+i.e., spectral and spatial information, respectively, in other
+                                                                                              Mulspectral          Hyperspectral
+unmixing procedures to find a better local minimum. More
+details about the CNMF method are given in [6].
+                                                                   Fig. 2. Observation ranges for four sensor designs of hyper-
+                                                                   spectral (light blue) and multispectral (green) imagers.
+              3. EXPERIMENTAL STUDY
+
+We generate synthetic hyperspectral and multispectral datasets
+using several combinations of sensor specifications by simu-       the swath width is 20 km, the energy of photons captured by
+lating the trade-off of spatial resolution, spectral resolution,   a detector per pixel is the third power of the ratio of spatial
+and SNR between hyperspectral and multispectral sensors.           resolution, i.e., 8/27 (= (20/30)3 ) of the energy for the 30-m-
+Let us consider a case study of HISUI/VNIR assuming a              GSD hyperspectral imager, because the number of incident
+simple trade-off of sensor specifications. The hyperspectral       photons on a detector at a certain moment is proportional
+and multispectral imagers have 1000 and 18000 pixels in the        to the square of the ratio of the spatial resolution and the
+cross-track direction, respectively. As the default, the spatial   exposure time is proportional to this ratio. When we simply
+resolution was set at 30 and 5 m GSDs for the hyperspectral        assume that the noise is proportional to the square root of
+and multispectral imagers, respectively, which are based on        the detected signal intensity, SNR becomes proportional to
+the specifications of HISUI. In this case, the swath widths are    the power of 1.5, i.e., 54 (= 100 × (20/30)1.5 ). Therefore,
+30 and 90 km, respectively, and the SNRs are assumed to be         qualitatively speaking, when the spatial resolution improves,
+100 considering noisy bands. The multispectral imager has 4        the observed area decreases and the quality of images deteri-
+spectral channels in the 0.45–0.52-, 0.52–0.60-, 0.63–0.69-,       orates.
+and 0.76–0.90-µm regions. Here, the simple principle of the            We fix the spatial resolution of the multispectral sensor
+specification trade-off is explained. For example, if the spa-     and change that of the hyperspectral sensor to 10, 20, 30, and
+tial resolution of the hyperspectral sensor is 20 m GSD and        60 m. In actual designs, HISUI, EnMAP, and PRISMA have
+                                                                                                           Scene 1                                                 Scene 2
+                                                                       (a)                 45                                                       40
+                                                                                          44.5
+                                                                                                                                                   39.5
+                                                                                           44
+                                                                                          43.5                                                      39
+
+
+
+
+                                                                         PSNR (dB)
+
+
+
+
+                                                                                                                                   PSNR (dB)
+                                                                                           43                                                      38.5
+                                                                                          42.5
+                                                                                           42                                                       38
+
+                                                                                          41.5                                                     37.5
+                                                                                           41
+                                                                                                                                                    37
+                                                                                          40.5
+                                                                                           40                                                      36.5
+                                                                                                10    20   30     40     50   60                       10     20    30    40    50   60
+                                                                                                           GSD of HSI                                              GSD of HSI
+                                                                       (b)                2.6                                                       3
+                                                                                                                                                   2.8
+                                                                                          2.4
+                                                                                                                                                   2.6
+
+Fig. 3. CASI-3 images taken over (left: scene 1) forest of
+
+
+
+
+                                                                                                                                    SAE (degree)
+                                                                           SAE (degree)
+                                                                                                                                                   2.4
+                                                                                          2.2
+                                                                                                                                                   2.2
+
+Tama, Tokyo in 2009 and (right: scene 2) pasture area of                                    2                                                       2
+                                                                                                                                                   1.8
+                                                                                          1.8
+Motonopporo, Hokkaido in 2008.                                                                                                                     1.6
+                                                                                                                                                   1.4
+                                                                                          1.6
+                                                                                                                                                   1.2
+                                                                                          1.4                                                       1
+                                                                                             10       20   30     40     50   60                         10   20    30    40    50   60
+                                                                                                           GSD of HSI                                              GSD of HSI
+                                                                       (c)                400                                                      550
+
+       Table 1. Specification of hyperspectral imager.                                    350                                                      500
+                                                                                                                                                   450
+                                                                                          300
+                      GSD Swath width SNR                                                 250
+                                                                                                                                                   400
+                                                                                                                                                   350
+
+
+
+
+                                                                           RMSE
+
+
+
+
+                                                                                                                                    RMSE
+         Design 1 10 m            10 km         19                                        200                                                      300
+                                                                                                                                                   250
+                                                                                          150
+         Design 2 20 m            20 km         54                                        100
+                                                                                                                                                   200
+                                                                                                                                                   150
+
+         Design 3 30 m            30 km        100                                         50
+
+                                                                                            0
+                                                                                                                                                   100
+                                                                                                                                                    50
+                                                                                                 10   20    30    40     50   60                         10   20    30    40    50   60
+         Design 4 60 m            60 km        283                                                         GSD of HSI                                              GSD of HSI
+                                                                       (d)                  24                                                      30
+                                                                                            22
+                                                                                                                                                    28
+                                                                                            20
+                                                                                                                                                    26
+                                                                               RMSE         18
+
+
+
+
+                                                                                                                                      RMSE
+                                                                                            16                                                      24
+
+30 m GSD and HyspIRI has 60 m GSD. The hyperspectral                                        14                                                      22
+                                                                                            12
+sensor specifications are listed in Table 1. Fig. 2 shows the                               10
+                                                                                                                                                    20
+
+                                                                                                                                                    18
+                                                                                             8
+sizes of scenes observed by the two imagers. CNMF is ap-                                     6
+                                                                                              10      20    30    40     50   60
+                                                                                                                                                    16
+                                                                                                                                                         10   20    30    40    50   60
+plied to all synthetic datasets and the qualities of fused data                                             GSD of HSI                                             GSD of HSI
+
+are compared using peak signal-to-noise ratio (PSNR) and
+spectral angle error (SAE). An airborne hyperspectral dataset     Fig. 4. (a) PSNR and (b) SAE of fused data, and RMSEs
+is used to generate the synthetic datasets. Two images were       of unmixing for (c) hyperspectral and (d) multispectral data.
+captured by CASI-3 with 1 m GSD taken over a forest area          Left column is for scene 1 and right column is for scene 2.
+in Tokyo in 2009 and a pasture area of Hokkaido in 2008. A
+600×600-pixel-size subimage is selected for the simulation,
+as shown in Fig. 3. A Gaussian blur filter is used to down-
+grade the spatial resolution and rectangular SRFs are used to     unmixing, Fig. 5 shows the data clouds plotted on the space
+generate multispectral images. Gaussian noise was added to        defined by first and second principal components (PCs) with
+satisfy the SNRs of the synthetic datasets. PSNR and SAE          the first three endmembers estimated by NMF-based unmix-
+are used to evaluate the final fused products. The number of      ing applied to the hyperspectral data. We compare four hy-
+endmembers in CNMF is set as 20 for both images.                  perspectral datasets with different spatial resolutions, i.e., 5,
+    Fig. 4(a) and (b) show the changes in PSNR and SAE,           10, 20, and 30 m GSDs, and the multispectral data with a
+respectively, with the GSD of the hyperspectral sensor. When      5 m GSD. The larger spatial resolution causes more severe
+the GSDs of the hyperspectral sensor are 20 and 30 m, the         degeneracy. In hyperspectral unmixing, when the number of
+performance of the fused data shows the best results for both     endmembers is constant for all datasets, the data cloud with
+study scenes. Since the CNMF fused data is produced by            smaller spatial resolution results in larger unmixing errors
+multiplication of the endmember spectra obtained by hyper-        owing to the more complicated structure of the data cloud
+spectral unmixing and the abundance maps obtained by multi-       and the larger noise. Therefore, the RMSE of unmixing for
+spectral unmixing, the quality of the fused data is determined    hyperspectral data monotonically decreases when the GSD
+by the accuracies of two alternate unmixings. Fig. 4(c) and       increases. In multispectral unmixing, endmember spectra are
+(d) show the RMSEs of unmixing for the hyperspectral and          initialized using those estimated in hyperspectral unmixing.
+multispectral data, respectively. The canges in RMSE are          When the GSD of a hyperspectral sensor increases, the initial-
+consistent for the two scenes, and we confirmed that the com-     ized multispectral endmembers become more different from
+bination of the accuracies of the two unmixings determines        the actual endmembers in the 5 m GSD, as shown in the multi-
+the performance of the fused data shown in Fig. 4(a) and (b).     spectral data cloud. In addition, when the GSD of hyperspec-
+    To investigate the reason for the changes in the RMSE of      tral data decreases, estimated endmembers can contain errors
+owing to the severe noise condition of hyperspectral images.     spectral camera and fusing them by hyperspectral data fusion.
+This is the reason why the change in RMSE for multispectral      In this work, we presented a sensor design using combined
+unmixing results in Fig. 4(d). Since there are opposite trends   optical imagers, which aims to use hyperspectral and multi-
+in the changes in RMSE for hyperspectral and multispectral       spectral data fusion and maximize the performance of fused
+data, there is an optimal range for the GSD of a hyperspectral   data. We focused on examining the performance of fused
+sensor, i.e., 20–30 m in this simulation.                        data by changing the relationship of the spatial resolution
+                                                                 between two sensors. The final performance of fused data
+                                                                 is determined by the accuracies of two unmixings. Owing
+                                                                 to the degeneracy of the data cloud and additive noise, there
+                                                                 is an optimal range in the relationship of spatial resolutions
+                                                                 between two imagers. Hyperspectral and multispectral data
+                                                                 fusion based on unmixing contributes to the design of com-
+                                                                 bined optical imagers by presenting a range of optimum
+                                                                 design points. Combined optical imagers can usher in a ma-
+                                                                 jor breakthrough in specifications of optical remote sensing
+                                                                 sensors and their applications.
+
+                                                                                 5. ACKNOWLEDGMENT
+
+                                                                 The authors would like to thank Prof. Shuichi Rokugawa for
+                                                                 the many valuable comments and suggestions. N. Yokoya
+                                                                 acknowledges the support from JSPS (Japan Society for the
+                                                                 Promotion of Science).
+
+                                                                                     6. REFERENCES
+
+                                                                  [1] N. Ohgi, T. Kawashima A. Iwasaki, and H. Inada,
+                                                                      “Japanese hyper-multi spectral mission,” in Proc. IEEE
+                                                                      IGARSS, pp. 3756–3759, 2011.
+                                                                  [2] B. Sang, J. Schubert, S. Kaiser, V. Mogulsky, C. Neu-
+                                                                      mann, K.-P. Förster, S. Hofer, T. Stuffler, H. Kaufmann,
+                                                                      A. Müller, T. Eversberg, and C. Chlebek, “The EnMAP
+                                                                      hyperspectral imaging spectrometer: instrument con-
+                                                                      cept, calibration and technologies,” in Proc. SPIE, vol.
+                                                                      7086, 2008.
+                                                                  [3] C. Galeazzi, A. Sacchetti, A. Cisbani, and G. Babini,
+                                                                      “The PRISMA program,” in Proc. IEEE IGARSS, vol.
+                                                                      4, pp. 105–108, 2008.
+                                                                  [4] S. Chien, “Onboard science processing concepts for the
+                                                                      HyspIRI mission,” IEEE Intelligent Systems, vol. 24, no.
+Fig. 5. From top to bottom, hyperspectral data clouds with            6, pp. 12–19, 2009.
+10, 20, 30, and 5 m GSDs and multispectral data cloud with 5
+m GSD plotted on space spanned by 1st (x-axis) and 2nd (y-        [5] S. Michel, P. Gamet, and M. J. Lefevre-Fonollosa,
+                                                                      “HYPXIM – a hyperspectral satellite defined for sci-
+axis) PCs for Scene 1 (left) and Scene 2 (right). Red, green,
+                                                                      ence, security and defence users,” in Proc. IEEE WHIS-
+and blue circles indicate 3 endmembers estimated from hy-             PERS, pp. 1–4, 2011.
+perspectral datasets with 10, 20, and 30 m GSDs respectively.
+                                                                  [6] N. Yokoya, T. Yairi, and A. Iwasaki, “Coupled nonnega-
+                                                                      tive matrix factorization unmixing for hyperspectral and
+                                                                      multispectral data fusion,” IEEE Transactions on Geo-
+                                                                      science and Remote Sensing, vol. 50, no. 2, pp. 528–
+                    4. CONCLUSION                                     537, February 2012.
+                                                                  [7] D. D. Lee and H. S. Seung, “Learning the parts of ob-
+We can obtain high-spatial-resolution and high-spectral-
+                                                                      jects by nonnegative matrix factorization,” Nature, vol.
+resolution data by observing spectral information using a             401, pp. 788–791, October 1999.
+hyperspectral camera and spatial information using a multi-
+
