@@ -239,7 +239,7 @@
 | ORCID author works | 2024 | Jun Zhou 2024 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2024 source groups; not a complete 2024 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
 | ORCID author works | 2025 | Jun Zhou 2025 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2025 source groups; not a complete 2025 venue scan. | 17 / 17 / 17 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
 | ORCID author works | 2026 | Jun Zhou 2026 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2026 source groups; not a complete 2026 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
-| arXiv · Jun Zhou exact-name author query | 2026 | au:"Jun_Zhou"；start=0/200/400，200/200/131条 | 531 / 60 / 60 | 指定姓名分页完整；60条交叉映射/身份审查，471未逐审 | 姓名变体、全部范围/作者/版本未审；25光谱词命中23匹配/2同名，不自动排无关键词 |
+| arXiv · Jun Zhou quoted-name author query | 2026 | au:"Jun_Zhou"；start=0/200/400，200/200/131条 | 531 / 110 / 110 | 指定查询分页完整；110条有映射/逐审记录（含2待核），421未审 | 姓名字段521独立整名/10非精确或分词异常；身份/范围/版本不完整，2新待核 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -1010,6 +1010,13 @@ IGARSS2011四页作者稿已通读，15组小波特征、数据、随机划分�
 
 ### 周峻arXiv全分页与版本、量化范围补核（2026-10-10）
 
-精确姓名Atom查询531条/三页完整、唯一531，不等于Griffith作者全集：24目录匹配、32既有决定交叉映射、4原稿或正式稿机构确认同名、471未逐审。指定光谱词25命中为23匹配与2同名；Spectral 3D综述另由arXiv ID匹配。24条目录补官方当前版本/首次提交元数据，新增13个版本记录，保留旧v1及正式年份，不升级摘要/全文状态。ILRNet预印本2025与正式2024分开；HSLiNets原始作者分词异常、两篇同简称方法和正式扩展关系仍待。
+该批带引号姓名Atom查询531条/三页完整、唯一531，不等于Griffith作者全集：24目录匹配、32既有决定交叉映射、4原稿或正式稿机构确认同名、471未逐审。指定光谱词25命中为23匹配与2同名；Spectral 3D综述另由arXiv ID匹配。24条目录补官方当前版本/首次提交元数据，新增13个版本记录，保留旧v1及正式年份，不升级摘要/全文状态。ILRNet预印本2025与正式2024分开；HSLiNets原始作者分词异常、两篇同简称方法和正式扩展关系仍待。
 
 3DLST/DTA v1及DCTNet正式稿为PolyU护理学院Jun Zhou；农业四通道稿为平安银行同名，四条保留后续全领域候选。三波长LiDAR不是密集HSI；DCTNet预印本/正式作者与基准不同，3DLST登记勘误正文受限。Griffith量化论文首页确认目标作者，指定实验段仅普通图像特征/SIFT，暂排并记录阅读边界，关闭新pending；继承6待不变。总库757、三维214、标签303、原图334；作者188条，179摘要级/9全文级。DBLP9/Scholar8/CV3及arXiv471继续核。见 `sources/jun-zhou-arxiv-author-inventory-2026-10-10.json`、`jun-zhou-arxiv-author-crosswalk-2026-10-10.json`、`jun-zhou-arxiv-version-update-2026-10-10.json`、`jun-zhou-quantization-scope-2026-10-10.json`。
+
+
+### 周峻arXiv首批50条原摘要与遥感资源核验（来源2026-10-10，整理2026-10-11）
+
+原471条未审队列按顺序逐项读50条完整官方摘要：47范围暂排、1整名不匹配、2原稿局部后仍待；余421未审。现531交叉表为24目录匹配、32继承决定、4既有同名决定以及本批50、余421。摘要暂排不代表全部作者身份或全文核验，明确光谱联系可重审。查询名称纠正为带引号姓名查询：521条有独立规范化Jun Zhou字段，10条非精确姓名/简写/粘连字段，均不自动证明目标身份；保留原字段。
+
+RADC首页Jun Zhou为清华深圳国际研究生院，实验含EuroSAT但实际通道未明；TEAMS首页为中山大学，MRI/CT及PanNuke显微数据的光学通道仍待。机构差异本身不证明是不同个人，两篇保持范围/身份待核，仅指定页局部，不称全文；四张原稿页渲染仅来源证据，不计334张目录原图。GitHub三同名遥感仓库DDFNet4RSI/EAAHNet/FDFormer4RSI完整树均仅README，所有者作者关联和实际输入未知；EAAHNet补资源证据1条，FDFormer仅未确认题名线索，不计发表论文或合并FDNet。总库757、三维214、标签303、原图334、作者188条及179摘要级/9全文级均不变。DBLP9/Scholar8/CV3、两新待核和421未审继续推进。见 `sources/jun-zhou-arxiv-abstract-batch1-2026-10-10.json`、`sources/jun-zhou-remote-segmentation-placeholder-audit-2026-10-10.json` 与作者inventory中的姓名字段审计。

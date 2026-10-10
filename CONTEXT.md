@@ -1,6 +1,6 @@
 # 项目上下文
 
-更新：2026-10-10。
+更新：2026-10-11。
 
 ## 目标与约定
 
@@ -23,7 +23,7 @@
 - NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。Hyper-Skin330/306与版本差异待查。
 - TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
 - ICML2013–2024主卷扫描闭环；TGRS1994有3受限候选，年度待查；细节见coverage.md。
-- RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
+- RSE2001/2002登记题名与任务词已扫；受限候选、单位、全文/原图和出版社全量待查，见coverage.md。
 - OL2007–2010指定词扫描增4重1排4待2，非年度全量；勘误/通道边界及原图缺口见coverage.md。
 - TCI2015–2019指定词增17排14待4；2019官方51中34已审17待，非年度全量；5医学仅摘要片段，差异见coverage.md。
 - dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖757篇、334张图。
@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：只调研论文，停止新增学习笔记。周峻188条（高光谱181/关联7，含1摘要），179摘要级/9全文级。ORCID263组、Griffith351/214指定分页完成，非全集。DBLP365为356决定/9待；Scholar209差集189排8重4入8待；CV3未确认发表候选。arXiv精确姓名531全分页：24匹配、32继承决定、4同名排除、471未逐审；光谱词25命中23匹配/2同名。24条补版本（13新增），正式年份/阅读状态保留。量化原稿为普通图像/SIFT，局部暂排；4同名光谱关联稿留全领域候选。身份/扩展关系、CV/DBLP/Scholar和未审arXiv继续核。见jun-zhou.md。
+- 作者优先：只调研论文，不新增学习笔记。周峻188条（HSI181/关联7，含1摘要），179摘要级/9全文级。ORCID263组、Griffith351/214指定分页完成，非全集。DBLP365为356决定/9待；Scholar209为189排8重4入8待；CV3未确认发表。arXiv带引号姓名查询531全分页，含非精确姓名/分词异常：24匹配、32继承决定、4既有同名决定、47摘要暂排、1整名不匹配、2范围/身份待、421未逐审。50新审留证，阅读状态保留；量化局部暂排，4同名光谱稿留全领域候选。三同名遥感仓库仅README，作者关联/输入待核。继续DBLP/Scholar/CV、新待核及未审arXiv；见jun-zhou.md。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
