@@ -294,3 +294,10 @@ NMF-SAE作者页HTML注释另有未具体说明的final version错误提示；�
 ## SNMF作者稿完整阅读与公式复核
 
 通读16页作者稿全部正文、图表、参考文献及作者简介，Figure1已保存。目录现为185条：181摘要级、4作者/公开稿全文级；不等于全部论文通读或全部正式版本核验。三真实场景均值SAD最低不表示每类最好；参考端元为选出的可能纯像元、丰度由CVX拟合。式29复合激活导数和式37全矩阵单位约束经原页及独立数学例子核查，记录与代码/推导的差异，不自动替作者修正。DC Mall表述与Figure15图注冲突保留。详情见[全文与代码笔记](jun-zhou-snmf-code-note.md)、`sources/jun-zhou-snmf-full-reading-2026-10-10.json`；默认500轮、重复实验、正式版本及跨场景验证仍待。原图总量331张。
+
+
+## 待核输入与E2E-MPT公开资源续查
+
+IEEE已补SA-Net 2024原摘要，确认跨注意力语义映射、Transformer几何对齐、HTCD/MRCDD。光学通道仍待正文，不直接按数据名称定RGB或多光谱。出版社明确2026 SA-Net++扩展IGARSS2024，但六名作者及CRediT均无Jun Zhou，不能沿用会议作者列表，也不借其协议关闭2024范围待核。FDNet/DDFNet机构仅LICENSE，GPINet/SAPNet仅130字节SWORD提交XML，均未取得论文PDF。杂草制图Scholar详情429，短题名和Awan/Farooq作者差异仍待核；HTTP失败不说明论文不存在。DBLP/Scholar各10条待核保持不变。证据见 `sources/jun-zhou-pending-resource-followup-2026-10-10.json`。
+
+E2E-MPT原摘要链接的公开仓库已固定提交并核完整树、三ZIP目录和结果样例。ZIP分别为35/87/117个文本结果，不是原始视频；当前没有README训练/测试脚本、配置或权重，不能称可运行代码。原框架及MIT许可保存，累计332张原图；该论文仍摘要级。详情见[资源学习笔记](jun-zhou-e2empt-resource-note.md)与 `sources/jun-zhou-e2empt-resource-audit-2026-10-10.json`。目录185条和全文4条不变；后续继续原稿、输入、全集与实现核验。

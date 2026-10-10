@@ -85,6 +85,8 @@
 
 [论文与代码核对笔记](jun-zhou-snmf-code-note.md)提供原代码入口、20轮CPU运行边界和独立数学演示；当前实现与论文存在更新顺序、右乘项和约束差异，不能报性能复现成功。
 
+2026年的[材料提示资源笔记](jun-zhou-e2empt-resource-note.md)补充解混到跟踪的后续阅读问题。作者仓库已核完整文件树与三结果ZIP；当前没有说明中列出的训练/测试脚本、配置或权重，不能当作可运行复现。目录仍保留摘要级状态。
+
 ### 7. 2024 · Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution
 
 - 原文：[来源](https://research-repository.griffith.edu.au/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/download)；目录ID：`zhou-45-hsi-2024`。

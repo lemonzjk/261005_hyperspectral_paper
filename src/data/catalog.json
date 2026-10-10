@@ -75149,7 +75149,7 @@
       "input": "高光谱影像；具体采集设置见摘要。",
       "output": "目标定位与材料丰度/提示联合预测。",
       "mechanism": "Target-oriented unmixing loss, adaptive frequency decomposition and dual-branch wavelet material prompts.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
+      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。 作者仓库完整文件树、三份结果ZIP和框架原图已核验；README描述的训练/测试入口未发布于当前快照，阅读状态仍摘要级。",
       "paper": "https://arxiv.org/abs/2605.20569",
       "verifiedAt": "2026-10-10",
       "verificationLevel": "abstract_verified",
@@ -75164,12 +75164,14 @@
         "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决题名所示高光谱任务？",
-        "datasets": "Standard hyperspectral tracking benchmarks; exact benchmark split awaits full text.",
+        "researchQuestion": "如何让材料解混与目标定位共同优化，使材料提示服务高光谱跟踪，而不是独立外部预处理？",
+        "datasets": "作者项目README列HOT2020/HOT2023/HOT2024，并指向hsitracking.com；公开仓库同名ZIP只含结果文本，不能当原始视频数据或完整训练划分。",
         "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
         "conclusions": "Abstract reports state-of-the-art results; ablations and reproducibility require full-text/code audit.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
-        "dataLinks": [],
+        "limitations": "摘要与项目资源核验，未通读全文或复现。固定Git快照只有说明、图、MIT许可与结果ZIP，没有README所列训练/测试脚本、配置或权重；数据许可、训练划分、指标复算及论文/实现一致性仍待核。",
+        "dataLinks": [
+          "https://www.hsitracking.com/"
+        ],
         "evidence": [
           {
             "url": "https://arxiv.org/abs/2605.20569",
@@ -75179,6 +75181,15 @@
               "题名、作者、版本和年份",
               "摘要所述输入、方法与任务",
               "摘要所述数据或实验结论"
+            ]
+          },
+          {
+            "url": "https://github.com/han030927/E2EMPT/tree/afeb3490a52998fe81654e365c8432b0dbdb8b02",
+            "checkedAt": "2026-10-10",
+            "level": "author_project_tree_zip_and_original_framework_audit",
+            "supports": [
+              "完整递归文件树与三份结果ZIP目录核验；README所列训练/测试路径未在快照中发布。",
+              "原项目框架与MIT许可保存；不等于全文阅读或可运行复现。"
             ]
           }
         ],
@@ -75197,7 +75208,23 @@
         ],
         "methodFamilyId": "zhou-scholar-arxiv-2605.20569"
       },
-      "citation": "@misc{zhou-scholar-arxiv-2605-20569,\n  title = {End-to-End Unmixing with Material Prompts for Hyperspectral Object Tracking},\n  author = {Han Xu and Islam Mohammad Aminul and Wang Lei and Long Zekun and Fu Guanmanyi and Cai Wangshu and Paliwal Kuldip K. and Zhou Jun},\n  year = {2026},\n  eprint = {2605.20569},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2605.20569}\n}\n"
+      "citation": "@misc{zhou-scholar-arxiv-2605-20569,\n  title = {End-to-End Unmixing with Material Prompts for Hyperspectral Object Tracking},\n  author = {Han Xu and Islam Mohammad Aminul and Wang Lei and Long Zekun and Fu Guanmanyi and Cai Wangshu and Paliwal Kuldip K. and Zhou Jun},\n  year = {2026},\n  eprint = {2605.20569},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2605.20569}\n}\n",
+      "code": "https://github.com/han030927/E2EMPT",
+      "frameworkFigures": [
+        {
+          "path": "figures/zhou-scholar-arxiv-2605-20569/framework-project-v1.png",
+          "figureLabel": "项目Overview（对应框架）",
+          "caption": "E2E-MPT材料解混与频率双分支提示框架；冻结Transformer主干与可训练提示/解混模块分别标示。",
+          "sourceUrl": "https://raw.githubusercontent.com/han030927/E2EMPT/afeb3490a52998fe81654e365c8432b0dbdb8b02/assets/Overview.png",
+          "width": 1248,
+          "height": 465,
+          "sha256": "03ef87bca38de52f2bdf66c56b12eed0f5f18f825b79d81305c0557cf97d773f",
+          "attribution": "Xu Han et al. · E2EMPT作者项目；MIT License, Copyright (c) 2026 Xu Han",
+          "verifiedAt": "2026-10-10",
+          "verificationStatus": "verified",
+          "verificationNote": "人工查看原项目Overview.png，MRDM、低/高频材料分支、DWMPM、FPFM与参数图例完整。原图未修改；未借此标全文阅读，未确认预印本图号/页码。许可原文同目录LICENSE.txt。"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-arxiv-2605-17286",
