@@ -9,12 +9,22 @@
 | 来源 | 实际方法与分页 | 当前覆盖 | 缺口 |
 | --- | --- | --- | --- |
 | ORCID公共API | person、works以及269个唯一put-code分三批1–100/101–200/201–269读取；逐项核对返回ID | 263组269条书目拉取完成，无缺失ID；135组题名直接命中、128组无命中；263组均已有范围决定 | 书目完整不等于作者全部成果或光谱范围审查完成；无摘要，外部来源有日期/类型/姓名简写差异 |
-| DBLP | 用户所给身份页面与ORCID对应；HTML可读；XML各镜像尝试留证 | 仅身份与局部页面核验 | HTTP200导出其实是HTML验证页，不是XML成功；完整HTML目录尚未扫描 |
+| DBLP | SPARQL精确authoredBy关联目标person ID；364条快照另加1条身份核验的STRL专题补充 | 合并365条：350条已决定，15条待核 | 网页/XML仍受验证页限制；快照不等于作者全部成果；15条的模态、全文及部分身份仍待核 |
 | Google Scholar | 用户主页 cstart=0/100/200/300、pagesize=100 | HTTP200，取得387条记录、384个唯一题名（381个题名-年份组合）；原始HTML与解析快照已保存 | 引用元数据、作者归属及 Scholar 独有条目仍需逐篇核；页面列项不等于正式书目全集 |
 | 作者ANU旧主页 | publication.html完整旧页面，列项2001–2012，逐篇追踪公开PDF | 本批5篇原稿及DOI核验 | 主页中的Accepted年份、作者顺序及拼写可能与正式版不同；不覆盖当前所有成果 |
 | Griffith当前主页 | ORCID提供的个人页 | 仅取得JS页面壳 | 当前完整论文目录尚未取得 |
 
 所有源文件和失败状态在 `sources/jun-zhou-*`；263组逐项题名、外部ID、发现状态见 `sources/jun-zhou-orcid-inventory.json`，逐项决定分年度及早期尾项文件保存。没有关键词的128组不作为自动排除；未来卷期日期必须核在线发表，不将2026年12月卷期自动认作已发生的事件。
+
+## 当前学习入口与剩余范围核验
+
+[学习指南](jun-zhou-study-guide.md)包含当前182条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和3条多光谱关联分别列出；180条摘要级、2条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称182个独立方法。
+
+本轮为剩余78条DBLP记录取得原始摘要或Griffith机构摘要，并对指定arXiv正文和两份作者/正式PDF局部补读。63条按当前证据暂排除；15条仍待核。图矩阵的spectral clustering、Fourier高/低频、CNN feature channels、音频频谱和描述子的multi-channel都不自动等于光学高光谱。皮肤镜与昆虫照片论文也不借同作者其他高光谱数据集收录。AcfNet arXiv1909.03751的v1正文含Griffith Jun Zhou，而v2当前摘要作者列表无Jun Zhou，保留版本作者差异，不把它简单认作错误作者。
+
+待核15条包括纪念/编辑/章节4条、遥感输入不明8条、通用视觉或身份/实验待核3条；以逐条清单为准，不凭题名缺关键词作排除。优先FDNet（spectral bands含义）、DDFNet/GPINet/SAPNet（实际RGB/IRRG输入）、红树林和太阳能板卫星/航拍数据，再处理其余正文与身份。CangLing-KnowFlow和ChangeQuery按已读正文局部暂排除；分别保留完整任务清单和光学输入通道重审。
+
+证据见 `sources/jun-zhou-dblp-remaining-primary-abstracts-2026-10-10.json`、`jun-zhou-dblp-remaining-repository-2026-10-10.json`、`jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json`。主筛选表包含所有365条及明确pending状态；来源差集、当前机构目录与已收录论文正式全文、实验和代码尚未全部闭环。
 
 ## 首批闭环（2009–2011）
 
@@ -26,7 +36,7 @@
 
 ## 继续顺序
 
-当前263组范围决定已闭环：收录128、关联既有10、排除125、待审0；页面135篇。早期尾项（2001–2011及2015重复登记）见 `sources/jun-zhou-early-remainder-decisions.json`，2010多光谱配准已按明确的Landsat多光谱范围排除。该专题仍不等于作者全部成果或任一场所年度系统检索；下一步继续做 DBLP 非关键词差集、Scholar/机构目录差集及已收录条目的摘要/全文核验。
+当前263组范围决定已闭环：收录128、关联既有10、排除125、待审0；当前作者目录182条（直接高光谱179、多光谱3）。早期尾项（2001–2011及2015重复登记）见 `sources/jun-zhou-early-remainder-decisions.json`，2010多光谱配准已按明确的Landsat多光谱范围排除。该专题仍不等于作者全部成果或任一场所年度系统检索；下一步继续做 DBLP 非关键词差集、Scholar/机构目录差集及已收录条目的摘要/全文核验。
 
 ## 2008–2013原稿范围与版本续接
 
@@ -119,7 +129,7 @@ ICPR2014三作者、70–75页、封面加6页；原Figure1在PDF4。HSI/RGB少�
 
 通过 DBLP SPARQL `authoredBy` 精确关联 person ID `99/3847-1`，取得364条去重发表记录；DBLP网页及 XML/BibTeX 导出仍返回验证页；SPARQL精确作者查询可用。对题名含 hyperspectral、spectral、LiDAR、multispectral 或 unmixing 的8条差集逐项核对：HSLiNets预印本与正式论文归同一方法族，CRF/材料跟踪两条预印本由目录正式记录覆盖，4条通用SAR/城市LiDAR、编辑和勘误记录排除，新增2条预印本并完成 arXiv 摘要级核验：HSIMamba、《Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning》；另以 CEUR 三页全文确认 STRL@IJCAI 高光谱跟踪报告的作者为目标 Jun Zhou（PDF明示 Griffith 与 ORCID 0000-0001-5822-8233）。本轮再补审两条非题名关键词的专题记录：WHISPERS 2019 杂草分类完成公开摘要级核验并入库；IGARSS 2010 多光谱配准与目录既有条目去重，并以 Griffith 作者稿和公开摘要补强证据。
 
-DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不把预印本当作正式发表；关键词、专题补充、ORCID交叉回填、目录匹配及本轮热红外补录共274条记录已有决定，余90条DBLP记录仍需按任务逐项审查。详情见 `sources/jun-zhou-dblp-sparql.json`、`jun-zhou-dblp-screening.json` 和 `jun-zhou-dblp-arxiv-metadata.json`。
+DBLP精确作者、ORCID、Scholar 和 arXiv 记录均保留原始版本，不把预印本当作正式发表；截至本轮，364条原始快照与1条快照外STRL补充合并365条：收录6、关联既有165、暂排除179、待核15，共350条已有范围决定。此前“287已决定、余77”的余量少算1条，因为287中包含快照外STRL补充；原始快照实际为286已决定、78未审。本轮逐项审查这78条，新增63条暂排除、15条保留待核。详情见 `sources/jun-zhou-dblp-sparql.json`、`jun-zhou-dblp-screening.json` 和 `jun-zhou-dblp-arxiv-metadata.json`。
 
 ## Scholar题名差集初筛
 

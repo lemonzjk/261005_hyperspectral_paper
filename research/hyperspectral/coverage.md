@@ -947,3 +947,9 @@ DBLP精确作者364条记录中，除既有168条决定外，按规范化题名�
 ### 2026-10-10：DBLP RemoteTrimmer 版本复核
 
 复核 RemoteTrimmer 的 CoRR 与 ICASSP 两条版本记录。arXiv 全文实验使用 EuroSAT 与 UC Merced Land-Use，但没有说明实际使用多光谱波段、波段选择或光谱立方体处理；EuroSAT 潜在多光谱版本不足以证明本文输入，故两条均标记 excluded。证据见 `sources/jun-zhou-dblp-remotetrimmer-followup-2025.json`。
+
+### 周峻DBLP非关键词余量与学习入口（2026-10-10）
+
+校正来源计数：364条精确作者SPARQL快照，另有1条快照外STRL作者身份补充；原来287条已决定实际包含该补充，因此余量是78而非77。本轮78条逐项留证，63条按当前原摘要/机构摘要/正文局部暂排除，15条继续pending。合并365条现为6收录、165关联既有、179暂排除、15待核；原始快照349条已决定，非作者成果全集完成。
+
+频率、图矩阵谱、特征通道与光学波段分别审查；FDNet、DDFNet、GPINet、SAPNet、红树林、太阳能板等实际输入仍待核。AcfNet v1正文与v2摘要作者变化单列。逐项证据见sources/jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json与机构检索快照；本轮无新增文献或分类。学习指南jun-zhou-study-guide.md提供当前179条直接高光谱、3条多光谱关联完整索引和13篇精读入口；正式全文/原图/代码及Scholar/机构来源差集仍待，不宣称调研完成。
