@@ -73259,7 +73259,7 @@
     },
     {
       "id": "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
-      "shortTitle": "Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking",
+      "shortTitle": "SST-Net",
       "title": "Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking",
       "authors": "Zhuanfeng Li, Xinhai Ye, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Yuntao Qian",
       "year": 2021,
@@ -73271,32 +73271,36 @@
         "hyperspectral"
       ],
       "doi": "10.1109/whispers52202.2021.9484032",
-      "representation": "高光谱跟踪：SST-Net 联合空间、光谱和时间注意力，空间注意力用卷积/反卷积提取显著区域，时间注意力用 RNN 建模相邻帧关系，再用于深度集成跟踪。",
+      "representation": "卷积谱/空间注意力与门控RNN产生波段排序，分组三通道VITAL弱跟踪器并平均集成。",
       "tags": [],
-      "summary": "SST-Net 针对 HSV 中光谱—空间—时间信息利用不足，结合空间注意力、RNN 时间注意力和波段关系建模，以更好选择有价值波段并进行深度集成跟踪。",
-      "input": "高光谱视频帧及相邻帧时序信息。",
-      "output": "目标跟踪位置/轨迹。",
-      "mechanism": "卷积—反卷积空间注意力突出显著空间特征；RNN 时间注意力描述相邻帧；联合三类注意力辅助波段选择和深度集成。",
-      "readingNote": "Google Scholar 题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "summary": "在BAE-Net谱注意力上加入空间卷积/转置卷积和RNN时间状态，三类权重平均排序/重排高光谱波段，分组三通道图供VITAL跟踪并集成目标位置。",
+      "input": "高光谱帧与相邻帧时间状态、跟踪初始化；正文40训练/35测试，HSI/RGB/FCI同场景，波段数/分辨率与实际文件待核。",
+      "output": "波段重要性/排序、三通道分组图和集成目标bbox；不是场景三维几何。",
+      "mechanism": "谱2Conv/2转置Conv+GAP/Softmax，空间3Conv/2Deconv+ReLU/池化，GAP帧向量进门控RNN；三权重平均、sort重排为Rt、按三波段分组给VITAL。各弱跟踪器位置平均，损失为floor(L/3)组VITAL loss均值。没有Transformer结构。",
+      "readingNote": "会议官网公开稿全部5页、式1–4、两表/三图注及22参考条目已读；IEEE下载PDF未取得，公开稿不当VoR逐字同版证明。修正旧Transformer标签为实际卷积/RNN与波段分组。新增Fig1/2原图。固定仓库b14b415…完整4文件树及三ZIP全部CRC/GitSHA/SHA256、160结果文本/58833四列有限数值行已核；只有结果、未取得模型实现/权重/GT，未复算指标或运行训练。",
       "paper": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
-          "transformer"
+          "spectral-band-grouping",
+          "spectral-spatial-temporal-attention"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在高光谱视频中联合空间、光谱和时间关系以提升跟踪？",
-        "datasets": "公开摘要仅报告与多种跟踪器比较，数据集名称、划分和指标待全文核验。",
-        "experimentSetting": "高光谱视频跟踪；空间/时间注意力与深度集成跟踪器比较。",
-        "conclusions": "公开摘要报告 SST-Net 相比多种替代跟踪器具有更好效果。",
-        "limitations": "摘要未给出数据规模、网络配置、运行速度、代码和逐项指标。",
-        "dataLinks": [],
+        "relationNote": "会议官网全文直接对高光谱帧作谱空时权重、波段重排/分组三通道跟踪；输入不是场景几何。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何将空间位置和多帧时间状态加入谱注意力，改善三通道波段分组与多跟踪器集成？",
+        "datasets": "作者40训练/35测试、同场景HSI/FCI/RGB，正文只链competition官网；实际通道/分辨率/标注/校准和文件未取。当前HOT2020资源入口与仓库35结果仅关联支持；后续HOT2022/IMEC25各45/80结果，不当2021论文规模/实验。",
+        "experimentSetting": "谱/空间40视频离线预训、时间模块首帧训；score低于交叉验证阈值时更新三模块，learning rate .005。VITAL弱跟踪器平均位置，OPE precision/success AUC；阈值/训练轮数/硬件/FPS和精度汇总阈值未给。",
+        "conclusions": "AUC .6230，谱baseline .6061、+空间.6190、+时间.6101，联合增1.69百分点；VITALFCI .6047/C-COTRGB .6020。Fig2精度SST .915、BAE .876、MHT .888，BAE只在AUC高于MHT，不能称各指标都更优。MHT本文.589/.888与v5.612/.878及后续.593/.880分别留；有限对照不当全领域冠军。",
+        "limitations": "官网公开稿全文状态，VoR未对比；空间pooling轴/输出、Eq3 m_t门/状态重用、Eq4 L未显式定义、排序梯度/余带/端到端实现与阈值/交叉验证拆分待代码。当前仓库只有README/三结果ZIP，缺模型/权重/GT，无训练/评测复现、多seed/运行成本；结果坐标约定/帧对齐及许可待核。表2 C-COT误引[20]，正确正文[22]留证。",
+        "dataLinks": [
+          "https://www.hsitracking.com/",
+          "https://www.hsitracking.com/hot2020/"
+        ],
         "evidence": [
           {
             "url": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
@@ -73315,6 +73319,25 @@
             "supports": [
               "正式题名、作者、场所、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "conference_hosted_five_page_full_text_original_tables_and_figures",
+            "supports": [
+              "5页直接支持三注意力卷积/RNN、波段重排/分组和VITAL平均集成，非Transformer。",
+              "40训练/35测试、learning rate .005、AUC .6230及图2不同指标排名；没有已核速度或阈值。",
+              "第2/4页Fig1/2完整原裁图，图号限定官网公开稿。"
+            ]
+          },
+          {
+            "url": "https://github.com/hscv/SST-Net",
+            "checkedAt": "2026-10-11",
+            "level": "self_described_author_associated_pinned_result_resource_audit",
+            "supports": [
+              "README同题六作者/会议/首作者NJUST邮箱支持关联，描述自称官方；缺独立账号关联反链证明。",
+              "固定b14b415…完整4文件树/逐blob SHA与三ZIP全部成员CRC/hash、160文本/58833四列数值行核；没有模型实现/权重/GT，不当运行复现。"
+            ]
           }
         ],
         "versions": [
@@ -73324,12 +73347,69 @@
             "url": "https://doi.org/10.1109/whispers52202.2021.9484032",
             "doi": "10.1109/whispers52202.2021.9484032",
             "year": 2021,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式WHISPERS2021/1–5书目与机构作者核验；已读会议官网公开稿，IEEE下载PDF未取得，VoR版本差异待。"
+          },
+          {
+            "id": "zhou-scholar-spectral-spatial-temporal-attention-networ-2021-conference-copy",
+            "type": "会议官网公开稿",
+            "url": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
+            "doi": "10.1109/whispers52202.2021.9484032",
+            "year": 2021,
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
+            "fullTextCheckedAt": "2026-10-11",
+            "relation": "官网5页全文已读；PDF创建时间2021-03-09是文件元数据，不作首次发表日期或VoR身份证明。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
+        "methodFamilyId": "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "按实际卷积/RNN及波段重排/分组，与Transformer或确定子集缩减分开；仅关联本篇。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "3247bcadea46c1c36d7628ed2aff74816342027040395b493c74228987a74fae",
+          "sourceUrls": [
+            "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf"
+          ]
+        }
       },
-      "citation": "@inproceedings{zhou-scholar-spectral-spatial-temporal-attention-networ-2021,\n  title = {Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking},\n  author = {Zhuanfeng Li and Xinhai Ye and Fengchao Xiong and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2021},\n  doi = {10.1109/whispers52202.2021.9484032}\n}\n"
+      "citation": "@inproceedings{zhou-scholar-spectral-spatial-temporal-attention-networ-2021,\n  title = {Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking},\n  author = {Zhuanfeng Li and Xinhai Ye and Fengchao Xiong and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2021},\n  doi = {10.1109/whispers52202.2021.9484032}\n}\n",
+      "code": "https://github.com/hscv/SST-Net",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
+          "figureLabel": "Figure 1 (conference copy)",
+          "caption": "SST-Net谱/空间Conv-Deconv与RNN时间状态联合估波段权重，排序分组为三通道VITAL弱跟踪并平均集成。",
+          "verificationNote": "人工核会议官网公开稿第2页Fig1，300dpi完整裁取，保留全部模块和箭头，无重绘。图号限定该5页公开稿；IEEE VoR及实现/GT未取得，不是运行复现证明。",
+          "path": "figures/zhou-scholar-spectral-spatial-temporal-attention-networ-2021/framework-conference-copy-fig1.png",
+          "width": 1850,
+          "height": 780,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "694f42b5b37ac358d3cdd91af917bb4bbab9077b53cc29bb2ff556c867234de7",
+          "attribution": "Zhuanfeng Li, Xinhai Ye, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Yuntao Qian · WHISPERS 2021 conference copy"
+        },
+        {
+          "sourceUrl": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
+          "figureLabel": "Figure 2 (conference copy)",
+          "caption": "三跟踪器OPE success与precision原图：BAE-Net仅AUC高于MHT，precision低于MHT；两指标与版本分别留。",
+          "verificationNote": "人工核会议官网公开稿第4页Fig2，300dpi完整裁取，保留两子图、坐标与图例，无重绘。图号限定该5页公开稿；IEEE VoR及实现/GT未取得，不是运行复现证明。",
+          "path": "figures/zhou-scholar-spectral-spatial-temporal-attention-networ-2021/framework-conference-copy-fig2.png",
+          "width": 1068,
+          "height": 505,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "51bdb34995e9c9d44ecb00ff9df6c466e4cfa6dad64b5928a6fb7814f7cebb70",
+          "attribution": "Zhuanfeng Li, Xinhai Ye, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Yuntao Qian · WHISPERS 2021 conference copy"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-a-cross-modal-feature-aggregation-and-enha-2024",
@@ -73704,7 +73784,7 @@
     },
     {
       "id": "zhou-scholar-dynamic-material-aware-object-tracking-in--2019",
-      "shortTitle": "Dynamic Material-Aware Object Tracking in Hyperspectral Videos",
+      "shortTitle": "DMT",
       "title": "Dynamic Material-Aware Object Tracking in Hyperspectral Videos",
       "authors": "Fengchao Xiong, Jun Zhou, Jocelyn Chanussot, Yuntao Qian",
       "year": 2019,
@@ -73716,31 +73796,32 @@
         "hyperspectral"
       ],
       "doi": "10.1109/whispers.2019.8921176",
-      "representation": "高光谱视频目标跟踪：融合动态联合在线解混的材料丰度与光谱—空间 HOG 特征，形成材料感知相关滤波跟踪器。",
+      "representation": "动态联合在线解混丰度与SSHOG谱空纹理驱动材料感知相关滤波跟踪。",
       "tags": [],
-      "summary": "提出动态材料感知跟踪（DMT）：以动态联合在线解混得到材料丰度，以光谱—空间 HOG 描述局部三维纹理，再将两类特征嵌入相关滤波器；摘要报告在高光谱基准上优于其他跟踪器。",
-      "input": "高光谱视频帧及目标区域的光谱—空间信息。",
-      "output": "目标位置与视频跟踪结果。",
-      "mechanism": "动态联合在线解混提取材料丰度以抑制相邻帧光谱变化；光谱—空间 HOG（SSHOG）概括局部三维纹理；两者嵌入相关滤波器形成 DMT。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/a3391a508148942a921d65eb5846e5801bc3c6e4",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "官方摘要确认DMT结合动态联合在线解混的材料分布与SSHOG纹理，以时间关系抑制相邻帧谱变化，再嵌入相关滤波跟踪；原文与数值尚未取得。",
+      "input": "目标区域高光谱视频及相邻帧谱空信息；波段、分辨率和标注协议待正文。",
+      "output": "目标位置/跟踪轨迹；bbox参数与评测定义待正文。",
+      "mechanism": "动态联合在线解混提取材料丰度，利用时间信息抑制相邻帧谱变化；SSHOG概括局部空间—光谱梯度纹理，两者嵌入相关滤波器。端元/丰度具体更新、约束与优化待全文。",
+      "readingNote": "本轮补读完整IEEE官方摘要、作者机构/Crossref与Griffith元数据，明确Griffith Jun Zhou；仍摘要级。IEEE相关入口202空或摘要HTML，Griffith仅SWORD/130字节XML无PDF；第三方GREEN/OA链接不等于当前正文。HAL DOI/完整题名限定查询均0项、作者页仅注释条目，未证明其他来源无全文。正式6页/公式/数据/指标/代码待。",
+      "paper": "https://doi.org/10.1109/whispers.2019.8921176",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
-          "hyperspectral-video-acquisition"
+          "spectral-texture-description",
+          "correlation-filter-tracking"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "完整原站摘要明确高光谱视频材料丰度/谱空纹理与目标跟踪，第三维非场景几何。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用材料丰度和光谱—空间纹理联合提升高光谱视频目标跟踪？",
-        "datasets": "摘要仅称高光谱基准数据集，名称、规模、划分和指标待全文核验。",
-        "experimentSetting": "动态联合在线解混、SSHOG 特征与相关滤波器组合。",
-        "conclusions": "公开摘要报告 DMT 在高光谱基准上优于其他跟踪器。",
-        "limitations": "摘要未给出数据集名称、跟踪器配置、速度、代码和逐项指标。",
+        "researchQuestion": "如何利用相邻帧时间关系抑制光谱变化，并融合动态解混丰度与谱空纹理改善材料感知目标跟踪？",
+        "datasets": "官方摘要只称hyperspectral benchmark，未给名称/序列数/波段/划分；没有取得6页正文，不套MHT35组或SST40/35。",
+        "experimentSetting": "官方摘要支持动态联合在线解混、SSHOG与相关滤波；模型约束/参数/运行协议待全文。",
+        "conclusions": "官方摘要报告在高光谱基准优于其他跟踪器；未取得数值和对照细节，不外推SOTA或全面胜出。",
+        "limitations": "6页正式或作者稿未取得，参数/指标/数据/动态端元实现仍未知。IEEE显示非OA/非FreeDocument，Griffith只元数据；第三方OA标签与当前可得载荷不符。有限查询不证明其他全文不存在，许可证和代码未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -73759,6 +73840,23 @@
             "supports": [
               "正式题名、作者、会议、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/8921176/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_author_affiliation",
+            "supports": [
+              "完整原站摘要确认动态联合在线解混丰度、SSHOG与相关滤波；未取得正文。",
+              "作者机构明确Jun Zhou在Griffith，正式页码1–6不能当6页已读。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/3937432a-65e1-4ad7-ae28-23c5f8b3a034",
+            "checkedAt": "2026-10-11",
+            "level": "institutional_exact_doi_author_and_complete_abstract",
+            "supports": [
+              "精确DOI/机构作者和摘要与IEEE一致；完整bundle列表仅SWORD/XML，未给正文PDF。"
+            ]
           }
         ],
         "versions": [
@@ -73768,12 +73866,35 @@
             "url": "https://doi.org/10.1109/whispers.2019.8921176",
             "doi": "10.1109/whispers.2019.8921176",
             "year": 2019,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式WHISPERS2019/1–6书目与官方摘要/作者机构已核；IEEE相关入口/机构目录未取得PDF，仍未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-dynamic-material-aware-object-tracking-in--2019"
+        "methodFamilyId": "zhou-scholar-dynamic-material-aware-object-tracking-in--2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "官方摘要仅支持跟踪与材料纹理/相关滤波，独立采集任务无证；端元更新/稀疏约束等方法待全文，未套给其他条目。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "0fc73220941d33707489e44226512ad2f97730b2d5499ae3964a551f367e550f",
+          "sourceUrls": [
+            "https://xplorestaging.ieee.org/document/8921176/"
+          ]
+        }
       },
-      "citation": "@inproceedings{zhou-scholar-dynamic-material-aware-object-tracking-in--2019,\n  title = {Dynamic Material-Aware Object Tracking in Hyperspectral Videos},\n  author = {Fengchao Xiong and Jun Zhou and Jocelyn Chanussot and Yuntao Qian},\n  year = {2019},\n  doi = {10.1109/whispers.2019.8921176}\n}\n"
+      "citation": "@inproceedings{zhou-scholar-dynamic-material-aware-object-tracking-in--2019,\n  title = {Dynamic Material-Aware Object Tracking in Hyperspectral Videos},\n  author = {Fengchao Xiong and Jun Zhou and Jocelyn Chanussot and Yuntao Qian},\n  year = {2019},\n  doi = {10.1109/whispers.2019.8921176}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "6页正式全文未取得；IEEE 202空响应或摘要HTML，Griffith只有SWORD/XML；HAL限定查询为0，OA标签不证明正文可得。",
+        "sourceUrl": "https://doi.org/10.1109/WHISPERS.2019.8921176",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "zhou-scholar-texture-and-shape-features-for-grass-weed--2019",
@@ -78168,7 +78289,6 @@
         "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
-        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "zhou-scholar-arxiv-2605-20569"
@@ -78193,6 +78313,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "E2E-MPT固定v1全文按实际联合任务与提示适配重审；仅同步本论文关联，不改变定义或其他条目。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "SST-Net公开全文按已支持任务/方法重审，仅同步本篇关联。"
         }
       ]
     },
@@ -79494,8 +79619,7 @@
       "evidencePaperIds": [
         "dual-camera-hshs-2015",
         "hyperspectral-video-tracking-kcf-2018",
-        "material-object-tracking-hsi-tip-2020",
-        "zhou-scholar-dynamic-material-aware-object-tracking-in--2019"
+        "material-object-tracking-hsi-tip-2020"
       ],
       "history": [
         {
@@ -79507,6 +79631,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "DMT原站完整摘要按已支持任务/方法重审，仅同步本篇关联。"
         }
       ]
     },
@@ -85925,7 +86054,8 @@
       "evidencePaperIds": [
         "affine-hsi-texture-2009",
         "harmonic-hsi-descriptors-chapter-2011",
-        "material-object-tracking-hsi-tip-2020"
+        "material-object-tracking-hsi-tip-2020",
+        "zhou-scholar-dynamic-material-aware-object-tracking-in--2019"
       ],
       "history": [
         {
@@ -85937,6 +86067,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "MHT固定v5全文按实际任务/方法重审，仅同步本篇关联，其他论文及定义保留。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "DMT原站完整摘要按已支持任务/方法重审，仅同步本篇关联。"
         }
       ]
     },
@@ -86428,7 +86563,8 @@
       "rationale": "MHT固定v5全文明确材料/SSHMG特征与BACF相关滤波为核心跟踪机制，现有类别无此方法边界。",
       "evidencePaperIds": [
         "material-object-tracking-hsi-tip-2020",
-        "hyperspectral-video-tracking-kcf-2018"
+        "hyperspectral-video-tracking-kcf-2018",
+        "zhou-scholar-dynamic-material-aware-object-tracking-in--2019"
       ],
       "history": [
         {
@@ -86440,6 +86576,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "按CNHT原文补实际KCF方法，仅同步本篇关联。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "DMT原站完整摘要按已支持任务/方法重审，仅同步本篇关联。"
         }
       ]
     },
@@ -86460,6 +86601,46 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "据CNHT已读原文与代码创建，仅关联本篇。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-band-grouping",
+      "name": "光谱波段分组",
+      "dimension": "task",
+      "definition": "按光谱关系或学习的重要性将波段重排/划分为多组下游输入，如三通道伪彩色图；与确认选择严格子集、压缩采集通道及降维映射分开，余带/组数逐篇注明。",
+      "rationale": "SST-Net全文明确波段排序/重排与多组三通道输入，不能仅凭该操作声明严格子集缩减。",
+      "status": "confirmed",
+      "color": "#c2b794",
+      "createdAt": "2026-10-11",
+      "evidencePaperIds": [
+        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "据已读SST-Net公开全文形成，仅关联本篇。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-spatial-temporal-attention",
+      "name": "光谱—空间—时间注意力",
+      "dimension": "method",
+      "definition": "结合波段关系、空间位置及多帧状态估计特征或波段权重；逐篇核卷积/池化、循环状态、权重合成及监督，注意力名称不自动等同Transformer。",
+      "rationale": "SST-Net5页全文明确谱Conv/转置Conv、空间Conv/Deconv及门控RNN联合，而旧Transformer标签无对应结构。",
+      "status": "confirmed",
+      "color": "#8facaa",
+      "createdAt": "2026-10-11",
+      "evidencePaperIds": [
+        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "据已读SST-Net公开全文形成，仅关联本篇。"
         }
       ]
     }

@@ -1,0 +1,105 @@
+{
+  "sourceURL": "https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf",
+  "sourceSHA256": "cb3c1e2c9d5e0deb7544c295f1babdc9727640c707b095e664f1e5f62dad4fd8",
+  "method": "manual original PDF transcription; all table rows compared to layout extraction and rendered PDF",
+  "tables": [
+    {
+      "label": "1",
+      "page": 3,
+      "rows": [
+        {
+          "method": "baseline",
+          "AUC": 0.6061
+        },
+        {
+          "method": "baseline+spatial",
+          "AUC": 0.619
+        },
+        {
+          "method": "baseline+temporal",
+          "AUC": 0.6101
+        },
+        {
+          "method": "baseline+spatial+temporal",
+          "AUC": 0.623
+        }
+      ]
+    },
+    {
+      "label": "2",
+      "page": 4,
+      "metric": "AUC",
+      "columns": [
+        "SST-Net",
+        "BACF",
+        "fDSST",
+        "KCF",
+        "VITAL",
+        "C-COT",
+        "CFNet"
+      ],
+      "rows": [
+        {
+          "video": "Color",
+          "results": {
+            "SST-Net": null,
+            "BACF": 0.5315,
+            "fDSST": 0.4639,
+            "KCF": 0.3769,
+            "VITAL": 0.5759,
+            "C-COT": 0.602,
+            "CFNet": 0.5596
+          }
+        },
+        {
+          "video": "Hyperspectral/False-color",
+          "results": {
+            "SST-Net": 0.623,
+            "BACF": 0.544,
+            "fDSST": 0.4416,
+            "KCF": 0.4078,
+            "VITAL": 0.6047,
+            "C-COT": 0.5572,
+            "CFNet": 0.5426
+          }
+        }
+      ]
+    }
+  ],
+  "tableRowCount": 6,
+  "figure2": {
+    "page": 4,
+    "readFromOriginalLegend": true,
+    "rows": [
+      {
+        "method": "SST-Net",
+        "AUCPrinted": 0.623,
+        "precisionPrinted": 0.915
+      },
+      {
+        "method": "BAE-Net",
+        "AUCPrinted": 0.606,
+        "precisionPrinted": 0.876
+      },
+      {
+        "method": "MHT",
+        "AUCPrinted": 0.589,
+        "precisionPrinted": 0.888
+      }
+    ],
+    "precisionBoundary": "图例只写precision，横轴定位误差；未在正文给汇总阈值，不自动写DP@20。"
+  },
+  "derivedGainsPercentagePoints": {
+    "combinedVsSpectralBaseline": 1.69,
+    "spatialVsBaseline": 1.29,
+    "temporalVsBaseline": 0.4,
+    "vsVITALFalseColor": 1.83,
+    "vsCCOTRGB": 2.1
+  },
+  "discrepancies": [
+    "BAE-Net AUC .606>.589，但precision .876<.888；正文better tracking accuracy只能按AUC，不能当全部精度第一。",
+    "表2 C-COT引用[20]对应fDSST，正文C-COT[22]才对应C-COT。",
+    "本文MHT .589/.888，不等于已读v5 .612/.878或E2E-MPT引用.593/.880；版本/实际评测对应待。"
+  ],
+  "boundary": "表中n/a为不可用，不是0；SST用HSI分组三通道，普通彩色跟踪器用RGB/FCI。平均权重、具体汇总阈值/实际数据载荷和多seed未核，未复算论文指标。"
+}
