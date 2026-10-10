@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10",
+  "updatedAt": "2026-10-11",
   "papers": [
     {
       "id": "hs-nerf",
@@ -75830,33 +75830,42 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2609.37340",
-      "representation": "Scholar差集 arXiv 题名与原站摘要确认高光谱任务。",
+      "representation": "固定v1全文核验的提示式高光谱基础模型；合成224通道训练，真实HSI下游推理。",
       "tags": [],
-      "summary": "HyperSAM adapts a promptable foundation model to hyperspectral remote sensing.",
-      "input": "高光谱影像；具体采集设置见摘要。",
-      "output": "提示式高光谱分割/检测/分类等下游任务预测。",
-      "mechanism": "Physics-informed abundance transfer, SAM3 RGB branch, hyperspectral side encoder, zero-init injection and mask refiner.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
+      "summary": "HyperSAM以SpaceNet2合成光谱和SAM3伪掩码预训练提示式高光谱模型；冻结RGB先验，学习光谱残差与MoE掩码细化，单检查点用于低标签遥感任务。",
+      "input": "训练：SpaceNet2配准RGB/8波段MSI经772对USGS材料合成为224通道；下游：实测HSI插值224通道，另选700/546.1/438.8nm近邻三通道代理与任务提示。",
+      "output": "任务无关掩码、质量分数和密集谱空特征；通过原型/区域相似度用于地物分类、异常/变化/目标检测及油膜分类。",
+      "mechanism": "固定光谱库丰度/照明迁移合成；冻结SAM3编码器、提示器和基础解码器，HSI侧ViT零初始化残差注入；3专家MoE细化，置信加权BCE/Dice、双光谱窗口一致性和路由均衡。",
+      "readingNote": "通读官方arXiv v1共17页、公式1–21、表I–VII、全部图注与56条引用；目视核原Fig4/7并保存完整裁图。主表为最好测试结果，成本三次统计分开；未复现实验或核正式版。作者备注GRSM接收，未作为正式出版事实。",
       "paper": "https://arxiv.org/abs/2609.37340",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "representation-learning",
-          "semantic-segmentation",
-          "datasets-benchmarks"
+          "spectral-reconstruction",
+          "land-cover-classification",
+          "hyperspectral-anomaly-detection",
+          "hyperspectral-change-detection",
+          "hyperspectral-point-target-detection",
+          "transformer",
+          "maritime-monitoring"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决题名所示高光谱任务？",
-        "datasets": "Synthetic cubes from SpaceNet multispectral imagery; classification, anomaly, change, target detection and oil-spill mapping tasks.",
-        "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
-        "conclusions": "Abstract reports broad task generalization; synthetic-data fidelity and pseudo-mask noise require full-text audit.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
-        "dataLinks": [],
+        "relationNote": "原稿明确224通道合成HSI训练及真实HSI的HC/HAD/HCD/HTD和224波段AVIRIS油膜测试；8波段原始训练源与合成谱分开。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何用高分辨率MSI合成谱空监督，保留SAM3空间/提示先验并注入光谱信息，使单检查点用于低标签HSI多任务？",
+        "datasets": "SpaceNet2四城：10592训练/3527验证patch，8→224波段、772对USGS材料。HC IndianPines/PaviaU；HAD Beach1/2；HCD BayArea/River与Hermiston；HTD Cri/Airport；HOSD GM13/17实测224波段。",
+        "experimentSetting": "单冻结检查点，无下游骨干微调。HC每类1像素，共享50支持配置池；HAD/HCD无目标标签，自动32或96点/边；HTD统一目标谱/提示；油膜每类50标签原型。主表为最好测试值；RTX4090三次成本统计另列。训练optimizer/epochs/batch及配置seed未核。",
+        "conclusions": "主表HC OA69.37/89.12%，Hermiston IoU70.31%，Airport DF0.9149/ODP1.3297；Beach1 ODP、BayArea/River及Cri部分指标落后，消融也非全项单调。油膜OA91.14/97.39%有标签原型。成本均值OA66.91%、21.11s、0.624Wh、估计0.2964gCO2e，仅GPU板卡。",
+        "limitations": "训练全为合成谱与RGB伪掩码，PCA/归一化谱形重叠不能验证配对辐射精度。仅小场景低标签协议，主表最好结果不当均值/充分微调SOTA。Fig4损失词与Eq4、成本支持配置表述不完全一致；专用实现、训练细节、数据选择/许可、阈值依据和正式版待核。",
+        "dataLinks": [
+          "https://spacenet.ai/spacenet-buildings-dataset-v2/",
+          "https://pubs.usgs.gov/publication/ds1035",
+          "https://doi.org/10.5066/F7RR1WDJ"
+        ],
         "evidence": [
           {
             "url": "https://arxiv.org/abs/2609.37340",
@@ -75877,6 +75886,17 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2609.37340v1",
+            "checkedAt": "2026-10-11",
+            "level": "固定arXiv v1全文与原图核验",
+            "supports": [
+              "17页全文支持合成224通道训练、冻结SAM3/HSI侧编码器、零残差和MoE机制",
+              "表I–VII支持实际下游标签预算、主表最好结果、负例/消融非单调及独立GPU成本边界",
+              "原Fig4/7完整方法裁图、Griffith作者单位和原稿读图/公式差异",
+              "阅读全文不等于正式版核验、代码或实验复现"
+            ]
           }
         ],
         "versions": [
@@ -75889,14 +75909,81 @@
             "arxivId": "2609.37340",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。",
+            "relation": "固定v1已通读并核原图/主要协议，作者arXiv备注称GRSM接收；未定位正式出版版，不计新论文或假定最终版一致。",
             "firstSubmittedAt": "2026-09-29T12:10:13Z",
             "updatedAt": "2026-09-29T12:10:13Z"
           }
         ],
-        "methodFamilyId": "zhou-scholar-arxiv-2609.37340"
+        "methodFamilyId": "zhou-scholar-arxiv-2609.37340",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "阅读全文据主要预训练/构造和HC/HAD/HCD/HTD任务归类，油膜为海上监测。移除原暂定datasets-benchmarks：训练语料构造不证明公开发布数据集，本文未给独立基准发布；移除泛化semantic-segmentation，明确实际下游任务，掩码接口不等于另有像素语义基准。保留直接高光谱关系，合成训练与实测测试分开。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "71532961ac06f7590f354569cd8bffe6bbff32e168d4fbb47bf282752a78adc7",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2609.37340v1"
+          ]
+        }
       },
-      "citation": "@misc{zhou-scholar-arxiv-2609-37340,\n  title = {HyperSAM: A Promptable Foundation Model for Hyperspectral Remote Sensing},\n  author = {Pang Li and Wu Xinqiao and Yao Jing and Ghamisi Pedram and Zhou Jun and Chen Zhengchao and Meng Deyu and Cao Xiangyong},\n  year = {2026},\n  eprint = {2609.37340},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2609.37340}\n}\n"
+      "citation": "@misc{zhou-scholar-arxiv-2609-37340,\n  title = {HyperSAM: A Promptable Foundation Model for Hyperspectral Remote Sensing},\n  author = {Pang Li and Wu Xinqiao and Yao Jing and Ghamisi Pedram and Zhou Jun and Chen Zhengchao and Meng Deyu and Cao Xiangyong},\n  year = {2026},\n  eprint = {2609.37340},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2609.37340}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2609.37340v1",
+          "figureLabel": "Fig. 4",
+          "caption": "物理约束MSI至HSI训练数据合成：配对WorldView3/AVIRIS材料库共享丰度和照明。",
+          "verificationNote": "核对v1第4页Fig4全图/图注；保留原TV on HSI/RGB consistency文字，Eq4为TV(a)/TV(照明)及8波段投影，差异留在来源审计，未改图。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pixelBox": [
+              1280,
+              210,
+              2400,
+              920
+            ]
+          },
+          "path": "figures/zhou-scholar-arxiv-2609-37340/framework-data-v1.png",
+          "width": 1120,
+          "height": 710,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "f8381c1c586b0b633f3e33e992d7eaca2872cd7f17d7321e830ba7d9cfde72a5",
+          "attribution": "Li Pang, Xinqiao Wu, Jing Yao, Pedram Ghamisi, Jun Zhou, Zhengchao Chen, Deyu Meng, Xiangyong Cao · arXiv 2026"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2609.37340v1",
+          "figureLabel": "Fig. 7",
+          "caption": "HyperSAM整体架构：冻结SAM3 RGB先验、可训练HSI侧分支、零残差注入与3专家MoE掩码细化。",
+          "verificationNote": "核对v1第7页Fig7输入、冻结/训练模块、完整箭头、提示编码与输出及原图注；保留全图未重绘，非GRSM正式版图。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pixelBox": [
+              167,
+              1300,
+              2400,
+              2100
+            ]
+          },
+          "path": "figures/zhou-scholar-arxiv-2609-37340/framework-model-v1.png",
+          "width": 2233,
+          "height": 800,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "6de83ff2a22db301f9acb306c31093394693e0c0878169e192b2bf71063269df",
+          "attribution": "Li Pang, Xinqiao Wu, Jing Yao, Pedram Ghamisi, Jun Zhou, Zhengchao Chen, Deyu Meng, Xiangyong Cao · arXiv 2026"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-arxiv-2501-16700",
@@ -77376,7 +77463,8 @@
         "tlpln-2021",
         "zhou-74-hsi-2022",
         "zhou-81-hsi-2022",
-        "zhou-scholar-arxiv-2309-00005"
+        "zhou-scholar-arxiv-2309-00005",
+        "zhou-scholar-arxiv-2609-37340"
       ],
       "history": [
         {
@@ -77393,6 +77481,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -77520,7 +77613,6 @@
         "zhou-83-hsi-2022",
         "zhou-eaahnet-multispectral-2025",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-multi-task-attentional-u-net-for-hyperspec-2023"
       ],
       "history": [
@@ -77538,6 +77630,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -77560,6 +77657,7 @@
         "multispectral-illumination-unrolling-2021",
         "satmae-2022",
         "tapt-arbitrary-fusion",
+        "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
         "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
@@ -77574,6 +77672,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -77792,7 +77895,6 @@
         "vegetation-nonlinear-mixing-benchmark-2014",
         "zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024",
         "zhou-scholar-arxiv-2309-00005",
-        "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-the-hyperspectral-object-tracking-challeng-2024"
       ],
       "history": [
@@ -77810,6 +77912,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -77881,7 +77988,8 @@
       "createdAt": "2026-10-08",
       "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
       "evidencePaperIds": [
-        "m2sodai-2023"
+        "m2sodai-2023",
+        "zhou-scholar-arxiv-2609-37340"
       ],
       "history": [
         {
@@ -77893,6 +78001,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -79503,12 +79616,12 @@
         "zhou-64-hsi-2023",
         "zhou-67-hsi-2023",
         "zhou-87-hsi-2022",
+        "zhou-cherry-hsi-band-selection-2025",
         "zhou-scholar-arxiv-2404-05258",
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
         "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
         "zhou-scholar-lidar-guided-unsupervised-hyperspectral-im-2025",
-        "zhou-scholar-similarity-based-hyperspectral-band-select-2022",
-        "zhou-cherry-hsi-band-selection-2025"
+        "zhou-scholar-similarity-based-hyperspectral-band-select-2022"
       ],
       "history": [
         {
@@ -79520,6 +79633,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -79872,7 +79990,8 @@
         "kernel-anomaly-change-family-2014",
         "robust-fusion-change-2017",
         "sfa-change-whispers-2014",
-        "stereo-change-whispers-2014"
+        "stereo-change-whispers-2014",
+        "zhou-scholar-arxiv-2609-37340"
       ],
       "history": [
         {
@@ -79884,6 +80003,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -80183,9 +80307,9 @@
         "corn-nitrogen-water-stress-2002",
         "sierra-biomass-stress",
         "vegetation-microseepage-oilgas-whispers-2014",
+        "zhou-egu-himawari-tri-abstract-2019",
         "zhou-himawari-thermal-drought-2020",
-        "zhou-mtsat2-tri-2020",
-        "zhou-egu-himawari-tri-abstract-2019"
+        "zhou-mtsat2-tri-2020"
       ],
       "history": [
         {
@@ -80202,6 +80326,11 @@
           "date": "2026-10-08",
           "action": "definition_updated",
           "reason": "按估计对象及处理阶段细化分类边界，防止把辅助几何或森林胁迫误归为其他任务。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -80613,6 +80742,7 @@
         "ica-comparison-whispers-2013",
         "itc-s3vm",
         "joint-spectral-spatial-sparse-coding-jstars-2017",
+        "jun-zhou-dblp-whispers-weed-2019",
         "kfkt-hyperspectral-classification-2013",
         "kfkt-small-sample-classification-2015",
         "lidar-guided-band-selection",
@@ -80697,13 +80827,13 @@
         "zhou-scholar-a-cross-modal-feature-aggregation-and-enha-2024",
         "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019",
         "zhou-scholar-arxiv-2501-16700",
+        "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
         "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
         "zhou-scholar-hyperspectral-image-classification-based-o-2019",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
-        "zhou-scholar-texture-and-shape-features-for-grass-weed--2019",
-        "jun-zhou-dblp-whispers-weed-2019"
+        "zhou-scholar-texture-and-shape-features-for-grass-weed--2019"
       ],
       "history": [
         {
@@ -80715,6 +80845,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -81511,6 +81646,7 @@
         "edible-tree-nut-hsi-quality-2018",
         "forest-litterfall-carbon-functional-hsi-2018",
         "hs-3d-nerf",
+        "jun-zhou-dblp-whispers-weed-2019",
         "lgdwt-gs",
         "mcms-robust-vegetation-indices-2014",
         "multiresolution-weed-hsi-classification-2019",
@@ -81528,15 +81664,14 @@
         "wheat-3d-photosynthesis",
         "zhou-42-hsi-2024",
         "zhou-86-hsi-2022",
+        "zhou-cherry-hsi-band-selection-2025",
+        "zhou-egu-himawari-tri-abstract-2019",
+        "zhou-himawari-thermal-drought-2020",
+        "zhou-mtsat2-tri-2020",
         "zhou-scholar-arxiv-2501-16700",
         "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
         "zhou-scholar-texture-and-shape-features-for-grass-weed--2019",
-        "jun-zhou-dblp-whispers-weed-2019",
-        "zhou-himawari-thermal-drought-2020",
-        "zhou-mtsat2-tri-2020",
-        "zhou-egu-himawari-tri-abstract-2019",
-        "zhou-sugarcane-assct-2023",
-        "zhou-cherry-hsi-band-selection-2025"
+        "zhou-sugarcane-assct-2023"
       ],
       "history": [
         {
@@ -81548,6 +81683,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -81789,6 +81929,7 @@
         "nonuniform-pixel-partition-anomaly-2014",
         "robust-linear-unmixing-anomaly-2015",
         "sparse-pca-anomaly-whispers-2014",
+        "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025"
       ],
       "history": [
@@ -81796,6 +81937,11 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "依据本批研究对象、输出与方法形成，不预设类别数量。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
@@ -82767,13 +82913,19 @@
       "color": "#9dada3",
       "createdAt": "2026-10-08",
       "evidencePaperIds": [
-        "segmentation-point-target-guidelines-2014"
+        "segmentation-point-target-guidelines-2014",
+        "zhou-scholar-arxiv-2609-37340"
       ],
       "history": [
         {
           "date": "2026-10-08",
           "action": "created",
           "reason": "原摘要专门研究分割对点目标检测的有益和无益条件，任务不等同未知光谱异常或语义分割。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
         }
       ]
     },
