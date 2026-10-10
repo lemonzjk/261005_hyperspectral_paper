@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共184条出版/预印本记录：179条直接高光谱，5条多光谱关联。182条为摘要级核验、2条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。183条为摘要级核验、2条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -157,7 +157,7 @@
 
 ## 当前作者目录完整索引
 
-以下列出当前184条记录，保持正式发表与预印本状态，不将同方法族合并成一篇。点击标题访问目录原始来源；具体证据和版本笔记见网站详情。任务标签仍有暂定分类。
+以下列出当前185条记录，保持正式发表与预印本状态，不将同方法族合并成一篇。点击标题访问目录原始来源；具体证据和版本笔记见网站详情。任务标签仍有暂定分类。
 
 | 年份 | 题名 / 原始来源 | 当前任务 | 出版状态 | 证据级别 |
 | --- | --- | --- | --- | --- |
@@ -345,12 +345,13 @@
 | 2010 | [Multi-spectral remote sensing image registration via spatial relationship analysis on sift keypoints](https://research-repository.griffith.edu.au/bitstreams/2d8b3f79-5619-5af6-98c0-a0af4e61f712/download) | 几何标定与影像配准、光学影像配准 | 正式发表 | 摘要核验 |
 | 2019 | [Directional variation in surface emissivity inferred from the MYD21 product and its influence on estimated surface upwelling longwave radiation](https://www.sciencedirect.com/science/article/pii/S0034425719301555) | 地表长波辐射估计 | 正式发表 | 摘要核验 |
 | 2019 | [Influence of emissivity angular variation on land surface temperature retrieved using the generalized split-window algorithm](https://www.sciencedirect.com/science/article/pii/S0303243419301795) | 温度与发射率分离 | 正式发表 | 摘要核验 |
+| 2019 | [Monitoring agricultural drought in Australia using brightness temperature observed by geostationary satellite](https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf) | 植被营养与环境胁迫监测 | EGU会议摘要 | 摘要核验 |
 | 2020 | [Monitoring agricultural drought in Australia using MTSAT-2 land surface temperature retrievals](https://research.wur.nl/en/publications/monitoring-agricultural-drought-in-australia-using-mtsat-2-land-s/) | 植被营养与环境胁迫监测 | 正式发表 | 摘要核验 |
 | 2020 | [On agricultural drought monitoring in Australia using Himawari-8 geostationary thermal infrared observations](https://opus.lib.uts.edu.au/bitstream/10453/149678/2/1-s2.0-S0303243420301434-main.pdf) | 植被营养与环境胁迫监测 | 正式发表 | 摘要核验 |
 
 ## 热红外关联论文的阅读边界
 
-新增MYD21论文输出向上长波辐射通量，已有MODIS分裂窗论文输出地表温度；同样研究方向发射率，不代表同一任务。MTSAT-2 TRI与已有Himawari-8干旱论文分别使用不同传感器与时期，不混用波段和实验。MTSAT正式出版为2020年，图11产量单位按[2020勘误](https://doi.org/10.1016/j.rse.2020.111661)使用t/ha。以上均为多光谱关联，详细实验仍待全文。
+新增MYD21论文输出向上长波辐射通量，已有MODIS分裂窗论文输出地表温度；同样研究方向发射率，不代表同一任务。MTSAT-2 TRI与已有Himawari-8干旱论文分别使用不同传感器与时期，不混用波段和实验。MTSAT正式出版为2020年，图11产量单位按[2020勘误](https://doi.org/10.1016/j.rse.2020.111661)使用t/ha。以上均为多光谱关联，详细实验仍待全文。2019 EGU摘要使用Himawari-8 2015–2018数据，单独保留，不自动与期刊合并；[TRI学习笔记](jun-zhou-thermal-tri-note.md)补读期刊指定方法段，解释通道、差分近似和指数方向。
 
 ## 复现笔记模板
 
@@ -362,4 +363,4 @@
 
 ## 仍需补齐
 
-DBLP合并目录365条（364条快照加1条专题补充）现有355条范围决定、10条待核。Scholar非关键词209条差集仍有16条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。
+DBLP合并目录365条（364条快照加1条专题补充）现有355条范围决定、10条待核。Scholar非关键词209条差集仍有14条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。

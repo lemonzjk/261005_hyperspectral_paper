@@ -75771,10 +75771,10 @@
       "representation": "以Himawari-8双分裂窗热红外通道亮温直接计算Temperature Rise Index（TRI），比较农业干旱指数并评估早期预警。",
       "tags": [],
       "summary": "利用约11和12 μm两个热红外通道的顶层大气亮温计算TRI，与LST及其他干旱指数比较，监测澳大利亚麦带2015–2019年农业干旱。",
-      "input": "Himawari-8顶层大气亮温（约11和12 μm双分裂窗通道）、LST、降水/土壤水分及植被指数。",
+      "input": "Himawari-8 AHI第14/15热红外通道亮温（11.2/12.4 μm）、LST；降水/根区土壤水分及植被指数作比较。",
       "output": "TRI_BT/TRI_LST干旱指数、空间干旱图、与官方干旱指数和小麦产量的相关性。",
-      "mechanism": "从双通道亮温直接计算TRI，并与TCI、VHI、ΔfRET及PCI/SMCI比较；利用时序相关评估提前预警。",
-      "readingNote": "UTS机构开放PDF摘要与数据/结果局部、DOI书目核验；研究使用双热红外通道，按多光谱遥感关联收录，不标为光学高光谱；未阅读全文。",
+      "mechanism": "两小时晨间窗口中近似固定发射率/水汽相关项，以分裂窗表达式的时间差估计温升斜率，再做月合成与跨年极值归一化；TRI_BT和TRI_LST分别由亮温和LST求得。",
+      "readingNote": "UTS机构开放PDF摘要与数据/结果局部、DOI书目核验；研究使用双热红外通道，按多光谱遥感关联收录，不标为光学高光谱；未阅读全文。 本轮取得Griffith仓储正式VoR（附封面），补读2.2与3.1.1节；第14/15通道、差分近似及TRI方向已核，未标完整全文。",
       "paper": "https://opus.lib.uts.edu.au/bitstream/10453/149678/2/1-s2.0-S0303243420301434-main.pdf",
       "verifiedAt": "2026-10-10",
       "verificationLevel": "primary_pdf_abstract_and_selected_pages",
@@ -75793,7 +75793,7 @@
         "datasets": "Himawari-8 2015–2019澳大利亚麦带观测；对照PCI、SMCI、VCI及小麦产量。完整样本、预处理和划分待全文核验。",
         "experimentSetting": "摘要、数据设置和结果局部已核；完整参数、统计检验、误差与复现实验待全文。",
         "conclusions": "公开摘要报告TRI_BT/TRI_LST与官方干旱指标一致性较好，并可较植被绿度提前约一个月反映干旱变化；不外推到其他区域或传感器。",
-        "limitations": "完整正式全文复核、双通道校准细节、代码/数据协议和版本差异仍待核验。",
+        "limitations": "正式VoR的方法指定局部已核；完整结果/讨论、异常值、气象假设跨区域适用性与复现协议仍待核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -75820,6 +75820,15 @@
             "supports": [
               "正式DOI和出版记录。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstreams/04668ca1-6e0d-4e08-b083-3e9280c1b4a9/download",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith正式VoR指定方法段",
+            "supports": [
+              "2.2明确AHI14/15、11.2/12.4 μm；3.1.1式6差分和式12归一化。",
+              "日出后1.5–3.5小时；至少3有效点且R²>0.7；低TRI表示更干。"
+            ]
           }
         ],
         "versions": [
@@ -75830,6 +75839,13 @@
             "doi": "10.1016/j.jag.2020.102153",
             "year": 2020,
             "relation": "正式记录；摘要和局部原文已核，未阅读全文。"
+          },
+          {
+            "id": "zhou-egu-himawari-tri-2019-related-abstract",
+            "type": "相关会议摘要",
+            "url": "https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf",
+            "year": 2019,
+            "relation": "EGU2019-2831使用2015–2018数据、五作者；期刊2015–2019、八作者。主题相关，未核正式扩展声明，分别保留。"
           }
         ],
         "methodFamilyId": "himawari-thermal-drought-monitoring"
@@ -76076,6 +76092,76 @@
           }
         ],
         "methodFamilyId": "mtsat2-thermal-drought-monitoring"
+      }
+    },
+    {
+      "id": "zhou-egu-himawari-tri-abstract-2019",
+      "shortTitle": "EGU2019 Himawari TRI abstract",
+      "title": "Monitoring agricultural drought in Australia using brightness temperature observed by geostationary satellite",
+      "authors": "Tian Hu, Albert van Dijk, Zhihong Xu, Luigi Renzullo, Jun Zhou",
+      "year": 2019,
+      "venue": "EGU General Assembly",
+      "publicationName": "Geophysical Research Abstracts",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "2019 EGU会议摘要；Himawari-8热红外干旱指数，非独立完整期刊论文。",
+      "tags": [],
+      "summary": "会议摘要提出晨间温升指数TRI，以Himawari-8观测评估澳大利亚麦带干旱。",
+      "input": "Himawari-8分裂窗亮温及LST产品；2015–2018年澳大利亚麦带。摘要未列具体通道编号。",
+      "output": "TRI干旱时空分布及与降水、土壤水分、植被和小麦产量的比较。",
+      "mechanism": "利用日出后1.5–3.5小时近线性温升构造异常指数；摘要同时提亮温直接计算与LST产品，不补造完整公式。",
+      "readingNote": "EGU2019-2831一页原始会议摘要和Griffith作者归属已核；摘要阅读状态不表示完整研究论文全文已核。与2020 Himawari期刊稿主题相关，正式扩展声明未核，不混用样本期和作者列表。",
+      "paper": "https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "primary_conference_abstract",
+      "citation": "@misc{zhou_egu2019_2831,\n  title = {Monitoring agricultural drought in Australia using brightness temperature observed by geostationary satellite},\n  author = {Tian Hu and Albert van Dijk and Zhihong Xu and Luigi Renzullo and Jun Zhou},\n  year = {2019},\n  howpublished = {Geophysical Research Abstracts, Vol. 21, EGU2019-2831, EGU General Assembly conference abstract},\n  url = {https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf}\n}",
+      "library": {
+        "categoryIds": [
+          "crop-stress-monitoring",
+          "agriculture-phenotyping"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "分裂窗热红外多光谱关联；会议摘要，不是高光谱研究输入。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用地球静止卫星双热红外通道提高农业干旱的及时监测和早期预警？",
+        "datasets": "Himawari-8 2015–2018澳大利亚麦带；对照数据及小麦产量仅摘要说明。",
+        "experimentSetting": "仅一页会议摘要，无完整方法、样本或参数表；不借用2020期刊设置。",
+        "conclusions": "原摘要报告TRI具有农业干旱早期预警潜力；具体统计和完整验证待正式研究。",
+        "limitations": "仅会议摘要；亮温与LST流程细节、具体通道、版本扩展及复现资源未核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "EGU官方会议摘要",
+            "supports": [
+              "五位作者及Jun Zhou的Griffith机构；正式2019会议摘要编号。",
+              "Himawari-8与2015–2018时期；热红外TRI任务。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "zhou-egu-himawari-tri-abstract-2019-abstract",
+            "type": "会议摘要",
+            "url": "https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf",
+            "year": 2019,
+            "relation": "一页原摘要；非完整会议研究论文。"
+          }
+        ],
+        "methodFamilyId": "himawari-thermal-drought-monitoring"
+      },
+      "publicationTrack": "EGU2019-2831 · 会议摘要",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "官方一页纯文字会议摘要，无独立框架图；不代表2020期刊无图。",
+        "sourceUrl": "https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf",
+        "checkedAt": "2026-10-10"
       }
     }
   ],
@@ -79147,7 +79233,8 @@
         "sierra-biomass-stress",
         "vegetation-microseepage-oilgas-whispers-2014",
         "zhou-himawari-thermal-drought-2020",
-        "zhou-mtsat2-tri-2020"
+        "zhou-mtsat2-tri-2020",
+        "zhou-egu-himawari-tri-abstract-2019"
       ],
       "history": [
         {
@@ -80496,7 +80583,8 @@
         "zhou-scholar-texture-and-shape-features-for-grass-weed--2019",
         "jun-zhou-dblp-whispers-weed-2019",
         "zhou-himawari-thermal-drought-2020",
-        "zhou-mtsat2-tri-2020"
+        "zhou-mtsat2-tri-2020",
+        "zhou-egu-himawari-tri-abstract-2019"
       ],
       "history": [
         {
