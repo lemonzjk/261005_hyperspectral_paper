@@ -69286,7 +69286,7 @@
       "input": "高光谱像元光谱。",
       "output": "端元光谱与丰度分布。",
       "mechanism": "基于线性光谱混合模型，交替 End-Net 和 Abun-Net 展开 Lp-NMF 优化，融入非负性、稀疏性等先验。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。 本轮补读作者稿II-C、III-B及训练损失指定局部并审代码包；20轮CPU训练完成但原结果打印失败，另从checkpoint核输出，未完成性能复现。",
       "paper": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
       "verifiedAt": "2026-10-10",
       "verificationLevel": "abstract_verified",
@@ -69304,8 +69304,10 @@
         "datasets": "作者公开 PDF 摘要报告合成与真实 HSI 实验；具体数据集、约束设置和指标待全文核验。",
         "experimentSetting": "观察光谱输入后交替估计端元和丰度，并与多种解混方法比较。",
         "conclusions": "作者摘要报告在合成和真实数据上优于多种方法；逐项性能、消融和泛化待全文核验。",
-        "limitations": "公开 PDF 为作者版本；正式出版版本差异、代码许可和完整实验边界待核验。",
-        "dataLinks": [],
+        "limitations": "公开 PDF 为作者版本；正式出版版本差异、代码许可和完整实验边界待核验。 当前代码包更新顺序、固定初始丰度右乘项、损失缩放与论文指定公式不同；归一化加1e-4不严格和为1。初始化对齐使用参考端元，需单列；NumPy标量打印失败。",
+        "dataLinks": [
+          "https://www.xiongfuli.com/cv/code/SNMF.zip"
+        ],
         "evidence": [
           {
             "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
@@ -69324,6 +69326,15 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/code/SNMF.zip",
+            "checkedAt": "2026-10-10",
+            "level": "author_code_static_audit_and_partial_cpu_run",
+            "supports": [
+              "原SNMF.py与UnmixingUtils.py、合成数据与索引文件；归档哈希固定。",
+              "20轮CPU训练及checkpoint前向核验，不等于论文结果复现。"
+            ]
           }
         ],
         "versions": [
@@ -69334,11 +69345,19 @@
             "doi": "10.1109/tgrs.2021.3081177",
             "year": 2022,
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+          },
+          {
+            "id": "zhou-80-hsi-2022-author-2021",
+            "type": "作者公开稿",
+            "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
+            "year": 2021,
+            "relation": "16页作者稿，指定方法段补读；正式期刊年份2022，未核全部版本差异。"
           }
         ],
         "methodFamilyId": "zhou-2022-title-80"
       },
-      "citation": "@article{zhou_80_hsi_2022,\n  title = {SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Shuyin Tao and Jianfeng Lu and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3081177}\n}\n"
+      "citation": "@article{zhou_80_hsi_2022,\n  title = {SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Shuyin Tao and Jianfeng Lu and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3081177}\n}\n",
+      "code": "https://www.xiongfuli.com/cv/code/SNMF.zip"
     },
     {
       "id": "zhou-81-hsi-2022",
@@ -73559,7 +73578,7 @@
         "datasets": "USGS六端元合成64×64；Jasper Ridge AVIRIS子图100×100×198、树/水/土/路四端元。",
         "experimentSetting": "作者稿两层/1000迭代/Adam全批次；合成编码/解码学习率1e-4/5e-4，真实均1e-6。SNR25dB做样本量试验，随后1000训练像元；其他学习基线全像元。",
         "conclusions": "Jasper平均SAD：NMF-SAE0.0671、MNN-BU0.0726；树/土及路类别并非NMF-SAE均最优。不据平均或曲线外推普遍优势。",
-        "limitations": "作者公开稿已全文阅读，出版社逐字差异、代码、零列数值保护、随机重复、裁剪坐标和参考丰度来源未核；原表标准差百分号不擅自改单位。",
+        "limitations": "作者公开稿已全文阅读，出版社逐字差异、代码、零列数值保护、随机重复、裁剪坐标和参考丰度来源未核；原表标准差百分号不擅自改单位。 作者页HTML注释有未指明的final version错误提示；不是正式勘误，不据此推定具体错误或修正，出版社核验仍待。",
         "dataLinks": [],
         "evidence": [
           {
@@ -73587,6 +73606,14 @@
             "supports": [
               "五页完整正文与参考文献、Figure1和Table1；双分支更新和重建训练。",
               "3.1–3.3网络设置、USGS合成/Jasper数据及平均SAD；仍未复现。"
+            ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/",
+            "checkedAt": "2026-10-10",
+            "level": "author_page_html_comment",
+            "supports": [
+              "NMF-SAE被注释条目含未具体说明的final version错误提示；没有正式修正内容。"
             ]
           }
         ],

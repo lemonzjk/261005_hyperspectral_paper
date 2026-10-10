@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-10",
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "cvxpy": "1.9.3"
+  },
+  "device": "CPU",
+  "originalCommand": "python SNMF.py --end_epoch 20",
+  "sourceCodeModified": false,
+  "originalExitStatus": 1,
+  "originalFailure": "TypeError: only 0-dimensional arrays can be converted to Python scalars",
+  "completedTrainingEpochs": 20,
+  "evaluation": "从20轮本地生成checkpoint重新前向；仅报告转换meanDistance.item()，未改算法。",
+  "data": {
+    "X": [
+      224,
+      4096
+    ],
+    "A": [
+      224,
+      6
+    ],
+    "s": [
+      4096,
+      6
+    ],
+    "snrDb": 25,
+    "trainingPixels": 500,
+    "layers": 9,
+    "initialization": "原入口：10组VCA结果按参考A匹配后平均，FCLS初始丰度用作batch_label；不是丰度真值监督损失。"
+  },
+  "checkpointMetrics": {
+    "SAD": 0.02019944808603977,
+    "RMSE": 0.055463326037419096,
+    "endmemberShape": [
+      224,
+      6
+    ],
+    "abundanceShape": [
+      6,
+      4096
+    ],
+    "finite": true,
+    "abundanceColumnSumMin": 0.9998913407325745,
+    "abundanceColumnSumMax": 0.999925434589386
+  },
+  "normalizationProbe": {
+    "unitColumnAfterNormalization": 0.9998999834060669,
+    "zeroColumnAfterNormalization": 0.0,
+    "explanation": "原函数分母加1e-4；列和不是严格1，零列输出0。"
+  },
+  "boundary": "20轮CPU运行核验与代码数学探针；未运行原默认500轮、全部噪声/数据集与重复实验，结果不是论文复现或公平基线。"
+}

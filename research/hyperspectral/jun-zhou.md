@@ -26,7 +26,7 @@
 
 证据见 `sources/jun-zhou-dblp-remaining-primary-abstracts-2026-10-10.json`、`jun-zhou-dblp-remaining-repository-2026-10-10.json`、`jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json`。主筛选表包含所有365条及明确pending状态；来源差集、当前机构目录与已收录论文正式全文、实验和代码尚未全部闭环。
 
-新增非关键词Scholar差集审计209条：187条暂排除（167条交叉匹配加20条原始来源补核），8条匹配目录，新增3条多光谱关联（含1会议摘要），11条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
+新增非关键词Scholar差集审计209条：188条暂排除（167条交叉匹配加21条原始来源补核），8条匹配目录，新增3条多光谱关联（含1会议摘要），10条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
 
 两篇新增分别是2019 MYD21方向发射率与向上长波辐射、2020 MTSAT-2温度上升指数TRI干旱监测。它们与已有MODIS分裂窗LST及Himawari亮温论文的DOI、任务和数据不同；不混用波段或实验。MTSAT正式年份2020，勘误 DOI `10.1016/j.rse.2020.111661` 修正图11小麦产量单位为t/ha。M2-Net、2022稳健2DSVD与CrowdMLP按原稿实验暂排除；CrowdMLP预印本机构不列Griffith，同名身份及正式版差异另留记录。源证据见 `sources/jun-zhou-thermal-scholar-followup-2026-10-10.json` 与逐项DBLP清单。
 
@@ -281,3 +281,11 @@ Griffith Himawari原件封面为正式VoR，已下载并补读2.2及3.1.1节，�
 新增3条Scholar差集范围排除：MMAsia 2021整本论文集、2025 MBPRFW小样本分类、2024宫颈细胞预印本。前者由Crossref的proceedings类型与ISBN确认，不作为独立论文；MBPRFW由Springer数据可用性与Griffith作者机构确认，使用Mini-ImageNet/CIFAR-FS/FC-100/CUB；宫颈原始v1局部确认TCT扫描图像与文本诊断知识，不自动把多模态当多光谱。现在Scholar209差集187暂排/8重/3入/11待。近题2024 MBPRFW会议版不自动合并；匿名ICLR2026解释性稿PDF403，不据同题名确认作者或正式接收，仍待核。证据见 `sources/jun-zhou-generic-scholar-scope-followup-2026-10-10.json`。
 
 NMF-SAE取得五页作者公开稿，完整阅读方法、实验、结论和参考文献；确认共享参数端元/丰度双分支、VCA/FCLS初始化、重建训练及USGS/Jasper设置。Figure1保存为原图，当前330张。目录阅读状态更新为作者稿全文，当前作者185记录为182摘要级/3全文级；未逐字比较出版社版、未复现。新增[学习笔记](jun-zhou-nmf-sae-note.md)区分L1常数、阈值后归一化与精确约束近端，保留零列、标准差百分号和随机重复未明等问题；平均SAD改善不称各类最优。访问SHA256及完整阅读覆盖见 `sources/jun-zhou-nmf-sae-full-reading-2026-10-10.json`。
+
+## DASFAA题名修复与SNMF代码核验
+
+Scholar将DASFAA2019原稿顶部会议信息误作题名。共同作者目录第122项、原稿首屏八作者/Griffith机构和真实题名确认《Efficient Local Search for Minimum Dominating Sets in Large Graphs》，DOI10.1007/978-3-030-18579-4_13；与已排除DBLP原项匹配。原稿输入普通图与Network Repository大图，不把它误认整本会议或光谱论文。原始Scholar题名保留，差集现188暂排/8重/3入/10待；DBLP决定数不变。证据见 `sources/jun-zhou-dasfaa-title-repair-2026-10-10.json`。
+
+共同作者Xiong的Selected Publications读取24条含Jun Zhou记录，保存为来源核对入口，不称作者全集。SNMF取得16页作者稿及公开ZIP（65个有效文件），保存原代码与归档哈希/文件清单。指定方法段和代码对照、20轮CPU短运行及原结果打印失败均已记录；原训练checkpoint前向输出有限，但不是论文性能复现。阅读状态保留摘要级，完整全文、全部实验与版本差异仍待。详见[SNMF代码笔记](jun-zhou-snmf-code-note.md)及 `sources/jun-zhou-snmf-smoke-2026-10-10.json`。
+
+NMF-SAE作者页HTML注释另有未具体说明的final version错误提示；它不是正式勘误，不能据此定位或修正数学错误。五页作者稿全文状态不变，正式出版社版本和勘误仍待核；线索见同批访问记录。
