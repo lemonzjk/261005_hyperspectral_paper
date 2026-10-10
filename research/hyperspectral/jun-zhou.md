@@ -21,7 +21,7 @@
 
 用户要求继续完成论文调研，不需要新增学习笔记。当前重点是来源查漏、作者身份、光谱输入、正式书目与版本关系；全文、代码及性能复现的阅读状态另行记录，不以笔记数量衡量目录完成。
 
-当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；174条摘要级、14条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
+当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；173条摘要级、15条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
 
 本轮补入EAAHNet：出版社作者登记、原文首页均确认Jun Zhou属于Griffith；保留DBLP同名0011分配差异，避免错误排除。原文IV-A明确Potsdam红/绿/近红外输入，归多光谱关联；Vaihingen写RGB，实际数据版本和实现仍待核。ComicLib正式节目确认Griffith身份，漫画草图任务按范围暂排，未标全文核验。
 
@@ -554,3 +554,24 @@ Table1列26个数据集的31个子集，共14,959张，15–420波段、377–17
 当前作者分支仍afeb3490a52998fe81654e365c8432b0dbdb8b02，完整递归树8项/7 blobs逐路径git SHA与旧审计一致，README字节哈希相同。只有README、MIT、2图片及3结果ZIP；训练/测试路径、配置和模型权重未在树中。ZIP35/87/117文本成员与抽样来自2026-10-10旧审计，本轮未重取或复算指标，不能当原视频/运行代码。MIT只属仓库，不转移原数据、论文或上游权重许可。既有项目Overview人工比对v1第3页Figure2，保留原图字节/来源，补图号页码；新保存第4页完整Figure3(a,b)，无重绘。没有新增学习笔记。
 
 8份原始响应与2份派生全文/表审计；既有1篇升级，不新增论文、类别、作者查询或年度扫描。当前757目录、周峻188（174摘要级/14全文级）、214三维、304标签（任务100/方法181/应用23）、341原图；395分类确认（审计340）、343暂定、19待。保留531arXiv决定、八pending及旧mapping-only历史，追加本篇fullTextFollowup。其余作者原文、身份/姓名变体/多源差集与全领域顶会顶刊/arXiv覆盖仍未完成。证据见 [E2E-MPT全文、表格及资源审计](sources/jun-zhou-e2empt-v1-full-reading-2026-10-11.json)。
+
+
+## MHT材料跟踪v5全文、基准及作者实现续核（2026-10-11）
+
+既有TIP2020材料跟踪论文关联arXiv1812.04179v5通读12页，含Appendix A、公式1–16、表I–IV、图1–10图注/图例和63参考条目；未逐篇读所引作品。正式登记题名不含Benchmark and Algorithms，TIP29:3719–3733为15页；IEEE PDF返回418、页面202空，Griffith完整一页bundles仅SWORD/130字节XML元数据，无正文PDF。本轮全文状态明确限定v5，不当正式15页或v1–v4已读。原站五版日期补齐；Crossref目标精确ORCID、Griffith同题/DOI和共同作者主页支持身份/版本关联，不新增论文。
+
+v5数据为35组HSI与35组近视点RGB视频，平均约500帧、25FPS；相机up to180 cubes/s不能当实际采样率。16波段名义470–620nm、512×256；RGB与HSI各自标单目标直立bbox，作者报告三志愿者含一专家检查，不把两模态框直接互用。附录是暗扣除/相机谱校正矩阵，首帧人工匹配的几何矩阵变换后续RGB；CIE2006 10deg/.1nm CMF→XYZ/sRGB再色迁移用于FCI。没有40训练序列声明、固定train/test或离线谱库/测试隔离证据，不能用E2E-MPT2026所报HOTC2020的40/35回填。原始视频、实际波长与校准矩阵未取得。表IV 35名字与表I属性计数有差异：MB4/5、OCC15/14、OPR18/19、BC18/17；Player的DFF原拼写不改，若认作DEF才能合该项7。
+
+方法以SSHMG空间/波段多维梯度和外部解混丰度两组材料表示驱动BACF：z=4立方、9空间/4光谱角bin、2×2 block L2/.2截断/重归一，再沿光谱拼接；第三维是波长，不是场景几何。离线VCA/Kmeans谱库、首框CLSUnSAL行组稀疏、按行和top-R/HySime选端元、后续SPU丰度，端元固定。在线可靠性用各组框与最终预测框的IoU/中心距离和位移平滑，EMAη=.0023；不是用每帧GT指导可靠性，也没有端到端CNN材料模型，后者只在future work。v5 Windows/i7-7800X3.50GHz/128GB RAM，OPE首帧GT初框、DP20像素/success AUC，余参数承BACF，无多seed/置信区间或完整实测FPS表。
+
+Fig5 MHT DP/AUC .878/.612，SSHMG .860/.593，BHOG .851/.585，HOG .835/.589，单丰度 .626/.349，raw spectrum .545/.273。比BACF RGB AUC .540增7.2百分点、比FCI .578增3.4百分点；RGB C-COT .617高于MHT HSI .612，不宣称超过所有深度方法。两模态实际采集/独立标注不构成仅输入信息量变化的严格控制实验。表III数值/表题第一是IPR/OPR/DEF/BC/OV五项，正文却写IPR/OPR/SV/DEF/BC；SV .609低于C-COT .613，不照正文扩大结论。IV .490非最佳，作者解释端元固定且与照度相关。E2E-MPT后续表中MHT .880/.593与本文v5 .878/.612另留，实际正式版/成员/评价差异待核；没有材料丰度真值质量验证。
+
+共同作者主页精确条目链接MHT_release.zip，取得完整153成员/CRC与每成员SHA256。去除目录、mac元数据和.DS_Store为75载荷文件：50 MATLAB、7 C/C++、15 MEX、2 DLL、1 MAT；不是75源码已全部读。通读19个关键MATLAB文件、另3局部选读，没有MATLAB/Octave或真实视频运行。实际lib为16×300 double，MAT header写2020-05-07仅文件时间，不推公开发布日期或300真实材料。默认材料+SSHMG、208维SSHMG、5尺度1.01、search scale5、ADMM2轮/.01、Newton50；CLSUnSAL active lambda3e−4/200迭代/TOL1e−6且POSITIVITY/ADDONE=yes，不能把无效lambda1e−3注释当使用值。
+
+原式/实现分别留证：Eq5把min下标写X而观测已给定，只有S≥0，代码另加和一；Eq1比值arctan和[-1,0,1]描述，代码gradient/atan2及偏移、gradientHist最近方向+空间soft bin不同；Eq7/8的sqrt(D)在Eq9乘子更新缺项，分母Tμ的T未定义，未当已独立证明的正确闭式。simplex_project原注释明说非所有情况保证最优；getDymaticMaterial调用未随包提供的bsst，但默认未启用，不把它写作动态端元主方法。
+
+代码Demo同为35序列但不是v5同一名单：规范board1→board和pedestrain→pedestrian后，表IV有board2/kangaroo2/toy3，Demo对应rider1/rider2/trucker。固定4×4/16的X2Cube注释1088×2048输入、256×512×14输出与实际reshape不符，裁行语句已注释，实际输入须取载荷。hyper2im显示为1/8/16波段标准化，非附录CIE转换；不推RGB基线生成也如此。构库函数VCA返回band×端元、拼接后kmeans直接按行未转置，不能据其证明已给16×300库可重生。MHT计时排除读图/转换/归一及循环前库选择，FPS以结束loop_frame=N+1计；Demo FPSs标量覆盖而非逐视频数组。静态口径缺口不替代真实FPS复算。总代码无许可文件，CLSUnSAL称GPL2.0，Piotr工具称Simplified BSD且所指bsd.txt未随包提供，许可分开记录。
+
+HOT2020官网有两套数据入口及Evaluation.zip/X2Cube.zip/HyperTools.py。本轮只取得公共工具、核完整CRC及关键源，不取完整视频。MATLAB评测DP严格<阈值、IoU≥阈值，AUC为.02:.02:1的均值，NaN剔除改变分母，注释中心输入与实际xywh转换不同。当前Python helper在NumPy2.5.1合成数组探针：VIS4×4/16转换通过独立reshape对照；NIR5×5/25因输出固定//4报ValueError；np.float导致compile_results报AttributeError；相同x/y=0框success AUC0、正坐标完美框AUC1。仅AST中原函数定义在隔离NumPy空间执行，省略未使用pandas导入，原文件未修改；这不是MHT运行或真实标注有零坐标/指标错误证明。当前工具不自动转作2019实际实现。
+
+保存v5第3页Figure2与第4页Figure3完整原方法裁图，无重绘；图号明确版本。15份原始响应（13个200、202空与418各一）及5份派生全文/表/源码/工具审计，不新增学习笔记。补必要“相关滤波跟踪”方法标签和既有纹理/给定谱库稀疏回归，仅迁移本篇。当前757总库、188作者（173摘要/15全文级）、214三维、305标签（任务100/方法182/应用23）、343原图；395分类确认（审计341）、343暂定、19待。531arXiv及八待核、旧来源映射批次不改，两个既有survey候选只追加v5全文续核。作者全集与全领域顶会顶刊/arXiv覆盖仍未完成。证据见 [MHT v5全文、协议与作者实现审计](sources/jun-zhou-mht-v5-full-reading-2026-10-11.json)。

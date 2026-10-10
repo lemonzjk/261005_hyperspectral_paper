@@ -1,0 +1,43 @@
+{
+  "sourceURL": "https://www.hsitracking.com/assets/code/HyperTools.py",
+  "sourceSHA256": "e55f2b86286934dafdd146ad038d8695eff33044ee312d3bba333c412c3d5f3a",
+  "numpyVersion": "2.5.1",
+  "method": "Compile only unchanged function definitions from the AST into an isolated namespace with local NumPy; omit pandas import because not used by these functions. Original source bytes unchanged.",
+  "boundary": "合成小数组工具探针；没有MATLAB/Octave或真实视频，非MHT跟踪/数据集指标复现。坐标0案例不证明真实标注包含0。",
+  "probes": [
+    {
+      "case": "VIS 8x12 raster, 4x4 cells/16 bands",
+      "outcome": "pass",
+      "outputShape": [
+        2,
+        3,
+        16
+      ],
+      "matchesIndependentRasterReshape": true
+    },
+    {
+      "case": "NIR 30x40 raster, 5x5 cells/25 bands",
+      "outcome": "failure",
+      "errorType": "ValueError",
+      "error": "cannot reshape array of size 1200 into shape (7,10,25)"
+    },
+    {
+      "case": "zero-origin perfect bbox",
+      "reportedAUC": 0.0,
+      "expectedIdealAUC": 1.0,
+      "outcome": "failure"
+    },
+    {
+      "case": "positive-origin perfect bbox",
+      "reportedAUC": 1.0,
+      "expectedIdealAUC": 1.0,
+      "outcome": "pass"
+    },
+    {
+      "case": "compile_results, perfect single-frame bbox",
+      "outcome": "failure",
+      "errorType": "AttributeError",
+      "error": "module 'numpy' has no attribute 'float'.\n`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.\nThe aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:\n    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations"
+    }
+  ]
+}

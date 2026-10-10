@@ -1,0 +1,168 @@
+{
+  "sources": [
+    "https://www.hsitracking.com/assets/code/Evaluation.zip",
+    "https://www.hsitracking.com/assets/code/X2Cube.zip"
+  ],
+  "archives": [
+    {
+      "archive": "evaluation",
+      "memberCount": 3,
+      "CRCVerified": true,
+      "members": [
+        {
+          "path": "Evaluation/computeMetric.m",
+          "bytes": 731,
+          "sha256": "0a4fa0875c657f99ad70d65c30cf35952fde159ca1a9d6bb58d06b1c88c10ea0"
+        },
+        {
+          "path": "Evaluation/compute_performance_measures.m",
+          "bytes": 3093,
+          "sha256": "f55753082e6eab28a13dbe45886594c327f26c95ebd6e462210694263a3afad0"
+        },
+        {
+          "path": "Evaluation/",
+          "bytes": 0,
+          "sha256": null
+        }
+      ],
+      "selectedSources": [
+        {
+          "path": "Evaluation/computeMetric.m",
+          "text": "function [dp,op,cle,auc,dp_20]= computeMetric(pd_boxes,ground_truth)\r\n% % %%%%%%%%%%%%%%\r\n% pd_boxes: resulted bouding boxes\r\n% ground_truth: reference  bouding boxes\r\n% dp: distance precision;\r\n% op: overlapd precision;\r\n% auc: area under curve of op;\r\n% dp_20: distance precision @ 20 pixel;\r\n% % %%%\r\ndistance_precision_threshold=1:50;\r\nPASCAL_threshold=0.02:0.02:1;\r\nop=zeros(1,length(PASCAL_threshold));\r\ncle=zeros(1,length(PASCAL_threshold));\r\ndp=zeros(1,length(distance_precision_threshold));\r\nfor j=1:length(distance_precision_threshold)\r\n    [dp(j),op(j),cle(j)]= ...\r\n        compute_performance_measures(pd_boxes, ground_truth,distance_precision_threshold(j),PASCAL_threshold(j));\r\nend\r\nauc=mean(op);\r\ndp_20=dp(20);\r\nend"
+        },
+        {
+          "path": "Evaluation/compute_performance_measures.m",
+          "text": "function [distance_precision, PASCAL_precision, average_center_location_error] = ...\r\n    compute_performance_measures(positions, ground_truth, distance_precision_threshold, PASCAL_threshold)\r\n\r\n% [distance_precision, PASCAL_precision, average_center_location_error] = ...\r\n%    compute_performance_measures(positions, ground_truth, distance_precision_threshold, PASCAL_threshold)\r\n%\r\n% For the given tracker output positions and ground truth it computes the:\r\n% * Distance Precision at the specified threshold (20 pixels as default if\r\n% omitted)\r\n% * PASCAL Precision at the specified threshold (0.5 as default if omitted)\r\n% * Average Center Location error (CLE).\r\n%\r\n% The tracker positions and ground truth must be Nx4-matrices where N is\r\n% the number of time steps in the tracking. Each row has to be on the form\r\n% [c1, c2, s1, s2] where (c1, c2) is the center coordinate and s1 and s2 \r\n% are the size in the first and second dimension respectively (the order of \r\n% x and y does not matter here).\r\n\r\nif nargin < 3 || isempty(distance_precision_threshold)\r\n    distance_precision_threshold = 20;\r\nend\r\nif nargin < 4 || isempty(PASCAL_threshold)\r\n    PASCAL_threshold = 0.5;\r\nend\r\n\r\nif size(positions,1) ~= size(ground_truth,1),\r\n    disp('Could not calculate precisions, because the number of ground')\r\n    disp('truth frames does not match the number of tracked frames.')\r\n    return\r\nend\r\n\r\nground_truth = [ground_truth(:,1:2) + (ground_truth(:,3:4) - 1) / 2 , ground_truth(:,3:4)];\r\npositions = [positions(:,1:2) + (positions(:,3:4) - 1) / 2 , positions(:,3:4)];\r\n\r\n%calculate distances to ground truth over all frames\r\ndistances = sqrt((positions(:,1) - ground_truth(:,1)).^2 + ...\r\n    (positions(:,2) - ground_truth(:,2)).^2);\r\ndistances(isnan(distances)) = [];\r\n\r\n%calculate distance precision\r\ndistance_precision = nnz(distances < distance_precision_threshold) / numel(distances);\r\n\r\n%calculate average center location error (CLE)\r\naverage_center_location_error = mean(distances);\r\n\r\n%calculate the overlap in each dimension\r\noverlap_height = min(positions(:,1) + positions(:,3)/2, ground_truth(:,1) + ground_truth(:,3)/2) ...\r\n    - max(positions(:,1) - positions(:,3)/2, ground_truth(:,1) - ground_truth(:,3)/2);\r\noverlap_width = min(positions(:,2) + positions(:,4)/2, ground_truth(:,2) + ground_truth(:,4)/2) ...\r\n    - max(positions(:,2) - positions(:,4)/2, ground_truth(:,2) - ground_truth(:,4)/2);\r\n\r\n% if no overlap, set to zero\r\noverlap_height(overlap_height < 0) = 0;\r\noverlap_width(overlap_width < 0) = 0;\r\n\r\n% remove NaN values (should not exist any)\r\nvalid_ind = ~isnan(overlap_height) & ~isnan(overlap_width);\r\n\r\n% calculate area\r\noverlap_area = overlap_height(valid_ind) .* overlap_width(valid_ind);\r\ntracked_area = positions(valid_ind,3) .* positions(valid_ind,4);\r\nground_truth_area = ground_truth(valid_ind,3) .* ground_truth(valid_ind,4);\r\n\r\n% calculate PASCAL overlaps\r\noverlaps = overlap_area ./ (tracked_area + ground_truth_area - overlap_area);\r\n\r\n% calculate PASCAL precision\r\nPASCAL_precision = nnz(overlaps >= PASCAL_threshold) / numel(overlaps);\r\nend"
+        }
+      ]
+    },
+    {
+      "archive": "x2cube",
+      "memberCount": 20,
+      "CRCVerified": true,
+      "members": [
+        {
+          "path": "X2Cube/",
+          "bytes": 0,
+          "sha256": null
+        },
+        {
+          "path": "__MACOSX/._X2Cube",
+          "bytes": 312,
+          "sha256": "90ffb759cffcf986df713306667ad5e1d15797e03657d3d007876fda5ea7fc5f"
+        },
+        {
+          "path": "X2Cube/col2imstep.mexw64",
+          "bytes": 12800,
+          "sha256": "307d38bf70035c8c489380aea929520e0ff3a113d354e0252d13aea02bd87223"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._col2imstep.mexw64",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/col2imstep.c",
+          "bytes": 3923,
+          "sha256": "fcafa0fed1c631adbcee81def5038f344752d35dd8a6cc05c43b785952c18717"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._col2imstep.c",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/col2imstep.m",
+          "bytes": 1000,
+          "sha256": "6337966598ce5a7e00ab7903d4f49780524531332da53f98c8f5f1f0c21c49e9"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._col2imstep.m",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/im2colstep.mexmaci64",
+          "bytes": 9000,
+          "sha256": "532ed648db4f4f8523b0715207cc0383a2857eb4f8b5931a1373f367ec0f81eb"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._im2colstep.mexmaci64",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/im2colstep.m",
+          "bytes": 1372,
+          "sha256": "e6f8150ff6ff7d647ebf29298d55fdf54352672d124bd38877faa367e0635f67"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._im2colstep.m",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/im2colstep.c",
+          "bytes": 3388,
+          "sha256": "c57c44af9c631585fe7e18a81d4d561187cf70524a5f670294a70e1c7d6dfeba"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._im2colstep.c",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/col2imstep.mexmaci64",
+          "bytes": 13036,
+          "sha256": "82d02fc4ed4cd864cbc0343ee65cc0d2e27a259d47e66ecbccbde415956c5ed6"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._col2imstep.mexmaci64",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/im2colstep.mexw64",
+          "bytes": 11776,
+          "sha256": "00babc7a267b1d737d286065b9c8732d830f6d749c0ca903e10e9c75ab594ef7"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._im2colstep.mexw64",
+          "bytes": 212,
+          "sha256": "72d508b58d66b521facd7860ca9bf88400619cfe503f0e985dcf7711b0e82d5c"
+        },
+        {
+          "path": "X2Cube/X2Cube.m",
+          "bytes": 523,
+          "sha256": "30509be4e1410ceae42d51bbee4f7fe0d531a30676ed5fd68a6850dbcc34b72c"
+        },
+        {
+          "path": "__MACOSX/X2Cube/._X2Cube.m",
+          "bytes": 368,
+          "sha256": "891651ba47736efcaab128d19c0c14f16dc6701980e43d7ebcb6f4e218898502"
+        }
+      ],
+      "selectedSources": [
+        {
+          "path": "X2Cube/col2imstep.m",
+          "text": "%COL2IMSTEP Rearrange matrix columns into blocks.\n%  A = COL2IMSTEP(B,[MM NN],[N1 N2]) rearranges the columns of B into\n%  sliding N1-by-N2 blocks producing the matrix A of size MM-by-NN. B is\n%  usually the result of calling IM2COLSTEP(...) with a stepsize of 1, or\n%  using Matlab's IM2COL(..,'sliding'). Overlapping blocks are summed in A.\n%\n%  A = COL2IMSTEP(B,[MM NN],[N1 N2],[S1 S2]) arranges the blocks in A with\n%  a step size of (S1,S2) between them. The first block is at A(1:N1,1:N2),\n%  and the rest are at A((1:N1)+i*S1,(1:N2)+j*S2). Overlapping blocks are\n%  summed in A. Note that B is usually the result of calling\n%  IM2COLSTEP(...) with a stepsize of [S1 S2].\n%\n%  A = IM2COLSTEP(B,[MM NN KK],[N1 N2 N3],[S1 S2 S3]) generates a 3-D\n%  output matrix A. The step size [S1 S2 S3] may be ommitted, and defaults\n%  to [1 1 1].\n%\n%  See also IM2COLSTEP, IM2COL, COUNTCOVER.\n\n\n%  Ron Rubinstein\n%  Computer Science Department\n%  Technion, Haifa 32000 Israel\n%  ronrubin@cs\n%\n%  August 2009"
+        },
+        {
+          "path": "X2Cube/im2colstep.m",
+          "text": "%IM2COLSTEP Rearrange matrix blocks into columns.\r\n%  B = IM2COLSTEP(A,[N1 N2]) converts each sliding N1-by-N2 block of the\r\n%  2-D matrix A into a column of B, with no zero padding. B has N1*N2 rows\r\n%  and will contain as many columns as there are N1-by-N2 neighborhoods in\r\n%  A. Each column of B contains a neighborhood of A reshaped as NHOOD(:),\r\n%  where NHOOD is a matrix containing an N1-by-N2 neighborhood of A.\r\n%\r\n%  B = IM2COLSTEP(A,[N1 N2],[S1 S2]) extracts neighborhoods of A with a\r\n%  step size of (S1,S2) between them. The first extracted neighborhood is\r\n%  A(1:N1,1:N2), and the rest are of the form A((1:N1)+i*S1,(1:N2)+j*S2).\r\n%  Note that to ensure coverage of all A by neighborhoods,\r\n%  (size(A,i)-Ni)/Si must be whole for i=1,2. The default function behavior\r\n%  corresponds to [S1 S2] = [1 1]. Setting S1>=N1 and S2>=N2 results in no\r\n%  overlap between the neighborhoods.\r\n%\r\n%  B = IM2COLSTEP(A,[N1 N2 N3],[S1 S2 S3]) operates on a 3-D matrix A. The\r\n%  step size [S1 S2 S3] may be ommitted, and defaults to [1 1 1].\r\n%\r\n%  Note: the call IM2COLSTEP(A,[N1 N2]) produces the same output as\r\n%  Matlab's IM2COL(A,[N1 N2],'sliding'). However, it is significantly\r\n%  faster.\r\n%\r\n%  See also COL2IMSTEP, IM2COL, COUNTCOVER.\r\n\r\n\r\n%  Ron Rubinstein\r\n%  Computer Science Department\r\n%  Technion, Haifa 32000 Israel\r\n%  ronrubin@cs\r\n%\r\n%  August 2009\r\n"
+        },
+        {
+          "path": "X2Cube/X2Cube.m",
+          "text": "function DataCube=X2Cube(I, block, bandNumber)\r\n% for VIS: block=4;bandNumber=16;\r\n% for NIR: block=5;bandNumber=25;\r\n% for RedNIR: block=4;bandNumber=16; Please drop drop out the last\r\n% band which contains only zero values. DataCube=DataCube(:,:,1:15);\r\nI=double(I);\r\n\r\n% black=double(imread('black.bmp'));\r\n% I=I(:,:,1)-black(:,:,1);\r\n[x,y]=size(I);\r\nDataCube = im2colstep(I',[block block],[block,block]);\r\nsz=[y/block, x/block  bandNumber];\r\nDataCube=reshape(DataCube',sz);\r\nDataCube=permute(DataCube,[2,1,3]);\r\n\r\nend\r\n"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    "MATLAB评测把xywh左上转中心，distance严格<阈值，IoU≥阈值，success采样.02:.02:1均值为AUC；注释称中心输入但实际仍转换。",
+    "Matlab NaN距离/IoU剔除后改变分母；实际缺失/非法标注策略需逐载荷核对。",
+    "当前X2Cube MATLAB支持4×4 VIS/16与5×5 NIR/25；RedNIR提示裁掉16中全零最后通道，与MHT固定VIS decoder分开。",
+    "当前HyperTools.py有5×5参数但reshape仍//4，NumPy2.5.1工具探针失败；np.float使compile_results报AttributeError；success_overlap将x/y=0的完美框屏蔽。"
+  ],
+  "boundary": "当前官网公共工具，不独立证明2019 v5实际使用同一实现；没有真实跟踪评价或修改作者原文件。"
+}

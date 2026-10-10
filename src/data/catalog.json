@@ -68113,7 +68113,7 @@
     },
     {
       "id": "material-object-tracking-hsi-tip-2020",
-      "shortTitle": "Material HSI video tracking",
+      "shortTitle": "MHT",
       "title": "Material Based Object Tracking in Hyperspectral Videos",
       "authors": "Fengchao Xiong, Jun Zhou, Yuntao Qian",
       "year": 2020,
@@ -68125,33 +68125,38 @@
         "hyperspectral"
       ],
       "doi": "10.1109/TIP.2020.2965302",
-      "representation": "构建高光谱—彩色视频数据集，以材料特征和相关滤波进行目标跟踪。",
+      "representation": "SSHMG空间—光谱梯度纹理与外部解混丰度，经在线可靠性加权的BACF实现单目标跟踪。",
       "tags": [],
-      "summary": "研究材料信息辅助的高光谱视频目标跟踪。",
-      "input": "配对高光谱/彩色视频、全标注目标序列。",
-      "output": "视频目标轨迹。",
-      "mechanism": "用多维梯度光谱—空间直方图和端元丰度表示材料，再嵌入相关滤波器。",
-      "readingNote": "IEEE摘要与Crossref核验；正式TIP29:3719–3733，未标全文。",
+      "summary": "构建配对HSI/RGB跟踪基准，以空间—光谱梯度直方图和固定端元丰度两组材料特征，按预测一致性加权相关滤波跟踪。",
+      "input": "v5为35组近视点HSI/RGB视频及首帧bbox；HSI16波段、名义470–620nm、512×256/25FPS。MHT实际用HSI，RGB/FCI为对照，两模态独立标框。",
+      "output": "后续帧目标bbox与响应图；端元丰度为中间材料特征，未独立验证物理材料浓度。",
+      "mechanism": "SSHMG：x/y/波段梯度→幅度/两角直方图→4³ cube与2×2 block L2截断归一；离线VCA/Kmeans谱库→首框CLSUnSAL/HySime选端元→SPU丰度。BACF/FFT/ADMM以两组预测框IoU、距离及位移平滑估可靠性，EMAη=.0023更新并多尺度定位。端元固定，不是端到端材料深度网络。",
+      "readingNote": "arXiv1812.04179v5全部12页、附录、公式1–16、四表与全部图注/63参考条目已读；正式TIP2020为15页，未取得正式全文/v1–v4，数据结论限v5。新增v5 Fig2/3原图。作者精确条目链接MHT_release.zip已取/全成员CRC核验，19个关键MATLAB文件通读、3局部选读；库lib为16×300，35视频名与表IV不同，式/代码/排名差异留证。未运行MATLAB或真实跟踪，官网Python工具仅合成数组探针。",
       "paper": "https://doi.org/10.1109/TIP.2020.2965302",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
           "hyperspectral-video-acquisition",
-          "datasets-benchmarks"
+          "datasets-benchmarks",
+          "spectral-texture-description",
+          "joint-sparse-regression",
+          "correlation-filter-tracking"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
-        "dataLinks": [],
+        "relationNote": "v5全文明确16波段近距HSI采集与材料特征目标跟踪；第三维为波长，不是场景几何。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何将局部空间—光谱纹理和端元丰度结合，并按两组特征的定位可靠性在线加权，使高光谱材料信息改善目标跟踪？",
+        "datasets": "v5仅35 HSI+35 RGB视频、平均约500帧、25FPS，16波段名义470–620nm、512×256；单目标直立框与11属性。没有40训练声明；表I/IV属性数及作者Demo视频名不同，完整原载荷/配对/划分未核。",
+        "experimentSetting": "v5 Windows/i7-7800X3.50GHz/128GB；SSHMG z4/9空间+4光谱bin/clip .2，EMA .0023，余承BACF。OPE首帧GT初始化，DP20像素与success AUC；MHT原HSI，对照RGB或FCI。源码5尺度1.01/ADMM2轮等为当前release，不回填为正式版已验证。",
+        "conclusions": "v5 MHT DP/AUC .878/.612，比SSHMG .860/.593及BACF RGB/FCI AUC .540/.578提高；RGB C-COT .617仍高于MHT .612，不宣称全面第一。表III第一为IPR/OPR/DEF/BC/OV，正文误含SV；IV .490非最优，固定端元对照度不适应。E2E-MPT引用MHT .880/.593另留，未合并版本/评测。",
+        "limitations": "全文状态仅v5，正式15页与v1–v4未通读；35序列、离线库/测试隔离及表/代码名字/属性差异待原视频。无物理丰度真值/多seed或真实运行复现。代码atan2/soft bin与Eq1、CLSUnSAL和一与Eq5、Eq9归一符号、构库矩阵方向及FPS口径有差异；当前官方Python工具有5×5 reshape、np.float及零坐标边界问题，仅合成探针，不推真实指标错误。数据/总代码/第三方许可分开待核。",
+        "dataLinks": [
+          "https://www.hsitracking.com/hot2020/"
+        ],
         "evidence": [
           {
             "url": "https://doi.org/10.1109/TIP.2020.2965302",
@@ -68178,6 +68183,34 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1812.04179v5",
+            "checkedAt": "2026-10-11",
+            "level": "arXiv固定v5全文与公式表图核验",
+            "supports": [
+              "12页v5正文/附录支持35组HSI/RGB、16通道采集、SSHMG/CLSUnSAL/SPU/BACF与在线可靠性；全文状态不转正式15页。",
+              "四表及图例核对.878/.612、C-COT RGB负例、五属性排名及表文/样本差异。",
+              "第3/4页Fig2/3完整原方法裁图；矩阵第三维不是场景几何，丰度不当已核物理浓度。"
+            ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/code/MHT_release.zip",
+            "checkedAt": "2026-10-11",
+            "level": "author_linked_code_zip_member_and_selected_source_audit",
+            "supports": [
+              "作者主页精确论文链接代码；ZIP完整CRC/成员核验，默认MATLAB入口/材料+SSHMG与16×300 lib明确。",
+              "仅关键源码阅读/静态差异，没有MATLAB或真实视频运行；许可和库来源未完整闭环。"
+            ]
+          },
+          {
+            "url": "https://www.hsitracking.com/hot2020/",
+            "checkedAt": "2026-10-11",
+            "level": "official_benchmark_utility_sources_and_synthetic_probes",
+            "supports": [
+              "官网数据/测试入口与评测/转换源码可得；未取完整视频，当前工具不自动转到2019协议。",
+              "当前HyperTools合成小数组探针核5×5 reshape、np.float/零坐标边界；不作MHT评测复现。"
+            ]
           }
         ],
         "versions": [
@@ -68200,7 +68233,7 @@
             "url": "https://doi.org/10.1109/TIP.2020.2965302",
             "doi": "10.1109/TIP.2020.2965302",
             "year": 2020,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "正式TIP2020/29:3719–3733（15页）书目核验；本轮IEEE原文受限/Griffith仅元数据，正式全文仍未读，已有v5另列。"
           },
           {
             "id": "material-object-tracking-hsi-tip-2020-arxiv-1812-04179-v5",
@@ -68213,14 +68246,56 @@
             "firstSubmittedAt": "2018-12-11T01:35:15Z",
             "updatedAt": "2019-07-10T14:34:15Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v5预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。 arXiv本版本题名：Material Based Object Tracking in Hyperspectral Videos: Benchmark and Algorithms。"
+            "relation": "固定v5预印本12页全文已读，题名含Benchmark and Algorithms；正式15页差异未核，不以预印本读取状态代替正式全文。",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://arxiv.org/pdf/1812.04179v5",
+            "fullTextCheckedAt": "2026-10-11"
+          },
+          {
+            "id": "material-object-tracking-hsi-tip-2020-arxiv-v2",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1812.04179v2",
+            "doi": "10.48550/arXiv.1812.04179",
+            "year": 2018,
+            "arxivId": "1812.04179",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2018-12-11T01:35:15Z",
+            "updatedAt": "2018-12-17T12:17:17Z",
+            "metadataStatus": "primary_arxiv_abs_submission_history",
+            "relation": "原站提交历史日期核验；未读此版正文/摘要，不用v5填本版实验。"
+          },
+          {
+            "id": "material-object-tracking-hsi-tip-2020-arxiv-v3",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1812.04179v3",
+            "doi": "10.48550/arXiv.1812.04179",
+            "year": 2018,
+            "arxivId": "1812.04179",
+            "arxivVersion": "v3",
+            "firstSubmittedAt": "2018-12-11T01:35:15Z",
+            "updatedAt": "2018-12-23T17:03:21Z",
+            "metadataStatus": "primary_arxiv_abs_submission_history",
+            "relation": "原站提交历史日期核验；未读此版正文/摘要，不用v5填本版实验。"
+          },
+          {
+            "id": "material-object-tracking-hsi-tip-2020-arxiv-v4",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/1812.04179v4",
+            "doi": "10.48550/arXiv.1812.04179",
+            "year": 2019,
+            "arxivId": "1812.04179",
+            "arxivVersion": "v4",
+            "firstSubmittedAt": "2018-12-11T01:35:15Z",
+            "updatedAt": "2019-04-05T00:45:07Z",
+            "metadataStatus": "primary_arxiv_abs_submission_history",
+            "relation": "原站提交历史日期核验；未读此版正文/摘要，不用v5填本版实验。"
           }
         ],
         "methodFamilyId": "material-hsi-video-tracking",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "按v5全文保留采集/基准/跟踪任务，补实际空间光谱纹理、给定谱库稀疏回归及相关滤波方法；不把外部丰度特征升级独立物理材料定量任务或三维视觉。",
           "evidenceFields": [
             "title",
             "summary",
@@ -68229,15 +68304,42 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "15637791acd603d7f90ee52e8bd8dd50eb0aa75608711c93a559b17f58573cca",
+          "evidenceDigest": "19109876f763b45de1926b0c89dda584598c6013b0d09adab4d5291fb67365c3",
           "sourceUrls": [
-            "https://doi.org/10.1109/TIP.2020.2965302",
-            "https://doi.org/10.1109/TIP.2020.2965302",
-            "https://api.crossref.org/works/10.1109/TIP.2020.2965302"
+            "https://arxiv.org/pdf/1812.04179v5"
           ]
         }
       },
-      "citation": "@article{material_object_tracking_hsi_tip_2020,\n  title = {Material Based Object Tracking in Hyperspectral Videos},\n  author = {Fengchao Xiong and Jun Zhou and Yuntao Qian},\n  year = {2020},\n  doi = {10.1109/TIP.2020.2965302}\n}\n"
+      "citation": "@article{material_object_tracking_hsi_tip_2020,\n  title = {Material Based Object Tracking in Hyperspectral Videos},\n  author = {Fengchao Xiong and Jun Zhou and Yuntao Qian},\n  year = {2020},\n  doi = {10.1109/TIP.2020.2965302}\n}\n",
+      "code": "https://www.xiongfuli.com/cv/code/MHT_release.zip",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1812.04179v5",
+          "figureLabel": "Figure 2 (arXiv v5)",
+          "caption": "MHT整体材料跟踪：外部解混丰度与SSHMG特征按在线可靠性加权，由BACF多通道响应定位并更新模型。",
+          "verificationNote": "人工查看arXiv1812.04179v5第3页Figure2，300dpi原图裁取，保留全部流程、箭头、模型更新/分箱标签；无重绘。图号/页码限定2019 v5，不当2020正式15页同号图或后续数据划分；原PDF许可另留。",
+          "path": "figures/material-object-tracking-hsi-tip-2020/framework-arxiv-v5-fig2.png",
+          "width": 1530,
+          "height": 825,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "b1f278803dfff1d1493db8859f3959c71642a7614882f107073a82e89348eb0d",
+          "attribution": "Fengchao Xiong, Jun Zhou, Yuntao Qian · arXiv 1812.04179v5 (2019)"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1812.04179v5",
+          "figureLabel": "Figure 3 (arXiv v5)",
+          "caption": "SSHMG描述：空间/光谱多维梯度转为球坐标，两角分箱并在cube/block聚合归一，生成材料纹理特征。",
+          "verificationNote": "人工查看arXiv1812.04179v5第4页Figure3，300dpi原图裁取，保留完整SSHMG梯度/角度分箱及cube/block流程和标签；无重绘。图号/页码限定2019 v5，不当2020正式15页同号图或后续数据划分；原PDF许可另留。",
+          "path": "figures/material-object-tracking-hsi-tip-2020/framework-arxiv-v5-fig3.png",
+          "width": 1535,
+          "height": 1112,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "044b5e8dd6a7f5b252eb7d84512cef1d3527b7fb6474f5f2cb53c8c0acfc9a94",
+          "attribution": "Fengchao Xiong, Jun Zhou, Yuntao Qian · arXiv 1812.04179v5 (2019)"
+        }
+      ]
     },
     {
       "id": "gmc-sparse-nmf-hsi-2020",
@@ -82618,13 +82720,19 @@
         "sparse-cbir-gpu-2015",
         "vb-joint-sparse-unmixing-2014",
         "wm-lattice-sparse-unmixing-2014",
-        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
+        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
+        "material-object-tracking-hsi-tip-2020"
       ],
       "history": [
         {
           "date": "2026-10-08",
           "action": "created",
           "reason": "MLJSR与Sparse-CBIR原文区分给定光谱库的稀疏回归及其邻域利用。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MHT固定v5全文按实际任务/方法重审，仅同步本篇关联，其他论文及定义保留。"
         }
       ]
     },
@@ -85727,13 +85835,19 @@
       "rationale": "按周峻早期作者原稿摘要与方法图形成，任务与方法分开；不是预设分类表。",
       "evidencePaperIds": [
         "affine-hsi-texture-2009",
-        "harmonic-hsi-descriptors-chapter-2011"
+        "harmonic-hsi-descriptors-chapter-2011",
+        "material-object-tracking-hsi-tip-2020"
       ],
       "history": [
         {
           "date": "2026-10-09",
           "action": "created",
           "reason": "原稿摘要和局部方法核验支持该类别边界。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MHT固定v5全文按实际任务/方法重审，仅同步本篇关联，其他论文及定义保留。"
         }
       ]
     },
@@ -86211,6 +86325,26 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "两篇正式原文明确医学三类病变分类，避免将医学类别硬套地物任务；仅迁移已通读记录，其他医学记录逐篇续审。"
+        }
+      ]
+    },
+    {
+      "id": "correlation-filter-tracking",
+      "name": "相关滤波跟踪",
+      "dimension": "method",
+      "definition": "以特征与可学习相关滤波器的响应定位视频目标，可结合背景负样本、FFT/ADMM、可靠性加权和多尺度；按论文说明原HSI或伪彩色输入、更新规则及基线关系。",
+      "status": "confirmed",
+      "color": "#8aaca1",
+      "createdAt": "2026-10-11",
+      "rationale": "MHT固定v5全文明确材料/SSHMG特征与BACF相关滤波为核心跟踪机制，现有类别无此方法边界。",
+      "evidencePaperIds": [
+        "material-object-tracking-hsi-tip-2020"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "按已读MHT全文创建方法边界，只关联本篇，不批量套到未读跟踪论文。"
         }
       ]
     }
