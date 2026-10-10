@@ -60486,7 +60486,7 @@
       "input": "混合高光谱像元矩阵；一般流程由HySime估计K，A/S随机初始化于[0,1]；实测Urban明确K=4/6，Cuprite K=10。",
       "output": "非负端元光谱及丰度矩阵。",
       "mechanism": "在非负矩阵分解中以丰度元素平方根和促进稀疏，乘法更新交替估计端元与丰度；以增广常数行惩罚丰度和偏离1。",
-      "readingNote": "已通读2011-04-11作者稿26页（方法、合成与真实实验、18幅图注、三表及参考文献），核验原页公式与表格。作者稿通读不等于正式16页版逐字核验或性能复现；2月2日早稿、2010会议版完整对照仍待核。式26一般q系数、分块凸表述和停止条件差异保留；独立有限差分仅核标量数学。",
+      "readingNote": "已通读2011-04-11作者稿26页（方法、合成与真实实验、18幅图注、三表及参考文献），核验原页公式与表格。作者稿通读不等于正式16页版逐字核验或性能复现；2月2日早稿、2010会议版完整对照仍待核。式26一般q系数、分块凸表述和停止条件差异保留；独立有限差分仅核标量数学。 2010会议作者稿亦已通读比较：惩罚外层幂、合成替换规则与Cuprite数值不同；正式版与明示扩展关系仍待核。",
       "paper": "https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf",
       "verifiedAt": "2026-10-10",
       "verificationLevel": "full_text_verified",
@@ -60505,7 +60505,7 @@
         "datasets": "合成USGS谱：默认6端元、z²×z²图、低通混合与θ阈值、白高斯噪声；Urban307×307、210去至162波段、K=4/6；Cuprite250×190、224去至188波段、K=10。",
         "experimentSetting": "2011-04-11作者稿26页：最大3000轮、ϵ=10⁻³、λ按式22估计，有限δ增广丰度和软惩罚；随机A/S，零值加未指定小量，低于10⁻⁴省略稀疏项。正文梯度停止与伪代码成本差停止不同，δ具体值未定位。",
         "conclusions": "作者稿Table I–III：Urban4/6端元及Cuprite平均SAD分别0.1637/0.1766/0.1114，为各表最低；逐材料仅3/4、4/6、6/10最低，不能称所有材料最佳。真实表比较参考光谱，不把它当成实测丰度真值或跨场景普遍最优。",
-        "limitations": "26页4月11日作者稿全文已读；正式版、2月早稿和2010会议版差异及扩展声明未核。专用代码/数据许可仍待核；δ、零值保护量、初始化范数、材料匹配与参考真值构建不完整。式26 λ/2仅匹配q=1/2，固定A时目标对S并非一般凸；独立数学检查不证明实验代码出错或正式勘误。未完整证明带小值处理算法的收敛，未性能复现。",
+        "limitations": "26页4月11日作者稿全文已读；正式版、2月早稿和2010会议版的正式扩展声明未核；两份作者稿已比较，惩罚定义、合成生成及实测数字不同。专用代码/数据许可仍待核；δ、零值保护量、初始化范数、材料匹配与参考真值构建不完整。式26 λ/2仅匹配q=1/2，固定A时目标对S并非一般凸；独立数学检查不证明实验代码出错或正式勘误。未完整证明带小值处理算法的收敛，未性能复现。",
         "dataLinks": [],
         "evidence": [
           {
@@ -60601,7 +60601,7 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "c74181a97b274f087c0e36857145fcb46e34571d783a8a83af2a28d841b8d4ed",
+          "evidenceDigest": "0d400cf261b1741006826df0cee4a3c94cb3ef19ae68627dfeb38752f917e13c",
           "sourceUrls": [
             "https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf"
           ]
@@ -60874,16 +60874,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/DICTA.2010.82",
-      "representation": "L1/2 稀疏约束的 NMF，显式考虑丰度加和条件并迭代优化；完整推导、更新与收敛条件待阅读全文。",
+      "representation": "会议稿L1/2-NMF；非负分解与丰度和软惩罚。保留式4惩罚定义与式6更新不一致，不直接移用2011期刊作者稿。",
       "tags": [],
       "summary": "在 NMF 解混中加入 L1/2 稀疏约束，显式考虑丰度加和约束以恢复端元和丰度；作者通过合成及真实高光谱数据说明相对其他正则的稀疏性与精度。该记录保留2010会议书目及本稿实验，不借2011期刊稿结果。",
-      "input": "混合高光谱像元矩阵；端元数量和初始化按本会议原稿核验。",
+      "input": "混合高光谱像元；合成6端元49×49图，实测Cuprite250×190、188波段、K=10。",
       "output": "非负端元光谱与材料丰度。",
-      "mechanism": "L1/2 稀疏约束的 NMF，显式考虑丰度加和条件并迭代优化；完整推导、更新与收敛条件待阅读全文。",
-      "readingNote": "已核原摘要与指定局部页；未阅读全文。与2011 TGRS同四作者且同名L1/2-NMF；按命名方法关联同一方法族，但正式扩展声明、完整公式/实验差异仍待核。不混用2011 Urban实验与本会议Cuprite实验。会议447–453页，全文7页。",
+      "mechanism": "作者交替乘法更新A/S，以δ常数行增广惩罚丰度和；式4定义带外层1/q幂的惩罚，而式6更新对应平方根和，两者不一致，实际实现待核。",
+      "readingNote": "作者公开稿7页已通读：正文第1–5节、Figure1–5、Table1和参考1–33；原页式4/6及Cuprite值核验。同四作者方法族关联；两份作者稿已比目标/生成/实测协议，明确正式扩展声明、出版社完整差异未核。外层平方与更新梯度差异经独立正域有限差分核验，非作者代码或性能复现。",
       "paper": "https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "full_text_verified",
       "citation": "@inproceedings{lhalf_nmf_dicta_2010,\n  title = {L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Yuntao Qian and Sen Jia and Jun Zhou and Antonio Robles-Kelly},\n  booktitle = {2010 International Conference on Digital Image Computing: Techniques and Applications},\n  year = {2010},\n  pages = {447--453},\n  doi = {10.1109/DICTA.2010.82}\n}\n",
       "library": {
         "categoryIds": [
@@ -60893,13 +60893,13 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "原稿以光学高光谱解混、空间—波长描述或像元分类为直接对象；只新增总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何在丰度非负、加和约束下，用 L1/2 稀疏正则改进高光谱 NMF 解混？",
-        "datasets": "摘要明确合成与真实数据；局部核实验第4节为 AVIRIS Cuprite Nevada 子区250×190像元，去低SNR/水汽吸收后188/224波段。",
-        "experimentSetting": "仅摘要、Cuprite实验段和全页图版已核；本会议稿的信噪比、随机生成、重复次数与所有定量结果待阅读全文，未录性能数字。",
-        "conclusions": "作者摘要报告其约束NMF相对所比正则获得更稀疏、准确的解混结果；不宣称所有数据或所有NMF方法最优。",
-        "limitations": "与2011 TGRS同四作者且同名L1/2-NMF；按命名方法关联同一方法族，但正式扩展声明、完整公式/实验差异仍待核。不混用2011 Urban实验与本会议Cuprite实验。会议447–453页，全文7页。 专用代码、数据入口和arXiv本轮定向搜索未核到，未知不表示不存在。",
+        "datasets": "USGS6谱合成49×49、7×7纯材料区域、8×8低通混合；超θ像元改成仅两个端元混合。Cuprite250×190、224去至188波段、相似矿物变体合并K=10。",
+        "experimentSetting": "作者稿一般流程HySime，A/S均匀随机[0,1]，最大3000轮、ϵ=10⁻³梯度准则、λ按式17估计、δ软约束值未核。噪声无噪声/35/30/25/20/15dB，θ研究1/0.9/0.8/0.7/0.6；基线NMF/L1-NMF/L2-NMF均考虑丰度和。",
+        "conclusions": "合成曲线作者报告所比方法中L1/2-NMF最好；Cuprite表1仅列本法10个参考谱SAD，不足以证明实测胜过其他方法。本笔记按10值自行等权平均0.10124，非原表报告均值、非复现结果，不与2011稿0.1114直接作性能比较。",
+        "limitations": "会议式4带外层平方，式6对应平方根和，按列分离说法也需重新核；仅印刷公式与独立求导比较，实际代码未知。δ、零值处理、参考谱/端元匹配、随机种子/重复次数/许可未完整说明。图3图注η与横轴/正文θ冲突。两作者稿的合成混合规则及Cuprite数值不同；正式扩展声明、出版社版本差异和性能复现未完成。",
         "dataLinks": [],
         "evidence": [
           {
@@ -60920,6 +60920,16 @@
               "Yuntao Qian, Sen Jia, Jun Zhou, Antonio Robles-Kelly",
               "正式2010年；447-453页；来源类型proceedings-article"
             ]
+          },
+          {
+            "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "author_full_text_and_lhalf_version_comparison",
+            "supports": [
+              "七页作者公开稿全部正文、Figure1–5、Table1和参考文献已读；SHA256与页码保存在jun-zhou-dicta-lhalf-full-reading-2026-10-10.json。",
+              "式4外层1/q幂与式6更新不一致；独立有限差分区分平方根和及其平方，不当正式勘误或代码事实。",
+              "合成二端元替换、实测Cuprite十SAD与2011较晚作者稿分别记录；不混用表格或宣称相同实验。"
+            ]
           }
         ],
         "versions": [
@@ -60929,21 +60939,21 @@
             "url": "https://doi.org/10.1109/DICTA.2010.82",
             "doi": "10.1109/DICTA.2010.82",
             "year": 2010,
-            "relation": "与2011 TGRS同四作者且同名L1/2-NMF；按命名方法关联同一方法族，但正式扩展声明、完整公式/实验差异仍待核。不混用2011 Urban实验与本会议Cuprite实验。会议447–453页，全文7页。"
+            "relation": "7页作者公开稿全文与2011较晚作者稿已比目标、生成和实测表；同方法族，明确正式扩展声明及出版社逐字差异仍待核。"
           },
           {
             "id": "lhalf-nmf-dicta-2010-author",
             "type": "公开作者草稿",
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf",
             "year": 2010,
-            "relation": "图版页码仅指此作者稿；完整正式版差异未核。"
+            "relation": "7页作者公开稿全文与2011较晚作者稿已比目标、生成和实测表；同方法族，明确正式扩展声明及出版社逐字差异仍待核。"
           }
         ],
         "methodFamilyId": "lhalf-nmf-tgrs-2011",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-10",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要及局部方法/扩展声明支持任务、方法；分类确认与全文阅读状态区分。",
+          "rationale": "通读原稿确认直接光学高光谱混合像元输入及端元/丰度输出；任务为光谱解混，方法为稀疏非负分解。公式定义疑点与版本差异不改变任务分类。",
           "evidenceFields": [
             "title",
             "summary",
@@ -60952,7 +60962,7 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "c3fca1454851ce00bc43d4c8a0957ad69e17ab3e81de6d25f1d47f4b33c9083f",
+          "evidenceDigest": "125d827f849e4e3cdd2a5f6869b4cf9f9b8ef4379f6960f1b462dd12035b3624",
           "sourceUrls": [
             "https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf"
           ]

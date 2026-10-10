@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。180条为摘要级核验、5条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。179条为摘要级核验、6条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -43,6 +43,8 @@
 - 学习问题：有限δ与严格和约束有什么区别？目标求导怎样对应一般q更新？平均指标怎样掩盖材料差异？
 - 阅读边界：4月11日作者稿已通读；正式TGRS49(11):4282–4297、2月早稿和2010会议版完整差异未核，无性能复现。
 - 待核：代码、参考真值、δ/零值保护与停止规则。一般q系数与分块凸表述疑点见[完整学习笔记](jun-zhou-lhalf-nmf-note.md)；独立数学演示不等于作者算法实现。
+
+2010会议作者稿亦已通读；与2011较晚稿的目标、合成替换规则和Cuprite表存在差异。先读[两版对照笔记](jun-zhou-lhalf-nmf-note.md)，不混用公式或数值。
 
 ### 3. 2017 · Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery
 
@@ -164,7 +166,7 @@
 | --- | --- | --- | --- | --- |
 | **直接高光谱** | | | | |
 | 2009 | [An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis](https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
-| 2010 | [L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2010 | [L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf) | 光谱解混 | 正式发表 | 全文核验（作者稿） |
 | 2010 | [Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation](https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf) | 光学影像配准 | 正式发表 | 摘要核验 |
 | 2011 | [Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis](https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
 | 2011 | [Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf) | 光谱解混 | 正式发表 | 全文核验（作者稿） |
@@ -364,4 +366,4 @@
 
 ## 仍需补齐
 
-DBLP合并目录365条（364条快照加1条专题补充）现有355条范围决定、10条待核。Scholar非关键词209条差集仍有10条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。
+DBLP合并目录365条（364条快照加1条专题补充）现有356条范围决定、9条待核。Scholar非关键词209条差集仍有10条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。

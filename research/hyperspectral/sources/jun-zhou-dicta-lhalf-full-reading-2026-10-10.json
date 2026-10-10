@@ -1,0 +1,160 @@
+{
+  "checkedAt": "2026-10-10",
+  "paperId": "lhalf-nmf-dicta-2010",
+  "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf",
+  "file": "jun-zhou-dicta-unmix-2010.pdf",
+  "sha256": "3d2b0455eb6b37870d96aab9ac4fffdefbe10e9fc40e62870e9469adcdd76592",
+  "pages": 7,
+  "readingStatus": "author_full_text_read",
+  "readingCoverage": [
+    "Page1 abstract/introduction and affiliations",
+    "Page2 introduction/model/objective/update",
+    "Page3 auxiliary-function argument and implementation",
+    "Page4 initialization/regularization/synthetic generation and metrics",
+    "Page5 synthetic purity results, Cuprite experiment, Table1 and conclusion",
+    "Page6 Figure5 and references1–12",
+    "Page7 references13–33",
+    "All7 original page images inspected; Figure1–5 and Table1 verified"
+  ],
+  "formalBoundary": "Author-hosted7page PDF, IEEE PDFeXpress producer metadata, formalDOI2010.82 pages447–453 bibliographic receipt separate. No publisher copy word-for-word check, no source code or benchmark reproduction.",
+  "formulaAudit": {
+    "equation4": "Defines norm_q as (sum(S^q))^(1/q); q=1/2 therefore squares the square-root sum",
+    "equation6": "Printed update uses lambda/2*S^-1/2, corresponding to unsquared sum of square roots, not equation4 definition",
+    "equation7": "Claim that equation4 separates into columns requires review because outer1/q power couples entries/columns",
+    "derivedGradient": "For positive S and R=sum(sqrt(S)), derivative of lambda*R^2 is lambda*R/sqrt(S); cannot silently replace with lambda/(2sqrt(S)) under same lambda",
+    "boundary": "Positive-domain independent calculus; not evidence of actual code behavior or official erratum"
+  },
+  "implementation": {
+    "initialization": "Uniform random A/S in [0,1] stated on page3",
+    "K": "General HySime procedure; Cuprite explicitly setK10",
+    "maximumIterations": 3000,
+    "epsilon": 0.001,
+    "stop": "Gradient norm squared relative to initial gradient norm squared, or maximum iterations",
+    "lambda": "Equation17 band-wise sparsity estimator",
+    "sumConstraint": "Equation16 delta-row augmentation, finite delta soft constraint; exact delta not established",
+    "zeroHandling": "No exact zero epsilon or threshold-specific omission rule established in this conference text"
+  },
+  "synthetic": {
+    "endmembers": 6,
+    "source": "USGS selected spectra",
+    "shape": [
+      49,
+      49
+    ],
+    "regions": [
+      7,
+      7
+    ],
+    "lowPassFilter": [
+      8,
+      8
+    ],
+    "thresholdDomain": "0<theta<=1",
+    "replacement": "Pixels with abundance above theta replaced by a mixture of only TWO endmembers; proportions/selection not fully specified",
+    "noise": "Zero-mean white Gaussian",
+    "SNRdB": [
+      "infinity",
+      35,
+      30,
+      25,
+      20,
+      15
+    ],
+    "SNRStudyTheta": 0.7,
+    "purityTheta": [
+      1,
+      0.9,
+      0.8,
+      0.7,
+      0.6
+    ],
+    "purityStudySNRdB": 30,
+    "baselines": [
+      "NMF",
+      "L1-NMF",
+      "L2-NMF"
+    ],
+    "boundary": "Full additivity also added to comparator methods according to page4; not proven exact equality for finite delta"
+  },
+  "cuprite": {
+    "crop": [
+      250,
+      190
+    ],
+    "originalBands": 224,
+    "usedBands": 188,
+    "removedBands1Based": [
+      "1–2",
+      "104–113",
+      "148–167",
+      "221–224"
+    ],
+    "K": 10,
+    "reference": "USGS spectral library; no measured abundance truth evaluated",
+    "materials": [
+      "Alunite",
+      "Andradite",
+      "Buddingtonite",
+      "Dumotierite",
+      "Kaolinite",
+      "Montmorillonite",
+      "Muscovite",
+      "Nontronite",
+      "Pyrope",
+      "Sphene"
+    ],
+    "SAD": [
+      0.1318,
+      0.0554,
+      0.169,
+      0.0817,
+      0.1441,
+      0.1174,
+      0.1124,
+      0.0827,
+      0.0516,
+      0.0663
+    ],
+    "independentlyComputedUnweightedMean": 0.10124,
+    "meanBoundary": "Arithmetic over10 printed values, not a mean reported in Table1, and not a reproduced metric",
+    "comparisonBoundary": "Only this method real-data SAD listed; Table1 has no real-data competitor values, repeated-run dispersion, or significance test"
+  },
+  "captionConflict": "Figure3 caption names signature variability index eta; horizontal axes and adjacent prose use max abundance theta. Preserve conflict; do not introduce extra experiment parameter.",
+  "comparisonWithApril2011Draft": {
+    "journalFile": "jun-zhou-unmix-2011-april-author.pdf",
+    "same": "Four authors, namedL1/2-NMF method, multiplicative formulas, delta augmentation and Cuprite crop/band recipe",
+    "different": [
+      "Conference equation4 powered norm vs journal equations5–6 unsquared root sum",
+      "Conference synthetic replacement two materials vs journal all materials equal abundances",
+      "Conference only Cuprite real table vs journal Urban4/6 plus Cuprite comparative tables",
+      "Conference Cuprite SAD differs from journal TableIII despite same crop/band counts",
+      "Journal adds generalq analysis, geometry, image-size/count/overcount studies and threshold-dependent handling"
+    ],
+    "extensionBoundary": "Both author files read and compared; no explicit author statement of formal extension found in these files, no publisher-version equivalence asserted"
+  },
+  "independentMathProbe": {
+    "S": [
+      0.2,
+      0.8
+    ],
+    "lambda": 0.05,
+    "gradients": [
+      {
+        "index": 0,
+        "conferenceFiniteDifference": 0.14999999999737446,
+        "conferenceDerivedGradient": 0.15000000000000002,
+        "journalFiniteDifference": 0.05590169943614498,
+        "journalDerivedGradientAndPrintedConferenceUpdate": 0.05590169943749475
+      },
+      {
+        "index": 1,
+        "conferenceFiniteDifference": 0.07499999999521778,
+        "conferenceDerivedGradient": 0.07500000000000001,
+        "journalFiniteDifference": 0.02795084971807249,
+        "journalDerivedGradientAndPrintedConferenceUpdate": 0.027950849718747374
+      }
+    ],
+    "boundary": "Compare printed definitions at positive entries; no implementation or performance inference."
+  },
+  "frameworkBoundary": "Figure1 library spectra,2/3 synthetic curves,4 Cuprite image,5 output spectra; no standalone method pipeline figure in this file"
+}

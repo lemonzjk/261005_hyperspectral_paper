@@ -42,14 +42,47 @@ def main():
     analytic_second = 1.0 + regularization * q * (q - 1) * s ** (q - 2)
     assert math.isclose(finite_second, analytic_second, abs_tol=1e-4)
     assert finite_second < 0
+    abundance = [0.2, 0.8]
+    version_regularization, version_step = 0.05, 1e-6
+
+    def conference_penalty(values):
+        return version_regularization * sum(math.sqrt(v) for v in values) ** 2
+
+    def journal_penalty(values):
+        return version_regularization * sum(math.sqrt(v) for v in values)
+
+    root_sum = sum(math.sqrt(v) for v in abundance)
+    version_checks = []
+    for index, value in enumerate(abundance):
+        plus, minus = abundance.copy(), abundance.copy()
+        plus[index] += version_step
+        minus[index] -= version_step
+        conference_finite = (conference_penalty(plus) - conference_penalty(minus)) / (2 * version_step)
+        journal_finite = (journal_penalty(plus) - journal_penalty(minus)) / (2 * version_step)
+        conference_derived = version_regularization * root_sum / math.sqrt(value)
+        journal_derived = version_regularization / (2 * math.sqrt(value))
+        assert math.isclose(conference_finite, conference_derived, abs_tol=1e-8)
+        assert math.isclose(journal_finite, journal_derived, abs_tol=1e-8)
+        assert not math.isclose(conference_finite, journal_derived, abs_tol=1e-4)
+        version_checks.append({
+            'index': index, 'conferenceFiniteDifference': conference_finite,
+            'conferenceDerivedGradient': conference_derived,
+            'journalFiniteDifference': journal_finite,
+            'journalDerivedGradientAndPrintedConferenceUpdate': journal_derived,
+        })
+
     print(json.dumps({
         'equation26Checks': derivative_checks,
+        'conferenceVsJournalPenaltyChecks': {
+            'S': abundance, 'lambda': version_regularization, 'gradients': version_checks,
+            'boundary': 'Compare printed definitions at positive entries; no implementation or performance inference.',
+        },
         'fixedAConvexityCounterexample': {
             'A': 1.0, 'x': 1.0, 's': s, 'q': q,
             'lambda': regularization, 'finiteSecondDerivative': finite_second,
             'analyticSecondDerivative': analytic_second,
         },
-        'boundary': 'Scalar positive-domain calculus only; no implementation, convergence, or benchmark reproduction.',
+        'boundary': 'Positive-domain calculus only; no implementation, convergence, or benchmark reproduction.',
     }, indent=2))
 
 

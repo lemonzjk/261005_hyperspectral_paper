@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：周峻目录185条（高光谱179/多光谱6，含1会议摘要），180摘要级、5全文级。DBLP364快照+1专题共365条，355已决定、10待核；Scholar非关键词209差集188暂排8重3入10待核。EGU2019热红外摘要单列；MTSAT图11产量单位按勘误t/ha。L1/2-NMF、NMF-SAE、SNMF作者稿通读；公式与代码局部核验，非性能复现，笔记见jun-zhou-*；E2E仓库仅结果/原图，无训练脚本；光学通道、机构与近题差集继续审。
+- 作者优先：周峻目录185条（高光谱179/多光谱6，含1会议摘要），179摘要级、6全文级。DBLP364快照+1专题共365条，356已决定、9待核；Scholar非关键词209差集188暂排8重3入10待核。EGU2019热红外摘要单列；MTSAT图11产量单位按勘误t/ha。L1/2两版、NMF-SAE、SNMF作者稿通读；公式与代码局部核验，非性能复现，笔记见jun-zhou-*；E2E仓库仅结果/原图，无训练脚本；光学通道、机构与近题差集继续审。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
