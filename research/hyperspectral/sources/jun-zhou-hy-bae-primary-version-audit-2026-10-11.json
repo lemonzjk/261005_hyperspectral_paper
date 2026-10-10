@@ -1,0 +1,117 @@
+{
+  "method": "Public IEEE document metadata JSON, bibliography/abstract/affiliation allowlist; exact institutional abstract comparison for BAE only",
+  "hyPublished": {
+    "sourceURL": "https://xplorestaging.ieee.org/document/10569013/",
+    "sourceSHA256": "a64a90cad07c7db2a5677a74cbeeaca564f927724588a99ffebd1732eb9fe5e0",
+    "metadata": {
+      "title": "Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos",
+      "doi": "10.1109/TGRS.2024.3418337",
+      "authors": [
+        {
+          "name": "Mohammad Aminul Islam",
+          "affiliation": [
+            "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia",
+            "Department of Computer Science and Mathematics, Bangladesh Agricultural University, Mymensingh, Bangladesh"
+          ],
+          "orcid": "0000-0002-5809-552X"
+        },
+        {
+          "name": "Wangzhi Xing",
+          "affiliation": [
+            "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia"
+          ],
+          "orcid": "0009-0002-9089-9680"
+        },
+        {
+          "name": "Jun Zhou",
+          "affiliation": [
+            "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia"
+          ],
+          "orcid": "0000-0001-5822-8233"
+        },
+        {
+          "name": "Yongsheng Gao",
+          "affiliation": [
+            "Institute for Integrated and Intelligent Systems, Griffith University, Nathan, QLD, Australia"
+          ],
+          "orcid": "0000-0002-5382-5351"
+        },
+        {
+          "name": "Kuldip K. Paliwal",
+          "affiliation": [
+            "Institute for Integrated and Intelligent Systems, Griffith University, Nathan, QLD, Australia"
+          ],
+          "orcid": "0000-0002-3553-3662"
+        }
+      ],
+      "abstract": "Hyperspectral images, with their many spectral bands, provide a rich source of material information about an object that can be effectively used for object tracking. However, many trackers in this domain rely on detection-based techniques, which often perform suboptimally in challenging scenarios such as managing occlusions and distinguishing objects in cluttered backgrounds. This underperformance is primarily due to the presence of multiple spectral bands and the inability to leverage this abundance of data for effective tracking. Additionally, the scarcity of annotated hyperspectral videos and the absence of comprehensive temporal information exacerbate these difficulties, further limiting the effectiveness of current tracking methods. To address these challenges, this article introduces the novel Hy-Tracker framework, designed to bridge the gap between hyperspectral data and state-of-the-art object detection methods. Our approach leverages the strengths of YOLOv7 for object tracking in hyperspectral videos, enhancing both accuracy and robustness in complex scenarios. The Hy-Tracker framework comprises two key components. We introduce a hierarchical attention for band selection (HAS-BS) that selectively processes and groups the most informative spectral bands, thereby significantly improving detection accuracy. Additionally, we have developed a refined tracker that refines the initial detections by incorporating a classifier and a temporal network using gated recurrent units (GRUs). The classifier distinguishes similar objects, while the temporal network models temporal dependencies across frames for robust performance despite occlusions and scale variations (SVs). Experimental results on hyperspectral benchmark datasets demonstrate the effectiveness of Hy-Tracker in accurately tracking objects across frames and overcoming the challenges inherent in detection-based hyperspectral object tracking (HOT).",
+      "startPage": "1",
+      "endPage": "14",
+      "isOpenAccess": false,
+      "isFreeDocument": false
+    },
+    "readingProgress": "abstract_read",
+    "finding": "正式原始摘要明确HAS-BS+classifier+GRU，不是v1的BABS+Kalman。题名/五作者/Griffith/ORCID/精确DOI关联但未证正文或结果相同。"
+  },
+  "hyPreprint": {
+    "sourceURL": "https://arxiv.org/pdf/2311.18199v1",
+    "sourceSHA256": "d68b7795f711aac86850766ef343c4c36e839c565d5b8a3607927d491b0c56c5",
+    "readingProgress": "full_text_read",
+    "method": "BABS pairwise O/L cosine contrast → ranked three-channel groups → YOLOv7 + MDNet-style classifier/proposals + Kalman; not formal HAS-BS/GRU"
+  },
+  "baePublished": {
+    "sourceURL": "https://xplorestaging.ieee.org/document/9191105/",
+    "sourceSHA256": "e0e682da920e05abb6cd92b14a09f6657f3fd26412894ed75337d36ac73458a9",
+    "metadata": {
+      "title": "BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking",
+      "doi": "10.1109/ICIP40778.2020.9191105",
+      "authors": [
+        {
+          "name": "Zhuanfeng Li",
+          "affiliation": [
+            "School of Computer Science and Engineering, Nanjing University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Fengchao Xiong",
+          "affiliation": [
+            "School of Computer Science and Engineering, Nanjing University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Jun Zhou",
+          "affiliation": [
+            "School of Information and Communication Technology, Griffith University"
+          ]
+        },
+        {
+          "name": "Jing Wang",
+          "affiliation": [
+            "School of Information and Communication Technology, Griffith University"
+          ]
+        },
+        {
+          "name": "Jianfeng Lu",
+          "affiliation": [
+            "School of Computer Science and Engineering, Nanjing University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Yuntao Qian",
+          "affiliation": [
+            "College of Computer Science, Zhejiang University"
+          ]
+        }
+      ],
+      "abstract": "Hyperspectral videos contain images with a large number of light wavelength indexed bands that can facilitate material identification for object tracking. Most hyperspectral trackers use hand-crafted features rather than deep learning generated features for image representation due to limited training samples. To fill this gap, this paper introduces a band attention aware ensemble network (BAE-Net) for deep hyperspectral object tracking, which takes advantages of deep models trained on color videos for feature representation. Specifically, an autoencoder-like band attention block is introduced to learn the dependencies among bands and generate band-wise weights. Guided by these weights, hyperspectral images are then divided into a number of three-channel images. These three-channel images are fed into a deep color tracking network, producing several weak trackers. Finally, weak trackers are fused using ensemble learning for target location. Experimental results on hyperspectral datasets show the effectiveness and advantages of the proposed deep hyperspectral tracker.",
+      "startPage": "2106",
+      "endPage": "2110",
+      "isOpenAccess": false,
+      "isFreeDocument": false
+    },
+    "institutionalAbstractEqual": true,
+    "readingProgress": "abstract_read",
+    "finding": "正式完整摘要支持autoencoder-like band attention / band weights / three-channel groups / deep color weak trackers / ensemble。无严格子集缩减/波段组数/具体VITAL/指标证据；不借后续SST原文回填本篇全文。"
+  },
+  "identityBoundary": "两篇原始作者机构均Griffith Jun Zhou；Hy正式IEEE/Crossref登记精确ORCID0000-0001-5822-8233，首页明确机构。"
+}

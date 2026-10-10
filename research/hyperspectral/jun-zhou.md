@@ -21,7 +21,7 @@
 
 用户要求继续完成论文调研，不需要新增学习笔记。当前重点是来源查漏、作者身份、光谱输入、正式书目与版本关系；全文、代码及性能复现的阅读状态另行记录，不以笔记数量衡量目录完成。
 
-当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；171条摘要级、17条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
+当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；170条摘要级、18条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
 
 本轮补入EAAHNet：出版社作者登记、原文首页均确认Jun Zhou属于Griffith；保留DBLP同名0011分配差异，避免错误排除。原文IV-A明确Potsdam红/绿/近红外输入，归多光谱关联；Vaihingen写RGB，实际数据版本和实现仍待核。ComicLib正式节目确认Griffith身份，漫画草图任务按范围暂排，未标全文核验。
 
@@ -615,3 +615,26 @@ DMT（Dynamic Material-Aware Object Tracking in Hyperspectral Videos，WHISPERS2
 DMT IEEE正常下载202空，staging所谓PDF返回摘要HTML而非PDF；机构完整bundle/bitstream页仅一个130字节SWORD XML，第三方OpenAlex/Semantic OA入口只落到相同元数据。HAL限定DOI/题名查询0不证明全网没有全文。共同作者CV此题在HTML注释内且有题名/作者顺序差异，没有活动下载链接，不当公开正文证据。DMT仍abstract_read，队列needs_access，六页全文/公式/协议/动态材料实现待，不和MHT当同一方法。
 
 29份原始响应与4份派生全文/表/资源/摘要审计；既有两篇续核，新增全文阅读1篇，无新论文或年度扫描。两个原先无survey候选的Scholar条目新增真实来源续核行和一批/一查询，历史候选、批次与arXiv531决定/八pending不改，Griffith仅追加两篇primarySourceFollowup。当前757总库、188作者（171摘要/17全文级）、214三维、308标签（任务101/方法184/应用23）、347原图；397分类确认（审计344）、341暂定、19待。作者全集及全领域顶会顶刊/arXiv仍未完成。见 [SST-Net全文/结果资源与DMT原始摘要审计](sources/jun-zhou-dmt-sst-followup-2026-10-11.json)。
+
+
+## Hy-Tracker v1全文与正式版方法变更、BAE-Net原始摘要续核（2026-10-11）
+
+既有Hy-Tracker arXiv2311.18199v1通读全部10页，含式1–11、六表107明细行与1总计行、图1–8图注/结果图例和39参考条目；未逐篇读引用作品。原站当前只有v1，提交2023-11-30，首页五作者及Jun Zhou的Griffith机构明确。正式TGRS2024/1–14页由Crossref、IEEE原始作者机构/精确ORCID0000-0001-5822-8233及Griffith同题/DOI互证，保留同一方法族，不新增论文。LaTeX模板页眉2014不是本文发表年份。
+
+发现正式原始摘要与v1主要模块不同：2023v1为跨波段目标/邻域余弦对比BABS、YOLOv7与MDNet式classifier/Gaussian候选/Kalman；2024正式摘要为hierarchical attention for band selection（HAS-BS）、YOLOv7与classifier/GRU时间网络。旧目录正式论文总述只写Kalman错误，已改为逐版本说明。正式14页PDF正常入口202空，Crossref登记PDF路径200实际摘要HTML；机构两个完整LICENSE bundle各一txt，无正文PDF。正式摘要已读、正式全文/图号/参数/结果未读；v1不能替代HAS-BS/GRU原文。
+
+v1 BABS对每带提取目标O与padding邻域L，跨带累加|cos(O_n,O_j)−cos(L_n,L_j)|，排序为多组三通道伪彩图供YOLO。16带示例依次分组，余带/padding值、归一/组数及更新策略未明确。正文O称ground truth区域，但没有把后续帧取框边界说清；不能直接证明后续GT泄漏，也不能宣称无泄漏。v1引用背景感知波段论文不等于该被引作品全文已读，不把排序分组自动认成严格子集缩减。正式HAS-BS只取得摘要，不补造层次模块结构或损失。
+
+v1 tracker为3Conv/3FC二类classifier、前框中心Gaussian候选与Kalman状态模型。MDNet预训练，Conv固定、FC在线BCE，lr .0005/.001，每10帧以过去10帧正负候选更新；Gaussian对角(.09r²,.09r²,.25)，r为宽高均值、尺度1.05^sc。YOLO候选和采样候选取最高分类分，尺度相对前框变化>5%则用Kalman预测。YOLO离线明确包含训练集与测试首帧，并用Gaussian cut-paste；首帧适配和严格仅训练集模型分开，具体类别/预训练/epoch/样本数与实际测试隔离待。表I 107×107/kernel7/stride2到11×11的隐含pool/padding未列，不能单凭表独立重建网络；YOLO训练概要不当已核上游实现或本框架半监督训练证据。
+
+v1称HOT2022：40训练/35测试、16带470–620nm/25FPS，XIMEA/IMEC mosaic及同场景RGB/HSI-False。表II/III 35序列共16574帧，与此前SST仓库HOT2020结果33同名序列帧数一致，另pedestrain2/pedestrian2各363帧、truck/trucker各221帧；近名未自动合并身份，这是编号/协议歧义线索，不证明实际载荷相同，也不静默把原文年份改成2020。表II尺寸随序列不同，原始全帧/裁切规则未核。当前HOT2022/2023网页只给外部数据/工具入口，2023明确updated link，没有取原视频、GT或历史成员/版本/许可。HOT2023原文VIR/RedNIR/NIR16/15/25带、110训练/87validation，保持原命名；对照结果取官网，跨域/序列聚合与首帧训练的实际协议待。
+
+v1 i7-12700/32GB/RTX A4000 16GB，OPE AUC/DP@20。表III序列等权均值从印刷数值算为AUC .721257、DP20 .972629、FPS3.374171，吻合总计72.1%/97.3%/3.374；帧加权则.706240/.965129/3.409824，不能互换。只是表值算术，未取预测/GT，不是指标或实测速度复算，也不证明其他表图权重一致。Eq11却印NCLE>η，而正文成功条件CLE<η，τ/η亦混用；实际20px边界/采样网格待代码，不静默修原式。
+
+表IV HSI YOLO-only .637/.851，+tracker .707/.952、+Kalman alone .646/.870、联合.721/.973；联合相对基线增8.4/12.2百分点，Kalman在YOLO+tracker之上增1.4/2.1百分点。RGB .576/.806到.666/.943，HSI-False .536/.746到.624/.864，表中RGB +Kalman的∆AUC印.0033而减法为.033，原值/计算分留。表V Hy3.37FPS慢于SiamBAG5.7及采集25FPS，不能因YOLO实时就叫整体实时；AUC .721比SiamBAG .632高8.9百分点，但速度排序不同，无多seed/置信区间。
+
+表VI Hy在11属性印刷值均最高，但表题未显式标指标名称，具体汇总定义待；有限对照不外推全领域。表V MHT .586/.882、SST .623/.916、BAE .606/.878，与各原稿或后引数值分别留。HOT2023 Fig7 Hy .624/.836比TranST .566/.777高5.8/5.9百分点，原文写百分数，记录绝对百分点；这是v1结果，不回填正式HAS-BS/GRU。v1结论承认线性Kalman限制与非线性/速度改进待，正式GRU不推已经解决所有负例。没有取得模型实现/权重或运行实验；Git宽查询681仅第一页30条、限定Hy-Tracker+hyperspectral为0，仅该查询阴性，不宣称全网无代码。
+
+BAE-Net ICIP2020（DOI10.1109/ICIP40778.2020.9191105）取得完整IEEE原始摘要，与Griffith摘要逐字符一致；六作者及Griffith Jun Zhou、页码2106–2110核实。摘要仅支持autoencoder-like band attention、band-wise weights、多组三通道图、deep color弱跟踪器与ensemble；没有明确网络层数、VITAL、组数、严格选子集、数据协议或指标，不借SST/Hy相关工作/引用表回填。正常IEEE202空、Crossref路径摘要HTML，机构单SWORD/130字节XML，共同作者CV只有HTML注释条目与IEEE链接，五页全文仍待。旧严格波段子集标签改为已支持分组，补波段注意力方法，只改本篇。
+
+新存v1第3页Fig1完整框架与第4页Fig3完整BABS原裁图（含图例），无重绘，归属明确“2023 v1”，不当2024正式架构图。新增必要波段注意力与检测提案/状态细化方法，仅本轮两篇关联，不误用Kalman光谱解混或Transformer类别。22份原始响应/4派生全文、全表、版本及访问审计；既有2篇续核、1篇升级，无新论文或年度扫描。Hy两条旧survey候选、机构/arXiv匹配仅追加续核；BAE新增当前真实来源索引，旧决定/映射历史保留。当前757总库、188作者（170摘要/18全文级）、214三维、310标签（任务101/方法186/应用23）、349原图；399确认（审计346）、339暂定、19待。作者全集与全领域顶会顶刊/arXiv尚未完成。见 [Hy-Tracker版本差异、全文与BAE原始证据](sources/jun-zhou-hy-bae-followup-2026-10-11.json)。

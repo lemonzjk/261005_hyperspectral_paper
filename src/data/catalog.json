@@ -71218,7 +71218,7 @@
     },
     {
       "id": "zhou-47-hsi-2024",
-      "shortTitle": "Hy-Tracker: A Novel Framework for Enhancing Efficien",
+      "shortTitle": "Hy-Tracker",
       "title": "Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos",
       "authors": "Mohammad Aminul Islam, Wangzhi Xing, Jun Zhou, Yongsheng Gao, Kuldip K. Paliwal",
       "year": 2024,
@@ -71230,31 +71230,37 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3418337",
-      "representation": "高光谱视频跟踪：将 YOLOv7 检测器与改进跟踪模块结合，以 Kalman 滤波处理尺度变化和遮挡。",
+      "representation": "正式版HAS-BS波段注意力/分组与YOLOv7检测、classifier+GRU跟踪；已读v1另为BABS+Kalman。",
       "tags": [],
-      "summary": "Hy-Tracker 把多波段高光谱数据接入 YOLOv7，并在检测结果上加入细化跟踪模块和 Kalman 滤波，以提升跨帧目标跟踪效率和遮挡、尺度变化下的稳定性。",
-      "input": "多波段高光谱视频帧。",
-      "output": "跨帧目标检测与跟踪结果。",
-      "mechanism": "YOLOv7 产生初始检测；改进跟踪模块细化检测结果；Kalman 滤波应对尺度变化和遮挡。",
-      "readingNote": "ORCID题名、Crossref正式书目与 arXiv:2311.18199 官方摘要核验；正式2024版与2023预印本版本边界保留，未阅读全文。",
+      "summary": "Hy-Tracker正式2024原始摘要采用HAS-BS层次波段注意力、YOLOv7和classifier/GRU时间网络；2023v1全文则采用跨带目标/邻域对比BABS与Kalman细化，两版方法和结果严格分开。",
+      "input": "高光谱视频及目标初始化；v1将波段排序分组三通道供YOLO，训练含测试首帧；正式输入处理细节待14页全文。",
+      "output": "指定目标的跨帧位置/尺寸bbox；不是场景三维或多目标评测。",
+      "mechanism": "正式摘要：HAS-BS选择/分组信息波段，YOLOv7提案经classifier及GRU时间网络细化。v1：目标/邻域跨带余弦差排序分组，YOLO候选与前框Gaussian采样由MDNet式classifier评分；尺度变化>5%采用Kalman预测，每10帧更新FC。",
+      "readingNote": "完整读取arXiv2311.18199v1全部10页、式1–11/六表108行（含1总计）/八图注和39引用条目；所引作品未逐篇通读。正式14页未取得，仅完整IEEE摘要；明确HAS-BS/GRU替换v1的BABS/Kalman，纠正目录正式版Kalman-only描述。新增v1 Fig1/3原图，协议/公式错印另留。无实现/权重/GT运行复现。",
       "paper": "https://arxiv.org/abs/2311.18199",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
-          "hyperspectral-target-tracking"
+          "hyperspectral-target-tracking",
+          "spectral-band-grouping",
+          "detection-refinement-tracking",
+          "spectral-band-attention"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 arXiv 官方摘要均明确高光谱视频目标跟踪。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何把通用 YOLO 检测器适配到多波段高光谱视频跟踪？",
-        "datasets": "arXiv摘要仅称高光谱基准数据集；具体数据集、标注和指标待正式全文核验。",
-        "experimentSetting": "高光谱视频检测跟踪；YOLOv7、跟踪细化模块与 Kalman 滤波联合。",
-        "conclusions": "arXiv摘要报告在高光谱基准数据集上准确跟踪目标；正式版实验数值和速度待全文核验。",
-        "limitations": "证据来自2023预印本摘要，正式2024版作者/方法差异、代码、数据许可和完整实验待核验。",
-        "dataLinks": [],
+        "relationNote": "v1原文和正式原始摘要均为直接高光谱单目标跟踪；方法变化按版本留证。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何通过波段处理与检测提案、目标分类和时序状态细化，提升高光谱单目标跟踪？",
+        "datasets": "v1称HOT2022：40训练/35测试、16带470–620nm/25FPS、表II/III35场景16574帧；当前SST HOT2020结果33同名同帧数，另pedestrain2/pedestrian2与truck/trucker同帧数；近名身份及实际年份/载荷未证。HOT2023原文VIR/RedNIR/NIR16/15/25带，110训练/87验证；当前页提示updated link，历史版本未取。正式版实验不能由v1回填。",
+        "experimentSetting": "仅v1：i7-12700/32GB/RTX A4000 16GB；YOLO离线含训练集+测试首帧与Gaussian cut-paste。MDNet预训练，3Conv固定/3FC在线BCE、lr .0005/.001，每10帧更新；Gaussian候选diag(.09r²,.09r²,.25)，尺度1.05^sc，>5%尺度变用Kalman。OPE AUC/DP20；YOLO轮次/类别/学习率、采样数/阈值与计时范围未明。",
+        "conclusions": "仅v1：HOT2022 AUC/DP20 .721/.973、3.374FPS；HSI YOLO单用.637/.851，联合增8.4/12.2百分点，Kalman在YOLO+tracker之上增1.4/2.1百分点。HOT2023 .624/.836比TranST .566/.777高5.8/5.9百分点；3.37FPS慢于SiamBAG5.7与采集25FPS。正式HAS-BS/GRU结果仍待，不能称正式版实时或全领域最优。",
+        "limitations": "全文级仅v1；正式14页只有摘要且主要模块改变。BABS GT区域/后续帧边界与余带、测试首帧离线训练隔离、实际数据/许可与实现/权重待；未推泄漏或复现。Eq11 CLE>η与正文<η矛盾，表IV RGB∆AUC .0033应算.033但原值保留；表I Conv尺寸隐含操作未列。不同稿基线数值、汇总权重/多seed/速度口径待。",
+        "dataLinks": [
+          "https://www.hsitracking.com/hot2022/",
+          "https://www.hsitracking.com/hot2023/"
+        ],
         "evidence": [
           {
             "url": "https://arxiv.org/abs/2311.18199",
@@ -71283,6 +71289,25 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2311.18199v1",
+            "checkedAt": "2026-10-11",
+            "level": "official_arxiv_v1_complete_ten_page_full_text",
+            "supports": [
+              "10页v1明确BABS/YOLOv7/MDNet式classifier/Gaussian提案/Kalman，完整六表含108行已核。",
+              "第3/4页Fig1/3原裁图，图号和方法限定v1。",
+              "正式14页原始摘要改HAS-BS+GRU，不由v1回填正式实验或全文状态。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/10569013/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_published_complete_abstract_author_affiliation_and_orcid",
+            "supports": [
+              "正式2024完整摘要明确HAS-BS+classifier+GRU，纠正Kalman-only总述。",
+              "五作者/Griffith Jun Zhou精确ORCID与正式1–14页；不是14页全文已读。"
+            ]
           }
         ],
         "versions": [
@@ -71292,7 +71317,8 @@
             "url": "https://doi.org/10.1109/tgrs.2024.3418337",
             "doi": "10.1109/tgrs.2024.3418337",
             "year": 2024,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式2024/1–14原始摘要已读，HAS-BS+classifier/GRU；正文未取，不与v1的BABS/Kalman方法/结果合并。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "zhou-47-hsi-2024-arxiv-2311-18199-v1",
@@ -71303,13 +71329,62 @@
             "year": 2023,
             "firstSubmittedAt": "2023-11-30T02:38:45Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。",
-            "updatedAt": "2023-11-30T02:38:45Z"
+            "relation": "官方仅v1，2023-11-30提交；10页BABS+YOLOv7+Kalman全文已读，正式2024摘要为HAS-BS/GRU，主要方法不同，结果/图号不能互用。",
+            "updatedAt": "2023-11-30T02:38:45Z",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://arxiv.org/pdf/2311.18199v1",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-47"
+        "methodFamilyId": "zhou-2024-title-47",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "逐版本核跟踪/波段分组；注意力来自BAE/Hy正式原始摘要，Hy v1 BABS/Kalman全文另留，未挪用Kalman解混或Transformer类别。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "41755bfd6f525217c4fa9f3ce8d90e65dd2d47d56395b5ef955af9f7d7361e9f",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2311.18199v1",
+            "https://xplorestaging.ieee.org/document/10569013/"
+          ]
+        }
       },
-      "citation": "@article{zhou_47_hsi_2024, title = {Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos}, author = {Mohammad Aminul Islam and Wangzhi Xing and Jun Zhou and Yongsheng Gao and Kuldip K. Paliwal}, year = {2024}, doi = {10.1109/tgrs.2024.3418337}\n}\n"
+      "citation": "@article{zhou_47_hsi_2024, title = {Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos}, author = {Mohammad Aminul Islam and Wangzhi Xing and Jun Zhou and Yongsheng Gao and Kuldip K. Paliwal}, year = {2024}, doi = {10.1109/tgrs.2024.3418337}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2311.18199v1",
+          "figureLabel": "Figure 1 (arXiv v1)",
+          "caption": "Hy-Tracker v1的BABS三通道分组→YOLO提案→跟踪细化原框架。",
+          "verificationNote": "人工核arXiv2311.18199v1第3页原图，300dpi完整裁取，保留全部模块/箭头。无重绘。正式2024改HAS-BS/GRU，未取得正式原图；本图仅属v1，不用于证明正式结构或运行复现。",
+          "path": "figures/zhou-47-hsi-2024/framework-hy-v1-fig1.png",
+          "width": 1900,
+          "height": 805,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "f88bc36efb4586aec430e98a8242ab22c9346d571ae09dbd22e02f6b5a973fd7",
+          "attribution": "Mohammad Aminul Islam, Wangzhi Xing, Jun Zhou, Yongsheng Gao, Kuldip K. Paliwal · arXiv:2311.18199v1 (2023), not the 2024 published architecture"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2311.18199v1",
+          "figureLabel": "Figure 3 (arXiv v1)",
+          "caption": "Hy-Tracker v1 BABS：跨波段目标/邻域余弦相似度差、排序与三通道分组。",
+          "verificationNote": "人工核arXiv2311.18199v1第4页原图，300dpi完整裁取，保留全部模块/箭头与图例。无重绘。正式2024改HAS-BS/GRU，未取得正式原图；本图仅属v1，不用于证明正式结构或运行复现。",
+          "path": "figures/zhou-47-hsi-2024/framework-babs-v1-fig3.png",
+          "width": 2185,
+          "height": 610,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "ace66477c7ce92c41be4134f310e9b25ecb2ad4080096ca252009f9ac52e75f0",
+          "attribution": "Mohammad Aminul Islam, Wangzhi Xing, Jun Zhou, Yongsheng Gao, Kuldip K. Paliwal · arXiv:2311.18199v1 (2023), not the 2024 published architecture"
+        }
+      ]
     },
     {
       "id": "zhou-48-hsi-2024",
@@ -73097,7 +73172,7 @@
     },
     {
       "id": "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
-      "shortTitle": "BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Ob…",
+      "shortTitle": "BAE-Net",
       "title": "BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking",
       "authors": "Zhuanfeng Li, Fengchao Xiong, Jun Zhou, Jing Wang, Jianfeng Lu, Yuntao Qian",
       "year": 2020,
@@ -73109,31 +73184,32 @@
         "hyperspectral"
       ],
       "doi": "10.1109/icip40778.2020.9191105",
-      "representation": "高光谱目标跟踪：BAE-Net 以自编码器式波段注意力学习波段依赖和权重，将高光谱帧分成多个三通道图像，再用深度彩色跟踪器和集成学习定位目标。",
+      "representation": "自编码器式波段注意力权重、三通道分组与深度弱跟踪器集成。",
       "tags": [],
-      "summary": "BAE-Net 用波段注意力块生成波段权重，按权重构造多组三通道伪彩色图，分别输入彩色视频跟踪网络形成弱跟踪器，最后融合弱跟踪结果；摘要报告在高光谱数据集上有效。",
-      "input": "高光谱视频帧及其多波段关系。",
-      "output": "目标位置/跟踪结果。",
-      "mechanism": "自编码器式波段注意力块学习波段依赖与权重；波段分组形成三通道图；深度彩色跟踪器产生多个弱跟踪器，集成学习融合定位。",
-      "readingNote": "Google Scholar 题名差集、Crossref正式书目与IEEE SPS公开摘要核验；未阅读全文。",
-      "paper": "https://resourcecenter.ieee.org/conferences/icip-2020/icip20vid101",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "完整IEEE摘要确认autoencoder-like注意力学习波段关系/权重，多组三通道图送深度彩色跟踪网络，弱跟踪器集成定位；正式5页全文仍未取得。",
+      "input": "多波段高光谱视频；实际通道/组数与首帧协议待正文。",
+      "output": "目标位置/跟踪结果；具体bbox与评价定义待正文。",
+      "mechanism": "autoencoder-like band attention产生band-wise weights，按权重分组三通道图，deep color tracking network产生弱跟踪器并ensemble；摘要不独立证实严格波段子集缩减或具体VITAL/Conv实现。",
+      "readingNote": "完整IEEE原始摘要和六作者机构已核，与Griffith摘要逐字符相同，Jun Zhou属Griffith；仍abstract_read。正式2106–2110五页未取：IEEE202空或摘要HTML、机构SWORD130字节XML。共同作者CV仅注释条目/IEEE链接；不借SST或Hy引用数值升级本文全文。",
+      "paper": "https://doi.org/10.1109/icip40778.2020.9191105",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
-          "spectral-band-selection"
+          "spectral-band-grouping",
+          "spectral-band-attention"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱目标跟踪任务。",
+        "relationNote": "完整原始摘要明确高光谱帧注意力权重/分组三通道跟踪，作者机构支持目标身份。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何利用波段注意力和伪彩色分组把有限高光谱视频训练数据迁移到深度目标跟踪？",
-        "datasets": "官方摘要仅称在高光谱数据集上实验；数据集名称、规模、划分和指标待全文核验。",
-        "experimentSetting": "波段注意力分组、多组三通道图、彩色跟踪网络与弱跟踪器集成。",
-        "conclusions": "官方摘要报告 BAE-Net 在高光谱数据集上具有有效性和优势。",
-        "limitations": "摘要未给出数据集、波段分组数量、网络配置、运行速度、代码和逐项指标。",
+        "researchQuestion": "如何以波段权重/分组利用彩色深度跟踪器，在高光谱有限训练样本条件下定位目标？",
+        "datasets": "官方完整摘要只称hyperspectral datasets，实际名称/通道/划分/组数未知；不借SST40/35或Hy v1的引用表填本文协议。",
+        "experimentSetting": "官方摘要确认autoencoder-like注意力、三通道分组、deep color tracking与ensemble；VITAL具体实现/训练参数/评价与成本未核。",
+        "conclusions": "完整摘要只报告有效性与优势，未给具体指标；后续引用BAE .606/.876或.606/.878不作为本篇正式实验核验。",
+        "limitations": "五页正式或作者稿未取，公式/代码/数据/组数/严格选子集/训练参数/速度/指标待。IEEE非OA，机构仅元数据，有限访问不证明其他来源无正文。SST/Hy的相关工作和消融不是BAE全文证据。",
         "dataLinks": [],
         "evidence": [
           {
@@ -73153,6 +73229,15 @@
             "supports": [
               "正式题名、作者、会议、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/9191105/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_author_affiliation",
+            "supports": [
+              "完整摘要直接支持autoencoder-like band attention、band weights、三通道grouping和ensemble，未独立支持严格子集缩减。",
+              "六作者与Griffith Jun Zhou、页码2106–2110；仍摘要级，机构摘要逐字符一致。"
+            ]
           }
         ],
         "versions": [
@@ -73162,12 +73247,36 @@
             "url": "https://doi.org/10.1109/icip40778.2020.9191105",
             "doi": "10.1109/icip40778.2020.9191105",
             "year": 2020,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式ICIP2020/2106–2110书目与完整原始摘要、作者机构已核；五页正文未取得，不借后续论文指标回填。",
+            "readingProgress": "abstract_read"
           }
         ],
-        "methodFamilyId": "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020"
+        "methodFamilyId": "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "逐版本核跟踪/波段分组；注意力来自BAE/Hy正式原始摘要，Hy v1 BABS/Kalman全文另留，未挪用Kalman解混或Transformer类别。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "57d90cfd189ca179aaa7d00eff51d90320793656c1f7a88d87a1c877ecd37085",
+          "sourceUrls": [
+            "https://xplorestaging.ieee.org/document/9191105/"
+          ]
+        }
       },
-      "citation": "@inproceedings{zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020,\n  title = {BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking},\n  author = {Zhuanfeng Li and Fengchao Xiong and Jun Zhou and Jing Wang and Jianfeng Lu and Yuntao Qian},\n  year = {2020},\n  doi = {10.1109/icip40778.2020.9191105}\n}\n"
+      "citation": "@inproceedings{zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020,\n  title = {BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking},\n  author = {Zhuanfeng Li and Fengchao Xiong and Jun Zhou and Jing Wang and Jianfeng Lu and Yuntao Qian},\n  year = {2020},\n  doi = {10.1109/icip40778.2020.9191105}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "完整IEEE/机构摘要已核；2106–2110五页正文未取得。下载202空或摘要HTML，机构仅SWORD/130字节XML；共同作者CV仅注释/IEEE链接，不能借SST或Hy引用升级全文。",
+        "sourceUrl": "https://doi.org/10.1109/ICIP40778.2020.9191105",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "zhou-scholar-multi-spectral-remote-sensing-image-regist-2010",
@@ -80265,7 +80374,6 @@
         "zhou-cherry-hsi-band-selection-2025",
         "zhou-scholar-arxiv-2404-05258",
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
-        "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
         "zhou-scholar-lidar-guided-unsupervised-hyperspectral-im-2025",
         "zhou-scholar-similarity-based-hyperspectral-band-select-2022"
       ],
@@ -80284,6 +80392,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "仅同步本轮Hy/BAE实际支持的波段分组/跟踪关联；版本和阅读边界分开。"
         }
       ]
     },
@@ -86614,13 +86727,25 @@
       "color": "#c2b794",
       "createdAt": "2026-10-11",
       "evidencePaperIds": [
-        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
+        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
+        "zhou-47-hsi-2024",
+        "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020"
       ],
       "history": [
         {
           "date": "2026-10-11",
           "action": "created",
           "reason": "据已读SST-Net公开全文形成，仅关联本篇。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "仅同步本轮Hy/BAE实际支持的波段分组/跟踪关联；版本和阅读边界分开。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "仅同步本轮Hy/BAE实际支持的波段分组/跟踪关联；版本和阅读边界分开。"
         }
       ]
     },
@@ -86641,6 +86766,47 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "据已读SST-Net公开全文形成，仅关联本篇。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-band-attention",
+      "name": "光谱波段注意力",
+      "definition": "利用注意力机制估计波段关系或重要性，用于加权、选择或分组；具体自编码器/层次模块、监督和输出逐篇核，不自动等同Transformer或谱空时联合注意力。",
+      "rationale": "BAE完整原始摘要明确autoencoder-like band attention；Hy正式原始摘要HAS-BS，v1 BABS不冒称学习注意力。",
+      "evidencePaperIds": [
+        "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
+        "zhou-47-hsi-2024"
+      ],
+      "dimension": "method",
+      "status": "confirmed",
+      "color": "#94b9a8",
+      "createdAt": "2026-10-11",
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "据Hy/BAE已取得的原始证据创建，仅关联本轮条目，阅读版本分开。"
+        }
+      ]
+    },
+    {
+      "id": "detection-refinement-tracking",
+      "name": "检测提案与状态细化跟踪",
+      "definition": "以检测器候选为输入，结合目标分类、局部采样或时间状态模型维持指定目标身份与位置；检测任务、具体Kalman/GRU和版本边界分别核。",
+      "rationale": "Hy v1全文与正式摘要均明确检测候选经目标classifier和时间状态细化，时间模型由Kalman改GRU。",
+      "evidencePaperIds": [
+        "zhou-47-hsi-2024"
+      ],
+      "dimension": "method",
+      "status": "confirmed",
+      "color": "#94b9a8",
+      "createdAt": "2026-10-11",
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "据Hy/BAE已取得的原始证据创建，仅关联本轮条目，阅读版本分开。"
         }
       ]
     }
