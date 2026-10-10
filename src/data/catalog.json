@@ -64594,11 +64594,11 @@
       "summary": "指出同图随机采样会让空间滤波/形态学方法获得不公平优势，并提出更客观的评测设计。",
       "input": "高光谱分类影像、训练/测试像元及采样策略。",
       "output": "分类评估协议和偏差比较。",
-      "mechanism": "限制训练/测试空间重叠，再比较随机与控制采样下的分类性能。",
-      "readingNote": "arXiv摘要、Scispace正式元数据/摘要核验；正式TGRS55(2):862–880，未标全文。",
+      "mechanism": "按类别的不连通区域随机取种子，以同类八邻域区域生长形成局部集中、全局分散的训练块，减少空间算子造成的训练测试重叠。",
+      "readingNote": "arXiv v1第VI节Algorithm1及第VII节实验局部补读；正式TGRS2017书目核验。仅局部阅读，预印本与正式版差异仍待核。",
       "paper": "https://arxiv.org/abs/1605.05829",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified_secondary_index",
+      "verificationLevel": "primary_abstract_and_selected_pages",
       "library": {
         "categoryIds": [
           "datasets-benchmarks",
@@ -64610,10 +64610,10 @@
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何降低空间重叠造成的高光谱光谱—空间分类评估偏差？",
-        "datasets": "摘要和索引列Indian Pines、Pavia University等实验；完整划分待全文。",
-        "experimentSetting": "摘要、正式元数据及部分图注核验；未逐项复核表格。",
+        "datasets": "Botswana、Indian Pines、Kennedy Space Center、Pavia University、Salinas；各实验的数据处理和正式版差异待核。",
+        "experimentSetting": "v1以SVM/RF比较随机与控制采样、均值/高斯滤波及纯光谱特征；已核方法和指定实验段落，未逐表复核全部结果。",
         "conclusions": "控制采样降低训练/测试依赖，提供更客观的比较。",
-        "limitations": "协议适用范围和跨数据集稳定性待全文。",
+        "limitations": "控制采样减少而不保证消除空间重叠；局部训练块可能降低同类光谱覆盖并增大运行间波动。小区域样本数取整、正式版差异、完整理论和代码待核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -64630,6 +64630,16 @@
             "level": "Crossref",
             "supports": [
               "正式TGRS记录、作者和页码。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/html/1605.05829v1",
+            "checkedAt": "2026-10-10",
+            "level": "primary_selected_sections",
+            "supports": [
+              "VI Algorithm1及区域生长说明：同类八邻域、随机种子、按分区采样比例生长。",
+              "VII实验：五个数据集、SVM/RF；纯光谱实验说明覆盖不足与波动限制。",
+              "Figure11说明边界样本仍受测试邻域影响，减少重叠不等于完全隔离。"
             ]
           }
         ],
@@ -64655,7 +64665,7 @@
         "classificationReview": {
           "reviewedAt": "2026-10-10",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "v1第VI–VII节确认研究输出为高光谱分类评估协议，区域生长为采样方法；保持现有任务分类。局部阅读补充重叠、覆盖与波动限制，不提升全文核验状态。",
           "evidenceFields": [
             "title",
             "summary",
@@ -64664,10 +64674,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "e1fe55d5a465fc5a513848f25b286d9619db9f62e61b2126be9380354f9293cf",
+          "evidenceDigest": "ba46cdebcca3118ecedaf5d3bb4b23b34accc515ee6f3005fb978f84a874392a",
           "sourceUrls": [
             "https://arxiv.org/abs/1605.05829",
-            "https://api.crossref.org/works/10.1109/tgrs.2016.2616489"
+            "https://api.crossref.org/works/10.1109/tgrs.2016.2616489",
+            "https://arxiv.org/html/1605.05829v1"
           ]
         }
       },

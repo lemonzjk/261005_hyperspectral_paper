@@ -26,9 +26,11 @@
 
 证据见 `sources/jun-zhou-dblp-remaining-primary-abstracts-2026-10-10.json`、`jun-zhou-dblp-remaining-repository-2026-10-10.json`、`jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json`。主筛选表包含所有365条及明确pending状态；来源差集、当前机构目录与已收录论文正式全文、实验和代码尚未全部闭环。
 
-新增非关键词Scholar差集审计209条：167条沿用完整题名匹配的已有范围排除证据，8条匹配目录，新增2条多光谱关联，32条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
+新增非关键词Scholar差集审计209条：175条暂排除（167条交叉匹配加8条原始来源补核），8条匹配目录，新增2条多光谱关联，24条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
 
 两篇新增分别是2019 MYD21方向发射率与向上长波辐射、2020 MTSAT-2温度上升指数TRI干旱监测。它们与已有MODIS分裂窗LST及Himawari亮温论文的DOI、任务和数据不同；不混用波段或实验。MTSAT正式年份2020，勘误 DOI `10.1016/j.rse.2020.111661` 修正图11小麦产量单位为t/ha。M2-Net、2022稳健2DSVD与CrowdMLP按原稿实验暂排除；CrowdMLP预印本机构不列Griffith，同名身份及正式版差异另留记录。源证据见 `sources/jun-zhou-thermal-scholar-followup-2026-10-10.json` 与逐项DBLP清单。
+
+本轮8条Scholar待核补原始证据后暂排除：微流控荧光强度、支票分割硕士论文、地图修订博士论文、IB零样本学习、DPSC题名变体、作者裂缝通讯及两篇考拉检测。考拉“两流”为原始视频与光流，不是可见/近红外联合光谱；夜间照明和PIR运动触发也不自动构成高光谱输入。裂缝作者通讯缓存可见，PDF直接下载403；不标正式会议全文。源表 `sources/jun-zhou-scholar-scope-followup-2026-10-10.json` 保留局部阅读与版本边界。控制采样v1方法与指定实验已补读，学习问题及限制见[评测笔记](jun-zhou-controlled-sampling-note.md)，目录仍保持摘要级阅读状态。
 
 ## 首批闭环（2009–2011）
 
