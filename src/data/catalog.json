@@ -75646,41 +75646,45 @@
       "title": "HyperVision: A Channel-Adaptive Ground-Based Hyperspectral Vision Pre-trained Backbone",
       "authors": "Guanyiman Fu, Jingtao Li, Zihang Cheng, Zhuanfeng Li, Diqi Chen, Yan Xu, Xiangyu Liu, Fengchao Xiong, Jianfeng Lu, Chengrong Chen, Jun Zhou",
       "year": 2026,
-      "venue": "arXiv",
-      "publicationName": "arXiv",
-      "publicationStatus": "preprint",
-      "venueTier": "preprint",
+      "venue": "BMVC",
+      "publicationName": "British Machine Vision Conference",
+      "publicationStatus": "accepted",
+      "venueTier": "conference",
       "collections": [
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2605.17286",
-      "representation": "Scholar差集 arXiv 题名与原站摘要确认高光谱任务。",
+      "representation": "通读固定v3的地面高光谱通道自适应预训练骨干；BMVC2026官方接收，最终出版版待核。",
       "tags": [],
-      "summary": "HyperVision pretrains a channel-adaptive ground-based hyperspectral backbone.",
-      "input": "高光谱影像；具体采集设置见摘要。",
-      "output": "跨传感器高光谱表征，支持分割、跟踪和显著目标检测。",
-      "mechanism": "Dynamic channel embedding, SAM2/HyperFree pseudo-labels and RGB-to-HSI cross-modal distillation.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
+      "summary": "HyperVision用26个地面数据集的14959张HSI预训练通道自适应ViT；融合SAM2/HyperFree伪掩码与冻结SAM的RGB知识蒸馏，冻结骨干后监督训练分割、跟踪和显著目标检测头。",
+      "input": "论文预训练31个子集，15–420波段、377–1700nm；地面HSI及配准RGB/三波段伪彩辅助监督。下游HSIDrive25、City128、HOT15–25、HSSOD81波段；实际语料成员与划分未核。",
+      "output": "通道自适应密集谱空特征；经任务头生成像素语义类别、目标跟踪框或显著目标掩码。",
+      "mechanism": "每10nm波长字典动态构造key/cube双分支卷积，逐元素相加后ViT编码；SAM2 RGB/光谱序列与HyperFree材料伪掩码经NMS/OR融合，提示分割损失加冻结SAM教师的DINO式token蒸馏。",
+      "readingNote": "通读官方arXiv v3共20页、公式1–6、表1–7及全部图注/参考条目，核原Fig3/4完整裁图。BMVC官方接收表精确题名329；选读固定提交代码及HF两页权重清单，未下载权重/数据或复现实验，最终BMVC版及v1/v2差异待核。",
       "paper": "https://arxiv.org/abs/2605.17286",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "representation-learning",
           "semantic-segmentation",
-          "hyperspectral-target-tracking"
+          "hyperspectral-target-tracking",
+          "hyperspectral-salient-object-detection",
+          "transformer"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决题名所示高光谱任务？",
-        "datasets": "15,000 images from 26 ground-based datasets; segmentation, tracking and salient-object tasks.",
-        "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
-        "conclusions": "Abstract reports cross-sensor gains; dataset composition, splits and model release need audit.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
-        "dataLinks": [],
+        "relationNote": "全文直接地面HSI15–420通道预训练与四个真实HSI下游基准；RGB/伪彩只作辅助伪标签或教师输入，code is_mu变量不改物理光谱关系。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "怎样用异构地面HSI的通道字典、多源伪掩码与RGB知识蒸馏获得统一冻结骨干，再以任务头适配多传感器密集感知？",
+        "datasets": "Table1为26数据集/31子集/14959图，HOT2024每100帧抽1；含HSIDrive752、City1330和HSSOD60。下游分割HSIDrive25/City128波段，HOT2023共16序列15–25波段跟踪，HSSOD60图81波段显著检测。",
+        "experimentSetting": "预训练用自动伪掩码/冻结SAM教师，无人工标签；下游冻结骨干监督微调RU-Net/SiamHYPER/BA-SAM头（15.7/15.9、25.9、4.1M可训练参数）。训练/测试图像manifest、seed和完整配置未给；预训练名单含评测数据集，隔离未证实。",
+        "conclusions": "HSIDrive Accµ97.44/AccM89.67/F1M90.70/IoU83.51%，City93.41/66.05/67.87/57.04%；HOT AUC0.571/DP0.785；HSSOD MAE0.049、AUC0.959与HyperFree并列。Base加蒸馏四指标下降。B/L/H推理69.61/140.43/221.40ms、2904/3370/3770MiB，慢于所比CNN；16.3%宏精度提升为相对值。",
+        "limitations": "预训练与下游数据集名单重叠，图像级测试隔离/年份间序列重叠未核；少量可训练头参数不代表推理更快。OR后子掩码、τ/λdis、完整优化与统计未给；当前reader部分波段/波长声明与论文不同。权重仅清单/LFS声明，实际数组、复现、源数据许可及BMVC最终版仍待。",
+        "dataLinks": [
+          "https://huggingface.co/IronKitty/HyperVision/tree/21aecfa4461e9019c285095c3accdf689c226735/checkpoints"
+        ],
         "evidence": [
           {
             "url": "https://arxiv.org/abs/2605.17286",
@@ -75701,6 +75705,44 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2605.17286v3",
+            "checkedAt": "2026-10-11",
+            "level": "固定arXiv v3全文与原图核验",
+            "supports": [
+              "20页全文支持地面HSI31子集/14959图、双分支字典、SAM2/HyperFree伪掩码及SAM教师蒸馏",
+              "表1–7支持三个下游监督任务头协议、主结果/并列/负例和独立推理成本边界",
+              "预训练名单包含下游数据集但无图像级隔离证据；不认定已证明泄漏或严格未见测试",
+              "原Fig3/4完整裁图及Griffith作者单位；不等于BMVC最终版或实验复现"
+            ]
+          },
+          {
+            "url": "https://bmvc2026.bmva.org/programme/accepted_papers/",
+            "checkedAt": "2026-10-11",
+            "level": "BMVC2026官方接收名单",
+            "supports": [
+              "官方精确题名及paper ID329支持accepted状态",
+              "名单未给作者表、最终PDF、DOI/页码或正式出版日"
+            ]
+          },
+          {
+            "url": "https://github.com/lronkitty/HyperVision/tree/5fa12f5b904cd4abfbeee4d920de79bf8860591b",
+            "checkedAt": "2026-10-11",
+            "level": "论文所链作者仓库固定提交与选读原代码",
+            "supports": [
+              "76项未截断树和11个下载文件Git blob核验；部分代码选读，不是全仓逐行审计",
+              "实际波长匹配/reader声明及其与论文差异；未运行训练或推理"
+            ]
+          },
+          {
+            "url": "https://huggingface.co/IronKitty/HyperVision/tree/21aecfa4461e9019c285095c3accdf689c226735/checkpoints",
+            "checkedAt": "2026-10-11",
+            "level": "作者所链HF固定修订完整树分页",
+            "supports": [
+              "两页78项完整树含三个checkpoint路径、大小和声明LFS OID",
+              "模型卡Apache2元数据；未下载/哈希/加载权重，不自动覆盖上游与数据许可"
+            ]
           }
         ],
         "versions": [
@@ -75718,6 +75760,19 @@
             "updatedAt": "2026-05-17T06:50:06Z"
           },
           {
+            "id": "zhou-scholar-arxiv-2605-17286-v2",
+            "type": "arXiv v2",
+            "url": "https://arxiv.org/abs/2605.17286v2",
+            "doi": "10.48550/arXiv.2605.17286",
+            "year": 2026,
+            "arxivId": "2605.17286",
+            "arxivVersion": "v2",
+            "firstSubmittedAt": "2026-05-17T06:50:06Z",
+            "updatedAt": "2026-05-28T06:28:39Z",
+            "metadataStatus": "primary_arxiv_abs_submission_history",
+            "relation": "官方v3页面提交历史补v2日期；未读v2正文或核与v3具体差异，不新增论文。"
+          },
+          {
             "id": "zhou-scholar-arxiv-2605-17286-arxiv-2605-17286-v3",
             "type": "arXiv预印本",
             "doi": "10.48550/arXiv.2605.17286",
@@ -75727,13 +75782,89 @@
             "arxivVersion": "v3",
             "firstSubmittedAt": "2026-05-17T06:50:06Z",
             "updatedAt": "2026-08-28T12:31:53Z",
-            "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v3预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。"
+            "metadataStatus": "primary_arxiv_v3_full_text_verified",
+            "relation": "固定v3已通读20页并核原图、主要协议/结果及当前代码发布；BMVC接收由官方表另证，最终出版版本与v1/v2全文差异仍待，不新增论文。"
+          },
+          {
+            "id": "zhou-scholar-arxiv-2605-17286-bmvc-2026-accepted",
+            "type": "BMVC2026接收记录",
+            "url": "https://bmvc2026.bmva.org/programme/accepted_papers/",
+            "year": 2026,
+            "metadataStatus": "primary_conference_accepted_title_list",
+            "relation": "官方接收表paper329精确题名，加论文链接作者仓库同名接收声明，关联既有方法；未给最终PDF、作者表、DOI/页码或出版日，预印本引用保留。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-arxiv-2605.17286"
+        "methodFamilyId": "zhou-scholar-arxiv-2605.17286",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "全文明确通道适配表征预训练及三下游任务，补既有显著目标检测和Transformer标签；语义掩码不额外当异常检测或数据集正式发布。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "974729fef54f7aafde4fe50fda273d7842fe314a2dc0ded16e3cba63dc1fc5a6",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2605.17286v3"
+          ]
+        }
       },
-      "citation": "@misc{zhou-scholar-arxiv-2605-17286,\n  title = {HyperVision: A Channel-Adaptive Ground-Based Hyperspectral Vision Pre-trained Backbone},\n  author = {Fu Guanyiman and Li Jingtao and Cheng Zihang and Li Zhuanfeng and Chen Diqi and Xu Yan and Liu Xiangyu and Xiong Fengchao and Lu Jianfeng and Chen Chengrong and Zhou Jun},\n  year = {2026},\n  eprint = {2605.17286},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2605.17286}\n}\n"
+      "citation": "@misc{zhou-scholar-arxiv-2605-17286,\n  title = {HyperVision: A Channel-Adaptive Ground-Based Hyperspectral Vision Pre-trained Backbone},\n  author = {Fu Guanyiman and Li Jingtao and Cheng Zihang and Li Zhuanfeng and Chen Diqi and Xu Yan and Liu Xiangyu and Xiong Fengchao and Lu Jianfeng and Chen Chengrong and Zhou Jun},\n  year = {2026},\n  eprint = {2605.17286},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2605.17286}\n}\n",
+      "code": "https://github.com/lronkitty/HyperVision",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2605.17286v3",
+          "figureLabel": "Figure 3",
+          "caption": "HyperVision通道自适应骨干：波长字典动态双分支嵌入与Transformer特征。",
+          "verificationNote": "目视核v3第6页Figure 3的完整模块/输入输出/箭头及全图注；保留原图不重绘，非最终BMVC出版版。",
+          "page": 6,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pixelBox": [
+              70,
+              100,
+              1630,
+              995
+            ]
+          },
+          "path": "figures/zhou-scholar-arxiv-2605-17286/framework-backbone-v3.png",
+          "width": 1560,
+          "height": 895,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "e95c71bdf998002420f2b82569960cbe62b4163ab6fcfbac8dd6c3c16194913d",
+          "attribution": "Guanyiman Fu, Jingtao Li, Zihang Cheng, Zhuanfeng Li, Diqi Chen, Yan Xu, Xiangyu Liu, Fengchao Xiong, Jianfeng Lu, Chengrong Chen, Jun Zhou · arXiv v3 2026（BMVC2026已接收）"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2605.17286v3",
+          "figureLabel": "Figure 4",
+          "caption": "HyperVision无监督表征预训练：SAM2/HyperFree多源伪标签及冻结RGB教师蒸馏。",
+          "verificationNote": "目视核v3第7页Figure 4的完整模块/输入输出/箭头及全图注；保留原图不重绘，非最终BMVC出版版。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pixelBox": [
+              300,
+              1280,
+              1460,
+              2290
+            ]
+          },
+          "path": "figures/zhou-scholar-arxiv-2605-17286/framework-training-v3.png",
+          "width": 1160,
+          "height": 1010,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "66e34dad3cc6f199a1d734ca006d0611304ddb7ae6beba66857dc0985936eda5",
+          "attribution": "Guanyiman Fu, Jingtao Li, Zihang Cheng, Zhuanfeng Li, Diqi Chen, Yan Xu, Xiangyu Liu, Fengchao Xiong, Jianfeng Lu, Chengrong Chen, Jun Zhou · arXiv v3 2026（BMVC2026已接收）"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-arxiv-2605-14239",
@@ -77660,7 +77791,8 @@
         "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
-        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
+        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
+        "zhou-scholar-arxiv-2605-17286"
       ],
       "history": [
         {
@@ -85564,7 +85696,8 @@
       "rationale": "周峻2013原摘要及指定局部方法形成，未预设分类数量。",
       "evidencePaperIds": [
         "material-salient-object-hsi-2018",
-        "spectral-saliency-icip-2013"
+        "spectral-saliency-icip-2013",
+        "zhou-scholar-arxiv-2605-17286"
       ],
       "history": [
         {
