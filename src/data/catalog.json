@@ -64495,6 +64495,15 @@
             "supports": [
               "TGRS正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/c9be4896-203d-4cd3-a9d2-8f52c42366b8",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith机构勘误摘要",
+            "supports": [
+              "2018勘误DOI与原论文对应",
+              "Fig14混淆矩阵3×3取代7×7；未取得勘误图版"
+            ]
           }
         ],
         "versions": [
@@ -64513,6 +64522,14 @@
             "doi": "10.1109/tgrs.2016.2627042",
             "year": 2017,
             "relation": "作者稿或公开页面；页码只对应来源文件。"
+          },
+          {
+            "id": "cross-scene-dictionary-adaptation-correction-2018",
+            "type": "正式勘误",
+            "url": "https://doi.org/10.1109/TGRS.2018.2789418",
+            "doi": "10.1109/TGRS.2018.2789418",
+            "year": 2018,
+            "relation": "出版社登记与机构摘要核实：原论文Fig14上海/杭州三类混淆矩阵应3×3，非7×7；不新增独立方法，勘误图版仍待取得。"
           }
         ],
         "methodFamilyId": "cross-scene-domain-adaptation",
@@ -70643,7 +70660,8 @@
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
-          "agriculture-phenotyping"
+          "agriculture-phenotyping",
+          "plant-disease-detection"
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
@@ -70651,11 +70669,13 @@
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何在可见症状前用高光谱影像检测并跟踪甘蔗病害？",
-        "datasets": "官方摘要称创建并发布健康/接种甘蔗大规模高分辨率高光谱数据集；具体规模、采样和许可待全文核验。",
+        "datasets": "官方摘要称创建并发布健康/接种甘蔗大规模高分辨率高光谱数据集；具体规模、采样和许可待全文核验。 独立机构登记10.25904/1912/4757为黑穗病/花叶病高光谱数据（4TB、需申请）；是否与本期刊全部实验逐项对应待核，未下载。",
         "experimentSetting": "五个月病程试验；黑穗病和花叶病分别进行早期检测，比较波长范围与深度网络表现。",
         "conclusions": "官方摘要报告两种病害在可见症状出现前检测准确率均超过90%；完整划分、误差与外部验证待全文核验。",
         "limitations": "摘要未给出网络完整结构、样本规模、田间部署、代码和数据许可细节。",
-        "dataLinks": [],
+        "dataLinks": [
+          "https://research-repository.griffith.edu.au/server/api/core/items/59bb457d-9fea-4ff8-9976-c3226e7dde27"
+        ],
         "evidence": [
           {
             "url": "https://www.sciencedirect.com/science/article/pii/S266615432400406X",
@@ -73569,7 +73589,7 @@
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
-          "land-cover-classification"
+          "plant-disease-detection"
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
@@ -76410,6 +76430,212 @@
         "sourceUrl": "https://www.researchgate.net/publication/394233347_A_Euclidean_Affinity-Augmented_Hyperbolic_Neural_Network_for_Semantic_Segmentation_of_Remote_Sensing_Images",
         "checkedAt": "2026-10-10"
       }
+    },
+    {
+      "publicationStatus": "published",
+      "collections": [
+        "hyperspectral"
+      ],
+      "tags": [],
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "full_text_verified",
+      "id": "zhou-sugarcane-assct-2023",
+      "shortTitle": "Sugarcane HSI · ASSCT 2023",
+      "title": "Early detection of sugarcane diseases through hyperspectral imaging and deep learning",
+      "authors": "Dong Bao, Jun Zhou, Shamsul A Bhuiyan, Rebecca Ford, Yongsheng Gao",
+      "year": 2023,
+      "venue": "ASSCT",
+      "publicationName": "Proceedings of the Australian Society of Sugar Cane Technologists",
+      "venueTier": "conference",
+      "representation": "ResNet34 与双重自注意力高光谱病害检测",
+      "summary": "用150波段近距离高光谱图像和嵌入DSAB的ResNet34区分接种/对照甘蔗，分别检测黑穗病和花叶病；正文报告早于可见症状的检测效果，但花叶病时间表述不一致。",
+      "input": "imec Snapscan VNIR采集的470–900 nm、150波段、1088×2048像素甘蔗影像；暗白校准与SVM前景分割。",
+      "output": "每幅甘蔗影像的接种/对照二分类结果及分时段准确率、敏感度、特异度和F1。",
+      "mechanism": "在ResNet34每个残差块嵌入DSAB的通道与空间自注意力，分别为两种病害训练模型；相邻两次采集归为时段数据集。",
+      "readingNote": "已通读Griffith保存的ASSCT2023正式8页正文（176–183页，PDF另有封面）。本文明确采用Bao等2021的DSAB；未发现与2024期刊稿的明确扩展声明，不合并实验或作者。未进行代码复现。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
+      "citation": "@inproceedings{bao2023sugarcane,\n  title={Early detection of sugarcane diseases through hyperspectral imaging and deep learning},\n  author={Bao, Dong and Zhou, Jun and Bhuiyan, Shamsul A and Ford, Rebecca and Gao, Yongsheng},\n  booktitle={Proceedings of the Australian Society of Sugar Cane Technologists},\n  volume={44},\n  pages={176--183},\n  year={2023},\n  url={https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content}\n}\n",
+      "library": {
+        "categoryIds": [
+          "plant-disease-detection",
+          "agriculture-phenotyping"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "正文明确采集并输入150波段高光谱立方体，任务为植物病害二分类。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "近距离高光谱与双重自注意力能否在可见症状前区分两种甘蔗病害的接种植物与对照植物？",
+        "datasets": "2021年Woodford试验，黑穗病50接种+50对照，花叶病45接种+46对照，各5品种；3245幅影像。150波段470–900 nm。机构独立数据登记10.25904/1912/4757描述黑穗病/花叶病两子集、4TB、需申请，实际文件与本篇3245幅的逐项对应未核。",
+        "experimentSetting": "按相邻两次采集合并为18个时段数据集，分别6:2:2训练/验证/测试；未说明是否按植物身份隔离。Dataset5/13另生成伪RGB对照，不是独立RGB传感器。标签按接种/对照分配，原文建议未来补分子检测。",
+        "conclusions": "表3：Dataset5 HSI/RGB准确率89.42%/65.84%，Dataset13为87.85%/67.99%。黑穗病在约8周时准确率95.2%。花叶病摘要称2周早检、8周可见；结果段又称8周检出、常规16–20周可见，不以其中一个表述替代全部原文。",
+        "limitations": "时段/植物分组独立性、训练超参数、公开代码与分子真值待核；晚期胁迫/营养不足/其他疾病干扰。正文称架构图Figure4，图注实际Figure1，重复编号原样留证。早检时间存在摘要/正文差异，不能直接外推至独立田间植株或自然感染。",
+        "dataLinks": [
+          "https://research-repository.griffith.edu.au/server/api/core/items/59bb457d-9fea-4ff8-9976-c3226e7dde27"
+        ],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
+            "checkedAt": "2026-10-10",
+            "level": "ASSCT2023正式正文",
+            "supports": [
+              "作者与Griffith机构、176–183页",
+              "150波段输入、采集与6:2:2划分",
+              "表3、早检时间差异与架构图号冲突"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/4a273add-acde-4a27-8430-6e9966f89043",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith机构书目与摘要",
+            "supports": [
+              "会议、卷页、作者身份"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/59bb457d-9fea-4ff8-9976-c3226e7dde27",
+            "checkedAt": "2026-10-10",
+            "level": "Griffith独立数据登记",
+            "supports": [
+              "黑穗病/花叶病子集、4TB、受理申请；不证明论文逐项数据对应"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "zhou-sugarcane-assct-2023-published",
+            "type": "正式会议论文",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
+            "year": 2023,
+            "relation": "ASSCT44:176–183；采用2021 DSAB，2024近题期刊版本关系待原文明确声明。"
+          }
+        ],
+        "methodFamilyId": "zhou-sugarcane-dsab"
+      },
+      "frameworkFigures": [
+        {
+          "path": "figures/zhou-sugarcane-assct-2023/framework.png",
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
+          "figureLabel": "Figure 1（正文称Figure 4）",
+          "caption": "采用的ResNet34及每个残差块中的DSAB。",
+          "verificationNote": "核对正式正文印刷180页：段落引用Figure4，实际架构图注写Figure1；保留该差异。完整裁切架构与图例，未重绘。",
+          "page": 6,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderMaxDimension": 2400,
+            "pixelBox": [
+              300,
+              340,
+              1390,
+              815
+            ]
+          },
+          "width": 1090,
+          "height": 475,
+          "verifiedAt": "2026-10-10",
+          "sha256": "5343a7151212d799a748e802a774570b036fa90db6f7219cc508299475d3e5a6",
+          "attribution": "Dong Bao, Jun Zhou, Shamsul A Bhuiyan, Rebecca Ford, Yongsheng Gao · ASSCT 2023"
+        }
+      ]
+    },
+    {
+      "publicationStatus": "published",
+      "collections": [
+        "hyperspectral"
+      ],
+      "tags": [],
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "full_text_verified",
+      "id": "zhou-cherry-hsi-band-selection-2025",
+      "shortTitle": "BBHFC · Cherry 730 nm",
+      "title": "Single-wavelength near-infrared imaging and machine learning for detecting Queensland fruit fly damage in cherries",
+      "authors": "Maryam Yazdani, Dong Bao, Jun Zhou, Andy Wang, Rieks D. van Klinken",
+      "year": 2025,
+      "venue": "Smart Agricultural Technology",
+      "publicationName": "Smart Agricultural Technology",
+      "venueTier": "journal",
+      "doi": "10.1016/j.atech.2025.101090",
+      "representation": "高光谱视觉选波长与单波段NIR检测",
+      "summary": "先从150波段高光谱影像中视觉选择730 nm，再采集单波段NIR樱桃图像。BBHFC将YOLOv3预测框置信度及类别分数转为直方图特征，完成图像与果实级虫害判断。",
+      "input": "选波长阶段为470–900 nm、150波段HSI；检测模型输入为730 nm照明下2560×1920单色图像，仅保留相机红通道。",
+      "output": "果蝇产卵损伤框、图像级及四视角果实级感染标签。",
+      "mechanism": "YOLOv3输出候选框；BBHFC仅按置信度阈值过滤，拼接置信度、感染类别及未感染类别直方图，训练决策树/SVM/随机森林。对照YOLO-IP使用NMS后任一感染框判断。",
+      "readingNote": "已通读正式12页正文（Griffith PDF另有封面），重点核第2–4节、表1/3/4/5及Fig7。高光谱用于选波长，模型训练测试用单波段NIR；不描述为高光谱立方体检测网络。首次在线2025-06-09；Crossref卷期为2025-12。未复现代码或数据。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content",
+      "citation": "@article{yazdani2025cherry,\n  title={Single-wavelength near-infrared imaging and machine learning for detecting Queensland fruit fly damage in cherries},\n  author={Yazdani, Maryam and Bao, Dong and Zhou, Jun and Wang, Andy and van Klinken, Rieks D.},\n  journal={Smart Agricultural Technology},\n  volume={12},\n  pages={101090},\n  year={2025},\n  doi={10.1016/j.atech.2025.101090}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-band-selection",
+          "agriculture-phenotyping"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "hyperspectral",
+        "relationNote": "研究实际采集150波段HSI并据此选择730 nm，属于直接高光谱选波长应用；检测网络本身使用单波段NIR，不宣称多光谱或高光谱检测输入。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "高光谱筛出的单波长能否支持低计算成本的樱桃果蝇产卵损伤检测及果实感染判别？",
+        "datasets": "imec Snapscan VNIR 150波段470–900 nm、1088×2048用于选波长。检测库1771幅单色图：1224感染/547对照，2560×1920；训练1089、验证126、测试556，测试175果（78感染/97对照）。裁切448×448后训练109220、验证13740增强块；测试保持原图。数据按请求提供，未取得公开下载或代码。",
+        "experimentSetting": "730 nm LED实测峰728.8 nm、FWHM约36 nm；显微镜相机去红外滤镜后保留红通道。YOLOv3训练120 epochs，学习率1e-5、weight decay1e-4；Table2决策树max_depth2、随机森林3、SVM线性C=5e8。检测AP50评估233张有框标注测试图；图像级评估556图，果实级175果；独立人工比较555果（155感染+400对照）不要混算。",
+        "conclusions": "损伤点YOLOv3 AP50=0.8132；表4 BBHFC决策树图像级准确率0.9586、F1=0.9313；果实级准确率0.9143、敏感度1、特异度0.8454。表5独立人工对照中模型准确率0.89、人工平均0.60，模型敏感度0.77；不是表4同一测试集或同一敏感度。",
+        "limitations": "视觉选波长与训练/验证/测试果实身份隔离细节待核；测试395对照图仅72图有损伤框标注，检测与整图评估分母不同。单波长实为有限带宽LED照明，不是理想谱线。降低误拒/漏检、采集标注自动化和商业分选集成仍待验证；阈值在测试曲线上取最优的独立泛化需另核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content",
+            "checkedAt": "2026-10-10",
+            "level": "Smart Agricultural Technology正式正文",
+            "supports": [
+              "Griffith Jun Zhou身份、150波段选波长与单波段检测边界",
+              "表1划分、表3/4/5不同评估单位",
+              "Fig7方法、数据按请求提供、在线2025-06-09"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.atech.2025.101090",
+            "checkedAt": "2026-10-10",
+            "level": "Crossref出版社登记",
+            "supports": [
+              "正式题名、完整作者、目标ORCID0000-0001-5822-8233、2025卷期DOI"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "zhou-cherry-hsi-band-selection-2025-published",
+            "type": "正式期刊论文",
+            "url": "https://doi.org/10.1016/j.atech.2025.101090",
+            "doi": "10.1016/j.atech.2025.101090",
+            "year": 2025,
+            "relation": "正式正文首次在线2025-06-09；Crossref登记12卷2025-12，两个日期分别保存。"
+          }
+        ],
+        "methodFamilyId": "zhou-cherry-bbhfc"
+      },
+      "frameworkFigures": [
+        {
+          "path": "figures/zhou-cherry-hsi-band-selection-2025/framework.png",
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content",
+          "figureLabel": "Fig. 7",
+          "caption": "YOLO-IP与BBHFC：候选框过滤、三种分数直方图、拼接归一化及分类器。",
+          "verificationNote": "核对正式正文印刷6页Fig7全部(a)/(b)，保留输入、NMS对照、BBHFC阈值过滤及特征生成器。输入为单波段NIR，未重绘。",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderMaxDimension": 2400,
+            "pixelBox": [
+              230,
+              1220,
+              1570,
+              2175
+            ]
+          },
+          "width": 1340,
+          "height": 955,
+          "verifiedAt": "2026-10-10",
+          "sha256": "194ab9d187dabcfd7b9bf3e59a8d6d9024e1f80dc600e8dee47dc04378814fe9",
+          "attribution": "Maryam Yazdani, Dong Bao, Jun Zhou, Andy Wang, Rieks D. van Klinken · Smart Agricultural Technology 2025"
+        }
+      ]
     }
   ],
   "datasets": [
@@ -78805,7 +79031,8 @@
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
         "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
         "zhou-scholar-lidar-guided-unsupervised-hyperspectral-im-2025",
-        "zhou-scholar-similarity-based-hyperspectral-band-select-2022"
+        "zhou-scholar-similarity-based-hyperspectral-band-select-2022",
+        "zhou-cherry-hsi-band-selection-2025"
       ],
       "history": [
         {
@@ -79996,7 +80223,6 @@
         "zhou-scholar-arxiv-2501-16700",
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
         "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
-        "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
         "zhou-scholar-hyperspectral-image-classification-based-o-2019",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
@@ -80832,7 +81058,9 @@
         "jun-zhou-dblp-whispers-weed-2019",
         "zhou-himawari-thermal-drought-2020",
         "zhou-mtsat2-tri-2020",
-        "zhou-egu-himawari-tri-abstract-2019"
+        "zhou-egu-himawari-tri-abstract-2019",
+        "zhou-sugarcane-assct-2023",
+        "zhou-cherry-hsi-band-selection-2025"
       ],
       "history": [
         {
@@ -84981,6 +85209,28 @@
           "date": "2026-10-10",
           "action": "created",
           "reason": "由出版社摘要明确的输出任务形成，完整实验待全文核验。"
+        }
+      ]
+    },
+    {
+      "id": "plant-disease-detection",
+      "name": "植物病害光谱检测",
+      "dimension": "task",
+      "definition": "利用光学高光谱或明确关联的光谱观测，识别植物接种、感染或健康状态；不把病害检测自动当作物种或土地覆盖分类。",
+      "status": "provisional",
+      "color": "#88bb66",
+      "createdAt": "2026-10-10",
+      "rationale": "ASSCT2023正式正文与2021/2024两篇既有甘蔗文献支持独立病害任务；暂定标签不提升其他条目的阅读核验级别。",
+      "evidencePaperIds": [
+        "zhou-42-hsi-2024",
+        "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+        "zhou-sugarcane-assct-2023"
+      ],
+      "history": [
+        {
+          "date": "2026-10-10",
+          "action": "created",
+          "reason": "按实际输出区分植物病害检测与地物类别判别。"
         }
       ]
     }

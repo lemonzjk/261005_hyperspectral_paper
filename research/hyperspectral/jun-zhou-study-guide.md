@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共186条出版/预印本/会议摘要记录：179条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。179条为摘要级核验、7条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。179条为摘要级核验、9条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -161,7 +161,7 @@
 
 ## 当前作者目录完整索引
 
-以下列出当前186条记录，保持正式发表与预印本状态，不将同方法族合并成一篇。点击标题访问目录原始来源；具体证据和版本笔记见网站详情。任务标签仍有暂定分类。
+以下列出当前188条记录，保持正式发表与预印本状态，不将同方法族合并成一篇。点击标题访问目录原始来源；具体证据和版本笔记见网站详情。任务标签仍有暂定分类。
 
 | 年份 | 题名 / 原始来源 | 当前任务 | 出版状态 | 证据级别 |
 | --- | --- | --- | --- | --- |
@@ -257,7 +257,7 @@
 | 2020 | [Superpixel-Level Weighted Label Propagation for Hyperspectral Image Classification](https://www.researchgate.net/publication/363929741_Superpixel_Correction_Based_Label_Propagation_for_Hyperspectral_Images_Classification) | 地物与植被图像分类、标注样本主动选择 | 正式发表 | 摘要核验 |
 | 2021 | [A Lightweight Convolutional Neural Network for Hyperspectral Image Classification](https://scispace.com/papers/a-lightweight-convolutional-neural-network-for-hyperspectral-5ebojmrxv8) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2021 | [Discriminant Tensor-Based Manifold Embedding for Medical Hyperspectral Imagery](https://pubmed.ncbi.nlm.nih.gov/33687854/) | 光谱降维与子空间识别、地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2021 | [Early Detection of Sugarcane Smut Disease in Hyperspectral Images](https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2021 | [Early Detection of Sugarcane Smut Disease in Hyperspectral Images](https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content) | 植物病害光谱检测 | 正式发表 | 摘要核验 |
 | 2021 | [Exploring Chromatic Aberration and Defocus Blur for Relative Depth Estimation From Monocular Hyperspectral Image](https://openalex.org/W3155353888) | 深度、法线与表面重建、光学影像配准 | 正式发表 | 摘要核验 |
 | 2021 | [Flexible Gabor-Based Superpixel-Level Unsupervised LDA for Hyperspectral Image Classification](https://doi.org/10.1109/TGRS.2020.3048994) | 地物与植被图像分类、光谱降维与子空间识别 | 正式发表 | 摘要核验 |
 | 2021 | [Hyperspectral Anomaly Detection via Deep Plug-and-Play Denoising CNN Regularization](https://hub.hku.hk/handle/10722/298375) | 高光谱异常检测、光谱去噪 | 正式发表 | 摘要核验 |
@@ -300,11 +300,12 @@
 | 2023 | [Spatial–Spectral Split Attention Residual Network for Hyperspectral Image Classification](https://www.researchgate.net/publication/365952167_Spatial-Spectral_Split_Attention_Residual_Network_for_Hyperspectral_Image_Classification) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2023 | [Spectral 3D Computer Vision -- A Review](https://arxiv.org/abs/2302.08054) | 深度、法线与表面重建、光谱点云与表面映射 | 预印本 | 摘要核验 |
 | 2023 | [Toward Universal Representation Learning for Multidomain Hyperspectral Image Classification](https://www.researchgate.net/publication/369837851_Towards_Universal_Representation_Learning_for_Multi-domain_Hyperspectral_Image_Classification) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2023 | [Early detection of sugarcane diseases through hyperspectral imaging and deep learning](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content) | 植物病害光谱检测 | 正式发表 | 正式正文全文核验 |
 | 2024 | [A cross-modal feature aggregation and enhancement network for hyperspectral and LiDAR joint classification](https://www.sciencedirect.com/science/article/pii/S0957417424020128) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2024 | [A New Hyperspectral Unmixing Benchmark for Weak Signal Meat Contamination Detection](https://www.semanticscholar.org/paper/06fc7cecf53517c82a2122e6b50eb9e58ce81bc6) | 数据集与评测基准、光谱解混 | 正式发表 | 摘要核验 |
 | 2024 | [CasFormer: Cascaded transformers for fusion-aware computational hyperspectral imaging](https://www.sciencedirect.com/science/article/abs/pii/S1566253524001866) | 计算光谱成像系统 | 正式发表 | 摘要核验 |
 | 2024 | [Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution](https://research-repository.griffith.edu.au/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/download) | 光谱解混 | 正式发表 | 摘要核验 |
-| 2024 | [Early detection of sugarcane smut and mosaic diseases via hyperspectral imaging and spectral-spatial attention deep neural networks](https://www.sciencedirect.com/science/article/pii/S266615432400406X) | 待分类 | 正式发表 | 摘要核验 |
+| 2024 | [Early detection of sugarcane smut and mosaic diseases via hyperspectral imaging and spectral-spatial attention deep neural networks](https://www.sciencedirect.com/science/article/pii/S266615432400406X) | 植物病害光谱检测 | 正式发表 | 摘要核验 |
 | 2024 | [Few-Shot Hyperspectral Image Classification Using Relational Generative Adversarial Network](https://ieeexplore.ieee.org/document/10741331/) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2024 | [HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification.](https://arxiv.org/abs/2404.00272) | 地物与植被图像分类、光谱表征预训练 | 预印本 | 摘要核验 |
 | 2024 | [HSLiNets: Hyperspectral Image and LiDAR Data Fusion Using Efficient Dual Non-Linear Feature Learning Networks](https://arxiv.org/abs/2412.00302) | 高光谱与LiDAR辅助分类、光谱表征预训练 | 预印本 | 摘要核验 |
@@ -332,6 +333,7 @@
 | 2025 | [SSIT: A spatial–spectral interactive transformer for hyperspectral image denoising](https://www.sciencedirect.com/science/article/pii/S2666017225000823) | 光谱去噪、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2025 | [SUIT: Spatial-Spectral Union-Intersection Interaction Network for Hyperspectral Object Tracking](https://ieeexplore.ieee.org/abstract/document/11267013) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
 | 2025 | [UBSTrack: Unified Band Selection and Multimodel Ensemble for Hyperspectral Object Tracking](https://doi.org/10.1109/TGRS.2025.3571603) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
+| 2025 | [Single-wavelength near-infrared imaging and machine learning for detecting Queensland fruit fly damage in cherries](https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content) | 光谱波段选择；检测模型为单波段NIR | 正式发表 | 正式正文全文核验 |
 | 2026 | [A comprehensive review of recent advancements in hyperspectral object tracking](https://api.crossref.org/works/10.1007/s10462-026-11625-3) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
 | 2026 | [Adaptive multi-stage fusion of hyperspectral and LiDAR data via selective state space models](https://www.sciencedirect.com/science/article/pii/S1566253525005615) | 高光谱与LiDAR辅助分类 | 正式发表 | 摘要核验 |
 | 2026 | [An Information Entropy Feature Preservation-Based Band Selection and Noise Reduction Method for Hyperspectral Image Classification](https://api.crossref.org/works/10.1109/tgrs.2026.3668327) | 光谱波段选择、光谱去噪 | 正式发表 | 摘要核验 |
