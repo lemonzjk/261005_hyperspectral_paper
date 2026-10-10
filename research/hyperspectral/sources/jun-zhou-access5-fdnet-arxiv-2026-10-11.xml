@@ -1,0 +1,489 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/kjeXAn18tELa69Av2ZtMflHpsI0</id>
+  <title>arXiv Query: search_query=ti:"Frequency Decoupling"&amp;id_list=&amp;start=0&amp;max_results=20</title>
+  <updated>2026-10-10T17:41:00Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=ti:%22Frequency+Decoupling%22&amp;start=0&amp;max_results=20&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>20</opensearch:itemsPerPage>
+  <opensearch:totalResults>22</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2411.17473v2</id>
+    <title>TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba</title>
+    <updated>2025-12-08T02:18:35Z</updated>
+    <link href="https://arxiv.org/abs/2411.17473v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.17473v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Mamba has shown great potential for computer vision due to its linear complexity in modeling the global context with respect to the input length. However, existing lightweight Mamba-based backbones cannot demonstrate performance that matches Convolution or Transformer-based methods. By observing, we find that simply modifying the scanning path in the image domain is not conducive to fully exploiting the potential of vision Mamba. In this paper, we first perform comprehensive spectral and quantitative analyses, and verify that the Mamba block mainly models low-frequency information under Convolution-Mamba hybrid architecture. Based on the analyses, we introduce a novel Laplace mixer to decouple the features in terms of frequency and input only the low-frequency components into the Mamba block. In addition, considering the redundancy of the features and the different requirements for high-frequency details and low-frequency global information at different stages, we introduce a frequency ramp inception, i.e., gradually reduce the input dimensions of the high-frequency branches, so as to efficiently trade-off the high-frequency and low-frequency components at different layers. By integrating mobile-friendly convolution and efficient Laplace mixer, we build a series of tiny hybrid vision Mamba called TinyViM. The proposed TinyViM achieves impressive performance on several downstream tasks including image classification, semantic segmentation, object detection and instance segmentation. In particular, TinyViM outperforms Convolution, Transformer and Mamba-based models with similar scales, and the throughput is about 2-3 times higher than that of other Mamba-based models. Code is available at https://github.com/xwmaxwma/TinyViM.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-26T14:34:36Z</published>
+    <arxiv:comment>ICCV 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xiaowen Ma</name>
+    </author>
+    <author>
+      <name>Zhenliang Ni</name>
+    </author>
+    <author>
+      <name>Xinghao Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.00647v1</id>
+    <title>FDDet: Frequency-Decoupling for Boundary Refinement in Temporal Action Detection</title>
+    <updated>2025-04-01T10:57:37Z</updated>
+    <link href="https://arxiv.org/abs/2504.00647v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.00647v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Temporal action detection aims to locate and classify actions in untrimmed videos. While recent works focus on designing powerful feature processors for pre-trained representations, they often overlook the inherent noise and redundancy within these features. Large-scale pre-trained video encoders tend to introduce background clutter and irrelevant semantics, leading to context confusion and imprecise boundaries. To address this, we propose a frequency-aware decoupling network that improves action discriminability by filtering out noisy semantics captured by pre-trained models. Specifically, we introduce an adaptive temporal decoupling scheme that suppresses irrelevant information while preserving fine-grained atomic action details, yielding more task-specific representations. In addition, we enhance inter-frame modeling by capturing temporal variations to better distinguish actions from background redundancy. Furthermore, we present a long-short-term category-aware relation network that jointly models local transitions and long-range dependencies, improving localization precision. The refined atomic features and frequency-guided dynamics are fed into a standard detection head to produce accurate action predictions. Extensive experiments on THUMOS14, HACS, and ActivityNet-1.3 show that our method, powered by InternVideo2-6B features, achieves state-of-the-art performance on temporal action detection benchmarks.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-01T10:57:37Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xinnan Zhu</name>
+    </author>
+    <author>
+      <name>Yicheng Zhu</name>
+    </author>
+    <author>
+      <name>Tixin Chen</name>
+    </author>
+    <author>
+      <name>Wentao Wu</name>
+    </author>
+    <author>
+      <name>Yuanjie Dang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2403.07347v2</id>
+    <title>Frequency Decoupling for Motion Magnification via Multi-Level Isomorphic Architecture</title>
+    <updated>2024-03-24T09:22:13Z</updated>
+    <link href="https://arxiv.org/abs/2403.07347v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.07347v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Video Motion Magnification (VMM) aims to reveal subtle and imperceptible motion information of objects in the macroscopic world. Prior methods directly model the motion field from the Eulerian perspective by Representation Learning that separates shape and texture or Multi-domain Learning from phase fluctuations. Inspired by the frequency spectrum, we observe that the low-frequency components with stable energy always possess spatial structure and less noise, making them suitable for modeling the subtle motion field. To this end, we present FD4MM, a new paradigm of Frequency Decoupling for Motion Magnification with a Multi-level Isomorphic Architecture to capture multi-level high-frequency details and a stable low-frequency structure (motion field) in video space. Since high-frequency details and subtle motions are susceptible to information degradation due to their inherent subtlety and unavoidable external interference from noise, we carefully design Sparse High/Low-pass Filters to enhance the integrity of details and motion structures, and a Sparse Frequency Mixer to promote seamless recoupling. Besides, we innovatively design a contrastive regularization for this task to strengthen the model's ability to discriminate irrelevant features, reducing undesired motion magnification. Extensive experiments on both Real-world and Synthetic Datasets show that our FD4MM outperforms SOTA methods. Meanwhile, FD4MM reduces FLOPs by 1.63$\times$ and boosts inference speed by 1.68$\times$ than the latest method. Our code is available at https://github.com/Jiafei127/FD4MM.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-12T06:07:29Z</published>
+    <arxiv:comment>Accepted by CVPR2024</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Fei Wang</name>
+    </author>
+    <author>
+      <name>Dan Guo</name>
+    </author>
+    <author>
+      <name>Kun Li</name>
+    </author>
+    <author>
+      <name>Zhun Zhong</name>
+    </author>
+    <author>
+      <name>Meng Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.27800v1</id>
+    <title>FDDWAN: A Frequency-Decoupled Diffusion Network for Watermarking Attack</title>
+    <updated>2026-07-30T07:38:36Z</updated>
+    <link href="https://arxiv.org/abs/2607.27800v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.27800v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing invisible watermark removal methods often struggle to accurately capture the watermark-bearing features, leading to an unfavorable trade-off between watermark suppression and perceptual fidelity. In this paper, we propose the Frequency-Decoupled Diffusion Watermark Attack Network (FDDWAN), a coarse-to-fine framework that performs watermark removal through wavelet-domain decomposition and residual diffusion refinement. In the initial stage, the Wavelet-based Frequency-domain Preliminary Attack Module (WFPAM) decomposes the watermarked image into low- and high-frequency subbands and applies frequency-specific attack strategies tailored to their respective contributions to watermark robustness and perceptual quality. In the next stage, the Frequency-domain Residual Diffusion Attack Module (FRDAM) separately models the residual distributions between the preliminarily attacked outputs and the corresponding watermark-free references during training. Rather than reconstructing the entire image, FRDAM selectively refines frequency-domain residuals, directing the diffusion process toward the remaining watermark related discrepancies while minimizing modifications to image content. Extensive experiments on CelebA and ImageNet across four representative watermarking schemes demonstrate that FDDWAN achieves a more favorable trade-off between watermark removal effectiveness and visual fidelity than conventional and learning-based attack methods.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-30T07:38:36Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Chunpeng Wang</name>
+    </author>
+    <author>
+      <name>Yuxin Li</name>
+    </author>
+    <author>
+      <name>Xiaoyu Wang</name>
+    </author>
+    <author>
+      <name>Jidong Yang</name>
+    </author>
+    <author>
+      <name>Suo Gao</name>
+    </author>
+    <author>
+      <name>Qi Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.17540v1</id>
+    <title>TaFD: Threat-Aware Frequency Decoupling for Adversarial Robustness against Heterogeneous Attacks</title>
+    <updated>2026-06-16T05:38:26Z</updated>
+    <link href="https://arxiv.org/abs/2606.17540v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.17540v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-threat robustness remains a fundamental challenge in deep learning. Although joint adversarial training (JAT) is widely adopted, it suffers from negative transfer under heterogeneous threats, particularly between $\ell_p$-bounded and semantic attacks. Through first-order gradient analysis, we formalize this as gradient incompatibility and theoretically establish the necessity of decoupled optimization. We further reveal that these conflicting threats exhibit separable spectral characteristics in the frequency domain. Motivated by this observation, we propose Threat-aware Frequency Decoupling (TaFD), a two-stage defense framework that reformulates JAT as a frequency-domain divide-and-conquer paradigm. TaFD first discovers latent threat domains via unsupervised clustering of attack spectral prototypes and trains a lightweight classifier for inference-time threat domain identification. Conditioned on the prediction, TaFD employs a Frequency-Conditional Convolution that learns threat-domain-specific spectral masks and routes each sample to the corresponding expert, enforcing structural parameter separation and alleviating optimization conflicts.
+  We validate TaFD on three representative image-classification benchmarks (CIFAR-10, CIFAR-100, and Tiny-ImageNet) and on two representative architectures (the convolutional ResNet and the hybrid-transformer MobileViT). Extensive results demonstrate that TaFD achieves more balanced robustness against heterogeneous attacks than existing JAT and frequency-domain baselines, improving average robust accuracy by approximately 11\% over the strongest baseline while maintaining leading clean accuracy.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-16T05:38:26Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Mengda Xie</name>
+    </author>
+    <author>
+      <name>Yiling He</name>
+    </author>
+    <author>
+      <name>Meie Fang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06221v1</id>
+    <title>Frequency-Decoupled Diffusion Guidance for Non-Blind Image Deblurring</title>
+    <updated>2026-10-05T12:30:12Z</updated>
+    <link href="https://arxiv.org/abs/2610.06221v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06221v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Pretrained diffusion models provide powerful image priors for training-free posterior sampling in image restoration. To guide this sampling process, frequency-aware methods progressively incorporate measurement information across frequency bands, facilitating coarse-to-fine reconstruction. However, existing methods typically do not explicitly separate frequency activation from degradation-induced attenuation, leaving attenuation differences among inactive frequencies insufficiently modeled. In this work, we propose frequency-decoupled posterior guidance to separate frequency activation from attenuation-aware spectral regularization. Specifically, a progressive low-to-high frequency schedule determines the active measurement band, while a kernel-derived attenuation map defines a selective spectral prior over inactive components. To stabilize the sampling process, we also introduce a local trajectory regularizer that suppresses spatially irregular state-to-clean deviations. For a fixed endpoint energy, we provide a KL-regularized path-space interpretation. In practice, we construct time-dependent guidance through local energy corrections using a Tweedie plug-in approximation. Experiments on natural-image benchmarks demonstrate strong PSNR and SSIM performance across challenging non-blind deblurring settings, even at higher measurement noise levels.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T12:30:12Z</published>
+    <arxiv:comment>31 pages, 12 figures. Project page: https://github.com/Sea-serpents/frequency-decoupled-diffusion-guidance</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Sihan Wang</name>
+    </author>
+    <author>
+      <name>Jinshu Huang</name>
+    </author>
+    <author>
+      <name>Haibin Su</name>
+    </author>
+    <author>
+      <name>Yunhua Xue</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.09029v1</id>
+    <title>Frequency Decoupled Framework for Screen Content Image Super-Resolution</title>
+    <updated>2026-06-08T04:53:33Z</updated>
+    <link href="https://arxiv.org/abs/2606.09029v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.09029v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Methods based on implicit neural representations have demonstrated superior performance in Screen Content Image Super-Resolution (SCISR) . However, they overlooked the inherent frequency characteristics, leading to suboptimal performance. We propose a frequency decoupled framework (FDF) that rethinks SCISR from a phasor perspective by capturing structured energy in amplitude and relational continuity in phase, and jointly exploiting them with bespoke implicit representations to faithfully recover the regular textures and global configuration of Screen Content Image (SCI).
+  Amplitude-Phase Factorization Network (APFN) first separates images into amplitude and phase streams, where Amplitude Clustering Module (ACM) organizes sparse yet high-energy amplitude responses into representative prototypes for periodic pattern extraction, while Phase Consistency Self-Attention (PCSA) progressively reinforces configuration through continuous consistency propagation.
+  And Oscillation-Anharmonic Implicit Fitting Network (OAIF-Net) integrates periodic and coherent implicit representations for efficient exploitation of the periodic patterns and coherent context embedded in SCI.
+  Experimental results show FDF achieves state-of-the-art SCISR performance at multiple scales across four public SCI datasets. Ablation experiments further demonstrate the effectiveness of each component in extracting and exploiting periodic patterns and coherent context.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-08T04:53:33Z</published>
+    <arxiv:comment>13pages;11figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xufei Wang</name>
+    </author>
+    <author>
+      <name>Qicheng Zhang</name>
+    </author>
+    <author>
+      <name>Qi Wu</name>
+    </author>
+    <author>
+      <name>Ziyang Gu</name>
+    </author>
+    <author>
+      <name>Shizhuang Weng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2311.12070v3</id>
+    <title>FDDM: Unsupervised Medical Image Translation with a Frequency-Decoupled Diffusion Model</title>
+    <updated>2024-11-23T01:47:23Z</updated>
+    <link href="https://arxiv.org/abs/2311.12070v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2311.12070v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Diffusion models have demonstrated significant potential in producing high-quality images in medical image translation to aid disease diagnosis, localization, and treatment. Nevertheless, current diffusion models have limited success in achieving faithful image translations that can accurately preserve the anatomical structures of medical images, especially for unpaired datasets. The preservation of structural and anatomical details is essential to reliable medical diagnosis and treatment planning, as structural mismatches can lead to disease misidentification and treatment errors. In this study, we introduce the Frequency Decoupled Diffusion Model (FDDM) for MR-to-CT conversion. FDDM first obtains the anatomical information of the CT image from the MR image through an initial conversion module. This anatomical information then guides a subsequent diffusion model to generate high-quality CT images. Our diffusion model uses a dual-path reverse diffusion process for low-frequency and high-frequency information, achieving a better balance between image quality and anatomical accuracy. We extensively evaluated FDDM using public datasets for brain MR-to-CT and pelvis MR-to-CT translations, demonstrating its superior performance to other GAN-based, VAE-based, and diffusion-based models. The evaluation metrics included Frechet Inception Distance (FID), Peak Signal-to-Noise Ratio (PSNR), and Structural Similarity Index Measure (SSIM). FDDM achieved the best scores on all metrics for both datasets, particularly excelling in FID, with scores of 25.9 for brain data and 29.2 for pelvis data, significantly outperforming other methods. These results demonstrate that FDDM can generate high-quality target domain images while maintaining the accuracy of translated anatomical structures.</summary>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-11-19T19:44:44Z</published>
+    <arxiv:primary_category term="eess.IV"/>
+    <author>
+      <name>Yunxiang Li</name>
+    </author>
+    <author>
+      <name>Hua-Chieh Shao</name>
+    </author>
+    <author>
+      <name>Xiaoxue Qian</name>
+    </author>
+    <author>
+      <name>You Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.23226v1</id>
+    <title>PhysFlow: Frequency Decoupled with Dual-Field Rectified Flow for Remote Photoplethysmography</title>
+    <updated>2026-06-22T12:14:37Z</updated>
+    <link href="https://arxiv.org/abs/2606.23226v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.23226v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Remote Photoplethysmography (rPPG) enables contactless pulse estimation from facial videos, serving as a vital tool for health monitoring. However, current deep learning methods often struggle under complex disturbances, particularly varying illumination, facial expressions, and unconstrained head movements. In such scenarios, subtle physiological signals are easily dominated by external interference, making the recovered rPPG waveform unstable and unreliable. One important reason is that most existing methods directly model the rPPG signal in a unified manner, where different signal components are coupled during reconstruction. This makes it difficult to preserve weak pulse-related variations when strong disturbance-induced changes are present. To address this challenge, we propose PhysFlow, a frequency-decoupled dual-field rectified flow framework tailored for robust rPPG estimation. Specifically, the ground-truth rPPG signal is decomposed into trend and amplitude components, which are used as separate supervisory targets. Based on the extracted facial features, PhysFlow learns two component-specific conditional velocity fields to model the two components separately. This design reduces mutual interference between different components and improves the robustness of rPPG reconstruction under complex disturbances. Moreover, the rectified flow formulation enables efficient waveform reconstruction with only a few ordinary differential equation (ODE) integration steps. Extensive experiments on multiple benchmark datasets demonstrate that PhysFlow outperforms state-of-the-art methods in both heart-rate estimation and rPPG waveform reconstruction across diverse challenging scenarios.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-22T12:14:37Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Zixu Li</name>
+    </author>
+    <author>
+      <name>jianjun Qian</name>
+    </author>
+    <author>
+      <name>Hang Shao</name>
+    </author>
+    <author>
+      <name>Lei Luo</name>
+    </author>
+    <author>
+      <name>Jian Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.11183v1</id>
+    <title>DiffPR: Diffusion-Based Phase Reconstruction via Frequency-Decoupled Learning</title>
+    <updated>2025-06-12T17:08:45Z</updated>
+    <link href="https://arxiv.org/abs/2506.11183v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.11183v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Oversmoothing remains a persistent problem when applying deep learning to off-axis quantitative phase imaging (QPI). End-to-end U-Nets favour low-frequency content and under-represent fine, diagnostic detail. We trace this issue to spectral bias and show that the bias is reinforced by high-level skip connections that feed high-frequency features directly into the decoder. Removing those deepest skips thus supervising the network only at a low resolution significantly improves generalisation and fidelity. Building on this insight, we introduce DiffPR, a two-stage frequency-decoupled framework. Stage 1: an asymmetric U-Net with cancelled high-frequency skips predicts a quarter-scale phase map from the interferogram, capturing reliable low-frequency structure while avoiding spectral bias. Stage 2: the upsampled prediction, lightly perturbed with Gaussian noise, is refined by an unconditional diffusion model that iteratively recovers the missing high-frequency residuals through reverse denoising. Experiments on four QPI datasets (B-Cell, WBC, HeLa, 3T3) show that DiffPR outperforms strong U-Net baselines, boosting PSNR by up to 1.1 dB and reducing MAE by 11 percent, while delivering markedly sharper membrane ridges and speckle patterns. The results demonstrate that cancelling high-level skips and delegating detail synthesis to a diffusion prior is an effective remedy for the spectral bias that limits conventional phase-retrieval networks.</summary>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-12T17:08:45Z</published>
+    <arxiv:primary_category term="eess.IV"/>
+    <author>
+      <name>Yi Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.19365v2</id>
+    <title>DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation</title>
+    <updated>2026-04-08T04:08:23Z</updated>
+    <link href="https://arxiv.org/abs/2511.19365v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.19365v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Pixel diffusion aims to generate images directly in pixel space in an end-to-end fashion. This approach avoids the limitations of VAE in the two-stage latent diffusion, offering higher model capacity. Existing pixel diffusion models suffer from slow training and inference, as they usually model both high-frequency signals and low-frequency semantics within a single diffusion transformer (DiT). To pursue a more efficient pixel diffusion paradigm, we propose the frequency-DeCoupled pixel diffusion framework. With the intuition to decouple the generation of high and low frequency components, we leverage a lightweight pixel decoder to generate high-frequency details conditioned on semantic guidance from the DiT. This thus frees the DiT to specialize in modeling low-frequency semantics. In addition, we introduce a frequency-aware flow-matching loss that emphasizes visually salient frequencies while suppressing insignificant ones. Extensive experiments show that DeCo achieves superior performance among pixel diffusion models, attaining FID of 1.62 (256x256) and 2.22 (512x512) on ImageNet, closing the gap with latent diffusion methods. Furthermore, our pretrained text-to-image model achieves a leading overall score of 0.86 on GenEval in system-level comparison. Codes are publicly available at https://github.com/Zehong-Ma/DeCo.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-24T17:59:06Z</published>
+    <arxiv:comment>Accepted to CVPR2026. Project Page: https://zehong-ma.github.io/DeCo. Code Repository: https://github.com/Zehong-Ma/DeCo</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Zehong Ma</name>
+    </author>
+    <author>
+      <name>Longhui Wei</name>
+    </author>
+    <author>
+      <name>Shuai Wang</name>
+    </author>
+    <author>
+      <name>Shiliang Zhang</name>
+    </author>
+    <author>
+      <name>Qi Tian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.22840v1</id>
+    <title>PAF-Net: Phase-Aligned Frequency Decoupling Network for Multi-Process Manufacturing Quality Prediction</title>
+    <updated>2025-07-30T16:56:42Z</updated>
+    <link href="https://arxiv.org/abs/2507.22840v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.22840v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Accurate quality prediction in multi-process manufacturing is critical for industrial efficiency but hindered by three core challenges: time-lagged process interactions, overlapping operations with mixed periodicity, and inter-process dependencies in shared frequency bands. To address these, we propose PAF-Net, a frequency decoupled time series prediction framework with three key innovations: (1) A phase-correlation alignment method guided by frequency domain energy to synchronize time-lagged quality series, resolving temporal misalignment. (2) A frequency independent patch attention mechanism paired with Discrete Cosine Transform (DCT) decomposition to capture heterogeneous operational features within individual series. (3) A frequency decoupled cross attention module that suppresses noise from irrelevant frequencies, focusing exclusively on meaningful dependencies within shared bands. Experiments on 4 real-world datasets demonstrate PAF-Net's superiority. It outperforms 10 well-acknowledged baselines by 7.06% lower MSE and 3.88% lower MAE. Our code is available at https://github.com/StevenLuan904/PAF-Net-Official.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-30T16:56:42Z</published>
+    <arxiv:comment>7 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yang Luo</name>
+    </author>
+    <author>
+      <name>Haoyang Luan</name>
+    </author>
+    <author>
+      <name>Haoyun Pan</name>
+    </author>
+    <author>
+      <name>Yongquan Jia</name>
+    </author>
+    <author>
+      <name>Xiaofeng Gao</name>
+    </author>
+    <author>
+      <name>Guihai Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.11572v1</id>
+    <title>FreqKD: Frequency-Decoupled Cross-Modal Knowledge Distillation for Infrared Object Detection</title>
+    <updated>2026-06-10T01:55:55Z</updated>
+    <link href="https://arxiv.org/abs/2606.11572v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.11572v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Transfer learning from large-scale RGB foundation models to infrared (IR) imagery through knowledge distillation (KD) remains challenging due to fundamental differences in image formation physics. We investigate the spectral structure of the RGB--IR modality gap and observe that feature divergence is not uniform across spatial frequencies: low-frequency components (shape, layout) show greater cross-modal alignment than high-frequency components (texture, fine edges), which reflect modality-specific characteristics. Based on this analysis, we propose FreqKD, a frequency-decoupled distillation framework that applies asymmetric supervision adapted to each band's cross-modal consistency. The method employs strict mean squared error (MSE) on the low-frequency band to preserve shared structural information and a relaxed log-MSE loss (weighted at 0.1) on the high-frequency band to provide edge guidance while tolerating texture differences. Spectral divergence analysis on 500 paired samples shows that high-frequency divergence exceeds low-frequency divergence by a factor of 2.4x on average across all analysed transformer layers. On KAIST multispectral pedestrian detection, FreqKD achieves 64.1 mAP50, improving 2.4 points over the DINOv2 baseline. The learned representation transfers across datasets (FLIR ADAS, +2.1 mAP50), tasks (MFNet segmentation, +1.85 mean intersection-over-union), and architectures (ResNet-50, +1.0 mAP50). Code is available at: https://anonymous.4open.science/r/freq_decoupled_kd-5E5A</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-10T01:55:55Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Keval Thaker</name>
+    </author>
+    <author>
+      <name>Venkatraman Narayanan</name>
+    </author>
+    <author>
+      <name>Abdalmalek Aburaddaha</name>
+    </author>
+    <author>
+      <name>Samir A. Rawashdeh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.02970v1</id>
+    <title>Decompose to Understand, Fuse to Detect: Frequency-Decoupled Anomaly Detection for Encrypted Network Traffic</title>
+    <updated>2026-05-03T13:44:41Z</updated>
+    <link href="https://arxiv.org/abs/2605.02970v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.02970v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Network traffic anomaly detection represents a critical cybersecurity task, yet widespread encryption makes this task increasingly challenging. In response, image-based methods that model traffic as visual patterns have emerged as the dominant approach. However, this work pioneers the identification of a pervasive ``full-frequency'' characteristic and an associated limitation termed ``spectral mismatch'' within this paradigm. Specifically, while encrypted traffic exhibits prominent high-frequency components, mainstream reconstruction methods demonstrate an inherent bias toward learning low-frequency information. This fundamental mismatch results in incomplete representations that consequently degrade anomaly detection performance. To address this challenge, we propose FreeUp, a novel frequency-decoupled framework designed explicitly for encrypted traffic analysis. FreeUp decomposes traffic data into distinct low- and high-frequency bands, processing them through separate, dedicated branches along with a customized training strategy that ensures stable and independent frequency-specific learning. Furthermore, recognizing that simple reconstruction error proves inadequate for evaluating dual-branch architectures, we introduce an uncertainty-inspired fusion scoring mechanism. This mechanism quantifies the reconstruction uncertainty of the frequency-specific branches and dynamically integrates their outputs, yielding a more comprehensive and reliable anomaly score. Extensive experiments across multiple benchmarks demonstrate that FreeUp consistently outperforms state-of-the-art baselines. The code is available at https://github.com/ikun0124/FreeUp.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-03T13:44:41Z</published>
+    <arxiv:comment>Accepted by INFOCOM 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Xinglin Lian</name>
+    </author>
+    <author>
+      <name>Chengtai Cao</name>
+    </author>
+    <author>
+      <name>Ting Zhong</name>
+    </author>
+    <author>
+      <name>Yong Wang</name>
+    </author>
+    <author>
+      <name>Kai Chen</name>
+    </author>
+    <author>
+      <name>Fan Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.23056v2</id>
+    <title>FMC-DETR: Frequency-Decoupled Multi-Domain Coordination for Aerial-View Object Detection</title>
+    <updated>2026-05-13T09:11:53Z</updated>
+    <link href="https://arxiv.org/abs/2509.23056v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.23056v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Remote sensing object detection is a critical technology for real-world applications such as natural resource monitoring, traffic management, and UAV-based rescue. Detecting tiny objects in high-resolution aerial imagery remains challenging due to weak visual cues and insufficient global context modeling in complex scenes. Existing methods often suffer from delayed contextual interaction and limited nonlinear reasoning, which restrict their ability to effectively refine shallow representations and ultimately lead to suboptimal performance. To address these challenges, we propose FMC-DETR, a frequency-decoupled fusion framework for aerial-view object detection. First, we propose the Wavelet Kolmogorov-Arnold Transformer (WeKat) backbone, which employs cascaded wavelet transforms to enhance global low-frequency structure perception in shallow features while preserving fine-grained details, and further leverages Kolmogorov-Arnold networks for adaptive nonlinear modeling of multi-scale dependencies. Second, we introduce the Multi-Domain Feature Coordination (MDFC) module, which refines cross-scale fused representations through partial-channel spatial, spectral, and structural coordination, thereby strengthening small-object-related feature responses in cluttered scenes. Finally, we design the Compact Partial Fusion (CPF) module, which performs compact multi-branch aggregation with progressive partial refinement to improve feature diversity and multi-scale interaction while preserving stable information flow and reducing redundant perturbation. Extensive experiments across multiple remote sensing benchmarks demonstrate that FMC-DETR achieves state-of-the-art performance and significantly outperforming the baseline detector. Code is available at https://github.com/bloomingvision/FMC-DETR.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-27T02:28:22Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Ben Liang</name>
+    </author>
+    <author>
+      <name>Hongguang Wei</name>
+    </author>
+    <author>
+      <name>Yuan Liu</name>
+    </author>
+    <author>
+      <name>Bingwen Qiu</name>
+    </author>
+    <author>
+      <name>Yihong Wang</name>
+    </author>
+    <author>
+      <name>Xiubao Sui</name>
+    </author>
+    <author>
+      <name>Qian Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.00596v1</id>
+    <title>Mean Spatial Frequency Decoupling for Learning-Based Uplink-to-Downlink Covariance Conversion in FDD Massive MIMO</title>
+    <updated>2026-09-30T19:00:12Z</updated>
+    <link href="https://arxiv.org/abs/2610.00596v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.00596v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In frequency division duplexing (FDD) massive multiple-input multiple-output (MIMO) systems, the uplink (UL)-to-downlink (DL) channel covariance matrix (CCM) conversion problem is studied to relieve the heavy burden of DL training and feedback required for channel estimation. Learning- based methods perform well up to a certain array size, but for a fixed dataset size their accuracy deteriorates with the number of antennas, to the point where simple model-based methods outperform them. This paper identifies a key cause of this behavior and addresses it. The mean angle of arrival (AoA) induces a phase ramp along the lags of the CCM. Since the oscillation rate of this ramp grows with the number of antennas, a dataset of fixed size becomes increasingly sparse relative to the variation that must be captured. We propose estimating the slope of this ramp from the UL CCM separately and mapping it to the DL band in closed form, leaving the learner with a residual that is largely insensitive to the mean AoA, which substantially reduces the performance degradation with an increasing number of antennas. The proposed scheme, termed deramping, is a combination of pre- and post-processing steps that applies to learning-based conversion methods without altering their internal structure, as demonstrated on three structurally different learners. Simulation results show that deramping reduces the covariance estimation error of all three learners under uniform, Laplacian, and Gaussian angular power spectra,keeps the interpolation-based learners ahead of a model-based benchmark at large array sizes, and improves downlink channel estimation.</summary>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T19:00:12Z</published>
+    <arxiv:primary_category term="eess.SP"/>
+    <author>
+      <name>Melih Can Zerin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.09476v2</id>
+    <title>FD-DB: Frequency-Decoupled Dual-Branch Network for Unpaired Synthetic-to-Real Domain Translation</title>
+    <updated>2026-02-11T10:17:13Z</updated>
+    <link href="https://arxiv.org/abs/2602.09476v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.09476v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Synthetic data provide low-cost, accurately annotated samples for geometry-sensitive vision tasks, but appearance and imaging differences between synthetic and real domains cause severe domain shift and degrade downstream performance. Unpaired synthetic-to-real translation can reduce this gap without paired supervision, yet existing methods often face a trade-off between photorealism and structural stability: unconstrained generation may introduce deformation or spurious textures, while overly rigid constraints limit adaptation to real-domain statistics. We propose FD-DB, a frequency-decoupled dual-branch model that separates appearance transfer into low-frequency interpretable editing and high-frequency residual compensation. The interpretable branch predicts physically meaningful editing parameters (white balance, exposure, contrast, saturation, blur, and grain) to build a stable low-frequency appearance base with strong content preservation. The free branch complements fine details through residual generation, and a gated fusion mechanism combines the two branches under explicit frequency constraints to limit low-frequency drift. We further adopt a two-stage training schedule that first stabilizes the editing branch and then releases the residual branch to improve optimization stability. Experiments on the YCB-V dataset show that FD-DB improves real-domain appearance consistency and significantly boosts downstream semantic segmentation performance while preserving geometric and semantic structures.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-10T07:16:53Z</published>
+    <arxiv:comment>26 pages, 13 figures, 2 tables. Code available at https://github.com/tryzang/FD-DB</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Chuanhai Zang</name>
+    </author>
+    <author>
+      <name>Jiabao Hu</name>
+    </author>
+    <author>
+      <name>XW Song</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.18590v1</id>
+    <title>FD-CanKD: Frequency-Decoupled Cross-Attention Distillation as a Refinement Prior for Compact Object Detectors</title>
+    <updated>2026-08-19T06:32:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.18590v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.18590v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Compact object detectors are suitable for resource-constrained visual perception, but their limited representation capacity creates an accuracy gap relative to large models. Conventional detector distillation often relies on prediction-level supervision or a single feature-alignment target, such as response, distribution, correlation, or frequency-domain matching. Frequency-Decoupled Cross-Attention Knowledge Distillation (FD-CanKD) is presented as a detector-oriented framework that transfers teacher knowledge at three complementary levels: head-level prediction supervision, relation-level non-local context transfer, and frequency-level component-selective alignment. Student features first aggregate teacher-side spatial context through cross-attention-based relation transfer, after which frequency-aware alignment preserves complementary structural and detail-sensitive cues. Under controlled Microsoft Common Objects in Context (COCO) experiments, fixed 50-epoch from-scratch comparisons show that FD-CanKD remains competitive with representative detector knowledge distillation baselines. Post-distillation continued fine-tuning further produces a stronger refinement-ready student than detector-only fine-tuning, reaching 48.87 mean average precision (mAP) at intersection-over-union thresholds from 0.50 to 0.95 (mAP50:95), 65.84 mAP50, and 53.40 mAP75 after 20 additional epochs. All distillation modules are removed after training, leaving the deployed student unchanged at 19.7M parameters. The framework is instantiated and evaluated in a controlled YOLOv12 teacher-student setting as a representative compact-detector case study.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-19T06:32:11Z</published>
+    <arxiv:comment>16 pages, 5 figures, 6 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>YoungJae Cheong</name>
+    </author>
+    <author>
+      <name>Jhonghyun An</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.12934v1</id>
+    <title>Domain-Incremental Remote Sensing Change Detection via Difference-Guided Adaptation and Frequency-Decoupled Distillation</title>
+    <updated>2026-07-14T16:07:21Z</updated>
+    <link href="https://arxiv.org/abs/2607.12934v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.12934v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Remote sensing change detection (RSCD) models are prone to catastrophic forgetting when incrementally adapted to new domains. Existing domain-incremental learning (DIL) methods mainly preserve image-level representations but often overlook bitemporal discrepancy cues, which are critical for robust change detection under domain shifts. To address this limitation, we propose DG-FDD, a domain-incremental change detection framework that integrates Difference-Guided Adaptation and Frequency-Decoupled Distillation. Specifically, the Difference-Guided Dynamic Adapter (DGDA) models bitemporal feature discrepancies to promote change-aware feature adaptation and reduce domain-specific interference. Meanwhile, the Frequency-Decoupled Knowledge Distillation strategy with Cross-domain Synthesis (FDKD-CS) separates structural information from domain style in the frequency domain, enabling stable knowledge transfer without historical data. Extensive experiments on three public high-resolution RSCD datasets under two- and three-domain incremental protocols demonstrate that DG-FDD effectively mitigates catastrophic forgetting. Compared with independently trained single-task models, DG-FDD records mean relative changes in F1 and IoU of only -0.23% and -0.45%, respectively, across six two-domain sequences, and -0.69% and -1.31%, respectively, across the three evaluated three-domain sequences. These results indicate a favorable stability-plasticity balance between historical knowledge retention and new-domain adaptation in continual cross-domain change detection.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-14T16:07:21Z</published>
+    <arxiv:comment>33 pages, 14 figures, and 5 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Daifeng Peng</name>
+    </author>
+    <author>
+      <name>Yaning Li</name>
+    </author>
+    <author>
+      <name>Haiyan Guan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.12954v2</id>
+    <title>CADE 2.5 - ZeResFDG: Frequency-Decoupled, Rescaled and Zero-Projected Guidance for SD/SDXL Latent Diffusion Models</title>
+    <updated>2025-10-17T15:59:13Z</updated>
+    <link href="https://arxiv.org/abs/2510.12954v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.12954v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce CADE 2.5 (Comfy Adaptive Detail Enhancer), a sampler-level guidance stack for SD/SDXL latent diffusion models. The central module, ZeResFDG, unifies (i) frequency-decoupled guidance that reweights low- and high-frequency components of the guidance signal, (ii) energy rescaling that matches the per-sample magnitude of the guided prediction to the positive branch, and (iii) zero-projection that removes the component parallel to the unconditional direction. A lightweight spectral EMA with hysteresis switches between a conservative and a detail-seeking mode as structure crystallizes during sampling. Across SD/SDXL samplers, ZeResFDG improves sharpness, prompt adherence, and artifact control at moderate guidance scales without any retraining. In addition, we employ a training-free inference-time stabilizer, QSilk Micrograin Stabilizer (quantile clamp + depth/edge-gated micro-detail injection), which improves robustness and yields natural high-frequency micro-texture at high resolutions with negligible overhead. For completeness we note that the same rule is compatible with alternative parameterizations (e.g., velocity), which we briefly discuss in the Appendix; however, this paper focuses on SD/SDXL latent diffusion models.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-14T19:57:58Z</published>
+    <arxiv:comment>8 pages, 3 figures. Endorsed by Dr. Seyedmorteza Sadat (ETH Zurich). The work introduces CADE 2.5 with ZeResFDG as a practical inference-time guidance stack for SD/SDXL. Code and visual examples to be released on GitHub and Hugging Face</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Denis Rychkovskiy</name>
+      <arxiv:affiliation>DZRobo, Independent Researcher</arxiv:affiliation>
+    </author>
+  </entry>
+</feed>
