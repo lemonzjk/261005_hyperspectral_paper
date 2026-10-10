@@ -3,15 +3,16 @@
   "inventory": "jun-zhou-arxiv-author-inventory-2026-10-10.json",
   "recordCount": 531,
   "decisionCounts": {
-    "excluded_abstract_scope": 47,
-    "pending_primary_scope_identity": 2,
+    "excluded_abstract_scope": 138,
+    "pending_primary_scope_identity": 8,
     "matched_catalog": 24,
-    "query_name_nonexact": 1,
+    "query_name_nonexact": 2,
     "matched_prior_decision": 32,
-    "not_screened": 421,
+    "excluded_selected_scope": 2,
+    "not_screened": 321,
     "other_author_primary_affiliation": 4
   },
-  "method": "依次按arXiv ID、精确DOI、规范化完整题名对照既有目录；32条规范化题名匹配既有DBLP/Scholar决定，沿用证据不称重新全文审查。另用原稿/正式稿首页和指定输入段核4条同名候选；原471条未逐篇审查。 本批从原471未审队列依原次序读取前50条完整官方摘要，逐条留范围理由；47摘要暂排、1整名不匹配、2原稿局部后仍待核。 当前421条未审、2条局部补读后待核；带引号查询含非精确姓名与粘连字段，不是严格整名身份查询。",
+  "method": "按arXiv ID、精确DOI、规范化完整题名对照目录及既有决定：24目录/32既有决定映射，另4既有同名局部决定。第一批原未审队列前50条、第二批余421队列前100条读取官方原摘要，逐项留范围理由；第二批8篇另核原稿机构/数据局部。当前321条未审、8条范围/身份待核，整名不匹配2、摘要暂排138、局部暂排2。映射不称重新全文阅读；带引号查询非严格整名/目标身份查询。",
   "opticalKeywordScan": {
     "fields": [
       "title",
@@ -720,8 +721,12 @@
       "url": "https://arxiv.org/abs/2606.06956v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "结构力学Timoshenko-Boltzmann热弹性系统，以Fourier/Cattaneo热传导和半群谱分析证明稳定性；这里spectral不是光学影像波段。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2606.06076",
@@ -729,8 +734,12 @@
       "url": "https://arxiv.org/abs/2606.06076v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "MGSD以符号状态教师训练视觉空间规划，推理用视觉输入；摘要任务为状态恢复与最优路径规划，未提供明确光学高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2606.05576",
@@ -738,8 +747,12 @@
       "url": "https://arxiv.org/abs/2606.05576v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "pending_primary_scope_identity",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "§3.3及附录A.2/A.3为PANDA监控、DOTA1.5航片、TCGA-BRCA H&E病理和MVTec LOCO AD组合；实际DOTA/病理输入通道、目标身份及正式版本待核。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2606.05574",
@@ -747,8 +760,12 @@
       "url": "https://arxiv.org/abs/2606.05574v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "SmellBench为真实代码仓库注入代码异味并评价代码agent重构质量，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2606.04455",
@@ -756,8 +773,12 @@
       "url": "https://arxiv.org/abs/2606.04455v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Meta-Agent Challenge让代码agent在沙盒开发任务agent并测评价完整性；对象为自动软件/agent开发。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.29502",
@@ -765,8 +786,12 @@
       "url": "https://arxiv.org/abs/2605.29502v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "SG-SRL用中文等高资源源语言文本训练泰语/藏语生成与跨语言语义奖励，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.29491",
@@ -774,8 +799,12 @@
       "url": "https://arxiv.org/abs/2605.29491v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "DistractionIF评测外部参考文字中干扰指令的LLM稳健性、规模效应及GRPO训练，非光谱成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.28459",
@@ -783,8 +812,12 @@
       "url": "https://arxiv.org/abs/2605.28459v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "REVEAL以真实新闻图文与人物参考库检验篡改并定位，未提供明确高光谱/多光谱输入或基础关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.28179",
@@ -792,8 +825,12 @@
       "url": "https://arxiv.org/abs/2605.28179v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "SuperValid合成文本能力域的分布外验证数据以预测LLM下游缩放表现，非光学观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2606.00103",
@@ -801,8 +838,12 @@
       "url": "https://arxiv.org/abs/2606.00103v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "474个可执行游戏构成交互式语言推理评测，测主动查询、信念更新与反事实修订，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.26579",
@@ -810,8 +851,12 @@
       "url": "https://arxiv.org/abs/2605.26579v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Focal Reward为LLM多维rubric奖励按饱和度重加权，摘要实验为语言模型RL任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.25704",
@@ -819,8 +864,12 @@
       "url": "https://arxiv.org/abs/2605.25704v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "PowLU以有理幂非线性改善低精度大语言模型预训练稳定性，未提供明确高光谱基础关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.20569",
@@ -839,8 +888,12 @@
       "url": "https://arxiv.org/abs/2605.19762v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "受控语言模型预训练区分可执行代码、代码文字及数学推理语料的迁移效果，非光谱输入。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.17286",
@@ -859,8 +912,12 @@
       "url": "https://arxiv.org/abs/2605.14278v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "KVPO通过历史KV缓存语义探索和ODE速度场策略优化自回归视频生成，未提供高光谱观测关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.14239",
@@ -879,8 +936,12 @@
       "url": "https://arxiv.org/abs/2605.11601v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "DiffScore用掩码扩散语言模型的双向文字恢复评估流畅度、连贯性及忠实度，非光谱重建。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2605.08651",
@@ -904,8 +965,12 @@
       "url": "https://arxiv.org/abs/2605.03596v4",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Workspace-Bench评测异构工作文件间依赖、检索和agent操作，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2604.24447",
@@ -913,8 +978,12 @@
       "url": "https://arxiv.org/abs/2604.24447v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "query_name_nonexact",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "v1官方作者字段为Kaijun Zhou等六人，没有独立Jun Zhou；只记录整名字段不匹配，不作全局个人身份证明。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2604.23579",
@@ -922,8 +991,12 @@
       "url": "https://arxiv.org/abs/2604.23579v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "CineAGI结合多agent电影叙事、人物一致视频及音画同步，multi-modal为电影生成要素，非光学多谱。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2604.23574",
@@ -931,8 +1004,12 @@
       "url": "https://arxiv.org/abs/2604.23574v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "PhysLayer由静态图像生成语言可控动画，分层深度/二维刚体模拟与重照明；未提供明确高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2604.22333",
@@ -961,8 +1038,12 @@
       "url": "https://arxiv.org/abs/2604.10127v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "VGA-Bench评测生成视频质量、美学和属性标签，摘要为提示生成与人类评分，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2604.07737",
@@ -970,8 +1051,12 @@
       "url": "https://arxiv.org/abs/2604.07737v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "SepSeq通过分隔token改进LLM长数列注意力与推理，序列并非已确认的光学光谱输入。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.26840",
@@ -979,8 +1064,12 @@
       "url": "https://arxiv.org/abs/2603.26840v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "DGDA处理对话文字、音频和视觉情绪，基准为IEMOCAP/MELD；多模态不是光学多光谱。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.25019",
@@ -988,8 +1077,12 @@
       "url": "https://arxiv.org/abs/2603.25019v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "石英手性绝缘体的声子角动量、Heisenberg型L-L耦合及轨道Seebeck效应，非光学高光谱成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.21299",
@@ -997,8 +1090,12 @@
       "url": "https://arxiv.org/abs/2603.21299v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Mv2ID以多视角人脸参考、区域掩码及RoPE改善人物视频身份一致性，未提供光学高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.22345",
@@ -1006,8 +1103,12 @@
       "url": "https://arxiv.org/abs/2603.22345v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "DF-GCN以ODE图网络动态融合文字/音频/图像对话情绪，非光谱成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.12752",
@@ -1015,8 +1116,12 @@
       "url": "https://arxiv.org/abs/2603.12752v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "EISAM处理LLM推荐系统的语料/推荐数据长尾与物品级loss sharpness，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.12639",
@@ -1024,8 +1129,12 @@
       "url": "https://arxiv.org/abs/2603.12639v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "RoboStereo双塔4D世界模型用于机器人策略增广、模仿和探索，摘要几何一致性与操控任务未提供光谱输入关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.09037",
@@ -1044,8 +1153,12 @@
       "url": "https://arxiv.org/abs/2603.08065v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "DDP以确定性连续掩码进行dense/MoE大语言模型结构剪枝和vLLM推理加速，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.01720",
@@ -1053,8 +1166,12 @@
       "url": "https://arxiv.org/abs/2603.01720v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Land-Reg将术前CT/MRI三维肝脏与术中腹腔镜二维视图做几何配准，明确任务为地标/形变对齐；摘要未提供高光谱联系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.01068",
@@ -1062,8 +1179,12 @@
       "url": "https://arxiv.org/abs/2603.01068v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "LLaDA-o以离散文字/连续视觉扩散统一多模态理解生成和长度适配，未提供明确高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.04448",
@@ -1071,8 +1192,12 @@
       "url": "https://arxiv.org/abs/2603.04448v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "SkillNet为AI技能建立本体、检索与组合评价，实验为ALFWorld/WebShop/ScienceWorld，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2602.20799",
@@ -1080,8 +1205,12 @@
       "url": "https://arxiv.org/abs/2602.20799v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "UCD-Training构建软件代码图并生成依赖保留的代码训练数据，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2602.13773",
@@ -1089,8 +1218,12 @@
       "url": "https://arxiv.org/abs/2602.13773v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "CRDS利用语义嵌入随机投影或whitening筛选LLM指令文字，representation冗余不是光学波段。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2602.08676",
@@ -1098,8 +1231,12 @@
       "url": "https://arxiv.org/abs/2602.08676v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "LLaDA2.1为扩散语言模型加入token编辑和语言RL，测试为文字/代码生成，不是光谱扩散重建。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2602.06960",
@@ -1107,8 +1244,12 @@
       "url": "https://arxiv.org/abs/2602.06960v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "InftyThink+通过RL学习长语言推理的摘要边界与续接，基准含AIME数学，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2603.00031",
@@ -1116,8 +1257,12 @@
       "url": "https://arxiv.org/abs/2603.00031v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "GRIP以语料语义簇的信息潜力和长度修正几何先验选择LLM预训练文字，非光谱图像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2602.03772",
@@ -1125,8 +1270,12 @@
       "url": "https://arxiv.org/abs/2602.03772v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "UniGeM在LLM/code语料中联合数据混合和流形采样，非光谱解混或影像采样。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.22030",
@@ -1134,8 +1283,12 @@
       "url": "https://arxiv.org/abs/2601.22030v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "PerTA按梯度/Fisher信息重缩放语言模型任务向量以删除隐私知识，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.21551",
@@ -1143,8 +1296,12 @@
       "url": "https://arxiv.org/abs/2601.21551v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Note2Chat从医疗文字笔记合成问诊对话并训练诊断LLM，医学任务不是光学医学成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.21342",
@@ -1152,8 +1309,12 @@
       "url": "https://arxiv.org/abs/2601.21342v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ostrakon-VL/ShopBench用于餐饮和零售商店的单图、多图、视频理解及指令数据整理，未提供高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2602.18446",
@@ -1161,8 +1322,12 @@
       "url": "https://arxiv.org/abs/2602.18446v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "ReportLogic评价LLM研究报告的宏观逻辑、可读性和论证支持，非光谱论文方法本身。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.18457",
@@ -1170,8 +1335,12 @@
       "url": "https://arxiv.org/abs/2601.18457v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "TCA4Rec将协同过滤物品偏好logits投影到LLM token监督进行生成推荐，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.17858",
@@ -1179,8 +1348,12 @@
       "url": "https://arxiv.org/abs/2601.17858v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "MergeMix用语言模型域专家合并权重预测预训练文字配比，非光谱数据解混。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.17058",
@@ -1188,8 +1361,12 @@
       "url": "https://arxiv.org/abs/2601.17058v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "LLM数据准备综述以文字提示/agent处理数据清洗、实体/模式匹配和标注，摘要未提供明确高光谱联系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.15609",
@@ -1197,8 +1374,12 @@
       "url": "https://arxiv.org/abs/2601.15609v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "RLVR研究有限batch采样偏差、语义耦合和语言策略模式坍塌，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.14060",
@@ -1206,8 +1387,12 @@
       "url": "https://arxiv.org/abs/2601.14060v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "CVSI零样本组合图像检索用参考图与修改描述，实验为CIRR/CIRCO/FashionIQ，未提供高光谱联系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2602.00038",
@@ -1215,8 +1400,12 @@
       "url": "https://arxiv.org/abs/2602.00038v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "LSSF用低秩参数安全子空间重新对齐微调后的LLM，low-rank为模型安全向量，不是光谱张量。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2601.03543",
@@ -1224,8 +1413,12 @@
       "url": "https://arxiv.org/abs/2601.03543v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "EvolMem以多轮/多会话文字对话评测陈述性及非陈述性记忆，非光谱成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2512.21625",
@@ -1233,8 +1426,12 @@
       "url": "https://arxiv.org/abs/2512.21625v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "A3PO分析语言RLVR正负rollout极性并塑形token优势，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2512.21003",
@@ -1242,8 +1439,12 @@
       "url": "https://arxiv.org/abs/2512.21003v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "MVInverse摘要明确从多视图RGB图序列恢复材质、光照与法向；未提供光学高光谱扩展关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2512.17296",
@@ -1251,8 +1452,12 @@
       "url": "https://arxiv.org/abs/2512.17296v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "HiSIR-Net重建4K印刷电路板图像以定位微缺陷，摘要没有明确光学高光谱/多光谱联系；高空间分辨率本身不足以收录。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2512.15231",
@@ -1281,8 +1486,12 @@
       "url": "https://arxiv.org/abs/2512.15745v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "LLaDA2.0将自回归语言模型转换为块扩散语言模型并执行SFT/DPO，非光谱扩散成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2512.06628",
@@ -1290,8 +1499,12 @@
       "url": "https://arxiv.org/abs/2512.06628v4",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "MIND-V用视觉语言规划、动作语义与视频世界模型合成长时机器人操控，物理奖励不构成光学光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2511.21075",
@@ -1299,8 +1512,12 @@
       "url": "https://arxiv.org/abs/2511.21075v4",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "BFT针对生物医学文字中的知识不确定性进行LLM微调、基因文字profile和扰动预测，非光学影像输入。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2511.16249",
@@ -1308,8 +1525,12 @@
       "url": "https://arxiv.org/abs/2511.16249v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "CLD从合成栅格图分离可编辑RGBA层；alpha透明度/图层不是额外光学波段，未提供高光谱联系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2511.12030",
@@ -1317,8 +1538,12 @@
       "url": "https://arxiv.org/abs/2511.12030v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "VPHO摘要明确单幅RGB图像估计手与物体三维姿态，融合视觉及物理线索，非高光谱输入。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2511.11990",
@@ -1326,8 +1551,12 @@
       "url": "https://arxiv.org/abs/2511.11990v4",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "DDR以形式库依赖检索把自然语言数学命题转为机器可验证陈述，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2511.07943",
@@ -1335,8 +1564,12 @@
       "url": "https://arxiv.org/abs/2511.07943v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Thinker用自然语言/逻辑函数拆分知识库和网页检索问题，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.25238",
@@ -1344,8 +1577,12 @@
       "url": "https://arxiv.org/abs/2510.25238v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "VADB为视频美学分维度评分、评论及标签数据库，双模态指视频与语义评价，非多光谱。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.24821",
@@ -1353,8 +1590,12 @@
       "url": "https://arxiv.org/abs/2510.24821v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ming-Flash-Omni统一一般视觉、语音、语言理解生成，摘要未给明确高光谱观测或基础关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2511.05516",
@@ -1362,8 +1603,12 @@
       "url": "https://arxiv.org/abs/2511.05516v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ming-UniAudio以连续语音token统一ASR、语音生成/克隆与编辑，声学特征不是光学光谱。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.22115",
@@ -1371,8 +1616,12 @@
       "url": "https://arxiv.org/abs/2510.22115v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ling2.0为稀疏MoE语言推理模型及文字预训练/RL基础设施，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.20803",
@@ -1380,8 +1629,12 @@
       "url": "https://arxiv.org/abs/2510.20803v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "ARGenSeg以MLLM视觉token及VQ-VAE生成物体分割mask，摘要未提供明确光学高光谱输入或基础关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.19338",
@@ -1389,8 +1642,12 @@
       "url": "https://arxiv.org/abs/2510.19338v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ring-linear以线性/Softmax混合注意力和FP8算子加速长上下文语言推理，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.19183",
@@ -1398,8 +1655,12 @@
       "url": "https://arxiv.org/abs/2510.19183v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "PruneHal对MLLM的KV缓存剪枝缓解视觉幻觉，摘要一般视觉评价未提供明确高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.18855",
@@ -1407,8 +1668,12 @@
       "url": "https://arxiv.org/abs/2510.18855v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ring-1T以token差异掩码、rollout分段与RL系统训练数学/代码推理LLM，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.21795",
@@ -1416,8 +1681,12 @@
       "url": "https://arxiv.org/abs/2510.21795v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Xihe以分层块注意力训练零样本时间序列预测基础模型，GIFT-Eval结果未建立明确光学高光谱联系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.17044",
@@ -1425,8 +1694,12 @@
       "url": "https://arxiv.org/abs/2510.17044v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "FLASH论文优化乳腺质子治疗扫描轨迹、剂量率和正常组织剂量，非光学高光谱遥感或成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.16973",
@@ -1434,8 +1707,12 @@
       "url": "https://arxiv.org/abs/2510.16973v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "pending_primary_scope_identity",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "表1首段涉及CT/MRI/US/PET、内镜、病理、皮肤镜、眼底/OCT及显微；只局部读到表1首段，不是全综述光学模态/引用范围核验，仍待。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.09295",
@@ -1443,8 +1720,12 @@
       "url": "https://arxiv.org/abs/2510.09295v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "MaP以checkpoint合并和Pass@k稳定LLM预训练能力评价，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.06590",
@@ -1452,8 +1733,12 @@
       "url": "https://arxiv.org/abs/2510.06590v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ming-UniVision以连续视觉token统一一般图像理解生成和编辑，未提供明确高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.04028",
@@ -1461,8 +1746,12 @@
       "url": "https://arxiv.org/abs/2510.04028v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "语言RLVR推理边界的利用/探索两阶段概率动力学分析，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2510.00501",
@@ -1470,8 +1759,12 @@
       "url": "https://arxiv.org/abs/2510.00501v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "CodeChemist用程序执行测试oracle改进低资源编程语言代码生成，Chemist名称不表示光谱化学实验。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2509.24389",
@@ -1479,8 +1772,12 @@
       "url": "https://arxiv.org/abs/2509.24389v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "LLaDA-MoE为稀疏专家扩散语言模型，实验为知识、代码、数学、agent与对齐，非光谱重建。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2509.24231",
@@ -1488,8 +1785,12 @@
       "url": "https://arxiv.org/abs/2509.24231v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "pending_primary_scope_identity",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Clinical Datasets描述MedMNIST/BRSET/AIROGS/VinDr及Biomedparse、Path-VQA/VQA-RAD/SLAKE/PMC-VQA，整体11模态，局部未列全实际光学通道；实际输入/目标身份待核。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2509.20162",
@@ -1497,8 +1798,12 @@
       "url": "https://arxiv.org/abs/2509.20162v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "RLAG以生成奖励嵌入医疗、法律、天文学及时事文字知识，astronomy为文本知识域而非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2509.06723",
@@ -1506,8 +1811,12 @@
       "url": "https://arxiv.org/abs/2509.06723v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Zo3T以3D运动投影、测试时LoRA和guidance修正控制图像到视频生成，未提供高光谱关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2509.01321",
@@ -1515,8 +1824,12 @@
       "url": "https://arxiv.org/abs/2509.01321v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "DEPO通过离线/在线样本筛选与rollout重放提高数学语言RL数据效率，非光谱采样。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2509.00356",
@@ -1535,8 +1848,12 @@
       "url": "https://arxiv.org/abs/2508.18824v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "程序辅助合成多样/复杂/正确的数学文字题解训练LLM，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2508.10851",
@@ -1544,8 +1861,12 @@
       "url": "https://arxiv.org/abs/2508.10851v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "EARD按用户/物品可靠性处理推荐系统隐式反馈噪声，denoising不是光谱图像去噪。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2508.03379",
@@ -1553,8 +1874,12 @@
       "url": "https://arxiv.org/abs/2508.03379v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "UML2Dep从软件UML时序图推导服务API数据依赖并生成代码，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.21475",
@@ -1562,8 +1887,12 @@
       "url": "https://arxiv.org/abs/2507.21475v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "ABC三层石墨烯的磁隧道结、电场/掺杂及电子输运研究，非光学高光谱成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.20168",
@@ -1571,8 +1900,12 @@
       "url": "https://arxiv.org/abs/2507.20168v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "以非弹性中子散射直接探测手性声子及磁矩，谱/能量测量并非光学高光谱成像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.22929",
@@ -1580,8 +1913,12 @@
       "url": "https://arxiv.org/abs/2507.22929v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_selected_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "第12页Table2的13数据行仅CFP、OCT与Text；当前任务是彩色眼底/OCT及文字的眼科视觉问答与幻觉定位，未建立明确光学HSI/多光谱关系，按局部现证据暂排。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.18023",
@@ -1589,8 +1926,12 @@
       "url": "https://arxiv.org/abs/2507.18023v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "3DGS多视图场景修复、掩码优化及光真实细节，摘要未提供光学高光谱联系；三维重建本身不自动收录。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.17702",
@@ -1598,8 +1939,12 @@
       "url": "https://arxiv.org/abs/2507.17702v4",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "MoE语言模型效率杠杆与激活比例/专家粒度的缩放定律研究，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.17634",
@@ -1607,8 +1952,12 @@
       "url": "https://arxiv.org/abs/2507.17634v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "WSM用checkpoint平均模拟语言预训练学习率衰减，基准为MATH/HumanEval/MMLU-Pro，非光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.17239",
@@ -1616,8 +1965,12 @@
       "url": "https://arxiv.org/abs/2507.17239v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_selected_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "§3明确15公开/10私有数据构成348481张彩色眼底图，成对142249图；下游仍彩色眼底任务，未建立明确高光谱联系，按局部现证据暂排，不把多数据源当光学多谱。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.16518",
@@ -1625,8 +1978,12 @@
       "url": "https://arxiv.org/abs/2507.16518v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "SyncLoop官方摘要自称C2-Evo，生成文字数学子题与几何图并交替SFT/RL；原作者字段粘连保留，范围暂排不作姓名身份排除。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.13236",
@@ -1634,8 +1991,12 @@
       "url": "https://arxiv.org/abs/2507.13236v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "CAST以潜在激活操控完成LLM跨文字域/语言迁移，非光学高光谱联系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.12760",
@@ -1643,8 +2004,12 @@
       "url": "https://arxiv.org/abs/2507.12760v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "pending_primary_scope_identity",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "§4.1及附录Table6为MR_AVBCE MRI、VerSe/RAOS/BTCV CT和PanNuke显微图；PanNuke实际光学通道仍未明，输入/身份待核。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.08306",
@@ -1652,8 +2017,12 @@
       "url": "https://arxiv.org/abs/2507.08306v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "M2-Reasoning的视觉语言通用/空间推理数据和RLVR训练，摘要未提供明确高光谱联系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2507.00185",
@@ -1661,8 +2030,12 @@
       "url": "https://arxiv.org/abs/2507.00185v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "pending_primary_scope_identity",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "方法Pre-Training Dataset列CT、胸片、US、CFP、OCT、病理patch和皮肤镜七模态，二维切片输入；病理/皮肤等实际光学通道与目标身份仍待核。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.21071",
@@ -1670,8 +2043,12 @@
       "url": "https://arxiv.org/abs/2506.21071v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "从知识图谱路径合成工具说明、文字查询及调用步骤训练语言模型，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.20563",
@@ -1679,8 +2056,12 @@
       "url": "https://arxiv.org/abs/2506.20563v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "pending_primary_scope_identity",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "§3为ACDC MRI、Synapse CT、ISIC皮肤镜；ISIC本稿通道配置及目标身份未由原稿/实现明确，仍待，不外推同作者其他光谱数据。",
+      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.20180",
@@ -1688,8 +2069,12 @@
       "url": "https://arxiv.org/abs/2506.20180v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Co3Sn2S2磁性Weyl半金属光Nernst电流及不同激发波长下Berry曲率增强；摘要为材料光电/热电机制，未建立光学高光谱成像或基础方法关系。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.17728",
@@ -1697,8 +2082,12 @@
       "url": "https://arxiv.org/abs/2506.17728v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "KAG-Thinker以逻辑形式、知识边界与多轮检索深化文字知识库问答；原API摘要末尾有省略号，按可得文本暂排，正文与完整差异未核。",
+      "readingBoundary": "官方API返回的摘要末尾自带省略号；读取全部可得文本，不宣称补齐了缺失尾段或阅读全文。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.14731",
@@ -1706,8 +2095,12 @@
       "url": "https://arxiv.org/abs/2506.14731v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "Ring-lite以C3PO稳定MoE语言模型数学/代码/知识RL训练，非光谱任务。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.14701",
@@ -1715,8 +2108,12 @@
       "url": "https://arxiv.org/abs/2506.14701v4",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "质子治疗数字孪生用CT/CBCT、解剖形变和治疗计划质量优化，非光学高光谱观测。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.10073",
@@ -1724,8 +2121,12 @@
       "url": "https://arxiv.org/abs/2506.10073v2",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "not_screened",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。"
+      "decision": "excluded_abstract_scope",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "reviewedAt": "2026-10-11",
+      "basis": "头颈质子治疗个体RL用规划CT、剂量体积直方图及剂量优先级动作重计划，非光谱影像。",
+      "readingBoundary": "官方API返回的原摘要文本已读；原稿全文、正式版、实现和全部实验未核。",
+      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。"
     },
     {
       "arxivId": "2506.09344",

@@ -239,7 +239,7 @@
 | ORCID author works | 2024 | Jun Zhou 2024 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2024 source groups; not a complete 2024 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
 | ORCID author works | 2025 | Jun Zhou 2025 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2025 source groups; not a complete 2025 venue scan. | 17 / 17 / 17 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
 | ORCID author works | 2026 | Jun Zhou 2026 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2026 source groups; not a complete 2026 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
-| arXiv · Jun Zhou quoted-name author query | 2026 | au:"Jun_Zhou"；start=0/200/400，200/200/131条 | 531 / 110 / 110 | 指定查询分页完整；110条有映射/逐审记录（含2待核），421未审 | 姓名字段521独立整名/10非精确或分词异常；身份/范围/版本不完整，2新待核 |
+| arXiv · Jun Zhou quoted-name author query | 2026 | au:"Jun_Zhou"；start=0/200/400，200/200/131条 | 531 / 210 / 210 | 分页完整；210条有映射/逐审记录（含8待核），321未审 | 累计150逐审；521独立整名/10异常不证明身份；实际输入、全部版本/全文未完整覆盖 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -1020,3 +1020,10 @@ IGARSS2011四页作者稿已通读，15组小波特征、数据、随机划分�
 原471条未审队列按顺序逐项读50条完整官方摘要：47范围暂排、1整名不匹配、2原稿局部后仍待；余421未审。现531交叉表为24目录匹配、32继承决定、4既有同名决定以及本批50、余421。摘要暂排不代表全部作者身份或全文核验，明确光谱联系可重审。查询名称纠正为带引号姓名查询：521条有独立规范化Jun Zhou字段，10条非精确姓名/简写/粘连字段，均不自动证明目标身份；保留原字段。
 
 RADC首页Jun Zhou为清华深圳国际研究生院，实验含EuroSAT但实际通道未明；TEAMS首页为中山大学，MRI/CT及PanNuke显微数据的光学通道仍待。机构差异本身不证明是不同个人，两篇保持范围/身份待核，仅指定页局部，不称全文；四张原稿页渲染仅来源证据，不计334张目录原图。GitHub三同名遥感仓库DDFNet4RSI/EAAHNet/FDFormer4RSI完整树均仅README，所有者作者关联和实际输入未知；EAAHNet补资源证据1条，FDFormer仅未确认题名线索，不计发表论文或合并FDNet。总库757、三维214、标签303、原图334、作者188条及179摘要级/9全文级均不变。DBLP9/Scholar8/CV3、两新待核和421未审继续推进。见 `sources/jun-zhou-arxiv-abstract-batch1-2026-10-10.json`、`sources/jun-zhou-remote-segmentation-placeholder-audit-2026-10-10.json` 与作者inventory中的姓名字段审计。
+
+
+### 周峻arXiv第二批100条原摘要及八原稿局部（2026-10-11）
+
+按原未审421队列次序读100条API原摘要：91摘要暂排、2局部暂排、1整名不匹配、6新待核。8份固定版本PDF官方HTTP200，指定机构与数据段局部已读，保存原页文本、访问/完整哈希以及两张输入页渲染；不称全文，截图不计目录原图。EH-Benchmark Table2明确CFP/OCT/Text、MaskedCLIP明确彩色眼底，按当前联系暂排；UltraVR、医学FM综述、EVLF-FM、Mamba Snake、MerMED-FM及AdvMIM仍待实际光学输入/目标身份，机构差异不证明是不同个人。KAG-Thinker API摘要尾省略号、SyncLoop/C2-Evo及粘连字段差异保留。
+
+累计150逐审后，531交叉表为24匹配/32继承/4既有同名/138摘要暂排/2局部暂排/2整名不符/8范围身份待/321未审。目录757、作者188及179摘要级/9全文级、214三维、303标签、334图不变；DBLP9/Scholar8/CV3及作者/全领域全文、版本与矩阵继续核，非全集完成。逐项理由和来源见 `sources/jun-zhou-arxiv-abstract-batch2-2026-10-11.json` 及[jun-zhou.md](jun-zhou.md)。
