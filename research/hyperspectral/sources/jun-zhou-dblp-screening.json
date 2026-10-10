@@ -6,12 +6,12 @@
   "recordCount": 365,
   "keywordRecordCount": 167,
   "decisionCounts": {
-    "excluded": 185,
+    "excluded": 184,
     "duplicate_existing": 165,
     "included": 6,
-    "pending": 9
+    "pending": 10
   },
-  "method": "DBLP SPARQL exact authoredBy relation; title/DOI normalized against catalog；WHISPERS专题补充、IGARSS多光谱证据补强；另用ORCID同题逐项决定交叉回填100条非关键词记录；剩余78条按原摘要/Griffith机构摘要和指定正文局部逐项审查，63暂排除、15待核；合并集合365条含1条快照外STRL补充。；续核M2-Net、2022稳健2DSVD与CrowdMLP原稿实验后暂排除3条，剩12待核。；续核两条编辑性记录后剩10待核。；机器人项按原会议指南指定摘要镜像转录暂排除，身份未核，剩9待核。",
+  "method": "DBLP SPARQL exact authoredBy relation; title/DOI normalized against catalog；WHISPERS专题补充、IGARSS多光谱证据补强；另用ORCID同题逐项决定交叉回填100条非关键词记录；剩余78条按原摘要/Griffith机构摘要和指定正文局部逐项审查，63暂排除、15待核；合并集合365条含1条快照外STRL补充。；续核M2-Net、2022稳健2DSVD与CrowdMLP原稿实验后暂排除3条，剩12待核。；续核两条编辑性记录后剩10待核。；机器人项按原会议指南指定摘要镜像转录暂排除，身份未核，剩9待核。；2026-10-11因UEMM原稿模态矛盾与AirSim接口语义重开1条旧排除，当前355决定/10待；历史剩余78条审查计数不改。",
   "records": [
     {
       "pub": "https://dblp.org/rec/journals/staeors/WangYZZ26",
@@ -1613,7 +1613,9 @@
       "venue": "IEEE Trans. Geosci. Remote. Sens.",
       "doi": "https://doi.org/10.1109/TGRS.2025.3564261",
       "decision": "excluded",
-      "decisionReason": "ORCID同题逐项决定为excluded（jun-zhou-2025-decisions.json）：题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。"
+      "decisionReason": "State-Air原稿§IV为DJI Mini2航片与IMU飞行状态（高度/roll/pitch/yaw）联合，§V-A的AU-AIR为RGB+IMU、SynDrone为RGB/depth/radar；多模态不据此推定多光谱。当前明确输入无高光谱关系，局部暂排并补强既有版本记录。 补证只针对arXiv 2405.15465v3，不宣称正式TGRS全文已读。",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
     },
     {
       "pub": "https://dblp.org/rec/journals/pami/AkpudoGZL25",
@@ -1675,8 +1677,11 @@
       "year": "2025",
       "venue": "ACM Multimedia",
       "doi": "https://doi.org/10.1145/3746027.3758220",
-      "decision": "excluded",
-      "decisionReason": "ORCID同题逐项决定为excluded（jun-zhou-2025-decisions.json）：题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。"
+      "decision": "pending",
+      "decisionReason": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
+      "previousDecision": "excluded",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json"
     },
     {
       "pub": "https://dblp.org/rec/conf/mmasia/ZhuY0ZS024",
@@ -2565,7 +2570,9 @@
       "venue": "CoRR",
       "doi": "https://doi.org/10.48550/ARXIV.2405.15465",
       "decision": "excluded",
-      "decisionReason": "ORCID逐项决定与Crossref书目将其作为UAV目标检测论文；未确认高光谱输入，按范围排除。"
+      "decisionReason": "State-Air原稿§IV为DJI Mini2航片与IMU飞行状态（高度/roll/pitch/yaw）联合，§V-A的AU-AIR为RGB+IMU、SynDrone为RGB/depth/radar；多模态不据此推定多光谱。当前明确输入无高光谱关系，局部暂排并补强既有版本记录。 补证只针对arXiv 2405.15465v3，不宣称正式TGRS全文已读。",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
     },
     {
       "pub": "https://dblp.org/rec/journals/corr/abs-2404-15264",
@@ -3459,6 +3466,7 @@
   "nonKeywordIncludedCount": 2,
   "snapshotRecordCount": 364,
   "outsideSnapshotSupplementalCount": 1,
-  "snapshotReviewedCount": 355,
-  "remainingScopeReviewedCount": 63
+  "snapshotReviewedCount": 354,
+  "remainingScopeReviewedCount": 63,
+  "decisionReviewedAt": "2026-10-11"
 }

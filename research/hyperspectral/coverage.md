@@ -1027,3 +1027,12 @@ RADC首页Jun Zhou为清华深圳国际研究生院，实验含EuroSAT但实际�
 按原未审421队列次序读100条API原摘要：91摘要暂排、2局部暂排、1整名不匹配、6新待核。8份固定版本PDF官方HTTP200，指定机构与数据段局部已读，保存原页文本、访问/完整哈希以及两张输入页渲染；不称全文，截图不计目录原图。EH-Benchmark Table2明确CFP/OCT/Text、MaskedCLIP明确彩色眼底，按当前联系暂排；UltraVR、医学FM综述、EVLF-FM、Mamba Snake、MerMED-FM及AdvMIM仍待实际光学输入/目标身份，机构差异不证明是不同个人。KAG-Thinker API摘要尾省略号、SyncLoop/C2-Evo及粘连字段差异保留。
 
 累计150逐审后，531交叉表为24匹配/32继承/4既有同名/138摘要暂排/2局部暂排/2整名不符/8范围身份待/321未审。目录757、作者188及179摘要级/9全文级、214三维、303标签、334图不变；DBLP9/Scholar8/CV3及作者/全领域全文、版本与矩阵继续核，非全集完成。逐项理由和来源见 `sources/jun-zhou-arxiv-abstract-batch2-2026-10-11.json` 及[jun-zhou.md](jun-zhou.md)。
+
+
+### 周峻arXiv第三批100条与UEMM重开（2026-10-11）
+
+原321未审队列前100条完整官方API摘要逐项读取：96摘要范围暂排、2指定原稿输入局部暂排、2待核。4篇固定版本PDF选读机构/输入段，不标全文。RETFound当前彩色眼底任务与预训练OCT分开；State-Air航片+IMU补强旧排除及版本关系。VITask的医学光学输入/身份仍待核。
+
+UEMM原稿图2的六模态与采集段infrared/depth表述矛盾；论文链接的当前采集代码调用AirSim Infrared，但官方文档指对象ID灰度映射，不能证明真实红外波段。目标Griffith作者身份有首页及作者仓库个人页支持；正式ACM版、发布数据及采集时模拟器版本未核。因此旧题名排除重开为pending，并同步ORCID/DBLP/Scholar/Griffith及survey，非新增论文。仓库树160项未截断、选读文件blob匹配；HF仅根目录/README，不称数据全分页或复现。
+
+当前累计250条逐审，531交叉表为24匹配/32继承/4既有同名/234摘要暂排/4局部暂排/2整名不符/10待/221未审。ORCID128入/10重/124排/1重开待，DBLP355决定/10待，Scholar188排/8重/4入/9待；待核有重叠。757目录、188作者、214三维、303标签、334原图不变。新原稿页渲染仅为范围来源证据。作者专项与全领域场所/全文覆盖继续推进，非全集完成。见 [第三批逐项证据](sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json)、[UEMM重开审计](sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。

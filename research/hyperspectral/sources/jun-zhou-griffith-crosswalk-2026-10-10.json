@@ -1,14 +1,14 @@
 {
   "checkedAt": "2026-10-10",
   "inventory": "jun-zhou-griffith-inventory-2026-10-10.json",
-  "method": "351条去重记录逐项对照当前目录、勘误版本、DBLP和Scholar既有决定；无作者项按非作者记录单列，新差集按机构原摘要/正式PDF处理，不把继承决定叫作全文复审。",
+  "method": "351条去重记录逐项对照当前目录、勘误版本、DBLP和Scholar既有决定；无作者项按非作者记录单列，新差集按机构原摘要/正式PDF处理，不把继承决定叫作全文复审。；2026-10-11 UEMM继承排除重开为carried_pending，原始机构元数据及正式题名保留。",
   "recordCount": 351,
   "decisionCounts": {
-    "matched_prior_decision": 163,
+    "matched_prior_decision": 162,
     "matched_catalog": 154,
     "linked_correction": 2,
     "linked_dataset": 1,
-    "carried_pending": 6,
+    "carried_pending": 7,
     "not_author_record": 19,
     "excluded_selected_full_text": 1,
     "included_new": 2,
@@ -1224,11 +1224,14 @@
       "type": [
         "Conference output"
       ],
-      "decision": "matched_prior_decision",
-      "priorDecision": "excluded",
-      "evidenceFile": "jun-zhou-dblp-screening.json",
+      "decision": "carried_pending",
+      "priorDecision": "pending",
+      "evidenceFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json",
       "matchedTitle": "UEMM-Air: Enable UAVs to Undertake More Multi-modal Tasks.",
-      "basis": "完整题名或精确DOI对照既有逐项决定；本批不宣称重新阅读全文或独立核验同名身份。"
+      "basis": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
+      "previousDecision": "matched_prior_decision",
+      "previousPriorDecision": "excluded",
+      "reviewedAt": "2026-10-11"
     },
     {
       "uuid": "ecd54bb6-d258-44ae-ac48-4ab53fe5ef87",
@@ -6134,9 +6137,10 @@
       ],
       "decision": "matched_prior_decision",
       "priorDecision": "excluded",
-      "evidenceFile": "jun-zhou-dblp-screening.json",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch3-2026-10-11.json",
       "matchedTitle": "Boost UAV-Based Object Detection via Scale-Invariant Feature Disentanglement and Adversarial Learning.",
-      "basis": "完整题名或精确DOI对照既有逐项决定；本批不宣称重新阅读全文或独立核验同名身份。"
+      "basis": "State-Air原稿§IV为DJI Mini2航片与IMU飞行状态（高度/roll/pitch/yaw）联合，§V-A的AU-AIR为RGB+IMU、SynDrone为RGB/depth/radar；多模态不据此推定多光谱。当前明确输入无高光谱关系，局部暂排并补强既有版本记录。 正式版全文未核；只补对应arXiv输入证据，原范围暂排保留。",
+      "reviewedAt": "2026-10-11"
     },
     {
       "uuid": "87fdeb4c-cbf8-5f18-a3b2-7f84fb993412",
@@ -7648,5 +7652,6 @@
     "decision": "pending",
     "boundary": "仍不能凭题名相近与合作者相似关闭Scholar短题名待核，也未新增第二条。"
   },
-  "boundary": "机构公开仓库指定两查询的分页完整，仅对该来源集合成立；作者身份和全文仍有待核，不能宣布作者调研完成。"
+  "boundary": "机构公开仓库指定两查询的分页完整，仅对该来源集合成立；作者身份和全文仍有待核，不能宣布作者调研完成。",
+  "decisionReviewedAt": "2026-10-11"
 }

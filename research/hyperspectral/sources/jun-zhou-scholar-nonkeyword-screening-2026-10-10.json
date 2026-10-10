@@ -2,11 +2,11 @@
   "checkedAt": "2026-10-10",
   "source": "jun-zhou-scholar-pages-0-387.json",
   "previousKeywordScreening": "jun-zhou-scholar-screening.json",
-  "method": "387条分页记录减178条已审citationKey，得到209条差集；仅完整题名Unicode/标点规范化匹配已有逐项证据，不使用模糊相似度或关键词自动排除。；8条无匹配记录以原作者稿、机构摘要或作者通讯补核，保留正式版本与访问边界。；续以原始出版社正文/摘要、arXiv与原作者代码引文处理8条编辑/通用视觉及版本变体。",
+  "method": "387条分页记录减178条已审citationKey，得到209条差集；仅完整题名Unicode/标点规范化匹配已有逐项证据，不使用模糊相似度或关键词自动排除。；8条无匹配记录以原作者稿、机构摘要或作者通讯补核，保留正式版本与访问边界。；续以原始出版社正文/摘要、arXiv与原作者代码引文处理8条编辑/通用视觉及版本变体。；2026-10-11重开UEMM旧排除为pending；State-Air既有版本仅补arXiv输入局部证据。",
   "recordCount": 209,
   "decisionCounts": {
-    "excluded": 189,
-    "pending": 8,
+    "excluded": 188,
+    "pending": 9,
     "included": 4,
     "duplicate_existing": 8
   },
@@ -1069,7 +1069,9 @@
         }
       ],
       "decision": "excluded",
-      "finding": "规范化完整题名与已审来源记录一致，沿用逐项范围排除证据；该匹配不单独证明同名作者身份。"
+      "finding": "State-Air原稿§IV为DJI Mini2航片与IMU飞行状态（高度/roll/pitch/yaw）联合，§V-A的AU-AIR为RGB+IMU、SynDrone为RGB/depth/radar；多模态不据此推定多光谱。当前明确输入无高光谱关系，局部暂排并补强既有版本记录。 补证只针对arXiv 2405.15465v3，不宣称正式TGRS全文已读。",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
     },
     {
       "title": "Directional variation in surface emissivity inferred from the MYD21 product and its influence on estimated surface upwelling longwave radiation",
@@ -2141,17 +2143,26 @@
           "snapshot": "jun-zhou-dblp-screening.json",
           "pub": "https://dblp.org/rec/conf/mm/YaoLXZDMJW025",
           "title": "UEMM-Air: Enable UAVs to Undertake More Multi-modal Tasks.",
-          "decision": "excluded"
+          "decision": "pending",
+          "previousDecision": "excluded",
+          "decisionUpdatedAt": "2026-10-11",
+          "decisionEvidenceFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json"
         },
         {
           "snapshot": "jun-zhou-2025-decisions.json",
           "pub": null,
           "title": "UEMM-Air: Enable UAVs to Undertake More Multi-modal Tasks",
-          "decision": "excluded"
+          "decision": "pending",
+          "previousDecision": "excluded",
+          "decisionUpdatedAt": "2026-10-11",
+          "decisionEvidenceFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json"
         }
       ],
-      "decision": "excluded",
-      "finding": "规范化完整题名与已审来源记录一致，沿用逐项范围排除证据；该匹配不单独证明同名作者身份。"
+      "decision": "pending",
+      "finding": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
+      "previousDecision": "excluded",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json"
     },
     {
       "title": "A robust co-training framework to handle noisy labels for remote sensing image segmentation",
@@ -2846,7 +2857,9 @@
         }
       ],
       "decision": "excluded",
-      "finding": "规范化完整题名与已审来源记录一致，沿用逐项范围排除证据；该匹配不单独证明同名作者身份。"
+      "finding": "State-Air原稿§IV为DJI Mini2航片与IMU飞行状态（高度/roll/pitch/yaw）联合，§V-A的AU-AIR为RGB+IMU、SynDrone为RGB/depth/radar；多模态不据此推定多光谱。当前明确输入无高光谱关系，局部暂排并补强既有版本记录。 补证只针对arXiv 2405.15465v3，不宣称正式TGRS全文已读。",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
     },
     {
       "title": "Wavelet Siamese Network for Change Detection in Remote Sensing Images",
@@ -4583,5 +4596,6 @@
       "readingBoundary": "原始摘要/指定正文段落或版本书目核验；不标全文阅读。排除可由新光谱证据重审。"
     }
   ],
-  "boundary": "原始Scholar页面并非正式书目全集。继承已决定来源范围，不将题名匹配当身份核验。未匹配与未决定条目保留pending；近题、年份差异、会议编者和同名污染仍需逐项原文。"
+  "boundary": "原始Scholar页面并非正式书目全集。继承已决定来源范围，不将题名匹配当身份核验。未匹配与未决定条目保留pending；近题、年份差异、会议编者和同名污染仍需逐项原文。",
+  "decisionReviewedAt": "2026-10-11"
 }

@@ -13,7 +13,7 @@
 - React 19、TypeScript、Vite 7；Node.js 22.12+。
 - npm run dev -- --port 5173；远程需转发。
 - 数据/上下文：npm run validate；网站：npm run build；交互：浏览器检查。
-- 校验与构建通过；原图队列已恢复年份降序。JS约4.72MB（gzip约0.99MB），有体积警告。
+- 校验/构建通过；原图队列按年份降序。JS约4.72MB，有体积警告。
 
 ## 当前状态
 
@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：只调研论文，不新增学习笔记。周峻188条（HSI181/关联7，含1摘要），179摘要级/9全文级。ORCID263组、Griffith351/214指定分页完成，非全集。DBLP365为356决定/9待；Scholar209为189排8重4入8待；CV3未确认发表。arXiv带引号姓名查询531全分页，含非精确姓名/分词异常：24匹配、32继承、4既有同名、138摘要暂排、2局部暂排、2整名不符、8范围/身份待、321未审；150条逐审留证，不称身份/全文全量。量化局部暂排；4同名稿留全领域候选。三同名仓库仅README，作者/输入待核。继续DBLP/Scholar/CV、新待核及未审arXiv；见jun-zhou.md。
+- 作者优先：调研论文，不增笔记。周峻188条（HSI181/关联7，含1摘要），179摘要级/9全文级。ORCID263组现128入10重124排1重开待；DBLP365为355决定/10待；Scholar209为188排8重4入9待；CV3未确认发表。arXiv带引号查询531全分页，含非精确姓名/分词异常：24匹配、32继承、4既有同名、234摘要暂排、4局部暂排、2整名不符、10范围/身份待、221未审；250条逐审非全文全量。UEMM原稿模态矛盾，代码Infrared为模拟器接口、官方文档为对象ID灰度；正式版/数据/采集版本待核，旧排除重开。4同名光谱稿留全领域；三同名仓库仅README。继续来源待核与arXiv；见jun-zhou.md。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。

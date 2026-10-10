@@ -42,8 +42,11 @@
       "evidence": [
         "https://api.crossref.org/works/10.1145/3746027.3758220"
       ],
-      "decision": "excluded",
-      "reason": "题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。"
+      "decision": "pending",
+      "reason": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
+      "previousDecision": "excluded",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json"
     },
     {
       "order": 26,
@@ -95,7 +98,9 @@
         "https://api.crossref.org/works/10.1109/TGRS.2025.3564261"
       ],
       "decision": "excluded",
-      "reason": "题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。"
+      "reason": "State-Air原稿§IV为DJI Mini2航片与IMU飞行状态（高度/roll/pitch/yaw）联合，§V-A的AU-AIR为RGB+IMU、SynDrone为RGB/depth/radar；多模态不据此推定多光谱。当前明确输入无高光谱关系，局部暂排并补强既有版本记录。 补证只针对arXiv 2405.15465v3，不宣称正式TGRS全文已读。",
+      "reviewedAt": "2026-10-11",
+      "evidenceFile": "jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
     },
     {
       "order": 31,
@@ -189,5 +194,6 @@
       "paperId": "zhou-38-hsi-2025",
       "reason": "题名直接确认高光谱任务；Crossref核验正式记录，补充摘要级方法证据；公开摘要镜像已核，正式版和全文待核。"
     }
-  ]
+  ],
+  "decisionReviewedAt": "2026-10-11"
 }

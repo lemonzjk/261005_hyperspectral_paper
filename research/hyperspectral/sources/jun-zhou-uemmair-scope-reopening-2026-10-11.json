@@ -1,0 +1,228 @@
+{
+  "checkedAt": "2026-10-11",
+  "decision": "pending",
+  "previousDecision": "excluded",
+  "formalTitle": "UEMM-Air: Enable UAVs to Undertake More Multi-modal Tasks",
+  "formalDoi": "10.1145/3746027.3758220",
+  "arxivId": "2406.06230",
+  "versionRead": "v3",
+  "identityFinding": "原稿首页Jun Zhou为Griffith信息与通信技术学院；论文所链作者仓库Jun Zhou（周峻）链接Griffith个人页7205-jun-zhou，支持目标身份。待核是输入/版本范围，不是已确认另一同名作者。",
+  "scopeFinding": "当前AirNavigation utils/fly.py设置车辆分割ID后请求Infrared并存三通道uint8；官方AirSim文档将Infrared描述为对象ID的0–255灰度映射。此证据不证明论文当时未修改模拟器，亦不证明发布数据包含真实IR或密集光谱；正式ACM七页版本和数据包未读。",
+  "reopeningReason": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
+  "sourceFamily": {
+    "paperLinkedRepository": "https://github.com/1e12Leon/UEMM-Air",
+    "authorProfileLinkedByReadme": "https://experts.griffith.edu.au/7205-jun-zhou",
+    "readmeCitationArxivId": "2406.06230",
+    "generatorLinkedByReadme": "https://github.com/1e12Leon/AirNavigation",
+    "datasetLinkedByReadme": "https://huggingface.co/datasets/1e12Leon/UEMM-Air"
+  },
+  "repositoryBoundary": "作者仓库树只有README、Supplementary与图像资源，未见实现；采集仓库完整递归树160项、truncated=false。当前main源码仅指定函数/段落选读，逐文件Git blob与所存树完全匹配；树SHA不是提交SHA，未核论文采集时的具体提交/修改过的AirSim。",
+  "simulatorDocumentation": {
+    "url": "https://microsoft.github.io/AirSim/image_apis/#infrared",
+    "finding": "官方Infrared段说明该输出目前将对象ID映射为0–255灰度，可加噪声；不是已证实的真实热辐射/光谱响应。"
+  },
+  "datasetBoundary": "Hugging Face仅根目录一次响应与README；未取得各子目录完整分页，也未下载/打开数据压缩包。README前言apache-2.0与正文/作者仓库CC-BY-NC4.0不同，不统一改写许可。",
+  "publicationBoundary": "正式ACM七页原文未取得/未读；arXiv模板页眉2021不是发表年份，ORCID日期保留原始登记，不以元数据当全文核验。",
+  "nextEvidenceNeeded": [
+    "正式ACM版采集/输入说明及与arXiv v3差异",
+    "发布数据实际通道与模态文件",
+    "采集时AirSim版本及是否改写Infrared物理响应"
+  ],
+  "readCode": [
+    {
+      "path": "utils/fly.py",
+      "url": "https://raw.githubusercontent.com/1e12Leon/AirNavigation/main/utils/fly.py",
+      "httpStatus": 200,
+      "bytes": 16456,
+      "blobSha": "c932c512ffcaeee5d0acf3cf2cf23688ef80b7e4",
+      "treeBlobSha": "c932c512ffcaeee5d0acf3cf2cf23688ef80b7e4",
+      "matchesTreeBlob": true,
+      "wholeFileSha256": "fbace504fd071773ae73916393aa948d962b1815005a422531eefb8e60d390f8",
+      "originalFileArchived": false,
+      "selectedRanges": [
+        {
+          "firstLine": 1,
+          "lastLine": 38,
+          "text": "import sys\nimport time\nimport airsim\nimport numpy as np\nimport cv2\nimport re\nimport os\nimport math\nfrom utils.processcopy import generate_annotation\n\n# 文件参数\n# 获取当前文件的绝对路径\ncurrent_dir = os.path.dirname(os.path.abspath(__file__))\n# 构建基础数据目录\nbase_data_dir = os.path.abspath(os.path.join(current_dir, \"..\", \"data\", \"capture_imgs\"))\n\n# 实景图和分割图的存储位置\nscenepath = os.path.join(base_data_dir, \"SceneImage\")\ndepthplanarpath = os.path.join(base_data_dir, \"DepthPlanarImage\")\ndepthperspectivepath = os.path.join(base_data_dir, \"DepthPerspectiveImage\")\ndepthvispath = os.path.join(base_data_dir, \"DepthVisImage\")\nsegmentationpath = os.path.join(base_data_dir, \"SegmentationImage\")\nsurfacenormalspath = os.path.join(base_data_dir, \"SurfaceNormalsImage\")\ninfraredpath = os.path.join(base_data_dir, \"InfraredImage\")\n\n# 创建所需的目录\ndef ensure_directories_exist():\n    directories = [\n        scenepath,\n        depthplanarpath,\n        depthperspectivepath,\n        depthvispath,\n        segmentationpath,\n        surfacenormalspath,\n        infraredpath\n    ]\n    for directory in directories:\n        os.makedirs(directory, exist_ok=True)\n"
+        },
+        {
+          "firstLine": 186,
+          "lastLine": 363,
+          "text": "def image_capture(picture_num, capture_num, client, map_name, picture_nums):\n    # 从10个不同的高度拍摄: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50\n    # 从19个角度拍摄：0, 5, 10，15, 20，25, 30，35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90\n    for j in range(capture_num):\n\n        client.moveByVelocityAsync(0, 0, -5, 1).join()\n        client.hoverAsync().join()\n        time.sleep(1)\n\n        height = (j + 1) * 5\n        camera_rotation = 0.\n\n        for i in range(19):\n            picture_num += 1\n            \n            # 构建文件名\n            filename = f\"Scene{picture_nums + picture_num}_{height}_{i * 5}_{map_name}.png\"\n\n            # 拍摄未压缩的Scene图像\n            responses = client.simGetImages([airsim.ImageRequest(\"front_center\", airsim.ImageType.Scene, False, False)])\n            if responses:\n                # 获取第一个图像响应\n                image_response = responses[0]\n\n                # 检查图像数据是否有效\n                if image_response is not None and len(image_response.image_data_uint8) > 0:\n                    # 从返回的图像数据创建一个numpy数组\n                    img1d = np.frombuffer(image_response.image_data_uint8, dtype=np.uint8)\n\n                    # 将一维数组重塑为H X W X 3数组\n                    img_rgb = img1d.reshape(image_response.height, image_response.width, 3)\n                    cv2.imwrite(os.path.join(scenepath, filename), img_rgb)\n                else:\n                    print(\"No Scene image data received.\")\n            else:\n                print(\"Scene Image Failed to get.\")\n\n            # 将所有识别到部分都关闭\n            client.simSetSegmentationObjectID(\".*\", 0, True)\n\n            # 设置识别车辆的ID\n            found1 = client.simSetSegmentationObjectID(\"BoxTruck[\\w]*\", 48, True)\n            found2 = client.simSetSegmentationObjectID(\"Bulldozer[\\w]*\", 57, True)\n            found3 = client.simSetSegmentationObjectID(\"Excavator[\\w]*\", 90, True)\n            found4 = client.simSetSegmentationObjectID(\"ForkLift[\\w]*\", 93, True)\n            found5 = client.simSetSegmentationObjectID(\"Jeep[\\w]*\", 109, True)\n            found6 = client.simSetSegmentationObjectID(\"Motor[\\w]*\", 178, True)\n            found7 = client.simSetSegmentationObjectID(\"Pickup[\\w]*\", 192, True)\n            found8 = client.simSetSegmentationObjectID(\"RoadRoller[\\w]*\", 189, True)\n            found9 = client.simSetSegmentationObjectID(\"Sedan[\\w]*\", 245, True)\n            found10 = client.simSetSegmentationObjectID(\"SUV[\\w]*\", 172, True)\n            found11 = client.simSetSegmentationObjectID(\"Trailer[\\w]*\", 156, True)\n            found12 = client.simSetSegmentationObjectID(\"Truck[\\w]*\", 239, True)\n            found13 = client.simSetSegmentationObjectID(\"Van[\\w]*\", 149, True)\n\n            flag = True\n\n            # 拍摄未压缩的Segmentation图像\n            responses = client.simGetImages([airsim.ImageRequest(\"front_center\", airsim.ImageType.Segmentation, False, False)])\n\n            if responses:\n                # 因为返回是一个列表，我们只请求了一张图片，取第一个元素\n                response = responses[0]\n\n                # 检查是否有图像数据\n                if response is not None and len(response.image_data_uint8) > 0:\n                    # 从返回的图像数据创建一个numpy数组\n                    img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)\n\n                    # 将一维数组重塑为H X W X 4数组\n                    img_rgb = img1d.reshape(response.height, response.width, 3)\n                    cv2.imwrite(os.path.join(segmentationpath, filename), img_rgb)\n\n                    # 检查Segmentation图像是否为空\n                    if is_segmentation_empty(response):\n                        print(\"Segmentation图像为空，删除所有相关图像...\")\n                        delete_images(filename)\n                        picture_num -= 1  # 如果删除图像，则不计入这次拍摄\n                        flag = False\n\n                else:\n                    print(\"No Segmentation image data received.\")\n            else:\n                print(\"Segmentation Image Failed to get.\")\n\n            if flag:\n                # SurfaceNormalsImage\n                responses = client.simGetImages([airsim.ImageRequest(\"front_center\", airsim.ImageType.SurfaceNormals, False, False)])\n                if responses:\n                    response = responses[0]\n\n                    # 检查是否有图像数据\n                    if response is not None and len(response.image_data_uint8) > 0:\n                        # 从返回的图像数据创建一个numpy数组\n                        img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)\n\n                        # 将一维数组重塑为H X W X 4数组\n                        img_rgb = img1d.reshape(response.height, response.width, 3)\n                        cv2.imwrite(os.path.join(surfacenormalspath, filename), img_rgb)\n                    else:\n                        print(\"No SurfaceNormals image data received.\")\n                else:\n                    print(\"SurfaceNormals Image Failed to get.\")\n\n                # InfraredImage\n                responses = client.simGetImages([airsim.ImageRequest(\"front_center\", airsim.ImageType.Infrared, False, False)])\n                if responses:\n                    response = responses[0]\n\n                    # 检查是否有图像数据\n                    if response is not None and len(response.image_data_uint8) > 0:\n                        # 从返回的图像数据创建一个numpy数组\n                        img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)\n\n                        # 将一维数组重塑为H X W X 4数组\n                        img_rgb = img1d.reshape(response.height, response.width, 3)\n                        cv2.imwrite(os.path.join(infraredpath, filename), img_rgb)\n                    else:\n                        print(\"No Infrared image data received.\")\n                else:\n                    print(\"Infrared Image Failed to get.\")\n\n                # DepthPerspectiveImage\n                responses = client.simGetImages([airsim.ImageRequest(\"front_center\", airsim.ImageType.DepthPerspective, False, False)])\n                if responses:\n                    response = responses[0]\n\n                    # 检查是否有图像数据\n                    if response is not None and len(response.image_data_uint8) > 0:\n                        # 从返回的图像数据创建一个numpy数组\n                        img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)\n\n                        # 将一维数组重塑为H X W X 4数组\n                        img_rgb = img1d.reshape(response.height, response.width, 3)\n                        cv2.imwrite(os.path.join(depthperspectivepath, filename), img_rgb)\n                    else:\n                        print(\"No DepthPerspective image data received.\")\n                else:\n                    print(\"DepthPerspective Image Failed to get.\")\n\n                # DepthPlanarImage\n                responses = client.simGetImages([airsim.ImageRequest(\"front_center\", airsim.ImageType.DepthPlanar, False, False)])\n                if responses:\n                    response = responses[0]\n\n                    # 检查是否有图像数据\n                    if response is not None and len(response.image_data_uint8) > 0:\n                        # 从返回的图像数据创建一个numpy数组\n                        img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)\n\n                        # 将一维数组重塑为H X W X 4数组\n                        img_rgb = img1d.reshape(response.height, response.width, 3)\n                        cv2.imwrite(os.path.join(depthplanarpath, filename), img_rgb)\n                    else:\n                        print(\"No DepthPlanar image data received.\")\n                else:\n                    print(\"DepthPlanar Image Failed to get.\")\n\n                # DepthVisImage\n                responses = client.simGetImages([airsim.ImageRequest(\"front_center\", airsim.ImageType.DepthVis, False, False)])\n                if responses:\n                    response = responses[0]\n\n                    # 检查是否有图像数据\n                    if response is not None and len(response.image_data_uint8) > 0:\n                        # 从返回的图像数据创建一个numpy数组\n                        img1d = np.frombuffer(response.image_data_uint8, dtype=np.uint8)\n\n                        # 将一维数组重塑为H X W X 4数组\n                        img_rgb = img1d.reshape(response.height, response.width, 3)\n                        cv2.imwrite(os.path.join(depthvispath, filename), img_rgb)\n                    else:\n                        print(\"No DepthVis image data received.\")\n                else:\n                    print(\"DepthVis Image Failed to get.\")\n\n                # 在这里生成标注文件\n                if not generate_annotation(filename):\n"
+        }
+      ]
+    },
+    {
+      "path": "utils/UAV_controller.py",
+      "url": "https://raw.githubusercontent.com/1e12Leon/AirNavigation/main/utils/UAV_controller.py",
+      "httpStatus": 200,
+      "bytes": 29436,
+      "blobSha": "2a7e5887c052d6e72077fc855b92d2c2fd9e1ea8",
+      "treeBlobSha": "2a7e5887c052d6e72077fc855b92d2c2fd9e1ea8",
+      "matchesTreeBlob": true,
+      "wholeFileSha256": "f822158df14773a1f192e181d839e20fd01576f92b8f87ebd6f31fdc45d83beb",
+      "originalFileArchived": false,
+      "selectedRanges": [
+        {
+          "firstLine": 25,
+          "lastLine": 40,
+          "text": "\n    return vx_NED, vy_NED, vz_NED\n\n\nclass UAVController:\n    def __init__(self):\n        self.__airsim_json = r\"settings/settings.json\"\n        self.__uav_name_list = [\"Default\",\"Matrice200\",\"sampleflyer\"] # 无人机名称列表\n        self.__capture_all_image_kinds = [\"Scene\", \"DepthVis\",\"DepthPerspective\",\"DepthPlanar\",\"Segmentation\", \"SurfaceNormals\", \"Infrared\", \"All_Auto\"] # 捕获所有图像类型\n        self.__capture_type = [\"Scene\"]                     # 目前捕获的图像类型\n        self.__image_client = airsim.MultirotorClient()\n        self.__control_client = airsim.MultirotorClient()\n        self.__name = \"\"\n        self.__instruction_duration = 0.04  # 无人机操作的间隔时间\n        self.__max_velocity = 5.           # 最大速度\n        self.__max_rotation_rate = 10.      # 最大旋转速率(指yaw角)\n"
+        },
+        {
+          "firstLine": 266,
+          "lastLine": 289,
+          "text": "    def get_all_frame(self):\n        frame_dict = {}\n\n        # 构造请求列表\n        image_requests = [\n            airsim.ImageRequest(0, airsim.ImageType.__dict__[capture_type], pixels_as_float=False, compress=False)\n            for capture_type in self.__capture_type\n        ]\n\n        # 批量获取图像\n        with self.__lock:\n            responses = self.__image_client.simGetImages(image_requests, vehicle_name=self.__name)\n\n        # 解压并解析响应\n        for i, response in enumerate(responses):\n            capture_type = self.__capture_type[i]\n            # 解压缩图像\n            frame = np.frombuffer(response.image_data_uint8, dtype=np.uint8).reshape(response.height, response.width, 3)\n            frame_dict[capture_type] = frame\n\n        return frame_dict\n\n\n    \n"
+        }
+      ]
+    },
+    {
+      "path": "utils/qtpage_3.py",
+      "url": "https://raw.githubusercontent.com/1e12Leon/AirNavigation/main/utils/qtpage_3.py",
+      "httpStatus": 200,
+      "bytes": 80253,
+      "blobSha": "79ce936683b45aa5ca8e3d94de8cbd5db0b2ea30",
+      "treeBlobSha": "79ce936683b45aa5ca8e3d94de8cbd5db0b2ea30",
+      "matchesTreeBlob": true,
+      "wholeFileSha256": "c20eb323943e2b466d0e50217bad39d34294ba9f006ce17acc81fbcd5db383c9",
+      "originalFileArchived": false,
+      "selectedRanges": [
+        {
+          "firstLine": 1149,
+          "lastLine": 1156,
+          "text": "\n    def collect(self):\n        \"\"\"Collect dataset\"\"\"\n        try: \n            collect_dataset(self.fpv_uav.get_control_client(), self.fpv_uav.map_controller.get_map_name())\n        except Exception as e:\n            self.append_system_message(f\"Data collection failed: {e}\")\n    \n"
+        },
+        {
+          "firstLine": 1776,
+          "lastLine": 1794,
+          "text": "        frame = self.fpv_uav.get_frame()\n\n        x, y, z = self.fpv_uav.get_body_position()\n        self.trajectory_viewer.add_point(x, y, z)\n\n        # Process image\n        if frame.shape == (self.fpv_uav_resolution_ratio[1], self.fpv_uav_resolution_ratio[0], 3):\n            # Save image\n            if self.capture_flag:\n                capture_dict = self.fpv_uav.get_all_frame()\n                # Save all existing multimodal images\n                for key,val in capture_dict.items():\n                    path = \"data/capture_imgs/\" + key\n                    filename = \"capture_\" + key + \"_\" + str(datetime.now().strftime('date_%m_%d_%H_%M_%S')) + \"_\" + \".png\"\n                    save_name = path + \"/\" + filename\n                    create_directory_if_not_exists(path)  # Create directory\n\n                    cv2.imwrite(save_name, val)\n                print(f\"Successful captured! {path}\")\n"
+        }
+      ]
+    },
+    {
+      "path": "qt_main2.py",
+      "url": "https://raw.githubusercontent.com/1e12Leon/AirNavigation/main/qt_main2.py",
+      "httpStatus": 200,
+      "bytes": 776,
+      "blobSha": "1a457f65ed9e5db443cc9373df87275e19451343",
+      "treeBlobSha": "1a457f65ed9e5db443cc9373df87275e19451343",
+      "matchesTreeBlob": true,
+      "wholeFileSha256": "28238efe44f555510a87242414813a4fad934771954d0d55e65a81078ea3a438",
+      "originalFileArchived": false,
+      "selectedRanges": [
+        {
+          "firstLine": 1,
+          "lastLine": 35,
+          "text": "import sys\nimport os\nfrom PyQt5.QtWidgets import QApplication\nfrom utils.qtpage_3 import ModernDroneUI\n\ndef create_dirs():\n    \"\"\"create diretories\"\"\"\n    dirs = [\n        \"data\",\n        \"data/capture_imgs\",\n        \"data/capture_imgs/SceneImage\",\n        \"data/capture_imgs/SegmentationImage\",\n        \"data/capture_imgs/DepthImage\",\n        \"data/capture_imgs/SurfaceNormals\",\n        \"data/capture_imgs/InfraredImage\",\n        \"data/Annotation\",\n        \"data/trajectories\",\n        \"icons\"\n    ]\n    \n    for d in dirs:\n        os.makedirs(d, exist_ok=True)\n\ndef main():\n    \"\"\"main\"\"\"\n    app = QApplication(sys.argv)\n    \n    create_dirs()\n    \n    window = ModernDroneUI(fps = 50)\n    \n    window.show()\n    sys.exit(app.exec_())\n\nif __name__ == \"__main__\":\n"
+        }
+      ]
+    },
+    {
+      "path": "settings/settings.json",
+      "url": "https://raw.githubusercontent.com/1e12Leon/AirNavigation/main/settings/settings.json",
+      "httpStatus": 200,
+      "bytes": 3440,
+      "blobSha": "ff73b15492a4367df96f9df5b1415e787a805e25",
+      "treeBlobSha": "ff73b15492a4367df96f9df5b1415e787a805e25",
+      "matchesTreeBlob": true,
+      "wholeFileSha256": "88fcf908ffe1915d62349823acb075f9e133e0757818649d32ef8cb3363c6b68",
+      "originalFileArchived": false,
+      "selectedRanges": [
+        {
+          "firstLine": 1,
+          "lastLine": 74,
+          "text": "{\n    \"SeeDocsAt\": \"https://github.com/Microsoft/AirSim/blob/main/docs/settings.md\",\n    \"SettingsVersion\": 1.2,\n    \"SimMode\": \"Multirotor\",\n    \"ViewMode\": \"NoDisplay\",\n    \"PawnPaths\": {\n        \"Default\": {\n            \"PawnBP\": \"Class'/Game/Blueprints/BP_FlyingPawn.BP_FlyingPawn_C'\"\n        },\n        \"Matrice200\": {\n            \"PawnBP\": \"Class'/Game/Blueprints/Matrice200_FlyingPawn.Matrice200_FlyingPawn_C'\"\n        },\n        \"sampleflyer\": {\n            \"PawnBP\": \"Class'/Game/Blueprints/sample_FlyingPawn.sample_FlyingPawn_C'\"\n        }\n    },\n    \"CameraDefaults\": {\n        \"CaptureSettings\": [\n            {\n                \"ImageType\": 0,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            },\n            {\n                \"ImageType\": 1,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            },\n            {\n                \"ImageType\": 2,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            },\n            {\n                \"ImageType\": 3,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            },\n            {\n                \"ImageType\": 4,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            },\n            {\n                \"ImageType\": 5,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            },\n            {\n                \"ImageType\": 6,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            },\n            {\n                \"ImageType\": 7,\n                \"Width\": 752,\n                \"Height\": 480,\n                \"FOV_Degrees\": 90\n            }\n        ]\n    },\n    \"SubWindows\": [\n        {\n            \"WindowID\": 0,\n            \"CameraName\": \"front_center\",\n            \"ImageType\": 0,\n            \"Visible\": false,\n"
+        }
+      ]
+    }
+  ],
+  "sourceArtifacts": [
+    {
+      "file": "jun-zhou-batch3-uemmair-repo-2026-10-11.json",
+      "bytes": 5057,
+      "sha256": "3e05f1bfdc6d0bae63b7025cc16263144fa6f6f8bc877c4e389b49d25267eafe"
+    },
+    {
+      "file": "jun-zhou-batch3-uemmair-tree-2026-10-11.json",
+      "bytes": 3133,
+      "sha256": "698bcba11d42ce2aee2010b893f4d832e249a793183675010bd9c0507ce56717"
+    },
+    {
+      "file": "jun-zhou-batch3-uemmair-readme-2026-10-11.txt",
+      "bytes": 5708,
+      "sha256": "1753fcbf8042fbee6048c78d7ad8b8423d96c7118265920d473eece852b0d4a8"
+    },
+    {
+      "file": "jun-zhou-batch3-airnavigation-repo-2026-10-11.json",
+      "bytes": 5285,
+      "sha256": "b45487e19c9ea2c6a215c9a52be6f2e5d1abb101687ceaa8dfd5b1b238ffa847"
+    },
+    {
+      "file": "jun-zhou-batch3-airnavigation-repo-2026-10-11-access.json",
+      "bytes": 174,
+      "sha256": "6badfd016799707aac882be7838762d2847e18ae778669dca21465c19f200ff3"
+    },
+    {
+      "file": "jun-zhou-batch3-airnavigation-tree-2026-10-11.json",
+      "bytes": 37948,
+      "sha256": "b8dc277e298155d7c62de618c9edfbd19ad0e023aa68be61bd2d9f4b49d3b492"
+    },
+    {
+      "file": "jun-zhou-batch3-airnavigation-tree-2026-10-11-access.json",
+      "bytes": 229,
+      "sha256": "f493f90797d72550af93656ff9914c42f2cf72f11c44b894f26511662e5a88b4"
+    },
+    {
+      "file": "jun-zhou-batch3-airnavigation-readme-2026-10-11.txt",
+      "bytes": 7266,
+      "sha256": "ad44425f175ac414ac9822aa61f73d493e58564f7cccfa7fb91d8e4015a70a8d"
+    },
+    {
+      "file": "jun-zhou-batch3-airnavigation-readme-2026-10-11-access.json",
+      "bytes": 214,
+      "sha256": "0501a676887f567a7b154b99df60043496f2651a68cf41e2d6a355fd7bf36c87"
+    },
+    {
+      "file": "jun-zhou-batch3-uemmair-hf-root-2026-10-11.json",
+      "bytes": 623,
+      "sha256": "92e5701c11d6fca51f994a9ced6da058361dfcf4de8c946e6ce8a6f74882767e"
+    },
+    {
+      "file": "jun-zhou-batch3-uemmair-hf-root-2026-10-11-access.json",
+      "bytes": 197,
+      "sha256": "047c93a00042f25e7a8981b2007262118c60fb82990d96ceced40cb9f9ba71e0"
+    },
+    {
+      "file": "jun-zhou-batch3-uemmair-hf-readme-2026-10-11.txt",
+      "bytes": 3891,
+      "sha256": "83b59e8b178d0620ae0c6d7b11caa788321d617f1fb7c88c93edb8ee4bd99b6b"
+    },
+    {
+      "file": "jun-zhou-batch3-uemmair-hf-readme-2026-10-11-access.json",
+      "bytes": 208,
+      "sha256": "fc2340bc136fb9dbd5d649ccfbc0bbcbbe939bec6c5ebf00f3b69d0f86a7b4fe"
+    },
+    {
+      "file": "jun-zhou-batch3-airsim-image-apis-2026-10-11.html",
+      "bytes": 47715,
+      "sha256": "762444f05eb105ceffca14ae0f25a025b46dbe8f68c9034fca622bea07eb1103"
+    },
+    {
+      "file": "jun-zhou-batch3-airsim-image-apis-2026-10-11-access.json",
+      "bytes": 245,
+      "sha256": "45744f698433cd1afd336e8b29a9d0fd58886e48e6bd452345b3a9b67f1d76ae"
+    },
+    {
+      "file": "jun-zhou-batch3-airsim-image-apis-2026-10-11.txt",
+      "bytes": 19342,
+      "sha256": "d94cf660285fd9a8d380496943b1cec3bcdea2821564fae11d8ef1901acb7035"
+    }
+  ],
+  "propagatedTo": [
+    "jun-zhou-2025-decisions.json",
+    "jun-zhou-orcid-inventory.json",
+    "jun-zhou-dblp-screening.json",
+    "jun-zhou-scholar-nonkeyword-screening-2026-10-10.json",
+    "jun-zhou-griffith-crosswalk-2026-10-10.json",
+    "../survey.json"
+  ]
+}
