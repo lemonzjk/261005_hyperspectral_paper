@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。179条为摘要级核验、9条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。168条为摘要级核验、20条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -167,15 +167,15 @@
 | --- | --- | --- | --- | --- |
 | **直接高光谱** | | | | |
 | 2009 | [An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis](https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
-| 2010 | [L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf) | 光谱解混 | 正式发表 | 全文核验（作者稿） |
+| 2010 | [L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2010 | [Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation](https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf) | 光学影像配准 | 正式发表 | 摘要核验 |
 | 2011 | [Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis](https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
-| 2011 | [Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf) | 光谱解混 | 正式发表 | 全文核验（作者稿） |
+| 2011 | [Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2011 | [Material-specific user colour profiles from imaging spectroscopy data](https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf) | 光谱材料特定颜色编辑 | 正式发表 | 摘要核验 |
-| 2011 | [Structured sparse model based feature selection and classification for hyperspectral imagery](https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf) | 地物与植被图像分类 | 正式发表 | 作者稿全文核验 |
+| 2011 | [Structured sparse model based feature selection and classification for hyperspectral imagery](https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf) | 地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2012 | [Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image](https://doi.org/10.1109/ICICEE.2012.350) | 待分类 | 正式发表 | 摘要核验 |
 | 2012 | [Shearlet transform based anomaly detection for hyperspectral image](https://doi.org/10.1117/12.978636) | 待分类 | 正式发表 | 摘要核验 |
-| 2013 | [3D Plant Modelling via Hyperspectral Imaging](https://openaccess.thecvf.com/content_iccv_workshops_2013/W06/papers/Liang_3D_Plant_Modelling_2013_ICCV_paper.pdf) | 深度、法线与表面重建 | 正式发表 | 摘要核验 |
+| 2013 | [3D Plant Modelling via Hyperspectral Imaging](https://openaccess.thecvf.com/content_iccv_workshops_2013/W06/papers/Liang_3D_Plant_Modelling_2013_ICCV_paper.pdf) | 深度、法线与表面重建 | 正式发表 | 全文核验（版本见目录） |
 | 2013 | [A hypergraph based semi-supervised band selection method for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2013 | [Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy](https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf) | 光谱反射与散射属性建模、光谱照明估计 | 正式发表 | 摘要核验 |
 | 2013 | [Hyperspectral Image Classification Based on Structured Sparse Logistic Regression and Three-Dimensional Wavelet Texture Features](https://research-repository.griffith.edu.au/server/api/core/bitstreams/a8546383-e267-51a0-b096-60bbb047c0f9/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -185,7 +185,7 @@
 | 2014 | [Dual Graph Regularized NMF for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2014 | [Visualization of Hyperspectral Imaging Data Based on Manifold Alignment](https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content) | 高光谱彩色可视化 | 正式发表 | 摘要核验 |
 | 2015 | [3D local derivative pattern for hyperspectral face recognition](https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content) | 光谱身份识别 | 正式发表 | 摘要核验 |
-| 2015 | [3D Reconstruction from Hyperspectral Images](https://research-repository.griffith.edu.au/server/api/core/bitstreams/0c018645-866b-5aff-b1bc-ec61a2f9da25/content) | 深度、法线与表面重建 | 正式发表 | 摘要核验 |
+| 2015 | [3D Reconstruction from Hyperspectral Images](https://research-repository.griffith.edu.au/server/api/core/bitstreams/0c018645-866b-5aff-b1bc-ec61a2f9da25/content) | 深度、法线与表面重建 | 正式发表 | 全文核验（版本见目录） |
 | 2015 | [A Large Margin Learning Method for Matching Images of Natural Objects with Different Dimensions](https://doi.org/10.4018/978-1-4666-9435-4.ch015) | 光学影像配准 | 正式发表 | 摘要核验 |
 | 2015 | [Automatic Estimation of Soil Biochar Quantity via Hyperspectral Imaging](https://doi.org/10.4018/978-1-4666-9435-4.ch011) | 光谱解混、土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2015 | [Band weighting and selection based on hyperplane margin maximization for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -215,7 +215,7 @@
 | 2017 | [On the Sampling Strategy for Evaluation of Spectral-Spatial Methods in Hyperspectral Image Classification](https://arxiv.org/abs/1605.05829) | 数据集与评测基准、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2017 | [Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/download) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2017 | [The potential of hyperspectral images and partial least square regression for predicting total carbon, total nitrogen and their isotope composition in forest litterfall samples](https://era.dpi.qld.gov.au/id/eprint/15791/) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
-| 2018 | [A Hyperspectral Dermoscopy Dataset for Melanoma Detection](https://github.com/heugyy/HSIDermoscopy) | 数据集与评测基准 | 正式发表 | 摘要核验 |
+| 2018 | [A Hyperspectral Dermoscopy Dataset for Melanoma Detection](https://link.springer.com/content/pdf/10.1007%2F978-3-030-01201-4_29.pdf) | 数据集与评测基准 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [A non-destructive determination of peroxide values, total nitrogen and mineral nutrients in an edible tree nut using hyperspectral imaging](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/6906992) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2018 | [An Efficient Method for Boundary Detection from Hyperspectral Imagery](https://doi.org/10.1007/978-3-319-97785-0_40) | 待分类 | 正式发表 | 摘要核验 |
 | 2018 | [Band Weighting Network for Hyperspectral Image Classification](https://dblp.org/rec/conf/dicta/WangZ18.html) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -225,20 +225,20 @@
 | 2018 | [Laboratory-based hyperspectral image analysis for predicting soil carbon, nitrogen and their isotopic compositions](https://era.dpi.qld.gov.au/id/eprint/13321/) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2018 | [Material based salient object detection from hyperspectral images](https://www.sciencedirect.com/science/article/abs/pii/S0031320317304806) | 高光谱显著目标检测、光谱解混、数据集与评测基准 | 正式发表 | 摘要核验 |
 | 2018 | [Nonlocal Similarity Based Nonnegative Tucker Decomposition for Hyperspectral Image Denoising](https://research-repository.griffith.edu.au/bitstream/10072/380453/1/BaiPUB6605.pdf) | 光谱去噪 | 正式发表 | 摘要核验 |
-| 2018 | [Object tracking in hyperspectral videos with convolutional features and kernelized correlation filter](https://arxiv.org/abs/1810.11819) | 光谱目标时序跟踪、高光谱视频采集 | 正式发表 | 摘要核验 |
+| 2018 | [Object tracking in hyperspectral videos with convolutional features and kernelized correlation filter](https://doi.org/10.1007/978-3-030-04375-9_26) | 光谱目标时序跟踪、高光谱视频采集 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [Spectral-Spatial Scale Invariant Feature Transform for Hyperspectral Images](https://openalex.org/W2751249843) | 光学影像配准、光谱降维与子空间识别 | 正式发表 | 摘要核验 |
 | 2018 | [Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://monsterzhzh.github.io/pub/fcxiong.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2018 | [Triplet Constrained Deep Feature Extraction for Hyperspectral Image Classification](https://research-repository.griffith.edu.au/bitstreams/bcbcd377-523f-476e-b972-d8d1fc9c4dd2/download) | 地物与植被图像分类、光谱表征预训练、数据集与评测基准 | 正式发表 | 摘要核验 |
 | 2018 | [Using laboratory-based hyperspectral imaging method to determine carbon functional group distributions in decomposing forest litterfall](https://era.dpi.qld.gov.au/id/eprint/15792/) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2019 | [3-D Gaussian–Gabor Feature Extraction and Selection for Hyperspectral Imagery Classification](https://www.researchgate.net/publication/334404986_3-D_Gaussian-Gabor_Feature_Extraction_and_Selection_for_Hyperspectral_Imagery_Classification) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Abundance-Guided Superpixels and Recurrent Neural Network for Hyperspectral Image Classification](https://www.semanticscholar.org/paper/8d25a0ac15cbc76572dd058924c6e53beccdcae3) | 地物与植被图像分类、光谱解混 | 正式发表 | 摘要核验 |
-| 2019 | [Attend in Bands: Hyperspectral Band Weighting and Selection for Image Classification](https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2019 | [Attend in Bands: Hyperspectral Band Weighting and Selection for Image Classification](https://doi.org/10.1109/JSTARS.2019.2955097) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Attention Networks for Band Weighting And Selection In Hyperspectral Remote Sensing Image Classification](https://www.semanticscholar.org/paper/c2ef66e899f5ecc3fd1513b61a92432b8859b3d9) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Automatic Live and Dead Cell Classification via Hyperspectral Imaging](https://www.semanticscholar.org/paper/2c7c7bd73f0f3e5431b50f7f1568f559cfc1d043) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Collaborative Representation-Based Multiscale Superpixel Fusion for Hyperspectral Image Classification](https://dblp.org/rec/journals/tgrs/JiaDZXZJ19.html) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Conditional Random Field and Deep Feature Learning for Hyperspectral Image Classification](https://lacuna.tiptreesystems.com/work/conditional-random-field-and-deep-feature-learning-for-hyperspectral-image/wrk_5f4ea80870288e68b1e585a56e76307f) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2019 | [Deep Unfolded Iterative Shrinkage-Thresholding Model for Hyperspectral Unmixing](https://www.semanticscholar.org/paper/beba562dc91e9c97ec04ec32acfc2d1d4927a1d6) | 光谱解混 | 正式发表 | 摘要核验 |
-| 2019 | [Dynamic Material-Aware Object Tracking in Hyperspectral Videos](https://www.semanticscholar.org/paper/a3391a508148942a921d65eb5846e5801bc3c6e4) | 光谱目标时序跟踪、高光谱视频采集 | 正式发表 | 摘要核验 |
+| 2019 | [Dynamic Material-Aware Object Tracking in Hyperspectral Videos](https://doi.org/10.1109/whispers.2019.8921176) | 光谱目标时序跟踪、高光谱视频采集 | 正式发表 | 摘要核验 |
 | 2019 | [Hyperspectral anomaly detection based on anomalous component extraction framework](https://research-repository.griffith.edu.au/bitstream/10072/382909/1/Zhou158553.pdf) | 高光谱异常检测 | 正式发表 | 摘要核验 |
 | 2019 | [Hyperspectral Image Classification Based on Non-Local Neural Networks](https://www.semanticscholar.org/paper/8c0fbcaa9a9d417266d1470a46a40acd91d4c71b) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Hyperspectral Restoration via L0 Gradient Regularized Low-Rank Tensor Factorization](https://www.xiongfuli.com/cv/cv.pdf) | 光谱数据复原、光谱去噪 | 正式发表 | 摘要核验 |
@@ -247,9 +247,9 @@
 | 2019 | [Multi-Resolution Weed Classification via Convolutional Neural Network and Superpixel Based Local Binary Pattern Using Remote Sensing Images](https://www.mdpi.com/2072-4292/11/14/1692) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Texture and Shape Features for Grass Weed Classification Using Hyperspectral Remote Sensing Images](https://unsworks.unsw.edu.au/bitstreams/1df826fe-3c8f-43c1-aeb1-b68fe51568e3/download) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2020 | [Adaptive Graph Regularized Multilayer Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://www.researchgate.net/publication/338761401_Adaptive_Graph_Regularized_Multilayer_Nonnegative_Matrix_Factorization_for_Hyperspectral_Unmixing) | 光谱解混 | 正式发表 | 摘要核验 |
-| 2020 | [BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking](https://resourcecenter.ieee.org/conferences/icip-2020/icip20vid101) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
+| 2020 | [BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking](https://doi.org/10.1109/icip40778.2020.9191105) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
 | 2020 | [Inverse Coefficient of Variation Feature and Multilevel Fusion Technique for Hyperspectral and LiDAR Data Classification](https://research-repository.griffith.edu.au/bitstream/10072/392021/2/Zhou348500-Accepted.pdf) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2020 | [Material Based Object Tracking in Hyperspectral Videos](https://doi.org/10.1109/TIP.2020.2965302) | 光谱目标时序跟踪、高光谱视频采集、数据集与评测基准 | 正式发表 | 摘要核验 |
+| 2020 | [Material Based Object Tracking in Hyperspectral Videos](https://doi.org/10.1109/TIP.2020.2965302) | 光谱目标时序跟踪、高光谱视频采集、数据集与评测基准 | 正式发表 | 全文核验（版本见目录） |
 | 2020 | [Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/547a5abf-f46e-4945-a521-0743fb51c8c8/content) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2020 | [Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://www.semanticscholar.org/paper/84d25a7a9c210f49b2eaab6fd44adfb156f9bcef) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2020 | [Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing](https://www.peeref.com/zh/works/20998787) | 光谱解混 | 正式发表 | 摘要核验 |
@@ -263,9 +263,9 @@
 | 2021 | [Hyperspectral Anomaly Detection via Deep Plug-and-Play Denoising CNN Regularization](https://hub.hku.hk/handle/10722/298375) | 高光谱异常检测、光谱去噪 | 正式发表 | 摘要核验 |
 | 2021 | [Learning a Model-Based Deep Hyperspectral Denoiser from a Single Noisy Hyperspectral Image](https://www.semanticscholar.org/paper/8e4b56071619ae155dd5b0669fdee486b3cf76de) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2021 | [Multiple Feature-Based Superpixel-Level Decision Fusion for Hyperspectral and LiDAR Data Classification](https://scispace.com/pdf/multiple-feature-based-superpixel-level-decision-fusion-for-4hnx7icwzy.pdf) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2021 | [NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing](https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf) | 光谱解混 | 正式发表 | 作者稿全文核验 |
+| 2021 | [NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing](https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2021 | [Spectral and Spatial Residual Attention Network for Joint Hyperspectral and Lidar Data Classification](https://www.semanticscholar.org/paper/5abe231d5c3ffe6ce6bac61a110a0b6229ef31d0) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2021 | [Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking](https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
+| 2021 | [Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking](https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf) | 光谱目标时序跟踪 | 正式发表 | 全文核验（版本见目录） |
 | 2022 | [An Attention-Based Lattice Network for Hyperspectral Image Classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2022 | [Fusion of Hyperspectral and Multispectral Images Accounting for Localized Inter-Image Changes](https://doi.org/10.1109/TGRS.2021.3124240) | 光谱重建 | 正式发表 | 摘要核验 |
 | 2022 | [Gradient Feature-Oriented 3-D Domain Adaptation for Hyperspectral Image Classification](https://ieeexplore.ieee.org/abstract/document/9417011) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -277,7 +277,7 @@
 | 2022 | [Nonlocal Spatial–Spectral Neural Network for Hyperspectral Image Denoising](https://www.researchgate.net/publication/365116412_Nonlocal_Spatial-Spectral_Neural_Network_for_Hyperspectral_Image_Denoising) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2022 | [Similarity-Based Hyperspectral Band Selection Using Deep Reinforcement Learning](https://ieeexplore.ieee.org/document/9955115/) | 光谱波段选择、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2022 | [SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising](https://arxiv.org/abs/2012.01829) | 光谱去噪 | 正式发表 | 摘要核验 |
-| 2022 | [SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing](https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf) | 光谱解混 | 正式发表 | 作者稿全文核验 |
+| 2022 | [SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing](https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2022 | [Sparsity Constrained Fusion of Hyperspectral and Multispectral Images](https://www.researchgate.net/profile/Meng-Xu-24) | 光谱重建 | 正式发表 | 摘要核验 |
 | 2022 | [Spatial-Spectral Convolutional Sparse Neural Network for Hyperspectral Image Denoising](https://eurekamag.com/research/096/040/096040803.php) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2022 | [Spatial–Spectral Weighted and Regularized Tensor Sparse Correlation Filter for Object Tracking in Hyperspectral Videos](https://pure.bit.edu.cn/en/publications/spatial-spectral-weighted-and-regularized-tensor-sparse-correlati) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
@@ -287,7 +287,7 @@
 | 2022 | [Transferable Convolutional Neural Network for Weed Mapping With Multisensor Imagery](https://www.researchgate.net/publication/354770864_Transferable_Convolutional_Neural_Network_for_Weed_Mapping_With_Multisensor_Imagery) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2022 | [Unsupervised Hyperspectral Band Selection With Multigraph Integrated Embedding and Robust Self-Contained Regression](https://www.researchgate.net/publication/350106215_Unsupervised_Hyperspectral_Band_Selection_With_Multigraph_Integrated_Embedding_and_Robust_Self-Contained_Regression) | 光谱波段选择、光谱降维与子空间识别 | 正式发表 | 摘要核验 |
 | 2022 | [Unsupervised Spatial-Spectral CNN-Based Feature Learning for Hyperspectral Image Classification](https://www.researchgate.net/publication/363095409_Unsupervised_Spatial-Spectral_CNN-Based_Feature_Learning_for_Hyperspectral_Image_Classification) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
-| 2023 | [Background-Aware Band Selection for Object Tracking in Hyperspectral Videos](https://www.researchgate.net/publication/374895665_Background-Aware_Band_Selection_for_Object_Tracking_in_Hyperspectral_Videos) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
+| 2023 | [Background-Aware Band Selection for Object Tracking in Hyperspectral Videos](https://doi.org/10.1109/LGRS.2023.3326148) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
 | 2023 | [Deep Parameterized Neural Networks for Hyperspectral Image Denoising](https://www.researchgate.net/publication/374100628_Deep_Parameterized_Neural_Networks_for_Hyperspectral_Image_Denoising) | 光谱去噪、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2023 | [High Spectral Spatial Resolution Synthetic HyperSpectral Dataset form multi-source fusion](https://arxiv.org/abs/2309.00005) | 数据集与评测基准、光谱重建、计算光谱成像系统 | 预印本 | 摘要核验 |
 | 2023 | [Iterative Refinement Network for Hyperspectral Image Denoising](https://www.semanticscholar.org/paper/e156f53b9b63c777fcd0cab79ca5c15ae0430bd3) | 光谱去噪 | 正式发表 | 摘要核验 |
@@ -296,11 +296,11 @@
 | 2023 | [Multi-Task Attentional U-Net for Hyperspectral Image Denoising](https://www.semanticscholar.org/paper/a4907c6986b8722979435dbfaae11752cd3e964c) | 光谱去噪、光谱图像语义分割 | 正式发表 | 摘要核验 |
 | 2023 | [Multitask Sparse Representation Model-Inspired Network for Hyperspectral Image Denoising](https://www.researchgate.net/publication/372841359_Multitask_Sparse_Representation_Model_Inspired_Network_for_Hyperspectral_Image_Denoising) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2023 | [Self-Supervised Spectral–Spatial Graph Prototypical Network for Few-Shot Hyperspectral Image Classification](https://colab.ws/articles/10.1109%2Ftgrs.2023.3297216) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
-| 2023 | [SiamBAG: Band Attention Grouping-Based Siamese Object Tracking Network for Hyperspectral Videos](https://www.researchgate.net/publication/371556153_SiamBAG_Band_Attention_Grouping-based_Siamese_Object_Tracking_Network_for_Hyperspectral_Videos) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
+| 2023 | [SiamBAG: Band Attention Grouping-Based Siamese Object Tracking Network for Hyperspectral Videos](https://doi.org/10.1109/TGRS.2023.3285802) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
 | 2023 | [Spatial–Spectral Split Attention Residual Network for Hyperspectral Image Classification](https://www.researchgate.net/publication/365952167_Spatial-Spectral_Split_Attention_Residual_Network_for_Hyperspectral_Image_Classification) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2023 | [Spectral 3D Computer Vision -- A Review](https://arxiv.org/abs/2302.08054) | 深度、法线与表面重建、光谱点云与表面映射 | 预印本 | 摘要核验 |
 | 2023 | [Toward Universal Representation Learning for Multidomain Hyperspectral Image Classification](https://www.researchgate.net/publication/369837851_Towards_Universal_Representation_Learning_for_Multi-domain_Hyperspectral_Image_Classification) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2023 | [Early detection of sugarcane diseases through hyperspectral imaging and deep learning](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content) | 植物病害光谱检测 | 正式发表 | 正式正文全文核验 |
+| 2023 | [Early detection of sugarcane diseases through hyperspectral imaging and deep learning](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content) | 植物病害光谱检测 | 正式发表 | 全文核验（版本见目录） |
 | 2024 | [A cross-modal feature aggregation and enhancement network for hyperspectral and LiDAR joint classification](https://www.sciencedirect.com/science/article/pii/S0957417424020128) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2024 | [A New Hyperspectral Unmixing Benchmark for Weak Signal Meat Contamination Detection](https://www.semanticscholar.org/paper/06fc7cecf53517c82a2122e6b50eb9e58ce81bc6) | 数据集与评测基准、光谱解混 | 正式发表 | 摘要核验 |
 | 2024 | [CasFormer: Cascaded transformers for fusion-aware computational hyperspectral imaging](https://www.sciencedirect.com/science/article/abs/pii/S1566253524001866) | 计算光谱成像系统 | 正式发表 | 摘要核验 |
@@ -309,11 +309,11 @@
 | 2024 | [Few-Shot Hyperspectral Image Classification Using Relational Generative Adversarial Network](https://ieeexplore.ieee.org/document/10741331/) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2024 | [HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification.](https://arxiv.org/abs/2404.00272) | 地物与植被图像分类、光谱表征预训练 | 预印本 | 摘要核验 |
 | 2024 | [HSLiNets: Hyperspectral Image and LiDAR Data Fusion Using Efficient Dual Non-Linear Feature Learning Networks](https://arxiv.org/abs/2412.00302) | 高光谱与LiDAR辅助分类、光谱表征预训练 | 预印本 | 摘要核验 |
-| 2024 | [Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos](https://arxiv.org/abs/2311.18199) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
+| 2024 | [Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos](https://arxiv.org/abs/2311.18199) | 光谱目标时序跟踪 | 正式发表 | 全文核验（版本见目录） |
 | 2024 | [Hyperspectral Image Denoising via Spatial–Spectral Recurrent Transformer](https://arxiv.org/abs/2401.03885) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2024 | [Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning](https://arxiv.org/abs/2412.00283) | 地物与植被图像分类、光谱表征预训练 | 预印本 | 摘要核验 |
 | 2024 | [Iterative Low-Rank Network for Hyperspectral Image Denoising](https://www.ablesci.com/scholar/paper?id=3DKONDJMr) | 光谱去噪 | 正式发表 | 摘要核验 |
-| 2024 | [LiDAR-Guided Cross-Attention Fusion for Hyperspectral Band Selection and Image Classification](https://doi.org/10.1109/TGRS.2024.3389651) | 高光谱与LiDAR辅助分类、地物与植被图像分类、光谱波段选择 | 正式发表 | 全文核验 |
+| 2024 | [LiDAR-Guided Cross-Attention Fusion for Hyperspectral Band Selection and Image Classification](https://doi.org/10.1109/TGRS.2024.3389651) | 高光谱与LiDAR辅助分类、地物与植被图像分类、光谱波段选择 | 正式发表 | 全文核验（版本见目录） |
 | 2024 | [Material-Guided Multiview Fusion Network for Hyperspectral Object Tracking](https://ieeexplore.ieee.org/document/10445363/) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
 | 2024 | [Prototypical Network With Residual Capsule for Few-Shot Hyperspectral Image Classification](https://www.researchgate.net/publication/381789791_Prototypical_Network_with_Residual_Capsule_for_Few-Shot_Hyperspectral_Image_Classification) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2024 | [Spectral–Spatial Large Kernel Attention Network for Hyperspectral Image Classification](https://ieeexplore.ieee.org/document/10422824/) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -326,23 +326,23 @@
 | 2025 | [Lidar Guided Unsupervised Hyperspectral Imaging Band Selection for Fusion and Classification](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5182248) | 光谱波段选择、高光谱与LiDAR辅助分类 | 正式发表 | 摘要核验 |
 | 2025 | [Multi-domain universal representation learning for hyperspectral object tracking](https://www.sciencedirect.com/science/article/pii/S0031320325000494) | 光谱目标时序跟踪、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2025 | [Multi-scale frequency-guided two-stream network for hyperspectral anomaly detection](https://www.sciencedirect.com/science/article/pii/S1569843225000020) | 高光谱异常检测 | 正式发表 | 摘要核验 |
-| 2025 | [Pixel-Wise Shuffling with Collaborative Sparsity for Melanoma Hyperspectral Image Classification](https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2025 | [Pixel-Wise Shuffling with Collaborative Sparsity for Melanoma Hyperspectral Image Classification](https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf) | 地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2025 | [Spatial–Spectral–Temporal Correlation Filter for Hyperspectral Object Tracking](https://ieeexplore.ieee.org/document/10890015) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
-| 2025 | [Spectral-spatial-temporal Modelling for Hyperspectral Object Tracking.](https://ceur-ws.org/Vol-4102/keynote1.pdf) | 光谱目标时序跟踪、光谱表征预训练 | 正式发表 | 全文核验 |
+| 2025 | [Spectral-spatial-temporal Modelling for Hyperspectral Object Tracking.](https://ceur-ws.org/Vol-4102/keynote1.pdf) | 光谱目标时序跟踪、光谱表征预训练 | 正式发表 | 全文核验（版本见目录） |
 | 2025 | [Spectral–Spatial Synergy Guided Attention Network for Hyperspectral Image Classification](https://doi.org/10.1109/TGRS.2025.3603397) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2025 | [SSIT: A spatial–spectral interactive transformer for hyperspectral image denoising](https://www.sciencedirect.com/science/article/pii/S2666017225000823) | 光谱去噪、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2025 | [SUIT: Spatial-Spectral Union-Intersection Interaction Network for Hyperspectral Object Tracking](https://ieeexplore.ieee.org/abstract/document/11267013) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
 | 2025 | [UBSTrack: Unified Band Selection and Multimodel Ensemble for Hyperspectral Object Tracking](https://doi.org/10.1109/TGRS.2025.3571603) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
-| 2025 | [Single-wavelength near-infrared imaging and machine learning for detecting Queensland fruit fly damage in cherries](https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content) | 光谱波段选择；检测模型为单波段NIR | 正式发表 | 正式正文全文核验 |
+| 2025 | [Single-wavelength near-infrared imaging and machine learning for detecting Queensland fruit fly damage in cherries](https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content) | 光谱波段选择；检测模型为单波段NIR | 正式发表 | 全文核验（版本见目录） |
 | 2026 | [A comprehensive review of recent advancements in hyperspectral object tracking](https://api.crossref.org/works/10.1007/s10462-026-11625-3) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
 | 2026 | [Adaptive multi-stage fusion of hyperspectral and LiDAR data via selective state space models](https://www.sciencedirect.com/science/article/pii/S1566253525005615) | 高光谱与LiDAR辅助分类 | 正式发表 | 摘要核验 |
 | 2026 | [An Information Entropy Feature Preservation-Based Band Selection and Noise Reduction Method for Hyperspectral Image Classification](https://api.crossref.org/works/10.1109/tgrs.2026.3668327) | 光谱波段选择、光谱去噪 | 正式发表 | 摘要核验 |
 | 2026 | [Distance Learning-Based Prototypical Network With Multi-Domain Adaptation for Few-Shot Hyperspectral Medical Image Classification](https://api.crossref.org/works/10.1109/jbhi.2026.3651480) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2026 | [End-to-End Unmixing with Material Prompts for Hyperspectral Object Tracking](https://arxiv.org/abs/2605.20569) | 光谱解混、光谱目标时序跟踪、光谱表征预训练 | 预印本 | 摘要核验 |
+| 2026 | [End-to-End Unmixing with Material Prompts for Hyperspectral Object Tracking](https://arxiv.org/abs/2605.20569) | 光谱解混、光谱目标时序跟踪、光谱表征预训练 | 预印本 | 全文核验（版本见目录） |
 | 2026 | [FedDA-HSI: Federated Class-Aware Framework for Hyperspectral Image Classification With Diffusion Augmentation](https://api.crossref.org/works/10.1109/tgrs.2026.3660734) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2026 | [Frequency-Aware Bias Calibration Attention Network for Hyperspectral Image Classification](https://api.crossref.org/works/10.1109/tgrs.2026.3733670) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2026 | [HyperSAM: A Promptable Foundation Model for Hyperspectral Remote Sensing](https://arxiv.org/abs/2609.37340) | 光谱表征预训练、光谱图像语义分割、数据集与评测基准 | 预印本 | 摘要核验 |
-| 2026 | [HyperVision: A Channel-Adaptive Ground-Based Hyperspectral Vision Pre-trained Backbone](https://arxiv.org/abs/2605.17286) | 光谱表征预训练、光谱图像语义分割、光谱目标时序跟踪 | 预印本 | 摘要核验 |
+| 2026 | [HyperSAM: A Promptable Foundation Model for Hyperspectral Remote Sensing](https://arxiv.org/abs/2609.37340) | 光谱表征预训练、光谱图像语义分割、数据集与评测基准 | 预印本 | 全文核验（版本见目录） |
+| 2026 | [HyperVision: A Channel-Adaptive Ground-Based Hyperspectral Vision Pre-trained Backbone](https://arxiv.org/abs/2605.17286) | 光谱表征预训练、光谱图像语义分割、光谱目标时序跟踪 | 预印本 | 全文核验（版本见目录） |
 | 2026 | [Implicit spatial-frequency fusion of hyperspectral and lidar data via kolmogorov-arnold networks](https://arxiv.org/abs/2605.14239) | 高光谱与LiDAR辅助分类、光谱表征预训练 | 预印本 | 摘要核验 |
 | 2026 | [Sparse Tensor Attention for Hyperspectral Unmixing](https://api.crossref.org/works/10.1109/tgrs.2026.3734168) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2026 | [SPECIAL: Zero-Shot Hyperspectral Image Classification With CLIP](https://api.crossref.org/works/10.1109/tgrs.2026.3705304) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
@@ -354,7 +354,7 @@
 | 2019 | [Monitoring agricultural drought in Australia using brightness temperature observed by geostationary satellite](https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf) | 植被营养与环境胁迫监测 | EGU会议摘要 | 摘要核验 |
 | 2020 | [Monitoring agricultural drought in Australia using MTSAT-2 land surface temperature retrievals](https://research.wur.nl/en/publications/monitoring-agricultural-drought-in-australia-using-mtsat-2-land-s/) | 植被营养与环境胁迫监测 | 正式发表 | 摘要核验 |
 | 2020 | [On agricultural drought monitoring in Australia using Himawari-8 geostationary thermal infrared observations](https://opus.lib.uts.edu.au/bitstream/10453/149678/2/1-s2.0-S0303243420301434-main.pdf) | 植被营养与环境胁迫监测 | 正式发表 | 摘要核验 |
-| 2025 | [A Euclidean Affinity-Augmented Hyperbolic Neural Network for Semantic Segmentation of Remote Sensing Images](https://doi.org/10.1109/TGRS.2025.3594760) | 光谱图像语义分割（多光谱关联） | 正式发表 | 摘要及局部核验 |
+| 2025 | [A Euclidean Affinity-Augmented Hyperbolic Neural Network for Semantic Segmentation of Remote Sensing Images](https://doi.org/10.1109/TGRS.2025.3594760) | 光谱图像语义分割（多光谱关联） | 正式发表 | 摘要核验 |
 
 ## 热红外关联论文的阅读边界
 
@@ -370,4 +370,4 @@
 
 ## 仍需补齐
 
-DBLP合并目录365条（364条快照加1条专题补充）现有356条范围决定、9条待核。Scholar非关键词209条差集仍有8条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。
+DBLP合并目录365条（364条快照加1条专题补充）现有355条范围决定、10条待核。Scholar非关键词209条差集仍有9条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。

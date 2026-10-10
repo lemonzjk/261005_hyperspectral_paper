@@ -1,0 +1,143 @@
+{
+  "checkedAt": "2026-10-11",
+  "source": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0c018645-866b-5aff-b1bc-ec61a2f9da25/content",
+  "sourcePDFPage": {
+    "equations4_8": 5,
+    "algorithm1_equation9": 6,
+    "tables1_2": 8
+  },
+  "equations": [
+    {
+      "number": 1,
+      "reading": "Z=sum_lambda registered X(lambda); sum notation for point sets does not specify duplicate removal or per-point calibrated full spectra."
+    },
+    {
+      "number": 2,
+      "reading": "For each 3D point, histogram Euclidean distances to all other points; bins based on that point maximum distance divided into n equal intervals. n not numerically specified."
+    },
+    {
+      "number": 3,
+      "reading": "Normalize histogram by total count. Full identical geometry under scale/rotation/translation yields scale-invariant distance-bin statistics; count normalization alone does not prove invariance to arbitrary partial overlap or changed point sampling."
+    },
+    {
+      "number": 4,
+      "reading": "Correlation coefficient of normalized histograms; numerator writes H_y_i while denominator/explanations refer H_y_j. Retain original indexing discrepancy; no executable implementation verified."
+    },
+    {
+      "number": 5,
+      "reading": "Correspondence printed argmax_j ||C(x_i,y_j)||; for scalar this could select absolute correlation. No mutual/one-to-one matching, flat histogram zero-variance handling or exact implementation established."
+    },
+    {
+      "number": 6,
+      "reading": "Printed min sum ||R(y_i)+T-x_i|| without squared norm or explicit scale, despite text invoking quaternion scale recovery. Do not rewrite as a proved scaled least-squares objective."
+    },
+    {
+      "number": 7,
+      "reading": "Neighbor chain product from i=lambda toK of T_(i,i+1) formally includes edgeK→K+1 although anchorK is stated; matrix multiplication order/inverse case not specified. This is the discussed drift-prone alternative, not necessarily the selected merge strategy."
+    },
+    {
+      "number": 8,
+      "reading": "Mean Euclidean distance (sum square roots divided by correspondence count), not mean squared error. Coordinate units/scale normalization and independent ground-truth metric not specified."
+    },
+    {
+      "number": 9,
+      "reading": "Row minimum of asymmetric pairwise mean-distance matrix; graph nodes merged and costs recomputed iteratively. Text says TSP-like minimum path but gives greedy divide-and-conquer/Algorithm1, no optimality proof or tie/conflict resolution."
+    }
+  ],
+  "algorithmBoundary": "Algorithm1 is text pseudocode, not standalone architecture figure or executable source. Histogram bins, MSS/inlier threshold, stopping count, seeds, feature extraction/dense settings and hardware absent.",
+  "tables": [
+    {
+      "number": 1,
+      "caption": "Comparison of accuracy using mean distance error.",
+      "methods": [
+        "EM-GRBF",
+        "RPM",
+        "TPS-L2",
+        "CPD",
+        "Proposed"
+      ],
+      "rows": {
+        "Face": [
+          1.4721,
+          1.5016,
+          1.6218,
+          1.6196,
+          0.0014
+        ],
+        "Dinosaur": [
+          0.3064,
+          0.261,
+          0.4318,
+          0.2338,
+          2.7e-08
+        ]
+      },
+      "metricBoundary": "Face392 original points transformed randomly; dinosaur red/blue SfM sets6310/7526 are from36 ordinary RGB images, not HSI or known metric shape GT. Low distance among matched points is not independently checked shape accuracy."
+    },
+    {
+      "number": 2,
+      "caption": "Comparison of efficiency (in seconds).",
+      "methods": [
+        "EM-GRBF",
+        "RPM",
+        "TPS-L2",
+        "CPD",
+        "Proposed"
+      ],
+      "rows": {
+        "Face": [
+          2.863,
+          2.126,
+          1.549,
+          3.36,
+          2.706
+        ],
+        "Dino": [
+          205.532,
+          455.157,
+          362.344,
+          134.683,
+          13.773
+        ],
+        "Coffee": [
+          210.007,
+          310.531,
+          313.419,
+          90.256,
+          12.675
+        ]
+      },
+      "scopeBoundary": "Paper describes point matching/registration time, not total imaging/SfM/fusion runtime; no hardware/trials/dispersion. Face proposed2.706 is slower than RPM2.126 and TPS-L21.549.",
+      "ratioToFastestOther": {
+        "Face": 0.5724316334072431,
+        "Dino": 9.7787700573586,
+        "Coffee": 7.120788954635108
+      },
+      "arithmeticOnly": true
+    }
+  ],
+  "captureData": {
+    "objectsListed": [
+      "coffee can",
+      "ceramic dolls",
+      "toy monkey",
+      "plant",
+      "toy fish"
+    ],
+    "viewStatement": "Paper says in total30 HSI and30 RGB images and then five objects; exact per-object or aggregate payload cardinality not independently established. Camera viewpoints around each object at same height, distances vary slightly; not the 2013 turntable120 protocol.",
+    "nominalBandsArithmetic": {
+      "full400_1000_step20": 31,
+      "reject400_560": 9,
+      "reject1000": 1,
+      "reject880_980": 6,
+      "remaining580_860": 15
+    },
+    "dataBoundary": "Inclusive arithmetic only, not downloaded cube dimensions. Coffee final15bands; dolls600–740 step20 eight bands, four-band figure640/660/700/720. No exhaustive output figures for all five objects.",
+    "RGBComparison": "Same positions but RGB higher spatial resolution; qualitative denser HSI model, no numerical point-count/completeness or metric-GT table, no strict control of modality/SNR/exposure/computation."
+  },
+  "OxfordDataset": {
+    "sourcePage": "https://www.robots.ox.ac.uk/~vgg/data/mview/",
+    "pageConfirms": "Dinosaur36frames,2D tracks/README and camera matrices from3D reconstruction, thanks Wolfgang Niem.",
+    "boundary": "Only page retrieved; no image/track/MAT payload, no proof these are2015 exact released versions, and camera matrices derived from reconstruction are not automatically geometric ground truth. Face provenance is reference10, not independently confirmed Stanford."
+  }
+}

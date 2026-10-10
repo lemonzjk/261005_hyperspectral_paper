@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-10-11",
+  "papers": [
+    {
+      "paperId": "plant-hsi-sfm-iccvw-2013",
+      "title": "3D Plant Modelling via Hyperspectral Imaging",
+      "identity": "Four authors/CVF page/IEEE primary metadata and exact DOI; Jun Zhou is Griffith in both public and institutional manuscripts and primary author affiliation.",
+      "publishedRecord": {
+        "DOI": "10.1109/ICCVW.2013.29",
+        "pages": "172–177",
+        "year": 2013,
+        "ieeeArticleNumber": "6755894",
+        "fullTextObtainedFromIEEE": false
+      },
+      "CVF": {
+        "url": "https://openaccess.thecvf.com/content_iccv_workshops_2013/W06/papers/Liang_3D_Plant_Modelling_2013_ICCV_paper.pdf",
+        "fullTextRead": true,
+        "pageCount": 6,
+        "visibleDisclaimer": "Open access workshop copy; authoritative version available on IEEE Xplore.",
+        "sourceBoundary": "Correct previous CVF formal/VoR wording to public proceedings copy. Six public pages fully read; byte/text identity with IEEE VoR not established.",
+        "equations": 5,
+        "referenceCount": 20,
+        "dataStatement": "61 bands 400–1000nm/10nm; reject400–590nm, 41 usable bands600–1000nm. 120 views/3degree per plant, about2GB. Number/species of plants and exact payloads not given.",
+        "preprocessing": "Remove poor bands, Gaussian smoothing; mutual information registration to790nm by 2D similarity transform (rotation/isotropic scale/translation), then linear regression across band transforms; white-reference normalization stated. Canny edges provide more candidate SIFT points.",
+        "segmentation": "Kmeans4 classes with random initialization until convergence; SVM trained on one manually labeled hyperspectral image, RBF/default LIBSVM, apply to others. No numerical segmentation accuracy/independent test split.",
+        "results": "Partial/disconnected 3D models600/800/850/900nm; 700/750nm not reconstructed. Models admitted inaccurate; merging and RGB comparison are future work, not implemented/validated here."
+      },
+      "AM": {
+        "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c8d83cdb-657c-5b8e-8a4f-a82c42111e28/content",
+        "fullTextRead": true,
+        "pageCount": 7,
+        "coverPages": 1,
+        "bodyPages": 6,
+        "equations": 6,
+        "referenceCount": 18,
+        "dataStatementPrinted": "51 bands from600 to1000nm with10nm interval;41 used.",
+        "dataArithmetic": {
+          "inclusive600_1000_step10": 41,
+          "printed51Inconsistent": true,
+          "boundary": "Preserve printed51; not silently correct it or treat it as observed cube size."
+        },
+        "preprocessingDifference": "AOTF vendor Brimrose named; no white-reference sentence in the read system paragraph. Canny plus morphology edge image addition and Eq6 S_i=I_i+F_i/n_i described; n_i/max normalization unclear. This extra formula/operation is absent from CVF public manuscript.",
+        "segmentationDifference": "Kmeans calibration-board/plant boundary issue and one-image SVM refinement stated, but RBF/default detail not in that paragraph.",
+        "citationDifference": "Unresolved [] in introduction,18 rather than20 references; formal public copy has added plant-modeling references and RGB future comparison. No claim all citation bibliographic errors corrected."
+      },
+      "venueDateBoundary": "CVF BibTeX monthJune conflicts with Crossref publishedDecember/eventDecember2–8. Retain year2013 and formal page range; do not infer a June conference."
+    },
+    {
+      "paperId": "bandwise-hsi-3d-wacv-2015",
+      "title": "3D Reconstruction from Hyperspectral Images",
+      "publishedRecord": {
+        "DOI": "10.1109/WACV.2015.49",
+        "pages": "318–325",
+        "year": 2015,
+        "ieeeArticleNumber": "7045903",
+        "primaryAuthors": [
+          "Ali Zia",
+          "Jie Liang",
+          "Jun Zhou",
+          "Yongsheng Gao"
+        ],
+        "targetAffiliation": "School of Information and Communication Technology, Griffith University, Australia",
+        "fullTextFromIEEE": false
+      },
+      "AM": {
+        "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0c018645-866b-5aff-b1bc-ec61a2f9da25/content",
+        "pageCount": 9,
+        "coverPages": 1,
+        "bodyPageCount": 8,
+        "fullTextRead": true,
+        "equations": 9,
+        "tables": 2,
+        "tableNumericCells": 25,
+        "figures": 8,
+        "algorithmCount": 1,
+        "references": 21
+      },
+      "fullTextBoundary": "Complete eight-page institutional author manuscript read; IEEE formal eight-page source/text differences unverified. IEEE PDF request202empty; fresh Crossref429empty, use prior Crossref bibliographic snapshot plus fresh primary IEEE/institution metadata."
+    }
+  ]
+}
