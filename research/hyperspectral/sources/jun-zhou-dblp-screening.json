@@ -6,12 +6,12 @@
   "recordCount": 365,
   "keywordRecordCount": 167,
   "decisionCounts": {
-    "excluded": 179,
+    "excluded": 182,
     "duplicate_existing": 165,
     "included": 6,
-    "pending": 15
+    "pending": 12
   },
-  "method": "DBLP SPARQL exact authoredBy relation; title/DOI normalized against catalog；WHISPERS专题补充、IGARSS多光谱证据补强；另用ORCID同题逐项决定交叉回填100条非关键词记录；剩余78条按原摘要/Griffith机构摘要和指定正文局部逐项审查，63暂排除、15待核；合并集合365条含1条快照外STRL补充。",
+  "method": "DBLP SPARQL exact authoredBy relation; title/DOI normalized against catalog；WHISPERS专题补充、IGARSS多光谱证据补强；另用ORCID同题逐项决定交叉回填100条非关键词记录；剩余78条按原摘要/Griffith机构摘要和指定正文局部逐项审查，63暂排除、15待核；合并集合365条含1条快照外STRL补充。；续核M2-Net、2022稳健2DSVD与CrowdMLP原稿实验后暂排除3条，剩12待核。",
   "records": [
     {
       "pub": "https://dblp.org/rec/journals/staeors/WangYZZ26",
@@ -2830,9 +2830,20 @@
       "year": "2023",
       "venue": "Pattern Recognit.",
       "doi": "https://doi.org/10.1016/J.PATCOG.2023.109830",
-      "decision": "pending",
-      "decisionReason": "精确机构题名查询无匹配；人群计数原摘要、原图像模态与作者身份待核。",
-      "decisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json"
+      "decision": "excluded",
+      "decisionReason": "同题2022预印本实验为ShanghaiTech、UCF-QNRF、JHU-CROWD++人群计数，暂按范围排除。作者机构列Guelph/Memorial/Dalian Maritime，未确认与Griffith周峻同一身份；正式2023版差异待核。",
+      "decisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json",
+      "finding": "同题2022预印本实验为ShanghaiTech、UCF-QNRF、JHU-CROWD++人群计数，暂按范围排除。作者机构列Guelph/Memorial/Dalian Maritime，未确认与Griffith周峻同一身份；正式2023版差异待核。",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/html/2203.08219v1",
+          "checkedAt": "2026-10-10",
+          "level": "primary_selected_experimental_sections",
+          "supports": [
+            "同题2022预印本实验为ShanghaiTech、UCF-QNRF、JHU-CROWD++人群计数，暂按范围排除。作者机构列Guelph/Memorial/Dalian Maritime，未确认与Griffith周峻同一身份；正式2023版差异待核。"
+          ]
+        }
+      ]
     },
     {
       "pub": "https://dblp.org/rec/conf/iccv/LiZ00023",
@@ -2940,9 +2951,22 @@
       "year": "2022",
       "venue": "ICASSP",
       "doi": "https://doi.org/10.1109/ICASSP43922.2022.9747522",
-      "decision": "pending",
-      "decisionReason": "机构摘要为稳健2DSVD降维，但未指明数据集；是否含高光谱实际实验待原稿。",
-      "decisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json"
+      "decision": "excluded",
+      "decisionReason": "Griffith正式2022作者稿实验仅MNIST数字分类与ORL人脸聚类；不涉及高光谱输入，暂排除。",
+      "decisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json",
+      "finding": "Griffith正式2022作者稿实验仅MNIST数字分类与ORL人脸聚类；不涉及高光谱输入，暂排除。",
+      "evidence": [
+        {
+          "url": "https://research-repository.griffith.edu.au/bitstreams/52a4b9be-3b7a-4823-be7d-0696fd22d515/download",
+          "checkedAt": "2026-10-10",
+          "level": "primary_selected_experimental_sections",
+          "supports": [
+            "Griffith正式2022作者稿实验仅MNIST数字分类与ORL人脸聚类；不涉及高光谱输入，暂排除。"
+          ],
+          "snapshot": "jun-zhou-gkrsl-2022-scope.pdf",
+          "sha256": "859a98e6e4361c8878006dd8761077fc8f260babf60e5c21608c37ed40f60e81"
+        }
+      ]
     },
     {
       "pub": "https://dblp.org/rec/journals/cee/LiuWWZX22",
@@ -3170,9 +3194,22 @@
       "year": "2020",
       "venue": "DICTA",
       "doi": "https://doi.org/10.1109/DICTA51227.2020.9363420",
-      "decision": "pending",
-      "decisionReason": "机构摘要为M2-Net普通光学遥感检测，但三基准名称与输入通道缺失，待原稿。",
-      "decisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json"
+      "decision": "excluded",
+      "decisionReason": "作者会议稿实验与结论明确DOTA、NWPU VHR-10、UCAS-AOD目标检测；未核到高光谱或多光谱波段输入，暂排除。",
+      "decisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json",
+      "finding": "作者会议稿实验与结论明确DOTA、NWPU VHR-10、UCAS-AOD目标检测；未核到高光谱或多光谱波段输入，暂排除。",
+      "evidence": [
+        {
+          "url": "https://conferences.com.au/wp-content/uploads/2020/09/29_CameraReady-1.pdf",
+          "checkedAt": "2026-10-10",
+          "level": "primary_selected_experimental_sections",
+          "supports": [
+            "作者会议稿实验与结论明确DOTA、NWPU VHR-10、UCAS-AOD目标检测；未核到高光谱或多光谱波段输入，暂排除。"
+          ],
+          "snapshot": "jun-zhou-m2-net-2020-scope.pdf",
+          "sha256": "69f1f25b18e659485632aaa2121ef238d4061cfff502acc10d7abbd29398201e"
+        }
+      ]
     },
     {
       "pub": "https://dblp.org/rec/conf/icip/ZhouZ0020",
@@ -3381,6 +3418,6 @@
   "nonKeywordIncludedCount": 2,
   "snapshotRecordCount": 364,
   "outsideSnapshotSupplementalCount": 1,
-  "snapshotReviewedCount": 349,
+  "snapshotReviewedCount": 352,
   "remainingScopeReviewedCount": 63
 }
