@@ -13,6 +13,7 @@
 | Google Scholar | 用户主页 cstart=0/100/200/300、pagesize=100 | HTTP200，取得387条记录、384个唯一题名（381个题名-年份组合）；原始HTML与解析快照已保存 | 引用元数据、作者归属及 Scholar 独有条目仍需逐篇核；页面列项不等于正式书目全集 |
 | 作者ANU旧主页 | publication.html完整旧页面，列项2001–2012，逐篇追踪公开PDF | 本批5篇原稿及DOI核验 | 主页中的Accepted年份、作者顺序及拼写可能与正式版不同；不覆盖当前所有成果 |
 | Griffith当前主页与机构仓库 | 个人页为JS壳；仓库REST两组查询完整分页 | 宽查询351条、作者字段214条，去重351；逐项交叉表已保存 | 指定查询完整不等于个人全部成果完整；包含指导关系、引用和同名作者 |
+| arXiv精确姓名 | 官方Atom `au:"Jun_Zhou"`，start=0/200/400 | 531条、唯一531；24目录匹配、32既有决定映射、4同名机构核验、471未逐审 | 姓名变体未覆盖；全分页不等于全部身份、范围或版本审查 |
 
 所有源文件和失败状态在 `sources/jun-zhou-*`；263组逐项题名、外部ID、发现状态见 `sources/jun-zhou-orcid-inventory.json`，逐项决定分年度及早期尾项文件保存。没有关键词的128组不作为自动排除；未来卷期日期必须核在线发表，不将2026年12月卷期自动认作已发生的事件。
 
@@ -52,7 +53,7 @@ DBLP365条仍356决定、9待核；Scholar非关键词209差集现189暂排、8�
 
 ## 继续顺序
 
-ORCID263组范围决定已闭环：收录128、关联既有10、排除125、待审0；当前总作者目录188条，来源范围不同不能直接相加。早期尾项见 `sources/jun-zhou-early-remainder-decisions.json`。Griffith指定查询351条交叉表已完成，仍有量化检索原文、DBLP9条、Scholar8条及共同作者CV3候选待核（集合有重叠）。继续查作者身份、实际光学输入、机构个人成果与arXiv差集，再转全领域场所矩阵；2010Landsat配准既有范围决定保留。
+ORCID263组范围决定已闭环：收录128、关联既有10、排除125、待审0；当前总作者目录188条，来源范围不同不能直接相加。早期尾项见 `sources/jun-zhou-early-remainder-decisions.json`。Griffith指定查询351条交叉表已完成；量化检索已取得原稿并按指定局部暂排。arXiv精确姓名531条分页完成，471条未逐审；DBLP9条、Scholar8条及共同作者CV3候选仍待核（集合有重叠）。继续查作者身份、实际光学输入、机构个人成果与arXiv未审项，再转全领域场所矩阵；2010Landsat配准既有范围决定保留。
 
 ## 2008–2013原稿范围与版本续接
 
@@ -337,3 +338,20 @@ IGARSS2011四页作者稿已通读，15组小波特征、数据、随机划分�
 2018字典适配勘误10.1109/TGRS.2018.2789418修正原Fig14三类混淆矩阵应3×3而非7×7，关联原2017条目，不新增方法；勘误图版未取得。独立甘蔗数据登记10.25904/1912/4757描述黑穗病/花叶病两子集、4TB、需申请，关联2023会议和2024期刊条目，但逐文件对应未核，不算一篇新论文。
 
 Scholar短题名weed mapping仍待核：机构与正式DOI长题名作者为Adnan Farooq，而Scholar缓存写A.Awan。详情本次429；长题名候选与目录2022条目同DOI，不能凭相似题名关闭短题名身份/版本疑点。DBLP9、Scholar8及CV3待核均未擅自清零。新增植物病害任务标签按实际输出维护；未新增学习笔记。
+
+
+## arXiv作者全分页、版本补齐与量化检索范围核验（2026-10-10）
+
+官方Atom精确姓名查询`au:"Jun_Zhou"`取得200/200/131条，三页总数均531，arXiv ID唯一531；原始XML、每页SHA256和全部题名/摘要/作者/日期保存在 `sources/jun-zhou-arxiv-author-inventory-2026-10-10.json`。查询含同名作者，未覆盖姓名简写或变体，不称目标作者全集。
+
+逐项交叉表包含24条现有目录匹配、32条既有DBLP/Scholar范围决定映射、4条原稿或正式稿机构核验的同名记录、471条未逐篇审查。指定光谱词扫描25命中为23目录匹配和2同名；另一个目录匹配是《Spectral 3D Computer Vision -- A Review》，靠arXiv ID命中。无关键词不自动排除。映射沿用证据，不表示本轮重新读完56篇或核所有版本作者。见 `sources/jun-zhou-arxiv-author-crosswalk-2026-10-10.json`。
+
+24条目录补当前官方版本元数据，共13个新增版本记录，原v1及正式版保留；初次提交用API `published`，当前版本更新时间用`updated`。v2及以后不以首次提交时间冒充版本提交时间；当前版本年份按其更新时间记录，主条正式年份不变。ILRNet预印本2509.00356首次提交2025-08-30、正式TGRS 2024，同DOI精确关联，原稿首页确认Griffith。HSLiNets 2503.21072补2025-03-27版本，Atom作者分词和v1 PDF首页有姓名粘连/逗号异常，不覆盖已核正式作者。LiDAR-Guided 2404.03883补v2及正式DOI两记录；API的Final Files Received不当正式发表日期。CRF v2题名Segmentation与正式Classification、材料跟踪v5的Benchmark and Algorithms副标题分别保留。原阅读及分类状态保持：作者仍188条，179摘要级/9全文级。见 `sources/jun-zhou-arxiv-version-update-2026-10-10.json`。
+
+HSLiNets公开GitHub元数据、README和完整文件树取得成功，存在Trento/Houston2013两个模型notebook；目录补代码入口，但未下载数据或运行训练。2503.21072与2412.00302均叫HSLiNets，题名、作者和摘要基准不同，不按简称合并，也不据此宣称独立方法；正式扩展关系继续核。
+
+3DLST 2405.15826与DTA-Former 2405.15827的v1原稿首页将Jun Zhou标为香港理工大学护理学院，v2省略机构；DCTNet 2306.08073正式稿首页亦确认该机构。三者实际MS-LiDAR为XYZ及1550/1064/532nm三个通道，仍属全领域多光谱候选。DCTNet预印本七作者含Dilong Li、正式稿六作者不含；预印本有Toronto-3D、正式摘要/实验只列ShapeNet和MS-LiDAR，版本实验不混用。3DLST正式作者顺序与预印本不同；Crossref发现2026勘误10.1016/j.jag.2026.105262，正文未取得，不猜修正内容。农业挑战2206.11920首页Jun Zhou为平安银行，§2.1为RGB+NIR四通道。四条均从目标作者目录排除，另留 `sources/jun-zhou-other-author-field-queue-2026-10-10.json`，作者专项后再做全领域入库审查。仅指定局部阅读，未标全文。
+
+机构新待核乘积量化论文已取得7页PDF（封面加正式210–215页），首页确认Griffith Jun Zhou。渲染读PDF2/5/6页的摘要、§4.1和Table1、§4.2，实验为MNIST、CIFAR-10、ImageNet和SIFT-1M，输入是普通图像向量/特征或SIFT描述子；未见明确光学高光谱输入或基础关系，按现证据暂排，未来明确联系可重审。正文字体映射乱码，不将pdftotext输出充作正文；摘要three datasets与正文four差异保留。Griffith交叉表的新pending已关闭为`excluded_selected_full_text`，6条继承待核仍保留。证据见 `sources/jun-zhou-quantization-scope-2026-10-10.json`。
+
+本轮无新增论文、标签或原图。DBLP9、Scholar8、CV3及arXiv471未审项未清零；全领域场所年度矩阵和作者正式全文/实验/代码仍未完成。
