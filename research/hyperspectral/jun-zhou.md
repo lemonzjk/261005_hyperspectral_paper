@@ -18,7 +18,7 @@
 
 ## 当前学习入口与剩余范围核验
 
-[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；182条摘要级、3条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
+[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；181条摘要级、4条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
 
 本轮为剩余78条DBLP记录取得原始摘要或Griffith机构摘要，并对指定arXiv正文和两份作者/正式PDF局部补读。续核后68条按当前证据暂排除；10条仍待核。图矩阵的spectral clustering、Fourier高/低频、CNN feature channels、音频频谱和描述子的multi-channel都不自动等于光学高光谱。皮肤镜与昆虫照片论文也不借同作者其他高光谱数据集收录。AcfNet arXiv1909.03751的v1正文含Griffith Jun Zhou，而v2当前摘要作者列表无Jun Zhou，保留版本作者差异，不把它简单认作错误作者。
 
@@ -147,7 +147,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
-截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：182条为 `abstract_read` / `abstract_verified`，3条为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
+截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：181条为 `abstract_read` / `abstract_verified`，4条为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
 
 ## 2024–2026高光谱来源组筛选
 
@@ -289,3 +289,8 @@ Scholar将DASFAA2019原稿顶部会议信息误作题名。共同作者目录第
 共同作者Xiong的Selected Publications读取24条含Jun Zhou记录，保存为来源核对入口，不称作者全集。SNMF取得16页作者稿及公开ZIP（65个有效文件），保存原代码与归档哈希/文件清单。指定方法段和代码对照、20轮CPU短运行及原结果打印失败均已记录；原训练checkpoint前向输出有限，但不是论文性能复现。阅读状态保留摘要级，完整全文、全部实验与版本差异仍待。详见[SNMF代码笔记](jun-zhou-snmf-code-note.md)及 `sources/jun-zhou-snmf-smoke-2026-10-10.json`。
 
 NMF-SAE作者页HTML注释另有未具体说明的final version错误提示；它不是正式勘误，不能据此定位或修正数学错误。五页作者稿全文状态不变，正式出版社版本和勘误仍待核；线索见同批访问记录。
+
+
+## SNMF作者稿完整阅读与公式复核
+
+通读16页作者稿全部正文、图表、参考文献及作者简介，Figure1已保存。目录现为185条：181摘要级、4作者/公开稿全文级；不等于全部论文通读或全部正式版本核验。三真实场景均值SAD最低不表示每类最好；参考端元为选出的可能纯像元、丰度由CVX拟合。式29复合激活导数和式37全矩阵单位约束经原页及独立数学例子核查，记录与代码/推导的差异，不自动替作者修正。DC Mall表述与Figure15图注冲突保留。详情见[全文与代码笔记](jun-zhou-snmf-code-note.md)、`sources/jun-zhou-snmf-full-reading-2026-10-10.json`；默认500轮、重复实验、正式版本及跨场景验证仍待。原图总量331张。

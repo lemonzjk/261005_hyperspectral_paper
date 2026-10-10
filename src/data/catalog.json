@@ -69286,10 +69286,10 @@
       "input": "高光谱像元光谱。",
       "output": "端元光谱与丰度分布。",
       "mechanism": "基于线性光谱混合模型，交替 End-Net 和 Abun-Net 展开 Lp-NMF 优化，融入非负性、稀疏性等先验。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。 本轮补读作者稿II-C、III-B及训练损失指定局部并审代码包；20轮CPU训练完成但原结果打印失败，另从checkpoint核输出，未完成性能复现。",
+      "readingNote": "已通读16页作者稿摘要、引言、II–V、参考文献及全部图表；核对Figure1与三套真实数据SAD表。公式29激活导数和37 GMC约束存在可核数学疑点，独立数值例子与代码差异已留证；仅20轮CPU代码核验，未完成论文性能复现或出版社逐字对比。",
       "paper": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
@@ -69298,13 +69298,13 @@
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何把线性混合模型和稀疏 NMF 优化展开为可解释的高光谱解混网络？",
-        "datasets": "作者公开 PDF 摘要报告合成与真实 HSI 实验；具体数据集、约束设置和指标待全文核验。",
-        "experimentSetting": "观察光谱输入后交替估计端元和丰度，并与多种解混方法比较。",
-        "conclusions": "作者摘要报告在合成和真实数据上优于多种方法；逐项性能、消融和泛化待全文核验。",
-        "limitations": "公开 PDF 为作者版本；正式出版版本差异、代码许可和完整实验边界待核验。 当前代码包更新顺序、固定初始丰度右乘项、损失缩放与论文指定公式不同；归一化加1e-4不严格和为1。初始化对齐使用参考端元，需单列；NumPy标量打印失败。",
+        "datasets": "USGS六端元合成64×64×224，0.38–2.5μm；Jasper Ridge 100×100×198四端元、HYDICE Urban 307×307×162四端元、Washington DC Mall 150×150×191五端元。均为作者稿协议，裁剪位置与真值来源仍需复现核验。",
+        "experimentSetting": "九层；合成与三真实场景各随机500像元训练。合成SNR15/20/25/30dB及无噪声；30dB层数3–30和样本数64–4096消融，GMC与VCA/NMF初始化对照。作者稿未找到完整学习率、轮数或随机重复说明，不把代码默认500轮作为正文明确协议。",
+        "conclusions": "作者稿三真实数据表的平均SAD分别0.0663/0.1753/0.1657，为各表最低；不表示各材料均最好。真实参考端元为选出的可能纯像元，丰度由CVX MATLAB估计，非独立实测真值。样本消融来自同幅合成图，不证明跨场景泛化。",
+        "limitations": "公开 PDF 为作者版本；正式出版版本差异、代码许可和完整实验边界待核验。 当前代码包更新顺序、固定初始丰度右乘项、损失缩放与论文指定公式不同；归一化加1e-4不严格和为1。初始化对齐使用参考端元，需单列；NumPy标量打印失败。 完整作者稿式29复合激活导数与式23不一致；式37写全矩阵单位约束、代码只约束对角，不能当成同一GMC问题。DC Mall正文材料结论及Figure15数据集图注与表/上下文冲突；标准差百分号和重复次数未明。",
         "dataLinks": [
           "https://www.xiongfuli.com/cv/code/SNMF.zip"
         ],
@@ -69335,6 +69335,16 @@
               "原SNMF.py与UnmixingUtils.py、合成数据与索引文件；归档哈希固定。",
               "20轮CPU训练及checkpoint前向核验，不等于论文结果复现。"
             ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "author_full_text_read_with_original_figures_and_formula_audit",
+            "supports": [
+              "16页作者稿II–V与Figure1–15/TableI–III完整阅读。",
+              "三套真实数据与同幅图训练、参考端元/丰度来源。",
+              "公式29/37原页与独立数学探针；全文学习笔记及结构化核验记录。"
+            ]
           }
         ],
         "versions": [
@@ -69344,20 +69354,36 @@
             "url": "https://doi.org/10.1109/tgrs.2021.3081177",
             "doi": "10.1109/tgrs.2021.3081177",
             "year": 2022,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI/书目已匹配；阅读证据来自作者稿全文，未逐字核出版社版。"
           },
           {
             "id": "zhou-80-hsi-2022-author-2021",
             "type": "作者公开稿",
             "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
             "year": 2021,
-            "relation": "16页作者稿，指定方法段补读；正式期刊年份2022，未核全部版本差异。"
+            "relation": "16页作者稿完整阅读，图表与公式原页核验；正式期刊年份2022，出版社版本差异与完整复现待核。"
           }
         ],
         "methodFamilyId": "zhou-2022-title-80"
       },
       "citation": "@article{zhou_80_hsi_2022,\n  title = {SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Shuyin Tao and Jianfeng Lu and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3081177}\n}\n",
-      "code": "https://www.xiongfuli.com/cv/code/SNMF.zip"
+      "code": "https://www.xiongfuli.com/cv/code/SNMF.zip",
+      "frameworkFigures": [
+        {
+          "figureLabel": "Figure 1",
+          "caption": "SNMF-Net交替End-Net与Abun-Net；绿色标注为可学习参数，输出端元和丰度。",
+          "sourceUrl": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
+          "page": 3,
+          "attribution": "Fengchao Xiong, Jun Zhou, Shuyin Tao, Jianfeng Lu, Yuntao Qian · IEEE Transactions on Geoscience and Remote Sensing 2022",
+          "verifiedAt": "2026-10-10",
+          "verificationStatus": "verified",
+          "verificationNote": "人工核对16页作者稿PDF第3页Figure1，200dpi原图裁切；图示端元先更新，不能替代当前代码执行顺序核验；非生成图。",
+          "path": "figures/zhou-80-hsi-2022/framework-author-v1.png",
+          "width": 1443,
+          "height": 752,
+          "sha256": "6ec06fa8dc7437a53afdc55c83215b7b5116f80ada7caffb9951c6add4227239"
+        }
+      ]
     },
     {
       "id": "zhou-81-hsi-2022",

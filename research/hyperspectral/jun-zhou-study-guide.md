@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。182条为摘要级核验、3条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。181条为摘要级核验、4条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -76,15 +76,14 @@
 
 ### 6. 2022 · SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing
 
-- 原文：[来源](https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf)；目录ID：`zhou-80-hsi-2022`。
-- 输入：高光谱像元光谱。
-- 输出：端元光谱与丰度分布。
-- 已核机制：基于线性光谱混合模型，交替 End-Net 和 Abun-Net 展开 Lp-NMF 优化，融入非负性、稀疏性等先验。
-- 学习问题：端元网络与丰度网络怎样交替？哪些参数共享或可学习，如何避免尺度歧义？
-- 阅读边界：ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。
-- 待核：公开 PDF 为作者版本；正式出版版本差异、代码许可和完整实验边界待核验。
+- 原文：[16页作者稿](https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf)；目录ID：`zhou-80-hsi-2022`。
+- 输入与输出：高光谱像元矩阵、VCA/FCLS初始化，输出端元与丰度。
+- 已核机制：逐层参数、端元/丰度交替展开、Lp单次GST近似、各层重建损失、GMC初始化。
+- 已核实验：USGS合成与Jasper/Urban/DC Mall；九层、500训练像元；三真实数据平均SAD最低，不表示每类最优。
+- 阅读边界：作者稿全文及全部图表已读；正式出版社逐字版本、公式更正及完整复现仍待核。
+- 学习问题：式23的激活导数为何不只是指示函数？式37全矩阵与代码对角约束差在哪？参考端元和丰度怎样产生，怎样设计跨场景评测？
 
-[论文与代码核对笔记](jun-zhou-snmf-code-note.md)补出原作者代码/合成数据入口及20轮CPU运行边界；当前实现与论文更新顺序和归一化不同，不能直接报性能复现成功。
+[论文与代码核对笔记](jun-zhou-snmf-code-note.md)提供原代码入口、20轮CPU运行边界和独立数学演示；当前实现与论文存在更新顺序、右乘项和约束差异，不能报性能复现成功。
 
 ### 7. 2024 · Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution
 
@@ -274,7 +273,7 @@
 | 2022 | [Nonlocal Spatial–Spectral Neural Network for Hyperspectral Image Denoising](https://www.researchgate.net/publication/365116412_Nonlocal_Spatial-Spectral_Neural_Network_for_Hyperspectral_Image_Denoising) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2022 | [Similarity-Based Hyperspectral Band Selection Using Deep Reinforcement Learning](https://ieeexplore.ieee.org/document/9955115/) | 光谱波段选择、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2022 | [SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising](https://arxiv.org/abs/2012.01829) | 光谱去噪 | 正式发表 | 摘要核验 |
-| 2022 | [SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing](https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2022 | [SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing](https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf) | 光谱解混 | 正式发表 | 作者稿全文核验 |
 | 2022 | [Sparsity Constrained Fusion of Hyperspectral and Multispectral Images](https://www.researchgate.net/profile/Meng-Xu-24) | 光谱重建 | 正式发表 | 摘要核验 |
 | 2022 | [Spatial-Spectral Convolutional Sparse Neural Network for Hyperspectral Image Denoising](https://eurekamag.com/research/096/040/096040803.php) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2022 | [Spatial–Spectral Weighted and Regularized Tensor Sparse Correlation Filter for Object Tracking in Hyperspectral Videos](https://pure.bit.edu.cn/en/publications/spatial-spectral-weighted-and-regularized-tensor-sparse-correlati) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |

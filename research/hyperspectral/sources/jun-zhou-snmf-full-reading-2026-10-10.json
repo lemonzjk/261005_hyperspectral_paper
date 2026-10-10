@@ -1,0 +1,185 @@
+{
+  "checkedAt": "2026-10-10",
+  "paperId": "zhou-80-hsi-2022",
+  "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
+  "file": "jun-zhou-snmf-net-2021-author.pdf",
+  "sha256": "fec0d2b2c7ec641ee462f92e399eddd1bb86d64504adb5fda562ef2518366d46",
+  "pages": 16,
+  "readingStatus": "author_full_text_read",
+  "readingCoverage": [
+    "Abstract/Introduction, pages1–2",
+    "II-A–C: LMM, sparse objective, alternating optimization, pages3–4",
+    "III-A–D: unrolling, network, derivatives, initialization, pages4–7",
+    "IV-A–C: evaluation, synthetic and three real datasets, pages7–13",
+    "V Conclusion, pages13–14",
+    "References1–56 and author biographies, pages14–16",
+    "Figure1–15 and TableI–III; original page images inspected; Figure1 saved"
+  ],
+  "formalVersionBoundary": "16页公开作者稿全文；未逐字核出版社版，也未完成性能复现。",
+  "synthetic": {
+    "bands": 224,
+    "wavelengthMicrometers": [
+      0.38,
+      2.5
+    ],
+    "endmembers": 6,
+    "pixels": 4096,
+    "z": 8,
+    "beta": 0.8,
+    "gaussianFilterVariance": 2,
+    "noiseSNRdB": [
+      15,
+      20,
+      25,
+      30,
+      "infinity"
+    ],
+    "trainingPixels": 500,
+    "layers": 9,
+    "selectionExperimentSNRdB": 30,
+    "trainingSizeAblation": [
+      64,
+      256,
+      500,
+      1000,
+      2000,
+      4096
+    ],
+    "boundary": "同幅图随机像元训练；不证明跨场景或跨传感器泛化。"
+  },
+  "realDatasets": [
+    {
+      "name": "Jasper Ridge",
+      "originalShape": [
+        512,
+        613,
+        224
+      ],
+      "usedShape": [
+        100,
+        100,
+        198
+      ],
+      "endmembers": [
+        "Tree",
+        "Water",
+        "Soil",
+        "Road"
+      ],
+      "meanSAD": 0.0663,
+      "printedStd": "1.04%",
+      "SNMFPerMaterialSAD": [
+        0.0478,
+        0.0855,
+        0.0443,
+        0.0875
+      ],
+      "boundary": "作者稿512×613，与NMF-SAE作者稿512×614分开保留；仅Water达到该表各方法最小SAD。"
+    },
+    {
+      "name": "HYDICE Urban",
+      "originalShape": [
+        307,
+        307,
+        210
+      ],
+      "usedShape": [
+        307,
+        307,
+        162
+      ],
+      "endmembers": [
+        "Asphalt",
+        "Grass",
+        "Tree",
+        "Roof"
+      ],
+      "meanSAD": 0.1753,
+      "printedStd": "0.55%",
+      "SNMFPerMaterialSAD": [
+        0.2477,
+        0.2131,
+        0.1848,
+        0.0554
+      ],
+      "boundary": "仅Roof达到该表各方法最小SAD；UnDIP未列入表II。"
+    },
+    {
+      "name": "Washington DC Mall",
+      "originalShape": [
+        1208,
+        307,
+        210
+      ],
+      "usedShape": [
+        150,
+        150,
+        191
+      ],
+      "removedBands1Based": [
+        "103–106",
+        "138–148",
+        "207–210"
+      ],
+      "endmembers": [
+        "Tree",
+        "Grass",
+        "Street",
+        "Roof",
+        "Water"
+      ],
+      "meanSAD": 0.1657,
+      "printedStd": "0.63%",
+      "SNMFPerMaterialSAD": [
+        0.1309,
+        0.218,
+        0.3836,
+        0.0356,
+        0.0602
+      ],
+      "boundary": "Grass与Roof达到该表各方法最小SAD；正文对材料优劣描述与表III不一致。"
+    }
+  ],
+  "referenceBoundary": "真实数据端元为人工选择的可能纯像元，参考丰度由CVX MATLAB求得；不是独立实测端元/丰度真值。三真实场景均用500像元训练。标准差百分号保留；未找到随机重复次数或显著性检验。",
+  "formulaAudit": {
+    "equation29": "正激活分支的复合激活导数只写指示函数，遗漏式23内部导数因子；独立有限差分例子核对，不称完整反传验证。",
+    "equation37": "原页确认约束为WᵀD=I；可行时目标恒为R。代码calW仅约束diag(WᵀD)=1，与原页不同。",
+    "figure15": "图注写Urban，但第13页数据段及第14页Figure14明确同组Washington DC Mall，保留原图注冲突。"
+  },
+  "independentMathProbe": {
+    "activationProbe": {
+      "y": 0.4,
+      "lambda": 0.05,
+      "p": 0.5,
+      "step": 1e-06,
+      "output": 0.3604715292478953,
+      "finiteDifference": 1.0494105883995797,
+      "analyticDerivative": 1.049410588440131,
+      "equation29PrintedIndicator": 1,
+      "boundary": "Positive active branch only; no threshold crossing, clipping, or normalization."
+    },
+    "equation37Probe": {
+      "R": 2,
+      "WTransposeD": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "squaredFrobeniusObjective": 2.0,
+      "boundary": "Full identity constraint fixes the objective at R whenever feasible; code instead constrains its diagonal."
+    },
+    "scope": "Independent mathematical probes, not algorithm reproduction or full gradient verification."
+  },
+  "remaining": [
+    "正式出版社逐字版本差异、公式29/37正式更正",
+    "阈值边界及完整反向传播的独立核验",
+    "默认500轮、五噪声设置、随机重复与真实数据复现",
+    "真实数据裁剪坐标、纯像元位置与参考丰度生成协议",
+    "跨场景与跨传感器验证"
+  ]
+}
