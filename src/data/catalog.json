@@ -66695,42 +66695,44 @@
     },
     {
       "id": "hyperspectral-video-tracking-kcf-2018",
-      "shortTitle": "Hyperspectral video KCF tracking",
+      "shortTitle": "CNHT",
       "title": "Object tracking in hyperspectral videos with convolutional features and kernelized correlation filter",
-      "authors": "Xiao Bai, Jun Zhou, Antonio Robles-Kelly",
+      "authors": "Kun Qian, Jun Zhou, Fengchao Xiong, Huixin Zhou, Juan Du",
       "year": 2018,
-      "venue": "ICIP",
-      "publicationName": "2018 IEEE International Conference on Image Processing",
+      "venue": "ICSM",
+      "publicationName": "Smart Multimedia · First International Conference, ICSM 2018 · LNCS 11010",
       "publicationStatus": "published",
       "venueTier": "conference",
       "collections": [
         "hyperspectral"
       ],
-      "representation": "用三维光谱—空间块、卷积特征和核相关滤波跟踪高光谱视频目标。",
+      "representation": "固定模板采样卷积特征与多通道Gaussian KCF进行高光谱单目标跟踪。",
       "tags": [],
-      "summary": "研究高光谱视频中的目标时序跟踪。",
-      "input": "高光谱视频序列和目标框。",
-      "output": "目标轨迹。",
-      "mechanism": "将归一化三维光谱—空间块输入两层CNN提取特征，再用KCF更新跟踪。",
-      "readingNote": "arXiv 1810.11819与DBLP核验；未发现正式DOI，未标全文。",
-      "paper": "https://arxiv.org/abs/1810.11819",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "从首帧局部高光谱块随机采样固定卷积核，堆叠响应为多通道表示，再以KCF在线定位更新；实验为三场景HSI/灰度/RGB对照。",
+      "input": "首帧目标bbox与HSI视频；表1三HSI均14通道、512×272/30FPS，Gray取490nm单带；旁置RGB独立视频为对照，长度/分辨率不同。",
+      "output": "各帧目标bbox与中心位置/响应；第三维为波长，不是3D几何。",
+      "mechanism": "首帧随机选10个6×6×14固定谱空块做卷积核，响应堆叠为10通道供Gaussian KCF核岭回归/FFT峰值定位，相关滤波模型在线EMA更新；卷积核不做离线梯度训练。源码same卷积后取第一谱片、随机正对角偏移及归一与论文描述差异单列。",
+      "readingNote": "arXiv1810.11819v1全部12页、式1–8、两表/六图注及18参考条目已读；Griffith AM12页与其逐页文字对照一致（首面仅侧标/空白差），正式Springer VoR未读。原目录ICIP/三作者错误更正为ICSM/五作者，补正式DOI。作者ICSM.zip24项CRC/hash已核、15关键MATLAB文件通读；缺X2Cube/X2Cube2、视频及随机seed，未运行复现。新增v1 Fig1/2原裁图。",
+      "paper": "https://doi.org/10.1007/978-3-030-04375-9_26",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
-          "hyperspectral-video-acquisition"
+          "hyperspectral-video-acquisition",
+          "correlation-filter-tracking",
+          "template-sampled-convolutional-features"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "relationNote": "v1/AM直接以14通道近距HSI视频和490nm单带/旁置RGB对照跟踪；3D块为谱空维，无场景几何。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "无需大规模离线CNN训练，如何从首帧高光谱模板构建卷积特征，利用KCF区分目标与相似颜色背景？",
+        "datasets": "apple/deer/people三场景×Gray/RGB/HSI，共九序列；HSI182/114/641帧合937，14带/512×272，RGB422/230/676帧合1328、1980×1080。原16带/460–630nm、校准Photonfocus14或Ximea11与引言470–620nm/14差异保留；表中未见11带实验。不是后续35视频HOT基准，未取原视频。",
+        "experimentSetting": "MATLAB/i7-7700HQ2.8GHz/32GB；10固定随机核6×6×14，首帧GT位置/尺寸；base sample原文0.2–3倍、STC搜索6倍，其余承KCF。DP@20px与FPS，无IoU AUC/多seed/置信区间；源码参数/计时另核，未真实运行。",
+        "conclusions": "表2 CNHT HSI DP@20px98.2%/1FPS，CNTGray92.7%/0.5FPS、KCFGray53.6%/278FPS；提升5.5/44.6百分点，正文83%为相对KCF约83.21%，非83百分点。1FPS低于采集30FPS；模态间尺寸/长度/视点与参数不同，不把结果当严格只改变光谱信息的控制实验或全领域SOTA。",
+        "limitations": "仅三场景，无外数据泛化/随机核seed或平均权重说明；VoR未读。式6/8的共轭/σ²括号、d重用、DLT/CNT/STC参考号错误留证；代码缺X2Cube/X2Cube2，same卷积取h(:,:,1)、正对角采样/归一/cosine窗口及choose/all返回接口与评测边界有缺口，未复算论文指标。论文/代码/视频权利分别核，不以CC0预印本转移其他载荷。",
         "dataLinks": [],
         "evidence": [
           {
@@ -66758,6 +66760,41 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1810.11819v1",
+            "checkedAt": "2026-10-11",
+            "level": "fixed_arxiv_v1_full_text_and_original_figures",
+            "supports": [
+              "12页直接确认Griffith Jun Zhou及五作者，三场景九序列/14通道、固定卷积核和KCF。",
+              "表1/2核98.2%@20px、1FPS与不同模态帧数/分辨率；式6/8及参考编号差异留证。",
+              "第3/4页Fig1/2原裁图，谱空第三维不当三维场景几何。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1007/978-3-030-04375-9_26",
+            "checkedAt": "2026-10-11",
+            "level": "publisher_registered_exact_doi_bibliography",
+            "supports": [
+              "同题五作者、Smart Multimedia章节308–319及2018-12-08在线日期；更正旧ICIP/三作者，正式正文未读。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b1b9d647-defc-48b4-a4f6-4c9a9f8289ee/content",
+            "checkedAt": "2026-10-11",
+            "level": "institutional_accepted_manuscript_full_text_and_version_comparison",
+            "supports": [
+              "Griffith条目明确AM与Jun Zhou机构身份，PDF MD5吻合；12页与v1逐页文本核，无出版社排版全文声明。"
+            ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/code/ICSM.zip",
+            "checkedAt": "2026-10-11",
+            "level": "author_linked_zip_and_selected_matlab_audit",
+            "supports": [
+              "共同作者精确条目链接ICSM.zip、24项CRC/hash与15核心MATLAB阅读。",
+              "缺转换函数、数据与seed；静态发现不当真实指标复现。"
+            ]
           }
         ],
         "versions": [
@@ -66771,14 +66808,37 @@
             "updatedAt": "2018-10-28T14:35:26Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
             "year": 2018,
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。 arXiv本版本题名：Object Tracking in Hyperspectral Videos with Convolutional Features and Kernelized Correlation Filter。"
+            "relation": "v1固定12页已读；五作者与Griffith AM/ICSM正式DOI关联。正式Springer排版原文未读，未分拆为新方法。",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://arxiv.org/pdf/1810.11819v1",
+            "fullTextCheckedAt": "2026-10-11"
+          },
+          {
+            "id": "hyperspectral-video-tracking-kcf-2018-published",
+            "type": "正式记录",
+            "url": "https://doi.org/10.1007/978-3-030-04375-9_26",
+            "doi": "10.1007/978-3-030-04375-9_26",
+            "year": 2018,
+            "publishedOnline": "2018-12-08",
+            "relation": "ICSM2018/Smart Multimedia/LNCS11010:308–319正式章节书目；Springer Client Challenge，VoR正文未读。"
+          },
+          {
+            "id": "hyperspectral-video-tracking-kcf-2018-griffith-am",
+            "type": "作者接收稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b1b9d647-defc-48b4-a4f6-4c9a9f8289ee/content",
+            "doi": "10.1007/978-3-030-04375-9_26",
+            "year": 2018,
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b1b9d647-defc-48b4-a4f6-4c9a9f8289ee/content",
+            "fullTextCheckedAt": "2026-10-11",
+            "relation": "Griffith明确Accepted Manuscript；12页已读并与v1逐页文字对比，PDF字节不同、不是VoR。"
           }
         ],
         "methodFamilyId": "hyperspectral-video-kcf",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "v1/AM全文确认视频采集/跟踪任务与固定模板采样卷积+KCF方法；不把two-layer称谓当离线训练深网或三维几何。",
           "evidenceFields": [
             "title",
             "summary",
@@ -66787,15 +66847,44 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "7424bf1bba08e426562b342a8b9c193d2b5e874085c131a54b6c92f36b356b1c",
+          "evidenceDigest": "dfb438ef3c8af4b645a5d1b63995b1228d1905a79ad6a67a2b9d8ab6cabfae77",
           "sourceUrls": [
-            "https://arxiv.org/abs/1810.11819",
-            "https://arxiv.org/abs/1810.11819",
-            "https://dblp.org/rec/journals/corr/abs-1810-11819.html"
+            "https://arxiv.org/pdf/1810.11819v1",
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b1b9d647-defc-48b4-a4f6-4c9a9f8289ee/content"
           ]
         }
       },
-      "citation": "@article{hyperspectral_video_tracking_kcf_2018,\n  title = {Object tracking in hyperspectral videos with convolutional features and kernelized correlation filter},\n  author = {Xiao Bai and Jun Zhou and Antonio Robles-Kelly},\n  year = {2018}\n}\n"
+      "citation": "@inproceedings{hyperspectral_video_tracking_kcf_2018,\n  title = {Object Tracking in Hyperspectral Videos with Convolutional Features and Kernelized Correlation Filter},\n  author = {Kun Qian and Jun Zhou and Fengchao Xiong and Huixin Zhou and Juan Du},\n  booktitle = {Smart Multimedia},\n  series = {Lecture Notes in Computer Science},\n  volume = {11010},\n  pages = {308--319},\n  year = {2018},\n  doi = {10.1007/978-3-030-04375-9_26}\n}\n",
+      "doi": "10.1007/978-3-030-04375-9_26",
+      "code": "https://www.xiongfuli.com/cv/code/ICSM.zip",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1810.11819v1",
+          "figureLabel": "Figure 1 (arXiv v1)",
+          "caption": "首帧局部谱空块作为固定卷积核，对目标和背景块生成响应，区分外观相似区域。",
+          "verificationNote": "人工查看arXiv1810.11819v1第3页Fig1并以300dpi原图裁取，保留全部箭头、目标/背景块和标签，无重绘。图号来源限定预印本，不当Springer VoR同号已核；第三维为光谱。arXiv该页Rights入口CC0，其他载荷权利另留。",
+          "path": "figures/hyperspectral-video-tracking-kcf-2018/framework-arxiv-v1-fig1.png",
+          "width": 1490,
+          "height": 870,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "2d940723da4f3cddf3b48e5fdf628424a7d0436c4ca41c380fdcd1cf2bdc9a6b",
+          "attribution": "Kun Qian, Jun Zhou, Fengchao Xiong, Huixin Zhou, Juan Du · arXiv 1810.11819v1 (2018)"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1810.11819v1",
+          "figureLabel": "Figure 2 (arXiv v1)",
+          "caption": "十个固定模板卷积核的响应堆叠为KCF多通道表示；原图展示目标及背景响应差异。",
+          "verificationNote": "人工查看arXiv1810.11819v1第4页Fig2并以300dpi原图裁取，保留全部箭头、目标/背景块和标签，无重绘。图号来源限定预印本，不当Springer VoR同号已核；第三维为光谱。arXiv该页Rights入口CC0，其他载荷权利另留。",
+          "path": "figures/hyperspectral-video-tracking-kcf-2018/framework-arxiv-v1-fig2.png",
+          "width": 1490,
+          "height": 1040,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "4bd082751d10bdee02955531eca893e0278e5cbfb054ffb616e3b21c5d3b8739",
+          "attribution": "Kun Qian, Jun Zhou, Fengchao Xiong, Huixin Zhou, Juan Du · arXiv 1810.11819v1 (2018)"
+        }
+      ]
     },
     {
       "id": "superpixel-ntf-unmixing-igarss-2018",
@@ -86338,13 +86427,39 @@
       "createdAt": "2026-10-11",
       "rationale": "MHT固定v5全文明确材料/SSHMG特征与BACF相关滤波为核心跟踪机制，现有类别无此方法边界。",
       "evidencePaperIds": [
-        "material-object-tracking-hsi-tip-2020"
+        "material-object-tracking-hsi-tip-2020",
+        "hyperspectral-video-tracking-kcf-2018"
       ],
       "history": [
         {
           "date": "2026-10-11",
           "action": "created",
           "reason": "按已读MHT全文创建方法边界，只关联本篇，不批量套到未读跟踪论文。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "按CNHT原文补实际KCF方法，仅同步本篇关联。"
+        }
+      ]
+    },
+    {
+      "id": "template-sampled-convolutional-features",
+      "name": "模板采样卷积特征",
+      "dimension": "method",
+      "definition": "从初始目标附近的空间—光谱模板块采样固定卷积核，堆叠响应构建多通道表示；区分无需离线梯度训练的特征提取与后续在线跟踪模型学习，注明采样及归一规则。",
+      "status": "confirmed",
+      "color": "#88a995",
+      "createdAt": "2026-10-11",
+      "rationale": "CNHT v1/AM正文和作者代码直接支持固定采样核而非稀疏训练CNN；现有无监督稀疏卷积类不符，单列方法边界。",
+      "evidencePaperIds": [
+        "hyperspectral-video-tracking-kcf-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "据CNHT已读原文与代码创建，仅关联本篇。"
         }
       ]
     }

@@ -21,7 +21,7 @@
 
 用户要求继续完成论文调研，不需要新增学习笔记。当前重点是来源查漏、作者身份、光谱输入、正式书目与版本关系；全文、代码及性能复现的阅读状态另行记录，不以笔记数量衡量目录完成。
 
-当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；173条摘要级、15条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
+当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；172条摘要级、16条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
 
 本轮补入EAAHNet：出版社作者登记、原文首页均确认Jun Zhou属于Griffith；保留DBLP同名0011分配差异，避免错误排除。原文IV-A明确Potsdam红/绿/近红外输入，归多光谱关联；Vaihingen写RGB，实际数据版本和实现仍待核。ComicLib正式节目确认Griffith身份，漫画草图任务按范围暂排，未标全文核验。
 
@@ -575,3 +575,22 @@ Fig5 MHT DP/AUC .878/.612，SSHMG .860/.593，BHOG .851/.585，HOG .835/.589，�
 HOT2020官网有两套数据入口及Evaluation.zip/X2Cube.zip/HyperTools.py。本轮只取得公共工具、核完整CRC及关键源，不取完整视频。MATLAB评测DP严格<阈值、IoU≥阈值，AUC为.02:.02:1的均值，NaN剔除改变分母，注释中心输入与实际xywh转换不同。当前Python helper在NumPy2.5.1合成数组探针：VIS4×4/16转换通过独立reshape对照；NIR5×5/25因输出固定//4报ValueError；np.float导致compile_results报AttributeError；相同x/y=0框success AUC0、正坐标完美框AUC1。仅AST中原函数定义在隔离NumPy空间执行，省略未使用pandas导入，原文件未修改；这不是MHT运行或真实标注有零坐标/指标错误证明。当前工具不自动转作2019实际实现。
 
 保存v5第3页Figure2与第4页Figure3完整原方法裁图，无重绘；图号明确版本。15份原始响应（13个200、202空与418各一）及5份派生全文/表/源码/工具审计，不新增学习笔记。补必要“相关滤波跟踪”方法标签和既有纹理/给定谱库稀疏回归，仅迁移本篇。当前757总库、188作者（173摘要/15全文级）、214三维、305标签（任务100/方法182/应用23）、343原图；395分类确认（审计341）、343暂定、19待。531arXiv及八待核、旧来源映射批次不改，两个既有survey候选只追加v5全文续核。作者全集与全领域顶会顶刊/arXiv覆盖仍未完成。证据见 [MHT v5全文、协议与作者实现审计](sources/jun-zhou-mht-v5-full-reading-2026-10-11.json)。
+
+
+## CNHT v1与接收稿全文、书目纠错及实现续核（2026-10-11）
+
+既有高光谱视频KCF条目通读arXiv1810.11819v1全部12页，含式1–8、两表18行、图1–6图注/结果图例及18参考条目；所引作品未逐篇读。首页明确Kun Qian、Jun Zhou、Fengchao Xiong、Huixin Zhou、Juan Du五作者，Jun Zhou为Griffith；原目录Xiao Bai/Jun Zhou/Antonio Robles-Kelly错误更正，不能把参考1作者当本文作者。Crossref精确DOI、Griffith机构作者与共同作者主页确认正式会议为ICSM2018，不是ICIP，Smart Multimedia/LNCS11010:308–319，DOI10.1007/978-3-030-04375-9_26，在线2018-12-08。旧ORCID/DBLP/arXiv决定和快照保留，新增书目续核，不新增论文。
+
+Griffith明确Accepted Manuscript，取得12页PDF，MD5与原记录吻合。逐页对比：第2–12页文字提取字符完全相同，首页去掉精确arXiv侧标后只差空白；两PDF整体字节不同，未推图片/字体/对象完全一致。AM全文已读，Springer章节页面与PDF入口均HTTP200但实际Client Challenge HTML，未取得VoR；不能因页数/文字一致而标正式排版全文已读。arXiv当前只有v1，提交2018-10-28；页面Rights入口指向CC0，Griffith另列Springer版权，预印本、正式版、代码和数据权利不合并。
+
+实验只有apple/deer/people三场景，分别Gray/RGB/HSI，共九序列而非九独立场景。HSI/灰度182/114/641帧合937，512×272；RGB422/230/676帧合1328，原表写1980×1080。HSI30FPS，Gray为490nm单带，与HSI同帧数/内容/位置；RGB用旁置NikonD600，视点、长度和分辨率不同，不是仅光谱信息量变化的控制实验。引言14波段/470–620nm，§3.1写原16/460–630nm，经校准Photonfocus14或Ximea11；表1三HSI均14，11通道实际实验及删带/校准载荷待核。不能套用MHT35组或HOTC2020的40/35协议。
+
+CNHT从首帧局部空间×空间×谱块随机选固定卷积核，实验10个6×6×14，响应堆叠为多通道Gaussian KCF，核岭回归/FFT峰值定位并在线更新相关滤波器。本文称两层CNN，所述实际是卷积和堆叠，无离线大数据梯度训练；不是学习的端到端材料网络，第三维不是场景几何。d在波段数与核数重用，14与10分别保留。式6/8印刷的交叉项在−1/σ²括号外且未显式复共轭，代码另有conj、通道求和、全距离缩放/标准化与max(0)，不静默修正原式或称已独立证明正确。
+
+MATLAB/i7-7700HQ2.8GHz/32GB；首帧GT初框，base sample原文0.2–3倍初目标，比较方法改搜索域（STC例6倍），余承KCF。表2为中心距离DP@20px，不是分类准确率或IoU AUC：CNHT98.2%/1FPS，CNTGray92.7%/0.5FPS、KCFGray53.6%/278FPS。绝对提升5.5/44.6百分点，正文83%可由相对KCF83.21%解释，非83百分点；1FPS低于采集30FPS。未给多随机seed、置信区间、平均权重或外场景泛化；精度与速度是作者报告，未运行复现。正文DLT[8]/CNT[17]/STC[7]分别指错作品，参考实际8=STC、17=DLT、7=CNT；参考11/13重复，18条不等于18不同作品。
+
+共同作者精确条目链接ICSM.zip，24项/CRC与逐成员SHA256已核：22 MATLAB、2 MEX。15核心MATLAB完整读取，其余未通读，不当全部源码或MEX审计。默认gaussian/cnn、lambda1e−4/sigma.5/interp.075/output_sigma_factor.1/cell_size1/padding3，实际window为target×(1+padding)。首帧全图最大值归一，select_fliter每核独立randperm(20,1)作相同正x/y偏移，无目标框约束/越界保护或rng，也可能重复采样，不是无放回选十不同块。cn用same三维卷积后仅取h(:,:,1)，演示main另用valid；get_features除255/减全局mean，cosine应用代码已注释，核固定、KCF模型EMA更新。谱边界取片/滤波归一与论文差异分别记录。
+
+包缺tracker所需X2Cube和main所需X2Cube2，也没有论文视频/标注；不挪用MHT16带或当前官网转换器填历史14带实现。Demo只有ball/basketball、Windows Updated Dataset路径，非三场景入口；loader假设HSI目录/四位PNG。单视频返回positions/ground_truth/fps，choose/all仍当precision/fps接收，precision计算已注释、all还加入Jogging，不构成论文汇总入口。评测helper分别用DP<20与≤20，并删NaN/截短，默认均未调用；表2实际边界/聚合待。大目标半尺度分支的图像resize被注释，但表中HSI初框均未触发该条件，不能据静态代码说论文HSI实测错误。计时排除读图/转换/归一/显示及循环前采样；download_videos是普通OTB50，不证明三HSI数据可得。无MATLAB/Octave或实际跟踪，总代码无LICENSE，Henriques归属/Piotr BSD第三方声明分别留待。
+
+保存v1第3页Fig1和第4页Fig2完整原裁图，未重绘。13原始响应、5派生全文/版本比对/表/源码审计；不新增学习笔记。补“模板采样卷积特征”方法与既有相关滤波，仅本篇关联。当前757总库、188作者（172摘要/16全文级）、214三维、306标签（任务100/方法183/应用23）、345原图；395分类确认（审计342）、343暂定、19待。两个既有survey候选追加全文及书目续核，531arXiv历史决定与八pending不变。作者全集及全领域顶会顶刊/arXiv尚未完成。见 [CNHT全文、书目纠错、版本及代码审计](sources/jun-zhou-cnht-v1-full-reading-2026-10-11.json)。
