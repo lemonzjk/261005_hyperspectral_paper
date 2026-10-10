@@ -1036,3 +1036,9 @@ RADC首页Jun Zhou为清华深圳国际研究生院，实验含EuroSAT但实际�
 UEMM原稿图2的六模态与采集段infrared/depth表述矛盾；论文链接的当前采集代码调用AirSim Infrared，但官方文档指对象ID灰度映射，不能证明真实红外波段。目标Griffith作者身份有首页及作者仓库个人页支持；正式ACM版、发布数据及采集时模拟器版本未核。因此旧题名排除重开为pending，并同步ORCID/DBLP/Scholar/Griffith及survey，非新增论文。仓库树160项未截断、选读文件blob匹配；HF仅根目录/README，不称数据全分页或复现。
 
 当前累计250条逐审，531交叉表为24匹配/32继承/4既有同名/234摘要暂排/4局部暂排/2整名不符/10待/221未审。ORCID128入/10重/124排/1重开待，DBLP355决定/10待，Scholar188排/8重/4入/9待；待核有重叠。757目录、188作者、214三维、303标签、334原图不变。新原稿页渲染仅为范围来源证据。作者专项与全领域场所/全文覆盖继续推进，非全集完成。见 [第三批逐项证据](sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json)、[UEMM重开审计](sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
+
+### UEMM实际发布标注与VITask输入续核（2026-10-11）
+
+两条既有pending补原始证据，不新增目录、不改变范围决定。UEMM固定HF修订递归树15项/11文件与siblings一致、无后续页；未列像素，Baidu多模态图像未取得。检测test.zip完整下载且LFS哈希吻合，自动解析9,698 XML全部登记1920×1080×3/SceneImage；三通道只是标注字段，不证明像素/全部模态。作者补充材料列RGB、深度、分割、法向、IMU；正式ACM PDF403/HTML，机构五条待审记录无ORIGINAL，因此保留正式版/图像/采集版本缺口。
+
+VITask指定数据段续读，官方MedMNIST定义确认12个2D数据集为4 RGB/8灰度，TissueMNIST的7层为切片而非波段。IDRiD彩色眼底与MESSIDOR 3CCD官方说明已核；APTOS原稿引文/来源版本仍待，官方比赛页200仅JS壳。作者代码树仅README承诺接收后公开，实际转换未核。不把标准数据定义当已重现论文数组，不标全文或同名身份结论。当前188作者/757总库、arXiv221未审/10待及其他范围待核计数均不变。见 [输入续核审计](sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json)。

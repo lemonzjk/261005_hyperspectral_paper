@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：调研论文，不增笔记。周峻188条（HSI181/关联7，含1摘要），179摘要级/9全文级。ORCID263组现128入10重124排1重开待；DBLP365为355决定/10待；Scholar209为188排8重4入9待；CV3未确认发表。arXiv带引号查询531全分页，含非精确姓名/分词异常：24匹配、32继承、4既有同名、234摘要暂排、4局部暂排、2整名不符、10范围/身份待、221未审；250条逐审非全文全量。UEMM原稿模态矛盾，代码Infrared为模拟器接口、官方文档为对象ID灰度；正式版/数据/采集版本待核，旧排除重开。4同名光谱稿留全领域；三同名仓库仅README。继续来源待核与arXiv；见jun-zhou.md。
+- 作者优先：调研论文，不增笔记。周峻188条（HSI181/关联7，含1摘要），179摘要级/9全文级。ORCID263组现128入10重124排1重开待；DBLP365为355决定/10待；Scholar209为188排8重4入9待；CV3未确认发表。arXiv带引号查询531全分页，含非精确姓名/分词异常：24匹配、32继承、4既有同名、234摘要暂排、4局部暂排、2整名不符、10范围/身份待、221未审；250条逐审非全文全量。UEMM PDF403；HF11文件无像素，XML登记3通道；原图/版本待。VITask标准数据4RGB/8灰，APTOS/代码待。4同名光谱稿留全领域；三同名仓库仅README。继续来源待核与arXiv；见jun-zhou.md。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。

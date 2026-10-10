@@ -7547,7 +7547,7 @@
       "year": 2026,
       "keywordGroup": "author-arxiv-difference",
       "date": "2026-10-10",
-      "method": "官方Atom带引号作者查询三页快照；ID/DOI/题名交叉映射、指定原稿机构核验；原未审队列前50条完整摘要逐项审查。 第二批100条逐审、8篇官方固定版本PDF的机构/数据段局部核验。 第三批100逐审、4原稿输入局部；UEMM旧正式记录重开待核。",
+      "method": "官方Atom带引号作者查询三页快照；ID/DOI/题名交叉映射、指定原稿机构核验；原未审队列前50条完整摘要逐项审查。 第二批100条逐审、8篇官方固定版本PDF的机构/数据段局部核验。 第三批100逐审、4原稿输入局部；UEMM旧正式记录重开待核。 UEMM固定修订HF递归清单/检测ZIP标注及VITask官方数据通道续核；范围待核未变。",
       "keywords": [
         "au:\"Jun_Zhou\"",
         "题名/摘要：hyperspectral、multispectral、spectral imaging、unmixing、spectral-spatial、imaging spectrometer"
@@ -7564,7 +7564,8 @@
         "24目录匹配/32继承/4既有同名不等于全文复审；累计250逐审：234摘要暂排、4局部暂排、2整名不符、10范围/身份待；余221未审。",
         "查询521条有独立规范化整名字段、10条非精确姓名/简写/分词异常；这些字段均不自动证明目标身份。姓名变体尚未完整覆盖。",
         "指定光谱词25命中23匹配/2护理学院同名；无关键词不自动排除。RADC、TEAMS及第二批UltraVR、医学FM综述、EVLF-FM、Mamba Snake、MerMED-FM、AdvMIM的实际输入/目标身份仍待核。 第三批VITask光学输入与UEMM正式版/发布数据/采集版本待核；UEMM目标身份有原稿及作者个人页支持。",
-        "既有4同名光谱关联稿留全领域队列；正式版本、扩展与同名方法关系仍需核验。"
+        "既有4同名光谱关联稿留全领域队列；正式版本、扩展与同名方法关系仍需核验。",
+        "UEMM当前HF11文件无像素，检测9698XML的depth=3只是标注；正式版/Baidu原图仍待。VITask MedMNIST通道已核标准定义，外部APTOS版本与实际转换仍待。"
       ]
     }
   ],
@@ -22397,7 +22398,12 @@
       "reason": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
       "verifiedAt": "2026-10-11",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json",
-      "previousDecision": "excluded"
+      "previousDecision": "excluded",
+      "latestScopeFinding": "固定HF修订590d7a7a93454f7a558141684a8931b87977c420递归清单15项（11文件/4目录），与info siblings一致且无下一页；未列像素文件。检测test.zip的LFS SHA256吻合，9698份XML均登记1920×1080×3，属于标注字段、不是像素核验。作者Supplementary只说明RGB/深度/分割/法向/IMU，与原稿infrared表述仍有差异。正式ACM PDF403、机构无ORIGINAL；保留范围pending，继续Baidu原图、正式版与采集时模拟器。",
+      "latestFollowupAt": "2026-10-11",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json"
+      ]
     },
     {
       "title": "CoPISan: Contrastive Perceptual Inference and Sanity Checks for Concept-Based CNN Explanations",
@@ -29880,7 +29886,12 @@
       "decision": "pending",
       "decisionDetail": "pending_primary_scope_identity",
       "reason": "VITask第7/8页与附录A.1/A.2列12个MedMNIST2D数据集和9种模态，含病理、皮肤镜、眼底及非光学CT/X射线/超声等；实际各光学数据版本/输入通道及目标身份仍待核。",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json",
+      "latestScopeFinding": "MedMNIST官方定义的12个2D数据集为4个RGB三通道、8个灰度单通道；TissueMNIST原始7层为切片并取最大投影，不是7光谱波段。IDRiD官方说明彩色眼底，MESSIDOR官方说明3CCD彩色/每颜色平面8bit。VITask原稿外部APTOS列项引用Decencière2014，具体版本和输入仍待核；官方比赛页200仅JS标题壳。论文所链代码仓库仅README承诺接收后公开，无实际转换/训练实现。身份仍只有A*STAR机构信息，不单凭机构断言另一同名；整体保留pending。",
+      "latestFollowupAt": "2026-10-11",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json"
+      ]
     },
     {
       "title": "Koopman Spectral Analysis from Noisy Measurements based on Bayesian Learning and Kalman Smoothing",
@@ -30368,7 +30379,12 @@
       "decision": "pending",
       "decisionDetail": "pending_primary_scope_identity",
       "reason": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json",
+      "latestScopeFinding": "固定HF修订590d7a7a93454f7a558141684a8931b87977c420递归清单15项（11文件/4目录），与info siblings一致且无下一页；未列像素文件。检测test.zip的LFS SHA256吻合，9698份XML均登记1920×1080×3，属于标注字段、不是像素核验。作者Supplementary只说明RGB/深度/分割/法向/IMU，与原稿infrared表述仍有差异。正式ACM PDF403、机构无ORIGINAL；保留范围pending，继续Baidu原图、正式版与采集时模拟器。",
+      "latestFollowupAt": "2026-10-11",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json"
+      ]
     },
     {
       "title": "Using Modularized Pin Ridge Filter in Proton FLASH Planning for Liver Stereotactic Ablative Body Radiotherapy",
@@ -34837,6 +34853,27 @@
         "正式版、发布数据、完整正文及作者/全领域覆盖仍待核；不声明全集完成。"
       ],
       "sourceSnapshot": "sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json"
+    },
+    {
+      "id": "jun-zhou-uemmair-vitask-input-followup-2026-10-11",
+      "date": "2026-10-11",
+      "searchIds": [
+        "jun-zhou-arxiv-author-inventory-2026-10-10"
+      ],
+      "new": 0,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 0,
+      "existingPendingReviewed": 2,
+      "repositoryFileInventoriesRechecked": 5,
+      "categoriesAdded": 0,
+      "figuresAdded": 0,
+      "readingBoundary": "两条原稿/数据输入续核；UEMM补充材料、固定HF树和XML schema，VITask指定页与官方数据定义。没有阅读全文或打开全部像素。",
+      "sourceSnapshot": "sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json",
+      "gaps": [
+        "正式ACM403/Baidu图像、VITask外部APTOS与实际代码仍待；全部原pending保留，221 arXiv仍未审。"
+      ]
     }
   ],
   "gaps": [

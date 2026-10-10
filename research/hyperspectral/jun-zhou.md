@@ -408,3 +408,19 @@ UEMM作者仓库链接AirNavigation采集程序和Hugging Face数据。完整采
 正式ACM七页原文、实际发布数据包及采集时AirSim版本仍未核。因此重开旧题名排除，并同步全部当前来源决定及survey候选；历史已提交批次不改成曾阅读全文。Hugging Face仅根目录响应与README，不称递归数据目录完整；README元数据apache-2.0与正文/作者仓库CC-BY-NC4.0不一致，保留原文，不统一改写。详情见 [UEMM重开审计](sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json)。
 
 当前531交叉表：24目录匹配、32继承、4既有同名、234摘要暂排、4局部暂排、2整名不符、10范围/身份待、221未审；250条新增逐审累计，不把映射当新阅读。ORCID263组为128入/10重/124排/1待，DBLP365为355决定/10待，Scholar209为188排/8重/4入/9待；UEMM在这些待核集合中重叠。目录757、作者188、三维214、标签303及原图334不变。继续作者来源与输入/正式版本缺口，尚未完成全部作者或全领域调研。
+
+## UEMM发布标注与VITask通道续核（2026-10-11）
+
+本轮不新增目录或范围排除；两条既有待核取得更明确的输入证据，继续保留pending。证据见 [输入续核审计](sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json)。
+
+UEMM-Air正式ACM PDF本次返回403/HTML，未取得原文。Griffith的UEMM、FDNet、DDFNet、GPINet和SAPNet公开bundle清单均完整返回一页，但只有LICENSE或SWORD，无ORIGINAL；不把这类文件当全文，也不将访问受限当范围排除。作者仓库Supplementary.md与上轮树的Git blob一致，采集段只列RGB、深度、分割、法向及IMU；Related Works列Drone-Vehicle/HIT-UAV/RTDOD，不把其他数据集的红外任务移作本稿实际实验输入。
+
+Hugging Face固定修订`590d7a7a93454f7a558141684a8931b87977c420`递归树共15项（4目录、11文件），文件集合与info端点siblings一致、无下一页。该修订未列像素文件；多模态图像另链接Baidu，尚未取得。实际目录`Referring Segmentation`含空格，首次错误路径404与纠正后200分别留证。
+
+完整下载Object_Detection/test.zip并核对LFS SHA256：9,699个成员中1个目录、9,698个XML，全部XML的folder均为SceneImage、size均登记1920×1080×3，解析无错误。这个三通道值是标注元数据，不是打开图像后的像素核验。保存自动schema统计与三份原始XML样例；不执行文件、不标已读全部标注/发布数据。正式版、Baidu图像以及采集时AirSim实现仍待，UEMM目标作者身份保持已获原稿/个人页支持。
+
+VITask原稿第8/10页数据与外部验证、第15/16页附录继续选读。MedMNIST官方定义的12个2D数据集为4个RGB三通道（Path/Derma/Retina/Blood）、8个单通道灰度；TissueMNIST原始32×32×7中的7是切片，标准数据取最大投影为单通道，不能当7光谱波段。本次只核标准定义及论文声明的数据集关系，没有下载本实验数组或运行训练。
+
+IDRiD官方数据说明确认彩色眼底；MESSIDOR官方说明3CCD彩色成像、每颜色平面8bit。VITask原稿APTOS条目却使用Decencière2014引文，具体来源/版本仍需核对；所查APTOS2019官方比赛页虽200但只有JS标题壳，不当数据说明。论文链接的baiyang4/VITask完整树当前仅README，写接收后公开代码，尚无实际转换/训练实现；不将论文“代码可用”措辞当已取得实现。整体仍pending，机构差异亦不单独证明另一同名作者。
+
+作者目录188、总库757及全部当前范围计数保持上节状态。优先核剩余遥感输入、UEMM正式版/原图和VITask外部版本，继续221条arXiv未审；作者专项与全领域任务尚未完成。

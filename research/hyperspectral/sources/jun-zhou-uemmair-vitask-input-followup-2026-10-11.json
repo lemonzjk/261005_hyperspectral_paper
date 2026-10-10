@@ -1,0 +1,451 @@
+{
+  "checkedAt": "2026-10-11",
+  "scope": "两条既有arXiv待核的输入证据续接及5个Griffith待审项公开文件清单复查；不新增目录、不改变范围决定。",
+  "decisionsChanged": 0,
+  "existingPendingReviewed": 2,
+  "records": [
+    {
+      "arxivId": "2406.06230",
+      "versionRead": "v3",
+      "formalDoi": "10.1145/3746027.3758220",
+      "decision": "pending_primary_scope_identity",
+      "targetIdentity": "原稿首页和作者仓库个人页已支持Griffith周峻，待核是输入/版本范围。",
+      "finding": "固定HF修订590d7a7a93454f7a558141684a8931b87977c420递归清单15项（11文件/4目录），与info siblings一致且无下一页；未列像素文件。检测test.zip的LFS SHA256吻合，9698份XML均登记1920×1080×3，属于标注字段、不是像素核验。作者Supplementary只说明RGB/深度/分割/法向/IMU，与原稿infrared表述仍有差异。正式ACM PDF403、机构无ORIGINAL；保留范围pending，继续Baidu原图、正式版与采集时模拟器。",
+      "supplementaryGitBlob": "1d0cfa964858f3a93fb5215130d80ad8375df0ee",
+      "hfRevision": "590d7a7a93454f7a558141684a8931b87977c420",
+      "hfRecursiveEntries": 15,
+      "hfFileCount": 11,
+      "hfPaginationCompleteForRevision": true,
+      "next": [
+        "Baidu多模态图像像素与光学响应",
+        "正式ACM版采集说明",
+        "采集时AirSim实现/提交及是否有真实IR响应"
+      ],
+      "annotationSamples": [
+        {
+          "sourceArchiveMember": "test/Scene100004_5_40_VRGame.xml",
+          "file": "jun-zhou-input-followup4-uemmair-xml-sample-0-2026-10-11.xml",
+          "zeroBasedFilePosition": 0,
+          "method": "按XML原序首条、中间条和末条原字节保存；不以三样例证明全部像素通道。"
+        },
+        {
+          "sourceArchiveMember": "test/Scene45439_15_90_CityPark.xml",
+          "file": "jun-zhou-input-followup4-uemmair-xml-sample-4849-2026-10-11.xml",
+          "zeroBasedFilePosition": 4849,
+          "method": "按XML原序首条、中间条和末条原字节保存；不以三样例证明全部像素通道。"
+        },
+        {
+          "sourceArchiveMember": "test/Scene99993_35_80_VRGame.xml",
+          "file": "jun-zhou-input-followup4-uemmair-xml-sample-9697-2026-10-11.xml",
+          "zeroBasedFilePosition": 9697,
+          "method": "按XML原序首条、中间条和末条原字节保存；不以三样例证明全部像素通道。"
+        }
+      ]
+    },
+    {
+      "arxivId": "2410.06456",
+      "versionRead": "v1",
+      "decision": "pending_primary_scope_identity",
+      "finding": "MedMNIST官方定义的12个2D数据集为4个RGB三通道、8个灰度单通道；TissueMNIST原始7层为切片并取最大投影，不是7光谱波段。IDRiD官方说明彩色眼底，MESSIDOR官方说明3CCD彩色/每颜色平面8bit。VITask原稿外部APTOS列项引用Decencière2014，具体版本和输入仍待核；官方比赛页200仅JS标题壳。论文所链代码仓库仅README承诺接收后公开，无实际转换/训练实现。身份仍只有A*STAR机构信息，不单凭机构断言另一同名；整体保留pending。",
+      "medmnist2DChannels": [
+        {
+          "name": "pathmnist",
+          "pythonClass": "PathMNIST",
+          "nChannels": 3,
+          "description": "The PathMNIST is based on a prior study for predicting survival from colorectal cancer histology slides, providing a dataset (NCT-CRC-HE-100K) of 100,000 non-overlapping image patches from hematoxylin & eosin stained histological images, and a test dataset (CRC-VAL-HE-7K) of 7,180 image patches from a different clinical center. The dataset is comprised of 9 types of tissues, resulting in a multi-class classification task. We resize the source images of 3×224×224 into 3×28×28, and split NCT-CRC-HE-100K into training and validation set with a ratio of 9:1. The CRC-VAL-HE-7K is treated as the test set.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/pathmnist.npz?download=1"
+        },
+        {
+          "name": "chestmnist",
+          "pythonClass": "ChestMNIST",
+          "nChannels": 1,
+          "description": "The ChestMNIST is based on the NIH-ChestXray14 dataset, a dataset comprising 112,120 frontal-view X-Ray images of 30,805 unique patients with the text-mined 14 disease labels, which could be formulized as a multi-label binary-class classification task. We use the official data split, and resize the source images of 1×1024×1024 into 1×28×28.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/chestmnist.npz?download=1"
+        },
+        {
+          "name": "dermamnist",
+          "pythonClass": "DermaMNIST",
+          "nChannels": 3,
+          "description": "The DermaMNIST is based on the HAM10000, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. The dataset consists of 10,015 dermatoscopic images categorized as 7 different diseases, formulized as a multi-class classification task. We split the images into training, validation and test set with a ratio of 7:1:2. The source images of 3×600×450 are resized into 3×28×28.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/dermamnist.npz?download=1"
+        },
+        {
+          "name": "octmnist",
+          "pythonClass": "OCTMNIST",
+          "nChannels": 1,
+          "description": "The OCTMNIST is based on a prior dataset of 109,309 valid optical coherence tomography (OCT) images for retinal diseases. The dataset is comprised of 4 diagnosis categories, leading to a multi-class classification task. We split the source training set with a ratio of 9:1 into training and validation set, and use its source validation set as the test set. The source images are gray-scale, and their sizes are (384−1,536)×(277−512). We center-crop the images and resize them into 1×28×28.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/octmnist.npz?download=1"
+        },
+        {
+          "name": "pneumoniamnist",
+          "pythonClass": "PneumoniaMNIST",
+          "nChannels": 1,
+          "description": "The PneumoniaMNIST is based on a prior dataset of 5,856 pediatric chest X-Ray images. The task is binary-class classification of pneumonia against normal. We split the source training set with a ratio of 9:1 into training and validation set and use its source validation set as the test set. The source images are gray-scale, and their sizes are (384−2,916)×(127−2,713). We center-crop the images and resize them into 1×28×28.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/pneumoniamnist.npz?download=1"
+        },
+        {
+          "name": "retinamnist",
+          "pythonClass": "RetinaMNIST",
+          "nChannels": 3,
+          "description": "The RetinaMNIST is based on the DeepDRiD challenge, which provides a dataset of 1,600 retina fundus images. The task is ordinal regression for 5-level grading of diabetic retinopathy severity. We split the source training set with a ratio of 9:1 into training and validation set, and use the source validation set as the test set. The source images of 3×1,736×1,824 are center-cropped and resized into 3×28×28.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/retinamnist.npz?download=1"
+        },
+        {
+          "name": "breastmnist",
+          "pythonClass": "BreastMNIST",
+          "nChannels": 1,
+          "description": "The BreastMNIST is based on a dataset of 780 breast ultrasound images. It is categorized into 3 classes: normal, benign, and malignant. As we use low-resolution images, we simplify the task into binary classification by combining normal and benign as positive and classifying them against malignant as negative. We split the source dataset with a ratio of 7:1:2 into training, validation and test set. The source images of 1×500×500 are resized into 1×28×28.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/breastmnist.npz?download=1"
+        },
+        {
+          "name": "bloodmnist",
+          "pythonClass": "BloodMNIST",
+          "nChannels": 3,
+          "description": "The BloodMNIST is based on a dataset of individual normal cells, captured from individuals without infection, hematologic or oncologic disease and free of any pharmacologic treatment at the moment of blood collection. It contains a total of 17,092 images and is organized into 8 classes. We split the source dataset with a ratio of 7:1:2 into training, validation and test set. The source images with resolution 3×360×363 pixels are center-cropped into 3×200×200, and then resized into 3×28×28.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/bloodmnist.npz?download=1"
+        },
+        {
+          "name": "tissuemnist",
+          "pythonClass": "TissueMNIST",
+          "nChannels": 1,
+          "description": "We use the BBBC051, available from the Broad Bioimage Benchmark Collection. The dataset contains 236,386 human kidney cortex cells, segmented from 3 reference tissue specimens and organized into 8 categories. We split the source dataset with a ratio of 7:1:2 into training, validation and test set. Each gray-scale image is 32×32×7 pixels, where 7 denotes 7 slices. We take maximum values across the slices and resize them into 28×28 gray-scale images.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/tissuemnist.npz?download=1"
+        },
+        {
+          "name": "organamnist",
+          "pythonClass": "OrganAMNIST",
+          "nChannels": 1,
+          "description": "The OrganAMNIST is based on 3D computed tomography (CT) images from Liver Tumor Segmentation Benchmark (LiTS). It is renamed from OrganMNIST_Axial (in MedMNIST v1) for simplicity. We use bounding-box annotations of 11 body organs from another study to obtain the organ labels. Hounsfield-Unit (HU) of the 3D images are transformed into gray-scale with an abdominal window. We crop 2D images from the center slices of the 3D bounding boxes in axial views (planes). The images are resized into 1×28×28 to perform multi-class classification of 11 body organs. 115 and 16 CT scans from the source training set are used as training and validation set, respectively. The 70 CT scans from the source test set are treated as the test set.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/organamnist.npz?download=1"
+        },
+        {
+          "name": "organcmnist",
+          "pythonClass": "OrganCMNIST",
+          "nChannels": 1,
+          "description": "The OrganCMNIST is based on 3D computed tomography (CT) images from Liver Tumor Segmentation Benchmark (LiTS). It is renamed from OrganMNIST_Coronal (in MedMNIST v1) for simplicity. We use bounding-box annotations of 11 body organs from another study to obtain the organ labels. Hounsfield-Unit (HU) of the 3D images are transformed into gray-scale with an abdominal window. We crop 2D images from the center slices of the 3D bounding boxes in coronal views (planes). The images are resized into 1×28×28 to perform multi-class classification of 11 body organs. 115 and 16 CT scans from the source training set are used as training and validation set, respectively. The 70 CT scans from the source test set are treated as the test set.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/organcmnist.npz?download=1"
+        },
+        {
+          "name": "organsmnist",
+          "pythonClass": "OrganSMNIST",
+          "nChannels": 1,
+          "description": "The OrganSMNIST is based on 3D computed tomography (CT) images from Liver Tumor Segmentation Benchmark (LiTS). It is renamed from OrganMNIST_Sagittal (in MedMNIST v1) for simplicity. We use bounding-box annotations of 11 body organs from another study to obtain the organ labels. Hounsfield-Unit (HU) of the 3D images are transformed into gray-scale with an abdominal window. We crop 2D images from the center slices of the 3D bounding boxes in sagittal views (planes). The images are resized into 1×28×28 to perform multi-class classification of 11 body organs. 115 and 16 CT scans from the source training set are used as training and validation set, respectively. The 70 CT scans from the source test set are treated as the test set.",
+          "sourceUrl": "https://zenodo.org/records/10519652/files/organsmnist.npz?download=1"
+        }
+      ],
+      "versionBoundary": "核当前官方标准定义和原稿声明的数据集关系；未下载本文实际训练/测试数组，不宣称2024实验像素或具体包版本已重现。",
+      "next": [
+        "原稿APTOS的精确来源/版本与输入",
+        "论文实际图像转换实现",
+        "需要时以独立作者标识补核身份"
+      ]
+    }
+  ],
+  "griffithBundleRecheck": [
+    {
+      "name": "uemmair",
+      "uuid": "4053471d-9e51-4d3b-bb98-39ab271665b4",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/4053471d-9e51-4d3b-bb98-39ab271665b4/bundles?size=100",
+      "httpStatus": 200,
+      "bundleNames": [
+        "LICENSE",
+        "LICENSE"
+      ],
+      "pagination": {
+        "number": 0,
+        "size": 100,
+        "totalPages": 1,
+        "totalElements": 2
+      },
+      "finding": "本次公开bundle清单无ORIGINAL；LICENSE/SWORD不作论文全文证据。"
+    },
+    {
+      "name": "fdnet",
+      "uuid": "fb86931d-78ce-4b11-9049-e6c672d2a7cc",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/fb86931d-78ce-4b11-9049-e6c672d2a7cc/bundles?size=100",
+      "httpStatus": 200,
+      "bundleNames": [
+        "LICENSE",
+        "LICENSE"
+      ],
+      "pagination": {
+        "number": 0,
+        "size": 100,
+        "totalPages": 1,
+        "totalElements": 2
+      },
+      "finding": "本次公开bundle清单无ORIGINAL；LICENSE/SWORD不作论文全文证据。"
+    },
+    {
+      "name": "sapnet",
+      "uuid": "40472179-f975-4265-91b8-77a023bd59c6",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/40472179-f975-4265-91b8-77a023bd59c6/bundles?size=100",
+      "httpStatus": 200,
+      "bundleNames": [
+        "SWORD"
+      ],
+      "pagination": {
+        "number": 0,
+        "size": 100,
+        "totalPages": 1,
+        "totalElements": 1
+      },
+      "finding": "本次公开bundle清单无ORIGINAL；LICENSE/SWORD不作论文全文证据。"
+    },
+    {
+      "name": "gpin",
+      "uuid": "36d71304-46ca-4dc0-9433-6caa9045f08f",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/36d71304-46ca-4dc0-9433-6caa9045f08f/bundles?size=100",
+      "httpStatus": 200,
+      "bundleNames": [
+        "SWORD"
+      ],
+      "pagination": {
+        "number": 0,
+        "size": 100,
+        "totalPages": 1,
+        "totalElements": 1
+      },
+      "finding": "本次公开bundle清单无ORIGINAL；LICENSE/SWORD不作论文全文证据。"
+    },
+    {
+      "name": "ddfnet",
+      "uuid": "53824841-b61f-4414-b8b2-33dada23761d",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/53824841-b61f-4414-b8b2-33dada23761d/bundles?size=100",
+      "httpStatus": 200,
+      "bundleNames": [
+        "LICENSE",
+        "LICENSE"
+      ],
+      "pagination": {
+        "number": 0,
+        "size": 100,
+        "totalPages": 1,
+        "totalElements": 2
+      },
+      "finding": "本次公开bundle清单无ORIGINAL；LICENSE/SWORD不作论文全文证据。"
+    }
+  ],
+  "sourceArtifacts": [
+    {
+      "file": "jun-zhou-input-followup4-uemmair-supplementary-2026-10-11.md",
+      "bytes": 11449,
+      "sha256": "d2e6802e1c0f629a1474c500f908d2f2bdca27ef821971f5b2c828672a2dc50a",
+      "sourceUrl": "https://raw.githubusercontent.com/1e12Leon/UEMM-Air/main/Supplementary.md"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-supplementary-access-2026-10-11.json",
+      "bytes": 224,
+      "sha256": "edd25fbcf35b2a63702e9ca32af52a0127867f9051a76fc2c33ced5b5302ca54"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-crossref-2026-10-11.json",
+      "bytes": 18683,
+      "sha256": "ade40bcd8be2eeb1f808aec109358ba73753a7bb83b880d7d7cde36c0c2994af",
+      "sourceUrl": "https://api.crossref.org/works/10.1145/3746027.3758220"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-crossref-access-2026-10-11.json",
+      "bytes": 205,
+      "sha256": "81821dbf0e60613efb9de6b14e44eb6fa5e8d7dfec089192c1cb7fd3c8b1d866"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-info-2026-10-11.json",
+      "bytes": 1665,
+      "sha256": "f204fa736f6080e679a87380edde2a8ee66ac1d21dbe765313a93c3a69580405",
+      "sourceUrl": "https://huggingface.co/api/datasets/1e12Leon/UEMM-Air"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-info-access-2026-10-11.json",
+      "bytes": 187,
+      "sha256": "4d5aee087fa17450cb783d1fcde8bbd835930944ae5cad4657311e6cfd4c1fea"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-root-pinned-2026-10-11.json",
+      "bytes": 2858,
+      "sha256": "f2ac94f7734878d6c3b28582140666c67370d607771fd457ce2ec4eede6fd040",
+      "sourceUrl": "https://huggingface.co/api/datasets/1e12Leon/UEMM-Air/tree/590d7a7a93454f7a558141684a8931b87977c420?recursive=true&limit=100"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-root-pinned-access-2026-10-11.json",
+      "bytes": 326,
+      "sha256": "adc0228281f8e0887f570d542480fdc835bd3097e389d1cd9c9f93df90ff6524"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-referring-2026-10-11.json",
+      "bytes": 443,
+      "sha256": "1171d521a7a6a28e7bf40f1c26e57681f8fd0447d35d80b8c170f2c3a4479fdb",
+      "sourceUrl": "https://huggingface.co/api/datasets/1e12Leon/UEMM-Air/tree/590d7a7a93454f7a558141684a8931b87977c420/Referring%20Segmentation?limit=100"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-referring-access-2026-10-11.json",
+      "bytes": 335,
+      "sha256": "7f855c3e509705cfa6e9675a6dbbd46dc92acacf3675f9fae6755adb8b7cd8c4"
+    },
+    {
+      "file": "jun-zhou-input-followup4-vitask-repo-2026-10-11.json",
+      "bytes": 4890,
+      "sha256": "0691041e64cdfb3df52f4572312fc31ca80ff6fa854af241420c53eaf4763ffc",
+      "sourceUrl": "https://api.github.com/repos/baiyang4/VITask"
+    },
+    {
+      "file": "jun-zhou-input-followup4-vitask-repo-access-2026-10-11.json",
+      "bytes": 246,
+      "sha256": "578946bbddf6ed00898d6d38e235c8319b838a32e98fbac90e9b527a0ed5463f"
+    },
+    {
+      "file": "jun-zhou-input-followup4-vitask-tree-2026-10-11.json",
+      "bytes": 395,
+      "sha256": "ffa150cea33ddedb2c23203a347270c744661a78eb366966f3ab0cf52add70da",
+      "sourceUrl": "https://api.github.com/repos/baiyang4/VITask/git/trees/main?recursive=1"
+    },
+    {
+      "file": "jun-zhou-input-followup4-vitask-tree-access-2026-10-11.json",
+      "bytes": 204,
+      "sha256": "8349e203bb267683f624b52dbd892742a024c1c59196c2809c402170684340de"
+    },
+    {
+      "file": "jun-zhou-input-followup4-vitask-readme-2026-10-11.md",
+      "bytes": 63,
+      "sha256": "13c2ae22c9cbd0e5c0efbdd74680569df95daf08d73197c74f4d06b87efeb087",
+      "sourceUrl": "https://raw.githubusercontent.com/baiyang4/VITask/main/README.md"
+    },
+    {
+      "file": "jun-zhou-input-followup4-vitask-readme-access-2026-10-11.json",
+      "bytes": 242,
+      "sha256": "f6e0755f3c0d2bd033ea9d6a159bed7f634c395d216f046bec5a9fcb49e8bd9e"
+    },
+    {
+      "file": "jun-zhou-input-followup4-medmnist-info-2026-10-11.py.txt",
+      "bytes": 27766,
+      "sha256": "d85e77f308dcfad2000b610448cefbae7fae69d8f2a7ac15a3f1686fc289c8d2",
+      "sourceUrl": "https://raw.githubusercontent.com/MedMNIST/MedMNIST/main/medmnist/info.py"
+    },
+    {
+      "file": "jun-zhou-input-followup4-medmnist-info-access-2026-10-11.json",
+      "bytes": 345,
+      "sha256": "c85d4a7366aaaec8005b200f5f25e17f0e2500868148b814bd56700e69487be8"
+    },
+    {
+      "file": "jun-zhou-input-followup4-medmnist-readme-2026-10-11.md",
+      "bytes": 14500,
+      "sha256": "55cbf126554e909113255f4171154dcc2183b57c9164e065b130a565a2cff5e3",
+      "sourceUrl": "https://raw.githubusercontent.com/MedMNIST/MedMNIST/main/README.md"
+    },
+    {
+      "file": "jun-zhou-input-followup4-medmnist-readme-access-2026-10-11.json",
+      "bytes": 331,
+      "sha256": "66eecc64c8ee632e7644a093169c98cc47457af63a84bd4f0daac06572b993cb"
+    },
+    {
+      "file": "jun-zhou-input-followup4-idrid-data-2026-10-11.txt",
+      "bytes": 3412,
+      "sha256": "952623f17a3b01afc0ba573a8c8cf62ad36e6c2bc6f9fef3eba4b2005f4d4922",
+      "sourceUrl": "https://idrid.grand-challenge.org/Data/"
+    },
+    {
+      "file": "jun-zhou-input-followup4-idrid-data-access-2026-10-11.json",
+      "bytes": 384,
+      "sha256": "c066f0fb9c3509f0ba522a8c5c6aaafaf352dc7ced20671d37dfdf4ecd129e70"
+    },
+    {
+      "file": "jun-zhou-input-followup4-messidor-data-2026-10-11.txt",
+      "bytes": 40539,
+      "sha256": "7e529113bf1488b0db0a23800c80a4a32e6523927dca165fc1b0c88d893342bf",
+      "sourceUrl": "https://www.adcis.net/en/third-party/messidor/"
+    },
+    {
+      "file": "jun-zhou-input-followup4-messidor-data-access-2026-10-11.json",
+      "bytes": 392,
+      "sha256": "79bcadb4b11bd79986825da01dea050a486b13b52e87b95732e2799ba420225b"
+    },
+    {
+      "file": "jun-zhou-input-followup4-aptos-data-2026-10-11.txt",
+      "bytes": 39,
+      "sha256": "f7bc809b73b6ea264cbd99b38b2b6f40aec3dd45809c8860faaa92ca2447ab80",
+      "sourceUrl": "https://www.kaggle.com/competitions/aptos2019-blindness-detection/data"
+    },
+    {
+      "file": "jun-zhou-input-followup4-aptos-data-access-2026-10-11.json",
+      "bytes": 414,
+      "sha256": "320b501a7141809c38d1d6f5ee7d6f2ef4c0540e681b3524c9da48ca976ba3e8"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-acm-access-2026-10-11.json",
+      "bytes": 403,
+      "sha256": "cad4123fd6042a9f202e9ee7b6ad6d1b09e8984a84cc918a338524d672f7f09a"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-bundles-2026-10-11.json",
+      "bytes": 2416,
+      "sha256": "7d49332eb4baa3230eec9326773a6363c6459feda5c4273193dbbabbf7ba5182",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/4053471d-9e51-4d3b-bb98-39ab271665b4/bundles?size=100",
+      "httpStatus": 200
+    },
+    {
+      "file": "jun-zhou-input-followup4-fdnet-bundles-2026-10-11.json",
+      "bytes": 2416,
+      "sha256": "05cbca41af8484b831ddb9e56c390c03671c9f6a7d9dc10d578aab84c1299b25",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/fb86931d-78ce-4b11-9049-e6c672d2a7cc/bundles?size=100",
+      "httpStatus": 200
+    },
+    {
+      "file": "jun-zhou-input-followup4-sapnet-bundles-2026-10-11.json",
+      "bytes": 1365,
+      "sha256": "a84862e600d5b928788d0bcf7167f02771141194558d6afcee5b11f1bd2c3884",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/40472179-f975-4265-91b8-77a023bd59c6/bundles?size=100",
+      "httpStatus": 200
+    },
+    {
+      "file": "jun-zhou-input-followup4-gpin-bundles-2026-10-11.json",
+      "bytes": 1365,
+      "sha256": "0d2a5c7c5bac79426049cdfb1e46c915ef90626ed373d464eec8d071f95d19b7",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/36d71304-46ca-4dc0-9433-6caa9045f08f/bundles?size=100",
+      "httpStatus": 200
+    },
+    {
+      "file": "jun-zhou-input-followup4-ddfnet-bundles-2026-10-11.json",
+      "bytes": 2416,
+      "sha256": "eeb13432cea02c67376bc22248304c56ffe3d235832741aad370ef32636c6307",
+      "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/53824841-b61f-4414-b8b2-33dada23761d/bundles?size=100",
+      "httpStatus": 200
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-zip-schema-2026-10-11.json",
+      "bytes": 1237,
+      "sha256": "fa12ed55052df1b265b3fffedc3ddfb492cad9554951771e1ca78780d385ac75"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-xml-sample-9697-2026-10-11.xml",
+      "bytes": 724,
+      "sha256": "03312bfe05ed7fb91a879398fecff200296e512a22599e2f756018dfd61276eb"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-xml-sample-0-2026-10-11.xml",
+      "bytes": 1195,
+      "sha256": "c49ab23bec738b0c24ddb711286c78ed29b1fba1f16bdc7ee8b74f4dfd328744"
+    },
+    {
+      "file": "jun-zhou-input-followup4-uemmair-xml-sample-4849-2026-10-11.xml",
+      "bytes": 966,
+      "sha256": "9ac3745f3347cccd187dadd8343920d7358e3ef656c6783c2f41c26027d62761"
+    },
+    {
+      "file": "jun-zhou-input-followup4-vitask-selected-pages-2026-10-11.json",
+      "bytes": 19493,
+      "sha256": "d49a78d8f9e6efdaab28e270e8552eaaa452225ff93a94902e95560235e1dc60"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-test-zip-access-2026-10-11.json",
+      "bytes": 313,
+      "sha256": "5ebad783f621dd4542bbf9934fdbba5161fbbefc18a20110c5cc02635792e890"
+    },
+    {
+      "file": "jun-zhou-input-followup4-hf-ReferringSegmentation-access-2026-10-11.json",
+      "bytes": 243,
+      "sha256": "bff17f71e701ec2c5545fa464030b4ec318d05f55fa45f028bd71eda38c788dd"
+    }
+  ],
+  "accessBoundary": "ACM403不是无论文；APTOS200标题壳不是数据说明；ReferringSegmentation首次路径404，后按根目录原路径Referring Segmentation（含空格）取得200。源方法与失败均留证，不把访问受限当范围排除。",
+  "catalogBoundary": "无新论文/分类/框架图；作者目录188、总库757不变。arXiv221未审/10待以及ORCID1重开/DBLP10/Scholar9/CV3均保留，待核集合重叠。"
+}
