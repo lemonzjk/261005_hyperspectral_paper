@@ -18,7 +18,7 @@
 
 ## 当前学习入口与剩余范围核验
 
-[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；183条摘要级、2条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
+[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；182条摘要级、3条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
 
 本轮为剩余78条DBLP记录取得原始摘要或Griffith机构摘要，并对指定arXiv正文和两份作者/正式PDF局部补读。续核后68条按当前证据暂排除；10条仍待核。图矩阵的spectral clustering、Fourier高/低频、CNN feature channels、音频频谱和描述子的multi-channel都不自动等于光学高光谱。皮肤镜与昆虫照片论文也不借同作者其他高光谱数据集收录。AcfNet arXiv1909.03751的v1正文含Griffith Jun Zhou，而v2当前摘要作者列表无Jun Zhou，保留版本作者差异，不把它简单认作错误作者。
 
@@ -26,7 +26,7 @@
 
 证据见 `sources/jun-zhou-dblp-remaining-primary-abstracts-2026-10-10.json`、`jun-zhou-dblp-remaining-repository-2026-10-10.json`、`jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json`。主筛选表包含所有365条及明确pending状态；来源差集、当前机构目录与已收录论文正式全文、实验和代码尚未全部闭环。
 
-新增非关键词Scholar差集审计209条：184条暂排除（167条交叉匹配加17条原始来源补核），8条匹配目录，新增3条多光谱关联（含1会议摘要），14条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
+新增非关键词Scholar差集审计209条：187条暂排除（167条交叉匹配加20条原始来源补核），8条匹配目录，新增3条多光谱关联（含1会议摘要），11条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
 
 两篇新增分别是2019 MYD21方向发射率与向上长波辐射、2020 MTSAT-2温度上升指数TRI干旱监测。它们与已有MODIS分裂窗LST及Himawari亮温论文的DOI、任务和数据不同；不混用波段或实验。MTSAT正式年份2020，勘误 DOI `10.1016/j.rse.2020.111661` 修正图11小麦产量单位为t/ha。M2-Net、2022稳健2DSVD与CrowdMLP按原稿实验暂排除；CrowdMLP预印本机构不列Griffith，同名身份及正式版差异另留记录。源证据见 `sources/jun-zhou-thermal-scholar-followup-2026-10-10.json` 与逐项DBLP清单。
 
@@ -147,7 +147,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
-截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：183条为 `abstract_read` / `abstract_verified`，2篇为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
+截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：182条为 `abstract_read` / `abstract_verified`，3条为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
 
 ## 2024–2026高光谱来源组筛选
 
@@ -275,3 +275,9 @@ Scholar 分页和 DBLP 记录补出两条 ORCID 登记年份为2017、正式 DOI
 Nutrients 2025儿童生长研究的原始摘要明确GBD横断面疾病负担数据，无光谱输入，范围暂排除；PubMed列Jun Zhou为Griffith信息技术学院，不能凭健康题名断言同名误入。Scholar差集现184暂排、8重、3入、14待。源证据见 `sources/jun-zhou-egu-health-scope-followup-2026-10-10.json`；原稿下载状态及SHA256见 `sources/jun-zhou-thermal-health-access-2026-10-10.json`。健康PDF403不表示论文不存在，Transformer编辑稿签名PDF403仍待核。
 
 Griffith Himawari原件封面为正式VoR，已下载并补读2.2及3.1.1节，核实AHI14/15、11.2/12.4 μm、差分近似与TRI方向。未标全文；学习假设和独立算例见[TRI学习笔记](jun-zhou-thermal-tri-note.md)。
+
+## 普通图像候选与NMF-SAE全文
+
+新增3条Scholar差集范围排除：MMAsia 2021整本论文集、2025 MBPRFW小样本分类、2024宫颈细胞预印本。前者由Crossref的proceedings类型与ISBN确认，不作为独立论文；MBPRFW由Springer数据可用性与Griffith作者机构确认，使用Mini-ImageNet/CIFAR-FS/FC-100/CUB；宫颈原始v1局部确认TCT扫描图像与文本诊断知识，不自动把多模态当多光谱。现在Scholar209差集187暂排/8重/3入/11待。近题2024 MBPRFW会议版不自动合并；匿名ICLR2026解释性稿PDF403，不据同题名确认作者或正式接收，仍待核。证据见 `sources/jun-zhou-generic-scholar-scope-followup-2026-10-10.json`。
+
+NMF-SAE取得五页作者公开稿，完整阅读方法、实验、结论和参考文献；确认共享参数端元/丰度双分支、VCA/FCLS初始化、重建训练及USGS/Jasper设置。Figure1保存为原图，当前330张。目录阅读状态更新为作者稿全文，当前作者185记录为182摘要级/3全文级；未逐字比较出版社版、未复现。新增[学习笔记](jun-zhou-nmf-sae-note.md)区分L1常数、阈值后归一化与精确约束近端，保留零列、标准差百分号和随机重复未明等问题；平均SAD改善不称各类最优。访问SHA256及完整阅读覆盖见 `sources/jun-zhou-nmf-sae-full-reading-2026-10-10.json`。

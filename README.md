@@ -54,7 +54,7 @@ npm run preview
 
 ## 周峻老师论文学习入口
 
-当前作者目录包含179条直接高光谱和6条多光谱关联记录（含1条会议摘要）；会议、期刊与预印本分别保留，不表示185个独立方法。查看 [学习指南与完整目录索引](research/hyperspectral/jun-zhou-study-guide.md)，或在高光谱总库作者筛选中输入 `Jun Zhou`。学习指南提供13篇第一轮精读清单、任务路线和复现笔记模板。作者身份、来源覆盖与10条DBLP待核记录见 [专项调研](research/hyperspectral/jun-zhou.md)。所有论文仍未完成全文和实验核验。
+当前作者目录包含179条直接高光谱和6条多光谱关联记录（含1条会议摘要）；会议、期刊与预印本分别保留，不表示185个独立方法。查看 [学习指南与完整目录索引](research/hyperspectral/jun-zhou-study-guide.md)，或在高光谱总库作者筛选中输入 `Jun Zhou`。学习指南提供13篇第一轮精读清单、任务路线和复现笔记模板。作者身份、来源覆盖与10条DBLP待核记录见 [专项调研](research/hyperspectral/jun-zhou.md)。尚未完成全部论文的全文和实验核验。
 
 ## 维护文献
 

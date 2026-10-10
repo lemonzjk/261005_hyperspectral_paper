@@ -26,12 +26,12 @@
 - RSE2001/2002登记题名与任务词已扫；受限候选、误差单位、全文/原图和出版社全量待查，详见coverage.md。
 - OL2007–2010登记成像及系统/重建词已扫；后者11命中增4重1排4待2。Mueller2007关联2013勘误；Dyson两设计波长非两观测通道。原图受限，非出版社年度全量。
 - TCI2015–2019登记41/63/102/75/69DOI，关键词增17排14待4。2019官方51研究中34已审17待核；5医学仅摘要片段，非年度全量。日期、DOI、真值及资源差异见coverage.md。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖754篇、329张图。
+- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖754篇、330张图。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：周峻目录185条（高光谱179/多光谱6，含1会议摘要），183摘要级、2全文级。DBLP364快照+1专题共365条，355已决定、10待核；Scholar非关键词209差集184暂排8重3入14待核。EGU2019热红外摘要单列；MTSAT图11产量单位按勘误t/ha。控制采样、L1/2-NMF及TRI方法局部已补，学习笔记及数学演示见jun-zhou-*；频率/光学波段、RGB/IRRG、机构与近题差集继续审。
+- 作者优先：周峻目录185条（高光谱179/多光谱6，含1会议摘要），182摘要级、3全文级。DBLP364快照+1专题共365条，355已决定、10待核；Scholar非关键词209差集187暂排8重3入11待核。EGU2019热红外摘要单列；MTSAT图11产量单位按勘误t/ha。NMF-SAE作者稿通读；控制采样/L1/2-NMF/TRI局部已补，学习笔记及数学演示见jun-zhou-*；频率/光学波段、RGB/IRRG、机构与近题差集继续审。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。

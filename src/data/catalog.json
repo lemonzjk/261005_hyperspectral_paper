@@ -73538,13 +73538,13 @@
       "representation": "高光谱解混：NMF-SAE 将 L1 稀疏约束非负矩阵分解的迭代规则展开为编码器和解码器，兼顾物理可解释性与数据驱动学习。",
       "tags": [],
       "summary": "NMF-SAE 以线性光谱混合模型为基础，将 L1 稀疏 NMF 迭代展开成端到端训练的稀疏自编码器；摘要报告在合成和真实数据上优于多种方法。",
-      "input": "高光谱像元及线性光谱混合模型。",
+      "input": "L×N高光谱像元矩阵；VCA/FCLS初始化A₀/S₀；端元数R。",
       "output": "端元与丰度估计、解混结果。",
-      "mechanism": "编码器/解码器由 L1 稀疏约束 NMF 的迭代优化规则展开，参数端到端学习。",
-      "readingNote": "Google Scholar 题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://resourcecenter.ieee.org/conferences/icassp-2021/spsicassp21vid0722",
+      "mechanism": "共享参数的两层PGD展开：丰度残差更新、单边阈值及列归一化；端元残差更新与ReLU；以A_KS_K重建误差无真值监督训练。",
+      "readingNote": "五页作者公开稿完整阅读并核Figure1/Table1；正式DOI及五作者已匹配，未逐字比对出版社版、未复现。式2严格和约束下L1为常数；实际阈值后归一化不等于完整约束精确近端，零列处理待代码。",
+      "paper": "https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf",
       "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verificationLevel": "author_full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
@@ -73553,13 +73553,13 @@
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何把 NMF 的物理约束和稀疏先验融入可训练的高光谱解混网络？",
-        "datasets": "官方摘要报告合成和真实数据实验；数据名称、规模和指标待全文核验。",
-        "experimentSetting": "线性混合模型下的高光谱解混，与多种替代方法比较。",
-        "conclusions": "摘要报告 NMF-SAE 具有物理可解释性、灵活性、较少参数和较高学习能力，并取得理想解混结果。",
-        "limitations": "摘要未给出数据集、网络配置、代码和逐项端元/丰度指标。",
+        "datasets": "USGS六端元合成64×64；Jasper Ridge AVIRIS子图100×100×198、树/水/土/路四端元。",
+        "experimentSetting": "作者稿两层/1000迭代/Adam全批次；合成编码/解码学习率1e-4/5e-4，真实均1e-6。SNR25dB做样本量试验，随后1000训练像元；其他学习基线全像元。",
+        "conclusions": "Jasper平均SAD：NMF-SAE0.0671、MNN-BU0.0726；树/土及路类别并非NMF-SAE均最优。不据平均或曲线外推普遍优势。",
+        "limitations": "作者公开稿已全文阅读，出版社逐字差异、代码、零列数值保护、随机重复、裁剪坐标和参考丰度来源未核；原表标准差百分号不擅自改单位。",
         "dataLinks": [],
         "evidence": [
           {
@@ -73579,6 +73579,15 @@
             "supports": [
               "正式题名、作者、场所、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "author_full_text",
+            "supports": [
+              "五页完整正文与参考文献、Figure1和Table1；双分支更新和重建训练。",
+              "3.1–3.3网络设置、USGS合成/Jasper数据及平均SAD；仍未复现。"
+            ]
           }
         ],
         "versions": [
@@ -73589,11 +73598,34 @@
             "doi": "10.1109/icassp39728.2021.9414084",
             "year": 2021,
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+          },
+          {
+            "id": "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021-author-full",
+            "type": "作者公开稿",
+            "url": "https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf",
+            "year": 2021,
+            "relation": "完整阅读五页作者稿；正式DOI/作者匹配，尚未逐字比较出版社版本。"
           }
         ],
         "methodFamilyId": "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021"
       },
-      "citation": "@inproceedings{zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021,\n  title = {NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Minchao Ye and Jianfeng Lu and Yuntao Qian},\n  year = {2021},\n  doi = {10.1109/icassp39728.2021.9414084}\n}\n"
+      "citation": "@inproceedings{zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021,\n  title = {NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Minchao Ye and Jianfeng Lu and Yuntao Qian},\n  year = {2021},\n  doi = {10.1109/icassp39728.2021.9414084}\n}\n",
+      "frameworkFigures": [
+        {
+          "path": "figures/zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021/framework-author-v1.png",
+          "figureLabel": "Figure 1",
+          "caption": "NMF-SAE双分支：端元与丰度迭代展开、残差连接和相乘重建。",
+          "sourceUrl": "https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf",
+          "page": 2,
+          "width": 1024,
+          "height": 449,
+          "sha256": "873cd71ca8b128eddab1369200bf2b86ef83f79903ef95be1d73220ca74f3356",
+          "attribution": "Fengchao Xiong, Jun Zhou, Minchao Ye, Jianfeng Lu, Yuntao Qian · ICASSP 2021",
+          "verifiedAt": "2026-10-10",
+          "verificationStatus": "verified",
+          "verificationNote": "人工核对五页作者稿PDF第2页Figure1；按300dpi裁切原图，端元/丰度、固定A₀/S₀、W₁/W₂及重建连接清楚；非生成图。"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-the-hyperspectral-object-tracking-challeng-2024",

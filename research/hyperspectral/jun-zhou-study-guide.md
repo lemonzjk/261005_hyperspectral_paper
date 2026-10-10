@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。183条为摘要级核验、2条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。182条为摘要级核验、3条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -67,13 +67,12 @@
 
 ### 5. 2021 · NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing
 
-- 原文：[来源](https://resourcecenter.ieee.org/conferences/icassp-2021/spsicassp21vid0722)；目录ID：`zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021`。
-- 输入：高光谱像元及线性光谱混合模型。
-- 输出：端元与丰度估计、解混结果。
-- 已核机制：编码器/解码器由 L1 稀疏约束 NMF 的迭代优化规则展开，参数端到端学习。
-- 学习问题：编码器/解码器分别对应什么变量？稀疏性、非负性和重建误差如何实现？
-- 阅读边界：Google Scholar 题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。
-- 待核：摘要未给出数据集、网络配置、代码和逐项端元/丰度指标。
+- 原文：[五页作者公开稿](https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf)；目录ID：`zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021`。
+- 输入：高光谱像元矩阵、VCA/FCLS初始化；输出：端元和丰度。
+- 已核机制：端元/丰度各自残差更新展开，参数跨层共享，丰度阈值后列归一化，端元ReLU；训练损失为无真值监督的重建误差。
+- 已核实验：两层、1000迭代；USGS合成4096像元、Jasper Ridge 100×100×198、四端元；平均SAD较低不表示各类均最优。
+- 阅读边界：作者稿五页完整阅读与Figure1/Table1核验；正式DOI/作者匹配，出版社逐字差异和代码复现仍待核。
+- 学习问题：严格非负且和为1时L1为何为常数？阈值后归一化与单纯形投影为何不同？学习W₁/W₂后，还能否视为固定步长的传统NMF？参见[全文学习笔记](jun-zhou-nmf-sae-note.md)。
 
 ### 6. 2022 · SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing
 
@@ -259,7 +258,7 @@
 | 2021 | [Hyperspectral Anomaly Detection via Deep Plug-and-Play Denoising CNN Regularization](https://hub.hku.hk/handle/10722/298375) | 高光谱异常检测、光谱去噪 | 正式发表 | 摘要核验 |
 | 2021 | [Learning a Model-Based Deep Hyperspectral Denoiser from a Single Noisy Hyperspectral Image](https://www.semanticscholar.org/paper/8e4b56071619ae155dd5b0669fdee486b3cf76de) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2021 | [Multiple Feature-Based Superpixel-Level Decision Fusion for Hyperspectral and LiDAR Data Classification](https://scispace.com/pdf/multiple-feature-based-superpixel-level-decision-fusion-for-4hnx7icwzy.pdf) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2021 | [NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing](https://resourcecenter.ieee.org/conferences/icassp-2021/spsicassp21vid0722) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2021 | [NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing](https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf) | 光谱解混 | 正式发表 | 作者稿全文核验 |
 | 2021 | [Spectral and Spatial Residual Attention Network for Joint Hyperspectral and Lidar Data Classification](https://www.semanticscholar.org/paper/5abe231d5c3ffe6ce6bac61a110a0b6229ef31d0) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2021 | [Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking](https://ieee-whispers.com/wp-content/uploads/2021/03/WHISPERS_2021_paper_55.pdf) | 光谱目标时序跟踪 | 正式发表 | 摘要核验 |
 | 2022 | [An Attention-Based Lattice Network for Hyperspectral Image Classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -363,4 +362,4 @@
 
 ## 仍需补齐
 
-DBLP合并目录365条（364条快照加1条专题补充）现有355条范围决定、10条待核。Scholar非关键词209条差集仍有14条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。
+DBLP合并目录365条（364条快照加1条专题补充）现有355条范围决定、10条待核。Scholar非关键词209条差集仍有11条待核，当前机构完整作者目录及来源日期差异仍需继续交叉检查。已收录论文的正式全文、原图、代码和逐项实验核验也未全部完成；下一步优先解决频率/光学波段与RGB/IRRG输入不明的记录。
