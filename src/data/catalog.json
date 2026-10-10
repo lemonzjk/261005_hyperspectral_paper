@@ -76325,6 +76325,91 @@
         "sourceUrl": "https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2831.pdf",
         "checkedAt": "2026-10-10"
       }
+    },
+    {
+      "id": "zhou-eaahnet-multispectral-2025",
+      "shortTitle": "EAAHNet",
+      "title": "A Euclidean Affinity-Augmented Hyperbolic Neural Network for Semantic Segmentation of Remote Sensing Images",
+      "authors": "Xin Li, Feng Xu, Fan Liu, Xin Lyu, Hongmin Gao, Jun Zhou, André Kaup",
+      "year": 2025,
+      "venue": "IEEE TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "遥感多光谱关联；双曲空间语义分割。",
+      "tags": [],
+      "summary": "EAAHNet在Lorentz双曲空间提取特征，通过欧氏亲和增强的双曲注意力进行遥感像素语义分割。",
+      "input": "ISPRS Vaihingen、Potsdam及LoveDA影像。作者上传正文IV-A将Vaihingen写为RGB、Potsdam写为红/绿/近红外；实际代码输入与数据版本仍待核。",
+      "output": "遥感影像逐像素类别图。",
+      "mechanism": "在Lorentz模型中构造双曲网络操作，并用EAAHAM融合欧氏亲和与双曲上下文。",
+      "readingNote": "正式DOI、首页面作者机构和IV-A数据段已核；Jun Zhou明确属于Griffith。DBLP将此条分配同名0011的事实保留在来源审计，不据此误排作者。仅摘要及局部正文核验，未通读18页，也未取得可保存PDF。",
+      "paper": "https://doi.org/10.1109/TGRS.2025.3594760",
+      "doi": "10.1109/TGRS.2025.3594760",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "primary_abstract_and_selected_sections",
+      "citation": "@article{li2025eaahnet,\n  title = {A Euclidean Affinity-Augmented Hyperbolic Neural Network for Semantic Segmentation of Remote Sensing Images},\n  author = {Xin Li and Feng Xu and Fan Liu and Xin Lyu and Hongmin Gao and Jun Zhou and André Kaup},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  volume = {63},\n  pages = {1--18},\n  year = {2025},\n  doi = {10.1109/TGRS.2025.3594760}\n}",
+      "library": {
+        "categoryIds": [
+          "semantic-segmentation"
+        ],
+        "classificationStatus": "provisional",
+        "relation": "multispectral",
+        "relationNote": "原文数据段明确近红外与可见光通道，按多光谱关联收录；不作为直接高光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过双曲空间与欧氏亲和融合改善遥感语义分割？",
+        "datasets": "ISPRS Vaihingen、Potsdam、LoveDA。",
+        "experimentSetting": "核验摘要、作者机构及IV-A数据输入；全文表格、实现和实际通道配置尚未完整核验。",
+        "conclusions": "原摘要报告三个分割基准及EAAHAM消融；未独立复现，不转录未核验性能值。",
+        "limitations": "论文写出的Vaihingen/Potsdam通道组合须与数据版本和作者实现继续核对；正文仅局部阅读，原图和代码未核。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://doi.org/10.1109/TGRS.2025.3594760",
+            "checkedAt": "2026-10-10",
+            "level": "出版社Crossref登记",
+            "supports": [
+              "正式2025论文、七作者及Jun Zhou的Griffith机构。"
+            ]
+          },
+          {
+            "url": "https://www.researchgate.net/publication/394233347_A_Euclidean_Affinity-Augmented_Hyperbolic_Neural_Network_for_Semantic_Segmentation_of_Remote_Sensing_Images",
+            "checkedAt": "2026-10-10",
+            "level": "作者Xin Li上传的正式排版原文",
+            "supports": [
+              "首页Griffith作者机构；IV-A数据段明确Potsdam红、绿、近红外。",
+              "摘要与局部数据段已读；未标完整全文。"
+            ]
+          },
+          {
+            "url": "https://cris.fau.de/publications/349355059/",
+            "checkedAt": "2026-10-10",
+            "level": "共同作者FAU机构书目",
+            "supports": [
+              "2025正式标题、DOI、作者及摘要。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "zhou-eaahnet-multispectral-2025-vor",
+            "type": "正式期刊版",
+            "url": "https://www.researchgate.net/publication/394233347_A_Euclidean_Affinity-Augmented_Hyperbolic_Neural_Network_for_Semantic_Segmentation_of_Remote_Sensing_Images",
+            "year": 2025,
+            "relation": "IEEE卷63，文章5636718，18页；作者上传文本可读，PDF未取得。"
+          }
+        ],
+        "methodFamilyId": "eaahnet-hyperbolic-segmentation"
+      },
+      "frameworkFigureSearch": {
+        "status": "pending",
+        "note": "原文Figure3为候选网络图；未取得PDF图版，不填充替代图。",
+        "sourceUrl": "https://www.researchgate.net/publication/394233347_A_Euclidean_Affinity-Augmented_Hyperbolic_Neural_Network_for_Semantic_Segmentation_of_Remote_Sensing_Images",
+        "checkedAt": "2026-10-10"
+      }
     }
   ],
   "datasets": [
@@ -76731,6 +76816,7 @@
         "spectralmoe-dgss",
         "svm-mlp-msf-marker-whispers-2014",
         "zhou-83-hsi-2022",
+        "zhou-eaahnet-multispectral-2025",
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-multi-task-attentional-u-net-for-hyperspec-2023"
