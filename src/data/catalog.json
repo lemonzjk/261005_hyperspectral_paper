@@ -75667,7 +75667,7 @@
     },
     {
       "id": "zhou-scholar-arxiv-2605-20569",
-      "shortTitle": "End-to-End Unmixing with Material Prompts for Hyperspectral Object Tr…",
+      "shortTitle": "E2E-MPT",
       "title": "End-to-End Unmixing with Material Prompts for Hyperspectral Object Tracking",
       "authors": "Xu Han, Mohammad Aminul Islam, Lei Wang, Zekun Long, Guanmanyi Fu, Wangshu Cai, Kuldip K. Paliwal, Jun Zhou",
       "year": 2026,
@@ -75679,32 +75679,32 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2605.20569",
-      "representation": "Scholar差集 arXiv 题名与原站摘要确认高光谱任务。",
+      "representation": "原HSI模板/搜索帧经解混得到材料丰度，再以频率双分支提示适配冻结OSTrack。",
       "tags": [],
-      "summary": "End-to-end framework jointly optimizes material unmixing and hyperspectral object tracking.",
-      "input": "高光谱影像；具体采集设置见摘要。",
-      "output": "目标定位与材料丰度/提示联合预测。",
-      "mechanism": "Target-oriented unmixing loss, adaptive frequency decomposition and dual-branch wavelet material prompts.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。 作者仓库完整文件树、三份结果ZIP和框架原图已核验；README描述的训练/测试入口未发布于当前快照，阅读状态仍摘要级。",
+      "summary": "联合优化高光谱材料解混与目标跟踪；通过目标相关重构损失及双分支Haar材料提示，让丰度中间表示服务定位。",
+      "input": "原始高光谱template/search和首帧目标bbox；HOTC2020/2023/2024。主干用可训练投影适配HSI，FCI用于RGB比较与指定无MRDM消融。",
+      "output": "后续帧目标边界框；AE丰度A与重构光谱为中间输出，未独立验证物理材料浓度或端元身份。",
+      "mechanism": "AE（默认CNNAEU，r=6）→1×1 adaptor的6学习通道→通道1D Haar双3通道分支；每支路WMP用空间2D Haar，LL跨注意力、细节group conv；FPFM降/升维残差融合，注入冻结OSTrack层1,2,4,6,8,10,12。主干候选消除mask引导SAD+MSE重构与focal/GIoU/L1定位共同优化。",
+      "readingNote": "arXiv2605.20569v1全部12页、公式1–19、表I–VIII及图1–10图注/54参考条目已读；未逐篇读所引作品。Figure2对应既有作者Overview，新增第4页Figure3模块原图。HOTC2023总体DP .903/.902、FPFM参数2.6M/1.78M、ReLU/LeakyReLU及乘法消融缺行分别留证；作者仓库当前与旧快照相同，仅说明/图/结果ZIP，专用脚本和权重未在树中，未运行实验。",
       "paper": "https://arxiv.org/abs/2605.20569",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "hyperspectral-target-tracking",
-          "representation-learning"
+          "transformer"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "v1全文明确原HSI输入、AE材料丰度/重构与目标时序bbox跟踪联合训练；物理解混真值和显式时序记忆未验证。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何让材料解混与目标定位共同优化，使材料提示服务高光谱跟踪，而不是独立外部预处理？",
-        "datasets": "作者项目README列HOT2020/HOT2023/HOT2024，并指向hsitracking.com；公开仓库同名ZIP只含结果文本，不能当原始视频数据或完整训练划分。",
-        "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
-        "conclusions": "Abstract reports state-of-the-art results; ablations and reproducibility require full-text/code audit.",
-        "limitations": "摘要与项目资源核验，未通读全文或复现。固定Git快照只有说明、图、MIT许可与结果ZIP，没有README所列训练/测试脚本、配置或权重；数据许可、训练划分、指标复算及论文/实现一致性仍待核。",
+        "datasets": "本文报告HOTC2020训练40/测试35、16通道460–600nm/25FPS；HOTC2023训练110/测试87，VIS16/NIR25/RedNIR15；HOTC2024训练216/验证117。2026官网新划分不能代替旧年。作者ZIP为35/87/117个结果txt，不是原视频。",
+        "experimentSetting": "单Tesla V100/PyTorch，OSTrack预训练、冻结主干/优化新增模块；50 epoch、每epoch5600对、batch16，AdamW lr4e-5/WD1e-4，第47epoch后lr×0.1。λu=.5、λce=.2、r=6。OPE，DP@20像素和success AUC；跨年度重叠/实际split与多seed未核。",
+        "conclusions": "作者报告HOTC2020 DP/AUC .966/.734，HOTC2023总体正文.903/.701（表III .902/.701），HOTC2024 .790/.611；同配置组件/联合AE/频率融合消融支持设计。默认新增1.78M、26.02FPS；Fig1 12.1×仅材料处理阶段，整体慢于OSTrack52.4FPS。11属性中8项第一，形变/旋转/出视野及长遮挡/极端照度仍有失败。",
+        "limitations": "全文已读，未复现。无独立端元/丰度真值评测，不把r=6当六真实材料；通道Haar作用于学习basis。训练测试成员/跨年度隔离、seed、crop/checkpoint/CE掩码与SAD零谱约定未知。表间DP/参数量、ReLU与LeakyReLU、multiplication无表行、预测头冻结范围待实现；仓库完整树仍缺脚本/配置/权重。未见材料和无显式时序记忆为作者局限，数据/论文/上游许可分别待核。",
         "dataLinks": [
           "https://www.hsitracking.com/"
         ],
@@ -75737,6 +75737,25 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2605.20569v1",
+            "checkedAt": "2026-10-11",
+            "level": "arXiv固定v1全文与公式表图核验",
+            "supports": [
+              "12页全文支持HSI模板/搜索、AE丰度、学习通道1D Haar与空间2D Haar材料提示、冻结OSTrack和联合目标。",
+              "表I–VIII与OPE/训练设置逐项核对；保留DP/参数量/算子图文差异和消融负例。",
+              "第3页Fig2匹配项目Overview，第4页Fig3完整模块原图；没有把中间丰度当物理真值或阶段12.1×当整体加速。"
+            ]
+          },
+          {
+            "url": "https://api.github.com/repos/han030927/E2EMPT/git/trees/afeb3490a52998fe81654e365c8432b0dbdb8b02?recursive=1",
+            "checkedAt": "2026-10-11",
+            "level": "author_current_branch_recursive_tree_and_readme_audit",
+            "supports": [
+              "当前分支和完整树与旧快照git SHA相同，README完整字节哈希相同；只有说明/许可/图/结果ZIP，训练路径未在树中。",
+              "本轮未重取ZIP、未取得模型或运行代码，旧结果成员审计不当新数据载荷核验。"
+            ]
           }
         ],
         "versions": [
@@ -75749,28 +75768,61 @@
             "arxivId": "2605.20569",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。",
+            "relation": "固定v1全文12页已读，原站当前仅v1；与既有记录按arXiv ID关联不计新论文，正式出版与其他版本差异未核。",
             "firstSubmittedAt": "2026-05-20T00:01:05Z",
-            "updatedAt": "2026-05-20T00:01:05Z"
+            "updatedAt": "2026-05-20T00:01:05Z",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://arxiv.org/pdf/2605.20569v1",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
-        "methodFamilyId": "zhou-scholar-arxiv-2605.20569"
+        "methodFamilyId": "zhou-scholar-arxiv-2605.20569",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "全文确认联合丰度估计/HSI跟踪与Transformer提示；移除光谱表征预训练暂定标签，不把冻结RGB主干适配当新HSI预训练；物理真值边界单列。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b48a2ede161638f511b1defbed80466e8623774d427090f2b3eadecd562ace5d",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2605.20569v1"
+          ]
+        }
       },
       "citation": "@misc{zhou-scholar-arxiv-2605-20569,\n  title = {End-to-End Unmixing with Material Prompts for Hyperspectral Object Tracking},\n  author = {Han Xu and Islam Mohammad Aminul and Wang Lei and Long Zekun and Fu Guanmanyi and Cai Wangshu and Paliwal Kuldip K. and Zhou Jun},\n  year = {2026},\n  eprint = {2605.20569},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2605.20569}\n}\n",
       "code": "https://github.com/han030927/E2EMPT",
       "frameworkFigures": [
         {
           "path": "figures/zhou-scholar-arxiv-2605-20569/framework-project-v1.png",
-          "figureLabel": "项目Overview（对应框架）",
+          "figureLabel": "Figure 2（作者项目原图）",
           "caption": "E2E-MPT材料解混与频率双分支提示框架；冻结Transformer主干与可训练提示/解混模块分别标示。",
           "sourceUrl": "https://raw.githubusercontent.com/han030927/E2EMPT/afeb3490a52998fe81654e365c8432b0dbdb8b02/assets/Overview.png",
           "width": 1248,
           "height": 465,
           "sha256": "03ef87bca38de52f2bdf66c56b12eed0f5f18f825b79d81305c0557cf97d773f",
           "attribution": "Xu Han et al. · E2EMPT作者项目；MIT License, Copyright (c) 2026 Xu Han",
-          "verifiedAt": "2026-10-10",
+          "verifiedAt": "2026-10-11",
           "verificationStatus": "verified",
-          "verificationNote": "人工查看原项目Overview.png，MRDM、低/高频材料分支、DWMPM、FPFM与参数图例完整。原图未修改；未借此标全文阅读，未确认预印本图号/页码。许可原文同目录LICENSE.txt。"
+          "verificationNote": "2026-10-10已核原作者Overview.png与MIT项目许可；2026-10-11人工对比v1 PDF第3页Figure2，MRDM、低/高频分支、WMP/DWMPM、FPFM、箭头和冻结/可训练图例一致。保留项目原字节/哈希/来源；本轮确认为论文Fig2对应图，PDF/原始数据许可不继承项目MIT。"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2605.20569v1",
+          "figureLabel": "Figure 3(a,b)",
+          "caption": "WMP材料提示与FPFM频率融合模块：空间Haar的LL跨注意力与高频group conv，经IHaar复原；低/高材料提示在瓶颈残差空间融合并注入主干。",
+          "verificationNote": "人工查看arXiv2605.20569v1第4页Figure3，300dpi裁取原图(a)/(b)及全部图例/端口，无重绘或内容改动；保留Conv、CrossAttention、Haar/IHaar和融合结构。图(b)ReLU与正文ϕ=LeakyReLU差异留证，不据图猜实际算子；论文许可不转移作者项目MIT。",
+          "path": "figures/zhou-scholar-arxiv-2605-20569/framework-arxiv-v1-fig3.png",
+          "width": 1038,
+          "height": 973,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "b22a290264a46fdad46b357b55cc1db6086f59ee0f16b0e6f3098f3fa8cfb7ea",
+          "attribution": "Xu Han, Mohammad Aminul Islam, Lei Wang, Zekun Long, Guanmanyi Fu, Wangshu Cai, Kuldip K. Paliwal, Jun Zhou · arXiv 2026"
         }
       ]
     },
@@ -77927,7 +77979,8 @@
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
         "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
+        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
+        "zhou-scholar-arxiv-2605-20569"
       ],
       "history": [
         {
@@ -77944,6 +77997,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "E2E-MPT固定v1全文按实际联合任务与提示适配重审；仅同步本论文关联，不改变定义或其他条目。"
         }
       ]
     },
@@ -81444,7 +81502,6 @@
         "zhou-dblp-arxiv-2412-00302",
         "zhou-scholar-arxiv-2605-14239",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2609-37340",
         "zhou-scholar-multi-domain-universal-representation-lear-2025",
         "zhou-scholar-similarity-based-hyperspectral-band-select-2022",
@@ -81460,6 +81517,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "E2E-MPT固定v1全文按实际联合任务与提示适配重审；仅同步本论文关联，不改变定义或其他条目。"
         }
       ]
     },
