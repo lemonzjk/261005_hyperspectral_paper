@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。179条为摘要级核验、6条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。178条为摘要级核验、7条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -104,6 +104,7 @@
 - 输入：高光谱数据立方及标注像元；输入3D是空间×空间×波长，不是三维场景点云。
 - 输出：稀疏选择的纹理特征、线性/混合模型和像元类别概率/预测。
 - 已核机制：整块3D-DWT多尺度/频率/方向分解；结构稀疏logistic回归按不同L1/L2组约束选特征。原稿引言明确采用加速近端梯度取代会议的块坐标下降，并混合分区线性稀疏分类器。
+- 版本对照：[会议全文与期刊局部学习笔记](jun-zhou-structured-sparse-classification-note.md)。期刊式13明确带平方根；表VII测试耗时需加25.2秒特征提取，不当训练耗时或复现。
 - 学习问题：3D小波的三维是什么？组稀疏选择和近端优化如何连接分类器？
 - 阅读边界：已核原摘要与指定局部页；未阅读全文。三作者期刊扩展IGARSS2011四作者稿：不混用作者列表、优化器和数据。正式TGRS51(4):2276–2291为2013年4月；仓储作者稿2012-06-13、PDF含1页2013封面共32页；首次early-online日期未由本轮原始证据核到。Indian Pine通道数冲突待正式稿。
 - 待核：三作者期刊扩展IGARSS2011四作者稿：不混用作者列表、优化器和数据。正式TGRS51(4):2276–2291为2013年4月；仓储作者稿2012-06-13、PDF含1页2013封面共32页；首次early-online日期未由本轮原始证据核到。Indian Pine通道数冲突待正式稿。 专用代码、数据入口和arXiv本轮定向搜索未核到，未知不表示不存在。
@@ -171,7 +172,7 @@
 | 2011 | [Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis](https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
 | 2011 | [Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf) | 光谱解混 | 正式发表 | 全文核验（作者稿） |
 | 2011 | [Material-specific user colour profiles from imaging spectroscopy data](https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf) | 光谱材料特定颜色编辑 | 正式发表 | 摘要核验 |
-| 2011 | [Structured sparse model based feature selection and classification for hyperspectral imagery](https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2011 | [Structured sparse model based feature selection and classification for hyperspectral imagery](https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf) | 地物与植被图像分类 | 正式发表 | 作者稿全文核验 |
 | 2012 | [Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image](https://doi.org/10.1109/ICICEE.2012.350) | 待分类 | 正式发表 | 摘要核验 |
 | 2012 | [Shearlet transform based anomaly detection for hyperspectral image](https://doi.org/10.1117/12.978636) | 待分类 | 正式发表 | 摘要核验 |
 | 2013 | [3D Plant Modelling via Hyperspectral Imaging](https://openaccess.thecvf.com/content_iccv_workshops_2013/W06/papers/Liang_3D_Plant_Modelling_2013_ICCV_paper.pdf) | 深度、法线与表面重建 | 正式发表 | 摘要核验 |

@@ -18,7 +18,7 @@
 
 ## 当前学习入口与剩余范围核验
 
-[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；179条摘要级、6条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
+[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；178条摘要级、7条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
 
 本轮为剩余78条DBLP记录取得原始摘要或Griffith机构摘要，并对指定arXiv正文和两份作者/正式PDF局部补读。续核后68条按当前证据暂排除；10条仍待核。图矩阵的spectral clustering、Fourier高/低频、CNN feature channels、音频频谱和描述子的multi-channel都不自动等于光学高光谱。皮肤镜与昆虫照片论文也不借同作者其他高光谱数据集收录。AcfNet arXiv1909.03751的v1正文含Griffith Jun Zhou，而v2当前摘要作者列表无Jun Zhou，保留版本作者差异，不把它简单认作错误作者。
 
@@ -147,7 +147,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
-截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：179条为 `abstract_read` / `abstract_verified`，6条为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
+截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：178条为 `abstract_read` / `abstract_verified`，7条为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
 
 ## 2024–2026高光谱来源组筛选
 
@@ -311,3 +311,7 @@ E2E-MPT原摘要链接的公开仓库已固定提交并核完整树、三ZIP目�
 DICTA2010七页作者稿全文及两版对照完成：会议定义带外层平方而更新式对应平方根和；合成超过θ像元只混两个材料，2011较晚稿改为全部材料等比例，Cuprite表值也不同。独立正域有限差分已核，不作为正式勘误或实际代码事实。185作者记录现179摘要级/6全文级。
 
 2004机器人项通过原会议指南WM2.5的镜像转录，核到河海大学四作者、两轮运动模型/反馈控制/扰动观测器仿真；按任务范围暂排除，同名身份仍未确认。非IEEE原站正文或全文阅读。DBLP365现356决定/9待（185暂排、165重、6入）；Scholar209差集10待不变。证据见 `sources/jun-zhou-robot-program-scope-2026-10-10.json` 和 `sources/jun-zhou-dicta-lhalf-full-reading-2026-10-10.json`。
+
+### 周峻结构稀疏会议全文与期刊局部对照
+
+IGARSS2011四页作者稿已通读，15组小波特征、数据、随机划分和表1全部24值留证。Group LASSO仅在KSC两设置最高；KSC5%的小波SVM反例保留。打印组平方和与损失置零检查不同于引用方法，实际代码未知。2013期刊作者稿仅局部：式13明确带平方根，每类训练规则、表V指标/加粗疑点及表VII测试耗时另列，不升级全文。185作者记录现178摘要级/7全文级；总库754、三维214、332图，DBLP9与Scholar10待核不变。学习见[jun-zhou-structured-sparse-classification-note.md](jun-zhou-structured-sparse-classification-note.md)；完整期刊、正式版差异和性能复现仍待。

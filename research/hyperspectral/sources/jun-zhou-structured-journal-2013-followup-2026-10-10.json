@@ -1,0 +1,100 @@
+{
+  "checkedAt": "2026-10-10",
+  "paperId": "structured-sparse-wavelet-tgrs-2013",
+  "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a8546383-e267-51a0-b096-60bbb047c0f9/content",
+  "file": "jun-zhou-structured-journal-2013.pdf",
+  "sha256": "b6c163d58bcce76dab3aec1d010b1a941ccba58677198e67ff01617a9d6c7837",
+  "readingBoundary": "Selected passages only; not full manuscript or publisher comparison. Author draft dated2012-06-13;2013 publication separate.",
+  "textPassages": [
+    "Printed9–10 equations12–24",
+    "Printed16–18 training fractions, grouping and sparsity",
+    "Printed20 test timing discussion",
+    "Printed27 TableV",
+    "Printed29 TableVII"
+  ],
+  "visualPagesPDF": [
+    10,
+    11,
+    28,
+    30
+  ],
+  "groupNorm": "Equation13 includes outer square root; unlike conference printed squared norm. No formal erratum inferred.",
+  "proximalNotation": [
+    "Equation21 minimizes over u while u is also proximal input; input/output roles need disentangling before implementation.",
+    "Gradient step uses t(k), but equations22–24 thresholds written lambda rather than explicit t(k)*lambda; whether lambda is scaled not established.",
+    "Figure2 does not give exact threshold or momentum update."
+  ],
+  "trainingProtocol": {
+    "Indiana": "Per-class5%,10%,25%",
+    "KSCAndBotswana": "Per-class5%,25%",
+    "PaviaU": "1%,10%,100% of designated training samples; remaining labeled samples test"
+  },
+  "tableVSelected": {
+    "KSC5RawSpectrumOA": {
+      "linearSVM": 79.53,
+      "rbfSVM": 86.56
+    },
+    "KSC5WaveletOA": {
+      "linearSVM": 77.68,
+      "rbfSVM": 84.53,
+      "groupLasso": 90.94,
+      "sparseGroupLasso": 91.14
+    },
+    "boldBoundary": "KSC5% printed groupLasso90.94 bold although sparseGroupLasso91.14 is larger; do not treat all bolds as OA maximum."
+  },
+  "tableVIIWavelet": {
+    "metricBoundary": "Author average over all TableV cases, not cross-scene heldout or reproduction; seconds refer to testing plus feature extraction, not training.",
+    "extractionSeconds": 25.2,
+    "models": [
+      {
+        "name": "SVM-lin",
+        "OA": 90.95,
+        "AA": 86.77,
+        "kappaPrinted": 89.25,
+        "classifierTestSeconds": 19.4
+      },
+      {
+        "name": "SVM-rbf",
+        "OA": 92.33,
+        "AA": 90.17,
+        "kappaPrinted": 90.88,
+        "classifierTestSeconds": 342.5
+      },
+      {
+        "name": "lasso",
+        "OA": 92.04,
+        "AA": 90.66,
+        "kappaPrinted": 90.34,
+        "classifierTestSeconds": 1.3
+      },
+      {
+        "name": "glasso",
+        "OA": 92.52,
+        "AA": 90.65,
+        "kappaPrinted": 90.61,
+        "classifierTestSeconds": 1.3
+      },
+      {
+        "name": "sglasso",
+        "OA": 92.66,
+        "AA": 90.73,
+        "kappaPrinted": 90.47,
+        "classifierTestSeconds": 1.4
+      },
+      {
+        "name": "mixed-lasso",
+        "OA": 93.15,
+        "AA": 91.65,
+        "kappaPrinted": 91.65,
+        "classifierTestSeconds": 19.8
+      }
+    ]
+  },
+  "remaining": [
+    "Remaining manuscript pages",
+    "Formal-version comparison",
+    "Band-count contradiction",
+    "Hyperparameter selection/repetitions/seeds",
+    "Code and independent reproduction"
+  ]
+}

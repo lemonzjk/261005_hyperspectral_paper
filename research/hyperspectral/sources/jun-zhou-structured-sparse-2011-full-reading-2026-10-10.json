@@ -1,0 +1,159 @@
+{
+  "checkedAt": "2026-10-10",
+  "paperId": "structured-sparse-hsi-igarss-2011",
+  "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf",
+  "file": "jun-zhou-sparse-2011-pdf.pdf",
+  "sha256": "c101235c9251157d412ee32d43d11b02f3cb11ab5470178363143d08e0afb33a",
+  "pages": 4,
+  "readingStatus": "author_full_text_read",
+  "readingCoverage": [
+    "Page1 title/authors/abstract/introduction",
+    "Page2 structured penalties, logistic objective and algorithm beginning",
+    "Page3 algorithm end, two-level undecimated Haar15groups,3x3 absolute mean, datasets and random split",
+    "Page4 Table1, Figure2, conclusions and references1–9",
+    "All4 original page images inspected; Figure1–2/Table1 verified"
+  ],
+  "formalBoundary": "Author-hosted4page manuscript; formalDOI6049463 and1771–1774 metadata separate; no publisher word-for-word comparison or code/performance reproduction.",
+  "features": {
+    "wavelet": "Haar",
+    "levels": 2,
+    "downsampling": false,
+    "subcubesAndGroups": 15,
+    "variablesPerGroup": "Number of input bands",
+    "spatialTexture": "3x3 mean absolute wavelet coefficients",
+    "derivedFeatureDimensions": {
+      "IndianPine": 2775,
+      "KSC": 2640
+    },
+    "dimensionBoundary": "15 times the reported band count, independent inference; not reported retained dimensions or physical band selection."
+  },
+  "datasets": [
+    {
+      "name": "AVIRIS Indian Pine",
+      "year": 1992,
+      "classes": 16,
+      "labeledPixelsAsPrinted": 10366,
+      "usedBands": 185,
+      "boundary": "Do not silently substitute another widely used label version/count."
+    },
+    {
+      "name": "AVIRIS Kennedy Space Center",
+      "year": 1996,
+      "classes": 13,
+      "labeledPixels": 5211,
+      "usedBands": 176
+    }
+  ],
+  "split": {
+    "trainingFractions": [
+      0.05,
+      0.25
+    ],
+    "unit": "random labeled pixels",
+    "test": "remaining labeled pixels",
+    "boundary": "No independent block/scene test established; no exact repetitions/seeds/class quota/validation or parameter search protocol found."
+  },
+  "table1": {
+    "columns": [
+      "Indian Pine5%",
+      "Indian Pine25%",
+      "KSC5%",
+      "KSC25%"
+    ],
+    "rows": [
+      {
+        "features": "Spectrum",
+        "classifier": "LASSO",
+        "accuracy": [
+          0.67,
+          0.783,
+          0.849,
+          0.911
+        ]
+      },
+      {
+        "features": "Spectrum",
+        "classifier": "SVM(lin)",
+        "accuracy": [
+          0.637,
+          0.77,
+          0.795,
+          0.885
+        ]
+      },
+      {
+        "features": "Spectrum",
+        "classifier": "SVM(rbf)",
+        "accuracy": [
+          0.742,
+          0.861,
+          0.865,
+          0.923
+        ]
+      },
+      {
+        "features": "3D-DWT",
+        "classifier": "Group LASSO",
+        "accuracy": [
+          0.879,
+          0.943,
+          0.897,
+          0.975
+        ]
+      },
+      {
+        "features": "3D-DWT",
+        "classifier": "SVM(lin)",
+        "accuracy": [
+          0.883,
+          0.976,
+          0.777,
+          0.94
+        ]
+      },
+      {
+        "features": "3D-DWT",
+        "classifier": "SVM(rbf)",
+        "accuracy": [
+          0.901,
+          0.979,
+          0.845,
+          0.941
+        ]
+      }
+    ],
+    "metricBoundary": "Table title says average accuracy; OA vs AA, repeated run count/dispersion not established. Preserve decimal proportions.",
+    "finding": "Group LASSO best in KSC two settings, not Indian Pine. KSC5% wavelet linear/RBF SVM underperform their raw spectra versions."
+  },
+  "formulaAudit": {
+    "equation3": "Original image defines group penalty as sum of squared coefficients; equation4 and algorithm also square group terms, unlike conventional nonsquared group norm. Do not silently substitute a standard implementation.",
+    "algorithm": "Printed zero test f1(beta without group)<=lambda compares loss rather than reference-method group gradient norm.",
+    "implementationBoundary": "Printed notation discrepancy, not confirmation of actual code behavior or a formal erratum."
+  },
+  "referenceCheck": {
+    "title": "The group lasso for logistic regression",
+    "authors": [
+      "Lukas Meier",
+      "Sara van de Geer",
+      "Peter Bühlmann"
+    ],
+    "url": "https://people.math.ethz.ch/~peterbu/Files/Manuscripts/lukas-sara-peter.pdf",
+    "sha256": "831f4c38fc4704d8c3ac4d8b9a6b91bbbeb8b3698eadf15b43d74243628b9665",
+    "readingBoundary": "Selected printed pages54–56 only; not full text read",
+    "finding": "Group L2 norm with group-size weight in equation2.2; gradient norm zero condition in Table1, rather than scalar loss test."
+  },
+  "versionsBoundary": "2013journal extension declaration/ref20 previously verified in stored evidence; do not mix four conference authors with three journal authors or import later experiments.",
+  "figureSearch": "No standalone method pipeline: Figure1 input bands, Figure2 accuracy/sparsity curves; textual algorithm.",
+  "learningInferences": [
+    "3D means spatial-spatial-spectral cube, not scene geometry",
+    "15groups are wavelet subcubes, not15physical bands",
+    "Global spatial features plus random pixel split can share neighborhoods; no measured overlap/bias in this audit"
+  ],
+  "remaining": [
+    "Exact band removal and dataset/label version",
+    "Code and norm/zero-test implementation",
+    "Repetitions/seeds and independent validation",
+    "Spatially independent and cross-scene evaluation",
+    "Formal manuscript comparison and performance reproduction"
+  ]
+}
