@@ -65867,46 +65867,52 @@
       "authors": "Yanyang Gu, Yi-Ping Partridge, Jun Zhou",
       "year": 2018,
       "venue": "OR2.0",
-      "publicationName": "OR 2.0 Context-Aware Operating Theaters, Computer Assisted Robotic Endoscopy, and Skin Image Analysis",
+      "publicationName": "OR 2.0 Context-Aware Operating Theaters, Computer Assisted Robotic Endoscopy, Clinical Image-Based Procedures, and Skin Image Analysis",
       "publicationStatus": "published",
       "venueTier": "book_chapter",
       "collections": [
         "hyperspectral"
       ],
-      "representation": "发布含16个可见光谱带的皮肤高光谱皮肤镜数据集及基线分类。",
+      "representation": "正式2018章节全文核验的16波段皮肤镜数据与稀疏编码/SVM基线；类别计数与带图尺寸差异保留。",
       "tags": [],
-      "summary": "建立病理验证的黑色素瘤高光谱皮肤镜基准。",
-      "input": "330幅高光谱皮肤镜图像，含黑色素瘤、发育不良痣及其他类型。",
-      "output": "皮肤病变类别预测与公开数据集。",
-      "mechanism": "介绍便携采集设备、数据校正和稀疏编码、SVM及深度学习基线。",
-      "readingNote": "GitHub数据仓库与Griffith学位论文第5章核验；书章节页268–276。",
-      "paper": "https://github.com/heugyy/HSIDermoscopy",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "便携Ximea/RaspberryPi皮肤镜采集病理验证HSI，公布330张三类皮肤病变及bbox；暗白/光谱校准后以稀疏编码/maxpool/SVM和RGB LBP/病变尺寸基线比较。",
+      "input": "16波段465–630nm皮肤镜，raw1024×2048的4×4波段mosaic解码256×512×16；同页另称每带约512×272。330图，intro85/175/70与collection80/180/70类数量不同。",
+      "output": "校正HSI、三类病变/bbox数据资源及二/三类分类基线；bbox不是本篇预测框任务。",
+      "mechanism": "暗帧扣除、白板归一和16×16相机谱校正矩阵；训练bbox内取谱建稀疏字典、sparse codes/maxpool后SVM；630/546/465nm三带RGB用LBP/SVM，另比较病变size特征。",
+      "readingNote": "通读出版社正式9页（268–276）、Eq1、Table1、Fig1–4及23引用条目；核正式DOI/2018-10-02首次在线与当前作者数据仓库README/blob。原章节没有深度网络实际基线；未取外部图像包/患者清单或复现实验，四图为样本/谱图而非方法流程。",
+      "paper": "https://link.springer.com/content/pdf/10.1007%2F978-3-030-01201-4_29.pdf",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "datasets-benchmarks",
+          "hyperspectral-biomedical-classification",
           "skin-analysis",
           "biomedical-imaging"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
-        "dataLinks": [],
+        "relationNote": "正式原稿明确Ximea16可见波段皮肤镜采集、校准和病变数据/分类基线；作者称HSI，非相关工作普通RGB网络。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何提供便携采集、病理验证且经光谱校准的皮肤镜HSI公共数据，并建立与三带RGB/size比较的分类基线？",
+        "datasets": "330张16波段465–630nm，病理分类与手工bbox；intro85 melanoma/175 dysplastic/70other，collection80/180/70。2017-01-06至2018-02-18单诊所采集、先成像后活检；实际数据包计数/患者成员未核。",
+        "experimentSetting": "每类随机60图训练、其余测试，五次图像随机分组报均值/STD；三类与melanoma-vs-dysplastic两类。训练bbox取谱建稀疏字典/SVM，RGB LBP及size对照；patient-level隔离/seed未给，非2025的20%协议。",
+        "conclusions": "三类HSI sparse-code SE69.33±19.82%、SP72.95±1.74%，RGB LBP55.44±3.99/46.09±10.91%；加size三类77.33±14.61/73.61±1.00。二类SE84→80下降而SP72.10→80.70上升，非全指标改进。原结论称仅光谱不足可靠检测。",
+        "limitations": "330内部类数85/175/70与80/180/70不一致；同页band512×272与解码256×512不同。小诊所样本、图像随机分组无患者隔离证据；raw校正矩阵/完整载荷/许可待核，谱图与bbox不等于生化浓度真值或临床外部验证。",
+        "dataLinks": [
+          "https://github.com/heugyy/HSIDermoscopy",
+          "https://drive.google.com/drive/folders/1yq0McU_NKbIo8kgptnSVmvvstlxnRc5F?usp=sharing",
+          "https://drive.google.com/drive/folders/13ZXXxtUMjEzLAjoAqC19IJEc5RgpFf2f?usp=sharing"
+        ],
         "evidence": [
           {
             "url": "https://github.com/heugyy/HSIDermoscopy",
-            "checkedAt": "2026-10-10",
-            "level": "数据仓库与书目",
+            "checkedAt": "2026-10-11",
+            "level": "作者数据仓库固定提交README与完整树",
             "supports": [
-              "330幅、16个可见波段、三类皮肤病变及数据下载入口。"
+              "同题2018数据论文/学位论文/相机GUI与原图/校正cube外部下载入口",
+              "完整树仅README，未下载数据载荷；README未列330计数，数量以正式原稿分段说明为准"
             ]
           },
           {
@@ -65916,23 +65922,43 @@
             "supports": [
               "数据采集、病理验证和稀疏编码/SVM/深度学习基线。"
             ]
+          },
+          {
+            "url": "https://link.springer.com/content/pdf/10.1007%2F978-3-030-01201-4_29.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "出版社正式章节全文与图表核验",
+            "supports": [
+              "9页正式原稿支持330图/16波段、raw-mosaic暗白谱校准、病理类别/bbox及实际稀疏编码/SVM基线",
+              "两个类别计数/输入尺寸不同、每类60图五次随机协议和size二类灵敏度负例",
+              "单机构图像级基线不证明患者隔离或临床外部效力；无方法流程图"
+            ]
+          },
+          {
+            "url": "https://link.springer.com/chapter/10.1007/978-3-030-01201-4_29",
+            "checkedAt": "2026-10-11",
+            "level": "出版社正式页面与DOI书目",
+            "supports": [
+              "精确题名/三作者、DOI10.1007/978-3-030-01201-4_29、页268–276和2018-10-02首次在线",
+              "正式书章节关联既有方法；Crossref created与首次在线分开"
+            ]
           }
         ],
         "versions": [
           {
             "id": "hsi-dermoscopy-dataset-melanoma-2018-published",
             "type": "正式记录",
-            "url": "https://github.com/heugyy/HSIDermoscopy",
-            "doi": null,
+            "url": "https://link.springer.com/chapter/10.1007/978-3-030-01201-4_29",
+            "doi": "10.1007/978-3-030-01201-4_29",
             "year": 2018,
-            "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+            "relation": "正式9页章节已通读，首页/出版社/DOI确认三作者、268–276与2018-10-02首次在线；数据仓库是资源入口，实际图像包/版本待核，不新增论文。",
+            "metadataStatus": "primary_publisher_full_text_verified"
           }
         ],
         "methodFamilyId": "hsi-dermoscopy-dataset",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "正式原文按医学病变分类建立专门任务边界；保留公开数据集/皮肤/生医应用，补实际二/三类分类任务；正式本文没有深度网络基线，不以被引用研究替代本篇实验。",
           "evidenceFields": [
             "title",
             "summary",
@@ -65941,15 +65967,20 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "b8eb2749eee40a51d417e4a6ba058d0c12e8d5dcd96a9c059906a98650cabca7",
+          "evidenceDigest": "bc72a759d78d4f8634e51188003f838f3f8c15e146cf514f0b9cb7fb192ea8df",
           "sourceUrls": [
-            "https://github.com/heugyy/HSIDermoscopy",
-            "https://github.com/heugyy/HSIDermoscopy",
-            "https://research-repository.griffith.edu.au/bitstreams/f5d098fc-bba0-4f44-8349-0a3f6b9d2f27/download"
+            "https://link.springer.com/content/pdf/10.1007%2F978-3-030-01201-4_29.pdf"
           ]
         }
       },
-      "citation": "@article{hsi_dermoscopy_dataset_melanoma_2018,\n  title = {A Hyperspectral Dermoscopy Dataset for Melanoma Detection},\n  author = {Yanyang Gu and Yi-Ping Partridge and Jun Zhou},\n  year = {2018}\n}\n"
+      "citation": "@incollection{gu2018dermoscopy,\n  title = {A Hyperspectral Dermoscopy Dataset for Melanoma Detection},\n  author = {Gu, Yanyang and Partridge, Yi-Ping and Zhou, Jun},\n  booktitle = {OR 2.0 Context-Aware Operating Theaters, Computer Assisted Robotic Endoscopy, Clinical Image-Based Procedures, and Skin Image Analysis},\n  series = {Lecture Notes in Computer Science},\n  volume = {11041},\n  publisher = {Springer},\n  year = {2018},\n  pages = {268--276},\n  doi = {10.1007/978-3-030-01201-4_29},\n  url = {https://link.springer.com/chapter/10.1007/978-3-030-01201-4_29}\n}\n",
+      "doi": "10.1007/978-3-030-01201-4_29",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "正式9页已通读并查看全部4图：校准谱、分波段样图、病变样本及区域光谱比较，没有独立流程或架构图；不移用2025方法图或重绘为原图。",
+        "sourceUrl": "https://link.springer.com/content/pdf/10.1007%2F978-3-030-01201-4_29.pdf",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "edible-tree-nut-hsi-quality-2018",
@@ -74470,7 +74501,7 @@
     },
     {
       "id": "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
-      "shortTitle": "Pixel-Wise Shuffling with Collaborative Sparsity for Melanoma Hypersp…",
+      "shortTitle": "Pixel-wise Shuffling + Collaborative Sparsity",
       "title": "Pixel-Wise Shuffling with Collaborative Sparsity for Melanoma Hyperspectral Image Classification",
       "authors": "Favour Ekong, Jun Zhou, Kwabena Sarpong, Yongsheng Gao",
       "year": 2025,
@@ -74482,32 +74513,39 @@
         "hyperspectral"
       ],
       "doi": "10.1109/wacv61041.2025.00632",
-      "representation": "医学高光谱分类：协同稀疏解混减少冗余，像素级打乱与交互相似性混合注意力联合建模光谱和空间信息。",
+      "representation": "正式WACV开放原稿与补充全文核验的医学HSI三类分类；样本数及消融表文不一致留证。",
       "tags": [],
-      "summary": "该 WACV 2025 方法针对组织高光谱黑色素瘤分类，结合协同稀疏解混、像素级打乱和交互相似性混合注意力，在组织学核验的公开数据集上缓解光谱冗余与空间—光谱融合困难。",
-      "input": "组织学核验的皮肤/黑色素瘤高光谱图像。",
-      "output": "黑色素瘤病灶分类结果。",
-      "mechanism": "协同稀疏解混建模材料成分；像素级打乱增强样本关系；交互相似性混合注意力融合空间与光谱信息，并以有限训练数据评估鲁棒性。",
-      "readingNote": "Google Scholar 主页记录、DBLP/CVF正式会议记录与 CVF 官方PDF摘要核验；摘要报告20%训练数据下73.34%总体准确率，未阅读全文。",
+      "summary": "以给定谱库的协同稀疏解混提取丰度先验，再用ViT迁移、像素打乱/插值和余弦相似性混合注意力分类皮肤镜病变；全文及补充报告有限比例训练结果。",
+      "input": "16波段465–630nm皮肤镜HSI与三类病变标签；正文称338图，85/185/78类数合348，引用2018的330图数据，实际版本/manifest未核。",
+      "output": "Melanoma、Dysplastic Nevi、Other三类病变预测；丰度图为内部特征，不是已验证生化浓度或边界框检测输出。",
+      "mechanism": "F谱库的重建+L0稀疏丰度（非负/和为1在文字描述）及谱角预条件；丰度先验与ViT查询结合，self/cross attention余弦重权，光谱顺序/空间编码、shuffle/interpolate、局部对比/类别权重与残差MLP分类。",
+      "readingNote": "通读CVF官方WACV2025开放稿10页/公式1–6/表1–2/全部图注与36引用条目，补充2页A–D/两表及曲线；目视核Fig1/2完整原裁图。另通读所引2018数据论文9页核样本/输入差异，不推断临床验证或复现实验。",
       "paper": "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
-          "biomedical-imaging",
-          "land-cover-classification"
+          "hyperspectral-biomedical-classification",
+          "joint-sparse-regression",
+          "transformer",
+          "skin-analysis",
+          "biomedical-imaging"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 CVF 官方摘要均明确医学高光谱黑色素瘤分类。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在有限标注和病灶/色素重叠条件下提高黑色素瘤高光谱分类？",
-        "datasets": "CVF 摘要称使用公开且经组织学核验的数据集；具体名称、样本划分和许可待全文核验。",
-        "experimentSetting": "比较不同训练数据比例和现有方法；摘要报告仅用20%训练数据时总体准确率73.34%。",
-        "conclusions": "官方摘要报告该方法可处理病灶与色素区域重叠，并优于比较方法；完整指标和统计显著性待全文核验。",
-        "limitations": "摘要未给出数据集名称、类别定义、预处理、完整指标、代码运行和临床外部验证。",
-        "dataLinks": [],
+        "relationNote": "正式原稿直接16个465–630nm皮肤镜波段输入与病变分类；temporal是光谱顺序表征，不是视频或普通RGB医学数据。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何借助谱库稀疏丰度及像素级打乱/混合注意力，在少量训练皮肤镜HSI时预测三类病变？",
+        "datasets": "引用Gu/Partridge/Zhou2018：16波段465–630nm、病理标签与bbox。2025写338图、类数85/185/78合348；2018总330但两处85/175/70及80/180/70不同。实际新旧数组/类别名单待核。",
+        "experimentSetting": "正文20%训练/30%验证/50%测试，翻转/镜像/旋转/裁切仅增强训练；消融另10/30/40%，比例基数及验证测试调整不明。Adam lr5e-4、作者称exponential weight decay0.05、最多300epoch、单RTX4070；seed/batch/患者隔离/重复次数未给。",
+        "conclusions": "20%主表OA73.34%、AA66.87%、SEN66.40%、PRE72.73%，Kappa原表53.33、STD0.7051、Param.(MB)89.70。相对SpectralFormer OA增加2.96个百分点。全模块10/20/30/40% OA63.53/73.34/83.13/85.81%；φ0.01/window3为24.3472GFLOPs，但window2 PRE73.14更高。",
+        "limitations": "338/348/330与类别数量、训练比例基数/患者隔离未核。正文去除CS/PWS名与原消融表相反，STD高不代表更稳，MB不当M参数。谱库/阈值/求解器、shuffle/损失/迁移权重和代码复现待；生化端元真值、独立临床外部有效性无证据。",
+        "dataLinks": [
+          "https://github.com/heugyy/HSIDermoscopy",
+          "https://drive.google.com/drive/folders/1yq0McU_NKbIo8kgptnSVmvvstlxnRc5F?usp=sharing",
+          "https://drive.google.com/drive/folders/13ZXXxtUMjEzLAjoAqC19IJEc5RgpFf2f?usp=sharing"
+        ],
         "evidence": [
           {
             "url": "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf",
@@ -74526,6 +74564,34 @@
             "supports": [
               "WACV 2025页码、作者和正式DOI"
             ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "CVF官方开放会议正文全文与原图核验",
+            "supports": [
+              "10页全文与原Fig1/2支持给定谱库稀疏丰度、ViT/像素打乱/混合注意力和医学三类分类",
+              "§3.1样本总数338与类数合348、训练比例及患者隔离缺口",
+              "表1/2原数值、模块表文相反及STD/Param.(MB)量纲边界；非临床外部验证或复现"
+            ]
+          },
+          {
+            "url": "https://openaccess.thecvf.com/content/WACV2025/supplemental/Ekong_Pixel-Wise_Shuffling_with_WACV_2025_supplemental.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "CVF官方两页补充材料全文",
+            "supports": [
+              "A–D与20个φ/window配置、七组编码/注意力消融均读，最高OA不等于最高PRE",
+              "φ与成本前后文字不一致，GFLOPs原表保留；不宣称实测实时系统"
+            ]
+          },
+          {
+            "url": "https://link.springer.com/content/pdf/10.1007%2F978-3-030-01201-4_29.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "被引用2018正式数据论文全文交叉核验",
+            "supports": [
+              "330总图及两个类别计数不同，原稿输入/校准与五次随机图像分组基线",
+              "原方法级别和协议不同，不能把2018样本数当2025实际数据修正或跨论文直接比准确率"
+            ]
           }
         ],
         "versions": [
@@ -74535,12 +74601,80 @@
             "url": "https://doi.org/10.1109/wacv61041.2025.00632",
             "doi": "10.1109/wacv61041.2025.00632",
             "year": 2025,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI/CVF开放会议稿10页及补充2页已通读；CVF说明除水印与接收版一致，IEEE最终PDF未另逐字对照，不新增论文。",
+            "metadataStatus": "primary_cvf_full_text_and_crossref_verified"
           }
         ],
-        "methodFamilyId": "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
+        "methodFamilyId": "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "正式原文按医学病变分类建立专门任务边界；移除原land-cover-classification，补给定谱库稀疏回归、Transformer及皮肤应用；不凭内部丰度图/temporal词增加生化定量/视频任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "fb23e8027d21191b45105e66b268a2d7a2bcdcb253cde28431b02b6fb2e6a484",
+          "sourceUrls": [
+            "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf"
+          ]
+        }
       },
-      "citation": "@inproceedings{zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025,\n  title = {Pixel-Wise Shuffling with Collaborative Sparsity for Melanoma Hyperspectral Image Classification},\n  author = {Favour Ekong and Jun Zhou and Kwabena Sarpong and Yongsheng Gao},\n  year = {2025},\n  doi = {10.1109/wacv61041.2025.00632}\n}\n"
+      "citation": "@inproceedings{ekong2025pixelwise,\n  title = {Pixel-Wise Shuffling with Collaborative Sparsity for Melanoma Hyperspectral Image Classification},\n  author = {Ekong, Favour and Zhou, Jun and Sarpong, Kwabena and Gao, Yongsheng},\n  booktitle = {Proceedings of the Winter Conference on Applications of Computer Vision (WACV)},\n  year = {2025},\n  month = {February},\n  pages = {6485--6494},\n  doi = {10.1109/WACV61041.2025.00632},\n  url = {https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "协同稀疏解混模块：谱相似、非局部回归及丰度特征提取。",
+          "verificationNote": "目视核CVF官方正文第3页（印刷6487）全图/图注、模块/完整箭头；保留原图不重绘。物质端元与真实浓度映射未核，非2018数据论文图。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pixelBox": [
+              170,
+              290,
+              2320,
+              1340
+            ]
+          },
+          "path": "figures/zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025/framework-unmixing-cvf.png",
+          "width": 2150,
+          "height": 1050,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "5eaefb7e1c658008012e285e0e3481df3eb4b2b9a6bf7783d62654902e622bf3",
+          "attribution": "Favour Ekong, Jun Zhou, Kwabena Sarpong, Yongsheng Gao · 2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2025"
+        },
+        {
+          "sourceUrl": "https://openaccess.thecvf.com/content/WACV2025/papers/Ekong_Pixel-Wise_Shuffling_with_Collaborative_Sparsity_for_Melanoma_Hyperspectral_Image_Classification_WACV_2025_paper.pdf",
+          "figureLabel": "Figure 2",
+          "caption": "完整医学高光谱分类架构：丰度先验、ViT迁移及像素打乱混合注意力。",
+          "verificationNote": "目视核CVF官方正文第4页（印刷6488）全图/图注、模块/完整箭头；保留原图不重绘。物质端元与真实浓度映射未核，非2018数据论文图。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pixelBox": [
+              170,
+              290,
+              2320,
+              1630
+            ]
+          },
+          "path": "figures/zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025/framework-classifier-cvf.png",
+          "width": 2150,
+          "height": 1340,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "e6aaff923660f128a8b2da533924099322670ecb081d2e61b71248fe79e4eafa",
+          "attribution": "Favour Ekong, Jun Zhou, Kwabena Sarpong, Yongsheng Gao · 2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2025"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-similarity-based-hyperspectral-band-select-2022",
@@ -77792,7 +77926,8 @@
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
         "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
-        "zhou-scholar-arxiv-2605-17286"
+        "zhou-scholar-arxiv-2605-17286",
+        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
       ],
       "history": [
         {
@@ -78089,7 +78224,8 @@
       "evidencePaperIds": [
         "hsi-dermoscopy-dataset-melanoma-2018",
         "hyper-skin-2023",
-        "skin-thickness-whispers-2014"
+        "skin-thickness-whispers-2014",
+        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
       ],
       "history": [
         {
@@ -80963,7 +81099,6 @@
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
         "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
         "zhou-scholar-hyperspectral-image-classification-based-o-2019",
-        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
         "zhou-scholar-texture-and-shape-features-for-grass-weed--2019"
       ],
@@ -82420,7 +82555,8 @@
         "mljsr-unmixing-2015",
         "sparse-cbir-gpu-2015",
         "vb-joint-sparse-unmixing-2014",
-        "wm-lattice-sparse-unmixing-2014"
+        "wm-lattice-sparse-unmixing-2014",
+        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
       ],
       "history": [
         {
@@ -85992,6 +86128,27 @@
           "date": "2026-10-10",
           "action": "created",
           "reason": "按实际输出区分植物病害检测与地物类别判别。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-biomedical-classification",
+      "name": "医学高光谱病变与组织分类",
+      "dimension": "task",
+      "definition": "从光学高光谱或明确相关光谱影像预测医学病变、组织或细胞的类别/状态；记录图像、像素及患者单位和标签依据。分类基准结果不等于临床诊断有效性，区别生物参数定量、身份识别、地物分类和检测框定位。",
+      "status": "confirmed",
+      "color": "#bb8fa8",
+      "createdAt": "2026-10-11",
+      "rationale": "2018皮肤镜正式数据/分类基线及WACV2025正式三类分类全文证明必要任务边界；biomedical-imaging只是应用类别，land-cover-classification不覆盖医学病变。",
+      "evidencePaperIds": [
+        "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
+        "hsi-dermoscopy-dataset-melanoma-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "两篇正式原文明确医学三类病变分类，避免将医学类别硬套地物任务；仅迁移已通读记录，其他医学记录逐篇续审。"
         }
       ]
     }

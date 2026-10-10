@@ -517,3 +517,21 @@ Table1列26个数据集的31个子集，共14,959张，15–420波段、377–17
 当前HyperBlood默认清洗128至113波段，有明确删噪声/损坏行说明，不当无解释错误。DeepHS-NIR声明bands249而波长252、VIS/VISCOR声明249而波长224，UM-OS及HyKoVIS也与论文名义数不同；只是静态配置/版本缺口，不推断论文数组或未经执行的失败。HF固定修订`21aecfa4461e9019c285095c3accdf689c226735`两页78项完整树列B/L/H三权重，大小及LFS OID仅来源声明，未下载/哈希/加载。GitHub license=null、树无LICENSE，main README许可段在注释中；README_hf YAML/HF模型卡明确apache-2.0，不自动代替上游或26个源数据许可。
 
 本轮保存22份成功原始响应与4份派生来源审计，原文件字节/哈希保留。全文重审补既有显著目标检测和Transformer标签，不增加类别或论文。当前总库757、周峻188（177摘要级/11全文级）、三维214；分类393确认（审计337）、345暂定、19待，303标签及338张原图。arXiv531来源决定及八待核不变，原mapping索引与本轮全文续核分开。作者专项和全领域任务均未完成；继续已入库论文原文、八待核、姓名变体及跨来源差集。证据见 [HyperVision全文与发布审计](sources/jun-zhou-hypervision-v3-full-reading-2026-10-11.json)。
+
+## 皮肤镜数据2018与WACV2025分类全文交叉核验（2026-10-11）
+
+既有《Pixel-Wise Shuffling with Collaborative Sparsity for Melanoma Hyperspectral Image Classification》通读CVF官方WACV2025开放稿10页（6485–6494），公式1–6、两表、全部图注/36引用条目，以及官方两页补充A–D、两表及曲线；保存原PDF、全文页文本和完整Figure1/2原方法裁图。所引《A Hyperspectral Dermoscopy Dataset for Melanoma Detection》也取得并通读出版社正式9页（268–276）、Eq1、Table1及四图/23引用条目。引用作品未逐篇核验，方法未运行。2018补精确DOI10.1007/978-3-030-01201-4_29、完整书名及出版社/Crossref一致的2018-10-02首次在线日期，关联旧记录不新增论文。2025读CVF官方开放接收稿及补充，IEEE最终PDF未另逐字比较。
+
+2025主稿§3.1写338图，类数85 melanoma、185 dysplastic nevi、78 other却合348；2018总330一致，但Introduction为85/175/70、Collection为80/180/70。保留四种原始说法及各自位置，没有实际图像manifest来选择、更正或证明数据增补。2018是活检前皮肤镜成像、病理报告标签及手工bbox，不是体外组织切片HSI；16波段465–630nm、Ximea/RaspberryPi/10× LED dermatoscope，raw1024×2048的4×4 mosaic解码256×512×16，同页又称band约512×272，尺寸差异待实际数组。暗扣除/白归一后乘16×16相机谱校正矩阵；相机up to170 cubes/s不当实际临床视频采样率。病理/伦理陈述为作者报告，不称独立核过诊断或伦理材料。
+
+2018实际基线是训练bbox网格取谱构建稀疏dictionary，sparse codes/maxpool后多类SVM；630/546/465nm三带RGB用LBP/SVM，另比size，不把学位论文或related-work深度网络移作本稿实验。每类随机60图训练、余下测试，五次重复报mean/STD，没有患者独立划分说明。三类HSI sparse-code SE69.33±19.82%、SP72.95±1.74%；RGB LBP55.44±3.99/46.09±10.91%。加size三类77.33±14.61/73.61±1.00，但二类SE84→80下降、SP72.10→80.70上升，不说全面改进。原结论明确纯光谱不足以可靠检测。
+
+2025用给定谱库F求解重建+φL0丰度，文字提非负/和为1、非局部协同和谱角预条件；公式未显式写物理约束或L2,1/TV/low-rank，谱库来源、阈值、求解器也未给，不套用引用方法。B的文字行像元解释与F/H矩阵乘法要求的方向不同，具体转置待实现。丰度先验、ViT迁移、learnable queries和余弦重权self/cross attention结合，光谱顺序/空间编码及shuffle/interpolate、local contrastive loss/类别权重产生三类病变预测；temporal不是患者时间序列，bbox不证明该方法做预测框定位。EndMember1/5/7/9原丰度图没有物质真值映射，不当melanin/hemoglobin浓度准确性证明。
+
+2025正文20/30/50%训练/验证/测试，训练才做增强；又写20% of training data，消融10/30/40%的基数及验证测试调整不明。Adam lr5e-4、作者称exponential weight decay0.05、最多300epoch、单RTX4070；batch/seed/重复次数/患者划分未给。主表OA73.34%、AA66.87%、SEN66.40%、PRE72.73%，Kappa原数53.33、STD0.7051、Param.(MB)89.70；不改成89.7M参数/运行显存，不把最大STD当更稳。相对SpectralFormer OA差2.96个百分点。Table2的CS✓/PWS×为71.20、CS×/PWS✓为72.88，正文的withoutCS/withoutPWS名称正相反；按原表留证不猜修正。全模型10/20/30/40% OA为63.53/73.34/83.13/85.81，非与2018 SE/SP可直接比较的临床指标。
+
+补充20个φ/window配置中，φ0.01/window3的OA73.34、24.3472GFLOPs最高OA，但window2的PRE73.14更高；STD最高亦在另一配置。文字先说lowerφ更稠密/高成本，随后说lowerφ降低成本，原GFLOPs表随φ降低而下降，保留矛盾，不凭理论纠正实际实现。七组编码/注意力消融不是完整16组合，无实测实时系统、患者级/多中心/前瞻临床有效性证据。
+
+作者数据仓库固定提交94324c5bcce4f583f30df22856d2747025e8bb6a树仅README，完整未截断，原README blob核验。它链接正式数据论文、学位论文、相机GUI和外部原图/校正cube，但本身未列330数值。未下载/清点GoogleDrive/Dropbox载荷，license=null/无LICENSE，公开入口不作许可证明；相机GUI不作2025分类实现，正文/补充未给专用代码链接不证明外部实现不存在。
+
+全文分类纠正2025的地物标签，新增必要任务“医学高光谱病变与组织分类”；两篇都关联该任务，2025补既有给定谱库稀疏回归、Transformer、皮肤/生医应用，2018保留数据集标签。未整体迁移其他未读医学记录。2018四图为谱图/样图，没有方法流程，队列记no_framework，不移用2025图。共11份原始响应/4派生全文或表审计，既有两篇升级，无新论文；当前757目录、周峻188（175摘要级/13全文级）、214三维、304标签（任务100/方法181/应用23）、340原图；394分类确认（审计339）、344暂定、19待。arXiv531与八pending不变，作者全集/全领域任务未完成。证据见 [两篇全文与输入/协议交叉审计](sources/jun-zhou-dermoscopy-pws-full-reading-2026-10-11.json)。
