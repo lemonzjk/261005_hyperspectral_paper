@@ -1,0 +1,910 @@
+
+<!doctype html>
+<html lang="en-GB" class="no-js">
+    <head>
+        
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>PanNuke Dataset
+</title>
+
+<meta name="description" content="PanNuke - Largest PanCancer Dataset for Histology Nuclei Instance Segmentation and Classification">
+<meta name="keywords" content="histology dataset, histology image analysis, deep learning, nuclear classification, nuclear segmentation">
+
+
+
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+
+
+
+
+    // Consent Mode v2 (GTM & GA4)
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'denied',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted'
+    });
+    
+    gtag('js', new Date());
+
+    let gtmData = {
+        cms_name: 'sitebuilder',
+        analyticsPageUrl: '\/fac\/cross_fac\/tia\/data\/pannuke',
+        userAudience: 'NotLoggedIn',
+        userDepartment: 'Unknown'
+    };
+    
+    dataLayer.push(gtmData);
+</script>
+
+
+
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document, 'script','dataLayer', 'GTM-55N43RF');</script>
+
+
+
+
+
+
+
+
+<link rel="search" type="application/opensearchdescription+xml" title="Warwick Search" href="//search.warwick.ac.uk/static/search/osd.xml">
+
+
+
+<!-- Google canonical URL - the main URL for this page -->
+
+    
+    
+        <link rel="canonical" href="https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/">
+    
+
+
+
+
+
+
+
+
+    <meta name="robots" content="noindex,nofollow">
+
+
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/images/crest-dynamic.svg.481631441674">
+<link rel="icon" type="image/png" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/images/favicon-32x32.png.316569982511" sizes="32x32">
+<link rel="apple-touch-icon" sizes="180x180" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/images/apple-touch-icon-180x180.png.265479534550">
+<link rel="manifest" href="https://d36jn9qou1tztq.cloudfront.net/static_war/manifest.json.145907410054" />
+
+
+
+<meta name="theme-color" content="#16335e">
+
+
+<meta property="og:image" content="https://d36jn9qou1tztq.cloudfront.net/static_war/render/images/og_image-lavender.webp.300207447509">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="University of Warwick">
+
+
+
+
+
+    
+        <link rel="stylesheet" href="https://use.typekit.net/iog2qgq.css" crossorigin="anonymous">
+
+        
+        
+        
+        <link rel="stylesheet" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/css/pack7-2025.css.313714270058" type="text/css">
+        
+        
+    
+    
+
+
+<!-- Pre-load the statuspage CSS, then after the page finishes loading, parse it -->
+<link rel="preload" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/statuspage-widget/main.css.246290990343" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+    
+    
+    
+        <link rel="shortcut icon" type="image/x-icon" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/images/favicon.ico.425836117052">
+        <link rel="shortcut icon" type="image/x-icon" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/images/favicon.ico.425836117052" media="(prefers-color-scheme: light)">
+        <link rel="shortcut icon" type="image/x-icon" href="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/images/favicon-dark-mode.ico.326472871356" media="(prefers-color-scheme: dark)">
+    
+
+
+
+
+
+    <link rel="stylesheet" href="https://d36jn9qou1tztq.cloudfront.net/static_site/fac/cross_fac/tia/site.css.257312248460" type="text/css">
+
+
+
+
+
+    <script type="text/javascript" src="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/js/id7-bundle-render.js.323675676495"></script>
+
+    <script type="module" src="https://d36jn9qou1tztq.cloudfront.net/static_war/sitebuilder.js.160620700363"></script>
+
+
+
+
+
+    <script type="text/javascript" src="https://d36jn9qou1tztq.cloudfront.net/static_site/fac/cross_fac/tia/site.js.307125035108"></script>
+
+
+
+
+
+<script type="text/javascript">
+    SitebuilderInfo.url = '/fac/cross_fac/tia/data/pannuke';
+    SitebuilderInfo.lastUpdated = 1786531909558;
+    SitebuilderInfo.lastContentUpdated = 1740669386669;
+    SitebuilderInfo.buildTimestamp = '1791197552436';
+</script>
+
+
+
+<script src="https://d36jn9qou1tztq.cloudfront.net/static_war/render/scripts/global-permission.js.327690442748"></script>
+
+
+
+
+<!-- main parsed links -->
+
+
+
+    
+
+
+<link rel="alternate"
+      type="application/rss+xml"
+      title="Changes in /fac/cross_fac/tia/ (RSS 2.0)"
+      href="https://warwick.ac.uk/sitebuilder2/api/rss/siteChanges.rss?page=/fac/cross_fac/tia">
+
+<!-- main parsed styles -->
+
+
+<!-- rhs parsed styles -->
+
+    
+
+
+<!-- main parsed scripts -->
+
+
+<!-- rhs parsed scripts -->
+
+    
+
+
+
+    
+
+    
+        
+            
+            
+            
+            
+        
+    
+
+
+    </head>
+
+    
+    
+    
+    
+        
+    
+
+    
+    
+
+    <body class="in-fac in-cross_fac in-tia in-data in-pannuke id7-point-1">
+        
+
+
+  
+  
+  
+
+
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55N43RF&advertisingPermission=&functionalPermission=&performancePermission="
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
+
+
+        <div class="id7-left-border"></div>
+        <div class="id7-fixed-width-container">
+            <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
+            <a class="sr-only sr-only-focusable" href="#primary-nav" accesskey="N">Skip to navigation</a>
+
+            <header class="id7-page-header">
+                <div class="id7-utility-masthead">
+    <nav class="id7-utility-bar" aria-label="Utility bar">
+    <ul>
+        
+
+            
+
+            
+                
+            
+
+            
+                
+                    
+                    
+                        
+                    
+                
+            
+
+        
+
+        
+            
+            
+                
+                
+                
+                    
+                    
+                        
+<li id="sign-in-link"><a  href="https://websignon.warwick.ac.uk/origin/slogin?shire=https%3A%2F%2Fwarwick.ac.uk%2Fsitebuilder2%2Fshire-read&amp;providerId=urn%3Awarwick.ac.uk%3Asitebuilder2%3Aread%3Aservice&amp;target=https%3A%2F%2Fwarwick.ac.uk%2Ffac%2Fcross_fac%2Ftia%2Fdata%2Fpannuke%2F" rel="nofollow" class="ut" 
+>Sign in</a> </li>
+
+                    
+                
+            
+            
+        
+    </ul>
+</nav>
+
+    <div class="id7-masthead">
+    <div class="id7-masthead-contents">
+        <div class="clearfix">
+            <div class="id7-logo-column">
+                
+                    <div class="id7-logo-row">
+                        <div class="id7-logo">
+                            <a href="https://warwick.ac.uk/" title="University of Warwick homepage">
+                                
+                                
+                                <img src="https://d36jn9qou1tztq.cloudfront.net/static_war/render/id7/images/wordmark.svg.136055278947" alt="University of Warwick homepage">
+                                
+                                
+                                
+                            </a>
+                        </div>
+
+                        <nav class="id7-site-links"  aria-label="Site links">
+                            <ul>
+                                <li><a href="https://warwick.ac.uk/study">Study</a></li>
+                                <li><a href="https://warwick.ac.uk/research">Research</a></li>
+                                <li><a href="https://warwick.ac.uk/business">Business</a></li>
+                                <li><a href="https://warwick.ac.uk/alumni">Alumni</a></li>
+                                <li><a href="https://warwick.ac.uk/news">News</a></li>
+                                <li><a href="https://warwick.ac.uk/engagement">Engagement</a></li>
+                                
+                            </ul>
+                        </nav>
+
+                    </div>
+                
+            </div>
+            <div class="id7-search-column">
+                
+                    <div class="id7-search">
+                        <form action="//search.warwick.ac.uk" role="search">
+                            <input type="hidden" name="source" value="https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/">
+                            <div class="form-group">
+                                <div class="id7-search-box-container floating-label">
+                                    <input type="search" class="form-control input-lg" id="id7-search-box" name="q" placeholder="Search Warwick"
+                                           data-suggest="go"
+                                           data-origin="https://sitebuilder.warwick.ac.uk"
+                                           aria-label="Search Warwick">
+                                    <label for="id7-search-box">Search Warwick</label>
+                                    <button type="submit" class="search-button"><span class="sr-only">Search</span><i class="fas fa-search fa-2x" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                
+            </div>
+        </div>
+
+        
+            <div class="id7-header-text clearfix">
+                <h2 class="h1">
+                    
+
+                    
+                    
+
+                    <span class="id7-current-site-link" data-short-title="TIA Centre">
+                        <a accesskey="1" title="TIA Centre home page [1]" href="https://warwick.ac.uk/fac/cross_fac/tia/">Tissue Image Analytics (TIA) Centre</a>
+                    </span>
+                </h2>
+            </div>
+        
+    </div>
+</div>
+
+</div>
+
+                
+                    <div class="id7-navigation" id="primary-nav">
+                        <nav class="navbar navbar-primary hidden-xs" role="navigation" aria-label="Primary navigation"> <ul class="nav navbar-nav"><li class="first" data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/people/" data-page-url="/fac/cross_fac/tia/people/">Team</a></li><li class="second" data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/news/" data-page-url="/fac/cross_fac/tia/news/">News</a></li><li data-lastmodified="1789556010029"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/miua2027/" data-page-url="/fac/cross_fac/tia/miua2027/">MIUA 2027</a></li><li data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/events/" data-page-url="/fac/cross_fac/tia/events/">Events</a></li><li class="dropdown" data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/projects/" data-page-url="/fac/cross_fac/tia/projects/">Projects</a> <ul class="dropdown-menu" role="menu"><li data-lastmodified="1782212252794"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/projects/anticipate/" data-page-url="/fac/cross_fac/tia/projects/anticipate/">ANTICIPATE</a> </li><li data-lastmodified="1782212258703"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/projects/cobix/" data-page-url="/fac/cross_fac/tia/projects/cobix/">COBIx</a> </li><li data-lastmodified="1782212262457"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/projects/histomaps/" data-page-url="/fac/cross_fac/tia/projects/histomaps/">HistoMaps</a> </li><li data-lastmodified="1781861039385"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/projects/safron/" data-page-url="/fac/cross_fac/tia/projects/safron/">SAFRON</a> </li></ul> </li><li data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/doctoralstudies/" data-page-url="/fac/cross_fac/tia/doctoralstudies/">Doctoral Studies</a></li><li class="dropdown" data-lastmodified="1789730190237"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/seminars/" data-page-url="/fac/cross_fac/tia/seminars/">Seminars</a> <ul class="dropdown-menu" role="menu"><li data-lastmodified="1789982487677"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/seminars/seminars-26-27/" data-page-url="/fac/cross_fac/tia/seminars/seminars-26-27/">Seminars 26/27</a> </li><li data-lastmodified="1789727115001"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/seminars/seminars-25-26/" data-page-url="/fac/cross_fac/tia/seminars/seminars-25-26/">Seminars 25/26</a> </li><li data-lastmodified="1789727115001"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/seminars/seminars-24-25/" data-page-url="/fac/cross_fac/tia/seminars/seminars-24-25/">Seminars 24/25</a> </li><li data-lastmodified="1789727115001"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/seminars/seminars-23-24/" data-page-url="/fac/cross_fac/tia/seminars/seminars-23-24/">Seminars 23/24</a> </li><li data-lastmodified="1789727115001"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/seminars/seminars-22-23/" data-page-url="/fac/cross_fac/tia/seminars/seminars-22-23/">Seminars 22/23</a> </li><li data-lastmodified="1789727115001"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/seminars/seminars-21-22/" data-page-url="/fac/cross_fac/tia/seminars/seminars-21-22/">Seminars 21/22</a> </li></ul> </li><li class="dropdown" data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/software/" data-page-url="/fac/cross_fac/tia/software/">Software</a> <ul class="dropdown-menu" role="menu"><li data-lastmodified="1782212258622"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/software/toolbox/" data-page-url="/fac/cross_fac/tia/software/toolbox/">TIA Toolbox </a> </li><li data-lastmodified="1782212258858"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/software/cerberus/" data-page-url="/fac/cross_fac/tia/software/cerberus/">Cerberus</a> </li><li data-lastmodified="1782212258863"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/software/selfpath/" data-page-url="/fac/cross_fac/tia/software/selfpath/">Self-Path</a> </li><li data-lastmodified="1782212262132"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/software/sntoolbox/" data-page-url="/fac/cross_fac/tia/software/sntoolbox/">Stain Normalisation Toolbox</a> </li></ul> </li><li data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/demos/" data-page-url="/fac/cross_fac/tia/demos/">Demos</a></li><li class="next-secondary active dropdown" data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/data/" data-page-url="/fac/cross_fac/tia/data/">Datasets</a> <ul class="dropdown-menu" role="menu"><li data-lastmodified="1786531909508"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/data/h2t/" data-page-url="/fac/cross_fac/tia/data/h2t/">H2T</a> </li><li data-lastmodified="1786531909558"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/" data-page-url="/fac/cross_fac/tia/data/pannuke/">PanNuke</a> </li></ul> </li><li data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/publications/" data-page-url="/fac/cross_fac/tia/publications/">Publications </a></li><li data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/contactus/" data-page-url="/fac/cross_fac/tia/contactus/">Contact Us </a></li><li class="protected" data-lastmodified="1790689571045"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/tiaintranet/" data-page-url="/fac/cross_fac/tia/tiaintranet/">TIA Intranet<i class="fa fa-lock discreet" title="Restricted permissions" aria-hidden="true"></i><span class="sr-only">(Restricted permissions)</span></a></li></ul></nav><nav class="navbar navbar-secondary" role="navigation" aria-label="Secondary navigation"> <ul class="nav navbar-nav"><li class="nav-breadcrumb first" data-lastmodified="1788944965005"> <a href="https://warwick.ac.uk/fac/cross_fac/tia/data/" data-page-url="/fac/cross_fac/tia/data/">Datasets</a></li><li class="active nav-breadcrumb second last" data-lastmodified="1786531909558"> <a tabindex="0" data-page-url="/fac/cross_fac/tia/data/pannuke/">PanNuke</a></li></ul></nav>
+                    </div>
+                
+            </header>
+
+            
+            <main id="main" class="id7-main-content-area">
+                <header>
+                    <div class="id7-horizontal-divider">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" version="1.1" width="1130" height="41" viewBox="0, 0, 1130, 41">
+                            <path d="m 0,0.5 1030.48, 0 22.8,40 16.96,-31.4 16.96,31.4 22.8,-40 20,0" class="divider" stroke="#383838" fill="none" />
+                        </svg>
+                    </div>
+
+                    
+                    <div class="id7-page-title
+                        
+                        
+                        ">
+                        <h1>
+                            
+                            
+                                PanNuke Dataset for Nuclei Instance Segmentation and Classification
+
+                            
+                        </h1>
+                    </div>
+                </header>
+
+                
+
+                
+                <div class="id7-main-content">
+                    
+
+                    <div class="layout layout-75-25">
+                        <div class="column-1"><div class="column-1-content">
+                            
+                                
+                                    
+
+<h2>Dataset Details</h2><p>To learn more about the data click <a href="https://link.springer.com/chapter/10.1007/978-3-030-23937-4_2">here</a></p><h2>Publications</h2><pre>@inproceedings{gamper2019pannuke,
+  title={PanNuke: an open pan-cancer histology dataset for nuclei instance segmentation and classification},
+  author={Gamper, Jevgenij and Koohbanani, Navid Alemi and Benes, Ksenija and Khuram, Ali and Rajpoot, Nasir},
+  booktitle={European Congress on Digital Pathology},
+  pages={11--19},
+  year={2019},
+  organization={Springer}
+}</pre><pre>@article{gamper2020pannuke,
+  title={PanNuke Dataset Extension, Insights and Baselines},
+  author={Gamper, Jevgenij and Koohbanani, Navid Alemi and Graham, Simon and Jahanifar, Mostafa and Khurram, Syed Ali and Azam, Ayesha and Hewitt, Katherine and Rajpoot, Nasir},
+  journal={arXiv preprint arXiv:2003.10778},
+  year={2020}
+}</pre><h2>Dataset Usage Rules</h2><div>
+<ol>
+<li>The dataset provided here is for research purposes only. Commercial uses are not allowed. The data is licensed under the following license
+<p cid="n15" mdtype="paragraph" class="md-end-block md-p md-focus"><span md-inline="link" class=" md-link"><a spellcheck="false" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><span md-inline="plain" class="md-plain">Attribution-NonCommercial-ShareAlike 4.0 International</span></a></span></p>
+<p cid="n16" mdtype="paragraph" class="md-end-block md-p"><span md-inline="link" class="md-link md-expand"><a spellcheck="false" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><span md-inline="image" data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" class="md-image md-img-loaded"><img referrerpolicy="no-referrer" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" onload="onLoadedFuncForQuickAction(event)" border="0" /></span></a></span></p>
+</li>
+<li>If you intend to publish research work that uses this dataset, you <strong>must</strong> cite our papers (as mentioned above), wherein the same dataset was first used.</li>
+</ol>
+</div><h2>Download</h2><p>Please download the dataset from this link: <a href="fold_1.zip" target="_blank" rel="noopener">Fold 1<i class='new-window-link' aria-hidden='true' title='Link opens in a new window'></i><span class='sr-only'>Link opens in a new window</span></a>; <a href="fold_2.zip" target="_blank" rel="noopener">Fold 2<i class='new-window-link' aria-hidden='true' title='Link opens in a new window'></i><span class='sr-only'>Link opens in a new window</span></a>; <a href="fold_3.zip" target="_blank" rel="noopener">Fold 3<i class='new-window-link' aria-hidden='true' title='Link opens in a new window'></i><span class='sr-only'>Link opens in a new window</span></a>.<span md-inline="link" class="md-link md-expand"><a spellcheck="false" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><span md-inline="image" data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" class="md-image md-img-loaded"><img referrerpolicy="no-referrer" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" onload="onLoadedFuncForQuickAction(event)" border="0" /></span></a></span></p><p><span md-inline="link" class="md-link md-expand"><span md-inline="image" data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" class="md-image md-img-loaded">To reproduce the results in PanNuke Dataset Extension, Insights and Baselines use the following 3 splits:</span></span></p><ol>
+<li><span md-inline="link" class="md-link md-expand"><span md-inline="image" data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" class="md-image md-img-loaded">Training: Fold 1; Validation: Fold 2; Testing: Fold 3</span></span></li>
+<li><span md-inline="link" class="md-link md-expand"><span md-inline="image" data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" class="md-image md-img-loaded">Training: Fold 2; Validation: Fold 1; Testing: Fold 3</span></span></li>
+<li><span md-inline="link" class="md-link md-expand"><span md-inline="image" data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" class="md-image md-img-loaded">Training: Fold 3; Validation: Fold 2; Testing: Fold 1</span></span></li>
+</ol><p>Please download the HoVer-Net weights trained on PanNuke here.<span md-inline="link" class="md-link md-expand"><a spellcheck="false" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><span md-inline="image" data-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" class="md-image md-img-loaded"><img referrerpolicy="no-referrer" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" border="0" /></span></a></span></p><p>Please send all comments, questions, and feedback related to this dataset to Nasir Rajpoot at N.M.Rajpoot at warwick.ac.uk.</p>
+
+                                
+                                
+                            
+                        </div></div>
+                        
+                            <div class="column-2"><div class="column-2-content">
+                                
+                                    
+                                        
+                                            <p></p>
+                                        
+                                        
+                                    
+                                
+                            </div></div>
+                        
+                    </div>
+                    
+                </div>
+
+                
+            </main>
+
+            
+
+            
+
+    
+    
+
+
+<footer class="id7-page-footer id7-footer-coloured">
+    <div class="id7-site-footer">
+        <div class="id7-site-footer-content">
+
+            
+
+            
+            
+
+            
+
+            
+                
+                
+                    
+                
+            
+
+            <div class="row">
+<div class="col-sm-10">
+<h5>Connect with us</h5>
+<p>TIA Centre, Dept of Computer Science, University of Warwick, CV4 7AL<br />Email: <a href="mailto:tia@warwick.ac.uk">tia@warwick.ac.uk</a></p>
+</div>
+<div class="col-sm-2 fa-social-icons brand-text text-right"><a title="Tissue Image Analytics Centre on LinkedIn" href="https://www.linkedin.com/company/tia-centre/about/"><i class="fa fa-linkedin-square fa-3x"></i><span class="sr-only">LinkedIn</span></a> <a title="TIA Warwick - YouTube" href="https://www.youtube.com/channel/UC3H5JLVZrIjNackd9AKcoMA/playlists"><i class="fa fa-youtube fa-3x"></i><span class="sr-only">TIA Warwick - YouTube</span> </a></div>
+</div>
+        </div>
+    </div>
+    <div class="id7-app-footer">
+        <div class="id7-app-footer-content crest-right">
+            
+                <div id="page-footer-elements" class="nofollow clearfix page-footer-elements">
+                    
+                    
+                    <span>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+    Page contact: Jevgenij Gamper
+  
+  
+  
+  
+
+</span>
+                    <span>Last revised: Thu 27 Feb 2025</span>
+                </div>
+                <div id="email-page-owner" class="hidden">
+                    
+                </div>
+            
+
+            <div class="id7-footer-utility">
+                <ul>
+                    <li id="powered-by-link">
+                        Powered by <a href="https://warwick.ac.uk/sitebuilder" title="More information about SiteBuilder">Sitebuilder</a>
+                    </li>
+
+                    
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                        
+                    
+
+                    <li id="accessibility-link"><a href="https://warwick.ac.uk/accessibility" title="Accessibility information [0]" accesskey="0">Accessibility</a></li>
+
+                    <li id="cookies-link"><a href="https://warwick.ac.uk/cookies" title="Information about cookies">Cookies</a></li>
+
+                    <li id="copyright-link"><a href="https://warwick.ac.uk/copyright" title="Copyright Statement">&copy; MMXXVI</a></li>
+
+                    
+                        <li id="modern-slavery-link"><a href="https://warwick.ac.uk/modernslavery">Modern Slavery Statement</a></li>
+                        <li id="global-conduct-link"><a href="https://warwick.ac.uk/conduct">Student Harassment and Sexual Misconduct</a></li>
+                    
+
+                    <li id="privacy-link"><a href="https://warwick.ac.uk/privacy" title="Privacy notice">Privacy</a></li>
+
+                    
+                        <li id="terms-link"><a href="https://warwick.ac.uk/terms/general" title="Terms of use">Terms</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Hide vacancies link on custom domains and nonbranded sites -->
+            
+            <div id="university-vacancies-link">
+                <a class="btn btn-info" href="https://warwick.ac.uk/vacancies">Work with us</a>
+            </div>
+            
+        </div>
+
+    </div>
+</footer>
+
+
+        </div>
+        <div class="id7-right-border"></div>
+
+        
+
+	
+	
+
+	
+
+
+
+
+
+
+        
+
+
+
+  
+    
+
+
+
+<sb-dialog-wrapper id="cookie-banner-wrapper">
+    <dialog id="cookie-banner" data-no-esc="true">
+        <div class="dialog-content container">
+            <div class="dialog-body">
+                <h2>Let us know you agree to cookies</h2>
+
+                <form id="cookiePreferenceForm" action="/sitebuilder2/user/cookiepreference?returnTo=%2Ffac%2Fcross_fac%2Ftia%2Fdata%2Fpannuke%2F" method="POST">
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <p class="cookie-description">We use cookies to give you the best online experience. Please let us know if you agree to functional, advertising and performance cookies. You can update your cookie preferences at any time.</p>
+                            <p class="cookie-policy-link"><a href="/cookies">Cookie policy</a></p>
+                        </div>
+                        <div class="col-sm-7 col-md-4">
+                            <fieldset class="form-group">
+                                <div class="checkbox disabled">
+                                    <label data-toggle="tooltip" data-placement="top" title="Essential cookies are always on">
+                                        <input type="checkbox" id="cookie-modal-essential-cookies" class="switch__checkbox" aria-disabled="true" checked="" disabled="">
+                                        Essential cookies
+                                    </label>
+                                </div>
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+		
+		
+			<div class="checkbox"><span class="control-label-wrapper"><label>
+		
+	
+
+	<input
+		id="cookie-modal-functional-cookies"
+		tabindex="0"
+		type="checkbox"
+		name="hasFunctionalConsent"
+		class="nonTextField"
+		
+		value="true"
+		
+		
+		
+		
+	> Functional cookies
+	
+		
+		
+			
+		
+	
+	
+
+	
+	<input type="hidden" name="_hasFunctionalConsent" value="">
+	
+	
+
+	
+		
+		
+			</label>
+            
+
+
+
+
+
+
+<!-- helptext:hasFunctionalConsent -->
+
+
+            </span></div>
+		
+	
+
+	
+
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+		
+		
+			<div class="checkbox"><span class="control-label-wrapper"><label>
+		
+	
+
+	<input
+		id="cookie-modal-advertising-cookies"
+		tabindex="0"
+		type="checkbox"
+		name="hasAdvertisingConsent"
+		class="nonTextField"
+		
+		value="true"
+		
+		
+		
+		
+	> Advertising cookies
+	
+		
+		
+			
+		
+	
+	
+
+	
+	<input type="hidden" name="_hasAdvertisingConsent" value="">
+	
+	
+
+	
+		
+		
+			</label>
+            
+
+
+
+
+
+
+<!-- helptext:hasAdvertisingConsent -->
+
+
+            </span></div>
+		
+	
+
+	
+
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+		
+		
+			<div class="checkbox"><span class="control-label-wrapper"><label>
+		
+	
+
+	<input
+		id="cookie-modal-performance-cookies"
+		tabindex="0"
+		type="checkbox"
+		name="hasPerformanceConsent"
+		class="nonTextField"
+		
+		value="true"
+		
+		
+		
+		
+	> Performance cookies
+	
+		
+		
+			
+		
+	
+	
+
+	
+	<input type="hidden" name="_hasPerformanceConsent" value="">
+	
+	
+
+	
+		
+		
+			</label>
+            
+
+
+
+
+
+
+<!-- helptext:hasPerformanceConsent -->
+
+
+            </span></div>
+		
+	
+
+	
+
+
+
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5 col-md-4">
+                            <button type="submit" class="btn btn-accept-all btn-block btn-lg" name="acceptAll" value="true" aria-label="Accept all functional, advertising and performance cookies" title="Accept all functional, advertising and performance cookies">Accept all</button>
+                            <button type="submit" class="btn btn-remember btn-block btn-lg" name="savePreferences" value="savePreferences">Remember my preference</button>
+                            <button type="button" class="btn btn-more-info btn-block btn-lg cookie-banner-modal-button">More information</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </dialog>
+</sb-dialog-wrapper>
+
+  
+
+  <div class="cookie-preference-modal-container"></div>
+
+
+
+        <aside class="statuspage-embed-container"
+            aria-label="Service Status"
+            data-api-base="https://status.warwick.ac.uk/api"
+            data-components='["j9ksmwrhqs9v", "fzcttzffk1j0", "lyljzmdxg3yg", "qkfm31zsq8c5"]'
+        ></aside>
+        <script async type="module" src="https://d36jn9qou1tztq.cloudfront.net/static_war/render/statuspage-widget/main.js.188893540094"></script>
+    </body>
+</html>

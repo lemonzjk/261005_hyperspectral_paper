@@ -239,7 +239,7 @@
 | ORCID author works | 2024 | Jun Zhou 2024 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2024 source groups; not a complete 2024 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
 | ORCID author works | 2025 | Jun Zhou 2025 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2025 source groups; not a complete 2025 venue scan. | 17 / 17 / 17 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
 | ORCID author works | 2026 | Jun Zhou 2026 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2026 source groups; not a complete 2026 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
-| arXiv · Jun Zhou quoted-name author query | 2026 | au:"Jun_Zhou"；start=0/200/400，200/200/131条；五批摘要逐审与医学来源续核 | 531 / 531 / 531 | 分页完整；531条有映射/逐审记录（含9待核），0未审 | 累计471逐审；Mamba DOI/独立ORCID履历支持同名区分；六同名保留全领域范围；521整名/10异常不证明目标身份，输入、变体、版本/全文未完成 |
+| arXiv · Jun Zhou quoted-name author query | 2026 | au:"Jun_Zhou"；start=0/200/400，200/200/131；五批摘要、医学登记和PanNuke三折原数组续核 | 531 / 531 / 531 | 分页/索引完整；531有映射/逐审（含8待核），0未审 | 累计471逐审；TEAMS按MRI/CT与源RGB输入局部暂排，Mamba同名及全领域局部暂排/子集差异分别留证；5同名候选全领域继续待，姓名变体、身份/输入/正式版本与全文未完成 |
 
 完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
 
@@ -1066,4 +1066,13 @@ VITask指定数据段续读，官方MedMNIST定义确认12个2D数据集为4 RGB
 
 补AdvMIM、MerMED和TEAMS正式登记及医学综述版本候选。AdvMIM当前所链固定仓库111项为FLARE25 CT/MRI/PET，单通道代码不能替代论文ISIC配置，出版社PDF URL返回HTML订阅预览。MerMED原25/正式35作者中，去句点后24姓名对应、Linh Le Dinh未列、11新姓名；原字段保持。综述候选改题且7至8作者，明确版本关系未核；TEAMS/综述印刷卷期2027-01不当首次在线日期，综述XML只有coredata。EVLF/VITask各五条题名结果未命中不证明无正式版。
 
-当前arXiv531记录为24目录匹配/32继承/6同名/447摘要暂排/6局部暂排/7姓名不精确/9待/0未审，累计471原队列逐审不变；当前作者arXiv矩阵已同步，历史批次原决定不改；另补60条旧映射survey索引（24目录/32继承/4旧同名），搜索索引现531条，与471逐审区分，不计新阅读或新论文。ORCID1/DBLP10/Scholar9/CV3有重叠；757目录/188作者/214三维/303标签/334图不变，作者专项与全领域矩阵未完成。见 [身份/版本/输入来源审计](sources/jun-zhou-medical-identity-publication-followup6-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
+医学正式登记续核结束时，arXiv531记录为24目录匹配/32继承/6同名/447摘要暂排/6局部暂排/7姓名不精确/9待/0未审，累计471原队列逐审不变；当前作者arXiv矩阵已同步，历史批次原决定不改；另补60条旧映射survey索引（24目录/32继承/4旧同名），搜索索引现531条，与471逐审区分，不计新阅读或新论文。ORCID1/DBLP10/Scholar9/CV3有重叠；757目录/188作者/214三维/303标签/334图不变，作者专项与全领域矩阵未完成。见 [身份/版本/输入来源审计](sources/jun-zhou-medical-identity-publication-followup6-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
+
+
+### PanNuke原数组与TEAMS/Mamba光学输入续核（2026-10-11）
+
+官方三折ZIP固定ETag，36个精确206范围取得完整中央目录、9个NPY头和各96字节数据样本，共31,765字节。图像形状分别2656/2523/2722×256×256×3，合7901张；掩码六层、组织标签为Unicode U13字符串，均不当光学波段。源作者固定评估代码取前五mask层统计类别，相关HoVer-Net说明RGB与实例/类别标签分开；原始字节和哈希保存，不称完整ZIP CRC、全部像素或论文实际数组已核。
+
+TEAMS原稿第3页及第21页引用明确会议扩展Mamba Snake；九作者登记没有Jun ORCID，不自动转用会议稿个人标识。Table1/§4.1的MRI/CT和唯一光学PanNuke输入按源三通道/作者RGB定义局部暂排高光谱范围，范围可由明确关系重开。Mamba原同名身份决定不变，全领域范围局部暂排；v2明示2655子集与官方首折2656/总7901不等同，正式版/子集选择仍待。其余5同名候选留全领域。RADC仍无作者确认的实际EuroSAT版本/实现，代码查询未命中不作不存在证明。
+
+当前arXiv531为24匹配/32继承/6同名/447摘要暂排/7局部暂排/7姓名不精确/8待/0未审，471原队列逐审及旧批次快照不变。757目录/188作者/214三维/303标签/334图不变；其他来源待核有重叠，作者专项与全领域矩阵仍未完成。见 [原始数组与范围审计](sources/jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。

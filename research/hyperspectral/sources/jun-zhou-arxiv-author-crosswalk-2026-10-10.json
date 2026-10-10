@@ -4,15 +4,15 @@
   "recordCount": 531,
   "decisionCounts": {
     "excluded_abstract_scope": 447,
-    "pending_primary_scope_identity": 9,
+    "pending_primary_scope_identity": 8,
     "matched_catalog": 24,
     "query_name_nonexact": 7,
+    "excluded_selected_scope": 7,
     "matched_prior_decision": 32,
-    "excluded_selected_scope": 6,
     "other_author_primary_affiliation": 6,
     "not_screened": 0
   },
-  "method": "官方带引号姓名查询531条全分页；24目录/32既有决定映射、4既有同名局部决定。五批按原未审队列原序逐读50/100/100/100/121条可得API原摘要，累计471新增逐审。医学来源续核将Mamba Snake一条由pending改为交叉证据支持的同名排除；当前447摘要暂排、6局部暂排、7查询姓名不精确、9范围/身份待、2新增同名，同名合计6。原not_screened=0，531条均有映射或逐审，含9pending，不称全部闭环/全文完成。姓名变体及来源差集未完整覆盖；原摘要省略号、粘连/简写字段和版本差异保留。",
+  "method": "官方带引号姓名查询531全分页/索引：24目录映射、32既有决定及4旧同名。五批按原队列逐读50/100/100/100/121条可得API摘要，累计471新增逐审。医学来源续核有2新增同名；PanNuke三折原数组头与论文输入续核使TEAMS一条范围暂排，当前447摘要暂排、7局部暂排、7姓名不精确、8范围/身份待、2新增同名，同名合计6。Mamba全领域输入亦局部暂排，不升级全文或关闭子集/正式版本问题。原未审0不等于全部范围/身份/全文完成；姓名变体与来源差集未完整覆盖。",
   "opticalKeywordScan": {
     "fields": [
       "title",
@@ -65,7 +65,15 @@
       "reviewedAt": "2026-10-10",
       "basis": "RADC原稿首页机构和§3.1/3.2已局部核验，实际光谱输入及目标作者身份仍待，另列待核。",
       "readingBoundary": "六页原稿仅首页机构、§3.1与实验/实现段局部；未通读、核代码或正式接收。",
-      "identityBoundary": "除本批明示姓名/机构证据外，不声明已经核实Griffith身份；范围暂排不是同名身份排除。"
+      "identityBoundary": "除本批明示姓名/机构证据外，不声明已经核实Griffith身份；范围暂排不是同名身份排除。",
+      "followupEvidenceFiles": [
+        "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json"
+      ],
+      "latestFollowupAt": "2026-10-11",
+      "latestScopeFinding": "RADC v1 §3.1/Table1仍只给EuroSAT名称和冻结CLIP-RN50/ViT-B/16，未明示RGB版或完整多光谱波段。本轮GitHub精确题名/相关简称发现查询没有取得由原稿链接或稳定作者页确认的实现；宽简称查询没有完整分页，未命中不证明没有代码。实际EuroSAT通道及Jun个人身份仍待。",
+      "scopeAuditFile": "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json",
+      "scopeFinding": "RADC v1 §3.1/Table1仍只给EuroSAT名称和冻结CLIP-RN50/ViT-B/16，未明示RGB版或完整多光谱波段。本轮GitHub精确题名/相关简称发现查询没有取得由原稿链接或稳定作者页确认的实现；宽简称查询没有完整分页，未命中不证明没有代码。实际EuroSAT通道及Jun个人身份仍待。",
+      "scopeSelectedPagesFollowupFile": "jun-zhou-input7-radc-v1-selected-pages-2026-10-11.json"
     },
     {
       "arxivId": "2609.39335",
@@ -318,19 +326,48 @@
       "url": "https://arxiv.org/abs/2608.17421v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "pending_primary_scope_identity",
-      "evidenceFile": "jun-zhou-arxiv-abstract-batch1-2026-10-10.json",
+      "decision": "excluded_selected_scope",
+      "evidenceFile": "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json",
       "reviewedAt": "2026-10-10",
-      "basis": "TEAMS原稿首页机构、Table1及§4.1局部补读；目标身份与显微图像光谱配置未完整核验，另留待核。",
-      "readingBoundary": "21页原稿仅首页机构、Table1与§4.1数据/输入段局部；原稿页脚Medical Image Analysis不当正式发表。",
-      "identityBoundary": "除本批明示姓名/机构证据外，不声明已经核实Griffith身份；范围暂排不是同名身份排除。",
+      "basis": "TEAMS v1 Table1/§4.1列MRI/CT四数据及PanNuke显微数据，输入段为二维图像与轮廓分割。官方PanNuke三折数组均256×256×3，相关作者实现定义RGB输入；六层mask是类别标注而非光学波段。按已读原稿和源数据定义暂排高光谱范围，明确高光谱输入/基础关系可重开；不是Jun个人身份排除。",
+      "readingBoundary": "首页、§3.1及图3/第3页扩展声明、Table1/§4.1输入和第21页指定引用局部；未阅读全文/正式版本/实验复现。",
+      "identityBoundary": "本篇正式登记不给Jun ORCID；Mamba的个人标识不按同组自动转用，本篇决定依据范围而非已经完成个人身份核验。",
       "followupEvidenceFiles": [
-        "jun-zhou-medical-identity-publication-followup6-2026-10-11.json"
+        "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
+        "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json"
       ],
       "latestFollowupAt": "2026-10-11",
-      "latestScopeFinding": "发现精确题名与九作者逐项一致的出版社DOI登记10.1016/j.media.2026.104277；Jun没有ORCID字段，不能将Mamba的个人标识按同组自动转用。登记印刷卷期2027-01，在线发表日期未给出；实际显微输入/个人身份/正式版本仍待。",
+      "latestScopeFinding": "TEAMS v1 Table1/§4.1列MRI/CT四数据及PanNuke显微数据，输入段为二维图像与轮廓分割。官方PanNuke三折数组均256×256×3，相关作者实现定义RGB输入；六层mask是类别标注而非光学波段。按已读原稿和源数据定义暂排高光谱范围，明确高光谱输入/基础关系可重开；不是Jun个人身份排除。",
       "publicationFollowupFile": "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
-      "formalDoi": "10.1016/j.media.2026.104277"
+      "formalDoi": "10.1016/j.media.2026.104277",
+      "scopeAuditFile": "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json",
+      "scopeFinding": "TEAMS v1 Table1/§4.1列MRI/CT四数据及PanNuke显微数据，输入段为二维图像与轮廓分割。官方PanNuke三折数组均256×256×3，相关作者实现定义RGB输入；六层mask是类别标注而非光学波段。按已读原稿和源数据定义暂排高光谱范围，明确高光谱输入/基础关系可重开；不是Jun个人身份排除。",
+      "scopeSelectedPagesFollowupFile": "jun-zhou-input7-teams-v1-selected-pages-2026-10-11.json",
+      "priorEvidenceFiles": [
+        "jun-zhou-arxiv-abstract-batch1-2026-10-10.json"
+      ],
+      "wholeFieldScopeStatus": "excluded_selected_scope_no_explicit_hyperspectral_relationship",
+      "deferredFieldCandidate": false,
+      "explicitConferenceExtension": {
+        "verifiedInPreprint": true,
+        "statementPdfPage": 3,
+        "referencePdfPage": 21,
+        "priorTitle": "Unified Medical Image Segmentation with State Space Modeling Snake",
+        "priorAuthorInitials": [
+          "R. Zhang",
+          "H. Guo",
+          "K. Tian",
+          "J. Zhou",
+          "M. Yan",
+          "Z. Zhang",
+          "S. Zhao"
+        ],
+        "priorVenue": "ACMMM 2025",
+        "priorPages": "7825–7834",
+        "priorDoi": "10.1145/3746027.3755148",
+        "priorDoiMatchedUsing": "jun-zhou-medical6-mamba-crossref-2026-10-11.json",
+        "boundary": "明确原稿方法扩展关系；不声明本篇Jun已有独立ORCID，也不证明正式2027卷期全文与本稿一致。"
+      }
     },
     {
       "arxivId": "2608.12034",
@@ -2027,14 +2064,15 @@
       "decision": "other_author_primary_affiliation",
       "evidenceFile": "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
       "reviewedAt": "2026-10-11",
-      "basis": "精确正式DOI与七作者顺序匹配原快照；出版社登记Jun Zhou关联ORCID 0000-0002-4722-2183。该ORCID公开履历为2015–2019中山大学本科、2020–2025博士及清华深圳研究院博士后；目标ORCID关联Griffith，目标ANU旧主页列2006年阿尔伯塔大学博士论文。交叉证据支持作者专项同名排除，不仅凭机构差异；全领域实际光学输入/基础关系继续待核。",
+      "basis": "既有精确正式DOI、独立ORCID履历与目标旧主页支持同名作者区分，身份审计及非认证标识边界沿用上一轮。当前官方PanNuke三通道与原稿MRI/CT输入使全领域范围局部暂排；2655子集选择/实际数组及正式版仍待，明确光谱关系可重开。",
       "readingBoundary": "正式DOI题名、全部七作者及Jun的ORCID字段；独立ORCID person/教育/任职与六组作品摘要字段；固定arXiv v1前两页和既有v2首页局部。未读正式ACM全文/全部预印本实验、未复现模型。",
       "identityBoundary": "Crossref ORCID字段authenticated-orcid=false；ORCID履历为本人提供，六组公开works没有本篇精确DOI/arXiv记录，不声称独立ORCID作品列表确认了本篇。此决定仅用于本篇，不推广到TEAMS、RADC或其他同组/同名稿。",
       "followupEvidenceFiles": [
-        "jun-zhou-medical-identity-publication-followup6-2026-10-11.json"
+        "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
+        "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json"
       ],
       "latestFollowupAt": "2026-10-11",
-      "latestScopeFinding": "精确正式DOI与七作者顺序匹配原快照；出版社登记Jun Zhou关联ORCID 0000-0002-4722-2183。该ORCID公开履历为2015–2019中山大学本科、2020–2025博士及清华深圳研究院博士后；目标ORCID关联Griffith，目标ANU旧主页列2006年阿尔伯塔大学博士论文。交叉证据支持作者专项同名排除，不仅凭机构差异；全领域实际光学输入/基础关系继续待核。",
+      "latestScopeFinding": "Mamba Snake v2 §4.1/附录Table6列MRI/CT及PanNuke，后者当前官方三折图像均三通道、mask六层为标签；已读输入没有密集光学波段或明确高光谱基础贡献，全领域按局部范围暂排，保留新光谱关系重开。v2明示只用2655张子集，不等于官方第一折2656张，具体选择/正式版本/数组哈希仍待；作者专项同名决定维持。",
       "publicationFollowupFile": "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
       "priorEvidenceFiles": [
         "jun-zhou-arxiv-abstract-batch2-2026-10-11.json"
@@ -2042,10 +2080,20 @@
       "identityFinding": "精确正式DOI与七作者顺序匹配原快照；出版社登记Jun Zhou关联ORCID 0000-0002-4722-2183。该ORCID公开履历为2015–2019中山大学本科、2020–2025博士及清华深圳研究院博士后；目标ORCID关联Griffith，目标ANU旧主页列2006年阿尔伯塔大学博士论文。交叉证据支持作者专项同名排除，不仅凭机构差异；全领域实际光学输入/基础关系继续待核。",
       "formalDoi": "10.1145/3746027.3755148",
       "identityAuditFile": "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
-      "deferredFieldCandidate": true,
-      "wholeFieldScopeStatus": "pending_optical_input_or_explicit_hyperspectral_relationship",
+      "deferredFieldCandidate": false,
+      "wholeFieldScopeStatus": "excluded_selected_scope_no_explicit_hyperspectral_relationship",
       "selectedPagesFollowupFile": "jun-zhou-medical6-mamba-v1-selected-pages-2026-10-11.json",
-      "scopeFinding": "既有§4.1与附录Table6包含MR_AVBCE MRI、VerSe/RAOS/BTCV CT及PanNuke显微图；PanNuke实际光学通道与明确高光谱基础关系仍待。作者专项已有本轮交叉身份支持同名区分，不据此关闭全领域范围。"
+      "scopeFinding": "Mamba Snake v2 §4.1/附录Table6列MRI/CT及PanNuke，后者当前官方三折图像均三通道、mask六层为标签；已读输入没有密集光学波段或明确高光谱基础贡献，全领域按局部范围暂排，保留新光谱关系重开。v2明示只用2655张子集，不等于官方第一折2656张，具体选择/正式版本/数组哈希仍待；作者专项同名决定维持。",
+      "scopeAuditFile": "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json",
+      "scopeSelectedPagesFollowupFile": "jun-zhou-arxiv-batch2-2507.12760-selected-pages-2026-10-11.json",
+      "datasetSubsetBoundary": {
+        "paperImageCount": 2655,
+        "paperExplicitlyUsesSubset": true,
+        "officialFold1ImageCount": 2656,
+        "officialAllFoldsImageCount": 7901,
+        "exactSubsetSelectionVerified": false,
+        "finding": "不把2655改写为2656，亦不据近似数量认定只删了一个样本。"
+      }
     },
     {
       "arxivId": "2507.08306",
@@ -7676,6 +7724,7 @@
   ],
   "reviewedAt": "2026-10-11",
   "followupEvidenceFiles": [
-    "jun-zhou-medical-identity-publication-followup6-2026-10-11.json"
+    "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
+    "jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json"
   ]
 }

@@ -13,7 +13,7 @@
 - React 19、TypeScript、Vite 7；Node.js 22.12+。
 - npm run dev -- --port 5173；远程需转发。
 - 数据/上下文：npm run validate；网站：npm run build；交互：浏览器检查。
-- 校验/构建通过；原图队列按年份降序。JS约4.72MB，有体积警告。
+- 校验/构建通过；原图队列按年份降序。
 
 ## 当前状态
 
@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：调研论文，不增笔记。周峻188条（HSI181/关联7，含1摘要），179摘要级/9全文级。ORCID263组现128入10重124排1重开待；DBLP365为355决定/10待；Scholar209为188排8重4入9待；CV3未确认发表。arXiv带引号查询531全分页/索引，含非精确姓名/分词异常：24匹配、32继承、6同名、447摘要暂排、6局部暂排、7姓名不精确、9范围/身份待、0未审；471条逐审非全文全量。UEMM正式版/原图/采集版本待。VITask标准数据4RGB/8灰，APTOS/代码待。6同名稿留全领域；Mamba另ORCID、椭偏范围待。六遥感仅公开元数据，OA/200非全文。继续待核与姓名变体；见jun-zhou.md。
+- 作者优先：调研论文，不增笔记。周峻188条（HSI181/关联7，含1摘要），179摘要级/9全文级。ORCID263组128入10重124排1重开待；DBLP365为355决定/10待；Scholar209为188排8重4入9待；CV3未确认发表。arXiv带引号531全分页/索引含姓名异常：24匹配、32继承、6同名、447摘要暂排、7局部暂排、7姓名不精确、8范围/身份待、0未审；471逐审非全文全量。PanNuke7901图3通道/6掩码层；TEAMS/Mamba输入暂排，Mamba子集2655/首折2656分开。6同名中5留全领域，椭偏待。UEMM正式版/像素/版本、VITask APTOS/代码及六遥感输入待；OA/200非全文。继续身份/变体与原文；见jun-zhou.md。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后续顺序28起，非年度全量。
