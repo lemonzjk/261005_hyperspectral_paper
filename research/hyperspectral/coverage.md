@@ -1035,10 +1035,19 @@ RADC首页Jun Zhou为清华深圳国际研究生院，实验含EuroSAT但实际�
 
 UEMM原稿图2的六模态与采集段infrared/depth表述矛盾；论文链接的当前采集代码调用AirSim Infrared，但官方文档指对象ID灰度映射，不能证明真实红外波段。目标Griffith作者身份有首页及作者仓库个人页支持；正式ACM版、发布数据及采集时模拟器版本未核。因此旧题名排除重开为pending，并同步ORCID/DBLP/Scholar/Griffith及survey，非新增论文。仓库树160项未截断、选读文件blob匹配；HF仅根目录/README，不称数据全分页或复现。
 
-当前累计250条逐审，531交叉表为24匹配/32继承/4既有同名/234摘要暂排/4局部暂排/2整名不符/10待/221未审。ORCID128入/10重/124排/1重开待，DBLP355决定/10待，Scholar188排/8重/4入/9待；待核有重叠。757目录、188作者、214三维、303标签、334原图不变。新原稿页渲染仅为范围来源证据。作者专项与全领域场所/全文覆盖继续推进，非全集完成。见 [第三批逐项证据](sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json)、[UEMM重开审计](sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
+第三批结束时累计250条逐审，531交叉表为24匹配/32继承/4既有同名/234摘要暂排/4局部暂排/2整名不符/10待/221未审。ORCID128入/10重/124排/1重开待，DBLP355决定/10待，Scholar188排/8重/4入/9待；待核有重叠。757目录、188作者、214三维、303标签、334原图不变。新原稿页渲染仅为范围来源证据。作者专项与全领域场所/全文覆盖继续推进，非全集完成。见 [第三批逐项证据](sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json)、[UEMM重开审计](sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
 
 ### UEMM实际发布标注与VITask输入续核（2026-10-11）
 
 两条既有pending补原始证据，不新增目录、不改变范围决定。UEMM固定HF修订递归树15项/11文件与siblings一致、无后续页；未列像素，Baidu多模态图像未取得。检测test.zip完整下载且LFS哈希吻合，自动解析9,698 XML全部登记1920×1080×3/SceneImage；三通道只是标注字段，不证明像素/全部模态。作者补充材料列RGB、深度、分割、法向、IMU；正式ACM PDF403/HTML，机构五条待审记录无ORIGINAL，因此保留正式版/图像/采集版本缺口。
 
-VITask指定数据段续读，官方MedMNIST定义确认12个2D数据集为4 RGB/8灰度，TissueMNIST的7层为切片而非波段。IDRiD彩色眼底与MESSIDOR 3CCD官方说明已核；APTOS原稿引文/来源版本仍待，官方比赛页200仅JS壳。作者代码树仅README承诺接收后公开，实际转换未核。不把标准数据定义当已重现论文数组，不标全文或同名身份结论。当前188作者/757总库、arXiv221未审/10待及其他范围待核计数均不变。见 [输入续核审计](sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json)。
+VITask指定数据段续读，官方MedMNIST定义确认12个2D数据集为4 RGB/8灰度，TissueMNIST的7层为切片而非波段。IDRiD彩色眼底与MESSIDOR 3CCD官方说明已核；APTOS原稿引文/来源版本仍待，官方比赛页200仅JS壳。作者代码树仅README承诺接收后公开，实际转换未核。不把标准数据定义当已重现论文数组，不标全文或同名身份结论。该输入续核结束时188作者/757总库、arXiv221未审/10待及其他范围待核计数均不变；当前余量见最新批次。见 [输入续核审计](sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json)。
+
+
+### 周峻arXiv第四批100条与椭偏稿同名/版本区分（2026-10-11）
+
+原221未审队列按快照次序读前100条官方API可得摘要：97摘要范围暂排、2原稿输入局部暂排、1交叉来源同名区分。农业视频建图/机器人RGB深度里程计与人脸/物体自表达聚类未取得明确高光谱联系；不把RGB-D、CNN channels或矩阵spectral clustering作光学波段。R2-Net/DELE原摘要末尾省略号未补齐；2301.02763粘连作者原样保留，不凭子串核独立整名/身份。三份固定PDF保存完整哈希与指定页文本，仅局部阅读。
+
+椭偏稿2210.14440v2的API/abs列原题名与17作者，PDF/正式DOI 10.1063/5.0141814列另一题名与18作者；原字段不覆盖。出版社登记关联另一ORCID 0000-0002-5505-7616，其精确预印本/正式稿与IMRE任职同首页一致，结合目标ORCID的Griffith主页支持作者专项同名排除。0.02 eV为报告的光谱分辨率，明确高光谱关系留全领域待核；不按同名删候选。正式PDF403，出版社说明10.1063/5.0173910虽登记correction关联，但修正正文未读，不推断具体改动。
+
+当前累计350逐审；531交叉表为24匹配/32继承/5同名（4既有/1本批）/331摘要暂排/6局部暂排/2整名不符/10范围身份待/121未审。350逐审加60既有映射/身份记录共410有记录，含10待核，不称410全部闭环或全文已读。目录757、作者188、三维214、标签303及334图不变；ORCID1重开/DBLP10/Scholar9/CV3有重叠，作者来源/输入/版本及全领域矩阵仍未完成。证据见 [第四批逐项记录](sources/jun-zhou-arxiv-abstract-batch4-2026-10-11.json)、[椭偏身份与版本交叉核验](sources/jun-zhou-arxiv-batch4-ellipsometry-identity-version-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
