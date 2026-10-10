@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。165条为摘要级核验、23条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。163条为摘要级核验、25条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -168,10 +168,10 @@
 | **直接高光谱** | | | | |
 | 2009 | [An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis](https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
 | 2010 | [L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
-| 2010 | [Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation](https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf) | 光学影像配准 | 正式发表 | 摘要核验 |
+| 2010 | [Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation](https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf) | 光学影像配准 | 正式发表 | 全文核验（版本见目录） |
 | 2011 | [Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis](https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
 | 2011 | [Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
-| 2011 | [Material-specific user colour profiles from imaging spectroscopy data](https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf) | 光谱材料特定颜色编辑 | 正式发表 | 摘要核验 |
+| 2011 | [Material-specific user colour profiles from imaging spectroscopy data](https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf) | 光谱材料特定颜色编辑 | 正式发表 | 全文核验（版本见目录） |
 | 2011 | [Structured sparse model based feature selection and classification for hyperspectral imagery](https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf) | 地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2012 | [Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image](https://doi.org/10.1109/ICICEE.2012.350) | 待分类 | 正式发表 | 摘要核验 |
 | 2012 | [Shearlet transform based anomaly detection for hyperspectral image](https://doi.org/10.1117/12.978636) | 待分类 | 正式发表 | 摘要核验 |

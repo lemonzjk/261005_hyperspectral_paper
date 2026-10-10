@@ -1,0 +1,201 @@
+{
+  "checkedAt": "2026-10-11",
+  "derivedNotOriginalResponse": true,
+  "ccre": {
+    "paperId": "ccre-hsi-rgb-registration-2010",
+    "equationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "mechanism": "Convert HSI and RGB into gray representations; maximize MI or CCRE under a six-parameter affine transform via analytic derivatives/Hessian and Newton optimization. MI uses Parzen cubic B-spline estimates of joint/marginal probabilities; CCRE substitutes cumulative residual distribution over transformed image intensity with cubic B-spline over reference intensity. Full explicit gradient/Hessian formulae delegated to cited work, not reproduced here.",
+    "grayConversionBoundary": "Mean over bands/channels and CIE1931 conversion discussed as options; no controlled comparison or unambiguous final gray-conversion specification found. Do not write both as simultaneous implemented preprocessing or assume RGB fusion output.",
+    "data": {
+      "imagePairs": 7,
+      "hyperspectralAcquisition": "Acousto-Optic Filter plus FireWire camera;21 bands430–630nm.",
+      "trichromaticCamera": "Nikon D80 DSLR",
+      "scene": "High-oblique car park/surroundings captured over the day; camera location/focal length/acquisition times differ.",
+      "figure2SampleSizes": {
+        "HSI": [
+          1280,
+          960
+        ],
+        "resizedRGB": [
+          1437,
+          1139
+        ]
+      },
+      "boundary": "These sizes belong to the illustrated pair, not necessarily all7 pairs. No complete corpus or public dataset payload obtained."
+    },
+    "syntheticProtocol": {
+      "manualRegistrationBeforePerturbation": true,
+      "affinePerturbationsPerPair": 50,
+      "translationUpToPixels": 120,
+      "rotationDegrees": [
+        -25,
+        25
+      ],
+      "scalePercent": [
+        85,
+        115
+      ],
+      "scales": [
+        0.125,
+        0.25,
+        0.5
+      ],
+      "figure3SwitchAtIterations": 200,
+      "nominalPerturbationCountDerived": 350,
+      "countBoundary": "7×50 arithmetic, not350 independent scenes or all successful cases. The method models affine transforms; the artificial ranges only explicitly describe translation/rotation/scaling, not shear distribution."
+    },
+    "rotationVisualAudit": {
+      "pdfPage": 3,
+      "visible": "-25 with superscript0 to25 with superscript0, degree rotations",
+      "interpretation": "-25° to25°; the superscript0 acts as degree sign, not-250 to250 degrees. Prior record left this unreadable value pending, now resolved by rendered text."
+    },
+    "results": "Figure3 shows average maximum registration error per iteration for the second Figure1 image set, not pooled timing over all pairs. Both converge, CCRE curve earlier; abrupt drop at iteration200 accompanies scale change. Author prose says effectively100% success up to70px initial displacement and better than MI at larger displacement, SSD failed all cases. Curves not digitized into exact unsupported MAE/timing/success counts.",
+    "limits": "No success threshold/error definition sufficient for independent reproduction, per-bin counts, timing/hardware, random seed, optimization stopping/boundary/interpolation parameters, confidence interval or real geometric GT obtained. Manual registration is the baseline for perturbation recovery, not independently surveyed physical truth. No demonstrated spectral/spatial fusion cube, non-affine registration, 3D, or across-scene generalization."
+  },
+  "colour": {
+    "paperId": "material-user-colour-iccv-2011",
+    "equationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "unnumberedSpectralSpatialSelectionEquationRead": true,
+    "mechanism": "Dichromatic decomposition from cited method15;1-cos spectral affinity and maximum-entropy deterministic annealing build material clusters/Gibbs associations. Recover nonnegative sum-to-one endmember proportions per cluster, blend by pixel association. Per-endmember8-feature saturation/value descriptors feed Photo.net-trained QDA aesthetic score. Quasi-Newton optimizes user color residual plus τexp(-score), moderating HSV saturation/value without aesthetic hue features. Updated material/light RGB mappings render novel spectral imagery.",
+    "table1": [
+      {
+        "feature": "Most abundant material",
+        "formula": "xi1,m=sum_v rho_m,v delta_v,1 / sum_v delta_v,1"
+      },
+      {
+        "feature": "Second-most abundant material",
+        "formula": "xi2,m=sum_v rho_m,v delta_v,2 / sum_v delta_v,2"
+      },
+      {
+        "feature": "Rule of Thirds",
+        "formula": "xi3,m=(h/9) sum_{v in I_thirds} rho_m,v",
+        "visualCorrection": "PDF extraction misplaced fraction; visible coefficient h/9, not9h."
+      },
+      {
+        "feature": "Whole-image average",
+        "formula": "xi4,m=h sum_v rho_m,v"
+      },
+      {
+        "feature": "Macro Feature",
+        "formula": "xi5,m=sum_{v in I_inner} rho_m,v / sum_{v in I_rest} rho_m,v"
+      }
+    ],
+    "features": "h=1/|I|.5 material coefficients times saturation plus3 coefficients (xi1,xi4,xi5) times value,8-dimensional feature. Thirds is center cell of3×3 lattice; macro center4 cells of4×4 lattice. The table is feature-definition table, not accuracy table.",
+    "ratingVisualAudit": {
+      "pdfPage": 5,
+      "ratings": "Photo.net1–7",
+      "visibleCutoff": "5.0 ± t/2",
+      "extractionFault": "pdftotext falsely reads5.0 ±2t.",
+      "t": "Chosen by cross validation; value/folds and classifier training/test sample sizes or accuracy not supplied. Source reference8 five-fold feature selection not automatically this paper own CV."
+    },
+    "acquiredData": {
+      "materials": 297,
+      "materialCategories": [
+        "cloth",
+        "paint",
+        "human skin",
+        "leaves",
+        "metals",
+        "colored paper",
+        "plastic",
+        "porcelain",
+        "wood"
+      ],
+      "materialInstrument": "StellarNet spectrometer",
+      "materialRangeNm": [
+        430,
+        720
+      ],
+      "materialStepNm": 1,
+      "canonicalIlluminants": [
+        "tungsten",
+        "incandescent",
+        "fluorescent",
+        "sunlight"
+      ],
+      "imageCount": 77,
+      "imageCategories": [
+        "landscapes",
+        "people",
+        "still life"
+      ],
+      "imageRangeNm": [
+        430,
+        650
+      ],
+      "imageStepNm": 10,
+      "acquiredImageBands": 23,
+      "authorExperimentalLabel": "multispectral images",
+      "methodScope": "Explicitly multispectral or hyperspectral visible radiance, camera described as hyperspectral; retain both labels rather than infer a universal modality cutoff from23 bands."
+    },
+    "representation": {
+      "resampledLibraryWavelengthCounts": [
+        27,
+        36,
+        45,
+        54,
+        63,
+        72
+      ],
+      "resampledLibraryRangeNm": [
+        430,
+        720
+      ],
+      "finalLibraryEndmembers": 54,
+      "endmembersPerObjectMaterial": 4,
+      "preprocessing": "B-spline representation of spectra/library; image spectra upsampled. Normalized library reflectance/light integrated across visible range to unity.",
+      "boundary": "Resampled27–72 values and54-library size are not original image sensor channels; interpolation does not create measured spectral information. Image430–650 vs library430–720 range mismatch handling is not explained fully; no assume acquisition beyond650nm."
+    },
+    "userProtocol": {
+      "imagesEditedForProfile": 10,
+      "selection": "Random from the77-image dataset; profiles applied to remaining images.",
+      "figure4Rows": 3,
+      "figure4Columns": 5,
+      "tauComparison": [
+        5,
+        0
+      ],
+      "participantBoundary": "Three displayed user profiles, not established total participant count; number/demographics, satisfaction statistics or blinded controlled preference study not given."
+    },
+    "implementation": {
+      "annealingTemperatures": [
+        0.02,
+        0.00025
+      ],
+      "equation10MeanSeconds": 4.7,
+      "equation13MeanSeconds": 0.6,
+      "equation13MeanIterations": 5.6,
+      "hardware": "Intel Core2 Duo3.00GHz PC (paper prints Corel2 Duo).",
+      "minimumPixelStatement": "Section4 claims at least MN+M pixel spectra;4 lights and54 endmembers would be220 by arithmetic, but actual sample count/design rank or joint factorization identifiability not verified. Automatic similar-pixel expansion uses spectral-angle/spatial-distance Gaussian threshold;σ_r/σ_s/threshold not supplied.",
+      "timeBoundary": "Reported means for specific optimization steps only; not whole pipeline/runtime including decomposition/QDA training/clustering, no timing reproduction."
+    },
+    "results": "Figure3 MAE against predetermined color-matching reference, with curves for6 library sizes and selected endmember count1–10; no exact numeric curve extraction, gamut/intensity-normalization details or perceptual ΔE claim. Figure4 shows qualitative effect of individual edits and aesthetics τ5 vs0 on novel images. Does not recover unique true color, prove human preference superiority, spectral-reflectance fidelity or generalization outside available library/data.",
+    "limits": "No dedicated code,77-image cubes/297-library spectra/Photo.net snapshot or actual user interaction obtained. Photo.net-to-per-endmember-feature procedure, QDA covariance regularization, annealing cooling/split criteria, candidate matching/least-squares solver/tolerances, unobserved-range handling, and complete camera metadata unspecified. Eq4 is1-cos similarity complement, not literal arccos angle; numerical treatment of zero reflectance or feature denominators unknown."
+  },
+  "boundary": "All findings describe the read manuscripts and printed observations. No implementations executed or independent experiments; referenced decomposition/aesthetics papers not fully read in this batch."
+}

@@ -60407,17 +60407,17 @@
         "hyperspectral"
       ],
       "doi": "10.1109/ICIP.2010.5651054",
-      "representation": "最大化 CCRE；原稿方法节采用仿射变换、Parzen/B-spline 概率估计与 Newton 优化，完整公式及数值细节待阅读全文。",
+      "representation": "负CCRE最小化，累积残余分布与Parzen cubic B-spline平滑估计支持解析梯度/Hessian和Newton更新；MI对照用概率分布。灰度平均/CIE映射是讨论选项，最终转换配置未明确，导数细节引用先行工作。",
       "tags": [],
-      "summary": "先将高光谱及三色影像映射为灰度，以交叉累积残余熵 CCRE 作为多模态配准相似度。原稿在高倾角监控图像对上比较 CCRE 与互信息；配准是融合的前处理，不是输出高分辨率高光谱融合图。",
-      "input": "低分辨率高光谱影像和高分辨率 RGB 影像，转为灰度后配准。",
-      "output": "仿射几何变换与已配准影像。",
-      "mechanism": "最大化 CCRE；原稿方法节采用仿射变换、Parzen/B-spline 概率估计与 Newton 优化，完整公式及数值细节待阅读全文。",
-      "readingNote": "已核原稿摘要及指定局部页，未阅读全文。原稿题头及 DOI 登记均为 Regisration 拼写，保留登记题名，作者主页正常拼写 Registration 作为别名。作者顺序按原稿/精确 DOI，不采用旧主页不同顺序。仅7组人工扰动实验；全文公式、非仿射/动态场景泛化和代码待核。",
+      "summary": "将低分辨率高光谱与高分辨率RGB转为灰度，以CCRE累积残余分布相似度和六参数仿射Newton优化配准。七组停车场影像、每组50次人工扰动检验收敛范围；不输出高分辨率高光谱融合立方。",
+      "input": "声光滤波/FireWire采集21带430–630nm影像与Nikon D80 RGB，灰度后几何配准。",
+      "output": "六参数仿射变换及已配准影像；不是光谱融合、三维或非仿射形变结果。",
+      "mechanism": "负CCRE最小化，累积残余分布与Parzen cubic B-spline平滑估计支持解析梯度/Hessian和Newton更新；MI对照用概率分布。灰度平均/CIE映射是讨论选项，最终转换配置未明确，导数细节引用先行工作。",
+      "readingNote": "完整通读作者托管4页，10编号式/5图/0表及12引用条目；所引作品未逐篇读。IEEE完整原摘要、作者机构与页码另核，正式PDF202空，不称已独立对照VoR。原题Regisration拼写及五作者顺序保留；±25°由高清文字确认。",
       "paper": "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
-      "citation": "@inproceedings{ccre_hsi_rgb_registration_2010,\n  title = {Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation},\n  author = {Mahmudul Hasan and Mark Pickering and Antonio Robles-Kelly and Jun Zhou and Xiuping Jia},\n  booktitle = {2010 IEEE International Conference on Image Processing},\n  year = {2010},\n  doi = {10.1109/ICIP.2010.5651054}\n}\n",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
+      "citation": "@inproceedings{ccre_hsi_rgb_registration_2010,\n  title = {Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation},\n  author = {Mahmudul Hasan and Mark Pickering and Antonio Robles-Kelly and Jun Zhou and Xiuping Jia},\n  booktitle = {2010 IEEE International Conference on Image Processing},\n  year = {2010},\n  pages = {2329--2332},\n  doi = {10.1109/ICIP.2010.5651054}\n}\n",
       "library": {
         "categoryIds": [
           "optical-image-registration",
@@ -60425,23 +60425,25 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "以光学高光谱数据、空间—光谱纹理、材料或配准为直接研究对象；仅新增总库，不改变三维专题。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "实际光学高光谱与RGB跨传感器几何配准；六参数二维仿射，不是三维或完成光谱融合。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何配准视点与空间分辨率不同的高光谱及 RGB 监控影像？",
-        "datasets": "局部核实验节：7组停车场及周边高倾角影像；声光滤波器与 FireWire 相机采集21波段430–630nm，RGB为 Nikon D80。专用公开数据链接未核。",
-        "experimentSetting": "先人工配准，每组 RGB 再施加50个人工仿射扰动；先0.125倍，再0.25/0.5倍多尺度配准，比较 CCRE/MI。旋转角文字需高清原图复核，不转录乱码数值。",
-        "conclusions": "作者在本组实验报告 CCRE 收敛更快、较大初始位移下配准成功率较高；不泛化成所有场景优势，未录性能数字。",
-        "limitations": "原稿题头及 DOI 登记均为 Regisration 拼写，保留登记题名，作者主页正常拼写 Registration 作为别名。作者顺序按原稿/精确 DOI，不采用旧主页不同顺序。仅7组人工扰动实验；全文公式、非仿射/动态场景泛化和代码待核。 专用代码、数据链接与arXiv未由本轮定向搜索核到；未知不表示不存在。",
+        "datasets": "七组高倾角停车场及周边HSI/RGB，采集时刻/视点/焦距不同。Figure2样例HSI1280×960、RGB缩为1437×1139，不将样例尺寸套全部组；未取得原始数据载荷。",
+        "experimentSetting": "每组先人工配准再施50仿射扰动，平移≤120px、旋转−25°至25°（高清确认）、缩放85–115%；名义7×50=350扰动而非独立350场景。多尺度.125/.25/.5，Figure3第200次迭代切换到.25；MI/CCRE比较及SSD失败报告。",
+        "conclusions": "作者称初始位移≤70px时CCRE有效达到100%成功率，较大位移优于MI；Figure3只对应第二图像组的平均最大配准误差曲线，非全组实际耗时。其余曲线不伪造为精确数值或所有场景优势。",
+        "limitations": "作者托管四页全文已读，IEEE正式PDF202空。人工配准基准非独立物理GT；成功阈值、每区间分母、停止准则/边界处理/参数、种子、硬件与运行时间未给完整；无专用代码/数据、非仿射或融合质量验证。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf",
-            "checkedAt": "2026-10-09",
-            "level": "作者原稿摘要与指定局部页面核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化",
             "supports": [
-              "先将高光谱及三色影像映射为灰度，以交叉累积残余熵 CCRE 作为多模态配准相似度。原稿在高倾角监控图像对上比较 CCRE 与互信息；配准是融合的前处理，不是输出高分辨率高光谱融合图。",
-              "先人工配准，每组 RGB 再施加50个人工仿射扰动；先0.125倍，再0.25/0.5倍多尺度配准，比较 CCRE/MI。旋转角文字需高清原图复核，不转录乱码数值。"
+              "将低分辨率高光谱与高分辨率RGB转为灰度，以CCRE累积残余分布相似度和六参数仿射Newton优化配准。七组停车场影像、每组50次人工扰动检验收敛范围；不输出高分辨率高光谱融合立方。",
+              "七组高倾角停车场及周边HSI/RGB，采集时刻/视点/焦距不同。Figure2样例HSI1280×960、RGB缩为1437×1139，不将样例尺寸套全部组；未取得原始数据载荷。",
+              "每组先人工配准再施50仿射扰动，平移≤120px、旋转−25°至25°（高清确认）、缩放85–115%；名义7×50=350扰动而非独立350场景。多尺度.125/.25/.5，Figure3第200次迭代切换到.25；MI/CCRE比较及SSD失败报告。",
+              "作者托管四页全文已读，IEEE正式PDF202空。人工配准基准非独立物理GT；成功阈值、每区间分母、停止准则/边界处理/参数、种子、硬件与运行时间未给完整；无专用代码/数据、非仿射或融合质量验证。"
             ]
           },
           {
@@ -60453,6 +60455,24 @@
               "Mahmudul Hasan, Mark Pickering, Antonio Robles-Kelly, Jun Zhou, Xiuping Jia",
               "正式2010年；2329-2332页"
             ]
+          },
+          {
+            "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "primary_author_hosted_manuscript_full_text_version_scoped",
+            "supports": [
+              "完整通读作者托管4页，10编号式/5图/0表及12引用条目；所引作品未逐篇读。IEEE完整原摘要、作者机构与页码另核，正式PDF202空，不称已独立对照VoR。原题Regisration拼写及五作者顺序保留；±25°由高清文字确认。",
+              "负CCRE最小化，累积残余分布与Parzen cubic B-spline平滑估计支持解析梯度/Hessian和Newton更新；MI对照用概率分布。灰度平均/CIE映射是讨论选项，最终转换配置未明确，导数细节引用先行工作。",
+              "作者称初始位移≤70px时CCRE有效达到100%成功率，较大位移优于MI；Figure3只对应第二图像组的平均最大配准误差曲线，非全组实际耗时。其余曲线不伪造为精确数值或所有场景优势。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/5651054/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_historical_author_affiliations",
+            "supports": [
+              "精确DOI、作者顺序及历史ANU/NICTA机构、正式页码与原始摘要确认；IEEE作者编号不当稳定ORCID，正式PDF202空。"
+            ]
           }
         ],
         "versions": [
@@ -60462,21 +60482,25 @@
             "url": "https://doi.org/10.1109/ICIP.2010.5651054",
             "doi": "10.1109/ICIP.2010.5651054",
             "year": 2010,
-            "relation": "正式书目；作者稿局部内容及图版单独注明，完整版本差异未核。"
+            "relation": "正式IEEE完整摘要/作者历史机构与页码已核；正式PDF未独立取得，与作者托管全文分开记录。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "ccre-hsi-rgb-registration-2010-author",
             "type": "作者公开稿",
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf",
             "year": 2010,
-            "relation": "原稿题头及 DOI 登记均为 Regisration 拼写，保留登记题名，作者主页正常拼写 Registration 作为别名。作者顺序按原稿/精确 DOI，不采用旧主页不同顺序。仅7组人工扰动实验；全文公式、非仿射/动态场景泛化和代码待核。"
+            "relation": "作者托管4页全文/全部编号式、图、表与参考条目已读，具体来源版本留证，正式IEEE逐版对照未完成。",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "ccre-hsi-rgb-registration-2010",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "按作者原稿摘要和指定局部内容确认任务及方法；阅读状态仍为摘要，分类确认不代表全文核验。",
+          "rationale": "作者托管全文确认CCRE二维配准及材料颜色偏好任务；补实采、用户/扰动协议和评价边界，保留既有方法类别及明确多/高光谱范围，不自动把采样点数当模态分界。",
           "evidenceFields": [
             "title",
             "summary",
@@ -60485,17 +60509,18 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "a5ea2f6c37c762ad55ad6f550207b505f8e4eaab15133aadf6bb78feae817aaa",
+          "evidenceDigest": "c98278dbd071593facd0bc777d2d70d79da49f1a0792c7e784e50e3cfff4a6bc",
           "sourceUrls": [
-            "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf"
+            "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf",
+            "https://xplorestaging.ieee.org/document/5651054/"
           ]
         }
       },
       "frameworkFigureSearch": {
         "status": "no_framework",
-        "note": "原稿四页全页图版及图注已扫描：Figure1/2为输入与配准结果，3–5为误差/成功率曲线；无独立框架图，不生成替代图。",
+        "note": "四页全文及五图全图版复核；Figure1/2输入/配准结果，3–5曲线，无框架图。±25°与其余协议由可见文字核准。",
         "sourceUrl": "https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf",
-        "checkedAt": "2026-10-09"
+        "checkedAt": "2026-10-11"
       }
     },
     {
@@ -60660,17 +60685,17 @@
         "hyperspectral"
       ],
       "doi": "10.1109/ICCV.2011.6126470",
-      "representation": "二色反射模型与材料/光源混合分解；材料关联概率及端元权重恢复，结合图像审美评分优化用户映射，再生成颜色图。",
+      "representation": "二色分解引用先行算法；1−cos谱距离与最大熵退火/Gibbs软聚类，非负和为一的最小二乘端元系数。八维HSV饱和度/亮度特征与QDA审美分数进入用户残差+τexp(−分数)目标，quasi-Newton更新映射；Figure2两阶段。",
       "tags": [],
-      "summary": "从成像光谱区分材料与光源，对同材料的小幅组成变化施加一致性，并结合用户偏好生成材料特定颜色。原稿 Figure 2 分别展示用户颜色映射恢复及使用该映射生成 RGB 的两个阶段。",
-      "input": "可见光多/高光谱辐亮度、端元与典型光源库，以及用户指定的材料颜色偏好。",
-      "output": "用户颜色映射配置及材料一致的 RGB 颜色图像。",
-      "mechanism": "二色反射模型与材料/光源混合分解；材料关联概率及端元权重恢复，结合图像审美评分优化用户映射，再生成颜色图。",
-      "readingNote": "已核原稿摘要及指定局部页，未阅读全文。依赖材料/典型光源库及用户输入；完整算法、用户评价、公开代码/数据与正式版差异待核。Figure 1 是编辑结果示例，方法框架是 Figure 2，不混记图号。",
+      "summary": "用二色反射分解、确定性退火的软材料聚类和受约束端元混合保持材料一致性；学习用户映射时以Photo.net审美QDA调节饱和度/亮度，再将配置用于新光谱图像。评价主要是预设映射误差曲线与用户编辑示例。",
+      "input": "多/高光谱可见辐亮度、材料/光源库和用户颜色；实验77幅23带430–650nm/10nm，作者称多光谱图像。",
+      "output": "材料/光源关联的用户RGB映射配置及新影像颜色；非唯一真实颜色或反射谱恢复。",
+      "mechanism": "二色分解引用先行算法；1−cos谱距离与最大熵退火/Gibbs软聚类，非负和为一的最小二乘端元系数。八维HSV饱和度/亮度特征与QDA审美分数进入用户残差+τexp(−分数)目标，quasi-Newton更新映射；Figure2两阶段。",
+      "readingNote": "完整通读作者托管8页，13编号式/4图/1表及29引用条目；所引作品未逐篇读。IEEE完整原摘要、作者机构与页码另核，正式PDF202空，不称已独立对照VoR。",
       "paper": "https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
-      "citation": "@inproceedings{material_user_colour_iccv_2011,\n  title = {Material-specific user colour profiles from imaging spectroscopy data},\n  author = {Lin Gu and Cong Phuoc Huynh and Antonio Robles-Kelly and Jun Zhou},\n  booktitle = {2011 International Conference on Computer Vision},\n  year = {2011},\n  doi = {10.1109/ICCV.2011.6126470}\n}\n",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
+      "citation": "@inproceedings{material_user_colour_iccv_2011,\n  title = {Material-specific user colour profiles from imaging spectroscopy data},\n  author = {Lin Gu and Cong Phuoc Huynh and Antonio Robles-Kelly and Jun Zhou},\n  booktitle = {2011 International Conference on Computer Vision},\n  year = {2011},\n  pages = {1987--1994},\n  doi = {10.1109/ICCV.2011.6126470}\n}\n",
       "library": {
         "categoryIds": [
           "material-specific-color-editing",
@@ -60678,23 +60703,25 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "以光学高光谱数据、空间—光谱纹理、材料或配准为直接研究对象；仅新增总库，不改变三维专题。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "直接成像光谱方法；颜色方法明确兼容多/高光谱，实验原23带且作者称多光谱/相机称高光谱，输入名称与采样逐项留证，不按单一波段数改变既有研究范围。仅总库，非三维几何。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何利用光谱材料信息及用户偏好，为同材料区域一致地生成或编辑颜色？",
-        "datasets": "摘要明确真实影像；Figure 2 包含 Photo.net 数据库供审美评分学习。详细数据量、采集设备及训练设置待阅读全文。",
-        "experimentSetting": "仅摘要、方法图与相邻说明已核；用户实验、审美标签及定量结果待完整阅读，不录性能数字。",
-        "conclusions": "作者报告可根据用户偏好生成材料特定颜色，并通过材料一致性减轻颜色生成中的不良效果；不是恢复唯一真实颜色或三维几何。",
-        "limitations": "依赖材料/典型光源库及用户输入；完整算法、用户评价、公开代码/数据与正式版差异待核。Figure 1 是编辑结果示例，方法框架是 Figure 2，不混记图号。 专用代码、数据链接与arXiv未由本轮定向搜索核到；未知不表示不存在。",
+        "datasets": "297种自采StellarNet反射谱、九类材料、430–720nm/1nm，四典型光源。77幅风景/人物/静物图原23带；Photo.net评分1–7供审美模型，数量/最终准确率未给。B-spline的27/36/45/54/63/72采样与最终54端元库不当原采集波段。",
+        "experimentSetting": "每用户随机编辑10幅图，配置用于其余图；Figure4示三用户配置，不等于总受试人数。τ5/0比较有无审美调节，末版每材料4端元，退火T=.02至.00025。Photo.net阈值高清为5±t/2而非提取的5±2t，t交叉验证数值未给；Table1三分构图系数为h/9。",
+        "conclusions": "Figure3为预设color-matching颜色参考MAE曲线，库增大误差减小而收益趋缓，不称感知ΔE或反射谱精度。Figure4显示同材料跨图编辑/审美效果，未报告完整用户满意度。Eq10平均4.7s、Eq13平均.6s/5.6迭代（Core2 Duo3GHz），不是端到端速度。",
+        "limitations": "八页作者稿全文已读，IEEE正式PDF202空。方法明确多/高光谱且相机称HSI，实际图称23带多光谱，保留描述而不靠波段数强制归类。图430–650与库430–720未观测段处理、Photo.net端元特征、完整受试人数/划分、退火/求解细节、实际像素秩及专用代码/库/图像仍待；上采样不增加实测信息。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf",
-            "checkedAt": "2026-10-09",
-            "level": "作者原稿摘要与指定局部页面核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化",
             "supports": [
-              "从成像光谱区分材料与光源，对同材料的小幅组成变化施加一致性，并结合用户偏好生成材料特定颜色。原稿 Figure 2 分别展示用户颜色映射恢复及使用该映射生成 RGB 的两个阶段。",
-              "仅摘要、方法图与相邻说明已核；用户实验、审美标签及定量结果待完整阅读，不录性能数字。"
+              "用二色反射分解、确定性退火的软材料聚类和受约束端元混合保持材料一致性；学习用户映射时以Photo.net审美QDA调节饱和度/亮度，再将配置用于新光谱图像。评价主要是预设映射误差曲线与用户编辑示例。",
+              "297种自采StellarNet反射谱、九类材料、430–720nm/1nm，四典型光源。77幅风景/人物/静物图原23带；Photo.net评分1–7供审美模型，数量/最终准确率未给。B-spline的27/36/45/54/63/72采样与最终54端元库不当原采集波段。",
+              "每用户随机编辑10幅图，配置用于其余图；Figure4示三用户配置，不等于总受试人数。τ5/0比较有无审美调节，末版每材料4端元，退火T=.02至.00025。Photo.net阈值高清为5±t/2而非提取的5±2t，t交叉验证数值未给；Table1三分构图系数为h/9。",
+              "八页作者稿全文已读，IEEE正式PDF202空。方法明确多/高光谱且相机称HSI，实际图称23带多光谱，保留描述而不靠波段数强制归类。图430–650与库430–720未观测段处理、Photo.net端元特征、完整受试人数/划分、退火/求解细节、实际像素秩及专用代码/库/图像仍待；上采样不增加实测信息。"
             ]
           },
           {
@@ -60706,6 +60733,24 @@
               "Lin Gu, Cong Phuoc Huynh, Antonio Robles-Kelly, Jun Zhou",
               "正式2011年；1987-1994页"
             ]
+          },
+          {
+            "url": "https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "primary_author_hosted_manuscript_full_text_version_scoped",
+            "supports": [
+              "完整通读作者托管8页，13编号式/4图/1表及29引用条目；所引作品未逐篇读。IEEE完整原摘要、作者机构与页码另核，正式PDF202空，不称已独立对照VoR。",
+              "二色分解引用先行算法；1−cos谱距离与最大熵退火/Gibbs软聚类，非负和为一的最小二乘端元系数。八维HSV饱和度/亮度特征与QDA审美分数进入用户残差+τexp(−分数)目标，quasi-Newton更新映射；Figure2两阶段。",
+              "Figure3为预设color-matching颜色参考MAE曲线，库增大误差减小而收益趋缓，不称感知ΔE或反射谱精度。Figure4显示同材料跨图编辑/审美效果，未报告完整用户满意度。Eq10平均4.7s、Eq13平均.6s/5.6迭代（Core2 Duo3GHz），不是端到端速度。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/6126470/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_historical_author_affiliations",
+            "supports": [
+              "精确DOI、作者顺序及历史ANU/NICTA机构、正式页码与原始摘要确认；IEEE作者编号不当稳定ORCID，正式PDF202空。"
+            ]
           }
         ],
         "versions": [
@@ -60715,21 +60760,25 @@
             "url": "https://doi.org/10.1109/ICCV.2011.6126470",
             "doi": "10.1109/ICCV.2011.6126470",
             "year": 2011,
-            "relation": "正式书目；作者稿局部内容及图版单独注明，完整版本差异未核。"
+            "relation": "正式IEEE完整摘要/作者历史机构与页码已核；正式PDF未独立取得，与作者托管全文分开记录。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "material-user-colour-iccv-2011-author",
             "type": "作者公开稿",
             "url": "https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf",
             "year": 2011,
-            "relation": "依赖材料/典型光源库及用户输入；完整算法、用户评价、公开代码/数据与正式版差异待核。Figure 1 是编辑结果示例，方法框架是 Figure 2，不混记图号。"
+            "relation": "作者托管8页全文/全部编号式、图、表与参考条目已读，具体来源版本留证，正式IEEE逐版对照未完成。",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "material-user-colour-iccv-2011",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "按作者原稿摘要和指定局部内容确认任务及方法；阅读状态仍为摘要，分类确认不代表全文核验。",
+          "rationale": "作者托管全文确认CCRE二维配准及材料颜色偏好任务；补实采、用户/扰动协议和评价边界，保留既有方法类别及明确多/高光谱范围，不自动把采样点数当模态分界。",
           "evidenceFields": [
             "title",
             "summary",
@@ -60738,9 +60787,10 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "93e0a2b096f9a577a1fa290c79cbab2a27709c34b6d0209010c7b69601e6aa5e",
+          "evidenceDigest": "e65f71bd2ed005ed3c91d0abda058df447e3574a3306cd1979426c391820861f",
           "sourceUrls": [
-            "https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf"
+            "https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf",
+            "https://xplorestaging.ieee.org/document/6126470/"
           ]
         }
       },
@@ -86476,6 +86526,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原稿摘要和局部方法核验支持该类别边界。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "作者稿完整阅读补公式/采样/优化与实验边界；不改既有定义或新增标签。"
         }
       ]
     },
@@ -86516,6 +86571,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原稿摘要和局部方法核验支持该类别边界。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "作者稿完整阅读补公式/采样/优化与实验边界；不改既有定义或新增标签。"
         }
       ]
     },
