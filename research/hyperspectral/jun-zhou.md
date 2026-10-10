@@ -18,7 +18,7 @@
 
 ## 当前学习入口与剩余范围核验
 
-[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；181条摘要级、4条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
+[学习指南](jun-zhou-study-guide.md)包含当前185条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和6条多光谱关联（含1会议摘要）分别列出；180条摘要级、5条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称185个独立方法。
 
 本轮为剩余78条DBLP记录取得原始摘要或Griffith机构摘要，并对指定arXiv正文和两份作者/正式PDF局部补读。续核后68条按当前证据暂排除；10条仍待核。图矩阵的spectral clustering、Fourier高/低频、CNN feature channels、音频频谱和描述子的multi-channel都不自动等于光学高光谱。皮肤镜与昆虫照片论文也不借同作者其他高光谱数据集收录。AcfNet arXiv1909.03751的v1正文含Griffith Jun Zhou，而v2当前摘要作者列表无Jun Zhou，保留版本作者差异，不把它简单认作错误作者。
 
@@ -147,7 +147,7 @@ Scholar分页共387条记录；本轮对题名含 hyperspectral、spectral、spe
 
 下一步扫描 DBLP 非关键词目录、作者机构页与引用链差集；不把 Scholar 引用数或单一作者串匹配当作作者归属证据。
 
-截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：181条为 `abstract_read` / `abstract_verified`，4条为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
+截至2026-10-10，目录中含 Jun Zhou 的高光谱/多光谱记录共185条（含1会议摘要）：180条为 `abstract_read` / `abstract_verified`，5条为 `full_text_read` / `full_text_verified`，无作者专项 `pending`。该状态只证明目录内的阅读证据，不替代Scholar、DBLP和ORCID来源全集及非关键词差集的逐项审查。
 
 ## 2024–2026高光谱来源组筛选
 
@@ -301,3 +301,7 @@ NMF-SAE作者页HTML注释另有未具体说明的final version错误提示；�
 IEEE已补SA-Net 2024原摘要，确认跨注意力语义映射、Transformer几何对齐、HTCD/MRCDD。光学通道仍待正文，不直接按数据名称定RGB或多光谱。出版社明确2026 SA-Net++扩展IGARSS2024，但六名作者及CRediT均无Jun Zhou，不能沿用会议作者列表，也不借其协议关闭2024范围待核。FDNet/DDFNet机构仅LICENSE，GPINet/SAPNet仅130字节SWORD提交XML，均未取得论文PDF。杂草制图Scholar详情429，短题名和Awan/Farooq作者差异仍待核；HTTP失败不说明论文不存在。DBLP/Scholar各10条待核保持不变。证据见 `sources/jun-zhou-pending-resource-followup-2026-10-10.json`。
 
 E2E-MPT原摘要链接的公开仓库已固定提交并核完整树、三ZIP目录和结果样例。ZIP分别为35/87/117个文本结果，不是原始视频；当前没有README训练/测试脚本、配置或权重，不能称可运行代码。原框架及MIT许可保存，累计332张原图；该论文仍摘要级。详情见[资源学习笔记](jun-zhou-e2empt-resource-note.md)与 `sources/jun-zhou-e2empt-resource-audit-2026-10-10.json`。目录185条和全文4条不变；后续继续原稿、输入、全集与实现核验。
+
+### L1/2-NMF作者稿通读与数学核验
+
+2011-04-11作者稿26页已通读，原页式26、实现说明、Figure1–18与TableI–III核验。真实表平均SAD为0.1637/0.1766/0.1114，逐材料并非全胜；合成图像z²×z²、真实波段移除和K设定保存。独立标量有限差分验证一般q导数及非凸反例，保留打印公式、停止准则和复杂度疑点，不当正式勘误或性能复现。作者目录185条现180摘要级/5全文级；DBLP/Scholar各10待核不变。正式版、早稿和会议版完整对照仍待核。学习内容见 `jun-zhou-lhalf-nmf-note.md`，证据见 `sources/jun-zhou-lhalf-full-reading-2026-10-10.json`。

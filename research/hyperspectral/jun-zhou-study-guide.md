@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。181条为摘要级核验、4条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共185条出版/预印本/会议摘要记录：179条直接高光谱，6条多光谱关联（含1条EGU会议摘要）。180条为摘要级核验、5条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -35,15 +35,14 @@
 
 ### 2. 2011 · Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization
 
-- 原文：[来源](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf)；目录ID：`lhalf-nmf-tgrs-2011`。
-- 输入：混合高光谱像元矩阵；端元数量及初始化设置待阅读全文。
-- 输出：非负端元光谱及丰度矩阵。
-- 已核机制：丰度平方根和促进稀疏；乘法更新与增广常数行的丰度和惩罚分别核验，有限参数不等于严格和为1。
-- 学习问题：写出NMF数据拟合项、L1/2稀疏项和丰度约束；比较L1与L1/2的优化难点。
-- 阅读边界：已核原稿摘要及指定局部页，未阅读全文。2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。
-- 待核：2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。 专用代码、数据链接与arXiv未由本轮定向搜索核到；未知不表示不存在。 本轮关联核验：同四作者同名L1/2-NMF方法族关联；扩展声明和完整差异未核，不混用实验。
-
-[解混目标与约束学习笔记](jun-zhou-lhalf-nmf-note.md)已核对较晚作者稿II–III节，并提供独立数学演示；不是原算法复现。
+- 原文：[26页作者稿](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf)；目录ID：`lhalf-nmf-tgrs-2011`。
+- 输入：高光谱混合矩阵；实测Urban K=4/6，Cuprite K=10。
+- 输出：非负端元光谱与丰度矩阵。
+- 已核机制：平方根和稀疏惩罚、交替乘法更新、增广常数行的丰度和软惩罚。
+- 实验：Urban4/6端元与Cuprite平均SAD为0.1637/0.1766/0.1114，各表最低；逐材料分别3/4、4/6、6/10最低。
+- 学习问题：有限δ与严格和约束有什么区别？目标求导怎样对应一般q更新？平均指标怎样掩盖材料差异？
+- 阅读边界：4月11日作者稿已通读；正式TGRS49(11):4282–4297、2月早稿和2010会议版完整差异未核，无性能复现。
+- 待核：代码、参考真值、δ/零值保护与停止规则。一般q系数与分块凸表述疑点见[完整学习笔记](jun-zhou-lhalf-nmf-note.md)；独立数学演示不等于作者算法实现。
 
 ### 3. 2017 · Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery
 
@@ -168,7 +167,7 @@
 | 2010 | [L1/2 Sparsity Constrained Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://users.cecs.anu.edu.au/~junzhou/papers/C_DICTA_2010.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2010 | [Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation](https://users.cecs.anu.edu.au/~junzhou/papers/C_ICIP_2010.pdf) | 光学影像配准 | 正式发表 | 摘要核验 |
 | 2011 | [Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis](https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf) | 高光谱纹理描述 | 正式发表 | 摘要核验 |
-| 2011 | [Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2011 | [Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization](https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf) | 光谱解混 | 正式发表 | 全文核验（作者稿） |
 | 2011 | [Material-specific user colour profiles from imaging spectroscopy data](https://users.cecs.anu.edu.au/~huynh/publications/gu_huynh_robles-kelly_zhou_iccv2011_colour.pdf) | 光谱材料特定颜色编辑 | 正式发表 | 摘要核验 |
 | 2011 | [Structured sparse model based feature selection and classification for hyperspectral imagery](https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2012 | [Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image](https://doi.org/10.1109/ICICEE.2012.350) | 待分类 | 正式发表 | 摘要核验 |

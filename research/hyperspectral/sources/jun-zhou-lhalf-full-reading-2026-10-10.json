@@ -1,0 +1,296 @@
+{
+  "checkedAt": "2026-10-10",
+  "paperId": "lhalf-nmf-tgrs-2011",
+  "url": "https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf",
+  "file": "jun-zhou-unmix-2011-april-author.pdf",
+  "sha256": "7270f27545c5ae54c315b69cf5aead0347ebf1c45a0f9fe72edc3b2ef8d0e355",
+  "pages": 26,
+  "draftDate": "2011-04-11",
+  "readingStatus": "author_full_text_read",
+  "readingCoverage": [
+    "Pages1–3: abstract, introduction and author affiliations",
+    "Pages4–6: II-A–C linear model and L1/2 objective",
+    "Pages6–9: III-A–B updates, auxiliary-function argument and implementation",
+    "Pages10–13: IV-A–C Lq extension, sparsity and geometry",
+    "Pages13–20: V-A–B synthetic protocols, two real scenes and TablesI–III",
+    "Pages19,21–22: VI conclusion and VII acknowledgments",
+    "Pages22–26: references1–51",
+    "Figure1–18 captions and all page thumbnails inspected; original images6/7/9/10/11/12/15/16/17/18/19/20/21/22/23/24 enlarged"
+  ],
+  "formalVersionBoundary": "26页2011-04-11作者草稿；正式TGRS4282–4297的逐页差异、2011-02-02草稿和2010会议稿完整对照未完成。作者稿通读不等于出版社全文核验或性能复现。",
+  "implementation": {
+    "endmemberCount": "Algorithm calls HySime; Urban explicitly4/6, Cuprite explicitly10",
+    "initialization": "A/S random entries in [0,1]; pseudocode rescales each column of S to unit norm, unspecified norm",
+    "maximumIterations": 3000,
+    "epsilon": 0.001,
+    "lambda": "Equation22 band-wise data sparsity estimator, not a fixed numeric lambda",
+    "zeroHandling": "Add a very small unspecified value when S entry is zero",
+    "smallHandling": "For entries below1e-4, omit L1/2 penalty term during update",
+    "sumConstraint": "Equation21 augments X/A by delta constant rows; finite delta is a soft penalty; numeric delta not located",
+    "stoppingBoundary": "Page9 prose uses gradient norm relative to initial gradient; pseudocode uses squared cost difference below epsilon. Preserve both; no unique stop rule inferred."
+  },
+  "synthetic": {
+    "source": "USGS spectral library ten signatures, six used by default",
+    "imageShape": "z^2 by z^2, hence z^4 pixels",
+    "regions": "z by z regions initialized as pure materials",
+    "filter": "(z+1) by (z+1) low-pass filter",
+    "theta": [
+      0.6,
+      1.0
+    ],
+    "replacementRule": "If abundance exceeds theta, replace pixel by equal mixture of all endmembers",
+    "noise": "Zero-mean white Gaussian",
+    "SNRStudy": {
+      "K": 6,
+      "theta": 0.7,
+      "z": 7,
+      "SNRdB": [
+        "infinity",
+        35,
+        30,
+        25,
+        20,
+        15
+      ]
+    },
+    "sizeStudyPixels": [
+      625,
+      1296,
+      2401,
+      4096,
+      6561,
+      10000
+    ],
+    "sizeStudySNRdB": 30,
+    "countStudyK": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ],
+    "overestimatedPairs": [
+      {
+        "true": 3,
+        "estimated": 4
+      },
+      {
+        "true": 5,
+        "estimated": 6
+      },
+      {
+        "true": 7,
+        "estimated": 8
+      }
+    ],
+    "qStudy": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "boundary": "No digitized plot values or synthetic significance claims; random seeds and full repeated-run protocol not established."
+  },
+  "metrics": {
+    "SAD": "Equation32 arccos normalized dot product, smaller is better; do not convert table values to degrees",
+    "RMSE": "Equation33 abundance root mean squared error, synthetic plots report RMSE",
+    "printedDispersion": "TablesI–III label standard variance (%) while prose says standard variances over10runs; preserve printed ± and percent units rather than silently call all numbers standard deviations",
+    "referenceBoundary": "Urban figures labeled ground truth and spectra compared with USGS; exact reference construction, matching assignment and calibration not fully specified in this draft. Cuprite evaluated against USGS spectra, not measured abundance truth."
+  },
+  "realDatasets": [
+    {
+      "name": "Urban HYDICE",
+      "originalShape": [
+        307,
+        307,
+        210
+      ],
+      "usedShape": [
+        307,
+        307,
+        162
+      ],
+      "removedBands1Based": [
+        "1–4",
+        "76",
+        "87",
+        "101–111",
+        "136–153",
+        "198–210"
+      ],
+      "spectralRangeNm": [
+        400,
+        2500
+      ],
+      "spectralResolutionNm": 10,
+      "table": "I",
+      "K": 4,
+      "materials": [
+        "Asphalt",
+        "Grass",
+        "Tree",
+        "Roof"
+      ],
+      "LhalfSAD": [
+        0.1352,
+        0.2097,
+        0.0658,
+        0.2441
+      ],
+      "reportedMeanSAD": 0.1637,
+      "reportedMeanDispersion": "3.15%",
+      "bestMaterialCount": 3,
+      "exception": "Roof: SISAL0.2097 and PSNMFSC0.2050 beat L1/2-NMF0.2441"
+    },
+    {
+      "name": "Urban HYDICE",
+      "table": "II",
+      "K": 6,
+      "materials": [
+        "Asphalt road",
+        "Grass",
+        "Tree",
+        "Roof #1",
+        "Roof #2/shadow",
+        "Concrete road"
+      ],
+      "LhalfSAD": [
+        0.2302,
+        0.2692,
+        0.0414,
+        0.1,
+        0.2617,
+        0.157
+      ],
+      "reportedMeanSAD": 0.1766,
+      "reportedMeanDispersion": "2.30%",
+      "bestMaterialCount": 4,
+      "exceptions": [
+        "Asphalt road: SISAL0.2263 beats0.2302",
+        "Grass: PSNMFSC0.1781 beats0.2692"
+      ]
+    },
+    {
+      "name": "AVIRIS Cuprite",
+      "originalBands": 224,
+      "usedShape": [
+        250,
+        190,
+        188
+      ],
+      "removedBands1Based": [
+        "1–2",
+        "104–113",
+        "148–167",
+        "221–224"
+      ],
+      "table": "III",
+      "K": 10,
+      "countBoundary": "14 mineral types cited; similar mineral variants merged and K set10",
+      "materials": [
+        "Alunite",
+        "Andradite",
+        "Buddingtonite",
+        "Dumotierite",
+        "Kaolinite",
+        "Montmorillonite",
+        "Muscovite",
+        "Nontronite",
+        "Pyrope",
+        "Sphene"
+      ],
+      "LhalfSAD": [
+        0.166,
+        0.0545,
+        0.1626,
+        0.0918,
+        0.1441,
+        0.1206,
+        0.1292,
+        0.085,
+        0.0596,
+        0.1002
+      ],
+      "reportedMeanSAD": 0.1114,
+      "reportedMeanDispersion": "1.21%",
+      "bestMaterialCount": 6,
+      "exceptions": [
+        "Alunite: PSNMFSC0.0979 beats0.1660",
+        "Buddingtonite: VCA0.1317 beats0.1626",
+        "Muscovite: MVCNMF0.0914 beats0.1292",
+        "Sphene: SISAL0.0713 beats0.1002"
+      ]
+    }
+  ],
+  "comparators": {
+    "synthetic": [
+      "NMF",
+      "L1-NMF",
+      "L2-NMF"
+    ],
+    "real": [
+      "L1-NMF",
+      "MVCNMF",
+      "VCA",
+      "SISAL",
+      "PSNMFSC"
+    ]
+  },
+  "formulaAudit": {
+    "equation26": "For equation24 sum(S^q), derivative is q*S^(q-1); printed update coefficient lambda/2 matches only q=1/2 under same lambda definition. No claim that authors ran incorrect code or official erratum exists.",
+    "fixedSConvexity": "Fixed A, positive scalar case can have negative second derivative; contradicts general convex-in-each-variable wording on page6. This does not by itself disprove multiplicative-update descent.",
+    "stopping": "Two distinct criteria printed on page9; initialization unit norm is unspecified.",
+    "complexity": "Page10 assigns O((KN)^2) to elementwise S^-1/2; one elementwise pass has KN operations under constant-cost scalar arithmetic. Full iteration also has matrix multiplications; no runtime experiment conducted.",
+    "convergenceBoundary": "Read auxiliary-function proof, but no independent full proof or implementation validation; threshold-dependent omission and zero handling need separate implementation analysis."
+  },
+  "independentMathProbe": {
+    "equation26Checks": [
+      {
+        "q": 0.25,
+        "s": 0.4,
+        "lambda": 0.05,
+        "finiteDifference": -0.575147789741437,
+        "derivedGradient": -0.5751477897260296,
+        "gradientWithPrintedEquation26Coefficient": -0.5502955794520593
+      },
+      {
+        "q": 0.5,
+        "s": 0.4,
+        "lambda": 0.05,
+        "finiteDifference": -0.5604715292706342,
+        "derivedGradient": -0.5604715292478952,
+        "gradientWithPrintedEquation26Coefficient": -0.5604715292478952
+      },
+      {
+        "q": 0.75,
+        "s": 0.4,
+        "lambda": 0.05,
+        "finiteDifference": -0.5528462464071682,
+        "derivedGradient": -0.5528462463868898,
+        "gradientWithPrintedEquation26Coefficient": -0.5685641642579266
+      }
+    ],
+    "fixedAConvexityCounterexample": {
+      "A": 1.0,
+      "x": 1.0,
+      "s": 0.01,
+      "q": 0.5,
+      "lambda": 0.1,
+      "finiteSecondDerivative": -24.000007536884024,
+      "analyticSecondDerivative": -24.0
+    },
+    "boundary": "Scalar positive-domain calculus only; no implementation, convergence, or benchmark reproduction."
+  },
+  "frameworkSearch": {
+    "status": "no_framework",
+    "boundary": "All26 pages inspected: Figure1 regularizer geometry, Figures2–3 mixing/simplex geometry, Figures4–18 spectra/data/experimental plots; page9 has algorithm pseudocode. No separate method pipeline figure found in this author draft; not a statement about formal version."
+  },
+  "remaining": [
+    "Official16page version comparison",
+    "Earlier draft and conference expansion evidence",
+    "Dedicated code and numeric delta/zero epsilon",
+    "Reference spectra, matching and exact ground-truth provenance",
+    "Original datasets and license; complete benchmark reproduction"
+  ]
+}
