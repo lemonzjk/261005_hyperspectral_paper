@@ -61639,16 +61639,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/icip.2013.6738646",
-      "representation": "原摘要与局部方法：超图构造/邻接、标签传播、投影矩阵、稀疏选择矩阵排序；局部文本用least angle regression求解，后续分类用SVM。",
+      "representation": "光谱Gaussian近邻构建K-uniform超边，以多元互信息/熵加权并转邻接M；阻尼标签传播含C+1异常列，岭投影Q后LAR稀疏S，按max类系数选带。原稿归一式正负指数与联合熵式有印刷疑点，未据此假定代码实现。",
       "tags": [],
-      "summary": "用超图描述高光谱样本的多元关系，少量标注与未标注样本共同参与标签传播和投影学习，再通过稀疏选择矩阵选带并分类。",
+      "summary": "用光谱近邻超图传播少量标签，学习加权线性投影后以LAR构造稀疏系数矩阵，按跨类别最大绝对系数选带，再用RBF-SVM分类。本文不是空间超图或期刊组稀疏实验。",
       "input": "标注及未标注高光谱像元与其全部光谱波段。",
       "output": "选定波段集合及像元分类结果。",
-      "mechanism": "原摘要与局部方法：超图构造/邻接、标签传播、投影矩阵、稀疏选择矩阵排序；局部文本用least angle regression求解，后续分类用SVM。",
-      "readingNote": "已核原摘要及记录的局部页；未阅读全文。四作者Zhouxiao Guo/Xiao Bai/Zhihong Zhang/Jun Zhou，3137–3141；仓储1封面+5页。IGARSS2013另为五作者和APHI，不自动合并。第三方近题页面上传稿是不同题名期刊稿，明确扩展关系及完整差异待核。",
+      "mechanism": "光谱Gaussian近邻构建K-uniform超边，以多元互信息/熵加权并转邻接M；阻尼标签传播含C+1异常列，岭投影Q后LAR稀疏S，按max类系数选带。原稿归一式正负指数与联合熵式有印刷疑点，未据此假定代码实现。",
+      "readingNote": "完整通读机构封面+5页：12式/2表/2图及19引用条目；引用作品未逐篇读。正式IEEE原摘要/作者/书目已核，正式PDF202空，不认作VoR全文已读。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "citation": "@inproceedings{hypergraph_band_icip_2013,\n  title = {A hypergraph based semi-supervised band selection method for hyperspectral image classification},\n  author = {Zhouxiao Guo and Xiao Bai and Zhihong Zhang and Jun Zhou},\n  booktitle = {2013 IEEE International Conference on Image Processing},\n  year = {2013},\n  pages = {3137--3141},\n  doi = {10.1109/icip.2013.6738646}\n}\n",
       "library": {
         "categoryIds": [
@@ -61658,25 +61658,25 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原摘要明确光学高光谱研究对象；TIP同时含多光谱/RGB范围，分别记录；只新增总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "实际输入为光学高光谱像元；本文超图空间关系为二维坐标，不是三维几何。三论文分版核验，实验与参数不相互回填。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何利用少量标注和高阶样本关系选择有判别力的高光谱波段？",
-        "datasets": "本ICIP原摘要明确AVIRIS与APHI；不能沿用近题期刊稿的三数据集。",
-        "experimentSetting": "摘要与局部方法和全页图版已核；原稿Figure1输入/真值、Figure2曲线，具体采样/划分/核参数与全部数值待阅读全文。",
-        "conclusions": "作者摘要报告在AVIRIS/APHI选带分类比较中的优势及减少标注需求；不把概括性报告写成所有选带方法最优。",
-        "limitations": "四作者Zhouxiao Guo/Xiao Bai/Zhihong Zhang/Jun Zhou，3137–3141；仓储1封面+5页。IGARSS2013另为五作者和APHI，不自动合并。第三方近题页面上传稿是不同题名期刊稿，明确扩展关系及完整差异待核。 本轮定向code/arXiv查找未核到专用入口；代码及原始数据链接未知不代表不存在。 续核：JSTARS2015原稿引言[20]/[21]明确两会议先行方法及空间信息局限；正式扩展声明仍待核。",
+        "datasets": "APHI210×150×64、455–805nm、六类；AVIRIS去噪/水吸收后200带，Table1九类（正文只列八类）。两表分别1081训练/5776测试与340训练/2610测试，逐行合计相符。",
+        "experimentSetting": "比较MVPCA、AP、全带参考；RBF-SVM一对多。超图利用未标注像元，但测试像元是否全部参与选带未明确；无随机种子、重复次数、方差或完整K/λ/α/LAR/SVM配置，不当严格独立归纳评测。",
+        "conclusions": "Figure2显示所选带分类优于所比MVPCA/AP且接近全带参考，未证始终超过全带。论文仅曲线，无完整OA数字表；没有独立复现实验。",
+        "limitations": "封面+5页机构稿已通读，IEEE正式PDF202空；原稿P=D^(-1/2)MD^(+1/2)、联合熵缺概率乘项及LAR约束不完整留证。正文八类/表九类差异保留，代码、实际样本划分及正式版本差异待核。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content",
-            "checkedAt": "2026-10-09",
-            "level": "原摘要及指定局部页核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化与纠正",
             "supports": [
-              "用超图描述高光谱样本的多元关系，少量标注与未标注样本共同参与标签传播和投影学习，再通过稀疏选择矩阵选带并分类。",
-              "本ICIP原摘要明确AVIRIS与APHI；不能沿用近题期刊稿的三数据集。",
-              "摘要与局部方法和全页图版已核；原稿Figure1输入/真值、Figure2曲线，具体采样/划分/核参数与全部数值待阅读全文。",
-              "四作者Zhouxiao Guo/Xiao Bai/Zhihong Zhang/Jun Zhou，3137–3141；仓储1封面+5页。IGARSS2013另为五作者和APHI，不自动合并。第三方近题页面上传稿是不同题名期刊稿，明确扩展关系及完整差异待核。"
+              "用光谱近邻超图传播少量标签，学习加权线性投影后以LAR构造稀疏系数矩阵，按跨类别最大绝对系数选带，再用RBF-SVM分类。本文不是空间超图或期刊组稀疏实验。",
+              "APHI210×150×64、455–805nm、六类；AVIRIS去噪/水吸收后200带，Table1九类（正文只列八类）。两表分别1081训练/5776测试与340训练/2610测试，逐行合计相符。",
+              "比较MVPCA、AP、全带参考；RBF-SVM一对多。超图利用未标注像元，但测试像元是否全部参与选带未明确；无随机种子、重复次数、方差或完整K/λ/α/LAR/SVM配置，不当严格独立归纳评测。",
+              "封面+5页机构稿已通读，IEEE正式PDF202空；原稿P=D^(-1/2)MD^(+1/2)、联合熵缺概率乘项及LAR约束不完整留证。正文八类/表九类差异保留，代码、实际样本划分及正式版本差异待核。"
             ]
           },
           {
@@ -61696,6 +61696,24 @@
             "supports": [
               "两会议题名/作者与页码准确对应；期刊增加空间关系和组稀疏，保持各自实验。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "完整通读机构封面+5页：12式/2表/2图及19引用条目；引用作品未逐篇读。正式IEEE原摘要/作者/书目已核，正式PDF202空，不认作VoR全文已读。",
+              "光谱Gaussian近邻构建K-uniform超边，以多元互信息/熵加权并转邻接M；阻尼标签传播含C+1异常列，岭投影Q后LAR稀疏S，按max类系数选带。原稿归一式正负指数与联合熵式有印刷疑点，未据此假定代码实现。",
+              "Figure2显示所选带分类优于所比MVPCA/AP且接近全带参考，未证始终超过全带。论文仅曲线，无完整OA数字表；没有独立复现实验。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/6738646/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_authors",
+            "supports": [
+              "精确DOI、完整原始摘要、作者顺序/Griffith身份及正式页码匹配；正式全文未取得。"
+            ]
           }
         ],
         "versions": [
@@ -61705,14 +61723,18 @@
             "url": "https://doi.org/10.1109/icip.2013.6738646",
             "doi": "10.1109/icip.2013.6738646",
             "year": 2013,
-            "relation": "四作者Zhouxiao Guo/Xiao Bai/Zhihong Zhang/Jun Zhou，3137–3141；仓储1封面+5页。IGARSS2013另为五作者和APHI，不自动合并。第三方近题页面上传稿是不同题名期刊稿，明确扩展关系及完整差异待核。"
+            "relation": "正式IEEE完整摘要、作者机构/精确DOI/页码已核；机构稿全文另读，未取得正式PDF，不等同VoR全文。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "hypergraph-band-icip-2013-source",
             "type": "公开作者稿/仓储稿",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content",
             "year": 2013,
-            "relation": "图号与PDF页码只对应本稿，完整正式版差异未核。"
+            "relation": "封面+5页机构作者稿全文已读，公式/表/图按本稿留证；正式IEEE全文及逐版差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content",
+            "fullTextCheckedAt": "2026-10-11"
           },
           {
             "id": "spectral-spatial-hypergraph-jstars-2015-related",
@@ -61720,14 +61742,14 @@
             "url": "https://doi.org/10.1109/jstars.2015.2443047",
             "doi": "10.1109/jstars.2015.2443047",
             "year": 2015,
-            "relation": "期刊原引言[20]/[21]明确两会议为仅光谱互信息的先行超图方法，新增空间关系与组稀疏；五作者与三数据集不回填会议。"
+            "relation": "JSTARS全文引言及[20]/[21]确认两会议为仅光谱互信息的先行方法，新增空间权重/组惩罚/三数据比较；未见明确正式扩展声明，各出版物作者、传播方法和实验分列。"
           }
         ],
         "methodFamilyId": "hypergraph-band-icip-2013",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要/指定局部方法支持任务和方法；分类确认不等同全文阅读。",
+          "rationale": "三稿全文确认超图半监督稀疏选带与像元分类；空间关系为二维坐标，保留既有分类及方法族，实验/公式差异不互填。",
           "evidenceFields": [
             "title",
             "summary",
@@ -61736,17 +61758,18 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "7ad4c225507d401b88c6d8f9d9193fa34f6c32a14f34fc4ba8a306477ee45e2f",
+          "evidenceDigest": "6b9bb0322e8e246bf797b69ba7c33584a80c619c81bded5419d144d516b9c1a2",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content",
+            "https://xplorestaging.ieee.org/document/6738646/"
           ]
         }
       },
       "frameworkFigureSearch": {
         "status": "no_framework",
-        "note": "原PDF六页含一封面逐页图版核验，Figure1输入/真值、Figure2精度曲线，只有公式与算法文字，无独立框架图。不借近题期刊图。",
-        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/1ca61d7d-44cb-55e3-9335-c0477969f05a",
-        "checkedAt": "2026-10-09"
+        "note": "本轮封面及正文全部通读与渲染复核；两图为输入/真值和结果曲线，无独立框架图，保持no_framework。",
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content",
+        "checkedAt": "2026-10-11"
       }
     },
     {
@@ -62010,16 +62033,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/igarss.2013.6723064",
-      "representation": "原摘要：超图关系权重形成邻接矩阵，子空间学习估计未标注类别；lasso计算稀疏回归系数并排序选带。不是近题期刊稿的组稀疏三数据实验。",
+      "representation": "超边多元互信息加权后合成邻接矩阵；分块谐函数传播、加权岭投影U，再以残差+λL1的lasso求各类系数。按正文max绝对类系数排序（原Eq4下标及结论sum措辞不同），选带后RBF-SVM。",
       "tags": [],
-      "summary": "利用超图与矩阵子空间学习向未标注高光谱样本传播标签，再通过lasso稀疏线性回归系数给各波段贡献评分，选择波段进行像元分类。",
+      "summary": "从光谱超图邻接进行谐函数标签传播与线性投影，将标注/未标注样本用于显式lasso回归，按类系数选带。APHI选带与后续SVM使用两套采样协议，不能合并为一个训练数。",
       "input": "少量标注及未标注高光谱像元、全部波段。",
       "output": "波段贡献评分、选带子集与像元分类。",
-      "mechanism": "原摘要：超图关系权重形成邻接矩阵，子空间学习估计未标注类别；lasso计算稀疏回归系数并排序选带。不是近题期刊稿的组稀疏三数据实验。",
-      "readingNote": "已核原摘要及记录的局部页；未阅读全文。五作者Zhouxiao Guo/Haichuan Yang/Xiao Bai/Zhihong Zhang/Jun Zhou，1474–1477；仓储1封面+4页。原文局部实验引Fig4而实际Figure1，保留排版差异。ResearchGate本题页面全文却是Bai/Guo/Yanyang Wang/Zhang/Zhou的近题期刊稿，不能混用。两会议和期刊完整扩展关系待核，不将相近出版数量当方法数。",
+      "mechanism": "超边多元互信息加权后合成邻接矩阵；分块谐函数传播、加权岭投影U，再以残差+λL1的lasso求各类系数。按正文max绝对类系数排序（原Eq4下标及结论sum措辞不同），选带后RBF-SVM。",
+      "readingNote": "完整通读机构封面+4页：9式/2表/2图及15引用条目；引用作品未逐篇读。正式IEEE原摘要/作者/书目已核，正式PDF202空，不认作VoR全文已读。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "citation": "@inproceedings{hypergraph_sparse_band_igarss_2013,\n  title = {Semi-supervised hyperspectral band selection via sparse linear regression and hypergraph models},\n  author = {Zhouxiao Guo and Haichuan Yang and Xiao Bai and Zhihong Zhang and Jun Zhou},\n  booktitle = {2013 IEEE International Geoscience and Remote Sensing Symposium - IGARSS},\n  year = {2013},\n  pages = {1474--1477},\n  doi = {10.1109/igarss.2013.6723064}\n}\n",
       "library": {
         "categoryIds": [
@@ -62029,25 +62052,25 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原摘要明确光学高光谱研究对象；TIP同时含多光谱/RGB范围，分别记录；只新增总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "实际输入为光学高光谱像元；本文超图空间关系为二维坐标，不是三维几何。三论文分版核验，实验与参数不相互回填。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何让未标注样本参与稀疏回归选带，减少标签不足的影响？",
-        "datasets": "本IGARSS摘要仅APHI；与四作者ICIP稿AVIRIS/APHI分开。",
-        "experimentSetting": "原摘要、作者身份与全页图版核验；原稿Figure1输入/真值、Figure2分类曲线。训练数、重复次数、指标全部数值尚未核读，不搬近题稿实验。",
-        "conclusions": "作者摘要报告在APHI上相对所比基线的像元分类优势；完整比较与参数待阅读全文。",
-        "limitations": "五作者Zhouxiao Guo/Haichuan Yang/Xiao Bai/Zhihong Zhang/Jun Zhou，1474–1477；仓储1封面+4页。原文局部实验引Fig4而实际Figure1，保留排版差异。ResearchGate本题页面全文却是Bai/Guo/Yanyang Wang/Zhang/Zhou的近题期刊稿，不能混用。两会议和期刊完整扩展关系待核，不将相近出版数量当方法数。 本轮定向code/arXiv查找未核到专用入口；代码及原始数据链接未知不代表不存在。 续核：JSTARS2015原稿引言[20]/[21]明确两会议先行方法及空间信息局限；正式扩展声明仍待核。",
+        "datasets": "APHI210×150×64、455–805nm、六类。选带阶段126标注/2610未标注；SVM阶段另抽700训练/1600测试，两表逐行合计相符。",
+        "experimentSetting": "MVPCA/AP/全带对照，RBF-SVM，随机实验十次平均OA；选带与SVM两套样本之间是否重叠未给，不能据此保证独立测试。K、λ、熵估计、SVM配置和种子未知；图中曲线不伪造为精确数表。",
+        "conclusions": "Figure2报告对MVPCA/AP的分类优势，20带后增益减缓并趋近全带参考。全带仍为参考上方曲线，未证所有设置最优。",
+        "limitations": "封面+4页机构稿已通读，IEEE正式PDF202空。Eq4max索引/结论sum与Eq8归一等式条件不明，正文Fig4实际为Figure1；没有专用代码/原数据/样本身份或独立复现，不能套ICIP或期刊参数。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content",
-            "checkedAt": "2026-10-09",
-            "level": "原摘要及指定局部页核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化与纠正",
             "supports": [
-              "利用超图与矩阵子空间学习向未标注高光谱样本传播标签，再通过lasso稀疏线性回归系数给各波段贡献评分，选择波段进行像元分类。",
-              "本IGARSS摘要仅APHI；与四作者ICIP稿AVIRIS/APHI分开。",
-              "原摘要、作者身份与全页图版核验；原稿Figure1输入/真值、Figure2分类曲线。训练数、重复次数、指标全部数值尚未核读，不搬近题稿实验。",
-              "五作者Zhouxiao Guo/Haichuan Yang/Xiao Bai/Zhihong Zhang/Jun Zhou，1474–1477；仓储1封面+4页。原文局部实验引Fig4而实际Figure1，保留排版差异。ResearchGate本题页面全文却是Bai/Guo/Yanyang Wang/Zhang/Zhou的近题期刊稿，不能混用。两会议和期刊完整扩展关系待核，不将相近出版数量当方法数。"
+              "从光谱超图邻接进行谐函数标签传播与线性投影，将标注/未标注样本用于显式lasso回归，按类系数选带。APHI选带与后续SVM使用两套采样协议，不能合并为一个训练数。",
+              "APHI210×150×64、455–805nm、六类。选带阶段126标注/2610未标注；SVM阶段另抽700训练/1600测试，两表逐行合计相符。",
+              "MVPCA/AP/全带对照，RBF-SVM，随机实验十次平均OA；选带与SVM两套样本之间是否重叠未给，不能据此保证独立测试。K、λ、熵估计、SVM配置和种子未知；图中曲线不伪造为精确数表。",
+              "封面+4页机构稿已通读，IEEE正式PDF202空。Eq4max索引/结论sum与Eq8归一等式条件不明，正文Fig4实际为Figure1；没有专用代码/原数据/样本身份或独立复现，不能套ICIP或期刊参数。"
             ]
           },
           {
@@ -62067,6 +62090,24 @@
             "supports": [
               "两会议题名/作者与页码准确对应；期刊增加空间关系和组稀疏，保持各自实验。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "完整通读机构封面+4页：9式/2表/2图及15引用条目；引用作品未逐篇读。正式IEEE原摘要/作者/书目已核，正式PDF202空，不认作VoR全文已读。",
+              "超边多元互信息加权后合成邻接矩阵；分块谐函数传播、加权岭投影U，再以残差+λL1的lasso求各类系数。按正文max绝对类系数排序（原Eq4下标及结论sum措辞不同），选带后RBF-SVM。",
+              "Figure2报告对MVPCA/AP的分类优势，20带后增益减缓并趋近全带参考。全带仍为参考上方曲线，未证所有设置最优。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/6723064/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_authors",
+            "supports": [
+              "精确DOI、完整原始摘要、作者顺序/Griffith身份及正式页码匹配；正式全文未取得。"
+            ]
           }
         ],
         "versions": [
@@ -62076,14 +62117,18 @@
             "url": "https://doi.org/10.1109/igarss.2013.6723064",
             "doi": "10.1109/igarss.2013.6723064",
             "year": 2013,
-            "relation": "五作者Zhouxiao Guo/Haichuan Yang/Xiao Bai/Zhihong Zhang/Jun Zhou，1474–1477；仓储1封面+4页。原文局部实验引Fig4而实际Figure1，保留排版差异。ResearchGate本题页面全文却是Bai/Guo/Yanyang Wang/Zhang/Zhou的近题期刊稿，不能混用。两会议和期刊完整扩展关系待核，不将相近出版数量当方法数。"
+            "relation": "正式IEEE完整摘要、作者机构/精确DOI/页码已核；机构稿全文另读，未取得正式PDF，不等同VoR全文。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "hypergraph-sparse-band-igarss-2013-source",
             "type": "公开作者稿/仓储稿",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content",
             "year": 2013,
-            "relation": "图号与PDF页码只对应本稿，完整正式版差异未核。"
+            "relation": "封面+4页机构作者稿全文已读，公式/表/图按本稿留证；正式IEEE全文及逐版差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content",
+            "fullTextCheckedAt": "2026-10-11"
           },
           {
             "id": "spectral-spatial-hypergraph-jstars-2015-related",
@@ -62091,14 +62136,14 @@
             "url": "https://doi.org/10.1109/jstars.2015.2443047",
             "doi": "10.1109/jstars.2015.2443047",
             "year": 2015,
-            "relation": "期刊原引言[20]/[21]明确两会议为仅光谱互信息的先行超图方法，新增空间关系与组稀疏；五作者与三数据集不回填会议。"
+            "relation": "JSTARS全文引言及[20]/[21]确认两会议为仅光谱互信息的先行方法，新增空间权重/组惩罚/三数据比较；未见明确正式扩展声明，各出版物作者、传播方法和实验分列。"
           }
         ],
         "methodFamilyId": "hypergraph-band-icip-2013",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要/指定局部方法支持任务和方法；分类确认不等同全文阅读。",
+          "rationale": "三稿全文确认超图半监督稀疏选带与像元分类；空间关系为二维坐标，保留既有分类及方法族，实验/公式差异不互填。",
           "evidenceFields": [
             "title",
             "summary",
@@ -62107,17 +62152,18 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "a82e232682af7fc088cb90ca12be4b7a9df4f122fc0583f49481c48ee35ff5c3",
+          "evidenceDigest": "102d1a94a97d3954029531bce7fa5c4ee7b7fdc5a4790a24fdd5f95dbc4f83ee",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content",
+            "https://xplorestaging.ieee.org/document/6723064/"
           ]
         }
       },
       "frameworkFigureSearch": {
         "status": "no_framework",
-        "note": "原PDF五页含一封面逐页图版核验，Figure1输入/真值、Figure2精度曲线，无独立框架图。正文Fig4引用与Figure1不符；不借误挂近题期刊图。",
-        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/e9392fba-6aa9-5e92-8f20-2872c6f2b064",
-        "checkedAt": "2026-10-09"
+        "note": "本轮封面及正文全部通读与渲染复核；两图为输入/真值和结果曲线，无独立框架图，保持no_framework。",
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content",
+        "checkedAt": "2026-10-11"
       }
     },
     {
@@ -63291,16 +63337,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/jstars.2015.2443047",
-      "representation": "超图构造、空间关系/互信息加权、标签传播、相邻波段group-lasso回归选带与SVM；Figure1是超图构造方法图，不是整体网络。",
+      "representation": "像元锚定K−1光谱近邻，超边权重混合空间Gaussian平均与多元互信息；共享超边求M，D^(-1)M阻尼传播标签；加权线性回归用相邻20带组L2和惩罚，max类系数排序，再SVM分类。式14未显示独立元素L1，式17RBF范数无平方，实际实现待核。",
       "tags": [],
-      "summary": "利用标注/未标注高光谱像元构建融合空间关系与光谱互信息的超图，传播标签后通过组稀疏回归选带，再训练SVM分类。",
+      "summary": "在两篇2013光谱超图先行方法基础上引入像元空间坐标关系、相邻波段组惩罚与三数据集比较。机构全文确认方法前后联系，但未见明确正式扩展声明，三出版物分别保留。",
       "input": "少量标注及未标注像元、全部波段与空间邻域。",
       "output": "选定波段及像元类别。",
-      "mechanism": "超图构造、空间关系/互信息加权、标签传播、相邻波段group-lasso回归选带与SVM；Figure1是超图构造方法图，不是整体网络。",
-      "readingNote": "原摘要及指定局部核验；未阅读全文。正式JSTARS8(6):2774–2783，2015年6月，仓储封面+10页Figure1在PDF5/稿内4。原[20]/[21]准确匹配两会议，证明相关方法前后关系；未找到正式“扩展版”声明，保持三出版物实验差异。",
+      "mechanism": "像元锚定K−1光谱近邻，超边权重混合空间Gaussian平均与多元互信息；共享超边求M，D^(-1)M阻尼传播标签；加权线性回归用相邻20带组L2和惩罚，max类系数排序，再SVM分类。式14未显示独立元素L1，式17RBF范数无平方，实际实现待核。",
+      "readingNote": "完整通读机构封面+10页：18式/9表/12图及30引用条目；引用作品未逐篇读。正式IEEE原摘要/作者/书目已核，正式PDF202空，不认作VoR全文已读。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "citation": "@article{spectral_spatial_hypergraph_jstars_2015,\n  title = {Semisupervised Hyperspectral Band Selection Via Spectral–Spatial Hypergraph Model},\n  author = {Xiao Bai and Zhouxiao Guo and Yanyang Wang and Zhihong Zhang and Jun Zhou},\n  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n  year = {2015},\n  pages = {2774--2783},\n  doi = {10.1109/jstars.2015.2443047}\n}\n",
       "library": {
         "categoryIds": [
@@ -63310,25 +63356,25 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原摘要以光学高光谱观测为主要研究对象；普通三维验证数据不冒充高光谱。新增仅总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "实际输入为光学高光谱像元；本文超图空间关系为二维坐标，不是三维几何。三论文分版核验，实验与参数不相互回填。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何将空间关系和未标注样本用于半监督组稀疏选带？",
-        "datasets": "原第IV节三基准APHI、Indian Pines、Washington DC Mall；不把这三数据集回填到ICIP2013 AVIRIS/APHI或IGARSS2013 APHI。",
-        "experimentSetting": "原摘要、引言[20]/[21]、Figure1与第IV节数据局部已核；作者五人Bai/Guo/Yanyang Wang/Zhang/Jun Zhou，与两篇会议分别不同。未逐项核参数/数值与全文。",
-        "conclusions": "原引言明确针对两篇2013超图方法未考虑空间信息的局限，加入空间关系和组稀疏选带；不是将会议结果重复出版视作新独立方法。",
-        "limitations": "正式JSTARS8(6):2774–2783，2015年6月，仓储封面+10页Figure1在PDF5/稿内4。原[20]/[21]准确匹配两会议，证明相关方法前后关系；未找到正式“扩展版”声明，保持三出版物实验差异。 原文代码/原始数据专用入口未知，本轮题名定向发现不等于穷尽搜索。",
+        "datasets": "APHI六类64带，TableI未标注总计印2410但行和2610；Indian Pines九类200带，TableIII测试总计印5407但行和5776，训练1081；DC Mall原210带/400–2500nm/1208×307、选六类，450标注/2760未标注。实际载荷与划分未取得，不静默修印刷值。",
+        "experimentSetting": "K9、传播λ.92、组θ.25，邻带组20，γ训练子集交叉验证，APHI最佳空间权重t=.425。APHI随机五次，Indian Pines十次；未标注样本参与传播及SVM，属转导使用描述，独立留出细节不足。图/超图消融另用五类2000样本、15%标注与85%未标注、10带；不和主实验或组稀疏表混算。",
+        "conclusions": "TableVIII组稀疏对普通稀疏提升APHI/Indian/DC为0.3/0.9/1.0个百分点；TableIX图到超图为6.6/7.8个百分点，协议不同。TableVII本法122/85/325秒；ID三数据均最快，DC本法最慢。其余OA/相关性是图示，低相关不自动证明统计独立。",
+        "limitations": "封面+10页机构稿、18式/Algorithm1/9表/12图/30引用条目已读，正式IEEE仅摘要/书目核验。APHI/Indian总计、12%每类措辞及式7概率log/式14组惩罚/式17RBF记载有不一致；求解器、尾组、d_k/熵估计、测试隔离、样本/代码与重复方差仍待。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content",
-            "checkedAt": "2026-10-09",
-            "level": "原摘要与指定局部方法/数据/图版核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化与纠正",
             "supports": [
-              "利用标注/未标注高光谱像元构建融合空间关系与光谱互信息的超图，传播标签后通过组稀疏回归选带，再训练SVM分类。",
-              "原第IV节三基准APHI、Indian Pines、Washington DC Mall；不把这三数据集回填到ICIP2013 AVIRIS/APHI或IGARSS2013 APHI。",
-              "原摘要、引言[20]/[21]、Figure1与第IV节数据局部已核；作者五人Bai/Guo/Yanyang Wang/Zhang/Jun Zhou，与两篇会议分别不同。未逐项核参数/数值与全文。",
-              "正式JSTARS8(6):2774–2783，2015年6月，仓储封面+10页Figure1在PDF5/稿内4。原[20]/[21]准确匹配两会议，证明相关方法前后关系；未找到正式“扩展版”声明，保持三出版物实验差异。"
+              "在两篇2013光谱超图先行方法基础上引入像元空间坐标关系、相邻波段组惩罚与三数据集比较。机构全文确认方法前后联系，但未见明确正式扩展声明，三出版物分别保留。",
+              "APHI六类64带，TableI未标注总计印2410但行和2610；Indian Pines九类200带，TableIII测试总计印5407但行和5776，训练1081；DC Mall原210带/400–2500nm/1208×307、选六类，450标注/2760未标注。实际载荷与划分未取得，不静默修印刷值。",
+              "K9、传播λ.92、组θ.25，邻带组20，γ训练子集交叉验证，APHI最佳空间权重t=.425。APHI随机五次，Indian Pines十次；未标注样本参与传播及SVM，属转导使用描述，独立留出细节不足。图/超图消融另用五类2000样本、15%标注与85%未标注、10带；不和主实验或组稀疏表混算。",
+              "封面+10页机构稿、18式/Algorithm1/9表/12图/30引用条目已读，正式IEEE仅摘要/书目核验。APHI/Indian总计、12%每类措辞及式7概率log/式14组惩罚/式17RBF记载有不一致；求解器、尾组、d_k/熵估计、测试隔离、样本/代码与重复方差仍待。"
             ]
           },
           {
@@ -63340,6 +63386,24 @@
               "Xiao Bai, Zhouxiao Guo, Yanyang Wang, Zhihong Zhang, Jun Zhou",
               "2015；2774-2783"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "完整通读机构封面+10页：18式/9表/12图及30引用条目；引用作品未逐篇读。正式IEEE原摘要/作者/书目已核，正式PDF202空，不认作VoR全文已读。",
+              "像元锚定K−1光谱近邻，超边权重混合空间Gaussian平均与多元互信息；共享超边求M，D^(-1)M阻尼传播标签；加权线性回归用相邻20带组L2和惩罚，max类系数排序，再SVM分类。式14未显示独立元素L1，式17RBF范数无平方，实际实现待核。",
+              "TableVIII组稀疏对普通稀疏提升APHI/Indian/DC为0.3/0.9/1.0个百分点；TableIX图到超图为6.6/7.8个百分点，协议不同。TableVII本法122/85/325秒；ID三数据均最快，DC本法最慢。其余OA/相关性是图示，低相关不自动证明统计独立。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7152840/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_authors",
+            "supports": [
+              "精确DOI、完整原始摘要、作者顺序/Griffith身份及正式页码匹配；正式全文未取得。"
+            ]
           }
         ],
         "versions": [
@@ -63349,21 +63413,25 @@
             "url": "https://doi.org/10.1109/jstars.2015.2443047",
             "doi": "10.1109/jstars.2015.2443047",
             "year": 2015,
-            "relation": "正式JSTARS8(6):2774–2783，2015年6月，仓储封面+10页Figure1在PDF5/稿内4。原[20]/[21]准确匹配两会议，证明相关方法前后关系；未找到正式“扩展版”声明，保持三出版物实验差异。"
+            "relation": "正式IEEE完整摘要、作者机构/精确DOI/页码已核；机构稿全文另读，未取得正式PDF，不等同VoR全文。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "spectral-spatial-hypergraph-jstars-2015-source",
             "type": "公开机构作者稿",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content",
             "year": 2015,
-            "relation": "原图号/页码只对应该PDF，正式版差异待核。"
+            "relation": "封面+10页机构作者稿全文已读，公式/表/图按本稿留证；正式IEEE全文及逐版差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextSource": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "hypergraph-band-icip-2013",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要支持任务/方法；PDF指定局部可取得时补证，不将分类确认等同全文。",
+          "rationale": "三稿全文确认超图半监督稀疏选带与像元分类；空间关系为二维坐标，保留既有分类及方法族，实验/公式差异不互填。",
           "evidenceFields": [
             "title",
             "summary",
@@ -63372,9 +63440,10 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "1fb9274d6b5d0e4a97e67f64b6756f8bf420a00bf0f54820a76217d4e359faf1",
+          "evidenceDigest": "95a2a2be359a0ee43720419f48ce9a42828b449e148abda371d9800e9f5aa16d",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content",
+            "https://xplorestaging.ieee.org/document/7152840/"
           ]
         }
       },
@@ -86577,6 +86646,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原摘要/局部方法核验支持。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "三篇原稿全文分版核验，区分阻尼/谐函数传播与LAR/lasso/组惩罚；保留定义与既有关联。"
         }
       ]
     },

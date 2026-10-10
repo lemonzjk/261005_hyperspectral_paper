@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。168条为摘要级核验、20条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。165条为摘要级核验、23条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -176,11 +176,11 @@
 | 2012 | [Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image](https://doi.org/10.1109/ICICEE.2012.350) | 待分类 | 正式发表 | 摘要核验 |
 | 2012 | [Shearlet transform based anomaly detection for hyperspectral image](https://doi.org/10.1117/12.978636) | 待分类 | 正式发表 | 摘要核验 |
 | 2013 | [3D Plant Modelling via Hyperspectral Imaging](https://openaccess.thecvf.com/content_iccv_workshops_2013/W06/papers/Liang_3D_Plant_Modelling_2013_ICCV_paper.pdf) | 深度、法线与表面重建 | 正式发表 | 全文核验（版本见目录） |
-| 2013 | [A hypergraph based semi-supervised band selection method for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2013 | [A hypergraph based semi-supervised band selection method for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/929f464e-22b1-5a2d-8cee-f7965e90dfb1/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2013 | [Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy](https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf) | 光谱反射与散射属性建模、光谱照明估计 | 正式发表 | 摘要核验 |
 | 2013 | [Hyperspectral Image Classification Based on Structured Sparse Logistic Regression and Three-Dimensional Wavelet Texture Features](https://research-repository.griffith.edu.au/server/api/core/bitstreams/a8546383-e267-51a0-b096-60bbb047c0f9/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2013 | [Salient object detection in hyperspectral imagery](https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content) | 高光谱显著目标检测 | 正式发表 | 摘要核验 |
-| 2013 | [Semi-supervised hyperspectral band selection via sparse linear regression and hypergraph models](https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2013 | [Semi-supervised hyperspectral band selection via sparse linear regression and hypergraph models](https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2013 | [Soil Biochar Quantification via Hyperspectral Unmixing](https://doi.org/10.1109/dicta.2013.6691529) | 土壤光谱与属性估计、光谱解混 | 正式发表 | 摘要核验 |
 | 2014 | [Dual Graph Regularized NMF for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2014 | [Visualization of Hyperspectral Imaging Data Based on Manifold Alignment](https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content) | 高光谱彩色可视化 | 正式发表 | 摘要核验 |
@@ -195,7 +195,7 @@
 | 2015 | [Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2015 | [On the Sampling Strategies for Evaluation of Joint Spectral-Spatial Information Based Classifiers](https://research-repository.griffith.edu.au/bitstreams/8054cd22-253b-52f4-9bd4-987453f900b9/download) | 地物与植被图像分类、数据集与评测基准 | 正式发表 | 摘要核验 |
 | 2015 | [Relative Depth Estimation from Hyperspectral Data](https://doi.org/10.1109/dicta.2015.7371299) | 深度、法线与表面重建 | 正式发表 | 摘要核验 |
-| 2015 | [Semisupervised Hyperspectral Band Selection Via Spectral–Spatial Hypergraph Model](https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2015 | [Semisupervised Hyperspectral Band Selection Via Spectral–Spatial Hypergraph Model](https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2016 | [A Manifold Alignment Approach for Hyperspectral Image Visualization With Natural Color](https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content) | 高光谱彩色可视化 | 正式发表 | 摘要核验 |
 | 2016 | [Band Weighting via Maximizing Interclass Distance for Hyperspectral Image Classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2016 | [CRF learning with CNN features for hyperspectral image segmentation](https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf) | 光谱图像语义分割、光谱表征预训练 | 正式发表 | 摘要核验 |
