@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-10-11",
+  "numpyVersion": "2.5.1",
+  "scope": "Exact original function ASTs, no module imports, model loading, real videos or GT. Synthetic inputs only.",
+  "probes": [
+    {
+      "case": "mosaic_4x4",
+      "cubeShape": [
+        2,
+        3,
+        16
+      ],
+      "equalsIndependentStrideSlices": true,
+      "Cube2X": {
+        "shape": [
+          8,
+          12
+        ],
+        "equalsOriginal": true
+      }
+    },
+    {
+      "case": "mosaic_5x5",
+      "cubeShape": [
+        2,
+        3,
+        25
+      ],
+      "equalsIndependentStrideSlices": true,
+      "Cube2X": {
+        "errorType": "ValueError",
+        "message": "could not broadcast input array from shape (5,5) into shape (5,2)"
+      }
+    },
+    {
+      "case": "constant_uint8_mosaic",
+      "outputDtype": "uint8",
+      "finite": true,
+      "warnings": [
+        "invalid value encountered in cast",
+        "invalid value encountered in divide"
+      ],
+      "interpretation": "Shows absent constant-band denominator guard on a synthetic input; does not prove occurrence in the real benchmark."
+    },
+    {
+      "case": "evaluate_iou_0",
+      "AO": 0.0,
+      "SR_strict_gt_half": 0.0,
+      "successCurveMean": 0.0,
+      "meanReciprocalFPS": 6.25,
+      "inverseMeanTimeFPS": 4.0
+    },
+    {
+      "case": "evaluate_iou_0.5",
+      "AO": 0.5,
+      "SR_strict_gt_half": 0.0,
+      "successCurveMean": 0.49504950495049505,
+      "meanReciprocalFPS": 6.25,
+      "inverseMeanTimeFPS": 4.0
+    },
+    {
+      "case": "evaluate_iou_1",
+      "AO": 1.0,
+      "SR_strict_gt_half": 1.0,
+      "successCurveMean": 0.9900990099009901,
+      "meanReciprocalFPS": 6.25,
+      "inverseMeanTimeFPS": 4.0
+    },
+    {
+      "case": "identical_positive_box",
+      "iou": [
+        1.0
+      ]
+    }
+  ]
+}

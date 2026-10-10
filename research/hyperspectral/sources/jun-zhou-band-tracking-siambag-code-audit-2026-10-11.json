@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-10-11",
+  "repository": "https://github.com/zephyrhours/Hyperspectral-Object-Tracking-SiamBAG",
+  "commit": "8b3ee425da3dc76464774b9f05b19b57b578c752",
+  "commitDateMetadata": "2023-06-26T07:59:44Z",
+  "treeEntries": 233,
+  "treeTruncated": false,
+  "blobCount": 179,
+  "pythonFilesInTree": 35,
+  "pythonFilesReadCompletely": [
+    "SiamBAG/HyperTools.py",
+    "SiamBAG/channel_net.py",
+    "SiamBAG/got10k/datasets/hot2022.py",
+    "SiamBAG/got10k/experiments/hot2022.py",
+    "SiamBAG/got10k/utils/metrics.py",
+    "SiamBAG/image_enhance.py",
+    "SiamBAG/run_tracking.py",
+    "SiamBAG/siambag.py",
+    "SiamBAG/got10k/trackers/__init__.py"
+  ],
+  "READMEReadCompletely": [
+    "README.md",
+    "SiamBAG/README.md"
+  ],
+  "retrievedRawBlobsGitHashVerified": 84,
+  "notRetrieved": "Large GIFs/video, remaining Python and cache files, external SiamRPN model.pth, actual mosaic images and GT. Whole tree inspected but not every blob read.",
+  "noPDFInCompleteTree": true,
+  "noLicenseFilenameInCompleteTree": true,
+  "licenseBoundary": "HyperTools header says All rights reserved. No root LICENSE; upstream README credits siamrpn-pytorch, but upstream model/software terms are not independently checked or transferred.",
+  "modelPayloads": {
+    "channelWeight": {
+      "path": "SiamBAG/pretrained/final_whisper_35_videos_channel.pth",
+      "bytes": 3163,
+      "magicHex": "80028a0a6cfc9c46f9206aa850192e80",
+      "loaded": false,
+      "trainingBoundary": "Filename mentioning 35 videos does not establish training data or test leakage."
+    },
+    "siamRPNWeight": {
+      "path": "SiamBAG/pretrained/siamrpn/model.txt",
+      "bytes": 82,
+      "text": "https://drive.google.com/file/d/1zAcDWZ_33MoU-heftat5dSuik0Yj6pZ8/view?usp=sharing",
+      "externalModelDownloaded": false
+    }
+  },
+  "findings": [
+    {
+      "files": [
+        "channel_net.py",
+        "HyperTools.py"
+      ],
+      "finding": "Attention is a per-pixel Linear 16→8→4→8→16 encoder/decoder with ReLU after first encoder/decoder layers, global res2/max(res2), spectral Softmax and spatial mean to rank bands; reduction argument unused. Fixed 16 input channels in default loader."
+    },
+    {
+      "files": [
+        "HyperTools.py",
+        "siambag.py"
+      ],
+      "finding": "For 16 sorted bands (zero-based ranks): (0,9,10),(1,8,11),(2,7,12),(3,6,13),(4,5,14),(0,8,15). All 16 covered with ranks0/8 reused, not top-three selection. Group weights sum selected band weights then normalize. This rank heuristic alone does not guarantee equal group totals."
+    },
+    {
+      "files": [
+        "HyperTools.py",
+        "got10k/trackers/__init__.py"
+      ],
+      "finding": "Each frame reloads the attention model and recomputes rank; input FCI uses original normalized cube, ignores attention feature output. Template kernels fixed from first-frame groups; changing rank can change group channel identity. No actual rank traces were obtained to show its empirical effect."
+    },
+    {
+      "files": [
+        "siambag.py",
+        "image_enhance.py"
+      ],
+      "finding": "Global YCrCb luminance histogram equalization active in template and main search paths, local CLAHE commented. SiamRPN five Conv stages with BN, kernel classification/regression cross-correlation. Weighted penalized/Hann classification responses choose common anchor; regression offsets averaged equally across groups, not group-weighted."
+    },
+    {
+      "files": [
+        "siambag.py"
+      ],
+      "finding": "Defaults template127/search271 (287 if target area<.007), stride8, ratios .33/.5/1/2/3 and scale8, penalty .055/Hann .42/lr .295. Scale tune uses fixed group0 rather than commented argmax group, features/correlation with three scales .98/1/1.02, scale_lr .59 and penalty .9745. Scale search does not call the active global equalizer, while template feature came from equalized image."
+    },
+    {
+      "files": [
+        "siambag.py"
+      ],
+      "finding": "init and update are the used interface. Unused SiamRPN.forward calls **self.learn(z), although learn returns tuple; do not treat this unused entry as proof the actual tracking path failed. No gradient training or epoch pipeline in the nine inspected Python files; internal README inherited upstream training-data statements cannot prove this paper training protocol."
+    },
+    {
+      "files": [
+        "run_tracking.py",
+        "got10k/datasets/hot2022.py"
+      ],
+      "finding": "Default Windows E:/data/whisper/, test/HSI, external SiamRPN weight, visualization on. Dataset reads modality-specific groundtruth_rect.txt, HSI png, others jpg; experiment enumerates folders with check_integrity=False, not authoritative list.txt or a reproducible benchmark release."
+    },
+    {
+      "files": [
+        "got10k/experiments/hot2022.py",
+        "got10k/utils/metrics.py"
+      ],
+      "finding": "OPE initial GT only to tracker; report excludes first-frame boxes, AO=mean IoU and SR=IoU>.5, 101-point strict IoU>threshold success curve. Plot legend labels AO, not mean-curve AUC; no precision/DP report. report bound inferred once then reused across sequences and rect_iou clips arrays in place; actual call/bounds impact unverified without images/GT."
+    },
+    {
+      "files": [
+        "got10k/trackers/__init__.py",
+        "got10k/experiments/hot2022.py"
+      ],
+      "finding": "Timer starts after image read, cube reconstruction, attention model loading/inference, grouping and PIL conversion; visualization also excluded. _evaluate uses mean(1/time), not 1/mean(time). _record appends timing columns if previous time file exists; one current prediction file and two timing columns do not prove two corresponding prediction runs."
+    }
+  ],
+  "runtimeBoundary": "Nine source files fully inspected; only original NumPy utility function ASTs run on synthetic inputs. No torch.load, full model, CUDA, real videos, GT or training run."
+}

@@ -67175,39 +67175,41 @@
         "hyperspectral"
       ],
       "doi": "10.1109/JSTARS.2019.2955097",
-      "representation": "以样本级注意力学习波段权重并选择信息波段进行高光谱分类。",
+      "representation": "波段注意力网络联合地物分类与波段加权或选择；加权建模带间关系，选带模式舍弃无用波段。",
       "tags": [],
-      "summary": "研究样本自适应高光谱波段加权与选带。",
-      "input": "高光谱影像及分类样本。",
-      "output": "地物类别预测和保留波段集合。",
-      "mechanism": "网络为不同样本分配波段权重，并扩展为权重排序和波段选择。",
-      "readingNote": "Griffith作者论文局部与Crossref核验；正式JSTARS，未标全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
-      "verifiedAt": "2026-10-10",
+      "summary": "Attend in Bands 的原始摘要支持波段注意力加权与两类选带网络，并与分类端到端学习。现已把误指博士论文的主链接改为正式JSTARS DOI；期刊16页全文未取得。",
+      "input": "高光谱遥感影像及分类监督；正式摘要未给具体样本、空间窗口或划分。",
+      "output": "类别预测、波段加权向量或所选显著波段；不同工作模式分开。",
+      "mechanism": "注意力网络学习带间关系；加权模式输出波段权重，选带模式使用两类网络选择显著波段并丢弃无用波段。具体激活/常量输入细节不能仅由正式摘要补全。",
+      "readingNote": "完整IEEE与Griffith摘要逐字符一致，三作者/ORCID与JSTARS12(12):4712–4727核验。旧PDF是Jing Wang 2020博士论文192页，关联第4章与第168页论文清单仅局部核查，不当2019期刊全文。",
+      "paper": "https://doi.org/10.1109/JSTARS.2019.2955097",
+      "verifiedAt": "2026-10-11",
       "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-band-selection",
-          "land-cover-classification"
+          "land-cover-classification",
+          "spectral-band-attention"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "researchQuestion": "如何通过波段注意力建模带间关系、抑制冗余/噪声并联合加权或选择波段与分类？",
+        "datasets": "正式摘要无数据名称、样本/划分；未以学位论文实验自动回填正式期刊。",
+        "experimentSetting": "正式摘要支持加权和两类选带网络/分类端到端学习；参数、选带数、具体激活、训练/测试隔离及指标待16页期刊原文。",
+        "conclusions": "正式摘要报告有效性和优势，无可独立核对的数值；博士论文列同题三作者/卷期页码仅证实关联，不证明章节与VoR完全相同。",
+        "limitations": "旧全文链接的文献类型已纠正；论文16页全文、代码、实验协议/激活与跨版本差异仍待。学位论文192页及37页第4章均未整篇通读；不提升全文级。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
-            "checkedAt": "2026-10-10",
-            "level": "作者论文局部",
+            "checkedAt": "2026-10-11",
+            "level": "作者博士论文关联章节与出版清单（非期刊全文）",
             "supports": [
-              "样本级波段权重和选带网络。"
+              "192页PDF首页/内封与父item确认2020 Jing Wang博士论文，DOI10.25904/1912/3959。",
+              "PDF第94页第4章为同题，168页列三作者2019 JSTARS12(12):4712–4727；仅这些局部页，不证明期刊稿全文或章节文本等同。"
             ]
           },
           {
@@ -67216,6 +67218,23 @@
             "level": "Crossref",
             "supports": [
               "正式题名、作者和DOI。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/8972909/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_author_affiliation_orcid",
+            "supports": [
+              "完整IEEE摘要与机构摘要逐字符相同，直接支持波段注意力加权、两类选带与分类。",
+              "三作者与Griffith Jun Zhou精确ORCID、JSTARS12(12):4712–4727；旧链接为2020博士论文而非2019期刊全文。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/6dcd88d4-24e5-402a-b6f2-39dfb7204c05",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_journal_record",
+            "supports": [
+              "正式DOI/作者/目标Griffith身份与IEEE一致；完整一页bundles/bitstreams仅SWORD/XML，无期刊PDF。"
             ]
           }
         ],
@@ -67226,14 +67245,14 @@
             "url": "https://doi.org/10.1109/JSTARS.2019.2955097",
             "doi": "10.1109/JSTARS.2019.2955097",
             "year": 2019,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "正式书目与原始摘要已核验；全文未取得，不以相关论文、代码或学位论文章节替代。"
           }
         ],
         "methodFamilyId": "attend-in-bands",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "按完整原始摘要及实际来源重审；BABS严格前三带、SiamBAG全部波段分组及注意力/Siamese、Attend加权/选带与期刊/学位论文来源分开。代码阅读不等于期刊全文阅读。",
           "evidenceFields": [
             "title",
             "summary",
@@ -67242,15 +67261,21 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "8794b3b2ffdf50541ffe01aec29e0093f5cf1a0e44a39e44a3e8218e148b0496",
+          "evidenceDigest": "4da5e800fb89e57be7a1d8fe0ebac2ade7c5848df4a2ac1df644225da4f22d87",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
-            "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
-            "https://api.crossref.org/works/10.1109/JSTARS.2019.2955097"
+            "https://xplorestaging.ieee.org/document/8972909/",
+            "https://research-repository.griffith.edu.au/server/api/core/items/6dcd88d4-24e5-402a-b6f2-39dfb7204c05"
           ]
         }
       },
-      "citation": "@article{attend_in_bands_jstars_2019,\n  title = {Attend in Bands: Hyperspectral Band Weighting and Selection for Image Classification},\n  author = {Jing Wang and Jun Zhou and Weiqing Huang},\n  year = {2019},\n  doi = {10.1109/JSTARS.2019.2955097}\n}\n"
+      "citation": "@article{attend_in_bands_jstars_2019,\n  title = {Attend in Bands: Hyperspectral Band Weighting and Selection for Image Classification},\n  author = {Jing Wang and Jun Zhou and Weiqing Huang},\n  year = {2019},\n  doi = {10.1109/JSTARS.2019.2955097}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "旧PDF是Jing Wang2020博士论文192页，关联第4章/出版清单只局部核查，非2019 JSTARS16页全文。原始摘要已核，期刊bundle/bitstream只有SWORD/XML；正式期刊原图待，不能把学位论文图号当期刊图号。",
+        "sourceUrl": "https://doi.org/10.1109/JSTARS.2019.2955097",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "hsi-l0-gradient-lowrank-restoration-2019",
@@ -70404,7 +70429,7 @@
     },
     {
       "id": "zhou-62-hsi-2023",
-      "shortTitle": "Background-Aware Band Selection for Object Tracking ",
+      "shortTitle": "背景感知选带",
       "title": "Background-Aware Band Selection for Object Tracking in Hyperspectral Videos",
       "authors": "Mohammad Aminul Islam, Jun Zhou, Weichuan Zhang, Yongsheng Gao",
       "year": 2023,
@@ -70422,16 +70447,16 @@
       "input": "高光谱视频帧、目标区域及其局部背景区域。",
       "output": "三波段三通道输入和目标跟踪结果。",
       "mechanism": "逐波段比较目标与对应局部区域并计算不相似度，按分数选出前三个波段，再用三通道图像进行跟踪。",
-      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
-      "paper": "https://www.researchgate.net/publication/374895665_Background-Aware_Band_Selection_for_Object_Tracking_in_Hyperspectral_Videos",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整IEEE原始摘要、四作者机构/精确ORCID与Crossref/Griffith核验。正式5页未取得；本篇前三带与Hy-Tracker v1多组重排分开，不移用后者公式或实验。",
+      "paper": "https://doi.org/10.1109/LGRS.2023.3326148",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
           "spectral-band-selection"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -70440,7 +70465,7 @@
         "datasets": "公开摘要称在基准高光谱目标跟踪数据集上验证；数据名称、划分和指标待全文核验。",
         "experimentSetting": "逐波段目标/局部区域不相似度评分；前三波段组成三通道图像后输入跟踪器。",
         "conclusions": "公开摘要报告方法兼具效率和有效性；逐项性能、消融及跨场景泛化待全文核验。",
-        "limitations": "摘要未给出跟踪器具体结构、阈值、数据统计、代码和完整实验配置。",
+        "limitations": "正式5页、差异评分公式、具体跟踪器、局部区域/更新与后续取框协议、基准名称/划分/指标未取得；Hy v1相关引用不能填补这些缺口。",
         "dataLinks": [],
         "evidence": [
           {
@@ -70460,6 +70485,24 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/10288536/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_author_affiliation_orcid",
+            "supports": [
+              "完整原始摘要直接支持跨带目标/局部背景比较、按不相似度选前三带组成三通道跟踪输入。",
+              "四作者与Griffith Jun Zhou精确ORCID、GRSL 1–5页；不借Hy v1公式/分组当本篇全文。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/d06f76f7-5db2-424f-b15a-a57d6e36b684",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_record",
+            "supports": [
+              "题名、DOI、四作者与目标Griffith作者一致；机构摘要措辞有差异，但同样明确前三带。",
+              "完整bundle/bitstream一页只有SWORD/130字节XML，无正文PDF。"
+            ]
           }
         ],
         "versions": [
@@ -70469,12 +70512,36 @@
             "url": "https://doi.org/10.1109/lgrs.2023.3326148",
             "doi": "10.1109/lgrs.2023.3326148",
             "year": 2023,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式书目与原始摘要已核验；全文未取得，不以相关论文、代码或学位论文章节替代。"
           }
         ],
-        "methodFamilyId": "zhou-2023-title-62"
+        "methodFamilyId": "zhou-2023-title-62",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "按完整原始摘要及实际来源重审；BABS严格前三带、SiamBAG全部波段分组及注意力/Siamese、Attend加权/选带与期刊/学位论文来源分开。代码阅读不等于期刊全文阅读。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "44a945af552f02efd1871c0597f6f90a907070cf9b05ba88c60fe95a889f318a",
+          "sourceUrls": [
+            "https://xplorestaging.ieee.org/document/10288536/",
+            "https://research-repository.griffith.edu.au/server/api/core/items/d06f76f7-5db2-424f-b15a-a57d6e36b684"
+          ]
+        }
       },
-      "citation": "@article{zhou_62_hsi_2023, title = {Background-Aware Band Selection for Object Tracking in Hyperspectral Videos}, author = {Mohammad Aminul Islam and Jun Zhou and Weichuan Zhang and Yongsheng Gao}, year = {2023}, doi = {10.1109/lgrs.2023.3326148}\n}\n"
+      "citation": "@article{zhou_62_hsi_2023, title = {Background-Aware Band Selection for Object Tracking in Hyperspectral Videos}, author = {Mohammad Aminul Islam and Jun Zhou and Weichuan Zhang and Yongsheng Gao}, year = {2023}, doi = {10.1109/lgrs.2023.3326148}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "完整原始摘要支持前三带，但正式5页/原图未取得：IEEE下载202空、staging路径为摘要HTML，Griffith单SWORD/XML；不以Hy-Tracker v1的BABS图代替本篇原图。",
+        "sourceUrl": "https://xplorestaging.ieee.org/document/10288536/",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "zhou-63-hsi-2023",
@@ -70774,7 +70841,7 @@
     },
     {
       "id": "zhou-67-hsi-2023",
-      "shortTitle": "SiamBAG: Band Attention Grouping-Based Siamese Objec",
+      "shortTitle": "SiamBAG",
       "title": "SiamBAG: Band Attention Grouping-Based Siamese Object Tracking Network for Hyperspectral Videos",
       "authors": "Wei Li, Zengfu Hou, Jun Zhou, Ran Tao",
       "year": 2023,
@@ -70792,25 +70859,27 @@
       "input": "高光谱视频模板/搜索帧及波段分组后的三通道伪彩色图。",
       "output": "目标位置、回归框和尺度调整后的跟踪结果。",
       "mechanism": "波段注意力分组并近似平衡各组权重；分类分支融合各组响应图，回归分支给出初始位置，尺度分支利用模板/检测特征相似度反馈细化。",
-      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
-      "paper": "https://www.researchgate.net/publication/371556153_SiamBAG_Band_Attention_Grouping-based_Siamese_Object_Tracking_Network_for_Hyperspectral_Videos",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整IEEE原始摘要与四作者机构/ORCID核验；论文反链仓库固定8b3ee425：通读9个Python及两README，核35预测/35双列计时文件。正式12页仍未取得，代码/结果资源不升级全文阅读。",
+      "paper": "https://doi.org/10.1109/TGRS.2023.3285802",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
-          "spectral-band-selection"
+          "spectral-band-grouping",
+          "spectral-band-attention",
+          "siamese-proposal-tracking"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何利用波段注意力分组和 Siamese 多分支网络进行高光谱视频跟踪？",
-        "datasets": "公开摘要报告使用大规模彩色目标跟踪数据训练，并在高光谱跟踪基准上取得先进结果；具体数据待全文核验。",
-        "experimentSetting": "多组三通道伪彩色图经直方图均衡后输入分类、回归和尺度调整分支，响应按组权重融合。",
-        "conclusions": "公开摘要报告跟踪性能优于对比方法，并提供代码仓库；逐项指标和消融待全文核验。",
-        "limitations": "摘要未给出训练数据清单、分组数量、网络细节、数据统计和代码复现状态。",
+        "datasets": "正式摘要仅称大量彩色跟踪数据；作者仓库标HOT2022/test/HSI，35预测共16574行、35计时文件各两列。未取实际图像/GT或成员版本，不能由文件名证明训练集/测试隔离。",
+        "experimentSetting": "摘要：注意力分组/直方图均衡/分类回归尺度分支。固定代码：16带六组三通道、加权分类响应与等权回归；首帧模板，默认127/271、三尺度.98/1/1.02。仓库评测去首帧、AO/IoU>.5的SR，非已核正式论文AUC协议。",
+        "conclusions": "正式摘要报告性能优于所比方法，数值待全文。仓库存储AO .652693/SR .838382，曲线均值 .650638；35序列按去首帧长度加权可算回AO/SR，仅内部算术。计时文件可算回5.698116 FPS；无GT，未复算真实精度。",
+        "limitations": "正式12页与训练配置/分组监督/数据隔离待；未下载外部SiamRPN权重、加载通道checkpoint或运行跟踪。FPS排除读图、谱转换、注意力/分组且按mean(1/t)算，不能当端到端速度。模板组固定但每帧谱排序改变、尺度分支预处理不同及跨序列bound复用的实测影响待；仓库无LICENSE，不推开源许可。",
         "dataLinks": [],
         "evidence": [
           {
@@ -70830,6 +70899,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/10149343/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_author_affiliation_orcid",
+            "supports": [
+              "完整原始摘要支持波段注意力分组、多组三通道图和分类/回归/尺度调整，非严格前三带缩减。",
+              "四作者与Griffith Jun Zhou精确ORCID、TGRS61/1–12页，论文摘要直接反链SiamBAG仓库。"
+            ]
+          },
+          {
+            "url": "https://github.com/zephyrhours/Hyperspectral-Object-Tracking-SiamBAG/tree/8b3ee425da3dc76464774b9f05b19b57b578c752",
+            "checkedAt": "2026-10-11",
+            "level": "paper_linked_pinned_author_repository_static_source_and_payload_audit",
+            "supports": [
+              "IEEE摘要直接链接仓库；固定完整233节点/179 blobs/35 Python，9个Python与两README通读，所取84 blobs均核size/Git SHA1/SHA256。",
+              "16带排序六组覆盖全部16带并复用两带，不是严格前三带选择；源码分支与参数按固定提交记录。",
+              "35预测16574行四列有限且宽高正；35双列时间33148正有限数，mean(1/t)=5.698116、1/mean(t)=4.981129，仅已存计时算术，未独立验证模型/GT/硬件。"
+            ]
           }
         ],
         "versions": [
@@ -70839,12 +70927,37 @@
             "url": "https://doi.org/10.1109/tgrs.2023.3285802",
             "doi": "10.1109/tgrs.2023.3285802",
             "year": 2023,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式书目与原始摘要已核验；全文未取得，不以相关论文、代码或学位论文章节替代。"
           }
         ],
-        "methodFamilyId": "zhou-2023-title-67"
+        "methodFamilyId": "zhou-2023-title-67",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "按完整原始摘要及实际来源重审；BABS严格前三带、SiamBAG全部波段分组及注意力/Siamese、Attend加权/选带与期刊/学位论文来源分开。代码阅读不等于期刊全文阅读。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "2818fe2a968c0546bc3bdb66e8d37ad4c34a6dc701bb93fb3833e125dbd82d82",
+          "sourceUrls": [
+            "https://xplorestaging.ieee.org/document/10149343/",
+            "https://github.com/zephyrhours/Hyperspectral-Object-Tracking-SiamBAG/tree/8b3ee425da3dc76464774b9f05b19b57b578c752"
+          ]
+        }
       },
-      "citation": "@article{zhou_67_hsi_2023, title = {SiamBAG: Band Attention Grouping-Based Siamese Object Tracking Network for Hyperspectral Videos}, author = {Wei Li and Zengfu Hou and Jun Zhou and Ran Tao}, year = {2023}, doi = {10.1109/tgrs.2023.3285802}\n}\n"
+      "citation": "@article{zhou_67_hsi_2023, title = {SiamBAG: Band Attention Grouping-Based Siamese Object Tracking Network for Hyperspectral Videos}, author = {Wei Li and Zengfu Hou and Jun Zhou and Ran Tao}, year = {2023}, doi = {10.1109/tgrs.2023.3285802}\n}\n",
+      "code": "https://github.com/zephyrhours/Hyperspectral-Object-Tracking-SiamBAG",
+      "frameworkFigureSearch": {
+        "status": "needs_access",
+        "note": "论文原始摘要反链固定作者仓库，完整233节点树无PDF；已读9源码并核35预测/35计时，未取大GIF/视频。IEEE正式12页正文/方法原图未取得，不把仓库性能JSON当正式框架图或全文。",
+        "sourceUrl": "https://github.com/zephyrhours/Hyperspectral-Object-Tracking-SiamBAG/tree/8b3ee425da3dc76464774b9f05b19b57b578c752",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "zhou-68-hsi-2023",
@@ -80369,7 +80482,6 @@
         "zhou-38-hsi-2025",
         "zhou-62-hsi-2023",
         "zhou-64-hsi-2023",
-        "zhou-67-hsi-2023",
         "zhou-87-hsi-2022",
         "zhou-cherry-hsi-band-selection-2025",
         "zhou-scholar-arxiv-2404-05258",
@@ -80397,6 +80509,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "仅同步本轮Hy/BAE实际支持的波段分组/跟踪关联；版本和阅读边界分开。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "仅同步本轮三篇原始摘要/作者源码支持的标签，区分子集选带与分组、期刊与学位论文来源。"
         }
       ]
     },
@@ -86727,9 +86844,10 @@
       "color": "#c2b794",
       "createdAt": "2026-10-11",
       "evidencePaperIds": [
-        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
         "zhou-47-hsi-2024",
-        "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020"
+        "zhou-67-hsi-2023",
+        "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
+        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
       ],
       "history": [
         {
@@ -86746,6 +86864,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "仅同步本轮Hy/BAE实际支持的波段分组/跟踪关联；版本和阅读边界分开。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "仅同步本轮三篇原始摘要/作者源码支持的标签，区分子集选带与分组、期刊与学位论文来源。"
         }
       ]
     },
@@ -86775,8 +86898,10 @@
       "definition": "利用注意力机制估计波段关系或重要性，用于加权、选择或分组；具体自编码器/层次模块、监督和输出逐篇核，不自动等同Transformer或谱空时联合注意力。",
       "rationale": "BAE完整原始摘要明确autoencoder-like band attention；Hy正式原始摘要HAS-BS，v1 BABS不冒称学习注意力。",
       "evidencePaperIds": [
-        "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
-        "zhou-47-hsi-2024"
+        "attend-in-bands-jstars-2019",
+        "zhou-47-hsi-2024",
+        "zhou-67-hsi-2023",
+        "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020"
       ],
       "dimension": "method",
       "status": "confirmed",
@@ -86787,6 +86912,11 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "据Hy/BAE已取得的原始证据创建，仅关联本轮条目，阅读版本分开。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "仅同步本轮三篇原始摘要/作者源码支持的标签，区分子集选带与分组、期刊与学位论文来源。"
         }
       ]
     },
@@ -86807,6 +86937,26 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "据Hy/BAE已取得的原始证据创建，仅关联本轮条目，阅读版本分开。"
+        }
+      ]
+    },
+    {
+      "id": "siamese-proposal-tracking",
+      "name": "孪生提案跟踪",
+      "dimension": "method",
+      "definition": "以共享模板/搜索特征和互相关分类/回归提案定位视频目标，可另接尺度细化；按原始谱/伪彩色输入、分组融合、模板更新和训练协议逐篇说明，不等同在线相关滤波器学习。",
+      "rationale": "SiamBAG原始摘要与固定作者实现明确Siamese分类/回归和尺度细化，现有方法标签没有这一边界。",
+      "status": "confirmed",
+      "color": "#9bb0ab",
+      "createdAt": "2026-10-11",
+      "evidencePaperIds": [
+        "zhou-67-hsi-2023"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "据本篇原始摘要及固定源码形成，仅关联本轮SiamBAG。"
         }
       ]
     }
