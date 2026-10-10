@@ -1,0 +1,1760 @@
+{
+  "checkedAt": "2026-10-11",
+  "derivedNotOriginalResponse": true,
+  "mechanismShared": "Heavy-tailed/stable characteristic-function motivation; per-band2D Fourier cosine transform, reference-peak affine correction and wavelength-index cosine transform form Nx×Ny×Nlambda descriptor. Three axes are spatial×spectral representation, not 3D scene geometry. Printed spectral kernel cos[pi/N(n+1/2)(k+1/2)] has DCT-IV form, not assume ordinary DCT-II library call.",
+  "affineConditions": [
+    "Locally planar image patches, reliable centering to remove translation, nonsingular spatial transform and reference/two-peak coordinate matrices; peak correspondence/localization and interpolation must remain valid.",
+    "Image-domain affine model does not automatically cover arbitrary projective changes, nonplanar surfaces, occlusion or wavelength misalignment. Material properties assumed fixed; photometric calibration is separate, not proof of invariance to arbitrary lighting.",
+    "Frequency-coordinate warping is distinct from multiplying2×2 affine matrix by scalar transform coefficient. No amplitude/determinant normalization or energy truncation implementation fully specified."
+  ],
+  "printedFormulaAudit": [
+    {
+      "textureEquation": "1",
+      "chapterEquation": "1.1",
+      "pages": {
+        "texture": 2,
+        "chapter": 5
+      },
+      "visible": "P(Yu)=sum_k P(xu(k)); P(Yu) defined as Pr[y<=Yu].",
+      "interpretationBoundary": "A sum of CDF values is not generally the CDF of a sum of independent variables; no normalization/limit definition given. Stated finite-variance normality needs limiting/normal-family assumptions, not arbitrary finite-variance data. Preserve printed statement rather than substitute a proven central-limit theorem."
+    },
+    {
+      "textureEquation": "2–3 / Section2",
+      "chapterEquation": "1.2–1.4 / Section2",
+      "pages": {
+        "texture": 2,
+        "chapter": [
+          4,
+          5
+        ]
+      },
+      "visible": "Stationary mean/covariance/kurtosis and moment-generating wording coexist with potentially infinite variance; equations actually characteristic functions.",
+      "interpretationBoundary": "Characteristic functions and moment-generating functions are not interchangeable. Stationarity of existing moments does not establish existence of all moments for heavy tails. Experiments do not fit/report alpha,beta,gamma or compare density goodness of fit."
+    },
+    {
+      "textureEquation": "6–11",
+      "chapterEquation": "1.11–1.17",
+      "pages": {
+        "texture": 3,
+        "chapter": [
+          7,
+          8
+        ]
+      },
+      "visible": "gamma*=(gamma sqrt(Omega)/cos(alpha*pi/2))^(1/alpha), beta* uses arccos(cos(alpha*pi/2)/sqrt(Omega))/(pi*vartheta/2); phase and decay both sin(phi), phi=beta*pi*eta/2 with star on beta. Transformed amplitude exp(-omega*eta+A*eta^(1/alpha)) depends on omega.",
+      "interpretationBoundary": "No branch/limiting treatment supplied at alpha=1 (cos zero) or alpha=2 (vartheta zero), or positive real scale for general alpha>1. Arccos expression loses beta sign. Eta enters phi before later eta=s^alpha. Omega-dependent amplitude cannot be treated as fixed g(eta) without more derivation. These are literal manuscript questions, not proof about all implemented descriptors or a silent correction to a standard stable-density formula."
+    },
+    {
+      "textureEquation": "13–15",
+      "chapterEquation": "1.19–1.23",
+      "pages": {
+        "texture": 4,
+        "chapter": 9
+      },
+      "visible": "Translation vector[c,h] but following prose sets f=c=0. Inverse-coordinate y coefficient -b*xi_x+a*xi_y becomes b*xi_x-a*xi_y in next integral. Texture Eq15 also visibly puts2pi/Delta only on x term; chapter1.23 applies1/Delta to both kernel arguments.",
+      "interpretationBoundary": "Visible symbol/sign/grouping differences are present in PDFs, not extraction artifacts. Correct inverse map would preserve both coefficients and common scaling; do not implement printed Eq15 literally or claim the chapter corrects every earlier formula."
+    },
+    {
+      "textureEquation": "16–18 /23",
+      "chapterEquation": "1.24–1.26 /1.31",
+      "pages": {
+        "texture": [
+          4,
+          5
+        ],
+        "chapter": [
+          9,
+          10,
+          11
+        ]
+      },
+      "visible": "Determinant factor1/|Delta| is followed by F(xi)=(T^T)^-1 F(xi-prime); Phi=(UR UA^-1)(UB UR^-1).",
+      "independentAlgebraBoundary": "Under stated column-coordinate convention UB=Phi UA and nonsingular UA, direct algebra requires Phi=UB UA^-1=(UB UR^-1)(UR UA^-1). Printed product reverses factors; general2×2 matrices need not commute. This is an audit inference under the printed convention, not recovered source code or a numerical/model reproduction. Matrix action on frequency arguments, determinant normalization and singular-peak handling remain unclear."
+    }
+  ],
+  "texture2009": {
+    "paperId": "affine-hsi-texture-2009",
+    "pdfPages": 8,
+    "equationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "figuresRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "tablesRead": [
+      1,
+      2
+    ],
+    "data": {
+      "OFM": {
+        "images": 100,
+        "mothsPerImage": 8,
+        "spectralRangeNm": [
+          380,
+          1050
+        ],
+        "stepNm": 10,
+        "trainImages": 50,
+        "testImages": 50,
+        "trainMothPatches": 400,
+        "testMoths": 400,
+        "explicitBandCount": null,
+        "boundary": "68 wavelength positions follow endpoint arithmetic only, not explicitly printed raw payload channel count; hardware/cubes not obtained."
+      },
+      "urban": {
+        "images": 50,
+        "bands": 10,
+        "spectralRangeNm": [
+          420,
+          650
+        ],
+        "stepNm": 25,
+        "trainImages": 25,
+        "testImages": 25,
+        "totalVehicles": 387,
+        "trainVehicles": 189,
+        "testVehicles": 198,
+        "boundary": "Authors call these hyperspectral urban views despite10 bands; preserve measured sampling description without invented universal channel cutoff."
+      },
+      "DynTex": {
+        "modality": "ordinary dynamic texture/time sequence, not HSI",
+        "sequencesPerClass": 12,
+        "nonoverlappingRandomSubsequencesPerSequence": 10,
+        "finalItems": 1080,
+        "trainItems": 540,
+        "testItems": 540,
+        "k": 6,
+        "metric": "Euclidean descriptor distance",
+        "historicalURL": "http://www.cwi.nl/projects/dyntex/",
+        "boundary": "Partitioning is described over derived subsequences; independent parent-sequence split not established. Do not infer6-neighbor setting also applies to HSI or current accessibility of old footnote URL."
+      }
+    },
+    "preprocessing": "Mean-luminance SIFT keypoints yield candidate patches; cited illuminant estimation compensates specularity/shadow for OFM/urban. Ground-truth human labels described, threshold/matching rule and negatives not fully specified.",
+    "table1": [
+      {
+        "dataset": "urban",
+        "method": "FCT",
+        "descriptorLength": 1000,
+        "localizationPercent": 83.65
+      },
+      {
+        "dataset": "urban",
+        "method": "LBP",
+        "descriptorLength": 4176,
+        "localizationPercent": 69.2
+      },
+      {
+        "dataset": "OFM",
+        "method": "FCT",
+        "descriptorLength": 3000,
+        "localizationPercent": 83.09
+      },
+      {
+        "dataset": "OFM",
+        "method": "LBP",
+        "descriptorLength": 4176,
+        "localizationPercent": 76.54
+      }
+    ],
+    "table2": [
+      {
+        "dataset": "DynTex",
+        "method": "FCT",
+        "descriptorLength": 9000,
+        "recognitionPercent": 96.24
+      },
+      {
+        "dataset": "DynTex",
+        "method": "FCT",
+        "descriptorLength": 1000,
+        "recognitionPercent": 95.71
+      },
+      {
+        "dataset": "DynTex",
+        "method": "LBP",
+        "descriptorLength": 4176,
+        "recognitionPercent": 95.07
+      }
+    ],
+    "resultInterpretation": "Table1 metric is correctly localized fraction of test moths/vehicles, not pixel OA/AP or independent 3D detection. Margins urban14.45 and OFM6.55 percentage points. DynTex FCT9000/1000 advantages1.17/.64 points over LBP, difference between FCT lengths.53 points, not the prose approx1%. Shorter descriptor storage is not measured runtime.",
+    "printedExperimentConflicts": [
+      "Text says three FCT descriptor lengths but Table2 prints only two FCT lengths plus LBP.",
+      "Conclusion names MIT temporal texture in addition to DynTex, but experimental section/figures/tables only report OFM,urban,DynTex. No MIT protocol/results confirmed; do not add an MIT experiment or HSI dataset."
+    ],
+    "limits": "No dedicated code/cubes, random seed/repeated runs/confidence intervals, HSI k, keypoint window/peak-selection/interpolation, transform truncation/normalization, GT match threshold or hardware/timing supplied. Illustrative synthetic texture warp, not quantified complete affine-invariance guarantee."
+  },
+  "chapter2011": {
+    "paperId": "harmonic-hsi-descriptors-chapter-2011",
+    "pdfPages": 24,
+    "contentPages": 19,
+    "blankPage": 20,
+    "referencePages": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "formalPages": "179–199 (21 pages)",
+    "formalChapter": 8,
+    "publicManuscriptChapter": 1,
+    "equationsRead": [
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "1.5",
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9",
+      "1.10",
+      "1.11",
+      "1.12",
+      "1.13",
+      "1.14",
+      "1.15",
+      "1.16",
+      "1.17",
+      "1.18",
+      "1.19",
+      "1.20",
+      "1.21",
+      "1.22",
+      "1.23",
+      "1.24",
+      "1.25",
+      "1.26",
+      "1.27",
+      "1.28",
+      "1.29",
+      "1.30",
+      "1.31",
+      "1.32",
+      "1.33",
+      "1.34",
+      "1.35"
+    ],
+    "addedTreatment": "Harmonic kernel expansion K=sum a_k phi_k(omega)phi_k(eta), orthogonal Hilbert-space discussion and Mellin/wavelet/Hankel suggestions; implementation/experiments still FCT. Orthonormal basis alone does not establish convergence, affine law or performance for every suggested kernel; no comparative kernel experiment supplied.",
+    "data": {
+      "toyCategories": [
+        "plastic dinosaurs and animals",
+        "miniature cars",
+        "fluffy dolls",
+        "plastic blocks",
+        "wooden blocks"
+      ],
+      "coinsCategory": true,
+      "toys": 62,
+      "toyViewsEach": 10,
+      "toyRotationIncrementDegrees": 10,
+      "coins": 32,
+      "coinViewsEach": 2,
+      "images": 684,
+      "arithmeticCheck": "62*10+32*2=684",
+      "instrument": "AOTF fitted to FireWire camera",
+      "bands": 51,
+      "spectralRangeNm": [
+        550,
+        1000
+      ],
+      "stepNm": 9,
+      "whiteTarget": "Spectralon",
+      "boundary": "Main text split is half images342/342 by arithmetic; no demonstrated split by object identity, held-out scene or acquisition. Full rotation coverage not stated;10 increments do not imply360-degree acquisition."
+    },
+    "protocol": {
+      "classifiers": [
+        "nearest neighbor",
+        "RBF SVM"
+      ],
+      "SVMCrossValidation": "parameters obtained via cross validation, no complete values/folds/test isolation given",
+      "lattices": [
+        4,
+        16,
+        64
+      ],
+      "voting": [
+        "classify region descriptors at same scale, majority vote per image",
+        "use4+16+64=84 region descriptors per image, majority vote across scales"
+      ],
+      "conditions": [
+        "radiance/uncalibrated",
+        "illuminant-normalized reflectance/calibrated"
+      ],
+      "descriptorLengths": {
+        "FCT": 1500,
+        "LBP": 1938
+      },
+      "boundary": "k/neighbor ties, descriptor crop/retention, lattice resizing/window/padding and1500-dimensional allocation over51 bands not fully given."
+    },
+    "tables": [
+      {
+        "label": "Table 1.1",
+        "pdfPage": 15,
+        "columns": [
+          "single/same scale calibrated",
+          "single/same scale uncalibrated",
+          "multiple scale calibrated",
+          "multiple scale uncalibrated"
+        ],
+        "rows": [
+          {
+            "printedLabel": "animals",
+            "values": [
+              97.39,
+              90.32,
+              99.13,
+              99.13
+            ],
+            "printedValues": [
+              "97.39",
+              "90.32",
+              "99.13",
+              "99.13"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              70.0,
+              77.55,
+              100.0,
+              100.0
+            ],
+            "printedValues": [
+              "70.00",
+              "77.55",
+              "100.0",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              83.33,
+              41.49,
+              90.0,
+              96.67
+            ],
+            "printedValues": [
+              "83.33",
+              "41.49",
+              "90.00",
+              "96.67"
+            ]
+          },
+          {
+            "printedLabel": "4-Region Lattice   plastic blocks",
+            "values": [
+              80.0,
+              96.24,
+              97.14,
+              97.14
+            ],
+            "printedValues": [
+              "80.00",
+              "96.24",
+              "97.14",
+              "97.14"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              96.0,
+              98.74,
+              99.0,
+              99.0
+            ],
+            "printedValues": [
+              "96.00",
+              "98.74",
+              "99.00",
+              "99.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              93.75,
+              87.64,
+              96.88,
+              96.88
+            ],
+            "printedValues": [
+              "93.75",
+              "87.64",
+              "96.88",
+              "96.88"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              91.23,
+              89.47,
+              97.72,
+              98.54
+            ],
+            "printedValues": [
+              "91.23",
+              "89.47",
+              "97.72",
+              "98.54"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              94.78,
+              98.26,
+              100.0,
+              100.0
+            ],
+            "printedValues": [
+              "94.78",
+              "98.26",
+              "100.0",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              90.0,
+              80.0,
+              100.0,
+              100.0
+            ],
+            "printedValues": [
+              "90.00",
+              "80.00",
+              "100.0",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              80.0,
+              93.33,
+              96.67,
+              96.67
+            ],
+            "printedValues": [
+              "80.00",
+              "93.33",
+              "96.67",
+              "96.67"
+            ]
+          },
+          {
+            "printedLabel": "16-Region Lattice   plastic blocks",
+            "values": [
+              97.14,
+              94.29,
+              100.0,
+              97.14
+            ],
+            "printedValues": [
+              "97.14",
+              "94.29",
+              "100.0",
+              "97.14"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              100.0,
+              100.0,
+              99.0,
+              99.0
+            ],
+            "printedValues": [
+              "100.0",
+              "100.0",
+              "99.00",
+              "99.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              90.63,
+              93.75,
+              96.88,
+              96.88
+            ],
+            "printedValues": [
+              "90.63",
+              "93.75",
+              "96.88",
+              "96.88"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              94.44,
+              95.91,
+              99.12,
+              98.83
+            ],
+            "printedValues": [
+              "94.44",
+              "95.91",
+              "99.12",
+              "98.83"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              98.26,
+              98.26,
+              97.39,
+              97.39
+            ],
+            "printedValues": [
+              "98.26",
+              "98.26",
+              "97.39",
+              "97.39"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              96.67,
+              96.67,
+              96.67,
+              100.0
+            ],
+            "printedValues": [
+              "96.67",
+              "96.67",
+              "96.67",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              80.0,
+              76.67,
+              90.0,
+              100.0
+            ],
+            "printedValues": [
+              "80.00",
+              "76.67",
+              "90.00",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "64-Region Lattice   plastic blocks",
+            "values": [
+              82.86,
+              82.86,
+              97.14,
+              94.29
+            ],
+            "printedValues": [
+              "82.86",
+              "82.86",
+              "97.14",
+              "94.29"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              100.0,
+              100.0,
+              100.0,
+              100.0
+            ],
+            "printedValues": [
+              "100.0",
+              "100.0",
+              "100.0",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              90.63,
+              90.63,
+              100.0,
+              96.88
+            ],
+            "printedValues": [
+              "90.63",
+              "90.63",
+              "100.0",
+              "96.88"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              94.74,
+              94.44,
+              97.66,
+              98.25
+            ],
+            "printedValues": [
+              "94.74",
+              "94.44",
+              "97.66",
+              "98.25"
+            ]
+          },
+          {
+            "printedLabel": "Average",
+            "values": [
+              93.47,
+              93.27,
+              98.17,
+              98.54
+            ],
+            "printedValues": [
+              "93.47",
+              "93.27",
+              "98.17",
+              "98.54"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1.2",
+        "pdfPage": 16,
+        "columns": [
+          "single/same scale calibrated",
+          "single/same scale uncalibrated",
+          "multiple scale calibrated",
+          "multiple scale uncalibrated"
+        ],
+        "rows": [
+          {
+            "printedLabel": "animals",
+            "values": [
+              97.39,
+              100.0,
+              97.39,
+              100.0
+            ],
+            "printedValues": [
+              "97.39",
+              "100.0",
+              "97.39",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              30.0,
+              93.33,
+              6.67,
+              93.33
+            ],
+            "printedValues": [
+              "30.00",
+              "93.33",
+              "6.67",
+              "93.33"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              88.57,
+              97.14,
+              80.0,
+              97.14
+            ],
+            "printedValues": [
+              "88.57",
+              "97.14",
+              "80.00",
+              "97.14"
+            ]
+          },
+          {
+            "printedLabel": "4-Region Lattice   plastic blocks",
+            "values": [
+              56.67,
+              100.0,
+              53.33,
+              100.0
+            ],
+            "printedValues": [
+              "56.67",
+              "100.0",
+              "53.33",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              52.0,
+              98.0,
+              40.0,
+              98.0
+            ],
+            "printedValues": [
+              "52.00",
+              "98.00",
+              "40.00",
+              "98.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              65.63,
+              96.88,
+              31.25,
+              96.88
+            ],
+            "printedValues": [
+              "65.63",
+              "96.88",
+              "31.25",
+              "96.88"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              65.04,
+              97.56,
+              51.44,
+              97.56
+            ],
+            "printedValues": [
+              "65.04",
+              "97.56",
+              "51.44",
+              "97.56"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              94.78,
+              99.13,
+              96.52,
+              96.52
+            ],
+            "printedValues": [
+              "94.78",
+              "99.13",
+              "96.52",
+              "96.52"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              16.67,
+              56.67,
+              3.33,
+              80.0
+            ],
+            "printedValues": [
+              "16.67",
+              "56.67",
+              "3.33",
+              "80.00"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              68.57,
+              94.29,
+              62.86,
+              88.57
+            ],
+            "printedValues": [
+              "68.57",
+              "94.29",
+              "62.86",
+              "88.57"
+            ]
+          },
+          {
+            "printedLabel": "16-Region Lattice   plastic blocks",
+            "values": [
+              13.33,
+              70.0,
+              20.0,
+              13.33
+            ],
+            "printedValues": [
+              "13.33",
+              "70.00",
+              "20.00",
+              "13.33"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              54.0,
+              100.0,
+              30.0,
+              94.0
+            ],
+            "printedValues": [
+              "54.00",
+              "100.0",
+              "30.00",
+              "94.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              18.75,
+              90.63,
+              3.13,
+              6.25
+            ],
+            "printedValues": [
+              "18.75",
+              "90.63",
+              "3.13",
+              "6.25"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              44.35,
+              85.12,
+              35.97,
+              63.11
+            ],
+            "printedValues": [
+              "44.35",
+              "85.12",
+              "35.97",
+              "63.11"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              97.39,
+              100.0,
+              94.78,
+              92.17
+            ],
+            "printedValues": [
+              "97.39",
+              "100.0",
+              "94.78",
+              "92.17"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              3.33
+            ],
+            "printedValues": [
+              "0.00",
+              "0.00",
+              "0.00",
+              "3.33"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              45.71,
+              54.29,
+              51.43,
+              65.71
+            ],
+            "printedValues": [
+              "45.71",
+              "54.29",
+              "51.43",
+              "65.71"
+            ]
+          },
+          {
+            "printedLabel": "64-Region Lattice   plastic blocks",
+            "values": [
+              0.0,
+              13.33,
+              0.0,
+              0.0
+            ],
+            "printedValues": [
+              "0.00",
+              "13.33",
+              "0.00",
+              "0.00"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              33.0,
+              98.0,
+              28.0,
+              93.0
+            ],
+            "printedValues": [
+              "33.00",
+              "98.00",
+              "28.00",
+              "93.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "printedValues": [
+              "0.00",
+              "0.00",
+              "0.00",
+              "0.00"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              29.35,
+              44.27,
+              29.04,
+              42.37
+            ],
+            "printedValues": [
+              "29.35",
+              "44.27",
+              "29.04",
+              "42.37"
+            ]
+          },
+          {
+            "printedLabel": "Average",
+            "values": [
+              46.25,
+              75.65,
+              38.82,
+              67.68
+            ],
+            "printedValues": [
+              "46.25",
+              "75.65",
+              "38.82",
+              "67.68"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1.3",
+        "pdfPage": 17,
+        "columns": [
+          "single/same scale calibrated",
+          "single/same scale uncalibrated",
+          "multiple scale calibrated",
+          "multiple scale uncalibrated"
+        ],
+        "rows": [
+          {
+            "printedLabel": "animals",
+            "values": [
+              97.39,
+              97.39,
+              97.39,
+              99.13
+            ],
+            "printedValues": [
+              "97.39",
+              "97.39",
+              "97.39",
+              "99.13"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              90.0,
+              100.0,
+              86.67,
+              0.0
+            ],
+            "printedValues": [
+              "90.00",
+              "100.0",
+              "86.67",
+              "0.00"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              90.0,
+              88.57,
+              100.0,
+              85.71
+            ],
+            "printedValues": [
+              "90.00",
+              "88.57",
+              "100.0",
+              "85.71"
+            ]
+          },
+          {
+            "printedLabel": "4-Region Lattice   plastic blocks",
+            "values": [
+              100.0,
+              100.0,
+              97.14,
+              96.67
+            ],
+            "printedValues": [
+              "100.0",
+              "100.0",
+              "97.14",
+              "96.67"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              99.0,
+              98.0,
+              99.0,
+              99.0
+            ],
+            "printedValues": [
+              "99.00",
+              "98.00",
+              "99.00",
+              "99.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              100.0,
+              96.88,
+              78.13,
+              96.88
+            ],
+            "printedValues": [
+              "100.0",
+              "96.88",
+              "78.13",
+              "96.88"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              96.07,
+              96.81,
+              93.06,
+              79.56
+            ],
+            "printedValues": [
+              "96.07",
+              "96.81",
+              "93.06",
+              "79.56"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              89.57,
+              100.0,
+              91.3,
+              100.0
+            ],
+            "printedValues": [
+              "89.57",
+              "100.0",
+              "91.30",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              100.0,
+              70.0,
+              96.67,
+              0.0
+            ],
+            "printedValues": [
+              "100.0",
+              "70.00",
+              "96.67",
+              "0.00"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              63.33,
+              62.86,
+              100.0,
+              22.86
+            ],
+            "printedValues": [
+              "63.33",
+              "62.86",
+              "100.0",
+              "22.86"
+            ]
+          },
+          {
+            "printedLabel": "16-Region Lattice   plastic blocks",
+            "values": [
+              91.43,
+              100.0,
+              91.43,
+              76.67
+            ],
+            "printedValues": [
+              "91.43",
+              "100.0",
+              "91.43",
+              "76.67"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              100.0,
+              100.0,
+              99.0,
+              94.0
+            ],
+            "printedValues": [
+              "100.0",
+              "100.0",
+              "99.00",
+              "94.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              100.0,
+              100.0,
+              71.88,
+              81.25
+            ],
+            "printedValues": [
+              "100.0",
+              "100.0",
+              "71.88",
+              "81.25"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              90.72,
+              88.81,
+              91.67,
+              62.46
+            ],
+            "printedValues": [
+              "90.72",
+              "88.81",
+              "91.67",
+              "62.46"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              90.43,
+              100.0,
+              94.78,
+              33.04
+            ],
+            "printedValues": [
+              "90.43",
+              "100.0",
+              "94.78",
+              "33.04"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              80.0,
+              0.0,
+              93.33,
+              26.67
+            ],
+            "printedValues": [
+              "80.00",
+              "0.00",
+              "93.33",
+              "26.67"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              76.67,
+              14.29,
+              90.0,
+              11.43
+            ],
+            "printedValues": [
+              "76.67",
+              "14.29",
+              "90.00",
+              "11.43"
+            ]
+          },
+          {
+            "printedLabel": "64-Region Lattice   plastic blocks",
+            "values": [
+              56.67,
+              0.0,
+              82.86,
+              26.67
+            ],
+            "printedValues": [
+              "56.67",
+              "0.00",
+              "82.86",
+              "26.67"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              100.0,
+              70.0,
+              92.0,
+              69.0
+            ],
+            "printedValues": [
+              "100.0",
+              "70.00",
+              "92.00",
+              "69.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              53.13,
+              96.88,
+              78.13,
+              90.63
+            ],
+            "printedValues": [
+              "53.13",
+              "96.88",
+              "78.13",
+              "90.63"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              76.15,
+              46.86,
+              88.52,
+              42.91
+            ],
+            "printedValues": [
+              "76.15",
+              "46.86",
+              "88.52",
+              "42.91"
+            ]
+          },
+          {
+            "printedLabel": "Average",
+            "values": [
+              87.65,
+              77.49,
+              92.37,
+              47.48
+            ],
+            "printedValues": [
+              "87.65",
+              "77.49",
+              "92.37",
+              "47.48"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table 1.4",
+        "pdfPage": 18,
+        "columns": [
+          "single/same scale calibrated",
+          "single/same scale uncalibrated",
+          "multiple scale calibrated",
+          "multiple scale uncalibrated"
+        ],
+        "rows": [
+          {
+            "printedLabel": "animals",
+            "values": [
+              93.91,
+              98.26,
+              80.87,
+              100.0
+            ],
+            "printedValues": [
+              "93.91",
+              "98.26",
+              "80.87",
+              "100.0"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              80.0,
+              96.67,
+              20.0,
+              53.33
+            ],
+            "printedValues": [
+              "80.00",
+              "96.67",
+              "20.00",
+              "53.33"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              100.0,
+              100.0,
+              80.0,
+              91.43
+            ],
+            "printedValues": [
+              "100.0",
+              "100.0",
+              "80.00",
+              "91.43"
+            ]
+          },
+          {
+            "printedLabel": "4-Region Lattice   plastic blocks",
+            "values": [
+              70.0,
+              100.0,
+              3.33,
+              66.67
+            ],
+            "printedValues": [
+              "70.00",
+              "100.0",
+              "3.33",
+              "66.67"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              83.0,
+              100.0,
+              80.0,
+              97.0
+            ],
+            "printedValues": [
+              "83.00",
+              "100.0",
+              "80.00",
+              "97.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              93.75,
+              100.0,
+              6.25,
+              100.0
+            ],
+            "printedValues": [
+              "93.75",
+              "100.0",
+              "6.25",
+              "100.00"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              86.78,
+              99.15,
+              45.08,
+              84.74
+            ],
+            "printedValues": [
+              "86.78",
+              "99.15",
+              "45.08",
+              "84.74"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              83.48,
+              99.13,
+              82.61,
+              99.13
+            ],
+            "printedValues": [
+              "83.48",
+              "99.13",
+              "82.61",
+              "99.13"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              31.03,
+              44.83,
+              0.0,
+              3.45
+            ],
+            "printedValues": [
+              "31.03",
+              "44.83",
+              "0.00",
+              "3.45"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              65.71,
+              80.0,
+              42.86,
+              51.43
+            ],
+            "printedValues": [
+              "65.71",
+              "80.00",
+              "42.86",
+              "51.43"
+            ]
+          },
+          {
+            "printedLabel": "16-Region Lattice   plastic blocks",
+            "values": [
+              6.67,
+              70.0,
+              0.0,
+              20.0
+            ],
+            "printedValues": [
+              "6.67",
+              "70.00",
+              "0.00",
+              "20.00"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              70.0,
+              99.0,
+              70.0,
+              98.0
+            ],
+            "printedValues": [
+              "70.00",
+              "99.00",
+              "70.00",
+              "98.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              28.13,
+              84.38,
+              3.13,
+              93.75
+            ],
+            "printedValues": [
+              "28.13",
+              "84.38",
+              "3.13",
+              "93.75"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              47.5,
+              79.56,
+              33.1,
+              60.96
+            ],
+            "printedValues": [
+              "47.50",
+              "79.56",
+              "33.10",
+              "60.96"
+            ]
+          },
+          {
+            "printedLabel": "animals",
+            "values": [
+              79.35,
+              83.48,
+              77.39,
+              88.7
+            ],
+            "printedValues": [
+              "79.35",
+              "83.48",
+              "77.39",
+              "88.70"
+            ]
+          },
+          {
+            "printedLabel": "cars",
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "printedValues": [
+              "0.00",
+              "0.00",
+              "0.00",
+              "0.00"
+            ]
+          },
+          {
+            "printedLabel": "fluffy dolls",
+            "values": [
+              19.29,
+              17.14,
+              2.86,
+              5.71
+            ],
+            "printedValues": [
+              "19.29",
+              "17.14",
+              "2.86",
+              "5.71"
+            ]
+          },
+          {
+            "printedLabel": "64-Region Lattice   plastic blocks",
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "printedValues": [
+              "0.00",
+              "0.00",
+              "0.00",
+              "0.00"
+            ]
+          },
+          {
+            "printedLabel": "wooden blocks",
+            "values": [
+              61.25,
+              84.0,
+              60.0,
+              67.0
+            ],
+            "printedValues": [
+              "61.25",
+              "84.00",
+              "60.00",
+              "67.00"
+            ]
+          },
+          {
+            "printedLabel": "coins",
+            "values": [
+              0.78,
+              0.0,
+              3.13,
+              3.13
+            ],
+            "printedValues": [
+              "0.78",
+              "0.00",
+              "3.13",
+              "3.13"
+            ]
+          },
+          {
+            "printedLabel": "average total",
+            "values": [
+              26.78,
+              30.77,
+              23.9,
+              27.42
+            ],
+            "printedValues": [
+              "26.78",
+              "30.77",
+              "23.90",
+              "27.42"
+            ]
+          },
+          {
+            "printedLabel": "Average",
+            "values": [
+              53.69,
+              69.83,
+              34.03,
+              57.72
+            ],
+            "printedValues": [
+              "53.69",
+              "69.83",
+              "34.03",
+              "57.72"
+            ]
+          }
+        ]
+      }
+    ],
+    "tableRowCounts": {
+      "categoryRows": 72,
+      "scaleOverallRows": 12,
+      "finalAverageRows": 4,
+      "totalRows": 88,
+      "numericCells": 352
+    },
+    "averageRows": {
+      "Table 1.1": [
+        93.47,
+        93.27,
+        98.17,
+        98.54
+      ],
+      "Table 1.2": [
+        46.25,
+        75.65,
+        38.82,
+        67.68
+      ],
+      "Table 1.3": [
+        87.65,
+        77.49,
+        92.37,
+        47.48
+      ],
+      "Table 1.4": [
+        53.69,
+        69.83,
+        34.03,
+        57.72
+      ]
+    },
+    "counterexamplesToAllSettingsSuperior": [
+      {
+        "condition": "4-region,single/same scale,uncalibrated,nearest neighbor",
+        "FCT": 89.47,
+        "LBP": 97.56,
+        "differencePoints": -8.09,
+        "tables": [
+          "1.1",
+          "1.2"
+        ]
+      },
+      {
+        "condition": "4-region,single scale,uncalibrated,RBF SVM",
+        "FCT": 96.81,
+        "LBP": 99.15,
+        "differencePoints": -2.34,
+        "tables": [
+          "1.3",
+          "1.4"
+        ]
+      }
+    ],
+    "printedExperimentConflicts": [
+      "Figure1.6 caption/visible lattices/tables specify4/16/64 regions, but page17 prose says4/16/32 for the figure; use explicit figure/table evidence and retain prose conflict.",
+      "Page19 prose says best LBP average75.63, Table1.2 average75.65; retain printed75.65 vs prose75.63, not choose inconsistent best value.",
+      "98.54 is final average across lattice settings in Table1.1, not each setting or an independent external test. Per-condition table exceptions refute broad all-settings advantage claim."
+    ],
+    "limits": "No raw684 cubes, full class counts/identity split/GT/published implementation, confidence interval, repeated trial/seed or timing supplied. Multi-view images can share objects across an image-level split; leakage risk unresolved, not demonstrated actual leakage. Calibration comparison does not prove invariance to arbitrary unseen lighting."
+  },
+  "versionRelation": {
+    "sameAuthors": true,
+    "sharedCore": "Per-band FCT/reference-peak correction/wavelength cosine kernel and shared schematic content.",
+    "differentExperiments": "2009 OFM/urban/DynTex localization or sequence recognition vs chapter toy/coin category classification with calibration/lattice/NN/SVM.",
+    "explicitExtensionStatementFoundInReadManuscripts": false,
+    "citationBoundary": "Chapter43-reference list does not cite the2009 title/authors as a formal extension source. Same family is supported, but do not assert declared journal extension or equal texts;2008 ordinary texture work remains excluded unless independent HSI-scope evidence is found.",
+    "figureCaptionBoundary": "2009 Figure3 calls final stage wavelength transform; chapterFigure1.1 calls last panel raster-scanned3D matrixV while prose discusses final wavelength descriptorG. Preserve respective captions, no interchangeable V/G claim."
+  },
+  "boundary": "Printed values, visual observations and explicitly marked independent algebra/endpoint arithmetic only. No implementations, model runs, data experiments or actual reproduction. Reference entries read, cited works not all read."
+}

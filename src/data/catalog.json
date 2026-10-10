@@ -60265,18 +60265,18 @@
       "collections": [
         "hyperspectral"
       ],
-      "doi": "10.1109/CVPR.2009.5204126",
-      "representation": "波段级 Fourier 余弦变换、畸变不变变换、沿波长的二次变换；原稿 Figure 3 示出四个阶段。",
+      "doi": "10.1109/CVPRW.2009.5204126",
+      "representation": "各带二维Fourier余弦变换，用两峰坐标及固定参考估计仿射畸变并校正后串接V，再按cos[π/N(n+1/2)(k+1/2)]沿波段变换。依赖局部平面、中心对齐、可逆峰矩阵；原稿概率和、积分符号/尺度与Φ乘法次序有可见疑点，未静默改为已证定理。",
       "tags": [],
-      "summary": "将波段序列视为随机过程，用重尾分布和 Fourier 余弦变换描述纹理；恢复平面仿射畸变，再聚合空间与波长相关性。原摘要报告真实数据识别实验，未将其解释为三维场景重建。",
-      "input": "高光谱纹理图像及参考纹理；具体纹理窗口、标定和参考选择待完整阅读。",
-      "output": "仿射不变的空间—光谱纹理描述子，用于识别和目标定位。",
-      "mechanism": "波段级 Fourier 余弦变换、畸变不变变换、沿波长的二次变换；原稿 Figure 3 示出四个阶段。",
-      "readingNote": "已核原稿摘要及指定局部页，未阅读全文。作者主页原稿为10页，正式目录112–119为8页；未逐页比对正式版，图号及页码仅指下载作者稿。2011 harmonic analysis 章节及2008 stable distributions 论文的扩展关系待核，不自动合并。",
+      "summary": "以重尾随机过程解释光谱纹理，逐波段FCT、参考峰仿射校正和沿波段余弦变换形成空间—光谱描述子。实验为蛾虫/车辆定位及另列普通DynTex动态纹理识别；不是三维重建。",
+      "input": "OFM100幅380–1050nm/10nm图像与城市50幅10带420–650nm/25nm图像；均值亮度SIFT取局部块，先估计光源校准，再以参考纹理作峰校正。DynTex时间序列另列。",
+      "output": "Nx×Ny×Nλ纹理描述子及近邻定位/识别结果；三个轴是二维空间与波段/时间，不是三维几何。",
+      "mechanism": "各带二维Fourier余弦变换，用两峰坐标及固定参考估计仿射畸变并校正后串接V，再按cos[π/N(n+1/2)(k+1/2)]沿波段变换。依赖局部平面、中心对齐、可逆峰矩阵；原稿概率和、积分符号/尺度与Φ乘法次序有可见疑点，未静默改为已证定理。",
+      "readingNote": "作者托管8页全文及26编号式/6图/2表/20参考条目通读并视觉复核；所引作品未逐篇读，未运行复现。2009稿实际8页，先前10页记录纠正。当前IEEE/Crossref为CVPRW DOI，CVPR旧登记仍存在并留作变体；正式112–119版PDF未得。",
       "paper": "https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
-      "citation": "@inproceedings{affine_hsi_texture_2009,\n  title = {An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis},\n  author = {Pattaraporn Khuwuthyakorn and Antonio Robles-Kelly and Jun Zhou},\n  booktitle = {2009 IEEE Computer Society Conference on Computer Vision and Pattern Recognition Workshops},\n  year = {2009},\n  doi = {10.1109/CVPR.2009.5204126}\n}\n",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
+      "citation": "@inproceedings{affine_hsi_texture_2009,\n  title = {An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis},\n  author = {Pattaraporn Khuwuthyakorn and Antonio Robles-Kelly and Jun Zhou},\n  booktitle = {2009 IEEE Computer Society Conference on Computer Vision and Pattern Recognition Workshops},\n  year = {2009},\n  pages = {112--119},\n  doi = {10.1109/CVPRW.2009.5204126}\n}\n",
       "library": {
         "categoryIds": [
           "spectral-texture-description",
@@ -60284,23 +60284,25 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "以光学高光谱数据、空间—光谱纹理、材料或配准为直接研究对象；仅新增总库，不改变三维专题。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "直接高光谱空间—光谱纹理描述；城市实采10带且作者称高光谱，采样信息照录，DynTex时间纹理不充作HSI；只总库，非三维几何。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何构造同时描述空间与波长相关性、对纹理平面仿射几何变化不敏感的高光谱纹理描述子？",
-        "datasets": "局部核原稿第7页：OFM 蛾虫高光谱图像和城市车辆高光谱影像；另有 DynTex 动态纹理，后者不作为高光谱数据集。",
-        "experimentSetting": "仅阅读摘要与第7页局部实验/图注；OFM/城市数据训练划分、DynTex 设置和完整对照待全文阅读，未录性能数字。",
-        "conclusions": "作者摘要认为该描述子具有紧凑信息表征能力，并在真实数据识别中与替代描述子比较；完整结果和适用条件待阅读全文。",
-        "limitations": "作者主页原稿为10页，正式目录112–119为8页；未逐页比对正式版，图号及页码仅指下载作者稿。2011 harmonic analysis 章节及2008 stable distributions 论文的扩展关系待核，不自动合并。 专用代码、数据链接与arXiv未由本轮定向搜索核到；未知不表示不存在。 本轮关联核验：同三作者且作者稿Figure3与章节Figure1.1共享示意内容；关联方法族，正式扩展声明与完整实验/理论差异待核。",
+        "datasets": "OFM100图每图8蛾，50/50图划分，训练400蛾块/测试400蛾；城市50图10带，387车，25/25图及189/198车。DynTex为普通动态纹理，每类12序列各切10非重叠子序列，共1080项半数测试，非高光谱。",
+        "experimentSetting": "SIFT候选块、引用的光源估计校准、k近邻识别/定位。HSI的k和窗口/命中阈值未给完整；DynTex仅明确k=6/Euclidean。Table1 FCT长度城市1000/OFM3000，对照LBP4176；Table2 FCT9000/1000与LBP4176，不能把动态时间维当光谱通道。",
+        "conclusions": "Table1定位率城市83.65%对69.20%、OFM83.09%对76.54%（+14.45/+6.55百分点），非像元OA/AP。DynTex96.24%/95.71%对95.07%，是单次印刷结果，无重复置信区间。短描述子只支持存储维数更小，无实际速度证明。",
+        "limitations": "公开作者稿实际8页，旧10页错误已纠正；IEEE正式PDF202空，未独立逐字对照112–119版。结论提MIT但正文无对应实验，正文称三长度却表只列两FCT长度，均留差异。局部平面/峰矩阵条件、重尾参数/积分与仿射式疑点、种子/独立划分/代码数据/命中规则待。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf",
-            "checkedAt": "2026-10-09",
-            "level": "作者原稿摘要与指定局部页面核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化与页数纠错",
             "supports": [
-              "将波段序列视为随机过程，用重尾分布和 Fourier 余弦变换描述纹理；恢复平面仿射畸变，再聚合空间与波长相关性。原摘要报告真实数据识别实验，未将其解释为三维场景重建。",
-              "仅阅读摘要与第7页局部实验/图注；OFM/城市数据训练划分、DynTex 设置和完整对照待全文阅读，未录性能数字。"
+              "作者托管8页全文及26编号式/6图/2表/20参考条目通读并视觉复核；所引作品未逐篇读，未运行复现。2009稿实际8页，先前10页记录纠正。当前IEEE/Crossref为CVPRW DOI，CVPR旧登记仍存在并留作变体；正式112–119版PDF未得。",
+              "OFM100图每图8蛾，50/50图划分，训练400蛾块/测试400蛾；城市50图10带，387车，25/25图及189/198车。DynTex为普通动态纹理，每类12序列各切10非重叠子序列，共1080项半数测试，非高光谱。",
+              "SIFT候选块、引用的光源估计校准、k近邻识别/定位。HSI的k和窗口/命中阈值未给完整；DynTex仅明确k=6/Euclidean。Table1 FCT长度城市1000/OFM3000，对照LBP4176；Table2 FCT9000/1000与LBP4176，不能把动态时间维当光谱通道。",
+              "公开作者稿实际8页，旧10页错误已纠正；IEEE正式PDF202空，未独立逐字对照112–119版。结论提MIT但正文无对应实验，正文称三长度却表只列两FCT长度，均留差异。局部平面/峰矩阵条件、重尾参数/积分与仿射式疑点、种子/独立划分/代码数据/命中规则待。"
             ]
           },
           {
@@ -60315,10 +60317,37 @@
           },
           {
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf",
-            "checkedAt": "2026-10-09",
-            "level": "原稿版本关系局部核验",
+            "checkedAt": "2026-10-11",
+            "level": "两份原稿全文方法族与实验边界核验",
             "supports": [
-              "同三作者且作者稿Figure3与章节Figure1.1共享示意内容；关联方法族，正式扩展声明与完整实验/理论差异待核。"
+              "同三作者/共享核心流程与图，章节新增调和核/Hilbert讨论及玩具硬币实验，未见明确正式扩展声明。分别保留出版物及实验。"
+            ]
+          },
+          {
+            "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "primary_author_hosted_manuscript_full_text_version_scoped",
+            "supports": [
+              "以重尾随机过程解释光谱纹理，逐波段FCT、参考峰仿射校正和沿波段余弦变换形成空间—光谱描述子。实验为蛾虫/车辆定位及另列普通DynTex动态纹理识别；不是三维重建。",
+              "各带二维Fourier余弦变换，用两峰坐标及固定参考估计仿射畸变并校正后串接V，再按cos[π/N(n+1/2)(k+1/2)]沿波段变换。依赖局部平面、中心对齐、可逆峰矩阵；原稿概率和、积分符号/尺度与Φ乘法次序有可见疑点，未静默改为已证定理。",
+              "Table1定位率城市83.65%对69.20%、OFM83.09%对76.54%（+14.45/+6.55百分点），非像元OA/AP。DynTex96.24%/95.71%对95.07%，是单次印刷结果，无重复置信区间。短描述子只支持存储维数更小，无实际速度证明。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/5204126/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_doi_variant_correction",
+            "supports": [
+              "完整IEEE原始摘要、三作者顺序/Jun ANU与NICTA及正式112–119已核。IEEE与当前Crossref指向10.1109/CVPRW.2009.5204126；10.1109/CVPR.2009.5204126旧登记同题同三作者且缺页码，不新增重复论文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/CVPRW.2009.5204126",
+            "checkedAt": "2026-10-11",
+            "level": "primary_current_doi_registration_with_legacy_retained",
+            "supports": [
+              "10.1109/CVPRW.2009.5204126",
+              "2009-06；112–119；proceedings-article；全名三作者匹配IEEE。"
             ]
           }
         ],
@@ -60326,17 +60355,20 @@
           {
             "id": "affine-hsi-texture-2009-published",
             "type": "正式出版版",
-            "url": "https://doi.org/10.1109/CVPR.2009.5204126",
-            "doi": "10.1109/CVPR.2009.5204126",
+            "url": "https://doi.org/10.1109/CVPRW.2009.5204126",
+            "doi": "10.1109/CVPRW.2009.5204126",
             "year": 2009,
-            "relation": "正式书目；作者稿局部内容及图版单独注明，完整版本差异未核。"
+            "relation": "当前IEEE/Crossref书目及IEEE完整摘要已核，112–119；CVPR旧DOI登记作为变体另留，正式PDF未独立取得。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "affine-hsi-texture-2009-author",
             "type": "作者公开稿",
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf",
             "year": 2009,
-            "relation": "作者主页原稿为10页，正式目录112–119为8页；未逐页比对正式版，图号及页码仅指下载作者稿。2011 harmonic analysis 章节及2008 stable distributions 论文的扩展关系待核，不自动合并。"
+            "relation": "作者稿实际8页，全页/式1–26/六图/两表已读，纠正旧10页。与正式8页页数一致不证明字节或全文相同；Figure3只指作者稿第7页。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           },
           {
             "id": "harmonic-hsi-descriptors-chapter-2011-related",
@@ -60344,14 +60376,23 @@
             "url": "https://doi.org/10.1007/978-3-642-11568-4_8",
             "doi": "10.1007/978-3-642-11568-4_8",
             "year": 2011,
-            "relation": "同三作者且作者稿Figure3与章节Figure1.1共享示意内容；关联方法族，正式扩展声明与完整实验/理论差异待核。"
+            "relation": "同三作者/共享核心流程与图，章节新增调和核/Hilbert讨论及玩具硬币实验，未见明确正式扩展声明。分别保留出版物及实验。"
+          },
+          {
+            "id": "affine-hsi-texture-2009-legacy-doi-registration",
+            "type": "历史DOI登记变体（同一论文）",
+            "url": "https://doi.org/10.1109/CVPR.2009.5204126",
+            "doi": "10.1109/CVPR.2009.5204126",
+            "year": 2009,
+            "relation": "旧CVPR DOI仍在Crossref同题/三作者登记，无页码；当前IEEE/Crossref采用CVPRW。保留原来源，不当第二篇出版物、独立方法或已证重定向。",
+            "metadataStatus": "registered_legacy_variant_verified"
           }
         ],
         "methodFamilyId": "affine-hsi-texture-2009",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "按作者原稿摘要和指定局部内容确认任务及方法；阅读状态仍为摘要，分类确认不代表全文核验。",
+          "rationale": "作者公开稿全文确认空间—光谱纹理描述/FCT及谐波核任务；补独立实验、条件/印刷差异与版本状态，保留既有类别/方法族，不推定三维几何、一般核定理或正式扩展版。",
           "evidenceFields": [
             "title",
             "summary",
@@ -60360,9 +60401,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "b36985f967b5919258d8b0a69647601cf642452f35ff2a70a756eb6f2e5acdd8",
+          "evidenceDigest": "4d991b90ebd85ac3f1819be1308e10e3c177acdfea5b40105c99d93691a457b5",
           "sourceUrls": [
-            "https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf"
+            "https://users.cecs.anu.edu.au/~junzhou/papers/C_OTCBVS_2009.pdf",
+            "https://xplorestaging.ieee.org/document/5204126/",
+            "https://api.crossref.org/works/10.1109/CVPRW.2009.5204126"
           ]
         }
       },
@@ -61091,16 +61134,16 @@
         "hyperspectral"
       ],
       "doi": "10.1007/978-3-642-11568-4_8",
-      "representation": "把高光谱影像建模为概率分布，用调和积分变换和 Hilbert 空间中的正交基描述空间与波长相关性；Figure1.1示出逐波段FCT与仿射校正。",
+      "representation": "调和核正交展开解释重尾/特征函数；FCT逐带两参考峰仿射校正，串接后沿波段使用半索引余弦核。提出Mellin/wavelet/Hankel可选，未实现或比较这些核；平面/中心与矩阵可逆及印刷推导疑点分别保留。",
       "tags": [],
-      "summary": "从调和积分变换、概率分布与 Hilbert 空间联系出发，形成局部高光谱描述子，处理纹理平面仿射变化并表达空间—波长相关性；原摘要在真实对象高光谱图像上做识别比较。正式来源是书章节，单独标明。",
-      "input": "局部高光谱图像/纹理块及参考平面；各积分核与参数按本章节核验。",
-      "output": "仿射不变的局部空间—光谱描述子，用于对象图像类别识别。",
-      "mechanism": "把高光谱影像建模为概率分布，用调和积分变换和 Hilbert 空间中的正交基描述空间与波长相关性；Figure1.1示出逐波段FCT与仿射校正。",
-      "readingNote": "已核原摘要与指定局部页；未阅读全文。与2009同作者高光谱FCT工作共享同一示意内容，按方法族关联，但未找到明确“扩展版”声明，不推定等同全文。作者稿24页/Chapter1/Figure1.1，与正式179–199页/章节8不能混用图号页码。ANU机构DOI字符串缺少前缀，按出版社精确登记纠正。",
+      "summary": "把逐带FCT/仿射参考校正及波段余弦描述扩展为调和积分与Hilbert空间讨论，实际实验仍使用FCT。自采六类玩具/硬币图像，按分区投票比较校准、尺度和近邻/SVM；与2009定位和DynTex实验分开。",
+      "input": "62玩具各10视角（10°增量）及32硬币各正反两面，共684幅AOTF/FireWire高光谱图；51带550–1000nm/9nm，Spectralon供光源校准。",
+      "output": "局部空间—光谱描述子与六类图像类别；4/16/64分区及跨尺度84块投票，非局部面法向、三维重建或解混结果。",
+      "mechanism": "调和核正交展开解释重尾/特征函数；FCT逐带两参考峰仿射校正，串接后沿波段使用半索引余弦核。提出Mellin/wavelet/Hankel可选，未实现或比较这些核；平面/中心与矩阵可逆及印刷推导疑点分别保留。",
+      "readingNote": "作者托管24页全文及35编号式/6图/4表/43参考条目通读并视觉复核；所引作品未逐篇读，未运行复现。稿内Chapter1、正式Chapter8/179–199分开；第20页空白、21–24页参考。Springer响应只是Client Challenge，正式全文及原摘要未独立取得。",
       "paper": "https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "citation": "@incollection{harmonic_hsi_descriptors_chapter_2011,\n  title = {Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis},\n  author = {Pattaraporn Khuwuthyakorn and Antonio Robles-Kelly and Jun Zhou},\n  booktitle = {Machine Vision Beyond Visible Spectrum},\n  year = {2011},\n  pages = {179--199},\n  doi = {10.1007/978-3-642-11568-4_8}\n}\n",
       "library": {
         "categoryIds": [
@@ -61109,23 +61152,25 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原稿以光学高光谱解混、空间—波长描述或像元分类为直接对象；只新增总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "直接自采光学高光谱六类图像识别；空间—光谱三轴数据表示不等于三维几何，非解混实验。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何用调和分析和正交基构造紧凑、对局部平面仿射变化不敏感的高光谱图像描述子？",
-        "datasets": "局部核实验节：自采集玩具及硬币多视角高光谱图像；AOTF配FireWire相机，设计覆盖可见及近红外。不是2009蛾虫/车辆实验的换名。",
-        "experimentSetting": "仅摘要、Figure1.1及实验段局部已读；作者对玩具旋转多视图、硬币正反面采集并比较校准/未校准和分区尺度。光谱通道数、分类器设置、划分及完整性能待阅读全文。",
-        "conclusions": "作者摘要报告调和分析描述子能捕获空间与波长相关性、具有高能量紧凑性并用于真实对象识别；全文数学条件及定量结论未全部核验。",
-        "limitations": "与2009同作者高光谱FCT工作共享同一示意内容，按方法族关联，但未找到明确“扩展版”声明，不推定等同全文。作者稿24页/Chapter1/Figure1.1，与正式179–199页/章节8不能混用图号页码。ANU机构DOI字符串缺少前缀，按出版社精确登记纠正。 专用代码、数据入口和arXiv本轮定向搜索未核到，未知不表示不存在。",
+        "datasets": "五类玩具（动物/车/毛绒/塑料块/木块）加硬币六类，62×10+32×2=684。51带9nm；半数图训练/测试各342由算术得，未证明按对象身份隔离。24页稿含第20空白与21–24参考，正式章节8/179–199不混用。",
+        "experimentSetting": "辐亮度未校准与Spectralon归一反射率校准两设置；4/16/64块同尺度或84块多尺度多数投票；NN与RBF SVM，SVM仅称交叉验证未给完整参数。FCT1500维/LBP1938维，四表88行352数全核；k/裁块/截断及1500维分配未给完整。",
+        "conclusions": "Table1.1 NN跨分区平均单尺度校准/未校准93.47/93.27，多尺度98.17/98.54；LBP为46.25/75.65和38.82/67.68。并非全设置占优：4块单尺度未校准NN89.47<97.56，SVM96.81<99.15。正文LBP75.63与表75.65冲突，98.54不当独立外测。",
+        "limitations": "24页作者稿全文已读，Springer200 Client Challenge非全文/原摘要，正式21页未对照。Hilbert/其他核一般化仅作者讨论，未证全部核仿射不变。共享图/核心方法但无明确正式扩展声明；同对象跨视角训练测试隔离、原数据代码/种子/参数及概率/仿射式疑点仍待。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf",
-            "checkedAt": "2026-10-09",
-            "level": "作者原稿摘要与指定局部页面核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化与页数纠错",
             "supports": [
-              "从调和积分变换、概率分布与 Hilbert 空间联系出发，形成局部高光谱描述子，处理纹理平面仿射变化并表达空间—波长相关性；原摘要在真实对象高光谱图像上做识别比较。正式来源是书章节，单独标明。",
-              "仅摘要、Figure1.1及实验段局部已读；作者对玩具旋转多视图、硬币正反面采集并比较校准/未校准和分区尺度。光谱通道数、分类器设置、划分及完整性能待阅读全文。"
+              "作者托管24页全文及35编号式/6图/4表/43参考条目通读并视觉复核；所引作品未逐篇读，未运行复现。稿内Chapter1、正式Chapter8/179–199分开；第20页空白、21–24页参考。Springer响应只是Client Challenge，正式全文及原摘要未独立取得。",
+              "五类玩具（动物/车/毛绒/塑料块/木块）加硬币六类，62×10+32×2=684。51带9nm；半数图训练/测试各342由算术得，未证明按对象身份隔离。24页稿含第20空白与21–24参考，正式章节8/179–199不混用。",
+              "辐亮度未校准与Spectralon归一反射率校准两设置；4/16/64块同尺度或84块多尺度多数投票；NN与RBF SVM，SVM仅称交叉验证未给完整参数。FCT1500维/LBP1938维，四表88行352数全核；k/裁块/截断及1500维分配未给完整。",
+              "24页作者稿全文已读，Springer200 Client Challenge非全文/原摘要，正式21页未对照。Hilbert/其他核一般化仅作者讨论，未证全部核仿射不变。共享图/核心方法但无明确正式扩展声明；同对象跨视角训练测试隔离、原数据代码/种子/参数及概率/仿射式疑点仍待。"
             ]
           },
           {
@@ -61137,6 +61182,24 @@
               "Pattaraporn Khuwuthyakorn, Antonio Robles-Kelly, Jun Zhou",
               "正式2011年；179-199页；来源类型book-chapter"
             ]
+          },
+          {
+            "url": "https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "primary_author_hosted_manuscript_full_text_version_scoped",
+            "supports": [
+              "把逐带FCT/仿射参考校正及波段余弦描述扩展为调和积分与Hilbert空间讨论，实际实验仍使用FCT。自采六类玩具/硬币图像，按分区投票比较校准、尺度和近邻/SVM；与2009定位和DynTex实验分开。",
+              "调和核正交展开解释重尾/特征函数；FCT逐带两参考峰仿射校正，串接后沿波段使用半索引余弦核。提出Mellin/wavelet/Hankel可选，未实现或比较这些核；平面/中心与矩阵可逆及印刷推导疑点分别保留。",
+              "Table1.1 NN跨分区平均单尺度校准/未校准93.47/93.27，多尺度98.17/98.54；LBP为46.25/75.65和38.82/67.68。并非全设置占优：4块单尺度未校准NN89.47<97.56，SVM96.81<99.15。正文LBP75.63与表75.65冲突，98.54不当独立外测。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1007/978-3-642-11568-4_8",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_chapter_metadata_only",
+            "supports": [
+              "完整三作者/2011/book-chapter/Machine Vision Beyond Visible Spectrum/179–199页。当前Springer入口200仅Client Challenge，不能升级为出版社原始摘要或正式全文。"
+            ]
           }
         ],
         "versions": [
@@ -61146,21 +61209,24 @@
             "url": "https://doi.org/10.1007/978-3-642-11568-4_8",
             "doi": "10.1007/978-3-642-11568-4_8",
             "year": 2011,
-            "relation": "与2009同作者高光谱FCT工作共享同一示意内容，按方法族关联，但未找到明确“扩展版”声明，不推定等同全文。作者稿24页/Chapter1/Figure1.1，与正式179–199页/章节8不能混用图号页码。ANU机构DOI字符串缺少前缀，按出版社精确登记纠正。"
+            "relation": "正式Chapter8/2011/179–199书目已核；原摘要与21页全文未独立取得，Springer200挑战HTML不作正文。相关2009作品同族但非已证正式扩展版。",
+            "readingProgress": "pending"
           },
           {
             "id": "harmonic-hsi-descriptors-chapter-2011-author",
             "type": "公开作者草稿",
             "url": "https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf",
             "year": 2011,
-            "relation": "图版页码仅指此作者稿；完整正式版差异未核。"
+            "relation": "作者草稿Chapter1全24页（19内容/1空白/4参考）已读，式1.1–1.35/六图/四表；Figure1.1为PDF11页。不能用稿内编号冒充正式章节8图号。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "affine-hsi-texture-2009",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要及局部方法/扩展声明支持任务、方法；分类确认与全文阅读状态区分。",
+          "rationale": "作者公开稿全文确认空间—光谱纹理描述/FCT及谐波核任务；补独立实验、条件/印刷差异与版本状态，保留既有类别/方法族，不推定三维几何、一般核定理或正式扩展版。",
           "evidenceFields": [
             "title",
             "summary",
@@ -61169,9 +61235,10 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "ed183e5c3ece0507bdec61402da7a78cec6cc5dc54f4168522c56e65bc6468a6",
+          "evidenceDigest": "654c6d9bcc040913f9ec9be301dd81a925ab216c5cd3901d9a6897deffc26d35",
           "sourceUrls": [
-            "https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf"
+            "https://users.cecs.anu.edu.au/~junzhou/papers/BC_2011.pdf",
+            "https://api.crossref.org/works/10.1007/978-3-642-11568-4_8"
           ]
         }
       },
@@ -86506,6 +86573,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原稿摘要和局部方法核验支持该类别边界。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "两份作者全文补FCT/参考峰条件、调和核讨论与独立数据/表格；既有任务方法定义和关联保持，不新增标签。"
         }
       ]
     },
@@ -86622,6 +86694,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原文摘要和局部方法核验形成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "两份作者全文补FCT/参考峰条件、调和核讨论与独立数据/表格；既有任务方法定义和关联保持，不新增标签。"
         }
       ]
     },
