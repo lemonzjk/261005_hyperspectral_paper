@@ -62900,44 +62900,45 @@
         "hyperspectral"
       ],
       "doi": "10.1109/igarss.2015.7326115",
-      "representation": "先训one-vs-rest SVM，再优化相对均匀权重的正则化权重向量，排序选带后重训；各类选带可不同。",
+      "representation": "先训SVM并固定初始超平面，Eq2以带符号分类分数和beta偏离全一向量惩罚优化类v；取TopK再重训。正文把v×x称dot product，与逐带加权语义/式维度有疑点；未用2016每样本b_i。",
       "tags": [],
-      "summary": "在逐类SVM中优化波段权重以扩大样本与分类超平面的间隔，选择高权重波段再训练，用于高光谱分类。",
-      "input": "带标签高光谱样本与全部候选波段。",
-      "output": "各类别的波段子集及对应分类器。",
-      "mechanism": "先训one-vs-rest SVM，再优化相对均匀权重的正则化权重向量，排序选带后重训；各类选带可不同。",
-      "readingNote": "原摘要及指定局部核验；未阅读全文。正式1702–1705；摘要有sample weights措辞，原方法明确定义波段权重v，按局部原公式记录，完整推导/结果待核。",
+      "summary": "逐类one-vs-all SVM学习共享波段权重，选最高权重子集并重训；各类可选不同波段。公开四页正文核验，与2016保留全带的样本平衡法分开。",
+      "input": "Indian Pines与Salinas的带标签AVIRIS像元；稿称两场景删噪后200带。当前类为正例、其他类为负例，测试按各类对应子集输入。",
+      "output": "每类波段向量、最高权重波段子集及重训SVM；以逐类最高分数给像元类别。",
+      "mechanism": "先训SVM并固定初始超平面，Eq2以带符号分类分数和beta偏离全一向量惩罚优化类v；取TopK再重训。正文把v×x称dot product，与逐带加权语义/式维度有疑点；未用2016每样本b_i。",
+      "readingNote": "公开机构稿全部5PDF页（1封面+4正文/参考）、2式/4图及全部表/14参考条目通读并视觉复核；所引作品未全读、没有运行复现。会议Table1是伪码、Table2/3是样本表；正式1702–1705 PDF未独立取得，纠正旧Salinas204带。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "citation": "@inproceedings{svm_margin_band_igarss_2015,\n  title = {Band weighting and selection based on hyperplane margin maximization for hyperspectral image classification},\n  author = {Cheng Yan and Xiao Bai and Jun Zhou},\n  booktitle = {2015 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)},\n  year = {2015},\n  pages = {1702--1705},\n  doi = {10.1109/igarss.2015.7326115}\n}\n",
       "library": {
         "categoryIds": [
           "spectral-band-selection",
+          "spectral-band-weighting",
           "land-cover-classification",
           "svm-margin-band-weighting"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原摘要以光学高光谱观测为主要研究对象；普通三维验证数据不冒充高光谱。新增仅总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何以逐类SVM间隔优化选择有判别力的光谱波段？",
-        "datasets": "原局部实验为Indian Pines与Salinas，去噪波段处理后各200/204波段；全部训练/测试表和重复协议待全文核验。",
-        "experimentSetting": "原摘要、局部第2节与第3节数据已核；封面+4页逐页图版仅输入/分类图及曲线，Table1文字伪码，不称独立框架图。",
-        "conclusions": "作者报告两基准分类有效性；权重、正则化和分类器耦合，不能将选带优势推广到所有分类器/数据。",
-        "limitations": "正式1702–1705；摘要有sample weights措辞，原方法明确定义波段权重v，按局部原公式记录，完整推导/结果待核。 原文代码/原始数据专用入口未知，本轮题名定向发现不等于穷尽搜索。",
+        "relationNote": "直接光学高光谱遥感像元分类；2015含波段权重与严格子集选择，输入/结果不属于三维几何。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何在逐类SVM中学习波段重要性，并选择各类高权重子集用于分类？",
+        "datasets": "Indian Pines原220→200带，Table2训练/测试1020/10200；Salinas先称224又写220→200带，Table3为2450/49000，16类且3.7m。旧目录Salinas204不受本稿支持；原单位m/原始带数差异及数据载荷待。",
+        "experimentSetting": "全部5PDF页（1封面+4正文）、式1–2、4图、Table1伪码及Table2/3全32行已读。随机每类10%/5%训练，表train/(train+test)为9.09%/4.76%，分母/互斥待；beta为相应训练数10%，比较MVPCA/AP/MEAC，选5–40带。",
+        "conclusions": "Fig2/4分类准确率曲线展示相对基线优势，作者特别强调选带数>15；没有全部精确点值/方差，不能写成OA/AA/κ全表或统计显著。四图为输入/分类与曲线，无独立框架图。",
+        "limitations": "2015公开稿全文已读，IEEE正式1702–1705全文未独立取得。Eq2 dot product/维度、完整C/核/bias/归一化、权重约束/步长/停止、原波段索引和真实GT划分、空间隔离/seed/重复/时间及代码数据仍待。未运行复现。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content",
-            "checkedAt": "2026-10-09",
-            "level": "原摘要与指定局部方法/数据/图版核验",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化与纠错",
             "supports": [
-              "在逐类SVM中优化波段权重以扩大样本与分类超平面的间隔，选择高权重波段再训练，用于高光谱分类。",
-              "原局部实验为Indian Pines与Salinas，去噪波段处理后各200/204波段；全部训练/测试表和重复协议待全文核验。",
-              "原摘要、局部第2节与第3节数据已核；封面+4页逐页图版仅输入/分类图及曲线，Table1文字伪码，不称独立框架图。",
-              "正式1702–1705；摘要有sample weights措辞，原方法明确定义波段权重v，按局部原公式记录，完整推导/结果待核。"
+              "公开机构稿全部5PDF页（1封面+4正文/参考）、2式/4图及全部表/14参考条目通读并视觉复核；所引作品未全读、没有运行复现。会议Table1是伪码、Table2/3是样本表；正式1702–1705 PDF未独立取得，纠正旧Salinas204带。",
+              "Indian Pines原220→200带，Table2训练/测试1020/10200；Salinas先称224又写220→200带，Table3为2450/49000，16类且3.7m。旧目录Salinas204不受本稿支持；原单位m/原始带数差异及数据载荷待。",
+              "全部5PDF页（1封面+4正文）、式1–2、4图、Table1伪码及Table2/3全32行已读。随机每类10%/5%训练，表train/(train+test)为9.09%/4.76%，分母/互斥待；beta为相应训练数10%，比较MVPCA/AP/MEAC，选5–40带。",
+              "2015公开稿全文已读，IEEE正式1702–1705全文未独立取得。Eq2 dot product/维度、完整C/核/bias/归一化、权重约束/步长/停止、原波段索引和真实GT划分、空间隔离/seed/重复/时间及代码数据仍待。未运行复现。"
             ]
           },
           {
@@ -62949,6 +62950,33 @@
               "Cheng Yan, Xiao Bai, Jun Zhou",
               "2015；1702-1705"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "逐类one-vs-all SVM学习共享波段权重，选最高权重子集并重训；各类可选不同波段。公开四页正文核验，与2016保留全带的样本平衡法分开。",
+              "先训SVM并固定初始超平面，Eq2以带符号分类分数和beta偏离全一向量惩罚优化类v；取TopK再重训。正文把v×x称dot product，与逐带加权语义/式维度有疑点；未用2016每样本b_i。",
+              "Fig2/4分类准确率曲线展示相对基线优势，作者特别强调选带数>15；没有全部精确点值/方差，不能写成OA/AA/κ全表或统计显著。四图为输入/分类与曲线，无独立框架图。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7326115/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_formal_identity",
+            "supports": [
+              "完整IEEE原摘要/作者/Jun Griffith单位及出版社页码已核；正式全文未取得。",
+              "会议正文三作者与出版社一致；公开5PDF页（封面+4内容），正式1702–1705另登记，未独立取得正式PDF。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/igarss.2015.7326115",
+            "checkedAt": "2026-10-11",
+            "level": "current_primary_publisher_doi_metadata",
+            "supports": [
+              "会议正文三作者与出版社一致；公开5PDF页（封面+4内容），正式1702–1705另登记，未独立取得正式PDF。"
+            ]
           }
         ],
         "versions": [
@@ -62958,21 +62986,24 @@
             "url": "https://doi.org/10.1109/igarss.2015.7326115",
             "doi": "10.1109/igarss.2015.7326115",
             "year": 2015,
-            "relation": "正式1702–1705；摘要有sample weights措辞，原方法明确定义波段权重v，按局部原公式记录，完整推导/结果待核。"
+            "relation": "会议正文三作者与出版社一致；公开5PDF页（封面+4内容），正式1702–1705另登记，未独立取得正式PDF。 IEEE完整摘要和Crossref元数据已核，正式PDF仍待。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "svm-margin-band-igarss-2015-source",
-            "type": "公开机构作者稿",
+            "type": "公开机构稿",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content",
             "year": 2015,
-            "relation": "原图号/页码只对应该PDF，正式版差异待核。"
+            "relation": "会议正文三作者与出版社一致；公开5PDF页（封面+4内容），正式1702–1705另登记，未独立取得正式PDF。 本PDF全部式/图/表/参考条目已读；与另一年稿无明确扩展声明，实验及方法各自保留。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "svm-margin-band-igarss-2015",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要支持任务/方法；PDF指定局部可取得时补证，不将分类确认等同全文。",
+          "rationale": "两篇公开全文逐项确认SVM与类相关波段权重；2015严格子集选择、2016全带权重分开，补新加权任务标签并去除2016选带标签。样本b_i/公式/协议及正式作者版本边界留证；原方法族独立不变。",
           "evidenceFields": [
             "title",
             "summary",
@@ -62981,17 +63012,19 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "8486d74bde2b5ab70e51f2508682fd61317b323c1764552d6e729cdafe0c1e8b",
+          "evidenceDigest": "53dcb2e8982fd8d45f9c4593c3a3a65174b97590275f91ee52acccfec8044066",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content",
+            "https://xplorestaging.ieee.org/document/7326115/",
+            "https://api.crossref.org/works/10.1109/igarss.2015.7326115"
           ]
         }
       },
       "frameworkFigureSearch": {
         "status": "no_framework",
-        "note": "逐页视觉核对公开PDF全部图版（含封面共5页），图为输入/分类或重建/解混结果；另有文字伪码/Algorithm，未见独立方法框架图。保留原PDF，不生成图。",
+        "note": "全文5页及四图/三表视觉续核：Figure1/3输入与分类、Figure2/4曲线；Table1伪码不是独立方法框架图，保留no_framework。",
         "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content",
-        "checkedAt": "2026-10-09"
+        "checkedAt": "2026-10-11"
       }
     },
     {
@@ -64142,42 +64175,44 @@
         "hyperspectral"
       ],
       "doi": "10.1109/lgrs.2016.2553699",
-      "representation": "以多类二元SVM分类间隔为目标学习逐类波段权重，再按权重分类。",
+      "representation": "初始binary linear SVM；v=1时最大化带gamma正则的修改分数求每样本b_i，再用含theta全一正则与hinge的Eq3求类v，最后加权重训。Eq2可见额外未定义T且未含y_i；梯度最大化方向、负例重训加权与Eq4括号待实现，不能称已证一般类间欧氏距离最大化。",
       "tags": [],
-      "summary": "通过最大化类间光谱距离学习每类波段权重，避免直接丢弃可能有用的光谱波段，用于高光谱分类。",
-      "input": "带标签高光谱样本与全部光谱波段。",
-      "output": "逐类波段权重和分类结果。",
-      "mechanism": "训练二元SVM，按修改后的分类分数平衡训练波段，重写SVM目标得到权重向量，再以最大分数类别输出。",
-      "readingNote": "Griffith公开作者稿摘要和正文局部核验；正式GRSL13(7):922–925，未标全文。",
+      "summary": "逐类线性SVM先学习每训练样本的波段平衡向量，再求每类共享波段权重并重训；保留全部波段分类。表中Top5只是重要性展示，不是严格子集选带。",
+      "input": "Indian Pines145×145及Salinas AVIRIS像元；稿称两者原224带并删低SNR/水吸收带至200。每类正例与其他类负例训练；测试逐类用v加权全带像元。",
+      "output": "每样本平衡向量b_i、每类波段权重v和对应SVM；最高分数分类。表列最大权重波段供解释。",
+      "mechanism": "初始binary linear SVM；v=1时最大化带gamma正则的修改分数求每样本b_i，再用含theta全一正则与hinge的Eq3求类v，最后加权重训。Eq2可见额外未定义T且未含y_i；梯度最大化方向、负例重训加权与Eq4括号待实现，不能称已证一般类间欧氏距离最大化。",
+      "readingNote": "公开机构稿全部6PDF页（1封面+5正文/参考）、4式/2图及全部表/14参考条目通读并视觉复核；所引作品未全读、没有运行复现。AM正文五作者、正式六作者/四页分开；保留全部波段，Top5不作子集选择。正式PDF未独立取得。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "citation": "@article{svm_band_weighting_lgrs_2016,\n  title = {Band Weighting via Maximizing Interclass Distance for Hyperspectral Image Classification},\n  author = {Cheng Yan and Xiao Bai and Peng Ren and Lu Bai and Wenzhong Tang and Jun Zhou},\n  journal = {IEEE Geoscience and Remote Sensing Letters},\n  year = {2016},\n  pages = {922--925},\n  doi = {10.1109/lgrs.2016.2553699}\n}\n",
       "library": {
         "categoryIds": [
-          "spectral-band-selection",
+          "spectral-band-weighting",
           "land-cover-classification",
           "svm-margin-band-weighting"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者摘要明确多类高光谱遥感影像分类；波段权重与选带均服务光学高光谱输入。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用类间距离学习保留光谱信息的逐类波段权重？",
-        "datasets": "作者摘要报告两个基准数据集；完整数据集名称和划分待全文核验。",
-        "experimentSetting": "作者稿摘要和方法局部核验；未逐项复核全部SVM参数、表格与数值。",
-        "conclusions": "作者报告两个基准数据集上的分类有效性；不将结果推广到所有分类器。",
-        "limitations": "作者稿与正式版页码需分开；实验协议、参数敏感性和代码入口待核。",
+        "relationNote": "直接光学高光谱遥感像元分类；2016明确全带加权而非子集选带，保留正式六作者和公开AM身份。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何在逐类线性SVM中联合样本波段平衡与类权重，保留全带用于分类？",
+        "datasets": "稿称Indian Pines/Salinas均原224→200带，各16类；TableII训练/测试1020/10200、TableIII205/49000，所有行和吻合。与2015 Salinas2450训练不同，不借常用204带或标准GT总数覆盖本稿。",
+        "experimentSetting": "公开Accepted Manuscript全6PDF页（封面+5正文）、4式/2图/Algorithm1/3数值表逐项核。每类随机取部分、其余测试，报告十次平均；gamma1/theta10按Salinas25网格最优。MATLAB3.4GHz/20GB。正文CKF与表图PSCMCA名称不一致，未知等同关系。",
+        "conclusions": "作者总准确率Indian91.5%、Salinas99.0%；较FEWT高0.3/0.1百分点，未给置信区间，部分单类落后。按打印测试数加权为91.77216/98.62408，仅表算术，真实聚合待。耗时20.24/6.08s，两表仅快于BFO；未定义阶段，不当FPS。",
+        "limitations": "正式IEEE13(7):922–925四页未读；封面/item/IEEE/Crossref六作者含Wenzhong Tang，AM正文五作者未列他。Eq2额外T/缺y_i、descent最大化、Eq4括号、复杂度M含义及印刷FEWT0.79/Salinas末行四波段原样留证。代码、实际200带/GT、C/bias/步长、空间划分、验证隔离与统计及复现待。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
-            "checkedAt": "2026-10-10",
-            "level": "Griffith作者稿摘要与正文局部",
+            "checkedAt": "2026-10-11",
+            "level": "原始全文对此前局部记录的细化与纠错",
             "supports": [
-              "摘要明确多类高光谱分类、二元SVM和最大化类间光谱距离。",
-              "正文明确逐类波段权重及两个基准数据集实验。"
+              "公开机构稿全部6PDF页（1封面+5正文/参考）、4式/2图及全部表/14参考条目通读并视觉复核；所引作品未全读、没有运行复现。AM正文五作者、正式六作者/四页分开；保留全部波段，Top5不作子集选择。正式PDF未独立取得。",
+              "稿称Indian Pines/Salinas均原224→200带，各16类；TableII训练/测试1020/10200、TableIII205/49000，所有行和吻合。与2015 Salinas2450训练不同，不借常用204带或标准GT总数覆盖本稿。",
+              "公开Accepted Manuscript全6PDF页（封面+5正文）、4式/2图/Algorithm1/3数值表逐项核。每类随机取部分、其余测试，报告十次平均；gamma1/theta10按Salinas25网格最优。MATLAB3.4GHz/20GB。正文CKF与表图PSCMCA名称不一致，未知等同关系。",
+              "正式IEEE13(7):922–925四页未读；封面/item/IEEE/Crossref六作者含Wenzhong Tang，AM正文五作者未列他。Eq2额外T/缺y_i、descent最大化、Eq4括号、复杂度M含义及印刷FEWT0.79/Salinas末行四波段原样留证。代码、实际200带/GT、C/bias/步长、空间划分、验证隔离与统计及复现待。"
             ]
           },
           {
@@ -64186,6 +64221,33 @@
             "level": "IEEE DOI书目",
             "supports": [
               "正式题名、作者、GRSL身份和页码922–925。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "逐类线性SVM先学习每训练样本的波段平衡向量，再求每类共享波段权重并重训；保留全部波段分类。表中Top5只是重要性展示，不是严格子集选带。",
+              "初始binary linear SVM；v=1时最大化带gamma正则的修改分数求每样本b_i，再用含theta全一正则与hinge的Eq3求类v，最后加权重训。Eq2可见额外未定义T且未含y_i；梯度最大化方向、负例重训加权与Eq4括号待实现，不能称已证一般类间欧氏距离最大化。",
+              "作者总准确率Indian91.5%、Salinas99.0%；较FEWT高0.3/0.1百分点，未给置信区间，部分单类落后。按打印测试数加权为91.77216/98.62408，仅表算术，真实聚合待。耗时20.24/6.08s，两表仅快于BFO；未定义阶段，不当FPS。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7465721/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_ieee_complete_abstract_and_formal_identity",
+            "supports": [
+              "完整IEEE原摘要/作者/Jun Griffith单位及出版社页码已核；正式全文未取得。",
+              "公开封面明确Accepted Manuscript，PDF6页（封面+5内容）；正文五作者，未列Wenzhong Tang；封面/item/IEEE/Crossref均六作者。正文Inter-class与正式Interclass题名拼写分版。目录/BibTeX保留正式六作者，不能用AM作者栏覆盖正式身份，也不能解释缺名原因。正式13(7):922–925四页未独立取得。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2016.2553699",
+            "checkedAt": "2026-10-11",
+            "level": "current_primary_publisher_doi_metadata",
+            "supports": [
+              "公开封面明确Accepted Manuscript，PDF6页（封面+5内容）；正文五作者，未列Wenzhong Tang；封面/item/IEEE/Crossref均六作者。正文Inter-class与正式Interclass题名拼写分版。目录/BibTeX保留正式六作者，不能用AM作者栏覆盖正式身份，也不能解释缺名原因。正式13(7):922–925四页未独立取得。"
             ]
           }
         ],
@@ -64196,21 +64258,24 @@
             "url": "https://doi.org/10.1109/lgrs.2016.2553699",
             "doi": "10.1109/lgrs.2016.2553699",
             "year": 2016,
-            "relation": "正式GRSL13(7):922–925。"
+            "relation": "公开封面明确Accepted Manuscript，PDF6页（封面+5内容）；正文五作者，未列Wenzhong Tang；封面/item/IEEE/Crossref均六作者。正文Inter-class与正式Interclass题名拼写分版。目录/BibTeX保留正式六作者，不能用AM作者栏覆盖正式身份，也不能解释缺名原因。正式13(7):922–925四页未独立取得。 IEEE完整摘要和Crossref元数据已核，正式PDF仍待。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "svm-band-weighting-lgrs-2016-source",
-            "type": "Griffith作者稿",
+            "type": "Griffith接受稿（AM）",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
             "year": 2016,
-            "relation": "作者稿；局部页码只对应本PDF。"
+            "relation": "公开封面明确Accepted Manuscript，PDF6页（封面+5内容）；正文五作者，未列Wenzhong Tang；封面/item/IEEE/Crossref均六作者。正文Inter-class与正式Interclass题名拼写分版。目录/BibTeX保留正式六作者，不能用AM作者栏覆盖正式身份，也不能解释缺名原因。正式13(7):922–925四页未独立取得。 本PDF全部式/图/表/参考条目已读；与另一年稿无明确扩展声明，实验及方法各自保留。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "svm-band-weighting-lgrs-2016",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "rationale": "两篇公开全文逐项确认SVM与类相关波段权重；2015严格子集选择、2016全带权重分开，补新加权任务标签并去除2016选带标签。样本b_i/公式/协议及正式作者版本边界留证；原方法族独立不变。",
           "evidenceFields": [
             "title",
             "summary",
@@ -64219,13 +64284,43 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "d8073fc0db9e6a02383835f1ea4718efa7005fd561d281ec30894e6158ea6967",
+          "evidenceDigest": "5aa5c75411dd3f284afc263a6795114e19ca86ac55da6e8994931dc6883453eb",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
-            "https://doi.org/10.1109/lgrs.2016.2553699"
+            "https://xplorestaging.ieee.org/document/7465721/",
+            "https://api.crossref.org/works/10.1109/lgrs.2016.2553699"
           ]
         }
-      }
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
+          "figureLabel": "Fig. 1（公开AM）",
+          "caption": "逐类SVM四步：训练初始分类器，平衡各训练样本波段，求类共享波段权重，再用加权样本重训。",
+          "verificationNote": "核对公开AM PDF第3页（正文第2页）Fig.1及四阶段箭头；原页1391×1800裁切，完整保留图内A/B/C/D和两行说明，未重绘。仅对应五作者正文，正式六作者四页版图号/差异未独立核验。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderScaleTo": 1800,
+            "renderedPagePixels": [
+              1391,
+              1800
+            ],
+            "pixelBox": [
+              700,
+              135,
+              1333,
+              424
+            ]
+          },
+          "path": "figures/svm-band-weighting-lgrs-2016/framework.png",
+          "width": 633,
+          "height": 289,
+          "verifiedAt": "2026-10-11",
+          "sha256": "a2c76abc93cf233f7f6311cfd9fb14458c3f2fe0e6688c7da59ccb99377d1006",
+          "attribution": "Cheng Yan, Xiao Bai, Peng Ren, Lu Bai, Jun Zhou · GRSL 2016公开AM正文；正式记录另含Wenzhong Tang"
+        }
+      ]
     },
     {
       "id": "crf-cnn-hsi-igarss-2016",
@@ -80724,7 +80819,6 @@
         "rf-band-selection-fusion-whispers-2014",
         "sparse-pca-anomaly-whispers-2014",
         "spectral-spatial-hypergraph-jstars-2015",
-        "svm-band-weighting-lgrs-2016",
         "svm-margin-band-igarss-2015",
         "unmixing-chain-whispers-2014",
         "weighted-band-selection-igarss-2016",
@@ -80765,6 +80859,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "仅同步本轮三篇原始摘要/作者源码支持的标签，区分子集选带与分组、期刊与学位论文来源。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2016 SVM接受稿全文明确保留全部波段，Top5仅权重展示，移除其选带归类；2015实际选TopK仍保留，其他关联不改。"
         }
       ]
     },
@@ -86906,7 +87005,7 @@
       "id": "svm-margin-band-weighting",
       "name": "SVM间隔波段加权",
       "dimension": "method",
-      "definition": "在每类SVM中优化波段权重扩大样本—超平面间隔，选择高权重波段并重新训练；记录类相关子集，区别直接最大类间距离。",
+      "definition": "在逐类SVM框架中学习光谱波段权重并重训；逐篇区分高权重子集选择与全带加权、样本平衡及正则化。分类分数与带符号间隔、归一几何距离或一般类间欧氏距离不自动等同。",
       "status": "confirmed",
       "color": "#80939b",
       "createdAt": "2026-10-09",
@@ -86922,6 +87021,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原摘要支持，PDF可取得时核对方法局部和原图。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "definition_refined",
+          "reason": "2015/2016全文分别支持TopK子集与全部波段两种用法，旧定义强制选带会误述2016；不改变另两篇摘要级条目的方法关联或阅读状态。"
         }
       ]
     },
@@ -87243,6 +87347,27 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "据本篇原始摘要及固定源码形成，仅关联本轮SiamBAG。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-band-weighting",
+      "name": "光谱波段加权",
+      "dimension": "task",
+      "definition": "学习光学光谱各波段的重要性或权重，用于下游分类等任务；须逐篇记录全带保留或权重后的子集选择。区别于标量训练样本权重、仅神经网络内部注意力、波段分组与严格子集降维。",
+      "status": "confirmed",
+      "color": "#cbb89d",
+      "createdAt": "2026-10-11",
+      "rationale": "2015与2016公开SVM稿全文均实际输出波段权重，其中2016明确保留全部波段；任务标签由原文边界形成，不预设数量。",
+      "evidencePaperIds": [
+        "svm-band-weighting-lgrs-2016",
+        "svm-margin-band-igarss-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "两篇原稿逐项核验实际波段向量输出；2015可兼选带，2016不强制选子集，仅关联本轮两篇。"
         }
       ]
     }

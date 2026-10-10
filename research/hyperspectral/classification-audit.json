@@ -352,7 +352,8 @@
     "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
     "zhou-62-hsi-2023",
     "zhou-67-hsi-2023",
-    "attend-in-bands-jstars-2019"
+    "attend-in-bands-jstars-2019",
+    "svm-band-weighting-lgrs-2016"
   ],
   "sourceChecks": [
     {
@@ -620,6 +621,26 @@
         "把逐带FCT/仿射参考校正及波段余弦描述扩展为调和积分与Hilbert空间讨论，实际实验仍使用FCT。自采六类玩具/硬币图像，按分区投票比较校准、尺度和近邻/SVM；与2009定位和DynTex实验分开。",
         "调和核正交展开解释重尾/特征函数；FCT逐带两参考峰仿射校正，串接后沿波段使用半索引余弦核。提出Mellin/wavelet/Hankel可选，未实现或比较这些核；平面/中心与矩阵可逆及印刷推导疑点分别保留。",
         "Table1.1 NN跨分区平均单尺度校准/未校准93.47/93.27，多尺度98.17/98.54；LBP为46.25/75.65和38.82/67.68。并非全设置占优：4块单尺度未校准NN89.47<97.56，SVM96.81<99.15。正文LBP75.63与表75.65冲突，98.54不当独立外测。"
+      ]
+    },
+    {
+      "paperId": "svm-margin-band-igarss-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "逐类one-vs-all SVM学习共享波段权重，选最高权重子集并重训；各类可选不同波段。公开四页正文核验，与2016保留全带的样本平衡法分开。",
+        "先训SVM并固定初始超平面，Eq2以带符号分类分数和beta偏离全一向量惩罚优化类v；取TopK再重训。正文把v×x称dot product，与逐带加权语义/式维度有疑点；未用2016每样本b_i。",
+        "Fig2/4分类准确率曲线展示相对基线优势，作者特别强调选带数>15；没有全部精确点值/方差，不能写成OA/AA/κ全表或统计显著。四图为输入/分类与曲线，无独立框架图。"
+      ]
+    },
+    {
+      "paperId": "svm-band-weighting-lgrs-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "逐类线性SVM先学习每训练样本的波段平衡向量，再求每类共享波段权重并重训；保留全部波段分类。表中Top5只是重要性展示，不是严格子集选带。",
+        "初始binary linear SVM；v=1时最大化带gamma正则的修改分数求每样本b_i，再用含theta全一正则与hinge的Eq3求类v，最后加权重训。Eq2可见额外未定义T且未含y_i；梯度最大化方向、负例重训加权与Eq4括号待实现，不能称已证一般类间欧氏距离最大化。",
+        "作者总准确率Indian91.5%、Salinas99.0%；较FEWT高0.3/0.1百分点，未给置信区间，部分单类落后。按打印测试数加权为91.77216/98.62408，仅表算术，真实聚合待。耗时20.24/6.08s，两表仅快于BFO；未定义阶段，不当FPS。"
       ]
     }
   ]
