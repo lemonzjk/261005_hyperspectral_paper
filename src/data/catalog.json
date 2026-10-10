@@ -60485,11 +60485,11 @@
       "summary": "在非负矩阵分解中加入 L1/2 丰度稀疏正则，提出迭代估计算法恢复端元及丰度。4月11日作者稿摘要指出 L1 约束与丰度和为一条件的冲突，并报告合成与真实数据比较。",
       "input": "混合高光谱像元矩阵；端元数量及初始化设置待阅读全文。",
       "output": "非负端元光谱及丰度矩阵。",
-      "mechanism": "L1/2-NMF：在非负因子分解中引入 L1/2 稀疏约束与丰度加和约束，迭代估计；不等同于 L1、L0 或后来的 TV 正则变体。",
-      "readingNote": "已核原稿摘要及指定局部页，未阅读全文。2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。",
+      "mechanism": "在非负矩阵分解中以丰度元素平方根和促进稀疏，乘法更新交替估计端元与丰度；以增广常数行惩罚丰度和偏离1。",
+      "readingNote": "已核原稿摘要及指定局部页，未阅读全文。2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。 本轮补读4月11日稿II–III节目标与实现，核式5/6/12/21；增广常数行使和接近1，不表述为有限参数下严格等式。",
       "paper": "https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-10",
+      "verificationLevel": "primary_abstract_and_selected_pages",
       "citation": "@article{lhalf_nmf_tgrs_2011,\n  title = {Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization},\n  author = {Yuntao Qian and Sen Jia and Jun Zhou and Antonio Robles-Kelly},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2011},\n  doi = {10.1109/TGRS.2011.2144605}\n}\n",
       "library": {
         "categoryIds": [
@@ -60502,10 +60502,10 @@
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何在丰度非负与和为一的条件下，对高光谱 NMF 解混施加有效稀疏约束？",
-        "datasets": "已核摘要仅明确合成与真实高光谱数据；具体数据集、光谱库与设置待完整阅读较晚作者稿。",
-        "experimentSetting": "未阅读全文；原稿数值结果、SNR、端元数量、评价指标和正式16页版实验差异待核验。",
+        "datasets": "合成数据、Urban HYDICE及AVIRIS Cuprite；已定位原稿实验段落，完整协议、预处理与正式版差异待核。",
+        "experimentSetting": "4月11日稿目标和实现局部核验；实际K、初始化、多次运行与完整实验指标尚未逐项复核。",
         "conclusions": "4月11日作者摘要报告相对 L1-NMF 更稀疏、更准确，并讨论 Lq(0<q<1) 正则；未记录性能数值或普遍最优结论。",
-        "limitations": "2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。 专用代码、数据链接与arXiv未由本轮定向搜索核到；未知不表示不存在。 本轮关联核验：同四作者同名L1/2-NMF方法族关联；扩展声明和完整差异未核，不混用实验。",
+        "limitations": "2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。 专用代码、数据链接与arXiv未由本轮定向搜索核到；未知不表示不存在。 本轮关联核验：同四作者同名L1/2-NMF方法族关联；扩展声明和完整差异未核，不混用实验。 本轮核到增广矩阵软惩罚，不能宣称严格丰度和约束；零值/小值处理和完整收敛证明待核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -60533,6 +60533,16 @@
             "level": "原稿版本关系局部核验",
             "supports": [
               "同四作者同名L1/2-NMF方法族关联；扩展声明和完整差异未核，不混用实验。"
+            ]
+          },
+          {
+            "url": "https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf",
+            "checkedAt": "2026-10-10",
+            "level": "primary_selected_method_sections",
+            "supports": [
+              "4月11日作者稿II–III节式5/6/12/21：平方根和、逐元素丰度更新、增广常数行。",
+              "III-B明确δ控制丰度和接近1，并区别端元矩阵列归一化。",
+              "已定位Urban HYDICE与AVIRIS Cuprite实验；未逐表核验。"
             ]
           }
         ],
@@ -60570,9 +60580,9 @@
         ],
         "methodFamilyId": "lhalf-nmf-tgrs-2011",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-10",
           "basis": "catalog_and_primary_source",
-          "rationale": "按作者原稿摘要和指定局部内容确认任务及方法；阅读状态仍为摘要，分类确认不代表全文核验。",
+          "rationale": "依据原稿II–III节补核，仍为光谱解混与稀疏非负分解任务；数学实现精化不改变分类或提升全文阅读状态。",
           "evidenceFields": [
             "title",
             "summary",
@@ -60581,7 +60591,7 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "ef39d1ebead1c724152c1bf8dcca8d184c09d29fac4134f6dc3343f9a36b16a0",
+          "evidenceDigest": "809878a5591d086461af85ce838eadde8a283b804159b9b01d41ef654bc81a07",
           "sourceUrls": [
             "https://users.cecs.anu.edu.au/~arobkell/papers/tgrs11.pdf"
           ]

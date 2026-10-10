@@ -959,3 +959,5 @@ DBLP精确作者364条记录中，除既有168条决定外，按规范化题名�
 新增2条热红外多光谱关联；作者目录184条（直接高光谱179、多光谱5），182条摘要级、2条全文级。MTSAT-2正式2020版关联2020勘误，图11产量单位应为t/ha。DBLP365条现353已决定、12待核；剩余78批次为66暂排除、12待核。Scholar原387条减原178条关键词审计，209差集逐项完整题名交叉：167沿用既有排除、8目录匹配、2新增、32待核。既有排除保留原证据，完整题名匹配不证明同名身份；近题与无匹配不自动排除。源文件：`jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`、`jun-zhou-thermal-scholar-followup-2026-10-10.json`。仍未完成作者全集、正式全文及实验核验。
 
 周峻Scholar差集续核8条后：209条中175暂排、8目录匹配、2新增、24待核；原始作者稿/机构摘要/作者通讯逐项留证，未标全文。控制采样v1第VI–VII节指定段落补读，另建评测学习笔记；目录总量与全文级数量不变。详见 `jun-zhou-scholar-scope-followup-2026-10-10.json`、`jun-zhou-controlled-sampling-selected-reading-2026-10-10.json`。
+
+周峻版本/社论续核8条Scholar与2条DBLP：Scholar209差集183暂排、8重、2入、16待核；DBLP365条355决定、10待核。Crossref24定向查询12成功、12限流，不能以429否定条目存在。L1/2-NMF原稿II–III节补目标/更新/增广约束局部核验，新增学习笔记与独立数学演示；作者目录184条及2条全文级数量不变。证据见 `jun-zhou-scholar-editorial-version-followup-2026-10-10.json`、`jun-zhou-lhalf-selected-reading-2026-10-10.json`。

@@ -9,7 +9,7 @@
 | 来源 | 实际方法与分页 | 当前覆盖 | 缺口 |
 | --- | --- | --- | --- |
 | ORCID公共API | person、works以及269个唯一put-code分三批1–100/101–200/201–269读取；逐项核对返回ID | 263组269条书目拉取完成，无缺失ID；135组题名直接命中、128组无命中；263组均已有范围决定 | 书目完整不等于作者全部成果或光谱范围审查完成；无摘要，外部来源有日期/类型/姓名简写差异 |
-| DBLP | SPARQL精确authoredBy关联目标person ID；364条快照另加1条身份核验的STRL专题补充 | 合并365条：353条已决定，12条待核 | 网页/XML仍受验证页限制；快照不等于作者全部成果；12条的模态、全文及部分身份仍待核 |
+| DBLP | SPARQL精确authoredBy关联目标person ID；364条快照另加1条身份核验的STRL专题补充 | 合并365条：355条已决定，10条待核 | 网页/XML仍受验证页限制；快照不等于作者全部成果；10条的模态、全文及部分身份仍待核 |
 | Google Scholar | 用户主页 cstart=0/100/200/300、pagesize=100 | HTTP200，取得387条记录、384个唯一题名（381个题名-年份组合）；原始HTML与解析快照已保存 | 引用元数据、作者归属及 Scholar 独有条目仍需逐篇核；页面列项不等于正式书目全集 |
 | 作者ANU旧主页 | publication.html完整旧页面，列项2001–2012，逐篇追踪公开PDF | 本批5篇原稿及DOI核验 | 主页中的Accepted年份、作者顺序及拼写可能与正式版不同；不覆盖当前所有成果 |
 | Griffith当前主页 | ORCID提供的个人页 | 仅取得JS页面壳 | 当前完整论文目录尚未取得 |
@@ -20,17 +20,19 @@
 
 [学习指南](jun-zhou-study-guide.md)包含当前184条作者目录完整索引及13篇第一轮精读路线。179条直接高光谱和5条多光谱关联分别列出；182条摘要级、2条全文级，不把局部阅读标为全文。会议、期刊与预印本均保留，不声称184个独立方法。
 
-本轮为剩余78条DBLP记录取得原始摘要或Griffith机构摘要，并对指定arXiv正文和两份作者/正式PDF局部补读。续核后66条按当前证据暂排除；12条仍待核。图矩阵的spectral clustering、Fourier高/低频、CNN feature channels、音频频谱和描述子的multi-channel都不自动等于光学高光谱。皮肤镜与昆虫照片论文也不借同作者其他高光谱数据集收录。AcfNet arXiv1909.03751的v1正文含Griffith Jun Zhou，而v2当前摘要作者列表无Jun Zhou，保留版本作者差异，不把它简单认作错误作者。
+本轮为剩余78条DBLP记录取得原始摘要或Griffith机构摘要，并对指定arXiv正文和两份作者/正式PDF局部补读。续核后68条按当前证据暂排除；10条仍待核。图矩阵的spectral clustering、Fourier高/低频、CNN feature channels、音频频谱和描述子的multi-channel都不自动等于光学高光谱。皮肤镜与昆虫照片论文也不借同作者其他高光谱数据集收录。AcfNet arXiv1909.03751的v1正文含Griffith Jun Zhou，而v2当前摘要作者列表无Jun Zhou，保留版本作者差异，不把它简单认作错误作者。
 
-待核12条包括纪念/编辑性记录4条及遥感、机器人等输入或范围待核8条；以逐条清单为准，不凭题名缺关键词作排除。优先FDNet（spectral bands含义）、DDFNet/GPINet/SAPNet（实际RGB/IRRG输入）、红树林和太阳能板卫星/航拍数据，再处理其余正文与身份。CangLing-KnowFlow和ChangeQuery按已读正文局部暂排除；分别保留完整任务清单和光学输入通道重审。
+待核10条包括纪念/编辑性记录2条及遥感、机器人等输入或范围待核8条；以逐条清单为准，不凭题名缺关键词作排除。优先FDNet（spectral bands含义）、DDFNet/GPINet/SAPNet（实际RGB/IRRG输入）、红树林和太阳能板卫星/航拍数据，再处理其余正文与身份。CangLing-KnowFlow和ChangeQuery按已读正文局部暂排除；分别保留完整任务清单和光学输入通道重审。
 
 证据见 `sources/jun-zhou-dblp-remaining-primary-abstracts-2026-10-10.json`、`jun-zhou-dblp-remaining-repository-2026-10-10.json`、`jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json`。主筛选表包含所有365条及明确pending状态；来源差集、当前机构目录与已收录论文正式全文、实验和代码尚未全部闭环。
 
-新增非关键词Scholar差集审计209条：175条暂排除（167条交叉匹配加8条原始来源补核），8条匹配目录，新增2条多光谱关联，24条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
+新增非关键词Scholar差集审计209条：183条暂排除（167条交叉匹配加16条原始来源补核），8条匹配目录，新增2条多光谱关联，16条仍待原始书目、输入或身份核验；另178条关键词筛选表保留。该交叉表不把题名匹配当身份核验，也不自动排除近题变体。详见 `sources/jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`。
 
 两篇新增分别是2019 MYD21方向发射率与向上长波辐射、2020 MTSAT-2温度上升指数TRI干旱监测。它们与已有MODIS分裂窗LST及Himawari亮温论文的DOI、任务和数据不同；不混用波段或实验。MTSAT正式年份2020，勘误 DOI `10.1016/j.rse.2020.111661` 修正图11小麦产量单位为t/ha。M2-Net、2022稳健2DSVD与CrowdMLP按原稿实验暂排除；CrowdMLP预印本机构不列Griffith，同名身份及正式版差异另留记录。源证据见 `sources/jun-zhou-thermal-scholar-followup-2026-10-10.json` 与逐项DBLP清单。
 
 本轮8条Scholar待核补原始证据后暂排除：微流控荧光强度、支票分割硕士论文、地图修订博士论文、IB零样本学习、DPSC题名变体、作者裂缝通讯及两篇考拉检测。考拉“两流”为原始视频与光流，不是可见/近红外联合光谱；夜间照明和PIR运动触发也不自动构成高光谱输入。裂缝作者通讯缓存可见，PDF直接下载403；不标正式会议全文。源表 `sources/jun-zhou-scholar-scope-followup-2026-10-10.json` 保留局部阅读与版本边界。控制采样v1方法与指定实验已补读，学习问题及限制见[评测笔记](jun-zhou-controlled-sampling-note.md)，目录仍保持摘要级阅读状态。
+
+续核多视图社论（两条Scholar年份/作者变体）、Displays3D社论、点云解释、CNN概念解释、F3/P3题名变体、LVLM少样本与DirectSAM：共8条Scholar暂排除、2条DBLP待核关闭。多视图社论首次在线2023、卷期2025且曾更正作者简介；不按年份拆方法。DirectSAM原稿明确RGB三通道；LVLM训练遥感详细输入仍可重审。Crossref本轮24查询中12成功、12限流429，失败不等于不存在。证据见 `sources/jun-zhou-scholar-editorial-version-followup-2026-10-10.json`。L1/2-NMF目标与增广丰度和约束已补局部方法，学习笔记与数学演示见 [解混笔记](jun-zhou-lhalf-nmf-note.md)。
 
 ## 首批闭环（2009–2011）
 
