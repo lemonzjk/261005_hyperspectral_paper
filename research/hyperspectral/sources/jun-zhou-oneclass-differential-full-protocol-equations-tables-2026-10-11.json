@@ -1,0 +1,789 @@
+{
+  "checkedAt": "2026-10-11",
+  "derivedNotOriginalResponse": true,
+  "sharedMechanism": {
+    "training": "先用带标签训练集训练每类初始分类器，利用当前类与其他类的超平面系数差乘像元各带强度形成判别向量u。",
+    "objective": "每类v最小化所有当前类样本/竞争类的max(0,1-v^T u)总和与lambda||v||1；按最大有符号权重选Top-n，重训下游分类器。",
+    "boundary": "一类SVM仅为作者所称权重优化模型，不等于无监督选带、实际异常检测任务或只用一个地物类别。标签用于初始分类器及类对差；全带加权保留并非最终输出策略。"
+  },
+  "sharedEquationAudit": [
+    {
+      "conferenceEquations": [
+        1,
+        5
+      ],
+      "journalEquations": [
+        5,
+        6
+      ],
+      "printed": "hinge sum + L1 weight norm; margin threshold1, no free rho or nu shown",
+      "boundary": "作者称modified one-class SVM并引用LIBSVM可解，未给L1目标到该solver实际选项/变换的等价推导、约束或代码；不把调用常见one-class选项当本式已核实现，也不否定任意可能变换。"
+    },
+    {
+      "conferenceEquations": [
+        2,
+        3,
+        4
+      ],
+      "journalEquations": [
+        2,
+        3,
+        4
+      ],
+      "printed": "全向量正确类分数大于竞争类；随后将每带正差视作判别依据。",
+      "conditionalInference": "向量和的正差不能推出每个波段差均正；逐带严格正是更强启发式条件，不是由总分不等式推出的充要条件。没有由此证明所有Top-n子集保持分类或原图标签真值。",
+      "independentAlgebraNotImplementation": true
+    },
+    {
+      "conferenceEquations": [
+        5,
+        6
+      ],
+      "journalEquations": [
+        6,
+        7
+      ],
+      "printed": "v unconstrained, L1 sparsity; select n largest weights",
+      "boundary": "未写v>=0、和为一、权重归一化或按绝对值排序；L1并不保证恰有n非零或每类唯一解。维度多且训练少时支持集/并列处理与最后多类用各子集的合并/评分细节未完整报告。"
+    }
+  ],
+  "conference2016": {
+    "paperId": "weighted-band-selection-igarss-2016",
+    "pdfPages": 5,
+    "coverPages": 1,
+    "bodyPages": 4,
+    "equations": [
+      {
+        "number": 1,
+        "pdfPage": 3,
+        "printed": "min_wo sum_i max(0,1-w_o^T x_i)+alpha||w_o||1",
+        "boundary": "作者的单正类L1 hinge形式，未给标准solver等价。"
+      },
+      {
+        "number": 2,
+        "pdfPage": 3,
+        "printed": "w_yi^T x_i > w_c^T x_i, c != y_i",
+        "boundary": "正确类与竞争类分数比较，与2017符号不同。"
+      },
+      {
+        "number": 3,
+        "pdfPage": 3,
+        "printed": "w_yi(b)x_i(b)>w_c(b)x_i(b), c != y_i",
+        "boundary": "单带启发式条件，不由全带总分条件自动推出。"
+      },
+      {
+        "number": 4,
+        "pdfPage": 3,
+        "printed": "(w_yi(b)-w_c(b))x_i(b)>0, c != y_i",
+        "boundary": "同一单带不等式的代数改写，不是新样本标量权重。"
+      },
+      {
+        "number": 5,
+        "pdfPage": 3,
+        "printed": "min_v sum_{i in D_cprime} sum_{c != cprime} max(0,1-v^T u_i,cprime,c)+lambda||v||1",
+        "boundary": "当前类样本与各竞争类明确独立索引，逐类稀疏权重。"
+      },
+      {
+        "number": 6,
+        "pdfPage": 3,
+        "printed": "u_i,cprime,c(b)=(w_cprime(b)-w_c(b))x_i(b)",
+        "boundary": "输入为系数差乘各带像元值，非直接仅对w排序。"
+      }
+    ],
+    "figures": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sampleTables": [
+      {
+        "label": "Table2",
+        "pdfPage": 4,
+        "rows": [
+          {
+            "classNumber": 1,
+            "classNamePrinted": "Water",
+            "train": 83,
+            "test": 741
+          },
+          {
+            "classNumber": 2,
+            "classNamePrinted": "Trees",
+            "train": 82,
+            "test": 738
+          },
+          {
+            "classNumber": 3,
+            "classNamePrinted": "Asphalt",
+            "train": 82,
+            "test": 734
+          },
+          {
+            "classNumber": 4,
+            "classNamePrinted": "Self-Blocking Bricks",
+            "train": 81,
+            "test": 727
+          },
+          {
+            "classNumber": 5,
+            "classNamePrinted": "Bitumen",
+            "train": 81,
+            "test": 727
+          },
+          {
+            "classNumber": 6,
+            "classNamePrinted": "Tiles",
+            "train": 126,
+            "test": 1134
+          },
+          {
+            "classNumber": 7,
+            "classNamePrinted": "Shadows",
+            "train": 48,
+            "test": 428
+          },
+          {
+            "classNumber": 8,
+            "classNamePrinted": "Meadows",
+            "train": 83,
+            "test": 741
+          },
+          {
+            "classNumber": 9,
+            "classNamePrinted": "Bare Soil",
+            "train": 82,
+            "test": 738
+          }
+        ],
+        "printedTrain": 748,
+        "printedTest": 6708,
+        "sumTrain": 748,
+        "sumTest": 6708,
+        "arithmeticBoundary": "原印行值与原印总值分列，仅对打印样本数作算术核查，未取得实际划分/GT，不能把行和当已核真实测试数。"
+      },
+      {
+        "label": "Table3",
+        "pdfPage": 4,
+        "rows": [
+          {
+            "classNumber": 1,
+            "classNamePrinted": "Corn-no till",
+            "train": 143,
+            "test": 1285
+          },
+          {
+            "classNumber": 2,
+            "classNamePrinted": "Corn-mil till",
+            "train": 83,
+            "test": 747
+          },
+          {
+            "classNumber": 3,
+            "classNamePrinted": "Grass/pasture",
+            "train": 48,
+            "test": 435
+          },
+          {
+            "classNumber": 4,
+            "classNamePrinted": "Grass/trees",
+            "train": 73,
+            "test": 657
+          },
+          {
+            "classNumber": 5,
+            "classNamePrinted": "Hay-windrowed",
+            "train": 48,
+            "test": 430
+          },
+          {
+            "classNumber": 6,
+            "classNamePrinted": "Soybean-no till",
+            "train": 97,
+            "test": 875
+          },
+          {
+            "classNumber": 7,
+            "classNamePrinted": "Soybean-mil till",
+            "train": 246,
+            "test": 2209
+          },
+          {
+            "classNumber": 8,
+            "classNamePrinted": "Soybean-clean till",
+            "train": 59,
+            "test": 534
+          },
+          {
+            "classNumber": 9,
+            "classNamePrinted": "Woods",
+            "train": 127,
+            "test": 1138
+          }
+        ],
+        "printedTrain": 924,
+        "printedTest": 7172,
+        "sumTrain": 924,
+        "sumTest": 8310,
+        "arithmeticBoundary": "原印行值与原印总值分列，仅对打印样本数作算术核查，未取得实际划分/GT，不能把行和当已核真实测试数。"
+      }
+    ],
+    "pseudocodeTable": {
+      "label": "Table1 / Algorithm1",
+      "pdfPage": 3,
+      "frameworkImage": false
+    },
+    "data": {
+      "PaviaCentre": {
+        "instrument": "ROSIS",
+        "year": 2002,
+        "printedPixels": [
+          1096,
+          1096
+        ],
+        "bands": 102,
+        "classes": 9,
+        "preprocess": "discard samples containing no information",
+        "randomTrainingPercent": 10
+      },
+      "IndianPines": {
+        "instrument": "AVIRIS",
+        "year": 1992,
+        "printedPixels": [
+          145,
+          145
+        ],
+        "printedOriginalBands": 224,
+        "spectralRangeNm": [
+          400,
+          2500
+        ],
+        "removedBandIDsPrinted": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          220
+        ],
+        "derivedIf224BandsAndInclusiveRanges": 204,
+        "classesRemaining": 9,
+        "classesDiscarded": 7,
+        "randomTrainingPercent": 10,
+        "boundary": "224减列出的20个互不重复通道算204；这是端点算术，不是已下载实际通道数或索引起点核验。"
+      }
+    },
+    "sampleAudit": "Pavia Table2行和748/6708与总计一致；Indian Table3训练924一致，测试行和8310而总计7172，未改写原文或借标准GT补齐。",
+    "protocol": {
+      "initialClassifier": "linear SVM",
+      "finalClassifier": "linear SVM",
+      "lambdaAndSVMRegularization": "cross-validation; folds/values/validation isolation not given",
+      "comparisonMethods": [
+        "AP",
+        "MVPCA",
+        "full bands"
+      ],
+      "bandCounts": "5–50 shown",
+      "repeatCount": null,
+      "seed": null,
+      "hardware": null,
+      "timing": null
+    },
+    "figureAudit": "Fig1 Pavia输入/GT、Fig3 Indian输入/GT；Fig2与Fig4都印Indian Pines准确率。正文称两场景分别比较，Fig2靠Pavia表与99%曲线提示可能Pavia，但正式数据身份未独立确认，不静默改图注。Fig4为Indian约60–90%轴。四图无独立方法框架，Table1伪码不当框架图。",
+    "resultsBoundary": "曲线显示Ours与AP/MVPCA及全带的比较，接近全带是作者结论；不从图像估数作为精确OA/AA/κ、时间或显著性。图4仍低于全带曲线，选带效率与保留全部精度不是同一个保证。"
+  },
+  "journal2017": {
+    "paperId": "differential-band-selection-ijwmip-2017",
+    "pdfPages": 18,
+    "coverPages": 1,
+    "bodyAndReferencePages": 17,
+    "equations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tables": {
+      "sampleTables": [
+        {
+          "label": "Table I",
+          "pdfPage": 10,
+          "rows": [
+            {
+              "classNumber": 1,
+              "classNamePrinted": "Water",
+              "train": 124,
+              "test": 800
+            },
+            {
+              "classNumber": 2,
+              "classNamePrinted": "Trees",
+              "train": 123,
+              "test": 797
+            },
+            {
+              "classNumber": 3,
+              "classNamePrinted": "Asphalt",
+              "train": 122,
+              "test": 794
+            },
+            {
+              "classNumber": 4,
+              "classNamePrinted": "Self-Blocking Bricks",
+              "train": 120,
+              "test": 788
+            },
+            {
+              "classNumber": 5,
+              "classNamePrinted": "Bitumen",
+              "train": 120,
+              "test": 788
+            },
+            {
+              "classNumber": 6,
+              "classNamePrinted": "Tiles",
+              "train": 189,
+              "test": 1071
+            },
+            {
+              "classNumber": 7,
+              "classNamePrinted": "Shadows",
+              "train": 71,
+              "test": 405
+            },
+            {
+              "classNumber": 8,
+              "classNamePrinted": "Meadows",
+              "train": 124,
+              "test": 800
+            },
+            {
+              "classNumber": 9,
+              "classNamePrinted": "Bare Soil",
+              "train": 123,
+              "test": 797
+            }
+          ],
+          "printedTrain": 1118,
+          "printedTest": 6338,
+          "sumTrain": 1116,
+          "sumTest": 7040,
+          "arithmeticBoundary": "原印行值与原印总值分列，仅对打印样本数作算术核查，未取得实际划分/GT，不能把行和当已核真实测试数。"
+        },
+        {
+          "label": "Table II",
+          "pdfPage": 12,
+          "rows": [
+            {
+              "classNumber": 1,
+              "classNamePrinted": "Paddy",
+              "train": 200,
+              "test": 400
+            },
+            {
+              "classNumber": 2,
+              "classNamePrinted": "Bamboo",
+              "train": 100,
+              "test": 200
+            },
+            {
+              "classNumber": 3,
+              "classNamePrinted": "Tea",
+              "train": 50,
+              "test": 150
+            },
+            {
+              "classNumber": 4,
+              "classNamePrinted": "Pachyrhizus",
+              "train": 100,
+              "test": 250
+            },
+            {
+              "classNumber": 5,
+              "classNamePrinted": "Caraway",
+              "train": 50,
+              "test": 200
+            },
+            {
+              "classNumber": 6,
+              "classNamePrinted": "Water",
+              "train": 200,
+              "test": 400
+            }
+          ],
+          "printedTrain": 700,
+          "printedTest": 1600,
+          "sumTrain": 700,
+          "sumTest": 1600,
+          "arithmeticBoundary": "原印行值与原印总值分列，仅对打印样本数作算术核查，未取得实际划分/GT，不能把行和当已核真实测试数。"
+        },
+        {
+          "label": "Table III",
+          "pdfPage": 14,
+          "rows": [
+            {
+              "classNumber": 1,
+              "classNamePrinted": "Corn-no till",
+              "train": 214,
+              "test": 1214
+            },
+            {
+              "classNumber": 2,
+              "classNamePrinted": "Corn-mil till",
+              "train": 125,
+              "test": 704
+            },
+            {
+              "classNumber": 3,
+              "classNamePrinted": "Grass/pasture",
+              "train": 72,
+              "test": 411
+            },
+            {
+              "classNumber": 4,
+              "classNamePrinted": "Grass/trees",
+              "train": 110,
+              "test": 620
+            },
+            {
+              "classNumber": 5,
+              "classNamePrinted": "Hay-windrowed",
+              "train": 72,
+              "test": 406
+            },
+            {
+              "classNumber": 6,
+              "classNamePrinted": "Soybean-no till",
+              "train": 146,
+              "test": 823
+            },
+            {
+              "classNumber": 7,
+              "classNamePrinted": "Soybean-mil till",
+              "train": 368,
+              "test": 2087
+            },
+            {
+              "classNumber": 8,
+              "classNamePrinted": "Soybean-clean till",
+              "train": 89,
+              "test": 504
+            },
+            {
+              "classNumber": 9,
+              "classNamePrinted": "Woods",
+              "train": 190,
+              "test": 1075
+            }
+          ],
+          "printedTrain": 1214,
+          "printedTest": 6882,
+          "sumTrain": 1386,
+          "sumTest": 7844,
+          "arithmeticBoundary": "原印行值与原印总值分列，仅对打印样本数作算术核查，未取得实际划分/GT，不能把行和当已核真实测试数。"
+        }
+      ],
+      "selectedBandTable": {
+        "label": "Table IV",
+        "pdfPage": 14,
+        "bands": {
+          "OURS": [
+            10,
+            23,
+            39,
+            50,
+            59,
+            80,
+            90,
+            95,
+            102,
+            116,
+            120,
+            129,
+            132,
+            188,
+            196
+          ],
+          "AP": [
+            1,
+            7,
+            15,
+            25,
+            48,
+            67,
+            86,
+            90,
+            99,
+            119,
+            129,
+            142,
+            182,
+            197,
+            206
+          ],
+          "SVM-RFE": [
+            31,
+            39,
+            45,
+            60,
+            61,
+            66,
+            93,
+            96,
+            103,
+            115,
+            119,
+            130,
+            145,
+            172,
+            199
+          ],
+          "mRMR": [
+            37,
+            53,
+            67,
+            68,
+            69,
+            82,
+            87,
+            98,
+            101,
+            112,
+            115,
+            119,
+            127,
+            137,
+            186
+          ]
+        }
+      }
+    },
+    "specificEquationAudit": [
+      {
+        "number": 1,
+        "pdfPage": 6,
+        "printed": "L(w)=1/2||w||^2 - lambda sum_i (y_i f(x_i,w)-1)",
+        "boundary": "原可见无max/hinge或slack约束，不能替换成2015/2016普通hinge SVM。正文未定义此式完整优化与初始模型kernel，实验RBF SVM是否指初始或最终须分开。"
+      },
+      {
+        "numbers": [
+          2,
+          3,
+          4
+        ],
+        "pdfPage": 6,
+        "printed": "w_c^T x_i > w_yi^T x_i, y_i != c; corresponding per-band difference",
+        "boundary": "此前y_i定义为i真类，此处正文又称ground-truth class c，真类/竞争类符号冲突；不据此直接实现颠倒分类或擅自重命名原文。"
+      },
+      {
+        "numbers": [
+          6,
+          7
+        ],
+        "pdfPage": 7,
+        "printed": "i in D_c with true label c; sum_{y_i != c}; u_i,c,yi=(w_c-w_yi)◦x_i",
+        "conditionalInference": "若沿前文y_i为该样本固定真类且i∈D_c，则y_i=c，与求和y_i!=c冲突。可能想让y_i改作竞争类枚举，但原文没有明确改名；2016稿用独立c/cprime索引更清楚，不能自动拿其式覆盖期刊。",
+        "boundary": "这是印刷索引逻辑疑问，不是真实程序已证为空或失败。"
+      }
+    ],
+    "data": {
+      "PaviaCentre": {
+        "instrument": "ROSIS",
+        "year": 2002,
+        "printedPixels": [
+          1096,
+          1096
+        ],
+        "bands": 102,
+        "spatialResolutionM": 1.3,
+        "classes": 9,
+        "randomTrainingPercent": 15
+      },
+      "IndianPines": {
+        "instrument": "AVIRIS",
+        "year": 1992,
+        "printedPixels": [
+          145,
+          145
+        ],
+        "printedOriginalBands": 224,
+        "spectralRangeNm": [
+          400,
+          2500
+        ],
+        "removedBandIDsPrinted": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          220
+        ],
+        "derivedInclusiveRangeRemaining": 204,
+        "classesRemaining": 9,
+        "classesDiscarded": 7,
+        "randomTrainingPercent": 15
+      },
+      "APHI": {
+        "printedPixels": [
+          210,
+          150
+        ],
+        "bands": 64,
+        "spectralRangeNm": [
+          455,
+          805
+        ],
+        "printedClasses": [
+          "Paddy",
+          "Bamboo",
+          "Tee",
+          "Pachysandras",
+          "Caraway",
+          "Water"
+        ],
+        "printedCodes": [
+          "C4",
+          "T6",
+          "T7",
+          "V2",
+          "V13",
+          "W2"
+        ],
+        "boundary": "正文Tee/Pachysandras与表Tea/Pachyrhizus拼写/物种名称不同，保留原值，不推断实际作物真值。"
+      }
+    },
+    "tableAudit": {
+      "PaviaI": {
+        "pdfPage": 10,
+        "printedTotals": [
+          1118,
+          6338
+        ],
+        "rowSums": [
+          1116,
+          7040
+        ],
+        "trainingFractionBoundary": "声称每类15%；按行train/(train+test)，多数类13.22–13.42%，Tiles15%、Shadows14.916%，不证明所有行实际15%或GT分母。"
+      },
+      "printedIndianII": {
+        "pdfPage": 12,
+        "printedTotals": [
+          700,
+          1600
+        ],
+        "rowSums": [
+          700,
+          1600
+        ],
+        "printedClassRows": [
+          "Paddy",
+          "Bamboo",
+          "Tea",
+          "Pachyrhizus",
+          "Caraway",
+          "Water"
+        ],
+        "boundary": "表题Indian Pines而六类内容对应APHI正文；与正文Indian九类不一致。"
+      },
+      "printedAPHIIII": {
+        "pdfPage": 14,
+        "printedTotals": [
+          1214,
+          6882
+        ],
+        "rowSums": [
+          1386,
+          7844
+        ],
+        "printedClassRows": "nine Corn/Grass/Hay/Soybean/Woods categories",
+        "boundary": "表题APHI而内容为Indian正文九类类型；不仅表题疑似交叉，总计也与逐行不同，不能通过简单交换表题就宣布划分修复。"
+      },
+      "selectedBandIV": {
+        "pdfPage": 14,
+        "methods": [
+          "OURS",
+          "AP",
+          "SVM-RFE",
+          "mRMR"
+        ],
+        "totalBandIDCells": 60,
+        "APMaximumIndex": 206,
+        "boundary": "224减列出20带算204，而AP列206；是否原224索引或重编号未说明，不能自动认定206无效或修为别值。其他三列最大196/199/186亦不说明其波长。"
+      }
+    },
+    "protocol": {
+      "finalClassifiers": [
+        "KNN k=3",
+        "one-vs-all LDA",
+        "one-vs-all SVM with RBF"
+      ],
+      "SVMCrossValidation": "5-fold to obtain SVM regularization; complete values and nested/test-isolation not given",
+      "weightLambda": "cross-validation; values/folds not fully specified",
+      "comparisonMethods": [
+        "AP",
+        "mRMR",
+        "SVM-RFE",
+        "full bands"
+      ],
+      "bandCounts": "5–50 in Pavia/Indian;5–30 in APHI curves",
+      "selectedBandsTable": "Indian15 per method, per-class aggregate/which class unspecified",
+      "trainingSizeExperiment": "Indian Pines50bands, same count per class; exact reused split and repeats unknown",
+      "repeatCount": null,
+      "seed": null,
+      "hardware": null,
+      "timing": null
+    },
+    "figureAudit": "Fig1 PDF4页为独立四步框架原图；Fig2/4/6是输入/GT，Fig3/5/7是各三分类器曲线和局部放大，Fig8训练量。§III-D正文引用Fig6训练量，但真实图注/图为Fig8第16页；不把APHI样例当训练量图。",
+    "resultsBoundary": "作者称大部分设置优于AP/mRMR/SVM-RFE、Pavia40带接近全带，SVM-RFE在少带或KNN可竞争。图5/7多数选带仍低于全带水平，不推广任意分类器独立/全部设置占优或必然无损。没有数值性能全表、重复方差/CI/seed或实际运行复现。"
+  },
+  "relationAudit": {
+    "sharedCore": "2016 Eq5/6与2017 Eq6/7共享系数差×像元和L1 hinge选Top-n结构；但期刊印刷类别索引更混乱，不能充作会议原式。",
+    "changedAuthors": "会议五作者Yu Tang/Enlong Fan/Cheng Yan/Xiao Bai/Jun Zhou；期刊六作者Yun Liu/Chen Wang/Yang Wang/Xiao Bai/Jun Zhou/Lu Bai，非相同作者集合。",
+    "changedExperiments": "会议两场景10%和线性SVM、AP/MVPCA；期刊三个场景15%/APHI及KNN/LDA/RBF SVM、AP/mRMR/SVM-RFE与训练量分析。",
+    "priorReferencesRead": "期刊参考28/29是2016GRSL全带法与2015IGARSS TopK方法；这两篇此前已全文核验。期刊35参考未列2016 Tang该题名；没有明确正式扩展声明。",
+    "methodFamilies": "保持原独立方法族ID，仅新增两稿共享且有全文支持的差分权重一类SVM方法标签；不因近似公式合并正式出版物或宣布作者明确扩展。"
+  },
+  "boundary": "稿内全部公式/算法/图/表/参考条目阅读与明确标记的印刷样本数/通道端点算术；没有实际代码、模型运行、原数据划分实验或复现。"
+}

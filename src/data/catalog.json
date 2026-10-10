@@ -64434,41 +64434,46 @@
         "hyperspectral"
       ],
       "doi": "10.1109/igarss.2016.7729714",
-      "representation": "以一类SVM学习光谱样本的判别权重，再按权重选择高光谱波段。",
+      "representation": "当前类样本对各竞争类u=(w_current-w_competing)逐元素乘x；最小化所有类对hinge与lambda||v||1，取最大有符号权重波段重训。单带条件是总分可分的更强启发式，标准solver等价与v约束未充分说明。",
       "tags": [],
-      "summary": "提出基于一类SVM的判别加权选带方法，利用光谱类内/类间信息减少高光谱波段冗余。",
-      "input": "高光谱影像光谱样本与候选波段。",
-      "output": "判别波段权重及选定波段集合。",
-      "mechanism": "以一类SVM目标优化带权光谱表示，按学习到的权重排序和筛选波段。",
-      "readingNote": "Griffith作者稿摘要与局部正文核验；正式IGARSS2016:2765–2768，未标全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "summary": "监督式逐类选带：先训练初始线性SVM，将当前类与竞争类系数差乘像元强度作为判别向量，使用作者称一类SVM的L1 hinge目标求波段权重并取Top-n，再训练分类器。",
+      "input": "带标签Pavia Centre102带九类和Indian Pines原224带/保留九类；删[104–108]/[150–163]/220，若按原224及闭区间算余204，实际载荷/索引未取得。",
+      "output": "每类判别权重v、Top-n原始波段子集及其线性SVM分类器；不输出异常检测或新混合谱特征。",
+      "mechanism": "当前类样本对各竞争类u=(w_current-w_competing)逐元素乘x；最小化所有类对hinge与lambda||v||1，取最大有符号权重波段重训。单带条件是总分可分的更强启发式，标准solver等价与v约束未充分说明。",
+      "readingNote": "公开AM全部5PDF页（1封面+4正文/参考）、6式/4图及全部表/10引用条目通读和视觉复核。所引作品未全部通读，未运行复现。旧PDF链实际HTML壳，已从机构完整ORIGINAL一页恢复PDF；正式全文未得，封面Fun与正式Jun错字留证。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "citation": "@inproceedings{weighted_band_selection_igarss_2016,\n  title = {Discriminative weighted band selection via one-class SVM for hyperspectral imagery},\n  author = {Yu Tang and Enlong Fan and Cheng Yan and Xiao Bai and Jun Zhou},\n  booktitle = {2016 IEEE International Geoscience and Remote Sensing Symposium},\n  year = {2016},\n  pages = {2765--2768},\n  doi = {10.1109/igarss.2016.7729714}\n}\n",
       "library": {
         "categoryIds": [
           "spectral-band-selection",
-          "svm-margin-band-weighting"
+          "spectral-band-weighting",
+          "land-cover-classification",
+          "svm-margin-band-weighting",
+          "differential-weight-one-class-svm"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "标题和作者稿摘要直接指向高光谱影像波段选择；分类标签保留为选带及SVM机制。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用一类SVM学习判别波段权重并选择高光谱波段？",
-        "datasets": "作者稿摘要提及高光谱影像实验；数据集名称、规模与划分待完整正文核验。",
-        "experimentSetting": "作者稿摘要及方法局部核验；未逐项复核全部参数、比较基线和结果表。",
-        "conclusions": "作者报告一类SVM加权选带有效；具体性能和跨数据集稳定性待全文。",
-        "limitations": "IGARSS短文全文尚未逐页核验；不将摘要方法扩展为所有一类分类任务。",
+        "relationNote": "直接光学高光谱遥感地物分类的监督选带；一类SVM只是权重优化模型，不扩称异常检测任务。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何利用正确类与竞争类的系数差和L1稀疏权重，选择有分类判别力的原始波段？",
+        "datasets": "Pavia ROSIS2002/1096×1096/102带九类，样本表行和/总计748训练6708测试一致。Indian AVIRIS1992/145×145/原224、九类，训练924一致，测试行和8310而总计7172；原文与算术分列，实际划分未核。",
+        "experimentSetting": "接受稿全部5PDF页（封面+4正文）、6式/4图/3表含伪码/10引用读完；两数据每类随机10%，初始和最终linear SVM，lambda及SVM正则用交叉验证，折数/值待；比较AP/MVPCA/全带，5–50带曲线。",
+        "conclusions": "作者报告选带比AP/MVPCA更有效并随带数接近全带；Fig2/4都印Indian图注，Fig2实际数据身份待，不能静默改为Pavia或估出精确OA/AA/κ。无独立框架图，Table1伪码不当图。",
+        "limitations": "正式IEEE2765–2768全文未得；旧链接200只网页壳，主链改机构REST PDF，旧源保留。封面/item写Zhou, Fun而正文/IEEE/Crossref为Griffith Jun Zhou，目录保留正式姓名。L1目标solver映射、权重约束/并列/多类不同子集使用、完整参数/seed/空间划分/原GT/代码与复现待。",
         "dataLinks": [],
         "evidence": [
           {
-            "url": "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
-            "checkedAt": "2026-10-10",
-            "level": "Griffith作者稿摘要与正文局部",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content",
+            "checkedAt": "2026-10-11",
+            "level": "原始机构接受稿全文对此前局部记录的细化",
             "supports": [
-              "摘要明确高光谱影像判别加权选带及一类SVM机制。",
-              "正文局部支持按波段权重筛选并用于高光谱任务。"
+              "公开AM全部5PDF页（1封面+4正文/参考）、6式/4图及全部表/10引用条目通读和视觉复核。所引作品未全部通读，未运行复现。旧PDF链实际HTML壳，已从机构完整ORIGINAL一页恢复PDF；正式全文未得，封面Fun与正式Jun错字留证。",
+              "Pavia ROSIS2002/1096×1096/102带九类，样本表行和/总计748训练6708测试一致。Indian AVIRIS1992/145×145/原224、九类，训练924一致，测试行和8310而总计7172；原文与算术分列，实际划分未核。",
+              "接受稿全部5PDF页（封面+4正文）、6式/4图/3表含伪码/10引用读完；两数据每类随机10%，初始和最终linear SVM，lambda及SVM正则用交叉验证，折数/值待；比较AP/MVPCA/全带，5–50带曲线。",
+              "正式IEEE2765–2768全文未得；旧链接200只网页壳，主链改机构REST PDF，旧源保留。封面/item写Zhou, Fun而正文/IEEE/Crossref为Griffith Jun Zhou，目录保留正式姓名。L1目标solver映射、权重约束/并列/多类不同子集使用、完整参数/seed/空间划分/原GT/代码与复现待。"
             ]
           },
           {
@@ -64477,6 +64482,40 @@
             "level": "IEEE DOI书目",
             "supports": [
               "正式题名、作者、IGARSS2016身份和页码2765–2768。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "历史原PDF路径失效为HTML壳",
+            "supports": [
+              "当前HTTP200但755字节HTML；不是本轮阅读全文使用的PDF。机构API原item完整ORIGINAL唯一本文件反链恢复。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_accepted_manuscript_full_text_version_scoped",
+            "supports": [
+              "监督式逐类选带：先训练初始线性SVM，将当前类与竞争类系数差乘像元强度作为判别向量，使用作者称一类SVM的L1 hinge目标求波段权重并取Top-n，再训练分类器。",
+              "当前类样本对各竞争类u=(w_current-w_competing)逐元素乘x；最小化所有类对hinge与lambda||v||1，取最大有符号权重波段重训。单带条件是总分可分的更强启发式，标准solver等价与v约束未充分说明。",
+              "作者报告选带比AP/MVPCA更有效并随带数接近全带；Fig2/4都印Indian图注，Fig2实际数据身份待，不能静默改为Pavia或估出精确OA/AA/κ。无独立框架图，Table1伪码不当图。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7729714/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "完整IEEE原摘要、五作者顺序及Jun Zhou/Griffith，正式2765–2768已核；机构Fun拼写不同。IEEE正式PDF202空。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/igarss.2016.7729714",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "正式题名、Yu Tang, Enlong Fan, Cheng Yan, Xiao Bai, Jun Zhou；2016/2765–2768。"
             ]
           }
         ],
@@ -64487,21 +64526,32 @@
             "url": "https://doi.org/10.1109/igarss.2016.7729714",
             "doi": "10.1109/igarss.2016.7729714",
             "year": 2016,
-            "relation": "正式IGARSS2016:2765–2768。"
+            "relation": "正式元数据及IEEE完整原摘要已核，正式PDF未独立取得。2765–2768四页。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "weighted-band-selection-igarss-2016-source",
-            "type": "Griffith作者稿",
+            "type": "机构接受稿（AM）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content",
+            "year": 2016,
+            "relation": "本公开AM全5页与全部公式/图表已读，原页码仅对本稿；正式版差异待。item/封面Fun拼写不覆盖正文与正式Jun。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
+          },
+          {
+            "id": "weighted-band-selection-igarss-2016-legacy-source-link",
+            "type": "历史机构PDF路径（当前HTML壳）",
             "url": "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
             "year": 2016,
-            "relation": "作者稿；局部页码只对应本PDF。"
+            "relation": "原发现路径保留；本轮200网页壳非全文，当前真实PDF由同item的唯一ORIGINAL bitstream核对取得。",
+            "metadataStatus": "legacy_link_html_shell_verified"
           }
         ],
         "methodFamilyId": "weighted-band-selection-igarss-2016",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "rationale": "完整接受稿确认逐类系数差×像元与L1 hinge求权重、Top-n子集及地物分类；补差分一类SVM方法和波段加权任务，区分一般间隔权重/异常检测。正式作者、旧PDF修链和实验表/印刷索引问题分源留证，不合并未声明扩展的方法族。",
           "evidenceFields": [
             "title",
             "summary",
@@ -64510,12 +64560,19 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "531267d7d17832fd818106e1b6316dddae8bf107233dfd96d111075ec0b2fe7e",
+          "evidenceDigest": "eac1af9c61ed6721b31c47f667451b680bb0bbe42c250f53aeeb67b7b03c9902",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf",
-            "https://doi.org/10.1109/igarss.2016.7729714"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content",
+            "https://api.crossref.org/works/10.1109/igarss.2016.7729714",
+            "https://xplorestaging.ieee.org/document/7729714/"
           ]
         }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "恢复真实机构AM PDF后全5页/四图视觉核验：Fig1/3输入与GT、Fig2/4准确率曲线，Table1为伪码，不存在独立方法框架图。旧路径200只是HTML壳，保留历史来源。",
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content",
+        "checkedAt": "2026-10-11"
       }
     },
     {
@@ -65373,40 +65430,45 @@
         "hyperspectral"
       ],
       "doi": "10.1142/S0219691317500655",
-      "representation": "计算正负类SVM权重差形成差分权重，再用一类SVM选出判别波段。",
+      "representation": "先训练one-vs-all分类器，以系数差×像元作u，求sum hinge(1-vᵀu)+lambda||v||1并选最大权重。Eq1非hinge印式、Eq2真类/竞争类及Eq6对y_i求和与i∈D_c冲突均保留；不把2016清晰索引或常规solver选项当期刊已核代码。",
       "tags": [],
-      "summary": "提出监督高光谱选带，降低计算/存储并保留判别谱段。",
-      "input": "带标签高光谱样本和候选波段。",
-      "output": "判别波段与分类结果。",
-      "mechanism": "训练阶段累计正负类权重差，以大差分权重选带，并利用标签增强分类。",
-      "readingNote": "Griffith作者稿摘要和Scispace/DBLP元数据核验；正式15(6):1750065，未标全文。",
+      "summary": "监督式差分权重选带，以逐类分类器系数差和像元强度构造判别向量，经L1 hinge目标学习类波段权重，选择高权重子集；使用KNN/LDA/RBF SVM在三场景评测。",
+      "input": "Pavia Centre102带九类、Indian Pines原224带保留九类及APHI210×150×64/455–805nm。Indian删列出的20带算204只是端点算术；表题、类别与样本总计存在冲突。",
+      "output": "每类波段权重和Top-n波段子集，及下游地物分类结果；TableIV给四方法各15个波段ID，所属类/索引版本未知。",
+      "mechanism": "先训练one-vs-all分类器，以系数差×像元作u，求sum hinge(1-vᵀu)+lambda||v||1并选最大权重。Eq1非hinge印式、Eq2真类/竞争类及Eq6对y_i求和与i∈D_c冲突均保留；不把2016清晰索引或常规solver选项当期刊已核代码。",
+      "readingNote": "公开AM全部18PDF页（1封面+17正文/参考）、7式/8图及全部表/35引用条目通读和视觉复核。所引作品未全部通读，未运行复现。AM17内容页与正式1750065文章号分开；表题/总计及印刷索引冲突留证，正式全文未取得。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "author_pdf_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-band-selection",
+          "spectral-band-weighting",
           "land-cover-classification",
-          "svm-margin-band-weighting"
+          "svm-margin-band-weighting",
+          "differential-weight-one-class-svm"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要明确高光谱分类和一类SVM选带。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用差分SVM权重选择判别光谱波段？",
-        "datasets": "摘要报告三个公开数据集；名称和划分待全文。",
-        "experimentSetting": "作者稿摘要和方法开头局部核验；未逐项复核表格。",
-        "conclusions": "三个公开数据集实验支持方法有效性；不补具体精度。",
-        "limitations": "参数敏感性、代码和数据入口待核。",
+        "relationNote": "直接光学高光谱遥感地物分类的监督选带；一类SVM只是权重优化模型，不扩称异常检测任务。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何利用正确类与竞争类的系数差和L1稀疏权重，选择有分类判别力的原始波段？",
+        "datasets": "Pavia1096×1096/1.3m，TableI印1118/6338但行和1116/7040。TableII题Indian却列APHI六类700/1600；TableIII题APHI却列Indian九类，印1214/6882、行和1386/7844。仅留原值与疑似表题交叉，未自行交换或改成已核划分。",
+        "experimentSetting": "接受稿全18PDF页（1封面+17正文/参考）、7式/8图/4表/35引用条目读完；Pavia/Indian称随机15%，实际表比例不全吻合。KNN k3、OVA LDA和RBF SVM/5折正则验证；AP/mRMR/SVM-RFE/全带，另Indian50带训练量实验。",
+        "conclusions": "作者报告大部分设置有效、Pavia40带接近全带，SVM-RFE在少带或KNN可竞争；没有精确性能全表/CI，不推广所有分类器/每个设置无损。训练量应指Fig8，正文错指Fig6；AP列206的原始或删带后编号不明。Fig1第4页原框架图已核。",
+        "limitations": "正式World Scientific15(06):1750065全文403，文章号不是页数；Crossref登记完整摘要与六作者/Jun Griffith已核，AM单位差异保留。印刷索引/初始SVM式、L1 solver等价、负权重/并列、表题/总计/通道编号、真实划分/验证隔离、seed/统计、代码原数据与复现待。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content",
-            "checkedAt": "2026-10-10",
-            "level": "作者稿摘要",
+            "checkedAt": "2026-10-11",
+            "level": "原始机构接受稿全文对此前局部记录的细化",
             "supports": [
-              "差分权重、一类SVM和三个公共高光谱数据集。"
+              "公开AM全部18PDF页（1封面+17正文/参考）、7式/8图及全部表/35引用条目通读和视觉复核。所引作品未全部通读，未运行复现。AM17内容页与正式1750065文章号分开；表题/总计及印刷索引冲突留证，正式全文未取得。",
+              "Pavia1096×1096/1.3m，TableI印1118/6338但行和1116/7040。TableII题Indian却列APHI六类700/1600；TableIII题APHI却列Indian九类，印1214/6882、行和1386/7844。仅留原值与疑似表题交叉，未自行交换或改成已核划分。",
+              "接受稿全18PDF页（1封面+17正文/参考）、7式/8图/4表/35引用条目读完；Pavia/Indian称随机15%，实际表比例不全吻合。KNN k3、OVA LDA和RBF SVM/5折正则验证；AP/mRMR/SVM-RFE/全带，另Indian50带训练量实验。",
+              "正式World Scientific15(06):1750065全文403，文章号不是页数；Crossref登记完整摘要与六作者/Jun Griffith已核，AM单位差异保留。印刷索引/初始SVM式、L1 solver等价、负权重/并列、表题/总计/通道编号、真实划分/验证隔离、seed/统计、代码原数据与复现待。"
             ]
           },
           {
@@ -65415,6 +65477,24 @@
             "level": "Crossref",
             "supports": [
               "正式题名、作者、卷期和文章号。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_accepted_manuscript_full_text_version_scoped",
+            "supports": [
+              "监督式差分权重选带，以逐类分类器系数差和像元强度构造判别向量，经L1 hinge目标学习类波段权重，选择高权重子集；使用KNN/LDA/RBF SVM在三场景评测。",
+              "先训练one-vs-all分类器，以系数差×像元作u，求sum hinge(1-vᵀu)+lambda||v||1并选最大权重。Eq1非hinge印式、Eq2真类/竞争类及Eq6对y_i求和与i∈D_c冲突均保留；不把2016清晰索引或常规solver选项当期刊已核代码。",
+              "作者报告大部分设置有效、Pavia40带接近全带，SVM-RFE在少带或KNN可竞争；没有精确性能全表/CI，不推广所有分类器/每个设置无损。训练量应指Fig8，正文错指Fig6；AP列206的原始或删带后编号不明。Fig1第4页原框架图已核。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1142/S0219691317500655",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata_and_registered_complete_abstract",
+            "supports": [
+              "正式题名、Yun Liu, Chen Wang, Yang Wang, Xiao Bai, Jun Zhou, Lu Bai；2017-11/15(06):1750065，登记完整摘要及Jun Griffith单位；出版社直接页面403，不当独立正式全文。"
             ]
           }
         ],
@@ -65425,22 +65505,25 @@
             "url": "https://doi.org/10.1142/S0219691317500655",
             "doi": "10.1142/S0219691317500655",
             "year": 2017,
-            "relation": "正式2017记录；作者稿与正式版局部差异待核。"
+            "relation": "正式元数据及Crossref登记完整摘要已核，正式PDF未独立取得。15(06):1750065文章号不推页数。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "differential-band-selection-ijwmip-2017-source",
-            "type": "作者/机构来源",
+            "type": "机构接受稿（AM）",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content",
             "doi": "10.1142/S0219691317500655",
             "year": 2017,
-            "relation": "作者稿或公开页面；页码只对应来源文件。"
+            "relation": "本公开AM全18页与全部公式/图表已读，原页码仅对本稿；正式版差异待。Fig1第4页，样本表交叉/行和及公式索引疑点不静默修正。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "differential-svm-band-selection",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "完整接受稿确认逐类系数差×像元与L1 hinge求权重、Top-n子集及地物分类；补差分一类SVM方法和波段加权任务，区分一般间隔权重/异常检测。正式作者、旧PDF修链和实验表/印刷索引问题分源留证，不合并未声明扩展的方法族。",
           "evidenceFields": [
             "title",
             "summary",
@@ -65449,14 +65532,43 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "2d872fada99efa0e18eeb4af22af668d33901c9b8f156037695f08dd7eb77cc9",
+          "evidenceDigest": "e644bc404a3abc8f0be09d53dc3ffc2876a5df37c28544fb0bb2f27abea13b2a",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content",
             "https://api.crossref.org/works/10.1142/S0219691317500655"
           ]
         }
       },
-      "citation": "@article{differential_band_selection_ijwmip_2017,\n  title = {Differential weights-based band selection for hyperspectral image classification},\n  author = {Yun Liu and Chen Wang and Yang Wang and Xiao Bai and Jun Zhou and Lu Bai},\n  year = {2017},\n  doi = {10.1142/S0219691317500655}\n}\n"
+      "citation": "@article{differential_band_selection_ijwmip_2017,\n  title = {Differential weights-based band selection for hyperspectral image classification},\n  author = {Yun Liu and Chen Wang and Yang Wang and Xiao Bai and Jun Zhou and Lu Bai},\n  journal = {International Journal of Wavelets, Multiresolution and Information Processing},\n  year = {2017},\n  volume = {15},\n  number = {6},\n  pages = {1750065},\n  doi = {10.1142/S0219691317500655}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content",
+          "figureLabel": "Fig. 1（公开AM）",
+          "caption": "训练逐类分类器并取得超平面系数，以类间系数差优化波段权重，选择Top-n波段，再用于地物分类。",
+          "verificationNote": "核对公开AM PDF第4页（正文第3页）Fig1原图、四阶段文字及箭头；整图含立方体、两权重模块、Top-n与分类结果，原页1855×2400裁切，未重绘。只对应本接受稿，不称正式版图号/印刷索引已校正。",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderScaleTo": 2400,
+            "renderedPagePixels": [
+              1855,
+              2400
+            ],
+            "pixelBox": [
+              390,
+              1080,
+              1470,
+              1650
+            ]
+          },
+          "path": "figures/differential-band-selection-ijwmip-2017/framework.png",
+          "width": 1080,
+          "height": 570,
+          "verifiedAt": "2026-10-11",
+          "sha256": "d1e1bd1d9e815f7810ab1e674e7e6c9a287bbff255fe736953e4eb3e51d6e325",
+          "attribution": "Yun Liu, Chen Wang, Yang Wang, Xiao Bai, Jun Zhou, Lu Bai · IJWMIP 2017公开接受稿"
+        }
+      ]
     },
     {
       "id": "joint-spectral-spatial-sparse-coding-jstars-2017",
@@ -82026,6 +82138,7 @@
         "urban-tree-fusion",
         "waveform-hsi-fusion",
         "wavelet-multiview-active-whispers-2014",
+        "weighted-band-selection-igarss-2016",
         "wjcr-hyperspectral-2015",
         "worldview3-prelaunch-information-2014",
         "wst-ncut-trees",
@@ -82075,6 +82188,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2016/2017差分权重两稿全文确认实际波段权重输出与多类地物评测；仅同步本轮关联，类别定义不变。"
         }
       ]
     },
@@ -87026,6 +87144,11 @@
           "date": "2026-10-11",
           "action": "definition_refined",
           "reason": "2015/2016全文分别支持TopK子集与全部波段两种用法，旧定义强制选带会误述2016；不改变另两篇摘要级条目的方法关联或阅读状态。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "既有2016/2017两关联全文细化为初始逐类SVM系数差与L1 hinge一类权重优化；新增精确方法标签区分，保留共用SVM权重关联与其余两稿。"
         }
       ]
     },
@@ -87360,14 +87483,42 @@
       "createdAt": "2026-10-11",
       "rationale": "2015与2016公开SVM稿全文均实际输出波段权重，其中2016明确保留全部波段；任务标签由原文边界形成，不预设数量。",
       "evidencePaperIds": [
+        "differential-band-selection-ijwmip-2017",
         "svm-band-weighting-lgrs-2016",
-        "svm-margin-band-igarss-2015"
+        "svm-margin-band-igarss-2015",
+        "weighted-band-selection-igarss-2016"
       ],
       "history": [
         {
           "date": "2026-10-11",
           "action": "created",
           "reason": "两篇原稿逐项核验实际波段向量输出；2015可兼选带，2016不强制选子集，仅关联本轮两篇。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2016/2017差分权重两稿全文确认实际波段权重输出与多类地物评测；仅同步本轮关联，类别定义不变。"
+        }
+      ]
+    },
+    {
+      "id": "differential-weight-one-class-svm",
+      "name": "差分权重一类SVM选带",
+      "dimension": "method",
+      "definition": "以当前类与竞争类的初始分类器系数差乘像元强度构造判别向量，使用作者称一类SVM的L1 hinge目标学习类波段权重，再选最大权重子集重训。明确带标签的监督过程；区别2015直接分数正则权重、2016全带样本平衡及实际异常检测。印刷索引与solver等价须分稿核验。",
+      "status": "confirmed",
+      "color": "#80939b",
+      "createdAt": "2026-10-11",
+      "rationale": "IGARSS2016与IJWMIP2017两份完整接受稿公式/方法支持，共享结构有证但不据此声称明确扩展或合并方法族。",
+      "evidencePaperIds": [
+        "differential-band-selection-ijwmip-2017",
+        "weighted-band-selection-igarss-2016"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "全文确认系数差×像元、L1 hinge及Top-n机制；仅本轮两稿关联，不推定所有一类SVM均用于此机制。"
         }
       ]
     }

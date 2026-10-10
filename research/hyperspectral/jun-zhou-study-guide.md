@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。159条为摘要级核验、29条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。157条为摘要级核验、31条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -199,7 +199,7 @@
 | 2016 | [A Manifold Alignment Approach for Hyperspectral Image Visualization With Natural Color](https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content) | 高光谱彩色可视化 | 正式发表 | 摘要核验 |
 | 2016 | [Band Weighting via Maximizing Interclass Distance for Hyperspectral Image Classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/dd090b30-603d-5c6c-b792-39e0ba7f9e0c/content) | 光谱波段加权、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2016 | [CRF learning with CNN features for hyperspectral image segmentation](https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf) | 光谱图像语义分割、光谱表征预训练 | 正式发表 | 摘要核验 |
-| 2016 | [Discriminative weighted band selection via one-class SVM for hyperspectral imagery](https://research-repository.griffith.edu.au/bitstream/10072/339315/1/TangPUB1960.pdf) | 光谱波段选择 | 正式发表 | 摘要核验 |
+| 2016 | [Discriminative weighted band selection via one-class SVM for hyperspectral imagery](https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content) | 光谱波段选择、光谱波段加权、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2016 | [Nonnegative matrix factorization with endmember sparse graph learning for hyperspectral unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/4256ac55-5a64-5482-bcaf-fd0d51e00bf0/content) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2016 | [Nonnegative-Matrix-Factorization-Based Hyperspectral Unmixing With Partially Known Endmembers](https://research-repository.griffith.edu.au/bitstream/10072/100457/1/TongPUB2302.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2016 | [Structured Discriminative Nonnegative Matrix Factorization for hyperspectral unmixing](https://scispace.com/papers/structured-discriminative-nonnegative-matrix-factorization-218fqxy2s4) | 光谱解混 | 正式发表 | 摘要核验 |
@@ -207,7 +207,7 @@
 | 2017 | [Combining Unmixing and Deep Feature Learning for Hyperspectral Image Classification](https://fahimirfanalam.github.io/publication/combining-unmixing-and-deep-feature-learning-for-hyperspectral-image-classification/) | 光谱解混、光谱表征预训练、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2017 | [Deep Residual Convolutional Neural Network for Hyperspectral Image Super-Resolution](https://research-repository.griffith.edu.au/bitstream/10072/370475/1/WangPUB2842.pdf) | 光谱超分辨率、光谱重建 | 正式发表 | 摘要核验 |
 | 2017 | [Dictionary Learning-Based Feature-Level Domain Adaptation for Cross-Scene Hyperspectral Image Classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2017 | [Differential weights-based band selection for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2017 | [Differential weights-based band selection for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content) | 光谱波段选择、光谱波段加权、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2017 | [Exploring Structural Consistency in Graph Regularized Joint Spectral-Spatial Sparse Coding for Hyperspectral Image Classification](https://researchportalplus.anu.edu.au/en/publications/exploring-structural-consistency-in-graph-regularized-joint-spect/) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2017 | [Material Based Boundary Detection in Hyperspectral Images](https://doi.org/10.1109/dicta.2017.8227462) | 待分类 | 正式发表 | 摘要核验 |
 | 2017 | [Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery](https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf) | 光谱解混 | 正式发表 | 摘要核验 |

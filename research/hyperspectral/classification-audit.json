@@ -353,7 +353,9 @@
     "zhou-62-hsi-2023",
     "zhou-67-hsi-2023",
     "attend-in-bands-jstars-2019",
-    "svm-band-weighting-lgrs-2016"
+    "svm-band-weighting-lgrs-2016",
+    "weighted-band-selection-igarss-2016",
+    "differential-band-selection-ijwmip-2017"
   ],
   "sourceChecks": [
     {
@@ -641,6 +643,26 @@
         "逐类线性SVM先学习每训练样本的波段平衡向量，再求每类共享波段权重并重训；保留全部波段分类。表中Top5只是重要性展示，不是严格子集选带。",
         "初始binary linear SVM；v=1时最大化带gamma正则的修改分数求每样本b_i，再用含theta全一正则与hinge的Eq3求类v，最后加权重训。Eq2可见额外未定义T且未含y_i；梯度最大化方向、负例重训加权与Eq4括号待实现，不能称已证一般类间欧氏距离最大化。",
         "作者总准确率Indian91.5%、Salinas99.0%；较FEWT高0.3/0.1百分点，未给置信区间，部分单类落后。按打印测试数加权为91.77216/98.62408，仅表算术，真实聚合待。耗时20.24/6.08s，两表仅快于BFO；未定义阶段，不当FPS。"
+      ]
+    },
+    {
+      "paperId": "weighted-band-selection-igarss-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/782c7149-b15d-59ca-807e-37cfe2d74cc2/content",
+      "level": "primary_institutional_accepted_manuscript_full_text_version_scoped",
+      "supports": [
+        "监督式逐类选带：先训练初始线性SVM，将当前类与竞争类系数差乘像元强度作为判别向量，使用作者称一类SVM的L1 hinge目标求波段权重并取Top-n，再训练分类器。",
+        "当前类样本对各竞争类u=(w_current-w_competing)逐元素乘x；最小化所有类对hinge与lambda||v||1，取最大有符号权重波段重训。单带条件是总分可分的更强启发式，标准solver等价与v约束未充分说明。",
+        "作者报告选带比AP/MVPCA更有效并随带数接近全带；Fig2/4都印Indian图注，Fig2实际数据身份待，不能静默改为Pavia或估出精确OA/AA/κ。无独立框架图，Table1伪码不当图。"
+      ]
+    },
+    {
+      "paperId": "differential-band-selection-ijwmip-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content",
+      "level": "primary_institutional_accepted_manuscript_full_text_version_scoped",
+      "supports": [
+        "监督式差分权重选带，以逐类分类器系数差和像元强度构造判别向量，经L1 hinge目标学习类波段权重，选择高权重子集；使用KNN/LDA/RBF SVM在三场景评测。",
+        "先训练one-vs-all分类器，以系数差×像元作u，求sum hinge(1-vᵀu)+lambda||v||1并选最大权重。Eq1非hinge印式、Eq2真类/竞争类及Eq6对y_i求和与i∈D_c冲突均保留；不把2016清晰索引或常规solver选项当期刊已核代码。",
+        "作者报告大部分设置有效、Pavia40带接近全带，SVM-RFE在少带或KNN可竞争；没有精确性能全表/CI，不推广所有分类器/每个设置无损。训练量应指Fig8，正文错指Fig6；AP列206的原始或删带后编号不明。Fig1第4页原框架图已核。"
       ]
     }
   ]
