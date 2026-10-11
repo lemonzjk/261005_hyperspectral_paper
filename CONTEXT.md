@@ -7,8 +7,9 @@
 - HS3D Atlas 三维专题与独立高光谱总库。总库覆盖整个光学高光谱领域，含二维成像、处理、学习及应用；按覆盖矩阵推进，不以数量结束。
 - 仅本地预览，不推送、不发布；检查通过后提交。caveman full、中文简洁；代码/文档正常表达。
 - 两页共享时间轴、卡片、筛选、详情及CSS；三维13方向与范围不变。
-- 调研优先目录完整；摘要级可结项，付费全文不追索，细节允许留白/未获取。目录缺口与阅读深度分开报告，适用后续全部论文。
+- 调研优先目录完整；免费PDF/框架图要获取并整理信息；付费且无公开版本或确实不可获取才留白。目录与资料待办分别报告，不要求复现。
 - 新调研只收直接高光谱，不收纯多光谱关联；直接处理/重建高光谱的融合论文可收录。既有目录仍含旧范围条目。
+- 新来源仅CV/高光谱领域顶会顶刊及arXiv，周峻专项同样适用；其他会议期刊不收录，矩阵场所须按新范围筛选。
 
 ## 运行与检查
 
@@ -35,5 +36,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：查漏，不增笔记。周峻188条（HSI181/关联7，含1摘要），134摘要级/54全文级为深度统计，不是134条必补全文。ORCID1、DBLP10、Scholar9、arXiv8待核有重叠，CV3未确认发表，作者目录未闭环。arXiv姓名531均映射/逐审。jun-zhou.md只维护目录覆盖与待核；archive/jun-zhou/归档日志与合并笔记；sources冻结证据保留，reproduction/为可选检查。
+- 作者优先，不增笔记。周峻旧范围188条（HSI181/关联7，含1摘要），134摘要/54全文；ORCID1、DBLP10、Scholar9、arXiv8待核有重叠，CV3未确认发表。姓名531均映射/逐审，目录未闭环。jun-zhou.md维护待办；archive/jun-zhou/归档日志/笔记；sources留证，reproduction/可选。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后从28起，非年度全量。
