@@ -32,5 +32,5 @@
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。91摘要/90全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
-- Griffith个人profile7205完整387关联项，175源项匹配168目录ID，8继承未决，DDF/FAT/SA-Net命名基准均RGB/MS；另Dualmamba（IGARSS）/土壤碳SSTR（SSRN）2直接HSI来源外候选，指定arXiv查询无对应版本。快照闭环非作者全集，75已录HSI有PDF链接，原31资料队列已全读；NSP/KUM单篇机构待核。原31项已读21AM294页/6VoR92页/4未标版本机构稿50页，66原图；另甘蔗抗病评级v1全读10页，纠正地物标签；DSAB三稿仅关联方法，实验不合并。两编辑记录仅新书目/访问证据，正文未得、范围仍待。arXiv新增三查询已核，宽词机制/其他变体待。固定预印本与未读正式版的范围决定独立。
-- 共同作者43书目已对照（36已录/5继承排除/1在审/1占位）。SS non-Linear v2全读17页/两原图，窗口/精度/效率冲突分列。勘误图版仍待。HSIGene转全领域候选，v2下载未读。SMDS最终15页未读；三未决无正文，WHU波段待。作者专项后按白名单推进全领域；WHISPERS/IGARSS等旧候选不再作普通总库扩充目标。其余摘要级/公开资料继续补齐，受限项注明。
+- Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
+- 共同作者Xiong43项已对照；Jia新版UNSW438书目中17条Zhou J映射13已录/2暂排/1未决，ORCID212组差集25仅一旧多光谱，不恢复。两太阳能期刊AM选读11/34页；2024两集RGB，2026两集RGB、DualGMS通道未明；2022会议仍待。SS non-Linear v2已读17页/两图；勘误图、HSIGene v2、SMDS最终及其他免费资料待整理，作者后推进领域矩阵。

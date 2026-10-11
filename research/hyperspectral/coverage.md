@@ -1,8 +1,8 @@
 # 高光谱检索覆盖
 
-查询快照截止：2026-10-11；范围更新：2026-10-12。状态：持续调研。
+系统查询快照截止：2026-10-11；作者书目与范围续核：2026-10-12。状态：持续调研。
 
-现有目录已按来源白名单及高光谱范围清理，周峻既有181条直接高光谱保留，作者例外仅放宽来源。检索状态仅证明记录中指定官方目录、分页和关键词的实际覆盖，不代表领域全集已收齐。旧范围的扫描保留为历史证据，不列为后续全领域检索目标。 本轮最新查询快照至2026-10-11；各既有查询仍以其原始日期、分页和证据为准，不表示旧年度记录已统一重查。
+现有目录已按来源白名单及高光谱范围清理，周峻既有181条直接高光谱保留，作者例外仅放宽来源。检索状态仅证明记录中指定官方目录、分页和关键词的实际覆盖，不代表领域全集已收齐。旧范围的扫描保留为历史证据，不列为后续全领域检索目标。 本轮新增共同作者书目快照至2026-10-12；各既有查询仍以其原始日期、分页和证据为准，不表示旧年度记录已统一重查。
 
 当前来源白名单与作者例外见 [收录政策](../../src/data/collection-policy.json)，逐项清理决定见 [清理审计](catalog-cleanup.json)。
 
@@ -201,6 +201,8 @@
 | Jun Zhou · anomaly extraction and reflectance estimation | 2019 | IOACED ICA OSP anomalous component、SBE shapelet dichromatic reflectance、Griffith institutional material backlog；16页AM＋21页未标版本机构稿全文；ANU30页仅1/2/10选读，原31队列完成但非作者/领域全集。 | 未单列 / 2 / 2 | 两稿37页/四新图一换版，原31资料队列闭环 | 作者查漏、候选身份/范围与正式版本仍未闭环。；周峻其余92摘要级的材料可访问性与整理继续；原31完成不等于全部免费资料完成。 |
 | Jun Zhou · author initial and reflectance query checks | 2026 | au:"J. Zhou" AND (all:hyperspectral OR all:"spectral imaging" OR all:reflectance)、au:Zhou AND abs:reflectance、au:"Jun Zhou" AND all:reflectance；19/19、9/9及1000+826/1826；ID比较完整，1826摘要不声称逐读。 | 未单列 / 19 / 19 | 简称19摘要无直接HSI；1826摘要字段集合为旧1845子集 | 其他姓名/拼写/无谱词检索、正式版和作者全集未闭环。；宽词机制只有经验字面比较，未确认索引词干算法，不把大集合当逐篇范围决定。 |
 | Jun Zhou · SS non-Linear Model preprint | 2024 | 2412.00283v2、bidirectional spectral classification、SS non-Linear Model；17/17实际逐页全文，v1未读。 | 未单列 / 1 / 1 | v2全文17页/两原图；窗口/精度/效率冲突分列 | v1与正式版本未核；作者其余91摘要级材料继续整理。 |
+| Jun Zhou · Xiuping Jia bibliography crosscheck | 1992–2026 | Xiuping Jia、Zhou J、0000-0001-9916-6382、DOI and arXiv version crosswalk；单页返回438项；ORCID212组213书目，无后续页标记。17简称书目全部对照，25差集完整贡献者已取。 | 未单列 / 17 / 16 | 17源项映射13已录/2继承排除/1未决；ORCID差集仅一旧多光谱 | 来源页面缩写不独立证明身份或全集；两作者列表导出差异按正式登记保留。；2022会议实际输入及作者其他来源/正式版仍待。 |
+| Jun Zhou · solar panel primary input scope | 2024–2026 | 10.1109/TIP.2023.3336170、10.1109/TGRS.2026.3660888、RGB、GloSoFarID、DualGMS；TIP3/17、TGRS8/17实际读页分别记录；不是年度目录查询。 | 未单列 / 2 / 2 | 两旧排除补原文；2026 DualGMS通道缺口与2022会议范围保留 | 2026 DualGMS原文所读段未明确通道，不假定与2024相同划分。；2022会议原稿输入未取得；正式VoR未读，相关性不证明版本相同。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 

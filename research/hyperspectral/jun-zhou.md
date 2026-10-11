@@ -48,7 +48,7 @@ SSUMamba和SSRT两份免费Griffith接受稿共28页已逐页全文阅读，六�
 
 固定arXiv2405.01726v7、2401.03885v2各13页已下载，并逐页与已读AM正文对应；页2–13文本及同区域渲染一致，首页归一空白文本仅多版本戳，但字体像素仍有差异，首页作者/机构/摘要另作视觉核对。不重复记为新增独立全文，不声称PDF逐字节相同、SSUMamba v1或最终VoR已读。
 
-共同作者Fengchao Xiong当前公开书目中完整BibTeX含Jun Zhou的43条已逐一对照：36条匹配已有目录、5条继承既有排除、1条仍标在审且无DOI、1条仅题名“XXXX”、2027/published0占位。后者保留为无题名来源线索，不猜高光谱范围或已录用/发表；CV仍是3个有题名候选。两个原仅题名排除（MLA-Net/WS-Net++）已取得完整原摘要和全部基准名单，本轮选读MLA正式VoR的6/14页；原LEVIR论文Table2明确RGB，原CLCD论文明确GF-2及广东2017/2019，GF-2原传感器定义为PAN＋四宽VNIR带。WHU原论文只确认Christchurch2012/2016建筑变化航片，未明确波段数，仍保留定义缺口；WS-Net++正文未得。范围外共11页选读不记整篇全文，保留继承暂排，不冒称两项范围审计闭环。Xiuping Jia书目页面403，未形成有效覆盖。两稿引用的TGRS2023非局部结构稀疏论文，其J. Zhou由出版社注册Crossref全名、澳门单位和ORCID明确为Jiantao Zhou，非目标Jun，分流普通总库待核；其他13项引文匹配9个已有目录ID，不表示引用正文已读。
+共同作者Fengchao Xiong当前公开书目中完整BibTeX含Jun Zhou的43条已逐一对照：36条匹配已有目录、5条继承既有排除、1条仍标在审且无DOI、1条仅题名“XXXX”、2027/published0占位。后者保留为无题名来源线索，不猜高光谱范围或已录用/发表；CV仍是3个有题名候选。两个原仅题名排除（MLA-Net/WS-Net++）已取得完整原摘要和全部基准名单，本轮选读MLA正式VoR的6/14页；原LEVIR论文Table2明确RGB，原CLCD论文明确GF-2及广东2017/2019，GF-2原传感器定义为PAN＋四宽VNIR带。WHU原论文只确认Christchurch2012/2016建筑变化航片，未明确波段数，仍保留定义缺口；WS-Net++正文未得。范围外共11页选读不记整篇全文，保留继承暂排，不冒称两项范围审计闭环。Xiuping Jia旧路径403的缺口已由新版UNSW staff页面续核，当前覆盖见下段；旧访问失败不删除。两稿引用的TGRS2023非局部结构稀疏论文，其J. Zhou由出版社注册Crossref全名、澳门单位和ORCID明确为Jiantao Zhou，非目标Jun，分流普通总库待核；其他13项引文匹配9个已有目录ID，不表示引用正文已读。
 
 ## 来源覆盖与缺口
 
@@ -103,6 +103,10 @@ SS non-Linear Model固定arXiv2412.00283v2的17页已逐页全读，首页Griffi
 
 三项新的arXiv查询取得有效完整返回：J. Zhou配合当前谱词19条摘要已读，均为等离子体、材料反射谱、天文/粒子/核物理等，未显示本库直接HSI/CV贡献；缩写身份不作Griffith归属。Jun Zhou＋reflectance九项均匹配旧531来源；Zhou＋abs:reflectance完整1826项是旧all:reflectance1845的子集，无新ID，摘要均含reflect子串而只有77含完整reflectance。后者只作自动字面/ID比较，没有逐读1826摘要，宽词形匹配机制仍未由官方已读查询手册确证；其他变体和作者全集未闭环。
 
+共同作者Xiuping Jia新版UNSW主页本次返回438条书目，58条作者串含Zhou、17条为Zhou J：14源项精确DOI/预印本对应13个已有目录ID，2条继承范围排除、1条2022会议仍未决。Jia ORCID212组/213书目与该页匹配188条，25差集完整贡献者只一条Zhou J，为已清理的2010纯多光谱配准，不恢复；其余24只作作者线索筛查，不排除其全领域HSI价值。两个2019杂草书目同时列Farooq A/Awan AF，出版社正式登记仍三/四作者；别名关系有既有ORCID依据，页面重复机制未证实，不增加作者。CRF正式2018来源年与2019卷期、2017预印本按已有版本去重，未升级正文状态。
+
+两太阳能板期刊接受稿共34页已下载，本次实际选读11页：TIP2024的GMS-ACT/GMS-BRIS原文明确RGB，补强旧仅题名排除；TGRS2026的AerialGDA2020与GloSoFarID实验明确RGB，后者原13带不能改称HSI。DualGMS段只明Google Static Maps来源，通道数保留缺口；该稿沿用范围排除，不称全部输入审计闭环。2026正文声明前序是无Jun的WHISPERS2023稿，不是2022 IGARSS未决稿，不能迁移数据/范围决定。两稿均不计整篇全文、不加入HSI框架图库；正式VoR仍未读。
+
 ## 下一步
 
 1. 优先查漏并完成来源交叉核对：其余姓名变体及arXiv无谱词/其他拼写查询与reflectance宽词形机制边界、DBLP/Scholar/arXiv差集、两条来源外直接HSI的合格版本及共同作者CV候选；机构个人目录已完成本次387条快照，不反复拉取同一快照；区分已发表、预印本、在审线索，按书目与明确证据去重。
@@ -111,6 +115,8 @@ SS non-Linear Model固定arXiv2412.00283v2的17页已逐页全读，首页Griffi
 4. 分别报告来源覆盖、未决候选和可获取但尚未整理的资料。可获取材料应继续整理，受限材料记录留白原因；性能复现不作为本阶段要求。
 
 ## 证据与归档
+
+- [Jia独立书目与两太阳能原稿范围续核](sources/jun-zhou-jia-bibliography-solar-scope-2026-10-12.json)、[17源项对照](sources/jun-zhou-jia-bibliography-solar-scope-2026-10-12-staff-crosswalk.json)、[ORCID差集25贡献者](sources/jun-zhou-jia-bibliography-solar-scope-2026-10-12-orcid-difference-decisions.json)、[原始访问](sources/jun-zhou-jia-bibliography-solar-scope-2026-10-12-access.json)：新版438书目有效覆盖，11/34页选读不记全文；两作者名单导出差异和2022会议未决分别保留。
 
 - [SS non-Linear v2全文与两原图](sources/jun-zhou-name-query-ssnl-reading-2026-10-12.json)、[三个姓名/词项查询及集合边界](sources/jun-zhou-name-query-ssnl-reading-2026-10-12-query-checks.json)、[原始访问](sources/jun-zhou-name-query-ssnl-reading-2026-10-12-access.json)：17页全文、19条简称命中摘要筛查；大集合自动比较不当逐篇范围阅读。
 
