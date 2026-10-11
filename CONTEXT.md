@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。83摘要/98全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
-- Xiong43项、Jia新版UNSW438书目及ORCID212组已差集核对，无新增合格作者论文，详见jun-zhou.md。ILR/IFG、SPECIAL v3及光谱三维综述v1已全文补原图，分类/版本边界分列，正式版仍待；综述49引文的四目标HSI已有目录，宽谱案例不全HSI。两IJCAI2023其他作者直接HSI摘要候选留待领域去重/全文。勘误图、ALN期刊/TV、HSIGene v2、SMDS最终及其他免费资料待整理；作者后推进领域矩阵。
+- Xiong43项、Jia新版UNSW438书目及ORCID212组已差集核对，无新增合格作者论文，详见jun-zhou.md。ILR/IFG、SPECIAL v3及光谱三维综述v1已全文补原图，分类/版本边界分列，正式版仍待；综述49引文的四目标HSI已有目录，宽谱案例不全HSI。两IJCAI2023其他作者直接HSI摘要候选留待领域去重/全文。勘误图、ALN期刊/TV、HSIGene v2、SMDS最终及其他免费资料待整理；MerMED正式七模态摘要独立暂排，出版社标OA但正文403；另一医学综述正式仍待。作者后推进领域矩阵。
