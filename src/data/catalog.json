@@ -65585,31 +65585,32 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2016.2633279",
-      "representation": "用矩阵—向量非负张量分解直接保持高光谱立方体空间结构，盲估计端元与丰度。",
+      "representation": "重构Σr(ArBrᵀ)∘cr，rank(Er)≤Lr；A/B/C非负乘法交替更新，实际使用三种张量展开和分块Khatri–Rao运算，列尺度重分配保护数值。MV-NTF-S追加δ‖ABᵀ−1‖F²软ASC，有限δ不保证严格和为一；不等于CPD或正交Tucker。",
       "tags": [],
-      "summary": "提出面向高光谱盲解混的矩阵—向量非负张量因子分解，避免矩阵展开的信息损失。",
-      "input": "高光谱数据立方体。",
-      "output": "端元谱和二维丰度图。",
-      "mechanism": "把每个端元向量与丰度矩阵组成矩阵—向量外积，非负约束下交替优化因子。",
-      "readingNote": "公开摘要/索引摘要和Crossref核验；正式TGRS55(3):1776–1792，未标全文。",
-      "paper": "https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified_secondary_index",
+      "summary": "MV-NTF以rank-(Lr,Lr,1)块项分解建模线性高光谱解混：每个非负端元谱cr与低秩二维丰度Er=ArBrᵀ外积，合成为观测立方体；可选MV-NTF-S用软丰度和为一惩罚。公开AM18页全部核验。",
+      "input": "I×J×K高光谱立方体、指定端元数R与丰度秩上界Lr；K是波长轴。",
+      "output": "R个非负端元谱cr与二维丰度图Er=ArBrᵀ。",
+      "mechanism": "重构Σr(ArBrᵀ)∘cr，rank(Er)≤Lr；A/B/C非负乘法交替更新，实际使用三种张量展开和分块Khatri–Rao运算，列尺度重分配保护数值。MV-NTF-S追加δ‖ABᵀ−1‖F²软ASC，有限δ不保证严格和为一；不等于CPD或正交Tucker。",
+      "readingNote": "机构AM全18页（1封面）/44式/15图/9表/1算法已核。正式来源/实现分开；机构明确AM，18页含1封面；官方IEEE HTML/PDF均202空，未独立核正式版。非凸初始化依赖，单调目标讨论不证明全局最优；非负BTD唯一性充分条件未证明。真实crop原点/删带范围、谱匹配唯一性、百分号std解释、最大迭代/阈值/种子/零值保护/代码待；跨论文不同生成器和reference不得混算，未运行模型。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "public_full_text_version_scoped",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
-          "tensor-low-rank-learning"
+          "tensor-low-rank-learning",
+          "matrix-vector-btd-unmixing"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱盲解混为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在不展开高光谱立方体的情况下进行非负盲解混？",
-        "datasets": "摘要提及合成和真实高光谱数据；具体数据集待全文。",
-        "experimentSetting": "公开摘要和方法概述核验；未逐项复核优化和指标。",
-        "conclusions": "作者报告矩阵—向量NTF可用于高光谱盲解混；不补未核性能。",
-        "limitations": "全文、代码和数据入口待核。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何使张量块项分解与线性端元—丰度混合模型对应，同时保留二维丰度结构？",
+        "datasets": "合成USGS六谱224波段；正文Chlonte与Fig2 Chlorite HS179.3B分源保留。HYDICE Urban307×307/210→162/4端元；AVIRIS Jasper100×100/224→198/4端元；Cuprite250×191/224→188/10矿物。Urban/Jasper参考谱手选、丰度FCLS生成，Cuprite参考按谱库相关匹配，均不是独立实测丰度真值。",
+        "experimentSetting": "十次随机初始化平均；noise比较为各方法共享端元与Er初始化。δ=.4、L≈2/3 min(I,J)，秷取整/收敛阈值未给。合成z8、θ.7：单端元分区、17×17均值滤波、超过θ置六端元均匀混合；Gaussian15/20/25/30/35/∞后负谱截0。另有θ.5–.9、36²–100²尺寸研究。全9表逐项转录与图版核验，真实表标MV-NTF但正文指定带ASC的MV-NTF-S。",
+        "conclusions": "两MV变体在六张合成表均优于所比三个NMF基线，带ASC变体并非每项最好。真实三表平均SAD .2167/.2082/.1118均为表内最低；Urban仅tree/roof、Jasper仅road、Cuprite仅pyrope最佳，不支持所有材料均优。表VII VCA grass原印0.41.33不解析；表IX NMF Dumortierite原印13.96超过SAD范围且重算mean不符，疑点不静默修正。",
+        "limitations": "机构明确AM，18页含1封面；官方IEEE HTML/PDF均202空，未独立核正式版。非凸初始化依赖，单调目标讨论不证明全局最优；非负BTD唯一性充分条件未证明。真实crop原点/删带范围、谱匹配唯一性、百分号std解释、最大迭代/阈值/种子/零值保护/代码待；跨论文不同生成器和reference不得混算，未运行模型。",
         "dataLinks": [],
         "evidence": [
           {
@@ -65627,31 +65628,63 @@
             "supports": [
               "正式TGRS记录和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_public_full_text_version_scoped",
+            "supports": [
+              "MV-NTF以rank-(Lr,Lr,1)块项分解建模线性高光谱解混：每个非负端元谱cr与低秩二维丰度Er=ArBrᵀ外积，合成为观测立方体；可选MV-NTF-S用软丰度和为一惩罚。公开AM18页全部核验。",
+              "重构Σr(ArBrᵀ)∘cr，rank(Er)≤Lr；A/B/C非负乘法交替更新，实际使用三种张量展开和分块Khatri–Rao运算，列尺度重分配保护数值。MV-NTF-S追加δ‖ABᵀ−1‖F²软ASC，有限δ不保证严格和为一；不等于CPD或正交Tucker。",
+              "合成USGS六谱224波段；正文Chlonte与Fig2 Chlorite HS179.3B分源保留。HYDICE Urban307×307/210→162/4端元；AVIRIS Jasper100×100/224→198/4端元；Cuprite250×191/224→188/10矿物。Urban/Jasper参考谱手选、丰度FCLS生成，Cuprite参考按谱库相关匹配，均不是独立实测丰度真值。",
+              "两MV变体在六张合成表均优于所比三个NMF基线，带ASC变体并非每项最好。真实三表平均SAD .2167/.2082/.1118均为表内最低；Urban仅tree/roof、Jasper仅road、Cuprite仅pyrope最佳，不支持所有材料均优。表VII VCA grass原印0.41.33不解析；表IX NMF Dumortierite原印13.96超过SAD范围且重算mean不符，疑点不静默修正。",
+              "机构明确AM，18页含1封面；官方IEEE HTML/PDF均202空，未独立核正式版。非凸初始化依赖，单调目标讨论不证明全局最优；非负BTD唯一性充分条件未证明。真实crop原点/删带范围、谱匹配唯一性、百分号std解释、最大迭代/阈值/种子/零值保护/代码待；跨论文不同生成器和reference不得混算，未运行模型。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/87fdeb4c-cbf8-5f18-a3b2-7f84fb993412",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata_and_abstract",
+            "supports": [
+              "精确题名/完整作者/DOI与目标Griffith作者互证；item明确AM；实际公开版本全读，正式差异待。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2016.2633279",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "完整作者/DOI、正式日期/卷期页码及出版类型；created不是首次online。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "mv-ntf-blind-unmixing-tgrs-2017-published",
-            "type": "正式记录",
+            "type": "正式期刊记录",
             "url": "https://doi.org/10.1109/tgrs.2016.2633279",
             "doi": "10.1109/tgrs.2016.2633279",
             "year": 2017,
-            "relation": "正式2017记录；作者稿与正式版局部差异待核。"
+            "relation": "TGRS55(3):1776–1792 March2017。Crossref完整书目、机构完整摘要已核；官方IEEE HTML/PDF均202空，未独立取得正式全文或证首次online。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "mv-ntf-blind-unmixing-tgrs-2017-source",
-            "type": "作者/机构来源",
-            "url": "https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf",
+            "type": "Accepted Manuscript (AM)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content",
             "doi": "10.1109/tgrs.2016.2633279",
             "year": 2017,
-            "relation": "作者稿或公开页面；页码只对应来源文件。"
+            "relation": "机构明确AM，18页含1封面，44式/15图/9表/1算法/54参考全部核验；旧第三方链接403保留。正式版差异和实现待。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "previousSourceUrl": "https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf"
           }
         ],
         "methodFamilyId": "matrix-vector-ntf",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "线性rank-(L,L,1) BTD端元谱×低秩丰度，非CPD/Tucker或真实3D重建。公开载荷全文与官方空响应/正式记录、实现边界分别记录。",
           "evidenceFields": [
             "title",
             "summary",
@@ -65660,14 +65693,41 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "8fa9c03d2045569eb163491e1774c2b2900d947358ca6b5d2113a8954abeda60",
+          "evidenceDigest": "1680a68cc9614c6caa3a8104ff35b4c5ac2fb25b162378cef1f92c3dfcaa06d6",
           "sourceUrls": [
-            "https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf",
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content",
+            "https://research-repository.griffith.edu.au/server/api/core/items/87fdeb4c-cbf8-5f18-a3b2-7f84fb993412",
             "https://api.crossref.org/works/10.1109/tgrs.2016.2633279"
           ]
         }
       },
-      "citation": "@article{mv_ntf_blind_unmixing_tgrs_2017,\n  title = {Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery},\n  author = {Yuntao Qian and Fengchao Xiong and Shan Zeng and Jun Zhou and Yuan Yan Tang},\n  year = {2017},\n  doi = {10.1109/tgrs.2016.2633279}\n}\n"
+      "citation": "@article{mv_ntf_blind_unmixing_tgrs_2017,\n  title = {Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery},\n  author = {Yuntao Qian and Fengchao Xiong and Shan Zeng and Jun Zhou and Yuan Yan Tang},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2017},\n  volume = {55},\n  number = {3},\n  pages = {1776--1792},\n  doi = {10.1109/tgrs.2016.2633279}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content",
+          "figureLabel": "Fig. 1",
+          "caption": "Four tensor decomposition models of a third-order tensor.",
+          "page": 7,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "scaleTo": 2400,
+            "pixelBox": [
+              140,
+              150,
+              905,
+              1865
+            ]
+          },
+          "verificationNote": "全18页/15图视觉复核，Fig1 PDF7/正文6完整四种张量分解示意（含(d)本文matrix-vector结构），裁原图与完整图注，不声称是Algorithm1运行流程。",
+          "path": "figures/mv-ntf-blind-unmixing-tgrs-2017/framework.png",
+          "width": 765,
+          "height": 1715,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "075b4f321a7f55f4f4dc6d72f43d7d2fdd80847ebcf13d6996f8929b53374c3e",
+          "attribution": "Yuntao Qian, Fengchao Xiong, Shan Zeng, Jun Zhou, Yuan Yan Tang · TGRS 2017"
+        }
+      ]
     },
     {
       "id": "controlled-sampling-tgrs-2017",
@@ -66597,32 +66657,34 @@
         "hyperspectral"
       ],
       "doi": "10.1109/jstars.2016.2621003",
-      "representation": "先用图割分割高光谱影像为小区域，再约束区域内结构一致性与区域间差异，嵌入NMF解混。",
+      "representation": "正文为Felzenszwalb/Huttenlocher图分割区域合并，非已证mincut/maxflow实现；构造区域均谱C与丰度原型A，在L1/2 NMF中加入µΣ‖rn−αq‖²、近邻Laplacian吸引和远邻平方距离指数排斥。Algorithm1按A/M/R乘法更新；约束为软一致、全图共享M，未见显式ASC执行。",
       "tags": [],
-      "summary": "提出区域结构保持NMF，利用同质区和跨区结构改善高光谱解混。",
-      "input": "高光谱影像及图割得到的同质区域。",
-      "output": "端元谱和丰度估计。",
-      "mechanism": "图割区域分割、区域内一致性约束、区域间判别约束和NMF联合优化。",
-      "readingNote": "Griffith作者稿摘要/方法局部核验；正式JSTARS10(4):1575–1588，未标全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/download",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "author_pdf_abstract_verified",
+      "summary": "R-NMF用同质区域丰度原型约束线性高光谱解混：区域内像元向原型软一致，区域间保留近邻吸引与远邻排斥，并结合区域自适应L1/2稀疏；共享全图端元。机构AM14页全部核验。",
+      "input": "高光谱影像Y及由SAD邻接图、MST内差异与跨区边比较合并得到的同质区；端元数P预设。",
+      "output": "共享非负端元矩阵M、每像元丰度R及区域丰度原型A。",
+      "mechanism": "正文为Felzenszwalb/Huttenlocher图分割区域合并，非已证mincut/maxflow实现；构造区域均谱C与丰度原型A，在L1/2 NMF中加入µΣ‖rn−αq‖²、近邻Laplacian吸引和远邻平方距离指数排斥。Algorithm1按A/M/R乘法更新；约束为软一致、全图共享M，未见显式ASC执行。",
+      "readingNote": "机构AM全14页（1封面）/34式/20图/3表/1算法已核。正式来源/实现分开；机构AM14页含1封面，官方IEEE HTML/PDF202空，正式版待。Eq14η分子印M尺寸不合；Eq18漏平方且trace用R与区域图维度不合；Eq33无cost差，与文字停止条件冲突，均保留原式。A初始化/k/ρ/联合总代价M梯度/代码/真实reference待，convergence仅曲线未给证明；不称逐像元硬等丰度。Fig16/19误写Jasper按正文分源，未运行模型。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "public_full_text_version_scoped",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "low-rank-matrix-factorization",
-          "graph-learning"
+          "graph-learning",
+          "sparse-nonnegative-factorization",
+          "region-prototype-structure-nmf"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "作者摘要直接以高光谱解混为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用区域结构一致性和跨区差异约束改善NMF解混？",
-        "datasets": "摘要报告合成和真实数据；具体影像待全文。",
-        "experimentSetting": "作者稿摘要和方法开头核验；未逐项复核参数和表格。",
-        "conclusions": "作者报告优于若干解混方法；不补未核数值。",
-        "limitations": "正式版全文、代码和数据入口待核。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何同时保留区域内丰度一致性与区域间分布结构，而不是只给像元丰度添加单一近邻平滑？",
+        "datasets": "合成USGS6谱含Actinolite，与两MV文的Chlorite/Chlonte不同，单端元区+(z+1)²滤波+max>.8置六谱均匀混合，z值未给。Jasper100×100起点(105,269)，224删26留198/4端元；Urban307×307，210删48留162/4端元；Washington DC Mall150×150，删19留191/5端元，原点/初始波段数未明确。真实参考谱依赖[50]，该引文实际是分类选带论文，真值文件待。",
+        "experimentSetting": "VCA初始化M、FCLS初始化R；max迭代3000、ε10^-4，T50/σ.01/µ.3/γ1=.1/γ2=.15，k近远邻和ρ值未给，σ/ρ分割与图权重角色存在文字差异。合成每法10次，SNR25与15/25/35/45/∞研究；真实仅3表SAD mean±std，未给真实RMSE及独立重复次数。全34式/20图/3表192数值与Algorithm1核验。",
+        "conclusions": "真实表I/II/III平均SAD .0665/.1268/.0771表内最低；Jasper四类均最佳，Urban仅road/grass最佳、DC的grass非最佳。Jasper S-VCA四材料重算mean .11395与原印.1136超舍入包络，原值保留。跨论文R-NMF基线.2505与本稿.0665不同，协议未对齐，不作复现或因果性能结论。",
+        "limitations": "机构AM14页含1封面，官方IEEE HTML/PDF202空，正式版待。Eq14η分子印M尺寸不合；Eq18漏平方且trace用R与区域图维度不合；Eq33无cost差，与文字停止条件冲突，均保留原式。A初始化/k/ρ/联合总代价M梯度/代码/真实reference待，convergence仅曲线未给证明；不称逐像元硬等丰度。Fig16/19误写Jasper按正文分源，未运行模型。",
         "dataLinks": [],
         "evidence": [
           {
@@ -66640,31 +66702,63 @@
             "supports": [
               "正式JSTARS记录、作者和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_public_full_text_version_scoped",
+            "supports": [
+              "R-NMF用同质区域丰度原型约束线性高光谱解混：区域内像元向原型软一致，区域间保留近邻吸引与远邻排斥，并结合区域自适应L1/2稀疏；共享全图端元。机构AM14页全部核验。",
+              "正文为Felzenszwalb/Huttenlocher图分割区域合并，非已证mincut/maxflow实现；构造区域均谱C与丰度原型A，在L1/2 NMF中加入µΣ‖rn−αq‖²、近邻Laplacian吸引和远邻平方距离指数排斥。Algorithm1按A/M/R乘法更新；约束为软一致、全图共享M，未见显式ASC执行。",
+              "合成USGS6谱含Actinolite，与两MV文的Chlorite/Chlonte不同，单端元区+(z+1)²滤波+max>.8置六谱均匀混合，z值未给。Jasper100×100起点(105,269)，224删26留198/4端元；Urban307×307，210删48留162/4端元；Washington DC Mall150×150，删19留191/5端元，原点/初始波段数未明确。真实参考谱依赖[50]，该引文实际是分类选带论文，真值文件待。",
+              "真实表I/II/III平均SAD .0665/.1268/.0771表内最低；Jasper四类均最佳，Urban仅road/grass最佳、DC的grass非最佳。Jasper S-VCA四材料重算mean .11395与原印.1136超舍入包络，原值保留。跨论文R-NMF基线.2505与本稿.0665不同，协议未对齐，不作复现或因果性能结论。",
+              "机构AM14页含1封面，官方IEEE HTML/PDF202空，正式版待。Eq14η分子印M尺寸不合；Eq18漏平方且trace用R与区域图维度不合；Eq33无cost差，与文字停止条件冲突，均保留原式。A初始化/k/ρ/联合总代价M梯度/代码/真实reference待，convergence仅曲线未给证明；不称逐像元硬等丰度。Fig16/19误写Jasper按正文分源，未运行模型。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/1b84c5a5-70b1-5c03-8953-38085523de86",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata_and_abstract",
+            "supports": [
+              "精确题名/完整作者/DOI与目标Griffith作者互证；item明确AM；实际公开版本全读，正式差异待。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/jstars.2016.2621003",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "完整作者/DOI、正式日期/卷期页码及出版类型；created不是首次online。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "region-structure-nmf-jstars-2017-published",
-            "type": "正式记录",
+            "type": "正式期刊记录",
             "url": "https://doi.org/10.1109/jstars.2016.2621003",
             "doi": "10.1109/jstars.2016.2621003",
             "year": 2017,
-            "relation": "正式2017记录；作者稿与正式版局部差异待核。"
+            "relation": "JSTARS10(4):1575–1588 April2017。Crossref完整书目、机构完整摘要已核；官方IEEE HTML/PDF均202空，未独立取得正式全文或证首次online。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "region-structure-nmf-jstars-2017-source",
-            "type": "作者/机构来源",
-            "url": "https://research-repository.griffith.edu.au/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/download",
+            "type": "Accepted Manuscript (AM)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/content",
             "doi": "10.1109/jstars.2016.2621003",
             "year": 2017,
-            "relation": "作者稿或公开页面；页码只对应来源文件。"
+            "relation": "机构明确AM，14页含1封面，34式/20图/3表/1算法/50参考全部核验。正式版差异和实现待。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "previousSourceUrl": "https://research-repository.griffith.edu.au/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/download"
           }
         ],
         "methodFamilyId": "region-structure-nmf",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "MST图区域合并、共享M/区域原型一致性、L1/2稀疏与近远区域图约束；不是硬同丰度或已证mincut实现。公开载荷全文与官方空响应/正式记录、实现边界分别记录。",
           "evidenceFields": [
             "title",
             "summary",
@@ -66673,14 +66767,21 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "64db7e5881e72f78e5079ead31ffc59d719b9f3c37d0ee12e00100756c6c13cc",
+          "evidenceDigest": "978add9b135b9f2d2e327d2c33052bf466a37d2f302b8affa680d3318683b36e",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/download",
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/content",
+            "https://research-repository.griffith.edu.au/server/api/core/items/1b84c5a5-70b1-5c03-8953-38085523de86",
             "https://api.crossref.org/works/10.1109/jstars.2016.2621003"
           ]
         }
       },
-      "citation": "@article{region_structure_nmf_jstars_2017,\n  title = {Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Lei Tong and Jun Zhou and Xue Li and Yuntao Qian and Yongsheng Gao},\n  year = {2017},\n  doi = {10.1109/jstars.2016.2621003}\n}\n"
+      "citation": "@article{region_structure_nmf_jstars_2017,\n  title = {Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Lei Tong and Jun Zhou and Xue Li and Yuntao Qian and Yongsheng Gao},\n  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n  year = {2017},\n  volume = {10},\n  number = {4},\n  pages = {1575--1588},\n  doi = {10.1109/jstars.2016.2621003}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "全14页/20图视觉复核：Fig1是原型分布示意，其余均谱/地图/参数/性能/收敛图，没有完整独立方法流程框架，不以实验图替代。",
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/content",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "forest-litterfall-hsi-plsr-2017",
@@ -68157,31 +68258,33 @@
       "collections": [
         "hyperspectral"
       ],
-      "representation": "以超像素局部结构约束非负张量因子分解进行高光谱解混。",
+      "representation": "共同超像素的行均谱/列均谱生成Wh/Wv，权重为共同区Gaussian平方距离权重的平均；在原MV-NTF重构与δ软ASC上，加α/2 Tr(LhAAᵀ)、µ/2 Tr(LvBBᵀ)，A/B乘法更新含图项、C端元更新保持。图约束位置是两空间因子，不是每区独立解混或严格同丰度。",
       "tags": [],
-      "summary": "研究空间结构辅助的高光谱端元和丰度估计。",
-      "input": "高光谱影像及混合像元。",
-      "output": "端元矩阵与丰度图。",
-      "mechanism": "先构造超像素，再在S-MV-NTF中联合建模光谱和局部空间结构。",
-      "readingNote": "IGARSS作者PDF与Crossref核验；正式页6392–6395，短文未标全文。",
+      "summary": "S-MV-NTF在MV-NTF线性解混的全局rank-(L,L,1)模型上，添加SLIC超像素引导的行/列两图Laplacian约束，改善局部丰度一致性。作者网站公开出版社排版拷贝4页全部核验。",
+      "input": "I×J×K高光谱立方体、SLIC超像素和指定端元数/秩参数；波长轴不等于空间深度。",
+      "output": "非负端元谱C及二维丰度图ArBrᵀ。",
+      "mechanism": "共同超像素的行均谱/列均谱生成Wh/Wv，权重为共同区Gaussian平方距离权重的平均；在原MV-NTF重构与δ软ASC上，加α/2 Tr(LhAAᵀ)、µ/2 Tr(LvBBᵀ)，A/B乘法更新含图项、C端元更新保持。图约束位置是两空间因子，不是每区独立解混或严格同丰度。",
+      "readingNote": "作者托管出版社排版拷贝全4页/11式/3图/1表已核。正式来源/实现分开；公开PDF有正式6392–6395/IEEE版权与下载印记，标作者托管出版社排版拷贝；机构item未标AM且仅SWORD XML，官方IEEE入口202空，未独立获取官方版核差。Eq5/6拼接trace原印多1/2，与Eq4/7不一致；不静默修式。超像素/优化/真值/std单位细节和代码待，不继承2017默认参数或另文裁剪；跨文基线不同不称复现，未运行模型。",
       "paper": "https://monsterzhzh.github.io/pub/fcxiong.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "public_full_text_version_scoped",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
-          "tensor-low-rank-learning"
+          "tensor-low-rank-learning",
+          "graph-learning",
+          "matrix-vector-btd-unmixing"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何在全局矩阵—向量NTF中加入自适应同质区信息，并分别约束两空间因子？",
+        "datasets": "合成USGS6谱正文Chlonte，z8→64×64；每patch随机两个端元以β.8/.2混合，9×9低通，未写max>.8全六端元均匀替换。Gaussian SNR15/20/25/30/∞。Jasper原512×614取100×100/198bands，4tree/water/dirt/road；crop起点、删带范围及真值入口未给。",
+        "experimentSetting": "对比MRS-NMF、HGL1/2-NMF、R-NMF、MV-NTF；Fig2只有均值/标准差柱与误差线，无精确数表，不从图补造数值。Table1全25 mean±std格/50位置核验，std保持印百分号。全4页/11式/3图/1表/11参考核验；未明确SLIC投影/数量/compactness、L/δ/α/µ/σ值、初始化/停止/重复次数。",
+        "conclusions": "Jasper Table1 mean SAD .1727低于MV .1813，差.0086；仅road .1822在五方法最低。tree .2121略高MV .2119且R .0371更低，water/dirt也非最佳。正文明确在MV-NTF上添加超像素图，为方法派生；R-NMF为不同模型基线，不因引用合并三论文/方法族。",
+        "limitations": "公开PDF有正式6392–6395/IEEE版权与下载印记，标作者托管出版社排版拷贝；机构item未标AM且仅SWORD XML，官方IEEE入口202空，未独立获取官方版核差。Eq5/6拼接trace原印多1/2，与Eq4/7不一致；不静默修式。超像素/优化/真值/std单位细节和代码待，不继承2017默认参数或另文裁剪；跨文基线不同不称复现，未运行模型。",
         "dataLinks": [],
         "evidence": [
           {
@@ -68199,23 +68302,62 @@
             "supports": [
               "正式题名、作者和会议页码。"
             ]
+          },
+          {
+            "url": "https://monsterzhzh.github.io/pub/fcxiong.pdf",
+            "checkedAt": "2026-10-11",
+            "level": "primary_public_full_text_version_scoped",
+            "supports": [
+              "S-MV-NTF在MV-NTF线性解混的全局rank-(L,L,1)模型上，添加SLIC超像素引导的行/列两图Laplacian约束，改善局部丰度一致性。作者网站公开出版社排版拷贝4页全部核验。",
+              "共同超像素的行均谱/列均谱生成Wh/Wv，权重为共同区Gaussian平方距离权重的平均；在原MV-NTF重构与δ软ASC上，加α/2 Tr(LhAAᵀ)、µ/2 Tr(LvBBᵀ)，A/B乘法更新含图项、C端元更新保持。图约束位置是两空间因子，不是每区独立解混或严格同丰度。",
+              "合成USGS6谱正文Chlonte，z8→64×64；每patch随机两个端元以β.8/.2混合，9×9低通，未写max>.8全六端元均匀替换。Gaussian SNR15/20/25/30/∞。Jasper原512×614取100×100/198bands，4tree/water/dirt/road；crop起点、删带范围及真值入口未给。",
+              "Jasper Table1 mean SAD .1727低于MV .1813，差.0086；仅road .1822在五方法最低。tree .2121略高MV .2119且R .0371更低，water/dirt也非最佳。正文明确在MV-NTF上添加超像素图，为方法派生；R-NMF为不同模型基线，不因引用合并三论文/方法族。",
+              "公开PDF有正式6392–6395/IEEE版权与下载印记，标作者托管出版社排版拷贝；机构item未标AM且仅SWORD XML，官方IEEE入口202空，未独立获取官方版核差。Eq5/6拼接trace原印多1/2，与Eq4/7不一致；不静默修式。超像素/优化/真值/std单位细节和代码待，不继承2017默认参数或另文裁剪；跨文基线不同不称复现，未运行模型。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/5ce965f0-dadb-46e5-9905-015fd9ea756e",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata_and_abstract",
+            "supports": [
+              "精确题名/完整作者/DOI与目标Griffith作者互证；item未标AM且完整列表仅SWORD XML；作者托管排版全文另列。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/IGARSS.2018.8518642",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "完整作者/DOI、正式日期/卷期页码及出版类型；created不是首次online。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "superpixel-ntf-unmixing-igarss-2018-published",
-            "type": "正式记录",
+            "type": "正式会议记录",
             "url": "https://doi.org/10.1109/IGARSS.2018.8518642",
             "doi": "10.1109/IGARSS.2018.8518642",
             "year": 2018,
-            "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+            "relation": "IGARSS2018-07:6392–6395，公开排版拷贝另列。Crossref完整书目、机构完整摘要已核；官方IEEE HTML/PDF均202空，未独立取得正式全文或证首次online。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "superpixel-ntf-unmixing-igarss-2018-author-copy",
+            "type": "作者托管出版社排版拷贝",
+            "url": "https://monsterzhzh.github.io/pub/fcxiong.pdf",
+            "doi": "10.1109/IGARSS.2018.8518642",
+            "year": 2018,
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "relation": "4页印6392–6395、2018IEEE版权与2022下载印记，全稿/表已核；机构未标AM且仅SWORD XML；官方IEEE未独立下载核差。"
           }
         ],
         "methodFamilyId": "superpixel-ntf-unmixing",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "SLIC指导两个空间因子图，在MV-NTF上加软局部约束；方法派生证据明确，保留独立论文/方法族。公开载荷全文与官方空响应/正式记录、实现边界分别记录。",
           "evidenceFields": [
             "title",
             "summary",
@@ -68224,16 +68366,42 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "d7ddcfb3d3e461b4bd6dc8d15be1085eb158076b5338935dcbb6ff36a5e93f65",
+          "evidenceDigest": "bcee8bcea74b6141cd8ecf25f2189bf13e862cafd4ccfd61ce809148dcb55183",
           "sourceUrls": [
             "https://monsterzhzh.github.io/pub/fcxiong.pdf",
-            "https://monsterzhzh.github.io/pub/fcxiong.pdf",
+            "https://research-repository.griffith.edu.au/server/api/core/items/5ce965f0-dadb-46e5-9905-015fd9ea756e",
             "https://api.crossref.org/works/10.1109/IGARSS.2018.8518642"
           ]
         }
       },
       "doi": "10.1109/IGARSS.2018.8518642",
-      "citation": "@article{superpixel_ntf_unmixing_igarss_2018,\n  title = {Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jingzhou Chen and Jun Zhou and Yuntao Qian},\n  year = {2018},\n  doi = {10.1109/IGARSS.2018.8518642}\n}\n"
+      "citation": "@inproceedings{superpixel_ntf_unmixing_igarss_2018,\n  title = {Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jingzhou Chen and Jun Zhou and Yuntao Qian},\n  booktitle = {IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium},\n  year = {2018},\n  pages = {6392--6395},\n  doi = {10.1109/IGARSS.2018.8518642}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://monsterzhzh.github.io/pub/fcxiong.pdf",
+          "figureLabel": "Fig. 1",
+          "caption": "The framework of S-MV-NTF.",
+          "page": 2,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "scaleTo": 2400,
+            "pixelBox": [
+              140,
+              760,
+              905,
+              1410
+            ]
+          },
+          "verificationNote": "全4页/3图视觉复核，Fig1 PDF2/正式页6393为SLIC—行列图—空间因子—丰度完整框架，原裁图含完整图注，未重绘。",
+          "path": "figures/superpixel-ntf-unmixing-igarss-2018/framework.png",
+          "width": 765,
+          "height": 650,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "490c9e9fae08e33c27204a586f336ed5ec808e44e8357661f1e653eafc3233b5",
+          "attribution": "Fengchao Xiong, Jingzhou Chen, Jun Zhou, Yuntao Qian · IGARSS 2018"
+        }
+      ]
     },
     {
       "id": "triplet-deep-feature-hsi-whispers-2018",
@@ -80313,6 +80481,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "三份2016 NMF AM全文核验，区分谱先验、自表示端元图与丰度吸引排斥；实际标签成员及印式/表差异留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
         }
       ]
     },
@@ -80677,6 +80850,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
         }
       ]
     },
@@ -81077,6 +81255,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "三份2016 NMF AM全文核验，区分谱先验、自表示端元图与丰度吸引排斥；实际标签成员及印式/表差异留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
         }
       ]
     },
@@ -83736,6 +83919,7 @@
         "spectral-graph-techniques-overview-2014",
         "structured-discriminative-nmf-icip-2016",
         "subspace-structure-nmf-hsi-2020",
+        "superpixel-ntf-unmixing-igarss-2018",
         "zhou-85-hsi-2022"
       ],
       "history": [
@@ -83758,6 +83942,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "三份2016 NMF AM全文核验，区分谱先验、自表示端元图与丰度吸引排斥；实际标签成员及印式/表差异留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
         }
       ]
     },
@@ -86709,13 +86898,19 @@
         "biochar-unmix-dicta-2013",
         "canopy-dust-whispers-2014",
         "lhalf-nmf-dicta-2010",
-        "lhalf-nmf-tgrs-2011"
+        "lhalf-nmf-tgrs-2011",
+        "region-structure-nmf-jstars-2017"
       ],
       "history": [
         {
           "date": "2026-10-09",
           "action": "created",
           "reason": "Brook会议原摘要明确采用l1/2稀疏约束NMF检测冠层沉降尘；已有字典学习标签不保证非负因子分解。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
         }
       ]
     },
@@ -88561,6 +88756,47 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "公开全文支持具体评测采样机制，区别仅在已有数据集验证新分类器。"
+        }
+      ]
+    },
+    {
+      "id": "matrix-vector-btd-unmixing",
+      "name": "矩阵—向量BTD解混",
+      "dimension": "method",
+      "definition": "以rank-(Lr,Lr,1)块项分解将高光谱立方体表示为端元谱向量与低秩二维丰度矩阵的外积和；非负因子/可选软ASC和空间图约束逐版本记录，不等同CPD rank-one丰度、正交Tucker或真实三维几何。",
+      "rationale": "2017 MV-NTF AM给出BTD/LMM对应与乘法更新，2018 S-MV-NTF公开排版稿明确在其上加入超像素空间图；具体谱/丰度因子机制有全文支持。",
+      "evidencePaperIds": [
+        "mv-ntf-blind-unmixing-tgrs-2017",
+        "superpixel-ntf-unmixing-igarss-2018"
+      ],
+      "status": "confirmed",
+      "color": "#9bb7ac",
+      "createdAt": "2026-10-11",
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "既有公开全文支持具体解混机制，明确约束位置和假设，不仅以任务题名分类。"
+        }
+      ]
+    },
+    {
+      "id": "region-prototype-structure-nmf",
+      "name": "区域原型结构NMF解混",
+      "dimension": "method",
+      "definition": "共享全图非负端元，用同质区丰度原型与像元丰度的软一致约束，并对区域原型加入近邻吸引和远邻排斥、区域稀疏；不是逐区独立端元、硬同丰度或分层剪枝解混。",
+      "rationale": "R-NMF AM Eq10/27和Algorithm1分别定义像元/区域原型与交替更新；图分割合并、约束和印式/实现边界分开留证。",
+      "evidencePaperIds": [
+        "region-structure-nmf-jstars-2017"
+      ],
+      "status": "confirmed",
+      "color": "#9bb7ac",
+      "createdAt": "2026-10-11",
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "既有公开全文支持具体解混机制，明确约束位置和假设，不仅以任务题名分类。"
         }
       ]
     }

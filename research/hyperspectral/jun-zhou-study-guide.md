@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。141条为摘要级核验、47条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。138条为摘要级核验、50条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -48,13 +48,13 @@
 
 ### 3. 2017 · Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery
 
-- 原文：[来源](https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf)；目录ID：`mv-ntf-blind-unmixing-tgrs-2017`。
+- 原文：[来源](https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content)；目录ID：`mv-ntf-blind-unmixing-tgrs-2017`。
 - 输入：高光谱数据立方体。
 - 输出：端元谱和二维丰度图。
-- 已核机制：把每个端元向量与丰度矩阵组成矩阵—向量外积，非负约束下交替优化因子。
+- 已核机制：rank-(Lr,Lr,1) BTD以端元谱与低秩丰度矩阵外积建模，使用三种展开矩阵作非负乘法更新；可选软ASC。
 - 学习问题：矩阵—向量外积如何保留二维丰度结构？与矩阵展开NMF相比，增加了什么假设？
-- 阅读边界：公开摘要/索引摘要和Crossref核验；正式TGRS55(3):1776–1792，未标全文。
-- 待核：全文、代码和数据入口待核。
+- 阅读边界：机构AM全18页核验；正式TGRS55(3):1776–1792未独立取得；式表疑点及版本见[作者调研](jun-zhou.md)。
+- 待核：正式版差异、代码、参考真值和优化实现。
 
 ### 4. 2020 · Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing
 
@@ -211,10 +211,10 @@
 | 2017 | [Differential weights-based band selection for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/29236d25-f356-5c07-ba9b-825c8f79e61a/content) | 光谱波段选择、光谱波段加权、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2017 | [Exploring Structural Consistency in Graph Regularized Joint Spectral-Spatial Sparse Coding for Hyperspectral Image Classification](https://researchportalplus.anu.edu.au/en/publications/exploring-structural-consistency-in-graph-regularized-joint-spect/) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2017 | [Material Based Boundary Detection in Hyperspectral Images](https://doi.org/10.1109/dicta.2017.8227462) | 待分类 | 正式发表 | 摘要核验 |
-| 2017 | [Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery](https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2017 | [Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery](https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2017 | [Non-local similarity based tensor decomposition for hyperspectral image denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content) | 光谱去噪 | 正式发表 | 全文核验（版本见目录） |
 | 2017 | [On the Sampling Strategy for Evaluation of Spectral-Spatial Methods in Hyperspectral Image Classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/7c1e882a-506e-53f6-bcdc-c57b297a60d2/content) | 数据集与评测基准、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
-| 2017 | [Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/download) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2017 | [Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2017 | [The potential of hyperspectral images and partial least square regression for predicting total carbon, total nitrogen and their isotope composition in forest litterfall samples](https://era.dpi.qld.gov.au/id/eprint/15791/) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2018 | [A Hyperspectral Dermoscopy Dataset for Melanoma Detection](https://link.springer.com/content/pdf/10.1007%2F978-3-030-01201-4_29.pdf) | 数据集与评测基准 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [A non-destructive determination of peroxide values, total nitrogen and mineral nutrients in an edible tree nut using hyperspectral imaging](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/6906992) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
@@ -228,7 +228,7 @@
 | 2018 | [Nonlocal Similarity Based Nonnegative Tucker Decomposition for Hyperspectral Image Denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content) | 光谱去噪 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [Object tracking in hyperspectral videos with convolutional features and kernelized correlation filter](https://doi.org/10.1007/978-3-030-04375-9_26) | 光谱目标时序跟踪、高光谱视频采集 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [Spectral-Spatial Scale Invariant Feature Transform for Hyperspectral Images](https://openalex.org/W2751249843) | 光学影像配准、光谱降维与子空间识别 | 正式发表 | 摘要核验 |
-| 2018 | [Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://monsterzhzh.github.io/pub/fcxiong.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2018 | [Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://monsterzhzh.github.io/pub/fcxiong.pdf) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [Triplet Constrained Deep Feature Extraction for Hyperspectral Image Classification](https://research-repository.griffith.edu.au/bitstreams/bcbcd377-523f-476e-b972-d8d1fc9c4dd2/download) | 地物与植被图像分类、光谱表征预训练、数据集与评测基准 | 正式发表 | 摘要核验 |
 | 2018 | [Using laboratory-based hyperspectral imaging method to determine carbon functional group distributions in decomposing forest litterfall](https://era.dpi.qld.gov.au/id/eprint/15792/) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2019 | [3-D Gaussian–Gabor Feature Extraction and Selection for Hyperspectral Imagery Classification](https://www.researchgate.net/publication/334404986_3-D_Gaussian-Gabor_Feature_Extraction_and_Selection_for_Hyperspectral_Imagery_Classification) | 地物与植被图像分类 | 正式发表 | 摘要核验 |

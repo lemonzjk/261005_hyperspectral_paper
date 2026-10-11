@@ -364,7 +364,10 @@
     "nonlocal-tucker-denoising-jstars-2018",
     "tensor-morphological-profile-icip-2016",
     "sampling-spectral-spatial-whispers-2015",
-    "controlled-sampling-tgrs-2017"
+    "controlled-sampling-tgrs-2017",
+    "mv-ntf-blind-unmixing-tgrs-2017",
+    "region-structure-nmf-jstars-2017",
+    "superpixel-ntf-unmixing-igarss-2018"
   ],
   "sourceChecks": [
     {
@@ -860,6 +863,42 @@
       "supports": [
         "v1全31页/14式/15图/4表/46参考，与AM四表531格相同但Eq10/VII-D/Fig16缺失；Eq7–8单调性/引文Theorem2差异两稿保留。",
         "主实验5/10/25%；坐标/原谱非线性SVM与坐标1NN采用五折CV、十次随机划分；TableIII明写linear SVM，TableIV RF。滤波均值奇数窗1–27，高斯σ从2^−1到2^3、指数步0.5；十次平均OA，表III/IV各90均值/std对。两版本四表531格逐项相同，各含4个无非重叠测试样本的NaN，保留null而非0。AM新增VII-D只说class训练数不足1设1，不自动解决Algorithm1分区浮点配额/取整。"
+      ]
+    },
+    {
+      "paperId": "mv-ntf-blind-unmixing-tgrs-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bd8d1b05-abb8-5227-83a9-c1199dfd02e4/content",
+      "level": "primary_public_full_text_version_scoped",
+      "supports": [
+        "MV-NTF以rank-(Lr,Lr,1)块项分解建模线性高光谱解混：每个非负端元谱cr与低秩二维丰度Er=ArBrᵀ外积，合成为观测立方体；可选MV-NTF-S用软丰度和为一惩罚。公开AM18页全部核验。",
+        "重构Σr(ArBrᵀ)∘cr，rank(Er)≤Lr；A/B/C非负乘法交替更新，实际使用三种张量展开和分块Khatri–Rao运算，列尺度重分配保护数值。MV-NTF-S追加δ‖ABᵀ−1‖F²软ASC，有限δ不保证严格和为一；不等于CPD或正交Tucker。",
+        "合成USGS六谱224波段；正文Chlonte与Fig2 Chlorite HS179.3B分源保留。HYDICE Urban307×307/210→162/4端元；AVIRIS Jasper100×100/224→198/4端元；Cuprite250×191/224→188/10矿物。Urban/Jasper参考谱手选、丰度FCLS生成，Cuprite参考按谱库相关匹配，均不是独立实测丰度真值。",
+        "两MV变体在六张合成表均优于所比三个NMF基线，带ASC变体并非每项最好。真实三表平均SAD .2167/.2082/.1118均为表内最低；Urban仅tree/roof、Jasper仅road、Cuprite仅pyrope最佳，不支持所有材料均优。表VII VCA grass原印0.41.33不解析；表IX NMF Dumortierite原印13.96超过SAD范围且重算mean不符，疑点不静默修正。",
+        "机构明确AM，18页含1封面；官方IEEE HTML/PDF均202空，未独立核正式版。非凸初始化依赖，单调目标讨论不证明全局最优；非负BTD唯一性充分条件未证明。真实crop原点/删带范围、谱匹配唯一性、百分号std解释、最大迭代/阈值/种子/零值保护/代码待；跨论文不同生成器和reference不得混算，未运行模型。"
+      ]
+    },
+    {
+      "paperId": "region-structure-nmf-jstars-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/content",
+      "level": "primary_public_full_text_version_scoped",
+      "supports": [
+        "R-NMF用同质区域丰度原型约束线性高光谱解混：区域内像元向原型软一致，区域间保留近邻吸引与远邻排斥，并结合区域自适应L1/2稀疏；共享全图端元。机构AM14页全部核验。",
+        "正文为Felzenszwalb/Huttenlocher图分割区域合并，非已证mincut/maxflow实现；构造区域均谱C与丰度原型A，在L1/2 NMF中加入µΣ‖rn−αq‖²、近邻Laplacian吸引和远邻平方距离指数排斥。Algorithm1按A/M/R乘法更新；约束为软一致、全图共享M，未见显式ASC执行。",
+        "合成USGS6谱含Actinolite，与两MV文的Chlorite/Chlonte不同，单端元区+(z+1)²滤波+max>.8置六谱均匀混合，z值未给。Jasper100×100起点(105,269)，224删26留198/4端元；Urban307×307，210删48留162/4端元；Washington DC Mall150×150，删19留191/5端元，原点/初始波段数未明确。真实参考谱依赖[50]，该引文实际是分类选带论文，真值文件待。",
+        "真实表I/II/III平均SAD .0665/.1268/.0771表内最低；Jasper四类均最佳，Urban仅road/grass最佳、DC的grass非最佳。Jasper S-VCA四材料重算mean .11395与原印.1136超舍入包络，原值保留。跨论文R-NMF基线.2505与本稿.0665不同，协议未对齐，不作复现或因果性能结论。",
+        "机构AM14页含1封面，官方IEEE HTML/PDF202空，正式版待。Eq14η分子印M尺寸不合；Eq18漏平方且trace用R与区域图维度不合；Eq33无cost差，与文字停止条件冲突，均保留原式。A初始化/k/ρ/联合总代价M梯度/代码/真实reference待，convergence仅曲线未给证明；不称逐像元硬等丰度。Fig16/19误写Jasper按正文分源，未运行模型。"
+      ]
+    },
+    {
+      "paperId": "superpixel-ntf-unmixing-igarss-2018",
+      "url": "https://monsterzhzh.github.io/pub/fcxiong.pdf",
+      "level": "primary_public_full_text_version_scoped",
+      "supports": [
+        "S-MV-NTF在MV-NTF线性解混的全局rank-(L,L,1)模型上，添加SLIC超像素引导的行/列两图Laplacian约束，改善局部丰度一致性。作者网站公开出版社排版拷贝4页全部核验。",
+        "共同超像素的行均谱/列均谱生成Wh/Wv，权重为共同区Gaussian平方距离权重的平均；在原MV-NTF重构与δ软ASC上，加α/2 Tr(LhAAᵀ)、µ/2 Tr(LvBBᵀ)，A/B乘法更新含图项、C端元更新保持。图约束位置是两空间因子，不是每区独立解混或严格同丰度。",
+        "合成USGS6谱正文Chlonte，z8→64×64；每patch随机两个端元以β.8/.2混合，9×9低通，未写max>.8全六端元均匀替换。Gaussian SNR15/20/25/30/∞。Jasper原512×614取100×100/198bands，4tree/water/dirt/road；crop起点、删带范围及真值入口未给。",
+        "Jasper Table1 mean SAD .1727低于MV .1813，差.0086；仅road .1822在五方法最低。tree .2121略高MV .2119且R .0371更低，water/dirt也非最佳。正文明确在MV-NTF上添加超像素图，为方法派生；R-NMF为不同模型基线，不因引用合并三论文/方法族。",
+        "公开PDF有正式6392–6395/IEEE版权与下载印记，标作者托管出版社排版拷贝；机构item未标AM且仅SWORD XML，官方IEEE入口202空，未独立获取官方版核差。Eq5/6拼接trace原印多1/2，与Eq4/7不一致；不静默修式。超像素/优化/真值/std单位细节和代码待，不继承2017默认参数或另文裁剪；跨文基线不同不称复现，未运行模型。"
       ]
     }
   ]
