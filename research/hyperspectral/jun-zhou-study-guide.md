@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。138条为摘要级核验、50条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。136条为摘要级核验、52条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -243,7 +243,7 @@
 | 2019 | [Hyperspectral anomaly detection based on anomalous component extraction framework](https://research-repository.griffith.edu.au/bitstream/10072/382909/1/Zhou158553.pdf) | 高光谱异常检测 | 正式发表 | 摘要核验 |
 | 2019 | [Hyperspectral Image Classification Based on Non-Local Neural Networks](https://www.semanticscholar.org/paper/8c0fbcaa9a9d417266d1470a46a40acd91d4c71b) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Hyperspectral Restoration via L0 Gradient Regularized Low-Rank Tensor Factorization](https://www.xiongfuli.com/cv/cv.pdf) | 光谱数据复原、光谱去噪 | 正式发表 | 摘要核验 |
-| 2019 | [Hyperspectral Unmixing via Total Variation Regularized Nonnegative Tensor Factorization](https://dblp.org/rec/journals/tgrs/XiongQ0T19.html) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2019 | [Hyperspectral Unmixing via Total Variation Regularized Nonnegative Tensor Factorization](https://ieeexplore.ieee.org/abstract/document/8497054/) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2019 | [Knowledge Transfer via Convolution Neural Networks for Multi-Resolution Lawn Weed Classification](https://www.researchgate.net/publication/337794147_Knowledge_Transfer_via_Convolution_Neural_Networks_for_Multi-Resolution_Lawn_Weed_Classification) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Multi-Resolution Weed Classification via Convolutional Neural Network and Superpixel Based Local Binary Pattern Using Remote Sensing Images](https://www.mdpi.com/2072-4292/11/14/1692) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Texture and Shape Features for Grass Weed Classification Using Hyperspectral Remote Sensing Images](https://unsworks.unsw.edu.au/bitstreams/1df826fe-3c8f-43c1-aeb1-b68fe51568e3/download) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -251,10 +251,10 @@
 | 2020 | [BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking](https://doi.org/10.1109/icip40778.2020.9191105) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
 | 2020 | [Inverse Coefficient of Variation Feature and Multilevel Fusion Technique for Hyperspectral and LiDAR Data Classification](https://research-repository.griffith.edu.au/bitstream/10072/392021/2/Zhou348500-Accepted.pdf) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2020 | [Material Based Object Tracking in Hyperspectral Videos](https://doi.org/10.1109/TIP.2020.2965302) | 光谱目标时序跟踪、高光谱视频采集、数据集与评测基准 | 正式发表 | 全文核验（版本见目录） |
-| 2020 | [Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/547a5abf-f46e-4945-a521-0743fb51c8c8/content) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2020 | [Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://ieeexplore.ieee.org/ielx7/4609443/8994817/09210778.pdf?tp=&arnumber=9210778&isnumber=8994817&ref=) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2020 | [Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://www.semanticscholar.org/paper/84d25a7a9c210f49b2eaab6fd44adfb156f9bcef) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2020 | [Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing](https://www.peeref.com/zh/works/20998787) | 光谱解混 | 正式发表 | 摘要核验 |
-| 2020 | [Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2020 | [Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://ieeexplore.ieee.org/ielx7/4609443/8994817/09146211.pdf?tp=&arnumber=9146211&isnumber=8994817&ref=) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2020 | [Superpixel-Level Weighted Label Propagation for Hyperspectral Image Classification](https://www.researchgate.net/publication/363929741_Superpixel_Correction_Based_Label_Propagation_for_Hyperspectral_Images_Classification) | 地物与植被图像分类、标注样本主动选择 | 正式发表 | 摘要核验 |
 | 2021 | [A Lightweight Convolutional Neural Network for Hyperspectral Image Classification](https://scispace.com/papers/a-lightweight-convolutional-neural-network-for-hyperspectral-5ebojmrxv8) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
 | 2021 | [Discriminant Tensor-Based Manifold Embedding for Medical Hyperspectral Imagery](https://pubmed.ncbi.nlm.nih.gov/33687854/) | 光谱降维与子空间识别、地物与植被图像分类 | 正式发表 | 摘要核验 |

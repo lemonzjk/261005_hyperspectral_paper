@@ -21,7 +21,7 @@
 
 用户要求继续完成论文调研，不需要新增学习笔记。当前重点是来源查漏、作者身份、光谱输入、正式书目与版本关系；全文、代码及性能复现的阅读状态另行记录，不以笔记数量衡量目录完成。
 
-当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；138条摘要级、50条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
+当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；136条摘要级、52条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
 
 本轮补入EAAHNet：出版社作者登记、原文首页均确认Jun Zhou属于Griffith；保留DBLP同名0011分配差异，避免错误排除。原文IV-A明确Potsdam红/绿/近红外输入，归多光谱关联；Vaihingen写RGB，实际数据版本和实现仍待核。ComicLib正式节目确认Griffith身份，漫画草图任务按范围暂排，未标全文核验。
 
@@ -900,3 +900,57 @@ R-NMF Eq14η分子确印M，与P维丰度步长尺寸不合且不能推出Eq15�
 补MV原Fig1（PDF7/正文6）完整四模型对照，明确不是Algorithm1全solver流程；补超像素原Fig1（PDF2/6393）完整框架与图注。R-NMF20图没有独立完整框架，记no_framework；队列顺序/非目标保持。新增矩阵—向量BTD解混与区域原型结构NMF两个精确方法标签，区域补已有稀疏因子标签、超像素补已有图标签，三分类审计新增；正式BibTeX卷期页码补齐，IGARSS改inproceedings。现757总库/214三维/320标签（任务102/方法195/应用23）、358原图，402确认（364审计）/337暂定/18待，1615候选/250查询/243批次。25实际HTTP原响应和三派生审计按实际字节/SHA保存。
 
 证据：[阅读清单/原响应SHA](sources/jun-zhou-region-tensor-full-reading-2026-10-11.json)、[全部36页文本](sources/jun-zhou-region-tensor-full-all-page-text-2026-10-11.json)、[身份/版本/恢复/校验](sources/jun-zhou-region-tensor-full-primary-metadata-2026-10-11.json)、[全部式表与协议/算术/跨文比较](sources/jun-zhou-region-tensor-full-protocol-equations-tables-2026-10-11.json)。其余138摘要级作者记录、多来源差集/arXiv八待、正式与实现继续；作者全集及后续全领域顶会顶刊/arXiv矩阵尚未完成。
+
+### TV、GMC与子空间NMF版本及实现核验（2026-10-11）
+
+本批复核三篇既有作者论文：GMC和子空间NMF新增IEEE正式全文，分别13/14页，共27页、67式、23图、9表357格447标量、2算法和44/54参考。参考目录已读不等于引用作品全读。GMC机构明确VoR，含封面的14页与IEEE13页正文归一文本逐页相同；子空间机构15页明确AM，只作来源/局部对照，不能算AM全读或完整版差校勘。两正式来源实际200 PDF并读到版权CC-BY4.0；首次公开/当前版本分别2020-10-01/10-15和2020-07-22/08-07。
+
+**Hyperspectral Unmixing via Total Variation Regularized Nonnegative Tensor Factorization**
+
+作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。
+
+IEEE和Griffith完整摘要只确认合成与真实高光谱实验；本轮代码ZIP不含数据或PDF，不从其他论文转移数据协议。
+
+论文实验尚待全文。代码静态核验：delta=0.4、prox内循环20、外循环相对变化1e-4且无显式最大迭代；ZIP未含tens2mat/myKr/myKr2依赖，无模型运行。
+
+正式摘要报告优于比较方法，当前无全文表格可独立核定。代码支持低秩二维丰度/TV具体位置，不证明论文实验已复现。
+
+IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。
+
+论文全文未取得；实际200为IEEE完整摘要或PDF跳转HTML，作者ZIP无PDF。框架原图仍待，不把算法代码重绘成论文原图。
+
+**Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing**
+
+GMC为L1减去由A度量的Moreau包络，端元谱相关性耦合材料丰度；外层A非负乘法更新、内层S/V前向—后向分裂，VCA-FCLS初值/V=S及delta=15软ASC。凸性引理只覆盖固定A丰度子问题，非联合全局最优。
+
+合成六谱Carnallite、Ammonio-jarosite、Almandine、Brucite、Axinite、Chlonte（原印）224波段0.38–2.5µm；z=8为64×64，区域两谱beta/(1-beta)，Gaussian方差2及ASC归一。Samson95×95/156/3端元；Jasper100×100/205/4；DC Mall150×150/191/5。Jasper原印删1108–1112越界，保留疑点。
+
+lambda=1、gamma=0.1；gamma扫描.02,.04,.06,.08,.1,.3,.5,.7,.9，lambda .1–1/3/5；SNR15/20/25/30/∞，beta .5–1步.1。VCA-FCLS初值、V=S；HySime估端元数但真实段另指定3/4/5，实际衔接待；重建损失相对变化<1e-4或3000迭代，非全目标单调证明。Windows10/Xeon Silver4114@2.20GHz/32GB；重复次数/随机种子未明确。
+
+正式表II/III/IV报告平均SAD .0507/.1230/.2174均最小；逐材料仅2/3、2/4、1/5最小。Jasper GMC材料均值实际.12225，与印.1230超舍入容差；DC TV-RSNMF Water4.66超SAD范围，保留不能修成.0466。合成图示优越性不等于全条件独立复现。表I GMC25.43s，慢于四基线、快于TV32.22s。
+
+IEEE正式13页/26式/13图/4表/1算法/44参考已通读；机构VoR去封面13页文本逐页归一一致。Eq12/13对A的梯度应含负gamma曲率，Eq14/15/D印式符号不一致；Eq19阈lambda缺alpha，Eq21两分支同Delta且未定义，Algorithm1引用15而非17。凸不自动唯一，联合非凸仍需初值。DC超范围格和Jasper均值、std百分数单位/重复数、Jasper波段原印及参考真值、实现待，不静默修论文。
+
+IEEE全13页13图通览，Fig1为SMC惩罚曲线；其余参数曲线、谱和丰度结果，无独立全流程框架，记no_framework。Algorithm1是伪代码，不替代方法原图。
+
+**Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing**
+
+L1/2稀疏丰度、mu||S-SZ||²及tau核范数Z；引入L并松弛为0.5||L-Z||²+tau||L||*，A/S/Z乘法更新、L奇异值阈值；VCA-FCLS/LRR初值、delta15软ASC。Z不是局部手工邻域图；N×N关系保留全局结构。
+
+EIAs/USGS九谱、四小丰度图拼接、100×100/224；SNR10/20/30/40dB。Jasper起点(105,269)100×100，删1–3/108–112/154–166/220/224剩198，4端元；正式稿称HYDICE，但GMC同景称AVIRIS，传感器归属待原数据核验。Urban307×307/162、6端元；Cuprite250×191/188，由14近谱压为12、USGS参考，仅SAD无丰度真值。
+
+lambda=.1合成、mu=.01、tau=.001、delta15；lambda_e式41求和上界N与Y_l波段索引疑点、真实lambda搜索协议待。VCA-FCLS、原Y的LRR初始化Z；3000迭代或Eq38当前梯度平方相对首梯度≤1e-3，不是相邻梯度差的明确公式。共8基线，无明确重复次数、种子、机器。公开commit5165f34a…静态核演示及求解器，无模型运行。
+
+正式合成SAD四噪声级3次最优，30dB .0107劣于VCA .0102和SDNMF-TV .0105；四级RMSE全最佳。Jasper/Urban平均SAD .1466/.2307、RMSE .1653/.1593最小；Cuprite平均.0981最小但仅Buddingtonite1/12材料最佳，正文Pyrope/Chalcedony“优势”不等于逐项最佳。公开求解器固定Z，无论文四变量联合循环，不声称复现。
+
+IEEE正式14页/41式/10图/5表/1算法/54参考全文核验；机构15页AM仅来源/局部对照，未宣称逐页全文。Eq17 Tr(Gamma A)维度/变量疑点，Eq21→22系数2/mu与直接梯度1/(2mu)不一致、Eq28列维度及Eq32缺zk疑点；PSD不保证乘法分母逐元非负，松弛非等价原等式、稠密SVD复杂度和N²内存待。Cuprite四基线均值超舍入容差留原印。公开main_demo缺data.mat/Y/M/X/Z/nc/nl，delta5/初始化伪逆非FCLS，固定Z且无SVT、函数名与文件名不一致；完整联合实现/真值/协议待。
+
+IEEE正式Fig1 PDF4/4260为四种空间约束概念对照，包含原分解关系和远距离同材关联；不是A/S/Z/L求解流程。原图含完整caption保留。
+
+TV作者ZIP五个有效MATLAB源（含嵌套prox包）无PDF；缺tens2mat/myKr/myKr2。子空间论文首页指向作者GitHub，冻结commit `5165f34a0e86a150daa3e60d5dc7bf3f01ebc6d9`：README指精确论文；main_demo与newregu/newregulrr静态核验，演示固定Z，未发现论文四变量联合求解循环；文件名/首函数名不一致且数据未附，不能把有仓库等同已复现。未运行MATLAB或模型。
+
+原表视觉逐格审计：GMC Jasper自己材料均值0.12225与印0.1230不符；DC TV-RSNMF Water印4.66±0.53%超过SAD范围，0.0466仅假设。DC L1/2均值0.22132与印0.2212略超合并舍入容差；Cuprite VCA/MLNMF/SGSNMF/TV-RSNMF均值也超容差。原值、百分号和全部算术差异保留，不静默修文献。SSR Cuprite只有Buddingtonite材料最佳，Pyrope0.0610劣于SGSNMF0.0605、Chalcedony0.0988劣于L1/2 0.0698；平均优势不能泛化逐材料。GMC引理固定A，凸性不自动唯一；A子问题曲率及Eq14–17/阈值存在不一致，不能承诺联合全局最优。SSR Eq21直接梯度的1/(2mu)与22印2/mu不同，松弛/非负性/收敛和稠密SVD复杂度需要完整实现核定。
+
+新增GMC非可分稀疏NMF、丰度—子空间联合NMF两方法标签，三条分类审计；TV添加既有BTD机制标签但保持摘要级。子空间Fig1原概念对照含完整caption，非四变量求解流程；GMC13图无全流程框架，TV缺全文保留pending。36实际原响应按bytes/SHA保存，含York403、arXiv429及TV官方PDF跳HTML/202；网页搜索404采用直接一手访问，不伪造成功搜索。
+
+现757篇/188作者（136摘要、52全文）/322标签（102任务/197方法/23应用）/359图/367审计；候选1615、查询251、批次244。八arXiv范围/身份待项及作者全集差集不变；全领域顶会顶刊/arXiv矩阵仍未完成，无新学习笔记。证据：[原响应与阅读清单](sources/jun-zhou-tv-gmc-subspace-full-reading-2026-10-11.json)、[原表与代码审计](sources/jun-zhou-tv-gmc-subspace-full-tables-code-2026-10-11.json)。

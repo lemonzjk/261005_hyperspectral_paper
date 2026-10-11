@@ -69082,32 +69082,38 @@
         "hyperspectral"
       ],
       "doi": "10.1109/TGRS.2018.2872888",
-      "representation": "以全变分正则非负张量因子分解估计端元与丰度，平滑丰度并保持边缘。",
+      "representation": "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。",
       "tags": [],
-      "summary": "研究高光谱非负张量解混。",
-      "input": "高光谱混合影像、合成和真实数据。",
-      "output": "端元矩阵与丰度图。",
-      "mechanism": "矩阵—向量NTF保留全局光谱—空间结构，TV约束利用局部空间平滑并保持边缘。",
-      "readingNote": "公开摘要、DBLP、Crossref核验；正式TGRS57(4):2341–2357，未标全文。",
-      "paper": "https://dblp.org/rec/journals/tgrs/XiongQ0T19.html",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "TV正则矩阵—向量NTF结合全局低秩丰度与局部二维TV，用于线性盲高光谱解混；正式完整摘要和作者源代码已核，论文全文未取得。",
+      "input": "三阶高光谱影像；公开MATLAB函数还须给定A/B/C、lambda/mu及R/L初值，完整实验数据和论文协议待全文。",
+      "output": "端元谱C、空间因子A/B和二维丰度E；代码辅助U/V，不是三维几何重建。",
+      "mechanism": "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。",
+      "readingNote": "IEEE完整摘要、Crossref和作者代码已核；全文未取得，保持摘要级；IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。",
+      "paper": "https://ieeexplore.ieee.org/abstract/document/8497054/",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_abstract_and_partial_author_code_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
-          "tensor-low-rank-learning"
+          "tensor-low-rank-learning",
+          "matrix-vector-btd-unmixing"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
-        "dataLinks": [],
+        "researchQuestion": "如何同时用矩阵—向量分解的全局空间结构和TV局部平滑约束降低解混非唯一性与噪声？",
+        "datasets": "IEEE和Griffith完整摘要只确认合成与真实高光谱实验；本轮代码ZIP不含数据或PDF，不从其他论文转移数据协议。",
+        "experimentSetting": "论文实验尚待全文。代码静态核验：delta=0.4、prox内循环20、外循环相对变化1e-4且无显式最大迭代；ZIP未含tens2mat/myKr/myKr2依赖，无模型运行。",
+        "conclusions": "正式摘要报告优于比较方法，当前无全文表格可独立核定。代码支持低秩二维丰度/TV具体位置，不证明论文实验已复现。",
+        "limitations": "IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。",
+        "dataLinks": [
+          {
+            "label": "作者MATLAB代码（静态核验；协议差异见详情）",
+            "url": "https://www.xiongfuli.com/cv/code/MV-NTF-TV.zip"
+          }
+        ],
         "evidence": [
           {
             "url": "https://scispace.com/papers/hyperspectral-unmixing-via-total-variation-regularized-405e90au35",
@@ -69124,23 +69130,61 @@
             "supports": [
               "正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/abstract/document/8497054/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_complete_abstract_and_author_code_scoped",
+            "supports": [
+              "TV正则矩阵—向量NTF结合全局低秩丰度与局部二维TV，用于线性盲高光谱解混；正式完整摘要和作者源代码已核，论文全文未取得。",
+              "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。",
+              "IEEE和Griffith完整摘要只确认合成与真实高光谱实验；本轮代码ZIP不含数据或PDF，不从其他论文转移数据协议。",
+              "正式摘要报告优于比较方法，当前无全文表格可独立核定。代码支持低秩二维丰度/TV具体位置，不证明论文实验已复现。",
+              "IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/35547392-60bc-405f-8bb8-828ddf9ccd91",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata_and_abstract",
+            "supports": [
+              "精确题名/作者/DOI/完整摘要；版本与附件完整分页互证。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2018.2872888",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "完整作者/DOI及正式卷期页码；created不当首次online。"
+            ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/code/MV-NTF-TV.zip",
+            "checkedAt": "2026-10-11",
+            "level": "primary_author_code_static_review",
+            "supports": [
+              "论文实验尚待全文。代码静态核验：delta=0.4、prox内循环20、外循环相对变化1e-4且无显式最大迭代；ZIP未含tens2mat/myKr/myKr2依赖，无模型运行。",
+              "IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "tv-ntf-hsi-unmixing-2019-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1109/TGRS.2018.2872888",
+            "type": "正式期刊完整摘要",
+            "url": "https://ieeexplore.ieee.org/abstract/document/8497054/",
             "doi": "10.1109/TGRS.2018.2872888",
             "year": 2019,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "IEEE显示2018-10-18首次公开，April2019 TGRS57(4):2341–2357；非全文。",
+            "readingProgress": "abstract_read"
           }
         ],
         "methodFamilyId": "tv-ntf-hsi-unmixing",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。公开全文/完整摘要/代码分别限定，非模型复现。",
           "evidenceFields": [
             "title",
             "summary",
@@ -69149,15 +69193,21 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "e5b2413d879f1a10004c453d45e79bd8a70a5ca4515ec137eb614990694e71c6",
+          "evidenceDigest": "1cbd378907e113377a1e229c7281ca8e46a6f66ded59dbc0b3d4e8650f9eadb3",
           "sourceUrls": [
-            "https://dblp.org/rec/journals/tgrs/XiongQ0T19.html",
-            "https://scispace.com/papers/hyperspectral-unmixing-via-total-variation-regularized-405e90au35",
+            "https://ieeexplore.ieee.org/abstract/document/8497054/",
+            "https://research-repository.griffith.edu.au/server/api/core/items/35547392-60bc-405f-8bb8-828ddf9ccd91",
             "https://api.crossref.org/works/10.1109/TGRS.2018.2872888"
           ]
         }
       },
-      "citation": "@article{tv_ntf_hsi_unmixing_2019,\n  title = {Hyperspectral Unmixing via Total Variation Regularized Nonnegative Tensor Factorization},\n  author = {Fengchao Xiong and Yuntao Qian and Jun Zhou and Yuan Yan Tang},\n  year = {2019},\n  doi = {10.1109/TGRS.2018.2872888}\n}\n"
+      "citation": "@article{tv_ntf_hsi_unmixing_2019,\n  title = {Hyperspectral Unmixing via Total Variation Regularized Nonnegative Tensor Factorization},\n  author = {Fengchao Xiong and Yuntao Qian and Jun Zhou and Yuan Yan Tang},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2019},\n  volume = {57},\n  number = {4},\n  pages = {2341--2357},\n  doi = {10.1109/TGRS.2018.2872888}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "pending",
+        "note": "论文全文未取得；实际200为IEEE完整摘要或PDF跳转HTML，作者ZIP无PDF。框架原图仍待，不把算法代码重绘成论文原图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/abstract/document/8497054/",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "crf-deep-feature-hsi-tgrs-2019",
@@ -69895,32 +69945,34 @@
         "hyperspectral"
       ],
       "doi": "10.1109/JSTARS.2020.3028104",
-      "representation": "以非凸非可分GMC稀疏正则增强NMF的高光谱解混。",
+      "representation": "GMC为L1减去由A度量的Moreau包络，端元谱相关性耦合材料丰度；外层A非负乘法更新、内层S/V前向—后向分裂，VCA-FCLS初值/V=S及delta=15软ASC。凸性引理只覆盖固定A丰度子问题，非联合全局最优。",
       "tags": [],
-      "summary": "研究物理可解释且稀疏的高光谱解混。",
-      "input": "高光谱混合影像、合成和真实数据。",
-      "output": "端元与丰度估计。",
-      "mechanism": "GMC正则同时促进无偏稀疏和逐变量凸性，减少NMF局部极小。",
-      "readingNote": "Griffith作者PDF摘要与DOAJ/Crossref核验；正式JSTARS13:6088–6100，未标全文。",
-      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/547a5abf-f46e-4945-a521-0743fb51c8c8/content",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "GMC-NMF在端元与丰度联合非负矩阵分解中使用非可分GMC丰度稀疏惩罚；固定端元时通过B=sqrt(gamma/lambda)A保留丰度目标凸性，但联合优化仍非凸。",
+      "input": "高光谱矩阵X；合成USGS六端元224波段，Samson/Jasper Ridge/Washington DC Mall三个真实裁剪场景。",
+      "output": "非负端元A、丰度S和GMC辅助变量V；不是固定材料字典的丰度回归或深度网络。",
+      "mechanism": "GMC为L1减去由A度量的Moreau包络，端元谱相关性耦合材料丰度；外层A非负乘法更新、内层S/V前向—后向分裂，VCA-FCLS初值/V=S及delta=15软ASC。凸性引理只覆盖固定A丰度子问题，非联合全局最优。",
+      "readingNote": "IEEE正式13页/26式/13图/4表/44参考及1算法全文已核；IEEE正式13页/26式/13图/4表/1算法/44参考已通读；机构VoR去封面13页文本逐页归一一致。Eq12/13对A的梯度应含负gamma曲率，Eq14/15/D印式符号不一致；Eq19阈lambda缺alpha，Eq21两分支同Delta且未定义，Algorithm1引用15而非17。凸不自动唯一，联合非凸仍需初值。DC超范围格和Jasper均值、std百分数单位/重复数、Jasper波段原印及参考真值、实现待，不静默修论文。",
+      "paper": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09210778.pdf?tp=&arnumber=9210778&isnumber=8994817&ref=",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_formal_full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "low-rank-matrix-factorization",
-          "sparse-dictionary-learning"
+          "sparse-dictionary-learning",
+          "sparse-nonnegative-factorization",
+          "gmc-nonseparable-sparse-nmf"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何促进少偏差的稀疏丰度，同时保留固定端元条件下的凸性，而不将联合NMF误称全局凸？",
+        "datasets": "合成六谱Carnallite、Ammonio-jarosite、Almandine、Brucite、Axinite、Chlonte（原印）224波段0.38–2.5µm；z=8为64×64，区域两谱beta/(1-beta)，Gaussian方差2及ASC归一。Samson95×95/156/3端元；Jasper100×100/205/4；DC Mall150×150/191/5。Jasper原印删1108–1112越界，保留疑点。",
+        "experimentSetting": "lambda=1、gamma=0.1；gamma扫描.02,.04,.06,.08,.1,.3,.5,.7,.9，lambda .1–1/3/5；SNR15/20/25/30/∞，beta .5–1步.1。VCA-FCLS初值、V=S；HySime估端元数但真实段另指定3/4/5，实际衔接待；重建损失相对变化<1e-4或3000迭代，非全目标单调证明。Windows10/Xeon Silver4114@2.20GHz/32GB；重复次数/随机种子未明确。",
+        "conclusions": "正式表II/III/IV报告平均SAD .0507/.1230/.2174均最小；逐材料仅2/3、2/4、1/5最小。Jasper GMC材料均值实际.12225，与印.1230超舍入容差；DC TV-RSNMF Water4.66超SAD范围，保留不能修成.0466。合成图示优越性不等于全条件独立复现。表I GMC25.43s，慢于四基线、快于TV32.22s。",
+        "limitations": "IEEE正式13页/26式/13图/4表/1算法/44参考已通读；机构VoR去封面13页文本逐页归一一致。Eq12/13对A的梯度应含负gamma曲率，Eq14/15/D印式符号不一致；Eq19阈lambda缺alpha，Eq21两分支同Delta且未定义，Algorithm1引用15而非17。凸不自动唯一，联合非凸仍需初值。DC超范围格和Jasper均值、std百分数单位/重复数、Jasper波段原印及参考真值、实现待，不静默修论文。",
         "dataLinks": [],
         "evidence": [
           {
@@ -69938,23 +69990,63 @@
             "supports": [
               "正式记录和页码。"
             ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09210778.pdf?tp=&arnumber=9210778&isnumber=8994817&ref=",
+            "checkedAt": "2026-10-11",
+            "level": "primary_formal_full_text",
+            "supports": [
+              "GMC-NMF在端元与丰度联合非负矩阵分解中使用非可分GMC丰度稀疏惩罚；固定端元时通过B=sqrt(gamma/lambda)A保留丰度目标凸性，但联合优化仍非凸。",
+              "GMC为L1减去由A度量的Moreau包络，端元谱相关性耦合材料丰度；外层A非负乘法更新、内层S/V前向—后向分裂，VCA-FCLS初值/V=S及delta=15软ASC。凸性引理只覆盖固定A丰度子问题，非联合全局最优。",
+              "合成六谱Carnallite、Ammonio-jarosite、Almandine、Brucite、Axinite、Chlonte（原印）224波段0.38–2.5µm；z=8为64×64，区域两谱beta/(1-beta)，Gaussian方差2及ASC归一。Samson95×95/156/3端元；Jasper100×100/205/4；DC Mall150×150/191/5。Jasper原印删1108–1112越界，保留疑点。",
+              "正式表II/III/IV报告平均SAD .0507/.1230/.2174均最小；逐材料仅2/3、2/4、1/5最小。Jasper GMC材料均值实际.12225，与印.1230超舍入容差；DC TV-RSNMF Water4.66超SAD范围，保留不能修成.0466。合成图示优越性不等于全条件独立复现。表I GMC25.43s，慢于四基线、快于TV32.22s。",
+              "IEEE正式13页/26式/13图/4表/1算法/44参考已通读；机构VoR去封面13页文本逐页归一一致。Eq12/13对A的梯度应含负gamma曲率，Eq14/15/D印式符号不一致；Eq19阈lambda缺alpha，Eq21两分支同Delta且未定义，Algorithm1引用15而非17。凸不自动唯一，联合非凸仍需初值。DC超范围格和Jasper均值、std百分数单位/重复数、Jasper波段原印及参考真值、实现待，不静默修论文。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/717c8461-a485-41ca-91f5-dd53bcf8c17a",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata_and_abstract",
+            "supports": [
+              "精确题名/作者/DOI/完整摘要；版本与附件完整分页互证。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/JSTARS.2020.3028104",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "完整作者/DOI及正式卷期页码；created不当首次online。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "gmc-sparse-nmf-hsi-2020-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1109/JSTARS.2020.3028104",
+            "type": "正式期刊全文",
+            "url": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09210778.pdf?tp=&arnumber=9210778&isnumber=8994817&ref=",
             "doi": "10.1109/JSTARS.2020.3028104",
             "year": 2020,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "IEEE正式6088–6100；2020-10-01公开/10-15当前版本，CC-BY4.0；正式原表与印式疑点已核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
+          },
+          {
+            "id": "gmc-sparse-nmf-hsi-2020-institution-vor",
+            "type": "机构托管Version of Record (VoR)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/547a5abf-f46e-4945-a521-0743fb51c8c8/content",
+            "year": 2020,
+            "doi": "10.1109/JSTARS.2020.3028104",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "relation": "机构明确VoR，14页含动态封面；13页正文归一文本逐页与IEEE正式PDF一致，文件字节不同；旧“作者稿摘要”不代表AM。"
           }
         ],
         "methodFamilyId": "gmc-sparse-nmf",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "GMC为L1减去由A度量的Moreau包络，端元谱相关性耦合材料丰度；外层A非负乘法更新、内层S/V前向—后向分裂，VCA-FCLS初值/V=S及delta=15软ASC。凸性引理只覆盖固定A丰度子问题，非联合全局最优。公开全文/完整摘要/代码分别限定，非模型复现。",
           "evidenceFields": [
             "title",
             "summary",
@@ -69963,15 +70055,21 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "edae2dbb488303c73a518890aa0a6f63423006fdcf284575d63b9e7398121864",
+          "evidenceDigest": "cc3898be8f9cfa4f90228a8246fe6cd8e001f3106bc1c3e85e57e41ba02166ce",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/547a5abf-f46e-4945-a521-0743fb51c8c8/content",
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/547a5abf-f46e-4945-a521-0743fb51c8c8/content",
+            "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09210778.pdf?tp=&arnumber=9210778&isnumber=8994817&ref=",
+            "https://research-repository.griffith.edu.au/server/api/core/items/717c8461-a485-41ca-91f5-dd53bcf8c17a",
             "https://api.crossref.org/works/10.1109/JSTARS.2020.3028104"
           ]
         }
       },
-      "citation": "@article{gmc_sparse_nmf_hsi_2020,\n  title = {Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Jianfeng Lu and Yuntao Qian},\n  year = {2020},\n  doi = {10.1109/JSTARS.2020.3028104}\n}\n"
+      "citation": "@article{gmc_sparse_nmf_hsi_2020,\n  title = {Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Jianfeng Lu and Yuntao Qian},\n  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n  year = {2020},\n  volume = {13},\n  pages = {6088--6100},\n  doi = {10.1109/JSTARS.2020.3028104}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "IEEE全13页13图通览，Fig1为SMC惩罚曲线；其余参数曲线、谱和丰度结果，无独立全流程框架，记no_framework。Algorithm1是伪代码，不替代方法原图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09210778.pdf?tp=&arnumber=9210778&isnumber=8994817&ref=",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "subspace-structure-nmf-hsi-2020",
@@ -69987,33 +70085,40 @@
         "hyperspectral"
       ],
       "doi": "10.1109/JSTARS.2020.3011257",
-      "representation": "从原始高光谱影像学习全局子空间结构图，正则化稀疏NMF解混。",
+      "representation": "L1/2稀疏丰度、mu||S-SZ||²及tau核范数Z；引入L并松弛为0.5||L-Z||²+tau||L||*，A/S/Z乘法更新、L奇异值阈值；VCA-FCLS/LRR初值、delta15软ASC。Z不是局部手工邻域图；N×N关系保留全局结构。",
       "tags": [],
-      "summary": "研究全局空间结构辅助的高光谱解混。",
-      "input": "高光谱影像、合成和真实数据。",
-      "output": "端元与丰度估计。",
-      "mechanism": "用自表示学习像元相似图，将全局空间先验加入稀疏NMF丰度分解。",
-      "readingNote": "York Research Database完整摘要与Crossref核验；2020在线版，未标全文。",
-      "paper": "https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "子空间结构正则稀疏NMF用丰度自表示S≈SZ和核范数学习全局像元关系，论文通过A/S/Z/L四变量交替更新联合盲解混。",
+      "input": "高光谱矩阵Y；9端元100×100/224合成图，Jasper100×100/198、Urban307×307/162、Cuprite250×191/188三真实影像；公开演示数据缺失。",
+      "output": "端元A、稀疏丰度S与像元自表示Z；可在Z上做谱聚类，聚类仅定性展示。",
+      "mechanism": "L1/2稀疏丰度、mu||S-SZ||²及tau核范数Z；引入L并松弛为0.5||L-Z||²+tau||L||*，A/S/Z乘法更新、L奇异值阈值；VCA-FCLS/LRR初值、delta15软ASC。Z不是局部手工邻域图；N×N关系保留全局结构。",
+      "readingNote": "IEEE正式14页/41式/10图/5表/54参考及1算法全文已核；IEEE正式14页/41式/10图/5表/1算法/54参考全文核验；机构15页AM仅来源/局部对照，未宣称逐页全文。Eq17 Tr(Gamma A)维度/变量疑点，Eq21→22系数2/mu与直接梯度1/(2mu)不一致、Eq28列维度及Eq32缺zk疑点；PSD不保证乘法分母逐元非负，松弛非等价原等式、稠密SVD复杂度和N²内存待。Cuprite四基线均值超舍入容差留原印。公开main_demo缺data.mat/Y/M/X/Z/nc/nl，delta5/初始化伪逆非FCLS，固定Z且无SVT、函数名与文件名不一致；完整联合实现/真值/协议待。",
+      "paper": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09146211.pdf?tp=&arnumber=9146211&isnumber=8994817&ref=",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_formal_full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "graph-learning",
-          "low-rank-matrix-factorization"
+          "low-rank-matrix-factorization",
+          "sparse-nonnegative-factorization",
+          "joint-abundance-subspace-nmf"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
-        "dataLinks": [],
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何学习跨远距离区域的材料分布，并让解混丰度与低秩自表示互相促进？",
+        "datasets": "EIAs/USGS九谱、四小丰度图拼接、100×100/224；SNR10/20/30/40dB。Jasper起点(105,269)100×100，删1–3/108–112/154–166/220/224剩198，4端元；正式稿称HYDICE，但GMC同景称AVIRIS，传感器归属待原数据核验。Urban307×307/162、6端元；Cuprite250×191/188，由14近谱压为12、USGS参考，仅SAD无丰度真值。",
+        "experimentSetting": "lambda=.1合成、mu=.01、tau=.001、delta15；lambda_e式41求和上界N与Y_l波段索引疑点、真实lambda搜索协议待。VCA-FCLS、原Y的LRR初始化Z；3000迭代或Eq38当前梯度平方相对首梯度≤1e-3，不是相邻梯度差的明确公式。共8基线，无明确重复次数、种子、机器。公开commit5165f34a…静态核演示及求解器，无模型运行。",
+        "conclusions": "正式合成SAD四噪声级3次最优，30dB .0107劣于VCA .0102和SDNMF-TV .0105；四级RMSE全最佳。Jasper/Urban平均SAD .1466/.2307、RMSE .1653/.1593最小；Cuprite平均.0981最小但仅Buddingtonite1/12材料最佳，正文Pyrope/Chalcedony“优势”不等于逐项最佳。公开求解器固定Z，无论文四变量联合循环，不声称复现。",
+        "limitations": "IEEE正式14页/41式/10图/5表/1算法/54参考全文核验；机构15页AM仅来源/局部对照，未宣称逐页全文。Eq17 Tr(Gamma A)维度/变量疑点，Eq21→22系数2/mu与直接梯度1/(2mu)不一致、Eq28列维度及Eq32缺zk疑点；PSD不保证乘法分母逐元非负，松弛非等价原等式、稠密SVD复杂度和N²内存待。Cuprite四基线均值超舍入容差留原印。公开main_demo缺data.mat/Y/M/X/Z/nc/nl，delta5/初始化伪逆非FCLS，固定Z且无SVT、函数名与文件名不一致；完整联合实现/真值/协议待。",
+        "dataLinks": [
+          {
+            "label": "作者MATLAB代码（静态核验；协议差异见详情）",
+            "url": "https://codeload.github.com/zlbuaa/Subspace-Regularized-Unmixing/zip/5165f34a0e86a150daa3e60d5dc7bf3f01ebc6d9"
+          }
+        ],
         "evidence": [
           {
             "url": "https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/",
@@ -70030,23 +70135,71 @@
             "supports": [
               "正式DOI和在线年份。"
             ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09146211.pdf?tp=&arnumber=9146211&isnumber=8994817&ref=",
+            "checkedAt": "2026-10-11",
+            "level": "primary_formal_full_text",
+            "supports": [
+              "子空间结构正则稀疏NMF用丰度自表示S≈SZ和核范数学习全局像元关系，论文通过A/S/Z/L四变量交替更新联合盲解混。",
+              "L1/2稀疏丰度、mu||S-SZ||²及tau核范数Z；引入L并松弛为0.5||L-Z||²+tau||L||*，A/S/Z乘法更新、L奇异值阈值；VCA-FCLS/LRR初值、delta15软ASC。Z不是局部手工邻域图；N×N关系保留全局结构。",
+              "EIAs/USGS九谱、四小丰度图拼接、100×100/224；SNR10/20/30/40dB。Jasper起点(105,269)100×100，删1–3/108–112/154–166/220/224剩198，4端元；正式稿称HYDICE，但GMC同景称AVIRIS，传感器归属待原数据核验。Urban307×307/162、6端元；Cuprite250×191/188，由14近谱压为12、USGS参考，仅SAD无丰度真值。",
+              "正式合成SAD四噪声级3次最优，30dB .0107劣于VCA .0102和SDNMF-TV .0105；四级RMSE全最佳。Jasper/Urban平均SAD .1466/.2307、RMSE .1653/.1593最小；Cuprite平均.0981最小但仅Buddingtonite1/12材料最佳，正文Pyrope/Chalcedony“优势”不等于逐项最佳。公开求解器固定Z，无论文四变量联合循环，不声称复现。",
+              "IEEE正式14页/41式/10图/5表/1算法/54参考全文核验；机构15页AM仅来源/局部对照，未宣称逐页全文。Eq17 Tr(Gamma A)维度/变量疑点，Eq21→22系数2/mu与直接梯度1/(2mu)不一致、Eq28列维度及Eq32缺zk疑点；PSD不保证乘法分母逐元非负，松弛非等价原等式、稠密SVD复杂度和N²内存待。Cuprite四基线均值超舍入容差留原印。公开main_demo缺data.mat/Y/M/X/Z/nc/nl，delta5/初始化伪逆非FCLS，固定Z且无SVT、函数名与文件名不一致；完整联合实现/真值/协议待。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/1df67646-2ef1-4106-bb45-a7b092e26394",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata_and_abstract",
+            "supports": [
+              "精确题名/作者/DOI/完整摘要；版本与附件完整分页互证。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/JSTARS.2020.3011257",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "完整作者/DOI及正式卷期页码；created不当首次online。"
+            ]
+          },
+          {
+            "url": "https://codeload.github.com/zlbuaa/Subspace-Regularized-Unmixing/zip/5165f34a0e86a150daa3e60d5dc7bf3f01ebc6d9",
+            "checkedAt": "2026-10-11",
+            "level": "primary_author_code_static_review",
+            "supports": [
+              "lambda=.1合成、mu=.01、tau=.001、delta15；lambda_e式41求和上界N与Y_l波段索引疑点、真实lambda搜索协议待。VCA-FCLS、原Y的LRR初始化Z；3000迭代或Eq38当前梯度平方相对首梯度≤1e-3，不是相邻梯度差的明确公式。共8基线，无明确重复次数、种子、机器。公开commit5165f34a…静态核演示及求解器，无模型运行。",
+              "IEEE正式14页/41式/10图/5表/1算法/54参考全文核验；机构15页AM仅来源/局部对照，未宣称逐页全文。Eq17 Tr(Gamma A)维度/变量疑点，Eq21→22系数2/mu与直接梯度1/(2mu)不一致、Eq28列维度及Eq32缺zk疑点；PSD不保证乘法分母逐元非负，松弛非等价原等式、稠密SVD复杂度和N²内存待。Cuprite四基线均值超舍入容差留原印。公开main_demo缺data.mat/Y/M/X/Z/nc/nl，delta5/初始化伪逆非FCLS，固定Z且无SVT、函数名与文件名不一致；完整联合实现/真值/协议待。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "subspace-structure-nmf-hsi-2020-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1109/JSTARS.2020.3011257",
+            "type": "正式期刊全文",
+            "url": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09146211.pdf?tp=&arnumber=9146211&isnumber=8994817&ref=",
             "doi": "10.1109/JSTARS.2020.3011257",
             "year": 2020,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "IEEE正式4257–4270；2020-07-22公开/08-07当前版本，CC-BY4.0；正式原表与印式疑点已核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
+          },
+          {
+            "id": "subspace-structure-nmf-hsi-2020-accepted",
+            "type": "Accepted Manuscript (AM)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/60448f80-a9f1-4f10-9321-0875be8119ca/content",
+            "year": 2020,
+            "doi": "10.1109/JSTARS.2020.3011257",
+            "readingProgress": "abstract_read",
+            "relation": "机构明确AM，15页含封面；已取回并归档全页文本，仅局部来源对照，未声称此版本全文通读；正式全文另列，不能说版间字节或文本相同。"
           }
         ],
         "methodFamilyId": "subspace-structure-nmf",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "L1/2稀疏丰度、mu||S-SZ||²及tau核范数Z；引入L并松弛为0.5||L-Z||²+tau||L||*，A/S/Z乘法更新、L奇异值阈值；VCA-FCLS/LRR初值、delta15软ASC。Z不是局部手工邻域图；N×N关系保留全局结构。公开全文/完整摘要/代码分别限定，非模型复现。",
           "evidenceFields": [
             "title",
             "summary",
@@ -70055,15 +70208,41 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "be6a339b5751c59d034e6c9b3681100930f9deb9b23ed53162b2caa15814bee9",
+          "evidenceDigest": "0cbd7746f005c09f9ccafe648530a07ad8640d01de9eb0e2743ef6994bc948df",
           "sourceUrls": [
-            "https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/",
-            "https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/",
+            "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09146211.pdf?tp=&arnumber=9146211&isnumber=8994817&ref=",
+            "https://research-repository.griffith.edu.au/server/api/core/items/1df67646-2ef1-4106-bb45-a7b092e26394",
             "https://api.crossref.org/works/10.1109/JSTARS.2020.3011257"
           ]
         }
       },
-      "citation": "@article{subspace_structure_nmf_hsi_2020,\n  title = {Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Lei Zhou and Xueni Zhang and Jianbo Wang and Xiao Bai and Lei Tong and Liang Zhang and Jun Zhou and Edwin Hancock},\n  year = {2020},\n  doi = {10.1109/JSTARS.2020.3011257}\n}\n"
+      "citation": "@article{subspace_structure_nmf_hsi_2020,\n  title = {Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Lei Zhou and Xueni Zhang and Jianbo Wang and Xiao Bai and Lei Tong and Liang Zhang and Jun Zhou and Edwin Hancock},\n  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n  year = {2020},\n  volume = {13},\n  pages = {4257--4270},\n  doi = {10.1109/JSTARS.2020.3011257}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/09146211.pdf?tp=&arnumber=9146211&isnumber=8994817&ref=",
+          "figureLabel": "Fig. 1",
+          "caption": "Illustration of the concept of our method and several alternative methods.",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "scaleTo": 2400,
+            "pixelBox": [
+              120,
+              180,
+              1710,
+              1200
+            ]
+          },
+          "verificationNote": "IEEE正式Fig1 PDF4/4260为四种空间约束概念对照，包含原分解关系和远距离同材关联；不是A/S/Z/L求解流程。原图含完整caption保留。",
+          "path": "figures/subspace-structure-nmf-hsi-2020/framework.png",
+          "width": 1590,
+          "height": 1020,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "dacdbe78113e45d2a25f9828c4013c83c5521e57110c2b850d5087b5a11f11a2",
+          "attribution": "Lei Zhou, Xueni Zhang, Jianbo Wang, Xiao Bai, Lei Tong, Liang Zhang, Jun Zhou, Edwin Hancock · JSTARS 2020"
+        }
+      ]
     },
     {
       "id": "flexible-gabor-superpixel-lda-hsi-2021",
@@ -80486,6 +80665,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
         }
       ]
     },
@@ -80855,6 +81039,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
         }
       ]
     },
@@ -81260,6 +81449,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
         }
       ]
     },
@@ -81319,6 +81513,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
         }
       ]
     },
@@ -83947,6 +84146,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
         }
       ]
     },
@@ -86897,9 +87101,11 @@
       "evidencePaperIds": [
         "biochar-unmix-dicta-2013",
         "canopy-dust-whispers-2014",
+        "gmc-sparse-nmf-hsi-2020",
         "lhalf-nmf-dicta-2010",
         "lhalf-nmf-tgrs-2011",
-        "region-structure-nmf-jstars-2017"
+        "region-structure-nmf-jstars-2017",
+        "subspace-structure-nmf-hsi-2020"
       ],
       "history": [
         {
@@ -86911,6 +87117,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2017 MV-NTF/R-NMF AM与2018超像素公开排版拷贝全文核验；图/稀疏/因子位置与版本、实验和打印疑点分别留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
         }
       ]
     },
@@ -88767,7 +88978,8 @@
       "rationale": "2017 MV-NTF AM给出BTD/LMM对应与乘法更新，2018 S-MV-NTF公开排版稿明确在其上加入超像素空间图；具体谱/丰度因子机制有全文支持。",
       "evidencePaperIds": [
         "mv-ntf-blind-unmixing-tgrs-2017",
-        "superpixel-ntf-unmixing-igarss-2018"
+        "superpixel-ntf-unmixing-igarss-2018",
+        "tv-ntf-hsi-unmixing-2019"
       ],
       "status": "confirmed",
       "color": "#9bb7ac",
@@ -88777,6 +88989,11 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "既有公开全文支持具体解混机制，明确约束位置和假设，不仅以任务题名分类。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
         }
       ]
     },
@@ -88797,6 +89014,46 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "既有公开全文支持具体解混机制，明确约束位置和假设，不仅以任务题名分类。"
+        }
+      ]
+    },
+    {
+      "id": "gmc-nonseparable-sparse-nmf",
+      "name": "GMC非可分稀疏NMF",
+      "dimension": "method",
+      "definition": "在联合端元/丰度非负矩阵分解中，用L1减由端元谱度量的Moreau包络作为非可分GMC丰度稀疏惩罚；固定端元和参数条件下的凸性不等于联合全局最优。",
+      "status": "confirmed",
+      "color": "#9bb7ac",
+      "createdAt": "2026-10-11",
+      "rationale": "IEEE正式全文具体目标与更新位置支持，印式、凸性、代码和实验边界分别留证。",
+      "evidencePaperIds": [
+        "gmc-sparse-nmf-hsi-2020"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "正式全文支持具体机制；非仅摘要题名分类。"
+        }
+      ]
+    },
+    {
+      "id": "joint-abundance-subspace-nmf",
+      "name": "丰度—子空间联合NMF",
+      "dimension": "method",
+      "definition": "以丰度自表示S≈SZ及核范数学习全局像元关系，和L1/2稀疏盲NMF联合建模；引入辅助矩阵L及松弛惩罚、SVT，区分论文联合算法与公开固定图演示实现。",
+      "status": "confirmed",
+      "color": "#9bb7ac",
+      "createdAt": "2026-10-11",
+      "rationale": "IEEE正式全文具体目标与更新位置支持，印式、凸性、代码和实验边界分别留证。",
+      "evidencePaperIds": [
+        "subspace-structure-nmf-hsi-2020"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "正式全文支持具体机制；非仅摘要题名分类。"
         }
       ]
     }

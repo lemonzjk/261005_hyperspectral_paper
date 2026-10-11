@@ -1,0 +1,603 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="nexus-font-support">
+
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="google" content="nositelinkssearchbox"/>
+    <meta name="tdm-reservation" content="0">
+    <title>
+        Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing
+      -  York Research Database</title>
+    
+    
+    
+
+
+
+<meta property="og:site_name" content="York Research Database">
+
+
+    <meta property="og:title" content="Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing"/>
+
+
+<meta property="og:url" content="https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/">
+<meta property="og:locale" content="en_GB">
+
+
+
+
+    
+        <meta property="og:image" content="https://pure.york.ac.uk/portal/skin/headerImage/">
+    
+
+
+
+
+    
+        <meta property="og:type" content="article">
+    
+
+    
+
+    
+
+
+    <link rel="stylesheet" href="/portal/assets/application-d8c4196ba42289b701050fcf209ab3eb.css" />
+    <!-- OneTrust Cookies Consent Notice start -->
+<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="019dd92a-0a99-73cb-a64f-f53556fc6c84" data-document-language="true"></script>
+<script type="text/javascript">
+    document.cookieConsentBannerShowAll = false;
+    function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end -->
+    
+        <link rel="shortcut icon" href="/portal/skin/favIcon/"/>
+    
+    <link href="/portal/skin/css/" rel="stylesheet"/>
+    
+    <script src="/portal/skin/script/" type="text/javascript"></script>
+    <script type="text/javascript" src="/portal/assets/application-d9c3c96b32ee7877543159e1191a25d2.js" ></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/portal/assets/html5shiv.min-ca5300beead9a4a9d2c9c584a9016410.js" ></script>
+    <script type="text/javascript" src="/portal/assets/respond.min-678d372b349e434d9923e1b591f14a1e.js" ></script>
+    <![endif]-->
+    
+        
+        
+        <meta name="citation_title" content="Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing"></meta><meta name="citation_author" content="L. Zhou"></meta><meta name="citation_author" content="X. Zhang"></meta><meta name="citation_author" content="J. Wang"></meta><meta name="citation_author" content="X. Bai"></meta><meta name="citation_author" content="L. Tong"></meta><meta name="citation_author" content="L. Zhang"></meta><meta name="citation_author" content="J. Zhou"></meta><meta name="citation_author" content="E. Hancock"></meta><meta name="citation_author_institution" content="Computer Science"></meta><meta name="citation_author_email" content="erh1@york.ac.uk"></meta><meta name="citation_author_orcid" content="0000-0003-4496-2028"></meta><meta name="citation_publication_date" content="2020/07/22"></meta><meta name="citation_online_date" content="2020/07/24"></meta><meta name="citation_pdf_url" content="https://pure.york.ac.uk/portal/files/65427999/09146211.pdf"></meta><meta name="citation_online_date" content="2020/07/24"></meta><meta name="citation_doi" content="10.1109/JSTARS.2020.3011257"></meta><meta name="citation_language" content="English"></meta><meta name="citation_keywords" content="Hyperspectral imaging; Matrix decomposition; Sparse matrices; Graphical models; Distribution functions; Robustness; Hyperspectral unmixing; linear mixing model (LMM); nonnegative matrix factorization (NMF); subspace structure; similar graph"></meta><meta name="citation_journal_title" content="IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing"></meta><meta name="citation_issn" content="2151-1535"></meta><meta name="citation_publisher" content="IEEE"></meta>
+        <script src="/portal/assets/Chart.min-27bff060c3e539ceb22e763c8f2e9e10.js"></script>
+        <script src="/portal/assets/jquery.content-chart-9c09bb79ba3fc3829b6478d0e114f737.js"></script>
+        
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://www.googletagmanager.com/gtag/js?id=G-Y2RVN2GXCT" class="optanon-category-2" type="text/plain" async=""></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y2RVN2GXCT', {'cookie_domain' : document.location.hostname, 'anonymize_ip': true });
+</script>
+    <script src="//assets.adobedtm.com/4a848ae9611a/ea83f870454d/launch-af020409b299.min.js" class="optanon-category-2" type="text/plain" async=""></script>
+    
+    
+</head>
+
+<body class="" data-page="publications">
+
+<div id="aria-polite" aria-live="polite"></div>
+<div id="aria-assertive" aria-live="assertive"></div>
+
+<a href="#main-navigation" class="sr-only sr-only-focusable">Skip to main navigation</a>
+
+    <a href="#main-search" class="sr-only sr-only-focusable">Skip to search</a>
+
+<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+
+
+
+
+
+
+    <header class="header" id="page-header">
+        <div class="primary  ">
+            <div class="container">
+                
+                <a href="/portal/en/" class="logo">
+                    
+                        <span class="sr-only">York Research Database Home</span>
+                        <img src="/portal/skin/headerImage/" alt="York Research Database Logo"/>
+                    
+                </a>
+                
+                    <ul class="header-tools ">
+                        
+                            <li class="help-and-faq">
+                                <a href="https://www.york.ac.uk/staff/research/pure/" target="_blank">
+                                    <i class="icon icon-lifebuoy" aria-hidden="true"></i>
+                                    <span class="label">Help &amp; FAQ</span>
+                                    <span class="sr-only">&nbsp; Link opens in a new tab</span>
+                                </a>
+                            </li>
+                        
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        </div>
+
+        
+            <div class="header-search">
+                
+<form action="/portal/en/searchAll/index/subspace-structure-regularized-nonnegative-matrix-factorization-f/" method="get"
+      class="search-form" id="search-everything">
+
+    <div class="global-search-wrapper">
+        <div class="global-search mini">
+            <div class="field-button-wrapper">
+                <div class="search-cell search-field">
+                    <label for="main-search" class="sr-only">Search content at York Research Database</label>
+                    <input id="main-search" class="search-field" value="" name="search"
+                           placeholder="Search..."/>
+                </div>
+
+                <div class="search-submit">
+                    <button type="submit" aria-label="Search">
+                        <i class="icon icon-magnifying-glass" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $(function () {
+        var searchForm = $("#search-everything");
+        var searchField = $(".search-field", searchForm);
+        searchForm.on("submit", function () {
+            var field = searchField.find("input");
+            var searchString = field.val();
+
+            // No enter key submit nothing :-)
+            if (!searchString) return false;
+
+            if (searchString.length >= 200) {
+                searchForm.attr("method", "post");
+                searchForm.attr("action", "/portal/en/concepts/copypaste/");
+                field.attr("name", "text");
+            }
+        });
+    });
+</script>
+            </div>
+        
+
+
+        
+        
+            <div class="subMenu">
+                <div class="secondary">
+                    <div class="container">
+                        <nav id="main-navigation" aria-label="Main navigation" class="content-navigation three-third">
+                            <ul data-value="More" role="menubar" aria-label="Main navigation">
+                                <li class="" role="none">
+                                    <a href="/portal/en/" role="menuitem" tabindex="-1">Home</a>
+                                </li>
+
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/portal/en/persons/"><span>Researchers</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/portal/en/organisations/"><span>Departments and Units</span></a>
+                                    </li>
+                                
+                                    <li class="selected" role="none">
+                                        <a class="portal_link" tabindex="0" role="menuitem" href="/portal/en/publications/"><span>Publications</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/portal/en/projects/"><span>Projects</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/portal/en/activities/"><span>Activities</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/portal/en/datasets/"><span>Datasets</span></a>
+                                    </li>
+                                
+                                    <li class="" role="none">
+                                        <a class="portal_link" tabindex="-1" role="menuitem" href="/portal/en/prizes/"><span>Prizes</span></a>
+                                    </li>
+                                
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        
+    </header>
+
+    <main id="page-content">
+        
+    <div class="page-section page-section-publications page-section-publications-view ">
+
+        
+        
+        
+        
+        <section
+                class="page-section-header page-section-header-publications page-section-header-publications-view
+                 no-backdrop-image"
+                data-stickyheader=""
+                style="">
+            
+            
+        
+
+
+<div class="container">
+    <div class="row">
+        <div class="introduction no-metrics">
+            <div class="rendering"><h1><span>Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing</span></h1></div>
+            <div class="rendering rendering_researchoutput  rendering_researchoutput_associatespersonsclassifiedportal rendering_contributiontojournal rendering_associatespersonsclassifiedportal rendering_contributiontojournal_associatespersonsclassifiedportal"><ul class="relations persons"><li>L. Zhou</li><li>, X. Zhang</li><li>, J. Wang</li><li>, X. Bai</li><li>, L. Tong</li><li>, L. Zhang</li><li>, J. Zhou</li><li>, <a rel="Person" href="https://pure.york.ac.uk/portal/en/persons/edwin-hancock/" class="link person"><span>E. Hancock</span></a></li></div>
+            <div class="rendering rendering_researchoutput  rendering_researchoutput_associatesorganisationsportal rendering_contributiontojournal rendering_associatesorganisationsportal rendering_contributiontojournal_associatesorganisationsportal"><ul class="relations organisations"><li class="academicdepartment"><a rel="Organisation" href="https://pure.york.ac.uk/portal/en/organisations/computer-science/" class="link"><span>Computer Science</span></a></li></ul></div>
+            
+            <div class="rendering rendering_researchoutput  rendering_researchoutput_publicationcontenttyperendererportalng rendering_contributiontojournal rendering_publicationcontenttyperendererportalng rendering_contributiontojournal_publicationcontenttyperendererportalng"><p class="type"><span class="type_family">Research output<span class="type_family_sep">: </span></span><span class="type_classification_parent">Contribution to journal<span class="type_parent_sep"> › </span></span><span class="type_classification">Article</span><span class="type_classification"><span class="type_parent_sep"> › </span>peer-review</span></p></div>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+<div class="subMenu">
+    <div class="content-profile-navigation">
+    <div class="container">
+        <nav role="navigation">
+            <ul role="menubar">
+                <li class="selected" role="none">
+                    <a class="portal_link" role="menuitem" href="/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/"><span>
+                        <i class="icon icon-publication" aria-hidden="true"></i>
+                        <span class="label">Overview</span>
+                    </span></a>
+                </li>
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+
+            </ul>
+        </nav>
+    </div>
+    </div>
+</div>
+
+    
+        </section>
+
+        <div id="main-content"
+             class="page-section-content page-section-content-publications page-section-content-publications-view   ">
+            
+        <section class="page-section content-relation-section">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="content-content publication-content">
+                        
+                        
+                            <h2 class="subheader">Abstract</h2>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_abstractportal rendering_contributiontojournal rendering_abstractportal rendering_contributiontojournal_abstractportal"><div class="textblock">Hyperspectral unmixing is a crucial task for hyperspectral images (HSI) processing, which estimates the proportions of constituent materials of a mixed pixel. Usually, the mixed pixels can be approximated using a linear mixing model. Since each material only occurs in a few pixels in real HSI, sparse nonnegative matrix factorization (NMF) and its extensions are widely used as solutions. Some recent works assume that materials are distributed in certain structures, which can be added as constraints to sparse NMF model. However, they only consider the spatial distribution within a local neighborhood and define the distribution structure manually, while ignoring the real distribution of materials that is diverse in different images. In this paper, we propose a new unmixing method that learns a subspace structure from the original image and incorporate it into the sparse NMF framework to promote unmixing performance. Based on the self-representation property of data points lying in the same subspace, the learned subspace structure can indicate the global similar graph of pixels that represents the real distribution of materials. Then the similar graph is used as a robust global spatial prior which is expected to be maintained in the decomposed abundance matrix. The experiments conducted on both simulated and real-world HSI datasets demonstrate the superior performance of our proposed method.</div></div>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_detailsportal rendering_contributiontojournal rendering_detailsportal rendering_contributiontojournal_detailsportal"><div class="article"><table class="properties"><tbody><tr class="language"><th scope="row">Original language</th><td>English</td></tr><tr class="numberofpages"><th scope="row">Number of pages</th><td>13</td></tr><tr><th scope="row">Journal</th><td><a rel="Journal" href="#" class="link"><span>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</span></a></td></tr><tr><th scope="row">Early online date</th><td><span class="date">22 Jul 2020</span></td></tr><tr class="digital_object_identifiers"><th scope="row">DOIs</th><td><ul class="relations digital_object_identifiers"><li><a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1109/JSTARS.2020.3011257" class="link"><span>https://doi.org/10.1109/JSTARS.2020.3011257</span></a> </li></ul></td></tr><tr class="status"><th scope="row">Publication status</th><td><span class="prefix">E-pub ahead of print - </span><span class="date">22 Jul 2020</span></td></tr></tbody></table></div></div>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_publicationbibliographicalnoteportalrenderer rendering_contributiontojournal rendering_publicationbibliographicalnoteportalrenderer rendering_contributiontojournal_publicationbibliographicalnoteportalrenderer"><h3 class="subheader">Bibliographical note</h3>This is an author-produced version of the published paper. Uploaded in accordance with the publisher’s self-archiving policy. Further copying may not be permitted; contact the publisher for details.</div>
+
+                        
+
+                        
+
+                        <div class="rendering rendering_keywordable rendering_expertkeywordgrouspbytypeportal rendering_keywordable_expertkeywordgrouspbytypeportal"><div class="keyword-group"><h2 class="subheader">Keywords</h2><ul class="relations keywords"><li class="userdefined-keyword"><span>Hyperspectral imaging</span></li><li class="userdefined-keyword"><span>Matrix decomposition</span></li><li class="userdefined-keyword"><span>Sparse matrices</span></li><li class="userdefined-keyword"><span>Graphical models</span></li><li class="userdefined-keyword"><span>Distribution functions</span></li><li class="userdefined-keyword"><span>Robustness</span></li><li class="userdefined-keyword"><span>Hyperspectral unmixing</span></li><li class="userdefined-keyword"><span>linear mixing model (LMM)</span></li><li class="userdefined-keyword"><span>nonnegative matrix factorization (NMF)</span></li><li class="userdefined-keyword"><span>subspace structure</span></li><li class="userdefined-keyword"><span>similar graph</span></li></ul></div></div>
+
+                    </div>
+
+                    <div class="content-sidebar publication-sidebar">
+                        
+                            <h2 class="subheader">Access to Document</h2>
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_publicationaccessrenderer rendering_contributiontojournal rendering_publicationaccessrenderer rendering_contributiontojournal_publicationaccessrenderer"><ul class="dois"><li class="open-access"><div class="doi"><a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1109/JSTARS.2020.3011257" class="link"><span>10.1109/JSTARS.2020.3011257</span></a></div></li></ul><ul class="documents"><li class="open-access"><div class="document"><a onclick="if (this.href) {window.open(this.href)}; return false;" href="/portal/files/65427999/09146211.pdf" class="link document-link"><span>Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing</span></a><p class="property">This is an author-produced version of the published paper. Uploaded in accordance with the publisher’s self-archiving policy. Further copying may not be permitted; contact the publisher for details.</p><span class="meta">Accepted author manuscript, 7.06 MB</span></div></li></ul></div>
+
+                        
+
+                        
+
+                        
+
+                        <div class="rendering rendering_researchoutput  rendering_researchoutput_versioneddocumentspureportal rendering_contributiontojournal rendering_versioneddocumentspureportal rendering_contributiontojournal_versioneddocumentspureportal"><ul class="relations documents"></ul></div>
+
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <section class="page-section cite">
+            <div class="container">
+                <section class="publication-cite" aria-labelledby="publications-cite-title">
+    <h2 class="subheader" id="publications-cite-title">Cite this</h2>
+    <ul class="tabs" role="tablist" aria-label="Cite this">
+        
+            <li class="selected" role="tab" id="tab-0" aria-controls="cite-apa" tabindex="-1"  aria-selected="false" >
+                APA
+            </li>
+        
+            <li class="" role="tab" id="tab-1" aria-controls="cite-author" tabindex="-1"  aria-selected="false" >
+                Author
+            </li>
+        
+            <li class="" role="tab" id="tab-2" aria-controls="cite-BIBTEX" tabindex="-1"  aria-selected="false" >
+                BIBTEX
+            </li>
+        
+            <li class="" role="tab" id="tab-3" aria-controls="cite-harvard" tabindex="-1"  aria-selected="false" >
+                Harvard
+            </li>
+        
+            <li class="" role="tab" id="tab-4" aria-controls="cite-standard" tabindex="-1"  aria-selected="false" >
+                Standard
+            </li>
+        
+            <li class="" role="tab" id="tab-5" aria-controls="cite-RIS" tabindex="-1"  aria-selected="false" >
+                RIS
+            </li>
+        
+            <li class="" role="tab" id="tab-6" aria-controls="cite-vancouver" tabindex="-1"  aria-selected="false" >
+                Vancouver
+            </li>
+        
+    </ul>
+    <div class="tab-container">
+        
+            <div id="cite-apa" class="tab selected" role="tabpanel" aria-labelledby="tab-0" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_apa rendering_contributiontojournal rendering_apa rendering_contributiontojournal_apa">Zhou, L., Zhang, X., Wang, J., Bai, X., Tong, L., Zhang, L., Zhou, J.<a rel="Person" href="https://pure.york.ac.uk/portal/en/persons/edwin-hancock/" class="link"><span>, &amp; Hancock, E.</span></a> (2020). <a rel="ContributionToJournal" href="https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/" class="link"><span>Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing</span></a>. <span><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></span>. Advance online publication. <a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1109/JSTARS.2020.3011257" class="link"><span>https://doi.org/10.1109/JSTARS.2020.3011257</span></a></div>
+            </div>
+        
+            <div id="cite-author" class="tab " role="tabpanel" aria-labelledby="tab-1" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_author rendering_contributiontojournal rendering_author rendering_contributiontojournal_author">Zhou, L. ; Zhang, X. ; Wang, J. et al. / <a rel="ContributionToJournal" href="https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/" class="link"><span><strong>Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing</strong></span></a>. In: <a rel="Journal" href="#" class="link"><span>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</span></a>. 2020.</div>
+            </div>
+        
+            <div id="cite-BIBTEX" class="tab " role="tabpanel" aria-labelledby="tab-2" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_bibtex rendering_contributiontojournal rendering_bibtex rendering_contributiontojournal_bibtex"><div>@article{93992984f4ff439c95bf4abbb1884c8c,</div><div>  title     = "Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing",</div><div>  abstract  = "Hyperspectral unmixing is a crucial task for hyperspectral images (HSI) processing, which estimates the proportions of constituent materials of a mixed pixel. Usually, the mixed pixels can be approximated using a linear mixing model. Since each material only occurs in a few pixels in real HSI, sparse nonnegative matrix factorization (NMF) and its extensions are widely used as solutions. Some recent works assume that materials are distributed in certain structures, which can be added as constraints to sparse NMF model. However, they only consider the spatial distribution within a local neighborhood and define the distribution structure manually, while ignoring the real distribution of materials that is diverse in different images. In this paper, we propose a new unmixing method that learns a subspace structure from the original image and incorporate it into the sparse NMF framework to promote unmixing performance. Based on the self-representation property of data points lying in the same subspace, the learned subspace structure can indicate the global similar graph of pixels that represents the real distribution of materials. Then the similar graph is used as a robust global spatial prior which is expected to be maintained in the decomposed abundance matrix. The experiments conducted on both simulated and real-world HSI datasets demonstrate the superior performance of our proposed method.",</div><div>  keywords  = "Hyperspectral imaging, Matrix decomposition, Sparse matrices, Graphical models, Distribution functions, Robustness, Hyperspectral unmixing, linear mixing model (LMM), nonnegative matrix factorization (NMF), subspace structure, similar graph",</div><div>  author    = "L. Zhou and X. Zhang and J. Wang and X. Bai and L. Tong and L. Zhang and J. Zhou and E. Hancock",</div><div>  note      = "This is an author-produced version of the published paper. Uploaded in accordance with the publisher{\textquoteright}s self-archiving policy. Further copying may not be permitted; contact the publisher for details.",</div><div>  year      = "2020",</div><div>  month     = jul,</div><div>  day       = "22",</div><div>  doi       = "10.1109/JSTARS.2020.3011257",</div><div>  language  = "English",</div><div>  journal   = "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",</div><div>  issn      = "2151-1535",</div><div>  publisher = "IEEE",</div><p>}</p></div>
+            </div>
+        
+            <div id="cite-harvard" class="tab " role="tabpanel" aria-labelledby="tab-3" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_harvard rendering_contributiontojournal rendering_harvard rendering_contributiontojournal_harvard">Zhou, L, Zhang, X, Wang, J, Bai, X, Tong, L, Zhang, L, Zhou, J<a rel="Person" href="https://pure.york.ac.uk/portal/en/persons/edwin-hancock/" class="link"><span> &amp; Hancock, E</span></a> 2020, '<a rel="ContributionToJournal" href="https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/" class="link harvard_title"><span>Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing</span></a>', <span><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></span>. <a onclick="window.open(this.href, '_blank','noopener,noreferrer'); return false;" href="https://doi.org/10.1109/JSTARS.2020.3011257" class="link"><span>https://doi.org/10.1109/JSTARS.2020.3011257</span></a></div>
+            </div>
+        
+            <div id="cite-standard" class="tab " role="tabpanel" aria-labelledby="tab-4" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_standard rendering_contributiontojournal rendering_standard rendering_contributiontojournal_standard"><a rel="ContributionToJournal" href="https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/" class="link"><span><strong>Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing.</strong></span></a> / Zhou, L.; Zhang, X.; Wang, J. et al. <br />In: <span>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</span>, 22.07.2020.<p class="type"><span class="type_family">Research output<span class="type_family_sep">: </span></span><span class="type_classification_parent">Contribution to journal<span class="type_parent_sep"> › </span></span><span class="type_classification">Article</span><span class="type_classification"><span class="type_parent_sep"> › </span>peer-review</span></p></div>
+            </div>
+        
+            <div id="cite-RIS" class="tab " role="tabpanel" aria-labelledby="tab-5" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_ris rendering_contributiontojournal rendering_ris rendering_contributiontojournal_ris"><p>TY  - JOUR</p><p>T1  - Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing</p><p>AU  - Zhou, L.</p><p>AU  - Zhang, X.</p><p>AU  - Wang, J.</p><p>AU  - Bai, X.</p><p>AU  - Tong, L.</p><p>AU  - Zhang, L.</p><p>AU  - Zhou, J.</p><p>AU  - Hancock, E.</p><p>N1  - This is an author-produced version of the published paper. Uploaded in accordance with the publisher’s self-archiving policy. Further copying may not be permitted; contact the publisher for details.</p><p>PY  - 2020/7/22</p><p>Y1  - 2020/7/22</p><p>N2  - Hyperspectral unmixing is a crucial task for hyperspectral images (HSI) processing, which estimates the proportions of constituent materials of a mixed pixel. Usually, the mixed pixels can be approximated using a linear mixing model. Since each material only occurs in a few pixels in real HSI, sparse nonnegative matrix factorization (NMF) and its extensions are widely used as solutions. Some recent works assume that materials are distributed in certain structures, which can be added as constraints to sparse NMF model. However, they only consider the spatial distribution within a local neighborhood and define the distribution structure manually, while ignoring the real distribution of materials that is diverse in different images. In this paper, we propose a new unmixing method that learns a subspace structure from the original image and incorporate it into the sparse NMF framework to promote unmixing performance. Based on the self-representation property of data points lying in the same subspace, the learned subspace structure can indicate the global similar graph of pixels that represents the real distribution of materials. Then the similar graph is used as a robust global spatial prior which is expected to be maintained in the decomposed abundance matrix. The experiments conducted on both simulated and real-world HSI datasets demonstrate the superior performance of our proposed method.</p><p>AB  - Hyperspectral unmixing is a crucial task for hyperspectral images (HSI) processing, which estimates the proportions of constituent materials of a mixed pixel. Usually, the mixed pixels can be approximated using a linear mixing model. Since each material only occurs in a few pixels in real HSI, sparse nonnegative matrix factorization (NMF) and its extensions are widely used as solutions. Some recent works assume that materials are distributed in certain structures, which can be added as constraints to sparse NMF model. However, they only consider the spatial distribution within a local neighborhood and define the distribution structure manually, while ignoring the real distribution of materials that is diverse in different images. In this paper, we propose a new unmixing method that learns a subspace structure from the original image and incorporate it into the sparse NMF framework to promote unmixing performance. Based on the self-representation property of data points lying in the same subspace, the learned subspace structure can indicate the global similar graph of pixels that represents the real distribution of materials. Then the similar graph is used as a robust global spatial prior which is expected to be maintained in the decomposed abundance matrix. The experiments conducted on both simulated and real-world HSI datasets demonstrate the superior performance of our proposed method.</p><p>KW  - Hyperspectral imaging</p><p>KW  - Matrix decomposition</p><p>KW  - Sparse matrices</p><p>KW  - Graphical models</p><p>KW  - Distribution functions</p><p>KW  - Robustness</p><p>KW  - Hyperspectral unmixing</p><p>KW  - linear mixing model (LMM)</p><p>KW  - nonnegative matrix factorization (NMF)</p><p>KW  - subspace structure</p><p>KW  - similar graph</p><p>U2  - 10.1109/JSTARS.2020.3011257</p><p>DO  - 10.1109/JSTARS.2020.3011257</p><p>M3  - Article</p><p>SN  - 2151-1535</p><p>JO  - IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</p><p>JF  - IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</p><p>ER  - </p></div>
+            </div>
+        
+            <div id="cite-vancouver" class="tab " role="tabpanel" aria-labelledby="tab-6" tabindex="-1" aria-hidden="true">
+                <div class="rendering rendering_researchoutput  rendering_researchoutput_vancouver rendering_contributiontojournal rendering_vancouver rendering_contributiontojournal_vancouver">Zhou L, Zhang X, Wang J, Bai X, Tong L, Zhang L et al. <span class="title"><a rel="ContributionToJournal" href="https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/" class="link"><span>Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing</span></a></span>. <span>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</span>. 2020 Jul 22. Epub 2020 Jul 22. doi: 10.1109/JSTARS.2020.3011257</div>
+            </div>
+        
+
+        <script>
+            $(function() {
+                $(".tab-container .rendering a:not([href^='http://dx.doi.org'])").contents().unwrap();
+            });
+        </script>
+    </div>
+</section>
+
+            </div>
+        </section>
+        <script>
+    $(function () {
+        if($('.publication-sidebar').length > 0){
+            if($('a.document-link').length === 0){
+                $(".metrics-top").addClass("one");
+                $('div.metrics-downloads').remove();
+            }
+        }
+    });
+
+    function plumXError(e) {
+        $(e).closest('.metric-plum-x').closest('.metrics-bottom').addClass('one');
+        $(e).closest('.metric-plum-x').remove();
+    }
+    $('div.altmetric-embed').on('altmetric:hide', function () {
+        $(this).closest('.metric-altmetric').closest('.metrics-bottom').addClass('one');
+        $(this).closest('.metric-altmetric').remove();
+    });
+</script>
+        
+
+
+
+    
+    
+    
+    
+    
+    
+
+    
+        
+        
+        
+    
+
+    <div class="share-box">
+        <ul>
+            <li class="icon-share"></li>
+            <li><a aria-label="Share on Facebook"
+                   href="https://www.facebook.com/sharer.php?u=https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1109%2FJSTARS.2020.3011257&p[summary]=Check+out+this+research+output+at+York+Research+Database%3A+Subspace+Structure+Regularized+Nonnegative+Matrix+Factorization+for+Hyperspectral+Unmixing"
+                   class="icon-facebook"
+                   onclick="window.location.origin('https://www.facebook.com/sharer.php?u=https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1109%2FJSTARS.2020.3011257&p[summary]=Check+out+this+research+output+at+York+Research+Database%3A+Subspace+Structure+Regularized+Nonnegative+Matrix+Factorization+for+Hyperspectral+Unmixing', 'Facebook', 'width=600,height=600,scrollbars=no,resizable=no');
+                   return false;" target="popup"></a></li>
+            <li><a aria-label="Share on Twitter"
+                   href="https://twitter.com/intent/tweet?url=https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1109%2FJSTARS.2020.3011257&text=Check+out+this+research+output+at+York+Research+Database%3A+Subspace+Structure+Regularized+Nonnegative+Matrix+Factorization+for+Hyperspectral+Unmixing"
+                   onclick="window.location.origin('https://twitter.com/intent/tweet?url=https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1109%2FJSTARS.2020.3011257&text=Check+out+this+research+output+at+York+Research+Database%3A+Subspace+Structure+Regularized+Nonnegative+Matrix+Factorization+for+Hyperspectral+Unmixing doi%3A10.1109%2FJSTARS.2020.3011257', 'Twitter', 'width=600,height=600,scrollbars=no,resizable=no');
+                   return false;" class="twitter" target="popup"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 300 271">
+                    
+                    <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"></path>
+                </svg></a></li>
+            <li><a aria-label="Share on LinkedIn"
+                   href="https://www.linkedin.com/shareArticle?mini=true&url=https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1109%2FJSTARS.2020.3011257&summary=Check+out+this+research+output+at+York+Research+Database%3A+Subspace+Structure+Regularized+Nonnegative+Matrix+Factorization+for+Hyperspectral+Unmixing"
+                   onclick="window.location.origin('https://www.linkedin.com/shareArticle?mini=true&url=https://pure.york.ac.uk/portal/en/publications/subspace-structure-regularized-nonnegative-matrix-factorization-f/%3Futm_source%3Dlinkedin%26utm_medium%3Dsocial%26utm_campaign%3Dsharelink%26doi%3D10.1109%2FJSTARS.2020.3011257&summary=Check+out+this+research+output+at+York+Research+Database%3A+Subspace+Structure+Regularized+Nonnegative+Matrix+Factorization+for+Hyperspectral+Unmixing doi%3A10.1109%2FJSTARS.2020.3011257', 'LinkedIn', 'width=600,height=600,scrollbars=no,resizable=no');
+                   return false;" class="icon-linkedin" target="popup"></a></li>
+            <li><a aria-label="Share by email" href="/cdn-cgi/l/email-protection#e2dd91978088878196dfb197809192838187c7d0d2b19690978196979087c7d0d2b08785978e83908b988786c7d0d2ac8d8c8c878583968b9487c7d0d2af8396908b9ac7d0d2a48381968d908b9883968b8d8cc7d0d2848d90c7d0d2aa9b928790919287819690838ec7d0d2b78c8f8b9a8b8c85c4808d869bdfa18a878189c7d0d28d9796c7d0d2968a8b91c7d0d2908791878390818ac7d0d28d9796929796c7d0d28396c7d0d2bb8d9089c7d0d2b08791878390818ac7d0d2a683968380839187c7d1a3c7d0d2b197809192838187c7d0d2b19690978196979087c7d0d2b08785978e83908b988786c7d0d2ac8d8c8c878583968b9487c7d0d2af8396908b9ac7d0d2a48381968d908b9883968b8d8cc7d0d2848d90c7d0d2aa9b928790919287819690838ec7d0d2b78c8f8b9a8b8c85c29ec28a96969291d8cdcd92979087cc9b8d9089cc8381cc9789cd928d9096838ecd878ccd9297808e8b8183968b8d8c91cd9197809192838187cf919690978196979087cf908785978e83908b988786cf8c8d8c8c878583968b9487cf8f8396908b9acf848381968d908b9883968b8d8ccf84cddd97968fbd918d97908187df878f838b8ec4838f92d997968fbd8f87868b978fdf878f838b8ec4838f92d997968fbd81838f92838b858cdf918a8390878e8b8c89" class="icon-email"></a></li>
+        </ul>
+    </div>
+
+
+
+
+    
+        </div>
+    </div>
+
+    <div id="new-modal-overlay"></div>
+    
+    </main>
+
+    <footer id="page-footer" class="main-footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="content-navigation three-third">
+                    <div dir="ltr" class="footer-columns">
+                        
+                        <div class="footer-column">
+                            <p>
+                                Powered by <a href="http://www.elsevier.com/online-tools/research-intelligence/products-and-services/pure" target="_blank">Pure <span class="sr-only">Link opens in a new tab</span></a>, <a href="http://www.scopus.com/" target="_blank">Scopus <span class="sr-only">Link opens in a new tab</span></a> & <a href="https://www.elsevier.com/products/elsevier-fingerprint-engine" target="_blank">Elsevier Fingerprint Engine&trade; <span class="sr-only">Link opens in a new tab</span></a>
+                            </p>
+
+                            <p>
+                                All content on this site: Copyright &copy; 2026 York Research Database, its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the relevant licensing terms apply
+                            </p>
+
+                            <p>We use cookies to help provide and enhance our service and tailor content. By continuing you agree to the <a href="/portal/en/about/cookies/">use of cookies</a></p>
+                            <p><button id="ot-sdk-btn" class="ot-sdk-show-settings"></button></p>
+                            
+                                <p><a href="https://pure.york.ac.uk/admin/workspace.xhtml" rel="nofollow" target="_blank">Log in to Pure <span class="sr-only">&nbsp; Link opens in a new tab</span></a></p>
+                            
+                            <p></p>
+                        </div>
+
+                        <div class="footer-column">
+                            
+                                <p><a href="/invalid-url" target="_blank">York Research Database data protection policy <span class="sr-only">&nbsp; Link opens in a new tab</span></a></p>
+                            
+                            
+                            
+                                <p><a href="/portal/en/web-accessibility/" rel="nofollow" target="_blank">About web accessibility <span class="sr-only">&nbsp; Link opens in a new tab</span></a></p>
+                            
+
+                            <p>
+                                
+                            </p>
+
+                            <p>
+                                
+                            </p>
+
+                            <p>
+                                <a href="https://elsevier.responsibledisclosure.com/hc/en-us/requests/new" target="_blank" rel="nofollow">Report vulnerability <span class="sr-only">&nbsp; Link opens in a new tab</span></a>
+                            </p>
+                        </div>
+
+                        
+                            <div class="footer-column">
+                                
+                                    
+                                        <p>
+                                            <a href="/portal/en/contact/index/"> Contact us</a>
+                                        </p>
+                                    
+                                
+
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="back-to-top">
+            <a href="#" class="back-to-top" aria-label="Go to top"><i class="icon icon-up-open"></i></a>
+        </div>
+    </footer>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="//d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+
+    
+
+    
+
+
+<script>window.appData = window.appData || [];</script><script type="text/javascript">
+try {(function() {
+appData.push({...{"page":{"businessUnit":"ELS:RP:ST","cmsName":"Pure Portal","environment":"prod","language":"en","loadTime":"163","loadTimestamp":"1791690119226","name":"pure portal:publications:view","noTracking":"false","productName":"PR","type":"CP-CA"},"visitor":{"accountId":"","accountName":"pr:University of York","ipAddress":"","accessType":"pr:ANON_GUEST","loginStatus":"anonymous"},"content":[{"id":"93992984-f4ff-439c-95bf-4abbb1884c8c","title":"Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing","recordType":"researchoutput"}]}, event: "pageLoad"});})();} catch(e) {if(console) { console.log(e) } }</script>
+<script>function trackPage(){try {(function() {
+window.appData = window.appData || [];
+})();} catch(e) {if(console) { console.log(e) } }}</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"9d2ff5cbad50470d8a05650251088ddf","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
+
