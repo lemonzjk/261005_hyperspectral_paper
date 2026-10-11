@@ -37412,7 +37412,7 @@
     },
     {
       "id": "zhou-34-hsi-2025",
-      "shortTitle": "SUIT: Spatial-Spectral Union-Intersection Interactio",
+      "shortTitle": "SUIT",
       "title": "SUIT: Spatial-Spectral Union-Intersection Interaction Network for Hyperspectral Object Tracking",
       "authors": "Fengchao Xiong, Zhenxing Wu, Jun Zhou, Sen Jia, Yuntao Qian",
       "year": 2025,
@@ -37424,30 +37424,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tip.2025.3633177",
-      "representation": "高光谱目标跟踪：以 Transformer 建立模板—搜索区域的逐波段长程空间关系，用集合包含—排除交互聚合共享与波段特定线索。",
+      "representation": "高光谱模板/搜索双分支特征与包含–排除启发的共享/特定跨带交互，预测目标框并更新模板。",
       "tags": [],
-      "summary": "SUIT 从架构和训练两方面建模光谱交互：逐波段 Transformer 空间关系结合集合论包含—排除原则聚合交互，再以光谱损失对齐模板与预测区域的材料分布。",
-      "input": "高光谱视频模板区域与搜索区域。",
-      "output": "高光谱视频目标位置和跟踪结果。",
-      "mechanism": "Transformer 建立模板/搜索区域逐波段长程空间关系；集合包含—排除原则整合跨波段共享和特定空间线索；光谱损失约束材料分布一致。",
-      "readingNote": "ORCID题名、Crossref正式书目与 IEEE Xplore 官方摘要核验；未阅读全文。",
+      "summary": "SUIT在共享3D ResNet骨干后，逐波段建立模板—搜索空间关系；用跨带共享/特定交互聚合光谱关系，结合局部光谱材料一致性损失完成视频目标跟踪。已核公开接受稿，文内指标、数据统计及公式疑点分别保留。",
+      "input": "高光谱视频模板和搜索区域；实验HOT2020为16带460–600nm，HOT2023有16/25/15带三范围，IMEC25为25带680–960nm。",
+      "output": "分类分数图、回归图及逐帧目标框；基于跟踪分数的动态模板更新。",
+      "mechanism": "非对称3D ResNet-50共享权重提取模板/搜索特征（1×3×3空间、3×1×1光谱）；逐带SCE自注意力和SCF交叉注意力构造空间关系。SCF串联提取跨带共享关系，各带SCE减去成对共享关系得到特定分量；包含–排除启发的加法/残差融合，再SCE、分类/回归头。对应椭圆环/区域平均光谱的角度损失用于训练，另有分类交叉熵和IoU回归损失。",
+      "readingNote": "Griffith免费接受稿（AM）完整16页已读，含封面及正文/参考目录/传记15页；首页Griffith Jun Zhou机构与正式DOI一致。正文20式/1算法/15图/4表已核，Fig.2/3原图已视觉核对。仅此AM升级全文，出版社最终版未读。HOT2020 .675/.676、HOT2023视频统计、式15内外环权重、更新score/loss和复杂度文字冲突进入记录；论文GitHub链接API404，未验证代码/模型，未做性能复现。",
       "paper": "https://ieeexplore.ieee.org/abstract/document/11267013",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified_accepted_manuscript",
       "library": {
         "categoryIds": [
-          "hyperspectral-target-tracking"
+          "hyperspectral-target-tracking",
+          "transformer"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 IEEE Xplore 官方摘要均明确高光谱视频目标跟踪。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "AM §III/IV直接处理模板和搜索高光谱立方、输出逐帧目标框；不将示例伪彩可视化当作RGB输入或三维场景任务。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何显式建模高光谱视频跟踪中的跨波段交互并保持材料一致性？",
-        "datasets": "官方摘要报告高光谱视频跟踪实验；具体数据集、划分和数值待全文核验。",
-        "experimentSetting": "模板—搜索区域逐波段 Transformer 交互；光谱损失增强形变和外观变化鲁棒性。",
-        "conclusions": "IEEE摘要报告达到先进跟踪性能，代码、模型和结果计划公开；逐项指标和消融待全文核验。",
-        "limitations": "摘要未给出完整训练配置、数据统计、代码实际可用状态和跨域泛化边界。",
+        "datasets": "AM §IV：HOT2020为40训练/35测试组、16带460–600nm；HOT2023叙述161 VIS/100 NIR/41 RedNIR、108000帧、95训练/77测试，数量对应不一致；IMEC25为55训练/80测试、约14000/14060帧、25带680–960nm。仅记录此稿所述，不代入外部数据版本。",
+        "experimentSetting": "AM §IV：HOT2023初训，HOT2020/IMEC25分别微调；AdamW，两RTX3090，batch16，200epochs×1000iterations，backbone lr1e−5、其他lr1e−4、weight decay1e−4，50epochs后lr×.1；微调lr为原值.1。冻结空间卷积，只训练3×1×1谱卷积；8 attention heads，λreg=2/λspec=1，模板更新η=.7。包括属性、组件、λspec/η、复杂度与失败案例。",
+        "conclusions": "HOT2023正文及表II AUC .615、DP@20 .841，去光谱损失为.610/.821，简单求和.535/.701。HOT2020正文.676/.940，而Fig.4成功图例.675；SPIRIT AUC .679，不能宣称所有指标第一。表I报告8.75FPS、258.4GFLOPs、43.87M参数（单RTX3090环境），不属于实时跟踪或所有对照复杂度最小；IMEC25比较另按Fig.10/11保留。",
+        "limitations": "AM自身承认时间建模不足、长时遮挡/光照变化失败和计算负担；另文内数据统计、指标和式15/模板更新存在未决冲突。GitHub链接API404，不能确认代码是否私有、已改名或未发布；最终版与性能未复核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37467,6 +37468,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith作者接受稿完整PDF逐页阅读、公式/实验/图表与原图视觉核验",
+            "supports": [
+              "非对称3D ResNet-50共享权重提取模板/搜索特征（1×3×3空间、3×1×1光谱）；逐带SCE自注意力和SCF交叉注意力构造空间关系。SCF串联提取跨带共享关系，各带SCE减去成对共享关系得到特定分量；包含–排除启发的加法/残差融合，再SCE、分类/回归头。对应椭圆环/区域平均光谱的角度损失用于训练，另有分类交叉熵和IoU回归损失。",
+              "AM §IV：HOT2023初训，HOT2020/IMEC25分别微调；AdamW，两RTX3090，batch16，200epochs×1000iterations，backbone lr1e−5、其他lr1e−4、weight decay1e−4，50epochs后lr×.1；微调lr为原值.1。冻结空间卷积，只训练3×1×1谱卷积；8 attention heads，λreg=2/λspec=1，模板更新η=.7。包括属性、组件、λspec/η、复杂度与失败案例。",
+              "HOT2023正文及表II AUC .615、DP@20 .841，去光谱损失为.610/.821，简单求和.535/.701。HOT2020正文.676/.940，而Fig.4成功图例.675；SPIRIT AUC .679，不能宣称所有指标第一。表I报告8.75FPS、258.4GFLOPs、43.87M参数（单RTX3090环境），不属于实时跟踪或所有对照复杂度最小；IMEC25比较另按Fig.10/11保留。",
+              "20式、1算法、15图、4表；指定版本冲突保留，非最终VOR，未运行代码。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content",
+            "checkedAt": "2026-10-11",
+            "level": "接受稿全文分类核验",
+            "supports": [
+              "AM全文直接证明逐帧高光谱目标跟踪与SCE/SCF Transformer交互；无三维场景输出，保留跟踪任务并补方法标签。"
+            ]
           }
         ],
         "versions": [
@@ -37476,12 +37496,88 @@
             "url": "https://doi.org/10.1109/tip.2025.3633177",
             "doi": "10.1109/tip.2025.3633177",
             "year": 2025,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式TIP书目与DOI；本轮读Griffith AM，不表示最终排版正文已核。"
+          },
+          {
+            "id": "zhou-34-hsi-2025-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content",
+            "doi": "10.1109/tip.2025.3633177",
+            "year": 2025,
+            "readingProgress": "full_text_read",
+            "relation": "全文、公式、实验、讨论、引用目录及作者传记已读；参考目录不是引用论文全文。图2/3已视觉核验。 全文PDF已下载并存档，版本封面明确AM。"
           }
         ],
-        "methodFamilyId": "zhou-2025-title-34"
+        "methodFamilyId": "zhou-2025-title-34",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM全文直接证明逐帧高光谱目标跟踪与SCE/SCF Transformer交互；无三维场景输出，保留跟踪任务并补方法标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c670081f9fa3cba919a481eeee8f99d4c64d39e57edf70f8cea71ca43094b391",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_34_hsi_2025, title = {SUIT: Spatial-Spectral Union-Intersection Interaction Network for Hyperspectral Object Tracking}, author = {Fengchao Xiong and Zhenxing Wu and Jun Zhou and Sen Jia and Yuntao Qian}, year = {2025}, doi = {10.1109/tip.2025.3633177}\n}\n"
+      "citation": "@article{zhou_34_hsi_2025, title = {SUIT: Spatial-Spectral Union-Intersection Interaction Network for Hyperspectral Object Tracking}, author = {Fengchao Xiong and Zhenxing Wu and Jun Zhou and Sen Jia and Yuntao Qian}, year = {2025}, doi = {10.1109/tip.2025.3633177}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content",
+          "figureLabel": "Fig. 2",
+          "caption": "Griffith接受稿（AM）的SUIT总框架：模板/搜索双分支、非对称3D ResNet、逐带空间与跨带共享/特定交互、分类/回归、光谱损失及模板更新。",
+          "page": 4,
+          "verificationNote": "从已下载完整Griffith AM原图裁切，未重绘。PDF第4页对应正文第3页，前有机构封面；图中文字、所有分支与图注已视觉核对。不是最终出版社排版版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              196,
+              231,
+              2446,
+              1212
+            ]
+          },
+          "path": "figures/zhou-34-hsi-2025/framework-fig2-griffith-am.png",
+          "width": 2250,
+          "height": 981,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "100c3b727fa383c6bbe9ea0796c36ab55656bbe2dc4c110bdd5b23cb474cb9f1",
+          "attribution": "Fengchao Xiong, Zhenxing Wu, Jun Zhou, Sen Jia, Yuntao Qian · TIP 2025"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content",
+          "figureLabel": "Fig. 3",
+          "caption": "Griffith接受稿（AM）的光谱损失：模板与预测框按对应椭圆环/局部区平均光谱计算材料一致性；图示N=3。",
+          "page": 7,
+          "verificationNote": "从已下载完整Griffith AM原图裁切，未重绘。PDF第7页对应正文第6页，前有机构封面；图中文字、所有分支与图注已视觉核对。不是最终出版社排版版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              150,
+              200,
+              1275,
+              975
+            ]
+          },
+          "path": "figures/zhou-34-hsi-2025/framework-fig3-griffith-am.png",
+          "width": 1125,
+          "height": 775,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "19cc1bbfbea26ae11773302505ea4096b3e72ac2d09e37326363bc8911972c35",
+          "attribution": "Fengchao Xiong, Zhenxing Wu, Jun Zhou, Sen Jia, Yuntao Qian · TIP 2025"
+        }
+      ]
     },
     {
       "id": "zhou-35-hsi-2025",
@@ -37718,31 +37814,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/jbhi.2026.3651480",
-      "representation": "题名确认高光谱任务，方法细节待摘要核验。",
+      "representation": "原摘要确认医学高光谱少样本分类，类协方差感知Mahalanobis原型距离和域感知适配器；实施细节待正文。",
       "tags": [],
       "summary": "公开摘要显示：为解决医学高光谱少样本与跨域偏移，方法在原型网络中加入类协方差感知Mahalanobis距离，并用域感知适配器融合共享与域特定光谱—空间表征；在皮肤镜、胆管和体内脑部三个公开医学高光谱数据集上评估。",
       "input": "少样本医学高光谱影像及多个领域数据；摘要列出皮肤镜、胆管和体内脑部三类公开数据集。",
       "output": "医学高光谱影像分类结果。",
       "mechanism": "原型模块嵌入类协方差感知Mahalanobis度量以适应类内光谱—空间协方差；域感知适配器通过光谱整合和可切换适配器融合共享与域特定表征。",
-      "readingNote": "Semantic Scholar公开摘要与OpenAlex摘要索引交叉核验，Crossref核对JBHI DOI；已读摘要，不等同IEEE全文。记录三类医学数据集和方法组件，不补样本划分、指标数字或代码。",
+      "readingNote": "本轮Griffith作者接受稿PDF已下载并存档，封面及第2页原摘要/首页机构、引言开头已读；与正式DOI、作者及既有摘要相符。此前摘要证据保留。其余正文尚未阅读，数据规模、配置、数字、方法实施及原图继续整理，不称已通读。",
       "paper": "https://api.crossref.org/works/10.1109/jbhi.2026.3651480",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified_secondary_index",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "abstract_verified_primary_accepted_manuscript",
       "library": {
         "categoryIds": [
-          "land-cover-classification",
+          "hyperspectral-biomedical-classification",
           "biomedical-imaging"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名和公开摘要明确高光谱影像任务；完整实验与方法/应用标签待进一步审计。",
+        "relationNote": "作者AM原摘要与首页明确医学高光谱少样本分类，皮肤镜、胆管和脑部三类医学数据；迁移至既有医学分类任务，不归地物/植被分类。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何在医学高光谱少样本与跨域条件下提升原型网络分类泛化？",
         "datasets": "摘要列出皮肤镜、胆管和体内脑部三个公开医学高光谱数据集；规模与协议待全文。",
         "experimentSetting": "摘要级核验：三个公开医学高光谱数据集，与现有少样本分类器比较；划分、指标和参数待全文。",
         "conclusions": "摘要报告相较现有少样本网络降低误分类并在三个数据集上表现良好；不外推具体数字。",
-        "limitations": "仅公开二级摘要与正式书目，未取得IEEE全文；不补数据规模、参数、图版或代码。",
+        "limitations": "免费Griffith接受稿全文已下载，仅封面和摘要/首页机构、引言开头已核；其他方法/实验、数据规模与划分、原图和代码尚未整理，不猜测补齐。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37769,6 +37865,23 @@
             "supports": [
               "正式题名、作者、年份和DOI"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith作者接受稿PDF局部第1–2页：封面、原摘要/首页机构及引言开头已核；全文已下载，其余未读",
+            "supports": [
+              "封面标明AM和既有正式DOI；首页明确Griffith Jun Zhou及原摘要内容",
+              "PDF已下载并保存，但下载/文字提取不等于全文阅读；方法及实验细节继续整理"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
+            "checkedAt": "2026-10-11",
+            "level": "接受稿局部原摘要/首页分类核验，其他正文未读",
+            "supports": [
+              "AM原摘要及首页明确医学组织/病变高光谱分类，非地物植被；使用既有医学分类任务替换旧误配。分类证据确认不等于正文全读。"
+            ]
           }
         ],
         "versions": [
@@ -37778,10 +37891,36 @@
             "url": "https://doi.org/10.1109/jbhi.2026.3651480",
             "doi": "10.1109/jbhi.2026.3651480",
             "year": 2026,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式书目和原摘要已核；本轮已下载Griffith AM，最终出版社排版及AM其余正文仍待读。"
+          },
+          {
+            "id": "zhou-5-hsi-2026-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
+            "doi": "10.1109/jbhi.2026.3651480",
+            "year": 2026,
+            "readingProgress": "abstract_read",
+            "relation": "仅封面及摘要/首页机构和引言开头已读；正文其他页虽已提取文字，尚未阅读，不升级全文。 全文PDF已下载并存档，版本封面明确AM。"
           }
         ],
-        "methodFamilyId": "zhou-2026-title-5"
+        "methodFamilyId": "zhou-2026-title-5",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM原摘要及首页明确医学组织/病变高光谱分类，非地物植被；使用既有医学分类任务替换旧误配。分类证据确认不等于正文全读。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "4d1edc3990eb51652d676e981aab2bb4651977cc9f61abbfdf3a05d31bcdb4a0",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content"
+          ]
+        }
       },
       "citation": "@article{zhou_5_hsi_2026, title = {Distance Learning-Based Prototypical Network With Multi-Domain Adaptation for Few-Shot Hyperspectral Medical Image Classification}, author = {Favour Ekong and Jun Zhou and Jing Wang and Mohammad Aminul Islam and Yongsheng Gao}, year = {2026}, doi = {10.1109/jbhi.2026.3651480}\n}\n"
     },
@@ -37951,10 +38090,10 @@
       "input": "多源联邦客户端的高光谱影像；客户端数据存在稀缺、类别不平衡及非IID分布。",
       "output": "联邦高光谱图像分类结果。",
       "mechanism": "联邦扩散数据增强在本地生成高光谱样本；类别感知策略补充缺失或少数类别；聚合模型学习跨客户端共享知识。",
-      "readingNote": "ORCID 2026题名、Crossref正式DOI及DPI机构仓储摘要核验；未阅读全文。",
+      "readingNote": "本轮Griffith作者接受稿PDF已下载并存档，封面及第2页原摘要/首页机构、引言开头已读；与正式DOI、作者及既有摘要相符。此前摘要证据保留。其余正文尚未阅读，数据规模、配置、数字、方法实施及原图继续整理，不称已通读。",
       "paper": "https://api.crossref.org/works/10.1109/tgrs.2026.3660734",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "abstract_verified_primary_accepted_manuscript",
       "library": {
         "categoryIds": [
           "land-cover-classification",
@@ -37969,7 +38108,7 @@
         "datasets": "摘要称在多个基准高光谱数据集上实验；具体数据集、划分和数值待全文核验。",
         "experimentSetting": "机构摘要：联邦客户端数据稀缺、类别不平衡且非IID；扩散样本在本地生成后聚合模型。",
         "conclusions": "摘要报告异构条件下分类性能改善；具体增益和消融待全文核验。",
-        "limitations": "摘要未给出完整客户端配置、数据名称、隐私威胁模型、代码和逐项实验。",
+        "limitations": "免费Griffith接受稿全文已下载，仅封面和摘要/首页机构、引言开头已核；其他方法/实验、数据规模与划分、原图和代码尚未整理，不猜测补齐。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37989,6 +38128,15 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dbf1e26e-b8fe-4873-9fe3-678aade18554/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith作者接受稿PDF局部第1–2页：封面、原摘要/首页机构及引言开头已核；全文已下载，其余未读",
+            "supports": [
+              "封面标明AM和既有正式DOI；首页明确Griffith Jun Zhou及原摘要内容",
+              "PDF已下载并保存，但下载/文字提取不等于全文阅读；方法及实验细节继续整理"
+            ]
           }
         ],
         "versions": [
@@ -37998,7 +38146,16 @@
             "url": "https://doi.org/10.1109/tgrs.2026.3660734",
             "doi": "10.1109/tgrs.2026.3660734",
             "year": 2026,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "正式书目和原摘要已核；本轮已下载Griffith AM，最终出版社排版及AM其余正文仍待读。"
+          },
+          {
+            "id": "zhou-13-hsi-2026-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dbf1e26e-b8fe-4873-9fe3-678aade18554/content",
+            "doi": "10.1109/tgrs.2026.3660734",
+            "year": 2026,
+            "readingProgress": "abstract_read",
+            "relation": "仅封面及摘要/首页机构和引言开头已读；正文其他页虽已提取文字，尚未阅读，不升级全文。 全文PDF已下载并存档，版本封面明确AM。"
           }
         ],
         "methodFamilyId": "zhou-2026-title-13"
@@ -42925,6 +43082,7 @@
         "hypertransformer-pansharpening",
         "mftn-2024",
         "dauhst-2022",
+        "zhou-34-hsi-2025",
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
@@ -45476,7 +45634,6 @@
         "zhou-29-hsi-2025",
         "zhou-32-hsi-2025",
         "zhou-36-hsi-2025",
-        "zhou-5-hsi-2026",
         "zhou-13-hsi-2026",
         "zhou-14-hsi-2026",
         "zhou-19-hsi-2026",
@@ -47470,6 +47627,7 @@
       "rationale": "2018皮肤镜正式数据/分类基线及WACV2025正式三类分类全文证明必要任务边界；biomedical-imaging只是应用类别，land-cover-classification不覆盖医学病变。",
       "evidencePaperIds": [
         "hsi-dermoscopy-dataset-melanoma-2018",
+        "zhou-5-hsi-2026",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025"
       ],
       "history": [
