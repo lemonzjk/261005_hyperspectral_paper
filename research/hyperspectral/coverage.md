@@ -199,6 +199,8 @@
 | Jun Zhou · NMF domain adaptation and structural sparse coding | 2017 | MTJDL MTSLR cross-scene、SCSC GSCSC structural consistency、DAIS Pavia 72 bands、Fig14 correction 2789418；30页AM＋15页AM；完整引用62/53项已读，查漏为当前两稿引用闭环，不是作者全集。 | 未单列 / 8 / 8 | 两AM45页/四原图，字典机制及勘误版本分开 | 原31机构资料剩5，作者/正式版本/全领域未闭环。；当前AM与两最终VoR及勘误图版不可判等同；公开数据配对划分/验证缺口保留。 |
 | Jun Zhou · spatial SR / face recognition / graph matching | 2017 | residual CNN hyperspectral spatial super-resolution、3D LDP hyperspectral face、different dimensions graph matching；13页AM＋7页未标版本机构稿＋12页AM；22/18/22条引用均已读，无目标Jun Zhou直接HSI引用。 | 未单列 / 3 / 3 | 三原稿32页/五新图一替换，纠正空间任务及版本边界 | 原31机构资料剩2，作者/正式版本/全领域未闭环。；当前原稿与正式版不可判等同；公式及编辑批注疑点按原文保留。 |
 | Jun Zhou · anomaly extraction and reflectance estimation | 2019 | IOACED ICA OSP anomalous component、SBE shapelet dichromatic reflectance、Griffith institutional material backlog；16页AM＋21页未标版本机构稿全文；ANU30页仅1/2/10选读，原31队列完成但非作者/领域全集。 | 未单列 / 2 / 2 | 两稿37页/四新图一换版，原31资料队列闭环 | 作者查漏、候选身份/范围与正式版本仍未闭环。；周峻其余92摘要级的材料可访问性与整理继续；原31完成不等于全部免费资料完成。 |
+| Jun Zhou · author initial and reflectance query checks | 2026 | au:"J. Zhou" AND (all:hyperspectral OR all:"spectral imaging" OR all:reflectance)、au:Zhou AND abs:reflectance、au:"Jun Zhou" AND all:reflectance；19/19、9/9及1000+826/1826；ID比较完整，1826摘要不声称逐读。 | 未单列 / 19 / 19 | 简称19摘要无直接HSI；1826摘要字段集合为旧1845子集 | 其他姓名/拼写/无谱词检索、正式版和作者全集未闭环。；宽词机制只有经验字面比较，未确认索引词干算法，不把大集合当逐篇范围决定。 |
+| Jun Zhou · SS non-Linear Model preprint | 2024 | 2412.00283v2、bidirectional spectral classification、SS non-Linear Model；17/17实际逐页全文，v1未读。 | 未单列 / 1 / 1 | v2全文17页/两原图；窗口/精度/效率冲突分列 | v1与正式版本未核；作者其余91摘要级材料继续整理。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -886,6 +888,8 @@
   阅读边界：三实际原稿32页全读，原图新增五张、替换一张并保留旧文件/哈希；引文均无目标作者直接HSI引用，未在作者专项自动扩入其他作者论文。
 - 2026-10-12 / jun-zhou-anomaly-reflectance-reading-2026-10-12：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两机构稿37页逐页全文，ANU30页仅3页选择性阅读；四新原图、一Fig3换版并保留旧文件/哈希。实际参考书目无目标作者直接HSI引文，其他作者引文不自动收录。
+- 2026-10-12 / jun-zhou-name-query-ssnl-reading-2026-10-12：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：固定v2全17页与32引用实际阅读，新增两原图；J. Zhou查询19条是该查询摘要范围筛查，不作为本批新增排除论文19条，也不关闭正式版/同名身份。1826项只自动核ID/姓名/字面词，非逐篇摘要阅读。
 
 </details>
 

@@ -45277,7 +45277,7 @@
     },
     {
       "id": "zhou-dblp-arxiv-2412-00283",
-      "shortTitle": "Hyperspectral Images Efficient Spatial and Spectral non-Linear Model …",
+      "shortTitle": "SS non-Linear Model",
       "title": "Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning",
       "authors": "Judy X Yang, Jing Wang, Zekun Long, Chenhong Sui, Jun Zhou",
       "year": 2024,
@@ -45289,31 +45289,31 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2412.00283",
-      "representation": "DBLP exact-author差集与 arXiv 原站摘要确认高光谱任务。",
+      "representation": "p×p×C高光谱块经LayerNorm、双向谱投影/反转1D卷积与非线性调制，再拼接空间卷积特征，监督输出地物类别。",
       "tags": [],
-      "summary": "Spectral-Spatial non-Linear Model classifies hyperspectral images with bidirectional feature learning.",
-      "input": "高光谱影像；具体采集设置见摘要。",
-      "output": "高光谱地物分类及融合表示；具体指标待全文。",
-      "mechanism": "Bidirectional reversed CNN extracts spectral features and a spatial analysis block models spatial structure.",
-      "readingNote": "DBLP SPARQL精确作者ID、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
+      "summary": "以双向谱处理与空间卷积融合做高光谱地物分类。v2三主表的OA优于列出的九个基线，但每类结果、窗口定义及效率并非全面占优；正文与原表冲突分别保留。",
+      "input": "单幅HSI的p×p×C像素邻域块与监督地物标签；Houston2013为144带、Indian Pines称220去20后200带、Pavia University为103带。Houston描述附DSM，但当前模型/算法没有列DSM输入。",
+      "output": "逐输入块/中心位置的地物类别softmax与拼接特征；汇成分类图。内部降维不是输出选波段名单或完整HSI重建。",
+      "mechanism": "LayerNorm归一HSI块，两投影形成x与z，z按谱维反向；两路分别经核长3的1D卷积、A/B与Δexpanded调制、tanh及reduce后相加。Fig1的平行空间支路为Conv2D(3,3)–BN–Conv2D–ReLU–BN–平均池化，图注列(128,256)/(256,512)；谱/空间特征拼接，FC/激活及softmax分类。Eq1–2以相邻前/后隐藏态表达递推，Eq8–10给Δ调制与reduce；Δ生成、reduce轴/维度和逆向输出重新对齐未充分定义。Fig1空间支路接LayerNorm，Eq11却写Conv2d(hcombined)，不替作者消除连接差异；作者称SSM/Mamba-inspired，不据此认定采用标准Mamba选择性扫描实现。",
+      "readingNote": "本轮arXiv2412.00283v2原PDF17页逐页全读，含13编号式、Algorithm1、Fig1–5、TableI–XI与32条完整引用。首页明确Jun Zhou为Griffith ICT通讯作者；当前v2横边标2024-12-03，与官方版本页对应。原始方法/主表/消融/效率表及窗口和计数冲突分别整理；v1未读，不把v2事实复制给v1。Crossref指定完整题名前5无对应正式版，不证明不存在正式版。正文仅写HSILinearModel代码名，无可确认官方URL，留空且不访问代码。",
       "paper": "https://arxiv.org/abs/2412.00283",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified_primary_preprint",
       "library": {
         "categoryIds": [
           "land-cover-classification",
-          "representation-learning"
+          "state-space-models"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "DBLP精确作者记录与 arXiv 摘要明确高光谱输入/任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决高光谱任务？",
-        "datasets": "Hyperspectral image classification benchmarks; exact datasets await full text.",
-        "experimentSetting": "DBLP exact-author记录与 arXiv摘要核验；完整实验设置待全文。",
-        "conclusions": "Abstract reports reduced data volume and improved classification accuracy; exact values and protocol remain unverified.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
+        "relationNote": "当前v2直接以三真实HSI基准监督分类；地物类别是最终任务。删除无自监督/预训练目标的表征预训练关联；状态空间方法按作者定义的双向递推/非线性谱处理记录，不外推标准Mamba实现。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何用双向谱特征与空间卷积融合，在较小邻域及计算成本下保持HSI地物分类效果？",
+        "datasets": "Houston2013：144带380–1050nm、2.5m、15类，文称附LiDAR DSM但没有实际DSM输入路径；本文未给完整HSI空间尺寸。Indian Pines：145×145、AVIRIS220带去20后200带、400–2500nm、20m、16类。Pavia University：ROSIS610×340×103、430–860nm、1.3m、9类。TableI/II/III印刷训练/测试/总数分别1506/13523/15029、1061/9305/10366、4395/38381/43923；各表部分行/总数不自洽，不能把标题Standard Training/Test视为已核官方固定划分。",
+        "experimentSetting": "三HSI监督分类，作者称10%训练、基线15×15块；OurMethod1按主表为15，OurMethod2按TableIV–VI图注为5，正文多处称3，保留两种来源而不选定唯一协议。PyTorch、学校GPU服务器（型号未给），Adam、batch32、lr5e-4、100epoch、交叉熵；训练增强45°/90°/135°旋转及水平/垂直翻转。九主对比为Mou RNNs、R-2D-CNN、2D-CNN、3D-CNN、M3D-DCNN、DeepViT、T2T、LeViT、HiT；指标OA/Kappa及每类精度，消融另给AA。未明确随机种子/重复数/方差、验证集合、严格空间互斥划分及窗口重叠控制。参数实验p=1/3/5/7/9/11/13/15；TableX实际标题及输入[32,144,5,5]为p5，正文称p3。TableXI说Houston却用1×15×15×200输入，时间统计范围/计时设备不清。",
+        "conclusions": "按TableIV–VI原表，Method1/Method2的OA依次Houston97.57/97.60%、Indian Pines92.53/93.32%、Pavia98.07/97.04%；Kappa97.38/97.40%、91.48/92.37%、97.50/96.08%。三主表均高于最高基线OA96.35/87.54/92.00，但并非每类领先，Pavia小块方法也低于本方法大块。参数TableVII–IX最高OA为Houston p13=97.86%、Indian p11=94.34%、Pavia p13=98.25%，不能把正文p5/p9“最优”当统一结论。TableX完整/无空间/仅空间/前向+空间/后向+空间/仅前向/仅后向的OA为97.60/94.73/94.74/95.53/95.59/93.37/93.78%。TableXI作者方法为Flops0.05(原表GB)、Param50.32(原表MB)、训练130.30s/测试1.90s；2D-CNN为0.07/0.49/15.92s/1.21s，故本方法不是参数最少或测试最快，训练亦不全面优于Transformer/CNN。HiT112.04s/6.70s，训练更慢而测试更快；原“40%FLOPs/30%推理”文字主张不作跨基线普遍保证。",
+        "limitations": "v2未与v1或正式版逐页比较；指定Crossref前5无精确正式匹配不能证明无版本。Fig1平行空间支路与Eq11的hcombined串联写法不同；Δ生成、reduce轴、A/B维度映射及反转对齐未充分定义，不能据文中阶数近似推导实际端到端线性复杂度。正文p3和主表p5冲突；Indian正文OA92.18/92.41%与主表92.53/93.32%不同，Pavia正文96.35/98.14%与主表98.07/97.04%不同，Houston正文“Method1略低HiT”也不符原主表。样本表部分行/总数不自洽（例如Pavia4395+38381=42776而Samples43923；Indian Stone-Steel-Towers50+45=95并非10%训练；Houston Highway123+1004≠1227、ParkingLot1 123+1210≠1233）。TableVI Pavia阴影Method2为98.53%，TableIX p5为99.53%；消融正文p3与表X p5及部分去组件说明也不同。TableXI的Houston144带描述与200带标准输入冲突；Flops单位印GB、Param印MB，未转换为已验证运算数/参数数/峰值内存。GPU型号、重复性及空间划分未给；性能未复现。代码仅记录作者明确官方链接，本文只给名称，URL留空。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45334,6 +45334,27 @@
               "版本v2、首次提交与当前版本更新时间",
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2412.00283v2",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v2逐页全文与原图/原表核验",
+            "supports": [
+              "17页全文、首页Griffith Jun Zhou、13式/1算法/5图/11表/32引用。",
+              "双向谱处理与空间卷积监督地物分类，非表征预训练；Δ/空间连接和窗口定义保留原文边界。",
+              "主表、参数表、消融与效率来源分开；不把作者总述或不自洽数字改写成已验证协议。",
+              "原PDF/哈希/逐页文本及视觉证据见jun-zhou-name-query-ssnl-reading-2026-10-12.json。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2412.00283v2",
+            "checkedAt": "2026-10-12",
+            "level": "固定预印本逐页全文、首页身份、原图与原表核验",
+            "supports": [
+              "监督地物类别是最终输出，没有已核自监督/预训练目标，移除representation-learning。",
+              "双向谱递推/非线性调制按作者SSM定义归state-space-models，空间支路/公式差异与非标准Mamba边界保留。",
+              "v2全文17页实际阅读，v1及正式版不升级，方法/性能冲突不由代码推测消除。"
             ]
           }
         ],
@@ -45362,12 +45383,82 @@
             "firstSubmittedAt": "2024-11-29T23:32:26Z",
             "updatedAt": "2024-12-03T02:46:05Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v2预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。"
+            "relation": "本轮固定v2原稿17页逐页全读，原图/主表/协议与冲突单列；v1和可能正式版本未读，不推定等同。",
+            "readingProgress": "full_text_read"
           }
         ],
-        "methodFamilyId": "zhou-dblp-arxiv-2412.00283"
+        "methodFamilyId": "zhou-dblp-arxiv-2412.00283",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "固定arXiv v2全文为监督HSI地物分类，无独立预训练目标；双向谱递推/非线性调制按作者状态空间定义归类，保留与标准Mamba实现、平行/串联空间连接及性能协议的证据边界。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "65eddcd25dfbe8f4f6a275c80f67dea47ad2c339c479a2641a6692d7741b6de2",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2412.00283v2"
+          ]
+        }
       },
-      "citation": "@misc{zhou-dblp-arxiv-2412-00283,\n  title = {Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning},\n  author = {Judy X Yang and Jing Wang and Zekun Long and Chenhong Sui and Jun Zhou},\n  year = {2024},\n  eprint = {2412.00283},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2412.00283}\n}\n"
+      "citation": "@misc{zhou-dblp-arxiv-2412-00283,\n  title = {Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning},\n  author = {Judy X Yang and Jing Wang and Zekun Long and Chenhong Sui and Jun Zhou},\n  year = {2024},\n  eprint = {2412.00283},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2412.00283}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2412.00283v2",
+          "figureLabel": "Figure 1",
+          "caption": "SS non-Linear Model原始架构：LayerNorm后双向谱投影、反转1D卷积、A/B调制与tanh，平行空间Conv2D支路与谱输出拼接后分类。图中空间支路接归一输入，Eq11的hcombined写法另记差异。",
+          "verificationNote": "已目视核对arXiv v2 PDF第5页完整原图/算法及原英文图注，300dpi直接裁切，未重绘；版本、页码、裁切框与文件哈希保留。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              46,
+              50,
+              566,
+              322
+            ],
+            "pdfVersion": "arXiv 2412.00283v2",
+            "sourcePdfSha256": "637f285a1ce9a15d4cfd2f42f2b22bf2d3be8323e3b223f2a99b559dbfd4bb22"
+          },
+          "path": "figures/zhou-dblp-arxiv-2412-00283/ssnl-fig1.png",
+          "width": 2168,
+          "height": 1134,
+          "verifiedAt": "2026-10-12",
+          "sha256": "6032c94b8492aee2f6eeea14b57d98633a9700cebe2010a3253b6ac0b922fd3c",
+          "attribution": "Judy X Yang, Jing Wang, Zekun Long, Chenhong Sui, Jun Zhou · arXiv v2 2024"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2412.00283v2",
+          "figureLabel": "Algorithm 1",
+          "caption": "原始Algorithm1：输入归一、双投影及谱反转，双向卷积/Δ调制/reduce相加，空间特征拼接和监督类别输出；保留原算法文字与式，不补未定义Δ或连接细节。",
+          "verificationNote": "已目视核对arXiv v2 PDF第5页完整原图/算法及原英文图注，300dpi直接裁切，未重绘；版本、页码、裁切框与文件哈希保留。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              310,
+              337,
+              565,
+              680
+            ],
+            "pdfVersion": "arXiv 2412.00283v2",
+            "sourcePdfSha256": "637f285a1ce9a15d4cfd2f42f2b22bf2d3be8323e3b223f2a99b559dbfd4bb22"
+          },
+          "path": "figures/zhou-dblp-arxiv-2412-00283/ssnl-algorithm1.png",
+          "width": 1064,
+          "height": 1430,
+          "verifiedAt": "2026-10-12",
+          "sha256": "1355d07ae29177ee86d0ccf72db12814c7c08f1af13ac917189131955c4ea8cd",
+          "attribution": "Judy X Yang, Jing Wang, Zekun Long, Chenhong Sui, Jun Zhou · arXiv v2 2024"
+        }
+      ]
     },
     {
       "id": "zhou-dblp-arxiv-2404-00272",
@@ -49056,7 +49147,6 @@
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-arxiv-2605-14239",
         "zhou-scholar-arxiv-2609-37340",
-        "zhou-dblp-arxiv-2412-00283",
         "zhou-dblp-arxiv-2404-00272",
         "zhou-strl-hyperspectral-tracking-2025"
       ],
@@ -49100,6 +49190,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "两早期监督分类稿不支持表征预训练；三元组稿没有数据发布/基准主贡献，按当前全文纠正关联。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "SS non-Linear固定v2全文确认监督地物分类与作者定义的双向谱状态处理，删除无预训练目标的关联；不修改其他论文或将其认作标准Mamba实现。"
         }
       ]
     },
@@ -49303,7 +49398,8 @@
         "zhou-56-hsi-2024",
         "zhou-scholar-adaptive-multi-stage-fusion-of-hyperspectr-2026",
         "zhou-scholar-arxiv-2603-09037",
-        "zhou-dblp-arxiv-2404-00272"
+        "zhou-dblp-arxiv-2404-00272",
+        "zhou-dblp-arxiv-2412-00283"
       ],
       "history": [
         {
@@ -49320,6 +49416,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "SSUMamba与SSRT接受稿全文分别确认状态空间与Transformer方法，保留独立方法族。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "SS non-Linear固定v2全文确认监督地物分类与作者定义的双向谱状态处理，删除无预训练目标的关联；不修改其他论文或将其认作标准Mamba实现。"
         }
       ]
     },

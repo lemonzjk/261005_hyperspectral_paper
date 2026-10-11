@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项原始来源分类审计，非全部全文；本批无监督ICA/OSP异常精炼及shapelet光度分解依据实际原稿，保留速度/精度非全胜、印式和版本边界。",
+  "scope": "逐项原始来源分类审计，非全部全文；本批SS non-Linear v2监督地物分类与双向谱模型依实际全文纠正预训练关联，窗口/精度/效率冲突分列。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -295,7 +295,8 @@
     "joint-spectral-spatial-sparse-coding-jstars-2017",
     "hsi-superresolution-icig-2017",
     "hsi-graph-matching-gbrpr-2015",
-    "hsi-anomaly-ace-framework-2019"
+    "hsi-anomaly-ace-framework-2019",
+    "zhou-dblp-arxiv-2412-00283"
   ],
   "sourceChecks": [
     {
@@ -1219,6 +1220,16 @@
         "实际机构稿直接以四HSI数据研究光谱反射/照明分解并做反射替换与重照明，加入已有光谱重照明任务。另两RGB数据及RGB扩展单列；不因多光谱措辞排除有直接HSI贡献，也不把RGB通道参数当完整谱输出。shapelet不是小波，光源参考H*不是真实相机深度。",
         "未标版本机构稿 21 PDF页逐页全读（封面＋20稿页），正式发表版未读；正文与原图只对应实际文件。",
         "Griffith机构稿21 PDF页（封面＋20正文）逐页全读，20编号式、Algorithm1、14图、8表、45条引用及简介已读；封面没有Version字段，不猜AM/VoR。Griffith ICT Jun Zhou与Crossref正式TIP22(9):3648–3663及注册机构对应，致谢明确工作在NICTA期间完成。旧ANU30页稿本批只选读1/2/10三页，Fig3在ANU10/body9、机构7/body6；不是整份版本逐页等同或ANU全文升级。"
+      ]
+    },
+    {
+      "paperId": "zhou-dblp-arxiv-2412-00283",
+      "url": "https://arxiv.org/pdf/2412.00283v2",
+      "level": "固定预印本逐页全文、首页身份、原图与原表核验",
+      "supports": [
+        "监督地物类别是最终输出，没有已核自监督/预训练目标，移除representation-learning。",
+        "双向谱递推/非线性调制按作者SSM定义归state-space-models，空间支路/公式差异与非标准Mamba边界保留。",
+        "v2全文17页实际阅读，v1及正式版不升级，方法/性能冲突不由代码推测消除。"
       ]
     }
   ]
