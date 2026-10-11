@@ -934,3 +934,6 @@
 
 - 2026-10-12 / jun-zhou-icip-reweighted-poster-reading-2026-10-12：新增 0、更新 1、已有引用 1、排除 0、领域书目候选 4；原图新增 1，正式全文升级 0。
   阅读边界：单页作者海报全部已读，不冒称正式五页全文；周峻98全文/83摘要不变，原图294。
+
+- 2026-10-12 / jun-zhou-litterfall-soil-materials-reading-2026-10-12：新增0，更新3，已有作者引文1，其他作者候选1；新增全文1/原图4。
+  阅读边界：Catena43页AM全读；2017主文付费未读但免费ESM两式/公开图件已核，土壤仅完整摘要。周峻99全文/82摘要、原图298；作者与历年全领域目录仍未闭环。[原材料及阅读边界](sources/jun-zhou-litterfall-soil-materials-reading-2026-10-12.json)，[实际访问记录](sources/jun-zhou-litterfall-soil-materials-reading-2026-10-12-access.json)。代码仅官方链接。

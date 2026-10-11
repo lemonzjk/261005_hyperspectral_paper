@@ -30647,30 +30647,30 @@
       "doi": "10.1007/s11368-017-1751-z",
       "representation": "400–1700 nm高光谱影像结合PLSR预测森林凋落物总碳、总氮及碳氮同位素。",
       "tags": [],
-      "summary": "评估成像光谱和偏最小二乘回归预测森林凋落物化学属性的能力。",
-      "input": "森林凋落物样本高光谱影像及化学真值。",
-      "output": "TC、TN、δ13C、δ15N预测值。",
-      "mechanism": "用反射率光谱拟合PLSR，按β系数选重要波长，并用外部验证评估。",
-      "readingNote": "昆士兰DPI作者/机构摘要核验；正式17(8):2091–2103，未标全文。",
+      "summary": "以400–1700 nm研磨森林凋落物高光谱和PLSR预测碳氮及同位素；TN与δ15N可预测，TC与δ13C未成功。",
+      "input": "自然林研磨凋落物400–1700 nm高光谱反射率及TC/TN/δ13C/δ15N参考值；完整样本数量与分组待正文。",
+      "output": "TC、TN、δ13C、δ15N预测；原摘要报告仅TN与δ15N可靠，不将四项均称成功。",
+      "mechanism": "PLSR关联光谱与参考值，按β系数选择重要波长并重建模。出版社Fig.2展示光谱提取、黑白校准、异常值检测、变换、两轮交叉验证和外部测试；ESM S1/S2分别给TN与δ15N的最终预测式。",
+      "readingNote": "2026-10-12完整机构/出版社摘要、作者单位、免费ESM两式及11张公开缩略图已读；Fig.1/2的full原图已视觉核验。正式17(8):2091–2103正文付费未得，Griffith/DPI无正文附档，单次au:Tahmasbian查询未找到同篇；不标全文。S1普通文字印WL13902而Fig.7标1390，保留原差异，不推测改写。",
       "paper": "https://era.dpi.qld.gov.au/id/eprint/15791/",
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "institutional_abstract_verified",
       "library": {
         "categoryIds": [
-          "soil-property-estimation",
+          "litterfall-chemical-estimation",
           "forest-canopy-analysis",
           "partial-least-squares-regression"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要明确400–1700nm高光谱影像与凋落物化学属性预测。",
+        "relationNote": "原完整摘要直接处理400–1700 nm研磨森林凋落物HSI；估计凋落物化学属性，不是土壤或农业作物表型。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用高光谱影像和PLSR预测森林凋落物碳氮及同位素？",
-        "datasets": "自然林凋落物样本；摘要给出外部验证和TN/δ15N结果，样本规模待全文。",
-        "experimentSetting": "机构摘要完整核验；未逐项复核采样和全部统计。",
-        "conclusions": "TN与δ15N模型拟合可靠；TC与δ13C因变异小未成功，不能泛化为所有属性。",
-        "limitations": "完整样本设计、数据链接和代码待核。",
+        "researchQuestion": "能否从森林凋落物成像光谱快速预测总碳、总氮及同位素？",
+        "datasets": "自然林研磨凋落物、外部验证集；公开摘要/原图/ESM未给可核总样本规模，不沿用2018论文的118/107/86/21数量。",
+        "experimentSetting": "公开摘要：TN/δ15N交叉验证R²=0.74/0.67、RMSE=0.53%/1.07‰；外部验证R²=0.64/0.67、RMSE=0.53%/1.19‰、RPD=1.48/1.53。图件可核双相机装置及分析流程；预处理具体选择、划分及全参数仍待正文。",
+        "conclusions": "TN和δ15N外部预测可靠；TC和δ13C未成功，作者称可能因变化较小，不把此解释当已证明原因。",
+        "limitations": "正式正文未读；样本设计、预处理、交叉验证嵌套与外部域待核。ESM S1有33个WL项且无显式截距，S2有38项及−2.40截距；S1普通文字WL13902与Fig.7的1390不同，未自行改写公式。未见官方代码链接，不以代码核查补原文缺口。",
         "dataLinks": [],
         "evidence": [
           {
@@ -30687,6 +30687,48 @@
             "level": "Crossref",
             "supports": [
               "正式期刊记录和页码。"
+            ]
+          },
+          {
+            "url": "https://link.springer.com/article/10.1007/s11368-017-1751-z",
+            "checkedAt": "2026-10-12",
+            "level": "出版社完整摘要、作者单位及公开图件",
+            "supports": [
+              "Jun Zhou单位为Griffith School of Information and Communication Technology；正式2017年17卷2091–2103。",
+              "摘要与Fig.8/11外部TN/δ15N指标对应；TC/δ13C未成功，正文需购买或机构权限。"
+            ]
+          },
+          {
+            "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs11368-017-1751-z/MediaObjects/11368_2017_1751_MOESM1_ESM.docx",
+            "checkedAt": "2026-10-12",
+            "level": "出版社补充材料原文通读，两式及作者单位",
+            "supports": [
+              "原DOCX全文XML已读；TN S1有33项，δ15N S2有38项与−2.40截距。",
+              "S1普通文字印13902，未设置上标；图7对应标签1390，保留原文差异。"
+            ]
+          },
+          {
+            "url": "https://link.springer.com/article/10.1007/s11368-017-1751-z/figures/1",
+            "checkedAt": "2026-10-12",
+            "level": "出版社原图图注与完整图件视觉阅读",
+            "supports": [
+              "Fig.1独立公开图页及full PNG原图；图号已核、正式PDF页码未知，不能据图件冒称主文已读。"
+            ]
+          },
+          {
+            "url": "https://link.springer.com/article/10.1007/s11368-017-1751-z/figures/2",
+            "checkedAt": "2026-10-12",
+            "level": "出版社原图图注与完整图件视觉阅读",
+            "supports": [
+              "Fig.2独立公开图页及full PNG原图；图号已核、正式PDF页码未知，不能据图件冒称主文已读。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/handle/10072/407088",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith官方书目与作者关联（复用2026-10-11快照）",
+            "supports": [
+              "完整作者及目标Jun Zhou的profile7205关联；接受稿或无全文状态按原元数据记录，快照日期不冒称本批新抓取。"
             ]
           }
         ],
@@ -30705,14 +30747,22 @@
             "url": "https://era.dpi.qld.gov.au/id/eprint/15791/",
             "doi": "10.1007/s11368-017-1751-z",
             "year": 2017,
-            "relation": "作者稿或公开页面；页码只对应来源文件。"
+            "relation": "DPI机构完整摘要页，无PDF附档；不是已取得的作者稿。"
+          },
+          {
+            "id": "forest-litterfall-hsi-plsr-2017-publisher-supplement",
+            "type": "出版社补充材料",
+            "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs11368-017-1751-z/MediaObjects/11368_2017_1751_MOESM1_ESM.docx",
+            "doi": "10.1007/s11368-017-1751-z",
+            "year": 2017,
+            "relation": "免费原DOCX全文XML已实际读完，Eq.S1/S2为TN/δ15N最终预测式；没有正式主文，不升级整篇全文或猜DOCX页数。"
           }
         ],
         "methodFamilyId": "forest-litterfall-plsr",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "按本批实际原始材料核对任务、输入输出和方法；凋落物与土壤分别归类，摘要/补充材料与完整接受稿的阅读深度分开。",
           "evidenceFields": [
             "title",
             "summary",
@@ -30721,14 +30771,49 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "49e001175fd18463b6f51784c5432f6bff92fba9a31797cb8d785249a4a929d7",
+          "evidenceDigest": "956fa3631e200ba6e4a1cbf0ee31332babb5564d8392fc3039dadb0d19846362",
           "sourceUrls": [
             "https://era.dpi.qld.gov.au/id/eprint/15791/",
-            "https://api.crossref.org/works/10.1007/s11368-017-1751-z"
+            "https://api.crossref.org/works/10.1007/s11368-017-1751-z",
+            "https://link.springer.com/article/10.1007/s11368-017-1751-z",
+            "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs11368-017-1751-z/MediaObjects/11368_2017_1751_MOESM1_ESM.docx",
+            "https://link.springer.com/article/10.1007/s11368-017-1751-z/figures/1",
+            "https://link.springer.com/article/10.1007/s11368-017-1751-z/figures/2",
+            "https://research-repository.griffith.edu.au/handle/10072/407088"
           ]
         }
       },
-      "citation": "@article{forest_litterfall_hsi_plsr_2017,\n  title = {The potential of hyperspectral images and partial least square regression for predicting total carbon, total nitrogen and their isotope composition in forest litterfall samples},\n  author = {Iman Tahmasbian and Zhihong Xu and Kadum Abdullah and Jun Zhou and Roya Esmaeilani and Thi Thu Nhan Nguyen and Shahla Hosseini Bai},\n  year = {2017},\n  doi = {10.1007/s11368-017-1751-z}\n}\n"
+      "citation": "@article{forest_litterfall_hsi_plsr_2017,\n  title = {The potential of hyperspectral images and partial least square regression for predicting total carbon, total nitrogen and their isotope composition in forest litterfall samples},\n  author = {Iman Tahmasbian and Zhihong Xu and Kadum Abdullah and Jun Zhou and Roya Esmaeilani and Thi Thu Nhan Nguyen and Shahla Hosseini Bai},\n  year = {2017},\n  doi = {10.1007/s11368-017-1751-z}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://link.springer.com/article/10.1007/s11368-017-1751-z/figures/1",
+          "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11368-017-1751-z/MediaObjects/11368_2017_1751_Fig1_HTML.gif",
+          "figureLabel": "Fig. 1",
+          "caption": "出版社原采集装置图，标示VNIR/IR相机、卤素灯、样品托盘与图像。",
+          "verificationNote": "出版社免费独立图页与full图资源；原图注为“The hyperspectral imaging system”。直接保留原PNG字节和609×454像素，未重绘。属于2017正式文章图件，未取得正式PDF、不猜页码，也不借图件标记全文已读。",
+          "path": "figures/forest-litterfall-hsi-plsr-2017/acquisition-fig1-publisher.png",
+          "width": 609,
+          "height": 454,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "sha256": "7a23906d6625dbb3d0eb5936185c0f62668778aeb472109cd25a7b5542d4c6d7",
+          "attribution": "Iman Tahmasbian, Zhihong Xu, Kadum Abdullah, Jun Zhou, Roya Esmaeilani, Thi Thu Nhan Nguyen, Shahla Hosseini Bai · Journal of Soils and Sediments 2017 · 出版社原图"
+        },
+        {
+          "sourceUrl": "https://link.springer.com/article/10.1007/s11368-017-1751-z/figures/2",
+          "imageUrl": "https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11368-017-1751-z/MediaObjects/11368_2017_1751_Fig2_HTML.gif",
+          "figureLabel": "Fig. 2",
+          "caption": "出版社原流程图：采集、光谱提取、黑白校准、异常值检测、变换、建模/交叉验证、重要波长重建模及外部测试。",
+          "verificationNote": "出版社免费独立图页与full图资源；原图注为“The procedure of hyperspectral image analysis”。直接保留原PNG字节和709×450像素，未重绘。属于2017正式文章图件，未取得正式PDF、不猜页码，也不借图件标记全文已读。",
+          "path": "figures/forest-litterfall-hsi-plsr-2017/framework-fig2-publisher.png",
+          "width": 709,
+          "height": 450,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "sha256": "4e3ac1bec7a17840059699f938c0bbba0c7d6e6c525467030040776444d3d134",
+          "attribution": "Iman Tahmasbian, Zhihong Xu, Kadum Abdullah, Jun Zhou, Roya Esmaeilani, Thi Thu Nhan Nguyen, Shahla Hosseini Bai · Journal of Soils and Sediments 2017 · 出版社原图"
+        }
+      ]
     },
     {
       "id": "fusion-hsi-lidar-dca-jstars-2018",
@@ -31960,13 +32045,13 @@
       ],
       "representation": "用400–1000 nm实验室高光谱影像和PLSR预测土壤碳、氮及同位素组成。",
       "tags": [],
-      "summary": "研究快速无损土壤化学属性估计。",
-      "input": "96个土壤样本高光谱影像、质谱真值及24个外部测试样本。",
+      "summary": "用实验室400–1000 nm成像光谱与PLSR预测土壤TC、TN及碳氮同位素，公开摘要给出校准和24个外部测试样本结果。",
+      "input": "96个研磨土壤样本400–1000 nm VNIR高光谱及同位素比质谱真值；摘要另述24个外部测试样本，未明确是否包含在96个内。",
       "output": "TC、TN、δ13C、δ15N预测值。",
       "mechanism": "将VNIR反射率与同位素质谱真值建立PLSR，并以外部测试评估。",
-      "readingNote": "DPI eResearch完整摘要与Crossref核验；正式330:254–263，未标全文。",
+      "readingNote": "2026-10-12完整DPI摘要重新阅读，复用Griffith官方作者关联与无全文元数据。正式Geoderma330:254–263；出版社重定向目标返回403/CPE00001，未得正文。不能据此称付费或无任何公开版本；24测试与96总样本的包含关系不明，不相加为120。",
       "paper": "https://era.dpi.qld.gov.au/id/eprint/13321/",
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
@@ -31978,11 +32063,11 @@
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "researchQuestion": "能否用实验室VNIR高光谱估计土壤碳氮含量及δ13C/δ15N，减少常规质谱检测成本？",
+        "datasets": "摘要称96个研磨土壤HSI样本及24个外部测试样本；同位素比质谱提供TC/TN/δ13C/δ15N真值。两数量是否包含关系未说明，不推断72训练或120总数。",
+        "experimentSetting": "按TC/TN/δ13C/δ15N顺序：校准R²=0.82/0.87/0.82/0.90，RMSE=1.08%/0.02%/0.27‰/0.29‰；24测试R²=0.76/0.86/0.80/0.81、RPD=2.02/2.08/2.00/1.94。上述仅摘要指标，不补测试RMSE、潜变量数或划分。",
+        "conclusions": "作者摘要报告四项属性在该外部测试集可预测；不据此声称跨地区、跨相机或新土壤类型泛化。",
+        "limitations": "Griffith/DPI没有正文附档；出版社实际403为访问失败，不等于付费证据。单次au:Tahmasbian arXiv查询无同篇，仍不证明所有公开版本不存在。样本包含关系、预处理、PLSR组分、验证协议及原图待正文；未见官方代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -32000,6 +32085,23 @@
             "supports": [
               "正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://era.dpi.qld.gov.au/id/eprint/13321/",
+            "checkedAt": "2026-10-12",
+            "level": "机构完整摘要重新阅读与访问状态",
+            "supports": [
+              "96研磨土壤HSI、400–1000nm、同位素比质谱与PLSR；24测试与96的包含关系未明。",
+              "四项校准/外部测试R²及RPD按原摘要逐项记录；页面full_text_status=none。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/handle/10072/380334",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith官方书目与作者关联（复用2026-10-11快照）",
+            "supports": [
+              "完整作者及目标Jun Zhou的profile7205关联；接受稿或无全文状态按原元数据记录，快照日期不冒称本批新抓取。"
+            ]
           }
         ],
         "versions": [
@@ -32014,9 +32116,9 @@
         ],
         "methodFamilyId": "soil-hsi-plsr",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "按本批实际原始材料核对任务、输入输出和方法；凋落物与土壤分别归类，摘要/补充材料与完整接受稿的阅读深度分开。",
           "evidenceFields": [
             "title",
             "summary",
@@ -32025,11 +32127,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "a8fd5238d418f33422797af74c8e2ded7522758987df46e578d7c8d3f470a533",
+          "evidenceDigest": "24a1ab35dffff5c95e61fa4e443fc5d4d56edb595e8a54c4a3f764379977f077",
           "sourceUrls": [
             "https://era.dpi.qld.gov.au/id/eprint/13321/",
-            "https://era.dpi.qld.gov.au/id/eprint/13321/",
-            "https://api.crossref.org/works/10.1016/j.geoderma.2018.06.008"
+            "https://api.crossref.org/works/10.1016/j.geoderma.2018.06.008",
+            "https://research-repository.griffith.edu.au/handle/10072/380334"
           ]
         }
       },
@@ -32642,31 +32744,30 @@
       ],
       "representation": "用400–1000 nm高光谱影像结合PLSR/ANN预测分解森林凋落物碳官能团分布。",
       "tags": [],
-      "summary": "研究高光谱影像对凋落物碳官能团的快速估计。",
-      "input": "分解森林凋落物样本VNIR影像、13C NMR真值。",
-      "output": "多类碳官能团分布预测。",
-      "mechanism": "比较PLSR与ANN对反射率和13C NMR官能团的建模能力。",
-      "readingNote": "DPI eResearch完整摘要与Crossref核验；正式167:18–27，未标全文。",
-      "paper": "https://era.dpi.qld.gov.au/id/eprint/15792/",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "以462带研磨分解凋落物HSI与13C NMR真值，比较PSO选带后的PLSR和单隐藏层ANN；21测试样本中PLSR七类、ANN五类官能团预测可接受。",
+      "input": "Toohey Forest三地点118份研磨分解凋落物，Pika XC2采集400–1000 nm、462带HSI；2×2 cm ROI平均光谱、黑白校准，13C CPMAS NMR给九组官能团参考比例。",
+      "output": "Alk、ONAlk、Carb、diOAlk1、diOAlk2、Aryl1、Aryl2、OAryl、Carbox九类碳官能团比例预测；Carb/OAryl两模型均未可靠预测。",
+      "mechanism": "PCA/99% Hotelling T²剔除11样本，余107随机分86校准/21测试；PSO分别选16–61带，比较MSC/SNV/OSC等变换。PLSR用10折验证的PRESS选择潜变量；ANN为sigmoid单隐藏层MLP、LM优化、2–100神经元候选。最终选模型后只在21测试样本报告性能。",
+      "readingNote": "Griffith免费43页作者接受稿已逐页全部阅读：正文1–26、表27–28、Fig.1–7在29–35、标注补充材料36–42、末页43未编号原方法图。首页Jun Zhou单位Griffith，非最终10页期刊版。AM Fig.3与页43原图已取；Eq.2乘法方向、Eq.5未印转置、Eq.8的SDt文字定义及补充Bnd393–1005/缺括号均按原稿保留，不借代码猜补。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ebc30f9f-61f5-43c4-9072-dd979c6638ec/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "accepted_manuscript_full_text_verified",
       "library": {
         "categoryIds": [
+          "litterfall-chemical-estimation",
           "forest-canopy-analysis",
-          "soil-property-estimation",
-          "partial-least-squares-regression",
-          "agriculture-phenotyping"
+          "partial-least-squares-regression"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "relationNote": "全文§2.4–2.7明确直接采集研磨分解森林凋落物462带HSI并预测化学比例；不是土壤属性、农业作物表型或3D空间几何。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "能否用实验室HSI与化学计量回归快速替代耗时的NMR官能团比例测量？",
+        "datasets": "Toohey Forest三个地点约6000m²，2012年8月起15个月收118份分解凋落物；剔除11份后107份，86校准/21测试。约7g研磨样品，多次摇匀/拍摄至光谱可重复。13C CPMAS NMR九区间分别0–45/45–55/55–90/90–110/110–120/120–135/135–145/145–155/155–185 ppm。",
+        "experimentSetting": "相机12-bit Pika XC2、1.3nm谱分辨率/462带、23mm镜头、1.23mm/s平台、27.31ms曝光/四卤素灯，99%Teflon白参考；R=(R0−D)/(W−D)。十折CV选择PLSR/ANN模型和变换，86/21随机样本划分，不是按地点或时间独立划分。按Alk/ONAlk/Carb/diOAlk1/diOAlk2/Aryl1/Aryl2/OAryl/Carbox顺序：PSO带数56/35/33/29/32/61/16/43/44；PLSR潜变量5/1/1/1/1/2/1/1/1，ANN隐藏神经元15/11/15/15/24/24/16/6/6。测试PLSR R²=0.72/0.73/0.47/0.71/0.74/0.76/0.75/0.47/0.63，RMSE(%)=2.18/0.29/2.42/0.76/0.23/0.77/0.45/0.51/0.60，RPD=1.86/1.82/0.52/1.78/1.71/1.90/1.76/1.12/1.43；ANN R²=0.24/0.62/0.15/0.68/0.69/0.82/0.67/0.54/0.58。",
+        "conclusions": "PLSR七类官能团达到作者可接受标准，ANN五类；Aryl1由ANN更好（R²0.82、RPD2.10，对比PLSR0.76/1.90）。Carb和OAryl两模型均不可靠；不能称九类全部成功或PLSR全面优于ANN。结果只覆盖本随机测试集，没有新森林/相机独立外推或性能复现。",
+        "limitations": "最终Catena167:18–27正式稿未取得/未读。样本有限；PSO完整设置与选带/变换是否嵌套各折未明确。Eq.2写Y=βX+F但声明X为N×K/β为K×M，Eq.5写J×J/J×E未印转置；Eq.8将SDt定义为测试预测值标准差，保留原定义。补充S1–S7称Bnd为band但标签393–1005与462带不形成明确索引对应，S5/S7有缺右括号，未补写可执行式。Fig.6/S2的N-alkyl与Table1 O,N-alkyl命名差异保留。未见官方代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -32684,6 +32785,24 @@
             "supports": [
               "正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ebc30f9f-61f5-43c4-9072-dd979c6638ec/content",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith作者接受稿完整43页阅读、全部表图/补充及原框架",
+            "supports": [
+              "首页Jun Zhou Griffith单位、直接462带凋落物HSI与NMR九类比例；118剔11后86校准/21测试，10折CV。",
+              "原8式/2表/7图、补充S1–S3及S1–S7预测式、43页未编号方法图实际阅读；PLSR七类/ANN五类，Carb/OAryl均失败。",
+              "Eq.2/5/8、Bnd标签及S5/S7括号疑点按AM原文保留，不推测作者代码。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/handle/10072/379898",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith官方书目与作者关联（复用2026-10-11快照）",
+            "supports": [
+              "完整作者及目标Jun Zhou的profile7205关联；接受稿或无全文状态按原元数据记录，快照日期不冒称本批新抓取。"
+            ]
           }
         ],
         "versions": [
@@ -32693,14 +32812,22 @@
             "url": "https://doi.org/10.1016/j.catena.2018.04.023",
             "doi": "10.1016/j.catena.2018.04.023",
             "year": 2018,
-            "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+            "relation": "Catena167:18–27正式书目，10页最终排版未取得/未读；已读43页接受稿不是最终PDF。"
+          },
+          {
+            "id": "forest-litterfall-carbon-functional-hsi-2018-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ebc30f9f-61f5-43c4-9072-dd979c6638ec/content",
+            "doi": "10.1016/j.catena.2018.04.023",
+            "year": 2018,
+            "relation": "Griffith item530ffd65标记Accepted Manuscript (AM)；实际43页PDF已读完，正文/表图/补充与未编号末图分别记录。旧embargoed标记不代表当前受阻，实际内容HTTP200；最终期刊10页排版未读。"
           }
         ],
         "methodFamilyId": "forest-litterfall-carbon-hsi",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "按本批实际原始材料核对任务、输入输出和方法；凋落物与土壤分别归类，摘要/补充材料与完整接受稿的阅读深度分开。",
           "evidenceFields": [
             "title",
             "summary",
@@ -32709,16 +32836,69 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "e151eee400ca09bb8c743567ca06c283713d927f5e604c5d6868a956a62971d5",
+          "evidenceDigest": "c1e3eca55c7eea8806d561c33e21302b4788d0387bfa473a5f0cc205d6e39cab",
           "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ebc30f9f-61f5-43c4-9072-dd979c6638ec/content",
             "https://era.dpi.qld.gov.au/id/eprint/15792/",
-            "https://era.dpi.qld.gov.au/id/eprint/15792/",
-            "https://api.crossref.org/works/10.1016/j.catena.2018.04.023"
+            "https://api.crossref.org/works/10.1016/j.catena.2018.04.023",
+            "https://research-repository.griffith.edu.au/handle/10072/379898"
           ]
         }
       },
       "doi": "10.1016/j.catena.2018.04.023",
-      "citation": "@article{forest_litterfall_carbon_functional_hsi_2018,\n  title = {Using laboratory-based hyperspectral imaging method to determine carbon functional group distributions in decomposing forest litterfall},\n  author = {Iman Tahmasbian and Shahla Hosseini Bai and Yuzhe Wang and Sue Boyd and Jun Zhou and Roya Esmaeilani and Zhihong Xu},\n  year = {2018},\n  doi = {10.1016/j.catena.2018.04.023}\n}\n"
+      "citation": "@article{forest_litterfall_carbon_functional_hsi_2018,\n  title = {Using laboratory-based hyperspectral imaging method to determine carbon functional group distributions in decomposing forest litterfall},\n  author = {Iman Tahmasbian and Shahla Hosseini Bai and Yuzhe Wang and Sue Boyd and Jun Zhou and Roya Esmaeilani and Zhihong Xu},\n  year = {2018},\n  doi = {10.1016/j.catena.2018.04.023}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ebc30f9f-61f5-43c4-9072-dd979c6638ec/content",
+          "figureLabel": "Fig. 3",
+          "caption": "Griffith接受稿原流程：研磨凋落物HSI采集、平均光谱、异常值处理、PSO选带、数据变换、PLSR/ANN与交叉验证及外部测试。",
+          "page": 31,
+          "verificationNote": "原43页AM的PDF第31页，图件自身页码3；含原图注，直接裁切未重绘，分支与流程已目视核验。正文另有26页、表2页、图7页及7页标注补充材料及末页未编号方法示意，不沿用最终10页期刊排版页码。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF 300 dpi",
+            "pointBox": [
+              60.0,
+              80.0,
+              540.0,
+              475.0
+            ],
+            "pixelBox": [
+              250,
+              333,
+              2250,
+              1980
+            ]
+          },
+          "path": "figures/forest-litterfall-carbon-functional-hsi-2018/framework-fig3-griffith-am.png",
+          "width": 2000,
+          "height": 1647,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "sha256": "19c4c42b33b7e31673cc99ea5c9bdb8ce9cbce40988a028ce6d5518afdc1e5bf",
+          "attribution": "Iman Tahmasbian, Shahla Hosseini Bai, Yuzhe Wang, Sue Boyd, Jun Zhou, Roya Esmaeilani, Zhihong Xu · Catena 2018 · 作者接受稿"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ebc30f9f-61f5-43c4-9072-dd979c6638ec/content",
+          "figureLabel": "未编号方法示意",
+          "caption": "接受稿文末原方法示意：研磨分解凋落物、相机采集、光谱及PLSR预测碳官能团分布。",
+          "page": 43,
+          "verificationNote": "PDF第43页无可提取文字且未印图号；已实际视觉阅读，直接提取PDF原嵌入图像，保留原1024×393像素，不重绘。不称Fig.8或已确认出版社图形摘要，全部身份/版本归此AM。",
+          "extraction": {
+            "method": "pdf_embedded_image",
+            "xref": 92,
+            "originalFormat": "JPXDecode",
+            "outputFormat": "PNG"
+          },
+          "path": "figures/forest-litterfall-carbon-functional-hsi-2018/method-overview-unnumbered-griffith-am.png",
+          "width": 1024,
+          "height": 393,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "sha256": "e252aad0dadacb21dfc09fc478dead5ba222f2d9ea3ea3e7e2626de878507752",
+          "attribution": "Iman Tahmasbian, Shahla Hosseini Bai, Yuzhe Wang, Sue Boyd, Jun Zhou, Roya Esmaeilani, Zhihong Xu · Catena 2018 · 作者接受稿"
+        }
+      ]
     },
     {
       "id": "attend-in-bands-jstars-2019",
@@ -50640,7 +50820,6 @@
         "tcari-osavi-2002",
         "plant-hsi-sfm-iccvw-2013",
         "edible-tree-nut-hsi-quality-2018",
-        "forest-litterfall-carbon-functional-hsi-2018",
         "multiresolution-weed-hsi-classification-2019",
         "zhou-86-hsi-2022",
         "zhou-42-hsi-2024",
@@ -50666,6 +50845,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "凋落物化学估计按实际对象归类；只纠正本批两篇，未改其他条目或类别定义。"
         }
       ]
     },
@@ -50781,16 +50965,19 @@
         "clay-resolution-sensitivity-rse-2015",
         "biochar-unmix-dicta-2013",
         "biochar-unmix-cvprei-2015",
-        "forest-litterfall-hsi-plsr-2017",
         "edible-tree-nut-hsi-quality-2018",
-        "soil-hsi-carbon-nitrogen-geoderma-2018",
-        "forest-litterfall-carbon-functional-hsi-2018"
+        "soil-hsi-carbon-nitrogen-geoderma-2018"
       ],
       "history": [
         {
           "date": "2026-10-08",
           "action": "created",
           "reason": "按实际估计对象区分土壤与植被任务。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "凋落物化学估计按实际对象归类；只纠正本批两篇，未改其他条目或类别定义。"
         }
       ]
     },
@@ -52675,6 +52862,27 @@
           "date": "2026-10-12",
           "action": "created",
           "reason": "该文的实际贡献是直接覆盖高光谱融合、建模和深度估计的领域综述，没有自身几何模型输出；新增高光谱研究综述任务，移除surface-reconstruction和spectral-pointcloud-generation算法任务错配。其广义spectral范围含MSI/单IR，不将全部被引案例认作直接HSI。"
+        }
+      ]
+    },
+    {
+      "id": "litterfall-chemical-estimation",
+      "name": "凋落物化学属性估计",
+      "dimension": "task",
+      "definition": "由高光谱数据估计森林凋落物的碳氮、同位素组成或碳官能团比例；按实际研磨/分解样本记录，与土壤属性、活体植被性状和冠层结构区分。",
+      "status": "confirmed",
+      "color": "#b2a184",
+      "createdAt": "2026-10-12",
+      "rationale": "2017公开完整摘要和2018接受稿明确以森林凋落物为研究对象，不能仅因期刊名或碳氮指标归土壤。",
+      "evidencePaperIds": [
+        "forest-litterfall-hsi-plsr-2017",
+        "forest-litterfall-carbon-functional-hsi-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "按实际材料和输出纠正两凋落物条目的土壤任务误配。"
         }
       ]
     }

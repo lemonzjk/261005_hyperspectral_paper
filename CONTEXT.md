@@ -19,7 +19,7 @@
 
 ## 当前状态
 
-- 总库390条，均直接高光谱；322分类确认（审计303）、64暂定、4待；179标签（任务68/方法98/应用13）。三维126条，数据资源2，原图294张。
+- 总库390条，均直接高光谱；322分类确认（审计306）、64暂定、4待；180标签（任务69/方法98/应用13）。三维126条，数据资源2，原图298张。
 - 出版来源112旧写法规整为69种；恢复旧URL别名。11主要任务组、细标签折叠/搜索、多标签并集与去重组计数；保留作者匹配及URL恢复、SVG/BibTeX导出。
 - 来源范围（白名单顶会顶刊272/arXiv17/白名单外101）与阅读深度、资料状态独立筛选，URL恢复、导出使用同一结果；资料状态依据已记录正文/原图证据，不以PDF链接推断已读，不把原图来源受限当全文付费。
 - CVPR/ICCV/NeurIPS/ICML等已有指定查询闭环，不是领域全量；历史普通会议搜索归档，矩阵仅白名单，见coverage.md。
@@ -31,6 +31,6 @@
 - src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
-- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。83摘要/98全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
+- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。82摘要/99全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
-- Xiong43项、Jia438书目/212 ORCID组差集无新增合格作者论文。ILR/IFG、SPECIAL v3、三维综述v1已全文；RSLRNTF单页海报已读、正式5页未读。SUIT四作者v1全15页补关联五作者正式/AM，代码仅链接。Qian27书目五Jun均已录；简称989累计19摘要暂排＋1旧决定、969仅元数据。六其他作者HSI摘要与三引用排领域待办；付费/正式版本、身份未决及资料继续，作者后推进领域矩阵。
+- ILR/IFG、SPECIAL v3、三维综述v1、SUIT v1及Catena43页AM已全文；RSLRNTF单页海报已读、正式5页未读。2017凋落物ESM/公开图已核，主文付费未读；土壤仅摘要，96/24包含关系未明。简称989累计19摘要暂排＋1旧决定、969仅元数据；Qian其他作者/引用及牡蛎HSI候选排领域待办。付费/正式版、身份未决及资料继续，作者后推进领域矩阵。
