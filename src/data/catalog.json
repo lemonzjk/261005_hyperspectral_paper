@@ -36569,7 +36569,7 @@
     },
     {
       "id": "zhou-48-hsi-2024",
-      "shortTitle": "Hyperspectral Image Denoising via Spatial–Spectral R",
+      "shortTitle": "SSRT-UNet · recurrent Transformer",
       "title": "Hyperspectral Image Denoising via Spatial–Spectral Recurrent Transformer",
       "authors": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Jiantao Zhou, Yuntao Qian",
       "year": 2024,
@@ -36581,30 +36581,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3374953",
-      "representation": "高光谱去噪：空间—光谱循环 Transformer U-Net 在同一模块中联合利用全局光谱相关与非局部空间自相似。",
+      "representation": "高光谱去噪U形网络；窗口Transformer与改进SRU跨波段双向循环，空间/光谱两支共享键值、交叉注意力联合恢复谱空特征。",
       "tags": [],
-      "summary": "SSRT-UNet 将高光谱先验整合进空间—光谱循环 Transformer：光谱分支跨波段循环建模全局光谱相关，空间分支在其引导下编码每个波段的非局部空间自相似。",
-      "input": "含噪高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "空间—光谱循环块含光谱分支和空间分支；Transformer/RNN跨波段循环利用全局光谱相关，空间分支共享键值并编码非局部自相似。",
-      "readingNote": "ORCID题名、Crossref正式书目与 arXiv:2401.03885 官方摘要核验；正式版与预印本版本边界保留，未阅读全文。",
-      "paper": "https://arxiv.org/abs/2401.03885",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "SSRT将跨波段循环与窗口自/交叉注意力结合，空间和光谱支共享K/V，双向循环后恢复含噪光谱立方体。Gaussian ICVL最高PSNR52.12；混合ICVL/Pavia的SSIM或SAM未全面领先。SSRT的V100耗时22.14–32.80s，比文中深度基线慢；真实上海GF-5与EO-1只有定性比较。",
+      "input": "含噪H×W×B高光谱立方体；31带ICVL训练，46带Houston/80带Pavia合成测试，上海GF-5 155带及EO-1 Hyperion166带真实噪声影像。",
+      "output": "同空间/光谱尺寸的去噪高光谱立方体，合成PSNR/SSIM/SAM及真实无GT影像/光谱曲线定性对照；不是分类或Mamba状态空间输出。",
+      "mechanism": "Fig2 U形encoder/decoder五阶段[2,2,6,2,2]个SSRT块，window/shift-window成对，通道C/4C/16C/4C/C。Fig3光谱支将当前Ft与上一波段状态St−1分窗，状态自注意力及状态到Ft交叉注意力拼接投影成AH；改进SRU取Ht=tanh(AH)、forget/reset=tanh(ReLU(AF/AR))，Ct=forget·Ct−1+(1−forget)·Ht，St*=reset·Ct+(1−reset)·St−1，再加MLP残差。空间支以Ft的Q自/交叉注意力分别利用Ft与St−1的共享K/V，拼接投影及残差MLP。正/反波段顺序两路输出相加（Fig4）；Eq19均方Frobenius重建损失。是Transformer＋循环单元，不是SSM/Mamba。",
+      "readingNote": "免费Griffith作者接受稿14页全部逐页阅读（机构封面＋13正文），19式、6表、12图及60条引文已读。首页同时列Griffith Jun Zhou与澳门Jiantao Zhou，Fengchao Xiong通讯；Fig2/3/4总体、共享注意力/SRU块及双向输出原图已核。固定arXiv2401.03885v2的13页逐页对应已读AM，首页版本戳及字体像素差异保留；未声称最终VoR或被引正文已读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
-          "spectral-denoising"
+          "spectral-denoising",
+          "transformer"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 arXiv 官方摘要均明确高光谱影像去噪。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在同一模块中联合建模高光谱全局光谱相关和非局部空间自相似？",
-        "datasets": "arXiv摘要仅报告实验有效；具体合成/真实噪声数据和指标待正式全文核验。",
-        "experimentSetting": "SSRT-UNet空间—光谱循环块；代码链接为 GitHub/lronkitty/SSRT。",
-        "conclusions": "arXiv摘要报告优于多个替代方法；正式版数值、噪声协议和消融待核验。",
-        "limitations": "证据来自2023预印本摘要；正式2024版差异、数据许可、速度和代码复现待核验。",
+        "relationNote": "AM §III/IV明确光学高光谱去噪，window/shift-window Transformer和改进SRU联合空间/光谱建模；支持去噪及Transformer方法标签，循环并非Mamba状态空间。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "共享键值的窗口Transformer与跨波段双向循环能否同时利用空间自相似和光谱相关，怎样影响合成噪声恢复、跨谱长测试和运行成本？",
+        "datasets": "ICVL100幅1392×1300×31、400–700 nm训练，64²×31翻转/裁块/缩放，50幅512²×31测试。Houston2018原48带去首2带、中心512²×46；Pavia City去首22带后200²×80。真实GF-5上海300²×155，不是SSUMamba武汉；EO-1 Hyperion原400×1000×242、400–2500 nm，去吸收带并裁为200×400×166，按本稿原方向保留。",
+        "experimentSetting": "PyTorch/TESLA V100，Adam.lr1e-4，15 epochs，8/12轮各乘.3，mixed由Gaussian模型fine-tune。σ∈[0,15]/[0,55]/[0,95]的非IID Gaussian；mixed另加脉冲10–70%/条纹5–15%列/deadlines5–15%列，各1/3波段。8传统＋5深度基线；T3SC/TRQ3D/SST固定31带分组，分组边界/聚合未明。窗口M、batch、初始循环状态与独立验证集未说明。合成PSNR/SSIM/SAM，真实GF-5/EO-1仅图像/光谱曲线定性，无GT或无参考指标表。",
+        "conclusions": "TableI Gaussian PSNR/SSIM/SAM：52.12/.9950/.0225、47.85/.9894/.0319、46.20/.9862/.0375。混合ICVL42.52/.9570/.0986，SST39.22/.9626/.0743的SSIM/SAM更好；Houston34.71/.9387/.0915在所列指标领先；Pavia35.10/.9493/.1036，NSSNN34.85/.9581/.1015的SSIM/SAM更好。TableIV全模型46.20/.9862/.0375，无MLP46.11/.9865/.0381、无门46.14/.9863/.0378，SSIM并非全部提升。TableV宽48为10.2M参数/11.39T FLOPS/32.80s；宽36为5.8M/6.46T/27.89s/PSNR45.86，宽24为2.6M/2.93T/25.37s/46.04，PSNR非单调；宽12为.6M/.80T/22.14s/45.34/.9838/.0415。TableVI基线1.03–4.58s，本法更慢；作者称适合离线去噪。",
+        "limitations": "已读AM及对应固定v2正文，未得最终VoR；任意B的模型设计不等于任意传感器泛化保证。真实上海/EO-1无GT、无定量质量表，不能移入SSUMamba的武汉指标；两稿V100/RTX4090成本不直接横比。混合ICVL及Pavia未全指标领先，作者讨论80带Pavia的SAM限制但SSIM亦较低。batch/窗口尺度/初始门状态、独立验证划分、重复运行及固定31带基线聚合未给，不查代码补齐。原摘要说代码“will be available”，仅记录作者提供的官方链接，不核查仓库当前状态或运行复现。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36634,6 +36635,33 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+            "checkedAt": "2026-10-11",
+            "level": "指定Griffith AM逐页全文与原方法图",
+            "supports": [
+              "AM §III/IV明确光学高光谱去噪，window/shift-window Transformer和改进SRU联合空间/光谱建模；支持去噪及Transformer方法标签，循环并非Mamba状态空间。",
+              "Jun Zhou的Griffith机构身份、输入输出、数据及训练/测试协议",
+              "原表主结果、消融、成本及未说明事项；代码仅原文链接"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2401.03885v2",
+            "checkedAt": "2026-10-11",
+            "level": "指定预印本逐页正文对应核验",
+            "supports": [
+              "13页文本按AM正文对应；首页新增版本戳，页2–13渲染一致，首页字体像素差异保留",
+              "同论文版本关联，不新增目录计数或宣称VoR已读"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+            "checkedAt": "2026-10-11",
+            "level": "指定AM去噪任务及SSM/Transformer方法全文分类核验",
+            "supports": [
+              "AM §III/IV明确光学高光谱去噪，window/shift-window Transformer和改进SRU联合空间/光谱建模；支持去噪及Transformer方法标签，循环并非Mamba状态空间。"
+            ]
           }
         ],
         "versions": [
@@ -36643,7 +36671,7 @@
             "url": "https://doi.org/10.1109/tgrs.2024.3374953",
             "doi": "10.1109/tgrs.2024.3374953",
             "year": 2024,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI书目；同DOI的Griffith AM14页已读，不表示最终VoR已读。"
           },
           {
             "id": "zhou-48-hsi-2024-arxiv-2401-03885-v2",
@@ -36656,12 +36684,133 @@
             "firstSubmittedAt": "2023-12-31T04:24:56Z",
             "updatedAt": "2024-01-09T04:13:45Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v2预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。 arXiv本版本题名：Hyperspectral Image Denoising via Spatial-Spectral Recurrent Transformer。"
+            "relation": "固定v2 PDF13页已下载；逐页文本与已读AM正文对应，首页视觉核对版本戳/作者/机构，页2–13渲染亦一致；首页字体像素不同，不称逐字节或最终VoR相同。",
+            "readingProgress": "full_text_read",
+            "contentComparisonEvidence": "research/hyperspectral/sources/jun-zhou-denoising-versions-coauthor-2026-10-11-version-comparison.json"
+          },
+          {
+            "id": "zhou-48-hsi-2024-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+            "doi": "10.1109/tgrs.2024.3374953",
+            "year": 2024,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面明确AM，1封面＋13正文全部逐页阅读；三张原方法图来自此版本。"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-48"
+        "methodFamilyId": "zhou-2024-title-48",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM §III/IV明确光学高光谱去噪，window/shift-window Transformer和改进SRU联合空间/光谱建模；支持去噪及Transformer方法标签，循环并非Mamba状态空间。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "34c4d57fb19d9be44d9bfd5c9650ee8cb38d1326f96df0116bb6e41685373a75",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_48_hsi_2024, title = {Hyperspectral Image Denoising via Spatial–Spectral Recurrent Transformer}, author = {Guanyiman Fu and Fengchao Xiong and Jianfeng Lu and Jun Zhou and Jiantao Zhou and Yuntao Qian}, year = {2024}, doi = {10.1109/tgrs.2024.3374953}\n}\n"
+      "citation": "@article{zhou_48_hsi_2024, title = {Hyperspectral Image Denoising via Spatial–Spectral Recurrent Transformer}, author = {Guanyiman Fu and Fengchao Xiong and Jianfeng Lu and Jun Zhou and Jiantao Zhou and Yuntao Qian}, year = {2024}, doi = {10.1109/tgrs.2024.3374953}\n}\n",
+      "code": "https://github.com/lronkitty/SSRT",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+          "figureLabel": "Fig. 2",
+          "caption": "SSRT-UNet五阶段编码/解码总体框架及window/shift-window成对块。",
+          "page": 4,
+          "verificationNote": "Griffith AM原PDF第4页/正文第3页，300dpi原页裁取；模块、连线和原图注完整已视觉核对，未重绘。机构封面的AM版本和版权声明保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              62,
+              565,
+              208
+            ],
+            "pixelBox": [
+              191,
+              258,
+              2355,
+              867
+            ]
+          },
+          "path": "figures/zhou-48-hsi-2024/ssrt-fig2.png",
+          "width": 2164,
+          "height": 609,
+          "sha256": "d0405ba6bb812f097495e2efb59f00eb7591c264386a9ea4f10aab9f853f8fae",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Jiantao Zhou, Yuntao Qian · TGRS 2024 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+          "figureLabel": "Fig. 3",
+          "caption": "共享K/V的空间与光谱自/交叉注意力、改进SRU和残差MLP。",
+          "page": 5,
+          "verificationNote": "Griffith AM原PDF第5页/正文第4页，300dpi原页裁取；模块、连线和原图注完整已视觉核对，未重绘。机构封面的AM版本和版权声明保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              57,
+              565,
+              255
+            ],
+            "pixelBox": [
+              191,
+              237,
+              2355,
+              1063
+            ]
+          },
+          "path": "figures/zhou-48-hsi-2024/ssrt-fig3.png",
+          "width": 2164,
+          "height": 826,
+          "sha256": "14727bc3a5f717bdbb3cf37a00ad7c509b170879c0c47eb959877d9094753bf5",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Jiantao Zhou, Yuntao Qian · TGRS 2024 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+          "figureLabel": "Fig. 4",
+          "caption": "SSRT正向及反向跨波段循环，两方向特征相加。",
+          "page": 6,
+          "verificationNote": "Griffith AM原PDF第6页/正文第5页，300dpi原页裁取；模块、连线和原图注完整已视觉核对，未重绘。机构封面的AM版本和版权声明保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              306,
+              53,
+              565,
+              288
+            ],
+            "pixelBox": [
+              1275,
+              220,
+              2355,
+              1200
+            ]
+          },
+          "path": "figures/zhou-48-hsi-2024/ssrt-fig4.png",
+          "width": 1080,
+          "height": 980,
+          "sha256": "2c57d4fa04a438432c9364cba1bb8001a1fb180d8f6ef9165e81710254b99686",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Jiantao Zhou, Yuntao Qian · TGRS 2024 · Accepted Manuscript · © IEEE"
+        }
+      ]
     },
     {
       "id": "zhou-49-hsi-2024",
@@ -36917,7 +37066,7 @@
     },
     {
       "id": "zhou-56-hsi-2024",
-      "shortTitle": "SSUMamba: Spatial-Spectral Selective State Space Mod",
+      "shortTitle": "SSUMamba · SSCS＋bidirectional SSM",
       "title": "SSUMamba: Spatial-Spectral Selective State Space Model for Hyperspectral Image Denoising",
       "authors": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou",
       "year": 2024,
@@ -36929,30 +37078,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3446812",
-      "representation": "高光谱去噪：空间—光谱连续扫描 Mamba 按多种行/列/波段顺序生成序列，以双向状态空间模型捕获长程依赖并用3D卷积补充局部建模。",
+      "representation": "高光谱去噪U形网络；六层各用一种谱空连续扫描顺序，双向输入依赖SSM与残差3D卷积联合恢复光谱立方体。",
       "tags": [],
-      "summary": "SSUMamba 将 Mamba 适配到三维高光谱去噪，通过空间—光谱连续扫描交替行、列和波段顺序，并用双向状态空间模型建模长程依赖；3D卷积增强局部空间—光谱特征。",
-      "input": "含噪高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "空间—光谱连续扫描生成六种序列顺序；双向状态空间模型处理长程依赖；相邻扫描间重排保持连续性；3D卷积补充局部建模。",
-      "readingNote": "ORCID题名、Crossref正式书目、IEEE Xplore记录与 arXiv:2405.01726 官方摘要核验；正式版与预印本版本边界保留，未阅读全文。",
-      "paper": "https://ieeexplore.ieee.org/document/10643108/",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "SSUMamba以六种行/列/波段连续扫描分别配置六个SSCS Mamba层，利用双向SSM建模长程谱空依赖、3D卷积补局部纹理。ICVL混合噪声PSNR43.07，但跨传感器与消融并非所有SSIM/SAM均领先；默认32通道模型的参数、内存和耗时高于SERT，不能概括为全面更轻更快。",
+      "input": "含噪H×W×B高光谱立方体Y=X+E；ICVL31带训练，Houston46带/Pavia80带及真实GF-5武汉155带、EO-1 Hyperion166带分别测试。",
+      "output": "恢复的同空间/光谱尺寸高光谱立方体；合成噪声PSNR/SSIM/SAM及无干净真值真实数据的TOPIQ_NR/CLIP_IQA+，不是地物分类。",
+      "mechanism": "Fig3 U形网络含六个SSCS Mamba块，通道[32,64,64,128,128,256]，第2/4/6块降采样。六层依次各用R-C-B、R-B-C、C-R-B、C-B-R、B-R-C、B-C-R之一，zigzag相邻扫描首尾连续，不是每块六路并行。每块两次3D卷积/InstanceNorm/LeakyReLU残差补局部纹理；序列正向及flip反向分别经Conv1D、SiLU、输入依赖B/C/Δ的SSM，反向输出flip回，共享SiLU门控后投影并反扫描。Eq7最小化均方Frobenius重建损失；Fig2/3/5分别给扫描、总体网络与双向块。",
+      "readingNote": "免费Griffith作者接受稿14页全部逐页阅读（机构封面＋13正文）；10式、7表、13图和69条打印引文已读。首页明确Jun Zhou为Griffith，Fengchao Xiong为通讯作者；Fig2/3/5六层扫描与双向模块原图已视觉核对。固定arXiv2405.01726v7另下载13页并逐页比对已读AM正文；不是最终VoR、v1正文或被引论文全文已读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
-          "spectral-denoising"
+          "spectral-denoising",
+          "state-space-models"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 arXiv 官方摘要均明确高光谱影像去噪。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何以线性复杂度建模三维高光谱的长程空间—光谱依赖并降低去噪内存？",
-        "datasets": "arXiv摘要报告高光谱去噪实验；具体合成/真实数据和指标待正式全文核验。",
-        "experimentSetting": "SSCS Mamba、双向状态空间模型和3D卷积；代码链接为 GitHub/lronkitty/SSUMamba。",
-        "conclusions": "arXiv摘要报告较低批次内存和优于 Transformer 方法的去噪结果；数值和消融待核验。",
-        "limitations": "正式版全文、噪声协议、运行速度、数据许可和代码复现待核验。",
+        "relationNote": "AM §III/IV明确光学高光谱立方体去噪，六层连续谱空扫描、双向Mamba及3D局部卷积支持去噪与状态空间方法标签；不引入Transformer骨干或分类任务。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "连续谱空扫描与双向状态空间建模能否恢复混合噪声高光谱立方体，跨波段数测试和不同网络宽度的效果及成本如何？",
+        "datasets": "ICVL：Specim PS Kappa DX4，100幅1392×1300×31、400–700 nm训练，50幅512×512×31测试，64²×31随机裁块/翻转/缩放。Houston2018：ITRES CASI，1202×4172×48、380–1050 nm，去首2带后中心512²×46。Pavia City：ROSIS、430–860 nm，去首22带后200²×80。真实GF-5武汉AHSI300²×155；EO-1 Hyperion原1000×400×242，去吸收带后400×200×166。前者不是SSRT上海，Hyperion裁区方向按各稿原文保留。",
+        "experimentSetting": "PyTorch/RTX4090，Adam初始lr3e-4，45 epochs，20/35轮各乘.5，batch14。Gaussian非IID σ∈[0,15]/[0,55]/[0,95]；mixed在σ∈[0,95]上加脉冲10–70%（1/3带）、条纹5–15%列（1/3带）和deadlines5–15%列（1/3带）。固定31带的T3SC/TRQ3D/SST/SERT以31带分组处理较长谱；分组重叠/聚合未说明。合成PSNR/SSIM/SAM；真实TOPIQ_NR/CLIP_IQA+无真值，谱立方体转无参考指标输入的规则未说明。",
+        "conclusions": "TableI Gaussian PSNR51.34/46.85/45.36，SSIM .9946/.9882/.9853；SERT三SSIM .9977/.9951/.9929更高，[0,55]的SAM .0373优于本法.0375。混合ICVL43.07/.9726/.0710（PSNR/SSIM/SAM）；Houston34.74/.9452/.0993但NSSNN SSIM .9457更高；Pavia35.70/.9546/.1057，NSSNN34.85/.9581/.1015的SSIM/SAM更好。真实武汉TOPIQ_NR/CLIP_IQA+ .4969/.6481，EO-1 .6074/.5559。TableVI去SSCS的Pavia35.76/.9507/.1036在PSNR/SAM反而更好；去双向ICVL SAM .0672亦更好。TableVII默认32宽10.4M参数/1802M批内存/96T FLOPS/1.06s，SERT1.9M/766M/1.7T/.29s；12宽1.5M/799M/39T/.37s，ICVL41.85/.9678/.0651；8宽.68M/585M/27T/.24s。不能把小宽度曲线的优势归于默认模型或所有指标。",
+        "limitations": "AM与指定v7正文对应，最终VoR/v1仍未读。独立验证集ID、重复运行/置信区间未给；高斯强度归一单位及SAM角度单位未明确，不猜补。固定31带基线与可变B方法不具有相同光谱上下文。真实无干净GT，无参考质量不等于PSNR真值；文中TOPIQ/CLIPIQA引用[68]/[69]与实际条目互换。FLOPS表印T且正文称每秒运算、将较大值解释为吞吐，未给可靠计时定义，按印表保留，不转TFLOP/s。无SSCS/无双向消融并非所有指标下降。代码仅记录原文官方链接，不下载、审查或复现。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36982,6 +37132,33 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+            "checkedAt": "2026-10-11",
+            "level": "指定Griffith AM逐页全文与原方法图",
+            "supports": [
+              "AM §III/IV明确光学高光谱立方体去噪，六层连续谱空扫描、双向Mamba及3D局部卷积支持去噪与状态空间方法标签；不引入Transformer骨干或分类任务。",
+              "Jun Zhou的Griffith机构身份、输入输出、数据及训练/测试协议",
+              "原表主结果、消融、成本及未说明事项；代码仅原文链接"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2405.01726v7",
+            "checkedAt": "2026-10-11",
+            "level": "指定预印本逐页正文对应核验",
+            "supports": [
+              "13页文本按AM正文对应；首页新增版本戳，页2–13渲染一致，首页字体像素差异保留",
+              "同论文版本关联，不新增目录计数或宣称VoR已读"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+            "checkedAt": "2026-10-11",
+            "level": "指定AM去噪任务及SSM/Transformer方法全文分类核验",
+            "supports": [
+              "AM §III/IV明确光学高光谱立方体去噪，六层连续谱空扫描、双向Mamba及3D局部卷积支持去噪与状态空间方法标签；不引入Transformer骨干或分类任务。"
+            ]
           }
         ],
         "versions": [
@@ -36991,7 +37168,7 @@
             "url": "https://doi.org/10.1109/tgrs.2024.3446812",
             "doi": "10.1109/tgrs.2024.3446812",
             "year": 2024,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI书目；同DOI的Griffith AM14页已读，不表示最终VoR已读。"
           },
           {
             "id": "zhou-56-hsi-2024-arxiv-2405-01726-v1",
@@ -37016,12 +37193,133 @@
             "firstSubmittedAt": "2024-05-02T20:44:26Z",
             "updatedAt": "2024-08-03T09:18:32Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v7预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。"
+            "relation": "固定v7 PDF13页已下载；逐页文本与已读AM正文对应，首页视觉核对版本戳/作者/机构，页2–13渲染亦一致；首页字体像素不同，不称逐字节或最终VoR相同。",
+            "readingProgress": "full_text_read",
+            "contentComparisonEvidence": "research/hyperspectral/sources/jun-zhou-denoising-versions-coauthor-2026-10-11-version-comparison.json"
+          },
+          {
+            "id": "zhou-56-hsi-2024-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+            "doi": "10.1109/tgrs.2024.3446812",
+            "year": 2024,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面明确AM，1封面＋13正文全部逐页阅读；三张原方法图来自此版本。"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-56"
+        "methodFamilyId": "zhou-2024-title-56",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM §III/IV明确光学高光谱立方体去噪，六层连续谱空扫描、双向Mamba及3D局部卷积支持去噪与状态空间方法标签；不引入Transformer骨干或分类任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c39c8d58631518d330f6e48447c3015df1d9eb3a07d1fba7be3b891b0ca4f57d",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_56_hsi_2024, title = {SSUMamba: Spatial-Spectral Selective State Space Model for Hyperspectral Image Denoising}, author = {Guanyiman Fu and Fengchao Xiong and Jianfeng Lu and Jun Zhou}, year = {2024}, doi = {10.1109/tgrs.2024.3446812}\n}\n"
+      "citation": "@article{zhou_56_hsi_2024, title = {SSUMamba: Spatial-Spectral Selective State Space Model for Hyperspectral Image Denoising}, author = {Guanyiman Fu and Fengchao Xiong and Jianfeng Lu and Jun Zhou}, year = {2024}, doi = {10.1109/tgrs.2024.3446812}\n}\n",
+      "code": "https://github.com/lronkitty/SSUMamba",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+          "figureLabel": "Fig. 2",
+          "caption": "SSCS的行/列/波段扫描顺序及相邻扫描连续性。",
+          "page": 4,
+          "verificationNote": "Griffith AM原PDF第4页/正文第3页，300dpi原页裁取；模块、连线和原图注完整已视觉核对，未重绘。机构封面的AM版本和版权声明保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              306,
+              53,
+              565,
+              189
+            ],
+            "pixelBox": [
+              1275,
+              220,
+              2355,
+              788
+            ]
+          },
+          "path": "figures/zhou-56-hsi-2024/ssumamba-fig2.png",
+          "width": 1080,
+          "height": 568,
+          "sha256": "21534d48cf9ddb5756910d971776ee40ce3427029d85b16a122d1c09cc2e7572",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou · TGRS 2024 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+          "figureLabel": "Fig. 3",
+          "caption": "SSUMamba六块U形网络及每块双残差3D卷积与连续谱空Mamba。",
+          "page": 5,
+          "verificationNote": "Griffith AM原PDF第5页/正文第4页，300dpi原页裁取；模块、连线和原图注完整已视觉核对，未重绘。机构封面的AM版本和版权声明保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              54,
+              567,
+              226
+            ],
+            "pixelBox": [
+              191,
+              225,
+              2363,
+              942
+            ]
+          },
+          "path": "figures/zhou-56-hsi-2024/ssumamba-fig3.png",
+          "width": 2172,
+          "height": 717,
+          "sha256": "a13e0300ee8b683919c9d7270922e28b9b5a9bfee1bf8f69d8ae972e8a848d80",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou · TGRS 2024 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+          "figureLabel": "Fig. 5",
+          "caption": "SSCS Mamba双向序列、Conv1D/SSM及共享门控与反扫描。",
+          "page": 6,
+          "verificationNote": "Griffith AM原PDF第6页/正文第5页，300dpi原页裁取；模块、连线和原图注完整已视觉核对，未重绘。机构封面的AM版本和版权声明保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              54,
+              567,
+              317
+            ],
+            "pixelBox": [
+              191,
+              225,
+              2363,
+              1321
+            ]
+          },
+          "path": "figures/zhou-56-hsi-2024/ssumamba-fig5.png",
+          "width": 2172,
+          "height": 1096,
+          "sha256": "52f2ec6ad8435c90fe034a24f81ab8982757ec71a0cf618b0f536a1a1a47e221",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou · TGRS 2024 · Accepted Manuscript · © IEEE"
+        }
+      ]
     },
     {
       "id": "zhou-57-hsi-2024",
@@ -43923,6 +44221,8 @@
         "hypertransformer-pansharpening",
         "mftn-2024",
         "dauhst-2022",
+        "zhou-48-hsi-2024",
+        "zhou-22-hsi-2025",
         "zhou-34-hsi-2025",
         "zhou-5-hsi-2026",
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
@@ -43930,8 +44230,7 @@
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340",
-        "zhou-22-hsi-2025"
+        "zhou-scholar-arxiv-2609-37340"
       ],
       "history": [
         {
@@ -43963,6 +44262,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "SSIT正式发表版全文按实际去噪任务与Transformer机制重审，仅同步本论文关联，不改类别定义或其他条目。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "SSUMamba与SSRT接受稿全文分别确认状态空间与Transformer方法，保留独立方法族。"
         }
       ]
     },
@@ -47041,6 +47345,7 @@
         "s2msmamba-fusion",
         "tapt-arbitrary-fusion",
         "dpmamba-missing-modalities",
+        "zhou-56-hsi-2024",
         "zhou-scholar-adaptive-multi-stage-fusion-of-hyperspectr-2026",
         "zhou-scholar-arxiv-2603-09037",
         "zhou-dblp-arxiv-2404-00272"
@@ -47055,6 +47360,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "SSUMamba与SSRT接受稿全文分别确认状态空间与Transformer方法，保留独立方法族。"
         }
       ]
     },

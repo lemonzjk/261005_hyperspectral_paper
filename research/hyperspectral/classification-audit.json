@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-11",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "保留逐项来源分类审计，不表示所有论文全文已读；三份甘蔗稿全文分别支持DSAB病害检测及七级品种抗病评级，方法关联不合并协议。",
+  "scope": "逐项来源分类审计，不表示全部论文全文已读；SSUMamba/SSRT实际AM分别支持状态空间/Transformer高光谱去噪，不合并方法族或不同实验协议。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -275,7 +275,9 @@
     "zhou-38-hsi-2025",
     "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
     "zhou-42-hsi-2024",
-    "zhou-scholar-arxiv-2501-16700"
+    "zhou-scholar-arxiv-2501-16700",
+    "zhou-56-hsi-2024",
+    "zhou-48-hsi-2024"
   ],
   "sourceChecks": [
     {
@@ -987,6 +989,22 @@
       "level": "甘蔗研究全文任务分类核验",
       "supports": [
         "v1 Table1及§3–5直接确认七级品种花叶病抗性评级；纠正地物分类，保留农业表型应用。不把抗病性评级当感染状态、八品种识别或连续生化参数。实际11带及传感器规格未知保留，不猜纯多光谱或宽谱规格。"
+      ]
+    },
+    {
+      "paperId": "zhou-56-hsi-2024",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ab008302-5e3d-46c2-8c3e-6ba0326f48f6/content",
+      "level": "指定AM去噪任务及SSM/Transformer方法全文分类核验",
+      "supports": [
+        "AM §III/IV明确光学高光谱立方体去噪，六层连续谱空扫描、双向Mamba及3D局部卷积支持去噪与状态空间方法标签；不引入Transformer骨干或分类任务。"
+      ]
+    },
+    {
+      "paperId": "zhou-48-hsi-2024",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ba69c472-2b0a-4d04-bc25-4112bd3336c2/content",
+      "level": "指定AM去噪任务及SSM/Transformer方法全文分类核验",
+      "supports": [
+        "AM §III/IV明确光学高光谱去噪，window/shift-window Transformer和改进SRU联合空间/光谱建模；支持去噪及Transformer方法标签，循环并非Mamba状态空间。"
       ]
     }
   ]
