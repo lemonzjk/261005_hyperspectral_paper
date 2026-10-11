@@ -25085,7 +25085,7 @@
     },
     {
       "id": "shapelet-reflectance-tip-2013",
-      "shortTitle": "SBE reflectance",
+      "shortTitle": "SBE · reflectance / illumination / shading",
       "title": "Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy",
       "authors": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou",
       "year": 2013,
@@ -25097,33 +25097,34 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tip.2013.2268970",
-      "representation": "Shapelet Based Estimator：约束优化恢复反射率和镜面系数，最小二乘更新照明谱，再用shapelet相关表示计算阴影；Figure3解释光源参考系与反射几何。shapelet不译作小波。",
+      "representation": "Dichromatic I=L(gS+k)分解，以shapelet相关近似恢复光源参考阴影g，非负约束更新k/S、最小二乘或鲁棒项估计全局光谱L。",
       "tags": [],
-      "summary": "从单幅多光谱或高光谱图像恢复表面反射率、镜面系数、照明功率谱和阴影；通过shapelet阴影估计与分步优化减少计算开销。",
-      "input": "单幅多光谱/高光谱图像；原文另探索RGB扩展，不能统一称为仅高光谱输入。",
-      "output": "表面反射率、镜面系数、照明功率谱、阴影因子及重照明/材料替换结果。",
-      "mechanism": "Shapelet Based Estimator：约束优化恢复反射率和镜面系数，最小二乘更新照明谱，再用shapelet相关表示计算阴影；Figure3解释光源参考系与反射几何。shapelet不译作小波。",
-      "readingNote": "已核原摘要及记录的局部页；未阅读全文。正式TIP22(9):3648–3663；公开作者稿30页且Figure3在PDF10/印刷稿页9，不能套正式页号。正式登记第二作者Antonio A. Robles-Kelly，原稿省略A.。照明参考表面的深度不等同直接输出相机坐标真实几何。",
-      "paper": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
-      "citation": "@article{shapelet_reflectance_tip_2013,\n  title = {Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy},\n  author = {Lin Gu and Antonio A. Robles-Kelly and Jun Zhou},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2013},\n  pages = {3648--3663},\n  doi = {10.1109/tip.2013.2268970}\n}\n",
+      "summary": "SBE从单幅HSI分离表面反射率、镜面系数、全局照明谱及阴影；可用高镜面像元简化照明估计并加鲁棒代价。简化法相对Huynh/Robles-Kelly2010对照的四HSI表列耗时提升约8.3–11.6倍，但Toys/Coins照明角误差7.9062高于对照3.4282，不能称精度全面保持。RGB扩展只恢复通道积分量，不等同高光谱重建。",
+      "input": "单幅高光谱或多光谱辐照影像及照明初值；初值可由dichromatic patches去连续谱中位数取得。另有RGB扩展，三通道实验与HSI分开记录。",
+      "output": "逐像元反射谱S、镜面系数k、阴影g及全局照明谱L；以这些参数进行HSI皮肤/衣物反射替换和重照明。参考表面H*服务阴影计算，不当相机坐标真实深度；RGB输出是响应积分后的通道量。",
+      "mechanism": "I(λ,u)=L(λ)[g(u)S(λ,u)+k(u)]，g/k无波长、L全局共享。利用secα−1与tanα单调关系近似shapelet相关重建，波段均值参考及跨带平均减噪，在光源参考轴[0,0,1]计算g。迭代恢复S、用非负约束最小二乘/Newton估计k，并用全图最小二乘更新L；简化版只用K-most specular patches、近似I≈kL，可用Tukey/Andrews/Cauchy/Huber鲁棒代价。Algorithm1实际先g/S再L/k，以照明变化≤ϵ停止，作者报平均3.2迭代。RGB扩展Qc积分给Bc/Lc与albedo，不可反推唯一完整照明/反射谱。",
+      "readingNote": "Griffith机构稿21 PDF页（封面＋20正文）逐页全读，20编号式、Algorithm1、14图、8表、45条引用及简介已读；封面没有Version字段，不猜AM/VoR。Griffith ICT Jun Zhou与Crossref正式TIP22(9):3648–3663及注册机构对应，致谢明确工作在NICTA期间完成。旧ANU30页稿本批只选读1/2/10三页，Fig3在ANU10/body9、机构7/body6；不是整份版本逐页等同或ANU全文升级。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
+      "citation": "@article{shapelet_reflectance_tip_2013,\n  title = {Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy},\n  author = {Lin Gu and Antonio A. Robles-Kelly and Jun Zhou},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2013},\n  volume = {22},\n  number = {9},\n  pages = {3648--3663},\n  doi = {10.1109/tip.2013.2268970}\n}\n",
       "library": {
         "categoryIds": [
           "spectral-reflectance-modeling",
           "spectral-illumination-estimation",
+          "spectral-relighting",
           "shapelet-photometric-estimator"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原摘要明确光学高光谱研究对象；TIP同时含多光谱/RGB范围，分别记录；只新增总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何从单幅光谱影像高效分离照明、反射率和阴影因素？",
-        "datasets": "局部数据节明确四高光谱及两RGB数据集；前两高光谱为Human Face Vis/NIR，各51人、10方向灯条件。其余数据设置与不同实验实际使用子集待全文核验。",
-        "experimentSetting": "摘要、局部数据节与Figure3已核；作者分别展示照明谱、阴影、皮肤识别与反射/照明替换。未逐项核验误差、计时环境或统计结果。",
-        "conclusions": "作者摘要报告相对所比较替代方法减少计算开销且保持性能；此处不将摘要速度概括视作全文复现或所有场景结论。",
-        "limitations": "正式TIP22(9):3648–3663；公开作者稿30页且Figure3在PDF10/印刷稿页9，不能套正式页号。正式登记第二作者Antonio A. Robles-Kelly，原稿省略A.。照明参考表面的深度不等同直接输出相机坐标真实几何。 本轮定向code/arXiv查找未核到专用入口；专用代码和四组高光谱数据入口待查；原稿脚注给出的SFU为RGB颜色恒常性数据入口，已核页面可读，不能称高光谱下载。MSRA脚注候选URL现跳到Microsoft Research首页，失效状态留证。",
+        "relationNote": "实际机构稿直接以四HSI数据研究光谱反射/照明分解并做反射替换与重照明，加入已有光谱重照明任务。另两RGB数据及RGB扩展单列；不因多光谱措辞排除有直接HSI贡献，也不把RGB通道参数当完整谱输出。shapelet不是小波，光源参考H*不是真实相机深度。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "以shapelet阴影估计、约束反射分解及简化/鲁棒照明更新，能否高效恢复单幅HSI的光度参数并支持跨照明皮肤分割和重照明？",
+        "datasets": "Human Face Vis/NIR两HSI集：正文各51人、每人10方向光，LCTF可分辨至10nm，分别430–720/650–990nm；Fig4原注写50人，保留差异。Landscape14日光场景，白标定板采集照明GT、处理前裁去；本文未给完整带数/空间尺寸。Toys and Coins：AOTF可1nm调谐，实际51带550–1000nm/9nm；62玩具各10视角每次10°、32硬币正反两面，共684图，五玩具类＋硬币。RGB Mondrian743图/11照明与MSRA显著物体图仅作三通道照明/反射校正，不冒充HSI。",
+        "experimentSetting": "SBE、简化SBE及Tukey/Andrews/Cauchy/Huber鲁棒变体；κ为相机动态范围10%。初值比较light continuum/global maximum/dichromatic patch median，后续统一patch median；NIR简化法初值并非median最优。对照Huynh/Robles-Kelly2010 IJCV、Shafer1985、WhitePatch/GreyWorld/一阶GreyEdge；角误差与SID报告mean/median/trimean/best25%/worst25%。皮肤分割每人一图选皮肤/非皮肤谱，二次多项式SVM分类同人其他照明图，TableVIII称5-fold且正面光测试，完整折/抽样关系未说明，不称跨身份验证。简化照明依镜面patch，shading与RGB反射校正仅定性；M尺度数、ϵ、patch尺寸/K及耗时硬件未说明。",
+        "conclusions": "TablesII–V简化SBE的四HSI平均角误差/SID依VIS/NIR/Landscape/Toys-Coins为3.1547/.0065、3.1291/.0089、11.2873/.0101、7.9062/.0587；Huynh/Robles-Kelly对照6.2868/.0277、6.6822/.0207、10.9602/.0085、3.4282/.0069。VIS/NIR有改进而Toys误差明显高；NIR Tukey平均1.8866优于简化3.1291。RGB Mondrian简化5.7857，GreyEdge4.6137更低。TableVII简化四HSI耗时59.20/64.87/60.39/43.21秒，对照597.06/669.25/502.32/499.56秒，约10.1/10.3/8.3/11.6倍；RGB61.52对683.43秒。TableVIII皮肤SBE/简化CR94.87±6.94/97.72±1.84%、FDR2.05±1.87/2.18±1.27%，对照86.61±15.88/8.12±8.74，raw71.23±9.17/12.48±11.64；简化CR更好但FDR不优于完整SBE。Fig14为HSI伪彩重照明/材料替换输出。",
+        "limitations": "只全读21页未标版本机构稿，正式16页VoR未读；ANU30页本批仅3页选读，二者未逐页对齐，不互相继承全文状态。单一全局光谱L/波长无关g,k与镜面patch简化依模型；RGB只恢复通道积分，不证实密集谱或真实相机深度。51/50人数、Fig6正文670nm/原注649nm差异保留。Algorithm1行19用gS−k而Eq1物理模型gS+k，印式不自改、不以代码推断。速度表无硬件/图像尺寸/计时重复说明，10.21倍为作者概括，逐集速度与非全胜精度分别记录。SFU脚注属于RGB，不称HSI下载；旧MSRA脚注失效状态沿用既有访问证据。未见本文官方代码链接。",
         "dataLinks": [
           "https://www2.cs.sfu.ca/~colour/data/"
         ],
@@ -25156,6 +25157,32 @@
             "supports": [
               "四高光谱与两RGB数据范围分开；SFU脚注属于RGB颜色恒常性，不是高光谱数据。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+            "checkedAt": "2026-10-12",
+            "level": "机构原稿逐页全文、原图/原表及版本核验",
+            "supports": [
+              "实际机构稿直接以四HSI数据研究光谱反射/照明分解并做反射替换与重照明，加入已有光谱重照明任务。另两RGB数据及RGB扩展单列；不因多光谱措辞排除有直接HSI贡献，也不把RGB通道参数当完整谱输出。shapelet不是小波，光源参考H*不是真实相机深度。",
+              "未标版本机构稿 21 PDF页逐页全读（封面＋20稿页），正式发表版未读；正文与原图只对应实际文件。",
+              "Griffith机构稿21 PDF页（封面＋20正文）逐页全读，20编号式、Algorithm1、14图、8表、45条引用及简介已读；封面没有Version字段，不猜AM/VoR。Griffith ICT Jun Zhou与Crossref正式TIP22(9):3648–3663及注册机构对应，致谢明确工作在NICTA期间完成。旧ANU30页稿本批只选读1/2/10三页，Fig3在ANU10/body9、机构7/body6；不是整份版本逐页等同或ANU全文升级。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tip.2013.2268970",
+            "checkedAt": "2026-10-12",
+            "level": "当前成功Crossref正式书目",
+            "supports": [
+              "jun-zhou-anomaly-reflectance-reading-2026-10-12-shape-crossref.json：正式完整作者、卷22(9)、页3648-3663及出版年月。 出版社登记Griffith Jun Zhou机构，稿中第二作者省略A.，正式名单保留A.。"
+            ]
+          },
+          {
+            "url": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf",
+            "checkedAt": "2026-10-12",
+            "level": "ANU30页稿选择性核验",
+            "supports": [
+              "本批仅全文阅读第1/2/10页，Fig3与机构稿相应反射参考示意对应；不据一图和题名认为完整稿等同，旧图文件/哈希保留。"
+            ]
           }
         ],
         "versions": [
@@ -25165,21 +25192,32 @@
             "url": "https://doi.org/10.1109/tip.2013.2268970",
             "doi": "10.1109/tip.2013.2268970",
             "year": 2013,
-            "relation": "正式TIP22(9):3648–3663；公开作者稿30页且Figure3在PDF10/印刷稿页9，不能套正式页号。正式登记第二作者Antonio A. Robles-Kelly，原稿省略A.。照明参考表面的深度不等同直接输出相机坐标真实几何。"
+            "relation": "TIP 22(9):3648-3663；正式年月[2013, 9]，未读正式全文。 正式16页不可套当前21页机构稿图页。",
+            "readingProgress": "unread"
           },
           {
             "id": "shapelet-reflectance-tip-2013-source",
-            "type": "公开作者稿/仓储稿",
+            "type": "未标版本公开作者稿",
             "url": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf",
             "year": 2013,
-            "relation": "图号与PDF页码只对应本稿，完整正式版差异未核。"
+            "relation": "ANU公开30页稿，本批仅选读1/2/10三页，Fig3为PDF10/稿页9；与当前机构21页稿及正式16页VoR分别保留，不继承全文阅读。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "shapelet-reflectance-tip-2013-griffith-source",
+            "type": "未标版本机构稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+            "doi": "10.1109/tip.2013.2268970",
+            "year": 2013,
+            "readingProgress": "full_text_read",
+            "relation": "未标版本机构稿 21 PDF页逐页全读（封面＋20稿页），正式发表版未读；正文与原图只对应实际文件。 Fig3 PDF7/稿页6、Algorithm1 PDF8/稿页7；封面无版本字段，不猜AM/VoR。"
           }
         ],
         "methodFamilyId": "shapelet-reflectance-tip-2013",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要/指定局部方法支持任务和方法；分类确认不等同全文阅读。",
+          "rationale": "实际机构稿直接以四HSI数据研究光谱反射/照明分解并做反射替换与重照明，加入已有光谱重照明任务。另两RGB数据及RGB扩展单列；不因多光谱措辞排除有直接HSI贡献，也不把RGB通道参数当完整谱输出。shapelet不是小波，光源参考H*不是真实相机深度。",
           "evidenceFields": [
             "title",
             "summary",
@@ -25188,27 +25226,102 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "11f7098a05c184bcadf4a4f04dd89dd750e87e1818f7e99e164223c90ef9974e",
+          "evidenceDigest": "828c1d91f39c043d518decf8b398c00c14ed9a5ecfd7fdacf1249fc43e838fb0",
           "sourceUrls": [
-            "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content"
           ]
         }
       },
       "frameworkFigures": [
         {
-          "sourceUrl": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf",
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
           "figureLabel": "Figure 3",
-          "page": 10,
-          "caption": "光源参考坐标、表面法线和反射几何方法示意；不是相机坐标深度结果。",
-          "verificationNote": "已视觉核验原PDF页与图注；从原稿裁切方法示意，未重绘、未生成。PDF页码与正式出版页码分开记录。",
-          "extraction": "原PDF以pdftoppm渲染，按原图边界裁切，含图注；(90, 55, 1165, 475)",
-          "path": "figures/shapelet-reflectance-tip-2013/framework.png",
-          "width": 1075,
-          "height": 420,
+          "caption": "光源参考轴与反射几何，用于阴影g的计算；H*深度不等同相机坐标真实几何。",
+          "page": 7,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第7页/稿页6，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 图号与页码不套ANU30页或正式16页版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              47,
+              54,
+              565,
+              231
+            ],
+            "pixelBox": [
+              195,
+              225,
+              2355,
+              963
+            ]
+          },
+          "path": "figures/shapelet-reflectance-tip-2013/shape-fig3.png",
+          "width": 2160,
+          "height": 738,
+          "sha256": "2a78c2914cf5a22aa904489886a234c3dd1ee3b482b70454a484690632702784",
           "verificationStatus": "verified",
-          "verifiedAt": "2026-10-09",
-          "sha256": "9d9bc685a4c86b8f5ed407a0e510bc51bdce1227fff216d164ec4144bd34de6f",
-          "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · TIP 2013"
+          "verifiedAt": "2026-10-12",
+          "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · Griffith 未标版本机构稿 · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+          "figureLabel": "Algorithm 1",
+          "caption": "SBE原Algorithm1完整迭代：shapelet阴影、反射谱、照明与镜面系数更新，按照明变化停止；原印式保留。",
+          "page": 8,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第8页/稿页7，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 图号与页码不套ANU30页或正式16页版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              56,
+              53,
+              300,
+              466
+            ],
+            "pixelBox": [
+              233,
+              220,
+              1250,
+              1942
+            ]
+          },
+          "path": "figures/shapelet-reflectance-tip-2013/shape-algorithm1.png",
+          "width": 1017,
+          "height": 1722,
+          "sha256": "3418bcacd15b2d30699547cd7b8878967924730678a8412ea3213c8204537d69",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · Griffith 未标版本机构稿 · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+          "figureLabel": "Figure 14",
+          "caption": "HSI伪彩图的照明替换与皮肤/衣物反射及照明同时替换，三行依次输入、重照明和组合编辑。",
+          "page": 20,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第20页/稿页19，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 图号与页码不套ANU30页或正式16页版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              47,
+              49,
+              565,
+              601
+            ],
+            "pixelBox": [
+              195,
+              204,
+              2355,
+              2505
+            ]
+          },
+          "path": "figures/shapelet-reflectance-tip-2013/shape-fig14.png",
+          "width": 2160,
+          "height": 2301,
+          "sha256": "dc4636e7b1f9ec584100499f3b7b2d25d06c0d001d80e4edfbc23cebeb68ac31",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · Griffith 未标版本机构稿 · © IEEE"
         }
       ]
     },
@@ -31315,43 +31428,45 @@
     },
     {
       "id": "hsi-anomaly-ace-framework-2019",
-      "shortTitle": "Anomalous component extraction framework",
+      "shortTitle": "IOACED · ICA / OSP anomaly refinement",
       "title": "Hyperspectral anomaly detection based on anomalous component extraction framework",
       "authors": "Shangzhen Song, Huixin Zhou, Jun Zhou, Kun Qian, Kuanhong Cheng, Zhe Zhang",
       "year": 2019,
       "venue": "Infrared Physics and Technology",
-      "publicationName": "Infrared Physics and Technology",
+      "publicationName": "Infrared Physics & Technology",
       "publicationStatus": "published",
       "venueTier": "journal",
       "collections": [
         "hyperspectral"
       ],
-      "representation": "以ICA和正交子空间投影提取异常成分并迭代检测高光谱异常。",
+      "representation": "LLE降维白化、LAKDE最亮像元初始化正交ICA；双侧PASNR评估、OSP迭代精炼，再以KLRX形成异常检测图。",
       "tags": [],
-      "summary": "研究复杂背景下高光谱异常目标检测。",
-      "input": "高光谱影像与背景/异常像元。",
-      "output": "异常像元检测图。",
-      "mechanism": "先用ICA和OSP初始化最亮异常成分，再迭代提取异常成分与检测结果。",
-      "readingNote": "Griffith作者稿摘要与Crossref核验；正式96:340–350，正式出版年按2019记录。",
-      "paper": "https://research-repository.griffith.edu.au/bitstream/10072/382909/1/Zhou158553.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "IOACED通过LLE/LAKDE指定ICA初始投影，依据PASNR保留异常成分并以OSP迭代压制背景，最终用KLRX检测。AM三场景Moffett/San Diego/HYDICE AUC .9986/.9994/.9887，耗时28.42/33.79/25.35秒。精度高于所列七对照，但明显慢于RX及ICA-KLRX；不是监督分类ICA，也不是余弦ACE检测器。",
+      "input": "无目标光谱先验的HSI立方；经验指定LLE近邻K、降维d和PASNR阈值γ。GT仅用于报告ROC/AUC与参数分析，不作为方法声称必需的目标标签输入。",
+      "output": "像元异常得分/检测图；中间为精炼独立成分及背景抑制表示，不给具体语义目标类别或物理异常原因。",
+      "mechanism": "LLE保持局部重建关系并白化；LAKDE局部自适应密度的最亮异常像元作ICA初始投影，OICA求独立成分。PASNR以灰度直方图峰两侧最近零bin分割、取较大异常/背景方差比对数。VP>γ时迭代，8邻域平滑初始化向量，选择最小PASNR背景信息作OSP正交补投影，并重新LAKDE/OICA提取；保留异常成分组为Z*，最终KLRX双窗扫像元。正文/Algorithm1支持低于阈值停止，步骤5却把两个分支都印成larger；不据此声称已核实现。",
+      "readingNote": "Griffith明确AM16 PDF页（封面＋15稿页，含Highlights）逐页全读，原式编号1–12及15、Algorithm1、14图、3表和46条引用已读；Fig2流程/原图LKRX拼写、Fig6输出、主表/参数图视觉核。六作者及Griffith ICT Jun Zhou与Crossref期刊96:340–350、2019-01相符；最终11页VoR未读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-anomaly-detection",
-          "ica-class-discriminant-features"
+          "ica-osp-anomaly-refinement"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
-        "dataLinks": [],
+        "relationNote": "AM直接处理三个高光谱异常场景，无监督ICA成分、PASNR与OSP精炼后KLRX检测；删除只定义监督分类的ICA标签，使用实际无监督异常成分框架。标题anomalous component extraction不是Adaptive Cosine Estimator，目录ID保留不作新论文。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "以局部异常初始化ICA，再通过OSP/PASNR迭代精炼异常成分，能否提高复杂背景下无目标先验的HSI像元检测？",
+        "datasets": "AVIRIS Moffett Field：192×48裁区，原224带0.4–2.5μm、3.5m，称留178带；7飞机＋3维护车共80像元/.87%。AVIRIS San Diego：100²、3.5m、224带370–2510nm，去坏带留189；3飞机共58像元。HYDICE郊区：约3m、210带0.4–2.5μm，去坏带留162；8车辆共17像元/.21%，本文未明写裁区尺寸。Moffett括号波段列表共178与“移除后留178”措辞冲突，按原稿留证、不猜实际选带。",
+        "experimentSetting": "对照RXD/LRX/KLRX/LRR/SRD/CRD/ICA-KLRX；GT报告ROC、背景—异常分离及AUC。FAR原式分母为全图像元数，不擅改为背景数。LRX/KLRX OW/IW：Moffett13/5、San Diego21/5、HYDICE19/7；CRD/SRD15/7、17/7、13/7；ICA-KLRX HFC VD11/11/6、窗同KLRX。IOACED分析K20–45、d6–12，正文偏好小d如9；γ Moffett.3–.4约3迭代、San Diego4.5–5.5约4、HYDICE.04约5。主表未完整单列K/d及自身KLRX窗的最终组合，无独立验证或重复方差。MATLAB2017、Corei3 3.40GHz、8GB、64bit Windows7。",
+        "conclusions": "TableII Moffett/San Diego/HYDICE IOACED AUC .9986/.9994/.9887，所列最好对照分别ICA-KLRX .9957、KLRX .9944、CRD .9870；均为报告主表优势。HYDICE在FAR .003–.01局部ROC低于LRR/CRD，不称全阈值领先。TableIII当前方法28.42/33.79/25.35秒，RXD .13/.20/.11、ICA-KLRX16.71/12.51/12.94、CRD28.41/43.50/36.04；速度非全面最好，Moffett甚至较CRD略慢。参数Fig13 HYDICE d12 AUC .9186、Fig14 San Diego .9997与主表值分别保留，不合并成同一设置。",
+        "limitations": "只读16页AM，正式11页未读。Eq3固定点更新印式缺常见g′、Eq5印相关内积<κ，步骤5两个分支都写larger，Eq13/14等内部引用与实际编号不对应；按正文/Algorithm1及原图说明意图，不修补为已核代码。OSP背景向量/白化矩阵的维度及归一细节不完整；原Fig2写LKRX、正文KLRX，原样保留。Moffett选带措辞、主表/参数曲线结果差异、经验参数选定与独立验证缺口保留；无目标先验不等于免参数选择。未见当前方法官方代码链接，不查代码。",
+        "dataLinks": [
+          "http://www.tec.army.mil/Hypercurbe"
+        ],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/bitstream/10072/382909/1/Zhou158553.pdf",
@@ -31368,23 +31483,51 @@
             "supports": [
               "正式题名、作者、卷期、页码和2019出版记录。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+            "checkedAt": "2026-10-12",
+            "level": "机构原稿逐页全文、原图/原表及版本核验",
+            "supports": [
+              "AM直接处理三个高光谱异常场景，无监督ICA成分、PASNR与OSP精炼后KLRX检测；删除只定义监督分类的ICA标签，使用实际无监督异常成分框架。标题anomalous component extraction不是Adaptive Cosine Estimator，目录ID保留不作新论文。",
+              "AM 16 PDF页逐页全读（封面＋15稿页），正式发表版未读；正文与原图只对应实际文件。",
+              "Griffith明确AM16 PDF页（封面＋15稿页，含Highlights）逐页全读，原式编号1–12及15、Algorithm1、14图、3表和46条引用已读；Fig2流程/原图LKRX拼写、Fig6输出、主表/参数图视觉核。六作者及Griffith ICT Jun Zhou与Crossref期刊96:340–350、2019-01相符；最终11页VoR未读。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016%2Fj.infrared.2018.12.008",
+            "checkedAt": "2026-10-12",
+            "level": "当前成功Crossref正式书目",
+            "supports": [
+              "jun-zhou-anomaly-reflectance-reading-2026-10-12-ace-crossref-retry.json：正式完整作者、卷96、页340-350及出版年月。 首次429响应单独归档，不冒充成功。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "hsi-anomaly-ace-framework-2019-published",
-            "type": "正式记录",
+            "type": "正式期刊版",
             "url": "https://doi.org/10.1016/j.infrared.2018.12.008",
             "doi": "10.1016/j.infrared.2018.12.008",
             "year": 2019,
-            "relation": "正式2019期刊记录；ORCID登记年份为2018。"
+            "relation": "Infrared Physics and Technology 96:340-350；正式年月[2019, 1]，未读正式全文。 ORCID2018与正式卷期2019分别保留，不以DOI尾2018改为出版年。",
+            "readingProgress": "unread"
+          },
+          {
+            "id": "hsi-anomaly-ace-framework-2019-source",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+            "doi": "10.1016/j.infrared.2018.12.008",
+            "year": 2019,
+            "readingProgress": "full_text_read",
+            "relation": "AM 16 PDF页逐页全读（封面＋15稿页），正式发表版未读；正文与原图只对应实际文件。"
           }
         ],
         "methodFamilyId": "hsi-anomalous-component-extraction",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "AM直接处理三个高光谱异常场景，无监督ICA成分、PASNR与OSP精炼后KLRX检测；删除只定义监督分类的ICA标签，使用实际无监督异常成分框架。标题anomalous component extraction不是Adaptive Cosine Estimator，目录ID保留不作新论文。",
           "evidenceFields": [
             "title",
             "summary",
@@ -31393,17 +31536,77 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "b91590a230ce19721a0919df1d7c219402cbc9c9bc3039a2205fb2aff977a360",
+          "evidenceDigest": "4bcbe1016c5ae50bbc1206a9f0c68102f9770592b993293dbb4386c00330049e",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/bitstream/10072/382909/1/Zhou158553.pdf",
-            "https://research-repository.griffith.edu.au/bitstream/10072/382909/1/Zhou158553.pdf",
-            "https://api.crossref.org/works/10.1016/j.infrared.2018.12.008"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content"
           ]
         }
       },
       "doi": "10.1016/j.infrared.2018.12.008",
       "resolvedYear": 2019,
-      "citation": "@article{hsi_anomaly_ace_framework_2019,\n  title = {Hyperspectral anomaly detection based on anomalous component extraction framework},\n  author = {Shangzhen Song and Huixin Zhou and Jun Zhou and Kun Qian and Kuanhong Cheng and Zhe Zhang},\n  year = {2019},\n  doi = {10.1016/j.infrared.2018.12.008}\n}\n"
+      "citation": "@article{hsi_anomaly_ace_framework_2019,\n  title = {Hyperspectral anomaly detection based on anomalous component extraction framework},\n  author = {Shangzhen Song and Huixin Zhou and Jun Zhou and Kun Qian and Kuanhong Cheng and Zhe Zhang},\n  journal = {Infrared Physics & Technology},\n  year = {2019},\n  volume = {96},\n  pages = {340--350},\n  doi = {10.1016/j.infrared.2018.12.008}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+          "figureLabel": "Figure 2",
+          "caption": "IOACED完整流程：LLE/白化、LAKDE初始化、OICA、PASNR/OSP迭代及最终检测；保留原图LKRX拼写，正文称KLRX。",
+          "page": 7,
+          "verificationNote": "Griffith AM，PDF第7页/稿页6，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 原AM水印与流程图LKRX拼写保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              48,
+              55,
+              303,
+              193
+            ],
+            "pixelBox": [
+              200,
+              229,
+              1263,
+              805
+            ]
+          },
+          "path": "figures/hsi-anomaly-ace-framework-2019/ace-fig2.png",
+          "width": 1063,
+          "height": 576,
+          "sha256": "9f2ce03e21784e4c1009eb4f13809500586c6326fb976cb2428db4046d424e60",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Shangzhen Song, Huixin Zhou, Jun Zhou, Kun Qian, Kuanhong Cheng, Zhe Zhang · Griffith AM · © Elsevier CC BY-NC-ND 4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+          "figureLabel": "Figure 6",
+          "caption": "Moffett Field各对照与IOACED异常得分图，h为当前方法；输出示例及原AM水印保留。",
+          "page": 9,
+          "verificationNote": "Griffith AM，PDF第9页/稿页8，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 原AM水印与流程图LKRX拼写保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              45,
+              276,
+              304,
+              685
+            ],
+            "pixelBox": [
+              187,
+              1150,
+              1267,
+              2855
+            ]
+          },
+          "path": "figures/hsi-anomaly-ace-framework-2019/ace-fig6.png",
+          "width": 1080,
+          "height": 1705,
+          "sha256": "9c955b8ff2c5cacbcc5894be9e88e2058fa7e550e38443f1a593a3aa0e453291",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Shangzhen Song, Huixin Zhou, Jun Zhou, Kun Qian, Kuanhong Cheng, Zhe Zhang · Griffith AM · © Elsevier CC BY-NC-ND 4.0"
+        }
+      ]
     },
     {
       "id": "hsi-reweighted-sparse-lowrank-denoising-icip-2018",
@@ -46042,7 +46245,8 @@
         "bispectral-brrdf",
         "reflective-fluorescent-relighting",
         "diy-hsi-2016",
-        "hf-reflection-fluorescence-2013"
+        "hf-reflection-fluorescence-2013",
+        "shapelet-reflectance-tip-2013"
       ],
       "history": [
         {
@@ -46054,6 +46258,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "SBE实际HSI反射/照明替换输出支持已有光谱重照明任务；其RGB扩展单列，不改变其他条目。"
         }
       ]
     },
@@ -49520,10 +49729,10 @@
       "name": "高光谱异常检测",
       "dimension": "task",
       "definition": "估计偏离光谱背景或混合模型的像元/波长异常；残差检测不自动等于语义目标识别或物理原因鉴定。",
-      "status": "provisional",
+      "status": "confirmed",
       "color": "#91a8be",
       "createdAt": "2026-10-08",
-      "rationale": "TCI2015原始摘要、因子图与概率模型明确支持这些任务/先验，全文后复核边界。",
+      "rationale": "IOACED机构AM与此前MFTNet VoR实际全文均支持偏离背景的HSI像元异常检测；不将无目标先验等同无需经验参数或物理原因鉴定。",
       "evidencePaperIds": [
         "hsi-anomaly-ace-framework-2019",
         "deep-pnp-hsi-anomaly-2021",
@@ -49545,6 +49754,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "MFTNet VoR全文确认像元异常检测，保留本论文任务关联；不改变类别定义或其他条目。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "reviewed",
+          "reason": "增加IOACED实际全文、原图及ROC/AUC证据，确认现有任务边界；其他成员阅读状态不变。"
         }
       ]
     },
@@ -49934,26 +50148,6 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
-        }
-      ]
-    },
-    {
-      "id": "ica-class-discriminant-features",
-      "name": "ICA类别判别特征分析",
-      "dimension": "method",
-      "definition": "将独立成分分析用于高光谱监督分类的特征提取，并比较不同ICA实现及与监督特征选择的处理顺序；具体算法、特征数量与实验逐篇核验，不等同于光谱解混。",
-      "rationale": "2013机构摘要明确比较FastICA、Infomax、JADE及FS→ICA、ICA→FS两路线。",
-      "status": "provisional",
-      "color": "#93afa1",
-      "createdAt": "2026-10-09",
-      "evidencePaperIds": [
-        "hsi-anomaly-ace-framework-2019"
-      ],
-      "history": [
-        {
-          "date": "2026-10-09",
-          "action": "created",
-          "reason": "2013机构摘要明确比较FastICA、Infomax、JADE及FS→ICA、ICA→FS两路线。"
         }
       ]
     },
@@ -51304,6 +51498,26 @@
           "date": "2026-10-12",
           "action": "created",
           "reason": "实际原稿支持残差卷积与谱约束，公式疑点保留，不访问作者代码。"
+        }
+      ]
+    },
+    {
+      "id": "ica-osp-anomaly-refinement",
+      "name": "ICA与OSP异常成分精炼",
+      "dimension": "method",
+      "definition": "LLE降维及局部自适应密度异常初始化后，以正交ICA提取成分，用双侧直方图PASNR评估并以OSP迭代抑制背景，再由局部核RX检测；无目标先验，不等同监督ICA类别特征或自适应余弦ACE检测器。",
+      "status": "confirmed",
+      "color": "#93afa1",
+      "createdAt": "2026-10-12",
+      "rationale": "IOACED实际AM逐页全文、Algorithm1及Fig2支持各阶段；PASNR阈值与印式/步骤编号疑点分别留证。",
+      "evidencePaperIds": [
+        "hsi-anomaly-ace-framework-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "移除原监督分类ICA误配，按无监督ICA/OSP精炼及KLRX检测的实际框架建立。"
         }
       ]
     }

@@ -1,0 +1,617 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "两篇既有直接HSI论文的免费原稿、书目、原图与实验核验；原31机构队列闭环，作者及全领域目标保持未完成。",
+  "previousGoalTurn": "progress：421ff46完成空间SR/人脸/匹配三稿32页、五新原图及一替换；本批续接剩两项。",
+  "accessFile": "jun-zhou-anomaly-reflectance-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 2,
+  "newFullTextReadingCount": 2,
+  "catalogFullTextPdfPagesRead": 37,
+  "additionalSelectedPdfPagesRead": 3,
+  "pdfPagesRead": 40,
+  "figuresAdded": 4,
+  "figuresReplaced": 1,
+  "materials": [
+    {
+      "file": "jun-zhou-anomaly-reflectance-reading-2026-10-12-ace.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+      "status": 200,
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 1777102,
+      "checkedAt": "2026-10-12",
+      "pdfDownloaded": true,
+      "sha256": "2a2b93f1ab0198609b80aff13ac61484712d3fe4477bda25058c7faf78c8d21f",
+      "paperId": "hsi-anomaly-ace-framework-2019",
+      "version": "AM",
+      "pageCount": 16,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "readingProgress": "full_text_read",
+      "pageTextFile": "jun-zhou-anomaly-reflectance-reading-2026-10-12-ace-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        4,
+        6,
+        7,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "file": "jun-zhou-anomaly-reflectance-reading-2026-10-12-shape.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+      "status": 200,
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 10822843,
+      "checkedAt": "2026-10-12",
+      "pdfDownloaded": true,
+      "sha256": "1c06319f39970cde9c322ef141264d13306ddef35c009cd9365e200fa0d4ac4c",
+      "paperId": "shapelet-reflectance-tip-2013",
+      "version": "未标版本机构稿",
+      "pageCount": 21,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "readingProgress": "full_text_read",
+      "pageTextFile": "jun-zhou-anomaly-reflectance-reading-2026-10-12-shape-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        7,
+        8,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        20
+      ]
+    },
+    {
+      "file": "jun-zhou-anomaly-reflectance-reading-2026-10-12-shape-anu.pdf",
+      "url": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf",
+      "status": 200,
+      "finalUrl": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf",
+      "contentType": "application/pdf",
+      "bytes": 4000197,
+      "checkedAt": "2026-10-12",
+      "pdfDownloaded": true,
+      "sha256": "55e0f1be529ee61abcdd9f6ba35f7e886931cbcdfaa04a4a70985f799a2ae13b",
+      "paperId": "shapelet-reflectance-tip-2013",
+      "version": "未标版本公开作者稿",
+      "pageCount": 30,
+      "readPages": [
+        1,
+        2,
+        10
+      ],
+      "readingProgress": "selected_pages_read",
+      "pageTextFile": "jun-zhou-anomaly-reflectance-reading-2026-10-12-shape-anu-selected-pages.json",
+      "visualCheckPages": [
+        10
+      ],
+      "boundary": "30页下载、3页选择性阅读，不记整篇全文或第三篇新全文。"
+    }
+  ],
+  "papers": [
+    {
+      "paperId": "hsi-anomaly-ace-framework-2019",
+      "method": "LLE保持局部重建关系并白化；LAKDE局部自适应密度的最亮异常像元作ICA初始投影，OICA求独立成分。PASNR以灰度直方图峰两侧最近零bin分割、取较大异常/背景方差比对数。VP>γ时迭代，8邻域平滑初始化向量，选择最小PASNR背景信息作OSP正交补投影，并重新LAKDE/OICA提取；保留异常成分组为Z*，最终KLRX双窗扫像元。正文/Algorithm1支持低于阈值停止，步骤5却把两个分支都印成larger；不据此声称已核实现。",
+      "datasets": "AVIRIS Moffett Field：192×48裁区，原224带0.4–2.5μm、3.5m，称留178带；7飞机＋3维护车共80像元/.87%。AVIRIS San Diego：100²、3.5m、224带370–2510nm，去坏带留189；3飞机共58像元。HYDICE郊区：约3m、210带0.4–2.5μm，去坏带留162；8车辆共17像元/.21%，本文未明写裁区尺寸。Moffett括号波段列表共178与“移除后留178”措辞冲突，按原稿留证、不猜实际选带。",
+      "experimentSetting": "对照RXD/LRX/KLRX/LRR/SRD/CRD/ICA-KLRX；GT报告ROC、背景—异常分离及AUC。FAR原式分母为全图像元数，不擅改为背景数。LRX/KLRX OW/IW：Moffett13/5、San Diego21/5、HYDICE19/7；CRD/SRD15/7、17/7、13/7；ICA-KLRX HFC VD11/11/6、窗同KLRX。IOACED分析K20–45、d6–12，正文偏好小d如9；γ Moffett.3–.4约3迭代、San Diego4.5–5.5约4、HYDICE.04约5。主表未完整单列K/d及自身KLRX窗的最终组合，无独立验证或重复方差。MATLAB2017、Corei3 3.40GHz、8GB、64bit Windows7。",
+      "results": "TableII Moffett/San Diego/HYDICE IOACED AUC .9986/.9994/.9887，所列最好对照分别ICA-KLRX .9957、KLRX .9944、CRD .9870；均为报告主表优势。HYDICE在FAR .003–.01局部ROC低于LRR/CRD，不称全阈值领先。TableIII当前方法28.42/33.79/25.35秒，RXD .13/.20/.11、ICA-KLRX16.71/12.51/12.94、CRD28.41/43.50/36.04；速度非全面最好，Moffett甚至较CRD略慢。参数Fig13 HYDICE d12 AUC .9186、Fig14 San Diego .9997与主表值分别保留，不合并成同一设置。",
+      "limitations": "只读16页AM，正式11页未读。Eq3固定点更新印式缺常见g′、Eq5印相关内积<κ，步骤5两个分支都写larger，Eq13/14等内部引用与实际编号不对应；按正文/Algorithm1及原图说明意图，不修补为已核代码。OSP背景向量/白化矩阵的维度及归一细节不完整；原Fig2写LKRX、正文KLRX，原样保留。Moffett选带措辞、主表/参数曲线结果差异、经验参数选定与独立验证缺口保留；无目标先验不等于免参数选择。未见当前方法官方代码链接，不查代码。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+          "figureLabel": "Figure 2",
+          "caption": "IOACED完整流程：LLE/白化、LAKDE初始化、OICA、PASNR/OSP迭代及最终检测；保留原图LKRX拼写，正文称KLRX。",
+          "page": 7,
+          "verificationNote": "Griffith AM，PDF第7页/稿页6，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 原AM水印与流程图LKRX拼写保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              48,
+              55,
+              303,
+              193
+            ],
+            "pixelBox": [
+              200,
+              229,
+              1263,
+              805
+            ]
+          },
+          "path": "figures/hsi-anomaly-ace-framework-2019/ace-fig2.png",
+          "width": 1063,
+          "height": 576,
+          "sha256": "9f2ce03e21784e4c1009eb4f13809500586c6326fb976cb2428db4046d424e60",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Shangzhen Song, Huixin Zhou, Jun Zhou, Kun Qian, Kuanhong Cheng, Zhe Zhang · Griffith AM · © Elsevier CC BY-NC-ND 4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+          "figureLabel": "Figure 6",
+          "caption": "Moffett Field各对照与IOACED异常得分图，h为当前方法；输出示例及原AM水印保留。",
+          "page": 9,
+          "verificationNote": "Griffith AM，PDF第9页/稿页8，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 原AM水印与流程图LKRX拼写保留。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              45,
+              276,
+              304,
+              685
+            ],
+            "pixelBox": [
+              187,
+              1150,
+              1267,
+              2855
+            ]
+          },
+          "path": "figures/hsi-anomaly-ace-framework-2019/ace-fig6.png",
+          "width": 1080,
+          "height": 1705,
+          "sha256": "9c955b8ff2c5cacbcc5894be9e88e2058fa7e550e38443f1a593a3aa0e453291",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Shangzhen Song, Huixin Zhou, Jun Zhou, Kun Qian, Kuanhong Cheng, Zhe Zhang · Griffith AM · © Elsevier CC BY-NC-ND 4.0"
+        }
+      ]
+    },
+    {
+      "paperId": "shapelet-reflectance-tip-2013",
+      "method": "I(λ,u)=L(λ)[g(u)S(λ,u)+k(u)]，g/k无波长、L全局共享。利用secα−1与tanα单调关系近似shapelet相关重建，波段均值参考及跨带平均减噪，在光源参考轴[0,0,1]计算g。迭代恢复S、用非负约束最小二乘/Newton估计k，并用全图最小二乘更新L；简化版只用K-most specular patches、近似I≈kL，可用Tukey/Andrews/Cauchy/Huber鲁棒代价。Algorithm1实际先g/S再L/k，以照明变化≤ϵ停止，作者报平均3.2迭代。RGB扩展Qc积分给Bc/Lc与albedo，不可反推唯一完整照明/反射谱。",
+      "datasets": "Human Face Vis/NIR两HSI集：正文各51人、每人10方向光，LCTF可分辨至10nm，分别430–720/650–990nm；Fig4原注写50人，保留差异。Landscape14日光场景，白标定板采集照明GT、处理前裁去；本文未给完整带数/空间尺寸。Toys and Coins：AOTF可1nm调谐，实际51带550–1000nm/9nm；62玩具各10视角每次10°、32硬币正反两面，共684图，五玩具类＋硬币。RGB Mondrian743图/11照明与MSRA显著物体图仅作三通道照明/反射校正，不冒充HSI。",
+      "experimentSetting": "SBE、简化SBE及Tukey/Andrews/Cauchy/Huber鲁棒变体；κ为相机动态范围10%。初值比较light continuum/global maximum/dichromatic patch median，后续统一patch median；NIR简化法初值并非median最优。对照Huynh/Robles-Kelly2010 IJCV、Shafer1985、WhitePatch/GreyWorld/一阶GreyEdge；角误差与SID报告mean/median/trimean/best25%/worst25%。皮肤分割每人一图选皮肤/非皮肤谱，二次多项式SVM分类同人其他照明图，TableVIII称5-fold且正面光测试，完整折/抽样关系未说明，不称跨身份验证。简化照明依镜面patch，shading与RGB反射校正仅定性；M尺度数、ϵ、patch尺寸/K及耗时硬件未说明。",
+      "results": "TablesII–V简化SBE的四HSI平均角误差/SID依VIS/NIR/Landscape/Toys-Coins为3.1547/.0065、3.1291/.0089、11.2873/.0101、7.9062/.0587；Huynh/Robles-Kelly对照6.2868/.0277、6.6822/.0207、10.9602/.0085、3.4282/.0069。VIS/NIR有改进而Toys误差明显高；NIR Tukey平均1.8866优于简化3.1291。RGB Mondrian简化5.7857，GreyEdge4.6137更低。TableVII简化四HSI耗时59.20/64.87/60.39/43.21秒，对照597.06/669.25/502.32/499.56秒，约10.1/10.3/8.3/11.6倍；RGB61.52对683.43秒。TableVIII皮肤SBE/简化CR94.87±6.94/97.72±1.84%、FDR2.05±1.87/2.18±1.27%，对照86.61±15.88/8.12±8.74，raw71.23±9.17/12.48±11.64；简化CR更好但FDR不优于完整SBE。Fig14为HSI伪彩重照明/材料替换输出。",
+      "limitations": "只全读21页未标版本机构稿，正式16页VoR未读；ANU30页本批仅3页选读，二者未逐页对齐，不互相继承全文状态。单一全局光谱L/波长无关g,k与镜面patch简化依模型；RGB只恢复通道积分，不证实密集谱或真实相机深度。51/50人数、Fig6正文670nm/原注649nm差异保留。Algorithm1行19用gS−k而Eq1物理模型gS+k，印式不自改、不以代码推断。速度表无硬件/图像尺寸/计时重复说明，10.21倍为作者概括，逐集速度与非全胜精度分别记录。SFU脚注属于RGB，不称HSI下载；旧MSRA脚注失效状态沿用既有访问证据。未见本文官方代码链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+          "figureLabel": "Figure 3",
+          "caption": "光源参考轴与反射几何，用于阴影g的计算；H*深度不等同相机坐标真实几何。",
+          "page": 7,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第7页/稿页6，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 图号与页码不套ANU30页或正式16页版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              47,
+              54,
+              565,
+              231
+            ],
+            "pixelBox": [
+              195,
+              225,
+              2355,
+              963
+            ]
+          },
+          "path": "figures/shapelet-reflectance-tip-2013/shape-fig3.png",
+          "width": 2160,
+          "height": 738,
+          "sha256": "2a78c2914cf5a22aa904489886a234c3dd1ee3b482b70454a484690632702784",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · Griffith 未标版本机构稿 · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+          "figureLabel": "Algorithm 1",
+          "caption": "SBE原Algorithm1完整迭代：shapelet阴影、反射谱、照明与镜面系数更新，按照明变化停止；原印式保留。",
+          "page": 8,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第8页/稿页7，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 图号与页码不套ANU30页或正式16页版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              56,
+              53,
+              300,
+              466
+            ],
+            "pixelBox": [
+              233,
+              220,
+              1250,
+              1942
+            ]
+          },
+          "path": "figures/shapelet-reflectance-tip-2013/shape-algorithm1.png",
+          "width": 1017,
+          "height": 1722,
+          "sha256": "3418bcacd15b2d30699547cd7b8878967924730678a8412ea3213c8204537d69",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · Griffith 未标版本机构稿 · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+          "figureLabel": "Figure 14",
+          "caption": "HSI伪彩图的照明替换与皮肤/衣物反射及照明同时替换，三行依次输入、重照明和组合编辑。",
+          "page": 20,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第20页/稿页19，300dpi原页裁图；图像/公式/原注视觉核，未重绘。 图号与页码不套ANU30页或正式16页版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              47,
+              49,
+              565,
+              601
+            ],
+            "pixelBox": [
+              195,
+              204,
+              2355,
+              2505
+            ]
+          },
+          "path": "figures/shapelet-reflectance-tip-2013/shape-fig14.png",
+          "width": 2160,
+          "height": 2301,
+          "sha256": "dc4636e7b1f9ec584100499f3b7b2d25d06c0d001d80e4edfbc23cebeb68ac31",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · Griffith 未标版本机构稿 · © IEEE"
+        }
+      ]
+    }
+  ],
+  "bibliographicChecks": [
+    {
+      "paperId": "hsi-anomaly-ace-framework-2019",
+      "before": {
+        "title": "Hyperspectral anomaly detection based on anomalous component extraction framework",
+        "authors": "Shangzhen Song, Huixin Zhou, Jun Zhou, Kun Qian, Kuanhong Cheng, Zhe Zhang",
+        "year": 2019,
+        "venue": "Infrared Physics and Technology",
+        "publicationName": "Infrared Physics and Technology",
+        "doi": "10.1016/j.infrared.2018.12.008",
+        "citation": "@article{hsi_anomaly_ace_framework_2019,\n  title = {Hyperspectral anomaly detection based on anomalous component extraction framework},\n  author = {Shangzhen Song and Huixin Zhou and Jun Zhou and Kun Qian and Kuanhong Cheng and Zhe Zhang},\n  year = {2019},\n  doi = {10.1016/j.infrared.2018.12.008}\n}\n",
+        "paper": "https://research-repository.griffith.edu.au/bitstream/10072/382909/1/Zhou158553.pdf"
+      },
+      "formalFields": {
+        "title": [
+          "Hyperspectral anomaly detection based on anomalous component extraction framework"
+        ],
+        "author": [
+          {
+            "given": "Shangzhen",
+            "family": "Song",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Huixin",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6645-1491",
+            "authenticated-orcid": false,
+            "given": "Kun",
+            "family": "Qian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Kuanhong",
+            "family": "Cheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhe",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "volume": "96",
+        "page": "340-350",
+        "published": {
+          "date-parts": [
+            [
+              2019,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Infrared Physics &amp; Technology"
+        ]
+      },
+      "sourceFile": "jun-zhou-anomaly-reflectance-reading-2026-10-12-ace-crossref-retry.json",
+      "boundary": "题名、正式作者、出版年和DOI保持；BibTeX补正式卷期页码，源稿与正式版独立。"
+    },
+    {
+      "paperId": "shapelet-reflectance-tip-2013",
+      "before": {
+        "title": "Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy",
+        "authors": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou",
+        "year": 2013,
+        "venue": "TIP",
+        "publicationName": "IEEE Transactions on Image Processing",
+        "doi": "10.1109/tip.2013.2268970",
+        "citation": "@article{shapelet_reflectance_tip_2013,\n  title = {Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy},\n  author = {Lin Gu and Antonio A. Robles-Kelly and Jun Zhou},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2013},\n  pages = {3648--3663},\n  doi = {10.1109/tip.2013.2268970}\n}\n",
+        "paper": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf"
+      },
+      "formalFields": {
+        "title": [
+          "Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy"
+        ],
+        "author": [
+          {
+            "given": "Lin",
+            "family": "Gu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Research School of Engineering, Australian National University, Canberra, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Antonio A.",
+            "family": "Robles-Kelly",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "National ICT Australia, College of Engineering and Computer Science, Australian National University, Canberra, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information and Communication Technology, Griffith University, Nathan, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "volume": "22",
+        "issue": "9",
+        "page": "3648-3663",
+        "published": {
+          "date-parts": [
+            [
+              2013,
+              9
+            ]
+          ]
+        },
+        "container-title": [
+          "IEEE Transactions on Image Processing"
+        ]
+      },
+      "sourceFile": "jun-zhou-anomaly-reflectance-reading-2026-10-12-shape-crossref.json",
+      "boundary": "题名、正式作者、出版年和DOI保持；BibTeX补正式卷期页码，源稿与正式版独立。"
+    }
+  ],
+  "classificationChecks": [
+    {
+      "paperId": "hsi-anomaly-ace-framework-2019",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/17206a9a-0a4f-43a7-bb4e-ed1ca7510c45/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "AM直接处理三个高光谱异常场景，无监督ICA成分、PASNR与OSP精炼后KLRX检测；删除只定义监督分类的ICA标签，使用实际无监督异常成分框架。标题anomalous component extraction不是Adaptive Cosine Estimator，目录ID保留不作新论文。",
+        "AM 16 PDF页逐页全读（封面＋15稿页），正式发表版未读；正文与原图只对应实际文件。",
+        "Griffith明确AM16 PDF页（封面＋15稿页，含Highlights）逐页全读，原式编号1–12及15、Algorithm1、14图、3表和46条引用已读；Fig2流程/原图LKRX拼写、Fig6输出、主表/参数图视觉核。六作者及Griffith ICT Jun Zhou与Crossref期刊96:340–350、2019-01相符；最终11页VoR未读。"
+      ]
+    },
+    {
+      "paperId": "shapelet-reflectance-tip-2013",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/46e923f2-7eae-57df-86db-c142554d39c8/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "实际机构稿直接以四HSI数据研究光谱反射/照明分解并做反射替换与重照明，加入已有光谱重照明任务。另两RGB数据及RGB扩展单列；不因多光谱措辞排除有直接HSI贡献，也不把RGB通道参数当完整谱输出。shapelet不是小波，光源参考H*不是真实相机深度。",
+        "未标版本机构稿 21 PDF页逐页全读（封面＋20稿页），正式发表版未读；正文与原图只对应实际文件。",
+        "Griffith机构稿21 PDF页（封面＋20正文）逐页全读，20编号式、Algorithm1、14图、8表、45条引用及简介已读；封面没有Version字段，不猜AM/VoR。Griffith ICT Jun Zhou与Crossref正式TIP22(9):3648–3663及注册机构对应，致谢明确工作在NICTA期间完成。旧ANU30页稿本批只选读1/2/10三页，Fig3在ANU10/body9、机构7/body6；不是整份版本逐页等同或ANU全文升级。"
+      ]
+    }
+  ],
+  "newCategoryIds": [
+    "ica-osp-anomaly-refinement"
+  ],
+  "removedCategoryIds": [
+    "ica-class-discriminant-features"
+  ],
+  "removedCategoryEvidence": {
+    "category": {
+      "id": "ica-class-discriminant-features",
+      "name": "ICA类别判别特征分析",
+      "dimension": "method",
+      "definition": "将独立成分分析用于高光谱监督分类的特征提取，并比较不同ICA实现及与监督特征选择的处理顺序；具体算法、特征数量与实验逐篇核验，不等同于光谱解混。",
+      "rationale": "2013机构摘要明确比较FastICA、Infomax、JADE及FS→ICA、ICA→FS两路线。",
+      "status": "provisional",
+      "color": "#93afa1",
+      "createdAt": "2026-10-09",
+      "evidencePaperIds": [
+        "hsi-anomaly-ace-framework-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-09",
+          "action": "created",
+          "reason": "2013机构摘要明确比较FastICA、Infomax、JADE及FS→ICA、ICA→FS两路线。"
+        }
+      ]
+    },
+    "reason": "定义限于监督ICA分类，但唯一成员实际为无目标先验的异常检测；移除此误配及随之空分类，不迁移其他论文。"
+  },
+  "referencesRead": [
+    {
+      "paperId": "hsi-anomaly-ace-framework-2019",
+      "count": 46,
+      "directHsiTargetAuthorReferences": 0,
+      "boundary": "完整实际书目已读，无目标Jun Zhou直接HSI引用；其他作者引文不自动收录或称被引全文已读。"
+    },
+    {
+      "paperId": "shapelet-reflectance-tip-2013",
+      "count": 45,
+      "directHsiTargetAuthorReferences": 0,
+      "boundary": "完整实际书目已读，无目标Jun Zhou直接HSI引用；其他作者引文不自动收录或称被引全文已读。"
+    }
+  ],
+  "previousFrameworkFigures": {
+    "paperId": "shapelet-reflectance-tip-2013",
+    "figures": [
+      {
+        "sourceUrl": "https://users.cecs.anu.edu.au/~arobkell/papers/tip13.pdf",
+        "figureLabel": "Figure 3",
+        "page": 10,
+        "caption": "光源参考坐标、表面法线和反射几何方法示意；不是相机坐标深度结果。",
+        "verificationNote": "已视觉核验原PDF页与图注；从原稿裁切方法示意，未重绘、未生成。PDF页码与正式出版页码分开记录。",
+        "extraction": "原PDF以pdftoppm渲染，按原图边界裁切，含图注；(90, 55, 1165, 475)",
+        "path": "figures/shapelet-reflectance-tip-2013/framework.png",
+        "width": 1075,
+        "height": 420,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-10-09",
+        "sha256": "9d9bc685a4c86b8f5ed407a0e510bc51bdce1227fff216d164ec4144bd34de6f",
+        "attribution": "Lin Gu, Antonio A. Robles-Kelly, Jun Zhou · TIP 2013"
+      }
+    ],
+    "decision": "从已全读21页机构稿换Fig3原图，旧ANU30页PDF10图文件与哈希保留；只核当前三页ANU选读，不判整稿等同。"
+  },
+  "frozenMaterialQueue": {
+    "originalCount": 31,
+    "completedCount": 31,
+    "remainingCount": 0,
+    "editions": [
+      {
+        "version": "AM",
+        "count": 21,
+        "pdfPages": 294
+      },
+      {
+        "version": "VoR",
+        "count": 6,
+        "pdfPages": 92
+      },
+      {
+        "version": "未标版本机构稿",
+        "count": 4,
+        "pdfPages": 50
+      }
+    ],
+    "totalPdfPages": 436,
+    "canonicalFigures": 66,
+    "boundary": "原始31项列表不改写；含SMDS选v2原图。436页为这31份实际完整机构稿，不混入额外预印本/ANU选读；作者查漏、其他免费材料和正式版本未完成。"
+  },
+  "boundary": "总库390/周峻181不变，89全文/92摘要；312分类确认、审计292、74暂定、4待；177标签（67任务/97方法/13应用）、原图277。来源白名单272/arXiv17/作者例外101不变，作者与全领域未闭环；无作者代码访问或复现。"
+}
