@@ -203,6 +203,8 @@
 | Jun Zhou · SS non-Linear Model preprint | 2024 | 2412.00283v2、bidirectional spectral classification、SS non-Linear Model；17/17实际逐页全文，v1未读。 | 未单列 / 1 / 1 | v2全文17页/两原图；窗口/精度/效率冲突分列 | v1与正式版本未核；作者其余91摘要级材料继续整理。 |
 | Jun Zhou · Xiuping Jia bibliography crosscheck | 1992–2026 | Xiuping Jia、Zhou J、0000-0001-9916-6382、DOI and arXiv version crosswalk；单页返回438项；ORCID212组213书目，无后续页标记。17简称书目全部对照，25差集完整贡献者已取。 | 未单列 / 17 / 16 | 17源项映射13已录/2继承排除/1未决；ORCID差集仅一旧多光谱 | 来源页面缩写不独立证明身份或全集；两作者列表导出差异按正式登记保留。；2022会议实际输入及作者其他来源/正式版仍待。 |
 | Jun Zhou · solar panel primary input scope | 2024–2026 | 10.1109/TIP.2023.3336170、10.1109/TGRS.2026.3660888、RGB、GloSoFarID、DualGMS；TIP3/17、TGRS8/17实际读页分别记录；不是年度目录查询。 | 未单列 / 2 / 2 | 两旧排除补原文；2026 DualGMS通道缺口与2022会议范围保留 | 2026 DualGMS原文所读段未明确通道，不假定与2024相同划分。；2022会议原稿输入未取得；正式VoR未读，相关性不证明版本相同。 |
+| Jun Zhou · early anomaly author and material access | 2012 | 10.1109/ICICEE.2012.350、10.1117/12.978636、Nonsubsampled Pyramid、Shearlet、Jun Zhou affiliation；四指定查询页0/size20；DOI各0，题名0及2（均非目标）；不是作者全集检索。 | 未单列 / 2 / 0 | 两早期稿访问缺口保留；NSP/KUM正式单篇机构仍待 | 没有新单篇身份/正文证据，不能升级阅读或宣称没有公开稿。；有效搜索服务缺失；不重复同受限出版入口或查询。 |
+| Jun Zhou · HSIMamba fixed preprint reading | 2024 | 2404.00272v1、HSIMamba、bidirectional spectral classification、formal version；11/11实际逐页全文；API最新v1，Crossref指定题名前5未匹配。 | 未单列 / 1 / 1 | v1全文11页/两原图；预训练错配删除，窗口/表文冲突分列 | 正式版本/其他题名关系未确认，原算法变量与空间块细节缺口保留。；剩余90摘要级及作者其他姓名/来源继续；代码仅官方URL。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 

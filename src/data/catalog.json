@@ -45575,8 +45575,8 @@
     },
     {
       "id": "zhou-dblp-arxiv-2404-00272",
-      "shortTitle": "HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification",
-      "title": "HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification.",
+      "shortTitle": "HSIMamba · bidirectional spectral classification",
+      "title": "HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification",
       "authors": "Judy X Yang, Jun Zhou, Jing Wang, Hui Tian, Alan Wee Chung Liew",
       "year": 2024,
       "venue": "arXiv",
@@ -45587,32 +45587,31 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2404.00272",
-      "representation": "DBLP exact-author差集与 arXiv 原站摘要确认高光谱分类预印本。",
+      "representation": "谱空图像块展平/LayerNorm后双投影和正反向1D卷积、A/B与Δ调制、tanh与谱规约，接空间处理块完成监督地物分类。",
       "tags": [],
-      "summary": "HSIMamba用双向状态空间特征学习提高高光谱分类效率。",
-      "input": "高光谱影像；Houston 2013、Indian Pines、Pavia University。",
-      "output": "高光谱地物分类结果。",
-      "mechanism": "双向反向CNN路径提取光谱特征，空间分析块融合空间信息，借鉴注意力动态特征提取并降低Transformer计算负担。",
-      "readingNote": "DBLP精确作者ID、Scholar题名与 arXiv 原站题名/作者/摘要核验；未阅读全文。",
-      "paper": "https://arxiv.org/abs/2404.00272",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "HSIMamba以正反向谱处理和独立空间块完成HSI地物分类。原Fig1/§III描述双投影、谱反转、1D卷积及A/B×Δ调制/tanh，再规约融合并接空间卷积分类；按作者SSM启发定义记录，不认定标准Mamba选择性扫描实现。固定arXiv v1主表Houston/Indian Pines/Pavia OA为97.29/89.92/98.08%，实验配置、正文与主表差异保留。",
+      "input": "p×p×CH高光谱图像块和监督地物标签；Houston144带、Indian Pines200有效带、Pavia103带。Houston资料含LiDAR DSM，但本方法框架/算法只给HSI输入，不认定采用LiDAR融合。",
+      "output": "输入HSI图像块的地物类别预测及对应分类性能；不输出新光谱数据、场景几何或点云。",
+      "mechanism": "输入谱空块展平后LayerNorm，前/后向两个线性投影，后向谱反转；分别经核长3的1D卷积、激活与A/B×Δ调制，再tanh、均值规约、线性输出融合。Fig1在谱块后接Conv2D(3×3)、BatchNorm2D、Conv2D、ReLU、BatchNorm2D、AvgPool2D及全连接分类器，原图标两段(128,256)/(256,512)。正文与算法的反转/融合顺序及中间变量不完全一致，保留图、式与Algorithm1原版本，不推测运行实现；最终目标是监督地物分类，没有独立预训练目标。",
+      "readingNote": "固定arXiv2404.00272v1共11页已逐页全读，6编号式、Algorithm1、Fig1–2、TableI–IX及36参考书目已整理；首页Griffith Jun Zhou通讯作者与既有精确作者来源互证。题名原拼写Hyperpsectral保留，去掉DBLP尾句点。原图/算法、三主表及协议表已视觉核；当前API仍为v1，正式版未确认，指定Crossref前5无匹配不证明不存在。PDF首页HSIMamba超链接给官方笔记本URL，只记链接，没有访问作者或基线代码。",
+      "paper": "https://arxiv.org/pdf/2404.00272v1",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
-          "representation-learning",
           "state-space-models"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要明确 HSI 分类输入、数据集和任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "HSIMamba如何以双向状态空间和空间分析提高HSI分类效率？",
-        "datasets": "Houston 2013、Indian Pines、Pavia University。",
-        "experimentSetting": "arXiv摘要和DBLP作者记录核验；完整实验设置待全文。",
-        "conclusions": "摘要报告优于现有基准并降低高级模型计算负担。",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
+        "relationNote": "v1最终输出与损失是监督地物类别，移除无独立预训练目标的representation-learning；双向谱A/B与Δ非线性处理按作者SSM启发定义归state-space-models，不认定标准Mamba实现。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "能否以双向谱状态调制与独立空间特征处理提高监督HSI分类精度，并降低计算成本？",
+        "datasets": "Houston2013：144带380–1050nm、2.5m、15类，TableI训练2832/测试12197，共15029；资料介绍含DSM但本方法未明用LiDAR。Indian Pines：145²、AVIRIS原220/保留200带400–2500nm、20m、16类，TableII训练695/测试9671，总10366按原表保留。Pavia University：610×340、ROSIS103带430–860nm、1.3m、9类，TableIII印训练3961/测试40002/总43923；逐行训练实际和3921，与总计栏冲突，不替原稿改数。Indian Pines原文把spectral resolution单位印作10m，保留单位疑点，不当真实谱规格。",
+        "experimentSetting": "PyTorch、Google Colab Premium，未给具体GPU型号；Adam、batch32、lr5e-4、50epochs，熵损失。正文统一patch7，Houston消融/灵敏度TableIV/V/IX使用或最佳patch5；主表最终窗口未明示，不将两协议混合。训练增强45°/90°/135°旋转与水平/竖直翻转；同源增强及相邻窗口跨集隔离、随机重复数/种子/方差与独立验证选择未说明。基线为1D/2D CNN、RNN、miniGCN、Transformer(ViT)、SpectralFormer，按文献配置；不认为实际实现已核。",
+        "conclusions": "依Houston/Indian/Pavia顺序，TableVI–VIII主表OA97.29/89.92/98.08%，AA97.89/89.82/97.87%，κ .9706/.8857/.9741，聚合指标高于所列基线；Houston C2、Indian多类及Pavia C8不领先，不写全类别胜出。Houston TableIV全模型OA97.89/AA98.13/κ .9771；去空间、去后向、去前向、去双向OA95.85/96.61/96.15/93.42%。TableV/IX窗口1/3/5/7/9/11/13/15的OA93.83/96.38/97.89/95.17/95.61/97.66/96.26/96.51%，非单调。TableIX patch5内存160.98MB、训练170s、测试1.19s；窗口3内存136.53MB更低，窗口1耗时152.3/1.07s更快。",
+        "limitations": "只读固定v1，正式发表及其他版本未确认；没有复现。§IV-D Indian κ .9045与TableVII .8857不同；Pavia正文OA/AA/κ .9814/.9769/.9749与TableVIII .9808/.9787/.9741不同；§IV-E写126MB/161s而TableIX最佳patch5为160.98MB/170s。正文统一patch7与最佳/消融patch5分开；§III效率40% FLOPs/30%更快缺对应实测基线表，不外推全面轻快或边缘部署。Fig1图注称空间处理先于正反向，图与正文流程却放在之后。Eq5–6先合并隐状态再双投影，算法则各路规约/投影后合并；算法把反转写linear_z_rev、形状变量B重复、状态/规约变量命名不一致，未由代码补齐。原文没有证明标准Mamba选择性递推、时序依赖或注意力模块已实现；未指定完整空间块布局、hidden_dim/Δ初值或通道重排。样本总计、指标和印式冲突按实际v1分别保留。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45634,6 +45633,16 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2404.00272v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定预印本逐页全文、首页身份、原图与原表核验",
+            "supports": [
+              "v1最终输出与损失是监督地物类别，移除无独立预训练目标的representation-learning；双向谱A/B与Δ非线性处理按作者SSM启发定义归state-space-models，不认定标准Mamba实现。",
+              "固定v1的监督输入输出、六式/算法/原框架和TableI–IX协议、性能及内在冲突；只升级实际11页阅读版本。",
+              "首页Jun Zhou为Griffith ICT通讯作者；官方代码URL来自PDF超链接，只保存URL未访问。"
+            ]
           }
         ],
         "versions": [
@@ -45646,14 +45655,85 @@
             "arxivId": "2404.00272",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。 arXiv本版本题名：HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification。",
+            "relation": "固定v1共11页实际全文；原题名Hyperpsectral及作者顺序保留。方法、实验与正文/表格冲突按此版本记录；正式版未确认，当前API仍为v1。",
             "firstSubmittedAt": "2024-03-30T07:27:36Z",
-            "updatedAt": "2024-03-30T07:27:36Z"
+            "updatedAt": "2024-03-30T07:27:36Z",
+            "readingProgress": "full_text_read"
           }
         ],
-        "methodFamilyId": "zhou-dblp-arxiv-2404-00272"
+        "methodFamilyId": "zhou-dblp-arxiv-2404-00272",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "v1最终输出与损失是监督地物类别，移除无独立预训练目标的representation-learning；双向谱A/B与Δ非线性处理按作者SSM启发定义归state-space-models，不认定标准Mamba实现。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "e8c0af6b653258daa8b0342a2c827444344111c9fc5cf530ea34e28582072be8",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2404.00272v1"
+          ]
+        }
       },
-      "citation": "@misc{zhou-dblp-arxiv-2404-00272,\n  title = {HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification.},\n  author = {Judy X Yang and Jun Zhou and Jing Wang and Hui Tian and Alan Wee Chung Liew},\n  year = {2024},\n  eprint = {2404.00272},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2404.00272}\n}\n"
+      "citation": "@misc{zhou-dblp-arxiv-2404-00272,\n  title = {HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification},\n  author = {Judy X Yang and Jun Zhou and Jing Wang and Hui Tian and Alan Wee Chung Liew},\n  year = {2024},\n  eprint = {2404.00272},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2404.00272}\n}\n",
+      "code": "https://github.com/Judyxyang/judyxyang/blob/master/HSi_UH2013_P7_AB_VIM_V3_6_0330.ipynb",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2404.00272v1",
+          "figureLabel": "Figure 1",
+          "caption": "HSIMamba v1原框架：谱空块展平/LayerNorm、双投影与正反向1D卷积、Δ调制/tanh及输出融合，再接空间卷积块和全连接分类。保留原英文图注，图注先后关系与图/正文不同另记。",
+          "verificationNote": "已目视核对固定arXiv v1原PDF对应页与完整图注/算法；300dpi直接裁切，未重绘。",
+          "page": 5,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              46,
+              60,
+              566,
+              315
+            ],
+            "pdfVersion": "arXiv2404.00272v1",
+            "sourcePdfSha256": "767d4523d5c41e5ddd68522a814133698438891734f8d7b34b017af73b538d5d"
+          },
+          "path": "figures/zhou-dblp-arxiv-2404-00272/hsimamba-fig1.png",
+          "width": 2168,
+          "height": 1063,
+          "verifiedAt": "2026-10-12",
+          "sha256": "e580ad739c598db9b90e535e3f2a4dbc4fbb27e6951df27367049288b4f1b78f",
+          "attribution": "Judy X Yang, Jun Zhou, Jing Wang, Hui Tian, Alan Wee Chung Liew · arXiv v1 2024"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2404.00272v1",
+          "figureLabel": "Algorithm 1",
+          "caption": "HSIMamba v1原Algorithm1：谱空输入、规范化、投影/反向路径、卷积与A/B×Δ调制、规约和融合；原变量命名、B重复及反转/状态输出冲突保留，不补运行步骤。",
+          "verificationNote": "已目视核对固定arXiv v1原PDF对应页与完整图注/算法；300dpi直接裁切，未重绘。",
+          "page": 6,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              46,
+              156,
+              310,
+              539
+            ],
+            "pdfVersion": "arXiv2404.00272v1",
+            "sourcePdfSha256": "767d4523d5c41e5ddd68522a814133698438891734f8d7b34b017af73b538d5d"
+          },
+          "path": "figures/zhou-dblp-arxiv-2404-00272/hsimamba-algorithm1.png",
+          "width": 1101,
+          "height": 1596,
+          "verifiedAt": "2026-10-12",
+          "sha256": "2335dbf7df2d810e23de181709d14a2189e2320afcb990c20672878d56129696",
+          "attribution": "Judy X Yang, Jun Zhou, Jing Wang, Hui Tian, Alan Wee Chung Liew · arXiv v1 2024"
+        }
+      ]
     },
     {
       "id": "zhou-strl-hyperspectral-tracking-2025",
@@ -49277,7 +49357,6 @@
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-arxiv-2605-14239",
         "zhou-scholar-arxiv-2609-37340",
-        "zhou-dblp-arxiv-2404-00272",
         "zhou-strl-hyperspectral-tracking-2025"
       ],
       "history": [
@@ -49325,6 +49404,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "SS non-Linear固定v2全文确认监督地物分类与作者定义的双向谱状态处理，删除无预训练目标的关联；不修改其他论文或将其认作标准Mamba实现。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "HSIMamba固定v1全文明确监督地物分类，没有独立表征预训练目标，删除该论文的预训练关联并同步证据列表。"
         }
       ]
     },
