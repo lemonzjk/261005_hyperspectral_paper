@@ -26,7 +26,7 @@
 | DBLP | 365条合并记录，355条有范围决定 | 10条的输入、范围、身份或正式版本待核；网页/XML访问仍受限 |
 | Google Scholar | 4页取得387条记录、384个唯一题名；非关键词差集209条已逐项处理 | 差集8条待核；引用元数据与作者归属仍需原始来源互证 |
 | Griffith | 当前机构个人profile7205全分页387关联项，ID集合与个人页完全一致；175条匹配168个既有目录ID，187条继承排除、6条对应当前多光谱删除、3条新摘要暂排、1条新来源排除、1数据资源、1已排除原文勘误；此前两仓库指定查询351条独立保留 | 11条继承范围/版本待核；另2条直接HSI来源外候选。386条作者有resolvedUser7205，NSP/KUM仅个人关联、单篇正式机构待核；机构目录闭环不证明作者全集 |
-| arXiv | 带引号姓名531条已有映射/逐审；倒序Zhou_Jun的531条ID及元数据完全相同。此前Zhou+指定任务词101条；扩展谱词1891条完整返回，20个目标样式姓名中15旧ID、5新简写摘要范围外。四单项词20/27/3/1845的并集与1891完全一致；UEMM v3、AdvMIM v1共23页全读，固定原稿直接HSI范围排除 | 6条原稿范围/身份待核；UEMM/AdvMIM正式版本独立未核。reflectance宽匹配机制未明；其余1871未逐项范围筛查，不当作者/领域全集。J._Zhou作者单独查询超时/503无有效集合，加hyperspectral子集零返回不替代覆盖；其他姓名变体仍需查漏 |
+| arXiv | 带引号姓名531条已有映射/逐审；倒序Zhou_Jun的531条ID及元数据完全相同。此前Zhou+指定任务词101条；扩展谱词1891条完整返回，20个目标样式姓名中15旧ID、5新简写摘要范围外。四单项词20/27/3/1845的并集与1891完全一致；UEMM/AdvMIM/RADC/VITask四固定稿共45页全读、UltraVR选读21/70页，均按直接HSI范围排除 | 医学综述、EVLF-FM、MerMED-FM三原稿范围/身份待核；UEMM/AdvMIM正式版独立未核。reflectance宽匹配机制未明；其余1871未逐项范围筛查，不当作者/领域全集。J._Zhou作者单独查询超时/503无有效集合，加hyperspectral子集零返回不替代覆盖；其他姓名变体仍需查漏 |
 | 旧作者主页及共同作者CV | ANU旧页2001–2012与共同作者公开CV已用于查漏 | CV3候选指定Crossref排序前5及arXiv作者/任务词查询无对应版本，仍待核；不同题名/作者不自动合并，旧页不能代表当前成果全集 |
 
 上述待核项可能跨来源重叠，不能相加为剩余论文数。暂排除保留证据，可在新输入或身份信息出现后重审；题名没有高光谱关键词不构成自动排除依据。
@@ -41,12 +41,16 @@ ADLKAN免费Griffith接受稿19页已逐页阅读，Fig1–4四原图保留版�
 
 四单项谱词查询的唯一并集、题名、摘要、作者、版本与时间均与旧OR响应完全一致，组合查询的集合关系已核；不能再将大集合直接归因于OR异常。reflectance单项返回1845条，其宽匹配机制仍未确认；下划线spectral_imaging返回0，而带空格短语返回20，不互相替代。此次未新增目标姓名记录或论文。
 
-UEMM-Air v3免费原稿12页与AdvMIM v1原稿11页已全部逐页阅读，PDF、哈希、逐页文本和视觉核对证据已保存。UEMM的六模态及全部任务/实验围绕RGB、几何、IMU与文字；§III-B的infrared/Depth写法冲突保留，但不构成直接高光谱贡献。AdvMIM明确H×W×3输入，所有实验是MRI、CT、皮肤镜的分割。两份固定原稿按当前直接HSI口径范围排除，arXiv原稿待核降为6；其正式版本仍未读，机构/DBLP/ORCID等对应正式记录继续待核，不外推身份或发表版范围。此次范围外全文阅读不增加库内61条全文或221张原图，周峻181条与27项机构资料待办不变。
+UEMM-Air v3免费原稿12页与AdvMIM v1原稿11页已全部逐页阅读，PDF、哈希、逐页文本和视觉核对证据已保存。UEMM的六模态及全部任务/实验围绕RGB、几何、IMU与文字；§III-B的infrared/Depth写法冲突保留，但不构成直接高光谱贡献。AdvMIM明确H×W×3输入，所有实验是MRI、CT、皮肤镜的分割。两份固定原稿按当前直接HSI口径范围排除；其正式版本仍未读，机构/DBLP/ORCID等对应正式记录继续待核，不外推身份或发表版范围。当前待核数量以下述续核及来源表为准。此次范围外全文阅读不增加库内61条全文或221张原图，周峻181条与27项机构资料待办不变。
+
+RADC v1六页与VITask v1十六页现已全部逐页阅读。RADC是CLIP分类/双缓存测试时适配，所有基准已列；EuroSAT官方说明Sentinel-2 RGB或13波段多光谱，两种版本均按当前口径范围排除。VITask为MedMNIST2D医学分类及外部糖尿病眼底验证，官方4RGB/8灰定义与原稿全部12数据、70类别对应；70类别、九模态及空间切片不作为光谱维。具体RGB/MS选版、APTOS引用/转换或未复现像素不人为阻塞已明确的固定稿范围决定。
+
+UltraVR v1下载70页，实际逐页读1–10、15–22、68–70共21页。主文与A–D的全部四域构造、问答/GT-CoT任务和实现已核：PANDA监控、DOTA1.5航片、TCGA-BRCA H&E病理、MVTec LOCO AD网格。DOTA官方明确RGB/全色灰度PNG；空间对象/形态推理不是直接HSI研究，固定原稿按选读证据范围暂排。11–14引用/目录及23–67示例未全读，不记整篇全文。原稿作者机构/邮件各自保留，不据机构差异证明另一同名。arXiv原稿待核现3项；四份范围外固定稿全文45页与UltraVR选读不增加库内61全文、221原图。没有新增论文，作者目录仍未闭环。
 
 ## 下一步
 
 1. 优先查漏并完成来源交叉核对：其余姓名变体及arXiv简写有效查询/reflectance宽匹配边界、DBLP/Scholar/arXiv差集、两条来源外直接HSI的合格版本及共同作者CV候选；机构个人目录已完成本次387条快照，不反复拉取同一快照；区分已发表、预印本、在审线索，按书目与明确证据去重。
-2. 继续核六项arXiv原稿及UEMM/AdvMIM正式版等候选；按实际可获取的摘要、正文和作者材料判断范围与身份。已全读的固定预印本范围决定与未读正式版分开；材料不足保留未决与访问限制，不反复追索付费正文。
+2. 继续核医学综述、EVLF-FM、MerMED-FM三项arXiv原稿及UEMM/AdvMIM正式版等候选；按实际可获取的摘要、正文和作者材料判断范围与身份。已全读的固定预印本范围决定与未读正式版分开；材料不足保留未决与访问限制，不反复追索付费正文。
 3. 对剩余27项机构PDF链接及BABS、SiamBAG、BAE、DMT、TV/NTF、ISTA等资料不全条目检查免费PDF、框架图及公开版本；可获取则整理方法与实验，付费且无公开版本或确实无法获取才留白。Hy-Tracker等版本方法差异按各版实际证据注明。
 4. 分别报告来源覆盖、未决候选和可获取但尚未整理的资料。可获取材料应继续整理，受限材料记录留白原因；性能复现不作为本阶段要求。
 
@@ -58,6 +62,7 @@ UEMM-Air v3免费原稿12页与AdvMIM v1原稿11页已全部逐页阅读，PDF�
 - [医学原型/FedDA接受稿全文及引用去重](sources/jun-zhou-medical-fedda-reading-2026-10-11.json)、[引用查询响应](sources/jun-zhou-medical-fedda-reading-2026-10-11-access.json)：34页全文、3张原图、主协议与疑点，原下载及局部阅读快照保留。
 - [倒序姓名/扩展谱词与ADLKAN全文](sources/jun-zhou-name-order-adlkan-reading-2026-10-11.json)、[原始响应及PDF访问](sources/jun-zhou-name-order-adlkan-reading-2026-10-11-access.json)：姓名匹配语义边界、5项摘要范围决定、19页AM和4原图。
 - [单词查询并集与两份范围外原稿全文](sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json)、[原始响应与PDF访问](sources/jun-zhou-query-semantics-scope-reading-2026-10-11-access.json)：1891集合完全一致、固定v3/v1共23页已读；正式版仍待，不升级库内阅读数量。
+- [RADC/VITask全文与UltraVR四域范围续核](sources/jun-zhou-radc-vitask-ultravr-scope-reading-2026-10-11.json)、[PDF及数据官方来源访问](sources/jun-zhou-radc-vitask-ultravr-scope-reading-2026-10-11-access.json)：两全文22页、UltraVR选读21/70页；三个固定版范围处理，不等于身份/正式版或性能复现。
 - [姓名变体核对](sources/jun-zhou-arxiv-name-variants-2026-10-11.json)、[weed mapping身份归并](sources/jun-zhou-weed-author-identity-2026-10-11.json)、[融合/选带全文核验](sources/jun-zhou-fusion-band-order-reading-2026-10-11.json)。
 - [arXiv逐项映射](sources/jun-zhou-arxiv-survey-mapping-index-2026-10-11.json)；其余原文、代码README、响应、哈希和逐页审计统一保留在 `sources/jun-zhou-*`，不改写冻结证据。
 - [历史调研记录](archive/jun-zhou/research-log.md)：逐批范围决定、版本差异、公式与实验审计。批次中的数量属于当时状态，不用于判断当前完成度。
