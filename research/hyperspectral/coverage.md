@@ -1,10 +1,12 @@
-# 高光谱全领域检索覆盖
+# 高光谱检索覆盖
 
-截止日期：2026-10-09。状态：持续调研。
+查询快照截止：2026-10-09；范围更新：2026-10-11。状态：持续调研。
 
-总库独立检索自 2026-10-08 开始。以下题名扫描仅证明指定关键词在指定官方目录内的检索范围；三维专题旧检索结果只用于发现，不继承其二维排除决定或覆盖声明。各场所未列年份默认尚未检索，早期目录与引用追溯均保留缺口。
+现有目录已按来源白名单及高光谱范围清理，周峻既有188条保留。检索状态仅证明记录中指定官方目录、分页和关键词的实际覆盖，不代表领域全集已收齐。旧范围的扫描保留为历史证据，不列为后续全领域检索目标。
 
-## 已执行的场所 × 年份 × 关键词
+当前来源白名单与作者例外见 [收录政策](../../src/data/collection-policy.json)，逐项清理决定见 [清理审计](catalog-cleanup.json)。
+
+## 当前范围内的实际检索
 
 | 场所 | 年份 | 查询与分页 | 题名 / 命中 / 已审 | 覆盖级别 | 剩余缺口 |
 | --- | --- | --- | --- | --- | --- |
@@ -20,7 +22,6 @@
 | TGRS | 2001 | Fully constrained least squares linear spectral mixture analysis method for material quantification in hyperspectral imagery、FCLS、UFCLS；定向题名检索与 DOI 核对；Crossref 题名返回前三项，不代表完整年度或主题检索 | 1 / 1 / 1 | 定向主题核验完成；年度全量目录未检索 | 该年度全部目录、其他关键词及完整引文尚未检索；全文实验、代码数据、早期会议版本待核验 |
 | Optics Letters | 2007 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，2 页；1141 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 1141 / 4 / 4 | Crossref 登记题名扫描完成，4 候选已处理（3 摘要、1 题名）；出版社年度覆盖未证明 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成 |
 | Optics Express | 2007 | Single-shot compressive spectral imaging with a dual-disperser architecture、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
-| Applied Optics | 2008 | Single disperser design for coded aperture snapshot spectral imaging、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
 | CVPR | 2021 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 1660 / 11 / 11 | 五关键词题名命中 11 篇均已核验官方摘要 | 只完成指定五关键词题名扫描；其他任务词、摘要全文发现与引文检索待补；浏览器检索工具访问部分 CVF 页返回 403；直接 HTTP 请求成功并保存全部 11 篇官方证据；新条目 DOI、代码/数据可用性、全文实验与预印本/正式版差异待复核 |
 | ICCV | 2021 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 1612 / 7 / 7 | 五关键词命中 7 篇均已核验官方摘要 | 只完成指定五关键词题名扫描；其他任务词、摘要全量发现与引文追踪待补；检索工具访问 CVF 目录返回 403；直接 HTTP 成功并保存官方目录及七篇原始证据；全文实验、DOI、代码数据许可及预印本/正式版差异仍待核验 |
 | CVPR | 2015 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 602 / 7 / 7 | 指定五关键词命中 7 篇均已核验官方摘要 | 仅完成指定题名词；任务词、摘要全量与引文发现待补；检索工具访问目录失败，直接 HTTP 获取目录和七篇官方证据成功；Crossref 题名查询返回 429，精确 DOI 查询成功；未核验的 DOI/预印本不猜测；TPAMI 后续视频稿作者与版本扩展关系、全文实验、资源入口与许可待核验 |
@@ -34,10 +35,8 @@
 | arXiv | 2019–2021 | 1904.12175；指定abs页面v1–v5全部历史；非跨分类检索 | 1 / 0 / 1 | 五个版本日期核验并关联TGRS2022正式出版；逐版全文待查 | 其他arXiv论文、逐版实验及期刊最终版差异仍未核验 |
 | ICCV | 2013 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 454 / 2 / 2 | 指定五关键词两命中均核验官方摘要；全领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器工具目录返回403，直接HTTP成功取得454题名与两篇官方摘要；新增文献仅摘要与局部页；完整实验、代码数据及期刊最终版差异待核验 |
 | TPAMI | 2016 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1109/tpami.2015.2473839；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 期刊扩展原文关系核验，作为版本归并 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
-| JSAP-OSA Joint Symposia | 2014 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1364/jsap.2014.20p_c4_1；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 官方摘要核验并按方法重述归并；不是独立方法 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
 | ICCV | 2015 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 526 / 6 / 6 | 指定五关键词六命中均核验官方摘要；年度领域覆盖未完成 | 其他任务词、全量摘要与引文发现未完成；浏览器目录访问失败；直接HTTP成功取回官方526题名、六摘要和五原文PDF；完整实验、版本差异与资源运行/许可待核验；ASSDL期刊局部原文未证明扩展，IGARSS2014撤销未证明的CSU前序关联并保留独立候选 |
 | IJCV | 2017 | Adaptive Spatial-Spectral Dictionary Learning for Hyperspectral Image Restoration、10.1007/s11263-016-0921-6；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 作者PDF摘要及局部方法已核验；会议关系仍待原文比较 | 未找到明确扩展声明；去噪/超分辨内容及会议对应逐节比较待查；完整年度与其他研究问题未检索 |
-| IGARSS | 2014 | Coupled hyperspectral super-resolution and unmixing、10.1109/igarss.2014.6947016；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 作者元数据已核验；撤销未证明的前序关联，独立主题候选待原文 | 不是已证明的CSU前序版本；独立论文原文内容与关系待查；完整年度与其他研究问题未检索 |
 | ICCV | 2017 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all；单页全年官方目录；无结果条数截断 | 621 / 5 / 5 | 五关键词五命中全部核验官方摘要；年度领域覆盖未完成 | 其他任务关键词、全量摘要和引文发现待查；浏览器访问403，直接HTTP获取官方621题名与五摘要及两原文PDF；局部摘要/图与方法说明；完整实验、版本、代码运行和数据许可待查 |
 | ICCV | 2019 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all 无题名；读取官方入口并遍历其全部日目录，按原文 URL 去重；无条数截断 | 1075 / 12 / 12 | 四日目录1075题名；五关键词十二命中均审查官方摘要，年度领域覆盖未完成 | 其他任务词、全量摘要、参考文献及后续引用待查；浏览器403；直接HTTP遍历四个日目录及十二摘要、七原文PDF；Crossref两查询429限流，降低并发重试成功；仅前两结果用于元数据定位；λ-Net官方代码链接404；AR-CNN代码许可与数据/模型权利分开；所有资源未运行；预印本/期刊关系、全文实验、代码与数据许可待查；局部原图不计阅读全文 |
 | CVPR | 2019 | hyperspectral、multispectral、multi-spectral、spectral、spectrum；day=all 无题名；读取官方入口并遍历其全部日目录，按原文 URL 去重；无条数截断 | 1294 / 12 / 12 | 三日1294题名，五关键词十二命中均审查官方摘要及必要局部页；年度领域覆盖未完成 | 其他任务词、全量摘要和引文发现待查；浏览器目录503/单篇403；直接HTTP获取三日目录、十二摘要、八原文PDF；NGmeet PDF为图像文本层，目视核验首页及方法图；两个Crossref题名查询429，降低并发重试200；只用于元数据定位；NGmeet仓库未识别许可；推测MHF-net仓库404不记为已证实官方代码；其他资源与数据许可待查；两文献共三个arXiv版本日期已核验；全文差异及相关期刊关系待查；全部不计阅读全文 |
@@ -76,96 +75,11 @@
 | Optics Letters | 2008 | cassi、coded aperture、snapshot、imaging spectrom、imaging spectroscop、spectral reconstruction、spectrum reconstruction、spectral unmixing、band selection、pansharpening、spectral super-resolution、fourier transform imaging、spectral mixture、endmember、spectral image、spectropolarimet；离线全扫1032登记DOI；原2页，原登记集合边界保持；非出版社全量 | 1032 / 2 / 1 | 补扫16系统/重建词；2候选：增0、重0、排1、待核验1；非年度全量 | 出版社年度卷期全目录未交叉核验；全量摘要与其他任务词、引文未完成；非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录 |
 | Optics Letters | 2009 | cassi、coded aperture、snapshot、imaging spectrom、imaging spectroscop、spectral reconstruction、spectrum reconstruction、spectral unmixing、band selection、pansharpening、spectral super-resolution、fourier transform imaging、spectral mixture、endmember、spectral image、spectropolarimet；离线全扫1309登记DOI；原2页，原登记集合边界保持；非出版社全量 | 1309 / 2 / 2 | 补扫16系统/重建词；2候选：增0、重1、排1、待核验0；非年度全量 | 出版社年度卷期全目录未交叉核验；全量摘要与其他任务词、引文未完成；非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录 |
 | Optics Letters | 2010 | cassi、coded aperture、snapshot、imaging spectrom、imaging spectroscop、spectral reconstruction、spectrum reconstruction、spectral unmixing、band selection、pansharpening、spectral super-resolution、fourier transform imaging、spectral mixture、endmember、spectral image、spectropolarimet；离线全扫1417登记DOI；原2页，原登记集合边界保持；非出版社全量 | 1417 / 6 / 5 | 补扫16系统/重建词；6候选：增3、重0、排2、待核验1；非年度全量 | 出版社年度卷期全目录未交叉核验；全量摘要与其他任务词、引文未完成；非成像光谱偏振的HSI具体联系与全文、原图待核验；出版日期/卷期年度不同项分别记录 |
-| TCI | 2015 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；41 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 41 / 2 / 2 | 41登记DOI六词2命中均收录；包含非研究条目，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；登记集合包含目录/说明，不称41研究论文；全量摘要尚未读 |
-| TCI | 2015 | spectral、compressive、coded aperture、unmixing；离线全扫41个不同登记DOI；原rows1000一页；包含目录/出版说明，不当作41篇研究论文 | 41 / 4 / 4 | 41登记题名四词4候选闭环：新增3、排除1；出版社年度全量未证明 | 出版社全部卷期/全量摘要未核验；其余词、引文与全文实验、最终版差异待核验 |
-| TCI | 2016 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 3 / 2 | 63登记题名六词3命中：2收录、1原摘要受限；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
-| TCI | 2016 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 5 / 4 | 四词5命中：新2、排2、原摘要受限1；Fourier正式出版按TIP记录 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
-| TCI | 2017 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 11 / 10 | 102登记题名11命中，10已处理；并集新增8、排8、待1，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；1候选HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
-| TCI | 2017 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 17 / 16 | 102登记题名17命中，16已处理；并集新增8、排8、待1，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；1候选HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
-| TCI | 2018 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；75 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 75 / 2 / 2 | 75登记题名六词2命中已收录；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；原始摘要受限反射率恢复候选待核验；出版社全量、其他词和全文实验/版本差异待查 |
-| TCI | 2018 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；75 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 75 / 4 / 3 | 75登记题名四词4命中：新增2、排1、待1；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；原始摘要受限反射率恢复候选待核验；出版社全量、其他词和全文实验/版本差异待查 |
-| TCI | 2019 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；69 个不同 DOI 与登记总数一致；已与四期官方52目录项逐题名及起始页核对；另1年度索引未列TOC | 69 / 2 / 1 | 69登记题名六词2命中，已收录1待核验1；非年度高光谱全量 | 去噪原始摘要/原图受限；代码未运行，版本及数据授权待核验；年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| TCI | 2019 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；69 个不同 DOI 与登记总数一致；已与四期官方52目录项逐题名及起始页核对；另1年度索引未列TOC | 69 / 5 / 4 | 69登记题名四词5命中：增2排2待1；非年度高光谱全量 | 去噪原始摘要/原图受限；代码未运行，版本及数据授权待核验；年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| TCI | 2019 | 全目录题名/起始页比对、光学高光谱关系、通用复原/融合/压缩采集；卷5期1–4，四个完整官方目录PDF；52目录项（51研究论文+1奖公告），52题名及起始页均匹配；另登记16封面/行政记录+1年度索引 | 52 / 51 / 34 | 四期目录逐题名比对完成；51研究项均尝试原始来源，34已审17待核验；非年度摘要全量完成 | 年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| TCI | 2019 | 通用去噪/逆问题理论、字典/稀疏编码、光学系统/相位、光度立体、视频分离、多焦点融合；四期目录中42未筛摘要项，定向选取10篇：8完整原始摘要核验，其中1正式稿版本差异待查；2原摘要受限；其余32项未筛 | 42 / 10 / 7 | 10篇：8原始摘要已读，7排除、3待核验；非全量摘要检索 | 年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| TCI | 2019 | MRI/PET、超声/声学、X射线层析、时间域层析；四期目录32未筛摘要项，定向10篇：6完整原始摘要、4官方原始摘要内容/片段；10排除；其余22项未筛 | 32 / 10 / 10 | 10篇基于原始摘要证据排除；区分完整与片段，非全量摘要检索 | 4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| TCI | 2019 | 无透镜/相机阵列、光场/场景恢复、显微成像、色觉共享、光子采集估计；四期目录22摘要未筛项中定向8篇；6完整原始摘要（1仅官方缓存）排除，2原摘要受限；其余14项未筛 | 22 / 8 / 6 | 8篇6排除2待核验；非年度全量摘要检索 | Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；年度索引687–696页及正式/预印本差异待核验；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| TCI | 2019 | SAR/微波、X射线CT/双能CT、光声层析、光学高光谱联系；14未筛目录项中定向8篇：3完整摘要与1官方摘要片段排除，4待核验；其余6未筛 | 14 / 8 / 4 | 8篇4排除4待核验；非年度全量摘要检索 | 医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；年度索引687–696页及正式/预印本差异待核验；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| TCI | 2019 | 极紫外光刻、数字全息FPGA、超声重建、图像量化、电子显微、X射线能谱融合；最后6目录研究项均尝试；1正式PDF完整摘要排除，5原始摘要待核验 | 6 / 6 / 1 | 6篇1排除5待核验；原始来源访问失败留证 | 51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
-| GRSL | 2015 | embedded quantization、hyperspectral image coding、2SDQ/GEQ；单篇题名/DOI定向核验及参考文献[4]/[5]追踪；不表示全年目录/摘要已扫描 | 1 / 1 / 1 | 单篇引文/作者来源闭环，非年度系统检索 | 本场所本年度官方目录与全量关键词矩阵尚未完成；正式排版差异、专用代码/数据链接及独立复现待核验 |
-| TSP | 2013 | embedded quantization、hyperspectral image coding、2SDQ/GEQ；单篇题名/DOI定向核验及参考文献[4]/[5]追踪；不表示全年目录/摘要已扫描 | 1 / 1 / 1 | 单篇引文/作者来源闭环，非年度系统检索 | 本场所本年度官方目录与全量关键词矩阵尚未完成；正式排版差异、专用代码/数据链接及独立复现待核验 |
 | TIP | 2013 | embedded quantization、hyperspectral image coding、2SDQ/GEQ；单篇题名/DOI定向核验及参考文献[4]/[5]追踪；不表示全年目录/摘要已扫描 | 1 / 1 / 1 | 单篇引文/作者来源闭环，非年度系统检索 | 本场所本年度官方目录与全量关键词矩阵尚未完成；正式排版差异、专用代码/数据链接及独立复现待核验 |
-| GRSL | 2015 | compress、coding、quantiz、rate allocation、decorrelation；ISSN1545-598X，from/until-pub-date2015，rows1000，一页572；26词命中全部登记决定，5待核验。 | 572 / 26 / 22 | 登记题名指定压缩词扫描完成；21决定、5待核验，非年度全量 | 出版社2015完整目录、全量摘要及更多任务词尚未完成；572仅为Crossref登记日期集合。；5待核验：运动目标成像、移除通知原文、ripplet融合、参考影像重建、多核能耗压缩的有效状态/HSI关系。；两新增专用代码/数据、正式稿差异与独立复现待查。；本组剩余4候选；出版社年度目录、其他关键词和摘要范围尚未完成。 |
-| GRSL | 2015 | hyperspectral、multispectral、multi-spectral、spectral imaging、spectral unmixing；单页rows1000实际572；66词命中全部留存，当前已审33条；余33项pending，非年度系统检索完成。 | 572 / 66 / 33 | 指定题名组扫描完成，候选核验进行中 | 登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。；出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。；本组剩余33候选；出版社年度目录、其他关键词和摘要范围尚未完成。；本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。 |
 | TGRS | 2015 | classification morphological hyperspectral、random subspace ensembles；HAL题名/2015过滤返回1项，随后按halId检索；单篇追踪，不表示TGRS年度目录/摘要已扫描 | 1 / 1 / 1 | 单篇机构/题名追踪闭环，非年度系统检索 | TGRS2015官方目录及全量摘要/其他关键词矩阵尚未完成；机构记录无fileMain，原PDF/原图及代码数据待取得 |
-| MPE | 2013 | hyperspectral classification Fukunaga Koontz；单篇题名/方法族追踪；未扫描该期刊年度目录 | 1 / 1 / 1 | 单篇同族追踪闭环，非年度系统检索 | MPE年度目录/摘要尚未系统检索，专业期刊来源不标为顶刊；原PDF403、原图/实验细节/代码数据及版本差异待核验 |
-| WHISPERS | 2014 | collaborative representation k nearest hyperspectral；官方技术日程共94页，仅逐篇核验第79页CRNN条目；未全量扫描会议论文/摘要 | 1 / 1 / 1 | 单篇方法族追踪闭环，非年度系统检索 | 技术日程全94页及出版社论文目录/DOI尚未全量核对。；原四页会议稿/原图与期刊直接扩展关系、实验差异待核验。；2026-10-08再次下载官方94页PDF遇SSL EOF；未关闭TLS验证。主办方缓存可读，单篇核验不等于年度扫描；访问证据sources/whispers2014-program-repeat-access.json。 |
-| EJRS | 2018 | Nonlinear PCA for Visible and Thermal Hyperspectral Images Quality Enhancement、Licciardi Chanussot nonlinear PCA dimensionality reduction、10.1080/22797254.2018.1441670；仅核验一篇16页论文及指定章节；未扫描EJRS年度目录 | 1 / 1 / 1 | 单篇引用追踪闭环，非年度系统检索 | EJRS年度题名/摘要与其他词尚未系统扫描。；全文阅读、代码/数据和2015前序原摘要仍待核验。 |
-| WHISPERS | 2014 | hyperspectral、reflectance、flat field、spectral super-resolution、oil steel、radiative transfer、volcanic SO2；PDF第45–46页全部六个论文摘要逐项筛选；额外第47页X射线和大气不确定性两项范围/错配审查。其他页未全量逐篇处理；没有用投稿205数作发表总数 | 8 / 8 / 7 | 两页六篇闭环，另排除1/待核验1；非年度目录完成 | 94页程序的其余页与出版社年度目录/正式DOI尚未全量核对。；第47页不确定性及第42页核图降维摘要错配，须查原稿，不能盲信官方摘要。；六篇会议原PDF/原图与完整版本差异待核验；水体和标定RG所附长稿不是本会议版本。；官方PDF当前再次下载为代理连接错误，保留可读官方缓存；未关闭TLS验证。 |
-| WHISPERS | 2014 | hyperspectral、crop residue、fossil bone、mineral mapping、mine flooding、CO2 NLTE；PDF第47–48页六个条目全部追踪；其中四个新候选全闭环，X射线排除及错配大气不确定性引用前批决定。累计第45–48页十二条10入/1排/1待；其余页未全量 | 6 / 4 / 4 | 两页六条追踪，新四篇闭环、复用旧排1/待1；非年度全量 | 94页其余页与出版社年度目录/DOI仍待全量核对，官方节目题名/作者可能不同于正式稿。；不确定性原摘要仍待访问；不得以二手正确摘要提升核验。；三篇四页原稿/原图、各论文代码/数据及期刊扩展差异待核验。 |
-| WHISPERS | 2014 | hyperspectral、ultralight、whiskbroom、linear variable filter、FORMOSAT-2、potato；官方PDF第49–50页全部六条闭环5入1排；累计45–50页十八条15入2排1待。非94页全量或出版社年度目录完成。 | 6 / 6 / 6 | 两页全部六条5入1排；其余页未全量 | 94页其余页、正式出版社年度目录及所有非关键词标题仍待核对。；五篇原稿/原图、专用代码数据和相关期刊版本仍待查；EPFL429/WUR404/IMEC200非PDF均已记录。；先前不确定性错配摘要仍pending；节目单不可视为无误正式书目。 |
-| WHISPERS | 2014 | spectral graph、manifold、Grassmann、label propagation、detector fusion；官方PDF第51–52页六条全部入库；累计45–52页24条21入2排1待，另CRNN单篇。不等于94页全量或出版社年度完成。 | 6 / 6 / 6 | 两页六条摘要闭环；年度其余范围仍待 | 94页其余页及出版社正式年度目录未逐篇全量核对。；五篇本版原稿/原图、专用代码数据和后续版本关系未知。；原日程此前错配不确定性摘要仍待；Grassmann数学推导未全文审阅。 |
-| WHISPERS | 2014 | kernel anomaly change、sub-pixel target tracks、point target segmentation、non-uniform partition；官方PDF第53页全部四条3入1待；累计45–53页28条24入2排2待，另CRNN。非94页或出版社年度全量。 | 4 / 4 / 4 | 一页四条3入1待；光谱关系/年度覆盖仍待 | 亚像元轨迹原稿未取得，高光谱关系及SPIE版本差异待查。；Kernel作者代码页缓存标2015；直接web超时、curl证书失败，代码下载和版本对应未确认。；三篇原图、实验原表、版本差异及94页其余范围未完成。 |
-| WHISPERS | 2014 | Titan VIMS、Mercury VNIR、icy Saturnian satellites、Cassini、MESSENGER；第54页三条全部摘要入库；累计45–54页31条27入2排2待，另CRNN单篇。非94页或出版社年度全量。 | 3 / 3 / 3 | 一页三条摘要闭环；原稿/年度仍待 | 三篇会议原稿、原图、数据版本及代码未知；不拿其他年度任务论文补本稿未知参数。；冰质卫星作者拼写正字待原首页；机构缓存对应但直接页面Cache miss。；94页其余页及正式出版社年度目录未全量核对。 |
-| WHISPERS | 2014 | 全部目录条目，无关键词排除；PDF共9页，目录第3–9页全部174条，起始页1–693；题名关联28条，另仅已追踪决定4条，余142条待筛选。 | 174 / 0 / 0 | 正式目录全量清单已取；逐篇年度筛选未完成 | 年度目录条目仍须逐篇原摘要/全文筛选和原图追踪；目录全量不作年度检索完成声明。；规范题名关联仅用于续接，题名/作者拼写差异、同标题不同版本和DOI仍须单独核验。；节目单项目与正式论文集集合是否一致仍需逐项匹配，不能互相冒充。 |
-| WHISPERS | 2014 | VIR Vesta、hydrous minerals、nonlinear vegetated unmixing；第55页三条全部摘要入库；累计45–55页34条30入2排2待，另CRNN。正式目录174条尚未逐篇审完。 | 3 / 3 / 3 | 一页三条摘要闭环；原稿/版本待核 | 三篇原稿/原图、矿物真值/观测编号及代码数据未知。；同年JSTARS与会议版及Mars2015/2016稿关系待核；不混用结果。；作者PDF超时，GitHub猜测同路径404非PDF，CiteSeer镜像失败；其余来源继续推进。 |
-| WHISPERS | 2014 | rare endmember NMF、joint sparsity、robust MUSIC、number of subspaces；第56页四条全部入库；累计45–56页38条34入2排2待，另CRNN。正式目录174条尚未逐篇审完。 | 4 / 4 / 4 | 四条闭环，1作者稿全文/3摘要；年度仍待 | 其余三篇原稿/原图及代码数据未知；2015/2016相关期刊扩展声明待查。；DLR全文仅真实定性实验；论文m/n符号倒置与Fig.2图注不一致已保留，不虚构真值/误差图。；正式年度未全部筛选；节目单与论文集作者/版本差异需逐篇核。 |
-| WHISPERS | 2014 | crop vitality APEX、rice red-edge biomass、tree species LiDAR；第57页三条全部入库；累计45–57页41条37入2排2待，另CRNN。174条正式目录年度未审完。 | 3 / 3 / 3 | 三条闭环，2作者稿全文/1摘要；年度仍待 | 水稻本版原稿/原图、数据划分和误差数值待查；KUPS直接open失败但书目缓存可核。；APEX产品定义/指标互相关限制解释，树种随机像元验证不代表独立树冠推广。；专用代码数据和相关期刊扩展声明、正式年度其余条目待核。 |
-| WHISPERS | 2014 | tea plant varieties、robust vegetation indices multi-correlation、geometric matched filter；物理第58页三条；累计45–58页44条40入2排2待，另CRNN。174条正式目录年度未审完。 | 3 / 3 / 3 | 三条原始摘要闭环；MCMS官方摘要错配已纠正，原PDF/图待访问 | 三条会议原稿和原图待取得；MCMS Fig.1作者上传发现但RG403，KUPS无全文。；MCMS留出单位、HyperCor当前代码许可；茶树2014/2020及GMF2014/2015正式扩展和实验差异待核。；年度其余条目及其他年份尚未系统完成。 |
-| WHISPERS | 2014 | barycentric coordinate maximum distance、multi-agent ant colony endmember extraction、improved weight-calculation non-local sparse unmixing；第59页三条全部；累计45–59页47条43入2排2待，另CRNN。年度174条目录未审完。 | 3 / 3 / 3 | 三条完整摘要闭环；IW-NLSU同族期刊关联，会议原稿/图待 | 三篇会议PDF/原图、代码数据与arXiv版本仍待访问或发现。；BC-MDM实际场景/计时；MAS主机和通信设置；IW-NLSU会议/期刊正式扩展声明与实验差异待查。；其他年度条目与年份仍待系统检索。 |
-| WHISPERS | 2014 | structured sparse Bayesian compressive sensing、WM sparse unmixing、endmember constrained semi-supervised、nonlinear vegetation benchmark；物理第60页四条全部；累计45–60页51条47入2排2待，另CRNN。年度174条未审完。 | 4 / 4 / 4 | 四条闭环：1作者稿全文/3完整摘要；3个暂定方法标签，正式版/原图仍待 | 三篇会议PDF/原图、植被六页稿与正式四页稿及图差异待核。；果园双/三端元ZIP头可访问，森林ZIP SSL异常；门户/2014布局、数据数组和版本仍需核。；SSBUCS采样/迭代，WM参数和半监督软约束实验，专用代码数据/arXiv待核。 |
-| WHISPERS | 2014 | recursive orthogonal vector projection、multilayer structured NMF、Ritz endmember number、binary partition tree local unmixing；物理61页四题名；BPT摘要续62页但不把后续页新题名视为已筛。累计45–61页55条51入2排2待，另CRNN。 | 4 / 4 / 4 | 四条闭环：2公开稿全文/2完整摘要；NMF同方法族1关联、BPT原图1；年度未完成 | ROVP及Ritz正式原PDF/原图与实验待核；机构403、出版页面202空白。；NMF会议四页稿缺完整层数/初始化/统计，期刊扩展声明及版本实验差异待核。；BPT原稿Fig.5 c=100正文对c=200图注冲突；Cuprite子集尺寸/波段未知，未移用NMF参数。；两公开稿与出版社最终版逐字差异、代码/数据缺口待核。 |
-| WHISPERS | 2014 | variational Bayes joint sparse abundance、intrinsic dimensionality residual change point、ant colony band selection；物理第62页三新题名全部；累计45–62页58条54入2排2待，另CRNN。年度174条未审完。 | 3 / 3 / 3 | 三条闭环：1作者稿全文/2完整摘要；维数评估方法标签1，原图缺口逐篇 | ID评估及ACO-BS两原PDF/原图/实验未知；出版页202空白。；近题名GRSL2014 DOI10.1109/lgrs.2014.2317352三作者与会议四作者，关系/方法内容待另核。；VB已知端元、同质窗口及真实无丰度真值边界；没有框架图，Algorithm1为伪代码；正式差异/代码/数据/arXiv待核。 |
-| WHISPERS | 2014 | firefly band selection、BFODPSO SVM feature selection、unsupervised deep feature extraction、wrapper intermediate spectral importance；物理63页四题名全部，wrapper跨64摘要已读但64新题名未计；累计45–63页62条58入2排2待，另CRNN。 | 4 / 4 / 4 | 四条完整摘要闭环；两个暂定方法标签；会议原稿/原图与近题名关系待核 | 四篇原会议PDF、框架/方法图及具体实验/专用代码数据未核；失败类型和入口已存。；Firefly两稿作者不同；FODSPO原题名对BFODPSO摘要保留，选择对象待核。；无监督特征不当无标签分类；2016 TGRS/arXiv1511.08131关系和会议Gustavo/后期Gustau拼写待核。；Wrapper与IWCIM2014 DOI10.1109/iwcim.2014.7008806关系/内容差异待另查。 |
-| WHISPERS | 2014 | EGO parametric reduction、ARCHER spatial-spectral features pansharpening、SCOPE GPP fluorescence sensitivity；物理64页3新题名全部，SCOPE摘要续65页；65新题名尚未计。累计45–64页65条61入2排2待，另CRNN。 | 3 / 3 / 3 | 三个会议原摘要闭环；年度目录仍未审完 | 三篇会议原PDF/原图和具体实验/代码数据待核。；EGO机构书目无附件；ARCHER相关学位全文未作会议版本证据。；SCOPE2014原模型2009单列基础工作，摘要跨页；五页会议不误记四页。 |
-| Biogeosciences | 2009 | SCOPE soil canopy radiance photosynthesis fluorescence energy balance；引用追溯单篇原方法，未扫描2009年度目录；原文21页仅读摘要及第3页。 | 1 / 1 / 1 | 原模型摘要/局部方法与图1已核，年度未检索 | 剩余正文/定量实验、原版代码和数据待核；Biogeosciences年度全量待检索。 |
-| WHISPERS | 2014 | vegetation oil-gas microseepage CASI、APEX ecosystem services mapping、BREFCOR BRDF HYSPEX CASI APEX；物理65页三题名全审，前页SCOPE跨页摘要已处理不重复；累计45–65页68条64入2排2待，另CRNN。 | 3 / 3 / 3 | 两原摘要及一完整原稿文字闭环；四个暂定分类标签，年度仍未审完 | 油气/ES会议原稿和原图、具体实验/资源待核；油气姓/名字段归一待原作者核验。；BREFCOR图1–6文字均为结果，原图/保存PDF受限；原版代码数据/arXiv未核。；ES海报、2015 IGARSS及BREFCOR原方法TGRS关系需分别核正文，不能移用实验/原图或标正式扩展。 |
-| WHISPERS | 2014 | GFLEX geostationary fluorescence multispectral、Fabry Perot fluorescence microscopy、USGS PRISM ENVI IDL spectral material analysis；物理66页3题名全部，累计45–66页71条67入2排2待，另CRNN；下一页67新题名未审。 | 3 / 3 / 3 | 三完整摘要闭环、一个方法标签；一旧条目姓名修正，年度仍未审完 | 三会议原稿、框架/方法图及实验细节/专用资源/arXiv未核。；GFLEX HAL2016字段和作者菜单顺序有冲突；显微作者顺序/题名拼写及相关AO/OE正式关系待核。；PRISM2011软件为关联入口，会议版本/手册关系与具体实验待全文。 |
-| WHISPERS | 2014 | WorldView-3 AVIRIS information content、camera sensitivity NEI hyperspectral selection、HyPlant airborne O2-A fluorescence；物理67页三新条目全部，累计45–67页74条70入2排2待，另CRNN。年度目录和其他页未审完。 | 3 / 3 / 3 | 三完整摘要闭环，MS/基础/HSI分别标关系；年度仍未审完 | 三会议原PDF/原图、代码数据及arXiv待核；NEI公式缺失，不复算表值。；WV3模拟响应/噪声和分类协议、荧光大气补偿模型/误差及相关期刊版本差异待原稿。；检索截止保持2026-10-08，核验日期2026-10-09；不纳入截止后新发表版本。 |
-| WHISPERS | 2014 | O2-B O2-A AirFLEX atmospheric correction、FLEX Sentinel-3 fluorescence SFM、sun-induced chlorophyll fluorescence different scales；物理68页三新条目全部；累计45–68页77条73入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整摘要闭环，六通道MS与HSI区分；年度仍未审完 | 原会议PDF/方法图、专用代码数据、arXiv及完整实验/性能待核；Twente全文需登录，保留限制。；AirFLEX公式图件缺失未标全文；2015 TGRS/IGARSS相关稿未核明确扩展，不混用。；正式题名O&lt;inf&gt;实体显示清理；作者用出版社登记与机构核验，程序OCR不能直接当权威作者名单。；截止2026-10-08，实际核验2026-10-09。；正式目录174条本批重放：74已关联、4另有决定、96未审；sources/whispers2014-page68-toc-replay.json。规范题名关联不等于完整作者/DOI/原文逐项已核验。 |
-| WHISPERS | 2014 | A-SCOPE Saltelli global sensitivity、HSI learned multiscale dictionaries quadtree、RDWT multiview active learning；物理69页三新条目全部；累计45–69页80条76入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整原摘要闭环，版本冲突和原图边界保留；年度未审完 | 三会议原PDF/图号页码、代码数据及arXiv待核；摘要不给的性能/参数不补写。；A-SCOPE RAQRS错配与2015 RSE版本关系待核；小波2016 JSTARS与2014同族但图件、方法维度和四数据集不混用。；正式目录174条本批重放77关联、4决定、93未审；sources/whispers2014-page69-toc-replay.json。；截止2026-10-08，实际核验2026-10-09。 |
-| WHISPERS | 2014 | LMNN active metric learning k-NN、stacked autoencoder hyperspectral Pavia、alpha-tree constrained connectivity metric learning；物理70页三条全部；累计45–70页83条79入2排2待，另CRNN。正式目录和其余年度仍未审完。 | 3 / 3 / 3 | 三完整摘要闭环，作者冲突及选读边界保留；年度未审完 | 原PDF/公式图件、代码数据及arXiv待核。两个作者原稿选读不能升全文已读。；第一篇2016 TGRS正式/在线年和扩展差异待核；SAE三作者采用完整名单，机构两作者不替代。；正式目录174条本批重放80关联、4决定、90未审；sources/whispers2014-page70-toc-replay.json。； cutoff2026-10-08，实际核验2026-10-09。 |
-| WHISPERS | 2014 | hyperspectral PAN parallel level lines ADMM、J-SparseFI-HM automated multispectral SRF、SIM-GA SWIR VNIR hypersharpening、local spectral unmixing superresolution；物理71页四题名全部；第四原摘要跨下一页，用作者原稿补核但不宣称72页审完。累计45–71页87条83入2排2待，另CRNN。正式目录/全年仍未审完。 | 4 / 4 / 4 | 四完整摘要闭环及一预印本原算法图；年度未审完 | 正式会议原PDF/图和原作者稿差异、代码数据仍待核；TVLCSP两公开稿标题/实现细节分别保留。；J-SparseFI-HM前期版本、hypersharpening2015/2018扩展差异、局部解混端元数矛盾与ASTER无HR真值评价待核。；正式目录174条重放84关联、4决定、86未审；sources/whispers2014-page71-toc-replay.json。；截止2026-10-08，实际核验2026-10-09。 |
-| WHISPERS | 2014 | TRDF subpixel forward modeling、industrial flare hyperspectral infrared、MODTRAN PLUME TRACKER multispectral；物理72页三题名全部；物理73页仅借延续摘要，其余尚待审。累计45–72页90题名86入2排2待，另CRNN。 | 3 / 4 / 4 | 3新论文原摘要闭环，1跨页重复；年度未完成 | 三正式四页论文及专用代码/数据/arXiv未知；TRDF图明确为会议演示，不替代正式论文图件。；Crossref题名Funtions与日程Riesenberg拼写冲突保留；展示采用官方题名/正式作者登记。；正式目录174条自动题名匹配86关联/4决定/84未审；TRDF原目录Funtions拼写冲突人工核作者/DOI关联后87/4/83，审计快照保留自动/人工差异；其他场所/年份仍待补。；截止2026-10-08，实际核验2026-10-09。 |
-| WHISPERS | 2014 | GLUP blind self-dictionary group Lasso、MODTRAN6 line-by-line API、diffuse interstellar bands optical spectroscopy scope；物理73页三题名全部；累计45–73页93题名88入3排2待，另CRNN。延续摘要不计新题名。 | 3 / 4 / 4 | 本页2入1排1跨页重复；非年度完成 | GLUP未完整阅读/复现，合成评价端元真值数量参与后处理；MODTRAN6四页原稿/原图受限。；SPIE同名稿具体关系/差异待核；不把其他年份报告当本稿原图。；目录人工冲突关联和最新重放见sources/whispers2014-page73-toc-replay.json；其他场所年份仍按覆盖矩阵待补。；截止2026-10-08，实际核验2026-10-09。 |
 | TIP | 2014 | Blind and Fully Constrained Unmixing、GLUP NGLUP heteroscedastic、arXiv1403.0289；仅同方法族单篇追踪，非TIP年度全量或期次扫描。 | 1 / 1 / 1 | 单篇方法族追踪闭环 | TIP正式出版社PDF与作者稿版本差异、完整实验/图表/推导待核。；仅arXiv v1元数据核验，未完整阅读该14页预印本；不复用作者九页图件为v1。；TIP2014其他期次与关键词年度矩阵仍待系统检索。 |
-| WHISPERS | 2014 | non-Euclidean distance geometry DMaxD、Hapke manifold clustering、consensus unmixing、eigendecompositions sum-to-one；物理74页全部4题名；75页仅借延续摘要，其余未审。本批后累计45–74页97题名92入3排2待，另CRNN。 | 4 / 4 / 4 | 四完整摘要闭环，年度目录仍未审完 | 后三篇正式全文/图件未取得，代码/数据/arXiv未知；DMaxD数学/完整实验和相关JSTARS2015版本差异待核。；流形稿仅Hapke模拟，不移用后续真实实验；特征分解稿输出谱分量总数而非完整丰度或材料数。；正式目录174条重放见sources/whispers2014-page74-toc-replay.json，沿用TRDF题名冲突人工证据关联。；截止2026-10-08，实际核验2026-10-09。 |
-| WHISPERS | 2014 | clay content atmospheric spatial resolution、VIS-NIR SMOTE PLS calibration；物理75页两新题名全部，延续摘要不计新题名；累计45–75页99题名94入3排2待，另CRNN。 | 2 / 3 / 3 | 两题名摘要闭环、1跨页重复；年度未完成 | 黏粒会议Fig1已定位但原PDF/PNG404；SMOTE部分选读非完整全文，代码/数据未核。；SMOTE点光谱单列foundation；F谱和SOC被训练合成及评价重用，不能把数字作独立测试泛化。；目录174条重放及人工TRDF拼写关联见sources/whispers2014-page75-toc-replay.json；其他场所/年份继续按矩阵推进。；截止2026-10-08，实际核验2026-10-09。 |
 | RSE | 2015 | clay content sensitivity、AISA-DUAL PLSR spatial resolution；同族单篇追踪，非RSE2015年度目录或摘要全量。 | 1 / 1 / 1 | 单篇摘要核验闭环 | 正式15页稿/原图/代码数据及明确扩展差异待核；不移用会议图和参数。；RSE2015其他期次、任务词与全量年度检索未完成。 |
-| WHISPERS | 2014 | surface emissivity Hyper-Cam、emissive thermal plant species、airborne thermal infrared gases；物理76页全部3题名；累计45–76页102题名97入3排2待，另CRNN。 | 3 / 3 / 3 | 三完整原摘要闭环，年度目录未完成 | 第一PDF仅结果Fig1/2无框架；两其他会议原稿/方法图与代码数据/arXiv未知。；植物会议七作者和未知设置不借2016五作者期刊；gas两SPIE作者异，原摘要/版差未核。；目录174条重放见sources/whispers2014-page76-toc-replay.json，TRDF人工冲突关联保留。；截至2026-10-08，实际核验2026-10-09。 |
-| IJAEOG | 2016 | emissive thermal infrared plant species；单篇同任务家族追踪；非2016年度目录或所有关键词检索。 | 1 / 1 / 1 | 单篇原摘要及部分方法核验闭环 | 未完整读全部公式/结果表/引用，正式扩展关系及会议差异待核；代码数据/arXiv未知。；本版5原图均结果图，无独立框架/方法图；其余场所/年份待系统检索。 |
-| WHISPERS | 2014 | 77 Abstract、Session FRI-P-A、Recent Advances in Data Compression Vitulli；只尝试物理77页；未取得足够原页证据，未知该页题名数。 | 0 / 0 / 0 | 77页未核，不能认定无论文 | 物理77页原内容与是否有论文/专题讲座需重新取官方PDF/原页；不纳入已审页窗。 |
-| WHISPERS | 2014 | noise reduction spectral unmixing curvelet、correlated noise residual estimation、NLPCA ANN CASI noise filtering；物理78页全部3题名；累计45–76及78页105题名100入3排2待，另CRNN；77页未核，非连续45–78。 | 3 / 3 / 3 | 78页三完整摘要闭环，77及年度目录仍有缺口 | 三会议全文/方法图、专用代码数据/arXiv未知；NLPCA CASI/SWIR仪器一致性待原稿。；噪声估计修改公式/输出未知，不用2017期刊机制填会议；去噪解混重建误差非真实丰度误差。；目录174条重放见sources/whispers2014-page78-toc-replay.json，沿用TRDF人工证据关联。；截至2026-10-08，实际核验2026-10-09；77页未核。 |
 | TGRS | 2015 | band-specific shearlet hyperspectral noise reduction；同策略家族单篇；非TGRS2015年度目录或全部摘要检索。 | 1 / 1 / 1 | 单篇原摘要/部分方法与算法原图闭环 | 未完整读所有公式/结果表/引用，直接扩展声明及作者稿/正式13页差异待核；代码数据/arXiv未知。；原图只本期刊作者稿，不反填会议curvelet软阈值；其余年份/场所继续系统检索。 |
-| WHISPERS | 2014 | collaborative k-nearest CRNN、SVM MLP marker minimum spanning forest、semisupervised transductive SVM spatial similarity；物理79页全部3題名；80页其他论文未审。累计45–76及78–79页108题名103入3排2待（CRNN现含在窗口），77页未核，非连续45–79完成。 | 3 / 3 / 3 | 79页3題名摘要闭环（2新1重），77及年度目录仍有缺口 | 两新会议原PDF/方法图与专用代码数据/arXiv未知；TSVM只作者网页选读，末句补齐不等于80页审完。；TSVM原表网页类名/数量错排风险、距离坐标定义与零距离/C/阈值待原PDF；不把一般LIBSVM当论文代码。；MSF不是随机森林；MPL按multi-layer perceptron记MLP并保留原摘要拼写。；NLPCA只更新作者全名，CASI/SWIR仍待核；目录重放见sources/whispers2014-page79-toc-replay.json。；截至2026-10-08，实际核验2026-10-09；77页未核。 |
-| WHISPERS | 2014 | support tensor local pixel neighborhood、band selection fusion hyperspectral classification、edge constrained MRF、energy tree species support vector machines；物理80页全部4题名。累计45–76及78–80页112题名107入3排2待；77未核，非连续45–80完成。 | 4 / 4 / 4 | 80页4题名摘要闭环；77页及年度目录仍有缺口 | 四篇原PDF/方法图与专用代码数据/arXiv未知；波段稿仅托管原文缓存部分选读。；波段稿缓存Indian Pines波段数与波长单位疑误，待原PDF，不默改或当已核数据。；STM数组三维不等同物理三维；同光谱邻带融合不等同多传感器融合；克隆不等同分类学亚种。；目录174条关联107、已有决定5、未审62；TRDF保留题名拼写冲突人工关联。自动106/5/63，详见page80-toc-replay.json。；检索截止2026-10-08，实际核验2026-10-09；续81页及77缺口，年度未完成。 |
-| WHISPERS | 2014 | spectral spatial filtering spectral angle、game theory band grouping classifier ensemble、nonlinear parsimonious feature selection GMM、spectrometer driven spectral partitioning；物理81页全部4题名，SD-SP用作者原稿补摘要；不将82页其他论文视为已审。累计45–76及78–81页116题名111入3排2待；77页未核。Crossref每查询3条只用于身份匹配，不视年度全量。 | 4 / 4 / 4 | 81页4题名摘要闭环；77及年度目录仍未完成 | SSF/博弈/NPFS原PDF与方法图受限；代码/arXiv未知，Purdue仅原稿数据入口，当前访问及版本待核。；博弈摘要称三种却只枚举两项；不补造第三项。NPFS不套2015期刊特征数/实验。；SD-SP原220与5×42重采样映射未解释；Fig3只是方法示例，无独立会议框架图；期刊三作者/2015在线2016卷期及DAIS实验分开。；目录174条关联111/已有决定5/未审58；自动110/5/59，TRDF人工拼写关联见page81-toc-replay.json。；截至2026-10-08，实际核验2026-10-09。续82页并补77、目录遗漏与版本差异。 |
-| WHISPERS | 2014 | slow feature hyperspectral change、clustering partial least squares soil predictions、simultaneous least squares satellite registration、official program title abstract author mismatch；82页两直接新题名＋一错配摘要恢复题名；SD-SP页首属81页续接，既存不重复计。累计45–76及78–82页118直接题名+恢复配准题名1=119项，113入3排3待。77未核，83页未审，不冒充连续窗口完成。 | 3 / 3 / 3 | 82页两题名摘要闭环并恢复错配身份；配准HSI关系待核 | 两新原PDF/图、专用代码数据/arXiv未取得；SFA不使用2015 SFA/RX期刊Hyperion及2019深度代码。；PLS正文按212土壤样本真实原摘要收录；留一CV并非外部测试，嵌套选参/聚类隔离、原表性能对应待核。；恢复配准论文只确认多光谱Landsat TM，明确HSI联系仍待；其机构PDFrestricted，不把错配PLS摘要当HSI证据。；目录174条关联113/决定6/未审55；自动112/6/56，TRDF人工关联见page82-toc-replay.json。；实际核验2026-10-09，截至2026-10-08；77/83及年度遗漏仍未完成。 |
-| WHISPERS | 2014 | local density background estimation LDAS、linear spectral mixing Kalman subpixel tracking、eFUMI multiple instance target characterization、hyperspectral stereo disparity change；物理83页全部4題名。累计45–76及78–83页122直接題名+恢复配准題名1=123项，117入3排3待；77页未核，84页未审。每题Crossref3条仅身份匹配，不作为年度全扫。 | 4 / 4 / 4 | 83页4题名摘要闭环；77及年度遗漏待补 | LDBE/Kalman/eFUMI会议原PDF/原图与专用数据/arXiv未知。KalmanO. Duran不凭机构同姓猜全名。；eFUMI官方代码对应2015期刊/2019发布，2014精确代码/直接扩展差异待核；2016实例影响/心搏论文不是会议预印本。；双目稿§2–5局部读，Fig1是系统照片；固定机位/短时差与原谱分辨率/通道间隔区别保留，正式版差异与泛化待核。；目录174条关联117/决定6/未审51；自动116/6/52，TRDF人工拼写关联见page83-toc-replay.json。；实际核验2026-10-09，截至2026-10-08；三维214成员不改，续84页、补77及年度目录。 |
-| WHISPERS | 2014 | integer wavelet spectral decorrelation lossless compression、binary partition tree gas plume tracking、sparse matched subspace detector GLRT；物理84页全部3题名。累计45–76及78–84页125直接题名+恢复配准1=126项，120入3排3待；77未核。目录174关联120/决定6/未审48，自动119/6/49，含TRDF人工关联。题名查询前三条不代表年度全量。 | 3 / 3 / 3 | 84页3题名闭环；77及年度目录遗漏待补 | 整数CDF9/7具体可逆实现、AVIRIS场景、编码器/硬件与原PDF/图待核；2015 RAST相关题名不能代替会议结果。；BPT一段无真值视频，仅视觉比较；背景静止与已知释放时刻假设，不称全自动或有定量优势。作者HAL v1/正式IEEE差异、专用代码/数据/arXiv未知。；SMSD仅完整摘要，稀疏求解器/GLRT公式/数据与图未知，不套其他稀疏检测论文。；77未核；85页及48条目录遗漏继续，年度和全领域均未完成。 |
-| WHISPERS | 2014 | MERIS HICO NIR-red chlorophyll、Starnberger See inverse radiative transfer bathymetry、HICO level-2 atmospheric correction water quality；物理85页全部3题名；本session续86页2篇尚未审。累计45–76及78–85页128直接题名+恢复1=129项，123入3排3待，77未核。TOC174关联123/决定6/未审45；自动122/6/46，TRDF人工关联保留。 | 3 / 3 / 3 | 85页3题名闭环；本session续86页及年度遗漏未审 | NIR-red MERIS多光谱/HICO高光谱分别记录；5.5%为实测总范围归一化且精确统计量未知，不能叫MAPE或HICO精度。；水深37cm是实测RMSE，10–25/35–65cm是潜在去偏精度；4148总匹配与0–8m3947、62浅区标定分开。单一底反射率、图2/3文内错引及正式版差异待核。；HICO工具箱R²0.95不是95%准确率；场景、匹配数、大气模型、专用软件/数据未知，2015再标定稿不补写2014实现。；NIR-red/HICO会议原PDF/图、精确代码数据/arXiv未知；WASI历史手册/后续软件下载线索不当2014复现代码。；86页前两篇属本session后续，继续该页；77及年度45未审条目待补。 |
-| WHISPERS | 2014 | Helgoland EnMAP WASI-2D benthic bathymetry、Italy lake optical properties future satellite sensors、joint sparse collaborative representation target detection；物理86页全部3题名，前2题是水体session续篇，第3题开启稀疏session，后续87未审。累计45–76及78–86页131直接题名+恢复1=132，126入3排3待；77未核。目录174关联126/决定6/未审42，自动125/6/43，TRDF人工关联保留。 | 3 / 3 / 3 | 86页3题名完整摘要闭环；77/87及年度遗漏未审 | 三篇会议原PDF/原图、专用代码/数据/arXiv未知；Helgoland是六页不套四页，模拟EnMAP而非在轨数据，历史Dörnhöfer署名不改。；意大利摘要将MERIS纳入hyperspectral表述，库内注明其多光谱属性；未来任务仅2014语境，算法/数据细节未知。CNR实时分页漂移不能当原文。；检测标题joint不据此加邻域共享支持；PR2015三作者与会议两作者分开，引用19身份和直接扩展差异待核；不搬双窗/正则及期刊实验。；续87页、补77及42条年度目录遗漏；全领域矩阵仍未完成。 |
-| WHISPERS | 2014 | l0 sparse PCA anomaly important bands、MMV collaborative sparse unmixing chain CLSUnSAL、hierarchical sparse dictionary classification；物理87页全部3题名；日程Brook dust摘要续88页未计本批。累计45–76及78–87页134直接题名+恢复1=135，129入3排3待；77未核。TOC174关联129/决定6/未审39，自动128/6/40，TRDF人工关联保留。 | 3 / 3 / 3 | 87页3题名闭环；77/88及年度遗漏待补 | PCA/层级分类会议原PDF/原图与专用资源未知。PCA Pam/Pang拼写冲突以正式Pang核定；作者上传SPCA数据线索未取得，不能当已核资源。；解混链真值谱库辅助选端元、分块内存限制及不施加ASC明确记录；SRE光谱重建不当丰度误差，l0凸代理不称任意数据等价。；CLSUnSAL原算法引用10与本文三阶段配置分别关联；SUnSAL/C-SUnSAL及引用1102.3288前作不是本文代码/预印本，精确代码/数据未知。；层级稀疏码实际层级构造未知，不套空间树/深度网络；合作者博士稿仅题名引用不是会议正文。；日程dust题名的完整摘要在物理88页，续该页；77及39条年度目录遗漏待查。 |
-| WHISPERS | 2014 | settle dust green canopy sparse unmixing L1/2 NMF OMP、morphological covariance principal component analysis、Dirichlet robust regularized covariance anomaly detection、pure pixel SPA preconditioning；物理88页全部4题名；累计45–76及78–88页138直接题名+恢复1=139，133入3排3待；77未核。TOC174关联133/决定6/未审35，自动132/6/36，TRDF人工关联保留。 | 4 / 4 / 4 | 88页4题名闭环；77/89及年度遗漏待补 | 三篇四页会议原PDF/图未取得；不能用期刊/长稿图冒充会议图。；dust仅会议Anna Brook，2016期刊两作者七算法；OMP非线性混合方程/尘物理单位、真值与精确代码数据待核。；MorphPCA会议正文1610行与扩展610冲突，不擅自纠正；独立假设、折空间分离与类别指标定义未知；原Fig2是形态表示示例，不是流程图。；协方差会议末作者倒置以同作者期刊正式Pang消歧；RX/实验因素仅期刊长稿摘要，不写会议实验。；SPA唯一arXiv v1的25页长稿/2015期刊与四页会议差异待核；作者代码对应2015稿，Hubble/Vavasis前作不混。；继续物理89页并补77及目录35遗漏；全年度原目录/引文仍未完成。 |
-| WHISPERS | 2014 | supervised segmentation hidden fields SegSALSA、mean map kernel orthonormalized PLS patch reduction、Mie Lorentz T matrix genetic hyperspectral refractive index、floodplain CIR LiDAR scope CASI reference；物理89页4题名：3入1范围待核，第四摘要原跨90但未审90其他题名；累计45–76及78–89页142直接题名+恢复1=143，136入3排4待；77未核。TOC174关联136/决定7/未审31，自动135/7/32，TRDF人工关联保留。 | 4 / 4 / 4 | 89页4题名已审3入1待；77/90及年度遗漏待补 | 三会议原PDF/图、确切代码数据未取得；两次初查询429转原DOI，不能把IEEE202/机器人页当可读原文。；SegSALSA原稿缓存片段不当全文读；2015 STR明确后续结构张量改进，arXiv1504.07028不是2014稿。；均值映射核OPLS两个基准未命名，不能从同作者PCA/域适应/对齐工作借实验；WUR书目日与会期分别保留。；海洋颗粒J/I Piera与E. Zafra名冲突保留核定边界，2016两作者原稿只读前作关系，不当会议实验。；洪泛区四波段CIR无直接HSI；参考2 CASI光谱配置与方法关系待核，不能只以会议名纳入或按二维标准排除。；继续90、补77和目录31遗漏；年度全域/引文检索未完成。 |
-| WHISPERS | 2014 | nonlinear plume gas radiative transfer CONLIE、e-FAST water vapour visibility HyMap sensitivity、hyperspectral ultrasound skin thickness validation；物理90页3新题名均入；皮肤摘要读91续文但其他91题名未审。累计45–76及78–90页145直接题名+恢复1=146，139入3排4待；77未核。TOC174关联139/决定7/未审28，自动138/7/29，TRDF人工关联保留。 | 3 / 3 / 3 | 90页3新题名已审；77/91及年度遗漏待补 | 羽流作者全文文字完整已读，排版PDF与正式稿差异未核；Fig1作者图下载403/网页404，页码未知，尚无可展示原图。；羽流合成垂直先验含真值结构，实测用估计释放温度约束且无独立浓度精度表，不将已核单例数字概括为无先验普遍提升。；e-FAST会议全文受限，HyMap场地、采样与指数阶数未知；大于0.8不能当一阶可加贡献；Twente后续博士书目不解决另一论文摘要错配。；皮肤48条光谱不是48患者；2015期刊六患者只期刊事实，直接会议扩展声明和两稿全文/图差异待核。；三篇代码数据及本稿arXiv未找到，原图续接逐篇登记；继续91、补77和目录28遗漏，年度全域/引文闭环未完成。 |
-| WHISPERS | 2014 | extended linear mixing spectral variability bundles CLS、cone non-negativity singular vectors endmember extraction、ANN nonlinearity order polytope decomposition unmixing；91页3新题名均入，ANN摘要读92续文；累计45–76及78–91页148直接题名+恢复1=149，142入3排4待；77未核。TOC174关联142/决定7/未审25，自动141/7/26，TRDF人工消歧保留。 | 3 / 3 / 3 | 91页3新题名已审；77/92及年度遗漏待补 | ELMM日程多R. Marrero按作者原PDF/正式登记/TOC七作者核定；共同尺度假设、式7全约束L1常数与代码/稀疏解释待核。；ELMM四幅图为数据/结果无框架图；2016作者代码明确后作，不能当2014本稿代码。2015五作者/2016六作者算法版本差异和扩展关系未核。；锥端元会议原全文/图受限，原数学定义、参数、对比数字及代码数据/arXiv未知，不将伪秩等同组分数。；ANN–POD会议Fig1页2原图已存；合成训练可不依赖真实丰度真值，但仍需端元/阶数范围；Hapke模型失配表现差保留，10端元与5端元实验分开。；ANN2015期刊原首页明确enhanced version，只追踪同族；期刊全文差异、代码数据与本稿arXiv待核。；继续92、补77和目录25遗漏，已有4范围pending延续；年度全域/引用闭环未完成。 |
-| WHISPERS | 2014 | polynomial postnonlinear polytope decomposition、GRENDEL graph cuts piecewise convex unmixing、DART airborne at-sensor radiance imaging spectroscopy；物理92页3新题名全部审；页首ANN续摘要不计。累计45–76及78–92页151直接题名+恢复配准1=152，145入3排4待；77仍未核。TOC174关联145/决定7/未审22，自动144/7/23，TRDF人工消歧保留。 | 3 / 3 / 3 | 92页3新题名已审；77/93和年度遗漏待补 | POD原四页稿/图/代码/数据待核；ANN–POD是已收录下游组合方法，不倒填其阶数训练和实验。；GRENDEL作者稿五页与正式四页差异未核；NEON无端元真值，Pavia参考类别均值非实测纯端元。四图均数据/结果，无框架图。；DART机载稿全文/图受限；机构博士论文附录仅发现与局部索引核对，未阅读全文；RSE2015三作者与本五作者扩展关系待核。；继续93、补77及TOC22遗漏；现有4范围pending延续。年度全域与引用闭环仍未完成。 |
-| WHISPERS | 2014 | opaque broken clouds MCScene reflectance adjacency、FLEX Sentinel-3 configurable passive hyperspectral scene generator、Lagrangian hydrodynamic particle mass concentration hyperspectral simulator、MCScene CameoSim real scene comparison；物理93页4新题名全部审；累计45–76及78–93页155直接题名+恢复配准1=156，149入3排4待；77仍未核。TOC174关联149/决定7/未审18，自动148/7/19，TRDF人工消歧保留。 | 4 / 4 / 4 | 93页4新题名已审；77/94与年度遗漏待补 | 四篇正式原全文/图均受限；海洋作者上传正文文本已读但图片公式缺失，不标全文核验。Fig1已发现，原图403及页码待核。；碎云二次TLDR混入2018分区目标检测结果，未采用；MCScene覆盖UV–LWIR不代表本反演实验全光谱。；FLEX会议6作者/相关2018期刊7作者与正式年分开；扩展关系未核。仿真器对比不借后续CHIMES数据或误差。；本稿代码、实验数据和arXiv未找到已核链接；海洋首作者Eloy/Emerson冲突按原稿E.保留，待机构身份核验。；继续94、补77及目录18遗漏；4范围pending延续，年度全域/引用闭环未完成。 |
-| WHISPERS | 2014 | Joint denoising/unmixing、Adapted MGM、Forest manifold regression、SSA spectral denoising、3-D cube wavelets；TOC顺序1/5/23/101/107，物理77全部3题名；物理41和43各1篇定向，不计整页完成。 | 5 / 5 / 5 | 77页闭环及目录5缺口已审，94及13目录条目待核 | 物理94页超时/截图未成功，直接下载连接拒绝；仍未核，不据目录猜页内容。；目录174关联154/跟踪7/未审13；45–93页158直接题名+恢复配准1，另41/43定向2，共154入3排4待，非年度全量。；41/43仅各1篇定向筛选，其余摘要虽在缓存，未计已审；四范围pending延续。；除SSA作者稿，四篇全文与方法图待核；代码/数据/arXiv及相关期刊扩展身份持续追踪。 |
-| WHISPERS | 2014 | Adaptive LLE materials、Modularity Eigenmaps、DRR infrared sounding、Dione/Rhea terrain spectra、OMEGA 1 µm mineralogy；TOC37/75/167/143/170；物理41全部4与43全部3题名，前批2篇不重复。 | 5 / 5 / 5 | 41/43页闭环，目录8条及94待核 | 目录174关联159/跟踪7/未审8；41页四题名与43页三题名全部筛选，既有Uto/MGM不重复新增。；物理45–93页158直接题名+恢复配准1，另41/43全7，共159入3排4待；42/44/94及其他早页未系统核，非年度全量。；四新篇仅摘要；原全文/方法图、代码/数据与arXiv持续核验；Dione/Rhea输入暂基础关系。；DRR输入通道文字/维数及OMEGA目录页数/登记冲突保留；4范围pending延续。 |
-| WHISPERS | 2014 | ChemCam LIBS preprocessing denoising continuum band selection、CRISM alteration mineral reduction ratioing、meteorite mafic mineral neural network reflectance；TOC38/53/57；物理44全部3题名及原摘要，2入1待；42/94仍未核。 | 3 / 3 / 3 | 44页2入1待；目录5项及年度缺口待补 | 44页三题名已筛：2入1待；目录174关联161/跟踪8/未审5；累计161入3排5待，不作年度完成。；42/94及其他早页待系统核。原数据、代码、arXiv和相关CoTCAT版本身份待追踪。；ChemCam基础关系待作者原稿/综述核验；只引用或同会场不作为身份结论。；CRISM原稿探测器命名及图2观测号拼写保留；矿物定量MLP的实验与图示层数分开。 |
-| WHISPERS | 2014 | dictionary learning sparse representation 75%、kernelized sparse graph embedded dimensionality reduction、SPIM preliminary characterization、unmixing super-resolution target detection、vegetation spectral sampling wet dry tropics；目录顺序93/97/103/120/139，逐项5决定；物理42三题名全部筛；94未系统核。 | 5 / 5 / 5 | 目录最后5项4入1待；174项决定闭环，年度内容缺口保留 | 目录174项已有165入库关联、9跟踪决定（3排6待）、0未审；这是目录逐项决定闭环，不是年度全文/主题/引文完成。；42页全部3题名已筛；核化图论文原摘要错配，入库仅题名/待分类，正确原摘要与全文待核。；94及其他早页尚未系统核；植被采样直接HSI关系、其他5旧待核候选继续保留。；会议原图/代码/数据/arXiv、SPIM2013/2015与核化图2015扩展身份待核；不借异稿数据或图。 |
-| WHISPERS | 2013 | all proceedings titles、oil presence thickness steel coils、EMAP decision fusion classification、bilinear bilinear nonnegative unmixing；原目录PDF全部页解析161项；逐篇筛选顺序1–3，158项未审。 | 161 / 3 / 3 | 完整题名目录已取得；首3项2入1待，其余158未审 | 161项目录全部下载解析；仅首3项2入1待，其余158尚未逐篇审查；目录存在不等于年度内容完成。；EMAP四页原稿全文及Fig1已读；单场景、参数/测试划分细节和代码数据待核，不能继承二次引用的LiDAR输入。；双线性NMF仅题名待分类，会议原摘要/全文和2014期刊扩展身份待核；作者SSP仓库不是本稿已核代码。；油膜2013原稿受限，SFPT日期/版本身份待核；正式IEEE版及全年度摘要/引文/原图仍有缺口。 |
-| WHISPERS | 2014 | atmospheric condition uncertainty、statistical moments sub-pixel target tracks、floodplain CASI LiDAR reference、wet dry tropics vegetation；定向4候选；不构成年目录扫描；2014官方第94页仍未取得。 | 4 / 4 / 4 | 四个既有待核项补检，决定仍待核；无新增论文 | 2014待核6项仍未解决；本次只补检其中4项。；CASI名称不能代替实际波段配置；植被2014原稿与日期/版本身份未取得。；第94页及其他早页、全文、原图与引用关系待补。 |
-| WHISPERS | 2013 | spatial regularization semisupervised HERF、Sava two band reflectance chlorophyll、ICA FastICA Infomax JADE FS SVM；正式目录顺序4–6，3项逐审；累计6/161，155未审。定向搜索不是完整年度关键词扫描。 | 161 / 3 / 3 | 第4–6项3入；累计5入1待，155未审 | WHISPERS2013目录161累计顺序1–6已审：5入1待，余155未审；年度摘要、全文、其他词、引文仍未完成。；HERF仅题名待分类；作者slides/basic code线索受限，2015/2016后续稿扩展声明及2013原摘要/图仍待核。；Sava与ICA只核摘要；三篇会议原图、全文实验、专用代码/数据、arXiv及后续版本关系待核。不借2014 ICA、2016 FEB结果或原图。；2013官方37页日程工具缓存可读，直连三次TLS失败；未拿到实际原PDF，不宣布日程全部页已读或有论文摘要。 |
-| WHISPERS | 2013 | Low rank representation bilinear abundance estimation、Removal salt-and-pepper noise THEMIS radiance emissivity、Iterative estimation number autofluorescence components、exact titles + pdf code arxiv；正式目录顺序7–9，3项逐审；累计9/161，152未审。定向搜索未穷尽搜索分页，不作完整年度关键词扫描。 | 161 / 3 / 3 | 第7–9项3入；累计8入1待，152未审 | WHISPERS2013目录161累计顺序1–9已审：8入1待，余152未审；年度摘要、全文、其他词和引文仍未完成。；低秩解混仅读原作者2013演示的指定页，论文摘要/全文/原图仍待核；THEMIS作者稿已读，正式版差异待核；m-FLIM仅机构摘要，全文/原图待核。；三篇专用代码、原数据、arXiv及相关期刊扩展身份未核。不把作者演示或另篇后续稿实验当成已核论文结果。；HERF/NMF仅题名，Sava/ICA仅摘要；油膜2013/2014/页首2012身份、早期条目的原图及全文待核。 |
-| WHISPERS | 2013 | variance analysis differentiate similar classes hyperspectral、multiscale spectral-spatial Multilinear PCA contourlet、combined optical imagers unmixing fusion、exact titles + pdf code arxiv；正式目录顺序10–12，3项逐审；累计12/161，149未审。定向搜索未穷尽分页，不作年度关键词全量。 | 161 / 3 / 3 | 第10–12项3入；累计11入1待，149未审 | WHISPERS2013目录161累计顺序1–12已审：11入1待，余149未审；年度摘要、全文、其他词和引文仍未完成。；方差区分与MPCA/contourlet仅题名待分类；作者学位论文和IGARSS等相近稿没有直接版本身份声明，不借其摘要、实验或图片。；组合成像器四页作者全文与Fig.1已核，正式版差异、CASI原数据及本设计模拟专用代码待核；CNMF2016代码是基础算法而非复现证明。；既有油膜身份、NMF/HERF题名、低秩演示与m-FLIM摘要对应论文全文/原图、后续扩展声明和arXiv追踪仍待核。 |
-| WHISPERS | 2013 | exact titles + author pdf、edge-weighting graph commute time hyperspectral anomaly、pyroxene PCA optical mineral mixtures、regression framework background estimation code arxiv；完整161项目录第13–15项，3项逐审；累计15/161。定向搜索未穷尽结果分页，非年度关键词全量。 | 161 / 3 / 3 | 第13–15项2入1待；累计13入2待，146未审 | WHISPERS2013目录161累计顺序1–15已审：13入2待，余146未审；年度摘要、全文、其他词与引文仍未完成。；第14项辉石混合原始光学范围/摘要待核，二次摘要不当事实；第13项原PDF/方法图受限，只核作者摘要与部分缓存正文，公式OCR错误不抄。；第15项作者全文只有输入样例图无方法图；正式版差异、代码和数据直接地址待核，实际目标检测为未来工作。；此前方差/MPCA题名待分类、油膜身份、NMF/HERF、低秩演示/m-FLIM全文原图、CNMF设计模拟代码和CASI数据、扩展声明仍待核。 |
-| WHISPERS | 2013 | exact titles + authors pdf、spatial-spectral multiple kernel hyperspectral classification code arxiv、3D self-organizing map false color Gerbil、improving performance sparse unmixing code arxiv；完整目录第16–18项3项；累计18/161，143未审。定向引擎检索未穷尽分页，不称年度完整。 | 161 / 3 / 3 | 第16–18项3入；累计16入2待，143未审 | WHISPERS2013目录161累计顺序1–18已审：16入2待，余143未审；非年度全领域检索完成。；第16/18项仅题名待分类，原摘要、全文、原图与代码/数据仍待核；二次摘要不当原始证据，MKL的LSMSC混入/多作者错标不继承。；第17项作者全文/原Fig.2已核，SOM三维不是场景几何；Gerbil代码未锁定2013或运行，原数据入口、正式版差异与2016扩展具体身份/差异待核。；保留第14项辉石混合范围、边权异常原PDF/图、方差/MPCA分类、油膜、NMF/HERF、低秩/m-FLIM全文原图、CNMF模拟代码/CASI数据等此前缺口。 |
-| WHISPERS | 2013 | water reflectance spectra chlorophyll Qinghai Lake pdf code arxiv、data-noise tolerant multi-temporal hyperspectral classification Hemissi Farah、spatial filter framework target detection hyperspectral Zhang Du code arxiv、exact titles author institution sources；完整目录第19–21项3项；累计21/161，140未审。Crossref题名发现rows=5，不为完整检索；精确DOI核本项。引擎定向检索未穷尽分页。 | 161 / 3 / 3 | 第19–21项3入待分类；累计19入2待，140未审 | WHISPERS2013目录161累计顺序1–21已审：19入2待，余140未审；目录题名筛选不当年度摘要/全文或全领域完成。；第19–21项仅正式题名/书目待分类；青海湖光学谱研究暂标基础关系，具体高光谱分辨率/采样待原摘要。原稿、实验、原图与代码/数据/arXiv仍待核。；同作者2014正则化检测、2013 TGRS谱签名、2014 GR-RBM和不同湖泊相近题名未证明版本身份，不借方法、实验或图片；Bo Du同名作者需消歧。；此前辉石混合范围、边权异常原稿原图、各题名分类、油膜/NMF/HERF、演示/摘要全文、SOM/Gerbil源码版本/扩展、CNMF模拟代码和CASI数据仍待核。 |
-| WHISPERS | 2013 | multi-element scanning spectrometer geometric distortion FISS pdf code arxiv、shadow propagation forestry hyperspectral LiDAR institution code arxiv、imaging spectrometer carbon dioxide methane plumes Dennison pdf code arxiv；完整目录第22–24项3项逐审，累计24/161；137未审。题名发现rows=5仅定位，精确DOI核本项；定向引擎检索未穷尽分页。 | 161 / 3 / 3 | 第22–24项3入；累计22入2待，137未审 | WHISPERS2013目录161累计顺序1–24已审：22入2待，余137未审；非年度全领域或全文检索完成。；林业阴影仅机构原稿缓存摘要/部分正文，5页PDF未取得；标open access但下载跳登录HTML，INBO文件403，不把HTTP200登录页算论文。原Fig.1与页码、代码/数据及全文实验待核。；第22/24项仅题名待分类；FISS和MODTRAN等二次摘要细节未采纳，八作者RSE与后续气体论文的引用不当扩展声明。；此前辉石范围、题名分类、边权异常原稿原图、SOM/Gerbil源码/扩展、油膜/NMF/HERF、演示/摘要全文、CNMF模拟代码和CASI数据仍待核。 |
-| WHISPERS | 2013 | Tidhar Rotman inhomogeneous inhomogenous non-Gaussian density estimation pdf code arxiv figure、Classification of hyperspectral images with Self Organizing Map May Stéphane CNES pdf code dataset arxiv、Random subspace ensemble dictionary learned sparse representation Xue Du Su pdf code dataset arxiv；完整目录第25–27项3项逐审，累计27/161；134未审。定向引擎检索若干查询，未穷尽分页，不视作全主题覆盖。 | 161 / 3 / 3 | 第25–27项3入；累计25入2待，134未审；另SPIE版本关系待核 | WHISPERS2013目录161累计顺序1–27已审：25入2待，余134未审；非年度全领域或全文检索完成。；第25项机构原摘要直接可读，全文/原图未取得；同题SPIE DOI10.1117/12.2016452关系候选待核，不合并日期实验或图。；第26/27项仅题名待分类；SOM作者以官方程序纠正为Stéphane May，登记倒置另存；2001/2019 SOM及2015 EMAP随机子空间实验不借用。；此前林业原PDF跳登录/403、成像仪/气体/青海湖范围、辉石、题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、CNMF代码/CASI数据等缺口保留。 |
 | CVPR Workshops / OTCBVS | 2009 | An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 作者主页原稿为10页，正式目录112–119为8页；未逐页比对正式版，图号及页码仅指下载作者稿。2011 harmonic analysis 章节及2008 stable distributions 论文的扩展关系待核，不自动合并。；全文、资源及正式版差异仍待核验。 |
 | ICIP | 2010 | Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 原稿题头及 DOI 登记均为 Regisration 拼写，保留登记题名，作者主页正常拼写 Registration 作为别名。作者顺序按原稿/精确 DOI，不采用旧主页不同顺序。仅7组人工扰动实验；全文公式、非仿射/动态场景泛化和代码待核。；全文、资源及正式版差异仍待核验。 |
 | TGRS | 2011 | Hyperspectral Unmixing via L1/2 Sparsity-Constrained Nonnegative Matrix Factorization、Jun Zhou / 周峻 / ORCID0000-0001-5822-8233；作者范围一篇题名逐审；不是该场所年度全目录或全摘要检索。 | 1 / 1 / 1 | 作者题名检索：1篇摘要核验入库；非年度系统覆盖 | 2月2日与4月11日作者稿摘要不同：早稿称 unbiased estimator，晚稿改成 Lq 范数选择；不把早稿表述当正式版定理。正式 TGRS49(11):4282–4297，作者稿日期不替换出版年份。2010 DICTA 同作者近题会议版尚待原文扩展声明核验。；全文、资源及正式版差异仍待核验。 |
@@ -182,7 +96,7 @@
 | ICPR | 2012 | Object detection via foreground contour feature selection and part-based shape model、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：excluded；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
 | ICICEE | 2012 | Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：included；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
 | SPIE · AOMATT | 2012 | Shearlet transform based anomaly detection for hyperspectral image、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：included；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
-| IGARSS | 2010 | Multi-spectral remote sensing image registration via spatial relationship analysis on sift keypoints、Jun Zhou ORCID0000-0001-5822-8233; DBLP/Scholar/Griffith作者稿/ResearchGate；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 1 | 作者题名范围审查：included；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。摘要及作者稿局部确认多光谱Landsat配准；完整全文、参数、代码与数据仍待核。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
+| IGARSS | 2010 | Multi-spectral remote sensing image registration via spatial relationship analysis on sift keypoints、Jun Zhou ORCID0000-0001-5822-8233; original abstract pdf code arxiv；ORCID2012六组与2010一组；每篇精确查找，不是年度目录全量或搜索分页完成。 | 1 / 1 / 0 | 作者题名范围审查：pending；非年度系统检索 | 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准明确高光谱关系待查。；DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。 |
 | ICCV Workshops | 2013 | 3D Plant Modelling via Hyperspectral Imaging、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
 | ICIP | 2013 | A hypergraph based semi-supervised band selection method for hyperspectral image classification、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
 | TIP | 2013 | Efficient Estimation of Reflectance Parameters From Imaging Spectroscopy、Jun Zhou ORCID0000-0001-5822-8233; original pdf code arxiv；来源限定6篇题名；仓储查询返回范围留源文件，不替代场所年度全量。 | 1 / 1 / 1 | 作者单篇原摘要闭环；非年度系统检索 | ORCID2013有16组，本批新审6高光谱、此前1已入，余9组范围仍待核；不是任一场所2013年度全量。；两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。；2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。 |
@@ -237,17 +151,37 @@
 | ORCID author works | 2022 | Jun Zhou 2022 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral unmixing、hyperspectral fusion；ORCID orders 70–88; not a complete 2022 venue scan. | 19 / 19 / 19 | 作者来源组范围完成；16篇仅题名暂定，非年度系统检索 | 16篇摘要与全文待补；正式版本、图版、代码和差异仍待。 |
 | ORCID author works | 2023 | Jun Zhou 2023 hyperspectral、hyperspectral denoising、hyperspectral tracking、hyperspectral classification；ORCID orders 60–69; not a complete 2023 venue scan. | 10 / 10 / 10 | 作者来源组范围完成；8篇仅题名暂定，非年度系统检索 | 8篇摘要与全文待补；正式版本、图版、代码和差异仍待。 |
 | ORCID author works | 2024 | Jun Zhou 2024 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2024 source groups; not a complete 2024 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
-| ORCID author works | 2025 | Jun Zhou 2025 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2025 source groups; not a complete 2025 venue scan. | 17 / 17 / 17 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
+| ORCID author works | 2025 | Jun Zhou 2025 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2025 source groups; not a complete 2025 venue scan. | 17 / 17 / 16 | 17来源组16有当前决定，UEMM重开1待；非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。；UEMM原稿/当前采集源码与AirSim接口语义差异，正式版与发布数据仍待核。 |
 | ORCID author works | 2026 | Jun Zhou 2026 hyperspectral、hyperspectral classification、hyperspectral denoising、hyperspectral tracking、hyperspectral unmixing；ORCID 2026 source groups; not a complete 2026 venue scan. | 21 / 21 / 21 | 作者来源组范围完成；直接题名暂定，非年度系统检索 | 直接题名条目摘要、实验、代码和版本差异待补。 |
-| arXiv · Jun Zhou quoted-name author query | 2026 | au:"Jun_Zhou"；start=0/200/400，200/200/131；五批摘要、医学登记和PanNuke三折原数组续核 | 531 / 531 / 531 | 分页/索引完整；531有映射/逐审（含8待核），0未审 | 累计471逐审；TEAMS按MRI/CT与源RGB输入局部暂排，Mamba同名及全领域局部暂排/子集差异分别留证；5同名候选全领域继续待，姓名变体、身份/输入/正式版本与全文未完成 |
+| DBLP exact author profile | 2026 | hyperspectral、spectral、LiDAR、multispectral、unmixing；Exact DBLP person ID; 364 distinct publication records. | 364 / 365 / 365 | 364条查询快照加1条快照外补充，365条有决定/待核记录：355决定、10待；不是全文全集 | 网页/XML仍为验证页；355范围决定不证明全部作者身份、正式版本或全文已核。；当前10pending见jun-zhou-dblp-screening.json；六遥感本轮未取得新正文，其他来源集合重叠，不累加论文数量。 |
+| Griffith Research Online · Jun Zhou | 2026 | "Zhou, Jun"、dc.contributor.author:"Zhou, Jun"；宽查询4页351条、作者字段查询3页214条，后者为前者子集；去重351，页数/唯一UUID验证完成。 | 351 / 351 / 351 | 指定仓库查询全分页与交叉表完成；非作者全成果/全文完成 | 检索命中包含指导关系、引用与同名作者；逐项身份和实际光谱输入仍需证据。；ORCID1重开、DBLP10、Scholar9与共同作者CV3待核集合重叠；arXiv531现221未审、10范围/身份待；量化按局部暂排。 |
+| arXiv · Jun Zhou quoted-name author query | 2026 | au:"Jun_Zhou"、题名/摘要：hyperspectral、multispectral、spectral imaging、unmixing、spectral-spatial、imaging spectrometer；start=0/200/400，返回200/200/131，总531且唯一531；指定姓名查询全分页。 | 531 / 531 / 531 | 531条全部有映射或逐审记录（含8待核）；0未审，不等于作者全集/全文完成 | 24目录/32继承/4旧同名不等于全文复审；471原队列逐审：447摘要暂排、7局部暂排、7姓名不精确、8范围/身份待、2新增同名。531均有映射/逐审和survey索引，原未审0不等于全部范围闭环。；查询521条有独立规范化整名字段、10条非精确姓名/简写/分词异常；这些字段均不自动证明目标身份。姓名变体尚未完整覆盖。；指定光谱词25命中23匹配/2护理同名；无关键词不自动排除。RADC、UltraVR、医学综述、EVLF、MerMED、AdvMIM、VITask及UEMM八条范围/身份仍待。TEAMS按官方PanNuke三通道和原稿MRI/CT输入局部暂排，非个人身份确认；Mamba ORCID不转移其他同名稿。；同名6（4旧/2新增），其中5继续保留全领域范围候选。Mamba按已读输入与官方PanNuke定义暂排明确高光谱范围；其2655子集/实际数组和正式版仍未核，明确高光谱输入或基础贡献可重开。椭偏及其他同名的全领域关系仍待。；UEMM当前HF11文件无像素，检测9698XML的depth=3只是标注；正式版/Baidu原图仍待。VITask MedMNIST通道已核标准定义，外部APTOS版本与实际转换仍待。；2306.08817源摘要末尾省略号未补齐；2301.02763原作者粘连，整名统计不等于个人身份。椭偏v2 API/abs与PDF题名、17/18作者差异分别留存。；新增5Jian Jun Zhou字段不精确；J. Zhou简写仍不能认定身份，按通信范围暂排。MSX红外两摘要的全领域关系未据姓名决定关闭；姓名简写/变体与其他来源差集仍待。；AdvMIM当前实现为FLARE25 CT/MRI/PET，不替代ISIC实验。TEAMS/医学综述登记为2027-01印刷卷期，首次在线未核；MerMED25/35作者与医学综述7/8作者/题名差异保留，不能覆盖原快照。；PanNuke三官方数组头及96字节样本不作完整CRC或论文实际训练文件证明。TEAMS原稿第3页/第21页确认会议扩展，正式版与首发在线日期仍待；RADC代码发现未取得作者确认链接，仍不知EuroSAT使用RGB还是多光谱。 |
+| Jun Zhou existing catalog · primary-source followup | 2021 | Dynamic Material-Aware Object Tracking in Hyperspectral Videos、Spectral-Spatial-Temporal Attention Network for Hyperspectral Tracking；既有目录两条精确题名/DOI来源续核，不是作者分页或年度目录全扫；Griffith各一页bundle及bitstream完整返回、Git固定提交递归树truncated=false，HAL指定DOI/完整题名各一次。 | 未单列 / 2 / 2 | SST公开稿全文已读；DMT正文访问仍待 | DMT6页正式原文/作者稿及公式、数据、指标和动态材料实现未取得；HAL限定0项与第三方OA标签不代表全集无全文，当前仍摘要级。；SST IEEE下载PDF与会议官网公开稿的正文/图/公式差异、首次在线日期与正式VoR版本待；本轮5页全文状态限定已取公开稿。；SST原40训练/35测试的实际HSI/RGB/FCI及通道、同步/标注、校准/版本；当前仓库三结果ZIP35/45/80文件与2021论文范围分别留。；SST未取得模型实现/权重/训练配置；RNN门控m_t重用、Eq4 L未显式定义、排序/分组和余带、全链路梯度、阈值/交叉验证划分/训练步数、运行成本和GT对齐待。；图2精度汇总阈值、AUC/平均权重/多seed、完整运行复现、许可及作者账号独立关联未核；当前资源仅结果，不当算法代码。；MHT .589/.888与已读v5 .612/.878和后续.593/.880不同，版本/成员/评测协议待；BAE AUC高而精度低，不称指标全面获胜。；其他171摘要级周峻论文、多源差集/姓名变体及八范围/身份待核；作者专项与全领域顶会顶刊/arXiv覆盖尚未完成。 |
+| Jun Zhou existing catalog · primary-source followup | 2024 | Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos、BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking；两条既有论文；机构bundle/bitstream完整一页，arXiv当前仅v1；Git宽查询681只第一页30项，限定Hy-Tracker+hyperspectral为0，仅保留查询阴性。 | 未单列 / 2 / 2 | Hy v1全文；正式版主要模块变更仍待全文，BAE摘要 | Hy正式2024 14页VoR/作者稿全文、HAS-BS/GRU结构、公式/训练/结果与v1对照未取得；正式摘要不能当全文。；v1称HOT2022但40/35及33同名帧数及另两对近名帧数与SST HOT2020资源吻合，实际年份/成员/标注/归一/跨域协议未取得；HOT2023官网更新入口不回填历史。；BABS对象区域GT措辞与后续帧估框、更新/余带、YOLO离线加入测试首帧的具体训练隔离、类别、训练配置及运行成本待代码；不自动认定实际用了后续GT或存在泄漏。；Eq11不等号、表I隐含pool/padding、表IV增量错印及跨稿基线数值分别保留，GT/预测、真实指标/速度复算、多seed未做。；BAE正式5页未取得；目前仅完整原始摘要，网络/组数/VITAL/数据规模/指标仍待，不借SST/Hy引用升级。；Hy模型代码/权重/原视频许可及作者仓库独立关联未核；有限Git查询不证明无代码。；其他170摘要级作者条目、多源差集/姓名变体和8范围/身份待核；作者全集与全领域顶会顶刊/arXiv仍未完成。 |
+| Jun Zhou existing catalog · primary-source followup | 2023 | Background-Aware Band Selection for Object Tracking in Hyperspectral Videos、SiamBAG: Band Attention Grouping-Based Siamese Object Tracking Network for Hyperspectral Videos、Attend in Bands: Hyperspectral Band Weighting and Selection for Image Classification；SiamBAG Git精确查询1条/完整233节点树；BABS与Attend机构bundle/bitstream完整一页。网页搜索工具404，仅直接原始来源续核。 | 未单列 / 3 / 3 | 三篇原始摘要/来源纠错；SiamBAG源码与结果审计，全文仍待 | BABS five-page and SiamBAG twelve-page formal full texts and original figures not obtained; IEEE PDF requests empty202 or HTML, not PDF.；Attend sixteen-page formal full text not obtained; related thesis and its Chapter4 inspected only on listed pages, not whole texts.；SiamBAG external SiamRPN weight, real images/GT, actual benchmark/training release and isolation, end-to-end runtime, AO/AUC/precision reproduction, attention rank traces and license remain unverified.；Other author papers, multisource differences/name variants/eight arXiv scope or identity pending, and whole-field top conferences/journals/arXiv coverage remain incomplete. |
+| Jun Zhou existing catalog · early 3D full-text followup | 2015 | 3D Plant Modelling via Hyperspectral Imaging、3D Reconstruction from Hyperspectral Images；两条既有论文、三稿22 PDF页（20正文+2封面）；当前CVF正文与旧字节一致。Oxford仅36帧数据页面元数据，无原载荷。 | 未单列 / 2 / 2 | 两篇公开/作者稿全文；IEEE正式稿与复现仍待 | IEEE formal versions and exact author/public text differences still unverified; original PDFs requested from IEEE returned empty202, not fulltext.；No dedicated implementations, raw five-object/plant cubes, calibrated spectra/geometryGT, seeds/settings/hardware or actual reproduction obtained; available Oxford page is metadata only.；Other168 abstract-level author entries, multi-source author differences/name variants/eight arXiv pending, whole-field top conferences/journals/arXiv coverage remain incomplete. |
+| Jun Zhou existing catalog · hypergraph band-selection full reading | 2015 | A hypergraph based semi-supervised band selection method for hyperspectral image classification、Semi-supervised hyperspectral band selection via sparse linear regression and hypergraph models、Semisupervised Hyperspectral Band Selection Via Spectral–Spatial Hypergraph Model；三稿22PDF页：19正文/3封面，39编号式/13表/16图；引用条目19/15/30，不宣称所引作品读完。 | 未单列 / 3 / 3 | 机构全文三篇，IEEE正式稿与复现待 | 三份机构作者稿全文已读，但IEEE正式PDF均202空；正式版本差异与明确扩展声明未证。；无专用实现、原始数据/实际样本划分、模型运行或实验复现；转导使用/测试隔离、熵权重、求解器和印刷公式矛盾待实证。；周峻其余165摘要级、姓名变体/多源差集/八arXiv范围身份pending、全领域顶会顶刊/arXiv仍待。 |
+| Jun Zhou existing catalog · registration and material color full reading | 2011 | Regisration of hyperspectral and trichromatic images via cross cumulative residual entropy maximisation、Material-specific user colour profiles from imaging spectroscopy data；两稿12正文页/23编号式/9图/1特征表，参考条目12/29，所引作品未全读；现下载两PDF与旧存同字节。 | 未单列 / 2 / 2 | 两篇作者稿全文，IEEE版本与实现数据待 | 两份作者托管全文已读；IEEE正式PDF202空，正式版逐字/图对照仍待。；专用代码、实际图像/光谱库/Photo.net快照、完整划分/评价与实现细节未取得；无模型运行或实验复现。；其余163条摘要级作者论文、姓名变体/多源差集与八arXiv范围身份待项，以及全领域顶会顶刊/arXiv覆盖仍未完成。 |
+| Jun Zhou existing catalog · early texture and harmonic descriptors full reading | 2011 | An affine Invariant hyperspectral texture descriptor based upon heavy-tailed distributions and fourier analysis、Affine Invariant Hyperspectral Image Descriptors Based upon Harmonic Analysis；两稿32PDF页（31非空/1空白），61编号式/12图/6表；参考20/43条不当引用全文已读。 | 未单列 / 2 / 2 | 两篇作者稿全文，正式版本与理论实现问题待 | 两篇公开作者稿全文已读，IEEE/Springer正式PDF未独立取得；Springer正式原摘要也未独立读。；概率/重尾积分/仿射峰矩阵印刷疑点、实现代码/数据、对象或父序列隔离、完整参数/种子与评价阈值仍待，无运行复现。；作者其余161摘要级条目、多源差集/arXiv八范围身份待及全领域顶会顶刊/arXiv覆盖未完成。 |
+| Jun Zhou existing catalog · SVM band weighting and selection full reading | 2016 | Band weighting and selection based on hyperplane margin maximization for hyperspectral image classification、Band Weighting via Maximizing Interclass Distance for Hyperspectral Image Classification；两稿11PDF页（2封面/9正文及参考），6式/6图/5数值表/1伪码表/1独立算法；两份14参考不当引用全文全量。 | 未单列 / 2 / 2 | 两篇公开稿全文；正式作者/实验/实现差异待 | 两篇公开稿全文已读，正式IEEE PDF两次202空；2016五/六作者及最终实验/图版修订差异未解决。；公式未定义T/乘法维度/符号、优化/约束、实际200带与GT/空间划分、测试隔离、种子/原始十次统计及专用代码复现仍待。；作者其余159摘要级条目、ORCID/DBLP/Scholar/CV差集和arXiv八范围身份待未清；整个高光谱顶会顶刊/arXiv系统覆盖未完成。 |
+| Jun Zhou existing catalog · one-class SVM differential-weight full reading | 2017 | Discriminative weighted band selection via one-class SVM for hyperspectral imagery、Differential weights-based band selection for hyperspectral image classification；共23PDF页（2封面/21正文参考）、13编号式/12图/6数值表/1伪码表；两份引用10/35条不作引用全文全量。 | 未单列 / 2 / 2 | 两份AM全文；正式/表题/索引及实现仍待 | 两份公开AM全文读完，IEEE/World Scientific正式PDF及最终表/公式/图的修订差异待；会议Fig2真实数据身份与期刊表题交叉尚未解决。；L1 solver映射/初始模型/竞争类索引/约束、真实原带索引与GT/空间划分、独立验证、完整参数/seed/统计和专用代码复现待。；作者其余157摘要级条目、多来源差集及arXiv八范围身份待与整个高光谱顶会顶刊/arXiv系统覆盖未完成。 |
+| Jun Zhou existing catalog · graph NMF full reading | 2015 | Dual Graph Regularized NMF for Hyperspectral Unmixing、Multilayer manifold and sparsity constrainted nonnegative matrix factorization for hyperspectral unmixing、Multiple Graph Regularized NMF for Hyperspectral Unmixing；20PDF页/3封面/17正文参考；52编号式、13图、2数值表3面板/95数值、2伪码；引用26/19/21条不当所引作品全文全量。 | 未单列 / 3 / 3 | 三机构稿全文；正式/公式/实现仍待 | 三份机构稿已全读，正式IEEE全文/最终公式与图表差异未核；MMSNMF图维度/梯度、WHISPERS权重子问题、两稿增广行维度及DICTA材料行名仍待。；具体图/权重参数、层级图更新/宽度/丰度和、真实参考谱/GT、solver调用/零值/初始化和代码复现未闭环；打印表算术不替代模型验证。；作者其余154摘要级条目、多来源差集及arXiv八范围/身份待核仍待；作者全集与全领域顶会顶刊/arXiv覆盖未完成。 |
+| Jun Zhou existing catalog · 2016 NMF full reading | 2016 | Nonnegative-Matrix-Factorization-Based Hyperspectral Unmixing With Partially Known Endmembers、Nonnegative matrix factorization with endmember sparse graph learning for hyperspectral unmixing、Structured Discriminative Nonnegative Matrix Factorization for hyperspectral unmixing；45PDF/3封面/42正文参考、70编号式、13图、11数值表13面板766数值、2伪码、41/18/21参考条目（非所引作品全读）。 | 未单列 / 3 / 3 | 三AM全文；正式/公式/实现仍待 | 三份机构AM全文已读；正式IEEE全文、最终公式/数值/作者差异仍待，当前正式PDF202空、sparse Crossref429不能当核验通过。；谱失配角色/曲线方法名、停止式/维度/核与邻域对称化、完整参数/参考谱/GT/代码零值处理及复现待；表算术不是模型验证。；作者其余151摘要级记录、多来源差集及arXiv八范围/身份待核继续；作者全集和全领域顶会顶刊/arXiv矩阵未完成。 |
+| Jun Zhou existing catalog · saliency and manifold visualization full reading | 2016 | Salient object detection in hyperspectral imagery、Visualization of Hyperspectral Imaging Data Based on Manifold Alignment、A Manifold Alignment Approach for Hyperspectral Image Visualization With Natural Color；26PDF/3封面/23正文参考、40编号式、28图、5表120数值、18/20/38参考条目（不代表所引作品全读）；四数据说明页。 | 未单列 / 3 / 3 | 三公开稿全文；正式/实现仍待 | 三公开稿全部已读，正式IEEE全文/最终式表和明确会议扩展声明仍待；正式202空、AM/VoR封面差异不能当全文版本一致。；论文13显著裁块/框标注与pixel PR、全部代码/数据和参数、可视化核/熵/距离/RMSE/配准与投影稳定性待；原表/曲线非模型复现。；作者其余148摘要级记录、多来源差集和arXiv八范围/身份待继续；作者全集及全领域顶会顶刊/arXiv矩阵未完成。 |
+| Jun Zhou existing catalog · sparse multitask and nonlocal tensor denoising full reading | 2017 | Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising、Non-local similarity based tensor decomposition for hyperspectral image denoising；42PDF/2封面/40正文参考、40编号式、23图、11表（9数值表277值/84meanStd对）、9算法、60/22参考条目，不代表所引作品全读。 | 未单列 / 2 / 2 | 两公开稿全文；正式/实现仍待 | 两公开稿42页全读；正式IEEE全文/最终式表与当前完整摘要差异仍待，正式入口202空、机构稿未标版本不当VoR。；字典尺度/137/b/VST/HALS停止与Tensor Eq4/np/nK/rank/L/31带、代码/噪声及分类执行仍待；Purdue说明200不等于原库下载，SpecTIR转联系页、EHU403、CAVE500。；作者其余146摘要级记录、多来源差集及arXiv八范围/身份待继续；作者全集、全领域顶会顶刊/arXiv矩阵未完成。 |
+| Jun Zhou existing catalog · nonnegative Tucker denoising and tensor morphology full reading | 2018 | Nonlocal Similarity Based Nonnegative Tucker Decomposition for Hyperspectral Image Denoising、Tensor morphological profile for hyperspectral image classification；17PDF/1封面/16正文参考，40式/13图/6表441格（440可解析+1原歧义）/1算法/48与20参考；不表示引用作品全读。 | 未单列 / 2 / 2 | 两公开AM全文；正式/实现仍待 | 两公开AM17页全读；正式IEEE全文/最终表式未独立读，两正式入口202空。；Tucker正交/非负、HALS下限/索引/核心正性/归一/初始化/秩/L/停止/复杂度和81值同表换基线、224/190数据版本及窗口表差异待；TMP量化/SE配置/PCA/SVM/split/代码待。；其余144摘要级作者记录、多来源差集及arXiv八范围/身份待继续；作者全集、全领域顶会顶刊/arXiv矩阵未完成。 |
+| Jun Zhou existing catalog · structured sparse wavelet and sampling evaluation full manuscripts | 2017 | Hyperspectral Image Classification Based on Structured Sparse Logistic Regression and Three-Dimensional Wavelet Texture Features、On the Sampling Strategies for Evaluation of Joint Spectral-Spatial Information Based Classifiers、On the Sampling Strategy for Evaluation of Spectral-Spatial Methods in Hyperspectral Image Classification；84PDF/3封面/81正文参考，60版本编号式/48图/19表1639格（8NaN；小波6加法时间格各两数故1637数值成分），4算法/55,23,46,46参考；不代表引用作品全读。 | 未单列 / 3 / 3 | 三篇四公开版本全文；正式/实现待 | 三篇四公开版本84页全文已核；三正式IEEE PDF202空，最终表式/正式作者正文差异未独立核。；小波删带/稀疏度/近端步长与动量/混合初始化/指标汇总，采样β界原引文、滤波实现/小类分区取整/PCA/SE/RF/种子/代码等限制待。；其余141摘要级作者论文、多来源差集/arXiv八待与作者全集尚未完成；之后仍须完成全领域顶会顶刊/arXiv矩阵，非本批闭环。 |
+| Jun Zhou existing catalog · matrix-vector tensor, regional NMF and superpixel NTF unmixing | 2018 | Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery、Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing、Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing；36PDF/2封面/34正文参考、89式/38图/13表386格612标量位置（1畸形小数、1数值超范围）、2算法/54,50,11参考；不等于引用作品全读。 | 未单列 / 3 / 3 | 三公开版本全文；正式/实现待 | 三份公开36页全文/89式/38图/13表已核；官方IEEE九入口均202空，正式版未独立取回核差；公开超像素排版拷贝不改称AM。；MV非负BTD唯一性/停止与real参考、R-NMF印式/mean/参数及参考引文、SLIC/solver/std单位/代码待；跨文参数和生成器不同，无模型复现。；其余138摘要级作者记录、多来源差集/arXiv八范围身份待、作者全集与后续整个领域顶会顶刊/arXiv矩阵尚未完成。 |
+| Jun Zhou existing catalog · TV NTF, GMC sparse NMF and subspace structure NMF | 2020 | Hyperspectral Unmixing via Total Variation Regularized Nonnegative Tensor Factorization、Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing、Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing；正式27页/67式/23图/9表357格447标量/2算法/44,54参考；GMC机构13页正文文本相同，子空间AM未全读，TV摘要+代码。 | 未单列 / 3 / 3 | 两正式全文；TV全文/实现待 | 周峻188条仍136摘要/52全文；完整作者差集与范围身份待项未闭环，随后全领域顶会顶刊/arXiv仍未完成。；TV全文未取回；IEEE/Griffith摘要与作者代码分源，不以代码包标全文。；GMC/子空间式表原印疑点、真实数据/初始化/参考真值/重复协议和完整实现待；无MATLAB或模型复现。 |
+| Jun Zhou existing catalog · adaptive graph NMF, nonlocal NTF, ISTA architectures and DiffUn | 2024 | Adaptive Graph Regularized Multilayer Nonnegative Matrix Factorization for Hyperspectral Unmixing、Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing、Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing、Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution；正式14页与AM17正文+1封面、97式/35图/8表396格540标量/3算法；52+53参考目录非引用作品全读。另两官方完整摘要保持摘要级。 | 未单列 / 4 / 4 | 一正式/一接受稿全文；两摘要与正式版差待 | 周峻188条仍134摘要/54全文；完整作者多源差集与身份/范围待项未闭环，随后全领域顶会顶刊/arXiv仍未完成。；非局部NTF与ISTA网络全文未取回，保持摘要级；DiffUn正式16页版差仍待。；自适应图印式、DC均值及Cuprite最优材料数量，与DiffUn近似/伪码代码梯度差异、oracle调参与实现缺口留证；未复现模型。 |
 
-完整题名目录、摘要快照和逐篇决定见 `sources/` 与 `survey.json`。扫描完指定关键词，不等于所有摘要、主题或引文检索完成。
+完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
-## 待检索矩阵
+## 当前待检索矩阵
 
-年度集合为各场所最早可用官方目录至截止日期。下表按场所压缩展示；未出现在上表的每个年份 × 关键词组均为尚未检索，不能推定为零篇。早期目录起止与实际举办年份尚待确认。
+年度范围为各场所最早可用官方目录至快照截止日期。未列出的年份或关键词单元视为未检索，不推定为零篇。
 
-| 场所 | 来源类型 | 年份范围 | 独立总库状态 |
+| 来源 | 类型 | 年份范围 | 状态 |
 | --- | --- | --- | --- |
 | CVPR | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | ICCV | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -264,16 +198,11 @@
 | IJCV | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TIP | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | TOG | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| TCSVT | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Pattern Recognition | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Information Fusion | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| TSP | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| TCI | journal | 最早可用目录至 2026 | 2015年度41登记DOI六成像词及光谱/压缩词扫描；3HSI收录1无HSI关系排除；非出版社全量，其他年度未检索 |
 | TGRS | journal | 最早可用目录至 2026 | 1988/1994/2001/2005/2008基础主题及2022单篇期刊扩展定向核验；年度全量未检索 |
-| Remote Sensing of Environment | journal | 最早可用目录至 2026 | 2001年度Crossref登记集合六成像词已扫，4收录/2待核验；出版社全量、其他年/词未完成 |
+| RSE | journal | 最早可用目录至 2026 | 2001年度Crossref登记集合六成像词已扫，4收录/2待核验；出版社全量、其他年/词未完成 |
 | ISPRS JPRS | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| IGARSS | conference | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| WHISPERS | specialist_conference | 最早可用目录至 2026 | 2014正式目录174条，最新题名关联68、仅已追踪决定4、未审102；原始目录与动态进度分开保存。官方PDF45–66页71条67入2排2待及另CRNN；年度筛选未完成，其他年份待系统检索。 |
 | Optica | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Nature Photonics | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Light: Science & Applications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
@@ -284,1001 +213,609 @@
 | Nature Methods | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | arXiv | preprint | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Optics Express | specialist_journal | 最早可用目录至 2026 | 2007 DD-CASSI 定向核验；年度全量仍未检索 |
-| Applied Optics | specialist_journal | 最早可用目录至 2026 | 2008 SD-CASSI 与 2007 SPIE 前序稿定向核验；年度全量仍未检索 |
-| Remote Sensing | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| JSTARS | specialist_journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| CVPR Workshops | workshop | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| JSAP-OSA Joint Symposia | specialist_conference_abstract | 最早可用目录至 2026 | 2014单篇同题名摘要定向核验并归并版本；年度目录未检索，不冒充顶会研究论文 |
-| GRSL | specialist_journal | 最早可用目录至 2026 | 见上方单篇/引文核验；其他年度/关键词未检索 |
-| Biogeosciences | specialist_journal | 最早可用目录至 2026 | 2009仅SCOPE原模型单篇追溯；年度未检索 |
 
-## 已闭环批次
+## 当前缺口
 
-- 2026-10-08 / cvpr-2022-abstract-batch-1：新增 6，更新 3，去重 3，排除 9，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 顶会顶刊及arXiv仍需按场所、年份、任务词、摘要和引用链查漏；指定关键词扫描不代表年度或领域全集覆盖。
+- 周峻来源差集与姓名变体仍有未决候选；保留目录188条不等于作者全集完整。
+- 免费可获取PDF、框架图及作者公开材料应继续整理；付费且无公开版本或确实不可获取时记录限制并留白。
+- 论文版本、同名身份与实际高光谱输入仍按逐项证据核验，不根据spectral字样自动收录。
+- 原图用户上传待核验与已有公式、实验或版本冲突，仍以对应论文的记录和原始证据为准。
+
+## 历史证据
+
+<details>
+<summary>旧范围搜索与场所（不作普通总库后续目标）</summary>
+
+| 场所 | 年份 | 查询与分页 | 题名 / 命中 / 已审 | 覆盖级别 | 剩余缺口 |
+| --- | --- | --- | --- | --- | --- |
+| Applied Optics | 2008 | Single disperser design for coded aperture snapshot spectral imaging、coded aperture、compressive spectral；定向题名和引文核验；没有枚举年度全部目录或搜索引擎全部页 | 1 / 1 / 1 | CASSI 定向核验；年度全量目录未检索 | 完整年度目录、其他任务词和引文链待检索；全文实验、代码数据及其他版本待核验 |
+| JSAP-OSA Joint Symposia | 2014 | Separating Reflective and Fluorescent Components Using High Frequency Illumination in the Spectral Domain、10.1364/jsap.2014.20p_c4_1；单篇定向关联；没有扫描年度目录 | 1 / 1 / 1 | 官方摘要核验并按方法重述归并；不是独立方法 | 完整年度目录及其他研究问题未检索；期刊最终版/专题摘要全文与完整实验差异待查 |
+| IGARSS | 2014 | Coupled hyperspectral super-resolution and unmixing、10.1109/igarss.2014.6947016；仅指定登记记录；非年度目录或查询完整分页 | 1 / 1 / 0 | 作者元数据已核验；撤销未证明的前序关联，独立主题候选待原文 | 不是已证明的CSU前序版本；独立论文原文内容与关系待查；完整年度与其他研究问题未检索 |
+| TCI | 2015 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；41 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 41 / 2 / 2 | 41登记DOI六词2命中均收录；包含非研究条目，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；登记集合包含目录/说明，不称41研究论文；全量摘要尚未读 |
+| TCI | 2015 | spectral、compressive、coded aperture、unmixing；离线全扫41个不同登记DOI；原rows1000一页；包含目录/出版说明，不当作41篇研究论文 | 41 / 4 / 4 | 41登记题名四词4候选闭环：新增3、排除1；出版社年度全量未证明 | 出版社全部卷期/全量摘要未核验；其余词、引文与全文实验、最终版差异待核验 |
+| TCI | 2016 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 3 / 2 | 63登记题名六词3命中：2收录、1原摘要受限；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
+| TCI | 2016 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；63 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 63 / 5 / 4 | 四词5命中：新2、排2、原摘要受限1；Fourier正式出版按TIP记录 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；Fourier同题名TCI DOI与正式TIP DOI关系待出版社确认；LSSHUCS原始摘要/全文与原图受限 |
+| TCI | 2017 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 11 / 10 | 102登记题名11命中，10已处理；并集新增8、排8、待1，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；1候选HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
+| TCI | 2017 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；102 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 102 / 17 / 16 | 102登记题名17命中，16已处理；并集新增8、排8、待1，非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；1候选HSI关联待查；原图受限项保留原因；正式/预印本实验、会议前序、代码和资源许可待查 |
+| TCI | 2018 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；75 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 75 / 2 / 2 | 75登记题名六词2命中已收录；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；原始摘要受限反射率恢复候选待核验；出版社全量、其他词和全文实验/版本差异待查 |
+| TCI | 2018 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；75 个不同 DOI 与登记总数一致；出版社目录尚未交叉核验 | 75 / 4 / 3 | 75登记题名四词4命中：新增2、排1、待1；非出版社年度全量 | Crossref 未登记论文及出版日期/卷期年度差异尚未核对；出版社全部目录、全量摘要、其他关键词和引文尚未完成；原始摘要受限反射率恢复候选待核验；出版社全量、其他词和全文实验/版本差异待查 |
+| TCI | 2019 | hyperspectral、multispectral、spectral imaging、coded aperture、compressive imaging、compressive spectral；rows=1000，1 页；69 个不同 DOI 与登记总数一致；已与四期官方52目录项逐题名及起始页核对；另1年度索引未列TOC | 69 / 2 / 1 | 69登记题名六词2命中，已收录1待核验1；非年度高光谱全量 | 去噪原始摘要/原图受限；代码未运行，版本及数据授权待核验；年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| TCI | 2019 | spectral、compressive、coded aperture、unmixing；rows=1000，1 页；69 个不同 DOI 与登记总数一致；已与四期官方52目录项逐题名及起始页核对；另1年度索引未列TOC | 69 / 5 / 4 | 69登记题名四词5命中：增2排2待1；非年度高光谱全量 | 去噪原始摘要/原图受限；代码未运行，版本及数据授权待核验；年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| TCI | 2019 | 全目录题名/起始页比对、光学高光谱关系、通用复原/融合/压缩采集；卷5期1–4，四个完整官方目录PDF；52目录项（51研究论文+1奖公告），52题名及起始页均匹配；另登记16封面/行政记录+1年度索引 | 52 / 51 / 34 | 四期目录逐题名比对完成；51研究项均尝试原始来源，34已审17待核验；非年度摘要全量完成 | 年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| TCI | 2019 | 通用去噪/逆问题理论、字典/稀疏编码、光学系统/相位、光度立体、视频分离、多焦点融合；四期目录中42未筛摘要项，定向选取10篇：8完整原始摘要核验，其中1正式稿版本差异待查；2原摘要受限；其余32项未筛 | 42 / 10 / 7 | 10篇：8原始摘要已读，7排除、3待核验；非全量摘要检索 | 年度索引第687–696页未出现在四期TOC，索引内容及早期在线年份差异待核验；7新排除仅为摘要级筛选；后续全文/引用若证明HSI特定联系可重开；4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| TCI | 2019 | MRI/PET、超声/声学、X射线层析、时间域层析；四期目录32未筛摘要项，定向10篇：6完整原始摘要、4官方原始摘要内容/片段；10排除；其余22项未筛 | 32 / 10 / 10 | 10篇基于原始摘要证据排除；区分完整与片段，非全量摘要检索 | 4项仅核验官方索引中的原始摘要内容/片段，原页面和全文访问受限；非完整全文阅读；年度索引687–696页及正式/预印本差异待核验；Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| TCI | 2019 | 无透镜/相机阵列、光场/场景恢复、显微成像、色觉共享、光子采集估计；四期目录22摘要未筛项中定向8篇；6完整原始摘要（1仅官方缓存）排除，2原摘要受限；其余14项未筛 | 22 / 8 / 6 | 8篇6排除2待核验；非年度全量摘要检索 | Monash色觉论文错标2009，按官方2019卷期；HAL登记日期与正式卷期分开，日期类型待核验；年度索引及正式/预印本全文差异待核验；医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；年度索引687–696页及正式/预印本差异待核验；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| TCI | 2019 | SAR/微波、X射线CT/双能CT、光声层析、光学高光谱联系；14未筛目录项中定向8篇：3完整摘要与1官方摘要片段排除，4待核验；其余6未筛 | 14 / 8 / 4 | 8篇4排除4待核验；非年度全量摘要检索 | 医学排除5项仅官方原始摘要片段（此前4+本批双能CT1），EPFL仅完整官方缓存；非全文；改题预印本1812.02365v1与正式束硬化论文关系待核验；学位论文/前序稿不替代期刊；SPS双能CT作者列表7名不覆盖正式13名；RPI目录作者顺序与正式版不同，保留差异；年度索引687–696页及正式/预印本差异待核验；51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| TCI | 2019 | 极紫外光刻、数字全息FPGA、超声重建、图像量化、电子显微、X射线能谱融合；最后6目录研究项均尝试；1正式PDF完整摘要排除，5原始摘要待核验 | 6 / 6 / 1 | 6篇1排除5待核验；原始来源访问失败留证 | 51研究项原始来源均已逐篇尝试；17候选原始/正式稿摘要或版本联系受限，非年度摘要全量核验完成；5医学排除仅官方原始摘要片段，EPFL仅官方完整缓存，非全文；清华作者页误记TCSVT；SPS双能CT作者截短、RPI顺序及Monash年份差异保留，正式目录优先；年度索引687–696页及正式/预印本全文差异待核验 |
+| GRSL | 2015 | embedded quantization、hyperspectral image coding、2SDQ/GEQ；单篇题名/DOI定向核验及参考文献[4]/[5]追踪；不表示全年目录/摘要已扫描 | 1 / 1 / 1 | 单篇引文/作者来源闭环，非年度系统检索 | 本场所本年度官方目录与全量关键词矩阵尚未完成；正式排版差异、专用代码/数据链接及独立复现待核验 |
+| TSP | 2013 | embedded quantization、hyperspectral image coding、2SDQ/GEQ；单篇题名/DOI定向核验及参考文献[4]/[5]追踪；不表示全年目录/摘要已扫描 | 1 / 1 / 1 | 单篇引文/作者来源闭环，非年度系统检索 | 本场所本年度官方目录与全量关键词矩阵尚未完成；正式排版差异、专用代码/数据链接及独立复现待核验 |
+| GRSL | 2015 | compress、coding、quantiz、rate allocation、decorrelation；ISSN1545-598X，from/until-pub-date2015，rows1000，一页572；26词命中全部登记决定，5待核验。 | 572 / 26 / 22 | 登记题名指定压缩词扫描完成；21决定、5待核验，非年度全量 | 出版社2015完整目录、全量摘要及更多任务词尚未完成；572仅为Crossref登记日期集合。；5待核验：运动目标成像、移除通知原文、ripplet融合、参考影像重建、多核能耗压缩的有效状态/HSI关系。；两新增专用代码/数据、正式稿差异与独立复现待查。；本组剩余4候选；出版社年度目录、其他关键词和摘要范围尚未完成。 |
+| GRSL | 2015 | hyperspectral、multispectral、multi-spectral、spectral imaging、spectral unmixing；单页rows1000实际572；66词命中全部留存，当前已审33条；余33项pending，非年度系统检索完成。 | 572 / 66 / 33 | 指定题名组扫描完成，候选核验进行中 | 登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。；出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。；本组剩余33候选；出版社年度目录、其他关键词和摘要范围尚未完成。；本批39个待核验DOI在HAL精确doiId_s OR查询均未命中（rows100、numFound0）；已收录TGRS对照DOI可命中1项，API正常。零命中仅索引缺口，不是排除/核验完成；快照sources/grsl2015-remaining39-hal-doi-query.json。 |
+| MPE | 2013 | hyperspectral classification Fukunaga Koontz；单篇题名/方法族追踪；未扫描该期刊年度目录 | 1 / 1 / 1 | 单篇同族追踪闭环，非年度系统检索 | MPE年度目录/摘要尚未系统检索，专业期刊来源不标为顶刊；原PDF403、原图/实验细节/代码数据及版本差异待核验 |
+| WHISPERS | 2014 | collaborative representation k nearest hyperspectral；官方技术日程共94页，仅逐篇核验第79页CRNN条目；未全量扫描会议论文/摘要 | 1 / 1 / 1 | 单篇方法族追踪闭环，非年度系统检索 | 技术日程全94页及出版社论文目录/DOI尚未全量核对。；原四页会议稿/原图与期刊直接扩展关系、实验差异待核验。；2026-10-08再次下载官方94页PDF遇SSL EOF；未关闭TLS验证。主办方缓存可读，单篇核验不等于年度扫描；访问证据sources/whispers2014-program-repeat-access.json。 |
+| EJRS | 2018 | Nonlinear PCA for Visible and Thermal Hyperspectral Images Quality Enhancement、Licciardi Chanussot nonlinear PCA dimensionality reduction、10.1080/22797254.2018.1441670；仅核验一篇16页论文及指定章节；未扫描EJRS年度目录 | 1 / 1 / 1 | 单篇引用追踪闭环，非年度系统检索 | EJRS年度题名/摘要与其他词尚未系统扫描。；全文阅读、代码/数据和2015前序原摘要仍待核验。 |
+| WHISPERS | 2014 | hyperspectral、reflectance、flat field、spectral super-resolution、oil steel、radiative transfer、volcanic SO2；PDF第45–46页全部六个论文摘要逐项筛选；额外第47页X射线和大气不确定性两项范围/错配审查。其他页未全量逐篇处理；没有用投稿205数作发表总数 | 8 / 8 / 7 | 两页六篇闭环，另排除1/待核验1；非年度目录完成 | 94页程序的其余页与出版社年度目录/正式DOI尚未全量核对。；第47页不确定性及第42页核图降维摘要错配，须查原稿，不能盲信官方摘要。；六篇会议原PDF/原图与完整版本差异待核验；水体和标定RG所附长稿不是本会议版本。；官方PDF当前再次下载为代理连接错误，保留可读官方缓存；未关闭TLS验证。 |
+| WHISPERS | 2014 | hyperspectral、crop residue、fossil bone、mineral mapping、mine flooding、CO2 NLTE；PDF第47–48页六个条目全部追踪；其中四个新候选全闭环，X射线排除及错配大气不确定性引用前批决定。累计第45–48页十二条10入/1排/1待；其余页未全量 | 6 / 4 / 4 | 两页六条追踪，新四篇闭环、复用旧排1/待1；非年度全量 | 94页其余页与出版社年度目录/DOI仍待全量核对，官方节目题名/作者可能不同于正式稿。；不确定性原摘要仍待访问；不得以二手正确摘要提升核验。；三篇四页原稿/原图、各论文代码/数据及期刊扩展差异待核验。 |
+| WHISPERS | 2014 | hyperspectral、ultralight、whiskbroom、linear variable filter、FORMOSAT-2、potato；官方PDF第49–50页全部六条闭环5入1排；累计45–50页十八条15入2排1待。非94页全量或出版社年度目录完成。 | 6 / 6 / 6 | 两页全部六条5入1排；其余页未全量 | 94页其余页、正式出版社年度目录及所有非关键词标题仍待核对。；五篇原稿/原图、专用代码数据和相关期刊版本仍待查；EPFL429/WUR404/IMEC200非PDF均已记录。；先前不确定性错配摘要仍pending；节目单不可视为无误正式书目。 |
+| WHISPERS | 2014 | spectral graph、manifold、Grassmann、label propagation、detector fusion；官方PDF第51–52页六条全部入库；累计45–52页24条21入2排1待，另CRNN单篇。不等于94页全量或出版社年度完成。 | 6 / 6 / 6 | 两页六条摘要闭环；年度其余范围仍待 | 94页其余页及出版社正式年度目录未逐篇全量核对。；五篇本版原稿/原图、专用代码数据和后续版本关系未知。；原日程此前错配不确定性摘要仍待；Grassmann数学推导未全文审阅。 |
+| WHISPERS | 2014 | kernel anomaly change、sub-pixel target tracks、point target segmentation、non-uniform partition；官方PDF第53页全部四条3入1待；累计45–53页28条24入2排2待，另CRNN。非94页或出版社年度全量。 | 4 / 4 / 4 | 一页四条3入1待；光谱关系/年度覆盖仍待 | 亚像元轨迹原稿未取得，高光谱关系及SPIE版本差异待查。；Kernel作者代码页缓存标2015；直接web超时、curl证书失败，代码下载和版本对应未确认。；三篇原图、实验原表、版本差异及94页其余范围未完成。 |
+| WHISPERS | 2014 | Titan VIMS、Mercury VNIR、icy Saturnian satellites、Cassini、MESSENGER；第54页三条全部摘要入库；累计45–54页31条27入2排2待，另CRNN单篇。非94页或出版社年度全量。 | 3 / 3 / 3 | 一页三条摘要闭环；原稿/年度仍待 | 三篇会议原稿、原图、数据版本及代码未知；不拿其他年度任务论文补本稿未知参数。；冰质卫星作者拼写正字待原首页；机构缓存对应但直接页面Cache miss。；94页其余页及正式出版社年度目录未全量核对。 |
+| WHISPERS | 2014 | 全部目录条目，无关键词排除；PDF共9页，目录第3–9页全部174条，起始页1–693；题名关联28条，另仅已追踪决定4条，余142条待筛选。 | 174 / 0 / 0 | 正式目录全量清单已取；逐篇年度筛选未完成 | 年度目录条目仍须逐篇原摘要/全文筛选和原图追踪；目录全量不作年度检索完成声明。；规范题名关联仅用于续接，题名/作者拼写差异、同标题不同版本和DOI仍须单独核验。；节目单项目与正式论文集集合是否一致仍需逐项匹配，不能互相冒充。 |
+| WHISPERS | 2014 | VIR Vesta、hydrous minerals、nonlinear vegetated unmixing；第55页三条全部摘要入库；累计45–55页34条30入2排2待，另CRNN。正式目录174条尚未逐篇审完。 | 3 / 3 / 3 | 一页三条摘要闭环；原稿/版本待核 | 三篇原稿/原图、矿物真值/观测编号及代码数据未知。；同年JSTARS与会议版及Mars2015/2016稿关系待核；不混用结果。；作者PDF超时，GitHub猜测同路径404非PDF，CiteSeer镜像失败；其余来源继续推进。 |
+| WHISPERS | 2014 | rare endmember NMF、joint sparsity、robust MUSIC、number of subspaces；第56页四条全部入库；累计45–56页38条34入2排2待，另CRNN。正式目录174条尚未逐篇审完。 | 4 / 4 / 4 | 四条闭环，1作者稿全文/3摘要；年度仍待 | 其余三篇原稿/原图及代码数据未知；2015/2016相关期刊扩展声明待查。；DLR全文仅真实定性实验；论文m/n符号倒置与Fig.2图注不一致已保留，不虚构真值/误差图。；正式年度未全部筛选；节目单与论文集作者/版本差异需逐篇核。 |
+| WHISPERS | 2014 | crop vitality APEX、rice red-edge biomass、tree species LiDAR；第57页三条全部入库；累计45–57页41条37入2排2待，另CRNN。174条正式目录年度未审完。 | 3 / 3 / 3 | 三条闭环，2作者稿全文/1摘要；年度仍待 | 水稻本版原稿/原图、数据划分和误差数值待查；KUPS直接open失败但书目缓存可核。；APEX产品定义/指标互相关限制解释，树种随机像元验证不代表独立树冠推广。；专用代码数据和相关期刊扩展声明、正式年度其余条目待核。 |
+| WHISPERS | 2014 | tea plant varieties、robust vegetation indices multi-correlation、geometric matched filter；物理第58页三条；累计45–58页44条40入2排2待，另CRNN。174条正式目录年度未审完。 | 3 / 3 / 3 | 三条原始摘要闭环；MCMS官方摘要错配已纠正，原PDF/图待访问 | 三条会议原稿和原图待取得；MCMS Fig.1作者上传发现但RG403，KUPS无全文。；MCMS留出单位、HyperCor当前代码许可；茶树2014/2020及GMF2014/2015正式扩展和实验差异待核。；年度其余条目及其他年份尚未系统完成。 |
+| WHISPERS | 2014 | barycentric coordinate maximum distance、multi-agent ant colony endmember extraction、improved weight-calculation non-local sparse unmixing；第59页三条全部；累计45–59页47条43入2排2待，另CRNN。年度174条目录未审完。 | 3 / 3 / 3 | 三条完整摘要闭环；IW-NLSU同族期刊关联，会议原稿/图待 | 三篇会议PDF/原图、代码数据与arXiv版本仍待访问或发现。；BC-MDM实际场景/计时；MAS主机和通信设置；IW-NLSU会议/期刊正式扩展声明与实验差异待查。；其他年度条目与年份仍待系统检索。 |
+| WHISPERS | 2014 | structured sparse Bayesian compressive sensing、WM sparse unmixing、endmember constrained semi-supervised、nonlinear vegetation benchmark；物理第60页四条全部；累计45–60页51条47入2排2待，另CRNN。年度174条未审完。 | 4 / 4 / 4 | 四条闭环：1作者稿全文/3完整摘要；3个暂定方法标签，正式版/原图仍待 | 三篇会议PDF/原图、植被六页稿与正式四页稿及图差异待核。；果园双/三端元ZIP头可访问，森林ZIP SSL异常；门户/2014布局、数据数组和版本仍需核。；SSBUCS采样/迭代，WM参数和半监督软约束实验，专用代码数据/arXiv待核。 |
+| WHISPERS | 2014 | recursive orthogonal vector projection、multilayer structured NMF、Ritz endmember number、binary partition tree local unmixing；物理61页四题名；BPT摘要续62页但不把后续页新题名视为已筛。累计45–61页55条51入2排2待，另CRNN。 | 4 / 4 / 4 | 四条闭环：2公开稿全文/2完整摘要；NMF同方法族1关联、BPT原图1；年度未完成 | ROVP及Ritz正式原PDF/原图与实验待核；机构403、出版页面202空白。；NMF会议四页稿缺完整层数/初始化/统计，期刊扩展声明及版本实验差异待核。；BPT原稿Fig.5 c=100正文对c=200图注冲突；Cuprite子集尺寸/波段未知，未移用NMF参数。；两公开稿与出版社最终版逐字差异、代码/数据缺口待核。 |
+| WHISPERS | 2014 | variational Bayes joint sparse abundance、intrinsic dimensionality residual change point、ant colony band selection；物理第62页三新题名全部；累计45–62页58条54入2排2待，另CRNN。年度174条未审完。 | 3 / 3 / 3 | 三条闭环：1作者稿全文/2完整摘要；维数评估方法标签1，原图缺口逐篇 | ID评估及ACO-BS两原PDF/原图/实验未知；出版页202空白。；近题名GRSL2014 DOI10.1109/lgrs.2014.2317352三作者与会议四作者，关系/方法内容待另核。；VB已知端元、同质窗口及真实无丰度真值边界；没有框架图，Algorithm1为伪代码；正式差异/代码/数据/arXiv待核。 |
+| WHISPERS | 2014 | firefly band selection、BFODPSO SVM feature selection、unsupervised deep feature extraction、wrapper intermediate spectral importance；物理63页四题名全部，wrapper跨64摘要已读但64新题名未计；累计45–63页62条58入2排2待，另CRNN。 | 4 / 4 / 4 | 四条完整摘要闭环；两个暂定方法标签；会议原稿/原图与近题名关系待核 | 四篇原会议PDF、框架/方法图及具体实验/专用代码数据未核；失败类型和入口已存。；Firefly两稿作者不同；FODSPO原题名对BFODPSO摘要保留，选择对象待核。；无监督特征不当无标签分类；2016 TGRS/arXiv1511.08131关系和会议Gustavo/后期Gustau拼写待核。；Wrapper与IWCIM2014 DOI10.1109/iwcim.2014.7008806关系/内容差异待另查。 |
+| WHISPERS | 2014 | EGO parametric reduction、ARCHER spatial-spectral features pansharpening、SCOPE GPP fluorescence sensitivity；物理64页3新题名全部，SCOPE摘要续65页；65新题名尚未计。累计45–64页65条61入2排2待，另CRNN。 | 3 / 3 / 3 | 三个会议原摘要闭环；年度目录仍未审完 | 三篇会议原PDF/原图和具体实验/代码数据待核。；EGO机构书目无附件；ARCHER相关学位全文未作会议版本证据。；SCOPE2014原模型2009单列基础工作，摘要跨页；五页会议不误记四页。 |
+| Biogeosciences | 2009 | SCOPE soil canopy radiance photosynthesis fluorescence energy balance；引用追溯单篇原方法，未扫描2009年度目录；原文21页仅读摘要及第3页。 | 1 / 1 / 1 | 原模型摘要/局部方法与图1已核，年度未检索 | 剩余正文/定量实验、原版代码和数据待核；Biogeosciences年度全量待检索。 |
+| WHISPERS | 2014 | vegetation oil-gas microseepage CASI、APEX ecosystem services mapping、BREFCOR BRDF HYSPEX CASI APEX；物理65页三题名全审，前页SCOPE跨页摘要已处理不重复；累计45–65页68条64入2排2待，另CRNN。 | 3 / 3 / 3 | 两原摘要及一完整原稿文字闭环；四个暂定分类标签，年度仍未审完 | 油气/ES会议原稿和原图、具体实验/资源待核；油气姓/名字段归一待原作者核验。；BREFCOR图1–6文字均为结果，原图/保存PDF受限；原版代码数据/arXiv未核。；ES海报、2015 IGARSS及BREFCOR原方法TGRS关系需分别核正文，不能移用实验/原图或标正式扩展。 |
+| WHISPERS | 2014 | GFLEX geostationary fluorescence multispectral、Fabry Perot fluorescence microscopy、USGS PRISM ENVI IDL spectral material analysis；物理66页3题名全部，累计45–66页71条67入2排2待，另CRNN；下一页67新题名未审。 | 3 / 3 / 3 | 三完整摘要闭环、一个方法标签；一旧条目姓名修正，年度仍未审完 | 三会议原稿、框架/方法图及实验细节/专用资源/arXiv未核。；GFLEX HAL2016字段和作者菜单顺序有冲突；显微作者顺序/题名拼写及相关AO/OE正式关系待核。；PRISM2011软件为关联入口，会议版本/手册关系与具体实验待全文。 |
+| WHISPERS | 2014 | WorldView-3 AVIRIS information content、camera sensitivity NEI hyperspectral selection、HyPlant airborne O2-A fluorescence；物理67页三新条目全部，累计45–67页74条70入2排2待，另CRNN。年度目录和其他页未审完。 | 3 / 3 / 3 | 三完整摘要闭环，MS/基础/HSI分别标关系；年度仍未审完 | 三会议原PDF/原图、代码数据及arXiv待核；NEI公式缺失，不复算表值。；WV3模拟响应/噪声和分类协议、荧光大气补偿模型/误差及相关期刊版本差异待原稿。；检索截止保持2026-10-08，核验日期2026-10-09；不纳入截止后新发表版本。 |
+| WHISPERS | 2014 | O2-B O2-A AirFLEX atmospheric correction、FLEX Sentinel-3 fluorescence SFM、sun-induced chlorophyll fluorescence different scales；物理68页三新条目全部；累计45–68页77条73入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整摘要闭环，六通道MS与HSI区分；年度仍未审完 | 原会议PDF/方法图、专用代码数据、arXiv及完整实验/性能待核；Twente全文需登录，保留限制。；AirFLEX公式图件缺失未标全文；2015 TGRS/IGARSS相关稿未核明确扩展，不混用。；正式题名O&lt;inf&gt;实体显示清理；作者用出版社登记与机构核验，程序OCR不能直接当权威作者名单。；截止2026-10-08，实际核验2026-10-09。；正式目录174条本批重放：74已关联、4另有决定、96未审；sources/whispers2014-page68-toc-replay.json。规范题名关联不等于完整作者/DOI/原文逐项已核验。 |
+| WHISPERS | 2014 | A-SCOPE Saltelli global sensitivity、HSI learned multiscale dictionaries quadtree、RDWT multiview active learning；物理69页三新条目全部；累计45–69页80条76入2排2待，另CRNN。正式目录其他项目及全年未审完。 | 3 / 3 / 3 | 三完整原摘要闭环，版本冲突和原图边界保留；年度未审完 | 三会议原PDF/图号页码、代码数据及arXiv待核；摘要不给的性能/参数不补写。；A-SCOPE RAQRS错配与2015 RSE版本关系待核；小波2016 JSTARS与2014同族但图件、方法维度和四数据集不混用。；正式目录174条本批重放77关联、4决定、93未审；sources/whispers2014-page69-toc-replay.json。；截止2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | LMNN active metric learning k-NN、stacked autoencoder hyperspectral Pavia、alpha-tree constrained connectivity metric learning；物理70页三条全部；累计45–70页83条79入2排2待，另CRNN。正式目录和其余年度仍未审完。 | 3 / 3 / 3 | 三完整摘要闭环，作者冲突及选读边界保留；年度未审完 | 原PDF/公式图件、代码数据及arXiv待核。两个作者原稿选读不能升全文已读。；第一篇2016 TGRS正式/在线年和扩展差异待核；SAE三作者采用完整名单，机构两作者不替代。；正式目录174条本批重放80关联、4决定、90未审；sources/whispers2014-page70-toc-replay.json。； cutoff2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | hyperspectral PAN parallel level lines ADMM、J-SparseFI-HM automated multispectral SRF、SIM-GA SWIR VNIR hypersharpening、local spectral unmixing superresolution；物理71页四题名全部；第四原摘要跨下一页，用作者原稿补核但不宣称72页审完。累计45–71页87条83入2排2待，另CRNN。正式目录/全年仍未审完。 | 4 / 4 / 4 | 四完整摘要闭环及一预印本原算法图；年度未审完 | 正式会议原PDF/图和原作者稿差异、代码数据仍待核；TVLCSP两公开稿标题/实现细节分别保留。；J-SparseFI-HM前期版本、hypersharpening2015/2018扩展差异、局部解混端元数矛盾与ASTER无HR真值评价待核。；正式目录174条重放84关联、4决定、86未审；sources/whispers2014-page71-toc-replay.json。；截止2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | TRDF subpixel forward modeling、industrial flare hyperspectral infrared、MODTRAN PLUME TRACKER multispectral；物理72页三题名全部；物理73页仅借延续摘要，其余尚待审。累计45–72页90题名86入2排2待，另CRNN。 | 3 / 4 / 4 | 3新论文原摘要闭环，1跨页重复；年度未完成 | 三正式四页论文及专用代码/数据/arXiv未知；TRDF图明确为会议演示，不替代正式论文图件。；Crossref题名Funtions与日程Riesenberg拼写冲突保留；展示采用官方题名/正式作者登记。；正式目录174条自动题名匹配86关联/4决定/84未审；TRDF原目录Funtions拼写冲突人工核作者/DOI关联后87/4/83，审计快照保留自动/人工差异；其他场所/年份仍待补。；截止2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | GLUP blind self-dictionary group Lasso、MODTRAN6 line-by-line API、diffuse interstellar bands optical spectroscopy scope；物理73页三题名全部；累计45–73页93题名88入3排2待，另CRNN。延续摘要不计新题名。 | 3 / 4 / 4 | 本页2入1排1跨页重复；非年度完成 | GLUP未完整阅读/复现，合成评价端元真值数量参与后处理；MODTRAN6四页原稿/原图受限。；SPIE同名稿具体关系/差异待核；不把其他年份报告当本稿原图。；目录人工冲突关联和最新重放见sources/whispers2014-page73-toc-replay.json；其他场所年份仍按覆盖矩阵待补。；截止2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | non-Euclidean distance geometry DMaxD、Hapke manifold clustering、consensus unmixing、eigendecompositions sum-to-one；物理74页全部4题名；75页仅借延续摘要，其余未审。本批后累计45–74页97题名92入3排2待，另CRNN。 | 4 / 4 / 4 | 四完整摘要闭环，年度目录仍未审完 | 后三篇正式全文/图件未取得，代码/数据/arXiv未知；DMaxD数学/完整实验和相关JSTARS2015版本差异待核。；流形稿仅Hapke模拟，不移用后续真实实验；特征分解稿输出谱分量总数而非完整丰度或材料数。；正式目录174条重放见sources/whispers2014-page74-toc-replay.json，沿用TRDF题名冲突人工证据关联。；截止2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | clay content atmospheric spatial resolution、VIS-NIR SMOTE PLS calibration；物理75页两新题名全部，延续摘要不计新题名；累计45–75页99题名94入3排2待，另CRNN。 | 2 / 3 / 3 | 两题名摘要闭环、1跨页重复；年度未完成 | 黏粒会议Fig1已定位但原PDF/PNG404；SMOTE部分选读非完整全文，代码/数据未核。；SMOTE点光谱单列foundation；F谱和SOC被训练合成及评价重用，不能把数字作独立测试泛化。；目录174条重放及人工TRDF拼写关联见sources/whispers2014-page75-toc-replay.json；其他场所/年份继续按矩阵推进。；截止2026-10-08，实际核验2026-10-09。 |
+| WHISPERS | 2014 | surface emissivity Hyper-Cam、emissive thermal plant species、airborne thermal infrared gases；物理76页全部3题名；累计45–76页102题名97入3排2待，另CRNN。 | 3 / 3 / 3 | 三完整原摘要闭环，年度目录未完成 | 第一PDF仅结果Fig1/2无框架；两其他会议原稿/方法图与代码数据/arXiv未知。；植物会议七作者和未知设置不借2016五作者期刊；gas两SPIE作者异，原摘要/版差未核。；目录174条重放见sources/whispers2014-page76-toc-replay.json，TRDF人工冲突关联保留。；截至2026-10-08，实际核验2026-10-09。 |
+| IJAEOG | 2016 | emissive thermal infrared plant species；单篇同任务家族追踪；非2016年度目录或所有关键词检索。 | 1 / 1 / 1 | 单篇原摘要及部分方法核验闭环 | 未完整读全部公式/结果表/引用，正式扩展关系及会议差异待核；代码数据/arXiv未知。；本版5原图均结果图，无独立框架/方法图；其余场所/年份待系统检索。 |
+| WHISPERS | 2014 | 77 Abstract、Session FRI-P-A、Recent Advances in Data Compression Vitulli；只尝试物理77页；未取得足够原页证据，未知该页题名数。 | 0 / 0 / 0 | 77页未核，不能认定无论文 | 物理77页原内容与是否有论文/专题讲座需重新取官方PDF/原页；不纳入已审页窗。 |
+| WHISPERS | 2014 | noise reduction spectral unmixing curvelet、correlated noise residual estimation、NLPCA ANN CASI noise filtering；物理78页全部3题名；累计45–76及78页105题名100入3排2待，另CRNN；77页未核，非连续45–78。 | 3 / 3 / 3 | 78页三完整摘要闭环，77及年度目录仍有缺口 | 三会议全文/方法图、专用代码数据/arXiv未知；NLPCA CASI/SWIR仪器一致性待原稿。；噪声估计修改公式/输出未知，不用2017期刊机制填会议；去噪解混重建误差非真实丰度误差。；目录174条重放见sources/whispers2014-page78-toc-replay.json，沿用TRDF人工证据关联。；截至2026-10-08，实际核验2026-10-09；77页未核。 |
+| WHISPERS | 2014 | collaborative k-nearest CRNN、SVM MLP marker minimum spanning forest、semisupervised transductive SVM spatial similarity；物理79页全部3題名；80页其他论文未审。累计45–76及78–79页108题名103入3排2待（CRNN现含在窗口），77页未核，非连续45–79完成。 | 3 / 3 / 3 | 79页3題名摘要闭环（2新1重），77及年度目录仍有缺口 | 两新会议原PDF/方法图与专用代码数据/arXiv未知；TSVM只作者网页选读，末句补齐不等于80页审完。；TSVM原表网页类名/数量错排风险、距离坐标定义与零距离/C/阈值待原PDF；不把一般LIBSVM当论文代码。；MSF不是随机森林；MPL按multi-layer perceptron记MLP并保留原摘要拼写。；NLPCA只更新作者全名，CASI/SWIR仍待核；目录重放见sources/whispers2014-page79-toc-replay.json。；截至2026-10-08，实际核验2026-10-09；77页未核。 |
+| WHISPERS | 2014 | support tensor local pixel neighborhood、band selection fusion hyperspectral classification、edge constrained MRF、energy tree species support vector machines；物理80页全部4题名。累计45–76及78–80页112题名107入3排2待；77未核，非连续45–80完成。 | 4 / 4 / 4 | 80页4题名摘要闭环；77页及年度目录仍有缺口 | 四篇原PDF/方法图与专用代码数据/arXiv未知；波段稿仅托管原文缓存部分选读。；波段稿缓存Indian Pines波段数与波长单位疑误，待原PDF，不默改或当已核数据。；STM数组三维不等同物理三维；同光谱邻带融合不等同多传感器融合；克隆不等同分类学亚种。；目录174条关联107、已有决定5、未审62；TRDF保留题名拼写冲突人工关联。自动106/5/63，详见page80-toc-replay.json。；检索截止2026-10-08，实际核验2026-10-09；续81页及77缺口，年度未完成。 |
+| WHISPERS | 2014 | spectral spatial filtering spectral angle、game theory band grouping classifier ensemble、nonlinear parsimonious feature selection GMM、spectrometer driven spectral partitioning；物理81页全部4题名，SD-SP用作者原稿补摘要；不将82页其他论文视为已审。累计45–76及78–81页116题名111入3排2待；77页未核。Crossref每查询3条只用于身份匹配，不视年度全量。 | 4 / 4 / 4 | 81页4题名摘要闭环；77及年度目录仍未完成 | SSF/博弈/NPFS原PDF与方法图受限；代码/arXiv未知，Purdue仅原稿数据入口，当前访问及版本待核。；博弈摘要称三种却只枚举两项；不补造第三项。NPFS不套2015期刊特征数/实验。；SD-SP原220与5×42重采样映射未解释；Fig3只是方法示例，无独立会议框架图；期刊三作者/2015在线2016卷期及DAIS实验分开。；目录174条关联111/已有决定5/未审58；自动110/5/59，TRDF人工拼写关联见page81-toc-replay.json。；截至2026-10-08，实际核验2026-10-09。续82页并补77、目录遗漏与版本差异。 |
+| WHISPERS | 2014 | slow feature hyperspectral change、clustering partial least squares soil predictions、simultaneous least squares satellite registration、official program title abstract author mismatch；82页两直接新题名＋一错配摘要恢复题名；SD-SP页首属81页续接，既存不重复计。累计45–76及78–82页118直接题名+恢复配准题名1=119项，113入3排3待。77未核，83页未审，不冒充连续窗口完成。 | 3 / 3 / 3 | 82页两题名摘要闭环并恢复错配身份；配准HSI关系待核 | 两新原PDF/图、专用代码数据/arXiv未取得；SFA不使用2015 SFA/RX期刊Hyperion及2019深度代码。；PLS正文按212土壤样本真实原摘要收录；留一CV并非外部测试，嵌套选参/聚类隔离、原表性能对应待核。；恢复配准论文只确认多光谱Landsat TM，明确HSI联系仍待；其机构PDFrestricted，不把错配PLS摘要当HSI证据。；目录174条关联113/决定6/未审55；自动112/6/56，TRDF人工关联见page82-toc-replay.json。；实际核验2026-10-09，截至2026-10-08；77/83及年度遗漏仍未完成。 |
+| WHISPERS | 2014 | local density background estimation LDAS、linear spectral mixing Kalman subpixel tracking、eFUMI multiple instance target characterization、hyperspectral stereo disparity change；物理83页全部4題名。累计45–76及78–83页122直接題名+恢复配准題名1=123项，117入3排3待；77页未核，84页未审。每题Crossref3条仅身份匹配，不作为年度全扫。 | 4 / 4 / 4 | 83页4题名摘要闭环；77及年度遗漏待补 | LDBE/Kalman/eFUMI会议原PDF/原图与专用数据/arXiv未知。KalmanO. Duran不凭机构同姓猜全名。；eFUMI官方代码对应2015期刊/2019发布，2014精确代码/直接扩展差异待核；2016实例影响/心搏论文不是会议预印本。；双目稿§2–5局部读，Fig1是系统照片；固定机位/短时差与原谱分辨率/通道间隔区别保留，正式版差异与泛化待核。；目录174条关联117/决定6/未审51；自动116/6/52，TRDF人工拼写关联见page83-toc-replay.json。；实际核验2026-10-09，截至2026-10-08；三维214成员不改，续84页、补77及年度目录。 |
+| WHISPERS | 2014 | integer wavelet spectral decorrelation lossless compression、binary partition tree gas plume tracking、sparse matched subspace detector GLRT；物理84页全部3题名。累计45–76及78–84页125直接题名+恢复配准1=126项，120入3排3待；77未核。目录174关联120/决定6/未审48，自动119/6/49，含TRDF人工关联。题名查询前三条不代表年度全量。 | 3 / 3 / 3 | 84页3题名闭环；77及年度目录遗漏待补 | 整数CDF9/7具体可逆实现、AVIRIS场景、编码器/硬件与原PDF/图待核；2015 RAST相关题名不能代替会议结果。；BPT一段无真值视频，仅视觉比较；背景静止与已知释放时刻假设，不称全自动或有定量优势。作者HAL v1/正式IEEE差异、专用代码/数据/arXiv未知。；SMSD仅完整摘要，稀疏求解器/GLRT公式/数据与图未知，不套其他稀疏检测论文。；77未核；85页及48条目录遗漏继续，年度和全领域均未完成。 |
+| WHISPERS | 2014 | MERIS HICO NIR-red chlorophyll、Starnberger See inverse radiative transfer bathymetry、HICO level-2 atmospheric correction water quality；物理85页全部3题名；本session续86页2篇尚未审。累计45–76及78–85页128直接题名+恢复1=129项，123入3排3待，77未核。TOC174关联123/决定6/未审45；自动122/6/46，TRDF人工关联保留。 | 3 / 3 / 3 | 85页3题名闭环；本session续86页及年度遗漏未审 | NIR-red MERIS多光谱/HICO高光谱分别记录；5.5%为实测总范围归一化且精确统计量未知，不能叫MAPE或HICO精度。；水深37cm是实测RMSE，10–25/35–65cm是潜在去偏精度；4148总匹配与0–8m3947、62浅区标定分开。单一底反射率、图2/3文内错引及正式版差异待核。；HICO工具箱R²0.95不是95%准确率；场景、匹配数、大气模型、专用软件/数据未知，2015再标定稿不补写2014实现。；NIR-red/HICO会议原PDF/图、精确代码数据/arXiv未知；WASI历史手册/后续软件下载线索不当2014复现代码。；86页前两篇属本session后续，继续该页；77及年度45未审条目待补。 |
+| WHISPERS | 2014 | Helgoland EnMAP WASI-2D benthic bathymetry、Italy lake optical properties future satellite sensors、joint sparse collaborative representation target detection；物理86页全部3题名，前2题是水体session续篇，第3题开启稀疏session，后续87未审。累计45–76及78–86页131直接题名+恢复1=132，126入3排3待；77未核。目录174关联126/决定6/未审42，自动125/6/43，TRDF人工关联保留。 | 3 / 3 / 3 | 86页3题名完整摘要闭环；77/87及年度遗漏未审 | 三篇会议原PDF/原图、专用代码/数据/arXiv未知；Helgoland是六页不套四页，模拟EnMAP而非在轨数据，历史Dörnhöfer署名不改。；意大利摘要将MERIS纳入hyperspectral表述，库内注明其多光谱属性；未来任务仅2014语境，算法/数据细节未知。CNR实时分页漂移不能当原文。；检测标题joint不据此加邻域共享支持；PR2015三作者与会议两作者分开，引用19身份和直接扩展差异待核；不搬双窗/正则及期刊实验。；续87页、补77及42条年度目录遗漏；全领域矩阵仍未完成。 |
+| WHISPERS | 2014 | l0 sparse PCA anomaly important bands、MMV collaborative sparse unmixing chain CLSUnSAL、hierarchical sparse dictionary classification；物理87页全部3题名；日程Brook dust摘要续88页未计本批。累计45–76及78–87页134直接题名+恢复1=135，129入3排3待；77未核。TOC174关联129/决定6/未审39，自动128/6/40，TRDF人工关联保留。 | 3 / 3 / 3 | 87页3题名闭环；77/88及年度遗漏待补 | PCA/层级分类会议原PDF/原图与专用资源未知。PCA Pam/Pang拼写冲突以正式Pang核定；作者上传SPCA数据线索未取得，不能当已核资源。；解混链真值谱库辅助选端元、分块内存限制及不施加ASC明确记录；SRE光谱重建不当丰度误差，l0凸代理不称任意数据等价。；CLSUnSAL原算法引用10与本文三阶段配置分别关联；SUnSAL/C-SUnSAL及引用1102.3288前作不是本文代码/预印本，精确代码/数据未知。；层级稀疏码实际层级构造未知，不套空间树/深度网络；合作者博士稿仅题名引用不是会议正文。；日程dust题名的完整摘要在物理88页，续该页；77及39条年度目录遗漏待查。 |
+| WHISPERS | 2014 | settle dust green canopy sparse unmixing L1/2 NMF OMP、morphological covariance principal component analysis、Dirichlet robust regularized covariance anomaly detection、pure pixel SPA preconditioning；物理88页全部4题名；累计45–76及78–88页138直接题名+恢复1=139，133入3排3待；77未核。TOC174关联133/决定6/未审35，自动132/6/36，TRDF人工关联保留。 | 4 / 4 / 4 | 88页4题名闭环；77/89及年度遗漏待补 | 三篇四页会议原PDF/图未取得；不能用期刊/长稿图冒充会议图。；dust仅会议Anna Brook，2016期刊两作者七算法；OMP非线性混合方程/尘物理单位、真值与精确代码数据待核。；MorphPCA会议正文1610行与扩展610冲突，不擅自纠正；独立假设、折空间分离与类别指标定义未知；原Fig2是形态表示示例，不是流程图。；协方差会议末作者倒置以同作者期刊正式Pang消歧；RX/实验因素仅期刊长稿摘要，不写会议实验。；SPA唯一arXiv v1的25页长稿/2015期刊与四页会议差异待核；作者代码对应2015稿，Hubble/Vavasis前作不混。；继续物理89页并补77及目录35遗漏；全年度原目录/引文仍未完成。 |
+| WHISPERS | 2014 | supervised segmentation hidden fields SegSALSA、mean map kernel orthonormalized PLS patch reduction、Mie Lorentz T matrix genetic hyperspectral refractive index、floodplain CIR LiDAR scope CASI reference；物理89页4题名：3入1范围待核，第四摘要原跨90但未审90其他题名；累计45–76及78–89页142直接题名+恢复1=143，136入3排4待；77未核。TOC174关联136/决定7/未审31，自动135/7/32，TRDF人工关联保留。 | 4 / 4 / 4 | 89页4题名已审3入1待；77/90及年度遗漏待补 | 三会议原PDF/图、确切代码数据未取得；两次初查询429转原DOI，不能把IEEE202/机器人页当可读原文。；SegSALSA原稿缓存片段不当全文读；2015 STR明确后续结构张量改进，arXiv1504.07028不是2014稿。；均值映射核OPLS两个基准未命名，不能从同作者PCA/域适应/对齐工作借实验；WUR书目日与会期分别保留。；海洋颗粒J/I Piera与E. Zafra名冲突保留核定边界，2016两作者原稿只读前作关系，不当会议实验。；洪泛区四波段CIR无直接HSI；参考2 CASI光谱配置与方法关系待核，不能只以会议名纳入或按二维标准排除。；继续90、补77和目录31遗漏；年度全域/引文检索未完成。 |
+| WHISPERS | 2014 | nonlinear plume gas radiative transfer CONLIE、e-FAST water vapour visibility HyMap sensitivity、hyperspectral ultrasound skin thickness validation；物理90页3新题名均入；皮肤摘要读91续文但其他91题名未审。累计45–76及78–90页145直接题名+恢复1=146，139入3排4待；77未核。TOC174关联139/决定7/未审28，自动138/7/29，TRDF人工关联保留。 | 3 / 3 / 3 | 90页3新题名已审；77/91及年度遗漏待补 | 羽流作者全文文字完整已读，排版PDF与正式稿差异未核；Fig1作者图下载403/网页404，页码未知，尚无可展示原图。；羽流合成垂直先验含真值结构，实测用估计释放温度约束且无独立浓度精度表，不将已核单例数字概括为无先验普遍提升。；e-FAST会议全文受限，HyMap场地、采样与指数阶数未知；大于0.8不能当一阶可加贡献；Twente后续博士书目不解决另一论文摘要错配。；皮肤48条光谱不是48患者；2015期刊六患者只期刊事实，直接会议扩展声明和两稿全文/图差异待核。；三篇代码数据及本稿arXiv未找到，原图续接逐篇登记；继续91、补77和目录28遗漏，年度全域/引文闭环未完成。 |
+| WHISPERS | 2014 | extended linear mixing spectral variability bundles CLS、cone non-negativity singular vectors endmember extraction、ANN nonlinearity order polytope decomposition unmixing；91页3新题名均入，ANN摘要读92续文；累计45–76及78–91页148直接题名+恢复1=149，142入3排4待；77未核。TOC174关联142/决定7/未审25，自动141/7/26，TRDF人工消歧保留。 | 3 / 3 / 3 | 91页3新题名已审；77/92及年度遗漏待补 | ELMM日程多R. Marrero按作者原PDF/正式登记/TOC七作者核定；共同尺度假设、式7全约束L1常数与代码/稀疏解释待核。；ELMM四幅图为数据/结果无框架图；2016作者代码明确后作，不能当2014本稿代码。2015五作者/2016六作者算法版本差异和扩展关系未核。；锥端元会议原全文/图受限，原数学定义、参数、对比数字及代码数据/arXiv未知，不将伪秩等同组分数。；ANN–POD会议Fig1页2原图已存；合成训练可不依赖真实丰度真值，但仍需端元/阶数范围；Hapke模型失配表现差保留，10端元与5端元实验分开。；ANN2015期刊原首页明确enhanced version，只追踪同族；期刊全文差异、代码数据与本稿arXiv待核。；继续92、补77和目录25遗漏，已有4范围pending延续；年度全域/引用闭环未完成。 |
+| WHISPERS | 2014 | polynomial postnonlinear polytope decomposition、GRENDEL graph cuts piecewise convex unmixing、DART airborne at-sensor radiance imaging spectroscopy；物理92页3新题名全部审；页首ANN续摘要不计。累计45–76及78–92页151直接题名+恢复配准1=152，145入3排4待；77仍未核。TOC174关联145/决定7/未审22，自动144/7/23，TRDF人工消歧保留。 | 3 / 3 / 3 | 92页3新题名已审；77/93和年度遗漏待补 | POD原四页稿/图/代码/数据待核；ANN–POD是已收录下游组合方法，不倒填其阶数训练和实验。；GRENDEL作者稿五页与正式四页差异未核；NEON无端元真值，Pavia参考类别均值非实测纯端元。四图均数据/结果，无框架图。；DART机载稿全文/图受限；机构博士论文附录仅发现与局部索引核对，未阅读全文；RSE2015三作者与本五作者扩展关系待核。；继续93、补77及TOC22遗漏；现有4范围pending延续。年度全域与引用闭环仍未完成。 |
+| WHISPERS | 2014 | opaque broken clouds MCScene reflectance adjacency、FLEX Sentinel-3 configurable passive hyperspectral scene generator、Lagrangian hydrodynamic particle mass concentration hyperspectral simulator、MCScene CameoSim real scene comparison；物理93页4新题名全部审；累计45–76及78–93页155直接题名+恢复配准1=156，149入3排4待；77仍未核。TOC174关联149/决定7/未审18，自动148/7/19，TRDF人工消歧保留。 | 4 / 4 / 4 | 93页4新题名已审；77/94与年度遗漏待补 | 四篇正式原全文/图均受限；海洋作者上传正文文本已读但图片公式缺失，不标全文核验。Fig1已发现，原图403及页码待核。；碎云二次TLDR混入2018分区目标检测结果，未采用；MCScene覆盖UV–LWIR不代表本反演实验全光谱。；FLEX会议6作者/相关2018期刊7作者与正式年分开；扩展关系未核。仿真器对比不借后续CHIMES数据或误差。；本稿代码、实验数据和arXiv未找到已核链接；海洋首作者Eloy/Emerson冲突按原稿E.保留，待机构身份核验。；继续94、补77及目录18遗漏；4范围pending延续，年度全域/引用闭环未完成。 |
+| WHISPERS | 2014 | Joint denoising/unmixing、Adapted MGM、Forest manifold regression、SSA spectral denoising、3-D cube wavelets；TOC顺序1/5/23/101/107，物理77全部3题名；物理41和43各1篇定向，不计整页完成。 | 5 / 5 / 5 | 77页闭环及目录5缺口已审，94及13目录条目待核 | 物理94页超时/截图未成功，直接下载连接拒绝；仍未核，不据目录猜页内容。；目录174关联154/跟踪7/未审13；45–93页158直接题名+恢复配准1，另41/43定向2，共154入3排4待，非年度全量。；41/43仅各1篇定向筛选，其余摘要虽在缓存，未计已审；四范围pending延续。；除SSA作者稿，四篇全文与方法图待核；代码/数据/arXiv及相关期刊扩展身份持续追踪。 |
+| WHISPERS | 2014 | Adaptive LLE materials、Modularity Eigenmaps、DRR infrared sounding、Dione/Rhea terrain spectra、OMEGA 1 µm mineralogy；TOC37/75/167/143/170；物理41全部4与43全部3题名，前批2篇不重复。 | 5 / 5 / 5 | 41/43页闭环，目录8条及94待核 | 目录174关联159/跟踪7/未审8；41页四题名与43页三题名全部筛选，既有Uto/MGM不重复新增。；物理45–93页158直接题名+恢复配准1，另41/43全7，共159入3排4待；42/44/94及其他早页未系统核，非年度全量。；四新篇仅摘要；原全文/方法图、代码/数据与arXiv持续核验；Dione/Rhea输入暂基础关系。；DRR输入通道文字/维数及OMEGA目录页数/登记冲突保留；4范围pending延续。 |
+| WHISPERS | 2014 | ChemCam LIBS preprocessing denoising continuum band selection、CRISM alteration mineral reduction ratioing、meteorite mafic mineral neural network reflectance；TOC38/53/57；物理44全部3题名及原摘要，2入1待；42/94仍未核。 | 3 / 3 / 3 | 44页2入1待；目录5项及年度缺口待补 | 44页三题名已筛：2入1待；目录174关联161/跟踪8/未审5；累计161入3排5待，不作年度完成。；42/94及其他早页待系统核。原数据、代码、arXiv和相关CoTCAT版本身份待追踪。；ChemCam基础关系待作者原稿/综述核验；只引用或同会场不作为身份结论。；CRISM原稿探测器命名及图2观测号拼写保留；矿物定量MLP的实验与图示层数分开。 |
+| WHISPERS | 2014 | dictionary learning sparse representation 75%、kernelized sparse graph embedded dimensionality reduction、SPIM preliminary characterization、unmixing super-resolution target detection、vegetation spectral sampling wet dry tropics；目录顺序93/97/103/120/139，逐项5决定；物理42三题名全部筛；94未系统核。 | 5 / 5 / 5 | 目录最后5项4入1待；174项决定闭环，年度内容缺口保留 | 目录174项已有165入库关联、9跟踪决定（3排6待）、0未审；这是目录逐项决定闭环，不是年度全文/主题/引文完成。；42页全部3题名已筛；核化图论文原摘要错配，入库仅题名/待分类，正确原摘要与全文待核。；94及其他早页尚未系统核；植被采样直接HSI关系、其他5旧待核候选继续保留。；会议原图/代码/数据/arXiv、SPIM2013/2015与核化图2015扩展身份待核；不借异稿数据或图。 |
+| WHISPERS | 2013 | all proceedings titles、oil presence thickness steel coils、EMAP decision fusion classification、bilinear bilinear nonnegative unmixing；原目录PDF全部页解析161项；逐篇筛选顺序1–3，158项未审。 | 161 / 3 / 3 | 完整题名目录已取得；首3项2入1待，其余158未审 | 161项目录全部下载解析；仅首3项2入1待，其余158尚未逐篇审查；目录存在不等于年度内容完成。；EMAP四页原稿全文及Fig1已读；单场景、参数/测试划分细节和代码数据待核，不能继承二次引用的LiDAR输入。；双线性NMF仅题名待分类，会议原摘要/全文和2014期刊扩展身份待核；作者SSP仓库不是本稿已核代码。；油膜2013原稿受限，SFPT日期/版本身份待核；正式IEEE版及全年度摘要/引文/原图仍有缺口。 |
+| WHISPERS | 2014 | atmospheric condition uncertainty、statistical moments sub-pixel target tracks、floodplain CASI LiDAR reference、wet dry tropics vegetation；定向4候选；不构成年目录扫描；2014官方第94页仍未取得。 | 4 / 4 / 4 | 四个既有待核项补检，决定仍待核；无新增论文 | 2014待核6项仍未解决；本次只补检其中4项。；CASI名称不能代替实际波段配置；植被2014原稿与日期/版本身份未取得。；第94页及其他早页、全文、原图与引用关系待补。 |
+| WHISPERS | 2013 | spatial regularization semisupervised HERF、Sava two band reflectance chlorophyll、ICA FastICA Infomax JADE FS SVM；正式目录顺序4–6，3项逐审；累计6/161，155未审。定向搜索不是完整年度关键词扫描。 | 161 / 3 / 3 | 第4–6项3入；累计5入1待，155未审 | WHISPERS2013目录161累计顺序1–6已审：5入1待，余155未审；年度摘要、全文、其他词、引文仍未完成。；HERF仅题名待分类；作者slides/basic code线索受限，2015/2016后续稿扩展声明及2013原摘要/图仍待核。；Sava与ICA只核摘要；三篇会议原图、全文实验、专用代码/数据、arXiv及后续版本关系待核。不借2014 ICA、2016 FEB结果或原图。；2013官方37页日程工具缓存可读，直连三次TLS失败；未拿到实际原PDF，不宣布日程全部页已读或有论文摘要。 |
+| WHISPERS | 2013 | Low rank representation bilinear abundance estimation、Removal salt-and-pepper noise THEMIS radiance emissivity、Iterative estimation number autofluorescence components、exact titles + pdf code arxiv；正式目录顺序7–9，3项逐审；累计9/161，152未审。定向搜索未穷尽搜索分页，不作完整年度关键词扫描。 | 161 / 3 / 3 | 第7–9项3入；累计8入1待，152未审 | WHISPERS2013目录161累计顺序1–9已审：8入1待，余152未审；年度摘要、全文、其他词和引文仍未完成。；低秩解混仅读原作者2013演示的指定页，论文摘要/全文/原图仍待核；THEMIS作者稿已读，正式版差异待核；m-FLIM仅机构摘要，全文/原图待核。；三篇专用代码、原数据、arXiv及相关期刊扩展身份未核。不把作者演示或另篇后续稿实验当成已核论文结果。；HERF/NMF仅题名，Sava/ICA仅摘要；油膜2013/2014/页首2012身份、早期条目的原图及全文待核。 |
+| WHISPERS | 2013 | variance analysis differentiate similar classes hyperspectral、multiscale spectral-spatial Multilinear PCA contourlet、combined optical imagers unmixing fusion、exact titles + pdf code arxiv；正式目录顺序10–12，3项逐审；累计12/161，149未审。定向搜索未穷尽分页，不作年度关键词全量。 | 161 / 3 / 3 | 第10–12项3入；累计11入1待，149未审 | WHISPERS2013目录161累计顺序1–12已审：11入1待，余149未审；年度摘要、全文、其他词和引文仍未完成。；方差区分与MPCA/contourlet仅题名待分类；作者学位论文和IGARSS等相近稿没有直接版本身份声明，不借其摘要、实验或图片。；组合成像器四页作者全文与Fig.1已核，正式版差异、CASI原数据及本设计模拟专用代码待核；CNMF2016代码是基础算法而非复现证明。；既有油膜身份、NMF/HERF题名、低秩演示与m-FLIM摘要对应论文全文/原图、后续扩展声明和arXiv追踪仍待核。 |
+| WHISPERS | 2013 | exact titles + author pdf、edge-weighting graph commute time hyperspectral anomaly、pyroxene PCA optical mineral mixtures、regression framework background estimation code arxiv；完整161项目录第13–15项，3项逐审；累计15/161。定向搜索未穷尽结果分页，非年度关键词全量。 | 161 / 3 / 3 | 第13–15项2入1待；累计13入2待，146未审 | WHISPERS2013目录161累计顺序1–15已审：13入2待，余146未审；年度摘要、全文、其他词与引文仍未完成。；第14项辉石混合原始光学范围/摘要待核，二次摘要不当事实；第13项原PDF/方法图受限，只核作者摘要与部分缓存正文，公式OCR错误不抄。；第15项作者全文只有输入样例图无方法图；正式版差异、代码和数据直接地址待核，实际目标检测为未来工作。；此前方差/MPCA题名待分类、油膜身份、NMF/HERF、低秩演示/m-FLIM全文原图、CNMF设计模拟代码和CASI数据、扩展声明仍待核。 |
+| WHISPERS | 2013 | exact titles + authors pdf、spatial-spectral multiple kernel hyperspectral classification code arxiv、3D self-organizing map false color Gerbil、improving performance sparse unmixing code arxiv；完整目录第16–18项3项；累计18/161，143未审。定向引擎检索未穷尽分页，不称年度完整。 | 161 / 3 / 3 | 第16–18项3入；累计16入2待，143未审 | WHISPERS2013目录161累计顺序1–18已审：16入2待，余143未审；非年度全领域检索完成。；第16/18项仅题名待分类，原摘要、全文、原图与代码/数据仍待核；二次摘要不当原始证据，MKL的LSMSC混入/多作者错标不继承。；第17项作者全文/原Fig.2已核，SOM三维不是场景几何；Gerbil代码未锁定2013或运行，原数据入口、正式版差异与2016扩展具体身份/差异待核。；保留第14项辉石混合范围、边权异常原PDF/图、方差/MPCA分类、油膜、NMF/HERF、低秩/m-FLIM全文原图、CNMF模拟代码/CASI数据等此前缺口。 |
+| WHISPERS | 2013 | water reflectance spectra chlorophyll Qinghai Lake pdf code arxiv、data-noise tolerant multi-temporal hyperspectral classification Hemissi Farah、spatial filter framework target detection hyperspectral Zhang Du code arxiv、exact titles author institution sources；完整目录第19–21项3项；累计21/161，140未审。Crossref题名发现rows=5，不为完整检索；精确DOI核本项。引擎定向检索未穷尽分页。 | 161 / 3 / 3 | 第19–21项3入待分类；累计19入2待，140未审 | WHISPERS2013目录161累计顺序1–21已审：19入2待，余140未审；目录题名筛选不当年度摘要/全文或全领域完成。；第19–21项仅正式题名/书目待分类；青海湖光学谱研究暂标基础关系，具体高光谱分辨率/采样待原摘要。原稿、实验、原图与代码/数据/arXiv仍待核。；同作者2014正则化检测、2013 TGRS谱签名、2014 GR-RBM和不同湖泊相近题名未证明版本身份，不借方法、实验或图片；Bo Du同名作者需消歧。；此前辉石混合范围、边权异常原稿原图、各题名分类、油膜/NMF/HERF、演示/摘要全文、SOM/Gerbil源码版本/扩展、CNMF模拟代码和CASI数据仍待核。 |
+| WHISPERS | 2013 | multi-element scanning spectrometer geometric distortion FISS pdf code arxiv、shadow propagation forestry hyperspectral LiDAR institution code arxiv、imaging spectrometer carbon dioxide methane plumes Dennison pdf code arxiv；完整目录第22–24项3项逐审，累计24/161；137未审。题名发现rows=5仅定位，精确DOI核本项；定向引擎检索未穷尽分页。 | 161 / 3 / 3 | 第22–24项3入；累计22入2待，137未审 | WHISPERS2013目录161累计顺序1–24已审：22入2待，余137未审；非年度全领域或全文检索完成。；林业阴影仅机构原稿缓存摘要/部分正文，5页PDF未取得；标open access但下载跳登录HTML，INBO文件403，不把HTTP200登录页算论文。原Fig.1与页码、代码/数据及全文实验待核。；第22/24项仅题名待分类；FISS和MODTRAN等二次摘要细节未采纳，八作者RSE与后续气体论文的引用不当扩展声明。；此前辉石范围、题名分类、边权异常原稿原图、SOM/Gerbil源码/扩展、油膜/NMF/HERF、演示/摘要全文、CNMF模拟代码和CASI数据仍待核。 |
+| WHISPERS | 2013 | Tidhar Rotman inhomogeneous inhomogenous non-Gaussian density estimation pdf code arxiv figure、Classification of hyperspectral images with Self Organizing Map May Stéphane CNES pdf code dataset arxiv、Random subspace ensemble dictionary learned sparse representation Xue Du Su pdf code dataset arxiv；完整目录第25–27项3项逐审，累计27/161；134未审。定向引擎检索若干查询，未穷尽分页，不视作全主题覆盖。 | 161 / 3 / 3 | 第25–27项3入；累计25入2待，134未审；另SPIE版本关系待核 | WHISPERS2013目录161累计顺序1–27已审：25入2待，余134未审；非年度全领域或全文检索完成。；第25项机构原摘要直接可读，全文/原图未取得；同题SPIE DOI10.1117/12.2016452关系候选待核，不合并日期实验或图。；第26/27项仅题名待分类；SOM作者以官方程序纠正为Stéphane May，登记倒置另存；2001/2019 SOM及2015 EMAP随机子空间实验不借用。；此前林业原PDF跳登录/403、成像仪/气体/青海湖范围、辉石、题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、CNMF代码/CASI数据等缺口保留。 |
+
+旧场所：TCSVT、TSP、TCI、IGARSS、WHISPERS、Applied Optics、Remote Sensing、JSTARS、CVPR Workshops、JSAP-OSA Joint Symposia、GRSL、Biogeosciences
+
+</details>
+
+<details>
+<summary>历史批次记录（数量与待核项属于当时状态）</summary>
+
+- 2026-10-08 / cvpr-2022-abstract-batch-1：新增 6，更新 3，去重 3，排除 9，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：六篇新增仅摘要核验；原 PDF 方法图局部读取不能代替全文阅读。
-- 2026-10-08 / cvpr2022-arxiv-version-metadata：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr2022-arxiv-version-metadata：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：核验四个既有方法共九个 arXiv 版本的提交日期、版本号及作者；没有新增方法，也没有核验逐版实验差异。
-- 2026-10-08 / cvpr-2013-2014-optical-review：新增 2，更新 0，去重 0，排除 10，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2013-2014-optical-review：新增 2，更新 0，去重 0，排除 10，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两届官方目录的指定关键词共 12 个候选全部逐篇核验摘要；新增两篇补读局部方法和实验，仍非完整全文阅读。
-- 2026-10-08 / neurips-2023-optical-review：新增 3，更新 0，去重 0，排除 27，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / neurips-2023-optical-review：新增 3，更新 0，去重 0，排除 27，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方年度目录 3,540 题名；指定五关键词 30 候选全部核验摘要；三篇新增区分主会与数据集评测 Track，实验均非全文核验。
-- 2026-10-08 / tgrs-early-unmixing-subspace：新增 3，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tgrs-early-unmixing-subspace：新增 3，更新 0，去重 0，排除 0，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：VCA、OSP 摘要和局部方法/数据页；HySime 机构摘要与出版元数据。没有阅读全文。定向查找涉及 1988/1994/2005/2008，不代表年度系统检索。
-- 2026-10-08 / tgrs-foundations-and-fcls：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tgrs-foundations-and-fcls：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：MNF 原文摘要及局部图注；Craig 出版社索引摘要及 VCA 引文；FCLS 原文摘要、局部算法/数据说明。没有阅读全文。前批两个待核验候选已收录。
-- 2026-10-08 / optical-2007-2008-imaging：新增 4，更新 0，去重 0，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / optical-2007-2008-imaging：新增 4，更新 0，去重 0，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：OL 2007 Crossref 登记 1141 条按六成像任务词扫描；四命中中三篇读官方摘要、一篇只按题名暂排除。两篇 CASSI 定向核验原文摘要与局部系统图，仍非全文阅读；SPIE 前序稿单列版本不计方法数。
-- 2026-10-08 / cvpr-2021-optical-keywords：新增 4，更新 3，去重 3，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2021-optical-keywords：新增 4，更新 3，去重 3，排除 4，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：1660 个官方题名按五关键词筛选；11 命中均读官方摘要，4 新条目局部原图已核验，3 旧条目仅补总库 library。全部仍非完整全文阅读。两方法三 arXiv 版本日期已核验，全文差异待查。
-- 2026-10-08 / iccv-2021-optical-keywords：新增 4，更新 1，去重 1，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / iccv-2021-optical-keywords：新增 4，更新 1，去重 1，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：1612 官方题名按五关键词检索，7 命中均读摘要；新条目保存两原图和一原算法，真实噪声条目逐图检索未见独立框架。只补一个旧条目的 library；三方法六 arXiv 版本日期核验，全文差异待查。全部非阅读全文。
-- 2026-10-08 / cvpr-2015-optical-keywords：新增 4，更新 1，去重 1，排除 2，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2015-optical-keywords：新增 4，更新 1，去重 1，排除 2，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：602 官方题名七命中均读官方摘要；保存三原图，IRSS 八图均为分析/结果，未见独立框架；四新 DOI 精确核验。DASC 只补 library。另发现一篇 TPAMI 后续稿，版本关系待核验。均非阅读全文。
-- 2026-10-08 / cvpr-2016-optical-keywords-and-followup-access：新增 3，更新 1，去重 0，排除 1，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2016-optical-keywords-and-followup-access：新增 3，更新 1，去重 0，排除 1，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：643题名四命中均读官方摘要；三新条目各保存原图并核验DOI。ITSReg第6页局部数据/设置核验，仍非阅读全文。TPAMI候选补作者机构与访问证据，扩展关系待查。
-- 2026-10-08 / cvpr-2017-optical-keywords：新增 5，更新 1，去重 1，排除 4，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2017-optical-keywords：新增 5，更新 1，去重 1，排除 4，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：783官方题名十命中均读摘要；五新条目保存原图/算法/物理模型/动机比较，局部设置单独注明；只补一旧条目的library。六DOI题名作者年份核验，页码差异待查，非阅读全文。
-- 2026-10-08 / cvpr-2018-optical-keywords：新增 3，更新 1，去重 1，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2018-optical-keywords：新增 3，更新 1，去重 1，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：979题名来源为三日367/370/242；六命中均读摘要。三新条目原图已保存，MIID 118/30通道、滤波器设计与实际双通道硬件分别记录。uSDN三arXiv版本日期与作者仓库已核验；全部仍非阅读全文。
-- 2026-10-08 / usdn-u2mdn-journal-extension：新增 1，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / usdn-u2mdn-journal-extension：新增 1，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：新增1条期刊文献、更新前序uSDN关联；原文明确同一方法族，不计新增独立方法族。正式卷期2022与2019–2021五个arXiv版本分别记录；读v5摘要与第2/4/5/7/8局部页，保存明确版本的Fig.3，非阅读全文。
-- 2026-10-08 / iccv-2013-reflective-fluorescent-and-versions：新增 1，更新 0，去重 2，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / iccv-2013-reflective-fluorescent-and-versions：新增 1，更新 0，去重 2，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：454题名两命中读官方摘要；新增反射/荧光分离与原Fig.3采集原理图，排除数学谱分割。2014专题摘要与2016期刊扩展归并为两个版本，不计独立方法。期刊作者接受稿第2/14页证明会议前序及新增处理，仅局部阅读。
-- 2026-10-08 / iccv-2015-optical-keywords：新增 5，更新 0，去重 0，排除 1，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / iccv-2015-optical-keywords：新增 5，更新 0，去重 0，排除 1，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：526题名六命中均读官方摘要，五新条目分别保存总体流程、照明设计比较、层次先验模型或原算法；五DOI题名作者年份核验。CSU作者代码MIT与CAVE样例权利分开。两相关出版元数据候选未推定扩展关系；全部非阅读全文。
-- 2026-10-08 / iccv-2017-optical-keywords：新增 2，更新 1，去重 1，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / iccv-2017-optical-keywords：新增 2，更新 1，去重 1，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：621题名五命中：两篇新文献官方摘要、出版DOI及原图局部核验；既有光场文献仅补library。非阅读全文。
-- 2026-10-08 / publication-association-correction-2015：新增 0，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / publication-association-correction-2015：新增 0，更新 0，去重 0，排除 0，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：ASSDL作者IJCV原文摘要与1–3页局部模型；关联未证明。IGARSS2014作者元数据与CSU不同，撤销未经证明的前序关联，保留独立主题候选。
-- 2026-10-08 / iccv-2019-optical-keywords：新增 7，更新 1，去重 1，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / iccv-2019-optical-keywords：新增 7，更新 1，去重 1，排除 4，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：十二命中逐篇官方摘要；七新文献原图、DOI及完整作者顺序核验。两关联多光谱明确标注；原专题条目仅补library。λ-Net题名变体保留；性能口径未混用。局部阅读非阅读全文。
-- 2026-10-08 / cvpr-2019-optical-keywords：新增 8，更新 0，去重 0，排除 4，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2019-optical-keywords：新增 8，更新 0，去重 0，排除 4，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：十二候选闭环；八新文献八DOI与原图、完整作者顺序核验；三篇明确关联多光谱。NGmeet官方摘要尾部截断，以PDF首页补查。MHFnet/NGmeet三arXiv版本日期核验，非独立方法。全部摘要/局部页，非阅读全文。
-- 2026-10-08 / cvpr-2020-optical-keywords：新增 3，更新 0，去重 0，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / cvpr-2020-optical-keywords：新增 3，更新 0，去重 0，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：五命中闭环；三篇DOI与原图/完整作者核验；PACH关联NIR–VIS。UAL监督预训练与无监督适配、给定谱响应与未知空间退化单独记录。非阅读全文。
-- 2026-10-08 / ngmeet-journal-accepted-relation：新增 0，更新 1，去重 1，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / ngmeet-journal-accepted-relation：新增 0，更新 1，去重 1，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：接受稿1–3页与17页明确扩展会议，增加恢复任务并保留七作者；v1日期和Accepted to TPAMI来自官方arXiv。只关联版本，不推定正式出版年。非阅读全文。
-- 2026-10-08 / tgrs-1994-title-and-inversion-review：新增 1，更新 0，去重 2，排除 1，待处理 3。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tgrs-1994-title-and-inversion-review：新增 1，更新 0，去重 2，排除 1，待处理 3。更新与去重可能重叠，不能相加为新增。
   阅读边界：136条Crossref登记题名六成像词四命中；增补五任务词按DOI扣除重复后新增三候选。森林论文读作者上传原文首页摘要并核对NASA书目；两条去重，雷达仅题名暂排除；三条原摘要受限。非阅读全文、非出版社年度全覆盖。
-- 2026-10-08 / icml-2013-pmlr-optical-review：新增 0，更新 0，去重 0，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2013-pmlr-optical-review：新增 0，更新 0，去重 0，排除 4，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
-- 2026-10-08 / icml-2022-pmlr-optical-review：新增 1，更新 0，去重 0，排除 7，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2022-pmlr-optical-review：新增 1，更新 0，去重 0，排除 7，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
-- 2026-10-08 / icml-2023-pmlr-optical-review：新增 0，更新 0，去重 0，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2023-pmlr-optical-review：新增 0，更新 0，去重 0，排除 4，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
-- 2026-10-08 / icml-2024-pmlr-optical-review：新增 2，更新 0，去重 0，排除 18，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2024-pmlr-optical-review：新增 2，更新 0，去重 0，排除 18，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐条审查题名宽词/摘要光学及遥感词命中。新增条目仅摘要和注明局部原文页已读，非阅读全文。
-- 2026-10-08 / rmt-frechet-arxiv-version-association：新增 0，更新 0，去重 2，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / rmt-frechet-arxiv-version-association：新增 0，更新 0，去重 2，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两个预印本版本候选归并到本批新建会议条目；官方日期已核验，作者仓库明确出版关联，非全文比对。
-- 2026-10-08 / icml-2014-early-pmlr-review：新增 1，更新 0，去重 0，排除 4，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2014-early-pmlr-review：新增 1，更新 0，去重 0，排除 4，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
-- 2026-10-08 / icml-2015-early-pmlr-review：新增 0，更新 0，去重 0，排除 5，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2015-early-pmlr-review：新增 0，更新 0，去重 0，排除 5，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
-- 2026-10-08 / icml-2016-early-pmlr-review：新增 0，更新 0，去重 0，排除 2，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2016-early-pmlr-review：新增 0，更新 0，去重 0，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
-- 2026-10-08 / icml-2017-early-pmlr-review：新增 0，更新 0，去重 0，排除 3，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2017-early-pmlr-review：新增 0，更新 0，去重 0，排除 3，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
-- 2026-10-08 / icml-2018-early-pmlr-review：新增 0，更新 0，去重 0，排除 11，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2018-early-pmlr-review：新增 0，更新 0，去重 0，排除 11，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方主卷目录与全量摘要元数据URL集合一致；题名五词/摘要十一词并集逐篇审查。2014包含两Cycle节。新增仅摘要与注明局部原文页已读，非阅读全文。
-- 2026-10-08 / structured-low-rank-related-publications-discovery：新增 0，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / structured-low-rank-related-publications-discovery：新增 0，更新 0，去重 0，排除 0，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：后续arXiv原文页1/3/14确认前序引用；官方v1日期与Crossref正式期刊书目已核验。未证明正式版本归并，不把两作者内容混入会议三作者事实。
-- 2026-10-08 / icml-2019-middle-pmlr-review：新增 0，更新 0，去重 0，排除 6，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2019-middle-pmlr-review：新增 0，更新 0，去重 0，排除 6，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐篇阅读注明关键词并集候选的官方摘要。2021卫星影像候选追加局部原文及官方RGB加载器核验；未声明全文阅读。
-- 2026-10-08 / icml-2020-middle-pmlr-review：新增 0，更新 0，去重 0，排除 7，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2020-middle-pmlr-review：新增 0，更新 0，去重 0，排除 7，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐篇阅读注明关键词并集候选的官方摘要。2021卫星影像候选追加局部原文及官方RGB加载器核验；未声明全文阅读。
-- 2026-10-08 / icml-2021-middle-pmlr-review：新增 0，更新 0，去重 0，排除 9，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / icml-2021-middle-pmlr-review：新增 0，更新 0，去重 0，排除 9，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录与全量摘要元数据URL集合一致；逐篇阅读注明关键词并集候选的官方摘要。2021卫星影像候选追加局部原文及官方RGB加载器核验；未声明全文阅读。
-- 2026-10-08 / neurips-2022-optical-review：新增 4，更新 0，去重 0，排除 15，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / neurips-2022-optical-review：新增 4，更新 0，去重 0，排除 15，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：19份完整官方摘要已读；4新增仅摘要及注明局部原文页已读，不是阅读全文；每篇原图已裁切并目视核对。
-- 2026-10-08 / neurips-2022-arxiv-version-history：新增 0，更新 4，去重 8，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / neurips-2022-arxiv-version-history：新增 0，更新 4，去重 8，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：8份PDF机器抽取用于定位变更；人工只读注明局部页，全文逐句/公式/图像和全部实验差异未完成。目录条目/方法数量不增加。
-- 2026-10-08 / neurips-2021-optical-review：新增 1，更新 0，去重 0，排除 13，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / neurips-2021-optical-review：新增 1，更新 0，去重 0，排除 13，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：14份官方完整摘要逐篇审查；T3SC仅摘要及注明局部第1、5–8页阅读，非阅读全文；原Fig.1已目视核对并保存。arXiv仅v1提交日期与发表声明核验，非正文比对。
-- 2026-10-08 / neurips-2020-optical-review：新增 0，更新 0，去重 0，排除 9，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / neurips-2020-optical-review：新增 0，更新 0，去重 0，排除 9，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录1898题名指定五词扫描；9命中的完整官方摘要已读，依当前证据逐篇排除。未读全文，不推定题名未命中论文不相关。
-- 2026-10-08 / neurips-2019-optical-review：新增 0，更新 0，去重 0，排除 5，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / neurips-2019-optical-review：新增 0，更新 0，去重 0，排除 5，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：官方目录1428题名指定五词扫描；5命中的完整官方摘要已读，依当前证据逐篇排除。未读全文，不推定题名未命中论文不相关。
-- 2026-10-08 / rse-2001-crossref-optical-review：新增 4，更新 0，去重 0，排除 0，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / rse-2001-crossref-optical-review：新增 4，更新 0，去重 0，排除 0，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：133不同DOI与Crossref登记总数一致；六题名成像词6命中全部筛查。4篇完整官方/机构摘要收录，2篇仅局部原摘要/引言留待核验。两张出版社原始方法图已核对，PDF页码未知；非全文阅读。
-- 2026-10-08 / rse-2001-task-review-and-pending-resolution：新增 2，更新 0，去重 1，排除 8，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / rse-2001-task-review-and-pending-resolution：新增 2，更新 0，去重 1，排除 8，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：旧两候选完整官方原摘要解决：Broge收录、Key排除。九任务词133登记题名全扫11命中：DAIS热子通道相关收录、同DOI去重1、排除7、两原摘要仍受限。排除7含6完整摘要及1勘误题名；不把书目阅读称摘要核验。两新增未阅读全文，原图与页码未核验。
-- 2026-10-08 / rse-2002-crossref-optical-review：新增 6，更新 0，去重 0，排除 4，待处理 3。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / rse-2002-crossref-optical-review：新增 6，更新 0，去重 0，排除 4，待处理 3。更新与去重可能重叠，不能相加为新增。
   阅读边界：189 DOI与登记总数一致，一页逐题名六词13命中逐篇处理。6原始出版社/机构摘要收录；4排除含3完整摘要及1明确Landsat原引言/方法；3局部原摘要留待核验。2机构PDF取得，读摘要/局部方法/图注，非全文阅读。所有新增原gr1逐张目视，2张方法/观测示意已保存，其余是结果/地图。
-- 2026-10-08 / rse-2002-task-review-and-corn-resolution：新增 2，更新 0，去重 0，排除 2，待处理 4。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / rse-2002-task-review-and-corn-resolution：新增 2，更新 0，去重 0，排除 2，待处理 4。更新与去重可能重叠，不能相加为新增。
   阅读边界：九任务词完整189题名复扫5命中：TCARI/OSAVI原PDF收录、两多光谱原摘要排除、评论/森林2待核验。旧玉米完整原摘要收录，另两旧候选原摘要仍受限。2新增均非全文阅读；首图逐张目视为结果曲线，不当框架。
-- 2026-10-08 / ol-2008-crossref-optical-review：新增 2，更新 0，去重 0，排除 1，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / ol-2008-crossref-optical-review：新增 2，更新 0，去重 0，排除 1，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：1032不同DOI与查询登记总数一致，rows1000两页逐题名六词4命中。2原始出版社摘要收录、1完整摘要排除、1作者PDF第一页范围未定。新增不是全文阅读；双光子密集激发扫描与九元素粗子集分别记录。原图/PDF受限，不以实验结果图或作者实验室后续照片冒充框架。
-- 2026-10-08 / ol-2009-crossref-optical-review：新增 4，更新 0，去重 0，排除 3，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / ol-2009-crossref-optical-review：新增 4，更新 0，去重 0，排除 3，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：1309登记DOI两页六成像词逐题名扫描；7命中均读完整原始摘要。收录3直接HSI与1明确HSI关系的MSI分解。NTF作者PDF第一页索引只作关系证据，3D为张量阶数；量子点断层仅摘要数值结果。未阅读全文，原图订阅/验证页/作者证书错误逐项保留。
-- 2026-10-08 / ol-2010-crossref-optical-review：新增 1，更新 0，去重 0，排除 3，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / ol-2010-crossref-optical-review：新增 1，更新 0，去重 0，排除 3，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：Crossref年度1417登记DOI两页全取并扫描指定六成像词；4命中全部读取完整出版社摘要。收录反射式UV–VIS–NIR傅里叶高光谱平台，三MSI器件/FLIM论文因缺少明确HSI关系暂排除并保留重审。新论文不是阅读全文，定向原图检索失败逐篇保存。
-- 2026-10-08 / ol-2007-2010-system-reconstruction-review：新增 4，更新 0，去重 1，排除 4，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / ol-2007-2010-system-reconstruction-review：新增 4，更新 0，去重 1，排除 4，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：四年度4899登记题名补扫16个系统/重建词，11命中均读完整原始摘要；4新文献、1重复、4排除、2待关系核验。2007非成像Mueller为2023原始研究明确引用的HSI基础；2013公式勘误归并，不计新方法。Dyson两设计波长不等于两观测波段；2010静态谱偏振装置仅一维空间。局部设计表与作者PDF第一页索引非全文。
-- 2026-10-08 / tci-2015-unmixing-abstract-figure-review：新增 3，更新 0，去重 0，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2015-unmixing-abstract-figure-review：新增 3，更新 0，去重 0，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：2015年度41登记DOI一页完整获取；六词2命中与四词4命中并集4，增3排1，跨组重复命中不重复计数。三篇原摘要、局部模型图与6个arXiv版本日期核验；HUT-AMP原期刊图，RCA/RBLU原图来源标v2预印本。未阅读全文，不混用正式/预印本实验。
-- 2026-10-08 / tci-2016-spectral-compressive-review：新增 2，更新 0，去重 0，排除 2，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2016-spectral-compressive-review：新增 2，更新 0，去重 0，排除 2，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：63登记DOI含目录/说明；六词3、四词5并集5，跨词组重复不计新方法。彩色CASSI原PDF摘要/第1页原图；Fourier正式TIP原摘要。其余受限候选不依据二手摘要升级。
-- 2026-10-08 / tci-2017-spectral-compressive-review：新增 8，更新 0，去重 0，排除 7，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2017-spectral-compressive-review：新增 8，更新 0，去重 0，排除 7，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：六词11与四词17并集17；跨组重复不计独立方法。8篇原始摘要及注明局部原图页；4个arXiv版本历史核验。作者上传原稿、预印本、期刊版分开，未阅读全文。 PPID局部数据建模与Fig.11已读；本批5张原方法图。
-- 2026-10-08 / tci-2016-2017-candidate-followup：新增 0，更新 0，去重 0，排除 1，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2016-2017-candidate-followup：新增 0，更新 0，去重 0，排除 1，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：定向复核三个旧候选：JEDI作者原始摘要排除；LSSHUCS和反射估计仍待原始摘要/HSI关联，不额外增加候选。
-- 2026-10-08 / tci-2018-spectral-compressive-review：新增 2，更新 0，去重 0，排除 1，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2018-spectral-compressive-review：新增 2，更新 0，去重 0，排除 1，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：六词2与四词4并集4；跨组重复命中不计新方法。两篇原始摘要、局部方法页/实验段、5个arXiv日期与作者README核验；未阅读全文，正式/预印本实验不混用。
-- 2026-10-08 / tci-2019-spectral-compressive-review：新增 2，更新 0，去重 0，排除 2，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2019-spectral-compressive-review：新增 2，更新 0，去重 0，排除 2，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：六词2与四词5并集5；跨组重复不计独立方法。2收录原始摘要及局部原图页已读，2排除原始摘要；1待核验。未阅读全文。
-- 2026-10-08 / tci-2019-official-toc-crosscheck：新增 0，更新 2，去重 2，排除 2，待处理 3。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2019-official-toc-crosscheck：新增 0，更新 2，去重 2，排除 2，待处理 3。更新与去重可能重叠，不能相加为新增。
   阅读边界：52目录项逐题名/起始页一致，含1奖公告；另有年度索引。2已收录论文补官方目录证据，重复不增加方法数。补查4通用题名：2原始摘要排除、2新增待核验；加原去噪候选，本检索共3待核验。42篇其余研究摘要未筛。
-- 2026-10-08 / tci-2019-generic-abstract-screen-1：新增 0，更新 0，去重 0，排除 7，待处理 3。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2019-generic-abstract-screen-1：新增 0，更新 0，去重 0，排除 7，待处理 3。更新与去重可能重叠，不能相加为新增。
   阅读边界：从42目录已核对但原摘要未筛项选取10篇，8完整原始摘要已读：7排除、1正式稿作者增补/版本待查；另2原摘要受限。未阅读全文，不填实验数字。当前年度仍32目录项摘要未筛、6候选待核验。跨搜索组复用决定不重复计方法。
-- 2026-10-08 / tci-2019-modalities-abstract-screen-2：新增 0，更新 0，去重 0，排除 10，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2019-modalities-abstract-screen-2：新增 0，更新 0，去重 0，排除 10，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：从32未筛项选取10篇；6完整原始摘要、4官方索引原始摘要内容/片段，均确认当前研究对象并排除。未阅读全文，不录未核验实验数字。当前年度仍22篇摘要未筛、6候选待核验。
-- 2026-10-08 / tci-2019-optical-abstract-screen-3：新增 0，更新 0，去重 0，排除 6，待处理 2。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2019-optical-abstract-screen-3：新增 0，更新 0，去重 0，排除 6，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：从22目录已核对但原摘要未筛项选取8篇：6完整原始摘要排除（1仅官方缓存）；2原摘要受限。未阅读全文。当前年度余14篇摘要未筛、8候选待核验。Monash错标2009保留，作者接收稿/前序稿和正式版分开。
-- 2026-10-08 / tci-2019-radar-tomography-abstract-screen-4：新增 0，更新 0，去重 0，排除 4，待处理 4。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2019-radar-tomography-abstract-screen-4：新增 0，更新 0，去重 0，排除 4，待处理 4。更新与去重可能重叠，不能相加为新增。
   阅读边界：8候选：3完整原始摘要与1官方原始片段排除，4正式原摘要/版本关系待核验，非全文。当前2019余6研究摘要未筛、12候选待核验；无新收录或分类变化。
-- 2026-10-08 / tci-2019-final-six-original-source-attempts-5：新增 0，更新 0，去重 0，排除 1，待处理 5。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / tci-2019-final-six-original-source-attempts-5：新增 0，更新 0，去重 0，排除 1，待处理 5。更新与去重可能重叠，不能相加为新增。
   阅读边界：最后6研究项：1正式PDF完整摘要排除，5待核验。累计51研究项均已尝试原始来源检索、34已审17待核验；仍非年度摘要全量核验，原文下载不等于全文阅读。独立GRSL2015发现线索不计本批TCI数量。
-- 2026-10-08 / embedded-quantization-2013-2015-citation-closure：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / embedded-quantization-2013-2015-citation-closure：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：增1直接HSI压缩（2015作者预印本全文）及2通用编码基础（2013原摘要/局部，非全文）；正式题名异写与作者预印本合并，DCC前序年份/作者/实验单独记录，不新增独立方法数量。原图3张均原文裁切，其中2015Fig.1为转载先前2SDQ，注明来源。
-- 2026-10-08 / grsl-2015-crossref-compression-review：新增 2，更新 0，去重 1，排除 18，待处理 5。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-crossref-compression-review：新增 2，更新 0，去重 1，排除 18，待处理 5。更新与去重可能重叠，不能相加为新增。
   阅读边界：572登记题名5压缩词26命中逐篇登记；2新增原摘要/局部实验与原图，1旧DOI去重，18排除（15仅雷达题名、3原摘要/注明局部），5受限/状态待查。两新增保守为摘要已读，非完整全文。
-- 2026-10-08 / grsl-2015-mlnmf-primary-closure：新增 1，更新 0，去重 3，排除 0，待处理 62。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-mlnmf-primary-closure：新增 1，更新 0，去重 3，排除 0，待处理 62。更新与去重可能重叠，不能相加为新增。
   阅读边界：年度66题名命中中MLNMF原摘要、arXiv v1日期、DOI和作者代码README完成核验，保存Fig.1；其余仅DOI去重或题名待审。完整全文未读，不以题名扫描宣称年度完成。
-- 2026-10-08 / grsl-2015-fspe-svmsub-primary-review：新增 2，更新 0，去重 0，排除 0，待处理 60。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-fspe-svmsub-primary-review：新增 2，更新 0，去重 0，排除 0，待处理 60。更新与去重可能重叠，不能相加为新增。
   阅读边界：FSPE机构原稿原摘要/注明局部索引与SVMsub原PDF摘要/方法/实验局部核验，均非阅读全文；FSPE图注均结果，本地PDF待访问，SVMsub唯一图为结果地图。四受限候选保存出版社失败，不提升核验。
-- 2026-10-08 / grsl-2015-nine-originals-primary-review：新增 9，更新 0，去重 0，排除 0，待处理 51。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-nine-originals-primary-review：新增 9，更新 0，去重 0，排除 0，待处理 51。更新与去重可能重叠，不能相加为新增。
   阅读边界：九篇原PDF完整摘要及注明局部已读；六篇原方法图目视后裁切保存，三篇图注/局部图版仅有结果或数据图。未标全文已读，未混用并行性能与算法新颖性。
-- 2026-10-08 / grsl-2015-hysure-tracegas-pgpda-primary-review：新增 3，更新 0，去重 0，排除 1，待处理 47。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-hysure-tracegas-pgpda-primary-review：新增 3，更新 0，去重 0，排除 1，待处理 47。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇完整原摘要及注明局部核验；HySURE技术报告版本/日期明确关联，不混用正式实验。PGPDA原方法图及代码入口已核验，许可/复现待查；SCIAMACHY只有完整机构摘要。一移除通知仅作研究记录保留，日期/理由未知。
-- 2026-10-08 / grsl-2015-esdap-primary-review：新增 1，更新 1，去重 0，排除 0，待处理 46。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-esdap-primary-review：新增 1，更新 1，去重 0，排除 0，待处理 46。更新与去重可能重叠，不能相加为新增。
   阅读边界：ESDAP接受稿完整摘要、方法/实验局部及Fig.3原图核验；监督NWFE与分类器如原稿记录，未标全文。补GGF形态剖面分类；三候选保留失败/仅书目状态，邻域图前序关系按作者声明记录。
-- 2026-10-08 / grsl-2015-backscatter-calibration-and-removal-reconciliation：新增 1，更新 0，去重 0，排除 1，待处理 49。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-backscatter-calibration-and-removal-reconciliation：新增 1，更新 0，去重 0，排除 1，待处理 49。更新与去重可能重叠，不能相加为新增。
   阅读边界：机构原PDF缓存的完整摘要、§I–III方法及§IV–V实验/结论局部已读；未取得本地PDF、未逐页阅读全文或复现。Fig.1在期刊1422页（PDF第2页），缓存有图注，下载403且截图Cache miss，原图待取得。 移除通知在压缩组同步已有光谱组的出版社登记排除决定；同一通知不是新增独立排除方法，日期/理由不推断。
-- 2026-10-08 / grsl-tgrs-2015-collaborative-residual-ensemble-review：新增 3，更新 0，去重 0，排除 0，待处理 43。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-tgrs-2015-collaborative-residual-ensemble-review：新增 3，更新 0，去重 0，排除 0，待处理 43。更新与去重可能重叠，不能相加为新增。
   阅读边界：WJCR原期刊PDF完整摘要/方法实验局部及原Fig.1；GIPREBAD作者本人上传原稿完整摘要/局部；RS-EMAP仅机构完整原摘要。均非全文/复现。JCR前序误记书目按正式DOI核对，2014硕士论文只关联且不完整下载不作原图。
-- 2026-10-08 / grsl-2015-unmixing-learned-target-review：新增 2，更新 0，去重 0，排除 0，待处理 41。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-unmixing-learned-target-review：新增 2，更新 0，去重 0，排除 0，待处理 41。更新与去重可能重叠，不能相加为新增。
   阅读边界：两篇期刊原排版完整摘要及明确局部；未阅读全文。目标检测仍需目标光谱；R-1丰度参考为近似真值。
-- 2026-10-08 / grsl-2015-water-svr-multispectral-waveform-review：新增 2，更新 0，去重 0，排除 0，待处理 39。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-water-svr-multispectral-waveform-review：新增 2，更新 0，去重 0，排除 0，待处理 39。更新与去重可能重叠，不能相加为新增。
   阅读边界：两篇作者本人上传完整原摘要/局部，未阅读全文。水深稿预分页版本与正式卷期分开；LiDAR四接收通道属于多光谱，点云生成仅潜力，不自动加入三维专题。
-- 2026-10-08 / grsl-2015-feature-decoupling-hal39-review：新增 1，更新 0，去重 0，排除 0，待处理 38。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-feature-decoupling-hal39-review：新增 1，更新 0，去重 0，排除 0，待处理 38。更新与去重可能重叠，不能相加为新增。
   阅读边界：一篇机构完整原摘要，非全文；39个待核验DOI的HAL精确查询留证，零命中不计排除或已核验。
-- 2026-10-08 / kfkt-2013-2015-classification-family-review：新增 2，更新 0，去重 0，排除 0，待处理 37。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / kfkt-2013-2015-classification-family-review：新增 2，更新 0，去重 0，排除 0，待处理 37。更新与去重可能重叠，不能相加为新增。
   阅读边界：2015作者原稿完整摘要和方法/实验局部；2013出版社完整原摘要及引言/结论局部。未阅读全文；同方法族两工作关联，不混作者/实验或声称同篇版本。
-- 2026-10-08 / grsl-2015-crnn-registration-review：新增 2，更新 0，去重 0，排除 0，待处理 35。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-crnn-registration-review：新增 2，更新 0，去重 0，排除 0，待处理 35。更新与去重可能重叠，不能相加为新增。
   阅读边界：CRNN/LRNN原五页全文与原表/方法机制图核验；联合配准仅作者期刊稿摘要和明确局部。四波段MS关系单列，SVR融合与支持向量回归区分。
-- 2026-10-08 / grsl-2015-margin-whispers-crnn-review：新增 2，更新 1，去重 0，排除 0，待处理 34。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-margin-whispers-crnn-review：新增 2，更新 1，去重 0，排除 0，待处理 34。更新与去重可能重叠，不能相加为新增。
   阅读边界：最大间隔仅IEEE完整原摘要缓存；CRNN2014仅官方技术日程完整摘要。关联同族2015期刊但不宣称已证实正式扩展，不混用实验；两书目不计两种独立方法。
-- 2026-10-08 / grsl-2015-sfsd-original-review：新增 1，更新 0，去重 0，排除 0，待处理 33。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-sfsd-original-review：新增 1，更新 0，去重 0，排除 0，待处理 33。更新与去重可能重叠，不能相加为新增。
   阅读边界：SFSD作者本人上传完整期刊摘要与§II/§III局部；未阅读全文。频域处理对象仍为光学高光谱；Salinas参考来自全部标注像元，不能称独立泛化测试。
-- 2026-10-08 / grsl-2015-nlpca-ejrs-2018-primary-trace：新增 1，更新 0，去重 0，排除 0，待处理 33。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / grsl-2015-nlpca-ejrs-2018-primary-trace：新增 1，更新 0，去重 0，排除 0，待处理 33。更新与去重可能重叠，不能相加为新增。
   阅读边界：机构存档原排版PDF已下载；完整摘要、方法、实验设置及结论局部已读，Fig.1视觉核验；未逐页阅读全文、核验全部实验图表或复现。
-- 2026-10-08 / whispers-2014-applications-pages-45-46-review：新增 6，更新 0，去重 0，排除 1，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-applications-pages-45-46-review：新增 6，更新 0，去重 0，排除 1，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：六篇仅主办方完整原摘要；官网不是事实无误保证。水体五类K-means不混用2015四类FCM，标定长稿不当原四页稿；不按相关题名数增加独立方法数。
-- 2026-10-08 / whispers-2014-applications-pages-47-48-review：新增 4，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-applications-pages-47-48-review：新增 4，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：NIR分选四页机构作者稿全文已读；矿物机构摘要与正式三作者核验，其余仅完整原摘要。复用旧排除/待核验不重复计数，不把定性分选当定量估计。
-- 2026-10-08 / whispers-2014-uav-pages49-50-review：新增 5，更新 0，去重 0，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-uav-pages49-50-review：新增 5，更新 0，去重 0，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：五篇主办方完整摘要；UAV火山四页机构作者稿全文已读后排除。EPFL首页只用核作者，不提升全文阅读；实际融合输出谱段待查。
-- 2026-10-08 / whispers-2014-graph-pages51-52-review：新增 6，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-graph-pages51-52-review：新增 6，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：六篇主办方完整摘要；Grassmann作者稿部分算法/实验选读，未标阅读全文。统计融合偏基础关系，细分任务待核。
-- 2026-10-08 / whispers-2014-detection-page53-review：新增 3，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-detection-page53-review：新增 3，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：四条完整官方摘要筛选；三篇摘要入库，单灰度时间序列保持待核验光谱关系。
-- 2026-10-08 / whispers-2014-planetary-page54-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-planetary-page54-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三个完整官方摘要及正式会议书目；未阅读全文，无实验数值臆测。
-- 2026-10-08 / whispers-2014-proceedings-toc-inventory：新增 0，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-proceedings-toc-inventory：新增 0，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：正式目录174条仅完成全量清单提取；题名关联28、已追踪决定4、待筛选142。不重复建立未审论文卡片。
-- 2026-10-08 / whispers-2014-unmixing-page55-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-unmixing-page55-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇完整官方摘要；会议及相关版本事实分开，未阅读全文。
-- 2026-10-08 / whispers-2014-unmixing-page56-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-unmixing-page56-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四篇入库：MLJSR四页作者稿全文，其余三篇原摘要；无强行方法图或跨版本实验。
-- 2026-10-08 / whispers-2014-vegetation-page57-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-vegetation-page57-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：APEX与树种作者四页全文；水稻完整原摘要；只入总库，三维保持214篇。
-- 2026-10-08 / whispers-2014-vegetation-unmixing-page58-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-vegetation-unmixing-page58-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三条仅原始摘要；GMF期刊增加方法族关联，不提升阅读状态；三维214篇。
-- 2026-10-08 / whispers-2014-unmixing-page59-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-unmixing-page59-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三条仅官方完整摘要；期刊增加同方法族关联，不提升原阅读状态。三维214篇。
-- 2026-10-08 / whispers-2014-unmixing-page60-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-unmixing-page60-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：植被作者六页稿全文，其余官方完整摘要；三维214篇不变。
-- 2026-10-08 / whispers-2014-unmixing-page61-review：新增 4，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-unmixing-page61-review：新增 4，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：NMF原arXiv与BPT原HAL全文，其余官方完整摘要；三维214不变。
-- 2026-10-08 / whispers-2014-unmixing-dimension-page62-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-unmixing-dimension-page62-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：VB作者四页全文，其余官方完整摘要；三维214篇不变。
-- 2026-10-08 / whispers-2014-feature-selection-page63-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-feature-selection-page63-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四篇官方完整原摘要；三维214篇不变。
-- 2026-10-08 / whispers-2014-page64-and-scope-original-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-page64-and-scope-original-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇会议完整摘要；2009原模型摘要及单页方法。三维214篇不变。
-- 2026-10-08 / whispers-2014-program-page65-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-program-page65-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两篇完整官方摘要；一篇作者原稿四页完整文字，图像未核。三维214篇不变。
-- 2026-10-08 / whispers-2014-program-page66-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-08 / whispers-2014-program-page66-review：新增 3，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三会议完整官方摘要；油气姓名按独立官方日程页核归一。三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page67-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page67-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三会议完整原摘要，NEI另选读作者原稿文字核HSI基础关系；公式/图像缺失未升全文状态。三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page68-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page68-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三完整原摘要核验；AirFLEX另选读作者原稿确认六通道，不升全文。三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page69-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page69-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三完整会议摘要已核验；另外期刊选读只用于小波版本甄别。三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page70-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page70-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三完整原摘要，两会议稿另选读方法/设置；不提升全文状态，三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page71-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page71-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四完整原摘要，两稿另选读；arXiv v1方法图不冒充正式会议图，三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page72-review：新增 3，更新 0，去重 1，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page72-review：新增 3，更新 0，去重 1，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三完整原摘要，TRDF演示文稿选读非正式全文；三维214篇原对象保持不变。
-- 2026-10-09 / whispers-2014-program-page73-and-tip-family-review：新增 3，更新 0，去重 1，排除 1，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page73-and-tip-family-review：新增 3，更新 0，去重 1，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇原摘要；GLUP会议和TIP原稿部分方法/设置选读；两篇同方法族、arXiv不另计独立方法。三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page74-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page74-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四完整原摘要；第一会议稿选读与两原图核验，不提升全文阅读状态；原三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page75-and-rse-family-review：新增 3，更新 0，去重 1，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page75-and-rse-family-review：新增 3，更新 0，去重 1，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三原摘要闭环，两个会议稿另选读；SMOTE平台上传2017但正式会议2014，黏粒两正式稿同族而非独立方法。原三维214篇不变。
-- 2026-10-09 / whispers-2014-program-page76-and-plant-family-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page76-and-plant-family-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四完整原摘要；第一会议和期刊另选读并检查全部原图，无独立框架/方法图如实记录；三维214篇/原472篇对象不改。
-- 2026-10-09 / whispers-2014-program-page78-and-shearlet-family-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page78-and-shearlet-family-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四完整原摘要；期刊另部分方法/实验选读和原算法核验，不提升全文阅读状态；77页未知，不因连续编号推定已审。三维214/原476篇对象不改。
-- 2026-10-09 / whispers-2014-program-page79-classification-review：新增 2，更新 1，去重 1，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page79-classification-review：新增 2，更新 1，去重 1，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两新会议完整摘要，TSVM另作者网页部分选读；NLPCA只书目全名，CRNN复核去重，三维214篇不改。
-- 2026-10-09 / whispers-2014-program-page80-classification-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page80-classification-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四篇完整官方摘要；波段论文原文缓存部分选读，均不标阅读全文。保留旧482对象及三维214篇。
-- 2026-10-09 / whispers-2014-program-page81-classification-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page81-classification-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四篇完整摘要；SD-SP作者PDF局部选读、原方法示例Fig3；其他不标全文。旧486对象及三维214保持。
-- 2026-10-09 / whispers-2014-program-page82-change-soil-mismatch-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page82-change-soil-mismatch-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：SFA官方完整摘要；PLS托管原论文完整摘要和§1选读。配准身份恢复、HSI关系待核；SD-SP续接不算新的重复方法。旧490及三维214保持。
-- 2026-10-09 / whispers-2014-program-page83-detection-tracking-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page83-detection-tracking-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四篇完整官方摘要；双目原PDF§2–5选读，原Fig1系统照片。旧492与三维214不改。
-- 2026-10-09 / whispers-2014-program-page84-compression-plume-detection-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page84-compression-plume-detection-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇完整官方摘要；BPT作者HAL v1四页正文全文阅读与原Fig1框架核验。保留旧496对象及三维214成员。
-- 2026-10-09 / whispers-2014-program-page85-water-inversion-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page85-water-inversion-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇完整官方摘要；水深DLR作者四页正文§1–7全文阅读，原Figure2结果图核验，非框架。旧499对象与三维214不改。
-- 2026-10-09 / whispers-2014-program-page86-water-and-sparse-target-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page86-water-and-sparse-target-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇主办方完整摘要；PR出版社引言缓存只核版本声明，不标全文。原502对象与三维214不改。
-- 2026-10-09 / whispers-2014-program-page87-sparse-anomaly-unmixing-classification-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page87-sparse-anomaly-unmixing-classification-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇完整官方摘要；解混链作者四页§1–5全文阅读、原Fig1协同矩阵示意，不是全链框架。旧505对象与三维214不改。
-- 2026-10-09 / whispers-2014-program-page88-dust-morphology-covariance-spa-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page88-dust-morphology-covariance-spa-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四篇完整官方摘要；MorphPCA作者四页正文§1–6全文及Fig2物理4页。其余会议未全文读，四相关期刊与SPA arXiv只关联，不计新增方法。旧508对象与三维214不改。
-- 2026-10-09 / whispers-2014-program-page89-segmentation-kernel-marine-scope-review：新增 3，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page89-segmentation-kernel-marine-scope-review：新增 3，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇完整官方摘要入库，原会议未全文读；洪泛区WUR四页全文已读，HSI关系待参考2核验。三会议缺图原因入续接；2015STR与2016海洋后作实验/图不混。旧512与三维214不改。
-- 2026-10-09 / whispers-2014-program-page90-plume-sensitivity-skin-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page90-plume-sensitivity-skin-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇官方完整摘要入库；羽流作者上传原文字§1–5已全文读，未取得排版PDF；另外两篇摘要已核。新增CONLIE/e-FAST方法标签，皮肤应用定义扩展且稳定ID不变；原图均受限，皮肤期刊不混会议事实。旧515与三维214不改。
-- 2026-10-09 / whispers-2014-program-page91-elmm-cone-ann-pod-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page91-elmm-cone-ann-pod-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：ELMM/ANN两篇作者四页原PDF全文读，锥端元完整摘要已核。ANN会议Fig1页2裁切；ELMM四图无框架，锥稿图受限。ANN2015原首页明确扩展同方法族，ELMM2015/2016仅后作关系；旧518与三维214不改。
-- 2026-10-09 / whispers-2014-program-page92-pod-grendel-atsensor-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page92-pod-grendel-atsensor-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：GRENDEL作者5页全文已读、4图检查均无框架；正式4页差异待核。POD/DART两篇完整原摘要已核，全文/图待获取。三篇仅总库，旧521与三维214对象不改。
-- 2026-10-09 / whispers-2014-program-page93-clouds-flex-marine-comparison-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-program-page93-clouds-flex-marine-comparison-review：新增 4，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：四篇完整原摘要已核；海洋作者上传网页第1–5节文本已读，公式图像与PDF受限，不标阅读全文。发现作者上传Fig1但下载403，其他原图未知。三方法标签新增，旧524与三维214对象不改。
-- 2026-10-09 / whispers-2014-toc-gap1-and-program-page77-review：新增 5，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-toc-gap1-and-program-page77-review：新增 5，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：五篇摘要已核；SSA作者接收稿全文、公式及原图已读，无方法框架图；另四篇未读全文。五方法标签暂定，旧528论文及三维214保持。
-- 2026-10-09 / whispers-2014-toc-gap2-and-program-pages41-43-review：新增 5，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-toc-gap2-and-program-pages41-43-review：新增 5，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：五篇完整摘要核验；DRR作者会议稿全文已读并裁切未编号原方案；其他四篇未读全文。原533论文及三维214保持。
-- 2026-10-09 / whispers-2014-toc-gap3-program-page44-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-toc-gap3-program-page44-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：CRISM和陨石MLP原稿全文、公式与全部原图已读；后者仅实验室基础关系。CRISM无框架图，MLP原Fig1已裁切。ChemCam完整摘要已核，范围pending。旧538论文及三维214不改。
-- 2026-10-09 / whispers-2014-proceedings-toc-final-five-review-review：新增 4，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2014-proceedings-toc-final-five-review-review：新增 4，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：4新增：DLSR/SPIM原摘要，扩展CNMF原稿全文，核化图仅题名待分类；植被采样关系待核。方法图为作者稿Fig.2物理2页。旧540论文和三维214保持原对象。
-- 2026-10-09 / whispers-2013-proceedings-first-three-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-first-three-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：EMAP作者原稿全文/表/两图已读；双线性NMF仅题名待分类；油膜2013关系待核。旧544论文与三维214保持原对象。2014四旧pending补检没有新原稿证据，保留决定。
-- 2026-10-09 / whispers-2013-proceedings-next-three-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-next-three-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三篇新增：HERF仅题名待分类，Sava作者摘要和ICA机构摘要已核；三原图均受限逐篇留原因。旧546论文与三维214原对象不变。
-- 2026-10-09 / whispers-2013-proceedings-orders-7-to-9-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-orders-7-to-9-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：3新增：THEMIS作者全文，m-FLIM原摘要，低秩作者演示指定页；2原方法示例包含1张论文Fig.1与1张会议幻灯片无图号图，来源分开。旧549论文及三维专题原对象不变。
-- 2026-10-09 / whispers-2013-proceedings-orders-10-to-12-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-orders-10-to-12-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：3新增：组合相机设计作者全文/原Fig.1，另2仅题名待分类；1方法标签来自原稿，引用CNMF基础算法不宣称本稿新算法。旧552论文及三维专题保持原对象。
-- 2026-10-09 / whispers-2013-proceedings-orders-13-to-15-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-orders-13-to-15-review：新增 2，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：2新增：作者原摘要与四页全文分别记录；辉石混合待原始范围核验。3暂定标签，未新增图片；旧555论文对象与三维范围不变。
-- 2026-10-09 / whispers-2013-proceedings-orders-16-to-18-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-orders-16-to-18-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：3新增：SOM四页作者全文、另2仅题名待分类。1新暂定方法标签、1原方法对照图。旧557论文对象和三维214范围不变。
-- 2026-10-09 / whispers-2013-proceedings-orders-19-to-21-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-orders-19-to-21-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：3新增仅题名待分类；2明确HSI、1光学谱基础关系，暂无新增标签/原图。旧560论文及三维214范围保留。
-- 2026-10-09 / whispers-2013-proceedings-orders-22-to-24-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-orders-22-to-24-review：新增 3，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：3新增：1机构原稿缓存摘要、2仅题名待分类；复用2标签，无新增图。原563论文及三维214对象保留。
-- 2026-10-09 / whispers-2013-proceedings-orders-25-to-27-review：新增 3，更新 0，去重 0，排除 0，待处理 1。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / whispers-2013-proceedings-orders-25-to-27-review：新增 3，更新 0，去重 0，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：3新增：1机构原摘要、2仅题名待分类；复用1任务标签、新增1暂定方法标签，无新增图。另SPIE同题关系候选待核。原566论文及三维214对象保留。
-- 2026-10-09 / jun-zhou-early-author-2009-2011：新增 5，更新 0，去重 1，排除 0，待处理 257。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-early-author-2009-2011：新增 5，更新 0，去重 1，排除 0，待处理 257。更新与去重可能重叠，不能相加为新增。
   阅读边界：作者263组269书目公共API完整拉取；本批5篇原稿摘要及局部页核验、1篇匹配既有条目，未宣称阅读全文。新增6确认标签，2张原方法图。原569篇事实和三维214成员保留。
-- 2026-10-09 / jun-zhou-followup-scope-and-versions-2008-2013：新增 3，更新 3，去重 0，排除 2，待处理 252。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-followup-scope-and-versions-2008-2013：新增 3，更新 3，去重 0，排除 2，待处理 252。更新与去重可能重叠，不能相加为新增。
   阅读边界：3新增作者原摘要/局部页，3既有版本关系更新，2普通RGB原稿排除。新增2方法标签、扩充1稳定标签定义；2原方法图。正式2013与2012作者稿分列；不将出版记录当独立方法数量。
-- 2026-10-09 / jun-zhou-2012-scope-and-ms-boundary：新增 2，更新 0，去重 0，排除 4，待处理 246。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-2012-scope-and-ms-boundary：新增 2，更新 0，去重 0，排除 4，待处理 246。更新与去重可能重叠，不能相加为新增。
   阅读边界：六组2012闭环筛选：2仅题名入库、4普通记录关联/对象图像暂排；另2010多光谱关系待核。无摘要/方法图时不补造字段或标签。
-- 2026-10-09 / jun-zhou-2013-six-hsi-primary-abstracts：新增 6，更新 0，去重 0，排除 0，待处理 240。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-2013-six-hsi-primary-abstracts：新增 6，更新 0，去重 0，排除 0，待处理 240。更新与去重可能重叠，不能相加为新增。
   阅读边界：新增6均原摘要核验；5公开原稿局部阅读、1机构摘要。新增1任务4方法标签、2方法示意图。保留两会议/期刊版本边界，三维214对象不变。
-- 2026-10-09 / jun-zhou-2013-nine-other-scope：新增 0，更新 0，去重 0，排除 9，待处理 231。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-2013-nine-other-scope：新增 0，更新 0，去重 0，排除 9，待处理 231。更新与去重可能重叠，不能相加为新增。
   阅读边界：9篇公开原摘要/输入局部排除；1条2012排除的会议/期刊扩展证据更新。ORCID2013范围筛选16组7入9排，仅该来源组闭环。
-- 2026-10-09 / jun-zhou-2014-scope-and-2016-natural-color：新增 2，更新 0，去重 0，排除 7，待处理 222。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-2014-scope-and-2016-natural-color：新增 2，更新 0，去重 0，排除 7，待处理 222。更新与去重可能重叠，不能相加为新增。
   阅读边界：九篇原摘要和指定局部；两篇显示论文原Figure1保存。三维214对象不变。
-- 2026-10-09 / jun-zhou-2015-eight-hsi-and-one-duplicate：新增 8，更新 2，去重 1，排除 0，待处理 213。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-2015-eight-hsi-and-one-duplicate：新增 8，更新 2，去重 1，排除 0，待处理 213。更新与去重可能重叠，不能相加为新增。
   阅读边界：8摘要新增、2旧会议版本证据更新、1同DOI关联；7原稿指定局部，1机构摘要。ORCID2015余十组未审，三维214不变。
-- 2026-10-09 / jun-zhou-2015-remainder-ten：新增 5，更新 0，去重 0，排除 7，待处理 200。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-09 / jun-zhou-2015-remainder-ten：新增 5，更新 0，去重 0，排除 7，待处理 200。更新与去重可能重叠，不能相加为新增。
   阅读边界：十组均完成摘要/书目范围决定；三篇新增条目，七篇排除。新增条目未取得或未逐页核完整全文。
-- 2026-10-10 / jun-zhou-whispers-2015-version-audit：新增 2，更新 0，去重 0，排除 0，待处理 200。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-whispers-2015-version-audit：新增 2，更新 0，去重 0，排除 0，待处理 200。更新与去重可能重叠，不能相加为新增。
   阅读边界：两条 ORCID 2017 登记记录按 Scholar、DBLP、DOI、作者来源和官方程序解析为 WHISPERS 2015；一篇摘要局部核验，一篇题名/程序核验。
-- 2026-10-10 / jun-zhou-orcid-2016-164-178：新增 7，更新 0，去重 1，排除 7，待处理 186。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2016-164-178：新增 7，更新 0，去重 1，排除 7，待处理 186。更新与去重可能重叠，不能相加为新增。
   阅读边界：7篇以作者稿/公开摘要和正式DOI核验；1篇仅公开摘要；不标全文。
-- 2026-10-10 / jun-zhou-orcid-2017-145-163：新增 11，更新 0，去重 2，排除 6，待处理 167。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2017-145-163：新增 11，更新 0，去重 2，排除 6，待处理 167。更新与去重可能重叠，不能相加为新增。
   阅读边界：10篇以作者稿/机构摘要和正式书目局部核验；1篇只核验官方目录与题名；不标全文。
-- 2026-10-10 / jun-zhou-orcid-2018-114-144：新增 16，更新 0，去重 2，排除 13，待处理 136。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2018-114-144：新增 16，更新 0，去重 2，排除 13，待处理 136。更新与去重可能重叠，不能相加为新增。
   阅读边界：16篇以作者稿、机构摘要、出版社摘要、arXiv或正式会议来源核验；边界检测论文仅题名/目录并保留待分类；不标全文。
-- 2026-10-10 / jun-zhou-orcid-2019-106-113：新增 7，更新 0，去重 0，排除 1，待处理 128。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2019-106-113：新增 7，更新 0，去重 0，排除 1，待处理 128。更新与去重可能重叠，不能相加为新增。
   阅读边界：7篇以作者论文、出版社摘要、DBLP或公开索引核验；1篇VHR遥感目标检测排除；不标全文。
-- 2026-10-10 / jun-zhou-orcid-2020-97-105：新增 7，更新 0，去重 0，排除 2，待处理 119。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2020-97-105：新增 7，更新 0，去重 0，排除 2，待处理 119。更新与去重可能重叠，不能相加为新增。
   阅读边界：7篇以作者稿、出版社摘要、机构完整摘要或IEEE摘要核验；2篇非高光谱皮肤/农业目标检测排除；不标全文。
-- 2026-10-10 / jun-zhou-orcid-2021-89-96：新增 6，更新 0，去重 0，排除 2，待处理 111。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2021-89-96：新增 6，更新 0，去重 0，排除 2，待处理 111。更新与去重可能重叠，不能相加为新增。
   阅读边界：6篇以机构/出版社摘要、PubMed、OpenAlex或作者来源核验；2篇通用立体/参数高效网络排除；不标全文。
-- 2026-10-10 / jun-zhou-orcid-2022-70-88：新增 16，更新 0，去重 0，排除 3，待处理 92。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2022-70-88：新增 16，更新 0，去重 0，排除 3，待处理 92。更新与去重可能重叠，不能相加为新增。
   阅读边界：16篇以题名与Crossref正式书目核验，先标暂定；3篇综述/RGB-D/人员重识别排除；摘要与全文待补。
-- 2026-10-10 / jun-zhou-orcid-2023-60-69：新增 8，更新 0，去重 0，排除 2，待处理 82。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2023-60-69：新增 8，更新 0，去重 0，排除 2，待处理 82。更新与去重可能重叠，不能相加为新增。
   阅读边界：8篇以题名与Crossref正式书目核验，先标暂定；2篇通用学习/人员重识别排除；摘要与全文待补。
-- 2026-10-10 / jun-zhou-orcid-2024-scope：新增 10，更新 0，去重 1，排除 10，待处理 23。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2024-scope：新增 10，更新 0，去重 1，排除 10，待处理 23。更新与去重可能重叠，不能相加为新增。
   阅读边界：10篇直接高光谱题名以Crossref书目入库为暂定；其余范围组按题名排除或去重；摘要与全文待补。
-- 2026-10-10 / jun-zhou-orcid-2025-scope：新增 8，更新 0，去重 0，排除 9，待处理 23。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2025-scope：新增 8，更新 0，去重 0，排除 9，待处理 23。更新与去重可能重叠，不能相加为新增。
   阅读边界：8篇直接高光谱题名以Crossref书目入库为暂定；其余范围组按题名排除或去重；摘要与全文待补。
-- 2026-10-10 / jun-zhou-orcid-2026-scope：新增 7，更新 0，去重 0，排除 14，待处理 23。更新与去重可指同一条目，不能相加为新增数量。
+- 2026-10-10 / jun-zhou-orcid-2026-scope：新增 7，更新 0，去重 0，排除 14，待处理 23。更新与去重可能重叠，不能相加为新增。
   阅读边界：7篇直接高光谱题名以Crossref书目入库为暂定；其余范围组按题名排除或去重；摘要与全文待补。
-
-## 2026-10-10 作者 ORCID 早期尾项闭环
-
-- 新增 `sources/jun-zhou-early-remainder-decisions.json`，补齐 ORCID 2001–2011 及 2015 重复登记的 30 组逐项决定；2010 多光谱配准改为排除，理由和原稿摘要/实验边界写入 `jun-zhou-2012-batch-decisions.json`。
-- ORCID inventory 的聚合决定计数同步为 128 收录、10 关联既有、125 排除、0 待审；263 组均有决定。未新增目录论文，三维214对象、其余总库事实不变。
-- `npm run validate`、`npm run build` 通过；构建仍有大 chunk 警告。
-
-## 2026-10-10 / jun-zhou-orcid-2026-abstract-followup
-
-- 更新 2 篇，不新增目录论文，不改变三维214对象。FedDA-HSI 读取 DPI 机构仓储摘要；SPECIAL 读取 arXiv 官方摘要。
-- 两条目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式2026 DOI、作者事实保留，SPECIAL 的预印本作者列表差异单列。
-- 其余 2026 直接高光谱条目仍待摘要或全文；证据见 `sources/jun-zhou-2026-abstracts.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2026-abstract-followup-2
-
-- 更新 2 篇，不新增目录论文，不改变三维214对象。HOT 综述读取 Springer 官方开放摘要；STU 读取公开摘要镜像。
-- 两条目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；STU 证据保留“公开镜像、未阅读全文”边界。
-- 2026 直接高光谱条目累计 4 篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2026-abstracts-2.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2026-abstract-followup-3
-
-- 更新 1 篇，不新增目录论文，不改变三维214对象。Frequency-Aware Bias Calibration Attention Network 读取公开摘要镜像。
-- 目录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源标明公开镜像，未阅读全文。
-- 2026 直接高光谱条目累计 5 篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2026-abstracts-3.json`。
-
-## 2026-10-10 / jun-zhou-scholar-2025-abstract-followup
-
-- 更新3篇，不新增目录论文，不改变三维214对象。MFTNet读取 ScienceDirect 官方摘要；DaSSP-Net读取 ScienceDirect 文章页面的方法与实验摘要信息；黑色素瘤分类读取 CVF 官方会议 PDF 摘要。
-- 三条 Scholar 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；仍保留 `classificationStatus=provisional`，未把摘要性能扩展为全文结论。
-- 2025 Scholar差集累计12条摘要级核验；其余新增项及 ORCID 2025 直接高光谱条目仍待摘要或全文。证据见 `sources/jun-zhou-2025-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2025-abstract-followup-1
-
-- 更新4篇，不新增目录论文，不改变三维214对象。SSIT读取 ScienceDirect 开放摘要；ADLKAN、HSLiNets读取 Griffith 作者稿摘要；LDCLNet读取公开摘要镜像并保留 IEEE 记录入口。
-- 四条 ORCID 2025 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；ADLKAN/HSLiNets作者稿版本差异、LDCLNet镜像边界单列，未标阅读全文。
-- ORCID 2025 直接高光谱条目已有4篇摘要级核验；其余4篇仍待摘要或全文。证据见 `sources/jun-zhou-2025-abstract-followup-2.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2025-abstract-followup-2
-
-- 更新4篇，不新增目录论文，不改变三维214对象。SUIT、SSTCF读取 IEEE Xplore 官方摘要；SSSGAN、UBSTrack读取公开摘要镜像。
-- 四条 ORCID 2025 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；镜像来源、未阅读全文边界和摘要性能保留在目录证据中。
-- ORCID 2025 八条直接高光谱记录均已取得摘要级或题名范围证据；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2025-abstract-followup-3.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-1
-
-- 更新4篇，不新增目录论文，不改变三维214对象。甘蔗病害记录读取 ScienceDirect 开放摘要；DiffUn读取 Griffith 作者稿；FSHyperRGAN读取 IEEE Xplore 摘要；Hy-Tracker读取 arXiv 官方预印本摘要。
-- 四条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；Hy-Tracker 的正式2024记录与2023预印本版本边界单列，未阅读全文。
-- ORCID 2024 直接高光谱条目已有8篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2024-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-2
-
-- 更新4篇，不新增目录论文，不改变三维214对象。SSRT-UNet读取 arXiv 官方预印本摘要；MMF-Net读取 IEEE Xplore 摘要；ILRNet、PN-ResCapsNet读取公开摘要镜像。
-- 四条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；SSRT-UNet的正式2024记录与2023预印本边界单列，镜像来源未提升为全文。
-- ORCID 2024 直接高光谱条目已有12篇摘要级核验；其余仍待摘要或全文。证据见 `sources/jun-zhou-2024-abstract-followup-2.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-3
-
-- 更新2篇，不新增目录论文，不改变三维214对象。SSUMamba读取 arXiv 官方预印本摘要；SSLKA读取公开摘要镜像并保留 IEEE 正式记录。
-- 两条 ORCID 2024 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；SSUMamba正式2024版与预印本边界单列，未阅读全文。
-- ORCID 2024 八个直接高光谱来源组全部完成摘要级或正式题名证据；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2024-abstract-followup-3.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2023-abstract-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。Background-Aware Band Selection、DPNet-S/U、SEE-Net、MTSR、S⁴GPN、SiamBAG、S³ARN 与多域通用表示均补公开摘要证据。
-- 8条 ORCID 2023 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 IEEE 官方摘要、ResearchGate、CoLab 公开摘要镜像及作者稿摘要，均未阅读全文。
-- ORCID 2023 直接高光谱条目摘要范围已闭环；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2023-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-1
-
-- 更新4篇，不新增目录论文，不改变三维214对象。ALN、GSFus、GF-3DDA 与两阶段自监督 HSI 恢复补公开摘要证据。
-- 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 IEEE 官方摘要、ResearchGate 公开摘要和 Griffith 作者仓储章节摘要，均未阅读全文。
-- ORCID 2022 其余直接高光谱条目仍需摘要、全文和版本核验。证据见 `sources/jun-zhou-2022-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-2
-
-- 更新4篇，不新增目录论文，不改变三维214对象。MAC-Net、NSSNN、SMDS-Net 与 SNMF-Net 补公开摘要证据。
-- 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括公开摘要镜像、ResearchGate、相关 arXiv 摘要和作者公开 PDF，均未阅读全文。
-- ORCID 2022 已有8条直接高光谱记录取得摘要级核验；其余记录与正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-2.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-3
-
-- 更新3篇，不新增目录论文，不改变三维214对象。TSCFW、光谱—空间边界检测与 SDRN 补公开摘要证据。
-- 3条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；来源包括 BIT、OpenAlex 和 ResearchGate 公开摘要，均未阅读全文。
-- ORCID 2022 已有11条直接高光谱记录取得摘要级核验；zhou-81 及其余记录与正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-3.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-4
-
-- 更新4篇，不新增目录论文，不改变三维214对象。S3FGCN、跨传感器杂草制图、MGRSR 与 UMsDFL 均补 ResearchGate 公开摘要证据。
-- 4条 ORCID 2022 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；跨传感器杂草制图保留多波段/跨传感器边界，未阅读全文。
-- ORCID 2022 直接高光谱条目已有15篇摘要级核验；`zhou-81-hsi-2022` 及正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-4.json`。
-
-## 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-5
-
-- 更新1篇，不新增目录论文，不改变三维214对象。SCFus 补 ResearchGate 作者主页公开摘要片段证据。
-- `zhou-81-hsi-2022` 由 `title_only` 更新为 `abstract_read` / `abstract_verified`；保留摘要片段边界与 Crossref 正式书目，未阅读全文。
-- ORCID 2022 直接高光谱条目摘要级核验已完成；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-2022-abstract-followup-5.json`。
-
-## 2026-10-10 / jun-zhou-scholar-2022-abstract-followup
-
-- 更新4篇，不新增目录论文，不改变三维214对象。深度强化选带、模型启发解混、MTSNN 与空间—光谱稀疏去噪补公开摘要证据。
-- 4条 Scholar 2022 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；材料引导 Siamese 记录仍仅题名，未强行外推摘要内容。
-- Scholar 新增项已有16条摘要级核验；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-2022-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-scholar-2021-abstract-followup
-
-- 更新3篇，不新增目录论文，不改变三维214对象。SST-Net、NMF-SAE 与甘蔗黑穗病检测补公开摘要证据。
-- 3条 Scholar 2021 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；当时其余记录仍仅题名，未从相关论文外推方法。
-- Scholar 新增项已有19条摘要级核验；正式版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-2021-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-scholar-2020-abstract-followup
-
-- 更新1篇，不新增目录论文，不改变三维214对象。BAE-Net 补 IEEE SPS 公开摘要证据。
-- 1条 Scholar 2020 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；仍保留正式版本、全文、代码和完整实验边界。
-- Scholar 新增项已有20条摘要级核验；证据见 `sources/jun-zhou-scholar-2020-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-scholar-2019-abstract-followup
-
-- 更新4篇，不新增目录论文，不改变三维214对象。补读 ISTA 深度展开解混、草本杂草形状—纹理分类、局部—非局部高光谱分类和动态材料感知跟踪的公开摘要。
-- 4条 Scholar 2019 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
-- Scholar 新增项已有24条摘要级核验，仍有17条题名暂定。证据见 `sources/jun-zhou-scholar-2019-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-scholar-2019-abstract-followup-2
-
-- 更新3篇，不新增目录论文，不改变三维214对象。补读活/死细胞高光谱分类、注意力波段加权选带和丰度引导超像素分类的公开摘要。
-- 3条 Scholar 2019 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
-- Scholar 新增项已有27条摘要级核验，仍有14条题名暂定。证据见 `sources/jun-zhou-scholar-2019-abstract-followup-2.json`。
-
-## 2026-10-10 / jun-zhou-scholar-mixed-abstract-followup
-
-- 更新4篇，不新增目录论文，不改变三维214对象。补读非局部低秩解混、单图模型驱动去噪、高光谱—LiDAR残差注意力分类和材料引导 Siamese 跟踪的公开摘要。
-- 4条 Scholar 2020–2022 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
-- Scholar 新增项已有31条摘要级核验，仍有10条题名暂定。证据见 `sources/jun-zhou-scholar-mixed-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-scholar-next-abstract-followup
-
-- 更新5篇，不新增目录论文，不改变三维214对象。补读多光谱 SIFT 配准、多通道 Siamese 跟踪、MTA-Net 与 IRDNet 去噪，以及弱信号肉类污染解混基准的公开摘要。
-- 5条 Scholar 2010/2023–2024 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式版本、全文、代码和完整实验仍待核验。
-- Scholar 新增项已有36条摘要级核验，仍有5条题名暂定。证据见 `sources/jun-zhou-scholar-next-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-scholar-final-abstract-followup
-
-- 更新4篇，不新增目录论文，不改变三维214对象。补读 CasFormer、跨模态 HSI-LiDAR 分类、选择性状态空间多阶段融合和 LiDAR 引导无监督选带的公开摘要。
-- 4条 Scholar 2024–2026/SSRN 差集记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；其中 SSRN 仍是预印本摘要边界，正式版本、全文、代码和完整实验仍待核验。
-- Scholar 新增项已有40条摘要级核验，仍有1条题名暂定。证据见 `sources/jun-zhou-scholar-final-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-scholar-hot2024-followup
-
-- 更新1条，不新增目录论文，不改变三维214对象。HOT2024 由官方项目页面和组织方 CFP 核验。
-- 该 Scholar 记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；证据属于竞赛/基准项目说明，不等同于正式论文全文。
-- Scholar 新增项已有41条公开摘要或项目说明级核验；正式论文版本、全文、代码和完整实验仍待核验。证据见 `sources/jun-zhou-scholar-hot2024-followup.json`。
-
-## 2026-10-10 / jun-zhou-2015-multiple-graph-abstract-followup
-
-- 更新1篇，不新增目录论文，不改变三维214对象。取得 Griffith 作者仓储接受稿摘要。
-- `multiple-graph-nmf-whispers-2015` 由 `title_only` 更新为 `abstract_read` / `abstract_verified`；确认多尺度多图正则化 NMF、合成/真实数据结论，未阅读全文。
-- 正式会议版本、完整图构造、数据集、代码和逐项实验指标仍待核验。证据见 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json`。
-- 2026-10-11纠错：上述旧派生审计错挂2025跟踪paperId/title/摘要，不能作解混内容证据；已用本AM全文、IEEE及Crossref新存纠错，见 `sources/jun-zhou-graph-nmf-full-primary-metadata-2026-10-11.json` 和末节。
-
-## 2026-10-10 / jun-zhou-early-abstract-followup
-
-- 更新3篇，不新增目录论文，不改变三维214对象。通过 OpenAlex 公开摘要索引补读 NSP/KUM 异常检测、Shearlet 异常检测和 Material Boundary 三篇摘要。
-- 三条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；分类仍待审计，正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/jun-zhou-early-abstract-followup.json`；OpenAlex为二级摘要来源，摘要中的来源缺字按原文保留。
-
-## 2026-10-10 / jun-zhou-2018-boundary-abstract-followup
-
-- 更新1篇，不新增目录论文，不改变三维214对象。Griffith Research Repository OAI提供机构摘要，补读《An Efficient Method for Boundary Detection from Hyperspectral Imagery》。
-- 该记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；分类仍待审计，正式Springer全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/jun-zhou-2018-boundary-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-2026-title-followup
-
-- 更新2篇，不新增目录论文，不改变三维214对象。用 Semantic Scholar 与 OpenAlex 公开摘要交叉补读医学高光谱少样本分类、信息熵选带与噪声抑制两篇记录。
-- 两条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/jun-zhou-2026-title-followup.json`。
-
-## 2026-10-10 / jun-zhou-whispers-tail-abstract-followup
-
-- 更新14篇，不新增目录论文，不改变三维214对象。通过 OpenAlex 公开摘要索引补读 WHISPERS 2013–2014 尾部的分类、解混、检测、成像光谱仪和环境应用记录。
-- 14条记录由 `title_only` 更新为 `abstract_read` / `abstract_verified`；分类仍待审计，正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/jun-zhou-whispers-tail-abstract-followup.json`。
-
-## 2026-10-10 / jun-zhou-lidar-guided-fulltext-followup
-
-- 修正1篇状态，不新增目录论文，不改变三维214对象。已有15页 arXiv 作者稿、方法页和两张框架图审阅记录，补齐 LiDAR-Guided Band Selection 的阅读状态。
-- `lidar-guided-band-selection` 由 `pending` / `pending` 修正为 `full_text_read` / `full_text_verified`；正式IEEE版差异、完整代码运行和独立复现仍待核验。
-- 证据见 `sources/jun-zhou-lidar-guided-fulltext-followup.json` 与既有 `research/sources/lidar-guided-band-selection-review-2026-10-07.json`。
-
-## 2026-10-10 / field-3d-abstract-followup
-
-- 更新7篇，不新增目录论文，不改变三维214对象。补读高光谱3D成像、光场立体、HSI-LiDAR分类、偏振BRDF、数字全息和地质点云基准摘要。
-- 7条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-3d-abstract-followup.json`。
-
-## 2026-10-10 / field-3d-lidar-abstract-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。补读高光谱3D点云、UAV波段配准、宽带结构光、全波形高光谱LiDAR、光场层析、森林融合和OTVCA摘要。
-- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-3d-lidar-abstract-followup.json`。
-
-## 2026-10-10 / field-spectral-imaging-abstract-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。补读光度立体、偏振高光谱传感器、光场显微、PRISMS光谱地形、压缩光谱成像和高光谱LiDAR摘要。
-- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-spectral-imaging-abstract-followup.json`。
-
-## 2026-10-10 / field-spectral-biomedical-abstract-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。补读光谱重建、光声、荧光光度立体、偏振反射、全息、衍射层析和拉曼体成像摘要。
-- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-spectral-biomedical-abstract-followup.json`。
-
-## 2026-10-10 / field-spectral-semantic-scholar-followup
-
-- 更新3篇，不新增目录论文，不改变三维214对象。用 Semantic Scholar 公开摘要补读 ACFFN、3D 高光谱点云和双线索多光谱光度立体。
-- 3条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-spectral-semantic-scholar-followup.json`。
-
-## 2026-10-10 / field-spectral-forest-abstract-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。补读 Raman/光场/光片显微、活细胞、多光谱内禀分解、森林生化和 HSI-LiDAR 标定摘要。
-- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-spectral-forest-abstract-followup.json`。
-
-## 2026-10-10 / field-pointcloud-lidar-abstract-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。补读内禀高光谱点云、DSM分解、多光谱森林点云、FGI-EMIT、GCNAS和遮挡目标检测摘要。
-- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-pointcloud-lidar-abstract-followup.json`。
-
-## 2026-10-10 / field-hyperspectral-nerf-structured-light-abstract-followup
-
-- 更新6篇，不新增目录论文，不改变三维214对象。补读 Hyperspectral NeRF、SpectralNeRF、HyperGS、UnMix-NeRF、DSL 和 DDSL 官方摘要。
-- 6条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-hyperspectral-nerf-structured-light-abstract-followup.json`。
-
-## 2026-10-10 / field-multispectral-pointcloud-abstract-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。补读DART森林树冠成像光谱、机载高光谱点云检测、HSL边缘效应及多光谱点云生成/分类摘要。
-- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-multispectral-pointcloud-abstract-followup.json`。
-
-## 2026-10-10 / field-spectral-lidar-forest-followup
-
-- 更新8篇，不新增目录论文，不改变三维214对象。补读多光谱光度立体、事件相机光度立体、地面HSL距离效应、HSL地下土壤、全波形分解及森林/城市融合摘要。
-- 8条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-spectral-lidar-forest-followup.json`。
-
-## 2026-10-10 / field-hsl-radiometry-unmixing-followup
-
-- 更新9篇，不新增目录论文，不改变三维214对象。补读HSL入射角/距离与弱信号校正、全波形分解、多光谱LiDAR特征选择/分类、树木参数反演及LiDAR辅助高光谱解混摘要。
-- 9条记录由 `pending` 更新为 `abstract_read` / `abstract_verified`；正式全文、原图、代码和完整实验仍待核验。
-- 证据见 `sources/field-hsl-radiometry-unmixing-followup.json`。
-
-## 2026-10-10 / jun-zhou-dblp-whispers-weed-2019-followup
-
-- DBLP精确作者364条中补审1条非题名关键词的WHISPERS 2019高光谱杂草分类记录，新增1篇目录论文；官方程序、DBLP与公开二级摘要确认作者和任务。
-- 记录更新为 `abstract_read` / `abstract_verified`；正式全文、原图、完整实验和资源仍待核验。
-- 证据见 `sources/jun-zhou-dblp-whispers-weed-2019-followup.json`。
-
-### 2026-10-10：DBLP 非关键词 MODIS 温度/发射率补录
-
-补录 Jun Zhou 合作的 MODIS 双分裂窗方向发射率论文：ScienceDirect 摘要明确约 11/12 μm 通道、方向发射率查找表和地面验证。按多光谱热红外关联进入总库，明确不标为光学高光谱；完整全文与代码仍待核验。
-
-### 2026-10-10：DBLP 非关键词多光谱热红外补录
-
-补录 Jun Zhou 合作的 Himawari-8 农业干旱论文：UTS 开放原文明确使用约 11/12 μm 双分裂窗热红外通道。该论文按多光谱热红外关联进入总库，明确不标为光学高光谱；DBLP 决定为 included，完整全文与数据协议仍待核验。
-
-### 2026-10-10：DBLP—目录版本交叉匹配
-
-再按规范化题名和 DOI 将 5 条 DBLP 记录与目录既有论文匹配，标为 `duplicate_existing`；其中包含杂草分类、反射率估计和材料颜色等已有作者记录，不新增论文。DBLP 尚有 91 条记录未形成独立决定。
-
-### 2026-10-10：DBLP—ORCID非关键词交叉回填
-
-DBLP精确作者364条记录中，除既有168条决定外，按规范化题名与ORCID逐年决定文件交叉核对，新增100条 `excluded` 决定；这些记录的ORCID原决定均明确未确认高光谱输入或属于通用视觉、RGB/VHR、点云等范围。该批不新增目录论文，保留逐条原理由和来源文件；剩余96条DBLP记录没有ORCID同题决定，仍需独立审查。
-
-## 未解决缺口
-
-- 其他场所逐年目录尚未检索
-- CVPR 其他年份与更多关键词组未在总库复核
-- 早期高光谱基础工作、专业场所与引用链未完成
-- arXiv 跨分类、版本号、首次提交和更新日期尚待逐篇核验
-- 既有 214 篇总库关系、分类及阅读进度待复核
-- Hyper-Skin 网页摘要 330 与官方 PDF 采集正文 306 数量不一致，待作者或发布数据核验。
-- TGRS 仅早期主题/引文定向核验，年度全量未扫；Craig 原文、HySime 原图受访问限制，三篇新文献全文实验和版本仍待核验。FCLS DOI 已更正核验为 10.1109/36.911111。
-- 光学批次：OL 2007 已扫 Crossref 登记集合，尚未证明出版社年度全量；一篇光波形条目仅题名暂排除，另两篇新增原图待访问。CASSI 两篇为定向核验，SPIE 前序版本差异待比对。
-- TGRS1994登记136题名两关键词组7候选：三条原摘要访问受限；雷达一条仅题名暂排除。森林原文首页已核验但PDF原图受限；出版社年度全量仍未证明。
-- ICML2013–2024十二主卷10951题名/摘要、84指定词命中全部处理（4新增、80排除）；其他任务词、正文、引文、workshop及更早/更晚年度未完成。三种通用方法有明确HSI应用；2014结构低秩的盲解混为未来工作，作者代码HSI入口/许可及2017/TPAMI2020后续稿归并待查。2021FMoW-WILDS候选的使用输入为RGB，已留官方加载器快照。
-- NeurIPS2022官方2834题名五词19命中处理：4新增、15排除。SatMAE/ARFNet为多光谱相关，DiSC为有HSI应用的通用基础，DAUHST为直接HSI；四篇原图已保存。其他词、全量摘要、完整版本差异和资源许可/复现待查。
-- NeurIPS2022四篇8预印本元数据与局部差异核验：SatMAE SpaceNet v2→v1命名、v3附录长时训练；DAUHST v3增加MST++/CST基线及cs.CV→eess.IV主分类变动。全图/公式及完整实验仍待比对。
-- NeurIPS2021官方2334题名五词14命中闭环：T3SC新增1、排除13。仅指定题名组完成；全量摘要/任务词/引文未完成，T3SC附录实验、DOI、许可和正式版差异待核验。
-- NeurIPS2019/2020指定五词题名扫描分别1428/1898条，5/9命中摘要全部排除；未扫全量摘要，不能推定年度无HSI论文。年度目录记录不再未经核对宣称包含独立数据集Track。
-- RSE2001登记133题名六成像词+九任务词已逐条扫描。六词候选5收录1排除；任务词11候选1收录1去重7排除2待核验（METEOSAT/Hu原摘要受限）。出版社年度完整目录/全量摘要、其他词和引文未完成；Broge/DAIS原图及DAIS误差单位冲突待核验。
-- RSE2002登记189题名六词13命中：累计收录7、排除4、待核验2（TIMS Etna、膨胀黏土原摘要不完整）。两机构PDF与已接收2001/正式2002版本边界留证。出版社年度完整性及其他词、全量摘要、引文仍未完成。
-- RSE2002九任务词5命中：TCARI/OSAVI收录1、排除2、CASI评论及森林色素2待核验；与六成像词并行，不能当年度所有论文覆盖。TCARI正式PDF已存，仅读摘要/局部方法；全文实验与资源待查。
-- OL2008登记1032题名两页六词4命中：新增HS-FTS与内源双光子2、排八通道系统1、Luo体全息1待范围/全文；原图与全文受限。双光子2008 BWG7会议摘要版本关系待核验，作者含额外Roman Stolper，不能自动合并。出版社年度全量/全量摘要/其他词与引用链仍待补。
-- OL2009六词登记题名7候选已闭环，4新增均非全文阅读。出版社年度全量/全量摘要/任务词仍未完成；四篇原图及资源、NTF最终PDF、会议版本关系待核验。
-- OL2010登记1417题名六词4候选闭环：增1排3。350–1000nm反射平台仅摘要核验；全文、原图、性能、资源与版本待查；出版社年度全量、其他任务词和引文尚未完成。
-- OL2007–2010额外16系统/重建词4899题名11命中：增4重1排4待2。2007Mueller关联2013勘误；2009在线/2010卷期单快照荧光非HSI，年度边界不混用；两非成像偏振候选HSI关系待原文。
-- TCI2015 41登记DOI两词组并集4候选增3排1；原图3均有确切PDF版本。期刊全目录/全量摘要未证明；RBLU登记六月与机构七月early-online差异、RCA v2 PDF编译页脚及所有实验/版本差异待查。
-- 出版社2015完整目录、全量摘要及更多任务词尚未完成；572仅为Crossref登记日期集合。
-- 5待核验：运动目标成像、移除通知原文、ripplet融合、参考影像重建、多核能耗压缩的有效状态/HSI关系。
-- 两新增专用代码/数据、正式稿差异与独立复现待查。
-- 登记题名指定五词66命中已全部发现并建续接决定；待核验候选逐篇推进，不代表摘要或年度HSI系统检索完成。
-- 出版社年度目录、其他任务词和引用链待补；MLNMF完整实验、正式稿差异和代码许可/复现待查。
-- FSPE代码入口、图版本地文件、仓储2014与2015卷期差异；SVMsub表II/正文560样本性能数字冲突和专用代码/正式版差异待查。
-- GGF机构月份与正式卷期、HySimeSA原稿WTC事件年份、HyperMix同年会议关系待核验；九篇完整实验、arXiv、代码/数据/许可及复现仍有缺口。
-- HySURE2016技术报告与2015缩短稿实验/图版差异、SCIAMACHY-BSS全文/原图及同年会议关系、PGPDA完整源码许可/复现和正式稿差异待核验；移除通知日期和理由受限。
-- GRSL2015光谱题名组剩46候选；出版社目录、其他任务词/摘要及引用链尚未全扫。
-- ESDAP作者稿Pavia640×340、手工属性阈值及正式版/代码/许可待核验；邻域图2014 workshop与2015期刊的原稿/版本差异受限。自编码器和ELML原始摘要待其他路线。
-- WHISPERS2014目录174已逐项决定165入3排6待，0未审；核化图原摘要错配仅题名待分类。41–93页已筛，94及其他早页、原图/全文/版本关系仍待核，目录闭环不作年度全量声明。
-- WHISPERS2013目录161累计顺序1–27已审：25入2待，余134未审；非年度全领域或全文检索完成。 第25项机构原摘要直接可读，全文/原图未取得；同题SPIE DOI10.1117/12.2016452关系候选待核，不合并日期实验或图。 第26/27项仅题名待分类；SOM作者以官方程序纠正为Stéphane May，登记倒置另存；2001/2019 SOM及2015 EMAP随机子空间实验不借用。 此前林业原PDF跳登录/403、成像仪/气体/青海湖范围、辉石、题名分类、边权原图、SOM/Gerbil源码扩展、油膜/NMF/HERF、CNMF代码/CASI数据等缺口保留。
-- 周峻Scholar387条、DBLP网页/XML导出仍是验证页；作者旧主页仅覆盖2001–2012列项。Scholar/DBLP作者归属、版本关系、完整实验和原图仍待核验。
-- 2013期刊原稿已证实扩展IGARSS2011；Indian Pine删噪声后仍220波段冲突待正式版，首次在线日期待核。
-- 2010/2011 L1/2按同名方法关联，2009/2011调和描述按共享示意关联；明确扩展声明及完整版本差异、代码/数据/arXiv仍待核。
-- 2012仅ORCID六组逐篇筛选，不代表全作者2012或任一场所年度全量。2新增只有题名，原摘要/全文/原图与单篇机构仍待核；2010多光谱配准已确认Landsat多光谱范围并排除。
-- DBLP完整HTML目录、Scholar全部分页、当前机构目录及arXiv/引用链差集未完成。
-- 两超图会议分别四/五作者和AVIRIS/APHI/APHI；第三方误挂不同五作者期刊稿，扩展声明与完整实验差异待原期刊核验。
-- 2013生物炭原摘要已核，正文/原图受限；2012两篇仅题名、DBLP/Scholar/当前机构差集及全作者arXiv仍待查。
-- ORCID2013的16组已完成来源限定范围筛选：7入9排；只代表已拉取ORCID组，不证明作者2013全部论文或任一场所年度全量。
-- 普通RGB/几何/计算基础工作及VHR遥感当前明确高光谱联系不足，暂排除保留重审；HSI背景引用不自动构成采用/贡献关系。
-- 2012两篇仅题名；2013生物炭全文/原图、超图选带正式扩展关系、旧年未命中摘要、DBLP/Scholar/机构目录差集仍待查。
-- ORCID2014八组来源范围筛选完成1入7排；另核2016近题1篇。不是完整作者年份或场所年度检索。
-- ICPR2014/TGRS2016共享概念方法族，明确期刊扩展声明及首次online日期待核；2013 RGB拼接基础继承关系仍待进一步原文证据。
-- 2012两篇仍仅题名；2013生物炭正文/原图、旧年非题名命中摘要、DBLP/Scholar/机构目录差集及作者arXiv全量仍待查。
-- 周峻ORCID263组范围决定已闭环：128入、10关联既有、125排、0待；页面135篇。
-- ORCID2015十九组范围决定已闭环：10入、2关联既有、7排；不是作者2015全部成果或任一场所年度完整检索。
-- 2015书章节存在2016/2019同题不同DOI，必须按精确DOI选版本；Preface通用题名检索42页不能以第一页作为全量或任意匹配。
-- 2012两篇仅题名、相对深度正文/原图、MMSNMF实测实验差异、2013生物炭全文、外部目录/Scholar/arXiv与早年无题名命中仍待查。
-
-### 2026-10-10：DBLP 非关键词 Bidfuse 模态排除
-
-复核 ICIP 2024 的 Bidfuse：作者代码仓库明确任务是红外-可见光图像融合，使用 MSRS/M3FD 等配对红外与可见光影像，未确认光学高光谱或多光谱波段输入，故标记 excluded，不加入目录。证据见 `sources/jun-zhou-dblp-bidfuse-exclusion-2024.json`。
-
-### 2026-10-10：DBLP 通用视觉/航拍记录排除
-
-复核10条DBLP作者差集记录：InsTaG、TalkingGaussian、DNGaussian为普通视频/三维辐射场任务，Privacy-Aware为视频异常检测，另有两条普通航拍复原和一条UAV目标检测。arXiv摘要、Crossref及既有ORCID逐项决定均未确认光学高光谱输入，全部标记 excluded。证据见 `sources/jun-zhou-dblp-general-vision-exclusions-2026-10-10.json`。
-
-### 2026-10-10：DBLP RemoteTrimmer 版本复核
-
-复核 RemoteTrimmer 的 CoRR 与 ICASSP 两条版本记录。arXiv 全文实验使用 EuroSAT 与 UC Merced Land-Use，但没有说明实际使用多光谱波段、波段选择或光谱立方体处理；EuroSAT 潜在多光谱版本不足以证明本文输入，故两条均标记 excluded。证据见 `sources/jun-zhou-dblp-remotetrimmer-followup-2025.json`。
-
-### 周峻DBLP非关键词余量与学习入口（2026-10-10）
-
-校正来源计数：364条精确作者SPARQL快照，另有1条快照外STRL作者身份补充；原来287条已决定实际包含该补充，因此余量是78而非77。本轮78条逐项留证，63条按当前原摘要/机构摘要/正文局部暂排除，15条继续pending。合并365条现为6收录、165关联既有、179暂排除、15待核；原始快照349条已决定，非作者成果全集完成。
-
-频率、图矩阵谱、特征通道与光学波段分别审查；FDNet、DDFNet、GPINet、SAPNet、红树林、太阳能板等实际输入仍待核。AcfNet v1正文与v2摘要作者变化单列。逐项证据见sources/jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json与机构检索快照；本轮无新增文献或分类。当时学习指南提供179条直接高光谱、3条多光谱关联索引和13篇精读入口；重复手工索引现已删除，阅读路线见[学习资料归档](archive/jun-zhou/learning-notes.md#reading-route)，当前目录见[作者调研](jun-zhou.md)；正式全文/原图/代码及Scholar/机构来源差集仍待，不宣称调研完成。
-
-### 周峻作者目录：热红外与Scholar非关键词差集续核（2026-10-10）
-
-新增2条热红外多光谱关联；作者目录184条（直接高光谱179、多光谱5），182条摘要级、2条全文级。MTSAT-2正式2020版关联2020勘误，图11产量单位应为t/ha。DBLP365条现353已决定、12待核；剩余78批次为66暂排除、12待核。Scholar原387条减原178条关键词审计，209差集逐项完整题名交叉：167沿用既有排除、8目录匹配、2新增、32待核。既有排除保留原证据，完整题名匹配不证明同名身份；近题与无匹配不自动排除。源文件：`jun-zhou-scholar-nonkeyword-screening-2026-10-10.json`、`jun-zhou-thermal-scholar-followup-2026-10-10.json`。仍未完成作者全集、正式全文及实验核验。
-
-周峻Scholar差集续核8条后：209条中175暂排、8目录匹配、2新增、24待核；原始作者稿/机构摘要/作者通讯逐项留证，未标全文。控制采样v1第VI–VII节指定段落补读，另建评测学习笔记；目录总量与全文级数量不变。详见 `jun-zhou-scholar-scope-followup-2026-10-10.json`、`jun-zhou-controlled-sampling-selected-reading-2026-10-10.json`。
-
-周峻版本/社论续核8条Scholar与2条DBLP：Scholar209差集183暂排、8重、2入、16待核；DBLP365条355决定、10待核。Crossref24定向查询12成功、12限流，不能以429否定条目存在。L1/2-NMF原稿II–III节补目标/更新/增广约束局部核验，新增学习笔记与独立数学演示；作者目录184条及2条全文级数量不变。证据见 `jun-zhou-scholar-editorial-version-followup-2026-10-10.json`、`jun-zhou-lhalf-selected-reading-2026-10-10.json`。
-
-### 2026-10-10 周峻EGU摘要及TRI方法补核
-
-新增EGU2019-2831热红外会议摘要1条，保留五作者/2015–2018，未自动合并2020 Himawari期刊稿。总库754，分类391确认/344暂定/19待，原图329；作者185记录（179直接HSI/6多光谱，含1会议摘要），183摘要级/2全文级。Scholar非关键词209差集184排/8重/3入/14待；DBLP355决定/10待不变。健康GBD原摘要范围排除，不假称同名误入；PDF403记录为访问失败。Griffith正式VoR下载与2.2/3.1.1局部方法核验保存，TRI学习笔记补通道、差分假设及极值归一化算例。仍未达作者全集/全文/实验全量闭环。
-
-### 2026-10-10 周峻普通图像差集及NMF-SAE全文
-
-Scholar差集新增3条范围排除（整本论文集、普通图像小样本分类、宫颈细胞图像/文本），209条现187排/8重/3入/11待；DBLP355决定/10待不变。NMF-SAE五页作者稿完整阅读，方法和实验补入事实目录、Figure1原图保存；185作者记录现182摘要级/3全文级，总库754和分类状态不变，原图330。全文状态只对应读过的作者稿，出版社逐字差异/代码复现/全部作者来源仍未闭环。
-
-### 2026-10-10 周峻DASFAA题名及SNMF代码审计
-
-DASFAA错题名由共同作者目录及原稿确认，范围暂排；Scholar209差集188排/8重/3入/10待，DBLP355决定/10待不变。作者目录185、182摘要级/3全文级不变。SNMF作者稿/代码包/65文件清单与SHA256保存；指定公式与代码差异、20轮CPU运行及原指标打印失败记录，checkpoint另核有限输出。不是完整全文或性能复现。NMF-SAE未具体说明的作者HTML注释错误线索保留，不当正式勘误。
-
-
-## 周峻SNMF全文学习补核（2026-10-10）
-
-16页作者稿完整阅读与Figure1–15/TableI–III核验；新增1张框架原图，累计331张。作者185条记录现为181摘要级、4全文级，不改变DBLP/Scholar各10条待核，也不证明作者全集覆盖。三真实数据平均SAD与逐材料优劣、拟合参考丰度、式29/37疑点及图注冲突保留证据。独立数学探针与此前20轮CPU代码核验分别记录，不作为论文性能复现。详见 `archive/jun-zhou/learning-notes.md#snmf-code` 和 `sources/jun-zhou-snmf-full-reading-2026-10-10.json`。
-
-
-## 周峻作者范围与实现资源续接（2026-10-10）
-
-SA-Net补IEEE原摘要和明确的2026期刊扩展声明；扩展版作者无Jun Zhou，实际通道仍不移用。四项机构bundles与SWORD元数据复查未取得全文；Scholar杂草短题名详情429，仍不合并。DBLP/Scholar各10待核保持。E2E-MPT公开仓库完整树与三ZIP核查只见结果文本及说明/图片/许可，没有列出的训练测试脚本和权重，补资源笔记及框架原图，总计332图。185条作者目录、181摘要/4全文状态不变，未完成全集或性能复现。
-
-### 周峻L1/2-NMF：作者稿全文与实验边界
-
-26页4月11日作者稿通读；式26一般q系数、分块凸表述、两种停止条件及逐元素复杂度疑点保留，独立标量数学核验通过。Urban4/6与Cuprite平均SAD各表最低，但逐材料仅3/4、4/6、6/10最低。作者185条现180摘要级/5全文级；总库754、三维214及332图不变。该作者稿未见独立流程图；正式16页版、早稿/会议对照、代码与性能复现仍未闭环。见 `sources/jun-zhou-lhalf-full-reading-2026-10-10.json` 与 `archive/jun-zhou/learning-notes.md#lhalf-nmf`。
-
-### 周峻DICTA2010全文与机器人范围核验
-
-2010 L1/2-NMF作者公开稿7页通读；带外层平方惩罚与更新不一致、二端元混合生成、Cuprite十值与2011较晚稿分别留证，独立有限差分检查通过。作者185条现179摘要级/6全文级，总库754、三维214和332图不变。机器人2004会议指南原摘要镜像转录确认控制仿真任务，按范围暂排除但身份仍未确认；DBLP365现356决定/9待，Scholar10待不变。正式全文版本对照、源代码和实验复现仍待完成。证据见 `jun-zhou-dicta-lhalf-full-reading-2026-10-10.json`、`jun-zhou-robot-program-scope-2026-10-10.json`。
-
-### 周峻结构稀疏会议全文与期刊局部对照
-
-IGARSS2011四页作者稿已通读，15组小波特征、数据、随机划分和表1全部24值留证。Group LASSO仅在KSC两设置最高；KSC5%的小波SVM反例保留。打印组平方和与损失置零检查不同于引用方法，实际代码未知。2013期刊作者稿仅局部：式13明确带平方根，每类训练规则、表V指标/加粗疑点及表VII测试耗时另列，不升级全文。185作者记录现178摘要级/7全文级；总库754、三维214、332图，DBLP9与Scholar10待核不变。学习见[archive/jun-zhou/learning-notes.md#structured-sparse-classification](archive/jun-zhou/learning-notes.md#structured-sparse-classification)；完整期刊、正式版差异和性能复现仍待。
-
-### 周峻作者目录：身份纠偏与共同作者查漏（2026-10-10）
-
-本轮按用户要求停止新增学习笔记，继续论文目录、身份、输入与正式版本核验。EAAHNet由出版社作者机构及作者上传首页确认Griffith Jun Zhou，保留DBLP同名0011分配冲突；IV-A近红外输入支持多光谱关联，实际通道配置仍待实现核查。ComicLib官方节目确认身份，漫画草图任务按当前范围暂排，未标全文审查。
-
-总库755篇：391确认/345暂定/19待分类；三维214、原图332。作者186条（179直接HSI/7多光谱，含1会议摘要），179摘要级/7全文级。DBLP365条356决定/9待；Scholar209差集189排/8重/4入/8待。两条当前中英文CV在审稿和一条索引缓存旧候选分别登记，不算已发表入库。共同作者CV状态与正式出版、缓存与当前版本、网页重复DOI均保留差异；来源待核有重叠，不相加。机构完整目录与剩余范围尚未闭环。见 `sources/jun-zhou-author-corpus-followup-2026-10-10.json`。
-
-### 周峻Griffith公开仓库分页交叉审计（2026-10-10）
-
-两查询4页351条/3页214条全分页，去重351，UUID与总数已核。逐项交叉表：154匹配目录、163匹配既有决定、2勘误、1数据登记、19非作者、2新增、3原摘要排除、6既有待核、1新待核。新增ASSCT2023甘蔗病害及2025樱桃HSI选波长论文，两篇正式正文和两张原图已核；甘蔗时段、图号冲突以及樱桃单波段检测边界留证。2018字典适配勘误与甘蔗4TB申请数据关联原条目，不新增方法/论文。目录757、标签303、原图334；周峻188条（181直接HSI/7关联，179摘要级/9全文级）。指定仓库分页完整不证明作者全成果或全领域完成；DBLP9/Scholar8/CV3候选、量化检索无摘要条目、作者arXiv差集与正式扩展关系继续核。证据见`sources/jun-zhou-griffith-inventory-2026-10-10.json`和`jun-zhou-griffith-crosswalk-2026-10-10.json`。
-
-
-### 周峻arXiv全分页与版本、量化范围补核（2026-10-10）
-
-该批带引号姓名Atom查询531条/三页完整、唯一531，不等于Griffith作者全集：24目录匹配、32既有决定交叉映射、4原稿或正式稿机构确认同名、471未逐审。指定光谱词25命中为23匹配与2同名；Spectral 3D综述另由arXiv ID匹配。24条目录补官方当前版本/首次提交元数据，新增13个版本记录，保留旧v1及正式年份，不升级摘要/全文状态。ILRNet预印本2025与正式2024分开；HSLiNets原始作者分词异常、两篇同简称方法和正式扩展关系仍待。
-
-3DLST/DTA v1及DCTNet正式稿为PolyU护理学院Jun Zhou；农业四通道稿为平安银行同名，四条保留后续全领域候选。三波长LiDAR不是密集HSI；DCTNet预印本/正式作者与基准不同，3DLST登记勘误正文受限。Griffith量化论文首页确认目标作者，指定实验段仅普通图像特征/SIFT，暂排并记录阅读边界，关闭新pending；继承6待不变。总库757、三维214、标签303、原图334；作者188条，179摘要级/9全文级。DBLP9/Scholar8/CV3及arXiv471继续核。见 `sources/jun-zhou-arxiv-author-inventory-2026-10-10.json`、`jun-zhou-arxiv-author-crosswalk-2026-10-10.json`、`jun-zhou-arxiv-version-update-2026-10-10.json`、`jun-zhou-quantization-scope-2026-10-10.json`。
-
-
-### 周峻arXiv首批50条原摘要与遥感资源核验（来源2026-10-10，整理2026-10-11）
-
-原471条未审队列按顺序逐项读50条完整官方摘要：47范围暂排、1整名不匹配、2原稿局部后仍待；余421未审。现531交叉表为24目录匹配、32继承决定、4既有同名决定以及本批50、余421。摘要暂排不代表全部作者身份或全文核验，明确光谱联系可重审。查询名称纠正为带引号姓名查询：521条有独立规范化Jun Zhou字段，10条非精确姓名/简写/粘连字段，均不自动证明目标身份；保留原字段。
-
-RADC首页Jun Zhou为清华深圳国际研究生院，实验含EuroSAT但实际通道未明；TEAMS首页为中山大学，MRI/CT及PanNuke显微数据的光学通道仍待。机构差异本身不证明是不同个人，两篇保持范围/身份待核，仅指定页局部，不称全文；四张原稿页渲染仅来源证据，不计334张目录原图。GitHub三同名遥感仓库DDFNet4RSI/EAAHNet/FDFormer4RSI完整树均仅README，所有者作者关联和实际输入未知；EAAHNet补资源证据1条，FDFormer仅未确认题名线索，不计发表论文或合并FDNet。总库757、三维214、标签303、原图334、作者188条及179摘要级/9全文级均不变。DBLP9/Scholar8/CV3、两新待核和421未审继续推进。见 `sources/jun-zhou-arxiv-abstract-batch1-2026-10-10.json`、`sources/jun-zhou-remote-segmentation-placeholder-audit-2026-10-10.json` 与作者inventory中的姓名字段审计。
-
-
-### 周峻arXiv第二批100条原摘要及八原稿局部（2026-10-11）
-
-按原未审421队列次序读100条API原摘要：91摘要暂排、2局部暂排、1整名不匹配、6新待核。8份固定版本PDF官方HTTP200，指定机构与数据段局部已读，保存原页文本、访问/完整哈希以及两张输入页渲染；不称全文，截图不计目录原图。EH-Benchmark Table2明确CFP/OCT/Text、MaskedCLIP明确彩色眼底，按当前联系暂排；UltraVR、医学FM综述、EVLF-FM、Mamba Snake、MerMED-FM及AdvMIM仍待实际光学输入/目标身份，机构差异不证明是不同个人。KAG-Thinker API摘要尾省略号、SyncLoop/C2-Evo及粘连字段差异保留。
-
-累计150逐审后，531交叉表为24匹配/32继承/4既有同名/138摘要暂排/2局部暂排/2整名不符/8范围身份待/321未审。目录757、作者188及179摘要级/9全文级、214三维、303标签、334图不变；DBLP9/Scholar8/CV3及作者/全领域全文、版本与矩阵继续核，非全集完成。逐项理由和来源见 `sources/jun-zhou-arxiv-abstract-batch2-2026-10-11.json` 及[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻arXiv第三批100条与UEMM重开（2026-10-11）
-
-原321未审队列前100条完整官方API摘要逐项读取：96摘要范围暂排、2指定原稿输入局部暂排、2待核。4篇固定版本PDF选读机构/输入段，不标全文。RETFound当前彩色眼底任务与预训练OCT分开；State-Air航片+IMU补强旧排除及版本关系。VITask的医学光学输入/身份仍待核。
-
-UEMM原稿图2的六模态与采集段infrared/depth表述矛盾；论文链接的当前采集代码调用AirSim Infrared，但官方文档指对象ID灰度映射，不能证明真实红外波段。目标Griffith作者身份有首页及作者仓库个人页支持；正式ACM版、发布数据及采集时模拟器版本未核。因此旧题名排除重开为pending，并同步ORCID/DBLP/Scholar/Griffith及survey，非新增论文。仓库树160项未截断、选读文件blob匹配；HF仅根目录/README，不称数据全分页或复现。
-
-第三批结束时累计250条逐审，531交叉表为24匹配/32继承/4既有同名/234摘要暂排/4局部暂排/2整名不符/10待/221未审。ORCID128入/10重/124排/1重开待，DBLP355决定/10待，Scholar188排/8重/4入/9待；待核有重叠。757目录、188作者、214三维、303标签、334原图不变。新原稿页渲染仅为范围来源证据。作者专项与全领域场所/全文覆盖继续推进，非全集完成。见 [第三批逐项证据](sources/jun-zhou-arxiv-abstract-batch3-2026-10-11.json)、[UEMM重开审计](sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-### UEMM实际发布标注与VITask输入续核（2026-10-11）
-
-两条既有pending补原始证据，不新增目录、不改变范围决定。UEMM固定HF修订递归树15项/11文件与siblings一致、无后续页；未列像素，Baidu多模态图像未取得。检测test.zip完整下载且LFS哈希吻合，自动解析9,698 XML全部登记1920×1080×3/SceneImage；三通道只是标注字段，不证明像素/全部模态。作者补充材料列RGB、深度、分割、法向、IMU；正式ACM PDF403/HTML，机构五条待审记录无ORIGINAL，因此保留正式版/图像/采集版本缺口。
-
-VITask指定数据段续读，官方MedMNIST定义确认12个2D数据集为4 RGB/8灰度，TissueMNIST的7层为切片而非波段。IDRiD彩色眼底与MESSIDOR 3CCD官方说明已核；APTOS原稿引文/来源版本仍待，官方比赛页200仅JS壳。作者代码树仅README承诺接收后公开，实际转换未核。不把标准数据定义当已重现论文数组，不标全文或同名身份结论。该输入续核结束时188作者/757总库、arXiv221未审/10待及其他范围待核计数均不变；当前余量见最新批次。见 [输入续核审计](sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json)。
-
-
-### 周峻arXiv第四批100条与椭偏稿同名/版本区分（2026-10-11）
-
-原221未审队列按快照次序读前100条官方API可得摘要：97摘要范围暂排、2原稿输入局部暂排、1交叉来源同名区分。农业视频建图/机器人RGB深度里程计与人脸/物体自表达聚类未取得明确高光谱联系；不把RGB-D、CNN channels或矩阵spectral clustering作光学波段。R2-Net/DELE原摘要末尾省略号未补齐；2301.02763粘连作者原样保留，不凭子串核独立整名/身份。三份固定PDF保存完整哈希与指定页文本，仅局部阅读。
-
-椭偏稿2210.14440v2的API/abs列原题名与17作者，PDF/正式DOI 10.1063/5.0141814列另一题名与18作者；原字段不覆盖。出版社登记关联另一ORCID 0000-0002-5505-7616，其精确预印本/正式稿与IMRE任职同首页一致，结合目标ORCID的Griffith主页支持作者专项同名排除。0.02 eV为报告的光谱分辨率，明确高光谱关系留全领域待核；不按同名删候选。正式PDF403，出版社说明10.1063/5.0173910虽登记correction关联，但修正正文未读，不推断具体改动。
-
-第四批结束时累计350逐审；531交叉表为24匹配/32继承/5同名（4既有/1本批）/331摘要暂排/6局部暂排/2整名不符/10范围身份待/121未审。350逐审加60既有映射/身份记录共410有记录，含10待核，不称410全部闭环或全文已读。目录757、作者188、三维214、标签303及334图不变；ORCID1重开/DBLP10/Scholar9/CV3有重叠，作者来源/输入/版本及全领域矩阵仍未完成。证据见 [第四批逐项记录](sources/jun-zhou-arxiv-abstract-batch4-2026-10-11.json)、[椭偏身份与版本交叉核验](sources/jun-zhou-arxiv-batch4-ellipsometry-identity-version-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻arXiv余121逐审与遥感公共原稿入口续核（2026-10-11）
-
-按固定快照读全部121余项的官方API可得摘要/作者：116摘要范围暂排、5Jian Jun Zhou姓名查询不精确。J. Zhou通信纠错码仅按摘要暂排，不据简写定身份；MSX红外信息不因姓名决定自动关闭全领域光学范围。累计471新增逐审，加60既有映射/身份记录，531条均有记录（含10pending）：24目录匹配/32继承/5同名/447摘要暂排/6局部暂排/7姓名不精确/10范围身份待/0未审。原队列归零不证明严格整名、目标全集、全部身份或全文完成，姓名变体及其他来源仍待。
-
-六遥感pending公开机构文件全分页续核为9文件，仅6许可/提交txt与3份130字节SWORD元数据，无取得论文PDF。五条二级green OA未由当前公共文件清单支持实际全文可得；DDFNet出版社XML200只有coredata，IEEE/ScienceDirect与发现页受限/空壳均不当正文。出版社登记支持SAPNet/红树林Griffith身份，但光学通道仍待；不借同组论文的IRRG协议关闭范围。arXiv题名查询相关23条均无目标精确命中，不证明无预印本。6条pending及ORCID1/DBLP10/Scholar9/CV3的重叠状态保持；目录757/作者188/三维214/标签303/原图334不变。见 [尾批逐项记录](sources/jun-zhou-arxiv-abstract-batch5-2026-10-11.json)、[遥感访问/公开清单审计](sources/jun-zhou-remote-primary-access-followup5-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻医学身份与正式版登记续核（2026-10-11）
-
-七条既有arXiv待核中，Mamba Snake精确DOI的Jun ORCID、独立学历/任职与目标Griffith ORCID/2006阿尔伯塔博士论文形成交叉证据，作者专项改同名区分；保留非认证标识、自报履历和独立ORCID作品未列本篇的边界，不推广TEAMS/RADC。Mamba正式ACM全文未取得，v1仅前两页；实际光学输入及明确高光谱基础关系留全领域。
-
-补AdvMIM、MerMED和TEAMS正式登记及医学综述版本候选。AdvMIM当前所链固定仓库111项为FLARE25 CT/MRI/PET，单通道代码不能替代论文ISIC配置，出版社PDF URL返回HTML订阅预览。MerMED原25/正式35作者中，去句点后24姓名对应、Linh Le Dinh未列、11新姓名；原字段保持。综述候选改题且7至8作者，明确版本关系未核；TEAMS/综述印刷卷期2027-01不当首次在线日期，综述XML只有coredata。EVLF/VITask各五条题名结果未命中不证明无正式版。
-
-医学正式登记续核结束时，arXiv531记录为24目录匹配/32继承/6同名/447摘要暂排/6局部暂排/7姓名不精确/9待/0未审，累计471原队列逐审不变；当前作者arXiv矩阵已同步，历史批次原决定不改；另补60条旧映射survey索引（24目录/32继承/4旧同名），搜索索引现531条，与471逐审区分，不计新阅读或新论文。ORCID1/DBLP10/Scholar9/CV3有重叠；757目录/188作者/214三维/303标签/334图不变，作者专项与全领域矩阵未完成。见 [身份/版本/输入来源审计](sources/jun-zhou-medical-identity-publication-followup6-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-
-### PanNuke原数组与TEAMS/Mamba光学输入续核（2026-10-11）
-
-官方三折ZIP固定ETag，36个精确206范围取得完整中央目录、9个NPY头和各96字节数据样本，共31,765字节。图像形状分别2656/2523/2722×256×256×3，合7901张；掩码六层、组织标签为Unicode U13字符串，均不当光学波段。源作者固定评估代码取前五mask层统计类别，相关HoVer-Net说明RGB与实例/类别标签分开；原始字节和哈希保存，不称完整ZIP CRC、全部像素或论文实际数组已核。
-
-TEAMS原稿第3页及第21页引用明确会议扩展Mamba Snake；九作者登记没有Jun ORCID，不自动转用会议稿个人标识。Table1/§4.1的MRI/CT和唯一光学PanNuke输入按源三通道/作者RGB定义局部暂排高光谱范围，范围可由明确关系重开。Mamba原同名身份决定不变，全领域范围局部暂排；v2明示2655子集与官方首折2656/总7901不等同，正式版/子集选择仍待。其余5同名候选留全领域。RADC仍无作者确认的实际EuroSAT版本/实现，代码查询未命中不作不存在证明。
-
-当前arXiv531为24匹配/32继承/6同名/447摘要暂排/7局部暂排/7姓名不精确/8待/0未审，471原队列逐审及旧批次快照不变。757目录/188作者/214三维/303标签/334图不变；其他来源待核有重叠，作者专项与全领域矩阵仍未完成。见 [原始数组与范围审计](sources/jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻HyperSAM固定v1全文续接（2026-10-11）
-
-既有arXiv2609.37340v1通读17页，全部公式/表/图注和56引用条目已读，保存原PDF、全文页面文本与完整Fig4/7原方法裁图；引用作品未逐项核验，GRSM接收仅作者备注，正式版未定位。本批不是新的年度/作者查询扫描。训练10592/验证3527 SpaceNet2 patch从8波段生成224通道，772对材料库及RGB伪掩码与真实HSI下游分开。主表最好测试结果不当50配置均值；HC每类1标签、油膜每类50标签，HAD/HCD自动提示与无目标标签分开。Beach1 ODP、BayArea/River、Cri和部分消融负例保留，不宣称全面SOTA。成本三次统计OA66.91与主表最好69.37不同，仅GPU整板/操作碳排而非生命周期；表/正文支持配置措辞及Fig4/Eq4差异留待实现核验。
-
-分类重审移除没有公开发布证据的数据集基准标签，按明确预训练/合成/下游任务与Transformer/海上场景归类；不新增类别或论文。当前757目录/188作者（178摘要、10全文级）/214三维/303标签/336原图，392分类确认（336审计）、346暂定、19待。arXiv531决定/八待核及其旧批次快照不改；专用实现、checkpoint、生成语料/许可、训练细节/全部seed、检测阈值依据和GRSM最终版仍待。作者专项和全领域覆盖未完成。见 [全文来源与协议/结果审计](sources/jun-zhou-hypersam-v1-full-reading-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-### 周峻HyperVision v3全文与BMVC正式接收核验（2026-10-11）
-
-既有arXiv2605.17286v3通读20页，公式1–6、表1–7及全部图注/参考条目已读，保存完整原PDF、逐页文本和Figure3/4原方法裁图。BMVC2026官方名单以精确题名/编号329证实接收，主目录改BMVC/accepted、版本关联保留arXiv原来源；未核最终PDF、DOI/页码/出版日或v1/v2正文，不计新论文/年度扫描。
-
-预训练26数据集/31子集的14,959张图加和核对，光谱15–420波段；名单包含下游HSIDrive/City/HSSOD，图像级训练测试隔离尚无证据，不宣称严格未见评测或已证泄漏。SAM2/HyperFree伪掩码与原SAM的DINO式蒸馏分开，下游三个任务需监督训练头。Base蒸馏负例、显著性AUC并列、相对提升与百分点、较高推理成本保留。固定作者代码树76项/11原文件blob核验但仅关键段选读；reader通道/波长差异和训练配置待核。HF两页78项树列三权重，只核声明大小/LFS OID，未取载荷或复现实验；代码/模型元数据许可不代替所有源数据或上游许可。
-
-本轮22原始响应/4派生审计，分类补既有显著目标检测及Transformer，不增类别。当前757总库/188作者（177摘要、11全文级）/214三维/303标签/338原图；393确认（337审计）、345暂定、19待。531arXiv来源决定与八pending、旧mapping批次保持；作者全集、正式版本与全领域覆盖仍待。见 [HyperVision来源与协议/实现审计](sources/jun-zhou-hypervision-v3-full-reading-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-### 周峻皮肤镜2018/WACV2025两篇正式全文续接（2026-10-11）
-
-既有WACV2025像素打乱/协同稀疏分类通读10页及2页官方补充，所引2018皮肤镜数据正式章节通读9页；保存全文页面文本、原表转录与WACV Figure1/2完整原方法裁图。2018补精确正式DOI及2018-10-02首次在线，主链接改出版社原文；无新增论文或年度全量扫描。23/36引用条目已读不等于引用作品全部全文。
-
-2025写338图却按85/185/78合348；2018总330但intro85/175/70与collection80/180/70不同，输入band512×272与raw解码256×512也不同。没有manifest可选一套数字或认定实际版本。2018基线为sparse codes/maxpool/SVM、RGB LBP和size，非related-work深度网络；二类加size灵敏度下降。2025三类OA73.34、表文去除模块相反、STD/Param.(MB)量纲及补充φ成本文字矛盾保留。患者隔离、实际数组/训练成员、材料端元真值与临床外部效力未证，不把bbox/temporal词扩成框检测/视频任务。
-
-新增必要医学高光谱分类任务边界，纠正2025地物标签；只迁移两篇已读记录，不改其他未读医学分类。作者数据固定树仅README及外部载荷链接，blob核验、许可/数据包待；没有取专用2025实现或运行实验。2018全部四图非流程，队列记no_framework。11原始响应/4派生审计；当前757总库、188作者（175摘要、13全文级）、214三维、304标签/340原图、394确认（339审计）/344暂定/19待。531arXiv来源决定与八待核不变，作者专项与全领域未完成。见 [两稿全文/协议审计](sources/jun-zhou-dermoscopy-pws-full-reading-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻E2E-MPT v1全文与材料提示原图续接（2026-10-11）
-
-既有arXiv2605.20569v1通读12页，公式1–19、表I–VIII共59行及图1–10/54参考条目已读；引用作品未逐篇全文。原HSI模板/搜索与AE丰度估计、学习通道1D Haar/空间2D Haar材料提示联合优化，默认CNNAEU、r=6、OSTrack冻结主干和7层注入。材料真值/跨年度split未核，不能由丰度或r推物理材料浓度。预印本不按IEEE样式当已发表；项目题名别名不新增论文。
-
-保留HOTC2023 .903/.701与表III .902/.701、MMF跨表数值、FPFM2.6M与默认1.78M、ReLU/LeakyReLU及multiplication无表行差异。默认26FPS低于OSTrack52.4FPS，Figure1 12.1×只材料阶段；全12层AUC/FPS下降、卷积融合不优于加法、3/11属性非第一、遮挡/极端照度与未见材料失败分别记录。当前完整作者树与旧git快照/README哈希相同，缺脚本/配置/权重，三ZIP旧结果目录不作原视频或本轮新指标复算。官网2026划分不改旧年；许可分别留待。
-
-确认项目Overview对应论文第3页Fig2并保留原字节，新存第4页Fig3(a,b)模块裁图。8原响应/2派生审计；不增论文/类别或年度扫描，仅移除光谱预训练暂定标签并补Transformer。当前757总库、188作者（174摘要/14全文级）、214三维、304标签/341原图，395确认（340审计）/343暂定/19待。531arXiv决定/八待核、旧映射批次不改，仅追加全文续核；作者全集与全领域覆盖未完成。见 [全文与协议/表审计](sources/jun-zhou-e2empt-v1-full-reading-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻MHT v5全文、基准与作者代码续接（2026-10-11）
-
-既有TIP2020关联arXiv1812.04179v5通读12页/附录，公式1–16、四表/十图注和63引用条目已读，引用作品未逐篇通读。正式15页原文访问受限、Griffith仅SWORD元数据；版本全文状态严格分开，v1–v4只补原站日期。v5仅35 HSI+35 RGB/25FPS，不回填后续40训练；近视点且独立标框、谱库来源/测试隔离待。MHT .878/.612与后续引用.880/.593留差异，RGB C-COT AUC .617更高；属性正文误含SV/漏OV，表I/IV计数及35视频名字差异保留。
-
-作者精确页面链接2.3MB代码ZIP，153成员CRC核/75载荷，lib实际16×300；19关键MATLAB文件通读、3局部选读，不当全部源码审计或运行复现。固定端元/IV负例、CLSUnSAL和一与Eq5、atan2/soft bin与Eq1、Eq9归一符号、构库方向及FPS口径分别记录。官网工具原载荷核验，NumPy2.5.1合成探针只证明5×5 reshape/np.float及零坐标边界，非真实MHT指标复算；许可按第三方分别留待。新增v5 Fig2/3原裁图与必要相关滤波方法类别，补既有纹理/给定谱库稀疏回归，仅改本篇。
-
-15原始响应/5派生审计；既有1篇升级，无新论文/年度查询。当前757总库、188作者（173摘要/15全文级）、214三维、305标签/343原图，395确认（341审计）/343暂定/19待。531arXiv历史决定及八pending不变；作者全集和全领域覆盖未完成。见 [MHT v5原文/表/代码审计](sources/jun-zhou-mht-v5-full-reading-2026-10-11.json)及[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻CNHT全文、正式书目纠错与作者代码续接（2026-10-11）
-
-既有arXiv1810.11819v1通读12页、式1–8/两表18行/六图注/18参考条目，Griffith AM12页逐页文字核对（2–12页字符相同，首页去侧标后仅空白差），AM全文已读、Springer VoR未读。原ICIP/三作者错误更正为ICSM2018/五作者，正式DOI10.1007/978-3-030-04375-9_26与作者身份由原文/Crossref/机构/共同作者互证，不新增论文。本文仅三场景九序列，HSI/Gray与RGB帧数、分辨率/视点不同；14/11及波长段差异、固定随机卷积核而非离线深网、98.2%@20px/1FPS与相对83%/绝对44.6百分点分别留证，不套MHT35或HOT40/35。
-
-作者ICSM.zip24项CRC/hash、15关键MATLAB通读；缺X2Cube/X2Cube2和数据/seed，same卷积首谱片、采样/归一/cosine、choose/all输出、评测阈值和FPS口径差异另留，无真实运行复现。v1 Fig1/2完整原裁图新增，模板采样卷积方法单列且仅本篇关联。13原始响应/5派生审计，无新学习笔记或作者/年度查询。
-
-当前757总库、188作者（172摘要/16全文级）、214三维、306标签/345原图，395确认（342审计）/343暂定/19待；531arXiv历史/八pending不变。作者全集与全领域覆盖尚未完成。详见 [CNHT全文及实现审计](sources/jun-zhou-cnht-v1-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻SST-Net公开稿全文、结果资源与DMT原始摘要续核（2026-10-11）
-
-SST-Net WHISPERS2021会议官网5页公开稿完整通读四式/两表/三图注及22引用条目，IEEE VoR未取得、引用作品未逐篇通读。实际谱/空间卷积及门控RNN注意力，修正Transformer标签，补必要波段分组任务/谱—空间—时间注意力方法，仅关联本篇。原文40训练/35测试、lr=.005；通道/载荷/更新阈值/时间成本与全链路梯度待。AUC .6230比谱基线.6061高1.69百分点；图2 BAE AUC .606高于MHT .589，但precision .876低于.888，不概括全面胜出。MHT跨论文数值、空间pooling/门控记号与C-COT错引另留。新增公开稿Fig1与Fig2完整原裁图。
-
-固定hscv/SST-Net提交完整树仅README和三结果ZIP，无实现/配置/权重/GT/许可文件，作者关联仅自述与一致README。4 blobs hash与163成员CRC/成员hash、160结果文本共58833行四列有限数值全部核验；35/45/80文件只是本次ZIP内容，2025提交及后续HOT2022/IMEC25不回填2021实验。原响应字节/CRLF保留，无GT或指标/运行复现。DMT WHISPERS2019取得IEEE原始完整摘要与机构逐字符匹配、四作者/Griffith身份和六页书目；支持动态在线丰度/SSHOG/相关滤波，方法细节未证。IEEE空响应/摘要HTML、机构仅SWORD XML、第三方OA只落元数据，HAL有限阴性不当全网缺失，全文仍待；移除无证采集任务并补纹理/相关滤波，仅本篇。
-
-29原始响应/4派生审计，两条既有论文来源续核、一篇升级全文，新增两survey候选来源续核行及一查询/批次，不当新作者或年度扫描。当前757总库、188作者（171摘要/17全文级）、214三维、308标签/347原图，397确认（344审计）/341暂定/19待；arXiv531历史决定与八pending不变。作者全集与全领域覆盖未完成。见 [SST-Net/DMT证据与剩余问题](sources/jun-zhou-dmt-sst-followup-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻Hy-Tracker v1全文、正式版主要模块变化与BAE摘要续核（2026-10-11）
-
-Hy-Tracker arXiv2311.18199v1全部10页通读：式1–11/六表107明细+1总计/八图注与39引用条目，引用作品未逐篇全文。原文为BABS跨带目标/邻域余弦对比、YOLOv7提案与MDNet式classifier/Gaussian采样/Kalman。正式2024 IEEE完整原始摘要却为HAS-BS层次注意力与classifier/GRU；精确DOI/五作者/机构/ORCID关联，方法/结果/图号与阅读状态严格分版。旧正式总述Kalman-only已纠正，正式14页正文未取得，机构仅两个LICENSE txt，不当v1替代正式方法或实验。
-
-v1称HOT2022但40/35及35序列16574帧与SST HOT2020结果33同名帧数一致，另两对近名同帧数但身份未证；实际载荷/年份未证，原命名保留。测试首帧加入YOLO离线训练、BABS GT区域的后续取框边界、网络隐含pool/参数及数据/运行成本待。表III等权均值吻合总计.721/.973/3.374，帧权结果不同，只做印刷值算术。Eq11 CLE>η与正文<η、RGB∆AUC错印.0033与实际.033留差异；3.37FPS慢于SiamBAG5.7与25FPS采集，不能称整体实时。HOT2023原文110train/87validation、VIR/RedNIR/NIR16/15/25带，v1 .624/.836对TranST .566/.777为+5.8/+5.9百分点；官方updated link不回填旧协议。Git宽查询仅首30/681、限定查询0不证明无代码；无模型/权重/GT运行复现。
-
-BAE-Net补完整IEEE原始摘要、六作者机构/五页书目，与机构摘要逐字符同；autoencoder-like波段注意力/权重、三通道grouping及ensemble直接支持，严格子集/VITAL/协议/指标未证。全文入口仅空响应/摘要HTML、机构SWORD XML；不借SST/Hy引用升级本篇全文。改分组标签并新增波段注意力及检测提案/状态细化方法，仅本轮两篇；新增Hy v1 Fig1/3完整原裁图，明确非正式HAS-BS/GRU图。
-
-22原始响应/4派生审计；既有2篇续核、1全文升级，无新论文/年度扫描。旧Hy候选/机构/arXiv匹配仅追加证据，BAE新增真实来源续核索引，不改旧发现决定。当前757总库、188作者（170摘要/18全文级）、214三维、310标签/349原图，399确认（346审计）/339暂定/19待；531arXiv旧决定与八pending保留。作者全集与全领域覆盖仍未完成。详见 [Hy/BAE全文、版本及原始证据](sources/jun-zhou-hy-bae-followup-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-
-### 周峻BABS/SiamBAG原始摘要、作者实现与Attend来源纠错（2026-10-11）
-
-既有三篇补完整IEEE摘要/作者机构/ORCID，均保留abstract_read。BABS正式5页未得，原始摘要明确前三带，与Hy v1多组/余弦式分开。SiamBAG正式12页未得；摘要反链仓库固定8b3ee425，完整233节点树/179 blobs无PDF/LICENSE，通读9 Python及两README，84取得blobs hash核验。16带六组覆盖全部且复用两带，改旧严格选带为分组，补波段注意力和孪生提案方法，仅关联本轮论文。
-
-35预测16574行/35双列时间33148值全部解析核验；报告去首帧16539长度，加权存储序列AO/SR算回.652693/.838382，曲线均值.650638，不当论文AUC或DP。mean(1/t)算回5.698116 FPS，1/mean(t)为4.981129，计时排除谱转换/注意力/分组等，非全链路速度。无原图/GT、外部主权重、训练协议或模型运行；只对原NumPy工具函数作合成探针，完整边界见派生审计。
-
-Attend旧PDF实为Jing Wang2020博士论文192页，父item/DOI10.25904/1912/3959互证；同题第4章及168页期刊清单仅局部核查，不当JSTARS2019的16页全文。主链接与旧来源类型已纠正，正式/机构摘要逐字符一致，正式正文/原图仍待。响应MD5不同于stored bitstream，不声称原bitstream校验成功；下载响应SHA256/字节留证。
-
-109原始响应/6派生审计，既有三篇续核，无新论文或全文升级、年度全量扫描。当前757总库、188作者（170摘要/18全文级）、214三维、311标签/349原图，401确认（349审计）/337暂定/19待；1615候选/237查询/230批次，旧候选只追加证据，531arXiv与八pending保留。作者全集与全领域覆盖未完成。详见 [三篇来源及实现审计](sources/jun-zhou-band-tracking-followup-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-### 周峻2013植物SfM、2015跨波段模型融合全文续核（2026-10-11）
-
-两篇既有目录升级全文：2013 CVF公开6页与Griffith封面+6页、2015 Griffith封面+8页，三稿22PDF页（20正文/2封面）全部阅读。2013公开稿五式/四图/20引用、AM六式/四图/18引用，2015九式/Algorithm1/两表25数/八图/21引用；引用作品未逐篇通读。CVF可见页首/网站声明IEEE为权威版，纠正“公开稿=VoR”，两篇IEEE正式PDF202空、2015当前Crossref429，正式书目/原始摘要可核，不当正式全文。
-
-2013公开61原带/41可用、120视角，互信息790nm相似配准/光谱分割/Canny边缘SIFT/逐带SfM，结果仍局部断开，合并与RGB比较是未来工作；AM额外形态学加边Eq6及51带600–1000nm/10nm矛盾分版。2015实现跨模型直方图对应/鲁棒变换/逐步合并，代价是平均欧氏距离而非均方误差，TSP-like措辞不证明贪心最优。咖啡15带/玩偶8带与普通RGB恐龙、392点脸配准实验分开，脸未证Stanford；图示密度不替代HSI几何GT。Face2.706s不快于所有基线，Dino13.773/Coffee12.675仅匹配/配准印刷秒数，无硬件/全链路/重复实验。
-
-11当前原响应（CVF PDF字节同旧存，复用）/10新响应文件、2旧机构PDF及旧Crossref访问快照、4派生审计；无新论文/标签/图或学习笔记。既有188行索引只同步链接/阅读状态与统计，三维214不变。当前757目录、188作者（168摘要/20全文级）、311标签/349原图，401确认（349审计）/337暂定/19待，1615候选/238查询/231批次；531arXiv历史与八pending保留。作者全集/原数据实现/正式版本与全领域覆盖仍未完成。详见 [三稿全文、版本与实验审计](sources/jun-zhou-early-3d-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-### 周峻ICIP/IGARSS2013、JSTARS2015超图选带全文续核（2026-10-11）
-
-三篇既有机构稿升级全文，共22PDF页（19正文/3封面）、39编号式/13表/16图，引用条目19/15/30未扩称所引作品已读。四/五/五作者分开；ICIP阻尼传播+LAR、IGARSS谐函数+显式lasso、JSTARS空间坐标权重+邻带组惩罚，各稿实验和参数不互填。期刊[20]/[21]确认前后方法关系，未见明确扩展声明。三IEEE原始摘要/机构/书目已核、正式PDF202空，未称VoR已读。
-
-期刊APHI表行和2610/总计印2410、Indian行和5776/总计印5407按原文留证；IGARSS选带126/2610与SVM700/1600分阶段。期刊组稀疏消融提升0.3/0.9/1.0个百分点，图/超图提升6.6/7.8个百分点却是五类2000样本的另协议。ID三数据最快，DC本法325秒最慢；未有实际运行。式中熵概率、归一指数、组惩罚与RBF平方等疑点分稿保留，独立测试/原样本/熵估计及实现仍待。
-
-13新原响应（含1错误IEEE编号排除、3空202）/3派生审计；当前三PDF字节异于旧存而所有提取文本相同，分别保存，不认作存储bitstream校验。JSTARS既有构造图复核、两会议no_framework，无新图/标签/论文/学习笔记。当前757目录、188作者（165摘要/23全文级）、214三维、311标签/349原图；401确认（349审计）/337暂定/19待；1615候选/239查询/232批次，531arXiv八pending保留。作者全集、正式版本与全领域覆盖仍未完成。详见 [超图全文与全表审计](sources/jun-zhou-hypergraph-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-### 周峻CCRE2010配准、ICCV2011材料颜色全文续核（2026-10-11）
-
-两份作者托管稿12正文页/23编号式/9图/1特征表通读，参考条目12/29不称所引作品全读；原PDF字节同旧存复用。IEEE完整摘要、历史ANU/NICTA身份、DOI/页码核实，正式PDF202空。CCRE七组各50人工扰动、二维仿射/灰度CCRE与MI；高清旋转±25°，非提取±250；≤70像素有效100%成功是作者报告，阈值/区间分母/实际计时与非仿射泛化未证，不输出融合光谱立方。
-
-颜色方法最大熵退火、软材料端元一致性与Photo.net QDA八维HSV审美调节；77幅原23带430–650nm、297材料谱430–720nm、四光源，B-spline27–72点/最终54端元不是实采通道。作者多/高光谱范围与实采名称均记录，既有成像光谱关系保留。高清Photo.net阈值5±t/2、特征h/9纠正提取乱码；10编辑图与三用户示例不是完整受试统计。4.7s/0.6s仅指定优化步骤，无端到端/满意度/数据实现复现。
-
-6当前响应（2 PDF复用、4新HTML含2空202）/3派生审计，既有颜色Figure2原图复核与CCRE no_framework；无新论文/标签/图/学习笔记。当前757总库、188作者（163摘要/25全文级）、214三维、311标签/349图，401确认（审计349）/337暂定/19待，1615候选/240查询/233批次，531arXiv八pending不变；作者全集、正式版本与全领域覆盖未完成。见 [全文及协议审计](sources/jun-zhou-ccre-colour-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-### 周峻2009纹理、2011谐波章节全文及DOI双登记续核（2026-10-11）
-
-两份原作者稿全文升级，8/24页共32PDF页（含1空白）、61编号式/12图/6表及20/43引用条目读完；所引作品未逐篇阅读。原PDF与旧保存字节相同复用，纠正2009实际8页而非旧10页。当前IEEE/Crossref正式DOI为CVPRW.2009.5204126、112–119；旧CVPR.2009.5204126仍同题登记，保留变体/旧发现证据，不新增重复论文。IEEE正式PDF202空，Springer200挑战HTML非原摘要/正式21页全文；Chapter1稿/Figure1.1与正式Chapter8编号分开。
-
-2009 OFM100图/400测试蛾、城市50图/198测试车定位率83.09/83.65，对LBP76.54/69.20；DynTex非HSI、1080派生子序列，父序列隔离待。结论MIT与表“三长度”缺对应正文证据，未补造。2011六类684图51带9nm，4/16/64格投票与校准/NN/SVM，四表88行352数逐核；4格单尺度未校准NN89.47<97.56、SVM96.81<99.15，纠正泛称全设置优于LBP。75.63/75.65与32/64文字表图冲突留证，98.54为跨格平均而非独立外测。
-
-共享FCT/参考峰方法族与图，但无明确扩展声明；Hilbert与其他核讨论不当全部实现/一般不变性定理，三轴表示非三维几何。高分辨率确认概率/重尾/仿射符号、因子、矩阵顺序疑点，原文与条件代数推断分开；原数据/代码/参数/身份或父序列划分仍待，无模型运行或复现。11响应（2PDF复用/9新原响应）与3派生审计保留字节/哈希；无新论文/标签/图/学习笔记，索引仅同步。当前757目录、188作者（161摘要/27全文）、214三维、311标签/349图，401确认（349审计）/337暂定/19待，1615候选/241查询/234批次；531arXiv历史及8pending不变，作者全集与全领域覆盖未完成。见 [全文、版本与旧记录纠错](sources/jun-zhou-texture-harmonic-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-### 周峻IGARSS2015、GRSL2016 SVM波段加权全文与分类纠错（2026-10-11）
-
-两篇既有机构稿全文升级，全部11PDF页（2封面/9正文与参考）、六式/六图/五数值表/会议Table1伪码及期刊Algorithm1逐核。2015类向量v/beta选TopK重训；2016样本b_i再类v/gamma/theta、明确保留全带，Top5只是展示。新增波段加权任务仅两篇关联，移除2016旧选带标签；期刊Fig1第3页完整原裁图入库，会议仍no_framework。未发现明确会议扩展声明，独立方法族与实验保留。
-
-2015 Salinas原224/220→200冲突，旧目录204无原文支持；2016两场景224→200，Salinas训练205而2015为2450，全部训练/测试行和吻合。期刊总准确率91.5/99.0与打印测试数加权91.77216/98.62408不等，只留表值算术，未取得真实GT/预测/十次聚合。FEWT0.79、末行四波段、CKF/PSCMCA和公式额外T/缺y_i/优化方向/括号疑点原样留证，不擅自修公式或报告运行复现。
-
-2016AM正文五作者、封面/item/IEEE/Crossref正式六作者，目录/BibTeX保持正式身份；正式四页与AM五页内容分版。两IEEE正式PDF202空，仅完整原始摘要/书目独立核实。12新原响应含两PDF、三派生审计及总清单留证；当前与旧PDF字节不同但全部提取文本相同，不能声称通过stored bitstream MD5。既有188行索引只同步任务/状态/计数，不增学习内容。
-
-当前757目录、188作者（159摘要/29全文）、214三维、312标签/350图，401确认（350审计）/337暂定/19待，1615候选/242查询/235批次；531arXiv历史决定与8pending保留。作者全集、正式版本/数据实现与全领域顶会顶刊/arXiv仍未完成。见 [SVM两稿全文、版本与协议审计](sources/jun-zhou-svm-margin-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-### 周峻IGARSS2016一类SVM、IJWMIP2017差分权重选带全文续核（2026-10-11）
-
-两篇既有AM全文升级，共23PDF页（2封面/21正文及参考）、13编号式/12图/六数值表及一伪码表；10/35引用条目不称所引全文全量。当前类/竞争类系数差×像元、L1 hinge与Top-n共同机制明确，新增精确差分一类SVM方法、波段加权任务及会议地物分类关联。期刊Fig1第4页完整原裁图入库；会议四图输入/GT/结果、文字伪码非框架，no_framework。未有明确扩展声明，独立方法族不合并。
-
-会议旧PDF路径200只有HTML壳，通过原item/完整一页唯一ORIGINAL bitstream恢复真实PDF；机构Fun错字与正文/IEEE/Crossref Jun Griffith分源保留。IEEE正式PDF202，期刊正式页/PDF403；只核完整IEEE原摘要及Crossref登记期刊摘要/六作者/15(06):1750065，不把文章号当页数或正式全文。下载SHA256核验与stored MD5不混；旧/新期刊PDF文本同但字节不同，双方保留。
-
-会议Indian测试行和8310/总计7172；期刊Pavia行和1116/7040而总计1118/6338，Indian/APHI表题与类别内容交叉且九类表行和1386/7844不等总计1214/6882。均留原文与算术，不自行互换表题宣布修复。期刊y_i真类/竞争类与求和索引冲突、非hinge初始式、L1目标solver等价不足、AP波段206与删带重编号未知、Fig6/8引用差异分别留证；没有实际数据/代码或模型复现。
-
-15原始HTTP响应、三派生审计与总清单保存全文/表/公式/作者身份；既有188行索引仅状态/任务/会议源链接同步，不增学习笔记。当前757目录、188作者（157摘要/31全文）、214三维、313标签/351图，401确认（352审计）/337暂定/19待，1615候选/243查询/236批次；531arXiv与八pending不变。作者全集、正式修订/原数据实现与整个高光谱顶会顶刊/arXiv系统覆盖仍未完成。见 [两稿全文与协议审计](sources/jun-zhou-oneclass-differential-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
-
-## 2026-10-11 / 三篇既有图NMF稿全文与旧身份审计纠错
-
-周峻作者优先续核三篇既有记录，不是作者/场所年度新扫描。DICTA2014双图9页、ICIP2015 MMSNMF6页及WHISPERS2015多图5页，共20PDF页/3封面/17正文参考，52编号式、13图、2数值表3面板及2伪码全部通读。26/19/21参考条目不当引用作品全文全量。三份IEEE完整摘要/四或五作者及Griffith身份、Crossref正式书目与机构稿分版；IEEE正式PDF三次202空。
-
-明确区分固定空间/特征双图、层级双因子图和simplex学习多尺度权重。MMSNMF实测为Jasper Ridge100×100/198带，旧“局部只见合成”的缺口已在本AM关闭；全表80行内值/15均值保存。其MNMF平均印0.1190与四行均值0.11085冲突；水VCA0.0330胜MMSNMF0.0481，平均最低不代表每材料领先。两Urban稿不混丰度GT、尺寸/材料行名或停止参数。公式图维度/左右乘、degree索引、权重子问题符号和增广行维度问题分列，算术不是代码复现。
-
-旧 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json` 的派生记录错挂2025跟踪身份，不再用作2015解混内容证据；另存IEEE/本AM/Crossref纠错，旧审计与原发现决定保留。18HTTP原响应按字节/SHA保存，stored bitstream MD5不匹配动态封面下载不声称通过。三派生审计和总清单留证。新增1方法标签、1分类确认及1审计，多图队列改no_framework，既有MMSNMF原图字节与队列顺序保留，无新论文/原图/学习笔记。
-
-当前757总库、188作者（154摘要/34全文）、214三维、314标签/351图，402确认（353审计）/337暂定/18待；1615候选/244查询/237批次。arXiv531决定与八待核不变；正式全文、实现/GT及作者全集和全领域顶会顶刊/arXiv矩阵仍待。详见 [本批完整审计](sources/jun-zhou-graph-nmf-full-reading-2026-10-11.json) 与 `jun-zhou.md` 末节。
-
-### 作者优先：三份2016 NMF接受稿全文、入口恢复与图/表审计（2026-10-11）
-
-TGRS部分已知端元先验及ICIP端元稀疏图/结构判别三份既有论文，共45PDF页（3封面/42正文参考）、70编号式、13图、11数值表13面板766数值、2伪码全读及逐页图版核验；41/18/21参考条目已读不表示所引作品全读。三个IEEE完整原摘要、作者/Griffith单位与机构item互证，TGRS有目标ORCID；两个Crossref可用、端元图当前429空，正式三个PDF202空。TGRS旧链接200是HTML壳，结构判别原二手摘要改主源为机构AM：精确item→完整bundles3条/唯一ORIGINAL→完整bitstreams1条恢复，旧源保留。结构判别正式/机构封面六作者、稿正文五作者缺Xun Yu，保留正式名单与版本差异。
-
-端元谱软先验、端元自表示W平方根稀疏、丰度亲和/排斥平方根稀疏分开。补两精确方法标签及三个分类审计，谱先验定义升确认；没有新增论文或合并方法族。TGRS未知/全部端元SAD差异、完整/缺失字典胜负和Alunite GDS83/84角色反转、Fig5算法名不同逐项留证。ESGNMF mean SAD/RMSE .0626/.0818最低，15/40dB RMSE有反例、实测水也有反例，NMF RMSE印均值.1029/行算.088266…；SDNMF mean .0676/.0745最低但各噪声4/5领先，VCA RMSE印均值.1287/行算.1043。真实丰度视觉结果不当数值RMSE验证；公开稿停止式、维度/平方/未定义变量、图对称化与全部实现参数待正式/代码核。
-
-原Fig1两张为方法概念对照，不称完整solver流程，TGRS七图为输入/结果而无独立框架，队列no_framework；队列原顺序保留。21当前HTTP原响应逐字节/SHA保存，三派生审计区分原文本、作者/版本、印式和独立算术；无模型复现或新学习笔记。当前757总库、188作者（151摘要/37全文）、214三维、316标签/353图，402确认（356审计）/337暂定/18待；1615候选/245查询/238批次。arXiv531决定与八待核不变；正式版本、实现/参考GT、作者全集与全领域顶会顶刊/arXiv覆盖未完成。详见 [本批完整审计](sources/jun-zhou-nmf-2016-full-reading-2026-10-11.json) 和 [作者调研记录](jun-zhou.md)。
-
-### 作者优先：显著检测与两份流形可视化全文、原数据入口续核（2026-10-11）
-
-ICIP2013、ICPR2014和TGRS2016三份既有机构稿分别6/7/13页，共26PDF/3封面/23正文参考、40编号式、28图、5表120数值全读及逐页渲染；18/20/38参考条目非所引作品全读。两会议未标AM/VoR、期刊明确AM，三正式PDF202空；IEEE/Crossref完整作者与Griffith单位、精确页码互证，数据库插入不当首次online。新旧PDF文本相同而字节不同，各原响应SHA分别核验。期刊实际引用会议[32]，明确扩展声明仍待。
-
-显著三方案为四实现加Moan，13选择性区域/手工框与pixel PR协议未详，单目标假设且无数值表。Foster两组当前各8示例、Harvard当前50+25资源、波段/使用条件由四原说明页确认，来源参数不回填论文已印事实，没有下载13裁块/GT或整库。可视化会议仅视觉参数比较，地面480×640；期刊地面960×1280×18/460–630nm与四组数值、跨地点14对/同传感器复用/三带显示分开。同地点MA RMSE四组最低但其他指标有反例；跨地点D04 RMSE58.47不及CMF28.70，不混同地点MA23.08。式中维度/图双和/逆矩阵/齐次尺度、熵ln/位深/可分性归一/RGB RMSE通道边界留证，表/图非模型复现。
-
-原三张方法Fig1字节与队列顺序不变；无新论文/标签/原图/学习笔记，彩色可视化定义升确认，既有分类审计续核。22原始HTTP响应/三派生审计/总清单已存。当前757总库、188作者（148摘要/40全文）、214三维、316标签/353图，402确认（356审计）/337暂定/18待；1615候选/246查询/239批次。arXiv531决定与八待核不变，正式全文/实现、作者全集与全领域顶会顶刊/arXiv覆盖未完成。详见 [本批完整审计](sources/jun-zhou-visual-saliency-full-reading-2026-10-11.json) 与 [作者记录](jun-zhou.md)。
-
-### 作者优先：稀疏多任务与非局部张量去噪全文续核（2026-10-11）
-
-沿用MTSNMF TGRS2015与非局部张量ICIP2017两既有记录，新增2公开稿全文级阅读，非年度/作者新增题名扫描。作者目录188条，146摘要级/42全文级；总库757/标签316不变，分类审计357，原图354。两稿42 PDF页（2封面/40正文参考）、40编号式、23图、11表（9性能/时间表277值，含84mean/std对）、9算法及60/22参考条目全读；所引作品与正式IEEE全文未独立全读，代码/模型未复现。正式PDF入口202空。
-
-MTS谱带字典/共同系数与Tensor正交四模低秩分开；前者SpecTIR模拟噪声及Indian/Pavia原生噪声间接分类、后者Columbia/Pavia真实来源影像人工加Gaussian分开。MTS Pavia全带三指标不及K-SVD、原图先去坏带基线不当相同通道消融；Tensor七具名基线与正文“8”矛盾留证。MTS字典尺度、b单位、`3N=137`与停止；Tensor式4`min`/投影能量、块数边界和np/nK/rank/L/31带索引均保留疑点，不替作者修改式或宣称复现。ICIP误标期刊已纠正会议/BibTeX，原Fig1 PDF2补入，MTS既有Fig1字节不变。IEEE作者单位/日期核对，显示或插入日期不冒充首次online；MTS正式/机构摘要VST段差异不冒充已核正式正文差异。Purdue说明200未下载；SpecTIR转联系页，EHU403、CAVE500，实际原响应与SHA存档。
-
-证据：[本轮清单](sources/jun-zhou-denoise-full-reading-2026-10-11.json)、[逐页正文](sources/jun-zhou-denoise-full-all-page-text-2026-10-11.json)、[完整式表/协议](sources/jun-zhou-denoise-full-protocol-equations-tables-2026-10-11.json)及[正式/机构身份和类型](sources/jun-zhou-denoise-full-primary-metadata-2026-10-11.json)。作者其余146摘要级、多来源差集与arXiv身份/范围待继续；全领域矩阵缺口保持，作者和任一年度全量未完成。
-
-### 作者优先：非负Tucker与张量形态学AM全文续核（2026-10-11）
-
-JSTARS2018非负Tucker与ICIP2016 TMP两既有记录升级为公开AM全文，17PDF页（1封面/16正文参考）、40编号式、13图、6数值表441格（440可解析/1原歧义）、1算法及48/20参考条目全读和逐页视觉核验。参考条目非引用作品全读；两正式PDF202空，正式/代码未复现。Tucker旧URL200为755字节HTML，经精确item/完整bundles/bitstream恢复；主链改为AM，原URL保留。IEEE Jun ORCID/bio与AM Griffith互证，但期刊affiliation字段给Beihang，差异分列，不掩盖作者单位字段冲突。正式卷期页码补入BibTeX。
-
-第三阶展平全谱块/非负HALS与TMP张量域标量形态剖面分开，新增精确TMP方法标签。Tucker人工Gaussian四数据来源不当原生混合噪声恢复；224/190带和其他源220/191分版。Eq10正交/非负、投影下限、核心补集索引/正性、初始化/秩/L/停止、窗口与主表、复杂度待正式/实现。Washington SSIM原格0716视觉确认，保留raw和null解析。与2017会议Columbia表81值逐项相同而TDL改SPA+LR，方法/带数不同且无明确扩展声明；只补相关证据，不合并方法族。TMP两组表头未印场景、按图注/正文推断；OA较EMP高3.8/5.4个百分点，无重复/std/显著性。整数强度恒等式、SE配置/PCA/SVM/split与Fig3重复Pavia注保留边界。
-
-补期刊原Fig1 PDF2完整流程/图注；TMP三图为输入、特征和分类图，无独立完整框架，队列no_framework，非目标与顺序不变。15当前原HTTP响应、9继承文件和三派生审计均核SHA，继承数据入口不伪称重新访问；未取得原库或新增学习笔记。现757目录、188作者（144摘要/44全文）、214三维、317标签/355原图，402确认（359审计）/337暂定/18待；1615候选/248查询/241批次。arXiv531决定及八待核不变；其余作者全文、差集、正式与实现，以及全领域顶会顶刊/arXiv矩阵继续。证据：[本批阅读与原响应清单](sources/jun-zhou-tucker-morph-full-reading-2026-10-11.json)、[公式/协议/全表与2017对比](sources/jun-zhou-tucker-morph-full-protocol-equations-tables-2026-10-11.json)、[作者调研](jun-zhou.md)。
-
-### 作者优先：结构稀疏小波与采样评估四版本全文（2026-10-11）
-
-三既有作者记录升级公开全文：结构稀疏小波2012-06-13草稿32页、WHISPERS2015 AM5页、控制采样arXiv v1 31页与TGRS2017 AM16页，共84页（3封面/81正文参考）、60版本编号式、48图、19表1639格、4算法及55/23/46/46参考条目。8个NaN保留，各表示无非重叠测试样本；小波6个加法时间格各两数，故1637可解析数值成分。完整页文本、公式/表与图逐版核，不表示所有引用作品全文或作者实现复现。三正式PDF202空，全文状态仅指这些公开版本。
-
-小波两级无下采样Haar/绝对系数均值/15p特征与三种稀疏logistic、平方距离门控混合分类核验；明确2011会议扩展，参数/作者分版。十次均值补核，KSC5%小波SVM较原谱低，OA/AA/κ分别比较。删带220、稀疏度术语、近端步长/动量/初始化、Pavia1% OA43.51而κ×10044.62、表VII四等权均值超过舍入容差等打印疑点留原值，等待正式/混淆矩阵/代码。WHISPERS正文缺Lei Tong而正式/封面含，四具名场景与six/SalinasA文本冲突保留；无公式/伪代码，不借2017细节。
-
-控制采样AM增加平均相关Eq10、VII-D小样本节/Fig16，v1没有；四表531格逐项相同不等于正文同版。按类连通分区随机种子八邻域生长减少而不消除重叠；未保证iid/跨场景，分区取整/小类/种子/PCA/SE/RF/滤波实现待。Pavia DWT/EMP排序随协议反转，全表反例不当所有算法/指标总更好。两稿Eq7固定其他项随β增大，而Eq8解释递减；官方NeurIPS2008原引文Theorem2 log分子4，两稿为2，原条件与Pearson/β区别留证。原引文仅指定定义/定理段选读，未标全文。采样稿三层15/均值式索引和绝对值/三轴拼接与2013源方法差异待实现，两篇采样稿无明确扩展声明，方法族保持独立。
-
-补空间控制采样评测方法标签及两审计，保留小波原图字节；补控制采样原Fig1为一般监督评估训练—测试框架，明确非新采样算法图。WHISPERS仅地图/曲线，no_framework；队列顺序与非目标保持。25当前实际原HTTP响应、1继承PDF、3派生审计各SHA核验；传输失败不伪造空体，动态封面不声称stored MD5一致。无新学习笔记或模型复现。现757目录、188作者（141摘要/47全文）、214三维、318标签/356原图，402确认（361审计）/337暂定/18待；1615候选/249查询/242批次。arXiv531决定及八待不变，来源差集/正式/实现和全领域顶会顶刊/arXiv矩阵尚未完成。证据：[阅读与原响应清单](sources/jun-zhou-sampling-wavelet-full-reading-2026-10-11.json)、[全部式表/协议/版本核验](sources/jun-zhou-sampling-wavelet-full-protocol-equations-tables-2026-10-11.json)、[作者专项](jun-zhou.md)。
-
-### 作者优先：BTD、区域原型与超像素解混三公开全文（2026-10-11）
-
-三既有论文新增公开全文级阅读：MV-NTF AM18页、R-NMF AM14页、S-MV-NTF作者托管出版社排版拷贝4页，共36PDF/2封面/34正文参考、89式/38图/13表386格612标量位置（1畸形小数/1数值超SAD范围）/2算法/54,50,11参考全读与图版核验，引用作品非全读。两机构AM动态封面与stored载荷校验分开，超像素机构完整列表仅SWORD XML且未标AM；三Crossref身份/完整作者/日期与Griffith单位互证，九IEEE HTML/PDF入口202空，未称完整IEEE摘要或独立正式全文已读。
-
-矩阵—向量rank-(L,L,1) BTD保持丰度二维结构但实际用展开矩阵求解；ASC为软惩罚，非负BTD唯一性未严格证明，带ASC变体非全指标最优。R-NMF是图分割合并+区域原型近吸/远斥和L1/2稀疏，共享M，未给显式ASC；Eq14/18/33、σ/ρ与参考[50]疑点留原印，Jasper S-VCA均值超舍入容差。MV两格0.41.33/13.96视觉确认不静默修值。S-MV明确在MV上加SLIC指导空间A/B图，Eq5/6多1/2原印留证；Jasper仅road最佳，跨文R/MV基线、真值/参数/生成器不齐，非模型复现。
-
-新增两方法标签/三分类审计/两原Fig1；MV图为四模型对照，超像素完整框架，区域20图无独立全流程框架记no_framework，队列顺序/非目标保持。25当前实际HTTP原响应与三派生审计按SHA归档，无新学习笔记。现757目录/188作者（138摘要、50全文）/214三维/320标签（102任务/195方法/23应用）/358原图，402确认（364审计）/337暂定/18待；1615候选/250查询/243批次。arXiv531决定及八待不变，作者全集、正式/实现、多来源差集和全领域顶会顶刊/arXiv矩阵尚未完成。证据：[完整阅读/原响应清单](sources/jun-zhou-region-tensor-full-reading-2026-10-11.json)、[全式表/协议审计](sources/jun-zhou-region-tensor-full-protocol-equations-tables-2026-10-11.json)、[作者调研](jun-zhou.md)。
-
-### 作者优先：两正式解混全文与TV摘要/代码（2026-10-11）
-
-GMC/子空间NMF IEEE正式13/14页通读，共27页/67式/23图/9表357格447标量/2算法/44,54参考；机构GMC VoR正文13页文本逐页相同，子空间AM15页只归档/局部对照，TV未取得全文保持摘要级。36实际原响应与三派生证据留SHA；TV完整摘要和作者ZIP不当全文，子空间公开固定Z演示不当论文联合实现。印式/阈值、超SAD范围格、均值/波段疑点、真实真值和代码缺口均留原文，无模型复现或新学习笔记。两细方法标签、三审计、一原概念图；非目标和原图队列顺序保持。
-
-现757篇/188作者（136摘要、52全文）/322标签/359图/367审计，1615候选/251查询/244批次；作者多来源差集、八arXiv范围身份待项及全领域顶会顶刊/arXiv覆盖未完成。细节和证据见[作者调研](jun-zhou.md)、[阅读清单](sources/jun-zhou-tv-gmc-subspace-full-reading-2026-10-11.json)。
-
-### 作者优先：概率邻接图正式全文与DiffUn接受稿（2026-10-11）
-
-四篇既有作者论文复核：概率图IEEE正式14页与DiffUn接受稿18页含封面全文，97式/35图/8表396格540标量/3算法/52、53参考；机构图NMF VoR14正文逐页归一文本同IEEE，DiffUn正式16页仍缺、AM17正文不能混同。非局部NTF/ISTA网络官方完整摘要/作者单位已核，PDF202保持摘要级。34原响应含空体保留SHA、四派生审计；新增概率图多层NMF/光谱先验扩散解混标签，两暂定转确认、四审计、一AM原框架图。DC均值/Cuprite最佳数量、矩阵维度/停机印式、DiffUn插件后验/指标定义/oracle调参及伪码与代码差异留证；未运行模型，无新学习笔记。
-
-现757总库/188作者（134摘要、54全文）/324标签/360原图/371审计，分类404确认/335暂定/18待；1615候选/252查询/245批次。作者差集与身份/范围待项、正式版差及全领域顶会顶刊/arXiv矩阵尚未完成。详见[作者调研](jun-zhou.md)、[阅读清单](sources/jun-zhou-graph-diffusion-unmixing-reading-2026-10-11.json)。
+- 2026-10-10 / jun-zhou-dblp-difference-2026：新增 3，更新 0，去重 3，排除 4，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：DBLP exact-author差集中补2条 arXiv摘要级高光谱预印本，另以CEUR全文确认1条STRL高光谱跟踪工作论文；HSLiNets及两条已有正式论文的arXiv版本归版本关系；通用SAR/城市LiDAR、编辑和勘误排除。
+- 2026-10-10 / jun-zhou-orcid-early-remainder-2026：新增 0，更新 1，去重 4，排除 26，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补齐ORCID 2001–2011及2015重复登记30组的范围决定；4条与既有目录关联，26条按题名/venue范围排除；2010多光谱配准由待核改为排除。未新增目录论文。
+- 2026-10-10 / jun-zhou-orcid-2026-abstract-followup：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 FedDA-HSI 机构仓储摘要与 SPECIAL arXiv 官方摘要；更新2条目录为摘要级核验。FedDA-HSI记录联邦扩散生成/类别感知增强；SPECIAL记录光谱插值、CLIP伪标签和噪声标签学习。未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2026-abstract-followup-2：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 HOT 综述 Springer 官方开放摘要与 STU 公开摘要镜像；更新2条目录为摘要级核验。未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2026-abstract-followup-3：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 Frequency-Aware Bias Calibration Attention Network 公开摘要镜像；更新1条目录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-2025-abstract-followup：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 MFTNet、DaSSP-Net 与黑色素瘤高光谱分类的公开摘要；更新3条 Scholar 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2025-abstract-followup-1：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 SSIT、ADLKAN、HSLiNets 与 LDCLNet 的公开摘要；更新4条 ORCID 2025 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2025-abstract-followup-2：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 SUIT、SSTCF、SSSGAN 与 UBSTrack 的公开摘要；更新4条 ORCID 2025 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-1：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读甘蔗病害、DiffUn、FSHyperRGAN 与 Hy-Tracker 的公开摘要；更新4条 ORCID 2024 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-2：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 SSRT-UNet、ILRNet、MMF-Net 与 PN-ResCapsNet 的公开摘要；更新4条 ORCID 2024 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2024-abstract-followup-3：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 SSUMamba 与 SSLKA 的公开摘要；更新2条 ORCID 2024 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2023-abstract-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 Background-Aware Band Selection、DPNet-S/U、SEE-Net、MTSR、S⁴GPN、SiamBAG、S³ARN 与多域通用表示的公开摘要；更新8条 ORCID 2023 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-1：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 ALN、GSFus、GF-3DDA 与两阶段自监督 HSI 恢复的公开摘要；更新4条 ORCID 2022 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-2：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 MAC-Net、NSSNN、SMDS-Net 与 SNMF-Net 的公开摘要；更新4条 ORCID 2022 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-3：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 TSCFW、光谱—空间边界检测与 SDRN 的公开摘要；更新3条 ORCID 2022 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-4：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 S3FGCN、跨传感器杂草制图、MGRSR 与 UMsDFL 的 ResearchGate 公开摘要；更新4条 ORCID 2022 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-orcid-2022-abstract-followup-5：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 SCFus 的 ResearchGate 作者主页公开摘要片段；更新1条 ORCID 2022 记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-2022-abstract-followup：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读深度强化选带、模型启发解混、MTSNN 与空间—光谱稀疏去噪的公开摘要；更新4条 Scholar 2022 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-2021-abstract-followup：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 SST-Net、NMF-SAE 与甘蔗黑穗病检测的公开摘要；更新3条 Scholar 2021 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-2020-abstract-followup：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 BAE-Net 的 IEEE SPS 公开摘要；更新1条 Scholar 2020 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-2019-abstract-followup：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 ISTA 深度展开解混、草本杂草形状—纹理分类、局部—非局部高光谱分类和动态材料感知跟踪的公开摘要；更新4条 Scholar 2019 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-2019-abstract-followup-2：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读活/死细胞高光谱分类、注意力波段加权选带和丰度引导超像素分类的公开摘要；更新3条 Scholar 2019 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-mixed-abstract-followup：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读非局部低秩解混、单图模型驱动去噪、高光谱—LiDAR残差注意力分类和材料引导 Siamese 跟踪的公开摘要；更新4条 Scholar 2020–2022 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-next-abstract-followup：新增 0，更新 5，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读多光谱 SIFT 配准、多通道 Siamese 跟踪、MTA-Net 与 IRDNet 去噪，以及弱信号肉类污染解混基准的公开摘要；更新5条 Scholar 2010/2023–2024 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-final-abstract-followup：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补读 CasFormer、跨模态 HSI-LiDAR 分类、选择性状态空间多阶段融合和 LiDAR 引导无监督选带的公开摘要；更新4条 Scholar 2024–2026/SSRN 差集记录为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-scholar-hot2024-followup：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用 HOT2024 官方项目页面和组织方 CFP 核验 Scholar 挑战记录；属于项目说明级核验，无 DOI，未阅读全文。
+- 2026-10-10 / jun-zhou-2015-multiple-graph-abstract-followup：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：取得 Griffith 作者仓储接受稿摘要，更新 Multiple Graph Regularized NMF 为摘要级核验，未阅读全文。
+- 2026-10-10 / jun-zhou-early-abstract-followup：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引补读两篇2012异常检测和一篇2017边界检测；正式书目由Crossref/官方目录支撑，未阅读全文。
+- 2026-10-10 / jun-zhou-2018-boundary-abstract-followup：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用Griffith Research Repository OAI机构摘要补读2018边界检测，Crossref/LNCS核对正式书目，未阅读全文。
+- 2026-10-10 / jun-zhou-2026-title-followup：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用Semantic Scholar公开摘要与OpenAlex摘要索引交叉补读两篇2026高光谱记录，Crossref核对正式DOI，未阅读全文。
+- 2026-10-10 / jun-zhou-whispers-tail-abstract-followup：新增 0，更新 14，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引补读WHISPERS 2013–2014剩余14篇题名级高光谱记录，未阅读全文。
+- 2026-10-10 / jun-zhou-lidar-guided-fulltext-followup：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：核对已有15页arXiv作者稿审阅记录、两张框架图和作者代码入口，将LiDAR-Guided Band Selection 从状态pending纠正为full_text_read。
+- 2026-10-10 / field-3d-abstract-followup：新增 0，更新 7，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引和Crossref书目补读7篇高光谱3D/多模态记录；未阅读全文。
+- 2026-10-10 / field-3d-lidar-abstract-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引和Crossref书目补读8篇高光谱3D、LiDAR和光谱点云记录；未阅读全文。
+- 2026-10-10 / field-spectral-imaging-abstract-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引和Crossref书目补读8篇光度立体、光谱成像和高光谱LiDAR记录；未阅读全文。
+- 2026-10-10 / field-spectral-biomedical-abstract-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引和Crossref书目补读8篇光谱/生物医学/计算成像记录；未阅读全文。
+- 2026-10-10 / field-spectral-semantic-scholar-followup：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用Semantic Scholar公开摘要和Crossref书目补读3篇HSI-LiDAR、高光谱点云与多光谱光度立体记录；未阅读全文。
+- 2026-10-10 / field-spectral-forest-abstract-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex/Semantic Scholar公开摘要与Crossref书目补读8篇光谱显微、HSI-LiDAR森林和内禀点云记录；未阅读全文。
+- 2026-10-10 / field-pointcloud-lidar-abstract-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引和Crossref书目补读8篇高光谱/多光谱点云与LiDAR记录；未阅读全文。
+- 2026-10-10 / field-hyperspectral-nerf-structured-light-abstract-followup：新增 0，更新 6，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用arXiv、AAAI与CVF官方公开摘要补读6篇高光谱NeRF、3D Gaussian Splatting、解混和结构光记录；未阅读全文。
+- 2026-10-10 / field-multispectral-pointcloud-abstract-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex与Semantic Scholar公开摘要补读8篇高光谱/多光谱森林与机载点云记录；未阅读全文。
+- 2026-10-10 / field-spectral-lidar-forest-followup：新增 0，更新 8，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用CVF、ECCV论文PDF、ScienceDirect、机构页面与公开作者PDF补读8篇光度立体、HSL校正/波形处理和森林融合记录；未阅读全文。
+- 2026-10-10 / field-hsl-radiometry-unmixing-followup：新增 0，更新 9，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：用OpenAlex公开摘要索引和Crossref书目补读9篇高光谱/多光谱LiDAR辐射校正、波形分解、特征选择与LiDAR辅助解混记录；未阅读全文。
+- 2026-10-10 / jun-zhou-dblp-modis-angular-emissivity-2019-followup：新增 1，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补录DBLP非关键词差集中的MODIS双分裂窗方向发射率/LST论文；ScienceDirect摘要与局部全文核验，按多光谱热红外关联收录，未阅读全文。
+- 2026-10-10 / jun-zhou-dblp-himawari-thermal-drought-2020-followup：新增 1，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补录DBLP非关键词差集中的Himawari-8双热红外通道农业干旱论文；UTS开放原文摘要和局部核验，按多光谱热红外关联收录，未阅读全文。
+- 2026-10-10 / jun-zhou-dblp-catalog-crosswalk-2026-10-10：新增 0，更新 0，去重 5，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：将DBLP差集中5条与目录已有记录按规范化题名或DOI匹配，标记duplicate_existing；不新增论文。
+- 2026-10-10 / jun-zhou-dblp-orcid-crosswalk-2026-10-10：新增 0，更新 0，去重 0，排除 100，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：将DBLP非关键词差集中与ORCID逐项同题的100条记录回填为excluded；沿用对应ORCID决定文件的排除理由，不新增目录记录，不外推未同题记录。
+- 2026-10-10 / jun-zhou-dblp-igarss-multispectral-2010-followup：新增 0，更新 1，去重 1，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补审DBLP精确作者差集中的IGARSS 2010多光谱配准记录；与目录既有条目按DOI/题名去重，以Griffith作者稿摘要/局部、ResearchGate公开摘要和DBLP书目补强证据，未阅读全文。
+- 2026-10-10 / jun-zhou-dblp-whispers-weed-2019-followup：新增 1，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：补审DBLP精确作者364条中的一条非题名关键词WHISPERS 2019高光谱杂草分类记录；以官方程序、DBLP和公开二级摘要确认，未阅读全文。
+- 2026-10-10 / jun-zhou-dblp-bidfuse-exclusion-2024：新增 0，更新 0，去重 0，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：复核DBLP非关键词差集中的Bidfuse红外-可见光融合论文；作者代码仓库确认输入模态，排除光学高/多光谱目录。
+- 2026-10-10 / jun-zhou-dblp-general-vision-exclusions-2026-10-10：新增 0，更新 0，去重 0，排除 9，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：复核DBLP作者差集中的9条通用视频、三维视觉和普通航拍记录；以arXiv摘要、Crossref及ORCID逐项决定排除，未加入目录。
+- 2026-10-10 / jun-zhou-dblp-remotetrimmer-followup-2025：新增 0，更新 0，去重 0，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：复核RemoteTrimmer预印本与ICASSP版本；arXiv全文确认EuroSAT/UCM实验，但未确认实际波段输入，按当前证据排除，不把EuroSAT潜在多光谱版本推定为本文输入。
+- 2026-10-10 / jun-zhou-griffith-inventory-2026-10-10：新增 2，更新 3，去重 154，排除 3，待处理 7。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两篇正式PDF正文已通读，其他命中为既有决定交叉映射或机构摘要范围筛选；不声明全部全文已读。
+- 2026-10-10 / jun-zhou-arxiv-version-and-quantization-2026-10-10：新增 0，更新 24，去重 24，排除 5，待处理 471。更新与去重可能重叠，不能相加为新增。
+  阅读边界：24条补官方当前版本/首次提交元数据，新增13个版本记录，保留正式年份与早期版本；原阅读和分类状态不提升。4同名作者按原稿/正式稿机构局部核验，量化检索按首页/实验段局部暂排，不标全文。
+- 2026-10-10 / jun-zhou-arxiv-abstract-batch1-and-repository-audit-2026-10-10：新增 0，更新 1，去重 0，排除 48，待处理 2。更新与去重可能重叠，不能相加为新增。
+  阅读边界：50条完整官方摘要逐项阅读；47范围暂排、1独立姓名不匹配、2原稿局部后待核。EAAHNet仅补同名README/树资源可用性，不提升阅读/分类状态。来源页渲染不计目录原图。
+- 2026-10-11 / jun-zhou-arxiv-abstract-batch2-2026-10-11：新增 0，更新 0，去重 0，排除 94，待处理 6。更新与去重可能重叠，不能相加为新增。
+  阅读边界：100条官方API摘要可得文本逐条读，8原稿仅机构/数据局部；KAG-Thinker源末尾省略号保留。2原稿数据页渲染为来源证据，不计目录原图。
+- 2026-10-11 / jun-zhou-arxiv-abstract-batch3-2026-10-11：新增 0，更新 0，去重 0，排除 98，待处理 2。更新与去重可能重叠，不能相加为新增。
+  阅读边界：100官方API原摘要逐项读；4原稿只读指定机构/输入局部。UEMM采集代码与官方接口文档选读，不执行；截图只作范围来源证据。
+- 2026-10-11 / jun-zhou-uemmair-vitask-input-followup-2026-10-11：新增 0，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两条原稿/数据输入续核；UEMM补充材料、固定HF树和XML schema，VITask指定页与官方数据定义。没有阅读全文或打开全部像素。
+- 2026-10-11 / jun-zhou-arxiv-abstract-batch4-2026-10-11：新增 0，更新 0，去重 0，排除 100，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：100官方API可得摘要逐项读；3原稿只读指定机构/输入局部。正式DOI/ORCID同名证据与元数据差异单列；未阅读正式PDF/勘误正文，未跑代码。
+- 2026-10-11 / jun-zhou-arxiv-abstract-batch5-2026-10-11：新增 0，更新 0，去重 0，排除 121，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：121可得API原摘要/作者逐项读；六条遥感pending只核来源访问/公开清单/元数据，未读新正文或数据实现。
+- 2026-10-11 / jun-zhou-remote-primary-access-followup5-2026-10-11：新增 0，更新 0，去重 0，排除 0，待处理 6。更新与去重可能重叠，不能相加为新增。
+  阅读边界：六条既有来源pending同步survey索引，并补公共清单与出版社元数据/访问；没有新正文阅读、输入数据或代码运行。
+- 2026-10-11 / jun-zhou-medical-identity-publication-followup6-2026-10-11：新增 0，更新 0，去重 0，排除 1，待处理 6。更新与去重可能重叠，不能相加为新增。
+  阅读边界：七条既有待核的书目/身份/访问续接；Mamba v1前两页、AdvMIM固定所链代码输入局部；没有新正式全文或复现。
+- 2026-10-11 / jun-zhou-arxiv-survey-mapping-index-2026-10-11：新增 0，更新 0，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：将此前已有决定但未列入该arXiv survey搜索索引的60条映射补齐；不重新审读原稿，不改变既有范围/身份决定。
+- 2026-10-11 / jun-zhou-pannuke-radc-teams-input-followup7-2026-10-11：新增 0，更新 0，去重 0，排除 1，待处理 1。更新与去重可能重叠，不能相加为新增。
+  阅读边界：原稿指定输入/扩展局部、官方PanNuke三折中央目录/NPY头和各96字节样本、固定作者评估代码；非整篇全文/完整数据复现。
+- 2026-10-11 / jun-zhou-hypersam-v1-full-reading-2026-10-11：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有HyperSAM固定v1通读17页；原输入/协议/负例/成本与Fig4/7留证，不计新论文或正式全文。
+- 2026-10-11 / jun-zhou-hypervision-v3-full-reading-2026-10-11：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有HyperVision固定v3通读20页，保存Fig3/4，核BMVC官方接收329、固定代码选段和HF完整权重树；不计新论文/正式出版/模型复现。
+- 2026-10-11 / jun-zhou-dermoscopy-pws-full-reading-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有WACV2025正式开放稿10页+补充2页与所引2018正式数据章节9页全文；补原图/医学分类边界/正式DOI，不计新来源年度或新论文。WACV旧Scholar入库没有本轮新查询，不补造历史survey候选。
+- 2026-10-11 / jun-zhou-e2empt-v1-full-reading-2026-10-11：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有固定v1全文/表/方法图续核，保留旧mappingOnlyBackfill与来源决定历史，不计新论文/作者或年度扫描。
+- 2026-10-11 / jun-zhou-mht-v5-full-reading-2026-10-11：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有论文v5全文与作者资源续核，不计新论文/作者或年度扫描；正式版未读，旧mapping-only/入库决定历史保留。
+- 2026-10-11 / jun-zhou-cnht-v1-full-reading-2026-10-11：新增 0，更新 1，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有论文正文/书目续核，不计新论文或作者/年度扫描；正式VoR未读，旧mapping-only及入库决定历史保留。
+- 2026-10-11 / jun-zhou-dmt-sst-followup-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有两篇来源续核：SST公开稿全文、DMT仅完整官方摘要；两个当前真实followup索引，不新增科学论文/作者全集或年度扫描。DMT全文缺口另留。
+- 2026-10-11 / jun-zhou-hy-bae-followup-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：既有两篇当前来源续核；Hy仅10页v1全文，正式14页HAS-BS/GRU原始摘要；BAE仍摘要级。
+- 2026-10-11 / jun-zhou-band-tracking-followup-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：三篇仍摘要级；9源码/70结果及关联博士论文局部不等同三篇正式全文。
+- 2026-10-11 / jun-zhou-early-3d-full-reading-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两篇三稿22PDF页通读；正式IEEE、专用实现与数据复现待。
+- 2026-10-11 / jun-zhou-hypergraph-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：三机构稿22页全读；IEEE正式仅摘要/元数据，代码数据与复现未核。
+- 2026-10-11 / jun-zhou-ccre-colour-full-reading-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两稿12页全部通读，正式IEEE完整摘要/书目，专用实现数据与实验仍待。
+- 2026-10-11 / jun-zhou-texture-harmonic-full-reading-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两稿32页完整阅读，公开稿与正式版分开；2009 DOI双登记/页数纠错、章节全表反例和印刷推导疑点，不称实现复现。
+- 2026-10-11 / jun-zhou-svm-margin-full-reading-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：11页全部阅读，公开稿与正式分开；全带权重标签/原流程图及数据、公式、全表/作者版本边界补证，不称运行复现。
+- 2026-10-11 / jun-zhou-oneclass-differential-full-reading-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：23页接受稿全部读完，式/表/图疑点与原文分列；正式全文未得、没有模型运行、没有新增学习内容。
+- 2026-10-11 / jun-zhou-graph-nmf-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：三份20页机构稿全读，正式全文未独立取得，表算术非模型复现；无新学习笔记。
+- 2026-10-11 / jun-zhou-nmf-2016-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：三份45页AM全文，正式未独立读，无模型复现或新学习笔记。
+- 2026-10-11 / jun-zhou-visual-saliency-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：三公开稿26页全读，正式未独立读，原图字节不变，无新学习笔记/模型复现。
+- 2026-10-11 / jun-zhou-denoise-full-reading-2026-10-11：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两公开稿42页全读，正式未独立读；补ICIP原Fig1、纠正会议类型，无新学习笔记或模型复现。
+- 2026-10-11 / jun-zhou-tucker-morph-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两公开AM17页全文；补期刊Fig1/TMP no_framework及精确方法标签，2017与2018方法族独立，正式未独立读，无新学习笔记或复现。
+- 2026-10-11 / jun-zhou-sampling-wavelet-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：84页四公开版本，正式未读；2015/2017方法族保持独立，补一般监督评估原Fig1并注明非控制采样新算法图，无新学习笔记或模型复现。
+- 2026-10-11 / jun-zhou-region-tensor-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：公开36页全文，AM与作者托管出版社排版分列；矩阵—向量BTD与区域原型、超像素行列因子图分源，跨文基线非同协议复现。无新学习笔记。
+- 2026-10-11 / jun-zhou-tv-gmc-subspace-full-reading-2026-10-11：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：正式27页，机构VoR与AM分源，TV只有摘要和作者代码；式表原印与公开实现差异保留，无新学习笔记。
+- 2026-10-11 / jun-zhou-graph-diffusion-unmixing-reading-2026-10-11：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：概率图正式14页、DiffUnAM18页；非局部NTF/ISTA网络只有官方完整摘要；冻结ZIP核心代码静态非模型复现，无新学习笔记。
+
+</details>
+
+旧缺口原文保留在 `survey.json` 的 `historicalGaps`，不覆盖当前来源政策与待办。

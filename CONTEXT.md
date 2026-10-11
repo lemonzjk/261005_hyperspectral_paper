@@ -4,37 +4,33 @@
 
 ## 目标与约定
 
-- HS3D Atlas 三维专题与独立高光谱总库。总库覆盖整个光学高光谱领域，含二维成像、处理、学习及应用；按覆盖矩阵推进，不以数量结束。
-- 仅本地预览，不推送、不发布；检查通过后提交。caveman full、中文简洁；代码/文档正常表达。
-- 两页共享时间轴、卡片、筛选、详情及CSS；三维13方向与范围不变。
-- 调研优先目录完整；免费PDF/框架图要获取并整理信息；付费且无公开版本或确实不可获取才留白。目录与资料待办分别报告，不要求复现。
-- 新调研只收直接高光谱，不收纯多光谱关联；直接处理/重建高光谱的融合论文可收录。既有目录仍含旧范围条目。
-- 新来源仅CV/高光谱领域顶会顶刊及arXiv，周峻专项同样适用；其他会议期刊不收录，矩阵场所须按新范围筛选。
+- HS3D Atlas三维专题与高光谱总库，覆盖成像、处理、学习及应用；按场所/年份矩阵查漏，不以数量结束。
+- 仅本地预览，不推送、不发布；caveman full、中文简洁；检查通过后本地提交。
+- 普通总库仅直接高光谱、顶会顶刊白名单或arXiv；纯多光谱/泛关联不收录。周峻既有188条按用户要求全部保留，含7关联和1摘要。
+- 免费PDF/正文/框架图须获取并整理；付费且无公开版本或确实不可获取才留白；目录与资料待办分开，不要求性能复现。
+- 两页共享展示组件；三维仍13方向，成员已按新范围清理。
 
 ## 运行与检查
 
-- React 19、TypeScript、Vite 7；Node.js 22.12+。
+- React19、TypeScript、Vite7；Node22.12+。
 - npm run dev -- --port 5173；远程需转发。
 - 数据/上下文：npm run validate；网站：npm run build；交互：浏览器检查。
-- 原图队列按年降序。
+- 原图队列按年降序，来源和待核状态保留。
 
 ## 当前状态
 
-- 总库757篇，404篇分类确认（审计371篇）、335篇暂定、18篇待分类，324标签（任务102/方法199/应用23）。三维214篇；总库?collection=hyperspectral。
-- 作者筛选支持片段补全及URL恢复；搜索/作者筛选的完整姓名须匹配同一作者。总库标签多选并集；两页隐藏零计数侧栏，共享原图及SVG/BibTeX导出。分类逐篇留证；高光谱621、多光谱102、基础34。
-- CVPR2013–2022/ICCV2013–2021奇数年主题闭环，非年度全量。
-- NeurIPS2019–2023指定五词题名/摘要扫描闭环，非全领域年度完成；T3SC/DAUHST直接HSI，SatMAE/ARFNet多光谱、DiSC基础关系单列。Hyper-Skin330/306与版本差异待查。
-- TPAMI视频/湿度2候选待扩展声明。u²-MDN证实扩展uSDN；正式2022、预印本2019–2021分开，归原方法族；原图v5。
-- ICML2013–2024主卷扫描闭环；TGRS1994有3受限候选，年度待查；细节见coverage.md。
-- RSE2001/2002登记题名与任务词已扫；受限候选、单位、全文/原图和出版社全量待查，见coverage.md。
-- OL2007–2010指定词扫描增4重1排4待2，非年度全量；勘误/通道边界及原图缺口见coverage.md。
-- TCI2015–2019指定词增17排14待4；2019官方51中34已审17待，非年度全量；5医学仅摘要片段，差异见coverage.md。
-- dev详情上传/替换原图≤10MB，待核验、保留历史；FVMGN用户补图待核验。原图续接清单覆盖757篇、360张图。
+- 总库397条：高光谱390、周峻旧多光谱关联7；292分类确认（审计259）、101暂定、4待；166标签（任务68/方法85/应用13）。三维126条，数据资源2，原图208张。
+- 本轮移除360条及152个原图文件，无关联158标签删除；清理审计catalog-cleanup.json，旧事实由Git追溯，原始来源证据保留；旧三维长日志归档research/archive/。
+- 出版来源112种旧写法规范为70种；旧URL别名自动恢复。11主要任务组、细标签折叠/搜索、多标签并集与去重组计数；作者姓名匹配、URL恢复及SVG/BibTeX导出保留。
+- 阅读深度与资料状态独立筛选；资料状态依据已记录正文/原图证据，不以PDF链接推断已读，不把原图来源受限当全文付费。
+- CVPR/ICCV/NeurIPS/ICML等已有指定查询闭环，不是领域全量；历史普通会议搜索归档，当前矩阵仅白名单，见coverage.md。
+- 本轮validate、build及桌面/手机浏览器检查通过，含分类并集、旧URL、作者188条、资料筛选、详情、BibTeX/SVG导出和专题资源。
+- dev可上传/替换原图≤10MB，保留历史；FVMGN补图待核。
 
 ## 关键文件与下一步
 
-- src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
-- research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
-- public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先，不增笔记。周峻旧范围188条（HSI181/关联7，含1摘要），134摘要/54全文；ORCID1、DBLP10、Scholar9、arXiv8待核有重叠，CV3未确认发表。姓名531均映射/逐审，目录未闭环。jun-zhou.md维护待办；archive/jun-zhou/归档日志/笔记；sources留证，reproduction/可选。
-- GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后从28起，非年度全量。
+- src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
+- research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
+- public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
+- 作者先查漏，不增笔记。周峻134摘要/54全文；ORCID1、DBLP10、Scholar9、arXiv8待核有重叠，CV3未确认发表，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
+- 作者专项后按白名单推进全领域；WHISPERS/IGARSS等旧候选不再作普通总库扩充目标。可获取资料继续补齐，受限项注明原因。

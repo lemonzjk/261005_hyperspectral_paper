@@ -12,11 +12,25 @@
 .library-evidence { line-height: 1.7; }
 .library-evidence ul { padding-left: 22px; }
 .library-evidence a { text-decoration: underline; overflow-wrap: anywhere; }
+.category-search input { width: 100%; padding: 10px 12px; border: 1px solid var(--line, #343434); border-radius: 7px; background: transparent; color: inherit; }
+.category-dimension-title { margin: 22px 0 10px; color: var(--muted, #aaa); font-size: 13px; }
+.category-group { border-bottom: 1px solid var(--line, #343434); }
+.category-group summary { display: flex; align-items: center; gap: 10px; padding: 13px 0; cursor: pointer; font-size: 14px; }
+.category-group summary::before { content: '›'; color: var(--muted, #aaa); }
+.category-group[open] summary::before { transform: rotate(90deg); }
+.category-group summary span { flex: 1; }
+.category-group summary b, .category-group summary small { color: var(--muted, #aaa); font-size: 12px; }
+.library-category-groups .category-group fieldset { margin: 8px 0 14px; }
+.category-group-toggle { padding: 5px 8px; margin-bottom: 4px; border: 1px solid var(--line, #343434); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; font-size: 12px; }
+.selected-categories { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.selected-categories button { padding: 5px 7px; border: 1px solid var(--line, #343434); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; font-size: 11px; }
+.category-empty { color: var(--muted, #aaa); font-size: 13px; }
+.paper-card .paper-material-status { margin: 0 0 14px; color: var(--muted, #aaa); font-size: 11px; line-height: 1.5; }
 @media (max-width: 760px) {
   .workspace.hyperspectral-library { padding-top: 106px; }
   .hyperspectral-library .explorer-sidebar { display: block; }
   .hyperspectral-library .sidebar-heading, .hyperspectral-library .sidebar-note { display: none; }
-  .hyperspectral-library .library-category-groups { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hyperspectral-library .library-category-groups { display: block; }
   .hyperspectral-library .library-category-groups fieldset { flex: 1 1 230px; margin: 8px 0; }
   .hyperspectral-library .explorer-sidebar > .track-button { display: inline-flex; width: auto; margin-right: 12px; gap: 12px; }
   .library-coverage { padding: 14px; }

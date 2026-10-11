@@ -6,6 +6,9 @@ import { timelineLayout } from '../src/timeline-layout.ts';
 import { groupPapers } from '../src/map-groups.ts';
 import { filterLibrary, libraryPresentation, readLibraryFilters, sortByPaperCount } from '../src/library.ts';
 import { matchesAuthor, splitAuthors, createAuthorMatcher, createPaperQueryMatcher } from '../src/authors.ts';
+import { allowedPublication, canonicalVenue } from '../src/publications.ts';
+import { groupedTasks, countGroupPapers } from '../src/library-groups.ts';
+import { materialStatus } from '../src/materials.ts';
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
 const contextCharacters = [...context].length;
@@ -14,11 +17,21 @@ assert(contextCharacters <= 2000, `CONTEXT.md exceeds 2,000 characters: ${contex
 assert(contextLines <= 60, `CONTEXT.md exceeds 60 lines: ${contextLines}`);
 
 const catalog = JSON.parse(readFileSync(new URL('../src/data/catalog.json', import.meta.url)));
+const policy = JSON.parse(readFileSync(new URL('../src/data/collection-policy.json', import.meta.url)));
+const cleanup = JSON.parse(readFileSync(new URL('../research/hyperspectral/catalog-cleanup.json', import.meta.url)));
+const removedIds = new Set(cleanup.removedPapers.map(paper => paper.id));
+const protectedIds = new Set(policy.protectedAuthor.existingPaperIds);
 const ids = new Set();
 const tracks = new Set(trackDefinitions.map(t => t.id));
 for (const paper of catalog.papers) {
   assert(!ids.has(paper.id), `Duplicate paper: ${paper.id}`);
   ids.add(paper.id);
+  assert(!removedIds.has(paper.id), `Removed paper re-entered catalog: ${paper.id}`);
+  assert.equal(paper.venue, canonicalVenue(paper.venue), `Noncanonical venue: ${paper.id}`);
+  if (!protectedIds.has(paper.id)) {
+    assert(allowedPublication(paper.venue), `Publication outside whitelist: ${paper.id}`);
+    assert.equal(paper.library?.relation, 'hyperspectral', `Non-HSI entry outside protected author: ${paper.id}`);
+  }
   assert(Array.isArray(paper.collections) && paper.collections.length && paper.collections.every(collection => ['hs3d', 'hyperspectral'].includes(collection)), `Invalid collection membership: ${paper.id}`);
   if (paper.collections.includes('hs3d')) assert(tracks.has(paper.track) && ['核心研究', '相关研究'].includes(paper.scope), `Invalid three-dimensional topic metadata: ${paper.id}`);
   else assert(paper.track === undefined && paper.scope === undefined, `General-library paper must not receive three-dimensional metadata: ${paper.id}`);
@@ -27,6 +40,8 @@ for (const paper of catalog.papers) {
   assert(/^\d{4}-\d{2}-\d{2}$/.test(paper.verifiedAt), `Missing verification date: ${paper.id}`);
   for (const url of [paper.paper, paper.code].filter(Boolean)) assert(new URL(url).protocol === 'https:', `Expected HTTPS: ${paper.id}`);
 }
+assert(protectedIds.size === 188 && [...protectedIds].every(id => ids.has(id)), 'Preserve all 188 verified existing Jun Zhou records');
+assert(cleanup.removedPapers.every(paper => paper.reason && paper.sourceUrl), 'Every removal needs a scope decision and original source');
 const figureRegistry = JSON.parse(readFileSync(new URL('../research/figures.json', import.meta.url)));
 assert.equal(figureRegistry.papers.length, catalog.papers.length, 'Figure queue must cover every paper');
 assert.equal(new Set(figureRegistry.papers.map(entry => entry.paperId)).size, catalog.papers.length, 'Duplicate paper in figure queue');
@@ -105,12 +120,13 @@ for (const papers of [topicPapers, [], ...trackDefinitions.map(track => catalog.
 }
 console.log('Timeline valid: full and filtered coverage, unique stations, no label collisions.');
 
-// Collection migration must preserve all original topic members and publication facts.
+// Preserve retained publication facts; the user-authorized cleanup documents removals.
 const baseline = JSON.parse(readFileSync(new URL('../research/hyperspectral/legacy-topic-baseline.json', import.meta.url)));
-assert.deepEqual(topicPapers.map(paper => paper.id).sort(), baseline.papers.map(paper => paper.id).sort(), 'General-library additions changed topic membership');
+assert.deepEqual(topicPapers.map(paper => paper.id).sort(), baseline.papers.filter(paper => !removedIds.has(paper.id)).map(paper => paper.id).sort(), 'Unexpected topic membership change outside authorized cleanup');
 for (const before of baseline.papers) {
+  if (removedIds.has(before.id)) continue;
   const current = topicPapers.find(paper => paper.id === before.id);
-  for (const [key, value] of Object.entries(before)) assert.deepEqual(current[key] ?? null, value, `Legacy topic fact changed: ${before.id}/${key}`);
+  for (const [key, value] of Object.entries(before)) assert.deepEqual(current[key] ?? null, key === 'venue' ? canonicalVenue(value) : value, `Legacy topic fact changed: ${before.id}/${key}`);
 }
 const categories = catalog.libraryCategories;
 assert.equal(new Set(categories.map(category => category.id)).size, categories.length, 'Duplicate library category ID');
@@ -176,10 +192,12 @@ const classificationCases = [
   ['dimensional-dilemma', ['spectral-pointcloud-generation', 'pointcloud-classification'], ['datasets-benchmarks']],
 ];
 for (const [id, included, excluded] of classificationCases) {
-  const labels = libraryPapers.find(paper => paper.id === id).library.categoryIds;
+  const paper = libraryPapers.find(paper => paper.id === id);
+  if (!paper) { assert(removedIds.has(id), `Missing regression paper without scope decision: ${id}`); continue; }
+  const labels = paper.library.categoryIds;
   assert(included.every(label => labels.includes(label)) && excluded.every(label => !labels.includes(label)), `Classification boundary regression: ${id}`);
 }
-assert.equal(libraryPapers.find(paper => paper.id === 'spectralnerf').library.relation, 'multispectral');
+assert(removedIds.has('spectralnerf') && !ids.has('spectralnerf'), 'Pure multispectral SpectralNeRF must remain outside the HSI collection');
 console.log(`Classification review valid: ${classificationAudit.reviewedPaperIds.length} papers with task assignments and traceable evidence.`);
 // Detect cross-entry versions before their counts can be mistaken for separate methods.
 const normalizeTitle = value => value.normalize('NFKD').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
@@ -263,6 +281,21 @@ const parsed = readLibraryFilters('?category=' + chosen.join('&category=') + '&v
 assert.deepEqual(parsed.categoryIds, chosen);
 assert.deepEqual(parsed.venues, ['CVPR', 'arXiv']);
 assert.equal(parsed.yearFrom, '2022'); assert.equal(parsed.yearTo, '2024');
+assert.deepEqual(readLibraryFilters('?venue=IEEE%20TGRS&venue=TGRS&venue=IEEE%20Transactions%20on%20Geoscience%20and%20Remote%20Sensing', categories, libraryPapers).venues, ['TGRS'], 'Venue aliases in existing URLs must normalize and deduplicate');
+const groupedTaskIds = groupedTasks(categories).flatMap(group => group.categories.map(category => category.id));
+assert.deepEqual(groupedTaskIds.slice().sort(), categories.filter(category => category.dimension === 'task').map(category => category.id).sort(), 'Every task label must appear exactly once in navigation groups');
+assert.equal(countGroupPapers([{ library: { categoryIds: ['a', 'b'] } }, { library: { categoryIds: ['b'] } }], ['a', 'b']), 2, 'Group counts must not double-count multi-label papers');
+assert.equal(materialStatus({ paper: 'https://example.org/paper.pdf', library: { readingProgress: 'abstract_read', evidence: [] } }), 'pending', 'A PDF URL must not imply an obtained or read document');
+assert.equal(materialStatus({ library: { readingProgress: 'full_text_read', evidence: [] } }), 'full_text');
+assert.equal(materialStatus({ library: { readingProgress: 'abstract_read', evidence: [{ level: '作者原稿摘要' }] } }), 'pending', 'A draft abstract alone must not imply partial body reading');
+for (const level of ['CVF官方摘要；非阅读全文', '出版社摘要；未阅读全文', '出版社摘要，正式全文未读', '出版社摘要；全文未完整阅读', '原PDF首页DOI核对']) {
+  assert.equal(materialStatus({ library: { readingProgress: 'abstract_read', evidence: [{ level }] } }), 'pending', `Metadata and negative full-text statements must not count as partial reading: ${level}`);
+}
+assert.equal(materialStatus({ library: { readingProgress: 'abstract_read', evidence: [{ level: '作者原稿摘要与指定局部页面核验' }] } }), 'partial_text');
+assert.equal(readLibraryFilters('?materials=restricted', categories, libraryPapers).materials, 'restricted');
+for (const status of ['full_text', 'partial_text', 'figures', 'restricted', 'pending']) {
+  assert.deepEqual(filterLibrary(libraryPapers, { ...blank, materials: status }, categories).map(paper => paper.id).sort(), libraryPapers.filter(paper => materialStatus(paper) === status).map(paper => paper.id).sort(), 'Material filters must agree with recorded evidence');
+}
 const survey = JSON.parse(readFileSync(new URL('../research/hyperspectral/survey.json', import.meta.url)));
 for (const candidate of survey.candidates) {
   assert(['pending', 'included', 'excluded', 'duplicate'].includes(candidate.decision) && candidate.reason, 'Candidate needs explicit decision and reason');
@@ -278,4 +311,4 @@ for (const search of survey.searches) {
     assert.equal(search.reviewedCount, search.candidateCount, 'Completed keyword review has pending decisions');
   }
 }
-console.log(`Library valid: ${libraryPapers.length} entries, ${categories.length} labels; original ${topicPapers.length} topic members preserved; multi-label filters and export verified.`);
+console.log(`Library valid: ${libraryPapers.length} entries, ${categories.length} labels; ${topicPapers.length} retained topic members; protected author, publication scope, navigation groups, material filters and export verified.`);
