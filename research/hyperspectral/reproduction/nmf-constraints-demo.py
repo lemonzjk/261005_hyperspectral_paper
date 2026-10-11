@@ -2,7 +2,7 @@
 """Illustrate two abundance-constraint facts; this is not an NMF reproduction.
 
 The toy examples derive from the mathematical definitions discussed in
-jun-zhou-lhalf-nmf-note.md. They do not report results on hyperspectral data.
+archive/jun-zhou/learning-notes.md#lhalf-nmf. They do not report results on hyperspectral data.
 """
 
 from math import sqrt

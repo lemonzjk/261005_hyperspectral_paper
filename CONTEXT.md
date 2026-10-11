@@ -33,5 +33,5 @@
 - src/data/catalog.json：事实、分类、原图；src/library.ts 筛选/排序；HyperspectralLibrary.tsx 总库；App.tsx 三维；classification-audit.json 分类审计。
 - research/hyperspectral/：survey.json、sources、coverage.md、迁移快照；discover.py 会议目录、crossref-inventory.py 登记、pmlr-inventory.py 全量摘要、coverage.py 覆盖表。三维旧二维排除规则不继承。
 - public/figures/<paper-id>/ 原图；research/figures.json 续接；figures.py init/queue/add/attempt；PDF为Git二进制。
-- 作者优先：调研论文，不增笔记。周峻188条（HSI181/关联7，含1摘要），134摘要级/54全文级。ORCID263组1待；DBLP365待10；Scholar209待9；CV3未确认发表。arXiv姓名531全分页（含异常）：24匹配、32继承、6同名、447摘要暂排、7局部暂排、7姓名不精确、8范围/身份待、0未审；471逐审非全文全量。TEAMS/Mamba输入/版本待。全文分版；Hy v1为BABS/Kalman、正式摘要HAS-BS/GRU，14页待。UEMM正式版/像素/版本、VITask APTOS/代码及六遥感输入待；OA/200非全文。BABS/SiamBAG/BAE/DMT正文待；Attend旧链为学位论文。概率图/DiffUn AM已读；TV/NTF/ISTA待。见jun-zhou.md。
+- 作者优先：调研论文，不增笔记。周峻188条（HSI181/关联7，含1摘要），134摘要级/54全文级；ORCID1、DBLP10、Scholar9、arXiv8待核有重叠，CV3未确认发表，作者全集未闭环。arXiv姓名531全分页均映射/逐审，非全文全量。输入、身份、正式版本和实验缺口见jun-zhou.md。当前进度只维护该入口；archive/jun-zhou/归档历史日志与合并学习笔记，已删除重复手工目录。sources冻结证据保留；公式/约束检查在reproduction/。
 - GRSL2015光谱66已审33待33；WHISPERS2014目录174为165入3排6待。WHISPERS2013目录161已审1–27：25入2待，余134；28–30仅下载未闭环。旧缺口见coverage.md；作者优先后从28起，非年度全量。

@@ -2,6 +2,10 @@
 
 检索截止日期：2026-10-08。事实使用 `../../src/data/catalog.json`；候选、逐篇决定、证据和覆盖使用本目录。三维专题的 `../survey.json` 保持独立范围；其二维排除决定只用于原专题，不能继承到总库。
 
+## 作者专项入口
+
+[周峻老师调研](jun-zhou.md)集中记录当前目录、来源覆盖、待核事项与证据索引。网站事实统一维护在 `catalog.json`；已停用重复的手工论文索引。既有学习材料合并到 [学习资料归档](archive/jun-zhou/learning-notes.md)，历史批次放在 [调研记录归档](archive/jun-zhou/research-log.md)，不继续扩写学习笔记或历史流水账。`sources/jun-zhou-*` 是冻结的原始来源和审计证据，保留原始文件名、内容及哈希。
+
 ## 数据与范围
 
 `collections` 明确保存 `hs3d` 与 `hyperspectral` 成员关系。新普通高光谱论文只写 `hyperspectral`，不写三维 `track` 或 `scope`。原 214 篇成员和出版事实在 `legacy-topic-baseline.json` 留有迁移前快照；校验对比成员、题名、作者、版本年份、场所、分类、范围、链接、DOI 和引用，防止总库影响三维统计。

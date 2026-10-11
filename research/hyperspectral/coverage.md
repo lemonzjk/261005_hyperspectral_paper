@@ -954,7 +954,7 @@ DBLP精确作者364条记录中，除既有168条决定外，按规范化题名�
 
 校正来源计数：364条精确作者SPARQL快照，另有1条快照外STRL作者身份补充；原来287条已决定实际包含该补充，因此余量是78而非77。本轮78条逐项留证，63条按当前原摘要/机构摘要/正文局部暂排除，15条继续pending。合并365条现为6收录、165关联既有、179暂排除、15待核；原始快照349条已决定，非作者成果全集完成。
 
-频率、图矩阵谱、特征通道与光学波段分别审查；FDNet、DDFNet、GPINet、SAPNet、红树林、太阳能板等实际输入仍待核。AcfNet v1正文与v2摘要作者变化单列。逐项证据见sources/jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json与机构检索快照；本轮无新增文献或分类。学习指南jun-zhou-study-guide.md提供当前179条直接高光谱、3条多光谱关联完整索引和13篇精读入口；正式全文/原图/代码及Scholar/机构来源差集仍待，不宣称调研完成。
+频率、图矩阵谱、特征通道与光学波段分别审查；FDNet、DDFNet、GPINet、SAPNet、红树林、太阳能板等实际输入仍待核。AcfNet v1正文与v2摘要作者变化单列。逐项证据见sources/jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json与机构检索快照；本轮无新增文献或分类。当时学习指南提供179条直接高光谱、3条多光谱关联索引和13篇精读入口；重复手工索引现已删除，阅读路线见[学习资料归档](archive/jun-zhou/learning-notes.md#reading-route)，当前目录见[作者调研](jun-zhou.md)；正式全文/原图/代码及Scholar/机构来源差集仍待，不宣称调研完成。
 
 ### 周峻作者目录：热红外与Scholar非关键词差集续核（2026-10-10）
 
@@ -979,7 +979,7 @@ DASFAA错题名由共同作者目录及原稿确认，范围暂排；Scholar209�
 
 ## 周峻SNMF全文学习补核（2026-10-10）
 
-16页作者稿完整阅读与Figure1–15/TableI–III核验；新增1张框架原图，累计331张。作者185条记录现为181摘要级、4全文级，不改变DBLP/Scholar各10条待核，也不证明作者全集覆盖。三真实数据平均SAD与逐材料优劣、拟合参考丰度、式29/37疑点及图注冲突保留证据。独立数学探针与此前20轮CPU代码核验分别记录，不作为论文性能复现。详见 `jun-zhou-snmf-code-note.md` 和 `sources/jun-zhou-snmf-full-reading-2026-10-10.json`。
+16页作者稿完整阅读与Figure1–15/TableI–III核验；新增1张框架原图，累计331张。作者185条记录现为181摘要级、4全文级，不改变DBLP/Scholar各10条待核，也不证明作者全集覆盖。三真实数据平均SAD与逐材料优劣、拟合参考丰度、式29/37疑点及图注冲突保留证据。独立数学探针与此前20轮CPU代码核验分别记录，不作为论文性能复现。详见 `archive/jun-zhou/learning-notes.md#snmf-code` 和 `sources/jun-zhou-snmf-full-reading-2026-10-10.json`。
 
 
 ## 周峻作者范围与实现资源续接（2026-10-10）
@@ -988,7 +988,7 @@ SA-Net补IEEE原摘要和明确的2026期刊扩展声明；扩展版作者无Jun
 
 ### 周峻L1/2-NMF：作者稿全文与实验边界
 
-26页4月11日作者稿通读；式26一般q系数、分块凸表述、两种停止条件及逐元素复杂度疑点保留，独立标量数学核验通过。Urban4/6与Cuprite平均SAD各表最低，但逐材料仅3/4、4/6、6/10最低。作者185条现180摘要级/5全文级；总库754、三维214及332图不变。该作者稿未见独立流程图；正式16页版、早稿/会议对照、代码与性能复现仍未闭环。见 `sources/jun-zhou-lhalf-full-reading-2026-10-10.json` 与 `jun-zhou-lhalf-nmf-note.md`。
+26页4月11日作者稿通读；式26一般q系数、分块凸表述、两种停止条件及逐元素复杂度疑点保留，独立标量数学核验通过。Urban4/6与Cuprite平均SAD各表最低，但逐材料仅3/4、4/6、6/10最低。作者185条现180摘要级/5全文级；总库754、三维214及332图不变。该作者稿未见独立流程图；正式16页版、早稿/会议对照、代码与性能复现仍未闭环。见 `sources/jun-zhou-lhalf-full-reading-2026-10-10.json` 与 `archive/jun-zhou/learning-notes.md#lhalf-nmf`。
 
 ### 周峻DICTA2010全文与机器人范围核验
 
@@ -996,7 +996,7 @@ SA-Net补IEEE原摘要和明确的2026期刊扩展声明；扩展版作者无Jun
 
 ### 周峻结构稀疏会议全文与期刊局部对照
 
-IGARSS2011四页作者稿已通读，15组小波特征、数据、随机划分和表1全部24值留证。Group LASSO仅在KSC两设置最高；KSC5%的小波SVM反例保留。打印组平方和与损失置零检查不同于引用方法，实际代码未知。2013期刊作者稿仅局部：式13明确带平方根，每类训练规则、表V指标/加粗疑点及表VII测试耗时另列，不升级全文。185作者记录现178摘要级/7全文级；总库754、三维214、332图，DBLP9与Scholar10待核不变。学习见[jun-zhou-structured-sparse-classification-note.md](jun-zhou-structured-sparse-classification-note.md)；完整期刊、正式版差异和性能复现仍待。
+IGARSS2011四页作者稿已通读，15组小波特征、数据、随机划分和表1全部24值留证。Group LASSO仅在KSC两设置最高；KSC5%的小波SVM反例保留。打印组平方和与损失置零检查不同于引用方法，实际代码未知。2013期刊作者稿仅局部：式13明确带平方根，每类训练规则、表V指标/加粗疑点及表VII测试耗时另列，不升级全文。185作者记录现178摘要级/7全文级；总库754、三维214、332图，DBLP9与Scholar10待核不变。学习见[archive/jun-zhou/learning-notes.md#structured-sparse-classification](archive/jun-zhou/learning-notes.md#structured-sparse-classification)；完整期刊、正式版差异和性能复现仍待。
 
 ### 周峻作者目录：身份纠偏与共同作者查漏（2026-10-10）
 

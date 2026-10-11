@@ -60884,7 +60884,7 @@
       "input": "高光谱数据立方和有限标注像元；原稿使用185波段Indian Pine和176波段KSC。",
       "output": "组级选择的特征及像元类别预测。",
       "mechanism": "两级不下采样Haar 3D-DWT产生15个子立方；3×3平均绝对系数构成15组纹理变量，logistic Group LASSO联合组选择与one-vs-all像元分类。打印组范数及置零判据存在疑点，实际代码待核。",
-      "readingNote": "四页作者公开稿已通读并核全部原页、表1及图1–2；正式版逐字比较和性能复现未做。15组对应小波子立方，不是15个物理波段。打印平方和组惩罚、损失值置零检查与引用方法不同；不能据此断定实际代码错误。2013期刊明确扩展本稿。学习笔记见research/hyperspectral/jun-zhou-structured-sparse-classification-note.md。",
+      "readingNote": "四页作者公开稿已通读并核全部原页、表1及图1–2；正式版逐字比较和性能复现未做。15组对应小波子立方，不是15个物理波段。打印平方和组惩罚、损失值置零检查与引用方法不同；不能据此断定实际代码错误。2013期刊明确扩展本稿。学习笔记见research/hyperspectral/archive/jun-zhou/learning-notes.md#structured-sparse-classification。",
       "paper": "https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf",
       "verifiedAt": "2026-10-10",
       "verificationLevel": "author_full_text_verified",
@@ -60938,7 +60938,7 @@
             "checkedAt": "2026-10-10",
             "level": "四页作者稿全文与全部图表核验；证据文件jun-zhou-structured-sparse-2011-full-reading-2026-10-10.json",
             "supports": [
-              "四页作者公开稿已通读并核全部原页、表1及图1–2；正式版逐字比较和性能复现未做。15组对应小波子立方，不是15个物理波段。打印平方和组惩罚、损失值置零检查与引用方法不同；不能据此断定实际代码错误。2013期刊明确扩展本稿。学习笔记见research/hyperspectral/jun-zhou-structured-sparse-classification-note.md。",
+              "四页作者公开稿已通读并核全部原页、表1及图1–2；正式版逐字比较和性能复现未做。15组对应小波子立方，不是15个物理波段。打印平方和组惩罚、损失值置零检查与引用方法不同；不能据此断定实际代码错误。2013期刊明确扩展本稿。学习笔记见research/hyperspectral/archive/jun-zhou/learning-notes.md#structured-sparse-classification。",
               "原稿Indian Pine（1992）：16类、10366标注像元、185波段；KSC（1996）：13类、5211标注像元、176波段。具体波段移除和标签版本待核，不替换成其他常用计数。",
               "随机5%/25%标注像元训练，其余测试；表1六方法×四设置已核。3D-DWT Group LASSO的Indian Pine为0.879/0.943，KSC为0.897/0.975；表题average accuracy，OA/AA、重复次数、种子和调参协议未确证。",
               "Group LASSO在KSC两设置最高，Indian Pine两设置RBF SVM最高；KSC5%时小波线性/RBF SVM的0.777/0.845低于原谱0.795/0.865。不能推广为所有设置最优或小波必然提升。图2支持所选特征的比较，未读取精确保留维数。",
@@ -60992,7 +60992,7 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "9db10b87893a46ddc629e185e8afba82e3626032651052940a7c11354d7bcc23",
+          "evidenceDigest": "e6ffff029bc4c401ca9c480a661b91a2c9e4ccc20068e79c66d1601444f1d5d1",
           "sourceUrls": [
             "https://users.cecs.anu.edu.au/~junzhou/papers/C_IGARSS_2011.pdf"
           ]
