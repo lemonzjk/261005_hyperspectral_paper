@@ -197,6 +197,7 @@
 | Jun Zhou · CRF-CNN segmentation versions | 2016–2019 | CRF CNN superpixels、3DCNN-CRF learned pairwise potentials、Griffith-USGS、Classification versus Segmentation title；5页会议AM＋17页期刊AM实际全读；10＋44条引用已读，没有目标Jun Zhou作者引用/明确会刊扩展自引。 | 未单列 / 2 / 2 | 两AM22页/四原图，监督任务与版本边界纠正 | 作者及领域目录未闭环，冻结31机构队列剩10；保留来源例外，未扩普通白名单。；两最终VoR、期刊固定arXiv v1/v2与会刊关系分别待核；引用列表核验不等于引用正文已读。 |
 | Jun Zhou · early deep and heterogeneous features | 2017–2018 | band-group abundance CNN、supervised triplet constraint、ICV DAP stacking、WHISPERS 8747227、PRRS 9396733；9页未标版本机构稿、6页AM、14页AM；两目标作者引文均已录，另外两篇引用无目标作者。 | 未单列 / 5 / 5 | 三全文29页/五原图、DOI及两书目纠错 | 作者/正式版本未闭环，原31机构资料剩7；新集名称、尺寸与划分分别按原文，不合并。；当前稿未证实会刊扩展，免费资料继续；现有作者例外不扩白名单。 |
 | Jun Zhou · NMF domain adaptation and structural sparse coding | 2017 | MTJDL MTSLR cross-scene、SCSC GSCSC structural consistency、DAIS Pavia 72 bands、Fig14 correction 2789418；30页AM＋15页AM；完整引用62/53项已读，查漏为当前两稿引用闭环，不是作者全集。 | 未单列 / 8 / 8 | 两AM45页/四原图，字典机制及勘误版本分开 | 原31机构资料剩5，作者/正式版本/全领域未闭环。；当前AM与两最终VoR及勘误图版不可判等同；公开数据配对划分/验证缺口保留。 |
+| Jun Zhou · spatial SR / face recognition / graph matching | 2017 | residual CNN hyperspectral spatial super-resolution、3D LDP hyperspectral face、different dimensions graph matching；13页AM＋7页未标版本机构稿＋12页AM；22/18/22条引用均已读，无目标Jun Zhou直接HSI引用。 | 未单列 / 3 / 3 | 三原稿32页/五新图一替换，纠正空间任务及版本边界 | 原31机构资料剩2，作者/正式版本/全领域未闭环。；当前原稿与正式版不可判等同；公式及编辑批注疑点按原文保留。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -880,6 +881,8 @@
   阅读边界：三实际稿29页全读，五原图与两个已有作者引用；补DOI/正式页码、纠正PRRS来源和DICTA类型。两AM/一未标版本机构稿分开，监督分类不当预训练或公开基准，原31资料剩7。
 - 2026-10-12 / jun-zhou-sparse-domain-structural-reading-2026-10-12：新增 0，更新 2，去重 5，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两实际AM45页全读、四原图；六处直接HSI作者引文匹配五条已有目录，通用背景引用沿用既有排除；正文事实只维护现有目录，不另建学习笔记。
+- 2026-10-12 / jun-zhou-sr-face-matching-reading-2026-10-12：新增 0，更新 3，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：三实际原稿32页全读，原图新增五张、替换一张并保留旧文件/哈希；引文均无目标作者直接HSI引用，未在作者专项自动扩入其他作者论文。
 
 </details>
 

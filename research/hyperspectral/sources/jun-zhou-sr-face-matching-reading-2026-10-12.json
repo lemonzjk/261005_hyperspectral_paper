@@ -1,0 +1,735 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "三篇既有直接HSI论文免费原稿逐页阅读、原图、正式书目及版本核验；事实维护现有目录，不新增重复论文或学习笔记。",
+  "previousGoalTurn": "progress：f16115b已完成两份分类AM45页及四原图，本批续接当前权威目录；随后用户明确代码仅链接，现有AGENTS/CONTEXT已记。",
+  "accessFile": "jun-zhou-sr-face-matching-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 3,
+  "newFullTextReadingCount": 3,
+  "pdfPagesRead": 32,
+  "figuresAdded": 5,
+  "figuresReplaced": 1,
+  "materials": [
+    {
+      "file": "jun-zhou-sr-face-matching-reading-2026-10-12-sr.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4bff27ce-9d69-53d0-95c9-1f5124ec099e/content",
+      "status": 200,
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4bff27ce-9d69-53d0-95c9-1f5124ec099e/content",
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 6383696,
+      "checkedAt": "2026-10-12",
+      "pdfDownloaded": true,
+      "sha256": "4a6ed451d0f012b6e9d9029e4edab0e42847d42bc523eb1f0e11d284e95ff686",
+      "paperId": "hsi-superresolution-icig-2017",
+      "version": "AM",
+      "pageCount": 13,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "readingProgress": "full_text_read",
+      "pageTextFile": "jun-zhou-sr-face-matching-reading-2026-10-12-sr-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "file": "jun-zhou-sr-face-matching-reading-2026-10-12-face.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content",
+      "status": 200,
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content",
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 717267,
+      "checkedAt": "2026-10-12",
+      "pdfDownloaded": true,
+      "sha256": "e0d9ca62b9b82beca84a94288c610a196484f399e49b6895cfe0f906e30e2dbc",
+      "paperId": "3d-ldp-hsi-face-fg-2015",
+      "version": "未标版本机构稿",
+      "pageCount": 7,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "readingProgress": "full_text_read",
+      "pageTextFile": "jun-zhou-sr-face-matching-reading-2026-10-12-face-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "file": "jun-zhou-sr-face-matching-reading-2026-10-12-match.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/13ff69f7-ba9a-5b74-881c-f7c25755eeeb/content",
+      "status": 200,
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/13ff69f7-ba9a-5b74-881c-f7c25755eeeb/content",
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 3781541,
+      "checkedAt": "2026-10-12",
+      "pdfDownloaded": true,
+      "sha256": "57cad28c6d32a028c8a84455be6f2568f09525be11c5989d45c6fbcad33a619a",
+      "paperId": "hsi-graph-matching-gbrpr-2015",
+      "version": "AM",
+      "pageCount": 12,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "readingProgress": "full_text_read",
+      "pageTextFile": "jun-zhou-sr-face-matching-reading-2026-10-12-match-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        3,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "paperId": "hsi-superresolution-icig-2017",
+      "method": "六个残差子网各三卷积：9×9 c→96、3×3 96→64、5×5 64→c，输出残差加子网输入。无pooling/deconvolution，zero-padding保持空间大小；每卷积后ReLU。第三子网与末端同时监督，α=.5组合MSE及名义谱一致性项。Eq2印为平均归一内积，未印arccos、1−cos或负号，不能据文字把实际实现认定为SAM角损失；评估Eq5另明确arccos的SAM。",
+      "datasets": "CAVE32室内场景，512×512×31，400–700nm/10nm。Harvard共50日光＋27人工/混合照明图，1392×1040×31，420–720nm/10nm，取左上1024²。CAVE测试7图Balloons/Chart and stuffed toy/Faces/Flowers/Jelly beans/Real and fake apples/Oil painting；Harvard测试10图Img1–6/Imga1–4，余92图训练。",
+      "experimentSetting": "每倍率独立模型；HR先Gaussian σ3模糊、×2/3/4降采样，再bicubic上采样。训练随机30000个32×32×31块，batch128、SGD momentum.9、weight decay.0001、初始lr.01，验证误差3 epoch未降则lr除10，低于1e−6停止；验证集组成未说明。GTX980Ti每模型训练约2天、每测试图均值4.2秒，未给分辨率分项计时。对照bicubic、Dong SRCNN、Shi ESPCN、Kim DRCN；后三按逐带灰度训练测试、同训练池，未直接对比RGB引导融合方法。",
+      "results": "Tables1/2：CAVE ×2/3/4的PSNR38.24/37.86/37.14dB、SAM1.56/1.73/1.85°；Harvard40.13/39.68/39.14dB、1.14/1.21/1.35°，全部优于当前四对照的聚合指标。Kim对应CAVE36.98/35.87/35.02dB、4.35/4.21/4.39°；Harvard39.54/39.02/38.59dB、2.46/2.49/2.53°。Fig4是550nm、×3空间重建与绝对误差示例，不是增加光谱通道。",
+      "limitations": "只读13页AM，最终11页VoR未读。Eq2文字称谱角却印平均cos相似度并称最小化总损失，方向/实现未核，不猜改成arccos或1−cos；Eq4 PSNR分子印2^n−1而非其平方，保留原表值。未说明n、独立验证划分、重复方差，亦无隔离谱项/中间监督贡献的完整消融；仅合成Gaussian退化，不证实真实LR泛化。未见当前方法官方代码链接，不检查代码或复现。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4bff27ce-9d69-53d0-95c9-1f5124ec099e/content",
+          "figureLabel": "Figure 1",
+          "caption": "六个三层残差子网级联，第三子网及末端输出监督；预上采样HSI恢复空间细节，不增加谱通道。",
+          "page": 4,
+          "verificationNote": "Griffith AM，PDF第4页/正文第3页，300dpi原页裁取；原图与完整图注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              135,
+              292,
+              481,
+              498
+            ],
+            "pixelBox": [
+              562,
+              1216,
+              2005,
+              2075
+            ]
+          },
+          "path": "figures/hsi-superresolution-icig-2017/sr-fig1.png",
+          "width": 1443,
+          "height": 859,
+          "sha256": "2f72d3af2a4d57e038d6bfc77ecc70d404ed3f7e74b8c280c3bb87dcafa489fb",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Chen Wang, Yun Liu, Xiao Bai, Wenzhong Tang, Peng Lei, Jun Zhou · Griffith AM · © Springer"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4bff27ce-9d69-53d0-95c9-1f5124ec099e/content",
+          "figureLabel": "Figure 4",
+          "caption": "CAVE示例550nm波段，×3空间重建、真值及绝对误差；方法输出示例，非新增光谱带。",
+          "page": 10,
+          "verificationNote": "Griffith AM，PDF第10页/正文第9页，300dpi原页裁取；原图与完整图注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              130,
+              357,
+              486,
+              667
+            ],
+            "pixelBox": [
+              541,
+              1487,
+              2025,
+              2780
+            ]
+          },
+          "path": "figures/hsi-superresolution-icig-2017/sr-fig4.png",
+          "width": 1484,
+          "height": 1293,
+          "sha256": "e4aa95bfc6724c7fc0c6314ff7797c2b5cd470a2a2d302c3d9322bfd64b556f6",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Chen Wang, Yun Liu, Xiao Bai, Wenzhong Tang, Peng Lei, Jun Zhou · Griffith AM · © Springer"
+        }
+      ]
+    },
+    {
+      "paperId": "3d-ldp-hsi-face-fg-2015",
+      "method": "先求空间两轴和波长轴方向导数，中心与8角邻域导数乘积同号编码0、异号或零编码1，得到二阶3D LDP；高阶推广以n−1阶导数再二值化。实际用三正方向、八邻角，每区域/方向统计并拼接直方图，邻bin可合并；区域8×8×8。13个3D Gabor预滤波缓解噪声/波段失配，非显式几何配准优化；最终histogram intersection近邻，替代方法用Euclidean近邻。",
+      "datasets": "HK-PolyU25人300立方，四session在两时间平均相隔5个月，正/左/右中性脸；400–720nm/10nm，去首6末3带。CMU原库54人，450–1090nm/10nm、四照明、每人1–5 session；本文只全灯开启，实际gallery47脸、probe98脸，去首7末2噪声带。54到47的选人原因未说明；不推算未明写的有效带数。",
+      "experimentSetting": "脸裁64²、人工眼位对齐，13个3D Gabor frequency.25、固定方向，二阶LDP、8³子区域。HK每次随机2 session gallery/2 probe，6组合rank1均值±标准差；CMU每人随机1图gallery、其余probe，10次重复。当前方法histogram intersection近邻；替代特征用Euclidean近邻。3DDCT只提取特征、未用原PLS回归；3DLBP也13个立方、3DGabor对照52滤波器39³。2DLDP逐单带运行后按带平均，不当同等特征维度的联合谱输入。",
+      "results": "TableI HK rank1：3DLDP95.33±1.63%，3DGabor90.00±2.83，3DLBP88.80±1.79，3DDCT84.00±3.35；相对Gabor高5.33百分点。TableII CMU：3DLDP94.83±2.62%，Gabor92.20±2.46，LBP92.16±3.52，DCT88.65±2.34；相对Gabor高2.63百分点。TableIII逐带2DLDP：HK86.25±9.62%、CMU90.27±3.51%。效率讨论只列DCT1、LDP/LBP13、Gabor52立方，无实测时间/内存。",
+      "limitations": "机构稿版本未标，不能凭正文6页或©2015认定VoR；正式图版独立未读。CMU54人原库与实际47人子集关系、最终特征长度/具体bin合并及13滤波输出组合不完整；无实测耗时。人工对齐、同人跨session协议不等于跨身份训练泛化；DCT未配原PLS且距离度量不同，不称复现原完整算法。未见本文官方代码链接，不访问作者或基线代码。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content",
+          "figureLabel": "Figure 3",
+          "caption": "在x/y/λ方向编码局部导数，按局部区域与方向拼接直方图形成高光谱人脸描述子。",
+          "page": 4,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第4页/正文第3页，300dpi原页裁取；原图与完整图注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              334,
+              49,
+              539,
+              266
+            ],
+            "pixelBox": [
+              1391,
+              204,
+              2246,
+              1109
+            ]
+          },
+          "path": "figures/3d-ldp-hsi-face-fg-2015/face-fig3.png",
+          "width": 855,
+          "height": 905,
+          "sha256": "fc02a0b89427fe8c1ba288647ccd0043579ad7f2d2876198a44c7f7c5a2c5b7a",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Jie Liang, Jun Zhou, Yongsheng Gao · Griffith 未标版本机构稿 · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content",
+          "figureLabel": "Figure 4",
+          "caption": "3D LDP的空间—波长三方向与八角邻域；3D不代表面部几何深度。",
+          "page": 5,
+          "verificationNote": "Griffith 未标版本机构稿，PDF第5页/正文第4页，300dpi原页裁取；原图与完整图注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              52,
+              52,
+              301,
+              193
+            ],
+            "pixelBox": [
+              216,
+              216,
+              1255,
+              805
+            ]
+          },
+          "path": "figures/3d-ldp-hsi-face-fg-2015/face-fig4.png",
+          "width": 1039,
+          "height": 589,
+          "sha256": "5557415258ddc786ea7ab924fbd0ee32927aa5c88de8edca0a4a9967b1200732",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Jie Liang, Jun Zhou, Yongsheng Gao · Griffith 未标版本机构稿 · © IEEE"
+        }
+      ]
+    },
+    {
+      "paperId": "hsi-graph-matching-gbrpr-2015",
+      "method": "逐带检测局部点，用k-means选离中心最近k=30点并建无向完全图；节点SIFT、边log-polar直方图（相对平均特征角）。以中位波段图初始化统一G*，w=β⊙Θ(G*)联合节点/边属性权重，结构化SVM最大间隔学习、归一Hamming损失；相邻带自动对应与手工landmark可分两类约束。匹配时β1⊙β2加权affinity，一对一IQP由SM/RRWM求近似匹配。非CNN/GNN，不声称NP-hard图匹配全局精确解；当前原稿的检测器组合、聚类输入、对应集合和参数符号仍有批注疑点。",
+      "datasets": "本文称Multispectral Image Database，ref22 Yasuma2010；定义32场景，每场景512×512×31、400–700nm/10nm及composite RGB，按定义对应Yasuma/CAVE31带HSI；实际选14场景，表列face/watercolors/flowers/toys及旋转示例。未下载原数据像素，不将名称multispectral当纯MS范围排除。",
+      "experimentSetting": "Set1同一HSI前25带对剩6带；Set2完整31带对同场景composite RGB，非独立跨传感器采集。k30、λ.25；相邻带人工10点、匹配几何容差t10像素约512的2%。†示例称12个0–360°旋转，步长/端点未明。ourR加入随机旋转训练，ourRL再加入landmark；正文λ2=.15/λ3=.35与Eq7只有λ1/λ2命名不一致。表Average与展示八列的简单均值不符，14场景/展示列的聚合关系未说明，原值保留。",
+      "results": "Table1 Set1 Average：SIFT73.7%、VectorSIFT78.1、our+SM87.9、our+RRWM88.8。Table2 Set2：SIFT79.6、VectorSIFT81.9、SM85.0、RRWM85.7、旋转ourR+RRWM89.5、旋转＋landmark ourRL+RRWM91.3。提升是原稿报告的Average，非重算；非全部场景领先，如face SIFT83.1高于plain ours80.0，flowers加landmark90.0低于plain RRWM96.7。Fig3为学习加权图和匹配示例，不是独立跨传感器验证。",
+      "limitations": "只读带编辑批注的12页AM，正式10页VoR未读。正式五作者与AM正文三作者差异未解释，不删除正式作者。SIFT/Hessian的and/or、kmeans按位置或强度、C/L对应及λ参数命名等原稿未定；Eq7/正文不一致、准确率定义措辞和Average聚合缺口保留。无独立held-out图像划分、重复方差、统计检验、成本或硬件说明。相关Computer Vision and Pattern Recognition in Environmental Informatics章节仍摘要级；不确认扩展关系或移植实验。无当前方法官方代码链接，不查代码。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/13ff69f7-ba9a-5b74-881c-f7c25755eeeb/content",
+          "figureLabel": "Figure 1",
+          "caption": "不同谱维输入匹配困难与统一学习图动机；保留AM原图注中的编辑批注，非最终算法流程。",
+          "page": 3,
+          "verificationNote": "Griffith AM，PDF第3页/正文第2页，300dpi原页裁取；原图与完整图注视觉核验，未重绘。 原注的编辑批注保留，不能当最终发表版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              132,
+              407,
+              483,
+              540
+            ],
+            "pixelBox": [
+              550,
+              1695,
+              2013,
+              2250
+            ]
+          },
+          "path": "figures/hsi-graph-matching-gbrpr-2015/match-fig1.png",
+          "width": 1463,
+          "height": 555,
+          "sha256": "aea84128b0b75decea7c5c11889b39570a91f696b4e64c623eb6af915200fe33",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Haoyi Zhou, Xiao Bai, Jun Zhou · Griffith AM · © Springer"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/13ff69f7-ba9a-5b74-881c-f7c25755eeeb/content",
+          "figureLabel": "Figure 3",
+          "caption": "学习到的加权图及跨波段关键点匹配示例，包含旋转输出。",
+          "page": 10,
+          "verificationNote": "Griffith AM，PDF第10页/正文第9页，300dpi原页裁取；原图与完整图注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              132,
+              312,
+              483,
+              442
+            ],
+            "pixelBox": [
+              550,
+              1300,
+              2013,
+              1842
+            ]
+          },
+          "path": "figures/hsi-graph-matching-gbrpr-2015/match-fig3.png",
+          "width": 1463,
+          "height": 542,
+          "sha256": "f10f119c60026a4de4e8e9d692c8b614b841ed02105ee9ef447dfcc52a26ee19",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Haoyi Zhou, Xiao Bai, Jun Zhou · Griffith AM · © Springer"
+        }
+      ]
+    }
+  ],
+  "bibliographicChecks": [
+    {
+      "paperId": "hsi-superresolution-icig-2017",
+      "before": {
+        "title": "Deep Residual Convolutional Neural Network for Hyperspectral Image Super-Resolution",
+        "authors": "Chen Wang, Yun Liu, Xiao Bai, Wenzhong Tang, Peng Lei, Jun Zhou",
+        "year": 2017,
+        "venue": "ICIG",
+        "publicationName": "2017 International Conference on Image and Graphics",
+        "venueTier": "journal",
+        "doi": "10.1007/978-3-319-71598-8_33",
+        "citation": "@article{hsi_superresolution_icig_2017,\n  title = {Deep Residual Convolutional Neural Network for Hyperspectral Image Super-Resolution},\n  author = {Chen Wang and Yun Liu and Xiao Bai and Wenzhong Tang and Peng Lei and Jun Zhou},\n  year = {2017},\n  doi = {10.1007/978-3-319-71598-8_33}\n}\n",
+        "paper": "https://research-repository.griffith.edu.au/bitstream/10072/370475/1/WangPUB2842.pdf"
+      },
+      "formalFields": {
+        "title": [
+          "Deep Residual Convolutional Neural Network for Hyperspectral Image Super-Resolution"
+        ],
+        "author": [
+          {
+            "given": "Chen",
+            "family": "Wang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yun",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Xiao",
+            "family": "Bai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Wenzhong",
+            "family": "Tang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Peng",
+            "family": "Lei",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "page": "370-380",
+        "published": {
+          "date-parts": [
+            [
+              2017
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Image and Graphics"
+        ]
+      },
+      "sourceFile": "jun-zhou-sr-face-matching-reading-2026-10-12-sr-crossref.json",
+      "actualManuscriptAuthors": "Chen Wang, Yun Liu, Xiao Bai, Wenzhong Tang, Peng Lei, Jun Zhou",
+      "boundary": "保留正式题名/作者/年份/DOI；SR纠正会议类型和原出版物名、BibTeX。实际作者稿与正式版不凭相同DOI/页数判等同。"
+    },
+    {
+      "paperId": "3d-ldp-hsi-face-fg-2015",
+      "before": {
+        "title": "3D local derivative pattern for hyperspectral face recognition",
+        "authors": "Jie Liang, Jun Zhou, Yongsheng Gao",
+        "year": 2015,
+        "venue": "FG",
+        "publicationName": "2015 11th IEEE International Conference and Workshops on Automatic Face and Gesture Recognition (FG)",
+        "venueTier": "conference",
+        "doi": "10.1109/fg.2015.7163115",
+        "citation": "@inproceedings{3d_ldp_hsi_face_fg_2015,\n  title = {3D local derivative pattern for hyperspectral face recognition},\n  author = {Jie Liang and Jun Zhou and Yongsheng Gao},\n  booktitle = {2015 11th IEEE International Conference and Workshops on Automatic Face and Gesture Recognition (FG)},\n  year = {2015},\n  pages = {1--6},\n  doi = {10.1109/fg.2015.7163115}\n}\n",
+        "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content"
+      },
+      "formalFields": {
+        "title": [
+          "3D local derivative pattern for hyperspectral face recognition"
+        ],
+        "author": [
+          {
+            "family": "Jie Liang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Jun Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "family": "Yongsheng Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "page": "1-6",
+        "published": {
+          "date-parts": [
+            [
+              2015,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "2015 11th IEEE International Conference and Workshops on Automatic Face and Gesture Recognition (FG)"
+        ]
+      },
+      "sourceFile": "jun-zhou-sr-face-matching-reading-2026-10-12-face-crossref.json",
+      "actualManuscriptAuthors": "Jie Liang, Jun Zhou, Yongsheng Gao",
+      "boundary": "保留正式题名/作者/年份/DOI；SR纠正会议类型和原出版物名、BibTeX。实际作者稿与正式版不凭相同DOI/页数判等同。"
+    },
+    {
+      "paperId": "hsi-graph-matching-gbrpr-2015",
+      "before": {
+        "title": "Learning Graph Model for Different Dimensions Image Matching",
+        "authors": "Haoyi Zhou, Xiao Bai, Jun Zhou, Haichuan Yang, Yun Liu",
+        "year": 2015,
+        "venue": "GbRPR",
+        "publicationName": "Graph-Based Representations in Pattern Recognition",
+        "venueTier": "conference",
+        "doi": "10.1007/978-3-319-18224-7_16",
+        "citation": "@inproceedings{hsi_graph_matching_gbrpr_2015,\n  title = {Learning Graph Model for Different Dimensions Image Matching},\n  author = {Haoyi Zhou and Xiao Bai and Jun Zhou and Haichuan Yang and Yun Liu},\n  booktitle = {Graph-Based Representations in Pattern Recognition},\n  year = {2015},\n  pages = {158--167},\n  doi = {10.1007/978-3-319-18224-7_16}\n}\n",
+        "paper": "https://research-repository.griffith.edu.au/server/api/core/items/4d56d279-df0e-54ba-aeff-ff250b97fa0a"
+      },
+      "formalFields": {
+        "title": [
+          "Learning Graph Model for Different Dimensions Image Matching"
+        ],
+        "author": [
+          {
+            "given": "Haoyi",
+            "family": "Zhou",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Xiao",
+            "family": "Bai",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Haichuan",
+            "family": "Yang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Yun",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "page": "158-167",
+        "published": {
+          "date-parts": [
+            [
+              2015
+            ]
+          ]
+        },
+        "container-title": [
+          "Lecture Notes in Computer Science",
+          "Graph-Based Representations in Pattern Recognition"
+        ]
+      },
+      "sourceFile": "jun-zhou-sr-face-matching-reading-2026-10-12-match-crossref.json",
+      "actualManuscriptAuthors": "Haoyi Zhou, Xiao Bai, Jun Zhou",
+      "boundary": "保留正式题名/作者/年份/DOI；SR纠正会议类型和原出版物名、BibTeX。实际作者稿与正式版不凭相同DOI/页数判等同。"
+    }
+  ],
+  "classificationChecks": [
+    {
+      "paperId": "hsi-superresolution-icig-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4bff27ce-9d69-53d0-95c9-1f5124ec099e/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "实际AM仅增加空间像素分辨率，输入输出均31谱带且无需RGB；移除增加光谱分辨率及RGB/编码观测重建任务错配，归已有空间超分辨率任务及残差卷积谱约束方法。",
+        "AM，13 PDF页逐页全读（封面＋12正文），最终正式版未读；正文事实和原图只对应实际来源文件。",
+        "Griffith明确AM，13 PDF页（封面＋12正文）逐页全读，5式、5图、2表、22条引用已读。Fig1结构、Fig4输出及损失/指标印式、主表视觉核。六作者与Griffith Jun Zhou、Crossref正式ICIG2017 LNCS10668:370–380对应。正式11页VoR未读；改空间任务、会议类型及BibTeX，旧光谱角损失概括由当前印式疑点替代。"
+      ]
+    },
+    {
+      "paperId": "3d-ldp-hsi-face-fg-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "当前全文直接使用HK-PolyU与CMU高光谱人脸，空间与波长局部导数用于身份识别；保留既有任务/方法/应用分类。3D是空间—谱立方，非深度扫描；应用标签名称不把本文变成纯多光谱。",
+        "未标版本机构稿，7 PDF页逐页全读（封面＋6正文），最终正式版未读；正文事实和原图只对应实际来源文件。",
+        "Griffith机构PDF7页（封面＋6正文）逐页全读；封面没有Version字段，不猜AM/VoR。9式、Algorithm1、6图、3表、18条引用已读，Fig3/4及全部结果表视觉核。Jie Liang、Griffith ICT Jun Zhou、Yongsheng Gao与Crossref正式FG2015 pp1–6对应。Fig3从当前原PDF重裁高清，旧图文件/哈希保留；正式发表图版仍未读。"
+      ]
+    },
+    {
+      "paperId": "hsi-graph-matching-gbrpr-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/13ff69f7-ba9a-5b74-881c-f7c25755eeeb/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "原稿直接处理31窄带HSI跨带及HSI—RGB关键点匹配；虽数据称Multispectral Image Database，但明确400–700nm/10nm/31带，非仅据spectral关键词收录。保留既有图学习/光学配准分类与方法族，不把相关书章节当已核扩展或继承其结果。",
+        "AM，12 PDF页逐页全读（封面＋11正文），最终正式版未读；正文事实和原图只对应实际来源文件。",
+        "Griffith明确AM12 PDF页（封面＋11正文）逐页全读，8式、3图、2表、22条引用已读。AM正文首页仅Haoyi Zhou/Xiao Bai/Griffith ICT Jun Zhou三作者；封面及Crossref正式书目为五作者，目录保留正式名单，分别记录。Fig1动机/原注批注、Fig3输出、Tables1/2视觉核；正式10页会议版未读。"
+      ]
+    }
+  ],
+  "newCategoryIds": [
+    "spectral-loss-residual-cnn"
+  ],
+  "taskDefinitionUpdate": {
+    "categoryId": "spatial-super-resolution",
+    "before": "以高空间分辨率PAN、RGB或MSI引导恢复HSI/MSI空间细节；输出的光谱通道类型单独说明，与光谱维度重建、HSI–LiDAR分类及点云赋谱区分。",
+    "after": "从低空间分辨率HSI恢复空间细节，可仅用HSI或结合高空间分辨率PAN、RGB或MSI引导；输出的光谱通道类型单独说明，与增加波段数的光谱超分辨率、光谱重建、HSI–LiDAR分类及点云赋谱区分。",
+    "reason": "同31带HSI空间SR无需外部高空间引导；维持谱维度任务边界。"
+  },
+  "referencesRead": [
+    {
+      "paperId": "hsi-superresolution-icig-2017",
+      "count": 22,
+      "directHsiTargetAuthorReferences": 0,
+      "boundary": "实际参考书目已读，没有目标Jun Zhou引用；其他作者引文不因此视作正文已读或自动入库。"
+    },
+    {
+      "paperId": "3d-ldp-hsi-face-fg-2015",
+      "count": 18,
+      "directHsiTargetAuthorReferences": 0,
+      "boundary": "实际参考书目已读，没有目标Jun Zhou引用；其他作者引文不因此视作正文已读或自动入库。"
+    },
+    {
+      "paperId": "hsi-graph-matching-gbrpr-2015",
+      "count": 22,
+      "directHsiTargetAuthorReferences": 0,
+      "boundary": "实际参考书目已读，没有目标Jun Zhou引用；其他作者引文不因此视作正文已读或自动入库。"
+    }
+  ],
+  "previousFrameworkFigures": {
+    "paperId": "3d-ldp-hsi-face-fg-2015",
+    "figures": [
+      {
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content",
+        "figureLabel": "Figure 3",
+        "caption": "3D LDP descriptor construction.",
+        "page": 4,
+        "extraction": "从公开机构原PDF渲染页裁切原图与图注，未重绘。",
+        "verificationNote": "已视觉核对原Figure 3及图注，PDF第4页含机构封面；正式页号未核。",
+        "path": "figures/3d-ldp-hsi-face-fg-2015/framework.png",
+        "width": 490,
+        "height": 473,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-10-09",
+        "sha256": "a841da0a96853cadc89e65e6f13a54c5529f08c6a15dbbaf57560f1fc899b6cb",
+        "attribution": "Jie Liang, Jun Zhou, Yongsheng Gao · FG 2015"
+      }
+    ],
+    "decision": "当前PDF重裁Fig3高清，旧framework.png原文件及哈希保留不变；Fig4为新增原图。"
+  },
+  "versionBoundaries": {
+    "sr": "机构明确AM13页，正式LNCS10668:370–380为11页且未读；会议类型与原出版物名纠正。",
+    "face": "机构封面无Version字段，7页不据正文6页或版权推测AM/VoR；正式FG版未读。",
+    "match": "机构明确AM12页但保留编辑批注，正文三作者、正式Crossref与机构封面五作者，分别记录；正式10页未读，相关环境信息学书章节仍摘要级，不确认扩展关系或移植实验。"
+  },
+  "boundary": "总库390/周峻181不变；87全文/94摘要，312分类确认、审计291、74暂定、4待；177标签（67任务/97方法/13应用）、原图273。冻结31队列完成29/剩2，20AM278页/6VoR92页/3未标版本机构稿29页，62原图。来源白名单272/arXiv17/作者例外101不变；作者与全领域未闭环，未访问作者代码。",
+  "removedCategoryIds": [
+    "spectral-super-resolution"
+  ],
+  "removedCategoryEvidence": {
+    "category": {
+      "id": "spectral-super-resolution",
+      "name": "光谱超分辨率",
+      "dimension": "task",
+      "definition": "提高可分辨光谱通道数量或波长分辨率；与提升空间像素分辨率分开，可关联计算成像、编码与复原方法。",
+      "status": "provisional",
+      "color": "#d49b73",
+      "createdAt": "2026-10-08",
+      "rationale": "依据彩色CASSI原文摘要和第1页对可分辨波段数的定义形成，后续论文补充边界。",
+      "evidencePaperIds": [],
+      "history": [
+        {
+          "date": "2026-10-08",
+          "action": "created",
+          "reason": "研究输出是新增可分辨光谱波段，不沿用空间超分辨率分类。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "ICIG2017输入输出保持31谱带，仅恢复空间分辨率，删除光谱超分辨率/光谱重建错配并加入既有空间任务。"
+        }
+      ]
+    },
+    "reason": "该任务定义要求增加光谱波段/波长采样密度，原唯一成员实际只是空间SR；纠正归类后无成员，删除空分类并同步导航，历史由Git保留。"
+  },
+  "validation": {
+    "catalog": "npm run validate passed; 390 papers, 273 figures, 291 reviewed assignments, 177 labels",
+    "build": "npm run build passed",
+    "browser": "Playwright Chromium desktop1440/mobile390: Jun Zhou181, spatial task1, filter/reload, SR dialog2 original images loaded, no console errors/overflow",
+    "invariants": "仅三论文更新、数据资源不变、保护ID/来源白名单不变、原31队列不变、三PDF/六图及旧图哈希核对通过。"
+  }
+}

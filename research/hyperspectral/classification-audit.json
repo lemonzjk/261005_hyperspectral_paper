@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项原始来源分类审计，非全部全文；跨场景共享NMF与逐带字典共享稀疏编码按实际AM分别记录，保留图、主表及勘误版本边界。",
+  "scope": "逐项原始来源分类审计，非全部全文；本批空间SR/高光谱人脸/图匹配依据实际免费原稿，保留公式、作者与正式版本边界。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -292,7 +292,9 @@
     "triplet-deep-feature-hsi-whispers-2018",
     "hsi-lidar-heterogeneous-feature-fusion-2018",
     "cross-scene-dictionary-adaptation-tgrs-2017",
-    "joint-spectral-spatial-sparse-coding-jstars-2017"
+    "joint-spectral-spatial-sparse-coding-jstars-2017",
+    "hsi-superresolution-icig-2017",
+    "hsi-graph-matching-gbrpr-2015"
   ],
   "sourceChecks": [
     {
@@ -1166,6 +1168,36 @@
         "AM直接对HSI逐带局部块学习字典和共享稀疏编码并地物分类，图项明确作用于共享编码；字典训练无标签但不属于已证实的跨场景预训练任务。SCSC与GSCSC为同稿基础/图扩展消融，不新增独立论文。",
         "Griffith封面明确AM，15 PDF页逐页全读（封面＋14正文），最终VoR未读；正式书目与实际稿分别保留。",
         "Griffith明确AM共15 PDF页（封面＋14正文）逐页全读，15式、2算法、10图、4表、53条引文及作者简介已读；Fig2/3、原目标/图约束、协议和TablesIII/IV视觉核。首页Jun Zhou为Griffith ICT且为通信作者，作者顺序与Crossref JSTARS10(3)1151–1164、正式2017-03对应；不将原ANU摘要页当另一论文版本。Fig3保留实际学习字典原图，未检查作者代码或基线代码。"
+      ]
+    },
+    {
+      "paperId": "hsi-superresolution-icig-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4bff27ce-9d69-53d0-95c9-1f5124ec099e/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "实际AM仅增加空间像素分辨率，输入输出均31谱带且无需RGB；移除增加光谱分辨率及RGB/编码观测重建任务错配，归已有空间超分辨率任务及残差卷积谱约束方法。",
+        "AM，13 PDF页逐页全读（封面＋12正文），最终正式版未读；正文事实和原图只对应实际来源文件。",
+        "Griffith明确AM，13 PDF页（封面＋12正文）逐页全读，5式、5图、2表、22条引用已读。Fig1结构、Fig4输出及损失/指标印式、主表视觉核。六作者与Griffith Jun Zhou、Crossref正式ICIG2017 LNCS10668:370–380对应。正式11页VoR未读；改空间任务、会议类型及BibTeX，旧光谱角损失概括由当前印式疑点替代。"
+      ]
+    },
+    {
+      "paperId": "3d-ldp-hsi-face-fg-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "当前全文直接使用HK-PolyU与CMU高光谱人脸，空间与波长局部导数用于身份识别；保留既有任务/方法/应用分类。3D是空间—谱立方，非深度扫描；应用标签名称不把本文变成纯多光谱。",
+        "未标版本机构稿，7 PDF页逐页全读（封面＋6正文），最终正式版未读；正文事实和原图只对应实际来源文件。",
+        "Griffith机构PDF7页（封面＋6正文）逐页全读；封面没有Version字段，不猜AM/VoR。9式、Algorithm1、6图、3表、18条引用已读，Fig3/4及全部结果表视觉核。Jie Liang、Griffith ICT Jun Zhou、Yongsheng Gao与Crossref正式FG2015 pp1–6对应。Fig3从当前原PDF重裁高清，旧图文件/哈希保留；正式发表图版仍未读。"
+      ]
+    },
+    {
+      "paperId": "hsi-graph-matching-gbrpr-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/13ff69f7-ba9a-5b74-881c-f7c25755eeeb/content",
+      "level": "机构原稿逐页全文、原图/原表及版本核验",
+      "supports": [
+        "原稿直接处理31窄带HSI跨带及HSI—RGB关键点匹配；虽数据称Multispectral Image Database，但明确400–700nm/10nm/31带，非仅据spectral关键词收录。保留既有图学习/光学配准分类与方法族，不把相关书章节当已核扩展或继承其结果。",
+        "AM，12 PDF页逐页全读（封面＋11正文），最终正式版未读；正文事实和原图只对应实际来源文件。",
+        "Griffith明确AM12 PDF页（封面＋11正文）逐页全读，8式、3图、2表、22条引用已读。AM正文首页仅Haoyi Zhou/Xiao Bai/Griffith ICT Jun Zhou三作者；封面及Crossref正式书目为五作者，目录保留正式名单，分别记录。Fig1动机/原注批注、Fig3输出、Tables1/2视觉核；正式10页会议版未读。"
       ]
     }
   ]
