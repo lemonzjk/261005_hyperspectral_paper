@@ -196,6 +196,7 @@
 | Jun Zhou · biomedical cells and weed applications | 2015–2019 | SKOV3 live dead cells、tensor morphological profile、FCNN SPLBP、61-band HSI versus four-band MSI、Jun versus Jie Zhou；6页AM＋16页VoR实际全文；5目标作者引文已录，1初始名为Jie而非Jun；非作者/领域全集。 | 未单列 / 8 / 8 | 两应用正文22页/五原图，五引用已录，一非目标作者 | 作者与正式版本未闭环，原31机构队列剩12；现有作者来源例外不扩白名单。；细胞最终VoR、其他可访问资料和DBLP8/Scholar5/个人机构8等重叠差集继续；代码仅链接。 |
 | Jun Zhou · CRF-CNN segmentation versions | 2016–2019 | CRF CNN superpixels、3DCNN-CRF learned pairwise potentials、Griffith-USGS、Classification versus Segmentation title；5页会议AM＋17页期刊AM实际全读；10＋44条引用已读，没有目标Jun Zhou作者引用/明确会刊扩展自引。 | 未单列 / 2 / 2 | 两AM22页/四原图，监督任务与版本边界纠正 | 作者及领域目录未闭环，冻结31机构队列剩10；保留来源例外，未扩普通白名单。；两最终VoR、期刊固定arXiv v1/v2与会刊关系分别待核；引用列表核验不等于引用正文已读。 |
 | Jun Zhou · early deep and heterogeneous features | 2017–2018 | band-group abundance CNN、supervised triplet constraint、ICV DAP stacking、WHISPERS 8747227、PRRS 9396733；9页未标版本机构稿、6页AM、14页AM；两目标作者引文均已录，另外两篇引用无目标作者。 | 未单列 / 5 / 5 | 三全文29页/五原图、DOI及两书目纠错 | 作者/正式版本未闭环，原31机构资料剩7；新集名称、尺寸与划分分别按原文，不合并。；当前稿未证实会刊扩展，免费资料继续；现有作者例外不扩白名单。 |
+| Jun Zhou · NMF domain adaptation and structural sparse coding | 2017 | MTJDL MTSLR cross-scene、SCSC GSCSC structural consistency、DAIS Pavia 72 bands、Fig14 correction 2789418；30页AM＋15页AM；完整引用62/53项已读，查漏为当前两稿引用闭环，不是作者全集。 | 未单列 / 8 / 8 | 两AM45页/四原图，字典机制及勘误版本分开 | 原31机构资料剩5，作者/正式版本/全领域未闭环。；当前AM与两最终VoR及勘误图版不可判等同；公开数据配对划分/验证缺口保留。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -877,6 +878,8 @@
   阅读边界：两实际AM22页全读、四原图；纠正监督分类/分割与表征预训练误配。期刊AM正文题名不同于同DOI正式书目，最终VoR/arXiv正文未读；无明确会刊扩展证据，保留独立方法族。原31机构资料剩10。
 - 2026-10-12 / jun-zhou-early-feature-classification-reading-2026-10-12：新增 0，更新 3，去重 2，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：三实际稿29页全读，五原图与两个已有作者引用；补DOI/正式页码、纠正PRRS来源和DICTA类型。两AM/一未标版本机构稿分开，监督分类不当预训练或公开基准，原31资料剩7。
+- 2026-10-12 / jun-zhou-sparse-domain-structural-reading-2026-10-12：新增 0，更新 2，去重 5，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两实际AM45页全读、四原图；六处直接HSI作者引文匹配五条已有目录，通用背景引用沿用既有排除；正文事实只维护现有目录，不另建学习笔记。
 
 </details>
 

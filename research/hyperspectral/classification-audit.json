@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项原始来源分类审计，非全部全文；早期丰度CNN、监督三元组与HSI/LiDAR ICV堆叠按实际全文记录，纠正预训练/数据发布与书目错配。",
+  "scope": "逐项原始来源分类审计，非全部全文；跨场景共享NMF与逐带字典共享稀疏编码按实际AM分别记录，保留图、主表及勘误版本边界。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -290,7 +290,9 @@
     "crf-deep-feature-hsi-tgrs-2019",
     "unmixing-deep-feature-dicta-2017",
     "triplet-deep-feature-hsi-whispers-2018",
-    "hsi-lidar-heterogeneous-feature-fusion-2018"
+    "hsi-lidar-heterogeneous-feature-fusion-2018",
+    "cross-scene-dictionary-adaptation-tgrs-2017",
+    "joint-spectral-spatial-sparse-coding-jstars-2017"
   ],
   "sourceChecks": [
     {
@@ -1144,6 +1146,26 @@
         "AM直接处理144带HSI及LiDAR-derived DSM并监督分类，属于高光谱—LiDAR地物分类及ICV特征提取，配准是输入前提；PRRS来源仅现有作者例外，未扩普通白名单。",
         "首页Griffith Jun Zhou及完整作者顺序与正式Crossref对应，方法/实验按本稿独立记录。",
         "代码只保留官方链接；只升级当前实际读过版本。"
+      ]
+    },
+    {
+      "paperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content",
+      "level": "机构接受稿逐页全文、原图/原表和版本核验",
+      "supports": [
+        "AM直接处理两域HSI及谱偏移，目标域未标签观测参与字典学习；NMF无显式稀疏项，稀疏性属于后续SLR/MTSLR，移除稀疏字典学习泛配，使用精确共享NMF域适配标签。两域地物分类是最终任务，端元解释不等于解混实验。",
+        "Griffith封面明确AM，30 PDF页逐页全读（封面＋29正文），最终VoR未读；正式书目与实际稿分别保留。",
+        "Griffith明确AM共30 PDF页（封面＋29正文）逐页全读，18式、Algorithm1、14图、10表及62条引文已读；Fig4/5、四主结果表及Fig8/14视觉核。首页Griffith Jun Zhou与Crossref注册ORCID0000-0001-5822-8233、四作者、TGRS55(3)1544–1562对应。当前AM Fig14九个子图均3×3；2018正式勘误要求原正式Fig14由7×7改3×3，不能据此认定AM为勘误图版或已核最终VoR。未访问作者代码。"
+      ]
+    },
+    {
+      "paperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3a8eac6c-4ca4-58d4-bebf-18c5e47e2f5e/content",
+      "level": "机构接受稿逐页全文、原图/原表和版本核验",
+      "supports": [
+        "AM直接对HSI逐带局部块学习字典和共享稀疏编码并地物分类，图项明确作用于共享编码；字典训练无标签但不属于已证实的跨场景预训练任务。SCSC与GSCSC为同稿基础/图扩展消融，不新增独立论文。",
+        "Griffith封面明确AM，15 PDF页逐页全读（封面＋14正文），最终VoR未读；正式书目与实际稿分别保留。",
+        "Griffith明确AM共15 PDF页（封面＋14正文）逐页全读，15式、2算法、10图、4表、53条引文及作者简介已读；Fig2/3、原目标/图约束、协议和TablesIII/IV视觉核。首页Jun Zhou为Griffith ICT且为通信作者，作者顺序与Crossref JSTARS10(3)1151–1164、正式2017-03对应；不将原ANU摘要页当另一论文版本。Fig3保留实际学习字典原图，未检查作者代码或基线代码。"
       ]
     }
   ]

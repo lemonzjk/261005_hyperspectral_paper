@@ -1,0 +1,562 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "两篇既有2017直接HSI分类论文免费AM逐页阅读、实际原图、作者/书目核验及引用查漏；不新增重复论文目录或学习笔记。",
+  "previousGoalTurn": "progress：6905dd8已完成三篇既有论文正文/原图及书目补正；本批续接当前权威目录。",
+  "accessFile": "jun-zhou-sparse-domain-structural-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 2,
+  "newFullTextReadingCount": 2,
+  "pdfPagesRead": 45,
+  "figuresAdded": 4,
+  "materials": [
+    {
+      "file": "jun-zhou-sparse-domain-structural-reading-2026-10-12-domain.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content",
+      "status": 200,
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content",
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 1025639,
+      "checkedAt": "2026-10-12",
+      "sha256": "d283e0a9f4537ee80e22b0275e0d4fc1b5502be3f55557174739e7f85dcabaee",
+      "pdfDownloaded": true,
+      "paperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "version": "AM",
+      "pageCount": 30,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "readingProgress": "full_text_read",
+      "pageTextFile": "jun-zhou-sparse-domain-structural-reading-2026-10-12-domain-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        9,
+        12,
+        15,
+        18,
+        19,
+        21,
+        22,
+        23,
+        26,
+        27
+      ]
+    },
+    {
+      "file": "jun-zhou-sparse-domain-structural-reading-2026-10-12-joint.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3a8eac6c-4ca4-58d4-bebf-18c5e47e2f5e/content",
+      "status": 200,
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3a8eac6c-4ca4-58d4-bebf-18c5e47e2f5e/content",
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 2366053,
+      "checkedAt": "2026-10-12",
+      "sha256": "6d77831aceda56c6cece2d7ceb10dc37c4a036b46699c1d17e91c2031c3aacb5",
+      "pdfDownloaded": true,
+      "paperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "version": "AM",
+      "pageCount": 15,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "readingProgress": "full_text_read",
+      "pageTextFile": "jun-zhou-sparse-domain-structural-reading-2026-10-12-joint-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "paperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "method": "MTJDL以源/目标重建误差之和学习非负共享D及各自VS/VT，p小于原带数，乘法交替更新；不使用标签、L1稀疏或丰度和为一约束。无目标标签时源标签训练L1-SLR，多类one-versus-one投票；有少量目标标签时MTSLR分别学源/目标分类权重，用L2,1正则共享特征选择模式，权重仍可不同，以近端梯度和行收缩求解。CSMSAD和SSI为按真实类计算的谱偏移诊断，不是无标签可直接得出的评估量。",
+      "datasets": "合成：USGS20谱分四组各五端元，Gaussian丰度混合，选原41–80共40带、两类。Indiana：1992-06-12 AVIRIS全图614×2166×220，两个空间不交叠400×300×220子场景、七共同类。Pavia：本文明确DAIS，University243×243×72作源、Center400×400×72作目标、六共同类，不是常见ROSIS103/102带协议。Shanghai→Hangzhou：EO-1 Hyperion，2002-04-01/2002-11-02，分别1600×230×198/590×230×198，220带去坏带留198、三类水/地面建筑/植被。",
+      "experimentSetting": "源训练每类：合成500（总1000）、三真实组均180（总1260/1080/540）；目标为0或每类5/20/20/20（总10/140/120/60），合成目标测试每类1000，真实组余下目标标签测试。字典使用两域标注及未标注观测；目标标签为零不等于不访问目标像元。p=5..30，λ=10^-1..10^-7，正文称按cross-validation选最佳，未给折数或无目标标签设置的验证标签来源。合成Fig7最优SD-MTJDL-SLR p6/λ10^-3、MTSLR p6/λ10^-3；无明确重复次数、误差条、硬件/耗时。",
+      "results": "TablesIII/V/VII/IX：零目标标签的SD-MTJDL-SLR Synthetic/Indiana/Pavia/Shanghai–Hangzhou OA79.70/51.34/83.52/89.33%，AA79.70/43.51/81.30/90.43%，κ.5940/.3845/.7906/.8167；源域原谱SLR OA50.45/47.94/74.34/32.64%。有少目标标签的MTJDL-MTSLR对应OA96.95/59.75/95.07/95.70%，AA96.95/58.61/95.66/96.15%，κ.9390/.5059/.9376/.9250。不同标签预算不作同条件直接性能比较。TableX SSI .8125/.7942/.5359/.8592，需两域真实标签诊断；部分Indiana类并未改善，不外推跨传感器性能。",
+      "limitations": "只实际读AM，最终19页VoR及2018两页勘误图版未读；当前机构勘误记录标No Full Text。AM Fig14已3×3，其产生时间/与勘误图版逐值对应未核，不当正式勘误替代。AM Fig8(i)对角884/874、每类1000合成测试对应87.90%，与TableIII MTSLR96.95%不符；各自原值保留，不猜改正。Pavia正文一处“120 per class”与前文/表VII总120冲突，按明确20/类协议记录。合成丰度示例首均值.1与TableII .2不一致。参数独立验证、重复方差、成对数据/划分发布未给；未来跨传感器仍为展望。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content",
+          "figureLabel": "Fig. 4",
+          "caption": "源/目标谱共同NMF学习共享字典，各自系数形成跨场景特征；字典训练不使用类别标签。",
+          "page": 9,
+          "verificationNote": "Griffith AM，PDF第9页/正文第8页，300dpi原页裁取；全部标签、图像与原注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              68,
+              65,
+              544,
+              310
+            ],
+            "pixelBox": [
+              283,
+              270,
+              2267,
+              1292
+            ]
+          },
+          "path": "figures/cross-scene-dictionary-adaptation-tgrs-2017/domain-fig4.png",
+          "width": 1984,
+          "height": 1022,
+          "sha256": "47a8f72a47604561244fc289ee97d89c63591b233b38f266a565c559c7404bc3",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Minchao Ye, Yuntao Qian, Jun Zhou, Yuan Yan Tang · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content",
+          "figureLabel": "Fig. 5",
+          "caption": "有少量目标标签时，MTSLR以L2,1正则共享两域特征选择模式，源/目标分类权重可不同。",
+          "page": 12,
+          "verificationNote": "Griffith AM，PDF第12页/正文第11页，300dpi原页裁取；全部标签、图像与原注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              68,
+              65,
+              544,
+              322
+            ],
+            "pixelBox": [
+              283,
+              270,
+              2267,
+              1342
+            ]
+          },
+          "path": "figures/cross-scene-dictionary-adaptation-tgrs-2017/domain-fig5.png",
+          "width": 1984,
+          "height": 1072,
+          "sha256": "ae5883cc75148d7da48a4d78372fc758ccf27196dd8322c49cbf7c61ec809baa",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Minchao Ye, Yuntao Qian, Jun Zhou, Yuan Yan Tang · Griffith AM · © IEEE"
+        }
+      ]
+    },
+    {
+      "paperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "method": "SCSC优化各波段块重建误差之和＋β||S||1，B个Db各异、同一空间像元跨带共用S，字典原子有范数上界。GSCSC额外以原始谱KNN构造对称二值W、L=P-W，并加αTr(SLST)约束S；相近的是谱特征，不能自动说是固定空间邻接。特征符号搜索更新S、Lagrange对偶逐带更新Db，交替至阈值/迭代停止；无非负约束。只用训练像元无标签学字典，再以标签训练RBF-SVM。测试像元接入训练图近邻计算编码，使用学得字典分类；不是各带编码拼接SCNSC或跨场景共用单D。",
+      "datasets": "Indian Pines：AVIRIS1992、145×145，原220带去104–108/150–163/220共20留200，0.4–2.5μm、16类。TableI训练1027/测试9222合计10249，与正文称10366标签不一致，不擅自补117像元。University of Pavia：ROSIS610×340×103、9类，TableII训练3850/测试38926共42776；与跨场景稿72带DAIS的Pavia裁区/六类不是同一协议。",
+      "experimentSetting": "Indian Pines每类约10%训练/其余测试、9²块，Pavia约9%/其余、5²块；β.1、α1、K3、字典R30。SCSC/GSCSC用RBF-SVM并cross-validation选核参数，SCNSC高维用linear-SVM。训练字典不使用标签；测试xi增广训练图W与近邻向量wi。SC-Single用Indian第30带；SCNSC Indian选择6–52高质量带，Pavia全带拼接。对照SOMP/SWSC以原谱、SWSC不使用额外空间平滑版。参数/字典/训练量曲线为五次平均；主表未给重复标准差，不推断每行方差或独立空间划分。",
+      "results": "TableIII Indian Pines GSCSC OA88.35%、AA85.12%、κ.867；SCSC86.39/80.52/.845，SCS70.97/66.73/.678，SWSC86.94/89.08/.853，SOMP82.45/75.60/.797。因此GSCSC OA/κ领先所列表，但AA比SWSC低3.96百分点。TableIV Pavia GSCSC96.19/95.05/.949，SCSC95.42/93.38/.939，SCS87.68/84.35/.836，SOMP96.16/94.86/.949，OA仅高.03百分点、κ打平。Fig6/7表明共享编码对β较稳、α过大下降、小字典约20即可有较好结果；不是参数或所有类全胜。",
+      "limitations": "只实际读15页机构AM，最终14页VoR未读；页数相近不证明内容相同。Indian标签总数与TableI冲突原样记录。Eq4右端原印只写(si−sj)Wij、缺范数平方，按Eq5的Tr(SLST)说明图约束，不改写成已核实现。原子范数上界c、停止ρ/γ具体值、初始化种子、硬件/耗时及主表方差未给；随机像元拆分不证明9²/5²窗口空间隔离，边界邻类混入是正文指出的失误来源。未见当前方法官方代码/配套split发布链接，基线软件仅原文引用，未访问。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3a8eac6c-4ca4-58d4-bebf-18c5e47e2f5e/content",
+          "figureLabel": "Fig. 2",
+          "caption": "各波段局部块训练不同Db，同一像元跨带共享稀疏S，图项约束编码，再接SVM分类。",
+          "page": 5,
+          "verificationNote": "Griffith AM，PDF第5页/正文第4页，300dpi原页裁取；全部标签、图像与原注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              45,
+              55,
+              567,
+              361
+            ],
+            "pixelBox": [
+              187,
+              229,
+              2363,
+              1505
+            ]
+          },
+          "path": "figures/joint-spectral-spatial-sparse-coding-jstars-2017/joint-fig2.png",
+          "width": 2176,
+          "height": 1276,
+          "sha256": "0de7c5ba2fcff7fdb3aed0e81e86474d99bcf6737ae6c92fd9770fe181b943b6",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Changhong Liu, Jun Zhou, Jie Liang, Yuntao Qian, Hanxi Li, Yongsheng Gao · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3a8eac6c-4ca4-58d4-bebf-18c5e47e2f5e/content",
+          "figureLabel": "Fig. 3",
+          "caption": "Indian Pines第70–100带的实际学习字典，每行一波段、每行30个原子；方法中间输出示例。",
+          "page": 8,
+          "verificationNote": "Griffith AM，PDF第8页/正文第7页，300dpi原页裁取；全部标签、图像与原注视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              60,
+              48,
+              300,
+              243
+            ],
+            "pixelBox": [
+              250,
+              200,
+              1250,
+              1013
+            ]
+          },
+          "path": "figures/joint-spectral-spatial-sparse-coding-jstars-2017/joint-fig3.png",
+          "width": 1000,
+          "height": 813,
+          "sha256": "629f76a4b09f1e25f0d8ba06dd7b6e2bbf9cd19f84724e438e417b09089c1a0e",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Changhong Liu, Jun Zhou, Jie Liang, Yuntao Qian, Hanxi Li, Yongsheng Gao · Griffith AM · © IEEE"
+        }
+      ]
+    }
+  ],
+  "bibliographicChecks": [
+    {
+      "paperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "before": {
+        "title": "Dictionary Learning-Based Feature-Level Domain Adaptation for Cross-Scene Hyperspectral Image Classification",
+        "authors": "Minchao Ye, Yuntao Qian, Jun Zhou, Yuan Yan Tang",
+        "year": 2017,
+        "venue": "TGRS",
+        "doi": "10.1109/tgrs.2016.2627042",
+        "citation": "@article{cross_scene_dictionary_adaptation_tgrs_2017,\n  title = {Dictionary Learning-Based Feature-Level Domain Adaptation for Cross-Scene Hyperspectral Image Classification},\n  author = {Minchao Ye and Yuntao Qian and Jun Zhou and Yuan Yan Tang},\n  year = {2017},\n  doi = {10.1109/tgrs.2016.2627042}\n}\n"
+      },
+      "formalFields": {
+        "title": [
+          "Dictionary Learning-Based Feature-Level Domain Adaptation for Cross-Scene Hyperspectral Image Classification"
+        ],
+        "author": [
+          {
+            "given": "Minchao",
+            "family": "Ye",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7418-5891",
+            "authenticated-orcid": false,
+            "given": "Yuntao",
+            "family": "Qian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-5822-8233",
+            "authenticated-orcid": false,
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yuan Yan",
+            "family": "Tang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "volume": "55",
+        "issue": "3",
+        "page": "1544-1562",
+        "published": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        }
+      },
+      "sourceFile": "jun-zhou-sparse-domain-structural-reading-2026-10-12-domain-crossref.json",
+      "boundary": "题名/作者/年份/DOI保留，BibTeX补正式期刊、卷期页码；AM与最终VoR不凭相同DOI或页数判等同。"
+    },
+    {
+      "paperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "before": {
+        "title": "Exploring Structural Consistency in Graph Regularized Joint Spectral-Spatial Sparse Coding for Hyperspectral Image Classification",
+        "authors": "Changhong Liu, Jun Zhou, Jie Liang, Yuntao Qian, Hanxi Li, Yongsheng Gao",
+        "year": 2017,
+        "venue": "JSTARS",
+        "doi": "10.1109/jstars.2016.2602305",
+        "citation": "@article{joint_spectral_spatial_sparse_coding_jstars_2017,\n  title = {Exploring Structural Consistency in Graph Regularized Joint Spectral-Spatial Sparse Coding for Hyperspectral Image Classification},\n  author = {Changhong Liu and Jun Zhou and Jie Liang and Yuntao Qian and Hanxi Li and Yongsheng Gao},\n  year = {2017},\n  doi = {10.1109/jstars.2016.2602305}\n}\n"
+      },
+      "formalFields": {
+        "title": [
+          "Exploring Structural Consistency in Graph Regularized Joint Spectral-Spatial Sparse Coding for Hyperspectral Image Classification"
+        ],
+        "author": [
+          {
+            "given": "Changhong",
+            "family": "Liu",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jie",
+            "family": "Liang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yuntao",
+            "family": "Qian",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hanxi",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Yongsheng",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "volume": "10",
+        "issue": "3",
+        "page": "1151-1164",
+        "published": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        }
+      },
+      "sourceFile": "jun-zhou-sparse-domain-structural-reading-2026-10-12-joint-crossref.json",
+      "boundary": "题名/作者/年份/DOI保留，BibTeX补正式期刊、卷期页码；AM与最终VoR不凭相同DOI或页数判等同。"
+    }
+  ],
+  "classificationChecks": [
+    {
+      "paperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content",
+      "level": "机构接受稿逐页全文、原图/原表和版本核验",
+      "supports": [
+        "AM直接处理两域HSI及谱偏移，目标域未标签观测参与字典学习；NMF无显式稀疏项，稀疏性属于后续SLR/MTSLR，移除稀疏字典学习泛配，使用精确共享NMF域适配标签。两域地物分类是最终任务，端元解释不等于解混实验。",
+        "Griffith封面明确AM，30 PDF页逐页全读（封面＋29正文），最终VoR未读；正式书目与实际稿分别保留。",
+        "Griffith明确AM共30 PDF页（封面＋29正文）逐页全读，18式、Algorithm1、14图、10表及62条引文已读；Fig4/5、四主结果表及Fig8/14视觉核。首页Griffith Jun Zhou与Crossref注册ORCID0000-0001-5822-8233、四作者、TGRS55(3)1544–1562对应。当前AM Fig14九个子图均3×3；2018正式勘误要求原正式Fig14由7×7改3×3，不能据此认定AM为勘误图版或已核最终VoR。未访问作者代码。"
+      ]
+    },
+    {
+      "paperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3a8eac6c-4ca4-58d4-bebf-18c5e47e2f5e/content",
+      "level": "机构接受稿逐页全文、原图/原表和版本核验",
+      "supports": [
+        "AM直接对HSI逐带局部块学习字典和共享稀疏编码并地物分类，图项明确作用于共享编码；字典训练无标签但不属于已证实的跨场景预训练任务。SCSC与GSCSC为同稿基础/图扩展消融，不新增独立论文。",
+        "Griffith封面明确AM，15 PDF页逐页全读（封面＋14正文），最终VoR未读；正式书目与实际稿分别保留。",
+        "Griffith明确AM共15 PDF页（封面＋14正文）逐页全读，15式、2算法、10图、4表、53条引文及作者简介已读；Fig2/3、原目标/图约束、协议和TablesIII/IV视觉核。首页Jun Zhou为Griffith ICT且为通信作者，作者顺序与Crossref JSTARS10(3)1151–1164、正式2017-03对应；不将原ANU摘要页当另一论文版本。Fig3保留实际学习字典原图，未检查作者代码或基线代码。"
+      ]
+    }
+  ],
+  "newCategoryIds": [
+    "shared-nmf-domain-adaptation",
+    "bandwise-dictionaries-shared-codes"
+  ],
+  "citationCrosscheck": [
+    {
+      "fromPaperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "referenceNumber": 42,
+      "catalogId": "structured-sparse-wavelet-tgrs-2013",
+      "doi": "10.1109/TGRS.2012.2209657",
+      "decision": "existing_catalog",
+      "boundary": "实际引文题名/作者与已有目录对应；六处直接HSI目标作者引用涉及五条已有目录，不等于被引正文新增阅读。"
+    },
+    {
+      "fromPaperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "referenceNumber": 49,
+      "catalogId": "lhalf-nmf-tgrs-2011",
+      "doi": "10.1109/TGRS.2011.2144605",
+      "decision": "existing_catalog",
+      "boundary": "实际引文题名/作者与已有目录对应；六处直接HSI目标作者引用涉及五条已有目录，不等于被引正文新增阅读。"
+    },
+    {
+      "fromPaperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "referenceNumber": 26,
+      "catalogId": "structured-sparse-wavelet-tgrs-2013",
+      "doi": "10.1109/TGRS.2012.2209657",
+      "decision": "existing_catalog",
+      "boundary": "实际引文题名/作者与已有目录对应；六处直接HSI目标作者引用涉及五条已有目录，不等于被引正文新增阅读。"
+    },
+    {
+      "fromPaperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "referenceNumber": 38,
+      "catalogId": "dual-graph-nmf-dicta-2014",
+      "doi": "10.1109/dicta.2014.7008103",
+      "decision": "existing_catalog",
+      "boundary": "实际引文题名/作者与已有目录对应；六处直接HSI目标作者引用涉及五条已有目录，不等于被引正文新增阅读。"
+    },
+    {
+      "fromPaperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "referenceNumber": 39,
+      "catalogId": "mmsnmf-icip-2015",
+      "doi": "10.1109/icip.2015.7351186",
+      "decision": "existing_catalog",
+      "boundary": "实际引文题名/作者与已有目录对应；六处直接HSI目标作者引用涉及五条已有目录，不等于被引正文新增阅读。"
+    },
+    {
+      "fromPaperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "referenceNumber": 43,
+      "catalogId": "mtsnmf-denoise-tgrs-2015",
+      "doi": "10.1109/tgrs.2014.2363101",
+      "decision": "existing_catalog",
+      "boundary": "实际引文题名/作者与已有目录对应；六处直接HSI目标作者引用涉及五条已有目录，不等于被引正文新增阅读。"
+    }
+  ],
+  "backgroundCitation": {
+    "fromPaperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+    "referenceNumber": 35,
+    "title": "Local and global regularized sparse coding for data representation",
+    "doi": "10.1016/j.neucom.2015.10.048",
+    "decision": "inherited_exclusion",
+    "priorEvidenceFile": "jun-zhou-2015-remainder-decisions.json",
+    "priorCrosswalkFile": "jun-zhou-scholar-nonkeyword-screening-2026-10-10.json",
+    "boundary": "沿用作者原摘要为通用数据表示/聚类、未显示HSI输入的既有范围排除；当前仅读本稿引用，不新增范围审计或声称重读被引全文。"
+  },
+  "referencesRead": [
+    {
+      "paperId": "cross-scene-dictionary-adaptation-tgrs-2017",
+      "count": 62,
+      "directHsiTargetAuthorReferences": 2
+    },
+    {
+      "paperId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "count": 53,
+      "directHsiTargetAuthorReferences": 4,
+      "inheritedNonHsiBackgroundReference": 1
+    }
+  ],
+  "correctionBoundary": {
+    "doi": "10.1109/TGRS.2018.2789418",
+    "itemFile": "jun-zhou-sparse-domain-structural-reading-2026-10-12-correction-item.json",
+    "itemNoFullText": true,
+    "originalAmFigure14": {
+      "pdfPage": 26,
+      "bodyPage": 25,
+      "size": "nine 3×3 panels",
+      "visualFile": "jun-zhou-sparse-domain-structural-reading-2026-10-12-domain-page-26.png"
+    },
+    "decision": "正式勘误要求原正式Fig14由7×7改3×3；当前AM本已3×3，不判定为最终/勘误图版，不推定其生成时间或逐值对应。"
+  },
+  "methodAndDatasetBoundary": "跨场景稿为两域共享单个非稀疏NMF字典D，稀疏项在SLR/MTSLR；结构稿为逐波段Db与跨带共享L1编码S，谱图也作用S。DAIS72带Pavia六类与ROSIS103带Pavia九类分别记录，不因Pavia命名或字典学习而合并方法族/实验。",
+  "boundary": "总库390/周峻181保持，84全文/97摘要；312分类确认、审计289、74暂定、4待；177标签（68任务/96方法/13应用）、原图268。冻结31队列完成26/剩5，18AM253页/6VoR92页/2未标版本机构稿22页，56原图。来源白名单272/arXiv17/作者例外101不变；作者与全领域未闭环，未访问作者代码。"
+}
