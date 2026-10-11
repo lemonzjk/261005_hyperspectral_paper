@@ -44290,32 +44290,32 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2603.09037",
-      "representation": "Scholar差集 arXiv 题名与原站摘要确认高光谱任务。",
+      "representation": "WS-Net弱信号盲解混：Haar/Symlet-3空间小波融合、Mamba/Transformer正逆注意力与门控、softmax丰度和线性谱重建。",
       "tags": [],
-      "summary": "WS-Net addresses weak-signal collapse in hyperspectral unmixing with state-space modelling and weak-signal attention.",
-      "input": "高光谱影像；具体采集设置见摘要。",
-      "output": "弱信号端元丰度与重建结果。",
-      "mechanism": "Wavelet-fused encoder, Mamba branch, weak-signal attention and gated decoder with KL regularization.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
-      "paper": "https://arxiv.org/abs/2603.09037",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "WS-Net面向低反射率或低丰度端元的直接高光谱盲解混，联合空间小波特征、Mamba状态空间与Transformer弱信号正/逆注意力，再估计受约束丰度和端元。固定arXiv v1共17页已读；三集平均SAD为.0221/.0378/.0740，Samson平均RMSE弱于EndNet，不能将摘要优势推广到所有材料/指标。",
+      "input": "观测HSI Y及已知端元数R；VCA端元初始化后联合优化。合成S1为80×80×459、4矿物；Samson95×95×156、3材料；APEX110×110×285、4材料。损失对原观测HSI进行自重建，没有独立丰度标签预训练目标。",
+      "output": "R维非负、和为1的逐像元丰度图A、共同微调的端元矩阵E，以及线性混合重建Ŷ=EA。理论引入非线性残差Δ，不等于解码器显式预测Δ或几何三维重建。",
+      "mechanism": "WFFE沿空间维做Haar与Symlet-3二维DWT，四阶段与卷积特征拼接/对齐。双分支采用Mamba/MambaVision状态空间与Transformer patch注意力；S=QKᵀ/√dk，标准softmax(S/τsa)及逆softmax(−S/τinv)以α融合。Eq9用β组合Mamba/注意力特征，而Fig2画拼接/Linear，按原文分列。softmax端元维映射满足非负/和为1，VCA初始化E并共同微调，以观测重建RMSE、SAD和逐像元归一光谱KL联合训练；KL式12并非直接两个端元间分离损失。网络未给优化迭代展开对应，移除deep-unfolding；实际Transformer分支有MHSA，补该方法标签。",
+      "readingNote": "固定2603.09037v1的17页逐页全文已读，17式、Fig1–10、TableI–VIII和48条引用已核；Fig1/p4、Fig2/p6两原框架直接裁取并保留英文图注。首页Griffith单位及末页Jun Zhou履历对应目标作者；当前API最新仍v1，首次/更新均2026-03-10。正文基线表实际7项（加WS-Net共8），摘要称6；所读书目显式作者未见目标Jun Zhou；含et al条目的全作者未逐项核，Xichuan Zhou不能当Jun。指定Crossref题名前5均非WS-Net，其中2024肉污染基准已录，未强行合并。原图文/门控、KL、指标及消融差异按稿保留；代码只记录首页官方URL，没有访问代码仓库。",
+      "paper": "https://arxiv.org/abs/2603.09037v1",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "state-space-models",
-          "deep-unfolding"
+          "transformer"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决题名所示高光谱任务？",
-        "datasets": "Synthetic, Samson and Apex datasets; low-SNR evaluation.",
-        "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
-        "conclusions": "Abstract reports lower RMSE/SAD against six baselines; exact tables and implementation details remain unverified.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
+        "relationNote": "固定v1直接从高光谱观测估计端元/丰度；小波、Mamba与Transformer服务盲解混，未给显式优化展开，也未研究几何三维。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何在已知端元数的盲解混中保留低反射率/小丰度材料的信息，并以谱重建与物理丰度约束稳定估计？",
+        "datasets": "S1线性混合USGS的magnetite/mirabilite/montmorillonite/olivine，80×80像元、16个20×20区、459带400–2500nm，magnetite为弱反射材料。Samson95×95、156带401–889nm，Soil/Tree/Water；APEX110×110、285带413–2420nm，Roof/Tree/Road/Water。真实两集端元从代表纯像元手工选，参考丰度由FCLSU计算，是算法派生参考而非独立实测丰度。已知R在各比较方法固定；真实数据具体切分比例/空间隔离未交代。",
+        "experimentSetting": "§V：Adam；S1/Samson/APEX分别学习率4e-3/6e-3/9e-3、200/200/300训练迭代；RTX3090及i7-10700K 3.80GHz。各法称相同训练验证划分，比例、样本/块、重复次数和随机种子未给；注意力温度、损失权重、特征维数/头数缺具体值。S1无噪声图表及10/20/30/40/50dB曲线，噪声生成分布未明确。主表比较FCLSU+VCA、Hyperweak、CNNAEU、DeepTrans、EDAA、EndNet、MiSiCNet共7基线。训练RMSE/SAD作用于重建HSI，评测Eq16为丰度RMSE、Eq17为端元SAD，不混用同名指标。",
+        "conclusions": "TablesI–VI按S1/Samson/APEX顺序，WS-Net平均RMSE .0131/.0368/.0460、平均SAD .0221/.0378/.0740。S1 magnetite RMSE .0152略高于FCLSU .0151；magnetite SAD .0262高于Hyperweak .0015。Samson平均RMSE弱于EndNet .0148，Water RMSE .0152也弱于EndNet .0145，Water SAD .0436弱于Hyperweak .0282。APEX平均RMSE/SAD领先，Roof RMSE .0502弱于EndNet .0337；四材料SAD领先。TableVIII完整配置为所列变体均值最佳，但S1加Mamba到单T/WAT会恶化部分指标，不能说每次加分支都改善。Fig6支持作者报告的噪声鲁棒性趋势，没有完整噪声数表/误差区间，不猜读精确点值。",
+        "limitations": "仅固定v1全文，正式版及完整版本关系仍未确认。真实丰度参考由FCLSU生成、端元数已知，不能当未知R或独立实测真值的验证。Eq8系数α增加标准注意力权重，与其后α增加弱注意力贡献的措辞相反；Fig1加法、Fig2拼接Linear与正文门控/MLP顺序未完全一致。KL式12是观测/重建谱分布匹配，不是显式端元间分离或L1稀疏惩罚。SAD表II/IV图注说丰度向量，而Eq17/谱图为端元；TableVII完整配置S1 .0181/.0271、Samson .0736/.0378、APEX .0302/.0747（RMSE/SAD）不同于主表/TableVIII，协议未解释，末列与正文重叠。TableVI Hyperweak印刷均值不等于四材料行均值，不改原值；摘要/引言部分降低百分比与主表不一致。未报告参数/FLOPs/耗时，效率仅作者一般结论。重复统计、切分、τ/损失权重和网络细节留白，不通过代码补齐。",
         "dataLinks": [],
         "evidence": [
           {
@@ -44337,6 +44337,25 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2603.09037v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v1逐页全文、原框架/主表/消融及作者身份核验",
+            "supports": [
+              "17页、17式、10图/八表/48参考书目已读；Griffith首页和末页履历确认目标Jun Zhou。",
+              "直接HSI盲解混、VCA初始化/线性重建、空间小波、Mamba与Transformer正逆注意力；没有显式优化展开，纠正标签。",
+              "三数据集、训练/评测区别、主指标及逐类例外；真实FCLSU参考、门控/图文/KL/消融冲突分列。",
+              "首页官方代码URL只记录，不访问、下载或审查实现。"
+            ]
+          },
+          {
+            "url": "https://export.arxiv.org/api/query?id_list=2603.09037",
+            "checkedAt": "2026-10-12",
+            "level": "arXiv精确ID官方API当前版本与完整元数据",
+            "supports": [
+              "当前最新v1、五作者匹配、首次提交和更新均2026-03-10T00:12:33Z；完整阅读限定该固定稿。"
+            ]
           }
         ],
         "versions": [
@@ -44349,14 +44368,85 @@
             "arxivId": "2603.09037",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。",
+            "relation": "固定v1共17页全文、两原框架已读；当前API最新仍v1。正式出版尚未确认，Crossref题名前5不同题不能当作正式版或未发表证明。",
             "firstSubmittedAt": "2026-03-10T00:12:33Z",
-            "updatedAt": "2026-03-10T00:12:33Z"
+            "updatedAt": "2026-03-10T00:12:33Z",
+            "readingProgress": "full_text_read"
           }
         ],
-        "methodFamilyId": "zhou-scholar-arxiv-2603.09037"
+        "methodFamilyId": "zhou-scholar-arxiv-2603.09037",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原稿直接HSI端元/丰度盲解混，Mamba状态空间和Transformer/MHSA正逆注意力均明确；无显式优化迭代对应，移除deep-unfolding。内部latent learning不自动新增独立预训练任务或谱带选取标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "59d95a83ad22a120082354c84a7ca49149afe6a819d16a3c5b6ef8749fe63693",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2603.09037v1"
+          ]
+        }
       },
-      "citation": "@misc{zhou-scholar-arxiv-2603-09037,\n  title = {WS-Net: Weak-Signal Representation Learning and Gated Abundance Reconstruction for Hyperspectral Unmixing via State-Space and Weak Signal Attention Fusion},\n  author = {Long Zekun and Zia Ali and Fu Guanyiman and Rolland Vivien and Zhou Jun},\n  year = {2026},\n  eprint = {2603.09037},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2603.09037}\n}\n"
+      "citation": "@misc{zhou-scholar-arxiv-2603-09037,\n  title = {WS-Net: Weak-Signal Representation Learning and Gated Abundance Reconstruction for Hyperspectral Unmixing via State-Space and Weak Signal Attention Fusion},\n  author = {Long Zekun and Zia Ali and Fu Guanyiman and Rolland Vivien and Zhou Jun},\n  year = {2026},\n  eprint = {2603.09037},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2603.09037}\n}\n",
+      "code": "https://github.com/leolala/WS-Mamba.git",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2603.09037v1",
+          "figureLabel": "Figure 1",
+          "caption": "WS-Net固定v1原整体框架：四阶段Haar/Symlet-3与卷积融合、Mamba/Transformer双分支、softmax丰度与谱重建；完整原图注，图文/KL含义差异另列。",
+          "page": 4,
+          "verificationNote": "已目视核对固定v1原页、图中全部标签及完整英文图注；300dpi直接裁取，未重绘，不冒称正式期刊图版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              46,
+              50,
+              568,
+              253
+            ],
+            "pdfVersion": "arXiv:2603.09037v1（2026-03-10）",
+            "sourcePdfSha256": "7328d78578a79b98e4c189b7fbb12367e1f2824128a6b89f5371aabbca72359b"
+          },
+          "path": "figures/zhou-scholar-arxiv-2603-09037/v1-fig1.png",
+          "width": 2176,
+          "height": 847,
+          "sha256": "8a5d2b7328584cfc15326b45410764c87c7c050920ac4e7ed6ef7c18947b9347",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zekun Long, Ali Zia, Guanyiman Fu, Vivien Rolland, Jun Zhou · arXiv v1 2026"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2603.09037v1",
+          "figureLabel": "Figure 2",
+          "caption": "WS-Net固定v1原双分支框架：Weak Signal MambaVision与Transformer patch注意力、拼接和Linear；保留完整图注，与正文门控形式分列。",
+          "page": 6,
+          "verificationNote": "已目视核对固定v1原页、图中全部标签及完整英文图注；300dpi直接裁取，未重绘，不冒称正式期刊图版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              46,
+              50,
+              568,
+              322
+            ],
+            "pdfVersion": "arXiv:2603.09037v1（2026-03-10）",
+            "sourcePdfSha256": "7328d78578a79b98e4c189b7fbb12367e1f2824128a6b89f5371aabbca72359b"
+          },
+          "path": "figures/zhou-scholar-arxiv-2603-09037/v1-fig2.png",
+          "width": 2176,
+          "height": 1134,
+          "sha256": "396e79867ab1ffe8a3bcbef759ae096a400d1220e82a9a07effe2cdc3e55e577",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zekun Long, Ali Zia, Guanyiman Fu, Vivien Rolland, Jun Zhou · arXiv v1 2026"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-arxiv-2404-05258",
@@ -46701,7 +46791,8 @@
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340"
+        "zhou-scholar-arxiv-2609-37340",
+        "zhou-scholar-arxiv-2603-09037"
       ],
       "history": [
         {
@@ -46738,6 +46829,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "SSUMamba与SSRT接受稿全文分别确认状态空间与Transformer方法，保留独立方法族。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "WS-Net固定v1明确Transformer patch/MHSA正逆注意力分支，依全文补关联。"
         }
       ]
     },
@@ -46763,8 +46859,7 @@
         "zhou-80-hsi-2022",
         "zhou-scholar-deep-unfolded-iterative-shrinkage-threshol-2019",
         "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
-        "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
-        "zhou-scholar-arxiv-2603-09037"
+        "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022"
       ],
       "history": [
         {
@@ -46791,6 +46886,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "GMSC-Net/SMDS-Net实际正文确认学习字典与迭代展开；单图伪目标不误用RGB无配对映射标签。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "WS-Net固定v1为双分支解混网络，无显式优化迭代展开，移除该条误配。"
         }
       ]
     },

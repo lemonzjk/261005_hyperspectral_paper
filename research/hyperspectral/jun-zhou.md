@@ -4,7 +4,7 @@
 
 ## 当前目录
 
-已收录181条，全部为直接高光谱；88条摘要级、93条全文级。会议、期刊及预印本按实际版本分别记录，不等于181个独立方法。全文级只对应实际读过的版本；官方代码只记录链接，不审查代码或运行复现。
+已收录181条，全部为直接高光谱；87条摘要级、94条全文级。会议、期刊及预印本按实际版本分别记录，不等于181个独立方法。全文级只对应实际读过的版本；官方代码只记录链接，不审查代码或运行复现。
 
 其中80条符合普通总库的白名单顶会顶刊/arXiv来源要求，101条来源不在当前白名单，按作者专项例外保留。原目录中的7条多光谱关联（含1条会议摘要）已按用户要求删除；作者例外仅放宽发表来源，不放宽高光谱范围。清理决定见`catalog-cleanup.json`，原始记录可通过Git追溯。
 
@@ -117,6 +117,8 @@ MAC-Net作者公开稿14页已完整阅读，新增Fig1整体框架与Fig3NAB原
 
 ALN旧论文链接实际是Nikzad2021博士论文。第5章27页完整阅读、Fig5.1/5.3两原框架已补现有条目；出版清单只证明同题三作者2021-07-02投稿关联，2022期刊仍摘要级。正式机构原摘要确认地物分类与逐像元谱注意力，文件清单完整只有SWORD/XML，无期刊附件。章节三基准/注意力与晶格消融、效率按实际来源整理；均值OA91.68/80.29/88.65%与地图标注分列，不称参数/FLOPs/时间全面最低。四直接HSI作者引用已录，语音晶格只背景。杂草形状纹理论文两UNSW入口403，书目三作者续核，无新正文；两指定arXiv查询零项不证明没有其他公开版。
 
+WS-Net固定arXiv2603.09037v1已读17页，Fig1/2两原框架、三集协议与主表/消融补目录；首页/末页确认Griffith目标作者，API最新仍v1。网络是盲解混的空间小波—Mamba/Transformer双分支，移除deep-unfolding并补Transformer；KL实际观测/重建谱分布匹配，真实丰度为FCLSU派生参考。三集平均RMSE .0131/.0368/.0460、SAD .0221/.0378/.0740；Samson平均RMSE及若干弱端元非最佳，不照抄全面优势。门控/图文、SAD措辞、主表与消融数值差异按稿保留。48条书目所列作者未见Jun Zhou；题名Crossref前5无本稿正式对应，一条肉污染作者基准已录且不是版本，正式关系仍待。代码只记录首页URL。
+
 ## 下一步
 
 1. 优先查漏并完成来源交叉核对：其余姓名变体及arXiv无谱词/其他拼写查询与reflectance宽词形机制边界、DBLP/Scholar/arXiv差集、两条来源外直接HSI的合格版本及共同作者CV候选；机构个人目录已完成本次387条快照，不反复拉取同一快照；区分已发表、预印本、在审线索，按书目与明确证据去重。
@@ -126,6 +128,7 @@ ALN旧论文链接实际是Nikzad2021博士论文。第5章27页完整阅读、F
 
 ## 证据与归档
 
+- [WS-Net固定v1全文与正式版本查漏](sources/jun-zhou-wsnet-fixed-reading-2026-10-12.json)、[原始访问](sources/jun-zhou-wsnet-fixed-reading-2026-10-12-access.json)：17页/两原图，标签与性能范围纠正，代码仅URL。
 - [ALN关联章节27页与杂草材料访问](sources/jun-zhou-aln-related-chapter-weed-access-2026-10-12.json)、[原始访问](sources/jun-zhou-aln-related-chapter-weed-access-2026-10-12-access.json)：两章节原图，期刊全文状态不变。
 - [MAC-Net14页作者稿与TV摘要范围续核](sources/jun-zhou-mac-author-reading-tv-scope-2026-10-12.json)、[原始访问](sources/jun-zhou-mac-author-reading-tv-scope-2026-10-12-access.json)：公开稿全文/两原图，TV仍摘要；代码仅URL。
 - [简称989元数据与一页合成HSI数据集](sources/jun-zhou-initial-query-synthetic-data-reading-2026-10-12.json)、[简称逐项索引](sources/jun-zhou-initial-query-synthetic-data-reading-2026-10-12-initial-index.json)：六分类摘要范围暂排，数据集固定v1全1页/一原数据示例图；不是989摘要全审。

@@ -1,0 +1,147 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "Existing Jun Zhou WS-Net fixed arXiv v1 full-text reading and formal-version lookup",
+  "previousGoalTurn": "progress: 735bf0c archived ALN related chapter and weed access while keeping journal reading boundaries",
+  "accessFile": "jun-zhou-wsnet-fixed-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 1,
+  "newFullTextReadingCount": 1,
+  "pdfPagesActuallyRead": 17,
+  "figuresAdded": 2,
+  "material": {
+    "paperId": "zhou-scholar-arxiv-2603-09037",
+    "pdfFile": "jun-zhou-wsnet-fixed-reading-2026-10-12-wsnet-v1.pdf",
+    "sha256": "7328d78578a79b98e4c189b7fbb12367e1f2824128a6b89f5371aabbca72359b",
+    "downloaded": true,
+    "pageCount": 17,
+    "actuallyReadPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "textFile": "jun-zhou-wsnet-fixed-reading-2026-10-12-pages.json",
+    "columnTextFile": "jun-zhou-wsnet-fixed-reading-2026-10-12-column-pages.json",
+    "referencesFile": "jun-zhou-wsnet-fixed-reading-2026-10-12-references.json",
+    "montageFiles": [
+      "jun-zhou-wsnet-fixed-reading-2026-10-12-montage-1.png",
+      "jun-zhou-wsnet-fixed-reading-2026-10-12-montage-2.png",
+      "jun-zhou-wsnet-fixed-reading-2026-10-12-montage-3.png"
+    ],
+    "detailPages": [
+      4,
+      6,
+      11,
+      15,
+      16
+    ],
+    "version": "arXiv:2603.09037v1",
+    "equationCount": 17,
+    "figureCount": 10,
+    "tableCount": 8,
+    "referenceCount": 48,
+    "readingBoundary": "17页逐页正文与全部原图原表/书目已读；TableVII末列与正文重叠，跨表协议缺口留白，不借代码补。"
+  },
+  "identity": {
+    "authors": "Zekun Long, Ali Zia, Guanyiman Fu, Vivien Rolland, Jun Zhou",
+    "evidence": "首页Jun Zhou Griffith单位与末页履历；API五作者/固定ID互证。",
+    "latestApiVersion": "v1",
+    "firstSubmittedAt": "2026-03-10T00:12:33Z",
+    "updatedAt": "2026-03-10T00:12:33Z",
+    "formalVersionConfirmed": false
+  },
+  "classification": {
+    "paperId": "zhou-scholar-arxiv-2603-09037",
+    "removed": [
+      "deep-unfolding"
+    ],
+    "added": [
+      "transformer"
+    ],
+    "confirmed": [
+      "spectral-unmixing",
+      "state-space-models",
+      "transformer"
+    ],
+    "reason": "原稿直接HSI端元/丰度盲解混，Mamba状态空间和Transformer/MHSA正逆注意力均明确；无显式优化迭代对应，移除deep-unfolding。内部latent learning不自动新增独立预训练任务或谱带选取标签。"
+  },
+  "officialCodeUrl": "https://github.com/leolala/WS-Mamba.git",
+  "codeBoundary": "首页所列官方URL仅记录，本轮无任何第三方代码访问、下载、依赖/权重审查或复现。",
+  "protocolBoundaries": [
+    "R已知固定；真实参考端元手工纯像元选，参考丰度FCLSU派生，非独立实测真值。",
+    "损失RMSE/SAD为观测HSI重建；评测同名指标为丰度误差/端元谱角，不据表注丰度措辞混用。",
+    "数据集独立训练参数按稿，验证比例/取样/重复统计/τ与损失权重及网络配置未充分给出；无量化计算效率表。"
+  ],
+  "tableBoundaries": [
+    "主表三集平均RMSE .0131/.0368/.0460，SAD .0221/.0378/.0740；Samson RMSE和部分弱端元指标有对手更优。",
+    "TableVII完整配置与主表/TableVIII不一致，按独立表记录不合并；末列有原排版重叠。",
+    "TableVI Hyperweak均值.6155与四材料.0964/.5448/.1700/.0964不吻合，原值保留；未替作者修正。",
+    "Eq8 α增加标准分支而正文称增加弱分支；Fig1加法、Fig2拼接及正文门控/MLP顺序分列。",
+    "KL式12实际像元谱分布重建匹配，不据“分离/稀疏”名称推断端元间KL或显式L1。",
+    "引言部分SAD百分比不由主表支持；摘要6基线与主表7不同；优势不外推所有材料/指标。"
+  ],
+  "referencesBoundary": "48条已读书目显式作者未见J. Zhou/Jun Zhou，含et al全作者未逐项核；ref41 Xichuan Zhou明确不同名字，ref39正文HyMix-SSM与参考Zamba题名不同，不能变造引用或自动收录。",
+  "formalQuery": {
+    "queryUrl": "https://api.crossref.org/works?query.title=WS-Net%3A+Weak-Signal+Representation+Learning+and+Gated+Abundance+Reconstruction+for+Hyperspectral+Unmixing&rows=5",
+    "returnedCount": 5,
+    "reviewedHits": [
+      {
+        "doi": "10.1080/01431161.2020.1750733",
+        "title": "Sparse abundance estimation with low-rank reconstruction for hyperspectral unmixing",
+        "authors": "Yingying Xu",
+        "existingPaperIds": [],
+        "decision": "different_title_not_wsnet_formal_version",
+        "boundary": "仅本查询前5返回书目，不认定WS-Net正式版或据主题/共作者强行归并；其他作者论文不在本批新增。"
+      },
+      {
+        "doi": "10.1109/tgrs.2022.3192863",
+        "title": "Toward Weak Signal Analysis in Hyperspectral Data: An Efficient Unmixing Perspective",
+        "authors": "Xiangfei Shen, Haijun Liu, Jian Qin, Fangyuan Ge, Xichuan Zhou",
+        "existingPaperIds": [],
+        "decision": "different_title_not_wsnet_formal_version",
+        "boundary": "仅本查询前5返回书目，不认定WS-Net正式版或据主题/共作者强行归并；其他作者论文不在本批新增。"
+      },
+      {
+        "doi": "10.1109/dicta63115.2024.00088",
+        "title": "A New Hyperspectral Unmixing Benchmark for Weak Signal Meat Contamination Detection",
+        "authors": "Zekun Long, Ali Zia, Jordi Nelis, Vivien Rolland, Jun Zhou",
+        "existingPaperIds": [
+          "zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024"
+        ],
+        "decision": "different_title_not_wsnet_formal_version",
+        "boundary": "仅本查询前5返回书目，不认定WS-Net正式版或据主题/共作者强行归并；其他作者论文不在本批新增。"
+      },
+      {
+        "doi": "10.1080/01431161.2023.2295836",
+        "title": "Structured low-rank representation learning for hyperspectral sparse unmixing",
+        "authors": "Jian Zhang, Hongsong Dong, Wenlian Gao, Li Zhang, Zhiwen Xue, Xiangfei Shen",
+        "existingPaperIds": [],
+        "decision": "different_title_not_wsnet_formal_version",
+        "boundary": "仅本查询前5返回书目，不认定WS-Net正式版或据主题/共作者强行归并；其他作者论文不在本批新增。"
+      },
+      {
+        "doi": "10.1109/iccsse67426.2025.11552533",
+        "title": "SAHT-Net: A Sparse Attention Hyperspectral Transformer Network for Martian Mineral Abundance Unmixing",
+        "authors": "Bo Wan, Sicong Liu, Wenxuan Jia",
+        "existingPaperIds": [],
+        "decision": "different_title_not_wsnet_formal_version",
+        "boundary": "仅本查询前5返回书目，不认定WS-Net正式版或据主题/共作者强行归并；其他作者论文不在本批新增。"
+      }
+    ],
+    "boundary": "指定题名前5，无WS-Net精确对应不等于无正式版；已录2024作者肉污染基准不因共作者/主题相同合并。"
+  },
+  "remaining": "周峻181条不变，94全文/87摘要；身份/范围/版本及全领域覆盖仍未完成。"
+}

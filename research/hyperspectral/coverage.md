@@ -211,6 +211,7 @@
 | Jun Zhou · TV-NTF public-source followup | 2019 | 指定arXiv题名start0/max20有效零返回；作者活动PDF仅旧IEEE入口，正式四作者书目/旧完整机构摘要复核 | 未单列 / 1 / 1 | 仍摘要级，当前方法展示只用原摘要，代码仅URL | 本文正文/原图仍待；零查询不证明无公开版，不重复追受限入口或核代码 |
 | Jun Zhou · ALN related author chapter | 2021–2022 | 博士论文169页仅第5章27页全读，身份/出版清单三页；正式机构文件清单完整仅SWORD/XML；指定arXiv题名零项 | 未单列 / 1 / 1 | 关联章节两原图与方法/实验补齐，期刊仍摘要级 | 四作者HSI引文已录；不把章节当2022期刊版本，其他章节/正式版与作者目录仍待 |
 | Jun Zhou · grass weed public-material access | 2019 | Crossref三作者及7208–7211页；UNSW原下载/API content均403；指定arXiv题名零项 | 未单列 / 1书目 / 0正文 | 访问限制归档，保持摘要级 | 不由两403或指定查询零项推断全部公开版不存在；正文、原图及实验仍待 |
+| Jun Zhou · WS-Net fixed preprint reading | 2026 | 固定2603.09037v1实际17/17页全文；API最新v1；Crossref题名前5不同题，一条肉污染作者基准已录，48条书目所列作者未见Jun Zhou | 未单列 / 1正文+5书目 / 1正文+5书目 | 两原框架、三集协议/主表/消融，移除deep-unfolding并补Transformer | 正式版本未确认；真实FCLSU派生参考、门控/图文/KL/跨表差异保留，不核代码 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -907,3 +908,6 @@
 
 - 2026-10-12 / jun-zhou-aln-related-chapter-weed-access-2026-10-12：新增 0，更新 2，去重 4，排除 0，待处理 0。
   阅读边界：2021关联章节27页/两原图，不升级2022期刊全文；杂草书目/访问续核，无新正文。周峻93全文/88摘要不变。
+
+- 2026-10-12 / jun-zhou-wsnet-fixed-reading-2026-10-12：新增 0，更新 1，去重 1，排除 0，待处理 0。
+  阅读边界：固定v1全文17页/两原图；Crossref已录2024基准不是正式版，48条书目所列作者未见Jun Zhou。代码仅URL，周峻94全文/87摘要。
