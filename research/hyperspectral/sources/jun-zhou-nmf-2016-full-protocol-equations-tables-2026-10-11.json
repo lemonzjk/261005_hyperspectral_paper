@@ -1,0 +1,2990 @@
+{
+  "checkedAt": "2026-10-11",
+  "derivedNotOriginalResponse": true,
+  "noImplementationOrModelRun": true,
+  "sharedBoundary": "三者均线性NMF联合端元/丰度估计。TGRS使用部分端元谱软先验；两ICIP无需已知端元。图/矩阵约束不等于GNN、标签监督分类或三维几何。平方根稀疏、乘法更新及非凸目标不能保证全局最优、唯一分解或固定非零数；有限常数行增广不是严格丰度和等式。",
+  "prior": {
+    "paperId": "partially-known-endmember-nmf-tgrs-2016",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "dimensions": "Y H×N、M H×K、R K×N；B H×K为q已知谱列和零列，S K×K为diag(Iq,0)。",
+    "objective": "Eq8: 1/2||Y−MR||F² + lambda/2||B−MS||F²；所有M列可更新，不硬固定先验端元。Eq27再加gamma sum sqrt(R)，Eq33再加mu/2 tr(R L Rᵀ)。",
+    "equationAudit": [
+      {
+        "equations": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "meaning": "像元/矩阵线性混合与普通NMF重构、两乘法更新；Eq2文字声明E非负而实验零均值Gaussian不保证非负，分源保留。"
+      },
+      {
+        "equations": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "meaning": "B/S部分先验选择，目标、梯度与Eq13 M更新。",
+        "update": "M *= (Y Rᵀ + lambda B Sᵀ)/(M R Rᵀ + lambda M S Sᵀ)；R按Eq5。",
+        "boundary": "基本目标已核与维度相容；这是软谱差，Known与Unknown都估计，不和UPK固定已知列混同。"
+      },
+      {
+        "equations": [
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "meaning": "辅助函数论证目标非增。",
+        "printedIssue": "Eq17–18打印RᵀR作用于K维m，而R K×N使RᵀR N×N；按既定维度Hessian应为R Rᵀ。K′被称导数但给diag减Hessian。",
+        "conditionalAlgebra": "原印与既定维度审查分开；作者下一页明确变量未必收敛到stationary point且留future work，目标非增不是变量/全局最优收敛证明。"
+      },
+      {
+        "equations": [
+          19,
+          20,
+          21,
+          22
+        ],
+        "meaning": "SAD、丰度RMSE与常数行增广。",
+        "settings": "delta=10；Y下行1_N、M下行1_K维度正确；正文说明只在R更新使用增广。",
+        "boundary": "有限delta是和为一软惩罚；VCA初始化M、R=M#Y后max(0,R)，#被正文称inverse但矩形M更符合伪逆，此为推断；known列贪心谱距离匹配而非最优全排列保证。"
+      },
+      {
+        "equations": [
+          23
+        ],
+        "printed": "|obj(M^i,R^i)| <= epsilon |obj(M^(i−1),R^(i−1))|, epsilon=1e−4",
+        "printedIssue": "左边印当前目标绝对值，没有目标差；不静默改成相对变化停止。",
+        "otherStop": "最多3000迭代；任一条件达到即止。Algorithm1逐次增广。"
+      },
+      {
+        "equations": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "meaning": "L1/2丰度稀疏及PPK扩展/更新。",
+        "printedIssue": "Eq28分子lambda Bᵀ为K×H，与Y Rᵀ H×K不合；Eq13正确写B Sᵀ。本构造B Sᵀ=B但不是Bᵀ；Eq33延用Eq28，未当作者代码修正版。",
+        "conditionalAlgebra": "原文称任意非负可逆C均有MR=(MC)(C⁻¹R)，需另保证C⁻¹R非负才能仍为可行NMF；非负C本身不足。"
+      },
+      {
+        "equations": [
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "meaning": "像元kNN heat图/degree/稀疏manifold目标与丰度图乘法更新。",
+        "boundary": "kNN对称化不明确，而R L Rᵀ常用梯度依赖L对称；不借其他稿补实现。"
+      },
+      {
+        "equations": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "meaning": "UPK已知列固定和SUNSPI稀疏回归对照的目标/分块与观测噪声SNR，区别部分先验软估计和固定过完备字典系数。"
+      }
+    ],
+    "optimization": {
+      "lambda": 50,
+      "lambdaSelection": "同合成实验扫描，作者建议20–100；未给独立验证集",
+      "mu": 0.1,
+      "gamma": "引用估计规则，无具体数值",
+      "delta": 10,
+      "maxIterations": 3000,
+      "epsilon": 0.0001,
+      "initialization": "VCA +非负截断丰度+贪心先验匹配",
+      "seedHardwareRuntime": null,
+      "zeroValueProtection": null
+    },
+    "synthetic": {
+      "source": "USGS",
+      "endmembers": [
+        "Carnallite",
+        "Ammonio-jarosite",
+        "Almandine",
+        "Brucite",
+        "Axinite",
+        "Actinolite"
+      ],
+      "pixels": [
+        64,
+        64
+      ],
+      "regions": [
+        8,
+        8
+      ],
+      "lowPass": [
+        9,
+        9
+      ],
+      "threshold": 0.7,
+      "noise": "zero-mean Gaussian",
+      "knownEndmemberSweep": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "enumerateAllKnownCombinations": true,
+      "runsPerCombination": 10,
+      "combinationsPerKnownCount": [
+        6,
+        15,
+        20,
+        15,
+        6
+      ],
+      "conditionalTotalRunsArithmetic": 620,
+      "arithmeticIsNotRunLog": true,
+      "noiseSweep": [
+        15,
+        25,
+        35,
+        45,
+        "infinity"
+      ],
+      "knownForNoiseSweep": 4
+    },
+    "mismatchExperiment": {
+      "endmembers": 4,
+      "SNRdB": 25,
+      "bodyGenerates": "AluniteGDS84",
+      "bodyPrior": "AluniteGDS83",
+      "Fig4CaptionGenerates": "AluniteGDS83",
+      "Fig4CaptionPrior": "AluniteGDS84",
+      "roleConflictUnresolved": true,
+      "TableV": "UPK SAD .140±.049 / RMSE .168±.023；NMF-PPK .088±.010 / .092±.014"
+    },
+    "dictionaryExperiment": {
+      "completeSignatures": 498,
+      "incompleteSignatures": 496,
+      "removed": "two Carnallite signatures",
+      "knownOfSix": 5,
+      "SNRdB": [
+        15,
+        20,
+        25
+      ],
+      "baselines": [
+        "CLSUNSAL",
+        "SUNSPI"
+      ],
+      "baselineWeightSweep": ".1–1 step .1, chooses best",
+      "tolerance": 0.0001,
+      "mu": 0.1,
+      "printedDisagreement": "Fig5曲线/正文写NMF-PPK，图注却写L1/2-PPK；正文在六矿物合成实验中插入tree/road手工影像GT说明，实际使用分配未解释。",
+      "boundary": "完整字典SUNSPI好于NMF且高SNR CLSUNSAL好于NMF；字典缺少端元才反转，不称普遍优于稀疏回归。"
+    },
+    "urban": {
+      "instrument": "HYDICE",
+      "pixels": [
+        307,
+        307
+      ],
+      "originalBands": 210,
+      "removedBandIDsPrinted": [
+        1,
+        2,
+        3,
+        4,
+        76,
+        87,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210
+      ],
+      "retainedBands": 162,
+      "rangeNm": [
+        400,
+        2500
+      ],
+      "resolutionNm": 10,
+      "endmembers": [
+        "road",
+        "grass",
+        "asphalt",
+        "tree"
+      ],
+      "knownCounts": [
+        1,
+        2,
+        3
+      ],
+      "enumerationAndRuns": "每q穷举4/6/4组合，各10次",
+      "Fig6Known": [
+        "road",
+        "grass"
+      ]
+    },
+    "jasper": {
+      "instrument": "AVIRIS",
+      "originalPixels": [
+        512,
+        614
+      ],
+      "cropPixels": [
+        100,
+        100
+      ],
+      "cropStartPrinted": [
+        105,
+        269
+      ],
+      "coordinateIndexBase": null,
+      "originalBands": 224,
+      "removedBandIDsPrinted": [
+        1,
+        2,
+        3,
+        108,
+        109,
+        110,
+        111,
+        112,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        220,
+        221,
+        222,
+        223,
+        224
+      ],
+      "retainedBands": 198,
+      "rangeNm": [
+        380,
+        2500
+      ],
+      "resolutionNm": 10,
+      "endmembers": [
+        "road",
+        "soil",
+        "water",
+        "tree"
+      ],
+      "enumerationAndRuns": "q1–3全组合，各10次",
+      "Fig7Known": [
+        "road",
+        "soil"
+      ]
+    },
+    "cuprite": {
+      "instrument": "AVIRIS",
+      "pixels": [
+        250,
+        190
+      ],
+      "originalBands": 224,
+      "removedBandIDsPrinted": [
+        1,
+        2,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        221,
+        222,
+        223,
+        224
+      ],
+      "retainedBands": 188,
+      "endmembers": [
+        "Alunite",
+        "Andradite",
+        "Buddingtonite",
+        "Dumortierite",
+        "Kaolinite",
+        "Montmorillonite",
+        "Muscovite",
+        "Nontronite",
+        "Pyrope",
+        "Sphene"
+      ],
+      "knownCounts": [
+        1,
+        2,
+        3
+      ],
+      "knownSelection": "random, not all combinations",
+      "repetitionsExplicitForCuprite": null
+    },
+    "realReferenceBoundary": "原文三实测均无现成丰度/端元GT；Urban/Jasper每材料从同一影像选10谱求均值作参考，Cuprite用USGS。真实丰度只可视化，无RMSE数值表。同影像参考/先验限制独立泛化，不在未知采样细节下直接定性泄漏。",
+    "tables": [
+      {
+        "label": "TableI",
+        "pdfPage": 20,
+        "columnsPrinted": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "VCA",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.176,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.176,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.176,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.176,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.176,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.062,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.061,
+                "standardDeviation": 0.01
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.057,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.049,
+                "standardDeviation": 0.007
+              },
+              {
+                "mean": 0.043,
+                "standardDeviation": 0.007
+              },
+              {
+                "mean": 0.037,
+                "standardDeviation": 0.008
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.082,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.082,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.082,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.082,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.082,
+                "standardDeviation": 0.009
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.077,
+                "standardDeviation": 0.007
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.07,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.01
+              },
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.011
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.071,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.062,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.054,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.047,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.041,
+                "standardDeviation": 0.005
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.081,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.081,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.081,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.081,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.081,
+                "standardDeviation": 0.009
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.07,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.066,
+                "standardDeviation": 0.009
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.07,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.061,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.053,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.046,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.04,
+                "standardDeviation": 0.003
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.077,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.072,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.09,
+                "standardDeviation": 0.02
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF(All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.064,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.049,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.036,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.025,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.015,
+                "standardDeviation": 0.006
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      },
+      {
+        "label": "TableII",
+        "pdfPage": 21,
+        "columnsPrinted": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "VCA",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.106,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.106,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.106,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.106,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.106,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.009
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.064,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.063,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.062,
+                "standardDeviation": 0.009
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.078,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.078,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.078,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.078,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.078,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.075,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.072,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.013
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.013
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.013
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.013
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.013
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.075,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.072,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.071,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.072,
+                "standardDeviation": 0.011
+              },
+              {
+                "mean": 0.069,
+                "standardDeviation": 0.011
+              },
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.011
+              },
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.011
+              },
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.011
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      },
+      {
+        "label": "TableIII",
+        "pdfPage": 22,
+        "columnsPrinted": [
+          15,
+          25,
+          35,
+          45,
+          "infinity"
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "VCA",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.189,
+                "standardDeviation": 0.025
+              },
+              {
+                "mean": 0.176,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.15,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.168,
+                "standardDeviation": 0.013
+              },
+              {
+                "mean": 0.167,
+                "standardDeviation": 0.021
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.137,
+                "standardDeviation": 0.036
+              },
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.007
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.015
+              },
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.006
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.105,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.062,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.07,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.05,
+                "standardDeviation": 0.017
+              },
+              {
+                "mean": 0.047,
+                "standardDeviation": 0.005
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.055,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.043,
+                "standardDeviation": 0.007
+              },
+              {
+                "mean": 0.047,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.032,
+                "standardDeviation": 0.014
+              },
+              {
+                "mean": 0.021,
+                "standardDeviation": 0.002
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.135,
+                "standardDeviation": 0.034
+              },
+              {
+                "mean": 0.082,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.023
+              },
+              {
+                "mean": 0.08,
+                "standardDeviation": 0.01
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.102,
+                "standardDeviation": 0.007
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.01
+              },
+              {
+                "mean": 0.069,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.063,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.057,
+                "standardDeviation": 0.007
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.057,
+                "standardDeviation": 0.002
+              },
+              {
+                "mean": 0.047,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.049,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.04,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.029,
+                "standardDeviation": 0.003
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.134,
+                "standardDeviation": 0.034
+              },
+              {
+                "mean": 0.081,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.023
+              },
+              {
+                "mean": 0.08,
+                "standardDeviation": 0.009
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.101,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.067,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.069,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.063,
+                "standardDeviation": 0.011
+              },
+              {
+                "mean": 0.057,
+                "standardDeviation": 0.008
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.057,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.046,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.049,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.041,
+                "standardDeviation": 0.01
+              },
+              {
+                "mean": 0.029,
+                "standardDeviation": 0.004
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.119,
+                "standardDeviation": 0.015
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.094,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.086,
+                "standardDeviation": 0.031
+              },
+              {
+                "mean": 0.063,
+                "standardDeviation": 0.024
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.039,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.025,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.032,
+                "standardDeviation": 0.006
+              },
+              {
+                "mean": 0.029,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.02,
+                "standardDeviation": 0.008
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      },
+      {
+        "label": "TableIV",
+        "pdfPage": 23,
+        "columnsPrinted": [
+          15,
+          25,
+          35,
+          45,
+          "infinity"
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "VCA",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.132,
+                "standardDeviation": 0.02
+              },
+              {
+                "mean": 0.106,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.115,
+                "standardDeviation": 0.007
+              },
+              {
+                "mean": 0.123,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.12,
+                "standardDeviation": 0.014
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.106,
+                "standardDeviation": 0.01
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.068,
+                "standardDeviation": 0.017
+              },
+              {
+                "mean": 0.063,
+                "standardDeviation": 0.023
+              },
+              {
+                "mean": 0.064,
+                "standardDeviation": 0.01
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.098,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.063,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.053,
+                "standardDeviation": 0.034
+              },
+              {
+                "mean": 0.06,
+                "standardDeviation": 0.008
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.109,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.078,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.019
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.024
+              },
+              {
+                "mean": 0.07,
+                "standardDeviation": 0.011
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.1,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.073,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.075,
+                "standardDeviation": 0.02
+              },
+              {
+                "mean": 0.064,
+                "standardDeviation": 0.023
+              },
+              {
+                "mean": 0.064,
+                "standardDeviation": 0.01
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.108,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.013
+              },
+              {
+                "mean": 0.079,
+                "standardDeviation": 0.019
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.024
+              },
+              {
+                "mean": 0.071,
+                "standardDeviation": 0.011
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.099,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.072,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.076,
+                "standardDeviation": 0.02
+              },
+              {
+                "mean": 0.064,
+                "standardDeviation": 0.023
+              },
+              {
+                "mean": 0.064,
+                "standardDeviation": 0.01
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.102,
+                "standardDeviation": 0.01
+              },
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.011
+              },
+              {
+                "mean": 0.066,
+                "standardDeviation": 0.016
+              },
+              {
+                "mean": 0.089,
+                "standardDeviation": 0.04
+              },
+              {
+                "mean": 0.063,
+                "standardDeviation": 0.014
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      },
+      {
+        "label": "TableV",
+        "pdfPage": 23,
+        "columnsPrinted": [
+          "UPK-NMF",
+          "NMF-PPK"
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "SAD",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.14,
+                "standardDeviation": 0.049
+              },
+              {
+                "mean": 0.088,
+                "standardDeviation": 0.01
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "RMSE",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.168,
+                "standardDeviation": 0.023
+              },
+              {
+                "mean": 0.092,
+                "standardDeviation": 0.014
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      },
+      {
+        "label": "TableVI",
+        "pdfPage": 27,
+        "columnsPrinted": [
+          1,
+          2,
+          3
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.202,
+                "standardDeviation": 0.022
+              },
+              {
+                "mean": 0.202,
+                "standardDeviation": 0.022
+              },
+              {
+                "mean": 0.202,
+                "standardDeviation": 0.022
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.191,
+                "standardDeviation": 0.019
+              },
+              {
+                "mean": 0.184,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.181,
+                "standardDeviation": 0.019
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.188,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.181,
+                "standardDeviation": 0.017
+              },
+              {
+                "mean": 0.179,
+                "standardDeviation": 0.018
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.166,
+                "standardDeviation": 0.014
+              },
+              {
+                "mean": 0.166,
+                "standardDeviation": 0.014
+              },
+              {
+                "mean": 0.166,
+                "standardDeviation": 0.014
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.156,
+                "standardDeviation": 0.02
+              },
+              {
+                "mean": 0.151,
+                "standardDeviation": 0.024
+              },
+              {
+                "mean": 0.148,
+                "standardDeviation": 0.026
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.154,
+                "standardDeviation": 0.019
+              },
+              {
+                "mean": 0.147,
+                "standardDeviation": 0.022
+              },
+              {
+                "mean": 0.141,
+                "standardDeviation": 0.022
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.163,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.163,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.163,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.156,
+                "standardDeviation": 0.019
+              },
+              {
+                "mean": 0.15,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.147,
+                "standardDeviation": 0.019
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.155,
+                "standardDeviation": 0.018
+              },
+              {
+                "mean": 0.149,
+                "standardDeviation": 0.017
+              },
+              {
+                "mean": 0.147,
+                "standardDeviation": 0.018
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.225,
+                "standardDeviation": 0.031
+              },
+              {
+                "mean": 0.255,
+                "standardDeviation": 0.026
+              },
+              {
+                "mean": 0.295,
+                "standardDeviation": 0.035
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.169,
+                "standardDeviation": 0.025
+              },
+              {
+                "mean": 0.128,
+                "standardDeviation": 0.015
+              },
+              {
+                "mean": 0.074,
+                "standardDeviation": 0.01
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      },
+      {
+        "label": "TableVII",
+        "pdfPage": 29,
+        "columnsPrinted": [
+          1,
+          2,
+          3
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.108,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.108,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.108,
+                "standardDeviation": 0.003
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.101,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.095,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.092,
+                "standardDeviation": 0.004
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.098,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.09,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.081,
+                "standardDeviation": 0.004
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.066,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.066,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.066,
+                "standardDeviation": 0.004
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.062,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.058,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.054,
+                "standardDeviation": 0.004
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.06,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.053,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.049,
+                "standardDeviation": 0.003
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.003
+              },
+              {
+                "mean": 0.065,
+                "standardDeviation": 0.003
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.061,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.057,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.053,
+                "standardDeviation": 0.004
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.059,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.052,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.048,
+                "standardDeviation": 0.004
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.103,
+                "standardDeviation": 0.005
+              },
+              {
+                "mean": 0.102,
+                "standardDeviation": 0.008
+              },
+              {
+                "mean": 0.107,
+                "standardDeviation": 0.015
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.098,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.051,
+                "standardDeviation": 0.004
+              },
+              {
+                "mean": 0.027,
+                "standardDeviation": 0.004
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      },
+      {
+        "label": "TableVIII",
+        "pdfPage": 30,
+        "columnsPrinted": [
+          1,
+          2,
+          3
+        ],
+        "rows": [
+          {
+            "rowLabelPrinted": "NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.198,
+                "standardDeviation": 0.021
+              },
+              {
+                "mean": 0.198,
+                "standardDeviation": 0.021
+              },
+              {
+                "mean": 0.198,
+                "standardDeviation": 0.021
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.193,
+                "standardDeviation": 0.023
+              },
+              {
+                "mean": 0.189,
+                "standardDeviation": 0.021
+              },
+              {
+                "mean": 0.188,
+                "standardDeviation": 0.02
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "NMF-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.19,
+                "standardDeviation": 0.02
+              },
+              {
+                "mean": 0.181,
+                "standardDeviation": 0.021
+              },
+              {
+                "mean": 0.178,
+                "standardDeviation": 0.02
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -NMF",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.165,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.165,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.165,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.161,
+                "standardDeviation": 0.009
+              },
+              {
+                "mean": 0.16,
+                "standardDeviation": 0.012
+              },
+              {
+                "mean": 0.159,
+                "standardDeviation": 0.008
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "L1/2 -PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.158,
+                "standardDeviation": 0.01
+              },
+              {
+                "mean": 0.157,
+                "standardDeviation": 0.011
+              },
+              {
+                "mean": 0.153,
+                "standardDeviation": 0.009
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.163,
+                "standardDeviation": 0.014
+              },
+              {
+                "mean": 0.163,
+                "standardDeviation": 0.014
+              },
+              {
+                "mean": 0.163,
+                "standardDeviation": 0.014
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.159,
+                "standardDeviation": 0.015
+              },
+              {
+                "mean": 0.158,
+                "standardDeviation": 0.016
+              },
+              {
+                "mean": 0.158,
+                "standardDeviation": 0.013
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "MRS-PPK (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.155,
+                "standardDeviation": 0.014
+              },
+              {
+                "mean": 0.153,
+                "standardDeviation": 0.015
+              },
+              {
+                "mean": 0.151,
+                "standardDeviation": 0.012
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (Unknown)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.211,
+                "standardDeviation": 0.024
+              },
+              {
+                "mean": 0.216,
+                "standardDeviation": 0.017
+              },
+              {
+                "mean": 0.22,
+                "standardDeviation": 0.025
+              }
+            ]
+          },
+          {
+            "rowLabelPrinted": "UPK-NMF (All)",
+            "meanAndStandardDeviation": [
+              {
+                "mean": 0.19,
+                "standardDeviation": 0.022
+              },
+              {
+                "mean": 0.173,
+                "standardDeviation": 0.016
+              },
+              {
+                "mean": 0.154,
+                "standardDeviation": 0.023
+              }
+            ]
+          }
+        ],
+        "allNumericCellsRead": true,
+        "boundary": "原印mean±std逐格抄录，不运行模型；列是已知端元数或SNR，Unknown与All是不同端元评价范围。"
+      }
+    ],
+    "resultBoundary": "q5 NMF-PPK Unknown SAD .061±.010胜UPK .090±.020，但All .037不及UPK .015；不同端元评价范围不能混同。q5 NMF-PPK RMSE .062胜UPK .067和NMF .068；L1/2/MRS扩展并非每指标最好。",
+    "figures": "Fig1六矿物谱、Fig2合成输入/GT、Fig3参数曲线、Fig4失配光谱、Fig5 RMSE曲线、Fig6/7真实丰度；全为输入/结果，没有独立方法框架图，Algorithm1为伪码。"
+  },
+  "sparse": {
+    "paperId": "endmember-sparse-graph-nmf-icip-2016",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "mechanism": "ESGNMF联合A L×K/S K×N/W K×K，学习A≈AW的非负稀疏自表示端元关系；L1/2在W而非S。像元光谱二值对称OR kNN丰度图E N×N固定，与可学习W分开。",
+    "objective": "Eq8: 1/2||X−AS||F² + lambda1/2||A−AW||F² + lambda2 sum sqrt(W) + lambda3/2 tr(S L Sᵀ)",
+    "equationAudit": [
+      {
+        "equations": [
+          1,
+          2,
+          3
+        ],
+        "meaning": "基础NMF目标与A/S乘法更新"
+      },
+      {
+        "equations": [
+          4
+        ],
+        "printedIssue": "端元距离M K×K而A L×K，原罚tr(Ξ(A⊙M))维度不合，且无W变量；可能A应W但未按猜测修原文。"
+      },
+      {
+        "equations": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "meaning": "稀疏自表示与丰度流形扩展",
+        "boundary": "Eq5 W对角零，联合Eq6/8明确放松且不列对角零；不能说训练全程排自环。Eq6端元重构lambda1，Eq8改lambda1/2，与最终Eq9–14匹配；不静默视所有式同系数。E对称OR kNN与空间位置图不同，W无需对称。"
+      },
+      {
+        "equations": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "meaning": "最终Eq8两因子/自表示梯度，KKT与乘法更新。",
+        "Agradient": "-X Sᵀ + A S Sᵀ + lambda1(A−AW−AWᵀ+A W Wᵀ)",
+        "Wgradient": "lambda1(−AᵀA+AᵀA W)+lambda2/2 W^(−1/2)",
+        "boundary": "在最终Eq8约束、E对称及正值元素前提下代数一致，不是代码执行或全局收敛证据。"
+      },
+      {
+        "equations": [
+          15
+        ],
+        "printedIssue": "常数行X1_N/A1_K维度正确，但正文说在A更新Eq12换增广，伪码也更新Af；底行是否保持delta/重增广未说明。",
+        "boundary": "delta未给数值，有限增广不是已核严格和为一；A更新的端元图也会涉及底行，实际执行待代码。"
+      },
+      {
+        "equations": [
+          16
+        ],
+        "printedIssue": "SNR分子E[xᵀx]、分母eᵀe未印期望；噪声标定代码未给，不借其他稿补公式。"
+      }
+    ],
+    "synthetic": {
+      "source": "USGS",
+      "pixels": [
+        64,
+        64
+      ],
+      "regions": [
+        8,
+        8
+      ],
+      "lowPass": [
+        9,
+        9
+      ],
+      "thresholdValue": null,
+      "totalEndmemberSweep": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "SNRdB": 25,
+      "runsFirstExperiment": 20,
+      "lambda1": 0.2,
+      "lambda2": 0.1,
+      "lambda3": 0.05,
+      "noiseSweepSNRdB": [
+        15,
+        20,
+        25,
+        30,
+        35,
+        40
+      ],
+      "noiseSweepEndmembersAndRunsExplicit": null,
+      "captionDisagreement": "Fig2写number of known endmembers，正文变化总端元数且无端元先验；不据图注归半监督。"
+    },
+    "real": {
+      "dataset": "Washington DC Mall HYDICE",
+      "cropPixels": [
+        150,
+        150
+      ],
+      "retainedBands": 191,
+      "endmembers": [
+        "tree",
+        "grass",
+        "water",
+        "roof",
+        "street"
+      ],
+      "cropStartOriginalSizeRemovedIDsRange": null,
+      "referenceSpectrumProtocol": null,
+      "abundanceGroundTruth": null,
+      "metrics": "Table2端元SAD；Fig3五幅ours丰度，未量化真实丰度RMSE。"
+    },
+    "tables": [
+      {
+        "label": "Table1(a)",
+        "pdfPage": 5,
+        "metric": "SAD",
+        "methods": [
+          "VCA",
+          "NMF",
+          "L1/2-NMF",
+          "GLNMF",
+          "ESGNMF"
+        ],
+        "rows": [
+          {
+            "label": 15,
+            "values": [
+              0.0974,
+              0.1055,
+              0.0921,
+              0.0883,
+              0.0874
+            ]
+          },
+          {
+            "label": 20,
+            "values": [
+              0.1096,
+              0.0935,
+              0.082,
+              0.0877,
+              0.0813
+            ]
+          },
+          {
+            "label": 25,
+            "values": [
+              0.1165,
+              0.0799,
+              0.0745,
+              0.0766,
+              0.064
+            ]
+          },
+          {
+            "label": 30,
+            "values": [
+              0.1144,
+              0.0546,
+              0.0617,
+              0.0573,
+              0.054
+            ]
+          },
+          {
+            "label": 35,
+            "values": [
+              0.1188,
+              0.0531,
+              0.0498,
+              0.049,
+              0.0469
+            ]
+          },
+          {
+            "label": 40,
+            "values": [
+              0.1186,
+              0.0457,
+              0.0462,
+              0.0443,
+              0.0422
+            ]
+          }
+        ],
+        "printedAverage": [
+          0.1125,
+          0.072,
+          0.0677,
+          0.0672,
+          0.0626
+        ],
+        "arithmeticMeanOfPrintedRows": [
+          "0.11255",
+          "0.07205",
+          "0.06771666666666666666666666667",
+          "0.0672",
+          "0.06263333333333333333333333333"
+        ],
+        "roundedMeanHalfUp": [
+          "0.1126",
+          "0.0721",
+          "0.0677",
+          "0.0672",
+          "0.0626"
+        ],
+        "matchesWithinInputAndOutputRoundingEnvelope": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "minimumMethodsPerRow": [
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ]
+        ],
+        "boundary": "只核打印值算术；原行和均值均只四位小数，≤0.0001差值可落输入/输出舍入包络，不指认真实未舍入均值错误。超包络异常与未运行模型分列。"
+      },
+      {
+        "label": "Table1(b)",
+        "pdfPage": 5,
+        "metric": "RMSE",
+        "methods": [
+          "VCA",
+          "NMF",
+          "L1/2-NMF",
+          "GLNMF",
+          "ESGNMF"
+        ],
+        "rows": [
+          {
+            "label": 15,
+            "values": [
+              0.1067,
+              0.1288,
+              0.1196,
+              0.1134,
+              0.1105
+            ]
+          },
+          {
+            "label": 20,
+            "values": [
+              0.1191,
+              0.1148,
+              0.1136,
+              0.114,
+              0.1097
+            ]
+          },
+          {
+            "label": 25,
+            "values": [
+              0.1228,
+              0.1099,
+              0.1132,
+              0.1088,
+              0.1056
+            ]
+          },
+          {
+            "label": 30,
+            "values": [
+              0.0788,
+              0.0671,
+              0.0723,
+              0.0644,
+              0.0642
+            ]
+          },
+          {
+            "label": 35,
+            "values": [
+              0.0849,
+              0.0633,
+              0.0621,
+              0.0556,
+              0.055
+            ]
+          },
+          {
+            "label": 40,
+            "values": [
+              0.0852,
+              0.0457,
+              0.0471,
+              0.0452,
+              0.0455
+            ]
+          }
+        ],
+        "printedAverage": [
+          0.0996,
+          0.1029,
+          0.0879,
+          0.0835,
+          0.0818
+        ],
+        "arithmeticMeanOfPrintedRows": [
+          "0.09958333333333333333333333333",
+          "0.08826666666666666666666666667",
+          "0.08798333333333333333333333333",
+          "0.08356666666666666666666666667",
+          "0.08175"
+        ],
+        "roundedMeanHalfUp": [
+          "0.0996",
+          "0.0883",
+          "0.0880",
+          "0.0836",
+          "0.0818"
+        ],
+        "matchesWithinInputAndOutputRoundingEnvelope": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ],
+        "minimumMethodsPerRow": [
+          [
+            "VCA"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "GLNMF"
+          ]
+        ],
+        "boundary": "只核打印值算术；原行和均值均只四位小数，≤0.0001差值可落输入/输出舍入包络，不指认真实未舍入均值错误。超包络异常与未运行模型分列。"
+      },
+      {
+        "label": "Table2",
+        "pdfPage": 5,
+        "metric": "SAD",
+        "methods": [
+          "VCA",
+          "NMF",
+          "L1/2-NMF",
+          "GLNMF",
+          "ESGNMF"
+        ],
+        "rows": [
+          {
+            "label": "Tree",
+            "values": [
+              0.1946,
+              0.2223,
+              0.1874,
+              0.1638,
+              0.154
+            ]
+          },
+          {
+            "label": "Grass",
+            "values": [
+              0.1845,
+              0.1907,
+              0.1565,
+              0.1349,
+              0.1258
+            ]
+          },
+          {
+            "label": "Water",
+            "values": [
+              0.1077,
+              0.1138,
+              0.079,
+              0.0654,
+              0.0665
+            ]
+          },
+          {
+            "label": "Roof",
+            "values": [
+              0.1542,
+              0.1499,
+              0.1232,
+              0.1179,
+              0.1003
+            ]
+          },
+          {
+            "label": "Street",
+            "values": [
+              0.2146,
+              0.1758,
+              0.1663,
+              0.1583,
+              0.1564
+            ]
+          }
+        ],
+        "printedAverage": [
+          0.1711,
+          0.1705,
+          0.1425,
+          0.128,
+          0.1206
+        ],
+        "arithmeticMeanOfPrintedRows": [
+          "0.17112",
+          "0.1705",
+          "0.14248",
+          "0.12806",
+          "0.1206"
+        ],
+        "roundedMeanHalfUp": [
+          "0.1711",
+          "0.1705",
+          "0.1425",
+          "0.1281",
+          "0.1206"
+        ],
+        "matchesWithinInputAndOutputRoundingEnvelope": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "minimumMethodsPerRow": [
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "GLNMF"
+          ],
+          [
+            "ESGNMF"
+          ],
+          [
+            "ESGNMF"
+          ]
+        ],
+        "boundary": "只核打印值算术；原行和均值均只四位小数，≤0.0001差值可落输入/输出舍入包络，不指认真实未舍入均值错误。超包络异常与未运行模型分列。"
+      }
+    ],
+    "resultBoundary": "合成mean SAD .0626/RMSE .0818最低；SAD6/6档最低，RMSE4/6档最低：15dB VCA .1067胜.1105、40dB GLNMF .0452胜.0455（ESG仍加粗）。实测mean SAD .1206最低且4/5材料最低，water GLNMF .0654胜.0665。NMF合成RMSE原均值.1029，六行均值.088266666…（四位.0883）超舍入包络。",
+    "optimizationBoundary": "未给初始化/seed/近邻p/delta/停止数与阈值/零值保护/具体运行硬件时间；复杂度O(tLKN+tKN²)是符号量而非测时。未做图结构和丰度图逐项独立消融。",
+    "figures": "Fig1 PDF3为KNN与学习端元图的原概念对照，含完整图注，不是完整求解流程。Fig2合成指标、Fig3真实丰度。"
+  },
+  "structure": {
+    "paperId": "structured-discriminative-nmf-icip-2016",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "mechanism": "SDNMF无监督地在丰度上联合局部亲和与远端排斥；原光谱空间固定近/远邻权重与当前丰度距离exp共同构造L=Llocal−(beta/alpha)Lrep_tilde，可非半正定，按元素L+−L−拆分更新。gamma L1/2在丰度S；不是学习端元W或有标签分类。",
+    "equationAudit": [
+      {
+        "equations": [
+          1,
+          2,
+          3
+        ],
+        "meaning": "线性混合、标准NMF重构、A/S更新"
+      },
+      {
+        "equations": [
+          4,
+          5
+        ],
+        "printedIssue": "Eq4 1/2 sum Wl_ij ||si−sj||没有平方，而Eq5 trace等价平方距离（对称图）；原heat权重exp(−||xi−xj||/(2sigma²))分子也未印平方。高分辨率核对原图，不静默改Gaussian核。"
+      },
+      {
+        "equations": [
+          6,
+          7
+        ],
+        "meaning": "Wr原谱距离，排斥exp(−||si−sj||²)与alpha/2 local trace、beta/4双和及gamma平方根丰度。",
+        "boundary": "变量相互耦合而非凸；不能从排斥图结构保证全局最优。"
+      },
+      {
+        "equations": [
+          8,
+          9,
+          10
+        ],
+        "meaning": "Lagrange与A/S导数",
+        "printedIssue": "Eq8定义/trace重复乘子符号；Eq10权重用未定义vi/vj，而全式si/sj；不当新输入变量补造。",
+        "conditionalAlgebra": "在固定对称Wl/Wr、按当前丰度构造Wrep_tilde情况下，图部分梯度alpha S Llocal−beta S Lrep_tilde，与正文L合成相容。近/远邻选择的对称化未明确，不能据此断言实际代码一致。"
+      },
+      {
+        "equations": [
+          11,
+          12
+        ],
+        "meaning": "普通A更新与带alpha S L−/alpha S L+及gamma/2 S^(−1/2)的S更新；L按元素正/负拆分，而非截负谱。",
+        "boundary": "未给丰度和增广/投影、零值保护与收敛证明，不借其他NMF稿补delta或严格和。"
+      }
+    ],
+    "synthetic": {
+      "source": "USGS",
+      "endmembers": 6,
+      "pixels": [
+        64,
+        64
+      ],
+      "regions": [
+        8,
+        8
+      ],
+      "lowPass": [
+        9,
+        9
+      ],
+      "threshold": 0.8,
+      "noise": "zero-mean Gaussian",
+      "SNRdB": 25,
+      "runs": 10,
+      "nearestNeighbors": 5,
+      "farthestNeighbors": 5,
+      "noiseSweepSNRdB": [
+        15,
+        25,
+        35,
+        45,
+        "infinity"
+      ]
+    },
+    "real": {
+      "dataset": "Urban HYDICE",
+      "pixels": [
+        307,
+        307
+      ],
+      "originalBands": 210,
+      "retainedBands": 162,
+      "rangeNm": [
+        400,
+        2500
+      ],
+      "resolutionNm": 10,
+      "endmembersPrinted": [
+        "Asphalt",
+        "Grass",
+        "Road",
+        "Roof"
+      ],
+      "reference": "Fig3(a–d)称groundtruth，构建/来源协议未说明",
+      "ours": "Fig3(e–h)",
+      "quantitativeRealSADOrRMSETable": null,
+      "boundary": "不借TGRS中的Tree、10谱参考协议或其他稿真实表补本稿。"
+    },
+    "tables": [
+      {
+        "label": "Table1(a)",
+        "pdfPage": 5,
+        "metric": "SAD",
+        "methods": [
+          "VCA",
+          "NMF",
+          "L1/2-NMF",
+          "GLNMF",
+          "SDNMF"
+        ],
+        "rows": [
+          {
+            "label": 15,
+            "values": [
+              0.1523,
+              0.1135,
+              0.1086,
+              0.0758,
+              0.0724
+            ]
+          },
+          {
+            "label": 25,
+            "values": [
+              0.1255,
+              0.1127,
+              0.0919,
+              0.0739,
+              0.0678
+            ]
+          },
+          {
+            "label": 35,
+            "values": [
+              0.1243,
+              0.1098,
+              0.0924,
+              0.0663,
+              0.0671
+            ]
+          },
+          {
+            "label": 45,
+            "values": [
+              0.1224,
+              0.1013,
+              0.0967,
+              0.0753,
+              0.0664
+            ]
+          },
+          {
+            "label": "infinity",
+            "values": [
+              0.1191,
+              0.1067,
+              0.0931,
+              0.0758,
+              0.0644
+            ]
+          }
+        ],
+        "printedAverage": [
+          0.1287,
+          0.1088,
+          0.0965,
+          0.0734,
+          0.0676
+        ],
+        "arithmeticMeanOfPrintedRows": [
+          "0.12872",
+          "0.1088",
+          "0.09654",
+          "0.07342",
+          "0.06762"
+        ],
+        "roundedMeanHalfUp": [
+          "0.1287",
+          "0.1088",
+          "0.0965",
+          "0.0734",
+          "0.0676"
+        ],
+        "matchesWithinInputAndOutputRoundingEnvelope": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "minimumMethodsPerRow": [
+          [
+            "SDNMF"
+          ],
+          [
+            "SDNMF"
+          ],
+          [
+            "GLNMF"
+          ],
+          [
+            "SDNMF"
+          ],
+          [
+            "SDNMF"
+          ]
+        ],
+        "boundary": "只核打印值算术；原行和均值均只四位小数，≤0.0001差值可落输入/输出舍入包络，不指认真实未舍入均值错误。超包络异常与未运行模型分列。"
+      },
+      {
+        "label": "Table1(b)",
+        "pdfPage": 5,
+        "metric": "RMSE",
+        "methods": [
+          "VCA",
+          "NMF",
+          "L1/2-NMF",
+          "GLNMF",
+          "SDNMF"
+        ],
+        "rows": [
+          {
+            "label": 15,
+            "values": [
+              0.1185,
+              0.1132,
+              0.1049,
+              0.0903,
+              0.0811
+            ]
+          },
+          {
+            "label": 25,
+            "values": [
+              0.1126,
+              0.1078,
+              0.1012,
+              0.0895,
+              0.0785
+            ]
+          },
+          {
+            "label": 35,
+            "values": [
+              0.0943,
+              0.0984,
+              0.0954,
+              0.0808,
+              0.0742
+            ]
+          },
+          {
+            "label": 45,
+            "values": [
+              0.0954,
+              0.0945,
+              0.0927,
+              0.0696,
+              0.0713
+            ]
+          },
+          {
+            "label": "infinity",
+            "values": [
+              0.1007,
+              0.0917,
+              0.0931,
+              0.0705,
+              0.0674
+            ]
+          }
+        ],
+        "printedAverage": [
+          0.1287,
+          0.1011,
+          0.0975,
+          0.0801,
+          0.0745
+        ],
+        "arithmeticMeanOfPrintedRows": [
+          "0.1043",
+          "0.10112",
+          "0.09746",
+          "0.08014",
+          "0.0745"
+        ],
+        "roundedMeanHalfUp": [
+          "0.1043",
+          "0.1011",
+          "0.0975",
+          "0.0801",
+          "0.0745"
+        ],
+        "matchesWithinInputAndOutputRoundingEnvelope": [
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "minimumMethodsPerRow": [
+          [
+            "SDNMF"
+          ],
+          [
+            "SDNMF"
+          ],
+          [
+            "SDNMF"
+          ],
+          [
+            "GLNMF"
+          ],
+          [
+            "SDNMF"
+          ]
+        ],
+        "boundary": "只核打印值算术；原行和均值均只四位小数，≤0.0001差值可落输入/输出舍入包络，不指认真实未舍入均值错误。超包络异常与未运行模型分列。"
+      }
+    ],
+    "resultBoundary": "mean SAD .0676/RMSE .0745最低，逐噪声均为4/5档最低；35dB SAD GLNMF .0663胜.0671，45dB RMSE GLNMF .0696胜.0713。VCA RMSE均值原印.1287，五行算术.1043；.1287也恰是其SAD均值，可能复制错误但原因未核。结果不随SNR全部单调。",
+    "optimizationBoundary": "alpha/beta/gamma/sigma具体值、初始化/seed/停止参数/时间硬件/零值保护未给；没有独立逐约束消融/代码复现，正式公式及作者差异待核。",
+    "figures": "Fig1 PDF3原四面板示意：原数据、local affinity、distant repulsion、structured discrimination，是概念对照而非真实HSI数据/完整solver流程；Fig2合成条形图、Fig3真实丰度图。"
+  },
+  "relationAudit": "三篇保持原各自方法族，不据作者/年份/NMF共享宣布互为扩展。TGRS是端元谱软先验并测试L1/2/MRS扩展，ESGNMF是学习端元自表示W且稀疏W，SDNMF是固定光谱近/远图与动态丰度排斥、稀疏S；无端元先验的Fig2 known字样不能改变ESGNMF任务。"
+}

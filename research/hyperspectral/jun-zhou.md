@@ -21,7 +21,7 @@
 
 用户要求继续完成论文调研，不需要新增学习笔记。当前重点是来源查漏、作者身份、光谱输入、正式书目与版本关系；全文、代码及性能复现的阅读状态另行记录，不以笔记数量衡量目录完成。
 
-当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；154条摘要级、34条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
+当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；151条摘要级、37条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
 
 本轮补入EAAHNet：出版社作者登记、原文首页均确认Jun Zhou属于Griffith；保留DBLP同名0011分配差异，避免错误排除。原文IV-A明确Potsdam红/绿/近红外输入，归多光谱关联；Vaihingen写RGB，实际数据版本和实现仍待核。ComicLib正式节目确认Griffith身份，漫画草图任务按范围暂排，未标全文核验。
 
@@ -781,3 +781,21 @@ DICTA合成USGS四端元、64×64/8×8区域、低通混合、丰度>0.8改等�
 旧 `jun-zhou-2015-multiple-graph-abstract-followup.json` 的paperId/title/abstractSummary错挂2025跟踪报告，却配2015解混DOI/PDF。目录此前解混条目本身正确；本轮以四作者AM/IEEE完整解混摘要/Crossref另存纠错，旧派生审计保留但不再作本论文内容证据，未借此复核跟踪稿。18当前HTTP原响应按字节保存并核SHA256；下载动态封面与stored MD5不是同载荷，新旧DICTA/MMSNMF PDF字节不同但全页提取文本一致，二者均保留。三份派生审计及总清单区分原响应、文字、印式和算术。
 
 MMSNMF既有Fig1 PDF3结构原图字节不变；DICTA六图、WHISPERS四图均结果/输入/收敛，伪码不当框架，多图队列由pending改no_framework，顺序不变。无新论文/原图/学习笔记，188行既有索引仅同步状态/任务/链接。当前总库757、作者188（154摘要/34全文）、三维214、314标签/351图，402分类确认（审计353）/337暂定/18待；1615候选/244查询/237批次。作者全集、多来源差集、arXiv八身份范围待及全领域覆盖仍未完成。证据：[全文与来源清单](sources/jun-zhou-graph-nmf-full-reading-2026-10-11.json)、[20页文本](sources/jun-zhou-graph-nmf-full-all-page-text-2026-10-11.json)、[书目/旧错挂纠正](sources/jun-zhou-graph-nmf-full-primary-metadata-2026-10-11.json)、[全部公式/实验/表算术](sources/jun-zhou-graph-nmf-full-protocol-equations-tables-2026-10-11.json)。
+
+## 2016部分端元先验、端元自表示图及结构判别NMF全文续核（2026-10-11）
+
+三篇既有记录升级为**机构接受稿（AM）全文核验**，不是新增论文或正式版全文核验：TGRS部分已知端元稿33页（封面1、正文参考32），两篇ICIP各6页（封面1、正文参考5）。全部45页/42正文参考、70编号式、13图、11数值表13面板及2伪码通读和逐页渲染复核；全部表303组mean±std、135会议行内值及25均值共766数值留证。参考条目41/18/21读完，不表示所引作品阅读全文。TGRS正文标2016-06-17 DRAFT，正式54(11):6531–6544；ICIP正式1843–1847/1848–1852，三个正式PDF入口均202空。
+
+**来源恢复与作者边界**：TGRS旧bitstream当前200但仅755字节HTML；结构判别旧Scispace为二手摘要。通过精确机构item、bundles完整一页3条、唯一ORIGINAL及其bitstreams完整一页1条，恢复TongPUB2302/LiPUB1813的REST PDF，不猜链接。两主链接改为机构AM，旧来源和先前局部证据保留。IEEE三个完整原摘要、正式作者顺序、Jun Zhou Griffith单位与机构身份互证，TGRS还给目标ORCID。当前两个Crossref正常，端元图Crossref429空，不写成当前核验成功。结构判别正式IEEE/Crossref、机构item/封面六作者，AM正文五作者缺Xun Yu，目录保留正式六作者，差异原因未知。端元图新旧PDF字节不同、全部页提取文本一致；动态封面下载与stored MD5不相同，按各归档实际SHA分别核验，不声称正文或正式版字节一致。
+
+三种机制分开，原方法族不合并。**NMF-PPK**用B=[已知谱列,零列]及S=diag(Iq,0)，在½||Y−MR||²中加lambda/2||B−MS||²，所有M列继续估计，区别UPK硬固定已知谱和CLSUNSAL/SUNSPI过完备字典回归；L1/2/MRS扩展稀疏和图作用于丰度。**ESGNMF**联合A/S/W，以A≈AW学习端元稀疏非负自表示，L1/2作用于W而非丰度S；另有固定像元光谱二值对称OR kNN丰度图，不是空间位置图。**SDNMF**将原光谱近邻亲和与远邻排斥约束丰度，排斥权重还依赖当前丰度距离；L=Llocal−(beta/alpha)Lrep_tilde可非半正定，按元素正负拆分更新S，加gamma L1/2丰度稀疏。两ICIP无已知谱输入；ESGNMF Fig2“known endmembers”与正文总端元数4–10冲突，不据图注改为半监督。新增两精确方法标签，端元先验正则定义由暂定升确认，三篇分类审计补齐；已确认分类不代表公式可直接运行。
+
+**NMF-PPK实验与结论范围**：USGS六材料Carnallite、Ammonio-jarosite、Almandine、Brucite、Axinite、Actinolite；64×64/8×8区域/9×9低通/阈值0.7/Gaussian。已知q1–5全组合分别6/15/20/15/6，各10次；620是条件算术而非实际运行日志。q4噪声15/25/35/45/∞dB；VCA初始化、非负丰度截断、贪心先验配对，lambda50来自同合成扫描（建议20–100）、mu0.1、delta10，仅R更新用增广，最多3000次。q5 Unknown SAD .061±.010胜UPK .090±.020，All .037却不及UPK .015；q5丰度RMSE .062胜UPK .067/NMF .068，不推广为每指标领先。四材料/SNR25失配实验正文GDS84生成/GDS83先验，Fig4图注反转；TableV NMF-PPK .088±.010 SAD/.092±.014 RMSE胜UPK .140±.049/.168±.023。Fig5正文及曲线NMF-PPK、图注L1/2-PPK不同；完整498字典SUNSPI好于NMF且高SNR CLSUNSAL更好，移两Carnallite成496后才反转，不能说普遍胜稀疏回归。六矿物合成段另插入tree/road手工影像谱说明，实际分配未解释。
+
+其真实实验：Urban307×307/210→162带、road/grass/asphalt/tree；Jasper原512×614，(105,269)起100×100/224→198带、road/soil/water/tree；Cuprite250×190/224→188带十矿物。Urban/Jasper每材料从同影像选10谱求均值作端元参考，前两数据q1–3全组合各10次；Cuprite随机选先验、不穷举，次数未单独说明，不借前面10次补事实。三实测原文明确无现成丰度/端元GT，Cuprite谱参考USGS；真实丰度只有可视化，没有RMSE数值表，同影像参考限制独立泛化但不直接认定泄漏。七图均数据/结果，Algorithm1是伪码，无独立方法框架，队列标no_framework。
+
+**两ICIP实验与全表算术**：ESGNMF USGS64×64/8×8区域/9×9低通，阈值未给；lambda1=.2/lambda2=.1/lambda3=.05，SNR25、总端元4–10、20次，噪声15–40dB六档的端元数/次数未明。合成mean SAD .0626/RMSE .0818最低，RMSE只4/6档最低，15dB VCA .1067胜.1105、40dB GLNMF .0452胜.0455（ESG仍加粗）；NMF RMSE原均值.1029，六行算术.088266…（四位.0883），超舍入包络。Washington DC Mall HYDICE150×150/191带，tree/grass/water/roof/street，mean SAD .1206最低而water GLNMF .0654胜.0665；裁块起点、删带及参考谱协议未给，没有真实丰度RMSE表。SDNMF USGS六端元64×64/8×8块/9×9低通、阈值0.8，SNR25/P6/10次、近邻5远邻5，另15/25/35/45/∞dB。mean SAD .0676/RMSE .0745最低，逐噪声各4/5档最低，35dB SAD GLNMF .0663胜.0671、45dB RMSE GLNMF .0696胜.0713；VCA RMSE均值印.1287，五行算术.1043，原印/算回分别保留。Urban307×307/210→162带，Asphalt/Grass/Road/Roof，Fig3称GT而构建来源不明，无实测SAD/RMSE表；不借别稿Tree或10谱协议回填。
+
+**逐式疑点保留原印**：NMF-PPK Eq17–18 RᵀR与m的K维不合，作者目标非增论证不证明变量收敛到stationary point，原文明确后者仍待；Eq23当前目标绝对值≤epsilon前次目标（1e−4）左边没有目标差，不改成相对变化停止；Eq28 lambda Bᵀ与Y Rᵀ形状不合，Eq13写B Sᵀ正确且此构造B Sᵀ=B，不能把代数修式称作者代码。非负可逆C还需C⁻¹R非负才能保持NMF可行。ESGNMF Eq4 A⊙M维度不合/罚项无W，Eq5对角零在联合Eq6/8被放松，不能说全程排自环；Eq6/8系数变化、常数行增广用于A更新/伪码Af且底行是否保持未述、SNR分母缺期望均留证。SDNMF Eq4距离未平方而Eq5 trace对应平方，heat分子也未印平方，Eq10 vi/vj未定义；独立对称图下的梯度与原式分列，近/远邻对称化不假定完成。两ICIP完整参数、初始化、停止、零值、实际代码/GT/时间与独立消融仍待，无模型复现。
+
+补两张PDF3原Fig1：ESGNMF为KNN/端元稀疏图对照，SDNMF为四面板结构判别概念示意；都保留完整图注和AM页码，不当完整solver流程或真实实验。21原始HTTP响应/三派生审计/总清单已保存；既有188行索引仅同步状态与主链接，无新学习笔记。当前757目录、作者188（151摘要/37全文）、三维214、316标签/353图，402确认（356审计）/337暂定/18待；1615候选/245查询/238批次。arXiv531决定及八范围/身份待核不变，作者全集、正式修订与全领域顶会顶刊/arXiv覆盖未完成。证据：[全文来源总清单](sources/jun-zhou-nmf-2016-full-reading-2026-10-11.json)、[45页文本](sources/jun-zhou-nmf-2016-full-all-page-text-2026-10-11.json)、[来源恢复/版本作者](sources/jun-zhou-nmf-2016-full-primary-metadata-2026-10-11.json)、[公式/协议/全表及算术](sources/jun-zhou-nmf-2016-full-protocol-equations-tables-2026-10-11.json)。

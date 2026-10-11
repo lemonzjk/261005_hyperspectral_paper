@@ -356,7 +356,10 @@
     "svm-band-weighting-lgrs-2016",
     "weighted-band-selection-igarss-2016",
     "differential-band-selection-ijwmip-2017",
-    "multiple-graph-nmf-whispers-2015"
+    "multiple-graph-nmf-whispers-2015",
+    "partially-known-endmember-nmf-tgrs-2016",
+    "endmember-sparse-graph-nmf-icip-2016",
+    "structured-discriminative-nmf-icip-2016"
   ],
   "sourceChecks": [
     {
@@ -697,6 +700,39 @@
         "L=sum_s alpha_s L_s且alpha≥0、sum alpha=1；L1/2丰度稀疏、mu/2加权图迹与beta||alpha||²，交替乘法M/R和凸图权重优化。Eq11–14的alpha/L重计、trace用W与R上限、相对mu系数，以及Eq15增广行维度疑点原样留证；不称所有参数自动学习或正式实现已核。",
         "USGS六端元合成64×64、8×8区域，低通/0.8阈值均匀化/高斯噪声；Urban HYDICE210删48→162带、400–2500nm/10nm，Asphalt/Tree/Grass/Roof四材料。该稿未印307×307尺寸，未从其他稿回填。",
         "作者图示合成SAD/RMSE及Urban SAD改善，收敛图仅一个案例约600次；Urban四张丰度结果没有GT或数值丰度RMSE表。四图全为结果/收敛，Algorithm1为伪码，无独立框架图。旧摘要审计错挂2025跟踪身份，已用本稿与IEEE/Crossref补正确证据，旧记录保留。"
+      ]
+    },
+    {
+      "paperId": "partially-known-endmember-nmf-tgrs-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3013f2b6-ec32-5263-9cfe-c8498df13815/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "以部分已知材料光谱构造NMF端元软先验，同时更新全部端元与丰度；加入L1/2丰度及流形扩展，在六矿物合成、Urban、Jasper Ridge和Cuprite评估。",
+        "Y≈MR，B为已知谱/零列、S选择已知列，目标½||Y−MR||F²+lambda/2||B−MS||F²；并非硬固定已知端元。L1/2/MRS扩展约束丰度；delta10仅R更新增广。Eq17–18 RᵀR维度、Eq23停止式无目标差、Eq28 Bᵀ维度及图对称化原式留证，目标非增不等于变量收敛。",
+        "USGS六矿物64×64、8×8区域、9×9低通、阈值0.7、Gaussian；Urban307×307/210→162带四端元road/grass/asphalt/tree；Jasper原512×614，(105,269)起100×100/224→198带四端元；Cuprite250×190/224→188带十矿物。Urban/Jasper同影像每材料10谱均值参考，Cuprite USGS；真实丰度无现成GT/定量RMSE。",
+        "q5 Unknown SAD .061±.010胜UPK .090±.020，但All .037不及UPK .015；不能把未知端元改善推广所有端元。q5 RMSE .062胜UPK .067/NMF .068。完整498字典SUNSPI优于NMF且高SNR CLSUNSAL更好，删两Carnallite后496字典才反转。真实丰度仅视觉比较；七图输入/结果、无独立框架。"
+      ]
+    },
+    {
+      "paperId": "endmember-sparse-graph-nmf-icip-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4256ac55-5a64-5482-bcaf-fd0d51e00bf0/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "ESGNMF联合学习端元非负稀疏自表示图与端元/丰度，并加固定像元近邻图平滑丰度；无已知端元先验。公开AM全读并核全部表和原概念图。",
+        "A L×K/S K×N/W K×K；最终Eq8为½||X−AS||F²+lambda1/2||A−AW||F²+lambda2 sum sqrt(W)+lambda3/2tr(SLSᵀ)，L1/2作用W而非丰度S。丰度图二值对称OR kNN固定，W学习且可非对称；联合目标未保留W对角零。Eq4 A⊙M维度和增广用于A更新/常数行处理需核。",
+        "USGS64×64/8×8区域/9×9低通，高斯噪声，混合阈值未给；Washington DC Mall HYDICE150×150裁块、191带，tree/grass/water/roof/street五端元；裁块起点/删带/参考谱协议未给，不补标准数据尺寸。",
+        "合成mean SAD .0626/RMSE .0818最低，但RMSE仅4/6档最低：15dB VCA .1067胜.1105、40dB GLNMF .0452胜.0455。实测mean SAD .1206最低、water GLNMF .0654胜.0665；无真实丰度RMSE表。NMF RMSE原印均值.1029，六行算术.088266…超舍入包络。Fig1为端元图概念对照，非完整solver。"
+      ]
+    },
+    {
+      "paperId": "structured-discriminative-nmf-icip-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8aac8fb6-91e0-59b6-a9d9-1d0eb996370d/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "SDNMF在丰度中联合局部吸引、远端排斥与L1/2稀疏性进行无监督高光谱解混；恢复机构AM完整阅读，原概念示意与全部实验表留证。",
+        "固定原光谱近/远邻关系，当前丰度距离exp生成排斥权重，L=Llocal−(beta/alpha)Lrep_tilde；按元素L+−L−分拆乘法更新丰度，gamma平方根丰度稀疏。不是标签分类或学习端元W。Eq4原距离无平方而Eq5 trace为平方，heat分子也无平方、Eq10 vi/vj未定义；保留原印式。",
+        "USGS六端元64×64/8×8块/9×9低通，丰度>0.8改均匀、高斯噪声；Urban HYDICE307×307、210→162带、400–2500nm/10nm，Asphalt/Grass/Road/Roof四材料。Fig3称GT但构建来源未解释，不能借别稿Tree或每材料10谱协议。",
+        "mean SAD .0676/RMSE .0745最低，逐噪声各4/5档最低：35dB SAD GLNMF .0663胜.0671，45dB RMSE GLNMF .0696胜.0713。VCA RMSE原平均.1287，而五行算术.1043；不静默替换。真实只丰度图，无SAD/RMSE表。Fig1四面板为结构判别概念示意，非实测/完整solver。"
       ]
     }
   ]
