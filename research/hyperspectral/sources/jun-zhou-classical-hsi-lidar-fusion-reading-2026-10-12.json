@@ -1,0 +1,358 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "周峻两篇既有经典HSI–LiDAR融合免费全文、稳定作者身份/正式书目/机构版本、原表及五原图，作者引用查漏。",
+  "accessFile": "jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 2,
+  "newFullTextReadingCount": 2,
+  "pdfPagesRead": 33,
+  "figuresAdded": 5,
+  "materials": [
+    {
+      "name": "icv",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/852a5615-c656-4b58-a74f-722fcdfec740/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/852a5615-c656-4b58-a74f-722fcdfec740/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "file": "jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12-icv.pdf",
+      "bytes": 2168537,
+      "sha256": "d2491d1f59fdfe548e3a31d9930f3a0dfe8dd2c5e771f0584649fcc43e5ecf92",
+      "pdfDownloaded": true,
+      "checkedAt": "2026-10-12",
+      "paperId": "hsi-lidar-icv-multilevel-fusion-2020",
+      "pageCount": 16,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "readingProgress": "full_text_read",
+      "version": "VoR",
+      "pageTextFile": "jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12-icv-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10,
+        11,
+        12,
+        14
+      ]
+    },
+    {
+      "name": "mfsudf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/888f80d8-0a8d-4036-8c5e-fb1b658b36bb/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/888f80d8-0a8d-4036-8c5e-fb1b658b36bb/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "file": "jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12-mfsudf.pdf",
+      "bytes": 4064324,
+      "sha256": "53afb9a6560716d12b581dd9e7deeaa829a372c38a9824209d332e3979faa145",
+      "pdfDownloaded": true,
+      "checkedAt": "2026-10-12",
+      "paperId": "mfsudf-hsi-lidar-2021",
+      "pageCount": 17,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "readingProgress": "full_text_read",
+      "version": "AM",
+      "pageTextFile": "jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12-mfsudf-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        4,
+        8,
+        10,
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "paperId": "hsi-lidar-icv-multilevel-fusion-2020",
+      "method": "每像元R带两两强度作Gaussian条件相似度Sij，得到R×R矩阵；每行μi=ΣjSij/R，σi=sqrt(Σj(Sij−μi)²/(R−1))，vi=μi/σi，形成同尺寸ICV cube。原HSI/ICV先PCA保留≥99%方差，再提DAP；八GF各提DAP，面积10/15/20和包围盒对角50/100/500共13剖面。流1以原HS谱分别与原HS空间及八GF空间做九CCA，流2以ICV谱与ICV空间及同八GF做九CCA；融合后18组特征。每组随机分m子集并跨组拼接，子集MNF变换后再拼接训练RF，重复T次；RF按类累计Σt Pct/ect的OOB逆误差加权分数判类，SVM另用T次标签多数投票。Gaussian是强度相似度而非邻接波长距离；CCA类内/类间目标文字互有反向表述，保留作者称法，不替换成DCA。",
+      "datasets": "Houston2013 DFC：HSI2012-06-23/LiDAR06-22，349×1905×144、380–1050nm、2.5m、15类。TableI每类20训练共300/测试12197；TableII官方分配2832/12197，两协议不合并。GU：Yarraman State Forest及邻域约8km²，2015-06采集、62带408.54–990.62nm、0.5m；LiDAR6回波、平均点距0.2m。33裁区选5区训练、28区测试，五类各30训练共150/测试4157；区域划分与像元数量分别记录，整幅尺寸未给。",
+      "experimentSetting": "HSI归一到[0,1]；PCA≥99%方差、DAP13剖面、熵窗口9²。Gaussian perplexity按OA曲线选Houston111–120/GU40–50；子集数13/6、集成T10。RF300树、预测变量数约sqrt(输入带数)，OOB按类加权；SVM Gaussian核尺度Bayesian优化，box constraint搜索10^-2–10^4，最终100/26.8，10-fold验证及多数投票。MATLAB2018a/Windows10/i7-3687U2.10GHz/8GB。图中perplexity、子集数和迭代选择未交代独立验证集，不把10-fold自动视作所有调参的独立评测。",
+      "results": "TableIV/V/VII RF Houston20样本/Houston常规/GU的OA/AA/Kappa：91.92/92.36/.91、94.52/95.11/.94、98.75/98.73/.98。双流直接拼接OA91.01/93.25/98.22；再集成增益0.91/1.27/0.53百分点。TableVI/VIII SVM MNF为91.70/96.85 OA、92.99/97.56 AA；Houston SVM DAP(GF)同样OA91.70，不声称唯一最优。TableIX Xia常规Houston OA95.11高于本法94.52，本法AA95.11高于Xia94.57；TableX少标注Xia85.48 vs本法91.92。TableXII全流程Houston/GU本法603/201分钟、Xia636/219、Liao63.68/31.98、Jahan61.35/30.33，本法较Xia快但远慢于后两者。",
+      "limitations": "VoR已读，不因旧Accepted文件名标AM。CCA类内/类间相关性目标在引言、§II-B、讨论和结论互有反向措辞；矩阵方向/下标印式也有歧义，按原式记录不猜实现。Gaussian对角、零σ及零OOB误差处理未给；部分GF的Houston获取细节未完整说明。调参OA曲线未明确独立验证、PCA/MNF拟合池未交代；GU区域拆分不能外推全部空间邻域隔离。常规Houston OA非最佳，SVM并非RF同一OOB规则，完整流程分钟耗时非单次RF推理。未见本稿作者官方代码链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/852a5615-c656-4b58-a74f-722fcdfec740/content",
+          "figureLabel": "Fig. 1",
+          "caption": "ICV与原HSI的双流CCA、空间特征提取及集成分类总体流程。",
+          "page": 4,
+          "verificationNote": "JSTARS VoR · CC BY4.0，PDF第4页/期刊第369页，300dpi原页裁取；完整图、标签、连线及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              35,
+              60,
+              560,
+              290
+            ],
+            "pixelBox": [
+              145,
+              250,
+              2334,
+              1209
+            ]
+          },
+          "path": "figures/hsi-lidar-icv-multilevel-fusion-2020/icv-fig1.png",
+          "width": 2189,
+          "height": 959,
+          "sha256": "edb856eb416224b51007c37061840ff0a7d446b50076b2992d090f92ba39e125",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Farah Jahan, Jun Zhou, Mohammad Awrangjeb, Yongsheng Gao · JSTARS VoR · CC BY4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/852a5615-c656-4b58-a74f-722fcdfec740/content",
+          "figureLabel": "Fig. 2",
+          "caption": "逐像元波段条件相似度与逆变异系数构造ICV谱立方体。",
+          "page": 4,
+          "verificationNote": "JSTARS VoR · CC BY4.0，PDF第4页/期刊第369页，300dpi原页裁取；完整图、标签、连线及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              299,
+              300,
+              560,
+              390
+            ],
+            "pixelBox": [
+              1245,
+              1250,
+              2334,
+              1625
+            ]
+          },
+          "path": "figures/hsi-lidar-icv-multilevel-fusion-2020/icv-fig2.png",
+          "width": 1089,
+          "height": 375,
+          "sha256": "790c7afc2ac000e634b53e9ace04490f9678801ad81814605b7b285cbd04b682",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Farah Jahan, Jun Zhou, Mohammad Awrangjeb, Yongsheng Gao · JSTARS VoR · CC BY4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/852a5615-c656-4b58-a74f-722fcdfec740/content",
+          "figureLabel": "Fig. 7",
+          "caption": "多次随机子集变换、按类OOB误差及加权决策集成。",
+          "page": 7,
+          "verificationNote": "JSTARS VoR · CC BY4.0，PDF第7页/期刊第372页，300dpi原页裁取；完整图、标签、连线及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              301,
+              63,
+              560,
+              264
+            ],
+            "pixelBox": [
+              1254,
+              262,
+              2334,
+              1100
+            ]
+          },
+          "path": "figures/hsi-lidar-icv-multilevel-fusion-2020/icv-fig7.png",
+          "width": 1080,
+          "height": 838,
+          "sha256": "33fbc84654f205ea22842d4b463d0a0cc75c5ca79170c7d0689b8152591b68bf",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Farah Jahan, Jun Zhou, Mohammad Awrangjeb, Yongsheng Gao · JSTARS VoR · CC BY4.0"
+        }
+      ]
+    },
+    {
+      "paperId": "mfsudf-hsi-lidar-2021",
+      "method": "先仅在原HSI上ERS分X+Y区，每区均值谱作为KPCA代表，Gaussian核exp(−||hi−hj||²/2)、保留99%能量。降维HSI做谱轴方向(ϑ=ϕ=0)四3D Gabor频率.5/.25/.125/.0625；DSM做2D Gabor四频率.03589/.09473/.25/.6577和六方向0/40/80/120/160/180，共24。分别拼接KPCA谱＋DSM、两模态幅值、两模态相位三cube；前两用500树RF，相位每维按象限11/01/00/10编码，按Hamming距离找最近带标签样本。另在全带HSI＋DSM联合J上ERS/SNIC分区，SNIC多通道距离权ω1=1/(B+1)、ω2=.5；两分区各对三像元分类图作区域多数标签规整得六图。Eq27六规整图各权1、三个原像元图各权2，共九图投票，保留原像元结果缓解小类过度平滑。",
+      "datasets": "Houston：349×1905×144、380–1050nm、2.5m、15类15029标注。Trento：600×166×63、400–980nm、1m、6类30414标注。MUUFL Gulfport：原325×337×72，去8噪声带并裁右下无效区成325×220×64，11类53687标注，Yellow Curbs仅183。三场景LiDAR均作为同尺寸单通道DSM，未将未印波段范围或空间分辨率按常见配置补齐。",
+      "experimentSetting": "每类随机3–15训练，其余标注像元测试，重复20次；主表VI–VIII均三标注/类（45/18/33训练），不是Houston官方固定训练集。KPCA维数18/10/11；原拼接19/11/12维、幅值/相位96/64/68维。初始KPCA代表分区X+Y与后期平均100像元/超像素不同：后期ERS6647/995/714、SNIC6640/960/704。RF500树，原文将floor(log特征维数)同时称subspace和tree depth，印数原特征4/3/3、Gabor6/6/6，保留称谓歧义。无硬件、实测耗时及独立验证划分，参数曲线不作无泄漏证明。",
+      "results": "主表VI–VIII三标签/类平均OA73.64/93.88/74.11%，Kappa.72/.92/.67，列出聚合指标均领先；不把分类图单次73.86/93.97等与主表平均混用。无超像素MFDF OA70.86/90.60/70.65，完整提升2.78/3.28/3.46百分点。Trento Vineyard RAW57.20到95.01；MUUFL Yellow Curbs ERS9.34/KPCA-ERS12.05/本法30.82，但MFDF46.39、EMAP60.22，稀疏小类仍明显退化。Fig6/7/8–10报告分区大小、多模态与训练量曲线，只保留印刷数值，不反推未印精确点。作者给ERS O(XYlogXY)、SNIC O(XY)等复杂度，没有实测速度或性能复现。",
+      "limitations": "只读机构AM，最终VoR未读；2020机构Published与2021正式卷期不同。摘要“2D/3D respectively”与具体方法方向相反，以Fig1/§IV-A明确HSI3D、DSM2D为准并保留原措辞。QBC编码称parameter-free/unsupervised但分类找最近带标签样本，整套仍依赖监督。少量随机像元拆分不保证空间滤波或超像素跨集合隔离；KPCA/分区使用整图特征，不据此猜标签泄漏。RF subspace/tree depth称法混用、平票处理及独立选参未说明；71引文中LiDAR＋MSI不是本稿HSI范围替代证据。小类规整会退化，未给实测运行耗时/硬件。未见本稿作者官方代码链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/888f80d8-0a8d-4036-8c5e-fb1b658b36bb/content",
+          "figureLabel": "Fig. 1",
+          "caption": "ERS引导KPCA、HSI/DSM Gabor、RF/QBC及九分类图加权融合。",
+          "page": 4,
+          "verificationNote": "Griffith AM · © IEEE，PDF第4页/论文第3页，300dpi原页裁取；完整图、标签、连线及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              48,
+              50,
+              565,
+              319
+            ],
+            "pixelBox": [
+              200,
+              208,
+              2355,
+              1330
+            ]
+          },
+          "path": "figures/mfsudf-hsi-lidar-2021/mfsudf-fig1.png",
+          "width": 2155,
+          "height": 1122,
+          "sha256": "9315a7e64afa6e1403e75b817557e0dbeebfdef0ff6f0560ba8ca2c678cf12c5",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Sen Jia, Zhangwei Zhan, Meng Zhang, Meng Xu, Qiang Huang, Jun Zhou, Xiuping Jia · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/888f80d8-0a8d-4036-8c5e-fb1b658b36bb/content",
+          "figureLabel": "Fig. 2",
+          "caption": "Gabor相位的象限二比特编码规则；后续用带标签样本Hamming匹配分类。",
+          "page": 8,
+          "verificationNote": "Griffith AM · © IEEE，PDF第8页/论文第7页，300dpi原页裁取；完整图、标签、连线及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              48,
+              54,
+              301,
+              180
+            ],
+            "pixelBox": [
+              200,
+              225,
+              1255,
+              750
+            ]
+          },
+          "path": "figures/mfsudf-hsi-lidar-2021/mfsudf-fig2.png",
+          "width": 1055,
+          "height": 525,
+          "sha256": "e3f10e6e4aedb813e30306b5c237f236b9f1525947d3dd63f63345d66bcd6edf",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Sen Jia, Zhangwei Zhan, Meng Zhang, Meng Xu, Qiang Huang, Jun Zhou, Xiuping Jia · Griffith AM · © IEEE"
+        }
+      ]
+    }
+  ],
+  "classificationChecks": [
+    {
+      "paperId": "hsi-lidar-icv-multilevel-fusion-2020",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/852a5615-c656-4b58-a74f-722fcdfec740/content",
+      "level": "机构VoR逐页全文、原表及原图核验",
+      "supports": [
+        "正式VoR直接以144/62带HSI和LiDAR栅格特征做监督地物分类；方法为DAP、双流CCA与随机子空间集成，非神经网络、谱重建或几何三维任务。",
+        "首页Griffith单位与Crossref注册ORCID0000-0001-5822-8233确认目标Jun Zhou",
+        "主表、标签预算、实验比较和方法边界按实际版本保留；代码仅官方链接"
+      ]
+    },
+    {
+      "paperId": "mfsudf-hsi-lidar-2021",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/888f80d8-0a8d-4036-8c5e-fb1b658b36bb/content",
+      "level": "机构AM逐页全文、原表及原图核验",
+      "supports": [
+        "AM直接处理144/63/64带HSI与单通道DSM，ERS/KPCA/Gabor特征、RF/QBC分类及多超像素决策融合有全文证据。特征及分区不需标签，最终分类使用训练标签，不能称整套无监督分类；立方体三维是空间—谱。",
+        "首页Griffith单位与Crossref注册ORCID0000-0001-5822-8233确认目标Jun Zhou",
+        "主表、标签预算、实验比较和方法边界按实际版本保留；代码仅官方链接"
+      ]
+    }
+  ],
+  "newMethodCategoryIds": [
+    "canonical-correlation-fusion",
+    "superpixel-decision-fusion"
+  ],
+  "citationCrosscheck": [
+    {
+      "fromPaperId": "hsi-lidar-icv-multilevel-fusion-2020",
+      "referenceNumber": 17,
+      "catalogId": "fusion-hsi-lidar-dca-jstars-2018",
+      "decision": "existing_catalog",
+      "boundary": "作者与题名对应；DCA2018和本稿CCA/ICV机制分开，不据引用认定期刊扩展关系或全文已读。"
+    },
+    {
+      "fromPaperId": "mfsudf-hsi-lidar-2021",
+      "referenceNumber": 71,
+      "catalogId": "multiscale-superpixel-collaborative-hsi-2019",
+      "decision": "existing_catalog",
+      "boundary": "作者与题名对应；协同表示多尺度超像素和本稿RF/QBC多特征融合保持独立，不据引用认定版本关系或全文已读。"
+    }
+  ],
+  "primaryIdentity": [
+    {
+      "paperId": "hsi-lidar-icv-multilevel-fusion-2020",
+      "crossrefFile": "jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12-icv-crossref.json",
+      "author": {
+        "ORCID": "https://orcid.org/0000-0001-5822-8233",
+        "authenticated-orcid": false,
+        "given": "Jun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    },
+    {
+      "paperId": "mfsudf-hsi-lidar-2021",
+      "crossrefFile": "jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12-mfsudf-crossref.json",
+      "author": {
+        "ORCID": "https://orcid.org/0000-0001-5822-8233",
+        "authenticated-orcid": false,
+        "given": "Jun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    }
+  ],
+  "boundary": "总库390/周峻181不变，75全文/106摘要；311分类确认、审计280、75暂定、4待；169标签(67任务/89方法/13应用)，原图250。原31机构队列完成17份、剩14；33页实际全文与版本边界分开。目标作者引文两条已录，未新增方法族关联；作者与全领域尚未完成。代码仅官方链接。"
+}

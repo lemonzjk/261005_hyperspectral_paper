@@ -192,6 +192,7 @@
 | Jun Zhou · coauthor bibliography and denoising versions | 2017–2027（含未发表占位） | Fengchao Xiong、SSUMamba、SSRT、Jun Zhou versus Jiantao Zhou、未发表占位不猜题名；当前43条Jun Zhou BibTeX选择集全部对照；两AM28页已读，预印本26页对应，不是作者或领域全集。 | 未单列 / 43 / 43 | 共同作者43条对照、两AM全文与六原图；在审及无题名线索保留 | 作者目录未闭环；原DBLP8/Scholar5/机构8未决集合重叠，CV3在审候选外另有XXXX无题名线索。；两项继承排除补完整原摘要，但旧题名证据较弱，三基准原数据定义继续核；Jia作者页面403未覆盖。；机构原31资料队列剩20；最终VoR与SSUMamba v1未读；不以代码审查扩大范围。 |
 | Jun Zhou · model denoisers, dataset scope and publisher identity | 2019–2025 | SMDS-Net、GMSC-Net、Noisy-as-Clean、LEVIR RGB、CLCD Gaofen-2、WHU spectral definition gap、FDNet GPINet SAPNet publisher identity；两机构稿18 PDF页全读，v2十二页对应；范围外11页选读，非作者或领域全集。 | 未单列 / 7 / 7 | 两去噪正文/三原图，两个旧范围证据强化，三正式未决取得出版社身份/非OA原摘要 | 作者目录未闭环，DBLP8/Scholar5/个人机构8未决重叠；WHU波段定义及WS-Net++本文未读，旧范围审计仍需补。；原31机构资料剩18；SMDS最终TIP15页与现12页正文差异未核；三未决出版社非OA且无PDF，不反复追索付费正文或检查代码。 |
 | Jun Zhou · relational GAN and split attention classification | 2013–2024 | FSHyperRGAN、S3ARN、episodic 1-shot versus five labels、AM versus VoR、HSIGene citation 2409.12470v2；17页AM＋13页VoR实际全文，四被引作者目录已录；候选固定v2下载未读，非作者/年度/领域全集。 | 未单列 / 7 / 7 | 两分类正文/五原图，四作者引文已录，一全领域候选固定v2待读 | 作者目录与正式版本未闭环，原31机构队列剩16；DBLP8/Scholar5/个人机构8未决集合重叠不相加。；HSIGene为其他作者全领域候选，固定v2已下载未读，正式关联/正文待；代码只链接。 |
+| Jun Zhou · classical HSI–LiDAR feature and decision fusion | 2018–2021 | ICV、canonical correlation fusion、MFSuDF、quadrant bit coding、superpixel decision fusion、AM versus VoR；16页VoR＋17页AM实际全文；2条目标作者引文已录，非作者/年份/领域全集。 | 未单列 / 4 / 4 | 两融合稿33页、五原图与两作者引文已录 | 作者目录与正式版本未闭环，原31机构队列剩14；DBLP8/Scholar5/个人机构8未决重叠不相加。；MFSuDF最终VoR、HSIGene固定v2正文及其他可访问资料仍待；只处理现有库，不增加重复目录或笔记。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -865,6 +866,8 @@
   阅读边界：18页两机构稿全文；12页固定v2对应，不重复计独立全文。11页范围外选读和两个数据模态定义不作新库内全文/新范围关闭；三未决身份/非OA标志已核，仍缺实际输入。
 - 2026-10-12 / jun-zhou-relgan-split-classification-reading-2026-10-12：新增 0，更新 2，去重 4，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
   阅读边界：30页两稿全部已读；四被引作者论文已录，不新增或冒称各引文全文已读。HSIGene固定v2下载未读/七作者非Jun，待后续全领域正文与版本；原31机构资料剩16。
+- 2026-10-12 / jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12：新增 0，更新 2，去重 2，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两稿33页全文，五原图；两目标作者引文均已录，不冒称被引正文已读。ICV为VoR，MFSuDF为AM，最终VoR独立待；原31机构资料剩14。
 
 </details>
 
