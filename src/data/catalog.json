@@ -37086,7 +37086,7 @@
     },
     {
       "id": "zhou-29-hsi-2025",
-      "shortTitle": "Adversarial Dilated Large-Kernel Attention Networks ",
+      "shortTitle": "ADLKAN",
       "title": "Adversarial Dilated Large-Kernel Attention Networks for Cross-Domain Few-Shot Hyperspectral Image Classification",
       "authors": "Xuan Liu, Lei Tong, Jun Zhou, Chuangbai Xiao",
       "year": 2025,
@@ -37100,29 +37100,29 @@
       "doi": "10.1109/tgrs.2025.3582956",
       "representation": "跨域少样本高光谱分类：对抗膨胀大核注意力提取稀疏空间—光谱特征，多尺度条件域判别器缓解域偏移。",
       "tags": [],
-      "summary": "ADLKAN 以对抗膨胀大核注意力特征提取器和多尺度条件域判别器构成跨域少样本分类框架；协同空间/光谱注意力提取局部与长程信息，对抗训练增强不同域不确定区域的一致性。",
-      "input": "跨域少样本高光谱影像及少量标注。",
-      "output": "高光谱影像类别预测。",
-      "mechanism": "两个协同空间—光谱注意力块分别提取特征并融合；三个不同尺度子判别器组成多尺度条件域判别器；对抗训练优化嵌入特征提取器。",
-      "readingNote": "ORCID题名、Crossref正式书目与 Griffith 作者稿摘要核验；作者稿标明 accepted manuscript，未阅读全文。",
+      "summary": "ADLKAN以源/目标独立谱维映射和两个协同空间–光谱大核注意力块学习嵌入，使用三尺度条件域判别及额外反域标签训练缓解域偏移；训练阶段交替执行源/目标少样本任务，测试阶段用目标少量标签拟合KNN。已核接受稿19页，主实验5目标域每类5标注；核大小、伪代码及测试选择边界分别保留。",
+      "input": "Chikusei源域高光谱与目标域少量带标签高光谱块；目标IP200带、Salinas204带、KSC176带、Pavia University103带、Pavia Center102带。主实验随机每类5标注，邻域9×9。",
+      "output": "目标域像素地物类别与分类图；KNN以目标标签嵌入拟合，测试时间包括拟合及剩余目标样本预测。",
+      "mechanism": "源/目标各1×1映射到100维，共享双协同块：空间1×1 Conv2D和光谱1×1×7 Conv3D分别BN/GELU，大核注意力乘性加权及残差，再拼接/1×1融合，通道100/200/160、9×9平均池化为160维。Dilated Reparam Block将主大核及小核膨胀卷积/BN合并。嵌入f与类别预测g做外积，乘积维度>1024改固定随机多线性映射；三尺度池化/Conv1D和五层MLP判别器平均域损失，另加反域标签对抗损失。交替源/目标欧氏原型式FSL，目标KNN推理；损失/算法的未决差异按稿记录。",
+      "readingNote": "免费Griffith AM完整19页逐页已读，含机构封面、正文/参考目录及传记18页；14式、1算法、17图、15表已核，Fig1–4/PDF4–7原图视觉核对。首页明确Griffith Jun Zhou及正式DOI。原稿K=13主实验、K=7标签曲线；伪代码域损失、重参数核/式9、独立验证与表格疑点保留。只升级此AM，最终排版、代码和性能未复核。",
       "paper": "https://research-repository.griffith.edu.au/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/download",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified_accepted_manuscript",
       "library": {
         "categoryIds": [
           "land-cover-classification",
           "domain-adaptation"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 Griffith 作者稿摘要均明确跨域少样本高光谱分类。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "AM §III/IV直接处理连续高光谱波段并输出地物类别；源/目标映射、条件域判别及反域损失有正文证据，确认已有地物分类/域适配标签。大核卷积注意力不据名称自动加Transformer。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何在跨域少样本条件下提取稀疏空间—光谱特征并缓解域偏移？",
-        "datasets": "作者稿摘要报告五个公开 HSI 数据集；具体名称、跨域划分和少样本协议待全文核验。",
-        "experimentSetting": "跨域少样本学习；多尺度域判别器与对抗训练；摘要报告优于比较方法。",
-        "conclusions": "作者稿摘要报告 ADLKAN 在五个公开 HSI 数据集上优于现有方法；逐项数值和消融待全文核验。",
-        "limitations": "作者稿为未完全编辑版本；正式版差异、训练配置、数据许可和代码待核验。",
+        "datasets": "AM §IV：源Chikusei 2517×2335×128，363–1018nm、19类；目标IP145×145×200、16类；Salinas512×217×204、16类；KSC512×614×176、13类；UP610×340×103、9类；PC1906×715×102、9类。两Pavia为430–860nm。六数据集为1源＋5目标；摘要称5、结论称4不统一，不改造目标实验。",
+        "experimentSetting": "AM §IV：9×9邻域，源/目标各映射100通道，两个协同块，λ=.1、大核13×13为主实验；Adam lr1e−4、Xavier初始化、10000 iterations，PyTorch/Ubuntu18.04/RTX3090。每类5目标标注、剩余标签像素测试，重复10次；episode support/query每类1/19；§II仅概述常用Gaussian噪声增强，§IV未明确本实现扩增步骤、倍率或尺度。每500episode测试Dn、核/λ按目标OA/AA/Kappa选择，未说明独立验证。Fig17每类1–10标注另用K=7，不能移用主表13核成绩。",
+        "conclusions": "AM表IX–XIII每目标类5标注OA/AA/Kappa×100：IP77.70±3.54/86.56±1.75/74.89±3.88；Salinas92.52±1.60/95.96±.95/91.68±1.76；KSC96.58±1.20/95.04±1.38/96.19±1.33；UP86.64±4.29/88.87±2.17/82.82±5.08；PC97.75±.67/94.99±.74/96.82±.94。各主表整体指标最好，不是逐类全胜；PC OA较FDFSL仅+.09百分点。表XV训练1379.67–1689.03s、测试1.03–11.79s，约163–164.13K参数、213.40–213.42MFLOPs；部分对照更快或更小，未做性能复现。",
+        "limitations": "每500episode评估测试Dn，超参数亦报告目标分数，独立验证及模型选择未说明；随机像素9×9块不证明空间独立，不断言已泄漏。每类5原标注与episode1+19的采样/扩增对应未明，§II仅概述常用Gaussian增强；实际尺度/倍率及KNN邻居数未给。Eq4目标域Ld与Algorithm1 line19源Ld不一致，交替分支缺对侧特征/判别器明确更新；Fig4核7与主表13、Fig2/4末端谱卷积与Eq9省略、Eq7核集合求和配对待实现核对。部分表格缺值/异常标准差与逐类宣称不一致；原稿未见代码URL、最终版未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37142,6 +37142,26 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith作者接受稿完整PDF逐页阅读、公式/实验及Fig1–4原图视觉核验",
+            "supports": [
+              "源/目标各1×1映射到100维，共享双协同块：空间1×1 Conv2D和光谱1×1×7 Conv3D分别BN/GELU，大核注意力乘性加权及残差，再拼接/1×1融合，通道100/200/160、9×9平均池化为160维。Dilated Reparam Block将主大核及小核膨胀卷积/BN合并。嵌入f与类别预测g做外积，乘积维度>1024改固定随机多线性映射；三尺度池化/Conv1D和五层MLP判别器平均域损失，另加反域标签对抗损失。交替源/目标欧氏原型式FSL，目标KNN推理；损失/算法的未决差异按稿记录。",
+              "AM §IV：源Chikusei 2517×2335×128，363–1018nm、19类；目标IP145×145×200、16类；Salinas512×217×204、16类；KSC512×614×176、13类；UP610×340×103、9类；PC1906×715×102、9类。两Pavia为430–860nm。六数据集为1源＋5目标；摘要称5、结论称4不统一，不改造目标实验。",
+              "AM §IV：9×9邻域，源/目标各映射100通道，两个协同块，λ=.1、大核13×13为主实验；Adam lr1e−4、Xavier初始化、10000 iterations，PyTorch/Ubuntu18.04/RTX3090。每类5目标标注、剩余标签像素测试，重复10次；episode support/query每类1/19；§II仅概述常用Gaussian噪声增强，§IV未明确本实现扩增步骤、倍率或尺度。每500episode测试Dn、核/λ按目标OA/AA/Kappa选择，未说明独立验证。Fig17每类1–10标注另用K=7，不能移用主表13核成绩。",
+              "AM表IX–XIII每目标类5标注OA/AA/Kappa×100：IP77.70±3.54/86.56±1.75/74.89±3.88；Salinas92.52±1.60/95.96±.95/91.68±1.76；KSC96.58±1.20/95.04±1.38/96.19±1.33；UP86.64±4.29/88.87±2.17/82.82±5.08；PC97.75±.67/94.99±.74/96.82±.94。各主表整体指标最好，不是逐类全胜；PC OA较FDFSL仅+.09百分点。表XV训练1379.67–1689.03s、测试1.03–11.79s，约163–164.13K参数、213.40–213.42MFLOPs；部分对照更快或更小，未做性能复现。",
+              "每500episode评估测试Dn，超参数亦报告目标分数，独立验证及模型选择未说明；随机像素9×9块不证明空间独立，不断言已泄漏。每类5原标注与episode1+19的采样/扩增对应未明，§II仅概述常用Gaussian增强；实际尺度/倍率及KNN邻居数未给。Eq4目标域Ld与Algorithm1 line19源Ld不一致，交替分支缺对侧特征/判别器明确更新；Fig4核7与主表13、Fig2/4末端谱卷积与Eq9省略、Eq7核集合求和配对待实现核对。部分表格缺值/异常标准差与逐类宣称不一致；原稿未见代码URL、最终版未核。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content",
+            "checkedAt": "2026-10-11",
+            "level": "接受稿全文分类核验",
+            "supports": [
+              "AM全文确认1源/5目标直接高光谱地物分类与域适配：双谱空大核卷积注意力、条件域判别器和反域标签损失。保留land-cover-classification/domain-adaptation；不将卷积注意力误记Transformer或生成任务。"
+            ]
           }
         ],
         "versions": [
@@ -37151,12 +37171,136 @@
             "url": "https://doi.org/10.1109/tgrs.2025.3582956",
             "doi": "10.1109/tgrs.2025.3582956",
             "year": 2025,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式TGRS书目/DOI及摘要已核；本轮全文证据仅对应Griffith AM，不表示最终排版已读。"
+          },
+          {
+            "id": "zhou-29-hsi-2025-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content",
+            "doi": "10.1109/tgrs.2025.3582956",
+            "year": 2025,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面/页眉AM，19页全文及Fig1–4原图已核；参考目录不代表引用论文全文阅读。"
           }
         ],
-        "methodFamilyId": "zhou-2025-title-29"
+        "methodFamilyId": "zhou-2025-title-29",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM全文确认1源/5目标直接高光谱地物分类与域适配：双谱空大核卷积注意力、条件域判别器和反域标签损失。保留land-cover-classification/domain-adaptation；不将卷积注意力误记Transformer或生成任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "9b0f9eaf7202af876805fc73568cc5599377e26ba18ac970497f2b776c23a7c1",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_29_hsi_2025, title = {Adversarial Dilated Large-Kernel Attention Networks for Cross-Domain Few-Shot Hyperspectral Image Classification}, author = {Xuan Liu and Lei Tong and Jun Zhou and Chuangbai Xiao}, year = {2025}, doi = {10.1109/tgrs.2025.3582956}\n}\n"
+      "citation": "@article{zhou_29_hsi_2025, title = {Adversarial Dilated Large-Kernel Attention Networks for Cross-Domain Few-Shot Hyperspectral Image Classification}, author = {Xuan Liu and Lei Tong and Jun Zhou and Chuangbai Xiao}, year = {2025}, doi = {10.1109/tgrs.2025.3582956}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content",
+          "figureLabel": "Fig. 1",
+          "caption": "Griffith接受稿（AM）：训练总框架：源/目标映射、双协同谱空注意力块、少样本欧氏距离和三尺度条件域/额外对抗损失。",
+          "page": 4,
+          "verificationNote": "已下载AM原页300dpi裁切，未重绘。PDF第4页对应正文第3页，前有机构封面；图、所有分支及完整图注已视觉核对，不是最终出版社排版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              200,
+              235,
+              2350,
+              1425
+            ]
+          },
+          "path": "figures/zhou-29-hsi-2025/framework-fig1-griffith-am.png",
+          "width": 2150,
+          "height": 1190,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "44d79ebfe6af5d627026234929f58ffda50594b3d24dceb21bf14e7212c3aa01",
+          "attribution": "Xuan Liu, Lei Tong, Jun Zhou, Chuangbai Xiao · TGRS 2025"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content",
+          "figureLabel": "Fig. 2",
+          "caption": "Griffith接受稿（AM）：协同谱空注意力块：空间Conv2D与光谱Conv3D并行，Dilated Reparam大核注意力、乘性加权、残差及拼接融合。",
+          "page": 5,
+          "verificationNote": "已下载AM原页300dpi裁切，未重绘。PDF第5页对应正文第4页，前有机构封面；图、所有分支及完整图注已视觉核对，不是最终出版社排版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              200,
+              235,
+              2350,
+              1255
+            ]
+          },
+          "path": "figures/zhou-29-hsi-2025/framework-fig2-griffith-am.png",
+          "width": 2150,
+          "height": 1020,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "15794bf2a6094ab287604cf8ea9e5c1bad6640a751f790598b7af0e29b8a6b66",
+          "attribution": "Xuan Liu, Lei Tong, Jun Zhou, Chuangbai Xiao · TGRS 2025"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content",
+          "figureLabel": "Fig. 3",
+          "caption": "Griffith接受稿（AM）：Dilated Reparam Block：13×13主核与5×5/7×7/3×3不同膨胀分支、BN、稀疏核插零及参数合并；原图注保留，未核训练/推理等价实现。",
+          "page": 6,
+          "verificationNote": "已下载AM原页300dpi裁切，未重绘。PDF第6页对应正文第5页，前有机构封面；图、所有分支及完整图注已视觉核对，不是最终出版社排版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              200,
+              225,
+              2350,
+              1055
+            ]
+          },
+          "path": "figures/zhou-29-hsi-2025/framework-fig3-griffith-am.png",
+          "width": 2150,
+          "height": 830,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "9955ec8c65817f899ca0262845844629455a62b7bc36bf951497cc4dbdf0cafa",
+          "attribution": "Xuan Liu, Lei Tong, Jun Zhou, Chuangbai Xiao · TGRS 2025"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e1914e45-7dd5-4415-86ac-3641b36f4afc/content",
+          "figureLabel": "Fig. 4",
+          "caption": "Griffith接受稿（AM）：映射与嵌入网络具体参数：谱维映射100、两融合块通道200/160、9×9池化及160维嵌入；图内7×7与主表13×13协议差异保留。",
+          "page": 7,
+          "verificationNote": "已下载AM原页300dpi裁切，未重绘。PDF第7页对应正文第6页，前有机构封面；图、所有分支及完整图注已视觉核对，不是最终出版社排版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              200,
+              230,
+              2350,
+              800
+            ]
+          },
+          "path": "figures/zhou-29-hsi-2025/framework-fig4-griffith-am.png",
+          "width": 2150,
+          "height": 570,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "2bbdefa668667a1b1f3b023b858b4200cfcbfee8d656277ba73d3bfb47cbe8e5",
+          "attribution": "Xuan Liu, Lei Tong, Jun Zhou, Chuangbai Xiao · TGRS 2025"
+        }
+      ]
     },
     {
       "id": "zhou-31-hsi-2025",

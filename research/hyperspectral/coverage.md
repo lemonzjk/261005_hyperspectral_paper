@@ -180,6 +180,7 @@
 | Jun Zhou · Griffith institutional author profile | profile all linked years through 2026-10-11 snapshot | profile7205、ORCID0000-0001-5822-8233、全部关联成果，无关键词过滤；0/100/200/300，各100/100/100/87；total387且非lower bound，唯一ID集合与profile完全一致。 | 未单列 / 387 / 387 | 机构387关联项全分页已核；11未决与2来源外HSI候选 | 机构指定来源闭环不等于作者全集；11继承未决有跨来源重叠。；Dualmamba IGARSS与SOC SSRN两直接HSI候选当前来源不合格，合格版本待；不扩展作者例外。；184机构PDF链接中75条匹配已录HSI、31仍摘要级，资料队列已列；链接不等于本轮已下载/已读，单篇机构及当前可访问性待核。 |
 | Jun Zhou · coauthor CV and existing accepted manuscripts | 2025–2026 | Hyperspectral Imaging for Biomedical Applications: Trends and Future Directions、Low-rank spatial-spectral-temporal learning for Hyperspectral Object Tracking、Semantic Consistency-Oriented Prototype Network for Cross-Domain Few-Shot Hyperspectral Image Classification；Crossref每条前5，共15登记结果、0精确题名；3指定arXiv查询各total0。3PDF共50页下载，实际读20页：SUIT16、其他各2。 | 未单列 / 3 / 3 | CV3条仍未决；1接受稿全文、2PDF待正文 | CV三候选未取得对应正式/合格来源版本；指定排序查询不证明不存在。；Medical/FedDA两份已下载AM其余正文、原图待整理；不是付费或不可获取。；作者全集及全领域矩阵仍未闭环，SUIT原稿冲突及最终版保留待核。 |
 | Jun Zhou · accepted manuscripts and citation cross-check | 2023–2026 | Distance Learning-Based Prototypical Network With Multi-Domain Adaptation for Few-Shot Hyperspectral Medical Image Classification、FedDA-HSI: Federated Class-Aware Framework for Hyperspectral Image Classification With Diffusion Augmentation、Toward Universal Representation Learning for Multidomain Hyperspectral Image Classification；AM15+19=34页全读，先前各2页，本轮新增读30页；Crossref前5精确匹配已录1条，arXiv指定查询total2为其他作者。 | 未单列 / 4 / 1 | 2接受稿全文完成；引文1已录，3其他作者候选待核 | 接受稿公式/路由/隐私和划分边界保留，未核最终版/实现。；其他作者3候选分流全领域；指定引用查询不证明作者目录或场所全集。；Griffith75已录HSI有PDF链接，原31资料队列剩28摘要级；作者全集/领域矩阵继续。 |
+| Jun Zhou · arXiv author variants and accepted manuscript | 2008–2026 | au:"Zhou_Jun"、au:Zhou AND (all:"spectral imaging" OR all:"spectral-spatial" OR all:"spectral recovery" OR all:"reflectance")、au:"J._Zhou"、Adversarial Dilated Large-Kernel Attention Networks for Cross-Domain Few-Shot Hyperspectral Image Classification；倒序531/531；扩展词1000+891/1891，姓名20（旧15/新5）；J._Zhou无有效集合。 | 2422 / 20 / 5 | 倒序ID集合相同；扩展查询语义异常，5新简写范围外；1AM全文 | 1891只116题名/摘要字面命中且58无规范Zhou姓，不能冒充精确作者/任务全集；其余1871未逐项筛查。；J._Zhou查询失败不算零；作者8项arXiv等范围/身份未决仍保留。；ADLKAN公式/伪代码和验证协议未决；原31机构资料队列剩27。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -829,6 +830,8 @@
   阅读边界：CV3条仍pending；3个其他作者TGRS题名分流全领域候选，不排除或自动入库。下载3PDF50页，实际读SUIT全16页、Medical/FedDA各封面及首页2页，共20页；全文数量只新增1。医学原型任务迁移至既有医学分类，原图2张版本明确。
 - 2026-10-11 / jun-zhou-medical-fedda-reading-2026-10-11：新增 0，更新 2，去重 1，排除 0，待处理 3。更新与去重可能重叠，不能相加为新增。
   阅读边界：15/19页AM全文完成，共34页含封面（本轮补读30）；3原图保留页码/版本/原图注。医学ref19已录不新增；3其他作者题名待核不入库。医学公式及FedDA上传解码器、隐私、划分和k2/k4协议分别记录；最终版与性能未核。
+- 2026-10-11 / jun-zhou-name-order-adlkan-reading-2026-10-11：新增 0，更新 1，去重 0，排除 5，待处理 1。更新与去重可能重叠，不能相加为新增。
+  阅读边界：531姓名倒序ID全重合不计逐篇去重；扩展词20姓名记录15旧/5新，5新仅摘要按直接HSI范围排除，身份未核。1891中其余1871未逐项筛查且检索语义异常；J._Zhou失败仍待有效查询。ADLKAN AM19页全读、4图，不是正式版或性能复现。
 
 </details>
 
