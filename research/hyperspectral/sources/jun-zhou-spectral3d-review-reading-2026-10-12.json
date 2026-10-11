@@ -1,0 +1,337 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "Spectral 3D Computer Vision review fixed v1 full-text reading and target-author reference lookup",
+  "previousGoalTurn": "76e2b70 completed SPECIAL fixed v3 and preserved v1 author/current-agent selected-reading boundaries",
+  "accessFile": "jun-zhou-spectral3d-review-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 1,
+  "newFullTextReadingCount": 1,
+  "pdfPagesActuallyRead": 9,
+  "figuresAdded": 1,
+  "materials": [
+    {
+      "paperId": "zhou-scholar-arxiv-2302-08054",
+      "version": "arXiv:2302.08054v1",
+      "pdfFile": "jun-zhou-spectral3d-review-reading-2026-10-12-review-v1.pdf",
+      "sha256": "a62301c1b36b56536e4256a008ce97dd62f10b2dd1a8dca2cca4d8d60c478b75",
+      "downloaded": true,
+      "pageCount": 9,
+      "actuallyReadPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "textFile": "jun-zhou-spectral3d-review-reading-2026-10-12-pages.json",
+      "referencesFile": "jun-zhou-spectral3d-review-reading-2026-10-12-references.json",
+      "referenceCount": 49,
+      "figureCount": 1,
+      "tableCount": 1,
+      "equationCount": 2,
+      "montageFiles": [
+        "jun-zhou-spectral3d-review-reading-2026-10-12-montage-1.png",
+        "jun-zhou-spectral3d-review-reading-2026-10-12-montage-2.png"
+      ],
+      "authors": [
+        "Yajie Sun",
+        "Ali Zia",
+        "Vivien Rolland",
+        "Charissa Yu",
+        "Jun Zhou"
+      ],
+      "apiLatestVersion": "v1",
+      "firstSubmittedAt": "2023-02-16T03:29:40Z",
+      "updatedAt": "2023-02-16T03:29:40Z",
+      "identityEvidence": "首页Jun Zhou所属School of ICT Griffith，与当前API五作者一致。",
+      "input": "被综述研究中的多视角HSI、单目HSI色差/离焦观测以及HSI与LiDAR/RGB几何数据；同时纳入MSI、单通道紫外/红外、热成像和ToF研究。综述不设自己的统一传感器、模型输入或训练样本。",
+      "output": "四类光谱三维任务分类、七行硬件/波长/评价方式对照及应用、工具和七项挑战；不生成新的深度图、点云或重建模型，也不发布新的统一评测数据。",
+      "method": "§3.1区分把HSI投影/赋谱到既有点云与主动联合采集；Eq1/2为概念映射，不提供可直接执行的矩阵维数或新求解器。§3.2评述逐HSI波段SfM/稠密重建、尺度对齐与跨带几何统计融合，§3.3评述利用单目HSI色差与离焦的优化、流形/图Laplacian稀疏到稠密相对深度。§3.4姿态/运动主要为单IR/thermal、depth/ToF案例，不能据此声称高光谱姿态模型。四类应用横跨农业环境、建筑、地质水下和数字遗产，涉及的谱类型分别识别。列出的通用软件及深度框架仅为综述举例，非本文官方实现或已验证工具链。",
+      "datasets": "没有自身训练/测试集或新数据发布。引用农业植株、HSI/LiDAR森林和地质制图等高光谱研究，以及MSI建筑/遗产、IR/ToF姿态等更宽谱应用；不同案例不统一成HSI实验。Table1仅七项选择性对照，不代表49篇文献均有同类数据或完整领域覆盖。",
+      "protocol": "无新模型训练、共同数据划分、随机重复或可比硬件性能试验。Table1/p7按文献列传感器/照明、波长范围和评价类型：Jurado2020多光谱映射、López2021热映射、Li2021主动反射/形状、Zia2015a HSI三维、Ishihara2019多光谱深度、Zia2021 HSI深度、Yao2020 IR/ToF姿态。列有RMSE/MAE/SD、MDE、MSE及AE等不同对象指标，没有统一数值排名。Zia2021波段范围470–900nm室外/590–920nm室内按原表；Yao行把Mean Average Precision缩写为MAE，保留印式不擅改。49参考书目已读，仅明确四条目标Jun的直接HSI引用按现有目录核对；未逐篇阅读全文或展开全部etal作者。",
+      "results": "综述将光谱三维分为多源数据集成、从光谱恢复结构、深度估计、姿态/运动四类；直接HSI的结构/深度研究具有明确内容，而姿态示例不是高光谱实证。讨论七项挑战：计算/硬件与存储、高维处理、公开数据与统一指标不足、匹配失败导致丢失谱带/视图、互反射、联合几何/谱理论及稳定优化照明。没有自身实验数值，不据不同传感器/指标对照推导某模型领先。",
+      "limitations": "固定v1全文已读，未确认新的正式发表版本；指定Crossref前五条与IJCAI2023/2024索引的同题查找没有命中，不是所有年份/出版社的排除证明。广义谱范围包括多光谱和单通道UV/IR/thermal，不能将所有应用及被引论文纳入直接HSI。叙述综述未给可复核的系统检索数据库、查询式、日期截点和筛选流程，49引用不证明领域全量，作者自称首个全面综述未独立验证。Table1指标对象/单位/波段不同，不支持性能比较。Fig1(a)原标签Multispectral与图注所引López2022的HSI题名不一致，保持原图不改标签。式子仅抽象映射，所提未来系统/库不代表新实现；通用软件仅列用途，没有本文官方代码链接。"
+    }
+  ],
+  "classification": {
+    "removed": [
+      "surface-reconstruction",
+      "spectral-pointcloud-generation"
+    ],
+    "added": [
+      "hyperspectral-research-review"
+    ],
+    "rationale": "该文的实际贡献是直接覆盖高光谱融合、建模和深度估计的领域综述，没有自身几何模型输出；新增高光谱研究综述任务，移除surface-reconstruction和spectral-pointcloud-generation算法任务错配。其广义spectral范围含MSI/单IR，不将全部被引案例认作直接HSI。"
+  },
+  "formalVersionLookup": {
+    "crossrefQueryUrl": "https://api.crossref.org/works?query.title=Spectral+3D+Computer+Vision+A+Review&rows=5",
+    "crossrefReturnedRows": [
+      {
+        "doi": "10.11591/ijece.v9i4.pp2394-2402",
+        "titles": [
+          "Computer Vision Based 3D Reconstruction : A Review"
+        ],
+        "authors": [
+          {
+            "given": "Hanry",
+            "family": "Ham",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Julian",
+            "family": "Wesley",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Hendra",
+            "family": "Hendra",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "doi": "10.1007/978-981-19-7603-2",
+        "titles": [
+          "3D Computer Vision"
+        ],
+        "authors": [
+          {
+            "given": "Yu-Jin",
+            "family": "Zhang",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "doi": "10.1007/978-1-4471-4150-1",
+        "titles": [
+          "3D Computer Vision"
+        ],
+        "authors": [
+          {
+            "given": "Christian",
+            "family": "Wöhler",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "doi": "10.1007/978-3-642-01732-2",
+        "titles": [
+          "3D Computer Vision"
+        ],
+        "authors": [
+          {
+            "given": "Christian",
+            "family": "Wöhler",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "doi": "10.1007/978-3-031-23210-7_11",
+        "titles": [
+          "Computer Vision: A Review on 3D Object Recognition"
+        ],
+        "authors": [
+          {
+            "given": "Yeray",
+            "family": "Mezquita",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Alfonso",
+            "family": "González-Briones",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Patricia",
+            "family": "Wolf",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Javier",
+            "family": "Prieto",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "officialIndexes": [
+      {
+        "url": "https://www.ijcai.org/proceedings/2023/",
+        "savedFile": "jun-zhou-spectral3d-review-reading-2026-10-12-ijcai-2023.html",
+        "finding": "指定题名/谱三维关键词未匹配该综述正式标题，不作全关键词领域覆盖。"
+      },
+      {
+        "url": "https://www.ijcai.org/proceedings/2024/",
+        "savedFile": "jun-zhou-spectral3d-review-reading-2026-10-12-ijcai-2024.html",
+        "finding": "指定题名/谱三维关键词未匹配该综述正式标题，不作全关键词领域覆盖。"
+      }
+    ],
+    "finding": "此次指定查找没有同题正式书目；保留固定arXiv版本，不证明未发表或穷尽所有渠道/年份。"
+  },
+  "targetAuthorReferenceMatches": [
+    {
+      "reference": {
+        "citationKey": "Liang et al., 2013",
+        "text": "J Liang, A Zia, J Zhou, and X Sirault. 3D plant modelling via hyperspectral imaging. In IEEE International Conference on Computer Vision Workshops, pages 172–177, 2013."
+      },
+      "paperId": "plant-hsi-sfm-iccvw-2013",
+      "existingAuthors": "Jie Liang, Ali Zia, Jun Zhou, Xavier Sirault",
+      "finding": "已有目录匹配；本批仅核所读综述的书目，不升级被引正文阅读状态。"
+    },
+    {
+      "reference": {
+        "citationKey": "Zia et al., 2015a",
+        "text": "A Zia, J Liang, J Zhou, and Y Gao. 3D reconstruction from hyperspectral images. In IEEE Win- ter Conference on Applications of Computer Vision, pages 318–325. IEEE, 2015."
+      },
+      "paperId": "bandwise-hsi-3d-wacv-2015",
+      "existingAuthors": "Ali Zia, Jie Liang, Jun Zhou, Yongsheng Gao",
+      "finding": "已有目录匹配；本批仅核所读综述的书目，不升级被引正文阅读状态。"
+    },
+    {
+      "reference": {
+        "citationKey": "Zia et al., 2015b",
+        "text": "A Zia, J Zhou, and Y Gao. Relative depth estimation from hyperspectral data. In International Con- ference on Digital Image Computing: Techniques and Ap- plications, pages 1–7. IEEE, 2015."
+      },
+      "paperId": "relative-hsi-depth-dicta-2015",
+      "existingAuthors": "Ali Zia, Jun Zhou, Yongsheng Gao",
+      "finding": "已有目录匹配；本批仅核所读综述的书目，不升级被引正文阅读状态。"
+    },
+    {
+      "reference": {
+        "citationKey": "Zia et al., 2021",
+        "text": "A Zia, J Zhou, and Y Gao. Exploring chro- matic aberration and defocus blur for relative depth esti- mation from monocular hyperspectral image. IEEE Trans- actions on Image Processing, 30:4357–4370, 2021."
+      },
+      "paperId": "chromatic-defocus-hsi-depth-2021",
+      "existingAuthors": "Ali Zia, Jun Zhou, Yongsheng Gao",
+      "finding": "已有目录匹配；本批仅核所读综述的书目，不升级被引正文阅读状态。"
+    }
+  ],
+  "referenceBoundary": "49书目实际阅读中四条明确目标J. Zhou直接HSI匹配现有目录；Z and L2018章只列Ali Z/Jie L、未列Jun，不能按同共作者当目标作者论文；未展开所有etal完整作者，不称全部引用身份核完或被引正文已读。",
+  "incidentalFieldCandidates": [
+    {
+      "title": "Hyperspectral Image Denoising Using Uncertainty-Aware Adjustor",
+      "authors": "Jiahua Xiao, Xing Wei",
+      "url": "https://www.ijcai.org/proceedings/2023/173",
+      "doi": "10.24963/ijcai.2023/173",
+      "venue": "IJCAI",
+      "year": 2023,
+      "discoveredAt": "2026-10-12",
+      "searchId": "jun-zhou-spectral3d-review-reading-2026-10-12-incidental-ijcai",
+      "decision": "pending",
+      "reason": "官方论文摘要明确直接HSI，来源IJCAI在普通总库白名单，作者无Jun Zhou；本批作者综述正式版查找时偶然发现，题名未匹配现有目录/候选。已核摘要与书目，排入作者专项后的领域版本去重及免费全文整理；本批不自动当作周峻论文或完成全领域收录。",
+      "abstract": "Hyperspectral image (HSI) denoising has achieved promising results with the development of deep learning. A mainstream class of methods exploits the spatial-spectral correlations and recovers each band with the aids of neighboring bands, collectively referred to as spectral auxiliary networks. However, these methods treat entire adjacent spectral bands equally. In theory, clearer and nearer bands  tend to contain more reliable spectral information than noisier and farther ones with higher uncertainties. How to achieve spectral enhancement and adaptation of each adjacent band has become an urgent problem in HSI denoising. This work presents the UA-Adjustor, a comprehensive adjustor that enhances denoising performance by considering both the band-to-pixel and enhancement-to-adjustment aspects. Specifically, UA-Adjustor consists of three stages that evaluate the importance of neighboring bands, enhance neighboring bands based on uncertainty perception, and adjust the weight of spatial pixels in adjacent bands through estimated uncertainty. For its simplicity, UA-Adjustor can be flexibly plugged into existing spectral auxiliary networks to improve denoising behavior at low cost. Extensive experimental results validate that the proposed solution can improve over recent state-of-the-art (SOTA) methods on both simulated and real-world benchmarks by a large margin.",
+      "readingProgress": "abstract_read",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-spectral3d-review-reading-2026-10-12.json",
+      "collectionScope": "active",
+      "freePdfUrl": "https://www.ijcai.org/proceedings/2023/0173.pdf",
+      "materialBoundary": "本批仅官方详情摘要与书目已读，PDF未下载/未读，代码只记录实际发现的官方URL，本页未提供明确作者仓库地址。"
+    },
+    {
+      "title": "Bidirectional Dilation Transformer for Multispectral and Hyperspectral Image Fusion",
+      "authors": "Shangqi Deng, Liang-Jian Deng, Xiao Wu, Ran Ran, Rui Wen",
+      "url": "https://www.ijcai.org/proceedings/2023/404",
+      "doi": "10.24963/ijcai.2023/404",
+      "venue": "IJCAI",
+      "year": 2023,
+      "discoveredAt": "2026-10-12",
+      "searchId": "jun-zhou-spectral3d-review-reading-2026-10-12-incidental-ijcai",
+      "decision": "pending",
+      "reason": "官方论文摘要明确直接HSI，来源IJCAI在普通总库白名单，作者无Jun Zhou；本批作者综述正式版查找时偶然发现，题名未匹配现有目录/候选。已核摘要与书目，排入作者专项后的领域版本去重及免费全文整理；本批不自动当作周峻论文或完成全领域收录。",
+      "abstract": "Transformer-based methods have proven to be effective in achieving long-distance modeling, capturing the spatial and spectral information, and exhibiting strong inductive bias in various computer vision tasks. Generally, the Transformer model includes two common modes of multi-head self-attention (MSA): spatial MSA (Spa-MSA) and spectral MSA (Spe-MSA). However, Spa-MSA is computationally efficient but limits the global spatial response within a local window. On the other hand, Spe-MSA can calculate channel self-attention to accommodate high-resolution images, but it disregards the crucial local information that is essential for low-level vision tasks. In this study, we propose a bidirectional dilation Transformer (BDT) for multispectral and hyperspectral image fusion (MHIF), which aims to leverage the advantages of both MSA and the latent multiscale information specific to MHIF tasks. The BDT consists of two designed modules: the dilation Spa-MSA (D-Spa), which dynamically expands the spatial receptive field through a given hollow strategy, and the grouped Spe-MSA (G-Spe), which extracts latent features within the feature map and learns local data behavior. Additionally, to fully exploit the multiscale information from both inputs with different spatial resolutions, we employ a bidirectional hierarchy strategy in the BDT, resulting in improved performance. Finally, extensive experiments on two commonly used datasets, CAVE and Harvard, demonstrate the superiority of BDT both visually and quantitatively. Furthermore, the related code will be available at the GitHub page of the authors.",
+      "readingProgress": "abstract_read",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-spectral3d-review-reading-2026-10-12.json",
+      "collectionScope": "active",
+      "freePdfUrl": "https://www.ijcai.org/proceedings/2023/0404.pdf",
+      "materialBoundary": "本批仅官方详情摘要与书目已读，PDF未下载/未读，代码只记录实际发现的官方URL，本页未提供明确作者仓库地址。"
+    }
+  ],
+  "softwareBoundary": "本文没有明确官方代码URL；七个通用软件主页仅在PDF原文看到，未访问其网站/仓库，不将工具示例作本文代码链接。",
+  "remaining": "作者181条不变，98全文/83摘要；作者目录未闭环，领域矩阵后续继续。",
+  "verification": {
+    "dataValidation": "npm run validate passed: 390 papers, 179 labels, 293 figures, 302 audited classifications, CONTEXT 1858 chars/36 lines.",
+    "build": "npm run build passed; existing large-chunk warning only.",
+    "browserResultsFile": "jun-zhou-spectral3d-review-reading-2026-10-12-browser-results.json",
+    "browserScreenshots": [
+      "jun-zhou-spectral3d-review-reading-2026-10-12-browser-desktop.png",
+      "jun-zhou-spectral3d-review-reading-2026-10-12-browser-mobile.png"
+    ],
+    "browserBoundary": "本地网站桌面/手机综述分类筛选及URL重载、一条结果、详情原图和清除筛选；外部导航一律阻止，没有访问论文作者代码。"
+  }
+}
