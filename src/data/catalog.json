@@ -35933,7 +35933,7 @@
     },
     {
       "id": "zhou-68-hsi-2023",
-      "shortTitle": "Spatial–Spectral Split Attention Residual Network fo",
+      "shortTitle": "S³ARN · spectral–spatial split attention",
       "title": "Spatial–Spectral Split Attention Residual Network for Hyperspectral Image Classification",
       "authors": "Zhenqiu Shu, Zigao Liu, Jun Zhou, Songze Tang, Zhengtao Yu, Xiao-Jun Wu",
       "year": 2023,
@@ -35945,31 +35945,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/jstars.2022.3225928",
-      "representation": "高光谱分类：S³ARN 以多感受野 split-attention 融合光谱和空间特征，在瓶颈残差块中生成注意力掩码，强调有用波段与邻域像素。",
+      "representation": "地物分类：三谱块接三空间块的瓶颈残差干线，split attention融合多尺度radix；谱向量和空间张量掩码以残差方式重标定。",
       "tags": [],
-      "summary": "S³ARN 在残差瓶颈结构中分别建立光谱和空间 split-attention 分支，融合多感受野特征并抑制冗余波段和邻域信息，以降低过拟合和参数开销。",
-      "input": "高光谱影像 patch。",
-      "output": "像素或 patch 的地物类别预测。",
-      "mechanism": "split attention 融合多感受野；光谱和空间注意力残差分支生成掩码，同时强调有用波段与邻域像素；瓶颈结构减少参数。",
-      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 作者稿摘要核验；仅读摘要，未阅读全文。",
-      "paper": "https://www.researchgate.net/publication/365952167_Spatial-Spectral_Split_Attention_Residual_Network_for_Hyperspectral_Image_Classification",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "S³ARN以三个光谱split-attention块和三个空间块提取多感受野特征，另用谱与空间掩码残差分支重标定。Indian Pines/Loukia/Houston2013 OA为89.51/78.47/95.16%，对应主表聚合指标领先。瓶颈结构降低参数和训练耗时；随机像元划分的邻域重叠、radix设置及原图时间轴标签仍保留。",
+      "input": "未PCA的15×15×B光学HSI patch：Indian Pines200带、Loukia176带、Houston2013 144带；类别标注监督训练，独立随机像元validation选模。",
+      "output": "逐像元地物分类与二维分类图；波段向量/空间掩码和潜在特征为内部量，不输出高光谱重建、真实三维几何或独立预训练表征。",
+      "mechanism": "干线依次三个3D光谱split-attention瓶颈块＋三个2D空间块，末端两FC分类。特征先1×1缩维，分K cardinal、每组R radix多感受野，GAP→FC→ReLU→FC并沿radix作softmax，分支加权、concat后1×1和identity残差。默认K/R=2/2，谱核1×1×5和1×1×7，空间核5×5/3×3；Fig2把谱核维度顺序画5×1×1/7×1×1，不私改作者布局。谱掩码M=sigmoid(FC2(ReLU(FC1(GAP(X)))))；空间T来自conv/deconv/maxpool/max-antipool，原Eq14有四conv和两deconv。Eq2/3为(1+M)⊗X、(1+T)⊗H3spc，保留残差干线；不是Transformer，不把SAM缩写当SAM基础分割模型。",
+      "readingNote": "Griffith封面明确VoR，13 PDF页（封面＋JSTARS卷16 pp419–430十二正文）全部逐页阅读，14式、8表、9图、63条引文和作者传记已读。原Fig2/3/4完整裁取并视觉核，TablesI–VIII图像数值已读。机构封面年份2022对应首次出版，正式卷期和Crossref2023分开；首页Griffith与注册ORCID明确为目标Jun。没有访问代码仓库。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
-          "representation-learning"
+          "spatial-spectral-split-attention"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用光谱—空间 split attention 和瓶颈残差结构抑制冗余并提升高光谱分类？",
-        "datasets": "作者稿摘要报告在三个基准数据集上实验；数据名称、划分和指标待全文核验。",
-        "experimentSetting": "光谱/空间 split-attention 残差分支与多感受野特征融合，在三套基准数据上比较分类性能。",
-        "conclusions": "作者稿摘要报告 S³ARN 有效提升高光谱分类表现并降低训练参数；逐项性能和消融待全文核验。",
-        "limitations": "摘要未给出完整网络配置、数据统计、训练成本、代码和许可细节。",
+        "relationNote": "正式VoR输入200/176/144带HSI、监督地物分类；多尺度radix注意力和谱/空间掩码支持split-attention方法标签，无单独预训练目标，移除原表征预训练任务标签，不把内部attention当Transformer。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "多感受野split attention与两种残差掩码能否在少量像元标签下提取有效谱空特征，同时通过瓶颈结构降低分类网络开销？",
+        "datasets": "Indian Pines AVIRIS145²，去吸水带后200带、16类：TableI train/val/test325/325/9599；多数类各train/val25，小类Alfalfa/Grass-pasture-mowed/Oats各5、Stone-Steel10。Loukia HyRANK/EO-1 Hyperion249×945×176、14类：TableII440/440/12623，各类train/val10/20/50。Houston2013 CASI-1500，采集2012-06、349×1905×144、15类：TableIII450/450/14129，多数类各40，小类Syntheticgrass/Water/Parkinglot2/Tennis/Runningtrack各10。没有用固定DFC官方划分替代本文随机像元划分。",
+        "experimentSetting": "去无标签像元后random train/validation/test；input15²全带、batch64、100epochs，momentum optimizer，lr.01/decay.2、momentum.9、weightdecay.0001；按validation OA最大选模。RTX3090、i7-12700kf、64GB，Windows11/Python3.7/PyTorch1.11/CUDA11.3。8基线2DCNN/3DCNN/DFFN/RSSAN/SSRN/SSAN/MLNetA/B用相同划分。默认K/R2/2，另对K2/4/8及R2/3/4画OA/时间曲线，IP/Houston最优R4，LoukiaR2，不能将最优设置推成所有主表统一配置。",
+        "conclusions": "TableIV–VI IP/Loukia/Houston的OA/AA/Kappa×100分别89.51/88.98/87.95、78.47/77.87/74.62、95.16/95.78/94.76，所列聚合指标领先，部分类别仍不及基线。TableVII去split attention的OA87.76/76.67/94.68，去谱掩码88.74/76.60/94.40，去空间掩码89.44/76.75/94.82。TableVIII本法参数1.16/1.12/1.00M、训练26.98/31.35/34.05s；去瓶颈8.34/8.33/7.99M、57.34/65.40/63.38s，OA82.37/65.66/86.31。Fig8最佳radix/cardinal依场景不同；Fig9caption写test time，图纵轴却OverallAccuracy(%)，不据柱高推定时间单位/精确值。",
+        "limitations": "正式VoR已读；机构Published2022、正文VOL16 2023和Crossref2023对应首次出版与卷期，不改目录年份。随机像元拆分及“少训练多测试”不能证明15²邻域空间不重叠；未给划分seed/重复运行方差、学习率衰减触发计划或PCA外预处理。默认R2与分析中IP/Houston最优R4分开，主表具体使用者未明。Eq2的M为sigmoid正权且以1+M乘原输入，是相对重加权而不保证数值小于原强度；空间T末端未明确sigmoid。Houston引用[61]实际为Viareggio2013试验，不当官方Houston数据原始定义证据。Fig9纵轴与时间注冲突保留，不查代码消解；未见本稿作者官方代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -35989,6 +35989,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+            "checkedAt": "2026-10-12",
+            "level": "指定机构VoR逐页全文与原表/原图核验",
+            "supports": [
+              "正式VoR输入200/176/144带HSI、监督地物分类；多尺度radix注意力和谱/空间掩码支持split-attention方法标签，无单独预训练目标，移除原表征预训练任务标签，不把内部attention当Transformer。",
+              "原首页单位与Crossref注册ORCID0000-0001-5822-8233确认目标Griffith Jun Zhou",
+              "数据/训练划分、主表、消融、复杂度及原始印刷边界；代码仅官方链接"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/jstars.2022.3225928",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref注册正式书目及稳定作者身份",
+            "supports": [
+              "完整作者顺序、Jun Zhou ORCID和Griffith单位",
+              "卷期/页码与PDF版本边界；不以书目读取推断最终正文已读"
+            ]
           }
         ],
         "versions": [
@@ -35998,12 +36017,131 @@
             "url": "https://doi.org/10.1109/jstars.2022.3225928",
             "doi": "10.1109/jstars.2022.3225928",
             "year": 2023,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式JSTARS卷16(2023) pp419–430；机构封面标VoR且全部13PDF页已读，首次出版2022-12-01与卷期年份分开。"
+          },
+          {
+            "id": "zhou-68-hsi-2023-griffith-vor",
+            "type": "正式发表版",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+            "doi": "10.1109/jstars.2022.3225928",
+            "year": 2023,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面明确VoR，1封面＋JSTARS419–430共13页全读；Published2022不覆盖正式卷期2023。",
+            "firstPublishedAt": "2022-12-01"
           }
         ],
-        "methodFamilyId": "zhou-2023-title-68"
+        "methodFamilyId": "zhou-2023-title-68",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "正式VoR输入200/176/144带HSI、监督地物分类；多尺度radix注意力和谱/空间掩码支持split-attention方法标签，无单独预训练目标，移除原表征预训练任务标签，不把内部attention当Transformer。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d7888b86b7b01fdcafffe876dfce11aa28820fd4b733361894180342092bd7ec",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_68_hsi_2023, title = {Spatial–Spectral Split Attention Residual Network for Hyperspectral Image Classification}, author = {Zhenqiu Shu and Zigao Liu and Jun Zhou and Songze Tang and Zhengtao Yu and Xiao-Jun Wu}, year = {2023}, doi = {10.1109/jstars.2022.3225928}\n}\n"
+      "citation": "@article{zhou_68_hsi_2023, title = {Spatial–Spectral Split Attention Residual Network for Hyperspectral Image Classification}, author = {Zhenqiu Shu and Zigao Liu and Jun Zhou and Songze Tang and Zhengtao Yu and Xiao-Jun Wu}, year = {2023}, doi = {10.1109/jstars.2022.3225928}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+          "figureLabel": "Fig. 2",
+          "caption": "S³ARN三光谱块接三空间块、split attention及两掩码残差分支总体结构。",
+          "page": 5,
+          "verificationNote": "Griffith VoR · CC BY-NC-ND4.0，PDF第5页/期刊第422页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              40,
+              52,
+              560,
+              414
+            ],
+            "pixelBox": [
+              166,
+              216,
+              2334,
+              1725
+            ]
+          },
+          "path": "figures/zhou-68-hsi-2023/split-fig2.png",
+          "width": 2168,
+          "height": 1509,
+          "sha256": "bc3f4a95e9aab844bcbc9e9baaf96a3d21077eace124a96e51b18e3f0cf5fca6",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zhenqiu Shu, Zigao Liu, Jun Zhou, Songze Tang, Zhengtao Yu, Xiao-Jun Wu · JSTARS VoR · CC BY-NC-ND4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+          "figureLabel": "Fig. 3",
+          "caption": "S³ARN光谱GAP—FC—ReLU—FC—sigmoid向量掩码分支。",
+          "page": 6,
+          "verificationNote": "Griffith VoR · CC BY-NC-ND4.0，PDF第6页/期刊第423页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              297,
+              57,
+              560,
+              131
+            ],
+            "pixelBox": [
+              1237,
+              237,
+              2334,
+              546
+            ]
+          },
+          "path": "figures/zhou-68-hsi-2023/split-fig3.png",
+          "width": 1097,
+          "height": 309,
+          "sha256": "6bb7cb86badb7e88f31247fe6c37d20e5f9a9e063646e631c5b6bbf0925b2c31",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zhenqiu Shu, Zigao Liu, Jun Zhou, Songze Tang, Zhengtao Yu, Xiao-Jun Wu · JSTARS VoR · CC BY-NC-ND4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+          "figureLabel": "Fig. 4",
+          "caption": "S³ARN卷积/反卷积及池化/反池化空间张量掩码分支。",
+          "page": 7,
+          "verificationNote": "Griffith VoR · CC BY-NC-ND4.0，PDF第7页/期刊第424页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              40,
+              54,
+              296,
+              128
+            ],
+            "pixelBox": [
+              166,
+              225,
+              1234,
+              534
+            ]
+          },
+          "path": "figures/zhou-68-hsi-2023/split-fig4.png",
+          "width": 1068,
+          "height": 309,
+          "sha256": "c9e0ede7c484a665fb0ad29427d9a11755a7d01c88775e7ddefd7eb0521c0546",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zhenqiu Shu, Zigao Liu, Jun Zhou, Songze Tang, Zhengtao Yu, Xiao-Jun Wu · JSTARS VoR · CC BY-NC-ND4.0"
+        }
+      ]
     },
     {
       "id": "zhou-69-hsi-2023",
@@ -36425,7 +36563,7 @@
     },
     {
       "id": "zhou-46-hsi-2024",
-      "shortTitle": "Few-Shot Hyperspectral Image Classification Using Re",
+      "shortTitle": "FSHyperRGAN · relational GAN few-shot classification",
       "title": "Few-Shot Hyperspectral Image Classification Using Relational Generative Adversarial Network",
       "authors": "Wei Wei, Lei Tong, Baoqing Guo, Jun Zhou, Chuangbai Xiao",
       "year": 2024,
@@ -36437,30 +36575,32 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3490537",
-      "representation": "少样本高光谱分类：关系生成对抗网络生成带标签虚拟样本，以数据嵌入/重建保留类别特征，并用关系分数指导分类。",
+      "representation": "少样本高光谱分类：标签条件生成/重建增广，关系特征匹配共同训练；1D全谱与27²×30 PCA特征两套网络。",
       "tags": [],
-      "summary": "FSHyperRGAN 面向标注样本有限的高光谱分类，用关系 GAN 增强关系网络训练样本；同时提供一维光谱和三维空间—光谱两种框架，通过关系特征匹配利用虚拟样本辅助分类。",
-      "input": "少量标注高光谱像元或空间—光谱样本。",
-      "output": "高光谱影像类别预测。",
-      "mechanism": "对抗生成模块按标签合成虚拟样本；数据嵌入与重建模块恢复潜在类别特征；关系计算模块比较原始、生成和重建样本；关系特征匹配指导分类。",
-      "readingNote": "ORCID题名、Crossref正式书目与 IEEE Xplore 官方摘要核验；未阅读全文。",
-      "paper": "https://ieeexplore.ieee.org/document/10741331/",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "FSHyperRGAN把标签条件GAN、VAE重建和关系网络联合训练，为少标注地物分类生成虚拟样本。主表每类5个标注，而每次训练任务的support为1-shot；1D全谱与3D空间—PCA特征分开评测。四场景3D OA为92.64/86.82/83.64/84.57%，聚合指标领先但各类并非全胜；耗时表首场景标签冲突及空间划分边界保留。",
+      "input": "KSC/PaviaU/Houston/WHU-Hi-HongHu少量带类别标注的HSI；1D使用逐带归一后的光谱并做同类混合，3D使用27×27×30 PCA patch；训练使用support/query及query标签条件c。",
+      "output": "按关系分数预测逐像元地物类别图；训练阶段另生成/重建光谱或空间—PCA样本作增广，测试仅用RC关系模块，不输出真实三维几何。",
+      "mechanism": "四模块：数据预处理、标签条件对抗生成AG、数据嵌入重建DER、关系计算RC。1D同类谱混合xnew=λx1+(1−λ)x2，λ~Beta(.1,.1)；3D先PCA30带、27²patch。G(zrand,c)生成，E把真实query映射到均值/方差后G(z,c)重建；AG用Wasserstein差及在生成样本梯度上的GP。DER含KL、原样本重建平方误差、判别分数及½||fφ(x)−fφ(xrecon)||²。RC对support与原/重建/生成query的fφ特征拼接，经gϕ给三种relation分数；Eq19损失为Σ(r+αrrecon+βrgen−3·1同类)²，α/β随训练渐增但精确计划未给。1D卷积、3D分支实际多用Conv2d/Deconv2d及自注意力；Fig4完整结构不因“3D”名称推成全Conv3d或Transformer。",
+      "readingNote": "Griffith AM17 PDF页（封面＋16正文）全部逐页阅读，19式、11表、18图、Algorithm1及61条引文目录已读；原Fig1/4和TableX/XI视觉核对。首页与Crossref ORCID0000-0001-5822-8233、Griffith单位一致，目标Jun身份明确。只升级该AM，最终VoR未读；没有查作者代码。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
-          "land-cover-classification"
+          "land-cover-classification",
+          "few-shot-relational-learning",
+          "adversarial-sample-augmentation"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 IEEE Xplore 官方摘要均明确少样本高光谱分类。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在标注样本很少时用关系生成和虚拟样本增强高光谱分类？",
-        "datasets": "IEEE摘要报告 KSC、PaviaU、Houston 和 WHU-Hi-HongHu 四个数据集；具体划分和指标待全文核验。",
-        "experimentSetting": "1D-FSHyperRGAN处理光谱特征，3D-FSHyperRGAN处理空间—光谱特征；四个公开数据集对比实验。",
-        "conclusions": "IEEE摘要报告四个数据集总体准确率分别为92.64%、86.82%、83.64%和84.57%；训练协议和统计边界待全文核验。",
-        "limitations": "摘要未给出少样本比例、完整基线、代码和数据许可；准确率需按正式版实验表核对。",
+        "relationNote": "AM直接处理HSI并输出地物分类，生成/重建为训练增广而非成像恢复任务；支持少样本关系学习及对抗样本增广。3D是空间—谱特征，不是几何三维，内部自注意力不自动归Transformer。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "每类只有少量标签时，生成/重建HSI样本能否在关系特征约束下有效增广同场景地物分类，而不只训练GAN或单独关系网络？",
+        "datasets": "KSC AVIRIS512×614、18m、13类5211标注；PaviaU610×340、9类，正文42766标注与TableII42506冲突，当前稿未明确这两场景实际带数，不从常用规格猜补。Houston349×1905×144、364–1046nm、15类15029。WHU-Hi-HongHu2017-11-20，Headwall Nano-Hyperspec/DJI Matrice600Pro、100m、940×475×270、400–1000nm、.043m，22类386693标注。主表均每类5标注；同图其他样本测试，不宣称跨域/类别不相交训练。",
+        "experimentSetting": "PyTorch，RMSprop，2000epochs，每轮5AG＋1DER＋1RC；D lr.0002、E/G .0001、RC .001；N为数据类别数，任务support每类K=1，与总训练5标签分别记录。不同初始训练样本重复10次；3D patch27²/PCA30，同类1D Beta(.1,.1)混合。7个1D、10个3D基线；WHU不比DCFSL（作者说其源域只有19类）。核大小/PCA选用多场景曲线，无独立验证或空间窗口隔离说明，硬件未给。",
+        "conclusions": "TableV 1D OA：KSC80.27±2.36/PaviaU68.21±5.77/Houston73.47±1.93/WHU67.39±4.26。TableVI–IX 3D OA：92.64±2.29/86.82±3.20/83.64±2.65/84.57±2.31，AA89.59/90.11/85.09/83.49，Kappa×10091.81/82.97/82.32/80.96；所列聚合指标领先，各类并非全胜。TableX RC-only OA90.30/77.17/78.58/79.86（按KSC/PaviaU/Houston/WHU），完整92.64/86.82/83.64/84.57，DER/AG单加有效。TableXI原首行写Salinas而非正文KSC，不改表名：本法训练472.58/403.50/386.26/576.14s、测试26.92/7.94/22.68/232.08s、参数484.50/472.28/469.72/501.46K（按原Salinas/Houston/PaviaU/WHU顺序）。在三场景训练慢于3D-GAN，WHU测试慢于S-DMM/3D-CNN/SDRN等，不能称最轻或最快。",
+        "limitations": "只读AM，最终VoR独立待。每类5标注与episodic support1-shot不同，不声称仅1总标签；未给独立验证/空间隔离、PCA拟合池、outlier处理算法、αβ具体计划、硬件。训练query标签是增广条件，不证明测试标签泄漏或跨类泛化。TableII42506与正文42766、Fig13类名/分图编号、TableXI Salinas与四主场景冲突保留。Eq11实−假差和Algorithm1更新符号按印式记录，不替作者改WGAN求解器。Fig18有曲线但不生成未印数值。未见本稿作者官方代码链接，不另查仓库。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36480,6 +36620,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+            "checkedAt": "2026-10-12",
+            "level": "指定机构AM逐页全文与原表/原图核验",
+            "supports": [
+              "AM直接处理HSI并输出地物分类，生成/重建为训练增广而非成像恢复任务；支持少样本关系学习及对抗样本增广。3D是空间—谱特征，不是几何三维，内部自注意力不自动归Transformer。",
+              "原首页单位与Crossref注册ORCID0000-0001-5822-8233确认目标Griffith Jun Zhou",
+              "数据/训练划分、主表、消融、复杂度及原始印刷边界；代码仅官方链接"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2024.3490537",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref注册正式书目及稳定作者身份",
+            "supports": [
+              "完整作者顺序、Jun Zhou ORCID和Griffith单位",
+              "卷期/页码与PDF版本边界；不以书目读取推断最终正文已读"
+            ]
           }
         ],
         "versions": [
@@ -36489,12 +36648,100 @@
             "url": "https://doi.org/10.1109/tgrs.2024.3490537",
             "doi": "10.1109/tgrs.2024.3490537",
             "year": 2024,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式TGRS2024 DOI书目，pp1–16；当前只读机构AM17PDF页，不表示最终VoR已读。"
+          },
+          {
+            "id": "zhou-46-hsi-2024-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+            "doi": "10.1109/tgrs.2024.3490537",
+            "year": 2024,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面明确AM，1封面＋16正文共17页全读，最终VoR独立待。"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-46"
+        "methodFamilyId": "zhou-2024-title-46",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM直接处理HSI并输出地物分类，生成/重建为训练增广而非成像恢复任务；支持少样本关系学习及对抗样本增广。3D是空间—谱特征，不是几何三维，内部自注意力不自动归Transformer。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "af72e2e3d34116093e7d35907e77532bb8acb7ac4c00b0fbd8b9f37d3d4985e7",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_46_hsi_2024, title = {Few-Shot Hyperspectral Image Classification Using Relational Generative Adversarial Network}, author = {Wei Wei and Lei Tong and Baoqing Guo and Jun Zhou and Chuangbai Xiao}, year = {2024}, doi = {10.1109/tgrs.2024.3490537}\n}\n"
+      "citation": "@article{zhou_46_hsi_2024, title = {Few-Shot Hyperspectral Image Classification Using Relational Generative Adversarial Network}, author = {Wei Wei and Lei Tong and Baoqing Guo and Jun Zhou and Chuangbai Xiao}, year = {2024}, doi = {10.1109/tgrs.2024.3490537}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+          "figureLabel": "Fig. 1",
+          "caption": "FSHyperRGAN数据处理、AG、DER与RC四模块训练流程。",
+          "page": 3,
+          "verificationNote": "Griffith AM · © IEEE，PDF第3页/正文第2页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              52,
+              574,
+              316
+            ],
+            "pixelBox": [
+              191,
+              216,
+              2392,
+              1317
+            ]
+          },
+          "path": "figures/zhou-46-hsi-2024/relgan-fig1.png",
+          "width": 2201,
+          "height": 1101,
+          "sha256": "26f83db8ec59aed66da679c98a3e96fc7a67fbef87f62071c996eb297c0cf679",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Wei Wei, Lei Tong, Baoqing Guo, Jun Zhou, Chuangbai Xiao · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+          "figureLabel": "Fig. 4",
+          "caption": "FSHyperRGAN一维全谱和空间—PCA特征网络各模块原结构。",
+          "page": 5,
+          "verificationNote": "Griffith AM · © IEEE，PDF第5页/正文第4页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              53,
+              574,
+              258
+            ],
+            "pixelBox": [
+              191,
+              220,
+              2392,
+              1075
+            ]
+          },
+          "path": "figures/zhou-46-hsi-2024/relgan-fig4.png",
+          "width": 2201,
+          "height": 855,
+          "sha256": "98ac57609d129ef60b955377fc0522e1dcc097c70d32a81835886a14d988cc11",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Wei Wei, Lei Tong, Baoqing Guo, Jun Zhou, Chuangbai Xiao · Griffith AM · © IEEE"
+        }
+      ]
     },
     {
       "id": "zhou-47-hsi-2024",
@@ -47326,7 +47573,6 @@
         "zhou-88-hsi-2022",
         "zhou-63-hsi-2023",
         "zhou-66-hsi-2023",
-        "zhou-68-hsi-2023",
         "zhou-32-hsi-2025",
         "zhou-36-hsi-2025",
         "zhou-19-hsi-2026",
@@ -47364,6 +47610,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "SSIT正式发表版全文按实际去噪任务与Transformer机制重审，仅同步本论文关联，不改类别定义或其他条目。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "S³ARN实际VoR只监督分类，无独立表征预训练；仅同步本轮归类，不改其他论文。"
         }
       ]
     },
@@ -49492,6 +49743,66 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "按全文实际预测目标区分品种抗病评级与感染诊断，纠正原地物分类关联。"
+        }
+      ]
+    },
+    {
+      "id": "few-shot-relational-learning",
+      "name": "少样本关系度量学习",
+      "dimension": "method",
+      "definition": "在带标签support/query任务中学习嵌入与关系分数用于分类；区分任务support shot、总标注预算及同场景/跨域或跨类协议，不将相似性计算自动当图学习。",
+      "status": "confirmed",
+      "color": "#92aca6",
+      "createdAt": "2026-10-12",
+      "rationale": "FSHyperRGAN接受稿或S³ARN正式VoR实际全文提供方法证据；只关联当前核验条目，不批量外推其他论文。",
+      "evidencePaperIds": [
+        "zhou-46-hsi-2024"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "依据实际全文方法、训练协议和消融形成，任务与方法标签分开。"
+        }
+      ]
+    },
+    {
+      "id": "adversarial-sample-augmentation",
+      "name": "对抗样本生成增广",
+      "dimension": "method",
+      "definition": "利用标签条件GAN或联合VAE生成/重建高光谱训练样本，辅助分类等下游任务；与成像恢复、扩散生成及真实三维几何分开，训练增广和测试模块分别注明。",
+      "status": "confirmed",
+      "color": "#92aca6",
+      "createdAt": "2026-10-12",
+      "rationale": "FSHyperRGAN接受稿或S³ARN正式VoR实际全文提供方法证据；只关联当前核验条目，不批量外推其他论文。",
+      "evidencePaperIds": [
+        "zhou-46-hsi-2024"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "依据实际全文方法、训练协议和消融形成，任务与方法标签分开。"
+        }
+      ]
+    },
+    {
+      "id": "spatial-spectral-split-attention",
+      "name": "谱空分组多尺度注意力",
+      "dimension": "method",
+      "definition": "将谱或空间特征分cardinal/radix组，以通道注意力融合不同感受野，并可结合谱/空间残差掩码；不是Transformer或分割基础SAM，注意力、瓶颈和掩码的具体作用按论文核验。",
+      "status": "confirmed",
+      "color": "#92aca6",
+      "createdAt": "2026-10-12",
+      "rationale": "FSHyperRGAN接受稿或S³ARN正式VoR实际全文提供方法证据；只关联当前核验条目，不批量外推其他论文。",
+      "evidencePaperIds": [
+        "zhou-68-hsi-2023"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "依据实际全文方法、训练协议和消融形成，任务与方法标签分开。"
         }
       ]
     }

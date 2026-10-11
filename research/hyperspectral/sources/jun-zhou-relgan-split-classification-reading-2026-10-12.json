@@ -1,0 +1,376 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "周峻两篇既有高光谱分类免费全文、身份/版本与五原图；四作者引用去重和一个其他作者全领域候选。代码只官方链接。",
+  "accessFile": "jun-zhou-relgan-split-classification-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 2,
+  "newFullTextReadingCount": 2,
+  "pdfPagesRead": 30,
+  "figuresAdded": 5,
+  "materials": [
+    {
+      "name": "relgan",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "file": "jun-zhou-relgan-split-classification-reading-2026-10-12-relgan.pdf",
+      "bytes": 26768059,
+      "sha256": "80592e7513f384f57e861f26807120bfdb2a03983f59f302492f02424b5faaec",
+      "pdfDownloaded": true,
+      "checkedAt": "2026-10-12",
+      "paperId": "zhou-46-hsi-2024",
+      "pageCount": 17,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "readingProgress": "full_text_read",
+      "version": "AM",
+      "pageTextFile": "jun-zhou-relgan-split-classification-reading-2026-10-12-relgan-pages.json"
+    },
+    {
+      "name": "split",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "file": "jun-zhou-relgan-split-classification-reading-2026-10-12-split.pdf",
+      "bytes": 3811439,
+      "sha256": "9d073602c3b45f23a419aeeae47e3bf211a114cecc4053ad131afb457c9c1687",
+      "pdfDownloaded": true,
+      "checkedAt": "2026-10-12",
+      "paperId": "zhou-68-hsi-2023",
+      "pageCount": 13,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "readingProgress": "full_text_read",
+      "version": "VoR",
+      "pageTextFile": "jun-zhou-relgan-split-classification-reading-2026-10-12-split-pages.json"
+    }
+  ],
+  "papers": [
+    {
+      "paperId": "zhou-46-hsi-2024",
+      "method": "四模块：数据预处理、标签条件对抗生成AG、数据嵌入重建DER、关系计算RC。1D同类谱混合xnew=λx1+(1−λ)x2，λ~Beta(.1,.1)；3D先PCA30带、27²patch。G(zrand,c)生成，E把真实query映射到均值/方差后G(z,c)重建；AG用Wasserstein差及在生成样本梯度上的GP。DER含KL、原样本重建平方误差、判别分数及½||fφ(x)−fφ(xrecon)||²。RC对support与原/重建/生成query的fφ特征拼接，经gϕ给三种relation分数；Eq19损失为Σ(r+αrrecon+βrgen−3·1同类)²，α/β随训练渐增但精确计划未给。1D卷积、3D分支实际多用Conv2d/Deconv2d及自注意力；Fig4完整结构不因“3D”名称推成全Conv3d或Transformer。",
+      "datasets": "KSC AVIRIS512×614、18m、13类5211标注；PaviaU610×340、9类，正文42766标注与TableII42506冲突，当前稿未明确这两场景实际带数，不从常用规格猜补。Houston349×1905×144、364–1046nm、15类15029。WHU-Hi-HongHu2017-11-20，Headwall Nano-Hyperspec/DJI Matrice600Pro、100m、940×475×270、400–1000nm、.043m，22类386693标注。主表均每类5标注；同图其他样本测试，不宣称跨域/类别不相交训练。",
+      "experimentSetting": "PyTorch，RMSprop，2000epochs，每轮5AG＋1DER＋1RC；D lr.0002、E/G .0001、RC .001；N为数据类别数，任务support每类K=1，与总训练5标签分别记录。不同初始训练样本重复10次；3D patch27²/PCA30，同类1D Beta(.1,.1)混合。7个1D、10个3D基线；WHU不比DCFSL（作者说其源域只有19类）。核大小/PCA选用多场景曲线，无独立验证或空间窗口隔离说明，硬件未给。",
+      "results": "TableV 1D OA：KSC80.27±2.36/PaviaU68.21±5.77/Houston73.47±1.93/WHU67.39±4.26。TableVI–IX 3D OA：92.64±2.29/86.82±3.20/83.64±2.65/84.57±2.31，AA89.59/90.11/85.09/83.49，Kappa×10091.81/82.97/82.32/80.96；所列聚合指标领先，各类并非全胜。TableX RC-only OA90.30/77.17/78.58/79.86（按KSC/PaviaU/Houston/WHU），完整92.64/86.82/83.64/84.57，DER/AG单加有效。TableXI原首行写Salinas而非正文KSC，不改表名：本法训练472.58/403.50/386.26/576.14s、测试26.92/7.94/22.68/232.08s、参数484.50/472.28/469.72/501.46K（按原Salinas/Houston/PaviaU/WHU顺序）。在三场景训练慢于3D-GAN，WHU测试慢于S-DMM/3D-CNN/SDRN等，不能称最轻或最快。",
+      "limitations": "只读AM，最终VoR独立待。每类5标注与episodic support1-shot不同，不声称仅1总标签；未给独立验证/空间隔离、PCA拟合池、outlier处理算法、αβ具体计划、硬件。训练query标签是增广条件，不证明测试标签泄漏或跨类泛化。TableII42506与正文42766、Fig13类名/分图编号、TableXI Salinas与四主场景冲突保留。Eq11实−假差和Algorithm1更新符号按印式记录，不替作者改WGAN求解器。Fig18有曲线但不生成未印数值。未见本稿作者官方代码链接，不另查仓库。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+          "figureLabel": "Fig. 1",
+          "caption": "FSHyperRGAN数据处理、AG、DER与RC四模块训练流程。",
+          "page": 3,
+          "verificationNote": "Griffith AM · © IEEE，PDF第3页/正文第2页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              52,
+              574,
+              316
+            ],
+            "pixelBox": [
+              191,
+              216,
+              2392,
+              1317
+            ]
+          },
+          "path": "figures/zhou-46-hsi-2024/relgan-fig1.png",
+          "width": 2201,
+          "height": 1101,
+          "sha256": "26f83db8ec59aed66da679c98a3e96fc7a67fbef87f62071c996eb297c0cf679",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Wei Wei, Lei Tong, Baoqing Guo, Jun Zhou, Chuangbai Xiao · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+          "figureLabel": "Fig. 4",
+          "caption": "FSHyperRGAN一维全谱和空间—PCA特征网络各模块原结构。",
+          "page": 5,
+          "verificationNote": "Griffith AM · © IEEE，PDF第5页/正文第4页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              53,
+              574,
+              258
+            ],
+            "pixelBox": [
+              191,
+              220,
+              2392,
+              1075
+            ]
+          },
+          "path": "figures/zhou-46-hsi-2024/relgan-fig4.png",
+          "width": 2201,
+          "height": 855,
+          "sha256": "98ac57609d129ef60b955377fc0522e1dcc097c70d32a81835886a14d988cc11",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Wei Wei, Lei Tong, Baoqing Guo, Jun Zhou, Chuangbai Xiao · Griffith AM · © IEEE"
+        }
+      ]
+    },
+    {
+      "paperId": "zhou-68-hsi-2023",
+      "method": "干线依次三个3D光谱split-attention瓶颈块＋三个2D空间块，末端两FC分类。特征先1×1缩维，分K cardinal、每组R radix多感受野，GAP→FC→ReLU→FC并沿radix作softmax，分支加权、concat后1×1和identity残差。默认K/R=2/2，谱核1×1×5和1×1×7，空间核5×5/3×3；Fig2把谱核维度顺序画5×1×1/7×1×1，不私改作者布局。谱掩码M=sigmoid(FC2(ReLU(FC1(GAP(X)))))；空间T来自conv/deconv/maxpool/max-antipool，原Eq14有四conv和两deconv。Eq2/3为(1+M)⊗X、(1+T)⊗H3spc，保留残差干线；不是Transformer，不把SAM缩写当SAM基础分割模型。",
+      "datasets": "Indian Pines AVIRIS145²，去吸水带后200带、16类：TableI train/val/test325/325/9599；多数类各train/val25，小类Alfalfa/Grass-pasture-mowed/Oats各5、Stone-Steel10。Loukia HyRANK/EO-1 Hyperion249×945×176、14类：TableII440/440/12623，各类train/val10/20/50。Houston2013 CASI-1500，采集2012-06、349×1905×144、15类：TableIII450/450/14129，多数类各40，小类Syntheticgrass/Water/Parkinglot2/Tennis/Runningtrack各10。没有用固定DFC官方划分替代本文随机像元划分。",
+      "experimentSetting": "去无标签像元后random train/validation/test；input15²全带、batch64、100epochs，momentum optimizer，lr.01/decay.2、momentum.9、weightdecay.0001；按validation OA最大选模。RTX3090、i7-12700kf、64GB，Windows11/Python3.7/PyTorch1.11/CUDA11.3。8基线2DCNN/3DCNN/DFFN/RSSAN/SSRN/SSAN/MLNetA/B用相同划分。默认K/R2/2，另对K2/4/8及R2/3/4画OA/时间曲线，IP/Houston最优R4，LoukiaR2，不能将最优设置推成所有主表统一配置。",
+      "results": "TableIV–VI IP/Loukia/Houston的OA/AA/Kappa×100分别89.51/88.98/87.95、78.47/77.87/74.62、95.16/95.78/94.76，所列聚合指标领先，部分类别仍不及基线。TableVII去split attention的OA87.76/76.67/94.68，去谱掩码88.74/76.60/94.40，去空间掩码89.44/76.75/94.82。TableVIII本法参数1.16/1.12/1.00M、训练26.98/31.35/34.05s；去瓶颈8.34/8.33/7.99M、57.34/65.40/63.38s，OA82.37/65.66/86.31。Fig8最佳radix/cardinal依场景不同；Fig9caption写test time，图纵轴却OverallAccuracy(%)，不据柱高推定时间单位/精确值。",
+      "limitations": "正式VoR已读；机构Published2022、正文VOL16 2023和Crossref2023对应首次出版与卷期，不改目录年份。随机像元拆分及“少训练多测试”不能证明15²邻域空间不重叠；未给划分seed/重复运行方差、学习率衰减触发计划或PCA外预处理。默认R2与分析中IP/Houston最优R4分开，主表具体使用者未明。Eq2的M为sigmoid正权且以1+M乘原输入，是相对重加权而不保证数值小于原强度；空间T末端未明确sigmoid。Houston引用[61]实际为Viareggio2013试验，不当官方Houston数据原始定义证据。Fig9纵轴与时间注冲突保留，不查代码消解；未见本稿作者官方代码链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+          "figureLabel": "Fig. 2",
+          "caption": "S³ARN三光谱块接三空间块、split attention及两掩码残差分支总体结构。",
+          "page": 5,
+          "verificationNote": "Griffith VoR · CC BY-NC-ND4.0，PDF第5页/期刊第422页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              40,
+              52,
+              560,
+              414
+            ],
+            "pixelBox": [
+              166,
+              216,
+              2334,
+              1725
+            ]
+          },
+          "path": "figures/zhou-68-hsi-2023/split-fig2.png",
+          "width": 2168,
+          "height": 1509,
+          "sha256": "bc3f4a95e9aab844bcbc9e9baaf96a3d21077eace124a96e51b18e3f0cf5fca6",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zhenqiu Shu, Zigao Liu, Jun Zhou, Songze Tang, Zhengtao Yu, Xiao-Jun Wu · JSTARS VoR · CC BY-NC-ND4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+          "figureLabel": "Fig. 3",
+          "caption": "S³ARN光谱GAP—FC—ReLU—FC—sigmoid向量掩码分支。",
+          "page": 6,
+          "verificationNote": "Griffith VoR · CC BY-NC-ND4.0，PDF第6页/期刊第423页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              297,
+              57,
+              560,
+              131
+            ],
+            "pixelBox": [
+              1237,
+              237,
+              2334,
+              546
+            ]
+          },
+          "path": "figures/zhou-68-hsi-2023/split-fig3.png",
+          "width": 1097,
+          "height": 309,
+          "sha256": "6bb7cb86badb7e88f31247fe6c37d20e5f9a9e063646e631c5b6bbf0925b2c31",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zhenqiu Shu, Zigao Liu, Jun Zhou, Songze Tang, Zhengtao Yu, Xiao-Jun Wu · JSTARS VoR · CC BY-NC-ND4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+          "figureLabel": "Fig. 4",
+          "caption": "S³ARN卷积/反卷积及池化/反池化空间张量掩码分支。",
+          "page": 7,
+          "verificationNote": "Griffith VoR · CC BY-NC-ND4.0，PDF第7页/期刊第424页，300dpi原页裁取；模块、连线、标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              40,
+              54,
+              296,
+              128
+            ],
+            "pixelBox": [
+              166,
+              225,
+              1234,
+              534
+            ]
+          },
+          "path": "figures/zhou-68-hsi-2023/split-fig4.png",
+          "width": 1068,
+          "height": 309,
+          "sha256": "c9e0ede7c484a665fb0ad29427d9a11755a7d01c88775e7ddefd7eb0521c0546",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zhenqiu Shu, Zigao Liu, Jun Zhou, Songze Tang, Zhengtao Yu, Xiao-Jun Wu · JSTARS VoR · CC BY-NC-ND4.0"
+        }
+      ]
+    }
+  ],
+  "classificationChecks": [
+    {
+      "paperId": "zhou-46-hsi-2024",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/48c03040-1645-4ead-bb0e-e0b5a8ff32c3/content",
+      "level": "指定机构AM逐页全文与原表/原图核验",
+      "supports": [
+        "AM直接处理HSI并输出地物分类，生成/重建为训练增广而非成像恢复任务；支持少样本关系学习及对抗样本增广。3D是空间—谱特征，不是几何三维，内部自注意力不自动归Transformer。",
+        "原首页单位与Crossref注册ORCID0000-0001-5822-8233确认目标Griffith Jun Zhou",
+        "数据/训练划分、主表、消融、复杂度及原始印刷边界；代码仅官方链接"
+      ]
+    },
+    {
+      "paperId": "zhou-68-hsi-2023",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1676c373-3e1f-427c-90d9-2a005d5647b0/content",
+      "level": "指定机构VoR逐页全文与原表/原图核验",
+      "supports": [
+        "正式VoR输入200/176/144带HSI、监督地物分类；多尺度radix注意力和谱/空间掩码支持split-attention方法标签，无单独预训练目标，移除原表征预训练任务标签，不把内部attention当Transformer。",
+        "原首页单位与Crossref注册ORCID0000-0001-5822-8233确认目标Griffith Jun Zhou",
+        "数据/训练划分、主表、消融、复杂度及原始印刷边界；代码仅官方链接"
+      ]
+    }
+  ],
+  "newMethodCategoryIds": [
+    "few-shot-relational-learning",
+    "adversarial-sample-augmentation",
+    "spatial-spectral-split-attention"
+  ],
+  "citationCrosscheck": [
+    {
+      "fromPaperId": "zhou-46-hsi-2024",
+      "referenceNumber": 13,
+      "catalogId": "structured-sparse-wavelet-tgrs-2013"
+    },
+    {
+      "fromPaperId": "zhou-46-hsi-2024",
+      "referenceNumber": 18,
+      "catalogId": "zhou-84-hsi-2022"
+    },
+    {
+      "fromPaperId": "zhou-68-hsi-2023",
+      "referenceNumber": 5,
+      "catalogId": "mmsnmf-icip-2015"
+    },
+    {
+      "fromPaperId": "zhou-68-hsi-2023",
+      "referenceNumber": 37,
+      "catalogId": "attend-in-bands-jstars-2019"
+    }
+  ],
+  "generalFieldCandidate": {
+    "title": "HSIGene: A Foundation Model For Hyperspectral Image Generation",
+    "authors": "Li Pang, Xiangyong Cao, Datao Tang, Shuang Xu, Xueru Bai, Feng Zhou, Deyu Meng",
+    "arxivId": "2409.12470",
+    "arxivVersion": "v2",
+    "url": "https://arxiv.org/abs/2409.12470v2",
+    "pdfUrl": "https://arxiv.org/pdf/2409.12470v2",
+    "venue": "arXiv",
+    "year": 2024,
+    "searchId": "jun-zhou-relgan-split-classification-reading-2026-10-12",
+    "discoveredAt": "2026-10-12",
+    "indexedAt": "2026-10-12",
+    "decision": "pending",
+    "reason": "FSHyperRGAN ref34引出，官方arXiv摘要明确直接HSI条件生成/空间超分辨率，符合arXiv来源；七作者无Jun Zhou，属于后续全领域队列。固定v2免费PDF已下载，正文/版本去重仍待，先完成作者专项，不用引文或下载状态冒称全文整理。",
+    "readingProgress": "abstract_read",
+    "abstract": "Hyperspectral image (HSI) plays a vital role in various fields such as agriculture and environmental monitoring. However, due to the expensive acquisition cost, the number of hyperspectral images is limited, degenerating the performance of downstream tasks. Although some recent studies have attempted to employ diffusion models to synthesize HSIs, they still struggle with the scarcity of HSIs, affecting the reliability and diversity of the generated images. Some studies propose to incorporate multi-modal data to enhance spatial diversity, but the spectral fidelity cannot be ensured. In addition, existing HSI synthesis models are typically uncontrollable or only support single-condition control, limiting their ability to generate accurate and reliable HSIs. To alleviate these issues, we propose HSIGene, a novel HSI generation foundation model which is based on latent diffusion and supports multi-condition control, allowing for more precise and reliable HSI generation. To enhance the spatial diversity of the training data while preserving spectral fidelity, we propose a new data augmentation method based on spatial super-resolution, in which HSIs are upscaled first, and thus abundant training patches could be obtained by cropping the high-resolution HSIs. In addition, to improve the perceptual quality of the augmented data, we introduce a novel two-stage HSI super-resolution framework, which first applies RGB bands super-resolution and then utilizes our proposed Rectangular Guided Attention Network (RGAN) for guided HSI super-resolution. Experiments demonstrate that the proposed model is capable of generating a vast quantity of realistic HSIs for downstream tasks such as denoising and super-resolution. The code and models are available at https://github.com/LiPang/HSIGene.",
+    "code": "https://github.com/LiPang/HSIGene",
+    "pdfDownloaded": true,
+    "pdfFile": "research/hyperspectral/sources/jun-zhou-relgan-split-classification-reading-2026-10-12-hsigene-arxiv-v2.pdf",
+    "pdfPageCount": 13,
+    "pdfReadPages": [],
+    "evidencePath": "research/hyperspectral/sources/jun-zhou-relgan-split-classification-reading-2026-10-12.json",
+    "collectionScope": "active",
+    "firstSubmittedAt": "2024-09-19T05:17:44Z",
+    "updatedAt": "2024-11-01T04:59:31Z",
+    "metadataStatus": "primary_arxiv_abstract_page",
+    "boundary": "只记录作者官方代码链接，未访问仓库；原引文五作者不是当前七作者，按实际v2元数据保留。未新增库内论文或作者例外。"
+  },
+  "primaryIdentity": [
+    {
+      "paperId": "zhou-46-hsi-2024",
+      "crossrefFile": "jun-zhou-relgan-split-classification-reading-2026-10-12-relgan-crossref.json",
+      "author": {
+        "ORCID": "https://orcid.org/0000-0001-5822-8233",
+        "authenticated-orcid": false,
+        "given": "Jun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    },
+    {
+      "paperId": "zhou-68-hsi-2023",
+      "crossrefFile": "jun-zhou-relgan-split-classification-reading-2026-10-12-split-crossref.json",
+      "author": {
+        "ORCID": "https://orcid.org/0000-0001-5822-8233",
+        "authenticated-orcid": false,
+        "given": "Jun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    }
+  ],
+  "boundary": "总库390/周峻181不变，73全文/108摘要；分类确认311、审计278、暂定75、待4；167标签(67任务/87方法/13应用)，原图245。原31队列剩16；30页全文与HSIGene固定v2下载未读分别计。作者与领域全集未完成，所有代码仅链接。"
+}
