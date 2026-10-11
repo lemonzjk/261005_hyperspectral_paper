@@ -27925,7 +27925,7 @@
     },
     {
       "id": "crf-cnn-hsi-igarss-2016",
-      "shortTitle": "CNN-CRF HSI segmentation",
+      "shortTitle": "Superpixel CNN–CRF-RNN · HSI segmentation",
       "title": "CRF learning with CNN features for hyperspectral image segmentation",
       "authors": "Fahim Irfan Alam, Jun Zhou, Alan Wee-Chung Liew, Xiuping Jia",
       "year": 2016,
@@ -27937,32 +27937,33 @@
         "hyperspectral"
       ],
       "doi": "10.1109/igarss.2016.7730798",
-      "representation": "先以光谱—空间特征生成超像素，再用CNN标注，并将高斯成对势CRF均值场推理展开为可学习网络层。",
+      "representation": "SLIC谱空超像素、5卷积＋3全连接的CNN标注，以及展开为RNN的Gaussian CRF均值场推理。",
       "tags": [],
-      "summary": "将超像素级CNN和条件随机场联合，用于高光谱影像光谱—空间分割。",
-      "input": "高光谱影像及由光谱、空间特征生成的超像素。",
-      "output": "超像素/影像语义分割标签。",
-      "mechanism": "CNN提取超像素标签，CRF以高斯成对势约束空间一致性，均值场推理重写为循环网络层并端到端结合。",
-      "readingNote": "Griffith作者稿摘要、引言和方法开头局部核验；正式IGARSS2016:6890–6893，未标全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "summary": "SLIC先按谱空特征生成超像素，CNN给出类别概率，再将Gaussian成对势CRF的均值场迭代展开为RNN并联合反向传播，细化高光谱语义标签。Indian Pines初步实验的CNN classification accuracy为93.4%，联合分割为95.6%；没有给出训练划分或OA/AA定义，不当作完善基准结论。",
+      "input": "高光谱影像及监督类别标签；实验为145×145的Indian Pines，原文称224带、0.4–2.5μm、16类，筛除噪声带后归一[0,1]，实际保留带数未给。",
+      "output": "CNN超像素类别分布及CRF细化后的高光谱地物语义分割图；不是边界检测、真实三维几何或表征预训练。",
+      "mechanism": "SLIC以每像元光谱与空间拼接特征作局部聚类，网格初始化、低梯度移动、2S×2S搜索、中心迭代与连接性修正。CNN含5卷积＋3全连接有权层，末层接MLP输出超像素类别概率并作为CRF一元项。全连接超像素CRF以Potts兼容函数及加权Gaussian成对势建模一致性；均值场的softmax初始化、Gaussian消息传递、加权、兼容变换、一元相加与归一展开为可学习网络层。重复迭代构成RNN，结合CNN由反向传播训练。Fig1仅示CNN部分，Fig2是CNN与联合分割输出。",
+      "readingNote": "Griffith明确AM，5 PDF页（封面＋4正文）全部逐页阅读，3式、2图与10条引文已读；两原图及末页93.4/95.6原结果视觉核。首页Griffith ICT Jun Zhou与当前Crossref四作者、IGARSS2016 pp6890–6893对应；没有Jun ORCID，不虚构稳定ID。只读AM，最终VoR未读；未见目标作者自引或期刊扩展声明。未访问代码仓库。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1827401f-c47c-5ffd-8d05-76c06da45380/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "citation": "@inproceedings{crf_cnn_hsi_igarss_2016,\n  title = {CRF learning with CNN features for hyperspectral image segmentation},\n  author = {Fahim Irfan Alam and Jun Zhou and Alan Wee-Chung Liew and Xiuping Jia},\n  booktitle = {2016 IEEE International Geoscience and Remote Sensing Symposium},\n  year = {2016},\n  pages = {6890--6893},\n  doi = {10.1109/igarss.2016.7730798}\n}\n",
       "library": {
         "categoryIds": [
+          "land-cover-classification",
           "semantic-segmentation",
-          "representation-learning"
+          "deep-conditional-random-field"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者摘要直接以高光谱影像光谱—空间分割为对象；CRF/CNN是影像分割机制。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何把CNN特征与CRF空间一致性联合用于高光谱影像分割？",
-        "datasets": "摘要未列完整数据集名称；公开作者稿局部不足以确认规模和划分。",
-        "experimentSetting": "作者稿摘要、引言及方法开头局部核验；预备结果不补成完整性能结论。",
-        "conclusions": "作者报告联合CNN-CRF框架具有初步有效性；具体比较与数值待全文。",
-        "limitations": "论文为IGARSS短文，摘要使用“preliminary results”；不能把初步结果等同成熟基准结论。",
+        "relationNote": "AM直接处理Indian Pines高光谱并产生地物类别与语义分割图，CNN与CRF-RNN为监督结构预测。没有自监督/迁移预训练目标，删除原representation-learning错配；保留IGARSS作者来源例外。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "能否把超像素级CNN类别概率与可学习Gaussian CRF均值场RNN联合，细化高光谱影像中的空间一致地物标签？",
+        "datasets": "仅Indian Pines，145×145、16类，原稿称原始224带、0.4–2.5μm。作者逐带筛除噪声、归一[0,1]，保留数量/索引、训练测试样本数与抽样单位均未给。不从其他Indian Pines论文补成200带或继承期刊稿三数据集。",
+        "experimentSetting": "SLIC、8有权层CNN/MLP与全连接Gaussian CRF均值场RNN联合训练；仅报告单场景预备实验及CNN/联合输出示例。没有给出SLIC S/n/阈值、CNN各层尺寸、训练比例、均值场迭代次数、优化超参数、重复次数、硬件/耗时或显著性检验。",
+        "conclusions": "§3原文称计算average accuracy，分别报CNN classification accuracy93.4%和联合segmentation accuracy95.6%，高2.2百分点；未定义其是否为OA、逐类AA或其他聚合，保留原称呼，不重命名指标。无完整对比表、方差或额外数据集，结论仅为初步有效性。",
+        "limitations": "正式VoR未读；仅单场景预备结果，训练/测试划分、实际有效带数、类级指标与统计重复均未给。结论中的Gabor及复杂数据集是未来计划，不写成已实现。与2019 TGRS主题/部分作者相近，但已读期刊稿没有引用本会稿或声明扩展，方法节点/势学习不同，暂不合并methodFamilyId或实验。未见作者官方代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -27981,6 +27982,16 @@
             "supports": [
               "正式题名、作者、IGARSS2016身份和页码6890–6893。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1827401f-c47c-5ffd-8d05-76c06da45380/content",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith AM逐页全文、原图和原结果核验",
+            "supports": [
+              "AM直接处理Indian Pines高光谱并产生地物类别与语义分割图，CNN与CRF-RNN为监督结构预测。没有自监督/迁移预训练目标，删除原representation-learning错配；保留IGARSS作者来源例外。",
+              "监督任务、节点/势函数、数据与原实验；只升级实际AM版本，代码仅链接。",
+              "首页Griffith Jun Zhou身份及正式Crossref作者顺序对应。"
+            ]
           }
         ],
         "versions": [
@@ -27990,21 +28001,23 @@
             "url": "https://doi.org/10.1109/igarss.2016.7730798",
             "doi": "10.1109/igarss.2016.7730798",
             "year": 2016,
-            "relation": "正式IGARSS2016:6890–6893。"
+            "relation": "正式IGARSS2016 pp6890–6893；仅机构AM5 PDF页全读（封面＋4正文），最终VoR未读。"
           },
           {
             "id": "crf-cnn-hsi-igarss-2016-source",
-            "type": "Griffith作者稿",
-            "url": "https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1827401f-c47c-5ffd-8d05-76c06da45380/content",
             "year": 2016,
-            "relation": "作者稿；局部页码只对应本PDF。"
+            "relation": "正式IGARSS2016 pp6890–6893；仅机构AM5 PDF页全读（封面＋4正文），最终VoR未读。 旧下载路径AlamPUB1959.pdf作为同一AM来源别名保留在evidence，不重复列为另一版本。",
+            "doi": "10.1109/igarss.2016.7730798",
+            "readingProgress": "full_text_read"
           }
         ],
         "methodFamilyId": "crf-cnn-hsi-igarss-2016",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "rationale": "AM直接处理Indian Pines高光谱并产生地物类别与语义分割图，CNN与CRF-RNN为监督结构预测。没有自监督/迁移预训练目标，删除原representation-learning错配；保留IGARSS作者来源例外。",
           "evidenceFields": [
             "title",
             "summary",
@@ -28013,13 +28026,74 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "0bb5ed9a1248657e27bfb2f6da34676bf4bf5380a7a79e01555c4d22c5dde6dc",
+          "evidenceDigest": "2c4dc61ba9c14c1d342433587bb81a8803524068119dd738ade4250eb8122866",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/bitstream/10072/339311/1/AlamPUB1959.pdf",
-            "https://doi.org/10.1109/igarss.2016.7730798"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1827401f-c47c-5ffd-8d05-76c06da45380/content"
           ]
         }
-      }
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1827401f-c47c-5ffd-8d05-76c06da45380/content",
+          "figureLabel": "Fig. 1",
+          "caption": "CNN卷积、池化与全连接MLP结构示意；仅CNN部分，不是完整CRF-RNN结构图。",
+          "page": 4,
+          "verificationNote": "Griffith AM，PDF第4页/正文第3页，300dpi原页裁取；图像、全部标签及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              65,
+              70,
+              550,
+              213
+            ],
+            "pixelBox": [
+              270,
+              291,
+              2292,
+              888
+            ]
+          },
+          "path": "figures/crf-cnn-hsi-igarss-2016/conf-fig1.png",
+          "width": 2022,
+          "height": 597,
+          "sha256": "93afcdd34759f32ee7f1a960dc05e33bf6eabdaf27f8c8fa4e2b35593ae212bb",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fahim Irfan Alam, Jun Zhou, Alan Wee-Chung Liew, Xiuping Jia · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1827401f-c47c-5ffd-8d05-76c06da45380/content",
+          "figureLabel": "Fig. 2",
+          "caption": "Indian Pines在CNN分类（左）及联合CNN–CRF分割（右）后的标签图；结果示例，不是方法流程图。",
+          "page": 5,
+          "verificationNote": "Griffith AM，PDF第5页/正文第4页，300dpi原页裁取；图像、全部标签及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              50,
+              65,
+              309,
+              203
+            ],
+            "pixelBox": [
+              208,
+              270,
+              1288,
+              846
+            ]
+          },
+          "path": "figures/crf-cnn-hsi-igarss-2016/conf-fig2.png",
+          "width": 1080,
+          "height": 576,
+          "sha256": "6965b08ae50b627f8f2cfbeaab7151f6f98f5d6e1a136a9cd53e01b0af4f48c8",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fahim Irfan Alam, Jun Zhou, Alan Wee-Chung Liew, Xiuping Jia · Griffith AM · © IEEE"
+        }
+      ]
     },
     {
       "id": "weighted-band-selection-igarss-2016",
@@ -32491,7 +32565,7 @@
     },
     {
       "id": "crf-deep-feature-hsi-tgrs-2019",
-      "shortTitle": "CRF and deep HSI features",
+      "shortTitle": "3DCNN–CRF · learned potentials and deconvolution",
       "title": "Conditional Random Field and Deep Feature Learning for Hyperspectral Image Classification",
       "authors": "Fahim Irfan Alam, Jun Zhou, Alan Wee-Chung Liew, Xiuping Jia, Jocelyn Chanussot, Yongsheng Gao",
       "year": 2019,
@@ -32503,31 +32577,32 @@
         "hyperspectral"
       ],
       "doi": "10.1109/TGRS.2018.2867679",
-      "representation": "用多波段组CNN学习深特征，并以深度CRF建模光谱—空间上下文完成高光谱分类。",
+      "representation": "局部谱带组3D CNN分类，再用卷积一元/成对势、四邻接CRF均值场与成对势内反卷积细化语义分割。",
       "tags": [],
-      "summary": "研究结合深度特征与条件随机场的高光谱分类。",
-      "input": "高光谱三维数据块、新数据集和公开基准数据集。",
-      "output": "地物类别预测图。",
-      "mechanism": "CNN生成一元/成对势，深度CRF建模块间语义关系，并用反卷积网络改进结果。",
-      "readingNote": "公开摘要与Crossref核验；正式TGRS57(3):1612–1628，未标全文。",
-      "paper": "https://lacuna.tiptreesystems.com/work/conditional-random-field-and-deep-feature-learning-for-hyperspectral-image/wrk_5f4ea80870288e68b1e585a56e76307f",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "3DCNN–CRF先从相邻谱带组学习谱空分类特征，再以3D CNN学习CRF一元/成对势、均值场推理并在成对势训练中加入反卷积细化标签。监督同类谱样本混合与几何变换扩增少量训练数据；Indian Pines、Pavia University和新构造Griffith-USGS的最终分割OA分别99.15/99.63/88.92%。已读机构AM，正文题名为Segmentation、封面及正式书目为Classification，版本差异保留。",
+      "input": "HSI影像、少量逐像元监督标签及同类虚拟样本；初始CNN采用相邻L带谱空cube（Indian Pines/Pavia取L25，Griffith-USGS取L20），不以全部B带作为单一谱组。",
+      "output": "初始逐像元地物分类图及深度CRF/反卷积细化后的语义分割图；谱空voxel不是真实三维场景几何，不输出新高光谱重建。",
+      "mechanism": "初始3D CNN分别处理相邻L带谱组，卷积/池化/ReLU、全连接与softmax生成特征及分类结果。同类两光谱线性混合加Gaussian噪声，辅以旋转/翻转形成监督增强样本。特征图沿谱维的voxel为CRF节点，每节点仅接xy四邻居；卷积节点特征学习一元势，拼接邻节点特征后卷积学习成对势，深CRF阶段使用整个谱特征而非继续分组。piecewise训练把一元/成对项独立似然优化以省分区函数推理，预测用两Gaussian核均值场近似。反卷积、unpooling及ReLU整合进成对势网络以恢复边界，另比较无反卷积与放在一元势两方案。Fig1视觉流程画在CRF后，但§IV明确训练时在成对势内，不能写成完全独立后处理。",
+      "readingNote": "Griffith封面AM，17 PDF页（封面＋正文1–16）全读，15式、13图、9表、2算法和44引文已整理；Fig1/2原方法图及TablesI–V/VII–IX视觉核。正式TGRS57(3):1612–1628共17正式页，与当前16正文页排版不同。正文题名Segmentation，封面/DOI和既有Crossref题名Classification；保留正式题名和2019年，不把封面©2020当出版年份。Jun为Griffith通讯作者，既有Crossref ORCID0000-0001-5822-8233对应；本次Crossref429空响应未冒充成功。arXiv v1/v2及最终VoR正文仍未读。未访问代码仓库。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
-          "representation-learning"
+          "semantic-segmentation",
+          "deep-conditional-random-field"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "relationNote": "AM明确初始地物分类和最终语义分割，卷积CRF势与反卷积均为监督学习；背景SAE/DBN介绍不能证明本方法有表征预训练，删除representation-learning错配。当前机构AM同DOI关联正式记录，arXiv版本仍仅元数据关联。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "局部谱带组3D CNN、学习的CRF一元/成对势及成对势内反卷积，能否在少监督标签条件下改善高光谱分类与空间语义分割？",
+        "datasets": "Indian Pines145²、原220/去水吸收后200带、0.4–2.5μm、20m、16类；Pavia University610×340、115/去噪后103带、0.43–0.86μm、1.3m、9类。Griffith-USGS从19个AVIRIS场景裁25训练＋35测试图，约145²、2.4–18m，FLAASH反射率校正，Google Earth辅助人工标road/water/building/grass/tree/soil六类。新集实际有效带数及带索引、场景ID和裁区坐标未给；USGS/AVIRIS链接是原始采集来源，未见这个人工标注集的公开下载。",
+        "experimentSetting": "主表每类15实标签及增强样本，补3/5/7/9/11/13/15样本；剩余实样本测试，训练（含虚拟）90%学习/10%验证，随机拆分重复10次报OA/AA及标准差。L25/25/20；32个5³卷积核、ReLU/2²池化、batch100/SGD。TableI分类Conv7/6/6层、分割4/3/3；LR学习率.003/.01/.005，分类epochs700/600/600，分割均500。各谱组如何合并、xy输入块尺寸、虚拟混合/噪声分布数量与独立验证选择细节未给。Matlab/C、CPU i5-4570 3.2GHz/8GB/Windows7比较耗时；不当GPU速度。",
+        "conclusions": "依Indian Pines/Pavia/Griffith顺序：TableII逐像元分类OA92.59±.55/92.06±1.36/75.97±.19；TableIII谱空cube分类OA98.29±.33/99.12±.41/83.05±1.19，AA99.20±.09/99.69±.03/84.98±.86。TableIV成对势反卷积最终OA99.15±.16/99.63±.07/88.92±.17，AA99.41±.04/99.79±.03/89.13±.74，领先所列分割基线。TableVI全谱/局部谱组accuracy为96.80/99.20、97.80/99.69、79.65/84.98；与TableIII AA对应，不能改称OA。TableVII每类3样本增强前后OA19.91/57.89、13.66/39.55、14.25/37.95。TableVIII ReLU运行36/49/512分钟；TableIX测试.79/1.05/1.08分钟，慢于两传统基线，不是所有方法最快。",
+        "limitations": "只读机构AM，最终VoR及固定arXiv v1/v2待独立阅读/比对；无明确2016会稿自引/扩展声明，不按同作者主题强行合并版本。TableV Griffith无/一元反卷积85.55/86.92与TableIV对应AA84.55/85.05不一致；TableVII的15样本OA98.89/99.12/86.25与TableIII98.29/99.12/83.05协议差异未交代。正文混称binomial/paired t-test；Conv/池化层数概述与TableI、spectral depth与Fig13 xy尺寸有措辞差异，保留原表。训练/验证虚拟同源隔离、同场景裁区跨集隔离及参数选择独立性未说明；不推断空间独立泛化。无mIoU或逐类混淆统计，不把AA当分割IoU；未见官方代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -32555,6 +32630,25 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith AM逐页全文、原图和原结果核验",
+            "supports": [
+              "AM明确初始地物分类和最终语义分割，卷积CRF势与反卷积均为监督学习；背景SAE/DBN介绍不能证明本方法有表征预训练，删除representation-learning错配。当前机构AM同DOI关联正式记录，arXiv版本仍仅元数据关联。",
+              "监督任务、节点/势函数、数据与原实验；只升级实际AM版本，代码仅链接。",
+              "首页Griffith Jun Zhou身份及正式Crossref作者顺序对应。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2018.2867679",
+            "checkedAt": "2026-10-12",
+            "level": "复核既有Crossref原始快照；本次网络429，不是新成功响应",
+            "supports": [
+              "sources/jun-zhou-2019-112-crossref.json的正式题名、2019-03、卷期页码和目标Jun ORCID；PDF封面同DOI绑定AM。",
+              "机构封面版权2020与发表年分开，不改正式2019年。"
+            ]
           }
         ],
         "versions": [
@@ -32577,7 +32671,7 @@
             "url": "https://doi.org/10.1109/TGRS.2018.2867679",
             "doi": "10.1109/TGRS.2018.2867679",
             "year": 2019,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "正式TGRS57(3):1612–1628（2019-03）；当前AM17 PDF页为封面＋16正文，正文题名Segmentation，封面/正式书目Classification，最终VoR未读。"
           },
           {
             "id": "crf-deep-feature-hsi-tgrs-2019-arxiv-1711-04483-v2",
@@ -32591,13 +32685,22 @@
             "updatedAt": "2017-12-27T06:26:01Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
             "relation": "指定作者API返回的v2预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。 arXiv本版本题名：Conditional Random Field and Deep Feature Learning for Hyperspectral Image Segmentation。"
+          },
+          {
+            "id": "crf-deep-feature-hsi-tgrs-2019-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
+            "doi": "10.1109/TGRS.2018.2867679",
+            "year": 2019,
+            "readingProgress": "full_text_read",
+            "relation": "正式TGRS57(3):1612–1628（2019-03）；当前AM17 PDF页为封面＋16正文，正文题名Segmentation，封面/正式书目Classification，最终VoR未读。"
           }
         ],
         "methodFamilyId": "crf-deep-feature-hsi",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "AM明确初始地物分类和最终语义分割，卷积CRF势与反卷积均为监督学习；背景SAE/DBN介绍不能证明本方法有表征预训练，删除representation-learning错配。当前机构AM同DOI关联正式记录，arXiv版本仍仅元数据关联。",
           "evidenceFields": [
             "title",
             "summary",
@@ -32606,15 +32709,75 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "2f2a282440716d821324086dfbf18c855c20042995d2a51d1753ed8bbaf5f0e1",
+          "evidenceDigest": "fe865c2a954a1daebdb44351f2ed4d0d2a82e96c427454482f8a46b21ebcb65f",
           "sourceUrls": [
-            "https://lacuna.tiptreesystems.com/work/conditional-random-field-and-deep-feature-learning-for-hyperspectral-image/wrk_5f4ea80870288e68b1e585a56e76307f",
-            "https://lacuna.tiptreesystems.com/work/conditional-random-field-and-deep-feature-learning-for-hyperspectral-image/wrk_5f4ea80870288e68b1e585a56e76307f",
-            "https://api.crossref.org/works/10.1109/TGRS.2018.2867679"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content"
           ]
         }
       },
-      "citation": "@article{crf_deep_feature_hsi_tgrs_2019,\n  title = {Conditional Random Field and Deep Feature Learning for Hyperspectral Image Classification},\n  author = {Fahim Irfan Alam and Jun Zhou and Alan Wee-Chung Liew and Xiuping Jia and Jocelyn Chanussot and Yongsheng Gao},\n  year = {2019},\n  doi = {10.1109/TGRS.2018.2867679}\n}\n"
+      "citation": "@article{crf_deep_feature_hsi_tgrs_2019,\n  title = {Conditional Random Field and Deep Feature Learning for Hyperspectral Image Classification},\n  author = {Fahim Irfan Alam and Jun Zhou and Alan Wee-Chung Liew and Xiuping Jia and Jocelyn Chanussot and Yongsheng Gao},\n  year = {2019},\n  doi = {10.1109/TGRS.2018.2867679}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
+          "figureLabel": "Fig. 1",
+          "caption": "初始3D CNN特征、卷积CRF一元/成对势与最终分割/反卷积细化的总体示意。",
+          "page": 4,
+          "verificationNote": "Griffith AM，PDF第4页/正文第3页，300dpi原页裁取；图像、全部标签及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              45,
+              52,
+              567,
+              201
+            ],
+            "pixelBox": [
+              187,
+              216,
+              2363,
+              838
+            ]
+          },
+          "path": "figures/crf-deep-feature-hsi-tgrs-2019/journal-fig1.png",
+          "width": 2176,
+          "height": 622,
+          "sha256": "4dd32eea80400cb7f6375404eda291859f9841cf731d37fa2c7329d2bb5d1ae3",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fahim Irfan Alam, Jun Zhou, Alan Wee-Chung Liew, Xiuping Jia, Jocelyn Chanussot, Yongsheng Gao · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
+          "figureLabel": "Fig. 2",
+          "caption": "相邻谱带组、3D CNN谱空特征、分类与深CRF/反卷积分割工作流。",
+          "page": 5,
+          "verificationNote": "Griffith AM，PDF第5页/正文第4页，300dpi原页裁取；图像、全部标签及原图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              45,
+              52,
+              567,
+              218
+            ],
+            "pixelBox": [
+              187,
+              216,
+              2363,
+              909
+            ]
+          },
+          "path": "figures/crf-deep-feature-hsi-tgrs-2019/journal-fig2.png",
+          "width": 2176,
+          "height": 693,
+          "sha256": "74880faaac10883f227af3cec2aba3c8832511f40be7e39b95d034be4afeee05",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fahim Irfan Alam, Jun Zhou, Alan Wee-Chung Liew, Xiuping Jia, Jocelyn Chanussot, Yongsheng Gao · Griffith AM · © IEEE"
+        }
+      ]
     },
     {
       "id": "spectral-mixture-network-unmixing-2020",
@@ -45070,6 +45233,7 @@
         "spectralmoe-dgss",
         "hyplex-metasurface",
         "crf-cnn-hsi-igarss-2016",
+        "crf-deep-feature-hsi-tgrs-2019",
         "zhou-83-hsi-2022",
         "zhou-scholar-multi-task-attentional-u-net-for-hyperspec-2023",
         "zhou-scholar-arxiv-2605-17286"
@@ -45094,6 +45258,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "两CRF接受稿明确监督地物分类/语义分割及结构预测，删除无实际预训练目标的表征预训练关联。"
         }
       ]
     },
@@ -47659,6 +47828,7 @@
         "spectral-spatial-hypergraph-jstars-2015",
         "sampling-spectral-spatial-whispers-2015",
         "svm-band-weighting-lgrs-2016",
+        "crf-cnn-hsi-igarss-2016",
         "weighted-band-selection-igarss-2016",
         "tensor-morphological-profile-icip-2016",
         "cross-scene-dictionary-adaptation-tgrs-2017",
@@ -47749,6 +47919,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "活/死细胞是医学状态分类，四杂草是图像块种类判别，按实际AM/VoR纠正地物分类并补TMP证据。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "两CRF接受稿明确监督地物分类/语义分割及结构预测，删除无实际预训练目标的表征预训练关联。"
         }
       ]
     },
@@ -48006,10 +48181,8 @@
       "createdAt": "2026-10-08",
       "rationale": "逐篇复核现有论文的研究问题、输入输出和方法后建立；不继承三维专题的track分类。",
       "evidencePaperIds": [
-        "crf-cnn-hsi-igarss-2016",
         "unmixing-deep-feature-dicta-2017",
         "triplet-deep-feature-hsi-whispers-2018",
-        "crf-deep-feature-hsi-tgrs-2019",
         "lightweight-cnn-hsi-2021",
         "zhou-84-hsi-2022",
         "zhou-88-hsi-2022",
@@ -48057,6 +48230,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "S³ARN实际VoR只监督分类，无独立表征预训练；仅同步本轮归类，不改其他论文。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "两CRF接受稿明确监督地物分类/语义分割及结构预测，删除无实际预训练目标的表征预训练关联。"
         }
       ]
     },
@@ -50349,6 +50527,27 @@
           "date": "2026-10-12",
           "action": "created",
           "reason": "基于实际免费VoR任务、数据、方法与实验形成；不批量外推其他论文。"
+        }
+      ]
+    },
+    {
+      "id": "deep-conditional-random-field",
+      "name": "卷积网络与条件随机场",
+      "dimension": "method",
+      "definition": "将CNN与CRF上下文结构预测结合，包括可微均值场展开或卷积一元/成对势学习；记录节点单位、邻接及训练/推理方式，不将两条路线视作同一实现或表征预训练。",
+      "status": "confirmed",
+      "color": "#9bb59b",
+      "createdAt": "2026-10-12",
+      "rationale": "两篇实际接受稿分别明确超像素Gaussian CRF-RNN和谱空voxel深度势CRF，均以监督分类/分割为目标。",
+      "evidencePaperIds": [
+        "crf-cnn-hsi-igarss-2016",
+        "crf-deep-feature-hsi-tgrs-2019"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "基于两篇已读接受稿的结构预测机制；不批量外推其他论文或认定会议/期刊扩展关系。"
         }
       ]
     }

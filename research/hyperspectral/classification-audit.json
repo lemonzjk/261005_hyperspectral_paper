@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项原始来源分类审计，非全部全文；活/死细胞AM与杂草分类VoR明确医学状态及植物种类图像块分类，纠正地物制图误配，HSI/MSI及采集/人工分割/分类边界分别记录。",
+  "scope": "逐项原始来源分类审计，非全部全文；两CRF接受稿按监督分类/分割纠正表征预训练错配，Gaussian CRF-RNN与卷积深势/反卷积方法及版本边界分别核验。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -285,7 +285,9 @@
     "hsi-lidar-icv-multilevel-fusion-2020",
     "mfsudf-hsi-lidar-2021",
     "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
-    "multiresolution-weed-hsi-classification-2019"
+    "multiresolution-weed-hsi-classification-2019",
+    "crf-cnn-hsi-igarss-2016",
+    "crf-deep-feature-hsi-tgrs-2019"
   ],
   "sourceChecks": [
     {
@@ -1089,6 +1091,26 @@
         "正式VoR明确处理61带HSI并预测四类杂草图像块，属于植物种类判别及卷积/纹理特征融合。四带MSI只作独立辅助实验，不能用其96.35%替代HSI89.70%；原泛地物制图标签按实际样本/输出纠正。",
         "首页Griffith单位与Crossref注册ORCID0000-0001-5822-8233确认目标Jun Zhou",
         "原主表、样本单位、监督来源、实验协议和版本边界；代码仅官方链接"
+      ]
+    },
+    {
+      "paperId": "crf-cnn-hsi-igarss-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/1827401f-c47c-5ffd-8d05-76c06da45380/content",
+      "level": "Griffith AM逐页全文、原图和原结果核验",
+      "supports": [
+        "AM直接处理Indian Pines高光谱并产生地物类别与语义分割图，CNN与CRF-RNN为监督结构预测。没有自监督/迁移预训练目标，删除原representation-learning错配；保留IGARSS作者来源例外。",
+        "监督任务、节点/势函数、数据与原实验；只升级实际AM版本，代码仅链接。",
+        "首页Griffith Jun Zhou身份及正式Crossref作者顺序对应。"
+      ]
+    },
+    {
+      "paperId": "crf-deep-feature-hsi-tgrs-2019",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
+      "level": "Griffith AM逐页全文、原图和原结果核验",
+      "supports": [
+        "AM明确初始地物分类和最终语义分割，卷积CRF势与反卷积均为监督学习；背景SAE/DBN介绍不能证明本方法有表征预训练，删除representation-learning错配。当前机构AM同DOI关联正式记录，arXiv版本仍仅元数据关联。",
+        "监督任务、节点/势函数、数据与原实验；只升级实际AM版本，代码仅链接。",
+        "首页Griffith Jun Zhou身份及正式Crossref作者顺序对应。"
       ]
     }
   ]

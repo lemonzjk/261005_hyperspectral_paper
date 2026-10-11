@@ -194,6 +194,7 @@
 | Jun Zhou · relational GAN and split attention classification | 2013–2024 | FSHyperRGAN、S3ARN、episodic 1-shot versus five labels、AM versus VoR、HSIGene citation 2409.12470v2；17页AM＋13页VoR实际全文，四被引作者目录已录；候选固定v2下载未读，非作者/年度/领域全集。 | 未单列 / 7 / 7 | 两分类正文/五原图，四作者引文已录，一全领域候选固定v2待读 | 作者目录与正式版本未闭环，原31机构队列剩16；DBLP8/Scholar5/个人机构8未决集合重叠不相加。；HSIGene为其他作者全领域候选，固定v2已下载未读，正式关联/正文待；代码只链接。 |
 | Jun Zhou · classical HSI–LiDAR feature and decision fusion | 2018–2021 | ICV、canonical correlation fusion、MFSuDF、quadrant bit coding、superpixel decision fusion、AM versus VoR；16页VoR＋17页AM实际全文；2条目标作者引文已录，非作者/年份/领域全集。 | 未单列 / 4 / 4 | 两融合稿33页、五原图与两作者引文已录 | 作者目录与正式版本未闭环，原31机构队列剩14；DBLP8/Scholar5/个人机构8未决重叠不相加。；MFSuDF最终VoR、HSIGene固定v2正文及其他可访问资料仍待；只处理现有库，不增加重复目录或笔记。 |
 | Jun Zhou · biomedical cells and weed applications | 2015–2019 | SKOV3 live dead cells、tensor morphological profile、FCNN SPLBP、61-band HSI versus four-band MSI、Jun versus Jie Zhou；6页AM＋16页VoR实际全文；5目标作者引文已录，1初始名为Jie而非Jun；非作者/领域全集。 | 未单列 / 8 / 8 | 两应用正文22页/五原图，五引用已录，一非目标作者 | 作者与正式版本未闭环，原31机构队列剩12；现有作者来源例外不扩白名单。；细胞最终VoR、其他可访问资料和DBLP8/Scholar5/个人机构8等重叠差集继续；代码仅链接。 |
+| Jun Zhou · CRF-CNN segmentation versions | 2016–2019 | CRF CNN superpixels、3DCNN-CRF learned pairwise potentials、Griffith-USGS、Classification versus Segmentation title；5页会议AM＋17页期刊AM实际全读；10＋44条引用已读，没有目标Jun Zhou作者引用/明确会刊扩展自引。 | 未单列 / 2 / 2 | 两AM22页/四原图，监督任务与版本边界纠正 | 作者及领域目录未闭环，冻结31机构队列剩10；保留来源例外，未扩普通白名单。；两最终VoR、期刊固定arXiv v1/v2与会刊关系分别待核；引用列表核验不等于引用正文已读。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -871,6 +872,8 @@
   阅读边界：两稿33页全文，五原图；两目标作者引文均已录，不冒称被引正文已读。ICV为VoR，MFSuDF为AM，最终VoR独立待；原31机构资料剩14。
 - 2026-10-12 / jun-zhou-cells-weed-applications-reading-2026-10-12：新增 0，更新 2，去重 5，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两实际版本22页全读；五目标作者引文已录，Jie Zhou明确非目标作者。纠正单细胞和杂草图像块任务，人工分割及HSI/MSI边界保留，原31机构资料剩12。
+- 2026-10-12 / jun-zhou-crf-segmentation-reading-2026-10-12：新增 0，更新 2，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两实际AM22页全读、四原图；纠正监督分类/分割与表征预训练误配。期刊AM正文题名不同于同DOI正式书目，最终VoR/arXiv正文未读；无明确会刊扩展证据，保留独立方法族。原31机构资料剩10。
 
 </details>
 
