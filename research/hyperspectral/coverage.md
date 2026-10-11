@@ -193,6 +193,7 @@
 | Jun Zhou · model denoisers, dataset scope and publisher identity | 2019–2025 | SMDS-Net、GMSC-Net、Noisy-as-Clean、LEVIR RGB、CLCD Gaofen-2、WHU spectral definition gap、FDNet GPINet SAPNet publisher identity；两机构稿18 PDF页全读，v2十二页对应；范围外11页选读，非作者或领域全集。 | 未单列 / 7 / 7 | 两去噪正文/三原图，两个旧范围证据强化，三正式未决取得出版社身份/非OA原摘要 | 作者目录未闭环，DBLP8/Scholar5/个人机构8未决重叠；WHU波段定义及WS-Net++本文未读，旧范围审计仍需补。；原31机构资料剩18；SMDS最终TIP15页与现12页正文差异未核；三未决出版社非OA且无PDF，不反复追索付费正文或检查代码。 |
 | Jun Zhou · relational GAN and split attention classification | 2013–2024 | FSHyperRGAN、S3ARN、episodic 1-shot versus five labels、AM versus VoR、HSIGene citation 2409.12470v2；17页AM＋13页VoR实际全文，四被引作者目录已录；候选固定v2下载未读，非作者/年度/领域全集。 | 未单列 / 7 / 7 | 两分类正文/五原图，四作者引文已录，一全领域候选固定v2待读 | 作者目录与正式版本未闭环，原31机构队列剩16；DBLP8/Scholar5/个人机构8未决集合重叠不相加。；HSIGene为其他作者全领域候选，固定v2已下载未读，正式关联/正文待；代码只链接。 |
 | Jun Zhou · classical HSI–LiDAR feature and decision fusion | 2018–2021 | ICV、canonical correlation fusion、MFSuDF、quadrant bit coding、superpixel decision fusion、AM versus VoR；16页VoR＋17页AM实际全文；2条目标作者引文已录，非作者/年份/领域全集。 | 未单列 / 4 / 4 | 两融合稿33页、五原图与两作者引文已录 | 作者目录与正式版本未闭环，原31机构队列剩14；DBLP8/Scholar5/个人机构8未决重叠不相加。；MFSuDF最终VoR、HSIGene固定v2正文及其他可访问资料仍待；只处理现有库，不增加重复目录或笔记。 |
+| Jun Zhou · biomedical cells and weed applications | 2015–2019 | SKOV3 live dead cells、tensor morphological profile、FCNN SPLBP、61-band HSI versus four-band MSI、Jun versus Jie Zhou；6页AM＋16页VoR实际全文；5目标作者引文已录，1初始名为Jie而非Jun；非作者/领域全集。 | 未单列 / 8 / 8 | 两应用正文22页/五原图，五引用已录，一非目标作者 | 作者与正式版本未闭环，原31机构队列剩12；现有作者来源例外不扩白名单。；细胞最终VoR、其他可访问资料和DBLP8/Scholar5/个人机构8等重叠差集继续；代码仅链接。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -868,6 +869,8 @@
   阅读边界：30页两稿全部已读；四被引作者论文已录，不新增或冒称各引文全文已读。HSIGene固定v2下载未读/七作者非Jun，待后续全领域正文与版本；原31机构资料剩16。
 - 2026-10-12 / jun-zhou-classical-hsi-lidar-fusion-reading-2026-10-12：新增 0，更新 2，去重 2，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：两稿33页全文，五原图；两目标作者引文均已录，不冒称被引正文已读。ICV为VoR，MFSuDF为AM，最终VoR独立待；原31机构资料剩14。
+- 2026-10-12 / jun-zhou-cells-weed-applications-reading-2026-10-12：新增 0，更新 2，去重 5，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：两实际版本22页全读；五目标作者引文已录，Jie Zhou明确非目标作者。纠正单细胞和杂草图像块任务，人工分割及HSI/MSI边界保留，原31机构资料剩12。
 
 </details>
 

@@ -1,0 +1,384 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "周峻两篇既有高光谱细胞/杂草应用的免费全文、作者身份/版本、五原图及引用查漏；保持作者来源例外和HSI/MSI独立边界。",
+  "accessFile": "jun-zhou-cells-weed-applications-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 2,
+  "newFullTextReadingCount": 2,
+  "pdfPagesRead": 22,
+  "figuresAdded": 5,
+  "materials": [
+    {
+      "name": "cells",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/69749816-687e-43df-833d-427215e042af/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/69749816-687e-43df-833d-427215e042af/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "file": "jun-zhou-cells-weed-applications-reading-2026-10-12-cells.pdf",
+      "bytes": 818623,
+      "sha256": "14cd5c5a91a0b27465a65977f7c9212ce7fee57650bbe27ee9a0c47139f87552",
+      "pdfDownloaded": true,
+      "checkedAt": "2026-10-12",
+      "paperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "pageCount": 6,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "readingProgress": "full_text_read",
+      "version": "AM",
+      "pageTextFile": "jun-zhou-cells-weed-applications-reading-2026-10-12-cells-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "weed",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ccb72211-87a1-4ee1-b584-6ca970bc3b03/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ccb72211-87a1-4ee1-b584-6ca970bc3b03/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "file": "jun-zhou-cells-weed-applications-reading-2026-10-12-weed.pdf",
+      "bytes": 605494,
+      "sha256": "2362ce1bec7564d4da1aaaaa0b6a0831cec7f335c5a30ea7ed76183650470b2b",
+      "pdfDownloaded": true,
+      "checkedAt": "2026-10-12",
+      "paperId": "multiresolution-weed-hsi-classification-2019",
+      "pageCount": 16,
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "readingProgress": "full_text_read",
+      "version": "VoR",
+      "pageTextFile": "jun-zhou-cells-weed-applications-reading-2026-10-12-weed-pages.json",
+      "visualCheckPages": [
+        1,
+        2,
+        4,
+        6,
+        7,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "paperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "method": "先由HSI伪彩色图在Matlab Image Labeler人工分割单细胞，再暗校正和图像尺寸归一。TMP以行×列×波段张量及阈值截集描述强度，对整个谱空cube作膨胀、腐蚀、开闭等多尺度形态操作，拼接Hp(T)特征后用线性LIBSVM分类；比较SIFT3D、3DLDP、SS_SIFT、逐波段EMP和TMP。微流控中间胶原凝胶通道阻止两侧细胞混合并允许PBS通过，提供处理条件对应的标签；不把高维张量当真实三维成像，不从被引TMP2016稿移植未印参数。",
+      "datasets": "自采SKOV3人卵巢癌细胞，共405活/291死，含HSI和RGB图。活细胞置PBS；死细胞为2%醋酸室温5分钟处理、PBS洗3次。胶原凝胶37°C聚合30分钟，两侧通道分别放活/死样本。系统标称3650×2048、150带470–900nm，非实际单细胞尺寸或有效带数；实际扫描、曝光及独立培养批次数未给。",
+      "experimentSetting": "人工单细胞分割、暗校正和尺寸归一后提取五类特征，线性SVM/LIBSVM；Matlab实现，Windows10/i7-7800X3.50GHz/128GB为系统配置。随机训练/测试拆分10次报告平均accuracy，未给训练比例、每类拆分数量、SVM C、TMP结构元素尺度、随机种子或按培养/设备批次拆分。RGB仅对EMP/TMP，另三高维描述子未评RGB。",
+      "results": "Table1 HSI accuracy：SIFT3D72.68%、3DLDP81.53%、SS_SIFT77.81%、EMP74.96%、TMP83.72%；RGB EMP57.16%、TMP79.85%。TMP在所列HSI方法中最佳，HSI较RGB的TMP高3.87百分点，EMP高17.80百分点。仅随机拆分平均值，未给方差、敏感性/特异性、混淆矩阵、运行时间或荧光检测的直接对照。",
+      "limitations": "只读AM，正式VoR独立待。人工分割使整体管线不是自动检测/分割；免荧光染料的分类不等于样品制备无接触或未处理，死样本实际经醋酸。处理/通道标签未附独立荧光确认，不能外推临床诊断或其他死亡机制。实际使用波段/单细胞尺寸、TMP尺度和向量汇聚、SVM C、训练比例与独立培养批次均未给；不按传感器上限猜补。未见作者官方代码或数据下载链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/69749816-687e-43df-833d-427215e042af/content",
+          "figureLabel": "Figure 2",
+          "caption": "显微高光谱细胞采集系统原设备图；不是自动分类流程图。",
+          "page": 3,
+          "verificationNote": "Griffith AM · © IEEE，PDF第3页/正文第2页，300dpi原页裁取；完整原图、标签与图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              315,
+              98,
+              565,
+              261
+            ],
+            "pixelBox": [
+              1312,
+              408,
+              2355,
+              1088
+            ]
+          },
+          "path": "figures/zhou-scholar-automatic-live-and-dead-cell-classificatio-2019/cells-fig2.png",
+          "width": 1043,
+          "height": 680,
+          "sha256": "74dcb0d41970091fc86d2aa35c077593ca602939c0dda08b95672aa4bbf4355d",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "He Chen, Benjamin Ho, Haofei Wang, Say Hwa Tan, Chun-Xia Zhao, Nam-Trung Nguyen, Yongsheng Gao, Jun Zhou · Griffith AM · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/69749816-687e-43df-833d-427215e042af/content",
+          "figureLabel": "Figure 3",
+          "caption": "活/死细胞两侧通道与中间胶原凝胶的微流控装置和标签条件。",
+          "page": 3,
+          "verificationNote": "Griffith AM · © IEEE，PDF第3页/正文第2页，300dpi原页裁取；完整原图、标签与图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              310,
+              465,
+              565,
+              648
+            ],
+            "pixelBox": [
+              1291,
+              1937,
+              2355,
+              2700
+            ]
+          },
+          "path": "figures/zhou-scholar-automatic-live-and-dead-cell-classificatio-2019/cells-fig3.png",
+          "width": 1064,
+          "height": 763,
+          "sha256": "a97965dbc85fce0131ee3ce99d0b655b7e7477e803f158c8fb334ce6fc939d52",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "He Chen, Benjamin Ho, Haofei Wang, Say Hwa Tan, Chun-Xia Zhao, Nam-Trung Nguyen, Yongsheng Gao, Jun Zhou · Griffith AM · © IEEE"
+        }
+      ]
+    },
+    {
+      "paperId": "multiresolution-weed-hsi-classification-2019",
+      "method": "2D CNN含四Conv/ReLU/MaxPool块、两50% dropout和FC层，监督交叉熵/带momentum SGD训练。Fig1/2从末卷积、FC1和FC2三处取中高层Feat_FCNN1/2/3拼接。另一支按SLIC分区逐带提LBP，邻域值与中心阈值二值化、直方图等长binning，跨波段及超像素拼接Feat_SPLBP；参数m8/r2、n9超像素。各特征先线性归一[0,1]，FCNN和SPLBP拼接后one-vs-one RBF SVM分类。Fig3阈值示例与Eq8/9符号方向不一致、SLIC CIELAB扩展HSI规则未交代，保留原文边界；特征融合不同于超像素规整决策，也不是独立自监督预训练。",
+      "datasets": "A为JAI BM-141＋Brimrose VA210采集的UNSW61带HSI，400–1000nm、平均10nm间隔；原1040×1320裁1000²，再100²块，Table1 Azol100/Alli200/Hyac100/Hyme200，共600。正文称分成10个100²块与尺寸关系不符，原始采集cube数量未给，不猜600独立采集样本。B为Sequoia四带550/660/735/790nm、1280×960、2m高度，Crop142/Weed198/Mix188共528随机裁块，仅MSI。LR2/4/8分别2²/4²/8²像素平均模拟，非新增真实传感器采集。",
+      "experimentSetting": "两数据各随机train60%/test20%/val20%，10次重复；训练才做五角度旋转、三随机90–95%裁剪，所有算法输入56²。Matlab/MatConvNet，四Conv pad1、pool2² stride2、两dropout.5、batch100；SGD momentum，A lr10^-5/iterations100，B10^-3/50。LBP m8/r2由Table3 OA挑选，SLIC n9；RBF SVM one-vs-one，C/σ、momentum值及硬件未给。未说明同原图裁块或同块各LR版本是否跨集合隔离、PCA/选带或超像素跨带对齐细节。",
+      "results": "Table4 A（HSI）CNN/LBP/FCNN/SPLBP/融合OA为79.3±.22/75.8±.30/85.7±.18/80.25±.25/89.70±.35%。融合四类准确率92.80/91.47/89.55/88.62。Table5 B（MSI）对应89.75±.74/83.64±.90/92.5±.55/91.67±.65/96.35±.77%，三类95.84/96.7/88.45。两表融合聚合及各类指标领先所列基线。HSI融合相对FCNN主表高4.00百分点，但讨论写5.45%，不替作者改表。Table4 CNN OA79.3高于其所有所列类均值73.3–78.40，统计对应关系未说明；无运行时间、参数量或真实跨场景评测。",
+      "limitations": "仅现有周峻作者来源例外保留，不把Remote Sensing加入普通来源白名单。HSI与MSI是独立数据实验，不是谱融合或将纯MSI纳入HSI库；图像块种类分类不等同像元制图。模拟LR不证明真实传感器/跨域适配；原图/同块多分辨版本拆分、SLIC CIELAB如何用于61带及各带分区一致性、SVM/优化细节未明。1000²到100²块的“10块”措辞、LBP印式/图示方向、Table4类均值与OA和5.45%增益文字冲突原样记录。未见作者官方代码或数据下载链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ccb72211-87a1-4ee1-b584-6ca970bc3b03/content",
+          "figureLabel": "Figure 1",
+          "caption": "FCNN中高层特征与SPLBP纹理拼接后以SVM分类图像块。",
+          "page": 4,
+          "verificationNote": "Remote Sensing VoR · CC BY4.0，PDF第4页/正文第3页，300dpi原页裁取；完整原图、标签与图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              95,
+              412,
+              500,
+              646
+            ],
+            "pixelBox": [
+              395,
+              1716,
+              2084,
+              2692
+            ]
+          },
+          "path": "figures/multiresolution-weed-hsi-classification-2019/weed-fig1.png",
+          "width": 1689,
+          "height": 976,
+          "sha256": "9b0d57ae460afc1eb5da8745b87d8db86ded304cc5a783d1661a601632ff6b84",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Adnan Farooq, Xiuping Jia, Jiankun Hu, Jun Zhou · Remote Sensing VoR · CC BY4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ccb72211-87a1-4ee1-b584-6ca970bc3b03/content",
+          "figureLabel": "Figure 2",
+          "caption": "从末卷积及两FC层提取三层级特征的FCNN结构。",
+          "page": 6,
+          "verificationNote": "Remote Sensing VoR · CC BY4.0，PDF第6页/正文第5页，300dpi原页裁取；完整原图、标签与图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              140,
+              133,
+              460,
+              275
+            ],
+            "pixelBox": [
+              583,
+              554,
+              1917,
+              1146
+            ]
+          },
+          "path": "figures/multiresolution-weed-hsi-classification-2019/weed-fig2.png",
+          "width": 1334,
+          "height": 592,
+          "sha256": "290ef979791f8ad64e6d25ef28ab5b3dc6f649c268d8de2950bbeedd743642e6",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Adnan Farooq, Xiuping Jia, Jiankun Hu, Jun Zhou · Remote Sensing VoR · CC BY4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ccb72211-87a1-4ee1-b584-6ca970bc3b03/content",
+          "figureLabel": "Figure 4",
+          "caption": "各超像素跨波段LBP直方图的特征构造与拼接。",
+          "page": 7,
+          "verificationNote": "Remote Sensing VoR · CC BY4.0，PDF第7页/正文第6页，300dpi原页裁取；完整原图、标签与图注已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              180,
+              526,
+              412,
+              763
+            ],
+            "pixelBox": [
+              750,
+              2191,
+              1717,
+              3180
+            ]
+          },
+          "path": "figures/multiresolution-weed-hsi-classification-2019/weed-fig4.png",
+          "width": 967,
+          "height": 989,
+          "sha256": "3ffc8b4c419669206d08a417aaf2d58eb9de3049f0e8f145914e6737feeaf557",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Adnan Farooq, Xiuping Jia, Jiankun Hu, Jun Zhou · Remote Sensing VoR · CC BY4.0"
+        }
+      ]
+    }
+  ],
+  "classificationChecks": [
+    {
+      "paperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/69749816-687e-43df-833d-427215e042af/content",
+      "level": "机构AM逐页全文、原表及原图核验",
+      "supports": [
+        "接受稿直接采集并分类显微HSI单细胞，属于医学高光谱状态分类及张量形态方法；原地物分类标签错误，按实际输出纠正。系统标称150带不能自动当实际每个样本都保留150有效带。",
+        "首页Griffith ICT Jun Zhou通讯作者与Crossref八作者会议书目对应；本篇Crossref没有Jun ORCID",
+        "原主表、样本单位、监督来源、实验协议和版本边界；代码仅官方链接"
+      ]
+    },
+    {
+      "paperId": "multiresolution-weed-hsi-classification-2019",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/ccb72211-87a1-4ee1-b584-6ca970bc3b03/content",
+      "level": "机构VoR逐页全文、原表及原图核验",
+      "supports": [
+        "正式VoR明确处理61带HSI并预测四类杂草图像块，属于植物种类判别及卷积/纹理特征融合。四带MSI只作独立辅助实验，不能用其96.35%替代HSI89.70%；原泛地物制图标签按实际样本/输出纠正。",
+        "首页Griffith单位与Crossref注册ORCID0000-0001-5822-8233确认目标Jun Zhou",
+        "原主表、样本单位、监督来源、实验协议和版本边界；代码仅官方链接"
+      ]
+    }
+  ],
+  "newCategoryIds": [
+    "plant-species-discrimination",
+    "cnn-texture-feature-fusion"
+  ],
+  "taskNavigation": {
+    "categoryId": "plant-species-discrimination",
+    "groupId": "recognition",
+    "file": "src/library-groups.ts",
+    "status": "existing_reserved_id_now_has_fulltext_confirmed_category"
+  },
+  "citationCrosscheck": [
+    {
+      "fromPaperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "referenceNumber": 4,
+      "catalogId": "crf-deep-feature-hsi-tgrs-2019",
+      "decision": "existing_catalog",
+      "boundary": "原引文作者和题名与目录对应；引用读取不等于被引正文已读，不自动认定版本扩展关系。"
+    },
+    {
+      "fromPaperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "referenceNumber": 12,
+      "catalogId": "tensor-morphological-profile-icip-2016",
+      "decision": "existing_catalog",
+      "boundary": "原引文作者和题名与目录对应；引用读取不等于被引正文已读，不自动认定版本扩展关系。"
+    },
+    {
+      "fromPaperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "referenceNumber": 13,
+      "catalogId": "joint-spectral-spatial-sparse-coding-jstars-2017",
+      "decision": "existing_catalog",
+      "boundary": "原引文作者和题名与目录对应；引用读取不等于被引正文已读，不自动认定版本扩展关系。"
+    },
+    {
+      "fromPaperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "referenceNumber": 18,
+      "catalogId": "3d-ldp-hsi-face-fg-2015",
+      "decision": "existing_catalog",
+      "boundary": "原引文作者和题名与目录对应；引用读取不等于被引正文已读，不自动认定版本扩展关系。"
+    },
+    {
+      "fromPaperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "referenceNumber": 19,
+      "catalogId": "spectral-spatial-sift-tip-2018",
+      "decision": "existing_catalog",
+      "boundary": "原引文作者和题名与目录对应；引用读取不等于被引正文已读，不自动认定版本扩展关系。"
+    }
+  ],
+  "authorIdentityExclusion": {
+    "fromPaperId": "multiresolution-weed-hsi-classification-2019",
+    "referenceNumber": 16,
+    "doi": "10.1109/TIP.2015.2507408",
+    "title": "Robust Texture Image Representation by Scale Selective Local Binary Patterns",
+    "decision": "not_target_author",
+    "reason": "本稿引文J. Zhou经正式Crossref完整作者确认为Jie Zhou，不是目标Jun Zhou，不纳入周峻差集。",
+    "sourceUrl": "https://api.crossref.org/works/10.1109/TIP.2015.2507408",
+    "metadataFile": "jun-zhou-cells-weed-applications-reading-2026-10-12-texture-citation-crossref.json",
+    "boundary": "只核正式作者书目，没有读取被引正文或判断其全领域高光谱范围，不因通用纹理词自动收录。"
+  },
+  "primaryIdentity": [
+    {
+      "paperId": "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
+      "crossrefFile": "jun-zhou-cells-weed-applications-reading-2026-10-12-cells-crossref.json",
+      "author": {
+        "given": "Jun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      "boundary": "细胞Crossref没有Jun ORCID，身份依据实际首页Griffith单位与完整作者顺序；杂草另有稳定ORCID。"
+    },
+    {
+      "paperId": "multiresolution-weed-hsi-classification-2019",
+      "crossrefFile": "jun-zhou-cells-weed-applications-reading-2026-10-12-weed-crossref.json",
+      "author": {
+        "ORCID": "https://orcid.org/0000-0001-5822-8233",
+        "authenticated-orcid": false,
+        "given": "Jun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Information and Communication Technology, University of Griffith, Nathan, Queensland 4111, Australia"
+          }
+        ],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      "boundary": "细胞Crossref没有Jun ORCID，身份依据实际首页Griffith单位与完整作者顺序；杂草另有稳定ORCID。"
+    }
+  ],
+  "boundary": "总库390/周峻181不变，77全文/104摘要；312分类确认、审计282、74暂定、4待；171标签(68任务/90方法/13应用)，原图255。原31机构队列完成19份/剩12；22页实际全文与被引书目读取分别计。来源白名单272/arXiv17/作者例外101不变；作者和全领域未完成，代码只官方链接。"
+}
