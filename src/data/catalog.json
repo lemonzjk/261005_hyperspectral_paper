@@ -65250,32 +65250,33 @@
         "hyperspectral"
       ],
       "doi": "10.1109/icip.2016.7532748",
-      "representation": "把高光谱立方体作为高阶张量，定义对应阶数的形态学剖面，提取融合光谱—空间结构。",
+      "representation": "张量体素标量邻域min/max、开闭和多尺度剖面，3D圆柱SE融合空间/波段索引；radius1/3/5/7、height3/5/9/17。整数阈值截面提供解释，无谱向量排序、低秩因素或物理三维重建。",
       "tags": [],
-      "summary": "提出张量形态学剖面，把传统二维形态学扩展到高维高光谱张量，用于光谱—空间分类特征提取。",
+      "summary": "把高光谱行/列/波段作为张量域，以同阶结构元素的标量形态学开闭构建TMP，再用线性SVM分类；区别PCA二维EMP和低秩Tucker。",
       "input": "高光谱图像张量及其光谱—空间结构。",
       "output": "张量形态学剖面特征和地物分类结果。",
-      "mechanism": "对高阶张量执行对应阶数形态学操作，构建张量形态学剖面，再用于高光谱分类。",
-      "readingNote": "Griffith作者稿摘要、Pavia University图示与正文局部核验；正式ICIP2016:2197–2201，未标全文。",
+      "mechanism": "张量体素标量邻域min/max、开闭和多尺度剖面，3D圆柱SE融合空间/波段索引；radius1/3/5/7、height3/5/9/17。整数阈值截面提供解释，无谱向量排序、低秩因素或物理三维重建。",
+      "readingNote": "公开AM全6页通读/逐页图版复核，15编号式；仅本公开版本。AM6页（封面1/正文参考5）全读；正式ICIP2016:2197–2201未独立读。Eq9域维记号、Eq12整数强度条件/连续谱量化、SE对称/配对/边界、全部分类参数与划分仍待；Fig3图注重复Pavia而正文为两场景，原注保留。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "author_pdf_abstract_and_selected_pages",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "citation": "@inproceedings{tensor_morphological_profile_icip_2016,\n  title = {Tensor Morphological Profile for Hyperspectral Image Classification},\n  author = {Jie Liang and Jun Zhou and Yongsheng Gao},\n  booktitle = {2016 IEEE International Conference on Image Processing},\n  year = {2016},\n  pages = {2197--2201},\n  doi = {10.1109/icip.2016.7532748}\n}\n",
       "library": {
         "categoryIds": [
           "land-cover-classification",
-          "morphological-profiles"
+          "morphological-profiles",
+          "tensor-morphology-profile"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者稿摘要直接研究高光谱影像分类；张量形态学是光谱—空间特征方法。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "完整AM直接研究高光谱地物分类，张量域形态剖面融合空间和波段索引结构。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何把高光谱图像的高阶光谱—空间结构纳入形态学剖面？",
-        "datasets": "作者稿摘要报告两个常用高光谱影像；Pavia University图示，第二数据集名称及规模待全文核验。",
-        "experimentSetting": "作者稿摘要、Pavia University图示和正文局部核验；未逐项复核分类器、采样、参数及结果表。",
-        "conclusions": "作者报告张量形态学剖面在两个高光谱影像上持续优于扩展形态学剖面；具体数值待全文。",
-        "limitations": "作者稿与正式ICIP版页码关系待逐页核对；不能将形态学优势推广到所有传感器或分类器。",
+        "datasets": "Pavia ROSIS103带/.43–.86µm/1.3m/9类、已有训练测试样本；IndianPines AVIRIS200带（删20水吸收）/20m/16类，每类随机5%训练、余测试。本文未印两场景空间规模或实际split编号。",
+        "experimentSetting": "SPE/EMP/TMP三特征配linear SVM；EMP用PCA/disk，TMP用cylinder；radius-height配对、EMP分量p、C/归一/边界、seed/重复/std未给。Table1两组按图注与正文顺序推断，18值原精度保存。",
+        "conclusions": "TMP OA两组90.2/88.6，较EMP86.4/83.2高3.8/5.4个百分点；AA86.7/87.4、kappa.87/.87。无显著性检验或空间隔离测试，不推广MRI/video。三图皆输入/特征/分类展示，无独立完整框架图。",
+        "limitations": "AM6页（封面1/正文参考5）全读；正式ICIP2016:2197–2201未独立读。Eq9域维记号、Eq12整数强度条件/连续谱量化、SE对称/配对/边界、全部分类参数与划分仍待；Fig3图注重复Pavia而正文为两场景，原注保留。",
         "dataLinks": [],
         "evidence": [
           {
@@ -65302,6 +65303,33 @@
             "supports": [
               "作者、论文身份和ICIP2016页码2197–2201。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "把高光谱行/列/波段作为张量域，以同阶结构元素的标量形态学开闭构建TMP，再用线性SVM分类；区别PCA二维EMP和低秩Tucker。",
+              "张量体素标量邻域min/max、开闭和多尺度剖面，3D圆柱SE融合空间/波段索引；radius1/3/5/7、height3/5/9/17。整数阈值截面提供解释，无谱向量排序、低秩因素或物理三维重建。",
+              "Pavia ROSIS103带/.43–.86µm/1.3m/9类、已有训练测试样本；IndianPines AVIRIS200带（删20水吸收）/20m/16类，每类随机5%训练、余测试。本文未印两场景空间规模或实际split编号。",
+              "TMP OA两组90.2/88.6，较EMP86.4/83.2高3.8/5.4个百分点；AA86.7/87.4、kappa.87/.87。无显著性检验或空间隔离测试，不推广MRI/video。三图皆输入/特征/分类展示，无独立完整框架图。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7532748",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "三作者/Jun Griffith单位互证；numeric author id不当ORCID。完整摘要已读，正式PDF202空；日期按字段，不当首次online。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/icip.2016.7532748",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式作者、类型、年份、页码及期刊卷期；AM与正式全文分源。"
+            ]
           }
         ],
         "versions": [
@@ -65311,21 +65339,24 @@
             "url": "https://doi.org/10.1109/icip.2016.7532748",
             "doi": "10.1109/icip.2016.7532748",
             "year": 2016,
-            "relation": "正式ICIP2016:2197–2201。"
+            "relation": "ICIP25–28September2016:2197–2201；IEEE插入2016-08-19按字段。完整IEEE摘要/书目已核，正式PDF202空，未独立阅读全文。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "tensor-morphological-profile-icip-2016-source",
-            "type": "Griffith作者稿",
+            "type": "Accepted Manuscript (AM)",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
             "year": 2016,
-            "relation": "作者稿；局部页码只对应本PDF。"
+            "relation": "本AM6页/封面1/正文参考5与全部15式/3图/1表已核；正式差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "tensor-morphological-profile-icip-2016",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者稿支持任务、输入输出与方法；局部阅读不等同全文。",
+          "rationale": "全文支持地物分类及张量域标量形态剖面；无低秩因素，新增精确TMP方法标签。已核AM版本与正式摘要分开。",
           "evidenceFields": [
             "title",
             "summary",
@@ -65334,13 +65365,19 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "b2946584c122c422f70b16af8c8d9dfc21ff082a1784a956a48731bb2d072d43",
+          "evidenceDigest": "ba881d8bfe128efafccf5221c2fbbfad731fd1ae0055f13e8fe3882c082e2038",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
-            "https://doi.org/10.1109/icip.2016.7532748",
-            "https://dblp.org/rec/conf/icip/LiangZG16"
+            "https://xplorestaging.ieee.org/document/7532748",
+            "https://api.crossref.org/works/10.1109/icip.2016.7532748"
           ]
         }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "AM全6页/全部Fig1–3视觉复核：Fig1为原张量与阈值二值张量，Fig2为EMP/TMP开闭剖面，Fig3为两场景分类结果（图注重复Pavia）。无独立完整方法框架图，不以输入/特征/分类图充框架。",
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
+        "checkedAt": "2026-10-11"
       }
     },
     {
@@ -66319,6 +66356,14 @@
               "EHU原说明页403，保留实际错误体；两稿31/103不同使用从正文核，未取得原库。",
               "实际页面访问不等于原数据下载、代码取得或实验复现；不可用只指本次入口，不判定资源不存在。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content",
+            "checkedAt": "2026-10-11",
+            "level": "related_primary_manuscripts_table_and_method_comparison",
+            "supports": [
+              "ICIP2017与JSTARS2018公开稿Columbia表81值逐项相同；TDL[19]换SPA+LR[22]，四阶正交与三阶非负/103vs31带不同。全文无明确扩展声明，方法族保持独立，正式表/原结果与代码待核。"
+            ]
           }
         ],
         "versions": [
@@ -66685,16 +66730,16 @@
       "collections": [
         "hyperspectral"
       ],
-      "representation": "以非负Tucker分解建模空间非局部相似与全谱相似，恢复高光谱影像。",
+      "representation": "6×6全谱块展平36×Is，取50非局部相似块堆36×Is×50第三阶张量；HALS逐因子列/核心更新、AIC/MDL秩及delta=.1反馈。Eq10正交约束与后文非负更新、Eq16/17投影下限及Eq19求和不一致，保留原式待正式/代码。",
       "tags": [],
-      "summary": "研究高光谱影像噪声抑制。",
+      "summary": "以非局部全谱块组的第三阶非负Tucker和HALS去噪，聚合后迭代反馈；Columbia与三传感器影像均加人工Gaussian评估，原图当GT。",
       "input": "含噪高光谱影像及非局部分组块。",
       "output": "去噪高光谱影像。",
-      "mechanism": "在空间维度建模非局部相似，在光谱维度建模全局相似，并交替优化非负Tucker因子。",
-      "readingNote": "Griffith作者稿摘要、DBLP与Crossref核验；正式11(3):701–712，未标全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstream/10072/380453/1/BaiPUB6605.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "mechanism": "6×6全谱块展平36×Is，取50非局部相似块堆36×Is×50第三阶张量；HALS逐因子列/核心更新、AIC/MDL秩及delta=.1反馈。Eq10正交约束与后文非负更新、Eq16/17投影下限及Eq19求和不一致，保留原式待正式/代码。",
+      "readingNote": "公开AM全11页通读/逐页图版复核，25编号式；仅本公开版本。AM11页无封面全读，正式JSTARS11(3):701–712未独立读。Eq10正交/非负、Eq16/17下限、Eq19索引/系数、核心正性/归一、算法首步Eq7指错、秩/L/初始化/停止/复杂度及窗口表差异待代码/正式核；原库、原生噪声泛化及运行时间未证。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -66703,14 +66748,14 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "relationNote": "完整AM直接研究高光谱去噪；人工Gaussian恢复评估与原生混合噪声应用边界分开。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何联合非局部全谱块相似性与光谱低秩结构，通过非负Tucker/HALS恢复含噪高光谱影像？",
+        "datasets": "Columbia32场景512×512×31/400–700nm；AM Indian145×145×224、Pavia610×340×103、Washington原1028×307×210用300×300×190。224/190与原库220/191版本差异分列，不借别稿改数。",
+        "experimentSetting": "人工零均值Gaussian sigma10–60；Columbia表20/40/60，另三表20/30/40/50；逐带PSNR/SSIM/FSIM平均，七基线。patch6、K50、窗30²–80²、delta=.1，具体秩/L/归一/seed/重复/运行时间未给。",
+        "conclusions": "四主表45指标列Ours高于所有可读基线值，但Washington一SSIM原印0716未猜值；Columbia PSNR42.87/39.85/36.26。与ICIP2017全81表值一致，TDL换SPA+LR且张量/带数不同，关系与结果来源待；不称独立复现或统计显著。",
+        "limitations": "AM11页无封面全读，正式JSTARS11(3):701–712未独立读。Eq10正交/非负、Eq16/17下限、Eq19索引/系数、核心正性/归一、算法首步Eq7指错、秩/L/初始化/停止/复杂度及窗口表差异待代码/正式核；原库、原生噪声泛化及运行时间未证。",
         "dataLinks": [],
         "evidence": [
           {
@@ -66728,23 +66773,69 @@
             "supports": [
               "正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "以非局部全谱块组的第三阶非负Tucker和HALS去噪，聚合后迭代反馈；Columbia与三传感器影像均加人工Gaussian评估，原图当GT。",
+              "6×6全谱块展平36×Is，取50非局部相似块堆36×Is×50第三阶张量；HALS逐因子列/核心更新、AIC/MDL秩及delta=.1反馈。Eq10正交约束与后文非负更新、Eq16/17投影下限及Eq19求和不一致，保留原式待正式/代码。",
+              "Columbia32场景512×512×31/400–700nm；AM Indian145×145×224、Pavia610×340×103、Washington原1028×307×210用300×300×190。224/190与原库220/191版本差异分列，不借别稿改数。",
+              "四主表45指标列Ours高于所有可读基线值，但Washington一SSIM原印0716未猜值；Columbia PSNR42.87/39.85/36.26。与ICIP2017全81表值一致，TDL换SPA+LR且张量/带数不同，关系与结果来源待；不称独立复现或统计显著。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/8278197",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "六作者/精确Jun ORCID、bio/AM Griffith互证；IEEEaffiliation对Jun却为Beihang，原字段差异保留。完整摘要已读，正式PDF202空；日期按字段，不当首次online。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/JSTARS.2018.2791718",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式作者、类型、年份、页码及期刊卷期；AM与正式全文分源。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content",
+            "checkedAt": "2026-10-11",
+            "level": "related_primary_manuscripts_table_and_method_comparison",
+            "supports": [
+              "ICIP2017与JSTARS2018公开稿Columbia表81值逐项相同；TDL[19]换SPA+LR[22]，四阶正交与三阶非负/103vs31带不同。全文无明确扩展声明，方法族保持独立，正式表/原结果与代码待核。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "nonlocal-tucker-denoising-jstars-2018-published",
-            "type": "正式记录",
+            "type": "正式期刊版",
             "url": "https://doi.org/10.1109/JSTARS.2018.2791718",
             "doi": "10.1109/JSTARS.2018.2791718",
             "year": 2018,
-            "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+            "relation": "JSTARS11(3):701–712 March2018；IEEE显示/插入2018-02-01按字段，不另立版本。完整IEEE摘要/书目已核，正式PDF202空，未独立阅读全文。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "nonlocal-tucker-denoising-jstars-2018-source",
+            "type": "Accepted Manuscript (AM)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content",
+            "year": 2018,
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "previousSourceUrl": "https://research-repository.griffith.edu.au/bitstream/10072/380453/1/BaiPUB6605.pdf",
+            "relation": "机构item明确AM；11页无封面全文已核，旧bitstream当前为HTML；正式全文差异未核。"
           }
         ],
         "methodFamilyId": "nonlocal-tucker-denoising",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "全文支持非局部全谱第三阶低秩Tucker去噪；原式正交/非负矛盾分列，不当解混或几何重建。已核AM版本与正式摘要分开。",
           "evidenceFields": [
             "title",
             "summary",
@@ -66753,16 +66844,33 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "292dc0e6b31aa34fa339b8b70ff76c4d252003a080c5434122b9c499b64727c3",
+          "evidenceDigest": "e4361b37d54587828987a0e79c2f8c23920ed38503c3bbd94cfa57c0452168fb",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/bitstream/10072/380453/1/BaiPUB6605.pdf",
-            "https://research-repository.griffith.edu.au/bitstream/10072/380453/1/BaiPUB6605.pdf",
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content",
+            "https://xplorestaging.ieee.org/document/8278197",
             "https://api.crossref.org/works/10.1109/JSTARS.2018.2791718"
           ]
         }
       },
       "doi": "10.1109/JSTARS.2018.2791718",
-      "citation": "@article{nonlocal_tucker_denoising_jstars_2018,\n  title = {Nonlocal Similarity Based Nonnegative Tucker Decomposition for Hyperspectral Image Denoising},\n  author = {Xiao Bai and Fan Xu and Lei Zhou and Yan Xing and Lu Bai and Jun Zhou},\n  year = {2018},\n  doi = {10.1109/JSTARS.2018.2791718}\n}\n"
+      "citation": "@article{nonlocal_tucker_denoising_jstars_2018,\n  title = {Nonlocal Similarity Based Nonnegative Tucker Decomposition for Hyperspectral Image Denoising},\n  author = {Xiao Bai and Fan Xu and Lei Zhou and Yan Xing and Lu Bai and Jun Zhou},\n  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n  year = {2018},\n  volume = {11},\n  number = {3},\n  pages = {701--712},\n  doi = {10.1109/JSTARS.2018.2791718}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content",
+          "figureLabel": "Figure 1",
+          "caption": "Overview of the proposed hyperspectral image denoising method. Firstly, image patches extracted from noisy hyperspectral image are stacked as a 3rd-order tensor by non-local similarity matching. Then hierarchical alternative least square based nonnegative tucker decomposition method is applied to get the denoised patches. Finally, the denoised patches are aggregated iteratively to get the clean image.",
+          "page": 2,
+          "extraction": "从无机构封面AM原PDF第2页2400px渲染裁切完整流程和三行原图注，未重绘。",
+          "verificationNote": "全部11页/10图及原Fig1视觉复核；对应item明确AM、正文第2页，正式701–712页/图版差异未核。",
+          "path": "figures/nonlocal-tucker-denoising-jstars-2018/framework.png",
+          "width": 1589,
+          "height": 890,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "9451ef68b550b01cd98eb182e16aef440c1b4567507c68c72bffbb47a2dfc76c",
+          "attribution": "Xiao Bai, Fan Xu, Lei Zhou, Yan Xing, Lu Bai, Jun Zhou · JSTARS 2018"
+        }
+      ]
     },
     {
       "id": "spectral-spatial-sift-tip-2018",
@@ -79688,6 +79796,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
         }
       ]
     },
@@ -80399,6 +80512,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
         }
       ]
     },
@@ -81010,6 +81128,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
         }
       ]
     },
@@ -82772,6 +82895,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2016/2017差分权重两稿全文确认实际波段权重输出与多类地物评测；仅同步本轮关联，类别定义不变。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
         }
       ]
     },
@@ -84367,6 +84495,11 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "ESDAP原方法/流程图与GGF已核验的HSI/LiDAR形态剖面提供直接依据。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
         }
       ]
     },
@@ -88212,6 +88345,26 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "全文确认精确图/稀疏变量与约束，保留正式/实现待核。"
+        }
+      ]
+    },
+    {
+      "id": "tensor-morphology-profile",
+      "name": "张量形态学剖面",
+      "dimension": "method",
+      "definition": "在行、列、波段等张量域坐标上对标量强度执行同阶结构元素的腐蚀、膨胀和多尺度开闭剖面，用于光谱—空间分类；不等同谱向量排序、二维PCA EMP或低秩张量分解。",
+      "rationale": "Liang/Zhou/Gao ICIP2016 AM全部15式、3图与分类表核验；3D圆柱SE和线性SVM，量化/配对与正式差异留待。",
+      "status": "confirmed",
+      "color": "#93afa1",
+      "createdAt": "2026-10-11",
+      "evidencePaperIds": [
+        "tensor-morphological-profile-icip-2016"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "机构AM完整公式与实验支持精确张量域形态方法，避免仅按tensor误归Tucker低秩。"
         }
       ]
     }

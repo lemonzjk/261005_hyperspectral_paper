@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。146条为摘要级核验、42条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。144条为摘要级核验、44条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -204,7 +204,7 @@
 | 2016 | [Nonnegative matrix factorization with endmember sparse graph learning for hyperspectral unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/4256ac55-5a64-5482-bcaf-fd0d51e00bf0/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2016 | [Nonnegative-Matrix-Factorization-Based Hyperspectral Unmixing With Partially Known Endmembers](https://research-repository.griffith.edu.au/server/api/core/bitstreams/3013f2b6-ec32-5263-9cfe-c8498df13815/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2016 | [Structured Discriminative Nonnegative Matrix Factorization for hyperspectral unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/8aac8fb6-91e0-59b6-a9d9-1d0eb996370d/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
-| 2016 | [Tensor morphological profile for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
+| 2016 | [Tensor morphological profile for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content) | 地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2017 | [Combining Unmixing and Deep Feature Learning for Hyperspectral Image Classification](https://fahimirfanalam.github.io/publication/combining-unmixing-and-deep-feature-learning-for-hyperspectral-image-classification/) | 光谱解混、光谱表征预训练、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2017 | [Deep Residual Convolutional Neural Network for Hyperspectral Image Super-Resolution](https://research-repository.griffith.edu.au/bitstream/10072/370475/1/WangPUB2842.pdf) | 光谱超分辨率、光谱重建 | 正式发表 | 摘要核验 |
 | 2017 | [Dictionary Learning-Based Feature-Level Domain Adaptation for Cross-Scene Hyperspectral Image Classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/323f9de4-3b11-517d-baad-b32f8378e56c/content) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
@@ -225,7 +225,7 @@
 | 2018 | [Integration of Heterogeneous Features from Co-registered Hyperspectral and LiDAR Data for Land Cover Classification](https://www.researchgate.net/publication/342582768_Integration_of_Heterogeneous_Features_from_Co-registered_Hyperspectral_and_LiDAR_Data_for_Land_Cover_Classification) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2018 | [Laboratory-based hyperspectral image analysis for predicting soil carbon, nitrogen and their isotopic compositions](https://era.dpi.qld.gov.au/id/eprint/13321/) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2018 | [Material based salient object detection from hyperspectral images](https://www.sciencedirect.com/science/article/abs/pii/S0031320317304806) | 高光谱显著目标检测、光谱解混、数据集与评测基准 | 正式发表 | 摘要核验 |
-| 2018 | [Nonlocal Similarity Based Nonnegative Tucker Decomposition for Hyperspectral Image Denoising](https://research-repository.griffith.edu.au/bitstream/10072/380453/1/BaiPUB6605.pdf) | 光谱去噪 | 正式发表 | 摘要核验 |
+| 2018 | [Nonlocal Similarity Based Nonnegative Tucker Decomposition for Hyperspectral Image Denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content) | 光谱去噪 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [Object tracking in hyperspectral videos with convolutional features and kernelized correlation filter](https://doi.org/10.1007/978-3-030-04375-9_26) | 光谱目标时序跟踪、高光谱视频采集 | 正式发表 | 全文核验（版本见目录） |
 | 2018 | [Spectral-Spatial Scale Invariant Feature Transform for Hyperspectral Images](https://openalex.org/W2751249843) | 光学影像配准、光谱降维与子空间识别 | 正式发表 | 摘要核验 |
 | 2018 | [Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://monsterzhzh.github.io/pub/fcxiong.pdf) | 光谱解混 | 正式发表 | 摘要核验 |

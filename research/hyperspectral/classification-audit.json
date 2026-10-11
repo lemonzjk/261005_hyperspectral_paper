@@ -360,7 +360,9 @@
     "partially-known-endmember-nmf-tgrs-2016",
     "endmember-sparse-graph-nmf-icip-2016",
     "structured-discriminative-nmf-icip-2016",
-    "nonlocal-tensor-denoising-icip-2017"
+    "nonlocal-tensor-denoising-icip-2017",
+    "nonlocal-tucker-denoising-jstars-2018",
+    "tensor-morphological-profile-icip-2016"
   ],
   "sourceChecks": [
     {
@@ -789,6 +791,28 @@
         "np×np×ns全谱块按空间窗Euclidean匹配，堆np×np×ns×nK四阶张量；正交四模Tucker和AIC/MDL rank，交替分解、聚合、delta=.1反馈。原Eq2无约束平凡解、Eq4印min投影范数与最小重构需max不一致；不擅改原式或当非负分解。",
         "Columbia32场景反射率512×512×31、400–700nm/10nm，原图作GT后加Gaussian sigma20/40/60；Pavia610×340×103取31带，带索引未给，Fig3第5带再加sigma40。Fig2 stuffed toy/cloth/feather620nm、200×200裁块。",
         "32场景均值表九指标Ours全部最高，PSNR42.87/39.85/36.26，较TDL高1.91/1.69/.85dB；不称每幅最佳或统计显著。所谓真实数据实验仍有人工Gaussian，不能当原生混合/条纹坏带恢复已证。实际引用MTS2015[9]，无直接表格比较或扩展声明。补原Fig1 PDF2/AM正文1。"
+      ]
+    },
+    {
+      "paperId": "nonlocal-tucker-denoising-jstars-2018",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/fa141a52-80dc-451d-af22-03487c79f9d0/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "以非局部全谱块组的第三阶非负Tucker和HALS去噪，聚合后迭代反馈；Columbia与三传感器影像均加人工Gaussian评估，原图当GT。",
+        "6×6全谱块展平36×Is，取50非局部相似块堆36×Is×50第三阶张量；HALS逐因子列/核心更新、AIC/MDL秩及delta=.1反馈。Eq10正交约束与后文非负更新、Eq16/17投影下限及Eq19求和不一致，保留原式待正式/代码。",
+        "Columbia32场景512×512×31/400–700nm；AM Indian145×145×224、Pavia610×340×103、Washington原1028×307×210用300×300×190。224/190与原库220/191版本差异分列，不借别稿改数。",
+        "四主表45指标列Ours高于所有可读基线值，但Washington一SSIM原印0716未猜值；Columbia PSNR42.87/39.85/36.26。与ICIP2017全81表值一致，TDL换SPA+LR且张量/带数不同，关系与结果来源待；不称独立复现或统计显著。"
+      ]
+    },
+    {
+      "paperId": "tensor-morphological-profile-icip-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e60a5fbf-6177-5f91-8743-42a3d910a95c/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "把高光谱行/列/波段作为张量域，以同阶结构元素的标量形态学开闭构建TMP，再用线性SVM分类；区别PCA二维EMP和低秩Tucker。",
+        "张量体素标量邻域min/max、开闭和多尺度剖面，3D圆柱SE融合空间/波段索引；radius1/3/5/7、height3/5/9/17。整数阈值截面提供解释，无谱向量排序、低秩因素或物理三维重建。",
+        "Pavia ROSIS103带/.43–.86µm/1.3m/9类、已有训练测试样本；IndianPines AVIRIS200带（删20水吸收）/20m/16类，每类随机5%训练、余测试。本文未印两场景空间规模或实际split编号。",
+        "TMP OA两组90.2/88.6，较EMP86.4/83.2高3.8/5.4个百分点；AA86.7/87.4、kappa.87/.87。无显著性检验或空间隔离测试，不推广MRI/video。三图皆输入/特征/分类展示，无独立完整框架图。"
       ]
     }
   ]

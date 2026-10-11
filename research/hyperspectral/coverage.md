@@ -1244,3 +1244,11 @@ ICIP2013、ICPR2014和TGRS2016三份既有机构稿分别6/7/13页，共26PDF/3�
 MTS谱带字典/共同系数与Tensor正交四模低秩分开；前者SpecTIR模拟噪声及Indian/Pavia原生噪声间接分类、后者Columbia/Pavia真实来源影像人工加Gaussian分开。MTS Pavia全带三指标不及K-SVD、原图先去坏带基线不当相同通道消融；Tensor七具名基线与正文“8”矛盾留证。MTS字典尺度、b单位、`3N=137`与停止；Tensor式4`min`/投影能量、块数边界和np/nK/rank/L/31带索引均保留疑点，不替作者修改式或宣称复现。ICIP误标期刊已纠正会议/BibTeX，原Fig1 PDF2补入，MTS既有Fig1字节不变。IEEE作者单位/日期核对，显示或插入日期不冒充首次online；MTS正式/机构摘要VST段差异不冒充已核正式正文差异。Purdue说明200未下载；SpecTIR转联系页，EHU403、CAVE500，实际原响应与SHA存档。
 
 证据：[本轮清单](sources/jun-zhou-denoise-full-reading-2026-10-11.json)、[逐页正文](sources/jun-zhou-denoise-full-all-page-text-2026-10-11.json)、[完整式表/协议](sources/jun-zhou-denoise-full-protocol-equations-tables-2026-10-11.json)及[正式/机构身份和类型](sources/jun-zhou-denoise-full-primary-metadata-2026-10-11.json)。作者其余146摘要级、多来源差集与arXiv身份/范围待继续；全领域矩阵缺口保持，作者和任一年度全量未完成。
+
+### 作者优先：非负Tucker与张量形态学AM全文续核（2026-10-11）
+
+JSTARS2018非负Tucker与ICIP2016 TMP两既有记录升级为公开AM全文，17PDF页（1封面/16正文参考）、40编号式、13图、6数值表441格（440可解析/1原歧义）、1算法及48/20参考条目全读和逐页视觉核验。参考条目非引用作品全读；两正式PDF202空，正式/代码未复现。Tucker旧URL200为755字节HTML，经精确item/完整bundles/bitstream恢复；主链改为AM，原URL保留。IEEE Jun ORCID/bio与AM Griffith互证，但期刊affiliation字段给Beihang，差异分列，不掩盖作者单位字段冲突。正式卷期页码补入BibTeX。
+
+第三阶展平全谱块/非负HALS与TMP张量域标量形态剖面分开，新增精确TMP方法标签。Tucker人工Gaussian四数据来源不当原生混合噪声恢复；224/190带和其他源220/191分版。Eq10正交/非负、投影下限、核心补集索引/正性、初始化/秩/L/停止、窗口与主表、复杂度待正式/实现。Washington SSIM原格0716视觉确认，保留raw和null解析。与2017会议Columbia表81值逐项相同而TDL改SPA+LR，方法/带数不同且无明确扩展声明；只补相关证据，不合并方法族。TMP两组表头未印场景、按图注/正文推断；OA较EMP高3.8/5.4个百分点，无重复/std/显著性。整数强度恒等式、SE配置/PCA/SVM/split与Fig3重复Pavia注保留边界。
+
+补期刊原Fig1 PDF2完整流程/图注；TMP三图为输入、特征和分类图，无独立完整框架，队列no_framework，非目标与顺序不变。15当前原HTTP响应、9继承文件和三派生审计均核SHA，继承数据入口不伪称重新访问；未取得原库或新增学习笔记。现757目录、188作者（144摘要/44全文）、214三维、317标签/355原图，402确认（359审计）/337暂定/18待；1615候选/248查询/241批次。arXiv531决定及八待核不变；其余作者全文、差集、正式与实现，以及全领域顶会顶刊/arXiv矩阵继续。证据：[本批阅读与原响应清单](sources/jun-zhou-tucker-morph-full-reading-2026-10-11.json)、[公式/协议/全表与2017对比](sources/jun-zhou-tucker-morph-full-protocol-equations-tables-2026-10-11.json)、[作者调研](jun-zhou.md)。
