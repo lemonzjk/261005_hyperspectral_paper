@@ -39330,7 +39330,7 @@
     },
     {
       "id": "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025",
-      "shortTitle": "Multi-scale frequency-guided two-stream network for hyperspectral ano…",
+      "shortTitle": "MFTNet",
       "title": "Multi-scale frequency-guided two-stream network for hyperspectral anomaly detection",
       "authors": "Zhe Zhao, Jiangluqi Song, Dong Zhao, Jiajia Zhang, Huixin Zhou, Jun Zhou",
       "year": 2025,
@@ -39344,29 +39344,28 @@
       "doi": "10.1016/j.jag.2025.104355",
       "representation": "高光谱异常检测：把潜在特征按频率分解，用高频支路突出异常、低频支路恢复背景，再融合两类重建结果。",
       "tags": [],
-      "summary": "MFTNet 针对高光谱异常检测中的背景重建问题，分解编码特征为高频异常与低频背景，增强高频异常并用自注意力融合编码/低频特征恢复背景，最终平均两路检测图。",
-      "input": "高光谱影像立方体；异常目标通常呈高频属性，背景通常呈低频属性。",
-      "output": "高光谱异常检测图。",
-      "mechanism": "多尺度频率分解模块拆出高频异常和低频背景；高频增强模块突出异常；自注意力融合编码特征与低频特征恢复背景；分别重建异常/背景并平均两路检测结果。",
-      "readingNote": "Google Scholar 主页记录、Crossref正式书目与 ScienceDirect 官方摘要核验；摘要称在六个数据集与13个基线比较，未阅读全文。",
-      "paper": "https://www.sciencedirect.com/science/article/pii/S1569843225000020",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "MFTNet以未标注高光谱场景自身重建为目标，CNN编码后通过4/5尺度空间池化分离潜在高/低频特征。高频支路增强异常，低频支路用通道交叉注意力恢复背景，分别以Mahalanobis异常分数和背景残差分数平均形成检测图。正式版六主场景AUC(D,F)在五个最好，Texas Coast不及RGAE/PDBSNet，部分消融或单支路更优。",
+      "input": "H×W×C未标注高光谱立方体；六主场景均100×100，实际保留189/207/205/205/145/102波段。主实验无外部异常标注训练，GT用于评价和参数分析。",
+      "output": "H×W像元异常分数图；中间输出同波段异常增强、背景恢复及合并重建HSI，最终分数不是语义类别或物理异常原因。",
+      "mechanism": "编码器1×1/3×3/1×1卷积、BN与LeakyReLU/Sigmoid，通道128/64/N，N=16。MSFDM对潜在特征分别4/5倍平均池化、上采样并作差，1×1后相加及3×3得HF，LF=Xen−HF；这是空间特征高低频，不是波长曲线傅里叶距离。HFEM将通道四分，普通3×3、膨胀率3的3×3、尺度1/2 MaxPool＋1×1，拼接/1×1和残差；LFRB以当前LF为Q、对应编码特征为K/V，经1×1/DWConv与通道间attention、可学习α及编码残差融合。双支路输出合并，经3×3/BN/Sigmoid自重建；训练文字称MSE，原Eq8写L2范数求和。检测R1=Mahalanobis(异常重建)，R2=Mahalanobis(X−背景重建)，λ=.5加权。",
+      "readingNote": "Griffith免费VoR完整20页已逐页阅读：机构封面1页＋期刊正文/参考文献19页；正式首页Jun Zhou的Griffith单位、邮件及DOI支持身份/版本。9式、1算法、20表、20图已读，原Fig1–3（PDF4–6、正文3–5）300dpi完整裁取并视觉核验。主场景及Segundo非整除尺寸补充、CPU训练/计时、消融负例和原表/公式疑点分别保留；引用目录不代表原引用论文全文已读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
-          "hyperspectral-anomaly-detection",
-          "frequency-domain-spectral-similarity"
+          "hyperspectral-anomaly-detection"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 ScienceDirect 官方摘要均明确高光谱异常检测。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "VoR §2–3直接重建100×100多连续波段HSI并输出异常分数。空间池化/特征差分不是波长曲线傅里叶相似性，删除错配方法标签；通道attention不据名称自动认定完整Transformer架构。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何利用异常与背景的频率属性改善高光谱异常检测中的重建质量？",
-        "datasets": "官方摘要报告六个数据集；具体数据集名称、划分和指标待全文核验。",
-        "experimentSetting": "MFTNet 与13个基线比较，其中包括7个深度学习方法；异常和背景分别重建后平均检测图。",
-        "conclusions": "官方摘要报告 MFTNet 获得有竞争力的检测结果；逐数据集数值和消融待全文核验。",
-        "limitations": "摘要未给出完整频率分解实现、训练配置、数据许可、代码实际可用性和逐项实验。",
+        "datasets": "VoR表2六主HSI，均100×100。顺序AVIRIS-2/Texas Coast/Los Angeles/Airport-2/Hyperion/Pavia：保留189/207/205/205/145/102带，异常像元134/155/272/87/32/68，分辨率3.5/17.2/7.1/7.1/30/1.3m；传感器前四AVIRIS、Hyperion、ROSIS-03。目标为飞机/建筑/建筑/飞机/未知/车辆。§3.7另用Segundo110×110、72×72、66×66裁区验证padding，未给该补充的完整传感器/波段/划分。",
+        "experimentSetting": "VoR §3.2–3.6：场景内无标签AE重建，其他深度基线除DFAE均对新场景重新训练；主场景没有独立训练/验证/测试场景划分说明。MFTNet用Adam，lr/weight decay均1e−4，N=16、attention head=1、λ=.5；Pavia200 epochs，其余500。Python3.7/PyTorch-cpu1.13.1、Intel i5-12400/16GB RAM；部分基线MATLAB2022a。13个对照，多项基线参数按各场景AUC择优，N/H/λ也依六场景曲线选择，未说明独立验证。评估3D/2D ROC、八AUC指标、10/90百分位箱图；噪声实验Gaussian均值0、variance .01，以及Hyperion不同SNR。",
+        "conclusions": "VoR表4–9，六主场景AUC(D,F)：.9930/.9981/.9968/.9850/.9984/.9944；Texas Coast的RGAE .9994、PDBSNet .9989更好，另外五个所列最好。表10平均AUC(D,F)=.9943、AUC(D,τ)=.4473、AUC(F,τ)=.0156、AUC(TD)=1.4415、AUC(BS)=.9787、AUC(SNPR)=30.1614、AUC(TDBS)=.4316、AUC(ODP)=1.4259，不是八项全胜。表11含训练/检测CPU秒数288.3376/297.3002/299.5554/297.5359/263.6254/66.0651，不可当纯推理延迟。表15/19单尺度或单支路部分更高；Segundo66的MFTNet .9860低于RGAE .9881。Gaussian噪声Airport-2从.9850降至.9677；训练成本、轮廓模糊与指标边界均保留。",
+        "limitations": "高频异常/低频背景为模型假设，不是所有异常和纹理背景可严格分离；Airport-2下采样导致模糊，正文明确训练耗时、变尺度适配限制。六场景AUC参与参数选择，无独立验证说明；无标签训练不表示模型选择完全未用GT，收敛曲线/支路可视化不足证明普遍无过拟合。Eq8文字MSE但印式仅L2范数求和，分支通道文字[N,64,128]与Table1 decoder[64,128,C]不统一，按原稿不补实现。Table12/13单位写MB/GB，不擅自改成M参数/GFLOPs；Table20部分clean基线与主表不同（FrFe AVIRIS-2 .9607/.9821），不拼接为统一实测。只记录官方代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -39386,6 +39385,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith公开VoR20页逐页阅读全文及原图核验",
+            "supports": [
+              "正式作者单位/DOI/VoR及2025-01-11 online日期",
+              "§2和原Fig1–3的空间特征分解、HFEM、AFFB与Mahalanobis检测",
+              "§3六主场景/Segundo补充、CPU配置、GT参数选择边界",
+              "表4–20主成绩、平均八指标、成本及非单调/负例"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content",
+            "checkedAt": "2026-10-11",
+            "level": "VoR全文分类核验",
+            "supports": [
+              "VoR全文确认高光谱像元异常检测；MSFDM是潜在空间特征4/5尺度池化差分，不符合频域光谱相似性类别的波长曲线DFT定义。只保留hyperspectral-anomaly-detection；中间重建不另立复原任务，attention不自动当完整Transformer。"
+            ]
           }
         ],
         "versions": [
@@ -39395,12 +39413,113 @@
             "url": "https://doi.org/10.1016/j.jag.2025.104355",
             "doi": "10.1016/j.jag.2025.104355",
             "year": 2025,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI记录；同DOI的Griffith公开VoR20页已读，不新增方法条目。"
+          },
+          {
+            "id": "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025-griffith-vor",
+            "type": "正式发表版",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content",
+            "doi": "10.1016/j.jag.2025.104355",
+            "year": 2025,
+            "readingProgress": "full_text_read",
+            "relation": "Griffith封面明确Version of Record，CC BY-NC4.0；20页含机构封面，原Fig1–3及全文已核。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025"
+        "methodFamilyId": "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "VoR全文确认高光谱像元异常检测；MSFDM是潜在空间特征4/5尺度池化差分，不符合频域光谱相似性类别的波长曲线DFT定义。只保留hyperspectral-anomaly-detection；中间重建不另立复原任务，attention不自动当完整Transformer。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "eeb835bf478136520cc47ab38c3ed3f0d2bad4c8f194616484399d4a09d3bcaf",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content"
+          ]
+        }
       },
-      "citation": "@article{zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025,\n  title = {Multi-scale frequency-guided two-stream network for hyperspectral anomaly detection},\n  author = {Zhe Zhao and Jiangluqi Song and Dong Zhao and Jiajia Zhang and Huixin Zhou and Jun Zhou},\n  year = {2025},\n  doi = {10.1016/j.jag.2025.104355}\n}\n"
+      "citation": "@article{zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025,\n  title = {Multi-scale frequency-guided two-stream network for hyperspectral anomaly detection},\n  author = {Zhe Zhao and Jiangluqi Song and Dong Zhao and Jiajia Zhang and Huixin Zhou and Jun Zhou},\n  year = {2025},\n  doi = {10.1016/j.jag.2025.104355}\n}\n",
+      "code": "https://github.com/xautzhaozhe/MFTNet",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content",
+          "figureLabel": "Fig. 1",
+          "caption": "MFTNet正式VoR：无标签重建训练、HF增强/LF恢复双支路、Mahalanobis双分数检测及AFFB通道交叉注意力。",
+          "page": 4,
+          "verificationNote": "Griffith封面明确VoR，PDF第4页对应正文第3页。300dpi原页裁取，全部模块/分支、图例及完整原图注已视觉核对，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              303,
+              206,
+              2176,
+              1316
+            ]
+          },
+          "path": "figures/zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025/framework-fig1-griffith-vor.png",
+          "width": 1873,
+          "height": 1110,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "968f468e877fd736531d7bde8ee6a40364fc8f963d3518ed4e701a472b2e0c64",
+          "attribution": "Zhe Zhao, Jiangluqi Song, Dong Zhao, Jiajia Zhang, Huixin Zhou, Jun Zhou · IJAEOG 2025 · CC BY-NC 4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content",
+          "figureLabel": "Fig. 2",
+          "caption": "MFTNet正式VoR：MSFDM空间4/5尺度平均池化、上采样差分及HF/LF构造。",
+          "page": 5,
+          "verificationNote": "Griffith封面明确VoR，PDF第5页对应正文第4页。300dpi原页裁取，全部模块/分支、图例及完整原图注已视觉核对，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              1293,
+              221,
+              2305,
+              849
+            ]
+          },
+          "path": "figures/zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025/framework-fig2-griffith-vor.png",
+          "width": 1012,
+          "height": 628,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "b0566b41db86659a3cebbaf1bb9736dca938bc3a2725dc4ccb830be8655d80d7",
+          "attribution": "Zhe Zhao, Jiangluqi Song, Dong Zhao, Jiajia Zhang, Huixin Zhou, Jun Zhou · IJAEOG 2025 · CC BY-NC 4.0"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/3c760aca-2047-4680-81d0-665a62152696/content",
+          "figureLabel": "Fig. 3",
+          "caption": "MFTNet正式VoR：HFEM四通道分支、普通/膨胀卷积、多尺度MaxPooling、融合与残差。",
+          "page": 6,
+          "verificationNote": "Griffith封面明确VoR，PDF第6页对应正文第5页。300dpi原页裁取，全部模块/分支、图例及完整原图注已视觉核对，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              178,
+              281,
+              1184,
+              1051
+            ]
+          },
+          "path": "figures/zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025/framework-fig3-griffith-vor.png",
+          "width": 1006,
+          "height": 770,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "d2b6b54104d88efcdbb4b553dd07699d7c06e2fa0584e658dd65788117510429",
+          "attribution": "Zhe Zhao, Jiangluqi Song, Dong Zhao, Jiajia Zhang, Huixin Zhou, Jun Zhou · IJAEOG 2025 · CC BY-NC 4.0"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-adaptive-multi-stage-fusion-of-hyperspectr-2026",
@@ -46988,6 +47107,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "HyperSAM固定v1全文按实际合成/下游任务重审；仅同步本论文标签关联，不改变类别定义或其他论文。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MFTNet VoR全文确认像元异常检测，保留本论文任务关联；不改变类别定义或其他条目。"
         }
       ]
     },
@@ -47156,26 +47280,6 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "按原方法实际任务形成独立标签，不预设分类数量。"
-        }
-      ]
-    },
-    {
-      "id": "frequency-domain-spectral-similarity",
-      "name": "频域光谱相似性",
-      "dimension": "method",
-      "definition": "将光学波长曲线转换为傅里叶等频域表征，再以幅值等分量定义相似性、距离或分类判据；区别光谱调制照明、空间频域处理及与光学高光谱无关的spectral研究。",
-      "status": "provisional",
-      "color": "#95b0af",
-      "createdAt": "2026-10-08",
-      "rationale": "SFSD原§II明确以光学高光谱曲线的DFT幅值构造分类距离，与既有高频光谱调制照明标签不同。",
-      "evidencePaperIds": [
-        "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025"
-      ],
-      "history": [
-        {
-          "date": "2026-10-08",
-          "action": "created",
-          "reason": "按原文波长曲线表征机制形成标签，不按frequency/spectral字面排除光学高光谱论文。"
         }
       ]
     },
