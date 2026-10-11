@@ -31289,30 +31289,30 @@
       ],
       "representation": "用400–1000 nm高光谱影像和回归模型无损预测坚果过氧化值、总氮及矿物营养。",
       "tags": [],
-      "summary": "研究食用坚果内部品质的快速无损检测。",
-      "input": "坚果高光谱影像及化学测定真值。",
-      "output": "过氧化值、总氮和矿物营养估计。",
-      "mechanism": "从反射光谱提取特征并建立化学计量回归，比较品质属性预测。",
-      "readingNote": "EPA HERO摘要与Crossref核验；正式167:492–500，未标全文。",
-      "paper": "https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/6906992",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "以400–1000 nm高光谱与PLSR无损预测Canarium indicum坚果仁的过氧化值、总氮及六种矿物元素；不同属性预测能力不相同。",
+      "input": "Canarium indicum坚果仁400–1000 nm高光谱影像、过氧化值和营养成分参考值；过氧化值实验分两批，样本数量及批次划分待正文。",
+      "output": "过氧化值PV、总氮TN以及Fe/K/Mg/Mn/S/Zn含量预测；两批PV结果分别记录。",
+      "mechanism": "从高光谱影像提取样本光谱，经选波长后的PLSR拟合PV及宏量/微量营养成分；公开完整摘要未给选波长规则、潜变量数、预处理或真值测定仪器，不推测补齐。",
+      "readingNote": "2026-10-12重新完整阅读Griffith/DPI/CQUniversity原摘要，Crossref与Griffith一致为Computers and Electronics in Agriculture151:492–500（2018），纠正原167误记。CQU记录files为空、is_metadata_record=true；DPI/Griffith无正文附档，ScienceDirect403未取得正文，开放索引与出版社openaccess=false不一致，不称已得全文或确定付费。",
+      "paper": "https://era.dpi.qld.gov.au/id/eprint/15781/",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "institutional_abstract_verified",
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
-          "soil-property-estimation",
+          "food-composition-estimation",
           "partial-least-squares-regression"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
+        "relationNote": "完整原摘要明确Canarium indicum坚果仁400–1000nm HSI与PLSR品质/成分预测；研究对象是农产品，不是土壤。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "researchQuestion": "能否以无损VNIR成像光谱预测坚果仁氧化酸败程度及营养成分，减少破坏性检测？",
+        "datasets": "Canarium indicum坚果仁；PV有两批，营养指标含总氮与Fe/K/Mg/Mn/S/Zn。摘要未给样本量、来源与划分，不移用凋落物或土壤研究的数量。",
+        "experimentSetting": "原摘要逐项测试R²/RPD：PV第一批0.72/1.66、第二批0.81/2.30；TN0.80/1.58、Fe0.75/1.46、K0.51/0.94、Mg0.81/2.04、Mn0.71/1.84、S0.76/1.84、Zn0.62/1.37。只有两指标，测试RMSE、计量单位、样本量、训练/外部协议未公开，不自行补值。",
+        "conclusions": "作者认为VNIR HSI有预测坚果化学成分的潜力；PV两批表现不同，K的R²0.51/RPD0.94低于Mg0.81/2.04，不能把摘要整体“acceptable”外推成所有属性同等可靠。其他坚果的适用性只是潜力，不是已完成跨品种验证。",
+        "limitations": "主文/原图仍未取得。实际相机、样本分组、选带、预处理、PLSR组分和独立测试设计留白。CQU元数据没有附件；出版社403是访问失败，索引OA/许可与出版社标志不一致，不据此断言付费或不存在任何公开版本。未见官方代码URL，代码只记录实际发现的链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -31330,6 +31330,47 @@
             "supports": [
               "正式题名、作者、期刊和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/fafb992f-32a0-4224-9322-05d1289b2808",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith机构完整摘要与当前书目重新阅读",
+            "supports": [
+              "Canarium indicum坚果仁400–1000nm HSI/PLSR，PV两批、TN及六矿物元素逐项测试R²/RPD。",
+              "正式151卷492–500，不是167卷；gro.hasfulltext=No Full Text，当前响应无主文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.compag.2018.06.029",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref正式书目重新核验",
+            "supports": [
+              "九作者顺序、2018年8月、Computers and Electronics in Agriculture151卷492–500及DOI。"
+            ]
+          },
+          {
+            "url": "https://acquire.cqu.edu.au/articles/journal_contribution/A_non-destructive_determination_of_peroxide_values_total_nitrogen_and_mineral_nutrients_in_an_edible_tree_nut_using_hyperspectral_imaging/13448585",
+            "checkedAt": "2026-10-12",
+            "level": "CQUniversity原完整摘要及附件状态",
+            "supports": [
+              "机构来源完整摘要与相同九缩写作者；API files为空/is_metadata_record=true，不等于公开PDF或作者稿已获得。"
+            ]
+          },
+          {
+            "url": "https://era.dpi.qld.gov.au/id/eprint/15781/",
+            "checkedAt": "2026-10-12",
+            "level": "DPI机构完整摘要与附件状态",
+            "supports": [
+              "完整摘要支持两批PV与七项营养测试；full_text_status=none，无正文附件。"
+            ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith目标作者关联（复用2026-10-11快照）",
+            "supports": [
+              "原个人profile7205返回此DOI和完整九作者，Jun绑定目标用户；仅复用原捕获记录，不冒称本批重新抓取个人全目录。"
+            ]
           }
         ],
         "versions": [
@@ -31339,14 +31380,30 @@
             "url": "https://doi.org/10.1016/j.compag.2018.06.029",
             "doi": "10.1016/j.compag.2018.06.029",
             "year": 2018,
-            "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+            "relation": "正式2018年8月、151卷492–500；Crossref与Griffith卷页一致，原167误记已纠正。最终正文未取得/未读。"
+          },
+          {
+            "id": "edible-tree-nut-hsi-quality-2018-dpi-abstract",
+            "type": "机构公开摘要",
+            "url": "https://era.dpi.qld.gov.au/id/eprint/15781/",
+            "doi": "10.1016/j.compag.2018.06.029",
+            "year": 2018,
+            "relation": "DPI完整摘要，full_text_status=none，无PDF附档；不是已取得的作者稿。"
+          },
+          {
+            "id": "edible-tree-nut-hsi-quality-2018-cqu-metadata",
+            "type": "机构书目及摘要",
+            "url": "https://acquire.cqu.edu.au/articles/journal_contribution/A_non-destructive_determination_of_peroxide_values_total_nitrogen_and_mineral_nutrients_in_an_edible_tree_nut_using_hyperspectral_imaging/13448585",
+            "doi": "10.1016/j.compag.2018.06.029",
+            "year": 2018,
+            "relation": "CQUniversity Acquire公开元数据记录（Figshare13448585），完整摘要已读；files为空/is_metadata_record=true，无正文附件，不沿用索引推断submittedVersion或免费PDF。"
           }
         ],
         "methodFamilyId": "edible-nut-hsi-chemometrics",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "按原完整摘要的实际材料/输出归农产品品质与成分估计，移除土壤任务误配；卷页按出版社注册书目与机构记录纠正，正文缺口不猜。",
           "evidenceFields": [
             "title",
             "summary",
@@ -31355,16 +31412,19 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "29d16be1e319b1f2ca01fc2b81bf14cfaa6f11ae3602c70c723f0b242cf2be7d",
+          "evidenceDigest": "f4d99fb53c5a7d7fca5d2d8540be358af60df051ac3bebac90b34df3d4e4fe59",
           "sourceUrls": [
+            "https://era.dpi.qld.gov.au/id/eprint/15781/",
             "https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/6906992",
-            "https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/6906992",
-            "https://api.crossref.org/works/10.1016/j.compag.2018.06.029"
+            "https://api.crossref.org/works/10.1016/j.compag.2018.06.029",
+            "https://research-repository.griffith.edu.au/server/api/core/items/fafb992f-32a0-4224-9322-05d1289b2808",
+            "https://acquire.cqu.edu.au/articles/journal_contribution/A_non-destructive_determination_of_peroxide_values_total_nitrogen_and_mineral_nutrients_in_an_edible_tree_nut_using_hyperspectral_imaging/13448585",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
           ]
         }
       },
       "doi": "10.1016/j.compag.2018.06.029",
-      "citation": "@article{edible_tree_nut_hsi_quality_2018,\n  title = {A non-destructive determination of peroxide values, total nitrogen and mineral nutrients in an edible tree nut using hyperspectral imaging},\n  author = {Shahla Hosseini Bai and Iman Tahmasbian and Jun Zhou and Tio Nevenimo and Godfrey Hannet and David Walton and Bruce Randall and Tsvakai Gama and Helen M. Wallace},\n  year = {2018},\n  doi = {10.1016/j.compag.2018.06.029}\n}\n"
+      "citation": "@article{edible_tree_nut_hsi_quality_2018,\n  title = {A non-destructive determination of peroxide values, total nitrogen and mineral nutrients in an edible tree nut using hyperspectral imaging},\n  author = {Shahla Hosseini Bai and Iman Tahmasbian and Jun Zhou and Tio Nevenimo and Godfrey Hannet and David Walton and Bruce Randall and Tsvakai Gama and Helen M. Wallace},\n  journal = {Computers and Electronics in Agriculture},\n  year = {2018},\n  month = aug,\n  volume = {151},\n  pages = {492--500},\n  doi = {10.1016/j.compag.2018.06.029}\n}\n"
     },
     {
       "id": "hsi-boundary-detection-lncs-2018",
@@ -50965,7 +51025,6 @@
         "clay-resolution-sensitivity-rse-2015",
         "biochar-unmix-dicta-2013",
         "biochar-unmix-cvprei-2015",
-        "edible-tree-nut-hsi-quality-2018",
         "soil-hsi-carbon-nitrogen-geoderma-2018"
       ],
       "history": [
@@ -50978,6 +51037,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "凋落物化学估计按实际对象归类；只纠正本批两篇，未改其他条目或类别定义。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "移除坚果品质预测的土壤任务误配；其他成员与土壤定义保持。"
         }
       ]
     },
@@ -52883,6 +52947,26 @@
           "date": "2026-10-12",
           "action": "created",
           "reason": "按实际材料和输出纠正两凋落物条目的土壤任务误配。"
+        }
+      ]
+    },
+    {
+      "id": "food-composition-estimation",
+      "name": "农产品品质与成分估计",
+      "dimension": "task",
+      "definition": "由高光谱数据估计农产品或食用样品的酸败、品质及化学/营养成分；按实际产品、属性和验证协议记录，与土壤估计、活体植被胁迫和产品类别分类区分。",
+      "status": "confirmed",
+      "color": "#b2a184",
+      "createdAt": "2026-10-12",
+      "rationale": "坚果原完整摘要明确PV/TN与矿物成分为输出，材料为食用坚果仁；不能按氮/元素指标归土壤。",
+      "evidencePaperIds": [
+        "edible-tree-nut-hsi-quality-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "按实际农产品与品质/成分回归输出纠正既有误分类。"
         }
       ]
     }

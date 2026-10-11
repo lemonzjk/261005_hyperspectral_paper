@@ -52,6 +52,10 @@ SSUMamba和SSRT两份免费Griffith接受稿共28页已逐页全文阅读，六�
 
 凋落物与土壤三条现有目录完成本批续核：Catena免费43页AM（原31份冻结队列之外）全文读完，新增Fig.3/末页方法图；2017凋落物主文付费未读，但免费ESM两式、11公开缩略图与两张full原图已核。土壤稿仍摘要级，出版社403不当付费证明，96/24样本包含关系不推测。两凋落物改归“凋落物化学属性估计”，移除土壤任务误配及2018农业应用误配；三者来源例外保持。新四图后总库原图298。Tahmasbian单次arXiv查询仅一其他作者牡蛎HSI候选，完整摘要已读、正文待读，排作者后的领域任务。证据见[本批原材料与阅读边界](sources/jun-zhou-litterfall-soil-materials-reading-2026-10-12.json)。
 
+共同作者Xin Li的出版社注册ORCID本次公开76组/105书目全部取得full-work，104有贡献者、一条预印本未列作者；六条列Jun Zhou，精确DOI对照为三既有未决、两既有排除和一既有多光谱清理，没有新作者目录条目。Feng Xu公共works为空，不当无论文。arXiv Xin Li＋指定任务词23/Otsu116元数据完整返回，仅RemoteTrimmer为完整Jun串；固定v2五页全文/原图已核，补强特征通道剪枝与EuroSAT/UCM的既有范围排除，正式ICASSP未读，实际EuroSAT选版缺口保留。
+
+坚果HSI条目按Crossref/Griffith更正为Computers and Electronics in Agriculture151:492–500，原167误记删除；按实际坚果仁PV/TN/元素成分预测纠正土壤任务，补农产品品质与成分估计。三个机构完整摘要、逐项R²/RPD与附件状态已核，正文/原图未得，不将CQU纯元数据或相互冲突的OA标志当免费全文/确定付费。证据见[共同作者书目、范围外固定稿与坚果纠正](sources/jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12.json)。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |

@@ -937,3 +937,6 @@
 
 - 2026-10-12 / jun-zhou-litterfall-soil-materials-reading-2026-10-12：新增0，更新3，已有作者引文1，其他作者候选1；新增全文1/原图4。
   阅读边界：Catena43页AM全读；2017主文付费未读但免费ESM两式/公开图件已核，土壤仅完整摘要。周峻99全文/82摘要、原图298；作者与历年全领域目录仍未闭环。[原材料及阅读边界](sources/jun-zhou-litterfall-soil-materials-reading-2026-10-12.json)，[实际访问记录](sources/jun-zhou-litterfall-soil-materials-reading-2026-10-12-access.json)。代码仅官方链接。
+
+- 2026-10-12 / jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12：新增0、更新1、共同作者六已有书目对照；三既有范围未决保持，不是新三候选。
+  阅读边界：76组105 ORCID full-work贡献者已核，非正文；RemoteTrimmer范围外固定v2五页全读，正式稿未读。坚果按机构完整摘要纠正卷151/土壤任务，不升全文。总库390/周峻99全文82摘要/298原图，分类审计307/181标签。[原材料与判断](sources/jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12.json)，[实际访问](sources/jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12-access.json)。
