@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。148条为摘要级核验、40条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。146条为摘要级核验、42条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -124,10 +124,11 @@
 - 原文：[来源](https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content)；目录ID：`mtsnmf-denoise-tgrs-2015`。
 - 输入：含噪高光谱立方；空间块与波段联合组织，含Poisson/Gaussian等模型设置。
 - 输出：恢复的高光谱影像、波段字典及共同稀疏系数。
-- 已核机制：多任务稀疏NMF连接波段各自字典与共享系数；原摘要说明VST，局部方法有MU/HALS及加速变体。Figure1为多任务框架，不是解混流程。
+- 已核机制：各带字典与全带共享稀疏系数、MU/HALS及加速求解、MLR/VST；完整机构稿已核，细节与式表疑点见[专项调研](jun-zhou.md)。
 - 学习问题：共享系数与各波段字典怎样建模？VST适用什么噪声，怎样验证光谱保真？
-- 阅读边界：原摘要及指定局部核验；未阅读全文。ORCID190无DOI题名Multi-task与192精确DOI实际同一机构原稿，按DOI/三作者/摘要关联，新增1论文、去重1组。DOI含2014不代表正式年份，正式2015年5月；首次online日期未知。
-- 待核：ORCID190无DOI题名Multi-task与192精确DOI实际同一机构原稿，按DOI/三作者/摘要关联，新增1论文、去重1组。DOI含2014不代表正式年份，正式2015年5月；首次online日期未知。 原文代码/原始数据专用入口未知，本轮题名定向发现不等于穷尽搜索。
+- 阅读边界：36页公开机构稿全文核验；正式TGRS53(5):2621–2639未独立读，正式/机构摘要差异分源。
+- 待核：正式版、字典尺度/137/b单位、VST与完整代码/数据及分类执行协议。
+
 
 ### 11. 2024 · SSUMamba: Spatial-Spectral Selective State Space Model for Hyperspectral Image Denoising
 
@@ -192,7 +193,7 @@
 | 2015 | [Learning Graph Model for Different Dimensions Image Matching](https://research-repository.griffith.edu.au/server/api/core/items/4d56d279-df0e-54ba-aeff-ff250b97fa0a) | 光学影像配准 | 正式发表 | 摘要核验 |
 | 2015 | [Multilayer manifold and sparsity constrainted nonnegative matrix factorization for hyperspectral unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2015 | [Multiple Graph Regularized NMF for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
-| 2015 | [Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content) | 光谱去噪 | 正式发表 | 摘要核验 |
+| 2015 | [Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content) | 光谱去噪 | 正式发表 | 全文核验（版本见目录） |
 | 2015 | [On the Sampling Strategies for Evaluation of Joint Spectral-Spatial Information Based Classifiers](https://research-repository.griffith.edu.au/bitstreams/8054cd22-253b-52f4-9bd4-987453f900b9/download) | 地物与植被图像分类、数据集与评测基准 | 正式发表 | 摘要核验 |
 | 2015 | [Relative Depth Estimation from Hyperspectral Data](https://doi.org/10.1109/dicta.2015.7371299) | 深度、法线与表面重建 | 正式发表 | 摘要核验 |
 | 2015 | [Semisupervised Hyperspectral Band Selection Via Spectral–Spatial Hypergraph Model](https://research-repository.griffith.edu.au/server/api/core/bitstreams/187d5a40-2067-5655-b971-e407b5cf10ab/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
@@ -211,7 +212,7 @@
 | 2017 | [Exploring Structural Consistency in Graph Regularized Joint Spectral-Spatial Sparse Coding for Hyperspectral Image Classification](https://researchportalplus.anu.edu.au/en/publications/exploring-structural-consistency-in-graph-regularized-joint-spect/) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2017 | [Material Based Boundary Detection in Hyperspectral Images](https://doi.org/10.1109/dicta.2017.8227462) | 待分类 | 正式发表 | 摘要核验 |
 | 2017 | [Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery](https://scispace.com/pdf/matrix-vector-nonnegative-tensor-factorization-for-blind-37e123qdbo.pdf) | 光谱解混 | 正式发表 | 摘要核验 |
-| 2017 | [Non-local similarity based tensor decomposition for hyperspectral image denoising](https://research-repository.griffith.edu.au/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/download) | 光谱去噪 | 正式发表 | 摘要核验 |
+| 2017 | [Non-local similarity based tensor decomposition for hyperspectral image denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content) | 光谱去噪 | 正式发表 | 全文核验（版本见目录） |
 | 2017 | [On the Sampling Strategy for Evaluation of Spectral-Spatial Methods in Hyperspectral Image Classification](https://arxiv.org/abs/1605.05829) | 数据集与评测基准、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2017 | [Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/bitstreams/315a623f-165f-57ea-99e7-0c46cca8baf3/download) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2017 | [The potential of hyperspectral images and partial least square regression for predicting total carbon, total nitrogen and their isotope composition in forest litterfall samples](https://era.dpi.qld.gov.au/id/eprint/15791/) | 土壤光谱与属性估计 | 正式发表 | 摘要核验 |

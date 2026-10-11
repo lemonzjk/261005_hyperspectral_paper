@@ -359,7 +359,8 @@
     "multiple-graph-nmf-whispers-2015",
     "partially-known-endmember-nmf-tgrs-2016",
     "endmember-sparse-graph-nmf-icip-2016",
-    "structured-discriminative-nmf-icip-2016"
+    "structured-discriminative-nmf-icip-2016",
+    "nonlocal-tensor-denoising-icip-2017"
   ],
   "sourceChecks": [
     {
@@ -766,6 +767,28 @@
         "本域图/跨域匹配块联合求q最小非零广义特征向量；SAD和Euclidean热图，SIFT粗homography/RANSAC后9×9邻域细搜索。按列约定Srgb=(Ft⁻¹)ᵀFsᵀS，III-A行/列描述冲突、双和系数、sigma/sigma²及齐次尺度原式留证；3×3不保证Ft满秩。",
         "HYDICE Washington1208×307×191/RGB5160×1640；AVIRIS Moffett501×651×224/RGB1560×1830，两RGB Google Earth。G03/D04 OKSI+LCTF960×1280×18、460–630nm/10nm，NikonD60 RGB2592×3872；不同于会议480×640。另F02/G04/G02复用同传感器投影。",
         "同地点RMSE58.41/27.30/32.88/23.08四组均最低，但entropy/gradient/separability分别仅3/2/3组最好。跨地点D04 7.50/.0350/147.54/58.47，前两最好/后两第二，RMSE逊CMF28.70、同地点MA23.08；不混作同设置。G03投影复用仅视觉图。原Fig1 PDF6保留，3D是颜色空间。"
+      ]
+    },
+    {
+      "paperId": "mtsnmf-denoise-tgrs-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "以逐波段字典和全带共享稀疏非负系数联合恢复重叠空间块；MLR估噪并设lambda_k，VST用于混合Poisson–Gaussian。SpecTIR合成与IndianPines/Pavia原生噪声、间接分类评估分开。",
+        "Xk≈AkS，共享S而各带字典Ak；sum_k[半平方F误差+lambda_k||S||1]的正则只依赖lambda_sum。MU/HALS及复用U/V的A-MU/A-HALS，后续用A-HALS；重叠块平均。字典尺度未约束、epsilon投影及R=3N=137印式疑点待正式/实现核。",
+        "SpecTIR Reno600×320×356中取200×200×356、映[0,1]作近似clean，随机各带Gaussian sigma.01–.1降序；混合a.02–.2/b.005–.05降序，b方差/标准差文字冲突。原生AVIRIS IndianPines145×145×220、16类与ROSIS Pavia610×340×103、9类/1.3m。",
+        "合成最佳扫描ISNR16.64dB，较NLS10.44高6.20；混合加VST18.31较未加15.37高2.94。Indian全带OA86.62/AA90.72/kappa84.79排名1/4/1，Pavia全带97.31/97.17/96.34均第二于KSVD；坏带子集两场景三指标均最高。CUDA197.19/802.28s相对Matlab约3.24/3.15倍，非全方法最快。"
+      ]
+    },
+    {
+      "paperId": "nonlocal-tensor-denoising-icip-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "以非局部相似全谱块组的四阶正交低秩Tucker恢复HSI，迭代反馈原噪残差；32 Columbia场景加高斯评估，Pavia抽31带亦加高斯作视觉对照。",
+        "np×np×ns全谱块按空间窗Euclidean匹配，堆np×np×ns×nK四阶张量；正交四模Tucker和AIC/MDL rank，交替分解、聚合、delta=.1反馈。原Eq2无约束平凡解、Eq4印min投影范数与最小重构需max不一致；不擅改原式或当非负分解。",
+        "Columbia32场景反射率512×512×31、400–700nm/10nm，原图作GT后加Gaussian sigma20/40/60；Pavia610×340×103取31带，带索引未给，Fig3第5带再加sigma40。Fig2 stuffed toy/cloth/feather620nm、200×200裁块。",
+        "32场景均值表九指标Ours全部最高，PSNR42.87/39.85/36.26，较TDL高1.91/1.69/.85dB；不称每幅最佳或统计显著。所谓真实数据实验仍有人工Gaussian，不能当原生混合/条纹坏带恢复已证。实际引用MTS2015[9]，无直接表格比较或扩展声明。补原Fig1 PDF2/AM正文1。"
       ]
     }
   ]

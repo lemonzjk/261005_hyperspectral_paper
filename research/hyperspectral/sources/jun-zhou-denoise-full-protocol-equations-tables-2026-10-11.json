@@ -1,0 +1,1361 @@
+{
+  "checkedAt": "2026-10-11",
+  "derivedNotOriginalResponse": true,
+  "noImplementationOrModelRun": true,
+  "sharedBoundary": "两者任务为光谱去噪；MTS共享稀疏非负空间块系数，不是物理端元/丰度解混。Tensor四阶是二维空间+全谱+非局部相似块索引，不是几何场景重建，也不是非负Tucker。表内重算/式子判断不等于复现作者程序。",
+  "mts": {
+    "paperId": "mtsnmf-denoise-tgrs-2015",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "method": "各带重叠2D块Xk N×M，字典Ak N×R和全带共有S R×M，联合训练于当前含噪影像；恢复AkS后对重叠像元平均。MTS与SNMF逐带系数、经典固定字典BPDN区别留证。",
+    "equationAudit": [
+      {
+        "equations": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "meaning": "单带BPDN、联合字典/系数SNMF和重构。",
+        "boundary": "非负字典/系数不自动保证唯一性或定量物理解释；采样步长通常1，边界与含噪输入负值预处理未给。"
+      },
+      {
+        "equations": [
+          5,
+          6,
+          7
+        ],
+        "printed": "sum_k [1/2||Xk−AkS||F² + lambda_k||S||1], Ak≥0,S≥0",
+        "conditionalAlgebra": "同一S使惩罚严格等于(sum_k lambda_k)||S||1，且残差未按sigma_k逆方差加权；不当各带独立稀疏码或异方差最大似然。",
+        "scaleAudit": "在仅印非负约束且无字典列范数/上界时，对任意c>1，Ak′=cAk、S′=S/c保持全部重构，惩罚降为1/c；正惩罚下非零S解可持续降目标。文中Algs1–8没列字典归一/惩罚，不把稀疏系数的绝对尺度当充分约束；实际实现或正式式补充仍待。",
+        "boundary": "不擅自修正模型或断言表为假；归一若存在需核作者代码与正式版。"
+      },
+      {
+        "equations": [
+          8
+        ],
+        "meaning": "x=x_clean+nP+nG，nG∼N(0,b)，(x_clean+nP)/a∼Poisson(x_clean/a)，因此Var(nP|x_clean)=a*x_clean。MLR估Gaussian sigma或混合a/b，再VST。",
+        "printedIssue": "式8的b是方差，实验段却称standard deviations并印b∈[.005,.05]；两说法原样保留，不静默平方/开方。",
+        "boundary": "VST具体正/逆变换与低计数偏差处理指向[10]，本稿未印完整公式；没读[10]全文或取得代码。"
+      },
+      {
+        "equations": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "meaning": "KKT、梯度与MU：S *= sum AkᵀXk/(sum AkᵀAkS+lambda_sum*1)，Ak *= XkSᵀ/(AkSSᵀ)。",
+        "boundary": "KKT必要条件不证明全局解或唯一性；非负随机[0,1]初值可能零锁、分母/负输入保护未给；作者非增目标说法不当一般变量序列/global optimum保证。"
+      },
+      {
+        "equations": [
+          20,
+          21,
+          28,
+          29
+        ],
+        "meaning": "flop成本平衡给S/A两rho，内循环复用U/V，alpha=1/tau=.2。",
+        "boundary": "本文明确加速没有理论收敛速度保证，实测Fig3曲线不是通用定理；Algs4/8外for无数值停止阈值、内t,l初值承接未显式列全。"
+      },
+      {
+        "equations": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "meaning": "残差子块、HALS行/列最小二乘，原[ξ]+为max(ξ,epsilon=1e−16)。",
+        "conditionalAlgebra": "若只约束≥0，精确投影是max(ξ,0)；印epsilon下限相当改可行集为≥epsilon，须区分exact block descent论证。零范数分母在epsilon下仍要执行核。",
+        "pseudocodeBoundary": "HALS正文说sequentially，A-HALS Alg8更新第j行/列的其他行均印旧(t,l)，可能与顺序就地更新不同；不给作者代码补造正确执行。"
+      },
+      {
+        "equations": [
+          30
+        ],
+        "meaning": "ISNR=10log10(sum noisy_error²/sum denoised_error²)，全立方总体，不是PSNR或逐带dB简单均值。",
+        "boundary": "合成低噪SpecTIR当近似clean；真实影像无clean所以无ISNR，以分类作间接量化。"
+      },
+      {
+        "equations": [
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "meaning": "对照DWT hard/soft、NLM加权平均/exp距离和归一化；非新MTS模块。",
+        "boundary": "3D NLM/NLS 7³，MTS 7²；参数扫描取最好ISNR，不当独立验证集选参数或公平部署默认参数。"
+      }
+    ],
+    "algorithmsRead": {
+      "total": 8,
+      "solvers": [
+        1,
+        4,
+        5,
+        8
+      ],
+      "flopSubroutines": [
+        2,
+        3,
+        6,
+        7
+      ]
+    },
+    "synthetic": {
+      "source": "SpecTIR Reno airborne urban reflectance+IGM [51]",
+      "sourceShape": [
+        600,
+        320,
+        356
+      ],
+      "usedShape": [
+        200,
+        200,
+        356
+      ],
+      "normalization": [
+        0,
+        1
+      ],
+      "cleanBoundary": "低噪原影像作近似GT，不是完全无噪物理真值；未给200×200裁块坐标。",
+      "GaussianSigma": [
+        0.01,
+        0.1
+      ],
+      "GaussianBandOrder": "356个随机sigma降序，band1最强、356最弱",
+      "mixedPoissonA": [
+        0.02,
+        0.2
+      ],
+      "mixedGaussianBPrinted": [
+        0.005,
+        0.05
+      ],
+      "mixedOrder": "a/b分别随机降序，b方差/标准差冲突留证",
+      "independentRepeatsSeed": null,
+      "patch": [
+        7,
+        7
+      ],
+      "solverComparisonR": 255,
+      "solverISNR": [
+        16.1,
+        16.53,
+        16.72,
+        16.64
+      ],
+      "allFollowingSolver": "A-HALS",
+      "lambda_k": "sigma_k*sqrt(2logR)",
+      "alpha": 1,
+      "tau": 0.2,
+      "recommendedR": "2N至4N",
+      "scannedOptimumISNR": [
+        7.35,
+        5.39,
+        6.21,
+        9.28,
+        10.44,
+        16.64
+      ],
+      "advantageToBestNamedBaseline_dB": 6.2,
+      "VST_ISNRGain_dB": {
+        "NLS": 1.19,
+        "MTSNMF": 2.94
+      },
+      "mixedWinnerISNR": 18.31,
+      "specificVSTImplementation": null
+    },
+    "real": {
+      "IndianPines": {
+        "sensor": "AVIRIS",
+        "shape": [
+          145,
+          145,
+          220
+        ],
+        "classes": 16,
+        "noisyBandSet": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          220
+        ],
+        "trainSamplesPerClass": 50,
+        "smallClassTrainSamples": 15,
+        "smallClassesIdentified": false,
+        "trainingSelection": "随机，余标签作test",
+        "repeats": 20,
+        "figuredBands": [
+          3,
+          106,
+          220
+        ],
+        "profilePixel": [
+          18,
+          52
+        ]
+      },
+      "PaviaUniversity": {
+        "sensor": "ROSIS",
+        "shape": [
+          610,
+          340,
+          103
+        ],
+        "classes": 9,
+        "spatialResolutionMeters": 1.3,
+        "noisyBandSet": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "trainSamplesPerClass": 50,
+        "repeatedProtocol": "文字称Like IndianPines，表为均值/std；Pavia段未再次独立写20次数",
+        "figuredBands": [
+          1,
+          3
+        ],
+        "profilePixel": [
+          296,
+          91
+        ]
+      },
+      "classifier": "SVM Gaussian RBF one-vs-one",
+      "SVM_C_GammaSelectionAndSeeds": null,
+      "transductiveBoundary": "字典/系数由待去噪整图学习，随机像元分类；不是训练/测试场景独立去噪或空间隔离分类。无需标签的整图恢复本身不当标签泄漏。",
+      "originalAllBandBaseline": "TableV原图先删20坏带为200通道；TableVII原图先删1–4为99通道，与去噪完整带的特征数不同，不当相同带集消融。",
+      "RPrinted": "R=3N=137",
+      "conditionalArithmetic": "N=7×7=49则3N=147，不等于137；即使改块大小，整数N也不能满足3N=137。保留137并待代码/正式确认，不擅自改147。"
+    },
+    "classificationResults": {
+      "IndianPinesAllMTS": [
+        86.62,
+        90.72,
+        84.79
+      ],
+      "IndianPinesAllRanks": [
+        1,
+        4,
+        1
+      ],
+      "IndianPinesNoisyMTS": [
+        75.33,
+        84.29,
+        72.11
+      ],
+      "IndianPinesNoisyRanks": [
+        1,
+        1,
+        1
+      ],
+      "PaviaAllMTS": [
+        97.31,
+        97.17,
+        96.34
+      ],
+      "PaviaAllRanks": [
+        2,
+        2,
+        2
+      ],
+      "PaviaAllKSVD": [
+        98.37,
+        98.05,
+        97.77
+      ],
+      "PaviaNoisyMTS": [
+        72.66,
+        73.25,
+        64.92
+      ],
+      "PaviaNoisyRanks": [
+        1,
+        1,
+        1
+      ],
+      "boundary": "三指标单位百分数；84mean/std对完整存档，随机20次协议没有检验p值，不称显著。"
+    },
+    "nonNumericTables": [
+      {
+        "label": "Table I",
+        "pdfPage": 6,
+        "kind": "符号/维度，完整原文保存"
+      },
+      {
+        "label": "Table IX",
+        "pdfPage": 32,
+        "kind": "复杂度",
+        "formulas": {
+          "2D K-SVD": "O(RNMKL)",
+          "3D DWT-H": "O(IJK)",
+          "3D DWT-S": "O(IJK)",
+          "3D NLM": "O(N(IJK)^2)",
+          "3D NLS": "O(RNIJK)",
+          "MTSNMF": "O(RMK(2N+R))"
+        },
+        "boundary": "作者明确BigO未含迭代次数；若非局部搜索限窗实际成本会变，不当精确整过程墙钟模型。"
+      }
+    ],
+    "numericTables": [
+      {
+        "label": "Table II",
+        "pdfPage": 18,
+        "metric": "ISNR_dB",
+        "rows": [
+          {
+            "method": "MU",
+            "values": [
+              16.1
+            ]
+          },
+          {
+            "method": "A-MU",
+            "values": [
+              16.53
+            ]
+          },
+          {
+            "method": "HALS",
+            "values": [
+              16.72
+            ]
+          },
+          {
+            "method": "A-HALS",
+            "values": [
+              16.64
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table III",
+        "pdfPage": 21,
+        "metric": "ISNR_dB_at_scanned_optimal_parameters",
+        "rows": [
+          {
+            "method": "2D K-SVD",
+            "values": [
+              7.35
+            ]
+          },
+          {
+            "method": "3D DWT-H",
+            "values": [
+              5.39
+            ]
+          },
+          {
+            "method": "3D DWT-S",
+            "values": [
+              6.21
+            ]
+          },
+          {
+            "method": "3D NLM",
+            "values": [
+              9.28
+            ]
+          },
+          {
+            "method": "3D NLS",
+            "values": [
+              10.44
+            ]
+          },
+          {
+            "method": "MTSNMF",
+            "values": [
+              16.64
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table IV",
+        "pdfPage": 25,
+        "metric": "ISNR_dB_at_optimal_parameters_mixed_noise",
+        "rows": [
+          {
+            "method": "3D NLS without VST",
+            "values": [
+              12.18
+            ]
+          },
+          {
+            "method": "3D NLS with VST",
+            "values": [
+              13.37
+            ]
+          },
+          {
+            "method": "MTSNMF without VST",
+            "values": [
+              15.37
+            ]
+          },
+          {
+            "method": "MTSNMF with VST",
+            "values": [
+              18.31
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Table V",
+        "pdfPage": 29,
+        "metrics": [
+          "OA_percent",
+          "AA_percent",
+          "kappa_percent"
+        ],
+        "rows": [
+          {
+            "method": "Original (bands 104-108,150-163,220 removed)",
+            "values": [
+              75.19,
+              83.52,
+              71.99
+            ],
+            "standardDeviationsPrinted": [
+              "1.10 × 10^−2",
+              "1.22 × 10^−2",
+              "1.19 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.011000000000000001,
+              0.0122,
+              0.011899999999999999
+            ]
+          },
+          {
+            "method": "2D K-SVD",
+            "values": [
+              83.89,
+              91.06,
+              81.73
+            ],
+            "standardDeviationsPrinted": [
+              "8.91 × 10^−3",
+              "6.41 × 10^−3",
+              "9.73 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.00891,
+              0.00641,
+              0.00973
+            ]
+          },
+          {
+            "method": "3D DWT-H",
+            "values": [
+              75.86,
+              84.62,
+              72.75
+            ],
+            "standardDeviationsPrinted": [
+              "1.47 × 10^−2",
+              "1.48 × 10^−2",
+              "1.62 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0147,
+              0.0148,
+              0.016200000000000003
+            ]
+          },
+          {
+            "method": "3D DWT-S",
+            "values": [
+              80.28,
+              88.58,
+              77.69
+            ],
+            "standardDeviationsPrinted": [
+              "1.35 × 10^−2",
+              "1.21 × 10^−2",
+              "1.52 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.013500000000000002,
+              0.0121,
+              0.0152
+            ]
+          },
+          {
+            "method": "3D NLM",
+            "values": [
+              85.7,
+              92.18,
+              83.77
+            ],
+            "standardDeviationsPrinted": [
+              "1.17 × 10^−2",
+              "8.28 × 10^−3",
+              "1.31 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0117,
+              0.00828,
+              0.0131
+            ]
+          },
+          {
+            "method": "3D NLS",
+            "values": [
+              85.2,
+              92.1,
+              83.21
+            ],
+            "standardDeviationsPrinted": [
+              "1.22 × 10^−2",
+              "8.02 × 10^−3",
+              "1.36 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0122,
+              0.00802,
+              0.013600000000000001
+            ]
+          },
+          {
+            "method": "MTSNMF",
+            "values": [
+              86.62,
+              90.72,
+              84.79
+            ],
+            "standardDeviationsPrinted": [
+              "8.90 × 10^−3",
+              "9.96 × 10^−3",
+              "9.94 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.0089,
+              0.009960000000000002,
+              0.00994
+            ]
+          }
+        ],
+        "boundary": "原均值百分数、std按原10指数比率分列；std不静默加百分号，未据此声称显著性。"
+      },
+      {
+        "label": "Table VI",
+        "pdfPage": 29,
+        "metrics": [
+          "OA_percent",
+          "AA_percent",
+          "kappa_percent"
+        ],
+        "rows": [
+          {
+            "method": "Original",
+            "values": [
+              15.52,
+              13.42,
+              8.35
+            ],
+            "standardDeviationsPrinted": [
+              "1.05 × 10^−2",
+              "8.03 × 10^−3",
+              "8.78 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.0105,
+              0.008029999999999999,
+              0.00878
+            ]
+          },
+          {
+            "method": "2D K-SVD",
+            "values": [
+              54.2,
+              64.55,
+              48.93
+            ],
+            "standardDeviationsPrinted": [
+              "1.55 × 10^−2",
+              "1.99 × 10^−2",
+              "1.62 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.015500000000000002,
+              0.0199,
+              0.016200000000000003
+            ]
+          },
+          {
+            "method": "3D DWT-H",
+            "values": [
+              58.48,
+              71.91,
+              53.64
+            ],
+            "standardDeviationsPrinted": [
+              "1.25 × 10^−2",
+              "1.44 × 10^−2",
+              "1.29 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0125,
+              0.0144,
+              0.0129
+            ]
+          },
+          {
+            "method": "3D DWT-S",
+            "values": [
+              62.35,
+              74.76,
+              57.9
+            ],
+            "standardDeviationsPrinted": [
+              "1.03 × 10^−2",
+              "1.55 × 10^−2",
+              "1.18 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0103,
+              0.015500000000000002,
+              0.0118
+            ]
+          },
+          {
+            "method": "3D NLM",
+            "values": [
+              64.73,
+              79.19,
+              60.55
+            ],
+            "standardDeviationsPrinted": [
+              "1.23 × 10^−2",
+              "1.68 × 10^−2",
+              "1.33 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0123,
+              0.0168,
+              0.013300000000000001
+            ]
+          },
+          {
+            "method": "3D NLS",
+            "values": [
+              69.41,
+              81.33,
+              65.69
+            ],
+            "standardDeviationsPrinted": [
+              "1.63 × 10^−2",
+              "1.36 × 10^−2",
+              "1.76 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0163,
+              0.013600000000000001,
+              0.0176
+            ]
+          },
+          {
+            "method": "MTSNMF",
+            "values": [
+              75.33,
+              84.29,
+              72.11
+            ],
+            "standardDeviationsPrinted": [
+              "1.10 × 10^−2",
+              "1.15 × 10^−2",
+              "1.19 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.011000000000000001,
+              0.0115,
+              0.011899999999999999
+            ]
+          }
+        ],
+        "boundary": "原均值百分数、std按原10指数比率分列；std不静默加百分号，未据此声称显著性。"
+      },
+      {
+        "label": "Table VII",
+        "pdfPage": 31,
+        "metrics": [
+          "OA_percent",
+          "AA_percent",
+          "kappa_percent"
+        ],
+        "rows": [
+          {
+            "method": "Original (bands 1-4 removed)",
+            "values": [
+              93.28,
+              93.66,
+              90.9
+            ],
+            "standardDeviationsPrinted": [
+              "3.68 × 10^−3",
+              "2.15 × 10^−3",
+              "4.81 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.00368,
+              0.00215,
+              0.00481
+            ]
+          },
+          {
+            "method": "2D K-SVD",
+            "values": [
+              98.37,
+              98.05,
+              97.77
+            ],
+            "standardDeviationsPrinted": [
+              "1.57 × 10^−3",
+              "1.25 × 10^−3",
+              "2.14 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.00157,
+              0.00125,
+              0.00214
+            ]
+          },
+          {
+            "method": "3D DWT-H",
+            "values": [
+              92.45,
+              91.2,
+              89.74
+            ],
+            "standardDeviationsPrinted": [
+              "2.38 × 10^−3",
+              "1.59 × 10^−3",
+              "3.15 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.0023799999999999997,
+              0.00159,
+              0.00315
+            ]
+          },
+          {
+            "method": "3D DWT-S",
+            "values": [
+              96.26,
+              95.42,
+              94.9
+            ],
+            "standardDeviationsPrinted": [
+              "1.98 × 10^−3",
+              "1.81 × 10^−3",
+              "2.67 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.00198,
+              0.0018100000000000002,
+              0.00267
+            ]
+          },
+          {
+            "method": "3D NLM",
+            "values": [
+              97.25,
+              97.01,
+              96.24
+            ],
+            "standardDeviationsPrinted": [
+              "2.06 × 10^−3",
+              "1.74 × 10^−3",
+              "2.78 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.00206,
+              0.00174,
+              0.00278
+            ]
+          },
+          {
+            "method": "3D NLS",
+            "values": [
+              97.27,
+              96.97,
+              96.27
+            ],
+            "standardDeviationsPrinted": [
+              "1.44 × 10^−3",
+              "1.56 × 10^−3",
+              "1.94 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.0014399999999999999,
+              0.0015600000000000002,
+              0.0019399999999999999
+            ]
+          },
+          {
+            "method": "MTSNMF",
+            "values": [
+              97.31,
+              97.17,
+              96.34
+            ],
+            "standardDeviationsPrinted": [
+              "1.83 × 10^−3",
+              "1.77 × 10^−3",
+              "2.48 × 10^−3"
+            ],
+            "standardDeviationsRatio": [
+              0.00183,
+              0.00177,
+              0.00248
+            ]
+          }
+        ],
+        "boundary": "原均值百分数、std按原10指数比率分列；std不静默加百分号，未据此声称显著性。"
+      },
+      {
+        "label": "Table VIII",
+        "pdfPage": 32,
+        "metrics": [
+          "OA_percent",
+          "AA_percent",
+          "kappa_percent"
+        ],
+        "rows": [
+          {
+            "method": "Original",
+            "values": [
+              29.99,
+              40.04,
+              19.19
+            ],
+            "standardDeviationsPrinted": [
+              "3.01 × 10^−2",
+              "1.12 × 10^−2",
+              "1.88 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0301,
+              0.011200000000000002,
+              0.0188
+            ]
+          },
+          {
+            "method": "2D K-SVD",
+            "values": [
+              48.52,
+              56.46,
+              37.49
+            ],
+            "standardDeviationsPrinted": [
+              "3.33 × 10^−2",
+              "1.12 × 10^−2",
+              "2.74 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0333,
+              0.011200000000000002,
+              0.027400000000000004
+            ]
+          },
+          {
+            "method": "3D DWT-H",
+            "values": [
+              44.57,
+              52.19,
+              33.47
+            ],
+            "standardDeviationsPrinted": [
+              "3.42 × 10^−2",
+              "1.40 × 10^−2",
+              "2.89 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0342,
+              0.013999999999999999,
+              0.028900000000000002
+            ]
+          },
+          {
+            "method": "3D DWT-S",
+            "values": [
+              45.66,
+              53.31,
+              34.48
+            ],
+            "standardDeviationsPrinted": [
+              "3.23 × 10^−2",
+              "1.17 × 10^−2",
+              "2.45 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0323,
+              0.0117,
+              0.0245
+            ]
+          },
+          {
+            "method": "3D NLM",
+            "values": [
+              46.66,
+              56.65,
+              36.0
+            ],
+            "standardDeviationsPrinted": [
+              "3.94 × 10^−2",
+              "9.56 × 10^−3",
+              "3.28 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0394,
+              0.00956,
+              0.032799999999999996
+            ]
+          },
+          {
+            "method": "3D NLS",
+            "values": [
+              54.13,
+              61.69,
+              43.62
+            ],
+            "standardDeviationsPrinted": [
+              "2.30 × 10^−2",
+              "8.60 × 10^−3",
+              "2.11 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.023,
+              0.0086,
+              0.0211
+            ]
+          },
+          {
+            "method": "MTSNMF",
+            "values": [
+              72.66,
+              73.25,
+              64.92
+            ],
+            "standardDeviationsPrinted": [
+              "2.13 × 10^−2",
+              "7.79 × 10^−3",
+              "2.34 × 10^−2"
+            ],
+            "standardDeviationsRatio": [
+              0.0213,
+              0.00779,
+              0.0234
+            ]
+          }
+        ],
+        "boundary": "原均值百分数、std按原10指数比率分列；std不静默加百分号，未据此声称显著性。"
+      },
+      {
+        "label": "Table X",
+        "pdfPage": 33,
+        "metrics": [
+          "IndianPines_seconds",
+          "PaviaUniversity_seconds"
+        ],
+        "rows": [
+          {
+            "method": "2D K-SVD (Matlab and C)",
+            "values": [
+              534.35,
+              439.24
+            ]
+          },
+          {
+            "method": "3D DWT-H (Matlab)",
+            "values": [
+              2.49,
+              10.52
+            ]
+          },
+          {
+            "method": "3D DWT-S (Matlab)",
+            "values": [
+              2.44,
+              9.91
+            ]
+          },
+          {
+            "method": "3D NLM (Matlab and C)",
+            "values": [
+              163.18,
+              261.09
+            ]
+          },
+          {
+            "method": "3D NLS (Matlab and C)",
+            "values": [
+              3113.77,
+              18462.75
+            ]
+          },
+          {
+            "method": "MTSNMF (Matlab)",
+            "values": [
+              638.56,
+              2526.62
+            ]
+          },
+          {
+            "method": "MTSNMF (CUDA)",
+            "values": [
+              197.19,
+              802.28
+            ]
+          }
+        ],
+        "boundary": "Matlab/C/CUDA实现区别原样保留，非同语言/GPU配置公平速度基准，BigO未含迭代次数。"
+      }
+    ],
+    "runtime": {
+      "CPU": "Xeon E5606 2.13GHz",
+      "RAM_GB": 24,
+      "GPU": "GeForce GTX650",
+      "Matlab_seconds": [
+        638.56,
+        2526.62
+      ],
+      "CUDA_seconds": [
+        197.19,
+        802.28
+      ],
+      "printedTableDerivedSpeedup": [
+        3.2382980881383436,
+        3.1492994964351597
+      ],
+      "boundary": "相对自身Matlab超3倍，不是全部方法最快：DWT更快，PaviaCUDA还慢于K-SVD439.24/NLM261.09；语言/并行不同，作者实现未取得。"
+    },
+    "figures": "20图全读：Fig1 PDF8为多任务流程；Fig2块对应，Fig3/4收敛与参数，Fig5–13合成图/谱，Fig14–20两真实场景图/谱。已有Fig1字节保留。"
+  },
+  "tensor": {
+    "paperId": "nonlocal-tensor-denoising-icip-2017",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "method": "全谱np×np×ns块在空间搜索窗按Euclidean距离分组，堆np×np×ns×nK四阶张量；正交四模低秩Tucker、AIC/MDL估各rank，交替更新，重叠块聚合并反馈原噪残差。没有非负约束或光谱截小立方。",
+    "equationAudit": [
+      {
+        "equations": [
+          1
+        ],
+        "meaning": "sqrt(||Pref−Pk||²)全谱块距离（范数具体排印无F/2下标）",
+        "printedIssue": "patch索引印i≤nh−np/j≤nw−np，而N=(nh−np+1)(nw−np+1)，右端末行/列相差1；边界执行待。K作相似块个数又作组索引上界、nK与reference是否含自身未完全说明。"
+      },
+      {
+        "equations": [
+          2,
+          3
+        ],
+        "meaning": "Frobenius重构误差与四模正交Tucker核心C，rS<nS明确谱降维。",
+        "conditionalAlgebra": "式2未列低秩约束，单独求最小有X*=Y*、零误差的平凡解；有效先验是式3固定小rank，不是从式2无条件等价变换。平方/不平方残差最小值位置相同，但不把原式静默写平方。",
+        "boundary": "AIC/MDL仅引用与算法一行，没给逐模特征值/噪声阈值、rank数值、np/nK实际值。"
+      },
+      {
+        "equations": [
+          4
+        ],
+        "printed": "min ||U1ᵀW||F, W=Y1(U4⊗U3⊗U2)",
+        "conditionalAlgebra": "式3正交最小残差、核心取投影时，残差平方=||Y||F²−||C||F²，固定其他模需最大化||U1ᵀW||F而非印min。印式4还未重列U1正交约束；若无约束min可取U1=0。保留原min，不把推导修正式或SVD实现当作者代码已证。"
+      },
+      {
+        "equations": [
+          5
+        ],
+        "meaning": "Y(l)=X(l−1)+delta(Y−X(l−1))，X(0)=Y、delta=.1",
+        "boundary": "L据sigma自动定但函数未给；正交交替停止标准、核心求法、聚合平均/权重和噪声逐轮估计未详。Alg1 Ui循环没列C更新，但恢复式使用C，不能从文字补造具体执行。"
+      }
+    ],
+    "datasets": {
+      "Columbia": {
+        "paperScenes": 32,
+        "shape": [
+          512,
+          512,
+          31
+        ],
+        "reflectanceRangeNm": [
+          400,
+          700
+        ],
+        "stepNm": 10,
+        "cleanBoundary": "已采样原图当GT后加入高斯；无学习训练/测试划分，跨32场景取平均。"
+      },
+      "PaviaUniversity": {
+        "originalShape": [
+          610,
+          340,
+          103
+        ],
+        "usedShape": [
+          610,
+          340,
+          31
+        ],
+        "selectedBandIndices": null,
+        "figureBand": 5,
+        "figureNoiseSigma": 40,
+        "evaluationBoundary": "所谓real HSI是来自真实传感器的原图再加Gaussian sigma40，Fig3有Original/Noisy；只视觉对照，没无GT原生混合/条纹/坏带的数值评估。"
+      }
+    },
+    "settings": {
+      "sigma": [
+        20,
+        40,
+        60
+      ],
+      "sigmaImageScaleNormalization": null,
+      "delta": 0.1,
+      "windowSizePixels": 50,
+      "patchSizeNp": null,
+      "similarCountNK": null,
+      "ranks": null,
+      "maximumIterationFunctionL": null,
+      "convergenceThreshold": null,
+      "randomSeedRepeatsHardwareRuntime": null,
+      "imageCropsForFig2": [
+        200,
+        200
+      ],
+      "wavelengthFig2Nm": 620,
+      "imageNamesFig2": [
+        "stuffed toy",
+        "cloth",
+        "feather"
+      ],
+      "magnification": 4
+    },
+    "comparators": "正文称8 recently developed/8 competing，实际枚举LRTA/PARAFAC/TDL/BwK-SVD/BwBM3D/K-SVD/BM4D七基线；Table1含七基线+Ours八恢复方法、Noisy为第九行。Fig2有Original/Noisy+四恢复方法，与图注comparing8不完全相同。不能凭文字发明第八基线。",
+    "numericTables": [
+      {
+        "label": "Table 1",
+        "pdfPage": 5,
+        "noiseSigma": [
+          20,
+          40,
+          60
+        ],
+        "metricsPerSigma": [
+          "PSNR_dB",
+          "SSIM",
+          "FSIM"
+        ],
+        "rows": [
+          {
+            "method": "Noisy",
+            "values": [
+              17.59,
+              0.2433,
+              0.6253,
+              14.27,
+              0.187,
+              0.5254,
+              11.38,
+              0.0962,
+              0.4174
+            ]
+          },
+          {
+            "method": "PARAFAC [17]",
+            "values": [
+              35.36,
+              0.8932,
+              0.9599,
+              31.52,
+              0.7609,
+              0.9246,
+              29.3,
+              0.7857,
+              0.8775
+            ]
+          },
+          {
+            "method": "LRTA [15]",
+            "values": [
+              37.67,
+              0.9437,
+              0.9722,
+              34.28,
+              0.8212,
+              0.9223,
+              31.53,
+              0.8036,
+              0.9028
+            ]
+          },
+          {
+            "method": "BwK-SVD [21]",
+            "values": [
+              33.95,
+              0.8002,
+              0.9603,
+              29.65,
+              0.7157,
+              0.92,
+              27.89,
+              0.7079,
+              0.8564
+            ]
+          },
+          {
+            "method": "K-SVD [12]",
+            "values": [
+              36.02,
+              0.9397,
+              0.9721,
+              33.41,
+              0.7285,
+              0.9203,
+              31.9,
+              0.811,
+              0.9123
+            ]
+          },
+          {
+            "method": "BwBM3D [13]",
+            "values": [
+              38.21,
+              0.9497,
+              0.9747,
+              34.94,
+              0.8802,
+              0.9358,
+              33.84,
+              0.8761,
+              0.9251
+            ]
+          },
+          {
+            "method": "BM4D [14]",
+            "values": [
+              40.57,
+              0.9665,
+              0.9878,
+              37.79,
+              0.9105,
+              0.9583,
+              34.62,
+              0.8984,
+              0.9399
+            ]
+          },
+          {
+            "method": "TDL [19]",
+            "values": [
+              40.96,
+              0.9707,
+              0.9813,
+              38.16,
+              0.9334,
+              0.9716,
+              35.41,
+              0.9012,
+              0.9421
+            ]
+          },
+          {
+            "method": "Ours",
+            "values": [
+              42.87,
+              0.9894,
+              0.9946,
+              39.85,
+              0.9472,
+              0.976,
+              36.26,
+              0.9048,
+              0.9564
+            ]
+          }
+        ],
+        "boundary": "32 Columbia场景均值；参数变动汇聚未详，未给std/速度，Pavia没有数值表。"
+      }
+    ],
+    "resultBoundary": "Ours在Table1 sigma20/40/60 × PSNR/SSIM/FSIM九列全部最高；PSNR42.87/39.85/36.26，较TDL40.96/38.16/35.41分别+1.91/1.69/.85dB；不同基线某列排名不同，不说每场景胜、统计显著或优于未直接比较MTS。",
+    "referenceRelation": "参考[9]实际引用MTS2015、[10]周峻JSTARS2015选带，均不构成扩展版或直接去噪性能比较。",
+    "figures": "3图全读：Fig1 PDF2（AM正文1）原流程，Fig2三CAVE场景620nm sigma40裁块，Fig3 Pavia抽31带的band5 sigma40对照。Fig1裁切原图/图注，未重绘。"
+  },
+  "datasetSourceReview": {
+    "checkedAt": "2026-10-11",
+    "Purdue": "原页200，June12 1992 AVIRIS IndianPineTestSite3、220带原文件/ground reference以及PURR DOI10.4231/R7RX991C可追踪；只读页面，未下载原立方/标签或核本稿训练划分。",
+    "SpecTIR": "论文样本路径200但转contact#free-data-samples，页面联系表无本稿Reno下载/样本信息；200不当原数据可取得。",
+    "Pavia": "EHU原说明页403，保留实际错误体；两稿31/103不同使用从正文核，未取得原库。",
+    "Columbia": "CAVE原域HTTPS与HTTP重定向均500空，保留实际错误响应；512×512×31/32来自AM，原数据库说明与全部文件未独立读/下载。",
+    "boundary": "实际页面访问不等于原数据下载、代码取得或实验复现；不可用只指本次入口，不判定资源不存在。"
+  },
+  "relationAudit": "Tensor[9]真实引用MTS，方法族分别保留；MTS公开摘要多VST段而正式当前摘要未含，不据此猜正式正文。两稿实验、单位/年份/版本独立，不把非局部Tucker当SNMF扩展。"
+}

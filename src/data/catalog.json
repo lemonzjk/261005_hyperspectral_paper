@@ -63461,17 +63461,17 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2014.2363101",
-      "representation": "多任务稀疏NMF连接波段各自字典与共享系数；原摘要说明VST，局部方法有MU/HALS及加速变体。Figure1为多任务框架，不是解混流程。",
+      "representation": "Xk≈AkS，共享S而各带字典Ak；sum_k[半平方F误差+lambda_k||S||1]的正则只依赖lambda_sum。MU/HALS及复用U/V的A-MU/A-HALS，后续用A-HALS；重叠块平均。字典尺度未约束、epsilon投影及R=3N=137印式疑点待正式/实现核。",
       "tags": [],
-      "summary": "把高光谱去噪视为共享稀疏系数的多任务NMF，各波段学习字典并联合恢复空间块；用方差稳定变换处理信号相关和无关混合噪声。",
+      "summary": "以逐波段字典和全带共享稀疏非负系数联合恢复重叠空间块；MLR估噪并设lambda_k，VST用于混合Poisson–Gaussian。SpecTIR合成与IndianPines/Pavia原生噪声、间接分类评估分开。",
       "input": "含噪高光谱立方；空间块与波段联合组织，含Poisson/Gaussian等模型设置。",
       "output": "恢复的高光谱影像、波段字典及共同稀疏系数。",
-      "mechanism": "多任务稀疏NMF连接波段各自字典与共享系数；原摘要说明VST，局部方法有MU/HALS及加速变体。Figure1为多任务框架，不是解混流程。",
-      "readingNote": "原摘要及指定局部核验；未阅读全文。ORCID190无DOI题名Multi-task与192精确DOI实际同一机构原稿，按DOI/三作者/摘要关联，新增1论文、去重1组。DOI含2014不代表正式年份，正式2015年5月；首次online日期未知。",
+      "mechanism": "Xk≈AkS，共享S而各带字典Ak；sum_k[半平方F误差+lambda_k||S||1]的正则只依赖lambda_sum。MU/HALS及复用U/V的A-MU/A-HALS，后续用A-HALS；重叠块平均。字典尺度未约束、epsilon投影及R=3N=137印式疑点待正式/实现核。",
+      "readingNote": "公开机构稿全36页通读/逐页图版复核，35编号式；仅本公开版本。公开机构稿36页（封面1/正文参考35）全读，未标AM/VoR；正式May2015 53(5):2621–2639未独立读。IEEE显示/插入2014-10-29分源，首次online未独立证；正式当前摘要未含VST段，不推正文差别。字典尺度/负输入、b单位、VST正逆、137参数、SVM调参/种子/停止和代码待；SpecTIR样本链转联系页、EHU403，仅Purdue说明200，不当原库/实验复现。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
-      "citation": "@article{mtsnmf_denoise_tgrs_2015,\n  title = {Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising},\n  author = {Minchao Ye and Yuntao Qian and Jun Zhou},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2015},\n  pages = {2621--2639},\n  doi = {10.1109/tgrs.2014.2363101}\n}\n",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
+      "citation": "@article{mtsnmf_denoise_tgrs_2015,\n  title = {Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising},\n  author = {Minchao Ye and Yuntao Qian and Jun Zhou},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2015},\n  volume = {53},\n  number = {5},\n  pages = {2621--2639},\n  doi = {10.1109/tgrs.2014.2363101}\n}\n",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -63481,14 +63481,16 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "原摘要以光学高光谱观测为主要研究对象；普通三维验证数据不冒充高光谱。新增仅总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何用共享系数多任务稀疏NMF同时保留空间与光谱结构去噪？",
-        "datasets": "原摘要合成与实测；指定第V节局部实测为Indian Pines与Pavia University。合成数据及全部噪声组合、性能表和分类协议未完整核验。",
-        "experimentSetting": "原摘要、Figure1共享系数方法与指定实测数据段落已核；公开作者稿封面+35页，正式53(5):2621–2639，不借作者稿页数作出版页数。",
-        "conclusions": "作者报告合成和实测去噪相对所比方法有优势；完整性能数值及优化收敛证明未读，不标为全部场景最佳。",
-        "limitations": "ORCID190无DOI题名Multi-task与192精确DOI实际同一机构原稿，按DOI/三作者/摘要关联，新增1论文、去重1组。DOI含2014不代表正式年份，正式2015年5月；首次online日期未知。 原文代码/原始数据专用入口未知，本轮题名定向发现不等于穷尽搜索。",
-        "dataLinks": [],
+        "datasets": "SpecTIR Reno600×320×356中取200×200×356、映[0,1]作近似clean，随机各带Gaussian sigma.01–.1降序；混合a.02–.2/b.005–.05降序，b方差/标准差文字冲突。原生AVIRIS IndianPines145×145×220、16类与ROSIS Pavia610×340×103、9类/1.3m。",
+        "experimentSetting": "MTS/KSVD 7×7，NLM/NLS7³；R255比四solver，alpha=1/tau=.2，后用A-HALS、lambda_k=sigma_k*sqrt(2logR)。R真实段印3N=137而3×49=147。RBF SVM one-vs-one、每类50/Indian小类15，随机余标签test/Indian20次；原图全带基线先删20/4坏带，特征数不同。35编号式、8算法、20图、10表全读；8数值表196值。",
+        "conclusions": "合成最佳扫描ISNR16.64dB，较NLS10.44高6.20；混合加VST18.31较未加15.37高2.94。Indian全带OA86.62/AA90.72/kappa84.79排名1/4/1，Pavia全带97.31/97.17/96.34均第二于KSVD；坏带子集两场景三指标均最高。CUDA197.19/802.28s相对Matlab约3.24/3.15倍，非全方法最快。",
+        "limitations": "公开机构稿36页（封面1/正文参考35）全读，未标AM/VoR；正式May2015 53(5):2621–2639未独立读。IEEE显示/插入2014-10-29分源，首次online未独立证；正式当前摘要未含VST段，不推正文差别。字典尺度/负输入、b单位、VST正逆、137参数、SVM调参/种子/停止和代码待；SpecTIR样本链转联系页、EHU403，仅Purdue说明200，不当原库/实验复现。",
+        "dataLinks": [
+          "https://engineering.purdue.edu/~biehl/MultiSpec/hyperspectral.html"
+        ],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content",
@@ -63510,6 +63512,60 @@
               "Minchao Ye, Yuntao Qian, Jun Zhou",
               "2015；2621-2639"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "以逐波段字典和全带共享稀疏非负系数联合恢复重叠空间块；MLR估噪并设lambda_k，VST用于混合Poisson–Gaussian。SpecTIR合成与IndianPines/Pavia原生噪声、间接分类评估分开。",
+              "Xk≈AkS，共享S而各带字典Ak；sum_k[半平方F误差+lambda_k||S||1]的正则只依赖lambda_sum。MU/HALS及复用U/V的A-MU/A-HALS，后续用A-HALS；重叠块平均。字典尺度未约束、epsilon投影及R=3N=137印式疑点待正式/实现核。",
+              "SpecTIR Reno600×320×356中取200×200×356、映[0,1]作近似clean，随机各带Gaussian sigma.01–.1降序；混合a.02–.2/b.005–.05降序，b方差/标准差文字冲突。原生AVIRIS IndianPines145×145×220、16类与ROSIS Pavia610×340×103、9类/1.3m。",
+              "合成最佳扫描ISNR16.64dB，较NLS10.44高6.20；混合加VST18.31较未加15.37高2.94。Indian全带OA86.62/AA90.72/kappa84.79排名1/4/1，Pavia全带97.31/97.17/96.34均第二于KSVD；坏带子集两场景三指标均最高。CUDA197.19/802.28s相对Matlab约3.24/3.15倍，非全方法最快。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/6939673",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "完整IEEE摘要、作者和Griffith单位与机构全文互证；正式PDF202空，显示/插入日期按原字段，不当独立证实首次online。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2014.2363101",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式作者、出版类型、年份、页码与期刊卷期；公开稿和正式版分源。"
+            ]
+          },
+          {
+            "url": "https://www.spectir.com/free-data-samples/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_route_access_result_not_dataset_download",
+            "supports": [
+              "论文样本路径200但转contact#free-data-samples，页面联系表无本稿Reno下载/样本信息；200不当原数据可取得。",
+              "实际页面访问不等于原数据下载、代码取得或实验复现；不可用只指本次入口，不判定资源不存在。"
+            ]
+          },
+          {
+            "url": "https://engineering.purdue.edu/~biehl/MultiSpec/hyperspectral.html",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_description_current_version",
+            "supports": [
+              "原页200，June12 1992 AVIRIS IndianPineTestSite3、220带原文件/ground reference以及PURR DOI10.4231/R7RX991C可追踪；只读页面，未下载原立方/标签或核本稿训练划分。",
+              "实际页面访问不等于原数据下载、代码取得或实验复现；不可用只指本次入口，不判定资源不存在。"
+            ]
+          },
+          {
+            "url": "https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_route_access_result_not_dataset_download",
+            "supports": [
+              "EHU原说明页403，保留实际错误体；两稿31/103不同使用从正文核，未取得原库。",
+              "实际页面访问不等于原数据下载、代码取得或实验复现；不可用只指本次入口，不判定资源不存在。"
+            ]
           }
         ],
         "versions": [
@@ -63519,21 +63575,24 @@
             "url": "https://doi.org/10.1109/tgrs.2014.2363101",
             "doi": "10.1109/tgrs.2014.2363101",
             "year": 2015,
-            "relation": "ORCID190无DOI题名Multi-task与192精确DOI实际同一机构原稿，按DOI/三作者/摘要关联，新增1论文、去重1组。DOI含2014不代表正式年份，正式2015年5月；首次online日期未知。"
+            "relation": "IEEE正式完整摘要与作者书目已核；正式PDF202空，未独立阅读全文。正式May2015；IEEE显示/插入2014-10-29按字段，不当独立证实首次online。ORCID190/192为同DOI两组，去重保留。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "mtsnmf-denoise-tgrs-2015-source",
-            "type": "公开机构作者稿",
+            "type": "公开机构稿，封面与item未标AM/VoR",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content",
             "year": 2015,
-            "relation": "原图号/页码只对应该PDF，正式版差异待核。"
+            "relation": "本公开稿全36页/全部式表图/参考已读，正式差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "mtsnmf-denoise-tgrs-2015",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要支持任务/方法；PDF指定局部可取得时补证，不将分类确认等同全文。",
+          "rationale": "全文支持去噪主任务：MTS共享非负块系数、Tensor正交四模低秩与空间非局部；分类仅MTS间接评估，3D/4D是数据维度而非几何重建，公开稿/正式、原生/人工噪声边界分开。",
           "evidenceFields": [
             "title",
             "summary",
@@ -63542,9 +63601,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "1009f1a38aee4106b32deff6079e874ec62a7201888ca17482737ac988d1c93a",
+          "evidenceDigest": "4c09736900cba83c72dce8713cc92437988696502abbeca33946c112f73b4627",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content",
+            "https://xplorestaging.ieee.org/document/6939673",
+            "https://api.crossref.org/works/10.1109/tgrs.2014.2363101"
           ]
         }
       },
@@ -66165,21 +66226,21 @@
       "venue": "ICIP",
       "publicationName": "2017 IEEE International Conference on Image Processing",
       "publicationStatus": "published",
-      "venueTier": "journal",
+      "venueTier": "conference",
       "collections": [
         "hyperspectral"
       ],
       "doi": "10.1109/icip.2017.8296610",
-      "representation": "把非局部空间相似性分组为四阶张量，并结合全谱相似性做交替张量分解去噪。",
+      "representation": "np×np×ns全谱块按空间窗Euclidean匹配，堆np×np×ns×nK四阶张量；正交四模Tucker和AIC/MDL rank，交替分解、聚合、delta=.1反馈。原Eq2无约束平凡解、Eq4印min投影范数与最小重构需max不一致；不擅改原式或当非负分解。",
       "tags": [],
-      "summary": "利用非局部空间与全局光谱相似性恢复高光谱影像。",
+      "summary": "以非局部相似全谱块组的四阶正交低秩Tucker恢复HSI，迭代反馈原噪残差；32 Columbia场景加高斯评估，Pavia抽31带亦加高斯作视觉对照。",
       "input": "含噪高光谱影像和分组3D全波段块。",
       "output": "去噪高光谱影像。",
-      "mechanism": "在窗口内按非局部相似性分组3D全波段块形成四阶张量，交替优化高阶近似并迭代去噪。",
-      "readingNote": "Griffith作者稿摘要、Crossref和ICIP目录核验；正式ICIP2017:1890–1894，未标全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/download",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "author_pdf_abstract_verified",
+      "mechanism": "np×np×ns全谱块按空间窗Euclidean匹配，堆np×np×ns×nK四阶张量；正交四模Tucker和AIC/MDL rank，交替分解、聚合、delta=.1反馈。原Eq2无约束平凡解、Eq4印min投影范数与最小重构需max不一致；不擅改原式或当非负分解。",
+      "readingNote": "公开机构稿全6页通读/逐页图版复核，5编号式；仅本公开版本。AM6页（封面1/正文参考5）全读；正式ICIP2017:1890–1894未独立读，IEEE插入2018-02-22不另立2018论文。Eq4符号/正交约束、边界索引、np/nK/rank/自动L/核心与聚合、31带索引/噪声归一/代码待；CAVE两路径500空、EHU403，本轮未取得数据。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -66189,13 +66250,13 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "作者稿摘要直接以高光谱影像去噪为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何联合高光谱空间非局部和光谱全局相似性去噪？",
-        "datasets": "摘要报告模拟和真实HSI数据；具体数据集待全文。",
-        "experimentSetting": "作者稿摘要和方法概述核验；未逐项复核全部实验。",
-        "conclusions": "作者报告优于多种去噪方法；不补具体指标。",
-        "limitations": "正式版差异、代码和数据入口待核。",
+        "datasets": "Columbia32场景反射率512×512×31、400–700nm/10nm，原图作GT后加Gaussian sigma20/40/60；Pavia610×340×103取31带，带索引未给，Fig3第5带再加sigma40。Fig2 stuffed toy/cloth/feather620nm、200×200裁块。",
+        "experimentSetting": "空间搜索窗50pixels、delta.1、L按sigma自动但函数未给；np/nK/rank/核心更新/聚合权重/停止与归一未详。LRTA/PARAFAC/TDL/BwK-SVD/BwBM3D/K-SVD/BM4D七列名基线+Ours，正文称8比较数矛盾保留。Table1九行×九指标81数全核，无Pavia数值表/速度或std。5式/1算法/3图/22参考全读。",
+        "conclusions": "32场景均值表九指标Ours全部最高，PSNR42.87/39.85/36.26，较TDL高1.91/1.69/.85dB；不称每幅最佳或统计显著。所谓真实数据实验仍有人工Gaussian，不能当原生混合/条纹坏带恢复已证。实际引用MTS2015[9]，无直接表格比较或扩展声明。补原Fig1 PDF2/AM正文1。",
+        "limitations": "AM6页（封面1/正文参考5）全读；正式ICIP2017:1890–1894未独立读，IEEE插入2018-02-22不另立2018论文。Eq4符号/正交约束、边界索引、np/nK/rank/自动L/核心与聚合、31带索引/噪声归一/代码待；CAVE两路径500空、EHU403，本轮未取得数据。",
         "dataLinks": [],
         "evidence": [
           {
@@ -66213,31 +66274,80 @@
             "supports": [
               "正式ICIP题名、作者和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "以非局部相似全谱块组的四阶正交低秩Tucker恢复HSI，迭代反馈原噪残差；32 Columbia场景加高斯评估，Pavia抽31带亦加高斯作视觉对照。",
+              "np×np×ns全谱块按空间窗Euclidean匹配，堆np×np×ns×nK四阶张量；正交四模Tucker和AIC/MDL rank，交替分解、聚合、delta=.1反馈。原Eq2无约束平凡解、Eq4印min投影范数与最小重构需max不一致；不擅改原式或当非负分解。",
+              "Columbia32场景反射率512×512×31、400–700nm/10nm，原图作GT后加Gaussian sigma20/40/60；Pavia610×340×103取31带，带索引未给，Fig3第5带再加sigma40。Fig2 stuffed toy/cloth/feather620nm、200×200裁块。",
+              "32场景均值表九指标Ours全部最高，PSNR42.87/39.85/36.26，较TDL高1.91/1.69/.85dB；不称每幅最佳或统计显著。所谓真实数据实验仍有人工Gaussian，不能当原生混合/条纹坏带恢复已证。实际引用MTS2015[9]，无直接表格比较或扩展声明。补原Fig1 PDF2/AM正文1。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/8296610",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "完整IEEE摘要、作者和Griffith单位与机构全文互证；正式PDF202空，显示/插入日期按原字段，不当独立证实首次online。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/icip.2017.8296610",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式作者、出版类型、年份、页码与期刊卷期；公开稿和正式版分源。"
+            ]
+          },
+          {
+            "url": "https://www.cs.columbia.edu/CAVE/databases/multispectral/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_route_access_result_not_dataset_download",
+            "supports": [
+              "CAVE原域HTTPS与HTTP重定向均500空，保留实际错误响应；512×512×31/32来自AM，原数据库说明与全部文件未独立读/下载。",
+              "实际页面访问不等于原数据下载、代码取得或实验复现；不可用只指本次入口，不判定资源不存在。"
+            ]
+          },
+          {
+            "url": "https://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_route_access_result_not_dataset_download",
+            "supports": [
+              "EHU原说明页403，保留实际错误体；两稿31/103不同使用从正文核，未取得原库。",
+              "实际页面访问不等于原数据下载、代码取得或实验复现；不可用只指本次入口，不判定资源不存在。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "nonlocal-tensor-denoising-icip-2017-published",
-            "type": "正式记录",
+            "type": "正式会议版",
             "url": "https://doi.org/10.1109/icip.2017.8296610",
             "doi": "10.1109/icip.2017.8296610",
             "year": 2017,
-            "relation": "正式2017记录；作者稿与正式版局部差异待核。"
+            "relation": "IEEE正式完整摘要与作者书目已核；正式PDF202空，未独立阅读全文。正式ICIP2017-09:1890–1894；插入2018-02-22不是独立2018出版。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "nonlocal-tensor-denoising-icip-2017-source",
-            "type": "作者/机构来源",
-            "url": "https://research-repository.griffith.edu.au/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/download",
+            "type": "Accepted Manuscript (AM)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content",
             "doi": "10.1109/icip.2017.8296610",
             "year": 2017,
-            "relation": "作者稿或公开页面；页码只对应来源文件。"
+            "relation": "本公开稿全6页/全部式表图/参考已读，正式差异未核。",
+            "previousSourceUrl": "https://research-repository.griffith.edu.au/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/download",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "nonlocal-tensor-denoising",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "全文支持去噪主任务：MTS共享非负块系数、Tensor正交四模低秩与空间非局部；分类仅MTS间接评估，3D/4D是数据维度而非几何重建，公开稿/正式、原生/人工噪声边界分开。",
           "evidenceFields": [
             "title",
             "summary",
@@ -66246,14 +66356,32 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "c0022a5989c9b30b092ccba900edd0e34dfb569679b903adb66d3f32a51d4fef",
+          "evidenceDigest": "c3879b799c2d9d9a302c3bcbccf38a3cfb6ba69821d31baa6648c2ed63847c75",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/download",
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content",
+            "https://xplorestaging.ieee.org/document/8296610",
             "https://api.crossref.org/works/10.1109/icip.2017.8296610"
           ]
         }
       },
-      "citation": "@article{nonlocal_tensor_denoising_icip_2017,\n  title = {Non-local similarity based tensor decomposition for hyperspectral image denoising},\n  author = {Fan Xu and Xiao Bai and Jun Zhou},\n  year = {2017},\n  doi = {10.1109/icip.2017.8296610}\n}\n"
+      "citation": "@inproceedings{nonlocal_tensor_denoising_icip_2017,\n  title = {Non-local similarity based tensor decomposition for hyperspectral image denoising},\n  author = {Fan Xu and Xiao Bai and Jun Zhou},\n  booktitle = {2017 IEEE International Conference on Image Processing (ICIP)},\n  year = {2017},\n  pages = {1890--1894},\n  doi = {10.1109/icip.2017.8296610}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1b1b412-a488-50f1-b7b8-9b24ae4af0e0/content",
+          "figureLabel": "Figure 1",
+          "caption": "Overview of the proposed HSI denoising method.",
+          "page": 2,
+          "extraction": "从AM原PDF第2页2400px渲染裁切原流程和完整图注，未重绘。",
+          "verificationNote": "全部6页图版与原Fig1已视觉核对；PDF第2页含机构封面，AM正文第1页。对应公开AM，正式页号/图版差异未核。",
+          "path": "figures/nonlocal-tensor-denoising-icip-2017/framework.png",
+          "width": 807,
+          "height": 904,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "fcf7e93933c6cc19e1c12c5d68ca98d3d74895c71d59b7bcc83ca9ca31c996b4",
+          "attribution": "Fan Xu, Xiao Bai, Jun Zhou · ICIP 2017"
+        }
+      ]
     },
     {
       "id": "region-structure-nmf-jstars-2017",
@@ -79555,6 +79683,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
         }
       ]
     },
@@ -80261,6 +80394,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
         }
       ]
     },
@@ -80715,6 +80853,11 @@
           "date": "2026-10-09",
           "action": "definition-expanded",
           "reason": "多尺度字典2014原摘要主要研究HSI稀疏表示，扩展任务表述而不改已有标签ID和论文归属。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
         }
       ]
     },
@@ -80862,6 +81005,11 @@
           "date": "2026-10-08",
           "action": "definition_expanded",
           "reason": "I-NLSU原摘要及局部证实固定NAPCA相似权重用于解混，扩展既有非局部空间先验标签。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
         }
       ]
     },
@@ -87680,7 +87828,7 @@
       "status": "confirmed",
       "color": "#80939b",
       "createdAt": "2026-10-09",
-      "rationale": "周峻2015来源组原摘要与指定局部方法形成；没有固定分类数量。",
+      "rationale": "36页机构稿全读：各带字典共享S、MLR/lambda_sum与四求解器，VST原式/实验核；字典尺度和正式差异待，不称解混或已复现。",
       "evidencePaperIds": [
         "mtsnmf-denoise-tgrs-2015"
       ],
@@ -87689,6 +87837,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原摘要支持，PDF可取得时核对方法局部和原图。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "MTS2015与ICIP2017张量去噪完整机构稿核验；各自方法、数据噪声和分类辅助评估、式表及版本分开留证。"
         }
       ]
     },
