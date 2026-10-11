@@ -362,7 +362,9 @@
     "structured-discriminative-nmf-icip-2016",
     "nonlocal-tensor-denoising-icip-2017",
     "nonlocal-tucker-denoising-jstars-2018",
-    "tensor-morphological-profile-icip-2016"
+    "tensor-morphological-profile-icip-2016",
+    "sampling-spectral-spatial-whispers-2015",
+    "controlled-sampling-tgrs-2017"
   ],
   "sourceChecks": [
     {
@@ -813,6 +815,51 @@
         "张量体素标量邻域min/max、开闭和多尺度剖面，3D圆柱SE融合空间/波段索引；radius1/3/5/7、height3/5/9/17。整数阈值截面提供解释，无谱向量排序、低秩因素或物理三维重建。",
         "Pavia ROSIS103带/.43–.86µm/1.3m/9类、已有训练测试样本；IndianPines AVIRIS200带（删20水吸收）/20m/16类，每类随机5%训练、余测试。本文未印两场景空间规模或实际split编号。",
         "TMP OA两组90.2/88.6，较EMP86.4/83.2高3.8/5.4个百分点；AA86.7/87.4、kappa.87/.87。无显著性检验或空间隔离测试，不推广MRI/video。三图皆输入/特征/分类展示，无独立完整框架图。"
+      ]
+    },
+    {
+      "paperId": "structured-sparse-wavelet-tgrs-2013",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a8546383-e267-51a0-b096-60bbb047c0f9/content",
+      "level": "primary_public_manuscript_full_text_version_scoped",
+      "supports": [
+        "以不下采样的两级Haar 3D-DWT生成15组光谱—空间纹理，用结构稀疏logistic回归联合特征选择与分类，并以局部线性分类器的软混合处理非线性边界。公开2012-06-13草稿全文已核，正式2013版只核完整摘要与书目。",
+        "原稿Eq1–8：三维高/低通两级分解，保留7+8个同尺寸子立方；对系数绝对值做3×3均值，拼接15p维特征。Eq9–18以lasso、组L2与稀疏组惩罚的logistic目标做one-vs-all分类；Eq19–24用加速近端梯度和回溯。Eq25–30将局部线性模型按exp(−τ‖x−v‖²)门控软混合，以EM责任、L-BFGS中心更新和加权稀疏logistic更新处理非线性；不是深度网络或物理端元解混。",
+        "Indian Pine（稿中Indiana，145×145、原220带，删带后仍称220存在矛盾）、KSC（512×614、176带）、Botswana（256×1476、145带）、Pavia University（610×340、103带）。表I–IV标签总数10366/5211/3248/42776；Pavia给定训练池3921。不替换为其他常用数据版本的标签数。",
+        "表V KSC5%小波线性/RBF SVM OA77.68/84.53低于原谱79.53/86.56，不能概括为小波总提升。表VII小波Group/Sparse-group/Mixed OA92.52/92.66/93.15，测试时间1.3+25.2/1.4+25.2/19.8+25.2秒；这些为作者汇总值，非本轮复现。Indian10%相对引文MLRsubMLL，组模型OA较高但AA和κ较低；不由加粗或OA推断全指标最优。",
+        "草稿全32页含1机构封面；item未标AM，正文2012-06-13 DRAFT，正式TGRS51(4):2276–2291 April2013、IEEE插入2012-09-19不是独立核定首次online。明确扩展IGARSS2011，三作者/新APG/混合分类/四数据不借会议参数。Jun草稿ANU，IEEE单位字段Griffith Nathan QUE Canada与bio June2012 Nathan Australia不同，原字段保留。Indian删20带却仍220；Eq21优化变量与通常近端定义不同、步长tλ未明、β动量/停止阈值/K/τ/EM初始化/式30 f2未给；不把打印疑点当代码错误。Eq31定义非零比例，但正文80–95%稀疏对应5–15%选中特征，术语互补冲突。表V Pavia1%原谱线性OA43.51与κ×10044.62不符合标准非负机会一致率κ≤OA；表VII四个等权十设置均值超0.01舍入容差，真实权重/混淆矩阵待。专用代码、数据文件和正式差异未核，无显著性或模型复现。"
+      ]
+    },
+    {
+      "paperId": "sampling-spectral-spatial-whispers-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8054cd22-253b-52f4-9bd4-987453f900b9/content",
+      "level": "primary_public_manuscript_full_text_version_scoped",
+      "supports": [
+        "研究同一高光谱影像随机采样对光谱—空间分类评估的影响，以局部连续训练区域减少训练/测试邻域重叠。机构AM5页（封面1/正文参考4）全文及四表已核，正式版只读完整摘要与书目。",
+        "先比较坐标非线性SVM与原谱分类，再用均值滤波和3D-DWT展示同图随机采样的邻域影响；按类在随机位置取连续训练区域，保留另一组随机协议以供已有方法比较。本文无编号公式或区域生长伪代码，不借2017版的八邻域/分区配额实现细节。",
+        "四个具名场景：Indian Pines、Botswana、Pavia University、Salinas。正文另称six benchmark datasets并在结尾写SalinasA，与四表不同，保留差异；影像维度/实际波段数与数据文件版本未列，不借2013/2017填值。",
+        "Indian3×3训练窗口覆盖测试点31.4%（5%训练）和86.3%（25%），与后续2016稿30.9/86.4不同，不混成一次实验。连续5% Indian DWT53.5低于原谱55.6，10%58.7低于59.8；Pavia5%DWT68.5低于71.2，不能说连续协议下DWT总更好。新策略降低覆盖不足与局部相关影响，但边缘重叠仍存在。",
+        "正式五作者Jun Zhou/Jie Liang/Yuntao Qian/Yongsheng Gao/Lei Tong，机构封面与IEEE/Crossref一致；AM正文题名仅四作者、缺Lei Tong，不静默改正文或删正式作者。正式WHISPERS2015 1–4，IEEE插入2017-10-23不新立2017论文。四图为真值/采样/覆盖/曲线，无完整方法框架。重复/取整/区域大小/特征具体参数/代码和正式差异待；不保证完全隔离或独立同分布，也不宣称2017是本篇扩展（两稿未见明确声明）。"
+      ]
+    },
+    {
+      "paperId": "controlled-sampling-tgrs-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/7c1e882a-506e-53f6-bcdc-c57b297a60d2/content",
+      "level": "primary_public_manuscript_full_text_version_scoped",
+      "supports": [
+        "以按类连通区域的随机种子与区域生长构建训练块，研究同图随机像元划分和空间算子引起的评估偏差。已读arXiv v1全31页及机构AM全16页（含封面），正式2017版仅完整摘要与书目。",
+        "Algorithm1先找各类连通分区，按分区像素数×采样率确定训练配额，以同类八邻域从随机种子生长；训练块局部集中、全局分散，剩余标注测试。用坐标/光谱分类、均值/高斯滤波、DWT/EMP及SVM/RF研究空间依赖；这是评测协议，不是新分类器。Fig1是一般监督光谱—空间分类流程，不是新采样算法流程。",
+        "Botswana、Indian Pines、Kennedy Space Center、Pavia University、Salinas五具名HSI场景；当前两稿未列各场景实际尺寸/删带配置/标签数量，不借其他论文数据版本。新AM追加Indian1–25%训练的低样本对照，v1无此节。",
+        "随机协议下Pavia SVM DWT OA97.8/98.6/99.3高于EMP97.0/97.6/98.1；控制协议DWT84.8/86.4/89.2低于EMP87.4/89.5/91.7，方法排序随评测改变。TableI坐标SVM的OA均高于原谱，但Pavia三设定AA低，不能概括全指标。四表包含DWT/EMP较原谱低的反例，控制Salinas原谱SVM5/10% OA81.8/81.6也非随样本数严格增大。减少重叠的实验证据与理论印式问题分开。",
+        "正式TGRS55(2):862–880 February2017，IEEE插入2016-11-29；arXiv v1提交2016-05-19、PDF页脚May20DRAFT；AM15正文参考页与正式19出版页不当同一全文。AM新增相关均值Eq10、VII-D及Fig16，v1为14式/15图而AM15式/16图，四表相同不代表正文相同。两稿Eq7在固定其他项且δ−4(μ−1)β>0时随β增大，而Eq8正文称递减；引文Mohri/Rostamizadeh2008 Theorem2的log分子4，两稿为2，理论来源差异保留。Pearsonρ不是β-mixing，有限9×9相关不能证明平稳性/β衰减。两稿称三层15小波子立方，与引用2013两层15不同；均值式缺绝对值且和内坐标未跟i/j，拼接写三轴15组，实际实现待。不保证边缘重叠消失、iid或跨场景泛化；分区配额取整/小类/种子/滤波边界/EMP主成分和SE半径/RF树数/停止及专用代码待。LIBSVM/Weka为通用工具，未取得作者完整管线或做模型复现。"
+      ]
+    },
+    {
+      "paperId": "controlled-sampling-tgrs-2017",
+      "url": "https://arxiv.org/pdf/1605.05829v1",
+      "level": "primary_arxiv_fixed_v1_full_text_version_scoped",
+      "supports": [
+        "v1全31页/14式/15图/4表/46参考，与AM四表531格相同但Eq10/VII-D/Fig16缺失；Eq7–8单调性/引文Theorem2差异两稿保留。",
+        "主实验5/10/25%；坐标/原谱非线性SVM与坐标1NN采用五折CV、十次随机划分；TableIII明写linear SVM，TableIV RF。滤波均值奇数窗1–27，高斯σ从2^−1到2^3、指数步0.5；十次平均OA，表III/IV各90均值/std对。两版本四表531格逐项相同，各含4个无非重叠测试样本的NaN，保留null而非0。AM新增VII-D只说class训练数不足1设1，不自动解决Algorithm1分区浮点配额/取整。"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # 先学评测：控制采样论文阅读笔记
 
-对应目录：`controlled-sampling-tgrs-2017`。正式论文发表于TGRS 2017；本轮补读[arXiv v1](https://arxiv.org/html/1605.05829v1)第VI节与第VII节指定实验段落。不是全文精读或复现报告，正式版差异、理论推导和全部表格仍待核验。
+对应目录：`controlled-sampling-tgrs-2017`。正式论文发表于TGRS 2017；本轮补读[arXiv v1](https://arxiv.org/html/1605.05829v1)第VI节与第VII节指定实验段落。此段记述当时的局部补读。后续已分版核验v1全31页与机构AM全16页、理论印式及全部表格；更新事实见[作者调研](jun-zhou.md)。正式版全文/实现仍待，不构成复现报告。
 
 ## 本轮从原文确认的内容
 
