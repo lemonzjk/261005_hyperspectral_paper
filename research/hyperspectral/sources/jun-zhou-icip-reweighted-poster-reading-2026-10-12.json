@@ -1,0 +1,278 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "RSLRNTF ICIP2018 public author poster complete reading, original framework and cited-field title lookup",
+  "previousGoalTurn": "progress: db5af35 independently provisionally excluded the published MerMED abstract scope and retired UEMM code/data inspection from current tasks; clean tree",
+  "accessFile": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedCatalogPaperCount": 1,
+  "newCatalogFullTextReadingCount": 0,
+  "publicMaterialReadingCount": 1,
+  "actualPosterPagesRead": 1,
+  "actualFormalPdfPagesRead": 0,
+  "figuresAdded": 1,
+  "materials": [
+    {
+      "paperId": "hsi-reweighted-sparse-lowrank-denoising-icip-2018",
+      "pdfFile": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-poster.pdf",
+      "version": "ICIP2018 author poster; no file publication/revision date supplied",
+      "sha256": "64975cfc32ca0b27aee0968ef8375934a5a65d47cf9d61e08ec34e95bb5ec92e",
+      "downloaded": true,
+      "pageCount": 1,
+      "actuallyReadPages": [
+        1
+      ],
+      "readingType": "complete_poster_not_formal_paper_fulltext",
+      "textFile": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-pages.json",
+      "visualFile": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-page-1.png",
+      "figureCount": 3,
+      "tableCount": 1,
+      "referenceCount": 5,
+      "input": "含噪高光谱立方体Y，按I×J空间与第三维谱的三阶张量处理；海报模拟数据与真实Urban图示，未给传感器、总波段数、尺寸或模拟数据集名称。",
+      "output": "恢复的HSI张量以及非负空间低秩编码块A_r B_r^T和谱向量c_r；不输出几何三维、类别图或独立预训练表征。",
+      "method": "海报以Y≈Σ_r(A_r B_r^T)∘c_r建模，空间编码块低秩、C=[c1…cR]刻画谱低秩，A/B/C非负。目标为张量平方Frobenius残差、δ/2‖AB^T−1_I×J‖²_F避平凡解项，以及λΣ_r‖W_r⊙(A_rB_r^T)‖1重加权编码稀疏项。列A/B/C及U_r/V_r的乘法更新，W_r=1./(U_rV_r^T+ε)；海报未定义完整辅助分裂目标、M的各模式构造及实际µ/λ/δ/ε，不推测补齐。为显式迭代分解，不是神经网络训练/深度展开或通用Tucker模型。",
+      "datasets": "模拟HSI只给第25带示例，数据集名、尺寸、总谱带和采集信息未给。真实Urban只展示第208带，不据名称自动补传感器或210/162等带数；海报没有逐项真值或数据许可信息。",
+      "protocol": "单页作者海报Table1三档列头原文为Noise variance σ∈[0,0.05]/[0,0.1]/[0,0.15]，不能据σ惯例擅改为标准差或补噪声分布。对照LRMR/LRTV/PARAFAC/TDL/LRTDTV，唯一数值指标MPSNR；未给其计算定义、动态范围、每带/样本聚合、随机重复、参数、迭代停止或耗时。Fig2为模拟第25带、σ∈[0,0.1]，Fig3为Urban第208带定性。没有神经网络训练/测试划分。",
+      "results": "Table1按三档顺序：RSLRNTF43.87/40.01/37.21，LRMR43.12/39.12/36.63，LRTV43.04/37.63/36.26，PARAFAC38.58/37.51/35.99，TDL38.99/36.61/31.75，LRTDTV42.63/39.14/36.94；Original行34.49/26.89/24.84按原标签保留。RSLRNTF在所列三列MPSNR均最高，但无方差显著性、其它指标或全场景实证；Urban只给定性，不称真实数据数值领先。",
+      "limitations": "资料依据是作者海报一页完整内容，正式五页论文仍未读，不把海报摘要/图示升级为正式全文。模拟数据集、采集规格、噪声分布、MPSNR定义、参数/秩和停止准则缺失；更新式涉及未充分定义的M、U/V和µ，不推测补齐或借代码确认。σ列头写Noise variance而非明确标准差，保留措辞。真实Urban没有数值/真值证明或传感器参数，不能称全部性能领先、效率优势或稳定性证明。五参考中TDL题名multispectral，但既有库第5节证据确认31带CAVE，不能仅凭题名排除；其它引文未读原稿。",
+      "formalReadingProgress": "abstract_read"
+    }
+  ],
+  "formalMetadata": {
+    "DOI": "10.1109/icip.2018.8451087",
+    "title": [
+      "Hyperspectral Imagery Denoising via Reweighed Sparse Low-Rank Nonnegative Tensor Factorization"
+    ],
+    "type": "proceedings-article",
+    "author": [
+      {
+        "given": "Fengchao",
+        "family": "Xiong",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Jun",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Yuntao",
+        "family": "Qian",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "2018 25th IEEE International Conference on Image Processing (ICIP)"
+    ],
+    "page": "3219-3223",
+    "published": {
+      "date-parts": [
+        [
+          2018,
+          10
+        ]
+      ]
+    }
+  },
+  "originalCatalogCitationBeforeCorrection": "@article{hsi_reweighted_sparse_lowrank_denoising_icip_2018,\n  title = {Hyperspectral Imagery Denoising via Reweighed Sparse Low-Rank Nonnegative Tensor Factorization},\n  author = {Fengchao Xiong and Jun Zhou and Yuntao Qian},\n  year = {2018},\n  doi = {10.1109/ICIP.2018.8451087}\n}\n",
+  "citationCorrection": "会议proceedings-article，改@inproceedings并补正式booktitle/页码/publisher；原题名Reweighed按注册保留。",
+  "classification": {
+    "kept": [
+      "spectral-denoising",
+      "tensor-low-rank-learning",
+      "tensor-sparsity-regularization"
+    ],
+    "rationale": "完整作者海报支持HSI去噪、张量块项空间/谱低秩及重加权稀疏，保持现有三分类；不是网络预训练或三维几何，材料深度保持海报已读/正式未读。",
+    "fullTextUpgrade": false
+  },
+  "posterReferences": [
+    {
+      "number": 1,
+      "title": "Hyperspectral image restoration using low-rank matrix recovery",
+      "authors": "H. Zhang, W. He, L. Zhang, H. Shen, Q. Yuan",
+      "venue": "TGRS",
+      "year": 2014,
+      "volume": 52,
+      "issue": 8,
+      "pages": "4729–4743",
+      "currentVenueOnWhitelist": true
+    },
+    {
+      "number": 2,
+      "title": "Total-variation-regularized low-rank matrix factorization for hyperspectral image restoration",
+      "authors": "W. He, H. Zhang, L. Zhang, H. Shen",
+      "venue": "TGRS",
+      "year": 2016,
+      "volume": 54,
+      "issue": 1,
+      "pages": "178–188",
+      "currentVenueOnWhitelist": true
+    },
+    {
+      "number": 3,
+      "title": "Denoising of hyperspectral images using the parafac model and statistical performance analysis",
+      "authors": "X. Liu, S. Bourennane, C. Fossati",
+      "venue": "TGRS",
+      "year": 2012,
+      "volume": 50,
+      "issue": 10,
+      "pages": "3717–3724",
+      "currentVenueOnWhitelist": true
+    },
+    {
+      "number": 4,
+      "title": "Decomposable nonlocal tensor dictionary learning for multispectral image denoising",
+      "authors": "Y. Peng, D. Meng, Z. Xu, C. Gao, Y. Yang, B. Zhang",
+      "venue": "CVPR",
+      "year": 2014,
+      "matchedPaperId": "decomposable-nonlocal-tensor-denoising",
+      "scopeBoundary": "既有第5节原稿局部证据为31带CAVE，保持直接HSI；本批只读海报书目，不新增该论文正文阅读。"
+    },
+    {
+      "number": 5,
+      "title": "Hyperspectral image restoration via total variation regularized low-rank tensor decomposition",
+      "authors": "Y. Wang, J. Peng, Q. Zhao, Y. Leung, X. Zhao, D. Meng",
+      "venue": "JSTARS",
+      "year": 2018,
+      "volume": 11,
+      "issue": 4,
+      "pages": "1227–1243",
+      "currentVenueOnWhitelist": false
+    }
+  ],
+  "referencesBoundary": "五参考无明确目标Jun。TDL已有目录且§5证据31带CAVE，题名multispectral不能自动当纯MS排除；四缺失仅书目进入后续领域队列，一JSTARS来源不合格、要有合格arXiv才可新增。未获取/阅读被引原稿。",
+  "pendingFieldCandidates": [
+    {
+      "title": "Hyperspectral image restoration using low-rank matrix recovery",
+      "authors": "H. Zhang, W. He, L. Zhang, H. Shen, Q. Yuan",
+      "venue": "TGRS",
+      "year": 2014,
+      "url": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
+      "discoveredAt": "2026-10-12",
+      "searchId": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-references",
+      "decision": "pending",
+      "reason": "作者海报参考书目所列直接HSI题名，未匹配现有目录/候选，作者不含目标Jun；本批只有所引题名/缩写作者/卷页，原论文摘要/正文、完整作者及DOI/版本均待核，排入作者专项后的领域调研。TGRS为当前普通总库白名单，仍不按题名自动收录。",
+      "readingProgress": "title_only",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-icip-reweighted-poster-reading-2026-10-12.json",
+      "sourceReference": {
+        "number": 1,
+        "title": "Hyperspectral image restoration using low-rank matrix recovery",
+        "authors": "H. Zhang, W. He, L. Zhang, H. Shen, Q. Yuan",
+        "venue": "TGRS",
+        "year": 2014,
+        "volume": 52,
+        "issue": 8,
+        "pages": "4729–4743",
+        "currentVenueOnWhitelist": true
+      },
+      "collectionScope": "active"
+    },
+    {
+      "title": "Total-variation-regularized low-rank matrix factorization for hyperspectral image restoration",
+      "authors": "W. He, H. Zhang, L. Zhang, H. Shen",
+      "venue": "TGRS",
+      "year": 2016,
+      "url": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
+      "discoveredAt": "2026-10-12",
+      "searchId": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-references",
+      "decision": "pending",
+      "reason": "作者海报参考书目所列直接HSI题名，未匹配现有目录/候选，作者不含目标Jun；本批只有所引题名/缩写作者/卷页，原论文摘要/正文、完整作者及DOI/版本均待核，排入作者专项后的领域调研。TGRS为当前普通总库白名单，仍不按题名自动收录。",
+      "readingProgress": "title_only",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-icip-reweighted-poster-reading-2026-10-12.json",
+      "sourceReference": {
+        "number": 2,
+        "title": "Total-variation-regularized low-rank matrix factorization for hyperspectral image restoration",
+        "authors": "W. He, H. Zhang, L. Zhang, H. Shen",
+        "venue": "TGRS",
+        "year": 2016,
+        "volume": 54,
+        "issue": 1,
+        "pages": "178–188",
+        "currentVenueOnWhitelist": true
+      },
+      "collectionScope": "active"
+    },
+    {
+      "title": "Denoising of hyperspectral images using the parafac model and statistical performance analysis",
+      "authors": "X. Liu, S. Bourennane, C. Fossati",
+      "venue": "TGRS",
+      "year": 2012,
+      "url": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
+      "discoveredAt": "2026-10-12",
+      "searchId": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-references",
+      "decision": "pending",
+      "reason": "作者海报参考书目所列直接HSI题名，未匹配现有目录/候选，作者不含目标Jun；本批只有所引题名/缩写作者/卷页，原论文摘要/正文、完整作者及DOI/版本均待核，排入作者专项后的领域调研。TGRS为当前普通总库白名单，仍不按题名自动收录。",
+      "readingProgress": "title_only",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-icip-reweighted-poster-reading-2026-10-12.json",
+      "sourceReference": {
+        "number": 3,
+        "title": "Denoising of hyperspectral images using the parafac model and statistical performance analysis",
+        "authors": "X. Liu, S. Bourennane, C. Fossati",
+        "venue": "TGRS",
+        "year": 2012,
+        "volume": 50,
+        "issue": 10,
+        "pages": "3717–3724",
+        "currentVenueOnWhitelist": true
+      },
+      "collectionScope": "active"
+    },
+    {
+      "title": "Hyperspectral image restoration via total variation regularized low-rank tensor decomposition",
+      "authors": "Y. Wang, J. Peng, Q. Zhao, Y. Leung, X. Zhao, D. Meng",
+      "venue": "JSTARS",
+      "year": 2018,
+      "url": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
+      "discoveredAt": "2026-10-12",
+      "searchId": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-references",
+      "decision": "pending",
+      "reason": "作者海报参考书目所列直接HSI题名，未匹配现有目录/候选，作者不含目标Jun；本批只有所引题名/缩写作者/卷页，原论文摘要/正文、完整作者及DOI/版本均待核，排入作者专项后的领域调研。所引JSTARS不在当前白名单，不作普通期刊新收录；仅找到直接HSI的合格arXiv版本后才可考虑，否则按来源排除。",
+      "readingProgress": "title_only",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-icip-reweighted-poster-reading-2026-10-12.json",
+      "sourceReference": {
+        "number": 5,
+        "title": "Hyperspectral image restoration via total variation regularized low-rank tensor decomposition",
+        "authors": "Y. Wang, J. Peng, Q. Zhao, Y. Leung, X. Zhao, D. Meng",
+        "venue": "JSTARS",
+        "year": 2018,
+        "volume": 11,
+        "issue": 4,
+        "pages": "1227–1243",
+        "currentVenueOnWhitelist": false
+      },
+      "collectionScope": "active"
+    }
+  ],
+  "codeBoundary": "海报未提供官方代码URL；页脚ZJU个人主页不是代码链接，未访问作者仓库、主页实现/依赖/权重或运行复现。",
+  "remaining": "作者181/98全文/83摘要与总库390不变，原图294；作者后领域矩阵继续，目录未闭环。",
+  "verification": {
+    "validate": "npm run validate passed: 390 papers, 179 labels, 294 original figures, 303 audited classifications; CONTEXT1935 chars/36 lines.",
+    "build": "npm run build passed; existing large-chunk warning only.",
+    "browserResultsFile": "jun-zhou-icip-reweighted-poster-reading-2026-10-12-browser-results.json",
+    "browserScreenshots": [
+      "jun-zhou-icip-reweighted-poster-reading-2026-10-12-browser-desktop.png",
+      "jun-zhou-icip-reweighted-poster-reading-2026-10-12-browser-mobile.png"
+    ],
+    "browserBoundary": "本地桌面/手机详情原图显示，摘要级读标签与海报/正式论文边界均核对，无页面错误；外部访问均阻止。"
+  }
+}

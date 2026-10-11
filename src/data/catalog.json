@@ -31631,22 +31631,22 @@
       "authors": "Fengchao Xiong, Jun Zhou, Yuntao Qian",
       "year": 2018,
       "venue": "ICIP",
-      "publicationName": "2018 IEEE International Conference on Image Processing",
+      "publicationName": "2018 25th IEEE International Conference on Image Processing (ICIP)",
       "publicationStatus": "published",
       "venueTier": "conference",
       "collections": [
         "hyperspectral"
       ],
-      "representation": "以重加权稀疏低秩非负张量因子分解恢复高光谱影像。",
+      "representation": "RSLRNTF：低秩空间编码矩阵与谱原子的块项张量分解，编码重加权L1及非负约束；作者海报已读，正式论文仍未读。",
       "tags": [],
-      "summary": "研究高光谱影像稀疏低秩去噪。",
-      "input": "含噪高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "联合稀疏、低秩和非负张量因子，通过重加权优化抑制噪声。",
-      "readingNote": "ICIP官方Poster/作者稿与Crossref核验；正式页3219–3223，未标全文。",
+      "summary": "作者公开单页海报已整体阅读：HSI分解为低秩空间矩阵与谱原子的外积之和，以重加权L1稀疏编码、空间和谱低秩、非负因子联合去噪。三档模拟噪声MPSNR43.87/40.01/37.21，Urban第208带仅定性图示；模拟数据名和参数未给。新增原Fig1，正式3219–3223五页尚未读。",
+      "input": "含噪高光谱立方体Y，按I×J空间与第三维谱的三阶张量处理；海报模拟数据与真实Urban图示，未给传感器、总波段数、尺寸或模拟数据集名称。",
+      "output": "恢复的HSI张量以及非负空间低秩编码块A_r B_r^T和谱向量c_r；不输出几何三维、类别图或独立预训练表征。",
+      "mechanism": "海报以Y≈Σ_r(A_r B_r^T)∘c_r建模，空间编码块低秩、C=[c1…cR]刻画谱低秩，A/B/C非负。目标为张量平方Frobenius残差、δ/2‖AB^T−1_I×J‖²_F避平凡解项，以及λΣ_r‖W_r⊙(A_rB_r^T)‖1重加权编码稀疏项。列A/B/C及U_r/V_r的乘法更新，W_r=1./(U_rV_r^T+ε)；海报未定义完整辅助分裂目标、M的各模式构造及实际µ/λ/δ/ε，不推测补齐。为显式迭代分解，不是神经网络训练/深度展开或通用Tucker模型。",
+      "readingNote": "ICIP2018作者公开单页海报已全部阅读、目视核图及方法/更新式/三档数值；海报三图一表五引文。Fig1/p1原图直接裁取含图注，保留版本/点坐标/哈希。三作者与Crossref正式记录一致、Jun海报单位Griffith；正式书目为会议论文3219–3223，修正原@article BibTeX。正式五页正文未获取/未读，海报全部读完不升级为正式全文。没有官方代码URL，ZJU作者主页页脚不是代码链接。",
       "paper": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_material_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
@@ -31655,14 +31655,14 @@
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
+        "relationNote": "作者海报直接以HSI三阶谱立方体做恢复；第三轴为波段，不是几何深度。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "researchQuestion": "如何联合空间编码块的低秩/重加权稀疏、谱原子低秩及非负约束恢复含噪HSI？",
+        "datasets": "模拟HSI只给第25带示例，数据集名、尺寸、总谱带和采集信息未给。真实Urban只展示第208带，不据名称自动补传感器或210/162等带数；海报没有逐项真值或数据许可信息。",
+        "experimentSetting": "单页作者海报Table1三档列头原文为Noise variance σ∈[0,0.05]/[0,0.1]/[0,0.15]，不能据σ惯例擅改为标准差或补噪声分布。对照LRMR/LRTV/PARAFAC/TDL/LRTDTV，唯一数值指标MPSNR；未给其计算定义、动态范围、每带/样本聚合、随机重复、参数、迭代停止或耗时。Fig2为模拟第25带、σ∈[0,0.1]，Fig3为Urban第208带定性。没有神经网络训练/测试划分。",
+        "conclusions": "Table1按三档顺序：RSLRNTF43.87/40.01/37.21，LRMR43.12/39.12/36.63，LRTV43.04/37.63/36.26，PARAFAC38.58/37.51/35.99，TDL38.99/36.61/31.75，LRTDTV42.63/39.14/36.94；Original行34.49/26.89/24.84按原标签保留。RSLRNTF在所列三列MPSNR均最高，但无方差显著性、其它指标或全场景实证；Urban只给定性，不称真实数据数值领先。",
+        "limitations": "资料依据是作者海报一页完整内容，正式五页论文仍未读，不把海报摘要/图示升级为正式全文。模拟数据集、采集规格、噪声分布、MPSNR定义、参数/秩和停止准则缺失；更新式涉及未充分定义的M、U/V和µ，不推测补齐或借代码确认。σ列头写Noise variance而非明确标准差，保留措辞。真实Urban没有数值/真值证明或传感器参数，不能称全部性能领先、效率优势或稳定性证明。五参考中TDL题名multispectral，但既有库第5节证据确认31带CAVE，不能仅凭题名排除；其它引文未读原稿。",
         "dataLinks": [],
         "evidence": [
           {
@@ -31680,6 +31680,24 @@
             "supports": [
               "正式题名、作者和会议页码。"
             ]
+          },
+          {
+            "url": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
+            "checkedAt": "2026-10-12",
+            "level": "作者海报一页完整材料、方法/实验表及原框架；正式论文未读",
+            "supports": [
+              "HSI块项非负张量分解、重加权L1/空间谱低秩和乘法更新；辅助变量及参数缺口留白。",
+              "三档模拟MPSNR完整数值，Urban第208带只有定性；没有统一真实性能/效率结论。",
+              "三作者与正式Crossref相同、Jun单位Griffith；海报读完不当五页论文全文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/ICIP.2018.8451087",
+            "checkedAt": "2026-10-12",
+            "level": "精确出版社注册会议书目与完整三作者",
+            "supports": [
+              "proceedings-article、ICIP2018和3219–3223页；修正BibTeX为会议论文，正式题名原拼写Reweighed保留。"
+            ]
           }
         ],
         "versions": [
@@ -31689,14 +31707,21 @@
             "url": "https://doi.org/10.1109/ICIP.2018.8451087",
             "doi": "10.1109/ICIP.2018.8451087",
             "year": 2018,
-            "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+            "relation": "正式ICIP2018五页会议书目；本批仅作者海报完整单页已读，未获取/阅读正式五页正文，不用海报替代完整正式方法/实验。"
+          },
+          {
+            "id": "hsi-reweighted-sparse-lowrank-denoising-icip-2018-author-poster",
+            "type": "作者公开海报",
+            "url": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
+            "year": 2018,
+            "relation": "单页海报整体已读，三图一表/五引文；三作者与正式题名对应、Griffith身份单位明确，保留海报版本，正式全文仍未读。"
           }
         ],
         "methodFamilyId": "reweighted-sparse-lowrank-ntf",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "完整作者海报支持HSI去噪、张量块项空间/谱低秩及重加权稀疏，保持现有三分类；不是网络预训练或三维几何，材料深度保持海报已读/正式未读。",
           "evidenceFields": [
             "title",
             "summary",
@@ -31705,16 +31730,41 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "8f2246cacfb946357bc2399d43bae257f0af9890bf960bc8e075c329073c7add",
+          "evidenceDigest": "3bd95201224e5a71c4ea36db54db690d53c0f71b2796cfc1b51774a28c31ee05",
           "sourceUrls": [
-            "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
-            "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
-            "https://api.crossref.org/works/10.1109/ICIP.2018.8451087"
+            "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf"
           ]
         }
       },
       "doi": "10.1109/ICIP.2018.8451087",
-      "citation": "@article{hsi_reweighted_sparse_lowrank_denoising_icip_2018,\n  title = {Hyperspectral Imagery Denoising via Reweighed Sparse Low-Rank Nonnegative Tensor Factorization},\n  author = {Fengchao Xiong and Jun Zhou and Yuntao Qian},\n  year = {2018},\n  doi = {10.1109/ICIP.2018.8451087}\n}\n"
+      "citation": "@inproceedings{hsi_reweighted_sparse_lowrank_denoising_icip_2018,\n  title = {Hyperspectral Imagery Denoising via Reweighed Sparse Low-Rank Nonnegative Tensor Factorization},\n  author = {Fengchao Xiong and Jun Zhou and Yuntao Qian},\n  booktitle = {2018 25th IEEE International Conference on Image Processing (ICIP)},\n  pages = {3219--3223},\n  year = {2018},\n  publisher = {IEEE},\n  doi = {10.1109/ICIP.2018.8451087}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://sigport.org/sites/default/files/docs/ICIP2018-2782-poster.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "ICIP2018作者海报原框架：HSI张量分解为低秩空间编码矩阵与谱原子的外积之和，保留完整原图注；来源为海报，非正式五页论文图版。",
+          "page": 1,
+          "verificationNote": "已目视核对Y、空间A/B块、谱原子及完整Fig1图注；150dpi直接裁取海报单页，不重绘，不将海报阅读当正式全文。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 150,
+            "pointBox": [
+              125,
+              725,
+              1000,
+              1260
+            ],
+            "pdfVersion": "ICIP2018作者单页海报；文件未给发布日期/修订号",
+            "sourcePdfSha256": "64975cfc32ca0b27aee0968ef8375934a5a65d47cf9d61e08ec34e95bb5ec92e"
+          },
+          "path": "figures/hsi-reweighted-sparse-lowrank-denoising-icip-2018/poster-fig1.png",
+          "width": 1824,
+          "height": 1115,
+          "sha256": "ec50916b6a32347f498f5a8421be544e11e4426af5022b6633b88f5278448df8",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fengchao Xiong, Jun Zhou, Yuntao Qian · ICIP2018 author poster"
+        }
+      ]
     },
     {
       "id": "hsi-lidar-heterogeneous-feature-fusion-2018",

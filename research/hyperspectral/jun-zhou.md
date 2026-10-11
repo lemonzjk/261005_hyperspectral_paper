@@ -127,6 +127,8 @@ Spectral 3D Computer Vision综述固定v1九页逐页全读，新增Fig1/p2原�
 
 MerMED正式DOI10.1016/j.landig.2026.101007的PubMed所载作者原摘要五节与35作者已完整阅读，作者顺序与旧Crossref在句点规范化后相符；METHODS明确七医学模态、12专科、26公开/5私有评测集和10%标注主比较，贡献是预训练后疾病诊断，没有直接HSI任务依据，独立暂排正式版本。摘要的AUROC按正式10%协议保留，不移植旧v1较高数字。Jun为IHPC而无稳定个人标识，个人身份仍未核，不凭机构差异判另一同名；原25/正式35作者及整稿差异不覆盖。出版社coredata标Full OA，与旧EuropePMC非OA标志矛盾；指定Lancet全文/PDF均403、未取正文，不能写成必付费。医学综述正式候选只有出版社coredata、指定页面403，仍未决；三当前arXiv API（MerMED/综述/AdvMIM）仍v1且无正式DOI/reference。UEMM正式pending保持，但未来仅核公开正式文献，代码/实际像素/模拟器检查不再作为目录完成条件；历史源表保留。
 
+RSLRNTF ICIP2018作者单页海报全部内容已读，新增Fig1原框架及海报版本；正式五页3219–3223未读，全文计数不升级。直接HSI块项分解为低秩空间编码矩阵与谱原子，重加权L1、非负及避平凡解项分别记录；乘法更新的辅助变量/µ、秩和参数缺口不猜补。Table1三噪声档MPSNR43.87/40.01/37.21在列示对照中最高，Urban第208带只有定性，无真实数值或效率证据；σ列头原写Noise variance，模拟数据名/波段及分布未给。海报三作者与Crossref相同、Jun为Griffith；修正旧@article为会议BibTeX并保留注册题名Reweighed。五引文无目标Jun，一TDL已录且现有31带CAVE证据支持HSI，不能凭multispectral题名排除；四缺失仅书目留待作者后领域核验，其中JSTARS不在白名单、要合格arXiv才可新收录。无官方代码URL，作者主页不当代码来源。
+
 ## 下一步
 
 1. 优先查漏并完成来源交叉核对：其余姓名变体及arXiv无谱词/其他拼写查询与reflectance宽词形机制边界、DBLP/Scholar/arXiv差集、两条来源外直接HSI的合格版本及共同作者CV候选；机构个人目录已完成本次387条快照，不反复拉取同一快照；区分已发表、预印本、在审线索，按书目与明确证据去重。
@@ -136,6 +138,7 @@ MerMED正式DOI10.1016/j.landig.2026.101007的PubMed所载作者原摘要五节�
 
 ## 证据与归档
 
+- [RSLRNTF完整作者海报、原框架与引用书目](sources/jun-zhou-icip-reweighted-poster-reading-2026-10-12.json)、[原始访问](sources/jun-zhou-icip-reweighted-poster-reading-2026-10-12-access.json)：单页海报全部读完，正式五页未读，不升级全文。
 - [MerMED正式完整摘要与公开访问、医学版本续核](sources/jun-zhou-medical-formal-abstracts-2026-10-12.json)、[原始访问](sources/jun-zhou-medical-formal-abstracts-2026-10-12-access.json)：正式摘要范围独立暂排、非全文；医学综述正式仍未决，UEMM后续只核公开文献。
 - [光谱三维综述固定v1全文、引文与正式题名查找](sources/jun-zhou-spectral3d-review-reading-2026-10-12.json)、[原始访问](sources/jun-zhou-spectral3d-review-reading-2026-10-12-access.json)：9页全文/一原分类图，四作者引文已有目录，另两IJCAI官方摘要候选。
 - [SPECIAL固定v3全文、分版作者与引用代理范围](sources/jun-zhou-special-v3-reading-2026-10-12.json)、[原始访问](sources/jun-zhou-special-v3-reading-2026-10-12-access.json)：13页全文/一原图，v1仅首页、代理v3局部选读。
