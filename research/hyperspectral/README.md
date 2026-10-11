@@ -12,7 +12,7 @@
 
 `collections` 明确保存 `hs3d` 与 `hyperspectral` 成员关系。新普通高光谱论文只写 `hyperspectral`，不写三维 `track` 或 `scope`。原 214 篇成员和出版事实在 `legacy-topic-baseline.json` 留有迁移前快照；校验对比成员、题名、作者、版本年份、场所、分类、范围、链接、DOI 和引用，防止总库影响三维统计。
 
-总库的二维高光谱成像、处理、学习及应用均正常收录。多光谱或基础工作需要明确关系证据，记录 `library.relation` 与 `relationNote`；不能因 spectral 字样自动收录。图拉普拉斯谱、纯频域和泛指 broad-spectrum 的论文需逐篇排除。
+自2026-10-11本次范围调整起，新调研只收录直接研究高光谱采集、成像、重建、处理、学习或应用的论文，不再以“多光谱关联”收录纯多光谱研究。高光谱与RGB/多光谱融合若直接处理或重建高光谱数据，仍属于高光谱研究。仅因 spectral、遥感、同作者或通用基础关系不能收录；图拉普拉斯谱、纯频域和泛指 broad-spectrum 的论文需逐篇排除。历史来源快照与既有目录中的旧范围条目保留原始关系和核验状态，当前数量包含这些旧范围记录。
 
 `libraryCategories` 是阅读中形成的稳定 ID 标签，维度为任务、方法或应用；定义、证据条目、暂定状态和历史保留在目录。新增论文可 `categoryIds: []`，并标为 `classificationStatus: pending`。改名保留 ID；合并或拆分在 `history` 记录日期、理由和目标 ID，再逐篇复核。
 
