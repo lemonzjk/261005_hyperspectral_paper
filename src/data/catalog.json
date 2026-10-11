@@ -24610,10 +24610,10 @@
       "input": "无异常/背景先验的真实与合成高光谱影像；摘要未给出具体传感器与数据集名称。",
       "output": "异常目标检测结果/异常图；具体阈值与指标待全文。",
       "mechanism": "先用NSPD分解多尺度子带，再按同一波段不同尺度邻域系数相关性预测背景，并用改进核非锐化掩蔽滤波器降低异常数据影响；最后在特征空间运行RX算子。",
-      "readingNote": "Crossref核对正式DOI书目；OpenAlex公开摘要索引重建原摘要，属于二级摘要证据。已读摘要，不等同出版社全文；摘要提到真实与合成数据及RX对比，未补具体数据集、参数或性能数字。",
+      "readingNote": "Crossref核对正式DOI书目；此前使用OpenAlex公开摘要索引重建原摘要。本轮Griffith机构个人目录linkedTo公开API取得同一原摘要，升级为可核验的主要机构来源；已读摘要，未取得IEEE全文。真实/合成数据和RX对比已确认，具体数据集、参数及性能数字仍未核。机构个人关联与ORCID支持归属，但本条authors没有resolvedUser，单篇正式作者机构仍待核。",
       "paper": "https://doi.org/10.1109/ICICEE.2012.350",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified_secondary_index",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "abstract_verified_primary_institution",
       "citation": "@inproceedings{nsp_kum_anomaly_icicee_2012,\n  title = {Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image},\n  author = {Huixin Zhou and Shenghui Rong and Hanlin Qin and Rui Lai and Jun Zhou},\n  booktitle = {2012 International Conference on Industrial Control and Electronics Engineering},\n  year = {2012},\n  pages = {1320--1323},\n  doi = {10.1109/ICICEE.2012.350}\n}\n",
       "library": {
         "categoryIds": [],
@@ -24626,7 +24626,7 @@
         "datasets": "摘要仅称真实与合成高光谱数据；具体数据集待全文。",
         "experimentSetting": "摘要级核验：真实与合成高光谱数据，并与经典RX比较；参数、指标和划分待全文。",
         "conclusions": "摘要报告相较经典RX有较好检测表现和较低虚警；不外推具体数值。",
-        "limitations": "仅公开二级摘要与正式书目，未取得IEEE全文；不补具体数据集、参数、阈值、图版或代码。",
+        "limitations": "已核正式书目及机构公开原摘要，未取得IEEE全文或框架图；具体数据集、参数、阈值、图版、代码和单篇正式作者机构留待核验。",
         "dataLinks": [],
         "evidence": [
           {
@@ -24663,6 +24663,15 @@
               "公开摘要正文（按倒排索引位置重建）",
               "摘要级方法、数据范围和结论"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/api/publications/linkedTo",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith主要机构来源原摘要；不是全文/作者首页机构核验",
+            "supports": [
+              "实际高光谱异常检测，NSPD多尺度、核非锐化背景预测和RX；与既有二级摘要方法一致",
+              "个人profile7205关联387条之一，公开POST只读检索请求与原响应存档见jun-zhou-griffith-profile-2026-10-11-access.json；linkedObjectIds/users含7205，authors未给resolvedUser，正式单篇机构待核"
+            ]
           }
         ],
         "versions": [
@@ -24679,9 +24688,9 @@
       },
       "frameworkFigureSearch": {
         "status": "needs_access",
-        "note": "题名与精确DOI/目录已核；IEEE入口202，PDF未取得，未核原摘要或图版。继续找公开原稿，不借其他NSCT方法图。",
-        "sourceUrl": "https://ieeexplore.ieee.org/document/6322639/",
-        "checkedAt": "2026-10-09"
+        "note": "主要机构原摘要已取得；IEEE全文与原图仍未取得，不借其他NSCT方法图。机构条目未提供repositoryPdfUrl。",
+        "sourceUrl": "https://experts.griffith.edu.au/api/publications/linkedTo",
+        "checkedAt": "2026-10-11"
       }
     },
     {

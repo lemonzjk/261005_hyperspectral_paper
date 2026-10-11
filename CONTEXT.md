@@ -24,7 +24,7 @@
 - 出版来源112种旧写法规范为69种；旧URL别名自动恢复。11主要任务组、细标签折叠/搜索、多标签并集与去重组计数；作者姓名匹配、URL恢复及SVG/BibTeX导出保留。
 - 来源范围（白名单顶会顶刊272/arXiv17/白名单外101）与阅读深度、资料状态独立筛选，URL恢复、导出使用同一结果；资料状态依据已记录正文/原图证据，不以PDF链接推断已读，不把原图来源受限当全文付费。
 - CVPR/ICCV/NeurIPS/ICML等已有指定查询闭环，不是领域全量；历史普通会议搜索归档，当前矩阵仅白名单，见coverage.md。
-- 本轮validate、build及桌面/手机浏览器检查通过：来源筛选/交集/清除、URL恢复、作者181条、跨集合返回、删除条目旧链接和BibTeX/SVG导出；此前分类、资料、详情及专题资源检查通过。
+- 最近网站改动validate、build及桌面/手机浏览器检查通过：来源筛选/交集/清除、URL恢复、作者181条、跨集合返回、删除条目旧链接和BibTeX/SVG导出；此前分类、资料、详情及专题资源检查通过。
 - dev可上传/替换原图≤10MB，保留历史；FVMGN补图待核。
 
 ## 关键文件与下一步
@@ -33,5 +33,5 @@
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。124摘要/57全文；ORCID1、DBLP10、Scholar8、arXiv8待核有重叠，CV3未确认发表，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
-- 姓名变体Zhou+任务词101条：23已映射/78其他姓名；缩写两查询0条。weed短题名ORCID归并；三篇HSI–LiDAR四版本29页及4原图已补，HSLiNets跨文关系待。
+- Griffith个人profile7205完整387关联项，175源项匹配168目录ID，11继承未决；另Dualmamba（IGARSS）/土壤碳SSTR（SSRN）2直接HSI来源外候选，指定arXiv查询无对应版本。目录快照闭环不代表作者全集，75已录HSI有PDF链接、31仍摘要级；NSP/KUM补机构原摘要、单篇机构待核。姓名变体/weed及HSI–LiDAR证据保留，HSLiNets跨文关系待。
 - 作者专项后按白名单推进全领域；WHISPERS/IGARSS等旧候选不再作普通总库扩充目标。可获取资料继续补齐，受限项注明原因。
