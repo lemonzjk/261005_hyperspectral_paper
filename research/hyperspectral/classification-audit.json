@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-11",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "保留既有分类审计及逐项来源证据，不代表所有论文全文已读。本次续核MFTNet VoR全文，确认异常检测并纠正空间高低频为波长频域相似性的错配；历史SSIT/ADLKAN等来源独立保留。",
+  "scope": "保留既有逐项来源分类审计，不代表所有论文全文已读。UBSTrack接受稿全文确认高光谱跟踪与真实子集选带，保留两任务；RGB UAV仅补充展示，AM与VoR阅读分开。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -271,7 +271,8 @@
     "zhou-13-hsi-2026",
     "zhou-29-hsi-2025",
     "zhou-22-hsi-2025",
-    "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025"
+    "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025",
+    "zhou-38-hsi-2025"
   ],
   "sourceChecks": [
     {
@@ -951,6 +952,14 @@
       "level": "VoR全文分类核验",
       "supports": [
         "VoR全文确认高光谱像元异常检测；MSFDM是潜在空间特征4/5尺度池化差分，不符合频域光谱相似性类别的波长曲线DFT定义。只保留hyperspectral-anomaly-detection；中间重建不另立复原任务，attention不自动当完整Transformer。"
+      ]
+    },
+    {
+      "paperId": "zhou-38-hsi-2025",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+      "level": "接受稿全文分类核验",
+      "supports": [
+        "AM全文直接确认光学高光谱视频单目标时序跟踪和真实Top3子集选带，保留hyperspectral-target-tracking/spectral-band-selection。中间重建仅辅助训练，不另加复原任务；RGB UAV演示不改HSI主实验身份或扩成无人机高光谱应用。"
       ]
     }
   ]

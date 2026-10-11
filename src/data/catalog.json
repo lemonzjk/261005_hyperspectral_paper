@@ -37944,7 +37944,7 @@
     },
     {
       "id": "zhou-38-hsi-2025",
-      "shortTitle": "UBSTrack: Unified Band Selection and Multimodel Ense",
+      "shortTitle": "UBSTrack",
       "title": "UBSTrack: Unified Band Selection and Multimodel Ensemble for Hyperspectral Object Tracking",
       "authors": "Mohammad Aminul Islam, Jun Zhou, Wangzhi Xing, Yongsheng Gao, Kuldip K. Paliwal",
       "year": 2025,
@@ -37958,29 +37958,29 @@
       "doi": "10.1109/tgrs.2025.3571603",
       "representation": "高光谱目标跟踪：局部/全局注意力统一选择任意波段数中的三个信息波段生成伪彩色输入，再用多模型集成按候选与历史帧相似度选结果。",
       "tags": [],
-      "summary": "UBSTrack 将统一波段选择与多模型集成结合：局部和全局注意力从任意波段数中选出三个信息波段形成伪彩色图，再以外观模块比较候选框和历史帧，选择最优跟踪结果。",
-      "input": "不同传感器波段数的高光谱视频帧。",
-      "output": "高光谱视频目标位置和集成跟踪结果。",
-      "mechanism": "统一波段选择利用光谱独立性和局部/全局注意力压缩为三波段伪彩色输入；多模型集成的局部/全局外观模块按候选与历史相似度选输出。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要镜像核验；未阅读全文。",
-      "paper": "https://doi.org/10.1109/TGRS.2025.3571603",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "UBSTrack将高光谱视频按序列固定选择三条信息波段，生成伪彩色图；OSTrack与YOLOv7分别生成候选，用ResNet18及双层注意力比较候选和历史目标，选相似度最高的框，并以两路IoU之和控制历史更新。HOT2024主表AUC .574、DP@20 .725、15.7 FPS；补充UAV演示仅RGB，不能作为HSI无人机验证。",
+      "input": "HOT2024高光谱视频帧H×W×B，nir/rednir/vis分别25/15/16带；UBS输出三波段伪彩色帧供跟踪器/检测器输入，历史目标外观用于候选选择。补充UAV123为RGB视频。",
+      "output": "逐帧单目标位置/边界框和更新后的历史目标缓冲；不是多目标身份关联或单帧语义分类。重建HSI用于选带训练，不另作独立图像复原输出。",
+      "mechanism": "AM §III：各波段切片经两层Conv+ReLU，共享形式处理任意B；多头自注意力后两层DeConv（ReLU/Sigmoid）重建，按Eq4空间均值分数排名选Top3，主协议序列开始选带后固定。OSTrack＋YOLOv7产生1＋N1候选；候选/历史裁区经ResNet18、四patch、各两层自注意力与残差拼接，以余弦相似度的历史均值选框。GATE将最佳框与跟踪候选及检测候选的IoU相加，和大于τ=1.4才更新历史缓冲，最佳容量4。UBS损失0.5MSE＋0.5L1，外观损失为余弦triplet、margin=1。",
+      "readingNote": "免费Griffith接受稿17页全部逐页阅读，含机构封面＋16论文页；封面/每页标记AM，正式首页Jun Zhou为Griffith通讯作者。23式、10表、8图及75条引文目录已读，Fig1–3（PDF5–7/正文4–6）以300dpi原页完整裁取并视觉核验。实际只整理此AM，未称最终VoR或性能复现；10项作者引文已有目录，未重复入库或称原引文全文已读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
           "spectral-band-selection"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱目标跟踪。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "AM直接从HOT2024光学高光谱帧选择真实波段并跟踪目标，支持既有光谱跟踪＋选带任务。RGB UAV123只为补充演示，不将它标作HSI场景或新增应用标签。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何在不同波段数的高光谱视频中统一选带并集成多个跟踪模型？",
-        "datasets": "公开摘要明确面向不同波段数高光谱视频；具体数据集、划分和指标待全文核验。",
-        "experimentSetting": "统一三波段伪彩色输入与多模型候选选择；公开摘要报告复杂真实场景下跟踪性能。",
-        "conclusions": "公开摘要报告 UBSTrack 达到先进跟踪性能并降低数据复杂度；逐项指标、代码和消融待全文核验。",
-        "limitations": "摘要来自公开镜像；数据集名称、候选模型、代码入口和运行成本待核验。",
+        "datasets": "AM §IV-A/TableI：HOT2024由三XIMEA snapshot/IMEC传感器采集，25 FPS，原2D mosaic及HSI-FalseColor版本。nir25带训练70视频/13017帧、验证30/5049；rednir15带36/15386、20/8872；vis16带111/44776、67/37809；合计训练217/73179、验证117/51730。未列独立test集合或波长范围。§IV-G/Fig8额外UAV123 RGB仅S1701/S1601/S0310定性演示，非HSI UAV。",
+        "experimentSetting": "AM §IV-A：i7-12700、32GB RAM、RTX A4000 16GB。OSTrack沿用原实现；YOLOv7按Hy-Tracker训练说明，具体训练超参未在本文补全。UBS与外观模块Adam、lr=.001、100epochs；重建MSE/L1等权.5，triplet margin1。OPE success AUC、DP@20像素/precision及FPS；10 RGB基线在HSI-FalseColor、7 HOT基线，主表列各设备，HOT多为不同GPU，不能作同硬件纯算法速度比较。序列固定三带、历史4帧、两路IoU和阈值1.4；未说明独立参数选择集合、留出新传感器或每类单独指标。",
+        "conclusions": "AM TableII：UBSTrack AUC=.574、DP@20=.725、15.7FPS；SeqTrack .528/.691、MMF-Net .522/.683、Trans-DAT .450/.587/124.8FPS（RTX4090），主表精度最好但非最快。TableIII/IV的camera motion、out-of-view、reflection不占优，IPR precision .760略低GRM .761；不称14属性全胜。TableVI固定选带.574/.725/15.7FPS，逐帧选带.568/.722/8.9FPS；TableVIII YOLO .484/.620、OSTrack .520/.661。TableIX历史容量4及TableX IoU和1.4最高；UAV补充只有定性RGB例图，S0310帧67/85略有漂移。",
+        "limitations": "只实际核AM而非最终排版。主HSI实验同HOT2024三传感器，任意B架构不证明未知传感器/独立跨库泛化；UAV123仅RGB，不能当HSI无人机验证。选带/缓冲/门控消融未解释独立验证划分；FPS主表HOT设备不同、15.7低于采集25FPS，不称所有场景实时保证。Eq4以Self-Attention输出空间均值表示选带分数，特征通道如何化标量未说明；Eq8把ResNet18特征写H×W×3，Eq18印成max(PDj,Pbest)未写IoU但文字为IoU，Fig3额外乘法与文字式未完全对应，按原文保留不补实现。SST-Net对应ref40实际是2010 Kalman多目标论文；TableV标题Top3/正文Top5伪彩图与列名frame buffer错位，TableIX才为历史容量。仅记录代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -38000,6 +38000,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith公开接受稿17页逐页全文与原图核验",
+            "supports": [
+              "Griffith Jun Zhou通讯作者、接受稿/DOI/同题名版本关系",
+              "§III/Fig1–3实际选三带、OSTrack/YOLOv7候选和历史外观/GATE",
+              "TableI–X数据划分、主表/属性负例、固定/动态选带和门控消融",
+              "§IV-G与Fig8为RGB UAV而非高光谱无人机实验；公式/引用边界"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+            "checkedAt": "2026-10-11",
+            "level": "接受稿全文分类核验",
+            "supports": [
+              "AM全文直接确认光学高光谱视频单目标时序跟踪和真实Top3子集选带，保留hyperspectral-target-tracking/spectral-band-selection。中间重建仅辅助训练，不另加复原任务；RGB UAV演示不改HSI主实验身份或扩成无人机高光谱应用。"
+            ]
           }
         ],
         "versions": [
@@ -38009,12 +38028,113 @@
             "url": "https://doi.org/10.1109/tgrs.2025.3571603",
             "doi": "10.1109/tgrs.2025.3571603",
             "year": 2025,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI书目；同DOI的Griffith接受稿17页已读，不表示最终VoR已读。"
+          },
+          {
+            "id": "zhou-38-hsi-2025-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+            "doi": "10.1109/tgrs.2025.3571603",
+            "year": 2025,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面及各页明确AM、未最终编辑；17页全部阅读，Fig1–3保留原图。原题名Multi-Model为同DOI写法，非独立论文。"
           }
         ],
-        "methodFamilyId": "zhou-2025-title-38"
+        "methodFamilyId": "zhou-2025-title-38",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM全文直接确认光学高光谱视频单目标时序跟踪和真实Top3子集选带，保留hyperspectral-target-tracking/spectral-band-selection。中间重建仅辅助训练，不另加复原任务；RGB UAV演示不改HSI主实验身份或扩成无人机高光谱应用。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "03c9b56aed6acdf787cb9b3a41a3eedfeaf5d56f349eb60618e9da848ddeb400",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_38_hsi_2025, title = {UBSTrack: Unified Band Selection and Multimodel Ensemble for Hyperspectral Object Tracking}, author = {Mohammad Aminul Islam and Jun Zhou and Wangzhi Xing and Yongsheng Gao and Kuldip K. Paliwal}, year = {2025}, doi = {10.1109/tgrs.2025.3571603}\n}\n"
+      "citation": "@article{zhou_38_hsi_2025, title = {UBSTrack: Unified Band Selection and Multimodel Ensemble for Hyperspectral Object Tracking}, author = {Mohammad Aminul Islam and Jun Zhou and Wangzhi Xing and Yongsheng Gao and Kuldip K. Paliwal}, year = {2025}, doi = {10.1109/tgrs.2025.3571603}\n}\n",
+      "code": "https://github.com/aamin0102/UBSTrack/",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+          "figureLabel": "Fig. 1",
+          "caption": "UBSTrack接受稿：UBS三带伪彩色、跟踪/检测候选、历史外观相似度选框与GATE更新。",
+          "page": 5,
+          "verificationNote": "Griffith接受稿PDF第5页/正文第4页；300dpi原页裁取，全部模块、图例及完整原图注已视觉核对，未重绘。仅本地资料整理，原IEEE版权声明保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              191,
+              225,
+              2355,
+              1217
+            ]
+          },
+          "path": "figures/zhou-38-hsi-2025/framework-fig1-griffith-am.png",
+          "width": 2164,
+          "height": 992,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "919b7bbafbdba0ae0ec0d8ebee785eaa72c7a3ab8031fe938b628367ac313223",
+          "attribution": "Mohammad Aminul Islam, Jun Zhou, Wangzhi Xing, Yongsheng Gao, Kuldip K. Paliwal · TGRS 2025 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+          "figureLabel": "Fig. 2",
+          "caption": "UBSTrack接受稿：逐带编码、全局自注意力与重建训练，按波段分数选Top3伪彩图。",
+          "page": 6,
+          "verificationNote": "Griffith接受稿PDF第6页/正文第5页；300dpi原页裁取，全部模块、图例及完整原图注已视觉核对，未重绘。仅本地资料整理，原IEEE版权声明保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              191,
+              225,
+              1263,
+              1350
+            ]
+          },
+          "path": "figures/zhou-38-hsi-2025/framework-fig2-griffith-am.png",
+          "width": 1072,
+          "height": 1125,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "9bb55c84dc031c143d7131293836dbbe31fb031f9c5ded178efab032a336b9eb",
+          "attribution": "Mohammad Aminul Islam, Jun Zhou, Wangzhi Xing, Yongsheng Gao, Kuldip K. Paliwal · TGRS 2025 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+          "figureLabel": "Fig. 3",
+          "caption": "UBSTrack接受稿：ResNet18/四patch/两层注意力和余弦相似度的外观模块。",
+          "page": 7,
+          "verificationNote": "Griffith接受稿PDF第7页/正文第6页；300dpi原页裁取，全部模块、图例及完整原图注已视觉核对，未重绘。仅本地资料整理，原IEEE版权声明保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              191,
+              233,
+              1259,
+              984
+            ]
+          },
+          "path": "figures/zhou-38-hsi-2025/framework-fig3-griffith-am.png",
+          "width": 1068,
+          "height": 751,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "cc5d26b942d32ae3c3573e27ca8edf1547d9ae491aea22ba347cfdc07a8d0c54",
+          "attribution": "Mohammad Aminul Islam, Jun Zhou, Wangzhi Xing, Yongsheng Gao, Kuldip K. Paliwal · TGRS 2025 · Accepted Manuscript · © IEEE"
+        }
+      ]
     },
     {
       "id": "zhou-5-hsi-2026",

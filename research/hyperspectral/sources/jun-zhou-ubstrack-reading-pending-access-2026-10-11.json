@@ -1,0 +1,495 @@
+{
+  "checkedAt": "2026-10-11",
+  "scope": "先续核两项未决正式书目/访问，再整理一份已录直接HSI免费接受稿；没有代码检查。",
+  "accessFile": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 1,
+  "newFullTextReadingCount": 1,
+  "pdfPagesRead": 17,
+  "figuresAdded": 3,
+  "materialRecord": {
+    "file": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-ubstrack-griffith.pdf",
+    "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+    "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+    "status": 200,
+    "contentType": "application/pdf;charset=UTF-8",
+    "bytes": 2782402,
+    "sha256": "8b8bbf6ce513407d6e83bbbf23683da946935089f3b1543c5324a62d8a489513",
+    "pdfDownloaded": true,
+    "pageCount": 17,
+    "pageTextFile": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-ubstrack-pages.json",
+    "version": "Accepted Manuscript (AM), 1机构封面＋16作者论文页",
+    "readingProgress": "full_text_read",
+    "readPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  "ubstrack": {
+    "paperId": "zhou-38-hsi-2025",
+    "method": "AM §III：各波段切片经两层Conv+ReLU，共享形式处理任意B；多头自注意力后两层DeConv（ReLU/Sigmoid）重建，按Eq4空间均值分数排名选Top3，主协议序列开始选带后固定。OSTrack＋YOLOv7产生1＋N1候选；候选/历史裁区经ResNet18、四patch、各两层自注意力与残差拼接，以余弦相似度的历史均值选框。GATE将最佳框与跟踪候选及检测候选的IoU相加，和大于τ=1.4才更新历史缓冲，最佳容量4。UBS损失0.5MSE＋0.5L1，外观损失为余弦triplet、margin=1。",
+    "datasets": "AM §IV-A/TableI：HOT2024由三XIMEA snapshot/IMEC传感器采集，25 FPS，原2D mosaic及HSI-FalseColor版本。nir25带训练70视频/13017帧、验证30/5049；rednir15带36/15386、20/8872；vis16带111/44776、67/37809；合计训练217/73179、验证117/51730。未列独立test集合或波长范围。§IV-G/Fig8额外UAV123 RGB仅S1701/S1601/S0310定性演示，非HSI UAV。",
+    "experiments": "AM §IV-A：i7-12700、32GB RAM、RTX A4000 16GB。OSTrack沿用原实现；YOLOv7按Hy-Tracker训练说明，具体训练超参未在本文补全。UBS与外观模块Adam、lr=.001、100epochs；重建MSE/L1等权.5，triplet margin1。OPE success AUC、DP@20像素/precision及FPS；10 RGB基线在HSI-FalseColor、7 HOT基线，主表列各设备，HOT多为不同GPU，不能作同硬件纯算法速度比较。序列固定三带、历史4帧、两路IoU和阈值1.4；未说明独立参数选择集合、留出新传感器或每类单独指标。",
+    "results": "AM TableII：UBSTrack AUC=.574、DP@20=.725、15.7FPS；SeqTrack .528/.691、MMF-Net .522/.683、Trans-DAT .450/.587/124.8FPS（RTX4090），主表精度最好但非最快。TableIII/IV的camera motion、out-of-view、reflection不占优，IPR precision .760略低GRM .761；不称14属性全胜。TableVI固定选带.574/.725/15.7FPS，逐帧选带.568/.722/8.9FPS；TableVIII YOLO .484/.620、OSTrack .520/.661。TableIX历史容量4及TableX IoU和1.4最高；UAV补充只有定性RGB例图，S0310帧67/85略有漂移。",
+    "limitations": "只实际核AM而非最终排版。主HSI实验同HOT2024三传感器，任意B架构不证明未知传感器/独立跨库泛化；UAV123仅RGB，不能当HSI无人机验证。选带/缓冲/门控消融未解释独立验证划分；FPS主表HOT设备不同、15.7低于采集25FPS，不称所有场景实时保证。Eq4以Self-Attention输出空间均值表示选带分数，特征通道如何化标量未说明；Eq8把ResNet18特征写H×W×3，Eq18印成max(PDj,Pbest)未写IoU但文字为IoU，Fig3额外乘法与文字式未完全对应，按原文保留不补实现。SST-Net对应ref40实际是2010 Kalman多目标论文；TableV标题Top3/正文Top5伪彩图与列名frame buffer错位，TableIX才为历史容量。仅记录代码链接。",
+    "inventory": {
+      "pdfPages": 17,
+      "articlePages": 16,
+      "equations": 23,
+      "tables": 10,
+      "figures": 8,
+      "references": 75
+    },
+    "codeUrl": "https://github.com/aamin0102/UBSTrack/",
+    "codeLinkSource": {
+      "pdfPage": 2,
+      "annotationUri": "https://github.com/aamin0102/UBSTrack/",
+      "boundary": "仅从原论文链接提取，未访问代码仓库、下载或检查代码。"
+    },
+    "frameworkFigures": [
+      {
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+        "figureLabel": "Fig. 1",
+        "caption": "UBSTrack接受稿：UBS三带伪彩色、跟踪/检测候选、历史外观相似度选框与GATE更新。",
+        "page": 5,
+        "verificationNote": "Griffith接受稿PDF第5页/正文第4页；300dpi原页裁取，全部模块、图例及完整原图注已视觉核对，未重绘。仅本地资料整理，原IEEE版权声明保留在PDF。",
+        "extraction": {
+          "method": "pdf_page_crop",
+          "rendering": "PyMuPDF Matrix(300/72,300/72)",
+          "pixelBox": [
+            191,
+            225,
+            2355,
+            1217
+          ]
+        },
+        "path": "figures/zhou-38-hsi-2025/framework-fig1-griffith-am.png",
+        "width": 2164,
+        "height": 992,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-10-11",
+        "sha256": "919b7bbafbdba0ae0ec0d8ebee785eaa72c7a3ab8031fe938b628367ac313223",
+        "attribution": "Mohammad Aminul Islam, Jun Zhou, Wangzhi Xing, Yongsheng Gao, Kuldip K. Paliwal · TGRS 2025 · Accepted Manuscript · © IEEE"
+      },
+      {
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+        "figureLabel": "Fig. 2",
+        "caption": "UBSTrack接受稿：逐带编码、全局自注意力与重建训练，按波段分数选Top3伪彩图。",
+        "page": 6,
+        "verificationNote": "Griffith接受稿PDF第6页/正文第5页；300dpi原页裁取，全部模块、图例及完整原图注已视觉核对，未重绘。仅本地资料整理，原IEEE版权声明保留在PDF。",
+        "extraction": {
+          "method": "pdf_page_crop",
+          "rendering": "PyMuPDF Matrix(300/72,300/72)",
+          "pixelBox": [
+            191,
+            225,
+            1263,
+            1350
+          ]
+        },
+        "path": "figures/zhou-38-hsi-2025/framework-fig2-griffith-am.png",
+        "width": 1072,
+        "height": 1125,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-10-11",
+        "sha256": "9bb55c84dc031c143d7131293836dbbe31fb031f9c5ded178efab032a336b9eb",
+        "attribution": "Mohammad Aminul Islam, Jun Zhou, Wangzhi Xing, Yongsheng Gao, Kuldip K. Paliwal · TGRS 2025 · Accepted Manuscript · © IEEE"
+      },
+      {
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/a5409d3f-9e87-4f83-868a-b9fec0fe5166/content",
+        "figureLabel": "Fig. 3",
+        "caption": "UBSTrack接受稿：ResNet18/四patch/两层注意力和余弦相似度的外观模块。",
+        "page": 7,
+        "verificationNote": "Griffith接受稿PDF第7页/正文第6页；300dpi原页裁取，全部模块、图例及完整原图注已视觉核对，未重绘。仅本地资料整理，原IEEE版权声明保留在PDF。",
+        "extraction": {
+          "method": "pdf_page_crop",
+          "rendering": "PyMuPDF Matrix(300/72,300/72)",
+          "pixelBox": [
+            191,
+            233,
+            1259,
+            984
+          ]
+        },
+        "path": "figures/zhou-38-hsi-2025/framework-fig3-griffith-am.png",
+        "width": 1068,
+        "height": 751,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-10-11",
+        "sha256": "cc5d26b942d32ae3c3573e27ca8edf1547d9ae491aea22ba347cfdc07a8d0c54",
+        "attribution": "Mohammad Aminul Islam, Jun Zhou, Wangzhi Xing, Yongsheng Gao, Kuldip K. Paliwal · TGRS 2025 · Accepted Manuscript · © IEEE"
+      }
+    ],
+    "protocolVisualEvidenceFile": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-protocol-results-contact.png"
+  },
+  "citationCrosscheck": [
+    {
+      "referenceNumber": 10,
+      "catalogId": "material-object-tracking-hsi-tip-2020",
+      "title": "Material Based Object Tracking in Hyperspectral Videos",
+      "doi": "10.1109/TIP.2020.2965302",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 11,
+      "catalogId": "zhou-47-hsi-2024",
+      "title": "Hy-Tracker: A Novel Framework for Enhancing Efficiency and Accuracy of Object Tracking in Hyperspectral Videos",
+      "doi": "10.1109/tgrs.2024.3418337",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 16,
+      "catalogId": "zhou-62-hsi-2023",
+      "title": "Background-Aware Band Selection for Object Tracking in Hyperspectral Videos",
+      "doi": "10.1109/lgrs.2023.3326148",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 17,
+      "catalogId": "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
+      "title": "BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking",
+      "doi": "10.1109/icip40778.2020.9191105",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 18,
+      "catalogId": "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
+      "title": "Multi Modality Siamese Feature Fusion Transformer Tracker for Object Tracking from Hyperspectral Videos",
+      "doi": "10.1109/whispers61460.2023.10430985",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 19,
+      "catalogId": "zhou-67-hsi-2023",
+      "title": "SiamBAG: Band Attention Grouping-Based Siamese Object Tracking Network for Hyperspectral Videos",
+      "doi": "10.1109/tgrs.2023.3285802",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 36,
+      "catalogId": "hyperspectral-video-tracking-kcf-2018",
+      "title": "Object tracking in hyperspectral videos with convolutional features and kernelized correlation filter",
+      "doi": "10.1007/978-3-030-04375-9_26",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 39,
+      "catalogId": "zhou-82-hsi-2022",
+      "title": "Spatial–Spectral Weighted and Regularized Tensor Sparse Correlation Filter for Object Tracking in Hyperspectral Videos",
+      "doi": "10.1109/tgrs.2022.3215431",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 73,
+      "catalogId": "zhou-64-hsi-2023",
+      "title": "Learning a Deep Ensemble Network With Band Importance for Hyperspectral Object Tracking",
+      "doi": "10.1109/tip.2023.3263109",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    },
+    {
+      "referenceNumber": 74,
+      "catalogId": "zhou-53-hsi-2024",
+      "title": "Material-Guided Multiview Fusion Network for Hyperspectral Object Tracking",
+      "doi": "10.1109/tgrs.2024.3366536",
+      "basis": "AM所列题名（仅标点/大小写归一）、作者与来源和既有目录完全对应；不新增。",
+      "boundary": "引文目录实际读过，不表示引用的正文全文已读。"
+    }
+  ],
+  "pendingFormalFollowup": [
+    {
+      "objectId": 10344376,
+      "title": "A Frequency Decoupling Network for Semantic Segmentation of Remote Sensing Images",
+      "doi": "10.1109/TGRS.2025.3531879",
+      "decision": "pending",
+      "primaryAbstractFile": "jun-zhou-griffith-profile-2026-10-11-publications-0.json",
+      "resourceIndex": 32,
+      "abstractReading": "完整机构原摘要实际读过，但分别只写四/三基准、不列名称；frequency/spectral/channel不足证明光学HSI。",
+      "primaryMetadata": {
+        "title": [
+          "A Frequency Decoupling Network for Semantic Segmentation of Remote Sensing Images"
+        ],
+        "doi": "10.1109/tgrs.2025.3531879",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0576-3181",
+            "authenticated-orcid": false,
+            "given": "Xin",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "College of Computer Science and Software Engineering and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2175-9943",
+            "authenticated-orcid": false,
+            "given": "Feng",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer Science and Software Engineering and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-3332-9668",
+            "authenticated-orcid": false,
+            "given": "Anzhu",
+            "family": "Yu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Surveying and Mapping, Information Engineering University, Zhengzhou, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1862-2070",
+            "authenticated-orcid": false,
+            "given": "Xin",
+            "family": "Lyu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer Science and Software Engineering and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-8404-2464",
+            "authenticated-orcid": false,
+            "given": "Hongmin",
+            "family": "Gao",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer Science and Software Engineering and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisherUrl": "https://ieeexplore.ieee.org/document/10847802/",
+        "crossrefFile": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-fdnet-crossref.json"
+      },
+      "publisherAccess": {
+        "file": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-fdnet-ieee.html",
+        "url": "https://ieeexplore.ieee.org/document/10847802/",
+        "finalUrl": "https://ieeexplore.ieee.org/document/10847802/",
+        "status": 202,
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "finding": "Crossref原书目再次直接支持Jun Zhou的Griffith单位；IEEE正式页面返回202且正文0字节，不是论文全文、摘要或付费证明。保留范围未决，不按引文HSI题名外推本文贡献。"
+    },
+    {
+      "objectId": 9356923,
+      "title": "Semantic Segmentation of Remote Sensing Images by Interactive Representation Refinement and Geometric Prior-Guided Inference",
+      "doi": "10.1109/TGRS.2023.3339291",
+      "decision": "pending",
+      "primaryAbstractFile": "jun-zhou-griffith-profile-2026-10-11-publications-100.json",
+      "resourceIndex": 0,
+      "abstractReading": "完整机构原摘要实际读过，但分别只写四/三基准、不列名称；frequency/spectral/channel不足证明光学HSI。",
+      "primaryMetadata": {
+        "title": [
+          "Semantic Segmentation of Remote Sensing Images by Interactive Representation Refinement and Geometric Prior-Guided Inference"
+        ],
+        "doi": "10.1109/tgrs.2023.3339291",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-0576-3181",
+            "authenticated-orcid": false,
+            "given": "Xin",
+            "family": "Li",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "College of Computer and Information and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-2175-9943",
+            "authenticated-orcid": false,
+            "given": "Feng",
+            "family": "Xu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer and Information and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Fan",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer and Information and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-7885-3922",
+            "authenticated-orcid": false,
+            "given": "Yao",
+            "family": "Tong",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Artificial Intelligence and Information Technology, Nanjing University of Chinese Medicine, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-1862-2070",
+            "authenticated-orcid": false,
+            "given": "Xin",
+            "family": "Lyu",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "College of Computer and Information and the Key Laboratory of Water Big Data Technology of Ministry of Water Resources, Hohai University, Nanjing, China"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Jun",
+            "family": "Zhou",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "publisherUrl": "https://ieeexplore.ieee.org/document/10341333/",
+        "crossrefFile": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-gpinet-crossref.json"
+      },
+      "publisherAccess": {
+        "file": "jun-zhou-ubstrack-reading-pending-access-2026-10-11-gpinet-ieee.html",
+        "url": "https://ieeexplore.ieee.org/document/10341333/",
+        "finalUrl": "https://ieeexplore.ieee.org/document/10341333/",
+        "status": 202,
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "finding": "Crossref原书目再次直接支持Jun Zhou的Griffith单位；IEEE正式页面返回202且正文0字节，不是论文全文、摘要或付费证明。保留范围未决，不按引文HSI题名外推本文贡献。"
+    }
+  ],
+  "searchBoundary": "网页搜索工具404；按精确正式DOI读取Crossref注册书目与其IEEE primary页面，页面202/0字节。未重新请求既有仓库/旧arXiv零匹配，不进行代码搜索。",
+  "boundary": "UBSTrack仅此17页AM全部已读，不宣称VoR、引用正文、跨库泛化或实际性能复现。目录当前DBLP8/Scholar5/个人机构8未决集合重叠；作者目录尚未闭环。"
+}

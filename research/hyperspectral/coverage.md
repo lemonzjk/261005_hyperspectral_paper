@@ -187,6 +187,7 @@
 | Jun Zhou · DDFNet original abstract and official benchmarks | 2025 | DDFNet DOI10.1016/j.inffus.2025.103359、Vaihingen IRRG DSM、Potsdam IRRG RGB RGBIR DSM、LoveDA red green blue、GPINet、SAPNet remote sensing、frequency decoupling、DDFNet；一个已知正式DOI与三个官方数据定义；四GitHub指定仓库检索各per_page30，返回1/0/10/9，无超页集合；不是论文/作者全集。 | 未单列 / 1 / 1 | DDFNet正式DOI直接HSI范围暂排；DBLP9/Scholar7/个人机构10未决，目录未闭环 | DDFNet正式全文、具体RGB/MS选版和训练像素未取得；这些未知不构成已有三数据集范围的HSI歧义，新明确贡献可重审。；FDNet/GPINet/SAPNet未取得新的原稿/实际输入；不能凭同作者、频域/通道词或相似方法套用范围。；作者姓名变体、其他来源/正式版及CV3仍待；机构可获取HSI资料队列27继续。 |
 | Jun Zhou · SSIT VoR and two editorial access followups | 2025–2026 | SSIT DOI10.1016/j.srs.2025.100276、Hancock DOI10.1016/j.patcog.2026.114263、Transformer editorial DOI10.1016/j.inffus.2025.103112；一份15页VoR全文；两个已知DOI及WhiteRose两限定查询，无作者或领域全集声明。 | 未单列 / 3 / 3 | SSIT一份VoR升级和一原图；两编辑文章仍范围待核，作者目录未闭环 | DBLP9/Scholar7/个人机构10待核集合重叠，不相加为缺口。；两个编辑记录摘要/正文未取得，不将403或单次仓库零结果判为无免费版本。；原31机构资料队列现剩26项仍摘要级，姓名变体/正式版本和全领域矩阵继续。 |
 | Jun Zhou · FAT/SA-Net benchmark scope and MFTNet VoR | 2024–2025 | FAT DOI10.1109/IGARSS55030.2025.11313925、SA-Net DOI10.1109/IGARSS53475.2024.10640493、HTCD SUNet、MRCDD RACDNet、MFTNet DOI10.1016/j.jag.2025.104355；两个已知候选和四指定基准原定义；MFTNet20页全读，RGB数据原稿下载43页/实际只读3页；指定arXiv两查询各0。 | 未单列 / 3 / 3 | FAT/SA-Net直接HSI范围暂排，MFTNet一VoR/三原图；目录未闭环 | 当前DBLP8/Scholar5/个人机构8未决有重叠，不相加。；FAT/SA-Net整篇正文和具体RGB采样未知；新明确HSI贡献可重审，未知选版不伪装为HSI范围未决。；机构资料待办剩25项；其他作者来源、正式版、姓名变体及全领域矩阵继续。 |
+| Jun Zhou · UBSTrack AM and unresolved formal access | 2024–2025 | FDNet DOI10.1109/TGRS.2025.3531879、GPINet DOI10.1109/TGRS.2023.3339291、UBSTrack DOI10.1109/TGRS.2025.3571603、HOT2024、video-wise band selection、UAV123 RGB；两精确正式记录与一份17页AM，非年度或作者全集检索；10项作者引文目录已读并映射，不表示各引文正文阅读。 | 未单列 / 3 / 3 | UBSTrack接受稿全文/三原图；两正式候选范围仍待核 | DBLP8/Scholar5/机构8未决集合重叠；两IEEE主页面202/0字节，不据此断言必须付费或没有公开正文。；剩24项机构资料待办；作者目录/正式版本与姓名变体继续，代码只链接。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -850,6 +851,8 @@
   阅读边界：SSIT VoR15页全读、原Fig.1一张；四既有作者引文去重不表示原论文全文已读。两编辑文章仅书目/访问记录，范围未决；官方代码仅记录链接。
 - 2026-10-11 / jun-zhou-fat-sanet-scope-mftnet-reading-2026-10-11：新增 0，更新 1，去重 1，排除 2，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：MFTNet VoR20页全文/三原图；FAT/SA-Net仅完整原摘要和全部命名基准定义交叉，数据原稿18/25页下载只实际读3页；引文已录去重不表示原文阅读。
+- 2026-10-11 / jun-zhou-ubstrack-reading-pending-access-2026-10-11：新增 0，更新 1，去重 10，排除 0，待处理 2。更新与去重可能重叠，不能相加为新增。
+  阅读边界：UBSTrack接受稿17页全读、三原方法图；UAV补充为RGB。10条作者引文目录去重不表示被引全文阅读；两正式候选仅书目/页面访问，范围仍待。
 
 </details>
 
