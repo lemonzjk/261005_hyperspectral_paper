@@ -38788,31 +38788,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3449130",
-      "representation": "高光谱去噪：在 U-Net 中嵌入秩最小化模块，于小波域低频特征执行奇异值阈值，并迭代融合中间去噪结果。",
+      "representation": "ILRNet高光谱去噪：3D U-Net粗估计、空间小波低频矩阵可学习SVT、逐带权重的九步残差细化。",
       "tags": [],
-      "summary": "ILRNet 把模型驱动的低秩先验嵌入数据驱动 U-Net：秩最小化模块在小波域对低频分量执行可学习奇异值阈值，迭代细化并融合中间结果以保留细节。",
-      "input": "合成或真实噪声高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "秩最小化模块将特征映射到小波域，对低频分量执行奇异值阈值；阈值参数自适应学习；迭代过程融合中间去噪影像和噪声输入。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要镜像核验；未阅读全文。",
-      "paper": "https://www.ablesci.com/scholar/paper?id=3DKONDJMr",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "ILRNet在3D U-Net粗估计解码器嵌入秩最小化模块，空间Haar小波低频特征按谱维展开为矩阵并学习奇异值阈值；再以逐带权重融合观测和中间结果进行迭代细化。固定2025 arXiv v1共15页全读，与2024 TGRS精确DOI对应；ICVL混合噪声及部分指标弱于对照，不将总体优势写成全面领先。",
+      "input": "带噪HSI Y∈R^(N×B)，N为空间像元数、B为谱带数；监督训练使用成对干净/人工带噪HSI。ICVL31带训练；测试包括31带ICVL、80带Pavia、166带EO-1与155带GF-5裁块。",
+      "output": "保持输入空间/谱维的去噪HSI X̂；没有地物分类、端元丰度或几何三维重建输出。",
+      "mechanism": "粗估计g为3D U-Net，编码通道16/32/64/128、解码64/32/16/1；RMM只嵌粗估计解码器。每特征通道做二维Haar空间DWT，将LL按B×(W/2·H/2)展开为矩阵，SVD后以ReLU(σi−sigmoid(d)σ1)阈值收缩；高频直接回传再逆DWT。SVD反传采用九阶Taylor截断近似。Eq3先Z=(1−λ1)Y+λ1X，再Xnew=(1−λ2)f(Z)+λ2X；各轮f为不共享参数的两级3D U-Net且不含RMM。两Λ模块取中心56²裁块，经三层2D下采样卷积与sigmoid输出逐带λ1/λ2；Frobenius/MSE监督。实际是谱低秩矩阵约束，不是t-SVD/Tucker张量分解，也未给明确优化算法展开对应。",
+      "readingNote": "固定2509.00356v1逐页15页全文、13式、15图、五表及65条书目已读；Fig1/p3和Fig2/p4两原框架含完整图注直接裁取。首页Griffith单位、末页履历和Crossref Jun Zhou ORCID确认目标作者；官方API精确journal DOI关联2024正式记录，2025预印本日期单列。模板页眉不当作VoR凭据，正式发表版仍未读。五条目标作者直接HSI引文均已录；通用图像恢复的J. Zhou未据缩写认定目标作者。所读PDF未列官方代码URL，不猜链接。",
+      "paper": "https://arxiv.org/abs/2509.00356v1",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "tensor-low-rank-learning"
+          "low-rank-matrix-factorization"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱影像去噪。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何利用高光谱低秩先验去噪并保留图像细节？",
-        "datasets": "公开摘要称覆盖合成和真实噪声去除；具体数据集、噪声设置和指标待全文核验。",
-        "experimentSetting": "U-Net、秩最小化/小波奇异值阈值模块和迭代细化联合；摘要报告先进性能。",
-        "conclusions": "公开摘要报告在合成和真实噪声去除上达到先进性能；逐项数值和消融待正式版核验。",
-        "limitations": "摘要来自公开镜像；正式版、代码、数据许可和跨噪声泛化待核验。",
+        "relationNote": "直接恢复带噪高光谱观测；RMM按谱维展开矩阵并做奇异值阈值，非张量分解或几何三维任务。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何将全局谱低秩先验嵌入可学习去噪器，并在逐轮细化中补回空间纹理且适应不同谱带噪声？",
+        "datasets": "ICVL随机100幅训练，64×64×31随机裁块；50幅测试由原1392×1300×31、400–700nm/10nm间隔裁为512²。Pavia City Center ROSIS-3、430–860nm，选干净200×200×80加噪，直接用ICVL模型测试。真实EO-1原400×1000×242、400–2500nm，测试200×400×166；GF-5 CapitalAirport原330带400–2500nm，测试300×300×155。真实两集没有干净真值，仅可视图及像元谱线比较。",
+        "experimentSetting": "§IV：Adam学习率1e-4，每20epoch减半，50epoch、batch8、RTX3090，最终九轮细化；不同噪声模式训练不同模型。非iid Gaussian各带σ随机均匀[0,15]/[0,55]/[0,95]；混合为[0,95]Gaussian加脉冲强度.1–.7、5–15%列条纹和deadline，后三者各作用1/3谱带；谱相关Gaussian参数β23.08/η.157。七传统与五神经基线共12；T3SC/TRQ3D/SST需31带，非31带测试拆成多个31带子块，末块/拼接细节未述。传统耗时在Xeon Silver4310@2.10GHz CPU，神经方法在RTX3090，不能当同设备比较。随机种子、重复次数与独立验证划分未给。",
+        "conclusions": "TableI ICVL按Gaussian15/55/95、Mixture、Corr顺序，ILRNet PSNR 51.22/46.88/45.46/39.06/47.80dB、SSIM .9945/.9886/.9853/.9227/.9890、SAM .0255/.0350/.0404/.1423/.0323。混合噪声PSNR低于TRQ3D39.73/SST39.22，SSIM/SAM弱于SST.9626/.0743；低噪声SAM弱于3DlogTNN.0150，相关噪声SSIM/SAM弱于SST.9904/.0258。TableIII Pavia对应PSNR47.45/41.52/41.80/36.17/41.41、SSIM.9965/.9880/.9895/.9653/.9875、SAM.0351/.0554/.0558/.0927/.0525；低噪声SSIM略弱MAC-Net.9966。TableII参数3.67M/时间2.12s，并非最小或最快；SST4.14M/1.83s。TableV Gaussian95加小波PSNR45.31升45.46dB；TableIV有RMM同条件SSIM.9853略弱无RMM.9854。",
+        "limitations": "只已读2025固定v1，不把相同题名/15页或LaTeX模板页眉当正式VoR；2024正式版未读、逐项版本差异未比较。真实EO-1/GF-5没有干净真值，视觉谱线不能当定量误差。按噪声模式分别训练，不证明单一盲去噪模型或未知混合泛化。不同谱带数基线需31带拆块，协议可能影响对照且余块处理未述。Fig11混合噪声PSNR/SSIM非单调、SAM随更多迭代总体变差；不照抄每轮/所有指标必改善，曲线未给完整精确数表。RMM并非所有指标都提升、耗时设备有CPU/GPU差异；原Pavia55/95 PSNR41.52/41.80保留，不人为重排。重复统计、验证、部分网络/阈值配置留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -38851,6 +38851,32 @@
               "Jun Zhou为Griffith作者",
               "同题名、同四作者与官方API精确DOI关联"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2509.00356v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v1逐页全文15页、原框架与实验表/书目",
+            "supports": [
+              "RMM明确每特征通道将LL展开为谱维×空间维矩阵并执行SVD/SVT，确认直接HSI去噪及低秩矩阵方法，移除无张量分解证据的tensor-low-rank-learning；迭代细化没有优化算法展开对应。",
+              "15页实际全文已读；原图直接裁取保留版本、图号、页码与图注。",
+              "方法、训练/测试、性能例外和协议缺失依据所读原稿；不通过代码补齐。"
+            ]
+          },
+          {
+            "url": "https://export.arxiv.org/api/query?id_list=2509.00356,2605.14239",
+            "checkedAt": "2026-10-12",
+            "level": "arXiv精确ID官方API当前版本元数据",
+            "supports": [
+              "当前最新v1；作者列表一致；首次/更新2025-08-30T04:34:43Z。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2024.3449130",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref精确正式书目与稳定作者ORCID",
+            "supports": [
+              "正式2024、TGRS62:1–15、四作者/题名/DOI一致；Jun Zhou ORCID0000-0001-5822-8233及Griffith单位确认目标身份。"
+            ]
           }
         ],
         "versions": [
@@ -38860,7 +38886,8 @@
             "url": "https://doi.org/10.1109/tgrs.2024.3449130",
             "doi": "10.1109/tgrs.2024.3449130",
             "year": 2024,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "2024 TGRS62:1–15正式记录，Crossref精确书目/目标ORCID与arXiv官方journal DOI相连；本批读取2025预印本v1，实际VoR未读。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "zhou-49-hsi-2024-arxiv-2509-00356-v1",
@@ -38873,12 +38900,82 @@
             "firstSubmittedAt": "2025-08-30T04:34:43Z",
             "updatedAt": "2025-08-30T04:34:43Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按精确DOI关联，不新增论文计数；该版本正文与正式版差异待核。 arXiv本版本题名：Iterative Low-rank Network for Hyperspectral Image Denoising。 API首次提交为2025-08-30，正式TGRS为2024，不按预印本ID重写正式年份。"
+            "relation": "固定v1共15页逐页全文及原框架已读，当前API最新仍v1。精确官方API journal DOI关联2024 TGRS；2025-08-30预印本提交日期独立保留，实际VoR未读，模板页眉不认定VoR。",
+            "readingProgress": "full_text_read"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-49"
+        "methodFamilyId": "zhou-2024-title-49",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "RMM明确每特征通道将LL展开为谱维×空间维矩阵并执行SVD/SVT，确认直接HSI去噪及低秩矩阵方法，移除无张量分解证据的tensor-low-rank-learning；迭代细化没有优化算法展开对应。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "caefc7ca274be38925a05d4fdf32c6261f02df0170699656dc70ffa8e9102956",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2509.00356v1"
+          ]
+        }
       },
-      "citation": "@article{zhou_49_hsi_2024, title = {Iterative Low-Rank Network for Hyperspectral Image Denoising}, author = {Jin Ye and Fengchao Xiong and Jun Zhou and Yuntao Qian}, year = {2024}, doi = {10.1109/tgrs.2024.3449130}\n}\n"
+      "citation": "@article{zhou_49_hsi_2024, title = {Iterative Low-Rank Network for Hyperspectral Image Denoising}, author = {Jin Ye and Fengchao Xiong and Jun Zhou and Yuntao Qian}, year = {2024}, doi = {10.1109/tgrs.2024.3449130}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2509.00356v1",
+          "figureLabel": "Figure 1",
+          "caption": "ILRNet固定v1原整体框架：低秩粗估计、逐带权重模块与不共享参数的迭代细化；保留完整原图注。",
+          "page": 3,
+          "verificationNote": "已目视核对实际原页、图中标签及完整英文图注；300dpi直接裁取，不重绘，不冒称正式VoR图版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              46,
+              53,
+              567,
+              363
+            ],
+            "pdfVersion": "arXiv:2509.00356v1",
+            "sourcePdfSha256": "2b1a4f0bb95ec91bde37b0a318e440c05979430145a1c74424b2448e46a8ebb1"
+          },
+          "path": "figures/zhou-49-hsi-2024/v1-fig1.png",
+          "width": 2172,
+          "height": 1293,
+          "sha256": "b1ebb21b3da3b407e7d81fdd41aa0ab0ee751eaf2d2cdb0392a4aa71cc9b96e7",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Jin Ye, Fengchao Xiong, Jun Zhou, Yuntao Qian · arXiv v1 2025"
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2509.00356v1",
+          "figureLabel": "Figure 2",
+          "caption": "ILRNet固定v1原RMM框架：二维DWT的低频分支做矩阵SVD/SVT，高频直传再逆DWT；保留完整原图注。",
+          "page": 4,
+          "verificationNote": "已目视核对实际原页、图中标签及完整英文图注；300dpi直接裁取，不重绘，不冒称正式VoR图版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              309,
+              53,
+              566,
+              249
+            ],
+            "pdfVersion": "arXiv:2509.00356v1",
+            "sourcePdfSha256": "2b1a4f0bb95ec91bde37b0a318e440c05979430145a1c74424b2448e46a8ebb1"
+          },
+          "path": "figures/zhou-49-hsi-2024/v1-fig2.png",
+          "width": 1072,
+          "height": 818,
+          "sha256": "6ee93aa70374f5f7221016b308bf304a5cc2191ca50e23f19a3a1540590a38d7",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Jin Ye, Fengchao Xiong, Jun Zhou, Yuntao Qian · arXiv v1 2025"
+        }
+      ]
     },
     {
       "id": "zhou-53-hsi-2024",
@@ -45228,31 +45325,31 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2605.14239",
-      "representation": "Scholar差集 arXiv 题名与原站摘要确认高光谱任务。",
+      "representation": "IFGNet监督HSI–LiDAR分类：KAN编码与LiDAR引导的空间/二维频域隐式聚合，再相加分类。",
       "tags": [],
-      "summary": "IFGNet fuses hyperspectral and LiDAR features in spatial and frequency domains.",
-      "input": "高光谱影像与 LiDAR 多源数据；具体采集设置见摘要。",
-      "output": "HSI-LiDAR地物分类预测。",
-      "mechanism": "Kolmogorov-Arnold functions plus LiDAR-guided implicit aggregation model nonlinear spectral-geometry relations.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
-      "paper": "https://arxiv.org/abs/2605.14239",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "IFGNet以可学习B-spline的KAN分别编码HSI和单通道LiDAR栅格，结合相对坐标进行空间聚合，并在二维DFT实部/虚部分别聚合后逆变换，两域特征相加用于标注中心像元分类。固定v1五页已读；Houston2013/MUUFL的OA为99.37%/92.67%，只支持原划分下分类结果，无独立表征预训练任务或量化效率证据。",
+      "input": "同位置已标注中心的HSI块Xp∈R^(P²×T)与配准单通道LiDAR栅格块Lp∈R^(P²×1)；Houston2013窗口9×9，MUUFL5×5。LiDAR是高度栅格而非点云网络输入。",
+      "output": "中心像元地物类别预测；空间/频域融合特征为中间表示，不输出高光谱重建、点云、深度或新视角。",
+      "mechanism": "每像元HSI谱向量和LiDAR值分别经KAN的可学习B-spline边函数映射到共享D维。空间SIAU对查询q的每邻居xk拼接HSI邻居特征、LiDAR查询特征与相对坐标q−xk，KAN输出D候选通道加1权重通道；权重按邻域softmax后加权求和。频域对两个潜在特征图做二维DFT，在实部与虚部分别应用SIA，再IDFT；空间与频域特征相加接轻量分类头。DFT针对空间特征频率，不是波长谱轴变换。方法没有实际Transformer/Mamba分支或独立预训练目标；implicit是坐标条件分类特征聚合，不是三维场景重建。",
+      "readingNote": "固定2605.14239v1逐页五页全文、七式、一框架、三表与24条书目已读；原Fig1/p3含完整图注直接裁取。首页Jun Zhou标Griffith，官方API六作者及当前v1互证。四条目标作者直接HSI引文均映射已有目录，Adaptive multi-stage引用年2025与正式库年2026分别保留；MFT两处重复不增论文计数。题名Crossref前5均不同题名/作者，不强行当正式版；正式关系未确认。所读PDF未列官方代码URL，不猜链接。",
+      "paper": "https://arxiv.org/abs/2605.14239v1",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "hsi-lidar-classification",
-          "representation-learning"
+          "kolmogorov-arnold-networks"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决题名所示高光谱任务？",
-        "datasets": "Houston 2013 and MUUFL benchmarks.",
-        "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
-        "conclusions": "Abstract reports gains in OA, AA and Kappa; exact baselines and efficiency evidence require full text.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
+        "relationNote": "监督HSI和LiDAR栅格联合地物分类，KAN与坐标条件聚合是方法，无独立表征预训练目标。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何用LiDAR结构引导可学习非线性HSI聚合，并同时利用空间局部及空间频域特征完成地物分类？",
+        "datasets": "Houston2013与MUUFL Gulfport，同位置配准HSI和LiDAR；稿内未列各集空间尺寸、谱带数、类别数或全部样本总数，不从其他论文移植。Houston沿用标准训练/测试划分，计数未给；MUUFL每类随机取150标注训练、其余测试。每已标注像元取同位置两模态窗口，不做额外增强。",
+        "experimentSetting": "§III：PyTorch、RTX4090、Adam、50epoch。Houston窗口9×9、MUUFL5×5；七分类基线CALC/GLTNet/M2FNet/MS²CANet/S²ENet/MFT/ExViT。评测OA/AA/Cohenκ，表格均百分数。MUUFL进行空间/频域分支消融及3/5/7窗口分析。学习率、batch、D、KAN网格/样条阶数、邻域大小、分类头/损失、随机种子、重复次数、验证与空间隔离未说明。",
+        "conclusions": "TableI Houston OA99.37%/AA99.50%/κ99.32%，MUUFL92.67%/94.47%/90.45%，均高于所列七基线。TableII MUUFL frequency-only91.00/91.66/88.28，spatial-only91.94/92.25/84.26，联合92.67/94.47/90.45，原spatial-only κ84.26保留。TableIII窗口3/5/7的OA90.14/92.67/92.36%，AA92.27/94.47/93.41%，κ89.97/90.45/90.04%；默认5在所列三项最佳。",
+        "limitations": "只读固定五页v1，正式版关系未确认；Crossref排序前5无精确匹配不证明未发表。仅两配准栅格分类场景，随机邻域窗口可能重叠但论文未报告隔离检查，不外推跨传感器、缺模态或几何重建。未报告参数/FLOPs/耗时、方差/显著性、逐类性能/分类图，因此lightweight/robustness仅作者表述，不能当量化成本或全面泛化结论。类别/谱带数、完整训练划分及关键训练/网络配置留白；分类头/损失未具体给，不猜交叉熵。空间分支κ和窗口3的κ按原表记录，不改数字。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45274,6 +45371,24 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2605.14239v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v1逐页全文5页、原框架与实验表/书目",
+            "supports": [
+              "输入HSI与配准LiDAR栅格、输出监督地物分类；KAN编码/坐标条件聚合及二维空间频域融合明确，移除无独立预训练目标的representation-learning，补KAN方法。",
+              "5页实际全文已读；原图直接裁取保留版本、图号、页码与图注。",
+              "方法、训练/测试、性能例外和协议缺失依据所读原稿；不通过代码补齐。"
+            ]
+          },
+          {
+            "url": "https://export.arxiv.org/api/query?id_list=2509.00356,2605.14239",
+            "checkedAt": "2026-10-12",
+            "level": "arXiv精确ID官方API当前版本元数据",
+            "supports": [
+              "当前最新v1；作者列表一致；首次/更新2026-05-14T01:12:12Z。"
+            ]
           }
         ],
         "versions": [
@@ -45286,14 +45401,59 @@
             "arxivId": "2605.14239",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。",
+            "relation": "固定v1共5页逐页全文及原框架已读，当前API最新仍v1。正式出版关系未确认，指定题名Crossref前5均不同题名/作者，不强行合并。",
             "firstSubmittedAt": "2026-05-14T01:12:12Z",
-            "updatedAt": "2026-05-14T01:12:12Z"
+            "updatedAt": "2026-05-14T01:12:12Z",
+            "readingProgress": "full_text_read"
           }
         ],
-        "methodFamilyId": "zhou-scholar-arxiv-2605.14239"
+        "methodFamilyId": "zhou-scholar-arxiv-2605.14239",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "输入HSI与配准LiDAR栅格、输出监督地物分类；KAN编码/坐标条件聚合及二维空间频域融合明确，移除无独立预训练目标的representation-learning，补KAN方法。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "ee6f6c4738412f2fb705307553124399c6556a11e403edc48142e32eb7f75aa0",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2605.14239v1"
+          ]
+        }
       },
-      "citation": "@misc{zhou-scholar-arxiv-2605-14239,\n  title = {Implicit spatial-frequency fusion of hyperspectral and lidar data via kolmogorov-arnold networks},\n  author = {Long Zekun and Yang Judy X. and Wang Jing and Zia Ali and Fu Guanyiman and Zhou Jun},\n  year = {2026},\n  eprint = {2605.14239},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2605.14239}\n}\n"
+      "citation": "@misc{zhou-scholar-arxiv-2605-14239,\n  title = {Implicit spatial-frequency fusion of hyperspectral and lidar data via kolmogorov-arnold networks},\n  author = {Long Zekun and Yang Judy X. and Wang Jing and Zia Ali and Fu Guanyiman and Zhou Jun},\n  year = {2026},\n  eprint = {2605.14239},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2605.14239}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2605.14239v1",
+          "figureLabel": "Figure 1",
+          "caption": "IFGNet固定v1原整体框架：HSI/LiDAR栅格KAN编码、空间及DFT实虚部分域聚合、IDFT、相加与分类头；保留完整原图注。",
+          "page": 3,
+          "verificationNote": "已目视核对实际原页、图中标签及完整英文图注；300dpi直接裁取，不重绘，不冒称正式VoR图版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              38,
+              45,
+              558,
+              270
+            ],
+            "pdfVersion": "arXiv:2605.14239v1",
+            "sourcePdfSha256": "75d74b94139de1483ed63dc6a271fcf639b1e539f75b4a682396ef97e82e41e4"
+          },
+          "path": "figures/zhou-scholar-arxiv-2605-14239/v1-fig1.png",
+          "width": 2167,
+          "height": 938,
+          "sha256": "89ce4a07643029e39430dff77dff209a69f9f9127e45b357df02d7309038c1e4",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Zekun Long, Judy X. Yang, Jing Wang, Ali Zia, Guanyiman Fu, Jun Zhou · arXiv v1 2026"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-arxiv-2609-37340",
@@ -47536,7 +47696,6 @@
         "hsi-l0-gradient-lowrank-restoration-2019",
         "tv-ntf-hsi-unmixing-2019",
         "zhou-79-hsi-2022",
-        "zhou-49-hsi-2024",
         "zhou-20-hsi-2026",
         "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020"
       ],
@@ -47580,6 +47739,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "RMM明确每特征通道将LL展开为谱维×空间维矩阵并执行SVD/SVT，确认直接HSI去噪及低秩矩阵方法，移除无张量分解证据的tensor-low-rank-learning；迭代细化没有优化算法展开对应。"
         }
       ]
     },
@@ -47896,7 +48060,8 @@
         "gmc-sparse-nmf-hsi-2020",
         "subspace-structure-nmf-hsi-2020",
         "zhou-scholar-iterative-refinement-network-for-hyperspec-2023",
-        "zhou-77-hsi-2022"
+        "zhou-77-hsi-2022",
+        "zhou-49-hsi-2024"
       ],
       "history": [
         {
@@ -47938,6 +48103,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "MAC-Net作者稿全文明确谱低秩矩阵分解/投影，与学习式空间先验区分；不把单次五步流程当重复迭代展开。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "RMM明确每特征通道将LL展开为谱维×空间维矩阵并执行SVD/SVT，确认直接HSI去噪及低秩矩阵方法，移除无张量分解证据的tensor-low-rank-learning；迭代细化没有优化算法展开对应。"
         }
       ]
     },
@@ -49722,7 +49892,6 @@
         "zhou-scholar-multi-domain-universal-representation-lear-2025",
         "zhou-scholar-similarity-based-hyperspectral-band-select-2022",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2605-14239",
         "zhou-scholar-arxiv-2609-37340",
         "zhou-strl-hyperspectral-tracking-2025"
       ],
@@ -49776,6 +49945,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "HSIMamba固定v1全文明确监督地物分类，没有独立表征预训练目标，删除该论文的预训练关联并同步证据列表。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "输入HSI与配准LiDAR栅格、输出监督地物分类；KAN编码/坐标条件聚合及二维空间频域融合明确，移除无独立预训练目标的representation-learning，补KAN方法。"
         }
       ]
     },
@@ -52206,6 +52380,26 @@
           "date": "2026-10-12",
           "action": "created",
           "reason": "移除原监督分类ICA误配，按无监督ICA/OSP精炼及KLRX检测的实际框架建立。"
+        }
+      ]
+    },
+    {
+      "id": "kolmogorov-arnold-networks",
+      "name": "Kolmogorov–Arnold网络",
+      "dimension": "method",
+      "definition": "使用可学习单变量样条边函数构成的Kolmogorov–Arnold网络编码或融合光谱特征；不因普通MLP、坐标输入或背景引用KAN而归类。",
+      "status": "confirmed",
+      "color": "#9aa4b8",
+      "createdAt": "2026-10-12",
+      "rationale": "IFGNet固定v1的方法§II-B/C/D明确KAN编码与隐式聚合、B-spline边函数；只按本批实际原文新增关联。",
+      "evidencePaperIds": [
+        "zhou-scholar-arxiv-2605-14239"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "按IFGNet五页全文与Fig1建立精确方法类别，不新增预训练任务或改其他条目。"
         }
       ]
     }

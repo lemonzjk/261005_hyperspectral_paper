@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项原始来源分类审计，非全部全文；本批WS-Net固定v1盲解混/Mamba/Transformer依17页全文确认，移除无优化对应的deep-unfolding，原协议与性能边界分列。",
+  "scope": "逐项原始来源分类审计，非全部全文；本批ILRNet固定v1确认矩阵SVT去噪、IFGNet固定v1确认监督HSI–LiDAR分类/KAN，纠正张量/预训练错配，版本与性能边界分别记录。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -301,7 +301,9 @@
     "zhou-scholar-arxiv-2309-00005",
     "zhou-77-hsi-2022",
     "zhou-72-hsi-2022",
-    "zhou-scholar-arxiv-2603-09037"
+    "zhou-scholar-arxiv-2603-09037",
+    "zhou-49-hsi-2024",
+    "zhou-scholar-arxiv-2605-14239"
   ],
   "sourceChecks": [
     {
@@ -1282,6 +1284,26 @@
         "直接HSI盲解混、VCA初始化/线性重建、空间小波、Mamba与Transformer正逆注意力；没有显式优化展开，纠正标签。",
         "三数据集、训练/评测区别、主指标及逐类例外；真实FCLSU参考、门控/图文/KL/消融冲突分列。",
         "首页官方代码URL只记录，不访问、下载或审查实现。"
+      ]
+    },
+    {
+      "paperId": "zhou-49-hsi-2024",
+      "url": "https://arxiv.org/pdf/2509.00356v1",
+      "level": "固定arXiv v1逐页全文15页、原框架与实验表/书目",
+      "supports": [
+        "RMM明确每特征通道将LL展开为谱维×空间维矩阵并执行SVD/SVT，确认直接HSI去噪及低秩矩阵方法，移除无张量分解证据的tensor-low-rank-learning；迭代细化没有优化算法展开对应。",
+        "15页实际全文已读；原图直接裁取保留版本、图号、页码与图注。",
+        "方法、训练/测试、性能例外和协议缺失依据所读原稿；不通过代码补齐。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-arxiv-2605-14239",
+      "url": "https://arxiv.org/pdf/2605.14239v1",
+      "level": "固定arXiv v1逐页全文5页、原框架与实验表/书目",
+      "supports": [
+        "输入HSI与配准LiDAR栅格、输出监督地物分类；KAN编码/坐标条件聚合及二维空间频域融合明确，移除无独立预训练目标的representation-learning，补KAN方法。",
+        "5页实际全文已读；原图直接裁取保留版本、图号、页码与图注。",
+        "方法、训练/测试、性能例外和协议缺失依据所读原稿；不通过代码补齐。"
       ]
     }
   ]

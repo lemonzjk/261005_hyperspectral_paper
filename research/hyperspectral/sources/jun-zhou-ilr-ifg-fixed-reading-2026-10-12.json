@@ -1,0 +1,257 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "Existing Jun Zhou ILRNet and IFGNet fixed arXiv v1 full-text reading, formal metadata and reference lookup",
+  "previousGoalTurn": "no_progress: latest preference clarification made no file change because code-URL-only rule was already persisted; revalidated clean tree and resumed available author full-text work",
+  "accessFile": "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 2,
+  "newFullTextReadingCount": 2,
+  "pdfPagesActuallyRead": 20,
+  "figuresAdded": 3,
+  "materials": [
+    {
+      "paperId": "zhou-49-hsi-2024",
+      "pdfFile": "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ilr-v1.pdf",
+      "sha256": "2b1a4f0bb95ec91bde37b0a318e440c05979430145a1c74424b2448e46a8ebb1",
+      "downloaded": true,
+      "pageCount": 15,
+      "actuallyReadPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "textFile": "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ilr-pages.json",
+      "referencesFile": "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ilr-references.json",
+      "montageFiles": [
+        "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ilr-montage-1.png",
+        "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ilr-montage-2.png",
+        "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ilr-montage-3.png"
+      ],
+      "version": "arXiv:2509.00356v1",
+      "currentApi": {
+        "published": "2025-08-30T04:34:43Z",
+        "updated": "2025-08-30T04:34:43Z",
+        "latestVersion": "v1"
+      },
+      "identityEvidence": "首页Griffith单位/末页Jun Zhou履历/Crossref稳定ORCID0000-0001-5822-8233及精确journal DOI",
+      "formalVersionReadingProgress": "abstract_read",
+      "formalYear": 2024,
+      "equationCount": 13,
+      "figureCount": 15,
+      "tableCount": 5,
+      "referenceCount": 65,
+      "classificationRationale": "RMM明确每特征通道将LL展开为谱维×空间维矩阵并执行SVD/SVT，确认直接HSI去噪及低秩矩阵方法，移除无张量分解证据的tensor-low-rank-learning；迭代细化没有优化算法展开对应。",
+      "classificationConfirmed": [
+        "spectral-denoising",
+        "low-rank-matrix-factorization"
+      ],
+      "readingBoundary": "全文逐页阅读；所有主表/消融及图版已读，曲线只记录可观察趋势，不猜精确点值；正式版不因同题/页数自动视为已读。",
+      "protocol": "§IV：Adam学习率1e-4，每20epoch减半，50epoch、batch8、RTX3090，最终九轮细化；不同噪声模式训练不同模型。非iid Gaussian各带σ随机均匀[0,15]/[0,55]/[0,95]；混合为[0,95]Gaussian加脉冲强度.1–.7、5–15%列条纹和deadline，后三者各作用1/3谱带；谱相关Gaussian参数β23.08/η.157。七传统与五神经基线共12；T3SC/TRQ3D/SST需31带，非31带测试拆成多个31带子块，末块/拼接细节未述。传统耗时在Xeon Silver4310@2.10GHz CPU，神经方法在RTX3090，不能当同设备比较。随机种子、重复次数与独立验证划分未给。",
+      "results": "TableI ICVL按Gaussian15/55/95、Mixture、Corr顺序，ILRNet PSNR 51.22/46.88/45.46/39.06/47.80dB、SSIM .9945/.9886/.9853/.9227/.9890、SAM .0255/.0350/.0404/.1423/.0323。混合噪声PSNR低于TRQ3D39.73/SST39.22，SSIM/SAM弱于SST.9626/.0743；低噪声SAM弱于3DlogTNN.0150，相关噪声SSIM/SAM弱于SST.9904/.0258。TableIII Pavia对应PSNR47.45/41.52/41.80/36.17/41.41、SSIM.9965/.9880/.9895/.9653/.9875、SAM.0351/.0554/.0558/.0927/.0525；低噪声SSIM略弱MAC-Net.9966。TableII参数3.67M/时间2.12s，并非最小或最快；SST4.14M/1.83s。TableV Gaussian95加小波PSNR45.31升45.46dB；TableIV有RMM同条件SSIM.9853略弱无RMM.9854。",
+      "limitations": "只已读2025固定v1，不把相同题名/15页或LaTeX模板页眉当正式VoR；2024正式版未读、逐项版本差异未比较。真实EO-1/GF-5没有干净真值，视觉谱线不能当定量误差。按噪声模式分别训练，不证明单一盲去噪模型或未知混合泛化。不同谱带数基线需31带拆块，协议可能影响对照且余块处理未述。Fig11混合噪声PSNR/SSIM非单调、SAM随更多迭代总体变差；不照抄每轮/所有指标必改善，曲线未给完整精确数表。RMM并非所有指标都提升、耗时设备有CPU/GPU差异；原Pavia55/95 PSNR41.52/41.80保留，不人为重排。重复统计、验证、部分网络/阈值配置留白。"
+    },
+    {
+      "paperId": "zhou-scholar-arxiv-2605-14239",
+      "pdfFile": "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ifg-v1.pdf",
+      "sha256": "75d74b94139de1483ed63dc6a271fcf639b1e539f75b4a682396ef97e82e41e4",
+      "downloaded": true,
+      "pageCount": 5,
+      "actuallyReadPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "textFile": "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ifg-pages.json",
+      "referencesFile": "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ifg-references.json",
+      "montageFiles": [
+        "jun-zhou-ilr-ifg-fixed-reading-2026-10-12-ifg-montage-1.png"
+      ],
+      "version": "arXiv:2605.14239v1",
+      "currentApi": {
+        "published": "2026-05-14T01:12:12Z",
+        "updated": "2026-05-14T01:12:12Z",
+        "latestVersion": "v1"
+      },
+      "identityEvidence": "首页Griffith单位/六作者API对应",
+      "formalVersionReadingProgress": "not_confirmed",
+      "formalYear": null,
+      "equationCount": 7,
+      "figureCount": 1,
+      "tableCount": 3,
+      "referenceCount": 24,
+      "classificationRationale": "输入HSI与配准LiDAR栅格、输出监督地物分类；KAN编码/坐标条件聚合及二维空间频域融合明确，移除无独立预训练目标的representation-learning，补KAN方法。",
+      "classificationConfirmed": [
+        "hsi-lidar-classification",
+        "kolmogorov-arnold-networks"
+      ],
+      "readingBoundary": "全文逐页阅读；所有主表/消融及图版已读，曲线只记录可观察趋势，不猜精确点值；正式版不因同题/页数自动视为已读。",
+      "protocol": "§III：PyTorch、RTX4090、Adam、50epoch。Houston窗口9×9、MUUFL5×5；七分类基线CALC/GLTNet/M2FNet/MS²CANet/S²ENet/MFT/ExViT。评测OA/AA/Cohenκ，表格均百分数。MUUFL进行空间/频域分支消融及3/5/7窗口分析。学习率、batch、D、KAN网格/样条阶数、邻域大小、分类头/损失、随机种子、重复次数、验证与空间隔离未说明。",
+      "results": "TableI Houston OA99.37%/AA99.50%/κ99.32%，MUUFL92.67%/94.47%/90.45%，均高于所列七基线。TableII MUUFL frequency-only91.00/91.66/88.28，spatial-only91.94/92.25/84.26，联合92.67/94.47/90.45，原spatial-only κ84.26保留。TableIII窗口3/5/7的OA90.14/92.67/92.36%，AA92.27/94.47/93.41%，κ89.97/90.45/90.04%；默认5在所列三项最佳。",
+      "limitations": "只读固定五页v1，正式版关系未确认；Crossref排序前5无精确匹配不证明未发表。仅两配准栅格分类场景，随机邻域窗口可能重叠但论文未报告隔离检查，不外推跨传感器、缺模态或几何重建。未报告参数/FLOPs/耗时、方差/显著性、逐类性能/分类图，因此lightweight/robustness仅作者表述，不能当量化成本或全面泛化结论。类别/谱带数、完整训练划分及关键训练/网络配置留白；分类头/损失未具体给，不猜交叉熵。空间分支κ和窗口3的κ按原表记录，不改数字。"
+    }
+  ],
+  "referenceMatches": [
+    {
+      "sourcePaperId": "zhou-49-hsi-2024",
+      "referenceNumber": 25,
+      "reference": "F. Xiong, J. Zhou, S. Tao, J. Lu, J. Zhou, and Y. Qian, “SMDS- Net: Model guided spectral-spatial network for hyperspectral image denoising,” IEEE Trans. Image Process., vol. 31, pp. 5469–5483, 2022.",
+      "existingPaperId": "zhou-79-hsi-2022",
+      "catalogTitle": "SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising",
+      "catalogAuthors": "Fengchao Xiong, Jun Zhou, Shuyin Tao, Jianfeng Lu, Jiantao Zhou, Yuntao Qian",
+      "catalogYear": 2022,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-49-hsi-2024",
+      "referenceNumber": 26,
+      "reference": "F. Xiong, J. Zhou, Q. Zhao, J. Lu, and Y. Qian, “MAC-Net: Model- aided nonlocal neural network for hyperspectral image denoising,” IEEE Trans. Geosci. Remote Sens., vol. 60, pp. 1–14, 2022.",
+      "existingPaperId": "zhou-77-hsi-2022",
+      "catalogTitle": "MAC-Net: Model-Aided Nonlocal Neural Network for Hyperspectral Image Denoising",
+      "catalogAuthors": "Fengchao Xiong, Jun Zhou, Qinling Zhao, Jianfeng Lu, Yuntao Qian",
+      "catalogYear": 2022,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-49-hsi-2024",
+      "referenceNumber": 39,
+      "reference": "M. Ye, Y. Qian, and J. Zhou, “Multitask sparse nonnegative matrix factorization for joint spectral–spatial hyperspectral imagery denoising,” IEEE Trans. Geosci. Remote Sens., vol. 53, no. 5, pp. 2621–2639, 2015.",
+      "existingPaperId": "mtsnmf-denoise-tgrs-2015",
+      "catalogTitle": "Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising",
+      "catalogAuthors": "Minchao Ye, Yuntao Qian, Jun Zhou",
+      "catalogYear": 2015,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-49-hsi-2024",
+      "referenceNumber": 48,
+      "reference": "G. Fu, F. Xiong, J. Lu, J. Zhou, and Y. Qian, “Nonlocal spatial–spectral neural network for hyperspectral image denoising,” IEEE Trans. Geosci. Remote Sens., vol. 60, pp. 1–16, 2022.",
+      "existingPaperId": "zhou-78-hsi-2022",
+      "catalogTitle": "Nonlocal Spatial–Spectral Neural Network for Hyperspectral Image Denoising",
+      "catalogAuthors": "Guanyiman Fu, Fengchao Xiong, Jianfeng Lu, Jun Zhou, Yuntao Qian",
+      "catalogYear": 2022,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-49-hsi-2024",
+      "referenceNumber": 57,
+      "reference": "F. Xiong, J. Zhou, J. Zhou, J. Lu, and Y. Qian, “Deep parameterized neural networks for hyperspectral image denoising,” IEEE Trans. Geosci. Remote Sens., vol. 61, pp. 1–15, 2023.",
+      "existingPaperId": "zhou-63-hsi-2023",
+      "catalogTitle": "Deep Parameterized Neural Networks for Hyperspectral Image Denoising",
+      "catalogAuthors": "Fengchao Xiong, Jun Zhou, Jiantao Zhou, Jianfeng Lu, Yuntao Qian",
+      "catalogYear": 2023,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-scholar-arxiv-2605-14239",
+      "referenceNumber": 9,
+      "reference": "F. Jahan, J. Zhou, M. Awrangjeb, and Y. Gao, “Fusion of hyperspectral and lidar data using discriminant correla- tion analysis for land cover classification,” IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 11, no. 10, pp. 3905–3917, 2018.",
+      "existingPaperId": "fusion-hsi-lidar-dca-jstars-2018",
+      "catalogTitle": "Fusion of Hyperspectral and LiDAR Data Using Discriminant Correlation Analysis for Land Cover Classification",
+      "catalogAuthors": "Farah Jahan, Jun Zhou, Mohammad Awrangjeb, Yongsheng Gao",
+      "catalogYear": 2018,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-scholar-arxiv-2605-14239",
+      "referenceNumber": 12,
+      "reference": "J. Wang, J. Zhou, X. Liu, and F. Jahan, “Spectral and spatial residual attention network for joint hyperspectral and lidar data classification,” in 2021 IEEE International Geoscience and Remote Sensing Symposium IGARSS. IEEE, 2021, pp. 278–281.",
+      "existingPaperId": "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
+      "catalogTitle": "Spectral and Spatial Residual Attention Network for Joint Hyperspectral and Lidar Data Classification",
+      "catalogAuthors": "Jing Wang, Jun Zhou, Xinwen Liu, Farah Jahan",
+      "catalogYear": 2021,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-scholar-arxiv-2605-14239",
+      "referenceNumber": 13,
+      "reference": "Y. Zhang, H. Gao, Z. Chen, S. Fei, J. Zhou, P. Ghamisi, and B. Zhang, “Adaptive multi-stage fusion of hyper- spectral and lidar data via selective state space models,” Information Fusion, p. 103488, 2025.",
+      "existingPaperId": "zhou-scholar-adaptive-multi-stage-fusion-of-hyperspectr-2026",
+      "catalogTitle": "Adaptive multi-stage fusion of hyperspectral and LiDAR data via selective state space models",
+      "catalogAuthors": "Yiyan Zhang, Hongmin Gao, Zhonghao Chen, Shuyu Fei, Jun Zhou, Pedram Ghamisi, Bing Zhang",
+      "catalogYear": 2026,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    },
+    {
+      "sourcePaperId": "zhou-scholar-arxiv-2605-14239",
+      "referenceNumber": 14,
+      "reference": "J. X. Yang, J. Wang, Z. Li, C. Sui, Z. Long, and J. Zhou, “Hslinets: Evaluating band ordering strategies in hyperspectral and lidar fusion,” IEEE Geoscience and Remote Sensing Letters, 2025.",
+      "existingPaperId": "zhou-31-hsi-2025",
+      "catalogTitle": "HSLiNets: Evaluating Band Ordering Strategies in Hyperspectral and LiDAR Fusion",
+      "catalogAuthors": "Judy X. Yang, Jing Wang, Zhuanfeng Li, Chenhong Sui, Zekun Long, Jun Zhou",
+      "catalogYear": 2025,
+      "decision": "existing_catalog_duplicate",
+      "readingBoundary": "本批只读取此引文书目，不增加被引论文全文阅读计数。"
+    }
+  ],
+  "formalQuery": {
+    "queryUrl": "https://api.crossref.org/works?query.title=Implicit+spatial-frequency+fusion+of+hyperspectral+and+lidar+data+via+kolmogorov-arnold+networks&rows=5",
+    "returnedCount": 5,
+    "reviewedHits": [
+      {
+        "doi": "10.1016/j.neucom.2025.130661",
+        "title": "Spatial-frequency dual-domain Kolmogorov–Arnold networks for multimodal medical image fusion",
+        "authors": "Lewu Lin, Jiaxin Xie, Yingying Wang, Jialing Huang, Rongjin Zhuang, Xiaotong Tu, Xinghao Ding, Na Shen, Qing Lu",
+        "decision": "different_title_and_authors_not_ifgnet_version",
+        "boundary": "仅指定题名排序前5书目，不证明IFGNet没有正式版本；其他作者研究不在本作者批次自动收录。"
+      },
+      {
+        "doi": "10.1016/j.inffus.2025.103261",
+        "title": "A spatial-frequency dual-domain implicit guidance method for hyperspectral and multispectral remote sensing image fusion based on Kolmogorov–Arnold Network",
+        "authors": "Chunyu Zhu, Xuan Song, Yachao Li, Shangqi Deng, Tinghao Zhang",
+        "decision": "different_title_and_authors_not_ifgnet_version",
+        "boundary": "仅指定题名排序前5书目，不证明IFGNet没有正式版本；其他作者研究不在本作者批次自动收录。"
+      },
+      {
+        "doi": "10.1109/ijcnn64981.2025.11228383",
+        "title": "HSR-KAN: Efficient Hyperspectral Image Super-Resolution via Kolmogorov-Arnold Networks",
+        "authors": "Baisong Li, Xingwang Wang, Haixiao Xu",
+        "decision": "different_title_and_authors_not_ifgnet_version",
+        "boundary": "仅指定题名排序前5书目，不证明IFGNet没有正式版本；其他作者研究不在本作者批次自动收录。"
+      },
+      {
+        "doi": "10.1109/icassp49660.2025.10890471",
+        "title": "Implicit Neural Representations with Fourier Kolmogorov-Arnold Networks",
+        "authors": "Ali Mehrabian, Parsa Mojarad Adi, Moein Heidari, Ilker Hacihaliloglu",
+        "decision": "different_title_and_authors_not_ifgnet_version",
+        "boundary": "仅指定题名排序前5书目，不证明IFGNet没有正式版本；其他作者研究不在本作者批次自动收录。"
+      },
+      {
+        "doi": "10.1109/whispers65427.2024.10876426",
+        "title": "Deformable Kolmogorov-Arnold Networks For Hyperspectral Image Classification",
+        "authors": "Ranko Lau, Jing Yao, Chenyu Li, Danfeng Hong, Jocelyn Chanussot",
+        "decision": "different_title_and_authors_not_ifgnet_version",
+        "boundary": "仅指定题名排序前5书目，不证明IFGNet没有正式版本；其他作者研究不在本作者批次自动收录。"
+      }
+    ],
+    "boundary": "IFG题名前5不同题名/作者；不能据此证明没有正式版，其他作者直接HSI题目留后续领域检索。"
+  },
+  "codeBoundary": "两个所读PDF正文/链接注释未列官方代码URL，不猜链接；本批没有访问第三方代码仓库、代码归档或实现文件。",
+  "referencesBoundary": [
+    "ILR65条，ref25/26/39/48/57目标作者直接HSI已录；ref37为通用图像恢复书目，J. Zhou缩写未确认身份，不恢复/新增作者HSI条目。",
+    "ILR ref6/38题名为multispectral，不能因被HSI论文引用就扩大当前范围；其他作者直接HSI引用不在作者材料批次自动增录。",
+    "IFG24条，ref9/12/13/14目标作者直接HSI均已录；ref13引文2025与正式目录2026分别保留；ref11/23同MFT重复，不新增。"
+  ],
+  "remaining": "作者181条不变，96全文/85摘要；正式版本、其他来源/姓名变体及全领域历年矩阵继续，不声明作者或领域全集完成。"
+}
