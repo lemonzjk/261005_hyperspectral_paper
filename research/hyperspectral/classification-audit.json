@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项原始来源分类审计，非全部全文；两CRF接受稿按监督分类/分割纠正表征预训练错配，Gaussian CRF-RNN与卷积深势/反卷积方法及版本边界分别核验。",
+  "scope": "逐项原始来源分类审计，非全部全文；早期丰度CNN、监督三元组与HSI/LiDAR ICV堆叠按实际全文记录，纠正预训练/数据发布与书目错配。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -287,7 +287,10 @@
     "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
     "multiresolution-weed-hsi-classification-2019",
     "crf-cnn-hsi-igarss-2016",
-    "crf-deep-feature-hsi-tgrs-2019"
+    "crf-deep-feature-hsi-tgrs-2019",
+    "unmixing-deep-feature-dicta-2017",
+    "triplet-deep-feature-hsi-whispers-2018",
+    "hsi-lidar-heterogeneous-feature-fusion-2018"
   ],
   "sourceChecks": [
     {
@@ -1111,6 +1114,36 @@
         "AM明确初始地物分类和最终语义分割，卷积CRF势与反卷积均为监督学习；背景SAE/DBN介绍不能证明本方法有表征预训练，删除representation-learning错配。当前机构AM同DOI关联正式记录，arXiv版本仍仅元数据关联。",
         "监督任务、节点/势函数、数据与原实验；只升级实际AM版本，代码仅链接。",
         "首页Griffith Jun Zhou身份及正式Crossref作者顺序对应。"
+      ]
+    },
+    {
+      "paperId": "unmixing-deep-feature-dicta-2017",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/93bb7e9a-1db1-5d93-878d-ed9b167e59ff/content",
+      "level": "机构稿逐页全文、原图/原表和版本核验",
+      "supports": [
+        "当前稿直接对HSI估计丰度并以其监督分类，解混为辅助特征、类别图为最终输出；没有表征迁移预训练目标，删除representation-learning错配，保留DICTA作者来源例外。",
+        "首页Griffith Jun Zhou及完整作者顺序与正式Crossref对应，方法/实验按本稿独立记录。",
+        "代码只保留官方链接；只升级当前实际读过版本。"
+      ]
+    },
+    {
+      "paperId": "triplet-deep-feature-hsi-whispers-2018",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bcbcd377-523f-476e-b972-d8d1fc9c4dd2/content",
+      "level": "机构稿逐页全文、原图/原表和版本核验",
+      "supports": [
+        "AM直接以HSI类别标签监督三元组嵌入和地物分类，未做迁移预训练。自采/人工标注图只用于本方法实验，未见数据发布或系统基准主贡献，删除representation-learning及datasets-benchmarks错配。",
+        "首页Griffith Jun Zhou及完整作者顺序与正式Crossref对应，方法/实验按本稿独立记录。",
+        "代码只保留官方链接；只升级当前实际读过版本。"
+      ]
+    },
+    {
+      "paperId": "hsi-lidar-heterogeneous-feature-fusion-2018",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/12be7bfa-0671-4412-916c-99f667c4095a/content",
+      "level": "机构稿逐页全文、原图/原表和版本核验",
+      "supports": [
+        "AM直接处理144带HSI及LiDAR-derived DSM并监督分类，属于高光谱—LiDAR地物分类及ICV特征提取，配准是输入前提；PRRS来源仅现有作者例外，未扩普通白名单。",
+        "首页Griffith Jun Zhou及完整作者顺序与正式Crossref对应，方法/实验按本稿独立记录。",
+        "代码只保留官方链接；只升级当前实际读过版本。"
       ]
     }
   ]
