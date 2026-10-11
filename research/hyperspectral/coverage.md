@@ -764,6 +764,7 @@
 - 更新1篇，不新增目录论文，不改变三维214对象。取得 Griffith 作者仓储接受稿摘要。
 - `multiple-graph-nmf-whispers-2015` 由 `title_only` 更新为 `abstract_read` / `abstract_verified`；确认多尺度多图正则化 NMF、合成/真实数据结论，未阅读全文。
 - 正式会议版本、完整图构造、数据集、代码和逐项实验指标仍待核验。证据见 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json`。
+- 2026-10-11纠错：上述旧派生审计错挂2025跟踪paperId/title/摘要，不能作解混内容证据；已用本AM全文、IEEE及Crossref新存纠错，见 `sources/jun-zhou-graph-nmf-full-primary-metadata-2026-10-11.json` 和末节。
 
 ## 2026-10-10 / jun-zhou-early-abstract-followup
 
@@ -1209,3 +1210,13 @@ Attend旧PDF实为Jing Wang2020博士论文192页，父item/DOI10.25904/1912/395
 会议Indian测试行和8310/总计7172；期刊Pavia行和1116/7040而总计1118/6338，Indian/APHI表题与类别内容交叉且九类表行和1386/7844不等总计1214/6882。均留原文与算术，不自行互换表题宣布修复。期刊y_i真类/竞争类与求和索引冲突、非hinge初始式、L1目标solver等价不足、AP波段206与删带重编号未知、Fig6/8引用差异分别留证；没有实际数据/代码或模型复现。
 
 15原始HTTP响应、三派生审计与总清单保存全文/表/公式/作者身份；既有188行索引仅状态/任务/会议源链接同步，不增学习笔记。当前757目录、188作者（157摘要/31全文）、214三维、313标签/351图，401确认（352审计）/337暂定/19待，1615候选/243查询/236批次；531arXiv与八pending不变。作者全集、正式修订/原数据实现与整个高光谱顶会顶刊/arXiv系统覆盖仍未完成。见 [两稿全文与协议审计](sources/jun-zhou-oneclass-differential-full-reading-2026-10-11.json)、[jun-zhou.md](jun-zhou.md)。
+
+## 2026-10-11 / 三篇既有图NMF稿全文与旧身份审计纠错
+
+周峻作者优先续核三篇既有记录，不是作者/场所年度新扫描。DICTA2014双图9页、ICIP2015 MMSNMF6页及WHISPERS2015多图5页，共20PDF页/3封面/17正文参考，52编号式、13图、2数值表3面板及2伪码全部通读。26/19/21参考条目不当引用作品全文全量。三份IEEE完整摘要/四或五作者及Griffith身份、Crossref正式书目与机构稿分版；IEEE正式PDF三次202空。
+
+明确区分固定空间/特征双图、层级双因子图和simplex学习多尺度权重。MMSNMF实测为Jasper Ridge100×100/198带，旧“局部只见合成”的缺口已在本AM关闭；全表80行内值/15均值保存。其MNMF平均印0.1190与四行均值0.11085冲突；水VCA0.0330胜MMSNMF0.0481，平均最低不代表每材料领先。两Urban稿不混丰度GT、尺寸/材料行名或停止参数。公式图维度/左右乘、degree索引、权重子问题符号和增广行维度问题分列，算术不是代码复现。
+
+旧 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json` 的派生记录错挂2025跟踪身份，不再用作2015解混内容证据；另存IEEE/本AM/Crossref纠错，旧审计与原发现决定保留。18HTTP原响应按字节/SHA保存，stored bitstream MD5不匹配动态封面下载不声称通过。三派生审计和总清单留证。新增1方法标签、1分类确认及1审计，多图队列改no_framework，既有MMSNMF原图字节与队列顺序保留，无新论文/原图/学习笔记。
+
+当前757总库、188作者（154摘要/34全文）、214三维、314标签/351图，402确认（353审计）/337暂定/18待；1615候选/244查询/237批次。arXiv531决定与八待核不变；正式全文、实现/GT及作者全集和全领域顶会顶刊/arXiv矩阵仍待。详见 [本批完整审计](sources/jun-zhou-graph-nmf-full-reading-2026-10-11.json) 与 `jun-zhou.md` 末节。

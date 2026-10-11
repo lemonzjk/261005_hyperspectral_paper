@@ -355,7 +355,8 @@
     "attend-in-bands-jstars-2019",
     "svm-band-weighting-lgrs-2016",
     "weighted-band-selection-igarss-2016",
-    "differential-band-selection-ijwmip-2017"
+    "differential-band-selection-ijwmip-2017",
+    "multiple-graph-nmf-whispers-2015"
   ],
   "sourceChecks": [
     {
@@ -663,6 +664,39 @@
         "监督式差分权重选带，以逐类分类器系数差和像元强度构造判别向量，经L1 hinge目标学习类波段权重，选择高权重子集；使用KNN/LDA/RBF SVM在三场景评测。",
         "先训练one-vs-all分类器，以系数差×像元作u，求sum hinge(1-vᵀu)+lambda||v||1并选最大权重。Eq1非hinge印式、Eq2真类/竞争类及Eq6对y_i求和与i∈D_c冲突均保留；不把2016清晰索引或常规solver选项当期刊已核代码。",
         "作者报告大部分设置有效、Pavia40带接近全带，SVM-RFE在少带或KNN可竞争；没有精确性能全表/CI，不推广所有分类器/每个设置无损。训练量应指Fig8，正文错指Fig6；AP列206的原始或删带后编号不明。Fig1第4页原框架图已核。"
+      ]
+    },
+    {
+      "paperId": "dual-graph-nmf-dicta-2014",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "稀疏NMF高光谱解混中，以光谱kNN流形图和位置一阶邻域SAD图共同约束丰度，联合估计端元光谱与丰度。",
+        "在L1/2丰度惩罚上加mu/2[alpha tr(RL1Rᵀ)+(1-alpha)tr(RL2Rᵀ)]，交替乘法更新M/R；alpha是固定平衡参数，增广常数行近似和为一。Eq10求和、Eq19端元增广行维度与热图对称化细节留待正式/实现核对。",
+        "USGS四端元合成64×64、8×8区域，低通/丰度>0.8改均匀/高斯噪声；Urban HYDICE307×307、210删48→162带、400–2500nm/10nm。四材料Asphalt/Tree/Grass/Roof与图6行解释road/grass/asphalt/tree不一致，身份未静默修正。",
+        "作者图示双图在合成端元SAD优于对照、丰度RMSE略改善；Urban仅SAD及丰度可视化，原文明确无丰度GT，不称真实丰度RMSE已验证。六图均输入/结果，伪码不作框架。"
+      ]
+    },
+    {
+      "paperId": "mmsnmf-icip-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "多层非负分解对每层端元/丰度因子施加图流形和L1/2稀疏约束；公开AM已通读，合成与Jasper Ridge真实实验均确认。",
+        "逐层分解上一层丰度，最终A=A1…AP、M=MP；正文从X像元列和Xᵀ通道列分别建二值kNN双图，每层两因子图/稀疏正则。Eq6自邻域、Eq7–13图/因子维度、重构梯度及左右乘矛盾留原式，不能把两图当DICTA空间/特征图或已核执行代码。",
+        "USGS六端元合成64×64、8×8块、9×9低通、>80%丰度改均匀、高斯噪声；Jasper Ridge100×100，原图起点(105,269)，删1–3/108–112/154–166/220–224后198带、road/soil/water/tree四材料，GT引用Zhu等2014未下载核验。",
+        "合成六噪声档SAD/AAD均最低，平均0.0688/0.2719；Jasper平均SAD0.1096最低、四材料中三项最低，水VCA0.0330胜MMSNMF0.0481。MNMF原印平均0.1190与四行均值0.11085不符；不据此夸大已核收益。Fig1 PDF3原结构图复核，不是完整双图求解流程。"
+      ]
+    },
+    {
+      "paperId": "multiple-graph-nmf-whispers-2015",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "多尺度kNN图的非负归一权重组合正则化稀疏NMF丰度；交替更新端元、丰度和图权重，在USGS合成与Urban HYDICE解混评测。",
+        "L=sum_s alpha_s L_s且alpha≥0、sum alpha=1；L1/2丰度稀疏、mu/2加权图迹与beta||alpha||²，交替乘法M/R和凸图权重优化。Eq11–14的alpha/L重计、trace用W与R上限、相对mu系数，以及Eq15增广行维度疑点原样留证；不称所有参数自动学习或正式实现已核。",
+        "USGS六端元合成64×64、8×8区域，低通/0.8阈值均匀化/高斯噪声；Urban HYDICE210删48→162带、400–2500nm/10nm，Asphalt/Tree/Grass/Roof四材料。该稿未印307×307尺寸，未从其他稿回填。",
+        "作者图示合成SAD/RMSE及Urban SAD改善，收敛图仅一个案例约600次；Urban四张丰度结果没有GT或数值丰度RMSE表。四图全为结果/收敛，Algorithm1为伪码，无独立框架图。旧摘要审计错挂2025跟踪身份，已用本稿与IEEE/Crossref补正确证据，旧记录保留。"
       ]
     }
   ]

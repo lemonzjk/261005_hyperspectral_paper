@@ -63041,33 +63041,34 @@
         "hyperspectral"
       ],
       "doi": "10.1109/dicta.2014.7008103",
-      "representation": "特征与空间关系图正则化稀疏NMF，以乘法更新联合估计端元/丰度；与ICIP2015端元/丰度两个因子流形图的模型分别记录。",
+      "representation": "在L1/2丰度惩罚上加mu/2[alpha tr(RL1Rᵀ)+(1-alpha)tr(RL2Rᵀ)]，交替乘法更新M/R；alpha是固定平衡参数，增广常数行近似和为一。Eq10求和、Eq19端元增广行维度与热图对称化细节留待正式/实现核对。",
       "tags": [],
-      "summary": "在稀疏NMF解混中联合特征流形关系与空间一致性双图约束，从高光谱影像估计端元和逐像元丰度。",
+      "summary": "稀疏NMF高光谱解混中，以光谱kNN流形图和位置一阶邻域SAD图共同约束丰度，联合估计端元光谱与丰度。",
       "input": "高光谱影像及由光谱特征/空间邻域构造的图。",
       "output": "端元光谱与像元丰度。",
-      "mechanism": "特征与空间关系图正则化稀疏NMF，以乘法更新联合估计端元/丰度；与ICIP2015端元/丰度两个因子流形图的模型分别记录。",
-      "readingNote": "原摘要及指定局部核验；未阅读全文。正式DICTA2014:1–8；Crossref2014-11且官方DICTA2014程序支持。ORCID/仓储Published2015保留为来源年份差异，不沿用为正式年份。",
+      "mechanism": "在L1/2丰度惩罚上加mu/2[alpha tr(RL1Rᵀ)+(1-alpha)tr(RL2Rᵀ)]，交替乘法更新M/R；alpha是固定平衡参数，增广常数行近似和为一。Eq10求和、Eq19端元增广行维度与热图对称化细节留待正式/实现核对。",
+      "readingNote": "公开机构稿全9页（封面1/正文参考8）全部阅读和图版复核，23编号式；仅本公开版本。正式2014-11:1–8，机构Published2015分源保留；本稿封面无AM/VoR标记，正式PDF未独立读。热图对称化、degree索引及Mf下行N/P维度、图6材料名冲突、完整参数/参考谱/GT/代码/零值保护待；无模型复现。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "citation": "@inproceedings{dual_graph_nmf_dicta_2014,\n  title = {Dual Graph Regularized NMF for Hyperspectral Unmixing},\n  author = {Lei Tong and Jun Zhou and Xiao Bai and Yongsheng Gao},\n  booktitle = {2014 International Conference on Digital Image Computing: Techniques and Applications (DICTA)},\n  year = {2014},\n  pages = {1--8},\n  doi = {10.1109/dicta.2014.7008103}\n}\n",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "low-rank-matrix-factorization",
-          "dual-graph-nmf-unmixing"
+          "dual-graph-nmf-unmixing",
+          "graph-learning"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "原摘要以光学高光谱观测为主要研究对象；普通三维验证数据不冒充高光谱。新增仅总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何联合光谱特征流形和空间一致性提高稀疏NMF解混？",
-        "datasets": "原摘要及实验局部：合成数据与Urban HYDICE，后者原307×307/210波段，删除受水吸收影响波段后162波段。全部端元真值、生成/划分细节待全文。",
-        "experimentSetting": "原摘要和第4节指定数据局部已核；封面+8页全页图版仅数据、结果曲线/丰度图与Algorithm1文字，无独立框架图。",
-        "conclusions": "作者报告合成/实测数据上优于所比较单图/稀疏约束基线；全部参数、稳定性和计量表待完整阅读。",
-        "limitations": "正式DICTA2014:1–8；Crossref2014-11且官方DICTA2014程序支持。ORCID/仓储Published2015保留为来源年份差异，不沿用为正式年份。 原文代码/原始数据专用入口未知，本轮题名定向发现不等于穷尽搜索。",
+        "datasets": "USGS四端元合成64×64、8×8区域，低通/丰度>0.8改均匀/高斯噪声；Urban HYDICE307×307、210删48→162带、400–2500nm/10nm。四材料Asphalt/Tree/Grass/Roof与图6行解释road/grass/asphalt/tree不一致，身份未静默修正。",
+        "experimentSetting": "合成SNR30dB、4端元，10次均值/标准差；扫描15/25/35/45/∞dB及4–8端元，比较VCA、L1/2-NMF、FGNMF、空间单图SGNMF；最多3000次或目标相对差≤1e-4。k/sigma/mu/alpha/delta数值与seed未给。",
+        "conclusions": "作者图示双图在合成端元SAD优于对照、丰度RMSE略改善；Urban仅SAD及丰度可视化，原文明确无丰度GT，不称真实丰度RMSE已验证。六图均输入/结果，伪码不作框架。",
+        "limitations": "正式2014-11:1–8，机构Published2015分源保留；本稿封面无AM/VoR标记，正式PDF未独立读。热图对称化、degree索引及Mf下行N/P维度、图6材料名冲突、完整参数/参考谱/GT/代码/零值保护待；无模型复现。",
         "dataLinks": [],
         "evidence": [
           {
@@ -63090,6 +63091,33 @@
               "Lei Tong, Jun Zhou, Xiao Bai, Yongsheng Gao",
               "2014；1-8"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "稀疏NMF高光谱解混中，以光谱kNN流形图和位置一阶邻域SAD图共同约束丰度，联合估计端元光谱与丰度。",
+              "在L1/2丰度惩罚上加mu/2[alpha tr(RL1Rᵀ)+(1-alpha)tr(RL2Rᵀ)]，交替乘法更新M/R；alpha是固定平衡参数，增广常数行近似和为一。Eq10求和、Eq19端元增广行维度与热图对称化细节留待正式/实现核对。",
+              "USGS四端元合成64×64、8×8区域，低通/丰度>0.8改均匀/高斯噪声；Urban HYDICE307×307、210删48→162带、400–2500nm/10nm。四材料Asphalt/Tree/Grass/Roof与图6行解释road/grass/asphalt/tree不一致，身份未静默修正。",
+              "作者图示双图在合成端元SAD优于对照、丰度RMSE略改善；Urban仅SAD及丰度可视化，原文明确无丰度GT，不称真实丰度RMSE已验证。六图均输入/结果，伪码不作框架。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7008103/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "IEEE完整摘要、全部作者顺序及Jun Zhou Griffith单位，与本机构稿及精确Crossref互证；正式1-8、2014，正式PDF202空。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/dicta.2014.7008103",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式题名及全部作者、会议年和页码；Crossref created不是新正式出版日期。"
+            ]
           }
         ],
         "versions": [
@@ -63099,21 +63127,24 @@
             "url": "https://doi.org/10.1109/dicta.2014.7008103",
             "doi": "10.1109/dicta.2014.7008103",
             "year": 2014,
-            "relation": "正式DICTA2014:1–8；Crossref2014-11且官方DICTA2014程序支持。ORCID/仓储Published2015保留为来源年份差异，不沿用为正式年份。"
+            "relation": "正式IEEE完整摘要及Crossref书目已核，正式2014:1-8；正式PDF未独立取得。机构Published2015差异保留。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "dual-graph-nmf-dicta-2014-source",
-            "type": "公开机构作者稿",
+            "type": "公开机构稿，封面未标AM/VoR",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content",
             "year": 2014,
-            "relation": "原图号/页码只对应该PDF，正式版差异待核。"
+            "relation": "本公开稿全9页、全部编号式/图/参考已读，印刷疑点留证；正式差异待核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "dual-graph-nmf-dicta-2014",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要支持任务/方法；PDF指定局部可取得时补证，不将分类确认等同全文。",
+          "rationale": "完整机构稿确认盲线性解混及图正则NMF；分别核固定空间/特征双图、层级双因子图与simplex学习多尺度图。式/表疑点及正式版本界限原样保留，图结构不误称GNN。",
           "evidenceFields": [
             "title",
             "summary",
@@ -63122,17 +63153,19 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "f7c5a8c9bb9dd499bd453eac375c28716a080c11b83e42ecc286852ed53c3cad",
+          "evidenceDigest": "793f9698580e1e0229ef4cdc59955f32ecda5f54dd0261d42b1021788023786d",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content",
+            "https://xplorestaging.ieee.org/document/7008103/",
+            "https://api.crossref.org/works/10.1109/dicta.2014.7008103"
           ]
         }
       },
       "frameworkFigureSearch": {
         "status": "no_framework",
-        "note": "逐页视觉核对公开PDF全部图版（含封面共9页），图为输入/分类或重建/解混结果；另有文字伪码/Algorithm，未见独立方法框架图。保留原PDF，不生成图。",
+        "note": "本公开稿全9页视觉复核：六图为性能条形图、噪声/端元数量扫描、Urban输入和丰度结果；Algorithm1为伪码，没有独立方法框架图。数值精确全表未提供，不能从图估数当正式报表。",
         "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content",
-        "checkedAt": "2026-10-09"
+        "checkedAt": "2026-10-11"
       }
     },
     {
@@ -63149,33 +63182,34 @@
         "hyperspectral"
       ],
       "doi": "10.1109/icip.2015.7351186",
-      "representation": "层级非负分解；端元/丰度各自图结构及稀疏正则，交替乘法更新。Figure1显示多层NMF结构，不能把两个图直接译作空间/光谱双图。",
+      "representation": "逐层分解上一层丰度，最终A=A1…AP、M=MP；正文从X像元列和Xᵀ通道列分别建二值kNN双图，每层两因子图/稀疏正则。Eq6自邻域、Eq7–13图/因子维度、重构梯度及左右乘矛盾留原式，不能把两图当DICTA空间/特征图或已核执行代码。",
       "tags": [],
-      "summary": "多层NMF逐层分解高光谱数据，对端元光谱矩阵与丰度矩阵分别加入图流形与L1/2稀疏约束以联合解混。",
+      "summary": "多层非负分解对每层端元/丰度因子施加图流形和L1/2稀疏约束；公开AM已通读，合成与Jasper Ridge真实实验均确认。",
       "input": "高光谱数据矩阵。",
       "output": "端元光谱与像元丰度估计。",
-      "mechanism": "层级非负分解；端元/丰度各自图结构及稀疏正则，交替乘法更新。Figure1显示多层NMF结构，不能把两个图直接译作空间/光谱双图。",
-      "readingNote": "原摘要及指定局部核验；未阅读全文。登记题名拼写constrainted保留；原稿正文为constrained。正式2174–2178；机构Accepted Manuscript封面+5页，Figure1在PDF3。",
+      "mechanism": "逐层分解上一层丰度，最终A=A1…AP、M=MP；正文从X像元列和Xᵀ通道列分别建二值kNN双图，每层两因子图/稀疏正则。Eq6自邻域、Eq7–13图/因子维度、重构梯度及左右乘矛盾留原式，不能把两图当DICTA空间/特征图或已核执行代码。",
+      "readingNote": "公开机构稿全6页（封面1/正文参考5）全部阅读和图版复核，13编号式；仅本公开版本。机构AM六页全读，正式2174–2178未独立取得；constrainted登记与constrained正文分列。公式维度/梯度/图左右乘需正式与代码核实；没有真实丰度AAD数值表、逐约束消融/时间/硬件/显著性或模型复现，GT/参考谱与专用代码资源待。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "citation": "@inproceedings{mmsnmf_icip_2015,\n  title = {Multilayer manifold and sparsity constrainted nonnegative matrix factorization for hyperspectral unmixing},\n  author = {Zhenqiu Shu and Jun Zhou and Lei Tong and Xiao Bai and Chunxia Zhao},\n  booktitle = {2015 IEEE International Conference on Image Processing (ICIP)},\n  year = {2015},\n  pages = {2174--2178},\n  doi = {10.1109/icip.2015.7351186}\n}\n",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "low-rank-matrix-factorization",
-          "multilayer-manifold-sparse-nmf"
+          "multilayer-manifold-sparse-nmf",
+          "graph-learning"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "原摘要以光学高光谱观测为主要研究对象；普通三维验证数据不冒充高光谱。新增仅总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何在多层分解中同时约束端元和丰度的流形与稀疏性？",
-        "datasets": "原摘要称合成和真实数据；已读局部第4节为USGS端元生成的合成混合影像，加高斯噪声。未核到独立实测数据实验细节，保留摘要/局部差异待全文复核。",
-        "experimentSetting": "原摘要、方法Figure1及指定第4节合成设置局部已核；不补未知真实数据名称、实验结果或性能数字。",
-        "conclusions": "作者摘要报告约束多层分解的解混有效性；完整实测实验和各约束消融结论尚待核验。",
-        "limitations": "登记题名拼写constrainted保留；原稿正文为constrained。正式2174–2178；机构Accepted Manuscript封面+5页，Figure1在PDF3。 原文代码/原始数据专用入口未知，本轮题名定向发现不等于穷尽搜索。",
+        "datasets": "USGS六端元合成64×64、8×8块、9×9低通、>80%丰度改均匀、高斯噪声；Jasper Ridge100×100，原图起点(105,269)，删1–3/108–112/154–166/220–224后198带、road/soil/water/tree四材料，GT引用Zhu等2014未下载核验。",
+        "experimentSetting": "合成SNR20dB与15–40dB六档，10次均值/标准差；P=10、Tmax=300、lambdaA=0.1 exp(-t/25)、lambdaM=2lambdaA、betaA=betaM=0.5；比较VCA/NMF/L1/2-NMF/MNMF。未给近邻数、层宽、seed及明确丰度和处理。Table1两面板/Table2全部80行内值及15均值留证。",
+        "conclusions": "合成六噪声档SAD/AAD均最低，平均0.0688/0.2719；Jasper平均SAD0.1096最低、四材料中三项最低，水VCA0.0330胜MMSNMF0.0481。MNMF原印平均0.1190与四行均值0.11085不符；不据此夸大已核收益。Fig1 PDF3原结构图复核，不是完整双图求解流程。",
+        "limitations": "机构AM六页全读，正式2174–2178未独立取得；constrainted登记与constrained正文分列。公式维度/梯度/图左右乘需正式与代码核实；没有真实丰度AAD数值表、逐约束消融/时间/硬件/显著性或模型复现，GT/参考谱与专用代码资源待。",
         "dataLinks": [],
         "evidence": [
           {
@@ -63198,6 +63232,33 @@
               "Zhenqiu Shu, Jun Zhou, Lei Tong, Xiao Bai, Chunxia Zhao",
               "2015；2174-2178"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "多层非负分解对每层端元/丰度因子施加图流形和L1/2稀疏约束；公开AM已通读，合成与Jasper Ridge真实实验均确认。",
+              "逐层分解上一层丰度，最终A=A1…AP、M=MP；正文从X像元列和Xᵀ通道列分别建二值kNN双图，每层两因子图/稀疏正则。Eq6自邻域、Eq7–13图/因子维度、重构梯度及左右乘矛盾留原式，不能把两图当DICTA空间/特征图或已核执行代码。",
+              "USGS六端元合成64×64、8×8块、9×9低通、>80%丰度改均匀、高斯噪声；Jasper Ridge100×100，原图起点(105,269)，删1–3/108–112/154–166/220–224后198带、road/soil/water/tree四材料，GT引用Zhu等2014未下载核验。",
+              "合成六噪声档SAD/AAD均最低，平均0.0688/0.2719；Jasper平均SAD0.1096最低、四材料中三项最低，水VCA0.0330胜MMSNMF0.0481。MNMF原印平均0.1190与四行均值0.11085不符；不据此夸大已核收益。Fig1 PDF3原结构图复核，不是完整双图求解流程。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7351186/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "IEEE完整摘要、全部作者顺序及Jun Zhou Griffith单位，与本机构稿及精确Crossref互证；正式2174-2178、2015，正式PDF202空。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/icip.2015.7351186",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式题名及全部作者、会议年和页码；Crossref created不是新正式出版日期。"
+            ]
           }
         ],
         "versions": [
@@ -63207,21 +63268,24 @@
             "url": "https://doi.org/10.1109/icip.2015.7351186",
             "doi": "10.1109/icip.2015.7351186",
             "year": 2015,
-            "relation": "登记题名拼写constrainted保留；原稿正文为constrained。正式2174–2178；机构Accepted Manuscript封面+5页，Figure1在PDF3。"
+            "relation": "正式IEEE完整摘要及Crossref书目已核，正式2015:2174-2178；正式PDF未独立取得。题名constrainted与正文constrained分列。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "mmsnmf-icip-2015-source",
-            "type": "公开机构作者稿",
+            "type": "Accepted Manuscript (AM)",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content",
             "year": 2015,
-            "relation": "原图号/页码只对应该PDF，正式版差异待核。"
+            "relation": "本公开稿全6页、全部编号式/图/参考已读，印刷疑点留证；正式差异待核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "mmsnmf-icip-2015",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要支持任务/方法；PDF指定局部可取得时补证，不将分类确认等同全文。",
+          "rationale": "完整机构稿确认盲线性解混及图正则NMF；分别核固定空间/特征双图、层级双因子图与simplex学习多尺度图。式/表疑点及正式版本界限原样保留，图结构不误称GNN。",
           "evidenceFields": [
             "title",
             "summary",
@@ -63230,9 +63294,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "da46e086194d7739277292aee42b258ce98efba60d60b6303a5b03d27ee74f8e",
+          "evidenceDigest": "511a48b73c13baf6d3de61937e0f2d76796572d821361125494d66b883519baf",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content",
+            "https://xplorestaging.ieee.org/document/7351186/",
+            "https://api.crossref.org/works/10.1109/icip.2015.7351186"
           ]
         }
       },
@@ -64001,27 +64067,32 @@
       "venue": "WHISPERS",
       "publicationName": "2015 7th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing",
       "doi": "10.1109/WHISPERS.2015.8075468",
-      "representation": "高光谱解混：以不同尺度构造多个图，并在线性组合中学习图权重，用多图正则化 NMF 逼近数据流形与一致性。",
-      "summary": "提出多图正则化 NMF 高光谱解混方法：从不同近邻尺度构造多个图，以线性组合近似数据流形和一致性；合成与真实数据实验显示优于多种先进解混方法。",
+      "representation": "L=sum_s alpha_s L_s且alpha≥0、sum alpha=1；L1/2丰度稀疏、mu/2加权图迹与beta||alpha||²，交替乘法M/R和凸图权重优化。Eq11–14的alpha/L重计、trace用W与R上限、相对mu系数，以及Eq15增广行维度疑点原样留证；不称所有参数自动学习或正式实现已核。",
+      "summary": "多尺度kNN图的非负归一权重组合正则化稀疏NMF丰度；交替更新端元、丰度和图权重，在USGS合成与Urban HYDICE解混评测。",
       "input": "混合高光谱影像像元。",
       "output": "端元矩阵与丰度矩阵。",
-      "mechanism": "在 NMF 中加入多个不同尺度近邻图的线性组合，联合优化图权重与分解参数，以避免单图选择和固定参数限制。",
-      "readingNote": "Scholar、ORCID、DBLP、WHISPERS程序与 Griffith 作者仓储接受稿摘要核验；未阅读全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/download",
-      "verificationLevel": "author_pdf_abstract_verified",
+      "mechanism": "L=sum_s alpha_s L_s且alpha≥0、sum alpha=1；L1/2丰度稀疏、mu/2加权图迹与beta||alpha||²，交替乘法M/R和凸图权重优化。Eq11–14的alpha/L重计、trace用W与R上限、相对mu系数，以及Eq15增广行维度疑点原样留证；不称所有参数自动学习或正式实现已核。",
+      "readingNote": "公开机构稿全5页（封面1/正文参考4）全部阅读和图版复核，16编号式；仅本公开版本。正式WHISPERS2015-06:1–4；Crossref2017-10创建/ORCID2017不另计新论文。公开AM五页全读，正式PDF202空；求和/alpha/迹符号/增广维度及solver、专用代码/参考谱/真实GT仍待；未复现。共享NMF和作者不足以认定明确DICTA扩展或合并方法族。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "citation": "@inproceedings{multiple_graph_nmf_whispers_2015,\n  title = {Multiple Graph Regularized NMF for Hyperspectral Unmixing},\n  author = {Lei Tong and Jun Zhou and Yuntao Qian and Yongsheng Gao},\n  booktitle = {2015 7th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing},\n  year = {2015},\n  pages = {1--4},\n  doi = {10.1109/WHISPERS.2015.8075468}\n}\n",
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
+        "categoryIds": [
+          "spectral-unmixing",
+          "low-rank-matrix-factorization",
+          "multiple-graph-nmf-unmixing",
+          "graph-learning"
+        ],
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与作者仓储摘要均明确高光谱解混任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何用多尺度多图正则化 NMF 逼近高光谱数据流形并提升解混？",
-        "datasets": "摘要仅称合成与真实数据；名称、规模、划分和指标待全文核验。",
-        "experimentSetting": "多尺度近邻图线性组合、多图权重优化与 NMF 端元/丰度分解。",
-        "conclusions": "作者摘要报告方法在合成和真实数据上优于多种先进高光谱解混方法。",
-        "limitations": "摘要未给出数据集名称、图构造细节、迭代参数、逐项指标、代码和完整实验。",
+        "datasets": "USGS六端元合成64×64、8×8区域，低通/0.8阈值均匀化/高斯噪声；Urban HYDICE210删48→162带、400–2500nm/10nm，Asphalt/Tree/Grass/Roof四材料。该稿未印307×307尺寸，未从其他稿回填。",
+        "experimentSetting": "合成SNR20dB、10次均值/标准差，heat kNN3/5/7与单尺度GNMF及L1/2-NMF比较，另4–8端元扫描（未明确该扫描SNR）。正文允许二值图但实验仅明示heat；未报mu/beta/sigma/delta/停止阈值、图权重输出、seed或运行时间。",
+        "conclusions": "作者图示合成SAD/RMSE及Urban SAD改善，收敛图仅一个案例约600次；Urban四张丰度结果没有GT或数值丰度RMSE表。四图全为结果/收敛，Algorithm1为伪码，无独立框架图。旧摘要审计错挂2025跟踪身份，已用本稿与IEEE/Crossref补正确证据，旧记录保留。",
+        "limitations": "正式WHISPERS2015-06:1–4；Crossref2017-10创建/ORCID2017不另计新论文。公开AM五页全读，正式PDF202空；求和/alpha/迹符号/增广维度及solver、专用代码/参考谱/真实GT仍待；未复现。共享NMF和作者不足以认定明确DICTA扩展或合并方法族。",
         "dataLinks": [],
         "evidence": [
           {
@@ -64040,6 +64111,33 @@
             "supports": [
               "正式题名、作者、会议、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "多尺度kNN图的非负归一权重组合正则化稀疏NMF丰度；交替更新端元、丰度和图权重，在USGS合成与Urban HYDICE解混评测。",
+              "L=sum_s alpha_s L_s且alpha≥0、sum alpha=1；L1/2丰度稀疏、mu/2加权图迹与beta||alpha||²，交替乘法M/R和凸图权重优化。Eq11–14的alpha/L重计、trace用W与R上限、相对mu系数，以及Eq15增广行维度疑点原样留证；不称所有参数自动学习或正式实现已核。",
+              "USGS六端元合成64×64、8×8区域，低通/0.8阈值均匀化/高斯噪声；Urban HYDICE210删48→162带、400–2500nm/10nm，Asphalt/Tree/Grass/Roof四材料。该稿未印307×307尺寸，未从其他稿回填。",
+              "作者图示合成SAD/RMSE及Urban SAD改善，收敛图仅一个案例约600次；Urban四张丰度结果没有GT或数值丰度RMSE表。四图全为结果/收敛，Algorithm1为伪码，无独立框架图。旧摘要审计错挂2025跟踪身份，已用本稿与IEEE/Crossref补正确证据，旧记录保留。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/8075468/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "IEEE完整摘要、全部作者顺序及Jun Zhou Griffith单位，与本机构稿及精确Crossref互证；正式1-4、2015，正式PDF202空。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/WHISPERS.2015.8075468",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式题名及全部作者、会议年和页码；Crossref created不是新正式出版日期。"
+            ]
           }
         ],
         "versions": [
@@ -64049,10 +64147,39 @@
             "url": "https://doi.org/10.1109/WHISPERS.2015.8075468",
             "doi": "10.1109/WHISPERS.2015.8075468",
             "year": 2015,
-            "relation": "正式WHISPERS2015记录；已取得作者稿摘要级方法证据，未阅读全文。"
+            "relation": "正式IEEE完整摘要及Crossref书目已核，正式2015:1-4；正式PDF未独立取得。Crossref created2017-10与会年2015不同，不拆论文。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "multiple-graph-nmf-whispers-2015-source",
+            "type": "机构接受稿（AM）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content",
+            "year": 2015,
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "relation": "封面+四正文全读，旧同bitstream下载路径在既有证据/旧记录保留；图/式只对本AM。"
           }
         ],
-        "methodFamilyId": "multiple-graph-nmf-whispers-2015"
+        "methodFamilyId": "multiple-graph-nmf-whispers-2015",
+        "classificationReview": {
+          "basis": "catalog_and_primary_source",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "reviewedAt": "2026-10-11",
+          "rationale": "完整机构稿确认盲线性解混及图正则NMF；分别核固定空间/特征双图、层级双因子图与simplex学习多尺度图。式/表疑点及正式版本界限原样保留，图结构不误称GNN。",
+          "evidenceDigest": "75bcd2bf9f121b8d673d0acb073c8175568ae539e9e042ada25fbd25877c43c1",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content",
+            "https://xplorestaging.ieee.org/document/8075468/",
+            "https://api.crossref.org/works/10.1109/WHISPERS.2015.8075468"
+          ]
+        }
       },
       "collections": [
         "hyperspectral"
@@ -64060,7 +64187,13 @@
       "publicationStatus": "published",
       "venueTier": "conference",
       "tags": [],
-      "verifiedAt": "2026-10-10"
+      "verifiedAt": "2026-10-11",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "本公开稿全5页视觉复核：四图均合成SAD/RMSE、端元数扫描、单条收敛与Urban SAD、四张丰度结果；Algorithm1文字伪码不作框架。图中MNMF/MGNMF称呼变体分源保留，不混成MMSNMF对照的multilayer MNMF。没有精确数值表/运行时间/权重输出/单项消融。",
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "partially-known-endmember-nmf-tgrs-2016",
@@ -79424,6 +79557,7 @@
         "mljsr-unmixing-2015",
         "mlnmf-unmixing-2015",
         "mmsnmf-icip-2015",
+        "multiple-graph-nmf-whispers-2015",
         "multispectral-live-volume",
         "musf-gem",
         "mv-ntf-blind-unmixing-tgrs-2017",
@@ -79487,6 +79621,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "三篇图NMF稿全文分版核验，实际图构造、约束因子及学习权重分别留证；已确认标签不代表印刷公式可直接执行。"
         }
       ]
     },
@@ -80207,6 +80346,7 @@
         "irss-lowrank-2015",
         "mhf-net-2019",
         "mmsnmf-icip-2015",
+        "multiple-graph-nmf-whispers-2015",
         "multispectral-illumination-unrolling-2021",
         "partially-known-endmember-nmf-tgrs-2016",
         "rare-endmember-multitemporal-nmf-2014",
@@ -80230,6 +80370,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "三篇图NMF稿全文分版核验，实际图构造、约束因子及学习权重分别留证；已确认标签不代表印刷公式可直接执行。"
         }
       ]
     },
@@ -82844,6 +82989,7 @@
       "rationale": "逐篇复核现有论文的研究问题、输入输出和方法后建立；不继承三维专题的track分类。",
       "evidencePaperIds": [
         "adaptive-graph-multilayer-nmf-hsi-2020",
+        "dual-graph-nmf-dicta-2014",
         "endmember-sparse-graph-nmf-icip-2016",
         "gcnas-spectral-lidar",
         "generalized-graph-fusion-2015",
@@ -82853,7 +82999,9 @@
         "joint-spectral-spatial-sparse-coding-jstars-2017",
         "large-margin-hsi-matching-cvprei-2015",
         "mgc2n",
+        "mmsnmf-icip-2015",
         "multifeature-label-propagation-2014",
+        "multiple-graph-nmf-whispers-2015",
         "region-structure-nmf-jstars-2017",
         "sparse-collaborative-graphs-dr-2014",
         "spatial-context-manifold-classification-2014",
@@ -82872,6 +83020,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "三篇图NMF稿全文分版核验，实际图构造、约束因子及学习权重分别留证；已确认标签不代表印刷公式可直接执行。"
         }
       ]
     },
@@ -87169,6 +87322,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原摘要支持，PDF可取得时核对方法局部和原图。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "三篇图NMF稿全文分版核验，实际图构造、约束因子及学习权重分别留证；已确认标签不代表印刷公式可直接执行。"
         }
       ]
     },
@@ -87189,6 +87347,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原摘要支持，PDF可取得时核对方法局部和原图。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "三篇图NMF稿全文分版核验，实际图构造、约束因子及学习权重分别留证；已确认标签不代表印刷公式可直接执行。"
         }
       ]
     },
@@ -87519,6 +87682,26 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "全文确认系数差×像元、L1 hinge及Top-n机制；仅本轮两稿关联，不推定所有一类SVM均用于此机制。"
+        }
+      ]
+    },
+    {
+      "id": "multiple-graph-nmf-unmixing",
+      "name": "学习多尺度图权重NMF解混",
+      "dimension": "method",
+      "definition": "在稀疏NMF丰度项中，以非负和为一图权重组合不同近邻尺度的Laplacian，并加权重平方惩罚、交替优化图权重和端元/丰度。区别固定空间/特征双图与多层双因子图；未明确实验的二值kernel、公式印刷和solver细节分开核验。",
+      "status": "confirmed",
+      "color": "#80939b",
+      "createdAt": "2026-10-11",
+      "rationale": "WHISPERS2015完整机构AM及IEEE原摘要直接支持多尺度simplex权重学习；本批仅此论文符合精确方法。",
+      "evidencePaperIds": [
+        "multiple-graph-nmf-whispers-2015"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "全文确认多尺度图权重优化，避免把三种图NMF机制合为同一方法。"
         }
       ]
     }

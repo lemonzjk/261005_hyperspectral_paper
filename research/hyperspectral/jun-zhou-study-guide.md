@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。157条为摘要级核验、31条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。154条为摘要级核验、34条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -182,7 +182,7 @@
 | 2013 | [Salient object detection in hyperspectral imagery](https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content) | 高光谱显著目标检测 | 正式发表 | 摘要核验 |
 | 2013 | [Semi-supervised hyperspectral band selection via sparse linear regression and hypergraph models](https://research-repository.griffith.edu.au/server/api/core/bitstreams/c207d259-7586-5806-ba30-58e40a8d2a18/content) | 光谱波段选择、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2013 | [Soil Biochar Quantification via Hyperspectral Unmixing](https://doi.org/10.1109/dicta.2013.6691529) | 土壤光谱与属性估计、光谱解混 | 正式发表 | 摘要核验 |
-| 2014 | [Dual Graph Regularized NMF for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2014 | [Dual Graph Regularized NMF for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/d164c3b5-e39c-5455-88a1-54d707c7351d/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2014 | [Visualization of Hyperspectral Imaging Data Based on Manifold Alignment](https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content) | 高光谱彩色可视化 | 正式发表 | 摘要核验 |
 | 2015 | [3D local derivative pattern for hyperspectral face recognition](https://research-repository.griffith.edu.au/server/api/core/bitstreams/0f04d56d-65cc-561b-8b43-750db808e005/content) | 光谱身份识别 | 正式发表 | 摘要核验 |
 | 2015 | [3D Reconstruction from Hyperspectral Images](https://research-repository.griffith.edu.au/server/api/core/bitstreams/0c018645-866b-5aff-b1bc-ec61a2f9da25/content) | 深度、法线与表面重建 | 正式发表 | 全文核验（版本见目录） |
@@ -190,8 +190,8 @@
 | 2015 | [Automatic Estimation of Soil Biochar Quantity via Hyperspectral Imaging](https://doi.org/10.4018/978-1-4666-9435-4.ch011) | 光谱解混、土壤光谱与属性估计 | 正式发表 | 摘要核验 |
 | 2015 | [Band weighting and selection based on hyperplane margin maximization for hyperspectral image classification](https://research-repository.griffith.edu.au/server/api/core/bitstreams/6812cc9f-2faf-5f90-a1e6-182d33317e36/content) | 光谱波段选择、光谱波段加权、地物与植被图像分类 | 正式发表 | 全文核验（版本见目录） |
 | 2015 | [Learning Graph Model for Different Dimensions Image Matching](https://research-repository.griffith.edu.au/server/api/core/items/4d56d279-df0e-54ba-aeff-ff250b97fa0a) | 光学影像配准 | 正式发表 | 摘要核验 |
-| 2015 | [Multilayer manifold and sparsity constrainted nonnegative matrix factorization for hyperspectral unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content) | 光谱解混 | 正式发表 | 摘要核验 |
-| 2015 | [Multiple Graph Regularized NMF for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/download) | 待分类 | 正式发表 | 摘要核验 |
+| 2015 | [Multilayer manifold and sparsity constrainted nonnegative matrix factorization for hyperspectral unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/f978847c-ee14-5977-ab1e-d1b117e4c938/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
+| 2015 | [Multiple Graph Regularized NMF for Hyperspectral Unmixing](https://research-repository.griffith.edu.au/server/api/core/bitstreams/5904103b-b122-5ca2-8188-d64b08809ff0/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2015 | [Multitask Sparse Nonnegative Matrix Factorization for Joint Spectral–Spatial Hyperspectral Imagery Denoising](https://research-repository.griffith.edu.au/server/api/core/bitstreams/e48d5963-cfd3-5f03-80d6-25eb1faababb/content) | 光谱去噪 | 正式发表 | 摘要核验 |
 | 2015 | [On the Sampling Strategies for Evaluation of Joint Spectral-Spatial Information Based Classifiers](https://research-repository.griffith.edu.au/bitstreams/8054cd22-253b-52f4-9bd4-987453f900b9/download) | 地物与植被图像分类、数据集与评测基准 | 正式发表 | 摘要核验 |
 | 2015 | [Relative Depth Estimation from Hyperspectral Data](https://doi.org/10.1109/dicta.2015.7371299) | 深度、法线与表面重建 | 正式发表 | 摘要核验 |

@@ -21,7 +21,7 @@
 
 用户要求继续完成论文调研，不需要新增学习笔记。当前重点是来源查漏、作者身份、光谱输入、正式书目与版本关系；全文、代码及性能复现的阅读状态另行记录，不以笔记数量衡量目录完成。
 
-当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；157条摘要级、31条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
+当前作者目录188条：直接高光谱181条、多光谱关联7条（含1会议摘要）；154条摘要级、34条全文级。出版版、预印本及会议摘要分别留证，不能当作188个独立方法。[既有索引](jun-zhou-study-guide.md#当前作者目录完整索引)仅同步目录。
 
 本轮补入EAAHNet：出版社作者登记、原文首页均确认Jun Zhou属于Griffith；保留DBLP同名0011分配差异，避免错误排除。原文IV-A明确Potsdam红/绿/近红外输入，归多光谱关联；Vaihingen写RGB，实际数据版本和实现仍待核。ComicLib正式节目确认Griffith身份，漫画草图任务按范围暂排，未标全文核验。
 
@@ -261,7 +261,7 @@ WHISPERS 2013–2014剩余14篇题名级高光谱记录已通过OpenAlex公开�
 
 FG2015 3D LDP的三维为x/y/λ，输出身份特征不是面部几何，原Figure3 PDF4。WACV逐波段SfM和3D注册真正输出几何，但仍只总库；AOTF及自采模型与Stanford纯几何验证分开，9页图版只有输入/结果及文字算法。IGARSS逐类SVM间隔权重选带为Indian Pines/Salinas，原5页图版无独立框架。DICTA双图正式2014-11，源ORCID/封面2015不同；空间/特征图、Urban实测和合成，9页图版无框架。
 
-ICIP MMSNMF原Figure1 PDF3；端元与丰度各自图，不误作空间/特征双图。摘要提真实数据，而已读局部实验为合成，具体实测设置保留待核。登记constrainted与正文constrained拼写不混改。TGRS MTSNMF共享系数/各波段字典，原Figure1 PDF8/稿内7；正式2015-05:2621–2639，公开作者稿36页。ORCID190/192题名差异为同DOI、同三作者/摘要，只入库一次。
+ICIP MMSNMF原Figure1 PDF3；端元与丰度各自图，不误作空间/特征双图。先前局部只读合成；2026-10-11全文已确认Jasper Ridge实测及表均值/公式疑点，见末节。登记constrainted与正文constrained拼写不混改。TGRS MTSNMF共享系数/各波段字典，原Figure1 PDF8/稿内7；正式2015-05:2621–2639，公开作者稿36页。ORCID190/192题名差异为同DOI、同三作者/摘要，只入库一次。
 
 DICTA相对深度只机构完整摘要，边缘直方图散焦与邻域谱差生成相对稀疏深度，合并/归一化/光滑；传感器、数据、误差和原图未知。JSTARS五作者原稿终于匹配：初始Semisupervised查询2结果无精确匹配，Semi-supervised变体精确匹配后下载；Figure1 PDF5/稿内4只展示超图构造。原引言[20]/[21]对应两2013会议且指出未考虑空间关系，本稿加入空间和组稀疏，三数据APHI/Indian Pines/Washington。补旧会议关联同方法族，不借期刊数据/作者或假称已核正式扩展声明。八篇均只摘要及记录局部，不标全文，未报未核性能数值。
 
@@ -273,7 +273,7 @@ DICTA相对深度只机构完整摘要，边缘直方图散焦与邻域谱差生
 
 WHISPERS 版本年份差集
 
-Scholar 分页和 DBLP 记录补出两条 ORCID 登记年份为2017、正式 DOI/会议为2015的高光谱论文：《Multiple graph regularized NMF for hyperspectral unmixing》（DOI 10.1109/WHISPERS.2015.8075468）与《On the sampling strategies for evaluation of joint spectral-spatial information based classifiers》（DOI 10.1109/WHISPERS.2015.8075474）。前者已取得 Griffith 作者仓储接受稿摘要，核实多尺度多图正则化 NMF 机制；后者取得机构作者稿和摘要，已核光谱—空间分类评估问题。两篇不与 ORCID 2017 年份重复计数，版本差异保留在 `sources/jun-zhou-whispers-2015-version-audit.json`；Multiple Graph 摘要补充见 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json`。
+Scholar 分页和 DBLP 记录补出两条 ORCID 登记年份为2017、正式 DOI/会议为2015的高光谱论文：《Multiple graph regularized NMF for hyperspectral unmixing》（DOI 10.1109/WHISPERS.2015.8075468）与《On the sampling strategies for evaluation of joint spectral-spatial information based classifiers》（DOI 10.1109/WHISPERS.2015.8075474）。前者已取得 Griffith 作者仓储接受稿摘要，核实多尺度多图正则化 NMF 机制；后者取得机构作者稿和摘要，已核光谱—空间分类评估问题。两篇不与 ORCID 2017 年份重复计数，版本差异保留在 `sources/jun-zhou-whispers-2015-version-audit.json`；旧 `sources/jun-zhou-2015-multiple-graph-abstract-followup.json` 错挂2025跟踪身份，2026-10-11已用IEEE原摘要/本AM全文另存纠错；旧记录保留但不再作为本解混内容证据，见末节。
 
 本批仅摘要或作者稿指定局部核验，未标全文阅读；本批阅读边界见 `sources/jun-zhou-2015-remainder-decisions.json`；三篇早期摘要补充见 `sources/jun-zhou-early-abstract-followup.json`。ORCID 2015 十九组现已完成来源组筛选（13收录、1同DOI重复、7排除；其中两条 ORCID 2017 年份按 WHISPERS 2015 DOI/正式目录解析）；这不等于作者2015所有成果或任一场所年度全量检索。Scholar分页已取得387条记录；2015两篇 WHISPERS 条目与 ORCID 2017 年份不一致，需按 DOI/正式目录核版本。下一步处理 ORCID 2017 及早年待审组，并补 DBLP 完整目录差集及早年无题名命中。
 
@@ -765,3 +765,19 @@ IEEE当前原始摘要/作者/书目与Crossref一致指向 **10.1109/CVPRW.2009
 期刊Fig1 PDF第4页（正文第3页）四步框架新增完整原裁图1080×570，来源/图注/箭头/六作者归属已核；会议四图输入/GT/准确率，文字伪码不是框架图，队列标no_framework。两稿共享公式结构但作者集合与实验不同，期刊参考28/29为前轮已读的2016GRSL/2015IGARSS，并未引用该2016 Tang题名，也无明确扩展声明；保持原独立方法族，不能由共享方法标签宣布正式扩展关系。
 
 15当前原HTTP响应、三派生审计与总清单保留字节/哈希及全部页/元数据/全表/公式，旧发现决定和作者差集只追加续核，未增加学习内容，188行索引仅两行链接/任务/状态与计数同步。当前757总库、188作者（157摘要/31全文）、214三维、313标签（102任务/188方法/23应用）及351原图；401确认（352审计）/337暂定/19待；1615候选/243查询/236批次，531arXiv历史与八pending保留。作者其余全文、正式版修订与实际代码数据及整个高光谱顶会顶刊/arXiv覆盖仍未完成。证据：[两稿全文与来源细化](sources/jun-zhou-oneclass-differential-full-reading-2026-10-11.json)、[全部页文本](sources/jun-zhou-oneclass-differential-full-all-page-text-2026-10-11.json)、[正式身份与旧链恢复](sources/jun-zhou-oneclass-differential-full-primary-metadata-2026-10-11.json)、[全部公式/协议/表与算术](sources/jun-zhou-oneclass-differential-full-protocol-equations-tables-2026-10-11.json)。
+
+## 三篇图NMF解混全文、Jasper实测及旧身份审计纠错（2026-10-11）
+
+DICTA2014双图、ICIP2015 MMSNMF和WHISPERS2015多图三篇既有记录由摘要级升级为**公开机构稿全文核验**：分别9/6/5 PDF页，共20页（3封面/17正文参考）、52编号式、13图、2数值表3面板及2伪码全部通读与图版复核。参考条目26/19/21已读，不表示所引作品全文均读。三份IEEE原摘要、完整作者与Griffith Jun Zhou单位、Crossref精确DOI和机构item互证；正式PDF入口均202空。DICTA封面没有AM/VoR标记，保持“公开机构稿”，正式2014-11:1–8与机构Published2015分源；另两篇明确AM。ICIP登记constrainted/正文constrained、WHISPERS正式2015-06与Crossref创建2017-10分别记录，创建日期不另算论文。
+
+三种图机制分开：DICTA以光谱kNN热图和空间一阶邻域的π/2−SAD图共同正则**丰度R**，alpha是固定平衡参数；MMSNMF逐层分解上一层丰度，最终端元是A1…AP，两因子各自图/平方根稀疏约束，正文图顶点来自X像元列和Xᵀ通道列；WHISPERS对不同kNN尺度图用非负和为一权重组合，加权重平方惩罚，交替优化M/R和alpha。二值图是多图方法允许的选择，实验仅明确heat/3、5、7近邻，不称已测两kernel六图。DICTA结尾只称多图为future work；WHISPERS参考未引用它，ICIP则明确引用DICTA为已有约束。相近作者/稀疏目标不足以确认正式扩展或合并三个方法族。补一精确“学习多尺度图权重NMF解混”方法标签及三篇共用图结构标签，多图由待分类转确认。
+
+DICTA合成USGS四端元、64×64/8×8区域、低通混合、丰度>0.8改等分、高斯噪声；SNR30dB，10次均值/标准差，另15/25/35/45/∞dB和4–8端元扫描。最大3000次或目标相对差≤10⁻⁴；图/权重参数具体值与初始化未知。Urban307×307、210删48后162带，四材料Asphalt/Tree/Grass/Roof却在图6行解释改为road/grass/asphalt/tree，未把road自动等同Roof。作者明确无丰度GT，真实实验仅SAD/可视化，不称Urban丰度RMSE已验证。WHISPERS合成六端元/SNR20dB/10次及4–8端元扫描、Urban210→162带；本稿未印307×307尺寸，也不从DICTA回填。图3(a)单收敛案例约600次不等于最大迭代数、全局或普遍单调收敛；真实丰度图没有GT或数值RMSE。
+
+**MMSNMF实测缺口已关闭到本AM范围**：Jasper Ridge100×100，原图起点(105,269)，删1–3、108–112、154–166、220–224后198带，road/soil/water/tree四端元，GT引用Zhu等2014，实际参考谱/GT文件未下载。合成USGS六端元、64×64/8×8块、9×9低通；SNR20dB与15–40dB六档，10次均值/标准差。P=10、Tmax=300、lambdaA=0.1 exp(−t/25)、lambdaM=2lambdaA、betaA=betaM=0.5；近邻数、层宽、种子和丰度和处理未说明。两表共80行内值/15均值全存。合成六档SAD/AAD均最低，平均0.0688/0.2719；Jasper平均SAD0.1096最低且3/4材料最低，水VCA0.0330优于MMSNMF0.0481。MNMF表2平均印0.1190，四行算术均值却0.11085（四位半入0.1109）；不能据印均值夸大已核收益。本文把结果称SAD/AAD的root mean square errors但未给定义，表算术并非运行复现；真实丰度AAD数值表未提供。
+
+逐式视觉核验保留实际印刷问题：DICTA/WHISPERS degree求和重复固定下标，两稿Mf增广下行都写1_N而列数应对应P/K端元，有限delta仍是丰度和软惩罚。MMSNMF式6反向邻域印成自邻域；式7按定义的I×I/L×L图与首层A L×N、M N×I维度不合，A重构梯度印Al Mlᵀ Ml，图梯度左乘而更新右乘，层间图/尺寸变化未完整说明。WHISPERS式11在已带权L外再放alpha、式13未明确聚合W/D，式14用W而非R计算迹、R矩阵又作求和上限且相对beta漏mu/2。独立代数子问题与原式分列，不伪称恢复作者执行代码；参数、零值处理、solver与正式修订仍待。没有模型训练、代码复现或逐约束完整消融。
+
+旧 `jun-zhou-2015-multiple-graph-abstract-followup.json` 的paperId/title/abstractSummary错挂2025跟踪报告，却配2015解混DOI/PDF。目录此前解混条目本身正确；本轮以四作者AM/IEEE完整解混摘要/Crossref另存纠错，旧派生审计保留但不再作本论文内容证据，未借此复核跟踪稿。18当前HTTP原响应按字节保存并核SHA256；下载动态封面与stored MD5不是同载荷，新旧DICTA/MMSNMF PDF字节不同但全页提取文本一致，二者均保留。三份派生审计及总清单区分原响应、文字、印式和算术。
+
+MMSNMF既有Fig1 PDF3结构原图字节不变；DICTA六图、WHISPERS四图均结果/输入/收敛，伪码不当框架，多图队列由pending改no_framework，顺序不变。无新论文/原图/学习笔记，188行既有索引仅同步状态/任务/链接。当前总库757、作者188（154摘要/34全文）、三维214、314标签/351图，402分类确认（审计353）/337暂定/18待；1615候选/244查询/237批次。作者全集、多来源差集、arXiv八身份范围待及全领域覆盖仍未完成。证据：[全文与来源清单](sources/jun-zhou-graph-nmf-full-reading-2026-10-11.json)、[20页文本](sources/jun-zhou-graph-nmf-full-all-page-text-2026-10-11.json)、[书目/旧错挂纠正](sources/jun-zhou-graph-nmf-full-primary-metadata-2026-10-11.json)、[全部公式/实验/表算术](sources/jun-zhou-graph-nmf-full-protocol-equations-tables-2026-10-11.json)。
