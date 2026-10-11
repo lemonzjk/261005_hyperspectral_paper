@@ -33309,16 +33309,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/TGRS.2018.2872888",
-      "representation": "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。",
+      "representation": "TV正则矩阵—向量非负张量分解，结合全局谱空信息与局部空间平滑先验。",
       "tags": [],
-      "summary": "TV正则矩阵—向量NTF结合全局低秩丰度与局部二维TV，用于线性盲高光谱解混；正式完整摘要和作者源代码已核，论文全文未取得。",
-      "input": "三阶高光谱影像；公开MATLAB函数还须给定A/B/C、lambda/mu及R/L初值，完整实验数据和论文协议待全文。",
-      "output": "端元谱C、空间因子A/B和二维丰度E；代码辅助U/V，不是三维几何重建。",
-      "mechanism": "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。",
-      "readingNote": "IEEE完整摘要、Crossref和作者代码已核；全文未取得，保持摘要级；IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。",
+      "summary": "完整机构原摘要确认TV正则矩阵—向量NTF用于直接高光谱盲解混：同时保留全局谱空结构和局部分段平滑，目标为边缘保持的平滑丰度图。论文全文尚未取得，方法与实验只按可核摘要记录。",
+      "input": "待解混高光谱影像；具体数据集尺寸、噪声条件及模型初始化未由已读摘要报告。",
+      "output": "构成材料及对应比例/丰度图；完整因子形式和约束待论文正文，不从作者代码补齐。",
+      "mechanism": "摘要说明把TV局部空间约束加入矩阵—向量NTF，以改善低信噪比与分解非唯一性，并在平滑丰度图时保留边缘；未取得完整优化公式、数值设置和实验协议。",
+      "readingNote": "完整机构原摘要与正式书目已核，仍为摘要级。当前Crossref确认TGRS57(4):2341–2357、2019及四作者；作者网站书目少列Yuan Yan Tang，正式四作者保留。指定arXiv题名查询有效零返回，只说明该查询未匹配，不证明没有免费版本；作者页PDF指向已记录受限IEEE入口，本轮不重复追索。提供作者官方代码链接。",
       "paper": "https://ieeexplore.ieee.org/abstract/document/8497054/",
-      "verifiedAt": "2026-10-11",
-      "verificationLevel": "primary_abstract_and_partial_author_code_verified",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
@@ -33331,16 +33331,11 @@
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何同时用矩阵—向量分解的全局空间结构和TV局部平滑约束降低解混非唯一性与噪声？",
-        "datasets": "IEEE和Griffith完整摘要只确认合成与真实高光谱实验；本轮代码ZIP不含数据或PDF，不从其他论文转移数据协议。",
-        "experimentSetting": "论文实验尚待全文。代码静态核验：delta=0.4、prox内循环20、外循环相对变化1e-4且无显式最大迭代；ZIP未含tens2mat/myKr/myKr2依赖，无模型运行。",
-        "conclusions": "正式摘要报告优于比较方法，当前无全文表格可独立核定。代码支持低秩二维丰度/TV具体位置，不证明论文实验已复现。",
-        "limitations": "IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。",
-        "dataLinks": [
-          {
-            "label": "作者MATLAB代码（静态核验；协议差异见详情）",
-            "url": "https://www.xiongfuli.com/cv/code/MV-NTF-TV.zip"
-          }
-        ],
+        "datasets": "完整原摘要只说明合成与真实高光谱实验；数据集名称、划分和噪声条件未报告，不从相关论文或代码迁移协议。",
+        "experimentSetting": "摘要级；论文完整优化、超参数与定量表格待可访问正文。",
+        "conclusions": "原摘要报告优于比较方法，但当前没有本文表格可核定性能数值。",
+        "limitations": "作者页少列末位作者，按出版社四作者书目保留；正文、原图及具体实验资料尚未取得，实验细节留白。",
+        "dataLinks": [],
         "evidence": [
           {
             "url": "https://scispace.com/papers/hyperspectral-unmixing-via-total-variation-regularized-405e90au35",
@@ -33356,18 +33351,6 @@
             "level": "Crossref",
             "supports": [
               "正式题名、作者、卷期和页码。"
-            ]
-          },
-          {
-            "url": "https://ieeexplore.ieee.org/abstract/document/8497054/",
-            "checkedAt": "2026-10-11",
-            "level": "primary_complete_abstract_and_author_code_scoped",
-            "supports": [
-              "TV正则矩阵—向量NTF结合全局低秩丰度与局部二维TV，用于线性盲高光谱解混；正式完整摘要和作者源代码已核，论文全文未取得。",
-              "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。",
-              "IEEE和Griffith完整摘要只确认合成与真实高光谱实验；本轮代码ZIP不含数据或PDF，不从其他论文转移数据协议。",
-              "正式摘要报告优于比较方法，当前无全文表格可独立核定。代码支持低秩二维丰度/TV具体位置，不证明论文实验已复现。",
-              "IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。"
             ]
           },
           {
@@ -33387,12 +33370,20 @@
             ]
           },
           {
-            "url": "https://www.xiongfuli.com/cv/code/MV-NTF-TV.zip",
-            "checkedAt": "2026-10-11",
-            "level": "primary_author_code_static_review",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/35547392-60bc-405f-8bb8-828ddf9ccd91",
+            "checkedAt": "2026-10-12",
+            "level": "既有完整机构原摘要复核；本轮Crossref和作者书目访问续核",
             "supports": [
-              "论文实验尚待全文。代码静态核验：delta=0.4、prox内循环20、外循环相对变化1e-4且无显式最大迭代；ZIP未含tens2mat/myKr/myKr2依赖，无模型运行。",
-              "IEEE首次公开日期2018-10-18、正式April2019；作者主页少列Yuan Yan Tang，保留IEEE/Crossref四作者。机构完整bundle为0，官方PDF跳HTML/202，arXiv查询429。代码监控目标范数未平方、未乘lambda的TV总和且不含delta项；prox注释/实际0.5有差异；缺依赖/数据，全文和实现仍待。"
+              "直接HSI盲解混、TV矩阵—向量NTF与平滑保边丰度图；当前展示只用论文摘要，不用代码补具体因子/超参数。",
+              "2019正式四作者书目保留；本文仍摘要级，原始代码核查证据留历史，当前只记录官方链接。"
+            ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/",
+            "checkedAt": "2026-10-12",
+            "level": "作者公开论文书目与代码链接",
+            "supports": [
+              "TV-NTF条目指向IEEE原入口及官方代码ZIP URL；只保存URL，没有访问代码。"
             ]
           }
         ],
@@ -33409,9 +33400,9 @@
         ],
         "methodFamilyId": "tv-ntf-hsi-unmixing",
         "classificationReview": {
-          "reviewedAt": "2026-10-11",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "作者代码以A_r B_r^T建模各二维丰度、三种张量展开更新A/B/C，以U/V辅助因子和二维各向同性TV proximal更新E，delta=0.4为软ASC；论文完整公式尚未核验。公开全文/完整摘要/代码分别限定，非模型复现。",
+          "rationale": "完整机构原摘要直接支持HSI盲解混、矩阵—向量NTF和TV空间先验，保留原三标签；全文未取得，具体优化与参数仍未核验。",
           "evidenceFields": [
             "title",
             "summary",
@@ -33420,11 +33411,10 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "1cbd378907e113377a1e229c7281ca8e46a6f66ded59dbc0b3d4e8650f9eadb3",
+          "evidenceDigest": "3e3bd22a1e64c5dc639a789b119222d372e19c7423b3e342d85fd84e117c519b",
           "sourceUrls": [
-            "https://ieeexplore.ieee.org/abstract/document/8497054/",
             "https://research-repository.griffith.edu.au/server/api/core/items/35547392-60bc-405f-8bb8-828ddf9ccd91",
-            "https://api.crossref.org/works/10.1109/TGRS.2018.2872888"
+            "https://www.xiongfuli.com/cv/"
           ]
         }
       },
@@ -33434,7 +33424,8 @@
         "note": "论文全文未取得；实际200为IEEE完整摘要或PDF跳转HTML，作者ZIP无PDF。框架原图仍待，不把算法代码重绘成论文原图。",
         "sourceUrl": "https://ieeexplore.ieee.org/abstract/document/8497054/",
         "checkedAt": "2026-10-11"
-      }
+      },
+      "code": "https://www.xiongfuli.com/cv/code/MV-NTF-TV.zip"
     },
     {
       "id": "crf-deep-feature-hsi-tgrs-2019",
@@ -35767,32 +35758,35 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2021.3131878",
-      "representation": "高光谱去噪：MAC-Net 将光谱低秩模型与空间深度先验结合，在非局部 U-Net 中联合利用局部/非局部空间和光谱结构。",
+      "representation": "HySime噪声白化与截断SVD谱低秩子空间，非局部3D U-Net学习空间深先验，再逆投影/逆白化恢复HSI。",
       "tags": [],
-      "summary": "MAC-Net 先建立光谱低秩模型，再嵌入非局部 U-Net，并把优化与去噪过程展开为可学习网络，以提升泛化并减少训练样本需求。",
-      "input": "含噪高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "光谱低秩模型刻画跨波段相关，非局部 U-Net 捕获长程空间相似性；优化流程展开成 MAC-Net。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://scispace.com/papers/mac-net-model-aided-nonlocal-neural-network-for-303mgt34",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "MAC-Net将谱低秩模型与非局部3D U-Net结合进行直接高光谱去噪。实际作者公开稿14页已完整阅读；Σ和D按每幅含噪HSI估计并赋给投影/重建层，仅SDPM端到端学习。Algorithm1为五步单次流程，未堆叠优化迭代；跨场景重噪声存在弱于FastHyDe的结果。",
+      "input": "含噪HSI Y∈R^(L×N)及由观测估计的噪声协方差Σ、谱子空间维数K和正交基D；HySime估计Σ/K，白化后采用截断SVD。网络处理投影HSI，3D卷积允许子空间通道数变化。训练使用ICVL 31带自然场景；测试含ICVL与191/210/220带遥感HSI。",
+      "output": "原谱域的去噪高光谱图像，Algorithm1输出X̂=Σ^(1/2)D Ŵ；不是端元/丰度分解，也不是几何三维重建。真实Urban/Indian Pines无干净真值，只进行视觉与谱曲线对比。",
+      "mechanism": "§III先推导Y=DW+E、DᵀD=I的谱低秩矩阵模型与空间深先验；实际以截断SVD确定D，五步Algorithm1依次估计Σ、白化、估计K/正交投影、非局部3D U-Net去噪和重建，避免反复交替更新D/W。Σ/D按观测设置，只有SDPM参数训练；SDPM用3×3×3卷积、空间缩放/跳连和高分辨率NAB。NAB以ρ(Q)(ρ(K)ᵀV)重排注意力乘法并残差输出；TableI与正文的NAB放置描述不一致，按原稿分列，不补实现。",
+      "readingNote": "实际读完作者网站公开稿14页、14式、Algorithm1、Fig1–12、TableI–VII和60条引用，首页/末页履历确认Jun Zhou为Griffith；七处作者直接HSI引文均已有目录。作者稿未明确AM/VoR且没有正式卷页/DOI页眉，文件制作时间及元数据“FINAL VERSION”不当作正式版本证明；Crossref对应2022 TGRS60:1–14五作者，保留正式书目与未读正式版。式7印刷范数未写平方/下标，与前式转换存在疑点；噪声σ原文称variance，尺度/单位未充分说明。提供首页所列作者官方代码链接。",
+      "paper": "https://www.xiongfuli.com/cv/paper/TGRS-2021-2.pdf",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "nonlocal-spatial-priors"
+          "nonlocal-spatial-priors",
+          "low-rank-matrix-factorization"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何结合光谱低秩和非局部空间先验提升高光谱去噪的解释性与泛化？",
-        "datasets": "公开摘要报告在自然和遥感高光谱影像上实验；数据名称、噪声设置和指标待全文核验。",
-        "experimentSetting": "谱低秩模型与非局部 U-Net 混合，模型驱动步骤展开为网络。",
-        "conclusions": "公开摘要报告优于模型驱动和深度学习对比方法，并降低对训练样本的依赖；具体指标待全文核验。",
-        "limitations": "摘要镜像未给出完整网络、数据统计、代码实际可用状态和消融。",
-        "dataLinks": [],
+        "relationNote": "原稿直接恢复含噪HSI，涵盖自然31带与遥感191/210/220带影像；不将谱空张量维度当几何三维。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何以按观测估计的谱低秩投影和可学习的非局部空间深先验，兼顾HSI去噪、跨谱带泛化及训练样本需求？",
+        "datasets": "训练ICVL 100幅1392×1300×31，翻转/裁剪/缩放后用64×64×31块；测试50幅ICVL的512×512×31图。Washington DC Mall原1208×307×191，截取256×256×191，用ICVL训练模型直接测试、不作遥感微调。真实HYDICE Urban为307×307×210、0.4–2.5 μm；AVIRIS Indian Pines为145×145×220、20 m空间分辨率。真实两集无干净对照。",
+        "experimentSetting": "使用式14的平方Frobenius重建损失，作者稿报告Adam、300 epoch、初始学习率5×10^-3，每80 epoch乘0.35、两RTX3090训练；观测白化后先做nonlocal means以改善子空间估计。每带零均值非同分布Gaussian噪声σ范围[0,15]/[0,55]/[0,95]及blind；σ原文称方差，保留称谓不推断标准差/像素尺度。比较8模型法与4深度法，评PSNR/SSIM/SAM。WDCM时间表使用Xeon Silver4214R 2.40 GHz/126 GB RAM，未明确推理GPU配置。消融在ICVL、σ∈[0,55]进行NAB、20–100训练图、深度和K测试；12层为论文选择。",
+        "conclusions": "TableII的ICVL四条件MAC-Net PSNR为49.19/43.02/40.17/41.62 dB，相应SSIM0.9980/0.9925/0.9837/0.9884、SAM0.0127/0.0280/0.0377/0.0358，均在该表优于比较项。WDCM TableIII为57.43/50.59/45.52/49.40 dB；重噪声[0,95]弱于FastHyDe46.70 dB，SSIM/SAM也弱，不宣称所有条件最优。TableIV本机MAC-Net8.613 s，不能外推其他硬件。去NAB的PSNR43.02降42.49 dB；20与100训练图42.44/43.02 dB，但60图42.17 dB，样本性能非单调。TableVII的K=R̂在PSNR最佳，K=R̂+2的SSIM/SAM并列，非所有指标严格唯一最优。",
+        "limitations": "作者明确松弛D的单次流程无最小均方误差最优保证；自然场景训练到遥感强噪声有域差异，真实两集只定性。式7范数排印、NAB位置、σ尺度及部分通道/批量设置未充分说明，不通过代码补齐。训练图消融非单调且未给重复波动/统计区间；TableVII部分指标并列。正式VoR尚未取得/逐字核对，作者稿状态不推测。",
+        "dataLinks": [
+          "http://icvl.cs.bgu.ac.il/hyperspectral/"
+        ],
         "evidence": [
           {
             "url": "https://scispace.com/papers/mac-net-model-aided-nonlocal-neural-network-for-303mgt34",
@@ -35811,6 +35805,24 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021-2.pdf",
+            "checkedAt": "2026-10-12",
+            "level": "作者公开稿14页逐页全文、原图原表与首页身份核验",
+            "supports": [
+              "五步白化/截断SVD投影、非局部3D U-Net、逆投影重建；Σ/D观测赋值而仅SDPM学习，非堆叠优化迭代。",
+              "四数据集、训练与噪声条件、主表性能和消融；WDCM重噪声弱于FastHyDe、样本非单调及K指标并列。",
+              "Griffith首页单位/末页履历、两张原框架图及60条引文；官方代码URL仅记录，没有访问仓库。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2021.3131878",
+            "checkedAt": "2026-10-12",
+            "level": "出版社登记正式书目与作者机构/ORCID字段",
+            "supports": [
+              "正式Model-Aided题名、五作者、2022 TGRS60:1–14及DOI；Jun Zhou登记Griffith及目标ORCID，认证字段false不当认证证明。"
+            ]
           }
         ],
         "versions": [
@@ -35820,12 +35832,93 @@
             "url": "https://doi.org/10.1109/tgrs.2021.3131878",
             "doi": "10.1109/tgrs.2021.3131878",
             "year": 2022,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "2022正式TGRS60:1–14书目已核，五作者匹配作者公开稿；实际未取得/阅读出版社VoR，不把公开稿全文状态转给本版本。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "zhou-77-hsi-2022-author-copy",
+            "type": "作者公开稿（未标AM/VoR）",
+            "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021-2.pdf",
+            "doi": "10.1109/tgrs.2021.3131878",
+            "year": 2022,
+            "metadataStatus": "author_copy_title_authors_matched_formal_doi",
+            "readingProgress": "full_text_read",
+            "relation": "作者网站直接公开14页完整稿，题名/五作者对应正式DOI；未印AM/VoR及正式卷页，2021 PDF制作时间和FINAL VERSION路径不用于判定正式发表版本。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-77"
+        "methodFamilyId": "zhou-2022-title-77",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原稿直接HSI去噪，并有观测谱低秩矩阵分解与学习式非局部空间先验；补low-rank-matrix-factorization。Algorithm1五步顺序执行不含重复优化迭代，不据摘要“展开”新增deep-unfolding。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b7c8f4c8279a5177fe90c270a9b0eb32b94467b156bb43eba5d6ef8e35084577",
+          "sourceUrls": [
+            "https://www.xiongfuli.com/cv/paper/TGRS-2021-2.pdf"
+          ]
+        }
       },
-      "citation": "@article{zhou_77_hsi_2022,\n  title = {MAC-Net: Model-Aided Nonlocal Neural Network for Hyperspectral Image Denoising},\n  author = {Fengchao Xiong and Jun Zhou and Qinling Zhao and Jianfeng Lu and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3131878}\n}\n"
+      "citation": "@article{zhou_77_hsi_2022,\n  title = {MAC-Net: Model-Aided Nonlocal Neural Network for Hyperspectral Image Denoising},\n  author = {Fengchao Xiong and Jun Zhou and Qinling Zhao and Jianfeng Lu and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3131878}\n}\n",
+      "code": "https://github.com/bearshng/mac-net",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.xiongfuli.com/cv/paper/TGRS-2021-2.pdf",
+          "figureLabel": "Figure 1",
+          "caption": "MAC-Net作者公开稿原整体框架：噪声白化、谱低秩投影、非局部3D U-Net空间深先验与原谱域重建；保留完整英文图注，NAB放置与正文差异另记。",
+          "verificationNote": "已目视核对作者公开14页稿相应原图及完整图注；300dpi直接裁取，未重绘，版本未擅自标AM/VoR。",
+          "page": 3,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              46,
+              45,
+              566,
+              343
+            ],
+            "pdfVersion": "作者公开14页稿（未标AM/VoR）",
+            "sourcePdfSha256": "1223be2606ad6419e6001bbd6a5bddf77c4238cf0039f102db94a04996f7c406"
+          },
+          "path": "figures/zhou-77-hsi-2022/mac-fig1.png",
+          "width": 2168,
+          "height": 1243,
+          "sha256": "c877f6cceda122af41d085a52aa5ba521b9cc64e6bf70f48eb31258f104b1d41",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fengchao Xiong, Jun Zhou, Qinling Zhao, Jianfeng Lu, Yuntao Qian · 作者公开稿"
+        },
+        {
+          "sourceUrl": "https://www.xiongfuli.com/cv/paper/TGRS-2021-2.pdf",
+          "figureLabel": "Figure 3",
+          "caption": "MAC-Net作者公开稿原NAB：Q/K软归一、先计算KᵀV再与Q相乘、1×1×1投影与残差输出；保留原图/完整图注，非重新绘制。",
+          "verificationNote": "已目视核对作者公开14页稿相应原图及完整图注；300dpi直接裁取，未重绘，版本未擅自标AM/VoR。",
+          "page": 6,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              310,
+              45,
+              566,
+              213
+            ],
+            "pdfVersion": "作者公开14页稿（未标AM/VoR）",
+            "sourcePdfSha256": "1223be2606ad6419e6001bbd6a5bddf77c4238cf0039f102db94a04996f7c406"
+          },
+          "path": "figures/zhou-77-hsi-2022/mac-fig3.png",
+          "width": 1068,
+          "height": 701,
+          "sha256": "0f0c0a8d38e1523d3f5812f59d29cb232a16f1bd6c047a4b6e645789285b1c93",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fengchao Xiong, Jun Zhou, Qinling Zhao, Jianfeng Lu, Yuntao Qian · 作者公开稿"
+        }
+      ]
     },
     {
       "id": "zhou-78-hsi-2022",
@@ -47594,7 +47687,8 @@
         "adaptive-graph-multilayer-nmf-hsi-2020",
         "gmc-sparse-nmf-hsi-2020",
         "subspace-structure-nmf-hsi-2020",
-        "zhou-scholar-iterative-refinement-network-for-hyperspec-2023"
+        "zhou-scholar-iterative-refinement-network-for-hyperspec-2023",
+        "zhou-77-hsi-2022"
       ],
       "history": [
         {
@@ -47631,6 +47725,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "MAC-Net作者稿全文明确谱低秩矩阵分解/投影，与学习式空间先验区分；不把单次五步流程当重复迭代展开。"
         }
       ]
     },
