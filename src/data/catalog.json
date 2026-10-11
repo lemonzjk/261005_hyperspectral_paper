@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11",
+  "updatedAt": "2026-10-12",
   "papers": [
     {
       "id": "hs-nerf",
@@ -34488,7 +34488,7 @@
     },
     {
       "id": "zhou-79-hsi-2022",
-      "shortTitle": "SMDS-Net: Model Guided Spectral-Spatial Network for ",
+      "shortTitle": "SMDS-Net · subspace＋tensor sparse unfolding",
       "title": "SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising",
       "authors": "Fengchao Xiong, Jun Zhou, Shuyin Tao, Jianfeng Lu, Jiantao Zhou, Yuntao Qian",
       "year": 2022,
@@ -34500,31 +34500,33 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tip.2022.3196826",
-      "representation": "高光谱去噪：SMDS-Net 从子空间多维稀疏模型展开可解释网络，联合利用空间冗余、光谱低秩性和光谱—空间结构。",
+      "representation": "高光谱去噪：输入自适应谱子空间投影、三模式张量字典稀疏编码及六步TISTA展开；重叠立方体平均后回投光谱。",
       "tags": [],
-      "summary": "SMDS-Net 先将高光谱影像投影到低维正交子空间，再用多维字典稀疏表示，并把去噪与优化步骤端到端展开为可学习网络。",
-      "input": "含噪高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "子空间投影、多维稀疏编码、字典学习与阈值参数共同对应 SMDS 模型的优化步骤，并端到端训练。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://arxiv.org/abs/2012.01829",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "SMDS-Net把光谱低秩投影与三模式稀疏编码展开为可训练恢复网络。子空间A按每幅输入以HySime/SVD预计算，字典与分层阈值由ICVL成对数据学习；默认六步仅5103参数。ICVL/CAVE三种非IID Gaussian协议的PSNR、SSIM、SAM在所列方法中领先，Urban仅定性比较；超参数并非越大越好，也没有实测耗时表。",
+      "input": "含噪H×W×B光学高光谱立方体Y及按该输入预计算的正交谱子空间A；训练ICVL31带，测试ICVL/CAVE31带和真实Urban210带。",
+      "output": "经子空间恢复、重叠立方体平均与谱回投后的H×W×B去噪高光谱立方体；合成PSNR/SSIM/SAM及真实Urban定性图像/光谱曲线。",
+      "mechanism": "Y=X+N、X=G×3A且AᵀA=I；HySime估R、按输入SVD预计算A并作为网络输入，而非学习全体HSI共用A。五阶段为Y×3Aᵀ谱投影、重叠cube提取、MD稀疏编码、重建/平均聚合、Ĝ×3A谱回投。TISTA展开每步依次E=Gi−Bi×1D1×2D2×3D3，H=Bi+E×1C1ᵀ×2C2ᵀ×3C3ᵀ，再用逐层阈值Λ软阈值；C与D解耦，W1/2/3重建立方体。默认9³ cube、三个9×9字典、K=6，Eq12平方Frobenius恢复损失；Fig2原流程不含GMSC动量门控或Transformer。",
+      "readingNote": "Griffith机构公开稿13 PDF页全部逐页阅读（封面＋12正文），12式、5表、11图和59条引文目录已读；首页明确Griffith Jun Zhou与澳门Jiantao Zhou，Fengchao Xiong通讯。固定arXiv2012.01829v2共12页另下载并逐页文本对应，首页及Fig2另视觉核对；机构Fig2部分数学符号显示缺失，展示v2完整原图，机构原裁图仍归档。机构封面/元数据未标AM或VoR；正式TIP书目5469–5483为15页，不能把当前12页正文当最终VoR已读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1e8bc7b-dd62-4029-a2ab-ec199fcbafff/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "tensor-low-rank-learning"
+          "tensor-low-rank-learning",
+          "deep-unfolding",
+          "sparse-dictionary-learning"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何把空间冗余、光谱低秩和光谱—空间结构融入可解释高光谱去噪网络？",
-        "datasets": "官方 arXiv 摘要报告合成和真实高光谱影像实验；数据名称、噪声设置和指标待正式全文核验。",
-        "experimentSetting": "SMDS 模型展开为端到端网络，学习字典与阈值等关键变量。",
-        "conclusions": "官方摘要报告具有较强去噪能力和可解释性；正式期刊版本数值和差异待核验。",
-        "limitations": "证据来自相关 arXiv 预印本摘要；正式 TIP 版本、完整实验、代码许可和复现待核验。",
+        "relationNote": "已读机构稿及对应固定v2直接输入/输出光学HSI；Tucker-1式谱子空间低秩、多模式稀疏字典及TISTA展开分别支持低秩/字典/深度展开方法标签，任务为去噪。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "按输入估计的低秩光谱子空间与三模式字典稀疏展开，能否以少量可学习参数恢复高光谱噪声并跨近距离/遥感场景使用？",
+        "datasets": "ICVL100幅1392×1300×31训练，随机翻转/裁剪/缩放成56×56×31；50幅主区512²×31测试。CAVE32幅512²×31，直接用ICVL模型；真实Urban307²×210，同模型不fine-tune，重点示例band1/109/141/208/209。本文未给传感器/波长、独立验证集ID，不从其他去噪稿补规格。",
+        "experimentSetting": "PyTorch，两RTX3090，Adam，batch2，300 epochs，lr5e-3，每80轮乘.35；cube[9,9,9]、字典[9,9,9]、K6，DCT初始化。Gaussian逐带σ∈[0,15]/[0,55]/[0,95]；提供准确逐带噪声给BM3D/DnCNN，其他需要噪声水平者使用均值。测试56²全带patch、stride12，重叠结果汇总。13基线（4稀疏＋5低秩＋4深度），BM3D/DnCNN逐带；本稿无人工混合噪声主表，真实Urban仅图/曲线。",
+        "conclusions": "TableI ICVL三种σ范围的PSNR/SSIM/SAM分别47.81/.9899/.0139、42.00/.9733/.0242、39.34/.9593/.0303；TableII CAVE分别45.40/.9826/.1023、39.28/.9510/.1671、36.22/.9247/.1977，在所列指标领先。默认K6/9³的参数5103，作者称其他两深度基线超过10万参数，但无实测耗时/FLOPS表。TableIII字典9/11/13的PSNR39.34/39.43/39.36；TableIV K6/12/15为39.34/39.41/39.15，K12的SSIM .9587低于K6 .9593；TableV cube9/11均39.34，但11的SSIM .9595更高、SAM .0305更差。Fig9仅10/20/40/80/100训练幅数曲线、Fig10固定DCT与字典学习消融，不捏造图上未印数值。",
+        "limitations": "当前免费机构稿未标AM/VoR，其12页正文与2021 v2文本对应；正式2022 TIP15页及新增/删改仍未核，不移植版本结论。子空间A是输入相关预计算，不是端到端学习的通用投影；Algorithm1对Y(3)的SVD采用V作A，按本稿mode展开定义存在维度写法疑点，仅记录原式不代作者改代码。噪声强度归一、SAM单位、独立验证/重复运行/置信区间未说明；Urban无干净真值。Fig4注像素(451,135)，正文又写(453,135)。字典/K/cube消融非单调，参数少不等于已证实更快。代码链接来自本次原机构摘要，原文说will be made publicly available；仅记录链接，不核查代码、权重或运行。",
         "dataLinks": [],
         "evidence": [
           {
@@ -34554,6 +34556,42 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1e8bc7b-dd62-4029-a2ab-ec199fcbafff/content",
+            "checkedAt": "2026-10-12",
+            "level": "指定免费机构稿逐页全文、原图与原表核验",
+            "supports": [
+              "已读机构稿及对应固定v2直接输入/输出光学HSI；Tucker-1式谱子空间低秩、多模式稀疏字典及TISTA展开分别支持低秩/字典/深度展开方法标签，任务为去噪。",
+              "ICVL/CAVE31带及Urban210带HSI、训练与噪声协议、数值和资料边界",
+              "Griffith Jun Zhou原机构身份；仅实际版本已读，代码仅官方链接"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/3a0980c1-7ed7-437a-9dad-bfb9f58ef76f",
+            "checkedAt": "2026-10-12",
+            "level": "机构原始书目/摘要元数据",
+            "supports": [
+              "正式TIP2022卷31页5469–5483；无AM/VoR标记",
+              "原摘要给作者官方代码URL及will be made publicly available措辞，仅记录链接"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2012.01829v2",
+            "checkedAt": "2026-10-12",
+            "level": "固定预印本逐页文本对应与首页/Fig2视觉核验",
+            "supports": [
+              "十二页正文逐页对应，首页版本戳与Fig2符号显示差异分别记录",
+              "不声称两图像/PDF完全相同或最终期刊版已读"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1e8bc7b-dd62-4029-a2ab-ec199fcbafff/content",
+            "checkedAt": "2026-10-12",
+            "level": "指定机构正文高光谱去噪/展开/字典分类核验",
+            "supports": [
+              "已读机构稿及对应固定v2直接输入/输出光学HSI；Tucker-1式谱子空间低秩、多模式稀疏字典及TISTA展开分别支持低秩/字典/深度展开方法标签，任务为去噪。"
+            ]
           }
         ],
         "versions": [
@@ -34563,7 +34601,7 @@
             "url": "https://doi.org/10.1109/tip.2022.3196826",
             "doi": "10.1109/tip.2022.3196826",
             "year": 2022,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式TIP2022 DOI，机构书目volume31/pp5469–5483；本次只读12页机构正文及对应固定v2，不表示最终15页VoR已读。"
           },
           {
             "id": "zhou-79-hsi-2022-arxiv-2012-01829-v2",
@@ -34576,12 +34614,73 @@
             "firstSubmittedAt": "2020-12-03T11:05:01Z",
             "updatedAt": "2021-11-15T02:56:37Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v2预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。"
+            "relation": "固定v2十二页下载，正文逐页对应已读机构稿，首页新增版本戳；首页/Fig2另视觉核，Fig2的G/B数学符号显示比机构稿完整。文本对应不证明正式TIP版或两PDF图像完全相同。",
+            "readingProgress": "full_text_read",
+            "contentComparisonEvidence": "research/hyperspectral/sources/jun-zhou-model-denoisers-dataset-scope-2026-10-12-smds-version-comparison.json"
+          },
+          {
+            "id": "zhou-79-hsi-2022-griffith-public-manuscript",
+            "type": "机构公开稿（未标AM/VoR）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1e8bc7b-dd62-4029-a2ab-ec199fcbafff/content",
+            "doi": "10.1109/tip.2022.3196826",
+            "year": 2022,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面＋12页正文共13页全部阅读；机构没有版本类型标记，正文与固定v2文本对应；最终TIP15页未读。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-79"
+        "methodFamilyId": "zhou-2022-title-79",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "已读机构稿及对应固定v2直接输入/输出光学HSI；Tucker-1式谱子空间低秩、多模式稀疏字典及TISTA展开分别支持低秩/字典/深度展开方法标签，任务为去噪。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "682278c79d721e012cf7e8fb9f987be7b2c30e4744a180759e4893f8eda1f947",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1e8bc7b-dd62-4029-a2ab-ec199fcbafff/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_79_hsi_2022,\n  title = {SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising},\n  author = {Fengchao Xiong and Jun Zhou and Shuyin Tao and Jianfeng Lu and Jiantao Zhou and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tip.2022.3196826}\n}\n"
+      "citation": "@article{zhou_79_hsi_2022,\n  title = {SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising},\n  author = {Fengchao Xiong and Jun Zhou and Shuyin Tao and Jianfeng Lu and Jiantao Zhou and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tip.2022.3196826}\n}\n",
+      "code": "https://github.com/bearshng/smds-net",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2012.01829v2",
+          "figureLabel": "Fig. 2",
+          "caption": "SMDS-Net五阶段、三模式字典/阈值展开与cube重建；保留v2完整G/B符号原图。",
+          "page": 2,
+          "verificationNote": "arXiv2012.01829v2，原PDF第2页/正文第2页，300dpi原页裁取；模块、连线、输出标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              46,
+              53,
+              567,
+              334
+            ],
+            "pixelBox": [
+              191,
+              220,
+              2363,
+              1392
+            ]
+          },
+          "path": "figures/zhou-79-hsi-2022/smds-v2-fig2.png",
+          "width": 2172,
+          "height": 1172,
+          "sha256": "8d9e620b57523dc5e104d101125e3d1b7e228b003bb5a06abc3a0e375cc1b5ae",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Fengchao Xiong, Jun Zhou, Shuyin Tao, Jianfeng Lu, Jiantao Zhou, Yuntao Qian · arXiv2012.01829v2"
+        }
+      ]
     },
     {
       "id": "zhou-80-hsi-2022",
@@ -41025,7 +41124,7 @@
     },
     {
       "id": "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
-      "shortTitle": "Learning a Model-Based Deep Hyperspectral Denoiser from a Single Nois…",
+      "shortTitle": "GMSC-Net · single noisy HSI",
       "title": "Learning a Model-Based Deep Hyperspectral Denoiser from a Single Noisy Hyperspectral Image",
       "authors": "Guanyiman Fu, Fengchao Xiong, Shuyin Tao, Jianfeng Lu, Jun Zhou, Yuntao Qian",
       "year": 2021,
@@ -41037,31 +41136,32 @@
         "hyperspectral"
       ],
       "doi": "10.1109/igarss47720.2021.9553257",
-      "representation": "高光谱去噪：从单幅噪声影像构造训练对，将稀疏表示与梯度动量展开为 GMSC-Net。",
+      "representation": "单幅高光谱自监督去噪：5³局部块聚类中心作伪干净目标，加噪生成训练对，展开带输入/遗忘门的动量稀疏编码。",
       "tags": [],
-      "summary": "提出从单幅噪声高光谱图像学习的模型驱动去噪网络 GMSC-Net：将稀疏表示梯度动量迭代展开为网络，并以局部立方体聚类中心构造噪声—“干净”训练对；合成和真实数据实验均有效。",
-      "input": "单幅噪声高光谱图像。",
-      "output": "去噪高光谱图像。",
-      "mechanism": "对稀疏表示去噪模型进行梯度动量展开；将局部立方体聚类中心视为“干净”立方体，与观测噪声构成训练对。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与 Semantic Scholar公开摘要核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/8e4b56071619ae155dd5b0669fdee486b3cf76de",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "GMSC-Net从一幅含噪HSI的局部立方体聚类中心构造伪干净目标，再加模拟噪声训练三步动量稀疏展开。Pavia Centre80带三种Gaussian PSNR为33.2475/31.7072/29.8544；Urban210带只有定性恢复。无需外部真实干净训练对不表示聚类中心是真值，噪声构造、cube/cluster数量和独立验证边界保留。",
+      "input": "单幅含噪高光谱立方体；Pavia Centre200×200×80合成Gaussian，Urban307×307×210真实噪声；局部5×5×5块向量化后用于稀疏展开。",
+      "output": "恢复的高光谱立方体；Pavia Centre合成PSNR及Urban首波段定性结果，非地物分类或跨独立场景训练后固定网络评测。",
+      "mechanism": "Y=X+N；向量化cube的L1稀疏编码min ½||y−Ds||²+λ||s||1。PGD改为Mk=ηDᵀ(Dsk−y)−μMk−1、sk+1=soft(sk−Mk)，再以We(Wdsk−y)计算当前梯度，sigmoid输入/遗忘门分别加权当前梯度与历史方向，Mk=ik·Gk−fk·Mk−1。三块堆叠后Dsk恢复cube，Eq10用伪干净聚类中心作平方Frobenius重建目标。Noisy-as-Clean：同一噪声HSI重叠采块、K-means聚类、中心作伪干净目标，再模拟加噪产生训练对；Fig1/2分别为完整流程与GMSC块。",
+      "readingNote": "Griffith作者接受稿5 PDF页全部逐页阅读（封面＋4正文），10式、1表、4图与8条引文目录已读。首页Jun Zhou的Griffith机构已核，Fig1/2完整原图及Table1原数值视觉核对；当前GMSC-Net与SMDS-Net方法/作者/训练方式不同，没有明确扩展或同稿版本声明，不合并方法族。未声称最终IGARSS VoR、被引全文或性能复现已读/完成。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "deep-unfolding"
+          "deep-unfolding",
+          "sparse-dictionary-learning"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在缺少干净/噪声成对样本时从单幅高光谱图像学习模型驱动去噪？",
-        "datasets": "摘要称合成与真实数据集，名称、噪声设置和划分待全文核验。",
-        "experimentSetting": "GMSC-Net、局部立方体聚类和单图自监督训练。",
-        "conclusions": "公开摘要报告在合成和真实数据上均有效。",
-        "limitations": "摘要未给出网络层数、数据集、指标、代码和消融实验。",
+        "relationNote": "AM直接输入/恢复80/210带高光谱；稀疏模型、梯度动量近端迭代与学习字典对应去噪、深度展开和稀疏字典方法。中心伪标签训练不满足现有“无配对RGB映射”或“测量一致性重建”的狭义标签定义，不误用这些标签。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "能否以单幅含噪高光谱影像的聚类中心作伪目标，训练可解释的梯度动量稀疏去噪网络而无需外部真实干净HSI？",
+        "datasets": "Pavia Centre截200²×80作为比较干净合成源，各带加Gaussian σ∈[0,35]/[0,55]/[0,75]；真实Urban307²×210，首带严重污染。每幅含噪HSI自行产生训练数据，未给相机/波长、Pavia裁区位置、独立验证/测试父图划分；不导入别稿ICVL训练或Pavia去首22带说明。",
+        "experimentSetting": "PyTorch，三层GMSC，Adam lr1e-4，batch1，500 epochs；5³局部块、K-means中心伪干净目标＋多种强度模拟噪声。原文在cube/cluster叙述写合成500、真实3000，未区分指采块数还是聚类数；采块stride、聚类初始化/距离和新增噪声精确分布未给。BM3D/PARAFAC/TDL/tSVD/DnCNN五基线；DnCNN逐带；真实Urban的tSVD运行异常被省略。仅合成PSNR，没有SSIM/SAM、计时或架构消融表。",
+        "conclusions": "Table1三个σ范围的GMSC-Net PSNR33.2475/31.7072/29.8544；相应tSVD32.7919/29.6001/28.6263、PARAFAC32.0358/31.2434/29.3549、BM3D31.1688/30.2293/28.7821、TDL29.1257/26.7987/24.3750、DnCNN29.0585/27.7475/17.2235。前三列中均在所列方法领先；Urban仅首带Fig4定性，没有干净GT定量表，tSVD未运行成功。作者声称展开减少推理时间，但未给实测耗时，不称速度或所有质量指标已证实。",
+        "limitations": "接受稿已读，最终VoR未读；单图中心仍带原始噪声，伪干净目标不等于观测真值或统计无偏保证。新增噪声强度/分布、cube/cluster数量指代、采块stride、训练验证隔离、聚合方式和硬件未明。正文将σ称standard deviation，Table1表头写Variances，按原范围记录不平方或改单位；Fig3写GSMC而正文GMSC。D∈R^(n³×m)却把s写n³×1，原式维度写法不一致；按原文记录，不查代码修补。未见本稿作者官方代码/数据链接；不另检查作者代码。",
         "dataLinks": [],
         "evidence": [
           {
@@ -41081,6 +41181,24 @@
             "supports": [
               "正式题名、作者、会议、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content",
+            "checkedAt": "2026-10-12",
+            "level": "指定免费机构稿逐页全文、原图与原表核验",
+            "supports": [
+              "AM直接输入/恢复80/210带高光谱；稀疏模型、梯度动量近端迭代与学习字典对应去噪、深度展开和稀疏字典方法。中心伪标签训练不满足现有“无配对RGB映射”或“测量一致性重建”的狭义标签定义，不误用这些标签。",
+              "Pavia Centre80带及Urban210带HSI、单图训练与噪声协议、数值和资料边界",
+              "Griffith Jun Zhou原机构身份；仅实际版本已读，代码仅官方链接"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content",
+            "checkedAt": "2026-10-12",
+            "level": "指定机构正文高光谱去噪/展开/字典分类核验",
+            "supports": [
+              "AM直接输入/恢复80/210带高光谱；稀疏模型、梯度动量近端迭代与学习字典对应去噪、深度展开和稀疏字典方法。中心伪标签训练不满足现有“无配对RGB映射”或“测量一致性重建”的狭义标签定义，不误用这些标签。"
+            ]
           }
         ],
         "versions": [
@@ -41090,12 +41208,100 @@
             "url": "https://doi.org/10.1109/igarss47720.2021.9553257",
             "doi": "10.1109/igarss47720.2021.9553257",
             "year": 2021,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式IGARSS2021 DOI；同DOI的机构AM封面＋4正文共5页已读，不表示最终VoR已读。"
+          },
+          {
+            "id": "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content",
+            "doi": "10.1109/igarss47720.2021.9553257",
+            "year": 2021,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面明确AM，全部5页阅读；Fig1/2原图来自此接受稿。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021"
+        "methodFamilyId": "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM直接输入/恢复80/210带高光谱；稀疏模型、梯度动量近端迭代与学习字典对应去噪、深度展开和稀疏字典方法。中心伪标签训练不满足现有“无配对RGB映射”或“测量一致性重建”的狭义标签定义，不误用这些标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "53526fdb3e78c8b88b345dafac0de07bf67675cdf88866e987aeca27d41901b2",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content"
+          ]
+        }
       },
-      "citation": "@inproceedings{zhou-scholar-learning-a-model-based-deep-hyperspectral--2021,\n  title = {Learning a Model-Based Deep Hyperspectral Denoiser from a Single Noisy Hyperspectral Image},\n  author = {Guanyiman Fu and Fengchao Xiong and Shuyin Tao and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2021},\n  doi = {10.1109/igarss47720.2021.9553257}\n}\n"
+      "citation": "@inproceedings{zhou-scholar-learning-a-model-based-deep-hyperspectral--2021,\n  title = {Learning a Model-Based Deep Hyperspectral Denoiser from a Single Noisy Hyperspectral Image},\n  author = {Guanyiman Fu and Fengchao Xiong and Shuyin Tao and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2021},\n  doi = {10.1109/igarss47720.2021.9553257}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content",
+          "figureLabel": "Fig. 1",
+          "caption": "GMSC-Net单图聚类中心伪训练对、模拟加噪及三步动量展开总体流程。",
+          "page": 3,
+          "verificationNote": "Griffith Accepted Manuscript · © IEEE，原PDF第3页/正文第2页，300dpi原页裁取；模块、连线、输出标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              45,
+              68,
+              569,
+              184
+            ],
+            "pixelBox": [
+              187,
+              283,
+              2371,
+              767
+            ]
+          },
+          "path": "figures/zhou-scholar-learning-a-model-based-deep-hyperspectral--2021/gmsc-fig1.png",
+          "width": 2184,
+          "height": 484,
+          "sha256": "2ad523167fbce60dfcbd494494555183aa7a4d373e3d81627f99bef08371a285",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Shuyin Tao, Jianfeng Lu, Jun Zhou, Yuntao Qian · Griffith Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content",
+          "figureLabel": "Fig. 2",
+          "caption": "GMSC块的梯度计算、输入/遗忘门、历史动量方向和软阈值。",
+          "page": 3,
+          "verificationNote": "Griffith Accepted Manuscript · © IEEE，原PDF第3页/正文第2页，300dpi原页裁取；模块、连线、输出标签和原图注完整已视觉核验，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pdfPointBox": [
+              45,
+              542,
+              311,
+              662
+            ],
+            "pixelBox": [
+              187,
+              2258,
+              1296,
+              2759
+            ]
+          },
+          "path": "figures/zhou-scholar-learning-a-model-based-deep-hyperspectral--2021/gmsc-fig2.png",
+          "width": 1109,
+          "height": 501,
+          "sha256": "76e4a26459b0594bfad9d5fda9e51076b834ba4ac764af7bb918f9d51ce30e77",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Guanyiman Fu, Fengchao Xiong, Shuyin Tao, Jianfeng Lu, Jun Zhou, Yuntao Qian · Griffith Accepted Manuscript · © IEEE"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
@@ -44288,6 +44494,7 @@
         "dauhst-2022",
         "t3sc-2021",
         "spectral-mixture-network-unmixing-2020",
+        "zhou-79-hsi-2022",
         "zhou-80-hsi-2022",
         "zhou-scholar-deep-unfolded-iterative-shrinkage-threshol-2019",
         "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
@@ -44314,6 +44521,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "GMSC-Net/SMDS-Net实际正文确认学习字典与迭代展开；单图伪目标不误用RGB无配对映射标签。"
         }
       ]
     },
@@ -45370,8 +45582,10 @@
         "cross-scene-dictionary-adaptation-tgrs-2017",
         "joint-spectral-spatial-sparse-coding-jstars-2017",
         "gmc-sparse-nmf-hsi-2020",
+        "zhou-79-hsi-2022",
         "zhou-65-hsi-2023",
         "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
+        "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
         "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022",
         "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022"
       ],
@@ -45405,6 +45619,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "GMSC-Net/SMDS-Net实际正文确认学习字典与迭代展开；单图伪目标不误用RGB无配对映射标签。"
         }
       ]
     },

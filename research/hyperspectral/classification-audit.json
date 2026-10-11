@@ -1,7 +1,7 @@
 {
-  "reviewedAt": "2026-10-11",
+  "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项来源分类审计，不表示全部论文全文已读；SSUMamba/SSRT实际AM分别支持状态空间/Transformer高光谱去噪，不合并方法族或不同实验协议。",
+  "scope": "逐项来源分类审计，非全部全文；GMSC-Net/SMDS-Net实际机构正文分别支持单图伪目标动量展开与谱子空间/张量稀疏展开，不合并不同方法族。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -277,7 +277,9 @@
     "zhou-42-hsi-2024",
     "zhou-scholar-arxiv-2501-16700",
     "zhou-56-hsi-2024",
-    "zhou-48-hsi-2024"
+    "zhou-48-hsi-2024",
+    "zhou-79-hsi-2022",
+    "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021"
   ],
   "sourceChecks": [
     {
@@ -1005,6 +1007,22 @@
       "level": "指定AM去噪任务及SSM/Transformer方法全文分类核验",
       "supports": [
         "AM §III/IV明确光学高光谱去噪，window/shift-window Transformer和改进SRU联合空间/光谱建模；支持去噪及Transformer方法标签，循环并非Mamba状态空间。"
+      ]
+    },
+    {
+      "paperId": "zhou-79-hsi-2022",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d1e8bc7b-dd62-4029-a2ab-ec199fcbafff/content",
+      "level": "指定机构正文高光谱去噪/展开/字典分类核验",
+      "supports": [
+        "已读机构稿及对应固定v2直接输入/输出光学HSI；Tucker-1式谱子空间低秩、多模式稀疏字典及TISTA展开分别支持低秩/字典/深度展开方法标签，任务为去噪。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/883ff95a-c7a0-48d7-be54-0ebaf2a9249a/content",
+      "level": "指定机构正文高光谱去噪/展开/字典分类核验",
+      "supports": [
+        "AM直接输入/恢复80/210带高光谱；稀疏模型、梯度动量近端迭代与学习字典对应去噪、深度展开和稀疏字典方法。中心伪标签训练不满足现有“无配对RGB映射”或“测量一致性重建”的狭义标签定义，不误用这些标签。"
       ]
     }
   ]
