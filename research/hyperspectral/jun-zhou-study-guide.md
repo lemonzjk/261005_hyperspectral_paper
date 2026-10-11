@@ -4,7 +4,7 @@
 
 ## 目录边界
 
-当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。136条为摘要级核验、52条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
+当前作者目录共188条出版/预印本/会议摘要记录：181条直接高光谱，7条多光谱关联（含1条EGU会议摘要）。134条为摘要级核验、54条为全文级核验。数字不是独立方法数；会议、期刊扩展版和预印本分别列出，阅读时对照版本证据。分类确认不等于阅读全文。
 
 网站本地入口：`http://localhost:5173/?collection=hyperspectral&author=Jun%20Zhou`。打开论文详情可查看输入输出、方法、证据、框架原图和 BibTeX。原始事实统一维护在 `src/data/catalog.json`；本文是2026-10-10目录快照。
 
@@ -58,12 +58,12 @@
 
 ### 4. 2020 · Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing
 
-- 原文：[来源](https://www.peeref.com/zh/works/20998787)；目录ID：`spectral-mixture-network-unmixing-2020`。
-- 输入：高光谱混合影像。
-- 输出：端元和丰度估计。
+- 原文：[来源](https://ieeexplore.ieee.org/abstract/document/9055228/)；目录ID：`spectral-mixture-network-unmixing-2020`。
+- 输入：已知端元任务还需端元集；盲解混任务使用混合高光谱影像及相应训练样本。
+- 输出：已知端元网络只估丰度；盲解混网络估计端元与丰度。
 - 已核机制：深度展开光谱混合模型及迭代收缩阈值算法，形成两类网络结构。
 - 学习问题：逐层对应混合模型与优化迭代；区分学习参数和物理变量。
-- 阅读边界：公开摘要与Crossref核验；正式TGRS58(10):7418–7434，未标全文。
+- 阅读边界：IEEE完整摘要、作者单位与Crossref核验；两任务分别监督/无监督，快速前向指训练后推断；正式TGRS58(10):7418–7434，仍为摘要级。
 - 待核：正式全文、代码和数据协议仍待核验。
 
 ### 5. 2021 · NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing
@@ -90,13 +90,13 @@
 
 ### 7. 2024 · Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution
 
-- 原文：[来源](https://research-repository.griffith.edu.au/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/download)；目录ID：`zhou-45-hsi-2024`。
+- 原文：[来源](https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content)；目录ID：`zhou-45-hsi-2024`。
 - 输入：混合高光谱影像与参考光谱库。
-- 输出：端元光谱和像元丰度估计。
-- 已核机制：无条件扩散模型学习光谱库先验；线性光谱混合模型提供观测似然；反向扩散从后验连续分布采样端元与丰度。
+- 输出：扩散采样端元，FCLS估计非负、和为1的丰度。
+- 已核机制：学习连续光谱库先验或使用有限库点先验，引导端元反向采样；丰度为条件FCLS MAP插件近似，非完整联合后验采样。
 - 学习问题：光谱库先验与观测似然怎样结合？端元变异、约束和采样成本如何验证？
-- 阅读边界：ORCID题名、Crossref正式书目与 Griffith 作者接收稿摘要核验；未阅读全文。
-- 待核：作者稿为未完全编辑版本；正式版差异、约束实现、数据许可和代码复现待核验。
+- 阅读边界：机构接受稿18页含封面已通读；正式62:1–16只有完整摘要。冻结作者代码核心静态核验，未运行模型；版本、式表与实现边界见目录。
+- 待核：作者稿未完全编辑；正式版差异、插件后验适用范围、伪码/代码梯度差异及完整复现待核验。
 
 ### 8. 2013 · Hyperspectral Image Classification Based on Structured Sparse Logistic Regression and Three-Dimensional Wavelet Texture Features
 
@@ -247,13 +247,13 @@
 | 2019 | [Knowledge Transfer via Convolution Neural Networks for Multi-Resolution Lawn Weed Classification](https://www.researchgate.net/publication/337794147_Knowledge_Transfer_via_Convolution_Neural_Networks_for_Multi-Resolution_Lawn_Weed_Classification) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Multi-Resolution Weed Classification via Convolutional Neural Network and Superpixel Based Local Binary Pattern Using Remote Sensing Images](https://www.mdpi.com/2072-4292/11/14/1692) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2019 | [Texture and Shape Features for Grass Weed Classification Using Hyperspectral Remote Sensing Images](https://unsworks.unsw.edu.au/bitstreams/1df826fe-3c8f-43c1-aeb1-b68fe51568e3/download) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
-| 2020 | [Adaptive Graph Regularized Multilayer Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://www.researchgate.net/publication/338761401_Adaptive_Graph_Regularized_Multilayer_Nonnegative_Matrix_Factorization_for_Hyperspectral_Unmixing) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2020 | [Adaptive Graph Regularized Multilayer Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://ieeexplore.ieee.org/ielx7/4609443/8994817/08966496.pdf?tp=&arnumber=8966496&isnumber=8994817&ref=) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2020 | [BAE-Net: A Band Attention Aware Ensemble Network for Hyperspectral Object Tracking](https://doi.org/10.1109/icip40778.2020.9191105) | 光谱目标时序跟踪、光谱波段选择 | 正式发表 | 摘要核验 |
 | 2020 | [Inverse Coefficient of Variation Feature and Multilevel Fusion Technique for Hyperspectral and LiDAR Data Classification](https://research-repository.griffith.edu.au/bitstream/10072/392021/2/Zhou348500-Accepted.pdf) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2020 | [Material Based Object Tracking in Hyperspectral Videos](https://doi.org/10.1109/TIP.2020.2965302) | 光谱目标时序跟踪、高光谱视频采集、数据集与评测基准 | 正式发表 | 全文核验（版本见目录） |
 | 2020 | [Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://ieeexplore.ieee.org/ielx7/4609443/8994817/09210778.pdf?tp=&arnumber=9210778&isnumber=8994817&ref=) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
-| 2020 | [Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://www.semanticscholar.org/paper/84d25a7a9c210f49b2eaab6fd44adfb156f9bcef) | 光谱解混 | 正式发表 | 摘要核验 |
-| 2020 | [Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing](https://www.peeref.com/zh/works/20998787) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2020 | [Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing](https://ieeexplore.ieee.org/abstract/document/9324663/) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2020 | [Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing](https://ieeexplore.ieee.org/abstract/document/9055228/) | 光谱解混 | 正式发表 | 摘要核验 |
 | 2020 | [Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing](https://ieeexplore.ieee.org/ielx7/4609443/8994817/09146211.pdf?tp=&arnumber=9146211&isnumber=8994817&ref=) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2020 | [Superpixel-Level Weighted Label Propagation for Hyperspectral Image Classification](https://www.researchgate.net/publication/363929741_Superpixel_Correction_Based_Label_Propagation_for_Hyperspectral_Images_Classification) | 地物与植被图像分类、标注样本主动选择 | 正式发表 | 摘要核验 |
 | 2021 | [A Lightweight Convolutional Neural Network for Hyperspectral Image Classification](https://scispace.com/papers/a-lightweight-convolutional-neural-network-for-hyperspectral-5ebojmrxv8) | 地物与植被图像分类、光谱表征预训练 | 正式发表 | 摘要核验 |
@@ -305,7 +305,7 @@
 | 2024 | [A cross-modal feature aggregation and enhancement network for hyperspectral and LiDAR joint classification](https://www.sciencedirect.com/science/article/pii/S0957417424020128) | 高光谱与LiDAR辅助分类、地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2024 | [A New Hyperspectral Unmixing Benchmark for Weak Signal Meat Contamination Detection](https://www.semanticscholar.org/paper/06fc7cecf53517c82a2122e6b50eb9e58ce81bc6) | 数据集与评测基准、光谱解混 | 正式发表 | 摘要核验 |
 | 2024 | [CasFormer: Cascaded transformers for fusion-aware computational hyperspectral imaging](https://www.sciencedirect.com/science/article/abs/pii/S1566253524001866) | 计算光谱成像系统 | 正式发表 | 摘要核验 |
-| 2024 | [Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution](https://research-repository.griffith.edu.au/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/download) | 光谱解混 | 正式发表 | 摘要核验 |
+| 2024 | [Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution](https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content) | 光谱解混 | 正式发表 | 全文核验（版本见目录） |
 | 2024 | [Early detection of sugarcane smut and mosaic diseases via hyperspectral imaging and spectral-spatial attention deep neural networks](https://www.sciencedirect.com/science/article/pii/S266615432400406X) | 植物病害光谱检测 | 正式发表 | 摘要核验 |
 | 2024 | [Few-Shot Hyperspectral Image Classification Using Relational Generative Adversarial Network](https://ieeexplore.ieee.org/document/10741331/) | 地物与植被图像分类 | 正式发表 | 摘要核验 |
 | 2024 | [HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification.](https://arxiv.org/abs/2404.00272) | 地物与植被图像分类、光谱表征预训练 | 预印本 | 摘要核验 |

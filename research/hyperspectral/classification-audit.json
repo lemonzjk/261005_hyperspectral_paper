@@ -370,7 +370,11 @@
     "superpixel-ntf-unmixing-igarss-2018",
     "tv-ntf-hsi-unmixing-2019",
     "gmc-sparse-nmf-hsi-2020",
-    "subspace-structure-nmf-hsi-2020"
+    "subspace-structure-nmf-hsi-2020",
+    "adaptive-graph-multilayer-nmf-hsi-2020",
+    "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020",
+    "spectral-mixture-network-unmixing-2020",
+    "zhou-45-hsi-2024"
   ],
   "sourceChecks": [
     {
@@ -938,6 +942,54 @@
         "EIAs/USGS九谱、四小丰度图拼接、100×100/224；SNR10/20/30/40dB。Jasper起点(105,269)100×100，删1–3/108–112/154–166/220/224剩198，4端元；正式稿称HYDICE，但GMC同景称AVIRIS，传感器归属待原数据核验。Urban307×307/162、6端元；Cuprite250×191/188，由14近谱压为12、USGS参考，仅SAD无丰度真值。",
         "正式合成SAD四噪声级3次最优，30dB .0107劣于VCA .0102和SDNMF-TV .0105；四级RMSE全最佳。Jasper/Urban平均SAD .1466/.2307、RMSE .1653/.1593最小；Cuprite平均.0981最小但仅Buddingtonite1/12材料最佳，正文Pyrope/Chalcedony“优势”不等于逐项最佳。公开求解器固定Z，无论文四变量联合循环，不声称复现。",
         "IEEE正式14页/41式/10图/5表/1算法/54参考全文核验；机构15页AM仅来源/局部对照，未宣称逐页全文。Eq17 Tr(Gamma A)维度/变量疑点，Eq21→22系数2/mu与直接梯度1/(2mu)不一致、Eq28列维度及Eq32缺zk疑点；PSD不保证乘法分母逐元非负，松弛非等价原等式、稠密SVD复杂度和N²内存待。Cuprite四基线均值超舍入容差留原印。公开main_demo缺data.mat/Y/M/X/Z/nc/nl，delta5/初始化伪逆非FCLS，固定Z且无SVT、函数名与文件名不一致；完整联合实现/真值/协议待。"
+      ]
+    },
+    {
+      "paperId": "adaptive-graph-multilayer-nmf-hsi-2020",
+      "url": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/08966496.pdf?tp=&arnumber=8966496&isnumber=8994817&ref=",
+      "level": "primary_formal_full_text",
+      "supports": [
+        "AGMLNMF先学习像元概率邻接图，再用同一图正则各层丰度的多层稀疏NMF，估计端元与丰度；自适应权重不等于无需设置邻居数。",
+        "概率邻接S的每行非负且和为1，以像元距离、二次权重惩罚与拉普拉斯秩/特征向量F约束学习图；只在K近邻候选中连接。随后多层NMF对每层端元M与丰度R施加L1/2稀疏，图项约束丰度；W_l=W、D_l=D、L_l=L，各层重用先学图。交替乘法更新不是训练式深度展开网络，也不是端元/丰度各自双图。",
+        "合成数据取USGS六条光谱并引用Miao/Qi生成流程；正文未完整给出合成尺寸和全部生成参数。Jasper取100×100、起点(105,269)，删1–3/108–112/154–166/220–224后198波段、4材料；DC Mall取150×150，删103–106/138–148/207–210后191波段、5材料；Cuprite删1–2/104–113/148–167/221–224后188波段、12材料，正文未明确裁剪尺寸。",
+        "三张真实SAD表的印刷平均值均以AGMLNMF最低；Jasper逐材料最佳3/4、DC2/5、Cuprite实际4/12，正文称Cuprite5/12与表格不符。DC自身材料均值0.07924，与印刷平均0.0815差0.00226；按原表保留。Cuprite平均0.1148，不能据此宣称每种矿物最佳。合成误差条显示所测条件下优势，不外推全部噪声和数据。",
+        "正式14页/28式/20图/3表/1算法/52参考已读。Eq6印正指数距离；Eq14把合并距离写成dy；Eq16投影正负号及Eq17系数、Eq21–25矩阵次序/图作用位置与维度、Eq27图项在逐元素乘法外、Eq28比例停机等疑点均保留原印，完整实现待。原文只明确非负约束，未见ASC显式实施步骤，不把物理丰度自动当和为1。K和端元数仍需给定，图与多层分解的联合全局最优未证明。Cuprite三个MRS标准差精度异常；真实丰度非独立实测真值。首次公开日期PDF2020-01-16与IEEE显示2020-01-22不同，当前版本PDF2020-02-12；机构VoR与IEEE14页正文归一文本一致，文件字节不同。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9324663/",
+      "level": "primary_complete_official_abstract",
+      "supports": [
+        "用丰度图的非局部低秩正则补充非负张量解混，增强对局部/非局部空间结构和噪声的建模。",
+        "IEEE完整摘要明确：在保留全局空间—光谱信息的NTF中加入丰度图非局部低秩约束，缓解噪声及可疑解；摘要未说明张量分解类型、patch匹配、秩阈值或优化步骤，不能自动套用BTD或协同滤波实现。",
+        "完整官方摘要仅报告合成和真实数据，未命名数据集、尺寸、波段或划分。",
+        "官方摘要报告优于所比较先进方法；没有全文表格，不能核具体指标、比较公平性或噪声优势范围。",
+        "保持摘要级。NTF具体形式、非局部邻域、正则、更新、代码与实验全表仍待；共作者Fengchao Xiong网页精确题名在HTML注释中，不能当可见作者发表列表。IEEE Jun Zhou的Griffith单位与机构五作者/DOI互证，现确认分类而不伪称全文。"
+      ]
+    },
+    {
+      "paperId": "spectral-mixture-network-unmixing-2020",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9055228/",
+      "level": "primary_complete_official_abstract",
+      "supports": [
+        "将线性混合模型与ISTA展开为两类解混网络，分别处理已知端元的丰度估计和盲解混的端元—丰度联合估计。",
+        "从线性混合模型和ISTA推断构建两种物理模型启发网络：已知端元时展开ISTA进行监督丰度估计，盲解混时用无监督结构估计两变量；训练后推断为快速前向传播，不等于训练本身不迭代。",
+        "完整IEEE摘要未列具体数据集、分割、训练样本数或噪声协议。",
+        "完整摘要报告相较现有方法具有竞争力、推断无需迭代；未核逐项精度、延迟、样本量与训练成本。",
+        "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施及公开实现待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。"
+      ]
+    },
+    {
+      "paperId": "zhou-45-hsi-2024",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content",
+      "level": "primary_accepted_manuscript_full_text",
+      "supports": [
+        "DiffUn用光谱库先验和观测似然进行半盲解混。端元经反向扩散采样，丰度在给定端元下由FCLS估计；包含训练1D U-Net和无训练有限库先验两种变体。",
+        "用无条件1D U-Net从光谱库学习连续光谱先验（w/），或用有限库点的高斯核加权条件均值（w/o），估计无噪端元S0|t；将丰度条件后验近似为FCLS MAP峰的delta，以标量单位阵近似端元Jacobian，并用观测残差梯度引导端元DDPM反向采样。VCA加噪暖启动和5次重启按重构误差选端元，最终再求FCLS；不能把插件近似写成精确联合后验或全局最优保证。",
+        "USGSv7原2457条中保留完整224通道的1533条，取六端元生成64×64；A1/A2/A3/A4为6/50/750/1500条且包含六真端元。每个8×8块分配两材料.2/.8，Gaussian平滑标准差2后归一；观测噪声方差1e-3。光谱变异：缩放1±c、c=.1/.2/.3与谱噪声方差1e-3/1e-2/1e-1；另替换5个类似材料/仪器签名，Cobalt green不换。Jasper100×100、198波段，人工4谱与FCLS代理丰度，VCA库4/40；Samson95×95起点(252,332)、156波段、3材料，VCA库3/30。",
+        "表I四种库规模下w/o丰度aRMSE.0130/.0130/.0140/.0190均最低（最小库与SUnSAL并列），w/仅P1500重构rRMSE.0051胜w/o.0054。表II三种谱变异w/aRMSE.0259/.0307/.0534最低；轻/中变异SAM仍SVASU更小。表III五谱替换条件w/三指标最低。Jasper库4，w/.1151劣于SVASU.0887和w/o/SUnSAL.1001；库40则w/o.1040最佳。Samson库3，w/.1000劣于w/o/SUnSAL.0763；库30w/.0940最佳。优势依库规模、变异和指标而异；重构好不等于丰度准。",
+        "机构18页含封面和17页接受稿，69式/15图/5表/2算法/3附录/53参考已读；正式62:1–16完整摘要已核，但正式PDF返回202，未作完整版本差校勘。后验delta/独立性/Jacobian近似限制成立范围；w/o在噪声趋0时回到库点，无法保证库外谱变异适应。5重启的连续最优点概率公式不构成全局求解保证。接受稿Alg1/2减似然梯度，公开代码加残差梯度且步长带1/2和1e-5，需完整版核对；不静默把伪码改成代码。代码cache_H模式每5步FCLS、最终再解；默认模型配置路径与权重缺失，w/固定6端元，w/o从参考W取端元数，非自动估数。库A最大1.22065超1，不能宣称全部reflectance天然在[0,1]；NPZ sigma=.031对应方差.000961，非精确1e-3。所有论文数值未复现。"
       ]
     }
   ]

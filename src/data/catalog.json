@@ -69350,16 +69350,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/TGRS.2020.2982490",
-      "representation": "将线性光谱混合模型和ISTA迭代展开为高光谱解混网络。",
+      "representation": "从线性混合模型和ISTA推断构建两种物理模型启发网络：已知端元时展开ISTA进行监督丰度估计，盲解混时用无监督结构估计两变量；训练后推断为快速前向传播，不等于训练本身不迭代。",
       "tags": [],
-      "summary": "研究模型驱动深度网络高光谱解混。",
-      "input": "高光谱混合影像。",
-      "output": "端元和丰度估计。",
-      "mechanism": "深度展开光谱混合模型及迭代收缩阈值算法，形成两类网络结构。",
-      "readingNote": "公开摘要与Crossref核验；正式TGRS58(10):7418–7434，未标全文。",
-      "paper": "https://www.peeref.com/zh/works/20998787",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "将线性混合模型与ISTA展开为两类解混网络，分别处理已知端元的丰度估计和盲解混的端元—丰度联合估计。",
+      "input": "已知端元任务：混合高光谱影像与端元集；盲解混任务：混合影像及相应训练样本。",
+      "output": "已知端元网络只输出丰度；盲解混网络估计端元与丰度，不能合并描述为两类网络均联合输出。",
+      "mechanism": "从线性混合模型和ISTA推断构建两种物理模型启发网络：已知端元时展开ISTA进行监督丰度估计，盲解混时用无监督结构估计两变量；训练后推断为快速前向传播，不等于训练本身不迭代。",
+      "readingNote": "IEEE完整摘要、作者单位、Crossref及机构完整分页核验，全文未取得，保持摘要级；保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施及公开实现待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。",
+      "paper": "https://ieeexplore.ieee.org/abstract/document/9055228/",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_complete_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
@@ -69370,11 +69370,11 @@
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "researchQuestion": "如何利用模型与优化先验构造可解释、较小训练样本需求的解混网络，并区分端元已知和盲解混？",
+        "datasets": "完整IEEE摘要未列具体数据集、分割、训练样本数或噪声协议。",
+        "experimentSetting": "IEEE完整摘要及4作者/Griffith单位/Jun ORCID、Crossref和机构完整bundle分页已核；官方首次公开2020-04-02，正式October2020 TGRS58(10):7418–7434；机构只有SWORD无ORIGINAL，官方PDF202空体。共作者“PDF”链接实际为IEEE记录页，未找到与此精确论文对应的公开代码。",
+        "conclusions": "完整摘要报告相较现有方法具有竞争力、推断无需迭代；未核逐项精度、延迟、样本量与训练成本。",
+        "limitations": "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施及公开实现待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。",
         "dataLinks": [],
         "evidence": [
           {
@@ -69392,23 +69392,60 @@
             "supports": [
               "正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/abstract/document/9055228/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_complete_official_abstract",
+            "supports": [
+              "将线性混合模型与ISTA展开为两类解混网络，分别处理已知端元的丰度估计和盲解混的端元—丰度联合估计。",
+              "从线性混合模型和ISTA推断构建两种物理模型启发网络：已知端元时展开ISTA进行监督丰度估计，盲解混时用无监督结构估计两变量；训练后推断为快速前向传播，不等于训练本身不迭代。",
+              "完整IEEE摘要未列具体数据集、分割、训练样本数或噪声协议。",
+              "完整摘要报告相较现有方法具有竞争力、推断无需迭代；未核逐项精度、延迟、样本量与训练成本。",
+              "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施及公开实现待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/d7a7b4a5-9527-4d66-86c2-321a9f54de02",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2020.2982490",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/abstract/document/9055228/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_official_abstract_author_affiliation_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "spectral-mixture-network-unmixing-2020-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1109/TGRS.2020.2982490",
+            "type": "IEEE正式完整摘要",
+            "url": "https://ieeexplore.ieee.org/abstract/document/9055228/",
             "doi": "10.1109/TGRS.2020.2982490",
             "year": 2020,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "首次公开2020-04-02、正式October2020 TGRS58(10):7418–7434，17页PDF未取得。",
+            "readingProgress": "abstract_read"
           }
         ],
         "methodFamilyId": "spectral-mixture-inspired-unmixing",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "从线性混合模型和ISTA推断构建两种物理模型启发网络：已知端元时展开ISTA进行监督丰度估计，盲解混时用无监督结构估计两变量；训练后推断为快速前向传播，不等于训练本身不迭代。正式/接受稿全文与摘要阅读边界分列，非模型复现。",
           "evidenceFields": [
             "title",
             "summary",
@@ -69417,15 +69454,22 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "b211947d92c16ffee2f6841fc3d6e495f8e917a30e5d153ab7ed25340f7aecc2",
+          "evidenceDigest": "ae56b8be819356138ec155c999d6dcb29ec071722a62e46528372aacc7c6fd16",
           "sourceUrls": [
-            "https://www.peeref.com/zh/works/20998787",
-            "https://www.peeref.com/zh/works/20998787",
-            "https://api.crossref.org/works/10.1109/TGRS.2020.2982490"
+            "https://ieeexplore.ieee.org/abstract/document/9055228/",
+            "https://research-repository.griffith.edu.au/server/api/core/items/d7a7b4a5-9527-4d66-86c2-321a9f54de02",
+            "https://api.crossref.org/works/10.1109/TGRS.2020.2982490",
+            "https://ieeexplore.ieee.org/abstract/document/9055228/"
           ]
         }
       },
-      "citation": "@article{spectral_mixture_network_unmixing_2020,\n  title = {Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing},\n  author = {Yuntao Qian and Fengchao Xiong and Qipeng Qian and Jun Zhou},\n  year = {2020},\n  doi = {10.1109/TGRS.2020.2982490}\n}\n"
+      "citation": "@article{spectral_mixture_network_unmixing_2020,\n  title = {Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing},\n  author = {Yuntao Qian and Fengchao Xiong and Qipeng Qian and Jun Zhou},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2020},\n  volume = {58},\n  number = {10},\n  pages = {7418--7434},\n  doi = {10.1109/TGRS.2020.2982490}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "pending",
+        "note": "未取得PDF，保留pending；完整摘要和指向记录页的“PDF”链接均不能代替框架原图。",
+        "sourceUrl": "https://ieeexplore.ieee.org/abstract/document/9055228/",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "superpixel-weighted-label-propagation-hsi-2020",
@@ -69532,32 +69576,33 @@
         "hyperspectral"
       ],
       "doi": "10.1109/JSTARS.2019.2963749",
-      "representation": "以自适应图正则多层NMF建模高光谱像元邻域结构进行解混。",
+      "representation": "概率邻接S的每行非负且和为1，以像元距离、二次权重惩罚与拉普拉斯秩/特征向量F约束学习图；只在K近邻候选中连接。随后多层NMF对每层端元M与丰度R施加L1/2稀疏，图项约束丰度；W_l=W、D_l=D、L_l=L，各层重用先学图。交替乘法更新不是训练式深度展开网络，也不是端元/丰度各自双图。",
       "tags": [],
-      "summary": "研究复杂空间结构下的高光谱解混。",
-      "input": "高光谱混合影像、合成和真实数据。",
-      "output": "端元与丰度估计。",
-      "mechanism": "按邻域概率自动学习图结构和权重，嵌入多层NMF。",
-      "readingNote": "作者摘要与Crossref核验；正式JSTARS13:434–447，未标全文。",
-      "paper": "https://www.researchgate.net/publication/338761401_Adaptive_Graph_Regularized_Multilayer_Nonnegative_Matrix_Factorization_for_Hyperspectral_Unmixing",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "AGMLNMF先学习像元概率邻接图，再用同一图正则各层丰度的多层稀疏NMF，估计端元与丰度；自适应权重不等于无需设置邻居数。",
+      "input": "混合高光谱像元矩阵Y，给定端元数、邻居数K以及稀疏和图正则参数。",
+      "output": "非负端元矩阵及丰度矩阵；多层端元矩阵按乘积形成最终端元。",
+      "mechanism": "概率邻接S的每行非负且和为1，以像元距离、二次权重惩罚与拉普拉斯秩/特征向量F约束学习图；只在K近邻候选中连接。随后多层NMF对每层端元M与丰度R施加L1/2稀疏，图项约束丰度；W_l=W、D_l=D、L_l=L，各层重用先学图。交替乘法更新不是训练式深度展开网络，也不是端元/丰度各自双图。",
+      "readingNote": "IEEE正式14页/28式/20图/3表已核；正式14页/28式/20图/3表/1算法/52参考已读。Eq6印正指数距离；Eq14把合并距离写成dy；Eq16投影正负号及Eq17系数、Eq21–25矩阵次序/图作用位置与维度、Eq27图项在逐元素乘法外、Eq28比例停机等疑点均保留原印，完整实现待。原文只明确非负约束，未见ASC显式实施步骤，不把物理丰度自动当和为1。K和端元数仍需给定，图与多层分解的联合全局最优未证明。Cuprite三个MRS标准差精度异常；真实丰度非独立实测真值。首次公开日期PDF2020-01-16与IEEE显示2020-01-22不同，当前版本PDF2020-02-12；机构VoR与IEEE14页正文归一文本一致，文件字节不同。",
+      "paper": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/08966496.pdf?tp=&arnumber=8966496&isnumber=8994817&ref=",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_formal_full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "graph-learning",
-          "low-rank-matrix-factorization"
+          "low-rank-matrix-factorization",
+          "adaptive-probability-graph-multilayer-nmf"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何在多层非负解混中利用概率邻接关系改进固定近邻图，同时保留非负端元与丰度的稀疏性？",
+        "datasets": "合成数据取USGS六条光谱并引用Miao/Qi生成流程；正文未完整给出合成尺寸和全部生成参数。Jasper取100×100、起点(105,269)，删1–3/108–112/154–166/220–224后198波段、4材料；DC Mall取150×150，删103–106/138–148/207–210后191波段、5材料；Cuprite删1–2/104–113/148–167/221–224后188波段、12材料，正文未明确裁剪尺寸。",
+        "experimentSetting": "选择5层、eta=.4、K=5（试K=3至15）；lambda_m/lambda_r沿用参考[42]而未列出实际数值。M/R随机0–1、最多3000次，印Eq28是相邻目标值比例条件而非目标差。合成比较5端元/SNR25、10次随机初始化；另比较15/25/35/45/无噪声与4–8端元。真实端元为人工选择/平均参考谱，丰度为CVX得到的代理参考；以相关度作端元匹配，不自动等同全局一对一最优配对。真实重复次数、种子、runtime和作者实现未完整报告。",
+        "conclusions": "三张真实SAD表的印刷平均值均以AGMLNMF最低；Jasper逐材料最佳3/4、DC2/5、Cuprite实际4/12，正文称Cuprite5/12与表格不符。DC自身材料均值0.07924，与印刷平均0.0815差0.00226；按原表保留。Cuprite平均0.1148，不能据此宣称每种矿物最佳。合成误差条显示所测条件下优势，不外推全部噪声和数据。",
+        "limitations": "正式14页/28式/20图/3表/1算法/52参考已读。Eq6印正指数距离；Eq14把合并距离写成dy；Eq16投影正负号及Eq17系数、Eq21–25矩阵次序/图作用位置与维度、Eq27图项在逐元素乘法外、Eq28比例停机等疑点均保留原印，完整实现待。原文只明确非负约束，未见ASC显式实施步骤，不把物理丰度自动当和为1。K和端元数仍需给定，图与多层分解的联合全局最优未证明。Cuprite三个MRS标准差精度异常；真实丰度非独立实测真值。首次公开日期PDF2020-01-16与IEEE显示2020-01-22不同，当前版本PDF2020-02-12；机构VoR与IEEE14页正文归一文本一致，文件字节不同。",
         "dataLinks": [],
         "evidence": [
           {
@@ -69575,23 +69620,71 @@
             "supports": [
               "正式题名、作者和卷页。"
             ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/08966496.pdf?tp=&arnumber=8966496&isnumber=8994817&ref=",
+            "checkedAt": "2026-10-11",
+            "level": "primary_formal_full_text",
+            "supports": [
+              "AGMLNMF先学习像元概率邻接图，再用同一图正则各层丰度的多层稀疏NMF，估计端元与丰度；自适应权重不等于无需设置邻居数。",
+              "概率邻接S的每行非负且和为1，以像元距离、二次权重惩罚与拉普拉斯秩/特征向量F约束学习图；只在K近邻候选中连接。随后多层NMF对每层端元M与丰度R施加L1/2稀疏，图项约束丰度；W_l=W、D_l=D、L_l=L，各层重用先学图。交替乘法更新不是训练式深度展开网络，也不是端元/丰度各自双图。",
+              "合成数据取USGS六条光谱并引用Miao/Qi生成流程；正文未完整给出合成尺寸和全部生成参数。Jasper取100×100、起点(105,269)，删1–3/108–112/154–166/220–224后198波段、4材料；DC Mall取150×150，删103–106/138–148/207–210后191波段、5材料；Cuprite删1–2/104–113/148–167/221–224后188波段、12材料，正文未明确裁剪尺寸。",
+              "三张真实SAD表的印刷平均值均以AGMLNMF最低；Jasper逐材料最佳3/4、DC2/5、Cuprite实际4/12，正文称Cuprite5/12与表格不符。DC自身材料均值0.07924，与印刷平均0.0815差0.00226；按原表保留。Cuprite平均0.1148，不能据此宣称每种矿物最佳。合成误差条显示所测条件下优势，不外推全部噪声和数据。",
+              "正式14页/28式/20图/3表/1算法/52参考已读。Eq6印正指数距离；Eq14把合并距离写成dy；Eq16投影正负号及Eq17系数、Eq21–25矩阵次序/图作用位置与维度、Eq27图项在逐元素乘法外、Eq28比例停机等疑点均保留原印，完整实现待。原文只明确非负约束，未见ASC显式实施步骤，不把物理丰度自动当和为1。K和端元数仍需给定，图与多层分解的联合全局最优未证明。Cuprite三个MRS标准差精度异常；真实丰度非独立实测真值。首次公开日期PDF2020-01-16与IEEE显示2020-01-22不同，当前版本PDF2020-02-12；机构VoR与IEEE14页正文归一文本一致，文件字节不同。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/083a038c-9c3b-4240-a74c-e5faa47c0925",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/JSTARS.2019.2963749",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/abstract/document/8966496/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_official_abstract_author_affiliation_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "adaptive-graph-multilayer-nmf-hsi-2020-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1109/JSTARS.2019.2963749",
+            "type": "IEEE正式全文",
+            "url": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/08966496.pdf?tp=&arnumber=8966496&isnumber=8994817&ref=",
             "doi": "10.1109/JSTARS.2019.2963749",
             "year": 2020,
-            "relation": "正式期刊记录；作者来源与正式版局部差异待核。"
+            "relation": "IEEE正式JSTARS13:434–447；PDF首次公开2020-01-16/当前版本02-12，IEEE网页显示01-22，分别保留，不猜合并。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
+          },
+          {
+            "id": "adaptive-graph-multilayer-nmf-hsi-2020-institution-vor",
+            "type": "Version of Record (VoR)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/c43a14d9-2c81-4103-8149-4c0b3175d6ba/content",
+            "year": 2020,
+            "doi": "10.1109/JSTARS.2019.2963749",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "relation": "机构15页含封面，14页正文归一文本逐页与IEEE相同，字节不同；CC-BY4.0。"
           }
         ],
         "methodFamilyId": "adaptive-graph-multilayer-nmf",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "概率邻接S的每行非负且和为1，以像元距离、二次权重惩罚与拉普拉斯秩/特征向量F约束学习图；只在K近邻候选中连接。随后多层NMF对每层端元M与丰度R施加L1/2稀疏，图项约束丰度；W_l=W、D_l=D、L_l=L，各层重用先学图。交替乘法更新不是训练式深度展开网络，也不是端元/丰度各自双图。正式/接受稿全文与摘要阅读边界分列，非模型复现。",
           "evidenceFields": [
             "title",
             "summary",
@@ -69600,15 +69693,22 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "389979c223b36317f27ac9145de2c1266559e9c3ead005cb8fb10b10286a03d5",
+          "evidenceDigest": "e7a04f0938f187aff999005c314d6a59236d2c5a390e5e14851095ef2717a812",
           "sourceUrls": [
-            "https://www.researchgate.net/publication/338761401_Adaptive_Graph_Regularized_Multilayer_Nonnegative_Matrix_Factorization_for_Hyperspectral_Unmixing",
-            "https://www.researchgate.net/publication/338761401_Adaptive_Graph_Regularized_Multilayer_Nonnegative_Matrix_Factorization_for_Hyperspectral_Unmixing",
-            "https://api.crossref.org/works/10.1109/JSTARS.2019.2963749"
+            "https://ieeexplore.ieee.org/ielx7/4609443/8994817/08966496.pdf?tp=&arnumber=8966496&isnumber=8994817&ref=",
+            "https://research-repository.griffith.edu.au/server/api/core/items/083a038c-9c3b-4240-a74c-e5faa47c0925",
+            "https://api.crossref.org/works/10.1109/JSTARS.2019.2963749",
+            "https://ieeexplore.ieee.org/abstract/document/8966496/"
           ]
         }
       },
-      "citation": "@article{adaptive_graph_multilayer_nmf_hsi_2020,\n  title = {Adaptive Graph Regularized Multilayer Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Lei Tong and Jun Zhou and Bin Qian and Jing Yu and Chuangbai Xiao},\n  year = {2020},\n  doi = {10.1109/JSTARS.2019.2963749}\n}\n"
+      "citation": "@article{adaptive_graph_multilayer_nmf_hsi_2020,\n  title = {Adaptive Graph Regularized Multilayer Nonnegative Matrix Factorization for Hyperspectral Unmixing},\n  author = {Lei Tong and Jun Zhou and Bin Qian and Jing Yu and Chuangbai Xiao},\n  journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},\n  year = {2020},\n  volume = {13},\n  pages = {434--447},\n  doi = {10.1109/JSTARS.2019.2963749}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "IEEE14页20图已逐页查看；Fig1只有近邻与概率图的示意对照，其余为收敛/参数/结果/谱线/丰度图，无完整方法框架；标no_framework，不把图示对照当全流程。",
+        "sourceUrl": "https://ieeexplore.ieee.org/ielx7/4609443/8994817/08966496.pdf?tp=&arnumber=8966496&isnumber=8994817&ref=",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "hsi-lidar-icv-multilevel-fusion-2020",
@@ -72802,31 +72902,38 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2024.3408475",
-      "representation": "半盲高光谱解混：用无条件扩散模型从光谱库学习连续光谱先验，再结合线性混合似然从后验采样端元和丰度。",
+      "representation": "用无条件1D U-Net从光谱库学习连续光谱先验（w/），或用有限库点的高斯核加权条件均值（w/o），估计无噪端元S0|t；将丰度条件后验近似为FCLS MAP峰的delta，以标量单位阵近似端元Jacobian，并用观测残差梯度引导端元DDPM反向采样。VCA加噪暖启动和5次重启按重构误差选端元，最终再求FCLS；不能把插件近似写成精确联合后验或全局最优保证。",
       "tags": [],
-      "summary": "DiffUn 将半盲高光谱解混视为后验采样，先从光谱库学习光谱先验，再把先验融入扩散反向过程，联合采样连续端元和丰度，从而适应大规模光谱库和光谱变异。",
-      "input": "混合高光谱影像与参考光谱库。",
-      "output": "端元光谱和像元丰度估计。",
-      "mechanism": "无条件扩散模型学习光谱库先验；线性光谱混合模型提供观测似然；反向扩散从后验连续分布采样端元与丰度。",
-      "readingNote": "ORCID题名、Crossref正式书目与 Griffith 作者接收稿摘要核验；未阅读全文。",
-      "paper": "https://research-repository.griffith.edu.au/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/download",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "DiffUn用光谱库先验和观测似然进行半盲解混。端元经反向扩散采样，丰度在给定端元下由FCLS估计；包含训练1D U-Net和无训练有限库先验两种变体。",
+      "input": "混合高光谱影像、参考光谱库及给定端元数；训练变体还需要光谱先验模型权重。",
+      "output": "端元光谱及满足非负、和为1约束的FCLS丰度估计；不是完整端元—丰度联合后验随机采样。",
+      "mechanism": "用无条件1D U-Net从光谱库学习连续光谱先验（w/），或用有限库点的高斯核加权条件均值（w/o），估计无噪端元S0|t；将丰度条件后验近似为FCLS MAP峰的delta，以标量单位阵近似端元Jacobian，并用观测残差梯度引导端元DDPM反向采样。VCA加噪暖启动和5次重启按重构误差选端元，最终再求FCLS；不能把插件近似写成精确联合后验或全局最优保证。",
+      "readingNote": "机构接受稿18页（含封面）/69式/15图/5表及作者核心代码静态已核；正式正文未取得；机构18页含封面和17页接受稿，69式/15图/5表/2算法/3附录/53参考已读；正式62:1–16完整摘要已核，但正式PDF返回202，未作完整版本差校勘。后验delta/独立性/Jacobian近似限制成立范围；w/o在噪声趋0时回到库点，无法保证库外谱变异适应。5重启的连续最优点概率公式不构成全局求解保证。接受稿Alg1/2减似然梯度，公开代码加残差梯度且步长带1/2和1e-5，需完整版核对；不静默把伪码改成代码。代码cache_H模式每5步FCLS、最终再解；默认模型配置路径与权重缺失，w/固定6端元，w/o从参考W取端元数，非自动估数。库A最大1.22065超1，不能宣称全部reflectance天然在[0,1]；NPZ sigma=.031对应方差.000961，非精确1e-3。所有论文数值未复现。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_accepted_manuscript_full_text_and_scoped_code_verified",
       "library": {
         "categoryIds": [
-          "spectral-unmixing"
+          "spectral-unmixing",
+          "diffusion-models",
+          "spectral-prior-diffusion-unmixing"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与 Griffith 作者稿摘要均明确高光谱解混。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用连续光谱先验和扩散后验采样提升大光谱库下的半盲解混鲁棒性？",
-        "datasets": "作者稿摘要报告合成与真实数据集；具体光谱库、数据划分和指标待全文核验。",
-        "experimentSetting": "半盲解混；大规模光谱库与光谱变异条件；代码链接为 GitHub/Dmsw/DiffUn。",
-        "conclusions": "作者稿摘要报告优于现有半盲解混方法，并对光谱变异更鲁棒；逐项数值和消融待全文核验。",
-        "limitations": "作者稿为未完全编辑版本；正式版差异、约束实现、数据许可和代码复现待核验。",
-        "dataLinks": [],
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "连续光谱先验能否降低大光谱库与谱变异造成的半盲解混误差，且如何把未知丰度条件纳入扩散采样？",
+        "datasets": "USGSv7原2457条中保留完整224通道的1533条，取六端元生成64×64；A1/A2/A3/A4为6/50/750/1500条且包含六真端元。每个8×8块分配两材料.2/.8，Gaussian平滑标准差2后归一；观测噪声方差1e-3。光谱变异：缩放1±c、c=.1/.2/.3与谱噪声方差1e-3/1e-2/1e-1；另替换5个类似材料/仪器签名，Cobalt green不换。Jasper100×100、198波段，人工4谱与FCLS代理丰度，VCA库4/40；Samson95×95起点(252,332)、156波段、3材料，VCA库3/30。",
+        "experimentSetting": "DiffUn与SUnSAL、CSUnL0、ELMM、ALMM、SVASU比较；所有调参以真实丰度aRMSE最小为准，未报告独立验证集。噪声SNR10–40、5次采样选择重构最好；神经网络1080Ti、其他算法i5-12400F，不能宣称同硬件耗时比较。aRMSE为逐材料RMSE平均，rRMSE为逐波段RMSE平均，SAM为重构像元谱对参考影像的角度，不能当端元SAD。作者ZIP冻结dd373cf6fb22c0ecf467b1b766aee0236364c221；静态核对核心采样/FCLS/先验及脚本，仅读NPZ数组，不运行训练或推断。",
+        "conclusions": "表I四种库规模下w/o丰度aRMSE.0130/.0130/.0140/.0190均最低（最小库与SUnSAL并列），w/仅P1500重构rRMSE.0051胜w/o.0054。表II三种谱变异w/aRMSE.0259/.0307/.0534最低；轻/中变异SAM仍SVASU更小。表III五谱替换条件w/三指标最低。Jasper库4，w/.1151劣于SVASU.0887和w/o/SUnSAL.1001；库40则w/o.1040最佳。Samson库3，w/.1000劣于w/o/SUnSAL.0763；库30w/.0940最佳。优势依库规模、变异和指标而异；重构好不等于丰度准。",
+        "limitations": "机构18页含封面和17页接受稿，69式/15图/5表/2算法/3附录/53参考已读；正式62:1–16完整摘要已核，但正式PDF返回202，未作完整版本差校勘。后验delta/独立性/Jacobian近似限制成立范围；w/o在噪声趋0时回到库点，无法保证库外谱变异适应。5重启的连续最优点概率公式不构成全局求解保证。接受稿Alg1/2减似然梯度，公开代码加残差梯度且步长带1/2和1e-5，需完整版核对；不静默把伪码改成代码。代码cache_H模式每5步FCLS、最终再解；默认模型配置路径与权重缺失，w/固定6端元，w/o从参考W取端元数，非自动估数。库A最大1.22065超1，不能宣称全部reflectance天然在[0,1]；NPZ sigma=.031对应方差.000961，非精确1e-3。所有论文数值未复现。",
+        "dataLinks": [
+          {
+            "label": "作者DiffUn仓库（核心代码静态审计；未运行模型）",
+            "url": "https://github.com/Dmsw/DiffUn"
+          }
+        ],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/download",
@@ -72845,21 +72952,123 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_accepted_manuscript_full_text",
+            "supports": [
+              "DiffUn用光谱库先验和观测似然进行半盲解混。端元经反向扩散采样，丰度在给定端元下由FCLS估计；包含训练1D U-Net和无训练有限库先验两种变体。",
+              "用无条件1D U-Net从光谱库学习连续光谱先验（w/），或用有限库点的高斯核加权条件均值（w/o），估计无噪端元S0|t；将丰度条件后验近似为FCLS MAP峰的delta，以标量单位阵近似端元Jacobian，并用观测残差梯度引导端元DDPM反向采样。VCA加噪暖启动和5次重启按重构误差选端元，最终再求FCLS；不能把插件近似写成精确联合后验或全局最优保证。",
+              "USGSv7原2457条中保留完整224通道的1533条，取六端元生成64×64；A1/A2/A3/A4为6/50/750/1500条且包含六真端元。每个8×8块分配两材料.2/.8，Gaussian平滑标准差2后归一；观测噪声方差1e-3。光谱变异：缩放1±c、c=.1/.2/.3与谱噪声方差1e-3/1e-2/1e-1；另替换5个类似材料/仪器签名，Cobalt green不换。Jasper100×100、198波段，人工4谱与FCLS代理丰度，VCA库4/40；Samson95×95起点(252,332)、156波段、3材料，VCA库3/30。",
+              "表I四种库规模下w/o丰度aRMSE.0130/.0130/.0140/.0190均最低（最小库与SUnSAL并列），w/仅P1500重构rRMSE.0051胜w/o.0054。表II三种谱变异w/aRMSE.0259/.0307/.0534最低；轻/中变异SAM仍SVASU更小。表III五谱替换条件w/三指标最低。Jasper库4，w/.1151劣于SVASU.0887和w/o/SUnSAL.1001；库40则w/o.1040最佳。Samson库3，w/.1000劣于w/o/SUnSAL.0763；库30w/.0940最佳。优势依库规模、变异和指标而异；重构好不等于丰度准。",
+              "机构18页含封面和17页接受稿，69式/15图/5表/2算法/3附录/53参考已读；正式62:1–16完整摘要已核，但正式PDF返回202，未作完整版本差校勘。后验delta/独立性/Jacobian近似限制成立范围；w/o在噪声趋0时回到库点，无法保证库外谱变异适应。5重启的连续最优点概率公式不构成全局求解保证。接受稿Alg1/2减似然梯度，公开代码加残差梯度且步长带1/2和1e-5，需完整版核对；不静默把伪码改成代码。代码cache_H模式每5步FCLS、最终再解；默认模型配置路径与权重缺失，w/固定6端元，w/o从参考W取端元数，非自动估数。库A最大1.22065超1，不能宣称全部reflectance天然在[0,1]；NPZ sigma=.031对应方差.000961，非精确1e-3。所有论文数值未复现。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/125bc0dc-6588-4308-91f5-1b0b2bdb1610",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2024.3408475",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/abstract/document/10545540/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_official_abstract_author_affiliation_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://codeload.github.com/Dmsw/DiffUn/zip/dd373cf6fb22c0ecf467b1b766aee0236364c221",
+            "checkedAt": "2026-10-11",
+            "level": "primary_frozen_author_code_scoped_static_review",
+            "supports": [
+              "DiffUn与SUnSAL、CSUnL0、ELMM、ALMM、SVASU比较；所有调参以真实丰度aRMSE最小为准，未报告独立验证集。噪声SNR10–40、5次采样选择重构最好；神经网络1080Ti、其他算法i5-12400F，不能宣称同硬件耗时比较。aRMSE为逐材料RMSE平均，rRMSE为逐波段RMSE平均，SAM为重构像元谱对参考影像的角度，不能当端元SAD。作者ZIP冻结dd373cf6fb22c0ecf467b1b766aee0236364c221；静态核对核心采样/FCLS/先验及脚本，仅读NPZ数组，不运行训练或推断。",
+              "机构18页含封面和17页接受稿，69式/15图/5表/2算法/3附录/53参考已读；正式62:1–16完整摘要已核，但正式PDF返回202，未作完整版本差校勘。后验delta/独立性/Jacobian近似限制成立范围；w/o在噪声趋0时回到库点，无法保证库外谱变异适应。5重启的连续最优点概率公式不构成全局求解保证。接受稿Alg1/2减似然梯度，公开代码加残差梯度且步长带1/2和1e-5，需完整版核对；不静默把伪码改成代码。代码cache_H模式每5步FCLS、最终再解；默认模型配置路径与权重缺失，w/固定6端元，w/o从参考W取端元数，非自动估数。库A最大1.22065超1，不能宣称全部reflectance天然在[0,1]；NPZ sigma=.031对应方差.000961，非精确1e-3。所有论文数值未复现。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "zhou-45-hsi-2024-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1109/tgrs.2024.3408475",
+            "type": "IEEE正式完整摘要",
+            "url": "https://ieeexplore.ieee.org/abstract/document/10545540/",
             "doi": "10.1109/tgrs.2024.3408475",
             "year": 2024,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "首次公开2024-06-03，正式TGRS62:1–16；仅完整摘要与书目，正式16页PDF未取得，不与17页接受稿自动等同。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "zhou-45-hsi-2024-accepted",
+            "type": "Accepted Manuscript (AM)",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content",
+            "year": 2024,
+            "doi": "10.1109/tgrs.2024.3408475",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11",
+            "relation": "机构18页含封面及17页未完全编辑接受稿、3附录与53参考；不是正式16页，未做完整版差校勘；IEEE个人研究使用声明非CC-BY。"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-45"
+        "methodFamilyId": "zhou-2024-title-45",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "用无条件1D U-Net从光谱库学习连续光谱先验（w/），或用有限库点的高斯核加权条件均值（w/o），估计无噪端元S0|t；将丰度条件后验近似为FCLS MAP峰的delta，以标量单位阵近似端元Jacobian，并用观测残差梯度引导端元DDPM反向采样。VCA加噪暖启动和5次重启按重构误差选端元，最终再求FCLS；不能把插件近似写成精确联合后验或全局最优保证。正式/接受稿全文与摘要阅读边界分列，非模型复现。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "20aff2a7b1600350da6774a4b5af67be707f966d191438ce82ad42c2807fb093",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content",
+            "https://research-repository.griffith.edu.au/server/api/core/items/125bc0dc-6588-4308-91f5-1b0b2bdb1610",
+            "https://api.crossref.org/works/10.1109/tgrs.2024.3408475",
+            "https://ieeexplore.ieee.org/abstract/document/10545540/"
+          ]
+        }
       },
-      "citation": "@article{zhou_45_hsi_2024, title = {Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution}, author = {Keli Deng and Yuntao Qian and Jie Nie and Jun Zhou}, year = {2024}, doi = {10.1109/tgrs.2024.3408475}\n}\n"
+      "citation": "@article{zhou_45_hsi_2024,\n  title = {Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution},\n  author = {Keli Deng and Yuntao Qian and Jie Nie and Jun Zhou},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2024},\n  volume = {62},\n  pages = {1--16},\n  doi = {10.1109/tgrs.2024.3408475}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b5637d87-6134-4ab9-a955-cb8688fd1ccd/content",
+          "figureLabel": "Fig. 1",
+          "caption": "The reverse process of the proposed DiffUn method.",
+          "page": 4,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "scaleTo": 2400,
+            "pixelBox": [
+              92,
+              156,
+              1780,
+              960
+            ]
+          },
+          "verificationNote": "接受稿全部18页15图查看；Fig1为带学习变体的反向扩散、端元采样与FCLS丰度估计原框架，PDF4/正文3，完整caption裁出；不把该图当无学习变体或正式版版差证明。©2024 IEEE个人研究使用声明，非CC-BY。",
+          "path": "figures/zhou-45-hsi-2024/framework.png",
+          "width": 1688,
+          "height": 804,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "3d0066c76dbe372d29b16e44d360b4035a6bca25ebecaf0c845df0e8becd5449",
+          "attribution": "Keli Deng, Yuntao Qian, Jie Nie, Jun Zhou · TGRS2024 Accepted Manuscript"
+        }
+      ]
     },
     {
       "id": "zhou-46-hsi-2024",
@@ -76903,32 +77112,32 @@
         "hyperspectral"
       ],
       "doi": "10.1109/igarss39084.2020.9324663",
-      "representation": "高光谱解混：在非负张量分解丰度图上加入非局部低秩约束，保留空间结构并抑制噪声干扰。",
+      "representation": "IEEE完整摘要明确：在保留全局空间—光谱信息的NTF中加入丰度图非局部低秩约束，缓解噪声及可疑解；摘要未说明张量分解类型、patch匹配、秩阈值或优化步骤，不能自动套用BTD或协同滤波实现。",
       "tags": [],
-      "summary": "Hyperspectral unmixing decomposes hyperspectral images into endmembers and abundances. This work extends nonnegative tensor factorization with a non-local low-rank constraint on abundance maps to preserve local/non-local spatial structure and avoid suspicious solutions; tests on synthetic and real data outperform state of the art.",
+      "summary": "用丰度图的非局部低秩正则补充非负张量解混，增强对局部/非局部空间结构和噪声的建模。",
       "input": "混合高光谱图像。",
-      "output": "端元及丰度图。",
-      "mechanism": "以非负张量分解保留高光谱信息，并对丰度图施加非局部低秩正则，避免陷入大量可疑解。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与 Semantic Scholar公开摘要核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/84d25a7a9c210f49b2eaab6fd44adfb156f9bcef",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "output": "端元光谱及丰度图。",
+      "mechanism": "IEEE完整摘要明确：在保留全局空间—光谱信息的NTF中加入丰度图非局部低秩约束，缓解噪声及可疑解；摘要未说明张量分解类型、patch匹配、秩阈值或优化步骤，不能自动套用BTD或协同滤波实现。",
+      "readingNote": "IEEE完整摘要、作者单位、Crossref及机构完整分页核验，全文未取得，保持摘要级；保持摘要级。NTF具体形式、非局部邻域、正则、更新、代码与实验全表仍待；共作者Fengchao Xiong网页精确题名在HTML注释中，不能当可见作者发表列表。IEEE Jun Zhou的Griffith单位与机构五作者/DOI互证，现确认分类而不伪称全文。",
+      "paper": "https://ieeexplore.ieee.org/abstract/document/9324663/",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "primary_complete_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "tensor-low-rank-learning",
           "nonlocal-spatial-priors"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "高光谱非负张量解混如何利用非局部低秩先验增强空间鲁棒性？",
-        "datasets": "合成数据与真实数据；具体数据集和划分待全文核验。",
-        "experimentSetting": "非局部低秩丰度正则的非负张量分解，对合成与真实数据评测。",
-        "conclusions": "摘要报告在合成和真实数据上优于先进方法。",
-        "limitations": "摘要未给出数据集、参数、指标、代码和消融实验。",
+        "researchQuestion": "NTF解混如何补充非局部丰度结构以减轻噪声敏感性？",
+        "datasets": "完整官方摘要仅报告合成和真实数据，未命名数据集、尺寸、波段或划分。",
+        "experimentSetting": "IEEE完整摘要、完整作者/Griffith单位、Crossref2157–2160及机构记录/完整bundle分页已核；机构只有SWORD，未有ORIGINAL。IGARSS2020会议26Sep–02Oct2020；IEEE加入库日期2021-02-17不更改会议年份。官方stamp及精确PDF入口均202空体，未取得4页全文。",
+        "conclusions": "官方摘要报告优于所比较先进方法；没有全文表格，不能核具体指标、比较公平性或噪声优势范围。",
+        "limitations": "保持摘要级。NTF具体形式、非局部邻域、正则、更新、代码与实验全表仍待；共作者Fengchao Xiong网页精确题名在HTML注释中，不能当可见作者发表列表。IEEE Jun Zhou的Griffith单位与机构五作者/DOI互证，现确认分类而不伪称全文。",
         "dataLinks": [],
         "evidence": [
           {
@@ -76947,21 +77156,84 @@
             "supports": [
               "正式题名、作者、会议、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/abstract/document/9324663/",
+            "checkedAt": "2026-10-11",
+            "level": "primary_complete_official_abstract",
+            "supports": [
+              "用丰度图的非局部低秩正则补充非负张量解混，增强对局部/非局部空间结构和噪声的建模。",
+              "IEEE完整摘要明确：在保留全局空间—光谱信息的NTF中加入丰度图非局部低秩约束，缓解噪声及可疑解；摘要未说明张量分解类型、patch匹配、秩阈值或优化步骤，不能自动套用BTD或协同滤波实现。",
+              "完整官方摘要仅报告合成和真实数据，未命名数据集、尺寸、波段或划分。",
+              "官方摘要报告优于所比较先进方法；没有全文表格，不能核具体指标、比较公平性或噪声优势范围。",
+              "保持摘要级。NTF具体形式、非局部邻域、正则、更新、代码与实验全表仍待；共作者Fengchao Xiong网页精确题名在HTML注释中，不能当可见作者发表列表。IEEE Jun Zhou的Griffith单位与机构五作者/DOI互证，现确认分类而不伪称全文。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/06627642-b773-4962-8831-6bdaa60ef838",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_institutional_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/igarss39084.2020.9324663",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_registered_bibliography",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
+          },
+          {
+            "url": "https://ieeexplore.ieee.org/abstract/document/9324663/",
+            "checkedAt": "2026-10-11",
+            "level": "complete_official_abstract_author_affiliation_metadata",
+            "supports": [
+              "精确题名、完整作者、DOI、正式书目与版本分源；IEEE Jun Zhou的Griffith单位互证，非同名推测。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1109/igarss39084.2020.9324663",
+            "type": "IEEE正式完整摘要",
+            "url": "https://ieeexplore.ieee.org/abstract/document/9324663/",
             "doi": "10.1109/igarss39084.2020.9324663",
             "year": 2020,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "会议2020-09-26至10-02、2157–2160；IEEE加入库2021-02-17不是会议年份；4页PDF未取得。",
+            "readingProgress": "abstract_read"
           }
         ],
-        "methodFamilyId": "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020"
+        "methodFamilyId": "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "IEEE完整摘要明确：在保留全局空间—光谱信息的NTF中加入丰度图非局部低秩约束，缓解噪声及可疑解；摘要未说明张量分解类型、patch匹配、秩阈值或优化步骤，不能自动套用BTD或协同滤波实现。正式/接受稿全文与摘要阅读边界分列，非模型复现。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "1f15f7dbfd952dfe40ee919891d807d90171a3c2d4c4a037c738b5598dcc3552",
+          "sourceUrls": [
+            "https://ieeexplore.ieee.org/abstract/document/9324663/",
+            "https://research-repository.griffith.edu.au/server/api/core/items/06627642-b773-4962-8831-6bdaa60ef838",
+            "https://api.crossref.org/works/10.1109/igarss39084.2020.9324663",
+            "https://ieeexplore.ieee.org/abstract/document/9324663/"
+          ]
+        }
       },
-      "citation": "@inproceedings{zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020,\n  title = {Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Kun Qian and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2020},\n  doi = {10.1109/igarss39084.2020.9324663}\n}\n"
+      "citation": "@inproceedings{zhou_scholar_nonlocal_low_rank_nonnegative_tensor_facto_2020,\n  title = {Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Kun Qian and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  booktitle = {IGARSS 2020 - 2020 IEEE International Geoscience and Remote Sensing Symposium},\n  year = {2020},\n  pages = {2157--2160},\n  doi = {10.1109/igarss39084.2020.9324663}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "pending",
+        "note": "未取回PDF，保留pending；202空体或普通网页不是已检查全部原图，也不标no_framework。",
+        "sourceUrl": "https://ieeexplore.ieee.org/abstract/document/9324663/",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
@@ -80189,6 +80461,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
         }
       ]
     },
@@ -80670,6 +80947,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
         }
       ]
     },
@@ -81044,6 +81326,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
         }
       ]
     },
@@ -81454,6 +81741,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
         }
       ]
     },
@@ -81675,6 +81967,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
         }
       ]
     },
@@ -84063,7 +84360,7 @@
       "id": "diffusion-models",
       "name": "扩散生成模型",
       "dimension": "method",
-      "definition": "明确使用扩散生成或扩散去噪模型进行场景复原、数据增广或多模态特征学习；图扩散算子不归此类。",
+      "definition": "明确使用扩散生成或扩散去噪模型进行场景复原、端元生成与解混、数据增广或多模态特征学习；图扩散算子不归此类。",
       "status": "confirmed",
       "color": "#b49a77",
       "createdAt": "2026-10-08",
@@ -84072,7 +84369,8 @@
         "dd-hgs",
         "fusdreamer",
         "fvmgn-generalization",
-        "symdiffuser-fusion"
+        "symdiffuser-fusion",
+        "zhou-45-hsi-2024"
       ],
       "history": [
         {
@@ -84084,6 +84382,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
         }
       ]
     },
@@ -84151,6 +84454,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "GMC/子空间正式全文、TV完整摘要和作者代码具体位置核验，版本与实现边界分列。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
         }
       ]
     },
@@ -89054,6 +89362,46 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "正式全文支持具体机制；非仅摘要题名分类。"
+        }
+      ]
+    },
+    {
+      "id": "adaptive-probability-graph-multilayer-nmf",
+      "name": "概率邻接图多层稀疏NMF",
+      "dimension": "method",
+      "definition": "先在K近邻候选中学习行随机概率图及拉普拉斯谱结构，再重用同一图正则每层丰度的多层稀疏NMF；不是端元/丰度双图，也不是不设邻居数。",
+      "status": "confirmed",
+      "color": "#9bb7ac",
+      "createdAt": "2026-10-11",
+      "rationale": "对应正式/接受稿全文具体目标、算法与输入输出支持，不按题名自动归类。",
+      "evidencePaperIds": [
+        "adaptive-graph-multilayer-nmf-hsi-2020"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "完整阅读区分概率图的K/各层重用与扩散端元/FCLS丰度具体机制。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-prior-diffusion-unmixing",
+      "name": "光谱先验扩散半盲解混",
+      "dimension": "method",
+      "definition": "光谱库学习连续扩散先验或有限库点先验，引导端元反向扩散采样；丰度由非负和为1的FCLS条件MAP估计，区分端元随机采样与丰度插件近似。",
+      "status": "confirmed",
+      "color": "#9bb7ac",
+      "createdAt": "2026-10-11",
+      "rationale": "对应正式/接受稿全文具体目标、算法与输入输出支持，不按题名自动归类。",
+      "evidencePaperIds": [
+        "zhou-45-hsi-2024"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "完整阅读区分概率图的K/各层重用与扩散端元/FCLS丰度具体机制。"
         }
       ]
     }
