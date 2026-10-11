@@ -1,0 +1,214 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "SPECIAL fixed v3 full-text reading, first-version author comparison and current cited-agent selected scope followup",
+  "previousGoalTurn": "progress: 574a5db upgraded ILRNet/IFGNet from abstract to fixed-preprint full text with three original frameworks; clean tree revalidated",
+  "accessFile": "jun-zhou-special-v3-reading-2026-10-12-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 1,
+  "newFullTextReadingCount": 1,
+  "pdfPagesActuallyRead": 14,
+  "figuresAdded": 1,
+  "materials": [
+    {
+      "paperId": "zhou-19-hsi-2026",
+      "version": "arXiv:2501.16222v3",
+      "pdfFile": "jun-zhou-special-v3-reading-2026-10-12-special-v3.pdf",
+      "sha256": "0490349dd2beec02d9d4622cc4e6dd78223aa123a3fc39449eed84c7f2036dd2",
+      "downloaded": true,
+      "pageCount": 13,
+      "actuallyReadPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "textFile": "jun-zhou-special-v3-reading-2026-10-12-v3-pages.json",
+      "referencesFile": "jun-zhou-special-v3-reading-2026-10-12-references.json",
+      "referenceCount": 46,
+      "figureCount": 5,
+      "tableCount": 7,
+      "equationCount": 10,
+      "montageFiles": [
+        "jun-zhou-special-v3-reading-2026-10-12-v3-montage-1.png",
+        "jun-zhou-special-v3-reading-2026-10-12-v3-montage-2.png",
+        "jun-zhou-special-v3-reading-2026-10-12-v3-montage-3.png"
+      ],
+      "authors": [
+        "Li Pang",
+        "Jing Yao",
+        "Kaiyu Li",
+        "Jun Zhou",
+        "Deyu Meng",
+        "Xiangyong Cao"
+      ],
+      "apiLatestVersion": "v3",
+      "firstSubmittedAt": "2025-01-27T17:13:03Z",
+      "updatedAt": "2025-12-23T06:10:31Z",
+      "formalAuthors": "Li Pang, Jing Yao, Kaiyu Li, Jun Zhou, Deyu Meng, Xiangyong Cao",
+      "formalYear": 2026,
+      "formalReadingProgress": "abstract_read",
+      "identityEvidence": "v3首页Griffith Jun Zhou；Crossref ORCID0000-0001-5822-8233和Griffith一致。",
+      "datasets": "Pavia Centre ROSIS、1095×751×102、430–860nm/1.3m，九类。AeroRIT Headwall Micro Hyperspec E-Series CMOS原372带397–1003nm/约.4m，中心1024×3072且删首末各10带（按原数推得352保留带）；五类正文/主表列Buildings/Water/Cars/Vegetation/Road，TableI及Fig4图例末类却写Soil，分别保留。Chikusei Nano-Hyperspec128带343–1018nm/2.5m，中心2048²，原相近土壤类等合并为Farmland/Soil/Road/Grass/Trees/Buildings/Water七类，不移植原19类数。TableI真值类别计数仅作评测，不称人工训练标签。",
+      "protocol": "§IV：AeroRIT/Chikusei/Pavia依次10/15/20epoch，每epoch20iteration，Adam学习率1e-3/2e-3/4e-4，cosine最低1e-5/1e-5/1e-4；前半伪标签warmup、后半加入confident/hard。PLG Chikusei/Pavia滑窗224²步112，Aero448²步224；融合1×/2×。训练HSI加σ=.1 Gaussian；输入归一化范围未说明。Water提示改River or lake，Vegetation改Grass or Trees，各对照称相同词表/提示。比较CLIP/MaskCLIP/SCLIP/GEM/ClearCLIP/SegEarth-OV共六基线；OA/AA/κ均百分数。学习使用目标场景未标注像元/伪标签，属于目标场景适配，不证明固定分类器跨场景直接迁移或完整系统无需训练。未给逐类batch数、HSI PCA维数、GMM具体分量配置、λ1/λ2、GPU/运行成本、种子/重复统计及独立验证协议。",
+      "results": "TablesII–IV按Pavia/AeroRIT/Chikusei顺序，OA90.62/82.18/88.33%，AA69.63/79.98/85.11%，κ86.75/73.83/84.98%，总体三项均高于所列六基线。但Pavia Bricks/Bitumen均0，Meadows34.30弱于MaskCLIP77.38，Water98.70弱于ClearCLIP99.97/SegEarth99.93；Tile98.24也弱于SegEarth99.42。AeroCars78.69弱于GEM92.91，ChikuseiFarmland74.52弱于SCLIP96.80等。TableV以HSI代RGB提升三集OA7.77/6.63/8.38个百分点（顺序Pavia/Aero/Chikusei）。TableVI完整RS相比无RS的OA提升2.29/2.07/4.77点，但ClearCLIP在Aero AA64.82降62.48。TableVII Pavia仅R 78.68/63.62/71.08、R+C81.21/64.81/74.30、R+H69.35/60.22/59.77、R+C+H90.62/69.63/86.75，加入hard不必单独带来改善。",
+      "limitations": "全文状态只对应2025固定v3，2026正式VoR未读；v1仅首页，v2未核，不推广各版本方法/实验一致。零样本指无人工目标像元标注，仍依赖已知类别提示、冻结既有预训练模块以及目标场景伪标签训练，不称整个系统training-free。同目标场景学习/评测且取样、验证/提示选择协议不足；不是独立未见场景泛化实证。Pavia两类0和其它类别弱于对照，不能称逐类全面领先；没有统计方差或量化效率。Aero末类正文/主表Road与TableI/Fig4图例Soil冲突；TableVI无RS SegEarth AA/κ58.67/54.50与TableIII59.02/54.48不同。λ、PCA维数、分量/采样配置未给，BvSB GMM仅称通常两分量，不猜实际参数。原图/正文只存可核事实，代码仅官方URL。"
+    },
+    {
+      "paperId": "zhou-19-hsi-2026",
+      "version": "arXiv:2501.16222v1",
+      "pdfFile": "jun-zhou-special-v3-reading-2026-10-12-special-v1.pdf",
+      "sha256": "c94c802fa91c596c6a46632e94691207cedd08a009ff7f264332c795281ca770",
+      "downloaded": true,
+      "pageCount": 9,
+      "actuallyReadPages": [
+        1
+      ],
+      "authorsOnFirstPage": [
+        "Li Pang",
+        "Jing Yao",
+        "Kaiyu Li",
+        "Xiangyong Cao"
+      ],
+      "textFile": "jun-zhou-special-v3-reading-2026-10-12-v1-first-page.json",
+      "readingBoundary": "仅首页题名、四作者及摘要已读，另外八页未读；不据同ID推广v3性能或方法至v1。"
+    }
+  ],
+  "classification": {
+    "removed": [
+      "representation-learning"
+    ],
+    "added": [
+      "state-space-models"
+    ],
+    "confirmed": [
+      "land-cover-classification",
+      "state-space-models"
+    ],
+    "rationale": "SPECIAL明确用冻结CLIP/SegEarth伪标签训练MambaHSI做目标场景地物分类，新增实际状态空间方法关联；没有独立可迁移HSI表征预训练目标，移除representation-learning，不把RGB代理误当纯RGB范围。"
+  },
+  "officialCodeUrl": "https://github.com/LiPang/SPECIAL",
+  "codeBoundary": "只记录v1/v3首页官方URL并从错误的dataset链接字段移到code；未访问/下载/检查代码、依赖、权重或运行复现。",
+  "referenceFollowup": {
+    "number": 37,
+    "reference": {
+      "number": 37,
+      "text": "Z. Chen, H. Wang, J. Yao, P. Ghamisi, J. Zhou, P. M. Atkinson, and B. Zhang, “Cangling-knowflow: A unified knowledge-and-flow-fused agent for comprehensive remote sensing applications,” arXiv preprint arXiv:2512.15231, 2025."
+    },
+    "arxivId": "2512.15231",
+    "previousSurveyCandidate": {
+      "title": "CangLing-KnowFlow: A Unified Knowledge-and-Flow-fused Agent for Comprehensive Remote Sensing Applications",
+      "url": "https://arxiv.org/abs/2512.15231v3",
+      "arxivId": "2512.15231",
+      "authors": [
+        "Zhengchao Chen",
+        "Haoran Wang",
+        "Jing Yao",
+        "Jianshe Zhang",
+        "Pedram Ghamisi",
+        "Jun Zhou",
+        "Peter M. Atkinson",
+        "Bing Zhang"
+      ],
+      "venue": "arXiv",
+      "year": 2025,
+      "searchId": "jun-zhou-arxiv-author-inventory-2026-10-10",
+      "batchId": "jun-zhou-arxiv-survey-mapping-index-2026-10-11",
+      "discoveredAt": "2026-10-10",
+      "indexedAt": "2026-10-11",
+      "decision": "excluded",
+      "decisionDetail": "matched_prior_decision",
+      "reason": "继承既有范围决定及来源，不将题名匹配当作个人身份/版本相同的证明。",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-survey-mapping-index-2026-10-11.json",
+      "originalMappingEvidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-author-crosswalk-2026-10-10.json",
+      "mappingOnlyBackfill": true,
+      "readingBoundary": "本轮仅补既有映射的survey来源索引；没有新摘要/正文/实验阅读，不新增或提升原范围/身份决定。",
+      "priorMatches": [
+        {
+          "source": "jun-zhou-dblp-screening.json",
+          "decision": "excluded",
+          "title": "CangLing-KnowFlow: A Unified Knowledge-and-Flow-fused Agent for Comprehensive Remote Sensing Applications."
+        },
+        {
+          "source": "jun-zhou-scholar-nonkeyword-screening-2026-10-10.json",
+          "decision": "excluded",
+          "title": "Cangling-knowflow: A unified knowledge-and-flow-fused agent for comprehensive remote sensing applications"
+        }
+      ],
+      "identityBoundary": "沿用既有范围决定；同题名不单独证明同名身份或版本相同。"
+    },
+    "previousPrimaryScopeEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json",
+    "htmlSource": "jun-zhou-special-v3-reading-2026-10-12-cangling-v3.html",
+    "nodesFile": "jun-zhou-special-v3-reading-2026-10-12-cangling-v3-nodes.json",
+    "actuallyReadNodeIndices": [
+      4,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134
+    ],
+    "actuallyReadNodeCount": 42,
+    "latestApiVersion": "v3",
+    "latestUpdatedAt": "2026-06-04T07:06:20Z",
+    "authors": [
+      "Zhengchao Chen",
+      "Haoran Wang",
+      "Jing Yao",
+      "Jianshe Zhang",
+      "Pedram Ghamisi",
+      "Jun Zhou",
+      "Peter M. Atkinson",
+      "Bing Zhang"
+    ],
+    "finding": "SPECIAL v3 ref37引出的2512.15231已有暂排索引；本批实际选读当前v3摘要、§III-A框架、§IV全部工具类别/两基准定义、§V-A协议及§V-E/VI。研究为通用遥感工作流编排，工具GDAL加分割/检测/变化检测/反演，基准为KnowFlow-Bench/ThinkGeo、示例为建筑变化；已读文本未建立直接HSI采集、谱处理或重建贡献，延续当前范围暂排。正文没有穷举162任务，不声称162逐项排除；本文及当前v3身份未做整篇全文/稳定个人标识核验。",
+    "readingBoundary": "所列42节点原文选读，不记整篇全文；162任务细清单没有在所读正文穷举，不借代码补齐。",
+    "identityBoundary": "未取得稳定个人标识，不凭同作者缩写证明目标身份；直接HSI范围暂排先独立留证。"
+  },
+  "referencesBoundary": "46条所读书目中唯一J. Zhou为ref37通用RS代理，沿用/续核既有暂排索引；其他作者或etal省略作者不当作全部完整作者核验，也不在本作者批次自动新增。",
+  "remaining": "周峻181条不变，97全文/84摘要；作者目录、未读版本和全领域历年覆盖未闭环。"
+}

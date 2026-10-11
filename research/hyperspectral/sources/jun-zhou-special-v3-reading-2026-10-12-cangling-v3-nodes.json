@@ -1,0 +1,1226 @@
+[
+  {
+    "tag": "h5",
+    "attrs": {
+      "id": "modal-title",
+      "class": "modal-title"
+    },
+    "text": "Report GitHub Issue",
+    "index": 0
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "selectedTextModalDescription",
+      "hidden": null
+    },
+    "text": "Content selection saved. Describe the issue below:",
+    "index": 1
+  },
+  {
+    "tag": "h1",
+    "attrs": {
+      "class": "ltx_title ltx_title_document"
+    },
+    "text": "CangLing-KnowFlow: A Unified Knowledge-and-Flow-fused Agent for Comprehensive Remote Sensing Applications",
+    "index": 2
+  },
+  {
+    "tag": "h6",
+    "attrs": {
+      "class": "ltx_title ltx_title_abstract"
+    },
+    "text": "Abstract",
+    "index": 3
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "abstract1.1",
+      "class": "ltx_p"
+    },
+    "text": "Automated and intelligent processing of massive remote sensing datasets is critical in Earth observation. Existing automated systems are normally task-specific, lacking a unified framework to manage diverse, end-to-end workflows from data preprocessing to advanced interpretation across diverse RS applications. To fill this gap, this paper introduces CangLing- KnowFlow , a unified intelligent agent framework that integrates a procedural knowledge base, a dynamic workflow adjustment mechanism, and an evolutionary memory module. The procedural knowledge base, comprising 1,008 expert-validated workflow cases across 162 practical remote sensing tasks, guides planning and substantially reduces hallucinations common in general-purpose agents. During runtime failures, the dynamic workflow adjustment module autonomously diagnoses and replans recovery strategies, while the evolutionary memory module continuously learns from these events, iteratively enhancing the agent’s knowledge and performance. This synergy enables CangLing-KnowFlow to adapt, learn, and operate reliably across diverse and complex tasks. We evaluated CangLing-KnowFlow on the KnowFlow-Bench, a novel benchmark of 324 workflows inspired by real-world applications, testing its performance across 13 top large language model backbones, from open-source to commercial. Across all complex tasks, CangLing-KnowFlow surpassed the Reflexion baseline by at least 4% in task success rate. As the first most comprehensive validation along this emerging field, this research demonstrates the great potential of CangLing-KnowFlow as a robust, efficient, and scalable automated solution for complex Earth observation challenges by leveraging expert knowledge ( Know ) into adaptive and verifiable procedures ( Flow ).",
+    "index": 4
+  },
+  {
+    "tag": "h6",
+    "attrs": {
+      "class": "ltx_title ltx_title_keywords"
+    },
+    "text": "Index Terms:",
+    "index": 5
+  },
+  {
+    "tag": "h2",
+    "attrs": {
+      "class": "ltx_title ltx_title_section"
+    },
+    "text": "I Introduction",
+    "index": 6
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Recent advances in Earth observation technologies have led to a rapid growth in the availability of remote sensing (RS) data, marked by increasing volume, diversity, and temporal resolution [ 1 , 2 ] . While this data surge offers transformative opportunities for applications such as environmental monitoring and disaster response, it also highlights the limitations of traditional RS analysis pipelines. These conventional methods largely dependent on manually crafted workflows designed by domain experts, therefore struggling with inefficiency, high labor demands, and limited scalability, which creates a critical bottleneck to timely and automated extraction of actionable intelligence from large and complex datasets [ 3 , 4 ] .",
+    "index": 7
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "In parallel, breakthroughs in Artificial Intelligence (AI), driven by the rise of large language models (LLMs), have introduced the AI Agent as a transformative operational paradigm. AI agents possess the ability to interpret high-level tasks, plan and execute multi-step workflows, dynamically invoke specialized tools, and perform self-correction. These capabilities enable the seamless integration of previously disjointed, human-dependent processes into coherent and automated pipelines. This paradigm shift from human-driven methodologies to machine-autonomous operations opens a new pathway toward realizing the next generation of autonomous Earth observation systems [ 5 ] .",
+    "index": 8
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "Building a robust and reliable RS agent is challenging due to the inherent limitations of general-purpose agent architectures. First, monolithic single-agent systems often produce erroneous or scientifically unsound plans, which is a phenomenon known as planning hallucination [ 6 ] , especially when dealing with long-horizon tasks requiring deep domain expertise. Second, although traditional multi-agent systems promote collaboration, their decentralized communication protocols can introduce excessive overhead and misaligned goals. This could create uncertainty in the process and compromise the reproducibility required for scientific analysis. Finally, fully fixed workflows, although stable and compliant, lack the flexibility to accommodate the variability inherent in RS data (e.g., sensor types, weather conditions, temporal dynamics) and recover from unexpected runtime failures, yielding a persistent trade-off between reliability and adaptability [ 7 ] .",
+    "index": 9
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "Despite their considerable potential, the application of agent-based systems in RS remains in an exploratory phase, currently following two main directions. The first encompasses tool-augmented agents, including single-agent systems for tool invocation [ 8 , 9 , 10 , 11 ] and multi-agent frameworks tailored for specific data types [ 12 , 13 , 14 ] . While these efforts validate the feasibility of agents interfacing with specialized tools, their operational scope is often confined to single-turn interactions or predefined toolsets, exhibiting limited capacity for long-term, autonomous planning and adaptation. The second direction is defined by unified Vision Language Models (VLMs) [ 15 , 16 , 17 ] , attempting to handle various RS tasks end-to-end within a single massive model. Although these models demonstrate notable multitasking capabilities, on one hand, their monolithic nature precludes the precise orchestration of complex external toolchains, and on the other hand, their lack of workflow-level robustness renders them difficult to diagnose and correct upon failure. The architectural deficiencies of the existing paradigms mentioned above constitute a significant research gap, which is conceptually illustrated in Figure 1 (a).",
+    "index": 10
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.p5.1",
+      "class": "ltx_p"
+    },
+    "text": "More recently, agentic workflows have emerged as a solution to bridge these divergent technical paths, blancing tool flexibility with the strict requirements of scientific workflows [ 18 , 19 ] . By orchestrating agents through structured processes, this paradigm ensures analytical transparency while retaining the ability to dynamically compose toolchains. Although early geospatial works have explored this direction [ 20 ] , it still suffers from notable limitations. First, they rely excessively on the generalizaion capabilities of LLMs for planning. Although LLMs possess extensive general knowledge, their outputs, optimized for universality, often lack the requisite specificity and depth for specialized scientific domains. An operational agent must be infused with the tacit knowledge, operational heuristics, and industry standards of domain experts, a capability underdeveloped in existing workflows. Second, they predominantly follow a static plan-once, execute-sequentially model, making them fragile when faced with runtime failures caused by data or environmental factors. Third, current workflow agents typically operate without a persistent memory mechanism and fail to learn from past successes or failures as some generalized agents [ 21 ] , limiting their potential for continuous intelligence growth.",
+    "index": 11
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.p6.1",
+      "class": "ltx_p"
+    },
+    "text": "To systematically address the challenges mentioned above, this paper introduces a novel RS agent framework and a corresponding evaluation benchmark. The framework, centered on a dynamic and evolutionary agentic workflow, is designed not only to execute tasks efficiently, but also to evolve into a continuously improving domain expert. Our core contributions are fourfold:",
+    "index": 12
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.I1.i1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Codified expert knowledge facilitates scientifically valid planning. We contribute a procedural knowledge base where expert domain knowledge is codified into a library of workflow templates. This provides a robust basis for the agent’s planning, fundamentally constraining LLM-induced fallacies and ensuring the scientific validity of generated plans.",
+    "index": 13
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.I1.i2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Autonomous real-time adaptation ensures robust performance in dynamic conditions. Our framework empowers the agent with real-time monitoring and dynamic adjustment capabilities. When a procedural step fails, the agent can autonomously diagnose the issue and replan the subsequent path, demonstrating strong robustness in unseen scenarios.",
+    "index": 14
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.I1.i3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "A persistent memory mechanism drives continuous, experience-driven learning. We introduce a long-term memory system that enables the agent to learn from operational experience. This solidifies successful adjustments into new workflows and attributes failures to heuristic knowledge, addressing the critical learning gap in current agentic workflows.",
+    "index": 15
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.I1.i4.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "A comprehensive benchmark enables rigorous evaluation of agentic workflows. To facilitate standardized evaluation, we construct a new benchmark comprising 162 distinct RS task types with 324 corresponding real-world workflows. This benchmark is specifically designed to rigorously assess the capability of an agent in planning workflow under given tool constraints.",
+    "index": 16
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S1.p8.1",
+      "class": "ltx_p"
+    },
+    "text": "The remainder of this paper is structured as follows. Section 2 provides a comprehensive review of the literature, covering general LLM-based agents, agentic workflows, and AI agents for Earth observation tasks. Section 3 introduces the proposed Cangling-KnowFlow framework and elaborates on its three key components. Section 4 outlines the constructed toolset database, the curated KnowFlow-Bench dataset, and the evaluation protocols. Section 5 reports the experimental settings and results, followed by an in-depth analysis. Finally, Section 6 concludes this paper and discusses future research directions.",
+    "index": 17
+  },
+  {
+    "tag": "h2",
+    "attrs": {
+      "class": "ltx_title ltx_title_section"
+    },
+    "text": "II Related Work",
+    "index": 18
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "II-A General-Purpose LLM Agents",
+    "index": 19
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S2.SS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The conceptual foundation of our research lies in the rapid evolution of general-purpose agents powered by LLMs. Early efforts demonstrated that LLMs could perform preliminary planning via techniques such as Chain-of-Thought prompting. A pivotal development was the introduction of frameworks like ReAct [ 22 ] , which synergized reasoning and acting by interleaving thought processes with tool-based actions, enabling agents to interact with external environments to solve tasks. It further led to a wave of research into enhancing agent capabilities, particularly in generalized tool use, supported by the creation of comprehensive benchmarks and datasets [ 23 , 24 ] . Building upon this, subsequent research has focused on enhancing agent autonomy and intelligence. For example, some approaches have incorporated self-reflection and memory mechanisms to allow agents to learn from past failures [ 21 ] , while others have integrated tree-search algorithms to improve planning and decision-making capabilities [ 25 ] . Concurrently, multi-agent conversational frameworks have been proposed to tackle complex problems through collaborative task decomposition [ 26 ] . Despite these advances, a common limitation of general-purpose agents is their reliance on the intrinsic, generalized knowledge of the underlying LLM. In specialized domains, this often leads to ’planning hallucinations’. As highlighted by recent benchmarks [ 27 ] , these agents tend to generate plans that appear plausible but are scientifically incorrect.",
+    "index": 20
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "II-B Agentic Workflows",
+    "index": 21
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S2.SS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To address the limitations of unstructured, general-purpose agents, the paradigm of the Agentic Workflow has emerged. This approach imposes a structured, often procedural, constraint on agent behavior to increase reliability and ensure compliance with domain-specific constraints. A key focus within this paradigm is the infusion of external knowledge to guide the planning process. Some studies have proposed augmenting agents with explicit knowledge bases to constrain the generation of action plans, thereby improving their factuality and relevance [ 6 , 28 ] . Others have explored the inherent tension between procedural compliance and operational flexibility, developing frameworks that allow agents to adhere to a predefined workflow while also managing unexpected, out-of-scope situations [ 7 ] . This relates directly to the need for dynamic adjustment in real-world applications. More recently, the concept of memory has been integrated into workflows, enabling agents to learn and reuse successful procedural patterns from past experiences [ 29 ] . Some advanced systems even attempt to automate the generation of the workflow itself [ 30 ] . However, the systematic definition, orchestration, dynamic adaptation, and experiential optimization of such workflows for highly specialized domains like RS remain open questions.",
+    "index": 22
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "II-C AI Agents in RS and Geoscience",
+    "index": 23
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S2.SS3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The application of AI agents to RS and Geoscience is a nascent but rapidly developing field. Early efforts have focused predominantly on tool augmentation, demonstrating that agents can interpret user commands to invoke specific geospatial analysis tools or models. These include single-agent systems for tool execution [ 8 , 9 , 31 , 32 , 10 , 11 ] and multi-agent frameworks for specialized data processing or collaborative analysis [ 12 , 13 , 33 , 34 , 35 , 14 ] . While foundational, these systems are often limited to simple, single-turn tool calls and lack the capability to orchestrate complex, multi-step analytical workflows.",
+    "index": 24
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S2.SS3.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "More recently, GeoFlow [ 20 ] introduced the Agentic Workflow paradigm to the geospatial domain, representing a significant step forward. However, this and similar early attempts exhibit three critical deficiencies that are worth noting. First, they rely on the LLM’s general knowledge for planning and lack a mechanism for injecting codified, expert-validated procedural knowledge, making them prone to domain-specific errors. Second, their workflows are largely static, planned once at the beginning of a task, and lack the robustness to dynamically adjust to runtime failures. Third, they are memoryless, precluding the ability to learn from or evolve through accumulated task logs and retrieved historical cases. Furthermore, while benchmarks for evaluating tool-use or specific spatial cognition abilities are emerging [ 36 ] , a comprehensive benchmark designed to rigorously assess an agent’s advanced capabilities in complex workflow orchestration, dynamic adaptation, and empirical learning is still absent, which constitutes the motivation of this paper.",
+    "index": 25
+  },
+  {
+    "tag": "h2",
+    "attrs": {
+      "class": "ltx_title ltx_title_section"
+    },
+    "text": "III Methodology",
+    "index": 26
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "III-A Framework Overview",
+    "index": 27
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The CangLing-KnowFlow framework is developed to fill the above-mentioned critical gaps by addressing the core challenge of fusing deep domain knowledge with a flexible, adaptive procedural flow for automating complex RS tasks. The key design principle is to create an agent that not only executes predefined plans, but which also adapts dynamically to unforeseen circumstances and learns systematically from its operational experience. As shown in Figure 2 , the architecture of our proposed CangLing-KnowFlow is composed of three primary, synergistic components, integrated under a central Orchestrator Agent. This agent serves as the cognitive core, responsible for interpreting user requests, planning the execution, and initiating interventions. It draws plans from an expert-informed Procedural Knowledge Base (PKB), a repository of codified, expert-validated RS workflows. The concrete execution is handled by a Dynamic Execution Engine, which interfaces with the toolset and provides real-time feedback on the outcome of each action. Finally, an Evolutionary Memory Module records all execution traces, enabling the agent to learn from experience by analyzing successes and failures to refine its knowledge over time.",
+    "index": 28
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS1.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "The decision-making process of the Orchestrator Agent can be formally modeled as a Markov Decision Process (MDP) [ 7 ] . At each time step t t , the agent selects an action a t a_{t} based on the history of the current task and guidance from its knowledge sources. We extend the traditional workflow agent formulation to incorporate the influence of long-term, cross-task experience explicitly. The action a t a_{t} is determined by the agent’s policy 𝒜 \\mathcal{A} as follows:",
+    "index": 29
+  },
+  {
+    "tag": "table",
+    "attrs": {
+      "id": "S3.E1",
+      "class": "ltx_equation ltx_eqn_table"
+    },
+    "text": "a t ← 𝒜 ⁡ ( ℋ t − 1 , W c ​ u ​ r ​ r ​ e ​ n ​ t , 𝒦 e ​ v ​ o ) , a_{t}\\leftarrow\\mathcal{A}(\\mathcal{H}_{t-1},W_{current},\\mathcal{K}_{evo}), (1)",
+    "index": 30
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS1.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "where ℋ t − 1 \\mathcal{H}_{t-1} represents the execution history of the current task up to step t − 1 t-1 , including all previous actions and their observed outcomes. W c ​ u ​ r ​ r ​ e ​ n ​ t W_{current} is the current workflow DAG, serving as the primary procedural guide. Critically, 𝒦 e ​ v ​ o \\mathcal{K}_{evo} represents the generalized, evolutionary knowledge retrieved from the memory module, which comprises verified sub-plans and error-correction heuristics distilled from past task executions (details are provided in Section III-D ). This term formally distinguishes our framework, as it allows the agent’s decisions to be informed not just by its immediate context, but by its entire accumulated experience.",
+    "index": 31
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS1.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "The practical implementation of the above formal model is realized through a structured operational cycle: (1) Task Decomposition and Workflow Retrieval, where the Orchestrator parses the goal of users and retrieves the most relevant workflow template from the PKB (see Section III-B ). (2) Situated Planning, where the Orchestrator adapts the retrieved template to the specific data and contextual parameters of the current task. (3) Monitored Execution, where the Dynamic Execution Engine executes the planned steps sequentially, with the Orchestrator supervising the process. (4) Dynamic Adjustment, which is triggered upon execution failure, prompting the Orchestrator to diagnose the issue and re-plan the workflow. (5) Empirical Learning, which occurs post-task, where the Evolutionary Memory Module analyzes the complete execution trace to update the system’s knowledge base. This operational cycle is formally detailed in Algorithm 1 . The subsequent sections will provide a detailed discussion of the three components, i.e., the PKB, the dynamic adjustment mechanism, and the evolutionary memory module.",
+    "index": 32
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "III-B Expert-Informed Procedural Knowledge Base",
+    "index": 33
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The PKB is the foundational component for grounding the agent’s planning capabilities upon established scientific methodologies. It addresses the problem of planning hallucination by providing the Orchestrator Agent with a structured source of domain-specific procedural knowledge. The PKB is comprised of two core elements: a formalized Tool Schema and a library of hierarchical Workflow Templates, underpinned by a formal mathematical representation. The concrete structure of these elements is illustrated in Figure 3 .",
+    "index": 34
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-B 1 Mathematical Formulation of Workflows",
+    "index": 35
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.SSS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To represent the structure and logic of RS analysis procedures formally, we model each workflow as a Directed Acyclic Graph (DAG). A workflow W W is defined as a tuple W = ( V , E ) W=(V,E) , where V V is a set of vertices representing tool actions and E E is a set of directed edges representing dependencies. Let 𝒯 = { t 1 , t 2 , … , t n } \\mathcal{T}=\\{t_{1},t_{2},\\dots,t_{n}\\} be the set of all available tools. Each vertex v i ∈ V v_{i}\\in V corresponds to the invocation of a specific tool t i ∈ 𝒯 t_{i}\\in\\mathcal{T} . The properties of each tool t i t_{i} are mainly defined by its two predefined mapping functions, precondition Pre ​ ( t i ) \\text{Pre}(t_{i}) , and its execution effects, Eff ​ ( t i ) \\text{Eff}(t_{i}) . The set of edges is constructed based on semantic compatibility, with a directed edge e i ​ j = ( v i , v j ) ∈ E e_{ij}=(v_{i},v_{j})\\in E exists from vertex v i v_{i} to v j v_{j} if and only if an effect of tool t i t_{i} satisfies a precondition of tool t j t_{j} , defined as",
+    "index": 36
+  },
+  {
+    "tag": "table",
+    "attrs": {
+      "id": "S3.E2",
+      "class": "ltx_equation ltx_eqn_table"
+    },
+    "text": "E = { e i ​ j | ϕ L ​ L ​ M ​ ( Eff ​ ( t i ) , Pre ​ ( t j ) ) = 1 } , E=\\{e_{ij}|\\phi_{LLM}(\\text{Eff}(t_{i}),\\text{Pre}(t_{j}))=1\\}, (2)",
+    "index": 37
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.SSS1.p1.2",
+      "class": "ltx_p"
+    },
+    "text": "where ϕ L ​ L ​ M \\phi_{LLM} serves as a boolean indicator function implemented by an LLM to determine if Eff ​ ( t i ) \\text{Eff}(t_{i}) conceptually entails Pre ​ ( t j ) \\text{Pre}(t_{j}) .",
+    "index": 38
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.SSS1.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "The acyclic nature of the graph ensures that a workflow is logically sound and executable. This formal DAG representation plays a central role in the CangLing-KnowFlow framework, as it enables the agent to check the logical consistency of the workflow, identify failure points, and systematically perform dynamic adjustments by manipulating the graph structure. In contrast with existing LLM-based agents, the proposed checking manner follows certain practical rules, such as topological sorting, cycle detection, and computing logics, rather than relying purely on probabilities.",
+    "index": 39
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-B 2 PDDL Tool Schema",
+    "index": 40
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.SSS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To enable the mathematical formulation, every tool available to the agent is described formally using a schema inspired by the Planning Domain Definition Language (PDDL), as shown in Figure 3 b. Each tool t ∈ 𝒯 t\\in\\mathcal{T} is represented as an action with a clearly defined set of the following three components: (1) Parameters, define the input arguments for the tool, including data types and constraints; (2) Preconditions, denoted as Pre ​ ( t ) \\text{Pre}(t) , record logical conditions that must be met before tool execution; (3) Effects, denoted as Eff ​ ( t ) \\text{Eff}(t) ), evaluate the state changes that occur upon tool execution.",
+    "index": 41
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.SSS2.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "We formalize the operational space of the agent, denoted as 𝛀 \\mathbf{\\Omega} , as a structured hierarchical taxonomy rather than a simple collection of functions, which aligns with the intrinsic multi-level nature of RS tasks. Specifically, 𝛀 \\mathbf{\\Omega} is organized into two categories: (1) Atomic operators, which handle low-level data manipulation (e.g., geometric correction, projection); (2) Semantic operators, which encapsulate complex analysis tasks (e.g., segmentation, inversion) into high-level function calls. This rigorous taxonomy ensures that the derived tool space 𝒯 ⊂ 𝛀 \\mathcal{T}\\subset\\mathbf{\\Omega} provides the necessary granularity for domain-specific benchmarks. By unifying these heterogeneous functions into a machine-readable library, we establish the fundamental building blocks for constructing our workflow DAGs. We will further detail the concrete instantiation of this toolset, including specific GDAL and deep learning algorithms, in Section IV-A1 .",
+    "index": 42
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-B 3 Workflow Templates",
+    "index": 43
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.SSS3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The second element of the PKB is a library of workflow templates, which codify mature and complex RS analysis procedures as predefined DAGs (Figure 3 a). These templates are structured hierarchically to represent tasks at multiple levels of abstraction. For example, a high-level (defined as conceptually abstract and goal-oriented) composite task, such as Regional Flood Inundation Assessment, is decomposed into a sequence of lower-level processing steps, such as Data Acquisition and Preprocessing. Each step is itself a sub-graph composed of concrete tool actions.",
+    "index": 44
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS2.SSS3.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "We designed this hierarchical structure to enable efficient, top-down planning. By allowing the agent to retrieve and instantiate high-level templates for common tasks, it reduces the planning search space and ensures adherence to expert-validated procedures. This structural guidance constrains the generative process of the LLM, directing it to produce plans that are both syntactically correct and compliant with standard RS protocols.",
+    "index": 45
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "III-C Dynamic Workflow Adjustment",
+    "index": 46
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "One key innovation of the CangLing-KnowFlow framework is its ability to adjust the workflow in response to runtime failures dynamically, thereby overcoming the inflexibility of static plans. This mechanism is the practical realization of the agent’s policy 𝒜 \\mathcal{A} from Eq. ( 1 ) under conditions of uncertainty. In RS workflows, the source of this uncertainty could be complicated, such as ambiguities in the user’s prompts (e.g., vague spatial definitions), intrinsic data irregularities (e.g., unexpected cloud cover or sensor noise), and unexpected tool behaviors (e.g., non-convergence of neural networks). When a failure occurs for the abovementioned reasons, the agent must compute a new action a t a_{t} that deviates from the original plan. This is achieved through a structured process composed of three stages: failure detection, a hierarchical repair strategy, and workflow graph manipulations.",
+    "index": 47
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-C 1 Failure Detection and Diagnosis",
+    "index": 48
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS3.SSS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The dynamic adjustment process is initiated when the Dynamic Execution Engine detects a failure at a specific vertex v f ∈ V v_{f}\\in V of the current workflow W c ​ u ​ r ​ r ​ e ​ n ​ t W_{current} . We define a failure as either an explicit error returned by a tool or an output that fails to meet a predefined quality metric. Once detected, the engine immediately halts the execution of dependent downstream nodes and reports the failure state, which becomes part of the history ℋ t − 1 \\mathcal{H}_{t-1} , to the Orchestrator Agent. The Orchestrator then diagnoses the root cause by analyzing the history in conjunction with the preconditions of the failed tool t f t_{f} , aiming to identify the root cause of the failure.",
+    "index": 49
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-C 2 Hierarchical Repair Strategy",
+    "index": 50
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS3.SSS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Once a failure is diagnosed, the Orchestrator employs a hierarchical strategy to generate a repair plan. Specifically, it selects the next action a t a_{t} by prioritizing the knowledge from past experience 𝒦 e ​ v ​ o \\mathcal{K}_{evo} over generalized reasoning.",
+    "index": 51
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.I1.i1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Tier 1: Knowledge-driven Repair. The agent first queries the Evolutionary Memory Module for 𝒦 e ​ v ​ o \\mathcal{K}_{evo} related to similar failures. If a previously successful repair strategy is found, it is immediately adopted as the next action a t a_{t} . This approach leverages past experience to solve recurring problems quickly and reliably.",
+    "index": 52
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.I1.i2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Tier 2: LLM-driven Creative Repair. If no relevant solution is found in 𝒦 e ​ v ​ o \\mathcal{K}_{evo} , the agent pushes the problem to the LLM. It provides the LLM with the full context ( ℋ t − 1 \\mathcal{H}_{t-1} , W c ​ u ​ r ​ r ​ e ​ n ​ t W_{current} ) to generate a novel repair plan, which then defines the action a t a_{t} .",
+    "index": 53
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-C 3 Workflow Graph Manipulation",
+    "index": 54
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS3.SSS3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The repair plan, formalized as the chosen action a t a_{t} , is executed by applying a series of topological transformations to the current workflow DAG W c ​ u ​ r ​ r ​ e ​ n ​ t W_{current} , resulting in an updated workflow structure W c ​ u ​ r ​ r ​ e ​ n ​ t ′ W^{\\prime}_{current} . These transformations primarily consist of three distinct graph operations designed to rectify the identified fault. The first transformation, Node Replacement, involves substituting the failed vertex v f v_{f} with a new vertex v r v_{r} associated with an alternative tool t r t_{r} , ensuring that all original incoming and outgoing edges of v f v_{f} are correctly remapped to v r v_{r} . Alternatively, the agent may perform Node Insertion, which introduces a new intermediate vertex v n ​ e ​ w v_{new} between a predecessor node v p v_{p} and the failed node v f v_{f} . This operation structurally modifies the path by severing the direct link ( v p , v f ) (v_{p},v_{f}) and establishing a new sequence of edges ( v p , v n ​ e ​ w ) (v_{p},v_{new}) and ( v n ​ e ​ w , v f ) (v_{new},v_{f}) . Finally, Parameter Modification allows for in-situ adjustment, where the vertex v f v_{f} is topologically retained, but the hyperparameters governing its underlying tool t f t_{f} are recalibrated to resolve the execution error.",
+    "index": 55
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "III-D Experience-driven Memory and Evolution",
+    "index": 56
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The Evolutionary Memory Module plays a role that endows the CangLing-KnowFlow agent with the ability to learn and evolve from its operational experience, addressing the critical learning gap in existing agentic workflows. It is mainly achieved through a post-task analysis and knowledge generalization process that operates on a repository of detailed execution traces.",
+    "index": 57
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-D 1 Structure of the Evolutionary Memory",
+    "index": 58
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.SSS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The memory module serves as the persistent storage for the evolutionary knowledge 𝒦 e ​ v ​ o \\mathcal{K}_{evo} introduced in Eq. ( 1 ). Structurally, it is organized as a database of execution traces. Each trace, ℰ \\mathcal{E} , is a comprehensive log of a completed task, containing the initial user request, the initial workflow DAG W i ​ n ​ i ​ t W_{init} , the full sequence of actions taken, all intermediate data and tool outputs, any failures encountered, the dynamic adjustments performed, and the final outcome. This rich and structured dataset serves as the solid foundation for the learning processes of our agent.",
+    "index": 59
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "III-D 2 Knowledge Generalization and Refinement",
+    "index": 60
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.SSS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "After a task is completed, the Orchestrator Agent initiates a knowledge generalization phase, which involves two distinct learning pathways depending on the task outcome:",
+    "index": 61
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.SSS2.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "Success Solidification (Positive Feedback): If a task that involved dynamic adjustments is completed successfully, the final validated workflow W f ​ i ​ n ​ a ​ l W_{final} can then be considered a candidate worth promoting. After the agent analyzes the trace to identify the specific sequence of adjustments that led to success, the successful, dynamically generated workflow is then generalized into a new, reusable template. This template, along with metadata describing the context in which it was effective, will be finally added to the PKB. In this manner, the whole process could continuously enrich the PKB with novel, field-tested procedures.",
+    "index": 62
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.SSS2.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "Failure Attribution (Negative Feedback): In the event of a terminal task failure, the agent performs a failure attribution analysis on the execution trace ℰ \\mathcal{E} . It identifies the specific failure point v f v_{f} , the state of the workflow at that time, and the diagnosed root cause. Based on this analysis, it synthesizes a new Pattern-Action Rule , formally denoted as r ∈ 𝒦 e ​ v ​ o r\\in\\mathcal{K}_{evo} . This rule represents a conditional logic that maps a specific failure pattern to a recommended repair action:",
+    "index": 63
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.SSS2.p4.1.1",
+      "class": "ltx_p"
+    },
+    "text": "IF tool(’YOLOvax’) fails on data(type=’SAR’) with error(’low_contrast’) THEN Apply action(insert_tool(’Speckle_ Suppression’))",
+    "index": 64
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.SSS2.p5.1",
+      "class": "ltx_p"
+    },
+    "text": "These generated rules are stored in a dedicated section of the memory module and are prioritized during the “Knowledge-driven Repair” tier of the dynamic adjustment process. This creates a negative feedback loop that allows the agent to learn from its mistakes and provide a robust repair strategy when errors occur, significantly reducing the latency and token costs associated with repetitive LLM querying.",
+    "index": 65
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S3.SS4.SSS2.p6.1",
+      "class": "ltx_p"
+    },
+    "text": "Through the dual mechanism of solidifying successes into templates and distilling failures into repair rules, the CangLing-KnowFlow agent can systematically transform its episodic experiences into durable procedural knowledge ( 𝒦 e ​ v ​ o \\mathcal{K}_{evo} ), enabling it to evolve and increase its accuracy over time.",
+    "index": 66
+  },
+  {
+    "tag": "h2",
+    "attrs": {
+      "class": "ltx_title ltx_title_section"
+    },
+    "text": "IV Database and Benchmark",
+    "index": 67
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To ground our agent’s capabilities and rigorously evaluate its performance, we constructed two key databases: (1) an internal PKB to provide the agent with domain-specific knowledge and procedural guidance, and (2) a comprehensive evaluation suite, termed KnowFlow-Bench, to assess its workflow orchestration capabilities against expert-defined standards.",
+    "index": 68
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "IV-A Procedural Knowledge Base Construction",
+    "index": 69
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The PKB is the cornerstone of the CangLing-KnowFlow framework, designed to infuse the agent with expert-level procedural knowledge. This section details the practical construction of the PKB, whose formal structure and mathematical preliminaries were defined in Section III-B . The construction involved a two-stage process of toolset formalization and high-level workflow curation.",
+    "index": 70
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "IV-A 1 Toolset Formalization",
+    "index": 71
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS1.SSS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The agent’s operational capabilities are defined by a comprehensive toolset. Each tool was formalized according to the PDDL-like schema specified in Section III-B2 . The curated toolset is categorized into traditional and deep learning-based tools to cover a wide spectrum of RS applications.",
+    "index": 72
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS1.SSS1.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "Traditional Tools: We incorporated the complete suite of traditional data processing algorithms from the Geospatial Data Abstraction Library (GDAL). Each algorithm was formalized as a distinct tool, providing exhaustive coverage of fundamental geospatial data manipulation operations.",
+    "index": 73
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS1.SSS1.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "Deep Learning Tools: We designed a suite of high-level deep learning tools, each tailored to a primary RS analysis task. These tools decouple functional logic from architectural complexity, allowing the system to focus on the transformation of input data into analytical outputs. The suite includes four main categories: semantic_segmentation, object_detection, change_detection, and remote_sensing_inversion. Each tool is defined by a rigorous JSON schema that specifies its functionality, parameters, and input/output requirements, ensuring reliable interpretation and invocation by the agent. For example, the semantic_segmentation tool requires parameters such as image_path, target_classes, and spatial_resolution_m to execute pixel-wise classification.",
+    "index": 74
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "IV-A 2 High-Level Workflow Curation",
+    "index": 75
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS1.SSS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To populate the library of hierarchical workflow templates described in Section III-B3 , we curated a large-scale collection of high-level procedural guides. The process began by generating a diverse set of 162 realistic RS task descriptions using a state-of-the-art LLM (Gemini 2.5 Pro) [ 37 ] . For each task, domain experts then manually annotated between two and 10 plausible, high-level solution workflows, resulting in a total of 1,008 unique templates. These templates are not rigid, function-call-level scripts; rather, they are abstract procedural sequences (e.g., Step 1: perform radiometric correction, Step 2: classify land cover) that embody the hierarchical structure defined in our methodology. This library provides the agent with a rich source of expert-derived strategies, serving as the primary input for its situated planning phase.",
+    "index": 76
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "IV-B Evaluation Benchmarks",
+    "index": 77
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "A rigorous evaluation of agentic capabilities necessitates well-designed benchmarks. While general-purpose benchmarks have been instrumental in advancing the field [ 23 , 27 ] , they often lack the domain specificity required for scientific applications. Conversely, existing benchmarks in the geospatial domain tend to focus on discrete capabilities rather than the holistic process of workflow orchestration. To address this gap, we developed a new, comprehensive benchmark, KnowFlow-Bench, and additionally evaluated our agent on the existing ThinkGeo benchmark [ 36 ] to test its generalizability.",
+    "index": 78
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "IV-B 1 The KnowFlow-Bench",
+    "index": 79
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS2.SSS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Existing benchmarks typically focus on isolated capabilities, for example, ThinkGeo [ 36 ] assesses step-by-step tool usage, while GeoCode-Bench [ 38 ] centers specifically on geospatial code generation. Consequently, the field lacks a dedicated standard for evaluating an agent’s comprehensive capacity to translate high-level goals into executable workflows.",
+    "index": 80
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS2.SSS1.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "To bridge this gap, KnowFlow-Bench is built upon the 162 tasks curated from our PKB. For each task, domain experts annotated two distinct, complete, and executable ground-truth workflows, yielding a total of 324 evaluation instances. Unlike the high-level templates in the PKB, each workflow in KnowFlow-Bench consists of a concrete sequence of function calls with fully specified parameters. These “gold standard” workflows represent scientifically valid solution paths given the available toolset, serving as the reference for evaluating both the procedural correctness and final output accuracy of the agent.",
+    "index": 81
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "IV-B 2 Cross-Benchmark Generalization on ThinkGeo",
+    "index": 82
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS2.SSS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "We also extended our evaluation to the ThinkGeo benchmark [ 36 ] to test the transferability and generalization of our framework. ThinkGeo is a comprehensive agentic benchmark comprising 436 tasks grounded in real-world RS imagery, encompassing seven major domains such as urban planning and disaster assessment. It provides a suite of 14 predefined tools and evaluates agents based on their ability to follow a ReAct-style reasoning and execution chain. To facilitate this cross-evaluation, we configured the CangLing-KnowFlow agent to align with the ThinkGeo environment. This adaptation entailed extracting the procedural workflow logic from its ReAct-style annotations and restricting the agent’s action space strictly to the 14 tools provided by the benchmark. This set of experiments highlights the robustness of our agent’s planning mechanisms, confirming its effectiveness even when operating with external tool definitions and novel task requirements.",
+    "index": 83
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "IV-C Evaluation Metrics",
+    "index": 84
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To ensure a holistic assessment of agent performance, we designed a comprehensive evaluation protocol that rigorously evaluates both the final task outcome and the procedural fidelity, logical coherence, and step-wise accuracy of the execution trace. Accordingly, our protocol is organized into two primary categories, end-to-end outcome evaluation and step-wise process evaluation.",
+    "index": 85
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "IV-C 1 End-to-End Evaluation",
+    "index": 86
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The first category assesses the overall effectiveness and efficiency of an agent in accomplishing a given RS task from start to finish. It is used to compare the performance of different agentic frameworks (e.g., ReAct, Reflexion, CangLing-KnowFlow) across our benchmarks.",
+    "index": 87
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS1.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "Task Success Rate (TSR) : This is the primary metric for overall performance. A task is considered successful if the agent completes the workflow and produces a final result that is semantically and numerically correct when compared to the ground-truth, with minimal human intervention.",
+    "index": 88
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS1.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "First-Pass Accuracy (FPA) : The proportion of tasks that are successfully completed using the initially generated workflow, without requiring any dynamic adjustments. This metric specifically measures the quality of the agent’s initial planning.",
+    "index": 89
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS1.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "Planning Efficiency : This set of metrics quantifies the cost and autonomy of the agent’s planning process, primarily consists of (1) Number of Tool Calls (NTC) : The total count of tool invocations required to complete the task. A smaller number generally indicates a more efficient plan, and (2) Number of Interactions (NI) : The frequency of required user interventions or confirmations. A lower count signifies greater autonomy.",
+    "index": 90
+  },
+  {
+    "tag": "h4",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsubsection"
+    },
+    "text": "IV-C 2 Step-wise Execution Evaluation",
+    "index": 91
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "The second category provides a fine-grained analysis of the procedural correctness of our CangLing-KnowFlow agent’s execution trace. To achieve this, we adopt the fine-grained, step-wise evaluation metrics proposed in the GTA benchmark [ 39 ] . This manner is designed to assess the procedural fidelity of an agent’s reasoning and action trace at each step of the workflow, offering deep insights into its operational capabilities.",
+    "index": 92
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS2.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "Instruction Following Accuracy (InstAcc) : This metric evaluates whether the agent’s output at each step follows strictly to the predefined format (e.g., Thought: … Action: …). It serves as a fundamental check of the model’s ability to generate structured output.",
+    "index": 93
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS2.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "Tool Selection Accuracy (ToolAcc) : It measures whether the tool selected by the agent at a given step matches the one in the ground-truth workflow, which is a core metric for evaluating the agent’s task decomposition and planning abilities.",
+    "index": 94
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS2.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "Argument Correctness Accuracy (ArgAcc) : Conditional on the correct tool being selected, this metric assesses the correctness of the parameters supplied to the tool. As highlighted by [ 39 ] , accurate argument prediction is often a critical bottleneck for agent performance. It is quantified by evaluating the exact correspondence between the assigned parameter values (including referenced variable names) and the ground-truths.",
+    "index": 95
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S4.SS3.SSS2.p5.1",
+      "class": "ltx_p"
+    },
+    "text": "Overall Score : Calculated as the arithmetic mean of InstAcc, ToolAcc, and ArgAcc, which offers a unified quantitative measure of step-wise procedural fidelity.",
+    "index": 96
+  },
+  {
+    "tag": "h2",
+    "attrs": {
+      "class": "ltx_title ltx_title_section"
+    },
+    "text": "V Experiments and Discussion",
+    "index": 97
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "V-A Experimental Setup",
+    "index": 98
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To rigorously evaluate the performance and efficacy of our proposed CangLing-KnowFlow framework, we designed a comprehensive experimental protocol. This section details the evaluation benchmarks, the selected baseline methods for comparison, the suite of LLMs used as backbones, and the specific metrics employed for quantitative assessment.",
+    "index": 99
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS1.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "As discussed before, the evaluation was conducted on two complementary benchmarks: our developed KnowFlow-Bench and the public ThinkGeo benchmark [ 36 ] . The KnowFlow-Bench is tailored to assess an agent’s end-to-end capabilities in orchestrating complex, multi-step RS workflows, from high-level task planning and tool invocation to dynamic adjustments in response to execution failures. The ThinkGeo is used to further test the generalization capabilities and adaptability of our framework, allowing us to assess CangLing-KnowFlow’s performance in a novel environment with a distinct set of predefined tools and task structures.",
+    "index": 100
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS1.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "Given the lack of competitors in this emerging field, we established the following settings as baselines for comparison:",
+    "index": 101
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.I1.i1.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "LLM + Tools : A foundational zero-shot baseline that relies solely on the raw, in-context learning ability of an LLM to interpret a user request and invoke the appropriate tools without any structured reasoning framework.",
+    "index": 102
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.I1.i2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "ReAct [ 22 ] : A foundational paradigm that synergizes reasoning and acting by generating interleaved “Thought” and “Action” traces. It serves as the standard baseline, employing standard prompting strategies and the shared toolset. This setup establishes performance metrics in the absence of external procedural knowledge augmentation.",
+    "index": 103
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.I1.i3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Reflexion [ 21 ] : An advanced evolution of ReAct that incorporates a verbal reinforcement learning mechanism. When a failure is detected, the agent can analyze its execution trace to generate textual self-reflections, which act as heuristic feedback for subsequent trials. While equipped with the same tools as the other agents, this baseline enables us to assess the efficacy of purely linguistic self-correction compared to our structured, graph-based evolutionary memory.",
+    "index": 104
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.I1.i4.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "Ours (CangLing-KnowFlow) : Our proposed framework, which integrates an expert-informed knowledge base with dynamic workflow adjustment and long-term evolutionary learning.",
+    "index": 105
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS1.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "To ensure the robustness of our analysis and mitigate potential biases inherent to specific architectures, we evaluated our framework across a diverse family of state-of-the-art LLMs. As detailed in Table I , our selection encompasses both leading proprietary models (e.g., GPT-4 [ 40 ] , Claude 3.7 Sonnet) and high-performance open-weight models (e.g., Llama3-70B [ 41 ] ). All evaluations strictly follows the comprehensive protocol defined in Section IV-C to guarantee a holistic assessment.",
+    "index": 106
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "V-B Overall Performance Comparison",
+    "index": 107
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS2.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To validate the effectivity of our framework empirically, we conducted a comprehensive comparison against established baseline methods on our proposed KnowFlow-Bench. The detailed results summarized in Table I offer a clear and consistent tendency that the CangLing-KnowFlow framework wins a significant improvement across all evaluated metrics and LLM backbones.",
+    "index": 108
+  },
+  {
+    "tag": "table",
+    "attrs": {
+      "id": "S5.T1.4",
+      "class": "ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle"
+    },
+    "text": "LLM Backbone Year Type Metric LLM + Tools ReAct [ 22 ] Reflexion [ 21 ] Ours Mistral-7B [ 42 ] 2023 Open TSR (%) ↑ 54.6 (38.9) 58.9 (43.6) 60.2 (45.1) 68.4 (54.2) FPA (%) ↑ 31.8 (21.3) 35.1 (24.8) 36.7 (26.1) 45.9 (34.7) NTC ↓ 31.2 (42.6) 28.3 (38.7) 27.4 (37.2) 19.6 (26.9) NI ↓ 14.7 (19.4) 12.8 (16.8) 11.9 (15.9) 6.2 (9.7) Llama3-8B [ 41 ] 2024 Open TSR (%) ↑ 58.3 (42.1) 62.1 (46.8) 63.7 (48.2) 71.5 (57.9) FPA (%) ↑ 35.2 (24.6) 38.4 (28.1) 40.1 (29.7) 49.3 (38.4) NTC ↓ 28.4 (38.7) 25.7 (34.9) 24.8 (33.2) 17.2 (23.8) NI ↓ 12.3 (16.8) 10.8 (14.2) 9.9 (13.1) 4.8 (7.6) Llama3-70B [ 41 ] 2024 Open TSR (%) ↑ 73.4 (60.4) 76.2 (64.2) 77.1 (65.1) 83.6 (74.6) FPA (%) ↑ 49.7 (35.7) 52.3 (39.3) 53.4 (40.4) 63.1 (51.1) NTC ↓ 21.5 (29.5) 19.6 (26.6) 18.8 (25.8) 11.7 (17.7) NI ↓ 8.2 (13.2) 7.1 (11.1) 6.6 (10.6) 2.8 (5.8) DeepSeek V3.1 [ 43 ] 2024 Open TSR (%) ↑ 74.8 (62.8) 78.1 (67.1) 79.3 (68.7) 86.7 (78.3) FPA (%) ↑ 51.2 (38.2) 54.9 (42.9) 56.4 (44.4) 66.1 (53.8) NTC ↓ 21.3 (29.2) 18.7 (25.8) 17.9 (24.9) 11.2 (16.4) NI ↓ 7.8 (11.6) 6.3 (9.5) 5.7 (8.8) 2.9 (4.9) DeepSeek-R1 [ 44 ] 2025 Open TSR (%) ↑ 83.4 (77.4) 86.9 (82.9) 87.8 (84.8) 93.1 (89.1) FPA (%) ↑ 62.7 (54.7) 66.3 (59.3) 67.9 (61.9) 75.4 (69.4) NTC ↓ 16.2 (20.2) 14.1 (17.1) 13.4 (16.4) 8.9 (10.9) NI ↓ 5.9 (8.9) 4.7 (6.7) 4.2 (6.2) 1.8 (2.8) GPT-3.5-Turbo 2022 Commercial TSR (%) ↑ 68.1 (50.1) 70.3 (54.3) 71.8 (55.8) 79.2 (65.2) FPA (%) ↑ 42.3 (28.3) 44.8 (31.8) 46.1 (33.1) 57.4 (43.4) NTC ↓ 23.7 (35.7) 21.8 (32.8) 20.9 (31.9) 14.3 (21.3) NI ↓ 9.8 (16.8) 8.6 (14.6) 7.9 (13.9) 3.5 (7.5) GPT-4 [ 40 ] 2023 Commercial TSR (%) ↑ 79.7 (69.7) 82.9 (74.9) 84.5 (76.5) 89.1 (84.1) FPA (%) ↑ 57.3 (45.3) 61.2 (50.2) 62.8 (51.8) 69.8 (61.8) NTC ↓ 17.8 (24.8) 15.6 (21.6) 14.7 (20.7) 9.3 (13.3) NI ↓ 6.9 (10.9) 5.6 (8.6) 5.1 (8.1) 1.8 (2.8) Gemini 1.5 Pro [ 45 ] 2024 Commercial TSR (%) ↑ 78.1 (66.1) 81.3 (71.3) 82.6 (72.6) 87.9 (81.9) FPA (%) ↑ 55.6 (42.6) 59.1 (47.1) 60.8 (48.8) 67.3 (58.3) NTC ↓ 18.6 (26.6) 16.7 (23.7) 15.8 (22.8) 10.1 (15.1) NI ↓ 7.3 (11.3) 5.9 (8.9) 5.4 (8.4) 2.1 (3.1) Claude 3.5 Sonnet 2024 Commercial TSR (%) ↑ 82.1 (75.1) 85.4 (80.4) 86.8 (81.8) 90.2 (87.2) FPA (%) ↑ 58.3 (49.3) 62.1 (54.1) 63.7 (55.7) 71.5 (65.5) NTC ↓ 16.2 (22.2) 14.5 (19.5) 13.9 (18.9) 9.1 (12.1) NI ↓ 6.1 (9.1) 4.8 (6.8) 4.3 (6.3) 1.7 (2.7) Claude 3.7 Sonnet 2024 Commercial TSR (%) ↑ 84.3 (78.3) 87.6 (83.6) 88.9 (84.9) 92.4 (90.4) FPA (%) ↑ 61.2 (53.2) 65.0 (58.0) 66.4 (59.4) 74.1 (69.1) NTC ↓ 15.3 (20.3) 13.2 (17.2) 12.6 (16.6) 8.3 (10.3) NI ↓ 5.5 (8.5) 4.2 (6.2) 3.8 (5.8) 1.3 (2.3) GPT-5 2025 Commercial TSR (%) ↑ 86.8 (82.8) 89.9 (87.9) 91.1 (89.1) 94.7 (93.7) FPA (%) ↑ 64.5 (58.5) 68.1 (63.1) 69.6 (64.6) 76.8 (73.8) NTC ↓ 14.1 (18.1) 12.3 (15.3) 11.7 (14.7) 7.6 (8.6) NI ↓ 4.9 (7.9) 3.7 (5.7) 3.3 (5.3) 1.0 (1.0) Gemini-2.5-Pro [ 37 ] 2025 Commercial TSR (%) ↑ 85.7 (81.7) 88.9 (86.9) 90.1 (88.1) 95.3 (92.3) FPA (%) ↑ 64.2 (56.2) 67.8 (61.8) 69.4 (63.4) 76.9 (71.9) NTC ↓ 15.4 (19.4) 13.2 (16.2) 12.6 (15.6) 7.8 (9.8) NI ↓ 5.1 (7.3) 3.9 (5.9) 3.5 (5.5) 1.2 (2.2) Claude 4 Sonnet 2025 Commercial TSR (%) ↑ 88.7 (84.7) 91.5 (89.5) 92.6 (90.6) 96.1 (95.1) FPA (%) ↑ 67.1 (61.1) 70.4 (66.4) 71.7 (67.7) 79.2 (76.2) NTC ↓ 13.2 (17.2) 11.1 (14.1) 10.5 (13.5) 6.8 (7.8) NI ↓ 4.3 (7.3) 3.1 (5.1) 2.7 (4.7) 0.8 (0.8)",
+    "index": 109
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS2.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "Most notably, the TSR metric highlights the distinct advantage of our proposed approach. Across both simple and complex tasks, CangLing-KnowFlow consistently achieves the highest success rates, outperforming baselines by significant margins. For example, when powered by the Claude 4 Sonnet model, our framework boosts the TSR on complex tasks to 95.1%, a substantial improvement over the 90.6% achieved by the nearest competitor, Reflexion. This result validates the efficacy of integrating an expert-informed PKB, which guides the agent with scientifically valid prior knowledge, thereby effectively mitigating the logical hallucinations and inefficient planning often observed in unconstrained agent architectures.",
+    "index": 110
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS2.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "Furthermore, the results highlight the framework’s capability to significantly enhance planning efficiency and autonomy. CangLing-KnowFlow consistently yields higher FPA scores than all baselines, indicating that initial workflows derived from our knowledge base are inherently robust and less susceptible to early-stage failure. Consequently, this leads to a substantial reduction in both the NTC and the NI. By offering a validated, direct path to the solution, our approach curtails the redundant iterative loops that are typical in ReAct-based agents, thereby lowering computational costs and enhancing the degree of automation.",
+    "index": 111
+  },
+  {
+    "tag": "table",
+    "attrs": {
+      "id": "S5.T2.4",
+      "class": "ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle"
+    },
+    "text": "LLM Backbone Framework TSR (%) ↑ FPA (%) ↑ NTC ↓ NI ↓ Llama3-70B ReAct 7.2 6.0 ∼ \\sim 25 ∼ \\sim 18 Reflexion 8.0 7.1 ∼ \\sim 24 ∼ \\sim 16 Ours (CangLing-KnowFlow) 13.2 11.5 ∼ \\sim 18 ∼ \\sim 10 GPT-4 ReAct 9.5 8.1 ∼ \\sim 13 ∼ \\sim 15 Reflexion 10.5 9.2 ∼ \\sim 1250 ∼ \\sim 13 Ours (CangLing-KnowFlow) 16.8 14.2 ∼ \\sim 9.5 ∼ \\sim 8 Claude 4 Sonnet ReAct 9.0 7.8 ∼ \\sim 1350 ∼ \\sim 16 Reflexion 10.0 8.9 ∼ \\sim 13 ∼ \\sim 14 Ours (CangLing-KnowFlow) 20.3 17.5 ∼ \\sim 9 ∼ \\sim 7",
+    "index": 112
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS2.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "To verify the cross-domain generalizability of our framework, we extended our evaluation to the public ThinkGeo benchmark [ 36 ] . We consider this experiment a pivotal validation step. It serves as a crucial test to determine whether the agent’s capabilities are intrinsic to its architecture rather than merely artifacts of overfitting to specific internal tools and tasks. By subjecting the agent to ThinkGeo’s distinct inventory of 14 tools and diverse tasks, we strictly evaluated its capacity to adopt its structured reasoning and dynamic adjustment mechanisms to an unseen case.",
+    "index": 113
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS2.p5.1",
+      "class": "ltx_p"
+    },
+    "text": "We benchmarked our framework against baselines using a selection of representative LLM backbones. The results, detailed in Table II , reveal a compelling trend: even when operating within an unfamiliar toolset, CangLing-KnowFlow maintains a significant performance advantage. This demonstrates that our core, i.e., leveraging knowledge-guided structured workflows and dynamic adjustments, remains effective regardless of the specific tool environment, thereby confirming the architectural soundness and high transferability of our approach.",
+    "index": 114
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "V-C Ablation Study",
+    "index": 115
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS3.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To quantify the individual contributions of our framework’s core components, we conducted an ablation study using the Claude 4 Sonnet backbone. We systematically disabled the Workflow Library (WL), Dynamic Adjustment (DA), and Learning Capability (LC). As shown in Table III , the results confirm that each module is indispensable to the system’s overall performance.",
+    "index": 116
+  },
+  {
+    "tag": "table",
+    "attrs": {
+      "id": "S5.T3.4",
+      "class": "ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle"
+    },
+    "text": "Configuration w/o LC w/o DA w/o WL Ours (Full Model) Components Workflow Library (WL) ✓ ✓ ✗ ✓ Dynamic Adjustment (DA) ✓ ✗ ✓ ✓ Learning Capability (LC) ✗ ✓ ✓ ✓ Performance Metrics Task Success Rate (%) ↑ 92.8 91.5 88.7 96.1 First-Pass Accuracy (%) ↑ 73.6 75.9 67.1 79.2 Planning Efficiency Number of Tool Calls ↓ 7.9 8.6 13.2 6.8 Number of Interactions ↓ 1.2 1.5 4.3 0.8",
+    "index": 117
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS3.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "Specifically, the most substantial performance degradation occured upon the removal of the Workflow Library. In this configuration, the agent, stripped of its expert-guided procedural knowledge, reverted to a purely LLM-driven, unconstrained planning mode. This led to a dramatic decline in the TSR to 88.7% and a sharp drop in FPA to 67.1%. Notably, planning efficiency deteriorated significantly, as evidenced by by the surge in NTC to 13.2 and NI to 4.3. This outcome validates our central hypothesis, an expert-informed knowledge base is the foundational basis that prevents planning hallucination, constraining the agent to operational pathways that are both methodologically sound and computationally efficient.",
+    "index": 118
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS3.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "Conversely, disabling the Dynamic Adjustment module provided critical insights into the framework’s operational robustness. While the FPA remained relatively high at 75.9%, reflecting the quality of the initial plans derived from the WL, the final TSR decreased to 91.5%. This divergence between initial plan quality and final success highlights a crucial reality of real-world applications: even well-structured plans are vulnerable to failures stemming from data variability or environmental stochasticity. The DA module acts as the essential safety net, endowing the agent with the resilience required to navigate these unforeseen challenges and ensure task completion. Its absence renders the agent brittle, leaving it unable to recover from otherwise manageable execution errors.",
+    "index": 119
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS3.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "Finally, the removal of the Learning Capability module resulted in a moderate yet discernible decline in accuracy (TSR of 92.8%). The LC functions as a long-term optimization engine. By codifying validated ad-hoc repairs into new workflow templates and attributing failures to heuristic rules, it continuously refines the agent’s knowledge base. While its absence does not severely impair immediate problem-solving abilities, it restricts the evolutionary potential of the agent, preventing gains in efficiency and autonomy over time. This suggests that the utility of the LC module is underestimated in this short-term study; we anticipate its value would be significantly amplified in long-term implementations where the benefits of cumulative learning can fully accrue. This component is key to transitioning the agent from a static tool to an evolving, intelligent system.",
+    "index": 120
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS3.p5.1",
+      "class": "ltx_p"
+    },
+    "text": "In summary, the ablation study confirms that the superior performance of CangLing-KnowFlow stems not from any single feature, but from the orchestrated synergy of its components. The Workflow Library provides essential strategic guidance, the Dynamic Adjustment module ensures tactical robustness, and the Learning Capability enables long-term evolution.",
+    "index": 121
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "V-D LLM’s Intrinsic Capability",
+    "index": 122
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS4.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "A pivotal question in agentic systems is the interplay between the agent’s architectural design and the intrinsic capabilities of its underlying LLM. Our experiments provide a clear answer: while a more capable LLM undoubtedly elevates performance, a well-designed framework like our CangLing-KnowFlow acts as a decisive force multiplier, often proving even more critical than the raw intelligence of the model itself.",
+    "index": 123
+  },
+  {
+    "tag": "table",
+    "attrs": {
+      "id": "S5.T4.4",
+      "class": "ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle"
+    },
+    "text": "LLM Inst Acc. (%) ↑ Tool Sel. F1 (%) ↑ Param. Acc. (%) ↑ Overall Score ↑ GPT-3.5-Turbo 61.8 66.2 64.7 64.2 Llama3-70B 70.1 74.3 72.8 72.4 Claude 3 Sonnet 74.6 77.1 76.3 76.0 Gemini 1.5 Pro 80.7 83.6 81.4 81.9 Claude 3 Opus 83.4 85.9 84.7 84.7 GPT-4 86.5 88.0 87.0 87.2 GPT-4 Turbo 87.8 89.3 88.5 88.5 Claude 3.5 Sonnet 89.2 90.6 89.8 89.9 Claude 3.7 Sonnet 90.6 91.9 91.3 91.3 GPT-5 91.4 92.7 92.1 92.1 Claude 4 Sonnet 92.7 93.8 93.2 93.2",
+    "index": 124
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS4.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "As evidenced in Table IV , there is a large positive correlation between an LLM’s inherent abilities, such as instruction following (Inst Acc.), tool selection (Tool Sel. F1), and parameter accuracy (Param. Acc.), and its potential as an agent backbone. Top-tier models like Claude 4 Sonnet and GPT-5 demonstrate superior foundational skills. However, a shortsighted focus on the LLM alone would be misleading. The more profound insight emerges from cross-referencing these intrinsic capabilities with the end-to-end task performance in Table I . For example, Llama3-70B [ 41 ] , a model with respectable but not top-tier intrinsic scores, achieves a TSR of 83.6% (simple) and 74.6% (complex) when empowered by our CangLing-KnowFlow framework. It is notably better to that of a far more powerful model, GPT-4 [ 40 ] , when constrained to the ReAct framework (TSR of 82.9% / 74.9%). This demonstrates that the CangLing-KnowFlow architecture does not merely facilitate the LLM’s existing abilities; it fundamentally enhances and guides them, enabling a moderately capable model to outperform a superior one that lacks proper guidance.",
+    "index": 125
+  },
+  {
+    "tag": "h3",
+    "attrs": {
+      "class": "ltx_title ltx_title_subsection"
+    },
+    "text": "V-E An Intuitive Comparison",
+    "index": 126
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS5.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "To provide a qualitative and intuitive illustration of CangLing-KnowFlow’s practical advantages, we present a case study based on a representative RS task, as depicted in Figure 5 . The task involves building change detection and requires a multi-step workflow, including critical data preprocessing to ensure the accuracy of the final analysis. The divergent approaches taken by different agent frameworks are highly illustrative.",
+    "index": 127
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS5.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "We can first observe that the ReAct agent, operating on a step-by-step, reactive basis, exhibits a critical form of “planning shortsighted”. Lacking a holistic understanding of the entire scientific workflow, it overlooks a crucial preprocessing step (Step 3 in the correct workflow). It proceeds directly to the core analysis, feeding improperly prepared data into the model. This fundamental process error inevitably leads to a scientifically unsound and incorrect final result.",
+    "index": 128
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS5.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "As for the Reflexion agent, it demonstrates a marginal improvement. It successfully executes its initial, flawed plan and, upon observing a poor or nonsensical output, correctly identifies that a failure has occurred. However, its “reflection” is superficial. It attempts to correct the issue by altering local parameters or retrying the failed step, but it is incapable of diagnosing the root cause, which is a missing and fundamental step in the workflow itself. It is trapped within the confines of its flawed initial plan, unable to perform the necessary global restructuring.",
+    "index": 129
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS5.p4.1",
+      "class": "ltx_p"
+    },
+    "text": "By contrast, our CangLing-KnowFlow agent succeeds by its elaborate design. When a task begins, it queries its PKB and retrieves an expert-validated workflow template for this type of analysis. This template explicitly includes the mandatory preprocessing step. By adhering to this structured, scientifically vetted plan, CangLing-KnowFlow ensures that every action is performed in the correct sequence with the correct dependencies, guaranteeing the integrity of the process and the accuracy of the final result.",
+    "index": 130
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S5.SS5.p5.1",
+      "class": "ltx_p"
+    },
+    "text": "This case study clearly demonstrates how CangLing-KnowFlow, by integrating knowledge with workflow control, effectively overcomes the limitations inherent in less structured agent frameworks.",
+    "index": 131
+  },
+  {
+    "tag": "h2",
+    "attrs": {
+      "class": "ltx_title ltx_title_section"
+    },
+    "text": "VI Conclusion",
+    "index": 132
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S6.p1.1",
+      "class": "ltx_p"
+    },
+    "text": "In this paper, we introduced CangLing-KnowFlow, a novel agent framework that synergistically fuses an expert-informed PKB, a robust Dynamic Adjustment mechanism, and an experience-driven Evolutionary Memory. It addresses several critical limitations of existing agentic systems directly by mitigating planning hallucinations and enhancing robustness against runtime uncertainties.",
+    "index": 133
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S6.p2.1",
+      "class": "ltx_p"
+    },
+    "text": "Empirical validations across diverse benchmarks confirm the efficacy and robustness of our approach. On the domain-specific KnowFlow-Bench, the framework (powered by Claude 4 Sonnet) achieved peak Task Success Rates of 96.1% and 95.1% on simple and complex tasks, respectively, significantly outperforming ReAct baselines while reducing tool calls by approximately 38%. We observed a similar trend on the ThinkGeo benchmark, where our method achieved more than double the baseline performance, increasing from 9.0% to 20.3% in unseen environments. Furthermore, ablation studies quantitatively identified the expert-informed Workflow Library as the foundational element for preventing planning hallucinations, with its removal causing the most significant degradation in both accuracy and efficiency.",
+    "index": 134
+  },
+  {
+    "tag": "p",
+    "attrs": {
+      "id": "S6.p3.1",
+      "class": "ltx_p"
+    },
+    "text": "By endowing agents with the cognitive capacities to reason, adapt, and learn within complex, dynamic environments, rather than merely executing static procedures, we establish a new paradigm for efficient, reliable, and scalable discovery. Looking ahead, our research will advance this paradigm along several key frontiers. We will focus on expanding the PKB through semi-automated knowledge acquisition and engineering multi-agent collaborative workflows for highly complex scientific campaigns. More profoundly, we will direct CangLing-KnowFlow’s core principles toward accelerating mechanism-driven scientific discovery in new domains where procedural integrity is paramount. For example, a primary objective can be harnessing this framework to unravel the complex, interdisciplinary processes central to fields such as global sustainability and ecology, where RS science is poised to unlock fundamental new insights [ 46 ] . This will position CangLing-KnowFlow not merely as an observation tool, but as a proactive partner in scientific inquiry.",
+    "index": 135
+  },
+  {
+    "tag": "h2",
+    "attrs": {
+      "class": "ltx_title ltx_title_bibliography"
+    },
+    "text": "References",
+    "index": 136
+  },
+  {
+    "tag": "h2",
+    "attrs": {},
+    "text": "Instructions for reporting errors",
+    "index": 137
+  },
+  {
+    "tag": "p",
+    "attrs": {},
+    "text": "We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the methods listed below:",
+    "index": 138
+  },
+  {
+    "tag": "p",
+    "attrs": {},
+    "text": "Tip: You can select the relevant text first, to include it in your report.",
+    "index": 139
+  },
+  {
+    "tag": "p",
+    "attrs": {},
+    "text": "Our team has already identified the following issues . We appreciate your time reviewing and reporting rendering errors we may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability should not be a barrier to accessing research. Thank you for your continued support in championing open access for all.",
+    "index": 140
+  },
+  {
+    "tag": "p",
+    "attrs": {},
+    "text": "Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a list of packages that need conversion , and welcome developer contributions .",
+    "index": 141
+  }
+]

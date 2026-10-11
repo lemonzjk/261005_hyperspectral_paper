@@ -1,7 +1,7 @@
 {
   "reviewedAt": "2026-10-12",
   "baselineCommit": "b49ec0de7e70d8ebab2adcc8d7f22f64b6bef203",
-  "scope": "逐项原始来源分类审计，非全部全文；本批ILRNet固定v1确认矩阵SVT去噪、IFGNet固定v1确认监督HSI–LiDAR分类/KAN，纠正张量/预训练错配，版本与性能边界分别记录。",
+  "scope": "逐项原始来源分类审计，非全部全文；本批SPECIAL固定v3确认直接HSI零样本伪监督地物分类/MambaHSI，移除表征预训练错配，v1/v3作者与正式版阅读、原性能边界分列。",
   "previousPendingCount": 205,
   "reviewedPaperIds": [
     "hs-nerf",
@@ -303,7 +303,8 @@
     "zhou-72-hsi-2022",
     "zhou-scholar-arxiv-2603-09037",
     "zhou-49-hsi-2024",
-    "zhou-scholar-arxiv-2605-14239"
+    "zhou-scholar-arxiv-2605-14239",
+    "zhou-19-hsi-2026"
   ],
   "sourceChecks": [
     {
@@ -1304,6 +1305,16 @@
         "输入HSI与配准LiDAR栅格、输出监督地物分类；KAN编码/坐标条件聚合及二维空间频域融合明确，移除无独立预训练目标的representation-learning，补KAN方法。",
         "5页实际全文已读；原图直接裁取保留版本、图号、页码与图注。",
         "方法、训练/测试、性能例外和协议缺失依据所读原稿；不通过代码补齐。"
+      ]
+    },
+    {
+      "paperId": "zhou-19-hsi-2026",
+      "url": "https://arxiv.org/pdf/2501.16222v3",
+      "level": "固定arXiv v3逐页13页全文、原框架/七表/46引文",
+      "supports": [
+        "直接HSI伪监督零样本地物分类、MambaHSI骨干、BvSB/GMM谱软标签；没有独立HSI表征预训练目标。",
+        "三数据集、类别/划分、主表与消融局限依稿保留，不声称逐类全面领先或整系统免训练。",
+        "v3首页六作者含Griffith Jun Zhou，与正式六作者匹配；官方代码URL只记录。"
       ]
     }
   ]
