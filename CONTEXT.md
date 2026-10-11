@@ -32,5 +32,5 @@
 - src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
-- 作者先查漏，不增笔记。周峻134摘要/54全文；ORCID1、DBLP10、Scholar9、arXiv8待核有重叠，CV3未确认发表，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
+- 作者先查漏，不增笔记。周峻188条中80条符合普通总库口径、101条为高光谱但来源不在白名单、7条旧多光谱关联；当前未进一步删除。134摘要/54全文；ORCID1、DBLP10、Scholar9、arXiv8待核有重叠，CV3未确认发表，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - 作者专项后按白名单推进全领域；WHISPERS/IGARSS等旧候选不再作普通总库扩充目标。可获取资料继续补齐，受限项注明原因。
