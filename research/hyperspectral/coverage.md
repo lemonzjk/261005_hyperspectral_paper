@@ -205,6 +205,8 @@
 | Jun Zhou · solar panel primary input scope | 2024–2026 | 10.1109/TIP.2023.3336170、10.1109/TGRS.2026.3660888、RGB、GloSoFarID、DualGMS；TIP3/17、TGRS8/17实际读页分别记录；不是年度目录查询。 | 未单列 / 2 / 2 | 两旧排除补原文；2026 DualGMS通道缺口与2022会议范围保留 | 2026 DualGMS原文所读段未明确通道，不假定与2024相同划分。；2022会议原稿输入未取得；正式VoR未读，相关性不证明版本相同。 |
 | Jun Zhou · early anomaly author and material access | 2012 | 10.1109/ICICEE.2012.350、10.1117/12.978636、Nonsubsampled Pyramid、Shearlet、Jun Zhou affiliation；四指定查询页0/size20；DOI各0，题名0及2（均非目标）；不是作者全集检索。 | 未单列 / 2 / 0 | 两早期稿访问缺口保留；NSP/KUM正式单篇机构仍待 | 没有新单篇身份/正文证据，不能升级阅读或宣称没有公开稿。；有效搜索服务缺失；不重复同受限出版入口或查询。 |
 | Jun Zhou · HSIMamba fixed preprint reading | 2024 | 2404.00272v1、HSIMamba、bidirectional spectral classification、formal version；11/11实际逐页全文；API最新v1，Crossref指定题名前5未匹配。 | 未单列 / 1 / 1 | v1全文11页/两原图；预训练错配删除，窗口/表文冲突分列 | 正式版本/其他题名关系未确认，原算法变量与空间块细节缺口保留。；剩余90摘要级及作者其他姓名/来源继续；代码仅官方URL。 |
+| Jun Zhou 简称无主题词 | 2026查询快照 | au:"J Zhou" start0/200/400/600/800完整989元数据；两简称视觉/学习子查询同六项 | 989元数据 / 6分类摘要 / 6 | 六摘要直接HSI范围暂排，一个其他ID已有旧531决定 | 其余982新ID仅元数据；缩写身份与作者全集未闭环，带点全量503不代表空集 |
+| Jun Zhou 合成HSI数据集 | 2023 | 2309.00005v1全1页，一原输入示例图；API最新v1，Crossref题名前5无精确对应 | 未单列 / 1 / 1 | 采集规格与概念融合补已有目录，移除光学联合设计错配 | 最终网格、标定配准、完整算法/实验未报告，正式版与ref1合格版本未核；SfM仅潜在应用 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 

@@ -44400,7 +44400,7 @@
     },
     {
       "id": "zhou-scholar-arxiv-2309-00005",
-      "shortTitle": "High Spectral Spatial Resolution Synthetic HyperSpectral Dataset form…",
+      "shortTitle": "Synthetic HSI Multi-source Dataset",
       "title": "High Spectral Spatial Resolution Synthetic HyperSpectral Dataset form multi-source fusion",
       "authors": "Yajie Sun, Ali Zia, Jun Zhou",
       "year": 2023,
@@ -44412,33 +44412,34 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2309.00005",
-      "representation": "Scholar差集 arXiv 题名与原站摘要确认高光谱任务。",
+      "representation": "RGB、推扫高光谱与快照高光谱多源采集，面向空间上采样与补充谱带的合成数据集。",
       "tags": [],
-      "summary": "Synthetic dataset paper combines modalities to obtain high spatial and spectral resolution hyperspectral data.",
-      "input": "高光谱影像；具体采集设置见摘要。",
-      "output": "合成高光谱数据立方体及多源融合关系；具体数据文件待核。",
-      "mechanism": "Multi-source photometric fusion creates synthetic hyperspectral images with consistent spectral intervals.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
-      "paper": "https://arxiv.org/abs/2309.00005",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "固定arXiv v1为一页数据集短稿：以RGB、推扫470–900 nm/150带与快照600–975 nm/25带数据合成高空间/光谱分辨率HSI。记录12类材质对象与60个拍摄角度，融合过程仅概念说明，未给定完整算法或定量实验。",
+      "input": "RGB由iPhone 12pro采集；推扫HSI为3650×2048、470–900 nm、150带；快照HSI为2048×1088、600–975 nm、25带。快照相机原文称infrared，报告范围为600–975 nm；不推断为热红外或SWIR。RGB原文“1200 megapixels”存在单位疑点，保留原写法，不替换为推测规格。",
+      "output": "拟生成高空间/光谱分辨率且相邻谱带间隔一致的合成高光谱图像；最终空间尺寸、谱带数、网格、间隔及完整文件数量未报告。多视角数据用于SfM三维高光谱建模仅作为潜在用途，未展示三维重建结果。",
+      "mechanism": "§1仅概念性说明：上采样低空间分辨率高光谱以对齐高分辨率RGB；提取相邻谱带信息，推断缺失波段并补充谱带。未给出融合网络、优化目标、具体插值规则、标定/配准算法或实验协议；引用BUSIFusion不等于本文实现了该方法。",
+      "readingNote": "实际完整阅读固定2309.00005v1唯一一页、Fig1与两条参考文献；Jun Zhou首页单位为Griffith。Fig1是四对象的三模态输入示例，非框架图；原图注写columns而图像呈三行四列，保留原图注及冲突。无公式、算法、定量表或性能实验；完整阅读短稿不代表缺失算法/实验已核验。arXiv API与页边日期为2023-06-25，PDF制作时间不替代提交日期。官方数据链接仅记录，未访问仓库；未提供可确认独立代码链接。",
+      "paper": "https://arxiv.org/pdf/2309.00005v1",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "datasets-benchmarks",
-          "spectral-reconstruction",
-          "computational-imaging"
+          "spectral-reconstruction"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决题名所示高光谱任务？",
-        "datasets": "RGB, push-broom visible hyperspectral and snapshot infrared hyperspectral cameras.",
-        "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
-        "conclusions": "Abstract does not establish release license, exact calibration error or full benchmark protocol.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
-        "dataLinks": [],
+        "relationNote": "原稿直接处理并拟合成HSI：空间上采样与光谱补带；不是纯RGB/多光谱研究。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何结合RGB和两类高光谱相机的空间、谱段互补性，构建高空间/光谱分辨率合成HSI数据集？",
+        "datasets": "12个不同材质对象，从60个不同角度拍摄；材质含塑料、树脂、橡胶、锡、纸与真实水果。Fig1显示塑料玩具、毛绒玩具、塑料苹果和真实苹果。原文未确认每对象/角度均有完整对齐三元组，不将12×60推定为720个配准样本。",
+        "experimentSetting": "一页短稿只列三类相机规格、对象/角度概况及概念融合流程；没有训练/测试划分、标定误差、光源/光谱响应、配准协议、融合超参数或比较实验。",
+        "conclusions": "原文提出多源合成与材质研究/SfM潜在用途，未提供光谱保真度、空间质量或三维重建的定量验证，不将应用设想写成已完成结果。",
+        "limitations": "RGB“1200 megapixels”与Fig1行列措辞存在原文疑点；最终尺寸/谱带网格、完整融合细节、标定配准及定量实验未报告，许可未提供可核证据。保留缺失信息，不通过作者代码补齐；正式发表版本仍未确认。",
+        "dataLinks": [
+          "https://github.com/spectral-3D-lab/multimodal-dataset.git"
+        ],
         "evidence": [
           {
             "url": "https://arxiv.org/abs/2309.00005",
@@ -44459,6 +44460,16 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2309.00005v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v1唯一一页全文、首页身份与原始数据示例图核验",
+            "supports": [
+              "原稿输入相机、空间尺寸、波长范围与谱带数；12对象/60角度和概念空间上采样/谱带补充。",
+              "首页Jun Zhou的Griffith单位及两条引文；SfM仅潜在用途，无完整融合算法或实验。",
+              "Fig1输入示例原图及原注行列冲突；官方数据URL仅从脚注记录，未访问仓库。"
+            ]
           }
         ],
         "versions": [
@@ -44471,14 +44482,59 @@
             "arxivId": "2309.00005",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。",
+            "relation": "固定v1唯一一页实际完整阅读，概念流程与采集规格按该短稿记录；API目前仍v1，Crossref题名查询前5无精确对应，不证明没有正式版本。",
             "firstSubmittedAt": "2023-06-25T11:17:12Z",
-            "updatedAt": "2023-06-25T11:17:12Z"
+            "updatedAt": "2023-06-25T11:17:12Z",
+            "readingProgress": "full_text_read"
           }
         ],
-        "methodFamilyId": "zhou-scholar-arxiv-2309.00005"
+        "methodFamilyId": "zhou-scholar-arxiv-2309.00005",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原稿明确数据集与直接HSI空间上采样/谱带重建，保留datasets-benchmarks及spectral-reconstruction；无联合光学设计证据，移除computational-imaging。SfM是潜在用途，未增三维集合。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "ada52588326a8a2616b03d37e5f28ae2b43f160a9079abbc8c4f7bc90425abb2",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2309.00005v1"
+          ]
+        }
       },
-      "citation": "@misc{zhou-scholar-arxiv-2309-00005,\n  title = {High Spectral Spatial Resolution Synthetic HyperSpectral Dataset form multi-source fusion},\n  author = {Sun Yajie and Zia Ali and Zhou Jun},\n  year = {2023},\n  eprint = {2309.00005},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2309.00005}\n}\n"
+      "citation": "@misc{zhou-scholar-arxiv-2309-00005,\n  title = {High Spectral Spatial Resolution Synthetic HyperSpectral Dataset form multi-source fusion},\n  author = {Sun Yajie and Zia Ali and Zhou Jun},\n  year = {2023},\n  eprint = {2309.00005},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2309.00005}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2309.00005v1",
+          "figureLabel": "Figure 1",
+          "caption": "原Fig1三模态输入数据示例：塑料玩具、毛绒玩具、塑料苹果和真实苹果；不是方法框架图。原英文图注写三columns，但图像实际三行四列，保留原图注不改写。",
+          "verificationNote": "已目视核对固定v1唯一一页及完整原图注，300dpi直接裁取，未重绘；行列措辞冲突另记。",
+          "page": 1,
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              310,
+              202,
+              566,
+              396
+            ],
+            "pdfVersion": "arXiv2309.00005v1",
+            "sourcePdfSha256": "22b20b07becc78f46d8776a12e599bb685bae2ae0cc9a25f3792dc23eec9a91d"
+          },
+          "path": "figures/zhou-scholar-arxiv-2309-00005/synthetic-fig1.png",
+          "width": 1068,
+          "height": 809,
+          "verifiedAt": "2026-10-12",
+          "sha256": "7f404d18e6730693a89c596cbd7c164e3f9a96af45c414182fc38eb36ebe324f",
+          "attribution": "Yajie Sun, Ali Zia, Jun Zhou · arXiv v1 2023"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-arxiv-2605-20569",
@@ -46296,8 +46352,7 @@
         "faced-reflector-hsi-2017",
         "learned-filter-response-2018",
         "random-printed-mask-2019",
-        "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
-        "zhou-scholar-arxiv-2309-00005"
+        "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024"
       ],
       "history": [
         {
@@ -46314,6 +46369,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "一页合成HSI数据集短稿无联合光学编码/采集设计证据，移除该论文归类并同步证据列表。"
         }
       ]
     },
