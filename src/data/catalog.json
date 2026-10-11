@@ -40139,9 +40139,9 @@
       "input": "高光谱视频模板和搜索区域；实验HOT2020为16带460–600nm，HOT2023有16/25/15带三范围，IMEC25为25带680–960nm。",
       "output": "分类分数图、回归图及逐帧目标框；基于跟踪分数的动态模板更新。",
       "mechanism": "非对称3D ResNet-50共享权重提取模板/搜索特征（1×3×3空间、3×1×1光谱）；逐带SCE自注意力和SCF交叉注意力构造空间关系。SCF串联提取跨带共享关系，各带SCE减去成对共享关系得到特定分量；包含–排除启发的加法/残差融合，再SCE、分类/回归头。对应椭圆环/区域平均光谱的角度损失用于训练，另有分类交叉熵和IoU回归损失。",
-      "readingNote": "Griffith免费接受稿（AM）完整16页已读，含封面及正文/参考目录/传记15页；首页Griffith Jun Zhou机构与正式DOI一致。正文20式/1算法/15图/4表已核，Fig.2/3原图已视觉核对。仅此AM升级全文，出版社最终版未读。HOT2020 .675/.676、HOT2023视频统计、式15内外环权重、更新score/loss和复杂度文字冲突进入记录；论文GitHub链接API404，未验证代码/模型，未做性能复现。",
+      "readingNote": "Griffith免费接受稿AM完整16页已读（封面及正文/参考目录/传记15页）；固定arXiv:2508.07250v1完整15页现已读，首页/API/abs均四作者，不含Jun Zhou；正式及AM五作者包含Griffith Jun Zhou，保留各版差异并关联同一论文。两稿主要方法、三数据集协议与结果相符；v1 63引用、AM 61引用，引用变化与作者/资助/传记差异已记录，不能称逐字相同。20式/1算法/15图/4表及Fig.2/3已核，现有原图继续标AM页码。HOT2020 .675/.676、HOT2023视频统计、式15权重、更新score/loss与复杂度文字冲突保留。出版社最终版未读。官方代码仅记录论文给出的链接。",
       "paper": "https://ieeexplore.ieee.org/abstract/document/11267013",
-      "verifiedAt": "2026-10-11",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "full_text_verified_accepted_manuscript",
       "library": {
         "categoryIds": [
@@ -40157,7 +40157,7 @@
         "datasets": "AM §IV：HOT2020为40训练/35测试组、16带460–600nm；HOT2023叙述161 VIS/100 NIR/41 RedNIR、108000帧、95训练/77测试，数量对应不一致；IMEC25为55训练/80测试、约14000/14060帧、25带680–960nm。仅记录此稿所述，不代入外部数据版本。",
         "experimentSetting": "AM §IV：HOT2023初训，HOT2020/IMEC25分别微调；AdamW，两RTX3090，batch16，200epochs×1000iterations，backbone lr1e−5、其他lr1e−4、weight decay1e−4，50epochs后lr×.1；微调lr为原值.1。冻结空间卷积，只训练3×1×1谱卷积；8 attention heads，λreg=2/λspec=1，模板更新η=.7。包括属性、组件、λspec/η、复杂度与失败案例。",
         "conclusions": "HOT2023正文及表II AUC .615、DP@20 .841，去光谱损失为.610/.821，简单求和.535/.701。HOT2020正文.676/.940，而Fig.4成功图例.675；SPIRIT AUC .679，不能宣称所有指标第一。表I报告8.75FPS、258.4GFLOPs、43.87M参数（单RTX3090环境），不属于实时跟踪或所有对照复杂度最小；IMEC25比较另按Fig.10/11保留。",
-        "limitations": "AM自身承认时间建模不足、长时遮挡/光照变化失败和计算负担；另文内数据统计、指标和式15/模板更新存在未决冲突。GitHub链接API404，不能确认代码是否私有、已改名或未发布；最终版与性能未复核。",
+        "limitations": "两公开稿承认时间建模不足、长时遮挡/光照变化失败和计算负担；数据统计、指标、式15/模板更新等文内冲突仍未决。固定v1与AM作者及引用不同，正式出版社全文仍未读；疑点仅依据论文记录。",
         "dataLinks": [],
         "evidence": [
           {
@@ -40196,6 +40196,17 @@
             "supports": [
               "AM全文直接证明逐帧高光谱目标跟踪与SCE/SCF Transformer交互；无三维场景输出，保留跟踪任务并补方法标签。"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2508.07250v1",
+            "checkedAt": "2026-10-12",
+            "level": "arXiv固定v1完整15页阅读、首页作者与Fig.2/3原图对照",
+            "supports": [
+              "v1四作者Fengchao Xiong/Zhenxing Wu/Sen Jia/Yuntao Qian，未列Jun Zhou；正式与AM五作者不回填v1。",
+              "方法/三数据集协议/主要结果与接受稿对应，20式/1算法/15图/4表；v1 63参考，AM 61参考，非逐字相同或出版社最终版。",
+              "官方代码URL在v1首页与官方摘要明确提供，仅记录链接。",
+              "正文指标/数据统计/公式及复杂度冲突在v1同样存在，未用代码推测消解。"
+            ]
           }
         ],
         "versions": [
@@ -40215,11 +40226,23 @@
             "year": 2025,
             "readingProgress": "full_text_read",
             "relation": "全文、公式、实验、讨论、引用目录及作者传记已读；参考目录不是引用论文全文。图2/3已视觉核验。 全文PDF已下载并存档，版本封面明确AM。"
+          },
+          {
+            "id": "zhou-34-hsi-2025-arxiv-v1",
+            "type": "arXiv预印本",
+            "url": "https://arxiv.org/abs/2508.07250v1",
+            "year": 2025,
+            "arxivId": "2508.07250",
+            "arxivVersion": "v1",
+            "firstSubmittedAt": "2025-08-10T09:06:09Z",
+            "updatedAt": "2025-08-10T09:06:09Z",
+            "metadataStatus": "官方API、abs及PDF首页四作者，无Jun Zhou；API/abs无正式DOI对应声明。",
+            "relation": "固定v1完整15页已读；题名、四共同作者及主要方法/实验对应五作者正式/AM记录，作为同一论文早期版本关联。各版作者不同；v1 63引用、AM 61引用，无AM机构封面和作者传记。Fig.2/3与AM原图对应，公共图继续保留AM归属及页码；正式TIP最终排版全文未读。"
           }
         ],
         "methodFamilyId": "zhou-2025-title-34",
         "classificationReview": {
-          "reviewedAt": "2026-10-11",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
           "rationale": "AM全文直接证明逐帧高光谱目标跟踪与SCE/SCF Transformer交互；无三维场景输出，保留跟踪任务并补方法标签。",
           "evidenceFields": [
@@ -40230,9 +40253,10 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "c670081f9fa3cba919a481eeee8f99d4c64d39e57edf70f8cea71ca43094b391",
+          "evidenceDigest": "0f571fd782f318173697e003837403b29237bedd12cd29704c9fb92987eec45d",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/9c0fac3d-4300-465f-9548-5348b7cce5dc/content",
+            "https://arxiv.org/pdf/2508.07250v1"
           ]
         }
       },
@@ -40286,7 +40310,8 @@
           "sha256": "19cc1bbfbea26ae11773302505ea4096b3e72ac2d09e37326363bc8911972c35",
           "attribution": "Fengchao Xiong, Zhenxing Wu, Jun Zhou, Sen Jia, Yuntao Qian · TIP 2025"
         }
-      ]
+      ],
+      "code": "https://github.com/bearshng/suit"
     },
     {
       "id": "zhou-35-hsi-2025",

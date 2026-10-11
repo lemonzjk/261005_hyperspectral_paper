@@ -1,0 +1,401 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2609.04788v1",
+    "title": "Shapley Valuation of Finite-Copy Quantum Data Depends on Physical Access",
+    "authors": [
+      "Qipeng Qian",
+      "Yuntao Qian"
+    ],
+    "abstract": "Data valuation asks how learning utility should be attributed to training data contributors. Most classical formulations begin after data have become reusable records, so the physical readout of the data is effectively fixed. Finite-copy quantum data are different: unknown states are consumable physical systems, and the same supplied states and downstream task can yield different Shapley values under different physical access models. Our framework makes this dependence explicit by treating physical access as a component of quantum data valuation itself. We establish an exact connection between physical-access advantage and contributor-level data valuation. For nested access models, we prove that the maximal downstream utility gain enabled by richer physical access exactly determines the largest symmetric Shapley ranking-reversal margin. More generally, for arbitrary access-model pairs, including non-nested ones, we derive an exact geometric characterization of the possible shifts of the full Shapley attribution vector. For fixed learning pipelines, we further obtain an operational Shapley-observable representation for finite-copy valuation. Numerical experiments demonstrate that identical quantum samples can receive different values and rankings when only the physical access model is changed. These results establish that quantum data value is not an intrinsic property of the underlying states alone, but emerges from the interaction between quantum states, physical access, and the downstream learning task.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2026-09-04T06:29:08Z",
+    "updatedAt": "2026-09-04T06:29:08Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.26273v1",
+    "title": "Channel-Constrained Information Scheduling for Quantum Diffusion",
+    "authors": [
+      "Qipeng Qian",
+      "Yuntao Qian"
+    ],
+    "abstract": "Information-based diffusion schedules organize the reverse problem by prescribing how much source information remains after each forward step. For mixed-state quantum diffusion, density-level targets need not correspond to trajectories reachable from the current realization. We introduce \\emph{channel-constrained information scheduling}: each step optimizes over source-blind pure-state refinements reachable from the current state-resolved record through the prescribed channel. This defines a channel-constrained information clock $V_ξ$, whose inverse selects the least-corrupting step that reaches a target information level. Recursive inversion constructs a realizable equal-information schedule minimizing the worst source-information burden in Bayes reverse prediction. We establish attainment, continuity, monotonicity, convexity, finite support, and exact primal/dual formulations for $V_ξ$. We further give a sharp structural characterization: binary-qubit depolarizing trajectories attain the density-level Belavkin--Staszewski envelope, whereas every $d\\ge3$ admits binary noncommuting families with a strict static--dynamic separation. Qutrit experiments show that the proposed scheduler nearly equalizes the realized multi-step burden, and learned reverse predictors recover the predicted allocation.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2026-08-14T09:01:24Z",
+    "updatedAt": "2026-08-14T09:01:24Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2608.14083v2",
+    "title": "Information-Calibrated Quantum Diffusion: Aligning Forward Noise with Reverse Recoverability",
+    "authors": [
+      "Qipeng Qian",
+      "Yuntao Qian"
+    ],
+    "abstract": "Quantum diffusion models typically parameterize forward corruption by raw channel strength, even though this parameter does not directly quantify how much ensemble information is erased or how difficult the corresponding reverse problem is. We introduce the classical--quantum information decrement $Δ_t=I(X{:}Q_{t-1})-I(X{:}Q_t)$ as an intrinsic diffusion coordinate that links forward noise allocation to reverse recoverability. Along depolarization, equalizing $Δ_t$ yields the unique minimax discretization of the forward information loss, while universal recoverability gives the same quantity an operational interpretation as a physically attainable local recovery budget. We further show that such local calibration is not sufficient for stochastic generation: models can satisfy the same recovery criterion while producing substantially different state distributions. This motivates a stochastic learner that combines information-calibrated recovery constraints with distribution matching. We establish finite-sample calibration and compositional trace-Wasserstein control for the resulting learner. Controlled quantum experiments validate the predicted information--recovery alignment, show that the recovery constraints improve local inversion, and confirm the complementary role of distribution matching in endpoint generation. The resulting framework also achieves stronger endpoint trace-Wasserstein performance than an official QuDDPM implementation with fewer trainable parameters. Overall, our work provides a unified information-theoretic principle for designing forward schedules, calibrating reverse steps, and separating physical recovery from generative coverage in quantum diffusion.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2026-08-14T08:44:51Z",
+    "updatedAt": "2026-08-18T05:56:43Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2608.10433v5",
+    "title": "When Does Forecasting Reveal Temporal Structure? A Stability Analysis of Time-Series Structural Selection",
+    "authors": [
+      "Qipeng Qian",
+      "Yuntao Qian"
+    ],
+    "abstract": "Forecast accuracy is often used as a proxy for temporal structure discovery, but predictive performance and structural identifiability are not equivalent. Different temporal mechanisms can achieve similar forecast errors, while small forecast differences may still contain sufficient information for recovery. In this work, we study when forecast-only structural selection can be trusted. We show that a vanishing forecast margin does not necessarily imply structural ambiguity, and establish a stability perspective that evaluates structural separation relative to uncertainty in the selection objective. This perspective provides both a sufficient condition for reliable selection and a continuous measure of selection difficulty. Experiments across controlled and end-to-end settings demonstrate that forecast margin alone is insufficient, while the proposed stability measure better characterizes when forecast-based structural selection succeeds or fails. Our results suggest that predictive accuracy should be treated as evidence for structure discovery only when its separation is sufficiently robust.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2026-08-11T03:30:36Z",
+    "updatedAt": "2026-08-21T08:36:43Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2607.07072v1",
+    "title": "An Hybrid Quantum-Classical Diffusion Model for Image Generation",
+    "authors": [
+      "Qipeng Qian",
+      "Keli Deng",
+      "Yuntao Qian"
+    ],
+    "abstract": "Quantum diffusion models provide a physics-consistent route to generative learning by formulating noising and denoising directly on quantum states. However, applying such models to classical high-dimensional data is constrained by the qubit cost of state encoding and the computational burden of simulating large density operators. We propose a scalable hybrid generative pipeline that combines a classical autoencoder for dimensionality reduction with a mixed-state quantum denoising diffusion probabilistic model (MSQuDDPM) operating in the learned latent space. The autoencoder compresses data into compact latent codes that can be embedded into a small-qubit Hilbert space, after which the quantum diffusion model learns a generative distribution over latent density operators and decodes samples back to the original domain. Algorithmically, we simplify the reverse dynamics by predicting an estimate of the clean state $ρ_0$ at timestep $t$ and computing the one-step reverse update via an analytic backward propagation rule, rather than learning an explicit predictor for $ρ_{t-1}$. We demonstrate the proposed approach on MNIST image generation and discuss how mixed-state quantum diffusion can serve as a practical backbone for hybrid quantum--classical generative modeling under realistic qubit budgets.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2026-07-08T07:01:07Z",
+    "updatedAt": "2026-07-08T07:01:07Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2606.18666v2",
+    "title": "Covert Block-Activity Information Transmission over Thermal-Loss Bosonic Channels: Latency--Payload Limits and Finite-Key Achievability",
+    "authors": [
+      "Qipeng Qian",
+      "Yuntao Qian"
+    ],
+    "abstract": "We study covert block-activity information transmission over a thermal-loss bosonic channel, where messages are encoded in weight-constrained activity patterns that Bob must recover through block-local decisions by prescribed deadlines. Shared circular Gaussian displacement modulation makes Willie's averaged lost-light state exactly thermal, with a strictly convex relative-entropy cost in signal energy, whereas a fixed Gaussian receiver at Bob yields a Gaussian mean-shift divergence linear in energy. This asymmetry produces an exact finite-block energy--information frontier and a detector-independent latency converse, matched in order by a block-reset cumulative-sum detector. For block covertness budget $δ_b$ and error target $ε_b$, the required active length scales as $δ_b^{-1}\\log^2(1/ε_b)$ up to an explicit channel--receiver factor. Lifting this local law to communication yields the matching transmission limit $\\log M=Θ(\\sqrt n/\\log n)$ for the symmetric coordinatewise architecture under a fixed total covertness budget, maximal-message covertness, vanishing maximal error, and local deadlines. A relaxed full-horizon reference with the same modulation family and fixed measurement supports $Θ(\\sqrt n)$, showing that covertness and the selected measurement alone do not impose the extra logarithmic factor. Finally, public quadrature phase-shift keying codebooks selected by $O(\\sqrt n)$ secret bits remove ideal continuous shared randomness without changing the payload order.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2026-06-17T04:03:59Z",
+    "updatedAt": "2026-08-10T09:35:56Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.24074v1",
+    "title": "Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images",
+    "authors": [
+      "Jingzhou Chen",
+      "Dexin Chen",
+      "Fengchao Xiong",
+      "Yuntao Qian",
+      "Liang Xiao"
+    ],
+    "abstract": "Fine-grained remote sensing datasets often use hierarchical label structures to differentiate objects in a coarse-to-fine manner, with each object annotated across multiple levels. However, embedding this semantic hierarchy into the representation learning space to improve fine-grained detection performance remains challenging. Previous studies have applied supervised contrastive learning at different hierarchical levels to group objects under the same parent class while distinguishing sibling subcategories. Nevertheless, they overlook two critical issues: (1) imbalanced data distribution across the label hierarchy causes high-frequency classes to dominate the learning process, and (2) learning semantic relationships among categories interferes with class-agnostic localization. To address these issues, we propose a balanced hierarchical contrastive loss combined with a decoupled learning strategy within the detection transformer (DETR) framework. The proposed loss introduces learnable class prototypes and equilibrates gradients contributed by different classes at each hierarchical level, ensuring that each hierarchical class contributes equally to the loss computation in every mini-batch. The decoupled strategy separates DETR's object queries into classification and localization sets, enabling task-specific feature extraction and optimization. Experiments on three fine-grained datasets with hierarchical annotations demonstrate that our method outperforms state-of-the-art approaches.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2025-12-30T08:35:54Z",
+    "updatedAt": "2025-12-30T08:35:54Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2509.00356v1",
+    "title": "Iterative Low-rank Network for Hyperspectral Image Denoising",
+    "authors": [
+      "Jin Ye",
+      "Fengchao Xiong",
+      "Jun Zhou",
+      "Yuntao Qian"
+    ],
+    "abstract": "Hyperspectral image (HSI) denoising is a crucial preprocessing step for subsequent tasks. The clean HSI usually reside in a low-dimensional subspace, which can be captured by low-rank and sparse representation, known as the physical prior of HSI. It is generally challenging to adequately use such physical properties for effective denoising while preserving image details. This paper introduces a novel iterative low-rank network (ILRNet) to address these challenges. ILRNet integrates the strengths of model-driven and data-driven approaches by embedding a rank minimization module (RMM) within a U-Net architecture. This module transforms feature maps into the wavelet domain and applies singular value thresholding (SVT) to the low-frequency components during the forward pass, leveraging the spectral low-rankness of HSIs in the feature domain. The parameter, closely related to the hyperparameter of the singular vector thresholding algorithm, is adaptively learned from the data, allowing for flexible and effective capture of low-rankness across different scenarios. Additionally, ILRNet features an iterative refinement process that adaptively combines intermediate denoised HSIs with noisy inputs. This manner ensures progressive enhancement and superior preservation of image details. Experimental results demonstrate that ILRNet achieves state-of-the-art performance in both synthetic and real-world noise removal tasks.",
+    "doi": "10.1109/TGRS.2024.3449130",
+    "journalReference": "TGRS 2024",
+    "publishedAt": "2025-08-30T04:34:43Z",
+    "updatedAt": "2025-08-30T04:34:43Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2508.15553v2",
+    "title": "Deep Equilibrium Convolutional Sparse Coding for Hyperspectral Image Denoising",
+    "authors": [
+      "Jin Ye",
+      "Jingran Wang",
+      "Fengchao Xiong",
+      "Jingzhou Chen",
+      "Yuntao Qian"
+    ],
+    "abstract": "Hyperspectral images (HSIs) play a crucial role in remote sensing but are often degraded by complex noise patterns. Ensuring the physical property of the denoised HSIs is vital for robust HSI denoising, giving the rise of deep unfolding-based methods. However, these methods map the optimization of a physical model to a learnable network with a predefined depth, which lacks convergence guarantees. In contrast, Deep Equilibrium (DEQ) models treat the hidden layers of deep networks as the solution to a fixed-point problem and models them as infinite-depth networks, naturally consistent with the optimization. Under the framework of DEQ, we propose a Deep Equilibrium Convolutional Sparse Coding (DECSC) framework that unifies local spatial-spectral correlations, nonlocal spatial self-similarities, and global spatial consistency for robust HSI denoising. Within the convolutional sparse coding (CSC) framework, we enforce shared 2D convolutional sparse representation to ensure global spatial consistency across bands, while unshared 3D convolutional sparse representation captures local spatial-spectral details. To further exploit nonlocal self-similarities, a transformer block is embedded after the 2D CSC. Additionally, a detail enhancement module is integrated with the 3D CSC to promote image detail preservation. We formulate the proximal gradient descent of the CSC model as a fixed-point problem and transform the iterative updates into a learnable network architecture within the framework of DEQ. Experimental results demonstrate that our DECSC method achieves superior denoising performance compared to state-of-the-art methods.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2025-08-21T13:35:11Z",
+    "updatedAt": "2025-12-22T07:57:02Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2508.07250v1",
+    "title": "SUIT: Spatial-Spectral Union-Intersection Interaction Network for Hyperspectral Object Tracking",
+    "authors": [
+      "Fengchao Xiong",
+      "Zhenxing Wu",
+      "Sen Jia",
+      "Yuntao Qian"
+    ],
+    "abstract": "Hyperspectral videos (HSVs), with their inherent spatial-spectral-temporal structure, offer distinct advantages in challenging tracking scenarios such as cluttered backgrounds and small objects. However, existing methods primarily focus on spatial interactions between the template and search regions, often overlooking spectral interactions, leading to suboptimal performance. To address this issue, this paper investigates spectral interactions from both the architectural and training perspectives. At the architectural level, we first establish band-wise long-range spatial relationships between the template and search regions using Transformers. We then model spectral interactions using the inclusion-exclusion principle from set theory, treating them as the union of spatial interactions across all bands. This enables the effective integration of both shared and band-specific spatial cues. At the training level, we introduce a spectral loss to enforce material distribution alignment between the template and predicted regions, enhancing robustness to shape deformation and appearance variations. Extensive experiments demonstrate that our tracker achieves state-of-the-art tracking performance. The source code, trained models and results will be publicly available via https://github.com/bearshng/suit to support reproducibility.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2025-08-10T09:06:09Z",
+    "updatedAt": "2025-08-10T09:06:09Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2507.12967v1",
+    "title": "RGB Pre-Training Enhanced Unobservable Feature Latent Diffusion Model for Spectral Reconstruction",
+    "authors": [
+      "Keli Deng",
+      "Jie Nie",
+      "Yuntao Qian"
+    ],
+    "abstract": "Spectral reconstruction (SR) is a crucial problem in image processing that requires reconstructing hyperspectral images (HSIs) from the corresponding RGB images. A key difficulty in SR is estimating the unobservable feature, which encapsulates significant spectral information not captured by RGB imaging sensors. The solution lies in effectively constructing the spectral-spatial joint distribution conditioned on the RGB image to complement the unobservable feature. Since HSIs share a similar spatial structure with the corresponding RGB images, it is rational to capitalize on the rich spatial knowledge in RGB pre-trained models for spectral-spatial joint distribution learning. To this end, we extend the RGB pre-trained latent diffusion model (RGB-LDM) to an unobservable feature LDM (ULDM) for SR. As the RGB-LDM and its corresponding spatial autoencoder (SpaAE) already excel in spatial knowledge, the ULDM can focus on modeling spectral structure. Moreover, separating the unobservable feature from the HSI reduces the redundant spectral information and empowers the ULDM to learn the joint distribution in a compact latent space. Specifically, we propose a two-stage pipeline consisting of spectral structure representation learning and spectral-spatial joint distribution learning to transform the RGB-LDM into the ULDM. In the first stage, a spectral unobservable feature autoencoder (SpeUAE) is trained to extract and compress the unobservable feature into a 3D manifold aligned with RGB space. In the second stage, the spectral and spatial structures are sequentially encoded by the SpeUAE and the SpaAE, respectively. The ULDM is then acquired to model the distribution of the coded unobservable feature with guidance from the corresponding RGB images. Experimental results on SR and downstream relighting tasks demonstrate that our proposed method achieves state-of-the-art performance.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2025-07-17T10:07:32Z",
+    "updatedAt": "2025-07-17T10:07:32Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2401.03885v2",
+    "title": "Hyperspectral Image Denoising via Spatial-Spectral Recurrent Transformer",
+    "authors": [
+      "Guanyiman Fu",
+      "Fengchao Xiong",
+      "Jianfeng Lu",
+      "Jun Zhou",
+      "Jiantao Zhou",
+      "Yuntao Qian"
+    ],
+    "abstract": "Hyperspectral images (HSIs) often suffer from noise arising from both intra-imaging mechanisms and environmental factors. Leveraging domain knowledge specific to HSIs, such as global spectral correlation (GSC) and non-local spatial self-similarity (NSS), is crucial for effective denoising. Existing methods tend to independently utilize each of these knowledge components with multiple blocks, overlooking the inherent 3D nature of HSIs where domain knowledge is strongly interlinked, resulting in suboptimal performance. To address this challenge, this paper introduces a spatial-spectral recurrent transformer U-Net (SSRT-UNet) for HSI denoising. The proposed SSRT-UNet integrates NSS and GSC properties within a single SSRT block. This block consists of a spatial branch and a spectral branch. The spectral branch employs a combination of transformer and recurrent neural network to perform recurrent computations across bands, allowing for GSC exploitation beyond a fixed number of bands. Concurrently, the spatial branch encodes NSS for each band by sharing keys and values with the spectral branch under the guidance of GSC. This interaction between the two branches enables the joint utilization of NSS and GSC, avoiding their independent treatment. Experimental results demonstrate that our method outperforms several alternative approaches. The source code will be available at https://github.com/lronkitty/SSRT.",
+    "doi": "10.1109/TGRS.2024.3374953",
+    "journalReference": null,
+    "publishedAt": "2023-12-31T04:24:56Z",
+    "updatedAt": "2024-01-09T04:13:45Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2308.01618v1",
+    "title": "A Survey on Deep Learning-based Spatio-temporal Action Detection",
+    "authors": [
+      "Peng Wang",
+      "Fanwei Zeng",
+      "Yuntao Qian"
+    ],
+    "abstract": "Spatio-temporal action detection (STAD) aims to classify the actions present in a video and localize them in space and time. It has become a particularly active area of research in computer vision because of its explosively emerging real-world applications, such as autonomous driving, visual surveillance, entertainment, etc. Many efforts have been devoted in recent years to building a robust and effective framework for STAD. This paper provides a comprehensive review of the state-of-the-art deep learning-based methods for STAD. Firstly, a taxonomy is developed to organize these methods. Next, the linking algorithms, which aim to associate the frame- or clip-level detection results together to form action tubes, are reviewed. Then, the commonly used benchmark datasets and evaluation metrics are introduced, and the performance of state-of-the-art models is compared. At last, this paper is concluded, and a set of potential research directions of STAD are discussed.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2023-08-03T08:48:14Z",
+    "updatedAt": "2023-08-03T08:48:14Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2211.12277v3",
+    "title": "Semantic Guided Level-Category Hybrid Prediction Network for Hierarchical Image Classification",
+    "authors": [
+      "Peng Wang",
+      "Jingzhou Chen",
+      "Yuntao Qian"
+    ],
+    "abstract": "Hierarchical classification (HC) assigns each object with multiple labels organized into a hierarchical structure. The existing deep learning based HC methods usually predict an instance starting from the root node until a leaf node is reached. However, in the real world, images interfered by noise, occlusion, blur, or low resolution may not provide sufficient information for the classification at subordinate levels. To address this issue, we propose a novel semantic guided level-category hybrid prediction network (SGLCHPN) that can jointly perform the level and category prediction in an end-to-end manner. SGLCHPN comprises two modules: a visual transformer that extracts feature vectors from the input images, and a semantic guided cross-attention module that uses categories word embeddings as queries to guide learning category-specific representations. In order to evaluate the proposed method, we construct two new datasets in which images are at a broad range of quality and thus are labeled to different levels (depths) in the hierarchy according to their individual quality. Experimental results demonstrate the effectiveness of our proposed HC method.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2022-11-22T13:49:10Z",
+    "updatedAt": "2023-03-31T08:52:12Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2201.03194v2",
+    "title": "Label Relation Graphs Enhanced Hierarchical Residual Network for Hierarchical Multi-Granularity Classification",
+    "authors": [
+      "Jingzhou Chen",
+      "Peng Wang",
+      "Jian Liu",
+      "Yuntao Qian"
+    ],
+    "abstract": "Hierarchical multi-granularity classification (HMC) assigns hierarchical multi-granularity labels to each object and focuses on encoding the label hierarchy, e.g., [\"Albatross\", \"Laysan Albatross\"] from coarse-to-fine levels. However, the definition of what is fine-grained is subjective, and the image quality may affect the identification. Thus, samples could be observed at any level of the hierarchy, e.g., [\"Albatross\"] or [\"Albatross\", \"Laysan Albatross\"], and examples discerned at coarse categories are often neglected in the conventional setting of HMC. In this paper, we study the HMC problem in which objects are labeled at any level of the hierarchy. The essential designs of the proposed method are derived from two motivations: (1) learning with objects labeled at various levels should transfer hierarchical knowledge between levels; (2) lower-level classes should inherit attributes related to upper-level superclasses. The proposed combinatorial loss maximizes the marginal probability of the observed ground truth label by aggregating information from related labels defined in the tree hierarchy. If the observed label is at the leaf level, the combinatorial loss further imposes the multi-class cross-entropy loss to increase the weight of fine-grained classification loss. Considering the hierarchical feature interaction, we propose a hierarchical residual network (HRN), in which granularity-specific features from parent levels acting as residual connections are added to features of children levels. Experiments on three commonly used datasets demonstrate the effectiveness of our approach compared to the state-of-the-art HMC approaches and fine-grained visual classification (FGVC) methods exploiting the label hierarchy.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2022-01-10T07:17:24Z",
+    "updatedAt": "2022-01-11T06:57:52Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2111.11051v2",
+    "title": "Contrast-reconstruction Representation Learning for Self-supervised Skeleton-based Action Recognition",
+    "authors": [
+      "Peng Wang",
+      "Jun Wen",
+      "Chenyang Si",
+      "Yuntao Qian",
+      "Liang Wang"
+    ],
+    "abstract": "Skeleton-based action recognition is widely used in varied areas, e.g., surveillance and human-machine interaction. Existing models are mainly learned in a supervised manner, thus heavily depending on large-scale labeled data which could be infeasible when labels are prohibitively expensive. In this paper, we propose a novel Contrast-Reconstruction Representation Learning network (CRRL) that simultaneously captures postures and motion dynamics for unsupervised skeleton-based action recognition. It mainly consists of three parts: Sequence Reconstructor, Contrastive Motion Learner, and Information Fuser. The Sequence Reconstructor learns representation from skeleton coordinate sequence via reconstruction, thus the learned representation tends to focus on trivial postural coordinates and be hesitant in motion learning. To enhance the learning of motions, the Contrastive Motion Learner performs contrastive learning between the representations learned from coordinate sequence and additional velocity sequence, respectively. Finally, in the Information Fuser, we explore varied strategies to combine the Sequence Reconstructor and Contrastive Motion Learner, and propose to capture postures and motions simultaneously via a knowledge-distillation based fusion strategy that transfers the motion learning from the Contrastive Motion Learner to the Sequence Reconstructor. Experimental results on several benchmarks, i.e., NTU RGB+D 60, NTU RGB+D 120, CMU mocap, and NW-UCLA, demonstrate the promise of the proposed CRRL method by far outperforming state-of-the-art approaches.",
+    "doi": "10.1109/TIP.2022.3207577",
+    "journalReference": null,
+    "publishedAt": "2021-11-22T08:45:34Z",
+    "updatedAt": "2023-02-11T03:02:13Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2111.00658v2",
+    "title": "RMNA: A Neighbor Aggregation-Based Knowledge Graph Representation Learning Model Using Rule Mining",
+    "authors": [
+      "Ling Chen",
+      "Jun Cui",
+      "Xing Tang",
+      "Chaodu Song",
+      "Yuntao Qian",
+      "Yansheng Li",
+      "Yongjun Zhang"
+    ],
+    "abstract": "Although the state-of-the-art traditional representation learning (TRL) models show competitive performance on knowledge graph completion, there is no parameter sharing between the embeddings of entities, and the connections between entities are weak. Therefore, neighbor aggregation-based representation learning (NARL) models are proposed, which encode the information in the neighbors of an entity into its embeddings. However, existing NARL models either only utilize one-hop neighbors, ignoring the information in multi-hop neighbors, or utilize multi-hop neighbors by hierarchical neighbor aggregation, destroying the completeness of multi-hop neighbors. In this paper, we propose a NARL model named RMNA, which obtains and filters horn rules through a rule mining algorithm, and uses selected horn rules to transform valuable multi-hop neighbors into one-hop neighbors, therefore, the information in valuable multi-hop neighbors can be completely utilized by aggregating these one-hop neighbors. In experiments, we compare RMNA with the state-of-the-art TRL models and NARL models. The results show that RMNA has a competitive performance.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2021-11-01T02:08:26Z",
+    "updatedAt": "2021-11-04T08:45:26Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2108.12238v1",
+    "title": "Group-Aware Graph Neural Network for Nationwide City Air Quality Forecasting",
+    "authors": [
+      "Ling Chen",
+      "Jiahui Xu",
+      "Binqing Wu",
+      "Yuntao Qian",
+      "Zhenhong Du",
+      "Yansheng Li",
+      "Yongjun Zhang"
+    ],
+    "abstract": "The problem of air pollution threatens public health. Air quality forecasting can provide the air quality index hours or even days later, which can help the public to prevent air pollution in advance. Previous works focus on citywide air quality forecasting and cannot solve nationwide city forecasting problem, whose difficulties lie in capturing the latent dependencies between geographically distant but highly correlated cities. In this paper, we propose the group-aware graph neural network (GAGNN), a hierarchical model for nationwide city air quality forecasting. The model constructs a city graph and a city group graph to model the spatial and latent dependencies between cities, respectively. GAGNN introduces differentiable grouping network to discover the latent dependencies among cities and generate city groups. Based on the generated city groups, a group correlation encoding module is introduced to learn the correlations between them, which can effectively capture the dependencies between city groups. After the graph construction, GAGNN implements message passing mechanism to model the dependencies between cities and city groups. The evaluation experiments on Chinese city air quality dataset indicate that our GAGNN outperforms existing forecasting models.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2021-08-27T12:37:56Z",
+    "updatedAt": "2021-08-27T12:37:56Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/2012.01829v2",
+    "title": "SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising",
+    "authors": [
+      "Fengchao Xiong",
+      "Shuyin Tao",
+      "Jun Zhou",
+      "Jianfeng Lu",
+      "Jiantao Zhou",
+      "Yuntao Qian"
+    ],
+    "abstract": "Deep learning (DL) based hyperspectral images (HSIs) denoising approaches directly learn the nonlinear mapping between observed noisy images and underlying clean images. They normally do not consider the physical characteristics of HSIs, therefore making them lack of interpretability that is key to understand their denoising mechanism.. In order to tackle this problem, we introduce a novel model guided interpretable network for HSI denoising. Specifically, fully considering the spatial redundancy, spectral low-rankness and spectral-spatial properties of HSIs, we first establish a subspace based multi-dimensional sparse model. This model first projects the observed HSIs into a low-dimensional orthogonal subspace, and then represents the projected image with a multidimensional dictionary. After that, the model is unfolded into an end-to-end network named SMDS-Net whose fundamental modules are seamlessly connected with the denoising procedure and optimization of the model. This makes SMDS-Net convey clear physical meanings, i.e., learning the low-rankness and sparsity of HSIs. Finally, all key variables including dictionaries and thresholding parameters are obtained by the end-to-end training. Extensive experiments and comprehensive analysis confirm the denoising ability and interpretability of our method against the state-of-the-art HSI denoising methods.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2020-12-03T11:05:01Z",
+    "updatedAt": "2021-11-15T02:56:37Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1904.07516v1",
+    "title": "A Deep Optimization Approach for Image Deconvolution",
+    "authors": [
+      "Zhijian Luo",
+      "Siyu Chen",
+      "Yuntao Qian"
+    ],
+    "abstract": "In blind image deconvolution, priors are often leveraged to constrain the solution space, so as to alleviate the under-determinacy. Priors which are trained separately from the task of deconvolution tend to be instable, or ineffective. We propose the Golf Optimizer, a novel but simple form of network that learns deep priors from data with better propagation behavior. Like playing golf, our method first estimates an aggressive propagation towards optimum using one network, and recurrently applies a residual CNN to learn the gradient of prior for delicate correction on restoration. Experiments show that our network achieves competitive performance on GoPro dataset, and our model is extremely lightweight compared with the state-of-art works.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2019-04-16T07:52:45Z",
+    "updatedAt": "2019-04-16T07:52:45Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1904.07461v1",
+    "title": "Deep Neural Network Based Hyperspectral Pixel Classification With Factorized Spectral-Spatial Feature Representation",
+    "authors": [
+      "Jingzhou Chen",
+      "Siyu Chen",
+      "Peilin Zhou",
+      "Yuntao Qian"
+    ],
+    "abstract": "Deep learning has been widely used for hyperspectral pixel classification due to its ability of generating deep feature representation. However, how to construct an efficient and powerful network suitable for hyperspectral data is still under exploration. In this paper, a novel neural network model is designed for taking full advantage of the spectral-spatial structure of hyperspectral data. Firstly, we extract pixel-based intrinsic features from rich yet redundant spectral bands by a subnetwork with supervised pre-training scheme. Secondly, in order to utilize the local spatial correlation among pixels, we share the previous subnetwork as a spectral feature extractor for each pixel in a patch of image, after which the spectral features of all pixels in a patch are combined and feeded into the subsequent classification subnetwork. Finally, the whole network is further fine-tuned to improve its classification performance. Specially, the spectral-spatial factorization scheme is applied in our model architecture, making the network size and the number of parameters great less than the existing spectral-spatial deep networks for hyperspectral image classification. Experiments on the hyperspectral data sets show that, compared with some state-of-art deep learning methods, our method achieves better classification results while having smaller network size and less parameters.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2019-04-16T04:52:19Z",
+    "updatedAt": "2019-04-16T04:52:19Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1812.04179v5",
+    "title": "Material Based Object Tracking in Hyperspectral Videos: Benchmark and Algorithms",
+    "authors": [
+      "Fengchao Xiong",
+      "Jun Zhou",
+      "Yuntao Qian"
+    ],
+    "abstract": "Traditional color images only depict color intensities in red, green and blue channels, often making object trackers fail in challenging scenarios, e.g., background clutter and rapid changes of target appearance. Alternatively, material information of targets contained in a large amount of bands of hyperspectral images (HSI) is more robust to these difficult conditions. In this paper, we conduct a comprehensive study on how material information can be utilized to boost object tracking from three aspects: benchmark dataset, material feature representation and material based tracking. In terms of benchmark, we construct a dataset of fully-annotated videos, which contain both hyperspectral and color sequences of the same scene. Material information is represented by spectral-spatial histogram of multidimensional gradient, which describes the 3D local spectral-spatial structure in an HSI, and fractional abundances of constituted material components which encode the underlying material distribution. These two types of features are embedded into correlation filters, yielding material based tracking. Experimental results on the collected benchmark dataset show the potentials and advantages of material based object tracking.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2018-12-11T01:35:15Z",
+    "updatedAt": "2019-07-10T14:34:15Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1802.02290v1",
+    "title": "Spectral Image Visualization Using Generative Adversarial Networks",
+    "authors": [
+      "Siyu Chen",
+      "Danping Liao",
+      "Yuntao Qian"
+    ],
+    "abstract": "Spectral images captured by satellites and radio-telescopes are analyzed to obtain information about geological compositions distributions, distant asters as well as undersea terrain. Spectral images usually contain tens to hundreds of continuous narrow spectral bands and are widely used in various fields. But the vast majority of those image signals are beyond the visible range, which calls for special visualization technique. The visualizations of spectral images shall convey as much information as possible from the original signal and facilitate image interpretation. However, most of the existing visualizatio methods display spectral images in false colors, which contradict with human's experience and expectation. In this paper, we present a novel visualization generative adversarial network (GAN) to display spectral images in natural colors. To achieve our goal, we propose a loss function which consists of an adversarial loss and a structure loss. The adversarial loss pushes our solution to the natural image distribution using a discriminator network that is trained to differentiate between false-color images and natural-color images. We also use a cycle loss as the structure constraint to guarantee structure consistency. Experimental results show that our method is able to generate structure-preserved and natural-looking visualizations.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2018-02-07T02:23:47Z",
+    "updatedAt": "2018-02-07T02:23:47Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1801.06635v1",
+    "title": "Visualization of Hyperspectral Images Using Moving Least Squares",
+    "authors": [
+      "Danping Liao",
+      "Siyu Chen",
+      "Yuntao Qian"
+    ],
+    "abstract": "Displaying the large number of bands in a hyper spectral image on a trichromatic monitor has been an active research topic. The visualized image shall convey as much information as possible form the original data and facilitate image interpretation. Most existing methods display HSIs in false colors which contradict with human's experience and expectation. In this paper, we propose a nonlinear approach to visualize an input HSI with natural colors by taking advantage of a corresponding RGB image. Our approach is based on Moving Least Squares, an interpolation scheme for reconstructing a surface from a set of control points, which in our case is a set of matching pixels between the HSI and the corresponding RGB image. Based on MLS, the proposed method solves for each spectral signature a unique transformation so that the non linear structure of the HSI can be preserved. The matching pixels between a pair of HSI and RGB image can be reused to display other HSIs captured b the same imaging sensor with natural colors. Experiments show that the output image of the proposed method no only have natural colors but also maintain the visual information necessary for human analysis.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2018-01-20T07:01:27Z",
+    "updatedAt": "2018-01-20T07:01:27Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1711.08913v1",
+    "title": "Paper evolution graph: Multi-view structural retrieval for academic literature",
+    "authors": [
+      "Danping Liao",
+      "Yuntao Qian"
+    ],
+    "abstract": "Academic literature retrieval is concerned with the selection of papers that are most likely to match a user's information needs. Most of the retrieval systems are limited to list-output models, in which the retrieval results are isolated from each other. In this work, we aim to uncover the relationships of the retrieval results and propose a method for building structural retrieval results for academic literatures, which we call a paper evolution graph (PEG). A PEG describes the evolution of the diverse aspects of input queries through several evolution chains of papers. By utilizing the author, citation and content information, PEGs can uncover the various underlying relationships among the papers and present the evolution of articles from multiple viewpoints. Our system supports three types of input queries: keyword, single-paper and two-paper queries. The construction of a PEG mainly consists of three steps. First, the papers are soft-clustered into communities via metagraph factorization during which the topic distribution of each paper is obtained. Second, topically cohesive evolution chains are extracted from the communities that are relevant to the query. Each chain focuses on one aspect of the query. Finally, the extracted chains are combined to generate a PEG, which fully covers all the topics of the query. The experimental results on a real-world dataset demonstrate that the proposed method is able to construct meaningful PEGs.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2017-11-24T10:18:55Z",
+    "updatedAt": "2017-11-24T10:18:55Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1712.01657v1",
+    "title": "Constrained Manifold Learning for Hyperspectral Imagery Visualization",
+    "authors": [
+      "Danping Liao",
+      "Yuntao Qian",
+      "Yuan Yan Tang"
+    ],
+    "abstract": "Displaying the large number of bands in a hyper- spectral image (HSI) on a trichromatic monitor is important for HSI processing and analysis system. The visualized image shall convey as much information as possible from the original HSI and meanwhile facilitate image interpretation. However, most existing methods display HSIs in false color, which contradicts with user experience and expectation. In this paper, we propose a visualization approach based on constrained manifold learning, whose goal is to learn a visualized image that not only preserves the manifold structure of the HSI but also has natural colors. Manifold learning preserves the image structure by forcing pixels with similar signatures to be displayed with similar colors. A composite kernel is applied in manifold learning to incorporate both the spatial and spectral information of HSI in the embedded space. The colors of the output image are constrained by a corresponding natural-looking RGB image, which can either be generated from the HSI itself (e.g., band selection from the visible wavelength) or be captured by a separate device. Our method can be done at instance-level and feature-level. Instance-level learning directly obtains the RGB coordinates for the pixels in the HSI while feature-level learning learns an explicit mapping function from the high dimensional spectral space to the RGB space. Experimental results demonstrate the advantage of the proposed method in information preservation and natural color visualization.",
+    "doi": null,
+    "journalReference": null,
+    "publishedAt": "2017-11-24T07:04:04Z",
+    "updatedAt": "2017-11-24T07:04:04Z"
+  },
+  {
+    "id": "http://arxiv.org/abs/1605.05829v1",
+    "title": "On the Sampling Strategy for Evaluation of Spectral-spatial Methods in Hyperspectral Image Classification",
+    "authors": [
+      "Jie Liang",
+      "Jun Zhou",
+      "Yuntao Qian",
+      "Lian Wen",
+      "Xiao Bai",
+      "Yongsheng Gao"
+    ],
+    "abstract": "Spectral-spatial processing has been increasingly explored in remote sensing hyperspectral image classification. While extensive studies have focused on developing methods to improve the classification accuracy, experimental setting and design for method evaluation have drawn little attention. In the scope of supervised classification, we find that traditional experimental designs for spectral processing are often improperly used in the spectral-spatial processing context, leading to unfair or biased performance evaluation. This is especially the case when training and testing samples are randomly drawn from the same image - a practice that has been commonly adopted in the experiments. Under such setting, the dependence caused by overlap between the training and testing samples may be artificially enhanced by some spatial information processing methods such as spatial filtering and morphological operation. Such interaction between training and testing sets has violated data independence assumption that is abided by supervised learning theory and performance evaluation mechanism. Therefore, the widely adopted pixel-based random sampling strategy is not always suitable to evaluate spectral-spatial classification algorithms because it is difficult to determine whether the improvement of classification accuracy is caused by incorporating spatial information into classifier or by increasing the overlap between training and testing samples. To partially solve this problem, we propose a novel controlled random sampling strategy for spectral-spatial methods. It can greatly reduce the overlap between training and testing samples and provides more objective and accurate evaluation.",
+    "doi": "10.1109/TGRS.2016.2616489",
+    "journalReference": null,
+    "publishedAt": "2016-05-19T06:59:03Z",
+    "updatedAt": "2016-05-19T06:59:03Z"
+  }
+]
