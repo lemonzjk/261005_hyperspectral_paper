@@ -62032,16 +62032,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/icip.2013.6738493",
-      "representation": "多尺度中心—周围显著模型保留强度/方向线索，替换颜色分量为RGB转换、四组波段对抗或谱差；局部文本比较Euclidean与SAD。Figure1是四组波段划分方法示意，不是完整网络框架。",
+      "representation": "九尺度Itti强度/方向保留，CIE XYZ→sRGB、四组L1跨尺度对抗或全谱差异构建显著图；Otsu二值化、形态学补孔去小分量、winner-take-all取最高显著区域。一目标假设，多目标仅扩展建议；SSO权重/分组具体边界未给。",
       "tags": [],
-      "summary": "将Itti视觉显著模型扩展到光谱域，比较RGB转换、分组光谱对抗与直接光谱响应差异三类替换方式，在尺度空间提取与材料和空间布局有关的显著信息。",
+      "summary": "将Itti多尺度显著模型的颜色分量替换为光谱线索；RGB、四组波段对抗GS、Euclidean全谱SS及SAD/Euclidean融合SSO四实现，在13幅选择性高光谱图像区域检测显著对象。",
       "input": "地面高光谱场景图像。",
       "output": "显著图及显著目标区域。",
-      "mechanism": "多尺度中心—周围显著模型保留强度/方向线索，替换颜色分量为RGB转换、四组波段对抗或谱差；局部文本比较Euclidean与SAD。Figure1是四组波段划分方法示意，不是完整网络框架。",
-      "readingNote": "已核原摘要及记录的局部页；未阅读全文。四作者Jie Liang/Jun Zhou/Xiao Bai/Yuntao Qian，2393–2397；仓储1封面+5页，Figure1在PDF3/稿内2。单目标winner-take-all假设在局部目标检测节已核；不能把后续CNN或光谱梯度期刊实验当成本稿。",
+      "mechanism": "九尺度Itti强度/方向保留，CIE XYZ→sRGB、四组L1跨尺度对抗或全谱差异构建显著图；Otsu二值化、形态学补孔去小分量、winner-take-all取最高显著区域。一目标假设，多目标仅扩展建议；SSO权重/分组具体边界未给。",
+      "readingNote": "公开机构稿全6页（封面1/正文参考5）通读及逐页图版复核，4编号式；仅本公开版本。公开机构稿6页全读，封面/item无AM/VoR，正式ICIP2393–2397未独立读。完整13裁块/GT、框像元化/PR汇聚、谱归一/融合权重、代码与运行仍待。原始Foster/Harvard说明页可用不代表下载已核或专用实现已找到。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "citation": "@inproceedings{spectral_saliency_icip_2013,\n  title = {Salient object detection in hyperspectral imagery},\n  author = {Jie Liang and Jun Zhou and Xiao Bai and Yuntao Qian},\n  booktitle = {2013 IEEE International Conference on Image Processing},\n  year = {2013},\n  pages = {2393--2397},\n  doi = {10.1109/icip.2013.6738493}\n}\n",
       "library": {
         "categoryIds": [
@@ -62051,14 +62051,18 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "原摘要明确光学高光谱研究对象；TIP同时含多光谱/RGB范围，分别记录；只新增总库。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何把高光谱材料信息用于区域显著目标检测，而非只做像元识别？",
-        "datasets": "原摘要三在线高光谱数据集；局部实验为Foster两组和Harvard，人工选取13图中有显著对象的区域并以边界框标注。不是后来的HS-SOD专用基准。",
-        "experimentSetting": "摘要、第5节局部及Figure1已核；原文说明原数据非显著检测专用，人工判断结合合成RGB和材料知识。未核全参数/数值。",
-        "conclusions": "作者报告三种光谱显著替换在所选场景上的有效性；不转述其“首次”优先权主张为领域已证事实。",
-        "limitations": "四作者Jie Liang/Jun Zhou/Xiao Bai/Yuntao Qian，2393–2397；仓储1封面+5页，Figure1在PDF3/稿内2。单目标winner-take-all假设在局部目标检测节已核；不能把后续CNN或光谱梯度期刊实验当成本稿。 本轮定向code/arXiv查找未核到专用入口；代码及原始数据链接未知不代表不存在。",
-        "dataLinks": [],
+        "datasets": "Foster两组共55图（原文16在线）与Harvard50图，三源中选13图区域，人工边界框结合RGB与材料知识；图像编号、裁块/标注未提供。当前Foster原页两组各8示例、Harvard资源50+25，不能改称本稿测全库或75图。",
+        "experimentSetting": "四实现加Moan基线，PR随二值阈值扫描，像元precision/recall；标注为框，框到像元GT规则和汇聚未详。4编号式/4图全读，无数值表/AP/IoU/Fbeta/速度或独立训练测试。论文未印波段数/波长/尺寸，不借原数据页补成作者已印事实。",
+        "conclusions": "原曲线与两示例支持谱方法优于RGB且SSO略优，但各谱方案接近；不量化图中估计值或将作者first claim当领域优先权已证。13选择性区域、一对象和边界框参考限制检测泛化。既有Fig1分组原图复核，非完整检测流程。",
+        "limitations": "公开机构稿6页全读，封面/item无AM/VoR，正式ICIP2393–2397未独立读。完整13裁块/GT、框像元化/PR汇聚、谱归一/融合权重、代码与运行仍待。原始Foster/Harvard说明页可用不代表下载已核或专用实现已找到。",
+        "dataLinks": [
+          "https://personalpages.manchester.ac.uk/staff/david.foster/Hyperspectral_images_of_natural_scenes_02.html",
+          "https://personalpages.manchester.ac.uk/staff/david.foster/Hyperspectral_images_of_natural_scenes_04.html",
+          "https://vision.seas.harvard.edu/hyperspec/download.html"
+        ],
         "evidence": [
           {
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content",
@@ -62080,6 +62084,60 @@
               "Jie Liang, Jun Zhou, Xiao Bai, Yuntao Qian",
               "2013；2393-2397"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "将Itti多尺度显著模型的颜色分量替换为光谱线索；RGB、四组波段对抗GS、Euclidean全谱SS及SAD/Euclidean融合SSO四实现，在13幅选择性高光谱图像区域检测显著对象。",
+              "九尺度Itti强度/方向保留，CIE XYZ→sRGB、四组L1跨尺度对抗或全谱差异构建显著图；Otsu二值化、形态学补孔去小分量、winner-take-all取最高显著区域。一目标假设，多目标仅扩展建议；SSO权重/分组具体边界未给。",
+              "Foster两组共55图（原文16在线）与Harvard50图，三源中选13图区域，人工边界框结合RGB与材料知识；图像编号、裁块/标注未提供。当前Foster原页两组各8示例、Harvard资源50+25，不能改称本稿测全库或75图。",
+              "原曲线与两示例支持谱方法优于RGB且SSO略优，但各谱方案接近；不量化图中估计值或将作者first claim当领域优先权已证。13选择性区域、一对象和边界框参考限制检测泛化。既有Fig1分组原图复核，非完整检测流程。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/6738493",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "IEEE完整原摘要、全部作者/Griffith单位与机构全文互证；正式PDF202空，数据库显示/插入日期不当已证首次online。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/icip.2013.6738493",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式作者、年份与页码；正式与公开稿、同概念关联关系分源。"
+            ]
+          },
+          {
+            "url": "https://personalpages.manchester.ac.uk/staff/david.foster/Hyperspectral_images_of_natural_scenes_02.html",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_description_current_version",
+            "supports": [
+              "当前页研究30场景、展示8示例，31带410–710nm/10nm（采集33后弃400/720）；变量裁切尺寸，不回填为显著稿已印参数。",
+              "仅读取原始项目/说明页及其真实下载入口，没有下载整库或研究者13裁块/GT，未取得专用实现。"
+            ]
+          },
+          {
+            "url": "https://personalpages.manchester.ac.uk/staff/david.foster/Hyperspectral_images_of_natural_scenes_04.html",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_description_current_version",
+            "supports": [
+              "当前页研究25场景、展示8示例；33带400–720/10nm，scene5缺波段为32；页面个人使用/来源引用要求，不等于显著研究所用13裁块重现。",
+              "仅读取原始项目/说明页及其真实下载入口，没有下载整库或研究者13裁块/GT，未取得专用实现。"
+            ]
+          },
+          {
+            "url": "https://vision.seas.harvard.edu/hyperspec/download.html",
+            "checkedAt": "2026-10-11",
+            "level": "primary_dataset_description_current_version",
+            "supports": [
+              "项目主页50室内外；download页50日光加25人工/混合光，NuanceFX/LCTF31带420–720/10nm、movement mask、non-commercial research。75是当前资源集合，不把2013论文50改成已测75。",
+              "仅读取原始项目/说明页及其真实下载入口，没有下载整库或研究者13裁块/GT，未取得专用实现。"
+            ]
           }
         ],
         "versions": [
@@ -62089,21 +62147,24 @@
             "url": "https://doi.org/10.1109/icip.2013.6738493",
             "doi": "10.1109/icip.2013.6738493",
             "year": 2013,
-            "relation": "四作者Jie Liang/Jun Zhou/Xiao Bai/Yuntao Qian，2393–2397；仓储1封面+5页，Figure1在PDF3/稿内2。单目标winner-take-all假设在局部目标检测节已核；不能把后续CNN或光谱梯度期刊实验当成本稿。"
+            "relation": "IEEE正式完整摘要与作者书目已核；正式PDF202空，未独立阅读全文。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "spectral-saliency-icip-2013-source",
-            "type": "公开作者稿/仓储稿",
+            "type": "公开机构稿，封面及item未标AM/VoR",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content",
             "year": 2013,
-            "relation": "图号与PDF页码只对应本稿，完整正式版差异未核。"
+            "relation": "本公开稿全6页/式表图/参考已读，正式差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           }
         ],
         "methodFamilyId": "spectral-saliency-icip-2013",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要/指定局部方法支持任务和方法；分类确认不等同全文阅读。",
+          "rationale": "全部公开稿支持区域显著检测与自然色显示；3D是共同颜色嵌入而非场景几何，期刊/会议/跨地点结果与数据源分开，公式指标疑点原样留证。",
           "evidenceFields": [
             "title",
             "summary",
@@ -62112,9 +62173,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "bf5f5aad79f1d446f028b9fc0adba7492a2f9afeaba74611f6fed5a5a898ab17",
+          "evidenceDigest": "3fb16fcf06af075ae0c71bd69e0365ed12d8d1625f8d1de020bf06ea0c266e3e",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content",
+            "https://xplorestaging.ieee.org/document/6738493",
+            "https://api.crossref.org/works/10.1109/icip.2013.6738493"
           ]
         }
       },
@@ -62398,16 +62461,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/icpr.2014.22",
-      "representation": "联合邻接图、光谱角/欧氏距离、线性流形对齐及RGB逆投影；局部方法用SIFT、粗仿射/RANSAC与邻域搜索寻找对应。Figure1的3-D是共同颜色嵌入维度。",
+      "representation": "S ns×ps/T nt×3的本域kNN heat图与alpha2配对边构成联合图，广义特征值解Fs/Ft，Srgb=S Fs Ft⁻¹；HSI用SAD、RGB用Euclidean平方。每带SIFT、粗仿射/最小二乘/RANSAC与邻域细配对；方阵Ft还需满秩，线性降维不保证全谱距离/物理真色。",
       "tags": [],
-      "summary": "以少量对应像元将高光谱与高分辨率RGB影像的流形对齐至共同空间，再映射回RGB，生成自然色及细节更清晰的高光谱可视化。",
+      "summary": "以少量HSI/高分辨率RGB匹配像元联结两个流形，用线性共同三维颜色嵌入和RGB逆投影实现自然色显示；三场景仅视觉比较，输出保持HSI像元网格。",
       "input": "同一地点的高光谱影像与高分辨率RGB彩色影像，以及少量对应像元。",
       "output": "高光谱数据的RGB自然色可视化图像；不是高空间分辨率光谱立方或三维场景。",
-      "mechanism": "联合邻接图、光谱角/欧氏距离、线性流形对齐及RGB逆投影；局部方法用SIFT、粗仿射/RANSAC与邻域搜索寻找对应。Figure1的3-D是共同颜色嵌入维度。",
-      "readingNote": "原摘要及指定局部段落/方法图已核；未阅读全文。正式ICPR2014:70–75；机构PDF为封面加6页，Figure1位于PDF4。对应误配在过大权重下造成颜色误差。2016期刊增加作者和场景能力；原稿未找到明确扩展本会议的声明，关联同概念方法族并保留关系待核。",
+      "mechanism": "S ns×ps/T nt×3的本域kNN heat图与alpha2配对边构成联合图，广义特征值解Fs/Ft，Srgb=S Fs Ft⁻¹；HSI用SAD、RGB用Euclidean平方。每带SIFT、粗仿射/最小二乘/RANSAC与邻域细配对；方阵Ft还需满秩，线性降维不保证全谱距离/物理真色。",
+      "readingNote": "公开机构稿全7页（封面1/正文参考6）通读及逐页图版复核，12编号式；仅本公开版本。公开机构稿7页全读，封面/item无AM/VoR，正式ICPR70–75未独立读。近邻k/sigma/匹配阈值/邻域数值、特征向量尺度/逆矩阵稳定性、数据专用入口/实现待；Eq3跨集i≠m与trace常数等印式分列，没有模型复现。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "citation": "@inproceedings{manifold_natural_color_icpr_2014,\n  title = {Visualization of Hyperspectral Imaging Data Based on Manifold Alignment},\n  author = {Danping Liao and Yuntao Qian and Jun Zhou},\n  booktitle = {2014 22nd International Conference on Pattern Recognition},\n  year = {2014},\n  pages = {70--75},\n  doi = {10.1109/icpr.2014.22}\n}\n",
       "library": {
         "categoryIds": [
@@ -62417,13 +62480,13 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "原摘要直接研究光学高光谱可视化，RGB作引导；不是普通RGB研究或场景3D重建。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何借助RGB参考和少量像元对应将高光谱信息显示为自然色？",
-        "datasets": "原局部实验：Washington DC Mall/HYDICE，191波段1208×307，对应高分辨率彩色图5160×1640；另两地面高光谱场景480×640×18，对应SLR彩色图2592×3872×3。未取得专用数据下载入口。",
-        "experimentSetting": "已核原摘要、第III节局部方法/原Figure1与第IV节数据和对应参数局部；对比随机选带、PCA、Laplacian Eigenmaps，分析对应数及权重。未阅读全文，不搬TGRS2016四数据集或定量指标。",
-        "conclusions": "作者报告少量对应即可自然色显示，并保留原高光谱局部结构；这里记录作者在所示场景的可视化结论，不视为定量光谱恢复或物理真色保证。",
-        "limitations": "正式ICPR2014:70–75；机构PDF为封面加6页，Figure1位于PDF4。对应误配在过大权重下造成颜色误差。2016期刊增加作者和场景能力；原稿未找到明确扩展本会议的声明，关联同概念方法族并保留关系待核。 本轮精确题名code/arXiv定向发现未核到专用入口，未知不表示不存在。",
+        "datasets": "HYDICE Washington1208×307×191，Google maps RGB5160×1640；两地面场景HSI480×640×18/RGB2592×3872×3，传统SLR。会议未给地面波长和具体HSI型号，不从期刊OKSI960×1280补。",
+        "experimentSetting": "Washington20配对、alpha1=1/alpha2=500；权重30/100/500（建议200–500）、配对5/30扫描；地面20配对/alpha2=300。对照选带1/95/191或1/10/18、PCA、Laplacian Eigenmaps；后两减坐标最小值后映0–255。12式/11图全读，无数值性能表。",
+        "conclusions": "视觉图示自然色和局部细节改善，较大权重误配更敏感、配对多宜减权重；不称定量光谱恢复或输出HRCI分辨率。跨地点/交互在结尾为future work；期刊实际引用本稿[32]并新增能力，但明确扩展声明未核。既有Fig1原流程图保留。",
+        "limitations": "公开机构稿7页全读，封面/item无AM/VoR，正式ICPR70–75未独立读。近邻k/sigma/匹配阈值/邻域数值、特征向量尺度/逆矩阵稳定性、数据专用入口/实现待；Eq3跨集i≠m与trace常数等印式分列，没有模型复现。",
         "dataLinks": [],
         "evidence": [
           {
@@ -62446,6 +62509,33 @@
               "Danping Liao, Yuntao Qian, Jun Zhou",
               "2014；70-75"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "以少量HSI/高分辨率RGB匹配像元联结两个流形，用线性共同三维颜色嵌入和RGB逆投影实现自然色显示；三场景仅视觉比较，输出保持HSI像元网格。",
+              "S ns×ps/T nt×3的本域kNN heat图与alpha2配对边构成联合图，广义特征值解Fs/Ft，Srgb=S Fs Ft⁻¹；HSI用SAD、RGB用Euclidean平方。每带SIFT、粗仿射/最小二乘/RANSAC与邻域细配对；方阵Ft还需满秩，线性降维不保证全谱距离/物理真色。",
+              "HYDICE Washington1208×307×191，Google maps RGB5160×1640；两地面场景HSI480×640×18/RGB2592×3872×3，传统SLR。会议未给地面波长和具体HSI型号，不从期刊OKSI960×1280补。",
+              "视觉图示自然色和局部细节改善，较大权重误配更敏感、配对多宜减权重；不称定量光谱恢复或输出HRCI分辨率。跨地点/交互在结尾为future work；期刊实际引用本稿[32]并新增能力，但明确扩展声明未核。既有Fig1原流程图保留。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/6976733",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "IEEE完整原摘要、全部作者/Griffith单位与机构全文互证；正式PDF202空，数据库显示/插入日期不当已证首次online。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/icpr.2014.22",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式作者、年份与页码；正式与公开稿、同概念关联关系分源。"
+            ]
           }
         ],
         "versions": [
@@ -62455,14 +62545,17 @@
             "url": "https://doi.org/10.1109/icpr.2014.22",
             "doi": "10.1109/icpr.2014.22",
             "year": 2014,
-            "relation": "正式ICPR2014:70–75；机构PDF为封面加6页，Figure1位于PDF4。对应误配在过大权重下造成颜色误差。2016期刊增加作者和场景能力；原稿未找到明确扩展本会议的声明，关联同概念方法族并保留关系待核。"
+            "relation": "IEEE正式完整摘要与作者书目已核；正式PDF202空，未独立阅读全文。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "manifold-natural-color-icpr-2014-source",
-            "type": "公开机构原稿",
+            "type": "公开机构稿，封面及item未标AM/VoR",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content",
             "year": 2014,
-            "relation": "原图页号仅对应本PDF。"
+            "relation": "本公开稿全7页/式表图/参考已读，正式差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           },
           {
             "id": "manifold-natural-color-tgrs-2016-related",
@@ -62470,14 +62563,14 @@
             "url": "https://doi.org/10.1109/tgrs.2015.2512659",
             "doi": "10.1109/tgrs.2015.2512659",
             "year": 2016,
-            "relation": "两份原Figure1和摘要支持相同HSI/RGB共同嵌入与逆映射概念；四作者期刊另有跨地点/复用/波段子集和四数据集，不混用结果。当前原稿未找到正式扩展会议声明。"
+            "relation": "TGRS2016完整AM实际引用ICPR2014 [32]，两稿共享流形对齐/逆RGB映射，会议和期刊实验分开；本稿未给明确extended version声明，关联身份增强但正式扩展关系仍待。"
           }
         ],
         "methodFamilyId": "manifold-natural-color-icpr-2014",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要及Figure1支持自然色显示与流形对齐类别，分类确认不等同全文。",
+          "rationale": "全部公开稿支持区域显著检测与自然色显示；3D是共同颜色嵌入而非场景几何，期刊/会议/跨地点结果与数据源分开，公式指标疑点原样留证。",
           "evidenceFields": [
             "title",
             "summary",
@@ -62486,9 +62579,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "6dff0561d62b21eb581692b25eca36955779c845edd30418b9c414d5084444b0",
+          "evidenceDigest": "5d080dd8b255d7ef2640fa6ea6d143536141b4934eb4558ed659f1c9c0ac2ae2",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content",
+            "https://xplorestaging.ieee.org/document/6976733",
+            "https://api.crossref.org/works/10.1109/icpr.2014.22"
           ]
         }
       },
@@ -62524,16 +62619,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2015.2512659",
-      "representation": "LPP式特征级流形对齐，联合邻接图、共同三维颜色空间及RGB逆投影；原Figure1流程与局部第III节支持，三维是特征维度。",
+      "representation": "本域图/跨域匹配块联合求q最小非零广义特征向量；SAD和Euclidean热图，SIFT粗homography/RANSAC后9×9邻域细搜索。按列约定Srgb=(Ft⁻¹)ᵀFsᵀS，III-A行/列描述冲突、双和系数、sigma/sigma²及齐次尺度原式留证；3×3不保证Ft满秩。",
       "tags": [],
-      "summary": "通过高光谱与高分辨率RGB的特征级流形对齐生成自然色可视化；原摘要另支持语义相近地点的匹配、同传感器新影像投影复用和用户指定波段显示。",
+      "summary": "LPP特征级流形对齐将HSI与RGB参考映射到共同三维颜色空间并逆映射自然色；四组定量、跨地点手工配对、同传感器投影复用和指定波段实验已通读。",
       "input": "高光谱影像与同地点或语义相近地点的高分辨率RGB，以及少量同对象像元对；可选择高光谱波段子集。",
       "output": "自然色RGB可视化和可复用的光谱到RGB投影；不等于空间光谱超分辨率输出。",
-      "mechanism": "LPP式特征级流形对齐，联合邻接图、共同三维颜色空间及RGB逆投影；原Figure1流程与局部第III节支持，三维是特征维度。",
-      "readingNote": "原摘要及指定局部段落/方法图已核；未阅读全文。正式TGRS54(6):3151–3162，2016年6月；DOI含2015不代表发表年份。Crossref未登记首次online日期，暂未知。机构Accepted Manuscript为1封面+12页，Figure1位于PDF6/稿内5，不能套正式页号。与三作者ICPR2014关联同概念方法族，明确期刊扩展声明尚未核到；四作者含Yuan Yan Tang，实验和新能力不回填会议。",
+      "mechanism": "本域图/跨域匹配块联合求q最小非零广义特征向量；SAD和Euclidean热图，SIFT粗homography/RANSAC后9×9邻域细搜索。按列约定Srgb=(Ft⁻¹)ᵀFsᵀS，III-A行/列描述冲突、双和系数、sigma/sigma²及齐次尺度原式留证；3×3不保证Ft满秩。",
+      "readingNote": "公开机构稿全13页（封面1/正文参考12）通读及逐页图版复核，24编号式；仅本公开版本。AM13页全读，正式TGRS54(6):3151–3162未独立读；IEEE显示/插入2016-01-13与正式June分源，首次online未独立证。实际引用ICPR2014[32]，明确扩展声明仍待。熵ln/位深、separability分母、RGB RMSE通道、配准齐次/逆矩阵、k/sigma/r/代码/时间与原数据待，无复现。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content",
-      "verifiedAt": "2026-10-09",
-      "verificationLevel": "author_abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "institutional_manuscript_full_text_version_scoped",
       "citation": "@article{manifold_natural_color_tgrs_2016,\n  title = {A Manifold Alignment Approach for Hyperspectral Image Visualization With Natural Color},\n  author = {Danping Liao and Yuntao Qian and Jun Zhou and Yuan Yan Tang},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2016},\n  pages = {3151--3162},\n  doi = {10.1109/tgrs.2015.2512659}\n}\n",
       "library": {
         "categoryIds": [
@@ -62543,13 +62638,13 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "原摘要直接研究光学高光谱可视化，RGB作引导；不是普通RGB研究或场景3D重建。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何借助RGB参考和少量像元对应将高光谱信息显示为自然色？",
-        "datasets": "原第IV-A节四组：HYDICE Washington DC Mall 191波段1208×307；AVIRIS Moffett Field 224波段501×651；地面OKSI/LCTF的G03与D04。Google Earth提供前两组RGB参考，不标为高光谱公开下载。地面全部波长与采样细节待完整核验。",
-        "experimentSetting": "原摘要、指定第III节方法/其他应用场景、第IV-A数据和第IV-F跨地点局部已核；D04与G03的RGB参考跨地点手动14对。未逐项核计量表、全部参数/数值或复现，不标全文阅读。",
-        "conclusions": "作者报告自然色与细节显示优势及灵活数据设置；跨地点结果细节弱于同地点RGB参考。投影复用以同传感器相近光谱响应为条件，不能推广为任意跨传感器迁移。",
-        "limitations": "正式TGRS54(6):3151–3162，2016年6月；DOI含2015不代表发表年份。Crossref未登记首次online日期，暂未知。机构Accepted Manuscript为1封面+12页，Figure1位于PDF6/稿内5，不能套正式页号。与三作者ICPR2014关联同概念方法族，明确期刊扩展声明尚未核到；四作者含Yuan Yan Tang，实验和新能力不回填会议。 本轮精确题名code/arXiv定向发现未核到专用入口，未知不表示不存在。",
+        "datasets": "HYDICE Washington1208×307×191/RGB5160×1640；AVIRIS Moffett501×651×224/RGB1560×1830，两RGB Google Earth。G03/D04 OKSI+LCTF960×1280×18、460–630nm/10nm，NikonD60 RGB2592×3872；不同于会议480×640。另F02/G04/G02复用同传感器投影。",
+        "experimentSetting": "Washington20配对、alpha1=1/alpha2=500；权重100/500、配对5/30扫描，9×9细搜索；D04 HSI配G03 RGB手工14对；指定58/80/120三带。五表六方法×四列=120数值全留证；同地点RMSE参考由同一引导RGB配准/缩放近似true color，不是独立物理GT。",
+        "conclusions": "同地点RMSE58.41/27.30/32.88/23.08四组均最低，但entropy/gradient/separability分别仅3/2/3组最好。跨地点D04 7.50/.0350/147.54/58.47，前两最好/后两第二，RMSE逊CMF28.70、同地点MA23.08；不混作同设置。G03投影复用仅视觉图。原Fig1 PDF6保留，3D是颜色空间。",
+        "limitations": "AM13页全读，正式TGRS54(6):3151–3162未独立读；IEEE显示/插入2016-01-13与正式June分源，首次online未独立证。实际引用ICPR2014[32]，明确扩展声明仍待。熵ln/位深、separability分母、RGB RMSE通道、配准齐次/逆矩阵、k/sigma/r/代码/时间与原数据待，无复现。",
         "dataLinks": [],
         "evidence": [
           {
@@ -62572,6 +62667,33 @@
               "Danping Liao, Yuntao Qian, Jun Zhou, Yuan Yan Tang",
               "2016；3151-3162"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content",
+            "checkedAt": "2026-10-11",
+            "level": "primary_institutional_manuscript_full_text_version_scoped",
+            "supports": [
+              "LPP特征级流形对齐将HSI与RGB参考映射到共同三维颜色空间并逆映射自然色；四组定量、跨地点手工配对、同传感器投影复用和指定波段实验已通读。",
+              "本域图/跨域匹配块联合求q最小非零广义特征向量；SAD和Euclidean热图，SIFT粗homography/RANSAC后9×9邻域细搜索。按列约定Srgb=(Ft⁻¹)ᵀFsᵀS，III-A行/列描述冲突、双和系数、sigma/sigma²及齐次尺度原式留证；3×3不保证Ft满秩。",
+              "HYDICE Washington1208×307×191/RGB5160×1640；AVIRIS Moffett501×651×224/RGB1560×1830，两RGB Google Earth。G03/D04 OKSI+LCTF960×1280×18、460–630nm/10nm，NikonD60 RGB2592×3872；不同于会议480×640。另F02/G04/G02复用同传感器投影。",
+              "同地点RMSE58.41/27.30/32.88/23.08四组均最低，但entropy/gradient/separability分别仅3/2/3组最好。跨地点D04 7.50/.0350/147.54/58.47，前两最好/后两第二，RMSE逊CMF28.70、同地点MA23.08；不混作同设置。G03投影复用仅视觉图。原Fig1 PDF6保留，3D是颜色空间。"
+            ]
+          },
+          {
+            "url": "https://xplorestaging.ieee.org/document/7381681",
+            "checkedAt": "2026-10-11",
+            "level": "complete_primary_ieee_abstract_and_author_identity",
+            "supports": [
+              "IEEE完整原摘要、全部作者/Griffith单位与机构全文互证；正式PDF202空，数据库显示/插入日期不当已证首次online。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2015.2512659",
+            "checkedAt": "2026-10-11",
+            "level": "primary_publisher_registration_metadata",
+            "supports": [
+              "精确DOI、正式作者、年份与页码；正式与公开稿、同概念关联关系分源。"
+            ]
           }
         ],
         "versions": [
@@ -62581,14 +62703,17 @@
             "url": "https://doi.org/10.1109/tgrs.2015.2512659",
             "doi": "10.1109/tgrs.2015.2512659",
             "year": 2016,
-            "relation": "正式TGRS54(6):3151–3162，2016年6月；DOI含2015不代表发表年份。Crossref未登记首次online日期，暂未知。机构Accepted Manuscript为1封面+12页，Figure1位于PDF6/稿内5，不能套正式页号。与三作者ICPR2014关联同概念方法族，明确期刊扩展声明尚未核到；四作者含Yuan Yan Tang，实验和新能力不回填会议。"
+            "relation": "IEEE正式完整摘要与作者书目已核；正式PDF202空，未独立阅读全文。正式June2016；IEEE另显示/插入January13，不当已证首次online。",
+            "readingProgress": "abstract_read"
           },
           {
             "id": "manifold-natural-color-tgrs-2016-source",
-            "type": "Accepted Manuscript",
+            "type": "Accepted Manuscript (AM)",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content",
             "year": 2016,
-            "relation": "原图页号仅对应本PDF。"
+            "relation": "本公开稿全13页/式表图/参考已读，正式差异未核。",
+            "readingProgress": "full_text_read",
+            "fullTextCheckedAt": "2026-10-11"
           },
           {
             "id": "manifold-natural-color-icpr-2014-related",
@@ -62596,14 +62721,14 @@
             "url": "https://doi.org/10.1109/icpr.2014.22",
             "doi": "10.1109/icpr.2014.22",
             "year": 2014,
-            "relation": "两份原Figure1和摘要支持相同HSI/RGB共同嵌入与逆映射概念；四作者期刊另有跨地点/复用/波段子集和四数据集，不混用结果。当前原稿未找到正式扩展会议声明。"
+            "relation": "TGRS2016完整AM实际引用ICPR2014 [32]，两稿共享流形对齐/逆RGB映射，会议和期刊实验分开；本稿未给明确extended version声明，关联身份增强但正式扩展关系仍待。"
           }
         ],
         "methodFamilyId": "manifold-natural-color-icpr-2014",
         "classificationReview": {
-          "reviewedAt": "2026-10-09",
+          "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "原摘要及Figure1支持自然色显示与流形对齐类别，分类确认不等同全文。",
+          "rationale": "全部公开稿支持区域显著检测与自然色显示；3D是共同颜色嵌入而非场景几何，期刊/会议/跨地点结果与数据源分开，公式指标疑点原样留证。",
           "evidenceFields": [
             "title",
             "summary",
@@ -62612,9 +62737,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "cb98577630cb190ec9fa49ef6331e1416e82182376ccfb4d39ecd333e31f1360",
+          "evidenceDigest": "018710fa0acfa28f54045bd31d88f497513a7c7624f0edea0f200d2e5d18c2d2",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content",
+            "https://xplorestaging.ieee.org/document/7381681",
+            "https://api.crossref.org/works/10.1109/tgrs.2015.2512659"
           ]
         }
       },
@@ -83842,10 +83969,10 @@
       "name": "高光谱彩色可视化",
       "dimension": "task",
       "definition": "把高维光谱信息映射为可供人阅读的颜色显示，并衡量或改进颜色对光谱差异的忠实程度；嵌入空间不等于真实场景几何。",
-      "status": "provisional",
+      "status": "confirmed",
       "color": "#739f91",
       "createdAt": "2026-10-08",
-      "rationale": "FSPE原始摘要、§III/IV及图注直接支持该任务。",
+      "rationale": "ICPR2014全稿与TGRS2016完整AM直接核验HSI到RGB可视化及指标；其他成员保留既有证据边界，不称物理真色/谱恢复。",
       "evidencePaperIds": [
         "fspe-visualization-2015",
         "manifold-natural-color-icpr-2014",
@@ -83857,6 +83984,11 @@
           "date": "2026-10-08",
           "action": "created",
           "reason": "FSPE原始摘要、§III/IV及图注直接支持该任务。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2013显著检测与2014/2016流形可视化完整机构稿核验，方法、数据/指标、正式与应用场景分别留证。"
         }
       ]
     },
@@ -87281,6 +87413,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原摘要/局部方法核验支持。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2013显著检测与2014/2016流形可视化完整机构稿核验，方法、数据/指标、正式与应用场景分别留证。"
         }
       ]
     },
@@ -87301,6 +87438,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "原摘要/局部方法核验支持。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2013显著检测与2014/2016流形可视化完整机构稿核验，方法、数据/指标、正式与应用场景分别留证。"
         }
       ]
     },
@@ -87394,6 +87536,11 @@
           "date": "2026-10-09",
           "action": "created",
           "reason": "两篇原摘要与方法图核验；保留各自数据和应用能力。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "2013显著检测与2014/2016流形可视化完整机构稿核验，方法、数据/指标、正式与应用场景分别留证。"
         }
       ]
     },

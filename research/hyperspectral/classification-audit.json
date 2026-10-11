@@ -734,6 +734,39 @@
         "USGS六端元64×64/8×8块/9×9低通，丰度>0.8改均匀、高斯噪声；Urban HYDICE307×307、210→162带、400–2500nm/10nm，Asphalt/Grass/Road/Roof四材料。Fig3称GT但构建来源未解释，不能借别稿Tree或每材料10谱协议。",
         "mean SAD .0676/RMSE .0745最低，逐噪声各4/5档最低：35dB SAD GLNMF .0663胜.0671，45dB RMSE GLNMF .0696胜.0713。VCA RMSE原平均.1287，而五行算术.1043；不静默替换。真实只丰度图，无SAD/RMSE表。Fig1四面板为结构判别概念示意，非实测/完整solver。"
       ]
+    },
+    {
+      "paperId": "spectral-saliency-icip-2013",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bbe7597d-2d15-5e82-ae7a-2f49137886d0/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "将Itti多尺度显著模型的颜色分量替换为光谱线索；RGB、四组波段对抗GS、Euclidean全谱SS及SAD/Euclidean融合SSO四实现，在13幅选择性高光谱图像区域检测显著对象。",
+        "九尺度Itti强度/方向保留，CIE XYZ→sRGB、四组L1跨尺度对抗或全谱差异构建显著图；Otsu二值化、形态学补孔去小分量、winner-take-all取最高显著区域。一目标假设，多目标仅扩展建议；SSO权重/分组具体边界未给。",
+        "Foster两组共55图（原文16在线）与Harvard50图，三源中选13图区域，人工边界框结合RGB与材料知识；图像编号、裁块/标注未提供。当前Foster原页两组各8示例、Harvard资源50+25，不能改称本稿测全库或75图。",
+        "原曲线与两示例支持谱方法优于RGB且SSO略优，但各谱方案接近；不量化图中估计值或将作者first claim当领域优先权已证。13选择性区域、一对象和边界框参考限制检测泛化。既有Fig1分组原图复核，非完整检测流程。"
+      ]
+    },
+    {
+      "paperId": "manifold-natural-color-icpr-2014",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/f89aa4c8-9b5e-551f-9aac-52595ca08055/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "以少量HSI/高分辨率RGB匹配像元联结两个流形，用线性共同三维颜色嵌入和RGB逆投影实现自然色显示；三场景仅视觉比较，输出保持HSI像元网格。",
+        "S ns×ps/T nt×3的本域kNN heat图与alpha2配对边构成联合图，广义特征值解Fs/Ft，Srgb=S Fs Ft⁻¹；HSI用SAD、RGB用Euclidean平方。每带SIFT、粗仿射/最小二乘/RANSAC与邻域细配对；方阵Ft还需满秩，线性降维不保证全谱距离/物理真色。",
+        "HYDICE Washington1208×307×191，Google maps RGB5160×1640；两地面场景HSI480×640×18/RGB2592×3872×3，传统SLR。会议未给地面波长和具体HSI型号，不从期刊OKSI960×1280补。",
+        "视觉图示自然色和局部细节改善，较大权重误配更敏感、配对多宜减权重；不称定量光谱恢复或输出HRCI分辨率。跨地点/交互在结尾为future work；期刊实际引用本稿[32]并新增能力，但明确扩展声明未核。既有Fig1原流程图保留。"
+      ]
+    },
+    {
+      "paperId": "manifold-natural-color-tgrs-2016",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/33f7e9d5-0979-55b1-8bab-3dbee6654c89/content",
+      "level": "primary_institutional_manuscript_full_text_version_scoped",
+      "supports": [
+        "LPP特征级流形对齐将HSI与RGB参考映射到共同三维颜色空间并逆映射自然色；四组定量、跨地点手工配对、同传感器投影复用和指定波段实验已通读。",
+        "本域图/跨域匹配块联合求q最小非零广义特征向量；SAD和Euclidean热图，SIFT粗homography/RANSAC后9×9邻域细搜索。按列约定Srgb=(Ft⁻¹)ᵀFsᵀS，III-A行/列描述冲突、双和系数、sigma/sigma²及齐次尺度原式留证；3×3不保证Ft满秩。",
+        "HYDICE Washington1208×307×191/RGB5160×1640；AVIRIS Moffett501×651×224/RGB1560×1830，两RGB Google Earth。G03/D04 OKSI+LCTF960×1280×18、460–630nm/10nm，NikonD60 RGB2592×3872；不同于会议480×640。另F02/G04/G02复用同传感器投影。",
+        "同地点RMSE58.41/27.30/32.88/23.08四组均最低，但entropy/gradient/separability分别仅3/2/3组最好。跨地点D04 7.50/.0350/147.54/58.47，前两最好/后两第二，RMSE逊CMF28.70、同地点MA23.08；不混作同设置。G03投影复用仅视觉图。原Fig1 PDF6保留，3D是颜色空间。"
+      ]
     }
   ]
 }

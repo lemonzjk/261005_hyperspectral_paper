@@ -1,0 +1,783 @@
+{
+  "checkedAt": "2026-10-11",
+  "derivedNotOriginalResponse": true,
+  "noImplementationOrModelRun": true,
+  "sharedBoundary": "显著检测是区域/显著图任务；可视化是HSI→RGB显示，不是恢复高分辨率光谱立方或几何3D。颜色空间三维与谱/空间数据阵列不当场景重建。打印曲线/表与作者视觉结论不替代复现或显著性检验。",
+  "saliency": {
+    "paperId": "spectral-saliency-icip-2013",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "mechanism": "Itti九尺度、六强度/十二颜色/二十四方向通道汇成三conspicuity图。三替换方案形成四实现RGB/GS/SS/SSO，Moan作第五对照；SS只有Euclidean、SSO结合SAD+Euclidean，三方案不等于三个实际对照。",
+    "equationAudit": [
+      {
+        "equations": [
+          1
+        ],
+        "meaning": "逐波段CIE XYZ颜色匹配加权，再转sRGB。",
+        "boundary": "本文未给具体照明谱/归一和完整实现，反射率与辐亮度不同数据源的色彩转换协议未细述。"
+      },
+      {
+        "equations": [
+          2,
+          3
+        ],
+        "meaning": "四近等宽可见波段组两对double-opponent，跨尺度差后L1向量范数。",
+        "boundary": "图1有G1–G4谱分组但未给数值波段边界、组长不一致处理/波段数、跨尺度插值与归一具体值；没有把图注当完整框架。"
+      },
+      {
+        "equations": [
+          4
+        ],
+        "meaning": "SAD arccos(AkᵀAj/(||Ak||||Aj||))",
+        "boundary": "具体SAD与Euclidean融合权重、谱零值/clamp/归一、随机种子/运行硬件时间未给。"
+      }
+    ],
+    "detection": "Otsu最佳阈值二值化、形态学补孔/去小分量，再winner-take-all选包含最高显著值区域；假设一目标每图，多目标只是建议顺次选，未实测。",
+    "paperDatasets": {
+      "FosterSets": 2,
+      "FosterTotalImagesReported": 55,
+      "FosterFreelyAvailableReported": 16,
+      "HarvardImagesReported": 50,
+      "selectedImagesAcrossSources": 13,
+      "selectedRegions": true,
+      "imageIDsAndCropCoordinates": null,
+      "groundTruth": "手工边界框，由合成RGB视觉和材料知识判断，不是逐像元手工掩码或眼动标签。",
+      "paperBandCountsWavelengthsAndSizes": null
+    },
+    "evaluation": "Fig2扫描不同二值阈值的pixel precision/recall：true object pixels/detected pixels、detected true pixels/true pixels。标注仅边界框；未给框到pixel truth处理、汇聚方式、阈值步长/样本编号或独立测试划分。没有AP/IoU/Fbeta/数值表/时间，不从图估数冒充正式报表。",
+    "resultBoundary": "原曲线/两示例图支持谱方法优于RGB、SSO略优，曲线相近；13选择性区域与一目标假设限制泛化，不据作者first claim确认领域优先权。",
+    "figures": "四图：G1–G4分组示意、PR曲线、两示例显著图、检测框；保留既有Fig1裁切不改字节。"
+  },
+  "conference": {
+    "paperId": "manifold-natural-color-icpr-2014",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "mechanism": "S ns×ps/T nt×3、联合对称OR kNN邻接图，HSI SAD heat、RGB Euclidean平方heat，alpha1本域/alpha2跨域匹配边，广义特征向量投影至q3共同颜色空间，以S Fs Ft⁻¹输出RGB。",
+    "equationAudit": [
+      {
+        "equations": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "meaning": "heat/联合边权、局部和配对平方距离、trace与XᵀLX F=lambda XᵀDX F。",
+        "printedIssues": "Eq3匹配双和下标i≠m跨两个集合会去掉数值同索引配对，正文却说所有配对。由对称全有序双和到Eq5/7 trace差2常数不影响同一目标argmin但不说印式严格数值相等。",
+        "conditionalAlgebra": "需特征向量归一/尺度约束避免无约束trace目标零映射；逆Ft要求满秩，仅q=3方阵不保证可逆。由高维到三维的Fs不保证所有不相似点距离保持/不折叠，作者线性可避免的说法有限。"
+      },
+      {
+        "equations": [
+          9,
+          10
+        ],
+        "meaning": "HSI exp(−SAD/sigma)与SAD定义；不是把SAD平方热核静默回填。"
+      },
+      {
+        "equations": [
+          11
+        ],
+        "meaning": "3×3粗仿射映射、SIFT每谱/RGB带、最小二乘+RANSAC、局部邻域SIFT细匹配。",
+        "boundary": "邻域大小、k/sigma、SIFT阈值、对应成功率、seed/时间未给；不借期刊9×9/透视homography回填。"
+      },
+      {
+        "equations": [
+          12
+        ],
+        "meaning": "Srgb=S Fs Ft⁻¹，输出保持HSI像元行数；RGB参考空间几何描述并非输出HRCI分辨率/新光谱立方。"
+      }
+    ],
+    "data": {
+      "Washington": {
+        "instrument": "HYDICE",
+        "pixels": [
+          1208,
+          307
+        ],
+        "bands": 191,
+        "RGBPixels": [
+          5160,
+          1640
+        ],
+        "RGBSourcePrinted": "Google maps"
+      },
+      "groundScenes": {
+        "count": 2,
+        "HSIPixels": [
+          480,
+          640
+        ],
+        "bands": 18,
+        "RGBPixels": [
+          2592,
+          3872
+        ],
+        "HSIInstrumentAndWavelengthsExplicit": null,
+        "RGBInstrument": "traditional SLR"
+      }
+    },
+    "settings": {
+      "WashingtonMatchingPairs": 20,
+      "alpha1": 1,
+      "alpha2Washington": 500,
+      "weightScan": [
+        30,
+        100,
+        500
+      ],
+      "suggestedAlpha2": [
+        200,
+        500
+      ],
+      "pairScan": [
+        5,
+        30
+      ],
+      "groundMatchingPairs": 20,
+      "groundAlpha2": 300,
+      "sharedDimension": 3,
+      "baselines": [
+        "three bands",
+        "PCA",
+        "Laplacian Eigenmaps"
+      ],
+      "displayBandsWashington": [
+        1,
+        95,
+        191
+      ],
+      "displayBandsGround": [
+        1,
+        10,
+        18
+      ],
+      "baselineDisplay": "PCA/eigenmaps减各坐标最小后映0–255，非保物理色校准",
+      "kSigmaSIFTThreshold": null
+    },
+    "results": "只有视觉比较与参数图，无数值表、RMSE或定量距离恢复/统计检验。较大对应数需减alpha2且误配大权重更敏感；跨地点和交互对应在结尾是future work，不当会议已测能力。",
+    "figures": "11图，Fig1 PDF4是原流程，其余数据/显示/参数；保留既有裁切。"
+  },
+  "journal": {
+    "paperId": "manifold-natural-color-tgrs-2016",
+    "numberedEquationsRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "mechanism": "LPP特征级HSI/RGB共享3D颜色空间与逆映射，联合邻接/配对边保持本域局部结构和跨域对应；同地点SIFT粗配准+9×9局部搜索，不同地点用语义相似材料手工配对。",
+    "equationAudit": [
+      {
+        "equations": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "meaning": "基础LPP与XLXᵀ F=lambda XDXᵀ F。",
+        "printedIssue": "近邻正文对称OR，Eq1写彼此为近邻（互邻措辞）；Eq1分母sigma²而应用Eq12/14分母sigma，参数值和对应关系未给。",
+        "boundary": "半正定不意味着度矩阵正定，孤立点/秩亏/特征向量尺度约束未述；无约束trace的零解不等于作者实际选非零特征值程序。"
+      },
+      {
+        "equations": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "meaning": "二值跨域配对、块对称邻接、两个特征投影及q最小非零广义特征值。",
+        "printedIssues": "Eq7跨域项仅一次，Eq8/10对称块的全有序双和会数两次；本域全有序约定下不是全部目标统一常数，需要代码核相对alpha2。",
+        "boundary": "正文S ps×ns/T pt×nt、投影FT S列约定维度相容，X=S∪T应是相容的零填充块结构而非直接拼异维谱；未给稀疏图/抽样执行资源。"
+      },
+      {
+        "equations": [
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "meaning": "SAD/Euclidean图、配对矩阵与Srgb=(Ft⁻¹)ᵀFsᵀS。",
+        "printedIssue": "III-A先声明S ns×ps/T nt×3行约定，随后Sc=FsᵀS及Eq16用列约定；不将转置问题当已复现程序。",
+        "conditionalAlgebra": "按II列约定Eq16正确，按III-A行约定输出应S Fs Ft⁻¹。两者是转置表示；Ft3×3方阵仍需满秩，未报条件数/伪逆。"
+      },
+      {
+        "equations": [
+          17
+        ],
+        "meaning": "每带SIFT配对距比dis(other)/dis(match)>r，r>1。",
+        "boundary": "没有数值r，不静默填常用0.8比率。"
+      },
+      {
+        "equations": [
+          18,
+          19,
+          20
+        ],
+        "meaning": "八参数homography/最小四非共线配对、最小二乘及RANSAC。",
+        "printedIssue": "Eq18和Eq20将两边齐次第三维都固定1直接相等/相减，未印尺度等价/除第三坐标；一般透视h7/h8需齐次归一，原印需与实际实现核对。",
+        "boundary": "会议粗仿射与期刊透视模型区别；9×9是期刊明确值。"
+      },
+      {
+        "equations": [
+          21
+        ],
+        "meaning": "单通道entropy=−sum p ln p，RGB三个通道均值。",
+        "conditionalAlgebra": "若8bit256离散灰度和自然对数，最大ln256≈5.54518，表7.40等超界；若log2最大8则相容。本文实际位深/分箱/对数实现未说明，不指认数据造假或静默改log2。"
+      },
+      {
+        "equations": [
+          22
+        ],
+        "meaning": "1/N sum sqrt(Ix²+Iy²)，三RGB通道梯度比较",
+        "boundary": "位深/归一和实际差分边界未明，不跨数据绝对解释。"
+      },
+      {
+        "equations": [
+          23
+        ],
+        "printed": "1/(N−1)² sum_(x≠y) d(x,y)",
+        "conditionalAlgebra": "文字所有有序像元对为N(N−1)对，与印分母(N−1)²不同，比例N/(N−1)；实际采样/归一代码未给，保留印式。"
+      },
+      {
+        "equations": [
+          24
+        ],
+        "meaning": "对registered/resized参考RGB的RMSE。",
+        "boundary": "s,s′为RGB向量而式打印元素平方、没明确通道求和/平均；近似true color来自同一引导HRCI，不是独立物理谱/真色标定GT；不直接称泄漏或独立跨源泛化。"
+      }
+    ],
+    "data": {
+      "Washington": {
+        "instrument": "HYDICE",
+        "pixels": [
+          1208,
+          307
+        ],
+        "bands": 191,
+        "RGBPixels": [
+          5160,
+          1640
+        ],
+        "RGBSource": "Google Earth"
+      },
+      "Moffett": {
+        "instrument": "AVIRIS",
+        "pixels": [
+          501,
+          651
+        ],
+        "bands": 224,
+        "RGBPixels": [
+          1560,
+          1830
+        ],
+        "RGBSource": "Google Earth"
+      },
+      "G03D04": {
+        "instrument": "OKSI + LCTF",
+        "pixels": [
+          960,
+          1280
+        ],
+        "bands": 18,
+        "rangeNm": [
+          460,
+          630
+        ],
+        "stepNm": 10,
+        "RGBPixels": [
+          2592,
+          3872
+        ],
+        "RGBInstrument": "Nikon D60 SLR"
+      },
+      "boundary": "会议地面480×640与期刊960×1280区别保留，不能因图像相似确定同原始文件或重采样关系。"
+    },
+    "settings": {
+      "WashingtonPairs": 20,
+      "alpha1": 1,
+      "alpha2": 500,
+      "weightScan": [
+        100,
+        500
+      ],
+      "suggestedAlpha2": [
+        200,
+        500
+      ],
+      "pairScan": [
+        5,
+        30
+      ],
+      "window": [
+        9,
+        9
+      ],
+      "crossSite": "D04 HSI/G03 RGB、手工14配对",
+      "reuse": "G03学习投影→F02/G04/G02同传感器影像，未给数值表",
+      "bandSubset": [
+        58,
+        80,
+        120
+      ],
+      "bandSubsetMinimum": 3,
+      "kSigmaRSeedHardwareRuntime": null
+    },
+    "tables": [
+      {
+        "label": "TableI",
+        "pdfPage": 8,
+        "columns": [
+          "Washington",
+          "Moffett",
+          "G03",
+          "D04"
+        ],
+        "rows": [
+          {
+            "method": "LP Band Selection",
+            "values": [
+              6.59,
+              6.36,
+              4.73,
+              5.58
+            ],
+            "rowPrefixAsExtracted": "Other two HSI data sets are named as “G03” and “D04”,                   LP Band Selection"
+          },
+          {
+            "method": "LPP",
+            "values": [
+              6.53,
+              5.99,
+              5.11,
+              6.15
+            ],
+            "rowPrefixAsExtracted": "which were acquired by a ground-based OKSI hyperspectral                           LPP"
+          },
+          {
+            "method": "Stretched CMF",
+            "values": [
+              3.89,
+              5.28,
+              6.31,
+              7.13
+            ],
+            "rowPrefixAsExtracted": "Stretched CMF"
+          },
+          {
+            "method": "Bilateral Filtering",
+            "values": [
+              3.31,
+              5.87,
+              6.05,
+              7.27
+            ],
+            "rowPrefixAsExtracted": "imaging system mounted with a tunable LCTF filter. Each                    Bilateral Filtering"
+          },
+          {
+            "method": "Bicriteria Optimization",
+            "values": [
+              5.75,
+              6.0,
+              5.73,
+              6.06
+            ],
+            "rowPrefixAsExtracted": "data set has 18 bands ranging from 460nm to 630nm at                     Bicriteria Optimization"
+          },
+          {
+            "method": "Manifold Alignment",
+            "values": [
+              7.4,
+              6.89,
+              6.64,
+              7.02
+            ],
+            "rowPrefixAsExtracted": "10nm interval. The size of each band is 960 × 1280. Their                 Manifold Alignment"
+          }
+        ],
+        "allNumericCellsRead": true,
+        "manifoldAlignmentRanks": [
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "label": "TableII",
+        "pdfPage": 9,
+        "columns": [
+          "Washington",
+          "Moffett",
+          "G03",
+          "D04"
+        ],
+        "rows": [
+          {
+            "method": "LP Band Selection",
+            "values": [
+              0.047,
+              0.0109,
+              0.0137,
+              0.0151
+            ],
+            "rowPrefixAsExtracted": "LP Band Selection"
+          },
+          {
+            "method": "LPP",
+            "values": [
+              0.0527,
+              0.0078,
+              0.0176,
+              0.0125
+            ],
+            "rowPrefixAsExtracted": "LPP"
+          },
+          {
+            "method": "Stretched CMF",
+            "values": [
+              0.0192,
+              0.0049,
+              0.0116,
+              0.0106
+            ],
+            "rowPrefixAsExtracted": "Stretched CMF"
+          },
+          {
+            "method": "Bilateral Filtering",
+            "values": [
+              0.0448,
+              0.0088,
+              0.0203,
+              0.021
+            ],
+            "rowPrefixAsExtracted": "Bilateral Filtering"
+          },
+          {
+            "method": "Bicriteria Optimization",
+            "values": [
+              0.0387,
+              0.0122,
+              0.0217,
+              0.0283
+            ],
+            "rowPrefixAsExtracted": "Bicriteria Optimization"
+          },
+          {
+            "method": "Manifold Alignment",
+            "values": [
+              0.0889,
+              0.0103,
+              0.027,
+              0.0219
+            ],
+            "rowPrefixAsExtracted": "Manifold Alignment"
+          }
+        ],
+        "allNumericCellsRead": true,
+        "manifoldAlignmentRanks": [
+          1,
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "label": "TableIII",
+        "pdfPage": 9,
+        "columns": [
+          "Washington",
+          "Moffett",
+          "G03",
+          "D04"
+        ],
+        "rows": [
+          {
+            "method": "LP Band Selection",
+            "values": [
+              55.68,
+              51.33,
+              63.25,
+              135.37
+            ],
+            "rowPrefixAsExtracted": "LP Band Selection"
+          },
+          {
+            "method": "LPP",
+            "values": [
+              78.99,
+              42.12,
+              39.82,
+              50.87
+            ],
+            "rowPrefixAsExtracted": "LPP"
+          },
+          {
+            "method": "Stretched CMF",
+            "values": [
+              30.08,
+              30.44,
+              106.14,
+              73.3
+            ],
+            "rowPrefixAsExtracted": "Stretched CMF"
+          },
+          {
+            "method": "Bilateral Filtering",
+            "values": [
+              47.54,
+              51.8,
+              82.16,
+              143.19
+            ],
+            "rowPrefixAsExtracted": "Bilateral Filtering"
+          },
+          {
+            "method": "Bicriteria Optimization",
+            "values": [
+              52.43,
+              62.51,
+              122.78,
+              168.65
+            ],
+            "rowPrefixAsExtracted": "Bicriteria Optimization"
+          },
+          {
+            "method": "Manifold Alignment",
+            "values": [
+              107.11,
+              65.23,
+              139.58,
+              107.81
+            ],
+            "rowPrefixAsExtracted": "Manifold Alignment"
+          }
+        ],
+        "allNumericCellsRead": true,
+        "manifoldAlignmentRanks": [
+          1,
+          1,
+          1,
+          4
+        ]
+      },
+      {
+        "label": "TableIV",
+        "pdfPage": 9,
+        "columns": [
+          "Washington",
+          "Moffett",
+          "G03",
+          "D04"
+        ],
+        "rows": [
+          {
+            "method": "LP Band Selection",
+            "values": [
+              68.35,
+              49.93,
+              95.19,
+              83.35
+            ],
+            "rowPrefixAsExtracted": "LP Band Selection"
+          },
+          {
+            "method": "LPP",
+            "values": [
+              90.96,
+              63.97,
+              108.44,
+              108.02
+            ],
+            "rowPrefixAsExtracted": "LPP"
+          },
+          {
+            "method": "Stretched CMF",
+            "values": [
+              92.46,
+              58.5,
+              44.09,
+              28.7
+            ],
+            "rowPrefixAsExtracted": "Stretched CMF"
+          },
+          {
+            "method": "Bilateral Filtering",
+            "values": [
+              102.43,
+              56.7,
+              78.54,
+              61.14
+            ],
+            "rowPrefixAsExtracted": "Bilateral Filtering"
+          },
+          {
+            "method": "Bicriteria Optimization",
+            "values": [
+              98.47,
+              57.94,
+              69.6,
+              75.7
+            ],
+            "rowPrefixAsExtracted": "Bicriteria Optimization"
+          },
+          {
+            "method": "Manifold Alignment",
+            "values": [
+              58.41,
+              27.3,
+              32.88,
+              23.08
+            ],
+            "rowPrefixAsExtracted": "Manifold Alignment"
+          }
+        ],
+        "allNumericCellsRead": true,
+        "manifoldAlignmentRanks": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "TableV",
+        "pdfPage": 9,
+        "columns": [
+          "Entropy",
+          "Gradient",
+          "Separability",
+          "RMSE"
+        ],
+        "rows": [
+          {
+            "method": "LP Band Selection",
+            "values": [
+              5.59,
+              0.0151,
+              135.37,
+              83.35
+            ],
+            "rowPrefixAsExtracted": "LP Band Selection"
+          },
+          {
+            "method": "LPP",
+            "values": [
+              6.15,
+              0.0125,
+              50.87,
+              108.02
+            ],
+            "rowPrefixAsExtracted": "LPP"
+          },
+          {
+            "method": "Stretched CMF",
+            "values": [
+              7.13,
+              0.0106,
+              73.3,
+              28.7
+            ],
+            "rowPrefixAsExtracted": "Stretched CMF"
+          },
+          {
+            "method": "Bilateral Filtering",
+            "values": [
+              7.26,
+              0.021,
+              143.19,
+              61.14
+            ],
+            "rowPrefixAsExtracted": "Bilateral Filtering"
+          },
+          {
+            "method": "Bicriteria Optimization",
+            "values": [
+              6.06,
+              0.0283,
+              168.65,
+              75.7
+            ],
+            "rowPrefixAsExtracted": "Bicriteria Optimization"
+          },
+          {
+            "method": "Manifold Alignment",
+            "values": [
+              7.5,
+              0.035,
+              147.54,
+              58.47
+            ],
+            "rowPrefixAsExtracted": "Manifold Alignment"
+          }
+        ],
+        "allNumericCellsRead": true,
+        "manifoldAlignmentRanks": [
+          1,
+          1,
+          2,
+          2
+        ]
+      }
+    ],
+    "resultBoundary": "同地点MA entropy ranks1/1/1/3、gradient1/3/1/2、separability1/1/1/4、RMSE1/1/1/1；RMSE58.41/27.30/32.88/23.08。跨地点TableV MA7.50/.0350/147.54/58.47，ranks1/1/2/2，RMSE不及stretchedCMF28.70，同地点D04 MA23.08与跨地点58.47不混作同设置。TableI/V D04 LPentropy5.58/5.59、bilateral7.27/7.26分别保留，重算/重复说明未给。",
+    "figures": "13图，Fig1 PDF6是原流程，Fig2–4输入，Fig5–8同地点对照，Fig9/10参数，Fig11投影复用、Fig12跨地点、Fig13指定波段；保留既有Fig1字节。"
+  },
+  "datasetSourceReview": {
+    "primaryPages": [
+      "foster-dataset",
+      "foster-2004",
+      "harvard-dataset",
+      "harvard-download"
+    ],
+    "checkedAt": "2026-10-11",
+    "Foster2002": "当前页研究30场景、展示8示例，31带410–710nm/10nm（采集33后弃400/720）；变量裁切尺寸，不回填为显著稿已印参数。",
+    "Foster2004": "当前页研究25场景、展示8示例；33带400–720/10nm，scene5缺波段为32；页面个人使用/来源引用要求，不等于显著研究所用13裁块重现。",
+    "Harvard": "项目主页50室内外；download页50日光加25人工/混合光，NuanceFX/LCTF31带420–720/10nm、movement mask、non-commercial research。75是当前资源集合，不把2013论文50改成已测75。",
+    "downloadBoundary": "仅读取原始项目/说明页及其真实下载入口，没有下载整库或研究者13裁块/GT，未取得专用实现。"
+  },
+  "relationAudit": "TGRS实际引用ICPR2014 [32]，共享方法族保持；会议跨地点/交互future work在期刊有实验，另添四作者、homography/9×9、四组定量/同传感器复用与波段子集。没有明确extended version声明，正式关系仍待，不混实验。"
+}
