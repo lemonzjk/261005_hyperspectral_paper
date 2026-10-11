@@ -188,6 +188,7 @@
 | Jun Zhou · SSIT VoR and two editorial access followups | 2025–2026 | SSIT DOI10.1016/j.srs.2025.100276、Hancock DOI10.1016/j.patcog.2026.114263、Transformer editorial DOI10.1016/j.inffus.2025.103112；一份15页VoR全文；两个已知DOI及WhiteRose两限定查询，无作者或领域全集声明。 | 未单列 / 3 / 3 | SSIT一份VoR升级和一原图；两编辑文章仍范围待核，作者目录未闭环 | DBLP9/Scholar7/个人机构10待核集合重叠，不相加为缺口。；两个编辑记录摘要/正文未取得，不将403或单次仓库零结果判为无免费版本。；原31机构资料队列现剩26项仍摘要级，姓名变体/正式版本和全领域矩阵继续。 |
 | Jun Zhou · FAT/SA-Net benchmark scope and MFTNet VoR | 2024–2025 | FAT DOI10.1109/IGARSS55030.2025.11313925、SA-Net DOI10.1109/IGARSS53475.2024.10640493、HTCD SUNet、MRCDD RACDNet、MFTNet DOI10.1016/j.jag.2025.104355；两个已知候选和四指定基准原定义；MFTNet20页全读，RGB数据原稿下载43页/实际只读3页；指定arXiv两查询各0。 | 未单列 / 3 / 3 | FAT/SA-Net直接HSI范围暂排，MFTNet一VoR/三原图；目录未闭环 | 当前DBLP8/Scholar5/个人机构8未决有重叠，不相加。；FAT/SA-Net整篇正文和具体RGB采样未知；新明确HSI贡献可重审，未知选版不伪装为HSI范围未决。；机构资料待办剩25项；其他作者来源、正式版、姓名变体及全领域矩阵继续。 |
 | Jun Zhou · UBSTrack AM and unresolved formal access | 2024–2025 | FDNet DOI10.1109/TGRS.2025.3531879、GPINet DOI10.1109/TGRS.2023.3339291、UBSTrack DOI10.1109/TGRS.2025.3571603、HOT2024、video-wise band selection、UAV123 RGB；两精确正式记录与一份17页AM，非年度或作者全集检索；10项作者引文目录已读并映射，不表示各引文正文阅读。 | 未单列 / 3 / 3 | UBSTrack接受稿全文/三原图；两正式候选范围仍待核 | DBLP8/Scholar5/机构8未决集合重叠；两IEEE主页面202/0字节，不据此断言必须付费或没有公开正文。；剩24项机构资料待办；作者目录/正式版本与姓名变体继续，代码只链接。 |
+| Jun Zhou · Sugarcane HSI and DSAB method reuse | 2021–2025 | Sugarcane smut IVCNZ2021、DSAB JAFR2024、arXiv2501.16700v1、七级抗病评级、方法复用与版本边界；三个实际版本29 PDF页，非作者或年度全集；Crossref前5无对应正式版，不作不存在结论。 | 未单列 / 4 / 4 | 三稿全文、三原图；DSAB关联及抗病评级任务纠正 | 作者目录未闭环，DBLP8/Scholar5/个人机构8未决集合重叠；正式版本和身份继续核。；机构原31项材料队列剩22；相同主题不证明稿件扩展关系，未核传感器/植株隔离不猜补。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -853,6 +854,8 @@
   阅读边界：MFTNet VoR20页全文/三原图；FAT/SA-Net仅完整原摘要和全部命名基准定义交叉，数据原稿18/25页下载只实际读3页；引文已录去重不表示原文阅读。
 - 2026-10-11 / jun-zhou-ubstrack-reading-pending-access-2026-10-11：新增 0，更新 1，去重 10，排除 0，待处理 2。更新与去重可能重叠，不能相加为新增。
   阅读边界：UBSTrack接受稿17页全读、三原方法图；UAV补充为RGB。10条作者引文目录去重不表示被引全文阅读；两正式候选仅书目/页面访问，范围仍待。
+- 2026-10-11 / jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11：新增 0，更新 4，去重 1，排除 0，待处理 1。更新与去重可能重叠，不能相加为新增。
+  阅读边界：三份既有论文实际AM/VoR/v1共29页全读，三原方法图；ASSCT仅补已知方法关联、不重复增加全文。2025为预定义品种抗性评级，不是地物或感染检测；机构资料队列剩22。 UEMM两原摘要/正式书目仅版本线索，未迁移固定v3范围决定。
 
 </details>
 

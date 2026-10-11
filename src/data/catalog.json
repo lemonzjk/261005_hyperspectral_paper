@@ -35982,7 +35982,7 @@
     },
     {
       "id": "zhou-42-hsi-2024",
-      "shortTitle": "Early detection of sugarcane smut and mosaic disease",
+      "shortTitle": "Sugarcane smut / mosaic · DSAB 2024",
       "title": "Early detection of sugarcane smut and mosaic diseases via hyperspectral imaging and spectral-spatial attention deep neural networks",
       "authors": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Prakash Adhikari, Gervase Tuxworth, Rebecca Ford, Yongsheng Gao",
       "year": 2024,
@@ -35994,33 +35994,34 @@
         "hyperspectral"
       ],
       "doi": "10.1016/j.jafr.2024.101369",
-      "representation": "甘蔗病害高光谱检测：以光谱—空间注意力深度网络从高光谱影像提取早期病害特征，并跟踪五个月病程。",
+      "representation": "150波段甘蔗黑穗病与花叶病分别二分类；沿用2021 DSAB并分析日期、谱段与植株级投票。",
       "tags": [],
-      "summary": "该研究将高光谱成像与深度学习结合，检测甘蔗黑穗病和花叶病，并在可见症状出现前进行早期识别和五个月病程跟踪；同时发布健康与接种植株的大规模高分辨率数据集。",
-      "input": "健康和接种甘蔗植株的高光谱影像。",
-      "output": "黑穗病、花叶病检测结果及病程时间变化。",
-      "mechanism": "光谱—空间注意力深度网络从高光谱特征学习病害相关表示，并比较不同波长范围对检测的影响。",
-      "readingNote": "ORCID题名、Crossref正式书目、ScienceDirect开放摘要与 Griffith 作者PDF核验；未阅读全文。",
-      "paper": "https://www.sciencedirect.com/science/article/pii/S266615432400406X",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "用150波段近距离影像分别检测黑穗病与花叶病，明确沿用2021论文DSAB；共1828幅多日期影像，比较分日期/合并日期训练与模拟RGB、可见光、NIR。植株感染图块比例阈值.4时两病平均准确率90.89%/95.94%；接种标签、植株隔离及阈值选择边界保留，不与2021或ASSCT2023结果合并。",
+      "input": "Snapscan VNIR 1088×2048×150立方体，470–900 nm；暗白校准和SVM前景分割后非重叠32×32×150图块；另由同HSI生成RGB/可见74带/NIR对照。",
+      "output": "黑穗病、花叶病各自的图块接种/对照二分类与分日期指标；按植株感染图块比例阈值作植株级二分类及定性病害分布。",
+      "mechanism": "§2.4.1与Fig4明确DSAB来自作者2021论文[36]：ResNet34预激活块中通道自注意力CSAM后接空间自注意力SSAM，保留残差。conv1/conv2_x从64改128 filters，conv3首层stride改1。每病独立模型；策略1各日期单独训练/评测，最早三次smut合并；策略2所有日期训练块合并，再分日期评测。植株层以预测感染图块占比阈值.1–.5（步长.1）聚合；非独立病原检测。",
+      "readingNote": "Griffith保存的正式VoR共12 PDF页（封面＋11正文页）全部逐页阅读，CC BY4.0；Jun Zhou为Griffith通讯作者。1式、2表、9图与47条引文目录已读，Fig4原图及完整“adapted from [36]”图注已核；ref36准确对应既有IVCNZ2021记录。确认方法复用，未发现明确会议扩展声明，不合并2021/ASSCT2023数据或作者列表。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
           "plant-disease-detection"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 ScienceDirect 官方开放摘要均明确植物高光谱病害检测。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在可见症状前用高光谱影像检测并跟踪甘蔗病害？",
-        "datasets": "官方摘要称创建并发布健康/接种甘蔗大规模高分辨率高光谱数据集；具体规模、采样和许可待全文核验。 独立机构登记10.25904/1912/4757为黑穗病/花叶病高光谱数据（4TB、需申请）；是否与本期刊全部实验逐项对应待核，未下载。",
-        "experimentSetting": "五个月病程试验；黑穗病和花叶病分别进行早期检测，比较波长范围与深度网络表现。",
-        "conclusions": "官方摘要报告两种病害在可见症状出现前检测准确率均超过90%；完整划分、误差与外部验证待全文核验。",
-        "limitations": "摘要未给出网络完整结构、样本规模、田间部署、代码和数据许可细节。",
+        "relationNote": "正式VoR直接采集/处理150波段光学高光谱，两个实际任务均为植物病害接种/对照检测；光谱合成RGB为消融，不作为独立多模态采集。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "完整VNIR光谱与DSAB能否在可见症状前检测两种甘蔗病害，日期、谱段及图块聚合如何影响结果？",
+        "datasets": "Woodford SRA 2021：smut50接种＋50对照、五品种Nco310/Q124/Q171/Q205/Q208；ScMV45接种＋46对照、五品种CP29-116/Q44/Q68/Q78/Q82。smut11日期各100图、ScMV8日期各91图，合计1828幅；150带470–900 nm、1088×2048。smut接种Feb25（原印10^6 spores/ml）、ScMV Apr21；首可见症状11/8 WAI。脚注明确作者数据DOI10.25904/1912/4757，与既有4TB需申请登记对应；未下载实际数据，不称文件数量/划分匹配已核。",
+        "experimentSetting": "TensorFlow2、Adam/categorical cross-entropy、130 epochs、lr .0003；原文“decayed ... by 70% every 10 epochs”原样保留，不猜实际倍率。策略1 Titan V/Ubuntu22，策略2八Tesla T4/Ubuntu18；最高val checkpoint。五折交叉验证，文中提train/val/test但未给6:2:2比例或植株隔离说明。32²非重叠图块按接种父图继承标签，前景占比阈值未给数值；不移植2021的45%。NIR700–900 nm、visible74带、RGB由colour matching function合成，非独立RGB相机；植株阈值.1–.5按.1搜索。",
+        "conclusions": "§3.1 smut May6(10 WAI)最高图块准确率92.64%，最早合并日期约62%；ScMV Jun8最高94.05%，May6 sensitivity .95。结论分别声称smut8/10 WAI超过80%/90%，可见11 WAI；ScMV1 WAI超过90%，可见8 WAI。策略2 smut整体不如分日期策略。HSI与模拟RGB平均差19.5/21.3个百分点，RGB均值62.38%/67.52%。植株阈值.4的平均准确率90.89%/95.94%，smut May25达97%，ScMV Apr28达100%；这些为本稿协议结果，不与会议稿早检日期混用。",
+        "limitations": "接种/对照标签假定感染，无每日期PCR验证；未说明五折是否按植株隔离，同株多日期是否跨集合，阈值选取有无独立验证。室外盆栽/分开放置及环境变化不等于自然感染田间验证。2021为161带，本稿150带，原文未说明差异原因；本稿1828图不同于ASSCT3245图，不推测删选或扩展关系。正文Jun27与Table2 Jun23日期写法有差异；校准式(I−D)/(W−D)与后续简写I/W不完全一致；学习率衰减措辞不补实现。原文无作者官方代码链接。",
         "dataLinks": [
-          "https://research-repository.griffith.edu.au/server/api/core/items/59bb457d-9fea-4ff8-9976-c3226e7dde27"
+          "https://research-repository.griffith.edu.au/server/api/core/items/59bb457d-9fea-4ff8-9976-c3226e7dde27",
+          "https://doi.org/10.25904/1912/4757"
         ],
         "evidence": [
           {
@@ -36040,6 +36041,24 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+            "checkedAt": "2026-10-11",
+            "level": "指定版本逐页全文与原图核验",
+            "supports": [
+              "正式VoR直接采集/处理150波段光学高光谱，两个实际任务均为植物病害接种/对照检测；光谱合成RGB为消融，不作为独立多模态采集。",
+              "数据、标签、划分、方法与表格结果及原文限制",
+              "仅实际版本已读，引用目录不表示被引正文已读"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+            "checkedAt": "2026-10-11",
+            "level": "甘蔗研究全文任务分类核验",
+            "supports": [
+              "实际采集及输入光学VNIR高光谱立方体，图块接种/对照标签与病害检测目标支持plant-disease-detection和agriculture-phenotyping；SVM分割、CAM及合成RGB是辅助，不新增语义分割/多模态任务。"
+            ]
           }
         ],
         "versions": [
@@ -36049,12 +36068,79 @@
             "url": "https://doi.org/10.1016/j.jafr.2024.101369",
             "doi": "10.1016/j.jafr.2024.101369",
             "year": 2024,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式期刊DOI；Griffith提供同DOI的CC BY4.0 VoR，共12 PDF页全部阅读。"
+          },
+          {
+            "id": "zhou-42-hsi-2024-griffith-vor",
+            "type": "正式发表版（VoR）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+            "doi": "10.1016/j.jafr.2024.101369",
+            "year": 2024,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面明确VoR及CC BY4.0；1封面＋11正文页已读，Fig4原图来自该版。"
+          },
+          {
+            "id": "zhou-42-hsi-2024-related-zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+            "type": "关联研究（方法沿用）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+            "year": 2021,
+            "relation": "2024 VoR §2.4.1/Fig4/ref36明确沿用2021 DSAB；既读ASSCT2023也引用同方法。仅关联方法，不认定会议/期刊扩展关系或合并作者、数据、实验、阅读状态。",
+            "doi": "10.1109/ivcnz54163.2021.9653386"
+          },
+          {
+            "id": "zhou-42-hsi-2024-related-zhou-sugarcane-assct-2023",
+            "type": "关联研究（方法沿用）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
+            "year": 2023,
+            "relation": "2024 VoR §2.4.1/Fig4/ref36明确沿用2021 DSAB；既读ASSCT2023也引用同方法。仅关联方法，不认定会议/期刊扩展关系或合并作者、数据、实验、阅读状态。"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-42"
+        "methodFamilyId": "zhou-sugarcane-dsab",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "实际采集及输入光学VNIR高光谱立方体，图块接种/对照标签与病害检测目标支持plant-disease-detection和agriculture-phenotyping；SVM分割、CAM及合成RGB是辅助，不新增语义分割/多模态任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "98ccffd7eef08efe211475bc2063773d2333bab1e27d3a87b0cceaeffafe945a",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_42_hsi_2024, title = {Early detection of sugarcane smut and mosaic diseases via hyperspectral imaging and spectral-spatial attention deep neural networks}, author = {Dong Bao and Jun Zhou and Shamsul Arafin Bhuiyan and Prakash Adhikari and Gervase Tuxworth and Rebecca Ford and Yongsheng Gao}, year = {2024}, doi = {10.1016/j.jafr.2024.101369}\n}\n"
+      "citation": "@article{zhou_42_hsi_2024, title = {Early detection of sugarcane smut and mosaic diseases via hyperspectral imaging and spectral-spatial attention deep neural networks}, author = {Dong Bao and Jun Zhou and Shamsul Arafin Bhuiyan and Prakash Adhikari and Gervase Tuxworth and Rebecca Ford and Yongsheng Gao}, year = {2024}, doi = {10.1016/j.jafr.2024.101369}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+          "figureLabel": "Fig. 4",
+          "caption": "2024 VoR：沿用2021 DSAB的CSAM/SSAM及修改的ResNet34残差块；保留原注ref36。",
+          "page": 6,
+          "verificationNote": "免费原PDF第6页/正文第5页，300dpi原页裁取；完整模块、箭头、图例及原图注已视觉核验，未重绘。来源版本及版权/许可保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              145,
+              2058,
+              2346,
+              3117
+            ]
+          },
+          "path": "figures/zhou-42-hsi-2024/jafr2024-fig4.png",
+          "width": 2201,
+          "height": 1059,
+          "sha256": "6391474a44aa856b4840cdaf305f887bb69cdaf1cf2adfb80f47fd48205c2287",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Prakash Adhikari, Gervase Tuxworth, Rebecca Ford, Yongsheng Gao · Journal of Agriculture and Food Research 2024 · Version of Record · CC BY 4.0"
+        }
+      ]
     },
     {
       "id": "zhou-45-hsi-2024",
@@ -40124,7 +40210,7 @@
     },
     {
       "id": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
-      "shortTitle": "Early Detection of Sugarcane Smut Disease in Hyperspectral Images",
+      "shortTitle": "Sugarcane smut · DSAB 2021",
       "title": "Early Detection of Sugarcane Smut Disease in Hyperspectral Images",
       "authors": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Ali Zia, Rebecca Ford, Yongsheng Gao",
       "year": 2021,
@@ -40136,31 +40222,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/ivcnz54163.2021.9653386",
-      "representation": "高光谱农业病害检测：以 CNN 对甘蔗高光谱叶片二分类，加入双重自注意力块（DSAB）同时识别重要光谱和空间特征，以期在可见症状出现前检测黑穗病。",
+      "representation": "161波段甘蔗黑穗病图块二分类；ResNet残差块内依次采用通道与空间自注意力。",
       "tags": [],
-      "summary": "方法利用超出人眼范围的高光谱信息，将甘蔗影像分为感染与健康，并在 CNN 中加入 DSAB；摘要报告在采集的高光谱数据集上可在可见症状前检测黑穗病。",
-      "input": "甘蔗叶片高光谱影像。",
-      "output": "感染/健康二分类与早期病害检测。",
-      "mechanism": "CNN 提取影像特征；Dual Self-Attention Block 同时建模光谱和空间重要特征。",
-      "readingNote": "Google Scholar 题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "summary": "从100株甘蔗在接种后12、13周取得200幅161波段影像，以接种/对照继承标签训练ResNet18/34与DSAB。ResNet34＋DSAB测试准确率90.86%，但灵敏度未超过对应无DSAB基线；可见黑穗病鞭状症状在15周出现，不能将图块结果解释为独立植株或分子诊断验证。",
+      "input": "imec Snapscan VNIR采集的1088×2048×161甘蔗高光谱立方体，470–900 nm；暗白校准、SVM前景分割后提取非重叠32×32×161图块。",
+      "output": "图块接种/对照二分类分数、准确率/F1/灵敏度/特异度/ROC，以及CAM定性定位；不是植株级病原真值或病程逐日评估。",
+      "mechanism": "预激活ResNet18/34去掉max pooling，仅首层7×7卷积及conv3阶段首层减半分辨率。每个残差块末端、shortcut相加前插入DSAB：先C×C通道自注意力，再N×N空间自注意力（N=H×W）；1×1卷积生成Q/K/V并配BN/ReLU，通道相似度按√N缩放。Eq1为F′=Ms(Mc(F))+F，再与shortcut相加。CAM用于观察预测关注区域，不另构成Transformer骨干或分子感染定位。",
+      "readingNote": "免费Griffith接受稿7页全部逐页阅读（1机构封面＋6论文页），首页明确Jun Zhou为Griffith作者。6式、2表、6图及18条引文目录已读；Fig2/4的DSAB残差块与通道/空间模块原图已完整裁取、视觉核对。TableI分类计数与总计不一致，按原表记录；未称最终VoR、被引正文已读或性能复现。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
           "plant-disease-detection"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "高光谱光谱—空间特征能否在甘蔗黑穗病出现可见症状前完成检测？",
-        "datasets": "作者稿摘要称使用采集的高光谱甘蔗影像数据集；具体样本、病程和划分待全文核验。",
-        "experimentSetting": "甘蔗黑穗病早期二分类；高光谱数据集上的 CNN/DSAB 实验。",
-        "conclusions": "摘要报告方法能在可见症状出现前有效检测黑穗病。",
-        "limitations": "摘要未给出样本量、波段范围、模型配置、代码和逐项指标。",
+        "relationNote": "AM §II直接采集并处理161波段470–900 nm光学高光谱，任务为甘蔗黑穗病接种/对照二分类；分割是预处理，CAM为定性解释。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "161波段近距离甘蔗影像能否在黑穗病可见症状前区分接种与对照，通道/空间自注意力如何影响图块分类？",
+        "datasets": "§II：50接种＋50对照共100株，各在12、13 WAI采一幅，共200图；可见症状15 WAI。接种浓度原印1×10^6 teliospores/L。Snapscan VNIR 470–900 nm、161带、1088×2048；32×32非重叠图块，前景≥45%，继承父图接种/对照标签，声称30261块。TableI原总计train17664/val6144/test6453；healthy9225/3596/3856、infected8559/2591/2597，前两列分类和与总计不一致，不修补数字。",
+        "experimentSetting": "TensorFlow2；Titan V＋Titan Xp、mirrored strategy；Adam/binary cross-entropy，200 epochs、batch256、初始lr .0003，每20 epochs乘.7，取最高验证准确率checkpoint。图块生成后6:2:2划分，未说明植株身份或重复采集日期隔离。白板k-means取最亮簇、去最亮1%、余下最亮1000像素均谱作参考；手工像素标签训练SVM并补前景孔洞。",
+        "conclusions": "TableII：ResNet18原始/DSAB/CBAM准确率89.42%/90.56%/88.59%；ResNet34为90.81%/90.86%/88.03%。R34＋DSAB F1 .8851、specificity .9364、sensitivity .8679；无DSAB的R34 sensitivity .8710更高。Fig5 R34＋DSAB ROC面积.96692。CAM仅示例关注局部叶区；不称所有指标领先、确诊感染或田间推广已验证。",
+        "limitations": "AM而非最终VoR实际已读。§II为100株两次采图，§II-D又写200图含100感染/100健康plants，计数单位有歧义；TableI前两列算术不一致。标签假设所有接种株感染且全部图块继承，不含逐株病原检测；图块划分未说明植株/日期独立，不能外推新植株泛化或确认泄漏已发生。2021印161带、12/13 WAI、spores/L；2024为150带、多时段、spores/ml，不合并这些实验事实。原文未给作者官方代码链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -40180,6 +40266,24 @@
             "supports": [
               "正式题名、作者、场所、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+            "checkedAt": "2026-10-11",
+            "level": "指定版本逐页全文与原图核验",
+            "supports": [
+              "AM §II直接采集并处理161波段470–900 nm光学高光谱，任务为甘蔗黑穗病接种/对照二分类；分割是预处理，CAM为定性解释。",
+              "数据、标签、划分、方法与表格结果及原文限制",
+              "仅实际版本已读，引用目录不表示被引正文已读"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+            "checkedAt": "2026-10-11",
+            "level": "甘蔗研究全文任务分类核验",
+            "supports": [
+              "实际采集及输入光学VNIR高光谱立方体，图块接种/对照标签与病害检测目标支持plant-disease-detection和agriculture-phenotyping；SVM分割、CAM及合成RGB是辅助，不新增语义分割/多模态任务。"
+            ]
           }
         ],
         "versions": [
@@ -40189,12 +40293,103 @@
             "url": "https://doi.org/10.1109/ivcnz54163.2021.9653386",
             "doi": "10.1109/ivcnz54163.2021.9653386",
             "year": 2021,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI书目；该DOI的Griffith AM共7页已读，不表示最终VoR已读。"
+          },
+          {
+            "id": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021-griffith-am",
+            "type": "作者接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+            "doi": "10.1109/ivcnz54163.2021.9653386",
+            "year": 2021,
+            "readingProgress": "full_text_read",
+            "relation": "机构封面明确AM；1封面＋6论文页全部阅读，Fig2/4保留原图。"
+          },
+          {
+            "id": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021-related-zhou-42-hsi-2024",
+            "type": "关联研究（方法沿用）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+            "year": 2024,
+            "relation": "2024 VoR §2.4.1/Fig4/ref36明确沿用2021 DSAB；既读ASSCT2023也引用同方法。仅关联方法，不认定会议/期刊扩展关系或合并作者、数据、实验、阅读状态。",
+            "doi": "10.1016/j.jafr.2024.101369"
+          },
+          {
+            "id": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021-related-zhou-sugarcane-assct-2023",
+            "type": "关联研究（方法沿用）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
+            "year": 2023,
+            "relation": "2024 VoR §2.4.1/Fig4/ref36明确沿用2021 DSAB；既读ASSCT2023也引用同方法。仅关联方法，不认定会议/期刊扩展关系或合并作者、数据、实验、阅读状态。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021"
+        "methodFamilyId": "zhou-sugarcane-dsab",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "实际采集及输入光学VNIR高光谱立方体，图块接种/对照标签与病害检测目标支持plant-disease-detection和agriculture-phenotyping；SVM分割、CAM及合成RGB是辅助，不新增语义分割/多模态任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "1e84521b7da0155fac6f34bab177495e203b27215eee13870bf198b3a300eaf8",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content"
+          ]
+        }
       },
-      "citation": "@inproceedings{zhou-scholar-early-detection-of-sugarcane-smut-disease--2021,\n  title = {Early Detection of Sugarcane Smut Disease in Hyperspectral Images},\n  author = {Dong Bao and Jun Zhou and Shamsul Arafin Bhuiyan and Ali Zia and Rebecca Ford and Yongsheng Gao},\n  year = {2021},\n  doi = {10.1109/ivcnz54163.2021.9653386}\n}\n"
+      "citation": "@inproceedings{zhou-scholar-early-detection-of-sugarcane-smut-disease--2021,\n  title = {Early Detection of Sugarcane Smut Disease in Hyperspectral Images},\n  author = {Dong Bao and Jun Zhou and Shamsul Arafin Bhuiyan and Ali Zia and Rebecca Ford and Yongsheng Gao},\n  year = {2021},\n  doi = {10.1109/ivcnz54163.2021.9653386}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+          "figureLabel": "Fig. 2",
+          "caption": "2021 AM：在预激活ResNet残差块内依次插入通道与空间自注意力DSAB。",
+          "page": 3,
+          "verificationNote": "免费原PDF第3页/正文第2页，300dpi原页裁取；完整模块、箭头、图例及原图注已视觉核验，未重绘。来源版本及版权/许可保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              195,
+              216,
+              2392,
+              792
+            ]
+          },
+          "path": "figures/zhou-scholar-early-detection-of-sugarcane-smut-disease--2021/ivcnz2021-fig2.png",
+          "width": 2197,
+          "height": 576,
+          "sha256": "35647c3df3ad34e2eab00c84a221465e6cb75c76e36a550a62c970acc632d9b1",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Ali Zia, Rebecca Ford, Yongsheng Gao · IVCNZ 2021 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+          "figureLabel": "Fig. 4",
+          "caption": "2021 AM：DSAB通道与空间自注意力模块的原始结构。",
+          "page": 5,
+          "verificationNote": "免费原PDF第5页/正文第4页，300dpi原页裁取；完整模块、箭头、图例及原图注已视觉核验，未重绘。来源版本及版权/许可保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              195,
+              216,
+              2392,
+              988
+            ]
+          },
+          "path": "figures/zhou-scholar-early-detection-of-sugarcane-smut-disease--2021/ivcnz2021-fig4.png",
+          "width": 2197,
+          "height": 772,
+          "sha256": "d17134a40a7ae6dbac49d78f5738e63ef93eafbfdbaff56535ad3f07c349de45",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Ali Zia, Rebecca Ford, Yongsheng Gao · IVCNZ 2021 · Accepted Manuscript · © IEEE"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
@@ -42625,7 +42820,7 @@
     },
     {
       "id": "zhou-scholar-arxiv-2501-16700",
-      "shortTitle": "Determining Mosaic Resilience in Sugarcane Plants using Hyperspectral…",
+      "shortTitle": "Sugarcane mosaic resilience · 7 ratings",
       "title": "Determining Mosaic Resilience in Sugarcane Plants using Hyperspectral Images",
       "authors": "Ali Zia, Jun Zhou, Muyiwa Olayemi",
       "year": 2025,
@@ -42637,31 +42832,31 @@
         "hyperspectral"
       ],
       "doi": "10.48550/arXiv.2501.16700",
-      "representation": "Scholar差集 arXiv 题名与原站摘要确认高光谱任务。",
+      "representation": "11带近红外甘蔗图块的七级品种花叶病抗性评级分类；普通ResNet18，不是DSAB感染检测。",
       "tags": [],
-      "summary": "Hyperspectral imaging and machine learning estimate sugarcane mosaic resilience.",
-      "input": "高光谱影像；具体采集设置见摘要。",
-      "output": "甘蔗品种马赛克抗性分类。",
-      "mechanism": "Local spectral patches aggregate into global representations with ResNet18; SVM comparison.",
-      "readingNote": "Google Scholar记录、arXiv原站题名/作者/摘要/提交历史核验；未阅读全文。",
-      "paper": "https://arxiv.org/abs/2501.16700",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "以八个甘蔗品种预先给定的七个花叶病抗性等级作为标签，处理Ximea相机11带近红外图像并用ResNet18分类。111幅室内/室外图像切成图块后6:2:2划分；19²、stride9测试准确率98.2906%/96.1722%，15²不重叠时降至85.5263%/62.3853%。未证明未知植株或未知品种抗病性泛化，不作为病原感染或土地覆盖分类。",
+      "input": "作者称Ximea hyperspectral camera，约690–840 nm、11带、216×409×11；具体型号、谱宽及选带机制未给。暗白校准和SVM前景分割后，全部为叶片前景的n×n×11图块。",
+      "output": "图块所属品种预定义抗性评级：1/2/5/6/7/8/9七类，数字越低越抗花叶病；两个品种同为6级。不是八品种识别或逐图感染/健康检测。",
+      "mechanism": "白板k-means去最亮1%、余下最亮1000像素均谱校准；手工前景标签训练SVM分割。均谱及3×3邻域SAM图Laplacian用于定性分析；SVM比较将19×19×11展平为3971维，ResNet18直接分类局部谱空图块并作±3像素平移和20°旋转增强。正文只给标准残差块Fig5，未描述独立的全局植株特征聚合结构或DSAB。",
+      "readingNote": "arXiv2501.16700v1免费PDF10页全部逐页阅读；2表、6图及17条引文目录已读，原Table2嵌入图片已视觉核对。作者列表为Ali Zia/Jun Zhou/Muyiwa Olayemi，但PDF未给单位，不新增仅凭姓名的Griffith身份结论。保留原11带及硬件细节未知；纠正地物分类为实际七级抗病评级，不移植摘要中的未解释全局聚合或其他甘蔗稿DSAB。",
+      "paper": "https://arxiv.org/pdf/2501.16700v1",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
-          "land-cover-classification"
+          "plant-disease-resistance-rating"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "arXiv摘要明确高光谱输入或高光谱领域任务。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该 arXiv 工作如何解决题名所示高光谱任务？",
-        "datasets": "Eight sugarcane varieties under controlled and field conditions.",
-        "experimentSetting": "arXiv 原站摘要与提交历史核验；完整实验设置待全文。",
-        "conclusions": "Abstract reports high classification accuracy; exact accuracy, sensor settings and class protocol require full text.",
-        "limitations": "仅核验摘要，未核验全文、表格、图版、代码和数据许可。",
+        "relationNote": "v1正文直接处理作者所称高光谱相机的11带近红外立方体；型号/FWHM/是否子集未给，不凭11这一数量猜成纯多光谱或连续宽谱。当前实际任务是预定义抗性等级分类，非地物分类和感染诊断。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "局部近红外谱空图块能否区分甘蔗品种预定义的花叶病抗性等级，重叠与图块规模如何影响评级分类？",
+        "datasets": "58室内＋53室外共111图，各品种各环境6–9图；216×409×11、约690–840 nm。Table1品种/等级：CP29-116/6、Pindar/2、Q44/8、Q68/5、Q78/9、Q82/1、155/6、Q205/7；八品种七等级。各图症状从无到严重，但统一继承品种评级，不是逐株PCR/逐图严重度真值；采集日期、植株总数、自然/人工感染设置未说明。",
+        "experimentSetting": "所有图块像素均需为叶片，生成后按6:2:2 train/val/test划分；未说明按父图/植株/品种隔离。室内/室外各自训练评测，不是跨环境迁移。Table2分别n19/17/15、stride9及n15/stride15；19²时train/val/test室内703/230/234、室外630/207/209。ResNet18增强平移±3 pixels、旋转20°；优化器、学习率、epochs、batch、硬件未给。原文称多种SVCs/SCRs约31–38%，没有回归误差指标，不猜模型细节。",
+        "conclusions": "Table2测试准确率室内/室外：n19 stride9为98.2906%/96.1722%；n17 stride9为92.8803%/95.1807%；n15 stride9为91.2621%/91.4384%；n15 stride15不重叠为85.5263%/62.3853%。19²的val为94.7826%/93.7198%。作者将改善归于更充分图块和重叠，但没有未知植株/品种独立测试，不把最高图块准确率当成独立抗病育种预测。",
+        "limitations": "同品种所有图块继承固定评级，品种身份与抗性目标混杂；重叠图块且生成后划分，原文无父图/植株隔离说明，不断言实际泄漏已证实。11带的具体传感器、谱宽/连续性及选带机制缺失，保留原作者HSI表述与实际通道数，不补密集全谱规格。摘要称全局特征聚合，正文未给独立聚合模块；Fig5仅通用ResNet残差块，未发现总体流程或DSAB。未提供作者官方代码/数据链接；未证明Crossref前5以外无正式版本。",
         "dataLinks": [],
         "evidence": [
           {
@@ -42683,6 +42878,24 @@
               "该版本题名与原始作者列表（解析异常另留源表）",
               "摘要所述高光谱方法与任务；不提升全文状态"
             ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2501.16700v1",
+            "checkedAt": "2026-10-11",
+            "level": "指定版本逐页全文与原图核验",
+            "supports": [
+              "v1正文直接处理作者所称高光谱相机的11带近红外立方体；型号/FWHM/是否子集未给，不凭11这一数量猜成纯多光谱或连续宽谱。当前实际任务是预定义抗性等级分类，非地物分类和感染诊断。",
+              "数据、标签、划分、方法与表格结果及原文限制",
+              "仅实际版本已读，引用目录不表示被引正文已读"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2501.16700v1",
+            "checkedAt": "2026-10-11",
+            "level": "甘蔗研究全文任务分类核验",
+            "supports": [
+              "v1 Table1及§3–5直接确认七级品种花叶病抗性评级；纠正地物分类，保留农业表型应用。不把抗病性评级当感染状态、八品种识别或连续生化参数。实际11带及传感器规格未知保留，不猜纯多光谱或宽谱规格。"
+            ]
           }
         ],
         "versions": [
@@ -42695,14 +42908,38 @@
             "arxivId": "2501.16700",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v1预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。",
+            "relation": "固定v1预印本10页全部阅读；原站元数据对应同ID，不新增论文计数。正式发表版本尚无确切匹配，不称不存在。",
             "firstSubmittedAt": "2025-01-28T04:33:28Z",
-            "updatedAt": "2025-01-28T04:33:28Z"
+            "updatedAt": "2025-01-28T04:33:28Z",
+            "readingProgress": "full_text_read"
           }
         ],
-        "methodFamilyId": "zhou-scholar-arxiv-2501.16700"
+        "methodFamilyId": "zhou-scholar-arxiv-2501.16700",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "v1 Table1及§3–5直接确认七级品种花叶病抗性评级；纠正地物分类，保留农业表型应用。不把抗病性评级当感染状态、八品种识别或连续生化参数。实际11带及传感器规格未知保留，不猜纯多光谱或宽谱规格。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "9f0a45d853d6b12343722f2a488ba854f23c0a91c16d0caada79741f7b0ef280",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2501.16700v1"
+          ]
+        }
       },
-      "citation": "@misc{zhou-scholar-arxiv-2501-16700,\n  title = {Determining Mosaic Resilience in Sugarcane Plants using Hyperspectral Images},\n  author = {Zia Ali and Zhou Jun and Olayemi Muyiwa},\n  year = {2025},\n  eprint = {2501.16700},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2501.16700}\n}\n"
+      "citation": "@misc{zhou-scholar-arxiv-2501-16700,\n  title = {Determining Mosaic Resilience in Sugarcane Plants using Hyperspectral Images},\n  author = {Zia, Ali and Zhou, Jun and Olayemi, Muyiwa},\n  year = {2025},\n  eprint = {2501.16700},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2501.16700v1}\n}\n",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "固定v1全部10页已读并视觉核对PDF7 Fig5：仅标准ResNet残差块示意，未给本文总体流程/独立全局聚合图，不将通用基线图标成原创方法框架。原图保留于已归档PDF。",
+        "sourceUrl": "https://arxiv.org/pdf/2501.16700v1",
+        "checkedAt": "2026-10-11"
+      }
     },
     {
       "id": "zhou-dblp-arxiv-2412-00302",
@@ -43258,7 +43495,23 @@
             "type": "正式会议论文",
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
             "year": 2023,
-            "relation": "ASSCT44:176–183；采用2021 DSAB，2024近题期刊版本关系待原文明确声明。"
+            "relation": "ASSCT44:176–183，既有全文阅读状态保留；采用2021 DSAB。2024 VoR明确沿用2021方法，但未声明是本会议稿扩展，实验不合并。"
+          },
+          {
+            "id": "zhou-sugarcane-assct-2023-related-zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+            "type": "关联研究（方法沿用）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+            "year": 2021,
+            "relation": "2024 VoR §2.4.1/Fig4/ref36明确沿用2021 DSAB；既读ASSCT2023也引用同方法。仅关联方法，不认定会议/期刊扩展关系或合并作者、数据、实验、阅读状态。",
+            "doi": "10.1109/ivcnz54163.2021.9653386"
+          },
+          {
+            "id": "zhou-sugarcane-assct-2023-related-zhou-42-hsi-2024",
+            "type": "关联研究（方法沿用）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+            "year": 2024,
+            "relation": "2024 VoR §2.4.1/Fig4/ref36明确沿用2021 DSAB；既读ASSCT2023也引用同方法。仅关联方法，不认定会议/期刊扩展关系或合并作者、数据、实验、阅读状态。",
+            "doi": "10.1016/j.jafr.2024.101369"
           }
         ],
         "methodFamilyId": "zhou-sugarcane-dsab"
@@ -46245,7 +46498,6 @@
         "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
         "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019",
         "zhou-scholar-arxiv-2609-37340",
-        "zhou-scholar-arxiv-2501-16700",
         "zhou-dblp-arxiv-2412-00283",
         "zhou-dblp-arxiv-2404-00272",
         "jun-zhou-dblp-whispers-weed-2019"
@@ -46280,6 +46532,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2013结构稀疏草稿、2015连续采样AM、2017控制采样AM/v1全文核验；任务/方法与版本、理论和协议限制分列。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "甘蔗抗病评级v1全文明确七级品种抗性而非地物类别；仅同步该论文标签关联。"
         }
       ]
     },
@@ -48686,6 +48943,26 @@
           "date": "2026-10-11",
           "action": "created",
           "reason": "完整阅读区分概率图的K/各层重用与扩散端元/FCLS丰度具体机制。"
+        }
+      ]
+    },
+    {
+      "id": "plant-disease-resistance-rating",
+      "name": "植物抗病性评级",
+      "dimension": "task",
+      "definition": "从植物光谱或谱空图像预测品种预定义的抗病性等级；记录等级来源与品种/植株独立性，不将感染状态、症状严重度或植物种类标签当作抗病评级。",
+      "status": "confirmed",
+      "color": "#87a692",
+      "createdAt": "2026-10-11",
+      "rationale": "arXiv2501.16700v1 Table1/§3–5明确八品种、七个预定义花叶病抗性等级；既有地物/品种类别、病害感染检测及连续生化参数任务均不准确。",
+      "evidencePaperIds": [
+        "zhou-scholar-arxiv-2501-16700"
+      ],
+      "history": [
+        {
+          "date": "2026-10-11",
+          "action": "created",
+          "reason": "按全文实际预测目标区分品种抗病评级与感染诊断，纠正原地物分类关联。"
         }
       ]
     }

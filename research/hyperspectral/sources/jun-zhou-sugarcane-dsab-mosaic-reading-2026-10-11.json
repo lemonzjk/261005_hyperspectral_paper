@@ -1,0 +1,367 @@
+{
+  "checkedAt": "2026-10-11",
+  "scope": "三篇既有甘蔗直接高光谱研究的免费实际版本全文、方法关联、精确任务与原图；没有代码仓库检查。",
+  "accessFile": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-access.json",
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 4,
+  "newFullTextReadingCount": 3,
+  "pdfPagesRead": 29,
+  "figuresAdded": 3,
+  "materials": [
+    {
+      "file": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-ivcnz2021-griffith.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 4402243,
+      "sha256": "d2c72349e1766663cee96b14c6429a5e3be7951163f46ff8213f56b45534472d",
+      "paperId": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+      "pdfDownloaded": true,
+      "pageCount": 7,
+      "pageTextFile": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-ivcnz2021-pages.json",
+      "version": "Griffith AM（1封面＋6正文）",
+      "readingProgress": "full_text_read",
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "file": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-jafr2024-griffith.pdf",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+      "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+      "status": 200,
+      "contentType": "application/pdf;charset=UTF-8",
+      "bytes": 6703430,
+      "sha256": "beba823b50a7417d87fcbdc7c5cc2beac2efc4330e209733078ef41d4d106d6d",
+      "paperId": "zhou-42-hsi-2024",
+      "pdfDownloaded": true,
+      "pageCount": 12,
+      "pageTextFile": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-jafr2024-pages.json",
+      "version": "Griffith VoR（1封面＋11正文），CC BY4.0",
+      "readingProgress": "full_text_read",
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "file": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-mosaic2025-arxiv-v1.pdf",
+      "url": "https://arxiv.org/pdf/2501.16700v1",
+      "finalUrl": "https://arxiv.org/pdf/2501.16700v1",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 714539,
+      "sha256": "1e7bc15af323e1f73d962c02de390e64ffc08b8be688e77f7012596504436494",
+      "paperId": "zhou-scholar-arxiv-2501-16700",
+      "pdfDownloaded": true,
+      "pageCount": 10,
+      "pageTextFile": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-mosaic2025-pages.json",
+      "version": "arXiv2501.16700v1",
+      "readingProgress": "full_text_read",
+      "readPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "checkedAt": "2026-10-11"
+    }
+  ],
+  "papers": [
+    {
+      "paperId": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+      "method": "预激活ResNet18/34去掉max pooling，仅首层7×7卷积及conv3阶段首层减半分辨率。每个残差块末端、shortcut相加前插入DSAB：先C×C通道自注意力，再N×N空间自注意力（N=H×W）；1×1卷积生成Q/K/V并配BN/ReLU，通道相似度按√N缩放。Eq1为F′=Ms(Mc(F))+F，再与shortcut相加。CAM用于观察预测关注区域，不另构成Transformer骨干或分子感染定位。",
+      "datasets": "§II：50接种＋50对照共100株，各在12、13 WAI采一幅，共200图；可见症状15 WAI。接种浓度原印1×10^6 teliospores/L。Snapscan VNIR 470–900 nm、161带、1088×2048；32×32非重叠图块，前景≥45%，继承父图接种/对照标签，声称30261块。TableI原总计train17664/val6144/test6453；healthy9225/3596/3856、infected8559/2591/2597，前两列分类和与总计不一致，不修补数字。",
+      "experimentSetting": "TensorFlow2；Titan V＋Titan Xp、mirrored strategy；Adam/binary cross-entropy，200 epochs、batch256、初始lr .0003，每20 epochs乘.7，取最高验证准确率checkpoint。图块生成后6:2:2划分，未说明植株身份或重复采集日期隔离。白板k-means取最亮簇、去最亮1%、余下最亮1000像素均谱作参考；手工像素标签训练SVM并补前景孔洞。",
+      "results": "TableII：ResNet18原始/DSAB/CBAM准确率89.42%/90.56%/88.59%；ResNet34为90.81%/90.86%/88.03%。R34＋DSAB F1 .8851、specificity .9364、sensitivity .8679；无DSAB的R34 sensitivity .8710更高。Fig5 R34＋DSAB ROC面积.96692。CAM仅示例关注局部叶区；不称所有指标领先、确诊感染或田间推广已验证。",
+      "limitations": "AM而非最终VoR实际已读。§II为100株两次采图，§II-D又写200图含100感染/100健康plants，计数单位有歧义；TableI前两列算术不一致。标签假设所有接种株感染且全部图块继承，不含逐株病原检测；图块划分未说明植株/日期独立，不能外推新植株泛化或确认泄漏已发生。2021印161带、12/13 WAI、spores/L；2024为150带、多时段、spores/ml，不合并这些实验事实。原文未给作者官方代码链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+          "figureLabel": "Fig. 2",
+          "caption": "2021 AM：在预激活ResNet残差块内依次插入通道与空间自注意力DSAB。",
+          "page": 3,
+          "verificationNote": "免费原PDF第3页/正文第2页，300dpi原页裁取；完整模块、箭头、图例及原图注已视觉核验，未重绘。来源版本及版权/许可保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              195,
+              216,
+              2392,
+              792
+            ]
+          },
+          "path": "figures/zhou-scholar-early-detection-of-sugarcane-smut-disease--2021/ivcnz2021-fig2.png",
+          "width": 2197,
+          "height": 576,
+          "sha256": "35647c3df3ad34e2eab00c84a221465e6cb75c76e36a550a62c970acc632d9b1",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Ali Zia, Rebecca Ford, Yongsheng Gao · IVCNZ 2021 · Accepted Manuscript · © IEEE"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+          "figureLabel": "Fig. 4",
+          "caption": "2021 AM：DSAB通道与空间自注意力模块的原始结构。",
+          "page": 5,
+          "verificationNote": "免费原PDF第5页/正文第4页，300dpi原页裁取；完整模块、箭头、图例及原图注已视觉核验，未重绘。来源版本及版权/许可保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              195,
+              216,
+              2392,
+              988
+            ]
+          },
+          "path": "figures/zhou-scholar-early-detection-of-sugarcane-smut-disease--2021/ivcnz2021-fig4.png",
+          "width": 2197,
+          "height": 772,
+          "sha256": "d17134a40a7ae6dbac49d78f5738e63ef93eafbfdbaff56535ad3f07c349de45",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Ali Zia, Rebecca Ford, Yongsheng Gao · IVCNZ 2021 · Accepted Manuscript · © IEEE"
+        }
+      ]
+    },
+    {
+      "paperId": "zhou-42-hsi-2024",
+      "method": "§2.4.1与Fig4明确DSAB来自作者2021论文[36]：ResNet34预激活块中通道自注意力CSAM后接空间自注意力SSAM，保留残差。conv1/conv2_x从64改128 filters，conv3首层stride改1。每病独立模型；策略1各日期单独训练/评测，最早三次smut合并；策略2所有日期训练块合并，再分日期评测。植株层以预测感染图块占比阈值.1–.5（步长.1）聚合；非独立病原检测。",
+      "datasets": "Woodford SRA 2021：smut50接种＋50对照、五品种Nco310/Q124/Q171/Q205/Q208；ScMV45接种＋46对照、五品种CP29-116/Q44/Q68/Q78/Q82。smut11日期各100图、ScMV8日期各91图，合计1828幅；150带470–900 nm、1088×2048。smut接种Feb25（原印10^6 spores/ml）、ScMV Apr21；首可见症状11/8 WAI。脚注明确作者数据DOI10.25904/1912/4757，与既有4TB需申请登记对应；未下载实际数据，不称文件数量/划分匹配已核。",
+      "experimentSetting": "TensorFlow2、Adam/categorical cross-entropy、130 epochs、lr .0003；原文“decayed ... by 70% every 10 epochs”原样保留，不猜实际倍率。策略1 Titan V/Ubuntu22，策略2八Tesla T4/Ubuntu18；最高val checkpoint。五折交叉验证，文中提train/val/test但未给6:2:2比例或植株隔离说明。32²非重叠图块按接种父图继承标签，前景占比阈值未给数值；不移植2021的45%。NIR700–900 nm、visible74带、RGB由colour matching function合成，非独立RGB相机；植株阈值.1–.5按.1搜索。",
+      "results": "§3.1 smut May6(10 WAI)最高图块准确率92.64%，最早合并日期约62%；ScMV Jun8最高94.05%，May6 sensitivity .95。结论分别声称smut8/10 WAI超过80%/90%，可见11 WAI；ScMV1 WAI超过90%，可见8 WAI。策略2 smut整体不如分日期策略。HSI与模拟RGB平均差19.5/21.3个百分点，RGB均值62.38%/67.52%。植株阈值.4的平均准确率90.89%/95.94%，smut May25达97%，ScMV Apr28达100%；这些为本稿协议结果，不与会议稿早检日期混用。",
+      "limitations": "接种/对照标签假定感染，无每日期PCR验证；未说明五折是否按植株隔离，同株多日期是否跨集合，阈值选取有无独立验证。室外盆栽/分开放置及环境变化不等于自然感染田间验证。2021为161带，本稿150带，原文未说明差异原因；本稿1828图不同于ASSCT3245图，不推测删选或扩展关系。正文Jun27与Table2 Jun23日期写法有差异；校准式(I−D)/(W−D)与后续简写I/W不完全一致；学习率衰减措辞不补实现。原文无作者官方代码链接。",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+          "figureLabel": "Fig. 4",
+          "caption": "2024 VoR：沿用2021 DSAB的CSAM/SSAM及修改的ResNet34残差块；保留原注ref36。",
+          "page": 6,
+          "verificationNote": "免费原PDF第6页/正文第5页，300dpi原页裁取；完整模块、箭头、图例及原图注已视觉核验，未重绘。来源版本及版权/许可保留在PDF。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "PyMuPDF Matrix(300/72,300/72)",
+            "pixelBox": [
+              145,
+              2058,
+              2346,
+              3117
+            ]
+          },
+          "path": "figures/zhou-42-hsi-2024/jafr2024-fig4.png",
+          "width": 2201,
+          "height": 1059,
+          "sha256": "6391474a44aa856b4840cdaf305f887bb69cdaf1cf2adfb80f47fd48205c2287",
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "attribution": "Dong Bao, Jun Zhou, Shamsul Arafin Bhuiyan, Prakash Adhikari, Gervase Tuxworth, Rebecca Ford, Yongsheng Gao · Journal of Agriculture and Food Research 2024 · Version of Record · CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-arxiv-2501-16700",
+      "method": "白板k-means去最亮1%、余下最亮1000像素均谱校准；手工前景标签训练SVM分割。均谱及3×3邻域SAM图Laplacian用于定性分析；SVM比较将19×19×11展平为3971维，ResNet18直接分类局部谱空图块并作±3像素平移和20°旋转增强。正文只给标准残差块Fig5，未描述独立的全局植株特征聚合结构或DSAB。",
+      "datasets": "58室内＋53室外共111图，各品种各环境6–9图；216×409×11、约690–840 nm。Table1品种/等级：CP29-116/6、Pindar/2、Q44/8、Q68/5、Q78/9、Q82/1、155/6、Q205/7；八品种七等级。各图症状从无到严重，但统一继承品种评级，不是逐株PCR/逐图严重度真值；采集日期、植株总数、自然/人工感染设置未说明。",
+      "experimentSetting": "所有图块像素均需为叶片，生成后按6:2:2 train/val/test划分；未说明按父图/植株/品种隔离。室内/室外各自训练评测，不是跨环境迁移。Table2分别n19/17/15、stride9及n15/stride15；19²时train/val/test室内703/230/234、室外630/207/209。ResNet18增强平移±3 pixels、旋转20°；优化器、学习率、epochs、batch、硬件未给。原文称多种SVCs/SCRs约31–38%，没有回归误差指标，不猜模型细节。",
+      "results": "Table2测试准确率室内/室外：n19 stride9为98.2906%/96.1722%；n17 stride9为92.8803%/95.1807%；n15 stride9为91.2621%/91.4384%；n15 stride15不重叠为85.5263%/62.3853%。19²的val为94.7826%/93.7198%。作者将改善归于更充分图块和重叠，但没有未知植株/品种独立测试，不把最高图块准确率当成独立抗病育种预测。",
+      "limitations": "同品种所有图块继承固定评级，品种身份与抗性目标混杂；重叠图块且生成后划分，原文无父图/植株隔离说明，不断言实际泄漏已证实。11带的具体传感器、谱宽/连续性及选带机制缺失，保留原作者HSI表述与实际通道数，不补密集全谱规格。摘要称全局特征聚合，正文未给独立聚合模块；Fig5仅通用ResNet残差块，未发现总体流程或DSAB。未提供作者官方代码/数据链接；未证明Crossref前5以外无正式版本。",
+      "frameworkFigures": []
+    }
+  ],
+  "methodReuseEvidence": {
+    "methodFamilyId": "zhou-sugarcane-dsab",
+    "paperIds": [
+      "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+      "zhou-sugarcane-assct-2023",
+      "zhou-42-hsi-2024"
+    ],
+    "primarySource": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+    "pdfPages": [
+      6,
+      7,
+      12
+    ],
+    "articlePages": [
+      5,
+      6,
+      11
+    ],
+    "finding": "2024 §2.4.1/Fig4及ref36明确采用2021 DSAB；与既有ASSCT2023同方法关联，未发现明确扩展声明。",
+    "boundary": "2021/2023/2024分别为161/150/150带、200/3245/1828图与不同日期/划分，不合并作者/协议；2025普通ResNet18评级稿不归入DSAB方法族。"
+  },
+  "citationCrosscheck": [
+    {
+      "referenceNumber": 36,
+      "fromPaperId": "zhou-42-hsi-2024",
+      "catalogId": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+      "basis": "原引文作者、完整题名和IVCNZ2021对应既有记录；同方法复用并非新增论文。",
+      "boundary": "此处两篇本身均实际全文阅读，其他引文未自动记为全文。"
+    }
+  ],
+  "classificationChecks": [
+    {
+      "paperId": "zhou-scholar-early-detection-of-sugarcane-smut-disease--2021",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/8a346f31-d65b-403e-a15a-c5b8adc43709/content",
+      "level": "甘蔗研究全文任务分类核验",
+      "supports": [
+        "实际采集及输入光学VNIR高光谱立方体，图块接种/对照标签与病害检测目标支持plant-disease-detection和agriculture-phenotyping；SVM分割、CAM及合成RGB是辅助，不新增语义分割/多模态任务。"
+      ]
+    },
+    {
+      "paperId": "zhou-42-hsi-2024",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/218cbeb0-cf2e-4258-a234-1d5383316e75/content",
+      "level": "甘蔗研究全文任务分类核验",
+      "supports": [
+        "实际采集及输入光学VNIR高光谱立方体，图块接种/对照标签与病害检测目标支持plant-disease-detection和agriculture-phenotyping；SVM分割、CAM及合成RGB是辅助，不新增语义分割/多模态任务。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-arxiv-2501-16700",
+      "url": "https://arxiv.org/pdf/2501.16700v1",
+      "level": "甘蔗研究全文任务分类核验",
+      "supports": [
+        "v1 Table1及§3–5直接确认七级品种花叶病抗性评级；纠正地物分类，保留农业表型应用。不把抗病性评级当感染状态、八品种识别或连续生化参数。实际11带及传感器规格未知保留，不猜纯多光谱或宽谱规格。"
+      ]
+    }
+  ],
+  "visualEvidenceFiles": [
+    "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-ivcnz2021-page-4.png",
+    "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-mosaic2025-page-7.png",
+    "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-mosaic2025-page-9.png"
+  ],
+  "formalVersionQuery": {
+    "url": "https://api.crossref.org/works?query.bibliographic=Determining%20Mosaic%20Resilience%20in%20Sugarcane%20Plants%20using%20Hyperspectral%20Images&rows=5",
+    "responseFile": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-mosaic2025-crossref-query.json",
+    "totalResults": 6588340,
+    "requestedRows": 5,
+    "reviewedResults": [
+      {
+        "doi": "10.1079/cabicompendium.49801",
+        "title": [
+          "Sugarcane mosaic virus (sugarcane mosaic)"
+        ],
+        "decision": "not_corresponding_version",
+        "basis": "指定题名排序前5并非目标题名/作者组合，不建立正式版本对应。"
+      },
+      {
+        "doi": "10.1079/cpc.49801.20210102676",
+        "title": [
+          "Sugarcane mosaic virus (sugarcane mosaic)."
+        ],
+        "decision": "not_corresponding_version",
+        "basis": "指定题名排序前5并非目标题名/作者组合，不建立正式版本对应。"
+      },
+      {
+        "doi": "10.3390/plants12152805",
+        "title": [
+          "Relationship between Sugarcane eIF4E Gene and Resistance against Sugarcane Streak Mosaic Virus"
+        ],
+        "decision": "not_corresponding_version",
+        "basis": "指定题名排序前5并非目标题名/作者组合，不建立正式版本对应。"
+      },
+      {
+        "doi": "10.14264/106584",
+        "title": [
+          "Molecular characterisation of sugarcane mosaic virus and sugarcane mosaic virus resistant, transgenic sugarcaane"
+        ],
+        "decision": "not_corresponding_version",
+        "basis": "指定题名排序前5并非目标题名/作者组合，不建立正式版本对应。"
+      },
+      {
+        "doi": "10.5897/ajb11.027",
+        "title": [
+          "Molecular mapping of quantitative trait loci (QTLs) determining resistance to Sugarcane mosaic virus in maize using simple sequence repeat (SSR) markers"
+        ],
+        "decision": "not_corresponding_version",
+        "basis": "指定题名排序前5并非目标题名/作者组合，不建立正式版本对应。"
+      }
+    ],
+    "finding": "排序前5未匹配目标正式版本；只约束此查询，不证明论文无其他题名版本或未发表。"
+  },
+  "boundary": "论文数390/保护作者181不变；三个实际版本全读29页，不代表引用正文、作者全集或领域全量。代码仅记录已有官方链接，本批三稿未找到论文提供的官方代码链接，不另搜索或检查代码。",
+  "validation": {
+    "dataCommand": "npm run validate",
+    "dataResult": "passed",
+    "buildCommand": "npm run build",
+    "buildResult": "passed",
+    "browserReportFile": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11-browser-results.json",
+    "browserChecks": "桌面/手机作者181、评级标签1、URL恢复、实际源链接与3原图加载，无浏览器异常；只访问本地页/图，不打开作者代码链接。"
+  },
+  "uemmairFormalVersionComparison": {
+    "objectId": 10470711,
+    "doi": "10.1145/3746027.3758220",
+    "decision": "pending",
+    "primaryEvidence": [
+      {
+        "file": "jun-zhou-griffith-profile-2026-10-11-publications-0.json",
+        "sha256": "b4bc072887ee46cfe4ff9078486f0a77a08b9352c6f92c9b9ee65cc6f22dd60f"
+      },
+      {
+        "file": "jun-zhou-input-followup4-uemmair-crossref-2026-10-11.json",
+        "sha256": "ade40bcd8be2eeb1f808aec109358ba73753a7bb83b880d7d7cde36c0c2994af"
+      },
+      {
+        "file": "jun-zhou-arxiv-author-page-200-2026-10-10.xml",
+        "sha256": "783e2ccf4d97274a81fc781364e9ee834f5fea3f4c622a7f8dc8725320cf4030"
+      }
+    ],
+    "formalInstitutionResourceIndex": 65,
+    "formalTitle": "UEMM-Air: Enable UAVs to Undertake More Multi-modal Tasks",
+    "formalAuthors": [
+      "Liang Yao",
+      "Fan Liu",
+      "Shengxiang Xu",
+      "Chuanyi Zhang",
+      "Shimin Di",
+      "Xing Ma",
+      "Jianyu Jiang",
+      "Zequan Wang",
+      "Jun Zhou"
+    ],
+    "preprintId": "http://arxiv.org/abs/2406.06230v3",
+    "preprintTitle": "UEMM-Air: Make Unmanned Aerial Vehicles Perform More Multi-modal Tasks",
+    "preprintAuthors": [
+      "Liang Yao",
+      "Fan Liu",
+      "Shengxiang Xu",
+      "Chuanyi Zhang",
+      "Xing Ma",
+      "Jianyu Jiang",
+      "Zequan Wang",
+      "Shimin Di",
+      "Jun Zhou"
+    ],
+    "sameDatasetClue": "两份原摘要均称UEMM-Air、120k pairs、six modalities；同九作者但Shimin Di排序变化。",
+    "abstractDifference": "正式机构原摘要新增四感知任务、与SynDrone的标注比较及5.8%提升/少于一半数据表述；没有逐项列出六模态。Crossref没有摘要或relation；题名也有改动。",
+    "identityEvidence": "机构Jun Zhou resolvedUser7205；已有精确正式Crossref的ORCID/Griffith作者身份线索保留。",
+    "finding": "支持相关成果线索，不能把已读v3的六模态定义/范围决定直接迁移到未读正式正文；正式DOI仍待范围核验。官方代码URL在摘要中出现但只作链接，不访问。",
+    "boundary": "本轮实际读两份既有原摘要与正式书目，没有新增下载/新全文计数；固定v3已有全文范围排除不变。"
+  }
+}
