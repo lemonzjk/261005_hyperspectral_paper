@@ -6,7 +6,7 @@ import { timelineLayout } from '../src/timeline-layout.ts';
 import { groupPapers } from '../src/map-groups.ts';
 import { filterLibrary, libraryPresentation, readLibraryFilters, sortByPaperCount } from '../src/library.ts';
 import { matchesAuthor, splitAuthors, createAuthorMatcher, createPaperQueryMatcher } from '../src/authors.ts';
-import { allowedPublication, canonicalVenue } from '../src/publications.ts';
+import { allowedPublication, canonicalVenue, publicationScope } from '../src/publications.ts';
 import { groupedTasks, countGroupPapers } from '../src/library-groups.ts';
 import { materialStatus } from '../src/materials.ts';
 
@@ -28,6 +28,7 @@ for (const paper of catalog.papers) {
   ids.add(paper.id);
   assert(!removedIds.has(paper.id), `Removed paper re-entered catalog: ${paper.id}`);
   assert.equal(paper.venue, canonicalVenue(paper.venue), `Noncanonical venue: ${paper.id}`);
+  assert.equal(paper.library?.relation, 'hyperspectral', `Non-HSI entry: ${paper.id}`);
   if (!protectedIds.has(paper.id)) {
     assert(allowedPublication(paper.venue), `Publication outside whitelist: ${paper.id}`);
     assert.equal(paper.library?.relation, 'hyperspectral', `Non-HSI entry outside protected author: ${paper.id}`);
@@ -40,7 +41,7 @@ for (const paper of catalog.papers) {
   assert(/^\d{4}-\d{2}-\d{2}$/.test(paper.verifiedAt), `Missing verification date: ${paper.id}`);
   for (const url of [paper.paper, paper.code].filter(Boolean)) assert(new URL(url).protocol === 'https:', `Expected HTTPS: ${paper.id}`);
 }
-assert(protectedIds.size === 188 && [...protectedIds].every(id => ids.has(id)), 'Preserve all 188 verified existing Jun Zhou records');
+assert(protectedIds.size === 181 && [...protectedIds].every(id => ids.has(id)), 'Preserve all 181 verified existing Jun Zhou hyperspectral records');
 assert(cleanup.removedPapers.every(paper => paper.reason && paper.sourceUrl), 'Every removal needs a scope decision and original source');
 const figureRegistry = JSON.parse(readFileSync(new URL('../research/figures.json', import.meta.url)));
 assert.equal(figureRegistry.papers.length, catalog.papers.length, 'Figure queue must cover every paper');
@@ -293,6 +294,17 @@ for (const level of ['CVF官方摘要；非阅读全文', '出版社摘要；未
 }
 assert.equal(materialStatus({ library: { readingProgress: 'abstract_read', evidence: [{ level: '作者原稿摘要与指定局部页面核验' }] } }), 'partial_text');
 assert.equal(readLibraryFilters('?materials=restricted', categories, libraryPapers).materials, 'restricted');
+assert.equal(publicationScope('IEEE TGRS'), 'whitelist', 'Aliases use the same scope as their canonical venue');
+assert.equal(publicationScope('arXiv'), 'arxiv');
+assert.equal(publicationScope('IGARSS'), 'outside');
+assert.equal(readLibraryFilters('?publicationScope=outside', categories, libraryPapers).publicationScope, 'outside');
+assert.equal(readLibraryFilters('?publicationScope=invalid', categories, libraryPapers).publicationScope, '');
+const sourcePartitions = ['whitelist', 'arxiv', 'outside'].map(scope => filterLibrary(libraryPapers, { ...blank, publicationScope: scope }, categories));
+assert.equal(new Set(sourcePartitions.flat().map(paper => paper.id)).size, libraryPapers.length, 'Source scopes must partition the full catalog without dropping papers');
+assert.equal(sourcePartitions.flat().length, libraryPapers.length, 'Source scopes must not overlap');
+assert(sourcePartitions[2].every(paper => protectedIds.has(paper.id)), 'Only protected author papers may appear outside the source whitelist');
+assert.equal(filterLibrary(libraryPapers, { ...blank, publicationScope: 'outside', venues: ['TGRS'] }, categories).length, 0, 'Source scope intersects with publication selection');
+assert.equal(filterLibrary(libraryPapers, { ...blank, publicationScope: 'outside', author: 'Jun Zhou' }, categories).length, 101, 'Retain all 101 author papers outside the whitelist');
 for (const status of ['full_text', 'partial_text', 'figures', 'restricted', 'pending']) {
   assert.deepEqual(filterLibrary(libraryPapers, { ...blank, materials: status }, categories).map(paper => paper.id).sort(), libraryPapers.filter(paper => materialStatus(paper) === status).map(paper => paper.id).sort(), 'Material filters must agree with recorded evidence');
 }

@@ -1,6 +1,6 @@
 import type { LibraryCategory, Paper, PresentPaper } from './types';
 import { createAuthorMatcher, createPaperQueryMatcher } from './authors.ts';
-import { canonicalVenue } from './publications.ts';
+import { canonicalVenue, publicationScope, type PublicationScope } from './publications.ts';
 import { materialStatus } from './materials.ts';
 
 /** Stable sorting preserves catalog order when paper counts are equal. */
@@ -19,7 +19,7 @@ export const libraryPresentation = (categories: LibraryCategory[]): PresentPaper
 
 export interface LibraryFilters {
   query: string; author: string; yearFrom: string; yearTo: string; venues: string[];
-  categoryIds: string[]; pending: boolean; reading: string; materials?: string;
+  categoryIds: string[]; pending: boolean; reading: string; materials?: string; publicationScope?: PublicationScope | '';
 }
 
 /** Categories use union; other filter dimensions use intersection. */
@@ -31,6 +31,7 @@ export function filterLibrary(papers: Paper[], filters: LibraryFilters, categori
     (!filters.yearFrom || paper.year >= Number(filters.yearFrom)) &&
     (!filters.yearTo || paper.year <= Number(filters.yearTo)) &&
     (!filters.venues.length || filters.venues.includes(paper.venue)) &&
+    (!filters.publicationScope || publicationScope(paper.venue) === filters.publicationScope) &&
     (!filters.reading || paper.library?.readingProgress === filters.reading) &&
     (!filters.materials || materialStatus(paper) === filters.materials) &&
     authorMatches(paper.authors) &&
@@ -53,5 +54,6 @@ export function readLibraryFilters(search: string, categories: LibraryCategory[]
     categoryIds: pending ? [] : [...new Set(params.getAll('category').filter(id => categories.some(category => category.id === id)))],
     pending, reading: ['pending', 'title_only', 'abstract_read', 'full_text_read'].includes(params.get('reading') ?? '') ? params.get('reading')! : '',
     materials: ['full_text', 'partial_text', 'figures', 'restricted', 'pending'].includes(params.get('materials') ?? '') ? params.get('materials')! : '',
+    publicationScope: ['whitelist', 'arxiv', 'outside'].includes(params.get('publicationScope') ?? '') ? params.get('publicationScope') as PublicationScope : '',
   };
 }
