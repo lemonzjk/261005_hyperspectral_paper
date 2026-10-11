@@ -37012,7 +37012,7 @@
     },
     {
       "id": "zhou-22-hsi-2025",
-      "shortTitle": "SSIT: A spatial–spectral interactive transformer for",
+      "shortTitle": "SSIT",
       "title": "SSIT: A spatial–spectral interactive transformer for hyperspectral image denoising",
       "authors": "Ziyu Chen, Changhong Liu, Jun Zhou",
       "year": 2025,
@@ -37026,29 +37026,29 @@
       "doi": "10.1016/j.srs.2025.100276",
       "representation": "高光谱去噪：空间—光谱交互 Transformer 同时建模局部/非局部空间相似性与全局光谱相关。",
       "tags": [],
-      "summary": "SSIT 通过空间置换自注意力捕获局部和非局部空间相似性，以光谱压缩注意力提取全局光谱相关和低秩特征，再交互融合空间—光谱信息并用光谱分割前馈网络增强表达。",
-      "input": "合成噪声和真实噪声高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "空间—光谱注意力模块包含空间置换自注意力与光谱压缩注意力；交互模块融合两类特征；光谱分割前馈网络细化空间—光谱建模。",
-      "readingNote": "ORCID题名、Crossref正式书目与 ScienceDirect 开放摘要核验；未阅读全文。",
-      "paper": "https://www.sciencedirect.com/science/article/pii/S2666017225000823",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "SSIT直接从含噪高光谱立方体恢复同尺寸影像。空间置换注意力与光谱压缩注意力并行提取空间相似性和光谱相关，交互权重融合后由光谱分割前馈网络细化。正式版在ICVL、Houston2018、Realistic及Urban上测试；主表显示PSNR/SSIM优势，部分SAM不及SERT，不能称全部指标最佳。",
+      "input": "含噪H×W×B高光谱立方体：ICVL31带、Houston2018选末46带、Realistic34带及Urban210带；输出波段数随实际输入。",
+      "output": "同空间尺寸与波段数的去噪高光谱立方体；评估空间恢复质量与谱形保真。",
+      "mechanism": "3×3 Conv2D将输入B波段映射到C特征通道；深层由SSIT组及组残差构成，每组6块，组数敏感性实验选择4。N=32特征窗口内SPA压缩/置换K、V捕获局部与非局部空间相似性，SCA将K、V特征维压缩到C/k形成C×C/k注意力；r=k=2。SSI产生H×W×1与1×1×C权重，按Mspa⊙Sspe+Mspe⊙Sspa交叉加权。SSFFN将特征分成两支，一支DWConv/GELU后与另一支相乘，再线性映射。两层3×3重建卷积依次C→B、B→B，加输入残差；以含噪/干净配对MSE训练。C是特征维，不能当原始物理波段。",
+      "readingNote": "Griffith公开正式发表版VoR完整15页已逐页阅读：机构封面1页、期刊正文/参考文献14页。原Fig.1在PDF第4页（正文第3页）完整裁取并视觉核对，Fig.2及结果图3–17已看原页。正式首页确认Jun Zhou的Griffith单位；方法17式与表1–9支持输入输出、协议、消融和成本。噪声variance表述、Case5自引用和31→46带测试机制等未说明处按论文保留。参考目录阅读不代表被引论文全文已读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+      "verifiedAt": "2026-10-11",
+      "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "representation-learning"
+          "transformer"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 ScienceDirect 官方摘要均明确高光谱影像去噪。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "VoR §3直接从含噪高光谱恢复原波段影像，SPA/SCA/SSI和SSFFN属于Transformer去噪；不把中间表示学习当独立任务，也不将特征压缩自动标为张量分解。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何同时捕获空间相似性和全局光谱相关以提升高光谱去噪？",
-        "datasets": "官方摘要报告合成与真实噪声高光谱影像；数据名称、噪声设置和指标待全文核验。",
-        "experimentSetting": "在合成及真实噪声 HSI 上与去噪方法比较；代码链接为 GitHub/jxnuczy/SSIT。",
-        "conclusions": "官方摘要报告方法有效；逐数据集数值、消融和泛化边界待全文核验。",
-        "limitations": "摘要未给出完整训练配置、噪声模型、数据许可和代码复现实验。",
+        "datasets": "VoR §4：ICVL201幅1392×1300×31、400–700nm，选择100训练/5验证/50测试，未交代其余46幅用途。Houston2018为1202×4172×48，中心裁512×512并选末46带，加混合噪声测试。Realistic59对696×520×34含噪/干净HSI，44训练/15测试，128×128训练裁块及增强。Urban307×307×210、400–2500nm，采用APEX训练，展示第58带；APEX训练划分未详细说明。",
+        "experimentSetting": "VoR §4.1：PyTorch、RTX3090、Xavier、Adam，100 epochs、batch8，学习率1e−4在第60轮降至1e−5，配对MSE。ICVL多尺度64×64×31训练块、512×512×31测试；Gaussian已知10/30/50/70及blind10–70，正文称variance，未擅自改为标准差。复杂噪声Case1各带10–70；Case2随机1/3带5–15%列deadline；Case3随机1/3带10–70%impulse；Case4随机1/3带5–15%列stripe；Case5原文写Case2至Case5混合。Houston明确全部方法ICVL训练后测试，但31→46带加载机制未给。Urban只记录原视觉比较，不补无真值数值。",
+        "conclusions": "VoR表1–4，顺序PSNR(dB)/SSIM/SAM：ICVL blind10–70为42.99/.9958/1.89，SERT42.82/.9957/1.88；复杂Case1为44.55/.9973/1.88，SERT44.20/.9971/1.69；混合Case5为40.55/.9940/2.72，SERT40.00/.9937/2.84。Houston为31.11/.9608/.1281，Realistic30.64/.9582/2.152。表5复杂噪声2.81M参数、1.13s、1437.9GFLOPs，SERT1.91M/.61s/957.7，SSIT不是最小或最快。表6–9全模块、r=k=2及4组在所列组合表现较好，5组PSNR42.91低于4组42.99；不外推所有配置均单调提高。",
+        "limitations": "Gaussian noise原文variance10–70未说明归一化与参数含义；Case5组成包含自身，保留而不猜改。ICVL31带训练至Houston46带测试未说明模型/权重适配，不能据文字复原实现。不同数据表SAM数量级与单位/汇总口径未说明，不跨数据集直接平均。Realistic干净参照生成及独立验证名单未详细说明；Urban没有定量真值成绩，Fig.15称error maps但参考定义未明确。复杂Case1及Gaussian部分SAM落后SERT，正文全部指标最佳的概括不由主表支持。只依据论文记录，官方代码仅保留链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37068,6 +37068,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith公开正式发表版15页逐页阅读、原图与实验表核验",
+            "supports": [
+              "正式作者单位、VoR版本、DOI和2025-09-01 online日期",
+              "§3/Fig.1及17式支持空间置换/光谱压缩注意力、交互与SSFFN",
+              "§4/表1–9支持实际数据划分、噪声、结果及非单调消融",
+              "按论文保留Case5自引用、31→46带测试未说明及非全指标最优"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+            "checkedAt": "2026-10-11",
+            "level": "正式发表版全文分类核验",
+            "supports": [
+              "VoR全文确认直接高光谱观测去噪及SPA/SCA Transformer方法。保留spectral-denoising，以transformer替换笼统representation-learning；特征低秩压缩不等同张量分解。"
+            ]
           }
         ],
         "versions": [
@@ -37077,12 +37096,65 @@
             "url": "https://doi.org/10.1016/j.srs.2025.100276",
             "doi": "10.1016/j.srs.2025.100276",
             "year": 2025,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式DOI记录；Griffith机构公开VoR与同一DOI一致，15页全文已读。"
+          },
+          {
+            "id": "zhou-22-hsi-2025-griffith-vor",
+            "type": "正式发表版",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+            "doi": "10.1016/j.srs.2025.100276",
+            "year": 2025,
+            "readingProgress": "full_text_read",
+            "relation": "Griffith封面明确Version of Record，CC BY-NC 4.0；机构封面＋期刊正文/参考文献共15页，非另一个方法或新论文。"
           }
         ],
-        "methodFamilyId": "zhou-2025-title-22"
+        "methodFamilyId": "zhou-2025-title-22",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "VoR全文确认直接高光谱观测去噪及SPA/SCA Transformer方法。保留spectral-denoising，以transformer替换笼统representation-learning；特征低秩压缩不等同张量分解。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "30dea271ed541cebee3b7eae3c0366b1ebd45a4dea776f07ec204493d834b9fc",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_22_hsi_2025, title = {SSIT: A spatial–spectral interactive transformer for hyperspectral image denoising}, author = {Ziyu Chen and Changhong Liu and Jun Zhou}, year = {2025}, doi = {10.1016/j.srs.2025.100276}\n}\n"
+      "citation": "@article{zhou_22_hsi_2025, title = {SSIT: A spatial–spectral interactive transformer for hyperspectral image denoising}, author = {Ziyu Chen and Changhong Liu and Jun Zhou}, year = {2025}, doi = {10.1016/j.srs.2025.100276}\n}\n",
+      "code": "https://github.com/jxnuczy/SSIT",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+          "figureLabel": "Fig. 1",
+          "caption": "SSIT正式发表版总框架及四子模块：SPA、SCA、SSI、SSFFN；含特征提取、SSIT组、残差重建与完整原图注。",
+          "page": 4,
+          "verificationNote": "Griffith封面明确VoR。PDF第4页对应期刊正文第3页；原页300dpi裁取，完整架构、四子模块、图例及图注已视觉核对，未重绘。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              150,
+              215,
+              2350,
+              1580
+            ]
+          },
+          "path": "figures/zhou-22-hsi-2025/framework-fig1-griffith-vor.png",
+          "width": 2200,
+          "height": 1365,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "3d0e5385ff5889bd0c90c572c7ee14e039b04fa672882cfa83b92db35933a74b",
+          "attribution": "Ziyu Chen, Changhong Liu, Jun Zhou · Science of Remote Sensing 2025 · CC BY-NC 4.0"
+        }
+      ]
     },
     {
       "id": "zhou-29-hsi-2025",
@@ -43366,7 +43438,8 @@
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340"
+        "zhou-scholar-arxiv-2609-37340",
+        "zhou-22-hsi-2025"
       ],
       "history": [
         {
@@ -43393,6 +43466,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "SST-Net公开全文按已支持任务/方法重审，仅同步本篇关联。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "SSIT正式发表版全文按实际去噪任务与Transformer机制重审，仅同步本论文关联，不改类别定义或其他条目。"
         }
       ]
     },
@@ -43542,6 +43620,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "非负Tucker2018与TMP2016公开AM全文核验；第三阶低秩去噪和张量域形态分类分开，正式版本/公式/协议限制保留。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "SSIT正式发表版全文按实际去噪任务与Transformer机制重审，仅同步本论文关联，不改类别定义或其他条目。"
         }
       ]
     },
@@ -46225,7 +46308,6 @@
         "zhou-63-hsi-2023",
         "zhou-66-hsi-2023",
         "zhou-68-hsi-2023",
-        "zhou-22-hsi-2025",
         "zhou-32-hsi-2025",
         "zhou-36-hsi-2025",
         "zhou-19-hsi-2026",
@@ -46258,6 +46340,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "本轮三篇融合/选带全文核验同步实际关联；2412稿为分类而无表征预训练目标，移除该标签；新增选带稿波段注意力证据。"
+        },
+        {
+          "date": "2026-10-11",
+          "action": "evidence_updated",
+          "reason": "SSIT正式发表版全文按实际去噪任务与Transformer机制重审，仅同步本论文关联，不改类别定义或其他条目。"
         }
       ]
     },

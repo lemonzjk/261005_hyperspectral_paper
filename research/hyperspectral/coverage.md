@@ -185,6 +185,7 @@
 | arXiv · Jun Zhou fixed preprint scope and official datasets | 2024–2026 | 2610.06932v1、2410.06456v1、2606.05576v1、EuroSAT RGB/MS Sentinel-2、DOTA RGB/grayscale/panchromatic、MedMNIST 2D；三个精确ID/固定v1；非搜索分页或年度扫描。RADC6/6、VITask16/16；UltraVR21/70实际读页，下载不计全文。 | 3 / 3 / 3 | 三固定原稿直接HSI范围排除；2全文22页/1选读21页，作者目录未闭环 | 剩余三项原稿范围/身份、作者姓名变体/来源差集及CV3仍待；正式/后续版本按实际出现证据另核。；UltraVR11–14引用/目录、23–67示例未全读；没有核实际训练/测试数组、代码或性能。；UEMM/AdvMIM正式版仍未读，跨来源待核有重叠，不相加为论文缺口；机构资料队列27仍摘要级。 |
 | arXiv · Jun Zhou medical fixed preprint scope | 2025 | 2509.24231v1、2507.00185v1、2510.16973v1、medical modalities / feature channel / spatial slice；三固定精确v1，不是年度/新姓名搜索；EVLF25/39、MerMED13/42、综述14/54页，精确读页见sourceSnapshot。 | 3 / 3 / 3 | 三固定v1直接HSI范围选读暂排；0全文升级，作者/正式版仍待 | 未全读三稿/综述全部引用，未核实际数组/代码/性能；不把135页下载计全文。；MerMED/综述正式候选与UEMM/AdvMIM正式版仍独立待，作者姓名变体、ORCID/DBLP/Scholar/机构差集、CV3继续。；库390/作者181/61全文/221原图、机构资料待办27不变。 |
 | Jun Zhou · DDFNet original abstract and official benchmarks | 2025 | DDFNet DOI10.1016/j.inffus.2025.103359、Vaihingen IRRG DSM、Potsdam IRRG RGB RGBIR DSM、LoveDA red green blue、GPINet、SAPNet remote sensing、frequency decoupling、DDFNet；一个已知正式DOI与三个官方数据定义；四GitHub指定仓库检索各per_page30，返回1/0/10/9，无超页集合；不是论文/作者全集。 | 未单列 / 1 / 1 | DDFNet正式DOI直接HSI范围暂排；DBLP9/Scholar7/个人机构10未决，目录未闭环 | DDFNet正式全文、具体RGB/MS选版和训练像素未取得；这些未知不构成已有三数据集范围的HSI歧义，新明确贡献可重审。；FDNet/GPINet/SAPNet未取得新的原稿/实际输入；不能凭同作者、频域/通道词或相似方法套用范围。；作者姓名变体、其他来源/正式版及CV3仍待；机构可获取HSI资料队列27继续。 |
+| Jun Zhou · SSIT VoR and two editorial access followups | 2025–2026 | SSIT DOI10.1016/j.srs.2025.100276、Hancock DOI10.1016/j.patcog.2026.114263、Transformer editorial DOI10.1016/j.inffus.2025.103112；一份15页VoR全文；两个已知DOI及WhiteRose两限定查询，无作者或领域全集声明。 | 未单列 / 3 / 3 | SSIT一份VoR升级和一原图；两编辑文章仍范围待核，作者目录未闭环 | DBLP9/Scholar7/个人机构10待核集合重叠，不相加为缺口。；两个编辑记录摘要/正文未取得，不将403或单次仓库零结果判为无免费版本。；原31机构资料队列现剩26项仍摘要级，姓名变体/正式版本和全领域矩阵继续。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -844,6 +845,8 @@
   阅读边界：三医学v1共135页下载、52页实际选择性阅读；不是全部全文或全部引用。固定稿直接HSI范围暂排与未证个人身份/正式版本分开。
 - 2026-10-11 / jun-zhou-ddfnet-official-dataset-scope-2026-10-11：新增 0，更新 0，去重 0，排除 1，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：DDFNet仅完整机构原摘要，三官方基准定义交叉；LoveDA12页下载仅实际读第4页，不记本文或数据论文全文。
+- 2026-10-11 / jun-zhou-ssit-reading-editorial-access-2026-10-11：新增 0，更新 1，去重 4，排除 0，待处理 2。更新与去重可能重叠，不能相加为新增。
+  阅读边界：SSIT VoR15页全读、原Fig.1一张；四既有作者引文去重不表示原论文全文已读。两编辑文章仅书目/访问记录，范围未决；官方代码仅记录链接。
 
 </details>
 

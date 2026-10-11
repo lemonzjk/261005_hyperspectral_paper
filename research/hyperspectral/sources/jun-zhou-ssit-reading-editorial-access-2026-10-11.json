@@ -1,0 +1,144 @@
+{
+  "checkedAt": "2026-10-11",
+  "scope": "一个既有直接HSI论文的免费VoR整理，两个作者编辑性候选的书目/公开版本访问续核；不执行代码检查或复现。",
+  "accessFile": "jun-zhou-ssit-reading-editorial-access-2026-10-11-access.json",
+  "materialRecord": {
+    "file": "jun-zhou-ssit-reading-editorial-access-2026-10-11-ssit-griffith.pdf",
+    "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+    "finalUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+    "status": 200,
+    "bytes": 5861711,
+    "sha256": "f6affce581b8f8ae012ecd2e1cf719fb2e4848b751d8f1ddee98d98daff1ddea",
+    "contentType": "application/pdf;charset=UTF-8",
+    "pageCount": 15,
+    "pageTextFile": "jun-zhou-ssit-reading-editorial-access-2026-10-11-ssit-pages.json",
+    "name": "ssit-griffith-vor",
+    "pdfDownloaded": true,
+    "version": "Version of Record (VoR)，机构封面明确；1机构封面＋14页期刊正式排版",
+    "readingProgress": "full_text_read",
+    "readPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "checkedAt": "2026-10-11"
+  },
+  "newCatalogPaperCount": 0,
+  "updatedPaperCount": 1,
+  "newFullTextReadingCount": 1,
+  "pdfPagesRead": 15,
+  "figuresAdded": 1,
+  "ssit": {
+    "paperId": "zhou-22-hsi-2025",
+    "method": "3×3 Conv2D将输入B波段映射到C特征通道；深层由SSIT组及组残差构成，每组6块，组数敏感性实验选择4。N=32特征窗口内SPA压缩/置换K、V捕获局部与非局部空间相似性，SCA将K、V特征维压缩到C/k形成C×C/k注意力；r=k=2。SSI产生H×W×1与1×1×C权重，按Mspa⊙Sspe+Mspe⊙Sspa交叉加权。SSFFN将特征分成两支，一支DWConv/GELU后与另一支相乘，再线性映射。两层3×3重建卷积依次C→B、B→B，加输入残差；以含噪/干净配对MSE训练。C是特征维，不能当原始物理波段。",
+    "datasets": "VoR §4：ICVL201幅1392×1300×31、400–700nm，选择100训练/5验证/50测试，未交代其余46幅用途。Houston2018为1202×4172×48，中心裁512×512并选末46带，加混合噪声测试。Realistic59对696×520×34含噪/干净HSI，44训练/15测试，128×128训练裁块及增强。Urban307×307×210、400–2500nm，采用APEX训练，展示第58带；APEX训练划分未详细说明。",
+    "experiments": "VoR §4.1：PyTorch、RTX3090、Xavier、Adam，100 epochs、batch8，学习率1e−4在第60轮降至1e−5，配对MSE。ICVL多尺度64×64×31训练块、512×512×31测试；Gaussian已知10/30/50/70及blind10–70，正文称variance，未擅自改为标准差。复杂噪声Case1各带10–70；Case2随机1/3带5–15%列deadline；Case3随机1/3带10–70%impulse；Case4随机1/3带5–15%列stripe；Case5原文写Case2至Case5混合。Houston明确全部方法ICVL训练后测试，但31→46带加载机制未给。Urban只记录原视觉比较，不补无真值数值。",
+    "results": "VoR表1–4，顺序PSNR(dB)/SSIM/SAM：ICVL blind10–70为42.99/.9958/1.89，SERT42.82/.9957/1.88；复杂Case1为44.55/.9973/1.88，SERT44.20/.9971/1.69；混合Case5为40.55/.9940/2.72，SERT40.00/.9937/2.84。Houston为31.11/.9608/.1281，Realistic30.64/.9582/2.152。表5复杂噪声2.81M参数、1.13s、1437.9GFLOPs，SERT1.91M/.61s/957.7，SSIT不是最小或最快。表6–9全模块、r=k=2及4组在所列组合表现较好，5组PSNR42.91低于4组42.99；不外推所有配置均单调提高。",
+    "limitations": "Gaussian noise原文variance10–70未说明归一化与参数含义；Case5组成包含自身，保留而不猜改。ICVL31带训练至Houston46带测试未说明模型/权重适配，不能据文字复原实现。不同数据表SAM数量级与单位/汇总口径未说明，不跨数据集直接平均。Realistic干净参照生成及独立验证名单未详细说明；Urban没有定量真值成绩，Fig.15称error maps但参考定义未明确。复杂Case1及Gaussian部分SAM落后SERT，正文全部指标最佳的概括不由主表支持。只依据论文记录，官方代码仅保留链接。",
+    "identity": {
+      "page": 2,
+      "institution": "School of Information and Communication Technology, Griffith University",
+      "finding": "正式作者单位及Jun Zhou作者行直接支持身份；封面VoR和同DOI支持版本。"
+    },
+    "inventory": {
+      "pdfPages": 15,
+      "articlePages": 14,
+      "equations": 17,
+      "tables": 9,
+      "figures": 17
+    },
+    "codeUrl": "https://github.com/jxnuczy/SSIT",
+    "frameworkFigures": [
+      {
+        "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/31f49b8a-2878-429a-896a-3dbe6fef14d3/content",
+        "figureLabel": "Fig. 1",
+        "caption": "SSIT正式发表版总框架及四子模块：SPA、SCA、SSI、SSFFN；含特征提取、SSIT组、残差重建与完整原图注。",
+        "page": 4,
+        "verificationNote": "Griffith封面明确VoR。PDF第4页对应期刊正文第3页；原页300dpi裁取，完整架构、四子模块、图例及图注已视觉核对，未重绘。",
+        "extraction": {
+          "method": "pdf_page_crop",
+          "rendering": "pdftoppm -r 300",
+          "pixelBox": [
+            150,
+            215,
+            2350,
+            1580
+          ]
+        },
+        "path": "figures/zhou-22-hsi-2025/framework-fig1-griffith-vor.png",
+        "width": 2200,
+        "height": 1365,
+        "verificationStatus": "verified",
+        "verifiedAt": "2026-10-11",
+        "sha256": "3d0e5385ff5889bd0c90c572c7ee14e039b04fa672882cfa83b92db35933a74b",
+        "attribution": "Ziyu Chen, Changhong Liu, Jun Zhou · Science of Remote Sensing 2025 · CC BY-NC 4.0"
+      }
+    ],
+    "visualEvidenceFiles": [
+      "jun-zhou-ssit-reading-editorial-access-2026-10-11-ssit-04.png",
+      "jun-zhou-ssit-reading-editorial-access-2026-10-11-ssit-05.png",
+      "jun-zhou-ssit-reading-editorial-access-2026-10-11-visual-pages-7-10.png",
+      "jun-zhou-ssit-reading-editorial-access-2026-10-11-visual-pages-11-14.png"
+    ]
+  },
+  "citationCrosscheck": [
+    {
+      "catalogId": "zhou-56-hsi-2024",
+      "title": "SSUMamba: Spatial-Spectral Selective State Space Model for Hyperspectral Image Denoising",
+      "doi": "10.1109/tgrs.2024.3446812",
+      "page": 15,
+      "finding": "正式参考目录题名对应已有目录，不新增；Zhou,J.简写不单独转移身份，引用目录已读不表示被引论文全文已读。"
+    },
+    {
+      "catalogId": "zhou-48-hsi-2024",
+      "title": "Hyperspectral Image Denoising via Spatial–Spectral Recurrent Transformer",
+      "doi": "10.1109/tgrs.2024.3374953",
+      "page": 15,
+      "finding": "正式参考目录题名对应已有目录，不新增；Zhou,J.简写不单独转移身份，引用目录已读不表示被引论文全文已读。"
+    },
+    {
+      "catalogId": "zhou-79-hsi-2022",
+      "title": "SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising",
+      "doi": "10.1109/tip.2022.3196826",
+      "page": 15,
+      "finding": "正式参考目录题名对应已有目录，不新增；Zhou,J.简写不单独转移身份，引用目录已读不表示被引论文全文已读。"
+    },
+    {
+      "catalogId": "nonlocal-tensor-denoising-icip-2017",
+      "title": "Non-local similarity based tensor decomposition for hyperspectral image denoising",
+      "doi": "10.1109/icip.2017.8296610",
+      "page": 15,
+      "finding": "正式参考目录题名对应已有目录，不新增；Zhou,J.简写不单独转移身份，引用目录已读不表示被引论文全文已读。"
+    }
+  ],
+  "editorialFollowup": [
+    {
+      "doi": "10.1016/j.patcog.2026.114263",
+      "title": "Celebrating the Life and Research Work of Edwin Hancock",
+      "decision": "pending",
+      "finding": "Crossref与Elsevier coredata仅支持书目。Publisher正文403；WhiteRose正确ALL限定DOI及完整题名查询均零匹配，初始q表单无效、默认DOI检索26628条为广匹配不计精确结果。仍未取得摘要/正文，不能排除直接HSI贡献，也不能断言无免费版本。印刷卷期2026-12为未来日期，不当实际首发时间。",
+      "scopeEvidence": "not_obtained_yet"
+    },
+    {
+      "doi": "10.1016/j.inffus.2025.103112",
+      "title": "Editorial: Transformer models for multi-source visual fusion and understanding",
+      "decision": "pending",
+      "finding": "Crossref与Elsevier coredata仅支持书目，Publisher正文403。OpenAlex OA/CC BY-NC-ND标志与publisher openaccess0不一致、无PDF，不能据标志判付费或已取得免费正文。Crossref参考文献列CasFormer DOI10.1016/j.inffus.2024.102408，已有目录；引用HSI融合论文不能证明本编辑文章有独立HSI研究贡献。",
+      "scopeEvidence": "not_obtained_yet",
+      "citationCatalogId": "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024"
+    }
+  ],
+  "boundary": "SSIT全文/原图整理不增加作者目录条数，不等于被引论文全文阅读或领域覆盖闭环；两个编辑记录范围仍待，不以机器人验证或单次仓库零结果认定付费无公开版本。"
+}
