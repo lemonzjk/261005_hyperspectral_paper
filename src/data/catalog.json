@@ -37814,31 +37814,33 @@
         "hyperspectral"
       ],
       "doi": "10.1109/jbhi.2026.3651480",
-      "representation": "原摘要确认医学高光谱少样本分类，类协方差感知Mahalanobis原型距离和域感知适配器；实施细节待正文。",
+      "representation": "医学高光谱少样本原型分类：域感知适配器、查询批次全局位移及双协方差度量。",
       "tags": [],
-      "summary": "公开摘要显示：为解决医学高光谱少样本与跨域偏移，方法在原型网络中加入类协方差感知Mahalanobis距离，并用域感知适配器融合共享与域特定光谱—空间表征；在皮肤镜、胆管和体内脑部三个公开医学高光谱数据集上评估。",
-      "input": "少样本医学高光谱影像及多个领域数据；摘要列出皮肤镜、胆管和体内脑部三类公开数据集。",
-      "output": "医学高光谱影像分类结果。",
-      "mechanism": "原型模块嵌入类协方差感知Mahalanobis度量以适应类内光谱—空间协方差；域感知适配器通过光谱整合和可切换适配器融合共享与域特定表征。",
-      "readingNote": "本轮Griffith作者接受稿PDF已下载并存档，封面及第2页原摘要/首页机构、引言开头已读；与正式DOI、作者及既有摘要相符。此前摘要证据保留。其余正文尚未阅读，数据规模、配置、数字、方法实施及原图继续整理，不称已通读。",
+      "summary": "在医学高光谱少样本分类中，以域感知谱空适配器提取嵌入，按支持集估计类别原型与协方差，再以查询批次均值校正全局位移，结合Mahalanobis距离与协方差加权相似度分类。已核Griffith接受稿及三组主基准，另有HyperVein跨域测试；公式和路由疑点保留。",
+      "input": "医学高光谱支持/查询块与支持标签；Skin 16带465–630nm、MDC 60带550–1000nm、Brain 826带400–1000nm（NGNMF选27带）。实际episode在单个数据集内采用本地类别，不假设跨组织类别对应。",
+      "output": "查询医学高光谱块的类别概率及分类图；跨域评估依赖目标域少量支持标签和整个未标注查询批次。",
+      "mechanism": "共享特征映射后，DAAB以波段注意力、谱网格整合、共享3D CNN和域特定残差MLP适配器形成嵌入；光谱MHSA使用Q/K/V投影。类别原型为支持均值，类协方差加εI；以支持均值减查询均值的λ平移查询嵌入，再组合Mahalanobis距离与归一化协方差加权相似度，优化少样本交叉熵。Eq5含α/β而Eq6省略，软路由描述与Eq11 one-hot域选择亦待互证。",
+      "readingNote": "Griffith AM完整15页已逐页读完（含1机构封面），11式、8图、10表及参考目录已核；Fig1总框架/PDF5和Fig2 DAAB/PDF6原图已视觉核对。首页Griffith Jun Zhou与正式DOI一致，仅此AM升级全文。1-shot协方差分母、路由/权重冲突、患者划分与实时工作量边界保留；原稿未见代码URL，未核实现/最终版，未复现性能。",
       "paper": "https://api.crossref.org/works/10.1109/jbhi.2026.3651480",
       "verifiedAt": "2026-10-11",
-      "verificationLevel": "abstract_verified_primary_accepted_manuscript",
+      "verificationLevel": "full_text_verified_accepted_manuscript",
       "library": {
         "categoryIds": [
           "hyperspectral-biomedical-classification",
-          "biomedical-imaging"
+          "biomedical-imaging",
+          "domain-adaptation",
+          "transformer"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者AM原摘要与首页明确医学高光谱少样本分类，皮肤镜、胆管和脑部三类医学数据；迁移至既有医学分类任务，不归地物/植被分类。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "AM §III/IV直接处理医学高光谱块，输出医学组织/病变类别；DAAB域适配与谱MHSA有正文证据。医学任务沿用既有标签，不误配地物分类或多光谱任务。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何在医学高光谱少样本与跨域条件下提升原型网络分类泛化？",
-        "datasets": "摘要列出皮肤镜、胆管和体内脑部三个公开医学高光谱数据集；规模与协议待全文。",
-        "experimentSetting": "摘要级核验：三个公开医学高光谱数据集，与现有少样本分类器比较；划分、指标和参数待全文。",
-        "conclusions": "摘要报告相较现有少样本网络降低误分类并在三个数据集上表现良好；不外推具体数字。",
-        "limitations": "免费Griffith接受稿全文已下载，仅封面和摘要/首页机构、引言开头已核；其他方法/实验、数据规模与划分、原图和代码尚未整理，不猜测补齐。",
+        "datasets": "AM §IV：Skin为348张512×272影像、16带465–630nm、7类；MDC 880场景/174患者、1280×1024、60带550–1000nm、3类（689部分癌/49全癌/142正常）；Brain 70术中影像、826带400–1000nm、4类，NGNMF选27带。表VIII另测HyperVein 2800×1600×462；未说明其类别映射，不当作第四主基准或临床诊断证据。",
+        "experimentSetting": "AM §IV：高光谱立方级20%训练/40%验证/40%测试，样本池不交叠，未明确患者级隔离。各数据集本地7/4/3-way，1–5-shot，主表all-way 5-shot；1000 meta-training episodes，Adam lr1e−4、batch64、≤100epochs、早停10、cosine annealing、10种子重复，PyTorch/RTX4070。9×9块最好；源域训练后目标支持/查询评估，无微调；全查询均值校正属批次依赖。",
+        "conclusions": "AM表I–III all-way 5-shot OA/AA：Skin 74.54±.54/72.80±.85%，MDC 92.52±.19/91.83±.86%，Brain 89.97±.18/84.85±.21%；Macro-F1分别.7236/.9152/.8423。表VIII HyperVein目标OA 60.44–63.05%；表IX 40%训练标签噪声OA 60.55/77.69/71.66%（Skin/MDC/Brain）。Skin .0183GFLOPs、4.28s、1.5471M参数；MDC .0331G/10.04s，Brain .0523G/14.49s。未明确计时工作量，不能据此证实实时临床部署或所有对照成本最低。",
+        "limitations": "Eq2以Nk−1为分母，而表X含1-shot；εI不解释单支持样本的除零处理。Eq5可学习α/β、Eq6省略α/β，表VI又按固定整数调参。文字称无域标签软门控，Eq11按one-hot域选择；未获实现解释。划分仅立方级、患者隔离未证明；查询均值使预测依赖完整查询批次。HyperVein标签映射、目标谱网格参数和计时单位未明；正式版、代码及性能未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37882,6 +37884,25 @@
             "supports": [
               "AM原摘要及首页明确医学组织/病变高光谱分类，非地物植被；使用既有医学分类任务替换旧误配。分类证据确认不等于正文全读。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith作者接受稿完整PDF逐页阅读、方法/实验/公式与原图视觉核验",
+            "supports": [
+              "共享特征映射后，DAAB以波段注意力、谱网格整合、共享3D CNN和域特定残差MLP适配器形成嵌入；光谱MHSA使用Q/K/V投影。类别原型为支持均值，类协方差加εI；以支持均值减查询均值的λ平移查询嵌入，再组合Mahalanobis距离与归一化协方差加权相似度，优化少样本交叉熵。Eq5含α/β而Eq6省略，软路由描述与Eq11 one-hot域选择亦待互证。",
+              "AM §IV：高光谱立方级20%训练/40%验证/40%测试，样本池不交叠，未明确患者级隔离。各数据集本地7/4/3-way，1–5-shot，主表all-way 5-shot；1000 meta-training episodes，Adam lr1e−4、batch64、≤100epochs、早停10、cosine annealing、10种子重复，PyTorch/RTX4070。9×9块最好；源域训练后目标支持/查询评估，无微调；全查询均值校正属批次依赖。",
+              "AM表I–III all-way 5-shot OA/AA：Skin 74.54±.54/72.80±.85%，MDC 92.52±.19/91.83±.86%，Brain 89.97±.18/84.85±.21%；Macro-F1分别.7236/.9152/.8423。表VIII HyperVein目标OA 60.44–63.05%；表IX 40%训练标签噪声OA 60.55/77.69/71.66%（Skin/MDC/Brain）。Skin .0183GFLOPs、4.28s、1.5471M参数；MDC .0331G/10.04s，Brain .0523G/14.49s。未明确计时工作量，不能据此证实实时临床部署或所有对照成本最低。",
+              "Eq2以Nk−1为分母，而表X含1-shot；εI不解释单支持样本的除零处理。Eq5可学习α/β、Eq6省略α/β，表VI又按固定整数调参。文字称无域标签软门控，Eq11按one-hot域选择；未获实现解释。划分仅立方级、患者隔离未证明；查询均值使预测依赖完整查询批次。HyperVein标签映射、目标谱网格参数和计时单位未明；正式版、代码及性能未核。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
+            "checkedAt": "2026-10-11",
+            "level": "接受稿全文分类核验",
+            "supports": [
+              "AM §III/IV确认医学高光谱分类、DAAB域适配和光谱MHSA；保留医学任务/应用并补已有域适配、Transformer方法标签，不推导跨组织类别对应或三维场景输出。"
+            ]
           }
         ],
         "versions": [
@@ -37891,7 +37912,7 @@
             "url": "https://doi.org/10.1109/jbhi.2026.3651480",
             "doi": "10.1109/jbhi.2026.3651480",
             "year": 2026,
-            "relation": "正式书目和原摘要已核；本轮已下载Griffith AM，最终出版社排版及AM其余正文仍待读。"
+            "relation": "正式书目及摘要已核；本轮读Griffith AM，不表示最终出版社排版正文已核。"
           },
           {
             "id": "zhou-5-hsi-2026-griffith-am",
@@ -37899,15 +37920,15 @@
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
             "doi": "10.1109/jbhi.2026.3651480",
             "year": 2026,
-            "readingProgress": "abstract_read",
-            "relation": "仅封面及摘要/首页机构和引言开头已读；正文其他页虽已提取文字，尚未阅读，不升级全文。 全文PDF已下载并存档，版本封面明确AM。"
+            "readingProgress": "full_text_read",
+            "relation": "免费AM 15页完整已读，原图已核；PDF封面/页眉明确接受稿，参考目录不是引用论文全文。"
           }
         ],
         "methodFamilyId": "zhou-2026-title-5",
         "classificationReview": {
           "reviewedAt": "2026-10-11",
           "basis": "catalog_and_primary_source",
-          "rationale": "AM原摘要及首页明确医学组织/病变高光谱分类，非地物植被；使用既有医学分类任务替换旧误配。分类证据确认不等于正文全读。",
+          "rationale": "AM §III/IV确认医学高光谱分类、DAAB域适配和光谱MHSA；保留医学任务/应用并补已有域适配、Transformer方法标签，不推导跨组织类别对应或三维场景输出。",
           "evidenceFields": [
             "title",
             "summary",
@@ -37916,13 +37937,63 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "4d1edc3990eb51652d676e981aab2bb4651977cc9f61abbfdf3a05d31bcdb4a0",
+          "evidenceDigest": "3299d05f475d32f38858848822ddfe1dfb20ee8cc1d18a4b063a32bf5d263e10",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content"
           ]
         }
       },
-      "citation": "@article{zhou_5_hsi_2026, title = {Distance Learning-Based Prototypical Network With Multi-Domain Adaptation for Few-Shot Hyperspectral Medical Image Classification}, author = {Favour Ekong and Jun Zhou and Jing Wang and Mohammad Aminul Islam and Yongsheng Gao}, year = {2026}, doi = {10.1109/jbhi.2026.3651480}\n}\n"
+      "citation": "@article{zhou_5_hsi_2026, title = {Distance Learning-Based Prototypical Network With Multi-Domain Adaptation for Few-Shot Hyperspectral Medical Image Classification}, author = {Favour Ekong and Jun Zhou and Jing Wang and Mohammad Aminul Islam and Yongsheng Gao}, year = {2026}, doi = {10.1109/jbhi.2026.3651480}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
+          "figureLabel": "Fig. 1",
+          "caption": "Griffith接受稿（AM）：医学高光谱多域少样本原型网络总框架：支持/查询、DAAB、类别原型和查询全局位移、Mahalanobis/协方差相似度及分类损失。",
+          "page": 5,
+          "verificationNote": "已下载AM原页300dpi裁切，未重绘；PDF第5页对应正文第4页，前有机构封面。图、所有分支和完整图注已视觉核对；不是最终出版社排版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              200,
+              212,
+              2350,
+              1000
+            ]
+          },
+          "path": "figures/zhou-5-hsi-2026/framework-fig1-griffith-am.png",
+          "width": 2150,
+          "height": 788,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "473531bcb9e6112745c4651d976c88520b95a1be443bc6f531731995ec306b63",
+          "attribution": "Favour Ekong, Jun Zhou, Jing Wang, Mohammad Aminul Islam, Yongsheng Gao · JBHI 2026"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/e5072666-b8e3-4769-abe1-8e90abcbbdee/content",
+          "figureLabel": "Fig. 2",
+          "caption": "Griffith接受稿（AM）：DAAB原模块：波段光谱注意力、3D CNN共享/域特定适配器、switch vector、Q/K/V投影及残差MLP；原图原注与正文路由表述差异保留。",
+          "page": 6,
+          "verificationNote": "已下载AM原页300dpi裁切，未重绘；PDF第6页对应正文第5页，前有机构封面。图、所有分支和完整图注已视觉核对；不是最终出版社排版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              200,
+              220,
+              1290,
+              1172
+            ]
+          },
+          "path": "figures/zhou-5-hsi-2026/framework-fig2-griffith-am.png",
+          "width": 1090,
+          "height": 952,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "7969bc9d2c877ba0916be92fe6a8dcd93f7754841318572454bd7def1f5167f4",
+          "attribution": "Favour Ekong, Jun Zhou, Jing Wang, Mohammad Aminul Islam, Yongsheng Gao · JBHI 2026"
+        }
+      ]
     },
     {
       "id": "zhou-6-hsi-2026",
@@ -38072,7 +38143,7 @@
     },
     {
       "id": "zhou-13-hsi-2026",
-      "shortTitle": "FedDA-HSI: Federated Class-Aware Framework for Hyper",
+      "shortTitle": "FedDA-HSI",
       "title": "FedDA-HSI: Federated Class-Aware Framework for Hyperspectral Image Classification With Diffusion Augmentation",
       "authors": "Weixia Yang, Di Wu, Jun Bai, Jing Wang, Shenghui Rong, Jun Zhou",
       "year": 2026,
@@ -38084,31 +38155,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2026.3660734",
-      "representation": "联邦高光谱分类：本地扩散模型生成合成高光谱样本，再用类别感知增强缓解类别缺失与客户端非IID。",
+      "representation": "联邦高光谱分类：5通道丰度空间条件扩散，经解混解码器生成高光谱，再进行类别感知增强。",
       "tags": [],
-      "summary": "FedDA-HSI 在不共享原始数据的联邦场景中，本地生成合成高光谱样本，并针对缺失或少数类别做类别感知增强，以改善异构客户端分类。",
-      "input": "多源联邦客户端的高光谱影像；客户端数据存在稀缺、类别不平衡及非IID分布。",
-      "output": "联邦高光谱图像分类结果。",
-      "mechanism": "联邦扩散数据增强在本地生成高光谱样本；类别感知策略补充缺失或少数类别；聚合模型学习跨客户端共享知识。",
-      "readingNote": "本轮Griffith作者接受稿PDF已下载并存档，封面及第2页原摘要/首页机构、引言开头已读；与正式DOI、作者及既有摘要相符。此前摘要证据保留。其余正文尚未阅读，数据规模、配置、数字、方法实施及原图继续整理，不称已通读。",
+      "summary": "FedDA-HSI先用本地解混自编码器提取5通道丰度，并联邦聚合条件扩散模型；再针对缺失或少数类生成丰度、解码为高光谱，与真实样本合并训练联邦3D CNN。已核接受稿：4客户端主分类结果与2客户端生成/消融分开，解码器共享和隐私细节保留未决。",
+      "input": "各客户端本地高光谱影像与语义类别标签；分类实验为Xiongan 250带400–1000nm、Houston2018 48带380–1050nm。Chikusei 128带及Berlin 111带仅用于无条件生成，条件生成输入另含噪声和目标类别图。",
+      "output": "联邦地物分类结果及用于训练增强的合成高光谱影像；生成器中间输出为5通道丰度图，解码后恢复完整光谱。",
+      "mechanism": "阶段I本地解混自编码器以线性解码器权重表示端元，重建损失学习5通道丰度；条件UNet预测扩散噪声，服务器按本地数据量FedAvg扩散权重。阶段II最终全局扩散器按缺失/少数类别图生成丰度，客户端解码为HSI，与真实数据并集训练3D CNN及FedAvg分类器。§III-C还描述上传端元解码器供共享，与概述仅上传扩散参数的说法不一致；Eq9/Algorithm2仍用客户端解码器。",
+      "readingNote": "Griffith AM完整19页已逐页读完（含1机构封面），9式、2算法、8图、9表、参考目录和传记已核；Fig1/PDF5原图已视觉核对。首页及传记确认Griffith Jun Zhou。仅此AM升级全文；4客户端主表与2客户端消融分别记录，生成/分类划分隔离及隐私预算未明，未复现性能或核最终版/代码。",
       "paper": "https://api.crossref.org/works/10.1109/tgrs.2026.3660734",
       "verifiedAt": "2026-10-11",
-      "verificationLevel": "abstract_verified_primary_accepted_manuscript",
+      "verificationLevel": "full_text_verified_accepted_manuscript",
       "library": {
         "categoryIds": [
           "land-cover-classification",
-          "domain-adaptation"
+          "diffusion-models"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与机构摘要均明确联邦高光谱分类。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "AM全文直接以HSI进行地物分类并生成完整高光谱增强数据；非IID类别偏斜通过联邦生成增强解决。未见独立源/目标域适配目标，撤下旧泛配domain-adaptation，使用已有diffusion-models方法标签。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "如何在不共享原始数据的联邦场景中，用扩散增强改善非IID高光谱分类？",
-        "datasets": "摘要称在多个基准高光谱数据集上实验；具体数据集、划分和数值待全文核验。",
-        "experimentSetting": "机构摘要：联邦客户端数据稀缺、类别不平衡且非IID；扩散样本在本地生成后聚合模型。",
-        "conclusions": "摘要报告异构条件下分类性能改善；具体增益和消融待全文核验。",
-        "limitations": "免费Griffith接受稿全文已下载，仅封面和摘要/首页机构、引言开头已核；其他方法/实验、数据规模与划分、原图和代码尚未整理，不猜测补齐。",
+        "datasets": "AM §IV：Chikusei 2517×2335×128，363–1018nm；Berlin-Urban-Gradient 2722×732×111，450–2450nm；两者仅无条件生成。Xiongan 3750×1580×250，400–1000nm、19类；Houston2018 601×2384×48，380–1050nm、20类；两者条件生成与分类。128×128块40%空间重叠，依次837/300/800/280块，随机等块数分客户端但类别非IID。数据规格按本AM，未覆盖数据集所有公开版本。",
+        "experimentSetting": "AM §IV：生成先用客户端分配块训练，分类取7×7邻域、客户端内40/30/30%训练/验证/测试，全局测试为各客户端测试合集；未明确扩散训练与下游测试影像/标签隔离。AE丰度通道5，80epochs、Adam2e−4；扩散T2000、线性β1=1e−6至βT=1e−2、Adam1e−4，原文写500,000 local epochs across 4 communication rounds，不改成iterations。3D CNN每轮2本地epochs、4通信轮，RTX3090/CUDA11.7。主表4客户端，生成与增强消融2客户端，另测2/4/6/8客户端与Dirichlet α=.5/.3/.1。",
+        "conclusions": "AM表I 4客户端全局OA/AA：Xiongan 75.61/52.32%，较FedAvg +.62/+1.36百分点；Houston2018 60.42/23.16%，+1.98/+2.17百分点。表III/VI 2客户端类别感知增强为Xiongan82.69/66.62%、Houston73.18/48.21%，不能混为主表成绩。表IV DP全局Xiongan75.53/50.00%，AA低于FedAvg50.96%；生成FID亦非全数据优于集中式。表IX约100M总参数，分类推理.21M/.05M FLOPs、.26/.23ms，不含生成训练和完整场景工作量。",
+        "limitations": "概述仅共享扩散权重，§III-C又明确共享端元解码器，跨客户端端元对齐/选择未交代。40%重叠块和随机划分不证明空间独立，扩散器与测试影像/标签隔离未明，不能断言已泄漏或严格独立。正文描述生成丰度加Gaussian noise，但未给ε/δ、噪声尺度、敏感度/裁剪或组合会计；表IV仅效用，不证明形式隐私或抗攻击。Dirichlet结果非单调，部分AA/客户端指标无增益。500,000 local epochs单位、生成时间/通信量、FID高光谱通道处理和推理工作量未明；原稿未见代码URL，最终版与性能未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -38137,6 +38208,25 @@
               "封面标明AM和既有正式DOI；首页明确Griffith Jun Zhou及原摘要内容",
               "PDF已下载并保存，但下载/文字提取不等于全文阅读；方法及实验细节继续整理"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dbf1e26e-b8fe-4873-9fe3-678aade18554/content",
+            "checkedAt": "2026-10-11",
+            "level": "Griffith作者接受稿完整PDF逐页阅读、方法/实验/公式与原图视觉核验",
+            "supports": [
+              "阶段I本地解混自编码器以线性解码器权重表示端元，重建损失学习5通道丰度；条件UNet预测扩散噪声，服务器按本地数据量FedAvg扩散权重。阶段II最终全局扩散器按缺失/少数类别图生成丰度，客户端解码为HSI，与真实数据并集训练3D CNN及FedAvg分类器。§III-C还描述上传端元解码器供共享，与概述仅上传扩散参数的说法不一致；Eq9/Algorithm2仍用客户端解码器。",
+              "AM §IV：生成先用客户端分配块训练，分类取7×7邻域、客户端内40/30/30%训练/验证/测试，全局测试为各客户端测试合集；未明确扩散训练与下游测试影像/标签隔离。AE丰度通道5，80epochs、Adam2e−4；扩散T2000、线性β1=1e−6至βT=1e−2、Adam1e−4，原文写500,000 local epochs across 4 communication rounds，不改成iterations。3D CNN每轮2本地epochs、4通信轮，RTX3090/CUDA11.7。主表4客户端，生成与增强消融2客户端，另测2/4/6/8客户端与Dirichlet α=.5/.3/.1。",
+              "AM表I 4客户端全局OA/AA：Xiongan 75.61/52.32%，较FedAvg +.62/+1.36百分点；Houston2018 60.42/23.16%，+1.98/+2.17百分点。表III/VI 2客户端类别感知增强为Xiongan82.69/66.62%、Houston73.18/48.21%，不能混为主表成绩。表IV DP全局Xiongan75.53/50.00%，AA低于FedAvg50.96%；生成FID亦非全数据优于集中式。表IX约100M总参数，分类推理.21M/.05M FLOPs、.26/.23ms，不含生成训练和完整场景工作量。",
+              "概述仅共享扩散权重，§III-C又明确共享端元解码器，跨客户端端元对齐/选择未交代。40%重叠块和随机划分不证明空间独立，扩散器与测试影像/标签隔离未明，不能断言已泄漏或严格独立。正文描述生成丰度加Gaussian noise，但未给ε/δ、噪声尺度、敏感度/裁剪或组合会计；表IV仅效用，不证明形式隐私或抗攻击。Dirichlet结果非单调，部分AA/客户端指标无增益。500,000 local epochs单位、生成时间/通信量、FID高光谱通道处理和推理工作量未明；原稿未见代码URL，最终版与性能未核。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dbf1e26e-b8fe-4873-9fe3-678aade18554/content",
+            "checkedAt": "2026-10-11",
+            "level": "接受稿全文分类核验",
+            "supports": [
+              "AM §III/IV直接证明地物高光谱分类和丰度空间条件扩散生成增强；非IID联邦训练本身不构成源/目标域适配任务。保留地物分类，改用已有扩散方法标签；解混为生成中间机制，不自动新增独立解混任务。"
+            ]
           }
         ],
         "versions": [
@@ -38146,7 +38236,7 @@
             "url": "https://doi.org/10.1109/tgrs.2026.3660734",
             "doi": "10.1109/tgrs.2026.3660734",
             "year": 2026,
-            "relation": "正式书目和原摘要已核；本轮已下载Griffith AM，最终出版社排版及AM其余正文仍待读。"
+            "relation": "正式书目及摘要已核；本轮读Griffith AM，不表示最终出版社排版正文已核。"
           },
           {
             "id": "zhou-13-hsi-2026-griffith-am",
@@ -38154,13 +38244,56 @@
             "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dbf1e26e-b8fe-4873-9fe3-678aade18554/content",
             "doi": "10.1109/tgrs.2026.3660734",
             "year": 2026,
-            "readingProgress": "abstract_read",
-            "relation": "仅封面及摘要/首页机构和引言开头已读；正文其他页虽已提取文字，尚未阅读，不升级全文。 全文PDF已下载并存档，版本封面明确AM。"
+            "readingProgress": "full_text_read",
+            "relation": "免费AM 19页完整已读，原图已核；PDF封面/页眉明确接受稿，参考目录不是引用论文全文。"
           }
         ],
-        "methodFamilyId": "zhou-2026-title-13"
+        "methodFamilyId": "zhou-2026-title-13",
+        "classificationReview": {
+          "reviewedAt": "2026-10-11",
+          "basis": "catalog_and_primary_source",
+          "rationale": "AM §III/IV直接证明地物高光谱分类和丰度空间条件扩散生成增强；非IID联邦训练本身不构成源/目标域适配任务。保留地物分类，改用已有扩散方法标签；解混为生成中间机制，不自动新增独立解混任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "23b3eca92c0d90ddb9ca9dfe46e611d21500eeea8ec9607892511e3e28707b18",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dbf1e26e-b8fe-4873-9fe3-678aade18554/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_13_hsi_2026, title = {FedDA-HSI: Federated Class-Aware Framework for Hyperspectral Image Classification With Diffusion Augmentation}, author = {Weixia Yang and Di Wu and Jun Bai and Jing Wang and Shenghui Rong and Jun Zhou}, year = {2026}, doi = {10.1109/tgrs.2026.3660734}\n}\n"
+      "citation": "@article{zhou_13_hsi_2026, title = {FedDA-HSI: Federated Class-Aware Framework for Hyperspectral Image Classification With Diffusion Augmentation}, author = {Weixia Yang and Di Wu and Jun Bai and Jing Wang and Shenghui Rong and Jun Zhou}, year = {2026}, doi = {10.1109/tgrs.2026.3660734}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/dbf1e26e-b8fe-4873-9fe3-678aade18554/content",
+          "figureLabel": "Fig. 1",
+          "caption": "Griffith接受稿（AM）：FedDA-HSI两阶段总框架：解混丰度条件扩散/FedAvg，缺失或少数类生成丰度并解码HSI，再以真实加合成数据训练联邦分类器。",
+          "page": 5,
+          "verificationNote": "已下载AM原页300dpi裁切，未重绘；PDF第5页对应正文第4页，前有机构封面。图、所有分支和完整图注已视觉核对；不是最终出版社排版。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "rendering": "pdftoppm -r 300",
+            "pixelBox": [
+              200,
+              236,
+              2350,
+              1608
+            ]
+          },
+          "path": "figures/zhou-13-hsi-2026/framework-fig1-griffith-am.png",
+          "width": 2150,
+          "height": 1372,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-11",
+          "sha256": "c84b09e9165910525523ee1a75bd7826f51a18974b88628ac9426e5d3711b373",
+          "attribution": "Weixia Yang, Di Wu, Jun Bai, Jing Wang, Shenghui Rong, Jun Zhou · TGRS 2026"
+        }
+      ]
     },
     {
       "id": "zhou-14-hsi-2026",
@@ -43083,6 +43216,7 @@
         "mftn-2024",
         "dauhst-2022",
         "zhou-34-hsi-2025",
+        "zhou-5-hsi-2026",
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
@@ -46210,7 +46344,8 @@
         "fusdreamer",
         "fvmgn-generalization",
         "symdiffuser-fusion",
-        "zhou-45-hsi-2024"
+        "zhou-45-hsi-2024",
+        "zhou-13-hsi-2026"
       ],
       "history": [
         {
@@ -46336,7 +46471,7 @@
         "zhou-75-hsi-2022",
         "zhou-69-hsi-2023",
         "zhou-29-hsi-2025",
-        "zhou-13-hsi-2026",
+        "zhou-5-hsi-2026",
         "zhou-scholar-multi-domain-universal-representation-lear-2025"
       ],
       "history": [
