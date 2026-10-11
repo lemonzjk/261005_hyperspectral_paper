@@ -4,15 +4,15 @@
   "recordCount": 531,
   "decisionCounts": {
     "excluded_abstract_scope": 447,
-    "pending_primary_scope_identity": 8,
+    "pending_primary_scope_identity": 6,
     "matched_catalog": 24,
     "query_name_nonexact": 7,
     "excluded_selected_scope": 7,
     "matched_prior_decision": 32,
     "other_author_primary_affiliation": 6,
-    "not_screened": 0
+    "excluded_full_text_scope": 2
   },
-  "method": "官方带引号姓名查询531全分页/索引：24目录映射、32既有决定及4旧同名。五批按原队列逐读50/100/100/100/121条可得API摘要，累计471新增逐审。医学来源续核有2新增同名；PanNuke三折原数组头与论文输入续核使TEAMS一条范围暂排，当前447摘要暂排、7局部暂排、7姓名不精确、8范围/身份待、2新增同名，同名合计6。Mamba全领域输入亦局部暂排，不升级全文或关闭子集/正式版本问题。原未审0不等于全部范围/身份/全文完成；姓名变体与来源差集未完整覆盖。",
+  "method": "官方带引号姓名查询531全分页/逐项映射：24目录、32继承、6已核同名（4旧/2新增）；原471队列经50/100/100/100/121批可得摘要逐审及正文续核，当前447摘要暂排、7局部暂排、7姓名不精确、2固定预印本全文范围排除、6原稿范围/身份待核。UEMM v3十二页、AdvMIM v1十一页全读；仅固定版按直接HSI范围排除，未读正式版与未证个人身份独立保留。原未审0不等于全部范围/身份/全文完成，姓名变体与来源差集仍待覆盖。",
   "opticalKeywordScan": {
     "fields": [
       "title",
@@ -2166,19 +2166,44 @@
       "url": "https://arxiv.org/abs/2506.20563v1",
       "opticalKeywordHit": false,
       "broaderTaskHit": false,
-      "decision": "pending_primary_scope_identity",
-      "evidenceFile": "jun-zhou-arxiv-abstract-batch2-2026-10-11.json",
+      "decision": "excluded_full_text_scope",
+      "evidenceFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
       "reviewedAt": "2026-10-11",
-      "basis": "§3为ACDC MRI、Synapse CT、ISIC皮肤镜；ISIC本稿通道配置及目标身份未由原稿/实现明确，仍待，不外推同作者其他光谱数据。",
-      "readingBoundary": "官方摘要、原稿首页机构及指定数据/输入段局部；不是整篇全文阅读，不核性能复现/代码/正式接收。",
-      "identityBoundary": "仅保留原作者字段及明确机构证据；范围暂排不是目标作者身份排除，未核全部作者/版本。",
+      "basis": "v1§2.1/§2.2输入明确H×W×3，§3与全部实验仅ACDC MRI、Synapse CT、ISIC皮肤镜；masked image modeling预测分割掩膜，不是HSI采集/重建/谱维学习。固定预印本按直接HSI范围排除，无需把ISIC实际像素或同名个人身份当作本版范围闭环前提。",
+      "readingBoundary": "固定arXiv原稿全文逐页阅读（含参考文献），保留PDF/哈希/逐页文本与审计；未运行代码/性能复现，正式版未升级为已读。",
+      "identityBoundary": "固定原稿仅按直接HSI范围排除，不外推个人身份或未读正式版范围。",
       "followupEvidenceFiles": [
-        "jun-zhou-medical-identity-publication-followup6-2026-10-11.json"
+        "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
+        "jun-zhou-query-semantics-scope-reading-2026-10-11.json"
       ],
       "latestFollowupAt": "2026-10-11",
-      "latestScopeFinding": "MICCAI章节题名与四作者逐项匹配，Springer订阅预览确认论文代码链接；First Online为2025-09-20，print/citation/copyright为2026。固定作者所链仓库README明确为AdvMIM-FLARE25-Task3，当前实现是CT合成MRI/PET及单通道切片，不能替代本篇ISIC实验配置。ISIC实际通道、目标身份及正式全文仍待。",
+      "latestScopeFinding": "v1§2.1/§2.2输入明确H×W×3，§3与全部实验仅ACDC MRI、Synapse CT、ISIC皮肤镜；masked image modeling预测分割掩膜，不是HSI采集/重建/谱维学习。固定预印本按直接HSI范围排除，无需把ISIC实际像素或同名个人身份当作本版范围闭环前提。",
       "publicationFollowupFile": "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
-      "formalDoi": "10.1007/978-3-032-05325-1_6"
+      "formalDoi": "10.1007/978-3-032-05325-1_6",
+      "scopeFinding": "v1§2.1/§2.2输入明确H×W×3，§3与全部实验仅ACDC MRI、Synapse CT、ISIC皮肤镜；masked image modeling预测分割掩膜，不是HSI采集/重建/谱维学习。固定预印本按直接HSI范围排除，无需把ISIC实际像素或同名个人身份当作本版范围闭环前提。",
+      "fullTextReadingFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
+      "readPdfPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "formalVersionBoundary": {
+        "doi": "10.1007/978-3-032-05325-1_6",
+        "status": "pending_formal_version_scope",
+        "finding": "原稿v1已全读；正式MICCAI章节先在线2025-09-20、印刷引用2026，题名与四作者对应证据保留。正式全文和代码ISIC配置未读，不把当前FLARE25实现替代原论文，不升级个人身份判断。",
+        "priorEvidenceFiles": [
+          "jun-zhou-medical-identity-publication-followup6-2026-10-11.json"
+        ]
+      },
+      "scopeAuditFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json"
     },
     {
       "arxivId": "2506.20180",
@@ -3642,23 +3667,47 @@
       "url": "https://arxiv.org/abs/2406.06230v3",
       "opticalKeywordHit": false,
       "broaderTaskHit": true,
-      "decision": "pending_primary_scope_identity",
-      "boundary": "本轮未逐篇读摘要或核身份；无关键词不能自动排除。",
-      "evidenceFile": "jun-zhou-arxiv-abstract-batch3-2026-10-11.json",
+      "decision": "excluded_full_text_scope",
+      "evidenceFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
       "reviewedAt": "2026-10-11",
-      "basis": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
-      "readingBoundary": "原摘要、首页机构及指定输入/数据局部已读；不是整篇全文阅读，不核性能复现与正式版接收。",
-      "identityBoundary": "保留原作者字段；范围暂排不等于目标作者身份排除，未核全部作者及版本。",
+      "basis": "v3全文列出的六模态、采集/标注机制和所有实验为RGB、深度/几何、IMU与语言的合成UAV感知。§III-B的infrared/Depth冲突保留，但不形成高光谱采集、谱维处理或重建贡献；按当前严格直接HSI口径排除此固定原稿版本。",
+      "readingBoundary": "固定arXiv原稿全文逐页阅读（含参考文献），保留PDF/哈希/逐页文本与审计；未运行代码/性能复现，正式版未升级为已读。",
+      "identityBoundary": "固定原稿仅按直接HSI范围排除，不外推个人身份或未读正式版范围。",
       "identityFinding": "原稿首页Jun Zhou为Griffith信息与通信技术学院；论文所链作者仓库Jun Zhou（周峻）链接Griffith个人页7205-jun-zhou，支持目标身份。待核是输入/版本范围，不是已确认另一同名作者。",
-      "scopeFinding": "当前AirNavigation utils/fly.py设置车辆分割ID后请求Infrared并存三通道uint8；官方AirSim文档将Infrared描述为对象ID的0–255灰度映射。此证据不证明论文当时未修改模拟器，亦不证明发布数据包含真实IR或密集光谱；正式ACM七页版本和数据包未读。",
+      "scopeFinding": "v3全文列出的六模态、采集/标注机制和所有实验为RGB、深度/几何、IMU与语言的合成UAV感知。§III-B的infrared/Depth冲突保留，但不形成高光谱采集、谱维处理或重建贡献；按当前严格直接HSI口径排除此固定原稿版本。",
       "primaryAccessFile": "jun-zhou-arxiv-batch3-2406.06230-access-2026-10-11.json",
       "selectedPagesFile": "jun-zhou-arxiv-batch3-2406.06230-selected-pages-2026-10-11.json",
-      "scopeAuditFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json",
+      "scopeAuditFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
       "followupEvidenceFiles": [
-        "jun-zhou-uemmair-vitask-input-followup-2026-10-11.json"
+        "jun-zhou-uemmair-vitask-input-followup-2026-10-11.json",
+        "jun-zhou-query-semantics-scope-reading-2026-10-11.json"
       ],
-      "latestScopeFinding": "固定HF修订590d7a7a93454f7a558141684a8931b87977c420递归清单15项（11文件/4目录），与info siblings一致且无下一页；未列像素文件。检测test.zip的LFS SHA256吻合，9698份XML均登记1920×1080×3，属于标注字段、不是像素核验。作者Supplementary只说明RGB/深度/分割/法向/IMU，与原稿infrared表述仍有差异。正式ACM PDF403、机构无ORIGINAL；保留范围pending，继续Baidu原图、正式版与采集时模拟器。",
-      "latestFollowupAt": "2026-10-11"
+      "latestScopeFinding": "v3全文列出的六模态、采集/标注机制和所有实验为RGB、深度/几何、IMU与语言的合成UAV感知。§III-B的infrared/Depth冲突保留，但不形成高光谱采集、谱维处理或重建贡献；按当前严格直接HSI口径排除此固定原稿版本。",
+      "latestFollowupAt": "2026-10-11",
+      "fullTextReadingFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
+      "readPdfPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "formalVersionBoundary": {
+        "doi": "10.1145/3746027.3758220",
+        "status": "pending_formal_version_scope",
+        "finding": "原稿v3范围排除独立于正式MM七页版本。机构摘要仍列120k/六模态/四任务，但没有穷举六模态；正式全文此前403且机构无ORIGINAL，保留正式版输入/版本待核，不重复付费追索。发布像素与采集时模拟器差异仍未核，不阻塞固定v3范围决定。",
+        "priorEvidenceFiles": [
+          "jun-zhou-uemmair-vitask-input-followup-2026-10-11.json",
+          "jun-zhou-griffith-profile-2026-10-11-publications-0.json"
+        ]
+      }
     },
     {
       "arxivId": "2406.02718",
@@ -7780,6 +7829,7 @@
     "jun-zhou-e2empt-v1-full-reading-2026-10-11.json",
     "jun-zhou-mht-v5-full-reading-2026-10-11.json",
     "jun-zhou-cnht-v1-full-reading-2026-10-11.json",
-    "jun-zhou-hy-bae-followup-2026-10-11.json"
+    "jun-zhou-hy-bae-followup-2026-10-11.json",
+    "jun-zhou-query-semantics-scope-reading-2026-10-11.json"
   ]
 }

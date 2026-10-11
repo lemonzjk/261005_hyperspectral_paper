@@ -1,0 +1,813 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/7Lm8+a8QhzWdxF+7HUHll79Hz2k</id>
+  <title>arXiv Query: search_query=au:Zhou AND all:"spectral-spatial"&amp;id_list=&amp;start=0&amp;max_results=1000</title>
+  <updated>2026-10-11T11:38:03Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=au:Zhou+AND+all:%22spectral-spatial%22&amp;start=0&amp;max_results=1000&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1000</opensearch:itemsPerPage>
+  <opensearch:totalResults>27</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.33687v1</id>
+    <title>Resource-Aware Parameter-Efficient Model Adaptation for Onboard High-Dimensional Data</title>
+    <updated>2026-09-27T15:49:55Z</updated>
+    <link href="https://arxiv.org/abs/2609.33687v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.33687v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Onboard satellite models often require frequent updates, but the weights adapted to earlier data distributions can quickly become outdated. However, updating large-scale model parameters in orbit presents significant challenges due to the limited uplink bandwidth of Low Earth Orbit (LEO) satellite systems, particularly for hyperspectral satellite imagery, where high-dimensional spectral-spatial inputs lead to increased model size and update costs. Existing full fine-tuning methods are thus expensive to retrain and difficult to deploy under strict communication constraints. To address this challenge, we propose NE-LoRA, a parameter-efficient adaptation framework for bandwidth-constrained onboard hyperspectral model updates. NE-LoRA combines a primary low-rank branch with a nonlinear auxiliary branch to capture both global update trends and complex spectral-spatial variations. Additionally, we introduce a differentiated training strategy for multi-matrix adapters, motivated by the asymmetric initialization and gradient dynamics of different adapter matrices. Experiments on four hyperspectral datasets and three representative backbone models demonstrate that NE-LoRA consistently outperforms LoRA-based baselines and remains competitive with, and in several cases superior to, full fine-tuning. Across the evaluated settings, NE-LoRA updates only a small fraction of the total parameters on average while preserving low deployment overhead, offering a favorable accuracy-communication trade-off for onboard hyperspectral adaptation.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-27T15:49:55Z</published>
+    <arxiv:comment>22 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Qiyang Zhang</name>
+    </author>
+    <author>
+      <name>Xinhao Li</name>
+    </author>
+    <author>
+      <name>Lei Shi</name>
+    </author>
+    <author>
+      <name>Zheng Lin</name>
+    </author>
+    <author>
+      <name>Jinfeng Wen</name>
+    </author>
+    <author>
+      <name>Ao Zhou</name>
+    </author>
+    <author>
+      <name>Shangguang Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.28970v1</id>
+    <title>LegoQ: Density-Matrix Representation Learning with Spectral-Spatial State Transitions for Hyperspectral Classification</title>
+    <updated>2026-07-31T02:47:16Z</updated>
+    <link href="https://arxiv.org/abs/2607.28970v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.28970v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperspectral image classification is complicated by mixed pixels, spectral ambiguity, class imbalance, and limited annotations. Most current classifiers encode a pixel or patch as a deterministic vector and apply a linear or multilayer softmax head. Although effective for discrimination, this representation does not directly expose how mixed or uncertain a sample is. This paper presents \method, a classical density-matrix representation learning framework for hyperspectral images. The spectral bands are divided into groups and each group is mapped to a positive semi-definite, Hermitian, trace-normalized matrix state. A composable stack of spectral, spatial, and inter-group transitions then updates the states while repeatedly projecting them back to the valid state set. Instead of flattening the final features, \method\ aggregates the group states and compares them with learnable class-prototype density matrices through Uhlmann fidelity. The normalized eigenspectrum, von Neumann entropy, purity, and prototype fidelity provide sample-level diagnostics that are unavailable from a conventional vector head. On Indian Pines, ten runs yield an overall accuracy of $96.20\pm0.70\%$, an average accuracy of $95.57\pm1.29\%$, and a kappa coefficient of $95.66\pm0.80\%$. On WHU-Hi-LongKou, the best of ten runs reaches $97.52\%$ overall accuracy. Classification maps and feature projections show that the transition stack produces compact and better separated class structures. The results support constrained matrix-state learning as a practical alternative to vector-only hyperspectral classification without requiring quantum hardware.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-31T02:47:16Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Weijia Cao</name>
+    </author>
+    <author>
+      <name>Xiaofei Yang</name>
+    </author>
+    <author>
+      <name>Fu Wang</name>
+    </author>
+    <author>
+      <name>Yicong Zhou</name>
+    </author>
+    <author>
+      <name>Xiang Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.12782v1</id>
+    <title>MBTI: A Multi-Branch Efficient Fine-Tuning Framework for Hyperspectral Image Classification with Foundation Models</title>
+    <updated>2026-07-14T13:58:10Z</updated>
+    <link href="https://arxiv.org/abs/2607.12782v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.12782v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperspectral foundation models learn transferable spectral-spatial representations from large-scale unlabeled data. They provide an effective paradigm for adapting to downstream hyperspectral image (HSI) classification tasks with limited labeled samples. However, spectral band configurations vary substantially across sensors, which makes direct model transfer difficult. Existing adaptation strategies often compress, select, or reshape the original spectra to match model-specific input requirements. These operations may discard useful spectral information and weaken local spectral continuity. To address this problem, we propose MBTI, a Multi-Branch efficient fine-tuning framework for Hyperspectral Image classification. MBTI adapts hyperspectral foundation models to downstream classification tasks while preserving full-band spectral information. First, we introduce a spectral-continuity-preserving multi-branch preprocessing strategy. The original HSI is divided into multiple continuous spectral subsets, and a band reuse mechanism is used when the remaining bands cannot form a complete branch. This avoids invalid padding and unnecessary spectral loss. Second, independent Low-Rank Adaptation (LoRA) modules are inserted into each branch. They enable different spectral intervals to learn task-specific discriminative features while keeping most pre-trained parameters frozen. Finally, a multi-branch channel attention fusion module adaptively recalibrates and integrates features from all spectral branches. Experiments on three public hyperspectral datasets show that MBTI achieves competitive and superior performance compared with representative classification methods. Under the final rank-8 configuration, only about 2.33\%--2.36\% of the parameters are trainable. The code will be available at https://github.com/Azhenmiddleblock/MBTI/tree/main.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-14T13:58:10Z</published>
+    <arxiv:comment>The code will be available at https://github.com/Azhenmiddleblock/MBTI/tree/main</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Mingzhen Xu</name>
+    </author>
+    <author>
+      <name>Haonan Guo</name>
+    </author>
+    <author>
+      <name>Di Wang</name>
+    </author>
+    <author>
+      <name>Yinghua Qu</name>
+    </author>
+    <author>
+      <name>Zhiliang Zhou</name>
+    </author>
+    <author>
+      <name>Lei Zhang</name>
+    </author>
+    <author>
+      <name>Huiwen Yao</name>
+    </author>
+    <author>
+      <name>Rui Zhao</name>
+    </author>
+    <author>
+      <name>Fengxiang Wang</name>
+    </author>
+    <author>
+      <name>Gang Wan</name>
+    </author>
+    <author>
+      <name>Bo Du</name>
+    </author>
+    <author>
+      <name>Liangpei Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.26849v1</id>
+    <title>Liquid Fusion of Heterogeneous Representations Towards General Salient Object Detection</title>
+    <updated>2026-06-25T10:35:42Z</updated>
+    <link href="https://arxiv.org/abs/2606.26849v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.26849v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>General Salient Object Detection (SOD) aims to identify and segment visually interesting objects from uni-modality or multi-modality scenes, recently advanced by cutting-edge State Space Models (SSMs). However, a critical limitation of current approaches is their neglect of the inherent spectral biases exhibited by different neural network paradigms. By digging to the dataset-level spectral analysis of Convolutional Neural Networks (CNNs) and SSMs, their semantic representations are inherently complementary based on their complementary frequency preferences. Inspired by this, we harmonize heterogeneous representations from SSMs and CNNs to bridge their spectral biases for general salient object detection. To this end, inspired by the dynamic information propagation of Liquid Neural Networks (LNNs), we introduce a liquid fusion to dynamically integrates features from two backbones, including VMamba and ConvNeXt, referred to Liquid Fusion Network (LFNet). Concretely, by treating the continuous VMamba features and ConvNeXt features as evolving states and exogenous stimulus, respectively, LFNet employs a dynamic gating mechanism for content-aware feature aggregation. Crucially, this state-stimulus paradigm enables to scale to multi-modal cues, resulting in flexibility in general SOD. Besides, a Saliency-Guided Upsampling (SGU) operator to propagate the features to the shallow layer, which leverages a spectral-spatial co-design to suppress upsampling artifacts while preserving semantics. Extensive experiments across five diverse tasks (RGB, RGB-D, RGB-T, VSOD, and VDT) demonstrate that LFNet achieves state-of-the-art performance, offering a superior trade-off between detection accuracy and model efficiency. Code has been released at https://github.com/cke520/LFNet.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T10:35:42Z</published>
+    <arxiv:comment>20 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Ke Chen</name>
+    </author>
+    <author>
+      <name>Ling Zhou</name>
+    </author>
+    <author>
+      <name>Guangqi Jiang</name>
+    </author>
+    <author>
+      <name>Gengshen Wu</name>
+    </author>
+    <author>
+      <name>Yi Liu</name>
+    </author>
+    <author>
+      <name>Shoukun Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.17336v3</id>
+    <title>AGE-Net: Spectral--Spatial Fusion and Anatomical Graph Reasoning with Evidential Ordinal Regression for Knee Osteoarthritis Grading</title>
+    <updated>2026-03-16T10:04:38Z</updated>
+    <link href="https://arxiv.org/abs/2601.17336v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.17336v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automated Kellgren--Lawrence (KL) grading from knee radiographs is challenging due to subtle structural changes, long-range anatomical dependencies, and ambiguity near grade boundaries. We propose AGE-Net, a ConvNeXt-based framework that integrates Spectral--Spatial Fusion (SSF), Anatomical Graph Reasoning (AGR), and Differential Refinement (DFR). To capture predictive uncertainty and preserve label ordinality, AGE-Net employs a Normal-Inverse-Gamma (NIG) evidential regression head and a pairwise ordinal ranking constraint. On a knee KL dataset, AGE-Net achieves a quadratic weighted kappa (QWK) of 0.9017 +/- 0.0045 and a mean squared error (MSE) of 0.2349 +/- 0.0028 over three random seeds, outperforming strong CNN baselines and showing consistent gains in ablation studies. We further outline evaluations of uncertainty quality, robustness, and explainability, with additional experimental figures to be included in the full manuscript.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-24T06:35:30Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xiaoyang Li</name>
+    </author>
+    <author>
+      <name>Runni Zhou</name>
+    </author>
+    <author>
+      <name>Xinghao Yan</name>
+    </author>
+    <author>
+      <name>Liehao Yan</name>
+    </author>
+    <author>
+      <name>Zhaochen Li</name>
+    </author>
+    <author>
+      <name>Chenjie Zhu</name>
+    </author>
+    <author>
+      <name>Rongrong Fu</name>
+    </author>
+    <author>
+      <name>Yuan Chai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.16084v3</id>
+    <title>SpectralTrain: A Universal Framework for Hyperspectral Image Classification</title>
+    <updated>2026-05-29T08:48:21Z</updated>
+    <link href="https://arxiv.org/abs/2511.16084v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.16084v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperspectral image (HSI) classification typically involves large-scale data and computationally intensive training, which limits the practical deployment of deep learning models in real-world remote sensing tasks. This study introduces SpectralTrain, a universal, architecture-agnostic training framework that enhances learning efficiency by integrating curriculum learning (CL) with principal component analysis (PCA)-based spectral downsampling. By gradually introducing spectral complexity while preserving essential information, SpectralTrain enables efficient learning of spectral -- spatial patterns at significantly reduced computational costs. The framework is independent of specific architectures, optimizers, or loss functions and is compatible with both classical and state-of-the-art (SOTA) models. Extensive experiments on three benchmark datasets -- Indian Pines, Salinas-A, and the newly introduced CloudPatch-7 -- demonstrate strong generalization across spatial scales, spectral characteristics, and application domains. The results indicate consistent reductions in training time by 2-7x speedups with small-to-moderate accuracy deltas depending on backbone. Its application to cloud classification further reveals potential in climate-related remote sensing, emphasizing training strategy optimization as an effective complement to architectural design in HSI models. Code is available at https://github.com/mh-zhou/SpectralTrain.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-20T06:19:26Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Meihua Zhou</name>
+    </author>
+    <author>
+      <name>Liping Yu</name>
+    </author>
+    <author>
+      <name>Xinyu Tong</name>
+    </author>
+    <author>
+      <name>Wai Kin Fung</name>
+    </author>
+    <author>
+      <name>Ruiguo Hu</name>
+    </author>
+    <author>
+      <name>Jiarui Zhao</name>
+    </author>
+    <author>
+      <name>Nan Wan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.24087v1</id>
+    <title>CSST Slitless Spectra: Target Detection and Classification with YOLO</title>
+    <updated>2025-10-28T05:59:02Z</updated>
+    <link href="https://arxiv.org/abs/2510.24087v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.24087v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Addressing the spatial uncertainty and spectral blending challenges in CSST slitless spectroscopy, we present a deep learning-driven, end-to-end framework based on the You Only Look Once (YOLO) models. This approach directly detects, classifies, and analyzes spectral traces from raw 2D images, bypassing traditional, error-accumulating pipelines. YOLOv5 effectively detects both compact zero-order and extended first-order traces even in highly crowded fields. Building on this, YOLO11 integrates source classification (star/galaxy) and discrete astrophysical parameter estimation (e.g., redshift bins), showcasing complete spectral trace analysis without other manual preprocessing. Our framework processes large images rapidly, learning spectral-spatial features holistically to minimize errors. We achieve high trace detection precision (YOLOv5) and demonstrate successful quasar identification and binned redshift estimation (YOLO11). This study establishes machine learning as a paradigm shift in slitless spectroscopy, unifying detection, classification, and preliminary parameter estimation in a scalable system. Future research will concentrate on direct, continuous prediction of astrophysical parameters from raw spectral traces.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-28T05:59:02Z</published>
+    <arxiv:comment>30 pages, 12+6 figures. For high-resolution figures, please see the published version</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <arxiv:journal_ref>The Astronomical Journal, 170(5):256 (2025)</arxiv:journal_ref>
+    <author>
+      <name>Yingying Zhou</name>
+    </author>
+    <author>
+      <name>Chao Liu</name>
+    </author>
+    <author>
+      <name>Hao Tian</name>
+    </author>
+    <author>
+      <name>Xin Zhang</name>
+    </author>
+    <author>
+      <name>Nan Li</name>
+    </author>
+    <arxiv:doi>10.3847/1538-3881/adee1c</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/1538-3881/adee1c" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.08436v2</id>
+    <title>HyperTTA: Test-Time Adaptation for Hyperspectral Image Classification under Distribution Shifts</title>
+    <updated>2025-09-22T06:47:26Z</updated>
+    <link href="https://arxiv.org/abs/2509.08436v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.08436v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperspectral image (HSI) classification models are highly sensitive to distribution shifts caused by real-world degradations such as noise, blur, compression, and atmospheric effects. To address this challenge, we propose HyperTTA (Test-Time Adaptable Transformer for Hyperspectral Degradation), a unified framework that enhances model robustness under diverse degradation conditions. First, we construct a multi-degradation hyperspectral benchmark that systematically simulates nine representative degradations, enabling comprehensive evaluation of robust classification. Based on this benchmark, we develop a Spectral--Spatial Transformer Classifier (SSTC) with a multi-level receptive field mechanism and label smoothing regularization to capture multi-scale spatial context and improve generalization. Furthermore, we introduce a lightweight test-time adaptation strategy, the Confidence-aware Entropy-minimized LayerNorm Adapter (CELA), which dynamically updates only the affine parameters of LayerNorm layers by minimizing prediction entropy on high-confidence unlabeled target samples. This strategy ensures reliable adaptation without access to source data or target labels. Experiments on two benchmark datasets demonstrate that HyperTTA outperforms state-of-the-art baselines across a wide range of degradation scenarios. Code will be made available publicly.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-10T09:31:37Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xia Yue</name>
+    </author>
+    <author>
+      <name>Anfeng Liu</name>
+    </author>
+    <author>
+      <name>Ning Chen</name>
+    </author>
+    <author>
+      <name>Chenjia Huang</name>
+    </author>
+    <author>
+      <name>Hui Liu</name>
+    </author>
+    <author>
+      <name>Zhou Huang</name>
+    </author>
+    <author>
+      <name>Leyuan Fang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.12697v4</id>
+    <title>MGDFIS: Multi-scale Global-detail Feature Integration Strategy for Small Object Detection</title>
+    <updated>2026-08-02T10:07:28Z</updated>
+    <link href="https://arxiv.org/abs/2506.12697v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.12697v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Small-object detection in Unmanned Aerial Vehicle (UAV) imagery requires preserving weak local evidence while using broader context to separate tiny foreground targets from cluttered backgrounds. Existing multi-scale fusion methods improve feature aggregation, but they often add computation or blur fine details during repeated cross-scale fusion. The central challenge is to balance low-SNR target preservation, clutter suppression, and efficient cross-scale context exchange. To address this challenge, we propose the Multi-scale Global-detail Feature Integration Strategy (MGDFIS), a neck-level feature-fusion strategy that couples global context exchange, local-detail recovery, and pixel-level foreground-background recalibration. MGDFIS integrates three coordinated modules: FusionLock-TSS Attention for stabilizing spectral-spatial responses, Global-detail Integration for combining long-range mixing with local detail capture, and Dynamic Pixel Attention for reweighting compact foreground regions. On the controlled VisDrone setting, YOLO26m + MGDFIS improves AP50:95 from 25.7 to 30.2 and AP50 from 37.2 to 44.2 over the YOLO26m baseline, with 96.1 GFLOPs. Additional dataset-specific evaluations report 38.9 AP50 and 21.9 AP50:95 on UAVDT and 97.4 AP50 on CARPK. The code is available at: https://github.com/Bai-Xuecheng/MGDFIS.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-15T02:54:25Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yuxiang Wang</name>
+    </author>
+    <author>
+      <name>Xuecheng Bai</name>
+    </author>
+    <author>
+      <name>Chuanzhi Xu</name>
+    </author>
+    <author>
+      <name>Ying Zhou</name>
+    </author>
+    <author>
+      <name>Weidong Cai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.17528v1</id>
+    <title>DECT-based Space-Squeeze Method for Multi-Class Classification of Metastatic Lymph Nodes in Breast Cancer</title>
+    <updated>2025-05-23T06:35:18Z</updated>
+    <link href="https://arxiv.org/abs/2505.17528v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.17528v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Background: Accurate assessment of metastatic burden in axillary lymph nodes is crucial for guiding breast cancer treatment decisions, yet conventional imaging modalities struggle to differentiate metastatic burden levels and capture comprehensive lymph node characteristics. This study leverages dual-energy computed tomography (DECT) to exploit spectral-spatial information for improved multi-class classification. Purpose: To develop a noninvasive DECT-based model classifying sentinel lymph nodes into three categories: no metastasis ($N_0$), low metastatic burden ($N_{+(1-2)}$), and heavy metastatic burden ($N_{+(\geq3)}$), thereby aiding therapeutic planning. Methods: We propose a novel space-squeeze method combining two innovations: (1) a channel-wise attention mechanism to compress and recalibrate spectral-spatial features across 11 energy levels, and (2) virtual class injection to sharpen inter-class boundaries and compact intra-class variations in the representation space. Results: Evaluated on 227 biopsy-confirmed cases, our method achieved an average test AUC of 0.86 (95% CI: 0.80-0.91) across three cross-validation folds, outperforming established CNNs (VGG, ResNet, etc). The channel-wise attention and virtual class components individually improved AUC by 5.01% and 5.87%, respectively, demonstrating complementary benefits. Conclusions: The proposed framework enhances diagnostic AUC by effectively integrating DECT's spectral-spatial data and mitigating class ambiguity, offering a promising tool for noninvasive metastatic burden assessment in clinical practice.</summary>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-23T06:35:18Z</published>
+    <arxiv:primary_category term="eess.IV"/>
+    <author>
+      <name>Hai Jiang</name>
+    </author>
+    <author>
+      <name>Chushan Zheng</name>
+    </author>
+    <author>
+      <name>Jiawei Pan</name>
+    </author>
+    <author>
+      <name>Yuanpin Zhou</name>
+    </author>
+    <author>
+      <name>Qiongting Liu</name>
+    </author>
+    <author>
+      <name>Xiang Zhang</name>
+    </author>
+    <author>
+      <name>Jun Shen</name>
+    </author>
+    <author>
+      <name>Yao Lu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.01986v1</id>
+    <title>DCT-Mamba3D: Spectral Decorrelation and Spatial-Spectral Feature Extraction for Hyperspectral Image Classification</title>
+    <updated>2025-02-04T04:00:08Z</updated>
+    <link href="https://arxiv.org/abs/2502.01986v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.01986v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperspectral image classification presents challenges due to spectral redundancy and complex spatial-spectral dependencies. This paper proposes a novel framework, DCT-Mamba3D, for hyperspectral image classification. DCT-Mamba3D incorporates: (1) a 3D spectral-spatial decorrelation module that applies 3D discrete cosine transform basis functions to reduce both spectral and spatial redundancy, enhancing feature clarity across dimensions; (2) a 3D-Mamba module that leverages a bidirectional state-space model to capture intricate spatial-spectral dependencies; and (3) a global residual enhancement module that stabilizes feature representation, improving robustness and convergence. Extensive experiments on benchmark datasets show that our DCT-Mamba3D outperforms the state-of-the-art methods in challenging scenarios such as the same object in different spectra and different objects in the same spectra.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-04T04:00:08Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Weijia Cao</name>
+    </author>
+    <author>
+      <name>Xiaofei Yang</name>
+    </author>
+    <author>
+      <name>Yicong Zhou</name>
+    </author>
+    <author>
+      <name>Zheng Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.00283v2</id>
+    <title>Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning</title>
+    <updated>2024-12-03T02:46:05Z</updated>
+    <link href="https://arxiv.org/abs/2412.00283v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.00283v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Classifying hyperspectral images (HSIs) is a complex task in remote sensing due to the high-dimensional nature and volume of data involved. To address these challenges, we propose the Spectral-Spatial non-Linear Model, a novel framework that significantly reduces data volume while enhancing classification accuracy. Our model employs a bidirectional reversed convolutional neural network (CNN) to efficiently extract spectral features, complemented by a specialized block for spatial feature analysis. This hybrid approach leverages the operational efficiency of CNNs and incorporates dynamic feature extraction inspired by attention mechanisms, optimizing performance without the high computational demands typically associated with transformer-based models. The SS non-Linear Model is designed to process hyperspectral data bidirectionally, achieving notable classification and efficiency improvements by fusing spectral and spatial features effectively. This approach yields superior classification accuracy compared to existing benchmarks while maintaining computational efficiency, making it suitable for resource-constrained environments. We validate the SS non-Linear Model on three widely recognized datasets, Houston 2013, Indian Pines, and Pavia University, demonstrating its ability to outperform current state-of-the-art models in HSI classification and efficiency. This work highlights the innovative methodology of the SS non-Linear Model and its practical benefits for remote sensing applications, where both data efficiency and classification accuracy are critical. For further details, please refer to our code repository on GitHub: HSILinearModel.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-29T23:32:26Z</published>
+    <arxiv:comment>17 pages, 4 figures and 10 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Judy X Yang</name>
+    </author>
+    <author>
+      <name>Jing Wang</name>
+    </author>
+    <author>
+      <name>Zekun Long</name>
+    </author>
+    <author>
+      <name>Chenhong Sui</name>
+    </author>
+    <author>
+      <name>Jun Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.07050v1</id>
+    <title>DualMamba: A Lightweight Spectral-Spatial Mamba-Convolution Network for Hyperspectral Image Classification</title>
+    <updated>2024-06-11T08:26:42Z</updated>
+    <link href="https://arxiv.org/abs/2406.07050v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.07050v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The effectiveness and efficiency of modeling complex spectral-spatial relations are both crucial for Hyperspectral image (HSI) classification. Most existing methods based on CNNs and transformers still suffer from heavy computational burdens and have room for improvement in capturing the global-local spectral-spatial feature representation. To this end, we propose a novel lightweight parallel design called lightweight dual-stream Mamba-convolution network (DualMamba) for HSI classification. Specifically, a parallel lightweight Mamba and CNN block are first developed to extract global and local spectral-spatial features. First, the cross-attention spectral-spatial Mamba module is proposed to leverage the global modeling of Mamba at linear complexity. Within this module, dynamic positional embedding is designed to enhance the spatial location information of visual sequences. The lightweight spectral/spatial Mamba blocks comprise an efficient scanning strategy and a lightweight Mamba design to efficiently extract global spectral-spatial features. And the cross-attention spectral-spatial fusion is designed to learn cross-correlation and fuse spectral-spatial features. Second, the lightweight spectral-spatial residual convolution module is proposed with lightweight spectral and spatial branches to extract local spectral-spatial features through residual learning. Finally, the adaptive global-local fusion is proposed to dynamically combine global Mamba features and local convolution features for a global-local spectral-spatial representation. Compared with state-of-the-art HSI classification methods, experimental results demonstrate that DualMamba achieves significant classification accuracy on three public HSI datasets and a superior reduction in model parameters and floating point operations (FLOPs).</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-11T08:26:42Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jiamu Sheng</name>
+    </author>
+    <author>
+      <name>Jingyi Zhou</name>
+    </author>
+    <author>
+      <name>Jiong Wang</name>
+    </author>
+    <author>
+      <name>Peng Ye</name>
+    </author>
+    <author>
+      <name>Jiayuan Fan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2310.18550v1</id>
+    <title>MultiScale Spectral-Spatial Convolutional Transformer for Hyperspectral Image Classification</title>
+    <updated>2023-10-28T00:41:35Z</updated>
+    <link href="https://arxiv.org/abs/2310.18550v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.18550v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Due to the powerful ability in capturing the global information, Transformer has become an alternative architecture of CNNs for hyperspectral image classification. However, general Transformer mainly considers the global spectral information while ignores the multiscale spatial information of the hyperspectral image. In this paper, we propose a multiscale spectral-spatial convolutional Transformer (MultiscaleFormer) for hyperspectral image classification. First, the developed method utilizes multiscale spatial patches as tokens to formulate the spatial Transformer and generates multiscale spatial representation of each band in each pixel. Second, the spatial representation of all the bands in a given pixel are utilized as tokens to formulate the spectral Transformer and generate the multiscale spectral-spatial representation of each pixel. Besides, a modified spectral-spatial CAF module is constructed in the MultiFormer to fuse cross-layer spectral and spatial information. Therefore, the proposed MultiFormer can capture the multiscale spectral-spatial information and provide better performance than most of other architectures for hyperspectral image classification. Experiments are conducted over commonly used real-world datasets and the comparison results show the superiority of the proposed method.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-28T00:41:35Z</published>
+    <arxiv:comment>submitted to IEEE GRSL</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Zhiqiang Gong</name>
+    </author>
+    <author>
+      <name>Xian Zhou</name>
+    </author>
+    <author>
+      <name>Wen Yao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2309.00005v1</id>
+    <title>High Spectral Spatial Resolution Synthetic HyperSpectral Dataset form multi-source fusion</title>
+    <updated>2023-06-25T11:17:12Z</updated>
+    <link href="https://arxiv.org/abs/2309.00005v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2309.00005v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This research paper introduces a synthetic hyperspectral dataset that combines high spectral and spatial resolution imaging to achieve a comprehensive, accurate, and detailed representation of observed scenes or objects. Obtaining such desirable qualities is challenging when relying on a single camera. The proposed dataset addresses this limitation by leveraging three modalities: RGB, push-broom visible hyperspectral camera, and snapshot infrared hyperspectral camera, each offering distinct spatial and spectral resolutions. Different camera systems exhibit varying photometric properties, resulting in a trade-off between spatial and spectral resolution. RGB cameras typically offer high spatial resolution but limited spectral resolution, while hyperspectral cameras possess high spectral resolution at the expense of spatial resolution. Moreover, hyperspectral cameras themselves employ different capturing techniques and spectral ranges, further complicating the acquisition of comprehensive data. By integrating the photometric properties of these modalities, a single synthetic hyperspectral image can be generated, facilitating the exploration of broader spectral-spatial relationships for improved analysis, monitoring, and decision-making across various fields. This paper emphasizes the importance of multi-modal fusion in producing a high-quality synthetic hyperspectral dataset with consistent spectral intervals between bands.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-25T11:17:12Z</published>
+    <arxiv:comment>IJCNN workshop on Multimodal Synthetic Data for Deep Neural Networks (MSynD), 2023</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yajie Sun</name>
+    </author>
+    <author>
+      <name>Ali Zia</name>
+    </author>
+    <author>
+      <name>Jun Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2306.08964v2</id>
+    <title>Exploring Multi-Timestep Multi-Stage Diffusion Features for Hyperspectral Image Classification</title>
+    <updated>2024-06-03T04:50:18Z</updated>
+    <link href="https://arxiv.org/abs/2306.08964v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.08964v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The effectiveness of spectral-spatial feature learning is crucial for the hyperspectral image (HSI) classification task. Diffusion models, as a new class of groundbreaking generative models, have the ability to learn both contextual semantics and textual details from the distinct timestep dimension, enabling the modeling of complex spectral-spatial relations in HSIs. However, existing diffusion-based HSI classification methods only utilize manually selected single-timestep single-stage features, limiting the full exploration and exploitation of rich contextual semantics and textual information hidden in the diffusion model. To address this issue, we propose a novel diffusion-based feature learning framework that explores Multi-Timestep Multi-Stage Diffusion features for HSI classification for the first time, called MTMSD. Specifically, the diffusion model is first pretrained with unlabeled HSI patches to mine the connotation of unlabeled data, and then is used to extract the multi-timestep multi-stage diffusion features. To effectively and efficiently leverage multi-timestep multi-stage features,two strategies are further developed. One strategy is class &amp; timestep-oriented multi-stage feature purification module with the inter-class and inter-timestep prior for reducing the redundancy of multi-stage features and alleviating memory constraints. The other one is selective timestep feature fusion module with the guidance of global features to adaptively select different timestep features for integrating texture and semantics. Both strategies facilitate the generality and adaptability of the MTMSD framework for diverse patterns of different HSI data. Extensive experiments are conducted on four public HSI datasets, and the results demonstrate that our method outperforms state-of-the-art methods for HSI classification, especially on the challenging Houston 2018 dataset.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-15T08:56:58Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jingyi Zhou</name>
+    </author>
+    <author>
+      <name>Jiamu Sheng</name>
+    </author>
+    <author>
+      <name>Jiayuan Fan</name>
+    </author>
+    <author>
+      <name>Peng Ye</name>
+    </author>
+    <author>
+      <name>Tong He</name>
+    </author>
+    <author>
+      <name>Bin Wang</name>
+    </author>
+    <author>
+      <name>Tao Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2305.12410v1</id>
+    <title>DiffUCD:Unsupervised Hyperspectral Image Change Detection with Semantic Correlation Diffusion Model</title>
+    <updated>2023-05-21T09:21:41Z</updated>
+    <link href="https://arxiv.org/abs/2305.12410v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.12410v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperspectral image change detection (HSI-CD) has emerged as a crucial research area in remote sensing due to its ability to detect subtle changes on the earth's surface. Recently, diffusional denoising probabilistic models (DDPM) have demonstrated remarkable performance in the generative domain. Apart from their image generation capability, the denoising process in diffusion models can comprehensively account for the semantic correlation of spectral-spatial features in HSI, resulting in the retrieval of semantically relevant features in the original image. In this work, we extend the diffusion model's application to the HSI-CD field and propose a novel unsupervised HSI-CD with semantic correlation diffusion model (DiffUCD). Specifically, the semantic correlation diffusion model (SCDM) leverages abundant unlabeled samples and fully accounts for the semantic correlation of spectral-spatial features, which mitigates pseudo change between multi-temporal images arising from inconsistent imaging conditions. Besides, objects with the same semantic concept at the same spatial location may exhibit inconsistent spectral signatures at different times, resulting in pseudo change. To address this problem, we propose a cross-temporal contrastive learning (CTCL) mechanism that aligns the spectral feature representations of unchanged samples. By doing so, the spectral difference invariant features caused by environmental changes can be obtained. Experiments conducted on three publicly available datasets demonstrate that the proposed method outperforms the other state-of-the-art unsupervised methods in terms of Overall Accuracy (OA), Kappa Coefficient (KC), and F1 scores, achieving improvements of approximately 3.95%, 8.13%, and 4.45%, respectively. Notably, our method can achieve comparable results to those fully supervised methods requiring numerous annotated samples.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-21T09:21:41Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Xiangrong Zhang</name>
+    </author>
+    <author>
+      <name>Shunli Tian</name>
+    </author>
+    <author>
+      <name>Guanchun Wang</name>
+    </author>
+    <author>
+      <name>Huiyu Zhou</name>
+    </author>
+    <author>
+      <name>Licheng Jiao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2212.12134v1</id>
+    <title>AMDET: Attention based Multiple Dimensions EEG Transformer for Emotion Recognition</title>
+    <updated>2022-12-23T04:10:00Z</updated>
+    <link href="https://arxiv.org/abs/2212.12134v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2212.12134v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Affective computing is an important branch of artificial intelligence, and with the rapid development of brain computer interface technology, emotion recognition based on EEG signals has received broad attention. It is still a great challenge to effectively explore the multi-dimensional information in the EEG data in spite of a large number of deep learning methods. In this paper, we propose a deep model called Attention-based Multiple Dimensions EEG Transformer (AMDET), which can exploit the complementarity among the spectral-spatial-temporal features of EEG data by employing the multi-dimensional global attention mechanism. We transformed the original EEG data into 3D temporal-spectral-spatial representations and then the AMDET would use spectral-spatial transformer encoder layer to extract effective features in the EEG signal and concentrate on the critical time frame with a temporal attention layer. We conduct extensive experiments on the DEAP, SEED, and SEED-IV datasets to evaluate the performance of AMDET and the results outperform the state-of-the-art baseline on three datasets. Accuracy rates of 97.48%, 96.85%, 97.17%, 87.32% were achieved in the DEAP-Arousal, DEAP-Valence, SEED, and SEED-IV datasets, respectively. We also conduct extensive experiments to explore the possible brain regions that influence emotions and the coupling of EEG signals. AMDET can perform as well even with few channels which are identified by visualizing what learned model focus on. The accuracy could achieve over 90% even with only eight channels and it is of great use and benefit for practical applications.</summary>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-12-23T04:10:00Z</published>
+    <arxiv:primary_category term="eess.SP"/>
+    <author>
+      <name>Yongling Xu</name>
+    </author>
+    <author>
+      <name>Yang Du</name>
+    </author>
+    <author>
+      <name>Jing Zou</name>
+    </author>
+    <author>
+      <name>Tianying Zhou</name>
+    </author>
+    <author>
+      <name>Lushan Xiao</name>
+    </author>
+    <author>
+      <name>Li Liu</name>
+    </author>
+    <author>
+      <name> Pengcheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2103.10084v1</id>
+    <title>TPPI-Net: Towards Efficient and Practical Hyperspectral Image Classification</title>
+    <updated>2021-03-18T08:35:37Z</updated>
+    <link href="https://arxiv.org/abs/2103.10084v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2103.10084v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperspectral Image(HSI) classification is the most vibrant field of research in the hyperspectral community, which aims to assign each pixel in the image to one certain category based on its spectral-spatial characteristics. Recently, some spectral-spatial-feature based DCNNs have been proposed and demonstrated remarkable classification performance. When facing a real HSI, however, these Networks have to deal with the pixels in the image one by one. The pixel-wise processing strategy is inefficient since there are numerous repeated calculations between adjacent pixels. In this paper, firstly, a brand new Network design mechanism TPPI (training based on pixel and prediction based on image) is proposed for HSI classification, which makes it possible to provide efficient and practical HSI classification with the restrictive conditions attached to the hyperspectral dataset. And then, according to the TPPI mechanism, TPPI-Net is derived based on the state of the art networks for HSI classification. Experimental results show that the proposed TPPI-Net can not only obtain high classification accuracy equivalent to the state of the art networks for HSI classification, but also greatly reduce the computational complexity of hyperspectral image prediction.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-03-18T08:35:37Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hao Chen</name>
+    </author>
+    <author>
+      <name>Xiaohua Li</name>
+    </author>
+    <author>
+      <name>Jiliu Zhou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2012.01829v2</id>
+    <title>SMDS-Net: Model Guided Spectral-Spatial Network for Hyperspectral Image Denoising</title>
+    <updated>2021-11-15T02:56:37Z</updated>
+    <link href="https://arxiv.org/abs/2012.01829v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2012.01829v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep learning (DL) based hyperspectral images (HSIs) denoising approaches directly learn the nonlinear mapping between observed noisy images and underlying clean images. They normally do not consider the physical characteristics of HSIs, therefore making them lack of interpretability that is key to understand their denoising mechanism.. In order to tackle this problem, we introduce a novel model guided interpretable network for HSI denoising. Specifically, fully considering the spatial redundancy, spectral low-rankness and spectral-spatial properties of HSIs, we first establish a subspace based multi-dimensional sparse model. This model first projects the observed HSIs into a low-dimensional orthogonal subspace, and then represents the projected image with a multidimensional dictionary. After that, the model is unfolded into an end-to-end network named SMDS-Net whose fundamental modules are seamlessly connected with the denoising procedure and optimization of the model. This makes SMDS-Net convey clear physical meanings, i.e., learning the low-rankness and sparsity of HSIs. Finally, all key variables including dictionaries and thresholding parameters are obtained by the end-to-end training. Extensive experiments and comprehensive analysis confirm the denoising ability and interpretability of our method against the state-of-the-art HSI denoising methods.</summary>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-12-03T11:05:01Z</published>
+    <arxiv:comment>The experimental settings have been updated</arxiv:comment>
+    <arxiv:primary_category term="eess.IV"/>
+    <author>
+      <name>Fengchao Xiong</name>
+    </author>
+    <author>
+      <name>Shuyin Tao</name>
+    </author>
+    <author>
+      <name>Jun Zhou</name>
+    </author>
+    <author>
+      <name>Jianfeng Lu</name>
+    </author>
+    <author>
+      <name>Jiantao Zhou</name>
+    </author>
+    <author>
+      <name>Yuntao Qian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2007.05257v1</id>
+    <title>A 3D-Hybrid-Shot Spiral Sequence for Hyperpolarized $^{13}$C Imaging</title>
+    <updated>2020-07-10T08:58:59Z</updated>
+    <link href="https://arxiv.org/abs/2007.05257v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2007.05257v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Purpose: Hyperpolarized imaging experiments have conflicting requirements of high spatial, temporal, and spectral resolution. Spectral-Spatial RF excitation has been shown to form an attractive magnetization-efficient method for hyperpolarized imaging, but the optimum readout strategy is not yet known.
+  Methods: In this work we propose a novel 3D hybrid-shot spiral sequence which features two constant density regions that permit the retrospective reconstruction of either high spatial or high temporal resolution images post hoc, (adaptive spatiotemporal imaging) allowing greater flexibility in acquisition and reconstruction.
+  Results: We have implemented this sequence, both via simulation and on a pre-clinical scanner, to demonstrate its feasibility, in both a 1H phantom and with hyperpolarized 13C pyruvate in vivo. Conclusion: This sequence forms an attractive method for acquiring hyperpolarized imaging datasets, providing adaptive spatiotemporal imaging to ameliorate the conflict of spatial and temporal resolution, with significant potential for clinical translation.</summary>
+    <category term="physics.med-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-07-10T08:58:59Z</published>
+    <arxiv:primary_category term="physics.med-ph"/>
+    <author>
+      <name>Andrew Tyler</name>
+      <arxiv:affiliation>Department of Physiology, Anatomy &amp; Genetics, University of Oxford</arxiv:affiliation>
+      <arxiv:affiliation>Oxford Centre for Clinical Cardiac Magnetic Resonance Research, John Radcliffe Hospital, Oxford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Justin Y. C. Lau</name>
+      <arxiv:affiliation>Department of Physiology, Anatomy &amp; Genetics, University of Oxford</arxiv:affiliation>
+      <arxiv:affiliation>Oxford Centre for Clinical Cardiac Magnetic Resonance Research, John Radcliffe Hospital, Oxford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Vicky Ball</name>
+      <arxiv:affiliation>Department of Physiology, Anatomy &amp; Genetics, University of Oxford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kerstin N. Timm</name>
+      <arxiv:affiliation>Department of Physiology, Anatomy &amp; Genetics, University of Oxford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Tony Zhou</name>
+      <arxiv:affiliation>Department of Physiology, Anatomy &amp; Genetics, University of Oxford</arxiv:affiliation>
+      <arxiv:affiliation>Oxford Centre for Clinical Cardiac Magnetic Resonance Research, John Radcliffe Hospital, Oxford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Damian J. Tyler</name>
+      <arxiv:affiliation>Department of Physiology, Anatomy &amp; Genetics, University of Oxford</arxiv:affiliation>
+      <arxiv:affiliation>Oxford Centre for Clinical Cardiac Magnetic Resonance Research, John Radcliffe Hospital, Oxford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jack J. Miller</name>
+      <arxiv:affiliation>Department of Physiology, Anatomy &amp; Genetics, University of Oxford</arxiv:affiliation>
+      <arxiv:affiliation>Oxford Centre for Clinical Cardiac Magnetic Resonance Research, John Radcliffe Hospital, Oxford</arxiv:affiliation>
+      <arxiv:affiliation>Department of Physics, University of Oxford</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1002/mrm.28462</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1002/mrm.28462" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2006.10300v2</id>
+    <title>Hyperspectral Image Super-resolution via Deep Progressive Zero-centric Residual Learning</title>
+    <updated>2020-12-05T13:15:36Z</updated>
+    <link href="https://arxiv.org/abs/2006.10300v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2006.10300v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper explores the problem of hyperspectral image (HSI) super-resolution that merges a low resolution HSI (LR-HSI) and a high resolution multispectral image (HR-MSI). The cross-modality distribution of the spatial and spectral information makes the problem challenging. Inspired by the classic wavelet decomposition-based image fusion, we propose a novel \textit{lightweight} deep neural network-based framework, namely progressive zero-centric residual network (PZRes-Net), to address this problem efficiently and effectively. Specifically, PZRes-Net learns a high resolution and \textit{zero-centric} residual image, which contains high-frequency spatial details of the scene across all spectral bands, from both inputs in a progressive fashion along the spectral dimension. And the resulting residual image is then superimposed onto the up-sampled LR-HSI in a \textit{mean-value invariant} manner, leading to a coarse HR-HSI, which is further refined by exploring the coherence across all spectral bands simultaneously. To learn the residual image efficiently and effectively, we employ spectral-spatial separable convolution with dense connections. In addition, we propose zero-mean normalization implemented on the feature maps of each layer to realize the zero-mean characteristic of the residual image. Extensive experiments over both real and synthetic benchmark datasets demonstrate that our PZRes-Net outperforms state-of-the-art methods to a \textit{significant} extent in terms of both 4 quantitative metrics and visual quality, e.g., our PZRes-Net improves the PSNR more than 3dB, while saving 2.3$\times$ parameters and consuming 15$\times$ less FLOPs. The code is publicly available at https://github.com/zbzhzhy/PZRes-Net .</summary>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-06-18T06:32:11Z</published>
+    <arxiv:primary_category term="eess.IV"/>
+    <author>
+      <name>Zhiyu Zhu</name>
+    </author>
+    <author>
+      <name>Junhui Hou</name>
+    </author>
+    <author>
+      <name>Jie Chen</name>
+    </author>
+    <author>
+      <name>Huanqiang Zeng</name>
+    </author>
+    <author>
+      <name>Jiantao Zhou</name>
+    </author>
+    <arxiv:doi>10.1109/TIP.2020.3044214</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/TIP.2020.3044214" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1904.07461v1</id>
+    <title>Deep Neural Network Based Hyperspectral Pixel Classification With Factorized Spectral-Spatial Feature Representation</title>
+    <updated>2019-04-16T04:52:19Z</updated>
+    <link href="https://arxiv.org/abs/1904.07461v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1904.07461v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep learning has been widely used for hyperspectral pixel classification due to its ability of generating deep feature representation. However, how to construct an efficient and powerful network suitable for hyperspectral data is still under exploration. In this paper, a novel neural network model is designed for taking full advantage of the spectral-spatial structure of hyperspectral data. Firstly, we extract pixel-based intrinsic features from rich yet redundant spectral bands by a subnetwork with supervised pre-training scheme. Secondly, in order to utilize the local spatial correlation among pixels, we share the previous subnetwork as a spectral feature extractor for each pixel in a patch of image, after which the spectral features of all pixels in a patch are combined and feeded into the subsequent classification subnetwork. Finally, the whole network is further fine-tuned to improve its classification performance. Specially, the spectral-spatial factorization scheme is applied in our model architecture, making the network size and the number of parameters great less than the existing spectral-spatial deep networks for hyperspectral image classification. Experiments on the hyperspectral data sets show that, compared with some state-of-art deep learning methods, our method achieves better classification results while having smaller network size and less parameters.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-04-16T04:52:19Z</published>
+    <arxiv:comment>12 pages, 10 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jingzhou Chen</name>
+    </author>
+    <author>
+      <name>Siyu Chen</name>
+    </author>
+    <author>
+      <name>Peilin Zhou</name>
+    </author>
+    <author>
+      <name>Yuntao Qian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1812.04179v5</id>
+    <title>Material Based Object Tracking in Hyperspectral Videos: Benchmark and Algorithms</title>
+    <updated>2019-07-10T14:34:15Z</updated>
+    <link href="https://arxiv.org/abs/1812.04179v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1812.04179v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Traditional color images only depict color intensities in red, green and blue channels, often making object trackers fail in challenging scenarios, e.g., background clutter and rapid changes of target appearance. Alternatively, material information of targets contained in a large amount of bands of hyperspectral images (HSI) is more robust to these difficult conditions. In this paper, we conduct a comprehensive study on how material information can be utilized to boost object tracking from three aspects: benchmark dataset, material feature representation and material based tracking. In terms of benchmark, we construct a dataset of fully-annotated videos, which contain both hyperspectral and color sequences of the same scene. Material information is represented by spectral-spatial histogram of multidimensional gradient, which describes the 3D local spectral-spatial structure in an HSI, and fractional abundances of constituted material components which encode the underlying material distribution. These two types of features are embedded into correlation filters, yielding material based tracking. Experimental results on the collected benchmark dataset show the potentials and advantages of material based object tracking.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-12-11T01:35:15Z</published>
+    <arxiv:comment>Update results</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Fengchao Xiong</name>
+    </author>
+    <author>
+      <name>Jun Zhou</name>
+    </author>
+    <author>
+      <name>Yuntao Qian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1810.11819v1</id>
+    <title>Object Tracking in Hyperspectral Videos with Convolutional Features and Kernelized Correlation Filter</title>
+    <updated>2018-10-28T14:35:26Z</updated>
+    <link href="https://arxiv.org/abs/1810.11819v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1810.11819v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Target tracking in hyperspectral videos is a new research topic. In this paper, a novel method based on convolutional network and Kernelized Correlation Filter (KCF) framework is presented for tracking objects of interest in hyperspectral videos. We extract a set of normalized three-dimensional cubes from the target region as fixed convolution filters which contain spectral information surrounding a target. The feature maps generated by convolutional operations are combined to form a three-dimensional representation of an object, thereby providing effective encoding of local spectral-spatial information. We show that a simple two-layer convolutional networks is sufficient to learn robust representations without the need of offline training with a large dataset. In the tracking step, KCF is adopted to distinguish targets from neighboring environment. Experimental results demonstrate that the proposed method performs well on sample hyperspectral videos, and outperforms several state-of-the-art methods tested on grayscale and color videos in the same scene.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-10-28T14:35:26Z</published>
+    <arxiv:comment>Accepted by ICSM 2018</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Kun Qian</name>
+    </author>
+    <author>
+      <name>Jun Zhou</name>
+    </author>
+    <author>
+      <name>Fengchao Xiong</name>
+    </author>
+    <author>
+      <name>Huixin Zhou</name>
+    </author>
+    <author>
+      <name>Juan Du</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1703.07910v1</id>
+    <title>Bidirectional-Convolutional LSTM Based Spectral-Spatial Feature Learning for Hyperspectral Image Classification</title>
+    <updated>2017-03-23T02:50:32Z</updated>
+    <link href="https://arxiv.org/abs/1703.07910v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1703.07910v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper proposes a novel deep learning framework named bidirectional-convolutional long short term memory (Bi-CLSTM) network to automatically learn the spectral-spatial feature from hyperspectral images (HSIs). In the network, the issue of spectral feature extraction is considered as a sequence learning problem, and a recurrent connection operator across the spectral domain is used to address it. Meanwhile, inspired from the widely used convolutional neural network (CNN), a convolution operator across the spatial domain is incorporated into the network to extract the spatial feature. Besides, to sufficiently capture the spectral information, a bidirectional recurrent connection is proposed. In the classification phase, the learned features are concatenated into a vector and fed to a softmax classifier via a fully-connected operator. To validate the effectiveness of the proposed Bi-CLSTM framework, we compare it with several state-of-the-art methods, including the CNN framework, on three widely used HSIs. The obtained results show that Bi-CLSTM can improve the classification performance as compared to other methods.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-03-23T02:50:32Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Qingshan Liu</name>
+    </author>
+    <author>
+      <name>Feng Zhou</name>
+    </author>
+    <author>
+      <name>Renlong Hang</name>
+    </author>
+    <author>
+      <name>Xiaotong Yuan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1605.05829v1</id>
+    <title>On the Sampling Strategy for Evaluation of Spectral-spatial Methods in Hyperspectral Image Classification</title>
+    <updated>2016-05-19T06:59:03Z</updated>
+    <link href="https://arxiv.org/abs/1605.05829v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1605.05829v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Spectral-spatial processing has been increasingly explored in remote sensing hyperspectral image classification. While extensive studies have focused on developing methods to improve the classification accuracy, experimental setting and design for method evaluation have drawn little attention. In the scope of supervised classification, we find that traditional experimental designs for spectral processing are often improperly used in the spectral-spatial processing context, leading to unfair or biased performance evaluation. This is especially the case when training and testing samples are randomly drawn from the same image - a practice that has been commonly adopted in the experiments. Under such setting, the dependence caused by overlap between the training and testing samples may be artificially enhanced by some spatial information processing methods such as spatial filtering and morphological operation. Such interaction between training and testing sets has violated data independence assumption that is abided by supervised learning theory and performance evaluation mechanism. Therefore, the widely adopted pixel-based random sampling strategy is not always suitable to evaluate spectral-spatial classification algorithms because it is difficult to determine whether the improvement of classification accuracy is caused by incorporating spatial information into classifier or by increasing the overlap between training and testing samples. To partially solve this problem, we propose a novel controlled random sampling strategy for spectral-spatial methods. It can greatly reduce the overlap between training and testing samples and provides more objective and accurate evaluation.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-05-19T06:59:03Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Jie Liang</name>
+    </author>
+    <author>
+      <name>Jun Zhou</name>
+    </author>
+    <author>
+      <name>Yuntao Qian</name>
+    </author>
+    <author>
+      <name>Lian Wen</name>
+    </author>
+    <author>
+      <name>Xiao Bai</name>
+    </author>
+    <author>
+      <name>Yongsheng Gao</name>
+    </author>
+    <arxiv:doi>10.1109/TGRS.2016.2616489</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/TGRS.2016.2616489" title="doi"/>
+  </entry>
+</feed>
