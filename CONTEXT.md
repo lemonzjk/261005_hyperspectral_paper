@@ -32,6 +32,6 @@
 - src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
-- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。120摘要/61全文；ORCID1、DBLP10、Scholar8、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
-- Griffith个人profile7205完整387关联项，175源项匹配168目录ID，11继承未决；另Dualmamba（IGARSS）/土壤碳SSTR（SSRN）2直接HSI来源外候选，指定arXiv查询无对应版本。快照闭环非作者全集，75已录HSI有PDF链接、27仍摘要级；NSP/KUM补机构原摘要、单篇机构待核。SUIT/医学/FedDA/ADLKAN四AM69页全读、9原图，公式/协议疑点保留。倒序姓名531与旧全同；四单词并集与扩展词1891全同，reflectance宽匹配机制未明；5新简写摘要范围外，简写无有效集合。四固定稿45页全读、UltraVR21/70及医学三稿52/135页选读范围外；正式版独立待，不增库内全文数。CV3/HSLiNets关系待。
+- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。120摘要/61全文；ORCID1、DBLP9、Scholar7、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
+- Griffith个人profile7205完整387关联项，175源项匹配168目录ID，10继承未决，DDF三基准均RGB/MS；另Dualmamba（IGARSS）/土壤碳SSTR（SSRN）2直接HSI来源外候选，指定arXiv查询无对应版本。快照闭环非作者全集，75已录HSI有PDF链接、27仍摘要级；NSP/KUM补机构原摘要、单篇机构待核。SUIT/医学/FedDA/ADLKAN四AM69页全读、9原图，公式/协议疑点保留。倒序姓名531、四谱词并集1891均与旧全同，reflectance宽匹配机制未明；5新简写摘要范围外，简写无有效集合。四固定稿45页全读、UltraVR21/70及医学三稿52/135页选读范围外；正式版独立待，不增库内全文数。
 - 作者专项后按白名单推进全领域；WHISPERS/IGARSS等旧候选不再作普通总库扩充目标。可获取资料继续补齐，受限项注明原因。

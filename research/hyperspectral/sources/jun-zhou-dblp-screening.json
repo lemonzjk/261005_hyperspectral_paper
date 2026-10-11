@@ -6,10 +6,10 @@
   "recordCount": 365,
   "keywordRecordCount": 167,
   "decisionCounts": {
-    "excluded": 184,
+    "excluded": 185,
     "duplicate_existing": 165,
     "included": 6,
-    "pending": 10
+    "pending": 9
   },
   "method": "DBLP SPARQL exact authoredBy relation; title/DOI normalized against catalog；WHISPERS专题补充、IGARSS多光谱证据补强；另用ORCID同题逐项决定交叉回填100条非关键词记录；剩余78条按原摘要/Griffith机构摘要和指定正文局部逐项审查，63暂排除、15待核；合并集合365条含1条快照外STRL补充。；续核M2-Net、2022稳健2DSVD与CrowdMLP原稿实验后暂排除3条，剩12待核。；续核两条编辑性记录后剩10待核。；机器人项按原会议指南指定摘要镜像转录暂排除，身份未核，剩9待核。；2026-10-11因UEMM原稿模态矛盾与AirSim接口语义重开1条旧排除，当前355决定/10待；历史剩余78条审查计数不改。",
   "records": [
@@ -2688,15 +2688,22 @@
       "year": "2025",
       "venue": "Inf. Fusion",
       "doi": "https://doi.org/10.1016/J.INFFUS.2025.103359",
-      "decision": "pending",
-      "decisionReason": "机构摘要为Vaihingen/Potsdam/LoveDA；实际使用RGB还是IRRG/NIR等通道待核。",
-      "decisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json",
+      "decision": "excluded",
+      "decisionReason": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "decisionEvidenceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json",
       "followupEvidenceFiles": [
         "jun-zhou-pending-resource-followup-2026-10-10.json",
-        "jun-zhou-remote-primary-access-followup5-2026-10-11.json"
+        "jun-zhou-remote-primary-access-followup5-2026-10-11.json",
+        "jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json"
       ],
       "latestFollowupAt": "2026-10-11",
-      "latestScopeFinding": "2026-10-11六项公共bundles及9个bitstreams清单全分页：6许可/提交txt、3份130字节SWORD元数据，未取得论文PDF。二级OA标签不作全文证据，DDFNet出版社XML200只有coredata。实际光学输入仍pending，不凭数据集名、频率词或访问失败关闭范围。"
+      "latestScopeFinding": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "previousDecision": "pending",
+      "scopeFinding": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "readingBoundary": "完整原摘要、精确DOI及机构个人绑定；并非正式全文、实际数组或训练复现。 三数据集官方定义已读，LoveDA仅第4页选读。",
+      "scopeAuditFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json",
+      "decisionUpdatedAt": "2026-10-11",
+      "previousDecisionEvidenceFile": "jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json"
     },
     {
       "pub": "https://dblp.org/rec/journals/inffus/NingBTZKX25",
@@ -3495,5 +3502,8 @@
   "outsideSnapshotSupplementalCount": 1,
   "snapshotReviewedCount": 354,
   "remainingScopeReviewedCount": 63,
-  "decisionReviewedAt": "2026-10-11"
+  "decisionReviewedAt": "2026-10-11",
+  "followupEvidenceFiles": [
+    "jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json"
+  ]
 }

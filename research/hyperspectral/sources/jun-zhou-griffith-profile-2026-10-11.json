@@ -37,12 +37,13 @@
     "duplicateIds": []
   },
   "decisionCounts": {
-    "carried_pending": 11,
+    "carried_pending": 10,
     "matched_prior_exclusion": 187,
     "matched_catalog": 175,
     "excluded_abstract": 3,
     "candidate_source_outside_policy": 2,
     "matched_current_scope_cleanup": 6,
+    "excluded_primary_scope": 1,
     "linked_dataset": 1,
     "excluded_source_policy": 1,
     "correction_of_excluded_paper": 1
@@ -240,7 +241,6 @@
     10347962,
     10485420,
     10344376,
-    10461449,
     10470711,
     10298437,
     9356923,
@@ -2006,8 +2006,18 @@
       "hasAbstract": true,
       "repositoryPdfUrl": null,
       "publicUrl": "https://hdl.handle.net/10072/440899",
-      "decision": "carried_pending",
-      "basis": "继承未决实际输入/范围/版本；本轮机构作者绑定和书目不替代输入通道/正文核验。"
+      "decision": "excluded_primary_scope",
+      "basis": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "previousDecision": "carried_pending",
+      "latestScopeFinding": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "scopeFinding": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "readingBoundary": "完整原摘要、精确DOI及机构个人绑定；并非正式全文、实际数组或训练复现。 三数据集官方定义已读，LoveDA仅第4页选读。",
+      "scopeAuditFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json",
+      "latestFollowupAt": "2026-10-11",
+      "decisionUpdatedAt": "2026-10-11",
+      "followupEvidenceFiles": [
+        "jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json"
+      ]
     },
     {
       "objectId": 10485421,
@@ -19382,5 +19392,10 @@
     "downloadedRemainingAbstractReadPaperIds": [],
     "remainingAbstractReadCount": 27,
     "boundary": "31项原始资料队列中4份AM全文完成，剩27项有机构PDF链接仍摘要级；链接不等于已访问/已读，原始快照readingProgress不改写。资料完成不替代目录闭环。"
-  }
+  },
+  "decisionReviewedAt": "2026-10-11",
+  "followupEvidenceFiles": [
+    "jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json"
+  ],
+  "scopeFollowupBoundary": "DDFNet正式DOI按机构摘要及全部三基准官方定义范围暂排；当前继承未决10。不声称同一387原始返回重新抓取或所有条目正文已读；原rawFile/source字段及历史priorDecisions保留。"
 }

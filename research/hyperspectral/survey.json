@@ -7620,7 +7620,7 @@
       "year": 2026,
       "keywordGroup": "author-jun-zhou-dblp-scope",
       "date": "2026-10-10",
-      "method": "DBLP SPARQL精确person 99/3847-1查询364条，另有身份核验STRL快照外补充1条；题名/DOI映射及已记录原摘要/指定正文范围审查形成365条当前记录，含10pending。既有映射不表示重新阅读全文。本轮六遥感pending的公共文件/出版社入口续核，实际输入未确认。",
+      "method": "DBLP SPARQL精确person 99/3847-1查询364条，另有身份核验STRL快照外补充1条；题名/DOI映射及已记录原摘要/指定正文范围审查形成365条当前记录，含10pending。既有映射不表示重新阅读全文。本轮六遥感pending的公共文件/出版社入口续核，实际输入未确认。 DDFNet全部三命名基准的官方IRRG/RGB/RGBIR/DSM定义与原摘要交叉，正式DOI范围暂排；当前9pending，不要求未复现RGB/MS选版才关闭已明确范围。",
       "keywords": [
         "hyperspectral",
         "spectral",
@@ -7634,11 +7634,11 @@
       "candidateCount": 365,
       "reviewedCount": 365,
       "status": "partial",
-      "statusLabel": "364条查询快照加1条快照外补充，365条有决定/待核记录：355决定、10待；不是全文全集",
+      "statusLabel": "364条查询快照加1条补充，365条当前记录：356决定、9待；不是全文全集",
       "sourceSnapshot": "sources/jun-zhou-dblp-sparql.json",
       "gaps": [
-        "网页/XML仍为验证页；355范围决定不证明全部作者身份、正式版本或全文已核。",
-        "当前10pending见jun-zhou-dblp-screening.json；六遥感本轮未取得新正文，其他来源集合重叠，不累加论文数量。"
+        "网页/XML仍为验证页；356范围决定不证明所有作者身份、正式版本或全文已核。",
+        "当前9pending见jun-zhou-dblp-screening.json；DDFNet按完整机构摘要与三数据集官方定义暂排，实际选版/转换与全文未核；其余候选独立保留。"
       ],
       "outsideSnapshotSupplementalCount": 1,
       "collectionScope": "active"
@@ -8273,7 +8273,7 @@
       "year": "profile all linked years through 2026-10-11 snapshot",
       "keywordGroup": "author-profile-all-linked-records",
       "date": "2026-10-11",
-      "method": "公开个人页SPA配置定位API；GET个人资料，POST只读linkedTo无关键词全分页。387唯一返回ID与个人linkedObjectIds完全一致。对照当前论文精确DOI/版本和规范完整题名、清理决定、既有逐项范围证据，不用模糊匹配或题名关键词自动排除。",
+      "method": "公开个人页SPA配置定位API；GET个人资料，POST只读linkedTo无关键词全分页。387唯一返回ID与个人linkedObjectIds完全一致。对照当前论文精确DOI/版本和规范完整题名、清理决定、既有逐项范围证据，不用模糊匹配或题名关键词自动排除。 DDFNet依完整机构原摘要和三数据集官方定义范围暂排，不重拉387原始快照；旧决定保留在priorDecisions。",
       "keywords": [
         "profile7205",
         "ORCID0000-0001-5822-8233",
@@ -8284,22 +8284,23 @@
       "candidateCount": 387,
       "reviewedCount": 387,
       "status": "partial",
-      "statusLabel": "机构387关联项全分页已核；11未决与2来源外HSI候选",
+      "statusLabel": "机构387关联项全分页已核；10继承未决与2来源外HSI候选",
       "sourceSnapshot": "sources/jun-zhou-griffith-profile-2026-10-11.json",
       "decisionCounts": {
-        "carried_pending": 11,
+        "carried_pending": 10,
         "matched_prior_exclusion": 187,
         "matched_catalog": 175,
         "excluded_abstract": 3,
         "candidate_source_outside_policy": 2,
         "matched_current_scope_cleanup": 6,
+        "excluded_primary_scope": 1,
         "linked_dataset": 1,
         "excluded_source_policy": 1,
         "correction_of_excluded_paper": 1
       },
       "fullTextReadingCount": 0,
       "gaps": [
-        "机构指定来源闭环不等于作者全集；11继承未决有跨来源重叠。",
+        "机构指定来源闭环不等于作者全集；DDFNet正式DOI范围续核后10继承未决，集合跨来源重叠。",
         "Dualmamba IGARSS与SOC SSRN两直接HSI候选当前来源不合格，合格版本待；不扩展作者例外。",
         "184机构PDF链接中75条匹配已录HSI、31仍摘要级，资料队列已列；链接不等于本轮已下载/已读，单篇机构及当前可访问性待核。"
       ],
@@ -8482,6 +8483,39 @@
         "未全读三稿/综述全部引用，未核实际数组/代码/性能；不把135页下载计全文。",
         "MerMED/综述正式候选与UEMM/AdvMIM正式版仍独立待，作者姓名变体、ORCID/DBLP/Scholar/机构差集、CV3继续。",
         "库390/作者181/61全文/221原图、机构资料待办27不变。"
+      ],
+      "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11",
+      "venue": "Jun Zhou · DDFNet original abstract and official benchmarks",
+      "year": "2025",
+      "date": "2026-10-11",
+      "keywordGroup": "author-remote-sensing-actual-input-scope",
+      "method": "正式DOI精确机构原摘要列全三数据；当前ISPRS官网输入定义、LoveDA作者项目链接的NeurIPS原论文第4页实际读，范围交叉。GitHub四指定检索仅发现材料，不移植同简称代码或假定作者。",
+      "keywords": [
+        "DDFNet DOI10.1016/j.inffus.2025.103359",
+        "Vaihingen IRRG DSM",
+        "Potsdam IRRG RGB RGBIR DSM",
+        "LoveDA red green blue",
+        "GPINet",
+        "SAPNet remote sensing",
+        "frequency decoupling",
+        "DDFNet"
+      ],
+      "url": "https://research-repository.griffith.edu.au/server/api/core/items/53824841-b61f-4414-b8b2-33dada23761d",
+      "pagination": "一个已知正式DOI与三个官方数据定义；四GitHub指定仓库检索各per_page30，返回1/0/10/9，无超页集合；不是论文/作者全集。",
+      "candidateCount": 1,
+      "reviewedCount": 1,
+      "status": "partial",
+      "statusLabel": "DDFNet正式DOI直接HSI范围暂排；DBLP9/Scholar7/个人机构10未决，目录未闭环",
+      "sourceSnapshot": "sources/jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json",
+      "catalogFullTextReadingCount": 0,
+      "fullTextReadingCount": 0,
+      "gaps": [
+        "DDFNet正式全文、具体RGB/MS选版和训练像素未取得；这些未知不构成已有三数据集范围的HSI歧义，新明确贡献可重审。",
+        "FDNet/GPINet/SAPNet未取得新的原稿/实际输入；不能凭同作者、频域/通道词或相似方法套用范围。",
+        "作者姓名变体、其他来源/正式版及CV3仍待；机构可获取HSI资料队列27继续。"
       ],
       "collectionScope": "active"
     }
@@ -39382,14 +39416,24 @@
       "batchId": "jun-zhou-remote-primary-access-followup5-2026-10-11",
       "discoveredAt": "2026-10-10",
       "verifiedAt": "2026-10-11",
-      "decision": "pending",
-      "reason": "机构摘要为Vaihingen/Potsdam/LoveDA；实际使用RGB还是IRRG/NIR等通道待核。",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-remote-primary-access-followup5-2026-10-11.json",
+      "decision": "excluded",
+      "reason": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json",
       "previousSourceEvidencePath": "research/hyperspectral/sources/jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json",
       "sourcePendingAlreadyKnown": true,
-      "latestScopeFinding": "2026-10-11六项公共bundles及9个bitstreams清单全分页：6许可/提交txt、3份130字节SWORD元数据，未取得论文PDF。二级OA标签不作全文证据，DDFNet出版社XML200只有coredata。实际光学输入仍pending，不凭数据集名、频率词或访问失败关闭范围。",
-      "readingBoundary": "已有机构/原摘要及范围记录保留；本轮仅公共文件清单和出版社元数据/访问核验，没有取得新论文正文或运行实现。",
-      "identityBoundary": "作者字段来自精确DOI机构交叉表，保留简写；SAPNet/红树林本轮补出版社Griffith作者字段，其余不声称新增正文身份核验。"
+      "latestScopeFinding": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "readingBoundary": "完整原摘要、精确DOI及机构个人绑定；并非正式全文、实际数组或训练复现。 三数据集官方定义交叉，未记本文全文。",
+      "identityBoundary": "作者字段来自精确DOI机构交叉表，保留简写；SAPNet/红树林本轮补出版社Griffith作者字段，其余不声称新增正文身份核验。",
+      "previousDecision": "pending",
+      "decisionDetail": "excluded_primary_abstract_dataset_scope",
+      "scopeFinding": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+      "latestFollowupAt": "2026-10-11",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json"
+      ],
+      "followupBatchIds": [
+        "jun-zhou-ddfnet-official-dataset-scope-2026-10-11"
+      ]
     },
     {
       "title": "Robust Learning to Noisy Labels for Semantic Segmentation of Mangrove Communities in Remote Sensing Imagery.",
@@ -47115,6 +47159,27 @@
       "gaps": [
         "0原稿pending只限531姓名快照，作者目录未闭环；正式版与其他来源候选仍待。",
         "可获取机构资料27项仍摘要级，继续按直接HSI优先整理。"
+      ]
+    },
+    {
+      "id": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11",
+      "date": "2026-10-11",
+      "searchIds": [
+        "jun-zhou-ddfnet-official-dataset-scope-2026-10-11"
+      ],
+      "paperIds": [],
+      "new": 0,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 1,
+      "pending": 0,
+      "figuresAdded": 0,
+      "catalogFullTextReadingCount": 0,
+      "newFullTextReadingCount": 0,
+      "sourceSnapshot": "sources/jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json",
+      "readingBoundary": "DDFNet仅完整机构原摘要，三官方基准定义交叉；LoveDA12页下载仅实际读第4页，不记本文或数据论文全文。",
+      "gaps": [
+        "当前来源9/7/10未决有重叠，不能相加为论文缺口；目录与资料分开。"
       ]
     }
   ],

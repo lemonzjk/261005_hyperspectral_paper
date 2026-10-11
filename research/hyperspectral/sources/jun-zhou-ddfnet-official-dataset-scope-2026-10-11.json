@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-10-11",
+  "scope": "周峻DDFNet当前来源未决的正式DOI直接HSI范围续核；机构原摘要与其全部三命名数据集的官方定义交叉，不把RGB/MS未知选版或论文实际像素未复现当HSI未知。",
+  "accessFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-access.json",
+  "existingPendingReviewed": 1,
+  "decisionsChanged": 1,
+  "newCatalogPapers": 0,
+  "newCatalogFullTextReadingCount": 0,
+  "decision": "excluded_primary_abstract_dataset_scope",
+  "finding": "机构原摘要明确全部三基准ISPRS Vaihingen、ISPRS Potsdam和LoveDA，方法为空间/频域高低频融合及几何边界先验。官方Vaihingen TOP为IR/R/G三光学波段、DSM为单通道高度；Potsdam提供IRRG或RGB三波段和RGBIR四波段，另单通道DSM；LoveDA原NeurIPS2021正文第4页明确R/G/B三波段。上述输入均为RGB/少量多光谱/几何高度，没有直接HSI采集、谱维处理或HSI重建贡献，正式DOI按摘要与全部所列数据的官方定义作范围暂排。未核RGB与IRRG的具体选版、转换、实际训练像素或整篇正文，不把这些未知误记为HSI范围未决；新明确HSI证据可重审。",
+  "primaryPaper": {
+    "title": "Dual-domain decoupled fusion network for semantic segmentation of remote sensing images.",
+    "doi": "10.1016/j.inffus.2025.103359",
+    "repositoryId": "53824841-b61f-4414-b8b2-33dada23761d",
+    "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/items/53824841-b61f-4414-b8b2-33dada23761d",
+    "sourceFile": "jun-zhou-dblp-remaining-repository-2026-10-10.json",
+    "sourceLevel": "institutional_abstract",
+    "abstract": "Semantic segmentation of remote sensing images (RSIs) is a challenging task due to the complexity of spatial structures, diverse object scales, and heterogeneous land-cover patterns. Traditional approaches often struggle to effectively balance fine-grained boundary details and global contextual understanding, especially for high-resolution images. In this paper, we propose DDFNet, a novel dual-domain decoupled fusion network, to address these challenges. DDFNet integrates spatial and frequency domain features through a dynamic decoupling and fusion strategy. Specifically, we introduce a Dual-Domain Decoupled Feature Fusion (DDFF) module that selectively combines high- and low-frequency components from both domains, enabling the model to capture local textures and global semantics. To further enhance segmentation accuracy, we design a High-Order Geometric Prior Generation (HGPG) module, which utilizes gradient and curvature information to improve boundary precision and maintain geometric consistency. Extensive experiments on three benchmark datasets — ISPRS Vaihingen, ISPRS Potsdam, and LoveDA — demonstrate that DDFNet achieves state-of-the-art performance. Ablation studies validate the contributions of the DDFF and HGPG modules, and efficiency analysis shows DDFNet's strong adaptability to different computational constraints.",
+    "identityEvidence": {
+      "file": "jun-zhou-griffith-profile-2026-10-11.json",
+      "objectId": 10461449,
+      "status": "institution_resolved_user_7205"
+    },
+    "boundary": "完整原摘要、精确DOI及机构个人绑定；并非正式全文、实际数组或训练复现。"
+  },
+  "datasetChecks": [
+    {
+      "name": "ISPRS Vaihingen 2D Semantic Labelling",
+      "url": "https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-vaihingen.aspx",
+      "sourceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-isprs-vaihingen-current.html",
+      "finding": "TOP 8-bit TIFF三存储槽为near infrared/red/green，而不是RGB真实波长；DSM单通道32-bit float高度。IRRG三波段加几何高度不属HSI。",
+      "readingBoundary": "实际阅读官方数据说明与提交/文件列表说明；不将页面内RGB分类标签颜色当成输入波段。"
+    },
+    {
+      "name": "ISPRS Potsdam 2D Semantic Labelling",
+      "url": "https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/2d-sem-label-potsdam.aspx",
+      "sourceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-isprs-potsdam-current.html",
+      "finding": "TOP三IRRG/三RGB/四RGBIR，DSM单通道高度；官网将8bit写作spectral resolution，实为数值位深字段，原句保留且不据此推断高光谱分辨率。",
+      "readingBoundary": "实际阅读官方输入通道、DSM和tile文件说明；没有读数据全部像素。"
+    },
+    {
+      "name": "LoveDA",
+      "url": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf",
+      "sourceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-loveda-neurips2021.pdf",
+      "pageTextFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-loveda-pages.json",
+      "pdfPageCount": 12,
+      "pdfDownloaded": true,
+      "readPdfPages": [
+        4
+      ],
+      "fullTextRead": false,
+      "finding": "数据原作者论文第4页明确0.3m、red/green/blue bands及1024×1024无重叠切片，三个光学波段；类别、城市数与空间划分均非谱带。",
+      "readingBoundary": "12页免费PDF已下载，实际只读第4页数据构造/统计起始段，不记LoveDA全文或新增HSI条目。"
+    }
+  ],
+  "codeDiscovery": [
+    {
+      "model": "gpinet",
+      "sourceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-gpinet-github-search.json",
+      "totalCount": 1,
+      "returnedCount": 1,
+      "incompleteResults": false,
+      "finding": "指定GitHub仓库名/短语检索，不是论文或作者全集；所返回项目尚无目标正式题名/作者关联证据，不作为官方实现或范围结论。"
+    },
+    {
+      "model": "sapnet",
+      "sourceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-sapnet-github-search.json",
+      "totalCount": 0,
+      "returnedCount": 0,
+      "incompleteResults": false,
+      "finding": "指定GitHub仓库名/短语检索，不是论文或作者全集；所返回项目尚无目标正式题名/作者关联证据，不作为官方实现或范围结论。"
+    },
+    {
+      "model": "fdnet",
+      "sourceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-fdnet-github-search.json",
+      "totalCount": 10,
+      "returnedCount": 10,
+      "incompleteResults": false,
+      "finding": "指定GitHub仓库名/短语检索，不是论文或作者全集；所返回项目尚无目标正式题名/作者关联证据，不作为官方实现或范围结论。"
+    },
+    {
+      "model": "ddfnet",
+      "sourceFile": "jun-zhou-ddfnet-official-dataset-scope-2026-10-11-ddfnet-github-search.json",
+      "totalCount": 9,
+      "returnedCount": 9,
+      "incompleteResults": false,
+      "finding": "指定GitHub仓库名/短语检索，不是论文全集或作者个人身份核验；未取得新的可认证目标原稿/输入证据。DDFNet4RSI仍为既有待发布占位，与CVPR2021 Decoupled Dynamic Filter Networks等同简称不合并。"
+    }
+  ],
+  "sourceAccessBoundary": "ISPRS旧education路径均404；从当前官网主页导航找到resources/datasets/benchmarks，两个官方定义页200。LoveDA作者README链接到NeurIPS官方论文，12页下载仅实际读第4页（1页）。网页搜索工具404，改用直接官方HTTP；不反复请求已受限DDFNet出版社全文。",
+  "boundary": "DDFNet正式DOI范围暂排与未取得正式全文/实际像素分开；其余FDNet/GPINet/SAPNet实验数据仍未列全，不能仅凭类似方法或同作者排除。当前DBLP9、Scholar7、Griffith个人继承未决10，集合重叠不相加；库390、作者181/61全文、221图、机构资料待办27不变。"
+}

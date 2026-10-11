@@ -23,9 +23,9 @@
 | 来源 | 已核范围 | 尚未解决 |
 | --- | --- | --- |
 | ORCID | 263组、269条书目完整拉取；262组有当前范围决定 | UEMM重开1组待核；无摘要的书目集合不证明作者全集完整 |
-| DBLP | 365条合并记录，355条有范围决定 | 10条的输入、范围、身份或正式版本待核；网页/XML访问仍受限 |
-| Google Scholar | 4页取得387条记录、384个唯一题名；非关键词差集209条已逐项处理 | 差集8条待核；引用元数据与作者归属仍需原始来源互证 |
-| Griffith | 当前机构个人profile7205全分页387关联项，ID集合与个人页完全一致；175条匹配168个既有目录ID，187条继承排除、6条对应当前多光谱删除、3条新摘要暂排、1条新来源排除、1数据资源、1已排除原文勘误；此前两仓库指定查询351条独立保留 | 11条继承范围/版本待核；另2条直接HSI来源外候选。386条作者有resolvedUser7205，NSP/KUM仅个人关联、单篇正式机构待核；机构目录闭环不证明作者全集 |
+| DBLP | 365条合并记录，356条有范围决定 | 9条的输入、范围、身份或正式版本待核；网页/XML访问仍受限 |
+| Google Scholar | 4页取得387条记录、384个唯一题名；非关键词差集209条已逐项处理 | 差集7条待核；引用元数据与作者归属仍需原始来源互证 |
+| Griffith | 当前机构个人profile7205全分页387关联项，ID集合与个人页完全一致；175条匹配168个既有目录ID，187条继承排除、6条对应当前多光谱删除、3条新摘要暂排、1条新来源排除、1数据资源、1已排除原文勘误、1本轮DDFNet范围暂排；此前两仓库指定查询351条独立保留 | 10条继承范围/版本待核；另2条直接HSI来源外候选。386条作者有resolvedUser7205，NSP/KUM仅个人关联、单篇正式机构待核；机构目录闭环不证明作者全集 |
 | arXiv | 带引号姓名531条已有映射/逐审；倒序Zhou_Jun的531条ID及元数据完全相同。此前Zhou+指定任务词101条；扩展谱词1891条完整返回，20个目标样式姓名中15旧ID、5新简写摘要范围外。四单项词20/27/3/1845的并集与1891完全一致；UEMM/AdvMIM/RADC/VITask四固定稿共45页全读、UltraVR选读21/70页，均按直接HSI范围排除；医学三稿下载135页、实际选读52页，方法及完整实验/研究汇总表支持固定v1范围暂排 | 此531姓名快照0原稿范围pending，不等于全部全文或作者目录闭环；MerMED/医学综述正式候选及UEMM/AdvMIM正式版独立未核。reflectance宽匹配机制未明；其余1871未逐项范围筛查，不当作者/领域全集。J._Zhou作者单独查询超时/503无有效集合，加hyperspectral子集零返回不替代覆盖；其他姓名变体仍需查漏 |
 | 旧作者主页及共同作者CV | ANU旧页2001–2012与共同作者公开CV已用于查漏 | CV3候选指定Crossref排序前5及arXiv作者/任务词查询无对应版本，仍待核；不同题名/作者不自动合并，旧页不能代表当前成果全集 |
 
@@ -51,6 +51,10 @@ UltraVR v1下载70页，实际逐页读1–10、15–22、68–70共21页。主�
 
 个人身份与正式版本仍独立：EVLF/MerMED的Jun为IHPC、综述为Emory/Winship，未取得其稳定个人标识，不凭机构差异确认另一同名。MerMED正式35作者与原25不同；医学综述候选改题尾且7变8作者，正式正文、版本关系和身份未核，不移植预印本范围决定。EVLF十一/十/九模态和样本分池总和差异、MerMED外部SupplementaryTable6未取等资料边界保留。作者目录未闭环，库内390/周峻181/61全文/221原图及27项机构资料待办均不变。
 
+DDFNet正式DOI10.1016/j.inffus.2025.103359的机构原摘要列全三基准：ISPRS Vaihingen、ISPRS Potsdam和LoveDA。当前ISPRS官方定义明确Vaihingen为IRRG三波段、Potsdam为IRRG/RGB三或RGBIR四波段，DSM为单通道高度；LoveDA原NeurIPS2021论文第4页明确RGB三波段。原摘要的方法为空间/频域高低频融合与几何边界先验，不是HSI采集或谱维处理。依完整摘要和全部命名数据的原始定义，暂排此正式DOI直接HSI范围；未取得本文正文、具体RGB/MS选版、转换或实际训练像素，不把这些未知人为留作HSI范围未决。新明确HSI贡献证据可重审。LoveDA12页PDF下载仅实际读第4页（1页），不记数据论文全文或加入HSI库。
+
+DDFNet范围决定同步当前DBLP、Scholar及两个机构交叉表；原始来源快照/旧批次决定保留。DBLP现9、Scholar差集7、个人机构继承未决10，集合重叠不相加为论文缺口。四个指定GitHub仓库检索未取得FDNet/GPINet/SAPNet的新可认证原稿或实际输入，不用相似方法或同名简称外推范围；DDFNet4RSI仍为既有待发布占位。其余候选、正式版本与可获取资料继续，作者目录未闭环。
+
 ## 下一步
 
 1. 优先查漏并完成来源交叉核对：其余姓名变体及arXiv简写有效查询/reflectance宽匹配边界、DBLP/Scholar/arXiv差集、两条来源外直接HSI的合格版本及共同作者CV候选；机构个人目录已完成本次387条快照，不反复拉取同一快照；区分已发表、预印本、在审线索，按书目与明确证据去重。
@@ -68,6 +72,7 @@ UltraVR v1下载70页，实际逐页读1–10、15–22、68–70共21页。主�
 - [单词查询并集与两份范围外原稿全文](sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json)、[原始响应与PDF访问](sources/jun-zhou-query-semantics-scope-reading-2026-10-11-access.json)：1891集合完全一致、固定v3/v1共23页已读；正式版仍待，不升级库内阅读数量。
 - [RADC/VITask全文与UltraVR四域范围续核](sources/jun-zhou-radc-vitask-ultravr-scope-reading-2026-10-11.json)、[PDF及数据官方来源访问](sources/jun-zhou-radc-vitask-ultravr-scope-reading-2026-10-11-access.json)：两全文22页、UltraVR选读21/70页；三个固定版范围处理，不等于身份/正式版或性能复现。
 - [医学三固定v1范围选读续核](sources/jun-zhou-medical-fixed-scope-reading-2026-10-11.json)、[PDF访问](sources/jun-zhou-medical-fixed-scope-reading-2026-10-11-access.json)：135页下载、52页实际选读，三固定稿暂排；完整实验/研究汇总表不等于全部引用或正式版已读。
+- [DDFNet机构摘要与三官方基准范围交叉](sources/jun-zhou-ddfnet-official-dataset-scope-2026-10-11.json)、[官方页面/PDF访问](sources/jun-zhou-ddfnet-official-dataset-scope-2026-10-11-access.json)：正式DOI范围暂排，未冒充全文或实际像素；ISPRS新旧路径与GitHub发现边界保留。
 - [姓名变体核对](sources/jun-zhou-arxiv-name-variants-2026-10-11.json)、[weed mapping身份归并](sources/jun-zhou-weed-author-identity-2026-10-11.json)、[融合/选带全文核验](sources/jun-zhou-fusion-band-order-reading-2026-10-11.json)。
 - [arXiv逐项映射](sources/jun-zhou-arxiv-survey-mapping-index-2026-10-11.json)；其余原文、代码README、响应、哈希和逐页审计统一保留在 `sources/jun-zhou-*`，不改写冻结证据。
 - [历史调研记录](archive/jun-zhou/research-log.md)：逐批范围决定、版本差异、公式与实验审计。批次中的数量属于当时状态，不用于判断当前完成度。
