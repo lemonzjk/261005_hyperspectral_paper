@@ -1,8 +1,8 @@
 # 高光谱检索覆盖
 
-查询快照截止：2026-10-09；范围更新：2026-10-11。状态：持续调研。
+查询快照截止：2026-10-11；范围更新：2026-10-11。状态：持续调研。
 
-现有目录已按来源白名单及高光谱范围清理，周峻既有181条直接高光谱保留，作者例外仅放宽来源。检索状态仅证明记录中指定官方目录、分页和关键词的实际覆盖，不代表领域全集已收齐。旧范围的扫描保留为历史证据，不列为后续全领域检索目标。
+现有目录已按来源白名单及高光谱范围清理，周峻既有181条直接高光谱保留，作者例外仅放宽来源。检索状态仅证明记录中指定官方目录、分页和关键词的实际覆盖，不代表领域全集已收齐。旧范围的扫描保留为历史证据，不列为后续全领域检索目标。 本轮最新查询快照至2026-10-11；各既有查询仍以其原始日期、分页和证据为准，不表示旧年度记录已统一重查。
 
 当前来源白名单与作者例外见 [收录政策](../../src/data/collection-policy.json)，逐项清理决定见 [清理审计](catalog-cleanup.json)。
 
@@ -174,6 +174,9 @@
 | Jun Zhou existing catalog · matrix-vector tensor, regional NMF and superpixel NTF unmixing | 2018 | Matrix-Vector Nonnegative Tensor Factorization for Blind Unmixing of Hyperspectral Imagery、Region-Based Structure Preserving Nonnegative Matrix Factorization for Hyperspectral Unmixing、Superpixel-Based Nonnegative Tensor Factorization for Hyperspectral Unmixing；36PDF/2封面/34正文参考、89式/38图/13表386格612标量位置（1畸形小数、1数值超范围）、2算法/54,50,11参考；不等于引用作品全读。 | 未单列 / 3 / 3 | 三公开版本全文；正式/实现待 | 三份公开36页全文/89式/38图/13表已核；官方IEEE九入口均202空，正式版未独立取回核差；公开超像素排版拷贝不改称AM。；MV非负BTD唯一性/停止与real参考、R-NMF印式/mean/参数及参考引文、SLIC/solver/std单位/代码待；跨文参数和生成器不同，无模型复现。；其余138摘要级作者记录、多来源差集/arXiv八范围身份待、作者全集与后续整个领域顶会顶刊/arXiv矩阵尚未完成。 |
 | Jun Zhou existing catalog · TV NTF, GMC sparse NMF and subspace structure NMF | 2020 | Hyperspectral Unmixing via Total Variation Regularized Nonnegative Tensor Factorization、Nonconvex Nonseparable Sparse Nonnegative Matrix Factorization for Hyperspectral Unmixing、Subspace Structure Regularized Nonnegative Matrix Factorization for Hyperspectral Unmixing；正式27页/67式/23图/9表357格447标量/2算法/44,54参考；GMC机构13页正文文本相同，子空间AM未全读，TV摘要+代码。 | 未单列 / 3 / 3 | 两正式全文；TV全文/实现待 | 周峻188条仍136摘要/52全文；完整作者差集与范围身份待项未闭环，随后全领域顶会顶刊/arXiv仍未完成。；TV全文未取回；IEEE/Griffith摘要与作者代码分源，不以代码包标全文。；GMC/子空间式表原印疑点、真实数据/初始化/参考真值/重复协议和完整实现待；无MATLAB或模型复现。 |
 | Jun Zhou existing catalog · adaptive graph NMF, nonlocal NTF, ISTA architectures and DiffUn | 2024 | Adaptive Graph Regularized Multilayer Nonnegative Matrix Factorization for Hyperspectral Unmixing、Nonlocal Low-Rank Nonnegative Tensor Factorization for Hyperspectral Unmixing、Spectral Mixture Model Inspired Network Architectures for Hyperspectral Unmixing、Diffusion-Model-Based Hyperspectral Unmixing Using Spectral Prior Distribution；正式14页与AM17正文+1封面、97式/35图/8表396格540标量/3算法；52+53参考目录非引用作品全读。另两官方完整摘要保持摘要级。 | 未单列 / 4 / 4 | 一正式/一接受稿全文；两摘要与正式版差待 | 周峻188条仍134摘要/54全文；完整作者多源差集与身份/范围待项未闭环，随后全领域顶会顶刊/arXiv仍未完成。；非局部NTF与ISTA网络全文未取回，保持摘要级；DiffUn正式16页版差仍待。；自适应图印式、DC均值及Cuprite最优材料数量，与DiffUn近似/伪码代码梯度差异、oracle调参与实现缺口留证；未复现模型。 |
+| Jun Zhou · arXiv姓名变体交叉检索 | earliest_available–2026 | au:Zhou + hyperspectral/CASSI/spectral unmixing/spectral reconstruction、au:"J_Zhou" + hyperspectral/CASSI/spectral unmixing、au:JZhou + hyperspectral；三查询各start0/max1000；totalResults101/0/0，均全页取回。 | 101 / 101 / 101 | 指定姓名/任务词查询闭环；作者全集未闭环 | 23条完整Jun Zhou已有逐项映射，78条其他Zhou只从作者查询分流，不排除普通总库；0条新目标作者记录。；姓名缩写0命中只对应指定API查询，其他拼写和无这些关键词的论文仍待查。 |
+| Jun Zhou · Scholar与ORCID一作身份核对 | 2022 | Transferable convolutional neural network for weed mapping、Adnan Farooq Awan；精确DOI一条、ORCID person一条、机构bundles和bitstreams各1页；Scholar原详情本轮未取得。 | 未单列 / 1 / 1 | 短题名身份差异归并；全文仍待 | Scholar短题名归为已有zhou-86-hsi-2022，差集pending9降8；若出现不同DOI或原稿须重审。；机构仅130字节SWORD XML、IEEE418挑战HTML、arXiv短语无本篇；全文与实际传感器/通道待，不反复追索同一受限入口。 |
+| Jun Zhou existing catalog · HSI–LiDAR选带与波段顺序 | 2024–2025 | Unsupervised Band Selection Using Fused HSI and LiDAR Attention Integrating With Autoencoder、HSLiNets: Hyperspectral Image and LiDAR Data Fusion Using Efficient Dual Non-Linear Feature Learning Networks、HSLiNets: Evaluating Band Ordering Strategies in Hyperspectral and LiDAR Fusion；3篇4公开版本：13+5+5+6页（AM含1封面），3条新全文阅读、4原图；8+8+2式、11+3+2图、6+3+5表；引用作品未全读。 | 未单列 / 3 / 3 | 四公开版本全文已读；正式版/跨文关系待 | 周峻181条当前124摘要/57全文，作者目录及全领域历年矩阵未闭环；可访问材料继续整理。；2412稿与2503/GRSL稿的HSLiNets方法相关，但结构/作者/表不同且无明确扩展声明，跨文版本关系pending，不凭简称合并。；BSFMAA掩码/范数/距离/聚类/表格、HSLiNets表文和划分疑点保留；AM不是最终排版，未做性能复现。 |
 
 完成指定查询不等于所有摘要、任务或引用链完成；候选原始证据与逐项决定见 `sources/` 和 `survey.json`。
 
@@ -815,6 +818,8 @@
   阅读边界：正式27页，机构VoR与AM分源，TV只有摘要和作者代码；式表原印与公开实现差异保留，无新学习笔记。
 - 2026-10-11 / jun-zhou-graph-diffusion-unmixing-reading-2026-10-11：新增 0，更新 4，去重 0，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
   阅读边界：概率图正式14页、DiffUnAM18页；非局部NTF/ISTA网络只有官方完整摘要；冻结ZIP核心代码静态非模型复现，无新学习笔记。
+- 2026-10-11 / jun-zhou-name-and-fusion-followup-2026-10-11：新增 0，更新 4，去重 1，排除 0，待处理 0。更新与去重可能重叠，不能相加为新增。
+  阅读边界：目录不增量；一个Scholar短题名归并，101条指定arXiv作者查询映射，三篇四版本29PDF页/28正文参考页全文阅读。仅78其他姓名从作者专项分流，不排除全领域候选。
 
 </details>
 

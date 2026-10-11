@@ -262,7 +262,10 @@
     "adaptive-graph-multilayer-nmf-hsi-2020",
     "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020",
     "spectral-mixture-network-unmixing-2020",
-    "zhou-45-hsi-2024"
+    "zhou-45-hsi-2024",
+    "zhou-scholar-arxiv-2404-05258",
+    "zhou-dblp-arxiv-2412-00302",
+    "zhou-31-hsi-2025"
   ],
   "sourceChecks": [
     {
@@ -853,6 +856,39 @@
         "USGSv7原2457条中保留完整224通道的1533条，取六端元生成64×64；A1/A2/A3/A4为6/50/750/1500条且包含六真端元。每个8×8块分配两材料.2/.8，Gaussian平滑标准差2后归一；观测噪声方差1e-3。光谱变异：缩放1±c、c=.1/.2/.3与谱噪声方差1e-3/1e-2/1e-1；另替换5个类似材料/仪器签名，Cobalt green不换。Jasper100×100、198波段，人工4谱与FCLS代理丰度，VCA库4/40；Samson95×95起点(252,332)、156波段、3材料，VCA库3/30。",
         "表I四种库规模下w/o丰度aRMSE.0130/.0130/.0140/.0190均最低（最小库与SUnSAL并列），w/仅P1500重构rRMSE.0051胜w/o.0054。表II三种谱变异w/aRMSE.0259/.0307/.0534最低；轻/中变异SAM仍SVASU更小。表III五谱替换条件w/三指标最低。Jasper库4，w/.1151劣于SVASU.0887和w/o/SUnSAL.1001；库40则w/o.1040最佳。Samson库3，w/.1000劣于w/o/SUnSAL.0763；库30w/.0940最佳。优势依库规模、变异和指标而异；重构好不等于丰度准。",
         "机构18页含封面和17页接受稿，69式/15图/5表/2算法/3附录/53参考已读；正式62:1–16完整摘要已核，但正式PDF返回202，未作完整版本差校勘。后验delta/独立性/Jacobian近似限制成立范围；w/o在噪声趋0时回到库点，无法保证库外谱变异适应。5重启的连续最优点概率公式不构成全局求解保证。接受稿Alg1/2减似然梯度，公开代码加残差梯度且步长带1/2和1e-5，需完整版核对；不静默把伪码改成代码。代码cache_H模式每5步FCLS、最终再解；默认模型配置路径与权重缺失，w/固定6端元，w/o从参考W取端元数，非自动估数。库A最大1.22065超1，不能宣称全部reflectance天然在[0,1]；NPZ sigma=.031对应方差.000961，非精确1e-3。所有论文数值未复现。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-arxiv-2404-05258",
+      "url": "https://arxiv.org/pdf/2404.05258v1",
+      "level": "公开指定版本全文逐页阅读与框架原图视觉核验",
+      "supports": [
+        "双注意力模块产生HSI/LiDAR掩码，融合后对HSI加权；卷积自编码器重建与掩码稀疏正则训练。各带平均注意力归一化、外积与1−Pearson相关距离组合，层次聚类后以簇内高注意力选代表带；正文也提k-means，具体衔接未清。",
+        "v1 §IV-B/C：SGD、50epochs、batch32、lr1e−4；比较patch3/5/7/9/11/13，报告7最佳。SVM RBF、KNN k=5与CNN评估，10带+LiDAR的融合对照；运行环境称Colab TPU。波段扫描文字称1–50步5，不补造实际列表。",
+        "v1表I/II/III十带SVM OA分别.9228/.9867/.8591；CNN OA .9887/.9962/.9031。表IV/V/VI融合CNN OA .9887/.9969/.9031，Trento两表不同值分别保留；不把摘要全面优越外推至所有类。",
+        "版本图文及表文疑点逐项保留，不宣称性能复现。"
+      ]
+    },
+    {
+      "paperId": "zhou-dblp-arxiv-2412-00302",
+      "url": "https://arxiv.org/pdf/2412.00302v2",
+      "level": "公开指定版本全文逐页阅读与框架原图视觉核验",
+      "supports": [
+        "正/反方向投影后Conv1D激活，按式3/4用tanh(x+A/B·Δ)更新；两方向归约后相加，与ReLU(BatchNorm(Conv2D))空间特征拼接，再经卷积/线性分类。没有由正文证实的自监督预训练任务。",
+        "PyTorch、RTX3090 24GB、batch32、初始lr1e−4；表III为100epochs。表I六个对照、表II正/反向与空间分支消融；测试时间正文称固定.48s，未给载荷大小、参数量/FLOPs或独立内存基准。",
+        "v2表I OA96.68%、AA97.32%、Kappa96.39%；表II全结构OA.9668，去空间.9585、去反向.9661、去前向.9615、仅空间.9342。结果为作者报告，无独立复现；并非所有类别最佳。",
+        "版本图文及表文疑点逐项保留，不宣称性能复现。"
+      ]
+    },
+    {
+      "paperId": "zhou-31-hsi-2025",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bc1a41ff-1eeb-463f-ae89-9b8947dae94f/content",
+      "level": "公开指定版本全文逐页阅读与框架原图视觉核验",
+      "supports": [
+        "原序与逆序双流各经线性投影、Conv1D/SiLU/FC分支；两路特征逐元素相加，再FC分类，以交叉熵监督。另比较按已引用选带法的波段重要性降序/升序组合。",
+        "PyTorch、RTX3090 24GB、Adam、batch32、lr1e−5、100epochs；DB1/DB2为自然/逆序，DB3/DB4为重要性降/升序，各另加LiDAR；双流DB1Li+DB2Li、DB3Li+DB4Li；空间块1–15。式1为相加，式2为交叉熵。",
+        "AM/v1表II双流自然/逆序OA.9568；表III Houston10samples OA.8739，对应单流DB3Li .8388；表V Houston OA.9989/AA.9992，Trento OA.9972/AA.9953。patch实验文字Houston7时OA.9993、Trento11时.9972；不同协议不混为同一成绩。",
+        "版本图文及表文疑点逐项保留，不宣称性能复现。"
       ]
     }
   ]

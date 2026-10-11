@@ -1,0 +1,172 @@
+{
+  "checkedAt": "2026-10-11",
+  "scope": "周峻既有目录三篇HSI–LiDAR研究的四份免费公开版本，未增加目录数量。",
+  "downloadedPdfCount": 4,
+  "newFullTextReadingCount": 3,
+  "pdfPagesRead": 29,
+  "bodyAndReferencePagesRead": 28,
+  "records": [
+    {
+      "paperId": "zhou-scholar-arxiv-2404-05258",
+      "versionsRead": [
+        {
+          "arxivId": "2404.05258v1",
+          "url": "https://arxiv.org/pdf/2404.05258v1",
+          "status": 200,
+          "bytes": 888652,
+          "contentType": "application/pdf",
+          "sha256": "416639c336627d1254ba32bb561fa640b61965d384650dbf3b39ad887c8b41ba",
+          "file": "jun-zhou-fusion-band-order-reading-2026-10-11-2404.05258v1.pdf",
+          "pdfDownloaded": true,
+          "pageTextFile": "jun-zhou-fusion-band-order-reading-2026-10-11-2404.05258v1-pages.json",
+          "pageCount": 13,
+          "readingProgress": "full_text_read",
+          "readPages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "readingBoundary": "逐页读取正文、公式、实验、结论和参考目录；参考目录不等于引用论文已读。图2/图1框架另做视觉核验。未运行模型。"
+        }
+      ],
+      "previousReadingProgress": "abstract_read",
+      "method": "双注意力模块产生HSI/LiDAR掩码，融合后对HSI加权；卷积自编码器重建与掩码稀疏正则训练。各带平均注意力归一化、外积与1−Pearson相关距离组合，层次聚类后以簇内高注意力选代表带；正文也提k-means，具体衔接未清。",
+      "experiments": "v1 §IV-B/C：SGD、50epochs、batch32、lr1e−4；比较patch3/5/7/9/11/13，报告7最佳。SVM RBF、KNN k=5与CNN评估，10带+LiDAR的融合对照；运行环境称Colab TPU。波段扫描文字称1–50步5，不补造实际列表。",
+      "results": "v1表I/II/III十带SVM OA分别.9228/.9867/.8591；CNN OA .9887/.9962/.9031。表IV/V/VI融合CNN OA .9887/.9969/.9031，Trento两表不同值分别保留；不把摘要全面优越外推至所有类。",
+      "unresolved": "§III-A称掩码concatenate、III-B称multiply、式2说明称add，Fig.1为加、Fig.2为乘；式3印的L2,1定义不同于通常行L2求和。注意力距离文字称反比但式6为外积，式8下标欠j；层次聚类/k-means衔接、λ/α/β及完整划分未定。MUUFL正文称5带而表III为10带；Trento表II与表V CNN OA冲突；2DCNN/1DCNN称谓、Fig.8 KNN图注与正文CNN不一。无正式版本证据或代码复现。",
+      "frameworkFigures": [
+        {
+          "figureLabel": "Fig. 1",
+          "page": 5,
+          "path": "figures/zhou-scholar-arxiv-2404-05258/framework-overview-arxiv-v1.png",
+          "sourceUrl": "https://arxiv.org/pdf/2404.05258v1"
+        },
+        {
+          "figureLabel": "Fig. 2",
+          "page": 5,
+          "path": "figures/zhou-scholar-arxiv-2404-05258/framework-attention-arxiv-v1.png",
+          "sourceUrl": "https://arxiv.org/pdf/2404.05258v1"
+        }
+      ]
+    },
+    {
+      "paperId": "zhou-dblp-arxiv-2412-00302",
+      "versionsRead": [
+        {
+          "arxivId": "2412.00302v2",
+          "url": "https://arxiv.org/pdf/2412.00302v2",
+          "status": 200,
+          "bytes": 1232529,
+          "contentType": "application/pdf",
+          "sha256": "56eec8ef26b5fac6b315e7bd49bc23aafcd4e6e5a5b05e8920cc00ab490aead1",
+          "file": "jun-zhou-fusion-band-order-reading-2026-10-11-2412.00302v2.pdf",
+          "pdfDownloaded": true,
+          "pageTextFile": "jun-zhou-fusion-band-order-reading-2026-10-11-2412.00302v2-pages.json",
+          "pageCount": 5,
+          "readingProgress": "full_text_read",
+          "readPages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "readingBoundary": "逐页读取正文、公式、实验、结论和参考目录；参考目录不等于引用论文已读。图2/图1框架另做视觉核验。未运行模型。"
+        }
+      ],
+      "previousReadingProgress": "abstract_read",
+      "method": "正/反方向投影后Conv1D激活，按式3/4用tanh(x+A/B·Δ)更新；两方向归约后相加，与ReLU(BatchNorm(Conv2D))空间特征拼接，再经卷积/线性分类。没有由正文证实的自监督预训练任务。",
+      "experiments": "PyTorch、RTX3090 24GB、batch32、初始lr1e−4；表III为100epochs。表I六个对照、表II正/反向与空间分支消融；测试时间正文称固定.48s，未给载荷大小、参数量/FLOPs或独立内存基准。",
+      "results": "v2表I OA96.68%、AA97.32%、Kappa96.39%；表II全结构OA.9668，去空间.9585、去反向.9661、去前向.9615、仅空间.9342。结果为作者报告，无独立复现；并非所有类别最佳。",
+      "unresolved": "表III Model1为.9668/.9722/.9639，但相邻文字为.9736/.9786/.9713；正文错称C2的100为MDLCross（表为S2ENet），C7最高实际MDLCross98.51而本法97.11。早融合在embedding前/后表述不一、2D/1D卷积叙述不一、Δ维度和训练细节欠明；内存效率没有完整量化。与2503.21072/GRSL同名但结构、作者和实验不同，正式延伸关系待证，不自动合并。v1未读。",
+      "frameworkFigures": [
+        {
+          "figureLabel": "Fig. 1",
+          "page": 2,
+          "path": "figures/zhou-dblp-arxiv-2412-00302/framework-arxiv-v2.png",
+          "sourceUrl": "https://arxiv.org/pdf/2412.00302v2"
+        }
+      ]
+    },
+    {
+      "paperId": "zhou-31-hsi-2025",
+      "versionsRead": [
+        {
+          "arxivId": "2503.21072v1",
+          "url": "https://arxiv.org/pdf/2503.21072v1",
+          "status": 200,
+          "bytes": 1360113,
+          "contentType": "application/pdf",
+          "sha256": "44865aeafcd976cb37ee0dd1dd06553d27cb6b6fef6e51cbb3402fe160bb1828",
+          "file": "jun-zhou-fusion-band-order-reading-2026-10-11-2503.21072v1.pdf",
+          "pdfDownloaded": true,
+          "pageTextFile": "jun-zhou-fusion-band-order-reading-2026-10-11-2503.21072v1-pages.json",
+          "pageCount": 5,
+          "readingProgress": "full_text_read",
+          "readPages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "readingBoundary": "逐页读取正文、公式、实验、结论和参考目录；参考目录不等于引用论文已读。图2/图1框架另做视觉核验。未运行模型。"
+        },
+        {
+          "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bc1a41ff-1eeb-463f-ae89-9b8947dae94f/content",
+          "status": 200,
+          "bytes": 1416552,
+          "sha256": "aa4d72d49783eb511b10f65251e97261a480bf3b90d8a3d2e4f0a34990b9a8d9",
+          "arxivId": null,
+          "version": "accepted_manuscript",
+          "file": "jun-zhou-fusion-band-order-reading-2026-10-11-hslinets-order-am.pdf",
+          "pdfDownloaded": true,
+          "pageTextFile": "jun-zhou-fusion-band-order-reading-2026-10-11-hslinets-order-am-pages.json",
+          "pageCount": 6,
+          "readingProgress": "full_text_read",
+          "readPages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "readingBoundary": "逐页读取正文、公式、实验、结论和参考目录；参考目录不等于引用论文已读。图2/图1框架另做视觉核验。未运行模型。"
+        }
+      ],
+      "previousReadingProgress": "abstract_read",
+      "method": "原序与逆序双流各经线性投影、Conv1D/SiLU/FC分支；两路特征逐元素相加，再FC分类，以交叉熵监督。另比较按已引用选带法的波段重要性降序/升序组合。",
+      "experiments": "PyTorch、RTX3090 24GB、Adam、batch32、lr1e−5、100epochs；DB1/DB2为自然/逆序，DB3/DB4为重要性降/升序，各另加LiDAR；双流DB1Li+DB2Li、DB3Li+DB4Li；空间块1–15。式1为相加，式2为交叉熵。",
+      "results": "AM/v1表II双流自然/逆序OA.9568；表III Houston10samples OA.8739，对应单流DB3Li .8388；表V Houston OA.9989/AA.9992，Trento OA.9972/AA.9953。patch实验文字Houston7时OA.9993、Trento11时.9972；不同协议不混为同一成绩。",
+      "unresolved": "v1与AM文字仍称DB4Li OA.9277，但表II为.9452，表II最大为双流.9568；少样本段重复把Class10 .6204写在Class8叙述。表V正文称DB1Li+DB3Li而方法配对为DB1Li+DB2Li，确切实验组合待补充材料；缺完整种子/重复数/划分/预处理和统计显著性。2404的选带稿、2412双非线性稿、本文不是仅凭同作者/同简称可合并的版本。正式排版版未读，代码和补充材料本轮未读。",
+      "frameworkFigures": [
+        {
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "path": "figures/zhou-31-hsi-2025/framework-accepted-manuscript.png",
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/bc1a41ff-1eeb-463f-ae89-9b8947dae94f/content"
+        }
+      ]
+    }
+  ],
+  "crossWorkVersionAudit": {
+    "paperIds": [
+      "zhou-dblp-arxiv-2412-00302",
+      "zhou-31-hsi-2025"
+    ],
+    "decision": "pending_relation",
+    "finding": "相同HSLiNets简称、双方向HSI/LiDAR设计，但作者列表、标题、结构/公式、学习率、实验与图表不同。无本次取得的正式来源明确宣称两者为会议/期刊扩展，保留独立来源与方法族，不断言独立方法总数。"
+  },
+  "boundary": "正文事实进入catalog.json；此文件保存原始资料核验边界与冲突，不建立另一份目录或学习笔记。AM不是最终出版排版版；v1/v2状态逐版本，未跑模型。"
+}
