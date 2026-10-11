@@ -115,6 +115,8 @@ NSP/KUM与Shearlet两早期稿新增仓库精确DOI/题名查询未返回目标�
 
 MAC-Net作者公开稿14页已完整阅读，新增Fig1整体框架与Fig3NAB原图；首页/履历及出版社ORCID互证Griffith身份，正式2022书目与作者页2021写法分别保留。Σ/D按观测估计、仅SDPM学习，五步单次流程不作迭代展开。四数据集、三噪声范围/blind、主表与消融已补；WDCM重噪声弱于FastHyDe，样本性能非单调、K部分指标并列，式7/NAB放置/σ疑点按稿保留。七作者HSI引文全部已录；未标AM/VoR，不替代未读正式版。TV-NTF作者页仍只链接旧IEEE，指定arXiv查询有效零返回不证明无公开版；保持摘要级，当前只用原摘要展示方法，移除旧代码实现细节/运行待办并保留历史证据。
 
+ALN旧论文链接实际是Nikzad2021博士论文。第5章27页完整阅读、Fig5.1/5.3两原框架已补现有条目；出版清单只证明同题三作者2021-07-02投稿关联，2022期刊仍摘要级。正式机构原摘要确认地物分类与逐像元谱注意力，文件清单完整只有SWORD/XML，无期刊附件。章节三基准/注意力与晶格消融、效率按实际来源整理；均值OA91.68/80.29/88.65%与地图标注分列，不称参数/FLOPs/时间全面最低。四直接HSI作者引用已录，语音晶格只背景。杂草形状纹理论文两UNSW入口403，书目三作者续核，无新正文；两指定arXiv查询零项不证明没有其他公开版。
+
 ## 下一步
 
 1. 优先查漏并完成来源交叉核对：其余姓名变体及arXiv无谱词/其他拼写查询与reflectance宽词形机制边界、DBLP/Scholar/arXiv差集、两条来源外直接HSI的合格版本及共同作者CV候选；机构个人目录已完成本次387条快照，不反复拉取同一快照；区分已发表、预印本、在审线索，按书目与明确证据去重。
@@ -124,6 +126,7 @@ MAC-Net作者公开稿14页已完整阅读，新增Fig1整体框架与Fig3NAB原
 
 ## 证据与归档
 
+- [ALN关联章节27页与杂草材料访问](sources/jun-zhou-aln-related-chapter-weed-access-2026-10-12.json)、[原始访问](sources/jun-zhou-aln-related-chapter-weed-access-2026-10-12-access.json)：两章节原图，期刊全文状态不变。
 - [MAC-Net14页作者稿与TV摘要范围续核](sources/jun-zhou-mac-author-reading-tv-scope-2026-10-12.json)、[原始访问](sources/jun-zhou-mac-author-reading-tv-scope-2026-10-12-access.json)：公开稿全文/两原图，TV仍摘要；代码仅URL。
 - [简称989元数据与一页合成HSI数据集](sources/jun-zhou-initial-query-synthetic-data-reading-2026-10-12.json)、[简称逐项索引](sources/jun-zhou-initial-query-synthetic-data-reading-2026-10-12-initial-index.json)：六分类摘要范围暂排，数据集固定v1全1页/一原数据示例图；不是989摘要全审。
 - [早期访问缺口与HSIMamba v1全文](sources/jun-zhou-early-access-hsimamba-reading-2026-10-12.json)、[原始访问](sources/jun-zhou-early-access-hsimamba-reading-2026-10-12-access.json)、[论文官方代码超链接](sources/jun-zhou-early-access-hsimamba-reading-2026-10-12-pdf-links.json)：v1全11页/两原图，早期两稿身份与访问缺口保留，未访问代码。

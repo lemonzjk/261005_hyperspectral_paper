@@ -35455,30 +35455,31 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2022.3164341",
-      "representation": "高光谱分类：注意力晶格网络（ALN）结合残差与密集聚合，并用联合光谱—空间注意力同时提取两类信息。",
+      "representation": "ALN高光谱地物分类：2D残差—密集晶格与逐像元光谱/空间注意力；公开关联第5章已读，正式期刊仍摘要级。",
       "tags": [],
-      "summary": "ALN 面向 3D 卷积效率低、1D/2D 卷积难以同时建模光谱和空间的问题，以晶格结构复用残差和密集聚合，并通过联合注意力提升分类精度与效率。",
-      "input": "高光谱影像 patch。",
-      "output": "像素或 patch 的地物类别预测。",
-      "mechanism": "晶格网络融合残差与密集聚合；联合光谱—空间注意力提取两维信息，减少参数与特征复用损失。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content",
-      "verifiedAt": "2026-10-10",
+      "summary": "ALN用2D晶格结合残差与密集聚合，以逐像元光谱注意力及空间注意力进行直接高光谱地物分类。已读2021作者博士论文关联第5章27页，整理网络、三基准和两张原框架；该章出版清单列2021投稿，不能代替未取得的2022正式期刊全文。",
+      "input": "关联2021章节：原始HSI中心像元的B×9×9邻域及地物监督标签；注意力预处理保留谱维，不先用PCA降维。正式期刊摘要确认HSI输入，具体尺寸仍须期刊正文核验。",
+      "output": "中心像元的N类地物softmax概率与分类标签，可形成整幅分类图；关联章节的谱空3D cube不是几何三维重建。",
+      "mechanism": "关联2021章节：前置JSS依次执行逐像元光谱及空间注意力；光谱分支对每像元用共享FC的c→c/16→c、ReLU/sigmoid加权，不用全局squeeze池化。空间分支1×1卷积压至一通道并sigmoid加权。三角RDL深度/层级均3、六卷积单元，沿高度密集拼接、沿深度残差聚合；两步瓶颈均ReLU→BN→卷积，1×1降维和3×3恢复。各层64/96/128通道，末端拼接后再次JSS、1×1压缩到C/2、GAP和FC softmax，以交叉熵监督。正式期刊摘要支持晶格和逐像元注意力，完整配置不冒称期刊已核。",
+      "readingNote": "下载的169页PDF是Mohammad Nikzad Dehaji博士论文（2021，DOI10.25904/1912/4414）；实际读封面/题名/出版清单三页及第5章PDF86–112共27页，113为空白，其余章节未全读。出版清单准确列Nikzad/Gao/Jun Zhou的同题TGRS稿于2021-07-02投稿；仅建立关联材料，不认定2022正式正文相同。机构正式记录三作者、Griffith作者字段和DOI已核，文件清单仅SWORD/XML、无论文附件；本次Crossref429未作成功证据。章节图表和71条所选书目已对照，四条直接HSI作者引用均已录，语音晶格引用不收录。指定arXiv题名有效零返回；期刊仍摘要级。",
+      "paper": "https://doi.org/10.1109/tgrs.2022.3164341",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
-          "land-cover-classification"
+          "land-cover-classification",
+          "spectral-band-attention"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "正式机构原摘要明确HSI地物分类和逐像元光谱注意力；2021关联章节直接处理HSI邻域，不将谱空维度当几何三维。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何用注意力晶格结构同时提升高光谱分类的光谱—空间表达、精度与计算效率？",
-        "datasets": "作者仓储章节摘要报告与深度学习基线比较；具体数据集、划分和指标待正式论文全文核验。",
-        "experimentSetting": "ALN 联合光谱—空间注意力和残差/密集聚合，在高光谱分类基准上比较准确率与效率。",
-        "conclusions": "作者仓储摘要报告 ALN 兼具分类精度和计算效率，并优于对比方法；逐项性能和消融待正式全文核验。",
-        "limitations": "证据来自作者仓储章节摘要，未核对正式期刊版本的完整网络、实验、代码和数据许可。",
+        "datasets": "以下仅为2021关联章节：Houston2013为349×1905×144、15类，训练2830/测试12197；Indian Pines145×145、16类，章节写224带减4零带与35水吸收带后185带、10366标签，每类15训练共240、测试10126；Pavia University610×340，115减12噪声后103带、9类，每类20训练共180、测试42596。保留章节带数，不替换为其他版本常用规格。正式期刊协议未核。",
+        "experimentSetting": "2021章节§5.3.6：Adam默认参数、200 epochs、batch128、初始学习率.001余弦降至1e-6、单Titan RTX；10次重复报均值，OA/AA/κ。比较ContextNet、multi-scale3D-CNN、3D-CNN、DPyResNet、SSRN、MSDNSA和SSAtt。Table5.6/5.9星号结果引用[64]，不能把所有结果说成同机重测。RDL与10种前/后注意力消融在Houston进行；这里只整理论文所报，未复现。",
+        "conclusions": "2021章节Tables5.6–5.8按Houston/Indian Pines/Pavia顺序：ALN均值OA91.68/80.29/88.65%，AA91.64/79.47/92.37%，κ.91/.77/.85；并非各地物类都最佳。Fig5.8–5.10地图标注OA93.09/84.56/89.50%，与均值表分列；Houston正文明确是单次地图。Table5.9 ALN .20M参数/9.81MFLOPs、训练136.73s/测试42.90s，3D-CNN参数及训练测试更少，SSAtt的FLOPs及测试时间更少，不称全面最低。RDL基线/无局部残差/含局部残差OA85.45/90.81/91.68%；注意力基线89.24%与完整JSS91.68%。正式期刊摘要只确认一般有效性，以上数值不当作期刊已核。",
+        "limitations": "完整期刊正文/原图仍未取得；机构No Full Text和两指定arXiv查询零返回不证明所有公开路线不存在。公开章节为2021投稿关联材料，非新增学位论文条目，也不升级期刊全文状态。章节均值表与地图数值不同，Houston单次/均值分列，另两地图统计口径未说明；星号借用结果与正文重实现措辞分别保留。像元随机训练取样，空间缓冲/邻域隔离未报告；不推断空间独立泛化。",
         "dataLinks": [],
         "evidence": [
           {
@@ -35498,6 +35499,25 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/d6c66804-da34-49f8-9a76-bf8a65946aa7",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith正式期刊记录完整原摘要与目标作者字段",
+            "supports": [
+              "2022正式题名、三作者、TGRS60及精确DOI；gro.griffith.author含Gao Yongsheng与Zhou Jun。",
+              "原摘要明确直接HSI地物分类、2D残差/密集晶格及逐像元光谱注意力，支持任务与方法标签。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith关联作者章节PDF选读（第5章27页，非期刊版）",
+            "supports": [
+              "2021博士论文出版清单同题三作者TGRS稿于2021-07-02投稿；实际第5章27页全读，不作为2022期刊全文。",
+              "原Fig5.1/5.3、15式和九表；三数据集、随机取样、注意力晶格配置与原性能/效率边界。",
+              "71所选书目中四条目标作者直接HSI引文均已录，语音晶格只作背景，其他章节及全部227参考文献未全读。"
+            ]
           }
         ],
         "versions": [
@@ -35507,12 +35527,92 @@
             "url": "https://doi.org/10.1109/tgrs.2022.3164341",
             "doi": "10.1109/tgrs.2022.3164341",
             "year": 2022,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式2022期刊记录三作者/DOI和完整摘要已核，期刊正文未取得；关联博士论文章节不替代正式版。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "zhou-72-hsi-2022-related-thesis-chapter",
+            "type": "关联作者章节（非期刊版）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content#page=86",
+            "year": 2021,
+            "readingProgress": "full_text_read",
+            "metadataStatus": "related_thesis_chapter_submission_list_not_journal_copy",
+            "relation": "Mohammad Nikzad Dehaji《Structural Improvements of Convolutional Neural Networks》2021博士论文第5章，PDF86–112/印刷63–89，共27页已读。出版清单列同题三作者期刊稿2021-07-02投稿；仅关联材料，不认定为2022正式期刊版本或另收学位论文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-72"
+        "methodFamilyId": "zhou-2022-title-72",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "正式机构完整原摘要明确直接HSI地物分类与逐像元光谱注意力，确认land-cover-classification及spectral-band-attention；公开2021关联章节细节明确标来源，不升级未得期刊全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "88b9182c429e522d9693abff6f1fde38c359d49905ea82e3654d63d5dc5e82c8",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/items/d6c66804-da34-49f8-9a76-bf8a65946aa7",
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content"
+          ]
+        }
       },
-      "citation": "@article{zhou_72_hsi_2022,\n  title = {An Attention-Based Lattice Network for Hyperspectral Image Classification},\n  author = {Mohammad Nikzad and Yongsheng Gao and Jun Zhou},\n  year = {2022},\n  doi = {10.1109/tgrs.2022.3164341}\n}\n"
+      "citation": "@article{zhou_72_hsi_2022,\n  title = {An Attention-Based Lattice Network for Hyperspectral Image Classification},\n  author = {Mohammad Nikzad and Yongsheng Gao and Jun Zhou},\n  year = {2022},\n  doi = {10.1109/tgrs.2022.3164341}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content",
+          "figureLabel": "Figure 5.1",
+          "caption": "2021关联博士论文第5章ALN原总体框架：前置JSS、残差—密集晶格、注意力压缩和分类；保留完整原图注，非2022期刊图版。",
+          "page": 89,
+          "verificationNote": "已目视核对关联2021章节原图及完整图注；300dpi直接裁取，未重绘，不冒称正式期刊原图。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              62,
+              105,
+              535,
+              320
+            ],
+            "pdfVersion": "2021博士论文第5章（关联作者材料，非2022期刊版）",
+            "sourcePdfSha256": "5613619dce4a01c39ccc439f87089ea96ace5a86b7e4ea236423f8732d55c7eb"
+          },
+          "path": "figures/zhou-72-hsi-2022/thesis-fig5-1.png",
+          "width": 1972,
+          "height": 897,
+          "sha256": "11e7349287d7dfa166daebf4a3caeeb865a519cc94a8695cfd54ff800bdcbfb4",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Mohammad Nikzad Dehaji · Griffith博士论文2021 · 第5章"
+        },
+        {
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/0b62a949-0829-43c4-8443-f2445f392006/content",
+          "figureLabel": "Figure 5.3",
+          "caption": "2021关联博士论文第5章原注意力模块：空间1×1卷积与逐像元共享FC光谱门控；保留完整原图注，非2022期刊图版。",
+          "page": 93,
+          "verificationNote": "已目视核对关联2021章节原图及完整图注；300dpi直接裁取，未重绘，不冒称正式期刊原图。",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "dpi": 300,
+            "pointBox": [
+              62,
+              107,
+              535,
+              545
+            ],
+            "pdfVersion": "2021博士论文第5章（关联作者材料，非2022期刊版）",
+            "sourcePdfSha256": "5613619dce4a01c39ccc439f87089ea96ace5a86b7e4ea236423f8732d55c7eb"
+          },
+          "path": "figures/zhou-72-hsi-2022/thesis-fig5-3.png",
+          "width": 1972,
+          "height": 1826,
+          "sha256": "43c5f3ad050729e211fe437c52e253a3f52fb431b38968e31477f5aa753af014",
+          "verifiedAt": "2026-10-12",
+          "attribution": "Mohammad Nikzad Dehaji · Griffith博士论文2021 · 第5章"
+        }
+      ]
     },
     {
       "id": "zhou-74-hsi-2022",
@@ -42095,9 +42195,9 @@
       "input": "高光谱影像中的三类草本杂草对象。",
       "output": "三类草本杂草分类结果及总体准确率。",
       "mechanism": "提取 Gabor、方向梯度直方图（HoG）和局部二值模式（LBP）特征，比较形状、纹理及其组合在对象级分类中的效果。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
+      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。 2026-10-12正式Crossref书目再次核对三作者及7208–7211页；UNSW原下载和API content两个入口均403，未取得PDF；指定arXiv题名零返回不证明无公开版。",
       "paper": "https://unsworks.unsw.edu.au/bitstreams/1df826fe-3c8f-43c1-aeb1-b68fe51568e3/download",
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
@@ -42113,7 +42213,7 @@
         "datasets": "摘要仅说明三类草本杂草；数据采集范围、样本数和划分待全文核验。",
         "experimentSetting": "对象级高光谱分类；比较 Gabor、HoG、LBP 及形状/纹理组合。",
         "conclusions": "公开摘要报告 LBP 与 HoG 的形状—纹理组合总体准确率高于单独形状或纹理特征。",
-        "limitations": "摘要未给出具体数据规模、分类器、指标数值、代码和完整实验。",
+        "limitations": "摘要未给具体数据规模、分类器或指标数值。2026-10-12原UNSW下载/API content均HTTP403，当前无法取得该机构稿；只记录这两个入口限制，不认定全文必付费或所有公开版不存在，缺失方法/实验留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -42148,6 +42248,14 @@
             "supports": [
               "页面书目索引275以DOI 10.1109/igarss.2019.8900132对应既有记录；只补来源交叉证据，不提升阅读深度或独立认定缩写身份。",
               "本页同时列Farooq A/Awan AF，作者数与正式登记有差异；保留出版社作者顺序，疑点留源表。"
+            ]
+          },
+          {
+            "url": "https://unsworks.unsw.edu.au/server/api/core/bitstreams/1df826fe-3c8f-43c1-aeb1-b68fe51568e3/content",
+            "checkedAt": "2026-10-12",
+            "level": "机构原稿访问限制记录（HTTP403，未获取正文）",
+            "supports": [
+              "原下载与API content均403/239字节，相同响应哈希；未取得PDF，不改变摘要级阅读。"
             ]
           }
         ],
@@ -51327,7 +51435,8 @@
         "zhou-67-hsi-2023",
         "zhou-47-hsi-2024",
         "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
-        "zhou-scholar-arxiv-2404-05258"
+        "zhou-scholar-arxiv-2404-05258",
+        "zhou-72-hsi-2022"
       ],
       "dimension": "method",
       "status": "confirmed",
@@ -51348,6 +51457,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "本轮三篇融合/选带全文核验同步实际关联；2412稿为分类而无表征预训练目标，移除该标签；新增选带稿波段注意力证据。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "ALN正式原摘要确认逐像元光谱注意力；关联2021章节补机制，不当作期刊全文。"
         }
       ]
     },
