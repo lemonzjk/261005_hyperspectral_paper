@@ -275,3 +275,5 @@ Yuntao Qian无主题姓名查询27条完整返回：五条含完整Jun Zhou均�
 作者差集材料续核：Mamba-UNet出版社免费Fig.1/4确认LR/Ref/地物掩膜输入与HF/LF分支，分解算子未写，撤回旧Fourier推断；实际谱带/掩膜协议和合格版本仍待，付费正文未读。共同作者引出的DualMamba固定arXiv v1十五页/四方法原图已整理，匹配同五Fudan作者TGRS2025正式书目；Jingyi Zhou非Jun，另一HSI–LiDAR IGARSS Dualmamba已有候选继续来源未决，不误并。其引文[2]J. Zhou由七完整作者/单位确认同为Jingyi，领域待办不计目标作者缺口。专项181及102全文/79摘要保持；代码只链接。[证据](sources/jun-zhou-dualmamba-mamba-primary-materials-2026-10-12.json)。
 
 - [ORCID刷新、IF出版社OA状态与Phase-Locked原稿作者冲突](sources/jun-zhou-if-phase-author-conflict-2026-10-12.json)：ORCID263组269摘要与旧JSON相同；IF仅coredata、未读正文。Phase-Locked v2八页及原框架只候选材料，不混入库内全文/原图计数。官方单作者不代表PDF无Jun，反之PDF姓名不替代Griffith单位证据；表头、选带协议及图注疑点原样保留，代码只链接。
+
+Phase-Locked v1免费八页已取得，仅选读首页：与v2相同五作者含Jun，八页文字除版本页脚完全一致，不把对照抽取当v1全文已读或Griffith归属核清。IF新增META接口401、共同作者三个ORCID定位超时；原正文/单位仍待，不覆盖OA标记。已下载其他作者SSFAD v1十一页/三图读完并入普通arXiv，无Jun；专项181与102全文/79摘要不变，代码只链接。[本轮证据](sources/jun-zhou-phase-version-ssfad-reading-2026-10-12.json)。

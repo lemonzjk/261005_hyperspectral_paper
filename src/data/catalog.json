@@ -50159,6 +50159,188 @@
           }
         }
       ]
+    },
+    {
+      "id": "ssfad-arxiv-2022",
+      "shortTitle": "SSFAD",
+      "title": "A spectral-spatial fusion anomaly detection method for hyperspectral imagery",
+      "authors": "Zengfu Hou, Siyuan Cheng, Ting Hu",
+      "year": 2022,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2202.11889",
+      "arxivVersion": 1,
+      "representation": "局部中值—均值背景线投影与局部空间结构相似的双评分表示。",
+      "tags": [],
+      "summary": "SSFAD将高光谱异常检测拆为局部背景谱评分和局部窗口空间评分，用基于最大奇异值的权重自适应融合。已完整读v1十一页及三原方法图。四场景AUC为99.307%/99.882%/98.970%/99.751%，后三优于表内六对照，Gulfport仍低于GTVLRR；自适应融合与耗时也非全部最优。",
+      "input": "原始HSI像元及其双窗局部背景/空间窗口：Gulfport191带、Pavia Centra102带、Gainesville191带、Cri46带。无目标参考谱或训练标签输入；场景真值用于参数最优选择与ROC/AUC评估。",
+      "output": "各像元连续异常评分图，由谱域与空间域评分自适应加权；不输出端元/丰度或场景三维几何。",
+      "mechanism": "LMML把局部邻域谱正交投影到背景中值—均值方向，以IDW和(1−exp(−距离²/2))增强测试谱与背景差异；根据外内窗差集的变换背景协方差计算谱评分，并乘以内窗平均谱角/位置显著性权重(c=1)。空间支路以中心窗口和8ω个顺时针局部背景窗口按Eq12的trace差异式求最小相似差值。两整幅评分R1/R2以sqrt(λmax(RiᵀRi))形成互补权重，R=aR1+bR2；这是谱空决策融合，不是神经网络或多传感器融合。",
+      "readingNote": "固定arXiv2202.11889v1十一页全文及完整引用书目已读，三作者与官方精确ID元数据一致，無Jun。Figure1/2在PDF3页、Figure3在5页裁原图并人工核对；AUC/融合/耗时按Table2–4核，Gulfport与速度负例不省略。PDF排版日期February25与提交February24分别保留。正式版本尚未确认，不把不同作者的SSIF、Complementary Decision Fusion或Cascaded Spectral–Spatial稿当同一版本；不检查代码。",
+      "paper": "https://arxiv.org/abs/2202.11889v1",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "官方精确ID/完整三作者与固定v1十一页全文、三原图、实验表核验",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-anomaly-detection"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "四真实高光谱场景的191/102/191/46谱带直接参与异常评分；无纯多光谱关联，也非深度学习或几何三维。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何用局部谱背景纠正和局部空间结构相似的互补评分提高复杂HSI场景异常检测？",
+        "datasets": "Gulfport：AVIRIS、2010-07-07、100×100、191有效谱带、3.4m，飞机异常。Pavia Centra：ROSIS、150×150、115原带去噪后102带、1.3m，水/桥背景和车辆异常。Gainesville：AVIRIS、2010-09-04、100×100、191带、3.5m，城市异常场景。Cri：Nuance Cri、400×400、46带650–1100nm、草地中10处岩石异常/2261像素；原文把谱分辨率写成10 m，单位疑点保留，不猜改成10nm。",
+        "experimentSetting": "无监督像元异常评分，不需目标参考光谱/训练标签；真值用于评估及选择最优参数。比较GRX/LRX/CRD/RPCA-RX/GTVLRR/2S-GLRT，评价箱线分离、ROC、AUC及秒级耗时。外窗5–25、内窗3–15寻优；SSFAD前三场景最优(5,3)，Cri(17,15)；显著性位置常数c=1。所有方法按原文调至各场景最佳，没有独立验证划分；执行硬件、随机重复/误差条未给。",
+        "conclusions": "Table3按Gulfport/Pavia Centra/Gainesville/Cri，SSFAD AUC为99.307%/99.882%/98.970%/99.751%。后三场景优于表内六对照；Gulfport的GTVLRR99.691%高于SSFAD99.307%。Table2中Gulfport平均融合99.309%略高于自适应99.307%，其他三场景自适应较好，不称全面胜出。Table4 SSFAD耗时50.44/44.67/47.67/3197.97秒，GRX0.08/0.08/0.12/0.32秒明显更快；Cri也慢于除2S-GLRT以外所有对照，不能称实时或普遍提速。",
+        "limitations": "只完整读固定arXiv v1。两指定Crossref各五返回未匹配同题/同三作者，当前API无DOI/journal_ref；不证明没有正式版本。四单景真值调最优窗，泛化/独立参数选择未知。LMML η写∈[0,1]，Eq3未给裁剪且Fig2显示线段外投影；中值=均值的退化与投影背景协方差求逆/正则处理未交代。Eq12印为trace差异式，patch维度及操作不充分说明，不擅自替换为Frobenius距离。Cri谱分辨率10 m单位疑点保留；实际数据版本/传感规格缺口不猜。耗时无硬件/实现协议，不能用于跨论文速度推断。所有细节只按原稿整理，不检查代码。",
+        "methodFamilyId": "ssfad-local-median-mean-spatial-fusion",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/pdf/2202.11889v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v1十一页全文、原方法图及数据/指标表实际阅读",
+            "supports": [
+              "完整v1正文确认直接处理191/102/191/46带HSI的无监督像元异常检测；局部背景投影、空间结构相似与线性自适应决策融合是传统检测流程，不是深度学习、光谱重建或几何三维任务。",
+              "Gulfport：AVIRIS、2010-07-07、100×100、191有效谱带、3.4m，飞机异常。Pavia Centra：ROSIS、150×150、115原带去噪后102带、1.3m，水/桥背景和车辆异常。Gainesville：AVIRIS、2010-09-04、100×100、191带、3.5m，城市异常场景。Cri：Nuance Cri、400×400、46带650–1100nm、草地中10处岩石异常/2261像素；原文把谱分辨率写成10 m，单位疑点保留，不猜改成10nm。",
+              "无监督像元异常评分，不需目标参考光谱/训练标签；真值用于评估及选择最优参数。比较GRX/LRX/CRD/RPCA-RX/GTVLRR/2S-GLRT，评价箱线分离、ROC、AUC及秒级耗时。外窗5–25、内窗3–15寻优；SSFAD前三场景最优(5,3)，Cri(17,15)；显著性位置常数c=1。所有方法按原文调至各场景最佳，没有独立验证划分；执行硬件、随机重复/误差条未给。",
+              "Table3按Gulfport/Pavia Centra/Gainesville/Cri，SSFAD AUC为99.307%/99.882%/98.970%/99.751%。后三场景优于表内六对照；Gulfport的GTVLRR99.691%高于SSFAD99.307%。Table2中Gulfport平均融合99.309%略高于自适应99.307%，其他三场景自适应较好，不称全面胜出。Table4 SSFAD耗时50.44/44.67/47.67/3197.97秒，GRX0.08/0.08/0.12/0.32秒明显更快；Cri也慢于除2S-GLRT以外所有对照，不能称实时或普遍提速。",
+              "只完整读固定arXiv v1。两指定Crossref各五返回未匹配同题/同三作者，当前API无DOI/journal_ref；不证明没有正式版本。四单景真值调最优窗，泛化/独立参数选择未知。LMML η写∈[0,1]，Eq3未给裁剪且Fig2显示线段外投影；中值=均值的退化与投影背景协方差求逆/正则处理未交代。Eq12印为trace差异式，patch维度及操作不充分说明，不擅自替换为Frobenius距离。Cri谱分辨率10 m单位疑点保留；实际数据版本/传感规格缺口不猜。耗时无硬件/实现协议，不能用于跨论文速度推断。所有细节只按原稿整理，不检查代码。"
+            ]
+          },
+          {
+            "url": "https://export.arxiv.org/api/query?id_list=2202.11889",
+            "checkedAt": "2026-10-12",
+            "level": "官方arXiv精确ID当前完整元数据/原摘要阅读",
+            "supports": [
+              "1/1返回v1，首次/更新均2022-02-24T03:54:48Z，完整三作者与PDF首页同序；Hou/Hu为北京理工、Cheng为空间公司，无Jun Zhou。",
+              "PDF排版日期February25而固定版页边/官方提交为February24，分别记录；无DOI/journal_ref不证明没有正式发表。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ssfad-arxiv-2022-v1",
+            "type": "固定arXiv v1预印本",
+            "url": "https://arxiv.org/abs/2202.11889v1",
+            "arxivId": "2202.11889",
+            "arxivVersion": 1,
+            "firstSubmittedAt": "2022-02-24T03:54:48Z",
+            "updatedAt": "2022-02-24T03:54:48Z",
+            "year": 2022,
+            "authors": [
+              "Zengfu Hou",
+              "Siyuan Cheng",
+              "Ting Hu"
+            ],
+            "readingProgress": "full_text_read",
+            "pdfUrl": "https://arxiv.org/pdf/2202.11889v1",
+            "localFile": "research/hyperspectral/sources/jun-zhou-coauthor-public-version-pagination-2026-10-12-2202.11889v1-pdf.pdf",
+            "relation": "本轮实际全文阅读版本；两指定Crossref各五返回无同题同三作者正式匹配，不证明不存在其他正式版本。"
+          }
+        ],
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整v1正文确认直接处理191/102/191/46带HSI的无监督像元异常检测；局部背景投影、空间结构相似与线性自适应决策融合是传统检测流程，不是深度学习、光谱重建或几何三维任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "73ba8b692e18175f2cce9aad6b1fd678d5f5ff1d4bf63a0a4ca70cc96983fd35",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2202.11889v1"
+          ]
+        }
+      },
+      "citation": "@misc{ssfad_arxiv_2022,\n  title = {A spectral-spatial fusion anomaly detection method for hyperspectral imagery},\n  author = {Zengfu Hou and Siyuan Cheng and Ting Hu},\n  year = {2022},\n  eprint = {2202.11889},\n  archivePrefix = {arXiv},\n  primaryClass = {eess.IV},\n  url = {https://arxiv.org/abs/2202.11889v1}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2202.11889v1",
+          "figureLabel": "Figure 1",
+          "caption": "SSFAD双支路流程：局部中值—均值线投影、特征增强及显著性加权得到谱域异常图，局部窗口相似得到空间异常图，再自适应融合。",
+          "verificationNote": "从固定arXiv2202.11889v1第3页裁原图与完整图注，人工核对图号、全部面板及边界，非重绘。全文对应此v1，未确认正式期刊版本。",
+          "path": "figures/ssfad-arxiv-2022/framework-1.png",
+          "width": 1164,
+          "height": 537,
+          "page": 3,
+          "verifiedAt": "2026-10-12",
+          "sha256": "d042f3bfcf6043227d4a368535cf26fa0d9a0ae19e8f5c12d86d9f9ead3dee39",
+          "attribution": "Zengfu Hou, Siyuan Cheng, Ting Hu · arXiv2202.11889v1 (2022)",
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2202.11889v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              112,
+              65,
+              500,
+              244
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2202.11889v1",
+          "figureLabel": "Figure 2",
+          "caption": "LMML投影几何示意：测试像元正交投影到局部背景中值—均值方向；原图保留超出中值—均值线段的红/蓝投影点。",
+          "verificationNote": "从固定arXiv2202.11889v1第3页裁原图与完整图注，人工核对图号、全部面板及边界，非重绘。全文对应此v1，未确认正式期刊版本。",
+          "path": "figures/ssfad-arxiv-2022/framework-2.png",
+          "width": 885,
+          "height": 360,
+          "page": 3,
+          "verifiedAt": "2026-10-12",
+          "sha256": "997e46119779e267ea293779727cdac3ace46dcae1d4bbc70fbf656828d3a195",
+          "attribution": "Zengfu Hou, Siyuan Cheng, Ting Hu · arXiv2202.11889v1 (2022)",
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2202.11889v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              160,
+              252,
+              455,
+              372
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2202.11889v1",
+          "figureLabel": "Figure 3",
+          "caption": "局部空间特征提取：邻域背景窗口按顺时针路径滑动，与中心窗口比较，寻找最相似的局部背景。",
+          "verificationNote": "从固定arXiv2202.11889v1第5页裁原图与完整图注，人工核对图号、全部面板及边界，非重绘。全文对应此v1，未确认正式期刊版本。",
+          "path": "figures/ssfad-arxiv-2022/framework-3.png",
+          "width": 810,
+          "height": 351,
+          "page": 5,
+          "verifiedAt": "2026-10-12",
+          "sha256": "bf24070b1d7f351e9ed3c7caea50c56cdbe84359b37c26b94aa8e93aedd54004",
+          "attribution": "Zengfu Hou, Siyuan Cheng, Ting Hu · arXiv2202.11889v1 (2022)",
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2202.11889v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              170,
+              65,
+              440,
+              182
+            ],
+            "renderScale": 3
+          }
+        }
+      ]
     }
   ],
   "datasets": [
@@ -54198,7 +54380,8 @@
         "hsi-anomaly-ace-framework-2019",
         "deep-pnp-hsi-anomaly-2021",
         "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025",
-        "zhou-scholar-arxiv-2609-37340"
+        "zhou-scholar-arxiv-2609-37340",
+        "ssfad-arxiv-2022"
       ],
       "history": [
         {
