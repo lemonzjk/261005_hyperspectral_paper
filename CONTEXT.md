@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID2、DBLP9、Scholar6、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、9未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
-- 最新：OpenAlex839源项/420差集，309摘要索引，六题名/三摘要词定位非逐篇排除；混并档案834/833差1待。Tiangong JAG03正式2018、02为2017，关系/身份待。Yokoya206行解析，两J.Zhou非Jun；CoMiX v1十六页/三图入库，四/五作者及注册2025/网页2026分源。HyperSIGMA40页/Primer24页下载仅首页读，全文优先。IF身份/OA正文/SSRN关系、HVOT合格版、Phase两版五作者与官方单作者冲突继续待，详见jun-zhou.md。简称989为134摘要＋1旧决定/854元数据；作者/材料先、历年矩阵后。
+- 最新：OpenAlex839源项/420差集，关键词定位非逐篇排除；混并834/833差1待。Xiong主要CV39精选/24Jun，21库/1旧候选/2新待核；HOT-Review/SEE-Net变体已归旧条目。光谱编辑DOI12242的Jun Griffith已核，HSI范围/合格来源待；M2输入/身份待。五CV共用11454602仅NTF稿正确；限定Xiong arXiv84/84非全集，无主题查询429待。Huanfa出版页模板，IF身份/OA正文/SSRN关系、HVOT合格版和Phase作者冲突仍待。HyperSIGMA40页/Primer24页已下载仅首页读，全文优先；其他见jun-zhou.md。作者/材料先、历年矩阵后。
