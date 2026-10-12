@@ -90,6 +90,8 @@ NMF-SAE、2019 ISTA、非局部分类、波段注意力与2022模型启发解混
 
 七篇选带/多域分类/融合/去噪主要完整机构原摘要本轮实际读，精确DOI及Jun7205绑定确认。MGRSR删独立降维任务补图方法；CasFormer补光谱重建、撤销未证实的光学联合设计标签；CMFAEN补Transformer；double Q选带删预训练、MTA-Net删语义分割。三个作者摘要官方代码仅记录链接，两篇旧解混记录移除代码/公开实现核查待办。HKU403及HAL四指定查询零只记访问边界；无新正文/原图，Jun仍102全文/79摘要。当前369确认/21暂定、审计359；分类确认不关闭免费正文/原图或版本待办，目录/历年覆盖仍未闭环。[证据](sources/jun-zhou-fusion-band-denoising-primary-2026-10-12.json)。
 
+Attend in Bands关联的Jing Wang 2020博士论文第4章PDF94–130/印刷75–111共37页已完整读（此前仅94/130两章页，本轮补35个新章页），另读24–26与168出版清单。BWN逐样本全带权重、W-BAN常量输入两阶段top-K、A-BAN常量输入＋K-winners零屏蔽分开；补Botswana/KSC/完整Indian Pines、随机像素划分/训练增强及表4.3–4.5数值，保留PDF128空间测试信息混入的讨论。新增章节原Figure4.1/4.3/4.4，注明学位论文版本，不当期刊图版。DICTA2018两作者、IGARSS2019四作者与JSTARS2019三作者分别保留，只作出版关联，扩展关系未定。0新论文/正式全文，Jun仍102全文/79摘要；作者目录未闭环，代码只链接。[证据](sources/jun-zhou-attend-thesis-chapter-full-reading-2026-10-12.json)。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |

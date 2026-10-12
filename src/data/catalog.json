@@ -31884,9 +31884,9 @@
       "input": "高光谱影像及分类样本。",
       "output": "地物类别预测。",
       "mechanism": "在CNN中加入波段权重模块，为样本生成有效波段权重后完成分类。",
-      "readingNote": "DBLP、会议摘要与Crossref核验；DICTA 2018页1–8，未标全文。",
+      "readingNote": "DBLP、会议摘要与Crossref核验；DICTA 2018页1–8，未标全文。 作者2020博士论文PDF168列本篇与同题JSTARS研究；只建立关联，会议/期刊扩展关系未定，不转移第4章结果。",
       "paper": "https://dblp.org/rec/conf/dicta/WangZ18.html",
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
@@ -31902,7 +31902,7 @@
         "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
         "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
         "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "limitations": "正式会议全文与数据协议仍待核验；关联博士论文出版清单不能证明章节与本会议稿相同。",
         "dataLinks": [],
         "evidence": [
           {
@@ -31929,6 +31929,14 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=空。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
+            "checkedAt": "2026-10-12",
+            "level": "作者博士论文出版清单（仅关联书目）",
+            "supports": [
+              "PDF168列出本篇题名、作者、年份和会议页码；与同清单JSTARS论文只作研究关联，不转移第4章三数据集/指标。"
+            ]
           }
         ],
         "versions": [
@@ -31939,11 +31947,19 @@
             "doi": "10.1109/DICTA.2018.8615876",
             "year": 2018,
             "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+          },
+          {
+            "id": "band-weighting-network-dicta-2018-related-jstars-2019",
+            "type": "关联期刊研究（版本关系未定）",
+            "url": "https://doi.org/10.1109/JSTARS.2019.2955097",
+            "doi": "10.1109/JSTARS.2019.2955097",
+            "year": 2019,
+            "relation": "同一作者博士论文出版清单列出的JSTARS研究；会议正文未得，不认定扩展版或合并条目，也不转移关联章节实验。"
           }
         ],
-        "methodFamilyId": "band-weighting-network",
+        "methodFamilyId": "attend-in-bands",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
           "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
           "evidenceFields": [
@@ -31954,11 +31970,12 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "6058aa167c9528e28679324856030262f2aaf25a8b5a5ddb7821f9cfa783f70b",
+          "evidenceDigest": "8ef75a0c4f5b7ecc86ea7fc1286576468f3276e9909b357d3ed5a83c7a1fd02f",
           "sourceUrls": [
             "https://dblp.org/rec/conf/dicta/WangZ18.html",
             "https://dblp.org/rec/conf/dicta/WangZ18.html",
-            "https://api.crossref.org/works/10.1109/DICTA.2018.8615876"
+            "https://api.crossref.org/works/10.1109/DICTA.2018.8615876",
+            "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download"
           ]
         }
       },
@@ -33481,19 +33498,20 @@
       "doi": "10.1109/JSTARS.2019.2955097",
       "representation": "波段注意力网络联合地物分类与波段加权或选择；加权建模带间关系，选带模式舍弃无用波段。",
       "tags": [],
-      "summary": "Attend in Bands 的原始摘要支持波段注意力加权与两类选带网络，并与分类端到端学习。现已把误指博士论文的主链接改为正式JSTARS DOI；期刊16页全文未取得。",
-      "input": "高光谱遥感影像及分类监督；正式摘要未给具体样本、空间窗口或划分。",
-      "output": "类别预测、波段加权向量或所选显著波段；不同工作模式分开。",
-      "mechanism": "注意力网络学习带间关系；加权模式输出波段权重，选带模式使用两类网络选择显著波段并丢弃无用波段。具体激活/常量输入细节不能仅由正式摘要补全。",
-      "readingNote": "完整IEEE与Griffith摘要逐字符一致，三作者/ORCID与JSTARS12(12):4712–4727核验。旧PDF是Jing Wang 2020博士论文192页，关联第4章与第168页论文清单仅局部核查，不当2019期刊全文。",
+      "summary": "正式摘要确认统一波段注意力加权与两类选带网络。2020作者博士论文同题第4章37页已完整阅读，补方法与实验；这些细节明确归于关联章节，2019期刊16页正文仍未取得。",
+      "input": "高光谱遥感影像与类别监督。关联2020章节以单像素N维光谱为主输入：加权支路也输入该像素，选带支路改用常量向量；另有光谱—空间CNN扩展实验。",
+      "output": "类别预测及波段权重/子集。关联章节：BWN逐样本赋权并保留全带；W-BAN与A-BAN学习全局固定K带子集，A-BAN以零屏蔽未选波段。",
+      "mechanism": "关联2020章节§4.3：BWN全连接注意力＋Softmax产生逐样本波段权重，与光谱逐元素相乘后送1D CNN。W-BAN用常量输入学习全局权重，先训练加权分类、再取top-K并另行分类；A-BAN将Sigmoid与K-winners pass接入注意力输出，保留top-K值、其余置零，与分类联合训练。正式期刊具体实现与章节是否一致仍待。",
+      "readingNote": "2019 JSTARS12(12):4712–4727三作者、DOI与完整主要摘要已核。旧PDF是Jing Wang 2020博士论文192页：本轮完整读第4章PDF94–130/印刷75–111（37页），另读PDF24–26及168出版清单；不是整本论文或期刊全文。原Figure4.1/4.3/4.4已整理，图号与结果均标章节版本。",
       "paper": "https://doi.org/10.1109/JSTARS.2019.2955097",
-      "verifiedAt": "2026-10-11",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-band-selection",
           "land-cover-classification",
-          "spectral-band-attention"
+          "spectral-band-attention",
+          "spectral-band-weighting"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
@@ -33501,10 +33519,10 @@
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何通过波段注意力建模带间关系、抑制冗余/噪声并联合加权或选择波段与分类？",
-        "datasets": "正式摘要无数据名称、样本/划分；未以学位论文实验自动回填正式期刊。",
-        "experimentSetting": "正式摘要支持加权和两类选带网络/分类端到端学习；参数、选带数、具体激活、训练/测试隔离及指标待16页期刊原文。",
-        "conclusions": "正式摘要报告有效性和优势，无可独立核对的数值；博士论文列同题三作者/卷期页码仅证实关联，不证明章节与VoR完全相同。",
-        "limitations": "旧全文链接的文献类型已纠正；论文16页全文、代码、实验协议/激活与跨版本差异仍待。学位论文192页及37页第4章均未整篇通读；不提升全文级。",
+        "datasets": "关联2020章节§4.4.1：Botswana（Hyperion，1476×256，242→145带，14类/6480标注像素）；KSC（AVIRIS，512×614，224→176带，13类/5211像素）；完整Indian Pines（2166×614，224→200带，原58类保留样本≥1000的39类，每类随机1000）。不是常用145×145/16类子集；尚未确认这些设置与2019期刊一致。",
+        "experimentSetting": "仅关联2020章节实验：随机像素20%训练/80%测试，训练部分另取30%验证，重复10次并报均值±标准差；Botswana/KSC仅在训练集做同类光谱线性混合＋Gaussian噪声，各类至少500样本。1D CNN三块、每块三个核3卷积＋池化，注意力隐藏单元32；Adam初始学习率0.001、batch64、500epochs并早停。选带K=8:8:128，用RBF-SVM、CNN及A-BAN自身输出分别评测；比较E-FDPC/NHMC/MI/GA/PSO。另固定K64改变训练比例5%–40%，及光谱—空间CNN扩展；这些不是独立复现。",
+        "conclusions": "关联章节Tables4.3–4.5报告BWN的OA：Botswana0.9519±0.0051、KSC0.9474±0.0092、完整Indian Pines0.7485±0.0093；去加权对照分别0.9405±0.0126、0.9302±0.0224、0.7373±0.0128。选带曲线总体优于列出的传统方法，但Botswana/SVM/K8两选带网络无优势；不声称所有条件最佳。Table4.6保留噪声带OA0.7493±0.0096，仅为该实验小幅差异，不推断普遍显著改善。所有数值归2020章节，未回填成未读期刊版结果。",
+        "limitations": "正式期刊16页与两会议稿正文仍未取得，章节/会议/期刊逐字对应或扩展关系未定；192页学位论文只读已列章节与附加页。章节PDF128明确指出同图像随机像素划分下，空间邻域可能混入测试信息，不能视为严格空间隔离泛化证据。K-winners仅按原文记录分段梯度，不将可微断言当作秩切换/同值处的处处可微证明；原图曲线未估读数值，不推测空间窗口、未列噪声系数或性能复现。",
         "dataLinks": [],
         "evidence": [
           {
@@ -33540,6 +33558,17 @@
             "supports": [
               "正式DOI/作者/目标Griffith身份与IEEE一致；完整一页bundles/bitstreams仅SWORD/XML，无期刊PDF。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
+            "checkedAt": "2026-10-12",
+            "level": "作者博士论文第4章完整阅读（关联章节，非期刊全文）",
+            "supports": [
+              "第4章PDF94–130/印刷75–111共37页完整实际阅读，另读24–26和168；192页全文未通读。",
+              "BWN逐样本全带加权，W-BAN常量输入两阶段固定子集，A-BAN常量输入与K-winners零屏蔽；原Figure4.1/4.3/4.4及Eq4.3/4.4视觉核对。",
+              "Botswana/KSC/完整Indian Pines、随机像素划分、训练集增强、K范围与分类器/消融；Tables4.3–4.5数值视觉核对，PDF128空间信息泄漏讨论保留。",
+              "PDF168分别列2019 JSTARS三作者、IGARSS2019四作者、DICTA2018两作者；关联出版物保留，不据此认定会议扩展或相同全文。"
+            ]
           }
         ],
         "versions": [
@@ -33549,14 +33578,41 @@
             "url": "https://doi.org/10.1109/JSTARS.2019.2955097",
             "doi": "10.1109/JSTARS.2019.2955097",
             "year": 2019,
-            "relation": "正式书目与原始摘要已核验；全文未取得，不以相关论文、代码或学位论文章节替代。"
+            "relation": "正式2019期刊书目与主要摘要已核；16页正文未取得，关联2020学位论文章节不能替代该版本全文。",
+            "readingProgress": "abstract_read"
+          },
+          {
+            "id": "attend-in-bands-jstars-2019-related-thesis-chapter",
+            "type": "关联作者章节（非期刊版）",
+            "url": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download#page=94",
+            "doi": "10.25904/1912/3959",
+            "year": 2020,
+            "readingProgress": "full_text_read",
+            "metadataStatus": "related_thesis_chapter_not_journal_copy",
+            "relation": "Jing Wang博士论文《Hyperspectral Image Classification Based on Deep Learning and Module Inspired by Human Attention Mechanism》第4章，PDF94–130/印刷75–111共37页已读。出版清单列同题2019三作者期刊论文；文本/实验是否与正式版相同未定，不另收学位论文。"
+          },
+          {
+            "id": "attend-in-bands-jstars-2019-related-band-weighting-network-dicta-2018",
+            "type": "关联会议研究（版本关系未定）",
+            "url": "https://doi.org/10.1109/DICTA.2018.8615876",
+            "doi": "10.1109/DICTA.2018.8615876",
+            "year": 2018,
+            "relation": "2020作者博士论文出版清单列出该会议论文；仅关联同一作者的波段加权/选择研究，未证明与2019 JSTARS的扩展或文本等同关系；保留独立作者/书目与摘要级状态。"
+          },
+          {
+            "id": "attend-in-bands-jstars-2019-related-zhou-scholar-attention-networks-for-band-weighting-and--2019",
+            "type": "关联会议研究（版本关系未定）",
+            "url": "https://doi.org/10.1109/igarss.2019.8898004",
+            "doi": "10.1109/igarss.2019.8898004",
+            "year": 2019,
+            "relation": "2020作者博士论文出版清单列出该会议论文；仅关联同一作者的波段加权/选择研究，未证明与2019 JSTARS的扩展或文本等同关系；保留独立作者/书目与摘要级状态。"
           }
         ],
         "methodFamilyId": "attend-in-bands",
         "classificationReview": {
-          "reviewedAt": "2026-10-11",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "按完整原始摘要及实际来源重审；BABS严格前三带、SiamBAG全部波段分组及注意力/Siamese、Attend加权/选带与期刊/学位论文来源分开。代码阅读不等于期刊全文阅读。",
+          "rationale": "正式主要摘要与关联博士论文章节分别记录；原文明确全带加权及两个固定子集选择网络，补既有波段加权任务。不把章节当期刊全文，不归入几何三维或Transformer。",
           "evidenceFields": [
             "title",
             "summary",
@@ -33565,7 +33621,7 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "4da5e800fb89e57be7a1d8fe0ebac2ade7c5848df4a2ac1df644225da4f22d87",
+          "evidenceDigest": "f3a2d7999ddd683441568bce3b4d5e51d8875c13bb747ee6f024e74aa05571cf",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
             "https://xplorestaging.ieee.org/document/8972909/",
@@ -33574,12 +33630,50 @@
         }
       },
       "citation": "@article{attend_in_bands_jstars_2019,\n  title = {Attend in Bands: Hyperspectral Band Weighting and Selection for Image Classification},\n  author = {Jing Wang and Jun Zhou and Weiqing Huang},\n  year = {2019},\n  doi = {10.1109/JSTARS.2019.2955097}\n}\n",
-      "frameworkFigureSearch": {
-        "status": "needs_access",
-        "note": "旧PDF是Jing Wang2020博士论文192页，关联第4章/出版清单只局部核查，非2019 JSTARS16页全文。原始摘要已核，期刊bundle/bitstream只有SWORD/XML；正式期刊原图待，不能把学位论文图号当期刊图号。",
-        "sourceUrl": "https://doi.org/10.1109/JSTARS.2019.2955097",
-        "checkedAt": "2026-10-11"
-      }
+      "frameworkFigures": [
+        {
+          "path": "figures/attend-in-bands-jstars-2019/thesis-2020-figure-4-1.png",
+          "figureLabel": "2020博士论文第4章 Fig. 4.1",
+          "caption": "关联作者博士论文第4章原图（非2019期刊图版）。统一波段注意力框架：注意力支路与像素光谱逐元素相乘后分类。",
+          "sourceUrl": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download#page=100",
+          "page": 100,
+          "width": 1272,
+          "height": 453,
+          "verifiedAt": "2026-10-12",
+          "verificationStatus": "verified",
+          "sha256": "12ea8b28c80a103f4dcbc637f7ca54f2359cb4f01d1893d773c0036f6bd8b681",
+          "attribution": "Jing Wang · Griffith博士论文2020 · 第4章；相关JSTARS研究作者Jing Wang, Jun Zhou, Weiqing Huang",
+          "verificationNote": "从2020博士论文PDF第100页/印刷81页裁取含原图题的原图，3倍渲染；人工核对图中结构。图号/页码归博士论文章节，未声称与2019 JSTARS图版相同。"
+        },
+        {
+          "path": "figures/attend-in-bands-jstars-2019/thesis-2020-figure-4-3.png",
+          "figureLabel": "2020博士论文第4章 Fig. 4.3",
+          "caption": "关联作者博士论文第4章原图（非2019期刊图版）。常量输入的两阶段选带：先学习全局权重，再取top-K并分类。",
+          "sourceUrl": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download#page=104",
+          "page": 104,
+          "width": 963,
+          "height": 675,
+          "verifiedAt": "2026-10-12",
+          "verificationStatus": "verified",
+          "sha256": "7b7eb4cb37dae4504ed6387930427e0ddebc0fe1e9f614c01aa7f2112e131319",
+          "attribution": "Jing Wang · Griffith博士论文2020 · 第4章；相关JSTARS研究作者Jing Wang, Jun Zhou, Weiqing Huang",
+          "verificationNote": "从2020博士论文PDF第104页/印刷85页裁取含原图题的原图，3倍渲染；人工核对图中结构。图号/页码归博士论文章节，未声称与2019 JSTARS图版相同。"
+        },
+        {
+          "path": "figures/attend-in-bands-jstars-2019/thesis-2020-figure-4-4.png",
+          "figureLabel": "2020博士论文第4章 Fig. 4.4",
+          "caption": "关联作者博士论文第4章原图（非2019期刊图版）。K-winners pass：Sigmoid后保留top-K值，其他位置置零。",
+          "sourceUrl": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download#page=106",
+          "page": 106,
+          "width": 762,
+          "height": 573,
+          "verifiedAt": "2026-10-12",
+          "verificationStatus": "verified",
+          "sha256": "6055f54b2a2945f3fabad2a475761416c7d8877e7890fbb820ee8dc7451ed998",
+          "attribution": "Jing Wang · Griffith博士论文2020 · 第4章；相关JSTARS研究作者Jing Wang, Jun Zhou, Weiqing Huang",
+          "verificationNote": "从2020博士论文PDF第106页/印刷87页裁取含原图题的原图，3倍渲染；人工核对图中结构。图号/页码归博士论文章节，未声称与2019 JSTARS图版相同。"
+        }
+      ]
     },
     {
       "id": "hsi-l0-gradient-lowrank-restoration-2019",
@@ -45405,7 +45499,7 @@
       "input": "高光谱遥感影像及其多波段信息。",
       "output": "加权/筛选后的波段与分类结果。",
       "mechanism": "以注意力机制引导网络聚焦重要波段，联合建模波段权重和选择。",
-      "readingNote": "完整Griffith主要原摘要本轮实际读，精确DOI/Jun作者绑定已核。注意力明确用于波段加权和选择，补光谱波段注意力方法；两个HSI数据集未命名，正文与选带/分类协议未得。",
+      "readingNote": "完整Griffith主要原摘要本轮实际读，精确DOI/Jun作者绑定已核。注意力明确用于波段加权和选择，补光谱波段注意力方法；两个HSI数据集未命名，正文与选带/分类协议未得。 作者2020博士论文PDF168列本篇与同题JSTARS研究；只建立关联，会议/期刊扩展关系未定，不转移第4章结果。",
       "paper": "https://doi.org/10.1109/igarss.2019.8898004",
       "verifiedAt": "2026-10-12",
       "verificationLevel": "primary_abstract_verified",
@@ -45462,6 +45556,14 @@
               "直接HSI分类与波段加权/选择，明确注意力机制，支持既有波段注意力方法。",
               "两个HSI数据集未命名，无具体数值/协议，仍摘要级。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download",
+            "checkedAt": "2026-10-12",
+            "level": "作者博士论文出版清单（仅关联书目）",
+            "supports": [
+              "PDF168列出本篇题名、作者、年份和会议页码；与同清单JSTARS论文只作研究关联，不转移第4章三数据集/指标。"
+            ]
           }
         ],
         "versions": [
@@ -45472,9 +45574,17 @@
             "doi": "10.1109/igarss.2019.8898004",
             "year": 2019,
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+          },
+          {
+            "id": "zhou-scholar-attention-networks-for-band-weighting-and--2019-related-jstars-2019",
+            "type": "关联期刊研究（版本关系未定）",
+            "url": "https://doi.org/10.1109/JSTARS.2019.2955097",
+            "doi": "10.1109/JSTARS.2019.2955097",
+            "year": 2019,
+            "relation": "同一作者博士论文出版清单列出的JSTARS研究；会议正文未得，不认定扩展版或合并条目，也不转移关联章节实验。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-attention-networks-for-band-weighting-and--2019",
+        "methodFamilyId": "attend-in-bands",
         "classificationReview": {
           "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
@@ -45487,10 +45597,11 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "c8e98ae8d123968ccba651ef6bd367a8dcc4f12e707b14bf758c478b78e799d9",
+          "evidenceDigest": "467241a8aea489106644e30007ddf5ef90360cb2dbf86d2dc8ea5b0dec302dc4",
           "sourceUrls": [
             "https://doi.org/10.1109/igarss.2019.8898004",
-            "https://experts.griffith.edu.au/7205-jun-zhou"
+            "https://experts.griffith.edu.au/7205-jun-zhou",
+            "https://research-repository.griffith.edu.au/bitstreams/7ce9629c-5662-46ea-928e-e0c2387276d6/download"
           ]
         }
       },
@@ -54614,6 +54725,7 @@
         "svm-band-weighting-lgrs-2016",
         "weighted-band-selection-igarss-2016",
         "differential-band-selection-ijwmip-2017",
+        "attend-in-bands-jstars-2019",
         "zhou-64-hsi-2023"
       ],
       "history": [
@@ -54631,6 +54743,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "跟踪主要完整摘要明确两CF；SEE以重要性分组/加权，移除未经证实的子集选择；SiamF派生视图融合无稠密对应，移除旧任务并补分组。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "Attend正式主要摘要与关联2020完整章节均明确全带权重输出；全带加权与固定子集选择分开，补既有任务，期刊仍摘要级。"
         }
       ]
     },
