@@ -365,7 +365,12 @@
     "zhou-scholar-multi-task-attentional-u-net-for-hyperspec-2023",
     "zhou-strl-hyperspectral-tracking-2025",
     "zhou-sugarcane-assct-2023",
-    "zhou-cherry-hsi-band-selection-2025"
+    "zhou-cherry-hsi-band-selection-2025",
+    "zhou-86-hsi-2022",
+    "zhou-scholar-texture-and-shape-features-for-grass-weed--2019",
+    "zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024",
+    "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
+    "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019"
   ],
   "sourceChecks": [
     {
@@ -931,7 +936,7 @@
         "从线性混合模型和ISTA推断构建两种物理模型启发网络：已知端元时展开ISTA进行监督丰度估计，盲解混时用无监督结构估计两变量；训练后推断为快速前向传播，不等于训练本身不迭代。",
         "完整IEEE摘要未列具体数据集、分割、训练样本数或噪声协议。",
         "完整摘要报告相较现有方法具有竞争力、推断无需迭代；未核逐项精度、延迟、样本量与训练成本。",
-        "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施及公开实现待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。"
+        "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施仍待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。"
       ]
     },
     {
@@ -2147,6 +2152,61 @@
         "PDF3 §2.2为150带HSI视觉选择730nm；§2.3移除IR滤镜并保留红通道，检测库单色NIR。",
         "PDF7/8 §2.4.3–2.4.5 BBHFC按阈值过滤而不使用NMS，三分数直方图后监督分类；仍比较0.10–0.40阈值，不把相对不敏感说成无阈值。",
         "PDF8/印刷7 §2.4.6原图视觉核对：Accuracy分子TP+TN，分母印TP+TP+FP+FN；只记录排版疑点，不据此推断实际报分或实现计算错误。"
+      ]
+    },
+    {
+      "paperId": "zhou-86-hsi-2022",
+      "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+      "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+      "supports": [
+        "完整机构原摘要实际阅读，精确DOI 10.1109/TGRS.2021.3102243；Jun作者resolvedUser7205明确。",
+        "部分迁移源 CNN 层；比较 dropout 设置、偶数层子集、首层是否迁移及噪声变化，评估跨传感器有限样本适应。",
+        "摘要报告两个传感器的模拟影像实验及两个真实传感器数据集；具体传感器、规模和划分待全文核验。",
+        "摘要报告波段数差异不大时可迁移；噪声不高时效果可接受，偶数层部分迁移在目标域有限样本下取得更好制图精度。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-texture-and-shape-features-for-grass-weed--2019",
+      "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+      "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+      "supports": [
+        "完整机构原摘要实际阅读，精确DOI 10.1109/igarss.2019.8900132；Jun作者resolvedUser7205明确。",
+        "提取 Gabor、方向梯度直方图（HoG）和局部二值模式（LBP）特征，比较形状、纹理及其组合在对象级分类中的效果。",
+        "摘要仅说明三类草本杂草；数据采集范围、样本数和划分待全文核验。",
+        "公开摘要报告 LBP 与 HoG 的形状—纹理组合总体准确率高于单独形状或纹理特征。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024",
+      "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+      "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+      "supports": [
+        "完整机构原摘要实际阅读，精确DOI 10.1109/DICTA63115.2024.00088；Jun作者resolvedUser7205明确。",
+        "构建真实和合成基准，比较传统 H2NMF/Hyperweak 与 DeepTrans/MiSiCNet，覆盖不同 E. coli 浓度。",
+        "主要机构原摘要明确真实与合成牛排污染数据、不同E. coli浓度及盐水弱信号；相机型号、谱段/波段数、样本数及划分未给。",
+        "机构原摘要报告无算法全面最佳；DeepTrans适于脂肪/肌肉常规解混，Hyperweak对盐水或E. coli弱信号较强；合成数据Hyperweak aSAD=0.0060、aRMSE=0.0167，真实数据仅多数弱信号场景领先，不移植合成数值到真实数据。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
+      "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+      "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+      "supports": [
+        "完整机构原摘要实际阅读，精确DOI 10.1109/IGARSS47720.2021.9554312；Jun作者resolvedUser7205明确。",
+        "光谱残差注意力模块与空间残差注意力模块分别增强特征学习和融合。",
+        "摘要明确 Houston 数据集；具体划分、类别和指标待全文核验。",
+        "公开摘要报告在 Houston 数据集上优于替代方法。"
+      ]
+    },
+    {
+      "paperId": "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019",
+      "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+      "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+      "supports": [
+        "完整机构原摘要实际阅读，精确DOI 10.1109/DICTA47822.2019.8946060；Jun作者resolvedUser7205明确。",
+        "VCA提取端元，由材料丰度估计生成超像素，以超像素平均丰度作输入特征，联合CNN与RNN学习用于地物分类的谱空表示；摘要没有说明VCA本身求解丰度或联合端到端优化。",
+        "摘要未列具体数据集；样本、划分和指标待全文核验。",
+        "公开摘要报告该联合模型较多种替代方法取得更好分类性能。"
       ]
     }
   ]

@@ -34630,7 +34630,7 @@
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何利用模型与优化先验构造可解释、较小训练样本需求的解混网络，并区分端元已知和盲解混？",
         "datasets": "完整IEEE摘要未列具体数据集、分割、训练样本数或噪声协议。",
-        "experimentSetting": "IEEE完整摘要及4作者/Griffith单位/Jun ORCID、Crossref和机构完整bundle分页已核；官方首次公开2020-04-02，正式October2020 TGRS58(10):7418–7434；机构只有SWORD无ORIGINAL，官方PDF202空体。共作者“PDF”链接实际为IEEE记录页，未找到与此精确论文对应的公开代码。",
+        "experimentSetting": "IEEE完整摘要及4作者/Griffith单位/Jun ORCID、Crossref和机构完整bundle分页已核；官方首次公开2020-04-02，正式October2020 TGRS58(10):7418–7434；机构只有SWORD无ORIGINAL，官方PDF202空体。共作者“PDF”链接实际为IEEE记录页。",
         "conclusions": "完整摘要报告相较现有方法具有竞争力、推断无需迭代；未核逐项精度、延迟、样本量与训练成本。",
         "limitations": "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施仍待正文核验；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。",
         "dataLinks": [],
@@ -34660,7 +34660,7 @@
               "从线性混合模型和ISTA推断构建两种物理模型启发网络：已知端元时展开ISTA进行监督丰度估计，盲解混时用无监督结构估计两变量；训练后推断为快速前向传播，不等于训练本身不迭代。",
               "完整IEEE摘要未列具体数据集、分割、训练样本数或噪声协议。",
               "完整摘要报告相较现有方法具有竞争力、推断无需迭代；未核逐项精度、延迟、样本量与训练成本。",
-              "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施及公开实现待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。"
+              "保持摘要级。全文17页、具体层数/损失/训练和测试划分、参数共享/约束实施仍待；不移植其他ISTA/SNMF论文细节，也不因类似题名自动视为2019论文的正式扩展。"
             ]
           },
           {
@@ -38181,25 +38181,26 @@
       "input": "来自不同传感器、空间分辨率、波段数或信噪比条件的影像。",
       "output": "目标传感器影像上的杂草分类/制图结果。",
       "mechanism": "部分迁移源 CNN 层；比较 dropout 设置、偶数层子集、首层是否迁移及噪声变化，评估跨传感器有限样本适应。",
-      "readingNote": "正式Crossref一作Adnan Farooq的ORCID为0000-0002-2202-8018；该ORCID公开姓名为Adnan Farooq Awan，解释Scholar A Awan。以特异题名、其余三位作者及在线2021/卷期2022互证归为已有论文，不新增第二条。全文未取得，实际传感器/波段仍待核。",
-      "paper": "https://doi.org/10.1109/TGRS.2021.3102243",
-      "verifiedAt": "2026-10-11",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "正式Crossref一作Adnan Farooq的ORCID为0000-0002-2202-8018；该ORCID公开姓名为Adnan Farooq Awan，解释Scholar A Awan。以特异题名、其余三位作者及在线2021/卷期2022互证归为已有论文，不新增第二条。全文未取得，实际传感器/波段仍待核。 本轮完整Griffith原摘要实际读：模拟与真实实验、dropout/偶数层/首层波段和噪声结论只归本期刊稿，不转移至2019会议稿；仍未得正文。",
+      "paper": "https://doi.org/10.1109/tgrs.2021.3102243",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
-          "land-cover-classification"
+          "land-cover-classification",
+          "domain-adaptation"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确多传感器、多波段影像任务；保留高光谱关系，未将跨传感器结论外推至所有场景。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "部分 CNN 层迁移能否适应传感器空间分辨率、波段数和信噪比变化？",
         "datasets": "摘要报告两个传感器的模拟影像实验及两个真实传感器数据集；具体传感器、规模和划分待全文核验。",
-        "experimentSetting": "模拟与真实多传感器杂草影像；比较不同迁移层选择和多种先进模型。",
+        "experimentSetting": "原摘要分别报告两个传感器的模拟实验和两个真实数据集；迁移卷积层子集并用目标域有限标注训练，比较分辨率、波段差异和信噪比。不是无目标域数据的零样本泛化。",
         "conclusions": "摘要报告波段数差异不大时可迁移；噪声不高时效果可接受，偶数层部分迁移在目标域有限样本下取得更好制图精度。",
-        "limitations": "摘要未给出传感器名称、波段/分辨率数值、完整训练配置、代码和逐场景指标；不把跨传感器结论扩展为所有高光谱场景。 本轮机构bundles全页仅SWORD/130字节提交XML；IEEE公开入口418挑战HTML、arXiv精确短语无本篇命中，未取得免费正文。有限查询不证明其他公开版本不存在。",
+        "limitations": "摘要未给出传感器名称、波段/分辨率数值、完整训练配置和逐场景指标；不把跨传感器结论扩展为所有高光谱场景。 本轮机构bundles全页仅SWORD/130字节提交XML；IEEE公开入口418挑战HTML、arXiv精确短语无本篇命中，未取得免费正文。有限查询不证明其他公开版本不存在。",
         "dataLinks": [],
         "evidence": [
           {
@@ -38235,6 +38236,17 @@
             "supports": [
               "页面书目索引54以DOI 10.1109/tgrs.2021.3102243对应既有记录；只补来源交叉证据，不提升阅读深度或独立认定缩写身份。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+            "supports": [
+              "完整机构原摘要实际阅读，精确DOI 10.1109/TGRS.2021.3102243；Jun作者resolvedUser7205明确。",
+              "部分迁移源 CNN 层；比较 dropout 设置、偶数层子集、首层是否迁移及噪声变化，评估跨传感器有限样本适应。",
+              "摘要报告两个传感器的模拟影像实验及两个真实传感器数据集；具体传感器、规模和划分待全文核验。",
+              "摘要报告波段数差异不大时可迁移；噪声不高时效果可接受，偶数层部分迁移在目标域有限样本下取得更好制图精度。"
+            ]
           }
         ],
         "versions": [
@@ -38247,7 +38259,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-86"
+        "methodFamilyId": "zhou-2022-title-86",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整主要原摘要支持当前任务、输入输出与方法；分类确认不等于正文已读，未报告的配置/数据留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "44296e8859a07589f23cb50196b690c82ebce9cf681630d71528604a8f9b430c",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@article{zhou_86_hsi_2022,\n  title = {Transferable Convolutional Neural Network for Weed Mapping With Multisensor Imagery},\n  author = {Adnan Farooq and Xiuping Jia and Jiankun Hu and Jun Zhou},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3102243}\n}\n"
     },
@@ -44592,16 +44621,16 @@
       "input": "高光谱影像中的三类草本杂草对象。",
       "output": "三类草本杂草分类结果及总体准确率。",
       "mechanism": "提取 Gabor、方向梯度直方图（HoG）和局部二值模式（LBP）特征，比较形状、纹理及其组合在对象级分类中的效果。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。 2026-10-12正式Crossref书目再次核对三作者及7208–7211页；UNSW原下载和API content两个入口均403，未取得PDF；指定arXiv题名零返回不证明无公开版。",
-      "paper": "https://unsworks.unsw.edu.au/bitstreams/1df826fe-3c8f-43c1-aeb1-b68fe51568e3/download",
+      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。 2026-10-12正式Crossref书目再次核对三作者及7208–7211页；UNSW原下载和API content两个入口均403，未取得PDF；指定arXiv题名零返回不证明无公开版。 本轮Griffith完整主要原摘要实际读，确认三类草本杂草、Gabor/HoG/LBP与LBP+HoG组合；不补摘要未给分类器、数值或划分。",
+      "paper": "https://doi.org/10.1109/igarss.2019.8900132",
       "verifiedAt": "2026-10-12",
-      "verificationLevel": "abstract_verified",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -44663,6 +44692,17 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+            "supports": [
+              "完整机构原摘要实际阅读，精确DOI 10.1109/igarss.2019.8900132；Jun作者resolvedUser7205明确。",
+              "提取 Gabor、方向梯度直方图（HoG）和局部二值模式（LBP）特征，比较形状、纹理及其组合在对象级分类中的效果。",
+              "摘要仅说明三类草本杂草；数据采集范围、样本数和划分待全文核验。",
+              "公开摘要报告 LBP 与 HoG 的形状—纹理组合总体准确率高于单独形状或纹理特征。"
+            ]
           }
         ],
         "versions": [
@@ -44675,7 +44715,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-texture-and-shape-features-for-grass-weed--2019"
+        "methodFamilyId": "zhou-scholar-texture-and-shape-features-for-grass-weed--2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整主要原摘要支持当前任务、输入输出与方法；分类确认不等于正文已读，未报告的配置/数据留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "127b7ceb91c68dcc8125abcc0f2cabe7f3737ff8a077596858d13d17b976757e",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-texture-and-shape-features-for-grass-weed--2019,\n  title = {Texture and Shape Features for Grass Weed Classification Using Hyperspectral Remote Sensing Images},\n  author = {Adnan Farooq and Xiuping Jia and Jun Zhou},\n  year = {2019},\n  doi = {10.1109/igarss.2019.8900132}\n}\n"
     },
@@ -44697,27 +44754,27 @@
       "tags": [],
       "summary": "提出面向弱信号检测的高光谱解混基准，包含真实牛排污染数据和合成数据，比较 H2NMF、Hyperweak、DeepTrans、MiSiCNet；摘要报告 DeepTrans 在脂肪/肌肉常规解混较强，Hyperweak 在盐水或大肠杆菌弱信号上更好。",
       "input": "牛排高光谱相机数据（E. coli、盐水等污染）及合成数据。",
-      "output": "端元/丰度解混结果与 aSAD、RMSE 等指标。",
+      "output": "真实/合成基准上的解混结果与aSAD、aRMSE等指标；具体度量定义待正文。",
       "mechanism": "构建真实和合成基准，比较传统 H2NMF/Hyperweak 与 DeepTrans/MiSiCNet，覆盖不同 E. coli 浓度。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与 Semantic Scholar公开摘要核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/06fc7cecf53517c82a2122e6b50eb9e58ce81bc6",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整Griffith主要原摘要实际读、精确DOI和Jun resolvedUser7205绑定已核；合成/真实结果分开。JCU指定PDF返回401，未取得正文或框架图，仍摘要级。",
+      "paper": "https://doi.org/10.1109/dicta63115.2024.00088",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "datasets-benchmarks",
           "spectral-unmixing"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何在真实食品污染场景评测高光谱弱信号解混？",
-        "datasets": "真实牛排污染数据与合成数据；摘要列出不同 E. coli 浓度。",
+        "datasets": "主要机构原摘要明确真实与合成牛排污染数据、不同E. coli浓度及盐水弱信号；相机型号、谱段/波段数、样本数及划分未给。",
         "experimentSetting": "H2NMF、Hyperweak、DeepTrans、MiSiCNet 多算法基准比较。",
-        "conclusions": "摘要报告无算法全面胜出；DeepTrans 偏强于脂肪/肌肉常规解混，Hyperweak 对弱信号更优。",
-        "limitations": "摘要未给出数据采集细节、划分、完整指标、代码和复现实验。",
+        "conclusions": "机构原摘要报告无算法全面最佳；DeepTrans适于脂肪/肌肉常规解混，Hyperweak对盐水或E. coli弱信号较强；合成数据Hyperweak aSAD=0.0060、aRMSE=0.0167，真实数据仅多数弱信号场景领先，不移植合成数值到真实数据。",
+        "limitations": "摘要未给完整采集规格、数据规模/划分、指标定义或统计协议。OpenAlex指向JCU的87456/1/87456.pdf，本轮实际请求HTTP401/381字节HTML，未取得PDF；当前仓储正文受限，不据此判断付费或所有公开版不存在。",
         "dataLinks": [],
         "evidence": [
           {
@@ -44737,6 +44794,17 @@
             "supports": [
               "正式题名、作者、会议、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+            "supports": [
+              "完整机构原摘要实际阅读，精确DOI 10.1109/DICTA63115.2024.00088；Jun作者resolvedUser7205明确。",
+              "构建真实和合成基准，比较传统 H2NMF/Hyperweak 与 DeepTrans/MiSiCNet，覆盖不同 E. coli 浓度。",
+              "主要机构原摘要明确真实与合成牛排污染数据、不同E. coli浓度及盐水弱信号；相机型号、谱段/波段数、样本数及划分未给。",
+              "机构原摘要报告无算法全面最佳；DeepTrans适于脂肪/肌肉常规解混，Hyperweak对盐水或E. coli弱信号较强；合成数据Hyperweak aSAD=0.0060、aRMSE=0.0167，真实数据仅多数弱信号场景领先，不移植合成数值到真实数据。"
+            ]
           }
         ],
         "versions": [
@@ -44749,7 +44817,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024"
+        "methodFamilyId": "zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整主要原摘要支持当前任务、输入输出与方法；分类确认不等于正文已读，未报告的配置/数据留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "3aee192d56a128a8ce56e66eedb8c4c94d246dbb2fa5449682566de0abdf0b06",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024,\n  title = {A New Hyperspectral Unmixing Benchmark for Weak Signal Meat Contamination Detection},\n  author = {Zekun Long and Ali Zia and Jordi Nelis and Vivien Rolland and Jun Zhou},\n  year = {2024},\n  doi = {10.1109/dicta63115.2024.00088}\n}\n"
     },
@@ -45930,16 +46015,16 @@
       "input": "同区域高光谱影像与 LiDAR 数据。",
       "output": "土地覆盖类别。",
       "mechanism": "光谱残差注意力模块与空间残差注意力模块分别增强特征学习和融合。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与 Semantic Scholar公开摘要核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/5abe231d5c3ffe6ce6bac61a110a0b6229ef31d0",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整Griffith主要原摘要实际读，精确DOI与Jun resolvedUser7205绑定已核。谱/空残差注意力用于HSI与LiDAR联合地物分类；仅名为Houston，摘要未列2013/2018版本、类别/划分或数值，仍摘要级。",
+      "paper": "https://doi.org/10.1109/igarss47720.2021.9554312",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hsi-lidar-classification",
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -45948,7 +46033,7 @@
         "datasets": "摘要明确 Houston 数据集；具体划分、类别和指标待全文核验。",
         "experimentSetting": "光谱/空间残差注意力网络，高光谱与 LiDAR 联合分类。",
         "conclusions": "公开摘要报告在 Houston 数据集上优于替代方法。",
-        "limitations": "摘要未给出网络配置、指标、代码和消融实验。",
+        "limitations": "主要原摘要未给网络配置、Houston版本、划分、数值或消融；不因注意力模块直接标Transformer，不猜点云输入或几何三维任务。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45977,6 +46062,17 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+            "supports": [
+              "完整机构原摘要实际阅读，精确DOI 10.1109/IGARSS47720.2021.9554312；Jun作者resolvedUser7205明确。",
+              "光谱残差注意力模块与空间残差注意力模块分别增强特征学习和融合。",
+              "摘要明确 Houston 数据集；具体划分、类别和指标待全文核验。",
+              "公开摘要报告在 Houston 数据集上优于替代方法。"
+            ]
           }
         ],
         "versions": [
@@ -45989,7 +46085,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021"
+        "methodFamilyId": "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整主要原摘要支持当前任务、输入输出与方法；分类确认不等于正文已读，未报告的配置/数据留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "4d346f782377199dd677ced8d65f1d3c2a82e8ed36580b4fcabdae19b5819597",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-spectral-and-spatial-residual-attention-ne-2021,\n  title = {Spectral and Spatial Residual Attention Network for Joint Hyperspectral and Lidar Data Classification},\n  author = {Jing Wang and Jun Zhou and Xinwen Liu and Farah Jahan},\n  year = {2021},\n  doi = {10.1109/igarss47720.2021.9554312}\n}\n"
     },
@@ -46661,20 +46774,20 @@
       "doi": "10.1109/dicta47822.2019.8946060",
       "representation": "高光谱分类：以 VCA 丰度引导超像素，把平均丰度送入联合 CNN-RNN 深度模型以增强光谱—空间特征。",
       "tags": [],
-      "summary": "将无监督 VCA 端元丰度用于生成超像素，再以超像素平均丰度作特征，构建联合 CNN-RNN 深度分类器，融合光谱—空间信息并优于多种替代方法。",
+      "summary": "以VCA提取端元后的材料丰度估计生成超像素，取超像素平均丰度作输入特征，联合CNN-RNN进行高光谱地物分类；丰度求解器未由摘要说明。",
       "input": "混合高光谱影像。",
-      "output": "高光谱像素/超像素分类结果。",
-      "mechanism": "VCA 无监督提取端元并估计丰度；按丰度生成超像素，取超像素平均丰度作特征；联合 CNN 与 RNN 学习光谱—空间表示。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/8d25a0ac15cbc76572dd058924c6e53beccdcae3",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "output": "高光谱影像地物分类结果；端元/丰度用于构造特征，不是另报独立解混任务的输出。",
+      "mechanism": "VCA提取端元，由材料丰度估计生成超像素，以超像素平均丰度作输入特征，联合CNN与RNN学习用于地物分类的谱空表示；摘要没有说明VCA本身求解丰度或联合端到端优化。",
+      "readingNote": "完整Griffith主要原摘要实际读，精确DOI与Jun resolvedUser7205绑定已核。VCA端元、丰度超像素、平均丰度和CNN-RNN构成分类流程；删除把辅助解混当最终研究任务的标签，不补监督协议或未命名数据集。",
+      "paper": "https://doi.org/10.1109/dicta47822.2019.8946060",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
-          "spectral-unmixing"
+          "unmixing-guided-cnn-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -46683,7 +46796,7 @@
         "datasets": "摘要未列具体数据集；样本、划分和指标待全文核验。",
         "experimentSetting": "VCA、丰度引导超像素、平均丰度特征与 CNN-RNN 联合模型。",
         "conclusions": "公开摘要报告该联合模型较多种替代方法取得更好分类性能。",
-        "limitations": "摘要未给出数据集、网络层数、指标数值、代码和消融实验。",
+        "limitations": "原摘要未给丰度求解器、超像素参数、具体数据集、训练划分、网络层数、指标或消融；不把VCA端元提取当作完整丰度求解算法，不将辅助解混误写成独立解混评测或表征预训练。",
         "dataLinks": [],
         "evidence": [
           {
@@ -46711,6 +46824,17 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+            "supports": [
+              "完整机构原摘要实际阅读，精确DOI 10.1109/DICTA47822.2019.8946060；Jun作者resolvedUser7205明确。",
+              "VCA提取端元，由材料丰度估计生成超像素，以超像素平均丰度作输入特征，联合CNN与RNN学习用于地物分类的谱空表示；摘要没有说明VCA本身求解丰度或联合端到端优化。",
+              "摘要未列具体数据集；样本、划分和指标待全文核验。",
+              "公开摘要报告该联合模型较多种替代方法取得更好分类性能。"
+            ]
           }
         ],
         "versions": [
@@ -46723,7 +46847,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019"
+        "methodFamilyId": "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整主要原摘要支持当前任务、输入输出与方法；分类确认不等于正文已读，未报告的配置/数据留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d0527f5f6004bbe82644a12507214cf6aa48815c997d3fbe5689a19403a18bd7",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-abundance-guided-superpixels-and-recurrent-2019,\n  title = {Abundance-Guided Superpixels and Recurrent Neural Network for Hyperspectral Image Classification},\n  author = {Fahim Irfan Alam and Jun Zhou and Alan Wee-Chung Liew},\n  year = {2019},\n  doi = {10.1109/dicta47822.2019.8946060}\n}\n"
     },
@@ -49182,39 +49323,39 @@
       "doi": "10.1109/WHISPERS.2019.8920832",
       "representation": "面向不同空间分辨率、波段数和信噪比的高光谱杂草分类，研究部分卷积网络迁移。",
       "tags": [],
-      "summary": "公开二级摘要说明部分可迁移 CNN 在两个传感器模拟数据上的跨分辨率、波段数和噪声实验；dropout 与偶数层子集影响迁移，波段数差异不大时可迁移。",
-      "input": "不同空间分辨率、波段数和信噪比的高光谱/多波段杂草影像。",
+      "summary": "面向跨传感器不同分辨率杂草分类，迁移源CNN权重并用少量目标样本微调；原摘要报告田间数据实验，识别准确率和计算代价优于直接训练。",
+      "input": "源传感器CNN训练参数与目标传感器不同分辨率杂草影像，目标域少量训练样本用于微调；具体传感器和波段未由正式原摘要说明。",
       "output": "目标传感器上的草本杂草分类结果。",
-      "mechanism": "部分迁移卷积神经网络；比较卷积层间 dropout、源网络偶数层子集、首层是否迁移及波段数和噪声变化。",
-      "readingNote": "DBLP精确作者记录、WHISPERS官方程序和ResearchGate公开二级摘要片段核验；未阅读全文，正式实验细节待原文。",
-      "paper": "https://www.researchgate.net/publication/337794147_Knowledge_Transfer_via_Convolution_Neural_Networks_for_Multi-Resolution_Lawn_Weed_Classification",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "mechanism": "源数据训练CNN，将权重迁移至不同分辨率数据，以预训练模型初始层参数构建小型网络并微调，研究训练样本数影响；不附加2022期刊稿的dropout、偶数层、首层波段及噪声实验。",
+      "readingNote": "本轮完整Griffith原摘要及精确DOI/resolvedUser7205核对。旧ResearchGate二级内容混入2022期刊稿的模拟传感器、dropout/偶数层/波段与噪声结论，已从本稿事实中撤销；本稿原摘要为跨分辨率迁移、小样本微调及田间实验。UNSW新定位b0071aa6附件返回403，全文与具体输入波段仍待。",
+      "paper": "https://doi.org/10.1109/WHISPERS.2019.8920832",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "agriculture-phenotyping",
-          "land-cover-classification"
+          "land-cover-classification",
+          "domain-adaptation"
         ],
         "classificationStatus": "provisional",
         "relation": "hyperspectral",
-        "relationNote": "WHISPERS高光谱专题程序与公开二级摘要均将本条置于高光谱/多波段杂草分类语境；保留为高光谱关系，待原文确认传感器与波段协议。",
+        "relationNote": "既有WHISPERS高光谱专题收录语境保留；本稿完整机构原摘要未列传感器或输入波段，不能用2022期刊稿内容补证，输入范围待正文独立确认，分类仍暂定。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "部分卷积网络迁移能否适应新数据集的空间分辨率、波段数和信噪比变化？",
-        "datasets": "公开二级摘要报告两个传感器的模拟影像实验；真实数据规模、波段和划分待全文核验。",
-        "experimentSetting": "跨空间分辨率、波段数与噪声条件的部分 CNN 迁移比较；未阅读全文。",
-        "conclusions": "公开二级摘要报告 dropout、偶数层子集和首层波段处理会影响迁移；波段数差异不大时可迁移。",
-        "limitations": "未取得正式全文；具体传感器、样本规模、分类指标、训练协议、代码和数据许可待核验。",
+        "datasets": "本稿主要原摘要仅说明田间数据；不同分辨率/传感器名称、影像通道、样本规模及划分未给。旧二级摘要的两个传感器模拟实验不归本稿。",
+        "experimentSetting": "源CNN权重迁移、初始层参数的小型网络、目标域少量样本微调及训练样本数比较；田间数据对照直接训练。未得本文具体分辨率、波段或噪声实验。",
+        "conclusions": "本稿原摘要报告识别准确率和计算代价优于直接训练；未给具体数字。dropout/偶数层与波段/噪声条件结论归2022期刊，不能作为本稿结果。",
+        "limitations": "正式正文未得，具体输入传感器/波段、数据量、划分和指标未核，保留暂定分类。UNSW新定位b0071aa6-ead0-473e-bf93-b69fa6b0d60b/download实际HTTP403/239字节HTML；不判断其他公开版不存在。与2022期刊的扩展关系仍未得到正式声明。",
         "dataLinks": [],
         "evidence": [
           {
             "url": "https://www.researchgate.net/publication/337794147_Knowledge_Transfer_via_Convolution_Neural_Networks_for_Multi-Resolution_Lawn_Weed_Classification",
             "checkedAt": "2026-10-10",
-            "level": "ResearchGate公开摘要片段（二级证据）",
+            "level": "旧ResearchGate二级摘要（跨版本实验细节已撤销，保留溯源）",
             "supports": [
-              "部分迁移CNN与跨空间分辨率、波段数、信噪比任务",
-              "dropout、偶数层子集和首层迁移比较",
-              "两个传感器模拟数据及迁移结论"
+              "旧二级片段曾混入dropout/偶数层、两模拟传感器及波段/噪声结论；本轮完整机构原摘要不支持归本2019稿，已撤销。",
+              "原URL仅保留历史溯源；当前本稿方法、田间实验及输入待核依据新Griffith主要摘要，不使用此片段补事实。"
             ]
           },
           {
@@ -49265,6 +49406,16 @@
             "supports": [
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
+            ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要及目标作者标识（本轮实际阅读）",
+            "supports": [
+              "完整机构原摘要实际阅读，精确DOI 10.1109/WHISPERS.2019.8920832；Jun作者resolvedUser7205明确。",
+              "本稿为跨分辨率CNN迁移、初始层参数的小型架构、目标少量样本微调及田间数据；未列dropout/偶数层或模拟传感器/波段/噪声结论。",
+              "旧二级内容与2022期刊原摘要重合，不能据此补本稿实验；具体输入波段仍未核，继续暂定。"
             ]
           }
         ],
@@ -50360,7 +50511,6 @@
         "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
         "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020",
         "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
-        "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019",
         "zhou-scholar-arxiv-2603-09037",
         "zhou-scholar-arxiv-2605-20569"
       ],
@@ -53303,10 +53453,12 @@
         "fvmgn-generalization",
         "cross-scene-dictionary-adaptation-tgrs-2017",
         "zhou-75-hsi-2022",
+        "zhou-86-hsi-2022",
         "zhou-69-hsi-2023",
         "zhou-29-hsi-2025",
         "zhou-5-hsi-2026",
-        "zhou-scholar-multi-domain-universal-representation-lear-2025"
+        "zhou-scholar-multi-domain-universal-representation-lear-2025",
+        "jun-zhou-dblp-whispers-weed-2019"
       ],
       "history": [
         {
@@ -55282,20 +55434,26 @@
     {
       "id": "unmixing-guided-cnn-classification",
       "name": "解混丰度引导卷积分类",
-      "definition": "先以高光谱解混估计端元丰度，将逐谱带组的丰度图作为监督CNN或分类器输入；区分辅助解混与最终类别输出，不将丰度替换输入当表征预训练或未经证实的联合端到端优化。",
+      "definition": "先以高光谱解混估计材料丰度，将丰度图或超像素平均丰度用于监督CNN或联合分类器输入；区分辅助解混与最终类别输出，不将丰度替换输入当表征预训练或未经证实的联合端到端优化。",
       "dimension": "method",
       "status": "confirmed",
       "color": "#9bb59b",
       "createdAt": "2026-10-12",
       "rationale": "依据实际免费机构稿的方法、原图及实验建立，只归类当前证据明确的条目。",
       "evidencePaperIds": [
-        "unmixing-deep-feature-dicta-2017"
+        "unmixing-deep-feature-dicta-2017",
+        "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019"
       ],
       "history": [
         {
           "date": "2026-10-12",
           "action": "created",
           "reason": "按已读原稿的解混输入、监督三元组或ICV结构形成，不外推预训练、会刊版本或其他论文。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "refined",
+          "reason": "机构原摘要明确2019方法以超像素平均丰度输入CNN-RNN；将定义从逐谱带丰度图扩展至同类丰度描述，保持分类/辅助解混区别。"
         }
       ]
     },
