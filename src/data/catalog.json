@@ -34594,9 +34594,9 @@
       "input": "HSI影像、少量逐像元监督标签及同类虚拟样本；初始CNN采用相邻L带谱空cube（Indian Pines/Pavia取L25，Griffith-USGS取L20），不以全部B带作为单一谱组。",
       "output": "初始逐像元地物分类图及深度CRF/反卷积细化后的语义分割图；谱空voxel不是真实三维场景几何，不输出新高光谱重建。",
       "mechanism": "初始3D CNN分别处理相邻L带谱组，卷积/池化/ReLU、全连接与softmax生成特征及分类结果。同类两光谱线性混合加Gaussian噪声，辅以旋转/翻转形成监督增强样本。特征图沿谱维的voxel为CRF节点，每节点仅接xy四邻居；卷积节点特征学习一元势，拼接邻节点特征后卷积学习成对势，深CRF阶段使用整个谱特征而非继续分组。piecewise训练把一元/成对项独立似然优化以省分区函数推理，预测用两Gaussian核均值场近似。反卷积、unpooling及ReLU整合进成对势网络以恢复边界，另比较无反卷积与放在一元势两方案。Fig1视觉流程画在CRF后，但§IV明确训练时在成对势内，不能写成完全独立后处理。",
-      "readingNote": "Griffith封面AM，17 PDF页（封面＋正文1–16）全读，15式、13图、9表、2算法和44引文已整理；Fig1/2原方法图及TablesI–V/VII–IX视觉核。正式TGRS57(3):1612–1628共17正式页，与当前16正文页排版不同。正文题名Segmentation，封面/DOI和既有Crossref题名Classification；保留正式题名和2019年，不把封面©2020当出版年份。Jun为Griffith通讯作者，既有Crossref ORCID0000-0001-5822-8233对应；本次Crossref429空响应未冒充成功。arXiv v1/v2及最终VoR正文仍未读。未访问代码仓库。",
+      "readingNote": "Griffith封面AM，17 PDF页（封面＋正文1–16）全读，15式、13图、9表、2算法和44引文已整理；Fig1/2原方法图及TablesI–V/VII–IX视觉核。正式TGRS57(3):1612–1628共17正式页，与当前16正文页排版不同。正文题名Segmentation，封面/DOI和既有Crossref题名Classification；保留正式题名和2019年，不把封面©2020当出版年份。Jun为Griffith通讯作者，既有Crossref ORCID0000-0001-5822-8233对应；本次Crossref429空响应未冒充成功。arXiv v1/v2及最终VoR正文仍未读。未访问代码仓库。 当前293/293共同作者ORCID过滤书目再次核到Jun登记ORCID0000-0001-5822-8233；99/99整名arXiv唯一Jun项亦对应既有1711.04483族。已用现有Griffith AM满足材料要求，不追读原稿v1/v2或正式VoR。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
-      "verifiedAt": "2026-10-12",
+      "verifiedAt": "2026-10-13",
       "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
@@ -34676,6 +34676,15 @@
             "supports": [
               "页面书目索引291以DOI 10.48550/arxiv.1711.04483对应既有记录；只补来源交叉证据，不提升阅读深度或独立认定缩写身份。"
             ]
+          },
+          {
+            "url": "https://api.crossref.org/works?filter=orcid%3A0000-0003-4817-2875&rows=1000&select=DOI%2Ctitle%2Cauthor%2Cpublished%2Ccontainer-title",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref共同作者ORCID过滤完整注册书目及个人标识",
+            "supports": [
+              "正式CRF DOI10.1109/tgrs.2018.2867679的Jun Zhou登记ORCID0000-0001-5822-8233，独立补强既有Griffith目标身份。",
+              "本过滤集合293/293仅一条Jun署名且已录，不把缺少共同作者ORCID的已知CasFormer过滤缺席当无论文。"
+            ]
           }
         ],
         "versions": [
@@ -34688,7 +34697,7 @@
             "arxivId": "1711.04483",
             "arxivVersion": "v1",
             "metadataStatus": "primary_arxiv_first_submission_metadata",
-            "relation": "arXiv预印本；正式期刊版同一方法族；本次API摘要对应v2，v1正文及摘要差异仍待核。",
+            "relation": "官方arXiv ID关联的v1书目；题名Segmentation与正式题名Classification分别保留。已用Griffith接受稿及原框架满足材料要求，本预印本和正式VoR正文未读，不追加其他版本或摘要差异阅读。",
             "firstSubmittedAt": "2017-11-13T09:18:25Z",
             "updatedAt": "2017-11-13T09:18:25Z"
           },
@@ -34711,7 +34720,7 @@
             "firstSubmittedAt": "2017-11-13T09:18:25Z",
             "updatedAt": "2017-12-27T06:26:01Z",
             "metadataStatus": "primary_arxiv_author_api_latest_version",
-            "relation": "指定作者API返回的v2预印本元数据；与既有记录按arXiv ID关联，不新增论文计数；该版本正文与正式版差异待核。 arXiv本版本题名：Conditional Random Field and Deep Feature Learning for Hyperspectral Image Segmentation。"
+            "relation": "官方arXiv ID关联的v2书目；题名Segmentation与正式题名Classification分别保留。已用Griffith接受稿及原框架满足材料要求，本预印本和正式VoR正文未读，不追加其他版本或摘要差异阅读。"
           },
           {
             "id": "crf-deep-feature-hsi-tgrs-2019-griffith-am",
@@ -34725,7 +34734,7 @@
         ],
         "methodFamilyId": "crf-deep-feature-hsi",
         "classificationReview": {
-          "reviewedAt": "2026-10-12",
+          "reviewedAt": "2026-10-13",
           "basis": "catalog_and_primary_source",
           "rationale": "AM明确初始地物分类和最终语义分割，卷积CRF势与反卷积均为监督学习；背景SAE/DBN介绍不能证明本方法有表征预训练，删除representation-learning错配。当前机构AM同DOI关联正式记录，arXiv版本仍仅元数据关联。",
           "evidenceFields": [
@@ -34736,9 +34745,10 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "fe865c2a954a1daebdb44351f2ed4d0d2a82e96c427454482f8a46b21ebcb65f",
+          "evidenceDigest": "d636fb4ba60e0deab82148860b953144248285daa1c2456a98cd9e72ae21bd48",
           "sourceUrls": [
-            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/4df33a54-5dd9-4e5a-8fe5-c88f799dda3c/content",
+            "https://api.crossref.org/works?filter=orcid%3A0000-0003-4817-2875&rows=1000&select=DOI%2Ctitle%2Cauthor%2Cpublished%2Ccontainer-title"
           ]
         }
       },
@@ -51836,6 +51846,173 @@
           ]
         }
       }
+    },
+    {
+      "id": "egu-net-arxiv-2021",
+      "shortTitle": "EGU-Net",
+      "title": "Endmember-Guided Unmixing Network (EGU-Net): A General Deep Learning Framework for Self-Supervised Hyperspectral Unmixing",
+      "authors": "Danfeng Hong, Lianru Gao, Jing Yao, Naoto Yokoya, Jocelyn Chanussot, Uta Heiden, Bing Zhang",
+      "year": 2021,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2105.10194",
+      "representation": "端元引导的两流共享权重解混与光谱重构。",
+      "tags": [],
+      "summary": "EGU-Net从纯或近纯端元学习额外分支，以共享权重和非负/和一等光谱约束辅助高光谱解混分支，估计材料丰度并重构光谱；原摘要还说明可通过卷积扩展为空谱解混。本轮只保留像元版整体主框架，不整理实验细节。",
+      "input": "高光谱影像；像元版使用影像提取的伪纯端元及LMM丰度线索（Fig2标注VCA与LMM）。",
+      "output": "材料丰度向量及重构高光谱光谱（主图所示）。",
+      "mechanism": "端元分支E-Net与解混/重建分支UR-Net构成两流Siamese网络，逐层共享权重，配合ReLU非负与Softmax和为一约束；空谱卷积扩展仅依原摘要记录。",
+      "readingNote": "完整固定arXiv v1原摘要及七作者已核；14页PDF仅核首页署名和第3页Fig2整体像元版主框架/图注，未逐页全文读，只保留这一张图。正式TNNLS33(11)2022页6518–6531同题名/同序七作者和完整DOI已核，但TNNLS不在本项目白名单，本条按arXiv收录，正式版只关联书目、不另读。原API所报10.1109/TNNLS.2021不完整，未当作正式DOI使用。七作者无Jun Zhou；代码只放原摘要链接。",
+      "paper": "https://arxiv.org/abs/2105.10194v1",
+      "code": "https://github.com/danfenghong/IEEE_TNNLS_EGU-Net",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "citation": "@misc{egu_net_arxiv_2021,\n  title = {Endmember-Guided Unmixing Network (EGU-Net): A General Deep Learning Framework for Self-Supervised Hyperspectral Unmixing},\n  author = {Danfeng Hong and Lianru Gao and Jing Yao and Naoto Yokoya and Jocelyn Chanussot and Uta Heiden and Bing Zhang},\n  year = {2021},\n  eprint = {2105.10194},\n  archivePrefix = {arXiv},\n  primaryClass = {eess.IV},\n  url = {https://arxiv.org/abs/2105.10194v1}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2105.10194v1",
+          "sourceVersion": "arXiv2105.10194v1（2021-05-21，pre-acceptance版）",
+          "figureLabel": "Figure 2",
+          "caption": "EGU-Net像元版整体框架：从HSI取得伪纯端元及LMM丰度线索，端元分支E-Net与解混/重建分支UR-Net逐层共享权重，输出材料丰度并重构光谱。图内标注VCA、非负ReLU及和为一Softmax约束。",
+          "verificationNote": "已核固定v1第3页Fig2整体图和原图注，直接裁取完整框架及图注，不重绘。只保留此一张像元版主图；空谱扩展已见摘要，不再补第3图。正式TNNLS正文未读，图号/页码不迁移至正式版。",
+          "path": "figures/egu-net-arxiv-2021/framework-1.png",
+          "width": 1596,
+          "height": 726,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "af04de19770a4c9a1b9c1eb0b038d5c64e3fe02078d2b82bff763faf405642c9",
+          "attribution": "Danfeng Hong, Lianru Gao, Jing Yao, Naoto Yokoya, Jocelyn Chanussot, Uta Heiden, Bing Zhang · arXiv2105.10194v1 (2021)",
+          "page": 3,
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              40,
+              52,
+              572,
+              294
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "self-supervised-reconstruction"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要与Fig2直接处理HSI，任务为材料丰度解混，重构作为网络学习环节。arXiv为合格普通来源，不使用作者例外或放宽TNNLS来源。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用纯/近纯端元线索改善深度高光谱解混的可解释性和谱变异泛化？",
+        "datasets": "原摘要说三个具有材料丰度真值的数据集；本轮不整理实验与各数据协议。",
+        "experimentSetting": "未核实验协议；主图确认端元/解混两流、权重共享和光谱重构。",
+        "conclusions": "原摘要报告优于若干解混对照；具体指标、划分和复现未核验。",
+        "limitations": "只有完整原摘要与一张像元版主框架，未记全文或复现。正式期刊来源外只书目关联，不宣称两版图号/实验相同；不追加空谱版图或实验整理。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2105.10194v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v1完整原摘要及完整作者名单",
+            "supports": [
+              "直接高光谱解混，以纯/近纯端元分支和解混分支的共享权重与谱约束构成两流Siamese网络。",
+              "摘要明确像元谱解混与卷积空谱扩展、三数据集比较；本轮不整理完整实验或性能数值。",
+              "七作者无Jun Zhou；官方代码只记录原摘要URL，不访问。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2105.10194v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v1 PDF第3页主要原框架/图注（选读）",
+            "supports": [
+              "Fig2像元版显示HSI/VCA伪纯端元、LMM丰度提示、逐层共享权重、丰度输出与光谱重构；原图的ReLU/Softmax非负/和一约束可见。",
+              "仅首页署名和第3页Fig2选读，十四页PDF下载不记全文，不读其他版本或追加其他图。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TNNLS.2021.3082289",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式完整关联书目（TNNLS来源白名单外）",
+            "supports": [
+              "规范题名和同序七作者对应arXiv原稿；正式DOI10.1109/tnnls.2021.3082289、2022年11月卷33期11页6518–6531。",
+              "正式期刊不在项目白名单，当前普通条目只按arXiv来源收录，不将关联书目当合格来源。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "egu-net-arxiv-2021-arxiv-v1",
+            "type": "固定arXiv v1公开版",
+            "url": "https://arxiv.org/abs/2105.10194v1",
+            "pdfUrl": "https://arxiv.org/pdf/2105.10194v1",
+            "arxivId": "2105.10194",
+            "arxivVersion": 1,
+            "year": 2021,
+            "authors": [
+              "Danfeng Hong",
+              "Lianru Gao",
+              "Jing Yao",
+              "Naoto Yokoya",
+              "Jocelyn Chanussot",
+              "Uta Heiden",
+              "Bing Zhang"
+            ],
+            "firstSubmittedAt": "2021-05-21T08:07:12Z",
+            "updatedAt": "2021-05-21T08:07:12Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-chanussot-bibliography-egu-2026-10-13-2105.10194v1.pdf",
+            "relation": "本条唯一正文/主图版本；首页说明pre-acceptance，完整摘要及第3页Fig2已核，非全文。"
+          },
+          {
+            "id": "egu-net-arxiv-2021-formal",
+            "type": "正式TNNLS关联书目（来源白名单外）",
+            "url": "https://doi.org/10.1109/tnnls.2021.3082289",
+            "doi": "10.1109/tnnls.2021.3082289",
+            "year": 2022,
+            "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+            "volume": "33",
+            "issue": "11",
+            "pages": "6518-6531",
+            "authors": [
+              "Danfeng Hong",
+              "Lianru Gao",
+              "Jing Yao",
+              "Naoto Yokoya",
+              "Jocelyn Chanussot",
+              "Uta Heiden",
+              "Bing Zhang"
+            ],
+            "readingProgress": "title_only",
+            "relation": "注册同规范题名/同序七作者关联；原API不完整DOI已由精确正式记录补正。期刊来源外只关联书目，正式正文未读，不另建论文条目。"
+          }
+        ],
+        "methodFamilyId": "egu-net-arxiv-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要和Fig2显示HSI输入、材料丰度及光谱重构，两流共享权重自监督解混；用既有光谱解混任务和测量一致性自监督重构方法标签。重构是解混网络学习环节，不增独立成像重建任务或几何三维标签。只依据摘要和主图，不补性能。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "6ba86a8e2b83b1c047b7ceb6ceb97b2e7b6d14a4f3a1b46f0dd66aa73339bf59",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2105.10194v1",
+            "https://arxiv.org/pdf/2105.10194v1"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -52650,7 +52827,8 @@
         "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
         "zhou-scholar-arxiv-2603-09037",
         "zhou-scholar-arxiv-2605-20569",
-        "hypersigma-tpami-2025"
+        "hypersigma-tpami-2025",
+        "egu-net-arxiv-2021"
       ],
       "history": [
         {
@@ -53126,7 +53304,8 @@
         "t3sc-2021",
         "zhou-76-hsi-2022",
         "zhou-20-hsi-2026",
-        "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021"
+        "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
+        "egu-net-arxiv-2021"
       ],
       "history": [
         {
