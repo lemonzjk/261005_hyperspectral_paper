@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：Xin Lyu/Lv指定arXiv73、Yuzeng Chen3仅书目/作者，零Jun/显式HSI不当全集。IJCAI2022–2025官方4041题名及33关键词命中原摘要已核，12实际范围未决。5新普通论文各一正式版/一主图：ADKNet的HSISR扩展、HSRMamba、HSI模型水印、Bi-DiffCD实际194带HSI–RGB、CAMM压缩重建。新增模型水印任务/导航；43PDF页仅下载、0新全文/代码访问。关键词外隐含HSI/引文与其他年份继续。
+- 最新：IJCAI2022–2025的12范围候选各取一个正式PDF，只读必要输入/数据段；8暂排、4保留（水质、PatternCIR、LGFormer、DFIM）。水质GLORIA原始HSI与表中16维MS输入转换不明，不猜。RegionMatch/LeMeViT复用已有官方数据定义；107页仅下载，0新论文/全文/图/代码访问。总库426/原图365及Jun未决不变；年度关键词外隐含HSI/引用与其他年份继续。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。

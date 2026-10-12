@@ -2,7 +2,7 @@
 
 状态更新：2026-10-13。目录、全文与资源快照续核至2026-10-12。当前目标是论文目录完整，优先查漏及必要的作者身份、范围和版本核验，不新增学习笔记；每篇只找一个可用版本、一张主要原框架图；只读定位图及确认必要作者/范围的内容，不逐页或逐版阅读，代码只留链接。目录覆盖尚未闭环；付费且无公开版本或确实不可获取材料的留白不阻塞目录完成。
 
-2026-10-13最新：Xin Lyu/Lv指定arXiv73/73与Yuzeng Chen3/3仅书目/作者，零Jun/显式HSI，不当自然人全集或未决稿无公开版证明。随后核IJCAI2022–2025官方4041题名及33关键词命中原摘要（2旧页复用），12实际HSI范围未明保留；五普通白名单论文各一正式公开版本/一主图：ADKNet的HSISR扩展、HSRMamba、HSI模型签名水印、Bi-DiffCD原§4.1实际194带HSI–RGB、CAMM快照压缩HSI重建。新增水印任务/导航，43PDF页仅下载、0新全文/代码访问。总库426/原图365（295白名单/30arXiv/101例外），Jun确认182及网页183、ORCID/DBLP/Scholar/Griffith未决3/12/10/12不变；关键词外隐含HSI、引用与其他年份继续。[指定目录、年度来源及一版一主图](sources/jun-zhou-lyu-yuzeng-ijcai-history-2026-10-13.json)。
+2026-10-13最新：续核IJCAI2022–2025的12范围候选，每篇仅一个正式公开PDF和实际输入/数据/扩展任务必要段落；8暂排、4保留（水质、PatternCIR、LGFormer、DFIM）。SpanConv/跨尺度/PanComplex为MS全色锐化；PanComplex另任务明确深度与红外–RGB；DeepLight夜光/七带OLI/高程/地表，KIIM为RGB+三个指数，RegionMatch/LeMeViT复用已有官方数据定义。水质GLORIA原始HSI与16维MS模型特征转换不明，不猜。107页仅下载，0新论文/全文/图/代码访问。总库426/原图365、Jun确认182及网页183、ORCID/DBLP/Scholar/Griffith未决3/12/10/12不变；关键词外隐含HSI、引用与其他年份继续。[必要实际输入证据](sources/ijcai-2022-2025-selected-input-scope-2026-10-13.json)。
 
 2026-10-13共同作者目录与一主图续核：Jocelyn Chanussot的ORCID绑定本人学术主页；官方整名arXiv99/99书目、Crossref ORCID过滤293/293注册作品均只有一条完整Jun Zhou署名，对应已录CRF；正式记录还登记目标Jun的ORCID，未增加作者论文。ORCID过滤缺少已知CasFormer，不能视为作者全集；GIPSA链接403不当作论文全文付费证明。EGU-Net从既有Hong候选转为普通arXiv2021条目，仅固定v1首页与第3页Fig2选读，保留一张像元版整体原框架，不读全文或其他版本；TNNLS不在白名单，只关联正式书目。既有CRF已有可用稿/图，不追加arXiv v1/v2或正式版正文。总库401、原图339，Hong新候选2已录/25待核；Jun确认181（102全文/79摘要）不变。其余97条arXiv摘要未逐篇阅读，不声称作者目录完整；代码只链接。[本轮原始清单与主图](sources/jun-zhou-chanussot-bibliography-egu-2026-10-13.json)。
 
