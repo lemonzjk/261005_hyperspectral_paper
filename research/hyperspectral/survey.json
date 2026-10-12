@@ -7579,13 +7579,14 @@
       "candidateCount": 17,
       "reviewedCount": 16,
       "status": "partial",
-      "statusLabel": "17来源组16有当前决定，UEMM重开1待；非年度系统检索",
+      "statusLabel": "17来源组16有当前决定，红树林协同稿1待；非年度系统检索",
       "sourceSnapshot": "sources/jun-zhou-2025-decisions.json",
       "gaps": [
-        "直接题名条目摘要、实验、代码和版本差异待补。",
-        "UEMM原稿/当前采集源码与AirSim接口语义差异，正式版与发布数据仍待核。"
+        "红树林协同稿的实际物理输入波段尚未明确；不按题名或CRF颜色项推断纯RGB。",
+        "各直接HSI论文仅取一个可用版本与一张主框架图，代码只放链接。"
       ],
-      "collectionScope": "active"
+      "collectionScope": "active",
+      "latestScopeEvidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
     },
     {
       "id": "jun-zhou-orcid-2026-scope",
@@ -7692,16 +7693,22 @@
         "查询521条有独立规范化整名字段、10条非精确姓名/简写/分词异常；这些字段均不自动证明目标身份。姓名变体尚未完整覆盖。",
         "指定光谱词25命中23匹配/2护理同名；无关键词不自动排除。医学三固定v1按方法/完整实验或研究汇总表选读暂排（25/39、13/42、14/54页），未记整篇全文或全部被引论文已核。MerMED/综述正式候选及UEMM/AdvMIM正式版独立未核；TEAMS仅局部暂排，Mamba ORCID不转移同名稿。",
         "同名6（4旧/2新增），其中5继续保留全领域范围候选。Mamba按已读输入与官方PanNuke定义暂排明确高光谱范围；其2655子集/实际数组和正式版仍未核，明确高光谱输入或基础贡献可重开。椭偏及其他同名的全领域关系仍待。",
-        "UEMM v3固定原稿范围已排除；HF无像素、XML depth=3只是标注，正式版/Baidu原图未核。VITask v1已全读，官方MedMNIST4RGB/8灰与普通医学分类声明足以排除直接HSI；外部APTOS引用/实际转换未复现，独立保留资料疑点。",
+        "UEMM v3固定原稿范围已排除；HF无像素、XML depth=3只是标注，论文家族已按作者页关联公开v3排除，不再核正式版/Baidu像素。VITask v1已全读，官方MedMNIST4RGB/8灰与普通医学分类声明足以排除直接HSI；外部APTOS引用/实际转换未复现，独立保留资料疑点。",
         "2306.08817源摘要末尾省略号未补齐；2301.02763原作者粘连，整名统计不等于个人身份。椭偏v2 API/abs与PDF题名、17/18作者差异分别留存。",
         "新增5Jian Jun Zhou字段不精确；J. Zhou简写仍不能认定身份，按通信范围暂排。MSX红外两摘要的全领域关系未据姓名决定关闭；姓名简写/变体与其他来源差集仍待。",
-        "AdvMIM v1显式三通道且全部三基准已读、直接HSI范围已排除；当前FLARE25实现不替代正式版/ISIC像素。TEAMS/医学综述登记为2027-01印刷卷期，首次在线未核；MerMED25/35作者与医学综述7/8作者/题名差异保留，不能覆盖原快照。",
+        "AdvMIM v1显式三通道且全部三基准已读、直接HSI范围已排除；不检查FLARE25实现或ISIC像素，不追读关联正式版。TEAMS/医学综述登记为2027-01印刷卷期，首次在线未核；MerMED25/35作者与医学综述7/8作者/题名差异保留，不能覆盖原快照。",
         "PanNuke数组头/96字节样本不作完整CRC或论文实际训练文件证明；TEAMS会议扩展与正式版边界保留。RADC v1已全读，EuroSAT为RGB或13波段MS均范围外；具体选版与代码/身份未复核不阻塞固定稿范围排除。",
         "医学三原稿Jun机构分别IHPC/IHPC/Emory，未证稳定个人身份，不据机构差异确认另一同名；EVLF整体十一/引言十/定位表九模态和样本分池总和冲突原样保留。MerMED外部SupplementaryTable6未获取，综述全部304条引文原稿未逐篇审。"
       ],
       "indexedCandidateCount": 531,
       "mappingOnlySurveyIndexBackfill": 60,
-      "collectionScope": "active"
+      "collectionScope": "active",
+      "representativeVersionScopeFollowup": {
+        "evidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json",
+        "uemmairFormalScopePending": false,
+        "advmimFormalScopePending": false,
+        "formalBodiesRead": false
+      }
     },
     {
       "id": "jun-zhou-dmt-sst-followup-2026-10-11",
@@ -27760,25 +27767,35 @@
       "year": 2025,
       "searchId": "jun-zhou-orcid-2025-scope",
       "discoveredAt": "2026-10-10",
-      "decision": "pending",
+      "decision": "excluded",
       "paperId": null,
-      "reason": "固定arXiv v3已逐页全文排除直接HSI；正式ACM MM题名、九作者排序及机构摘要分别留源，正式摘要未逐项列六模态、正式正文未获取。保留正式版范围pending，不把预印本范围迁移到未读正式版。后续只依公开正式摘要/正文判断，不以代码、像素下载或模拟器检查作为目录完成条件。",
-      "verifiedAt": "2026-10-11",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-uemmair-scope-reopening-2026-10-11.json",
-      "previousDecision": "excluded",
-      "latestScopeFinding": "2026-10-12作者正式题名页面完整摘要/九作者与Figure3采集标注流程已核；页面所链PDF实际是已读2406.06230v3的12页稿（同哈希），不是正式ACM MM七页。正式版范围仍pending，不把下载成功记成取得正式全文。",
+      "reason": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+      "verifiedAt": "2026-10-12",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json",
+      "previousDecision": "pending",
+      "latestScopeFinding": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
       "latestFollowupAt": "2026-10-12",
       "followupEvidencePaths": [
         "research/hyperspectral/sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json",
         "research/hyperspectral/sources/jun-zhou-medical-formal-abstracts-2026-10-12.json",
-        "research/hyperspectral/sources/jun-zhou-hhu-author-publication-version-followup-2026-10-12.json"
+        "research/hyperspectral/sources/jun-zhou-hhu-author-publication-version-followup-2026-10-12.json",
+        "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
       ],
-      "followupBoundary": "本次只新增作者公开页面与关联/链接差异证据。12页稿先前已全文读，本次仅重核首页至第3页；无新唯一PDF、无新全文阅读。正式正文未得，不访问代码或数据。",
+      "followupBoundary": "正式正文未读；使用作者会议页面直接关联的公开v3作范围代表。无新PDF、全文阅读、代码检查或像素核验。",
       "authorPublicPublicationFollowup": {
         "checkedAt": "2026-10-12",
         "sourceSnapshot": "sources/jun-zhou-hhu-author-publication-version-followup-2026-10-12.json",
-        "finding": "会议作者页面完整摘要与同序九作者已读；所链PDF与已读arXiv v3逐字节相同，不能作正式七页论文。原Figure3流程只按作者公开网页图版记录，正式版六模态是否同一协议仍未确证。",
-        "readingBoundary": "作者网页完整研究摘要/卡片及所列注册书目；没有新正式全文或代码阅读，原范围决定分别保留。"
+        "finding": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+        "readingBoundary": "论文作者页及关联公开v3必要内容已核；无新正式正文阅读或代码访问，论文家族以关联代表稿判断范围。"
+      },
+      "representativeScopeEvidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json",
+      "formalVersionBoundary": {
+        "doi": "10.1145/3746027.3758220",
+        "status": "linked_family_representative_scope_excluded",
+        "representativeArxivId": "2406.06230",
+        "formalBodyRead": false,
+        "finding": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+        "evidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
       }
     },
     {
@@ -33475,16 +33492,16 @@
         "Yong Liu"
       ],
       "readingBoundary": "固定arXiv原稿全文逐页阅读；未复现代码/性能，未读正式全文。",
-      "identityBoundary": "仅范围排除此固定预印本，不作未证个人身份或未读正式版排除。",
+      "identityBoundary": "只按论文家族直接高光谱范围排除，不据姓名或机构推断个人身份。",
       "venue": "arXiv",
       "year": 2025,
       "searchId": "jun-zhou-arxiv-author-inventory-2026-10-10",
       "batchId": "jun-zhou-arxiv-abstract-batch2-2026-10-11",
       "discoveredAt": "2026-10-10",
-      "verifiedAt": "2026-10-11",
+      "verifiedAt": "2026-10-12",
       "decision": "excluded",
       "decisionDetail": "excluded_full_text_scope",
-      "reason": "v1§2.1/§2.2输入明确H×W×3，§3与全部实验仅ACDC MRI、Synapse CT、ISIC皮肤镜；masked image modeling预测分割掩膜，不是HSI采集/重建/谱维学习。固定预印本按直接HSI范围排除，无需把ISIC实际像素或同名个人身份当作本版范围闭环前提。",
+      "reason": "Springer正式章节题名、同序四作者及方法摘要与公开2506.20563v1对应；选用该版本作为论文家族范围代表。原稿第3页输入H×W×3，研究MRI、CT和皮肤镜分割，不构成直接高光谱研究，按范围排除。正式章节正文仍未读，未迁移正式版实验或判断同名个人身份；不再追读其他版本或检查代码。",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json",
       "identityFinding": "首页Jun Zhou机构A*STAR IHPC；机构不同本身不作同名身份结论。",
       "scopeFinding": "v1§2.1/§2.2输入明确H×W×3，§3与全部实验仅ACDC MRI、Synapse CT、ISIC皮肤镜；masked image modeling预测分割掩膜，不是HSI采集/重建/谱维学习。固定预印本按直接HSI范围排除，无需把ISIC实际像素或同名个人身份当作本版范围闭环前提。",
@@ -33504,24 +33521,27 @@
       "selectedPagesFile": "jun-zhou-arxiv-batch2-2506.20563-selected-pages-2026-10-11.json",
       "followupEvidencePaths": [
         "research/hyperspectral/sources/jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
-        "research/hyperspectral/sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json"
+        "research/hyperspectral/sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json",
+        "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
       ],
       "followupBatchIds": [
         "jun-zhou-medical-identity-publication-followup6-2026-10-11",
         "jun-zhou-query-semantics-scope-reading-2026-10-11"
       ],
-      "latestScopeFinding": "v1§2.1/§2.2输入明确H×W×3，§3与全部实验仅ACDC MRI、Synapse CT、ISIC皮肤镜；masked image modeling预测分割掩膜，不是HSI采集/重建/谱维学习。固定预印本按直接HSI范围排除，无需把ISIC实际像素或同名个人身份当作本版范围闭环前提。",
+      "latestScopeFinding": "Springer正式章节题名、同序四作者及方法摘要与公开2506.20563v1对应；选用该版本作为论文家族范围代表。原稿第3页输入H×W×3，研究MRI、CT和皮肤镜分割，不构成直接高光谱研究，按范围排除。正式章节正文仍未读，未迁移正式版实验或判断同名个人身份；不再追读其他版本或检查代码。",
       "publicationFollowupFile": "jun-zhou-medical-identity-publication-followup6-2026-10-11.json",
       "formalDoi": "10.1007/978-3-032-05325-1_6",
       "fullTextReadingFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
       "formalVersionBoundary": {
         "doi": "10.1007/978-3-032-05325-1_6",
-        "status": "pending_formal_version_scope",
-        "finding": "原稿v1已全读；正式MICCAI章节先在线2025-09-20、印刷引用2026，题名与四作者对应证据保留。正式全文和代码ISIC配置未读，不把当前FLARE25实现替代原论文，不升级个人身份判断。",
-        "priorEvidenceFiles": [
-          "jun-zhou-medical-identity-publication-followup6-2026-10-11.json"
-        ]
-      }
+        "status": "linked_family_representative_scope_excluded",
+        "representativeArxivId": "2506.20563",
+        "formalBodyRead": false,
+        "finding": "Springer正式章节题名、同序四作者及方法摘要与公开2506.20563v1对应；选用该版本作为论文家族范围代表。原稿第3页输入H×W×3，研究MRI、CT和皮肤镜分割，不构成直接高光谱研究，按范围排除。正式章节正文仍未读，未迁移正式版实验或判断同名个人身份；不再追读其他版本或检查代码。",
+        "evidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
+      },
+      "latestFollowupAt": "2026-10-12",
+      "representativeScopeEvidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
     },
     {
       "title": "Observation of Berry Curvature-Enhanced Anomalous Photo-Nernst Effect in Magnetic Weyl Semimetal",
@@ -36230,22 +36250,23 @@
         "Jun Zhou"
       ],
       "readingBoundary": "固定arXiv原稿全文逐页阅读；未复现代码/性能，未读正式全文。",
-      "identityBoundary": "仅范围排除此固定预印本，不作未证个人身份或未读正式版排除。",
+      "identityBoundary": "只按论文家族直接高光谱范围排除，不据姓名或机构推断个人身份。",
       "venue": "arXiv",
       "year": 2024,
       "searchId": "jun-zhou-arxiv-author-inventory-2026-10-10",
       "batchId": "jun-zhou-arxiv-abstract-batch3-2026-10-11",
       "discoveredAt": "2026-10-10",
-      "verifiedAt": "2026-10-11",
+      "verifiedAt": "2026-10-12",
       "decision": "excluded",
       "decisionDetail": "excluded_full_text_scope",
-      "reason": "v3全文列出的六模态、采集/标注机制和所有实验为RGB、深度/几何、IMU与语言的合成UAV感知。§III-B的infrared/Depth冲突保留，但不形成高光谱采集、谱维处理或重建贡献；按当前严格直接HSI口径排除此固定原稿版本。",
+      "reason": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json",
-      "latestScopeFinding": "v3全文列出的六模态、采集/标注机制和所有实验为RGB、深度/几何、IMU与语言的合成UAV感知。§III-B的infrared/Depth冲突保留，但不形成高光谱采集、谱维处理或重建贡献；按当前严格直接HSI口径排除此固定原稿版本。",
-      "latestFollowupAt": "2026-10-11",
+      "latestScopeFinding": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+      "latestFollowupAt": "2026-10-12",
       "followupEvidencePaths": [
         "research/hyperspectral/sources/jun-zhou-uemmair-vitask-input-followup-2026-10-11.json",
-        "research/hyperspectral/sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json"
+        "research/hyperspectral/sources/jun-zhou-query-semantics-scope-reading-2026-10-11.json",
+        "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
       ],
       "scopeFinding": "v3全文列出的六模态、采集/标注机制和所有实验为RGB、深度/几何、IMU与语言的合成UAV感知。§III-B的infrared/Depth冲突保留，但不形成高光谱采集、谱维处理或重建贡献；按当前严格直接HSI口径排除此固定原稿版本。",
       "readPdfPages": [
@@ -36265,16 +36286,16 @@
       "fullTextReadingFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
       "formalVersionBoundary": {
         "doi": "10.1145/3746027.3758220",
-        "status": "pending_formal_version_scope",
-        "finding": "原稿v3范围排除独立于正式MM七页版本。机构摘要仍列120k/六模态/四任务，但没有穷举六模态；正式全文此前403且机构无ORIGINAL，保留正式版输入/版本待核，不重复付费追索。发布像素与采集时模拟器差异仍未核，不阻塞固定v3范围决定。",
-        "priorEvidenceFiles": [
-          "jun-zhou-uemmair-vitask-input-followup-2026-10-11.json",
-          "jun-zhou-griffith-profile-2026-10-11-publications-0.json"
-        ]
+        "status": "linked_family_representative_scope_excluded",
+        "representativeArxivId": "2406.06230",
+        "formalBodyRead": false,
+        "finding": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+        "evidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
       },
       "followupBatchIds": [
         "jun-zhou-query-semantics-scope-reading-2026-10-11"
-      ]
+      ],
+      "representativeScopeEvidencePath": "research/hyperspectral/sources/jun-zhou-single-version-scope-2026-10-12.json"
     },
     {
       "title": "Using Modularized Pin Ridge Filter in Proton FLASH Planning for Liver Stereotactic Ablative Body Radiotherapy",

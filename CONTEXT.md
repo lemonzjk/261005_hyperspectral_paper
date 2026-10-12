@@ -31,6 +31,6 @@
 - src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
-- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID2、DBLP9、Scholar6、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
-- Griffith profile7205全387关联项，175源项匹配168目录ID、9未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词待核。
-- 最新：DaSSP-Net/AMSFN/跨模态分类三篇既有周峻论文各补一主图，仍摘要级。OpenAlex839源项/420差集仅定位：309有摘要、14关键词命中，3非HSI已排；Hatu198带确认，来源/身份待。834/833差1在2024档案62/查询61，原因待。IF103225主框架已得、Jun身份/SSRN去重待；IF/DINOFuse本轮DBLP API仅HTML挑战。HVOT合格版/Phase冲突待；编辑/M2、三分割输入等候选见jun-zhou.md。Xiong整名arXiv10/10，七Jun已录；DECSC一主图入TGRS；Primer/HyperSIGMA24/40页、4/9图已整理，无Jun。限定查询非全集；作者先、历年矩阵后。
+- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
+- Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词待核。
+- 最新：UEMM作者会议页链接既有v3，AdvMIM正式题名/四作者关联v1；两家族按公开代表稿排除非HSI，不再追正式全文，未冒称正式版已读。DaSSP-Net/AMSFN/跨模态分类各一主图，仍摘要级。OpenAlex839/420差集仅定位：309有摘要、14关键词命中，3非HSI已排；Hatu198带确认、来源/身份待。834/833差1在2024档案62/查询61，原因待。IF103225主图已得、Jun身份/SSRN去重待；IF/DINOFuse DBLP仅HTML挑战。HVOT合格版/Phase冲突、编辑/M2、三分割输入待。Xiong整名arXiv10/10，七Jun已录；DECSC一主图入TGRS。限定查询非全集；作者先、历年矩阵后。

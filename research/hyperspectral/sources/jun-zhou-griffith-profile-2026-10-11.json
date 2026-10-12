@@ -37,13 +37,13 @@
     "duplicateIds": []
   },
   "decisionCounts": {
-    "carried_pending": 9,
+    "carried_pending": 8,
     "matched_prior_exclusion": 186,
     "matched_catalog": 175,
     "excluded_abstract": 3,
     "candidate_source_outside_policy": 2,
     "matched_current_scope_cleanup": 6,
-    "excluded_primary_scope": 3,
+    "excluded_primary_scope": 4,
     "linked_dataset": 1,
     "excluded_source_policy": 1,
     "correction_of_excluded_paper": 1
@@ -241,7 +241,6 @@
     10347962,
     10344376,
     10457216,
-    10470711,
     10298437,
     9356923,
     5644192,
@@ -253,7 +252,7 @@
   ],
   "versionSearchFinding": "ti:Dualmamba得到2406.07050v1，但作者Jiamu Sheng/Jingyi Zhou等、单HSI光谱空间Mamba+卷积，与本条作者/HSI-LiDAR方法不同，拒绝合并。au:Zhang AND LiDAR AND Mamba返回9条，无目标作者组合/题名；SOC题名及Liu+soil organic carbon+hyperspectral指定查询0，RePrior题名0。仅报告这些查询，不能断言无公开版本。",
   "materialAccessFinding": "SSRN7404220入口403；IEEE11314057入口202挑战空响应。本轮没有取得两候选PDF，不称为全文付费；机构387记录有184 PDF链接，其中75源项匹配75个已录高光谱ID、31个仍摘要级，明确资料队列；链接不等于本轮已下载或验证当前可访问，范围外文献无需作为HSI资料整理待办。",
-  "boundary": "本387条机构个人关联快照的分页/交叉核对已完成，不是周峻作者全集或全领域完成。当前9范围/版本待核、2直接HSI来源外候选及NSP/KUM单篇正式机构待核分别保留；跨来源待核重叠不相加。原始批次没有新论文/全文/原图，本轮两AM仅选读13/29页，不增加HSI库内全文或框架图。旧两仓库指定查询351条独立保留。",
+  "boundary": "本387条机构个人关联快照的分页/交叉核对已完成，不是周峻作者全集或全领域完成。当前8范围/版本待核、2直接HSI来源外候选及NSP/KUM单篇正式机构待核分别保留；跨来源待核重叠不相加。原始批次没有新论文/全文/原图，本轮两AM仅选读13/29页，不增加HSI库内全文或框架图。旧两仓库指定查询351条独立保留。",
   "records": [
     {
       "objectId": 10494625,
@@ -3514,21 +3513,38 @@
       "hasAbstract": true,
       "repositoryPdfUrl": null,
       "publicUrl": "https://hdl.handle.net/10072/440618",
-      "decision": "carried_pending",
-      "basis": "继承未决实际输入/范围/版本；本轮机构作者绑定和书目不替代输入通道/正文核验。",
+      "decision": "excluded_primary_scope",
+      "basis": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
       "preprintScopeFollowup": {
         "arxivId": "2406.06230",
         "version": "v3",
         "decision": "excluded_full_text_scope",
         "finding": "v3全文列出的六模态、采集/标注机制和所有实验为RGB、深度/几何、IMU与语言的合成UAV感知。§III-B的infrared/Depth冲突保留，但不形成高光谱采集、谱维处理或重建贡献；按当前严格直接HSI口径排除此固定原稿版本。",
         "evidenceFile": "jun-zhou-query-semantics-scope-reading-2026-10-11.json",
-        "formalDecisionUnchanged": "carried_pending"
+        "formalDecisionUnchanged": "superseded_by_representative_version_scope"
       },
       "formalVersionComparisonFollowup": {
         "checkedAt": "2026-10-11",
         "evidenceFile": "jun-zhou-sugarcane-dsab-mosaic-reading-2026-10-11.json",
         "decision": "pending",
-        "finding": "支持相关成果线索，不能把已读v3的六模态定义/范围决定直接迁移到未读正式正文；正式DOI仍待范围核验。官方代码URL在摘要中出现但只作链接，不访问。"
+        "finding": "支持相关成果线索，不能把已读v3的六模态定义/范围决定直接迁移到未读正式正文；正式DOI仍待范围核验。官方代码URL在摘要中出现但只作链接，不访问。",
+        "supersededBy": "jun-zhou-single-version-scope-2026-10-12.json",
+        "currentScopeDecision": "excluded_paper_family_scope"
+      },
+      "previousDecision": "carried_pending",
+      "latestScopeFinding": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+      "evidenceFile": "jun-zhou-single-version-scope-2026-10-12.json",
+      "reviewedAt": "2026-10-12",
+      "latestFollowupAt": "2026-10-12",
+      "followupEvidenceFiles": [
+        "jun-zhou-single-version-scope-2026-10-12.json"
+      ],
+      "representativeVersionScopeFollowup": {
+        "arxivId": "2406.06230",
+        "version": "v3",
+        "formalBodyRead": false,
+        "decision": "excluded_paper_family_scope",
+        "evidenceFile": "jun-zhou-single-version-scope-2026-10-12.json"
       }
     },
     {
@@ -20852,9 +20868,10 @@
     "jun-zhou-remaining-institution-materials-2026-10-12.json",
     "jun-zhou-author-bibliography-crosscheck-2026-10-12.json",
     "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
-    "jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json"
+    "jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json",
+    "jun-zhou-single-version-scope-2026-10-12.json"
   ],
-  "scopeFollowupBoundary": "DDFNet、FAT及SA-Net既有原摘要/基准定义暂排保留；2026-10-12红树林2025旧题名排除重开后当前继承未决9。保留rawFile/priorDecisions历史，不宣称重抓387目录、未知输入已核或未读正文已读。",
+  "scopeFollowupBoundary": "DDFNet、FAT及SA-Net既有原摘要/基准定义暂排保留；2026-10-12红树林2025旧题名排除重开后当前继承未决8（UEMM已按作者页关联代表稿排除）。保留rawFile/priorDecisions历史，不宣称重抓387目录、未知输入已核或未读正文已读。",
   "earlyMaterialAccessFollowup": {
     "checkedAt": "2026-10-12",
     "sourceFile": "jun-zhou-early-access-hsimamba-reading-2026-10-12.json",

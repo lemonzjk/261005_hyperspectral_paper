@@ -6,10 +6,10 @@
   "recordCount": 365,
   "keywordRecordCount": 167,
   "decisionCounts": {
-    "excluded": 185,
+    "excluded": 186,
     "duplicate_existing": 165,
     "included": 6,
-    "pending": 9
+    "pending": 8
   },
   "method": "DBLP SPARQL exact authoredBy relation; title/DOI normalized against catalog；WHISPERS专题补充、IGARSS多光谱证据补强；另用ORCID同题逐项决定交叉回填100条非关键词记录；剩余78条按原摘要/Griffith机构摘要和指定正文局部逐项审查，63暂排除、15待核；合并集合365条含1条快照外STRL补充。；续核M2-Net、2022稳健2DSVD与CrowdMLP原稿实验后暂排除3条，剩12待核。；续核两条编辑性记录后剩10待核。；机器人项按原会议指南指定摘要镜像转录暂排除，身份未核，剩9待核。；2026-10-11因UEMM原稿模态矛盾与AirSim接口语义重开1条旧排除，当前355决定/10待；历史剩余78条审查计数不改。；2026-10-12以Griffith AM实际红树林数据段撤销旧题名排除，当前356决定/9待；历史各轮数量不改，代码不核查。",
   "records": [
@@ -1687,16 +1687,24 @@
       "year": "2025",
       "venue": "ACM Multimedia",
       "doi": "https://doi.org/10.1145/3746027.3758220",
-      "decision": "pending",
-      "decisionReason": "UEMM-Air原稿图2列RGB/法向/分割/深度/IMU/文字六模态，§III-B开头却写infrared且细项解释depth；作者链接的当前采集代码调用AirSim Infrared接口，但官方文档为对象ID灰度映射。正式版、实际发布数据与采集版本关系待核，重开旧题名排除。",
-      "previousDecision": "excluded",
-      "reviewedAt": "2026-10-11",
-      "evidenceFile": "jun-zhou-uemmair-scope-reopening-2026-10-11.json",
+      "decision": "excluded",
+      "decisionReason": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+      "previousDecision": "pending",
+      "reviewedAt": "2026-10-12",
+      "evidenceFile": "jun-zhou-single-version-scope-2026-10-12.json",
       "followupEvidenceFiles": [
-        "jun-zhou-uemmair-vitask-input-followup-2026-10-11.json"
+        "jun-zhou-uemmair-vitask-input-followup-2026-10-11.json",
+        "jun-zhou-single-version-scope-2026-10-12.json"
       ],
-      "latestScopeFinding": "固定HF修订590d7a7a93454f7a558141684a8931b87977c420递归清单15项（11文件/4目录），与info siblings一致且无下一页；未列像素文件。检测test.zip的LFS SHA256吻合，9698份XML均登记1920×1080×3，属于标注字段、不是像素核验。作者Supplementary只说明RGB/深度/分割/法向/IMU，与原稿infrared表述仍有差异。正式ACM PDF403、机构无ORIGINAL；保留范围pending，继续Baidu原图、正式版与采集时模拟器。",
-      "latestFollowupAt": "2026-10-11"
+      "latestScopeFinding": "作者正式ACM MM题名页面列出同序九作者，并直接链接2406.06230v3；链接稿与既有12页PDF逐字节相同。选用该公开版本作为论文家族范围代表，RGB、法向、分割、深度、IMU和文字任务不构成直接高光谱研究，按范围排除。正式七页正文仍未读，不声称各版逐字相同；不再以其他版本全文、代码或发布像素检查作为目录待办。",
+      "latestFollowupAt": "2026-10-12",
+      "representativeVersionScopeFollowup": {
+        "arxivId": "2406.06230",
+        "version": "v3",
+        "formalBodyRead": false,
+        "decision": "excluded_paper_family_scope",
+        "evidenceFile": "jun-zhou-single-version-scope-2026-10-12.json"
+      }
     },
     {
       "pub": "https://dblp.org/rec/conf/mmasia/ZhuY0ZS024",
@@ -3638,6 +3646,7 @@
     "jun-zhou-jia-bibliography-solar-scope-2026-10-12.json",
     "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
     "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
-    "jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json"
+    "jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json",
+    "jun-zhou-single-version-scope-2026-10-12.json"
   ]
 }
