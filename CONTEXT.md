@@ -30,6 +30,6 @@
 - src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
-- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
-- Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。专项待办见jun-zhou.md；其他姓名/宽词仍待。
-- 最新：Griffith旧186继承排除中164有原摘要；本轮实际读39，另5份单版本仅核必要输入段，复用RemoteCLIP/太阳能板既有RGB证据。32旧候选补证、8旧书目排除接survey；零新Jun/库图。其余147未完成本轮复核，零关键词不当全排除。Jing/Lu注册13/61的Jun均映射，非全集；TM-MOE新TGRS候选原摘要/主图未得，IEEE418不当付费。Judy整名漏阳性；原839混并索引5日文翻译线索待，415未映射。Phase署名冲突、IF身份待，Jun181/网页182不变。Shutao新已录2/待4，Vivone1/待9，Hong2/待25；Zhuanfeng4待来源/范围。目标ORCID120映射非全集；SOC来源待。OpenAlex差集、HVOT、编辑/M2、三分割输入待。作者先、历年矩阵后。
+- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID2、DBLP9、Scholar7、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
+- Griffith profile7205全387关联项，175源项匹配168目录ID、10未决；2直接HSI来源外候选未找到合格版本。专项待办见jun-zhou.md；其他姓名/宽词仍待。
+- 最新：Griffith旧186继承排除累计79原摘要已复核，2条重开pending（Mamba-UNet谱带、海洋塑料综述HSI范围/合格版本），107未复核含22无摘要；原5单稿仅必要输入段。22旧survey补证、20只维护机构记录，零新库论文/图。目标ORCID注册120映射77目录/40排除/3待核，非全集。Jing/Lu注册13/61的Jun均映射；TM-MOE原摘要/主图未得，IEEE418不当付费。Judy整名漏阳性；原839混并索引5日文翻译线索待，415未映射。Phase署名冲突、IF身份待，Jun181/网页182不变。Shutao新已录2/待4，Vivone1/待9，Hong2/待25；Zhuanfeng4待来源/范围。SOC来源、OpenAlex差集、HVOT、编辑/M2、三分割输入仍待；作者先、历年矩阵后。
