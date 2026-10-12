@@ -18,7 +18,7 @@
 
 ## 当前状态
 
-- 总库408条，均直接高光谱；395分类确认（审计385）、13暂定、0待；182标签（任务71/方法98/应用13）。三维126条，数据资源2，原图346张。
+- 总库408条，均直接高光谱；395分类确认（审计385）、13暂定、0待；182标签（任务71/方法98/应用13）。三维126条，数据资源2，原图348张。
 - 出版来源69种；11主要任务组、细标签搜索、多标签并集/去重计数；作者匹配、URL恢复及SVG/BibTeX导出。
 - 来源范围（白名单顶会顶刊283/arXiv24/白名单外101）与阅读深度、资料状态独立筛选，URL恢复、导出使用同一结果；资料状态依据已记录正文/原图证据，不以PDF链接推断已读，不把原图来源受限当全文付费。
 - CVPR/ICCV/NeurIPS/ICML等已有指定查询闭环，不是领域全量；历史普通会议搜索归档，矩阵仅白名单，见coverage.md。
@@ -32,4 +32,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词待核。
-- 最新：MSP-Net入普通arXiv，复用v1仅首页/第4页Fig2一主图，代码URL；Zhuanfeng的Crossref10/ORCID13中4个Jun均已录、4新题名待合格来源/范围，不是全集。CSSTrack/DRSST各一主图；旧coauthors4均入录，仅该组闭环。Phase普通arXiv复用v2主图，官方单署名/PDF含Jun冲突保留，不增181。IF身份待，网页Jun182含IF1未核，Phase PDF Jun单列。Xin+Zhou172两Jun旧排除，整名AND0漏阳性。Shutao6新已录2/待4，Vivone10新已录1/待9，Hong27新已录2/待25。目标ORCID120均映射、非全集；SOC来源待。UEMM/AdvMIM代表稿排除；OpenAlex差集/差1、HVOT、编辑/M2、三分割输入待。作者先、历年矩阵后。
+- 最新：Judy ORCID两Jun均已录；公开别名XUEQIN YANG的新arXiv5项无Jun，身份未转移，Judy X整名漏已知阳性，不当全集。原839混并索引的5日文题名列疑似翻译重复待核，未映射420→415（转survey，非确认重复）；J-GLOBAL503。既有坚果/土壤2018各一主要采集原图，不称PLSR流程。MSP-Net一v1主图；Zhuanfeng4新待来源/范围。CSSTrack/DRSST各一主图；Phase普通arXiv，官方单署名/PDF Jun冲突，IF身份待；确认Jun181/网页182不变。Xin整名AND漏阳性。Shutao新已录2/待4，Vivone1/待9，Hong2/待25。目标ORCID120均映射、非全集；SOC来源待。OpenAlex差集/差1、HVOT、编辑/M2、三分割输入待。作者先、历年矩阵后。

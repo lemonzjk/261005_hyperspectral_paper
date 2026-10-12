@@ -2,7 +2,7 @@
 
 状态更新：2026-10-13。目录、全文与资源快照续核至2026-10-12。当前目标是论文目录完整，优先查漏及必要的作者身份、范围和版本核验，不新增学习笔记；每篇只找一个可用版本、一张主要原框架图；只读定位图及确认必要作者/范围的内容，不逐页或逐版阅读，代码只留链接。目录覆盖尚未闭环；付费且无公开版本或确实不可获取材料的留白不阻塞目录完成。
 
-2026-10-13最新：Zhuanfeng Li的Crossref ORCID过滤10条中4条Jun署名均已入库；ORCID13条映射9篇旧录、4个新题名待合格来源或直接高光谱范围，不是作者全集。MSP-Net按普通arXiv收录，沿用v1，仅首页及第4页Fig2一张整体原图；未全文读、未查代码。总库408、原图346，确认Jun181不变。[原始清单与主图](sources/jun-zhou-zhuanfeng-orcid-msp-2026-10-13.json)。
+2026-10-13最新：Judy X Yang注册ORCID两篇Jun论文均已录，公开别名XUEQIN YANG用于新arXiv定位5项，无Jun字段，不把同名记录归给本人；当前整名查询漏已知Phase阳性，不当全集。旧OpenAlex差集5条日文HSI题名疑似既有论文翻译索引，J-GLOBAL原/英文入口503，先转现有survey待核，不确认重复；原839映射为171目录/187Griffith/66survey/415未映射。既有坚果与土壤2018论文各补一张正式出版社主要采集原图，非PLSR流程，只图不全文。总库408/原图348，确认Jun181不变。[书目、翻译线索与两主图](sources/jun-zhou-judy-alias-translations-mainframes-2026-10-13.json)。
 
 2026-10-13共同作者目录与一主图续核：Jocelyn Chanussot的ORCID绑定本人学术主页；官方整名arXiv99/99书目、Crossref ORCID过滤293/293注册作品均只有一条完整Jun Zhou署名，对应已录CRF；正式记录还登记目标Jun的ORCID，未增加作者论文。ORCID过滤缺少已知CasFormer，不能视为作者全集；GIPSA链接403不当作论文全文付费证明。EGU-Net从既有Hong候选转为普通arXiv2021条目，仅固定v1首页与第3页Fig2选读，保留一张像元版整体原框架，不读全文或其他版本；TNNLS不在白名单，只关联正式书目。既有CRF已有可用稿/图，不追加arXiv v1/v2或正式版正文。总库401、原图339，Hong新候选2已录/25待核；Jun确认181（102全文/79摘要）不变。其余97条arXiv摘要未逐篇阅读，不声称作者目录完整；代码只链接。[本轮原始清单与主图](sources/jun-zhou-chanussot-bibliography-egu-2026-10-13.json)。
 
