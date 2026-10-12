@@ -954,3 +954,5 @@
 - 2026-10-12 / jun-zhou-author-bibliography-crosscheck-2026-10-12：新增0/更新2，Huixin完整4/4指定查询一既有Jun、一个其他作者HSI候选与两红外身份定位；不新增范围排除，MSP PDF已下载未读。168已有IDown书目定位与14版本/题名关联分开；DaSSP-Net出版社七作者/机构六名差异留证，提示模块<1%不当全部训练占比，补代码链接；CNHT旧代码审查只作历史。分类328确认/62暂定/0待、审计318，全文101/摘要80不变；另一作者查询仍超时/429，作者目录未闭环。[证据](sources/jun-zhou-author-bibliography-crosscheck-2026-10-12.json)。
 
   同批追加Zhuanfeng Li完整1/1查询：仅已有HyperVision固定v3，十一作者/原摘要对照，不重下载或计新全文；两成功姓名查询共两已录Jun匹配，不能据此称作者全集或DaSSP-Net无公开版本。
+
+- 2026-10-12 / jun-zhou-coauthor-public-version-pagination-2026-10-12：指定共同作者arXiv分页闭环10/10＋10/10＋5/5，共25完整作者/摘要；九已有Jun、零新增作者目录，SUIT四作者早期版不转移Jun身份。两2022其他作者直接HSI候选及免费v1 PDF入资料待办，正文未读；既有MSP/DECSC不重复候选，11其他作者记录仅定位不计范围排除。此前Hanlin/Shenghui失败已恢复，本查询完整不当作者全集完整；代码未访问。[证据](sources/jun-zhou-coauthor-public-version-pagination-2026-10-12.json)。

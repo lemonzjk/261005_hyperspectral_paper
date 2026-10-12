@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。80摘要/101全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
-- 最新：DaSSP-Net保留出版社七作者（机构六名漏列），提示模块<1%纠正全部适配占比，补代码链接。CNHT科学事实仅论文，旧代码审查留历史。机构166own DOI＋2无DOI同题同年覆盖168ID，14版本关联不转移作者。Huixin4/4、Zhuanfeng1/1均无新Jun；MSP为其他作者PDF下载未读，Hanlin/Shenghui超时/429未得结果。两早期异常任务已补、正文待；两2019异DOI章节及SSRN关系待。其他引用/未读PDF见survey，简称989仍19摘要暂排＋1旧决定/969元数据。作者先、历年矩阵后。
+- 最新：DaSSP-Net出版社七作者/机构六名差异留证，提示模块<1%不当全部适配占比；CNHT科学事实仅论文。机构168ID直接书目与14版本关联分开。共同作者arXiv韩林/荣盛辉10/10、熊凤超10/10、Islam/Hou5/5共九已有Jun，无新Jun；两2022其他作者HSI候选PDF下载未读，MSP/DECSC不重复。作者目录、2019异DOI章节/SSRN关系及正文仍待；其他引用/未读PDF见survey。简称989仍19摘要暂排＋1旧决定/969元数据。作者先、历年矩阵后。
