@@ -51236,6 +51236,160 @@
           }
         }
       ]
+    },
+    {
+      "id": "decsc-tgrs-2025",
+      "shortTitle": "DECSC",
+      "title": "Deep Equilibrium Convolutional Sparse Coding for Hyperspectral Image Denoising",
+      "authors": "Jin Ye, Jingran Wang, Fengchao Xiong, Jingzhou Chen, Yuntao Qian",
+      "year": 2025,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2025.3603390",
+      "representation": "谱空HSI二维/三维卷积稀疏表示与隐式固定点；无几何三维输出。",
+      "tags": [],
+      "summary": "以共享2D卷积稀疏空间表示建模跨带共同结构，以独立3D稀疏表示建模局部谱空细节；接Swin和差分注意力，再用DEQ固定点替代固定深度展开，直接去噪HSI。已读固定v2十四页，正式TGRS只核书目。",
+      "input": "含非iid高斯、混合或光谱相关方差噪声的多波段HSI；训练另需对应干净HSI，真实无GT场景按分带推理。",
+      "output": "与输入同谱空分辨率的干净HSI，由跨带共同C与局部特有U两分量之和重建。",
+      "mechanism": "C由各带2D字典K_b与共享S建模，U由3D字典D及独立H建模；双稀疏项交替近端/软阈值更新接学习正则。GIC接窗口/移位窗口Swin，LSU接标准3D及中心/带间/水平/垂直差分卷积与注意力；耦合更新写为DEQ，Anderson求固定点，L=5 phantom gradient近似反向，最后K⊗S*+D⋆H*重建。另有四层VMamba替代Swin实验。",
+      "readingNote": "固定arXiv v2全部14页和59参考条目实际读；只保留最主要的Fig2（第5页）原框架图。按原表保留部分指标落后、真实数据无GT、同景微调及复杂度单位边界；参考44/59重复，六项独立Jun工作均已在目录，不增加周峻181计数。",
+      "paper": "https://doi.org/10.1109/tgrs.2025.3603390",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "正式Crossref精确书目/五作者/单位；固定arXiv v2十四页、59引用及一张主框架图实际阅读",
+      "library": {
+        "categoryIds": [
+          "spectral-denoising",
+          "sparse-dictionary-learning",
+          "transformer",
+          "state-space-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "固定v2十四页及59条引用已读，输入/输出均多波段HSI，直接监督去噪；谱空卷积稀疏字典与Swin为主，附有VMamba替代实验。使用既有光谱去噪、稀疏字典学习、Transformer及状态空间标签。DEQ学习固定点，不贴固定深度展开标签；谱空3D卷积不归几何三维。五作者均无Jun Zhou。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何同时保持HSI跨带共同空间结构、局部谱空细节和非局部自相似，并将卷积稀疏优化写成可学习固定点去噪器？",
+        "datasets": "ICVL：400–700nm、31带，50个512×512测试HSI。Houston2018原1202×4172×48、380–1050nm，保留最后46带，中心512²测试、剩余区域64²微调。真实EO-1为200×400×166，GF-5 CapitalAirport为300×300×166，均400–2500nm且无干净真值；规格依据本稿，未独立访问数据包。",
+        "experimentSetting": "监督MSE；Adam初始lr1e-4、batch8、30epochs，每10epochs减半；4RTX4090及Xeon E5-2650v4。GIC192原子/9×9，LSU96原子/9×9×3，Swin四stage/4×4窗口，Anderson前向与L=5 phantom反向。非iid高斯每带σ∈[0,15]/[0,55]/[0,95]，混合高斯[0,95]+1/3带脉冲/条纹/死线，另光谱相关方差噪声β23.08/η0.157。预训练ICVL后在对应数据微调；真实无GT用分带直接推理。12基线包含SST/SERT/T3SC/MTSNN++及模型方法，PSNR/SSIM越大、SAM越小。",
+        "conclusions": "ICVL非iid[0,95]为45.64dB/.9848/.0387，混合噪声42.67/.9756/.0625；Houston混合38.65/.9581/.0480。相关方差噪声ICVL48.06/.9891/.0298、Houston46.32/.9904/.0225，SERT相应PSNR48.66/48.32更高；低噪ICVL PSNR50.63低于SST50.87，多个SSIM也低于SERT。TableIV Swin/Mamba变体PSNR45.64/45.70、用时36.95/29.71s；原表FLOPS56.39T/65.93T，不能称Mamba FLOPS更低。原稿模块消融支持Swin、差分、注意力与字典配置的增益；真实噪声仅定性，非全指标最优。",
+        "limitations": "全文与一张主框架图仅固定v2十四页；正式TGRS63(2025)1–14只核出版社注册题名/五作者/单位及书目，IEEE页面202未给可读内容，不判付费。两版本关联依据精确同题名/同序五作者的书目匹配，未获出版社版本关系声明。正文标题模板2024不是出版年。未见ICVL训练总样本数，留缺口；Houston同景其余区域微调，不能当零样本跨域。真实EO-1/GF-5无GT，行均值一致不能证明像素级质量或现场泛化。理论无限深与数值固定点/近似反向需区分，未证明任意训练参数全局收敛。TableIV参数行4.29/5.05未印单位，不补M；Mamba更快但印刷FLOPS更高，保留原表。59参考条目含44/59重复及纯MS/非HSI工作，不整批收录，不把所有J.Zhou当Jun。未获取官方代码链接，不猜补；科学代码不下载、审查或复现。",
+        "methodFamilyId": "decsc-gic-lsu-deep-equilibrium",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/pdf/2508.15553v2",
+            "checkedAt": "2026-10-12",
+            "level": "固定v2十四页主文及59参考条目实际阅读；一张主框架图视觉核对",
+            "supports": [
+              "固定v2十四页及59条引用已读，输入/输出均多波段HSI，直接监督去噪；谱空卷积稀疏字典与Swin为主，附有VMamba替代实验。使用既有光谱去噪、稀疏字典学习、Transformer及状态空间标签。DEQ学习固定点，不贴固定深度展开标签；谱空3D卷积不归几何三维。五作者均无Jun Zhou。",
+              "ICVL：400–700nm、31带，50个512×512测试HSI。Houston2018原1202×4172×48、380–1050nm，保留最后46带，中心512²测试、剩余区域64²微调。真实EO-1为200×400×166，GF-5 CapitalAirport为300×300×166，均400–2500nm且无干净真值；规格依据本稿，未独立访问数据包。",
+              "监督MSE；Adam初始lr1e-4、batch8、30epochs，每10epochs减半；4RTX4090及Xeon E5-2650v4。GIC192原子/9×9，LSU96原子/9×9×3，Swin四stage/4×4窗口，Anderson前向与L=5 phantom反向。非iid高斯每带σ∈[0,15]/[0,55]/[0,95]，混合高斯[0,95]+1/3带脉冲/条纹/死线，另光谱相关方差噪声β23.08/η0.157。预训练ICVL后在对应数据微调；真实无GT用分带直接推理。12基线包含SST/SERT/T3SC/MTSNN++及模型方法，PSNR/SSIM越大、SAM越小。",
+              "ICVL非iid[0,95]为45.64dB/.9848/.0387，混合噪声42.67/.9756/.0625；Houston混合38.65/.9581/.0480。相关方差噪声ICVL48.06/.9891/.0298、Houston46.32/.9904/.0225，SERT相应PSNR48.66/48.32更高；低噪ICVL PSNR50.63低于SST50.87，多个SSIM也低于SERT。TableIV Swin/Mamba变体PSNR45.64/45.70、用时36.95/29.71s；原表FLOPS56.39T/65.93T，不能称Mamba FLOPS更低。原稿模块消融支持Swin、差分、注意力与字典配置的增益；真实噪声仅定性，非全指标最优。",
+              "全文与一张主框架图仅固定v2十四页；正式TGRS63(2025)1–14只核出版社注册题名/五作者/单位及书目，IEEE页面202未给可读内容，不判付费。两版本关联依据精确同题名/同序五作者的书目匹配，未获出版社版本关系声明。正文标题模板2024不是出版年。未见ICVL训练总样本数，留缺口；Houston同景其余区域微调，不能当零样本跨域。真实EO-1/GF-5无GT，行均值一致不能证明像素级质量或现场泛化。理论无限深与数值固定点/近似反向需区分，未证明任意训练参数全局收敛。TableIV参数行4.29/5.05未印单位，不补M；Mamba更快但印刷FLOPS更高，保留原表。59参考条目含44/59重复及纯MS/非HSI工作，不整批收录，不把所有J.Zhou当Jun。未获取官方代码链接，不猜补；科学代码不下载、审查或复现。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2Ftgrs.2025.3603390",
+            "checkedAt": "2026-10-12",
+            "level": "出版社注册精确题名、五位完整作者/单位、TGRS63页1–14与2025年",
+            "supports": [
+              "正式五作者按序与固定v2一致，均无Jun；DOI仅正式书目核验，不将最终正文标已读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "decsc-tgrs-2025-formal",
+            "type": "正式TGRS版本",
+            "url": "https://doi.org/10.1109/tgrs.2025.3603390",
+            "doi": "10.1109/tgrs.2025.3603390",
+            "year": 2025,
+            "venue": "TGRS",
+            "volume": "63",
+            "pages": "1-14",
+            "authors": [
+              "Jin Ye",
+              "Jingran Wang",
+              "Fengchao Xiong",
+              "Jingzhou Chen",
+              "Yuntao Qian"
+            ],
+            "readingProgress": "title_only",
+            "relation": "出版社注册精确同题名与同序五作者匹配arXiv；正式最终正文未读，未取得出版社版本关系声明。"
+          },
+          {
+            "id": "decsc-tgrs-2025-arxiv-v2",
+            "type": "固定arXiv v2预印本",
+            "url": "https://arxiv.org/abs/2508.15553v2",
+            "pdfUrl": "https://arxiv.org/pdf/2508.15553v2",
+            "arxivId": "2508.15553",
+            "arxivVersion": 2,
+            "year": 2025,
+            "authors": [
+              "Jin Ye",
+              "Jingran Wang",
+              "Fengchao Xiong",
+              "Jingzhou Chen",
+              "Yuntao Qian"
+            ],
+            "firstSubmittedAt": "2025-08-21T13:35:11Z",
+            "updatedAt": "2025-12-22T07:57:02Z",
+            "readingProgress": "full_text_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-openalex-xiong-decsc-2026-10-12-2508.15553v2.pdf",
+            "relation": "完整阅读的固定十四页；首次2025-08-21、v2更新2025-12-22，正式版本只同题名/完整作者书目匹配。"
+          }
+        ],
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "固定v2十四页及59条引用已读，输入/输出均多波段HSI，直接监督去噪；谱空卷积稀疏字典与Swin为主，附有VMamba替代实验。使用既有光谱去噪、稀疏字典学习、Transformer及状态空间标签。DEQ学习固定点，不贴固定深度展开标签；谱空3D卷积不归几何三维。五作者均无Jun Zhou。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b9dd5fb24728b7bfdf6750cb075974c6ad67bc3c8ae60697169d8173359d44fe",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2508.15553v2"
+          ]
+        }
+      },
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2508.15553v2",
+          "figureLabel": "Figure 2",
+          "caption": "完整DECSC架构及GIC/LSU两稀疏层原图：2D共享稀疏表示接Swin，3D局部表示接差分卷积和注意力，Anderson求固定点。",
+          "verificationNote": "固定arXiv2508.15553v2原图与完整图注，实际核对原页与裁剪全部面板；未重绘，不当正式TGRS版图号/页码。",
+          "path": "figures/decsc-tgrs-2025/framework-1.png",
+          "width": 1545,
+          "height": 759,
+          "verifiedAt": "2026-10-12",
+          "sha256": "a153f60347efe41388c5ce96501422cb7c3d47d8b3ea3fd326929986b4a0f5af",
+          "attribution": "Jin Ye, Jingran Wang, Fengchao Xiong, Jingzhou Chen, Yuntao Qian · arXiv2508.15553v2 (2025)",
+          "page": 5,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2508.15553v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              49,
+              52,
+              564,
+              305
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@article{decsc_tgrs_2025,\n  title = {Deep Equilibrium Convolutional Sparse Coding for Hyperspectral Image Denoising},\n  author = {Jin Ye and Jingran Wang and Fengchao Xiong and Jingzhou Chen and Yuntao Qian},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  volume = {63},\n  pages = {1--14},\n  year = {2025},\n  doi = {10.1109/tgrs.2025.3603390}\n}\n"
     }
   ],
   "datasets": [
@@ -51558,7 +51712,8 @@
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-arxiv-2609-37340",
         "spectraltrack-tip-2025",
-        "hypersigma-tpami-2025"
+        "hypersigma-tpami-2025",
+        "decsc-tgrs-2025"
       ],
       "history": [
         {
@@ -51749,7 +51904,8 @@
         "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022",
         "zhou-scholar-multi-task-attentional-u-net-for-hyperspec-2023",
         "zhou-scholar-iterative-refinement-network-for-hyperspec-2023",
-        "hypersigma-tpami-2025"
+        "hypersigma-tpami-2025",
+        "decsc-tgrs-2025"
       ],
       "history": [
         {
@@ -52770,7 +52926,8 @@
         "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
         "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
         "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022",
-        "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022"
+        "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022",
+        "decsc-tgrs-2025"
       ],
       "history": [
         {
@@ -54826,7 +54983,8 @@
         "zhou-dblp-arxiv-2412-00283",
         "zhou-dblp-arxiv-2404-00272",
         "hucrtrack-tip-2026",
-        "dualmamba-tgrs-2025"
+        "dualmamba-tgrs-2025",
+        "decsc-tgrs-2025"
       ],
       "history": [
         {

@@ -20,11 +20,17 @@
 
 新增优先身份待办：Phase-Locked SNR稿固定v2的PDF首页五作者含Jun Zhou，官网/API却仅Judy X Yang；重取PDF与旧文件字节相同。八页全文、框架及表图已整理，撤销旧“无Jun”分流；原稿无单位/作者ORCID，Griffith单篇归属及名单冲突未明，暂不增加已确认181目录。IF103225出版社明确OA Full，但实际正文/作者单位仍未取得，继续免费材料待办，不标付费。[本轮证据](sources/jun-zhou-if-phase-author-conflict-2026-10-12.json)。
 
+资料整理约定已简化（用户2026-10-12最新要求）：每篇只需一个可用版本、一张最主要的原框架图；只读确认作者、高光谱范围和定位图必要内容，不逐页阅读全文、不逐版本检查、不详细整理实验。以下此前已完成的全文阅读事实保留；其他版本正文/其他图/实验细节不再列后续待办。DECSC本轮只保留固定v2的Fig2第5页一张主框架图。
+
+最新作者差集/共同作者续核：OpenAlex混并档案834与作品查询833的差1已定位至2024年profile62/查询61，规范作者字段与include_xpac=true两次61/61且ID与旧2024全同，未定位额外work或原因；ORCID入口新6/6也与旧同ID，元数据比较不作六篇全文阅读。Fengchao Xiong精确整名、不加主题的arXiv查询成功10/10，完整十原摘要已读：七含Jun均归已有七条，SUIT预印本四作者不覆盖正式五作者；其余DECSC和BHCL均无Jun。限定查询不闭合姓名变体/正式发表全集，839/420差集未逐篇排除。[本轮证据](sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json)。
+
+最新领域材料分流：DECSC固定2508.15553v2十四页、59参考条目和Fig1/2/3一张主要原图整理，直接HSI去噪；正式TGRS63(2025)1–14、DOI10.1109/tgrs.2025.3603390与同序五作者书目匹配，正式最终正文/出版社版本声明未核。参考44/59重复，六独立Jun引文均已录，周峻仍181（102全文/79摘要）。Swin/VMamba及复杂度、部分指标落后SERT、真实EO-1/GF-5无GT与Houston同景微调按稿记录。BHCL2512.24074v1仅全文15页中的1/6/11页选读，ShipRSImageNet/FAIR1M物理通道与直接HSI未明，单列范围候选，不猜纯RGB/MS，不记全文。[本轮材料与边界](sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json)。
+
 最新作者/领域材料：图对比聚类TGRS2024.3464648正式九作者全核，无Jun，保留领域材料候选；FDNet/GPINet/SAPNet当前机构只有LICENSE/SWORD无ORIGINAL，未取得新原稿，范围待。HyperSIGMA v2四十页主文/219引用/附录与九原框架图全部整理，按正式TPAMI合格来源入库并关联arXiv；22作者无Jun，ref120的L0复原已经在作者目录，不新增181计数。全部任务以HSI为主，纯MS迁移和正式最终稿未读边界另记，代码只URL。[本轮证据](sources/jun-zhou-graph-hypersigma-reading-2026-10-12.json)。
 
 最新范围/资料续核：光谱编辑DOI10.1049/cvi2.12242的Griffith免费VoR四PDF页全读，两个HSI分类工作为实质内容、另三论文是其他模态；Jun单位与传记已核，但IET CV来源外，继续合格版本候选，不扩大例外。M2正式DOI10.1109/DICTA51227.2020.9363420及完整五作者/单位已核，Jun明确Griffith，修正CV作者顺序；机构只有SWORD，完整原摘要不交代HSI输入，范围/正式全文和合格版待。HSI Primer v2二十四页/99引用/四综述原图已整理入arXiv库，九作者无Jun，材料跟踪/CasFormer两个引用已有目录；不因正式Nature Reviews Methods Primers或表内MS/点光谱扩大白名单/范围。[本轮证据](sources/jun-zhou-editorial-m2-primer-reading-2026-10-12.json)。
 
-共同作者目录最新续核：Fengchao Xiong主要CV当前39精选行，其中24Jun署名对应21库、1旧候选与2新待核；HOT-Review/SEE-Net两题名变体已归既有条目，避免重复。新IET CV光谱视觉编辑DOI10.1049/cvi2.12242的Jun明确Griffith，但直接HSI范围与合格版本未核；M2-Net光学遥感输入/身份/书目待，不自动收录。五条共用IEEE11454602仅NTF题名正确，不给其他论文挂错PDF。限定Xiong review/tracking的84/84仅元数据及三个既有HSI原摘要，无主题作者查询429仍待；Huanfa出版页当前模板与UCL检索403不证明无IF稿。无新增作者全文/目录。[本轮证据](sources/jun-zhou-xiong-cv-huanfa-directory-2026-10-12.json)。
+共同作者目录最新续核：Fengchao Xiong主要CV当前39精选行，其中24Jun署名对应21库、1旧候选与2新待核；HOT-Review/SEE-Net两题名变体已归既有条目，避免重复。新IET CV光谱视觉编辑DOI10.1049/cvi2.12242的Jun明确Griffith，但直接HSI范围与合格版本未核；M2-Net光学遥感输入/身份/书目待，不自动收录。五条共用IEEE11454602仅NTF题名正确，不给其他论文挂错PDF。旧限定Xiong review/tracking的84/84仅元数据及三个既有HSI原摘要；当时无主题查询429，当前精确整名10/10见上段，两查询集合不同；Huanfa出版页当前模板与UCL检索403不证明无IF稿。无新增作者全文/目录。[本轮证据](sources/jun-zhou-xiong-cv-huanfa-directory-2026-10-12.json)。
 
 作者差集核验（资料进度见上段）：420既有未匹配元数据有309摘要索引，指定关键词只有三完整二级摘要定位实际读，不据此排除其他论文。Tiangong同题JAG03.013正式年改2018、02.023保持2017，异DOI/卷页仍独立待核，均来源外且Jun单位未得。共同作者Yokoya主要学术目录206行仅解析，两J.Zhou经正式完整名单核为Jingchun Zhou与Jinliu Zhou，均非目标Jun。领域CoMiX v1十六页/三图已整理入普通TGRS库，无Jun；当时HyperSIGMA与Primer仅首页选读，现已分别完成40页/9图、24页/4图整理入库；不据共同作者页面缺题名认定HVOT无版本。[本轮证据](sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json)。
 

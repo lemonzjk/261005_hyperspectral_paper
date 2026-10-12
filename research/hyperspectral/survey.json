@@ -11212,6 +11212,55 @@
       "year": 2026,
       "sourceSnapshot": "sources/jun-zhou-graph-hypersigma-reading-2026-10-12.json",
       "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-openalex-xiong-decsc-2026-10-12-openalex",
+      "venue": "OpenAlex author profiles / official API documentation",
+      "keywordGroup": "Jun Zhou aggregate count discrepancy by year",
+      "keywords": [
+        "A5100781212",
+        "A5124921602",
+        "publication_year:2024"
+      ],
+      "url": "https://api.openalex.org/authors/A5100781212",
+      "method": "刷新两个档案/查询总数，比较旧833唯一works的年度分布；2024用canonical authorships过滤与include_xpac=true分别完整查询61/61并比对ID。ORCID入口6/6仅完整元数据ID比较；官方作者/过滤文档读取相关段落，非全部作品范围审核。",
+      "pagination": "旧混并5页833/833；新2024两次61/61同ID，profile62；新ORCID6/6与旧同ID。",
+      "candidateCount": 0,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "聚合差1定位2024；未找到额外ID或查明原因",
+      "gaps": [
+        "混并839并集不能整批归目标作者；420差集未逐篇排除。",
+        "差1原因未明，无候选ID；include_xpac本次同61不证明任意全库范围。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json",
+      "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-openalex-xiong-decsc-2026-10-12-xiong",
+      "venue": "arXiv / Crossref / TGRS",
+      "keywordGroup": "Fengchao Xiong exact quoted author without subject restriction",
+      "keywords": [
+        "au:\"Fengchao Xiong\""
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=au%3A%22Fengchao%20Xiong%22&start=0&max_results=200",
+      "method": "指定精确整名无主题查询10/10，十完整原摘要实际读；七Jun对应已有七库，另SUIT预印本四作者对应既有正式五作者；DECSC免费v2与一张主框架图及同题名/作者TGRS书目归一个目录，BHCL物理输入未明单列候选。科学代码只URL。",
+      "pagination": "精确au整名10/10，无后页；DECSC14/14页、59参考与一张主框架图；BHCL仅PDF1/6/11三页。",
+      "candidateCount": 10,
+      "reviewedCount": 9,
+      "status": "partial",
+      "statusLabel": "指定作者查询10条全定位；八既有/一新增领域论文/一范围候选",
+      "gaps": [
+        "整名10/10不等于作者全部发表、所有姓名变体或Griffith Jun全集；旧au宽词84结果与此查询范围不同。",
+        "BHCL缺直接HSI/物理通道证据，不能凭遥感收录或猜RGB排除。",
+        "Jun身份/来源旧待项仍未闭环；后续每篇只找一个版本及一张主框架图。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json",
+      "collectionScope": "active"
     }
   ],
   "candidates": [
@@ -46132,17 +46181,22 @@
     {
       "title": "Deep Equilibrium Convolutional Sparse Coding for Hyperspectral Image Denoising",
       "authors": "Jin Ye, Jingran Wang, Fengchao Xiong, Jingzhou Chen, Yuntao Qian",
-      "venue": "arXiv",
+      "venue": "TGRS / arXiv",
       "year": 2025,
       "url": "https://arxiv.org/abs/2508.15553v2",
       "arxivId": "2508.15553",
       "discoveredAt": "2026-10-12",
       "searchId": "jun-zhou-initial-qian-suit-version-reading-2026-10-12-qian",
-      "decision": "pending",
-      "reason": "完整摘要直接HSI去噪：DEQ固定点结合共享2D/独立3D卷积稀疏编码、Transformer及细节增强；作者不含Jun Zhou，留作作者专项后的全领域候选。",
-      "readingProgress": "abstract_read",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-initial-qian-suit-version-reading-2026-10-12.json",
-      "collectionScope": "active"
+      "decision": "included",
+      "reason": "固定v2十四页已读，仅保留一张主要原框架图，直接HSI去噪；正式同题名/同序五作者TGRS63(2025)1–14书目已核，关联同一条目。五作者无Jun，不计作者专项。",
+      "readingProgress": "full_text_read",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json",
+      "collectionScope": "active",
+      "paperId": "decsc-tgrs-2025",
+      "doi": "10.1109/tgrs.2025.3603390",
+      "scopeStatus": "direct_hyperspectral_denoising_verified",
+      "identityStatus": "five_complete_authors_and_institutions_no_Jun",
+      "versionRelationBoundary": "同题名/完整同序作者书目匹配，正式最终正文未读。"
     },
     {
       "title": "SUIT: Spatial-Spectral Union-Intersection Interaction Network for Hyperspectral Object Tracking",
@@ -49202,6 +49256,29 @@
       "sourcePolicyStatus": "claimed_optics_express_registered_metadata_pending",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-xiong-cv-huanfa-directory-2026-10-12.json",
       "primaryCVRow": 1
+    },
+    {
+      "title": "Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images",
+      "authors": "Jingzhou Chen, Dexin Chen, Fengchao Xiong, Yuntao Qian, Liang Xiao",
+      "venue": "arXiv",
+      "year": 2025,
+      "url": "https://arxiv.org/abs/2512.24074v1",
+      "arxivId": "2512.24074",
+      "searchId": "jun-zhou-openalex-xiong-decsc-2026-10-12-xiong",
+      "discoveredAt": "2026-10-12",
+      "decision": "pending",
+      "reason": "完整摘要及免费PDF15页中的1/6/11三页实际选读，五作者无Jun，ShipRSImageNet/FAIR1M细粒度检测但未确认实际HSI输入/物理通道。不凭遥感字样纳入，不猜RGB或纯MS排除；其余页未记全文。",
+      "readingProgress": "abstract_read",
+      "selectedPdfPagesRead": [
+        1,
+        6,
+        11
+      ],
+      "identityStatus": "arxiv_and_pdf_five_authors_no_Jun",
+      "scopeStatus": "no_direct_hyperspectral_evidence_channel_count_unverified",
+      "sourcePolicyStatus": "arxiv_eligible_scope_unresolved",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json",
+      "collectionScope": "active"
     }
   ],
   "batches": [
@@ -55971,6 +56048,34 @@
       "gaps": [
         "Jun181仍102全文/79摘要，目录未闭环。",
         "三作者分割范围与图聚类材料待；历史全领域覆盖继续。"
+      ]
+    },
+    {
+      "id": "jun-zhou-openalex-xiong-decsc-2026-10-12",
+      "date": "2026-10-12",
+      "searchIds": [
+        "jun-zhou-openalex-xiong-decsc-2026-10-12-openalex",
+        "jun-zhou-openalex-xiong-decsc-2026-10-12-xiong"
+      ],
+      "paperIds": [
+        "decsc-tgrs-2025"
+      ],
+      "new": 1,
+      "updated": 0,
+      "duplicates": 8,
+      "excluded": 0,
+      "pending": 1,
+      "newFullTextReadingCount": 1,
+      "catalogFullTextReadingCount": 1,
+      "pdfPagesRead": 17,
+      "fullTextPdfPagesRead": 14,
+      "selectedCandidatePdfPagesRead": 3,
+      "figuresAdded": 1,
+      "sourceSnapshot": "sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json",
+      "readingBoundary": "用户最新约定每篇一个可用版本、一张主框架图，只读作者/范围/定位图必要内容。本轮此前已实际读DECSC v2十四页和BHCL选读三页，阅读事实保留；最终只保留DECSC Fig2主框架图，其他版本/图/实验不列后续待办。",
+      "gaps": [
+        "周峻181/102全文/79摘要不变，未完成作者目录。",
+        "新领域一篇，不作全领域年度完成；混并420差集、源外/作者冲突原待项仍待。"
       ]
     }
   ],
