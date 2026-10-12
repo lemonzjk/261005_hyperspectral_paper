@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID2、DBLP9、Scholar6、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、9未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
-- 最新：OpenAlex6＋833共839源项（171目录/187机构/61候选/420差集）；多ORCID档案Jun Wei Zhou的834/833差1待，不改目标身份，八候选未决。IF103225身份/正文及SSRN5009494关系、HVOT SSRN6802779合格版本先。共同作者HucrTrack/SpectralTrack摘要已读、正文待；DualMamba v1十五页/四图读，同五作者TGRS2025关联，Zhou是Jingyi非Jun；Mamba-UNet两免费图输入掩膜，谱带/算子未明。2019杂草、UEMM正式版、分割/红树林输入、异DOI章/SSRN/ISTA待。简称989为134摘要＋1旧决定/854元数据；作者差集/可获取材料先、历年矩阵后。
+- 最新：OpenAlex6＋833共839源项（171目录/187机构/61候选/420差集）；多ORCID档案Jun Wei Zhou的834/833差1待，不改目标身份，八候选未决。IF103225身份/正文及SSRN5009494关系、HVOT SSRN6802779合格版本先。IF出版社标OA但正文接口受限；Phase-Locked v2八页/框架已读，PDF五作者含Jun、官方仅Judy，撤销无Jun分流，身份冲突优先核；DualMamba全文、Mamba-UNet输入谱带待见覆盖记录。2019杂草、UEMM正式版、分割/红树林输入、异DOI章/SSRN/ISTA待。简称989为134摘要＋1旧决定/854元数据；作者差集/可获取材料先、历年矩阵后。

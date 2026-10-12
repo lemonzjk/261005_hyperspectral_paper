@@ -18,6 +18,8 @@
 
 目标作者是Griffith的周峻：ORCID `0000-0001-5822-8233`、DBLP `99/3847-1`、Scholar `6hOOxw0AAAAJ`。同名作者必须逐篇核验，不按姓名字符串自动合并。
 
+新增优先身份待办：Phase-Locked SNR稿固定v2的PDF首页五作者含Jun Zhou，官网/API却仅Judy X Yang；重取PDF与旧文件字节相同。八页全文、框架及表图已整理，撤销旧“无Jun”分流；原稿无单位/作者ORCID，Griffith单篇归属及名单冲突未明，暂不增加已确认181目录。IF103225出版社明确OA Full，但实际正文/作者单位仍未取得，继续免费材料待办，不标付费。[本轮证据](sources/jun-zhou-if-phase-author-conflict-2026-10-12.json)。
+
 三份既有甘蔗稿本次全文升级共29 PDF页：IVCNZ2021接受稿7页、JAFR2024正式VoR12页、arXiv2501.16700v1共10页；新增三张原方法图。2024 §2.4.1/Fig4/ref36明确沿用2021 DSAB，与已读ASSCT2023仅作方法族关联，未确认会议扩展关系；161/150/150带、200/3245/1828图及各自日期/划分分别保留。2025为八品种、七个预定义花叶病抗性评级，纠正“地物分类”，新增“植物抗病性评级”；实际11带及传感器细节缺失保留，不猜密集全谱规格或感染标签。原TableI计数、学习率措辞、植株隔离及阈值选择限制按原文记录；不查代码。
 
 原31项机构资料队列已完成31份：21 AM共294页、6 VoR共92页、4份未标版本机构稿50页，共66张原图（含采集装置与输出示例，SMDS图选固定arXiv v2）。该冻结队列已无摘要级待办，其他可获取资料继续整理。另甘蔗arXiv10页、SSUMamba/SSRT预印本26页及SMDS v2对应12页不混入此冻结队列。作者目录与正式版本仍未闭环，正文补齐不作作者全集完成声明。
@@ -271,3 +273,5 @@ Yuntao Qian无主题姓名查询27条完整返回：五条含完整Jun Zhou均�
 - [新候选主要来源续核及共同作者跟踪书目](sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json)：IF共同作者ORCID只补书目，Jun身份/SSRN关系继续；新收录HucrTrack与SpectralTrack两篇普通白名单TIP，两套完整作者均无Jun，专项仍181。两正式完整摘要已读，无新正文/图；新TGRS聚类候选待原摘要/作者。
 
 作者差集材料续核：Mamba-UNet出版社免费Fig.1/4确认LR/Ref/地物掩膜输入与HF/LF分支，分解算子未写，撤回旧Fourier推断；实际谱带/掩膜协议和合格版本仍待，付费正文未读。共同作者引出的DualMamba固定arXiv v1十五页/四方法原图已整理，匹配同五Fudan作者TGRS2025正式书目；Jingyi Zhou非Jun，另一HSI–LiDAR IGARSS Dualmamba已有候选继续来源未决，不误并。其引文[2]J. Zhou由七完整作者/单位确认同为Jingyi，领域待办不计目标作者缺口。专项181及102全文/79摘要保持；代码只链接。[证据](sources/jun-zhou-dualmamba-mamba-primary-materials-2026-10-12.json)。
+
+- [ORCID刷新、IF出版社OA状态与Phase-Locked原稿作者冲突](sources/jun-zhou-if-phase-author-conflict-2026-10-12.json)：ORCID263组269摘要与旧JSON相同；IF仅coredata、未读正文。Phase-Locked v2八页及原框架只候选材料，不混入库内全文/原图计数。官方单作者不代表PDF无Jun，反之PDF姓名不替代Griffith单位证据；表头、选带协议及图注疑点原样保留，代码只链接。

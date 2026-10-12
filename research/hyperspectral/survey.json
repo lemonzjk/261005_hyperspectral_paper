@@ -9782,15 +9782,19 @@
       "candidateCount": 4,
       "reviewedCount": 1,
       "status": "partial",
-      "statusLabel": "四领域候选中DualMamba已按v1全文和正式书目收录；其他三篇待核",
+      "statusLabel": "DualMamba已收录；Phase-Locked v2全文含Jun而元数据仅单作者，改为作者优先候选；另两领域稿待核",
       "gaps": [
-        "DualMamba v1已读十五页及四图，正式最终正文未读；其他三候选的实际材料与版本继续待核。"
+        "Phase-Locked v2全文及框架已整理，官方单作者/原稿五作者冲突及Griffith单篇身份待；不能继续当无Jun领域候选。",
+        "另两跟踪候选原始材料/版本和DualMamba最终正式正文待。"
       ],
       "date": "2026-10-12",
       "year": 2026,
       "sourceSnapshot": "sources/jun-zhou-source-version-crosscheck-2026-10-12.json",
       "collectionScope": "active",
-      "followupEvidence": "sources/jun-zhou-dualmamba-mamba-primary-materials-2026-10-12.json"
+      "followupEvidence": "sources/jun-zhou-dualmamba-mamba-primary-materials-2026-10-12.json",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-if-phase-author-conflict-2026-10-12.json"
+      ]
     },
     {
       "id": "jun-zhou-feature-boundary-public-materials-2026-10-12-materials",
@@ -46168,20 +46172,103 @@
       "discoveredAt": "2026-10-12",
       "indexedAt": "2026-10-12",
       "decision": "pending",
-      "reason": "共同作者书目/官方arXiv引出的其他作者直接HSI候选，排在周峻目录之后；不计作者缺口，不按题名直接入库。",
-      "scopeStatus": "direct_hyperspectral_abstract_confirmed",
-      "identityStatus": "complete_contributors_no_jun_zhou",
-      "sourcePolicyStatus": "eligible_source_scope_and_version_review_pending",
-      "readingProgress": "abstract_read",
-      "metadataStatus": "primary_arxiv_v2",
+      "reason": "固定v2八页全文与原图确认直接HSI矿物选带/解混。官网及官方API只列Judy X Yang，固定v2 PDF列五作者含Jun Zhou；重取PDF与原存字节一致。撤销旧“无Jun”分流，按潜在作者漏录优先核。原稿未列单位/作者ORCID，Griffith单篇身份和作者名单冲突仍未闭环，暂不入catalog，不将共作者组合当身份定论。",
+      "scopeStatus": "direct_hyperspectral_full_text_confirmed",
+      "identityStatus": "pdf_contains_Jun_Zhou_but_arxiv_metadata_single_author_conflict",
+      "sourcePolicyStatus": "eligible_arxiv_author_list_identity_conflict_pending",
+      "readingProgress": "full_text_read",
+      "metadataStatus": "current_arxiv_v2_single_author_vs_pdf_five_authors",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-source-version-crosscheck-2026-10-12.json",
-      "boundary": "白名单或arXiv来源；范围细节/版本去重及公开材料仍待整理。",
+      "boundary": "八页全文已读，只对应v2；作者身份/名单冲突待核，未新增作者目录或catalog全文计数。论文结果/图注冲突按原稿记录，代码不检查。",
       "pdfAccess": {
         "url": "https://arxiv.org/pdf/2508.00539v2",
         "downloaded": true,
-        "bodyRead": false,
-        "localFile": "research/hyperspectral/sources/jun-zhou-source-version-crosscheck-2026-10-12-2508.00539v2.pdf"
-      }
+        "bodyRead": true,
+        "localFile": "research/hyperspectral/sources/jun-zhou-source-version-crosscheck-2026-10-12-2508.00539v2.pdf",
+        "pagesRead": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "sha256": "dc9f1da1e5bb18478717486e50397ee05210a7ddda6967c0530f4c82bbcbc100",
+        "freshDownloadSameBytes": true
+      },
+      "authorsInPdf": [
+        "Judy X Yang",
+        "Guanyiman Fu",
+        "Jing Wang",
+        "Zekun Long",
+        "Jun Zhou"
+      ],
+      "authorsInOfficialMetadata": [
+        "Judy X Yang"
+      ],
+      "authorAffiliationStatus": "not_stated_in_pdf_or_arxiv_metadata",
+      "priority": "potential_target_author_omission",
+      "materialReadings": {
+        "input": "Cuprite AVIRIS高光谱立方体，作者描述250×190像素、188波段、0.4–2.5µm；论文把250×190称spatial resolution，实际是图像大小，未给地面空间分辨率。USGS实验室12矿物参考光谱仅用于光谱一致性验证；具体样品/库版本与匹配对应未给。",
+        "output": "逐波段SNR阈值选择的子集、12个KMeans中心端元、逐像素NNLS非负丰度向量及矿物空间显示；不是几何重建或监督地物分类网络。Fig.7实际展示12类别分类图，不能直接作为前三类连续丰度图证据。",
+        "mechanism": "对每像素谱做Savitzky–Golay平滑，按跨像素均值µ与标准差σ计算10log10(µ²/σ²)，保留SNR≥15dB波段；各保留谱L2归一化，KMeans K=12取中心端元，NNLS解非负丰度，再与参考矿物谱比余弦/RMSE。phase-locked是正文借用地震相干概念的SG/SNR类比，未给显式相位差估计、参考锁相测量或独立传感噪声标定。NNLS式只约束a≥0，未见sum-to-one约束。",
+        "experimentSetting": "单Cuprite数据集，188波段，§IV-D报告阈值15dB保留96波段；Fig.6/§IV-G称主要92–187。KMeans12端元，SG窗口/多项式阶数、随机种子、参考库样品、端元对应及对照滤波参数未给。Table I比较Fourier/Wavelet/Phase-Locked，标题和正文另称150-band subset，不能与96带混为统一协议；无独立矿物检测AUC/定位误差/连续丰度真值。",
+        "resultsAsPrinted": {
+          "tableLabel": "Table I",
+          "pdfPage": 7,
+          "subsetTitle": "150-band subset",
+          "columns": [
+            "Full Bands CosSim",
+            "Full Bands RMSE",
+            "Selected Bands CosSim",
+            "Selected Bands SNR"
+          ],
+          "rows": [
+            {
+              "method": "Fourier Transform",
+              "values": [
+                0.952,
+                0.5669,
+                0.8649,
+                0.5305
+              ]
+            },
+            {
+              "method": "Wavelet Transform",
+              "values": [
+                0.8757,
+                0.5771,
+                0.9295,
+                0.5049
+              ]
+            },
+            {
+              "method": "Phase-Locked Filtering",
+              "values": [
+                0.8932,
+                0.8932,
+                0.9952,
+                0.4502
+              ]
+            }
+          ]
+        },
+        "conclusions": "按印式，选带CosSim为0.9952，高于两对照；全带CosSim0.8932低于Fourier0.9520、全带RMSE0.8932高于两个对照，不能称所有方案均优。末列标题SNR而正文称0.4502是最低RMSE，表头/语义未明，不擅自改列名。第1/4页另称RMSE0.25–0.35，与上述数字的关系未知。",
+        "figureConflicts": [
+          "Fig.3图注称USGS12矿物参考谱，图内标题为Cuprite Sample Spectral Curves (12 Samples,188 Bands)、图例Pixel1–12，实际是否独立实验室参考未知。",
+          "Fig.4正文称原/平滑代表像素对比，图内是Spectral Curves for First 500 Pixels，未单独标原/平滑对。",
+          "Fig.5正文称solid/dashed叠加对照，图实际为两独立面板，原谱Reflectance约0–0.6、归一化端元约0–0.1，不能直接视觉判精确重合；端元与参考的对应/重采样缺失。",
+          "Fig.7图注/正文称Classes0–2的NNLS丰度图，图实际为Classification Map (12 Classes via W1_custom)，颜色条Class ID0–11，无三个连续丰度面板。"
+        ],
+        "limitations": "单数据集/未独立空间矿物真值、跨像素方差不能直接当独立测量噪声、阈值/SG/KMeans与参考匹配细节不足；96/150选带协议、表头/正文指标及图注/图内矛盾均保留，不检查代码或推测纠错。"
+      },
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-if-phase-author-conflict-2026-10-12.json"
+      ],
+      "frameworkSourcePath": "research/hyperspectral/sources/jun-zhou-if-phase-author-conflict-2026-10-12-phase-fig1.png",
+      "frameworkSourceBoundary": "候选Fig.1原图，仅作为资料证据，不进入catalog框架队列。"
     },
     {
       "title": "Visual enhancement of old documents with hyperspectral imaging",
@@ -48256,7 +48343,7 @@
       "discoveredAt": "2026-10-12",
       "indexedAt": "2026-10-12",
       "decision": "pending",
-      "reason": "Information Fusion在白名单；Crossref正式题名、五作者、卷124/103225/2025-12已核。OpenAlex完整二级摘要读，原始摘要/正文未得，Jun单篇机构或目标DBLP pid待核。",
+      "reason": "Information Fusion白名单；正式Crossref五作者及卷124/103225已核，完整二级摘要已读。新增出版社API coredata明确openaccessArticle=true、openaccessType=Full，但未返回摘要/作者单位/正文；FULL与abstract接口401、OA PDF接口403验证页。Jun单篇Griffith身份、实际公开正文和SSRN5009494关系继续待核，不能标付费或无免费版。",
       "readingProgress": "abstract_read",
       "readingSourceBoundary": "IF只有完整二级索引摘要，SSRN跟踪为完整注册原摘要，Mamba为出版社完整原摘要；其他优先候选仅书目。",
       "identityStatus": "unverified_single_paper_primary_affiliation",
@@ -48264,9 +48351,19 @@
       "evidencePath": "research/hyperspectral/sources/jun-zhou-openalex-author-inventory-2026-10-12.json",
       "relatedDoi": "10.2139/ssrn.5009494",
       "followupEvidencePaths": [
-        "research/hyperspectral/sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json"
+        "research/hyperspectral/sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json",
+        "research/hyperspectral/sources/jun-zhou-if-phase-author-conflict-2026-10-12.json"
       ],
-      "followupStatus": "pending_identity_or_qualified_version"
+      "followupStatus": "pending_identity_or_qualified_version",
+      "publisherAccessStatus": {
+        "url": "https://api.elsevier.com/content/article/pii/S1566253525002982?httpAccept=text%2Fxml",
+        "publisherMarksOpenAccess": true,
+        "metadataRead": true,
+        "bodyRead": false,
+        "authorsReturned": false,
+        "fullViewStatus": 401,
+        "pdfStatus": 403
+      }
     },
     {
       "title": "DINOFuse: A Discriminator-Constrained, Nash-Equilibrium-Optimized Fusion Network",
@@ -55067,6 +55164,33 @@
         "IF103225身份/正文及SSRN关系、SSRN6802779合格版本与其他作者目录差集继续。",
         "正式DualMamba最终正文与引文[2]原始材料、其余已下载领域PDF尚待整理。",
         "作者目录与全领域历年白名单/arXiv矩阵仍未闭环。"
+      ]
+    },
+    {
+      "id": "jun-zhou-if-phase-author-conflict-2026-10-12",
+      "date": "2026-10-12",
+      "searchIds": [
+        "jun-zhou-source-version-crosscheck-2026-10-12-coauthors",
+        "jun-zhou-openalex-author-inventory-2026-10-12"
+      ],
+      "paperIds": [],
+      "new": 0,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 2,
+      "updatedCandidates": 2,
+      "newFullTextReadingCount": 1,
+      "catalogFullTextReadingCount": 0,
+      "pdfPagesRead": 8,
+      "figuresAdded": 0,
+      "candidateFiguresOrganized": 1,
+      "sourceSnapshot": "sources/jun-zhou-if-phase-author-conflict-2026-10-12.json",
+      "readingBoundary": "Phase-Locked v2八页全文与原图只记候选材料，未入catalog或增加Jun确认目录。IF出版社仅书目/OA标记，不当原摘要或正文。目标ORCID263组269条与原JSON完全相同，不等作者全集。",
+      "gaps": [
+        "原稿五作者含Jun/官方仅单作者冲突、Griffith单篇单位及版本去重未闭环。",
+        "IF Jun身份/免费正文与SSRN5009494关系、HVOT SSRN6802779合格版本仍待。",
+        "作者目录及全领域历年白名单/arXiv矩阵继续，不以本轮候选阅读结束。"
       ]
     }
   ],
