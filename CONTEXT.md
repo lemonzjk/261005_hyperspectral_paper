@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词待核。
-- 最新：Shutao Li整名arXiv35无Jun，6新HSI已录双空间分类/Gabor-Nets、待4；各仅v1首页/一主图，无新全文。Vivone18无Jun，10新已录INFN/待9；Hong27新已录2/待25。目标ORCID Crossref120均映射（77目录/41排除/2待核），非全集；SOC两SSRN书目归并、来源待。Chanussot99/293唯一Jun为已有CRF。EGU-Net按arXiv收录，TNNLS只书目。CasFormer主图齐。IF103225普通库/SSRN去重，Jun身份待，网页182含1未核，确认专项181。已得图不追全文。UEMM/AdvMIM代表稿排除；OpenAlex差集/差1、HVOT/Phase、编辑/M2、三分割输入待。作者先、历年矩阵后。
+- 最新：Xin Li+Zhou arXiv172两Jun均旧排除；整名双字段AND0漏已知阳性，不作排除。Huanfa出版模板/UCL渲染404，无IF身份新证据。Shutao6新已录2/待4，Vivone10新已录1/待9，Hong27新已录2/待25。目标ORCID Crossref120均映射77目录/41排除/2待，非全集；SOC两SSRN归并、来源待。Chanussot唯一Jun已有CRF。EGU-Net按arXiv，TNNLS只书目；CasFormer主图齐。IF普通库/SSRN去重，Jun待，网页182含1未核，确认181。已得图不追全文。UEMM/AdvMIM代表稿排除；OpenAlex差集/差1、HVOT/Phase、编辑/M2、三分割输入待。作者先、历年矩阵后。

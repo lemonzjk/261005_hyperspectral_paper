@@ -11485,6 +11485,34 @@
         "周峻作者目录身份/范围候选与其他姓名/来源、历年白名单矩阵仍未闭环。"
       ],
       "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-xin-coauthor-query-control-2026-10-13",
+      "venue": "arXiv coauthor search with positive control",
+      "year": 2026,
+      "keywordGroup": "author-coauthor-query-control",
+      "date": "2026-10-13",
+      "method": "完整双字段整名AND的零结果用已知RemoteTrimmer作阳性对照；改用Xin Li整名+Zhou姓172项完整作者字段筛选，两Jun项核原摘要且均已有范围排除。",
+      "keywords": [
+        "au:\"Xin_Li\" AND au:\"Jun_Zhou\"",
+        "au:\"Xin_Li\" AND au:Zhou",
+        "id:2412.12603"
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=au%3A%22Xin_Li%22%20AND%20au%3AZhou&start=0&max_results=200&sortBy=submittedDate&sortOrder=descending",
+      "pagination": "宽姓组合total172、唯一172，start0/max200；整名AND0与阳性论文冲突，不能声称组合无命中。",
+      "titleCount": 172,
+      "candidateCount": 0,
+      "reviewedCount": 0,
+      "existingFullNameReviewedCount": 2,
+      "status": "partial",
+      "statusLabel": "172指定书目有2完整Jun，均旧范围排除；整名AND零返回不可靠，作者全集未闭环",
+      "sourceSnapshot": "sources/jun-zhou-xin-coauthor-query-control-2026-10-13.json",
+      "gaps": [
+        "其他170原摘要未读，零字面HSI题名不代表所有项范围外。",
+        "范围排除不等于同名作者身份已全部核清；RemoteTrimmer既有Griffith证据保留，序列推荐不强认目标。",
+        "Huanfa个人出版页仅模板，UCL候选路径实际Page not found，无IF Jun单位；身份待核，不重复相同失败路径或检查科学代码。"
+      ],
+      "collectionScope": "active"
     }
   ],
   "candidates": [
@@ -36962,7 +36990,7 @@
         "Lihong Gu",
         "Jinjie Gu"
       ],
-      "readingBoundary": "已读固定快照中的官方API可得原摘要；全文、正式版本、全部实验与实现未核。",
+      "readingBoundary": "完整官方API原摘要核：用户行为序列推荐、聚类及自蒸馏，无HSI研究；固定摘要范围排除已足够，不补全文、正式版、实验或实现。",
       "identityBoundary": "保留原作者字段；范围暂排不等于目标作者身份排除，未核全部作者及版本。",
       "venue": "arXiv",
       "year": 2024,
@@ -36973,7 +37001,14 @@
       "decision": "excluded",
       "decisionDetail": "excluded_abstract_scope",
       "reason": "S4Rec通过用户意图聚类、长度对抗及教师学生自蒸馏缓解序列推荐稀疏，非光谱观测。",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-abstract-batch4-2026-10-11.json"
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-abstract-batch4-2026-10-11.json",
+      "bibliographyFollowup": {
+        "checkedAt": "2026-10-13",
+        "sourceSnapshot": "research/hyperspectral/sources/jun-zhou-xin-coauthor-query-control-2026-10-13.json",
+        "queryFullAuthorListVerified": true,
+        "scopeDecision": "existing_excluded_retained",
+        "readingBoundary": "本轮仅官方完整原摘要/作者书目核对；RemoteTrimmer旧v2全读事实不变，不新增全文/其他版本。"
+      }
     },
     {
       "title": "Empowering Sequential Recommendation from Collaborative Signals and Semantic Relatedness",
@@ -43701,7 +43736,14 @@
         "sourceSnapshot": "sources/jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12.json",
         "finding": "五页正文/引用全部实际读，首页与Fig.1–3视觉检查；特征通道剪枝+EuroSAT/UCM，无直接HSI任务。"
       },
-      "code": "https://github.com/1e12Leon/RemoteTrimmer"
+      "code": "https://github.com/1e12Leon/RemoteTrimmer",
+      "bibliographyFollowup": {
+        "checkedAt": "2026-10-13",
+        "sourceSnapshot": "research/hyperspectral/sources/jun-zhou-xin-coauthor-query-control-2026-10-13.json",
+        "queryFullAuthorListVerified": true,
+        "scopeDecision": "existing_excluded_retained",
+        "readingBoundary": "本轮仅官方完整原摘要/作者书目核对；RemoteTrimmer旧v2全读事实不变，不新增全文/其他版本。"
+      }
     },
     {
       "title": "HSLiNets: Hyperspectral Image and LiDAR Data Fusion Using Efficient Dual Non-Linear Feature Learning Networks",

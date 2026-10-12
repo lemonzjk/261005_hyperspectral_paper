@@ -28,6 +28,8 @@
 
 2026-10-13共同作者Shutao Li指定目录：CasFormer注册共同作者的精确整名arXiv查询35/35完整书目与作者名单，0完整Jun Zhou；CasFormer未在此集合，不把零命中当从未合作或作者全集。6字面HSI题名均为新候选，双空间信息融合分类按TGRS59(9)2021页7726–7738入库，仅arXiv v1首页/第3页Fig1整体流程图，正式正文只书目关联；Gabor-Nets按arXiv2019入库，仅v1首页/第5页Fig2单层Gabor主方法图，不称整网。Gabor API v2题名/摘要已用于定位，v1与v2数据集措辞不同，库内按唯一所用v1，不补读v2或混写实验。两图各一张，不全文读、逐版读、补图或查代码。4新候选待核，其他33API摘要未读；29非字面HSI题名不判范围外。总库404/原图342，来源281白名单/22arXiv/101作者例外；确认Jun181不变。[原始目录、书目与主图](sources/jun-zhou-shutao-arxiv-classification-2026-10-13.json)。
 
+2026-10-13未决作者线索与查询对照：Huanfa个人学术主页所列ORCID与既有共同作者一致，出版页只有模板；UCL候选profile的HTTP200仅SPA壳，浏览器实际Page not found，未取得IF103225的Jun单位/个人标识，继续身份待核。arXiv的Xin Li整名与Jun Zhou整名双字段AND返回0，但指定RemoteTrimmer官方元数据明确两姓名，不能据零结果排除。改用Xin Li整名与Zhou姓取得172/172书目，两个完整Jun字段对应已有RemoteTrimmer与S4Rec候选；两原摘要核读、保留既有范围排除，无新候选/作者论文。其他170摘要未读，零字面HSI题名不作整体排除，不重复下载旧稿/逐版读。总库404/原图342、确认Jun181不变。[原始响应与阳性对照](sources/jun-zhou-xin-coauthor-query-control-2026-10-13.json)。
+
 ## 当前范围内的实际检索
 
 | 场所 | 年份 | 查询与分页 | 题名 / 命中 / 已审 | 覆盖级别 | 剩余缺口 |
