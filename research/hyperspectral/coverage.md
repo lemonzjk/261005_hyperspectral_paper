@@ -1046,3 +1046,5 @@
 - 2026-10-13 / jun-zhou-lyu-yu-directory-2026-10-13：Xin Lyu ORCID过滤46注册记录、Anzhu Yu公开92组137 work和arXiv7全部核作者/书目字段；6次Jun命中去重5DOI均已映射，0新目录/摘要/PDF/全文/图。9空贡献者项分别保留并链接同DOI其他作者记录；128有字段不保证完整作者。Lyu ORCID位置一项Kangming Du、已知DDFNet漏出保留，集合非全集；Yu注册查询429不作零结果。2新HSI题名仅候选；Active Dense的官方arXiv DOI/同序七作者关联IJRS2021书目，只走arXiv，不新增版本正文要求。三分割输入/作者/领域未闭环。目录417/原图356不变，代码未访问。[证据](sources/jun-zhou-lyu-yu-directory-2026-10-13.json)。
 
 - 2026-10-13 / hsi-active-dense-thz-mainframes-2026-10-13：既有候选1969 Active Dense与1932双梳太赫兹HSI各一个固定公开版本/一张主原图入库，覆盖分类主动标注及物理采集。IJRS2021仅关联、按arXiv2020；Optica2019白名单内关联arXiv2018v1，图号页码不跨版本。2原摘要、2PDF/16页只下载，0新全文/代码访问。总库419、确认406/暂定13、审计396、原图358，来源288/30/101；Jun确认182及作者未决不变，作者/领域全集未闭环。[来源及主图](sources/hsi-active-dense-thz-mainframes-2026-10-13.json)。
+
+- 2026-10-13 / jun-zhou-fan-directory-ijcai-mainframes-2026-10-13：Fan Liu不加主题指定arXiv363/363书目，9Jun均旧范围决定；0字面HSI题名不作全部范围排除或作者全集证明。两既有IJCAI2023候选UA-Adjustor/BDT各取唯一正式公开版本/一主图，直接HSI去噪及HSI–MSI融合，白名单正常入库。18PDF页仅下载、0新全文/代码访问。总库421、确认408/暂定13、审计398、原图360，来源290/30/101；Jun确认182及全部作者未决不变，作者/历年矩阵继续。[原始目录、官方论文页及主图](sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13.json)。

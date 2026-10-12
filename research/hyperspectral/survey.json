@@ -12049,6 +12049,30 @@
         "两个新HSI题名候选只定位，摘要、必要书目及主图待核。"
       ],
       "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-fan-directory-ijcai-mainframes-2026-10-13-fan-arxiv",
+      "venue": "arXiv specified coauthor directory",
+      "year": 2026,
+      "date": "2026-10-13",
+      "keywordGroup": "coauthor-directory-and-existing-ijcai-candidates",
+      "keywords": [
+        "au:\"Fan Liu\""
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=au%3A%22Fan%20Liu%22&start=0&max_results=200&sortBy=submittedDate&sortOrder=descending",
+      "method": "不加主题的指定整名查询，两页363元数据/作者名单与现有候选对照；9Jun字段全部映射继承范围决定，不按同名批量认身份。",
+      "pagination": "total363；start0返回200，start200返回163，363唯一arXivID。",
+      "titleCount": 363,
+      "candidateCount": 0,
+      "reviewedCount": 4,
+      "status": "partial",
+      "statusLabel": "指定集合9Jun均已有范围决定；非作者全集、非363摘要已读",
+      "sourceSnapshot": "sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13.json",
+      "gaps": [
+        "无字面HSI题名不证明集合所有论文非HSI；其余359摘要未读。",
+        "三分割未决实际输入与作者/领域全集未闭环。"
+      ],
+      "collectionScope": "active"
     }
   ],
   "candidates": [
@@ -47025,14 +47049,18 @@
       "year": 2023,
       "discoveredAt": "2026-10-12",
       "searchId": "jun-zhou-spectral3d-review-reading-2026-10-12-incidental-ijcai",
-      "decision": "pending",
-      "reason": "官方论文摘要明确直接HSI，来源IJCAI在普通总库白名单，作者无Jun Zhou；本批作者综述正式版查找时偶然发现，题名未匹配现有目录/候选。已核摘要与书目，排入作者专项后的领域版本去重及免费全文整理；本批不自动当作周峻论文或完成全领域收录。",
+      "decision": "included",
+      "reason": "官方完整原摘要/书目复核，正式PDF首页作者及第3页主要原图/图注已核；仅一个正文版本、一张主图，9页只下载，不记全文，不整理性能。",
       "abstract": "Hyperspectral image (HSI) denoising has achieved promising results with the development of deep learning. A mainstream class of methods exploits the spatial-spectral correlations and recovers each band with the aids of neighboring bands, collectively referred to as spectral auxiliary networks. However, these methods treat entire adjacent spectral bands equally. In theory, clearer and nearer bands  tend to contain more reliable spectral information than noisier and farther ones with higher uncertainties. How to achieve spectral enhancement and adaptation of each adjacent band has become an urgent problem in HSI denoising. This work presents the UA-Adjustor, a comprehensive adjustor that enhances denoising performance by considering both the band-to-pixel and enhancement-to-adjustment aspects. Specifically, UA-Adjustor consists of three stages that evaluate the importance of neighboring bands, enhance neighboring bands based on uncertainty perception, and adjust the weight of spatial pixels in adjacent bands through estimated uncertainty. For its simplicity, UA-Adjustor can be flexibly plugged into existing spectral auxiliary networks to improve denoising behavior at low cost. Extensive experimental results validate that the proposed solution can improve over recent state-of-the-art (SOTA) methods on both simulated and real-world benchmarks by a large margin.",
       "readingProgress": "abstract_read",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-spectral3d-review-reading-2026-10-12.json",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13.json",
       "collectionScope": "active",
       "freePdfUrl": "https://www.ijcai.org/proceedings/2023/0173.pdf",
-      "materialBoundary": "本批仅官方详情摘要与书目已读，PDF未下载/未读，代码只记录实际发现的官方URL，本页未提供明确作者仓库地址。"
+      "materialBoundary": "一个正式公开版本、一张主要原图；代码未访问，PDF超链接未发现明确作者代码URL，不猜链接。",
+      "paperId": "ua-adjustor-hsi-denoising-ijcai-2023",
+      "scopeStatus": "direct_hyperspectral_verified",
+      "sourcePolicyStatus": "whitelist",
+      "identityStatus": "used_official_pdf_authors_no_target_Jun"
     },
     {
       "title": "Bidirectional Dilation Transformer for Multispectral and Hyperspectral Image Fusion",
@@ -47043,14 +47071,18 @@
       "year": 2023,
       "discoveredAt": "2026-10-12",
       "searchId": "jun-zhou-spectral3d-review-reading-2026-10-12-incidental-ijcai",
-      "decision": "pending",
-      "reason": "官方论文摘要明确直接HSI，来源IJCAI在普通总库白名单，作者无Jun Zhou；本批作者综述正式版查找时偶然发现，题名未匹配现有目录/候选。已核摘要与书目，排入作者专项后的领域版本去重及免费全文整理；本批不自动当作周峻论文或完成全领域收录。",
+      "decision": "included",
+      "reason": "官方完整原摘要/书目复核，正式PDF首页作者及第3页主要原图/图注已核；仅一个正文版本、一张主图，9页只下载，不记全文，不整理性能。",
       "abstract": "Transformer-based methods have proven to be effective in achieving long-distance modeling, capturing the spatial and spectral information, and exhibiting strong inductive bias in various computer vision tasks. Generally, the Transformer model includes two common modes of multi-head self-attention (MSA): spatial MSA (Spa-MSA) and spectral MSA (Spe-MSA). However, Spa-MSA is computationally efficient but limits the global spatial response within a local window. On the other hand, Spe-MSA can calculate channel self-attention to accommodate high-resolution images, but it disregards the crucial local information that is essential for low-level vision tasks. In this study, we propose a bidirectional dilation Transformer (BDT) for multispectral and hyperspectral image fusion (MHIF), which aims to leverage the advantages of both MSA and the latent multiscale information specific to MHIF tasks. The BDT consists of two designed modules: the dilation Spa-MSA (D-Spa), which dynamically expands the spatial receptive field through a given hollow strategy, and the grouped Spe-MSA (G-Spe), which extracts latent features within the feature map and learns local data behavior. Additionally, to fully exploit the multiscale information from both inputs with different spatial resolutions, we employ a bidirectional hierarchy strategy in the BDT, resulting in improved performance. Finally, extensive experiments on two commonly used datasets, CAVE and Harvard, demonstrate the superiority of BDT both visually and quantitatively. Furthermore, the related code will be available at the GitHub page of the authors.",
       "readingProgress": "abstract_read",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-spectral3d-review-reading-2026-10-12.json",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13.json",
       "collectionScope": "active",
       "freePdfUrl": "https://www.ijcai.org/proceedings/2023/0404.pdf",
-      "materialBoundary": "本批仅官方详情摘要与书目已读，PDF未下载/未读，代码只记录实际发现的官方URL，本页未提供明确作者仓库地址。"
+      "materialBoundary": "一个正式公开版本、一张主要原图；代码未访问，PDF超链接未发现明确作者代码URL，不猜链接。",
+      "paperId": "bdt-hsi-msi-fusion-ijcai-2023",
+      "scopeStatus": "direct_hyperspectral_verified",
+      "sourcePolicyStatus": "whitelist",
+      "identityStatus": "used_official_pdf_authors_no_target_Jun"
     },
     {
       "title": "MerMED-FM: Multimodal, Multi-Disease Medical Imaging Foundation Model",
@@ -61558,6 +61590,27 @@
       "pdfPagesRead": 0,
       "sourceSnapshot": "sources/hsi-active-dense-thz-mainframes-2026-10-13.json",
       "readingBoundary": "续核既有候选1969/1932；16页PDF仅下载，实际仅原摘要、首页署名及主图区域。未新开检索，未读其他正文版本或代码。"
+    },
+    {
+      "id": "jun-zhou-fan-directory-ijcai-mainframes-2026-10-13",
+      "date": "2026-10-13",
+      "searchIds": [
+        "jun-zhou-fan-directory-ijcai-mainframes-2026-10-13-fan-arxiv"
+      ],
+      "paperIds": [
+        "ua-adjustor-hsi-denoising-ijcai-2023",
+        "bdt-hsi-msi-fusion-ijcai-2023"
+      ],
+      "new": 2,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 0,
+      "figuresAdded": 2,
+      "newFullTextReadingCount": 0,
+      "pdfPagesRead": 0,
+      "sourceSnapshot": "sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13.json",
+      "readingBoundary": "指定Fan Liu目录363仅元数据；4既有范围摘要复核、其余359不记本轮阅读；两IJCAI已有原摘要复核及首页/一主图，18PDF页仅下载。"
     }
   ],
   "gaps": [

@@ -2,7 +2,7 @@
 
 状态更新：2026-10-13。目录、全文与资源快照续核至2026-10-12。当前目标是论文目录完整，优先查漏及必要的作者身份、范围和版本核验，不新增学习笔记；每篇只找一个可用版本、一张主要原框架图；只读定位图及确认必要作者/范围的内容，不逐页或逐版阅读，代码只留链接。目录覆盖尚未闭环；付费且无公开版本或确实不可获取材料的留白不阻塞目录完成。
 
-2026-10-13最新：续核Anzhu Yu指定arXiv候选Active Dense与历年采集候选芯片双梳太赫兹HSI，两篇各一个公开版本/一张主框架，所用首页各七作者无Jun，不推断所有版本作者。Active Dense正式IJRS2021白名单外仅关联，按arXiv2020收录；双梳正式Optica2019在白名单，关联arXiv2018v1，一主图明确来自预印本。2PDF共16页只下载，0新全文/代码访问。总库419/原图358（288白名单/30arXiv/101例外）；Jun确认182及网页183、ORCID/DBLP/Scholar/Griffith未决3/12/10/12不变。Lyu/Yu指定书目集合及空贡献者/ORCID姓名差异保留，非作者全集；三分割输入、来源/身份及领域矩阵仍未闭环。[原摘要、书目及主图](sources/hsi-active-dense-thz-mainframes-2026-10-13.json)。
+2026-10-13最新：Fan Liu指定整名、不加主题的arXiv两页363/363唯一书目，9Jun姓名命中全映射已有范围决定，无新Jun论文或字面HSI题名；整名含同名/缩写，不当自然人全集，也不整批排除范围。4既有原摘要复核，其余359未读。作者未决仍保留；接着将两既有IJCAI2023候选UA-Adjustor去噪和BDT高光谱–多光谱融合各一个正式公开版本/一张主框架入普通白名单，18PDF页仅下载、0新全文/代码访问。总库421/原图360（290白名单/30arXiv/101例外），Jun确认182及网页183、ORCID/DBLP/Scholar/Griffith未决3/12/10/12不变。三分割实际输入、来源/身份与作者/领域矩阵仍未闭环。[指定作者目录及一版一主图](sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13.json)。
 
 2026-10-13共同作者目录与一主图续核：Jocelyn Chanussot的ORCID绑定本人学术主页；官方整名arXiv99/99书目、Crossref ORCID过滤293/293注册作品均只有一条完整Jun Zhou署名，对应已录CRF；正式记录还登记目标Jun的ORCID，未增加作者论文。ORCID过滤缺少已知CasFormer，不能视为作者全集；GIPSA链接403不当作论文全文付费证明。EGU-Net从既有Hong候选转为普通arXiv2021条目，仅固定v1首页与第3页Fig2选读，保留一张像元版整体原框架，不读全文或其他版本；TNNLS不在白名单，只关联正式书目。既有CRF已有可用稿/图，不追加arXiv v1/v2或正式版正文。总库401、原图339，Hong新候选2已录/25待核；Jun确认181（102全文/79摘要）不变。其余97条arXiv摘要未逐篇阅读，不声称作者目录完整；代码只链接。[本轮原始清单与主图](sources/jun-zhou-chanussot-bibliography-egu-2026-10-13.json)。
 
@@ -30,7 +30,7 @@
 
 网站支持“来源范围”筛选：顶会顶刊（白名单）、arXiv预印本、白名单外（周峻专项）。可与作者、年份、具体出版来源、分类及资料状态取交集；分享链接保存`publicationScope`参数。
 
-论文事实、来源、版本、阅读状态与分类统一维护在 [catalog.json](../../src/data/catalog.json)，避免另建手工论文目录。本地网站打开 `?collection=hyperspectral&author=Jun%20Zhou`，或在高光谱总库作者筛选中输入 `Jun Zhou`。完整署名筛选当前匹配182条，其中IF103225的Jun个人身份待核，已确认Griffith专项仍181条。
+论文事实、来源、版本、阅读状态与分类统一维护在 [catalog.json](../../src/data/catalog.json)，避免另建手工论文目录。本地网站打开 `?collection=hyperspectral&author=Jun%20Zhou`，或在高光谱总库作者筛选中输入 `Jun Zhou`。完整署名筛选当前匹配183条，其中IF103225的Jun个人身份待核，已确认Griffith专项182条。
 
 目标作者是Griffith的周峻：ORCID `0000-0001-5822-8233`、DBLP `99/3847-1`、Scholar `6hOOxw0AAAAJ`。同名作者必须逐篇核验，不按姓名字符串自动合并。
 

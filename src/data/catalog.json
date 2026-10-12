@@ -54644,6 +54644,264 @@
         }
       },
       "citation": "@article{thz_dual_chip_comb_imaging_optica_2019,\n  title = {Terahertz hyperspectral imaging with dual chip-scale combs},\n  author = {Lukasz A. Sterczewski and Jonas Westberg and Yang Yang and David Burghoff and John Reno and Qing Hu and Gerard Wysocki},\n  journal = {Optica},\n  year = {2019},\n  volume = {6},\n  number = {6},\n  doi = {10.1364/optica.6.000766},\n  url = {https://doi.org/10.1364/optica.6.000766}\n}\n"
+    },
+    {
+      "id": "ua-adjustor-hsi-denoising-ijcai-2023",
+      "shortTitle": "UA-Adjustor",
+      "title": "Hyperspectral Image Denoising Using Uncertainty-Aware Adjustor",
+      "authors": "Jiahua Xiao, Xing Wei",
+      "year": 2023,
+      "venue": "IJCAI",
+      "publicationName": "Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.24963/ijcai.2023/173",
+      "representation": "先由相邻波段导数和光谱显著性模块评估波段重要性，再利用不确定性估计作光谱增强与空间像元权重调整；主图展示三阶段及ADF、SSM、UE组件。",
+      "tags": [],
+      "summary": "UA-Adjustor按邻近波段的重要性与不确定性进行光谱增强和逐像元权重调整，作为模块接入谱辅助HSI去噪网络。",
+      "input": "待恢复HSI波段及其邻近波段。",
+      "output": "供谱辅助网络恢复当前波段的增强/调整邻近波段，最终得到去噪HSI。",
+      "mechanism": "先由相邻波段导数和光谱显著性模块评估波段重要性，再利用不确定性估计作光谱增强与空间像元权重调整；主图展示三阶段及ADF、SSM、UE组件。",
+      "readingNote": "官方完整原摘要/书目复核，正式PDF首页作者及第3页主要原图/图注已核；仅一个正文版本、一张主图，9页只下载，不记全文，不整理性能。",
+      "paper": "https://www.ijcai.org/proceedings/2023/173",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ijcai.org/proceedings/2023/0173.pdf",
+          "sourceVersion": "IJCAI 2023 official proceedings PDF",
+          "figureLabel": "Figure 3",
+          "page": 3,
+          "caption": "UA-Adjustor主要方法流程原图：波段显著性评估、基于不确定性的光谱增强及光谱调整三个阶段，附ADF/SSM/UE组件。",
+          "verificationNote": "IJCAI2023唯一所用正式PDF第3页Figure3主方法原图与完整图注，未重绘；只存这一张，不补读全文、其他版本或实验。",
+          "path": "figures/ua-adjustor-hsi-denoising-ijcai-2023/framework.png",
+          "width": 1560,
+          "height": 930,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "8fd21ce56221a6d222a74b5017a7c5cf70a63073e9ca061d56eae3ac5d3bcfff",
+          "attribution": "Jiahua Xiao, Xing Wei · IJCAI2023",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              40,
+              565,
+              350
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "spectral-denoising"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "官方原摘要和主框架明确直接HSI输入/输出，IJCAI在白名单，普通来源收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何避免把不同噪声强度与距离的相邻HSI波段等权用于去噪？",
+        "datasets": "本轮不整理实验数据、划分或性能。",
+        "experimentSetting": "仅核摘要、首页及主框架，不整理实验协议。",
+        "conclusions": "方法按原摘要/主图概述，不独立核性能。",
+        "limitations": "所需一版一主图已得；不要求补全文、其他版本、其他图或代码检查。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ijcai.org/proceedings/2023/173",
+            "checkedAt": "2026-10-13",
+            "level": "IJCAI官方完整原摘要及出版书目",
+            "supports": [
+              "UA-Adjustor按邻近波段的重要性与不确定性进行光谱增强和逐像元权重调整，作为模块接入谱辅助HSI去噪网络。",
+              "正式2023题名、完整作者、DOI及页段1560-1568；所用PDF首页名单一致，无Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2023/0173.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "UA-Adjustor主要方法流程原图：波段显著性评估、基于不确定性的光谱增强及光谱调整三个阶段，附ADF/SSM/UE组件。",
+              "IJCAI2023唯一所用正式PDF第3页Figure3主方法原图与完整图注，未重绘；只存这一张，不补读全文、其他版本或实验。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ua-adjustor-hsi-denoising-ijcai-2023-conference",
+            "type": "所用唯一正式会议公开版",
+            "url": "https://www.ijcai.org/proceedings/2023/173",
+            "pdfUrl": "https://www.ijcai.org/proceedings/2023/0173.pdf",
+            "doi": "10.24963/ijcai.2023/173",
+            "year": 2023,
+            "venue": "IJCAI",
+            "authors": [
+              "Jiahua Xiao",
+              "Xing Wei"
+            ],
+            "pages": "1560-1568",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13-0173.pdf",
+            "relation": "采用IJCAI官方正式版本的摘要、首页署名及一主图；未读全文或其他版本。"
+          }
+        ],
+        "methodFamilyId": "ua-adjustor-hsi-denoising-ijcai-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "官方完整摘要与Fig3直接研究真实HSI的谱辅助去噪，归既有光谱去噪任务；图中3D卷积是空间/光谱特征处理，不按其名归几何三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "5e3b30419a03a663c524ac9296148eb431991539690ed001dbfeecc4ecba4ffe",
+          "sourceUrls": [
+            "https://www.ijcai.org/proceedings/2023/173",
+            "https://www.ijcai.org/proceedings/2023/0173.pdf"
+          ]
+        }
+      },
+      "citation": "@inproceedings{ua_adjustor_hsi_denoising_ijcai_2023,\n  title = {Hyperspectral Image Denoising Using Uncertainty-Aware Adjustor},\n  author = {Jiahua Xiao and Xing Wei},\n  booktitle = {Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence},\n  year = {2023},\n  pages = {1560--1568},\n  doi = {10.24963/ijcai.2023/173},\n  url = {https://www.ijcai.org/proceedings/2023/173}\n}\n"
+    },
+    {
+      "id": "bdt-hsi-msi-fusion-ijcai-2023",
+      "shortTitle": "BDT",
+      "title": "Bidirectional Dilation Transformer for Multispectral and Hyperspectral Image Fusion",
+      "authors": "Shangqi Deng, Liang-Jian Deng, Xiao Wu, Ran Ran, Rui Wen",
+      "year": 2023,
+      "venue": "IJCAI",
+      "publicationName": "Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.24963/ijcai.2023/404",
+      "representation": "双模态特征提取分别形成空间和光谱分支，用D-Spa扩展空间感受野、G-Spe学习分组谱特征；双向层级融合跨尺度特征，并与插值HSI残差相加输出。",
+      "tags": [],
+      "summary": "BDT融合低空间分辨HSI与高空间分辨MSI，结合扩张空间注意力、分组光谱注意力和双向层级结构恢复高空间分辨HSI。",
+      "input": "低空间分辨HSI（X）、高空间分辨MSI（Y）及双三次插值HSI。",
+      "output": "高空间分辨HSI。",
+      "mechanism": "双模态特征提取分别形成空间和光谱分支，用D-Spa扩展空间感受野、G-Spe学习分组谱特征；双向层级融合跨尺度特征，并与插值HSI残差相加输出。",
+      "readingNote": "官方完整原摘要/书目复核，正式PDF首页作者及第3页主要原图/图注已核；仅一个正文版本、一张主图，9页只下载，不记全文，不整理性能。",
+      "paper": "https://www.ijcai.org/proceedings/2023/404",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ijcai.org/proceedings/2023/0404.pdf",
+          "sourceVersion": "IJCAI 2023 official proceedings PDF",
+          "figureLabel": "Figure 2",
+          "page": 3,
+          "caption": "BDT整体原框架：空间/光谱双分支特征提取BFE，经双向层级双模态融合BFF与插值HSI残差输出高空间分辨HSI。",
+          "verificationNote": "IJCAI2023唯一所用正式PDF第3页Figure2主方法原图与完整图注，未重绘；只存这一张，不补读全文、其他版本或实验。",
+          "path": "figures/bdt-hsi-msi-fusion-ijcai-2023/framework.png",
+          "width": 1560,
+          "height": 840,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "aa81e23ae08865b0d643d76bf835e46d870faabec5ff3ef6900fa3387d8423c1",
+          "attribution": "Shangqi Deng, Liang-Jian Deng, Xiao Wu, Ran Ran, Rui Wen · IJCAI2023",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              40,
+              565,
+              320
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "官方原摘要和主框架明确直接HSI输入/输出，IJCAI在白名单，普通来源收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在HSI–MSI融合中同时利用空间/光谱注意力及不同输入分辨率的多尺度信息？",
+        "datasets": "本轮不整理实验数据、划分或性能。",
+        "experimentSetting": "仅核摘要、首页及主框架，不整理实验协议。",
+        "conclusions": "方法按原摘要/主图概述，不独立核性能。",
+        "limitations": "所需一版一主图已得；不要求补全文、其他版本、其他图或代码检查。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ijcai.org/proceedings/2023/404",
+            "checkedAt": "2026-10-13",
+            "level": "IJCAI官方完整原摘要及出版书目",
+            "supports": [
+              "BDT融合低空间分辨HSI与高空间分辨MSI，结合扩张空间注意力、分组光谱注意力和双向层级结构恢复高空间分辨HSI。",
+              "正式2023题名、完整作者、DOI及页段3633-3641；所用PDF首页名单一致，无Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2023/0404.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "BDT整体原框架：空间/光谱双分支特征提取BFE，经双向层级双模态融合BFF与插值HSI残差输出高空间分辨HSI。",
+              "IJCAI2023唯一所用正式PDF第3页Figure2主方法原图与完整图注，未重绘；只存这一张，不补读全文、其他版本或实验。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "bdt-hsi-msi-fusion-ijcai-2023-conference",
+            "type": "所用唯一正式会议公开版",
+            "url": "https://www.ijcai.org/proceedings/2023/404",
+            "pdfUrl": "https://www.ijcai.org/proceedings/2023/0404.pdf",
+            "doi": "10.24963/ijcai.2023/404",
+            "year": 2023,
+            "venue": "IJCAI",
+            "authors": [
+              "Shangqi Deng",
+              "Liang-Jian Deng",
+              "Xiao Wu",
+              "Ran Ran",
+              "Rui Wen"
+            ],
+            "pages": "3633-3641",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-fan-directory-ijcai-mainframes-2026-10-13-0404.pdf",
+            "relation": "采用IJCAI官方正式版本的摘要、首页署名及一主图；未读全文或其他版本。"
+          }
+        ],
+        "methodFamilyId": "bdt-hsi-msi-fusion-ijcai-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "官方完整摘要与Fig2明确LR-HSI/HR-MSI输入及HSI输出，是直接处理HSI的融合空间超分辨率，符合范围；沿用空间超分辨率与Transformer，不因融合任务自动加无监督或盲响应标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "6b9ad2928d5a3a8fd19972ee12775b268d184a0baa89bac446fcb69768f1fc94",
+          "sourceUrls": [
+            "https://www.ijcai.org/proceedings/2023/404",
+            "https://www.ijcai.org/proceedings/2023/0404.pdf"
+          ]
+        }
+      },
+      "citation": "@inproceedings{bdt_hsi_msi_fusion_ijcai_2023,\n  title = {Bidirectional Dilation Transformer for Multispectral and Hyperspectral Image Fusion},\n  author = {Shangqi Deng and Liang-Jian Deng and Xiao Wu and Ran Ran and Rui Wen},\n  booktitle = {Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence},\n  year = {2023},\n  pages = {3633--3641},\n  doi = {10.24963/ijcai.2023/404},\n  url = {https://www.ijcai.org/proceedings/2023/404}\n}\n"
     }
   ],
   "datasets": [
@@ -54863,7 +55121,8 @@
         "mftn-2024",
         "hsi-superresolution-icig-2017",
         "hypersigma-tpami-2025",
-        "infn-arxiv-2023"
+        "infn-arxiv-2023",
+        "bdt-hsi-msi-fusion-ijcai-2023"
       ],
       "history": [
         {
@@ -54972,7 +55231,8 @@
         "decsc-tgrs-2025",
         "cross-source-neighborhood-contrast-if-2025",
         "spectralformer-tgrs-2022",
-        "mct-center-mask-arxiv-2022"
+        "mct-center-mask-arxiv-2022",
+        "bdt-hsi-msi-fusion-ijcai-2023"
       ],
       "history": [
         {
@@ -55166,7 +55426,8 @@
         "zhou-scholar-iterative-refinement-network-for-hyperspec-2023",
         "hypersigma-tpami-2025",
         "decsc-tgrs-2025",
-        "4dcaf-temporal-hsi-denoising-pr-2017"
+        "4dcaf-temporal-hsi-denoising-pr-2017",
+        "ua-adjustor-hsi-denoising-ijcai-2023"
       ],
       "history": [
         {
