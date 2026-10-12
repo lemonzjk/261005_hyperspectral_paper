@@ -4,32 +4,28 @@
 
 ## 目标与约定
 
-- HS3D Atlas三维专题与高光谱总库，覆盖成像、处理、学习及应用；按场所/年份矩阵查漏，不以数量结束。
-- 仅本地预览，不推送、不发布；caveman full、中文简洁；检查通过后本地提交。
-- 普通总库仅直接高光谱、顶会顶刊白名单或arXiv；纯多光谱/泛关联不收录。周峻既有181条直接高光谱保留，作者例外仅放宽来源；7条多光谱已删除。
-- 每篇只找一个可用版本、取一张主要原框架图；只读确认作者/高光谱范围及定位图必要内容，不逐页/逐版读，不深挖实验。无图/不可获取可留白；目录与图待办分开。官方代码只放链接，不检查。
+- HS3D Atlas三维专题与高光谱总库，覆盖采集、成像、重建、处理、学习及应用；按场所/年份矩阵查漏，不以数量结束。
+- 仅本地预览，不推送、不发布；caveman full、中文简洁；检查后本地提交。
+- 普通总库仅直接高光谱、顶会顶刊白名单或arXiv；纯多光谱/泛关联不收录。周峻既有181条直接HSI保留，作者例外仅放宽来源，保护ID不扩张；7条旧多光谱已删除。
+- 每篇一个可用版本、一张主要原框架图；只读确认身份/HSI范围和定位图必要内容，不逐页/逐版读或深挖性能。无图/不可获取可留白，目录与图待办分开；官方代码仅链接，不访问检查。
 
 ## 运行与检查
 
 - React19、TypeScript、Vite7；Node22.12+。
-- npm run dev -- --port 5173；远程需转发。
-- 数据/上下文：npm run validate；网站：npm run build；交互：浏览器检查。
-- 原图队列倒序，保留来源及待核状态。
+- npm run dev -- --port 5173，远程需转发。
+- 数据/上下文：npm run validate；网站：npm run build；交互：浏览器检查。原图队列倒序。
 
 ## 当前状态
 
-- 总库408条，均直接高光谱；395分类确认（审计385）、13暂定、0待；182标签（任务71/方法98/应用13）。三维126条，数据资源2，原图348张。
-- 出版来源69种；11主要任务组、细标签搜索、多标签并集/去重计数；作者匹配、URL恢复及SVG/BibTeX导出。
-- 来源范围（白名单顶会顶刊283/arXiv24/白名单外101）与阅读深度、资料状态独立筛选，URL恢复、导出使用同一结果；资料状态依据已记录正文/原图证据，不以PDF链接推断已读，不把原图来源受限当全文付费。
-- CVPR/ICCV/NeurIPS/ICML等已有指定查询闭环，不是领域全量；历史普通会议搜索归档，矩阵仅白名单，见coverage.md。
-- 桌面/手机：筛选、URL恢复、作者匹配、BibTeX/SVG导出及详情已核。
-- dev可上传/替换原图≤10MB，保留历史；FVMGN补图待核。
+- 总库409，396分类确认（审计386）、13暂定；182标签（任务71/方法98/应用13）。三维126，数据资源2，原图348。
+- 来源白名单284/arXiv24/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
+- 来源范围、阅读深度、资料状态独立；PDF链接不表示已读，原图阻拦不表示全文付费。桌面/手机筛选与详情已核；dev可上传/替换≤10MB，FVMGN补图待核。
+- CVPR/ICCV/NeurIPS/ICML等指定查询有闭环，非全领域完成；矩阵只白名单，见coverage.md。
 
 ## 关键文件与下一步
 
-- src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
-- research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
-- public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
-- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID3、DBLP11、Scholar8、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
-- Griffith profile7205全387关联项，175源项匹配168目录ID、11未决；3直接HSI来源外候选未找到合格版本。专项待办见jun-zhou.md；其他姓名/宽词仍待。
-- 最新：Griffith旧186继承排除的164机构摘要均复核，另11arXiv旧元数据/代表稿和1编辑VoR补证；176已核/10无摘要范围待核，非作者全集。累计4旧排除恢复范围/来源未决：Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑。M2旧存单稿仅首页/第4页输入段，DOTA/NWPU/UCAS航空检测范围关闭；64旧survey同步，零新库论文/图/PDF/全文，代码只链接。目标ORCID注册120映射77目录/39排除/4待核。Jing/Lu注册13/61的Jun均映射；TM-MOE原摘要/主图未得。Judy整名漏阳性；原839混并索引5日文线索待，415未映射。Phase署名冲突、IF身份待，Jun181/网页182不变。Shutao已录2/待4、Vivone1/待9、Hong2/待25、Zhuanfeng4待来源/范围。SOC来源、OpenAlex差集、HVOT、三分割输入仍待；作者先、历年矩阵后。
+- src/data/catalog.json事实/分类/图；collection-policy.json来源与保护ID；library-groups.ts导航；materials.ts资料状态。
+- research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
+- 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
+- 最新：Griffith旧186继承排除均有处置：179保留声明范围排除、5重开、1补录PR2018导读、1书籍容器关联。164机构摘要及22其他证据/限制已评估，非作者全集。新导读有四项HSI实质内容、Jun单位已核，所用接受稿无图；三普通PR参考线索入现有survey。目标ORCID120注册77目录/39排除/4待核不变。
+- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并415未映射；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
