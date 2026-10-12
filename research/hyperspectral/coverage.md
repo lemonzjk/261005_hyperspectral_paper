@@ -968,3 +968,5 @@
 - 2026-10-12 / jun-zhou-classification-primary-abstracts-2026-10-12：六既有Jun的完整主要机构摘要确认分类、全部仍摘要级；删除SDRN预训练任务、补S4GPN显式GCN，UMsDFL无监督特征/RF标注与少样本指标协议缺口分别保留。SSLKA此前同主源复读不增材料计数；无新论文/正文/原图。当前345确认/45暂定、审计335；共同作者官方arXiv指定查询429未返回元数据、不当零论文或公共版本不存在。来源例外/Jun181及101全文/80摘要、原图304保留，代码仅URL，目录/领域历年未闭环。[证据](sources/jun-zhou-classification-primary-abstracts-2026-10-12.json)。
 
 - 2026-10-12 / jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12：五近期主要机构完整摘要确认分类，两分类机制不当独立预训练、STU补自监督重建/IEF补地物分类。五仍摘要；代码DSGAN/FBCANet只URL。共同作者arXiv429/total未知；机构三个姓名3/3＋1/1＋0/0完整指定查询，四既有记录。LGSC机构AM24页下载/8页实际选读，三个实验原始模态非HSI，补已有范围排除/Griffith身份与2016年份，不增全文或新排除。当前350确认/40暂定、审计340，库390/Jun181及101全文/80摘要/304原图保留；目录/全领域历年仍待。[证据](sources/jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json)。
+
+- 2026-10-12：五既有Jun主要机构摘要分类补证；NMF-SAE旧五页作者稿相同字节重读，补展开/无真值重建，书章删除泛称模型启发所不支持的展开标签；注意力选带与非局部分类方法补齐。五作者引用已录，0新论文/全文/图；355确认/35暂定，审计345。四摘要正文、会刊/出版社版及作者/领域目录继续待，代码只URL。[证据](sources/jun-zhou-early-unmixing-attention-primary-followup-2026-10-12.json)。

@@ -80,6 +80,8 @@ SDRN、S3FGCN、UMsDFL、S4GPN、PN-ResCapsNet、SSLKA六完整Griffith原摘要
 
 近期LDCLNet、SSSGAN、FBCANet、STU与IEF五完整主要机构摘要本轮实际读，精确DOI/目标绑定支持五分类确认，仍摘要级。LDCLNet对比对齐/SSSGAN谱空特征为分类机制，摘要没有独立预训练目标，删除两旧表征任务；STU明确Tucker张量注意力自监督LMM重建补方法，IEF明确最后地物分类补任务。DSGAN/FBCANet官方URL只记录；SSSGAN四缩写PU/HU2013/SV/LK与OA98.96/95.93/98.72/98.31%保留原摘要，不补shot/划分。共同作者arXiv429未得元数据；DSpace Shu/Qin/Jingran查询3/3、1/1、0/0共四既有记录，不当作者全集。LGSC免费机构24页AM实际选读8页，全部实验明确ORL灰度人脸/Isolet语音字母/USPS手写数字，补强旧非HSI排除/Jun Griffith身份；2015 DOI与2016卷年分开，未读其余16页/VoR，不增范围排除或库内全文。当前350确认/40暂定、审计340，Jun101全文/80摘要及原图304不变。[证据](sources/jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json)。
 
+NMF-SAE、2019 ISTA、非局部分类、波段注意力与2022模型启发解混章节五机构主要摘要已读，五分类确认。NMF-SAE现有五页作者稿本轮重读、下载字节与旧版一致，补深度展开/无真值观测重建并删除代码待核，不新增全文或原图；五个Jun引用均已录。波段注意力补方法，非局部分类不补猜整图协议；章节仅泛述模型启发，删除无具体架构证据的展开标签，仍摘要级。当前355确认/35暂定，审计345；作者181/101全文/80摘要、原图304不变。四摘要正文与正式版/2019ISTA会刊关系仍待。[证据](sources/jun-zhou-early-unmixing-attention-primary-followup-2026-10-12.json)。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |

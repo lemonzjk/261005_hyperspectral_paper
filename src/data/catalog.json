@@ -44274,28 +44274,28 @@
       "representation": "高光谱图像分类：串联局部与非局部操作块，同时建模局部光谱—空间信息和全局长程依赖。",
       "tags": [],
       "summary": "提出由局部与非局部操作块串联的高光谱分类网络：局部块提取空间—光谱特征，非局部块以全位置加权响应捕获长程依赖；在两个公开数据集、有限训练样本下优于多种方法。",
-      "input": "整幅高光谱图像。",
+      "input": "高光谱图像及用于谱空特征提取的局部/非局部位置。",
       "output": "逐像素类别推断。",
       "mechanism": "局部操作块提取局部空间—光谱特征，非局部操作块对所有位置计算加权响应以捕获长程依赖，形成像素级分类网络。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/8c0fbcaa9a9d417266d1470a46a40acd91d4c71b",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整Griffith主要原摘要本轮实际读，精确DOI与目标作者绑定已核。局部/非局部块、全位置加权响应和逐像素分类由摘要明确；不将“输入HSI”补成确定整图训练协议。正文未得。",
+      "paper": "https://doi.org/10.1109/igarss.2019.8897931",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "land-cover-classification",
           "nonlocal-spatial-priors"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何在训练样本有限时以非局部操作捕获高光谱图像的长程依赖并完成逐像素分类？",
         "datasets": "摘要称两个公开高光谱数据集，名称、划分和样本规模待全文核验。",
-        "experimentSetting": "局部与非局部操作块串联；整幅高光谱图像输入，输出逐像素类别。",
+        "experimentSetting": "局部谱空特征块与非局部全位置加权块顺序组合；逐像素分类，有限训练样本。具体输入裁块/整图协议、训练数量、加权函数及消融未列。",
         "conclusions": "公开摘要报告在有限训练样本下优于多种先进方法。",
-        "limitations": "摘要未给出数据集名称、网络细节、指标数值、代码和消融实验。",
+        "limitations": "正文、两数据集名称/划分、训练数量、具体响应权重、消融和数值未得；不由摘要推定整图训练或Transformer架构。",
         "dataLinks": [],
         "evidence": [
           {
@@ -44323,6 +44323,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；主要机构完整原摘要实际阅读。",
+              "HSI逐像素分类、局部谱空块及非局部全位置加权响应；有限训练样本和两个未命名公开数据集。",
+              "未得到正文/框架；HSI输入不等于已核整图训练协议。"
+            ]
           }
         ],
         "versions": [
@@ -44335,7 +44345,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-hyperspectral-image-classification-based-o-2019"
+        "methodFamilyId": "zhou-scholar-hyperspectral-image-classification-based-o-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "机构完整原摘要明确HSI输入、逐像素分类、局部谱空与非局部全位置加权响应。非局部方法定义扩展到原文支持的分类特征聚合，未增加几何或Transformer任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "3ca891b69239ae5c809c42d798956a727d7263ecc1263f74877c23f5e6e403bd",
+          "sourceUrls": [
+            "https://doi.org/10.1109/igarss.2019.8897931",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-hyperspectral-image-classification-based-o-2019,\n  title = {Hyperspectral Image Classification Based on Non-Local Neural Networks},\n  author = {Chen Wang and Xiao Bai and Lei Zhou and Jun Zhou},\n  year = {2019},\n  doi = {10.1109/igarss.2019.8897931}\n}\n"
     },
@@ -44359,16 +44387,16 @@
       "input": "混合高光谱像元、端元字典及非负稀疏丰度估计问题。",
       "output": "端元丰度估计。",
       "mechanism": "以稀疏编码和非负约束为问题模型，将 ISTA 展开成有限层深度网络；训练后直接前馈推断，避免数百至数千次迭代。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/beba562dc91e9c97ec04ec32acfc2d1d4927a1d6",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整Griffith主要原摘要本轮实际读，精确DOI/Jun作者绑定已核。已获端元字典后，以非负稀疏编码ISTA展开网络估计丰度；不把本篇写成网络联合估计端元。少量训练/前馈快速推断只摘要口径，正文未得。",
+      "paper": "https://doi.org/10.1109/igarss.2019.8898675",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "deep-unfolding"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -44377,7 +44405,7 @@
         "datasets": "摘要未列具体数据集；仅说明使用少量训练样本学习模型参数。",
         "experimentSetting": "深度展开 ISTA、端元字典与丰度估计；训练后进行无迭代前馈推断。",
         "conclusions": "公开摘要报告该模型保留物理模型与优化算法先验，并显著降低丰度估计的迭代开销。",
-        "limitations": "摘要未给出数据集名称、网络层数、指标、对比方法、代码和完整实验。",
+        "limitations": "正文、字典获取方式、训练监督/样本数量、数据集、网络层数及性能数值未得；摘要说明已取得端元作字典，不据此声称联合盲估计端元或证明与2020期刊为扩展版。",
         "dataLinks": [],
         "evidence": [
           {
@@ -44405,6 +44433,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；主要机构完整原摘要实际阅读。",
+              "端元已获作字典后，以非负稀疏编码ISTA展开学习少量训练样本，丰度前馈推断。",
+              "摘要没有联合估计端元、具体训练监督或与2020期刊扩展关系证据，仍摘要级。"
+            ]
           }
         ],
         "versions": [
@@ -44417,7 +44455,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-deep-unfolded-iterative-shrinkage-threshol-2019"
+        "methodFamilyId": "zhou-scholar-deep-unfolded-iterative-shrinkage-threshol-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "机构完整原摘要明确给定端元字典后的非负稀疏丰度问题与ISTA展开网络，支持解混/深度展开；不将背景解混定义当成联合端元输出。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "530a10d0f09860bd9bf061bc21f381bacb0cadf9318e88286cc1333a117fe718",
+          "sourceUrls": [
+            "https://doi.org/10.1109/igarss.2019.8898675",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-deep-unfolded-iterative-shrinkage-threshol-2019,\n  title = {Deep Unfolded Iterative Shrinkage-Thresholding Model for Hyperspectral Unmixing},\n  author = {Qipeng Qian and Fengchao Xiong and Jun Zhou},\n  year = {2019},\n  doi = {10.1109/igarss.2019.8898675}\n}\n"
     },
@@ -44620,20 +44676,22 @@
       "doi": "10.1109/icassp39728.2021.9414084",
       "representation": "高光谱解混：NMF-SAE 将 L1 稀疏约束非负矩阵分解的迭代规则展开为编码器和解码器，兼顾物理可解释性与数据驱动学习。",
       "tags": [],
-      "summary": "NMF-SAE 以线性光谱混合模型为基础，将 L1 稀疏 NMF 迭代展开成端到端训练的稀疏自编码器；摘要报告在合成和真实数据上优于多种方法。",
+      "summary": "NMF-SAE将L1稀疏NMF的丰度与端元优化分别展开成编码/解码子网络，以高光谱观测重建误差训练，无需真实端元或丰度标签。",
       "input": "L×N高光谱像元矩阵；VCA/FCLS初始化A₀/S₀；端元数R。",
       "output": "端元与丰度估计、解混结果。",
       "mechanism": "共享参数的两层PGD展开：丰度残差更新、单边阈值及列归一化；端元残差更新与ReLU；以A_KS_K重建误差无真值监督训练。",
-      "readingNote": "五页作者公开稿完整阅读并核Figure1/Table1；正式DOI及五作者已匹配，未逐字比对出版社版、未复现。式2严格和约束下L1为常数；实际阈值后归一化不等于完整约束精确近端，零列处理待代码。",
+      "readingNote": "五页作者公开稿已阅读全文；本轮重读并核机构主要摘要/目标作者绑定。当前下载与旧稿字节相同，不增加全文或原图；补显式深度展开和无真值重建方法。出版社版尚未逐字比对，原稿的约束/数值疑点只依论文记录。",
       "paper": "https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf",
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "author_full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
-          "sparse-dictionary-learning"
+          "sparse-dictionary-learning",
+          "deep-unfolding",
+          "self-supervised-reconstruction"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "full_text_read",
@@ -44642,7 +44700,7 @@
         "datasets": "USGS六端元合成64×64；Jasper Ridge AVIRIS子图100×100×198、树/水/土/路四端元。",
         "experimentSetting": "作者稿两层/1000迭代/Adam全批次；合成编码/解码学习率1e-4/5e-4，真实均1e-6。SNR25dB做样本量试验，随后1000训练像元；其他学习基线全像元。",
         "conclusions": "Jasper平均SAD：NMF-SAE0.0671、MNN-BU0.0726；树/土及路类别并非NMF-SAE均最优。不据平均或曲线外推普遍优势。",
-        "limitations": "作者公开稿已全文阅读，出版社逐字差异、代码、零列数值保护、随机重复、裁剪坐标和参考丰度来源未核；原表标准差百分号不擅自改单位。 作者页HTML注释有未指明的final version错误提示；不是正式勘误，不据此推定具体错误或修正，出版社核验仍待。",
+        "limitations": "实际阅读的是五页作者公开稿，未比对出版社版。式2同时规定丰度非负与和为一，因此L1项在该约束域为常数；文中实际网络按阈值后归一化构造，不据此推测未写出的数值处理。原表标准差百分号按原文保留；随机重复、裁剪坐标和参考丰度来源未充分说明。作者页旧HTML注释有未指明的final version错误提示，非正式勘误，不据此推定具体错误或修正。",
         "dataLinks": [],
         "evidence": [
           {
@@ -44679,6 +44737,25 @@
             "supports": [
               "NMF-SAE被注释条目含未具体说明的final version错误提示；没有正式修正内容。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI、五作者顺序与Jun resolvedUser7205；机构完整原摘要实际阅读。",
+              "既有五页作者稿本轮重读；Eq7–9及§2.2–2.3支持两分支深度展开和无真值观测重建，不把辅助重建另列成像任务。",
+              "作者页PDF本轮HTTP200、字节与旧稿完全一致；旧Figure1保留，不新增图或全文。"
+            ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf",
+            "checkedAt": "2026-10-12",
+            "level": "五页作者公开稿重读与相同字节下载核对",
+            "supports": [
+              "原稿§2.2/Eq7–8两子网络深度展开；§2.3/Eq9无真值观测重建。",
+              "当前PDF SHA256与既有2026-10-10稿一致，保留旧Figure1及既有全文状态；不增加全文/图计数。"
+            ]
           }
         ],
         "versions": [
@@ -44698,7 +44775,25 @@
             "relation": "完整阅读五页作者稿；正式DOI/作者匹配，尚未逐字比较出版社版本。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021"
+        "methodFamilyId": "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "作者稿§2.2/Eq7–8明确分别展开端元与丰度迭代；§2.3/Eq9明确无端元/丰度真值的观测重建训练。补两方法标签，主任务仍解混；下载与旧五页稿相同，不重复记全文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "0e9c5022a6dc841ad7a98c6861be18dd91a4242715f7bd504e019775e163895b",
+          "sourceUrls": [
+            "https://www.xiongfuli.com/cv/paper/ICASSPV12.pdf",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021,\n  title = {NMF-SAE: An Interpretable Sparse Autoencoder for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Minchao Ye and Jianfeng Lu and Yuntao Qian},\n  year = {2021},\n  doi = {10.1109/icassp39728.2021.9414084}\n}\n",
       "frameworkFigures": [
@@ -44919,16 +45014,17 @@
       "input": "高光谱遥感影像及其多波段信息。",
       "output": "加权/筛选后的波段与分类结果。",
       "mechanism": "以注意力机制引导网络聚焦重要波段，联合建模波段权重和选择。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/c2ef66e899f5ecc3fd1513b61a92432b8859b3d9",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整Griffith主要原摘要本轮实际读，精确DOI/Jun作者绑定已核。注意力明确用于波段加权和选择，补光谱波段注意力方法；两个HSI数据集未命名，正文与选带/分类协议未得。",
+      "paper": "https://doi.org/10.1109/igarss.2019.8898004",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-band-selection",
-          "land-cover-classification"
+          "land-cover-classification",
+          "spectral-band-attention"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -44937,7 +45033,7 @@
         "datasets": "摘要称两个高光谱数据集，名称、划分和指标待全文核验。",
         "experimentSetting": "注意力深度学习框架进行波段加权和选择。",
         "conclusions": "公开摘要报告该框架在两个高光谱数据集上有效。",
-        "limitations": "摘要未给出网络细节、选带数量、数据集名称、指标和代码。",
+        "limitations": "正文、具体注意力网络、选带数量、两个数据集名称/划分和指标未得；不推测Transformer或具体监督形式。",
         "dataLinks": [],
         "evidence": [
           {
@@ -44965,6 +45061,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；主要机构完整原摘要实际阅读。",
+              "直接HSI分类与波段加权/选择，明确注意力机制，支持既有波段注意力方法。",
+              "两个HSI数据集未命名，无具体数值/协议，仍摘要级。"
+            ]
           }
         ],
         "versions": [
@@ -44977,7 +45083,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-attention-networks-for-band-weighting-and--2019"
+        "methodFamilyId": "zhou-scholar-attention-networks-for-band-weighting-and--2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "主要原摘要明确注意力波段加权/选择改善HSI分类；两个既有任务保留，补既有波段注意力方法，不推断Transformer。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c8e98ae8d123968ccba651ef6bd367a8dcc4f12e707b14bf758c478b78e799d9",
+          "sourceUrls": [
+            "https://doi.org/10.1109/igarss.2019.8898004",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-attention-networks-for-band-weighting-and--2019,\n  title = {Attention Networks for Band Weighting And Selection In Hyperspectral Remote Sensing Image Classification},\n  author = {Jing Wang and Jun Zhou and Weiqing Huang and Jackie Fang Chen},\n  year = {2019},\n  doi = {10.1109/igarss.2019.8898004}\n}\n"
     },
@@ -45744,17 +45868,16 @@
       "summary": "章节将高光谱解混方法分为基于模型和基于学习两类，指出前者可解释但依赖物理模型与迭代优化，后者学习能力强但物理可解释性弱，并引入模型启发学习作为折中。",
       "input": "高光谱数据及其物理解混模型。",
       "output": "更可解释、高效的解混模型/网络。",
-      "mechanism": "将模型约束或迭代求解结构融入深度网络，连接模型驱动和数据驱动方法。",
-      "readingNote": "Griffith完整原摘要及Crossref正式书目已核：Wiley书第13章363–403，编辑Chein-I Chang；online2022-11-11/print2022-11-16。纠正原会议BibTeX为书章节；机构No Full Text/只有SWORD，正文未得。摘要仅明确模型启发学习，未列具体展开架构，不提升深度展开方法标签的暂定状态。",
+      "mechanism": "比较基于物理模型/迭代优化与基于学习的高光谱解混，并引入模型启发学习桥接两类方法；摘要没有列出具体展开网络。",
+      "readingNote": "完整Griffith原摘要与目标作者绑定本轮实际复核；正式书第13章363–403及书目证据保留。摘要明确模型启发学习，但未说明具体逐层展开架构，移除深度展开标签。正文未获取，仍摘要级；保留既有作者来源例外。",
       "paper": "https://doi.org/10.1002/9781119687788.ch13",
       "verifiedAt": "2026-10-12",
-      "verificationLevel": "primary_institutional_abstract_and_registered_chapter_bibliography",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
-          "spectral-unmixing",
-          "deep-unfolding"
+          "spectral-unmixing"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -45763,7 +45886,7 @@
         "datasets": "章节公开摘要未报告具体数据集或实验数字。",
         "experimentSetting": "Wiley 书籍章节，讨论模型启发深度网络的高光谱解混方法类别。",
         "conclusions": "公开章节摘要称模型启发学习方法兼具更高可解释性、学习能力、解混效率和有效性。",
-        "limitations": "仅完整机构摘要和书目；章节全文、具体网络、实验数据集及逐项比较未得。摘要没有明确逐层展开架构，方法标签仍暂定；官方代码只记录链接。",
+        "limitations": "仅主要摘要和正式书目；章节全文、具体网络、实验数据与比较未得。泛称模型启发学习不能证明逐层优化展开，不补猜具体算法。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45800,6 +45923,16 @@
             "supports": [
               "书名、四作者、363–403、Wiley，在线2022-11-11/印刷2022-11-16；不是会议论文。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整主要原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；主要机构完整原摘要实际阅读。",
+              "章节直接讨论HSI解混、模型与学习方法的桥接；摘要未列具体逐层展开，删除旧深度展开标签。",
+              "正式书章证据保留；仍摘要级，既有作者来源例外不扩展。"
+            ]
           }
         ],
         "versions": [
@@ -45812,7 +45945,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022"
+        "methodFamilyId": "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "机构完整原摘要直接研究HSI解混，支持任务确认；仅一般模型启发学习，不足以支持深度展开，删除该旧方法标签后确认。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "a7a746054aab131ee075a722d0a3197239ad0af6f33868c73c450c8f1c02e329",
+          "sourceUrls": [
+            "https://doi.org/10.1002/9781119687788.ch13",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@incollection{zhou_scholar_model_inspired_deep_neural_networks_for_hy_2022,\n  title = {Model-Inspired Deep Neural Networks for Hyperspectral Unmixing},\n  author = {Yuntao Qian and Fengchao Xiong and Minchao Ye and Jun Zhou},\n  booktitle = {Advances in Hyperspectral Image Processing Techniques},\n  editor = {Chein-I Chang},\n  chapter = {13},\n  pages = {363--403},\n  publisher = {Wiley},\n  year = {2022},\n  doi = {10.1002/9781119687788.ch13}\n}\n"
     },
@@ -49117,8 +49268,8 @@
         "zhou-63-hsi-2023",
         "zhou-65-hsi-2023",
         "zhou-scholar-deep-unfolded-iterative-shrinkage-threshol-2019",
+        "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
         "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
-        "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
         "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022",
         "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022"
       ],
@@ -49157,6 +49308,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "五篇机构完整原摘要确认去噪；四项显式优化展开补类，DPNet移除预训练误配、IRDNet移除无当前低秩证据的标签。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "NMF-SAE原稿/ISTA及波段注意力主要摘要支持方法；泛称模型启发学习的书籍章节删除无具体展开证据的旧标签。"
         }
       ]
     },
@@ -50006,7 +50162,8 @@
         "pnp-dip-2021",
         "t3sc-2021",
         "zhou-76-hsi-2022",
-        "zhou-20-hsi-2026"
+        "zhou-20-hsi-2026",
+        "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021"
       ],
       "history": [
         {
@@ -50018,6 +50175,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "NMF-SAE原稿/ISTA及波段注意力主要摘要支持方法；泛称模型启发学习的书籍章节删除无具体展开证据的旧标签。"
         }
       ]
     },
@@ -50386,7 +50548,7 @@
       "id": "nonlocal-spatial-priors",
       "name": "空间非局部先验",
       "dimension": "method",
-      "definition": "利用影像中非局部窗口或块的相似关系约束光谱恢复或解混；权重来自原观测、变换特征还是迭代估计须明确，不等同真实空间三维邻域。",
+      "definition": "利用影像中非局部位置、窗口或块的相似关系，通过加权特征聚合或约束建模光谱恢复、解混或分类；权重来自原观测、变换特征还是迭代估计须明确，不等同真实空间三维邻域。",
       "status": "confirmed",
       "color": "#90a4a7",
       "createdAt": "2026-10-08",
@@ -50437,6 +50599,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "概率邻接多层NMF/DiffUn正式或接受稿全文，以及NTF/ISTA网络官方完整摘要确认任务和方法边界。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "definition_expanded",
+          "reason": "2019非局部HSI分类主要完整摘要明确全位置加权特征聚合；扩展既有方法边界至分类，不改恢复/解混成员依据。"
         }
       ]
     },
@@ -53866,6 +54033,7 @@
         "zhou-67-hsi-2023",
         "zhou-47-hsi-2024",
         "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
+        "zhou-scholar-attention-networks-for-band-weighting-and--2019",
         "zhou-scholar-arxiv-2404-05258"
       ],
       "dimension": "method",
@@ -53892,6 +54060,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "ALN正式原摘要确认逐像元光谱注意力；关联2021章节补机制，不当作期刊全文。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "NMF-SAE原稿/ISTA及波段注意力主要摘要支持方法；泛称模型启发学习的书籍章节删除无具体展开证据的旧标签。"
         }
       ]
     },
