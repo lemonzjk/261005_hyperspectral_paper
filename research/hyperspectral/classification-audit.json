@@ -401,7 +401,12 @@
     "active-dense-hsi-classification-arxiv-2020",
     "thz-dual-chip-comb-imaging-optica-2019",
     "ua-adjustor-hsi-denoising-ijcai-2023",
-    "bdt-hsi-msi-fusion-ijcai-2023"
+    "bdt-hsi-msi-fusion-ijcai-2023",
+    "adknet-hsi-superresolution-ijcai-2022",
+    "hsrmamba-single-hsi-superresolution-ijcai-2025",
+    "signature-diffusion-hsi-model-watermark-ijcai-2025",
+    "bi-diffcd-hsi-rgb-change-ijcai-2025",
+    "camm-multimodal-prior-sci-ijcai-2025"
   ],
   "sourceChecks": [
     {
@@ -2904,6 +2909,115 @@
       "supports": [
         "BDT整体原框架：空间/光谱双分支特征提取BFE，经双向层级双模态融合BFF与插值HSI残差输出高空间分辨HSI。",
         "IJCAI2023唯一所用正式PDF第3页Figure2主方法原图与完整图注，未重绘；只存这一张，不补读全文、其他版本或实验。"
+      ]
+    },
+    {
+      "paperId": "adknet-hsi-superresolution-ijcai-2022",
+      "url": "https://www.ijcai.org/proceedings/2022/179",
+      "checkedAt": "2026-10-13",
+      "level": "IJCAI官方完整原摘要及出版书目",
+      "supports": [
+        "ADKNet根据不同观测源和局部像元生成自适应判别卷积核；正式摘要明确将原全色锐化网络扩展到高光谱图像空间超分辨率。",
+        "正式2022题名、完整作者、DOI及页段1283-1289；所用PDF首页作者一致，无Jun Zhou。"
+      ]
+    },
+    {
+      "paperId": "adknet-hsi-superresolution-ijcai-2022",
+      "url": "https://www.ijcai.org/proceedings/2022/0179.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "正式PDF第3页主要原图/图注（选读）",
+      "supports": [
+        "ADKNet整体原框架：PAN与低分辨MS两路输入驱动多个ADKG及自适应卷积，与上采样光谱输入残差相加。该图保留原PAN/MS标注，HSISR扩展依据正式摘要。",
+        "所用唯一IJCAI正式公开PDF第3页Figure3完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+      ]
+    },
+    {
+      "paperId": "hsrmamba-single-hsi-superresolution-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/91",
+      "checkedAt": "2026-10-13",
+      "level": "IJCAI官方完整原摘要及出版书目",
+      "supports": [
+        "HSRMamba以局部谱空分区和按光谱相似性进行全局重排，改善序列化时的邻域遗忘与输入顺序敏感，恢复单幅HSI的空间细节。",
+        "正式2025题名、完整作者、DOI及页段810-818；所用PDF首页作者一致，无Jun Zhou。"
+      ]
+    },
+    {
+      "paperId": "hsrmamba-single-hsi-superresolution-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/0091.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "正式PDF第2页主要原图/图注（选读）",
+      "supports": [
+        "HSRMamba整体原框架：多个上下文谱空Mamba组堆叠，含局部LSSM和全局GSCM模块，经上采样与双三次残差相加输出高分辨HSI。",
+        "所用唯一IJCAI正式公开PDF第2页Figure2完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+      ]
+    },
+    {
+      "paperId": "signature-diffusion-hsi-model-watermark-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/249",
+      "checkedAt": "2026-10-13",
+      "level": "IJCAI官方完整原摘要及出版书目",
+      "supports": [
+        "面向HSI分类模型的知识产权保护，在亚像元丰度空间以扩散嵌入所有者签名，形成隐蔽触发样本，并同时核验模型归属和触发集合法性。",
+        "正式2025题名、完整作者、DOI及页段2233-2241；所用PDF首页作者一致，无Jun Zhou。"
+      ]
+    },
+    {
+      "paperId": "signature-diffusion-hsi-model-watermark-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/0249.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "正式PDF第3页主要原图/图注（选读）",
+      "supports": [
+        "HSI模型水印整体原框架：签名扩散触发集生成与水印嵌入；下方分别进行可疑模型印记和触发集签名双验证。",
+        "所用唯一IJCAI正式公开PDF第3页Figure2完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+      ]
+    },
+    {
+      "paperId": "bi-diffcd-hsi-rgb-change-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/273",
+      "checkedAt": "2026-10-13",
+      "level": "IJCAI官方完整原摘要及出版书目",
+      "supports": [
+        "Bi-DiffCD通过双向条件扩散对齐异模态时相，并融合潜在与转换影像的互补变化特征；原文实际包含HSI–RGB变化检测。",
+        "正式2025题名、完整作者、DOI及页段2449-2457；所用PDF首页作者一致，无Jun Zhou。"
+      ]
+    },
+    {
+      "paperId": "bi-diffcd-hsi-rgb-change-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/0273.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "正式PDF第3页主要原图/图注（选读）",
+      "supports": [
+        "Bi-DiffCD整体原图：双向条件扩散模态对齐，两时相多级差异特征协同，经跨时间步差异特征分类得到变化图。",
+        "所用唯一IJCAI正式公开PDF第3页Figure1完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+      ]
+    },
+    {
+      "paperId": "bi-diffcd-hsi-rgb-change-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/0273.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "正式PDF第6页§4.1实际HSI输入范围（选读）",
+      "supports": [
+        "Liyukou实际使用Headwall VNIR HSI与RGB；HSI270原始带、选194带、0.4–1.0微米，先上采样到RGB尺寸。仅确认实际HSI场景，不核性能或登记新数据资源。"
+      ]
+    },
+    {
+      "paperId": "camm-multimodal-prior-sci-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/263",
+      "checkedAt": "2026-10-13",
+      "level": "IJCAI官方完整原摘要及出版书目",
+      "supports": [
+        "CAMM在快照光谱压缩重建中引入RGB和文本先验，通过双约束特征对齐和多模态融合Mamba恢复高光谱数据。",
+        "正式2025完整题名、五作者、DOI及页段2359-2367；所用PDF首页一致，无Jun Zhou。"
+      ]
+    },
+    {
+      "paperId": "camm-multimodal-prior-sci-ijcai-2025",
+      "url": "https://www.ijcai.org/proceedings/2025/0263.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "正式PDF第3页主要原图/图注（选读）",
+      "supports": [
+        "CAMM整体原框架：二维压缩测量和mask进入Mamba编码—解码网络；RGB及文本CLIP特征经FAM对齐，分别指导编码端和解码端MFM，输出重建HSI。",
+        "唯一所用IJCAI2025正式公开PDF第3页Figure3主框架与完整原图注，未重绘；不额外收部件图或其他正文版本。"
       ]
     }
   ]

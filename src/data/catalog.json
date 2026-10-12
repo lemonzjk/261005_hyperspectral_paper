@@ -54902,6 +54902,666 @@
         }
       },
       "citation": "@inproceedings{bdt_hsi_msi_fusion_ijcai_2023,\n  title = {Bidirectional Dilation Transformer for Multispectral and Hyperspectral Image Fusion},\n  author = {Shangqi Deng and Liang-Jian Deng and Xiao Wu and Ran Ran and Rui Wen},\n  booktitle = {Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence},\n  year = {2023},\n  pages = {3633--3641},\n  doi = {10.24963/ijcai.2023/404},\n  url = {https://www.ijcai.org/proceedings/2023/404}\n}\n"
+    },
+    {
+      "id": "adknet-hsi-superresolution-ijcai-2022",
+      "shortTitle": "ADKNet",
+      "title": "Source-Adaptive Discriminative Kernels based Network for Remote Sensing Pansharpening",
+      "authors": "Siran Peng, Liang-Jian Deng, Jin-Fan Hu, Yuwei Zhuo",
+      "year": 2022,
+      "venue": "IJCAI",
+      "publicationName": "Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.24963/ijcai.2022/179",
+      "representation": "主框架由PAN与低分辨光谱观测生成源适应判别核，逐位置执行自适应卷积，并与上采样输入作残差相加；图中PAN/MS标注保留，不替换成未经核验的HSI输入配置。",
+      "tags": [],
+      "summary": "ADKNet根据不同观测源和局部像元生成自适应判别卷积核；正式摘要明确将原全色锐化网络扩展到高光谱图像空间超分辨率。",
+      "input": "HSISR扩展的辅助观测细节未核；所用主框架标注PAN图像P和低空间分辨MS影像M。",
+      "output": "高空间分辨光谱影像；摘要明确包含高光谱超分辨率扩展。",
+      "mechanism": "主框架由PAN与低分辨光谱观测生成源适应判别核，逐位置执行自适应卷积，并与上采样输入作残差相加；图中PAN/MS标注保留，不替换成未经核验的HSI输入配置。",
+      "readingNote": "官方原摘要/书目、所用PDF首页署名和一张主图已核；7页仅下载，不记全文，未读其他正文版本或整理性能。原图仍为PAN/MS配置，HSISR扩展依据正式摘要；辅助观测/数据/数值未核不猜。",
+      "paper": "https://www.ijcai.org/proceedings/2022/179",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ijcai.org/proceedings/2022/0179.pdf",
+          "sourceVersion": "IJCAI 2022 official proceedings PDF",
+          "figureLabel": "Figure 3",
+          "page": 3,
+          "caption": "ADKNet整体原框架：PAN与低分辨MS两路输入驱动多个ADKG及自适应卷积，与上采样光谱输入残差相加。该图保留原PAN/MS标注，HSISR扩展依据正式摘要。",
+          "verificationNote": "所用唯一IJCAI正式公开PDF第3页Figure3完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。",
+          "path": "figures/adknet-hsi-superresolution-ijcai-2022/framework.png",
+          "width": 1560,
+          "height": 615,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "b8e527a93d3bf1a16b2567b0907e9f9d498c874fe0984c2cfaf473eff363e496",
+          "attribution": "Siran Peng, Liang-Jian Deng, Jin-Fan Hu, Yuwei Zhuo · IJCAI2022",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              40,
+              565,
+              245
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "code": "https://github.com/liangjiandeng/ADKNet",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "官方完整摘要明确直接HSISR扩展，故不是纯MS论文；归既有空间超分辨率。主图为PAN/MS配置，不推断HSISR辅助输入、数据集或性能。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何按观测源和局部区域生成判别卷积核，并扩展到高光谱空间超分辨率？",
+        "datasets": "本轮不整理数据集或实验划分。",
+        "experimentSetting": "只核身份、范围与一主图，不整理实验协议或性能。",
+        "conclusions": "按官方原摘要及主要原图说明任务/方法，不独立核结果。",
+        "limitations": "一个正式公开版本、一张主图已得；其他正文、图片、实验与代码检查不作为目录门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ijcai.org/proceedings/2022/179",
+            "checkedAt": "2026-10-13",
+            "level": "IJCAI官方完整原摘要及出版书目",
+            "supports": [
+              "ADKNet根据不同观测源和局部像元生成自适应判别卷积核；正式摘要明确将原全色锐化网络扩展到高光谱图像空间超分辨率。",
+              "正式2022题名、完整作者、DOI及页段1283-1289；所用PDF首页作者一致，无Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2022/0179.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "ADKNet整体原框架：PAN与低分辨MS两路输入驱动多个ADKG及自适应卷积，与上采样光谱输入残差相加。该图保留原PAN/MS标注，HSISR扩展依据正式摘要。",
+              "所用唯一IJCAI正式公开PDF第3页Figure3完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "adknet-hsi-superresolution-ijcai-2022-conference",
+            "type": "所用唯一正式会议公开版",
+            "url": "https://www.ijcai.org/proceedings/2022/179",
+            "pdfUrl": "https://www.ijcai.org/proceedings/2022/0179.pdf",
+            "doi": "10.24963/ijcai.2022/179",
+            "year": 2022,
+            "venue": "IJCAI",
+            "authors": [
+              "Siran Peng",
+              "Liang-Jian Deng",
+              "Jin-Fan Hu",
+              "Yuwei Zhuo"
+            ],
+            "pages": "1283-1289",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-lyu-yuzeng-ijcai-history-2026-10-13-2022-0179.pdf",
+            "relation": "采用官方正式版本的摘要、首页及一主图；不逐版本读正文。"
+          }
+        ],
+        "methodFamilyId": "adknet-hsi-superresolution-ijcai-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "官方完整摘要明确直接HSISR扩展，故不是纯MS论文；归既有空间超分辨率。主图为PAN/MS配置，不推断HSISR辅助输入、数据集或性能。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "629faaec64e64469392110a2e5f2aa04696c8b78cbe0bdcc6a433030c5915c38",
+          "sourceUrls": [
+            "https://www.ijcai.org/proceedings/2022/179",
+            "https://www.ijcai.org/proceedings/2022/0179.pdf"
+          ]
+        }
+      },
+      "citation": "@inproceedings{adknet_hsi_superresolution_ijcai_2022,\n  title = {Source-Adaptive Discriminative Kernels based Network for Remote Sensing Pansharpening},\n  author = {Siran Peng and Liang-Jian Deng and Jin-Fan Hu and Yuwei Zhuo},\n  booktitle = {Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence},\n  year = {2022},\n  pages = {1283--1289},\n  doi = {10.24963/ijcai.2022/179},\n  url = {https://www.ijcai.org/proceedings/2022/179}\n}\n"
+    },
+    {
+      "id": "hsrmamba-single-hsi-superresolution-ijcai-2025",
+      "shortTitle": "HSRMamba",
+      "title": "HSRMamba: Contextual Spatial-Spectral State Space Model for Single Hyperspectral Image Super-Resolution",
+      "authors": "Shi Chen, Lefei Zhang, Liangpei Zhang",
+      "year": 2025,
+      "venue": "IJCAI",
+      "publicationName": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.24963/ijcai.2025/91",
+      "representation": "多个上下文谱空Mamba组叠加；局部谱空Mamba模块建立邻近特征的patch因果关系，全局光谱关联Mamba模块重排相似谱特征，最后上采样并叠加双三次残差。",
+      "tags": [],
+      "summary": "HSRMamba以局部谱空分区和按光谱相似性进行全局重排，改善序列化时的邻域遗忘与输入顺序敏感，恢复单幅HSI的空间细节。",
+      "input": "低空间分辨单幅高光谱影像。",
+      "output": "高空间分辨高光谱影像。",
+      "mechanism": "多个上下文谱空Mamba组叠加；局部谱空Mamba模块建立邻近特征的patch因果关系，全局光谱关联Mamba模块重排相似谱特征，最后上采样并叠加双三次残差。",
+      "readingNote": "官方原摘要/书目、所用PDF首页署名和一张主图已核；9页仅下载，不记全文，未读其他正文版本或整理性能。",
+      "paper": "https://www.ijcai.org/proceedings/2025/91",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ijcai.org/proceedings/2025/0091.pdf",
+          "sourceVersion": "IJCAI 2025 official proceedings PDF",
+          "figureLabel": "Figure 2",
+          "page": 2,
+          "caption": "HSRMamba整体原框架：多个上下文谱空Mamba组堆叠，含局部LSSM和全局GSCM模块，经上采样与双三次残差相加输出高分辨HSI。",
+          "verificationNote": "所用唯一IJCAI正式公开PDF第2页Figure2完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。",
+          "path": "figures/hsrmamba-single-hsi-superresolution-ijcai-2025/framework.png",
+          "width": 1560,
+          "height": 780,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "9b389c7cda7ee1cad227a41756c7f785e41b35ed5f4b3780c25e8d2f6eb00e2e",
+          "attribution": "Shi Chen, Lefei Zhang, Liangpei Zhang · IJCAI2025",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              40,
+              565,
+              300
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "code": "https://github.com/Tomchenshi/HSRMamba",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "state-space-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "官方原摘要与Fig2直接恢复HSI空间分辨率，以Mamba/状态空间模型建模谱空依赖，沿用两个既有标签；3D特征不当真实三维场景。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在单幅HSI超分辨率中保留局部谱空结构并减轻Mamba的顺序敏感？",
+        "datasets": "本轮不整理数据集或实验划分。",
+        "experimentSetting": "只核身份、范围与一主图，不整理实验协议或性能。",
+        "conclusions": "按官方原摘要及主要原图说明任务/方法，不独立核结果。",
+        "limitations": "一个正式公开版本、一张主图已得；其他正文、图片、实验与代码检查不作为目录门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/91",
+            "checkedAt": "2026-10-13",
+            "level": "IJCAI官方完整原摘要及出版书目",
+            "supports": [
+              "HSRMamba以局部谱空分区和按光谱相似性进行全局重排，改善序列化时的邻域遗忘与输入顺序敏感，恢复单幅HSI的空间细节。",
+              "正式2025题名、完整作者、DOI及页段810-818；所用PDF首页作者一致，无Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/0091.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第2页主要原图/图注（选读）",
+            "supports": [
+              "HSRMamba整体原框架：多个上下文谱空Mamba组堆叠，含局部LSSM和全局GSCM模块，经上采样与双三次残差相加输出高分辨HSI。",
+              "所用唯一IJCAI正式公开PDF第2页Figure2完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hsrmamba-single-hsi-superresolution-ijcai-2025-conference",
+            "type": "所用唯一正式会议公开版",
+            "url": "https://www.ijcai.org/proceedings/2025/91",
+            "pdfUrl": "https://www.ijcai.org/proceedings/2025/0091.pdf",
+            "doi": "10.24963/ijcai.2025/91",
+            "year": 2025,
+            "venue": "IJCAI",
+            "authors": [
+              "Shi Chen",
+              "Lefei Zhang",
+              "Liangpei Zhang"
+            ],
+            "pages": "810-818",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-lyu-yuzeng-ijcai-history-2026-10-13-2025-0091.pdf",
+            "relation": "采用官方正式版本的摘要、首页及一主图；不逐版本读正文。"
+          }
+        ],
+        "methodFamilyId": "hsrmamba-single-hsi-superresolution-ijcai-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "官方原摘要与Fig2直接恢复HSI空间分辨率，以Mamba/状态空间模型建模谱空依赖，沿用两个既有标签；3D特征不当真实三维场景。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "88a7b5d867e7ca6159235b1f6fb056b7b6ff26b13d35a97f2d3b04b6fc5aa732",
+          "sourceUrls": [
+            "https://www.ijcai.org/proceedings/2025/91",
+            "https://www.ijcai.org/proceedings/2025/0091.pdf"
+          ]
+        }
+      },
+      "citation": "@inproceedings{hsrmamba_single_hsi_superresolution_ijcai_2025,\n  title = {HSRMamba: Contextual Spatial-Spectral State Space Model for Single Hyperspectral Image Super-Resolution},\n  author = {Shi Chen and Lefei Zhang and Liangpei Zhang},\n  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence},\n  year = {2025},\n  pages = {810--818},\n  doi = {10.24963/ijcai.2025/91},\n  url = {https://www.ijcai.org/proceedings/2025/91}\n}\n"
+    },
+    {
+      "id": "signature-diffusion-hsi-model-watermark-ijcai-2025",
+      "shortTitle": "HSI dual-verification watermark",
+      "title": "Do You Steal My Model? Signature Diffusion Embedded Dual-Verification Watermarking for Protecting Intellectual Property of Hyperspectral Image Classification Models",
+      "authors": "Yufei Yang, Song Xiao, Lixiang Li, Wenqian Dong, Jiahui Qu",
+      "year": 2025,
+      "venue": "IJCAI",
+      "publicationName": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.24963/ijcai.2025/249",
+      "representation": "从原HSI样本得到种子和丰度表示，将所有者签名经扩散编码成触发集用于水印嵌入；查询可疑模型验证模型印记，同时从触发样本解码签名验证触发集。",
+      "tags": [],
+      "summary": "面向HSI分类模型的知识产权保护，在亚像元丰度空间以扩散嵌入所有者签名，形成隐蔽触发样本，并同时核验模型归属和触发集合法性。",
+      "input": "HSI分类模型、原始高光谱样本与所有者签名。",
+      "output": "嵌水印HSI分类模型，以及模型归属和触发集合法性双验证结果。",
+      "mechanism": "从原HSI样本得到种子和丰度表示，将所有者签名经扩散编码成触发集用于水印嵌入；查询可疑模型验证模型印记，同时从触发样本解码签名验证触发集。",
+      "readingNote": "官方原摘要/书目、所用PDF首页署名和一张主图已核；9页仅下载，不记全文，未读其他正文版本或整理性能。",
+      "paper": "https://www.ijcai.org/proceedings/2025/249",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ijcai.org/proceedings/2025/0249.pdf",
+          "sourceVersion": "IJCAI 2025 official proceedings PDF",
+          "figureLabel": "Figure 2",
+          "page": 3,
+          "caption": "HSI模型水印整体原框架：签名扩散触发集生成与水印嵌入；下方分别进行可疑模型印记和触发集签名双验证。",
+          "verificationNote": "所用唯一IJCAI正式公开PDF第3页Figure2完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。",
+          "path": "figures/signature-diffusion-hsi-model-watermark-ijcai-2025/framework.png",
+          "width": 1560,
+          "height": 795,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "ac25bd22a5e30be4a473f787558b953c714efeb09e6b69d2b24e7c816ac170e7",
+          "attribution": "Yufei Yang, Song Xiao, Lixiang Li, Wenqian Dong, Jiahui Qu · IJCAI2025",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              40,
+              565,
+              305
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "hyperspectral-model-watermarking",
+          "diffusion-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要与Fig2明确针对高维HSI分类模型，非通用RGB安全工作的泛关联；任务输出是模型IP验证，新增高光谱模型水印任务，并沿用扩散方法标签。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何保护HSI分类模型并防止伪造触发集造成所有权混淆？",
+        "datasets": "本轮不整理数据集或实验划分。",
+        "experimentSetting": "只核身份、范围与一主图，不整理实验协议或性能。",
+        "conclusions": "按官方原摘要及主要原图说明任务/方法，不独立核结果。",
+        "limitations": "一个正式公开版本、一张主图已得；其他正文、图片、实验与代码检查不作为目录门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/249",
+            "checkedAt": "2026-10-13",
+            "level": "IJCAI官方完整原摘要及出版书目",
+            "supports": [
+              "面向HSI分类模型的知识产权保护，在亚像元丰度空间以扩散嵌入所有者签名，形成隐蔽触发样本，并同时核验模型归属和触发集合法性。",
+              "正式2025题名、完整作者、DOI及页段2233-2241；所用PDF首页作者一致，无Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/0249.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "HSI模型水印整体原框架：签名扩散触发集生成与水印嵌入；下方分别进行可疑模型印记和触发集签名双验证。",
+              "所用唯一IJCAI正式公开PDF第3页Figure2完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "signature-diffusion-hsi-model-watermark-ijcai-2025-conference",
+            "type": "所用唯一正式会议公开版",
+            "url": "https://www.ijcai.org/proceedings/2025/249",
+            "pdfUrl": "https://www.ijcai.org/proceedings/2025/0249.pdf",
+            "doi": "10.24963/ijcai.2025/249",
+            "year": 2025,
+            "venue": "IJCAI",
+            "authors": [
+              "Yufei Yang",
+              "Song Xiao",
+              "Lixiang Li",
+              "Wenqian Dong",
+              "Jiahui Qu"
+            ],
+            "pages": "2233-2241",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-lyu-yuzeng-ijcai-history-2026-10-13-2025-0249.pdf",
+            "relation": "采用官方正式版本的摘要、首页及一主图；不逐版本读正文。"
+          }
+        ],
+        "methodFamilyId": "signature-diffusion-hsi-model-watermark-ijcai-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与Fig2明确针对高维HSI分类模型，非通用RGB安全工作的泛关联；任务输出是模型IP验证，新增高光谱模型水印任务，并沿用扩散方法标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "e251e5172594ba680438d734feeaf90e577b55305578650cbf4bf17b8f363d70",
+          "sourceUrls": [
+            "https://www.ijcai.org/proceedings/2025/249",
+            "https://www.ijcai.org/proceedings/2025/0249.pdf"
+          ]
+        }
+      },
+      "citation": "@inproceedings{signature_diffusion_hsi_model_watermark_ijcai_2025,\n  title = {Do You Steal My Model? Signature Diffusion Embedded Dual-Verification Watermarking for Protecting Intellectual Property of Hyperspectral Image Classification Models},\n  author = {Yufei Yang and Song Xiao and Lixiang Li and Wenqian Dong and Jiahui Qu},\n  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence},\n  year = {2025},\n  pages = {2233--2241},\n  doi = {10.24963/ijcai.2025/249},\n  url = {https://www.ijcai.org/proceedings/2025/249}\n}\n"
+    },
+    {
+      "id": "bi-diffcd-hsi-rgb-change-ijcai-2025",
+      "shortTitle": "Bi-DiffCD",
+      "title": "Bi-DiffCD: Bidirectional Diffusion Guided Collaborative Change Detection for Arbitrary-Modal Remote Sensing Images",
+      "authors": "Jingyu Zhao, Jiahui Qu, Wenqian Dong",
+      "year": 2025,
+      "venue": "IJCAI",
+      "publicationName": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.24963/ijcai.2025/273",
+      "representation": "条件扩散双向模态对齐保留互补信息；多级互补特征协同模块整合转换影像及潜在表示的差异，再进行变化分类。",
+      "tags": [],
+      "summary": "Bi-DiffCD通过双向条件扩散对齐异模态时相，并融合潜在与转换影像的互补变化特征；原文实际包含HSI–RGB变化检测。",
+      "input": "不同时相的异模态影像；直接HSI场景为Liyukou的HSI与RGB，HSI先上采样到RGB尺寸。",
+      "output": "二维土地覆盖变化检测图。",
+      "mechanism": "条件扩散双向模态对齐保留互补信息；多级互补特征协同模块整合转换影像及潜在表示的差异，再进行变化分类。",
+      "readingNote": "官方原摘要/书目、所用PDF首页署名和一张主图已核；9页仅下载，不记全文，未读其他正文版本或整理性能。第6页§4.1只核Liyukou实际HSI输入。",
+      "paper": "https://www.ijcai.org/proceedings/2025/273",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ijcai.org/proceedings/2025/0273.pdf",
+          "sourceVersion": "IJCAI 2025 official proceedings PDF",
+          "figureLabel": "Figure 1",
+          "page": 3,
+          "caption": "Bi-DiffCD整体原图：双向条件扩散模态对齐，两时相多级差异特征协同，经跨时间步差异特征分类得到变化图。",
+          "verificationNote": "所用唯一IJCAI正式公开PDF第3页Figure1完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。",
+          "path": "figures/bi-diffcd-hsi-rgb-change-ijcai-2025/framework.png",
+          "width": 1560,
+          "height": 840,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "28ff9fb6aeb00bfb89f65b535ba4890bac55838ff4d78d47dfe848a494092d0f",
+          "attribution": "Jingyu Zhao, Jiahui Qu, Wenqian Dong · IJCAI2025",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              40,
+              565,
+              320
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "code": "https://github.com/Jiahuiqu/Bi-DiffCD",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-change-detection",
+          "diffusion-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "Fig1和第6页§4.1 Liyukou明确Headwall VNIR高光谱270原始波段、实际194带，与RGB跨时相变化检测，属于直接处理HSI的融合；不把其余纯MS/SAR场景单独收成HSI论文。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在HSI与RGB等跨时相异模态观测之间对齐模态并检测真实变化？",
+        "datasets": "Liyukou RGB–HSI实际输入已核；未核公开数据链接/许可，不登记新资源。",
+        "experimentSetting": "只核身份、范围与一主图，不整理实验协议或性能。",
+        "conclusions": "按官方原摘要及主要原图说明任务/方法，不独立核结果。",
+        "limitations": "一个正式公开版本、一张主图已得；其他正文、图片、实验与代码检查不作为目录门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/273",
+            "checkedAt": "2026-10-13",
+            "level": "IJCAI官方完整原摘要及出版书目",
+            "supports": [
+              "Bi-DiffCD通过双向条件扩散对齐异模态时相，并融合潜在与转换影像的互补变化特征；原文实际包含HSI–RGB变化检测。",
+              "正式2025题名、完整作者、DOI及页段2449-2457；所用PDF首页作者一致，无Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/0273.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "Bi-DiffCD整体原图：双向条件扩散模态对齐，两时相多级差异特征协同，经跨时间步差异特征分类得到变化图。",
+              "所用唯一IJCAI正式公开PDF第3页Figure1完整主要原图及图注，未重绘；只存一张，不追加其他正文版本、图片或性能整理。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/0273.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第6页§4.1实际HSI输入范围（选读）",
+            "supports": [
+              "Liyukou实际使用Headwall VNIR HSI与RGB；HSI270原始带、选194带、0.4–1.0微米，先上采样到RGB尺寸。仅确认实际HSI场景，不核性能或登记新数据资源。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "bi-diffcd-hsi-rgb-change-ijcai-2025-conference",
+            "type": "所用唯一正式会议公开版",
+            "url": "https://www.ijcai.org/proceedings/2025/273",
+            "pdfUrl": "https://www.ijcai.org/proceedings/2025/0273.pdf",
+            "doi": "10.24963/ijcai.2025/273",
+            "year": 2025,
+            "venue": "IJCAI",
+            "authors": [
+              "Jingyu Zhao",
+              "Jiahui Qu",
+              "Wenqian Dong"
+            ],
+            "pages": "2449-2457",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-lyu-yuzeng-ijcai-history-2026-10-13-2025-0273.pdf",
+            "relation": "采用官方正式版本的摘要、首页及一主图；不逐版本读正文。"
+          }
+        ],
+        "methodFamilyId": "bi-diffcd-hsi-rgb-change-ijcai-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "Fig1和第6页§4.1 Liyukou明确Headwall VNIR高光谱270原始波段、实际194带，与RGB跨时相变化检测，属于直接处理HSI的融合；不把其余纯MS/SAR场景单独收成HSI论文。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "0cdc240c69fe85135eb558ae8698d8fcf690dd8506e3ac32e1c9b241a25eba8a",
+          "sourceUrls": [
+            "https://www.ijcai.org/proceedings/2025/273",
+            "https://www.ijcai.org/proceedings/2025/0273.pdf"
+          ]
+        }
+      },
+      "citation": "@inproceedings{bi_diffcd_hsi_rgb_change_ijcai_2025,\n  title = {Bi-DiffCD: Bidirectional Diffusion Guided Collaborative Change Detection for Arbitrary-Modal Remote Sensing Images},\n  author = {Jingyu Zhao and Jiahui Qu and Wenqian Dong},\n  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence},\n  year = {2025},\n  pages = {2449--2457},\n  doi = {10.24963/ijcai.2025/273},\n  url = {https://www.ijcai.org/proceedings/2025/273}\n}\n"
+    },
+    {
+      "id": "camm-multimodal-prior-sci-ijcai-2025",
+      "shortTitle": "CAMM",
+      "title": "Multimodal Prior Learning with Double Constraint Alignment for Snapshot Spectral Compressive Imaging",
+      "authors": "Mingjin Zhang, Longyi Li, Fei Gao, Qiming Zhang, Jie Guo",
+      "year": 2025,
+      "venue": "IJCAI",
+      "publicationName": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.24963/ijcai.2025/263",
+      "representation": "FAM以分布相似性与熵约束对齐预训练RGB/文本特征和HSI域；编码端MFM接受RGB引导，解码端接受RGB及对齐文本引导，将先验融入Mamba状态空间处理。",
+      "tags": [],
+      "summary": "CAMM在快照光谱压缩重建中引入RGB和文本先验，通过双约束特征对齐和多模态融合Mamba恢复高光谱数据。",
+      "input": "二维快照压缩测量、编码mask、RGB影像及文本引导特征。",
+      "output": "二维空间与光谱维组成的重建HSI。",
+      "mechanism": "FAM以分布相似性与熵约束对齐预训练RGB/文本特征和HSI域；编码端MFM接受RGB引导，解码端接受RGB及对齐文本引导，将先验融入Mamba状态空间处理。",
+      "readingNote": "官方原摘要/书目、PDF首页五作者及第3页一张主框架已核；9页仅下载，不记全文，不核实验性能或其他正文版本。光谱立方体的第三维是波长，不当几何三维。",
+      "paper": "https://www.ijcai.org/proceedings/2025/263",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ijcai.org/proceedings/2025/0263.pdf",
+          "sourceVersion": "IJCAI 2025 official proceedings PDF",
+          "figureLabel": "Figure 3",
+          "page": 3,
+          "caption": "CAMM整体原框架：二维压缩测量和mask进入Mamba编码—解码网络；RGB及文本CLIP特征经FAM对齐，分别指导编码端和解码端MFM，输出重建HSI。",
+          "verificationNote": "唯一所用IJCAI2025正式公开PDF第3页Figure3主框架与完整原图注，未重绘；不额外收部件图或其他正文版本。",
+          "path": "figures/camm-multimodal-prior-sci-ijcai-2025/framework.png",
+          "width": 1560,
+          "height": 780,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "b9d988ed7df2fc82496a602f496076be8056c3b1c5a02ee7d674dabcbecd093e",
+          "attribution": "Mingjin Zhang, Longyi Li, Fei Gao, Qiming Zhang, Jie Guo · IJCAI2025",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              40,
+              565,
+              300
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "state-space-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要明确二维压缩观测恢复HSI，Fig3含测量/mask/RGB/文本和Mamba重建，归光谱重建与状态空间方法；未联合优化光学编码，不添加计算成像系统设计任务，也不把复用CLIP当独立HSI表征预训练。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用对齐的RGB/文本先验指导Mamba完成快照压缩HSI重建？",
+        "datasets": "未整理数据集、实验划分或公开资源。",
+        "experimentSetting": "只核身份、范围与一主图，不整理实验协议或性能。",
+        "conclusions": "按官方原摘要及主要原图说明任务/方法，不独立核结果。",
+        "limitations": "一个正式公开版本、一张主图已得；其他正文、图片、实验与代码检查不作为目录门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/263",
+            "checkedAt": "2026-10-13",
+            "level": "IJCAI官方完整原摘要及出版书目",
+            "supports": [
+              "CAMM在快照光谱压缩重建中引入RGB和文本先验，通过双约束特征对齐和多模态融合Mamba恢复高光谱数据。",
+              "正式2025完整题名、五作者、DOI及页段2359-2367；所用PDF首页一致，无Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://www.ijcai.org/proceedings/2025/0263.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "正式PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "CAMM整体原框架：二维压缩测量和mask进入Mamba编码—解码网络；RGB及文本CLIP特征经FAM对齐，分别指导编码端和解码端MFM，输出重建HSI。",
+              "唯一所用IJCAI2025正式公开PDF第3页Figure3主框架与完整原图注，未重绘；不额外收部件图或其他正文版本。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "camm-multimodal-prior-sci-ijcai-2025-conference",
+            "type": "所用唯一正式会议公开版",
+            "url": "https://www.ijcai.org/proceedings/2025/263",
+            "pdfUrl": "https://www.ijcai.org/proceedings/2025/0263.pdf",
+            "doi": "10.24963/ijcai.2025/263",
+            "year": 2025,
+            "venue": "IJCAI",
+            "authors": [
+              "Mingjin Zhang",
+              "Longyi Li",
+              "Fei Gao",
+              "Qiming Zhang",
+              "Jie Guo"
+            ],
+            "pages": "2359-2367",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-lyu-yuzeng-ijcai-history-2026-10-13-2025-0263.pdf",
+            "relation": "只采用正式原摘要、首页和一主图；不逐版本读正文。"
+          }
+        ],
+        "methodFamilyId": "camm-multimodal-prior-sci-ijcai-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要明确二维压缩观测恢复HSI，Fig3含测量/mask/RGB/文本和Mamba重建，归光谱重建与状态空间方法；未联合优化光学编码，不添加计算成像系统设计任务，也不把复用CLIP当独立HSI表征预训练。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "150cff0e233422d53c943aec168c9e28db746f91c593c0043115d82dc1471b1e",
+          "sourceUrls": [
+            "https://www.ijcai.org/proceedings/2025/263",
+            "https://www.ijcai.org/proceedings/2025/0263.pdf"
+          ]
+        }
+      },
+      "citation": "@inproceedings{camm_ijcai_2025,\n  title = {Multimodal Prior Learning with Double Constraint Alignment for Snapshot Spectral Compressive Imaging},\n  author = {Mingjin Zhang and Longyi Li and Fei Gao and Qiming Zhang and Jie Guo},\n  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence},\n  year = {2025},\n  pages = {2359--2367},\n  doi = {10.24963/ijcai.2025/263},\n  url = {https://www.ijcai.org/proceedings/2025/263}\n}\n"
     }
   ],
   "datasets": [
@@ -55015,7 +55675,8 @@
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-arxiv-2309-00005",
         "zhou-scholar-arxiv-2609-37340",
-        "agd-net-spectral-reconstruction-arxiv-2021"
+        "agd-net-spectral-reconstruction-arxiv-2021",
+        "camm-multimodal-prior-sci-ijcai-2025"
       ],
       "history": [
         {
@@ -55122,7 +55783,9 @@
         "hsi-superresolution-icig-2017",
         "hypersigma-tpami-2025",
         "infn-arxiv-2023",
-        "bdt-hsi-msi-fusion-ijcai-2023"
+        "bdt-hsi-msi-fusion-ijcai-2023",
+        "adknet-hsi-superresolution-ijcai-2022",
+        "hsrmamba-single-hsi-superresolution-ijcai-2025"
       ],
       "history": [
         {
@@ -57278,7 +57941,8 @@
       "rationale": "NeurIPS2022正式摘要和注明原文页支持；由实际方法/任务形成暂定标签。",
       "evidencePaperIds": [
         "zhou-scholar-arxiv-2609-37340",
-        "hypersigma-tpami-2025"
+        "hypersigma-tpami-2025",
+        "bi-diffcd-hsi-rgb-change-ijcai-2025"
       ],
       "history": [
         {
@@ -58523,7 +59187,9 @@
         "hucrtrack-tip-2026",
         "dualmamba-tgrs-2025",
         "decsc-tgrs-2025",
-        "drsst-net-isprs-2026"
+        "drsst-net-isprs-2026",
+        "hsrmamba-single-hsi-superresolution-ijcai-2025",
+        "camm-multimodal-prior-sci-ijcai-2025"
       ],
       "history": [
         {
@@ -58567,7 +59233,9 @@
         "fvmgn-generalization",
         "symdiffuser-fusion",
         "zhou-45-hsi-2024",
-        "zhou-13-hsi-2026"
+        "zhou-13-hsi-2026",
+        "signature-diffusion-hsi-model-watermark-ijcai-2025",
+        "bi-diffcd-hsi-rgb-change-ijcai-2025"
       ],
       "history": [
         {
@@ -60932,6 +61600,26 @@
           "date": "2026-10-12",
           "action": "created",
           "reason": "按三个原摘要的真实边界输出新建任务；保持各稿独立及版本关系待核。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-model-watermarking",
+      "name": "高光谱模型水印",
+      "dimension": "task",
+      "definition": "针对高光谱学习模型生成并嵌入触发水印，验证模型所有权或触发集合法性；与仅以HSI作未专门研究的数据集的通用模型保护区分。",
+      "rationale": "IJCAI2025正式原摘要与整体Fig2直接研究HSI分类模型签名扩散、模型和触发集双验证，输出为知识产权验证。",
+      "status": "confirmed",
+      "color": "#ad86b8",
+      "createdAt": "2026-10-13",
+      "evidencePaperIds": [
+        "signature-diffusion-hsi-model-watermark-ijcai-2025"
+      ],
+      "history": [
+        {
+          "date": "2026-10-13",
+          "action": "created",
+          "reason": "一篇正式主图/原摘要支持新的直接HSI研究任务。"
         }
       ]
     }
