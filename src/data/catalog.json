@@ -33749,6 +33749,16 @@
             "supports": [
               "第17页ref53对应该正式题名、三作者、TGRS57(12):10410–10425/2019；只是书目互证，未读被引论文全文。"
             ]
+          },
+          {
+            "url": "https://www.xiongfuli.com/cv/",
+            "checkedAt": "2026-10-12",
+            "level": "作者公开论文卡：书目与官方代码链接",
+            "supports": [
+              "作者公开论文卡直接列L0复原题名、Fengchao Xiong/Jun Zhou/Yuntao Qian、TGRS57(12):10410–10425/2019。",
+              "该卡PDF按钮实际指向IEEE摘要8824180，不是已取得免费PDF；没有提升正文阅读。",
+              "同卡给出官方代码URL https://github.com/bearshng/LRTFL0/；仅记录URL，没有访问、下载、审查或运行代码。"
+            ]
           }
         ],
         "versions": [
@@ -33782,7 +33792,8 @@
           ]
         }
       },
-      "citation": "@article{hsi_l0_gradient_lowrank_restoration_2019,\n  title = {Hyperspectral Restoration via L0 Gradient Regularized Low-Rank Tensor Factorization},\n  author = {Fengchao Xiong and Jun Zhou and Yuntao Qian},\n  year = {2019},\n  doi = {10.1109/TGRS.2019.2935150}\n}\n"
+      "citation": "@article{hsi_l0_gradient_lowrank_restoration_2019,\n  title = {Hyperspectral Restoration via L0 Gradient Regularized Low-Rank Tensor Factorization},\n  author = {Fengchao Xiong and Jun Zhou and Yuntao Qian},\n  year = {2019},\n  doi = {10.1109/TGRS.2019.2935150}\n}\n",
+      "code": "https://github.com/bearshng/LRTFL0/"
     },
     {
       "id": "gaussian-gabor-hsi-classification-2019",
@@ -49079,29 +49090,28 @@
       ],
       "representation": "三页 STRL’25 工作论文/报告介绍高光谱视频中光谱—空间—时间联合建模及目标跟踪。",
       "tags": [],
-      "summary": "工作先回顾波段选择、解混和高光谱视频跟踪，再讨论波段分组、Siamese融合、YOLO/GRU时序建模及跨相机数据适配。",
-      "input": "高光谱视频；不同相机的可见光、近红外及红-NIR波段，含多波段时序帧。",
+      "summary": "三页工作坊报告综述高光谱视频跟踪：波段分组与伪彩色并行跟踪、Siamese特征融合、检测器/GRU时序及跨相机选带集成；没有独立新模型完整实验。",
+      "input": "高光谱视频及首帧指定目标边界框；讨论不同相机的波段数和可见/近红外/红-NIR波长范围差异。",
       "output": "目标边界框跟踪、光谱—空间—时间特征和跨数据集适配方向。",
-      "mechanism": "按波段重要性将高光谱帧转为伪彩色组，使用并行彩色跟踪器/特征融合；可结合检测器、分类器和GRU建模时序，讨论自适应波段选择和多模型集成。",
-      "readingNote": "DBLP STRL目录、Scholar题名与 CEUR 三页 PDF 全文核验；PDF 明示 Jun Zhou、Griffith、目标 ORCID 0000-0001-5822-8233，确认作者身份。",
+      "mechanism": "分别介绍既有方法：注意力估计波段重要性后分组供预训练颜色跟踪器使用；Siamese融合多层/多尺度特征；检测器配分类器与GRU；UBSTrack选择三带并用多模型候选集成。各引用方案不合写为本稿一个训练架构。",
+      "readingNote": "CEUR三页报告已全文阅读，本轮1–3页复读。作者Griffith及目标ORCID明确；工作坊日期为2025年8月，PDF另标published2025-11-20。跟踪为核心任务，解混/选带是背景或被引机制；使用预训练颜色跟踪器不构成独立预训练研究。",
       "paper": "https://ceur-ws.org/Vol-4102/keynote1.pdf",
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
-          "hyperspectral-target-tracking",
-          "representation-learning"
+          "hyperspectral-target-tracking"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "全文明确高光谱视频输入、光谱—空间—时间跟踪任务及目标作者 ORCID。",
         "readingProgress": "full_text_read",
         "verificationStatus": "full_text_verified",
         "researchQuestion": "如何联合光谱、空间和时间信息，提升跨相机高光谱视频目标跟踪？",
         "datasets": "文中讨论2020起高光谱视频数据集及2025跟踪竞赛多相机视频；未给出本稿独立新数据集。",
-        "experimentSetting": "三页工作论文/报告，含高光谱视频跟踪流程、波段分组、并行跟踪器、检测/分类/GRU和跨相机适配讨论。",
+        "experimentSetting": "报告没有本稿独立训练/消融/数值实验；讨论2020视频数据集、2025竞赛超过200视频、若干被引Siamese/YOLO/GRU与UBSTrack方案，不把它们拼为同一受测模型。",
         "conclusions": "报告认为波段选择、光谱—空间—时间建模、时序网络和更大标注数据集是高光谱视频跟踪关键方向。",
-        "limitations": "工作论文/报告非完整实验论文；未报告独立模型完整实验、数值对比或代码。",
+        "limitations": "三页工作坊报告，未给独立模型的完整协议或数值对比；引用贡献及方法归属分别保留，不能把生成式增广、光流等未来方向写成已完成实验。",
         "dataLinks": [],
         "evidence": [
           {
@@ -49113,6 +49123,16 @@
               "高光谱视频跟踪任务及光谱—空间—时间问题",
               "波段分组、伪彩色跟踪、Siamese/检测/GRU和跨相机适配讨论"
             ]
+          },
+          {
+            "url": "https://ceur-ws.org/Vol-4102/keynote1.pdf",
+            "checkedAt": "2026-10-12",
+            "level": "既有原PDF复读：任务分类及方法边界核验",
+            "supports": [
+              "PDF1–3三页报告完整复读；Griffith与目标ORCID明确，首次帧目标框初始化。",
+              "PDF2分别讨论注意力分组/伪彩色并行跟踪、引用Siamese融合/YOLO/GRU及UBSTrack选三带/集成；无独立模型训练实验或预训练目标。",
+              "封面标工作坊August2025、published2025-11-20，两个日期区分；全部13引用已读，未把被引方法实验转移为本稿结果。"
+            ]
           }
         ],
         "versions": [
@@ -49121,10 +49141,28 @@
             "type": "CEUR Workshop Proceedings全文",
             "url": "https://ceur-ws.org/Vol-4102/keynote1.pdf",
             "year": 2025,
-            "relation": "STRL’25 工作论文/报告，三页全文"
+            "relation": "STRL’25三页报告；工作坊为2025年8月，PDF单独标published2025-11-20。并非独立新模型实验论文。",
+            "publishedAt": "2025-11-20"
           }
         ],
-        "methodFamilyId": "zhou-strl-hyperspectral-tracking-2025"
+        "methodFamilyId": "zhou-strl-hyperspectral-tracking-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "三页报告的研究对象为高光谱目标跟踪；引用的选带、解混、预训练颜色跟踪器与Siamese/YOLO/GRU方案分别归属，不构成本稿独立预训练或表征学习任务。保留跟踪任务，删除旧表征学习任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "1c1d40c9ef821a63f6687b9cd5639155d056eb175f415e8ea34bb3541244fe99",
+          "sourceUrls": [
+            "https://ceur-ws.org/Vol-4102/keynote1.pdf"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-strl-hyperspectral-tracking-2025,\n  title = {Spectral-spatial-temporal Modelling for Hyperspectral Object Tracking.},\n  author = {Jun Zhou},\n  booktitle = {STRL@IJCAI 2025},\n  year = {2025},\n  url = {https://ceur-ws.org/Vol-4102/keynote1.pdf}\n}\n"
     },
@@ -49250,7 +49288,7 @@
         "hyperspectral"
       ],
       "tags": [],
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "full_text_verified",
       "id": "zhou-sugarcane-assct-2023",
       "shortTitle": "Sugarcane HSI · ASSCT 2023",
@@ -49265,7 +49303,7 @@
       "input": "imec Snapscan VNIR采集的470–900 nm、150波段、1088×2048像素甘蔗影像；暗白校准与SVM前景分割。",
       "output": "每幅甘蔗影像的接种/对照二分类结果及分时段准确率、敏感度、特异度和F1。",
       "mechanism": "在ResNet34每个残差块嵌入DSAB的通道与空间自注意力，分别为两种病害训练模型；相邻两次采集归为时段数据集。",
-      "readingNote": "已通读Griffith保存的ASSCT2023正式8页正文（176–183页，PDF另有封面）。本文明确采用Bao等2021的DSAB；未发现与2024期刊稿的明确扩展声明，不合并实验或作者。未进行代码复现。",
+      "readingNote": "已通读Griffith保存的ASSCT2023正式8页正文（176–183页，PDF另有封面）。本文明确采用Bao等2021的DSAB；未发现与2024期刊稿的明确扩展声明，不合并实验或作者。本轮复读PDF1–6支持病害分类与农业应用分类，不把数据时段分组当时序模型。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
       "citation": "@inproceedings{bao2023sugarcane,\n  title={Early detection of sugarcane diseases through hyperspectral imaging and deep learning},\n  author={Bao, Dong and Zhou, Jun and Bhuiyan, Shamsul A and Ford, Rebecca and Gao, Yongsheng},\n  booktitle={Proceedings of the Australian Society of Sugar Cane Technologists},\n  volume={44},\n  pages={176--183},\n  year={2023},\n  url={https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content}\n}\n",
       "library": {
@@ -49273,7 +49311,7 @@
           "plant-disease-detection",
           "agriculture-phenotyping"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "正文明确采集并输入150波段高光谱立方体，任务为植物病害二分类。",
         "readingProgress": "full_text_read",
@@ -49282,7 +49320,7 @@
         "datasets": "2021年Woodford试验，黑穗病50接种+50对照，花叶病45接种+46对照，各5品种；3245幅影像。150波段470–900 nm。机构独立数据登记10.25904/1912/4757描述黑穗病/花叶病两子集、4TB、需申请，实际文件与本篇3245幅的逐项对应未核。",
         "experimentSetting": "按相邻两次采集合并为18个时段数据集，分别6:2:2训练/验证/测试；未说明是否按植物身份隔离。Dataset5/13另生成伪RGB对照，不是独立RGB传感器。标签按接种/对照分配，原文建议未来补分子检测。",
         "conclusions": "表3：Dataset5 HSI/RGB准确率89.42%/65.84%，Dataset13为87.85%/67.99%。黑穗病在约8周时准确率95.2%。花叶病摘要称2周早检、8周可见；结果段又称8周检出、常规16–20周可见，不以其中一个表述替代全部原文。",
-        "limitations": "时段/植物分组独立性、训练超参数、公开代码与分子真值待核；晚期胁迫/营养不足/其他疾病干扰。正文称架构图Figure4，图注实际Figure1，重复编号原样留证。早检时间存在摘要/正文差异，不能直接外推至独立田间植株或自然感染。",
+        "limitations": "时段/植物分组独立性、训练超参数与分子真值待核；晚期胁迫/营养不足/其他疾病干扰。正文称架构图Figure4，图注实际Figure1，重复编号原样留证。早检时间存在摘要/正文差异，不能直接外推至独立田间植株或自然感染。",
         "dataLinks": [
           "https://research-repository.griffith.edu.au/server/api/core/items/59bb457d-9fea-4ff8-9976-c3226e7dde27"
         ],
@@ -49312,6 +49350,16 @@
             "supports": [
               "黑穗病/花叶病子集、4TB、受理申请；不证明论文逐项数据对应"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content",
+            "checkedAt": "2026-10-12",
+            "level": "既有原PDF复读：任务分类及方法边界核验",
+            "supports": [
+              "PDF1–6局部复读，原9页含封面、8页正式正文此前已读；本轮不新增全文计数。",
+              "PDF3–6明确150波段470–900nm、3245图、暗白校准/SVM前景、ResNet34每残差块通道/空间DSAB、按18时段6:2:2分组和接种标签。",
+              "黑穗病/花叶病分别训练二分类，非时序模型；保留原早检时间冲突和植物身份隔离未说明。"
+            ]
           }
         ],
         "versions": [
@@ -49339,7 +49387,24 @@
             "doi": "10.1016/j.jafr.2024.101369"
           }
         ],
-        "methodFamilyId": "zhou-sugarcane-dsab"
+        "methodFamilyId": "zhou-sugarcane-dsab",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "正式正文直接采集并输入150波段高光谱，用暗白校准/SVM前景与ResNet34-DSAB分别做两种病害的接种/对照二分类。确认植物病害与农业应用；不把时段分组当时序网络或自动标Transformer。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "e39e852f86a3e6fac5b169f10e49e54edb5cf1a809fe9441ffd6cd002a1878a1",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/d5ee4970-e36b-4e01-92f4-6f60636a9607/content"
+          ]
+        }
       },
       "frameworkFigures": [
         {
@@ -49373,7 +49438,7 @@
         "hyperspectral"
       ],
       "tags": [],
-      "verifiedAt": "2026-10-10",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "full_text_verified",
       "id": "zhou-cherry-hsi-band-selection-2025",
       "shortTitle": "BBHFC · Cherry 730 nm",
@@ -49389,7 +49454,7 @@
       "input": "选波长阶段为470–900 nm、150波段HSI；检测模型输入为730 nm照明下2560×1920单色图像，仅保留相机红通道。",
       "output": "果蝇产卵损伤框、图像级及四视角果实级感染标签。",
       "mechanism": "YOLOv3输出候选框；BBHFC仅按置信度阈值过滤，拼接置信度、感染类别及未感染类别直方图，训练决策树/SVM/随机森林。对照YOLO-IP使用NMS后任一感染框判断。",
-      "readingNote": "已通读正式12页正文（Griffith PDF另有封面），重点核第2–4节、表1/3/4/5及Fig7。高光谱用于选波长，模型训练测试用单波段NIR；不描述为高光谱立方体检测网络。首次在线2025-06-09；Crossref卷期为2025-12。未复现代码或数据。",
+      "readingNote": "已通读正式12页正文（Griffith PDF另有封面），重点核第2–4节、表1/3/4/5及Fig7。高光谱用于选波长，模型训练测试用单波段NIR；不描述为高光谱立方体检测网络。首次在线2025-06-09；Crossref卷期为2025-12。本轮复读PDF2/3/7/8确认HSI选波长与NIR检测边界；印刷7页准确率公式存在排版疑点，未据此重算或否定报分。",
       "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content",
       "citation": "@article{yazdani2025cherry,\n  title={Single-wavelength near-infrared imaging and machine learning for detecting Queensland fruit fly damage in cherries},\n  author={Yazdani, Maryam and Bao, Dong and Zhou, Jun and Wang, Andy and van Klinken, Rieks D.},\n  journal={Smart Agricultural Technology},\n  volume={12},\n  pages={101090},\n  year={2025},\n  doi={10.1016/j.atech.2025.101090}\n}\n",
       "library": {
@@ -49397,16 +49462,16 @@
           "spectral-band-selection",
           "agriculture-phenotyping"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "研究实际采集150波段HSI并据此选择730 nm，属于直接高光谱选波长应用；检测网络本身使用单波段NIR，不宣称多光谱或高光谱检测输入。",
         "readingProgress": "full_text_read",
         "verificationStatus": "full_text_verified",
         "researchQuestion": "高光谱筛出的单波长能否支持低计算成本的樱桃果蝇产卵损伤检测及果实感染判别？",
-        "datasets": "imec Snapscan VNIR 150波段470–900 nm、1088×2048用于选波长。检测库1771幅单色图：1224感染/547对照，2560×1920；训练1089、验证126、测试556，测试175果（78感染/97对照）。裁切448×448后训练109220、验证13740增强块；测试保持原图。数据按请求提供，未取得公开下载或代码。",
+        "datasets": "imec Snapscan VNIR 150波段470–900 nm、1088×2048用于选波长。检测库1771幅单色图：1224感染/547对照，2560×1920；训练1089、验证126、测试556，测试175果（78感染/97对照）。裁切448×448后训练109220、验证13740增强块；测试保持原图。数据按请求提供，未取得公开下载。",
         "experimentSetting": "730 nm LED实测峰728.8 nm、FWHM约36 nm；显微镜相机去红外滤镜后保留红通道。YOLOv3训练120 epochs，学习率1e-5、weight decay1e-4；Table2决策树max_depth2、随机森林3、SVM线性C=5e8。检测AP50评估233张有框标注测试图；图像级评估556图，果实级175果；独立人工比较555果（155感染+400对照）不要混算。",
         "conclusions": "损伤点YOLOv3 AP50=0.8132；表4 BBHFC决策树图像级准确率0.9586、F1=0.9313；果实级准确率0.9143、敏感度1、特异度0.8454。表5独立人工对照中模型准确率0.89、人工平均0.60，模型敏感度0.77；不是表4同一测试集或同一敏感度。",
-        "limitations": "视觉选波长与训练/验证/测试果实身份隔离细节待核；测试395对照图仅72图有损伤框标注，检测与整图评估分母不同。单波长实为有限带宽LED照明，不是理想谱线。降低误拒/漏检、采集标注自动化和商业分选集成仍待验证；阈值在测试曲线上取最优的独立泛化需另核。",
+        "limitations": "视觉选波长与训练/验证/测试果实身份隔离细节待核；测试395对照图仅72图有损伤框标注，检测与整图评估分母不同。单波长实为有限带宽LED照明，不是理想谱线。降低误拒/漏检、采集标注自动化和商业分选集成仍待验证；阈值在测试曲线上取最优的独立泛化需另核。 §2.4.3称BBHFC不受置信度阈值影响，但§2.4.5仍比较0.10–0.40阈值，按较不敏感理解，不写成无阈值。PDF8/印刷7的Accuracy分母印为TP+TP+FP+FN，与通常定义不符；仅标公式排版疑点，不推断实际报分或实现计算错误。",
         "dataLinks": [],
         "evidence": [
           {
@@ -49426,6 +49491,17 @@
             "supports": [
               "正式题名、完整作者、目标ORCID0000-0001-5822-8233、2025卷期DOI"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content",
+            "checkedAt": "2026-10-12",
+            "level": "既有原PDF复读：任务分类及方法边界核验",
+            "supports": [
+              "PDF2/3/7/8局部复读，原13页含封面、12页正文此前已读；本轮不新增全文计数。",
+              "PDF3 §2.2为150带HSI视觉选择730nm；§2.3移除IR滤镜并保留红通道，检测库单色NIR。",
+              "PDF7/8 §2.4.3–2.4.5 BBHFC按阈值过滤而不使用NMS，三分数直方图后监督分类；仍比较0.10–0.40阈值，不把相对不敏感说成无阈值。",
+              "PDF8/印刷7 §2.4.6原图视觉核对：Accuracy分子TP+TN，分母印TP+TP+FP+FN；只记录排版疑点，不据此推断实际报分或实现计算错误。"
+            ]
           }
         ],
         "versions": [
@@ -49438,7 +49514,24 @@
             "relation": "正式正文首次在线2025-06-09；Crossref登记12卷2025-12，两个日期分别保存。"
           }
         ],
-        "methodFamilyId": "zhou-cherry-bbhfc"
+        "methodFamilyId": "zhou-cherry-bbhfc",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "正式正文§2.2直接使用150波段高光谱视觉选730nm，故属于直接HSI选带应用；§2.3/2.4的检测/分类是单色NIR。确认选带及农业应用，不赋高光谱立方体目标检测标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "396d3adc2320b97f1c7458ea12fd2da8f6ba1e35e10399d8aa809b84b32da1b6",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/718f61c1-90b9-4d37-94e4-70450cade0ab/content"
+          ]
+        }
       },
       "frameworkFigures": [
         {
@@ -52768,8 +52861,7 @@
         "zhou-66-hsi-2023",
         "zhou-scholar-multi-domain-universal-representation-lear-2025",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340",
-        "zhou-strl-hyperspectral-tracking-2025"
+        "zhou-scholar-arxiv-2609-37340"
       ],
       "history": [
         {
