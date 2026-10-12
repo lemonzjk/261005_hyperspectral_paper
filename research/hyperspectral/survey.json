@@ -10272,6 +10272,58 @@
       "year": 2026,
       "sourceSnapshot": "sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
       "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-arxiv",
+      "venue": "Jun Zhou · Otsu/Jue Zhang and Jing Wang coauthor arXiv locators",
+      "keywordGroup": "coauthor-public-version-locator",
+      "keywords": [
+        "au:\"Mitsuyoshi Otsu\" OR au:\"Jue Zhang\"",
+        "au:\"Jing Wang\" AND all:hyperspectral"
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=au%3A%22Mitsuyoshi+Otsu%22+OR+au%3A%22Jue+Zhang%22&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending",
+      "method": "官方arXiv API两查询完整分页及完整作者元数据；Otsu/Zhang67条仅SFAM含Jun且已有排除，其他66只身份定位，不当范围全排。Jing Wang+HSI8条七含Jun原摘要实读、均已有目录/关联；另一条MixedSN为其他作者普通总库候选，免费PDF下载未读。",
+      "pagination": "67/67＋8/8，共75条元数据；本限定Otsu/Zhang无确切Mitsuyoshi串，不证明别名或公共稿不存在。",
+      "candidateCount": 1,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "指定元数据查询完整；七已有Jun、一个其他作者HSI候选待正文",
+      "gaps": [
+        "Jing Wang同名不作身份合并；2503.21072 API把姓名拆为Zhuanfeng/Li并合并Chenhong Sui/Zekun Long，保留原始错误，不转写现有正式六作者。",
+        "七arXiv稿与已有记录保持既有对应，不凭引用里出现的ID合并其他会议/期刊/预印本。",
+        "MixedSN全文/版本待核；SFAM现有范围决定不计本轮新排除。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
+      "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-primary",
+      "venue": "Jun Zhou · Griffith Otsu accepted manuscripts and repository locators",
+      "keywordGroup": "primary-mangrove-scope-followup",
+      "keywords": [
+        "Mitsuyoshi Otsu",
+        "Jue Zhang",
+        "actual image channels",
+        "2024 mangrove citation relationship"
+      ],
+      "url": "https://research-repository.griffith.edu.au/server/api/discover/search/objects?query=%22Mitsuyoshi+Otsu%22&size=20",
+      "method": "Griffith DSpace两指定引号查询2/2及14/14完整分页；两免费AM共29页下载，实际选读8＋5=13页，按机构封面明确版本；红树林未知实际输入时撤销旧仅题名排除，净化稿补实验/身份主要证据，2024引用只作为方法先例。",
+      "pagination": "两查询完整2/2、14/14；Jue查询结果可能全文引用匹配，不把14条全当该作者成果。两个AM仅13/29页实际阅读。",
+      "candidateCount": 0,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "一个旧范围排除重开；一个暂排补证，2024红树林/2022太阳能仍待",
+      "gaps": [
+        "红树林2025自建图实际传感器/通道尚未明确，CRF RGB项不等于全部网络输入三通道。",
+        "2024引用不证明会刊扩展/同数据；2022太阳能查询仍同NoFullText记录，不迁移后来RGB协议。",
+        "最终VoR、补充材料及其余16页AM正文未读；未添加HSI库内框架图。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
+      "collectionScope": "active"
     }
   ],
   "candidates": [
@@ -26692,11 +26744,40 @@
       "year": 2025,
       "searchId": "jun-zhou-orcid-2025-scope",
       "discoveredAt": "2026-10-10",
-      "decision": "excluded",
+      "decision": "pending",
       "paperId": null,
-      "reason": "题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。",
-      "verifiedAt": "2026-10-10",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-2025-decisions.json"
+      "reason": "撤销仅题名排除，改为待核。Griffith AM实际选读8/16页：第9页红树林数据652张256×256卫星图、五类、522/130划分，但未明确传感器/实际输入波段；第8页CRF颜色项使用RGB，不能据此认定整个网络只输入三通道。第5页引用2024会议稿[49]用于像素损失过滤，第16页列确切书目，不是同数据/扩展版本声明。",
+      "verifiedAt": "2026-10-12",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
+      "previousScopeDecisions": [
+        {
+          "decision": "excluded",
+          "reason": "题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。",
+          "verifiedAt": "2026-10-10",
+          "evidencePath": "research/hyperspectral/sources/jun-zhou-2025-decisions.json"
+        }
+      ],
+      "readingProgress": "partial_text_read",
+      "readingBoundary": "仅所列页面实际阅读，其余文本提取不算已读；机构封面明确AM，最终VoR未读。",
+      "identityStatus": "primary_am_griffith_and_institution_resolved_7205",
+      "fixedVersionReading": {
+        "checkedAt": "2026-10-12",
+        "version": "Accepted Manuscript (AM)",
+        "pdfFile": "research/hyperspectral/sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-otsu-robust.pdf",
+        "pdfPageCount": 16,
+        "pdfReadPages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          9,
+          16
+        ],
+        "fullTextRead": false,
+        "sourceSnapshot": "sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json"
+      }
     },
     {
       "title": "Adversarial Dilated Large-Kernel Attention Networks for Cross-Domain Few-Shot Hyperspectral Image Classification",
@@ -26887,9 +26968,36 @@
       "discoveredAt": "2026-10-10",
       "decision": "excluded",
       "paperId": null,
-      "reason": "题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。",
-      "verifiedAt": "2026-10-10",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-2026-decisions.json"
+      "reason": "Griffith AM第7–8页实际实验为CIFAR/CIFAR-N、mini-Clothing-1M、UC Merced/AID通用图像与航空场景分类标签净化，ConvNeXt/RemoteCLIP骨干；第13页hyperspectral仅出现在Jun履历。结合原摘要维持当前AM非直接HSI范围暂排，以原文替换旧仅题名理由；未将补充材料/最终VoR判为已读。",
+      "verifiedAt": "2026-10-12",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
+      "previousScopeDecisions": [
+        {
+          "decision": "excluded",
+          "reason": "题名指向通用视觉、遥感或非高光谱任务，未确认高光谱输入。",
+          "verifiedAt": "2026-10-10",
+          "evidencePath": "research/hyperspectral/sources/jun-zhou-2026-decisions.json"
+        }
+      ],
+      "readingProgress": "partial_text_read",
+      "readingBoundary": "仅所列页面实际阅读，其余文本提取不算已读；机构封面明确AM，最终VoR未读。",
+      "identityStatus": "primary_am_griffith_and_institution_resolved_7205",
+      "fixedVersionReading": {
+        "checkedAt": "2026-10-12",
+        "version": "Accepted Manuscript (AM)",
+        "pdfFile": "research/hyperspectral/sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-otsu-meta.pdf",
+        "pdfPageCount": 13,
+        "pdfReadPages": [
+          1,
+          2,
+          7,
+          8,
+          13
+        ],
+        "fullTextRead": false,
+        "sourceSnapshot": "sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json"
+      },
+      "code": "https://github.com/mitsuyoshiohtsu/MRMP"
     },
     {
       "title": "On learning denoisable student logits",
@@ -41419,15 +41527,23 @@
       "searchId": "jun-zhou-dblp-sparql-2026-10-10",
       "batchId": "jun-zhou-remote-primary-access-followup5-2026-10-11",
       "discoveredAt": "2026-10-10",
-      "verifiedAt": "2026-10-11",
+      "verifiedAt": "2026-10-12",
       "decision": "pending",
       "reason": "机构摘要确认红树林卫星分割；传感器、光学波段与实验通道待原稿。",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-remote-primary-access-followup5-2026-10-11.json",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
       "previousSourceEvidencePath": "research/hyperspectral/sources/jun-zhou-dblp-remaining-scope-decisions-2026-10-10.json",
       "sourcePendingAlreadyKnown": true,
-      "latestScopeFinding": "2026-10-11六项公共bundles及9个bitstreams清单全分页：6许可/提交txt、3份130字节SWORD元数据，未取得论文PDF。二级OA标签不作全文证据，DDFNet出版社XML200只有coredata。实际光学输入仍pending，不凭数据集名、频率词或访问失败关闭范围。",
-      "readingBoundary": "已有机构/原摘要及范围记录保留；本轮仅公共文件清单和出版社元数据/访问核验，没有取得新论文正文或运行实现。",
-      "identityBoundary": "作者字段来自精确DOI机构交叉表，保留简写；SAPNet/红树林本轮补出版社Griffith作者字段，其余不声称新增正文身份核验。"
+      "latestScopeFinding": "2025接受稿第5页[49]引用此2024会议稿作为像素损失过滤先例，第16页书目确认M.Otsu/J.Zhou、8633–8637页。引用段不证明同一数据、输入波段或会刊扩展，2024稿本身仍未获取，范围继续pending。",
+      "readingBoundary": "2024会议正文未得；新依据只来自2025 AM第5/16页引用，不迁移其数据协议。",
+      "identityBoundary": "作者字段来自精确DOI机构交叉表，保留简写；SAPNet/红树林本轮补出版社Griffith作者字段，其余不声称新增正文身份核验。",
+      "previousScopeDecisions": [
+        {
+          "decision": "pending",
+          "reason": "机构摘要确认红树林卫星分割；传感器、光学波段与实验通道待原稿。",
+          "verifiedAt": "2026-10-11",
+          "evidencePath": "research/hyperspectral/sources/jun-zhou-remote-primary-access-followup5-2026-10-11.json"
+        }
+      ]
     },
     {
       "title": "Semantic Segmentation of Remote Sensing Images by Interactive Representation Refinement and Geometric Prior-Guided Inference.",
@@ -45502,6 +45618,36 @@
       "pdfSourceFile": "jun-zhou-denoising-primary-abstracts-2026-10-12-dual-camera-v2.pdf",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-denoising-primary-abstracts-2026-10-12.json",
       "boundary": "未访问第三方代码；下载不等于正文已读，不从spectrometer标题自动扩展HSI收录。"
+    },
+    {
+      "title": "Learning Hyperspectral Feature Extraction and Classification with ResNeXt Network",
+      "arxivId": "2002.02585",
+      "arxivVersion": "v1",
+      "doi": "10.48550/arXiv.2002.02585",
+      "url": "https://arxiv.org/abs/2002.02585v1",
+      "authors": [
+        "Divinah Nyasaka",
+        "Jing Wang",
+        "Haron Tinega"
+      ],
+      "venue": "arXiv",
+      "year": 2020,
+      "searchId": "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-arxiv",
+      "discoveredAt": "2026-10-12",
+      "verifiedAt": "2026-10-12",
+      "decision": "pending",
+      "paperId": null,
+      "reason": "原始摘要明确MixedSN以3D卷积提取谱空信息、2D卷积上层语义抽象、ResNeXt块，用IP/PU/Salinas/Botswana直接HSI地物分类；来源arXiv合格，无Jun作者，分流普通总库后续。全文PDF已下载但本轮未读，不依据摘要补实验或框架。",
+      "readingProgress": "abstract_read",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
+      "primaryAbstract": "The Hyperspectral image (HSI) classification is a standard remote sensing task, in which each image pixel is given a label indicating the physical land-cover on the earth's surface. The achievements of image semantic segmentation and deep learning approaches on ordinary images have accelerated the research on hyperspectral image classification. Moreover, the utilization of both the spectral and spatial cues in hyperspectral images has shown improved classification accuracy in hyperspectral image classification. The use of only 3D Convolutional Neural Networks (3D-CNN) to extract both spatial and spectral cues from Hyperspectral images results in an explosion of parameters hence high computational cost. We propose network architecture called the MixedSN that utilizes the 3D convolutions to modeling spectral-spatial information in the early layers of the architecture and the 2D convolutions at the top layers which majorly deal with semantic abstraction. We constrain our architecture to ResNeXt block because of their performance and simplicity. Our model drastically reduced the number of parameters and achieved comparable classification performance with state-of-the-art methods on Indian Pine (IP) scene dataset, Pavia University scene (PU) dataset, Salinas (SA) Scene dataset, and Botswana (BW) dataset.",
+      "identityStatus": "other_full_author_names_no_target_jun",
+      "identityBoundary": "API三作者完整名单无Jun；Jing Wang同名不证明与Griffith合作作者为同一人。",
+      "publicPdfUrl": "https://arxiv.org/pdf/2002.02585v1",
+      "publicPdfSnapshot": "research/hyperspectral/sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-mixedsn-2002.02585v1.pdf",
+      "publicPdfSha256": "4bf24ff64309e21edbe3ce7b3a01a99d1211b63bf1ef373f33120d53f0084bfb",
+      "publicPdfBytes": 1342783,
+      "readingBoundary": "原始摘要已读；PDF仅下载，正文/图/引用/正式版本关系未核；优先续作者目录后整理。"
     }
   ],
   "batches": [
@@ -51547,6 +51693,34 @@
       "readingBoundary": "DirectSAM v1五页全读，RemoteCLIP v4实际七页选读/17页PDF，其余十页未全读；RemoteTrimmer旧全读不重复计。两个已有排除重核，不是新增两个排除或库内全文。",
       "gaps": [
         "正式版/近题稿边界保留；FDNet等旧未决没有新输入证据，作者目录未闭环。"
+      ]
+    },
+    {
+      "id": "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12",
+      "date": "2026-10-12",
+      "searchIds": [
+        "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-arxiv",
+        "jun-zhou-mangrove-solar-coauthor-locators-2026-10-12-primary"
+      ],
+      "paperIds": [],
+      "new": 0,
+      "updated": 0,
+      "duplicates": 7,
+      "excluded": 0,
+      "pending": 2,
+      "newCandidateCount": 1,
+      "reopenedScopeCandidateCount": 1,
+      "revalidatedFixedVersionExclusions": 1,
+      "updatedCandidateCount": 3,
+      "figuresAdded": 0,
+      "newFullTextReadingCount": 0,
+      "catalogFullTextReadingCount": 0,
+      "newOutOfScopeFullTextReadingCount": 0,
+      "pdfPagesRead": 13,
+      "sourceSnapshot": "sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json",
+      "readingBoundary": "两AM下载29页但实际选读13页，MixedSN仅PDF下载/原摘要；无新增整篇全文或库内论文。",
+      "gaps": [
+        "2025红树林范围重开，当前ORCID2/DBLP9/Scholar6/个人机构9互相重叠不能相加；作者目录仍未闭环。"
       ]
     }
   ],

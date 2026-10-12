@@ -1,0 +1,114 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2605.14239v1",
+    "title": "Implicit spatial-frequency fusion of hyperspectral and lidar data via kolmogorov-arnold networks",
+    "summary": "Hyperspectral image (HSI) classification is challenging in complex scenes due to spectral ambiguity, spatial heterogeneity, and the strong coupling between material properties and geometric structures. Although LiDAR provides complementary elevation information, most HSI-LiDAR fusion methods rely on CNNs or MLPs with fixed activation functions and linear weights. These methods struggle to model structural discontinuities in LiDAR data, intricate spectral features of HSI, and their interactions. In addition, fusion of the two modalities in both spatial and frequency domains with LiDAR guidance remains underexplored. To address these issues, we propose the Implicit Frequency-Geometry Fusion Network (IFGNet), which leverages Kolmogorov-Arnold Networks (KANs) with learnable spline-based functions to adaptively capture highly nonlinear relationships between hyperspectral and LiDAR features. Furthermore, IFGNet introduces a LiDAR-guided implicit aggregation module in both spatial and frequency domains, enhancing geometry-aware spatial representations while capturing global structural patterns. Experiments on the Houston 2013 and MUUFL benchmarks demonstrate that IFGNet consistently outperforms existing fusion methods in overall accuracy, average accuracy, and Cohen's Kappa, while maintaining an efficient architecture.",
+    "published": "2026-05-14T01:12:12Z",
+    "updated": "2026-05-14T01:12:12Z",
+    "authors": [
+      "Zekun Long",
+      "Judy X. Yang",
+      "Jing Wang",
+      "Ali Zia",
+      "Guanyiman Fu",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2503.21072v1",
+    "title": "HSLiNets: Evaluating Band Ordering Strategies in Hyperspectral and LiDAR Fusion",
+    "summary": "The integration of hyperspectral imaging (HSI) and Light Detection and Ranging (LiDAR) data provides complementary spectral and spatial information for remote sensing applications. While previous studies have explored the role of band selection and grouping in HSI classification, little attention has been given to how the spectral sequence or band order affects classification outcomes when fused with LiDAR. In this work, we systematically investigate the influence of band order on HSI-LiDAR fusion performance. Through extensive experiments, we demonstrate that band order significantly impacts classification accuracy, revealing a previously overlooked factor in fusion-based models. Motivated by this observation, we propose a novel fusion architecture that not only integrates HSI and LiDAR data but also learns from multiple band order configurations. The proposed method enhances feature representation by adaptively fusing different spectral sequences, leading to improved classification accuracy. Experimental results on the Houston 2013 and Trento datasets show that our approach outperforms state-of-the-art fusion models. Data and code are available at https://github.com/Judyxyang/HSLiNets.",
+    "published": "2025-03-27T01:11:31Z",
+    "updated": "2025-03-27T01:11:31Z",
+    "authors": [
+      "Judy X Yang",
+      "Jing Wang",
+      " Zhuanfeng",
+      " Li",
+      "Chenhong Sui Zekun Long",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2412.00302v2",
+    "title": "HSLiNets: Hyperspectral Image and LiDAR Data Fusion Using Efficient Dual Non-Linear Feature Learning Networks",
+    "summary": "The integration of hyperspectral imaging (HSI) and LiDAR data within new linear feature spaces offers a promising solution to the challenges posed by the high-dimensionality and redundancy inherent in HSIs. This study introduces a dual linear fused space framework that capitalizes on bidirectional reversed convolutional neural network (CNN) pathways, coupled with a specialized spatial analysis block. This approach combines the computational efficiency of CNNs with the adaptability of attention mechanisms, facilitating the effective fusion of spectral and spatial information. The proposed method not only enhances data processing and classification accuracy, but also mitigates the computational burden typically associated with advanced models such as Transformers. Evaluations of the Houston 2013 dataset demonstrate that our approach surpasses existing state-of-the-art models. This advancement underscores the potential of the framework in resource-constrained environments and its significant contributions to the field of remote sensing.",
+    "published": "2024-11-30T01:08:08Z",
+    "updated": "2024-12-03T02:07:52Z",
+    "authors": [
+      "Judy X Yang",
+      "Jing Wang",
+      "Chen Hong Sui",
+      "Zekun Long",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2412.00283v2",
+    "title": "Hyperspectral Images Efficient Spatial and Spectral non-Linear Model with Bidirectional Feature Learning",
+    "summary": "Classifying hyperspectral images (HSIs) is a complex task in remote sensing due to the high-dimensional nature and volume of data involved. To address these challenges, we propose the Spectral-Spatial non-Linear Model, a novel framework that significantly reduces data volume while enhancing classification accuracy. Our model employs a bidirectional reversed convolutional neural network (CNN) to efficiently extract spectral features, complemented by a specialized block for spatial feature analysis. This hybrid approach leverages the operational efficiency of CNNs and incorporates dynamic feature extraction inspired by attention mechanisms, optimizing performance without the high computational demands typically associated with transformer-based models. The SS non-Linear Model is designed to process hyperspectral data bidirectionally, achieving notable classification and efficiency improvements by fusing spectral and spatial features effectively. This approach yields superior classification accuracy compared to existing benchmarks while maintaining computational efficiency, making it suitable for resource-constrained environments. We validate the SS non-Linear Model on three widely recognized datasets, Houston 2013, Indian Pines, and Pavia University, demonstrating its ability to outperform current state-of-the-art models in HSI classification and efficiency. This work highlights the innovative methodology of the SS non-Linear Model and its practical benefits for remote sensing applications, where both data efficiency and classification accuracy are critical. For further details, please refer to our code repository on GitHub: HSILinearModel.",
+    "published": "2024-11-29T23:32:26Z",
+    "updated": "2024-12-03T02:46:05Z",
+    "authors": [
+      "Judy X Yang",
+      "Jing Wang",
+      "Zekun Long",
+      "Chenhong Sui",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2404.05258v1",
+    "title": "Unsupervised Band Selection Using Fused HSI and LiDAR Attention Integrating With Autoencoder",
+    "summary": "Band selection in hyperspectral imaging (HSI) is critical for optimising data processing and enhancing analytical accuracy. Traditional approaches have predominantly concentrated on analysing spectral and pixel characteristics within individual bands independently. These approaches overlook the potential benefits of integrating multiple data sources, such as Light Detection and Ranging (LiDAR), and is further challenged by the limited availability of labeled data in HSI processing, which represents a significant obstacle. To address these challenges, this paper introduces a novel unsupervised band selection framework that incorporates attention mechanisms and an Autoencoder for reconstruction-based band selection. Our methodology distinctively integrates HSI with LiDAR data through an attention score, using a convolutional Autoencoder to process the combined feature mask. This fusion effectively captures essential spatial and spectral features and reduces redundancy in hyperspectral datasets. A comprehensive comparative analysis of our innovative fused band selection approach is performed against existing unsupervised band selection and fusion models. We used data sets such as Houston 2013, Trento, and MUUFLE for our experiments. The results demonstrate that our method achieves superior classification accuracy and significantly outperforms existing models. This enhancement in HSI band selection, facilitated by the incorporation of LiDAR features, underscores the considerable advantages of integrating features from different sources.",
+    "published": "2024-04-08T07:47:28Z",
+    "updated": "2024-04-08T07:47:28Z",
+    "authors": [
+      "Judy X Yang",
+      "Jun Zhou",
+      "Jing Wang",
+      "Hui Tian",
+      "Alan Wee Chung Liew"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2404.03883v2",
+    "title": "LiDAR-Guided Cross-Attention Fusion for Hyperspectral Band Selection and Image Classification",
+    "summary": "The fusion of hyperspectral and LiDAR data has been an active research topic. Existing fusion methods have ignored the high-dimensionality and redundancy challenges in hyperspectral images, despite that band selection methods have been intensively studied for hyperspectral image (HSI) processing. This paper addresses this significant gap by introducing a cross-attention mechanism from the transformer architecture for the selection of HSI bands guided by LiDAR data. LiDAR provides high-resolution vertical structural information, which can be useful in distinguishing different types of land cover that may have similar spectral signatures but different structural profiles. In our approach, the LiDAR data are used as the \"query\" to search and identify the \"key\" from the HSI to choose the most pertinent bands for LiDAR. This method ensures that the selected HSI bands drastically reduce redundancy and computational requirements while working optimally with the LiDAR data. Extensive experiments have been undertaken on three paired HSI and LiDAR data sets: Houston 2013, Trento and MUUFL. The results highlight the superiority of the cross-attention mechanism, underlining the enhanced classification accuracy of the identified HSI bands when fused with the LiDAR features. The results also show that the use of fewer bands combined with LiDAR surpasses the performance of state-of-the-art fusion models.",
+    "published": "2024-04-05T04:11:31Z",
+    "updated": "2024-04-15T06:34:52Z",
+    "authors": [
+      "Judy X Yang",
+      "Jun Zhou",
+      "Jing Wang",
+      "Hui Tian",
+      "Alan Wee-Chung Liew"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2404.00272v1",
+    "title": "HSIMamba: Hyperpsectral Imaging Efficient Feature Learning with Bidirectional State Space for Classification",
+    "summary": "Classifying hyperspectral images is a difficult task in remote sensing, due to their complex high-dimensional data. To address this challenge, we propose HSIMamba, a novel framework that uses bidirectional reversed convolutional neural network pathways to extract spectral features more efficiently. Additionally, it incorporates a specialized block for spatial analysis. Our approach combines the operational efficiency of CNNs with the dynamic feature extraction capability of attention mechanisms found in Transformers. However, it avoids the associated high computational demands. HSIMamba is designed to process data bidirectionally, significantly enhancing the extraction of spectral features and integrating them with spatial information for comprehensive analysis. This approach improves classification accuracy beyond current benchmarks and addresses computational inefficiencies encountered with advanced models like Transformers. HSIMamba were tested against three widely recognized datasets Houston 2013, Indian Pines, and Pavia University and demonstrated exceptional performance, surpassing existing state-of-the-art models in HSI classification. This method highlights the methodological innovation of HSIMamba and its practical implications, which are particularly valuable in contexts where computational resources are limited. HSIMamba redefines the standards of efficiency and accuracy in HSI classification, thereby enhancing the capabilities of remote sensing applications. Hyperspectral imaging has become a crucial tool for environmental surveillance, agriculture, and other critical areas that require detailed analysis of the Earth surface. Please see our code in HSIMamba for more details.",
+    "published": "2024-03-30T07:27:36Z",
+    "updated": "2024-03-30T07:27:36Z",
+    "authors": [
+      "Judy X Yang",
+      "Jun Zhou",
+      "Jing Wang",
+      "Hui Tian",
+      "Alan Wee Chung Liew"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2002.02585v1",
+    "title": "Learning Hyperspectral Feature Extraction and Classification with ResNeXt Network",
+    "summary": "The Hyperspectral image (HSI) classification is a standard remote sensing task, in which each image pixel is given a label indicating the physical land-cover on the earth's surface. The achievements of image semantic segmentation and deep learning approaches on ordinary images have accelerated the research on hyperspectral image classification. Moreover, the utilization of both the spectral and spatial cues in hyperspectral images has shown improved classification accuracy in hyperspectral image classification. The use of only 3D Convolutional Neural Networks (3D-CNN) to extract both spatial and spectral cues from Hyperspectral images results in an explosion of parameters hence high computational cost. We propose network architecture called the MixedSN that utilizes the 3D convolutions to modeling spectral-spatial information in the early layers of the architecture and the 2D convolutions at the top layers which majorly deal with semantic abstraction. We constrain our architecture to ResNeXt block because of their performance and simplicity. Our model drastically reduced the number of parameters and achieved comparable classification performance with state-of-the-art methods on Indian Pine (IP) scene dataset, Pavia University scene (PU) dataset, Salinas (SA) Scene dataset, and Botswana (BW) dataset.",
+    "published": "2020-02-07T01:54:15Z",
+    "updated": "2020-02-07T01:54:15Z",
+    "authors": [
+      "Divinah Nyasaka",
+      "Jing Wang",
+      "Haron Tinega"
+    ]
+  }
+]

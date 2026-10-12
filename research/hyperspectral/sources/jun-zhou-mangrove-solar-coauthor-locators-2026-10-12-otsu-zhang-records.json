@@ -1,0 +1,1046 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2610.00906v1",
+    "title": "ActiveSaddler: Automated Curriculum Learning for Agent Harness Optimization",
+    "summary": "Automated harness optimization can substantially improve LLM agents by iteratively updating their prompts, tool interfaces, and control logic from execution feedback. However, existing methods primarily optimize how the harness is updated while largely fixing which training scenarios generate the feedback that drives those updates. As the harness evolves, the scenarios most useful for further optimization can change, suggesting that the training curriculum itself should adapt alongside the harness. We formulate this missing dimension of harness optimization as an automated curriculum learning problem and introduce ActiveSaddler. ActiveSaddler models the evolving curriculum as a non-stationary bandit with dynamically instantiated optimization targets. It abstracts recurring failures into reusable failure-pattern arms, estimates the potential learning progress from further targeting each pattern, and adaptively balances revisiting known weaknesses with exploring unseen scenarios for new ones. Optimization outcomes continually update both the set of discovered failure patterns and their priorities, allowing the curriculum to co-evolve with the harness. Experiments on GAIA2 and Terminal-Bench 2.0 show that ActiveSaddler consistently discovers stronger harnesses, improving test Pass@1 by 4.4 and 7.5 percentage points over the same harness optimizer using a scenario order fixed before optimization, respectively. Ablations further show that these gains depend on dynamically constructing optimization targets, estimating their evolving utility, and balancing continued optimization with new failure discovery. Together, these results establish automated curriculum learning as a new crucial optimization dimension for harness optimization.",
+    "published": "2026-10-01T01:36:03Z",
+    "updated": "2026-10-01T01:36:03Z",
+    "authors": [
+      "Sungho Park",
+      "Wonjoong Kim",
+      "Jue Zhang",
+      "Wook-Shin Han",
+      "Pengfei Gao",
+      "Chanyoung Park",
+      "Yongqiang Yao",
+      "Rao Fu",
+      "Elsie Nallipogu",
+      "Qingwei Lin",
+      "Victor Rühle"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2609.29180v1",
+    "title": "X-Rec Technical Report",
+    "summary": "Recent advances in generative modeling have reshaped recommender systems by formulating recommendation as a next-item generation problem. Existing retrieval approaches primarily follow two paradigms: user-to-item (U2I) methods represent user context using one or a few deterministic embeddings, which limits the ability to capture diverse and multi-mode interests, while semantic-ID-based autoregressive (SID-AR) methods model more expressive distributions but suffer from quantization errors and the low throughput of sequential decoding. To address these limitations, we propose X-Rec to directly learn the recommendation distribution in the continuous item embedding space through flow matching and generate embedding triggers for approximate nearest neighbor retrieval. X-Rec incorporates three key designs to make this formulation effective and efficient. First, we introduce anchor conditioning to decompose generation into coarse semantic-region selection and fine-grained refinement. Second, we adopt Riemannian flow matching to align generative trajectories with the hyperspherical geometry of item embeddings. Third, we design a late-interaction diffusion Transformer that restricts repeated velocity-field estimation to the final Transformer layer. On a streaming benchmark, X-Rec substantially outperforms U2I baselines, matches the retrieval quality of SID-AR methods, and delivers 3.46x higher inference throughput than SID-AR. X-Rec has also been deployed as a new retrieval source for a specific vertical content on TikTok, where two consecutive launches have yielded significant improvements in both vertical engagement (+4.1484%) and general engagement (+0.0111%).",
+    "published": "2026-09-24T07:53:52Z",
+    "updated": "2026-09-24T07:53:52Z",
+    "authors": [
+      "Chenglei Shen",
+      "Chenzhe Huang",
+      "Dong Jiang",
+      "Hongjie Gao",
+      "Jue Zhang",
+      "Kun Xú",
+      "Lincan Cai",
+      "Nan Zhuang",
+      "Pan Zhang",
+      "Shi Chen",
+      "Shunchi Zhang",
+      "Xiaoyu Ye",
+      "Yang Jin",
+      "Yu Zhang",
+      "Zhenwei An",
+      "Zhongtao Jiang",
+      "Zhiwei Wang",
+      "Kun Xǔ"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2608.23041v1",
+    "title": "AutoSaddler: Automatic Harness Optimization with Durable Updates from Agent Execution Traces",
+    "summary": "LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.",
+    "published": "2026-08-24T09:45:08Z",
+    "updated": "2026-08-24T09:45:08Z",
+    "authors": [
+      "Sungho Park",
+      "Wonjoong Kim",
+      "Rongyuan Tan",
+      "Jue Zhang",
+      "Wook-Shin Han",
+      "Pengfei Gao",
+      "Chanyoung Park",
+      "Yongqiang Yao",
+      "Rao Fu",
+      "Elsie Nallipogu",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2607.05785v1",
+    "title": "Can Large Language Models Generate Observability-Aware Code?",
+    "summary": "Recent advances in coding agents have enabled the generation of increasingly complex software systems. While existing evaluations primarily focus on functional correctness, production systems must expose failure evidence to support observability. In this paper, we present a systematic study of observability in agent-generated systems. We examine whether agents can reconstruct source-level diagnostic semantics by restoring observability artifacts in 10 open-source and 8 industrial repositories. We also evaluate whether these artifacts translate into effective fault signals at runtime through 200 generated microservice systems deployed on Kubernetes with 13 injected faults. Our results reveal a consistent gap between diagnostic semantics at the source level and fault signals (i.e., explicit, fault-specific evidence) at runtime. At the source level, agents partially recover observability artifacts but struggle to capture key diagnostic semantics. At runtime, generated systems expose fault signals for only a small fraction of failures (up to 13.99\\%), despite the presence of logging, suggesting that the generated observability artifacts may lack the failure-specific semantics needed to effectively expose faults. We further introduce an observability-oriented skill, which can serve as a guidance to improve both diagnostic semantics and fault-signal exposure, but the gains remain limited, indicating that the gap is not easily addressed. More broadly, our findings suggest that current evaluations focusing primarily on functional correctness may overlook observability as an important dimension of practical software quality.",
+    "published": "2026-07-07T03:20:52Z",
+    "updated": "2026-07-07T03:20:52Z",
+    "authors": [
+      "Yongliang Tao",
+      "Hongyu Zhang",
+      "Pengfei Gao",
+      "Minghua Ma",
+      "Zhiyu Fan",
+      "Yu Kang",
+      "Jue Zhang",
+      "Si Qin",
+      "Liqun Li",
+      "Qingwei Lin",
+      "Saravan Rajmohan"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2604.21308v1",
+    "title": "CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents",
+    "summary": "Enterprise LLM agents can dramatically improve workplace productivity, but their core capability, retrieving and using internal context to act on a user's behalf, also creates new risks for sensitive information leakage. We introduce CI-Work, a Contextual Integrity (CI)-grounded benchmark that simulates enterprise workflows across five information-flow directions and evaluates whether agents can convey essential content while withholding sensitive context in dense retrieval settings. Our evaluation of frontier models reveals that privacy failures are prevalent (violation rates range from 15.8%-50.9%, with leakage reaching up to 26.7%) and uncovers a counterintuitive trade-off critical for industrial deployment: higher task utility often correlates with increased privacy violations. Moreover, the massive scale of enterprise data and potential user behavior further amplify this vulnerability. Simply increasing model size or reasoning depth fails to address the problem. We conclude that safeguarding enterprise workflows requires a paradigm shift, moving beyond model-centric scaling toward context-centric architectures.",
+    "published": "2026-04-23T06:00:22Z",
+    "updated": "2026-04-23T06:00:22Z",
+    "authors": [
+      "Wenjie Fu",
+      "Xiaoting Qin",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Lukas Wutschitz",
+      "Robert Sim",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2604.17761v1",
+    "title": "Contrastive Attribution in the Wild: An Interpretability Analysis of LLM Failures on Realistic Benchmarks",
+    "summary": "Interpretability tools are increasingly used to analyze failures of Large Language Models (LLMs), yet prior work largely focuses on short prompts or toy settings, leaving their behavior on commonly used benchmarks underexplored. To address this gap, we study contrastive, LRP-based attribution as a practical tool for analyzing LLM failures in realistic settings. We formulate failure analysis as \\textit{contrastive attribution}, attributing the logit difference between an incorrect output token and a correct alternative to input tokens and internal model states, and introduce an efficient extension that enables construction of cross-layer attribution graphs for long-context inputs. Using this framework, we conduct a systematic empirical study across benchmarks, comparing attribution patterns across datasets, model sizes, and training checkpoints. Our results show that this token-level contrastive attribution can yield informative signals in some failure cases, but is not universally applicable, highlighting both its utility and its limitations for realistic LLM failure analysis. Our code is available at: https://aka.ms/Debug-XAI.",
+    "published": "2026-04-20T03:24:11Z",
+    "updated": "2026-04-20T03:24:11Z",
+    "authors": [
+      "Rongyuan Tan",
+      "Jue Zhang",
+      "Zhuozhao Li",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2602.13830v3",
+    "title": "A Tale of Two Graphs: Separating Knowledge Exploration from Outline Structure for Open-Ended Deep Research",
+    "summary": "Open-Ended Deep Research (OEDR) pushes LLM agents beyond short-form QA toward long-horizon workflows that iteratively search, connect, and synthesize evidence into structured reports. However, existing OEDR agents largely follow either linear ``search-then-generate'' accumulation or outline-centric planning. The former suffers from lost-in-the-middle failures as evidence grows, while the latter relies on the LLM to implicitly infer knowledge gaps from the outline alone, providing weak supervision for identifying missing relations and triggering targeted exploration. We present DualGraph memory, an architecture that separates what the agent knows from how it writes. DualGraph maintains two co-evolving graphs: an Outline Graph (OG), and a Knowledge Graph (KG), a semantic memory that stores fine-grained knowledge units, including core entities, concepts, and their relations. By analyzing the KG topology together with structural signals from the OG, DualGraph generates targeted search queries, enabling more efficient and comprehensive iterative knowledge-driven exploration and refinement.Across four established OEDR benchmarks, DualGraph consistently outperforms state-of-the-art baselines in report depth, breadth, and factual grounding; for example, it reaches a 53.08 RACE score on DeepResearch Bench with GPT-5. Moreover, ablation studies confirm the central role of the dual-graph design.",
+    "published": "2026-02-14T15:54:38Z",
+    "updated": "2026-08-25T12:58:13Z",
+    "authors": [
+      "Zhuofan Shi",
+      "Ming Ma",
+      "Zekun Yao",
+      "Fangkai Yang",
+      "Jue Zhang",
+      "Dongge Han",
+      "Victor Rühle",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2512.06749v3",
+    "title": "DoVer: Intervention-Driven Auto Debugging for LLM Multi-Agent Systems",
+    "summary": "Large language model (LLM)-based multi-agent systems are challenging to debug because failures often arise from long, branching interaction traces. The prevailing practice is to leverage LLMs for log-based failure localization, attributing errors to a specific agent and step. However, this paradigm has two key limitations: (i) log-only debugging lacks validation, producing untested hypotheses, and (ii) single-step or single-agent attribution is often ill-posed, as we find that multiple distinct interventions can independently repair the failed task. To address the first limitation, we introduce DoVer, an intervention-driven debugging framework, which augments hypothesis generation with active verification through targeted interventions (e.g., editing messages, altering plans). For the second limitation, rather than evaluating on attribution accuracy, we focus on measuring whether the system resolves the failure or makes quantifiable progress toward task success, reflecting a more outcome-oriented view of debugging. Within the Magnetic-One agent framework, on the datasets derived from GAIA and AssistantBench, DoVer flips 18-28% of failed trials into successes, achieves up to 16% milestone progress, and validates or refutes 30-60% of failure hypotheses. DoVer also performs effectively on a different dataset (GSMPlus) and agent framework (AG2), where it recovers 49% of failed trials. These results highlight intervention as a practical mechanism for improving reliability in agentic systems and open opportunities for more robust, scalable debugging methods for LLM-based multi-agent systems. Project website and code will be available at https://aka.ms/DoVer.",
+    "published": "2025-12-07T09:23:48Z",
+    "updated": "2026-01-31T03:48:05Z",
+    "authors": [
+      "Ming Ma",
+      "Jue Zhang",
+      "Fangkai Yang",
+      "Yu Kang",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2509.23676v1",
+    "title": "From Reasoning to Answer: Empirical, Attention-Based and Mechanistic Insights into Distilled DeepSeek R1 Models",
+    "summary": "Large Reasoning Models (LRMs) generate explicit reasoning traces alongside final answers, yet the extent to which these traces influence answer generation remains unclear. In this work, we conduct a three-stage investigation into the interplay between reasoning and answer generation in three distilled DeepSeek R1 models. First, through empirical evaluation, we demonstrate that including explicit reasoning consistently improves answer quality across diverse domains. Second, attention analysis reveals that answer tokens attend substantially to reasoning tokens, with certain mid-layer Reasoning-Focus Heads (RFHs) closely tracking the reasoning trajectory, including self-reflective cues. Third, we apply mechanistic interventions using activation patching to assess the dependence of answer tokens on reasoning activations. Our results show that perturbations to key reasoning tokens can reliably alter the final answers, confirming a directional and functional flow of information from reasoning to answer. These findings deepen our understanding of how LRMs leverage reasoning tokens for answer generation, highlighting the functional role of intermediate reasoning in shaping model outputs. Our data and code are publicly available at \\href{https://aka.ms/R2A-code}{this URL}.",
+    "published": "2025-09-28T06:32:21Z",
+    "updated": "2025-09-28T06:32:21Z",
+    "authors": [
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2509.17488v1",
+    "title": "Privacy in Action: Towards Realistic Privacy Mitigation and Evaluation for LLM-Powered Agents",
+    "summary": "The increasing autonomy of LLM agents in handling sensitive communications, accelerated by Model Context Protocol (MCP) and Agent-to-Agent (A2A) frameworks, creates urgent privacy challenges. While recent work reveals significant gaps between LLMs' privacy Q&A performance and their agent behavior, existing benchmarks remain limited to static, simplified scenarios. We present PrivacyChecker, a model-agnostic, contextual integrity based mitigation approach that effectively reduces privacy leakage from 36.08% to 7.30% on DeepSeek-R1 and from 33.06% to 8.32% on GPT-4o, all while preserving task helpfulness. We also introduce PrivacyLens-Live, transforming static benchmarks into dynamic MCP and A2A environments that reveal substantially higher privacy risks in practical. Our modular mitigation approach integrates seamlessly into agent protocols through three deployment strategies, providing practical privacy protection for the emerging agentic ecosystem. Our data and code will be made available at https://aka.ms/privacy_in_action.",
+    "published": "2025-09-22T08:19:06Z",
+    "updated": "2025-09-22T08:19:06Z",
+    "authors": [
+      "Shouju Wang",
+      "Fenglin Yu",
+      "Xirui Liu",
+      "Xiaoting Qin",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Dongmei Zhang",
+      "Saravan Rajmohan"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2506.01636v4",
+    "title": "Visual Explanation via Similar Feature Activation for Metric Learning",
+    "summary": "Visual explanation maps enhance the trustworthiness of decisions made by deep learning models and offer valuable guidance for developing new algorithms in image recognition tasks. Class activation maps (CAM) and their variants (e.g., Grad-CAM and Relevance-CAM) have been extensively employed to explore the interpretability of softmax-based convolutional neural networks, which require a fully connected layer as the classifier for decision-making. However, these methods cannot be directly applied to metric learning models, as such models lack a fully connected layer functioning as a classifier. To address this limitation, we propose a novel visual explanation method termed Similar Feature Activation Map (SFAM). This method introduces the channel-wise contribution importance score (CIS) to measure feature importance, derived from the similarity measurement between two image embeddings. The explanation map is constructed by linearly combining the proposed importance weights with the feature map from a CNN model. Quantitative and qualitative experiments show that SFAM provides highly promising interpretable visual explanations for CNN models using Euclidean distance or cosine similarity as the similarity metric.",
+    "published": "2025-06-02T13:14:37Z",
+    "updated": "2025-12-29T03:43:02Z",
+    "authors": [
+      "Yi Liao",
+      "Ugochukwu Ejike Akpudo",
+      "Jue Zhang",
+      "Yongsheng Gao",
+      "Jun Zhou",
+      "Wenyi Zeng",
+      "Weichuan Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2502.04376v1",
+    "title": "MEETING DELEGATE: Benchmarking LLMs on Attending Meetings on Our Behalf",
+    "summary": "In contemporary workplaces, meetings are essential for exchanging ideas and ensuring team alignment but often face challenges such as time consumption, scheduling conflicts, and inefficient participation. Recent advancements in Large Language Models (LLMs) have demonstrated their strong capabilities in natural language generation and reasoning, prompting the question: can LLMs effectively delegate participants in meetings? To explore this, we develop a prototype LLM-powered meeting delegate system and create a comprehensive benchmark using real meeting transcripts. Our evaluation reveals that GPT-4/4o maintain balanced performance between active and cautious engagement strategies. In contrast, Gemini 1.5 Pro tends to be more cautious, while Gemini 1.5 Flash and Llama3-8B/70B display more active tendencies. Overall, about 60\\% of responses address at least one key point from the ground-truth. However, improvements are needed to reduce irrelevant or repetitive content and enhance tolerance for transcription errors commonly found in real-world settings. Additionally, we implement the system in practical settings and collect real-world feedback from demos. Our findings underscore the potential and challenges of utilizing LLMs as meeting delegates, offering valuable insights into their practical application for alleviating the burden of meetings.",
+    "published": "2025-02-05T16:25:43Z",
+    "updated": "2025-02-05T16:25:43Z",
+    "authors": [
+      "Lingxiang Hu",
+      "Shurun Yuan",
+      "Xiaoting Qin",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Dongmei Zhang",
+      "Saravan Rajmohan",
+      "Qi Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2501.19056v1",
+    "title": "Enabling Autonomic Microservice Management through Self-Learning Agents",
+    "summary": "The increasing complexity of modern software systems necessitates robust autonomic self-management capabilities. While Large Language Models (LLMs) demonstrate potential in this domain, they often face challenges in adapting their general knowledge to specific service contexts. To address this limitation, we propose ServiceOdyssey, a self-learning agent system that autonomously manages microservices without requiring prior knowledge of service-specific configurations. By leveraging curriculum learning principles and iterative exploration, ServiceOdyssey progressively develops a deep understanding of operational environments, reducing dependence on human input or static documentation. A prototype built with the Sock Shop microservice demonstrates the potential of this approach for autonomic microservice management.",
+    "published": "2025-01-31T11:32:05Z",
+    "updated": "2025-01-31T11:32:05Z",
+    "authors": [
+      "Fenglin Yu",
+      "Fangkai Yang",
+      "Xiaoting Qin",
+      "Zhiyang Zhang",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Hongyu Zhang",
+      "Yingnong Dang",
+      "Saravan Rajmohan",
+      "Dongmei Zhang",
+      "Qi Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2501.05490v1",
+    "title": "Interpretable deep learning illuminates multiple structures fluorescence imaging: a path toward trustworthy artificial intelligence in microscopy",
+    "summary": "Live-cell imaging of multiple subcellular structures is essential for understanding subcellular dynamics. However, the conventional multi-color sequential fluorescence microscopy suffers from significant imaging delays and limited number of subcellular structure separate labeling, resulting in substantial limitations for real-time live-cell research applications. Here, we present the Adaptive Explainable Multi-Structure Network (AEMS-Net), a deep-learning framework that enables simultaneous prediction of two subcellular structures from a single image. The model normalizes staining intensity and prioritizes critical image features by integrating attention mechanisms and brightness adaptation layers. Leveraging the Kolmogorov-Arnold representation theorem, our model decomposes learned features into interpretable univariate functions, enhancing the explainability of complex subcellular morphologies. We demonstrate that AEMS-Net allows real-time recording of interactions between mitochondria and microtubules, requiring only half the conventional sequential-channel imaging procedures. Notably, this approach achieves over 30% improvement in imaging quality compared to traditional deep learning methods, establishing a new paradigm for long-term, interpretable live-cell imaging that advances the ability to explore subcellular dynamics.",
+    "published": "2025-01-09T07:36:28Z",
+    "updated": "2025-01-09T07:36:28Z",
+    "authors": [
+      "Mingyang Chen",
+      "Luhong Jin",
+      "Xuwei Xuan",
+      "Defu Yang",
+      "Yun Cheng",
+      "Ju Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2412.13265v2",
+    "title": "Nods of Agreement: Webcam-Driven Avatars Improve Meeting Outcomes and Avatar Satisfaction Over Audio-Driven or Static Avatars in All-Avatar Work Videoconferencing",
+    "summary": "Avatars are edging into mainstream videoconferencing, but evaluation of how avatar animation modalities contribute to work meeting outcomes has been limited. We report a within-group videoconferencing experiment in which 68 employees of a global technology company, in 16 groups, used the same stylized avatars in three modalities (static picture, audio-animation, and webcam-animation) to complete collaborative decision-making tasks. Quantitatively, for meeting outcomes, webcam-animated avatars improved meeting effectiveness over the picture modality and were also reported to be more comfortable and inclusive than both other modalities. In terms of avatar satisfaction, there was a similar preference for webcam animation as compared to both other modalities. Our qualitative analysis shows participants expressing a preference for the holistic motion of webcam animation, and that meaningful movement outweighs realism for meeting outcomes, as evidenced through a systematic overview of ten thematic factors. We discuss implications for research and commercial deployment and conclude that webcam-animated avatars are a plausible alternative to video in work meetings.",
+    "published": "2024-12-17T19:00:52Z",
+    "updated": "2025-01-17T13:51:21Z",
+    "authors": [
+      "Fang Ma",
+      "Ju Zhang",
+      "Lev Tankelevitch",
+      "Payod Panda",
+      "Torang Asadi",
+      "Charlie Hewitt",
+      "Lohit Petikam",
+      "James Clemoes",
+      "Marco Gillies",
+      "Xueni Pan",
+      "Sean Rintel",
+      "Marta Wilczkowiak"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2412.11077v3",
+    "title": "Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval",
+    "summary": "Composed Image Retrieval (CIR) aims to retrieve target images that closely resemble a reference image while integrating user-specified textual modifications, thereby capturing user intent more precisely. Existing training-free zero-shot CIR (ZS-CIR) methods often employ a two-stage process: they first generate a caption for the reference image and then use Large Language Models for reasoning to obtain a target description. However, these methods suffer from missing critical visual details and limited reasoning capabilities, leading to suboptimal retrieval performance. To address these challenges, we propose a novel, training-free one-stage method, One-Stage Reflective Chain-of-Thought Reasoning for ZS-CIR (OSrCIR), which employs Multimodal Large Language Models to retain essential visual information in a single-stage reasoning process, eliminating the information loss seen in two-stage methods. Our Reflective Chain-of-Thought framework further improves interpretative accuracy by aligning manipulation intent with contextual cues from reference images. OSrCIR achieves performance gains of 1.80% to 6.44% over existing training-free methods across multiple tasks, setting new state-of-the-art results in ZS-CIR and enhancing its utility in vision-language applications. Our code will be available at https://github.com/Pter61/osrcir2024/.",
+    "published": "2024-12-15T06:22:20Z",
+    "updated": "2024-12-20T03:42:24Z",
+    "authors": [
+      "Yuanmin Tang",
+      "Xiaoting Qin",
+      "Jue Zhang",
+      "Jing Yu",
+      "Gaopeng Gou",
+      "Gang Xiong",
+      "Qingwei Ling",
+      "Saravan Rajmohan",
+      "Dongmei Zhang",
+      "Qi Wu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2411.08768v1",
+    "title": "Sharingan: Extract User Action Sequence from Desktop Recordings",
+    "summary": "Video recordings of user activities, particularly desktop recordings, offer a rich source of data for understanding user behaviors and automating processes. However, despite advancements in Vision-Language Models (VLMs) and their increasing use in video analysis, extracting user actions from desktop recordings remains an underexplored area. This paper addresses this gap by proposing two novel VLM-based methods for user action extraction: the Direct Frame-Based Approach (DF), which inputs sampled frames directly into VLMs, and the Differential Frame-Based Approach (DiffF), which incorporates explicit frame differences detected via computer vision techniques. We evaluate these methods using a basic self-curated dataset and an advanced benchmark adapted from prior work. Our results show that the DF approach achieves an accuracy of 70% to 80% in identifying user actions, with the extracted action sequences being re-playable though Robotic Process Automation. We find that while VLMs show potential, incorporating explicit UI changes can degrade performance, making the DF approach more reliable. This work represents the first application of VLMs for extracting user action sequences from desktop recordings, contributing new methods, benchmarks, and insights for future research.",
+    "published": "2024-11-13T16:53:29Z",
+    "updated": "2024-11-13T16:53:29Z",
+    "authors": [
+      "Yanting Chen",
+      "Yi Ren",
+      "Xiaoting Qin",
+      "Jue Zhang",
+      "Kehong Yuan",
+      "Lu Han",
+      "Qingwei Lin",
+      "Dongmei Zhang",
+      "Saravan Rajmohan",
+      "Qi Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2410.24032v1",
+    "title": "Navigating the Unknown: A Chat-Based Collaborative Interface for Personalized Exploratory Tasks",
+    "summary": "The rise of large language models (LLMs) has revolutionized user interactions with knowledge-based systems, enabling chatbots to synthesize vast amounts of information and assist with complex, exploratory tasks. However, LLM-based chatbots often struggle to provide personalized support, particularly when users start with vague queries or lack sufficient contextual information. This paper introduces the Collaborative Assistant for Personalized Exploration (CARE), a system designed to enhance personalization in exploratory tasks by combining a multi-agent LLM framework with a structured user interface. CARE's interface consists of a Chat Panel, Solution Panel, and Needs Panel, enabling iterative query refinement and dynamic solution generation. The multi-agent framework collaborates to identify both explicit and implicit user needs, delivering tailored, actionable solutions. In a within-subject user study with 22 participants, CARE was consistently preferred over a baseline LLM chatbot, with users praising its ability to reduce cognitive load, inspire creativity, and provide more tailored solutions. Our findings highlight CARE's potential to transform LLM-based systems from passive information retrievers to proactive partners in personalized problem-solving and exploration.",
+    "published": "2024-10-31T15:30:55Z",
+    "updated": "2024-10-31T15:30:55Z",
+    "authors": [
+      "Yingzhe Peng",
+      "Xiaoting Qin",
+      "Zhiyang Zhang",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Xu Yang",
+      "Dongmei Zhang",
+      "Saravan Rajmohan",
+      "Qi Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2409.17140v2",
+    "title": "AXIS: Efficient Human-Agent-Computer Interaction with API-First LLM-Based Agents",
+    "summary": "Multimodal large language models (MLLMs) have enabled LLM-based agents to directly interact with application user interfaces (UIs), enhancing agents' performance in complex tasks. However, these agents often suffer from high latency and low reliability due to the extensive sequential UI interactions. To address this issue, we propose AXIS, a novel LLM-based agents framework that prioritize actions through application programming interfaces (APIs) over UI actions. This framework also facilitates the creation and expansion of APIs through automated exploration of applications. Our experiments on Microsoft Word demonstrate that AXIS reduces task completion time by 65%-70% and cognitive workload by 38%-53%, while maintaining accuracy of 97%-98% compared to humans. Our work contributes to a new human-agent-computer interaction (HACI) framework and explores a fresh UI design principle for application providers to turn applications into agents in the era of LLMs, paving the way towards an agent-centric operating system (Agent OS).",
+    "published": "2024-09-25T17:58:08Z",
+    "updated": "2025-05-19T16:12:40Z",
+    "authors": [
+      "Junting Lu",
+      "Zhiyang Zhang",
+      "Fangkai Yang",
+      "Jue Zhang",
+      "Lu Wang",
+      "Chao Du",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang",
+      "Qi Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2409.13035v3",
+    "title": "TACO-RL: Task Aware Prompt Compression Optimization with Reinforcement Learning",
+    "summary": "The increasing prevalence of large language models (LLMs) such as GPT-4 in various applications has led to a surge in the size of prompts required for optimal performance, leading to challenges in computational efficiency. Prompt compression aims to reduce the inference cost by minimizing input tokens without compromising on the task performance. However, existing prompt compression techniques either rely on sub-optimal metrics such as information entropy or model it as a task-agnostic token classification problem that fails to capture task-specific information. To address these issues, we propose a novel and efficient reinforcement learning (RL) based task-aware prompt compression method. To ensure low latency requirements, we leverage existing Transformer encoder-based token classification model while guiding the learning process with task-specific reward signals using lightweight REINFORCE algorithm. We evaluate the performance of our method on three diverse and challenging tasks including text summarization, question answering and code summarization. We demonstrate that our RL-guided compression method improves the task performance by 8% - 189% across these three scenarios over state-of-the-art compression techniques while satisfying the same compression rate and latency requirements.",
+    "published": "2024-09-19T18:11:59Z",
+    "updated": "2024-12-18T09:48:32Z",
+    "authors": [
+      "Shivam Shandilya",
+      "Menglin Xia",
+      "Supriyo Ghosh",
+      "Huiqiang Jiang",
+      "Jue Zhang",
+      "Qianhui Wu",
+      "Victor Rühle"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2408.13510v2",
+    "title": "Intelligent Router for LLM Workloads: Improving Performance Through Workload-Aware Load Balancing",
+    "summary": "Large Language Model (LLM) workloads have distinct prefill and decode phases with different compute and memory requirements which should ideally be accounted for when scheduling input queries across different LLM instances in a cluster. However existing scheduling algorithms treat LLM workloads as monolithic jobs without considering the distinct characteristics of the two phases in each workload. This leads to sub-optimal scheduling and increased response latency. In this work, we start by characterizing factors affecting the response latency during LLM inference serving. We establish that better load balancing of inference requests across the available LLM instances can improve the end-to-end latency to a larger extent than merely focusing on optimizing the instance-level scheduler. Motivated by our findings, we propose a heuristic-guided reinforcement learning-based intelligent router for data-driven and workload-aware scheduling. Our router schedules queries across LLM instances by leveraging a trainable response-length predictor, and a novel formulation for estimating the impact of mixing different workloads and achieves over 11% lower end-to-end latency than existing approaches on a mix of public datasets and 7.8% lower end-to-end latency on real workload data with diverse input and output trends from Cloud Provider X. Additionally, the proposed framework can also serve as a standard for benchmarking different LLM inference schedulers since it provides the best latency for a given model, hardware, and instance-level scheduler combination.",
+    "published": "2024-08-24T08:12:22Z",
+    "updated": "2025-01-07T18:16:17Z",
+    "authors": [
+      "Kunal Jain",
+      "Anjaly Parayil",
+      "Ankur Mallick",
+      "Esha Choukse",
+      "Xiaoting Qin",
+      "Jue Zhang",
+      "Íñigo Goiri",
+      "Rujia Wang",
+      "Chetan Bansal",
+      "Victor Rühle",
+      "Anoop Kulkarni",
+      "Steve Kofsky",
+      "Saravan Rajmohan"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2407.14402v1",
+    "title": "The Vision of Autonomic Computing: Can LLMs Make It a Reality?",
+    "summary": "The Vision of Autonomic Computing (ACV), proposed over two decades ago, envisions computing systems that self-manage akin to biological organisms, adapting seamlessly to changing environments. Despite decades of research, achieving ACV remains challenging due to the dynamic and complex nature of modern computing systems. Recent advancements in Large Language Models (LLMs) offer promising solutions to these challenges by leveraging their extensive knowledge, language understanding, and task automation capabilities. This paper explores the feasibility of realizing ACV through an LLM-based multi-agent framework for microservice management. We introduce a five-level taxonomy for autonomous service maintenance and present an online evaluation benchmark based on the Sock Shop microservice demo project to assess our framework's performance. Our findings demonstrate significant progress towards achieving Level 3 autonomy, highlighting the effectiveness of LLMs in detecting and resolving issues within microservice architectures. This study contributes to advancing autonomic computing by pioneering the integration of LLMs into microservice management frameworks, paving the way for more adaptive and self-managing computing systems. The code will be made available at https://aka.ms/ACV-LLM.",
+    "published": "2024-07-19T15:30:32Z",
+    "updated": "2024-07-19T15:30:32Z",
+    "authors": [
+      "Zhiyang Zhang",
+      "Fangkai Yang",
+      "Xiaoting Qin",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Gong Cheng",
+      "Dongmei Zhang",
+      "Saravan Rajmohan",
+      "Qi Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2406.19251v1",
+    "title": "AutoRAG-HP: Automatic Online Hyper-Parameter Tuning for Retrieval-Augmented Generation",
+    "summary": "Recent advancements in Large Language Models have transformed ML/AI development, necessitating a reevaluation of AutoML principles for the Retrieval-Augmented Generation (RAG) systems. To address the challenges of hyper-parameter optimization and online adaptation in RAG, we propose the AutoRAG-HP framework, which formulates the hyper-parameter tuning as an online multi-armed bandit (MAB) problem and introduces a novel two-level Hierarchical MAB (Hier-MAB) method for efficient exploration of large search spaces. We conduct extensive experiments on tuning hyper-parameters, such as top-k retrieved documents, prompt compression ratio, and embedding methods, using the ALCE-ASQA and Natural Questions datasets. Our evaluation from jointly optimization all three hyper-parameters demonstrate that MAB-based online learning methods can achieve Recall@5 $\\approx 0.8$ for scenarios with prominent gradients in search space, using only $\\sim20\\%$ of the LLM API calls required by the Grid Search approach. Additionally, the proposed Hier-MAB approach outperforms other baselines in more challenging optimization scenarios. The code will be made available at https://aka.ms/autorag.",
+    "published": "2024-06-27T15:18:21Z",
+    "updated": "2024-06-27T15:18:21Z",
+    "authors": [
+      "Jia Fu",
+      "Xiaoting Qin",
+      "Fangkai Yang",
+      "Lu Wang",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Yubo Chen",
+      "Dongmei Zhang",
+      "Saravan Rajmohan",
+      "Qi Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2406.14590v1",
+    "title": "Demonstration of optical spring in an un-detuned cavity containing an optical parametric amplifier",
+    "summary": "Here we demonstrate the capacity to manipulate the optical spring (OS) effect by employing an optical parametric amplifier (OPA) within an optical cavity. We observed more than a factor of 2 increase in the OS frequency shift with the OPA. We also showed for the first time that the OS can be tuned by solely adjusting the OPA phase and showing an un-detuned cavity exhibiting an optical spring. The method can be applied to gravitational wave detectors in the signal recycling configuration to realize narrow bandwidth high sensitivity. The OS can be tuned to align the detector peak sensitivity frequency to known frequency continuous gravitational wave signals, dynamically tuned to track the gravitational wave signal from merging compact binaries or tuned to search for the post-merger signal of known binary coalescence.",
+    "published": "2024-06-20T08:48:14Z",
+    "updated": "2024-06-20T08:48:14Z",
+    "authors": [
+      "Jian Liu",
+      "Juntao Pan",
+      "Carl Blair",
+      "Jue Zhang",
+      "Hengxin Sun",
+      "Li Ju",
+      "Chunnong Zhao"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2406.02261v1",
+    "title": "Experimental demonstration of the combined arm- and cavity-locking system for LISA",
+    "summary": "Laser frequency noise suppression is a critical requirement for the Laser Interferometer Space Antenna (LISA) mission to detect gravitational waves. The baseline laser stabilization is achieved using cavity pre-stabilization and a post-processing technique called Time-Delay-Interferometry (TDI). To enhance the margins for TDI, alternate laser locking schemes should be investigated. A novel stabilisation blending the excellent stability of the arm with the existing cavity reference has been shown theoretically to meet the first-generation TDI margins. This locking system was designed to be implemented as a firmware change and have minimal or no changes to the LISA hardware. This paper experimentally verifies the hybrid laser locking technique by utilizing two references - an optical cavity, and an interferometer with delay imparted using 10 km of optical fiber. The results indicate the viability of the combination of arm-cavity locking system for LISA. They show the key benefits envisioned by this technique; suppression of the cavity fluctuations by the arm sensor (by 21 dB in this demonstration) and reduction of Doppler pulling of the laser frequency, a key technical challenge for arm locking.",
+    "published": "2024-06-04T12:32:48Z",
+    "updated": "2024-06-04T12:32:48Z",
+    "authors": [
+      "Jobin Thomas Valliyakalayil",
+      "Andrew Wade",
+      "David Rabeling",
+      "Jue Zhang",
+      "Daniel Shaddock",
+      "Kirk McKenzie"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2405.15571v1",
+    "title": "RCInvestigator: Towards Better Investigation of Anomaly Root Causes in Cloud Computing Systems",
+    "summary": "Finding the root causes of anomalies in cloud computing systems quickly is crucial to ensure availability and efficiency since accurate root causes can guide engineers to take appropriate actions to address the anomalies and maintain customer satisfaction. However, it is difficult to investigate and identify the root causes based on large-scale and high-dimension monitoring data collected from complex cloud computing environments. Due to the inherently dynamic characteristics of cloud computing systems, the existing approaches in practice largely rely on manual analyses for flexibility and reliability, but massive unpredictable factors and high data complexity make the process time-consuming. Despite recent advances in automated detection and investigation approaches, the speed and quality of root cause analyses remain limited by the lack of expert involvement in these approaches. The limitations found in the current solutions motivate us to propose a visual analytics approach that facilitates the interactive investigation of the anomaly root causes in cloud computing systems. We identified three challenges, namely, a) modeling databases for the root cause investigation, b) inferring root causes from large-scale time series, and c) building comprehensible investigation results. In collaboration with domain experts, we addressed these challenges with RCInvestigator, a novel visual analytics system that establishes a tight collaboration between human and machine and assists experts in investigating the root causes of cloud computing system anomalies. We evaluated the effectiveness of RCInvestigator through two use cases based on real-world data and received positive feedback from experts.",
+    "published": "2024-05-24T14:03:27Z",
+    "updated": "2024-05-24T14:03:27Z",
+    "authors": [
+      "Shuhan Liu",
+      "Yunfan Zhou",
+      "Lu Ying",
+      "Yuan Tian",
+      "Jue Zhang",
+      "Shandan Zhou",
+      "Weiwei Cui",
+      "Qingwei Lin",
+      "Thomas Moscibroda",
+      "Haidong Zhang",
+      "Di Weng",
+      "Yingcai Wu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2405.07250v1",
+    "title": "Towards Cloud Efficiency with Large-scale Workload Characterization",
+    "summary": "Cloud providers introduce features (e.g., Spot VMs, Harvest VMs, and Burstable VMs) and optimizations (e.g., oversubscription, auto-scaling, power harvesting, and overclocking) to improve efficiency and reliability. To effectively utilize these features, it's crucial to understand the characteristics of workloads running in the cloud. However, workload characteristics can be complex and depend on multiple signals, making manual characterization difficult and unscalable. In this study, we conduct the first large-scale examination of first-party workloads at Microsoft to understand their characteristics. Through an empirical study, we aim to answer the following questions: (1) What are the critical workload characteristics that impact efficiency and reliability on cloud platforms? (2) How do these characteristics vary across different workloads? (3) How can cloud platforms leverage these insights to efficiently characterize all workloads at scale? This study provides a deeper understanding of workload characteristics and their impact on cloud performance, which can aid in optimizing cloud services. Additionally, it identifies potential areas for future research.",
+    "published": "2024-05-12T10:55:06Z",
+    "updated": "2024-05-12T10:55:06Z",
+    "authors": [
+      "Anjaly Parayil",
+      "Jue Zhang",
+      "Xiaoting Qin",
+      "Íñigo Goiri",
+      "Lexiang Huang",
+      "Timothy Zhu",
+      "Chetan Bansal"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2404.19143v1",
+    "title": "Workload Intelligence: Punching Holes Through the Cloud Abstraction",
+    "summary": "Today, cloud workloads are essentially opaque to the cloud platform. Typically, the only information the platform receives is the virtual machine (VM) type and possibly a decoration to the type (e.g., the VM is evictable). Similarly, workloads receive little to no information from the platform; generally, workloads might receive telemetry from their VMs or exceptional signals (e.g., shortly before a VM is evicted). The narrow interface between workloads and platforms has several drawbacks: (1) a surge in VM types and decorations in public cloud platforms complicates customer selection; (2) essential workload characteristics (e.g., low availability requirements, high latency tolerance) are often unspecified, hindering platform customization for optimized resource usage and cost savings; and (3) workloads may be unaware of potential optimizations or lack sufficient time to react to platform events. In this paper, we propose a framework, called Workload Intelligence (WI), for dynamic bi-directional communication between cloud workloads and cloud platform. Via WI, workloads can programmatically adjust their key characteristics, requirements, and even dynamically adapt behaviors like VM priorities. In the other direction, WI allows the platform to programmatically inform workloads about upcoming events, opportunities for optimization, among other scenarios. Because of WI, the cloud platform can drastically simplify its offerings, reduce its costs without fear of violating any workload requirements, and reduce prices to its customers on average by 48.8%.",
+    "published": "2024-04-29T23:01:03Z",
+    "updated": "2024-04-29T23:01:03Z",
+    "authors": [
+      "Lexiang Huang",
+      "Anjaly Parayil",
+      "Jue Zhang",
+      "Xiaoting Qin",
+      "Chetan Bansal",
+      "Jovan Stojkovic",
+      "Pantea Zardoshti",
+      "Pulkit Misra",
+      "Eli Cortez",
+      "Raphael Ghelman",
+      "Íñigo Goiri",
+      "Saravan Rajmohan",
+      "Jim Kleewein",
+      "Rodrigo Fonseca",
+      "Timothy Zhu",
+      "Ricardo Bianchini"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2403.12968v2",
+    "title": "LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression",
+    "summary": "This paper focuses on task-agnostic prompt compression for better generalizability and efficiency. Considering the redundancy in natural language, existing approaches compress prompts by removing tokens or lexical units according to their information entropy obtained from a causal language model such as LLaMa-7B. The challenge is that information entropy may be a suboptimal compression metric: (i) it only leverages unidirectional context and may fail to capture all essential information needed for prompt compression; (ii) it is not aligned with the prompt compression objective. To address these issues, we propose a data distillation procedure to derive knowledge from an LLM to compress prompts without losing crucial information, and meantime, introduce an extractive text compression dataset. We formulate prompt compression as a token classification problem to guarantee the faithfulness of the compressed prompt to the original one, and use a Transformer encoder as the base architecture to capture all essential information for prompt compression from the full bidirectional context. Our approach leads to lower latency by explicitly learning the compression objective with smaller models such as XLM-RoBERTa-large and mBERT. We evaluate our method on both in-domain and out-of-domain datasets, including MeetingBank, LongBench, ZeroScrolls, GSM8K, and BBH. Despite its small size, our model shows significant performance gains over strong baselines and demonstrates robust generalization ability across different LLMs. Additionally, our model is 3x-6x faster than existing prompt compression methods, while accelerating the end-to-end latency by 1.6x-2.9x with compression ratios of 2x-5x. Our code is available at https://aka.ms/LLMLingua-2.",
+    "published": "2024-03-19T17:59:56Z",
+    "updated": "2024-08-12T04:48:11Z",
+    "authors": [
+      "Zhuoshi Pan",
+      "Qianhui Wu",
+      "Huiqiang Jiang",
+      "Menglin Xia",
+      "Xufang Luo",
+      "Jue Zhang",
+      "Qingwei Lin",
+      "Victor Rühle",
+      "Yuqing Yang",
+      "Chin-Yew Lin",
+      "H. Vicky Zhao",
+      "Lili Qiu",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2311.17541v3",
+    "title": "TaskWeaver: A Code-First Agent Framework",
+    "summary": "Large Language Models (LLMs) have shown impressive abilities in natural language understanding and generation, leading to their widespread use in applications such as chatbots and virtual assistants. However, existing LLM frameworks face limitations in handling domain-specific data analytics tasks with rich data structures. Moreover, they struggle with flexibility to meet diverse user requirements. To address these issues, TaskWeaver is proposed as a code-first framework for building LLM-powered autonomous agents. It converts user requests into executable code and treats user-defined plugins as callable functions. TaskWeaver provides support for rich data structures, flexible plugin usage, and dynamic plugin selection, and leverages LLM coding capabilities for complex logic. It also incorporates domain-specific knowledge through examples and ensures the secure execution of generated code. TaskWeaver offers a powerful and flexible framework for creating intelligent conversational agents that can handle complex tasks and adapt to domain-specific scenarios. The code is open sourced at https://github.com/microsoft/TaskWeaver/.",
+    "published": "2023-11-29T11:23:42Z",
+    "updated": "2024-06-20T02:53:20Z",
+    "authors": [
+      "Bo Qiao",
+      "Liqun Li",
+      "Xu Zhang",
+      "Shilin He",
+      "Yu Kang",
+      "Chaoyun Zhang",
+      "Fangkai Yang",
+      "Hang Dong",
+      "Jue Zhang",
+      "Lu Wang",
+      "Minghua Ma",
+      "Pu Zhao",
+      "Si Qin",
+      "Xiaoting Qin",
+      "Chao Du",
+      "Yong Xu",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2305.11541v3",
+    "title": "Empower Large Language Model to Perform Better on Industrial Domain-Specific Question Answering",
+    "summary": "Large Language Model (LLM) has gained popularity and achieved remarkable results in open-domain tasks, but its performance in real industrial domain-specific scenarios is average due to its lack of specific domain knowledge. This issue has attracted widespread attention, but there are few relevant benchmarks available. In this paper, we provide a benchmark Question Answering (QA) dataset named MSQA, centered around Microsoft products and IT technical problems encountered by customers. This dataset contains industry cloud-specific QA knowledge, an area not extensively covered in general LLMs, making it well-suited for evaluating methods aiming to enhance LLMs' domain-specific capabilities. In addition, we propose a new model interaction paradigm that can empower LLM to achieve better performance on domain-specific tasks where it is not proficient. Extensive experiments demonstrate that the approach following our method outperforms the commonly used LLM with retrieval methods. We make our source code and sample data available at: https://aka.ms/Microsoft_QA.",
+    "published": "2023-05-19T09:23:25Z",
+    "updated": "2023-10-16T10:48:00Z",
+    "authors": [
+      "Fangkai Yang",
+      "Pu Zhao",
+      "Zezhong Wang",
+      "Lu Wang",
+      "Jue Zhang",
+      "Mohit Garg",
+      "Qingwei Lin",
+      "Saravan Rajmohan",
+      "Dongmei Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2212.07259v1",
+    "title": "A data-driven physics-based transport model of solar energetic particles accelerated by coronal mass ejection shocks propagating through the solar coronal and heliospheric magnetic fields",
+    "summary": "In an effort to develop computational tools for predicting radiation hazards from solar energetic particles (SEPs), we have created a data-driven physics-based particle transport model to calculate the injection, acceleration and propagation of SEPs from coronal mass ejection (CME) shocks traversing through the solar corona and interplanetary magnetic fields. The model runs on an input of corona and heliospheric plasma and magnetic field configuration from an MHD model driven by solar photospheric magnetic field measurements superposed with observed CME shocks determined from coronagraph images. Using several advanced computation techniques involving stochastic simulation and integration, it rigorously solves the time-dependent 5-dimensional focus transport equation in the phase space that includes pitch-angle scattering, diffusion across magnetic field line, and particle acceleration by CME shocks. We apply the model to the 2011 November 3 CME event. The calculation results reproduce multi-spacecraft SEP observations reasonably well without normalization of particle flux. This circumsolar SEP event seen by spacecraft at Earth, STEREO-A and STEREO-B at widely separated longitudes can be explained by diffusive shock acceleration by a single CME shock with a moderate speed.",
+    "published": "2022-12-14T14:50:19Z",
+    "updated": "2022-12-14T14:50:19Z",
+    "authors": [
+      "Ming Zhang",
+      "Lei Cheng",
+      "Ju Zhang",
+      "Pete Riley",
+      "Ryun Young Kwon",
+      "David Lario",
+      "Laura Balmaceda",
+      "Nikolai Pogorelov"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2208.07814v3",
+    "title": "Does Lorentz-symmetric design boost network performance in jet physics?",
+    "summary": "In the deep learning era, improving the neural network performance in jet physics is a rewarding task as it directly contributes to more accurate physics measurements at the LHC. Recent research has proposed various network designs in consideration of the full Lorentz symmetry, but its benefit is still not systematically asserted, given that there remain many successful networks without taking it into account. We conduct a detailed study on the Lorentz-symmetric design. We propose two generalized approaches for modifying a network - these methods are experimented on Particle Flow Network, ParticleNet, and LorentzNet, and exhibit a general performance gain. We also reveal that the notable improvement attributed to the \"pairwise mass\" feature in the network is due to its introduction of a structure that fully complies with Lorentz symmetry. We confirm that Lorentz-symmetry preservation serves as a strong inductive bias of jet physics, hence calling for attention to such general recipes in future network designs.",
+    "published": "2022-08-16T15:53:53Z",
+    "updated": "2024-03-07T19:03:03Z",
+    "authors": [
+      "Congqiao Li",
+      "Huilin Qu",
+      "Sitian Qian",
+      "Qi Meng",
+      "Shiqi Gong",
+      "Jue Zhang",
+      "Tie-Yan Liu",
+      "Qiang Li"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2201.08187v6",
+    "title": "An Efficient Lorentz Equivariant Graph Neural Network for Jet Tagging",
+    "summary": "Deep learning methods have been increasingly adopted to study jets in particle physics. Since symmetry-preserving behavior has been shown to be an important factor for improving the performance of deep learning in many applications, Lorentz group equivariance - a fundamental spacetime symmetry for elementary particles - has recently been incorporated into a deep learning model for jet tagging. However, the design is computationally costly due to the analytic construction of high-order tensors. In this article, we introduce LorentzNet, a new symmetry-preserving deep learning model for jet tagging. The message passing of LorentzNet relies on an efficient Minkowski dot product attention. Experiments on two representative jet tagging benchmarks show that LorentzNet achieves the best tagging performance and improves significantly over existing state-of-the-art algorithms. The preservation of Lorentz symmetry also greatly improves the efficiency and generalization power of the model, allowing LorentzNet to reach highly competitive performance when trained on only a few thousand jets. Code and models are available at \\url{https://github.com/sdogsq/LorentzNet-release}.",
+    "published": "2022-01-20T14:07:13Z",
+    "updated": "2022-11-08T07:07:13Z",
+    "authors": [
+      "Shiqi Gong",
+      "Qi Meng",
+      "Jue Zhang",
+      "Huilin Qu",
+      "Congqiao Li",
+      "Sitian Qian",
+      "Weitao Du",
+      "Zhi-Ming Ma",
+      "Tie-Yan Liu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2110.04451v1",
+    "title": "Using multiple reference audios and style embedding constraints for speech synthesis",
+    "summary": "The end-to-end speech synthesis model can directly take an utterance as reference audio, and generate speech from the text with prosody and speaker characteristics similar to the reference audio. However, an appropriate acoustic embedding must be manually selected during inference. Due to the fact that only the matched text and speech are used in the training process, using unmatched text and speech for inference would cause the model to synthesize speech with low content quality. In this study, we propose to mitigate these two problems by using multiple reference audios and style embedding constraints rather than using only the target audio. Multiple reference audios are automatically selected using the sentence similarity determined by Bidirectional Encoder Representations from Transformers (BERT). In addition, we use ''target'' style embedding from a Pre-trained encoder as a constraint by considering the mutual information between the predicted and ''target'' style embedding. The experimental results show that the proposed model can improve the speech naturalness and content quality with multiple reference audios and can also outperform the baseline model in ABX preference tests of style similarity.",
+    "published": "2021-10-09T04:24:29Z",
+    "updated": "2021-10-09T04:24:29Z",
+    "authors": [
+      "Cheng Gong",
+      "Longbiao Wang",
+      "Zhenhua Ling",
+      "Ju Zhang",
+      "Jianwu Dang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2103.09659v1",
+    "title": "Pseudo Supervised Solar Panel Mapping based on Deep Convolutional Networks with Label Correction Strategy in Aerial Images",
+    "summary": "Solar panel mapping has gained a rising interest in renewable energy field with the aid of remote sensing imagery. Significant previous work is based on fully supervised learning with classical classifiers or convolutional neural networks (CNNs), which often require manual annotations of pixel-wise ground-truth to provide accurate supervision. Weakly supervised methods can accept image-wise annotations which can help reduce the cost for pixel-level labelling. Inevitable performance gap, however, exists between weakly and fully supervised methods in mapping accuracy. To address this problem, we propose a pseudo supervised deep convolutional network with label correction strategy (PS-CNNLC) for solar panels mapping. It combines the benefits of both weak and strong supervision to provide accurate solar panel extraction. First, a convolutional neural network is trained with positive and negative samples with image-level labels. It is then used to automatically identify more positive samples from randomly selected unlabeled images. The feature maps of the positive samples are further processed by gradient-weighted class activation mapping to generate initial mapping results, which are taken as initial pseudo labels as they are generally coarse and incomplete. A progressive label correction strategy is designed to refine the initial pseudo labels and train an end-to-end target mapping network iteratively, thereby improving the model reliability. Comprehensive evaluations and ablation study conducted validate the superiority of the proposed PS-CNNLC.",
+    "published": "2021-03-16T08:59:14Z",
+    "updated": "2021-03-16T08:59:14Z",
+    "authors": [
+      "Jue Zhang",
+      "Xiuping Jia",
+      "Jiankun Hu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2010.06363v1",
+    "title": "Three-Dimensional Lip Motion Network for Text-Independent Speaker Recognition",
+    "summary": "Lip motion reflects behavior characteristics of speakers, and thus can be used as a new kind of biometrics in speaker recognition. In the literature, lots of works used two-dimensional (2D) lip images to recognize speaker in a textdependent context. However, 2D lip easily suffers from various face orientations. To this end, in this work, we present a novel end-to-end 3D lip motion Network (3LMNet) by utilizing the sentence-level 3D lip motion (S3DLM) to recognize speakers in both the text-independent and text-dependent contexts. A new regional feedback module (RFM) is proposed to obtain attentions in different lip regions. Besides, prior knowledge of lip motion is investigated to complement RFM, where landmark-level and frame-level features are merged to form a better feature representation. Moreover, we present two methods, i.e., coordinate transformation and face posture correction to pre-process the LSD-AV dataset, which contains 68 speakers and 146 sentences per speaker. The evaluation results on this dataset demonstrate that our proposed 3LMNet is superior to the baseline models, i.e., LSTM, VGG-16 and ResNet-34, and outperforms the state-of-the-art using 2D lip image as well as the 3D face. The code of this work is released at https://github.com/wutong18/Three-Dimensional-Lip- Motion-Network-for-Text-Independent-Speaker-Recognition.",
+    "published": "2020-10-13T13:18:33Z",
+    "updated": "2020-10-13T13:18:33Z",
+    "authors": [
+      "Jianrong Wang",
+      "Tong Wu",
+      "Shanyu Wang",
+      "Mei Yu",
+      "Qiang Fang",
+      "Ju Zhang",
+      "Li Liu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2009.13079v1",
+    "title": "The Geometric Unscented Kalman Filter",
+    "summary": "Many filters have been proposed in recent decades for the nonlinear state estimation problem. The linearization-based extended Kalman filter (EKF) is widely applied to nonlinear industrial systems. As EKF is limited in accuracy and reliability, sequential Monte-Carlo methods or particle filters (PF) can obtain superior accuracy at the cost of a huge number of random samples. The unscented Kalman filter (UKF) can achieve adequate accuracy more efficiently by using deterministic samples, but its weights may be negative, which might cause instability problem. For Gaussian filters, the cubature Kalman filter (CKF) and Gauss Hermit filter (GHF) employ cubature and respectively Gauss-Hermite rules to approximate statistic information of random variables and exhibit impressive performances in practical problems. Inspired by this work, this paper presents a new nonlinear estimation scheme named after geometric unscented Kalman filter (GUF). The GUF chooses the filtering framework of CKF for updating data and develops a geometric unscented sampling (GUS) strategy for approximating random variables. The main feature of GUS is selecting uniformly distributed samples according to the probability and geometric location similar to UKF and CKF, and having positive weights like PF. Through such way, GUF can maintain adequate accuracy as GHF with reasonable efficiency and good stability. The GUF does not suffer from the exponential increase of sample size as for PF or failure to converge resulted from non-positive weights as for high order CKF and UKF.",
+    "published": "2020-09-28T05:03:24Z",
+    "updated": "2020-09-28T05:03:24Z",
+    "authors": [
+      "Chengling Fang",
+      "Jiang Liu",
+      "Songqing Ye",
+      "Ju Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1812.01375v1",
+    "title": "Design and implementation of smart cooking based on amazon echo",
+    "summary": "Smart cooking based on Amazon Echo uses the internet of things and cloud computing to assist in cooking food. People may speak to Amazon Echo during the cooking in order to get the information and situation of the cooking. Amazon Echo recognizes what people say, then transfers the information to the cloud services, and speaks to people the results that cloud services make by querying the embedded cooking knowledge and achieving the information of intelligent kitchen devices online. An intelligent food thermometer and its mobile application are well-designed and implemented to monitor the temperature of cooking food.",
+    "published": "2018-12-04T12:38:07Z",
+    "updated": "2018-12-04T12:38:07Z",
+    "authors": [
+      "Lin Xiaoguang",
+      "Yang Yong",
+      "Zhang Ju"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1810.07659v1",
+    "title": "Searching for weak singlet charged scalar at lepton colliders",
+    "summary": "A weak singlet charged scalar exists in many new physics models beyond the Standard Model. The discovery potential of the singlet charged scalar is explored at future lepton colliders, e.g. the CEPC, ILC-350 and ILC-500. We demonstrate that one can discover the singlet charged scalar up to 118 GeV at the CEPC with an integrated luminosity of $5~\\mathrm{ab}^{-1}$. At the ILC-350 and the ILC-500 with an integrated luminosity of $1~\\mathrm{ab}^{-1}$ such a discovery limit can be further improved to 136 GeV and 160 GeV, respectively.",
+    "published": "2018-10-17T16:43:49Z",
+    "updated": "2018-10-17T16:43:49Z",
+    "authors": [
+      "Qing-Hong Cao",
+      "Gang Li",
+      "Ke-Pan Xie",
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1805.06524v1",
+    "title": "Hybrid Adaptive Fuzzy Extreme Learning Machine for text classification",
+    "summary": "In traditional ELM and its improved versions suffer from the problems of outliers or noises due to overfitting and imbalance due to distribution. We propose a novel hybrid adaptive fuzzy ELM(HA-FELM), which introduces a fuzzy membership function to the traditional ELM method to deal with the above problems. We define the fuzzy membership function not only basing on the distance between each sample and the center of the class but also the density among samples which based on the quantum harmonic oscillator model. The proposed fuzzy membership function overcomes the shortcoming of the traditional fuzzy membership function and could make itself adjusted according to the specific distribution of different samples adaptively. Experiments show the proposed HA-FELM can produce better performance than SVM, ELM, and RELM in text classification.",
+    "published": "2018-05-10T06:11:27Z",
+    "updated": "2018-05-10T06:11:27Z",
+    "authors": [
+      "Ming Li",
+      "Peilun Xiao",
+      "Ju Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1805.06525v1",
+    "title": "Text classification based on ensemble extreme learning machine",
+    "summary": "In this paper, we propose a novel approach based on cost-sensitive ensemble weighted extreme learning machine; we call this approach AE1-WELM. We apply this approach to text classification. AE1-WELM is an algorithm including balanced and imbalanced multiclassification for text classification. Weighted ELM assigning the different weights to the different samples improves the classification accuracy to a certain extent, but weighted ELM considers the differences between samples in the different categories only and ignores the differences between samples within the same categories. We measure the importance of the documents by the sample information entropy, and generate cost-sensitive matrix and factor based on the document importance, then embed the cost-sensitive weighted ELM into the AdaBoost.M1 framework seamlessly. Vector space model(VSM) text representation produces the high dimensions and sparse features which increase the burden of ELM. To overcome this problem, we develop a text classification framework combining the word vector and AE1-WELM. The experimental results show that our method provides an accurate, reliable and effective solution for text classification.",
+    "published": "2018-05-10T06:10:46Z",
+    "updated": "2018-05-10T06:10:46Z",
+    "authors": [
+      "Ming Li",
+      "Peilun Xiao",
+      "Ju Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1801.09931v2",
+    "title": "$ μ-τ$ Reflection Symmetry Embedded in Minimal Seesaw",
+    "summary": "We embed $μ-τ$ reflection symmetry into the minimal seesaw formalism, where two right-handed neutrinos are added to the Standard Model of particle physics. Assuming that both the left- and right-handed neutrino fields transform under $μ-τ$ reflection symmetry, we obtain the required forms of the neutrino Dirac mass matrix and the Majorana mass matrix for the right-handed neutrinos. To investigate the neutrino phenomenology at low energies, we first consider the breaking of $μ-τ$ reflection symmetry due to the renormalization group running, and then systematically study various breaking schemes by introducing explicit breaking terms at high energies.",
+    "published": "2018-01-30T11:11:12Z",
+    "updated": "2018-03-20T07:01:21Z",
+    "authors": [
+      "Newton Nath",
+      "Zhi-zhong Xing",
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1712.01153v2",
+    "title": "Gravitational clustering of cosmic relic neutrinos in the Milky Way",
+    "summary": "The standard model of cosmology predicts the existence of cosmic neutrino background in the present Universe. To detect cosmic relic neutrinos in the vicinity of the Earth, it is necessary to evaluate the gravitational clustering effects on relic neutrinos in the Milky Way. Here we introduce a reweighting technique in the N-one-body simulation method, so that a single simulation can yield neutrino density profiles for different neutrino masses and phase space distributions. In light of current experimental results that favor small neutrino masses, the neutrino number density contrast around the Earth is found to be almost proportional to the square of neutrino mass. The density contrast-mass relation and the reweighting technique are useful for studying the phenomenology associated with the future detection of the cosmic neutrino background.",
+    "published": "2017-12-04T15:43:34Z",
+    "updated": "2018-05-09T13:27:46Z",
+    "authors": [
+      "Jue Zhang",
+      "Xin Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1711.02113v2",
+    "title": "Searching for Weak Singlet Charged Scalar at the Large Hadron Collider",
+    "summary": "Weak singlet charged scalar exists in many new physics models beyond the Standard Model. In this work we show that a light singlet charged scalar with mass above 65~GeV is still allowed by the LEP and LHC data. The interactions of the singlet charged scalar with the Standard Model particles are described by operators up to dimension-5. Dominant decay modes of the singlet charged scalar are obtained, and a subtlety involving field redefinition and gauge fixing due to a dimension-5 operator is also clarified. We demonstrate that it is promising to observe the singlet charged scalar at the LHC.",
+    "published": "2017-11-06T19:05:17Z",
+    "updated": "2018-06-23T00:20:53Z",
+    "authors": [
+      "Qing-Hong Cao",
+      "Gang Li",
+      "Ke-Pan Xie",
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1706.01758v1",
+    "title": "A WL-SPPIM Semantic Model for Document Classification",
+    "summary": "In this paper, we explore SPPIM-based text classification method, and the experiment reveals that the SPPIM method is equal to or even superior than SGNS method in text classification task on three international and standard text datasets, namely 20newsgroups, Reuters52 and WebKB. Comparing to SGNS, although SPPMI provides a better solution, it is not necessarily better than SGNS in text classification tasks. Based on our analysis, SGNS takes into the consideration of weight calculation during decomposition process, so it has better performance than SPPIM in some standard datasets. Inspired by this, we propose a WL-SPPIM semantic model based on SPPIM model, and experiment shows that WL-SPPIM approach has better classification and higher scalability in the text classification task compared with LDA, SGNS and SPPIM approaches.",
+    "published": "2017-05-26T08:03:10Z",
+    "updated": "2017-05-26T08:03:10Z",
+    "authors": [
+      "Ming Li",
+      "Peilun Xiao",
+      "Ju Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1610.04133v2",
+    "title": "Looking into Analytical Approximations for Three-flavor Neutrino Oscillation Probabilities in Matter",
+    "summary": "Motivated by tremendous progress in neutrino oscillation experiments, we derive a new set of simple and compact formulas for three-flavor neutrino oscillation probabilities in matter of a constant density. A useful definition of the $η$-gauge neutrino mass-squared difference $Δ^{}_* \\equiv ηΔ^{}_{31} + (1-η) Δ^{}_{32}$ is introduced, where $Δ^{}_{ji} \\equiv m^2_j - m^2_i$ for $ji = 21, 31, 32$ are the ordinary neutrino mass-squared differences and $0 \\leq η\\leq 1$ is a real and positive parameter. Expanding neutrino oscillation probabilities in terms of $α\\equiv Δ^{}_{21}/Δ^{}_*$, we demonstrate that the analytical formulas can be remarkably simplified for $η= \\cos^2 θ^{}_{12}$, with $θ_{12}^{}$ being the solar mixing angle. As a by-product, the mapping from neutrino oscillation parameters in vacuum to their counterparts in matter is obtained at the order of ${\\cal O}(α^2)$. Finally, we show that our approximate formulas are not only valid for an arbitrary neutrino energy and any baseline length, but also still maintaining a high level of accuracy.",
+    "published": "2016-10-13T15:41:59Z",
+    "updated": "2016-12-15T14:43:25Z",
+    "authors": [
+      "Yu-Feng Li",
+      "Jue Zhang",
+      "Shun Zhou",
+      "Jing-yu Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1609.09402v2",
+    "title": "Renormalisation Group Corrections to the Littlest Seesaw Model and Maximal Atmospheric Mixing",
+    "summary": "The Littlest Seesaw (LS) model involves two right-handed neutrinos and a very constrained Dirac neutrino mass matrix, involving one texture zero and two independent Dirac masses, leading to a highly predictive scheme in which all neutrino masses and the entire PMNS matrix is successfully predicted in terms of just two real parameters. We calculate the renormalisation group (RG) corrections to the LS predictions, with and without supersymmetry, including also the threshold effects induced by the decoupling of heavy Majorana neutrinos both analytically and numerically. We find that the predictions for neutrino mixing angles and mass ratios are rather stable under RG corrections. For example we find that the LS model with RG corrections predicts close to maximal atmospheric mixing, $θ_{23}=45^\\circ \\pm 1^\\circ$, in most considered cases, in tension with the latest NOvA results. The techniques used here apply to other seesaw models with a strong normal mass hierarchy.",
+    "published": "2016-09-29T16:01:42Z",
+    "updated": "2016-11-29T13:14:41Z",
+    "authors": [
+      "Stephen F. King",
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1609.01505v2",
+    "title": "Study of Parametric Instability of gravitational wave detectors using silicon test masses",
+    "summary": "Parametric instability is an intrinsic risk in high power laser interferometer gravitational wave detectors, in which the optical cavity modes interact with the acoustic modes of the mirrors leading to exponential growth of the acoustic vibration. In this paper, we investigate the potential parametric instability for a proposed next generation gravitational wave detector based on cooled silicon test masses. It is shown that there would be about 2 unstable modes per test mass, with the highest parametric gain of ~76. The importance of developing suitable instability suppression schemes is emphasized.",
+    "published": "2016-09-06T12:00:00Z",
+    "updated": "2016-09-09T08:24:28Z",
+    "authors": [
+      "Jue Zhang",
+      "Chunnong Zhao",
+      "Li Ju",
+      "David Blair"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1606.09591v2",
+    "title": "Viability of exact tri-bimaximal, golden-ratio and bimaximal mixing patterns and renormalization-group running effects",
+    "summary": "In light of the latest neutrino oscillation data, we examine whether the leptonic flavor mixing matrix can take on an exact form of tri-bimaximal (TBM), golden-ratio (GR) or bimaximal (BM) mixing pattern at a superhigh-energy scale, where such a mixing pattern could be realized by a flavor symmetry, and become compatible with experimental data at the low-energy scale. Within the framework of the Minimal Supersymmetric Standard Model (MSSM), the only hope for realizing such a possibility is to count on the corrections from the renomalization-group (RG) running. In this work we focus on these radiative corrections, and fully explore the allowed parameter space for each of these mixing patterns. We find that when the upper bound on the sum of neutrino masses $Σ^{}_ν\\equiv m^{}_1 + m^{}_2 + m^{}_3 < 0.23~\\text{eV}$ at the $95\\%$ confidence level from Planck 2015 is taken into account, none of these mixing patterns can be identified as the leptonic mixing matrix below the seesaw threshold. If this cosmological upper bound on the sum of neutrino masses were relaxed, the TBM and GR mixing patterns would still be compatible with the latest neutrino oscillation data at the $3σ$ level, but not at the $1σ$ level. Even in this case, no such a possibility exists for the BM mixing.",
+    "published": "2016-06-30T17:58:56Z",
+    "updated": "2016-09-21T16:32:59Z",
+    "authors": [
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1606.04886v3",
+    "title": "Majorana Neutrino Masses from Neutrinoless Double-Beta Decays and Lepton-Number-Violating Meson Decays",
+    "summary": "The Schechter-Valle theorem states that a positive observation of neutrinoless double-beta ($0νββ$) decays implies a finite Majorana mass term for neutrinos when any unlikely fine-tuning or cancellation is absent. In this note, we reexamine the quantitative impact of the Schechter-Valle theorem, and find that current experimental lower limits on the half-lives of $0νββ$-decaying nuclei have placed a restrictive upper bound on the Majorana neutrino mass $|δm^{ee}_ν| < 7.43 \\times 10^{-29}~{\\rm eV}$ radiatively generated at the four-loop level. Furthermore, we generalize this quantitative analysis of $0νββ$ decays to that of the lepton-number-violating (LNV) meson decays $M^- \\to {M^\\prime}^+ + \\ell^-_α+ \\ell^-_β$ (for $α$, $β$ = $e$ or $μ$). Given the present upper limits on these rare LNV decays, we have derived the loop-induced Majorana neutrino masses $|δm^{ee}_ν| < 9.7 \\times 10^{-18}~{\\rm eV}$, $|δm^{eμ}_ν| < 1.6 \\times 10^{-15}~{\\rm eV}$ and $|δm^{μμ}_ν| < 1.0 \\times 10^{-12}~{\\rm eV}$ from $K^- \\to π^+ + e^- + e^-$, $K^- \\to π^+ + e^- + μ^-$ and $K^- \\to π^+ + μ^- + μ^-$, respectively. A partial list of radiative neutrino masses from the LNV decays of $D$, $D_s^{}$ and $B$ mesons is also given.",
+    "published": "2016-06-15T18:10:43Z",
+    "updated": "2016-07-20T10:22:19Z",
+    "authors": [
+      "Jun-Hao Liu",
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1605.07724v1",
+    "title": "Neutrino Mass Ordering in Future Neutrinoless Double Beta Decay Experiments",
+    "summary": "Motivated by recent intensive experimental efforts on searching for neutrinoless double beta decays, we present a detailed quantitative analysis on the prospect of resolving neutrino mass ordering in the next generation $^{76}$Ge-type experiments.",
+    "published": "2016-05-25T04:17:04Z",
+    "updated": "2016-05-25T04:17:04Z",
+    "authors": [
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1605.01123v2",
+    "title": "Distinguishing Dirac/Majorana Sterile Neutrinos at the LHC",
+    "summary": "We study the purely leptonic decays of $W^\\pm \\to e^\\pm e^\\pm μ^\\mp ν$ and $μ^\\pm μ^\\pm e^\\mp ν$ produced at the LHC, induced by sterile neutrinos with mass $m_N$ below $M_W$ in the intermediate state. Since the final state neutrino escapes detection, one cannot tell whether this process violates lepton number, what would indicate a Majorana character for the intermediate sterile neutrino. Our study shows that when the sterile neutrino mixings with electrons and muons are different enough, one can still discriminate between the Dirac and Majorana character of this intermediate neutrino by simply counting and comparing the above decay rates. After performing collider simulations and statistical analysis, we find that at the $14~\\text{TeV}$ LHC with an integrated luminosity of $3000~\\text{fb}^{-1}$, for two benchmark scenarios $m_N$ = 20 GeV and 50 GeV, at least a $3σ$ level of exclusion on the Dirac case can be achieved for disparities as mild as e.g. $|U_{Ne}|^2 < 0.7~ |U_{Nμ}|^2$ or $|U_{Nμ}|^2 < 0.7~ |U_{N e}|^2$, provided that $|U_{Ne}|^2$, $|U_{Nμ}|^2$ are both above $\\sim 2\\times 10^{-6}$.",
+    "published": "2016-05-04T01:21:32Z",
+    "updated": "2016-06-24T20:12:28Z",
+    "authors": [
+      "Claudio O. Dib",
+      "C. S. Kim",
+      "Kechen Wang",
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1604.08008v2",
+    "title": "Improved Statistical Determination of Absolute Neutrino Masses via Radiative Emission of Neutrino Pairs from Atoms",
+    "summary": "The atomic transition from an excited state $|{\\rm e}\\rangle$ to the ground state $|{\\rm g}\\rangle$ by emitting a neutrino pair and a photon, i.e., $|{\\rm e}\\rangle \\to |{\\rm g}\\rangle + |γ\\rangle + |ν^{}_i\\rangle + |\\barν^{}_j\\rangle$ with $i, j = 1, 2, 3$, has been proposed by Yoshimura and his collaborators as an alternative way to determine the absolute scale $m^{}_0$ of neutrino masses. More recently, a statistical analysis of the fine structure of the photon spectrum from this atomic process has been performed [N. Song {\\it et al.}, Phys.\\ Rev.\\ D {\\bf 93}, 013020 (2016)] to quantitatively examine the experimental requirements for a realistic determination of absolute neutrino masses. In this paper, we show how to improve the statistical analysis and demonstrate that the previously required detection time can be reduced by one order of magnitude for the case of a $3σ$ determination of $m_0^{} \\sim 0.01~\\text{eV}$ with an accuracy better than $10\\%$. Such an improvement is very encouraging for further investigations on measuring absolute neutrino masses through atomic processes.",
+    "published": "2016-04-27T10:21:49Z",
+    "updated": "2016-06-30T16:34:23Z",
+    "authors": [
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1604.03039v2",
+    "title": "Radiative Corrections to the Solar Lepton Mixing Sum Rule",
+    "summary": "The simple correlation among three lepton flavor mixing angles $(θ^{}_{12}, θ^{}_{13}, θ^{}_{23})$ and the leptonic Dirac CP-violating phase $δ$ is conventionally called a sum rule of lepton flavor mixing, which may be derived from a class of neutrino mass models with flavor symmetries. In this paper, we consider the solar lepton mixing sum rule $θ^{}_{12} \\approx θ^ν_{12} + θ^{}_{13} \\cos δ$, where $θ^ν_{12}$ stems from a constant mixing pattern in the neutrino sector and takes the value of $θ^ν_{12} = 45^\\circ$ for the bi-maximal mixing (BM), $θ^ν_{12} = \\tan^{-1}(1/\\sqrt{2}) \\approx 35.3^\\circ$ for the tri-bimaximal mixing (TBM) or $θ^ν_{12} = \\tan^{-1}\\left[2/(\\sqrt{5} + 1)\\right] \\approx 31.7^\\circ$ for the golden-ratio mixing (GR), and investigate the renormalization-group (RG) running effects on lepton flavor mixing parameters when this sum rule is assumed at a superhigh-energy scale. For illustration, we work within the framework of the minimal supersymmetric standard model (MSSM), and implement the Bayesian approach to explore the posterior distribution of $δ$ at the low-energy scale, which becomes quite broad when the RG running effects are significant. Moreover, we also discuss the compatibility of the above three mixing scenarios with current neutrino oscillation data, and observe that radiative corrections can increase such a compatibility for the BM scenario, resulting in a weaker preference for the TBM and GR ones.",
+    "published": "2016-04-11T17:31:26Z",
+    "updated": "2016-08-06T03:09:04Z",
+    "authors": [
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1603.01338v1",
+    "title": "Finding best possible constant for a polynomial inequality",
+    "summary": "Given a multi-variant polynomial inequality with a parameter, how to find the best possible value of this parameter that satisfies the inequality? For instance, find the greatest number $k$ that satisfies $ a^3+b^3+c^3+ k(a^2b+b^2c+c^2a)-(k+1)(ab^2+bc^2+ca^2)\\geq 0 $ for all nonnegative real numbers $ a,b,c $. Analogues problems often appeared in studies of inequalities and were dealt with by various methods. In this paper, a general algorithm is proposed for finding the required best possible constant. The algorithm can be easily implemented by computer algebra tools such as Maple.",
+    "published": "2016-03-04T03:23:49Z",
+    "updated": "2016-03-04T03:23:49Z",
+    "authors": [
+      "Lu Yang",
+      "Ju Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1512.07889v3",
+    "title": "Electroweak Vacuum Stability and Diphoton Excess at 750 GeV",
+    "summary": "Recently, both ATLAS and CMS collaborations at the CERN Large Hadron Collider (LHC) have announced their observations of an excess of diphoton events around the invariant mass of $750~{\\rm GeV}$ with a local significance of $3.6σ$ and $2.6σ$, respectively. In this paper, we interpret the diphoton excess as the on-shell production of a real singlet scalar in the $pp \\to S \\to γγ$ channel. To accommodate the observed production rate, we further introduce a vector-like fermion $F$, which is carrying both color and electric charges. The viable regions of model parameters are explored for this simple extension of the Standard Model (SM). Moreover, we revisit the problem of electroweak vacuum stability in the same scenario, and find that the requirement for the electroweak vacuum stability up to high energy scales imposes serious constraints on the Yukawa coupling of the vector-like fermion and the quartic couplings of the SM Higgs boson and the new singlet scalar. Consequently, a successful explanation for the diphoton excess and the absolute stability of electroweak vacuum cannot be achieved simultaneously in this economical setup.",
+    "published": "2015-12-24T19:21:57Z",
+    "updated": "2016-04-28T08:30:07Z",
+    "authors": [
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1509.02274v2",
+    "title": "Relic Right-handed Dirac Neutrinos and Implications for Detection of Cosmic Neutrino Background",
+    "summary": "It remains to be determined experimentally if massive neutrinos are Majorana or Dirac particles. In this connection, it has been recently suggested that the detection of cosmic neutrino background of left-handed neutrinos $ν^{}_{\\rm L}$ and right-handed antineutrinos $\\overlineν^{}_{\\rm R}$ in future experiments of neutrino capture on beta-decaying nuclei (e.g., $ν^{}_e + {^3{\\rm H}} \\to {^3}{\\rm He} + e^-$ for the PTOLEMY experiment) is likely to distinguish between Majorana and Dirac neutrinos, since the capture rate is twice larger in the former case. In this paper, we investigate the possible impact of right-handed neutrinos on the capture rate, assuming that massive neutrinos are Dirac particles and both right-handed neutrinos $ν^{}_{\\rm R}$ and left-handed antineutrinos $\\overlineν^{}_{\\rm L}$ can be efficiently produced in the early Universe. It turns out that the capture rate can be enhanced at most by $28\\%$ due to the presence of relic $ν^{}_{\\rm R}$ and $\\overlineν^{}_{\\rm L}$ with a total number density of $95~{\\rm cm}^{-3}$, which should be compared to the number density $336~{\\rm cm}^{-3}$ of cosmic neutrino background. The enhancement has actually been limited by the latest cosmological and astrophysical bounds on the effective number of neutrino generations $N^{}_{\\rm eff} = 3.14^{+0.44}_{-0.43}$ at the $95\\%$ confidence level. For illustration, two possible scenarios have been proposed for thermal production of right-handed neutrinos in the early Universe.",
+    "published": "2015-09-08T08:02:52Z",
+    "updated": "2015-12-25T02:25:34Z",
+    "authors": [
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1508.05472v2",
+    "title": "Determination of neutrino mass ordering in future $^{76}$Ge-based neutrinoless double-beta decay experiments",
+    "summary": "Motivated by recent intensive experimental efforts on searching for neutrinoless double-beta decays, we perform a detailed analysis of the physics potential of the experiments based on $^{76}\\mathrm{Ge}$. Assuming no signals, current and future experiments could place a $90\\%$ lower limit on the half life $T^{0ν}_{1/2} \\gtrsim 4\\times 10^{26}~{\\rm yr}$ and $T^{0ν}_{1/2} \\gtrsim 7\\times 10^{27}~{\\rm yr}$, respectively. Then, how to report an evidence for neutrinoless double-beta decays is addressed by following the Bayesian statistical approach. For the first time, we present a quantitative description of experimental power to distinguish between normal and inverted neutrino mass orderings. Taking an exposure of $10^{4}~{\\rm kg}\\cdot{\\rm yr}$ and a background rate of $10^{-4}~{\\rm counts}/({\\rm keV}\\cdot{\\rm kg}\\cdot{\\rm yr})$, we find that a moderate evidence for normal neutrino mass ordering (i.e., with a Bayes factor ${\\cal B}$ given by $\\ln({\\cal B}) \\simeq 2.5$ or a probability about $92.3\\%$ according to the Jeffreys scale) can be achieved if the true value of effective neutrino mass $m^{}_{ββ}$ turns out to be below $0.01~{\\rm eV}$.",
+    "published": "2015-08-22T05:39:26Z",
+    "updated": "2015-12-25T02:19:28Z",
+    "authors": [
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1505.04858v2",
+    "title": "A Further Study of the Frampton-Glashow-Yanagida Model for Neutrino Masses, Flavor Mixing and Baryon Number Asymmetry",
+    "summary": "In light of the latest neutrino oscillation data, we revisit the minimal scenario of type-I seesaw model, in which only two heavy right-handed Majorana neutrinos are introduced to account for both tiny neutrino masses and the baryon number asymmetry in our Universe. In this framework, we carry out a systematic study of the Frampton-Glashow-Yanagida ansatz by taking into account the renormalization-group running of neutrino mixing parameters and the flavor effects in leptogenesis. We demonstrate that the normal neutrino mass ordering is disfavored even in the minimal supersymmetric standard model with a large value of $\\tan β$, for which the running effects could be significant. Furthermore, it is pointed out that the original scenario with a hierarchical mass spectrum of heavy Majorana neutrinos contradicts with the upper bound derived from a naturalness criterion, and the resonant mechanism with nearly-degenerate heavy Majorana neutrinos can be a possible way out.",
+    "published": "2015-05-19T03:12:52Z",
+    "updated": "2015-08-31T04:35:14Z",
+    "authors": [
+      "Jue Zhang",
+      "Shun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1502.04043v3",
+    "title": "Confronting Four Zero Neutrino Yukawa Textures with $N_2^{}$-dominated Leptogenesis",
+    "summary": "We consider a restricted Type-I seesaw scenario with four texture zeros in the neutrino Yukawa matrix, in the weak basis where both the charged-lepton Yukawa matrix and the Majorana mass matrix for right-handed neutrinos are diagonal and real. Inspired by grand unified theories, we further require the neutrino Yukawa matrix to exhibit a similar hierarchical pattern to that in the up-type quark Yukawa matrix. With such a hierarchy requirement, we find that leptogenesis, which would operate in a $N_2^{}$-dominated scenario with the asymmetry generated by the next-to-lightest right-handed neutrino $N_2^{}$, can greatly reduce the number of allowed textures, and disfavors the scenario that three light neutrinos are quasi-degenerate. Such a quasi-degenerate scenario of light neutrinos may soon be tested in upcoming neutrino experiments.",
+    "published": "2015-02-13T16:10:34Z",
+    "updated": "2015-09-17T02:20:48Z",
+    "authors": [
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1403.6136v2",
+    "title": "$\\mathbf{θ_{13}^{}}$ and The Flavor Ring",
+    "summary": "We present the results of a numerical search for the Dirac Yukawa matrices of the Standard Model, consistent with the quark and lepton masses and their mixing angles. We assume a diagonal up-quark matrix, natural in $\\bs{\\m Z_7 \\rtimes \\m Z_3}$, Bimaximal or Tri-bimaximal seesaw mixing, and $SU(5)$ unification to relate the down-quark and charged lepton Dirac Yukawa matrices using Georgi-Jarlskog mechanisms. The measured value of $θ_{13}$ requires an asymmetric down-quark Yukawa matrix. Satisfying the measured values of both $θ_{13}$ and the electron mass restricts the number of solutions, underlying the importance of the recent measurement of the reactor angle.",
+    "published": "2014-03-24T20:08:55Z",
+    "updated": "2014-05-30T19:06:27Z",
+    "authors": [
+      "Jennifer Kile",
+      "M. Jay Pérez",
+      "Pierre Ramond",
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1311.4553v3",
+    "title": "Majorana Physics Through the Cabibbo Haze",
+    "summary": "We present a model in which the Supersymmetric Standard Model is augmented by the family symmetry $\\bs{\\m Z_7 \\rtimes \\m Z_3}$. Motivated by $SO(10)$, where the charge two-thirds and neutral Dirac Yukawa matrices are related, we propose, using family symmetry, a special form for the seesaw Majorana matrix; it contains a squared correlated hierarchy, allowing it to mitigate the severe hierarchy of the quark sector. It is reproduced naturally by the invariant operators of $\\bs{\\m Z_7 \\rtimes \\m Z_3}$, with the hierarchy carried by familon fields. In addition to relating the hierarchy of the $ΔI_{\\rm w}=1/2$ to the $ΔI_{\\rm w}=0$ sector, it contains a Gatto-Sartori-Tonin like relation, predicts a normal hierarchy for Tri-bimaximal and Golden Ratio mixings, and gives specific values for the light neutrino masses.",
+    "published": "2013-11-18T21:02:56Z",
+    "updated": "2014-11-07T21:00:07Z",
+    "authors": [
+      "Jennifer Kile",
+      "M. Jay Pérez",
+      "Pierre Ramond",
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1209.6071v2",
+    "title": "On Mixing Supersymmetry and Family Symmetry Breakings",
+    "summary": "We present a toy model in which the Higgs sector fields transform as non-Abelian representations of a family symmetry group, and consider the possibility that the extra family partners of the Higgs particles act as messengers for both supersymmetry and family symmetry breakings. Although such mediation schemes generically produce family dependent soft supersymmetry breaking terms at the messenger scale, we demonstrate the existence of a focusing mechanism which may erase such hierarchies through renormalization group running.",
+    "published": "2012-09-26T20:36:46Z",
+    "updated": "2013-03-11T18:13:01Z",
+    "authors": [
+      "M Jay Perez",
+      "Pierre Ramond",
+      "Jue Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/0801.0379v3",
+    "title": "Consensus of self-driven agents with avoidance of collisions",
+    "summary": "In recent years, many efforts have been addressed on collision avoidance of collectively moving agents. In this paper, we propose a modified version of the Vicsek model with adaptive speed, which can guarantee the absence of collisions. However, this strategy leads to an aggregated state with slowly moving agents. We therefore further introduce a certain repulsion, which results in both faster consensus and longer safe distance among agents, and thus provides a powerful mechanism for collective motions in biological and technological multi-agent systems.",
+    "published": "2008-01-02T12:19:12Z",
+    "updated": "2009-01-23T00:04:05Z",
+    "authors": [
+      "Liqian Peng",
+      "Yang Zhao",
+      "Baomei Tian",
+      "Jue Zhang",
+      "Bing-Hong Wang",
+      "Hai-Tao Zhang",
+      "Tao Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/0711.3896v2",
+    "title": "Accelerating consensus of self-driven swarm via adaptive speed",
+    "summary": "In resent years, Vicsek model has attracted more and more attention and been well developed. However, the in-depth analysis on the convergence time are scarce thus far. In this paper, we study some certain factors that mainly govern the convergence time of Vicsek model. By extensively numerical simulations, we find the convergence time scales in a power law with $r^2\\ln N$ in the noise-free case, where $r$ and $N$ are horizon radius and the number of particles. Furthermore, to accelerate the convergence, we propose a new model in which the speed of each particle is variable. The convergence time can be remarkably shortened compared with the standard Vicsek model.",
+    "published": "2007-11-25T12:52:22Z",
+    "updated": "2008-09-28T12:32:52Z",
+    "authors": [
+      "Jue Zhang",
+      "Yang Zhao",
+      "Baomei Tian",
+      "Liqian Peng",
+      "Hai-Tao Zhang",
+      "Bing-Hong Wang",
+      "Tao Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/astro-ph/0610168v1",
+    "title": "On the Evolution of Thermonuclear Flames on Large Scales",
+    "summary": "The thermonuclear explosion of a massive white dwarf in a Type Ia supernova explosion is characterized by vastly disparate spatial and temporal scales. The extreme dynamic range inherent to the problem prevents the use of direct numerical simulation and forces modelers to resort to subgrid models to describe physical processes taking place on unresolved scales. We consider the evolution of a model thermonuclear flame in a constant gravitational field on a periodic domain. The gravitational acceleration is aligned with the overall direction of the flame propagation, making the flame surface subject to the Rayleigh-Taylor instability. The flame evolution is followed through an extended initial transient phase well into the steady-state regime. The properties of the evolution of flame surface are examined. We confirm the form of the governing equation of the evolution suggested by Khokhlov (1995). The mechanism of vorticity production and the interaction between vortices and the flame surface are discussed. The results of our investigation provide the bases for revising and extending previous subgrid-scale model.",
+    "published": "2006-10-05T18:49:49Z",
+    "updated": "2006-10-05T18:49:49Z",
+    "authors": [
+      "Ju Zhang",
+      "O. E. Bronson Messer",
+      "Alexei M. Khokhlov",
+      "Tomasz Plewa"
+    ]
+  }
+]
