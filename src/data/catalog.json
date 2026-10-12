@@ -52892,6 +52892,141 @@
         }
       },
       "doi": "10.1016/j.isprsjprs.2026.04.052"
+    },
+    {
+      "id": "msp-net-arxiv-2026",
+      "shortTitle": "MSP-Net",
+      "title": "MSP-Net: Manifold-Guided Spectral Prompt Network for Hyperspectral Object Tracking",
+      "authors": "Juliu Li, Hanlin Qin, Shuowen Yang, Jingjing Li, Yuedong Tan, Shuai Yuan, Huixin Zhou",
+      "year": 2026,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2608.09575",
+      "representation": "图驱动谱流形分组与动态光谱条件提示。",
+      "tags": [],
+      "summary": "MSP-Net用图驱动流形路由重构谱带关系并自适应分组，结合谱统计和目标模板生成动态条件提示，随跟踪状态更新光谱条件，并以历史状态约束位置与尺度。",
+      "input": "高光谱视频中的目标模板Z与搜索区域X（主图H×W×C）。",
+      "output": "逐帧目标位置/尺度及跟踪结果。",
+      "mechanism": "GMSR按图流形关系生成谱分组与MoE权重；DSCE由目标表示构造动态谱条件，DSCPM将条件作为提示调制特征；预测头输出定位，经TMMA时间记忆后处理保持稳定。",
+      "readingNote": "沿用已下载固定arXiv v1十四页PDF，本轮仅首页作者/原摘要与第4页Fig2整体主框架选读，保留一张原图，未全文读、读其他版本或深挖实验。七作者无Jun Zhou，胡欣周不是目标Jun Zhou。PDF显示LaTeX模板页眉及received/revised字样，不能据此定为正式2021期刊发表；按官方arXiv2026书目收录。原摘要给计划开放代码URL，只记录链接、不访问或检查。",
+      "paper": "https://arxiv.org/abs/2608.09575v1",
+      "code": "https://github.com/GGML668897/MSP-Net",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "citation": "@misc{msp_net_arxiv_2026,\n  title = {MSP-Net: Manifold-Guided Spectral Prompt Network for Hyperspectral Object Tracking},\n  author = {Juliu Li and Hanlin Qin and Shuowen Yang and Jingjing Li and Yuedong Tan and Shuai Yuan and Huixin Zhou},\n  year = {2026},\n  eprint = {2608.09575},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.CV},\n  url = {https://arxiv.org/abs/2608.09575v1}\n}\n",
+      "frameworkFigures": [
+        {
+          "path": "figures/msp-net-arxiv-2026/framework-1.png",
+          "sourceUrl": "https://arxiv.org/pdf/2608.09575v1",
+          "sourceVersion": "arXiv2608.09575v1（2026-08-10）",
+          "figureLabel": "Figure 2",
+          "page": 4,
+          "caption": "MSP-Net整体框架：模板/搜索HSI经图驱动流形谱分组、MoE加权融合及谱条件生成，动态提示进入注意力主干；预测头和时间记忆后处理输出目标跟踪结果。",
+          "verificationNote": "固定v1第4页Fig2整体原图和图注已核，直接PDF裁取完整框架/图注，无重绘，仅保留这一张。不追加分组示意、DSCPM/DSCE/TMMA部件图或其他版本正文。PDF的LaTeX期刊模板页眉/received字样不作为正式发表来源。",
+          "width": 1596,
+          "height": 1023,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "4a8e1cf302b1573e8459a8ac974bd9b1af2afba970c1b6179f8589b3fc5a6f87",
+          "attribution": "Juliu Li, Hanlin Qin, Shuowen Yang, Jingjing Li, Yuedong Tan, Shuai Yuan, Huixin Zhou · arXiv2608.09575v1 (2026)",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              40,
+              48,
+              572,
+              389
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "hyperspectral-target-tracking",
+          "graph-learning"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "直接处理光学高光谱目标跟踪，主图有谱维C及时间状态；普通arXiv合格来源，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过谱带流形关系与动态提示，使高光谱目标跟踪适应传感器和场景变化？",
+        "datasets": "原摘要列HOT2020、HOT2023；本轮未核各实验协议。",
+        "experimentSetting": "未核训练/测试划分、超参数与具体指标，只原摘要和一主框架。",
+        "conclusions": "原摘要报告跟踪效果；不把摘要性能或代码计划当已验证复现。",
+        "limitations": "仅首页/原摘要与整体主图，不记全文；没有核正式发表或版本扩展，模板页眉不补为真实期刊。计划代码链接只记录，不核是否开放。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2608.09575v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v1完整原摘要/七作者（已有官方快照核对）",
+            "supports": [
+              "MSP-Net用图驱动流形路由重构谱带关系并自适应分组，结合谱统计和目标模板生成动态条件提示，随跟踪状态更新光谱条件，并以历史状态约束位置与尺度。",
+              "官方七作者无Jun Zhou；原摘要说明HOT2020/HOT2023及代码将开放，具体性能协议未核。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2608.09575v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v1 PDF第4页主要原框架/图注（选读）",
+            "supports": [
+              "MSP-Net整体框架：模板/搜索HSI经图驱动流形谱分组、MoE加权融合及谱条件生成，动态提示进入注意力主干；预测头和时间记忆后处理输出目标跟踪结果。",
+              "14页旧PDF只选读首页和第4页主图，不记全文；其余图注索引仅为定位图，不当其他页正文已读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "msp-net-arxiv-2026-v1",
+            "type": "唯一材料版本arXiv v1",
+            "url": "https://arxiv.org/abs/2608.09575v1",
+            "pdfUrl": "https://arxiv.org/pdf/2608.09575v1",
+            "arxivId": "2608.09575",
+            "arxivVersion": 1,
+            "year": 2026,
+            "authors": [
+              "Juliu Li",
+              "Hanlin Qin",
+              "Shuowen Yang",
+              "Jingjing Li",
+              "Yuedong Tan",
+              "Shuai Yuan",
+              "Huixin Zhou"
+            ],
+            "firstSubmittedAt": "2026-08-10T13:09:25Z",
+            "updatedAt": "2026-08-10T13:09:25Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-author-bibliography-crosscheck-2026-10-12-msp-pdf.pdf",
+            "relation": "已下载v1复用，只有首页/第4页一主图本轮选读，不追加全文/其他版本或图。"
+          }
+        ],
+        "methodFamilyId": "msp-net-arxiv-2026",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要与主框架明确HSI模板/搜索跟踪任务以及图驱动谱流形路由；用既有跟踪任务和图结构学习方法，不将谱分组误称三维重建或用正文未核实验增加标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "745dc69ba97a070a6652b377261e4e933b8d09f3164f6195b403936590bfe016",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2608.09575v1",
+            "https://arxiv.org/pdf/2608.09575v1"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -56588,7 +56723,8 @@
         "subspace-structure-nmf-hsi-2020",
         "zhou-85-hsi-2022",
         "zhou-87-hsi-2022",
-        "zhou-66-hsi-2023"
+        "zhou-66-hsi-2023",
+        "msp-net-arxiv-2026"
       ],
       "history": [
         {
@@ -57340,7 +57476,8 @@
         "hucrtrack-tip-2026",
         "spectraltrack-tip-2025",
         "csstrack-pattern-recognition-2026",
-        "drsst-net-isprs-2026"
+        "drsst-net-isprs-2026",
+        "msp-net-arxiv-2026"
       ],
       "history": [
         {
