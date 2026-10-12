@@ -31,6 +31,6 @@
 - src/data/catalog.json：事实/分类/原图；collection-policy.json：来源白名单、别名、周峻保护ID；src/library-groups.ts：导航分组；materials.ts：资料状态。
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
-- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。80摘要/101全文；ORCID2、DBLP9、Scholar6、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
+- 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID2、DBLP9、Scholar6、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、9未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
-- 最新：七跟踪主要摘要确认；SEE改分组/加权，SiamF删稠密对应、补分组，两CF补方法。2026综述出版社77页免费取得，实际读25页＋20指定引用段，原图9保留；19已录、1 Jiawei Zhou非目标，剩52页继续（sources最新tracking-review-pages逐页状态）。混合报分/重算不称统一复现，0新全文。红树林2025候选16页AM全读但输入仍未知，政府引用61只是植被制图；2024会议关系待。四其他作者TGRS仅书目候选后置。2019异DOI章节/SSRN/ISTA会刊关系待；arXiv429 total未知，简称989仍19摘要＋1旧决定/969元数据。作者先、历年矩阵后。
+- 最新：2026跟踪综述免费正式77页已逐页读完，本轮补52；原图9保留，Jun102全文/79摘要。五集混合报分/逐帧输出重算，Table9/10最佳措辞、Figure15 Pareto及统计/数据声明冲突记录，不称统一模型复现。11白名单跟踪引文仅书目候选，4注册期刊记录已核；SPIRIT引文2023/正式2024、SiamCAT补充component/主论文分开。其余429/TLS不是无公开版。其他六跟踪正文/会刊关系待。红树林2025候选16页AM全读但输入未知，2024会议关系待。四含噪标签TGRS候选后置；2019异DOI章节/SSRN/ISTA版本待。arXiv429 total未知，简称989仍19摘要＋1旧决定/969元数据。作者先、历年矩阵后。

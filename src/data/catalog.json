@@ -42430,28 +42430,28 @@
       "doi": "10.1007/s10462-026-11625-3",
       "representation": "高光谱目标跟踪综述：覆盖成像/视频采集、校准纠正、波段选择、Siamese/Transformer/多模态融合、数据集和评价指标。",
       "tags": [],
-      "summary": "综述系统梳理高光谱目标跟踪的成像与视频采集、校准流程、算法、公开数据集和评价指标，并讨论空间—光谱—时间建模、波段维度、低空间分辨率及小样本问题。",
-      "input": "高光谱视频与相关采集、校准和纠正流程；目标跟踪数据集及评价协议。",
-      "output": "高光谱目标跟踪研究分类、数据集与评价指标综述。",
-      "mechanism": "按硬件采集与数据形成、数据集/指标、算法方法及未来方向组织系统综述；覆盖波段选择、Siamese网络、Transformer和多模态融合。",
-      "readingNote": "出版社77页正式PDF已免费取得；本轮实际读25页：1–6、13–19、24–26、37–40、42–45、77，另70–75仅读20条Zhou J引文段，未阅读全文。原Figure9已保留；混合报分/重算和作者身份已核。剩52页继续整理。",
+      "summary": "综述从高光谱视频采集与校准出发，梳理波段选择/重组、传统、深度及时间建模方法，并汇总五个跟踪基准、属性分析与光谱域统计，讨论跨域、数据不足和准确率/效率权衡。",
+      "input": "高光谱视频采集/校准流程与既有跟踪研究；五个基准的公开稿件报分或逐帧跟踪输出。",
+      "output": "方法分类、数据集与评价协议梳理；AUC/DP@20pixels汇总或重算、属性/定性分析、光谱分布统计及九项未来方向。",
+      "mechanism": "按采集与校准—数据与指标—波段/传统/深度/时序跟踪—评测组织综述。OPE下混合引用报分和逐帧输出重算，并讨论跨基准光谱分布差异；没有提出并统一重训所有跟踪模型。",
+      "readingNote": "免费出版社77页正式版已逐页读完（先25页，本轮补52页），参考列表及公式1–9/关键图表已核。原Figure9保留。评测混合报分与重算；HOT2024并列AUC、IMEC25最优措辞及Pareto描述有原文冲突，逐项记录，不猜补原论文实验。官方资源仅留链接。",
       "paper": "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
       "verifiedAt": "2026-10-12",
-      "verificationLevel": "primary_abstract_verified_with_partial_published_text",
+      "verificationLevel": "publisher_full_text_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "Springer 官方摘要明确高光谱目标跟踪综述范围与问题边界。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
+        "relationNote": "出版社正式77页直接研究高光谱目标跟踪全流程；最后页Jun Zhou为Griffith School of ICT，已有作者来源例外保留。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
         "researchQuestion": "高光谱目标跟踪从采集、校准到算法、数据集和评价如何形成完整研究链？",
         "datasets": "数据介绍DIRSIG、HOT2020/2022/2023/2024、IMEC25、WHU-Hi-H3、BihoT；主对照五集HOT2020/2023/2024、IMEC25、WHU-Hi-H3。HOT2023为302序列、HOT2024为409；BihoT49序列，派生伪彩色不是独立RGB。",
-        "experimentSetting": "综述汇总公开报分并从可获取逐帧结果重算AUC/DP@20pixels；OPE第一帧真值初始化，后续不重初始化。HOT2024全表统一重算，HOT2020/2023含报分与重算混合，IMEC25/WHU还依第三方汇总；不把表7当同硬件统一重训。",
-        "conclusions": "已读部分支持采集/校准—数据—方法—评测的组织及准确率/效率/跨域权衡；“不含新实验”的旧写法改为混合来源指标比较，尚未全读其他评测与未来方向。",
-        "limitations": "77页只选读25页，其余52页及参考列表其余条目未全读；不能称全文或引用全量完成。正文称覆盖至2025年中、Fig2统计到9月，不能外推2026领域完整。比较混合稿件报分/作者重算，骨干、预训练、波段和硬件不同；提取公式出现占位标记，未读清处不推测，部分尺寸已视觉核对。",
+        "experimentSetting": "五集OPE（首帧真值初始化、不重初始化），AUC与DP@20pixels。HOT2020/2023混合稿件报分及逐帧输出重算，HOT2024全表统一重算指标；IMEC25/WHU依稿件及第三方汇总。另有HOT2020 28跟踪器/11属性、四序列定性图及四基准三光谱域的分布统计。输入波段、骨干、预训练和硬件不同，不是统一训练或运行模型。",
+        "conclusions": "综述强调光谱适配、动态模板/时间记忆及材料线索对跨域和遮挡的作用，建议统一波段、跨域学习、视频数据、HSI基础模型、光谱评价、多目标、标准化、融合及效率研究。结论属于综述作者分析；跨基准排名改变，不能推广某方法全场景最优。",
+        "limitations": "正文覆盖至2025年中，Fig2统计到9月，不代表2026领域全集。报分、重算、波段/骨干与硬件混杂。Table9 HELIOS/ViPT AUC同0.571且后者DP更高；Table10 HOMG AUC0.746、DSP-Net DP0.894与正文总体最佳措辞不符。Figure15 Pareto/速度描述冲突；Table9未列DaSSP的2024对照；数据声明与特征统计分析表述冲突，因果解释缺乏统一受控证据。参考列表已读，不等于被引论文原文、全部作者和版本已核；未来75%压缩/低于2%AUC损失是举例目标。",
         "dataLinks": [
           "https://github.com/aamin0102/HOT-Review"
         ],
@@ -42485,23 +42485,33 @@
               "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
               "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
             ]
+          },
+          {
+            "url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
+            "checkedAt": "2026-10-12",
+            "level": "出版社正式版全文逐页实际阅读（77/77页）与关键图表视觉核对",
+            "supports": [
+              "正式六作者/Jun Griffith单位；77页正文与参考列表累计读完，本轮补52页。",
+              "采集校准、重叠方法分类、五集混合报分/逐帧输出重算、属性/定性及特征统计分析和九未来方向。",
+              "记录Table9/10与Figure15排名/Pareto冲突、DaSSP未列HOT2024及数据声明冲突；不猜补、不审查代码。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "zhou-6-hsi-2026-published",
-            "type": "出版社正式版（局部阅读）",
+            "type": "出版社正式版（已阅读全文）",
             "url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
             "doi": "10.1007/s10462-026-11625-3",
             "year": 2026,
-            "relation": "2026卷59/article235出版社77页正式版，六作者及Jun Griffith单位核实；本轮25页＋指定引文选读，52页待，不标全文。"
+            "relation": "2026卷59/article235，六作者及Jun Griffith单位核实；本轮补52页，累计77页实际阅读全文及参考列表。"
           }
         ],
         "methodFamilyId": "zhou-2026-title-6",
         "classificationReview": {
           "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "出版社77页正式PDF已免费取得；本轮实际读25页：1–6、13–19、24–26、37–40、42–45、77，另70–75仅读20条Zhou J引文段，未阅读全文。原Figure9已保留；混合报分/重算和作者身份已核。剩52页继续整理。",
+          "rationale": "免费出版社77页正式版已逐页读完（先25页，本轮补52页），参考列表及公式1–9/关键图表已核。原Figure9保留。评测混合报分与重算；HOT2024并列AUC、IMEC25最优措辞及Pareto描述有原文冲突，逐项记录，不猜补原论文实验。官方资源仅留链接。",
           "evidenceFields": [
             "title",
             "summary",
@@ -42510,7 +42520,7 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "ec443deda1e17faf57a4f2998305c9522ce5099e1ca8e0b28c5f6ed08d6689e9",
+          "evidenceDigest": "e54fd07e2d63407910563cd9a51b977eed4a873a9ceb96b88ff67646f273844f",
           "sourceUrls": [
             "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
             "https://experts.griffith.edu.au/7205-jun-zhou"
