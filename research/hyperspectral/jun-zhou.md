@@ -78,6 +78,8 @@ GSFus/SCFus、GF-3DDA、两阶段自监督复原与NSSNN五既有条目，完整
 
 SDRN、S3FGCN、UMsDFL、S4GPN、PN-ResCapsNet、SSLKA六完整Griffith原摘要本轮实际阅读，精确DOI/resolvedUser7205核既有目标归属，六分类确认而全部仍摘要级。SDRN随机深度为监督分类训练，删除无独立预训练依据的表征任务；UMsDFL无监督仅特征网络，RF仍用标注；S4GPN PN/SimSiam/融合三阶段与谱GCN明确，补图学习。胶囊原型SE保留原摘要称呼，不补猜实现；SSLKA已有同主源复读，不增加新正文/身份数量或误标Transformer。UMsDFL每类五训练样本OA79.23/96.49/77.26%及PN-ResCaps KSC/HT/PU OA92.07/81.02/85.35%只摘要口径，不填未给shot/划分。当前345确认/45暂定、审计335；Jun181、101全文/80摘要、原图304不变。共同作者Lei Tong/Jing Yu/Sen Jia＋HSI查询HTTP429，total未知，不当零结果；六正文/原图及作者目录仍待，代码只链接。[证据](sources/jun-zhou-classification-primary-abstracts-2026-10-12.json)。
 
+近期LDCLNet、SSSGAN、FBCANet、STU与IEF五完整主要机构摘要本轮实际读，精确DOI/目标绑定支持五分类确认，仍摘要级。LDCLNet对比对齐/SSSGAN谱空特征为分类机制，摘要没有独立预训练目标，删除两旧表征任务；STU明确Tucker张量注意力自监督LMM重建补方法，IEF明确最后地物分类补任务。DSGAN/FBCANet官方URL只记录；SSSGAN四缩写PU/HU2013/SV/LK与OA98.96/95.93/98.72/98.31%保留原摘要，不补shot/划分。共同作者arXiv429未得元数据；DSpace Shu/Qin/Jingran查询3/3、1/1、0/0共四既有记录，不当作者全集。LGSC免费机构24页AM实际选读8页，全部实验明确ORL灰度人脸/Isolet语音字母/USPS手写数字，补强旧非HSI排除/Jun Griffith身份；2015 DOI与2016卷年分开，未读其余16页/VoR，不增范围排除或库内全文。当前350确认/40暂定、审计340，Jun101全文/80摘要及原图304不变。[证据](sources/jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json)。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |
