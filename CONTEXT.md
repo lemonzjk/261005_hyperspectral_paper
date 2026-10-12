@@ -22,7 +22,7 @@
 - 出版来源69种；11主要任务组、细标签搜索、多标签并集/去重计数；作者匹配、URL恢复及SVG/BibTeX导出。
 - 来源范围（白名单顶会顶刊283/arXiv24/白名单外101）与阅读深度、资料状态独立筛选，URL恢复、导出使用同一结果；资料状态依据已记录正文/原图证据，不以PDF链接推断已读，不把原图来源受限当全文付费。
 - CVPR/ICCV/NeurIPS/ICML等已有指定查询闭环，不是领域全量；历史普通会议搜索归档，矩阵仅白名单，见coverage.md。
-- 网站及桌面/手机已核：来源筛选、URL恢复、作者181条、跨集合返回、删除旧链接及BibTeX/SVG导出；分类、资料、详情及专题资源已核。
+- 桌面/手机：筛选、URL恢复、作者匹配、BibTeX/SVG导出及详情已核。
 - dev可上传/替换原图≤10MB，保留历史；FVMGN补图待核。
 
 ## 关键文件与下一步
@@ -31,5 +31,5 @@
 - research/hyperspectral/：survey.json、sources、coverage.md、catalog-cleanup.json；classification-audit.json分类证据；legacy-topic-baseline.json旧专题快照，保留成员核对原事实，清理移除单列审计。
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
-- Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词待核。
-- 最新：Judy ORCID两Jun均已录；公开别名XUEQIN YANG的新arXiv5项无Jun，身份未转移，Judy X整名漏已知阳性，不当全集。原839混并索引的5日文题名列疑似翻译重复待核，未映射420→415（转survey，非确认重复）；J-GLOBAL503。既有坚果/土壤2018各一主要采集原图，不称PLSR流程。MSP-Net一v1主图；Zhuanfeng4新待来源/范围。CSSTrack/DRSST各一主图；Phase普通arXiv，官方单署名/PDF Jun冲突，IF身份待；确认Jun181/网页182不变。Xin整名AND漏阳性。Shutao新已录2/待4，Vivone1/待9，Hong2/待25。目标ORCID120均映射、非全集；SOC来源待。OpenAlex差集/差1、HVOT、编辑/M2、三分割输入待。作者先、历年矩阵后。
+- Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。专项待办见jun-zhou.md；其他姓名/宽词仍待。
+- 最新：Jing Wang/Jianfeng Lu的Crossref13/61中9/13个Jun均映射既有目录或排除，无新Jun。两旧排除以完整原摘要复核：PMDet仅可见光/红外，WS-Net++为双时相变化检测。TM-MOE新TGRS候选无Jun，原摘要/主图未得，IEEE418不当付费；ORCID过滤非全集（Lu漏旧SSRT，Wang公开0组不当无作品）。Judy别名5项无Jun、身份未转移；整名漏阳性。原839混并索引5日文翻译线索转survey，415未映射，未确认重复；J-GLOBAL503。Phase署名冲突、IF身份待，Jun181/网页182不变。Shutao新已录2/待4，Vivone1/待9，Hong2/待25；Zhuanfeng4待来源/范围。目标ORCID120映射非全集；SOC来源待。其他旧题名排除需必要原摘要复核；OpenAlex差集、HVOT、编辑/M2、三分割输入待。作者先、历年矩阵后。
