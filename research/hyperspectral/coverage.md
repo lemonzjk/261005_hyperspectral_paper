@@ -970,3 +970,5 @@
 - 2026-10-12 / jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12：五近期主要机构完整摘要确认分类，两分类机制不当独立预训练、STU补自监督重建/IEF补地物分类。五仍摘要；代码DSGAN/FBCANet只URL。共同作者arXiv429/total未知；机构三个姓名3/3＋1/1＋0/0完整指定查询，四既有记录。LGSC机构AM24页下载/8页实际选读，三个实验原始模态非HSI，补已有范围排除/Griffith身份与2016年份，不增全文或新排除。当前350确认/40暂定、审计340，库390/Jun181及101全文/80摘要/304原图保留；目录/全领域历年仍待。[证据](sources/jun-zhou-recent-shu-qin-wang-primary-followup-2026-10-12.json)。
 
 - 2026-10-12：五既有Jun主要机构摘要分类补证；NMF-SAE旧五页作者稿相同字节重读，补展开/无真值重建，书章删除泛称模型启发所不支持的展开标签；注意力选带与非局部分类方法补齐。五作者引用已录，0新论文/全文/图；355确认/35暂定，审计345。四摘要正文、会刊/出版社版及作者/领域目录继续待，代码只URL。[证据](sources/jun-zhou-early-unmixing-attention-primary-followup-2026-10-12.json)。
+
+- 2026-10-12：红树林2025候选AM剩余8页读完，累计16页；一原框架图仅未决材料，0库内论文/全文/图新增。真实输入通道与2024会议关系仍待；政府当前参考页不绑定652网络输入。ref5引文2018/正式2019分列，指定Crossref前5的四TGRS书目仅普通后续候选，0摘要/正文审核。[证据](sources/jun-zhou-mangrove-full-am-scope-followup-2026-10-12.json)。
