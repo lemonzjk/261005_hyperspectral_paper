@@ -948,3 +948,5 @@
   材料显著性AM39页全部阅读、三原图；周峻100全文/81摘要，总库390、原图301。SIFT撤降维，三边界稿单列任务；S+SSPR2018/卷11004/416–426纠正旧ACCV来源，DICTA改会议BibTeX。分类325确认/63暂定/2待、182标签/审计312。绿色索引与实际附件状态分别留证，不以PDF链接或HTML200冒称正文；代码只链接。[证据与边界](sources/jun-zhou-feature-boundary-public-materials-2026-10-12.json)。
 
 - 2026-10-12 / jun-zhou-remaining-institution-materials-2026-10-12：新增0；48既有ID/50机构记录补身份书目与当前附件证据，37 SWORD/6双LICENSE/6空bundle/1可读AM。DCA14页全读/三原图，周峻101全文/80摘要、总库390/原图304。两2019异DOI书章节关系候选，不当确认重复或新独立成果；Wiley章节会议引用纠正、四书章节独立分组。引用新增候选1、作者关系候选2，作者/领域覆盖未闭环。[证据及边界](sources/jun-zhou-remaining-institution-materials-2026-10-12.json)。
+
+- 2026-10-12 / jun-zhou-chapter-relations-and-early-scope-2026-10-12：新增0/更新4；NSP/KUM与Shearlet由正式HSI异常题名补任务，前者复读主机构摘要、后者补已存resolvedUser7205，方法仍二级摘要。分类327确认/63暂定/0待、审计317，不代表作者目录完成。两章节关系继承pending；生物炭另书年份旧2018改注册2019。四出版社/IRMA及两arXiv请求429，total未知，不当收费/零结果；旧989元数据指定姓名定位无匹配不称全集。[证据](sources/jun-zhou-chapter-relations-and-early-scope-2026-10-12.json)。

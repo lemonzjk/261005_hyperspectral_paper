@@ -62,6 +62,8 @@ SSUMamba和SSRT两份免费Griffith接受稿共28页已逐页全文阅读，六�
 
 本次续核剩余机构材料50条记录/48个既有目录ID：37条SWORD、6条双LICENSE、6条空bundle、一条实际ORIGINAL，两个502同handle续试成功。DCA/JSTARS2018免费14页AM已逐页读完、保存Fig1/2/7，Houston去阴影144带与GU62带、2832/12197和150/4157样本及四OA分别记录；正式VoR未读。当前101全文/80摘要、原图304；其他47ID仅此仓储无ORIGINAL，不据此宣称全文收费或全部公开版本不存在。两个原章节的另书2019记录DOI不同、同序作者/摘要相同但relation为空，补为关系候选，不认定重复或新增独立论文，不扩大作者来源例外。Wiley2022第13章363–403纠正会议BibTeX，四书章节在出版筛选中独立显示。28条引文无目标Jun，白名单其他作者线索后置；目录仍未闭环。
 
+两早期稿NSP/KUM与Shearlet的正式题名直接明确高光谱异常检测，已补现有任务标签；任务分类不需要等待正文。NSP复读既有主要机构完整原摘要，linked users7205但无resolvedUser，正式单篇单位仍未知；Shearlet既有机构原记录明确Jun resolvedUser7205，补强作者归属，但机构无摘要，其方法仍二级摘要来源。两稿均不升全文、不补方法标签/原图。两组2019另书章节的出版社/IRMA访问均429，重印关系仍待；生物炭旧说明2018纠正为注册2019。两共同作者arXiv定位请求亦429，total未得，不当零论文；旧J Zhou989元数据按三个共同作者完整名无匹配，不扩展摘要审查结论。当前分类327确认/63暂定/0待，作者目录仍未闭环。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |
@@ -220,3 +222,5 @@ Yuntao Qian无主题姓名查询27条完整返回：五条含完整Jun Zhou均�
 - [显著性AM全文、原图和边界/SIFT书目分类证据](sources/jun-zhou-feature-boundary-public-materials-2026-10-12.json)、[原始访问](sources/jun-zhou-feature-boundary-public-materials-2026-10-12-access.json)：39页全读/三图，三边界任务与会议来源纠正；其他正文保留缺口。
 
 - [剩余机构附件、DCA全文及章节关系证据](sources/jun-zhou-remaining-institution-materials-2026-10-12.json)：50记录/48ID、一14页AM/三原图；两章异DOI关系待核，其他公开版继续。
+
+- [早期任务/主机构身份复核与章节访问边界](sources/jun-zhou-chapter-relations-and-early-scope-2026-10-12.json)：两现有异常任务补齐，正式单位/正文与两章节关系待；新arXiv请求限流不是零结果。

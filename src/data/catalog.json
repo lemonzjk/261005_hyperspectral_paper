@@ -24618,23 +24618,25 @@
       "input": "无异常/背景先验的真实与合成高光谱影像；摘要未给出具体传感器与数据集名称。",
       "output": "异常目标检测结果/异常图；具体阈值与指标待全文。",
       "mechanism": "先用NSPD分解多尺度子带，再按同一波段不同尺度邻域系数相关性预测背景，并用改进核非锐化掩蔽滤波器降低异常数据影响；最后在特征空间运行RX算子。",
-      "readingNote": "Crossref核对正式DOI书目；此前使用OpenAlex公开摘要索引重建原摘要。本轮Griffith机构个人目录linkedTo公开API取得同一原摘要，升级为可核验的主要机构来源；已读摘要，未取得IEEE全文。真实/合成数据和RX对比已确认，具体数据集、参数及性能数字仍未核。机构个人关联与ORCID支持归属，但本条authors没有resolvedUser，单篇正式作者机构仍待核。",
+      "readingNote": "正式DOI/会议目录与目标ORCID书目关联沿用已核证据；本轮完整复读2026-10-11已存Griffith原摘要：NSPD多尺度、核非锐化背景预测与RX，真实/合成HSI对照。补入高光谱异常检测任务，仅确认任务，不冒称全文或实验协议已核。机构linked users7205，但authors未给resolvedUser；正式作者单篇单位仍未知，不以该缺口阻止明确任务归类。",
       "paper": "https://doi.org/10.1109/ICICEE.2012.350",
-      "verifiedAt": "2026-10-11",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified_primary_institution",
       "citation": "@inproceedings{nsp_kum_anomaly_icicee_2012,\n  title = {Anomaly Detection Algorithm Based on Nonsubsampled Pyramid Decomposition and Kernel Unsharp Masking for Hyperspectral Image},\n  author = {Huixin Zhou and Shenghui Rong and Hanlin Qin and Rui Lai and Jun Zhou},\n  booktitle = {2012 International Conference on Industrial Control and Electronics Engineering},\n  year = {2012},\n  pages = {1320--1323},\n  doi = {10.1109/ICICEE.2012.350}\n}\n",
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
+        "categoryIds": [
+          "hyperspectral-anomaly-detection"
+        ],
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "正式题名和公开摘要明确光学高光谱影像异常检测；完整实验、方法标签与三维专题归类待进一步审计。",
+        "relationNote": "出版社登记正式题名明确hyperspectral image与anomaly detection，输出为异常检测图；任务分类无需等待全文。只确认现有任务标签，未新增未核方法标签或三维专题成员。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何在无异常/背景先验下结合多尺度空间—光谱信息检测高光谱异常？",
         "datasets": "摘要仅称真实与合成高光谱数据；具体数据集待全文。",
         "experimentSetting": "摘要级核验：真实与合成高光谱数据，并与经典RX比较；参数、指标和划分待全文。",
         "conclusions": "摘要报告相较经典RX有较好检测表现和较低虚警；不外推具体数值。",
-        "limitations": "已核正式书目及机构公开原摘要，未取得IEEE全文或框架图；具体数据集、参数、阈值、图版、代码和单篇正式作者机构留待核验。",
+        "limitations": "未取得IEEE全文与原图；数据集、参数、阈值、数值及正式单篇作者单位未知。个人profile/ORCID关联与正式题名支持作者目录/直接HSI任务，单位缺口单列；官方代码只记录链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -24680,6 +24682,16 @@
               "实际高光谱异常检测，NSPD多尺度、核非锐化背景预测和RX；与既有二级摘要方法一致",
               "个人profile7205关联387条之一，公开POST只读检索请求与原响应存档见jun-zhou-griffith-profile-2026-10-11-access.json；linkedObjectIds/users含7205，authors未给resolvedUser，正式单篇机构待核"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/api/publications/linkedTo",
+            "checkedAt": "2026-10-12",
+            "level": "已存Griffith原摘要与个人关联复读（原捕获2026-10-11）",
+            "supports": [
+              "原捕获2026-10-11的object157350完整原摘要已重新读：NSPD多尺度、核非锐化背景预测、RX及真实/合成HSI。",
+              "机构linkedObjectIds.users含7205；authors姓在前且未给resolvedUser，不冒称正式稿单篇单位已核。",
+              "正式题名与完整原摘要支持高光谱异常检测任务，正文与方法细节阅读状态仍为摘要级。"
+            ]
           }
         ],
         "versions": [
@@ -24692,7 +24704,24 @@
             "relation": "出版社登记与会议目录姓名使用Zhou Hui-xin等姓在前写法，规范显示不改变作者顺序；周峻ORCID收录支持目标作者归属，单篇正式稿机构仍待核。"
           }
         ],
-        "methodFamilyId": "nsp-kum-anomaly-icicee-2012"
+        "methodFamilyId": "nsp-kum-anomaly-icicee-2012",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "两早期稿由正式题名明确HSI异常检测，NSP另有主要机构原摘要；Shearlet的方法仍仅二级摘要，不新增方法标签。书章节只纠正旧年份/访问说明，正式版本关系保留未知。任务确认不等于作者单篇单位或全文完成。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "4cabf733266951a3ab57b40e617d374cf27d11826859a0f13e090c2f4a3598e0",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/api/publications/linkedTo"
+          ]
+        }
       },
       "frameworkFigureSearch": {
         "status": "needs_access",
@@ -24721,23 +24750,25 @@
       "input": "高光谱影像；摘要明确使用HYDICE数据验证，但完整数据协议待全文。",
       "output": "重建后的异常信号图/异常检测结果。",
       "mechanism": "先经多尺度方向性Shearlet滤波器组分解原始影像；再用四阶偏微分方程修正子带系数以抑制背景并增强异常；各子带采用核RX检测，最后合并修正子带重建异常图。",
-      "readingNote": "Crossref核对正式DOI书目；OpenAlex公开摘要索引重建原摘要，属于二级摘要证据。已读摘要，不等同SPIE全文；HYDICE、核RX和性能比较仅记录摘要明确内容。",
+      "readingNote": "正式SPIE DOI/题名/卷8419文章号84190I与作者旧CV沿用已核记录；本轮复核2026-10-11Griffith已存object233806，Jun作者明确resolvedUser7205，补强目标归属。机构此条没有摘要；Shearlet/四阶PDE/核RX/HYDICE方法仍仅二级摘要证据，不冒称主要原摘要或全文。正式题名直接支持高光谱异常检测任务，补任务分类，不新增方法标签。",
       "paper": "https://doi.org/10.1117/12.978636",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified_secondary_index",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "publisher_bibliography_and_institutional_identity_with_secondary_abstract",
       "citation": "@inproceedings{shearlet_anomaly_aomatt_2012,\n  title = {Shearlet transform based anomaly detection for hyperspectral image},\n  author = {Huixin Zhou and Xiaoxue Niu and Hanlin Qin and Jun Zhou and Rui Lai and Bingjian Wang},\n  booktitle = {6th International Symposium on Advanced Optical Manufacturing and Testing Technologies: Optoelectronic Materials and Devices for Sensing, Imaging, and Solar Energy},\n  year = {2012},\n  pages = {84190I},\n  doi = {10.1117/12.978636}\n}\n",
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
+        "categoryIds": [
+          "hyperspectral-anomaly-detection"
+        ],
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "正式题名和公开摘要明确光学高光谱影像异常检测；完整实验、方法标签与三维专题归类待进一步审计。",
+        "relationNote": "出版社登记正式题名明确hyperspectral image与anomaly detection，输出为异常检测图；任务分类无需等待全文。只确认现有任务标签，未新增未核方法标签或三维专题成员。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何利用多尺度方向性Shearlet子带与核RX完成高光谱异常检测？",
         "datasets": "摘要明确HYDICE；完整版本、样本和协议待全文。",
         "experimentSetting": "摘要级核验：HYDICE实验并与原始RX比较；参数、指标和划分待全文。",
         "conclusions": "摘要报告相较原始RX有较好检测表现和较低虚警；不外推具体数值。",
-        "limitations": "仅公开二级摘要与正式书目，未取得SPIE全文；不补具体数据规模、参数、图版或代码。",
+        "limitations": "SPIE正文、原图和主要原摘要未取得；方法描述/HYDICE仅既有二级摘要证据，具体规模、参数、指标与正式稿机构未核。已存机构resolvedUser7205确认目标作者关联，不能以此冒称正式稿已读；官方代码只记录链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -24774,6 +24805,16 @@
               "公开摘要正文（按倒排索引位置重建）",
               "摘要级方法、数据范围和结论"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/api/publications/linkedTo",
+            "checkedAt": "2026-10-12",
+            "level": "已存Griffith正式书目与resolvedUser身份复核（原捕获2026-10-11）",
+            "supports": [
+              "原捕获2026-10-11的object233806六作者顺序及DOI10.1117/12.978636；Jun Zhou作者resolvedUser.objectId=7205。",
+              "正式题名直接明确HSI异常检测；只确认任务标签，不据全文缺失保留空任务分类。",
+              "此机构记录无abstract；Shearlet/四阶PDE/核RX/HYDICE仍是二级摘要证据，不提升摘要来源或全文等级。"
+            ]
           }
         ],
         "versions": [
@@ -24786,7 +24827,24 @@
             "relation": "作者旧CV明确列本题名及六作者；出版社登记2012-10-15、卷8419、文章号84190I（末位大写I）；ORCID原条目无DOI，本轮补精确登记，登记2012-11-13不是发表日期。"
           }
         ],
-        "methodFamilyId": "shearlet-anomaly-aomatt-2012"
+        "methodFamilyId": "shearlet-anomaly-aomatt-2012",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "两早期稿由正式题名明确HSI异常检测，NSP另有主要机构原摘要；Shearlet的方法仍仅二级摘要，不新增方法标签。书章节只纠正旧年份/访问说明，正式版本关系保留未知。任务确认不等于作者单篇单位或全文完成。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "65e77fd8c02cf4b1d244522709f6f585827b6d68dc315faea624c9e7aab71309",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/api/publications/linkedTo"
+          ]
+        }
       },
       "frameworkFigureSearch": {
         "status": "needs_access",
@@ -27264,7 +27322,7 @@
       "input": "高光谱影像、RGB影像及不同维度的自然目标影像。",
       "output": "跨模态影像对应与匹配结果。",
       "mechanism": "结构化支持向量机学习图模型权重，图节点/边编码局部特征与稳定对应，随后求解加权图匹配。",
-      "readingNote": "出版社摘要与作者版本摘要核验；章节页323–341。与GbRPR 2015会议版是相关版本，正文差异和完整实验仍待逐页比对，不将两者当独立方法族。 本次机构与出版社注册另书2019同题章节DOI 10.4018/978-1-5225-8054-6.ch026、第26章/561–580，作者次序和摘要相同；正式重印/扩展关系未核。原机构记录为2016，原DOI2015记录与书版权年份差异仍保留。",
+      "readingNote": "出版社摘要与作者版本摘要核验；章节页323–341。与GbRPR 2015会议版是相关版本，正文差异和完整实验仍待逐页比对，不将两者当独立方法族。 本次机构与出版社注册另书2019同题章节DOI 10.4018/978-1-5225-8054-6.ch026、第26章/561–580，作者次序和摘要相同；正式重印/扩展关系未核。原机构记录为2016，原DOI2015记录与书版权年份差异仍保留。 本批出版社与IRMA另书页面HTTP429，未取得重印声明或正文；不据访问失败推断付费。",
       "paper": "https://doi.org/10.4018/978-1-4666-9435-4.ch015",
       "verificationLevel": "publisher_abstract_and_author_manuscript",
       "citation": "@inbook{large_margin_hsi_matching_cvprei_2015,\n  title = {A Large Margin Learning Method for Matching Images of Natural Objects with Different Dimensions},\n  author = {Haoyi Zhou and Jun Zhou and Haichuan Yang and Cheng Yan and Xiao Bai and Yunlu Liu},\n  booktitle = {Computer Vision and Pattern Recognition in Environmental Informatics},\n  year = {2015},\n  pages = {323--341},\n  doi = {10.4018/978-1-4666-9435-4.ch015}\n}\n",
@@ -27282,7 +27340,7 @@
         "datasets": "自然目标影像；摘要未给完整数据集名称与规模。",
         "experimentSetting": "出版社摘要与作者稿摘要及方法开头已核；未逐项核完整实验表和章节全文。",
         "conclusions": "作者摘要报告图模型在高光谱—RGB及不同维度匹配实验中有效；具体数值和比较协议待全文核验。",
-        "limitations": "章节DOI指向2015创建记录，书版权信息为2016；与GbRPR会议版关系需按版本分别核对，不能混用实验事实。",
+        "limitations": "章节DOI指向2015创建记录，书版权信息为2016；与GbRPR会议版关系需按版本分别核对，不能混用实验事实。 另书2019 ch026同题、同序作者和相同摘要不等于已核重印；本次出版社/IRMA页面HTTP429，正式关系仍待。",
         "dataLinks": [],
         "evidence": [
           {
@@ -27329,6 +27387,14 @@
               "Jun Zhou注册单位Griffith；摘要与两份机构记录一致，Crossref relation为空。",
               "不同DOI仅作关系待核，不新增白名单外论文，不视为重复已核。"
             ]
+          },
+          {
+            "url": "https://www.igi-global.com/viewtitle.aspx?TitleId=222916",
+            "checkedAt": "2026-10-12",
+            "level": "另书出版社页面访问状态（未取得内容）",
+            "supports": [
+              "HTTP429，实际HTML访问失败；没有正文或重印声明，不推断付费。"
+            ]
           }
         ],
         "versions": [
@@ -27353,7 +27419,7 @@
         "classificationReview": {
           "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "DCA已读接受稿明确分类输入输出；书章节原摘要维持既有任务证据，同题另书关系未核、不提升全文。",
+          "rationale": "两早期稿由正式题名明确HSI异常检测，NSP另有主要机构原摘要；Shearlet的方法仍仅二级摘要，不新增方法标签。书章节只纠正旧年份/访问说明，正式版本关系保留未知。任务确认不等于作者单篇单位或全文完成。",
           "evidenceFields": [
             "title",
             "summary",
@@ -27362,11 +27428,12 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "5181d95bf74820ad52e8a80ef1d0a2bb938bd07b3b83b4886d7b96177d5065dc",
+          "evidenceDigest": "f0a843b93b0ac5b8abe34640c18ed92cdc492740c09d99e76c173ed4435da595",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/server/api/core/items/9885dbe4-a93b-44c3-a800-d496e1f92689",
             "https://research-repository.griffith.edu.au/server/api/core/items/02a080b3-9a00-516e-b282-7c3238dfcc97",
-            "https://api.crossref.org/works/10.4018/978-1-5225-8054-6.ch026"
+            "https://api.crossref.org/works/10.4018/978-1-5225-8054-6.ch026",
+            "https://www.igi-global.com/viewtitle.aspx?TitleId=222916"
           ]
         }
       },
@@ -27392,7 +27459,7 @@
       "input": "覆盖可见光和红外波段的土壤高光谱影像及实验室真值。",
       "output": "像元生物炭丰度与土壤生物炭比例估计。",
       "mechanism": "把土壤影像建模为土壤/生物炭信号混合，运行多种高光谱解混，再对像元丰度取均值并用多项式回归和RMSE与真值比较。",
-      "readingNote": "检索到章节摘要及书目；未取得章节原文。章节后续另有2018版不同书籍与DOI，当前按精确DOI独立保留，不合并实验事实。 本次机构与出版社注册另书2019同题章节DOI 10.4018/978-1-5225-7033-2.ch073、第73章/1608–1635，作者次序和摘要相同；正式重印/扩展关系未核。原机构记录为2016，原DOI2015记录与书版权年份差异仍保留。",
+      "readingNote": "检索到章节摘要及书目；未取得章节原文。另书ch073的出版社注册发表年份已核为2019，纠正旧说明的2018；不同DOI的关系另列，不混合实验事实。 本次机构与出版社注册另书2019同题章节DOI 10.4018/978-1-5225-7033-2.ch073、第73章/1608–1635，作者次序和摘要相同；正式重印/扩展关系未核。原机构记录为2016，原DOI2015记录与书版权年份差异仍保留。 本批出版社与IRMA另书页面HTTP429，未取得重印声明或正文；不据访问失败推断付费。",
       "paper": "https://doi.org/10.4018/978-1-4666-9435-4.ch011",
       "verificationLevel": "publisher_indexed_abstract",
       "citation": "@inbook{biochar_unmix_cvprei_2015,\n  title = {Automatic Estimation of Soil Biochar Quantity via Hyperspectral Imaging},\n  author = {Lei Tong and Jun Zhou and Shahla Hosseini Bai and Chengyuan Xu and Yuntao Qian and Yongsheng Gao and Zhihong Xu},\n  booktitle = {Computer Vision and Pattern Recognition in Environmental Informatics},\n  year = {2015},\n  pages = {220--247},\n  doi = {10.4018/978-1-4666-9435-4.ch011}\n}\n",
@@ -27410,7 +27477,7 @@
         "datasets": "实验室采集土壤/生物炭影像与真值；摘要未给传感器型号、样本数和完整划分。",
         "experimentSetting": "出版社/索引摘要已核；未取得章节原文，三种解混模型及回归/RMSE配置只按摘要记录。",
         "conclusions": "摘要称高光谱解混可用于土壤生物炭比例测量；性能数字与实验细节待原文核验。",
-        "limitations": "2015 ch011 与2018 ch073 是不同书籍、不同DOI；不能把后版章节内容回填到本条。",
+        "limitations": "原ch011的2015记录/2016机构及版权年差异分别保留；同题另书ch073出版社注册2019，不是旧说明的2018。正文和正式重印/扩展声明未得；本批出版社与IRMA页面HTTP429属于访问失败，不据此认定付费或已排除公开版本。",
         "dataLinks": [],
         "evidence": [
           {
@@ -27456,6 +27523,23 @@
               "Jun Zhou注册单位Griffith；摘要与两份机构记录一致，Crossref relation为空。",
               "不同DOI仅作关系待核，不新增白名单外论文，不视为重复已核。"
             ]
+          },
+          {
+            "url": "https://www.igi-global.com/viewtitle.aspx?TitleId=213012",
+            "checkedAt": "2026-10-12",
+            "level": "另书出版社页面访问状态（未取得内容）",
+            "supports": [
+              "HTTP429，实际HTML访问失败；没有正文或重印声明，不推断付费。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.4018/978-1-5225-7033-2.ch073",
+            "checkedAt": "2026-10-12",
+            "level": "已存出版社注册书目复核（原捕获2026-10-12）",
+            "supports": [
+              "正式另书Environmental Information Systems ch073，published/print2019、1608–1635；纠正旧阅读说明与局限里的2018。",
+              "不是重印声明，关系空值仍保留；不新增独立论文。"
+            ]
           }
         ],
         "versions": [
@@ -27480,7 +27564,7 @@
         "classificationReview": {
           "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "DCA已读接受稿明确分类输入输出；书章节原摘要维持既有任务证据，同题另书关系未核、不提升全文。",
+          "rationale": "两早期稿由正式题名明确HSI异常检测，NSP另有主要机构原摘要；Shearlet的方法仍仅二级摘要，不新增方法标签。书章节只纠正旧年份/访问说明，正式版本关系保留未知。任务确认不等于作者单篇单位或全文完成。",
           "evidenceFields": [
             "title",
             "summary",
@@ -27489,11 +27573,12 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "fb3774db85109542c644a42e5db34651a48652f37562bec902fd85fc2a0d266b",
+          "evidenceDigest": "8f4fbbc724f21a4df2692116f0f35e4d59f4b4d9f750a44c2f23f3f19ece97e2",
           "sourceUrls": [
             "https://research-repository.griffith.edu.au/server/api/core/items/cd8ce258-d556-4a0f-aeb6-f26827b692e3",
             "https://research-repository.griffith.edu.au/server/api/core/items/bda0919d-5f57-5472-b231-8182674b50c5",
-            "https://api.crossref.org/works/10.4018/978-1-5225-7033-2.ch073"
+            "https://api.crossref.org/works/10.4018/978-1-5225-7033-2.ch073",
+            "https://www.igi-global.com/viewtitle.aspx?TitleId=213012"
           ]
         }
       },
@@ -51935,6 +52020,8 @@
       "createdAt": "2026-10-08",
       "rationale": "IOACED机构AM与此前MFTNet VoR实际全文均支持偏离背景的HSI像元异常检测；不将无目标先验等同无需经验参数或物理原因鉴定。",
       "evidencePaperIds": [
+        "nsp-kum-anomaly-icicee-2012",
+        "shearlet-anomaly-aomatt-2012",
         "hsi-anomaly-ace-framework-2019",
         "deep-pnp-hsi-anomaly-2021",
         "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025",
@@ -51960,6 +52047,11 @@
           "date": "2026-10-12",
           "action": "reviewed",
           "reason": "增加IOACED实际全文、原图及ROC/AUC证据，确认现有任务边界；其他成员阅读状态不变。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "两早期正式题名明确异常检测，NSP主要原摘要与Shearlet作者归属复核，补现有任务标签；不升全文、不新增二级方法标签。"
         }
       ]
     },
