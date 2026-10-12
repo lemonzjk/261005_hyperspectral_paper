@@ -1,0 +1,239 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2606.10968v2",
+    "title": "Beyond Uniform Token-Level Trust Region in LLM Reinforcement Learning",
+    "summary": "Reinforcement learning with verifiable rewards (RLVR) has become standard for improving LLM reasoning. However, existing PPO-style trust-region mechanisms remain position-agnostic by enforcing uniform thresholds across all tokens independently. This pointwise treatment conflicts with autoregressive generation in two critical ways. First, uniform thresholds ignore autoregressive asymmetry. Early-stage deviations produce compounding sequence-level drift, causing static thresholds to under-regulate early divergence and excessively constrain late-stage exploration. Second, evaluating token-level divergence in isolation overlooks cumulative prefix drift, granting the same divergence allowance regardless of how far the conditioning history has already deviated from the rollout policy. To address this limitation, we propose CPPO (Cumulative Prefix-divergence Policy Optimization), a token-level masking rule that aligns updates with a finite-horizon policy-improvement bound via two coupled mechanisms. First, a position-weighted threshold imposes stricter limits at early positions whose effects persist longer, relaxing constraints for late-stage tokens. Second, a cumulative prefix budget tracks historical deviations, dynamically restricting further token-level deviation to prevent compounding errors along the prefix. Empirically, CPPO enhances training stability and significantly improves reasoning accuracy across various model scales.",
+    "published": "2026-06-09T15:09:29Z",
+    "updated": "2026-06-10T17:30:04Z",
+    "authors": [
+      "Renjie Mao",
+      "Xiangxin Zhou",
+      "Lvfang Tao",
+      "Yixin Ding",
+      "Yu Shi",
+      "Yongguang Lin",
+      "Yuheng Wu",
+      "Honglin Zhu",
+      "Qian Qiu",
+      "Wenxi Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2605.17286v3",
+    "title": "HyperVision: A Channel-Adaptive Ground-Based Hyperspectral Vision Pre-trained Backbone",
+    "summary": "While hyperspectral imaging provides rich spatial-spectral information across hundreds of narrow wavelength bands for precise material identification, ground-based hyperspectral pre-trained backbones remain absent, constrained by varying spectral configurations across sensors, limited annotations and heterogeneous labeling schemes, and the limited scale and scene diversity of existing datasets. To address these challenges and enable universal perception, we propose HyperVision, the first ground-based hyperspectral pre-trained backbone. First, to handle varying spectral configurations, HyperVision adopts a channel-adaptive dynamic embedding mechanism to map heterogeneous inputs into a unified token space. Second, we develop an unsupervised representation learning framework. Specifically, to address limited annotations and heterogeneous labeling schemes, a multi-source pseudo-labeling method is introduced to fuse spatial structures from SAM2 and fine-grained spectral material information from HyperFree. Furthermore, to enrich scene diversity and compensate for limited dataset scale, a cross-modal knowledge distillation mechanism is utilized to transfer rich semantic representations from a pre-trained RGB vision model to our backbone. Pre-trained on a collection of 15k images from 26 diverse ground-based datasets, HyperVision demonstrates exceptional generalization. Requiring only efficient head-only adaptation without adjusting backbone parameters, it outperforms state-of-the-art task-specific methods across three downstream tasks under varying sensor configurations, yielding up to a 16.3% relative improvement in hyperspectral semantic segmentation $\\mathrm{Acc}_{\\mathrm{M}}$, a 2.1% relative gain in object tracking AUC, and a 35.5% reduction in salient object detection MAE. The source code and pre-trained models are available at https://github.com/lronkitty/HyperVision.",
+    "published": "2026-05-17T06:50:06Z",
+    "updated": "2026-08-28T12:31:53Z",
+    "authors": [
+      "Guanyiman Fu",
+      "Jingtao Li",
+      "Zihang Cheng",
+      "Zhuanfeng Li",
+      "Diqi Chen",
+      "Yan Xu",
+      "Xiangyu Liu",
+      "Fengchao Xiong",
+      "Jianfeng Lu",
+      "Chengrong Chen",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2605.14239v1",
+    "title": "Implicit spatial-frequency fusion of hyperspectral and lidar data via kolmogorov-arnold networks",
+    "summary": "Hyperspectral image (HSI) classification is challenging in complex scenes due to spectral ambiguity, spatial heterogeneity, and the strong coupling between material properties and geometric structures. Although LiDAR provides complementary elevation information, most HSI-LiDAR fusion methods rely on CNNs or MLPs with fixed activation functions and linear weights. These methods struggle to model structural discontinuities in LiDAR data, intricate spectral features of HSI, and their interactions. In addition, fusion of the two modalities in both spatial and frequency domains with LiDAR guidance remains underexplored. To address these issues, we propose the Implicit Frequency-Geometry Fusion Network (IFGNet), which leverages Kolmogorov-Arnold Networks (KANs) with learnable spline-based functions to adaptively capture highly nonlinear relationships between hyperspectral and LiDAR features. Furthermore, IFGNet introduces a LiDAR-guided implicit aggregation module in both spatial and frequency domains, enhancing geometry-aware spatial representations while capturing global structural patterns. Experiments on the Houston 2013 and MUUFL benchmarks demonstrate that IFGNet consistently outperforms existing fusion methods in overall accuracy, average accuracy, and Cohen's Kappa, while maintaining an efficient architecture.",
+    "published": "2026-05-14T01:12:12Z",
+    "updated": "2026-05-14T01:12:12Z",
+    "authors": [
+      "Zekun Long",
+      "Judy X. Yang",
+      "Jing Wang",
+      "Ali Zia",
+      "Guanyiman Fu",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2605.06057v4",
+    "title": "FalconGEMM: Surpassing Hardware Peaks with Lower-Complexity Matrix Multiplication",
+    "summary": "Peak breaking Matrix Multiplication is a promising technique to improve the performance of DL, especially in LLM training and inference. We present FalconGEMM, a cross-platform framework that automates the deployment, optimization, and selection of Lower-Complexity Matrix Multiplication Algorithms (LCMAs) across diverse hardware. There are three key innovations: (1) a Deployment Module that enables portable execution across various hardware and input configurations through code generation; (2) an Execution Module with Group-Parallel Optimizations that maximizes on-chip data reuse, utilizes parallel resources, and reduces bandwidth overhead; and (3) a Decision Module featuring a lightweight analytical performance model to select the optimal strategy based on matrix shapes and hardware profiles. Extensive evaluation is conducted on LLM workloads across GPU (H20, A100) and CPU (ARM, x86) architectures with multiple data types. FalconGEMM succeeds in delivering peak breaking performance and outperforms GEMM libraries (e.g., cuBLAS, CUTLASS, Intel MKL, etc) by 7.59%-17.85% and LCMA competitors like AlphaTensor by 12.41%-55.61%. Our framework makes the theoretical promise of LCMAs practical for production deployment across the heterogeneous landscape of modern hardware.",
+    "published": "2026-05-07T11:41:54Z",
+    "updated": "2026-06-10T07:55:40Z",
+    "authors": [
+      "Honglin Zhu",
+      "Jiaping Cao",
+      "Jiang Shao",
+      "Siyuan Feng",
+      "Qian Qiu",
+      "Peng Chen",
+      "Xu Zhang",
+      "Yixian Zhou",
+      "Man Lung Yiu",
+      "Guang Ji",
+      "Minwen Deng",
+      "Jintao Meng",
+      "Wenxi Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2603.09037v1",
+    "title": "WS-Net: Weak-Signal Representation Learning and Gated Abundance Reconstruction for Hyperspectral Unmixing via State-Space and Weak Signal Attention Fusion",
+    "summary": "Weak spectral responses in hyperspectral images are often obscured by dominant endmembers and sensor noise, resulting in inaccurate abundance estimation. This paper introduces WS-Net, a deep unmixing framework specifically designed to address weak-signal collapse through state-space modelling and Weak Signal Attention fusion. The network features a multi-resolution wavelet-fused encoder that captures both high-frequency discontinuities and smooth spectral variations with a hybrid backbone that integrates a Mamba state-space branch for efficient long-range dependency modelling. It also incorporates a Weak Signal Attention branch that selectively enhances low-similarity spectral cues. A learnable gating mechanism adaptively fuses both representations, while the decoder leverages KL-divergence-based regularisation to enforce separability between dominant and weak endmembers. Experiments on one simulated and two real datasets (synthetic dataset, Samson, and Apex) demonstrate consistent improvements over six state-of-the-art baselines, achieving up to 55% and 63% reductions in RMSE and SAD, respectively. The framework maintains stable accuracy under low-SNR conditions, particularly for weak endmembers, establishing WS-Net as a robust and computationally efficient benchmark for weak-signal hyperspectral unmixing.",
+    "published": "2026-03-10T00:12:33Z",
+    "updated": "2026-03-10T00:12:33Z",
+    "authors": [
+      "Zekun Long",
+      "Ali Zia",
+      "Guanyiman Fu",
+      "Vivien Rolland",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2409.01075v1",
+    "title": "Vortex: Efficient Sample-Free Dynamic Tensor Program Optimization via Hardware-aware Strategy Space Hierarchization",
+    "summary": "Dynamic-shape deep neural networks (DNNs) are rapidly evolving, attracting attention for their ability to handle variable input sizes in real-time applications. However, existing compilation optimization methods for such networks often rely heavily on predefined samples to guide the compilation process, which restricts their adaptability and efficiency. These sample-driven methods struggle to efficiently manage the diverse and unpredictable shapes encountered in real-world scenarios, often resulting in suboptimal performance. To tackle these issues, we introduce Vortex, a hardware-driven and sample-free compiler tailored for dynamic-shape tensor programs. Vortex capitalizes on detailed hardware information and hierarchizes the strategy space to facilitate high-performance code generation without relying on runtime shape samples. It features a unique bidirectional compilation workflow, combining top-down abstraction for aligning tensor program execution with hardware hierarchies and bottom-up kernel construction to narrow the search space, enabling Vortex to achieve remarkable efficiency. Comprehensive evaluations confirm that Vortex reduces compilation time by $176\\times$ compared to the existing dynamic-shape compiler. Additionally, it substantially outperforms existing vendor-provided libraries and dynamic-shape compilers on both CPU and GPU platforms, delivering speedups of $2.53\\times$ and $3.01\\times$, respectively.",
+    "published": "2024-09-02T08:57:46Z",
+    "updated": "2024-09-02T08:57:46Z",
+    "authors": [
+      "Yangjie Zhou",
+      "Honglin Zhu",
+      "Qian Qiu",
+      "Weihao Cui",
+      "Zihan Liu",
+      "Cong Guo",
+      "Siyuan Feng",
+      "Jintao Meng",
+      "Haidong Lan",
+      "Jingwen Leng",
+      "Wenxi Zhu",
+      "Minwen Deng"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2405.20368v2",
+    "title": "Sphere packing proper colorings of an expander graph",
+    "summary": "We introduce graphical error-correcting codes, a new notion of error-correcting codes on $[q]^n$, where a code is a set of proper $q$-colorings of some fixed $n$-vertex graph $G$. We then say that a set of $M$ proper $q$-colorings of $G$ form a $(G, M, d)$ code if any pair of colorings in the set have Hamming distance at least $d$. This directly generalizes typical $(n, M, d)$ codes of $q$-ary strings of length $n$ since we can take $G$ as the empty graph on $n$ vertices. We investigate how one-sided spectral expansion relates to the largest possible set of error-correcting colorings on a graph. For fixed $(δ, λ) \\in [0, 1] \\times [-1, 1]$ and positive integer $d$, let $f_{δ, λ, d}(n)$ denote the maximum $M$ such that there exists some $d$-regular graph $G$ on at most $n$ vertices with normalized second eigenvalue at most $λ$ that has a $(G, M, d)$ code. We study the growth of $f$ as $n$ goes to infinity. We partially characterize the regimes of $(δ, λ)$ where $f$ grows exponentially or is bounded by a constant, respectively. We also prove several sharp phase transitions between these regimes.",
+    "published": "2024-05-30T18:00:00Z",
+    "updated": "2025-01-27T03:55:12Z",
+    "authors": [
+      "Honglin Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2405.01726v7",
+    "title": "SSUMamba: Spatial-Spectral Selective State Space Model for Hyperspectral Image Denoising",
+    "summary": "Denoising is a crucial preprocessing step for hyperspectral images (HSIs) due to noise arising from intra-imaging mechanisms and environmental factors. Long-range spatial-spectral correlation modeling is beneficial for HSI denoising but often comes with high computational complexity. Based on the state space model (SSM), Mamba is known for its remarkable long-range dependency modeling capabilities and computational efficiency. Building on this, we introduce a memory-efficient spatial-spectral UMamba (SSUMamba) for HSI denoising, with the spatial-spectral continuous scan (SSCS) Mamba being the core component. SSCS Mamba alternates the row, column, and band in six different orders to generate the sequence and uses the bidirectional SSM to exploit long-range spatial-spectral dependencies. In each order, the images are rearranged between adjacent scans to ensure spatial-spectral continuity. Additionally, 3D convolutions are embedded into the SSCS Mamba to enhance local spatial-spectral modeling. Experiments demonstrate that SSUMamba achieves superior denoising results with lower memory consumption per batch compared to transformer-based methods. The source code is available at https://github.com/lronkitty/SSUMamba.",
+    "published": "2024-05-02T20:44:26Z",
+    "updated": "2024-08-03T09:18:32Z",
+    "authors": [
+      "Guanyiman Fu",
+      "Fengchao Xiong",
+      "Jianfeng Lu",
+      "Jun Zhou"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2401.03885v2",
+    "title": "Hyperspectral Image Denoising via Spatial-Spectral Recurrent Transformer",
+    "summary": "Hyperspectral images (HSIs) often suffer from noise arising from both intra-imaging mechanisms and environmental factors. Leveraging domain knowledge specific to HSIs, such as global spectral correlation (GSC) and non-local spatial self-similarity (NSS), is crucial for effective denoising. Existing methods tend to independently utilize each of these knowledge components with multiple blocks, overlooking the inherent 3D nature of HSIs where domain knowledge is strongly interlinked, resulting in suboptimal performance. To address this challenge, this paper introduces a spatial-spectral recurrent transformer U-Net (SSRT-UNet) for HSI denoising. The proposed SSRT-UNet integrates NSS and GSC properties within a single SSRT block. This block consists of a spatial branch and a spectral branch. The spectral branch employs a combination of transformer and recurrent neural network to perform recurrent computations across bands, allowing for GSC exploitation beyond a fixed number of bands. Concurrently, the spatial branch encodes NSS for each band by sharing keys and values with the spectral branch under the guidance of GSC. This interaction between the two branches enables the joint utilization of NSS and GSC, avoiding their independent treatment. Experimental results demonstrate that our method outperforms several alternative approaches. The source code will be available at https://github.com/lronkitty/SSRT.",
+    "published": "2023-12-31T04:24:56Z",
+    "updated": "2024-01-09T04:13:45Z",
+    "authors": [
+      "Guanyiman Fu",
+      "Fengchao Xiong",
+      "Jianfeng Lu",
+      "Jun Zhou",
+      "Jiantao Zhou",
+      "Yuntao Qian"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2309.00100v3",
+    "title": "The maximum number of cycles in a triangular-grid billiards system with a given perimeter",
+    "summary": "Given a (simple) grid polygon $P$ in a grid of equilateral triangles, Defant and Jiradilok considered a billiards system where beams of light bounce around inside of $P$. We study the relationship between the perimeter $\\operatorname{perim}(P)$ of $P$ and the number of different trajectories $\\operatorname{cyc}(P)$ that the billiards system has. Resolving a conjecture of Defant and Jiradilok, we prove the sharp inequality $\\operatorname{cyc}(P) \\leq (\\operatorname{perim}(P) + 2)/4$ and characterize the equality cases.",
+    "published": "2023-08-31T19:39:06Z",
+    "updated": "2024-04-21T14:53:21Z",
+    "authors": [
+      "Honglin Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2307.08121v3",
+    "title": "The connectivity of friends-and-strangers graphs on complete multipartite graphs",
+    "summary": "For simple graphs $X$ and $Y$ on $n$ vertices, the friends-and-strangers graph $\\mathsf{FS}(X,Y)$ is the graph whose vertex set consists of all bijections $σ: V(X) \\to V(Y)$, where two bijections $σ$ and $σ'$ are adjacent if and only if they agree on all but two adjacent vertices $a, b \\in V(X)$ such that $σ(a), σ(b) \\in V(Y)$ are adjacent in $Y$. Resolving a conjecture of Wang, Lu, and Chen, we completely characterize the connectedness of $\\mathsf{FS}(X, Y)$ when $Y$ is a complete bipartite graph. We further extend this result to when $Y$ is a complete multipartite graph. We also determine when $\\mathsf{FS}(X, Y)$ has exactly two connected components where $X$ is bipartite and $Y$ is a complete bipartite graph.",
+    "published": "2023-07-16T18:09:06Z",
+    "updated": "2024-04-21T15:20:54Z",
+    "authors": [
+      "Honglin Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2307.00409v1",
+    "title": "Maximum Overlap Area of Several Convex Polygons Under Translations",
+    "summary": "Let $k \\geq 2$ be a constant. Given any $k$ convex polygons in the plane with a total of $n$ vertices, we present an $O(n\\log^{2k-3}n)$ time algorithm that finds a translation of each of the polygons such that the area of intersection of the $k$ polygons is maximized. Given one such placement, we also give an $O(n)$ time algorithm which computes the set of all translations of the polygons which achieve this maximum.",
+    "published": "2023-07-01T18:45:15Z",
+    "updated": "2023-07-01T18:45:15Z",
+    "authors": [
+      "Hyuk Jun Kweon",
+      "Honglin Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2306.14909v1",
+    "title": "Classifying Isometries",
+    "summary": "An isometry is a geometric transformation that preserves distances between pairs of points. We present methods to classify isometries in the Euclidean plane, and extend these methods to spherical, single elliptical, and hyperbolic geometry. We then classify all isometries of the plane equipped with the $\\ell_p$ metric for any $p \\geq 1$ and $p = \\infty$.",
+    "published": "2023-06-16T23:30:21Z",
+    "updated": "2023-06-16T23:30:21Z",
+    "authors": [
+      "Lillian MacArthur",
+      "Honglin Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2301.02949v2",
+    "title": "Maximum overlap area of a convex polyhedron and a convex polygon under translation",
+    "summary": "Let $P$ be a convex polyhedron and $Q$ be a convex polygon with $n$ vertices in total in three-dimensional space. We present a deterministic algorithm that finds a translation vector $v \\in \\mathbb{R}^3$ maximizing the overlap area $|P \\cap (Q + v)|$ in $O(n \\log^2 n)$ time. We then apply our algorithm to solve two related problems. We give an $O(n \\log^3 n)$ time algorithm that finds the maximum overlap area of three convex polygons with $n$ vertices in total. We also give an $O(n \\log^2 n)$ time algorithm that minimizes the symmetric difference of two convex polygons under scaling and translation.",
+    "published": "2023-01-08T00:11:13Z",
+    "updated": "2023-02-25T01:56:11Z",
+    "authors": [
+      "Hyuk Jun Kweon",
+      "Honglin Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2206.07193v2",
+    "title": "The Hermitian axiom on two-dimensional topological quantum field theories",
+    "summary": "In this paper, we examine Atiyah's Hermitian axiom for two-dimensional complex topological quantum field theories. Building on the correspondence between 2D TQFTs and Frobenius algebras, we find the algebraic objects corresponding to Hermitian and unitary TQFTs respectively and prove structure theorems about them. We then clarify a few older results on unitary TQFTs using our structure theorems.",
+    "published": "2022-06-14T22:48:58Z",
+    "updated": "2023-01-28T19:08:29Z",
+    "authors": [
+      "Honglin Zhu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2103.07437v1",
+    "title": "Hyperspectral Image Denoising and Anomaly Detection Based on Low-rank and Sparse Representations",
+    "summary": "Hyperspectral imaging measures the amount of electromagnetic energy across the instantaneous field of view at a very high resolution in hundreds or thousands of spectral channels. This enables objects to be detected and the identification of materials that have subtle differences between them. However, the increase in spectral resolution often means that there is a decrease in the number of photons received in each channel, which means that the noise linked to the image formation process is greater. This degradation limits the quality of the extracted information and its potential applications. Thus, denoising is a fundamental problem in hyperspectral image (HSI) processing. As images of natural scenes with highly correlated spectral channels, HSIs are characterized by a high level of self-similarity and can be well approximated by low-rank representations. These characteristics underlie the state-of-the-art methods used in HSI denoising. However, where there are rarely occurring pixel types, the denoising performance of these methods is not optimal, and the subsequent detection of these pixels may be compromised. To address these hurdles, in this article, we introduce RhyDe (Robust hyperspectral Denoising), a powerful HSI denoiser, which implements explicit low-rank representation, promotes self-similarity, and, by using a form of collaborative sparsity, preserves rare pixels. The denoising and detection effectiveness of the proposed robust HSI denoiser is illustrated using semireal and real data.",
+    "published": "2021-03-12T18:07:27Z",
+    "updated": "2021-03-12T18:07:27Z",
+    "authors": [
+      "Lina Zhuang",
+      "Lianru Gao",
+      "Bing Zhang",
+      "Xiyou Fu",
+      "Jose M. Bioucas-Dias"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2006.06788v2",
+    "title": "Characters for Projective Modules in the BGG Category $\\mathcal{O}$ for the Orthosymplectic Lie Superalgebra $\\mathfrak{osp}(3|4)$",
+    "summary": "We determine the Verma multiplicities of standard filtrations of projective modules for integral atypical blocks in the BGG category $\\mathcal{O}$ for the orthosymplectic Lie superalgebras $\\mathfrak{osp}(3|4)$ by way of translation functors. We then explicitly determine the composition factor multiplicities of Verma modules using BGG reciprocity.",
+    "published": "2020-06-11T20:17:34Z",
+    "updated": "2020-11-21T02:55:15Z",
+    "authors": [
+      "Arun S. Kannan",
+      "Honglin Zhu"
+    ]
+  }
+]

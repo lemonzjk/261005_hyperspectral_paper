@@ -74,6 +74,8 @@ RemoteCLIP旧排除仅题名理由不充分，本轮用固定v4主要正文补�
 
 Otsu两免费Griffith接受稿共29页已下载，本轮实际选读13页（红树林协同8/16、标签净化5/13），封面/首页确认版本与Griffith身份。2025红树林稿原题名排除撤销：自建652张256²卫星图/五类/522–130划分未列实际传感器或输入通道，CRF颜色项RGB不等于网络全输入三通道。该稿[49]明确引用2024会议两作者/8633–8637，但用于损失过滤先例，不证明同数据/会刊扩展；两红树林稿范围继续待核。2026净化稿的CIFAR/CIFAR-N、mini-Clothing-1M、UC Merced/AID标签净化与场景分类补主要原文证据，hyperspectral只见Jun履历；维持当前AM暂排，补充材料/最终VoR未读。Otsu/Jue arXiv67/67仅一已有SFAM含Jun；Jing Wang+HSI8/8七已有Jun，API姓名拆分/合并错误不转写正式作者，MixedSN为其他作者2020 arXiv直接HSI候选、PDF下载未读。旧简称989匹配245共同作者完整名得75单一易重名串/零多名桥接，只元数据，不扩大19摘要暂排＋1旧决定/969元数据范围结论。来源待核现为ORCID2/DBLP9/Scholar6/个人机构9，互相重叠不相加；代码仅官方URL。[证据](sources/jun-zhou-mangrove-solar-coauthor-locators-2026-10-12.json)。
 
+GSFus/SCFus、GF-3DDA、两阶段自监督复原与NSSNN五既有条目，完整Griffith主要摘要已实际读并核Jun resolvedUser7205，确认任务/方法、仍摘要级。GSFus ℓ₂,₁和SCFus ℓ₁不同，不凭五同作者/BM3D合并；GF-3DDA为谱空统计域适配/ELM而非几何三维；两阶段明确HSI去噪、外部HSI训练可选，补去噪标签；NSSNN SSR/非局部crisscross结构与官方代码URL补齐。SNMF-Net机构17页本轮逐页阅读，与既存16页作者正文逐页文字/72dpi渲染一致，仅多机构封面，原全文与框架图不重复计；机构未标版本，封面2021与正式TGRS60/2022及目标ORCID分开。六分类确认、审计329，当前339确认/51暂定；周峻101全文/80摘要、原图304不变。SNMF详情移除旧代码审查事实/实现条件，历史源文件保留、代码只URL；L0复原主链接从CV改正式DOI，ref53仅补书目。共同作者API17/17有五已读Jun版本、11其他作者定位及一RhyDe HSI候选（有官方TGRS DOI），两PDF TLS失败尚未得正文、不判付费。[证据](sources/jun-zhou-restoration-fusion-primary-materials-2026-10-12.json)。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |

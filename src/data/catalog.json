@@ -33602,8 +33602,8 @@
       "output": "复原高光谱影像。",
       "mechanism": "低秩张量因子化保留全局结构，L0梯度正则保持边缘与空间稀疏变化。",
       "readingNote": "作者CV、Crossref和后续论文引文核验；正式TGRS57(12):10410–10425，未标全文。",
-      "paper": "https://www.xiongfuli.com/cv/cv.pdf",
-      "verifiedAt": "2026-10-10",
+      "paper": "https://doi.org/10.1109/TGRS.2019.2935150",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
@@ -33620,7 +33620,7 @@
         "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
         "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
         "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "limitations": "正式全文与完整数据/实验协议未核；当前仅作者书目及摘要级材料，不把实现核查作为资料条件。",
         "dataLinks": [],
         "evidence": [
           {
@@ -33646,6 +33646,14 @@
             "supports": [
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6459d086-91fb-4d97-b9e2-f93e73353708/content",
+            "checkedAt": "2026-10-12",
+            "level": "已读SNMF-Net原始参考书目",
+            "supports": [
+              "第17页ref53对应该正式题名、三作者、TGRS57(12):10410–10425/2019；只是书目互证，未读被引论文全文。"
             ]
           }
         ],
@@ -36506,29 +36514,29 @@
       "doi": "10.1109/tgrs.2021.3124240",
       "representation": "高光谱—多光谱融合：GSFus 在矩阵分解融合中对多光谱残差施加 ℓ₂,₁ 组稀疏约束，显式处理不同时间采集造成的局部空间/光谱变化。",
       "tags": [],
-      "summary": "GSFus 将高光谱和多光谱影像融合为高空间、高光谱分辨率结果，用残差组稀疏项建模局部跨影像变化，并以 BM3D 作为子空间系数先验。",
-      "input": "低空间分辨率高光谱影像与多光谱影像。",
-      "output": "高空间和高光谱分辨率融合影像。",
-      "mechanism": "矩阵分解建立融合模型；对多光谱残差施加 ℓ₂,₁ 范数以建模局部变化；plug-and-play 框架插入 BM3D 先验。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://doi.org/10.1109/TGRS.2021.3124240",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "GSFus以矩阵分解融合高光谱与多光谱图像，针对跨时相采集中的局部空间、光谱变化，在MSI残差上使用组稀疏约束，并插入BM3D先验。",
+      "input": "跨传感器、可能存在局部空间或光谱变化的HSI与MSI。",
+      "output": "同时具有较高空间与光谱分辨率的融合高光谱图像。",
+      "mechanism": "矩阵分解建立融合模型；对MSI残差施加ℓ₂,₁组稀疏约束，利用plug-and-play框架将BM3D作为子空间系数先验。",
+      "readingNote": "已实际读Griffith精确DOI原摘要：GSFus、ℓ₂,₁残差与BM3D，实验涉及有/无明显局部变化及全分辨率数据、七对照。机构2021记录与正式卷年2022分开；正文、数据名称与完整参数未核。",
+      "paper": "https://doi.org/10.1109/tgrs.2021.3124240",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-reconstruction",
           "unsupervised-hsi-fusion"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在高光谱—多光谱融合中处理异时采集造成的局部跨影像变化？",
-        "datasets": "官方摘要报告含明显/无明显局部变化的两类数据及全分辨率数据集；具体名称、划分和指标待全文核验。",
-        "experimentSetting": "比较有无局部变化和全分辨率数据上的融合效果，并与七种方法比较。",
-        "conclusions": "官方摘要报告 GSFus 在局部变化与全分辨率场景下优于对比方法；逐项数值和鲁棒性边界待全文核验。",
-        "limitations": "摘要未给出完整优化流程、参数、配准误差、数据许可和代码复现实验。",
+        "researchQuestion": "跨平台HSI/MSI存在局部时空变化时，如何保持融合重建质量？",
+        "datasets": "原摘要说明有/无明显局部变化两种数据与全分辨率数据；名称、尺寸、传感器和划分未给。",
+        "experimentSetting": "摘要报告比较七种融合方法；完整优化、参数、局部变化配置及逐项指标未核。",
+        "conclusions": "作者摘要报告GSFus融合效果优于所比较方法；未核具体数值、逐场景胜负或统计显著性。",
+        "limitations": "正文、完整优化、参数、配准误差及实验协议未核；不能把同作者SCFus的ℓ₁方法或协议迁到GSFus。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36557,6 +36565,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整原摘要（既存主要来源本轮实际阅读）",
+            "supports": [
+              "精确DOI与Jun resolvedUser7205属于本条；机构缩写不覆盖正式作者。",
+              "完整原摘要支持当前任务、输入输出及所列方法，仍非全文阅读。",
+              "具体正文、原图与未列协议未核；代码仅保留官方URL。"
+            ]
           }
         ],
         "versions": [
@@ -36569,7 +36587,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-74"
+        "methodFamilyId": "zhou-2022-title-74",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "当前任务、输入输出和方法由完整机构原摘要或实际已读SNMF机构正文支持；分类不等待代码检查或性能复现，未获取正文者仍摘要级。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "7cff1dc691ee7047947a304bc7ce042f3eed9f2d69bc14fe5dd907a9d135e2bc",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2021.3124240",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@article{zhou_74_hsi_2022,\n  title = {Fusion of Hyperspectral and Multispectral Images Accounting for Localized Inter-Image Changes},\n  author = {Xiyou Fu and Sen Jia and Meng Xu and Jun Zhou and Qingquan Li},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3124240}\n}\n"
     },
@@ -36589,29 +36625,29 @@
       "doi": "10.1109/tgrs.2021.3073699",
       "representation": "跨域高光谱分类：GF-3DDA 以 3D Gabor 去噪并构造 3D Sobel–Gabor、3D 导数高斯–Gabor 梯度特征，再用三维域适配降低场景域移。",
       "tags": [],
-      "summary": "GF-3DDA 将二维梯度算子扩展到高光谱空间—光谱结构，联合二阶和四阶统计描述进行三维域适配，并用多个 ELM 分类器融合输出。",
-      "input": "源域与目标域高光谱影像；目标域每类少量标注。",
-      "output": "目标域高光谱类别预测。",
-      "mechanism": "3D Gabor 去噪；3DSGG/3DDGG 提取梯度特征；三维域适配联合二阶、四阶统计量；多个 ELM 概率输出融合。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://ieeexplore.ieee.org/abstract/document/9417011",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "GF-3DDA针对目标域少标注HSI地物分类，用三维梯度特征和二/四阶统计描述适配源、目标域，再融合多个ELM的分类输出。",
+      "input": "有较多标注的源域与少量标注的目标域高光谱场景。",
+      "output": "目标域地物分类标签。",
+      "mechanism": "3D Gabor去噪后，将Sobel与导数高斯扩展为3DSGG/3DDGG谱空梯度；域适配联合二阶/四阶统计描述，多个ELM的概率式输出融合。",
+      "readingNote": "已实际读Griffith完整原摘要，明确谱空三维梯度、统计域适配与ELM，不把3-D名称当几何三维任务。四数据各含两场景；每类目标10标注的摘要准确率保留为摘要报告，正文划分未核。",
+      "paper": "https://doi.org/10.1109/tgrs.2021.3073699",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "domain-adaptation",
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何用梯度特征和三维统计域适配缓解跨场景高光谱分类的域移？",
-        "datasets": "官方摘要列出 Pavia、Shanghai–Hangzhou、Indiana 和 Houston 四组双场景数据。",
-        "experimentSetting": "目标域每类仅十个标注样本；四组数据上进行跨域分类比较。",
-        "conclusions": "官方摘要报告四组数据准确率分别为93.31%、84.35%、69.32%和80.06%；完整实验设置和指标定义待全文核验。",
-        "limitations": "摘要未给出源/目标场景具体划分、ELM配置、代码许可和完整消融。",
+        "researchQuestion": "如何以梯度判别特征和高阶统计适配减少HSI源域/目标域偏移？",
+        "datasets": "Pavia、Shanghai–Hangzhou、Indiana、Houston，每个数据包含两场景；具体区域、尺寸与源/目标分配未核。",
+        "experimentSetting": "原摘要报告目标域每类十个标注；四数据分类准确率按顺序93.31%、84.35%、69.32%、80.06%。源域样本、随机划分、ELM配置和消融正文未核。",
+        "conclusions": "作者摘要报告上述少标注准确率与域适配效果；不当逐项实验表、跨划分统计或几何三维重建证据。",
+        "limitations": "正文、源/目标场景具体划分、ELM配置和完整消融未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36648,6 +36684,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整原摘要（既存主要来源本轮实际阅读）",
+            "supports": [
+              "精确DOI与Jun resolvedUser7205属于本条；机构缩写不覆盖正式作者。",
+              "完整原摘要支持当前任务、输入输出及所列方法，仍非全文阅读。",
+              "具体正文、原图与未列协议未核；代码仅保留官方URL。"
+            ]
           }
         ],
         "versions": [
@@ -36660,7 +36706,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-75"
+        "methodFamilyId": "zhou-2022-title-75",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "当前任务、输入输出和方法由完整机构原摘要或实际已读SNMF机构正文支持；分类不等待代码检查或性能复现，未获取正文者仍摘要级。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "81249765264d6e8783958e8a7cb43eecd9a203bb53f9cf5338abf2bd5cd68b17",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2021.3073699",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@article{zhou_75_hsi_2022,\n  title = {Gradient Feature-Oriented 3-D Domain Adaptation for Hyperspectral Image Classification},\n  author = {Sen Jia and Xiaomei Liu and Meng Xu and Qiao Yan and Jun Zhou and Xiuping Jia and Qingquan Li},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3073699}\n}\n"
     },
@@ -36680,29 +36744,30 @@
       "doi": "10.1109/tgrs.2021.3137313",
       "representation": "高光谱去噪：两阶段学习先用损坏—干净图像预训练去噪网络，再用目标噪声高光谱的邻近波段构成训练对进行自监督微调。",
       "tags": [],
-      "summary": "该方法不改动为灰度/RGB设计的网络结构，而是在预训练后利用目标高光谱相邻波段的相关性进行自监督微调，把光谱信息注入去噪器。",
-      "input": "预训练阶段的损坏/干净图像对；微调阶段目标噪声高光谱及其相邻波段。",
-      "output": "恢复后的高光谱影像。",
-      "mechanism": "第一阶段监督预训练去噪 CNN；第二阶段从目标噪声 HSI 的邻近波段构造 noisy-noisy 训练对并自监督微调。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://www.researchgate.net/publication/357261821_Hyperspectral_Image_Restoration_with_Self-supervised_Learning_A_Two-stage_Training_Approach",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "以两阶段训练适配HSI去噪：先用污染/干净图像对预训练去噪CNN，再从目标含噪HSI的邻近波段构造训练对，自监督微调以引入光谱相关。",
+      "input": "第一阶段成对污染/干净图像；第二阶段目标含噪HSI的邻近波段图像。",
+      "output": "去噪后的高光谱图像。",
+      "mechanism": "通过目标HSI邻近波段训练对将谱相关引入现有去噪CNN；先预训练、后自监督微调，无须依赖修改为专用HSI网络，外部HSI训练集可选而非强制。",
+      "readingNote": "完整机构原摘要已实际读，明确去噪任务与两阶段训练；不推测邻近波段噪声独立性、真实干净标签或训练集名单。机构2021与正式卷2022分开，仍摘要级。",
+      "paper": "https://doi.org/10.1109/tgrs.2021.3137313",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-data-restoration",
-          "self-supervised-reconstruction"
+          "self-supervised-reconstruction",
+          "spectral-denoising"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何通过预训练加邻近波段自监督微调适配高光谱去噪，而无需改造网络结构？",
-        "datasets": "公开摘要报告预训练数据与目标噪声 HSI；具体数据集、噪声设置和指标待全文核验。",
-        "experimentSetting": "两阶段训练：损坏—干净对预训练，目标 HSI 邻近波段自监督微调；可适配多种图像去噪网络。",
-        "conclusions": "公开摘要报告该方法具有较强适应性，外部高光谱训练集可选而非必需；具体性能和泛化边界待全文核验。",
-        "limitations": "摘要未给出网络清单、邻近波段构造细节、数据统计、代码和完整实验。",
+        "researchQuestion": "如何利用目标HSI的谱相关适配普通去噪网络并降低外部HSI训练数据依赖？",
+        "datasets": "原摘要未列具体数据、网络名单及样本数量；外部HSI训练集可选而非必须。",
+        "experimentSetting": "第一阶段污染/干净成对预训练，第二阶段目标噪声HSI邻近波段对自监督微调；邻域构造、噪声模型和训练参数未核。",
+        "conclusions": "作者摘要报告与当时方法竞争的去噪性能；未核逐场景、噪声条件或具体数值。",
+        "limitations": "全文、网络清单、邻近波段构造、噪声条件和完整实验未核；不从self-supervised名称推断噪声独立性。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36731,6 +36796,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整原摘要（既存主要来源本轮实际阅读）",
+            "supports": [
+              "精确DOI与Jun resolvedUser7205属于本条；机构缩写不覆盖正式作者。",
+              "完整原摘要支持当前任务、输入输出及所列方法，仍非全文阅读。",
+              "具体正文、原图与未列协议未核；代码仅保留官方URL。"
+            ]
           }
         ],
         "versions": [
@@ -36743,7 +36818,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-76"
+        "methodFamilyId": "zhou-2022-title-76",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "当前任务、输入输出和方法由完整机构原摘要或实际已读SNMF机构正文支持；分类不等待代码检查或性能复现，未获取正文者仍摘要级。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "2804283e1009d47585e302ebd4087f4915ce4885e7efccc4e6e4b8d3f9615434",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2021.3137313",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@article{zhou_76_hsi_2022,\n  title = {Hyperspectral Image Restoration With Self-Supervised Learning: A Two-Stage Training Approach},\n  author = {Yuntao Qian and Honglin Zhu and Ling Chen and Jun Zhou},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3137313}\n}\n"
     },
@@ -36939,29 +37032,29 @@
       "doi": "10.1109/tgrs.2022.3217097",
       "representation": "高光谱去噪：NSSNN 在残差 U-Net 中嵌入空间—光谱循环块和非局部自相似块，同时建模空间—光谱、全局光谱及长程空间相关。",
       "tags": [],
-      "summary": "NSSNN 以 3D 卷积、轻量循环和 highway 网络提取空间—光谱及全局光谱关系，以 crisscross attention 捕获非局部空间上下文。",
-      "input": "含噪高光谱影像。",
-      "output": "去噪高光谱影像。",
-      "mechanism": "残差 U-Net 集成 SSR 块与 NSS 块；SSR 块建模空间—光谱/全局光谱相关，NSS 块用 crisscross attention 建模长程空间。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://www.researchgate.net/publication/365116412_Nonlocal_Spatial-Spectral_Neural_Network_for_Hyperspectral_Image_Denoising",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "NSSNN在残差U-Net中联合建模HSI空间—光谱相关、全局谱相关与非局部空间相关，用SSR和NSS模块完成高光谱去噪。",
+      "input": "含噪高光谱图像。",
+      "output": "去噪后的高光谱图像。",
+      "mechanism": "残差U-Net中的SSR块组合3D卷积、light recurrence与highway网络，建模谱空/全局谱相关；NSS块用crisscross attention利用长程空间上下文。",
+      "readingNote": "已实际读Griffith完整原摘要，明确三类相关及SSR/NSS结构；只保留原摘要官方代码URL，不检查实现。合成/真实数据报告不代替具体数据与训练协议，正文未核。",
+      "paper": "https://doi.org/10.1109/tgrs.2022.3217097",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
           "nonlocal-spatial-priors"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在统一网络中同时利用空间—光谱、全局光谱和非局部空间相关？",
-        "datasets": "公开摘要报告合成和真实数据集实验；数据名称、噪声设置和指标待全文核验。",
-        "experimentSetting": "残差 U-Net、SSR 块、NSS 块联合进行高光谱去噪。",
-        "conclusions": "公开摘要报告在合成和真实数据上优于对比方法，并提供代码仓库；逐项指标待全文核验。",
-        "limitations": "摘要未给出完整训练配置、数据统计、速度和代码复现细节。",
+        "researchQuestion": "如何在一个网络中联合利用局部谱空、全局光谱与非局部空间相关去噪？",
+        "datasets": "原摘要报告合成及真实数据实验，未命名具体数据或噪声配置。",
+        "experimentSetting": "摘要级结构和数据类型已核；训练配置、网络规模、速度和逐项性能未核。",
+        "conclusions": "作者摘要报告优于所比较方法的去噪效果；不补未经核验的具体数值、耗时或全条件优势。",
+        "limitations": "正文、训练配置、具体数据/噪声统计、速度和完整实验未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36990,6 +37083,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整原摘要（既存主要来源本轮实际阅读）",
+            "supports": [
+              "精确DOI与Jun resolvedUser7205属于本条；机构缩写不覆盖正式作者。",
+              "完整原摘要支持当前任务、输入输出及所列方法，仍非全文阅读。",
+              "具体正文、原图与未列协议未核；代码仅保留官方URL。"
+            ]
           }
         ],
         "versions": [
@@ -37002,9 +37105,28 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-78"
+        "methodFamilyId": "zhou-2022-title-78",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "当前任务、输入输出和方法由完整机构原摘要或实际已读SNMF机构正文支持；分类不等待代码检查或性能复现，未获取正文者仍摘要级。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "cdf340b3b737cebc49f9c76ff4f65bc89d5c7d8335ad3b16edba28e5c021d0ed",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2022.3217097",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{zhou_78_hsi_2022,\n  title = {Nonlocal Spatial–Spectral Neural Network for Hyperspectral Image Denoising},\n  author = {Guanyiman Fu and Fengchao Xiong and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2022.3217097}\n}\n"
+      "citation": "@article{zhou_78_hsi_2022,\n  title = {Nonlocal Spatial–Spectral Neural Network for Hyperspectral Image Denoising},\n  author = {Guanyiman Fu and Fengchao Xiong and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2022.3217097}\n}\n",
+      "code": "https://github.com/lronkitty/NSSNN"
     },
     {
       "id": "zhou-79-hsi-2022",
@@ -37218,32 +37340,30 @@
       "doi": "10.1109/tgrs.2021.3081177",
       "representation": "高光谱解混：SNMF-Net 将 Lp 稀疏约束非负矩阵分解展开为交替端元—丰度网络，结合线性光谱混合模型、优化算法和稀疏先验。",
       "tags": [],
-      "summary": "SNMF-Net 交替预测端元和丰度，网络参数与 Lp-NMF 的交替优化步骤对应，保持物理可解释性并支持端到端学习。",
-      "input": "高光谱像元光谱。",
-      "output": "端元光谱与丰度分布。",
-      "mechanism": "基于线性光谱混合模型，交替 End-Net 和 Abun-Net 展开 Lp-NMF 优化，融入非负性、稀疏性等先验。",
-      "readingNote": "已通读16页作者稿摘要、引言、II–V、参考文献及全部图表；核对Figure1与三套真实数据SAD表。公式29激活导数和37 GMC约束存在可核数学疑点，独立数值例子与代码差异已留证；仅20轮CPU代码核验，未完成论文性能复现或出版社逐字对比。",
-      "paper": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
-      "verifiedAt": "2026-10-10",
+      "summary": "SNMF-Net按Lp稀疏NMF的交替优化联合预测端元与丰度，将线性光谱混合模型、非负/和为一约束与层间可学习参数嵌入可解释网络。",
+      "input": "高光谱像元光谱矩阵；VCA/FCLS或NMF提供初始端元与丰度。",
+      "output": "联合估计的端元光谱矩阵与各像元丰度。",
+      "mechanism": "End-Net先以当前丰度更新端元，Abun-Net用新端元与一次近似GST更新丰度；ReLU非负约束与归一化满足模型约束。步长、λ/p及W₂按层学习，以所有层重建误差训练；W₂由VCA端元的GMC问题初始化后继续学习。",
+      "readingNote": "本轮逐页读17页Griffith未标版本机构稿（1封面＋16正文），含Fig1–15、TableI–III和56参考书目。16页正文与既存作者稿逐页去空白文本及72dpi渲染一致，不重复计库内全文或原图。封面Published2021与正式TGRS60/2022分开；最终VoR未读。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6459d086-91fb-4d97-b9e2-f93e73353708/content",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
           "spectral-unmixing",
           "deep-unfolding"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "直接HSI盲解混，LMM与Lp-NMF的端元/丰度交替优化展开；任务和方法依据论文，不以历史实现审查作为分类条件。",
         "readingProgress": "full_text_read",
         "verificationStatus": "full_text_verified",
-        "researchQuestion": "如何把线性混合模型和稀疏 NMF 优化展开为可解释的高光谱解混网络？",
-        "datasets": "USGS六端元合成64×64×224，0.38–2.5μm；Jasper Ridge 100×100×198四端元、HYDICE Urban 307×307×162四端元、Washington DC Mall 150×150×191五端元。均为作者稿协议，裁剪位置与真值来源仍需复现核验。",
-        "experimentSetting": "九层；合成与三真实场景各随机500像元训练。合成SNR15/20/25/30dB及无噪声；30dB层数3–30和样本数64–4096消融，GMC与VCA/NMF初始化对照。作者稿未找到完整学习率、轮数或随机重复说明，不把代码默认500轮作为正文明确协议。",
-        "conclusions": "作者稿三真实数据表的平均SAD分别0.0663/0.1753/0.1657，为各表最低；不表示各材料均最好。真实参考端元为选出的可能纯像元，丰度由CVX MATLAB估计，非独立实测真值。样本消融来自同幅合成图，不证明跨场景泛化。",
-        "limitations": "公开 PDF 为作者版本；正式出版版本差异、代码许可和完整实验边界待核验。 当前代码包更新顺序、固定初始丰度右乘项、损失缩放与论文指定公式不同；归一化加1e-4不严格和为1。初始化对齐使用参考端元，需单列；NumPy标量打印失败。 完整作者稿式29复合激活导数与式23不一致；式37写全矩阵单位约束、代码只约束对角，不能当成同一GMC问题。DC Mall正文材料结论及Figure15数据集图注与表/上下文冲突；标准差百分号和重复次数未明。",
-        "dataLinks": [
-          "https://www.xiongfuli.com/cv/code/SNMF.zip"
-        ],
+        "researchQuestion": "如何同时展开端元和丰度的Lp-NMF优化，以可解释网络完成高光谱盲解混？",
+        "datasets": "USGS六端元合成64×64×224（0.38–2.5μm）；Jasper Ridge 100×100×198四端元；HYDICE Urban 307×307×162四端元；Washington DC Mall 150×150×191五端元。真实参考端元是选择的可能纯像元，参考丰度由CVX MATLAB估计，非独立实测真值。",
+        "experimentSetting": "K=9；同幅合成/真实场景随机500像元训练。合成SNR15/20/25/30dB及无噪声，K3–30/间隔3与样本数64/256/500/1000/2000/4096消融；比较GMC及VCA/NMF初始化。正文未列完整学习率、轮数或重复次数；不把同场景训练当跨场景泛化验证。",
+        "conclusions": "TableI–III平均SAD为0.0663、0.1753、0.1657，分别为该表最低；各材料并非全部最优。真实数据比较基于作者定义参考；Urban未列UnDIP（正文解释只能提取一端元）。同场景500像元样本实验不是独立跨场景测试。",
+        "limitations": "机构稿未标AM/VoR，最终出版社版未读。裁剪位置、训练随机性、学习率/轮数和重复次数未完整提供；标准差带百分号按原表保留。DC Mall正文材料胜负叙述与TableIII不同，Figure15图注写Urban但上下文/五材料是DC Mall，均保留原文差异。公式/变量按原印刷记录，不推测补齐。",
+        "dataLinks": [],
         "evidence": [
           {
             "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
@@ -37264,15 +37384,6 @@
             ]
           },
           {
-            "url": "https://www.xiongfuli.com/cv/code/SNMF.zip",
-            "checkedAt": "2026-10-10",
-            "level": "author_code_static_audit_and_partial_cpu_run",
-            "supports": [
-              "原SNMF.py与UnmixingUtils.py、合成数据与索引文件；归档哈希固定。",
-              "20轮CPU训练及checkpoint前向核验，不等于论文结果复现。"
-            ]
-          },
-          {
             "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
             "checkedAt": "2026-10-10",
             "level": "author_full_text_read_with_original_figures_and_formula_audit",
@@ -37280,6 +37391,26 @@
               "16页作者稿II–V与Figure1–15/TableI–III完整阅读。",
               "三套真实数据与同幅图训练、参考端元/丰度来源。",
               "公式29/37原页与独立数学探针；全文学习笔记及结构化核验记录。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6459d086-91fb-4d97-b9e2-f93e73353708/content",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith未标版本公开稿17页全文及原页视觉核验",
+            "supports": [
+              "1封面＋16正文逐页实际阅读，Fig1–15、三SAD表与全部56引用。",
+              "联合端元/丰度展开、初始化、训练/数据协议及真实参考定义。",
+              "封面/首页/履历与注册目标ORCID支持身份；机构稿并未标AM或VoR。",
+              "正文与旧16页作者稿逐页文字/72dpi渲染一致，不重复计全文或原图。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2021.3081177",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref正式书目与目标ORCID本轮核验",
+            "supports": [
+              "正式TGRS60:1–16、2022和五作者；目标Jun ORCID0000-0001-5822-8233。",
+              "机构封面2021与正式卷年2022分别保留，注册关系为空不把公开稿称最终VoR。"
             ]
           }
         ],
@@ -37297,10 +37428,38 @@
             "type": "作者公开稿",
             "url": "https://www.xiongfuli.com/cv/paper/TGRS-2021.pdf",
             "year": 2021,
-            "relation": "16页作者稿完整阅读，图表与公式原页核验；正式期刊年份2022，出版社版本差异与完整复现待核。"
+            "relation": "既存16页作者稿全文已读；本轮机构17页的16正文页逐页文字/渲染相同。正式2022版未读；不把实现核查或性能复现作为本阶段资料条件。"
+          },
+          {
+            "id": "zhou-80-hsi-2022-griffith-unlabelled",
+            "type": "机构公开稿（未标版本）",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6459d086-91fb-4d97-b9e2-f93e73353708/content",
+            "doi": "10.1109/tgrs.2021.3081177",
+            "year": 2021,
+            "readingProgress": "full_text_read",
+            "relation": "17页含机构封面；Published2021不是正式卷年2022。16正文页与已读作者稿逐页去空白文字及72dpi渲染相同，文件并非逐字节相同；未确认最终VoR。",
+            "contentComparisonEvidence": "research/hyperspectral/sources/jun-zhou-restoration-fusion-primary-materials-2026-10-12.json"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-80"
+        "methodFamilyId": "zhou-2022-title-80",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "当前任务、输入输出和方法由完整机构原摘要或实际已读SNMF机构正文支持；分类不等待代码检查或性能复现，未获取正文者仍摘要级。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "f3174e387b8952926584d3b3c00dc54d0f1730078b241bf32fca455ea3374320",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/6459d086-91fb-4d97-b9e2-f93e73353708/content",
+            "https://api.crossref.org/works/10.1109/TGRS.2021.3081177"
+          ]
+        }
       },
       "citation": "@article{zhou_80_hsi_2022,\n  title = {SNMF-Net: Learning a Deep Alternating Neural Network for Hyperspectral Unmixing},\n  author = {Fengchao Xiong and Jun Zhou and Shuyin Tao and Jianfeng Lu and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3081177}\n}\n",
       "code": "https://www.xiongfuli.com/cv/code/SNMF.zip",
@@ -37313,7 +37472,7 @@
           "attribution": "Fengchao Xiong, Jun Zhou, Shuyin Tao, Jianfeng Lu, Yuntao Qian · IEEE Transactions on Geoscience and Remote Sensing 2022",
           "verifiedAt": "2026-10-10",
           "verificationStatus": "verified",
-          "verificationNote": "人工核对16页作者稿PDF第3页Figure1，200dpi原图裁切；图示端元先更新，不能替代当前代码执行顺序核验；非生成图。",
+          "verificationNote": "原16页作者稿PDF第3页Figure1、200dpi原图裁切；本轮机构稿PDF第4页同一图视觉复核，正文页文字与72dpi渲染一致。保留原图来源/页码，不新增同一图或重绘。",
           "path": "figures/zhou-80-hsi-2022/framework-author-v1.png",
           "width": 1443,
           "height": 752,
@@ -37337,29 +37496,29 @@
       "doi": "10.1109/lgrs.2022.3146248",
       "representation": "高光谱—多光谱融合：SCFus 以矩阵分解建模多平台 HSI/MSI，并用 MSI 残差的 ℓ1 稀疏约束处理局部变化，以 BM3D 即插即用先验正则化子空间系数。",
       "tags": [],
-      "summary": "SCFus 面向不同传感器的 HSI/MSI 融合，使用矩阵分解、MSI 残差 ℓ1 范数和 BM3D 子空间先验；公开摘要片段报告其融合效果优于对比方法。",
-      "input": "来自不同传感器的低空间分辨率 HSI 与高空间分辨率 MSI。",
-      "output": "同时具有较高空间和光谱分辨率的融合 HSI。",
-      "mechanism": "矩阵分解建立融合模型；MSI 残差施加 ℓ1 稀疏约束以刻画多平台局部变化；以 plug-and-play BM3D 作为子空间系数先验。",
-      "readingNote": "ORCID题名、Crossref正式书目与ResearchGate作者主页公开摘要片段核验；未阅读全文。",
-      "paper": "https://www.researchgate.net/profile/Meng-Xu-24",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "summary": "SCFus基于矩阵分解融合跨传感器HSI与MSI，以MSI残差ℓ₁稀疏约束处理局部变化，并将BM3D作为子空间系数的plug-and-play先验。",
+      "input": "来自不同传感器、可能存在局部变化的HSI与MSI。",
+      "output": "融合得到的高空间、高光谱分辨率图像。",
+      "mechanism": "MSI残差用ℓ₁范数约束局部变化；矩阵分解的子空间系数使用plug-and-play BM3D先验。",
+      "readingNote": "Griffith完整原摘要已实际读，不再仅记摘要片段；明确SCFus、ℓ₁残差、矩阵分解和BM3D。正文及逐项实验未核，和GSFus的正式版本关系未由同作者/近题推断。",
+      "paper": "https://doi.org/10.1109/lgrs.2022.3146248",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-reconstruction",
           "unsupervised-hsi-fusion"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱—多光谱融合任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "如何在多平台 HSI/MSI 融合中用稀疏残差和 BM3D 先验处理局部变化？",
-        "datasets": "公开摘要片段仅报告与对比方法的融合实验；数据集名称、规模和划分待全文核验。",
-        "experimentSetting": "不同传感器 HSI/MSI 融合；矩阵分解、MSI 残差 ℓ1 约束和 plug-and-play BM3D 先验。",
-        "conclusions": "公开摘要片段报告 SCFus 融合效果优于对比方法；逐项指标和场景差异待全文核验。",
-        "limitations": "公开摘要片段未给出数据集、完整优化、参数、代码和逐项性能；不把摘要片段升级为全文证据。",
+        "researchQuestion": "局部变化影响跨平台HSI/MSI融合时，如何用稀疏残差和先验重建HSI？",
+        "datasets": "完整原摘要未命名实际数据集、尺寸或传感器，保留待核。",
+        "experimentSetting": "原摘要仅报告与竞争方法的融合效果比较，未提供逐项数值与完整参数。",
+        "conclusions": "作者摘要报告SCFus融合效果优于对照；本轮没有全文或性能复现证据。",
+        "limitations": "实际数据、完整优化、参数与逐项性能未核；ℓ₁与GSFus的ℓ₂,₁是原摘要不同方法，未证会刊扩展或相同协议。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37388,6 +37547,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整原摘要（既存主要来源本轮实际阅读）",
+            "supports": [
+              "精确DOI与Jun resolvedUser7205属于本条；机构缩写不覆盖正式作者。",
+              "完整原摘要支持当前任务、输入输出及所列方法，仍非全文阅读。",
+              "具体正文、原图与未列协议未核；代码仅保留官方URL。"
+            ]
           }
         ],
         "versions": [
@@ -37400,7 +37569,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-81"
+        "methodFamilyId": "zhou-2022-title-81",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "当前任务、输入输出和方法由完整机构原摘要或实际已读SNMF机构正文支持；分类不等待代码检查或性能复现，未获取正文者仍摘要级。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c4ac2757fc5437c6ad6e58b9d64bd433bd739fe77b8e2b8e2c370fa91e998dc1",
+          "sourceUrls": [
+            "https://doi.org/10.1109/lgrs.2022.3146248",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@article{zhou_81_hsi_2022,\n  title = {Sparsity Constrained Fusion of Hyperspectral and Multispectral Images},\n  author = {Xiyou Fu and Sen Jia and Meng Xu and Jun Zhou and Qingquan Li},\n  year = {2022},\n  doi = {10.1109/lgrs.2022.3146248}\n}\n"
     },
@@ -48722,6 +48909,7 @@
         "hsi-reweighted-sparse-lowrank-denoising-icip-2018",
         "hsi-l0-gradient-lowrank-restoration-2019",
         "deep-pnp-hsi-anomaly-2021",
+        "zhou-76-hsi-2022",
         "zhou-77-hsi-2022",
         "zhou-78-hsi-2022",
         "zhou-79-hsi-2022",
