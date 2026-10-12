@@ -950,3 +950,7 @@
 - 2026-10-12 / jun-zhou-remaining-institution-materials-2026-10-12：新增0；48既有ID/50机构记录补身份书目与当前附件证据，37 SWORD/6双LICENSE/6空bundle/1可读AM。DCA14页全读/三原图，周峻101全文/80摘要、总库390/原图304。两2019异DOI书章节关系候选，不当确认重复或新独立成果；Wiley章节会议引用纠正、四书章节独立分组。引用新增候选1、作者关系候选2，作者/领域覆盖未闭环。[证据及边界](sources/jun-zhou-remaining-institution-materials-2026-10-12.json)。
 
 - 2026-10-12 / jun-zhou-chapter-relations-and-early-scope-2026-10-12：新增0/更新4；NSP/KUM与Shearlet由正式HSI异常题名补任务，前者复读主机构摘要、后者补已存resolvedUser7205，方法仍二级摘要。分类327确认/63暂定/0待、审计317，不代表作者目录完成。两章节关系继承pending；生物炭另书年份旧2018改注册2019。四出版社/IRMA及两arXiv请求429，total未知，不当收费/零结果；旧989元数据指定姓名定位无匹配不称全集。[证据](sources/jun-zhou-chapter-relations-and-early-scope-2026-10-12.json)。
+
+- 2026-10-12 / jun-zhou-author-bibliography-crosscheck-2026-10-12：新增0/更新2，Huixin完整4/4指定查询一既有Jun、一个其他作者HSI候选与两红外身份定位；不新增范围排除，MSP PDF已下载未读。168已有IDown书目定位与14版本/题名关联分开；DaSSP-Net出版社七作者/机构六名差异留证，提示模块<1%不当全部训练占比，补代码链接；CNHT旧代码审查只作历史。分类328确认/62暂定/0待、审计318，全文101/摘要80不变；另一作者查询仍超时/429，作者目录未闭环。[证据](sources/jun-zhou-author-bibliography-crosscheck-2026-10-12.json)。
+
+  同批追加Zhuanfeng Li完整1/1查询：仅已有HyperVision固定v3，十一作者/原摘要对照，不重下载或计新全文；两成功姓名查询共两已录Jun匹配，不能据此称作者全集或DaSSP-Net无公开版本。

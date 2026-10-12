@@ -32803,10 +32803,10 @@
       "summary": "从首帧局部高光谱块随机采样固定卷积核，堆叠响应为多通道表示，再以KCF在线定位更新；实验为三场景HSI/灰度/RGB对照。",
       "input": "首帧目标bbox与HSI视频；表1三HSI均14通道、512×272/30FPS，Gray取490nm单带；旁置RGB独立视频为对照，长度/分辨率不同。",
       "output": "各帧目标bbox与中心位置/响应；第三维为波长，不是3D几何。",
-      "mechanism": "首帧随机选10个6×6×14固定谱空块做卷积核，响应堆叠为10通道供Gaussian KCF核岭回归/FFT峰值定位，相关滤波模型在线EMA更新；卷积核不做离线梯度训练。源码same卷积后取第一谱片、随机正对角偏移及归一与论文描述差异单列。",
-      "readingNote": "arXiv1810.11819v1全部12页、式1–8、两表/六图注及18参考条目已读；Griffith AM12页与其逐页文字对照一致（首面仅侧标/空白差），正式Springer VoR未读。原目录ICIP/三作者错误更正为ICSM/五作者，补正式DOI。作者ICSM.zip24项CRC/hash已核、15关键MATLAB文件通读；缺X2Cube/X2Cube2、视频及随机seed，未运行复现。新增v1 Fig1/2原裁图。",
+      "mechanism": "首帧随机选10个6×6×14固定谱空块做卷积核，响应堆叠为10通道供Gaussian KCF核岭回归/FFT峰值定位，相关滤波模型在线EMA更新；卷积核不做离线梯度训练。",
+      "readingNote": "此前已读arXiv1810.11819v1全部12页、式1–8、两表/六图及18参考条目；Griffith AM12页与其逐页文字对照，正式Springer VoR未读。原目录ICIP/三作者已纠正为ICSM/五作者并补DOI、v1 Fig1/2原图。本轮Huixin限定arXiv查询再次返回同一五作者v1，仅元数据复核，不重复计新全文。代码只保留官方链接；早期代码审查留作历史证据，不再写入当前方法或资料完成条件。",
       "paper": "https://doi.org/10.1007/978-3-030-04375-9_26",
-      "verifiedAt": "2026-10-11",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "full_text_verified",
       "library": {
         "categoryIds": [
@@ -32822,9 +32822,9 @@
         "verificationStatus": "full_text_verified",
         "researchQuestion": "无需大规模离线CNN训练，如何从首帧高光谱模板构建卷积特征，利用KCF区分目标与相似颜色背景？",
         "datasets": "apple/deer/people三场景×Gray/RGB/HSI，共九序列；HSI182/114/641帧合937，14带/512×272，RGB422/230/676帧合1328、1980×1080。原16带/460–630nm、校准Photonfocus14或Ximea11与引言470–620nm/14差异保留；表中未见11带实验。不是后续35视频HOT基准，未取原视频。",
-        "experimentSetting": "MATLAB/i7-7700HQ2.8GHz/32GB；10固定随机核6×6×14，首帧GT位置/尺寸；base sample原文0.2–3倍、STC搜索6倍，其余承KCF。DP@20px与FPS，无IoU AUC/多seed/置信区间；源码参数/计时另核，未真实运行。",
+        "experimentSetting": "MATLAB/i7-7700HQ2.8GHz/32GB；10个固定随机核6×6×14，首帧GT位置/尺寸；base sample原文0.2–3倍、STC搜索6倍，其余承KCF。DP@20px与FPS，无IoU AUC/多seed/置信区间；仅论文协议与报告结果，未复现。",
         "conclusions": "表2 CNHT HSI DP@20px98.2%/1FPS，CNTGray92.7%/0.5FPS、KCFGray53.6%/278FPS；提升5.5/44.6百分点，正文83%为相对KCF约83.21%，非83百分点。1FPS低于采集30FPS；模态间尺寸/长度/视点与参数不同，不把结果当严格只改变光谱信息的控制实验或全领域SOTA。",
-        "limitations": "仅三场景，无外数据泛化/随机核seed或平均权重说明；VoR未读。式6/8的共轭/σ²括号、d重用、DLT/CNT/STC参考号错误留证；代码缺X2Cube/X2Cube2，same卷积取h(:,:,1)、正对角采样/归一/cosine窗口及choose/all返回接口与评测边界有缺口，未复算论文指标。论文/代码/视频权利分别核，不以CC0预印本转移其他载荷。",
+        "limitations": "仅三场景，无外部数据泛化、随机核seed或平均权重说明；正式VoR未读。式6/8的共轭/σ²括号、d重用及DLT/CNT/STC参考号错误仍按已读论文保留。不以代码依赖、完整性或可运行性作为目录/资料完成条件；官方代码仅链接，旧审查只保留历史来源。",
         "dataLinks": [],
         "evidence": [
           {
@@ -32887,6 +32887,15 @@
               "共同作者精确条目链接ICSM.zip、24项CRC/hash与15核心MATLAB阅读。",
               "缺转换函数、数据与seed；静态发现不当真实指标复现。"
             ]
+          },
+          {
+            "url": "https://export.arxiv.org/api/query",
+            "checkedAt": "2026-10-12",
+            "level": "Huixin指定姓名arXiv完整元数据定位（非新全文）",
+            "supports": [
+              "本查询4/4返回含1810.11819v1，五作者仍Kun Qian/Jun Zhou/Fengchao Xiong/Huixin Zhou/Juan Du，精确ID已录。",
+              "未访问作者代码；当前方法/实验与局限按此前已读v1/AM，不重复计新全文或新收录。"
+            ]
           }
         ],
         "versions": [
@@ -32928,9 +32937,9 @@
         ],
         "methodFamilyId": "hyperspectral-video-kcf",
         "classificationReview": {
-          "reviewedAt": "2026-10-11",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "v1/AM全文确认视频采集/跟踪任务与固定模板采样卷积+KCF方法；不把two-layer称谓当离线训练深网或三维几何。",
+          "rationale": "DaSSP-Net完整主要原摘要支持跟踪/统一表征/域适配，纠正提示模块占比的外推；出版社七作者与机构漏名分别保留。CNHT仅维持此前论文任务，当前方法与限制不使用历史代码审查作为完成条件。",
           "evidenceFields": [
             "title",
             "summary",
@@ -32939,8 +32948,9 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "dfb438ef3c8af4b645a5d1b63995b1228d1905a79ad6a67a2b9d8ab6cabfae77",
+          "evidenceDigest": "7a92ac5d1390f9fed0301a4df1003f69e698a1b3d6f07f505d907aca362052be",
           "sourceUrls": [
+            "https://export.arxiv.org/api/query",
             "https://arxiv.org/pdf/1810.11819v1",
             "https://research-repository.griffith.edu.au/server/api/core/bitstreams/b1b9d647-defc-48b4-a4f6-4c9a9f8289ee/content"
           ]
@@ -42920,32 +42930,32 @@
         "hyperspectral"
       ],
       "doi": "10.1016/j.patcog.2025.111389",
-      "representation": "多域高光谱目标跟踪：以域适配器保留域特定分布，以空间—光谱提示把不同波段数编码为统一表示并适配基础模型。",
+      "representation": "DaSSP-Net以预训练彩色视频基础模型、谱带数不变的空间—光谱提示和域适配器学习多域HSI跟踪表示；提示模块参数少于模型的1%。",
       "tags": [],
-      "summary": "DaSSP-Net 面向 VIS、NIR 和 RedNIR 等多域高光谱视频，使用域适配器与波段数不变的空间—光谱提示模块，将统一表示送入基础模型；两阶段训练兼顾共享表示和域特定信息。",
-      "input": "多域高光谱视频，波段数和分布因传感器域而异。",
+      "summary": "面向不同传感器域的HSI视频跟踪，在彩色视频预训练基础模型前加入谱带数不变的空间—光谱提示，并用域适配器学习域特定分布。原摘要明确提示模块少于模型1%参数；不等同全部训练或适配参数占比。",
+      "input": "不同传感器/谱带数的HSI视频及假彩色表示；空间—光谱提示捕获HSI和假彩色图的全局交互。基础模型来自大规模彩色视频预训练；假彩生成规则及具体通道未由本摘要给出。",
       "output": "高光谱视频目标位置与跟踪置信度。",
-      "mechanism": "空间—光谱提示模块提取全局空间—光谱相关并编码任意波段数为固定长度，基础模型只需约1%参数适配；域适配器学习域特定分布；先跨域共训，再逐域微调适配器。",
-      "readingNote": "Google Scholar 主页记录、Crossref正式书目与 ScienceDirect 文章页面核验；页面提供方法和实验摘要信息，未阅读全文。",
+      "mechanism": "谱带数不变的空间—光谱提示将多域HSI信息导入彩色视频预训练基础模型，提示模块参数少于模型1%，捕获HSI与假彩色图的全局谱空交互；域适配器学习每域特定分布，兼顾共享与域特定表征。此前页面的两阶段训练信息保留为原页面证据，不把该占比当所有可训练参数。",
+      "readingNote": "本轮完整阅读已存Griffith原摘要并重核出版社登记：Pattern Recognition162:111389，印刷卷年2025年6月；Elsevier coredata日期2025-06-30属于元数据，未取得正文/摘要。Crossref正式七作者含Jianfeng Lu，机构六作者名单漏列，保留正式七人，不当版本作者变更。纠正“约1%全部适配参数”为提示模块少于模型1%；当前仍摘要级。官方代码只记录原摘要给出的链接，未访问仓库。",
       "paper": "https://www.sciencedirect.com/science/article/pii/S0031320325000494",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_institutional_abstract_and_publisher_bibliography",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
           "representation-learning",
           "domain-adaptation"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与 ScienceDirect 文章页面均明确多域高光谱目标跟踪。",
+        "relationNote": "Griffith完整原摘要明确多域高光谱跟踪、统一表征学习和域适配；现有三个标签均有直接依据，任务确认不等于全文或精确训练参数比例已核。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何用单一模型学习跨不同波段数和分布的高光谱视频跟踪表示？",
         "datasets": "HOT2020、HOT2022、HOT2023 和 IMEC25；页面报告四个数据集 AUC 分别为0.682、0.554、0.678、0.705。",
         "experimentSetting": "VIS、NIR、RedNIR 多域联合训练；空间—光谱提示与域适配器分两阶段优化。",
         "conclusions": "页面报告 DaSSP-Net 在四个数据集取得有竞争力的跟踪性能，并可新增域适配器而避免重训全部参数。",
-        "limitations": "未阅读全文；训练细节、基线、标注统计、代码、域新增成本和逐项消融仍待核验。",
+        "limitations": "未取得正式正文。全部可训练参数、提示/适配器冻结策略、假彩色生成、域新增成本、划分与消融仍未知。原摘要仅明确提示模块占模型参数少于1%，不得推成全部训练参数占比；旧ScienceDirect页面数据名/AUC仍是原来源证据，本次机构摘要未给数字。机构漏列一作者与正式七作者名单分别保留；代码只链接，不作为完成条件。",
         "dataLinks": [],
         "evidence": [
           {
@@ -42974,6 +42984,34 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=LICENSE,LICENSE。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.patcog.2025.111389",
+            "checkedAt": "2026-10-12",
+            "level": "出版社注册正式作者与卷页重新核验",
+            "supports": [
+              "正式七作者按顺序为Zhuanfeng Li, Fengchao Xiong, Jianfeng Lu, Jing Wang, Diqi Chen, Jun Zhou, Yuntao Qian；包含Jianfeng Lu，不据六人机构记录删除。",
+              "Pattern Recognition162:111389，published-print2025年6月；relation空，无作者变更版本声明。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/b42f6bea-5b20-4884-b7ac-2235892a4304",
+            "checkedAt": "2026-10-12",
+            "level": "已存Griffith完整原摘要复读（原捕获2026-10-12）",
+            "supports": [
+              "DaSSP-Net：彩色视频预训练基础模型、谱带数不变谱空提示、HSI与假彩色交互、域适配器。",
+              "提示模块参数少于模型1%，不等于全部适配/训练参数占比。",
+              "当前机构六作者省略Jianfeng Lu；No Full Text/双LICENSE；仅记原摘要官方代码链接，不访问代码。"
+            ]
+          },
+          {
+            "url": "https://api.elsevier.com/content/article/pii/S0031320325000494?httpAccept=text%2Fxml",
+            "checkedAt": "2026-10-12",
+            "level": "Elsevier出版社coredata元数据（非正文/摘要）",
+            "supports": [
+              "HTTP200只取得1824字节XML coredata、题名、June2025和coverDate2025-06-30，openaccess0；无原摘要或正文。",
+              "openaccess标志和机构附件状态不证明所有公共版本不存在。"
+            ]
           }
         ],
         "versions": [
@@ -42983,12 +43021,32 @@
             "url": "https://doi.org/10.1016/j.patcog.2025.111389",
             "doi": "10.1016/j.patcog.2025.111389",
             "year": 2025,
-            "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
+            "relation": "正式Pattern Recognition162:111389/2025年6月，七作者包含Jianfeng Lu；六人机构目录为漏名差异，不认定作者变化或另一版本。正文未得/未读。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-multi-domain-universal-representation-lear-2025"
+        "methodFamilyId": "zhou-scholar-multi-domain-universal-representation-lear-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "DaSSP-Net完整主要原摘要支持跟踪/统一表征/域适配，纠正提示模块占比的外推；出版社七作者与机构漏名分别保留。CNHT仅维持此前论文任务，当前方法与限制不使用历史代码审查作为完成条件。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "9fcc5644f78a89eb24324bd162c155c9353a8ebab9f199aed9781c0c2cc08b4c",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/items/b42f6bea-5b20-4884-b7ac-2235892a4304",
+            "https://api.crossref.org/works/10.1016/j.patcog.2025.111389",
+            "https://api.elsevier.com/content/article/pii/S0031320325000494?httpAccept=text%2Fxml"
+          ]
+        }
       },
-      "citation": "@article{zhou-scholar-multi-domain-universal-representation-lear-2025,\n  title = {Multi-domain universal representation learning for hyperspectral object tracking},\n  author = {Zhuanfeng Li and Fengchao Xiong and Jianfeng Lu and Jing Wang and Diqi Chen and Jun Zhou and Yuntao Qian},\n  year = {2025},\n  doi = {10.1016/j.patcog.2025.111389}\n}\n"
+      "citation": "@article{zhou-scholar-multi-domain-universal-representation-lear-2025,\n  title = {Multi-domain universal representation learning for hyperspectral object tracking},\n  author = {Zhuanfeng Li and Fengchao Xiong and Jianfeng Lu and Jing Wang and Diqi Chen and Jun Zhou and Yuntao Qian},\n  year = {2025},\n  doi = {10.1016/j.patcog.2025.111389}\n}\n",
+      "code": "https://github.com/hscv/DaSSP-Net"
     },
     {
       "id": "zhou-scholar-material-guided-siamese-fusion-network-for-2022",
