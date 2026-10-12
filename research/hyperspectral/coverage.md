@@ -980,3 +980,5 @@
 - 2026-10-12：七篇Jun主要完整原摘要确认，修正选带/重建/预训练/分割及Transformer方法边界；369确认/21暂定、审计359。HKU403/HAL四指定查询零不作付费或全网缺稿结论；代码只三URL，0新论文/全文/图，目录/历年覆盖继续。[证据](sources/jun-zhou-fusion-band-denoising-primary-2026-10-12.json)。
 
 - 2026-10-12：Attend关联博士论文第4章37页完整阅读（补35新章页），另读引言3页/出版清单1页；整理3章节原图及协议/结果，正式2019期刊仍摘要级，两会议稿只作关联。0新论文/正式全文，Jun102全文/79摘要，作者目录及历年覆盖继续。[证据](sources/jun-zhou-attend-thesis-chapter-full-reading-2026-10-12.json)。
+
+- 2026-10-12：河海官方共同作者页续核实验室16成果卡/5Jun关联，均已有映射；UEMM会议页PDF实际为旧v3同字节，正式范围继续未决。AAAI2025六作者/DOI关联补强，正式正文访问失败；三分割图接口未得。0新论文/唯一PDF/全文/库图，未以指定代表页证明全集或代码作为待办。[证据](sources/jun-zhou-hhu-author-publication-version-followup-2026-10-12.json)。
