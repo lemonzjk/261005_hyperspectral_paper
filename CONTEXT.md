@@ -17,8 +17,8 @@
 
 ## 当前状态
 
-- 总库415，402分类确认（审计392）、13暂定；182标签（任务71/方法98/应用13）。三维126，数据资源2，原图354。
-- 来源白名单287/arXiv27/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
+- 总库417，404分类确认（审计394）、13暂定；182标签（任务71/方法98/应用13）。三维126，数据资源2，原图356。
+- 来源白名单287/arXiv29/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
 - 来源范围、阅读深度、资料状态独立；PDF链接不表示已读，原图阻拦不表示全文付费。桌面/手机筛选与详情已核；dev可上传/替换≤10MB，FVMGN补图待核。
 - CVPR/ICCV/NeurIPS/ICML等指定查询有闭环，非全领域完成；矩阵只白名单，见coverage.md。
 
@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：Sen Jia指定arXiv53书目与谱题名查询41均无Jun字段（非作者全集；SUIT旧四作者版差异保留）。3篇原摘要/所用PDF首页与主图选读入普通arXiv：AGD-Net、MCT、少标注分类综述，各一主图；TCI/Neurocomputing仅书目关联。另40题名候选待核；3PDF/74页仅下载，0新全文，不访问代码。TIP索引摘要暂排、PR对象识别仍待。
+- 最新：高红民指定ORCID注册93项，4条Jun署名已映射；91标Hongmin Gao/2标Peipei Xu的ORCID位置差异保留。机构旧精选29条非全集；指定arXiv9含同名/简称，不批量认身份。SFA跨域HSI检测、DOCNN分类各一个版本/一主图入普通arXiv；GRSL仅书目关联。另29白名单题名待核，三分割输入仍待；2PDF/17页只下载，0新全文/代码访问。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。

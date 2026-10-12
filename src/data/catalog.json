@@ -54020,6 +54020,296 @@
         }
       },
       "citation": "@misc{few_label_hsi_dl_survey_arxiv_2021,\n  title = {A Survey: Deep Learning for Hyperspectral Image Classification with Few Labeled Samples},\n  author = {Sen Jia and Shuguo Jiang and Zhijie Lin and Nanying Li and Meng Xu and Shiqi Yu},\n  year = {2021},\n  eprint = {2112.01800},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2112.01800v1}\n}\n"
+    },
+    {
+      "id": "sfa-cross-domain-hsi-detection-arxiv-2024",
+      "shortTitle": "SFA cross-domain detection",
+      "title": "Hyperspectral Image Cross-Domain Object Detection Method based on Spectral-Spatial Feature Alignment",
+      "authors": "Hongqi Zhang, He Sun, Hongmin Gao, Feng Han, Xu Sun, Lianru Gao, Bing Zhang",
+      "year": 2024,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "训练时源/目标双流通过谱空对齐模块，源流还经过光谱自相关模块；区域提议网络及ROI模块输出检测框。推理使用目标流。",
+      "tags": [],
+      "summary": "SFA研究无监督跨域高光谱目标检测，利用跨域局部谱空特征不变性，通过谱空对齐和光谱自相关模块减轻空间/光谱分辨率造成的域偏移。",
+      "input": "有标注源域HSI和无标注目标域HSI；域间空间/光谱分辨率不同。",
+      "output": "目标域高光谱影像中的目标检测框及类别。",
+      "mechanism": "训练时源/目标双流通过谱空对齐模块，源流还经过光谱自相关模块；区域提议网络及ROI模块输出检测框。推理使用目标流。",
+      "readingNote": "固定arXiv2411.16772v1完整原摘要、PDF首页署名及第3页主要原图/图注已核；下载不记全文，只有一张主图，不整理额外实验或版本。Crossref指定题名前五条没有同题名/七作者正式匹配，只表示该查询未定位，不断言未发表。",
+      "paper": "https://arxiv.org/abs/2411.16772v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2411.16772v1",
+          "sourceVersion": "arXiv2411.16772v1",
+          "figureLabel": "Figure 2",
+          "page": 3,
+          "caption": "SFA整体训练/推理原图：源域和目标域HSI双流的谱空对齐、源流光谱自相关、区域提议和ROI检测；推理沿目标流输出检测框。",
+          "verificationNote": "仅保留固定v1第3页Figure2整体训练/推理图和原图注；Figure1不变性示例及Figure3单模块不另收，不核结果表或额外版本。",
+          "path": "figures/sfa-cross-domain-hsi-detection-arxiv-2024/framework.png",
+          "width": 1068,
+          "height": 561,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "ddbde998574dd1a12b7a08972e60bd71c897744890ff7f0143dd584b37c714bc",
+          "attribution": "Hongqi Zhang, He Sun, Hongmin Gao, Feng Han, Xu Sun, Lianru Gao, Bing Zhang · arXiv2411.16772v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              128,
+              68,
+              484,
+              255
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "hyperspectral-object-detection",
+          "domain-adaptation"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要与唯一主图直接处理HSI，普通arXiv来源；无Jun署名，不使用作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在目标域无标注且空间/光谱分辨率变化时迁移HSI目标检测？",
+        "datasets": "原摘要称构建并标注一个跨域HSI目标检测数据集；本轮未核数据名称、公开地址或划分，不登记新数据资源。",
+        "experimentSetting": "仅核身份/范围及一主图，不整理实验协议与性能数值。",
+        "conclusions": "方法与问题按原摘要/主图概述，性能未核。",
+        "limitations": "一个版本及一主图已得；不设其他正文、图片、实验或代码检查门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2411.16772v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "SFA研究无监督跨域高光谱目标检测，利用跨域局部谱空特征不变性，通过谱空对齐和光谱自相关模块减轻空间/光谱分辨率造成的域偏移。",
+              "官方arXiv与所用PDF首页作者一致，无Jun Zhou；不访问代码或补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2411.16772v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "SFA整体训练/推理原图：源域和目标域HSI双流的谱空对齐、源流光谱自相关、区域提议和ROI检测；推理沿目标流输出检测框。",
+              "仅保留固定v1第3页Figure2整体训练/推理图和原图注；Figure1不变性示例及Figure3单模块不另收，不核结果表或额外版本。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "sfa-cross-domain-hsi-detection-arxiv-2024-arxiv",
+            "type": "所用唯一arXiv公开版",
+            "url": "https://arxiv.org/abs/2411.16772v1",
+            "pdfUrl": "https://arxiv.org/pdf/2411.16772v1",
+            "arxivId": "2411.16772",
+            "arxivVersion": 1,
+            "year": 2024,
+            "authors": [
+              "Hongqi Zhang",
+              "He Sun",
+              "Hongmin Gao",
+              "Feng Han",
+              "Xu Sun",
+              "Lianru Gao",
+              "Bing Zhang"
+            ],
+            "firstSubmittedAt": "2024-11-25T06:42:06Z",
+            "updatedAt": "2024-11-25T06:42:06Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-gao-primary-directory-mainframes-2026-10-13-2411.16772v1.pdf",
+            "relation": "仅所用v1首页署名及主图区域；未读全文或其他版本。"
+          }
+        ],
+        "methodFamilyId": "sfa-cross-domain-hsi-detection-arxiv-2024",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原完整摘要及Figure2直接研究HSI目标检测和源/目标无监督域适配，使用既有HSI目标检测任务和跨域适配方法；不把光谱立方体归几何三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "894ea0342360c0563e64e220c8e3893ccf65725fbdff4934ad315c8f08f146aa",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2411.16772v1",
+            "https://arxiv.org/pdf/2411.16772v1"
+          ]
+        }
+      },
+      "citation": "@misc{sfa_cross_domain_hsi_detection_arxiv_2024,\n  title = {Hyperspectral Image Cross-Domain Object Detection Method based on Spectral-Spatial Feature Alignment},\n  author = {Hongqi Zhang and He Sun and Hongmin Gao and Feng Han and Xu Sun and Lianru Gao and Bing Zhang},\n  year = {2024},\n  eprint = {2411.16772},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2411.16772v1}\n}\n"
+    },
+    {
+      "id": "docnn-drc-hsi-classification-arxiv-2021",
+      "shortTitle": "DOCNN-DRC",
+      "title": "Shallow Network Based on Depthwise Over-Parameterized Convolution for Hyperspectral Image Classification",
+      "authors": "Hongmin Gao, Zhonghao Chen, Chenming Li",
+      "year": 2021,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "主图显示HSI经PCA和1×1卷积，接两个DO-Conv特征层与密集残差连接，再由全局平均池化、全连接和Softmax输出类别。",
+      "tags": [],
+      "summary": "DOCNN-DRC以浅层深度过参数化卷积网络进行HSI分类；标准卷积和深度卷积组合提取谱空特征，密集残差连接减少空间边缘特征损失。",
+      "input": "高光谱影像的像元邻域影像块。",
+      "output": "像元地物类别及分类图。",
+      "mechanism": "主图显示HSI经PCA和1×1卷积，接两个DO-Conv特征层与密集残差连接，再由全局平均池化、全连接和Softmax输出类别。",
+      "readingNote": "固定arXiv2112.00250v1完整原摘要、PDF首页署名及第3页主要原图/图注已核；下载不记全文，只有一张主图，不整理额外实验或版本。GRSL正式2022书目仅关联，不在白名单，不扩张作者例外。",
+      "paper": "https://arxiv.org/abs/2112.00250v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2112.00250v1",
+          "sourceVersion": "arXiv2112.00250v1",
+          "figureLabel": "Figure 3",
+          "page": 3,
+          "caption": "DOCNN-DRC整体原图：HSI经PCA、初始卷积、DO-Conv及密集残差连接提取特征，全局平均池化、全连接和Softmax输出分类图。",
+          "verificationNote": "仅保留固定v1第3页Fig3整体结构和原图注；Fig1普通卷积/深度卷积、Fig2 DO-Conv及Fig4连接对比只用于定位，不额外入图。未读五页全文或正式期刊正文。",
+          "path": "figures/docnn-drc-hsi-classification-arxiv-2021/framework.png",
+          "width": 1350,
+          "height": 330,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "8a1040e7007365e3c6dfb57a9fba61a5d53c2690eca71bd703cf9ea873aaa502",
+          "attribution": "Hongmin Gao, Zhonghao Chen, Chenming Li · arXiv2112.00250v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              50,
+              50,
+              500,
+              160
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要与唯一主图直接处理HSI，普通arXiv来源；无Jun署名，不使用作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以浅层卷积及密集残差连接减少少标注HSI分类中的过拟合和空间特征损失？",
+        "datasets": "原摘要称三个基准数据集；本轮不整理具体名称、划分或性能。",
+        "experimentSetting": "仅核身份/范围及一主图，不整理实验协议与性能数值。",
+        "conclusions": "方法与问题按原摘要/主图概述，性能未核。",
+        "limitations": "一个版本及一主图已得；不设其他正文、图片、实验或代码检查门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2112.00250v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "DOCNN-DRC以浅层深度过参数化卷积网络进行HSI分类；标准卷积和深度卷积组合提取谱空特征，密集残差连接减少空间边缘特征损失。",
+              "官方arXiv与所用PDF首页作者一致，无Jun Zhou；不访问代码或补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2112.00250v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "DOCNN-DRC整体原图：HSI经PCA、初始卷积、DO-Conv及密集残差连接提取特征，全局平均池化、全连接和Softmax输出分类图。",
+              "仅保留固定v1第3页Fig3整体结构和原图注；Fig1普通卷积/深度卷积、Fig2 DO-Conv及Fig4连接对比只用于定位，不额外入图。未读五页全文或正式期刊正文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/lgrs.2021.3133598",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册书目（只书目）",
+            "supports": [
+              "官方arXiv登记DOI、同题名/同序三作者对应正式GRSL19(2022):1–5，原始题名overparameterized拼写保留。",
+              "GRSL不在白名单，当前仅按arXiv2021收录；正式正文未读，不迁移图号页码或声称实验相同。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "docnn-drc-hsi-classification-arxiv-2021-arxiv",
+            "type": "所用唯一arXiv公开版",
+            "url": "https://arxiv.org/abs/2112.00250v1",
+            "pdfUrl": "https://arxiv.org/pdf/2112.00250v1",
+            "arxivId": "2112.00250",
+            "arxivVersion": 1,
+            "year": 2021,
+            "authors": [
+              "Hongmin Gao",
+              "Zhonghao Chen",
+              "Chenming Li"
+            ],
+            "firstSubmittedAt": "2021-12-01T03:10:02Z",
+            "updatedAt": "2021-12-01T03:10:02Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-gao-primary-directory-mainframes-2026-10-13-2112.00250v1.pdf",
+            "relation": "仅所用v1首页署名及主图区域；未读全文或其他版本。"
+          },
+          {
+            "id": "docnn-drc-hsi-classification-arxiv-2021-formal",
+            "type": "关联正式出版记录（来源白名单外）",
+            "url": "https://doi.org/10.1109/lgrs.2021.3133598",
+            "doi": "10.1109/lgrs.2021.3133598",
+            "year": 2022,
+            "venue": "GRSL",
+            "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+            "title": "Shallow Network Based on Depthwise Overparameterized Convolution for Hyperspectral Image Classification",
+            "volume": "19",
+            "pages": "1-5",
+            "authors": [
+              "Hongmin Gao",
+              "Zhonghao Chen",
+              "Chenming Li"
+            ],
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_bibliographic_association_only",
+            "relation": "官方arXiv登记DOI及同题名/同序作者对应；不另读正式正文。"
+          }
+        ],
+        "methodFamilyId": "docnn-drc-hsi-classification-arxiv-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原完整摘要及Fig3明确HSI地物分类；PCA为内部预处理，不添加以降维为独立输出的任务，也无独立表征预训练目标。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d789a84da5f6a135796b1815462da6bba4d2e09d8db4469fafdd2587859c34b2",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2112.00250v1",
+            "https://arxiv.org/pdf/2112.00250v1"
+          ]
+        }
+      },
+      "citation": "@misc{docnn_drc_hsi_classification_arxiv_2021,\n  title = {Shallow Network Based on Depthwise Over-Parameterized Convolution for Hyperspectral Image Classification},\n  author = {Hongmin Gao and Zhonghao Chen and Chenming Li},\n  year = {2021},\n  eprint = {2112.00250},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2112.00250v1}\n}\n"
     }
   ],
   "datasets": [
@@ -54678,7 +54968,8 @@
       "createdAt": "2026-10-08",
       "rationale": "依据本轮 NeurIPS 2023 官方摘要出现的任务、方法或应用形成。",
       "evidencePaperIds": [
-        "m2sodai-2023"
+        "m2sodai-2023",
+        "sfa-cross-domain-hsi-detection-arxiv-2024"
       ],
       "history": [
         {
@@ -57047,7 +57338,8 @@
         "gabor-net-arxiv-2019",
         "superpixel-3d-hsi-classification-pr-2018",
         "active-multikernel-hsi-domain-adaptation-pr-2018",
-        "mct-center-mask-arxiv-2022"
+        "mct-center-mask-arxiv-2022",
+        "docnn-drc-hsi-classification-arxiv-2021"
       ],
       "history": [
         {
@@ -57812,7 +58104,8 @@
         "zhou-5-hsi-2026",
         "zhou-scholar-multi-domain-universal-representation-lear-2025",
         "jun-zhou-dblp-whispers-weed-2019",
-        "active-multikernel-hsi-domain-adaptation-pr-2018"
+        "active-multikernel-hsi-domain-adaptation-pr-2018",
+        "sfa-cross-domain-hsi-detection-arxiv-2024"
       ],
       "history": [
         {

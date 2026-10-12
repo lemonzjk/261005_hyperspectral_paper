@@ -1040,3 +1040,5 @@
 - 2026-10-13 / jun-zhou-screen-indexed-scope-2026-10-13：TIP屏幕质量既存索引完整摘要实际读，明确数字屏幕图像/复杂度、内容统计、亮度及锐度与视觉质量训练标签，按二级摘要暂排直接HSI，不宣称原始摘要页/全文或目标作者身份已核；PR对象识别仍待。两官方arXiv指定题名、两EuropePMC精确DOI均0，二级书目摘要均空，不作无公开版本证明。纠正专项当前源表：ORCID3/DBLP12/Scholar10/Griffith12未决，机构176项匹配169目录ID、76项有PDF链接，另3直接HSI来源外候选。0新论文/PDF/全文/库图；每篇一版一主图，代码仅链接。[证据](sources/jun-zhou-openalex-difference-scope-2026-10-12.json)。
 
 - 2026-10-13 / jun-zhou-sen-jia-mainframes-2026-10-13：Sen Jia指定查询53/53、HSI谱题名查询41/41，完整作者字段0目标Jun；同名/缩写及SUIT已知署名版本差异不作目标作者排除。3完整原摘要与3份唯一公开PDF的首页署名/主图区域已核，AGD-Net、MCT、少标注分类综述各留一原图；TCI/Neurocomputing仅书目关联，按arXiv入库。另40新题名候选待核，91摘要未读，不声称全部范围已审。新论文3/PDF3/主图3/全文0；总库415、确认402/暂定13、审计392、原图354，来源287/27/101，Jun确认182不变。[证据](sources/jun-zhou-sen-jia-mainframes-2026-10-13.json)。
+
+- 2026-10-13 / jun-zhou-gao-primary-directory-mainframes-2026-10-13：高红民对应ORCID过滤93注册记录全部核作者/书目，4Jun均旧记录；91指定ORCID姓名Hongmin Gao/2Peipei Xu的位置差异保留，学校旧29条非全集。arXiv9书目含同名/简称，2完整HSI原摘要与首页/一主图已核，SFA和DOCNN按arXiv入库，GRSL只关联；另29白名单HSI题名仅定位待核，0全文/代码访问。总库417、确认404/暂定13、审计394、原图356，来源287/29/101，Jun确认182不变。三分割输入/作者/领域全集仍未闭环。[原始注册目录、机构页及主图](sources/jun-zhou-gao-primary-directory-mainframes-2026-10-13.json)。
