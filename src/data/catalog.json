@@ -30248,7 +30248,7 @@
       "venue": "DICTA",
       "publicationName": "2017 International Conference on Digital Image Computing: Techniques and Applications (DICTA)",
       "publicationStatus": "published",
-      "venueTier": "journal",
+      "venueTier": "conference",
       "collections": [
         "hyperspectral"
       ],
@@ -30259,22 +30259,24 @@
       "input": "真实高光谱影像及每个像素的联合光谱—空间特征；具体数据集与协议待全文。",
       "output": "对象边界图。",
       "mechanism": "对邻域像素对估计联合特征的概率密度；边界处共现较少、区域内部重复较多，据此构造像素亲和矩阵并执行谱聚类得到边界。",
-      "readingNote": "Crossref和DICTA官方目录核对正式书目；OpenAlex公开摘要索引重建摘要，属于二级摘要证据。已读摘要，不等同IEEE全文；摘要中的“the that”语句疑似来源文本缺字，保留来源原文含义，不擅自修订实验细节。",
+      "readingNote": "本次Griffith当前仓储完整原摘要及已存个人profile126041完整摘要复核：联合光谱—空间统计共现/PDF亲和＋谱聚类输出边界，与两方法比较。确认任务分类；纠正venueTier及BibTeX为会议。仓储原摘要亦有“the that”缺词，个人profile该句为完整复杂度表述，记录两来源差异，不补实验。当前No Full Text、无bundle，未取得正文。",
       "paper": "https://doi.org/10.1109/dicta.2017.8227462",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified_secondary_index",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_institutional_abstract_and_conference_bibliography",
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
+        "categoryIds": [
+          "hyperspectral-boundary-detection"
+        ],
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名和公开摘要明确高光谱影像材料边界检测；完整实验与任务/方法标签待进一步审计。",
+        "relationNote": "完整机构原摘要和正式题名明确直接HSI边界检测；输出是边界，不需待全文才能确定任务。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何利用联合光谱—空间特征与统计共现构造高光谱材料边界？",
         "datasets": "摘要仅称真实高光谱影像数据集；名称、规模和协议待全文。",
         "experimentSetting": "摘要级核验：真实高光谱数据集，与两种替代方法比较；参数、指标和划分待全文。",
         "conclusions": "摘要报告方法能有效探索高光谱对象边界；不外推具体数字。",
-        "limitations": "仅公开二级摘要、DICTA目录与正式书目，未取得IEEE全文；不补数据集、参数、图版或代码。",
+        "limitations": "当前机构原摘要/正式目录支持任务；无bundle/正文，数据名、参数、图和数值仍未得。仓储摘要缺词与个人profile措辞不同分别留证；不外推另两边界稿的方法或实验。",
         "dataLinks": [],
         "evidence": [
           {
@@ -30301,6 +30303,23 @@
               "公开摘要正文（按倒排索引位置重建）",
               "摘要级方法、数据范围和结论"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/d0e16435-cac2-5fd0-81c1-043a2a1ff02a",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith当前完整原摘要及附件状态",
+            "supports": [
+              "联合光谱—空间特征的邻域统计共现/PDF亲和矩阵及谱聚类，输出边界，比较两替代方法。",
+              "四作者、Griffith Jun、DICTA会议及机构552–558；No Full Text、bundle为空。"
+            ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "已存机构个人profile126041原摘要复核",
+            "supports": [
+              "机构个人profile提供完整复杂度表述；当前仓储原摘要有the that缺词，两源差异保留，不改原来源。"
+            ]
           }
         ],
         "versions": [
@@ -30313,9 +30332,27 @@
             "relation": "正式DICTA2017记录；正文待取得。"
           }
         ],
-        "methodFamilyId": "material-boundary-detection"
+        "methodFamilyId": "material-boundary-detection",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "实际输入输出与原完整摘要/已读接受稿支持任务；SIFT撤降维，三边界稿单列边界任务。摘要级分类不提升正文状态，不把中间特征图解释成语义类别。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "4feffbf0ec3350370b11774946d94a48aa6cf8ea89602ff91b8ce2972fd0bf90",
+          "sourceUrls": [
+            "https://research-repository.griffith.edu.au/server/api/core/items/d0e16435-cac2-5fd0-81c1-043a2a1ff02a",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{material_boundary_dicta_2017,\n  title = {Material Based Boundary Detection in Hyperspectral Images},\n  author = {Suhad Lateef Al-khafaji and Ali Zia and Jun Zhou and Alan Wee-Chung Liew},\n  year = {2017},\n  doi = {10.1109/dicta.2017.8227462}\n}\n"
+      "citation": "@inproceedings{material_boundary_dicta_2017,\n  title = {Material Based Boundary Detection in Hyperspectral Images},\n  author = {Suhad Lateef Al-khafaji and Ali Zia and Jun Zhou and Alan Wee-Chung Liew},\n  booktitle = {2017 International Conference on Digital Image Computing: Techniques and Applications (DICTA)},\n  year = {2017},\n  doi = {10.1109/dicta.2017.8227462}\n}\n"
     },
     {
       "id": "nonlocal-tensor-denoising-icip-2017",
@@ -31076,29 +31113,28 @@
       ],
       "representation": "在光谱—空间尺度空间中检测关键点并构造对光谱条件和几何变化不变的描述子。",
       "tags": [],
-      "summary": "研究不同光照、视角和相机条件下高光谱影像配准。",
-      "input": "不同光谱条件和几何投影的高光谱影像。",
-      "output": "匹配关键点与配准特征。",
+      "summary": "SS-SIFT从高光谱立方的光谱—空间尺度空间提取关键点和两种局部梯度描述子，用于不同光照、视角、相机或同形异材条件下的光谱—空间影像匹配。",
+      "input": "不同光照、几何投影或光谱条件的高光谱影像；原摘要明确两台具有不同波长范围和分辨率的高光谱相机。",
+      "output": "光谱和几何变换不变的关键点/两种描述子及其匹配；摘要未提出光谱降维输出。",
       "mechanism": "对数据立方体做三维高斯差分，在局部三维邻域统计光谱—空间梯度构造描述子。",
-      "readingNote": "OpenAlex摘要、Crossref核验；正式TIP27(2):837–850，记录年份按正式卷期为2018。",
-      "paper": "https://openalex.org/W2751249843",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "readingNote": "PubMed完整原摘要已读，正式TIP27(2):837–850/2018沿用已核书目；公开索引无PDF，不判没有其他公开版。撤销无原摘要依据的光谱降维任务，保留影像配准；未读正文，不补相机型号/具体波段、匹配协议或数值。",
+      "paper": "https://doi.org/10.1109/TIP.2017.2749145",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_pubmed_abstract_and_publisher_bibliography",
       "library": {
         "categoryIds": [
-          "optical-image-registration",
-          "spectral-dimensionality-reduction"
+          "optical-image-registration"
         ],
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "researchQuestion": "如何从HSI提取对光谱条件与几何变换稳健的局部匹配特征？",
+        "datasets": "原摘要明确不同光照、几何投影及两台波长范围/分辨率不同的HSI相机；数据集名称和数量未给。",
+        "experimentSetting": "三维DoG尺度空间极值关键点；每关键点两种局部三维光谱—空间梯度描述子。具体参数、匹配协议和指标待全文。",
+        "conclusions": "原摘要报告在多种光谱/几何条件下产生稳健匹配特征；不是已核验的谱带压缩任务或定量复现。",
+        "limitations": "正文、相机规格、样本与数值未得；OpenAlex/S2闭源标志无PDF仅限当前索引，不证明所有公开版本不存在；代码只链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -31116,6 +31152,16 @@
             "supports": [
               "正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pubmed.cgi/BioC_xml/28880176/unicode",
+            "checkedAt": "2026-10-12",
+            "level": "PubMed完整原摘要",
+            "supports": [
+              "DoG关键点、每点两种三维局部梯度描述子、光谱/几何不变匹配。",
+              "两台不同波长范围/分辨率的HSI相机；光照/投影及同形异材条件属于spectral condition。",
+              "摘要无谱带压缩/子空间识别输出；保留匹配任务、撤销降维标签，不提升全文状态。"
+            ]
           }
         ],
         "versions": [
@@ -31130,9 +31176,9 @@
         ],
         "methodFamilyId": "spectral-spatial-sift",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "实际输入输出与原完整摘要/已读接受稿支持任务；SIFT撤降维，三边界稿单列边界任务。摘要级分类不提升正文状态，不把中间特征图解释成语义类别。",
           "evidenceFields": [
             "title",
             "summary",
@@ -31141,11 +31187,9 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "aa489de028957821ced355c0585774ea4fa59d19fc0373e82422a954e9772a16",
+          "evidenceDigest": "2431edd87a8bc67d8cdf73d4f6d8d0bd83de3e3ccc5f7e02bee1538ddd07b876",
           "sourceUrls": [
-            "https://openalex.org/W2751249843",
-            "https://openalex.org/W2751249843",
-            "https://api.crossref.org/works/10.1109/TIP.2017.2749145"
+            "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pubmed.cgi/BioC_xml/28880176/unicode"
           ]
         }
       },
@@ -31432,8 +31476,8 @@
       "title": "An Efficient Method for Boundary Detection from Hyperspectral Imagery",
       "authors": "Suhad Lateef Al-Khafaji, Jun Zhou, Alan Wee-Chung Liew",
       "year": 2018,
-      "venue": "LNCS",
-      "publicationName": "Computer Vision – ACCV 2018 Workshops",
+      "venue": "S+SSPR",
+      "publicationName": "Structural, Syntactic, and Statistical Pattern Recognition",
       "publicationStatus": "published",
       "venueTier": "conference",
       "collections": [
@@ -31445,22 +31489,24 @@
       "input": "近距离高光谱影像及邻域像素光谱响应；摘要未给出数据集名称与协议。",
       "output": "最终高光谱边界图。",
       "mechanism": "用多种光谱相似度建立局部稀疏光谱—空间亲和矩阵；谱聚类求最小特征值对应特征向量；对各特征向量施加形态学腐蚀检测边界，再融合得到最终边界图。",
-      "readingNote": "Griffith Research Repository OAI摘要核验，Crossref与LNCS书目核对DOI和正式记录；已读机构摘要，不等同Springer全文。记录真实高光谱数据集和三种替代方法比较，但不补数据集名称、参数或性能数字。",
+      "readingNote": "Springer当前完整摘要、作者机构、书目和论文集目录已读：S+SSPR2018北京8月17–19日论文集、LNCS11004、416–426，2018-08-02出版；纠正旧ACCV Workshops误配与@article。三作者均Griffith，出版社引用DICTA2017但未明确期刊扩展关系。PDF链接实际跳转HTML订阅预览，正文需订阅或购买；摘要可用，不以HTTP200称PDF。未确认其他免费版本，不反复追付费正文。",
       "paper": "https://doi.org/10.1007/978-3-319-97785-0_40",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "institutional_abstract_and_publisher_metadata",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "publisher_complete_abstract_bibliography_and_affiliation",
       "library": {
-        "categoryIds": [],
-        "classificationStatus": "pending",
+        "categoryIds": [
+          "hyperspectral-boundary-detection"
+        ],
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名和机构摘要明确高光谱影像边界检测；完整实验与任务/方法标签待进一步审计。",
+        "relationNote": "出版社完整原摘要确认近距离高光谱影像边界检测；不输出地物语义类。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何用光谱—空间亲和与谱聚类从近距离高光谱影像生成边界图？",
         "datasets": "机构摘要仅称真实高光谱数据集；名称、规模和协议待全文。",
         "experimentSetting": "机构摘要级核验：真实高光谱数据集，与三种替代方法比较；参数、指标和划分待全文。",
         "conclusions": "机构摘要报告方法优于三种替代方法，并能处理若干彩色图像方法难以处理的场景；不外推具体数字。",
-        "limitations": "仅机构仓储摘要与正式书目，未取得Springer全文；不补数据集、参数、图版或代码。",
+        "limitations": "出版社全文为订阅/购买预览，本轮未得免费正文；已核原摘要但样本规模、谱相似度、参数和图版留白。作者机构确认为Griffith；不能据相近题名把DICTA2017或TIP2022合成同版。",
         "dataLinks": [],
         "evidence": [
           {
@@ -31479,6 +31525,24 @@
               "完整公开摘要正文",
               "近距离高光谱边界检测、稀疏光谱—空间亲和、谱聚类、形态学腐蚀和三种替代方法比较"
             ]
+          },
+          {
+            "url": "https://link.springer.com/chapter/10.1007/978-3-319-97785-0_40",
+            "checkedAt": "2026-10-12",
+            "level": "Springer完整原摘要、机构、正式卷页及访问状态",
+            "supports": [
+              "S+SSPR2018论文集、LNCS11004:416–426、2018-08-02；旧ACCV Workshops来源错误。",
+              "三作者同为Griffith；邻域谱相似度亲和、最小特征向量/形态学腐蚀/融合输出边界，三替代方法。",
+              "PDF请求重定向HTML订阅内容预览，无PDF；保留免费摘要，不称全文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1007/978-3-319-97785-0_40",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref当前原注册书目",
+            "supports": [
+              "2018年book-chapter，三作者、Structural, Syntactic, and Statistical Pattern Recognition及416–426。"
+            ]
           }
         ],
         "versions": [
@@ -31488,13 +31552,31 @@
             "url": "https://doi.org/10.1007/978-3-319-97785-0_40",
             "doi": "10.1007/978-3-319-97785-0_40",
             "year": 2018,
-            "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+            "relation": "正式S+SSPR2018论文集章节，LNCS11004:416–426；原摘要已核、正文未读。出版社引文列DICTA2017，未声明与其或TIP2022的正式版本扩展关系。"
           }
         ],
-        "methodFamilyId": "hsi-boundary-detection"
+        "methodFamilyId": "hsi-boundary-detection",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "实际输入输出与原完整摘要/已读接受稿支持任务；SIFT撤降维，三边界稿单列边界任务。摘要级分类不提升正文状态，不把中间特征图解释成语义类别。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "9cb9a92be0bea9cd6ead4e7525025cb8cab5cf2f1e1509cfb9507075236f0c88",
+          "sourceUrls": [
+            "https://link.springer.com/chapter/10.1007/978-3-319-97785-0_40",
+            "https://api.crossref.org/works/10.1007/978-3-319-97785-0_40"
+          ]
+        }
       },
       "doi": "10.1007/978-3-319-97785-0_40",
-      "citation": "@article{hsi_boundary_detection_lncs_2018,\n  title = {An Efficient Method for Boundary Detection from Hyperspectral Imagery},\n  author = {Suhad Lateef Al-Khafaji and Jun Zhou and Alan Wee-Chung Liew},\n  year = {2018},\n  doi = {10.1007/978-3-319-97785-0_40}\n}\n"
+      "citation": "@inproceedings{hsi_boundary_detection_lncs_2018,\n  title = {An Efficient Method for Boundary Detection from Hyperspectral Imagery},\n  author = {Suhad Lateef Al-Khafaji and Jun Zhou and Alan Wee-Chung Liew},\n  booktitle = {Structural, Syntactic, and Statistical Pattern Recognition},\n  series = {Lecture Notes in Computer Science},\n  volume = {11004},\n  pages = {416--426},\n  publisher = {Springer, Cham},\n  year = {2018},\n  doi = {10.1007/978-3-319-97785-0_40}\n}\n"
     },
     {
       "id": "band-weighting-network-dicta-2018",
@@ -32211,16 +32293,16 @@
       "collections": [
         "hyperspectral"
       ],
-      "representation": "先以高光谱解混估计材料分布，再融合全局空间与局部光谱显著图检测材料显著目标。",
+      "representation": "高光谱材料显著检测：VCA初始化与图正则稀疏NMF估计端元/丰度，用全局材料空间分布和局部光谱距离生成显著图。",
       "tags": [],
-      "summary": "研究相近颜色、不同材料目标的高光谱显著检测。",
-      "input": "45幅高光谱显著检测图像；实验摘要细分32幅近距离图像。",
-      "output": "材料显著目标及显著图。",
-      "mechanism": "图正则NMF估计端元/丰度，计算全局空间方差与多尺度中心—周围光谱显著图并融合。",
-      "readingNote": "ScienceDirect官方摘要与Crossref核验；正式76:476–490，未标全文。",
-      "paper": "https://www.sciencedirect.com/science/article/abs/pii/S0031320317304806",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "primary_abstract_verified",
+      "summary": "在同色异材场景中，用端元丰度的空间集中度和中心先验构建全局显著图，再融合欧氏/光谱角的跨尺度局部显著图；Otsu阈值及winner-take-all定位每图一个显著目标。45图实验由32幅自采和13幅公开图组成。",
+      "input": "高光谱影像立方：32幅自采AOTF影像，每幅61带、400–1000nm或900–1700nm；另从Manchester和Harvard公开HSI数据选13幅。Nikon RGB只作展示，RGB算法对照实际输入为HSI伪彩图。",
+      "output": "材料显著图、二值显著区域和每幅图一个显著目标框；数据集人工真值为覆盖单目标的矩形框。",
+      "mechanism": "VCA初始化后，以重建误差、L1/2丰度稀疏项及图拉普拉斯流形项优化NMF；丰度估计材料概率，按空间方差与离图像中心距离生成全局图；欧氏距离和光谱角的跨尺度中心—周围差分生成两局部图，融合后用Otsu与winner-take-all定位。",
+      "readingNote": "Griffith免费39页Accepted Manuscript逐页全文阅读（含首页Highlights、正文/参考书目/作者简介及末页出版封面）；Jun的Griffith单位与邮箱由原稿确认。正式Pattern Recognition76:476–490仍为2018，接受稿封面accepted2017-11-19、正文printed2017-11-28分别保留，未读正式VoR。原图2/3/5保留水印和图注。32自采＋13公开＝45图；不能把单目标框、伪彩输入对照或自采波段规格外推到三篇边界稿。AM Eq5缺平方、Eq17同索引相减的印式疑点已视觉核对，正式版是否修正未知。",
+      "paper": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/705f489d-4c40-48b4-a06c-b1fdc185156a/content",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "institutional_accepted_manuscript_full_text_and_primary_bibliography",
       "library": {
         "categoryIds": [
           "hyperspectral-salient-object-detection",
@@ -32230,13 +32312,13 @@
         "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "摘要直接以高光谱影像或高光谱数据为对象。",
-        "readingProgress": "abstract_read",
-        "verificationStatus": "abstract_verified",
-        "researchQuestion": "该研究如何利用高光谱数据完成目标任务？",
-        "datasets": "摘要或公开记录确认相关高光谱数据；完整样本、划分和协议待全文。",
-        "experimentSetting": "已核对公开摘要、正式元数据及局部作者来源；未逐项复核全文参数。",
-        "conclusions": "作者公开摘要报告方法有效；不外推到未核条件。",
-        "limitations": "正式全文、代码和数据协议仍待核验。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何利用高光谱材料成分区分颜色相近目标，并融合全局材料分布与局部显著线索？",
+        "datasets": "45幅＝32幅自采AOTF（每幅61带、400–1000或900–1700nm）＋13幅从Manchester/Harvard选取。源库分别16幅33带400–720nm、50幅420–720nm间隔10nm；13图分配未说明。所有真值为单目标框，不能称像素级语义标注。",
+        "experimentSetting": "材料分解对比仅明确P=4；45图七种方法（本文＋三RGB/三HSI）。RGB基线用Scyven生成的HSI伪彩图，不用Nikon原RGB；Liu方法固定原权重、未训练CRF。PR阈值0–1步长0.01；F-measure逐图Otsu后全库平均。耗时环境i5-4300 2.5GHz/4GB/Windows10，无复现。",
+        "conclusions": "定性及PR/F-measure优于六基线；Fig12/Fig13仅柱图可读约0.75/约22秒，非精确表格数值。Fig10所示八场景中本文成功五个，不能称所有45图全检出。本文在计时对照中最慢，主要耗时为NMF优化。",
+        "limitations": "单目标/框标注、构造场景与仅13幅选取的自然图限制外推；中心先验与小背景区域会干扰。γ、µ、热核σ、近邻数量、停止条件、融合权重和F公式细节未完整给出。AM Eq5范数未平方、Eq17两项同为Hj，按印式保存，不猜正式修订；仅读接受稿，不查代码。",
         "dataLinks": [],
         "evidence": [
           {
@@ -32254,6 +32336,17 @@
             "supports": [
               "正式题名、作者、卷期和页码。"
             ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/705f489d-4c40-48b4-a06c-b1fdc185156a/content",
+            "checkedAt": "2026-10-12",
+            "level": "机构公开接受稿全文39页及原图核验",
+            "supports": [
+              "39页全部阅读；Griffith Jun机构/邮箱及AM封面、2017接受日期；正式2018书目单列。",
+              "45图＝32自采61带AOTF＋13公开HSI，矩形单目标标注；三RGB基线实际使用HSI伪彩图。",
+              "VCA/图正则L1/2-NMF、材料方差/中心先验及两局部谱距离融合；Otsu/winner-take-all。",
+              "七方法PR/F柱图与计算时间；近似图读数不冒称精确表格；Eq5/Eq17原印式与参数缺口。"
+            ]
           }
         ],
         "versions": [
@@ -32264,13 +32357,20 @@
             "doi": "10.1016/j.patcog.2017.11.024",
             "year": 2018,
             "relation": "正式书目记录；作者来源与正式版局部差异待核。"
+          },
+          {
+            "id": "material-salient-object-hsi-2018-griffith-am",
+            "type": "机构接受稿",
+            "url": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/705f489d-4c40-48b4-a06c-b1fdc185156a/content",
+            "year": 2017,
+            "relation": "封面Accepted Manuscript与DOI确认该稿；39页本轮全部阅读，received2017-02-15/revised2017-10-22/accepted2017-11-19，正文printed2017-11-28。正式VoR2018差异未核。"
           }
         ],
         "methodFamilyId": "material-saliency-hsi",
         "classificationReview": {
-          "reviewedAt": "2026-10-10",
+          "reviewedAt": "2026-10-12",
           "basis": "catalog_and_primary_source",
-          "rationale": "公开摘要或作者来源支持任务、输入输出和方法；局部阅读不等同全文。",
+          "rationale": "实际输入输出与原完整摘要/已读接受稿支持任务；SIFT撤降维，三边界稿单列边界任务。摘要级分类不提升正文状态，不把中间特征图解释成语义类别。",
           "evidenceFields": [
             "title",
             "summary",
@@ -32279,16 +32379,97 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "d7b99dbdde91d6f58fef2745f4174272842fed6aac96b147b7758d2d54fd6ec1",
+          "evidenceDigest": "229456f685f25af29f6fbbe431bc9bdb6918d4888d1991ab866220ff7f625eb4",
           "sourceUrls": [
-            "https://www.sciencedirect.com/science/article/abs/pii/S0031320317304806",
-            "https://www.sciencedirect.com/science/article/abs/pii/S0031320317304806",
-            "https://api.crossref.org/works/10.1016/j.patcog.2017.11.024"
+            "https://research-repository.griffith.edu.au/server/api/core/bitstreams/705f489d-4c40-48b4-a06c-b1fdc185156a/content"
           ]
         }
       },
       "doi": "10.1016/j.patcog.2017.11.024",
-      "citation": "@article{material_salient_object_hsi_2018,\n  title = {Material based salient object detection from hyperspectral images},\n  author = {Jie Liang and Jun Zhou and Lei Tong and Xiao Bai and Bin Wang},\n  year = {2018},\n  doi = {10.1016/j.patcog.2017.11.024}\n}\n"
+      "citation": "@article{material_salient_object_hsi_2018,\n  title = {Material based salient object detection from hyperspectral images},\n  author = {Jie Liang and Jun Zhou and Lei Tong and Xiao Bai and Bin Wang},\n  year = {2018},\n  doi = {10.1016/j.patcog.2017.11.024}\n}\n",
+      "frameworkFigures": [
+        {
+          "figureLabel": "Figure 2",
+          "page": 11,
+          "path": "figures/material-salient-object-hsi-2018/accepted-framework.png",
+          "width": 1050,
+          "height": 840,
+          "sha256": "517e773d1c233361785b425fe34a6cbc45631bad564091a65bd5d7e2a184f735",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              1785,
+              2526
+            ],
+            "pixelBox": [
+              360,
+              420,
+              1410,
+              1260
+            ],
+            "renderCommand": "PyMuPDF get_pixmap(matrix=Matrix(3,3), clip=Rect(120,140,470,420))"
+          },
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/705f489d-4c40-48b4-a06c-b1fdc185156a/content",
+          "caption": "完整方法流程：HSI解混与材料空间分布、欧氏/光谱角局部图融合为显著图，再定位目标。",
+          "verifiedAt": "2026-10-12",
+          "verificationNote": "逐页核对39页Griffith Accepted Manuscript，图号、页码、原图面板及图注全部保留；保留原水印，不重绘、不去水印。",
+          "attribution": "Jie Liang, Jun Zhou, Lei Tong, Xiao Bai, Bin Wang · Pattern Recognition2018接受稿 · DOI10.1016/j.patcog.2017.11.024"
+        },
+        {
+          "figureLabel": "Figure 3",
+          "page": 12,
+          "path": "figures/material-salient-object-hsi-2018/accepted-unmixing.png",
+          "width": 1215,
+          "height": 990,
+          "sha256": "738fe620fd54b9a96454f744a5177485657c886906080eef8ef02311e88dc70a",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              1785,
+              2526
+            ],
+            "pixelBox": [
+              255,
+              435,
+              1470,
+              1425
+            ],
+            "renderCommand": "PyMuPDF get_pixmap(matrix=Matrix(3,3), clip=Rect(85,145,490,475))"
+          },
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/705f489d-4c40-48b4-a06c-b1fdc185156a/content",
+          "caption": "端元谱、丰度图和颜色聚类分布的原始对照；展示材料分解差异，不当作独立数值基准。",
+          "verifiedAt": "2026-10-12",
+          "verificationNote": "逐页核对39页Griffith Accepted Manuscript，图号、页码、原图面板及图注全部保留；保留原水印，不重绘、不去水印。",
+          "attribution": "Jie Liang, Jun Zhou, Lei Tong, Xiao Bai, Bin Wang · Pattern Recognition2018接受稿 · DOI10.1016/j.patcog.2017.11.024"
+        },
+        {
+          "figureLabel": "Figure 5",
+          "page": 19,
+          "path": "figures/material-salient-object-hsi-2018/accepted-dataset.png",
+          "width": 1215,
+          "height": 1005,
+          "sha256": "478e34cd10fd51d305906da2f21e0d27f6e71b8e49d6c4dbf50bae33b8c7edd3",
+          "extraction": {
+            "method": "pdf_page_crop",
+            "renderedPageSize": [
+              1785,
+              2526
+            ],
+            "pixelBox": [
+              255,
+              435,
+              1470,
+              1440
+            ],
+            "renderCommand": "PyMuPDF get_pixmap(matrix=Matrix(3,3), clip=Rect(85,145,490,480))"
+          },
+          "sourceUrl": "https://research-repository.griffith.edu.au/server/api/core/bitstreams/705f489d-4c40-48b4-a06c-b1fdc185156a/content",
+          "caption": "自采场景的Nikon RGB与HSI伪彩展示；基线算法实际使用伪彩，不将这组展示图称实验RGB输入。",
+          "verifiedAt": "2026-10-12",
+          "verificationNote": "逐页核对39页Griffith Accepted Manuscript，图号、页码、原图面板及图注全部保留；保留原水印，不重绘、不去水印。",
+          "attribution": "Jie Liang, Jun Zhou, Lei Tong, Xiao Bai, Bin Wang · Pattern Recognition2018接受稿 · DOI10.1016/j.patcog.2017.11.024"
+        }
+      ]
     },
     {
       "id": "hyperspectral-video-tracking-kcf-2018",
@@ -36866,15 +37047,15 @@
       "input": "近距离高光谱影像。",
       "output": "物体边界图。",
       "mechanism": "高光谱解混估计端元空间分布；融合光谱/丰度特征；多种光谱相似度构造局部亲和矩阵；谱聚类生成特征图和边界。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://openalex.org/W4200607031",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "PubMed与Griffith完整原摘要、机构TIP31:499–512/2022书目已读；S2标2021不能改正式卷年。任务是从光谱＋丰度亲和/谱聚类生成边界图，撤销语义分割标签；未输出语义类别。OpenAlex/S2 GREEN仅同一机构落地页，当前gro.hasfulltext=No Full Text、唯一SWORD130字节XML，未取得正文。三篇同作者边界论文保持独立，扩展关系未证实。",
+      "paper": "https://research-repository.griffith.edu.au/items/2f3fe8fe-fbbe-4a93-9cf3-a2e6ec48867b",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_institutional_and_pubmed_abstract",
       "library": {
         "categoryIds": [
-          "semantic-segmentation"
+          "hyperspectral-boundary-detection"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -36883,7 +37064,7 @@
         "datasets": "公开摘要称创建新高光谱数据集，并与四种方法比较；数据名称、规模和标注待全文核验。",
         "experimentSetting": "近距离 HSI 边界检测；一项高光谱方法与三项 RGB 方法比较。",
         "conclusions": "公开摘要报告优于四种对比方法，并能处理颜色图像方法难以区分的场景。",
-        "limitations": "摘要未给出数据集许可、完整相似度设置、阈值、代码和逐场景指标。",
+        "limitations": "仅原完整摘要：新数据规模/许可、相似度与阈值、各场景指标仍未知。机构当前只有SWORD元数据，绿色开放索引不等于可下载PDF；不把另两稿或45幅显著检测数据迁入本条。",
         "dataLinks": [],
         "evidence": [
           {
@@ -36903,6 +37084,24 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pubmed.cgi/BioC_xml/34874859/unicode",
+            "checkedAt": "2026-10-12",
+            "level": "PubMed完整原摘要",
+            "supports": [
+              "近距离HSI；解混丰度与光谱签名融合、局部稀疏亲和、谱聚类特征图构边界。",
+              "新数据集及一HSI/三RGB四基线；摘要未给样本、相机或精确指标。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/2f3fe8fe-fbbe-4a93-9cf3-a2e6ec48867b",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith完整机构摘要、书目与附件状态",
+            "supports": [
+              "五作者、Griffith Jun、正式TIP31:499–512/2022；不是语义类别预测。",
+              "No Full Text，当前唯一SWORD bundle内130字节XML，无PDF；GREEN只指同一落地页。"
+            ]
           }
         ],
         "versions": [
@@ -36915,7 +37114,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-83"
+        "methodFamilyId": "zhou-2022-title-83",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "实际输入输出与原完整摘要/已读接受稿支持任务；SIFT撤降维，三边界稿单列边界任务。摘要级分类不提升正文状态，不把中间特征图解释成语义类别。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "6b6ea395ee493c9011e0a06e2069c6b6a32384c960ea254306adc1c98f75211e",
+          "sourceUrls": [
+            "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pubmed.cgi/BioC_xml/34874859/unicode",
+            "https://research-repository.griffith.edu.au/server/api/core/items/2f3fe8fe-fbbe-4a93-9cf3-a2e6ec48867b"
+          ]
+        }
       },
       "citation": "@article{zhou_83_hsi_2022,\n  title = {Spectral-Spatial Boundary Detection in Hyperspectral Images},\n  author = {Suhad Lateef Al-Khafaji and Jun Zhou and Xiao Bai and Yuntao Qian and Alan Wee-Chung Liew},\n  year = {2022},\n  doi = {10.1109/tip.2021.3131942}\n}\n"
     },
@@ -39690,10 +39907,10 @@
       "input": "高光谱影像像元及其空间—光谱局部邻域。",
       "output": "高光谱地物类别预测。",
       "mechanism": "光谱注意力分支和空间注意力分支分别生成注意力图；大卷积核捕获局部上下文与长程依赖；连续协同块融合空间和光谱特征。",
-      "readingNote": "ORCID题名、Crossref正式书目、IEEE Xplore记录与公开摘要镜像核验；未阅读全文。",
+      "readingNote": "复核已存Griffith个人profile9995704完整原摘要及resolvedUser7205作者归属，替代仅摘要镜像的当前核验依据；两协同光谱—空间大核注意力块/两分支融合，与原记录一致。两公开索引均无PDF，指定第一作者arXiv查询0仅是该查询；不判没有其他公开稿。正文未得，分类保留暂定。",
       "paper": "https://ieeexplore.ieee.org/document/10422824/",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_institutional_abstract_and_publisher_bibliography",
       "library": {
         "categoryIds": [
           "land-cover-classification"
@@ -39707,7 +39924,7 @@
         "datasets": "公开摘要仅称使用常用基准数据集；具体名称、划分和指标待全文核验。",
         "experimentSetting": "两个协同光谱—空间大核注意力块；与多种先进方法比较。",
         "conclusions": "公开摘要报告在总体准确率、平均准确率和Kappa上优于若干先进方法；逐项数值和消融待正式版核验。",
-        "limitations": "摘要来源含公开镜像；完整数据集、训练配置、代码和数据许可待核验。",
+        "limitations": "完整机构原摘要未给基准名称、样本/划分、核大小、训练和具体数值；免费正文/原图未得。公开索引CLOSED不是所有公开版本不存在的证据；代码仅链接，不列核查待办。",
         "dataLinks": [],
         "evidence": [
           {
@@ -39726,6 +39943,15 @@
             "level": "Crossref正式书目",
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
+            ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "已存机构个人profile9995704完整原摘要复核",
+            "supports": [
+              "四作者中Jun resolvedUser7205；TGRS62:1–14/2024完整机构书目。",
+              "两个连续协同光谱—空间LKA块，光谱/空间分支与融合；OA/AA/Kappa仅定性结论，基准未命名。"
             ]
           }
         ],
@@ -47389,7 +47615,6 @@
         "hyplex-metasurface",
         "crf-cnn-hsi-igarss-2016",
         "crf-deep-feature-hsi-tgrs-2019",
-        "zhou-83-hsi-2022",
         "zhou-scholar-multi-task-attentional-u-net-for-hyperspec-2023",
         "zhou-scholar-arxiv-2605-17286"
       ],
@@ -47444,10 +47669,10 @@
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
+        "zhou-scholar-arxiv-2603-09037",
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340",
-        "zhou-scholar-arxiv-2603-09037"
+        "zhou-scholar-arxiv-2609-37340"
       ],
       "history": [
         {
@@ -47984,7 +48209,6 @@
         "osp-1994",
         "hysime-2008",
         "ngmeet-2019",
-        "spectral-spatial-sift-tip-2018",
         "flexible-gabor-superpixel-lda-hsi-2021",
         "dtme-medical-hsi-2021",
         "zhou-87-hsi-2022"
@@ -48554,9 +48778,9 @@
         "adaptive-graph-multilayer-nmf-hsi-2020",
         "gmc-sparse-nmf-hsi-2020",
         "subspace-structure-nmf-hsi-2020",
-        "zhou-scholar-iterative-refinement-network-for-hyperspec-2023",
         "zhou-77-hsi-2022",
-        "zhou-49-hsi-2024"
+        "zhou-49-hsi-2024",
+        "zhou-scholar-iterative-refinement-network-for-hyperspec-2023"
       ],
       "history": [
         {
@@ -50658,11 +50882,11 @@
         "tapt-arbitrary-fusion",
         "dpmamba-missing-modalities",
         "zhou-56-hsi-2024",
+        "zhou-19-hsi-2026",
         "zhou-scholar-adaptive-multi-stage-fusion-of-hyperspectr-2026",
         "zhou-scholar-arxiv-2603-09037",
-        "zhou-dblp-arxiv-2404-00272",
         "zhou-dblp-arxiv-2412-00283",
-        "zhou-19-hsi-2026"
+        "zhou-dblp-arxiv-2404-00272"
       ],
       "history": [
         {
@@ -52230,11 +52454,11 @@
       "rationale": "BAE完整原始摘要明确autoencoder-like band attention；Hy正式原始摘要HAS-BS，v1 BABS不冒称学习注意力。",
       "evidencePaperIds": [
         "attend-in-bands-jstars-2019",
+        "zhou-72-hsi-2022",
         "zhou-67-hsi-2023",
         "zhou-47-hsi-2024",
         "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
-        "zhou-scholar-arxiv-2404-05258",
-        "zhou-72-hsi-2022"
+        "zhou-scholar-arxiv-2404-05258"
       ],
       "dimension": "method",
       "status": "confirmed",
@@ -52985,6 +53209,28 @@
           "date": "2026-10-12",
           "action": "created",
           "reason": "按实际农产品与品质/成分回归输出纠正既有误分类。"
+        }
+      ]
+    },
+    {
+      "id": "hyperspectral-boundary-detection",
+      "name": "高光谱边界检测",
+      "dimension": "task",
+      "definition": "由高光谱影像的光谱/空间特征生成物体或材料边界图；不把边界响应当逐像元语义类别，也不把同作者各稿的数据/方法或版本关系互相迁移。",
+      "status": "confirmed",
+      "color": "#799899",
+      "createdAt": "2026-10-12",
+      "rationale": "DICTA2017、S+SSPR2018和TIP2022原摘要均明确边界输出；两个未分类和一个语义分割误配需要按实际任务整理。",
+      "evidencePaperIds": [
+        "material-boundary-dicta-2017",
+        "hsi-boundary-detection-lncs-2018",
+        "zhou-83-hsi-2022"
+      ],
+      "history": [
+        {
+          "date": "2026-10-12",
+          "action": "created",
+          "reason": "按三个原摘要的真实边界输出新建任务；保持各稿独立及版本关系待核。"
         }
       ]
     }

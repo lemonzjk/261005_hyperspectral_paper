@@ -943,3 +943,6 @@
 
 - 2026-10-12 / jun-zhou-source-version-crosscheck-2026-10-12：新增0、更新1；新增一SSRN版本关系候选及四其他作者领域候选，两既有来源外候选续核不重复计数。
   纠正SSRN5182248为预印本/BibTeX misc，来源仍白名单外；七作者近同题稿、两SOC同题DOI均未注册关系，不自动合并。Fu10组12贡献者书目、Judy arXiv11完整返回没有新Jun；ORCID full-work不计论文全文，两免费PDF下载但正文待整理。总库390/周峻181/99全文82摘要/298原图不变。[原始证据与边界](sources/jun-zhou-source-version-crosscheck-2026-10-12.json)。
+
+- 2026-10-12 / jun-zhou-feature-boundary-public-materials-2026-10-12：新增0、更新6、十二作者HSI引用合十一已有目录ID；七其他作者引用后置、无新范围排除。
+  材料显著性AM39页全部阅读、三原图；周峻100全文/81摘要，总库390、原图301。SIFT撤降维，三边界稿单列任务；S+SSPR2018/卷11004/416–426纠正旧ACCV来源，DICTA改会议BibTeX。分类325确认/63暂定/2待、182标签/审计312。绿色索引与实际附件状态分别留证，不以PDF链接或HTML200冒称正文；代码只链接。[证据与边界](sources/jun-zhou-feature-boundary-public-materials-2026-10-12.json)。
