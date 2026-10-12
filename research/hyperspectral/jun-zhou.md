@@ -18,7 +18,9 @@
 
 目标作者是Griffith的周峻：ORCID `0000-0001-5822-8233`、DBLP `99/3847-1`、Scholar `6hOOxw0AAAAJ`。同名作者必须逐篇核验，不按姓名字符串自动合并。
 
-新增优先身份待办：Phase-Locked SNR稿固定v2的PDF首页五作者含Jun Zhou，官网/API却仅Judy X Yang；重取PDF与旧文件字节相同。八页全文、框架及表图已整理，撤销旧“无Jun”分流；原稿无单位/作者ORCID，Griffith单篇归属及名单冲突未明，暂不增加已确认181目录。IF103225出版社明确OA Full，但实际正文/作者单位仍未取得，继续免费材料待办，不标付费。[本轮证据](sources/jun-zhou-if-phase-author-conflict-2026-10-12.json)。
+新增优先身份待办：Phase-Locked SNR稿固定v2的PDF首页五作者含Jun Zhou，官网/API却仅Judy X Yang；重取PDF与旧文件字节相同。八页全文、框架及表图已整理，撤销旧“无Jun”分流；原稿无单位/作者ORCID，Griffith单篇归属及名单冲突未明，暂不增加已确认181目录。IF103225出版社明确OA Full，当前一张主要框架已取得；作者单位未得，继续身份待办，不以全文/多版本阅读作为资料要求、不标付费。[本轮证据](sources/jun-zhou-if-phase-author-conflict-2026-10-12.json)。
+
+最新既有作者主框架：DaSSP-Net（Pattern Recognition2025）、AMSFN（Information Fusion2026）与跨模态分类（既有ESWA2024作者保护条目）各取得一张正式版高清整体原图；对应出版社gr2/gr1/gr2资源，主图全流程与图例已视觉核对，只保留各一张。沿用既有Griffith7205/正式书目身份；不增加181作者目录，不把看图升级为全文，仍102全文/79摘要。原文图注、正文图号与页码未得留白，不逐页/逐版查找或深挖实验。IF/DINOFuse两DBLP精确查询HTTP200均为HTML挑战，没有书目/作者pid，不作零命中或身份判断；不反复请求同端点。[本轮原图与证据](sources/jun-zhou-publisher-mainframes-2026-10-12.json)。
 
 最新作者差集范围/主图续核：旧OpenAlex420未映射项中309有摘要，两组关键词定位14项，完整二级摘要实际读；不将其余295摘要和111无摘要视为已排除。茶芽2018注册原摘要的HSI指色彩空间，Xiemisitai2013的VoR首页/第二页仅ETM+/Quickbird及hue-saturation-intensity，葡萄叶2021注册原摘要只有RGB/MS/热红外融合，三条非直接HSI排除，未将这些同名作者归Griffith。Hatu2016则在原始Nature摘要/Hyperion段明确242带传感器、实际198带，确是直接HSI；Jun正式单位长安大学/兰州公司，Scientific Reports来源外，身份/合格来源单列候选，不误排纯MS，不扩充181作者例外。[本轮证据](sources/jun-zhou-openalex-difference-scope-2026-10-12.json)。
 
