@@ -52444,6 +52444,181 @@
           ]
         }
       }
+    },
+    {
+      "id": "phase-locked-snr-arxiv-2025",
+      "shortTitle": "Phase-Locked SNR",
+      "title": "Phase-Locked SNR Band Selection for Weak Mineral Signal Detection in Hyperspectral Imagery",
+      "authors": "Judy X Yang",
+      "year": 2025,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2508.00539",
+      "representation": "逐带SNR选带、端元聚类与非负光谱解混。",
+      "tags": [],
+      "summary": "在Cuprite高光谱影像上按逐带SNR筛选波段并作SG平滑，再用KMeans提取端元和NNLS估计非负丰度，评估矿物谱一致性。",
+      "input": "Cuprite AVIRIS高光谱立方体，作者描述250×190像素、188波段、0.4–2.5µm；论文把250×190称spatial resolution，实际是图像大小，未给地面空间分辨率。USGS实验室12矿物参考光谱仅用于光谱一致性验证；具体样品/库版本与匹配对应未给。",
+      "output": "逐波段SNR阈值选择的子集、12个KMeans中心端元、逐像素NNLS非负丰度向量及矿物空间显示；不是几何重建或监督地物分类网络。Fig.7实际展示12类别分类图，不能直接作为前三类连续丰度图证据。",
+      "mechanism": "对每像素谱做Savitzky–Golay平滑，按跨像素均值µ与标准差σ计算10log10(µ²/σ²)，保留SNR≥15dB波段；各保留谱L2归一化，KMeans K=12取中心端元，NNLS解非负丰度，再与参考矿物谱比余弦/RMSE。phase-locked是正文借用地震相干概念的SG/SNR类比，未给显式相位差估计、参考锁相测量或独立传感噪声标定。NNLS式只约束a≥0，未见sum-to-one约束。",
+      "readingNote": "按普通arXiv合格来源收录，身份争议单列。主署名/BibTeX按官方元数据仅Judy X Yang；同一v2 PDF列Judy X Yang、Guanyiman Fu、Jing Wang、Zekun Long、Jun Zhou，两份名单原样保留，未确认Jun为Griffith目标。2026-10-12已读固定v2八页全文，本轮复用材料，仅保留第3页Fig1一张主框架；没有新增PDF或全文阅读，不补v1、其他图、实验或代码。原有96/150选带、表头/正文与图注/图内冲突保留，不用书目收录证明结果可复现。",
+      "paper": "https://arxiv.org/abs/2508.00539v2",
+      "code": "",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "fixed_version_scope_and_main_framework_verified_author_discrepancy_preserved",
+      "citation": "@misc{phase_locked_snr_arxiv_2025,\n  title = {Phase-Locked SNR Band Selection for Weak Mineral Signal Detection in Hyperspectral Imagery},\n  author = {Judy X Yang},\n  year = {2025},\n  eprint = {2508.00539},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.LG},\n  url = {https://arxiv.org/abs/2508.00539v2},\n  note = {arXiv metadata lists one author; the v2 PDF lists five authors. Authorship discrepancy unresolved.}\n}\n",
+      "frameworkFigures": [
+        {
+          "path": "figures/phase-locked-snr-arxiv-2025/framework-1.png",
+          "sourceUrl": "https://arxiv.org/pdf/2508.00539v2",
+          "sourceVersion": "arXiv2508.00539v2（2025-08-05）",
+          "figureLabel": "Figure 1",
+          "page": 3,
+          "caption": "整体高光谱流程：SG光谱平滑及逐带SNR选择、归一化谱与KMeans端元提取、NNLS非负解混、矿物空间展示与参考谱相似度评估。",
+          "verificationNote": "沿用已获取并核验的v2第3页Fig1整体主框架，完整原PDF裁图，无重绘，仅保留一张。原图中的phase-locked措辞不作为独立锁相仪器测量证明。官方书目仅Judy X Yang，PDF另列四作者含Jun Zhou，署名冲突未解决。",
+          "width": 1560,
+          "height": 696,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "51a05bfc76c0532e06131c3089084d526ba4f1d4bd7410555d6b0bbeecab9255",
+          "attribution": "PDF: Judy X Yang, Guanyiman Fu, Jing Wang, Zekun Long, Jun Zhou; arXiv metadata: Judy X Yang only; author discrepancy unresolved",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              46,
+              566,
+              278
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "spectral-band-selection",
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "直接处理Cuprite AVIRIS高光谱波段与光谱丰度，按arXiv普通库范围收录；个人作者身份不作为合格普通论文的收录门槛，不增加181专项。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何结合逐带信噪比选择与非负解混处理弱矿物光谱信号？",
+        "datasets": "Cuprite AVIRIS高光谱与12矿物参考谱；参考库版本/样本匹配未给，沿用既有核验记录。",
+        "experimentSetting": "单Cuprite数据集，188波段，§IV-D报告阈值15dB保留96波段；Fig.6/§IV-G称主要92–187。KMeans12端元，SG窗口/多项式阶数、随机种子、参考库样品、端元对应及对照滤波参数未给。Table I比较Fourier/Wavelet/Phase-Locked，标题和正文另称150-band subset，不能与96带混为统一协议；无独立矿物检测AUC/定位误差/连续丰度真值。",
+        "conclusions": "按印式，选带CosSim为0.9952，高于两对照；全带CosSim0.8932低于Fourier0.9520、全带RMSE0.8932高于两个对照，不能称所有方案均优。末列标题SNR而正文称0.4502是最低RMSE，表头/语义未明，不擅自改列名。第1/4页另称RMSE0.25–0.35，与上述数字的关系未知。",
+        "limitations": "单数据集/未独立空间矿物真值、跨像素方差不能直接当独立测量噪声、阈值/SG/KMeans与参考匹配细节不足；96/150选带协议、表头/正文指标及图注/图内矛盾均保留，不检查代码或推测纠错。 官方单署名与PDF五署名冲突，Jun身份仍待；普通收录不等于确认全部署名/结果。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2508.00539v2",
+            "checkedAt": "2026-10-12",
+            "level": "arXiv官方v2书目与完整原摘要（已有存档）",
+            "supports": [
+              "原摘要直接研究Cuprite高光谱选带、KMeans端元与NNLS解混，普通arXiv来源合格。",
+              "官方API/abs仅Judy X Yang；本条主署名与BibTeX按官方书目，PDF五署名另存，不称Jun身份已核。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2508.00539v2",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v2既有八页全文与主要原框架已核（沿用历史阅读）",
+            "supports": [
+              "Cuprite AVIRIS高光谱立方体，作者描述250×190像素、188波段、0.4–2.5µm；论文把250×190称spatial resolution，实际是图像大小，未给地面空间分辨率。USGS实验室12矿物参考光谱仅用于光谱一致性验证；具体样品/库版本与匹配对应未给。",
+              "对每像素谱做Savitzky–Golay平滑，按跨像素均值µ与标准差σ计算10log10(µ²/σ²)，保留SNR≥15dB波段；各保留谱L2归一化，KMeans K=12取中心端元，NNLS解非负丰度，再与参考矿物谱比余弦/RMSE。phase-locked是正文借用地震相干概念的SG/SNR类比，未给显式相位差估计、参考锁相测量或独立传感噪声标定。NNLS式只约束a≥0，未见sum-to-one约束。",
+              "PDF署名Judy X Yang、Guanyiman Fu、Jing Wang、Zekun Long、Jun Zhou，没有单位或作者ORCID；已有Fig1第3页原图，不再补其他版本/图。",
+              "材料原有96/150带、指标表头与图注/图内差异保留，不猜纠错；既有全文阅读不重复计本轮新读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "phase-locked-snr-arxiv-2025-v2",
+            "type": "唯一材料版本arXiv v2（署名差异保留）",
+            "url": "https://arxiv.org/abs/2508.00539v2",
+            "pdfUrl": "https://arxiv.org/pdf/2508.00539v2",
+            "arxivId": "2508.00539",
+            "arxivVersion": 2,
+            "year": 2025,
+            "authors": [
+              "Judy X Yang",
+              "Guanyiman Fu",
+              "Jing Wang",
+              "Zekun Long",
+              "Jun Zhou"
+            ],
+            "metadataAuthors": [
+              "Judy X Yang"
+            ],
+            "firstSubmittedAt": "2025-08-01T11:26:49Z",
+            "updatedAt": "2025-08-05T07:14:05Z",
+            "readingProgress": "full_text_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-source-version-crosscheck-2026-10-12-2508.00539v2.pdf",
+            "relation": "PDF五署名与官方单署名均直接记录；已读v2/一主图沿用，不补其他版本。未以共同作者组合推定Griffith归属。"
+          }
+        ],
+        "methodFamilyId": "phase-locked-snr-arxiv-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "沿用已核固定v2及主框架：直接HSI波段选择和NNLS解混任务，普通arXiv来源合格；分类确认只证明任务，不解决署名冲突或个人身份。KMeans用于端元提取，不另标地物聚类任务或三维几何。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "cb12432584b99ba4fa9c81f9f6b5d626347936c619d487e6c20fd3a6cf2ce761",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2508.00539v2",
+            "https://arxiv.org/pdf/2508.00539v2"
+          ]
+        },
+        "targetAuthorIdentity": {
+          "name": "Jun Zhou",
+          "institution": "Griffith University",
+          "status": "pending",
+          "reason": "v2 PDF含Jun Zhou，官方API/abs不含；没有单位或个人ORCID。仅普通arXiv收录，不计已确认181作者专项。"
+        },
+        "authorMetadataDiscrepancy": {
+          "status": "unresolved",
+          "catalogAuthorSource": "official_arxiv_metadata",
+          "metadataAuthors": [
+            "Judy X Yang"
+          ],
+          "fixedPdfAuthors": [
+            "Judy X Yang",
+            "Guanyiman Fu",
+            "Jing Wang",
+            "Zekun Long",
+            "Jun Zhou"
+          ],
+          "primaryEvidencePath": "research/hyperspectral/sources/jun-zhou-if-phase-author-conflict-2026-10-12.json"
+        },
+        "historicalFullTextReading": {
+          "checkedAt": "2026-10-12",
+          "sourceSnapshot": "research/hyperspectral/sources/jun-zhou-if-phase-author-conflict-2026-10-12.json",
+          "fixedVersion": "arXiv2508.00539v2",
+          "pdfPagesRead": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "newFullTextReadThisRound": false
+        }
+      }
     }
   ],
   "datasets": [
@@ -53260,7 +53435,8 @@
         "zhou-scholar-arxiv-2603-09037",
         "zhou-scholar-arxiv-2605-20569",
         "hypersigma-tpami-2025",
-        "egu-net-arxiv-2021"
+        "egu-net-arxiv-2021",
+        "phase-locked-snr-arxiv-2025"
       ],
       "history": [
         {
@@ -54623,7 +54799,8 @@
         "zhou-scholar-similarity-based-hyperspectral-band-select-2022",
         "zhou-scholar-lidar-guided-unsupervised-hyperspectral-im-2025",
         "zhou-scholar-arxiv-2404-05258",
-        "zhou-cherry-hsi-band-selection-2025"
+        "zhou-cherry-hsi-band-selection-2025",
+        "phase-locked-snr-arxiv-2025"
       ],
       "history": [
         {

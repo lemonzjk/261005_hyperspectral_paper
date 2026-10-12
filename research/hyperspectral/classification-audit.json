@@ -384,7 +384,8 @@
     "egu-net-arxiv-2021",
     "infn-arxiv-2023",
     "dual-spatial-fusion-tgrs-2021",
-    "gabor-net-arxiv-2019"
+    "gabor-net-arxiv-2019",
+    "phase-locked-snr-arxiv-2025"
   ],
   "sourceChecks": [
     {
@@ -2495,6 +2496,28 @@
       "supports": [
         "Gabor-Nets主要方法图：三个输入特征经带方向、频率与随机相位初始化的Gabor卷积核得到八个输出特征；这是单层前向过程。",
         "仅首页和第5页主图选读，不逐页全文读，不补其他版本、图或实验。"
+      ]
+    },
+    {
+      "paperId": "phase-locked-snr-arxiv-2025",
+      "url": "https://arxiv.org/abs/2508.00539v2",
+      "checkedAt": "2026-10-12",
+      "level": "arXiv官方v2书目与完整原摘要（已有存档）",
+      "supports": [
+        "原摘要直接研究Cuprite高光谱选带、KMeans端元与NNLS解混，普通arXiv来源合格。",
+        "官方API/abs仅Judy X Yang；本条主署名与BibTeX按官方书目，PDF五署名另存，不称Jun身份已核。"
+      ]
+    },
+    {
+      "paperId": "phase-locked-snr-arxiv-2025",
+      "url": "https://arxiv.org/pdf/2508.00539v2",
+      "checkedAt": "2026-10-12",
+      "level": "固定arXiv v2既有八页全文与主要原框架已核（沿用历史阅读）",
+      "supports": [
+        "Cuprite AVIRIS高光谱立方体，作者描述250×190像素、188波段、0.4–2.5µm；论文把250×190称spatial resolution，实际是图像大小，未给地面空间分辨率。USGS实验室12矿物参考光谱仅用于光谱一致性验证；具体样品/库版本与匹配对应未给。",
+        "对每像素谱做Savitzky–Golay平滑，按跨像素均值µ与标准差σ计算10log10(µ²/σ²)，保留SNR≥15dB波段；各保留谱L2归一化，KMeans K=12取中心端元，NNLS解非负丰度，再与参考矿物谱比余弦/RMSE。phase-locked是正文借用地震相干概念的SG/SNR类比，未给显式相位差估计、参考锁相测量或独立传感噪声标定。NNLS式只约束a≥0，未见sum-to-one约束。",
+        "PDF署名Judy X Yang、Guanyiman Fu、Jing Wang、Zekun Long、Jun Zhou，没有单位或作者ORCID；已有Fig1第3页原图，不再补其他版本/图。",
+        "材料原有96/150带、指标表头与图注/图内差异保留，不猜纠错；既有全文阅读不重复计本轮新读。"
       ]
     }
   ]

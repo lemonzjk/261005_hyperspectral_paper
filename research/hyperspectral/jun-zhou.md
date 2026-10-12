@@ -12,6 +12,8 @@
 
 2026-10-13未决作者线索与查询对照：Huanfa个人学术主页所列ORCID与既有共同作者一致，出版页只有模板；UCL候选profile的HTTP200仅SPA壳，浏览器实际Page not found，未取得IF103225的Jun单位/个人标识，继续身份待核。arXiv的Xin Li整名与Jun Zhou整名双字段AND返回0，但指定RemoteTrimmer官方元数据明确两姓名，不能据零结果排除。改用Xin Li整名与Zhou姓取得172/172书目，两个完整Jun字段对应已有RemoteTrimmer与S4Rec候选；两原摘要核读、保留既有范围排除，无新候选/作者论文。其他170摘要未读，零字面HSI题名不作整体排除，不重复下载旧稿/逐版读。总库404/原图342、确认Jun181不变。[原始响应与阳性对照](sources/jun-zhou-xin-coauthor-query-control-2026-10-13.json)。
 
+2026-10-13已有候选普通库续接：Phase-Locked SNR的固定arXiv v2此前已核直接Cuprite HSI选带/NNLS解混及八页正文、主框架，按合格普通arXiv来源入库；不再用Jun个人身份或署名争议拖住范围已明确的普通论文。主署名及BibTeX采用官方API/abs的Judy X Yang，PDF五作者（含Jun Zhou）原样留在版本/争议字段，不能用官方单署名说PDF无Jun，也未确认Griffith归属。只复用第3页Fig1一张原框架，零新下载/全文阅读；已知表头、96/150带和图注差异沿用，不新深挖实验或代码。既有全文状态记历史实际阅读，非本轮新读或升级目标作者全文数。总库405/原图343（281白名单/23arXiv/101作者例外），Jun专项181（102全文/79摘要）不变；主署名Jun筛选182仅含IF1未核，Phase的PDF Jun在详情与身份待办单列。作者目录与领域矩阵未闭环。[普通收录与署名边界](sources/jun-zhou-phase-general-library-2026-10-13.json)。
+
 ## 当前目录
 
 已确认Griffith作者专项181条，全部为直接高光谱；79条摘要级、102条全文级。会议、期刊及预印本按实际版本分别记录，不等于181个独立方法。全文级只对应实际读过的版本；官方代码只记录链接，不审查代码或运行复现。
