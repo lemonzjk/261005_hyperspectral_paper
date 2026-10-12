@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：839混并索引174目录/186Griffith/76survey/403未映射；第6日文译题疑似旧JSTARS，DOI未核不合并。IF二级单位CNPC、原始身份仍待；姓氏HSI查询92均旧快照，无新源项。三PR引用论文普通收录，各一主图、零新PDF/摘要/全文；Jun确认数不变。
-- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并403未映射、6日文潜在重复；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
+- 最新：6日文译题按同刊卷期/年份、页码端点、同序署名与题意关联为旧论文引用，survey去重；缩写姓名/索引无DOI、末页填first_page保留，不称正文等同。839混并源项180目录（含6引用/1 arXiv书目族）/186Griffith/70survey/403未映射；零新论文/PDF/图/全文。IF二级单位CNPC，原始身份仍待；姓氏HSI查询92均旧快照。
+- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并403未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
