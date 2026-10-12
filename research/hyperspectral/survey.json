@@ -10995,6 +10995,78 @@
       "year": 2026,
       "sourceSnapshot": "sources/jun-zhou-phase-version-ssfad-reading-2026-10-12.json",
       "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-tiangong-yokoya-comix-2026-10-12-openalex",
+      "venue": "OpenAlex frozen author difference",
+      "keywordGroup": "existing-420-difference-title-abstract-locators",
+      "keywords": [
+        "hyperspectral",
+        "imaging spectroscopy",
+        "spectral imaging"
+      ],
+      "url": "https://api.openalex.org/works?filter=author.id%3AA5100781212",
+      "method": "复用已存839源项，不重复拉取；420未匹配元数据中309有摘要索引、111无摘要。指定词筛出六题名线索及三个摘要定位，实际读三个完整二级摘要；六题名线索均已在旧八候选队列。",
+      "pagination": "既有420差集快照元数据扫描，不是420逐篇材料阅读或全部排除。",
+      "candidateCount": 6,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "旧候选续核；其余差集范围/身份仍待",
+      "gaps": [
+        "指定词不命中不等于无直接HSI；FY3 spectral imaging payload未确认物理谱带，来源外，不收录。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json",
+      "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-tiangong-yokoya-comix-2026-10-12-yokoya",
+      "venue": "Primary coauthor academic publication directory",
+      "keywordGroup": "yokoya-selected-J-Zhou-and-direct-HSI-locators",
+      "keywords": [
+        "J. Zhou",
+        "CoMiX",
+        "HyperSIGMA",
+        "Hyperspectral imaging"
+      ],
+      "url": "https://naotoyokoya.com/Publications.html",
+      "method": "解析206实际非注释出版行并按引号题名交叉对照当前既有库/候选；只实际读所选五条完整摘要/书目及指定主要出版社注册作者表。两J.Zhou分别为Jingchun与Jinliu，不是Jun；CoMiX原稿16页完整读，另两公开稿仅首页选读。",
+      "pagination": "作者当前学术页面206行完整解析，非206篇全文/摘要阅读；限定匹配3既有库/4既有候选/199未匹配题名定位。",
+      "candidateCount": 5,
+      "reviewedCount": 3,
+      "status": "partial",
+      "statusLabel": "两作者同名定位已解决；一全文入库、其余材料待",
+      "gaps": [
+        "75题名HSI/88全文行含hyperspectral仅关键词定位，不自动确认收录范围或Jun作者全集。",
+        "HyperSIGMA40页、Primer24页已下载仅首页读，正文/框架仍待；CoMiX正式版未读。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json",
+      "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-tiangong-yokoya-comix-2026-10-12-hvot",
+      "venue": "Crossref formal-version locators",
+      "keywordGroup": "hvot-ssrn-qualified-version-followup",
+      "keywords": [
+        "Deep Learning for Hyperspectral Video Object Tracking"
+      ],
+      "url": "https://api.crossref.org/works?query.title=Deep%20Learning%20for%20Hyperspectral%20Video%20Object%20Tracking&rows=8",
+      "method": "指定八返回的题名、完整作者/年份/来源逐项核对；没有SSRN6802779合格正式匹配。近题TGRS3483072为不同五作者，单列原始材料候选，不合并综述和方法稿。",
+      "pagination": "8/8限定返回，不是全部版本检索。",
+      "candidateCount": 1,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "综述合格版本仍待，近题TGRS材料待",
+      "gaps": [
+        "原综述Jun单篇单位与合格版本未明；新TGRS原摘要/全文及公开版本未得。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json",
+      "collectionScope": "active"
     }
   ],
   "candidates": [
@@ -48370,7 +48442,7 @@
       "discoveredAt": "2026-10-12",
       "indexedAt": "2026-10-12",
       "decision": "pending",
-      "reason": "Crossref完整注册摘要实际读，确认直接高光谱视频跟踪综述；SSRN不在新收录来源，合格正式/arXiv版本待查。Jun身份只有索引ORCID/Griffith关联，单篇原文单位待核。",
+      "reason": "Crossref完整注册摘要实际读，确认直接高光谱视频跟踪综述；SSRN不在新收录来源，合格正式/arXiv版本待查。Jun身份只有索引ORCID/Griffith关联，单篇原文单位待核。 本轮同题Crossref限定八返回无合格正式匹配，Yokoya学术页206条当前解析中未见该题；均不证明没有公开/正式版。近题TGRS2024.3483072另五作者，无Jun，不是同版本。",
       "readingProgress": "abstract_read",
       "readingSourceBoundary": "IF只有完整二级索引摘要，SSRN跟踪为完整注册原摘要，Mamba为出版社完整原摘要；其他优先候选仅书目。",
       "identityStatus": "unverified_single_paper_primary_affiliation",
@@ -48378,7 +48450,8 @@
       "evidencePath": "research/hyperspectral/sources/jun-zhou-openalex-author-inventory-2026-10-12.json",
       "relatedDoi": "",
       "followupEvidencePaths": [
-        "research/hyperspectral/sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json"
+        "research/hyperspectral/sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json",
+        "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
       ],
       "followupStatus": "pending_identity_or_qualified_version"
     },
@@ -48469,32 +48542,45 @@
       "discoveredAt": "2026-10-12",
       "indexedAt": "2026-10-12",
       "decision": "pending",
-      "reason": "题名直接涉及Tiangong-1高光谱，但Geological Journal不在白名单；索引Jun单位为长安大学，单篇身份/范围及合格版本未核，不新增作者来源例外。",
-      "readingProgress": "title_only",
-      "readingSourceBoundary": "IF只有完整二级索引摘要，SSRN跟踪为完整注册原摘要，Mamba为出版社完整原摘要；其他优先候选仅书目。",
+      "reason": "题名直接涉及Tiangong-1高光谱，但Geological Journal不在白名单；索引Jun单位为长安大学，单篇身份/范围及合格版本未核，不新增作者来源例外。 完整二级摘要已读：Tiangong-1 SWIR与ASTER矿物对照及地质图/实地验证，确为直接HSI摘要线索；其“扩展先前研究”未指明前文DOI，不能据同地域自行关联两个JAG版本。",
+      "readingProgress": "abstract_read",
+      "readingSourceBoundary": "本轮实际读完整OpenAlex重构二级摘要；Wiley原页面403，正式原摘要/全文未得。",
       "identityStatus": "unverified_single_paper_primary_affiliation",
       "sourceScopeStatus": "outside_whitelist_pending_qualified_version",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-openalex-author-inventory-2026-10-12.json",
-      "relatedDoi": ""
+      "relatedDoi": "",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
+      ]
     },
     {
       "title": "Mapping alteration using imagery from the Tiangong-1 hyperspectral spaceborne system: Example for the Jintanzi gold province, China",
       "url": "https://doi.org/10.1016/j.jag.2017.03.013",
       "doi": "10.1016/j.jag.2017.03.013",
       "authors": "Lei Liu, Jilu Feng, Benoit Rivard, Xinliang Xu, Jun Zhou, Ling Han, Junlu Yang, Guangli Ren",
-      "year": 2017,
+      "year": 2018,
       "venue": "International Journal of Applied Earth Observation and Geoinformation",
       "searchId": "jun-zhou-openalex-author-inventory-2026-10-12",
       "discoveredAt": "2026-10-12",
       "indexedAt": "2026-10-12",
       "decision": "pending",
-      "reason": "题名直接涉及Tiangong-1高光谱；IJAEOG不在白名单且不是ISPRS JPRS。索引Jun为长安大学，身份及与另一个JAG DOI的关系未核。",
+      "reason": "正式Crossref完整八作者已核，Jun单位均未列；JAG03.013为2018卷64页275–286（出版社coredata同为February2018），JAG02.023为2017卷59页31–41。同题同八作者但不同DOI/卷页/年份，无登记版本关系，保持两候选不合并。IJAEOG不在白名单且不是ISPRS JPRS，索引长安单位不作Griffith单篇身份凭据；正文及合格版本仍待。",
       "readingProgress": "title_only",
       "readingSourceBoundary": "IF只有完整二级索引摘要，SSRN跟踪为完整注册原摘要，Mamba为出版社完整原摘要；其他优先候选仅书目。",
       "identityStatus": "unverified_single_paper_primary_affiliation",
       "sourceScopeStatus": "outside_whitelist_pending_qualified_version",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-openalex-author-inventory-2026-10-12.json",
-      "relatedDoi": ""
+      "relatedDoi": "",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
+      ],
+      "primaryBibliography": {
+        "volume": "64",
+        "pages": "275–286",
+        "publishedPrintYear": 2018
+      },
+      "previousIndexedYear": 2017,
+      "versionStatus": "same_title_distinct_doi_volume_pages_relation_unresolved"
     },
     {
       "title": "Mapping alteration using imagery from the Tiangong-1 hyperspectral spaceborne system: Example for the Jintanzi gold province, China",
@@ -48507,13 +48593,22 @@
       "discoveredAt": "2026-10-12",
       "indexedAt": "2026-10-12",
       "decision": "pending",
-      "reason": "与10.1016/j.jag.2017.03.013同题名，但不同DOI；正式原文/更正或版本关系未核。来源不在白名单，索引长安大学不作为Griffith作者凭据。",
+      "reason": "正式Crossref完整八作者已核，Jun单位均未列；JAG03.013为2018卷64页275–286（出版社coredata同为February2018），JAG02.023为2017卷59页31–41。同题同八作者但不同DOI/卷页/年份，无登记版本关系，保持两候选不合并。IJAEOG不在白名单且不是ISPRS JPRS，索引长安单位不作Griffith单篇身份凭据；正文及合格版本仍待。",
       "readingProgress": "title_only",
       "readingSourceBoundary": "IF只有完整二级索引摘要，SSRN跟踪为完整注册原摘要，Mamba为出版社完整原摘要；其他优先候选仅书目。",
       "identityStatus": "unverified_single_paper_primary_affiliation",
       "sourceScopeStatus": "outside_whitelist_pending_qualified_version",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-openalex-author-inventory-2026-10-12.json",
-      "relatedDoi": ""
+      "relatedDoi": "",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
+      ],
+      "primaryBibliography": {
+        "volume": "59",
+        "pages": "31–41",
+        "publishedPrintYear": 2017
+      },
+      "versionStatus": "same_title_distinct_doi_volume_pages_relation_unresolved"
     },
     {
       "title": "Mamba-UNet for reference-based super-resolution reconstruction",
@@ -48630,6 +48725,91 @@
       "scopeStatus": "hyperspectral_title_primary_abstract_pending",
       "sourcePolicyStatus": "eligible_tgrs_primary_material_pending",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-phase-version-ssfad-reading-2026-10-12.json"
+    },
+    {
+      "title": "CoMiX: Cross-Modal Fusion With Deformable Convolutions for HSI-X Semantic Segmentation",
+      "url": "https://doi.org/10.1109/tgrs.2025.3624105",
+      "doi": "10.1109/tgrs.2025.3624105",
+      "authors": "Xuming Zhang, Naoto Yokoya, Xingfa Gu, Qingjiu Tian, Lorenzo Bruzzone",
+      "year": 2025,
+      "venue": "TGRS",
+      "searchId": "jun-zhou-tiangong-yokoya-comix-2026-10-12-yokoya",
+      "discoveredAt": "2026-10-12",
+      "indexedAt": "2026-10-12",
+      "decision": "included",
+      "paperId": "comix-tgrs-2025",
+      "reason": "作者学术页显式关联arXiv四作者原稿与IEEE正式五作者书目；v1十六页实际读、三原方法图入库，直接HSI像素语义，TGRS白名单。原稿/正式作者和年份分源保留，无Jun，正式正文未读。",
+      "readingProgress": "full_text_read",
+      "identityStatus": "complete_primary_authors_no_Jun_Zhou",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
+    },
+    {
+      "title": "HyperSIGMA: Hyperspectral Intelligence Comprehension Foundation Model",
+      "url": "https://doi.org/10.1109/tpami.2025.3557581",
+      "doi": "10.1109/tpami.2025.3557581",
+      "arxivId": "2406.11519",
+      "authors": "Di Wang, Meiqi Hu, Yao Jin, Yuchun Miao, Jiaqi Yang, Yichu Xu, Xiaolei Qin, Jiaqi Ma, Lingyu Sun, Chenxing Li, Chuan Fu, Hongruixuan Chen, Chengxi Han, Naoto Yokoya, Jing Zhang, Minqiang Xu, Lin Liu, Lefei Zhang, Chen Wu, Bo Du, Dacheng Tao, Liangpei Zhang",
+      "year": 2025,
+      "venue": "TPAMI",
+      "searchId": "jun-zhou-tiangong-yokoya-comix-2026-10-12-yokoya",
+      "discoveredAt": "2026-10-12",
+      "indexedAt": "2026-10-12",
+      "decision": "pending",
+      "reason": "官方arXiv完整摘要与原稿首页作者/摘要实际读，直接HSI范围明确，作者均无Jun；免费PDF已下载，但只首页选读，完整方法/框架/实验待整理。 Crossref正式22作者逐名及TPAMI47(8)2025页6427–6444已核；固定v2共40页（含后续材料），不把18页正式篇幅混作原稿页数。官方代码仅记录https://github.com/WHU-Sigma/HyperSIGMA。",
+      "readingProgress": "abstract_read",
+      "pdfDownloaded": true,
+      "localPdf": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12-2406.11519v2.pdf",
+      "pagesActuallyRead": [
+        1
+      ],
+      "identityStatus": "complete_primary_authors_no_Jun_Zhou",
+      "scopeStatus": "direct_hyperspectral_primary_abstract",
+      "sourcePolicyStatus": "eligible_tpami_and_arxiv",
+      "code": "https://github.com/WHU-Sigma/HyperSIGMA",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
+    },
+    {
+      "title": "Hyperspectral Imaging",
+      "url": "https://arxiv.org/abs/2508.08107",
+      "doi": "",
+      "arxivId": "2508.08107",
+      "authors": "Danfeng Hong, Chenyu Li, Naoto Yokoya, Bing Zhang, Xiuping Jia, Antonio Plaza, Paolo Gamba, Jon Atli Benediktsson, Jocelyn Chanussot",
+      "year": 2025,
+      "venue": "arXiv",
+      "searchId": "jun-zhou-tiangong-yokoya-comix-2026-10-12-yokoya",
+      "discoveredAt": "2026-10-12",
+      "indexedAt": "2026-10-12",
+      "decision": "pending",
+      "reason": "官方arXiv完整摘要与原稿首页作者/摘要实际读，直接HSI范围明确，作者均无Jun；免费PDF已下载，但只首页选读，完整方法/框架/实验待整理。 Nature Reviews Methods Primers不在白名单，不能误作Nature Methods；本候选仅按arXiv合格预印本，不将正式来源加入白名单。",
+      "readingProgress": "abstract_read",
+      "pdfDownloaded": true,
+      "localPdf": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12-2508.08107v2.pdf",
+      "pagesActuallyRead": [
+        1
+      ],
+      "identityStatus": "complete_primary_authors_no_Jun_Zhou",
+      "scopeStatus": "direct_hyperspectral_primary_abstract",
+      "sourcePolicyStatus": "eligible_arxiv_formal_source_outside_whitelist",
+      "code": "",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
+    },
+    {
+      "title": "A Deep Temporal-Spectral–Spatial Anchor-Free Siamese Tracking Network for Hyperspectral Video Object Tracking",
+      "url": "https://doi.org/10.1109/tgrs.2024.3483072",
+      "doi": "10.1109/tgrs.2024.3483072",
+      "authors": "Zhenqi Liu, Yanfei Zhong, Guorui Ma, Xinyu Wang, Liangpei Zhang",
+      "year": 2024,
+      "venue": "TGRS",
+      "searchId": "jun-zhou-tiangong-yokoya-comix-2026-10-12-hvot",
+      "discoveredAt": "2026-10-12",
+      "indexedAt": "2026-10-12",
+      "decision": "pending",
+      "reason": "正式Crossref完整五作者/单位及TGRS62、1–16已核，无Jun。不是SSRN6802779综述版本；原摘要/全文未得，有限arXiv题名查询零返回不证明无公开稿，先列白名单材料候选。",
+      "readingProgress": "title_only",
+      "identityStatus": "complete_registered_authors_no_Jun_Zhou",
+      "scopeStatus": "hyperspectral_title_primary_material_pending",
+      "sourcePolicyStatus": "eligible_tgrs_primary_material_pending",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
     }
   ],
   "batches": [
@@ -55288,6 +55468,35 @@
         "Phase v1/v2同五作者、登记单作者冲突继续；Griffith单篇单位未列。",
         "IF META401、三共同作者ORCID超时，原稿/单位未得；出版社OA优先免费材料不能判付费。",
         "SSFAD正式版、新TGRS原始材料、作者目录及全领域历年矩阵继续。"
+      ]
+    },
+    {
+      "id": "jun-zhou-tiangong-yokoya-comix-2026-10-12",
+      "date": "2026-10-12",
+      "searchIds": [
+        "jun-zhou-tiangong-yokoya-comix-2026-10-12-openalex",
+        "jun-zhou-tiangong-yokoya-comix-2026-10-12-yokoya",
+        "jun-zhou-tiangong-yokoya-comix-2026-10-12-hvot"
+      ],
+      "paperIds": [
+        "comix-tgrs-2025"
+      ],
+      "new": 1,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 3,
+      "newFullTextReadingCount": 1,
+      "catalogFullTextReadingCount": 1,
+      "pdfPagesRead": 16,
+      "candidateVersionPagesSelected": 2,
+      "figuresAdded": 3,
+      "sourceSnapshot": "sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json",
+      "readingBoundary": "CoMiX v1十六页与三原图完整读；HyperSIGMA40页及Primer24页仅首页选读/其余文字提取，仍资料待办。206作者行仅解析，实际五选定完整摘要及两同名主要作者表阅读；420差集仅六题名/三完整二级摘要定位。",
+      "gaps": [
+        "周峻181目录与Phase作者冲突、IF身份/免费正文、HVOT合格版本未闭环；领域历年检索继续。",
+        "CoMiX正式正文/注册页码和作者网页年份差异、Tiangong同题异DOI关系未核。",
+        "HyperSIGMA/Primer已获公开材料优先续读；近题TGRS跟踪材料待。"
       ]
     }
   ],

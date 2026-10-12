@@ -374,7 +374,8 @@
     "hucrtrack-tip-2026",
     "spectraltrack-tip-2025",
     "dualmamba-tgrs-2025",
-    "ssfad-arxiv-2022"
+    "ssfad-arxiv-2022",
+    "comix-tgrs-2025"
   ],
   "sourceChecks": [
     {
@@ -2260,6 +2261,19 @@
         "无监督像元异常评分，不需目标参考光谱/训练标签；真值用于评估及选择最优参数。比较GRX/LRX/CRD/RPCA-RX/GTVLRR/2S-GLRT，评价箱线分离、ROC、AUC及秒级耗时。外窗5–25、内窗3–15寻优；SSFAD前三场景最优(5,3)，Cri(17,15)；显著性位置常数c=1。所有方法按原文调至各场景最佳，没有独立验证划分；执行硬件、随机重复/误差条未给。",
         "Table3按Gulfport/Pavia Centra/Gainesville/Cri，SSFAD AUC为99.307%/99.882%/98.970%/99.751%。后三场景优于表内六对照；Gulfport的GTVLRR99.691%高于SSFAD99.307%。Table2中Gulfport平均融合99.309%略高于自适应99.307%，其他三场景自适应较好，不称全面胜出。Table4 SSFAD耗时50.44/44.67/47.67/3197.97秒，GRX0.08/0.08/0.12/0.32秒明显更快；Cri也慢于除2S-GLRT以外所有对照，不能称实时或普遍提速。",
         "只完整读固定arXiv v1。两指定Crossref各五返回未匹配同题/同三作者，当前API无DOI/journal_ref；不证明没有正式版本。四单景真值调最优窗，泛化/独立参数选择未知。LMML η写∈[0,1]，Eq3未给裁剪且Fig2显示线段外投影；中值=均值的退化与投影背景协方差求逆/正则处理未交代。Eq12印为trace差异式，patch维度及操作不充分说明，不擅自替换为Frobenius距离。Cri谱分辨率10 m单位疑点保留；实际数据版本/传感规格缺口不猜。耗时无硬件/实现协议，不能用于跨论文速度推断。所有细节只按原稿整理，不检查代码。"
+      ]
+    },
+    {
+      "paperId": "comix-tgrs-2025",
+      "url": "https://arxiv.org/pdf/2411.09023v1",
+      "checkedAt": "2026-10-12",
+      "level": "固定v1十六页完整正文、参考文献及三原图实际阅读",
+      "supports": [
+        "固定v1全文直接处理144/224/48带HSI及DSM/SAR/MS-LiDAR栅格，输出二维地物语义；不是纯多光谱或真实三维点云预测。类别标注语义分割、地物分类及HSI-LiDAR辅助分类；EPA/交互注意力与DCN细节记录于方法，不强套现有不匹配方法标签。",
+        "Houston2013：HSI144带380–1050nm与LiDAR DSM，同为349×1905、2.5m、15类；Table I各类训练数合计2832但Total印28332，测试12197。Berlin：HyMap模拟EnMAP HSI797×220×224、30m、0.4–2.5μm，Sentinel-1 VV/VH SAR1723×476、13.89m，HSI最近邻插值至SAR尺度；8类、训练2820/测试461851。DFC2018：HSI4172×1202、48带380–1050nm、1m，MS-LiDAR DSM/DEM和三强度栅格0.5m；HSI最近邻至0.5m、NDSM=DSM−DEM；20类、训练2018910/测试341729。",
+        "固定v1 §III：所有模态归一化[0,1]，128×128输入、batch4，Adam、交叉熵、500 epochs、weight decay0.01，poly学习率；Houston2013/DFC2018初始6e−5，Berlin1e−3。各实验五次独立测试，主表均值与标准差；与SVM/FusAtNet/CALC/Fusion HCT/MFT/Fusion-FCN/Flex-MCFNet比较，作者称相同预处理与训练测试集。具体GPU/执行硬件、验证集及裁块空间隔离未交代。",
+        "v1 Tables IV/V/VI：Houston2013 OA95.75±1.18%/AA96.23±1.06%/κ×100=95.39±1.36；Berlin OA76.81±1.01%/AA63.31±0.95%/κ×100=63.97±1.08；DFC2018 OA68.26±1.59%/AA63.57±2.12%/κ×100=66.31±1.21。三场景OA及κ优于表内对照，但Berlin AA低于Flex-MCFNet68.57%、FusAtNet66.21%及MFT64.02%；并非所有类别第一，DFC未铺装停车场均为0。Houston Table VII CoMiX21.87M参数/197.02G FLOPs，训练8282.43s/推断7.72s，快于深度基线但慢于SVM推断2.85s；参数与算量远高于Fusion-FCN0.09M/6.22G。逐项累加消融OA82.51→87.23→89.08→93.72→95.75%，不称独立因果消融。",
+        "仅完整读arXiv v1十六页，正式TGRS五作者正文未读；作者网页标2026而Crossref正式卷63印年2025，分别保留。原稿称3D DCN，但Fig.2(b)/Eq.5–10为EPA空间/通道注意力加3DFFN，未给HSI三维变形偏移；3DFFN公式Conv3、释文Conv2命名不一致。FFM Fig.3的DWConv/GELU顺序与Eq.25不同。Houston Table I训练Total28332与逐类合计2832冲突，类名与Fig.7图例不一致，不擅自重映射。DFC原文把1550nm标near-infrared、1064nm标mid-infrared，保留原始标注疑点。效率表CALC/CACL训练印1696081351.24s，视觉确认后保留异常值，不猜改；正文称CoMiX推断慢于Fusion-FCN但表为7.72<9.60s，另称Fusion HCT参数最高也与表不符。硬件/时延口径缺失，秒级整景推断不直接支持实时或部署；未知模态迁移、三模态融合、跨场景泛化和空间独立评估未证。"
       ]
     }
   ]

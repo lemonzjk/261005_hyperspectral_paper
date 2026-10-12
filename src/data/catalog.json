@@ -50341,6 +50341,213 @@
           }
         }
       ]
+    },
+    {
+      "id": "comix-tgrs-2025",
+      "shortTitle": "CoMiX",
+      "title": "CoMiX: Cross-Modal Fusion With Deformable Convolutions for HSI-X Semantic Segmentation",
+      "authors": "Xuming Zhang, Naoto Yokoya, Xingfa Gu, Qingjiu Tian, Lorenzo Bruzzone",
+      "year": 2025,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2025.3624105",
+      "representation": "二维像素语义融合表征；HSI谱空立方体与X栅格双分支交互，3D模块不等同三维几何。",
+      "tags": [],
+      "summary": "CoMiX以X变形卷积与HSI配对谱空注意力双分支、CMFeX跨模态交互及多阶段融合实现二维高光谱语义分割。完整读2024 arXiv v1，三个场景OA95.75%/76.81%/68.26%；Berlin AA并非最优。TGRS正式书目已关联，四作者原稿与五作者正式记录分开，最终正文未读。",
+      "input": "配准/重采样后的HSI与X栅格及训练像素标签：Houston2013的144带HSI+DSM、Berlin的224带模拟EnMAP HSI+双极化SAR、DFC2018的48带HSI+MS-LiDAR高程/强度。128×128输入，模态归一化[0,1]；不是原始三维点云点级输入。",
+      "output": "与图像空间位置对应的二维地物像素语义类别图；不重建光谱或几何，MS-LiDAR是辅助模态。",
+      "mechanism": "1×1 Conv/BN/SiLU嵌入后四阶段双分支，仅第二阶段前降采样2倍。X分支DCNv4以分组可学习偏移/调制标量作动态采样，前两阶段3×3、后两阶段7×7。HSI分支原稿命名3D DCN，但Fig.2与Eq.8为EPA共享Q/K的低维投影空间注意力和通道注意力，拼接后残差3DFFN；不推测未写出的三维偏移。每阶段CMFeX用另一模态空间/通道注意力图重加权自身V，MLP、拼接及残差增强；增强特征同时送下一阶段与FFM。FFM拼接后深度卷积前馈残差融合；All-MLP统一各阶段通道、上采样、拼接及两MLP预测，交叉熵监督。",
+      "readingNote": "固定arXiv2411.09023v1十六页正文及参考文献已读，Fig.1/2/3原图在PDF3/4/5页已整理；全文级仅指四作者v1。作者学术页显式将该arXiv PDF链接到正式IEEE11213508，同题Crossref记录五作者含Naoto Yokoya；两版本名单/年份及注册页码原字段分别保留，不外推最终方法/结果。原稿模块、样本表、类名与效率表疑点依论文记录；代码无官方URL，留空，不检查仓库。",
+      "paper": "https://doi.org/10.1109/tgrs.2025.3624105",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "正式Crossref书目与作者学术页版本链接；固定arXiv v1十六页全文及三原图实际阅读",
+      "library": {
+        "categoryIds": [
+          "semantic-segmentation",
+          "land-cover-classification",
+          "hsi-lidar-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "固定v1全文直接处理144/224/48带HSI及DSM/SAR/MS-LiDAR栅格，输出二维地物语义；不是纯多光谱或真实三维点云预测。类别标注语义分割、地物分类及HSI-LiDAR辅助分类；EPA/交互注意力与DCN细节记录于方法，不强套现有不匹配方法标签。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何在HSI与不同辅助模态间保留专有特征、交换互补信息，并兼顾二维像素语义的局部与长程上下文？",
+        "datasets": "Houston2013：HSI144带380–1050nm与LiDAR DSM，同为349×1905、2.5m、15类；Table I各类训练数合计2832但Total印28332，测试12197。Berlin：HyMap模拟EnMAP HSI797×220×224、30m、0.4–2.5μm，Sentinel-1 VV/VH SAR1723×476、13.89m，HSI最近邻插值至SAR尺度；8类、训练2820/测试461851。DFC2018：HSI4172×1202、48带380–1050nm、1m，MS-LiDAR DSM/DEM和三强度栅格0.5m；HSI最近邻至0.5m、NDSM=DSM−DEM；20类、训练2018910/测试341729。",
+        "experimentSetting": "固定v1 §III：所有模态归一化[0,1]，128×128输入、batch4，Adam、交叉熵、500 epochs、weight decay0.01，poly学习率；Houston2013/DFC2018初始6e−5，Berlin1e−3。各实验五次独立测试，主表均值与标准差；与SVM/FusAtNet/CALC/Fusion HCT/MFT/Fusion-FCN/Flex-MCFNet比较，作者称相同预处理与训练测试集。具体GPU/执行硬件、验证集及裁块空间隔离未交代。",
+        "conclusions": "v1 Tables IV/V/VI：Houston2013 OA95.75±1.18%/AA96.23±1.06%/κ×100=95.39±1.36；Berlin OA76.81±1.01%/AA63.31±0.95%/κ×100=63.97±1.08；DFC2018 OA68.26±1.59%/AA63.57±2.12%/κ×100=66.31±1.21。三场景OA及κ优于表内对照，但Berlin AA低于Flex-MCFNet68.57%、FusAtNet66.21%及MFT64.02%；并非所有类别第一，DFC未铺装停车场均为0。Houston Table VII CoMiX21.87M参数/197.02G FLOPs，训练8282.43s/推断7.72s，快于深度基线但慢于SVM推断2.85s；参数与算量远高于Fusion-FCN0.09M/6.22G。逐项累加消融OA82.51→87.23→89.08→93.72→95.75%，不称独立因果消融。",
+        "limitations": "仅完整读arXiv v1十六页，正式TGRS五作者正文未读；作者网页标2026而Crossref正式卷63印年2025，分别保留。原稿称3D DCN，但Fig.2(b)/Eq.5–10为EPA空间/通道注意力加3DFFN，未给HSI三维变形偏移；3DFFN公式Conv3、释文Conv2命名不一致。FFM Fig.3的DWConv/GELU顺序与Eq.25不同。Houston Table I训练Total28332与逐类合计2832冲突，类名与Fig.7图例不一致，不擅自重映射。DFC原文把1550nm标near-infrared、1064nm标mid-infrared，保留原始标注疑点。效率表CALC/CACL训练印1696081351.24s，视觉确认后保留异常值，不猜改；正文称CoMiX推断慢于Fusion-FCN但表为7.72<9.60s，另称Fusion HCT参数最高也与表不符。硬件/时延口径缺失，秒级整景推断不直接支持实时或部署；未知模态迁移、三模态融合、跨场景泛化和空间独立评估未证。",
+        "methodFamilyId": "comix-deformable-paired-attention-cross-modal-segmentation",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/pdf/2411.09023v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定v1十六页完整正文、参考文献及三原图实际阅读",
+            "supports": [
+              "固定v1全文直接处理144/224/48带HSI及DSM/SAR/MS-LiDAR栅格，输出二维地物语义；不是纯多光谱或真实三维点云预测。类别标注语义分割、地物分类及HSI-LiDAR辅助分类；EPA/交互注意力与DCN细节记录于方法，不强套现有不匹配方法标签。",
+              "Houston2013：HSI144带380–1050nm与LiDAR DSM，同为349×1905、2.5m、15类；Table I各类训练数合计2832但Total印28332，测试12197。Berlin：HyMap模拟EnMAP HSI797×220×224、30m、0.4–2.5μm，Sentinel-1 VV/VH SAR1723×476、13.89m，HSI最近邻插值至SAR尺度；8类、训练2820/测试461851。DFC2018：HSI4172×1202、48带380–1050nm、1m，MS-LiDAR DSM/DEM和三强度栅格0.5m；HSI最近邻至0.5m、NDSM=DSM−DEM；20类、训练2018910/测试341729。",
+              "固定v1 §III：所有模态归一化[0,1]，128×128输入、batch4，Adam、交叉熵、500 epochs、weight decay0.01，poly学习率；Houston2013/DFC2018初始6e−5，Berlin1e−3。各实验五次独立测试，主表均值与标准差；与SVM/FusAtNet/CALC/Fusion HCT/MFT/Fusion-FCN/Flex-MCFNet比较，作者称相同预处理与训练测试集。具体GPU/执行硬件、验证集及裁块空间隔离未交代。",
+              "v1 Tables IV/V/VI：Houston2013 OA95.75±1.18%/AA96.23±1.06%/κ×100=95.39±1.36；Berlin OA76.81±1.01%/AA63.31±0.95%/κ×100=63.97±1.08；DFC2018 OA68.26±1.59%/AA63.57±2.12%/κ×100=66.31±1.21。三场景OA及κ优于表内对照，但Berlin AA低于Flex-MCFNet68.57%、FusAtNet66.21%及MFT64.02%；并非所有类别第一，DFC未铺装停车场均为0。Houston Table VII CoMiX21.87M参数/197.02G FLOPs，训练8282.43s/推断7.72s，快于深度基线但慢于SVM推断2.85s；参数与算量远高于Fusion-FCN0.09M/6.22G。逐项累加消融OA82.51→87.23→89.08→93.72→95.75%，不称独立因果消融。",
+              "仅完整读arXiv v1十六页，正式TGRS五作者正文未读；作者网页标2026而Crossref正式卷63印年2025，分别保留。原稿称3D DCN，但Fig.2(b)/Eq.5–10为EPA空间/通道注意力加3DFFN，未给HSI三维变形偏移；3DFFN公式Conv3、释文Conv2命名不一致。FFM Fig.3的DWConv/GELU顺序与Eq.25不同。Houston Table I训练Total28332与逐类合计2832冲突，类名与Fig.7图例不一致，不擅自重映射。DFC原文把1550nm标near-infrared、1064nm标mid-infrared，保留原始标注疑点。效率表CALC/CACL训练印1696081351.24s，视觉确认后保留异常值，不猜改；正文称CoMiX推断慢于Fusion-FCN但表为7.72<9.60s，另称Fusion HCT参数最高也与表不符。硬件/时延口径缺失，秒级整景推断不直接支持实时或部署；未知模态迁移、三模态融合、跨场景泛化和空间独立评估未证。"
+            ]
+          },
+          {
+            "url": "https://naotoyokoya.com/Publications.html",
+            "checkedAt": "2026-10-12",
+            "level": "作者学术出版目录指定行完整书目和摘要，版本链接阅读",
+            "supports": [
+              "第11条完整作者简称为X.Zhang/N.Yokoya/X.Gu/Q.Tian/L.Bruzzone，明确链接IEEE11213508与arXiv2411.09023；网页标2026，与Crossref印年2025分别记录。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=CoMiX%20Cross-modal%20fusion%20with%20deformable%20convolutions%20for%20HSI-X%20semantic%20segmentation&rows=3",
+            "checkedAt": "2026-10-12",
+            "level": "指定Crossref三返回的正式题名、完整五作者/单位及卷页",
+            "supports": [
+              "正式DOI10.1109/tgrs.2025.3624105，TGRS卷63、published-print2025；原始page字段5533317-5533317，不擅自换为1–17页或猜文章编号。五作者均无Jun Zhou，不能把正式五作者回填2024四作者原稿。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "comix-tgrs-2025-formal",
+            "type": "正式期刊书目",
+            "url": "https://doi.org/10.1109/tgrs.2025.3624105",
+            "doi": "10.1109/tgrs.2025.3624105",
+            "year": 2025,
+            "authors": [
+              "Xuming Zhang",
+              "Naoto Yokoya",
+              "Xingfa Gu",
+              "Qingjiu Tian",
+              "Lorenzo Bruzzone"
+            ],
+            "readingProgress": "abstract_read",
+            "relation": "作者学术页明确关联同题预印本与IEEE正式记录；正式摘要读自作者学术页，最终正文未读；正式五作者、页面2026及注册2025分别保留。"
+          },
+          {
+            "id": "comix-tgrs-2025-arxiv-v1",
+            "type": "arXiv固定v1预印本",
+            "url": "https://arxiv.org/abs/2411.09023v1",
+            "pdfUrl": "https://arxiv.org/pdf/2411.09023v1",
+            "localFile": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12-2411.09023v1.pdf",
+            "arxivId": "2411.09023",
+            "arxivVersion": 1,
+            "firstSubmittedAt": "2024-11-13T21:00:28Z",
+            "updatedAt": "2024-11-13T21:00:28Z",
+            "year": 2024,
+            "authors": [
+              "Xuming Zhang",
+              "Xingfa Gu",
+              "Qingjiu Tian",
+              "Lorenzo Bruzzone"
+            ],
+            "readingProgress": "full_text_read",
+            "relation": "本轮实际阅读与原图、数据和结果对应此四作者v1，未假定与正式五作者版本正文相同。"
+          }
+        ],
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "固定v1全文直接处理144/224/48带HSI及DSM/SAR/MS-LiDAR栅格，输出二维地物语义；不是纯多光谱或真实三维点云预测。类别标注语义分割、地物分类及HSI-LiDAR辅助分类；EPA/交互注意力与DCN细节记录于方法，不强套现有不匹配方法标签。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "835f7fe17fc5f00deae110453a6b52ce8c12d5d6982aa8bf148213d81c315d9d",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2411.09023v1"
+          ]
+        }
+      },
+      "citation": "@article{comix_tgrs_2025,\n  title = {CoMiX: Cross-Modal Fusion With Deformable Convolutions for HSI-X Semantic Segmentation},\n  author = {Xuming Zhang and Naoto Yokoya and Xingfa Gu and Qingjiu Tian and Lorenzo Bruzzone},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2025},\n  volume = {63},\n  pages = {5533317--5533317},\n  doi = {10.1109/tgrs.2025.3624105}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2411.09023v1",
+          "figureLabel": "Fig. 1",
+          "caption": "CoMiX总体流程：HSI与X双分支、四阶段CMFeX交互与FFM融合，仅第二阶段前降采样2倍，All-MLP解码输出二维像素语义。",
+          "verificationNote": "固定arXiv2411.09023v1原图及完整图注，已视觉核对图号、全部面板和裁剪边界，非重绘；正式五作者版本正文未读。",
+          "path": "figures/comix-tgrs-2025/framework-1.png",
+          "width": 1560,
+          "height": 612,
+          "verifiedAt": "2026-10-12",
+          "sha256": "2cefbc2defd22711189ea3705fc8bbdcf8d18347462600e8feb97ba6018ce39e",
+          "attribution": "Xuming Zhang, Xingfa Gu, Qingjiu Tian, Lorenzo Bruzzone · arXiv2411.09023v1 (2024)",
+          "page": 3,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2411.09023v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              48,
+              566,
+              252
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2411.09023v1",
+          "figureLabel": "Fig. 2",
+          "caption": "原稿2D DCN与所谓3D DCN块：X分支为变形卷积；HSI分支图中实际为EPA共享Q/K的空间与通道配对注意力，接3DFFN。",
+          "verificationNote": "固定arXiv2411.09023v1原图及完整图注，已视觉核对图号、全部面板和裁剪边界，非重绘；正式五作者版本正文未读。Fig.2(b)及Eq.8明确为EPA注意力，不擅自补成三维偏移卷积。",
+          "path": "figures/comix-tgrs-2025/framework-2.png",
+          "width": 1560,
+          "height": 699,
+          "verifiedAt": "2026-10-12",
+          "sha256": "96c4c021f29465f0252d52fd21d7e5e6eb6bd010de20973d5d467607f2f426eb",
+          "attribution": "Xuming Zhang, Xingfa Gu, Qingjiu Tian, Lorenzo Bruzzone · arXiv2411.09023v1 (2024)",
+          "page": 4,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2411.09023v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              48,
+              566,
+              281
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2411.09023v1",
+          "figureLabel": "Fig. 3",
+          "caption": "CMFeX与FFM原图：跨模态交换空间/通道注意力图，残差增强后拼接，深度卷积前馈网络融合。",
+          "verificationNote": "固定arXiv2411.09023v1原图及完整图注，已视觉核对图号、全部面板和裁剪边界，非重绘；正式五作者版本正文未读。FFM图为MLP→DWConv→GELU→MLP，Eq.25为MLP→GELU→DWConv→MLP；顺序冲突保留。",
+          "path": "figures/comix-tgrs-2025/framework-3.png",
+          "width": 1560,
+          "height": 957,
+          "verifiedAt": "2026-10-12",
+          "sha256": "d3bc4664d05c1fdcbce78de75d217fca882b680ff6f69a6b9ec31c7fb5e4d14a",
+          "attribution": "Xuming Zhang, Xingfa Gu, Qingjiu Tian, Lorenzo Bruzzone · arXiv2411.09023v1 (2024)",
+          "page": 5,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2411.09023v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              48,
+              566,
+              367
+            ],
+            "renderScale": 3
+          }
+        }
+      ]
     }
   ],
   "datasets": [
@@ -50601,7 +50808,8 @@
         "hyplex-metasurface",
         "crf-cnn-hsi-igarss-2016",
         "crf-deep-feature-hsi-tgrs-2019",
-        "zhou-scholar-arxiv-2605-17286"
+        "zhou-scholar-arxiv-2605-17286",
+        "comix-tgrs-2025"
       ],
       "history": [
         {
@@ -53216,7 +53424,8 @@
         "zhou-scholar-lidar-guided-unsupervised-hyperspectral-im-2025",
         "zhou-scholar-arxiv-2404-05258",
         "zhou-scholar-arxiv-2605-14239",
-        "zhou-dblp-arxiv-2412-00302"
+        "zhou-dblp-arxiv-2412-00302",
+        "comix-tgrs-2025"
       ],
       "history": [
         {
@@ -53336,7 +53545,8 @@
         "zhou-dblp-arxiv-2412-00283",
         "zhou-dblp-arxiv-2404-00272",
         "jun-zhou-dblp-whispers-weed-2019",
-        "dualmamba-tgrs-2025"
+        "dualmamba-tgrs-2025",
+        "comix-tgrs-2025"
       ],
       "history": [
         {
