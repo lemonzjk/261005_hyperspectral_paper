@@ -56,6 +56,8 @@ SSUMamba和SSRT两份免费Griffith接受稿共28页已逐页全文阅读，六�
 
 坚果HSI条目按Crossref/Griffith更正为Computers and Electronics in Agriculture151:492–500，原167误记删除；按实际坚果仁PV/TN/元素成分预测纠正土壤任务，补农产品品质与成分估计。三个机构完整摘要、逐项R²/RPD与附件状态已核，正文/原图未得，不将CQU纯元数据或相互冲突的OA标志当免费全文/确定付费。证据见[共同作者书目、范围外固定稿与坚果纠正](sources/jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12.json)。
 
+本次将三作者SSRN5182248纠正为预印本（非正式会议），不改保护ID、摘要或来源例外。七作者5391210近同题稿与既有arXiv2404.05258的版本关系未明；SOC的7358018/7404220同题14作者及报告数值一致，但分组用语、波段说明不同，先后关系未注册，两完整原摘要分别保留。四SSRN页面均403验证，不判付费。Guanyiman Fu公开10组/12完整贡献者记录中6条含Jun、5唯一DOI，均已有目录/候选；Judy Yang arXiv11条、七Jun均已录。四其他作者领域候选继续后置，两免费PDF仅下载未读。本文目录181/99全文82摘要/298原图不变；同简称DualMamba不误并，代码只链接。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |
@@ -208,3 +210,5 @@ Yuntao Qian无主题姓名查询27条完整返回：五条含完整Jun Zhou均�
 - `reproduction/`：独立公式、约束和checkpoint检查脚本；不是完整论文复现。
 
 后续只更新本入口的当前状态和待办；新增论文事实进入目录，核验证据进入 `sources/` 与 `survey.json`。全领域场所矩阵见 [coverage.md](coverage.md)，作者来源筛查完成不等于全领域覆盖完成。
+
+- [SSRN版本关系、共同作者目录及原始证据](sources/jun-zhou-source-version-crosscheck-2026-10-12.json)、[实际访问与下载状态](sources/jun-zhou-source-version-crosscheck-2026-10-12-access.json)：书目不记全文；两SSRN关系未决、四领域候选后置。

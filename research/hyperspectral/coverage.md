@@ -940,3 +940,6 @@
 
 - 2026-10-12 / jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12：新增0、更新1、共同作者六已有书目对照；三既有范围未决保持，不是新三候选。
   阅读边界：76组105 ORCID full-work贡献者已核，非正文；RemoteTrimmer范围外固定v2五页全读，正式稿未读。坚果按机构完整摘要纠正卷151/土壤任务，不升全文。总库390/周峻99全文82摘要/298原图，分类审计307/181标签。[原材料与判断](sources/jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12.json)，[实际访问](sources/jun-zhou-coauthor-orcid-nut-bibliography-2026-10-12-access.json)。
+
+- 2026-10-12 / jun-zhou-source-version-crosscheck-2026-10-12：新增0、更新1；新增一SSRN版本关系候选及四其他作者领域候选，两既有来源外候选续核不重复计数。
+  纠正SSRN5182248为预印本/BibTeX misc，来源仍白名单外；七作者近同题稿、两SOC同题DOI均未注册关系，不自动合并。Fu10组12贡献者书目、Judy arXiv11完整返回没有新Jun；ORCID full-work不计论文全文，两免费PDF下载但正文待整理。总库390/周峻181/99全文82摘要/298原图不变。[原始证据与边界](sources/jun-zhou-source-version-crosscheck-2026-10-12.json)。
