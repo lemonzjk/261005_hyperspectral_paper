@@ -32,6 +32,8 @@ IF103225只取一张主框架：出版社已核PII的gr2高清原图2664×1624�
 
 2026-10-13既有作者主框架：CasFormer（Information Fusion2024）取得出版社gr2高清整体原图，明确RGB/Coded/Mask输入、级联CA Block编码—解码/跳连与重建HSI输出；只保留一张，gr1结果对比不入资料。原图注/正式图号/PDF页码未得，保持摘要级与既有Griffith7205身份，不逐版/逐页阅读或深挖实验。总库399、原图337，专项181与102全文/79摘要不变。FDNet/GPINet/SAPNet有限搜索未找到公开稿：Google为跳转、Bing为无关字典结果，搜索工具404；不能据此排除HSI或断言付费，无新正文/身份决定。[唯一主图及边界](sources/jun-zhou-casformer-mainframe-2026-10-13.json)。
 
+2026-10-13共同作者目录续核：CasFormer注册Danfeng Hong ORCID与ORCID self-asserted Homepage均指向其学术主页，出版页J66–J1/C7–C1共73精选记录完整取得；唯一Jun行CasFormer已录，不当主页所称260余成果全集。官方精确整名arXiv75/75元数据/作者列表，0完整Jun字段；28直接HSI题名中Primer已录、27新定位，仅SpectralFormer完整原摘要实际读并入普通TGRS2022库。它使用唯一v2十三页PDF中的首页署名和第4页Fig3，保留一张主要原框架，不全文读、逐版读或深挖实验；七作者无Jun。其他26只现有survey候选，不自动收录或记摘要已读。总库400/原图338，Jun仍181（102全文/79摘要），身份及作者全集未闭环。[作者原始清单、ORCID与主图证据](sources/jun-zhou-hong-primary-directory-2026-10-13.json)。
+
 本轮代表版本范围闭环：UEMM会议作者页同序九作者直接链接已核v3（PDF同哈希），AdvMIM正式章节同题名/四作者及方法摘要关联v1；两论文家族按公开代表稿排除直接HSI收录，不要求正式版正文再次阅读。正式正文仍未读，不宣称各版文本或实验等同。UEMM在ORCID/DBLP/Scholar/Griffith当前交叉表同步排除，分别剩1/8/5/8未决；作者181条、全文102/摘要79、库图335不变。[书目关联与决定](sources/jun-zhou-single-version-scope-2026-10-12.json)。
 
 最新作者差集/共同作者续核：OpenAlex混并档案834与作品查询833的差1已定位至2024年profile62/查询61，规范作者字段与include_xpac=true两次61/61且ID与旧2024全同，未定位额外work或原因；ORCID入口新6/6也与旧同ID，元数据比较不作六篇全文阅读。Fengchao Xiong精确整名、不加主题的arXiv查询成功10/10，完整十原摘要已读：七含Jun均归已有七条，SUIT预印本四作者不覆盖正式五作者；其余DECSC和BHCL均无Jun。限定查询不闭合姓名变体/正式发表全集，839/420差集未逐篇排除。[本轮证据](sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json)。

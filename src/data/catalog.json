@@ -51669,6 +51669,173 @@
           ]
         }
       }
+    },
+    {
+      "id": "spectralformer-tgrs-2022",
+      "shortTitle": "SpectralFormer",
+      "title": "SpectralFormer: Rethinking Hyperspectral Image Classification With Transformers",
+      "authors": "Danfeng Hong, Zhu Han, Jing Yao, Lianru Gao, Bing Zhang, Antonio Plaza, Jocelyn Chanussot",
+      "year": 2022,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2021.3130716",
+      "volume": "60",
+      "pages": "1-15",
+      "representation": "将邻近光谱波段成组嵌入Transformer，并通过跨层自适应融合进行高光谱分类。",
+      "tags": [],
+      "summary": "SpectralFormer把高光谱分类视为光谱序列建模：GSE学习相邻波段的局部序列表征，CAF以自适应软残差在浅层与深层间传递信息。网络接受像元或patch光谱输入，主图以MLP头输出类别；性能比较仅沿用完整原摘要，不补未核实验数字。",
+      "input": "高光谱影像中的像元或patch光谱序列。",
+      "output": "像元/图像块所属类别。",
+      "mechanism": "邻带成组光谱嵌入GSE、位置及类别嵌入、Transformer编码、跨层自适应融合CAF和MLP分类头。",
+      "readingNote": "固定arXiv v2完整原摘要与七作者名单已核，仅核PDF首页署名及第4页Fig3主要整体框架/图注；13页PDF下载不记全文已读。只保留此一张主图，不追加局部模块图或实验整理。正式TGRS同题名/同序七作者及DOI、2022卷60页1–15仅核书目，不另读正式正文。七作者无Jun Zhou；代码仅原摘要链接。",
+      "paper": "https://doi.org/10.1109/tgrs.2021.3130716",
+      "code": "https://github.com/danfenghong/IEEE_TGRS_SpectralFormer",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "citation": "@article{spectralformer_tgrs_2022,\n  title = {SpectralFormer: Rethinking Hyperspectral Image Classification With Transformers},\n  author = {Danfeng Hong and Zhu Han and Jing Yao and Lianru Gao and Bing Zhang and Antonio Plaza and Jocelyn Chanussot},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  volume = {60},\n  pages = {1--15},\n  year = {2022},\n  doi = {10.1109/tgrs.2021.3130716}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2107.02988v2",
+          "sourceVersion": "arXiv2107.02988v2（2021-11-20更新）",
+          "figureLabel": "Figure 3",
+          "caption": "SpectralFormer整体分类框架：像元或patch光谱经邻带成组嵌入GSE、位置/类别嵌入及带跨层自适应融合CAF的Transformer编码，最后通过MLP预测类别；同一原图右侧展示编码层结构。",
+          "verificationNote": "已核对固定v2第4页Fig3及原图注，直接从同一PDF裁取完整主图和图注，不重绘。仅保留此一张；第2/4/5图是注意力或GSE/CAF局部模块，不另收。图号/页码仅指arXiv v2，不迁移至未读TGRS最终版。",
+          "path": "figures/spectralformer-tgrs-2022/framework-1.png",
+          "width": 1596,
+          "height": 774,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "85f0e4c80ead54bf32e0f78f7b5be3c0f572203180c2e4b9ed38c505baf98eeb",
+          "attribution": "Danfeng Hong, Zhu Han, Jing Yao, Lianru Gao, Bing Zhang, Antonio Plaza, Jocelyn Chanussot · arXiv2107.02988v2 (2021)",
+          "page": 4,
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              40,
+              52,
+              572,
+              310
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "固定原摘要与Fig3明确以高光谱光谱序列作分类输入；TGRS在普通来源白名单，非Jun作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何使Transformer利用高光谱邻带序列关系，并减少深层传播中的信息损失？",
+        "datasets": "原摘要说明三个高光谱数据集；本轮不整理实验及各数据协议。",
+        "experimentSetting": "未核实验协议；主图仅确认GSE/CAF编码与分类流程。",
+        "conclusions": "原摘要称优于经典Transformer与多种骨干网络；完整数字及实验协议未核验。",
+        "limitations": "只整理完整原摘要和一张主框架，不记全文或复现。正式稿与arXiv书目关联已核，但未读正式正文，不转移图号/页码或宣称各版实验相同。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2107.02988v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v2完整原摘要及完整作者名单",
+            "supports": [
+              "直接高光谱分类；邻带group-wise spectral embeddings和cross-layer adaptive fusion支持像元/patch输入。",
+              "摘要报告三个HSI数据集及优于经典Transformer的比较；本轮未核数据划分、完整数值或复现。",
+              "同序七作者无Jun Zhou；官方代码URL只记录，不访问。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2107.02988v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v2 PDF第4页主要原框架图/图注（选读）",
+            "supports": [
+              "Fig3整体GSE/CAF Transformer网络及MLP类别输出，图内Pixel or Patch输入可见。",
+              "仅首页署名和第4页主图/图注选读，不计十三页全文阅读，不读其他版本或额外实验。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2021.3130716",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式完整书目",
+            "supports": [
+              "DOI、正式TGRS卷60页1–15和2022印刷年份，以及同题名/同序七作者；Danfeng ORCID与作者主页绑定。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "spectralformer-tgrs-2022-formal",
+            "type": "正式TGRS版本",
+            "url": "https://doi.org/10.1109/tgrs.2021.3130716",
+            "doi": "10.1109/tgrs.2021.3130716",
+            "year": 2022,
+            "venue": "TGRS",
+            "volume": "60",
+            "pages": "1-15",
+            "authors": [
+              "Danfeng Hong",
+              "Zhu Han",
+              "Jing Yao",
+              "Lianru Gao",
+              "Bing Zhang",
+              "Antonio Plaza",
+              "Jocelyn Chanussot"
+            ],
+            "readingProgress": "title_only",
+            "relation": "arXiv官方登记DOI及同题名/同序七作者对应正式稿；仅书目，不另读正式正文。"
+          },
+          {
+            "id": "spectralformer-tgrs-2022-arxiv-v2",
+            "type": "固定arXiv v2公开版",
+            "url": "https://arxiv.org/abs/2107.02988v2",
+            "pdfUrl": "https://arxiv.org/pdf/2107.02988v2",
+            "arxivId": "2107.02988",
+            "arxivVersion": 2,
+            "year": 2021,
+            "authors": [
+              "Danfeng Hong",
+              "Zhu Han",
+              "Jing Yao",
+              "Lianru Gao",
+              "Bing Zhang",
+              "Antonio Plaza",
+              "Jocelyn Chanussot"
+            ],
+            "firstSubmittedAt": "2021-07-07T02:59:21Z",
+            "updatedAt": "2021-11-20T01:26:16Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-hong-primary-directory-2026-10-13-2107.02988v2.pdf",
+            "relation": "所用唯一正文/主图版本；完整原摘要、首页署名及第4页Fig3已核，不记全文。"
+          }
+        ],
+        "methodFamilyId": "spectralformer-tgrs-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要及第4页Fig3明确高光谱像元/patch分类与Transformer、GSE/CAF，用既有土地覆盖分类和Transformer标签；无独立预训练目标，不添加表征预训练任务，光谱序列不归几何三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "cdede7115d53f2966477d6f3d7883c49af9fd5cc550aac226c4ebc275e248c09",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2107.02988v2",
+            "https://arxiv.org/pdf/2107.02988v2"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -51993,7 +52160,8 @@
         "spectraltrack-tip-2025",
         "hypersigma-tpami-2025",
         "decsc-tgrs-2025",
-        "cross-source-neighborhood-contrast-if-2025"
+        "cross-source-neighborhood-contrast-if-2025",
+        "spectralformer-tgrs-2022"
       ],
       "history": [
         {
@@ -54680,7 +54848,8 @@
         "jun-zhou-dblp-whispers-weed-2019",
         "dualmamba-tgrs-2025",
         "comix-tgrs-2025",
-        "hypersigma-tpami-2025"
+        "hypersigma-tpami-2025",
+        "spectralformer-tgrs-2022"
       ],
       "history": [
         {
