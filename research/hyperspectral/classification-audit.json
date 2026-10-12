@@ -372,7 +372,8 @@
     "zhou-scholar-spectral-and-spatial-residual-attention-ne-2021",
     "zhou-scholar-abundance-guided-superpixels-and-recurrent-2019",
     "hucrtrack-tip-2026",
-    "spectraltrack-tip-2025"
+    "spectraltrack-tip-2025",
+    "dualmamba-tgrs-2025"
   ],
   "sourceChecks": [
     {
@@ -2232,6 +2233,19 @@
         "摘要称九个HSV跟踪数据集；名称、规模、波段、划分与各模态输入未获取。",
         "完整正式摘要报告SpectralTrack和SpectralTrack+在九个HSV跟踪数据集上的较好效果；没有具体指标，不推测比HucrTrack或其他方法的数值差异。",
         "原摘要列出官方代码URL https://github.com/YZCU/SpectralTrack；仅记录链接，未访问仓库。"
+      ]
+    },
+    {
+      "paperId": "dualmamba-tgrs-2025",
+      "url": "https://arxiv.org/pdf/2406.07050v1",
+      "checkedAt": "2026-10-12",
+      "level": "固定arXiv v1十五页完整正文与四原图实际阅读",
+      "supports": [
+        "固定v1完整正文明确直接处理HSI补丁的监督地物分类，方法含空间/光谱Mamba与局部卷积；中心像素的嵌入特征序列不等同物理波长序列，cross-attention名称不自动赋予Transformer标签，3D卷积不等同几何三维研究。",
+        "Indian Pines：145×145、AVIRIS、220去除水吸收等带后200带、400–2500nm、20m、16类；10249标注，10%训练1024/测试9225，7×7补丁。WHU-Hi-Longkou：550×400、2018年Headwall Nano-Hyperspec/DJI Matrice 600 Pro UAV、270带400–1000nm、0.463m、9类；204542标注，0.5%训练1022/测试203520，13×13补丁。Houston 2018 DFC：作者使用601×2384、48带380–1050nm、1m、20类；504856标注，5%训练25242/测试479614，15×15补丁；不改为Houston2013或推测原场景裁剪方式。",
+        "固定arXiv v1的§IV/Table I–III：AdamW、batch64、学习率0.001、300 epochs、StepLR每20轮乘0.9；嵌入D=64、S6状态N=16、ssm_ratio=2、初始3×3分组卷积groups=4。各数据集不同训练比例/补丁，十次不同训练选择平均OA/AA/κ，并比较参数量及FLOPs。硬件和运行时未给，训练/测试空间隔离及270原始通道如何满足分组卷积条件未明确。",
+        "以v1主Table IV/V/VI记录：Indian Pines OA99.23%/AA99.11%/κ0.9912，72.94K参数/4.19M FLOPs；Longkou OA99.66%/AA98.89%/κ0.9956，82.86K/4.71M；Houston2018 OA97.47%/AA94.92%/κ0.9670，58.23K/3.46M。总体指标和参数量优于表内对照，不是所有类别第一；Houston的AB-LSTM为2.42M FLOPs，小于DualMamba的3.46M，不能称全部基线算量最低。",
+        "只完整读arXiv 2406.07050v1，TGRS最终全文未获取。原稿IP主表/图注OA99.23%，第9页叙述99.28%，第14页补丁实验99.22%，保留差异，以主表为主。Fig.2局部DWConv1×1与正文Eq.17的3×3不一致。Fig.8(b)末横轴为“.11%”，正文还将相应比较称Houston，与Fig.8(c)1/2/5/8/11%不一致，不推测应为1.1%或补算优势。随机标注比例与相邻补丁可能空间重叠，原文未证空间隔离；轻量化由参数/FLOPs支持，不等同实际延迟或部署验证。原始270带到groups4输入的处理未交代；光谱Mamba扫描中心嵌入通道，不直接证明保留物理谱序。所有疑点仅按论文记录，不审查代码。"
       ]
     }
   ]

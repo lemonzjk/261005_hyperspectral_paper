@@ -269,3 +269,5 @@ Yuntao Qian无主题姓名查询27条完整返回：五条含完整Jun Zhou均�
 - [OpenAlex双档案839条差集、八新候选及版本边界](sources/jun-zhou-openalex-author-inventory-2026-10-12.json)：完整指定分页不证明作者全集；171是映射源项，不是新增作者论文。两主要完整摘要与四二级摘要实际阅读，无新PDF/正文/图；官方代码仅URL。
 
 - [新候选主要来源续核及共同作者跟踪书目](sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json)：IF共同作者ORCID只补书目，Jun身份/SSRN关系继续；新收录HucrTrack与SpectralTrack两篇普通白名单TIP，两套完整作者均无Jun，专项仍181。两正式完整摘要已读，无新正文/图；新TGRS聚类候选待原摘要/作者。
+
+作者差集材料续核：Mamba-UNet出版社免费Fig.1/4确认LR/Ref/地物掩膜输入与HF/LF分支，分解算子未写，撤回旧Fourier推断；实际谱带/掩膜协议和合格版本仍待，付费正文未读。共同作者引出的DualMamba固定arXiv v1十五页/四方法原图已整理，匹配同五Fudan作者TGRS2025正式书目；Jingyi Zhou非Jun，另一HSI–LiDAR IGARSS Dualmamba已有候选继续来源未决，不误并。其引文[2]J. Zhou由七完整作者/单位确认同为Jingyi，领域待办不计目标作者缺口。专项181及102全文/79摘要保持；代码只链接。[证据](sources/jun-zhou-dualmamba-mamba-primary-materials-2026-10-12.json)。

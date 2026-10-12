@@ -49921,6 +49921,244 @@
           "attribution": "Maryam Yazdani, Dong Bao, Jun Zhou, Andy Wang, Rieks D. van Klinken · Smart Agricultural Technology 2025"
         }
       ]
+    },
+    {
+      "id": "dualmamba-tgrs-2025",
+      "shortTitle": "DualMamba",
+      "title": "DualMamba: A Lightweight Spectral–Spatial Mamba-Convolution Network for Hyperspectral Image Classification",
+      "authors": "Jiamu Sheng, Jingyi Zhou, Jiong Wang, Peng Ye, Jiayuan Fan",
+      "year": 2025,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2024.3516817",
+      "representation": "学习后的中心像素特征通道与空间补丁序列的Mamba表示，联合局部谱空卷积用于监督分类。",
+      "tags": [],
+      "summary": "DualMamba并行提取全局Mamba与局部卷积谱空特征，通过跨加权谱空融合和自适应全局局部门控完成高光谱地物分类。已完整读2024 arXiv v1，三数据集OA为99.23%/99.66%/97.47%，参数量72.94K/82.86K/58.23K；Houston的FLOPs不低于所有基线。TGRS2025同题同五作者已关联，最终正文未读。",
+      "input": "Indian Pines/WHU-Hi-Longkou/Houston2018 DFC的原始高光谱补丁（分别200/270/48带、7×7/13×13/15×15）及训练地物标签。补丁先经3×3分组卷积嵌入至D=64；正文未交代Longkou270带与groups4的输入对齐处理。",
+      "output": "高光谱补丁中心像素的监督地物类别；对图像像素推断得到分类图。不输出几何、光谱重建或独立无监督表征。",
+      "mechanism": "初始嵌入后两支路并行。全局CAS2MM用3×3深度卷积残差实现动态位置编码；空间Mamba按行单向扫描，光谱Mamba取中心像素的D维嵌入通道作双向S6扫描并翻转合并。光谱特征与池化空间特征的Softmax权重交叉加权，叠加位置特征；不是完整QKV Transformer注意力。局部LS2RCMM使用1×1×3谱3D卷积与正文描述的3×3空间深度卷积，BN/SiLU后拼接、点卷积及残差。全局局部池化特征经两线性层生成互补Sigmoid权重，融合为F=G+L+WgG+WlL，再用线性分类头与交叉熵监督训练；Fig.2空间支路印作1×1，核尺寸冲突保留。",
+      "readingNote": "固定arXiv 2406.07050v1共15页逐页读完，Fig.2/3/4/9分别在PDF4/5/7/13页裁原图并人工核对；全文级仅指该v1。Crossref正式TGRS2025卷63、1–15与五Fudan作者已核，最终IEEE正文访问HTTP202空内容，不能判付费或无公开稿。IP主表99.23%与叙述99.28%/补丁实验99.22%、Fig.2与正文卷积核、Fig.8比例和数据集名称冲突均记录。Jingyi Zhou与另一IGARSS论文的Griffith Jun Zhou分开；不按简称合并。不检查第三方代码。",
+      "paper": "https://doi.org/10.1109/tgrs.2024.3516817",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "正式Crossref书目/单位与当前arXiv元数据核验；固定v1十五页全文/四原图已读，正式全文未读",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "state-space-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整v1直接处理200/270/48带HSI的地物分类；不是纯多光谱，也不因3D卷积纳入几何三维专题。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何结合轻量Mamba的全局谱空关系与局部残差卷积，降低高光谱分类的模型参数和算量？",
+        "datasets": "Indian Pines：145×145、AVIRIS、220去除水吸收等带后200带、400–2500nm、20m、16类；10249标注，10%训练1024/测试9225，7×7补丁。WHU-Hi-Longkou：550×400、2018年Headwall Nano-Hyperspec/DJI Matrice 600 Pro UAV、270带400–1000nm、0.463m、9类；204542标注，0.5%训练1022/测试203520，13×13补丁。Houston 2018 DFC：作者使用601×2384、48带380–1050nm、1m、20类；504856标注，5%训练25242/测试479614，15×15补丁；不改为Houston2013或推测原场景裁剪方式。",
+        "experimentSetting": "固定arXiv v1的§IV/Table I–III：AdamW、batch64、学习率0.001、300 epochs、StepLR每20轮乘0.9；嵌入D=64、S6状态N=16、ssm_ratio=2、初始3×3分组卷积groups=4。各数据集不同训练比例/补丁，十次不同训练选择平均OA/AA/κ，并比较参数量及FLOPs。硬件和运行时未给，训练/测试空间隔离及270原始通道如何满足分组卷积条件未明确。",
+        "conclusions": "以v1主Table IV/V/VI记录：Indian Pines OA99.23%/AA99.11%/κ0.9912，72.94K参数/4.19M FLOPs；Longkou OA99.66%/AA98.89%/κ0.9956，82.86K/4.71M；Houston2018 OA97.47%/AA94.92%/κ0.9670，58.23K/3.46M。总体指标和参数量优于表内对照，不是所有类别第一；Houston的AB-LSTM为2.42M FLOPs，小于DualMamba的3.46M，不能称全部基线算量最低。",
+        "limitations": "只完整读arXiv 2406.07050v1，TGRS最终全文未获取。原稿IP主表/图注OA99.23%，第9页叙述99.28%，第14页补丁实验99.22%，保留差异，以主表为主。Fig.2局部DWConv1×1与正文Eq.17的3×3不一致。Fig.8(b)末横轴为“.11%”，正文还将相应比较称Houston，与Fig.8(c)1/2/5/8/11%不一致，不推测应为1.1%或补算优势。随机标注比例与相邻补丁可能空间重叠，原文未证空间隔离；轻量化由参数/FLOPs支持，不等同实际延迟或部署验证。原始270带到groups4输入的处理未交代；光谱Mamba扫描中心嵌入通道，不直接证明保留物理谱序。所有疑点仅按论文记录，不审查代码。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/pdf/2406.07050v1",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v1十五页完整正文与四原图实际阅读",
+            "supports": [
+              "固定v1完整正文明确直接处理HSI补丁的监督地物分类，方法含空间/光谱Mamba与局部卷积；中心像素的嵌入特征序列不等同物理波长序列，cross-attention名称不自动赋予Transformer标签，3D卷积不等同几何三维研究。",
+              "Indian Pines：145×145、AVIRIS、220去除水吸收等带后200带、400–2500nm、20m、16类；10249标注，10%训练1024/测试9225，7×7补丁。WHU-Hi-Longkou：550×400、2018年Headwall Nano-Hyperspec/DJI Matrice 600 Pro UAV、270带400–1000nm、0.463m、9类；204542标注，0.5%训练1022/测试203520，13×13补丁。Houston 2018 DFC：作者使用601×2384、48带380–1050nm、1m、20类；504856标注，5%训练25242/测试479614，15×15补丁；不改为Houston2013或推测原场景裁剪方式。",
+              "固定arXiv v1的§IV/Table I–III：AdamW、batch64、学习率0.001、300 epochs、StepLR每20轮乘0.9；嵌入D=64、S6状态N=16、ssm_ratio=2、初始3×3分组卷积groups=4。各数据集不同训练比例/补丁，十次不同训练选择平均OA/AA/κ，并比较参数量及FLOPs。硬件和运行时未给，训练/测试空间隔离及270原始通道如何满足分组卷积条件未明确。",
+              "以v1主Table IV/V/VI记录：Indian Pines OA99.23%/AA99.11%/κ0.9912，72.94K参数/4.19M FLOPs；Longkou OA99.66%/AA98.89%/κ0.9956，82.86K/4.71M；Houston2018 OA97.47%/AA94.92%/κ0.9670，58.23K/3.46M。总体指标和参数量优于表内对照，不是所有类别第一；Houston的AB-LSTM为2.42M FLOPs，小于DualMamba的3.46M，不能称全部基线算量最低。",
+              "只完整读arXiv 2406.07050v1，TGRS最终全文未获取。原稿IP主表/图注OA99.23%，第9页叙述99.28%，第14页补丁实验99.22%，保留差异，以主表为主。Fig.2局部DWConv1×1与正文Eq.17的3×3不一致。Fig.8(b)末横轴为“.11%”，正文还将相应比较称Houston，与Fig.8(c)1/2/5/8/11%不一致，不推测应为1.1%或补算优势。随机标注比例与相邻补丁可能空间重叠，原文未证空间隔离；轻量化由参数/FLOPs支持，不等同实际延迟或部署验证。原始270带到groups4输入的处理未交代；光谱Mamba扫描中心嵌入通道，不直接证明保留物理谱序。所有疑点仅按论文记录，不审查代码。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tgrs.2024.3516817",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref出版社注册正式题名、五作者单位、TGRS卷页",
+            "supports": [
+              "正式题名与v1规范化一致、五作者顺序完全相同；TGRS2025卷63、1–15。五人均Fudan，Jingyi Zhou不是Griffith Jun Zhou，不能与另一篇HSI/LiDAR IGARSS Dualmamba合并。",
+              "DOI字符中的2024不是独立在线日期证据；正式记录未注册版本扩展关系，原稿方法/结果不外推为最终正文。"
+            ]
+          },
+          {
+            "url": "https://export.arxiv.org/api/query?id_list=2406.07050",
+            "checkedAt": "2026-10-12",
+            "level": "官方arXiv精确ID当前完整返回及原始摘要/五作者阅读",
+            "supports": [
+              "本次精确ID查询1/1返回固定v1，首次和更新均2024-06-11T08:26:42Z；无journal_ref/doi字段并不否定Crossref正式记录。",
+              "官方完整原摘要直接说明高光谱分类、轻量Mamba/CNN并行与全局局部自适应融合；不含Jun Zhou。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dualmamba-tgrs-2025-formal",
+            "type": "正式期刊书目",
+            "url": "https://doi.org/10.1109/tgrs.2024.3516817",
+            "doi": "10.1109/tgrs.2024.3516817",
+            "year": 2025,
+            "authors": [
+              "Jiamu Sheng",
+              "Jingyi Zhou",
+              "Jiong Wang",
+              "Peng Ye",
+              "Jiayuan Fan"
+            ],
+            "readingProgress": "title_only",
+            "relation": "正式TGRS同题与五作者逐名匹配v1，按同一书目记录关联；无注册扩展声明，最终正文和图/实验是否变动未核。"
+          },
+          {
+            "id": "dualmamba-tgrs-2025-arxiv-v1",
+            "type": "arXiv固定v1预印本",
+            "url": "https://arxiv.org/abs/2406.07050v1",
+            "arxivId": "2406.07050",
+            "arxivVersion": 1,
+            "firstSubmittedAt": "2024-06-11T08:26:42Z",
+            "updatedAt": "2024-06-11T08:26:42Z",
+            "year": 2024,
+            "authors": [
+              "Jiamu Sheng",
+              "Jingyi Zhou",
+              "Jiong Wang",
+              "Peng Ye",
+              "Jiayuan Fan"
+            ],
+            "readingProgress": "full_text_read",
+            "pdfUrl": "https://arxiv.org/pdf/2406.07050v1",
+            "localFile": "research/hyperspectral/sources/jun-zhou-source-version-crosscheck-2026-10-12-2406.07050v1.pdf",
+            "relation": "本轮实际读的15页原稿；正式同题同五作者书目已关联，结果/框架只归v1，不宣称最终版全文相同。"
+          }
+        ],
+        "methodFamilyId": "dualmamba-spectral-spatial-mamba-convolution",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "固定v1完整正文明确直接处理HSI补丁的监督地物分类，方法含空间/光谱Mamba与局部卷积；中心像素的嵌入特征序列不等同物理波长序列，cross-attention名称不自动赋予Transformer标签，3D卷积不等同几何三维研究。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "51e495e2f4bb75e538fce4cb39affb1511d8233b3694e6dd7f4fddbd76f13cd2",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2406.07050v1"
+          ]
+        }
+      },
+      "citation": "@article{dualmamba_tgrs_2025,\n  title = {DualMamba: A Lightweight Spectral–Spatial Mamba-Convolution Network for Hyperspectral Image Classification},\n  author = {Jiamu Sheng and Jingyi Zhou and Jiong Wang and Peng Ye and Jiayuan Fan},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2025},\n  volume = {63},\n  pages = {1--15},\n  doi = {10.1109/tgrs.2024.3516817}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.07050v1",
+          "figureLabel": "Fig. 2",
+          "caption": "DualMamba整体流程与轻量空间、光谱Mamba：高光谱补丁经嵌入后，Mamba全局支路与残差卷积局部支路并行，再自适应融合分类。",
+          "verificationNote": "从固定v1 PDF第4页裁出原图与完整图注，人工检查图内文字、边界及图号；不是重绘。正式TGRS正文未读，不能把原稿图外推为最终版本。Fig.2局部空间DWConv印为1×1，而正文§III-C/Eq.17为3×3；原图不改，实际实现未核。图注末句将(c)误称spatial，图内(c)标为spectral。",
+          "path": "figures/dualmamba-tgrs-2025/framework-2.png",
+          "width": 1560,
+          "height": 915,
+          "verifiedAt": "2026-10-12",
+          "sha256": "95134627e5beb5dbbc81e70ae1b332a300faea9cccfca865613540d8911fad2d",
+          "attribution": "Jiamu Sheng, Jingyi Zhou, Jiong Wang, Peng Ye, Jiayuan Fan · arXiv 2406.07050v1 (2024)",
+          "page": 4,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv 2406.07050v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              50,
+              566,
+              355
+            ],
+            "renderScale": 3,
+            "sourceVersion": "arXiv 2406.07050v1"
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.07050v1",
+          "figureLabel": "Fig. 3",
+          "caption": "原Vision Mamba与轻量空间Mamba结构对照：后者采用单向空间扫描与S6，减少门控、卷积及MLP结构。",
+          "verificationNote": "从固定v1 PDF第5页裁出原图与完整图注，人工检查图内文字、边界及图号；不是重绘。正式TGRS正文未读，不能把原稿图外推为最终版本。",
+          "path": "figures/dualmamba-tgrs-2025/framework-3.png",
+          "width": 771,
+          "height": 756,
+          "verifiedAt": "2026-10-12",
+          "sha256": "e502a3573edf8edebae95c8e39f067deb1e5ba92350fdb8fd92b54eafc779d98",
+          "attribution": "Jiamu Sheng, Jingyi Zhou, Jiong Wang, Peng Ye, Jiayuan Fan · arXiv 2406.07050v1 (2024)",
+          "page": 5,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv 2406.07050v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              50,
+              303,
+              302
+            ],
+            "renderScale": 3,
+            "sourceVersion": "arXiv 2406.07050v1"
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.07050v1",
+          "figureLabel": "Fig. 4",
+          "caption": "自适应全局—局部融合：池化和两层线性映射产生门控权重，交叉加权Mamba与卷积特征，并保留两支路残差。",
+          "verificationNote": "从固定v1 PDF第7页裁出原图与完整图注，人工检查图内文字、边界及图号；不是重绘。正式TGRS正文未读，不能把原稿图外推为最终版本。",
+          "path": "figures/dualmamba-tgrs-2025/framework-4.png",
+          "width": 771,
+          "height": 372,
+          "verifiedAt": "2026-10-12",
+          "sha256": "9e4943698578490764e08804def42d7f7197d00f96c9848505d8abcd69de9c57",
+          "attribution": "Jiamu Sheng, Jingyi Zhou, Jiong Wang, Peng Ye, Jiayuan Fan · arXiv 2406.07050v1 (2024)",
+          "page": 7,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv 2406.07050v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              50,
+              303,
+              174
+            ],
+            "renderScale": 3,
+            "sourceVersion": "arXiv 2406.07050v1"
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.07050v1",
+          "figureLabel": "Fig. 9",
+          "caption": "空间扫描策略对照：单向、双向、四向与全向扫描；本文采用图(a)单向行序扫描。",
+          "verificationNote": "从固定v1 PDF第13页裁出原图与完整图注，人工检查图内文字、边界及图号；不是重绘。正式TGRS正文未读，不能把原稿图外推为最终版本。",
+          "path": "figures/dualmamba-tgrs-2025/framework-9.png",
+          "width": 771,
+          "height": 714,
+          "verifiedAt": "2026-10-12",
+          "sha256": "a1acf3c7c9b26b6d82cd986a85c764d3da35a2b95909c9ba924bf974a97e387e",
+          "attribution": "Jiamu Sheng, Jingyi Zhou, Jiong Wang, Peng Ye, Jiayuan Fan · arXiv 2406.07050v1 (2024)",
+          "page": 13,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv 2406.07050v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              50,
+              303,
+              288
+            ],
+            "renderScale": 3,
+            "sourceVersion": "arXiv 2406.07050v1"
+          }
+        }
+      ]
     }
   ],
   "datasets": [
@@ -52915,7 +53153,8 @@
         "zhou-scholar-arxiv-2609-37340",
         "zhou-dblp-arxiv-2412-00283",
         "zhou-dblp-arxiv-2404-00272",
-        "jun-zhou-dblp-whispers-weed-2019"
+        "jun-zhou-dblp-whispers-weed-2019",
+        "dualmamba-tgrs-2025"
       ],
       "history": [
         {
@@ -53497,7 +53736,8 @@
         "zhou-scholar-arxiv-2603-09037",
         "zhou-dblp-arxiv-2412-00283",
         "zhou-dblp-arxiv-2404-00272",
-        "hucrtrack-tip-2026"
+        "hucrtrack-tip-2026",
+        "dualmamba-tgrs-2025"
       ],
       "history": [
         {
