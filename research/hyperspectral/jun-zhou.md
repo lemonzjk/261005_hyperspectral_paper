@@ -2,7 +2,7 @@
 
 状态更新：2026-10-13。目录、全文与资源快照续核至2026-10-12。当前目标是论文目录完整，优先查漏及必要的作者身份、范围和版本核验，不新增学习笔记；每篇只找一个可用版本、一张主要原框架图；只读定位图及确认必要作者/范围的内容，不逐页或逐版阅读，代码只留链接。目录覆盖尚未闭环；付费且无公开版本或确实不可获取材料的留白不阻塞目录完成。
 
-2026-10-13最新：Xin Lyu指定Crossref ORCID46/46、Anzhu Yu公开ORCID92组137条完整work书目响应及指定arXiv7/7核对，6次Jun字段命中去重5DOI均对应已有Griffith记录，无新目标论文或范围决定。Yu的128项有贡献者字段、9项为空；9项均有同DOI其他作者书目可参照，原字段保留，不把有字段当全作者/正文已核。Lyu指定ORCID一条挂Kangming Du名下，另列Xin Lyu，保留注册差异。已知DDFNet含两共同作者但不在两指定集合，不能称作者全集；Yu注册查询429不作零结果。IGFNet与Active Deep Dense两个新HSI题名仅候选；后者官方arXiv DOI与同序七作者对应IJRS2021导入书目，只关联正式记录、保持arXiv口径，不另读正文。0新摘要/PDF/全文/图/代码访问。总库417/原图356、Jun确认182及网页183不变；ORCID/DBLP/Scholar/Griffith未决3/12/10/12、三分割输入及领域矩阵未闭环。[原始书目、空字段与已知覆盖控制](sources/jun-zhou-lyu-yu-directory-2026-10-13.json)。
+2026-10-13最新：续核Anzhu Yu指定arXiv候选Active Dense与历年采集候选芯片双梳太赫兹HSI，两篇各一个公开版本/一张主框架，所用首页各七作者无Jun，不推断所有版本作者。Active Dense正式IJRS2021白名单外仅关联，按arXiv2020收录；双梳正式Optica2019在白名单，关联arXiv2018v1，一主图明确来自预印本。2PDF共16页只下载，0新全文/代码访问。总库419/原图358（288白名单/30arXiv/101例外）；Jun确认182及网页183、ORCID/DBLP/Scholar/Griffith未决3/12/10/12不变。Lyu/Yu指定书目集合及空贡献者/ORCID姓名差异保留，非作者全集；三分割输入、来源/身份及领域矩阵仍未闭环。[原摘要、书目及主图](sources/hsi-active-dense-thz-mainframes-2026-10-13.json)。
 
 2026-10-13共同作者目录与一主图续核：Jocelyn Chanussot的ORCID绑定本人学术主页；官方整名arXiv99/99书目、Crossref ORCID过滤293/293注册作品均只有一条完整Jun Zhou署名，对应已录CRF；正式记录还登记目标Jun的ORCID，未增加作者论文。ORCID过滤缺少已知CasFormer，不能视为作者全集；GIPSA链接403不当作论文全文付费证明。EGU-Net从既有Hong候选转为普通arXiv2021条目，仅固定v1首页与第3页Fig2选读，保留一张像元版整体原框架，不读全文或其他版本；TNNLS不在白名单，只关联正式书目。既有CRF已有可用稿/图，不追加arXiv v1/v2或正式版正文。总库401、原图339，Hong新候选2已录/25待核；Jun确认181（102全文/79摘要）不变。其余97条arXiv摘要未逐篇阅读，不声称作者目录完整；代码只链接。[本轮原始清单与主图](sources/jun-zhou-chanussot-bibliography-egu-2026-10-13.json)。
 

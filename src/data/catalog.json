@@ -54310,6 +54310,340 @@
         }
       },
       "citation": "@misc{docnn_drc_hsi_classification_arxiv_2021,\n  title = {Shallow Network Based on Depthwise Over-Parameterized Convolution for Hyperspectral Image Classification},\n  author = {Hongmin Gao and Zhonghao Chen and Chenming Li},\n  year = {2021},\n  eprint = {2112.00250},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2112.00250v1}\n}\n"
+    },
+    {
+      "id": "active-dense-hsi-classification-arxiv-2020",
+      "shortTitle": "Active Dense HSI",
+      "title": "Active Deep Densely Connected Convolutional Network for Hyperspectral Image Classification",
+      "authors": "Bing Liu, Anzhu Yu, Pengqiang Zhang, Lei Ding, Wenyue Guo, Kuiliang Gao, Xibing Zuo",
+      "year": 2020,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "密集连接卷积主干输出类别；多个中间层特征经全局平均池化和全连接分支融合，输出预测损失，用于主动选择新增标注样本。",
+      "tags": [],
+      "summary": "利用密集连接卷积分类器的中间特征预测样本损失，选择更可能误分类的无标注HSI样本供人工标注，迭代扩充训练集。",
+      "input": "少量已标注及待选择标注的高光谱影像样本。",
+      "output": "HSI样本地物类别，以及供人工标注的高预测损失样本。",
+      "mechanism": "密集连接卷积主干输出类别；多个中间层特征经全局平均池化和全连接分支融合，输出预测损失，用于主动选择新增标注样本。",
+      "readingNote": "原摘要、所用PDF首页署名及主图/图注已核；仅一个正文版本、一张主图，下载不记全文；未核实验性能或代码。同题名/同序七作者对应International Journal of Remote Sensing2021注册记录，仅关联书目，不断言正文或实验相同。官方arXiv登记同一DOI；IJRS不在白名单，按arXiv2020收录，不扩大作者例外。PDF首页JSTARS模板字样不作为正式出版来源。",
+      "paper": "https://arxiv.org/abs/2009.00320v2",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2009.00320v2",
+          "sourceVersion": "arXiv2009.00320v2",
+          "figureLabel": "Figure 3",
+          "page": 5,
+          "caption": "主动密集连接网络主框架：上支路输出类别，中间层经GAP/FC/ReLU分支汇聚后预测损失，供主动选择待标注样本。",
+          "verificationNote": "所用arXiv2009.00320v2第5页Fig3原图及完整原图注，未重绘；仅这一张主图，图号和页码不迁移至正式版本。",
+          "path": "figures/active-dense-hsi-classification-arxiv-2020/framework.png",
+          "width": 1590,
+          "height": 660,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "5dec99dbd2f14ab1791355100d71894dd92cdbd7a89ac418f4b4d5ba0ffed26c",
+          "attribution": "Bing Liu, Anzhu Yu, Pengqiang Zhang, Lei Ding, Wenyue Guo, Kuiliang Gao, Xibing Zuo · arXiv2009.00320v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              40,
+              45,
+              570,
+              265
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "active-sample-selection"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要与所用主图直接处理/采集HSI；普通白名单或arXiv来源，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过主动选择人工标注样本减少HSI分类的标注成本？",
+        "datasets": "未整理数据集、公开资源或实验划分。",
+        "experimentSetting": "仅核身份/范围及一主图，不整理实验协议与性能数值。",
+        "conclusions": "方法与任务依据原摘要和主图，性能未核。",
+        "limitations": "一个公开正文版本及一主图已得；其他正文、图片、实验不设为目录完成门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2009.00320v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "利用密集连接卷积分类器的中间特征预测样本损失，选择更可能误分类的无标注HSI样本供人工标注，迭代扩充训练集。",
+              "所用PDF首页七作者与官方元数据一致，无Jun Zhou；仅据所用版本署名，不推断整个论文家族。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2009.00320v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF第5页主要原图/图注（选读）",
+            "supports": [
+              "主动密集连接网络主框架：上支路输出类别，中间层经GAP/FC/ReLU分支汇聚后预测损失，供主动选择待标注样本。",
+              "所用arXiv2009.00320v2第5页Fig3原图及完整原图注，未重绘；仅这一张主图，图号和页码不迁移至正式版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1080/01431161.2021.1931542",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册书目（只书目）",
+            "supports": [
+              "同题名/同序七作者对应International Journal of Remote Sensing2021注册记录，仅关联书目，不断言正文或实验相同。官方arXiv登记同一DOI；IJRS不在白名单，按arXiv2020收录，不扩大作者例外。PDF首页JSTARS模板字样不作为正式出版来源。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "active-dense-hsi-classification-arxiv-2020-arxiv",
+            "type": "所用唯一arXiv公开版",
+            "url": "https://arxiv.org/abs/2009.00320v2",
+            "pdfUrl": "https://arxiv.org/pdf/2009.00320v2",
+            "arxivId": "2009.00320",
+            "arxivVersion": 2,
+            "year": 2020,
+            "authors": [
+              "Bing Liu",
+              "Anzhu Yu",
+              "Pengqiang Zhang",
+              "Lei Ding",
+              "Wenyue Guo",
+              "Kuiliang Gao",
+              "Xibing Zuo"
+            ],
+            "firstSubmittedAt": "2020-09-01T09:53:38Z",
+            "updatedAt": "2020-11-24T11:46:16Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/hsi-active-dense-thz-mainframes-2026-10-13-2009.00320v2.pdf",
+            "relation": "原摘要、所用PDF首页署名及主图/图注已核；仅一个正文版本、一张主图，下载不记全文；未核实验性能或代码。"
+          },
+          {
+            "id": "active-dense-hsi-classification-arxiv-2020-formal",
+            "type": "关联正式出版书目",
+            "url": "https://doi.org/10.1080/01431161.2021.1931542",
+            "doi": "10.1080/01431161.2021.1931542",
+            "year": 2021,
+            "venue": "International Journal of Remote Sensing",
+            "publicationName": "International Journal of Remote Sensing",
+            "title": "Active deep densely connected convolutional network for hyperspectral image classification",
+            "volume": "42",
+            "issue": "15",
+            "registeredPageField": "5915-5934",
+            "authors": [
+              "Bing Liu",
+              "Anzhu Yu",
+              "Pengqiang Zhang",
+              "Lei Ding",
+              "Wenyue Guo",
+              "Kuiliang Gao",
+              "Xibing Zuo"
+            ],
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_bibliographic_association_only",
+            "relation": "同题名/同序七作者对应International Journal of Remote Sensing2021注册记录，仅关联书目，不断言正文或实验相同。官方arXiv登记同一DOI；IJRS不在白名单，按arXiv2020收录，不扩大作者例外。PDF首页JSTARS模板字样不作为正式出版来源。"
+          }
+        ],
+        "methodFamilyId": "active-dense-hsi-classification-arxiv-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要明确直接HSI分类与人工标注样本主动选择；Fig3同时呈现分类和损失预测。沿用两个既有任务标签，不把中间特征分支视为独立表征预训练。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b333e7014472ca03e34262c652bb911850ce0ecc350badb142f91c8e81430a34",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2009.00320v2",
+            "https://arxiv.org/abs/2009.00320v2",
+            "https://arxiv.org/pdf/2009.00320v2"
+          ]
+        }
+      },
+      "citation": "@misc{active_dense_hsi_classification_arxiv_2020,\n  title = {Active Deep Densely Connected Convolutional Network for Hyperspectral Image Classification},\n  author = {Bing Liu and Anzhu Yu and Pengqiang Zhang and Lei Ding and Wenyue Guo and Kuiliang Gao and Xibing Zuo},\n  year = {2020},\n  eprint = {2009.00320},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2009.00320v2}\n}\n"
+    },
+    {
+      "id": "thz-dual-chip-comb-imaging-optica-2019",
+      "shortTitle": "Dual chip-comb THz HSI",
+      "title": "Terahertz hyperspectral imaging with dual chip-scale combs",
+      "authors": "Lukasz A. Sterczewski, Jonas Westberg, Yang Yang, David Burghoff, John Reno, Qing Hu, Gerard Wysocki",
+      "year": 2019,
+      "venue": "Optica",
+      "publicationName": "Optica",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "两路THz-QCL频率梳反向对准，经离轴抛物面镜收集；信号梳照射XYZ平移台上的样品，透射光与本振梳由硅分束片合束，在超导热电子辐射计上异频探测。",
+      "tags": [],
+      "summary": "采用两个芯片级太赫兹量子级联激光频率梳进行高光谱成像，以双梳异频探测获取样品透射光谱。",
+      "input": "样品在太赫兹信号频率梳照射下的透射光，以及本振频率梳。",
+      "output": "通过样品空间扫描获取的太赫兹高光谱透射影像。",
+      "mechanism": "两路THz-QCL频率梳反向对准，经离轴抛物面镜收集；信号梳照射XYZ平移台上的样品，透射光与本振梳由硅分束片合束，在超导热电子辐射计上异频探测。",
+      "readingNote": "原摘要、所用PDF首页署名及主图/图注已核；仅一个正文版本、一张主图，下载不记全文；未核实验性能或代码。同题名/同序七作者对应Optica2019注册记录，仅关联书目，不断言正文或实验相同。正式Optica在白名单，目录采用2019正式年；原摘要与主图仅来自arXiv2018v1，不另取正式正文。Crossref页字段只有766，保留为注册起始页，不猜完整页段。",
+      "paper": "https://doi.org/10.1364/optica.6.000766",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1812.03505v1",
+          "sourceVersion": "arXiv1812.03505v1",
+          "figureLabel": "Figure 1",
+          "page": 2,
+          "caption": "芯片级双梳太赫兹HSI主要装置原图：两THz-QCL频率梳、样品扫描光路、合束及热电子探测器；原Fig1同时含芯片照片和光谱/梳间拍频表征。",
+          "verificationNote": "所用arXiv1812.03505v1第2页Fig1原图及完整原图注，未重绘；仅这一张主图，图号和页码不迁移至正式版本。",
+          "path": "figures/thz-dual-chip-comb-imaging-optica-2019/framework.png",
+          "width": 1455,
+          "height": 675,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "9aff47502d87984d254d23ed36246ce810b65a3e4c56ca7300b460fc6efa9d93",
+          "attribution": "Lukasz A. Sterczewski, Jonas Westberg, Yang Yang, David Burghoff, John Reno, Qing Hu, Gerard Wysocki · arXiv1812.03505v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              65,
+              40,
+              550,
+              265
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1364/optica.6.000766",
+      "library": {
+        "categoryIds": [
+          "spectral-instrument-design"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要与所用主图直接处理/采集HSI；普通白名单或arXiv来源，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用芯片级双频率梳实现太赫兹高光谱采集，减少光学系统复杂度？",
+        "datasets": "未整理数据集、公开资源或实验划分。",
+        "experimentSetting": "仅核身份/范围及一主图，不整理实验协议与性能数值。",
+        "conclusions": "方法与任务依据原摘要和主图，性能未核。",
+        "limitations": "一个公开正文版本及一主图已得；其他正文、图片、实验不设为目录完成门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1812.03505v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "采用两个芯片级太赫兹量子级联激光频率梳进行高光谱成像，以双梳异频探测获取样品透射光谱。",
+              "所用PDF首页七作者与官方元数据一致，无Jun Zhou；仅据所用版本署名，不推断整个论文家族。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1812.03505v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF第2页主要原图/图注（选读）",
+            "supports": [
+              "芯片级双梳太赫兹HSI主要装置原图：两THz-QCL频率梳、样品扫描光路、合束及热电子探测器；原Fig1同时含芯片照片和光谱/梳间拍频表征。",
+              "所用arXiv1812.03505v1第2页Fig1原图及完整原图注，未重绘；仅这一张主图，图号和页码不迁移至正式版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Terahertz%20hyperspectral%20imaging%20with%20dual%20chip-scale%20combs&rows=3",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册书目（只书目）",
+            "supports": [
+              "同题名/同序七作者对应Optica2019注册记录，仅关联书目，不断言正文或实验相同。正式Optica在白名单，目录采用2019正式年；原摘要与主图仅来自arXiv2018v1，不另取正式正文。Crossref页字段只有766，保留为注册起始页，不猜完整页段。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "thz-dual-chip-comb-imaging-optica-2019-arxiv",
+            "type": "所用唯一arXiv公开版",
+            "url": "https://arxiv.org/abs/1812.03505v1",
+            "pdfUrl": "https://arxiv.org/pdf/1812.03505v1",
+            "arxivId": "1812.03505",
+            "arxivVersion": 1,
+            "year": 2018,
+            "authors": [
+              "Lukasz A. Sterczewski",
+              "Jonas Westberg",
+              "Yang Yang",
+              "David Burghoff",
+              "John Reno",
+              "Qing Hu",
+              "Gerard Wysocki"
+            ],
+            "firstSubmittedAt": "2018-12-09T15:48:13Z",
+            "updatedAt": "2018-12-09T15:48:13Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/hsi-active-dense-thz-mainframes-2026-10-13-1812.03505v1.pdf",
+            "relation": "原摘要、所用PDF首页署名及主图/图注已核；仅一个正文版本、一张主图，下载不记全文；未核实验性能或代码。"
+          },
+          {
+            "id": "thz-dual-chip-comb-imaging-optica-2019-formal",
+            "type": "关联正式出版书目",
+            "url": "https://doi.org/10.1364/optica.6.000766",
+            "doi": "10.1364/optica.6.000766",
+            "year": 2019,
+            "venue": "Optica",
+            "publicationName": "Optica",
+            "title": "Terahertz hyperspectral imaging with dual chip-scale combs",
+            "volume": "6",
+            "issue": "6",
+            "registeredPageField": "766",
+            "authors": [
+              "Lukasz A. Sterczewski",
+              "Jonas Westberg",
+              "Yang Yang",
+              "David Burghoff",
+              "John Reno",
+              "Qing Hu",
+              "Gerard Wysocki"
+            ],
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "同题名/同序七作者对应Optica2019注册记录，仅关联书目，不断言正文或实验相同。正式Optica在白名单，目录采用2019正式年；原摘要与主图仅来自arXiv2018v1，不另取正式正文。Crossref页字段只有766，保留为注册起始页，不猜完整页段。"
+          }
+        ],
+        "methodFamilyId": "thz-dual-chip-comb-imaging-optica-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要直接报告太赫兹高光谱成像，Fig1图注明确样品XYZ扫描、信号/本振合束和探测，归既有光谱仪器设计；第三轴为光谱，不据此归几何三维，不把潜在医学用途当已验证应用。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "408a6782d96108f98a15940f0168628861e74824cf2d39e79636fa4e3469571a",
+          "sourceUrls": [
+            "https://doi.org/10.1364/optica.6.000766",
+            "https://arxiv.org/abs/1812.03505v1",
+            "https://arxiv.org/pdf/1812.03505v1"
+          ]
+        }
+      },
+      "citation": "@article{thz_dual_chip_comb_imaging_optica_2019,\n  title = {Terahertz hyperspectral imaging with dual chip-scale combs},\n  author = {Lukasz A. Sterczewski and Jonas Westberg and Yang Yang and David Burghoff and John Reno and Qing Hu and Gerard Wysocki},\n  journal = {Optica},\n  year = {2019},\n  volume = {6},\n  number = {6},\n  doi = {10.1364/optica.6.000766},\n  url = {https://doi.org/10.1364/optica.6.000766}\n}\n"
     }
   ],
   "datasets": [
@@ -55338,7 +55672,8 @@
         "uv-vis-nir-reflection-ifts-2010",
         "biis-wide-spectrum-reconstruction-2010",
         "two-wavelength-dyson-design-2010",
-        "static-channeled-ifts-polarimetry-2010"
+        "static-channeled-ifts-polarimetry-2010",
+        "thz-dual-chip-comb-imaging-optica-2019"
       ],
       "history": [
         {
@@ -57339,7 +57674,8 @@
         "superpixel-3d-hsi-classification-pr-2018",
         "active-multikernel-hsi-domain-adaptation-pr-2018",
         "mct-center-mask-arxiv-2022",
-        "docnn-drc-hsi-classification-arxiv-2021"
+        "docnn-drc-hsi-classification-arxiv-2021",
+        "active-dense-hsi-classification-arxiv-2020"
       ],
       "history": [
         {
@@ -58663,7 +58999,8 @@
       "color": "#93afa1",
       "createdAt": "2026-10-09",
       "evidencePaperIds": [
-        "superpixel-weighted-label-propagation-hsi-2020"
+        "superpixel-weighted-label-propagation-hsi-2020",
+        "active-dense-hsi-classification-arxiv-2020"
       ],
       "history": [
         {

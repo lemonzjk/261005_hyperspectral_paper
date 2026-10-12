@@ -397,7 +397,9 @@
     "mct-center-mask-arxiv-2022",
     "few-label-hsi-dl-survey-arxiv-2021",
     "sfa-cross-domain-hsi-detection-arxiv-2024",
-    "docnn-drc-hsi-classification-arxiv-2021"
+    "docnn-drc-hsi-classification-arxiv-2021",
+    "active-dense-hsi-classification-arxiv-2020",
+    "thz-dual-chip-comb-imaging-optica-2019"
   ],
   "sourceChecks": [
     {
@@ -2802,6 +2804,64 @@
       "supports": [
         "官方arXiv登记DOI、同题名/同序三作者对应正式GRSL19(2022):1–5，原始题名overparameterized拼写保留。",
         "GRSL不在白名单，当前仅按arXiv2021收录；正式正文未读，不迁移图号页码或声称实验相同。"
+      ]
+    },
+    {
+      "paperId": "active-dense-hsi-classification-arxiv-2020",
+      "url": "https://arxiv.org/abs/2009.00320v2",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "利用密集连接卷积分类器的中间特征预测样本损失，选择更可能误分类的无标注HSI样本供人工标注，迭代扩充训练集。",
+        "所用PDF首页七作者与官方元数据一致，无Jun Zhou；仅据所用版本署名，不推断整个论文家族。"
+      ]
+    },
+    {
+      "paperId": "active-dense-hsi-classification-arxiv-2020",
+      "url": "https://arxiv.org/pdf/2009.00320v2",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv PDF第5页主要原图/图注（选读）",
+      "supports": [
+        "主动密集连接网络主框架：上支路输出类别，中间层经GAP/FC/ReLU分支汇聚后预测损失，供主动选择待标注样本。",
+        "所用arXiv2009.00320v2第5页Fig3原图及完整原图注，未重绘；仅这一张主图，图号和页码不迁移至正式版本。"
+      ]
+    },
+    {
+      "paperId": "active-dense-hsi-classification-arxiv-2020",
+      "url": "https://api.crossref.org/works/10.1080/01431161.2021.1931542",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式注册书目（只书目）",
+      "supports": [
+        "同题名/同序七作者对应International Journal of Remote Sensing2021注册记录，仅关联书目，不断言正文或实验相同。官方arXiv登记同一DOI；IJRS不在白名单，按arXiv2020收录，不扩大作者例外。PDF首页JSTARS模板字样不作为正式出版来源。"
+      ]
+    },
+    {
+      "paperId": "thz-dual-chip-comb-imaging-optica-2019",
+      "url": "https://arxiv.org/abs/1812.03505v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "采用两个芯片级太赫兹量子级联激光频率梳进行高光谱成像，以双梳异频探测获取样品透射光谱。",
+        "所用PDF首页七作者与官方元数据一致，无Jun Zhou；仅据所用版本署名，不推断整个论文家族。"
+      ]
+    },
+    {
+      "paperId": "thz-dual-chip-comb-imaging-optica-2019",
+      "url": "https://arxiv.org/pdf/1812.03505v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv PDF第2页主要原图/图注（选读）",
+      "supports": [
+        "芯片级双梳太赫兹HSI主要装置原图：两THz-QCL频率梳、样品扫描光路、合束及热电子探测器；原Fig1同时含芯片照片和光谱/梳间拍频表征。",
+        "所用arXiv1812.03505v1第2页Fig1原图及完整原图注，未重绘；仅这一张主图，图号和页码不迁移至正式版本。"
+      ]
+    },
+    {
+      "paperId": "thz-dual-chip-comb-imaging-optica-2019",
+      "url": "https://api.crossref.org/works?query.title=Terahertz%20hyperspectral%20imaging%20with%20dual%20chip-scale%20combs&rows=3",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式注册书目（只书目）",
+      "supports": [
+        "同题名/同序七作者对应Optica2019注册记录，仅关联书目，不断言正文或实验相同。正式Optica在白名单，目录采用2019正式年；原摘要与主图仅来自arXiv2018v1，不另取正式正文。Crossref页字段只有766，保留为注册起始页，不猜完整页段。"
       ]
     }
   ]

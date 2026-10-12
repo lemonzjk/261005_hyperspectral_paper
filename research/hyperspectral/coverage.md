@@ -1044,3 +1044,5 @@
 - 2026-10-13 / jun-zhou-gao-primary-directory-mainframes-2026-10-13：高红民对应ORCID过滤93注册记录全部核作者/书目，4Jun均旧记录；91指定ORCID姓名Hongmin Gao/2Peipei Xu的位置差异保留，学校旧29条非全集。arXiv9书目含同名/简称，2完整HSI原摘要与首页/一主图已核，SFA和DOCNN按arXiv入库，GRSL只关联；另29白名单HSI题名仅定位待核，0全文/代码访问。总库417、确认404/暂定13、审计394、原图356，来源287/29/101，Jun确认182不变。三分割输入/作者/领域全集仍未闭环。[原始注册目录、机构页及主图](sources/jun-zhou-gao-primary-directory-mainframes-2026-10-13.json)。
 
 - 2026-10-13 / jun-zhou-lyu-yu-directory-2026-10-13：Xin Lyu ORCID过滤46注册记录、Anzhu Yu公开92组137 work和arXiv7全部核作者/书目字段；6次Jun命中去重5DOI均已映射，0新目录/摘要/PDF/全文/图。9空贡献者项分别保留并链接同DOI其他作者记录；128有字段不保证完整作者。Lyu ORCID位置一项Kangming Du、已知DDFNet漏出保留，集合非全集；Yu注册查询429不作零结果。2新HSI题名仅候选；Active Dense的官方arXiv DOI/同序七作者关联IJRS2021书目，只走arXiv，不新增版本正文要求。三分割输入/作者/领域未闭环。目录417/原图356不变，代码未访问。[证据](sources/jun-zhou-lyu-yu-directory-2026-10-13.json)。
+
+- 2026-10-13 / hsi-active-dense-thz-mainframes-2026-10-13：既有候选1969 Active Dense与1932双梳太赫兹HSI各一个固定公开版本/一张主原图入库，覆盖分类主动标注及物理采集。IJRS2021仅关联、按arXiv2020；Optica2019白名单内关联arXiv2018v1，图号页码不跨版本。2原摘要、2PDF/16页只下载，0新全文/代码访问。总库419、确认406/暂定13、审计396、原图358，来源288/30/101；Jun确认182及作者未决不变，作者/领域全集未闭环。[来源及主图](sources/hsi-active-dense-thz-mainframes-2026-10-13.json)。
