@@ -37611,15 +37611,16 @@
       "input": "高光谱视频帧及目标模板。",
       "output": "目标位置和尺度自适应的跟踪结果。",
       "mechanism": "张量特征处理、空间—光谱加权正则、稀疏相关滤波、堆叠 HOG 特征和二维自适应尺度搜索共同建模目标。",
-      "readingNote": "ORCID题名、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://pure.bit.edu.cn/en/publications/spatial-spectral-weighted-and-regularized-tensor-sparse-correlati",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整Griffith主要摘要本轮实际阅读，精确DOI/目标作者绑定支持张量处理、空间光谱加权、稀疏相关滤波及2D尺度搜索；补相关滤波方法。正文仍未得，不从综述比较表补成本篇完整实验。",
+      "paper": "https://doi.org/10.1109/tgrs.2022.3215431",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
-          "hyperspectral-target-tracking"
+          "hyperspectral-target-tracking",
+          "correlation-filter-tracking"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -37628,7 +37629,7 @@
         "datasets": "公开摘要称在高光谱视频跟踪实验中优于传统相关滤波器；数据集、划分和指标待全文核验。",
         "experimentSetting": "张量处理减少均质背景光谱差异；加权正则抑制不相似特征，稀疏项与上下文抑制响应峰。",
         "conclusions": "公开摘要报告优于传统相关滤波跟踪器；逐项性能、消融和跨场景泛化待全文核验。",
-        "limitations": "摘要未给出完整优化、训练配置、数据统计、代码和运行速度。",
+        "limitations": "正文、完整优化、数据/划分、张量与稀疏约束形式、速度和训练配置未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -37657,6 +37658,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith主要完整原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；完整机构主要原摘要实际阅读。",
+              "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
+              "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
+            ]
           }
         ],
         "versions": [
@@ -37669,7 +37680,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2022-title-82"
+        "methodFamilyId": "zhou-2022-title-82",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整Griffith主要摘要本轮实际阅读，精确DOI/目标作者绑定支持张量处理、空间光谱加权、稀疏相关滤波及2D尺度搜索；补相关滤波方法。正文仍未得，不从综述比较表补成本篇完整实验。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "80cb793d5cdaea916578a9f8b127e401858b7b9e061c4913ce7082f5f234b57a",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2022.3215431",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@article{zhou_82_hsi_2022,\n  title = {Spatial–Spectral Weighted and Regularized Tensor Sparse Correlation Filter for Object Tracking in Hyperspectral Videos},\n  author = {Zengfu Hou and Wei Li and Jun Zhou and Ran Tao},\n  year = {2022},\n  doi = {10.1109/tgrs.2022.3215431}\n}\n"
     },
@@ -38535,16 +38564,17 @@
       "input": "高光谱视频帧及其多组三通道伪彩色波段组。",
       "output": "加权集成的目标位置与跟踪结果。",
       "mechanism": "参数化光谱自表达模块映射波段重要性；按重要性分组生成三通道伪彩色图；多个深度跟踪器输出经加权集成并过滤低重要性结果。",
-      "readingNote": "ORCID题名、Crossref正式书目与 IEEE Xplore 官方摘要核验；未阅读全文。",
-      "paper": "https://doi.org/10.1109/TIP.2023.3263109",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "机构完整主要摘要实际读：光谱自表达学习波段重要性，分为三通道伪彩色组，各组跟踪结果按重要性集成。未明确严格子集选带，改为波段分组/加权；原文未列余带处理，不推定全部波段保留。正文未得。",
+      "paper": "https://doi.org/10.1109/tip.2023.3263109",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
-          "spectral-band-selection"
+          "spectral-band-grouping",
+          "spectral-band-weighting"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -38553,7 +38583,7 @@
         "datasets": "官方摘要报告在高光谱目标跟踪基准上达到先进结果；数据名称、划分和指标待全文核验。",
         "experimentSetting": "光谱自表达估计波段重要性；多组三通道伪彩色跟踪器并行输出后加权集成。",
         "conclusions": "官方摘要报告达到先进跟踪性能并抑制低重要性组的不可靠输出；逐项性能和消融待全文核验。",
-        "limitations": "摘要未给出网络主干、分组数量、训练配置、数据统计和代码复现实验。",
+        "limitations": "正文、组数/余带、骨干、训练、数据划分与实验指标未核。当前主要摘要没有明确逐层展开；综述对此称梯度展开，仅保留为二级线索，不据其替代本文机制或正文阅读。",
         "dataLinks": [],
         "evidence": [
           {
@@ -38573,6 +38603,16 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith主要完整原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；完整机构主要原摘要实际阅读。",
+              "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
+              "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
+            ]
           }
         ],
         "versions": [
@@ -38585,9 +38625,28 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2023-title-64"
+        "methodFamilyId": "zhou-2023-title-64",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "机构完整主要摘要实际读：光谱自表达学习波段重要性，分为三通道伪彩色组，各组跟踪结果按重要性集成。未明确严格子集选带，改为波段分组/加权；原文未列余带处理，不推定全部波段保留。正文未得。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "428b1b9c1fbe5e43c2146529399b1522345df36534c4a3561fbc3bfe301f0fd3",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tip.2023.3263109",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{zhou_64_hsi_2023, title = {Learning a Deep Ensemble Network With Band Importance for Hyperspectral Object Tracking}, author = {Zhuanfeng Li and Fengchao Xiong and Jun Zhou and Jianfeng Lu and Yuntao Qian}, year = {2023}, doi = {10.1109/tip.2023.3263109}\n}\n"
+      "citation": "@article{zhou_64_hsi_2023, title = {Learning a Deep Ensemble Network With Band Importance for Hyperspectral Object Tracking}, author = {Zhuanfeng Li and Fengchao Xiong and Jun Zhou and Jianfeng Lu and Yuntao Qian}, year = {2023}, doi = {10.1109/tip.2023.3263109}\n}\n",
+      "code": "https://github.com/hscv/SEE-Net"
     },
     {
       "id": "zhou-65-hsi-2023",
@@ -40365,15 +40424,15 @@
       "input": "高光谱视频目标区域及其伪彩色、光谱和材料视图。",
       "output": "目标位置与跟踪响应。",
       "mechanism": "解混构造材料视图；跨材料注意力建模材料交互；材料引导融合模块整合三视图的视图内/跨视图长程依赖，抑制跟踪漂移。",
-      "readingNote": "ORCID题名、Crossref正式书目与 IEEE Xplore 官方摘要核验；未阅读全文。",
-      "paper": "https://ieeexplore.ieee.org/document/10445363/",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "机构主要完整原摘要实际读：由HSI生成伪彩色/光谱/解混材料三视图，CMA建模跨材料交互，再由材料引导多视图融合捕获长程空间依赖。不是新增外部RGB采集证明；正文未得，官方代码只URL。",
+      "paper": "https://doi.org/10.1109/tgrs.2024.3366536",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与 IEEE Xplore 官方摘要均明确高光谱视频目标跟踪。",
         "readingProgress": "abstract_read",
@@ -40382,7 +40441,7 @@
         "datasets": "IEEE摘要明确高光谱视频跟踪；具体数据集、场景划分和指标待全文核验。",
         "experimentSetting": "伪彩色、高光谱、材料三视图；跨材料注意力与材料引导融合；代码链接为 GitHub/hscv/MMF-Net。",
         "conclusions": "IEEE摘要报告达到先进跟踪性能并改善复杂场景定位；逐项实验和消融待全文核验。",
-        "limitations": "摘要未给出解混设置、实时性、数据许可、代码状态和跨域泛化边界。",
+        "limitations": "正文、解混/材料设置、数据与训练划分、运行速度和消融未核；2022 SiamF与本篇会刊扩展关系未证，不自动合并。",
         "dataLinks": [],
         "evidence": [
           {
@@ -40402,6 +40461,16 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith主要完整原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；完整机构主要原摘要实际阅读。",
+              "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
+              "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
+            ]
           }
         ],
         "versions": [
@@ -40414,9 +40483,28 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2024-title-53"
+        "methodFamilyId": "zhou-2024-title-53",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "机构主要完整原摘要实际读：由HSI生成伪彩色/光谱/解混材料三视图，CMA建模跨材料交互，再由材料引导多视图融合捕获长程空间依赖。不是新增外部RGB采集证明；正文未得，官方代码只URL。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "aa1bc95335e99181380f6d7d84a413d3bec73062a8405ee2d121fb6b955106cc",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2024.3366536",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{zhou_53_hsi_2024, title = {Material-Guided Multiview Fusion Network for Hyperspectral Object Tracking}, author = {Zhuanfeng Li and Fengchao Xiong and Jun Zhou and Jianfeng Lu and Zhuang Zhao and Yuntao Qian}, year = {2024}, doi = {10.1109/tgrs.2024.3366536}\n}\n"
+      "citation": "@article{zhou_53_hsi_2024, title = {Material-Guided Multiview Fusion Network for Hyperspectral Object Tracking}, author = {Zhuanfeng Li and Fengchao Xiong and Jun Zhou and Jianfeng Lu and Zhuang Zhao and Yuntao Qian}, year = {2024}, doi = {10.1109/tgrs.2024.3366536}\n}\n",
+      "code": "https://github.com/hscv/MMF-Net"
     },
     {
       "id": "zhou-54-hsi-2024",
@@ -41752,15 +41840,16 @@
       "input": "高光谱视频序列及目标模板。",
       "output": "连续帧目标位置和跟踪响应。",
       "mechanism": "空间—光谱梯度直方图与分数丰度作为特征；低秩约束学习相关滤波器的全局光谱依赖；时间约束保持帧间滤波器一致。",
-      "readingNote": "ORCID题名、Crossref正式书目与 IEEE Xplore 官方摘要核验；未阅读全文。",
-      "paper": "https://ieeexplore.ieee.org/document/10890015",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整机构主要摘要实际读，SSHMG/丰度特征、相关滤波的低秩约束及时间一致性由原摘要明确，补相关滤波方法。未核滤波器具体矩阵/张量分解，不据低秩字样补猜算法；正文未得，代码只URL。",
+      "paper": "https://doi.org/10.1109/tgrs.2025.3546058",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
-          "hyperspectral-target-tracking"
+          "hyperspectral-target-tracking",
+          "correlation-filter-tracking"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与 IEEE Xplore 官方摘要均明确高光谱视频目标跟踪。",
         "readingProgress": "abstract_read",
@@ -41769,7 +41858,7 @@
         "datasets": "官方摘要明确高光谱视频跟踪；具体数据集、划分和指标待全文核验。",
         "experimentSetting": "空间—光谱特征、低秩滤波器约束和帧间时间约束联合训练/优化。",
         "conclusions": "IEEE摘要报告跟踪更准确且更稳定，并计划公开代码；逐项实验和消融待全文核验。",
-        "limitations": "摘要未给出完整数据集、运行速度、训练细节、代码状态和跨场景边界。",
+        "limitations": "正文、数据划分、低秩与时间约束形式、滤波优化和逐项指标/速度未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -41789,6 +41878,16 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith主要完整原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；完整机构主要原摘要实际阅读。",
+              "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
+              "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
+            ]
           }
         ],
         "versions": [
@@ -41801,9 +41900,28 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2025-title-35"
+        "methodFamilyId": "zhou-2025-title-35",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整机构主要摘要实际读，SSHMG/丰度特征、相关滤波的低秩约束及时间一致性由原摘要明确，补相关滤波方法。未核滤波器具体矩阵/张量分解，不据低秩字样补猜算法；正文未得，代码只URL。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c8e48bbc08cb311084ef948a09ca39291b971c726b650a45ebad85d6a3f0cd24",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2025.3546058",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{zhou_35_hsi_2025, title = {Spatial–Spectral–Temporal Correlation Filter for Hyperspectral Object Tracking}, author = {Fengchao Xiong and Yongle Sun and Jun Zhou and Jianfeng Lu and Yuntao Qian}, year = {2025}, doi = {10.1109/tgrs.2025.3546058}\n}\n"
+      "citation": "@article{zhou_35_hsi_2025, title = {Spatial–Spectral–Temporal Correlation Filter for Hyperspectral Object Tracking}, author = {Fengchao Xiong and Yongle Sun and Jun Zhou and Jianfeng Lu and Yuntao Qian}, year = {2025}, doi = {10.1109/tgrs.2025.3546058}\n}\n",
+      "code": "https://github.com/bearshng/SSTCF"
     },
     {
       "id": "zhou-36-hsi-2025",
@@ -42316,25 +42434,27 @@
       "input": "高光谱视频与相关采集、校准和纠正流程；目标跟踪数据集及评价协议。",
       "output": "高光谱目标跟踪研究分类、数据集与评价指标综述。",
       "mechanism": "按硬件采集与数据形成、数据集/指标、算法方法及未来方向组织系统综述；覆盖波段选择、Siamese网络、Transformer和多模态融合。",
-      "readingNote": "ORCID 2026题名、Crossref正式DOI及 Springer 官方开放摘要核验；未阅读全文。",
-      "paper": "https://api.crossref.org/works/10.1007/s10462-026-11625-3",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "出版社77页正式PDF已免费取得；本轮实际读25页：1–6、13–19、24–26、37–40、42–45、77，另70–75仅读20条Zhou J引文段，未阅读全文。原Figure9已保留；混合报分/重算和作者身份已核。剩52页继续整理。",
+      "paper": "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified_with_partial_published_text",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "Springer 官方摘要明确高光谱目标跟踪综述范围与问题边界。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "高光谱目标跟踪从采集、校准到算法、数据集和评价如何形成完整研究链？",
-        "datasets": "摘要称系统调查公开数据集；具体数据集清单和比较表待全文核验。",
-        "experimentSetting": "综述论文；讨论空间—光谱—时间建模、高维波段、低分辨率和小样本约束，不含新实验设置。",
-        "conclusions": "摘要提出覆盖研究进展、数据集、指标和未来方向；具体分类与结论待全文核验。",
-        "limitations": "综述正文、引用边界、数据集许可和方法比较表待全文核验。",
-        "dataLinks": [],
+        "datasets": "数据介绍DIRSIG、HOT2020/2022/2023/2024、IMEC25、WHU-Hi-H3、BihoT；主对照五集HOT2020/2023/2024、IMEC25、WHU-Hi-H3。HOT2023为302序列、HOT2024为409；BihoT49序列，派生伪彩色不是独立RGB。",
+        "experimentSetting": "综述汇总公开报分并从可获取逐帧结果重算AUC/DP@20pixels；OPE第一帧真值初始化，后续不重初始化。HOT2024全表统一重算，HOT2020/2023含报分与重算混合，IMEC25/WHU还依第三方汇总；不把表7当同硬件统一重训。",
+        "conclusions": "已读部分支持采集/校准—数据—方法—评测的组织及准确率/效率/跨域权衡；“不含新实验”的旧写法改为混合来源指标比较，尚未全读其他评测与未来方向。",
+        "limitations": "77页只选读25页，其余52页及参考列表其余条目未全读；不能称全文或引用全量完成。正文称覆盖至2025年中、Fig2统计到9月，不能外推2026领域完整。比较混合稿件报分/作者重算，骨干、预训练、波段和硬件不同；提取公式出现占位标记，未读清处不推测，部分尺寸已视觉核对。",
+        "dataLinks": [
+          "https://github.com/aamin0102/HOT-Review"
+        ],
         "evidence": [
           {
             "url": "https://link.springer.com/article/10.1007/s10462-026-11625-3",
@@ -42345,21 +42465,75 @@
               "高光谱目标跟踪问题边界",
               "采集校准、算法、数据集、指标和未来方向"
             ]
+          },
+          {
+            "url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
+            "checkedAt": "2026-10-12",
+            "level": "出版社正式PDF局部阅读与原图（25/77页）",
+            "supports": [
+              "第一页正式题名/DOI、六作者，最后页Jun Zhou在Griffith School of ICT。",
+              "25页实际读及Figure9方法分类图，§5.1来源混合/指标重算纠正旧“无新实验”表述；未读52页不补猜。",
+              "20个Zhou J显式引文：19题名匹配既有目录，剩一正式书目证实Jiawei Zhou，不能归目标Jun。"
+            ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith主要完整原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；完整机构主要原摘要实际阅读。",
+              "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
+              "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
+            ]
           }
         ],
         "versions": [
           {
             "id": "zhou-6-hsi-2026-published",
-            "type": "正式记录",
-            "url": "https://doi.org/10.1007/s10462-026-11625-3",
+            "type": "出版社正式版（局部阅读）",
+            "url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
             "doi": "10.1007/s10462-026-11625-3",
             "year": 2026,
-            "relation": "正式记录；尚未取得摘要级方法证据。"
+            "relation": "2026卷59/article235出版社77页正式版，六作者及Jun Griffith单位核实；本轮25页＋指定引文选读，52页待，不标全文。"
           }
         ],
-        "methodFamilyId": "zhou-2026-title-6"
+        "methodFamilyId": "zhou-2026-title-6",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "出版社77页正式PDF已免费取得；本轮实际读25页：1–6、13–19、24–26、37–40、42–45、77，另70–75仅读20条Zhou J引文段，未阅读全文。原Figure9已保留；混合报分/重算和作者身份已核。剩52页继续整理。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "ec443deda1e17faf57a4f2998305c9522ce5099e1ca8e0b28c5f6ed08d6689e9",
+          "sourceUrls": [
+            "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{zhou_6_hsi_2026, title = {A comprehensive review of recent advancements in hyperspectral object tracking}, author = {Mohammad Aminul Islam and Fengchao Xiong and Jun Zhou and Wangzhi Xing and Dong Bao and Yongsheng Gao}, year = {2026}, doi = {10.1007/s10462-026-11625-3}\n}\n"
+      "citation": "@article{zhou_6_hsi_2026, title = {A comprehensive review of recent advancements in hyperspectral object tracking}, author = {Mohammad Aminul Islam and Fengchao Xiong and Jun Zhou and Wangzhi Xing and Dong Bao and Yongsheng Gao}, year = {2026}, doi = {10.1007/s10462-026-11625-3}\n}\n",
+      "frameworkFigures": [
+        {
+          "path": "figures/zhou-6-hsi-2026/framework-published-taxonomy-v1.png",
+          "figureLabel": "Figure 9",
+          "caption": "原综述的高光谱目标跟踪方法分类：波段选择/重组、传统跟踪、深度跟踪和时序跟踪；保留原图及原分类。",
+          "sourceUrl": "https://link.springer.com/content/pdf/10.1007/s10462-026-11625-3.pdf",
+          "page": 19,
+          "width": 1471,
+          "height": 926,
+          "sha256": "fb5861da7d75222e909252bfc1f4a5406217b85acf007f6fdf9335d6b3dc8208",
+          "attribution": "Mohammad Aminul Islam, Fengchao Xiong, Jun Zhou, Wangzhi Xing, Dong Bao, Yongsheng Gao · Artificial Intelligence Review 59:235, 2026 · Published version",
+          "verifiedAt": "2026-10-12",
+          "verificationStatus": "verified",
+          "verificationNote": "人工核对出版社正式PDF第19页Figure9；300dpi按42/268/395/490点裁切，四类节点/分支完整，非生成图。仅对应综述原分类图，不表示77页全文已读或各被引方法原图。"
+        }
+      ]
     },
     {
       "id": "zhou-10-hsi-2026",
@@ -43623,16 +43797,16 @@
       "input": "高光谱视频帧及波段重要性。",
       "output": "目标位置与跟踪结果。",
       "mechanism": "多组伪彩色图输入彩色预训练骨干；HFF 融合多尺度空间—光谱特征；全局—局部通道注意力和在线空间/材料分类器适应变化。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与 Semantic Scholar公开摘要核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/a6346f814a83b8afd0c4cd951fb892925979bf36",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整主要机构原摘要实际读：按重要性把同一HSI帧分为伪彩色组，使用彩色预训练骨干及HFF/通道注意力、在线空间/材料分类器跟踪。补波段分组；移除无稠密跨模态对应证据的旧任务。正文未得。",
+      "paper": "https://doi.org/10.1109/icassp43922.2022.9746089",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
-          "multimodal-spectral-correspondence"
+          "spectral-band-grouping"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -43641,7 +43815,7 @@
         "datasets": "摘要未列具体数据集；训练和测试设置、指标待全文核验。",
         "experimentSetting": "SiamF、HFF 密集连接、全局—局部通道注意力、在线空间/材料分类器。",
         "conclusions": "公开摘要报告 SiamF 优于替代方法。",
-        "limitations": "摘要未给出数据集、波段分组数、速度、代码和逐项指标。",
+        "limitations": "正文、组数/余带、波段重要性来源、数据划分、速度和逐项实验未得；同HSI派生视图融合不证明稠密跨模态对应任务，2024 MMF-Net扩展关系未核。",
         "dataLinks": [],
         "evidence": [
           {
@@ -43670,6 +43844,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith主要完整原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；完整机构主要原摘要实际阅读。",
+              "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
+              "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
+            ]
           }
         ],
         "versions": [
@@ -43682,7 +43866,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-material-guided-siamese-fusion-network-for-2022"
+        "methodFamilyId": "zhou-scholar-material-guided-siamese-fusion-network-for-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整主要机构原摘要实际读：按重要性把同一HSI帧分为伪彩色组，使用彩色预训练骨干及HFF/通道注意力、在线空间/材料分类器跟踪。补波段分组；移除无稠密跨模态对应证据的旧任务。正文未得。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c06354f9a2c7a29f259112fa27702f24349112416a819570d86f389c239f789f",
+          "sourceUrls": [
+            "https://doi.org/10.1109/icassp43922.2022.9746089",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-material-guided-siamese-fusion-network-for-2022,\n  title = {Material-Guided Siamese Fusion Network for Hyperspectral Object Tracking},\n  author = {Zhuanfeng Li and Fengchao Xiong and Jianfeng Lu and Jun Zhou and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/icassp43922.2022.9746089}\n}\n"
     },
@@ -45125,16 +45327,16 @@
       "input": "高光谱视频帧。",
       "output": "目标位置与跟踪结果。",
       "mechanism": "三条 Siamese 分支分别处理 3/6/12 通道；自注意力融合保留显著特征；多 RPN 块生成跟踪候选。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与 Semantic Scholar公开摘要核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/c1a4a8a5183630b14ef3aef4ffa025c588ac2c9f",
-      "verifiedAt": "2026-10-10",
-      "verificationLevel": "abstract_verified",
+      "readingNote": "完整机构主要原摘要实际读，目标Jun绑定；HSI的3/6/12通道三Siamese支路、自注意力融合及多RPN明确。题名multi modality不证明外部RGB或不同传感器输入，本文正文/具体波段选取未得。",
+      "paper": "https://doi.org/10.1109/whispers61460.2023.10430985",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
           "hyperspectral-target-tracking",
           "transformer"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
         "relationNote": "题名与公开摘要均明确高光谱任务。",
         "readingProgress": "abstract_read",
@@ -45143,7 +45345,7 @@
         "datasets": "摘要称高光谱目标跟踪数据集，名称、划分和指标待全文核验。",
         "experimentSetting": "3/6/12通道 Siamese、多分支自注意力融合、多RPN跟踪。",
         "conclusions": "公开摘要报告在高光谱目标跟踪数据集上有效。",
-        "limitations": "摘要未给出数据集、速度、网络参数、代码和逐项指标。",
+        "limitations": "正文、3/6/12通道选择/排列、骨干/训练、数据集与指标未得；不由题名推断独立传感器融合。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45172,6 +45374,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith主要完整原摘要与目标作者绑定（本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205；完整机构主要原摘要实际阅读。",
+              "本条直接HSI目标跟踪及当前输入输出/方法由主要原摘要支持；分组/加权与严格子集选择、派生视图与稠密对应分别记录。",
+              "其他六论文保持摘要级，综述仅25/77页局部读；官方代码/作者汇总资源只记录URL，不访问或审查。"
+            ]
           }
         ],
         "versions": [
@@ -45184,7 +45396,25 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023"
+        "methodFamilyId": "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整机构主要原摘要实际读，目标Jun绑定；HSI的3/6/12通道三Siamese支路、自注意力融合及多RPN明确。题名multi modality不证明外部RGB或不同传感器输入，本文正文/具体波段选取未得。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "2825cf26b4efa4c05839d67d64199480e61d458bd42b4e4479e07d6112ddc65e",
+          "sourceUrls": [
+            "https://doi.org/10.1109/whispers61460.2023.10430985",
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023,\n  title = {Multi Modality Siamese Feature Fusion Transformer Tracker for Object Tracking from Hyperspectral Videos},\n  author = {Mohammad Aminul Islam and Wangzhi Xing and Jun Zhou},\n  year = {2023},\n  doi = {10.1109/whispers61460.2023.10430985}\n}\n"
     },
@@ -50503,8 +50733,7 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2015 原摘要和注明的局部方法图形成；边界后续复核。",
       "evidencePaperIds": [
-        "hlf-stereo",
-        "zhou-scholar-material-guided-siamese-fusion-network-for-2022"
+        "hlf-stereo"
       ],
       "history": [
         {
@@ -50516,6 +50745,11 @@
           "date": "2026-10-08",
           "action": "reviewed",
           "reason": "复核全部现有条目，证据列表与实际归类同步；已确认指类别边界，不表示所有论文全文核验完成。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "跟踪主要完整摘要明确两CF；SEE以重要性分组/加权，移除未经证实的子集选择；SiamF派生视图融合无稠密对应，移除旧任务并补分组。"
         }
       ]
     },
@@ -51038,7 +51272,6 @@
         "attend-in-bands-jstars-2019",
         "zhou-87-hsi-2022",
         "zhou-62-hsi-2023",
-        "zhou-64-hsi-2023",
         "zhou-38-hsi-2025",
         "zhou-10-hsi-2026",
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
@@ -51077,6 +51310,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2016 SVM接受稿全文明确保留全部波段，Top5仅权重展示，移除其选带归类；2015实际选TopK仍保留，其他关联不改。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "跟踪主要完整摘要明确两CF；SEE以重要性分组/加权，移除未经证实的子集选择；SiamF派生视图融合无稠密对应，移除旧任务并补分组。"
         }
       ]
     },
@@ -53924,6 +54162,8 @@
       "evidencePaperIds": [
         "hyperspectral-video-tracking-kcf-2018",
         "material-object-tracking-hsi-tip-2020",
+        "zhou-82-hsi-2022",
+        "zhou-35-hsi-2025",
         "zhou-scholar-dynamic-material-aware-object-tracking-in--2019"
       ],
       "history": [
@@ -53941,6 +54181,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "DMT原站完整摘要按已支持任务/方法重审，仅同步本篇关联。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "跟踪主要完整摘要明确两CF；SEE以重要性分组/加权，移除未经证实的子集选择；SiamF派生视图融合无稠密对应，移除旧任务并补分组。"
         }
       ]
     },
@@ -53974,10 +54219,12 @@
       "color": "#c2b794",
       "createdAt": "2026-10-11",
       "evidencePaperIds": [
+        "zhou-64-hsi-2023",
         "zhou-67-hsi-2023",
         "zhou-47-hsi-2024",
         "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
-        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021"
+        "zhou-scholar-spectral-spatial-temporal-attention-networ-2021",
+        "zhou-scholar-material-guided-siamese-fusion-network-for-2022"
       ],
       "history": [
         {
@@ -53999,6 +54246,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "仅同步本轮三篇原始摘要/作者源码支持的标签，区分子集选带与分组、期刊与学位论文来源。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "跟踪主要完整摘要明确两CF；SEE以重要性分组/加权，移除未经证实的子集选择；SiamF派生视图融合无稠密对应，移除旧任务并补分组。"
         }
       ]
     },
@@ -54121,7 +54373,8 @@
         "svm-margin-band-igarss-2015",
         "svm-band-weighting-lgrs-2016",
         "weighted-band-selection-igarss-2016",
-        "differential-band-selection-ijwmip-2017"
+        "differential-band-selection-ijwmip-2017",
+        "zhou-64-hsi-2023"
       ],
       "history": [
         {
@@ -54133,6 +54386,11 @@
           "date": "2026-10-11",
           "action": "evidence_updated",
           "reason": "2016/2017差分权重两稿全文确认实际波段权重输出与多类地物评测；仅同步本轮关联，类别定义不变。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "跟踪主要完整摘要明确两CF；SEE以重要性分组/加权，移除未经证实的子集选择；SiamF派生视图融合无稠密对应，移除旧任务并补分组。"
         }
       ]
     },
