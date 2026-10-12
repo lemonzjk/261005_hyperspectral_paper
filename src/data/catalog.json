@@ -52013,6 +52013,139 @@
           ]
         }
       }
+    },
+    {
+      "id": "infn-arxiv-2023",
+      "shortTitle": "INFN",
+      "title": "Implicit Neural Feature Fusion Function for Multispectral and Hyperspectral Image Fusion",
+      "authors": "ShangQi Deng, RuoCheng Wu, Liang-Jian Deng, Ran Ran, Gemine Vivone",
+      "year": 2023,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2307.07288",
+      "representation": "坐标与空间—光谱特征的隐式神经融合。",
+      "tags": [],
+      "summary": "INFN将低分辨率高光谱影像和高分辨率多光谱影像融合为高分辨率高光谱影像；双高频融合结合坐标，INR-CS以特征余弦相似度生成局部权重。",
+      "input": "同一场景LR-HSI、HR-MSI与像素坐标（原摘要）；原图注将辅助Y写为HR-HSI，保留措辞差异。",
+      "output": "高空间分辨率高光谱影像HR-HSI。",
+      "mechanism": "编码HSI谱特征与辅助影像空间特征，DHFF结合两次高频信息和相对坐标，MLP与INR-CS逐像元生成融合特征；卷积解码后与上采样HSI残差相加。",
+      "readingNote": "固定arXiv v2原摘要和五作者已核；10页PDF只看首页署名/摘要及第4页Fig2，保留一张整体主框架，未读全文、其他版本或实验细节。PDF题名加INF³前缀，API规范题名不带前缀；作者一致，沿用同一arXiv条目。图注Y写HR-HSI，原摘要说HR-MSI，不改绘、不据图注混写输入。PDF会议模板页眉不当正式发表证明。五作者无Jun Zhou；摘要只有未来开放代码声明，没有具体URL。",
+      "paper": "https://arxiv.org/abs/2307.07288v2",
+      "code": "",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "citation": "@misc{infn_arxiv_2023,\n  title = {Implicit Neural Feature Fusion Function for Multispectral and Hyperspectral Image Fusion},\n  author = {ShangQi Deng and RuoCheng Wu and Liang-Jian Deng and Ran Ran and Gemine Vivone},\n  year = {2023},\n  eprint = {2307.07288},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.CV},\n  url = {https://arxiv.org/abs/2307.07288v2}\n}\n",
+      "frameworkFigures": [
+        {
+          "path": "figures/infn-arxiv-2023/framework-1.png",
+          "sourceUrl": "https://arxiv.org/pdf/2307.07288v2",
+          "sourceVersion": "arXiv2307.07288v2（2023-10-29）",
+          "figureLabel": "Figure 2",
+          "page": 4,
+          "caption": "INFN整体框架：LR-HSI、HR-MSI与坐标特征通过编码器、隐式神经特征融合及INR-CS构建高分辨率特征，经卷积解码器与上采样HSI残差相加输出HR-HSI。",
+          "verificationNote": "固定v2第4页Fig2整体原图及图注已核，直接PDF裁取，无重绘，仅此一张。原图注将Y写为HR-HSI，与摘要明确的HR-MSI及图内低通道辅助影像不同，原图原样保留，输入说明按摘要。页眉Conference’17/Trovato为模板字样，未据此声称正式会议发表。",
+          "width": 1596,
+          "height": 825,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "ed28b50a8332b81de5bf2277be4319e087a7e86dc365ab9bc5849a98edab9369",
+          "attribution": "ShangQi Deng, RuoCheng Wu, Liang-Jian Deng, Ran Ran, Gemine Vivone · arXiv2307.07288v2 (2023)",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              40,
+              75,
+              572,
+              350
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要明确LR-HSI与HR-MSI输入、HR-HSI输出，直接高光谱融合；不是只处理多光谱，也不是三维场景任务。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何将高分辨率辅助影像细节与低分辨率HSI光谱通过隐式特征融合，恢复高分辨率HSI？",
+        "datasets": "摘要提及CAVE和Harvard；本轮不整理具体协议。",
+        "experimentSetting": "未核实验协议，只看主框架。",
+        "conclusions": "摘要报告融合效果；具体数值和对照未核。",
+        "limitations": "仅原摘要与主框架；原图注输入措辞差异保留。无确认正式发表书目或具体代码URL，不猜测补齐。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2307.07288v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v2完整原摘要及完整作者名单",
+            "supports": [
+              "直接处理LR-HSI与HR-MSI融合，输出同场景HR-HSI；空间超分辨率任务，五作者无Jun Zhou。",
+              "INF/INF³的DHFF获取两路高频特征并融合坐标；INR-CS用余弦相似度生成局部特征权重；摘要提及CAVE/Harvard，本轮不核实验。",
+              "摘要只说代码将来在GitHub开放，没有具体官方URL，不猜链接或检查代码。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2307.07288v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv v2 PDF第4页主要原框架/图注（选读）",
+            "supports": [
+              "Fig2显示编码器、坐标相对位置、MLP、INR-CS、卷积解码器与上采样HSI残差合成最终高分辨率HSI。",
+              "十页PDF仅首页作者/摘要及第4页Fig2选读，不记全文、不读其他版本；图注HR-HSI辅助输入措辞与摘要HR-MSI不一致，原图原样保留。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "infn-arxiv-2023-v2",
+            "type": "唯一材料版本arXiv v2",
+            "url": "https://arxiv.org/abs/2307.07288v2",
+            "pdfUrl": "https://arxiv.org/pdf/2307.07288v2",
+            "arxivId": "2307.07288",
+            "arxivVersion": 2,
+            "year": 2023,
+            "authors": [
+              "ShangQi Deng",
+              "RuoCheng Wu",
+              "Liang-Jian Deng",
+              "Ran Ran",
+              "Gemine Vivone"
+            ],
+            "firstSubmittedAt": "2023-07-14T11:59:47Z",
+            "updatedAt": "2023-10-29T14:48:41Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-vivone-arxiv-infn-2026-10-13-2307.07288v2.pdf",
+            "relation": "本轮只用v2首页及第4页Fig2；API题名与PDF的INF³前缀差异保留，不另建条目或逐版读。"
+          }
+        ],
+        "methodFamilyId": "infn-arxiv-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "摘要明确输入LR-HSI与HR-MSI，输出HR-HSI，主图补强空间超分辨率/影像融合任务；沿用既有任务标签，隐式融合与余弦特征权重只在方法事实中说明，不误标NeRF/三维重建。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "54ef1bce315c15b02b8e991f1cf3a11b744d17fbb4b5ac1485b917a2e81603d3",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2307.07288v2",
+            "https://arxiv.org/pdf/2307.07288v2"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -52230,7 +52363,8 @@
         "ual-2020",
         "mftn-2024",
         "hsi-superresolution-icig-2017",
-        "hypersigma-tpami-2025"
+        "hypersigma-tpami-2025",
+        "infn-arxiv-2023"
       ],
       "history": [
         {
