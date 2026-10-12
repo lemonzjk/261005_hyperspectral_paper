@@ -392,7 +392,10 @@
     "high-performance-imaging-editorial-pr-2018",
     "4dcaf-temporal-hsi-denoising-pr-2017",
     "superpixel-3d-hsi-classification-pr-2018",
-    "active-multikernel-hsi-domain-adaptation-pr-2018"
+    "active-multikernel-hsi-domain-adaptation-pr-2018",
+    "agd-net-spectral-reconstruction-arxiv-2021",
+    "mct-center-mask-arxiv-2022",
+    "few-label-hsi-dl-survey-arxiv-2021"
   ],
   "sourceChecks": [
     {
@@ -2667,6 +2670,86 @@
       "supports": [
         "多核适配及主动查询整体原图：源/目标HSI、基础核、MMD与SimpleMKL、预测超平面距离、Top q标注和反馈闭环。说明依据图内文字。",
         "仅此一张；图号/图注/页码未知留白，未读本文全文或其他版本。"
+      ]
+    },
+    {
+      "paperId": "agd-net-spectral-reconstruction-arxiv-2021",
+      "url": "https://arxiv.org/abs/2108.05547v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "AGD-Net把单张RGB到高光谱的逆问题写为修正梯度下降，并将其展开为轻量多阶段网络；先学习初始HSI，再迭代学习基本梯度和增量梯度。",
+        "官方arXiv记录和所用PDF首页作者一致，无Jun Zhou；代码只记录原摘要URL，不访问。"
+      ]
+    },
+    {
+      "paperId": "agd-net-spectral-reconstruction-arxiv-2021",
+      "url": "https://arxiv.org/pdf/2108.05547v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv PDF第3页主要原图/图注（选读）",
+      "supports": [
+        "AGD-Net主要整体流程：RGB输入经初始化网络得到HSI初值，多阶段修正梯度更新得到重建HSI；同一原图下半部给出基本梯度、增量梯度和更新闭环。",
+        "仅保留固定v1第3页Fig1，完整主流程、子图及图注从同一PDF直接裁取，未重绘；未追加结果或消融图。"
+      ]
+    },
+    {
+      "paperId": "agd-net-spectral-reconstruction-arxiv-2021",
+      "url": "https://api.crossref.org/works/10.1109/tci.2021.3124364",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式注册书目（只书目）",
+      "supports": [
+        "同题名/同序作者、正式DOI及卷页关联；IEEE Transactions on Computational Imaging不在普通来源白名单，公开arXiv版本独立满足来源条件。",
+        "关联不证明正文或实验完全相同，不另获取/阅读正式正文。"
+      ]
+    },
+    {
+      "paperId": "mct-center-mask-arxiv-2022",
+      "url": "https://arxiv.org/abs/2203.04771v4",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "MCT以多尺度三维卷积嵌入结合Transformer进行高光谱分类，并提出中心token掩码的自监督预训练：由邻域token重建中心像元光谱。",
+        "官方arXiv记录和所用PDF首页作者一致，无Jun Zhou；代码只记录原摘要URL，不访问。"
+      ]
+    },
+    {
+      "paperId": "mct-center-mask-arxiv-2022",
+      "url": "https://arxiv.org/pdf/2203.04771v4",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv PDF第3页主要原图/图注（选读）",
+      "supports": [
+        "MCT主要分类结构：HSI采样形成光谱嵌入与多尺度3D卷积嵌入，融合后通过Transformer编码器、平均池化及MLP输出地物类别。",
+        "仅保留固定v4第3页Fig1整体分类图；同页Fig2预训练子流程和Fig3标准编码器未另收。掩码预训练说明来自原完整摘要，不声称此主图包含全部预训练细节。"
+      ]
+    },
+    {
+      "paperId": "few-label-hsi-dl-survey-arxiv-2021",
+      "url": "https://arxiv.org/abs/2112.01800v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "综述少标注HSI深度学习分类，按模型结构与学习范式整理相关研究，重点涵盖迁移学习、主动学习和少样本学习。",
+        "官方arXiv记录和所用PDF首页作者一致，无Jun Zhou；代码只记录原摘要URL，不访问。"
+      ]
+    },
+    {
+      "paperId": "few-label-hsi-dl-survey-arxiv-2021",
+      "url": "https://arxiv.org/pdf/2112.01800v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv PDF第5页主要原图/图注（选读）",
+      "supports": [
+        "综述主要分类总览图：左侧组织谱/空分支及单流/双流模型，右侧组织监督、无监督及迁移、主动、少样本等学习范式；不是综述提出的新算法。",
+        "仅保留固定v1第5页Figure2分类总览及原图注；不把后续被综述方法流程图作为额外主图，不读54页全文或正式期刊正文。"
+      ]
+    },
+    {
+      "paperId": "few-label-hsi-dl-survey-arxiv-2021",
+      "url": "https://api.crossref.org/works/10.1016/j.neucom.2021.03.035",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式注册书目（只书目）",
+      "supports": [
+        "同题名/同序作者、正式DOI及卷页关联；Neurocomputing不在普通来源白名单，公开arXiv版本独立满足来源条件。",
+        "关联不证明正文或实验完全相同，不另获取/阅读正式正文。"
       ]
     }
   ]

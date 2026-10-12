@@ -53566,6 +53566,460 @@
           "evidenceDigest": "1c83faedecdc203aa0b5c1d984771326025107fc317d94c17ebc0a0e420f39dd"
         }
       }
+    },
+    {
+      "id": "agd-net-spectral-reconstruction-arxiv-2021",
+      "shortTitle": "AGD-Net",
+      "title": "Deep Amended Gradient Descent for Efficient Spectral Reconstruction from Single RGB Images",
+      "authors": "Zhiyu Zhu, Hui Liu, Junhui Hou, Sen Jia, Qingfu Zhang",
+      "year": 2021,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "物理观测投影、初始化子网、多阶段修正梯度学习、谱空卷积与谱零均值归一化；摘要另述全局结构rank loss，不深入实验。",
+      "tags": [],
+      "summary": "AGD-Net把单张RGB到高光谱的逆问题写为修正梯度下降，并将其展开为轻量多阶段网络；先学习初始HSI，再迭代学习基本梯度和增量梯度。",
+      "input": "单张RGB影像；物理观测模型中的光谱响应。",
+      "output": "重建的高光谱影像。",
+      "mechanism": "物理观测投影、初始化子网、多阶段修正梯度学习、谱空卷积与谱零均值归一化；摘要另述全局结构rank loss，不深入实验。",
+      "readingNote": "固定arXiv2108.05547v1完整原摘要及PDF首页作者已核，仅选读第3页主要原图/图注。每篇只留此一张主图；PDF下载不记全文阅读，不另读其他版本或实验。正式书目按同题名/同序作者关联；TCI不在白名单，当前只按arXiv收录，不扩大来源例外。",
+      "paper": "https://arxiv.org/abs/2108.05547v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2108.05547v1",
+          "sourceVersion": "arXiv2108.05547v1",
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "caption": "AGD-Net主要整体流程：RGB输入经初始化网络得到HSI初值，多阶段修正梯度更新得到重建HSI；同一原图下半部给出基本梯度、增量梯度和更新闭环。",
+          "verificationNote": "仅保留固定v1第3页Fig1，完整主流程、子图及图注从同一PDF直接裁取，未重绘；未追加结果或消融图。",
+          "path": "figures/agd-net-spectral-reconstruction-arxiv-2021/framework.png",
+          "width": 1560,
+          "height": 783,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "b39574fc7f62148d390fcdbbfb111298e4ffc38ed346954d3d6919d57c995048",
+          "attribution": "Zhiyu Zhu, Hui Liu, Junhui Hou, Sen Jia, Qingfu Zhang · arXiv2108.05547v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              52,
+              566,
+              313
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "code": "https://github.com/zbzhzhy/GD-Net",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "deep-unfolding"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原完整摘要与主要原图直接处理/评述HSI；普通arXiv口径收录，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用紧凑的物理可解释多阶段网络从单张RGB重建高光谱影像？",
+        "datasets": "原摘要称三个常用基准；本轮不核数据名称、划分和性能表。",
+        "experimentSetting": "本轮只整理必要范围/主图，不整理实验协议或性能数值。",
+        "conclusions": "研究问题与方法仅按原摘要和主图概述；性能未核验。",
+        "limitations": "只核原摘要、首页作者及一张主要原图，不记全文或复现；没有额外版本/图或实验补读门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2108.05547v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "AGD-Net把单张RGB到高光谱的逆问题写为修正梯度下降，并将其展开为轻量多阶段网络；先学习初始HSI，再迭代学习基本梯度和增量梯度。",
+              "官方arXiv记录和所用PDF首页作者一致，无Jun Zhou；代码只记录原摘要URL，不访问。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2108.05547v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "AGD-Net主要整体流程：RGB输入经初始化网络得到HSI初值，多阶段修正梯度更新得到重建HSI；同一原图下半部给出基本梯度、增量梯度和更新闭环。",
+              "仅保留固定v1第3页Fig1，完整主流程、子图及图注从同一PDF直接裁取，未重绘；未追加结果或消融图。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tci.2021.3124364",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册书目（只书目）",
+            "supports": [
+              "同题名/同序作者、正式DOI及卷页关联；IEEE Transactions on Computational Imaging不在普通来源白名单，公开arXiv版本独立满足来源条件。",
+              "关联不证明正文或实验完全相同，不另获取/阅读正式正文。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "agd-net-spectral-reconstruction-arxiv-2021-arxiv",
+            "type": "所用唯一arXiv公开版",
+            "url": "https://arxiv.org/abs/2108.05547v1",
+            "pdfUrl": "https://arxiv.org/pdf/2108.05547v1",
+            "arxivId": "2108.05547",
+            "arxivVersion": 1,
+            "year": 2021,
+            "authors": [
+              "Zhiyu Zhu",
+              "Hui Liu",
+              "Junhui Hou",
+              "Sen Jia",
+              "Qingfu Zhang"
+            ],
+            "firstSubmittedAt": "2021-08-12T05:54:09Z",
+            "updatedAt": "2021-08-12T05:54:09Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-sen-jia-mainframes-2026-10-13-2108.05547v1.pdf",
+            "relation": "本轮所用唯一正文/图版本；只核首页署名和主图区域，不记全文。"
+          },
+          {
+            "id": "agd-net-spectral-reconstruction-arxiv-2021-formal",
+            "type": "关联正式出版记录（来源白名单外）",
+            "url": "https://doi.org/10.1109/tci.2021.3124364",
+            "doi": "10.1109/tci.2021.3124364",
+            "year": 2021,
+            "venue": "TCI",
+            "publicationName": "IEEE Transactions on Computational Imaging",
+            "volume": "7",
+            "pages": "1176-1188",
+            "authors": [
+              "Zhiyu Zhu",
+              "Hui Liu",
+              "Junhui Hou",
+              "Sen Jia",
+              "Qingfu Zhang"
+            ],
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_bibliographic_association_only",
+            "relation": "同题名/同序作者确认书目关联；只按arXiv收录，不另读此版本正文或转移主图页码。"
+          }
+        ],
+        "methodFamilyId": "agd-net-spectral-reconstruction-arxiv-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原完整摘要及Fig1明确RGB输入/HSI重建，并从修正梯度下降构建多阶段网络，使用既有光谱重建任务和深度展开方法；不是纯多光谱或几何三维研究。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b80486269ea9f15d4893788ea0b02f72e8e2e8828130ef41c67d04fbc2e34330",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2108.05547v1",
+            "https://arxiv.org/pdf/2108.05547v1"
+          ]
+        }
+      },
+      "citation": "@misc{agd_net_spectral_reconstruction_arxiv_2021,\n  title = {Deep Amended Gradient Descent for Efficient Spectral Reconstruction from Single RGB Images},\n  author = {Zhiyu Zhu and Hui Liu and Junhui Hou and Sen Jia and Qingfu Zhang},\n  year = {2021},\n  eprint = {2108.05547},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2108.05547v1}\n}\n"
+    },
+    {
+      "id": "mct-center-mask-arxiv-2022",
+      "shortTitle": "MCT / Center Mask",
+      "title": "Multiscale Convolutional Transformer with Center Mask Pretraining for Hyperspectral Image Classification",
+      "authors": "Sen Jia, Yifan Wang",
+      "year": 2022,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "光谱嵌入与多尺度3D卷积空间—光谱嵌入融合，Transformer编码、平均池化和MLP分类；中心掩码预任务依据完整原摘要，不把代理重建归成像系统。",
+      "tags": [],
+      "summary": "MCT以多尺度三维卷积嵌入结合Transformer进行高光谱分类，并提出中心token掩码的自监督预训练：由邻域token重建中心像元光谱。",
+      "input": "高光谱像元及其邻域影像块；预训练时掩蔽中心像元对应token。",
+      "output": "像元地物类别；预训练代理任务重建中心像元光谱。",
+      "mechanism": "光谱嵌入与多尺度3D卷积空间—光谱嵌入融合，Transformer编码、平均池化和MLP分类；中心掩码预任务依据完整原摘要，不把代理重建归成像系统。",
+      "readingNote": "固定arXiv2203.04771v4完整原摘要及PDF首页作者已核，仅选读第3页主要原图/图注。每篇只留此一张主图；PDF下载不记全文阅读，不另读其他版本或实验。正式版题名检索返回429，未核正式版本；不影响本arXiv来源收录。",
+      "paper": "https://arxiv.org/abs/2203.04771v4",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2203.04771v4",
+          "sourceVersion": "arXiv2203.04771v4",
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "caption": "MCT主要分类结构：HSI采样形成光谱嵌入与多尺度3D卷积嵌入，融合后通过Transformer编码器、平均池化及MLP输出地物类别。",
+          "verificationNote": "仅保留固定v4第3页Fig1整体分类图；同页Fig2预训练子流程和Fig3标准编码器未另收。掩码预训练说明来自原完整摘要，不声称此主图包含全部预训练细节。",
+          "path": "figures/mct-center-mask-arxiv-2022/framework.png",
+          "width": 1569,
+          "height": 804,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "25e02dffbaa9dce9d87e65e143c6c55ef3e6ecffe8bd401e8f9422ac7d4f07cf",
+          "attribution": "Sen Jia, Yifan Wang · arXiv2203.04771v4",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              46,
+              52,
+              569,
+              320
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "representation-learning",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原完整摘要与主要原图直接处理/评述HSI；普通arXiv口径收录，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何结合多尺度谱空卷积和Transformer，并通过中心光谱掩码预训练利用未标注HSI？",
+        "datasets": "本轮未核数据集和实验协议；图内类别名仅是分类输出示意，不当作已核基准。",
+        "experimentSetting": "本轮只整理必要范围/主图，不整理实验协议或性能数值。",
+        "conclusions": "研究问题与方法仅按原摘要和主图概述；性能未核验。",
+        "limitations": "只核原摘要、首页作者及一张主要原图，不记全文或复现；没有额外版本/图或实验补读门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2203.04771v4",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "MCT以多尺度三维卷积嵌入结合Transformer进行高光谱分类，并提出中心token掩码的自监督预训练：由邻域token重建中心像元光谱。",
+              "官方arXiv记录和所用PDF首页作者一致，无Jun Zhou；代码只记录原摘要URL，不访问。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2203.04771v4",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF第3页主要原图/图注（选读）",
+            "supports": [
+              "MCT主要分类结构：HSI采样形成光谱嵌入与多尺度3D卷积嵌入，融合后通过Transformer编码器、平均池化及MLP输出地物类别。",
+              "仅保留固定v4第3页Fig1整体分类图；同页Fig2预训练子流程和Fig3标准编码器未另收。掩码预训练说明来自原完整摘要，不声称此主图包含全部预训练细节。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mct-center-mask-arxiv-2022-arxiv",
+            "type": "所用唯一arXiv公开版",
+            "url": "https://arxiv.org/abs/2203.04771v4",
+            "pdfUrl": "https://arxiv.org/pdf/2203.04771v4",
+            "arxivId": "2203.04771",
+            "arxivVersion": 4,
+            "year": 2022,
+            "authors": [
+              "Sen Jia",
+              "Yifan Wang"
+            ],
+            "firstSubmittedAt": "2022-03-09T14:42:26Z",
+            "updatedAt": "2022-03-21T03:02:37Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-sen-jia-mainframes-2026-10-13-2203.04771v4.pdf",
+            "relation": "本轮所用唯一正文/图版本；只核首页署名和主图区域，不记全文。"
+          }
+        ],
+        "methodFamilyId": "mct-center-mask-arxiv-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要明确地物分类、中心掩码自监督预任务及Transformer；Fig1确认分类主结构。使用既有分类/表征预训练任务和Transformer方法，不把谱立方体解释为几何三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "6585a1d7df26b9df5fdb68d96bbd43d54d65d660f8ca874928f247225fb8f541",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2203.04771v4",
+            "https://arxiv.org/pdf/2203.04771v4"
+          ]
+        }
+      },
+      "citation": "@misc{mct_center_mask_arxiv_2022,\n  title = {Multiscale Convolutional Transformer with Center Mask Pretraining for Hyperspectral Image Classification},\n  author = {Sen Jia and Yifan Wang},\n  year = {2022},\n  eprint = {2203.04771},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2203.04771v4}\n}\n"
+    },
+    {
+      "id": "few-label-hsi-dl-survey-arxiv-2021",
+      "shortTitle": "Few-label HSI survey",
+      "title": "A Survey: Deep Learning for Hyperspectral Image Classification with Few Labeled Samples",
+      "authors": "Sen Jia, Shuguo Jiang, Zhijie Lin, Nanying Li, Meng Xu, Shiqi Yu",
+      "year": 2021,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "从谱/空分支、单流/双流模型结构和监督/无监督学习范式组织研究；主图给出分类总览。",
+      "tags": [],
+      "summary": "综述少标注HSI深度学习分类，按模型结构与学习范式整理相关研究，重点涵盖迁移学习、主动学习和少样本学习。",
+      "input": "少量标注高光谱分类相关研究及模型/学习范式。",
+      "output": "研究方法分类与问题综述，不是新的单一分类算法。",
+      "mechanism": "从谱/空分支、单流/双流模型结构和监督/无监督学习范式组织研究；主图给出分类总览。",
+      "readingNote": "固定arXiv2112.01800v1完整原摘要及PDF首页作者已核，仅选读第5页主要原图/图注。每篇只留此一张主图；PDF下载不记全文阅读，不另读其他版本或实验。正式书目按同题名/同序作者关联；Neurocomputing不在白名单，当前只按arXiv收录，不扩大来源例外。",
+      "paper": "https://arxiv.org/abs/2112.01800v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2112.01800v1",
+          "sourceVersion": "arXiv2112.01800v1",
+          "figureLabel": "Figure 2",
+          "page": 5,
+          "caption": "综述主要分类总览图：左侧组织谱/空分支及单流/双流模型，右侧组织监督、无监督及迁移、主动、少样本等学习范式；不是综述提出的新算法。",
+          "verificationNote": "仅保留固定v1第5页Figure2分类总览及原图注；不把后续被综述方法流程图作为额外主图，不读54页全文或正式期刊正文。",
+          "path": "figures/few-label-hsi-dl-survey-arxiv-2021/framework.png",
+          "width": 1068,
+          "height": 498,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "c9b54831d0e6d709fe7fce2890c330d687eb76a808f4959b0069b93696456599",
+          "attribution": "Sen Jia, Shuguo Jiang, Zhijie Lin, Nanying Li, Meng Xu, Shiqi Yu · arXiv2112.01800v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              128,
+              120,
+              484,
+              286
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "code": "https://github.com/ShuGuoJ/HSI-Classification.git",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-research-review"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原完整摘要与主要原图直接处理/评述HSI；普通arXiv口径收录，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "少标注条件下的高光谱深度分类研究如何组织，现有学习范式有哪些？",
+        "datasets": "摘要提及比较实验；本轮不整理具体基准、设置或结果。",
+        "experimentSetting": "本轮只整理必要范围/主图，不整理实验协议或性能数值。",
+        "conclusions": "研究问题与方法仅按原摘要和主图概述；性能未核验。",
+        "limitations": "只核原摘要、首页作者及一张主要原图，不记全文或复现；没有额外版本/图或实验补读门槛。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2112.01800v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "综述少标注HSI深度学习分类，按模型结构与学习范式整理相关研究，重点涵盖迁移学习、主动学习和少样本学习。",
+              "官方arXiv记录和所用PDF首页作者一致，无Jun Zhou；代码只记录原摘要URL，不访问。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2112.01800v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF第5页主要原图/图注（选读）",
+            "supports": [
+              "综述主要分类总览图：左侧组织谱/空分支及单流/双流模型，右侧组织监督、无监督及迁移、主动、少样本等学习范式；不是综述提出的新算法。",
+              "仅保留固定v1第5页Figure2分类总览及原图注；不把后续被综述方法流程图作为额外主图，不读54页全文或正式期刊正文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.neucom.2021.03.035",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册书目（只书目）",
+            "supports": [
+              "同题名/同序作者、正式DOI及卷页关联；Neurocomputing不在普通来源白名单，公开arXiv版本独立满足来源条件。",
+              "关联不证明正文或实验完全相同，不另获取/阅读正式正文。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "few-label-hsi-dl-survey-arxiv-2021-arxiv",
+            "type": "所用唯一arXiv公开版",
+            "url": "https://arxiv.org/abs/2112.01800v1",
+            "pdfUrl": "https://arxiv.org/pdf/2112.01800v1",
+            "arxivId": "2112.01800",
+            "arxivVersion": 1,
+            "year": 2021,
+            "authors": [
+              "Sen Jia",
+              "Shuguo Jiang",
+              "Zhijie Lin",
+              "Nanying Li",
+              "Meng Xu",
+              "Shiqi Yu"
+            ],
+            "firstSubmittedAt": "2021-12-03T09:16:05Z",
+            "updatedAt": "2021-12-03T09:16:05Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-sen-jia-mainframes-2026-10-13-2112.01800v1.pdf",
+            "relation": "本轮所用唯一正文/图版本；只核首页署名和主图区域，不记全文。"
+          },
+          {
+            "id": "few-label-hsi-dl-survey-arxiv-2021-formal",
+            "type": "关联正式出版记录（来源白名单外）",
+            "url": "https://doi.org/10.1016/j.neucom.2021.03.035",
+            "doi": "10.1016/j.neucom.2021.03.035",
+            "year": 2021,
+            "venue": "Neurocomputing",
+            "publicationName": "Neurocomputing",
+            "volume": "448",
+            "pages": "179-204",
+            "authors": [
+              "Sen Jia",
+              "Shuguo Jiang",
+              "Zhijie Lin",
+              "Nanying Li",
+              "Meng Xu",
+              "Shiqi Yu"
+            ],
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_bibliographic_association_only",
+            "relation": "同题名/同序作者确认书目关联；只按arXiv收录，不另读此版本正文或转移主图页码。"
+          }
+        ],
+        "methodFamilyId": "few-label-hsi-dl-survey-arxiv-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要及Figure2明确为少标注高光谱分类研究综述；只用既有综述任务，不将其综述的迁移/主动/少样本算法自动当作自身方法贡献。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "a3ec0cc471d12efb4b8fdf066b2ffbf9d4bca4974e0b7d053c77b17a125242cd",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2112.01800v1",
+            "https://arxiv.org/pdf/2112.01800v1"
+          ]
+        }
+      },
+      "citation": "@misc{few_label_hsi_dl_survey_arxiv_2021,\n  title = {A Survey: Deep Learning for Hyperspectral Image Classification with Few Labeled Samples},\n  author = {Sen Jia and Shuguo Jiang and Zhijie Lin and Nanying Li and Meng Xu and Shiqi Yu},\n  year = {2021},\n  eprint = {2112.01800},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2112.01800v1}\n}\n"
     }
   ],
   "datasets": [
@@ -53678,7 +54132,8 @@
         "zhou-81-hsi-2022",
         "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "zhou-scholar-arxiv-2309-00005",
-        "zhou-scholar-arxiv-2609-37340"
+        "zhou-scholar-arxiv-2609-37340",
+        "agd-net-spectral-reconstruction-arxiv-2021"
       ],
       "history": [
         {
@@ -53892,7 +54347,8 @@
         "hypersigma-tpami-2025",
         "decsc-tgrs-2025",
         "cross-source-neighborhood-contrast-if-2025",
-        "spectralformer-tgrs-2022"
+        "spectralformer-tgrs-2022",
+        "mct-center-mask-arxiv-2022"
       ],
       "history": [
         {
@@ -53963,7 +54419,8 @@
         "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
         "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
         "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022",
-        "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022"
+        "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022",
+        "agd-net-spectral-reconstruction-arxiv-2021"
       ],
       "history": [
         {
@@ -56589,7 +57046,8 @@
         "dual-spatial-fusion-tgrs-2021",
         "gabor-net-arxiv-2019",
         "superpixel-3d-hsi-classification-pr-2018",
-        "active-multikernel-hsi-domain-adaptation-pr-2018"
+        "active-multikernel-hsi-domain-adaptation-pr-2018",
+        "mct-center-mask-arxiv-2022"
       ],
       "history": [
         {
@@ -56899,7 +57357,8 @@
         "zhou-scholar-multi-domain-universal-representation-lear-2025",
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-arxiv-2609-37340",
-        "hypersigma-tpami-2025"
+        "hypersigma-tpami-2025",
+        "mct-center-mask-arxiv-2022"
       ],
       "history": [
         {
@@ -59511,7 +59970,8 @@
       "evidencePaperIds": [
         "zhou-scholar-arxiv-2302-08054",
         "hsi-primer-arxiv-2025",
-        "high-performance-imaging-editorial-pr-2018"
+        "high-performance-imaging-editorial-pr-2018",
+        "few-label-hsi-dl-survey-arxiv-2021"
       ],
       "history": [
         {
