@@ -52619,6 +52619,279 @@
           "newFullTextReadThisRound": false
         }
       }
+    },
+    {
+      "id": "csstrack-pattern-recognition-2026",
+      "shortTitle": "CSSTrack",
+      "title": "A unified spatial-spectral-temporal network for hyperspectral object tracking",
+      "authors": "Zhuanfeng Li, Jing Wang, Jue Zhang, Dong Zhao, Guanyiman Fu, Jiangtao Wang, Jianfeng Lu",
+      "year": 2026,
+      "venue": "Pattern Recognition",
+      "publicationName": "Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "SaRE用光谱自表达物理模型在模板/搜索帧之间建模光谱关联，区分前景/背景；S2TM以自回归时间嵌入捕获逐带运动并融合静态/动态特征。主图显示HiViT、逐带时间decoder/query、空谱时融合和定位头。",
+      "tags": [],
+      "summary": "CSSTrack通过模板与搜索帧之间的光谱自表达关系增强特征，再用逐带自回归时间嵌入及空谱时融合跟踪高光谱目标。",
+      "input": "高光谱视频的目标模板及逐帧搜索区域；主图显示逐带相关表示与跨帧时间查询。",
+      "output": "搜索帧内的目标定位框（主图Head输出）。",
+      "mechanism": "SaRE用光谱自表达物理模型在模板/搜索帧之间建模光谱关联，区分前景/背景；S2TM以自回归时间嵌入捕获逐带运动并融合静态/动态特征。主图显示HiViT、逐带时间decoder/query、空谱时融合和定位头。",
+      "readingNote": "正式书目和机构完整原摘要/七作者已核，保留正式出版社一张整体主框架。只读摘要及主图，无PDF/全文阅读，不读其他版本或深挖实验；正文图注/图号/页码未知留白。七作者无Jun Zhou，不增Griffith作者专项。出版社接口仅metadata且非OA标志，ScienceDirect页面403挑战，不能据此断言没有免费版本或确定付费。代码只记录机构原摘要URL、不访问。",
+      "paper": "https://doi.org/10.1016/j.patcog.2025.113005",
+      "code": "https://github.com/hscv/CSSTrack",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "citation": "@article{csstrack_pattern_recognition_2026,\n  title = {A unified spatial-spectral-temporal network for hyperspectral object tracking},\n  author = {Zhuanfeng Li and Jing Wang and Jue Zhang and Dong Zhao and Guanyiman Fu and Jiangtao Wang and Jianfeng Lu},\n  journal = {Pattern Recognition},\n  year = {2026},\n  volume = {174},\n  pages = {113005},\n  doi = {10.1016/j.patcog.2025.113005}\n}\n",
+      "frameworkFigures": [
+        {
+          "path": "figures/csstrack-pattern-recognition-2026/framework-1.jpg",
+          "sourceUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0031320325016681-gr2_lrg.jpg",
+          "sourceVersion": "正式出版社高清原图，PII S0031320325016681",
+          "figureLabel": "主要框架图（出版社gr2资源）",
+          "caption": "CSSTrack整体流程：模板/搜索、SaRE光谱相关及HiViT特征、逐带时间query/decoder与S2TM空谱时融合、Head输出目标框。",
+          "verificationNote": "已核高清整体原图的输入、主模块及目标定位输出，保留原始JPEG、无重绘，只此一张。资源编号gr2不当正文图号，正式图注/PDF页码未知，留白。",
+          "width": 2364,
+          "height": 1013,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "f56ac0f86d6129e506570806310c62c8dba82e335923991848882ec4ab1c69ed",
+          "attribution": "Zhuanfeng Li, Jing Wang, Jue Zhang, Dong Zhao, Guanyiman Fu, Jiangtao Wang, Jianfeng Lu · Pattern Recognition (2026)",
+          "extraction": {
+            "method": "publisher_original_jpeg",
+            "originalBytesUnchanged": true
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "hyperspectral-target-tracking"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "机构原摘要直接研究高光谱视频跟踪，主图显示谱维与时间建模及目标框输出；白名单正式期刊来源，不使用作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用高光谱的谱间区分与跨帧信息改善视频目标跟踪？",
+        "datasets": "机构原摘要列HOT2020、IMEC25；本轮不核各协议或参数。",
+        "experimentSetting": "未核训练/测试协议、超参数、数据划分和性能数值；只原摘要及主框架。",
+        "conclusions": "原摘要报告跟踪性能改善，具体指标/统计/复现未核，不写成已复现结论。",
+        "limitations": "原摘要与一主图已核，全文未获取；正式图注/图号/页码未知，未猜测。共同作者与相近空谱时任务不证明和其他论文扩展/同稿，暂各为独立方法条目，不另读其他版本。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.patcog.2025.113005",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式完整题名/七作者/卷页书目",
+            "supports": [
+              "正式Pattern Recognition卷174、2026年、页/文号113005；同规范题名/同序七作者，名单无Jun Zhou。",
+              "既有目录与版本DOI/规范题名未匹配，按独立论文保留，不因共同作者或相似题名合并。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/80c394d7-87f1-4591-8d74-8a7697fb4523",
+            "checkedAt": "2026-10-13",
+            "level": "Griffith公开机构记录完整原摘要及对应作者书目（本轮实际阅读）",
+            "supports": [
+              "CSSTrack通过模板与搜索帧之间的光谱自表达关系增强特征，再用逐带自回归时间嵌入及空谱时融合跟踪高光谱目标。",
+              "机构原摘要列HOT2020、IMEC25；本轮不核各协议或参数。",
+              "原摘要给官方代码URL，仅记录链接，不访问或检查仓库。"
+            ]
+          },
+          {
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0031320325016681-gr2_lrg.jpg",
+            "checkedAt": "2026-10-13",
+            "level": "出版社高清主要框架原图核对（仅图内模块与数据流）",
+            "supports": [
+              "CSSTrack整体流程：模板/搜索、SaRE光谱相关及HiViT特征、逐带时间query/decoder与S2TM空谱时融合、Head输出目标框。",
+              "保留一张整体原JPEG；正式图注/正文图号/PDF页码未取得，未当正文已读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "csstrack-pattern-recognition-2026-formal",
+            "type": "唯一材料版本：正式期刊书目与主框架",
+            "url": "https://doi.org/10.1016/j.patcog.2025.113005",
+            "doi": "10.1016/j.patcog.2025.113005",
+            "year": 2026,
+            "venue": "Pattern Recognition",
+            "volume": "174",
+            "pages": "113005",
+            "authors": [
+              "Zhuanfeng Li",
+              "Jing Wang",
+              "Jue Zhang",
+              "Dong Zhao",
+              "Guanyiman Fu",
+              "Jiangtao Wang",
+              "Jianfeng Lu"
+            ],
+            "readingProgress": "abstract_read",
+            "relation": "相同DOI/题名的机构原摘要与正式PII主图关联，DRSST机构作者为缩写，主书目按Crossref完整署名；只有这一版本原图，不声称正式全文已读或论文间扩展关系。"
+          }
+        ],
+        "methodFamilyId": "csstrack-pattern-recognition-2026",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "机构原摘要和整体主图确认直接高光谱视频目标跟踪；沿用跟踪任务，DRSST-Net摘要明确Mamba才加既有状态空间方法标签。不把时序影像建模当三维场景或从图猜实验。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "be9f39cf5bc1b451f46f876bba0bf2478f10a092890035e8945d93919901e06b",
+          "sourceUrls": [
+            "https://api.crossref.org/works/10.1016/j.patcog.2025.113005",
+            "https://research-repository.griffith.edu.au/server/api/core/items/80c394d7-87f1-4591-8d74-8a7697fb4523",
+            "https://ars.els-cdn.com/content/image/1-s2.0-S0031320325016681-gr2_lrg.jpg"
+          ]
+        }
+      },
+      "doi": "10.1016/j.patcog.2025.113005"
+    },
+    {
+      "id": "drsst-net-isprs-2026",
+      "shortTitle": "DRSST-Net",
+      "title": "Hyperspectral object tracking with dimensionality reduction and spatial–spectral–temporal modeling",
+      "authors": "Zhuanfeng Li, Jing Wang, Jue Zhang, Diqi Chen, Guanyiman Fu, Jiangtao Wang, Jianfeng Lu",
+      "year": 2026,
+      "venue": "ISPRS JPRS",
+      "publicationName": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "DR模块使用非线性数据驱动的带内判别和跨带权重，压缩冗余并增强异质性；上下文SST模块将Mamba时间依赖与MoE自适应专家结合。主图显示编码器主支路与带隐藏状态CPP辅助支路、搜索tokens和预测头。",
+      "tags": [],
+      "summary": "DRSST-Net先用带内判别及跨带加权降低高光谱冗余，再结合Mamba时间上下文与MoE机制建模空间—光谱—时间依赖，完成视频目标跟踪。",
+      "input": "高光谱视频clip与当前搜索区域；主图显示时间T、谱带B、patch嵌入及DR降维。",
+      "output": "当前搜索区域内的目标定位框（主图Prediction head输出）。",
+      "mechanism": "DR模块使用非线性数据驱动的带内判别和跨带权重，压缩冗余并增强异质性；上下文SST模块将Mamba时间依赖与MoE自适应专家结合。主图显示编码器主支路与带隐藏状态CPP辅助支路、搜索tokens和预测头。",
+      "readingNote": "正式书目和机构完整原摘要/七作者已核，保留正式出版社一张整体主框架。只读摘要及主图，无PDF/全文阅读，不读其他版本或深挖实验；正文图注/图号/页码未知留白。七作者无Jun Zhou，不增Griffith作者专项。出版社接口仅metadata且非OA标志，ScienceDirect页面403挑战，不能据此断言没有免费版本或确定付费。代码只记录机构原摘要URL、不访问。",
+      "paper": "https://doi.org/10.1016/j.isprsjprs.2026.04.052",
+      "code": "https://github.com/hscv/DRSST-Net",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "citation": "@article{drsst_net_isprs_2026,\n  title = {Hyperspectral object tracking with dimensionality reduction and spatial–spectral–temporal modeling},\n  author = {Zhuanfeng Li and Jing Wang and Jue Zhang and Diqi Chen and Guanyiman Fu and Jiangtao Wang and Jianfeng Lu},\n  journal = {ISPRS Journal of Photogrammetry and Remote Sensing},\n  year = {2026},\n  volume = {238},\n  pages = {14--32},\n  doi = {10.1016/j.isprsjprs.2026.04.052}\n}\n",
+      "frameworkFigures": [
+        {
+          "path": "figures/drsst-net-isprs-2026/framework-1.jpg",
+          "sourceUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0924271626002352-gr1_lrg.jpg",
+          "sourceVersion": "正式出版社高清原图，PII S0924271626002352",
+          "figureLabel": "主要框架图（出版社gr1资源）",
+          "caption": "DRSST-Net整体流程：视频clip/搜索region的patch嵌入、逐帧DR谱降维、特征拼接与搜索tokens、上下文SST编码器/CPP两支路、预测头及目标框。",
+          "verificationNote": "已核高清整体原图的输入、主模块及目标定位输出，保留原始JPEG、无重绘，只此一张。资源编号gr1不当正文图号，正式图注/PDF页码未知，留白。",
+          "width": 2337,
+          "height": 869,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "2dbe6a15c91d819fade61897a78a7098966641b593b9b0a3ce0129c360a62e3a",
+          "attribution": "Zhuanfeng Li, Jing Wang, Jue Zhang, Diqi Chen, Guanyiman Fu, Jiangtao Wang, Jianfeng Lu · ISPRS JPRS (2026)",
+          "extraction": {
+            "method": "publisher_original_jpeg",
+            "originalBytesUnchanged": true
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "hyperspectral-target-tracking",
+          "state-space-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "机构原摘要直接研究高光谱视频跟踪，主图显示谱维与时间建模及目标框输出；白名单正式期刊来源，不使用作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何利用高光谱的谱间区分与跨帧信息改善视频目标跟踪？",
+        "datasets": "机构原摘要列HOT2020、HOT2022、IMEC25、MUST；本轮不核各协议或参数。",
+        "experimentSetting": "未核训练/测试协议、超参数、数据划分和性能数值；只原摘要及主框架。",
+        "conclusions": "原摘要报告跟踪性能改善，具体指标/统计/复现未核，不写成已复现结论。",
+        "limitations": "原摘要与一主图已核，全文未获取；正式图注/图号/页码未知，未猜测。共同作者与相近空谱时任务不证明和其他论文扩展/同稿，暂各为独立方法条目，不另读其他版本。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.isprsjprs.2026.04.052",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式完整题名/七作者/卷页书目",
+            "supports": [
+              "正式ISPRS Journal of Photogrammetry and Remote Sensing卷238、2026年、页/文号14-32；同规范题名/同序七作者，名单无Jun Zhou。",
+              "既有目录与版本DOI/规范题名未匹配，按独立论文保留，不因共同作者或相似题名合并。"
+            ]
+          },
+          {
+            "url": "https://research-repository.griffith.edu.au/server/api/core/items/82d5f323-2b1b-4ff9-bb4d-8abecba18518",
+            "checkedAt": "2026-10-13",
+            "level": "Griffith公开机构记录完整原摘要及对应作者书目（本轮实际阅读）",
+            "supports": [
+              "DRSST-Net先用带内判别及跨带加权降低高光谱冗余，再结合Mamba时间上下文与MoE机制建模空间—光谱—时间依赖，完成视频目标跟踪。",
+              "机构原摘要列HOT2020、HOT2022、IMEC25、MUST；本轮不核各协议或参数。",
+              "原摘要给官方代码URL，仅记录链接，不访问或检查仓库。"
+            ]
+          },
+          {
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0924271626002352-gr1_lrg.jpg",
+            "checkedAt": "2026-10-13",
+            "level": "出版社高清主要框架原图核对（仅图内模块与数据流）",
+            "supports": [
+              "DRSST-Net整体流程：视频clip/搜索region的patch嵌入、逐帧DR谱降维、特征拼接与搜索tokens、上下文SST编码器/CPP两支路、预测头及目标框。",
+              "保留一张整体原JPEG；正式图注/正文图号/PDF页码未取得，未当正文已读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "drsst-net-isprs-2026-formal",
+            "type": "唯一材料版本：正式期刊书目与主框架",
+            "url": "https://doi.org/10.1016/j.isprsjprs.2026.04.052",
+            "doi": "10.1016/j.isprsjprs.2026.04.052",
+            "year": 2026,
+            "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+            "volume": "238",
+            "pages": "14-32",
+            "authors": [
+              "Zhuanfeng Li",
+              "Jing Wang",
+              "Jue Zhang",
+              "Diqi Chen",
+              "Guanyiman Fu",
+              "Jiangtao Wang",
+              "Jianfeng Lu"
+            ],
+            "readingProgress": "abstract_read",
+            "relation": "相同DOI/题名的机构原摘要与正式PII主图关联，DRSST机构作者为缩写，主书目按Crossref完整署名；只有这一版本原图，不声称正式全文已读或论文间扩展关系。"
+          }
+        ],
+        "methodFamilyId": "drsst-net-isprs-2026",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "机构原摘要和整体主图确认直接高光谱视频目标跟踪；沿用跟踪任务，DRSST-Net摘要明确Mamba才加既有状态空间方法标签。不把时序影像建模当三维场景或从图猜实验。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "49b7b715b4db0fa323481190f431f19977eae2672bb846f27a89676d38dac981",
+          "sourceUrls": [
+            "https://api.crossref.org/works/10.1016/j.isprsjprs.2026.04.052",
+            "https://research-repository.griffith.edu.au/server/api/core/items/82d5f323-2b1b-4ff9-bb4d-8abecba18518",
+            "https://ars.els-cdn.com/content/image/1-s2.0-S0924271626002352-gr1_lrg.jpg"
+          ]
+        }
+      },
+      "doi": "10.1016/j.isprsjprs.2026.04.052"
     }
   ],
   "datasets": [
@@ -56224,7 +56497,8 @@
         "zhou-dblp-arxiv-2404-00272",
         "hucrtrack-tip-2026",
         "dualmamba-tgrs-2025",
-        "decsc-tgrs-2025"
+        "decsc-tgrs-2025",
+        "drsst-net-isprs-2026"
       ],
       "history": [
         {
@@ -57064,7 +57338,9 @@
         "zhou-scholar-arxiv-2605-17286",
         "zhou-strl-hyperspectral-tracking-2025",
         "hucrtrack-tip-2026",
-        "spectraltrack-tip-2025"
+        "spectraltrack-tip-2025",
+        "csstrack-pattern-recognition-2026",
+        "drsst-net-isprs-2026"
       ],
       "history": [
         {

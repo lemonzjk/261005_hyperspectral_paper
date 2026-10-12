@@ -32,6 +32,8 @@
 
 2026-10-13已有候选普通库续接：Phase-Locked SNR的固定arXiv v2此前已核直接Cuprite HSI选带/NNLS解混及八页正文、主框架，按合格普通arXiv来源入库；不再用Jun个人身份或署名争议拖住范围已明确的普通论文。主署名及BibTeX采用官方API/abs的Judy X Yang，PDF五作者（含Jun Zhou）原样留在版本/争议字段，不能用官方单署名说PDF无Jun，也未确认Griffith归属。只复用第3页Fig1一张原框架，零新下载/全文阅读；已知表头、96/150带和图注差异沿用，不新深挖实验或代码。既有全文状态记历史实际阅读，非本轮新读或升级目标作者全文数。总库405/原图343（281白名单/23arXiv/101作者例外），Jun专项181（102全文/79摘要）不变；主署名Jun筛选182仅含IF1未核，Phase的PDF Jun在详情与身份待办单列。作者目录与领域矩阵未闭环。[普通收录与署名边界](sources/jun-zhou-phase-general-library-2026-10-13.json)。
 
+2026-10-13两既有跟踪候选收录：CSSTrack按Pattern Recognition174(2026)113005、DRSST-Net按ISPRS JPRS238(2026)14–32，正式七作者/书目、同DOI机构完整原摘要与出版社整体主图已核，无Jun Zhou。CSSTrack仅gr2整体，DRSST-Net仅gr1整体；gr2冗余示例/gr3单模块只临时定位，不入图库。正式图注、正文图号和页码未知留白；未获取PDF/读全文或其他版本，不深挖实验。机构摘要给两官方代码链接，仅记录、不访问；DRSST机构作者为首字母缩写，主书目完整姓名按Crossref。出版社coredata非OA与页面403不当无公开版本或确定付费。两题名/DOI、第四作者及方法不同，分别保留，不凭六共同作者断言同稿或扩展。原coauthors指定4候选现全部入普通库，但Phase署名/个人身份及作者全集未闭环。总库407/原图345（283白名单/23arXiv/101例外）、确认Jun181不变。[原摘要/正式书目与主图](sources/jun-zhou-two-tracking-primary-frameworks-2026-10-13.json)。
+
 ## 当前范围内的实际检索
 
 | 场所 | 年份 | 查询与分页 | 题名 / 命中 / 已审 | 覆盖级别 | 剩余缺口 |

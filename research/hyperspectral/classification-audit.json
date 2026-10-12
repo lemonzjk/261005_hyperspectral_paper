@@ -385,7 +385,9 @@
     "infn-arxiv-2023",
     "dual-spatial-fusion-tgrs-2021",
     "gabor-net-arxiv-2019",
-    "phase-locked-snr-arxiv-2025"
+    "phase-locked-snr-arxiv-2025",
+    "csstrack-pattern-recognition-2026",
+    "drsst-net-isprs-2026"
   ],
   "sourceChecks": [
     {
@@ -2518,6 +2520,68 @@
         "对每像素谱做Savitzky–Golay平滑，按跨像素均值µ与标准差σ计算10log10(µ²/σ²)，保留SNR≥15dB波段；各保留谱L2归一化，KMeans K=12取中心端元，NNLS解非负丰度，再与参考矿物谱比余弦/RMSE。phase-locked是正文借用地震相干概念的SG/SNR类比，未给显式相位差估计、参考锁相测量或独立传感噪声标定。NNLS式只约束a≥0，未见sum-to-one约束。",
         "PDF署名Judy X Yang、Guanyiman Fu、Jing Wang、Zekun Long、Jun Zhou，没有单位或作者ORCID；已有Fig1第3页原图，不再补其他版本/图。",
         "材料原有96/150带、指标表头与图注/图内差异保留，不猜纠错；既有全文阅读不重复计本轮新读。"
+      ]
+    },
+    {
+      "paperId": "csstrack-pattern-recognition-2026",
+      "url": "https://api.crossref.org/works/10.1016/j.patcog.2025.113005",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式完整题名/七作者/卷页书目",
+      "supports": [
+        "正式Pattern Recognition卷174、2026年、页/文号113005；同规范题名/同序七作者，名单无Jun Zhou。",
+        "既有目录与版本DOI/规范题名未匹配，按独立论文保留，不因共同作者或相似题名合并。"
+      ]
+    },
+    {
+      "paperId": "csstrack-pattern-recognition-2026",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/items/80c394d7-87f1-4591-8d74-8a7697fb4523",
+      "checkedAt": "2026-10-13",
+      "level": "Griffith公开机构记录完整原摘要及对应作者书目（本轮实际阅读）",
+      "supports": [
+        "CSSTrack通过模板与搜索帧之间的光谱自表达关系增强特征，再用逐带自回归时间嵌入及空谱时融合跟踪高光谱目标。",
+        "机构原摘要列HOT2020、IMEC25；本轮不核各协议或参数。",
+        "原摘要给官方代码URL，仅记录链接，不访问或检查仓库。"
+      ]
+    },
+    {
+      "paperId": "csstrack-pattern-recognition-2026",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0031320325016681-gr2_lrg.jpg",
+      "checkedAt": "2026-10-13",
+      "level": "出版社高清主要框架原图核对（仅图内模块与数据流）",
+      "supports": [
+        "CSSTrack整体流程：模板/搜索、SaRE光谱相关及HiViT特征、逐带时间query/decoder与S2TM空谱时融合、Head输出目标框。",
+        "保留一张整体原JPEG；正式图注/正文图号/PDF页码未取得，未当正文已读。"
+      ]
+    },
+    {
+      "paperId": "drsst-net-isprs-2026",
+      "url": "https://api.crossref.org/works/10.1016/j.isprsjprs.2026.04.052",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式完整题名/七作者/卷页书目",
+      "supports": [
+        "正式ISPRS Journal of Photogrammetry and Remote Sensing卷238、2026年、页/文号14-32；同规范题名/同序七作者，名单无Jun Zhou。",
+        "既有目录与版本DOI/规范题名未匹配，按独立论文保留，不因共同作者或相似题名合并。"
+      ]
+    },
+    {
+      "paperId": "drsst-net-isprs-2026",
+      "url": "https://research-repository.griffith.edu.au/server/api/core/items/82d5f323-2b1b-4ff9-bb4d-8abecba18518",
+      "checkedAt": "2026-10-13",
+      "level": "Griffith公开机构记录完整原摘要及对应作者书目（本轮实际阅读）",
+      "supports": [
+        "DRSST-Net先用带内判别及跨带加权降低高光谱冗余，再结合Mamba时间上下文与MoE机制建模空间—光谱—时间依赖，完成视频目标跟踪。",
+        "机构原摘要列HOT2020、HOT2022、IMEC25、MUST；本轮不核各协议或参数。",
+        "原摘要给官方代码URL，仅记录链接，不访问或检查仓库。"
+      ]
+    },
+    {
+      "paperId": "drsst-net-isprs-2026",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0924271626002352-gr1_lrg.jpg",
+      "checkedAt": "2026-10-13",
+      "level": "出版社高清主要框架原图核对（仅图内模块与数据流）",
+      "supports": [
+        "DRSST-Net整体流程：视频clip/搜索region的patch嵌入、逐帧DR谱降维、特征拼接与搜索tokens、上下文SST编码器/CPP两支路、预测头及目标框。",
+        "保留一张整体原JPEG；正式图注/正文图号/PDF页码未取得，未当正文已读。"
       ]
     }
   ]
