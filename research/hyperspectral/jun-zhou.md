@@ -76,6 +76,8 @@ Otsu两免费Griffith接受稿共29页已下载，本轮实际选读13页（红�
 
 GSFus/SCFus、GF-3DDA、两阶段自监督复原与NSSNN五既有条目，完整Griffith主要摘要已实际读并核Jun resolvedUser7205，确认任务/方法、仍摘要级。GSFus ℓ₂,₁和SCFus ℓ₁不同，不凭五同作者/BM3D合并；GF-3DDA为谱空统计域适配/ELM而非几何三维；两阶段明确HSI去噪、外部HSI训练可选，补去噪标签；NSSNN SSR/非局部crisscross结构与官方代码URL补齐。SNMF-Net机构17页本轮逐页阅读，与既存16页作者正文逐页文字/72dpi渲染一致，仅多机构封面，原全文与框架图不重复计；机构未标版本，封面2021与正式TGRS60/2022及目标ORCID分开。六分类确认、审计329，当前339确认/51暂定；周峻101全文/80摘要、原图304不变。SNMF详情移除旧代码审查事实/实现条件，历史源文件保留、代码只URL；L0复原主链接从CV改正式DOI，ref53仅补书目。共同作者API17/17有五已读Jun版本、11其他作者定位及一RhyDe HSI候选（有官方TGRS DOI），两PDF TLS失败尚未得正文、不判付费。[证据](sources/jun-zhou-restoration-fusion-primary-materials-2026-10-12.json)。
 
+SDRN、S3FGCN、UMsDFL、S4GPN、PN-ResCapsNet、SSLKA六完整Griffith原摘要本轮实际阅读，精确DOI/resolvedUser7205核既有目标归属，六分类确认而全部仍摘要级。SDRN随机深度为监督分类训练，删除无独立预训练依据的表征任务；UMsDFL无监督仅特征网络，RF仍用标注；S4GPN PN/SimSiam/融合三阶段与谱GCN明确，补图学习。胶囊原型SE保留原摘要称呼，不补猜实现；SSLKA已有同主源复读，不增加新正文/身份数量或误标Transformer。UMsDFL每类五训练样本OA79.23/96.49/77.26%及PN-ResCaps KSC/HT/PU OA92.07/81.02/85.35%只摘要口径，不填未给shot/划分。当前345确认/45暂定、审计335；Jun181、101全文/80摘要、原图304不变。共同作者Lei Tong/Jing Yu/Sen Jia＋HSI查询HTTP429，total未知，不当零结果；六正文/原图及作者目录仍待，代码只链接。[证据](sources/jun-zhou-classification-primary-abstracts-2026-10-12.json)。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |
