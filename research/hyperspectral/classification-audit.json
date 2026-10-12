@@ -375,7 +375,8 @@
     "spectraltrack-tip-2025",
     "dualmamba-tgrs-2025",
     "ssfad-arxiv-2022",
-    "comix-tgrs-2025"
+    "comix-tgrs-2025",
+    "hsi-primer-arxiv-2025"
   ],
   "sourceChecks": [
     {
@@ -2274,6 +2275,19 @@
         "固定v1 §III：所有模态归一化[0,1]，128×128输入、batch4，Adam、交叉熵、500 epochs、weight decay0.01，poly学习率；Houston2013/DFC2018初始6e−5，Berlin1e−3。各实验五次独立测试，主表均值与标准差；与SVM/FusAtNet/CALC/Fusion HCT/MFT/Fusion-FCN/Flex-MCFNet比较，作者称相同预处理与训练测试集。具体GPU/执行硬件、验证集及裁块空间隔离未交代。",
         "v1 Tables IV/V/VI：Houston2013 OA95.75±1.18%/AA96.23±1.06%/κ×100=95.39±1.36；Berlin OA76.81±1.01%/AA63.31±0.95%/κ×100=63.97±1.08；DFC2018 OA68.26±1.59%/AA63.57±2.12%/κ×100=66.31±1.21。三场景OA及κ优于表内对照，但Berlin AA低于Flex-MCFNet68.57%、FusAtNet66.21%及MFT64.02%；并非所有类别第一，DFC未铺装停车场均为0。Houston Table VII CoMiX21.87M参数/197.02G FLOPs，训练8282.43s/推断7.72s，快于深度基线但慢于SVM推断2.85s；参数与算量远高于Fusion-FCN0.09M/6.22G。逐项累加消融OA82.51→87.23→89.08→93.72→95.75%，不称独立因果消融。",
         "仅完整读arXiv v1十六页，正式TGRS五作者正文未读；作者网页标2026而Crossref正式卷63印年2025，分别保留。原稿称3D DCN，但Fig.2(b)/Eq.5–10为EPA空间/通道注意力加3DFFN，未给HSI三维变形偏移；3DFFN公式Conv3、释文Conv2命名不一致。FFM Fig.3的DWConv/GELU顺序与Eq.25不同。Houston Table I训练Total28332与逐类合计2832冲突，类名与Fig.7图例不一致，不擅自重映射。DFC原文把1550nm标near-infrared、1064nm标mid-infrared，保留原始标注疑点。效率表CALC/CACL训练印1696081351.24s，视觉确认后保留异常值，不猜改；正文称CoMiX推断慢于Fusion-FCN但表为7.72<9.60s，另称Fusion HCT参数最高也与表不符。硬件/时延口径缺失，秒级整景推断不直接支持实时或部署；未知模态迁移、三模态融合、跨场景泛化和空间独立评估未证。"
+      ]
+    },
+    {
+      "paperId": "hsi-primer-arxiv-2025",
+      "url": "https://arxiv.org/pdf/2508.08107v2",
+      "checkedAt": "2026-10-12",
+      "level": "固定arXiv v2二十四页全文、99参考条目及四原图实际阅读",
+      "supports": [
+        "完整v2直接综述HSI采集、标定、处理、学习与应用，实质内容含四扫描模式、恢复/增强、PCA/MNF、监督分类、端元与丰度估计以及跨域应用。只赋“高光谱研究综述”，不把介绍的算法、仪器、数据集或未来三维展望当该文原创贡献，也不加入三维专题。Table3含MODIS等多光谱/点光谱条目，不按整表扩展项目收录范围。",
+        "本文是方法Primer，不提供统一新基准或采集实验。Table2举EnMAP242带420–2450nm/30m、PRISMA239带420–2450nm/30m、AVIRIS-NG425带380–2450nm/1–5m、NEON AOP426带380–2450nm/~1m及USGS/EcoSIS/SPECCHIO等点光谱库。Table3跨领域列Pavia、Cuprite、Indian Pines、Salinas、Hyper-Skin、医学/食品/文物数据和HOTC16带视频等代表资料；这些规格仅为v2所载、未逐项核原始数据。AOD-MODIS明确12通道，不按HSI纳入；纯点光谱也不自动当成像数据。",
+        "v2全24页与99参考条目实际读，四原图视觉核对，属于综述及概念/例示分析。Fig3D列KNN/SVM/RF在原始、PCA和MNF表示上的分类图，给KNN降维维数曲线；只称城市示例，未交代具体场景身份、输入有效带、训练/测试数量与比例、划分种子、重复次数及超参数。Table1平台属性和Table2/3资源目录不是新实测对照；2015–2025任务比例未给可复核检索式或统计样本。",
+        "作者提出从硬件设计、多传感器协调和HSI中心多模态联合建模出发的3J展望，并强调标定/采集元数据、物理差异、数据共享与跨域泛化。Fig3D及正文示例：原始KNN OA91.21%，PCA少数主成分接近该值，MNF约96%；只保留例示趋势，不作可复现优势或跨数据结论。任务统计图分类62%、解混9%是作者2015–2025示意统计，检索口径未给；OFA单带等效压缩、HSI agents及全视角几何成像是远期设想，没有相应模型、设备或实验验证。",
+        "全文级只对应固定v2；正式Nature Reviews Methods Primers6(2026)19不在白名单，链接仅作相关版本线索，正式全文未读，不误作Nature Methods。正文/参考书目和Table3包含纯MS MODIS12通道、点光谱库及部分其他模态，引用或表列不自动符合HSI来源/输入范围。Table1把平台一般性能写成概括范围；Table3各资料版本/尺寸/传感器未逐项核原始，不能替代标准数据集记录；分类场景、抽样/空间隔离、重复及软件参数未提供，91.21%/~96%仅例示。Eq4的J(X)未显式依赖所选S，Eq5最大化未写单位范数约束；Eq8印Σn w=λΣs w却把λ称SNR并按降序，按所定义协方差对应噪声/信号比，方向疑点保留不替作者改式；Eq12联合优化E/A但左边仅A。Fig3图注(C)/(D)面板描述不一致。Table3 Cuprite写HYDICE且引用1997特定采集，不能移植为常用AVIRIS场景；Pavia尺寸与具体版本缺来源交代。3D谱空立方体不是几何三维；论文区分伪3D并提出未来多视角，不称已经实现OFA、实时或临床验证。"
       ]
     }
   ]

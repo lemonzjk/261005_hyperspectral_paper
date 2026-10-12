@@ -50580,6 +50580,258 @@
           }
         }
       ]
+    },
+    {
+      "id": "hsi-primer-arxiv-2025",
+      "shortTitle": "HSI Primer",
+      "title": "Hyperspectral Imaging",
+      "authors": "Danfeng Hong, Chenyu Li, Naoto Yokoya, Bing Zhang, Xiuping Jia, Antonio Plaza, Paolo Gamba, Jon Atli Benediktsson, Jocelyn Chanussot",
+      "year": 2025,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2508.08107",
+      "representation": "HSI采集、标定与分析流程的综述性概念和资源目录；不是新增学习表征或三维重建方法。",
+      "tags": [],
+      "summary": "该Primer系统梳理高光谱成像物理、传感器与扫描方式、标定和数据分析，覆盖恢复、增强、降维、分类、解混及跨领域应用。固定v2共24页和99引用已读，四原综述图已整理；按arXiv收录，正式期刊不在白名单。PCA/MNF图为协议不完整的例示，3J/OFA/全视角成像属于展望。",
+      "input": "综述研究对象是来自卫星、航空、地面和实验室平台的HSI：DN、辐亮度/反射率谱空立方体、校准目标和采集元数据。低维RGB/MSI到HSI恢复及HSI多模态融合属于介绍的任务，表内MODIS12通道与点光谱库单列，不能自动当HSI输入。",
+      "output": "关于采集/标定、恢复/增强、降维、分类、解混和应用的流程综述、资源表与未来方向；不发布新预测模型、统一新数据集、真实三维重建或部署性能。",
+      "mechanism": "以物理光谱分离与探测为起点，比较whiskbroom点扫、pushbroom线扫、staring波段扫及snapshot快照；经辐射/波长/几何/大气标定与校正获得可比较谱数据。分析部分用Y=H(X)+N和数据拟合/正则化介绍恢复、用空间/谱退化解释HSI融合与光谱恢复；区分波段选择和PCA/MNF降维，给监督分类与线性混合、纯像元端元提取/受约束丰度/联合NMF解混流程。讨论硬件光子预算、采集变化、噪声/标注和域移，并提出软硬联合、多HSI传感器协调与HSI中心多模态的3J展望；均为综述，公式印刷缺口保留。",
+      "readingNote": "已逐页完整读arXiv2508.08107v2共24页及99参考条目，Figure1/2/3/4原图位于PDF2/4/10/13页。作者九人无Jun；ref60的材料跟踪及ref90 CasFormer对应既有周峻目录，不新增作者论文。官方当前元数据首次2025-08-11、v2更新2026-02-08，备注Accepted by Nature Reviews Methods Primers；作者主要学术页给正式文章线索但该刊不在白名单，最终正文未读。Table3含MODIS等非HSI和点光谱、公式方向/面板疑点与未给实验协议按原稿记录，未检查任何科学代码。",
+      "paper": "https://arxiv.org/abs/2508.08107v2",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "官方arXiv固定v2全部24页及99引用实际阅读，四原图与数值/公式版面核对",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-research-review"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整v2直接综述HSI采集、标定、处理、学习与应用，实质内容含四扫描模式、恢复/增强、PCA/MNF、监督分类、端元与丰度估计以及跨域应用。只赋“高光谱研究综述”，不把介绍的算法、仪器、数据集或未来三维展望当该文原创贡献，也不加入三维专题。Table3含MODIS等多光谱/点光谱条目，不按整表扩展项目收录范围。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何把HSI的成像物理、传感器采集、可靠标定、低层处理、高层学习与跨领域应用放在统一方法流程中，并说明复用与泛化限制？",
+        "datasets": "本文是方法Primer，不提供统一新基准或采集实验。Table2举EnMAP242带420–2450nm/30m、PRISMA239带420–2450nm/30m、AVIRIS-NG425带380–2450nm/1–5m、NEON AOP426带380–2450nm/~1m及USGS/EcoSIS/SPECCHIO等点光谱库。Table3跨领域列Pavia、Cuprite、Indian Pines、Salinas、Hyper-Skin、医学/食品/文物数据和HOTC16带视频等代表资料；这些规格仅为v2所载、未逐项核原始数据。AOD-MODIS明确12通道，不按HSI纳入；纯点光谱也不自动当成像数据。",
+        "experimentSetting": "v2全24页与99参考条目实际读，四原图视觉核对，属于综述及概念/例示分析。Fig3D列KNN/SVM/RF在原始、PCA和MNF表示上的分类图，给KNN降维维数曲线；只称城市示例，未交代具体场景身份、输入有效带、训练/测试数量与比例、划分种子、重复次数及超参数。Table1平台属性和Table2/3资源目录不是新实测对照；2015–2025任务比例未给可复核检索式或统计样本。",
+        "conclusions": "作者提出从硬件设计、多传感器协调和HSI中心多模态联合建模出发的3J展望，并强调标定/采集元数据、物理差异、数据共享与跨域泛化。Fig3D及正文示例：原始KNN OA91.21%，PCA少数主成分接近该值，MNF约96%；只保留例示趋势，不作可复现优势或跨数据结论。任务统计图分类62%、解混9%是作者2015–2025示意统计，检索口径未给；OFA单带等效压缩、HSI agents及全视角几何成像是远期设想，没有相应模型、设备或实验验证。",
+        "limitations": "全文级只对应固定v2；正式Nature Reviews Methods Primers6(2026)19不在白名单，链接仅作相关版本线索，正式全文未读，不误作Nature Methods。正文/参考书目和Table3包含纯MS MODIS12通道、点光谱库及部分其他模态，引用或表列不自动符合HSI来源/输入范围。Table1把平台一般性能写成概括范围；Table3各资料版本/尺寸/传感器未逐项核原始，不能替代标准数据集记录；分类场景、抽样/空间隔离、重复及软件参数未提供，91.21%/~96%仅例示。Eq4的J(X)未显式依赖所选S，Eq5最大化未写单位范数约束；Eq8印Σn w=λΣs w却把λ称SNR并按降序，按所定义协方差对应噪声/信号比，方向疑点保留不替作者改式；Eq12联合优化E/A但左边仅A。Fig3图注(C)/(D)面板描述不一致。Table3 Cuprite写HYDICE且引用1997特定采集，不能移植为常用AVIRIS场景；Pavia尺寸与具体版本缺来源交代。3D谱空立方体不是几何三维；论文区分伪3D并提出未来多视角，不称已经实现OFA、实时或临床验证。",
+        "methodFamilyId": "hyperspectral-imaging-primer-acquisition-analysis-review",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/pdf/2508.08107v2",
+            "checkedAt": "2026-10-12",
+            "level": "固定arXiv v2二十四页全文、99参考条目及四原图实际阅读",
+            "supports": [
+              "完整v2直接综述HSI采集、标定、处理、学习与应用，实质内容含四扫描模式、恢复/增强、PCA/MNF、监督分类、端元与丰度估计以及跨域应用。只赋“高光谱研究综述”，不把介绍的算法、仪器、数据集或未来三维展望当该文原创贡献，也不加入三维专题。Table3含MODIS等多光谱/点光谱条目，不按整表扩展项目收录范围。",
+              "本文是方法Primer，不提供统一新基准或采集实验。Table2举EnMAP242带420–2450nm/30m、PRISMA239带420–2450nm/30m、AVIRIS-NG425带380–2450nm/1–5m、NEON AOP426带380–2450nm/~1m及USGS/EcoSIS/SPECCHIO等点光谱库。Table3跨领域列Pavia、Cuprite、Indian Pines、Salinas、Hyper-Skin、医学/食品/文物数据和HOTC16带视频等代表资料；这些规格仅为v2所载、未逐项核原始数据。AOD-MODIS明确12通道，不按HSI纳入；纯点光谱也不自动当成像数据。",
+              "v2全24页与99参考条目实际读，四原图视觉核对，属于综述及概念/例示分析。Fig3D列KNN/SVM/RF在原始、PCA和MNF表示上的分类图，给KNN降维维数曲线；只称城市示例，未交代具体场景身份、输入有效带、训练/测试数量与比例、划分种子、重复次数及超参数。Table1平台属性和Table2/3资源目录不是新实测对照；2015–2025任务比例未给可复核检索式或统计样本。",
+              "作者提出从硬件设计、多传感器协调和HSI中心多模态联合建模出发的3J展望，并强调标定/采集元数据、物理差异、数据共享与跨域泛化。Fig3D及正文示例：原始KNN OA91.21%，PCA少数主成分接近该值，MNF约96%；只保留例示趋势，不作可复现优势或跨数据结论。任务统计图分类62%、解混9%是作者2015–2025示意统计，检索口径未给；OFA单带等效压缩、HSI agents及全视角几何成像是远期设想，没有相应模型、设备或实验验证。",
+              "全文级只对应固定v2；正式Nature Reviews Methods Primers6(2026)19不在白名单，链接仅作相关版本线索，正式全文未读，不误作Nature Methods。正文/参考书目和Table3包含纯MS MODIS12通道、点光谱库及部分其他模态，引用或表列不自动符合HSI来源/输入范围。Table1把平台一般性能写成概括范围；Table3各资料版本/尺寸/传感器未逐项核原始，不能替代标准数据集记录；分类场景、抽样/空间隔离、重复及软件参数未提供，91.21%/~96%仅例示。Eq4的J(X)未显式依赖所选S，Eq5最大化未写单位范数约束；Eq8印Σn w=λΣs w却把λ称SNR并按降序，按所定义协方差对应噪声/信号比，方向疑点保留不替作者改式；Eq12联合优化E/A但左边仅A。Fig3图注(C)/(D)面板描述不一致。Table3 Cuprite写HYDICE且引用1997特定采集，不能移植为常用AVIRIS场景；Pavia尺寸与具体版本缺来源交代。3D谱空立方体不是几何三维；论文区分伪3D并提出未来多视角，不称已经实现OFA、实时或临床验证。"
+            ]
+          },
+          {
+            "url": "https://export.arxiv.org/api/query?id_list=2411.09023,2406.11519,2508.08107",
+            "checkedAt": "2026-10-12",
+            "level": "既存官方精确ID当前完整元数据/九作者与版本时间",
+            "supports": [
+              "目标2508.08107官方当前v2、首次2025-08-11T15:47:24Z、更新2026-02-08T14:02:36Z，九作者均与原稿首页对应；comment明确Accepted by Nature Reviews Methods Primers，无正式doi/journal_ref字段不等于尚未发表。"
+            ]
+          },
+          {
+            "url": "https://naotoyokoya.com/Publications.html",
+            "checkedAt": "2026-10-12",
+            "level": "既存作者主要学术目录指定出版行正式相关版本定位",
+            "supports": [
+              "作者学术页给Nature Reviews Methods Primers6、article19、2026和s43586-026-00470-x链接，同九作者并链接arXiv2508.08107；该刊不在项目白名单，不按Nature Methods或正式白名单来源收录。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1038/s43586-026-00470-x",
+            "checkedAt": "2026-10-12",
+            "level": "正式注册书目与九作者核对，非正式全文阅读",
+            "supports": [
+              "正式版注册为Nature Reviews Methods Primers6、article19、2026-02-26，九作者与固定arXiv v2一致；只核书目，正式全文未读，普通来源仍为arXiv。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hsi-primer-arxiv-2025-v2",
+            "type": "arXiv固定v2预印本",
+            "url": "https://arxiv.org/abs/2508.08107v2",
+            "pdfUrl": "https://arxiv.org/pdf/2508.08107v2",
+            "arxivId": "2508.08107",
+            "arxivVersion": 2,
+            "firstSubmittedAt": "2025-08-11T15:47:24Z",
+            "updatedAt": "2026-02-08T14:02:36Z",
+            "year": 2026,
+            "authors": [
+              "Danfeng Hong",
+              "Chenyu Li",
+              "Naoto Yokoya",
+              "Bing Zhang",
+              "Xiuping Jia",
+              "Antonio Plaza",
+              "Paolo Gamba",
+              "Jon Atli Benediktsson",
+              "Jocelyn Chanussot"
+            ],
+            "readingProgress": "full_text_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12-2508.08107v2.pdf",
+            "relation": "本轮完整读的24页及四原图对应v2；条目年份按初次预印本2025，不混作v2更新时间。"
+          },
+          {
+            "id": "hsi-primer-arxiv-2025-formal-locator",
+            "type": "来源白名单外正式相关版本线索",
+            "url": "https://www.nature.com/articles/s43586-026-00470-x",
+            "doi": "10.1038/s43586-026-00470-x",
+            "year": 2026,
+            "venue": "Nature Reviews Methods Primers",
+            "authors": [
+              "Danfeng Hong",
+              "Chenyu Li",
+              "Naoto Yokoya",
+              "Bing Zhang",
+              "Xiuping Jia",
+              "Antonio Plaza",
+              "Paolo Gamba",
+              "Jon Atli Benediktsson",
+              "Jocelyn Chanussot"
+            ],
+            "readingProgress": "title_only",
+            "relation": "作者主要学术页同一出版行明确链接正式文章与arXiv，官方arXiv comment亦称已接受；仅核相关书目线索，正式原文/版本内容未读，不按白名单正式来源计数。",
+            "volume": "6",
+            "articleNumber": "19",
+            "publishedAt": "2026-02-26",
+            "metadataStatus": "Crossref registered title, nine authors, journal, volume, article number and date verified; formal body not read"
+          }
+        ],
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整v2直接综述HSI采集、标定、处理、学习与应用，实质内容含四扫描模式、恢复/增强、PCA/MNF、监督分类、端元与丰度估计以及跨域应用。只赋“高光谱研究综述”，不把介绍的算法、仪器、数据集或未来三维展望当该文原创贡献，也不加入三维专题。Table3含MODIS等多光谱/点光谱条目，不按整表扩展项目收录范围。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b2540b65f00b008c04132d3b9ab03c0c82b3e5dad74217219de5abf00d17eb1d",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2508.08107v2"
+          ]
+        }
+      },
+      "citation": "@misc{hsi_primer_arxiv_2025,\n  title = {Hyperspectral Imaging},\n  author = {Danfeng Hong and Chenyu Li and Naoto Yokoya and Bing Zhang and Xiuping Jia and Antonio Plaza and Paolo Gamba and Jon Atli Benediktsson and Jocelyn Chanussot},\n  year = {2025},\n  eprint = {2508.08107},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.CV},\n  url = {https://arxiv.org/abs/2508.08107v2}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2508.08107v2",
+          "figureLabel": "Figure 1",
+          "caption": "高光谱概念总览原图：电磁谱、典型波长范围、谱空数据与全色/RGB/多光谱/高光谱对照；图内波段数量为本文示意，不作本项目统一判据。",
+          "verificationNote": "固定arXiv2508.08107v2原图及完整图注，已视觉核对全部面板、图号和裁剪边界，非重绘。只是综述流程/应用示例，不作新方法实验；正式期刊版未读。",
+          "path": "figures/hsi-primer-arxiv-2025/framework-1.png",
+          "width": 1512,
+          "height": 1269,
+          "verifiedAt": "2026-10-12",
+          "sha256": "5e9b20596393b20e7f813e9f78d77142d281da7c79dbc0c434ea15e15166ade0",
+          "attribution": "Danfeng Hong, Chenyu Li, Naoto Yokoya, Bing Zhang, Xiuping Jia, Antonio Plaza, Paolo Gamba, Jon Atli Benediktsson, Jocelyn Chanussot · arXiv2508.08107v2 (2026)",
+          "page": 2,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2508.08107v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              54,
+              63,
+              558,
+              486
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2508.08107v2",
+          "figureLabel": "Figure 2",
+          "caption": "成像系统与标定流程原图：场景、光学/光谱仪/探测器，DN到辐亮度再到反射率；点扫、线扫、波段扫描和快照四种几何。",
+          "verificationNote": "固定arXiv2508.08107v2原图及完整图注，已视觉核对全部面板、图号和裁剪边界，非重绘。只是综述流程/应用示例，不作新方法实验；正式期刊版未读。",
+          "path": "figures/hsi-primer-arxiv-2025/framework-2.png",
+          "width": 1512,
+          "height": 1230,
+          "verifiedAt": "2026-10-12",
+          "sha256": "a3dcb2ea7be4b365c747582e8b3a1227c8efb87be6ba39f305f3b6db502e637a",
+          "attribution": "Danfeng Hong, Chenyu Li, Naoto Yokoya, Bing Zhang, Xiuping Jia, Antonio Plaza, Paolo Gamba, Jon Atli Benediktsson, Jocelyn Chanussot · arXiv2508.08107v2 (2026)",
+          "page": 4,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2508.08107v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              54,
+              63,
+              558,
+              473
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2508.08107v2",
+          "figureLabel": "Figure 3",
+          "caption": "高光谱处理与分析总览原图：恢复、增强、降维、分类与解混；含PCA/MNF示例、纯像元概念、端元获取及丰度示意。",
+          "verificationNote": "固定arXiv2508.08107v2原图及完整图注，已视觉核对全部面板、图号和裁剪边界，非重绘。只是综述流程/应用示例，不作新方法实验；正式期刊版未读。图注把(C)描述成分类器比较且跳过(D)，实际(C)是降维波段示例、(D)才是分类图/曲线，原图原注不改。",
+          "path": "figures/hsi-primer-arxiv-2025/framework-3.png",
+          "width": 1512,
+          "height": 1926,
+          "verifiedAt": "2026-10-12",
+          "sha256": "7f9c01f09b7b93209784227ea81fd36d402f6d34a85970b3391452ac88a3ac6a",
+          "attribution": "Danfeng Hong, Chenyu Li, Naoto Yokoya, Bing Zhang, Xiuping Jia, Antonio Plaza, Paolo Gamba, Jon Atli Benediktsson, Jocelyn Chanussot · arXiv2508.08107v2 (2026)",
+          "page": 10,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2508.08107v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              54,
+              63,
+              558,
+              705
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2508.08107v2",
+          "figureLabel": "Figure 4",
+          "caption": "高光谱应用综述原图：环境、农林、医学、工业食品、文物取证与目标/异常检测；示例不代表作者新做的统一实验。",
+          "verificationNote": "固定arXiv2508.08107v2原图及完整图注，已视觉核对全部面板、图号和裁剪边界，非重绘。只是综述流程/应用示例，不作新方法实验；正式期刊版未读。",
+          "path": "figures/hsi-primer-arxiv-2025/framework-4.png",
+          "width": 1512,
+          "height": 1188,
+          "verifiedAt": "2026-10-12",
+          "sha256": "931b15e6641be85a5160365e3ad8e61efb788f53c22715edbb6d736cbf800aa8",
+          "attribution": "Danfeng Hong, Chenyu Li, Naoto Yokoya, Bing Zhang, Xiuping Jia, Antonio Plaza, Paolo Gamba, Jon Atli Benediktsson, Jocelyn Chanussot · arXiv2508.08107v2 (2026)",
+          "page": 13,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2508.08107v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              54,
+              63,
+              558,
+              459
+            ],
+            "renderScale": 3
+          }
+        }
+      ]
     }
   ],
   "datasets": [
@@ -56488,7 +56740,8 @@
       "createdAt": "2026-10-12",
       "rationale": "该文的实际贡献是直接覆盖高光谱融合、建模和深度估计的领域综述，没有自身几何模型输出；新增高光谱研究综述任务，移除surface-reconstruction和spectral-pointcloud-generation算法任务错配。其广义spectral范围含MSI/单IR，不将全部被引案例认作直接HSI。",
       "evidencePaperIds": [
-        "zhou-scholar-arxiv-2302-08054"
+        "zhou-scholar-arxiv-2302-08054",
+        "hsi-primer-arxiv-2025"
       ],
       "history": [
         {
