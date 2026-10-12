@@ -50832,6 +50832,410 @@
           }
         }
       ]
+    },
+    {
+      "id": "hypersigma-tpami-2025",
+      "shortTitle": "HyperSIGMA",
+      "title": "HyperSIGMA: Hyperspectral Intelligence Comprehension Foundation Model",
+      "authors": "Di Wang, Meiqi Hu, Yao Jin, Yuchun Miao, Jiaqi Yang, Yichu Xu, Xiaolei Qin, Jiaqi Ma, Lingyu Sun, Chenxing Li, Chuan Fu, Hongruixuan Chen, Chengxi Han, Naoto Yokoya, Jing Zhang, Minqiang Xu, Lin Liu, Lefei Zhang, Chen Wu, Bo Du, Dacheng Tao, Liangpei Zhang",
+      "year": 2025,
+      "venue": "TPAMI",
+      "publicationName": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tpami.2025.3557581",
+      "representation": "空间/光谱双ViT及SEM融合的二维像元HSI表征；无几何三维重建。",
+      "tags": [],
+      "summary": "构建HyperGlobal-450K，用空间/光谱MAE分别预训练双ViT，再以逐查询稀疏采样SSA和SEM光谱增强适配多类高光谱任务；最大1273M参数。完整v2含主文与附录，正式TPAMI相关版本只核书目。",
+      "input": "无标签64×64多传感器HSI用于预训练；下游为完整带数单时相/双时相、噪声或低分辨率HSI，已知目标检测另给目标谱。YRE2联合HSI/MSI；OSCD纯MS仅迁移。",
+      "output": "迁移表征、二维像素类别/目标或异常概率/变化图、端元与丰度、干净或高空间分辨率HSI；各任务各自微调，不统一输出三维场景。",
+      "mechanism": "连续100带MAE分别预训练空间/光谱ViT；每query预测8采样位置并双线性取K/V、交互attention，每n/4层保留完整SA。SEM把光谱向量变成空间特征通道校准(1+V)×F，再接分类、检测、变化、解混、恢复头；SpatSIGMA只保留空间分支。",
+      "readingNote": "已实际读固定arXiv v2全部40页与219引用，整理9张原机制/任务框架图。保留原稿训练划分、pseudo labels、合成退化和多光谱迁移边界；OA高不代表AA或全部数据占优。Ref120的Jun Zhou L0复原已经在库，22作者均无Jun，不增加作者181目录。",
+      "paper": "https://doi.org/10.1109/tpami.2025.3557581",
+      "code": "https://github.com/WHU-Sigma/HyperSIGMA",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "正式Crossref及作者学术页版本关联；固定arXiv v2四十页主文/附录、219引用及九原图实际阅读",
+      "library": {
+        "categoryIds": [
+          "representation-learning",
+          "land-cover-classification",
+          "semantic-segmentation",
+          "spectral-material-detection",
+          "hyperspectral-anomaly-detection",
+          "hyperspectral-change-detection",
+          "spectral-unmixing",
+          "spectral-denoising",
+          "spatial-super-resolution",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原稿主文、附录与219参考条目共40页全部实际读：直接HSI预训练、像元语义分类、已知目标谱概率响应、无目标先验异常、双时相变化、解混、去噪及空间超分，且构建HSI预训练数据集。使用既有表征、分类/分割、材料目标响应、异常/变化、解混/去噪/空间超分与Transformer标签；HTD不是框检测，MAE只是表征预训练代理，不当成像重建系统，谱空立方体不属几何三维。MS迁移实验不扩大项目新收录范围。",
+        "readingProgress": "full_text_read",
+        "verificationStatus": "full_text_verified",
+        "researchQuestion": "如何用多传感器HSI无标签预训练与低冗余谱空表征，在多场景和高低层任务之间迁移，而不局限于单场景单任务模型？",
+        "datasets": "HyperGlobal-450K：447,072个64×64无标签HSI块，其中EO-1 Hyperion247,072块、GF-5 200,000块。EO-1采2011–2017、云量<5%、每年每可用WRS位置选一景、去坏带/水吸收后175带；GF-5来自中国五省215景，选400–1000nm的150带。两源分别radiance与DN，并非统一地表反射率。分类IP/PU/HC/HH/Houston/ZY及规模测试Xiongan；目标检测Mosaic/AVIRIS/Renourban，异常Pavia/Cri/Viareggio，变化Hermiston/Farmland/BayArea/SantaBarbara，Urban四材料解混；去噪WDC Mall1208×307×191，超分Houston4172×1202×48（不同于分类Houston）；另HSI/MSI联合YRE2、纯MS OSCD和墨西哥湾油膜HSI。数据规格仅核本稿，未独立检查数据下载/内容。",
+        "experimentSetting": "两ViT分支分别MAE预训练1600epochs；连续选C=100带、除4000归一化，空间/光谱mask均0.75，空间patch8、Nspec100；Base/Large/Huge，V100，Huge双分支共1273M。取得权重后每n/4层保留完整SA，其余换SSA，默认每query8采样位置。分类IP/PU/HC/HH/ZY每类10/20/50/50/20标注像元，其余测试，Houston官方划分；500epochs、lr0.00006，通常128²输入，PU32²，33²用于像元分类。HTD用CEM最高1.5%/最低30%伪标签，HAD用RX最高0.15%，10epochs、32²窗/16重叠；变化500变+500不变像元，50epochs。Urban SAD重建+丰度L1/2与端元TV，α0.35/β0.1、200epochs。WDC中心192²测试、其余训练，四类混合噪声及附录四case；Houston超分bicubic合成4×/8×，32²低分辨率输入与PixelShuffle输出。各任务分别微调；带数/空间尺寸变化时部分嵌入重新初始化或插值，不是原权重直接零样本推理。",
+        "conclusions": "v2报告：基础HyperSIGMA分类OA（IP/PU/HC/HH/Houston/ZY）85.54/93.52/94.44/94.87/86.80/94.92%；Hermiston/Farmland/BayArea/SantaBarbara变化F1为91.74/95.49/98.93/99.04%。Urban平均丰度MSE0.0157、端元mSAD0.0584；WDC主文混合噪声PSNR28.503dB、SSIM0.961、SAM0.106；Houston8×PSNR39.940dB、SAM3.552，4×PSNR46.455dB。Huge/Huge在IP/Xiongan OA87.70/95.78%。结果支持HSI预训练和SSA/SEM在所列任务的迁移潜力，不能称各数据/指标一律最好：Houston分类低于SpatSIGMA87.33，Hermiston F1低于其92.08；多场景AA低于比较方法、部分端元及检测也不占优。OSCD F1 59.28是纯多光谱迁移，不作HSI基准。",
+        "limitations": "实际全文只对应固定40页v2（1–18主文/参考、19–40附录），正式TPAMI47(8)2025页6427–6444仅核书目/作者及作者学术页版本链接，未读最终稿。原稿承认小类AA不足、粗检测伪标签错误/滑窗拼接、变化假阳性及光谱支路收益有限；分类多为同场景随机像元训练测试，未证实严格空间隔离或地理零样本泛化。变更band数/输入尺度时需重建嵌入并微调；数据源radiance/DN而下游reflectance，不等于波长物理对齐。预训练无标签，数据说明承诺接受后公开，未核当前发布/下载状态，暂不赋数据发布/基准标签。主文SSA复杂度写3N²D′、附录写3ND′²，保留印刷不一致；正文称全部优于其他方法须按各表和AA限定。超分为bicubic退化而非实际双传感器；对抗/压缩/噪声结果只保留原稿协议，不推为任意威胁或现场性能。科学代码只放官方URL，不访问、下载或检查仓库、运行和复现。",
+        "methodFamilyId": "hypersigma-spatial-spectral-mae-ssa-sem",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/pdf/2406.11519v2",
+            "checkedAt": "2026-10-12",
+            "level": "固定v2四十页主文、附录及219引文实际阅读；九原图视觉核对",
+            "supports": [
+              "原稿主文、附录与219参考条目共40页全部实际读：直接HSI预训练、像元语义分类、已知目标谱概率响应、无目标先验异常、双时相变化、解混、去噪及空间超分，且构建HSI预训练数据集。使用既有表征、分类/分割、材料目标响应、异常/变化、解混/去噪/空间超分与Transformer标签；HTD不是框检测，MAE只是表征预训练代理，不当成像重建系统，谱空立方体不属几何三维。MS迁移实验不扩大项目新收录范围。",
+              "HyperGlobal-450K：447,072个64×64无标签HSI块，其中EO-1 Hyperion247,072块、GF-5 200,000块。EO-1采2011–2017、云量<5%、每年每可用WRS位置选一景、去坏带/水吸收后175带；GF-5来自中国五省215景，选400–1000nm的150带。两源分别radiance与DN，并非统一地表反射率。分类IP/PU/HC/HH/Houston/ZY及规模测试Xiongan；目标检测Mosaic/AVIRIS/Renourban，异常Pavia/Cri/Viareggio，变化Hermiston/Farmland/BayArea/SantaBarbara，Urban四材料解混；去噪WDC Mall1208×307×191，超分Houston4172×1202×48（不同于分类Houston）；另HSI/MSI联合YRE2、纯MS OSCD和墨西哥湾油膜HSI。数据规格仅核本稿，未独立检查数据下载/内容。",
+              "两ViT分支分别MAE预训练1600epochs；连续选C=100带、除4000归一化，空间/光谱mask均0.75，空间patch8、Nspec100；Base/Large/Huge，V100，Huge双分支共1273M。取得权重后每n/4层保留完整SA，其余换SSA，默认每query8采样位置。分类IP/PU/HC/HH/ZY每类10/20/50/50/20标注像元，其余测试，Houston官方划分；500epochs、lr0.00006，通常128²输入，PU32²，33²用于像元分类。HTD用CEM最高1.5%/最低30%伪标签，HAD用RX最高0.15%，10epochs、32²窗/16重叠；变化500变+500不变像元，50epochs。Urban SAD重建+丰度L1/2与端元TV，α0.35/β0.1、200epochs。WDC中心192²测试、其余训练，四类混合噪声及附录四case；Houston超分bicubic合成4×/8×，32²低分辨率输入与PixelShuffle输出。各任务分别微调；带数/空间尺寸变化时部分嵌入重新初始化或插值，不是原权重直接零样本推理。",
+              "v2报告：基础HyperSIGMA分类OA（IP/PU/HC/HH/Houston/ZY）85.54/93.52/94.44/94.87/86.80/94.92%；Hermiston/Farmland/BayArea/SantaBarbara变化F1为91.74/95.49/98.93/99.04%。Urban平均丰度MSE0.0157、端元mSAD0.0584；WDC主文混合噪声PSNR28.503dB、SSIM0.961、SAM0.106；Houston8×PSNR39.940dB、SAM3.552，4×PSNR46.455dB。Huge/Huge在IP/Xiongan OA87.70/95.78%。结果支持HSI预训练和SSA/SEM在所列任务的迁移潜力，不能称各数据/指标一律最好：Houston分类低于SpatSIGMA87.33，Hermiston F1低于其92.08；多场景AA低于比较方法、部分端元及检测也不占优。OSCD F1 59.28是纯多光谱迁移，不作HSI基准。",
+              "实际全文只对应固定40页v2（1–18主文/参考、19–40附录），正式TPAMI47(8)2025页6427–6444仅核书目/作者及作者学术页版本链接，未读最终稿。原稿承认小类AA不足、粗检测伪标签错误/滑窗拼接、变化假阳性及光谱支路收益有限；分类多为同场景随机像元训练测试，未证实严格空间隔离或地理零样本泛化。变更band数/输入尺度时需重建嵌入并微调；数据源radiance/DN而下游reflectance，不等于波长物理对齐。预训练无标签，数据说明承诺接受后公开，未核当前发布/下载状态，暂不赋数据发布/基准标签。主文SSA复杂度写3N²D′、附录写3ND′²，保留印刷不一致；正文称全部优于其他方法须按各表和AA限定。超分为bicubic退化而非实际双传感器；对抗/压缩/噪声结果只保留原稿协议，不推为任意威胁或现场性能。科学代码只放官方URL，不访问、下载或检查仓库、运行和复现。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tpami.2025.3557581",
+            "checkedAt": "2026-10-12",
+            "level": "本轮出版社注册精确DOI完整22作者与书目",
+            "supports": [
+              "正式TPAMI47(8)2025、6427–6444，22作者与固定v2官方元数据/首页同序，无Jun Zhou；同题arXiv是相关预印本，不重复入库。"
+            ]
+          },
+          {
+            "url": "https://naotoyokoya.com/Publications.html",
+            "checkedAt": "2026-10-12",
+            "level": "既存作者主要学术目录指定出版行明确链接正式文章与arXiv",
+            "supports": [
+              "正式HyperSIGMA同一出版行链接TPAMI DOI及arXiv2406.11519，预印本实际读与正式未读的边界分开记录。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hypersigma-tpami-2025-formal",
+            "type": "正式TPAMI版本",
+            "url": "https://doi.org/10.1109/tpami.2025.3557581",
+            "doi": "10.1109/tpami.2025.3557581",
+            "year": 2025,
+            "venue": "TPAMI",
+            "volume": "47",
+            "issue": "8",
+            "pages": "6427-6444",
+            "authors": [
+              "Di Wang",
+              "Meiqi Hu",
+              "Yao Jin",
+              "Yuchun Miao",
+              "Jiaqi Yang",
+              "Yichu Xu",
+              "Xiaolei Qin",
+              "Jiaqi Ma",
+              "Lingyu Sun",
+              "Chenxing Li",
+              "Chuan Fu",
+              "Hongruixuan Chen",
+              "Chengxi Han",
+              "Naoto Yokoya",
+              "Jing Zhang",
+              "Minqiang Xu",
+              "Lin Liu",
+              "Lefei Zhang",
+              "Chen Wu",
+              "Bo Du",
+              "Dacheng Tao",
+              "Liangpei Zhang"
+            ],
+            "readingProgress": "title_only",
+            "relation": "出版社注册完整书目/作者已核；作者主要出版行直接关联预印本，正式18页正文未读。"
+          },
+          {
+            "id": "hypersigma-tpami-2025-arxiv-v2",
+            "type": "固定arXiv v2预印本及附录",
+            "url": "https://arxiv.org/abs/2406.11519v2",
+            "pdfUrl": "https://arxiv.org/pdf/2406.11519v2",
+            "arxivId": "2406.11519",
+            "arxivVersion": 2,
+            "year": 2025,
+            "authors": [
+              "Di Wang",
+              "Meiqi Hu",
+              "Yao Jin",
+              "Yuchun Miao",
+              "Jiaqi Yang",
+              "Yichu Xu",
+              "Xiaolei Qin",
+              "Jiaqi Ma",
+              "Lingyu Sun",
+              "Chenxing Li",
+              "Chuan Fu",
+              "Hongruixuan Chen",
+              "Chengxi Han",
+              "Naoto Yokoya",
+              "Jing Zhang",
+              "Minqiang Xu",
+              "Lin Liu",
+              "Lefei Zhang",
+              "Chen Wu",
+              "Bo Du",
+              "Dacheng Tao",
+              "Liangpei Zhang"
+            ],
+            "firstSubmittedAt": "2024-06-17T13:22:58Z",
+            "updatedAt": "2025-04-01T15:14:22Z",
+            "readingProgress": "full_text_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12-2406.11519v2.pdf",
+            "relation": "本轮完整实际读的40页及九原图，只对应此固定稿；首次预印本2024、v2更新2025，与正式年分开。"
+          }
+        ],
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原稿主文、附录与219参考条目共40页全部实际读：直接HSI预训练、像元语义分类、已知目标谱概率响应、无目标先验异常、双时相变化、解混、去噪及空间超分，且构建HSI预训练数据集。使用既有表征、分类/分割、材料目标响应、异常/变化、解混/去噪/空间超分与Transformer标签；HTD不是框检测，MAE只是表征预训练代理，不当成像重建系统，谱空立方体不属几何三维。MS迁移实验不扩大项目新收录范围。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d684a2cf4236bdf70dfde72416db6f20a268587b702da2849378d893f719c9fa",
+          "sourceUrls": [
+            "https://arxiv.org/pdf/2406.11519v2"
+          ]
+        }
+      },
+      "citation": "@article{hypersigma_tpami_2025,\n  title = {HyperSIGMA: Hyperspectral Intelligence Comprehension Foundation Model},\n  author = {Di Wang and Meiqi Hu and Yao Jin and Yuchun Miao and Jiaqi Yang and Yichu Xu and Xiaolei Qin and Jiaqi Ma and Lingyu Sun and Chenxing Li and Chuan Fu and Hongruixuan Chen and Chengxi Han and Naoto Yokoya and Jing Zhang and Minqiang Xu and Lin Liu and Lefei Zhang and Chen Wu and Bo Du and Dacheng Tao and Liangpei Zhang},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  year = {2025},\n  volume = {47},\n  number = {8},\n  pages = {6427--6444},\n  doi = {10.1109/tpami.2025.3557581},\n  eprint = {2406.11519},\n  archivePrefix = {arXiv}\n}\n",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 5",
+          "caption": "注意力机制对照原图：全局、窗口、旋转窗口、分桶、共享可变形位置与逐查询SSA稀疏采样；星号为查询，彩色区域为相应上下文。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-1.png",
+          "width": 756,
+          "height": 618,
+          "verifiedAt": "2026-10-12",
+          "sha256": "39693cb3a07a40be9cd6f6e08aee2816af97d1423f04f151836270872924b478",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 5,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              312,
+              40,
+              564,
+              246
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 6",
+          "caption": "HyperSIGMA总框架原图：空间/光谱token双分支、部分完整注意力与SSA、SEM光谱增强及多任务头；原稿包含分类、检测、变化、解混和复原。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-2.png",
+          "width": 1548,
+          "height": 843,
+          "verifiedAt": "2026-10-12",
+          "sha256": "b92ab9866ab080087afd3bf687d52d7f66ded83750dad25456d2f174bba5873a",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 6,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              40,
+              564,
+              321
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 12",
+          "caption": "预训练连续通道选择原图：对不同带数的HSI随机选固定数量C的连续谱带；本稿C=100，不等于下游只保留100个原始带。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-3.png",
+          "width": 756,
+          "height": 723,
+          "verifiedAt": "2026-10-12",
+          "sha256": "3ba70e4694f82fe635c4f8c2fc5f4e8e0ef0898a0e2fb723fe7302e71f82db0d",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 23,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              40,
+              300,
+              281
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 14",
+          "caption": "HSI分类任务头原图：四层空间特征经SEM使用光谱向量校准，拼接及卷积输出二维像素类别图。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-4.png",
+          "width": 756,
+          "height": 693,
+          "verifiedAt": "2026-10-12",
+          "sha256": "96af8b5d3c3d8271c1ef74b1df3848c6eb25443afe01e999cd759bf289d4269d",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 23,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              312,
+              40,
+              564,
+              271
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 21",
+          "caption": "已知光谱目标检测任务头原图：粗检测伪标签、输入目标光谱与融合特征相似度生成概率图，不输出目标框。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-5.png",
+          "width": 756,
+          "height": 672,
+          "verifiedAt": "2026-10-12",
+          "sha256": "eb50d81e43160ee413e6b96829517e278fb3047acb9c53453f9fc3a932517d83",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 27,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              248,
+              300,
+              472
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 22",
+          "caption": "高光谱异常检测任务头原图：RX粗检测伪标签与SEM融合特征输出异常概率图，无预给目标光谱。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-6.png",
+          "width": 756,
+          "height": 672,
+          "verifiedAt": "2026-10-12",
+          "sha256": "903d97b50031381d45fed2349f52efd689f9e566173dc5029be73eff88a718a2",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 27,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              312,
+              248,
+              564,
+              472
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 26",
+          "caption": "双时相高光谱变化检测任务头原图：两期空间/光谱分支、分层SEM、差分、拼接及分类输出变化图。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-7.png",
+          "width": 1548,
+          "height": 687,
+          "verifiedAt": "2026-10-12",
+          "sha256": "f218a01b9d8ceae3a9f25f4d5b712fa9a7ee52344db8e27287a9e401cd995c51",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 30,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              45,
+              564,
+              274
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 32",
+          "caption": "高光谱解混任务头原图：SEM分层特征、Softmax丰度、线性解码端元及输入重建，保留四材料设定与谱约束。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-8.png",
+          "width": 756,
+          "height": 681,
+          "verifiedAt": "2026-10-12",
+          "sha256": "7ce428479d60e1a942a3deb260c8db6d425be84c35e527cc7869c7b2b9e72d84",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 32,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              397,
+              300,
+              624
+            ],
+            "renderScale": 3
+          }
+        },
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2406.11519v2",
+          "figureLabel": "Figure 35",
+          "caption": "高光谱去噪任务头原图：额外空间/光谱层、SEM与重建解码器恢复HSI；超分任务另增PixelShuffle，不把该图直接当超分原图。",
+          "verificationNote": "固定arXiv2406.11519v2原图与完整图注，实际视觉核对原页全部面板与裁剪边界，非重绘；不把这些图当正式TPAMI版图号/页码。",
+          "path": "figures/hypersigma-tpami-2025/framework-9.png",
+          "width": 756,
+          "height": 579,
+          "verifiedAt": "2026-10-12",
+          "sha256": "18fa0f56c23e43323a4cfadf996ecba5e4df889958d38eb1f001e9a06201682b",
+          "attribution": "Di Wang et al. · arXiv2406.11519v2 (2025)",
+          "page": 33,
+          "verificationStatus": "verified",
+          "sourceVersion": "arXiv2406.11519v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              342,
+              300,
+              535
+            ],
+            "renderScale": 3
+          }
+        }
+      ]
     }
   ],
   "datasets": [
@@ -51048,7 +51452,8 @@
         "optimized-rgb-sr-2019",
         "ual-2020",
         "mftn-2024",
-        "hsi-superresolution-icig-2017"
+        "hsi-superresolution-icig-2017",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -51093,7 +51498,8 @@
         "crf-cnn-hsi-igarss-2016",
         "crf-deep-feature-hsi-tgrs-2019",
         "zhou-scholar-arxiv-2605-17286",
-        "comix-tgrs-2025"
+        "comix-tgrs-2025",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -51151,7 +51557,8 @@
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-arxiv-2609-37340",
-        "spectraltrack-tip-2025"
+        "spectraltrack-tip-2025",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -51341,7 +51748,8 @@
         "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022",
         "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022",
         "zhou-scholar-multi-task-attentional-u-net-for-hyperspec-2023",
-        "zhou-scholar-iterative-refinement-network-for-hyperspec-2023"
+        "zhou-scholar-iterative-refinement-network-for-hyperspec-2023",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -51637,7 +52045,8 @@
         "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020",
         "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
         "zhou-scholar-arxiv-2603-09037",
-        "zhou-scholar-arxiv-2605-20569"
+        "zhou-scholar-arxiv-2605-20569",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -51744,7 +52153,8 @@
         "gas-plume-nerf",
         "osp-1994",
         "forest-canopy-unmixing-1994",
-        "sebass-mormon-mesa-2002"
+        "sebass-mormon-mesa-2002",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -53182,7 +53592,8 @@
       "createdAt": "2026-10-08",
       "rationale": "NeurIPS2022正式摘要和注明原文页支持；由实际方法/任务形成暂定标签。",
       "evidencePaperIds": [
-        "zhou-scholar-arxiv-2609-37340"
+        "zhou-scholar-arxiv-2609-37340",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -53830,7 +54241,8 @@
         "zhou-dblp-arxiv-2404-00272",
         "jun-zhou-dblp-whispers-weed-2019",
         "dualmamba-tgrs-2025",
-        "comix-tgrs-2025"
+        "comix-tgrs-2025",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -54139,7 +54551,8 @@
         "zhou-66-hsi-2023",
         "zhou-scholar-multi-domain-universal-representation-lear-2025",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340"
+        "zhou-scholar-arxiv-2609-37340",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
@@ -54875,7 +55288,8 @@
         "deep-pnp-hsi-anomaly-2021",
         "zhou-scholar-multi-scale-frequency-guided-two-stream-ne-2025",
         "zhou-scholar-arxiv-2609-37340",
-        "ssfad-arxiv-2022"
+        "ssfad-arxiv-2022",
+        "hypersigma-tpami-2025"
       ],
       "history": [
         {
