@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：原403混并差集有58二级目标raw_orcid声明，不批量认身份。四原摘要确认数学/催化/双波段伪装/双波长波导非HSI；TIP屏幕质量、PR对象识别缺原摘要/身份，待核。六源项转survey后839源项180目录（含6译题引用/1 arXiv族）/186Griffith/76survey/397未映射；仅一作者摘要页PDF，无新正文/图/论文。IF二级CNPC单位待原始核验。
+- 最新：皮肤分类PubMed31545748原摘要/Jun目标ORCID补证，实际模态/波段及合格来源仍待。Ge指定arXiv160（155标准名/5变体）与Gu姓/皮肤37共197书目均无Jun；Gu查询无完整Yanyang Gu，不归其全集，197摘要未读。无新论文/PDF/全文/图。839混并源项180目录/186Griffith/76survey/397未映射；58二级目标ORCID声明不批量认身份，TIP屏幕质量/PR对象识别仍待。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
