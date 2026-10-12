@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。80摘要/101全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词机制待核。
-- 最新：五去噪原摘要确认，DPNet移除预训练误配、IRDNet移除无证低秩，四稿补展开标签；333确认/57暂定、审计323，全文数不变。dpnets/mtsrnn仅官方链接，Jiantao主页403/Qian指定页404不判付费。共同作者Minchao/Zhuang18/18无Jun，一双相机HSI候选PDF未读；另韩林/荣盛辉10、熊凤超10、Islam/Hou5含九已录Jun。机构168ID书目与14版本关联分开；2019异DOI章节/SSRN关系及正文待。候选/未读PDF见survey；简称989仍19摘要暂排＋1旧决定/969元数据。作者先、历年矩阵后。
+- 最新：RemoteCLIP v4七页选读（17页PDF）明确RGB，DirectSAM v1五页全读明确三通道，两已有原稿排除补主要证据/Griffith身份；正式版未读。共同作者任务词8/8含三已有Jun，FDNet/GPINet/SAPNet等仍待；网页搜索无效、IEEE418不判付费。五去噪主要摘要此前已补、四展开及两标签纠正；代码仅URL。机构168ID书目与14版本关联分开；2019异DOI章节/SSRN关系及正文待。候选/未读PDF见survey；简称989仍19摘要暂排＋1旧决定/969元数据。作者先、历年矩阵后。

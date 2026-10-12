@@ -10223,6 +10223,55 @@
       "year": 2026,
       "sourceSnapshot": "sources/jun-zhou-denoising-primary-abstracts-2026-10-12.json",
       "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-coauthors",
+      "venue": "Jun Zhou coauthors · Xin Lyu/Lv and Fan Liu task-filtered locator",
+      "keywordGroup": "coauthor-public-version-locator",
+      "keywords": [
+        "(au:\"Xin Lyu\" OR au:\"Xin Lv\" OR au:\"Fan Liu\") AND (all:\"remote sensing\" OR all:\"semantic segmentation\")"
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=%28au%3A%22Xin+Lyu%22+OR+au%3A%22Xin+Lv%22+OR+au%3A%22Fan+Liu%22%29+AND+%28all%3A%22remote+sensing%22+OR+all%3A%22semantic+segmentation%22%29&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending",
+      "method": "官方arXiv API指定作者变体及任务词完整分页；八条完整作者元数据、三含Jun原摘要实际阅读。一个RemoteTrimmer已全读稿不重复下载，两已有范围排除补公开稿输入/身份主要证据，五其他作者仅定位。",
+      "pagination": "8/8 start0/max100，三含Jun均已有；本查询无FDNet/GPINet/SAPNet，不证明所有别名/公共版本不存在。",
+      "candidateCount": 0,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "指定查询完整，两个既有排除补主要证据；三个待核分割稿仍未决",
+      "gaps": [
+        "只覆盖指定作者/词组合，不能当共同作者或周峻全部论文目录。",
+        "其他五条只元数据作者定位，不计全文HSI范围排除。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
+      "collectionScope": "active"
+    },
+    {
+      "id": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-scope",
+      "venue": "Jun Zhou · RemoteCLIP v4 / DirectSAM-RS v1 primary optical scope",
+      "keywordGroup": "fixed-version-primary-scope",
+      "keywords": [
+        "RGB current modality",
+        "H×W×3",
+        "registered Griffith author",
+        "formal version boundary"
+      ],
+      "url": "https://arxiv.org/abs/2306.11029v4",
+      "method": "RemoteCLIP17页PDF实际读七页输入/训练/评测/未来模态与身份；DirectSAM五页全读并视觉核三通道结构。Crossref正式作者/单位/卷页重新核验。原题名排除证据不足，补强固定稿证据而不外推最终版。",
+      "pagination": "两固定PDF共22页下载，实际阅读7＋5=12页；只有DirectSAM v1五页为新范围外全文。正式VoR及其他版本未升已读。",
+      "candidateCount": 0,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "两个固定稿排除重新实核；未新增范围排除或库内全文",
+      "gaps": [
+        "RemoteCLIP其余十页未全读；EuroSAT实际原数据选版不依据名字或代码猜测。",
+        "正式出版对应书目已核，缺少显式预印本关系/最终正文时保留版本边界；FDNet等现有范围候选仍待。"
+      ],
+      "date": "2026-10-12",
+      "year": 2026,
+      "sourceSnapshot": "sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
+      "collectionScope": "active"
     }
   ],
   "candidates": [
@@ -42221,11 +42270,11 @@
       "indexedAt": "2026-10-11",
       "decision": "excluded",
       "decisionDetail": "matched_prior_decision",
-      "reason": "继承既有范围决定及来源，不将题名匹配当作个人身份/版本相同的证明。",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-survey-mapping-index-2026-10-11.json",
+      "reason": "固定v1第1/3页明确RGB输入H×W×3与Fig4 [3,H,W]，输出语义轮廓概率图。RemoteContour-34k来自四光学分割来源，实验道路/建筑/海岸线轮廓，无HSI输入处理重建；目标Jun在首页为Griffith。",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
       "originalMappingEvidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-author-crosswalk-2026-10-10.json",
       "mappingOnlyBackfill": true,
-      "readingBoundary": "本轮仅补既有映射的survey来源索引；没有新摘要/正文/实验阅读，不新增或提升原范围/身份决定。",
+      "readingBoundary": "固定v1全部五页实际阅读（含37参考文献）；只原稿升已读，不升级正式会议版或相近题名期刊。",
       "priorMatches": [
         {
           "source": "jun-zhou-scholar-nonkeyword-screening-2026-10-10.json",
@@ -42233,7 +42282,29 @@
           "title": "Prompting DirectSAM for Semantic Contour Extraction in Remote Sensing Images"
         }
       ],
-      "identityBoundary": "沿用既有范围决定；同题名不单独证明同名身份或版本相同。"
+      "identityBoundary": "本轮首页单位/注册单位实际核验；RemoteCLIP并有目标ORCID。",
+      "previousScopeEvidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-survey-mapping-index-2026-10-11.json",
+      "verifiedAt": "2026-10-12",
+      "readingProgress": "full_text_read",
+      "identityStatus": "primary_pdf_griffith_and_registered_bibliography",
+      "code": "https://github.com/StevenMsy/DirectSAM-RS",
+      "fixedVersionReading": {
+        "checkedAt": "2026-10-12",
+        "arxivVersion": "v1",
+        "pdfFile": "research/hyperspectral/sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2410.06194v1-pdf.pdf",
+        "pdfPageCount": 5,
+        "pdfReadPages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "fullTextRead": true,
+        "sourceSnapshot": "sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
+        "finding": "固定v1第1/3页明确RGB输入H×W×3与Fig4 [3,H,W]，输出语义轮廓概率图。RemoteContour-34k来自四光学分割来源，实验道路/建筑/海岸线轮廓，无HSI输入处理重建；目标Jun在首页为Griffith。"
+      },
+      "formalVersionBoundary": "Crossref精确同题2025ICASSP doi10.1109/ICASSP49660.2025.10889192，七作者及Griffith单位、1–5页；arXiv没有journal DOI/ref且注册关系为空，书目关联保留，正式正文/近题期刊关系未核。"
     },
     {
       "title": "SATA: Spatial Autocorrelation Token Analysis for Enhancing the Robustness of Vision Transformers",
@@ -42834,11 +42905,11 @@
       "indexedAt": "2026-10-11",
       "decision": "excluded",
       "decisionDetail": "matched_prior_decision",
-      "reason": "继承既有范围决定及来源，不将题名匹配当作个人身份/版本相同的证明。",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-survey-mapping-index-2026-10-11.json",
+      "reason": "v4第13页明确当前感知模态限于RGB，RGB之外传感模态是未来工作；第5页B2C/M2B图文训练、第7–9页训练/16评测数据及视觉任务没有直接HSI输入、处理或重建。第1页Griffith作者单位、第17页目标履历和Crossref目标ORCID补强身份。",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
       "originalMappingEvidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-author-crosswalk-2026-10-10.json",
       "mappingOnlyBackfill": true,
-      "readingBoundary": "本轮仅补既有映射的survey来源索引；没有新摘要/正文/实验阅读，不新增或提升原范围/身份决定。",
+      "readingBoundary": "17页PDF已保存，实际只读所列七页；其余十页文本虽提取但未全读。不是17页全文阅读，未读正式TGRS16页VoR或其他arXiv版。",
       "priorMatches": [
         {
           "source": "jun-zhou-dblp-screening.json",
@@ -42856,7 +42927,31 @@
           "title": "Remoteclip: A vision language foundation model for remote sensing"
         }
       ],
-      "identityBoundary": "沿用既有范围决定；同题名不单独证明同名身份或版本相同。"
+      "identityBoundary": "本轮首页单位/注册单位实际核验；RemoteCLIP并有目标ORCID。",
+      "previousScopeEvidencePath": "research/hyperspectral/sources/jun-zhou-arxiv-survey-mapping-index-2026-10-11.json",
+      "verifiedAt": "2026-10-12",
+      "readingProgress": "partial_text_read",
+      "identityStatus": "primary_pdf_griffith_and_registered_bibliography",
+      "code": "https://github.com/ChenDelong1999/RemoteCLIP",
+      "fixedVersionReading": {
+        "checkedAt": "2026-10-12",
+        "arxivVersion": "v4",
+        "pdfFile": "research/hyperspectral/sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2306.11029v4-pdf.pdf",
+        "pdfPageCount": 17,
+        "pdfReadPages": [
+          1,
+          5,
+          7,
+          8,
+          9,
+          13,
+          17
+        ],
+        "fullTextRead": false,
+        "sourceSnapshot": "sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
+        "finding": "v4第13页明确当前感知模态限于RGB，RGB之外传感模态是未来工作；第5页B2C/M2B图文训练、第7–9页训练/16评测数据及视觉任务没有直接HSI输入、处理或重建。第1页Griffith作者单位、第17页目标履历和Crossref目标ORCID补强身份。"
+      },
+      "formalVersionBoundary": "同题八作者对应2024TGRS62:1–16注册记录，Jun目标ORCID明确；arXiv API没有journal DOI/ref，Crossref relation空。保留书目关联，不断言当前PDF是出版社最终版或所有版本输入/实验相同。"
     },
     {
       "title": "Dynamic Clustering Transformer Network for Point Cloud Segmentation",
@@ -51426,6 +51521,32 @@
       "readingBoundary": "五篇完整主要原摘要实际阅读；18官方完整作者定位仅一条其他作者HSI原摘要审读，新候选PDF下载未读；零新全文/原图，不检查代码。",
       "gaps": [
         "五已录正文、会议/期刊关系及作者目录仍未闭环。"
+      ]
+    },
+    {
+      "id": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12",
+      "date": "2026-10-12",
+      "searchIds": [
+        "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-coauthors",
+        "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-scope"
+      ],
+      "paperIds": [],
+      "new": 0,
+      "updated": 0,
+      "duplicates": 1,
+      "excluded": 0,
+      "pending": 0,
+      "revalidatedFixedVersionExclusions": 2,
+      "updatedCandidateCount": 2,
+      "figuresAdded": 0,
+      "newFullTextReadingCount": 1,
+      "catalogFullTextReadingCount": 0,
+      "newOutOfScopeFullTextReadingCount": 1,
+      "pdfPagesRead": 12,
+      "sourceSnapshot": "sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json",
+      "readingBoundary": "DirectSAM v1五页全读，RemoteCLIP v4实际七页选读/17页PDF，其余十页未全读；RemoteTrimmer旧全读不重复计。两个已有排除重核，不是新增两个排除或库内全文。",
+      "gaps": [
+        "正式版/近题稿边界保留；FDNet等旧未决没有新输入证据，作者目录未闭环。"
       ]
     }
   ],

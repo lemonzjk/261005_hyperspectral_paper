@@ -70,6 +70,8 @@ SSUMamba和SSRT两份免费Griffith接受稿共28页已逐页全文阅读，六�
 
 五篇去噪稿机构完整原摘要本轮实际阅读，确认去噪任务及所列方法：DPNet去掉无独立预训练目标的表征标签，IRDNet去掉摘要无证据的低秩标签；DPNet/MTSR/MTSNN/空间谱CSC补深度展开，保持五条各自DOI、作者和摘要阅读状态，不推定会议期刊延伸关系。两官方代码URL仅记录。Jiantao主页403、Qian指定页404不当付费/无公开版。Minchao/Zhuang指定查询18/18全作者无Jun，一2021双相机HSI其他作者候选PDF下载未读，17条只作者定位，不计范围排除。当前分类333确认/57暂定/0待、审计323；作者181/全文101/摘要80及原图304不变。[证据](sources/jun-zhou-denoising-primary-abstracts-2026-10-12.json)。
 
+RemoteCLIP旧排除仅题名理由不充分，本轮用固定v4主要正文补证：17页PDF实际选读1/5/7/8/9/13/17七页，第13页明确当前模态为RGB且其他传感模态属未来工作，目录中的EuroSAT名字不替代实际处理模态证据。首页/履历Griffith与正式Crossref目标ORCID核身份。DirectSAM-RS固定v1五页全读，§II-A/II-D与Fig4明确三通道，轮廓输出/四训练来源和三下游不属直接HSI；同题2025ICASSP七作者/1–5页/Griffith登记已核，正式正文与近题期刊关系未读不外推。两个原稿维持既有排除，不新增排除或库内全文。共同作者任务词查询8/8，三Jun均已知，五其他作者只定位；FDNet/GPINet/SAPNet等仍未决，普通网页搜索无效/IEEE418不作无公开版或付费证明。代码仅两官方URL。[证据](sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json)。
+
 ## 来源覆盖与缺口
 
 | 来源 | 已核范围 | 尚未解决 |

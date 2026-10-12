@@ -1,0 +1,470 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "作者目录范围/身份主要证据复核，不新建论文目录或学习笔记。",
+  "rawFiles": [
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-coauthors-arxiv-0.xml",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-arxiv-access.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-coauthor-records.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-pdf-access.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-remoteclip-crossref.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-directsam-crossref-query.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-crossref-access.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2306.11029v4-pdf.pdf",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2306.11029v4-pages.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2306.11029v4-page13.png",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2410.06194v1-pdf.pdf",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2410.06194v1-pages.json",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2410.06194v1-page3.png",
+    "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-locator-access.json"
+  ],
+  "queries": {
+    "arxiv": {
+      "query": "(au:\"Xin Lyu\" OR au:\"Xin Lv\" OR au:\"Fan Liu\") AND (all:\"remote sensing\" OR all:\"semantic segmentation\")",
+      "total": 8,
+      "retrieved": 8,
+      "targetJunCount": 3,
+      "targetJunExistingArxivIds": [
+        "2412.12603v2",
+        "2410.06194v1",
+        "2306.11029v4"
+      ],
+      "otherAuthorLocatorOnly": 5
+    },
+    "webLocatorBoundary": "Google200是JS重试页；Bing普通/DOI RSS实际错误匹配首词或10的词典页，搜索无效不当0论文。IEEE metadata418未得正文，未判付费。"
+  },
+  "records": [
+    {
+      "arxivId": "2306.11029",
+      "arxivVersion": "v4",
+      "pdfPageCount": 17,
+      "readPdfPages": [
+        1,
+        5,
+        7,
+        8,
+        9,
+        13,
+        17
+      ],
+      "fullTextRead": false,
+      "decision": "excluded_fixed_arxiv_scope",
+      "finding": "v4第13页明确当前感知模态限于RGB，RGB之外传感模态是未来工作；第5页B2C/M2B图文训练、第7–9页训练/16评测数据及视觉任务没有直接HSI输入、处理或重建。第1页Griffith作者单位、第17页目标履历和Crossref目标ORCID补强身份。",
+      "code": "https://github.com/ChenDelong1999/RemoteCLIP",
+      "pageAudit": [
+        {
+          "page": 1,
+          "finding": "八作者、Jun Griffith单位与原摘要；图文遥感基础模型。"
+        },
+        {
+          "page": 5,
+          "finding": "Fig2 B2C/M2B标注转换、视觉/文字对比及七下游任务，不是谱立方体处理。"
+        },
+        {
+          "page": 7,
+          "finding": "TableI RET3/DET10/SEG4训练来源，165745图/828725图文对；三CLIP视觉骨干。"
+        },
+        {
+          "page": 8,
+          "finding": "Fig6全部训练/评测来源，947图文对RemoteCount与DOTA对象计数。"
+        },
+        {
+          "page": 9,
+          "finding": "三图文检索及12分类数据，含EuroSAT；只据论文处理模态判断，不反推原数据所有传感波段。"
+        },
+        {
+          "page": 13,
+          "finding": "未来工作明确目前限RGB，其他感知模态未来扩展；视觉核原页。"
+        },
+        {
+          "page": 17,
+          "finding": "Jun履历Griffith2012起、此前ANU/NICTA，支持目标身份，不是同名猜测。"
+        }
+      ],
+      "readingBoundary": "17页PDF已保存，实际只读所列七页；其余十页文本虽提取但未全读。不是17页全文阅读，未读正式TGRS16页VoR或其他arXiv版。",
+      "versionBoundary": "同题八作者对应2024TGRS62:1–16注册记录，Jun目标ORCID明确；arXiv API没有journal DOI/ref，Crossref relation空。保留书目关联，不断言当前PDF是出版社最终版或所有版本输入/实验相同。",
+      "pdfFile": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2306.11029v4-pdf.pdf",
+      "pdfSha256": "332900225940539d1aa2876b254562842880f94d1d70ab0861ca65bbc60931ee",
+      "pdfBytes": 14105741,
+      "pageTextFile": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2306.11029v4-pages.json",
+      "visualProofFile": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2306.11029v4-page13.png"
+    },
+    {
+      "arxivId": "2410.06194",
+      "arxivVersion": "v1",
+      "pdfPageCount": 5,
+      "readPdfPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "fullTextRead": true,
+      "decision": "excluded_fixed_arxiv_scope",
+      "finding": "固定v1第1/3页明确RGB输入H×W×3与Fig4 [3,H,W]，输出语义轮廓概率图。RemoteContour-34k来自四光学分割来源，实验道路/建筑/海岸线轮廓，无HSI输入处理重建；目标Jun在首页为Griffith。",
+      "code": "https://github.com/StevenMsy/DirectSAM-RS",
+      "pageAudit": [
+        {
+          "page": 1,
+          "finding": "七作者/Griffith身份、原摘要、DirectSAM RGB输入与轮廓任务。"
+        },
+        {
+          "page": 2,
+          "finding": "RemoteContour来源组成、34k triplets/17k图概况、类别无关轮廓与M2C。"
+        },
+        {
+          "page": 3,
+          "finding": "Fig4三通道、§II-D H×W×3输入，正文34291图文轮廓三元组；SegFormer视觉＋文字cross-attention，轮廓输出。"
+        },
+        {
+          "page": 4,
+          "finding": "全部ZS/FT道路LRSNY、建筑BUBE、海岸线SLSD及LoveDA消融，非HSI任务；不补猜实际数据传感带数。"
+        },
+        {
+          "page": 5,
+          "finding": "完整37引用已读；引用RemoteCLIP和Unmixing convolutional features不会变成本稿HSI贡献，未逐篇读所引论文。"
+        }
+      ],
+      "readingBoundary": "固定v1全部五页实际阅读（含37参考文献）；只原稿升已读，不升级正式会议版或相近题名期刊。",
+      "versionBoundary": "Crossref精确同题2025ICASSP doi10.1109/ICASSP49660.2025.10889192，七作者及Griffith单位、1–5页；arXiv没有journal DOI/ref且注册关系为空，书目关联保留，正式正文/近题期刊关系未核。",
+      "pdfFile": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2410.06194v1-pdf.pdf",
+      "pdfSha256": "d709d75d76566baf7d1db4d4d9d1dfb9f79fa4400022f089e42cfdc03347490c",
+      "pdfBytes": 3615947,
+      "pageTextFile": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2410.06194v1-pages.json",
+      "visualProofFile": "jun-zhou-remoteclip-directsam-primary-scope-2026-10-12-2410.06194v1-page3.png"
+    }
+  ],
+  "formalBibliography": [
+    {
+      "DOI": "10.1109/tgrs.2024.3390838",
+      "title": [
+        "RemoteCLIP: A Vision Language Foundation Model for Remote Sensing"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-8746-9845",
+          "authenticated-orcid": false,
+          "given": "Fan",
+          "family": "Liu",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "College of Computer Science and Software Engineering, Hohai University, Nanjing, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8172-2894",
+          "authenticated-orcid": false,
+          "given": "Delong",
+          "family": "Chen",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Electronic and Computer Engineering, The Hong Kong University of Science and Technology, Hong Kong, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Zhangqingyun",
+          "family": "Guan",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of Computer and Information, Hohai University, Nanjing, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Xiaocong",
+          "family": "Zhou",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of Computer and Information, Hohai University, Nanjing, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jiale",
+          "family": "Zhu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of Computer and Information, Hohai University, Nanjing, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8793-8610",
+          "authenticated-orcid": false,
+          "given": "Qiaolin",
+          "family": "Ye",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "College of Information Science and Technology, Nanjing Forestry University, Nanjing, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5794-9458",
+          "authenticated-orcid": false,
+          "given": "Liyong",
+          "family": "Fu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Institute of Forest Resource Information Techniques, Chinese Academy of Forestry, Beijing, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-5822-8233",
+          "authenticated-orcid": false,
+          "given": "Jun",
+          "family": "Zhou",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "School of Information and Communication Technology, Griffith University, Nathan, QLD, Australia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "IEEE Transactions on Geoscience and Remote Sensing"
+      ],
+      "type": "journal-article",
+      "published": {
+        "date-parts": [
+          [
+            2024
+          ]
+        ]
+      },
+      "volume": "62",
+      "page": "1-16",
+      "relation": {}
+    },
+    {
+      "DOI": "10.1109/icassp49660.2025.10889192",
+      "title": [
+        "Prompting DirectSAM for Semantic Contour Extraction in Remote Sensing Images"
+      ],
+      "author": [
+        {
+          "given": "Shiyu",
+          "family": "Miao",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Hohai University,College of Computer Science and Software Engineering,Nanjing,China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Delong",
+          "family": "Chen",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Hong Kong University of Science and Technology,Hong Kong SAR"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Fan",
+          "family": "Liu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Hohai University,College of Computer Science and Software Engineering,Nanjing,China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Chuanyi",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Hohai University,College of Computer Science and Software Engineering,Nanjing,China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Yanhui",
+          "family": "Gu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Nanjing Normal University,School of Computer and Electronic Information,Nanjing,China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Shengjie",
+          "family": "Guo",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Nanjing Normal University,School of Computer and Electronic Information,Nanjing,China"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Jun",
+          "family": "Zhou",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Griffith University,School of Information and Communication Technology,Queensland,Australia"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+      ],
+      "type": "proceedings-article",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            4,
+            6
+          ]
+        ]
+      },
+      "volume": null,
+      "page": "1-5",
+      "relation": null
+    }
+  ],
+  "previousDecisionBoundary": "两个原稿已有excluded，本轮重新核验固定版本而不增加新排除数；旧题名判定记录保留，追加日期/主源证据，不称此前全读。",
+  "counts": {
+    "catalogAdded": 0,
+    "catalogUpdated": 0,
+    "newScopeExclusions": 0,
+    "revalidatedFixedVersionExclusions": 2,
+    "newCatalogFullTextRead": 0,
+    "newOutOfScopeFullTextRead": 1,
+    "downloadedPdfPages": 22,
+    "actuallyReadPdfPages": 12,
+    "figuresAddedToCatalog": 0
+  },
+  "codeBoundary": "两官方URL从原摘要/论文记录，没有访问代码仓库、README、依赖、权重或运行性。",
+  "unfinished": [
+    "FDNet、GPINet、SAPNet、太阳能/红树林与编辑等既有范围候选仍未决，不按spectral或元数据访问失败关项。",
+    "作者目录及领域历年矩阵未闭环；正式版、同题章节/SSRN关系与已下载未读资料继续。"
+  ],
+  "catalogState": {
+    "papers": 390,
+    "jun": 181,
+    "junFull": 101,
+    "junAbstract": 80,
+    "confirmed": 333,
+    "provisional": 57,
+    "classificationAudit": 323,
+    "figures": 304
+  },
+  "validation": {
+    "checkedAt": "2026-10-12",
+    "npmRunValidate": "passed:390papers/304figures/323classification reviews;CONTEXT1901chars/36lines",
+    "sourceIntegrity": "2 original PDF byte counts and SHA256 verified;RemoteCLIP7/17selected,DirectSAM5/5full;8 official author records",
+    "gitDiffCheck": "passed",
+    "websiteChanges": false,
+    "catalogChanges": false
+  }
+}

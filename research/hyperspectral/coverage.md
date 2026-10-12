@@ -958,3 +958,5 @@
 - 2026-10-12 / jun-zhou-coauthor-public-version-pagination-2026-10-12：指定共同作者arXiv分页闭环10/10＋10/10＋5/5，共25完整作者/摘要；九已有Jun、零新增作者目录，SUIT四作者早期版不转移Jun身份。两2022其他作者直接HSI候选及免费v1 PDF入资料待办，正文未读；既有MSP/DECSC不重复候选，11其他作者记录仅定位不计范围排除。此前Hanlin/Shenghui失败已恢复，本查询完整不当作者全集完整；代码未访问。[证据](sources/jun-zhou-coauthor-public-version-pagination-2026-10-12.json)。
 
 - 2026-10-12 / jun-zhou-denoising-primary-abstracts-2026-10-12：五已有Jun去噪稿完整机构原摘要阅读、两标签纠正、四展开方法补类及两官方代码链接，仍摘要级、不推定相似稿关系。分类333确认/57暂定/0待，审计323；作者181/全文101/摘要80/原图304不变。指定共同作者18/18元数据全无Jun，一双相机HSI领域候选v2 PDF下载未读；其他记录只定位。两指定作者主页受限/失效，不判付费或无公开版。[证据](sources/jun-zhou-denoising-primary-abstracts-2026-10-12.json)。
+
+- 2026-10-12 / jun-zhou-remoteclip-directsam-primary-scope-2026-10-12：共同作者任务词arXiv8/8、三已有Jun与五其他作者定位；RemoteCLIP固定v4七页选读（17页PDF）、DirectSAM-RS v1五页全读，RGB/三通道输入及Griffith身份原文补强两个已有排除。正式书目/单位核验独立于未读最终正文，不新增范围排除、不提升库内全文，代码仅URL。普通搜索实际无效、IEEE418未得正文，FDNet等旧范围候选仍待；目录/历年矩阵未闭环。[证据](sources/jun-zhou-remoteclip-directsam-primary-scope-2026-10-12.json)。
