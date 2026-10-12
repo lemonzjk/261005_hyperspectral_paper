@@ -20,7 +20,7 @@ const venues = [...new Set(topicCatalog.papers.map(p => p.venue))].sort((a, b) =
 const publicationOptions: PublicationOption[] = venues.map(name => {
   const papers = topicCatalog.papers.filter(paper => paper.venue === name);
   return { name, fullName: papers.find(paper => paper.publicationName)?.publicationName ?? name, count: papers.length,
-    kind: name === 'arXiv' ? 'preprint' : papers.some(paper => paper.citation.startsWith('@article')) ? 'journal' : 'conference' };
+    kind: name === 'arXiv' ? 'preprint' : name === 'Book Chapter' ? 'book' : papers.some(paper => paper.citation.startsWith('@article')) ? 'journal' : 'conference' };
 });
 const representations = [...new Set(topicCatalog.papers.map(p => p.representation))];
 const repo = 'https://github.com/lemonzjk/261005_hyperspectral_paper';

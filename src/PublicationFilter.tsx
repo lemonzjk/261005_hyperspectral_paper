@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './publication-filter.css';
 
-export interface PublicationOption { name: string; fullName: string; count: number; kind: 'conference' | 'journal' | 'preprint' }
-const kinds = [{ id: 'conference', label: '会议' }, { id: 'journal', label: '期刊' }, { id: 'preprint', label: '预印本' }] as const;
+export interface PublicationOption { name: string; fullName: string; count: number; kind: 'conference' | 'journal' | 'preprint' | 'book' }
+const kinds = [{ id: 'conference', label: '会议' }, { id: 'journal', label: '期刊' }, { id: 'preprint', label: '预印本' }, { id: 'book', label: '书章节' }] as const;
 
 export function PublicationFilter({ options, selected, onChange }: {
   options: PublicationOption[]; selected: string[]; onChange: (values: string[]) => void;
@@ -19,10 +19,10 @@ export function PublicationFilter({ options, selected, onChange }: {
     <details ref={root} onToggle={() => { if (!root.current?.open) setSearch(''); }} onKeyDown={event => {
       if (event.key === 'Escape' && root.current?.open) { event.preventDefault(); event.stopPropagation(); root.current.open = false; root.current.querySelector('summary')?.focus(); }
     }}>
-      <summary aria-label="选择会议或期刊">{selected.length ? selected.length === 1 ? selected[0] : `出版来源 · 已选 ${selected.length}` : '全部期刊／会议'}<span aria-hidden="true">⌄</span></summary>
+      <summary aria-label="选择出版来源">{selected.length ? selected.length === 1 ? selected[0] : `出版来源 · 已选 ${selected.length}` : '全部出版来源'}<span aria-hidden="true">⌄</span></summary>
       <div className="publication-popover" role="group" aria-label="出版来源多选">
-        <header><div><strong>选择会议与期刊</strong><p>可多选；不勾选时显示全部</p></div><button type="button" disabled={!selected.length} onClick={() => onChange([])}>清空选择</button></header>
-        <input type="search" aria-label="搜索会议或期刊" placeholder="搜索简称或出版全名…" value={search} onChange={event => setSearch(event.target.value)}/>
+        <header><div><strong>选择出版来源</strong><p>可多选；不勾选时显示全部</p></div><button type="button" disabled={!selected.length} onClick={() => onChange([])}>清空选择</button></header>
+        <input type="search" aria-label="搜索出版来源" placeholder="搜索简称或出版全名…" value={search} onChange={event => setSearch(event.target.value)}/>
         <div className="publication-options">{kinds.map(kind => {
           const all = options.filter(option => option.kind === kind.id);
           const visible = all.filter(option => `${option.name} ${option.fullName}`.toLowerCase().includes(search.trim().toLowerCase()));

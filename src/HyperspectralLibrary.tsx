@@ -39,7 +39,7 @@ export default function HyperspectralLibrary() {
   const publications: PublicationOption[] = [...new Set(papers.map(paper => paper.venue))].sort().map(name => {
     const matches = papers.filter(paper => paper.venue === name);
     return { name, fullName: matches.find(paper => paper.publicationName)?.publicationName ?? name, count: matches.length,
-      kind: name === 'arXiv' || matches.every(paper => paper.publicationStatus === 'preprint') ? 'preprint' : matches.some(paper => paper.citation.toLowerCase().startsWith('@article')) ? 'journal' : 'conference' };
+      kind: name === 'arXiv' || matches.every(paper => paper.publicationStatus === 'preprint') ? 'preprint' : name === 'Book Chapter' ? 'book' : matches.some(paper => paper.citation.toLowerCase().startsWith('@article')) ? 'journal' : 'conference' };
   });
   const reset = () => setFilters(emptyFilters);
   const hasFilters = Boolean(filters.query || filters.author || filters.yearFrom || filters.yearTo || filters.venues.length || filters.pending || filters.categoryIds.length || filters.reading || filters.materials || filters.publicationScope);

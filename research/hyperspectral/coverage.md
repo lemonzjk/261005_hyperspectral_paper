@@ -946,3 +946,5 @@
 
 - 2026-10-12 / jun-zhou-feature-boundary-public-materials-2026-10-12：新增0、更新6、十二作者HSI引用合十一已有目录ID；七其他作者引用后置、无新范围排除。
   材料显著性AM39页全部阅读、三原图；周峻100全文/81摘要，总库390、原图301。SIFT撤降维，三边界稿单列任务；S+SSPR2018/卷11004/416–426纠正旧ACCV来源，DICTA改会议BibTeX。分类325确认/63暂定/2待、182标签/审计312。绿色索引与实际附件状态分别留证，不以PDF链接或HTML200冒称正文；代码只链接。[证据与边界](sources/jun-zhou-feature-boundary-public-materials-2026-10-12.json)。
+
+- 2026-10-12 / jun-zhou-remaining-institution-materials-2026-10-12：新增0；48既有ID/50机构记录补身份书目与当前附件证据，37 SWORD/6双LICENSE/6空bundle/1可读AM。DCA14页全读/三原图，周峻101全文/80摘要、总库390/原图304。两2019异DOI书章节关系候选，不当确认重复或新独立成果；Wiley章节会议引用纠正、四书章节独立分组。引用新增候选1、作者关系候选2，作者/领域覆盖未闭环。[证据及边界](sources/jun-zhou-remaining-institution-materials-2026-10-12.json)。
