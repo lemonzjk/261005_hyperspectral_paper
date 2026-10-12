@@ -38153,25 +38153,26 @@
       "input": "合成或真实噪声高光谱影像。",
       "output": "整幅去噪高光谱影像。",
       "mechanism": "稀疏优化器与影像重建器参数化稀疏表示去噪流程；DPNet-U 以 U-Net 替换软收缩算子并直接学习模型参数。",
-      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
-      "paper": "https://www.researchgate.net/publication/374100628_Deep_Parameterized_Neural_Networks_for_Hyperspectral_Image_Denoising",
-      "verifiedAt": "2026-10-10",
+      "readingNote": "Crossref正式书目保留；本轮完整阅读此前存档的Griffith机构原摘要并核对对应DOI与Jun resolvedUser7205。任务和所列方法按摘要确认；正文及原图尚未取得，代码仅记录官方链接。",
+      "paper": "https://doi.org/10.1109/tgrs.2023.3318001",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "representation-learning"
+          "sparse-dictionary-learning",
+          "deep-unfolding"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "完整机构原摘要直接研究含噪HSI恢复，任务和当前方法分类有主要来源支撑；摘要确认不等于正文已读。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何把稀疏表示去噪流程参数化为可学习的整幅高光谱去噪网络？",
         "datasets": "公开摘要报告合成和真实高光谱影像实验；数据名称、噪声设置和划分待全文核验。",
         "experimentSetting": "比较 DPNet-S、DPNet-U 与现有方法；网络由稀疏优化和重建步骤展开得到。",
         "conclusions": "公开摘要报告两种网络取得有竞争力的去噪结果，并降低对训练样本数量的依赖；具体指标待全文核验。",
-        "limitations": "摘要未给出完整网络深度、噪声模型、数据统计、代码现状和复现实验。",
+        "limitations": "仅完整机构原摘要已读，正式正文、框架图、数据名称、噪声模型、训练规模、网络深度及逐项指标仍未取得。摘要对模型来源的说明支持展开分类，不补猜具体优化方程；官方代码只记录链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -38200,6 +38201,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith机构完整原摘要（既存记录本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205属于本条；缩写作者不自动改完整姓名。",
+              "原摘要明确HSI去噪的输入输出与方法；原摘要最终目标是整幅HSI去噪；稀疏优化器/重建器按SR模型与优化流程参数化，支持稀疏字典及深度展开。没有独立自监督/可迁移预训练目标，移除representation-learning误配。",
+              "具体数据/数值/配置和正文、原图未取得；代码只保留原摘要链接。"
+            ]
           }
         ],
         "versions": [
@@ -38212,9 +38223,27 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2023-title-63"
+        "methodFamilyId": "zhou-2023-title-63",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要最终目标是整幅HSI去噪；稀疏优化器/重建器按SR模型与优化流程参数化，支持稀疏字典及深度展开。没有独立自监督/可迁移预训练目标，移除representation-learning误配。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "f899e902c335a1c73d4489e12324ec4fd4a04decbe4ced8235e9015ff63a92fa",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{zhou_63_hsi_2023, title = {Deep Parameterized Neural Networks for Hyperspectral Image Denoising}, author = {Fengchao Xiong and Jun Zhou and Jiantao Zhou and Jianfeng Lu and Yuntao Qian}, year = {2023}, doi = {10.1109/tgrs.2023.3318001}\n}\n"
+      "citation": "@article{zhou_63_hsi_2023, title = {Deep Parameterized Neural Networks for Hyperspectral Image Denoising}, author = {Fengchao Xiong and Jun Zhou and Jiantao Zhou and Jianfeng Lu and Yuntao Qian}, year = {2023}, doi = {10.1109/tgrs.2023.3318001}\n}\n",
+      "code": "https://github.com/bearshng/dpnets"
     },
     {
       "id": "zhou-64-hsi-2023",
@@ -38310,25 +38339,26 @@
       "input": "合成或真实噪声高光谱影像。",
       "output": "去噪高光谱影像。",
       "mechanism": "把多任务稀疏表示模型的迭代求解展开为网络，模块间沿优化算法的特定操作连接，保留明确的模型解释。",
-      "readingNote": "ORCID题名、Crossref正式书目与 ResearchGate 公开摘要核验；未阅读全文。",
-      "paper": "https://www.researchgate.net/publication/372841359_Multitask_Sparse_Representation_Model_Inspired_Network_for_Hyperspectral_Image_Denoising",
-      "verifiedAt": "2026-10-10",
+      "readingNote": "Crossref正式书目保留；本轮完整阅读此前存档的Griffith机构原摘要并核对对应DOI与Jun resolvedUser7205。任务和所列方法按摘要确认；正文及原图尚未取得，代码仅记录官方链接。",
+      "paper": "https://doi.org/10.1109/tgrs.2023.3300542",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "sparse-dictionary-learning"
+          "sparse-dictionary-learning",
+          "deep-unfolding"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "完整机构原摘要直接研究含噪HSI恢复，任务和当前方法分类有主要来源支撑；摘要确认不等于正文已读。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何在可解释展开网络中同时建模跨波段共性结构和单波段细节？",
         "datasets": "公开摘要报告合成和真实数据集实验；数据名称、噪声设置和划分待全文核验。",
         "experimentSetting": "共享/非共享稀疏表示与影像重建模块按迭代优化流程连接，并与现有去噪方法比较。",
         "conclusions": "公开摘要报告在合成和真实数据上取得优于对比方法的视觉与定量结果；具体指标待全文核验。",
-        "limitations": "摘要未给出展开层数、噪声模型、数据统计、代码状态和完整消融。",
+        "limitations": "完整机构原摘要已读，正式正文、框架图、展开层数、噪声模型、数据统计、训练配置、消融及具体指标仍未取得。与2022会议稿方法主题相关，但作者有差异且版本关系未取得声明，不据相似方法合并；官方代码只记录链接。",
         "dataLinks": [],
         "evidence": [
           {
@@ -38348,6 +38378,16 @@
             "supports": [
               "正式题名、作者、期刊、DOI和出版年份"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith机构完整原摘要（既存记录本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205属于本条；缩写作者不自动改完整姓名。",
+              "原摘要明确HSI去噪的输入输出与方法；完整机构原摘要明确共享系数表达波段共同结构、非共享系数表达单带细节，SSR/USR/IR分别对应MTSR迭代优化操作；确认去噪、稀疏表示与深度展开，仍摘要级。",
+              "具体数据/数值/配置和正文、原图未取得；代码只保留原摘要链接。"
+            ]
           }
         ],
         "versions": [
@@ -38360,9 +38400,27 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-2023-title-65"
+        "methodFamilyId": "zhou-2023-title-65",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整机构原摘要明确共享系数表达波段共同结构、非共享系数表达单带细节，SSR/USR/IR分别对应MTSR迭代优化操作；确认去噪、稀疏表示与深度展开，仍摘要级。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "476a8e34cf1fa30ada96b176ab67345206ae47842b7b297069369b583f135266",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
-      "citation": "@article{zhou_65_hsi_2023, title = {Multitask Sparse Representation Model-Inspired Network for Hyperspectral Image Denoising}, author = {Fengchao Xiong and Jiantao Zhou and Jun Zhou and Jianfeng Lu and Yuntao Qian}, year = {2023}, doi = {10.1109/tgrs.2023.3300542}\n}\n"
+      "citation": "@article{zhou_65_hsi_2023, title = {Multitask Sparse Representation Model-Inspired Network for Hyperspectral Image Denoising}, author = {Fengchao Xiong and Jiantao Zhou and Jun Zhou and Jianfeng Lu and Yuntao Qian}, year = {2023}, doi = {10.1109/tgrs.2023.3300542}\n}\n",
+      "code": "https://github.com/bearshng/mtsrnn"
     },
     {
       "id": "zhou-66-hsi-2023",
@@ -45281,25 +45339,26 @@
       "input": "含噪高光谱影像各波段。",
       "output": "逐波段清晰高光谱影像。",
       "mechanism": "共享稀疏系数建模光谱—空间相关性，各分支学习波段独有空间字典；将迭代优化展开为 MTSNN，多分支通过共享系数联结。",
-      "readingNote": "Google Scholar 题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://rc.signalprocessingsociety.org/conferences/icassp-2022/spsicassp22vid1814",
-      "verifiedAt": "2026-10-10",
+      "readingNote": "Crossref正式书目保留；本轮完整阅读此前存档的Griffith机构原摘要并核对对应DOI与Jun resolvedUser7205。任务和所列方法按摘要确认；正文及原图尚未取得，代码仅记录官方链接。",
+      "paper": "https://doi.org/10.1109/icassp43922.2022.9747001",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "sparse-dictionary-learning"
+          "sparse-dictionary-learning",
+          "deep-unfolding"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "完整机构原摘要直接研究含噪HSI恢复，任务和当前方法分类有主要来源支撑；摘要确认不等于正文已读。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何把高光谱稀疏先验纳入多任务深度网络以提升去噪和泛化？",
         "datasets": "官方摘要未列数据集名称，仅报告与多种方法的去噪比较；数据、噪声设置和指标待全文核验。",
         "experimentSetting": "多任务高光谱去噪；每个波段一个分支，共享稀疏系数。",
         "conclusions": "官方摘要报告 MTSNN 具有较强去噪、学习、可解释和泛化能力，并取得先进去噪性能。",
-        "limitations": "摘要未给出数据集、噪声模型、网络规模、代码和逐项指标。",
+        "limitations": "完整机构原摘要未列数据名称、噪声设置、网络规模、训练配置、消融或逐项指标；正式正文和框架图仍未取得。不同DOI/作者的2023 MTSR期刊稿不能自动当其确认延伸版，关系待证。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45328,6 +45387,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith机构完整原摘要（既存记录本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205属于本条；缩写作者不自动改完整姓名。",
+              "原摘要明确HSI去噪的输入输出与方法；完整机构原摘要明确共享稀疏系数/逐波段字典和多分支，把MTS迭代优化展开为带可学习参数网络，确认去噪、稀疏表示和深度展开。",
+              "具体数据/数值/配置和正文、原图未取得；代码只保留原摘要链接。"
+            ]
           }
         ],
         "versions": [
@@ -45340,7 +45409,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022"
+        "methodFamilyId": "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整机构原摘要明确共享稀疏系数/逐波段字典和多分支，把MTS迭代优化展开为带可学习参数网络，确认去噪、稀疏表示和深度展开。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "763696e39e04111df109176db1a0c41bcea99166a9df4f90405c1575e1d03fd8",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-multitask-sparse-neural-network-for-hypers-2022,\n  title = {Multitask Sparse Neural Network for Hyperspectral Image Denoising},\n  author = {Fengchao Xiong and Minchao Ye and Jun Zhou and Jianfeng Lu and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/icassp43922.2022.9747001}\n}\n"
     },
@@ -45446,25 +45532,26 @@
       "input": "含噪高光谱影像立方体。",
       "output": "去噪后的高光谱影像。",
       "mechanism": "全局 3D convolutional sparse coding 以少量平移不变滤波器组合局部原子；展开优化得到空间—光谱卷积稀疏神经网络。",
-      "readingNote": "Google Scholar 题名差集、Crossref正式书目与公开摘要来源核验；未阅读全文。",
-      "paper": "https://eurekamag.com/research/096/040/096040803.php",
-      "verifiedAt": "2026-10-10",
+      "readingNote": "Crossref正式书目保留；本轮完整阅读此前存档的Griffith机构原摘要并核对对应DOI与Jun resolvedUser7205。任务和所列方法按摘要确认；正文及原图尚未取得，代码仅记录官方链接。",
+      "paper": "https://doi.org/10.1109/igarss46834.2022.9883667",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
           "spectral-denoising",
-          "sparse-dictionary-learning"
+          "sparse-dictionary-learning",
+          "deep-unfolding"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "完整机构原摘要直接研究含噪HSI恢复，任务和当前方法分类有主要来源支撑；摘要确认不等于正文已读。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "全局三维卷积稀疏模型能否减少分块去噪的伪影并保持高光谱像素关系？",
         "datasets": "公开摘要报告合成和真实数据集实验；具体数据、噪声设置和指标待全文核验。",
         "experimentSetting": "合成与真实 HSI 去噪；与多种方法进行定性和定量比较。",
         "conclusions": "公开摘要报告网络取得有竞争力的定性和定量去噪性能。",
-        "limitations": "摘要未给出数据集、完整优化、训练配置、代码和逐项指标。",
+        "limitations": "仅完整机构原摘要已读，正式四页正文、框架图、数据名称、噪声设置、完整优化方程、训练配置与逐项指标仍未取得。全局CSC与其他共享/非共享多任务稿方法不同，未证明会议/期刊延伸关系，不自动合并。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45493,6 +45580,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith机构完整原摘要（既存记录本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205属于本条；缩写作者不自动改完整姓名。",
+              "原摘要明确HSI去噪的输入输出与方法；完整机构原摘要明确全局3D卷积稀疏字典、少量平移不变滤波器和显式优化展开，支持去噪、稀疏表示与深度展开。",
+              "具体数据/数值/配置和正文、原图未取得；代码只保留原摘要链接。"
+            ]
           }
         ],
         "versions": [
@@ -45505,7 +45602,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022"
+        "methodFamilyId": "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整机构原摘要明确全局3D卷积稀疏字典、少量平移不变滤波器和显式优化展开，支持去噪、稀疏表示与深度展开。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "e569ac425ddfe580fcb90f26b3c58f5fde4dfe40e847a91a50e875c96baa9eca",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022,\n  title = {Spatial-Spectral Convolutional Sparse Neural Network for Hyperspectral Image Denoising},\n  author = {Fengchao Xiong and Minchao Ye and Jun Zhou and Yuntao Qian},\n  year = {2022},\n  doi = {10.1109/igarss46834.2022.9883667}\n}\n"
     },
@@ -45602,25 +45716,24 @@
       "input": "噪声高光谱影像。",
       "output": "去噪高光谱影像。",
       "mechanism": "粗估计提供初始结果；轻量细化模块逐层组合噪声输入与上一层结果；λ 模块按波段自适应融合权重。",
-      "readingNote": "Google Scholar题名差集、Crossref正式书目与 Semantic Scholar公开摘要核验；未阅读全文。",
-      "paper": "https://www.semanticscholar.org/paper/e156f53b9b63c777fcd0cab79ca5c15ae0430bd3",
-      "verifiedAt": "2026-10-10",
+      "readingNote": "Crossref正式书目保留；本轮完整阅读此前存档的Griffith机构原摘要并核对对应DOI与Jun resolvedUser7205。任务和所列方法按摘要确认；正文及原图尚未取得，代码仅记录官方链接。",
+      "paper": "https://doi.org/10.1109/icme55011.2023.00468",
+      "verifiedAt": "2026-10-12",
       "verificationLevel": "abstract_verified",
       "library": {
         "categoryIds": [
-          "spectral-denoising",
-          "low-rank-matrix-factorization"
+          "spectral-denoising"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "题名与公开摘要均明确高光谱任务。",
+        "relationNote": "完整机构原摘要直接研究含噪HSI恢复，任务和当前方法分类有主要来源支撑；摘要确认不等于正文已读。",
         "readingProgress": "abstract_read",
         "verificationStatus": "abstract_verified",
         "researchQuestion": "如何以迭代细化和按波段自适应权重提升高光谱去噪？",
         "datasets": "摘要称合成和真实数据集，名称、噪声和划分待全文核验。",
         "experimentSetting": "IRDNet 粗估计、多阶段细化和 λ(·) 按波段权重。",
         "conclusions": "公开摘要报告 IRDNet 在合成和真实数据上优于替代方法。",
-        "limitations": "摘要未给出数据集、层数、指标、代码和消融实验。",
+        "limitations": "仅完整机构原摘要已读，正式六页正文、框架图、数据名称、噪声设置、阶段数、训练配置、逐项指标和消融仍未取得。低秩或显式优化展开没有当前摘要证据，正文未核，不推断整篇不存在这些内容。",
         "dataLinks": [],
         "evidence": [
           {
@@ -45648,6 +45761,16 @@
               "机构作者标识Zhou, Jun与个人profile7205关联记录；原始DOI、年份和文献类型分别保留。",
               "当前gro.hasfulltext=No Full Text；bundle名称=SWORD。仅陈述此仓储附件状态，不证明收费或没有其他公开版本。"
             ]
+          },
+          {
+            "url": "https://experts.griffith.edu.au/7205-jun-zhou",
+            "checkedAt": "2026-10-12",
+            "level": "Griffith机构完整原摘要（既存记录本轮实际阅读）",
+            "supports": [
+              "精确DOI及Jun resolvedUser7205属于本条；缩写作者不自动改完整姓名。",
+              "原摘要明确HSI去噪的输入输出与方法；原摘要明确粗估计、多阶段去噪与逐层逐带λ混合权重，确认去噪任务。当前主要摘要没有低秩约束/分解证据，移除low-rank-matrix-factorization误配；不据迭代细化字样认定显式优化展开。",
+              "具体数据/数值/配置和正文、原图未取得；代码只保留原摘要链接。"
+            ]
           }
         ],
         "versions": [
@@ -45660,7 +45783,24 @@
             "relation": "正式记录；已取得摘要级方法证据，未阅读全文。"
           }
         ],
-        "methodFamilyId": "zhou-scholar-iterative-refinement-network-for-hyperspec-2023"
+        "methodFamilyId": "zhou-scholar-iterative-refinement-network-for-hyperspec-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要明确粗估计、多阶段去噪与逐层逐带λ混合权重，确认去噪任务。当前主要摘要没有低秩约束/分解证据，移除low-rank-matrix-factorization误配；不据迭代细化字样认定显式优化展开。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "cfb2b9686d68f68840d839e3dfaee5ad078b4a9654486bc7222d58a42a4c7749",
+          "sourceUrls": [
+            "https://experts.griffith.edu.au/7205-jun-zhou"
+          ]
+        }
       },
       "citation": "@inproceedings{zhou-scholar-iterative-refinement-network-for-hyperspec-2023,\n  title = {Iterative Refinement Network for Hyperspectral Image Denoising},\n  author = {Fengchao Xiong and Jun Zhou and Zhuang Zhao and Yuntao Qian},\n  year = {2023},\n  doi = {10.1109/icme55011.2023.00468}\n}\n"
     },
@@ -48477,9 +48617,13 @@
         "spectral-mixture-network-unmixing-2020",
         "zhou-79-hsi-2022",
         "zhou-80-hsi-2022",
+        "zhou-63-hsi-2023",
+        "zhou-65-hsi-2023",
         "zhou-scholar-deep-unfolded-iterative-shrinkage-threshol-2019",
         "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
-        "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022"
+        "zhou-scholar-model-inspired-deep-neural-networks-for-hy-2022",
+        "zhou-scholar-multitask-sparse-neural-network-for-hypers-2022",
+        "zhou-scholar-spatial-spectral-convolutional-sparse-neur-2022"
       ],
       "history": [
         {
@@ -48511,6 +48655,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "WS-Net固定v1为双分支解混网络，无显式优化迭代展开，移除该条误配。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "五篇机构完整原摘要确认去噪；四项显式优化展开补类，DPNet移除预训练误配、IRDNet移除无当前低秩证据的标签。"
         }
       ]
     },
@@ -49519,8 +49668,7 @@
         "gmc-sparse-nmf-hsi-2020",
         "subspace-structure-nmf-hsi-2020",
         "zhou-77-hsi-2022",
-        "zhou-49-hsi-2024",
-        "zhou-scholar-iterative-refinement-network-for-hyperspec-2023"
+        "zhou-49-hsi-2024"
       ],
       "history": [
         {
@@ -49567,6 +49715,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "RMM明确每特征通道将LL展开为谱维×空间维矩阵并执行SVD/SVT，确认直接HSI去噪及低秩矩阵方法，移除无张量分解证据的tensor-low-rank-learning；迭代细化没有优化算法展开对应。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "五篇机构完整原摘要确认去噪；四项显式优化展开补类，DPNet移除预训练误配、IRDNet移除无当前低秩证据的标签。"
         }
       ]
     },
@@ -49592,6 +49745,7 @@
         "joint-spectral-spatial-sparse-coding-jstars-2017",
         "gmc-sparse-nmf-hsi-2020",
         "zhou-79-hsi-2022",
+        "zhou-63-hsi-2023",
         "zhou-65-hsi-2023",
         "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
         "zhou-scholar-learning-a-model-based-deep-hyperspectral--2021",
@@ -49638,6 +49792,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "跨场景稿NMF字典目标无稀疏项，下游稀疏SLR不等于稀疏字典学习；结构一致性稿明确保留L1共享编码。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "五篇机构完整原摘要确认去噪；四项显式优化展开补类，DPNet移除预训练误配、IRDNet移除无当前低秩证据的标签。"
         }
       ]
     },
@@ -51351,7 +51510,6 @@
         "lightweight-cnn-hsi-2021",
         "zhou-84-hsi-2022",
         "zhou-88-hsi-2022",
-        "zhou-63-hsi-2023",
         "zhou-66-hsi-2023",
         "zhou-32-hsi-2025",
         "zhou-36-hsi-2025",
@@ -51421,6 +51579,11 @@
           "date": "2026-10-12",
           "action": "evidence_updated",
           "reason": "SPECIAL明确用冻结CLIP/SegEarth伪标签训练MambaHSI做目标场景地物分类，新增实际状态空间方法关联；没有独立可迁移HSI表征预训练目标，移除representation-learning，不把RGB代理误当纯RGB范围。"
+        },
+        {
+          "date": "2026-10-12",
+          "action": "evidence_updated",
+          "reason": "五篇机构完整原摘要确认去噪；四项显式优化展开补类，DPNet移除预训练误配、IRDNet移除无当前低秩证据的标签。"
         }
       ]
     },

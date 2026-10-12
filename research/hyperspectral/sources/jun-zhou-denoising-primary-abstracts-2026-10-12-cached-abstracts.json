@@ -1,0 +1,726 @@
+[
+  {
+    "discoveryId": "8225024",
+    "abstract": "Sparse representation (SR)-based hyperspectral image (HSI) denoising methods normally average the local denoising results of multiple overlapped cubes to recover the whole HSI. Though interpretable, they rely on cumbersome hyperparameter settings and ignore the relationship between overlapped cubes, leading to poor denoising performance. This article combines SR and convolutional neural networks and introduces a deep parameterized sparse neural network (DPNet-S) to address the above issues. DPNet-S parameterizes the SR-based HSI denoising model with two modules: 1) sparse optimizer to extract sparse feature maps from noisy HSIs via recurrent usage of convolution, deconvolution, and soft shrinkage operations; and 2) image reconstructor to recover the denoised HSI from its sparse feature maps via deconvolution operations. We further replace the soft shrinkage operator with U-Net architecture to account for general HSI priors and more effectively capture the complex structures of HSIs, resulting in DPNet-U. Both networks directly learn the parameters from data and perform denoising on the whole HSI, which overcomes the limitations of SR-based methods. Moreover, our networks are generated from the denoising model and optimization procedures, thus leveraging the knowledge embedded and relying less on the number of training samples. Extensive experiments on both synthetic and real-world HSIs show that our DPNet-S and DPNet-U achieve remarkable results when compared with state-of-the-art methods. The codes will be publicly available at https://github.com/bearshng/dpnets for reproducible research.",
+    "authors": [
+      {
+        "nameShortFormat": "Xiong F",
+        "firstNameLastName": "F Xiong",
+        "fullName": "F Xiong"
+      },
+      {
+        "nameShortFormat": "Zhou J",
+        "firstNameLastName": "J Zhou",
+        "fullName": "J Zhou",
+        "resolvedUser": {
+          "objectId": 7205,
+          "discoveryId": "7205",
+          "discoveryUrlId": "7205-jun-zhou"
+        }
+      },
+      {
+        "nameShortFormat": "Zhou J",
+        "firstNameLastName": "J Zhou",
+        "fullName": "J Zhou"
+      },
+      {
+        "nameShortFormat": "Lu J",
+        "firstNameLastName": "J Lu",
+        "fullName": "J Lu"
+      },
+      {
+        "nameShortFormat": "Qian Y",
+        "firstNameLastName": "Y Qian",
+        "fullName": "Y Qian"
+      }
+    ],
+    "doi": "10.1109/TGRS.2023.3318001",
+    "issn": "0196-2892",
+    "journal": "IEEE Transactions on Geoscience and Remote Sensing",
+    "pagination": "5525015",
+    "publicationDate": {
+      "year": 2023,
+      "dateTime": "2023-01-01T00:00:00+10:00"
+    },
+    "publicUrl": "http://hdl.handle.net/10072/426879",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "61",
+    "objectTypeDisplayName": "Journal article",
+    "objectTypeSortIndex": 5,
+    "date1": {
+      "year": 2023,
+      "month": 1,
+      "day": 1,
+      "dateTime": "2023-01-01T00:00:00+10:00"
+    },
+    "favouritedByUserIds": [],
+    "objectId": 8225024,
+    "discoveryUrlId": "8225024",
+    "linkedObjectIds": {
+      "users": [
+        7205
+      ]
+    },
+    "labels": [
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Communications Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Engineering"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Networking and Information Technology R&D (NITRD)"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Bioengineering"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Machine Learning and Artificial Intelligence"
+      },
+      {
+        "value": "Science & Technology"
+      },
+      {
+        "value": "Physical Sciences"
+      },
+      {
+        "value": "Technology"
+      },
+      {
+        "value": "Geochemistry & Geophysics"
+      },
+      {
+        "value": "Engineering, Electrical & Electronic"
+      },
+      {
+        "value": "Remote Sensing"
+      },
+      {
+        "value": "Imaging Science & Photographic Technology"
+      },
+      {
+        "value": "Engineering"
+      },
+      {
+        "value": "Convolutional neural networks"
+      },
+      {
+        "value": "hyperspectral image (HSI) denoising"
+      },
+      {
+        "value": "learning to optimize (L2O)"
+      },
+      {
+        "value": "sparse representation (SR)"
+      },
+      {
+        "value": "SPARSE"
+      },
+      {
+        "value": "RESTORATION"
+      },
+      {
+        "value": "REPRESENTATION"
+      },
+      {
+        "value": "FUSION"
+      },
+      {
+        "schemeDisplayName": "Affiliation",
+        "value": "Internal publication"
+      },
+      {
+        "schemeDisplayName": "Output Classification",
+        "value": "C1 - Articles"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2008)",
+        "value": "Geophysics"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2008)",
+        "value": "Electrical and Electronic Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2008)",
+        "value": "Geomatic Engineering"
+      },
+      {
+        "schemeDisplayName": "Science-Metrix",
+        "value": "Geological & Geomatics Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Earth sciences"
+      }
+    ],
+    "hasThumbnail": false,
+    "updatedWhen": "2026-10-11T01:25:21.5792318+10:00",
+    "title": "Deep Parameterized Neural Networks for Hyperspectral Image Denoising"
+  },
+  {
+    "discoveryId": "8225023",
+    "abstract": "Hyperspectral image (HSI) denoising is an important pre-processing procedure for subsequent tasks. Learning a direct mapping from the observed noisy HSI to its clean counterpart is challenging, especially in the case of very severe noise. The learning difficulty can be greatly reduced with the iterative refinement, combining the denoising results with the noisy HSI to produce a cleaner HSI for further denoising. To this end, we introduce an iterative refinement denoising network (IRDNet) for HSIs. The network consists of three key components, i.e., a coarse estimation module, a multi-stage refinement module, and a λ(•) module. The coarse estimation module provides the initial estimate for the starting point of further refinement. The lightweight refinement module progressively performs noise reduction on the weighted combination of noisy inputs and denoising results from the previous layer. Instead of fixed weights, the λ(•) module adaptively provides the layer-wise weight for each band for the aforementioned combinations. Extensive experiments on synthetic and real-world datasets show that our IRDNet favorably outperforms alternative methods.",
+    "authors": [
+      {
+        "nameShortFormat": "Xiong F",
+        "firstNameLastName": "F Xiong",
+        "fullName": "F Xiong"
+      },
+      {
+        "nameShortFormat": "Zhou J",
+        "firstNameLastName": "J Zhou",
+        "fullName": "J Zhou",
+        "resolvedUser": {
+          "objectId": 7205,
+          "discoveryId": "7205",
+          "discoveryUrlId": "7205-jun-zhou"
+        }
+      },
+      {
+        "nameShortFormat": "Zhao Z",
+        "firstNameLastName": "Z Zhao",
+        "fullName": "Z Zhao"
+      },
+      {
+        "nameShortFormat": "Qian Y",
+        "firstNameLastName": "Y Qian",
+        "fullName": "Y Qian"
+      }
+    ],
+    "doi": "10.1109/ICME55011.2023.00468",
+    "issn": "1945-7871",
+    "journal": "2023 IEEE International Conference on Multimedia and Expo (ICME)",
+    "nameOfConference": "2023 IEEE International Conference on Multimedia and Expo (ICME)",
+    "pagination": "2753-2758",
+    "publicationDate": {
+      "year": 2023,
+      "dateTime": "2023-01-01T00:00:00+10:00"
+    },
+    "publicUrl": "http://hdl.handle.net/10072/426085",
+    "publisher": "IEEE",
+    "objectTypeDisplayName": "Conference Paper",
+    "objectTypeSortIndex": 7,
+    "date1": {
+      "year": 2023,
+      "month": 1,
+      "day": 1,
+      "dateTime": "2023-01-01T00:00:00+10:00"
+    },
+    "favouritedByUserIds": [],
+    "objectId": 8225023,
+    "discoveryUrlId": "8225023",
+    "linkedObjectIds": {
+      "users": [
+        7205
+      ]
+    },
+    "labels": [
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Computer vision and multimedia computation"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Information and Computing Sciences"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Communications Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Data Management and Data Science"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Machine Learning"
+      },
+      {
+        "value": "Science & Technology"
+      },
+      {
+        "value": "Technology"
+      },
+      {
+        "value": "Computer Science, Artificial Intelligence"
+      },
+      {
+        "value": "Computer Science, Information Systems"
+      },
+      {
+        "value": "Computer Science, Theory & Methods"
+      },
+      {
+        "value": "Computer Science"
+      },
+      {
+        "value": "Hyperspectral image denoising"
+      },
+      {
+        "value": "deep learning"
+      },
+      {
+        "value": "iterative refinement"
+      },
+      {
+        "value": "RESTORATION"
+      },
+      {
+        "schemeDisplayName": "Affiliation",
+        "value": "Internal publication"
+      },
+      {
+        "schemeDisplayName": "Output Classification",
+        "value": "E1 - Conferences"
+      }
+    ],
+    "hasThumbnail": false,
+    "updatedWhen": "2026-10-11T01:25:21.5792318+10:00",
+    "title": "Iterative Refinement Network for Hyperspectral Image Denoising"
+  },
+  {
+    "discoveryId": "7459207",
+    "abstract": "Hyperspectral images (HSIs) are prone to noise because of the imaging mechanism and environment. This article proposes a multitask sparse representation (MTSR) model-inspired neural network for HSI denoising. Unlike other deep learning (DL)-based methods, our network is interpretable, whose network architecture is induced by unfolding the iterative optimization of an MTSR model. On one hand, the model globally represents the common structure among bands, such as image edges, with the shared sparse coefficients. On the other hand, it separately encodes the unique structure of individual bands with unshared ones to capture image details. Accordingly, our network has three modules: the shared sparse representation (SSR) module, the unshared sparse representation (USR), and the image reconstruction (IR) module. All the modules are connected with a specific operation of the iterative optimization algorithm, equipping the network with clear physical interpretation. Experimental results on both the synthetic and real-world datasets demonstrate the superior performance of our method, visually and quantitatively. The codes will be publicly available at https://github.com/bearshng/mtsrnn for reproducible research.",
+    "authors": [
+      {
+        "nameShortFormat": "Xiong F",
+        "firstNameLastName": "Fengchao Xiong",
+        "fullName": "Fengchao Xiong"
+      },
+      {
+        "nameShortFormat": "Zhou J",
+        "firstNameLastName": "Jiantao Zhou",
+        "fullName": "Jiantao Zhou"
+      },
+      {
+        "nameShortFormat": "Zhou J",
+        "firstNameLastName": "Jun Zhou",
+        "fullName": "Jun Zhou",
+        "resolvedUser": {
+          "objectId": 7205,
+          "discoveryId": "7205",
+          "discoveryUrlId": "7205-jun-zhou"
+        }
+      },
+      {
+        "nameShortFormat": "Lu J",
+        "firstNameLastName": "Jianfeng Lu",
+        "fullName": "Jianfeng Lu"
+      },
+      {
+        "nameShortFormat": "Qian Y",
+        "firstNameLastName": "Yuntao Qian",
+        "fullName": "Yuntao Qian"
+      }
+    ],
+    "doi": "10.1109/tgrs.2023.3300542",
+    "issn": "0196-2892",
+    "journal": "IEEE Transactions on Geoscience and Remote Sensing",
+    "pagination": "1-15",
+    "publicationDate": {
+      "year": 2023,
+      "month": 1,
+      "day": 1,
+      "dateTime": "2023-01-01T00:00:00+10:00"
+    },
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "volume": "61",
+    "objectTypeDisplayName": "Journal article",
+    "objectTypeSortIndex": 5,
+    "date1": {
+      "year": 2023,
+      "month": 1,
+      "day": 1,
+      "dateTime": "2023-01-01T00:00:00+10:00"
+    },
+    "favouritedByUserIds": [],
+    "objectId": 7459207,
+    "discoveryUrlId": "7459207",
+    "linkedObjectIds": {
+      "users": [
+        7205
+      ]
+    },
+    "labels": [
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Communications Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Engineering"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Bioengineering"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Networking and Information Technology R&D (NITRD)"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Machine Learning and Artificial Intelligence"
+      },
+      {
+        "value": "Science & Technology"
+      },
+      {
+        "value": "Physical Sciences"
+      },
+      {
+        "value": "Technology"
+      },
+      {
+        "value": "Geochemistry & Geophysics"
+      },
+      {
+        "value": "Engineering, Electrical & Electronic"
+      },
+      {
+        "value": "Remote Sensing"
+      },
+      {
+        "value": "Imaging Science & Photographic Technology"
+      },
+      {
+        "value": "Engineering"
+      },
+      {
+        "value": "Deep unfolding"
+      },
+      {
+        "value": "hyperspectral image (HSI) denoising"
+      },
+      {
+        "value": "multitask learning"
+      },
+      {
+        "value": "sparse representation (SR)"
+      },
+      {
+        "value": "RESTORATION"
+      },
+      {
+        "value": "REMOVAL"
+      },
+      {
+        "schemeDisplayName": "Output Classification",
+        "value": "C1 - Articles"
+      },
+      {
+        "schemeDisplayName": "Affiliation",
+        "value": "Internal Publication"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2008)",
+        "value": "Geophysics"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2008)",
+        "value": "Electrical and Electronic Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2008)",
+        "value": "Geomatic Engineering"
+      },
+      {
+        "schemeDisplayName": "Science-Metrix",
+        "value": "Geological & Geomatics Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Earth sciences"
+      }
+    ],
+    "hasThumbnail": false,
+    "updatedWhen": "2026-10-11T01:25:00.3402201+10:00",
+    "title": "Multitask Sparse Representation Model-Inspired Network for Hyperspectral Image Denoising"
+  },
+  {
+    "discoveryId": "2411792",
+    "abstract": "Data-driven deep learning (DL)-based methods directly learn the nonlinear mapping between noisy hyperspectral images (HSIs) and corresponding clean ones. However, DLbased methods neglect the prior knowledge of HSIs embodied by physical models. Consequently, they require complex network architectures and a large number of training samples. To address the above issues, this paper introduces a multitask sparse neural network (MTSNN) which bridges the sparsity prior of HSIs with data-driven deep learning for HSI denoising. Specifically, we first build a multitask sparse (MTS) denoising model which shares sparse coefficients among bands to exploit the spectral-spatial correlation and learns a dictionary for each band to depict the distinct spatial structure among bands. The iterative optimization of the MTS model is then unfolded to yield our MTSNN by introducing some learnable parameters. MTSNN is a multi-branch network. Each branch performs a single denoising task for an individual band. All branches are connected by shared coefficients, forming multitask denoising for all bands. The hybrid advantages of the MTS model and data-driven learning equip MTSNN with strong denoising ability, preferable learning capability, superior interpretability, and higher generalization capacity. Experimental results demonstrate that our method achieves state-of-the-art denoising performance compared with several alternative approaches.",
+    "authors": [
+      {
+        "nameShortFormat": "Xiong F",
+        "firstNameLastName": "F Xiong",
+        "fullName": "F Xiong"
+      },
+      {
+        "nameShortFormat": "Ye M",
+        "firstNameLastName": "M Ye",
+        "fullName": "M Ye"
+      },
+      {
+        "nameShortFormat": "Zhou J",
+        "firstNameLastName": "J Zhou",
+        "fullName": "J Zhou",
+        "resolvedUser": {
+          "objectId": 7205,
+          "discoveryId": "7205",
+          "discoveryUrlId": "7205-jun-zhou"
+        }
+      },
+      {
+        "nameShortFormat": "Lu J",
+        "firstNameLastName": "J Lu",
+        "fullName": "J Lu"
+      },
+      {
+        "nameShortFormat": "Qian Y",
+        "firstNameLastName": "Y Qian",
+        "fullName": "Y Qian"
+      }
+    ],
+    "doi": "10.1109/ICASSP43922.2022.9747001",
+    "issn": "1520-6149",
+    "journal": "ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "nameOfConference": "ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "pagination": "2799-2803",
+    "publicationDate": {
+      "year": 2022,
+      "dateTime": "2022-01-01T00:00:00+10:00"
+    },
+    "publicUrl": "http://hdl.handle.net/10072/417966",
+    "publisher": "IEEE",
+    "objectTypeDisplayName": "Conference Paper",
+    "objectTypeSortIndex": 7,
+    "date1": {
+      "year": 2022,
+      "month": 5,
+      "day": 27,
+      "dateTime": "2022-05-27T00:00:00+10:00"
+    },
+    "favouritedByUserIds": [],
+    "objectId": 2411792,
+    "discoveryUrlId": "2411792",
+    "linkedObjectIds": {
+      "users": [
+        7205
+      ]
+    },
+    "labels": [
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Neural networks"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Information and Computing Sciences"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Communications Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Computer Vision and Multimedia Computation"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Machine Learning"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Bioengineering"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Machine Learning and Artificial Intelligence"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Networking and Information Technology R&D (NITRD)"
+      },
+      {
+        "value": "Science & Technology"
+      },
+      {
+        "value": "Technology"
+      },
+      {
+        "value": "Acoustics"
+      },
+      {
+        "value": "Computer Science, Artificial Intelligence"
+      },
+      {
+        "value": "Engineering, Electrical & Electronic"
+      },
+      {
+        "value": "Computer Science"
+      },
+      {
+        "value": "Engineering"
+      },
+      {
+        "value": "Hyperspectral image denoising"
+      },
+      {
+        "value": "model-based neural network"
+      },
+      {
+        "value": "multitask learning"
+      },
+      {
+        "value": "sparse coding"
+      },
+      {
+        "value": "RESTORATION"
+      },
+      {
+        "schemeDisplayName": "Affiliation",
+        "value": "Internal publication"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Information systems"
+      },
+      {
+        "schemeDisplayName": "Output Classification",
+        "value": "E1 - Conferences"
+      }
+    ],
+    "hasThumbnail": false,
+    "updatedWhen": "2026-10-11T01:21:59.8589800+10:00",
+    "title": "Multitask Sparse Neural Network for Hyperspectral Image Denoising"
+  },
+  {
+    "discoveryId": "4049134",
+    "abstract": "Sparse representation (SR) is a widely accepted hyper-spectral image (HSI) denoising model. Because of the curse of dimensionality and the desire to better fit the data, the SR models are typically deployed on small and fully overlapping blocks whose results are averaged to produce the global de-noised HSI. This “local-global” denoising mechanism ignores the dependencies between blocks, resulting in visual artifacts. This paper describes the underlying clean HSI with a 3D con-volutional sparse coding (CSC) model, representing the HSI with a linear combination of few shift-invariant 3D spatial-spectral filters in a global dictionary. Instead of operating on patches, the CSC model sees the clean HSI is generated from a sum of local atoms that appear in a small number of locations throughout the image, naturally retaining the relationship between pixels. Moreover, we unfold the optimization process of the model into a spatial-spectral convolutional sparse neural network which absorbs the interpretation ability of the model while supporting discriminative learning from data. Experimental results on both synthetic and real-world datasets show that our network achieves competitive denoising performances, qualitatively and quantitatively.",
+    "authors": [
+      {
+        "nameShortFormat": "Xiong F",
+        "firstNameLastName": "F Xiong",
+        "fullName": "F Xiong"
+      },
+      {
+        "nameShortFormat": "Ye M",
+        "firstNameLastName": "M Ye",
+        "fullName": "M Ye"
+      },
+      {
+        "nameShortFormat": "Zhou J",
+        "firstNameLastName": "J Zhou",
+        "fullName": "J Zhou",
+        "resolvedUser": {
+          "objectId": 7205,
+          "discoveryId": "7205",
+          "discoveryUrlId": "7205-jun-zhou"
+        }
+      },
+      {
+        "nameShortFormat": "Qian Y",
+        "firstNameLastName": "Y Qian",
+        "fullName": "Y Qian"
+      }
+    ],
+    "doi": "10.1109/IGARSS46834.2022.9883667",
+    "journal": "IGARSS 2022 - 2022 IEEE International Geoscience and Remote Sensing Symposium",
+    "nameOfConference": "IGARSS 2022 - 2022 IEEE International Geoscience and Remote Sensing Symposium",
+    "pagination": "1225-1228",
+    "publicationDate": {
+      "year": 2022,
+      "dateTime": "2022-01-01T00:00:00+10:00"
+    },
+    "publicUrl": "http://hdl.handle.net/10072/420530",
+    "publisher": "IEEE",
+    "objectTypeDisplayName": "Conference Paper",
+    "objectTypeSortIndex": 7,
+    "date1": {
+      "year": 2022,
+      "month": 1,
+      "day": 1,
+      "dateTime": "2022-01-01T00:00:00+10:00"
+    },
+    "favouritedByUserIds": [],
+    "objectId": 4049134,
+    "discoveryUrlId": "4049134",
+    "linkedObjectIds": {
+      "users": [
+        7205
+      ]
+    },
+    "labels": [
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Neural networks"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Information and Computing Sciences"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Communications Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Engineering"
+      },
+      {
+        "schemeDisplayName": "Fields of Research (2020)",
+        "value": "Computer Vision and Multimedia Computation"
+      },
+      {
+        "schemeDisplayName": "Research, Condition and Disease Categorization",
+        "value": "Machine Learning and Artificial Intelligence"
+      },
+      {
+        "value": "Science & Technology"
+      },
+      {
+        "value": "Physical Sciences"
+      },
+      {
+        "value": "Technology"
+      },
+      {
+        "value": "Geosciences, Multidisciplinary"
+      },
+      {
+        "value": "Remote Sensing"
+      },
+      {
+        "value": "Geology"
+      },
+      {
+        "value": "Hyperspectral image denoising"
+      },
+      {
+        "value": "model-based deep learning"
+      },
+      {
+        "value": "convolutional sparse coding"
+      },
+      {
+        "value": "deep unfolding"
+      },
+      {
+        "schemeDisplayName": "Affiliation",
+        "value": "Internal publication"
+      },
+      {
+        "schemeDisplayName": "Output Classification",
+        "value": "E1 - Conferences"
+      }
+    ],
+    "hasThumbnail": false,
+    "updatedWhen": "2026-10-11T01:23:02.6879488+10:00",
+    "title": "Spatial-Spectral Convolutional Sparse Neural Network for Hyperspectral Image Denoising"
+  }
+]

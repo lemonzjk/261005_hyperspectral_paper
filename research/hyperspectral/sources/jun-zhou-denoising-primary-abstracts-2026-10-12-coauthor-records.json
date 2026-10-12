@@ -1,0 +1,235 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2608.10569v1",
+    "title": "An efficient and robust fifth-order HWENO scheme with gradient reconstruction for compressible Navier--Stokes equations",
+    "summary": "In this paper, we propose an efficient and robust fifth-order finite-volume Hermite weighted essentially non-oscillatory (HWENO) scheme with gradient reconstruction for the compressible Navier--Stokes equations. The key idea is to construct weak-derivative moments for each dissipative variable by taking the arithmetic average of two HWENO interface traces, which are then processed componentwise through the standard scalar nonlinear HWENO reconstruction formula, with only the input moments differing from those used in the convective reconstruction, thereby supplying the gradients needed for the viscous fluxes. This reconstruction achieves fifth-order accuracy using only candidate polynomials of degree at most four, avoids the order reduction that would result from direct differentiation, and introduces negligible additional computational cost. To ensure robustness, especially in extreme test cases involving strong shocks or low densities, we apply a positivity-preserving limiter to the conservative states while retaining the nonlinear HWENO reconstruction for the viscous gradients. This combination is essential for stable computations in flows with strong gradients. Both the conservative and gradient reconstructions share the same compact stencils and candidate-polynomial structure, enabling a single implementation routine without introducing additional algorithmic complexity. Numerical results confirm that the proposed scheme delivers fifth-order accuracy and high resolution, offers competitive computational efficiency, and robustly resolves challenging finite-Reynolds-number Navier--Stokes flows in which the positivity-preserving limiter is actively engaged.",
+    "published": "2026-08-11T06:58:15Z",
+    "updated": "2026-08-11T06:58:15Z",
+    "authors": [
+      "Zijun Guo",
+      "Chuan Fan",
+      "Zhuang Zhao"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2608.10390v1",
+    "title": "A fifth-order divergence-free finite difference Hermite WENO scheme for ideal magnetohydrodynamics",
+    "summary": "In this paper, we present a fifth-order finite difference divergence-free Hermite weighted essentially non-oscillatory (HWENO) scheme for the ideal magnetohydrodynamics (MHD) equations. In this framework, both the solution and its spatial partial derivatives are evolved in time and jointly employed in the spatial reconstruction procedure. A major challenge in MHD simulations is preserving the divergence-free constraint of the magnetic field, which is generally violated by standard numerical methods designed solely for hyperbolic conservation laws. To address this issue, we first solve the MHD equations within the HWENO framework for hyperbolic conservation laws, yielding a magnetic field divergence that remains zero up to high-order accuracy in smooth regions. Subsequently, we apply a correction that evenly distributes the divergence error among the partial derivatives involved in the divergence-free constraint, thereby rendering the magnetic field discretely divergence-free at the new time level. This approach offers several advantages. First, the scheme retains the conservation property, as only the partial derivatives of the numerical solution are corrected, leaving the conserved variables unchanged. Second, the correction applied to the partial derivatives of the magnetic field components introduces only a high-order perturbation, thereby preserving the overall accuracy. Third, the divergence-free treatment significantly enhances robustness, as most benchmark test cases cannot be run stably without such a correction. Fourth, the correction is a simple linear operation applied at each stage of the time integration, incurring negligible additional computational cost. Extensive numerical experiments demonstrate the accuracy, resolution, efficiency, effectiveness, and robustness of the proposed scheme.",
+    "published": "2026-08-11T02:40:19Z",
+    "updated": "2026-08-11T02:40:19Z",
+    "authors": [
+      "Peiwen Chen",
+      "Shi Jin",
+      "Jianxian Qiu",
+      "Zhuang Zhao"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2607.24325v1",
+    "title": "Fifth-order finite volume derivative-based Hermite WENO scheme with unified stencils for hyperbolic conservation laws",
+    "summary": "In this paper, we propose a derivative-based finite volume Hermite WENO (HWENO) scheme for hyperbolic conservation laws, where both the solution and its first-order derivatives are evolved in time and utilized in spatial reconstructions. The key challenge for solving hyperbolic conservation laws is the possible emergence of discontinuities in the numerical solutions. When facing discontinuities, the derivatives can become excessively large, which may compromise the robustness of HWENO schemes. In the first HWENO scheme, different sets of stencils were adopted for reconstructing the governing equation and the derivative equation, respectively, aiming to reduce the influence of the derivatives while preserving high-order accuracy. However, this approach not only substantially increases computational cost but also introduces considerable algorithmic complexity. To overcome these limitations, we exclude the information of the target cell's derivatives from spatial reconstructions, while employing the same reconstructed polynomial during temporal evolution to limit the derivatives. This strategy enhances the robustness of traditional HWENO schemes and allows unified stencils within the derivative-based HWENO framework. Furthermore, the proposed scheme supports arbitrary positive linear weights that sum to one and maintains a compact stencil. Numerical results demonstrate the high-order accuracy, efficiency, high resolution, and robustness of the proposed HWENO scheme.",
+    "published": "2026-07-27T12:04:17Z",
+    "updated": "2026-07-27T12:04:17Z",
+    "authors": [
+      "Peiwen Chen",
+      "Zhuang Zhao"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2607.10809v1",
+    "title": "A compact simple HWENO scheme with ADER time discretization for hyperbolic conservation laws II: triangular meshes",
+    "summary": "A compact and high order HWENO scheme using ADER (Arbitrary high order using DERivatives) time discretization is developed for hyperbolic conservation laws on the triangular mesh, which is the extension of the work on the structured mesh (Luo et. al. (2024) \\cite{luo2023}). The Lax-Wendroff procedure is employed to convert time derivatives to spatial derivatives. Thanks to this, the cell averages of the derivatives of the solution can be obtained by the time accurate solution as Gaussian points along the cell interfaces through the Green-Gauss theorem instead of by the evolution solution directly in the conventional HWENO methods. Comparing with the existing Runge-Kutta HWENO (RK-HWENO) method on the unstructured mesh (Zhao et. al. (2025) \\cite{zhao2025}), the new method has the following advantages. Firstly, the RK-HWENO method must solve the additional equations for reconstructions and time advancing, which is avoided for the new method. Secondly, the HWENO reconstruction in the new method is performed once per time step and is different from the RK-HWENO method, in which the reconstruction is performed several times every time step. Because of these advantages the new method is more efficient than the RK-HWENO method with smaller numerical errors and less computational costs. Besides, comparing with the existing ADER-WENO methods \\cite{dumbser20071,dumbser20072} under the same order of accuracy, the stencil of the new method is more compact since the both the function and its first derivative values are used in the reconstruction of the HWENO schemes. Numerical examples demonstrate that the new method can achieve the high order for smooth solutions both in space and time, keep non-oscillatory near discontinuities.",
+    "published": "2026-07-12T15:43:19Z",
+    "updated": "2026-07-12T15:43:19Z",
+    "authors": [
+      "Dongmi Luo",
+      "Zhuang Zhao",
+      "Jianxian Qiu",
+      "Yibing Chen"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2606.31706v1",
+    "title": "AdaTrans: Automated C to Rust Transformation via Error-Adaptive Repair",
+    "summary": "The automated transformation of C code to Rust is challenging due to Rust's strict ownership and borrowing semantics. While Large Language Models (LLMs) show promise, they often produce code that violates these rules or relies on unsafe constructs. We propose AdaTrans, a framework that addresses these issues through three core mechanisms: a Strategy-Driven Retrieval-Augmented Generation (RAG) mechanism to map compiler errors to specific repairs, an Error-Stratified Transformation Strategy (ESTS) that adapts its behavior based on error types, and a multi-stage validation pipeline to ensure both compilability and functional equivalence. Evaluating on a dataset of 104 algorithmic problems, AdaTrans achieves a mean compilation pass rate of 95.51% and a mean solve rate of 81.09%, significantly outperforming existing tools while maintaining an unsafe file rate of only 1.19%.",
+    "published": "2026-06-30T14:11:54Z",
+    "updated": "2026-06-30T14:11:54Z",
+    "authors": [
+      "Xiaofan Liu",
+      "Zecan Li",
+      "Zhuang Zhao",
+      "Ziqi Shuai",
+      "Yanming Yang",
+      "Qi Xin",
+      "Jifeng Xuan"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2507.02704v1",
+    "title": "Super high capacity of silicon carbon anode over 6500 mAh g-1 for lithium battery",
+    "summary": "As silicon is approaching its theoretical limit for the anode materials in lithium battery, searching for a higher limit is indispensable. Herein, we demonstrate the possible of achieving ultrahigh capacity over 6500 mAh g-1 in silicon-carbon composites. Considering the numerous defects inside the silicon nanostructures, it is deduced the formation of quasi-Bose Einstein condensation should be possible, which can lead to the low viscosity flow of lithium-ions through the anode. At a charge-discharge rate of 0.1C (0.42 A g-1), the initial discharge specific capacity reaches 6694.21 mAh g-1, with a Coulomb efficiency (CE) of 74.71%, significantly exceeding the theoretical capacity limit of silicon. Further optimization of the anode material ratio results in improved cycling stability, with a discharge specific capacity of 5542.98 mAh g-1 and a CE of 85.25% at 0.1C. When the initial discharge capacity is 4043.01 mAh g-1, the CE rises to 86.13%. By training a multilayer perceptron with material parameters as inputs and subsequently optimizing it using a constrained genetic algorithm, an initial discharge specific capacity of up to 7789.55 mAh g-1 can be achieved theoretically. This study demonstrates that silicon-carbon composites have great potential to significantly enhance the energy density of lithium-ion batteries.",
+    "published": "2025-07-03T15:13:46Z",
+    "updated": "2025-07-03T15:13:46Z",
+    "authors": [
+      "Shisheng Lin",
+      "Minhui Yang",
+      "Zhuang Zhao",
+      "Mingjia Zhi",
+      "Xiaokai Bai"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2503.21626v1",
+    "title": "Inverse Lax-Wendroff boundary treatment for solving conservation laws with finite difference HWENO methods",
+    "summary": "This paper presents a novel inverse Lax-Wendroff (ILW) boundary treatment for finite difference Hermite weighted essentially non-oscillatory (HWENO) schemes to solve hyperbolic conservation laws on arbitrary geometries. The complex geometric domain is divided by a uniform Cartesian grid, resulting in challenge in boundary treatment. The proposed ILW boundary treatment could provide high order approximations of both solution values and spatial derivatives at ghost points outside the computational domain. Distinct from existing ILW approaches, our boundary treatment constructs the extrapolation via optimized through a least squares formulation, coupled with the spatial derivatives at the boundary obtained via the ILW procedure. Theoretical analysis indicates that compared with other ILW methods, our proposed one would require fewer terms by using the relatively complicated ILW procedure and thus improve computational efficiency while preserving accuracy and stability. The effectiveness and robustness of the method are validated through numerical experiments.",
+    "published": "2025-03-27T15:44:58Z",
+    "updated": "2025-03-27T15:44:58Z",
+    "authors": [
+      "Guangyao Zhu",
+      "Yan Jiang",
+      "Zhuang Zhao",
+      "Mengping Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2402.03074v2",
+    "title": "A moment-based Hermite WENO scheme with unified stencils for hyperbolic conservation laws",
+    "summary": "In this paper, a fifth-order moment-based Hermite weighted essentially non-oscillatory scheme with unified stencils (termed as HWENO-U) is proposed for hyperbolic conservation laws. The main idea of the HWENO-U scheme is to modify the first-order moment by a HWENO limiter only in the time discretizations using the same information of spatial reconstructions, in which the limiter not only overcomes spurious oscillations well, but also ensures the stability of the fully-discrete scheme. For the HWENO reconstructions, a new scale-invariant nonlinear weight is designed by incorporating only the integral average values of the solution, which keeps all properties of the original one while is more robust for simulating challenging problems with sharp scale variations. Compared with previous HWENO schemes, the advantages of the HWENO-U scheme are: (1) a simpler implemented process involving only a single HWENO reconstruction applied throughout the entire procedures without any modifications for the governing equations; (2) increased efficiency by utilizing the same candidate stencils, reconstructed polynomials, and linear and nonlinear weights in both the HWENO limiter and spatial reconstructions; (3) reduced problem-specific dependencies and improved rationality, as the nonlinear weights are identical for the function $u$ and its non-zero multiple $ζu$. Besides, the proposed scheme retains the advantages of previous HWENO schemes, including compact reconstructed stencils and the utilization of artificial linear weights. Extensive benchmarks are carried out to validate the accuracy, efficiency, resolution, and robustness of the proposed scheme.",
+    "published": "2024-02-05T15:04:58Z",
+    "updated": "2024-02-19T10:05:55Z",
+    "authors": [
+      "Chuan Fan",
+      "Jianxian Qiu",
+      "Zhuang Zhao"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2208.01260v1",
+    "title": "Well-balanced fifth-order finite difference Hermite WENO scheme for the shallow water equations",
+    "summary": "In this paper, we propose a well-balanced fifth-order finite difference Hermite WENO (HWENO) scheme for the shallow water equations with non-flat bottom topography in pre-balanced form. For achieving the well-balance property, we adopt the similar idea of WENO-XS scheme [Xing and Shu, J. Comput. Phys., 208 (2005), 206-227.] to balance the flux gradients and the source terms. The fluxes in the original equation are reconstructed by the nonlinear HWENO reconstructions while other fluxes in the derivative equations are approximated by the high-degree polynomials directly. And an HWENO limiter is applied for the derivatives of equilibrium variables in time discretization step to control spurious oscillations which maintains the well-balance property. Instead of using a five-point stencil in the same fifth-order WENO-XS scheme, the proposed HWENO scheme only needs a compact three-point stencil in the reconstruction. Various benchmark examples in one and two dimensions are presented to show the HWENO scheme is fifth-order accuracy, preserves steady-state solution, has better resolution, is more accurate and efficient, and is essentially non-oscillatory.",
+    "published": "2022-08-02T05:44:34Z",
+    "updated": "2022-08-02T05:44:34Z",
+    "authors": [
+      "Zhuang Zhao",
+      "Min Zhang"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2207.05258v1",
+    "title": "A fifth-order finite difference HWENO scheme combined with limiter for hyperbolic conservation laws",
+    "summary": "In this paper, a simple fifth-order finite difference Hermite WENO (HWENO) scheme combined with limiter is proposed for one- and two- dimensional hyperbolic conservation laws. The fluxes in the governing equation are approximated by the nonlinear HWENO reconstruction which is the combination of a quintic polynomial with two quadratic polynomials, where the linear weights can be artificial positive numbers only if the sum equals one. And other fluxes in the derivative equations are approximated by high-degree polynomials directly. For the purpose of controlling spurious oscillations, an HWENO limiter is applied to modify the derivatives. Instead of using the modified derivatives both in fluxes reconstruction and time discretization as in the modified HWENO scheme (J. Sci. Comput., 85:29, 2020), we only apply the modified derivatives in time discretization while remaining the original derivatives in fluxes reconstruction. Comparing with the modified HWENO scheme, the proposed HWENO scheme is simpler, more accurate, efficient and higher resolution. In addition, the HWENO scheme has a more compact spatial reconstructed stencil and greater efficiency than the classical fifth-order finite difference WENO scheme of Jiang and Shu. Various benchmark numerical examples are presented to show the fifth-order accuracy, great efficiency, high resolution and robustness of the proposed HWENO scheme.",
+    "published": "2022-07-12T02:07:17Z",
+    "updated": "2022-07-12T02:07:17Z",
+    "authors": [
+      "Min Zhang",
+      "Zhuang Zhao"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2109.02643v2",
+    "title": "Dual camera snapshot hyperspectral imaging system via physics informed learning",
+    "summary": "We consider using the system's optical imaging process with convolutional neural networks (CNNs) to solve the snapshot hyperspectral imaging reconstruction problem, which uses a dual-camera system to capture the three-dimensional hyperspectral images (HSIs) in a compressed way. Various methods using CNNs have been developed in recent years to reconstruct HSIs, but most of the supervised deep learning methods aimed to fit a brute-force mapping relationship between the captured compressed image and standard HSIs. Thus, the learned mapping would be invalid when the observation data deviate from the training data. Especially, we usually don't have ground truth in real-life scenarios. In this paper, we present a self-supervised dual-camera equipment with an untrained physics-informed CNNs framework. Extensive simulation and experimental results show that our method without training can be adapted to a wide imaging environment with good performance. Furthermore, compared with the training-based methods, our system can be constantly fine-tuned and self-improved in real-life scenarios.",
+    "published": "2021-09-06T13:39:54Z",
+    "updated": "2021-11-17T09:26:46Z",
+    "authors": [
+      "Hui Xie",
+      "Zhuang Zhao",
+      "Jing Han",
+      "Yi Zhang",
+      "Lianfa Bai",
+      "Jun Lu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2009.00461v1",
+    "title": "A hybrid WENO method with modified ghost fluid method for compressible two-medium flow problems",
+    "summary": "In this paper, we develop a simplified hybrid weighted essentially non-oscillatory (WENO) method combined with the modified ghost fluid method (MGFM) [28] to simulate the compressible two-medium flow problems. The MGFM can turn the two-medium flow problems into two single-medium cases by defining the ghost fluids status in terms of the predicted the interface status, which makes the material interface \"invisible\". For the single medium flow case, we adapt between the linear upwind scheme and the WENO scheme automatically by identifying the regions of the extreme points for the reconstruction polynomial as same as the hybrid WENO scheme [50]. Instead of calculating their exact locations, we only need to know the regions of the extreme points based on the zero point existence theorem, which is simpler for implementation and saves computation time. Meanwhile, it still keeps the robustness and has high efficiency. Extensive numerical results for both one and two dimensional two-medium flow problems are performed to demonstrate the good performances of the proposed method.",
+    "published": "2020-09-01T14:17:42Z",
+    "updated": "2020-09-01T14:17:42Z",
+    "authors": [
+      "Zhuang Zhao",
+      "Yibing Chen",
+      "Jianxian Qiu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/2002.08816v1",
+    "title": "A Hermite WENO scheme with artificial linear weights for hyperbolic conservation laws",
+    "summary": "In this paper, a fifth-order Hermite weighted essentially non-oscillatory (HWENO) scheme with artificial linear weights is proposed for one and two dimensional hyperbolic conservation laws, where the zeroth-order and the first-order moments are used in the spatial reconstruction. We construct the HWENO methodology using a nonlinear convex combination of a high degree polynomial with several low degree polynomials, and the associated linear weights can be any artificial positive numbers with only requirement that their summation equals one. The one advantage of the HWENO scheme is its simplicity and easy extension to multi-dimension in engineering applications for we can use any artificial linear weights which are independent on geometry of mesh. The another advantage is its higher order numerical accuracy using less candidate stencils for two dimensional problems. In addition, the HWENO scheme still keeps the compactness as only immediate neighbor information is needed in the reconstruction and has high efficiency for directly using linear approximation in the smooth regions. In order to avoid nonphysical oscillations nearby strong shocks or contact discontinuities, we adopt the thought of limiter for discontinuous Galerkin method to control the spurious oscillations. Some benchmark numerical tests are performed to demonstrate the capability of the proposed scheme.",
+    "published": "2020-02-19T15:52:18Z",
+    "updated": "2020-02-19T15:52:18Z",
+    "authors": [
+      "Zhuang Zhao",
+      "Jianxian Qiu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1907.00209v1",
+    "title": "High Sensitivity Snapshot Spectrometer Based on Deep Network Unmixing",
+    "summary": "In this paper, we present a convolution neural network based method to recover the light intensity distribution from the overlapped dispersive spectra instead of adding an extra light path to capture it directly for the first time. Then, we construct a single-path sub-Hadamard snapshot spectrometer based on our previous dual-path snapshot spectrometer. In the proposed single-path spectrometer, we use the reconstructed light intensity as the original light intensity and recover high signal-to-noise ratio spectra successfully. Compared with dual-path snapshot spectrometer, the network based single-path spectrometer has a more compact structure and maintains snapshot and high sensitivity. Abundant simulated and experimental results have demonstrated that the proposed method can obtain a better reconstructed signal-to-noise ratio spectrum than the dual-path sub-Hadamard spectrometer because of its higher light throughput.",
+    "published": "2019-06-29T14:20:05Z",
+    "updated": "2019-06-29T14:20:05Z",
+    "authors": [
+      "XiaoYu Chen",
+      "Xu Wang",
+      "Lianfa Bai",
+      "Jing Han",
+      "Zhuang Zhao"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1906.09462v2",
+    "title": "A hybrid Hermite WENO scheme for hyperbolic conservation laws",
+    "summary": "In this paper, we propose a hybrid finite volume Hermite weighted essentially non-oscillatory (HWENO) scheme for solving one and two dimensional hyperbolic conservation laws. The zeroth-order and the first-order moments are used in the spatial reconstruction, with total variation diminishing Runge-Kutta time discretization. The main idea of the hybrid HWENO scheme is that we first use a shock-detection technique to identify the troubled cell, then, if the cell is identified as a troubled cell, we would modify the first order moment in the troubled cell and employ HWENO reconstruction in spatial discretization; otherwise, we directly use high order linear reconstruction. Unlike other HWENO schemes, we borrow the thought of limiter for discontinuous Galerkin (DG) method to control the spurious oscillations, after this procedure, the scheme would avoid the oscillations by using HWENO reconstruction nearby discontinuities and have higher efficiency for using linear approximation straightforwardly in the smooth regions. In addition, the hybrid HWENO scheme still keeps the compactness. A collection of benchmark numerical tests for one and two dimensional cases are performed to demonstrate the numerical accuracy, high resolution and robustness of the proposed scheme.",
+    "published": "2019-06-22T15:39:32Z",
+    "updated": "2020-02-19T16:24:14Z",
+    "authors": [
+      "Zhuang Zhao",
+      "Yibing Chen",
+      "Jianxian Qiu"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1905.07543v1",
+    "title": "High-SNR snapshot multiplex spectrometer with sub-Hadamard-S matrix coding",
+    "summary": "We present a robust high signal-to-noise ratio (SNR) snapshot multiplex spectrometer with sub-Hadamard-S matrix coding. We demonstrated for the first time that the sub-Hadamard-S matrix coding could provide comparable SNR improvement with Hadamard-S matrix in Hadamard transform spectrometer (HTS). Normally, HTS should change the coding mask to obtain a reasonable spectrum result, causing unexpected time-consuming. An extra imaging path to collect the light intensity of the aperture is added in this paper. Both light intensity of the aperture and overlapped spectra are captured within one shot, turning Hadamard-S matrix coding into sub-Hadamard-S matrix coding. Simulations and experiments show that the proposed method could obtain comparable SNR improvement with the traditional HTS, maintaining snapshot.",
+    "published": "2019-05-18T06:16:14Z",
+    "updated": "2019-05-18T06:16:14Z",
+    "authors": [
+      "Zhuang Zhao",
+      "Lianfa Bai",
+      "Jing Han",
+      "Jiang Yue"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1502.06715v1",
+    "title": "High brightness diode-pumped organic solid-state laser",
+    "summary": "High-power, diffraction-limited organic solid-state laser operation has been achieved in a vertical external cavity surface-emitting organic laser (VECSOL), pumped by a low-cost compact blue laser diode. The diode-pumped VECSOLs were demonstrated with various dyes in a polymer matrix, leading to laser emissions from 540 nm to 660 nm. Optimization of both the pump pulse duration and output coupling leads to a pump slope efficiency of 11% for a DCM based VECSOLs. We report output pulse energy up to 280 nJ with 100 ns long pump pulses, leading to a peak power of 3.5 W in a circularly symmetric, diffraction-limited beam.",
+    "published": "2015-02-24T08:54:26Z",
+    "updated": "2015-02-24T08:54:26Z",
+    "authors": [
+      "Zhuang Zhao",
+      "Oussama Mhibik",
+      "Malik Nafa",
+      "Sébastien Chénais",
+      "Sébastien Forget"
+    ]
+  },
+  {
+    "id": "http://arxiv.org/abs/1307.4541v1",
+    "title": "The resilience of interdependent transportation networks under targeted attack",
+    "summary": "Modern world builds on the resilience of interdependent infrastructures characterized as complex networks. Recently, a framework for analysis of interdependent networks has been developed to explain the mechanism of resilience in interdependent networks. Here we extend this interdependent network model by considering flows in the networks and study the system's resilience under different attack strategies. In our model, nodes may fail due to either overload or loss of interdependency. Under the interaction between these two failure mechanisms, it is shown that interdependent scale-free networks show extreme vulnerability. The resilience of interdependent SF networks is found in our simulation much smaller than single SF network or interdependent SF networks without flows.",
+    "published": "2013-07-17T08:51:28Z",
+    "updated": "2013-07-17T08:51:28Z",
+    "authors": [
+      "Peng Zhang",
+      "Baisong Cheng",
+      "Zhuang Zhao",
+      "Daqing Li",
+      "Guangquan Lu",
+      "Yunpeng Wang",
+      "Jinghua Xiao"
+    ]
+  }
+]
