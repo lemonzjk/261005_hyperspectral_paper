@@ -6,7 +6,7 @@
 
 当前来源白名单与作者例外见 [收录政策](../../src/data/collection-policy.json)，逐项清理决定见 [清理审计](catalog-cleanup.json)。
 
-周峻作者续核（2026-10-12）：复用简称989快照，宽词另读13完整摘要暂排，累计19摘要＋1旧决定、969仅元数据；不是简称全集逐篇排除。Qian姓名API27条完整返回，五Jun记录已录；SUIT四作者固定v1全15页读并关联五作者正式/AM，目录全文计数不变。六其他作者HSI摘要及三差异引用留待领域核验，作者目录未闭环。证据见 [本批来源审计](sources/jun-zhou-initial-qian-suit-version-reading-2026-10-12.json)。官方代码仅记链接；旧记录里的代码、依赖、权重或复现核查不再是当前完成条件。
+周峻作者续核（2026-10-12）：OpenAlex两个档案指定分页6＋833共839源项，含多ORCID/多机构混并线索，不能整批归给目标作者；八新候选仍未决，IF103225身份/正文与SSRN5009494关系、SSRN6802779合格版本优先。简称989快照现134摘要暂排＋1继承旧决定、854仅元数据，不称逐篇排除。共同作者书目新增两篇普通白名单TIP，两套九作者名单均无Jun Zhou；总库392，周峻仍181（102全文/79摘要），目录未闭环。原始证据见 [作者差集](sources/jun-zhou-openalex-author-inventory-2026-10-12.json)、[主要来源与两篇跟踪论文](sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json)。官方代码只记链接；旧记录中的源码、依赖、权重、代码许可或复现核查不列后续待办，历史结果保留。
 
 ## 当前范围内的实际检索
 
@@ -984,3 +984,5 @@
 - 2026-10-12：河海官方共同作者页续核实验室16成果卡/5Jun关联，均已有映射；UEMM会议页PDF实际为旧v3同字节，正式范围继续未决。AAAI2025六作者/DOI关联补强，正式正文访问失败；三分割图接口未得。0新论文/唯一PDF/全文/库图，未以指定代表页证明全集或代码作为待办。[证据](sources/jun-zhou-hhu-author-publication-version-followup-2026-10-12.json)。
 
 - 2026-10-12 / jun-zhou-openalex-author-inventory-2026-10-12：OpenAlex目标ORCID入口6/6及已核目标DOI档案五页833/833，并集839唯一work。171既有目录源映射/187机构源映射/61既有候选映射/420差集定位，八新优先候选pending、1812.04179旧题名按arXiv族重复去重；零新库条目。双档案含拆分/混并线索、第二profile834与查询833差1未明，不能把单页、两档案或姓名串当作者全集。新增IF103225候选（Jun单篇身份、原摘要正文及SSRN5009494关系待）、HVOT SSRN6802779原摘要直接HSI（合格版本待），DINOFuse范围无摘要、Mamba-UNet频率分解未证HSI且来源外。两主要完整摘要与四二级完整摘要实际读，无新PDF/全文/原图；403/TLS及DBLP200验证页不作付费或不存在证明，代码只链接，目录/历年矩阵继续。[原始分页、候选与访问边界](sources/jun-zhou-openalex-author-inventory-2026-10-12.json)。
+
+- 2026-10-12 / jun-zhou-new-candidates-primary-followup-2026-10-12：IF共同作者ORCID21组/单项full-work五作者补核，Jun贡献者ORCID/单位缺失，2025-05和正式卷期2025-12分别保留，身份与SSRN版本关系继续pending；新HVOT SSRN合格版本未得。沿Yuzeng Chen12组书目，新增HucrTrack（TIP2026）与补入既有候选SpectralTrack（TIP2025），均以Crossref九作者/单位及NCBI完整正式摘要核直接HSI且无Jun；另一个新TGRS聚类候选原摘要/作者待。四指定arXiv查询零、IEEE202空、搜索200跳转/DBLP200拒绝页不作公共稿不存在或付费证明。总库392、379分类确认/13暂定、审计369，来源274白名单/17arXiv/101保护例外；Jun181及102全文/79摘要、308原图不变。SpectralTrack代码只留原摘要官方URL，MHT遗留代码许可待办撤销，历史证据保留；没有新PDF/全文/图，不开始宣称历年矩阵或作者全集闭环。[原始来源与边界](sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json)。

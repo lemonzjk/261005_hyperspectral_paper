@@ -2,6 +2,218 @@
   "updatedAt": "2026-10-12",
   "papers": [
     {
+      "id": "hucrtrack-tip-2026",
+      "shortTitle": "HucrTrack",
+      "title": "Beyond Stepwise Modeling: Toward a Unified Contextual Reasoning Framework for Hyperspectral Video Object Tracking",
+      "authors": "Yuzeng Chen, Qiangqiang Yuan, Hong Xie, Xin Su, Yuqi Tang, Renxiang Guan, Li Liu, Xinwang Liu, Liangpei Zhang",
+      "year": 2026,
+      "venue": "TIP",
+      "publicationName": "IEEE Transactions on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tip.2026.3728660",
+      "representation": "高光谱—假彩色双表示与Mamba动态记忆的统一谱空时上下文推理。",
+      "tags": [],
+      "summary": "HucrTrack以每个高光谱立方体及其同步假彩色表示为输入，通过共享权重的双表示骨干和UCRM统一建模谱、空、时上下文。MDU利用Mamba隐状态维护动态记忆，CIU分层注入记忆，SRU选择相关上下文；使用参数高效微调。正式完整摘要报告十个基准，具体数据集、划分及数值未获取。",
+      "input": "高光谱视频立方体及由同一立方体构造的同步假彩色表示；具体波段、传感器、时间窗口及跟踪初始化协议未获取。",
+      "output": "视频中目标的时序跟踪结果；具体坐标参数化和状态更新细节未获取，不输出场景几何或光谱重建。",
+      "mechanism": "共享权重的双表示骨干提取谱空特征；统一上下文推理模块UCRM含MDU、CIU、SRU。MDU通过Mamba隐状态维护逐帧动态记忆，CIU将记忆分层注入谱空骨干特征，SRU选择检索相关上下文增强跟踪表示，在一个递归过程中联合推理谱空时信息。训练采用参数高效微调，具体适配器/低秩实现、骨干结构及损失未在摘要给出。",
+      "readingNote": "NCBI PubMed efetch正式完整摘要及九作者实际阅读，Crossref出版社注册题名/DOI/卷页和作者单位已核。TIP2026卷35、9560–9573。正式正文未获取，IEEE页面本次HTTP202空内容；指定arXiv模型名及共同作者查询零，不证明没有其他公开版本或付费。无新PDF/原图，不推测实验数值；与另一跟踪论文分别记录，未见明确扩展声明。",
+      "paper": "https://doi.org/10.1109/tip.2026.3728660",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "Crossref正式出版社书目与NCBI PubMed完整正式摘要/作者名单核验；正文未得",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-target-tracking",
+          "state-space-models"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整正式摘要明确直接处理高光谱视频；谱空时第三维不是场景几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何使高光谱视频的谱、空、时上下文在同一递归过程中联合交互，改善分步建模的目标跟踪？",
+        "datasets": "摘要报告十个基准；未提供名称、模态组成、规模、谱带和划分，不能将十个全部标为已核HSI数据集。",
+        "experimentSetting": "仅完整正式摘要已读；训练划分、硬件、初始化、指标定义、适配参数与超参数未获取。",
+        "conclusions": "完整正式摘要报告HucrTrack在十个基准的鲁棒性和泛化评估中表现较好；没有数值、排名或统计结果，不宣称所有指标第一。",
+        "limitations": "正式全文、公开作者稿与框架原图尚未获取；模型名/作者指定arXiv零不等于无公开稿。实际采集规格、数据集名单/划分、损失和数值未知，不能只凭非OA索引或HTTP202标为全文付费。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42690998&retmode=xml",
+            "checkedAt": "2026-10-12",
+            "level": "NCBI PubMed完整正式摘要及作者名单（本轮实际阅读）",
+            "supports": [
+              "官方完整摘要直接说明高光谱视频目标跟踪和Mamba隐状态记忆，确认跟踪任务与状态空间方法；参数高效微调不当独立表征预训练任务。",
+              "正式完整作者列表九人，与出版社注册书目逐名一致，不含Jun Zhou；不归目标作者、不扩大来源例外。",
+              "摘要报告十个基准；未提供名称、模态组成、规模、谱带和划分，不能将十个全部标为已核HSI数据集。",
+              "完整正式摘要报告HucrTrack在十个基准的鲁棒性和泛化评估中表现较好；没有数值、排名或统计结果，不宣称所有指标第一。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tip.2026.3728660",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref出版社注册正式书目与完整作者单位",
+            "supports": [
+              "正式题名、DOI、TIP卷页、九作者及其单位；两论文作者均不含Jun Zhou，原始ORCID认证标志保留，不推测日期/版本扩展。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hucrtrack-tip-2026-published",
+            "type": "正式期刊记录",
+            "url": "https://doi.org/10.1109/tip.2026.3728660",
+            "doi": "10.1109/tip.2026.3728660",
+            "year": 2026,
+            "authors": [
+              "Yuzeng Chen",
+              "Qiangqiang Yuan",
+              "Hong Xie",
+              "Xin Su",
+              "Yuqi Tang",
+              "Renxiang Guan",
+              "Li Liu",
+              "Xinwang Liu",
+              "Liangpei Zhang"
+            ],
+            "readingProgress": "abstract_read",
+            "relation": "正式TIP书目与PubMed完整摘要已核，正文未得；没有已确认预印本/会议扩展版本。"
+          }
+        ],
+        "methodFamilyId": "hucrtrack",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "官方完整摘要直接说明高光谱视频目标跟踪和Mamba隐状态记忆，确认跟踪任务与状态空间方法；参数高效微调不当独立表征预训练任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "adcb52d15c49bd8a60d98e458d8fd871c3653c4932123612a516c70683c0e23b",
+          "sourceUrls": [
+            "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42690998&retmode=xml"
+          ]
+        }
+      },
+      "citation": "@article{hucrtrack_tip_2026,\n  title = {Beyond Stepwise Modeling: Toward a Unified Contextual Reasoning Framework for Hyperspectral Video Object Tracking},\n  author = {Yuzeng Chen and Qiangqiang Yuan and Hong Xie and Xin Su and Yuqi Tang and Renxiang Guan and Li Liu and Xinwang Liu and Liangpei Zhang},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2026},\n  volume = {35},\n  pages = {9560--9573},\n  doi = {10.1109/tip.2026.3728660}\n}\n",
+      "frameworkFigures": []
+    },
+    {
+      "id": "spectraltrack-tip-2025",
+      "shortTitle": "SpectralTrack / SpectralTrack+",
+      "title": "Hyperspectral Video Tracking With Spectral–Spatial Fusion and Memory Enhancement",
+      "authors": "Yuzeng Chen, Qiangqiang Yuan, Hong Xie, Yuqi Tang, Yi Xiao, Jiang He, Renxiang Guan, Xinwang Liu, Liangpei Zhang",
+      "year": 2025,
+      "venue": "TIP",
+      "publicationName": "IEEE Transactions on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tip.2025.3569479",
+      "representation": "视觉提示、多模态Transformer适配器与时间记忆提示的高光谱视频跟踪。",
+      "tags": [],
+      "summary": "SpectralTrack结合显式视觉提示、多模态Transformer中的提取—匹配—交互模块及时间提示记忆模块进行高光谱视频跟踪。搜索模板桥接与MLP适配器支持参数高效微调、特征级融合；SpectralTrack和SpectralTrack+是同一论文的两个变体。正式完整摘要报告九个HSV数据集，具体名单、划分和数值未获取。",
+      "input": "高光谱视频的谱空信息及跟踪记忆上下文；视觉提示的实际构造、其他模态是否独立采集、谱带/传感器及初始化协议未获取。",
+      "output": "视频目标的时序跟踪结果；框参数化和状态更新协议未获取，不把多模态特征融合归成高光谱影像重建。",
+      "mechanism": "显式视觉提示处理波段差距和光谱碎片化；提取—匹配—交互模块在多模态Transformer中使用template-bridging search adapter与多层感知机适配器完成跨模态交互。记忆感知模块注入时间提示，细化谱空线索和状态推理；训练使用参数高效微调与特征级融合。摘要未说明全部损失、骨干、适配参数比例或记忆更新公式；两个变体不拆成独立论文。",
+      "readingNote": "NCBI PubMed efetch正式完整摘要及九作者实际阅读，Crossref出版社注册题名/DOI/卷页和作者单位已核。TIP2025卷34、3547–3562。正式正文未获取，IEEE页面本次HTTP202空内容；指定arXiv模型名及共同作者查询零，不证明没有其他公开版本或付费。无新PDF/原图，不推测实验数值；与另一跟踪论文分别记录，未见明确扩展声明。官方代码只记录摘要提供的URL。",
+      "paper": "https://doi.org/10.1109/tip.2025.3569479",
+      "verifiedAt": "2026-10-12",
+      "verificationLevel": "Crossref正式出版社书目与NCBI PubMed完整正式摘要/作者名单核验；正文未得",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-target-tracking",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整正式摘要明确直接处理高光谱视频；谱空时第三维不是场景几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何通过视觉提示、特征融合和时间记忆，在高光谱视频跟踪中缓解波段差距、数据稀缺与时间信息利用不足？",
+        "datasets": "摘要称九个HSV跟踪数据集；名称、规模、波段、划分与各模态输入未获取。",
+        "experimentSetting": "仅完整正式摘要已读；训练划分、硬件、初始化、指标定义、适配参数与超参数未获取。",
+        "conclusions": "完整正式摘要报告SpectralTrack和SpectralTrack+在九个HSV跟踪数据集上的较好效果；没有具体指标，不推测比HucrTrack或其他方法的数值差异。",
+        "limitations": "正式全文、公开作者稿与框架原图尚未获取；模型名/作者指定arXiv零不等于无公开稿。实际采集规格、数据集名单/划分、损失和数值未知，不能只凭非OA索引或HTTP202标为全文付费。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40388267&retmode=xml",
+            "checkedAt": "2026-10-12",
+            "level": "NCBI PubMed完整正式摘要及作者名单（本轮实际阅读）",
+            "supports": [
+              "官方完整摘要直接说明高光谱视频跟踪及多模态Transformer交互，确认跟踪任务和Transformer方法；提示/微调不自动赋予独立表征预训练任务。",
+              "正式完整作者列表九人，与出版社注册书目逐名一致，不含Jun Zhou；不归目标作者、不扩大来源例外。",
+              "摘要称九个HSV跟踪数据集；名称、规模、波段、划分与各模态输入未获取。",
+              "完整正式摘要报告SpectralTrack和SpectralTrack+在九个HSV跟踪数据集上的较好效果；没有具体指标，不推测比HucrTrack或其他方法的数值差异。",
+              "原摘要列出官方代码URL https://github.com/YZCU/SpectralTrack；仅记录链接，未访问仓库。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/tip.2025.3569479",
+            "checkedAt": "2026-10-12",
+            "level": "Crossref出版社注册正式书目与完整作者单位",
+            "supports": [
+              "正式题名、DOI、TIP卷页、九作者及其单位；两论文作者均不含Jun Zhou，原始ORCID认证标志保留，不推测日期/版本扩展。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "spectraltrack-tip-2025-published",
+            "type": "正式期刊记录",
+            "url": "https://doi.org/10.1109/tip.2025.3569479",
+            "doi": "10.1109/tip.2025.3569479",
+            "year": 2025,
+            "authors": [
+              "Yuzeng Chen",
+              "Qiangqiang Yuan",
+              "Hong Xie",
+              "Yuqi Tang",
+              "Yi Xiao",
+              "Jiang He",
+              "Renxiang Guan",
+              "Xinwang Liu",
+              "Liangpei Zhang"
+            ],
+            "readingProgress": "abstract_read",
+            "relation": "正式TIP书目与PubMed完整摘要已核，正文未得；没有已确认预印本/会议扩展版本。"
+          }
+        ],
+        "methodFamilyId": "spectraltrack",
+        "classificationReview": {
+          "reviewedAt": "2026-10-12",
+          "basis": "catalog_and_primary_source",
+          "rationale": "官方完整摘要直接说明高光谱视频跟踪及多模态Transformer交互，确认跟踪任务和Transformer方法；提示/微调不自动赋予独立表征预训练任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "5d7ddce0a0235a3bebb77cf40f8ac280ae4aa03bdf9c5e3391ca30be98cfbe05",
+          "sourceUrls": [
+            "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40388267&retmode=xml"
+          ]
+        }
+      },
+      "citation": "@article{spectraltrack_tip_2025,\n  title = {Hyperspectral Video Tracking With Spectral–Spatial Fusion and Memory Enhancement},\n  author = {Yuzeng Chen and Qiangqiang Yuan and Hong Xie and Yuqi Tang and Yi Xiao and Jiang He and Renxiang Guan and Xinwang Liu and Liangpei Zhang},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2025},\n  volume = {34},\n  pages = {3547--3562},\n  doi = {10.1109/tip.2025.3569479}\n}\n",
+      "frameworkFigures": [],
+      "code": "https://github.com/YZCU/SpectralTrack"
+    },
+    {
       "id": "hs-nerf",
       "shortTitle": "HS-NeRF",
       "title": "Hyperspectral Neural Radiance Fields",
@@ -35240,7 +35452,7 @@
         "datasets": "v5仅35 HSI+35 RGB视频、平均约500帧、25FPS，16波段名义470–620nm、512×256；单目标直立框与11属性。没有40训练声明；表I/IV属性数及作者Demo视频名不同，完整原载荷/配对/划分未核。",
         "experimentSetting": "v5 Windows/i7-7800X3.50GHz/128GB；SSHMG z4/9空间+4光谱bin/clip .2，EMA .0023，余承BACF。OPE首帧GT初始化，DP20像素与success AUC；MHT原HSI，对照RGB或FCI。源码5尺度1.01/ADMM2轮等为当前release，不回填为正式版已验证。",
         "conclusions": "v5 MHT DP/AUC .878/.612，比SSHMG .860/.593及BACF RGB/FCI AUC .540/.578提高；RGB C-COT .617仍高于MHT .612，不宣称全面第一。表III第一为IPR/OPR/DEF/BC/OV，正文误含SV；IV .490非最优，固定端元对照度不适应。E2E-MPT引用MHT .880/.593另留，未合并版本/评测。",
-        "limitations": "全文状态仅v5，正式15页与v1–v4未通读；35序列、离线库/测试隔离及表/代码名字/属性差异待原视频。无物理丰度真值/多seed或真实运行复现。代码atan2/soft bin与Eq1、CLSUnSAL和一与Eq5、Eq9归一符号、构库矩阵方向及FPS口径有差异；当前官方Python工具有5×5 reshape、np.float及零坐标边界问题，仅合成探针，不推真实指标错误。数据/总代码/第三方许可分开待核。",
+        "limitations": "全文状态仅v5，正式15页与v1–v4未通读；35序列、离线库/测试隔离及表/代码名字/属性差异待原视频。无物理丰度真值/多seed或真实运行复现。代码atan2/soft bin与Eq1、CLSUnSAL和一与Eq5、Eq9归一符号、构库矩阵方向及FPS口径有差异；当前官方Python工具有5×5 reshape、np.float及零坐标边界问题，仅合成探针，不推真实指标错误。原视频数据与评测划分仍待核。",
         "dataLinks": [
           "https://www.hsitracking.com/hot2020/"
         ],
@@ -50026,7 +50238,8 @@
         "zhou-scholar-arxiv-2603-09037",
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-scholar-arxiv-2609-37340"
+        "zhou-scholar-arxiv-2609-37340",
+        "spectraltrack-tip-2025"
       ],
       "history": [
         {
@@ -53283,7 +53496,8 @@
         "zhou-scholar-adaptive-multi-stage-fusion-of-hyperspectr-2026",
         "zhou-scholar-arxiv-2603-09037",
         "zhou-dblp-arxiv-2412-00283",
-        "zhou-dblp-arxiv-2404-00272"
+        "zhou-dblp-arxiv-2404-00272",
+        "hucrtrack-tip-2026"
       ],
       "history": [
         {
@@ -54118,7 +54332,9 @@
         "zhou-scholar-multi-modality-siamese-feature-fusion-tran-2023",
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
-        "zhou-strl-hyperspectral-tracking-2025"
+        "zhou-strl-hyperspectral-tracking-2025",
+        "hucrtrack-tip-2026",
+        "spectraltrack-tip-2025"
       ],
       "history": [
         {
