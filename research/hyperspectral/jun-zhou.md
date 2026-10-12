@@ -4,6 +4,8 @@
 
 2026-10-13共同作者目录与一主图续核：Jocelyn Chanussot的ORCID绑定本人学术主页；官方整名arXiv99/99书目、Crossref ORCID过滤293/293注册作品均只有一条完整Jun Zhou署名，对应已录CRF；正式记录还登记目标Jun的ORCID，未增加作者论文。ORCID过滤缺少已知CasFormer，不能视为作者全集；GIPSA链接403不当作论文全文付费证明。EGU-Net从既有Hong候选转为普通arXiv2021条目，仅固定v1首页与第3页Fig2选读，保留一张像元版整体原框架，不读全文或其他版本；TNNLS不在白名单，只关联正式书目。既有CRF已有可用稿/图，不追加arXiv v1/v2或正式版正文。总库401、原图339，Hong新候选2已录/25待核；Jun确认181（102全文/79摘要）不变。其余97条arXiv摘要未逐篇阅读，不声称作者目录完整；代码只链接。[本轮原始清单与主图](sources/jun-zhou-chanussot-bibliography-egu-2026-10-13.json)。
 
+2026-10-13目标ORCID注册目录续核：Crossref精确过滤0000-0001-5822-8233，120总项/120唯一DOI均有完整Jun Zhou及目标ORCID，全部映射既有记录：77目录源项、41既有排除、2既有待核；零漏映射不等于作者全集。仅书目/作者核对，未新增摘要、PDF或框架阅读。Robust Co-Training物理输入波段仍待；SOC的SSRN7358018/7404220同题名/同序14作者关联为同论文书目版本，不再要求逐版正文，先后与正文/实验相同不作断言。SOC直接HSI及目标身份已核，合格来源仍待，不扩张181作者例外。总库401/原图339不变。[原始注册目录与映射](sources/jun-zhou-target-crossref-orcid-directory-2026-10-13.json)。
+
 ## 当前目录
 
 已确认Griffith作者专项181条，全部为直接高光谱；79条摘要级、102条全文级。会议、期刊及预印本按实际版本分别记录，不等于181个独立方法。全文级只对应实际读过的版本；官方代码只记录链接，不审查代码或运行复现。
@@ -288,7 +290,7 @@ Yuntao Qian无主题姓名查询27条完整返回：五条含完整Jun Zhou均�
 
 后续只更新本入口的当前状态和待办；新增论文事实进入目录，核验证据进入 `sources/` 与 `survey.json`。全领域场所矩阵见 [coverage.md](coverage.md)，作者来源筛查完成不等于全领域覆盖完成。
 
-- [SSRN版本关系、共同作者目录及原始证据](sources/jun-zhou-source-version-crosscheck-2026-10-12.json)、[实际访问与下载状态](sources/jun-zhou-source-version-crosscheck-2026-10-12-access.json)：书目不记全文；两SSRN关系未决、四领域候选后置。
+- [SSRN版本关系、共同作者目录及原始证据](sources/jun-zhou-source-version-crosscheck-2026-10-12.json)、[实际访问与下载状态](sources/jun-zhou-source-version-crosscheck-2026-10-12-access.json)：书目不记全文；SOC两SSRN已书目归并、另一SSRN与arXiv关系仍待；四领域候选后置。
 
 - [显著性AM全文、原图和边界/SIFT书目分类证据](sources/jun-zhou-feature-boundary-public-materials-2026-10-12.json)、[原始访问](sources/jun-zhou-feature-boundary-public-materials-2026-10-12-access.json)：39页全读/三图，三边界任务与会议来源纠正；其他正文保留缺口。
 

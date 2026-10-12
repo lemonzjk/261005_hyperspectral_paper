@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词待核。
-- 最新：Hong73精选/arXiv75已查，27新HSI题名已录SpectralFormer/EGU-Net，余25待核。Chanussot整名arXiv99/99、Crossref ORCID过滤293/293，唯一Jun命中已有CRF/目标ORCID；此过滤漏CasFormer，不是全集。EGU-Net仅v1首页/第3页一主图，按arXiv入库、TNNLS只书目；CRF不补其他版本。CasFormer主图齐。IF103225普通白名单入库、SSRN五作者去重；Jun身份待，网页182含此1未核，确认专项181。已得图不追全文。UEMM/AdvMIM代表稿排除；OpenAlex839/420差集、834/833差1、HVOT合格版/Phase冲突、编辑/M2、三分割输入待。作者先、历年矩阵后。
+- 最新：目标ORCID Crossref过滤120/120，77目录/41既有排除/2待核，非作者全集。SOC两SSRN同题/同序14作者书目归并，不逐版读；合格来源仍待。Hong73精选/arXiv75已查，27新HSI已录2/待25；Chanussot99/293唯一Jun为已有CRF，不补其他版本。EGU-Net仅v1第3页主图、arXiv入库，TNNLS只书目。CasFormer主图齐。IF103225普通库入录/SSRN去重，Jun身份待，网页182含此1未核，确认专项181。已得图不追全文。UEMM/AdvMIM代表稿排除；OpenAlex839/420差集、834/833差1、HVOT/Phase、编辑/M2、三分割输入待。作者先、历年矩阵后。
