@@ -982,3 +982,5 @@
 - 2026-10-12：Attend关联博士论文第4章37页完整阅读（补35新章页），另读引言3页/出版清单1页；整理3章节原图及协议/结果，正式2019期刊仍摘要级，两会议稿只作关联。0新论文/正式全文，Jun102全文/79摘要，作者目录及历年覆盖继续。[证据](sources/jun-zhou-attend-thesis-chapter-full-reading-2026-10-12.json)。
 
 - 2026-10-12：河海官方共同作者页续核实验室16成果卡/5Jun关联，均已有映射；UEMM会议页PDF实际为旧v3同字节，正式范围继续未决。AAAI2025六作者/DOI关联补强，正式正文访问失败；三分割图接口未得。0新论文/唯一PDF/全文/库图，未以指定代表页证明全集或代码作为待办。[证据](sources/jun-zhou-hhu-author-publication-version-followup-2026-10-12.json)。
+
+- 2026-10-12 / jun-zhou-openalex-author-inventory-2026-10-12：OpenAlex目标ORCID入口6/6及已核目标DOI档案五页833/833，并集839唯一work。171既有目录源映射/187机构源映射/61既有候选映射/420差集定位，八新优先候选pending、1812.04179旧题名按arXiv族重复去重；零新库条目。双档案含拆分/混并线索、第二profile834与查询833差1未明，不能把单页、两档案或姓名串当作者全集。新增IF103225候选（Jun单篇身份、原摘要正文及SSRN5009494关系待）、HVOT SSRN6802779原摘要直接HSI（合格版本待），DINOFuse范围无摘要、Mamba-UNet频率分解未证HSI且来源外。两主要完整摘要与四二级完整摘要实际读，无新PDF/全文/原图；403/TLS及DBLP200验证页不作付费或不存在证明，代码只链接，目录/历年矩阵继续。[原始分页、候选与访问边界](sources/jun-zhou-openalex-author-inventory-2026-10-12.json)。
