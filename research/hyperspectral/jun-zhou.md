@@ -20,6 +20,10 @@
 
 新增优先身份待办：Phase-Locked SNR稿固定v2的PDF首页五作者含Jun Zhou，官网/API却仅Judy X Yang；重取PDF与旧文件字节相同。八页全文、框架及表图已整理，撤销旧“无Jun”分流；原稿无单位/作者ORCID，Griffith单篇归属及名单冲突未明，暂不增加已确认181目录。IF103225出版社明确OA Full，但实际正文/作者单位仍未取得，继续免费材料待办，不标付费。[本轮证据](sources/jun-zhou-if-phase-author-conflict-2026-10-12.json)。
 
+最新作者差集范围/主图续核：旧OpenAlex420未映射项中309有摘要，两组关键词定位14项，完整二级摘要实际读；不将其余295摘要和111无摘要视为已排除。茶芽2018注册原摘要的HSI指色彩空间，Xiemisitai2013的VoR首页/第二页仅ETM+/Quickbird及hue-saturation-intensity，葡萄叶2021注册原摘要只有RGB/MS/热红外融合，三条非直接HSI排除，未将这些同名作者归Griffith。Hatu2016则在原始Nature摘要/Hyperion段明确242带传感器、实际198带，确是直接HSI；Jun正式单位长安大学/兰州公司，Scientific Reports来源外，身份/合格来源单列候选，不误排纯MS，不扩充181作者例外。[本轮证据](sources/jun-zhou-openalex-difference-scope-2026-10-12.json)。
+
+IF103225只取一张主框架：出版社已核PII的gr2高清原图2664×1624整体预训练/微调流程已取得，图内HSI/LiDAR、邻域patch、跨源Transformer、动量编码/CPCL及classification head可见，直接HSI有原图证据。仅保留这张，attention部件图/缩略图不入资料；正式图注、正文图号及页码未得留白。图不提供Jun单位，身份与SSRN元数据去重仍待，保持候选而非作者目录。按新约定主框架资料已满足，全文/其他版本/其他图不再作为待办。[主框架原图](sources/jun-zhou-openalex-difference-scope-2026-10-12-if103225-main-framework.jpg)。
+
 资料整理约定已简化（用户2026-10-12最新要求）：每篇只需一个可用版本、一张最主要的原框架图；只读确认作者、高光谱范围和定位图必要内容，不逐页阅读全文、不逐版本检查、不详细整理实验。以下此前已完成的全文阅读事实保留；其他版本正文/其他图/实验细节不再列后续待办。DECSC本轮只保留固定v2的Fig2第5页一张主框架图。
 
 最新作者差集/共同作者续核：OpenAlex混并档案834与作品查询833的差1已定位至2024年profile62/查询61，规范作者字段与include_xpac=true两次61/61且ID与旧2024全同，未定位额外work或原因；ORCID入口新6/6也与旧同ID，元数据比较不作六篇全文阅读。Fengchao Xiong精确整名、不加主题的arXiv查询成功10/10，完整十原摘要已读：七含Jun均归已有七条，SUIT预印本四作者不覆盖正式五作者；其余DECSC和BHCL均无Jun。限定查询不闭合姓名变体/正式发表全集，839/420差集未逐篇排除。[本轮证据](sources/jun-zhou-openalex-xiong-decsc-2026-10-12.json)。

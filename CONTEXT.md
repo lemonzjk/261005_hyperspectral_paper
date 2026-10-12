@@ -33,4 +33,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID2、DBLP9、Scholar6、arXiv快照0原稿范围待核、正式版仍待，CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、9未决；2直接HSI来源外候选未找到合格版本。原31资料队列已读436页/66图（21AM/6VoR/4未标稿），不代表作者全集。甘蔗/DSAB版本差异、NSP/KUM机构及两编辑范围见jun-zhou.md；arXiv其他姓名/宽词待核。
-- 最新：OpenAlex839源项/420差集未逐篇审查；834/833差1在2024档案62/查询61，ID/原因待。Xiong精确arXiv10/10，七Jun均已录；DECSC v2已读十四页/一主图入TGRS，无Jun；BHCL仅三页选读，HSI输入待。编辑12242四页已读，Jun/HSI概述已核，合格版待；M2确认Jun Griffith，HSI输入/合格版待。Primer/HyperSIGMA24/40页全读、4/9图入库，无Jun。图聚类3464648无Jun，领域材料待；FDNet/GPINet/SAPNet仅许可/提交包，HSI输入待。IF身份/OA正文/SSRN关系、HVOT合格版、Phase作者冲突待；限定作者检索非全集，详见jun-zhou.md。作者/材料先、历年矩阵后。
+- 最新：OpenAlex839源项/420差集未全审；309有摘要、关键词定位14，茶芽/色彩空间/葡萄融合3非HSI已排；Hatu确认198带Hyperion、来源与身份待。834/833差1在2024档案62/查询61，原因待。IF103225候选主框架已得，Jun身份/SSRN关系待；HVOT合格版、Phase作者冲突待。Xiong精确arXiv10/10，七Jun已录；DECSC一主图入TGRS。编辑12242/M2合格版及M2输入待；Primer/HyperSIGMA免费24/40页已读、4/9图入库，无Jun。图聚类3464648无Jun，材料待；FDNet/GPINet/SAPNet输入待。限定查询非全集，详见jun-zhou.md；作者目录先、历年矩阵后。
