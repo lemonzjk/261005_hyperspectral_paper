@@ -17,8 +17,8 @@
 
 ## 当前状态
 
-- 总库409，396分类确认（审计386）、13暂定；182标签（任务71/方法98/应用13）。三维126，数据资源2，原图348。
-- 来源白名单284/arXiv24/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
+- 总库412，399分类确认（审计389）、13暂定；182标签（任务71/方法98/应用13）。三维126，数据资源2，原图351。
+- 来源白名单287/arXiv24/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
 - 来源范围、阅读深度、资料状态独立；PDF链接不表示已读，原图阻拦不表示全文付费。桌面/手机筛选与详情已核；dev可上传/替换≤10MB，FVMGN补图待核。
 - CVPR/ICCV/NeurIPS/ICML等指定查询有闭环，非全领域完成；矩阵只白名单，见coverage.md。
 
@@ -27,5 +27,6 @@
 - src/data/catalog.json事实/分类/图；collection-policy.json来源与保护ID；library-groups.ts导航；materials.ts资料状态。
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
-- 最新：Griffith旧186继承排除均有处置：179保留声明范围排除、5重开、1补录PR2018导读、1书籍容器关联。164机构摘要及22其他证据/限制已评估，非作者全集。新导读有四项HSI实质内容、Jun单位已核，所用接受稿无图；三普通PR参考线索入现有survey。目标ORCID120注册77目录/39排除/4待核不变。
-- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并415未映射；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
+- 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
+- 最新：839混并索引174目录/186Griffith/76survey/403未映射；第6日文译题疑似旧JSTARS，DOI未核不合并。IF二级单位CNPC、原始身份仍待；姓氏HSI查询92均旧快照，无新源项。三PR引用论文普通收录，各一主图、零新PDF/摘要/全文；Jun确认数不变。
+- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并403未映射、6日文潜在重复；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
