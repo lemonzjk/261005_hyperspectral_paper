@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：高红民指定ORCID注册93项，4条Jun署名已映射；91标Hongmin Gao/2标Peipei Xu的ORCID位置差异保留。机构旧精选29条非全集；指定arXiv9含同名/简称，不批量认身份。SFA跨域HSI检测、DOCNN分类各一个版本/一主图入普通arXiv；GRSL仅书目关联。另29白名单题名待核，三分割输入仍待；2PDF/17页只下载，0新全文/代码访问。
+- 最新：Xin Lyu指定注册46项、Anzhu Yu公开ORCID92组137记录/指定arXiv7项，Jun字段6次去重5DOI均已有机构记录。9空贡献者项有同DOI其他作者记录，原字段保留；指定ORCID1项挂Kangming Du。已知DDFNet漏出证明非全集；Yu注册查询429未作零结果。新增2题名候选；Active Dense关联IJRS2021，只走arXiv。0新论文/摘要/PDF/全文/图/代码访问。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
