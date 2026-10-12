@@ -43700,12 +43700,12 @@
       "representation": "计算高光谱成像：用 RGB 引导 CASSI 重建，通过级联注意力恢复高质量 HSI。",
       "tags": [],
       "summary": "CasFormer通过双成像机制融合RGB与CASSI信息，以级联注意力对齐空间信息并恢复光谱序列，再以解耦损失约束空间一致性与光谱保真；主要摘要报告多个数据集的成像结果。",
-      "input": "CASSI相关光谱观测与高空间分辨率RGB图像；具体输入张量、掩模和光学配置待正文核验。",
+      "input": "RGB图像、CASSI编码观测与掩模（主框架图标注RGB/Coded/Mask）；具体张量定义及光学配置未核。",
       "output": "重建高光谱图像。",
       "mechanism": "级联Transformer注意力块完成空间一致性对齐与光谱序列恢复，解耦损失引入空间/光谱物理约束。摘要没有明确联合优化光学编码或采样掩模。",
-      "readingNote": "精确DOI的Griffith主要完整原摘要本轮实际读，Jun7205绑定明确。CasFormer以RGB增强CASSI的高光谱重建，级联注意力与物理约束解耦损失明确；补光谱重建。摘要未证明联合设计/优化光学采样，按现有严格定义撤销computational-imaging标签。HAL精确DOI及标题查询均零，仅该源/查询；正文未得，官方代码只留URL。",
+      "readingNote": "精确DOI的Griffith主要完整原摘要本轮实际读，Jun7205绑定明确。CasFormer以RGB增强CASSI的高光谱重建，级联注意力与物理约束解耦损失明确；补光谱重建。摘要未证明联合设计/优化光学采样，按现有严格定义撤销computational-imaging标签。HAL精确DOI及标题查询均零，仅该源/查询；正文未得，官方代码只留URL。 已取得并核对一张出版社整体主框架原图（gr2资源），确认RGB/Coded/Mask输入及重建HSI输出；仅保留此主图，原文图注/正式图号/页码未得。沿用既有Griffith作者身份，不逐版或逐页读，不追加实验整理，仍摘要级。",
       "paper": "https://www.sciencedirect.com/science/article/abs/pii/S1566253524001866",
-      "verifiedAt": "2026-10-12",
+      "verifiedAt": "2026-10-13",
       "verificationLevel": "primary_abstract_verified",
       "library": {
         "categoryIds": [
@@ -43775,6 +43775,15 @@
             "supports": [
               "此查询返回numFound0/docs空；未取得作者稿，不作收费或全网无公开版判断。"
             ]
+          },
+          {
+            "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1566253524001866-gr2_lrg.jpg",
+            "checkedAt": "2026-10-13",
+            "level": "出版社主要框架原图（图像内容已核）",
+            "supports": [
+              "主图明确RGB、Coded、Mask输入，以及经Encoder/Decoder和残差输出Reconstructed HSI的整体流程。",
+              "主图CA Block及同一面板MSSA/SFCA、FFN结构可见；只确认所示框架，不新增实验/性能或光学采样联合优化结论。"
+            ]
           }
         ],
         "versions": [
@@ -43789,7 +43798,7 @@
         ],
         "methodFamilyId": "zhou-scholar-casformer-cascaded-transformers-for-fusion-2024",
         "classificationReview": {
-          "reviewedAt": "2026-10-12",
+          "reviewedAt": "2026-10-13",
           "basis": "catalog_and_primary_source",
           "rationale": "精确DOI的Griffith主要完整原摘要本轮实际读，Jun7205绑定明确。CasFormer以RGB增强CASSI的高光谱重建，级联注意力与物理约束解耦损失明确；补光谱重建。摘要未证明联合设计/优化光学采样，按现有严格定义撤销computational-imaging标签。HAL精确DOI及标题查询均零，仅该源/查询；正文未得，官方代码只留URL。",
           "evidenceFields": [
@@ -43800,15 +43809,33 @@
             "mechanism",
             "readingNote"
           ],
-          "evidenceDigest": "d99a72ad4fc8a68e0c8849ebbd0bb7dd0a8084274c1dee4b700a207f6c0a4abf",
+          "evidenceDigest": "79a46f15ed5232cab847cac050215c71e37a6adaa39c14f61fe5eac1f1cb0fca",
           "sourceUrls": [
             "https://experts.griffith.edu.au/7205-jun-zhou",
-            "https://www.sciencedirect.com/science/article/abs/pii/S1566253524001866"
+            "https://www.sciencedirect.com/science/article/abs/pii/S1566253524001866",
+            "https://ars.els-cdn.com/content/image/1-s2.0-S1566253524001866-gr2_lrg.jpg"
           ]
         }
       },
       "citation": "@article{zhou-scholar-casformer-cascaded-transformers-for-fusion-2024,\n  title = {CasFormer: Cascaded transformers for fusion-aware computational hyperspectral imaging},\n  author = {Chenyu Li and Bing Zhang and Danfeng Hong and Jun Zhou and Gemine Vivone and Shutao Li and Jocelyn Chanussot},\n  year = {2024},\n  doi = {10.1016/j.inffus.2024.102408}\n}\n",
-      "code": "https://github.com/danfenghong/Information_Fusion_CasFormer"
+      "code": "https://github.com/danfenghong/Information_Fusion_CasFormer",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S1566253524001866-gr2_lrg.jpg",
+          "paperUrl": "https://www.sciencedirect.com/science/article/abs/pii/S1566253524001866",
+          "sourceVersion": "Information Fusion2024正式论文出版社资源S1566253524001866",
+          "figureLabel": "主要框架图（出版社gr2资源）",
+          "caption": "RGB、编码观测与掩模输入级联CA Block编码—解码网络，经降采样、上采样和跳连，输出重建高光谱图像；原图同一面板还展示MSSA/SFCA和FFN结构。说明仅依据图内文字，未取得正文原图注。",
+          "verificationNote": "已视觉核对出版社高清原始整体图及图例，PII与既有论文URL一致，完整输入—重建输出及级联模块可见。仅保留此一张主要原图；gr1为结果对比不收录，不重绘，不猜正式正文图号/PDF页码，不记新全文阅读。",
+          "path": "figures/zhou-scholar-casformer-cascaded-transformers-for-fusion-2024/framework-1.jpg",
+          "width": 2895,
+          "height": 1706,
+          "verifiedAt": "2026-10-13",
+          "verificationStatus": "verified",
+          "sha256": "4e9616c86b34ae81e12dd05c1a46fbba5798aec984780b0eeb9c5d349e784834",
+          "attribution": "Chenyu Li, Bing Zhang, Danfeng Hong, Jun Zhou, Gemine Vivone, Shutao Li, Jocelyn Chanussot · Information Fusion 2024"
+        }
+      ]
     },
     {
       "id": "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
