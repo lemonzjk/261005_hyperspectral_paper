@@ -3,8 +3,8 @@ import type { Paper } from './types';
 export type MaterialStatus = 'full_text' | 'partial_text' | 'figures' | 'restricted' | 'pending';
 export const materialLabels: Record<MaterialStatus, string> = {
   full_text: '全文已整理',
-  partial_text: '部分正文已核 · 待补信息',
-  figures: '原图已获取 · 正文待核',
+  partial_text: '部分正文已核',
+  figures: '原图已获取',
   restricted: '原图来源访问受限',
   pending: '资料待获取或核验',
 };
