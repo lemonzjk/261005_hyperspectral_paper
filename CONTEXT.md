@@ -32,4 +32,4 @@
 - public/figures/和research/figures.json：原图与续接；figures.py init/queue/add/attempt。
 - 作者先查漏，不增笔记。周峻181条中80条符合普通总库口径、101条来源例外。79摘要/102全文；ORCID1、DBLP8、Scholar5、arXiv快照0原稿范围待核，医学综述正式候选仍待；CV3未确认发表，另XXXX占位，作者目录未闭环。jun-zhou.md维护当前待办，archive/jun-zhou/存日志/笔记。
 - Griffith profile7205全387关联项，175源项匹配168目录ID、8未决；2直接HSI来源外候选未找到合格版本。专项待办见jun-zhou.md；其他姓名/宽词仍待。
-- 最新：Jing Wang/Jianfeng Lu的Crossref13/61中9/13个Jun均映射既有目录或排除，无新Jun。两旧排除以完整原摘要复核：PMDet仅可见光/红外，WS-Net++为双时相变化检测。TM-MOE新TGRS候选无Jun，原摘要/主图未得，IEEE418不当付费；ORCID过滤非全集（Lu漏旧SSRT，Wang公开0组不当无作品）。Judy别名5项无Jun、身份未转移；整名漏阳性。原839混并索引5日文翻译线索转survey，415未映射，未确认重复；J-GLOBAL503。Phase署名冲突、IF身份待，Jun181/网页182不变。Shutao新已录2/待4，Vivone1/待9，Hong2/待25；Zhuanfeng4待来源/范围。目标ORCID120映射非全集；SOC来源待。其他旧题名排除需必要原摘要复核；OpenAlex差集、HVOT、编辑/M2、三分割输入待。作者先、历年矩阵后。
+- 最新：Griffith旧186继承排除中164有原摘要；本轮实际读39，另5份单版本仅核必要输入段，复用RemoteCLIP/太阳能板既有RGB证据。32旧候选补证、8旧书目排除接survey；零新Jun/库图。其余147未完成本轮复核，零关键词不当全排除。Jing/Lu注册13/61的Jun均映射，非全集；TM-MOE新TGRS候选原摘要/主图未得，IEEE418不当付费。Judy整名漏阳性；原839混并索引5日文翻译线索待，415未映射。Phase署名冲突、IF身份待，Jun181/网页182不变。Shutao新已录2/待4，Vivone1/待9，Hong2/待25；Zhuanfeng4待来源/范围。目标ORCID120映射非全集；SOC来源待。OpenAlex差集、HVOT、编辑/M2、三分割输入待。作者先、历年矩阵后。
