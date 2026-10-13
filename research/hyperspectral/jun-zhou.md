@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-14皮肤第一作者Yanyang Gu加skin/disease限定官方arXiv查询0、精确注册同题四人/目标Jun ORCID；不证明无公开稿，不推RGB，既有目标身份保留，实际HSI范围/合格版本继续待。Jun182不变；领域2018第三十项9新3主图，总833，114现33关联/2排/79待，两已读版本关系待，其他作者/年继续。[有限版本定位与单版主要图](sources/arxiv-2018-third-ten-hsi-directory-2026-10-14.json)。
+
 2026-10-14 HVOT第一作者Yuzeng Chen指定官方arXiv姓名查询三书目均异题/不同作者组合且无Jun字段，不关联、不读异稿摘要/正文，不证明作者全集或无合格版本，原摘要/署名证据保留、来源继续待。Jun182不变；领域2018原第二十项8新6主图，总824，114为24关联/2排/88待（Rank-1关系待），其他作者/年继续。[有限版本定位与主要图](sources/arxiv-2018-second-ten-hsi-directory-2026-10-14.json)。
 
 2026-10-14 ASTER精确原注册确认Journal of Earth Science2014、五作者/第二Jun，无原摘要/单位/ORCID；相同DOI OpenAlex无摘要且Jun Wei二级名不判目标或异人，另一期刊/NASA规格TLS失败，实际输入/范围/身份/合格来源待，不重复旧Springer挑战或称付费。Jun182不变；领域2018原前10九新五主图，总816，114为16关联/1排/97待，其他作者/年继续。[原书目与单版主要图](sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json)。
