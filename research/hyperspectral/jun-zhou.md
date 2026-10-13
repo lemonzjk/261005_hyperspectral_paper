@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-13合著者书目与受限主图续核：Huanfa Chen精确整名arXiv8/8、注册ORCID过滤Crossref20/20均只核题名/完整作者字段，0完整Jun Zhou。已知IF103225五作者正式书目未登记Huanfa ORCID，因而未进入过滤集合；零项不证明没有合著或作者全集，IF的Jun原始单篇身份仍待，不能把Huanfa的UCL单位转给Jun。三指定arXiv定位查询未匹配AutoRSISC、SVM和两个原型分类候选，四条保持身份/直接HSI范围未决。BABS、SiamBAG各一次官方图接口418，原图未得，留白且不重复追这两个入口；没有新摘要/PDF/全文/原图或代码访问。总库519、Jun确认182不变。[Huanfa书目与阳性对照](sources/jun-zhou-huanfa-bibliography-control-2026-10-13.json)、[四候选与两图入口](sources/jun-zhou-cv-version-and-figure-locators-2026-10-13.json)。
+
 2026-10-13 DINOFuse与未映射视觉条目续核：DINOFuse的Crossref同题排序前8、arXiv指定定位词及第一作者Wangzhi Xing整名4/4书目未定位对应合格版本；其中Hy-Tracker是既有另一论文，不当作本稿版本。OpenAlex仅SSRN位置、无摘要/PDF，Jun的Griffith原样单位为二级索引线索，混并档案ORCID不升级单篇身份确认。SSRN403保留访问限制，等待新的公开稿/原始输入或身份说明，不重复受限入口。[DINOFuse证据](sources/jun-zhou-dinofuse-source-followup-2026-10-13.json)。
 
 既有397条未映射混并索引中的AutoRSISC、Active learning SVM和NCPRC三篇转为显式范围/身份待核，现394条未映射、79条survey关联；三来源均不在白名单，不新增作者例外。Crossref确认SVM于2014首次在线、2016卷75(3):1427–1442，分别保留。辽宁工业大学/上海交大单位仅为单篇二级索引，不能凭混并ORCID认定目标或异人；NCPRC一个完整索引摘要未列四数据集名/实际谱带，其他两篇未得原始摘要。0新目录/PDF/主图/全文，周峻确认182不变；只核这三条，不称差集全审。[三条书目与边界](sources/jun-zhou-openalex-unmapped-cv-followup-2026-10-13.json)。

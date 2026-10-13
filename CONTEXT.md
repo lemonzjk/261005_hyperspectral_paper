@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：DINOFuse仅SSRN、无摘要/PDF；题名及第一作者arXiv4/4书目未定位合格版本，范围与原始单篇身份仍待，等待新线索、不重复受限入口。混并作者差集3篇CV转显式未决；SVM的2014首次在线/2016卷期分记，不凭混并ORCID认定目标或异人。ECCV2014—2020补10篇；2014/2016六篇主图待补，2018/2020四篇各一主图；2010/2012关键词扫描排除11泛光谱候选，年度全集仍待。
+- 最新：Huanfa指定arXiv8/Crossref ORCID20书目无完整Jun，但过滤漏已知IF（未登记Huanfa ORCID），不能视作者全集或身份判定。四CV候选的限定arXiv定位未匹配稿；BABS/SiamBAG图接口各418，主图留白、不重复追。DINOFuse仍仅SSRN/无摘要PDF，等待新原始身份/输入或合格版本线索。SVM的2014在线/2016卷期分记。ECCV2014—2020补10篇，2014/2016六篇主图待补；2010/2012题名关键词扫描排除11泛光谱候选，年度全集仍待。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC两个SSRN版本已对账但仍无合格来源，HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并394未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
