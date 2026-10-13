@@ -17,8 +17,8 @@
 
 ## 当前状态
 
-- 总库442，429分类确认（审计419）、13暂定；184标签（任务73/方法98/应用13）。三维126，数据资源2，原图377。
-- 来源白名单299/arXiv42/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
+- 总库456，443分类确认（审计433）、13暂定；184标签（任务73/方法98/应用13）。三维126，数据资源2，原图391。
+- 来源白名单311/arXiv44/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
 - 来源范围、阅读深度、资料状态独立；PDF链接不表示已读，原图阻拦不表示全文付费。桌面/手机筛选与详情已核；dev可上传/替换≤10MB，FVMGN补图待核。
 - CVPR/ICCV/NeurIPS/ICML等指定查询有闭环，非全领域完成；矩阵只白名单，见coverage.md。
 
@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：Zhuo Zheng指定arXiv34书目无Jun，3HSI题名候选未读摘要，不排除HVOT。既有六候选续收修补/PRISMA融合基准/MUMLP分类/MAFNet去噪/免调参反卷积/PnP解混；各一版，4主图、2无独立框架留白。TGRS2023白名单关联arXiv2022v2，GRSL2022来源外只书目关联。6PDF111页为下载计数，0新全文/代码访问；Jun及四IJCAI范围未决不变，目录/历年查漏继续。
+- 最新：Zhuo三HSI分类候选续收HOpenCls/SSDGL/FPGA，各一版一主图；FPGA关联TGRS2020，SSDGL的TCYB2022来源外只书目关联。CVPR/ICCV2025共5572题名、42关键词定位：11新增/4既有/27摘要暂排，新增均一版一主图；DAPNet§3.6明确CAVE高光谱扩展，通用PAN/MS原图保留。合计14篇14图、0新全文/代码访问；无关键词题名、历年/作者未决继续，不称全集完成。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
