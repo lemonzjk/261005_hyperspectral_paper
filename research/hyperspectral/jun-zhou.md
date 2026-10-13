@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-13作者差集种子/在轨两条续核：种子表型综述的原始开放XML有实质HSI系统、处理与应用内容，Jun署名关联浙江大学/新疆农业大学，无个人ORCID；原始2023在线/正式2024卷期分记。ICICML在轨稿Crossref的Jun单位为Shanghai Institute of Satellite Engineering，二级摘要只称FY-3谱成像仪、未给型号/谱带，IEEE202为空。单位差异不确认异人或目标，两来源不在白名单；两指定arXiv查询各0/0不证明无合格版本。两条转显式pending，混并索引现392未映射/81survey关联；其他未映射不按无关键词排除。0新目录/PDF/全文/图/科学代码访问，总库588、Jun确认182不变。[原始身份、必要范围及逐项边界](sources/jun-zhou-unmapped-seed-orbit-primary-scope-2026-10-13.json)。
+
 2026-10-13海洋塑料综述合格来源定位：七作者Crossref注册表含目标Jun ORCID；Dayan Guan整名字符串arXiv26/26与marine plastic题名3/3仅书目核对，未匹配目标稿，不确认每项自然人身份或作者全集，不证明没有公开版本。直接HSI范围与白名单/arXiv来源仍待；无无关摘要/PDF或科学代码访问，确认Jun182不变。[原始注册与指定查询](sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json)。
 
 2026-10-13皮肤候选共同作者新公开定位：Zongyuan Ge学术主页只有五篇2023—2026代表作，未定位原跨域皮肤分类稿；主页所链Monash实验室403，无实际输入/正文新证据，原候选仍待。代表作缺席不证明论文不存在或范围外，不重复失败入口；未下载无关论文、不访问科学代码。当前确认作者182不变。[定位证据](sources/arxiv-2012-first-half-hsi-mainframes-2026-10-13.json)。
