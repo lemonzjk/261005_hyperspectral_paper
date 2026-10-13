@@ -107107,6 +107107,1063 @@
         "sourceUrl": "https://arxiv.org/pdf/1710.07723v1",
         "checkedAt": "2026-10-14"
       }
+    },
+    {
+      "id": "feature-sampling-hsi-cell-classification-arxiv-2017",
+      "shortTitle": "Data-driven feature sampling",
+      "title": "Data-driven Feature Sampling for Deep Hyperspectral Classification and Segmentation",
+      "authors": "William M. Severa, Jerilyn A. Timlin, Suraj Kholwadwala, Conrad D. James, James B. Aimone",
+      "year": 2017,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1710.09934",
+      "representation": "用密集网络分类、卷积网络生成掩膜；按输入连接权重排序逐步去除特征，准确率下降触发重训。488nm是激发波长，不当作512个检测波段的覆盖范围；细胞状态研究不称临床诊断。",
+      "tags": [],
+      "summary": "以高光谱细胞分类表现引导迭代光谱特征选择，并预测细胞掩膜。",
+      "input": "蓝细菌Synechocystis的512维像元光谱/图像及富氮、缺氮、背景标签。",
+      "output": "细胞培养条件类别、细胞掩膜与保留的光谱输入特征。",
+      "mechanism": "用密集网络分类、卷积网络生成掩膜；按输入连接权重排序逐步去除特征，准确率下降触发重训。488nm是激发波长，不当作512个检测波段的覆盖范围；细胞状态研究不称临床诊断。",
+      "readingNote": "唯一所用arXiv 1710.09934v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。实际高光谱共焦荧光光栅扫描与每像元512维向量已核；分类/掩膜非真实细胞分选硬件。正式定位429不重试/不猜；Hyperas/Keras引用不是本文官方代码。",
+      "paper": "https://arxiv.org/abs/1710.09934v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1710.09934v1",
+          "sourceVersion": "arXiv 1710.09934v1",
+          "figureLabel": "Fig. 2.",
+          "page": 3,
+          "caption": "Fig. 2. (a) The densely connected feed-forward neural network used in the classiﬁcation task. (b) Convolutional neural network used for the masking task. All convolutional ﬁlters are 3 × 3 and pooling is done in 2 × 2 blocks.",
+          "verificationNote": "完整保留密集分类与卷积分割两主网络，非结果或通用框架。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/feature-sampling-hsi-cell-classification-arxiv-2017/framework.png",
+          "width": 765,
+          "height": 930,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "5394231a8139bf466491bb089606c64f32a92f38380d04523d4d166f6b4fa90c",
+          "attribution": "William M. Severa, Jerilyn A. Timlin, Suraj Kholwadwala, Conrad D. James, James B. Aimone · arXiv 1710.09934v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              47,
+              51,
+              302,
+              361
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{feature-sampling-hsi-cell-classification-arxiv-2017,\n  title = {Data-driven Feature Sampling for Deep Hyperspectral Classification and Segmentation},\n  author = {William M. Severa and Jerilyn A. Timlin and Suraj Kholwadwala and Conrad D. James and James B. Aimone},\n  year = {2017},\n  eprint = {1710.09934},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1710.09934v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-biomedical-classification",
+          "semantic-segmentation",
+          "spectral-band-selection"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以高光谱细胞分类表现引导迭代光谱特征选择，并预测细胞掩膜。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1710.09934v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "以高光谱细胞分类表现引导迭代光谱特征选择，并预测细胞掩膜。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1710.09934v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1710.09934v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。实际高光谱共焦荧光光栅扫描与每像元512维向量已核；分类/掩膜非真实细胞分选硬件。正式定位429不重试/不猜；Hyperas/Keras引用不是本文官方代码。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "feature-sampling-hsi-cell-classification-arxiv-2017-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1710.09934v1",
+            "pdfUrl": "https://arxiv.org/pdf/1710.09934v1",
+            "arxivId": "1710.09934",
+            "arxivVersion": 1,
+            "title": "Data-driven Feature Sampling for Deep Hyperspectral Classification and Segmentation",
+            "authors": [
+              "William M. Severa",
+              "Jerilyn A. Timlin",
+              "Suraj Kholwadwala",
+              "Conrad D. James",
+              "James B. Aimone"
+            ],
+            "year": 2017,
+            "firstSubmittedAt": "2017-10-26T22:45:28Z",
+            "updatedAt": "2017-10-26T22:45:28Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14-1710.09934v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1710.09934v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。实际高光谱共焦荧光光栅扫描与每像元512维向量已核；分类/掩膜非真实细胞分选硬件。正式定位429不重试/不猜；Hyperas/Keras引用不是本文官方代码。"
+          }
+        ],
+        "methodFamilyId": "feature-sampling-hsi-cell-classification-arxiv-2017",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要实际输入/主图确认任务；区分细胞状态与临床诊断、近场模式色散与吸收/时间直接测量、非精确标签目标谱与框检测、真实HSI与未来用途。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "42f4586a88d8bbd30b18d9d573c8bb51dc1b93a52598fa406eb8565400787d85",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1710.09934v1",
+            "https://arxiv.org/pdf/1710.09934v1"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mihe-hsi-subpixel-target-isprs-2018",
+      "shortTitle": "MI-HE",
+      "title": "Multiple instance hybrid estimator for hyperspectral target characterization and sub-pixel target detection",
+      "authors": "Changzhe Jiao, Chao Chen, Ronald G. McGarvey, Stephanie Bohlman, Licheng Jiao, Alina Zare",
+      "year": 2018,
+      "venue": "ISPRS JPRS",
+      "publicationName": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1710.11599",
+      "representation": "在多实例学习中优化混合模型与混合亚像元检测器，交替估计判别性原型和稀疏解混；检测材料谱成分而非目标包围框。",
+      "tags": [],
+      "summary": "从不精确标签中学习判别性目标谱并检测高光谱混合像元内的目标。",
+      "input": "含亚像元混合目标的高光谱数据及不精确的实例包标签。",
+      "output": "目标/背景原型谱及目标检测响应。",
+      "mechanism": "在多实例学习中优化混合模型与混合亚像元检测器，交替估计判别性原型和稀疏解混；检测材料谱成分而非目标包围框。",
+      "readingNote": "唯一所用arXiv 1710.11599v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ISPRS JPRS2018同题同序六人书目，仅元数据关联；所用图是标注误差/数据/谱/检测结果，无完整MI-HE框架。末尾Bullwinkle是被引评分工具，不误称MI-HE代码。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://doi.org/10.1016/j.isprsjprs.2018.08.012",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "doi": "10.1016/j.isprsjprs.2018.08.012",
+      "citation": "@article{mihe-hsi-subpixel-target-isprs-2018,\n  title = {Multiple instance hybrid estimator for hyperspectral target characterization and sub-pixel target detection},\n  author = {Changzhe Jiao and Chao Chen and Ronald G. McGarvey and Stephanie Bohlman and Licheng Jiao and Alina Zare},\n  journal = {ISPRS Journal of Photogrammetry and Remote Sensing},\n  year = {2018},\n  volume = {146},\n  pages = {235--250},\n  doi = {10.1016/j.isprsjprs.2018.08.012}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-material-detection",
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "从不精确标签中学习判别性目标谱并检测高光谱混合像元内的目标。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1710.11599v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "从不精确标签中学习判别性目标谱并检测高光谱混合像元内的目标。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1710.11599v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1710.11599v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ISPRS JPRS2018同题同序六人书目，仅元数据关联；所用图是标注误差/数据/谱/检测结果，无完整MI-HE框架。末尾Bullwinkle是被引评分工具，不误称MI-HE代码。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Multiple+Instance+Hybrid+Estimator+for+Hyperspectral+Target+Characterization+and+Sub-pixel+Target+Detection&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mihe-hsi-subpixel-target-isprs-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1710.11599v2",
+            "pdfUrl": "https://arxiv.org/pdf/1710.11599v2",
+            "arxivId": "1710.11599",
+            "arxivVersion": 2,
+            "title": "Multiple Instance Hybrid Estimator for Hyperspectral Target Characterization and Sub-pixel Target Detection",
+            "authors": [
+              "Changzhe Jiao",
+              "Chao Chen",
+              "Ronald G. McGarvey",
+              "Stephanie Bohlman",
+              "Licheng Jiao",
+              "Alina Zare"
+            ],
+            "year": 2017,
+            "firstSubmittedAt": "2017-10-31T17:19:57Z",
+            "updatedAt": "2019-03-19T03:38:53Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14-1710.11599v2.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1710.11599v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ISPRS JPRS2018同题同序六人书目，仅元数据关联；所用图是标注误差/数据/谱/检测结果，无完整MI-HE框架。末尾Bullwinkle是被引评分工具，不误称MI-HE代码。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "mihe-hsi-subpixel-target-isprs-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1016/j.isprsjprs.2018.08.012",
+            "doi": "10.1016/j.isprsjprs.2018.08.012",
+            "title": "Multiple instance hybrid estimator for hyperspectral target characterization and sub-pixel target detection",
+            "authors": [
+              "Changzhe Jiao",
+              "Chao Chen",
+              "Ronald G. McGarvey",
+              "Stephanie Bohlman",
+              "Licheng Jiao",
+              "Alina Zare"
+            ],
+            "year": 2018,
+            "publicationName": "ISPRS Journal of Photogrammetry and Remote Sensing",
+            "volume": "146",
+            "issue": null,
+            "page": "235-250",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "mihe-hsi-subpixel-target-isprs-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要实际输入/主图确认任务；区分细胞状态与临床诊断、近场模式色散与吸收/时间直接测量、非精确标签目标谱与框检测、真实HSI与未来用途。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "bcc02777d1b703e073667b6b53fdba93580d2e598deeded28eadb83842535700",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1710.11599v2",
+            "https://arxiv.org/pdf/1710.11599v2",
+            "https://api.crossref.org/works?query.title=Multiple+Instance+Hybrid+Estimator+for+Hyperspectral+Target+Characterization+and+Sub-pixel+Target+Detection&rows=3"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用图为GPS标签偏差、目标/背景谱、影像及检测结果；未见完整MI-HE方法框架。留白，不追另一版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1710.11599v2",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "distributed-sparse-hsi-unmixing-arxiv-2017",
+      "shortTitle": "Distributed sparse unmixing",
+      "title": "Distributed Unmixing of Hyperspectral Data With Sparsity Constraint",
+      "authors": "Sara Khoshsokhan, Roozbeh Rajabi, Hadi Zayyani",
+      "year": 2017,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1711.01249",
+      "representation": "在NMF中加入L1/2稀疏约束，以扩散LMS更新节点丰度与端元；ISPRS Archives正式书目仅关联，不当ISPRS JPRS白名单。",
+      "tags": [],
+      "summary": "用像元节点网络的分布式稀疏优化进行高光谱盲解混。",
+      "input": "高光谱像元及由像元构成的单节点簇网络。",
+      "output": "端元谱与丰度矩阵。",
+      "mechanism": "在NMF中加入L1/2稀疏约束，以扩散LMS更新节点丰度与端元；ISPRS Archives正式书目仅关联，不当ISPRS JPRS白名单。",
+      "readingNote": "唯一所用arXiv 1711.01249v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Archives同三作者正式书目题名DATAWITH连写仅空格差异，不当JPRS；JSTARS变题名不自动关联。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1711.01249v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{distributed-sparse-hsi-unmixing-arxiv-2017,\n  title = {Distributed Unmixing of Hyperspectral Data With Sparsity Constraint},\n  author = {Sara Khoshsokhan and Roozbeh Rajabi and Hadi Zayyani},\n  year = {2017},\n  eprint = {1711.01249},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1711.01249v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用像元节点网络的分布式稀疏优化进行高光谱盲解混。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1711.01249v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "用像元节点网络的分布式稀疏优化进行高光谱盲解混。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1711.01249v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1711.01249v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Archives同三作者正式书目题名DATAWITH连写仅空格差异，不当JPRS；JSTARS变题名不自动关联。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Distributed+Unmixing+of+Hyperspectral+Data+With+Sparsity+Constraint&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "distributed-sparse-hsi-unmixing-arxiv-2017-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1711.01249v1",
+            "pdfUrl": "https://arxiv.org/pdf/1711.01249v1",
+            "arxivId": "1711.01249",
+            "arxivVersion": 1,
+            "title": "Distributed Unmixing of Hyperspectral Data With Sparsity Constraint",
+            "authors": [
+              "Sara Khoshsokhan",
+              "Roozbeh Rajabi",
+              "Hadi Zayyani"
+            ],
+            "year": 2017,
+            "firstSubmittedAt": "2017-11-03T17:23:49Z",
+            "updatedAt": "2017-11-03T17:23:49Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14-1711.01249v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1711.01249v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Archives同三作者正式书目题名DATAWITH连写仅空格差异，不当JPRS；JSTARS变题名不自动关联。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "distributed-sparse-hsi-unmixing-arxiv-2017-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.5194/isprs-archives-xlii-4-w4-145-2017",
+            "doi": "10.5194/isprs-archives-xlii-4-w4-145-2017",
+            "title": "DISTRIBUTED UNMIXING OF HYPERSPECTRAL DATAWITH SPARSITY CONSTRAINT",
+            "authors": [
+              "S. Khoshsokhan",
+              "R. Rajabi",
+              "H. Zayyani"
+            ],
+            "year": 2017,
+            "publicationName": "The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
+            "volume": "XLII-4/W4",
+            "issue": null,
+            "page": "145-150",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "distributed-sparse-hsi-unmixing-arxiv-2017",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要实际输入/主图确认任务；区分细胞状态与临床诊断、近场模式色散与吸收/时间直接测量、非精确标签目标谱与框检测、真实HSI与未来用途。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "94054f62a314709e87b28ba9a2ac98e1b69461a4e402238225a6b49b56f44296",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1711.01249v1",
+            "https://arxiv.org/pdf/1711.01249v1",
+            "https://api.crossref.org/works?query.title=Distributed+Unmixing+of+Hyperspectral+Data+With+Sparsity+Constraint&rows=3"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用图为数据、端元/丰度与误差结果；未见独立分布式优化框架。留白，不追另一版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1711.01249v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "multiple-dictionary-hsi-unmixing-arxiv-2017",
+      "shortTitle": "M2PALS",
+      "title": "Spectral Unmixing with Multiple Dictionaries",
+      "authors": "Jeremy E. Cohen, Nicolas Gillis",
+      "year": 2017,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1711.02883",
+      "representation": "构造多字典约束低秩逼近，用M2PALS交替求解；手动、半监督或无监督区域选择控制端元来源，真实HSI应用已核，不仅潜在用于多光谱。",
+      "tags": [],
+      "summary": "用多个字典的数量约束控制高光谱纯像元或谱库端元选择。",
+      "input": "真实Urban高光谱影像、指定纯像元区域或多个谱库字典。",
+      "output": "满足每字典数量约束的端元和丰度。",
+      "mechanism": "构造多字典约束低秩逼近，用M2PALS交替求解；手动、半监督或无监督区域选择控制端元来源，真实HSI应用已核，不仅潜在用于多光谱。",
+      "readingNote": "唯一所用arXiv 1711.02883v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第4页真实Urban六端元实验已核；GRSL只书目、不扩来源，按arXiv；区域选择示例不替完整优化框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1711.02883v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{multiple-dictionary-hsi-unmixing-arxiv-2017,\n  title = {Spectral Unmixing with Multiple Dictionaries},\n  author = {Jeremy E. Cohen and Nicolas Gillis},\n  year = {2017},\n  eprint = {1711.02883},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1711.02883v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用多个字典的数量约束控制高光谱纯像元或谱库端元选择。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1711.02883v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "用多个字典的数量约束控制高光谱纯像元或谱库端元选择。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1711.02883v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1711.02883v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第4页真实Urban六端元实验已核；GRSL只书目、不扩来源，按arXiv；区域选择示例不替完整优化框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/LGRS.2017.2779477",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "multiple-dictionary-hsi-unmixing-arxiv-2017-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1711.02883v1",
+            "pdfUrl": "https://arxiv.org/pdf/1711.02883v1",
+            "arxivId": "1711.02883",
+            "arxivVersion": 1,
+            "title": "Spectral Unmixing with Multiple Dictionaries",
+            "authors": [
+              "Jeremy E. Cohen",
+              "Nicolas Gillis"
+            ],
+            "year": 2017,
+            "firstSubmittedAt": "2017-11-08T09:42:14Z",
+            "updatedAt": "2017-11-08T09:42:14Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14-1711.02883v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1711.02883v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第4页真实Urban六端元实验已核；GRSL只书目、不扩来源，按arXiv；区域选择示例不替完整优化框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "multiple-dictionary-hsi-unmixing-arxiv-2017-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/lgrs.2017.2779477",
+            "doi": "10.1109/lgrs.2017.2779477",
+            "title": "Spectral Unmixing With Multiple Dictionaries",
+            "authors": [
+              "Jeremy E. Cohen",
+              "Nicolas Gillis"
+            ],
+            "year": 2018,
+            "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+            "volume": "15",
+            "issue": "2",
+            "page": "187-191",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "multiple-dictionary-hsi-unmixing-arxiv-2017",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要实际输入/主图确认任务；区分细胞状态与临床诊断、近场模式色散与吸收/时间直接测量、非精确标签目标谱与框检测、真实HSI与未来用途。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "44fbcd0c1a591c797cc5167ee9c6c89e8d5b7334649dcc9cd1e1fb68de7cd07b",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1711.02883v1",
+            "https://arxiv.org/pdf/1711.02883v1",
+            "https://api.crossref.org/works/10.1109/LGRS.2017.2779477"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用Fig1仅纯像元区域选择示例，不是完整M2PALS求解框架。留白，不追另一版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1711.02883v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "pifm-hsi-phonon-polariton-lsa-2018",
+      "shortTitle": "PiFM hyperspectral nano-imaging",
+      "title": "Selective excitation and imaging of ultraslow phonon polaritons in thin hexagonal boron nitride crystals",
+      "authors": "Antonio Ambrosio, Michele Tamagnone, Kundan Chaudhary, Luis A. Jauregui, Philip Kim, William L. Wilson, Federico Capasso",
+      "year": 2018,
+      "venue": "Light: Science & Applications",
+      "publicationName": "Light: Science &amp; Applications",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1711.04324",
+      "representation": "用金基底镜像对称性选择更受限模式，PiFM在每个扫描点扫过激光能量范围获取真实HSI；区分力检测的材料/驻波/直接传播分量，速度由色散推导而非逐时刻直接拍摄。",
+      "tags": [],
+      "summary": "通过高光谱纳米成像测量薄h-BN晶体的声子极化激元模式。",
+      "input": "扫描样品上每个位置的可调QCL光诱导力光谱；金基底上h-BN薄片。",
+      "output": "空间光谱条纹、模式色散以及由色散推导的相/群折射率。",
+      "mechanism": "用金基底镜像对称性选择更受限模式，PiFM在每个扫描点扫过激光能量范围获取真实HSI；区分力检测的材料/驻波/直接传播分量，速度由色散推导而非逐时刻直接拍摄。",
+      "readingNote": "唯一所用arXiv 1711.04324v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第7页明确每位置扫激光范围取得HSI并反演色散；795–1900cm−1是激光可调范围，不等于实测RS1扫谱范围。主要PiFM采集体系取Fig2(a)/p16，原图注该页；AFM高度不当高光谱三维重建。",
+      "paper": "https://doi.org/10.1038/s41377-018-0039-4",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1711.04324v1",
+          "sourceVersion": "arXiv 1711.04324v1",
+          "figureLabel": "Figure 2(a)",
+          "page": 16,
+          "caption": "Figure 2 | PIFM hyperspectral nano-imaging in the RS1 band. a, Schematics of PiFM setup.",
+          "verificationNote": "主要PiFM采集体系原面板a完整保留探针/样品、入射光、抛物面镜及探测器；固定所用版本原图/图注已核，直接裁切无重绘，仅一张。",
+          "path": "figures/pifm-hsi-phonon-polariton-lsa-2018/framework.png",
+          "width": 600,
+          "height": 258,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "13afce2068320ea9b0d9f2dbf2ace7d908eedfcc92bb1f252a7a8eb9d8eaa4ce",
+          "attribution": "Antonio Ambrosio, Michele Tamagnone, Kundan Chaudhary, Luis A. Jauregui, Philip Kim, William L. Wilson, Federico Capasso · arXiv 1711.04324v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              72,
+              71,
+              272,
+              157
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1038/s41377-018-0039-4",
+      "citation": "@article{pifm-hsi-phonon-polariton-lsa-2018,\n  title = {Selective excitation and imaging of ultraslow phonon polaritons in thin hexagonal boron nitride crystals},\n  author = {Antonio Ambrosio and Michele Tamagnone and Kundan Chaudhary and Luis A. Jauregui and Philip Kim and William L. Wilson and Federico Capasso},\n  journal = {Light: Science &amp; Applications},\n  year = {2018},\n  volume = {7},\n  number = {1},\n  doi = {10.1038/s41377-018-0039-4}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-nearfield-mode-characterization"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "通过高光谱纳米成像测量薄h-BN晶体的声子极化激元模式。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1711.04324v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "通过高光谱纳米成像测量薄h-BN晶体的声子极化激元模式。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1711.04324v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1711.04324v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第7页明确每位置扫激光范围取得HSI并反演色散；795–1900cm−1是激光可调范围，不等于实测RS1扫谱范围。主要PiFM采集体系取Fig2(a)/p16，原图注该页；AFM高度不当高光谱三维重建。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Selective+excitation+and+imaging+of+ultraslow+phonon+polaritons+in+thin+hexagonal+boron+nitride+crystals&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "pifm-hsi-phonon-polariton-lsa-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1711.04324v1",
+            "pdfUrl": "https://arxiv.org/pdf/1711.04324v1",
+            "arxivId": "1711.04324",
+            "arxivVersion": 1,
+            "title": "Selective excitation and imaging of ultraslow phonon polaritons in thin hexagonal boron nitride crystals",
+            "authors": [
+              "Antonio Ambrosio",
+              "Michele Tamagnone",
+              "Kundan Chaudhary",
+              "Luis A. Jauregui",
+              "Philip Kim",
+              "William L. Wilson",
+              "Federico Capasso"
+            ],
+            "year": 2017,
+            "firstSubmittedAt": "2017-11-12T17:32:51Z",
+            "updatedAt": "2017-11-12T17:32:51Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14-1711.04324v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1711.04324v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第7页明确每位置扫激光范围取得HSI并反演色散；795–1900cm−1是激光可调范围，不等于实测RS1扫谱范围。主要PiFM采集体系取Fig2(a)/p16，原图注该页；AFM高度不当高光谱三维重建。"
+          },
+          {
+            "id": "pifm-hsi-phonon-polariton-lsa-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1038/s41377-018-0039-4",
+            "doi": "10.1038/s41377-018-0039-4",
+            "title": "Selective excitation and imaging of ultraslow phonon polaritons in thin hexagonal boron nitride crystals",
+            "authors": [
+              "Antonio Ambrosio",
+              "Michele Tamagnone",
+              "Kundan Chaudhary",
+              "Luis A. Jauregui",
+              "Philip Kim",
+              "William L. Wilson",
+              "Federico Capasso"
+            ],
+            "year": 2018,
+            "publicationName": "Light: Science &amp; Applications",
+            "volume": "7",
+            "issue": "1",
+            "page": null,
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "pifm-hsi-phonon-polariton-lsa-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要实际输入/主图确认任务；区分细胞状态与临床诊断、近场模式色散与吸收/时间直接测量、非精确标签目标谱与框检测、真实HSI与未来用途。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "dca34ba3a04b4fc039943683479efb4318a8d08a2746e5d60e21d8c2e79fd88d",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1711.04324v1",
+            "https://arxiv.org/pdf/1711.04324v1",
+            "https://api.crossref.org/works?query.title=Selective+excitation+and+imaging+of+ultraslow+phonon+polaritons+in+thin+hexagonal+boron+nitride+crystals&rows=3"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cnn-rsl-hsi-classification-arxiv-2017",
+      "shortTitle": "CNN-RSL",
+      "title": "Spectral-spatial classification of hyperspectral images: three tricks and a new supervised learning setting",
+      "authors": "Jacopo Acquarelli, Elena Marchiori, Lutgarde M. C. Buydens, Thanh Tran, Twan van Laarhoven",
+      "year": 2017,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1711.05512",
+      "representation": "谱邻域权重正则、平滑/标签增广结合单隐层CNN；另提出不相交采样协议研究整图建模对评测影响，不声称所有增广均避免泄漏。",
+      "tags": [],
+      "summary": "用浅层CNN、三种训练技巧与不相交采样评估高光谱分类。",
+      "input": "少量标注、类别不均衡的高光谱影像。",
+      "output": "地物类别图及不相交训练/测试设置下的比较。",
+      "mechanism": "谱邻域权重正则、平滑/标签增广结合单隐层CNN；另提出不相交采样协议研究整图建模对评测影响，不声称所有增广均避免泄漏。",
+      "readingNote": "唯一所用arXiv 1711.05512v4；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。原API题名含supervised、所用PDF/正式题名无supervised；明确API DOI与同五作者仅书目关联，Remote Sensing不在白名单，保留arXiv。",
+      "paper": "https://arxiv.org/abs/1711.05512v4",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1711.05512v4",
+          "sourceVersion": "arXiv 1711.05512v4",
+          "figureLabel": "Figure 4:",
+          "page": 8,
+          "caption": "Figure 4: CNN-RSL (Regularization (R), Smoothing-based data augmentation (S) and Label-based data augmentation (L)) data processing ﬂowchart. Data augmentation is applied to the original hyperspectral image. The labeled pixels from each of the three hyperspectral images (original, noisy and smoothed) form the training set (x, y), which is used to train the CNN with the spectral locality-aware regularization term (CNN-R).",
+          "verificationNote": "完整CNN-RSL的影像扰动、平滑与标签增广到训练输入主流程；不另取局部CNN图。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/cnn-rsl-hsi-classification-arxiv-2017/framework.png",
+          "width": 1365,
+          "height": 705,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "784ff9dba2660da1ccbffc4b71ae34a615716b10e108f96d22e77ae0abe0d02a",
+          "attribution": "Jacopo Acquarelli, Elena Marchiori, Lutgarde M. C. Buydens, Thanh Tran, Twan van Laarhoven · arXiv 1711.05512v4",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              70,
+              437,
+              525,
+              672
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{cnn-rsl-hsi-classification-arxiv-2017,\n  title = {Spectral-spatial classification of hyperspectral images: three tricks and a new supervised learning setting},\n  author = {Jacopo Acquarelli and Elena Marchiori and Lutgarde M. C. Buydens and Thanh Tran and Twan van Laarhoven},\n  year = {2017},\n  eprint = {1711.05512},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1711.05512v4}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "datasets-benchmarks"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用浅层CNN、三种训练技巧与不相交采样评估高光谱分类。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1711.05512v4",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "用浅层CNN、三种训练技巧与不相交采样评估高光谱分类。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1711.05512v4",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1711.05512v4；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。原API题名含supervised、所用PDF/正式题名无supervised；明确API DOI与同五作者仅书目关联，Remote Sensing不在白名单，保留arXiv。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.3390/rs10071156",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "cnn-rsl-hsi-classification-arxiv-2017-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1711.05512v4",
+            "pdfUrl": "https://arxiv.org/pdf/1711.05512v4",
+            "arxivId": "1711.05512",
+            "arxivVersion": 4,
+            "title": "Spectral-spatial classification of hyperspectral images: three tricks and a new supervised learning setting",
+            "authors": [
+              "Jacopo Acquarelli",
+              "Elena Marchiori",
+              "Lutgarde M. C. Buydens",
+              "Thanh Tran",
+              "Twan van Laarhoven"
+            ],
+            "year": 2017,
+            "firstSubmittedAt": "2017-11-15T12:02:57Z",
+            "updatedAt": "2018-07-23T16:24:52Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14-1711.05512v4.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1711.05512v4；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。原API题名含supervised、所用PDF/正式题名无supervised；明确API DOI与同五作者仅书目关联，Remote Sensing不在白名单，保留arXiv。",
+            "pdfTitle": "Spectral-Spatial Classification of Hyperspectral Images: Three Tricks and a New Learning Setting",
+            "formalDoiAssociationBasis": "原API明确DOI、同序五作者；API含supervised，所用PDF与正式题名无supervised，差异保留，只关联正式书目。"
+          },
+          {
+            "id": "cnn-rsl-hsi-classification-arxiv-2017-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.3390/rs10071156",
+            "doi": "10.3390/rs10071156",
+            "title": "Spectral-Spatial Classification of Hyperspectral Images: Three Tricks and a New Learning Setting",
+            "authors": [
+              "Jacopo Acquarelli",
+              "Elena Marchiori",
+              "Lutgarde Buydens",
+              "Thanh Tran",
+              "Twan Van Laarhoven"
+            ],
+            "year": 2018,
+            "publicationName": "Remote Sensing",
+            "volume": "10",
+            "issue": "7",
+            "page": "1156",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "原API明确DOI、同序五作者；API含supervised，所用PDF与正式题名无supervised，差异保留，只关联正式书目。",
+            "selectedApiTitle": "Spectral-spatial classification of hyperspectral images: three tricks and a new supervised learning setting"
+          }
+        ],
+        "methodFamilyId": "cnn-rsl-hsi-classification-arxiv-2017",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要实际输入/主图确认任务；区分细胞状态与临床诊断、近场模式色散与吸收/时间直接测量、非精确标签目标谱与框检测、真实HSI与未来用途。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "63df69fe9fad2476f17bd1c0a661ef63f75065308c9300b2f4ab21cf6c3ad297",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1711.05512v4",
+            "https://arxiv.org/pdf/1711.05512v4",
+            "https://api.crossref.org/works/10.3390/rs10071156"
+          ]
+        }
+      }
+    },
+    {
+      "id": "annc-asscc-hsi-classification-tgrs-2019",
+      "shortTitle": "ANNC-ASSCC",
+      "title": "Spectral-Spatial Feature Extraction and Classification by ANN Supervised With Center Loss in Hyperspectral Imagery",
+      "authors": "Alan J. X. Guo, Fei Zhu",
+      "year": 2019,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1711.07141",
+      "representation": "联合softmax与center loss训练ANN，估计类别中心；测试时平均多尺度邻域特征、比较中心并自适应投票，明确训练与测试的空间信息使用不同。",
+      "tags": [],
+      "summary": "以中心损失学习高光谱特征，并在测试时结合多尺度邻域分类。",
+      "input": "训练时像元光谱和少量标签，测试时多尺度空间邻域。",
+      "output": "谱空特征及地物像元类别。",
+      "mechanism": "联合softmax与center loss训练ANN，估计类别中心；测试时平均多尺度邻域特征、比较中心并自适应投票，明确训练与测试的空间信息使用不同。",
+      "readingNote": "唯一所用arXiv 1711.07141v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。中心损失来自人脸方法，但本论文实际任务是高光谱地物；TGRS2019同题同序两作者仅书目。",
+      "paper": "https://doi.org/10.1109/tgrs.2018.2869004",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1711.07141v1",
+          "sourceVersion": "arXiv 1711.07141v1",
+          "figureLabel": "Figure 3:",
+          "page": 7,
+          "caption": "Figure 3: Flowchart of the proposed ANNC-ASSCC framework. Training and testing stages are distinguished by thin and thick dashed arrows, respectively. The estimation of class centers with trained model is drawn with solid thick arrows. At the testing stage, the dashed rectangle in white represents the excluded training sample, appearing within the neighborhoods of a testing sample in red. style.where three arrow types are used to distinguish diﬀerent procedures.",
+          "verificationNote": "完整光谱训练、类别中心估计、多尺度空间测试与预测输出主框架。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/annc-asscc-hsi-classification-tgrs-2019/framework.png",
+          "width": 1452,
+          "height": 903,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "ec4f32ae0f2e09c736547e8fe3929af7689b81c3403514222677695645289238",
+          "attribution": "Alan J. X. Guo, Fei Zhu · arXiv 1711.07141v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              56,
+              216,
+              540,
+              517
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tgrs.2018.2869004",
+      "citation": "@article{annc-asscc-hsi-classification-tgrs-2019,\n  title = {Spectral-Spatial Feature Extraction and Classification by ANN Supervised With Center Loss in Hyperspectral Imagery},\n  author = {Alan J. X. Guo and Fei Zhu},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2019},\n  volume = {57},\n  number = {3},\n  pages = {1755--1767},\n  doi = {10.1109/tgrs.2018.2869004}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以中心损失学习高光谱特征，并在测试时结合多尺度邻域分类。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1711.07141v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "以中心损失学习高光谱特征，并在测试时结合多尺度邻域分类。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1711.07141v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1711.07141v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。中心损失来自人脸方法，但本论文实际任务是高光谱地物；TGRS2019同题同序两作者仅书目。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Spectral-Spatial+Feature+Extraction+and+Classification+by+ANN+Supervised+with+Center+Loss+in+Hyperspectral+Imagery&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "annc-asscc-hsi-classification-tgrs-2019-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1711.07141v1",
+            "pdfUrl": "https://arxiv.org/pdf/1711.07141v1",
+            "arxivId": "1711.07141",
+            "arxivVersion": 1,
+            "title": "Spectral-Spatial Feature Extraction and Classification by ANN Supervised with Center Loss in Hyperspectral Imagery",
+            "authors": [
+              "Alan J. X. Guo",
+              "Fei Zhu"
+            ],
+            "year": 2017,
+            "firstSubmittedAt": "2017-11-20T04:46:45Z",
+            "updatedAt": "2017-11-20T04:46:45Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14-1711.07141v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1711.07141v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。中心损失来自人脸方法，但本论文实际任务是高光谱地物；TGRS2019同题同序两作者仅书目。"
+          },
+          {
+            "id": "annc-asscc-hsi-classification-tgrs-2019-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2018.2869004",
+            "doi": "10.1109/tgrs.2018.2869004",
+            "title": "Spectral-Spatial Feature Extraction and Classification by ANN Supervised With Center Loss in Hyperspectral Imagery",
+            "authors": [
+              "Alan J. X. Guo",
+              "Fei Zhu"
+            ],
+            "year": 2019,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "57",
+            "issue": "3",
+            "page": "1755-1767",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "annc-asscc-hsi-classification-tgrs-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要实际输入/主图确认任务；区分细胞状态与临床诊断、近场模式色散与吸收/时间直接测量、非精确标签目标谱与框检测、真实HSI与未来用途。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "84bdbd407f493003716d1f78aa33c4234adb43b3c2976e24348af70d4be4e4a3",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1711.07141v1",
+            "https://arxiv.org/pdf/1711.07141v1",
+            "https://api.crossref.org/works?query.title=Spectral-Spatial+Feature+Extraction+and+Classification+by+ANN+Supervised+with+Center+Loss+in+Hyperspectral+Imagery&rows=3"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -107481,7 +108538,8 @@
         "adaptive-weighted-l1-hsi-classification-arxiv-2014",
         "segsalsa-str-hyperspectral-segmentation-arxiv-2015",
         "rejection-fields-hyperspectral-classification-arxiv-2015",
-        "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012"
+        "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012",
+        "feature-sampling-hsi-cell-classification-arxiv-2017"
       ],
       "history": [
         {
@@ -107906,7 +108964,8 @@
         "natural-hyperspectral-image-statistics-cvpr-2011",
         "hyperspectral-pansharpening-review-arxiv-2015",
         "hsi-unmixing-labels-benchmark-arxiv-2017",
-        "normalization-hsi-classification-benchmark-arxiv-2017"
+        "normalization-hsi-classification-benchmark-arxiv-2017",
+        "cnn-rsl-hsi-classification-arxiv-2017"
       ],
       "history": [
         {
@@ -108207,7 +109266,10 @@
         "bsdmm-hsi-unmixing-arxiv-2017",
         "gmm-endmember-variability-tip-2018",
         "partially-asynchronous-hsi-unmixing-tgrs-2019",
-        "glmm-endmember-variability-arxiv-2017"
+        "glmm-endmember-variability-arxiv-2017",
+        "mihe-hsi-subpixel-target-isprs-2018",
+        "distributed-sparse-hsi-unmixing-arxiv-2017",
+        "multiple-dictionary-hsi-unmixing-arxiv-2017"
       ],
       "history": [
         {
@@ -108362,7 +109424,8 @@
         "planetserver-hyperspectral-platform-arxiv-2017",
         "multiple-instance-hybrid-estimator-arxiv-2017",
         "robust-fdr-hyperspectral-halo-detection-arxiv-2017",
-        "raman-go-capillary-characterization-arxiv-2017"
+        "raman-go-capillary-characterization-arxiv-2017",
+        "mihe-hsi-subpixel-target-isprs-2018"
       ],
       "history": [
         {
@@ -109759,7 +110822,8 @@
         "maximal-clique-band-selection-tip-2017",
         "matched-filter-bad-band-arxiv-2016",
         "ufscov-hsi-feature-selection-arxiv-2017",
-        "ga-svm-soybean-charcoal-rot-arxiv-2017"
+        "ga-svm-soybean-charcoal-rot-arxiv-2017",
+        "feature-sampling-hsi-cell-classification-arxiv-2017"
       ],
       "history": [
         {
@@ -110681,7 +111745,9 @@
         "l1-scaling-cut-hsi-arxiv-2017",
         "asmlelm-wcf-hsi-classification-tgrs-2018",
         "rank1-tensor-hsi-classification-tgrs-2018",
-        "normalization-hsi-classification-benchmark-arxiv-2017"
+        "normalization-hsi-classification-benchmark-arxiv-2017",
+        "cnn-rsl-hsi-classification-arxiv-2017",
+        "annc-asscc-hsi-classification-tgrs-2019"
       ],
       "history": [
         {
@@ -112815,7 +113881,8 @@
         "zhou-5-hsi-2026",
         "zhou-scholar-automatic-live-and-dead-cell-classificatio-2019",
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
-        "treelets-hyperspectral-tissue-classification-arxiv-2007"
+        "treelets-hyperspectral-tissue-classification-arxiv-2007",
+        "feature-sampling-hsi-cell-classification-arxiv-2017"
       ],
       "history": [
         {
@@ -114137,6 +115204,26 @@
           "date": "2026-10-14",
           "action": "created",
           "reason": "按实际信号阶数输出建立任务，不推断物理端元/语义类别对应。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-nearfield-mode-characterization",
+      "name": "光谱近场模式表征",
+      "dimension": "task",
+      "definition": "利用实际空间分辨高光谱近场观测表征局域光学模式、传播条纹和色散，及由其推导的相/群折射率；区别单点光谱、吸收强度图与由外部几何作出的仿真，模式速度推导不自动等于时间分辨直接测量。",
+      "status": "confirmed",
+      "color": "#997dae",
+      "createdAt": "2026-10-14",
+      "rationale": "PiFM在每个扫描位置扫能量获取HSI以恢复h-BN极化激元色散；吸收图/动态响应任务不能准确描述其主要输出。",
+      "evidencePaperIds": [
+        "pifm-hsi-phonon-polariton-lsa-2018"
+      ],
+      "history": [
+        {
+          "date": "2026-10-14",
+          "action": "created",
+          "reason": "按真实空间谱近场与模式色散输出建立任务。"
         }
       ]
     }
