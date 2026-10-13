@@ -86090,6 +86090,1271 @@
           ]
         }
       }
+    },
+    {
+      "id": "hutamp-2015",
+      "shortTitle": "HUT-AMP",
+      "title": "Hyperspectral Unmixing via Turbo Bilinear Approximate Message Passing",
+      "authors": "Jeremy Vila, Philip Schniter, Joseph Meola",
+      "year": 2015,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1502.06435",
+      "representation": "将谱相干、空间相干与双线性三个因子子图连接，通过turbo消息交换和BiG-AMP矩阵分解推断端元/丰度；EM调节先验并进行模型阶数选择。线性混合方法，不宣称处理任意非线性混合。",
+      "tags": [],
+      "summary": "以turbo消息传递联合估计HSI端元、丰度与材料数量。",
+      "input": "M谱带/T像元的线性混合高光谱观测矩阵。",
+      "output": "材料端元谱、逐像元丰度及材料数N估计。",
+      "mechanism": "将谱相干、空间相干与双线性三个因子子图连接，通过turbo消息交换和BiG-AMP矩阵分解推断端元/丰度；EM调节先验并进行模型阶数选择。线性混合方法，不宣称处理任意非线性混合。",
+      "readingNote": "唯一所用arXiv 1502.06435v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。",
+      "paper": "https://arxiv.org/abs/1502.06435v2",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1502.06435v2",
+          "sourceVersion": "arXiv 1502.06435v2",
+          "figureLabel": "Fig. 1.",
+          "page": 3,
+          "caption": "Fig. 1. The factor graph for HUT-AMP for the toy-problem dimensions M = 3, N = 2, and T = 4. Circles represent random variables and dark squares represent pdf factors. Each elongated bar in the left subgraph conglomerates the factors associated with an M-variable Markov chain (detailed in Fig. 2), while each square in the right subgraph conglomerates the factors associated with a T1 × T2-pixel Markov random ﬁeld (detailed in Fig. 3).",
+          "verificationNote": "完整主要HUT-AMP因子图，包括谱相干/双线性/空间相干三子图；小尺寸示例不是实际数据规模。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/hutamp-2015/framework.png",
+          "width": 1209,
+          "height": 621,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "a54b9b7b9966414328c63004eed0e7992a8e986e9bc7ed92f4e2e4b9bc63e289",
+          "attribution": "Jeremy Vila, Philip Schniter, Joseph Meola · arXiv 1502.06435v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              104,
+              50,
+              507,
+              257
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{hutamp-2015,\n  title = {Hyperspectral Unmixing via Turbo Bilinear Approximate Message Passing},\n  author = {Jeremy Vila and Philip Schniter and Joseph Meola},\n  year = {2015},\n  eprint = {1502.06435},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1502.06435v2}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "endmember-number-estimation",
+          "learned-statistical-priors"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以turbo消息传递联合估计HSI端元、丰度与材料数量。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1502.06435v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "以turbo消息传递联合估计HSI端元、丰度与材料数量。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1502.06435v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1502.06435v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/journals/2333-9403/works",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hutamp-2015-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1502.06435v2",
+            "pdfUrl": "https://arxiv.org/pdf/1502.06435v2",
+            "arxivId": "1502.06435",
+            "arxivVersion": 2,
+            "title": "Hyperspectral Unmixing via Turbo Bilinear Approximate Message Passing",
+            "authors": [
+              "Jeremy Vila",
+              "Philip Schniter",
+              "Joseph Meola"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-02-23T14:13:01Z",
+            "updatedAt": "2015-08-04T13:39:06Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1502.06435v2.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1502.06435v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。"
+          },
+          {
+            "id": "hutamp-2015-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tci.2015.2465161",
+            "doi": "10.1109/tci.2015.2465161",
+            "title": "Hyperspectral Unmixing Via Turbo Bilinear Approximate Message Passing",
+            "authors": [
+              "Jeremy Vila",
+              "Philip Schniter",
+              "Joseph Meola"
+            ],
+            "year": 2015,
+            "publicationName": "IEEE Transactions on Computational Imaging",
+            "volume": "1",
+            "issue": "3",
+            "page": "143-158",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "hutamp-2015",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "f790a80e17d62924cc8083d195ddba41a04c2b041c4d7093ef46fb67f3e0a08b",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1502.06435v2",
+            "https://arxiv.org/pdf/1502.06435v2",
+            "https://api.crossref.org/journals/2333-9403/works"
+          ]
+        }
+      },
+      "code": "https://www.ece.osu.edu/~schniter/HUTAMP",
+      "codeOriginalUrl": "http://www.ece.osu.edu/~schniter/HUTAMP",
+      "codeLinkStatus": "所用PDF作者代码网址仅记录，HTTPS显示规范化，未访问。"
+    },
+    {
+      "id": "rkhs-band-selection-nonlinear-unmixing-arxiv-2015",
+      "shortTitle": "RKHS band selection",
+      "title": "Band selection in RKHS for fast nonlinear unmixing of hyperspectral images",
+      "authors": "T. Imbiriba, J. C. M. Bermudez, C. Richard, J. -Y. Tourneret",
+      "year": 2015,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1503.02090",
+      "representation": "以核空间聚类选择代表谱带（KKMBS），再将缩减观测和端元矩阵交给SK-Hype解混；主图完整串联选带与解混，不将Gaussian核或特征基当神经网络。",
+      "tags": [],
+      "summary": "在RKHS中选带，降低非线性高光谱解混的输入规模。",
+      "input": "高光谱像元光谱和给定端元矩阵，指定目标波段数。",
+      "output": "所选波段子集、缩减的观测/端元矩阵及非线性解混丰度。",
+      "mechanism": "以核空间聚类选择代表谱带（KKMBS），再将缩减观测和端元矩阵交给SK-Hype解混；主图完整串联选带与解混，不将Gaussian核或特征基当神经网络。",
+      "readingNote": "唯一所用arXiv 1503.02090v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。首页2018年10月28日是所用PDF编译日期，原API首次提交2015/唯一v1保留；第6页必要输入说明给定端元矩阵、KKMBS缩减后SK-Hype估计丰度。EUSIPCO来源外，只正式书目关联。",
+      "paper": "https://arxiv.org/abs/1503.02090v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1503.02090v1",
+          "sourceVersion": "arXiv 1503.02090v1",
+          "figureLabel": "Figure 1:",
+          "page": 6,
+          "caption": "Figure 1: Band selection and unmixing.",
+          "verificationNote": "完整KKMBS选带和SK-Hype解混主流程，端元矩阵和观测一起缩减，输出丰度。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/rkhs-band-selection-nonlinear-unmixing-arxiv-2015/framework.png",
+          "width": 507,
+          "height": 102,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "8598b20befe1a84cd27f307eb19b7a53ad0a6149913f8d1fe1b424d367191dc8",
+          "attribution": "T. Imbiriba, J. C. M. Bermudez, C. Richard, J. -Y. Tourneret · arXiv 1503.02090v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              210,
+              360,
+              379,
+              394
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{rkhs-band-selection-nonlinear-unmixing-arxiv-2015,\n  title = {Band selection in RKHS for fast nonlinear unmixing of hyperspectral images},\n  author = {T. Imbiriba and J. C. M. Bermudez and C. Richard and J. -Y. Tourneret},\n  year = {2015},\n  eprint = {1503.02090},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1503.02090v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-band-selection",
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "在RKHS中选带，降低非线性高光谱解混的输入规模。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1503.02090v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "在RKHS中选带，降低非线性高光谱解混的输入规模。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1503.02090v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1503.02090v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。首页2018年10月28日是所用PDF编译日期，原API首次提交2015/唯一v1保留；第6页必要输入说明给定端元矩阵、KKMBS缩减后SK-Hype估计丰度。EUSIPCO来源外，只正式书目关联。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/EUSIPCO.2015.7362664",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "rkhs-band-selection-nonlinear-unmixing-arxiv-2015-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1503.02090v1",
+            "pdfUrl": "https://arxiv.org/pdf/1503.02090v1",
+            "arxivId": "1503.02090",
+            "arxivVersion": 1,
+            "title": "Band selection in RKHS for fast nonlinear unmixing of hyperspectral images",
+            "authors": [
+              "T. Imbiriba",
+              "J. C. M. Bermudez",
+              "C. Richard",
+              "J. -Y. Tourneret"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-03-06T21:20:15Z",
+            "updatedAt": "2015-03-06T21:20:15Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1503.02090v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1503.02090v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。首页2018年10月28日是所用PDF编译日期，原API首次提交2015/唯一v1保留；第6页必要输入说明给定端元矩阵、KKMBS缩减后SK-Hype估计丰度。EUSIPCO来源外，只正式书目关联。",
+            "pdfCompilationDateLiteral": "October 28, 2018"
+          },
+          {
+            "id": "rkhs-band-selection-nonlinear-unmixing-arxiv-2015-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/eusipco.2015.7362664",
+            "doi": "10.1109/eusipco.2015.7362664",
+            "title": "Band selection in RKHS for fast nonlinear unmixing of hyperspectral images",
+            "authors": [
+              "T. Imbiriba",
+              "J. C. M. Bermudez",
+              "C. Richard",
+              "J.-Y. Tourneret"
+            ],
+            "year": 2015,
+            "publicationName": "2015 23rd European Signal Processing Conference (EUSIPCO)",
+            "volume": null,
+            "issue": null,
+            "page": "1651-1655",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "rkhs-band-selection-nonlinear-unmixing-arxiv-2015",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "161d6be3fba8f83499a73187b0572a335353f6792b8b9b7ab1da54c44099becd",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1503.02090v1",
+            "https://arxiv.org/pdf/1503.02090v1",
+            "https://api.crossref.org/works/10.1109/EUSIPCO.2015.7362664"
+          ]
+        }
+      }
+    },
+    {
+      "id": "nonlinear-mixed-pixel-detection-tip-2016",
+      "shortTitle": "Detect-then-Unmix",
+      "title": "Nonparametric Detection of Nonlinearly Mixed Pixels and Endmember Estimation in Hyperspectral Images",
+      "authors": "Tales Imbiriba, José Carlos Moreira Bermudez, Cédric Richard, Jean-Yves Tourneret",
+      "year": 2016,
+      "venue": "TIP",
+      "publicationName": "IEEE Transactions on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1503.05521",
+      "representation": "比较Gaussian process回归和线性回归的重建误差构造检测统计，并结合迭代端元提取形成Detect-then-Unmix。Fig6是具体模拟数据的迭代结果，不作为方法主框架。",
+      "tags": [],
+      "summary": "检测非线性混合像元，再选择合适解混模型。",
+      "input": "可能同时包含线性和非线性混合像元的HSI。",
+      "output": "非线性混合检测结果、迭代估计端元与逐像元解混结果。",
+      "mechanism": "比较Gaussian process回归和线性回归的重建误差构造检测统计，并结合迭代端元提取形成Detect-then-Unmix。Fig6是具体模拟数据的迭代结果，不作为方法主框架。",
+      "readingNote": "唯一所用arXiv 1503.05521v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第17页Fig6是具体模拟点集的第1/4/7/10次迭代结果；其他图为ROC/直方图/检测结果，不用结果图代替主框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://doi.org/10.1109/tip.2015.2509258",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "doi": "10.1109/tip.2015.2509258",
+      "citation": "@article{nonlinear-mixed-pixel-detection-tip-2016,\n  title = {Nonparametric Detection of Nonlinearly Mixed Pixels and Endmember Estimation in Hyperspectral Images},\n  author = {Tales Imbiriba and José Carlos Moreira Bermudez and Cédric Richard and Jean-Yves Tourneret},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2016},\n  volume = {25},\n  number = {3},\n  pages = {1136--1151},\n  doi = {10.1109/tip.2015.2509258}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "mixing-model-characterization"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "检测非线性混合像元，再选择合适解混模型。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1503.05521v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "检测非线性混合像元，再选择合适解混模型。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1503.05521v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1503.05521v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第17页Fig6是具体模拟点集的第1/4/7/10次迭代结果；其他图为ROC/直方图/检测结果，不用结果图代替主框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TIP.2015.2509258",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "nonlinear-mixed-pixel-detection-tip-2016-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1503.05521v1",
+            "pdfUrl": "https://arxiv.org/pdf/1503.05521v1",
+            "arxivId": "1503.05521",
+            "arxivVersion": 1,
+            "title": "Nonparametric Detection of Nonlinearly Mixed Pixels and Endmember Estimation in Hyperspectral Images",
+            "authors": [
+              "Tales Imbiriba",
+              "José Carlos Moreira Bermudez",
+              "Cédric Richard",
+              "Jean-Yves Tourneret"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-03-18T18:20:24Z",
+            "updatedAt": "2015-03-18T18:20:24Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1503.05521v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1503.05521v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第17页Fig6是具体模拟点集的第1/4/7/10次迭代结果；其他图为ROC/直方图/检测结果，不用结果图代替主框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "nonlinear-mixed-pixel-detection-tip-2016-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tip.2015.2509258",
+            "doi": "10.1109/tip.2015.2509258",
+            "title": "Nonparametric Detection of Nonlinearly Mixed Pixels and Endmember Estimation in Hyperspectral Images",
+            "authors": [
+              "Tales Imbiriba",
+              "Jose Carlos Moreira Bermudez",
+              "Cedric Richard",
+              "Jean-Yves Tourneret"
+            ],
+            "year": 2016,
+            "publicationName": "IEEE Transactions on Image Processing",
+            "volume": "25",
+            "issue": "3",
+            "page": "1136-1151",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "nonlinear-mixed-pixel-detection-tip-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "f6be0e617e4892f227e27ba3ba7ed35b938e330c7673b2f5f205c32a8d61244c",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1503.05521v1",
+            "https://arxiv.org/pdf/1503.05521v1",
+            "https://api.crossref.org/works/10.1109/TIP.2015.2509258"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用arXiv 1503.05521v1图注及必要示意定位未发现独立方法主框架；观测、适用区域、伪代码或结果图不冒充框架，留白，不另读其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1503.05521v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "sparse-lowrank-abundance-estimation-tgrs-2016",
+      "shortTitle": "Sparse low-rank unmixing",
+      "title": "Simultaneously Sparse and Low-Rank Abundance Matrix Estimation for Hyperspectral Image Unmixing",
+      "authors": "Paris Giampouras, Konstantinos Themelis, Athanasios Rontogiannis, Konstantinos Koutroumbas",
+      "year": 2016,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1504.01515",
+      "representation": "在二次拟合项上联合加权l1与加权核范数约束，通过增量近端或ADMM求解；字典是给定端元，不写成同时学习新端元或新传感器。",
+      "tags": [],
+      "summary": "联合稀疏和低秩约束估计局部高光谱丰度矩阵。",
+      "input": "滑动空间窗口内的HSI光谱及给定端元谱字典。",
+      "output": "具有稀疏/低秩结构的窗口丰度矩阵。",
+      "mechanism": "在二次拟合项上联合加权l1与加权核范数约束，通过增量近端或ADMM求解；字典是给定端元，不写成同时学习新端元或新传感器。",
+      "readingNote": "唯一所用arXiv 1504.01515v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。",
+      "paper": "https://doi.org/10.1109/tgrs.2016.2551327",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1504.01515v2",
+          "sourceVersion": "arXiv 1504.01515v2",
+          "figureLabel": "Fig. 1:",
+          "page": 5,
+          "caption": "Graphical illustration of the sliding window approach of our unmixing algorithms. Abundance matrix is considered sparse and low-rank (in this example rank = 2). Blue cells in matrix W represent zero values.",
+          "verificationNote": "完整局部滑动窗口/给定端元字典/丰度矩阵主要模型，示意rank2不当全部真实数据的秩。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/sparse-lowrank-abundance-estimation-tgrs-2016/framework.png",
+          "width": 1005,
+          "height": 630,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "fb342b76aa00ec0dd191161aa79b22a3a3b6ff8078037f5b05028aeb73b1c410",
+          "attribution": "Paris Giampouras, Konstantinos Themelis, Athanasios Rontogiannis, Konstantinos Koutroumbas · arXiv 1504.01515v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              137,
+              69,
+              472,
+              279
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tgrs.2016.2551327",
+      "citation": "@article{sparse-lowrank-abundance-estimation-tgrs-2016,\n  title = {Simultaneously Sparse and Low-Rank Abundance Matrix Estimation for Hyperspectral Image Unmixing},\n  author = {Paris Giampouras and Konstantinos Themelis and Athanasios Rontogiannis and Konstantinos Koutroumbas},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2016},\n  volume = {54},\n  number = {8},\n  pages = {4775--4789},\n  doi = {10.1109/tgrs.2016.2551327}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "joint-sparse-regression",
+          "low-rank-matrix-factorization"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "联合稀疏和低秩约束估计局部高光谱丰度矩阵。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1504.01515v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "联合稀疏和低秩约束估计局部高光谱丰度矩阵。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1504.01515v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1504.01515v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2016.2551327",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "sparse-lowrank-abundance-estimation-tgrs-2016-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1504.01515v2",
+            "pdfUrl": "https://arxiv.org/pdf/1504.01515v2",
+            "arxivId": "1504.01515",
+            "arxivVersion": 2,
+            "title": "Simultaneously sparse and low-rank abundance matrix estimation for hyperspectral image unmixing",
+            "authors": [
+              "Paris Giampouras",
+              "Konstantinos Themelis",
+              "Athanasios Rontogiannis",
+              "Konstantinos Koutroumbas"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-04-07T08:23:45Z",
+            "updatedAt": "2015-10-14T16:53:41Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1504.01515v2.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1504.01515v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。"
+          },
+          {
+            "id": "sparse-lowrank-abundance-estimation-tgrs-2016-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2016.2551327",
+            "doi": "10.1109/tgrs.2016.2551327",
+            "title": "Simultaneously Sparse and Low-Rank Abundance Matrix Estimation for Hyperspectral Image Unmixing",
+            "authors": [
+              "Paris V. Giampouras",
+              "Konstantinos E. Themelis",
+              "Athanasios A. Rontogiannis",
+              "Konstantinos D. Koutroumbas"
+            ],
+            "year": 2016,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "54",
+            "issue": "8",
+            "page": "4775-4789",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "sparse-lowrank-abundance-estimation-tgrs-2016",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "f448c21adcd561cfaeb06656f89aeb6fe7a28f57f2fd70a67a62aeea8302d8fd",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1504.01515v2",
+            "https://arxiv.org/pdf/1504.01515v2",
+            "https://api.crossref.org/works/10.1109/TGRS.2016.2551327"
+          ]
+        }
+      }
+    },
+    {
+      "id": "segsalsa-str-hyperspectral-segmentation-arxiv-2015",
+      "shortTitle": "SegSALSA-STR",
+      "title": "SegSALSA-STR: A convex formulation to supervised hyperspectral image segmentation using hidden fields and structure tensor regularization",
+      "authors": "Filipe Condessa, Jose Bioucas-Dias, Jelena Kovacevic",
+      "year": 2015,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1504.07028",
+      "representation": "将隐藏场的边缘MAP分割构造为凸问题，以patch-based Jacobian的结构张量正则推广向量TV，并用约束分裂增广Lagrangian方法优化。所用唯一图为分类结果，没有独立框架。",
+      "tags": [],
+      "summary": "以隐藏场和结构张量正则进行监督HSI分割。",
+      "input": "有标注训练样本的HSI及像元谱分类信息。",
+      "output": "空间一致的像元语义分割标签。",
+      "mechanism": "将隐藏场的边缘MAP分割构造为凸问题，以patch-based Jacobian的结构张量正则推广向量TV，并用约束分裂增广Lagrangian方法优化。所用唯一图为分类结果，没有独立框架。",
+      "readingNote": "唯一所用arXiv 1504.07028v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1504.07028v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{segsalsa-str-hyperspectral-segmentation-arxiv-2015,\n  title = {SegSALSA-STR: A convex formulation to supervised hyperspectral image segmentation using hidden fields and structure tensor regularization},\n  author = {Filipe Condessa and Jose Bioucas-Dias and Jelena Kovacevic},\n  year = {2015},\n  eprint = {1504.07028},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1504.07028v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "semantic-segmentation"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以隐藏场和结构张量正则进行监督HSI分割。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1504.07028v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "以隐藏场和结构张量正则进行监督HSI分割。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1504.07028v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1504.07028v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "segsalsa-str-hyperspectral-segmentation-arxiv-2015-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1504.07028v1",
+            "pdfUrl": "https://arxiv.org/pdf/1504.07028v1",
+            "arxivId": "1504.07028",
+            "arxivVersion": 1,
+            "title": "SegSALSA-STR: A convex formulation to supervised hyperspectral image segmentation using hidden fields and structure tensor regularization",
+            "authors": [
+              "Filipe Condessa",
+              "Jose Bioucas-Dias",
+              "Jelena Kovacevic"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-04-27T11:08:53Z",
+            "updatedAt": "2015-04-27T11:08:53Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1504.07028v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1504.07028v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          }
+        ],
+        "methodFamilyId": "segsalsa-str-hyperspectral-segmentation-arxiv-2015",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "47260a9c4e22637d39117dcb29512d254fd78736cf04c7a96c5920a41bebd26f",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1504.07028v1",
+            "https://arxiv.org/pdf/1504.07028v1"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用arXiv 1504.07028v1图注及必要示意定位未发现独立方法主框架；观测、适用区域、伪代码或结果图不冒充框架，留白，不另读其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1504.07028v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "rejection-fields-hyperspectral-classification-arxiv-2015",
+      "shortTitle": "Rejection fields",
+      "title": "Robust hyperspectral image classification with rejection fields",
+      "authors": "Filipe Condessa, Jose Bioucas-Dias, Jelena Kovacevic",
+      "year": 2015,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1504.07918",
+      "representation": "从SegSALSA上下文分类构造拒判场，在覆盖率和分类可靠性之间选择拒判；不把所有拒判都宣称为已准确识别未知语义类别。唯一图是实际分类/拒判结果，无独立框架。",
+      "tags": [],
+      "summary": "结合空间上下文和拒判，提高HSI分类的可靠性。",
+      "input": "HSI光谱与有限类别训练样本。",
+      "output": "接受像元的分类标签与拒判区域。",
+      "mechanism": "从SegSALSA上下文分类构造拒判场，在覆盖率和分类可靠性之间选择拒判；不把所有拒判都宣称为已准确识别未知语义类别。唯一图是实际分类/拒判结果，无独立框架。",
+      "readingNote": "唯一所用arXiv 1504.07918v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1504.07918v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{rejection-fields-hyperspectral-classification-arxiv-2015,\n  title = {Robust hyperspectral image classification with rejection fields},\n  author = {Filipe Condessa and Jose Bioucas-Dias and Jelena Kovacevic},\n  year = {2015},\n  eprint = {1504.07918},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1504.07918v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "semantic-segmentation"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "结合空间上下文和拒判，提高HSI分类的可靠性。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1504.07918v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "结合空间上下文和拒判，提高HSI分类的可靠性。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1504.07918v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1504.07918v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "rejection-fields-hyperspectral-classification-arxiv-2015-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1504.07918v1",
+            "pdfUrl": "https://arxiv.org/pdf/1504.07918v1",
+            "arxivId": "1504.07918",
+            "arxivVersion": 1,
+            "title": "Robust hyperspectral image classification with rejection fields",
+            "authors": [
+              "Filipe Condessa",
+              "Jose Bioucas-Dias",
+              "Jelena Kovacevic"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-04-29T16:30:45Z",
+            "updatedAt": "2015-04-29T16:30:45Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1504.07918v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1504.07918v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          }
+        ],
+        "methodFamilyId": "rejection-fields-hyperspectral-classification-arxiv-2015",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c023c3446dbded0c98b5f0ecbfdcbdeee0798873437171b24d6c88b30d4c12f4",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1504.07918v1",
+            "https://arxiv.org/pdf/1504.07918v1"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用arXiv 1504.07918v1图注及必要示意定位未发现独立方法主框架；观测、适用区域、伪代码或结果图不冒充框架，留白，不另读其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1504.07918v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "dykstra-projection-spectral-unmixing-arxiv-2015",
+      "shortTitle": "SUDAP",
+      "title": "Fast Spectral Unmixing based on Dykstra's Alternating Projection",
+      "authors": "Qi Wei, Jose Bioucas-Dias, Nicolas Dobigeon, Jean-Yves Tourneret",
+      "year": 2015,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1505.01740",
+      "representation": "先作矩阵分解和变量替换，将FCLS转为子空间中多个闭凸集交集的投影，逐集合按Dykstra方案迭代。Fig1只示意单个投影集合几何，不作为完整主框架。",
+      "tags": [],
+      "summary": "用Dykstra交替投影求解全约束光谱解混。",
+      "input": "高光谱像元与给定端元谱矩阵。",
+      "output": "满足非负及和为一约束的丰度。",
+      "mechanism": "先作矩阵分解和变量替换，将FCLS转为子空间中多个闭凸集交集的投影，逐集合按Dykstra方案迭代。Fig1只示意单个投影集合几何，不作为完整主框架。",
+      "readingNote": "唯一所用arXiv 1505.01740v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1505.01740v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{dykstra-projection-spectral-unmixing-arxiv-2015,\n  title = {Fast Spectral Unmixing based on Dykstra's Alternating Projection},\n  author = {Qi Wei and Jose Bioucas-Dias and Nicolas Dobigeon and Jean-Yves Tourneret},\n  year = {2015},\n  eprint = {1505.01740},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1505.01740v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用Dykstra交替投影求解全约束光谱解混。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1505.01740v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "用Dykstra交替投影求解全约束光谱解混。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1505.01740v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1505.01740v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dykstra-projection-spectral-unmixing-arxiv-2015-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1505.01740v1",
+            "pdfUrl": "https://arxiv.org/pdf/1505.01740v1",
+            "arxivId": "1505.01740",
+            "arxivVersion": 1,
+            "title": "Fast Spectral Unmixing based on Dykstra's Alternating Projection",
+            "authors": [
+              "Qi Wei",
+              "Jose Bioucas-Dias",
+              "Nicolas Dobigeon",
+              "Jean-Yves Tourneret"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-05-07T15:22:33Z",
+            "updatedAt": "2015-05-07T15:22:33Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1505.01740v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1505.01740v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。只原摘要/首页及必要HSI范围和图注定位，所用版本无主框架时留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          }
+        ],
+        "methodFamilyId": "dykstra-projection-spectral-unmixing-arxiv-2015",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "ed3bd6ac0dde03f2fb8a077a85ce4c2bcc903c74fb5883b5b65d6def357a72c1",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1505.01740v1",
+            "https://arxiv.org/pdf/1505.01740v1"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用arXiv 1505.01740v1图注及必要示意定位未发现独立方法主框架；观测、适用区域、伪代码或结果图不冒充框架，留白，不另读其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1505.01740v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "sequential-localized-features-pattern-recognition-2017",
+      "shortTitle": "PNMU",
+      "title": "Sequential dimensionality reduction for extracting localized features",
+      "authors": "Gabriella Casalino, Nicolas Gillis",
+      "year": 2017,
+      "venue": "Pattern Recognition",
+      "publicationName": "Pattern Recognition",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1505.06957",
+      "representation": "在nonnegative matrix underapproximation中同时利用邻域空间信息与稀疏基来提取局部特征；直接处理HSI，不仅背景适用声明，脸图对照不取消HSI研究。图为分解/结果，框架留白。",
+      "tags": [],
+      "summary": "顺序提取稀疏、空间局部的高光谱特征。",
+      "input": "非负HSI矩阵；所用稿明确对Cuprite高光谱影像实际应用PNMU，另有脸图对照。",
+      "output": "顺序得到的局部特征基及其系数/空间响应。",
+      "mechanism": "在nonnegative matrix underapproximation中同时利用邻域空间信息与稀疏基来提取局部特征；直接处理HSI，不仅背景适用声明，脸图对照不取消HSI研究。图为分解/结果，框架留白。",
+      "readingNote": "唯一所用arXiv 1505.06957v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第9页必要实际范围明确PNMU在Cuprite高光谱和CBCL脸图上应用；不整理比较性能。正式Pattern Recognition2017只书目关联，唯一正文为arXiv2015v2。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://doi.org/10.1016/j.patcog.2016.09.006",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "doi": "10.1016/j.patcog.2016.09.006",
+      "citation": "@article{sequential-localized-features-pattern-recognition-2017,\n  title = {Sequential dimensionality reduction for extracting localized features},\n  author = {Gabriella Casalino and Nicolas Gillis},\n  journal = {Pattern Recognition},\n  year = {2017},\n  volume = {63},\n  pages = {15--29},\n  doi = {10.1016/j.patcog.2016.09.006}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "low-rank-matrix-factorization"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "顺序提取稀疏、空间局部的高光谱特征。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1505.06957v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "顺序提取稀疏、空间局部的高光谱特征。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1505.06957v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1505.06957v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第9页必要实际范围明确PNMU在Cuprite高光谱和CBCL脸图上应用；不整理比较性能。正式Pattern Recognition2017只书目关联，唯一正文为arXiv2015v2。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016/j.patcog.2016.09.006",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "sequential-localized-features-pattern-recognition-2017-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1505.06957v2",
+            "pdfUrl": "https://arxiv.org/pdf/1505.06957v2",
+            "arxivId": "1505.06957",
+            "arxivVersion": 2,
+            "title": "Sequential Dimensionality Reduction for Extracting Localized Features",
+            "authors": [
+              "Gabriella Casalino",
+              "Nicolas Gillis"
+            ],
+            "year": 2015,
+            "firstSubmittedAt": "2015-05-26T14:06:16Z",
+            "updatedAt": "2016-07-05T06:44:58Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14-1505.06957v2.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1505.06957v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。第9页必要实际范围明确PNMU在Cuprite高光谱和CBCL脸图上应用；不整理比较性能。正式Pattern Recognition2017只书目关联，唯一正文为arXiv2015v2。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "sequential-localized-features-pattern-recognition-2017-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1016/j.patcog.2016.09.006",
+            "doi": "10.1016/j.patcog.2016.09.006",
+            "title": "Sequential dimensionality reduction for extracting localized features",
+            "authors": [
+              "Gabriella Casalino",
+              "Nicolas Gillis"
+            ],
+            "year": 2017,
+            "publicationName": "Pattern Recognition",
+            "volume": "63",
+            "issue": null,
+            "page": "15-29",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "sequential-localized-features-pattern-recognition-2017",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "根据实际HSI输入和核心贡献确认：端元谱/丰度/材料数、混合检测与通用异常、固定端元库回归与字典学习、特征降维与内部分解区分。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c5ec5c625f3192ba2c294558f587a3cc36fb58a4977cdfcb0d02fcfae3c2d7dd",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1505.06957v2",
+            "https://arxiv.org/pdf/1505.06957v2",
+            "https://api.crossref.org/works/10.1016/j.patcog.2016.09.006"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用arXiv 1505.06957v2图注及必要示意定位未发现独立方法主框架；观测、适用区域、伪代码或结果图不冒充框架，留白，不另读其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1505.06957v2",
+        "checkedAt": "2026-10-14"
+      },
+      "code": "https://sites.google.com/site/nicolasgillis/code",
+      "codeLinkStatus": "所用PDF作者代码页网址仅记录，未访问。"
+    },
+    {
+      "id": "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012",
+      "shortTitle": "MLRsubMLL",
+      "title": "Spectral–Spatial Hyperspectral Image Segmentation Using Subspace Multinomial Logistic Regression and Markov Random Fields",
+      "authors": "Jun Li, José M. Bioucas-Dias, Antonio Plaza",
+      "year": 2012,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2011.2162649",
+      "representation": "子空间MLR谱分类概率与Markov–Gibbs空间标签先验结合，求解MAP分割。",
+      "tags": [],
+      "summary": "将子空间谱分类与Markov空间先验结合进行监督高光谱分割。",
+      "input": "遥感HSI光谱和有标签训练样本。",
+      "output": "像元类别概率及空间一致的语义分割标签。",
+      "mechanism": "先以子空间投影和多项logistic回归学习谱后验概率，再以多级logistic Markov–Gibbs先验描述邻近标签，最后由alpha-Expansion/min-cut求解MAP分割。",
+      "readingNote": "唯一作者公开TGRS正式PDF；第1页完整原摘要/署名/DOI和第6页Fig2主要算法流程已核，其他页仅图注定位，不阅读全文、整理性能或读取另一版本。第1页在线发表2011-08-30，当前卷期2012-03分别保留；Jun Li不是Jun Zhou。",
+      "paper": "https://doi.org/10.1109/tgrs.2011.2162649",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2012.TGRS.Subspace.pdf",
+          "sourceVersion": "TGRS2012正式发表PDF（作者公开托管）",
+          "figureLabel": "Fig. 2.",
+          "page": 6,
+          "caption": "Block diagram summarizing the most relevant steps of the proposed MLRsubMLL algorithm.",
+          "verificationNote": "完整所用主流程，输入/MLRsub训练/谱概率/MLL空间先验/alpha-Expansion输出全部保留；一张原图直接裁切，无重绘。",
+          "path": "figures/subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012/framework.png",
+          "width": 1098,
+          "height": 237,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "fa39e0dc7f8075950aaf7d44d6047a415328f6dfcc1f239435ce5099e817cea9",
+          "attribution": "Jun Li, José M. Bioucas-Dias, Antonio Plaza · TGRS2012",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              116,
+              64,
+              482,
+              143
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@article{subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012,\n  title = {Spectral–Spatial Hyperspectral Image Segmentation Using Subspace Multinomial Logistic Regression and Markov Random Fields},\n  author = {Jun Li and José M. Bioucas-Dias and Antonio Plaza},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2012},\n  volume = {50},\n  number = {3},\n  pages = {809--823},\n  doi = {10.1109/tgrs.2011.2162649}\n}\n",
+      "library": {
+        "categoryIds": [
+          "semantic-segmentation",
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要明确监督HSI分割，原作者和注册书目为Jun Li而非目标Jun Zhou。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "将子空间谱分类与Markov空间先验结合进行监督高光谱分割。",
+        "datasets": "原摘要声明模拟及真实HSI；本轮不整理实验划分/性能。",
+        "experimentSetting": "只原摘要/书目及唯一PDF一张主要流程，不通读或性能核验。",
+        "conclusions": "核心谱后验和空间先验结合及MAP输出已核，不摘录未核结果。",
+        "limitations": "其他图、性能和其他版本正文不列待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2012.TGRS.Subspace.pdf",
+            "checkedAt": "2026-10-14",
+            "level": "唯一作者公开PDF原摘要/首页及主图局部页面核验",
+            "supports": [
+              "将子空间谱分类与Markov空间先验结合进行监督高光谱分割。",
+              "唯一作者公开TGRS正式PDF；第1页完整原摘要/署名/DOI和第6页Fig2主要算法流程已核，其他页仅图注定位，不阅读全文、整理性能或读取另一版本。第1页在线发表2011-08-30，当前卷期2012-03分别保留；Jun Li不是Jun Zhou。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2011.2162649",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名/三作者/TGRS2012卷期及DOI核对；Jun Li不混Jun Zhou。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012-selected-pdf",
+            "type": "作者公开托管正式发表PDF",
+            "url": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2012.TGRS.Subspace.pdf",
+            "pdfUrl": "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2012.TGRS.Subspace.pdf",
+            "title": "Spectral–Spatial Hyperspectral Image Segmentation Using Subspace Multinomial Logistic Regression and Markov Random Fields",
+            "authors": [
+              "Jun Li",
+              "José M. Bioucas-Dias",
+              "Antonio Plaza"
+            ],
+            "year": 2012,
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2015-first-ten-hsi-directory-2026-10-14-subspace-segmentation-unread.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "唯一作者公开TGRS正式PDF；第1页完整原摘要/署名/DOI和第6页Fig2主要算法流程已核，其他页仅图注定位，不阅读全文、整理性能或读取另一版本。第1页在线发表2011-08-30，当前卷期2012-03分别保留；Jun Li不是Jun Zhou。",
+            "onlinePublicationDateFromPdf": "2011-08-30",
+            "currentVersionDateFromPdf": "2012-02-24"
+          },
+          {
+            "id": "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2011.2162649",
+            "doi": "10.1109/tgrs.2011.2162649",
+            "title": "Spectral–Spatial Hyperspectral Image Segmentation Using Subspace Multinomial Logistic Regression and Markov Random Fields",
+            "authors": [
+              "Jun Li",
+              "José M. Bioucas-Dias",
+              "Antonio Plaza"
+            ],
+            "year": 2012,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "50",
+            "issue": "3",
+            "page": "809-823",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "注册书目与所用作者公开正式PDF关联，不另读正文。"
+          }
+        ],
+        "methodFamilyId": "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和完整主流程明确监督HSI语义分割，不把内部投影单列为本文降维输出或Jun Li作为Jun Zhou。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "2787049ab8b9d58cb1e889f09f1b1b38573908b61ea059d6ab3e0d3dc699dcd5",
+          "sourceUrls": [
+            "https://www2.umbc.edu/rssipl/people/aplaza/Papers/Journals/2012.TGRS.Subspace.pdf",
+            "https://api.crossref.org/works/10.1109/TGRS.2011.2162649"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -86440,7 +87705,10 @@
         "sparse-fisher-em-hsi-arxiv-2012",
         "discriminative-probabilistic-prototypes-arxiv-2012",
         "endmember-variability-unsupervised-unmixing-tip-2015",
-        "adaptive-weighted-l1-hsi-classification-arxiv-2014"
+        "adaptive-weighted-l1-hsi-classification-arxiv-2014",
+        "segsalsa-str-hyperspectral-segmentation-arxiv-2015",
+        "rejection-fields-hyperspectral-classification-arxiv-2015",
+        "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012"
       ],
       "history": [
         {
@@ -87125,7 +88393,12 @@
         "minimum-volume-simplex-analysis-tgrs-2015",
         "robust-linear-unmixing-anomaly-2015",
         "biobjective-linear-kernel-nmf-arxiv-2015",
-        "perturbed-linear-mixing-variability-arxiv-2015"
+        "perturbed-linear-mixing-variability-arxiv-2015",
+        "hutamp-2015",
+        "rkhs-band-selection-nonlinear-unmixing-arxiv-2015",
+        "nonlinear-mixed-pixel-detection-tip-2016",
+        "sparse-lowrank-abundance-estimation-tgrs-2016",
+        "dykstra-projection-spectral-unmixing-arxiv-2015"
       ],
       "history": [
         {
@@ -87199,7 +88472,8 @@
         "kernel-mva-hsi-applications-arxiv-2013",
         "rare-eclipse-compressive-hsi-classification-arxiv-2014",
         "treelets-hyperspectral-tissue-classification-arxiv-2007",
-        "grassmann-embedded-classification-2014"
+        "grassmann-embedded-classification-2014",
+        "sequential-localized-features-pattern-recognition-2017"
       ],
       "history": [
         {
@@ -87499,7 +88773,8 @@
         "rlphcs-2015",
         "bayesian-hsi-sr-2015",
         "mshcs-2015",
-        "spatial-support-bayesian-hsi-unmixing-tip-2015"
+        "spatial-support-bayesian-hsi-unmixing-tip-2015",
+        "hutamp-2015"
       ],
       "history": [
         {
@@ -87851,7 +89126,9 @@
         "structured-sparse-hsi-unmixing-isprs-2014",
         "kernel-nmf-preimage-hsi-arxiv-2014",
         "fast-hyperspectral-diffuse-optical-tomography-arxiv-2014",
-        "biobjective-linear-kernel-nmf-arxiv-2015"
+        "biobjective-linear-kernel-nmf-arxiv-2015",
+        "sparse-lowrank-abundance-estimation-tgrs-2016",
+        "sequential-localized-features-pattern-recognition-2017"
       ],
       "history": [
         {
@@ -88599,7 +89876,8 @@
         "mi-filter-band-selection-arxiv-2012",
         "fano-wrapper-band-selection-arxiv-2012",
         "symmetric-uncertainty-band-selection-arxiv-2012",
-        "fast-forward-gmm-band-selection-arxiv-2015"
+        "fast-forward-gmm-band-selection-arxiv-2015",
+        "rkhs-band-selection-nonlinear-unmixing-arxiv-2015"
       ],
       "history": [
         {
@@ -89486,7 +90764,9 @@
         "fast-forward-gmm-band-selection-arxiv-2015",
         "structured-task-driven-dictionary-hsi-tgrs-2015",
         "grassmann-embedded-classification-2014",
-        "kernel-task-driven-dictionary-classification-arxiv-2015"
+        "kernel-task-driven-dictionary-classification-arxiv-2015",
+        "rejection-fields-hyperspectral-classification-arxiv-2015",
+        "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012"
       ],
       "history": [
         {
@@ -90647,7 +91927,8 @@
         "zhou-scholar-pixel-wise-shuffling-with-collaborative-sp-2025",
         "structured-sparse-nnls-hsi-arxiv-2013",
         "spatial-support-bayesian-hsi-unmixing-tip-2015",
-        "graph-laplacian-hsi-unmixing-arxiv-2014"
+        "graph-laplacian-hsi-unmixing-arxiv-2014",
+        "sparse-lowrank-abundance-estimation-tgrs-2016"
       ],
       "history": [
         {
@@ -90836,7 +92117,8 @@
         "glup-nglup-tip-2014",
         "herschel-hifi-blind-decomposition-arxiv-2012",
         "greedy-sdmmv-hsi-unmixing-arxiv-2014",
-        "noise-whitened-eigengap-endmember-count-tgrs-2016"
+        "noise-whitened-eigengap-endmember-count-tgrs-2016",
+        "hutamp-2015"
       ],
       "history": [
         {
@@ -92707,7 +93989,8 @@
         }
       ],
       "evidencePaperIds": [
-        "vegetation-nonlinear-mixing-comparison-arxiv-2013"
+        "vegetation-nonlinear-mixing-comparison-arxiv-2013",
+        "nonlinear-mixed-pixel-detection-tip-2016"
       ]
     }
   ]

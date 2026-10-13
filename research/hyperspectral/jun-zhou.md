@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-14作者现有未决无新增个人身份/实际输入证据，Jun确认182不变，不重复受限入口。2015原目录与已下载TGRS分割补9直接HSI和四主图，总649；分割作者Jun Li不混Jun Zhou。2015指定50现19入/1PhD类型排/30待，作者及其他历年继续。[一版资料续接与作者边界](sources/arxiv-2015-next-eight-and-subspace-segmentation-2026-10-14.json)。
+
 2026-10-14先核作者差集两spectrum条目，原材料明确无线电地图与B12细胞电化学传感，按范围排除，Jun单位原样保留不判异人。OpenAlex混并索引86survey/387未映射，Jun确认182不变；已有身份/范围/来源未决仍待。[原始范围控制](sources/jun-zhou-unmapped-radio-cell-primary-scope-2026-10-14.json)。2015官方查询取得50书目、前10新增10及四主图，总640；只指定查询非年度/作者全集。[单版目录续接](sources/arxiv-2015-first-ten-hsi-directory-2026-10-14.json)。
 
 2026-10-13目标作者未决无新个人身份/实际输入证据，不重复受限入口，Jun确认182不变。既有非Jun引文/综述补三直接HSI及两主图，总630；MVSA作者为Jun Li，不新增到Jun Zhou专项。2015目录查询及其他作者/范围/来源继续。[单版原材料与署名边界](sources/cited-hsi-statistics-mvsa-pansharpen-review-2026-10-13.json)。
