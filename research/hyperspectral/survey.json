@@ -14816,19 +14816,48 @@
       "pagination": "start0/max500，totalResults114，唯一ID114；只指定查询，不是年度全集。",
       "titleCount": 114,
       "candidateCount": 114,
-      "reviewedCount": 7,
-      "includedCount": 7,
-      "excludedCount": 0,
-      "pendingCount": 107,
-      "sourcePrimaryAbstractsReviewed": 0,
-      "newUniquePrimaryAbstractsReviewed": 0,
+      "reviewedCount": 17,
+      "includedCount": 16,
+      "excludedCount": 1,
+      "pendingCount": 97,
+      "sourcePrimaryAbstractsReviewed": 10,
+      "newUniquePrimaryAbstractsReviewed": 10,
       "status": "partial",
-      "statusLabel": "仅书目登记：7已有目录关联/0继承排除/107待",
+      "statusLabel": "前10原摘要已处置：16目录关联/1排/97待；其他104摘要未新读",
       "sourceSnapshot": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
       "collectionScope": "active",
       "gaps": [
-        "新原摘要与必要直接HSI范围待；已有工作只复用书目，不重复阅读/图。",
-        "无关键词题名、其他词/年/白名单与作者差集继续。"
+        "后104原摘要未新读（其中七既有目录仅书目）；其他词年和作者范围/身份/合格来源待。",
+        "城市GMM的RSE2020异题名同序三人仅版本线索，关系未定，不增第二论文。"
+      ],
+      "latestFollowupSnapshot": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json"
+    },
+    {
+      "id": "arxiv-2018-first-ten-hsi-directory-2026-10-14",
+      "venue": "arXiv/TPAMI/TOG/TGRS",
+      "year": 2018,
+      "date": "2026-10-14",
+      "keywordGroup": "historical-query-single-version-followup",
+      "keywords": [
+        "hyperspectral"
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahyperspectral+AND+submittedDate%3A%5B201801010000+TO+201812312359%5D&start=0&max_results=500&sortBy=submittedDate&sortOrder=ascending",
+      "method": "先核Jun ASTER精确注册与原入口/索引摘要边界，再读2018原前10摘要，9直接HSI各一可用版本、5主要原图；未来用途等离子结构按范围排除。",
+      "pagination": "114指定集合原前10，不是年度全集。",
+      "titleCount": 10,
+      "candidateCount": 10,
+      "reviewedCount": 10,
+      "includedCount": 9,
+      "duplicates": 0,
+      "excludedCount": 1,
+      "pendingCount": 0,
+      "status": "complete",
+      "sourcePrimaryAbstractsReviewed": 10,
+      "newUniquePrimaryAbstractsReviewed": 10,
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "collectionScope": "active",
+      "gaps": [
+        "Jun ASTER范围/身份/来源、城市GMM正式版本关系、父查询余97及其他词年继续。"
       ]
     }
   ],
@@ -50946,11 +50975,25 @@
       "arxivId": "1801.06635",
       "discoveredAt": "2026-10-12",
       "searchId": "jun-zhou-initial-qian-suit-version-reading-2026-10-12-qian",
-      "decision": "pending",
-      "reason": "完整摘要直接HSI自然RGB显示，匹配HSI/RGB像元约束移动最小二乘光谱映射；此插值不是三维场景重建。无Jun Zhou，留待领域全文和版本去重。",
+      "decision": "included",
+      "reason": "以移动最小二乘和对应RGB把高光谱显示为自然色。",
       "readingProgress": "abstract_read",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-initial-qian-suit-version-reading-2026-10-12.json",
-      "collectionScope": "active"
+      "collectionScope": "active",
+      "paperId": "moving-least-squares-hsi-visualization-arxiv-2018",
+      "scopeStatus": "direct_hsi_confirmed",
+      "sourcePolicyStatus": "arxiv_allowed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "以移动最小二乘和对应RGB把高光谱显示为自然色。"
+        }
+      ]
     },
     {
       "title": "Constrained Manifold Learning for Hyperspectral Imagery Visualization",
@@ -67872,9 +67915,15 @@
       "title": "The reconnaissance of mineral resources through aster data-based image processing, interpreting and ground inspection in the Jiafushaersu area, West Junggar, China",
       "doi": "10.1007/s12583-014-0423-9",
       "url": "https://link.springer.com/article/10.1007/s12583-014-0423-9",
-      "venue": "unverified indexed journal record",
+      "venue": "Journal of Earth Science",
       "year": 2014,
-      "authors": [],
+      "authors": [
+        "Lei Liu",
+        "Jun Zhou",
+        "Fang Yin",
+        "Min Feng",
+        "Bing Zhang"
+      ],
       "searchId": "jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13",
       "discoveredAt": "2026-10-13",
       "decision": "pending",
@@ -67883,13 +67932,26 @@
       "candidateKind": "author_difference_scope_identity_control",
       "identityStatus": "merged_profile_no_primary_personal_identity",
       "scopeStatus": "actual_spectral_inputs_unverified",
-      "sourcePolicyStatus": "indexed_source_primary_registration_pending",
+      "sourcePolicyStatus": "outside_whitelist_pending_qualified_version",
       "readingProgress": "title_only",
       "evidencePath": "research/hyperspectral/sources/jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13.json",
       "latestFollowupEvidencePath": "research/hyperspectral/sources/jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13.json",
       "primaryAccessStatus": "http_200_client_challenge_no_article",
       "readingBoundary": "仅完整原摘要和注明实际输入/研究对象段、原作者单位；未通读正文、逐版阅读或访问代码。",
-      "boundary": "合并OpenAlex档案只定位，单篇单位不同不自动认定异人；范围排除不是作者全集身份审计完成。"
+      "boundary": "合并OpenAlex档案只定位，单篇单位不同不自动认定异人；范围排除不是作者全集身份审计完成。",
+      "registeredDoi": "10.1007/s12583-014-0423-9",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "primaryRegistrationStatus": "exact_title_five_authors_no_abstract_affiliation_or_orcid",
+      "qualifiedVersionLocatorNote": "新的精确Crossref注册确认Journal of Earth Science2014、同题五作者且Jun Zhou为第二作者，无单位/个人ORCID/摘要；OpenAlex相同DOI无索引摘要，Jun Wei Zhou仅二级姓名差异不当同一人或异人证据。另一期刊入口与NASA ASTER规格入口TLS失败；实际谱带/直接HSI、目标身份与合格版本继续待，不凭ASTER题名排范围或称付费，不重复旧Springer挑战页。",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "pending",
+          "reason": "新的精确Crossref注册确认Journal of Earth Science2014、同题五作者且Jun Zhou为第二作者，无单位/个人ORCID/摘要；OpenAlex相同DOI无索引摘要，Jun Wei Zhou仅二级姓名差异不当同一人或异人证据。另一期刊入口与NASA ASTER规格入口TLS失败；实际谱带/直接HSI、目标身份与合格版本继续待，不凭ASTER题名排范围或称付费，不重复旧Springer挑战页。"
+        }
+      ]
     },
     {
       "title": "A Model-Driven Multi-UAV Spectrum Map Fast Fusion Method for Strongly Correlated Data Environments",
@@ -75013,13 +75075,25 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "scene-adapted-pnp-hsi-fusion-arxiv-2018",
+      "reason": "将场景自适应先验嵌入PnP-ADMM以融合高光谱影像。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "将场景自适应先验嵌入PnP-ADMM以融合高光谱影像。"
+        }
+      ]
     },
     {
       "title": "Hyperspectral recovery from RGB images using Gaussian Processes",
@@ -75034,13 +75108,25 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "gaussian-process-rgb-hsi-tpami-2020",
+      "reason": "用高斯过程先验从RGB恢复自然场景光谱。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
-      "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。"
+      "sourcePolicyStatus": "whitelist_allowed",
+      "readingProgress": "abstract_read",
+      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "TPAMI",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "用高斯过程先验从RGB恢复自然场景光谱。"
+        }
+      ]
     },
     {
       "title": "Structural Coloration of Transmission Light through Self-Aligned and Complementary Plasmonic Nanostructures",
@@ -75056,14 +75142,25 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
+      "decision": "excluded",
       "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "reason": "完整官方原摘要报告可调单透射峰的互补等离子体结构，仅最后提出将来可用于多/高光谱成像；没有实际HSI采集系统、数据处理/重建或应用，按本次直接研究范围排除。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
+      "readingProgress": "abstract_read",
       "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
-      "doi": "10.1039/C8NR01006D"
+      "doi": "10.1039/C8NR01006D",
+      "scopeStatus": "potential_hsi_application_only_not_direct_study",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "excluded",
+          "reason": "完整官方原摘要报告可调单透射峰的互补等离子体结构，仅最后提出将来可用于多/高光谱成像；没有实际HSI采集系统、数据处理/重建或应用，按本次直接研究范围排除。"
+        }
+      ]
     },
     {
       "title": "A Tutorial on Modeling and Inference in Undirected Graphical Models for Hyperspectral Image Analysis",
@@ -75078,14 +75175,26 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "ugm-hsi-analysis-tutorial-arxiv-2018",
+      "reason": "介绍无向图模型的高光谱谱空分类与实用流程。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
+      "readingProgress": "abstract_read",
       "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
-      "doi": "10.1080/01431161.2018.1465614"
+      "doi": "10.1080/01431161.2018.1465614",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "介绍无向图模型的高光谱谱空分类与实用流程。"
+        }
+      ]
     },
     {
       "title": "Unmixing urban hyperspectral imagery with a Gaussian mixture model on endmember variability",
@@ -75101,13 +75210,33 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "urban-gmm-endmember-variability-arxiv-2018",
+      "reason": "以GMM表示端元变化并解混城市AVIRIS影像。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "pendingVersionRelations": [
+        {
+          "doi": "10.1016/j.rse.2020.111857",
+          "title": "Unmixing urban hyperspectral imagery using probability distributions to represent endmember variability",
+          "reason": "同序三作者、不同题名，原作者明确版本关系未得，暂不合并/另增目录。",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json"
+        }
+      ],
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "以GMM表示端元变化并解混城市AVIRIS影像。"
+        }
+      ]
     },
     {
       "title": "KRISM --- Krylov Subspace-based Optical Computing of Hyperspectral Images",
@@ -75122,14 +75251,26 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "krism-optical-hsi-tog-2019",
+      "reason": "在光学系统内自适应计算高光谱的低秩近似。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
-      "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
+      "sourcePolicyStatus": "whitelist_allowed",
+      "readingProgress": "abstract_read",
       "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
-      "doi": "10.1145/3345553"
+      "doi": "10.1145/3345553",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "TOG",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "在光学系统内自适应计算高光谱的低秩近似。"
+        }
+      ]
     },
     {
       "title": "Hyper-Hue and EMAP on Hyperspectral Images for Supervised Layer Decomposition of Old Master Drawings",
@@ -75149,13 +75290,25 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "hyperhue-emap-drawing-hsi-arxiv-2018",
+      "reason": "用Hyper-Hue与EMAP特征分离历史绘画叠加材料层。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "用Hyper-Hue与EMAP特征分离历史绘画叠加材料层。"
+        }
+      ]
     },
     {
       "title": "A CNN-based Spatial Feature Fusion Algorithm for Hyperspectral Imagery Classification",
@@ -75170,14 +75323,26 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "csff-hsi-classification-tgrs-2019",
+      "reason": "以像元对判别产生自适应空间核，融合ANNC高光谱特征。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
-      "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
+      "sourcePolicyStatus": "whitelist_allowed",
+      "readingProgress": "abstract_read",
       "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
-      "doi": "10.1109/TGRS.2019.2911993"
+      "doi": "10.1109/TGRS.2019.2911993",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "TGRS",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "以像元对判别产生自适应空间核，融合ANNC高光谱特征。"
+        }
+      ]
     },
     {
       "title": "A Variable Density Sampling Scheme for Compressive Fourier Transform Interferometry",
@@ -75195,13 +75360,25 @@
       "year": 2018,
       "searchId": "arxiv-2018-hsi-directory-locator-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "官方题名/作者和合格arXiv来源已取得；本轮未读原摘要，不凭hyperspectral关键词认定直接HSI、任务、身份或版本关系。",
+      "decision": "included",
+      "paperId": "variable-density-fti-hsi-arxiv-2018",
+      "reason": "用变密度编码照明降低傅里叶干涉高光谱采集曝光。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "2018首次提交/指定关键词集合，不是年度或作者全集；取得API摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "用变密度编码照明降低傅里叶干涉高光谱采集曝光。"
+        }
+      ]
     },
     {
       "title": "Cross-domain CNN for Hyperspectral Image Classification",
@@ -86327,6 +86504,36 @@
       "newFullTextReadingCount": 0,
       "figuresAdded": 0,
       "sourceSnapshot": "research/hyperspectral/sources/arxiv-2018-hsi-directory-locator-2026-10-14.json"
+    },
+    {
+      "id": "arxiv-2018-first-ten-hsi-directory-2026-10-14",
+      "date": "2026-10-14",
+      "searchIds": [
+        "arxiv-2018-first-ten-hsi-directory-2026-10-14"
+      ],
+      "paperIds": [
+        "scene-adapted-pnp-hsi-fusion-arxiv-2018",
+        "gaussian-process-rgb-hsi-tpami-2020",
+        "moving-least-squares-hsi-visualization-arxiv-2018",
+        "ugm-hsi-analysis-tutorial-arxiv-2018",
+        "urban-gmm-endmember-variability-arxiv-2018",
+        "krism-optical-hsi-tog-2019",
+        "hyperhue-emap-drawing-hsi-arxiv-2018",
+        "csff-hsi-classification-tgrs-2019",
+        "variable-density-fti-hsi-arxiv-2018"
+      ],
+      "new": 9,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 1,
+      "pending": 97,
+      "newSurveyCandidates": 0,
+      "sourcePrimaryAbstractsReviewed": 10,
+      "newUniquePrimaryAbstractsReviewed": 10,
+      "newPdfsDownloaded": 9,
+      "newFullTextReadingCount": 0,
+      "figuresAdded": 5,
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json"
     }
   ],
   "gaps": [

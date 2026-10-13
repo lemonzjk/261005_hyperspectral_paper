@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-14 ASTER精确原注册确认Journal of Earth Science2014、五作者/第二Jun，无原摘要/单位/ORCID；相同DOI OpenAlex无摘要且Jun Wei二级名不判目标或异人，另一期刊/NASA规格TLS失败，实际输入/范围/身份/合格来源待，不重复旧Springer挑战或称付费。Jun182不变；领域2018原前10九新五主图，总816，114为16关联/1排/97待，其他作者/年继续。[原书目与单版主要图](sources/arxiv-2018-first-ten-hsi-directory-2026-10-14.json)。
+
 2026-10-14领域2018指定114官方书目中两完整Jun Zhou字段对应已录KCF/材料跟踪，仅复用，不重读版本或补图；不是作者全集证明。Jun确认182不变，领域107条当前查询待核，实际范围/版本/作者候选仍继续。[有限目录与既有映射](sources/arxiv-2018-hsi-directory-locator-2026-10-14.json)。
 
 2026-10-14 SOC第一作者Xiangyu Liu加soil/carbon/hyperspectral有限官方arXiv查询一项为已录HyperVision，非SOC版本，不读另一版或补图；精确SSRN仍同题14作者，原目标身份/直接HSI证据保留、合格来源待，不证明无公开稿。Jun182不变；领域两新两主图，总807，2017指定93书目处置为84关联/7排/2范围或关系待（89摘要/四既有书目），其他作者/年继续。[有限版本定位与一版主图](sources/arxiv-2017-final-three-hsi-directory-2026-10-14.json)。
