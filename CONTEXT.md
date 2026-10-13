@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：Zhuo三HSI分类候选续收HOpenCls/SSDGL/FPGA，各一版一主图；FPGA关联TGRS2020，SSDGL的TCYB2022来源外只书目关联。CVPR/ICCV2025共5572题名、42关键词定位：11新增/4既有/27摘要暂排，新增均一版一主图；DAPNet§3.6明确CAVE高光谱扩展，通用PAN/MS原图保留。合计14篇14图、0新全文/代码访问；无关键词题名、历年/作者未决继续，不称全集完成。
+- 最新：Zhuohong Li/Yuqi Tang指定arXiv5/20书目无Jun字段/字面HSI题名，未读摘要，不否定HVOT公开版。复用CVPR/ICCV2025官方5572题名，补核29通用融合/全色锐化及spectr词形摘要，15唯一PDF仅范围选读，均无直接HSI新证据暂排，0新图/全文/代码访问。总库456/原图391不变；无关键词题名、其他年份及作者未决继续，不称全集完成。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
