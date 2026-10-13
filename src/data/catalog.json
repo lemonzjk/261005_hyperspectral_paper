@@ -67021,6 +67021,838 @@
           ]
         }
       }
+    },
+    {
+      "id": "cst-hsi-reconstruction-eccv-2022",
+      "shortTitle": "CST",
+      "title": "Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction",
+      "authors": "Yuanhao Cai, Jing Lin, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu Timofte, Luc Van Gool",
+      "year": 2022,
+      "venue": "ECCV",
+      "publicationName": "Computer Vision – ECCV 2022",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "SASM先筛选信息丰富的空间patch，再用谱聚合哈希多头注意力聚类相关token，稀疏Transformer逐阶段恢复HSI。",
+      "tags": [],
+      "summary": "以谱感知筛选和稀疏注意力重建CASSI压缩高光谱图像。",
+      "input": "CASSI压缩测量。",
+      "output": "重建HSI。",
+      "mechanism": "SASM先筛选信息丰富的空间patch，再用谱聚合哈希多头注意力聚类相关token，稀疏Transformer逐阶段恢复HSI。",
+      "readingNote": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+      "paper": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/357_ECCV_2022_paper.php",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136770690.pdf",
+          "sourceVersion": "ECCV2022官方公开正文",
+          "figureLabel": "Fig. 2",
+          "page": 6,
+          "caption": "Fig. 2: Framework of CST. (a) Spectra-aware screening mechanism (SASM) and the architecture of CST. (b) The components of spectra-aware hashing attention block (SAHAB), which is the basic unit of CST. (c) Spectra-aggregation hashing multi-head self-attention (SAH-MSA) is the key component of SAHAB.",
+          "verificationNote": "所用ECCV2022官方公开正文 PDF第6页Fig. 2主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/cst-hsi-reconstruction-eccv-2022/framework.png",
+          "width": 1071,
+          "height": 891,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "b96aceb811434bbe614989a4b728d6b1fb5afd89bd2118cb0fbbdd6c25292cc8",
+          "attribution": "Yuanhao Cai, Jing Lin, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu Timofte, Luc Van Gool · ECCV2022官方公开正文",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              129.0,
+              69.0,
+              486.0,
+              366.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{cst-hsi-reconstruction-eccv-2022,\n  title = {Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction},\n  author = {Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},\n  year = {2022},\n  url = {https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/357_ECCV_2022_paper.php}\n}\n",
+      "doi": "10.1007/978-3-031-19790-1_41",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要和主框架明确直接处理高光谱；ECCV为白名单，arXiv条目按预印本收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以谱感知筛选和稀疏注意力重建CASSI压缩高光谱图像。",
+        "datasets": "不整理性能；数据类型依据原摘要及主框架。",
+        "experimentSetting": "只核身份、HSI范围和主要框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/357_ECCV_2022_paper.php",
+            "checkedAt": "2026-10-13",
+            "level": "ECCV官方完整原摘要、作者与书目",
+            "supports": [
+              "以谱感知筛选和稀疏注意力重建CASSI压缩高光谱图像。",
+              "所用版本首页作者顺序与来源记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136770690.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第6页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 2: Framework of CST. (a) Spectra-aware screening mechanism (SASM) and the architecture of CST. (b) The components of spectra-aware hashing attention block (SAHAB), which is the basic unit of CST. (c) Spectra-aggregation hashing multi-head self-attention (SAH-MSA) is the key component of SAHAB.",
+              "所用ECCV2022官方公开正文 PDF第6页Fig. 2主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "cst-hsi-reconstruction-eccv-2022-used",
+            "type": "所用唯一公开正文版本",
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/357_ECCV_2022_paper.php",
+            "pdfUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136770690.pdf",
+            "year": 2022,
+            "title": "Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction",
+            "authors": [
+              "Yuanhao Cai",
+              "Jing Lin",
+              "Xiaowan Hu",
+              "Haoqian Wang",
+              "Xin Yuan",
+              "Yulun Zhang",
+              "Radu Timofte",
+              "Luc Van Gool"
+            ],
+            "venue": "ECCV",
+            "publicationName": "Computer Vision – ECCV 2022",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/cvf2022-tracking-arxiv-mainframes-2026-10-13-eccv-4.pdf"
+          }
+        ],
+        "methodFamilyId": "cst-hsi-reconstruction-eccv-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类；纯多光谱与泛spectral候选不收入。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d77de1106732c0ab40c95c3aa9771c4615ef3860baa03fe454f9482a484249c6",
+          "sourceUrls": [
+            "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/357_ECCV_2022_paper.php",
+            "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136770690.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "stas-hsi-restoration-eccv-2022",
+      "shortTitle": "STAS",
+      "title": "Spectrum-Aware and Transferable Architecture Search for Hyperspectral Image Restoration",
+      "authors": "Wei He, Quanming Yao, Naoto Yokoya, Tatsumi Uezato, Hongyan Zhang, Liangpei Zhang",
+      "year": 2022,
+      "venue": "ECCV",
+      "publicationName": "Computer Vision – ECCV 2022",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "谱感知架构搜索空间包含全局架构、super-cell和混合残差块，搜索后形成适配HSI空间谱结构的复原网络。",
+      "tags": [],
+      "summary": "以谱感知搜索空间和超网架构搜索提升HSI复原。",
+      "input": "退化HSI。",
+      "output": "复原HSI。",
+      "mechanism": "谱感知架构搜索空间包含全局架构、super-cell和混合残差块，搜索后形成适配HSI空间谱结构的复原网络。",
+      "readingNote": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+      "paper": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4367_ECCV_2022_paper.php",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790019.pdf",
+          "sourceVersion": "ECCV2022官方公开正文",
+          "figureLabel": "Fig. 1",
+          "page": 4,
+          "caption": "Fig. 1. Overview of the proposed STAS. (a) Global architecture used in STAS. (b) The architecture of super-cell. (c) MRB to connect the nodes in the super-cell.",
+          "verificationNote": "所用ECCV2022官方公开正文 PDF第4页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/stas-hsi-restoration-eccv-2022/framework.png",
+          "width": 1071,
+          "height": 876,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "1b2448881964402b2e8521170f547890ccdb66fd85e05cfc760e8ee14d648f79",
+          "attribution": "Wei He, Quanming Yao, Naoto Yokoya, Tatsumi Uezato, Hongyan Zhang, Liangpei Zhang · ECCV2022官方公开正文",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              129.0,
+              54.0,
+              486.0,
+              346.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{stas-hsi-restoration-eccv-2022,\n  title = {Spectrum-Aware and Transferable Architecture Search for Hyperspectral Image Restoration},\n  author = {Wei He and Quanming Yao and Naoto Yokoya and Tatsumi Uezato and Hongyan Zhang and Liangpei Zhang},\n  year = {2022},\n  url = {https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4367_ECCV_2022_paper.php}\n}\n",
+      "doi": "10.1007/978-3-031-19800-7_2",
+      "library": {
+        "categoryIds": [
+          "spectral-data-restoration",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要和主框架明确直接处理高光谱；ECCV为白名单，arXiv条目按预印本收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以谱感知搜索空间和超网架构搜索提升HSI复原。",
+        "datasets": "不整理性能；数据类型依据原摘要及主框架。",
+        "experimentSetting": "只核身份、HSI范围和主要框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4367_ECCV_2022_paper.php",
+            "checkedAt": "2026-10-13",
+            "level": "ECCV官方完整原摘要、作者与书目",
+            "supports": [
+              "以谱感知搜索空间和超网架构搜索提升HSI复原。",
+              "所用版本首页作者顺序与来源记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790019.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第4页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 1. Overview of the proposed STAS. (a) Global architecture used in STAS. (b) The architecture of super-cell. (c) MRB to connect the nodes in the super-cell.",
+              "所用ECCV2022官方公开正文 PDF第4页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "stas-hsi-restoration-eccv-2022-used",
+            "type": "所用唯一公开正文版本",
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4367_ECCV_2022_paper.php",
+            "pdfUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790019.pdf",
+            "year": 2022,
+            "title": "Spectrum-Aware and Transferable Architecture Search for Hyperspectral Image Restoration",
+            "authors": [
+              "Wei He",
+              "Quanming Yao",
+              "Naoto Yokoya",
+              "Tatsumi Uezato",
+              "Hongyan Zhang",
+              "Liangpei Zhang"
+            ],
+            "venue": "ECCV",
+            "publicationName": "Computer Vision – ECCV 2022",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/cvf2022-tracking-arxiv-mainframes-2026-10-13-eccv-8.pdf"
+          }
+        ],
+        "methodFamilyId": "stas-hsi-restoration-eccv-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类；纯多光谱与泛spectral候选不收入。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "8d48e5ffbd22d17b36000894208a480b1ffd14dd2c2a26a12231933797ff40ad",
+          "sourceUrls": [
+            "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4367_ECCV_2022_paper.php",
+            "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790019.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mask-uncertainty-hsi-reconstruction-eccv-2022",
+      "shortTitle": "Mask Uncertainty",
+      "title": "Modeling Mask Uncertainty in Hyperspectral Image Reconstruction",
+      "authors": "Jiamian Wang, Yulun Zhang, Xin Yuan, Ziyi Meng, Zhiqiang Tao",
+      "year": 2022,
+      "venue": "ECCV",
+      "publicationName": "Computer Vision – ECCV 2022",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "上层以图自调网络近似掩模后验，下层以掩模为超参数的重建网络恢复HSI，双层优化联合估计不确定性与重建。",
+      "tags": [],
+      "summary": "建模CASSI硬件掩模不确定性，提升跨掩模HSI重建鲁棒性。",
+      "input": "带真实或随机掩模的CASSI观测。",
+      "output": "HSI重建及掩模方差估计。",
+      "mechanism": "上层以图自调网络近似掩模后验，下层以掩模为超参数的重建网络恢复HSI，双层优化联合估计不确定性与重建。",
+      "readingNote": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+      "paper": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4507_ECCV_2022_paper.php",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790109.pdf",
+          "sourceVersion": "ECCV2022官方公开正文",
+          "figureLabel": "Fig. 2",
+          "page": 3,
+          "caption": "Fig. 2. Illustration of the proposed bilevel optimization framework. The upper-level models the mask uncertainty by approximating a mask posterior distribution, and the lower-level adopts a reconstruction network fθ(m, y) which takes masks as hyperpa- rameters. Our model could be applied in multiple CASSIs using different masks.",
+          "verificationNote": "所用ECCV2022官方公开正文 PDF第3页Fig. 2主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/mask-uncertainty-hsi-reconstruction-eccv-2022/framework.png",
+          "width": 1071,
+          "height": 681,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "913480fdc6543251ab19abcb12d57329119a897b4ee48780c0056e4c8a59303e",
+          "attribution": "Jiamian Wang, Yulun Zhang, Xin Yuan, Ziyi Meng, Zhiqiang Tao · ECCV2022官方公开正文",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              129.0,
+              54.0,
+              486.0,
+              281.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{mask-uncertainty-hsi-reconstruction-eccv-2022,\n  title = {Modeling Mask Uncertainty in Hyperspectral Image Reconstruction},\n  author = {Jiamian Wang and Yulun Zhang and Xin Yuan and Ziyi Meng and Zhiqiang Tao},\n  year = {2022},\n  url = {https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4507_ECCV_2022_paper.php}\n}\n",
+      "doi": "10.1007/978-3-031-19800-7_7",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要和主框架明确直接处理高光谱；ECCV为白名单，arXiv条目按预印本收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "建模CASSI硬件掩模不确定性，提升跨掩模HSI重建鲁棒性。",
+        "datasets": "不整理性能；数据类型依据原摘要及主框架。",
+        "experimentSetting": "只核身份、HSI范围和主要框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4507_ECCV_2022_paper.php",
+            "checkedAt": "2026-10-13",
+            "level": "ECCV官方完整原摘要、作者与书目",
+            "supports": [
+              "建模CASSI硬件掩模不确定性，提升跨掩模HSI重建鲁棒性。",
+              "所用版本首页作者顺序与来源记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790109.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第3页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 2. Illustration of the proposed bilevel optimization framework. The upper-level models the mask uncertainty by approximating a mask posterior distribution, and the lower-level adopts a reconstruction network fθ(m, y) which takes masks as hyperpa- rameters. Our model could be applied in multiple CASSIs using different masks.",
+              "所用ECCV2022官方公开正文 PDF第3页Fig. 2主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mask-uncertainty-hsi-reconstruction-eccv-2022-used",
+            "type": "所用唯一公开正文版本",
+            "url": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4507_ECCV_2022_paper.php",
+            "pdfUrl": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790109.pdf",
+            "year": 2022,
+            "title": "Modeling Mask Uncertainty in Hyperspectral Image Reconstruction",
+            "authors": [
+              "Jiamian Wang",
+              "Yulun Zhang",
+              "Xin Yuan",
+              "Ziyi Meng",
+              "Zhiqiang Tao"
+            ],
+            "venue": "ECCV",
+            "publicationName": "Computer Vision – ECCV 2022",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/cvf2022-tracking-arxiv-mainframes-2026-10-13-eccv-9.pdf"
+          }
+        ],
+        "methodFamilyId": "mask-uncertainty-hsi-reconstruction-eccv-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类；纯多光谱与泛spectral候选不收入。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "1e0899995a3ed74867f77ff1158f846c2a4816103f4820e2319a862c5ed13ec2",
+          "sourceUrls": [
+            "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4507_ECCV_2022_paper.php",
+            "https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136790109.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hya-t-hyperspectral-tracking-arxiv-2025",
+      "shortTitle": "HyA-T",
+      "title": "Hyperspectral Adapter for Object Tracking based on Hyperspectral Video",
+      "authors": "Long Gao, Yunhe Zhang, Langkun Chen, Yan Jiang, Weiying Xie, Yunsong Li",
+      "year": 2025,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "HEI增强输入光谱，HAS/HAM分别适配Transformer自注意力和MLP，特征提取器接自回归解码器并更新在线模板。",
+      "tags": [],
+      "summary": "以高光谱适配器和输入增强保留谱信息，进行高光谱视频目标跟踪。",
+      "input": "高光谱视频模板、搜索和在线模板图像。",
+      "output": "目标位置与跟踪置信度。",
+      "mechanism": "HEI增强输入光谱，HAS/HAM分别适配Transformer自注意力和MLP，特征提取器接自回归解码器并更新在线模板。",
+      "readingNote": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+      "paper": "https://arxiv.org/abs/2503.22199v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2503.22199v1",
+          "sourceVersion": "arXiv 2503.22199v1",
+          "figureLabel": "Fig. 1",
+          "page": 4,
+          "caption": "Fig. 1. (a) The pipeline of HyA-T. The overall structure is composed of HEI, a feature extraction network, and an autoregressive decoder. (b) The internal structure of a transformer block in the encoder, with the incorporation of HAS and HAM.",
+          "verificationNote": "所用arXiv 2503.22199v1 PDF第4页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/hya-t-hyperspectral-tracking-arxiv-2025/framework.png",
+          "width": 1566,
+          "height": 1086,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "2e4c9d6927f96c5c4e486d0e7ac7d89ad824217c22c35babbf0392262655660c",
+          "attribution": "Long Gao, Yunhe Zhang, Langkun Chen, Yan Jiang, Weiying Xie, Yunsong Li · arXiv 2503.22199v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              44.0,
+              44.0,
+              566.0,
+              406.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{hya-t-hyperspectral-tracking-arxiv-2025,\n  title = {Hyperspectral Adapter for Object Tracking based on Hyperspectral Video},\n  author = {Long Gao and Yunhe Zhang and Langkun Chen and Yan Jiang and Weiying Xie and Yunsong Li},\n  year = {2025},\n  url = {https://arxiv.org/abs/2503.22199v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-target-tracking",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要和主框架明确直接处理高光谱；ECCV为白名单，arXiv条目按预印本收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以高光谱适配器和输入增强保留谱信息，进行高光谱视频目标跟踪。",
+        "datasets": "不整理性能；数据类型依据原摘要及主框架。",
+        "experimentSetting": "只核身份、HSI范围和主要框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2503.22199v1",
+            "checkedAt": "2026-10-13",
+            "level": "官方arXiv完整原摘要与作者书目",
+            "supports": [
+              "以高光谱适配器和输入增强保留谱信息，进行高光谱视频目标跟踪。",
+              "所用版本首页作者顺序与来源记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2503.22199v1",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第4页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 1. (a) The pipeline of HyA-T. The overall structure is composed of HEI, a feature extraction network, and an autoregressive decoder. (b) The internal structure of a transformer block in the encoder, with the incorporation of HAS and HAM.",
+              "所用arXiv 2503.22199v1 PDF第4页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hya-t-hyperspectral-tracking-arxiv-2025-used",
+            "type": "所用唯一公开正文版本",
+            "url": "https://arxiv.org/abs/2503.22199v1",
+            "pdfUrl": "https://arxiv.org/pdf/2503.22199v1",
+            "year": 2025,
+            "title": "Hyperspectral Adapter for Object Tracking based on Hyperspectral Video",
+            "authors": [
+              "Long Gao",
+              "Yunhe Zhang",
+              "Langkun Chen",
+              "Yan Jiang",
+              "Weiying Xie",
+              "Yunsong Li"
+            ],
+            "venue": "arXiv",
+            "publicationName": "arXiv",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv",
+            "relation": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/cvf2022-tracking-arxiv-mainframes-2026-10-13-track-0.pdf",
+            "arxivId": "2503.22199",
+            "arxivVersion": "1",
+            "firstSubmittedAt": "2025-03-28T07:31:48Z",
+            "updatedAt": "2025-03-28T07:31:48Z"
+          }
+        ],
+        "methodFamilyId": "hya-t-hyperspectral-tracking-arxiv-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类；纯多光谱与泛spectral候选不收入。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "ae4c0385b4f86b0187411c15cd62890f86124e3760e3689b3f285d567fa3c7bc",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2503.22199v1",
+            "https://arxiv.org/pdf/2503.22199v1"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lwir-gas-plume-hsi-video-arxiv-2024",
+      "shortTitle": "LWIR gas plume video",
+      "title": "Detection and tracking of gas plumes in LWIR hyperspectral video sequence data",
+      "authors": "Torin Gerhart, Justin Sunu, Ekaterina Merkurjev, Jen-Mei Chang, Jerome Gilles, Andrea L. Bertozzi",
+      "year": 2024,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "PCA将视频投影到主要成分，再用Midway直方图均衡降低帧间闪烁，比较K-means、谱聚类和Ginzburg–Landau分割。",
+      "tags": [],
+      "summary": "将LWIR高光谱视频降维和直方图均衡后分割气体羽流。",
+      "input": "LWIR高光谱视频序列。",
+      "output": "气体羽流分割/聚类结果。",
+      "mechanism": "PCA将视频投影到主要成分，再用Midway直方图均衡降低帧间闪烁，比较K-means、谱聚类和Ginzburg–Landau分割。",
+      "readingNote": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+      "paper": "https://arxiv.org/abs/2411.00281v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2411.00281v1",
+          "sourceVersion": "arXiv 2411.00281v1",
+          "figureLabel": "Fig. 4",
+          "page": 5,
+          "caption": "Figure 4: Results of the Midway equalization on the false color video sequence. Colors are created using false color mapped from the first, second, and third principal components. Each frame is at a different time step, illustrating the color fluctuations and gas plume release. The left column has the images with the color variance. The right column has the images resulting from applying the Midway equalization algorithm.",
+          "verificationNote": "所用arXiv 2411.00281v1 PDF第5页Fig. 4主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/lwir-gas-plume-hsi-video-arxiv-2024/framework.png",
+          "width": 1521,
+          "height": 1566,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "955ee71cf57131fad291c6c69afa63374fb46fd190602fa0b8714209300ffab0",
+          "attribution": "Torin Gerhart, Justin Sunu, Ekaterina Merkurjev, Jen-Mei Chang, Jerome Gilles, Andrea L. Bertozzi · arXiv 2411.00281v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              54.0,
+              54.0,
+              561.0,
+              576.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{lwir-gas-plume-hsi-video-arxiv-2024,\n  title = {Detection and tracking of gas plumes in LWIR hyperspectral video sequence data},\n  author = {Torin Gerhart and Justin Sunu and Ekaterina Merkurjev and Jen-Mei Chang and Jerome Gilles and Andrea L. Bertozzi},\n  year = {2024},\n  url = {https://arxiv.org/abs/2411.00281v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "atmospheric-gas-monitoring",
+          "semantic-segmentation"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要和主框架明确直接处理高光谱；ECCV为白名单，arXiv条目按预印本收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "将LWIR高光谱视频降维和直方图均衡后分割气体羽流。",
+        "datasets": "不整理性能；数据类型依据原摘要及主框架。",
+        "experimentSetting": "只核身份、HSI范围和主要框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2411.00281v1",
+            "checkedAt": "2026-10-13",
+            "level": "官方arXiv完整原摘要与作者书目",
+            "supports": [
+              "将LWIR高光谱视频降维和直方图均衡后分割气体羽流。",
+              "所用版本首页作者顺序与来源记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2411.00281v1",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第5页主要原图及完整图注（选读）",
+            "supports": [
+              "Figure 4: Results of the Midway equalization on the false color video sequence. Colors are created using false color mapped from the first, second, and third principal components. Each frame is at a different time step, illustrating the color fluctuations and gas plume release. The left column has the images with the color variance. The right column has the images resulting from applying the Midway equalization algorithm.",
+              "所用arXiv 2411.00281v1 PDF第5页Fig. 4主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "lwir-gas-plume-hsi-video-arxiv-2024-used",
+            "type": "所用唯一公开正文版本",
+            "url": "https://arxiv.org/abs/2411.00281v1",
+            "pdfUrl": "https://arxiv.org/pdf/2411.00281v1",
+            "year": 2024,
+            "title": "Detection and tracking of gas plumes in LWIR hyperspectral video sequence data",
+            "authors": [
+              "Torin Gerhart",
+              "Justin Sunu",
+              "Ekaterina Merkurjev",
+              "Jen-Mei Chang",
+              "Jerome Gilles",
+              "Andrea L. Bertozzi"
+            ],
+            "venue": "arXiv",
+            "publicationName": "arXiv",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv",
+            "relation": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/cvf2022-tracking-arxiv-mainframes-2026-10-13-track-1.pdf",
+            "arxivId": "2411.00281",
+            "arxivVersion": "1",
+            "firstSubmittedAt": "2024-11-01T00:33:29Z",
+            "updatedAt": "2024-11-01T00:33:29Z"
+          }
+        ],
+        "methodFamilyId": "lwir-gas-plume-hsi-video-arxiv-2024",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类；纯多光谱与泛spectral候选不收入。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "6984fdb806fa0a1c7f3d7b59fbb879027796f0bd4872a57b002b63db7b2459cf",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2411.00281v1",
+            "https://arxiv.org/pdf/2411.00281v1"
+          ]
+        }
+      }
+    },
+    {
+      "id": "deephkcf-aerial-hsi-tracking-arxiv-2017",
+      "shortTitle": "DeepHKCF",
+      "title": "Tracking in Aerial Hyperspectral Videos using Deep Kernelized Correlation Filters",
+      "authors": "Burak Uzkent, Aneesh Rangnekar, Matthew J. Hoffman",
+      "year": 2017,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "注册单通道大视场后采样高光谱目标区域，单KCF多ROI覆盖大位移；ROI映射减少CNN重复前向，DeepHKCF利用深度特征更新相关滤波器。",
+      "tags": [],
+      "summary": "以深度特征和多ROI相关滤波跟踪航空高光谱视频目标。",
+      "input": "大视场单通道图像与61波段400–1000nm高光谱小视场图像。",
+      "output": "航空车辆跟踪位置。",
+      "mechanism": "注册单通道大视场后采样高光谱目标区域，单KCF多ROI覆盖大位移；ROI映射减少CNN重复前向，DeepHKCF利用深度特征更新相关滤波器。",
+      "readingNote": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+      "paper": "https://arxiv.org/abs/1711.07235v3",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1711.07235v3",
+          "sourceVersion": "arXiv 1711.07235v3",
+          "figureLabel": "Fig. 1",
+          "page": 2,
+          "caption": "Fig. 1: The proposed Kernelized Correlation Filter driven tracker inspired by RITMOS. In Step 1, registration is performed by using single-channel large ﬁeld of view (FOV) imagery. The small FOV hyperspectral image (61 bands in 400-1000 nm wavelength range) is then sampled in Step 2 to detect the target. The region of interest (ROI) is then divided into subregion of interests (48 × 48 px) to run kernelized correlation ﬁlter (KCF) on each of them in Step 4 and detect the target as in Step 5a. Finally, the KCF model is updated in Step 5b before passing to the next frame. The highlighted tracker represents the FastDeepHKCF that forward-propagates the ROI to the layer of interest in the CNN and projects the subregions to the feature maps. With RITMOS, it costs about 0.1s. to generate a single channel image in step 1 and another 0.1s for a small ﬁeld of view hyperspectral image in step 2.",
+          "verificationNote": "所用arXiv 1711.07235v3 PDF第2页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/deephkcf-aerial-hsi-tracking-arxiv-2017/framework.png",
+          "width": 1566,
+          "height": 1251,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "e25b9c2ddb9258e7f0be4aa6d6e25e339a4280b1714ea0c01002cdabfa93d577",
+          "attribution": "Burak Uzkent, Aneesh Rangnekar, Matthew J. Hoffman · arXiv 1711.07235v3",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              44.0,
+              54.0,
+              566.0,
+              471.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{deephkcf-aerial-hsi-tracking-arxiv-2017,\n  title = {Tracking in Aerial Hyperspectral Videos using Deep Kernelized Correlation Filters},\n  author = {Burak Uzkent and Aneesh Rangnekar and Matthew J. Hoffman},\n  year = {2017},\n  url = {https://arxiv.org/abs/1711.07235v3}\n}\n",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-target-tracking",
+          "correlation-filter-tracking"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要和主框架明确直接处理高光谱；ECCV为白名单，arXiv条目按预印本收录。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以深度特征和多ROI相关滤波跟踪航空高光谱视频目标。",
+        "datasets": "不整理性能；数据类型依据原摘要及主框架。",
+        "experimentSetting": "只核身份、HSI范围和主要框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1711.07235v3",
+            "checkedAt": "2026-10-13",
+            "level": "官方arXiv完整原摘要与作者书目",
+            "supports": [
+              "以深度特征和多ROI相关滤波跟踪航空高光谱视频目标。",
+              "所用版本首页作者顺序与来源记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1711.07235v3",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第2页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 1: The proposed Kernelized Correlation Filter driven tracker inspired by RITMOS. In Step 1, registration is performed by using single-channel large ﬁeld of view (FOV) imagery. The small FOV hyperspectral image (61 bands in 400-1000 nm wavelength range) is then sampled in Step 2 to detect the target. The region of interest (ROI) is then divided into subregion of interests (48 × 48 px) to run kernelized correlation ﬁlter (KCF) on each of them in Step 4 and detect the target as in Step 5a. Finally, the KCF model is updated in Step 5b before passing to the next frame. The highlighted tracker represents the FastDeepHKCF that forward-propagates the ROI to the layer of interest in the CNN and projects the subregions to the feature maps. With RITMOS, it costs about 0.1s. to generate a single channel image in step 1 and another 0.1s for a small ﬁeld of view hyperspectral image in step 2.",
+              "所用arXiv 1711.07235v3 PDF第2页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          },
+          {
+            "url": "https://doi.org/10.1109/tgrs.2018.2856370",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册题名/完整作者/卷年页书目（未读正文）",
+            "supports": [
+              "正式注册书目与所用arXiv题名、作者同序；只做版本关联，不另读正式正文/图，不断言正文或实验相同。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "deephkcf-aerial-hsi-tracking-arxiv-2017-used",
+            "type": "所用唯一公开正文版本",
+            "url": "https://arxiv.org/abs/1711.07235v3",
+            "pdfUrl": "https://arxiv.org/pdf/1711.07235v3",
+            "year": 2017,
+            "title": "Tracking in Aerial Hyperspectral Videos using Deep Kernelized Correlation Filters",
+            "authors": [
+              "Burak Uzkent",
+              "Aneesh Rangnekar",
+              "Matthew J. Hoffman"
+            ],
+            "venue": "arXiv",
+            "publicationName": "arXiv",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv",
+            "relation": "仅一个公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读或整理性能。正式版本与其他预印本不另读；代码仅保留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/cvf2022-tracking-arxiv-mainframes-2026-10-13-track-2.pdf",
+            "arxivId": "1711.07235",
+            "arxivVersion": "3",
+            "firstSubmittedAt": "2017-11-20T10:06:07Z",
+            "updatedAt": "2018-05-06T06:04:27Z"
+          },
+          {
+            "id": "deephkcf-aerial-hsi-tracking-arxiv-2017-formal-metadata",
+            "type": "关联正式书目（未另读正文）",
+            "url": "https://doi.org/10.1109/tgrs.2018.2856370",
+            "doi": "10.1109/tgrs.2018.2856370",
+            "year": 2019,
+            "title": "Tracking in Aerial Hyperspectral Videos Using Deep Kernelized Correlation Filters",
+            "authors": [
+              "Burak Uzkent",
+              "Aneesh Rangnekar",
+              "Matthew J. Hoffman"
+            ],
+            "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "57",
+            "pages": "449-461",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "正式注册书目与所用arXiv题名、作者同序；只做版本关联，不另读正式正文/图，不断言正文或实验相同。"
+          }
+        ],
+        "methodFamilyId": "deephkcf-aerial-hsi-tracking-arxiv-2017",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类；纯多光谱与泛spectral候选不收入。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "05c0d908ec2cf9ca867eba57989a5b370ab91ca87e0d3d5546c494c69e722daa",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1711.07235v3",
+            "https://arxiv.org/pdf/1711.07235v3"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -67153,7 +67985,9 @@
         "rdluf-mixs2-hsi-cvpr-2023",
         "padut-hsi-reconstruction-iccv-2023",
         "adis-aperture-diffraction-hsi-iccv-2023",
-        "noniterative-dcchi-hsi-tip-2021"
+        "noniterative-dcchi-hsi-tip-2021",
+        "cst-hsi-reconstruction-eccv-2022",
+        "mask-uncertainty-hsi-reconstruction-eccv-2022"
       ],
       "history": [
         {
@@ -67320,15 +68154,16 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
-        "spectralmoe-dgss",
-        "hyplex-metasurface",
+        "comix-tgrs-2025",
         "crf-cnn-hsi-igarss-2016",
         "crf-deep-feature-hsi-tgrs-2019",
-        "zhou-scholar-arxiv-2605-17286",
-        "comix-tgrs-2025",
-        "hypersigma-tpami-2025",
         "hyperfree-hsi-foundation-cvpr-2025",
-        "methanemapper-hsi-plume-cvpr-2023"
+        "hypersigma-tpami-2025",
+        "hyplex-metasurface",
+        "lwir-gas-plume-hsi-video-arxiv-2024",
+        "methanemapper-hsi-plume-cvpr-2023",
+        "spectralmoe-dgss",
+        "zhou-scholar-arxiv-2605-17286"
       ],
       "history": [
         {
@@ -67422,7 +68257,10 @@
         "dsformer-hsi-classification-arxiv-2024",
         "cst-cross-scope-hsi-sr-tip-2024",
         "dcn-t-hsi-classification-tip-2023",
-        "globalmind-hsi-change-isprs-2024"
+        "globalmind-hsi-change-isprs-2024",
+        "cst-hsi-reconstruction-eccv-2022",
+        "stas-hsi-restoration-eccv-2022",
+        "hya-t-hyperspectral-tracking-arxiv-2025"
       ],
       "history": [
         {
@@ -68392,7 +69230,8 @@
         "volformer-hsi-restoration-cvpr-2025",
         "mp-hsir-universal-restoration-iccv-2025",
         "hir-diff-hsi-restoration-cvpr-2024",
-        "dds2m-hsi-restoration-iccv-2023"
+        "dds2m-hsi-restoration-iccv-2023",
+        "stas-hsi-restoration-eccv-2022"
       ],
       "history": [
         {
@@ -71180,7 +72019,8 @@
       "rationale": "逐篇复核现有论文的研究问题、输入输出和方法后建立；不继承三维专题的track分类。",
       "evidencePaperIds": [
         "gas-plume-nerf",
-        "methanemapper-hsi-plume-cvpr-2023"
+        "methanemapper-hsi-plume-cvpr-2023",
+        "lwir-gas-plume-hsi-video-arxiv-2024"
       ],
       "history": [
         {
@@ -71674,7 +72514,9 @@
         "drsst-net-isprs-2026",
         "msp-net-arxiv-2026",
         "spectral-enhanced-transformers-hsi-tracking-arxiv-2025",
-        "bihot-spdan-hsi-tracking-arxiv-2024"
+        "bihot-spdan-hsi-tracking-arxiv-2024",
+        "hya-t-hyperspectral-tracking-arxiv-2025",
+        "deephkcf-aerial-hsi-tracking-arxiv-2017"
       ],
       "history": [
         {
@@ -72315,7 +73157,8 @@
         "material-object-tracking-hsi-tip-2020",
         "zhou-82-hsi-2022",
         "zhou-35-hsi-2025",
-        "zhou-scholar-dynamic-material-aware-object-tracking-in--2019"
+        "zhou-scholar-dynamic-material-aware-object-tracking-in--2019",
+        "deephkcf-aerial-hsi-tracking-arxiv-2017"
       ],
       "history": [
         {
