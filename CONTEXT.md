@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：袁强强指定arXiv32书目无Jun，3HSI去噪缺项各一版一主图；Jie L/Jie Li按PDF署名分存。IJCAI2018–2021共3334唯一书目（2021重复一行已去重）、16关键词原摘要，补RMGF选带一主图、15暂排；车辆Potsdam复用官方波段定义。4新论文/4图，5PDF45页只下载，0新全文/代码访问；Jun及IJCAI2022–2025四范围未决不变。作者/领域历年检索继续，不称全量完成。
+- 最新：Junjue Wang指定arXiv24题名/作者无Jun/字面HSI，摘要未读，不排除HVOT。IJCAI2013/2015/2016/2017共2584题名源项，10关键词代表原摘要暂排数学谱/软件诊断；2013五错摘要号及一同URL异题名保留、不误去重。官方归档2013第23届/2015第24届，不造2014缺失目录。0新论文/PDF/全文/图/代码访问，总库430/原图369；Jun及四IJCAI范围未决不变，隐含HSI/更早届次继续。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC合格来源、HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
