@@ -28,6 +28,6 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新作者差集：种子综述原XML有实质HSI内容；Jun单位浙大/新疆农大。在轨稿Jun注册单位Shanghai Institute of Satellite Engineering，二级FY-3仪器型号/谱带未明。单位不判异人；两来源外、原始个人身份待，指定arXiv零匹配不证无版本。两条单列候选，不计Jun确认182。
+- 最新作者差集：两医学稿原摘要/必要方法核为全部RGB持续分类、转录组与病理WSI免疫预测，按声明范围排除；Jun单篇单位A*STAR/上海同仁医院不判异人。ASTER矿物稿原页HTTP200挑战，无摘要/实际输入，范围/身份/来源待。种子综述直接HSI但Jun个人身份/来源待；在轨稿型号/谱带未明，两条仍候选不计Jun182。
 - 最新领域：2014末十候选十入（3正式白名单/7arXiv），稀疏融合、协同解混DAG与hyDOT递归压缩树各一主图，余7无框架。长融合稿明确扩展ICIP2014短稿，关联单目录；原41指定集合现38工作/1早期版本/2排除/0待，不是年度全集。Cu2O的532nm为激发、光谱仪采集空间发光谱，直接HSI；hyDOT保留Born/PaLS假设，不称实测性能。其他年/白名单与作者继续；早期—2013指定76现64入/5排/7待，ECCV六范围待。四旧ID的arXiv恢复有审计，纯多光谱不可恢复；SADL撤除、TICO白名单2015修正保留。
-- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC两个SSRN版本已对账但仍无合格来源，HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并392未映射/81survey关联，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
+- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC两个SSRN版本已对账但仍无合格来源，HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并389未映射/84survey关联，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。

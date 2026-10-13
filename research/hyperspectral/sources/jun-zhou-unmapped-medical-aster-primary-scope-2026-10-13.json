@@ -1,0 +1,167 @@
+{
+  "id": "jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13",
+  "checkedAt": "2026-10-13",
+  "purpose": "目标作者优先：处理合并档案中三条尚未核的范围/身份候选，不把合并ORCID当单篇身份",
+  "previousGoalTurn": "progress: 6161f30 added ten direct-HSI studies, three primary diagrams and the HySure conference extension",
+  "sourceIndex": "research/hyperspectral/sources/jun-zhou-openalex-author-inventory-2026-10-12.json",
+  "selectedRows": [
+    162,
+    350,
+    643
+  ],
+  "papers": [
+    {
+      "key": "medical-continual",
+      "workId": "https://openalex.org/W4385837543",
+      "doi": "10.3389/fmed.2023.1227515",
+      "title": "Privacy-preserving continual learning methods for medical image classification: a comparative analysis",
+      "registeredAuthors": [
+        "Tanvi Verma",
+        "Liyuan Jin",
+        "Jun Zhou",
+        "Jia Huang",
+        "Mingrui Tan",
+        "Benjamin Chen Ming Choong",
+        "Ting Fang Tan",
+        "Fei Gao",
+        "Xinxing Xu",
+        "Daniel S. Ting",
+        "Yong Liu"
+      ],
+      "primaryJunAffiliations": [
+        "Institute of High Performance Computing, Agency for Science, Technology and Research (A*STAR), Singapore"
+      ],
+      "originalAbstractActuallyRead": "Abstract Background: The implementation of deep learning models for medical image classification poses significant challenges, including gradual performance degradation and limited adaptability to new diseases. However, frequent retraining of models is unfeasible and raises concerns about healthcare privacy due to the retention of prior patient data. To address these issues, this study investigated privacy-preserving continual learning methods as an alternative solution. Methods: We evaluated twelve privacy-preserving non-storage continual learning algorithms based deep learning models for classifying retinal diseases from public optical coherence tomography (OCT) images, in a class-incremental learning scenario. The OCT dataset comprises 108,309 OCT images. Its classes include normal (47.21%), drusen (7.96%), choroidal neovascularization (CNV) (34.35%), and diabetic macular edema (DME) (10.48%). Each class consisted of 250 testing images. For continuous training, the first task involved CNV and normal classes, the second task focused on DME class, and the third task included drusen class. All selected algorithms were further experimented with different training sequence combinations. The final model's average class accuracy was measured. The performance of the joint model obtained through retraining and the original finetune model without continual learning algorithms were compared. Additionally, a publicly available medical dataset for colon cancer detection based on histology slides was selected as a proof of concept, while the CIFAR10 dataset was included as the continual learning benchmark. Results: Among the continual learning algorithms, Brain-inspired-replay (BIR) outperformed the others in the continual learning-based classification of retinal diseases from OCT images, achieving an accuracy of 62.00% (95% confidence interval: 59.36-64.64%), with consistent top performance observed in different training sequences. For colon cancer histology classification, Efficient Feature Transformations (EFT) attained the highest accuracy of 66.82% (95% confidence interval: 64.23-69.42%). In comparison, the joint model achieved accuracies of 90.76% and 89.28%, respectively. The finetune model demonstrated catastrophic forgetting in both datasets. Conclusion: Although the joint retraining model exhibited superior performance, continual learning holds promise in mitigating catastrophic forgetting and facilitating continual model updates while preserving privacy in healthcare deep learning models. Thus, it presents a highly promising solution for the long-term clinical deployment of such models.",
+      "selectedSections": [
+        "完整原摘要",
+        "Methods: Dataset（实际OCT/PathMNIST/CIFAR10及全部RGB输入声明）"
+      ],
+      "scopeExcerpts": [
+        "Two medical datasets: optical coherence tomography (OCT) ( 3 ) and PathMNIST ( 36 ) and one non-medical dataset: CIFAR10 ( 5 ) were selected. All images are in RGB color, normalized using the mean and standard deviation of ImageNet. All three datasets were split into three tasks and the set of classes in each task was fixed across all experiments."
+      ],
+      "decision": "excluded",
+      "reason": "原始Methods的Dataset明确实际使用OCT、PathMNIST和CIFAR10，并写All images are in RGB color。研究是这些图像的持续分类，不直接采集/处理/重建高光谱数据；按已声明范围排除，保留原摘要及实际输入原句。",
+      "access": {
+        "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2023.1227515/full",
+        "status": 200,
+        "bytes": 910831,
+        "sha256": "7ad6c83c4aef65ad813fb924f3fb77a7d38bc514e6119135de971e42c7b8bd10",
+        "contentType": "text/html;charset=utf-8",
+        "finalUrl": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2023.1227515/full",
+        "localFile": "research/hyperspectral/sources/jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13-medical-continual.html.gz",
+        "accessStatus": "primary_article_body_accessible_necessary_sections_read",
+        "fullTextRead": false
+      },
+      "fullTextRead": false
+    },
+    {
+      "key": "gastric-slides",
+      "workId": "https://openalex.org/W3173519858",
+      "doi": "10.3389/fimmu.2021.685992",
+      "title": "The Immune Subtypes and Landscape of Gastric Cancer and to Predict Based on the Whole-Slide Images Using Deep Learning",
+      "registeredAuthors": [
+        "Yan Chen",
+        "Zepang Sun",
+        "Wanlan Chen",
+        "Changyan Liu",
+        "Ruoyang Chai",
+        "Jingjing Ding",
+        "Wen Liu",
+        "Xianzhen Feng",
+        "Jun Zhou",
+        "Xiaoyi Shen",
+        "Shan Huang",
+        "Zhongqing Xu"
+      ],
+      "primaryJunAffiliations": [
+        "Department of General Practice, Tongren Hospital, Shanghai Jiao Tong University, School of Medicine, China"
+      ],
+      "originalAbstractActuallyRead": "Abstract Background: Gastric cancer (GC) is a highly heterogeneous tumor with different responses to immunotherapy. Identifying immune subtypes and landscape of GC could improve immunotherapeutic strategies. Methods: Based on the abundance of tumor-infiltrating immune cells in GC patients from The Cancer Genome Atlas, we used unsupervised consensus clustering algorithm to identify robust clusters of patients, and assessed their reproducibility in an independent cohort from Gene Expression Omnibus. We further confirmed the feasibility of our immune subtypes in five independent pan-cancer cohorts. Finally, functional enrichment analyses were provided, and a deep learning model studying the pathological images was constructed to identify the immune subtypes. Results: We identified and validated three reproducible immune subtypes presented with diverse components of tumor-infiltrating immune cells, molecular features, and clinical characteristics. An immune-inflamed subtype 3, with better prognosis and the highest immune score, had the highest abundance of CD8+ T cells, CD4+ T–activated cells, follicular helper T cells, M1 macrophages, and NK cells among three subtypes. By contrast, an immune-excluded subtype 1, with the worst prognosis and the highest stromal score, demonstrated the highest infiltration of CD4+ T resting cells, regulatory T cells, B cells, and dendritic cells, while an immune-desert subtype 2, with an intermediate prognosis and the lowest immune score, demonstrated the highest infiltration of M2 macrophages and mast cells, and the lowest infiltration of M1 macrophages. Besides, higher proportion of EVB and MSI of TCGA molecular subtyping, over expression of CTLA4, PD1, PDL1, and TP53, and low expression of JAK1 were observed in immune subtype 3, which consisted with the results from Gene Set Enrichment Analysis. These subtypes may suggest different immunotherapy strategies. Finally, deep learning can predict the immune subtypes well. Conclusion: This study offers a conceptual frame to better understand the tumor immune microenvironment of GC. Future work is required to estimate its reference value for the design of immune-related studies and immunotherapy selection.",
+      "selectedSections": [
+        "完整原摘要",
+        "Materials and Methods: 队列/转录组与免疫细胞分型",
+        "Deep Learning to Identify Immune Subtypes（实际病理WSI/20×/patch输入与输出）"
+      ],
+      "scopeExcerpts": [
+        "375 patients with gastric cancer obtained from The Cancer Genome Atlas (TCGA) database ( https://cancergenome.nih.gov ). Another cohort including 433 patients with gastric cancer in GSE84437 downloaded from the Gene Expression Omnibus (GEO) database was used to validate the immune subtypes ( https://www.ncbi.nlm.nih.gov/geo/ ). Besides, five independent cohorts (total n = 2230), including breast cancer (n=1108), esophageal cancer (n=185), colorectal cancer (n=383), liver cancer (n=375), and pancreatic cancer (n=179), acquired from UCSC Xena ( https://xenabrowser.net/ ) were applied to further elucidate feasibility of the immune subtypes. For details about study design and data preprocessing, please refer to supplementary methods and Figure S1 . Data Processing and Quantification of Immune Cells Based on the gene expression profiles, the CIBERSORT algorithm was employed to quantify the pr",
+        "Deep Learning to Identify Immune Subtypes Deep learning can identify the macroscopic contents of pathological images, including tumor cells and TIICs nuclear size, nuclear location, nuclear morphology, etc. It can even identify high-dimensional data, such as color matrix, histogram matrix, and high-order matrix, which cannot be distinguished by naked eye. Thus, we trained a convolutional neural network with deep residual learning (based on ResNet-18) model to detect the immune subtype by transfer learning using patches segmented from the whole slide images (WSIs). First, high-quality WSIs without obvious interfering factors, including bleeding, creases, necrosis, and blurred areas, were screened and divided into training, validation and test sets at a 5:3:2 ratio for further processing. Next, tumor regions of interest (ROIs) on WSIs were manually delineated by expert pathologists. All WSIs were digitalized at 20× objective lens. Then, ROIs were subsequently separated into 512 pixels × 512 pixels patches. Finally, after preprocessed with random cutting, random horizontal flipping, and random affine transformation, center cropping (224 pixels × 224 pixels), and normalization, patches were put into the deep learning model based on ResNet-18. For details about data preprocessing, please refer to Supplementary Methods ."
+      ],
+      "decision": "excluded",
+      "reason": "原始摘要及Materials and Methods声明转录组/免疫细胞分型，并以20×数字化病理WSI的patch预测免疫亚型。所声明实际工作流没有直接HSI采集、重建或处理，按此研究对象排除；未确认物理谱带，不将这一步写成RGB通道已证实，也不靠关键词缺席或ImageNet推断。",
+      "access": {
+        "url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2021.685992/full",
+        "status": 200,
+        "bytes": 1031219,
+        "sha256": "d751c6e567fa853d10f78cbb61445ac9c86f5c0a651127c6aec7be4fea8d9d2c",
+        "contentType": "text/html;charset=utf-8",
+        "finalUrl": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2021.685992/full",
+        "localFile": "research/hyperspectral/sources/jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13-gastric-slides.html.gz",
+        "accessStatus": "primary_article_body_accessible_necessary_sections_read",
+        "fullTextRead": false
+      },
+      "fullTextRead": false
+    },
+    {
+      "key": "aster",
+      "workId": "https://openalex.org/W2040114204",
+      "doi": "10.1007/s12583-014-0423-9",
+      "title": "The reconnaissance of mineral resources through aster data-based image processing, interpreting and ground inspection in the Jiafushaersu area, West Junggar, China",
+      "registeredAuthors": [],
+      "primaryJunAffiliations": [],
+      "originalAbstractActuallyRead": null,
+      "selectedSections": [],
+      "scopeExcerpts": [],
+      "decision": "pending",
+      "reason": "原合并作者索引列出ASTER矿物遥感条目；新的精确原出版社页面虽然HTTP200但只有Client Challenge，没有原摘要/输入/作者单位。不能由ASTER、单位或混并档案判直接HSI/纯MS或目标Jun；保留范围、身份与来源待核，不反复追同入口、不称付费。",
+      "access": {
+        "url": "https://link.springer.com/article/10.1007/s12583-014-0423-9",
+        "status": 200,
+        "bytes": 3038,
+        "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+        "contentType": "text/html; charset=utf-8",
+        "finalUrl": "https://link.springer.com/article/10.1007/s12583-014-0423-9",
+        "localFile": "research/hyperspectral/sources/jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13-aster.html.gz",
+        "accessStatus": "http_200_client_challenge_no_article",
+        "fullTextRead": false
+      },
+      "fullTextRead": false
+    }
+  ],
+  "candidateChanges": [
+    {
+      "crosswalkRowIndex": 162,
+      "workId": "https://openalex.org/W4385837543",
+      "surveyCandidateIndex": 2369,
+      "decision": "excluded"
+    },
+    {
+      "crosswalkRowIndex": 350,
+      "workId": "https://openalex.org/W3173519858",
+      "surveyCandidateIndex": 2370,
+      "decision": "excluded"
+    },
+    {
+      "crosswalkRowIndex": 643,
+      "workId": "https://openalex.org/W2040114204",
+      "surveyCandidateIndex": 2371,
+      "decision": "pending"
+    }
+  ],
+  "summary": {
+    "newCatalogPapers": 0,
+    "newSurveyCandidates": 3,
+    "sourceScopeExclusions": 2,
+    "pending": 1,
+    "newOriginalAbstractsRead": 2,
+    "newPdfDownloads": 0,
+    "newMainFrameworkFigures": 0,
+    "newFullTextReadCount": 0,
+    "catalogPapers": 625,
+    "confirmedJunPapers": 182,
+    "currentMappedSurveyRows": 84,
+    "currentUnmappedMetadataRows": 389
+  },
+  "identityBoundary": "出版社提供两Jun单篇单位但无目标个人标识，单位差异不确认异人；不借合并档案ORCID升级身份。",
+  "scopeBoundary": "连续学习Methods明确所有实际图像RGB；胃癌按原声明转录组/免疫细胞和病理WSI预测对象排除，不声称已知谱带或RGB。ASTER未得原声明输入保留待核。",
+  "scientificCodeUrlsVisited": []
+}
