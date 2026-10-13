@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-13海洋塑料综述合格来源定位：七作者Crossref注册表含目标Jun ORCID；Dayan Guan整名字符串arXiv26/26与marine plastic题名3/3仅书目核对，未匹配目标稿，不确认每项自然人身份或作者全集，不证明没有公开版本。直接HSI范围与白名单/arXiv来源仍待；无无关摘要/PDF或科学代码访问，确认Jun182不变。[原始注册与指定查询](sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json)。
+
 2026-10-13皮肤候选共同作者新公开定位：Zongyuan Ge学术主页只有五篇2023—2026代表作，未定位原跨域皮肤分类稿；主页所链Monash实验室403，无实际输入/正文新证据，原候选仍待。代表作缺席不证明论文不存在或范围外，不重复失败入口；未下载无关论文、不访问科学代码。当前确认作者182不变。[定位证据](sources/arxiv-2012-first-half-hsi-mainframes-2026-10-13.json)。
 
 2026-10-13未决稿公开版本定位：Kexin Zeng、Favour Ekong、Zhenxing Wu官方整名arXiv分别0/0、2/2、5/5，7条仅题名/完整作者字段，未匹配三条既有在审候选。Wu集合含已录SUIT v1四作者，正式五作者含Jun差异沿用，不读另一版本或据此排除合著。三分割精确DOI的Semantic Scholar没有新PDF直链：GPINet/SAPNet的GREEN只是前次已查Griffith handle，FDNet为空；不重复无正文的入口，实际输入仍待。未新增目录/摘要/PDF/主图，不称作者全集。[逐项原始定位](sources/jun-zhou-firstauthor-segmentation-locators-2026-10-13.json)。
