@@ -413,7 +413,10 @@
     "rmgf-hsi-band-selection-ijcai-2021",
     "spectral-enhanced-transformers-hsi-tracking-arxiv-2025",
     "bihot-spdan-hsi-tracking-arxiv-2024",
-    "hyspecnet-11k-hsi-compression-arxiv-2023"
+    "hyspecnet-11k-hsi-compression-arxiv-2023",
+    "deep-pnp-hsi-restoration-arxiv-2022",
+    "pnp-net-hsi-unmixing-arxiv-2024",
+    "pnp-pbcd-hsi-anomaly-arxiv-2024"
   ],
   "sourceChecks": [
     {
@@ -3227,6 +3230,83 @@
       "level": "官方原摘要提供的项目/代码链接（仅记录URL）",
       "supports": [
         "记录https://hyspecnet.rsim.berlin，未访问项目、代码、权重或许可证，不下载或运行复现。"
+      ]
+    },
+    {
+      "paperId": "deep-pnp-hsi-restoration-arxiv-2022",
+      "url": "https://arxiv.org/abs/2209.08240v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "训练结合门控循环卷积、跳连和噪声水平图的HSI去噪器，并将其作为Plug-and-Play隐式先验用于多种高光谱复原任务。",
+        "所用PDF首页完整作者与API同序一致，无Jun Zhou；仅限定所用版本，不外推其他版本署名。"
+      ]
+    },
+    {
+      "paperId": "deep-pnp-hsi-restoration-arxiv-2022",
+      "url": "https://arxiv.org/pdf/2209.08240v1",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第5页主要原图及图注（选读）",
+      "supports": [
+        "深度PnP去噪先验主要原架构：带噪HSI与噪声图经双向GRConv、编码器—解码器、残差块及跳连得到干净HSI。",
+        "所用arXiv2209.08240v1第5页Figure1完整主要原图及图注，未重绘；仅一张，图号页码不迁移至正式版，不再取其他版本/图片。"
+      ]
+    },
+    {
+      "paperId": "deep-pnp-hsi-restoration-arxiv-2022",
+      "url": "https://api.crossref.org/works/10.1016/j.neucom.2022.01.057",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式注册书目（只书目）",
+      "supports": [
+        "官方arXiv登记同一DOI，正式注册题名和三作者同序一致。Neurocomputing2022不在白名单，只关联书目；按arXiv2022收录，不扩大作者例外，不断言各版正文/实验相同。正式2022年4月早于arXiv2022年9月提交，分别保留原日期，不据先后推断扩展关系。"
+      ]
+    },
+    {
+      "paperId": "pnp-net-hsi-unmixing-arxiv-2024",
+      "url": "https://arxiv.org/abs/2409.04719v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "将Plug-and-Play高光谱解混迭代展开为可训练网络，联合学习谱空内部先验并接入预训练去噪器外部先验。",
+        "所用PDF首页完整作者与API同序一致，无Jun Zhou；仅限定所用版本，不外推其他版本署名。"
+      ]
+    },
+    {
+      "paperId": "pnp-net-hsi-unmixing-arxiv-2024",
+      "url": "https://arxiv.org/pdf/2409.04719v1",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第6页主要原图及图注（选读）",
+      "supports": [
+        "PnP-Net整体原架构：K个展开块分别更新端元M、丰度A及辅助变量，末端输出重建影像；端元/丰度估计依据同页架构段。",
+        "所用arXiv2409.04719v1第6页Figure4完整主要原图及图注，未重绘；仅一张，图号页码不迁移至正式版，不再取其他版本/图片。"
+      ]
+    },
+    {
+      "paperId": "pnp-net-hsi-unmixing-arxiv-2024",
+      "url": "https://arxiv.org/pdf/2409.04719v1",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第6页架构段（必要输出核验）",
+      "supports": [
+        "PnP-Net明确分端元估计和丰度估计两部分，K块分别估计端元矩阵和丰度。"
+      ]
+    },
+    {
+      "paperId": "pnp-pbcd-hsi-anomaly-arxiv-2024",
+      "url": "https://arxiv.org/abs/2412.14824v3",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及完整作者名单",
+      "supports": [
+        "以低秩表示建模HSI背景，在PnP框架中用近端去噪先验处理特征像，并以广义组稀疏模型识别异常像元。",
+        "所用PDF首页同序姓名与API一致，无Jun Zhou；Yu/YU仅姓氏大小写格式，按PDF显示并保留API原字段。"
+      ]
+    },
+    {
+      "paperId": "pnp-pbcd-hsi-anomaly-arxiv-2024",
+      "url": "https://arxiv.org/pdf/2412.14824v3",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第5、16–22页图注定位（只找主图）",
+      "supports": [
+        "所用arXiv2412.14824v3的8张具名图图注已定位：Fig1为特征像示例，Fig2–3为ROC，Fig4–7为检测结果，Fig8为参数曲线；未取得独立框架图。只核图注，不记全文；不把特征像/结果/曲线当框架，不要求另找版本或补图。"
       ]
     }
   ]
