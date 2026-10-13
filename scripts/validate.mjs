@@ -20,13 +20,25 @@ const catalog = JSON.parse(readFileSync(new URL('../src/data/catalog.json', impo
 const policy = JSON.parse(readFileSync(new URL('../src/data/collection-policy.json', import.meta.url)));
 const cleanup = JSON.parse(readFileSync(new URL('../research/hyperspectral/catalog-cleanup.json', import.meta.url)));
 const removedIds = new Set(cleanup.removedPapers.map(paper => paper.id));
+const reinstatements = new Map((cleanup.reinstatements ?? []).map(record => [record.paperId, record]));
+assert.equal(reinstatements.size, cleanup.reinstatements?.length ?? 0, 'Duplicate reinstatement record');
+for (const record of reinstatements.values()) {
+  const removed = cleanup.removedPapers.find(paper => paper.id === record.paperId);
+  const paper = catalog.papers.find(paper => paper.id === record.paperId);
+  assert(removed?.relation === 'hyperspectral' && removed.reason === '出版来源不在项目顶会顶刊/arXiv白名单', `Only source-excluded HSI may be reinstated: ${record.paperId}`);
+  assert(paper?.venue === 'arXiv' && paper.arxivId === record.arxivId, `Reinstatement requires the recorded arXiv source: ${record.paperId}`);
+  const version = paper.library?.versions?.find(version => version.arxivId === record.arxivId && version.pdfUrl === record.selectedPdfUrl);
+  assert(version?.localFile && existsSync(new URL(`../${version.localFile}`, import.meta.url)), `Reinstatement needs an archived selected original: ${record.paperId}`);
+  assert(record.reason?.trim() && /^\d{4}-\d{2}-\d{2}$/.test(record.date), `Missing reinstatement decision: ${record.paperId}`);
+  assert(record.evidencePath?.startsWith('research/hyperspectral/sources/') && existsSync(new URL(`../${record.evidencePath}`, import.meta.url)), `Missing reinstatement evidence: ${record.paperId}`);
+}
 const protectedIds = new Set(policy.protectedAuthor.existingPaperIds);
 const ids = new Set();
 const tracks = new Set(trackDefinitions.map(t => t.id));
 for (const paper of catalog.papers) {
   assert(!ids.has(paper.id), `Duplicate paper: ${paper.id}`);
   ids.add(paper.id);
-  assert(!removedIds.has(paper.id), `Removed paper re-entered catalog: ${paper.id}`);
+  assert(!removedIds.has(paper.id) || reinstatements.has(paper.id), `Removed paper re-entered catalog without an eligible-source decision: ${paper.id}`);
   assert.equal(paper.venue, canonicalVenue(paper.venue), `Noncanonical venue: ${paper.id}`);
   assert.equal(paper.library?.relation, 'hyperspectral', `Non-HSI entry: ${paper.id}`);
   if (!protectedIds.has(paper.id)) {
