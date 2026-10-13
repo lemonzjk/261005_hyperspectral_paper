@@ -4,7 +4,9 @@
 
 现有目录已按来源白名单及高光谱范围清理，周峻既有181条直接高光谱保留，作者例外仅放宽来源。检索状态仅证明记录中指定官方目录、分页和关键词的实际覆盖，不代表领域全集已收齐。旧范围的扫描保留为历史证据，不列为后续全领域检索目标。 本轮新增共同作者书目快照至2026-10-12；各既有查询仍以其原始日期、分页和证据为准，不表示旧年度记录已统一重查。
 
-2026-10-13最新作者续核：Huanfa指定arXiv8/8、Crossref注册ORCID20/20书目无完整Jun，但过滤漏已知IF103225（未登记Huanfa ORCID），不能当作者全集或单篇身份判定。三指定arXiv定位未匹配四个既有CV候选；BABS/SiamBAG官方图接口各418，未取得原图，记录留白且不重复追这两个入口。0新增目录/摘要/PDF/主图/全文/代码访问；总库519、确认506/暂定13、审计490、原图447，来源364/54/101。[Huanfa书目阳性对照](sources/jun-zhou-huanfa-bibliography-control-2026-10-13.json)、[四候选与两图入口](sources/jun-zhou-cv-version-and-figure-locators-2026-10-13.json)。
+2026-10-13最新作者续核：原989简称索引剩余87条原样J. Zhou/J Zhou按声明研究对象暂排直接HSI，79只题名/声明物理主题、8完整原摘要；不新增同名范围外候选目录，不读全文/其他版本或查代码。当前142摘要暂排、79题名主题暂排、1继承决定、767其他姓名串仅元数据；本快照167原样简称已有范围处置，不等于个人身份确认、989全审或作者全集，出现直接HSI证据可重开。总库519、确认506/暂定13、审计490、原图447，来源364/54/101。[逐项来源与范围边界](sources/jun-zhou-exact-initial-particle-scope-2026-10-13.json)。
+
+2026-10-13 Huanfa与受限图续核：Huanfa指定arXiv8/8、Crossref注册ORCID20/20书目无完整Jun，但过滤漏已知IF103225（未登记Huanfa ORCID），不能当作者全集或单篇身份判定。三指定arXiv定位未匹配四个既有CV候选；BABS/SiamBAG官方图接口各418，未取得原图，记录留白且不重复追这两个入口。0新增目录/摘要/PDF/主图/全文/代码访问。[Huanfa书目阳性对照](sources/jun-zhou-huanfa-bibliography-control-2026-10-13.json)、[四候选与两图入口](sources/jun-zhou-cv-version-and-figure-locators-2026-10-13.json)。
 
 2026-10-13 DINOFuse与作者差集：DINOFuse的限定题名/第一作者书目未定位合格版本，当前只有SSRN、无摘要/PDF；原始单篇身份和直接HSI范围仍待，不凭混并ORCID确认。三条未映射视觉方法书目转显式未决，OpenAlex现394条未映射、79条survey关联；SVM的2014首次在线/2016卷期分记。等待新的具体公开材料，不重复受限入口。[DINOFuse限定检索](sources/jun-zhou-dinofuse-source-followup-2026-10-13.json)、[三条书目及身份边界](sources/jun-zhou-openalex-unmapped-cv-followup-2026-10-13.json)。
 
