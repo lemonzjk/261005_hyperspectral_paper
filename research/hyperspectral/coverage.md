@@ -14,6 +14,8 @@
 
 2026-10-13 ECCV补录批次：ECCV2010/2012关键词题名扫描排除11个泛光谱候选；ECCV2014/2016题名筛查新增6篇直接HSI主会论文，ECCV2018/2020官方目录补核新增4篇直接HSI论文：相机谱响应恢复、CASSI光谱成像、物理解混、无监督HSI超分辨率。2014/2016六篇正文/主图受限，2018/2020四篇各一公开正文一主图；年度全集与无关键词题名仍待。[早期扫描证据](sources/eccv-2010-2012-hsi-title-scan-2026-10-13.json)、[ECCV2014/2016证据](sources/eccv-2014-2016-hsi-title-scan-2026-10-13.json)、[ECCV2018/2020证据](sources/eccv-2018-2020-hsi-mainframes-2026-10-13.json)。
 
+2026-10-13已有候选主图续接：HSIGene按TPAMI48(1)(2026)730–746正式书目收录，唯一所用材料为arXiv2409.12470v2第1/5页及Fig3；双相机物理信息重建按arXiv2109.02643v2第1/5页及Fig5收录，正式Optics and Lasers in Engineering154(2022)107023来源外，仅关联元数据；JMPT按arXiv2201.08027v1第1/3页及Fig1收录。每篇一张主要原框架，不读全文/其他版本或实验，不访问代码；3篇无Jun，不增加作者182。总库522、确认509/暂定13、审计493、主图记录450（355篇有图），来源365/56/101。近题名且不同作者的形态学/patch论文未合并；Crossref前三题名各前5并非全检索。[原始书目、所用版本和主图](sources/hsi-existing-candidates-mainframes-2026-10-13.json)。
+
 当前来源白名单与作者例外见 [收录政策](../../src/data/collection-policy.json)，逐项清理决定见 [清理审计](catalog-cleanup.json)。
 
 周峻作者续核（2026-10-12）：OpenAlex两个档案指定分页6＋833共839源项，含多ORCID/多机构混并线索，不能整批归给目标作者；原八新候选仍未决，IF103225身份与SSRN5009494元数据关系、SSRN6802779合格版本优先；IF主框架当前已取得。Phase-Locked v2原稿八页/框架已读，官网/API一作者与PDF五作者含Jun冲突，撤销旧无Jun分流，作为潜在作者漏录优先核；目录未新增。简称989快照现134摘要暂排＋1继承旧决定、854仅元数据，不称逐篇排除。共同作者书目新增两篇普通白名单TIP，两套九作者名单均无Jun Zhou；另DualMamba v1全文及四原图已整理、同五作者TGRS2025正式书目关联，Jingyi非目标Jun。Mamba-UNet免费两图确认地物掩膜输入，谱带/分解算子仍未知，撤回Fourier推断；总库398，周峻仍181（102全文/79摘要），目录未闭环。原始证据见 [作者差集](sources/jun-zhou-openalex-author-inventory-2026-10-12.json)、[主要来源与两篇跟踪论文](sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json)。官方代码只记链接；旧记录中的源码、依赖、权重、代码许可或复现核查不列后续待办，历史结果保留。

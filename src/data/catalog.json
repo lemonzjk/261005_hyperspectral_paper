@@ -68924,6 +68924,482 @@
         ],
         "methodFamilyId": "hierarchical-beta-process-hsi-superresolution-eccv-2016"
       }
+    },
+    {
+      "id": "hsigene-tpami-2026",
+      "shortTitle": "HSIGene",
+      "title": "HSIGene: A Foundation Model for Hyperspectral Image Generation",
+      "authors": "Li Pang, Xiangyong Cao, Datao Tang, Shuang Xu, Xueru Bai, Feng Zhou, Deyu Meng",
+      "year": 2026,
+      "venue": "TPAMI",
+      "publicationName": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2409.12470",
+      "representation": "ControlNet编码条件并引导潜空间扩散生成HSI；训练数据增广先提高RGB波段空间分辨率，再以RGB引导RGAN恢复高分辨率HSI。",
+      "tags": [],
+      "summary": "基于潜空间扩散与多条件控制生成高光谱影像，并通过空间超分辨率扩充高光谱训练数据。",
+      "input": "随机噪声及可组合的条件信息；增广阶段处理已有HSI及其RGB波段。",
+      "output": "生成的高光谱影像；增广阶段输出空间超分辨率HSI。",
+      "mechanism": "ControlNet编码条件并引导潜空间扩散生成HSI；训练数据增广先提高RGB波段空间分辨率，再以RGB引导RGAN恢复高分辨率HSI。",
+      "readingNote": "仅使用arXiv 2409.12470v2；13页PDF选读首页作者/摘要及第5页Fig. 3主框架。未通读全文、读取其他版本或整理实验性能；代码只记录官方URL，不访问。正式书目仅关联题名与同序作者，不表示两版本正文、图号或实验相同。",
+      "paper": "https://doi.org/10.1109/tpami.2025.3610927",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2409.12470v2",
+          "sourceVersion": "arXiv 2409.12470v2",
+          "figureLabel": "Fig. 3",
+          "page": 5,
+          "caption": "Overview of the generative model used in our work. The ControlNet encoder incorporates the information of the various conditions and hyperspectral images are generated with the diffusion process.",
+          "verificationNote": "固定arXiv 2409.12470v2 PDF第5页Fig. 3主要原框架及图注已核；直接裁切，无重绘，每篇仅此一张。",
+          "path": "figures/hsigene-tpami-2026/framework.png",
+          "width": 1548,
+          "height": 387,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "453480ad9b405817ee1b23a55569e5a50d4e85ca2928f12f6b150d7077485262",
+          "attribution": "Li Pang, Xiangyong Cao, Datao Tang, Shuang Xu, Xueru Bai, Feng Zhou, Deyu Meng · arXiv 2409.12470v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              40,
+              564,
+              169
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tpami.2025.3610927",
+      "code": "https://github.com/LiPang/HSIGene",
+      "library": {
+        "categoryIds": [
+          "hyperspectral-data-synthesis",
+          "diffusion-models",
+          "spatial-super-resolution"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要与主要原框架明确直接生成、采集/重建或检测高光谱数据；不属于纯多光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "基于潜空间扩散与多条件控制生成高光谱影像，并通过空间超分辨率扩充高光谱训练数据。",
+        "datasets": "本轮未整理数据集或实验划分。",
+        "experimentSetting": "只核身份、直接HSI范围和主框架；实验协议未核。",
+        "conclusions": "任务与方法依据原摘要及主框架；性能结论未核。",
+        "limitations": "一个可用版本、一张主要原框架已获取；其他版本正文与图不列待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2409.12470v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "基于潜空间扩散与多条件控制生成高光谱影像，并通过空间超分辨率扩充高光谱训练数据。",
+              "7作者无Jun Zhou；摘要明确直接高光谱输入/输出。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2409.12470v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF首页及第5页主框架/图注（选读）",
+            "supports": [
+              "ControlNet编码条件并引导潜空间扩散生成HSI；训练数据增广先提高RGB波段空间分辨率，再以RGB引导RGAN恢复高分辨率HSI。",
+              "固定arXiv 2409.12470v2 PDF第5页Fig. 3主要原框架及图注已核；直接裁切，无重绘，每篇仅此一张。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=HSIGene%3A+A+Foundation+Model+For+Hyperspectral+Image+Generation&rows=5",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式书目、完整作者及来源关联",
+            "supports": [
+              "同题名和同序7作者关联DOI 10.1109/tpami.2025.3610927；不声称正式正文已读。",
+              "正式卷期年[2026, 1]；所用图仍明确归属arXiv 2409.12470v2。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hsigene-tpami-2026-v2",
+            "type": "所用唯一arXiv正文版本",
+            "url": "https://arxiv.org/abs/2409.12470v2",
+            "pdfUrl": "https://arxiv.org/pdf/2409.12470v2",
+            "arxivId": "2409.12470",
+            "arxivVersion": 2,
+            "year": 2024,
+            "title": "HSIGene: A Foundation Model For Hyperspectral Image Generation",
+            "authors": [
+              "Li Pang",
+              "Xiangyong Cao",
+              "Datao Tang",
+              "Shuang Xu",
+              "Xueru Bai",
+              "Feng Zhou",
+              "Deyu Meng"
+            ],
+            "firstSubmittedAt": "2024-09-19T05:17:44Z",
+            "updatedAt": "2024-11-01T04:59:31Z",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "localFile": "research/hyperspectral/sources/jun-zhou-relgan-split-classification-reading-2026-10-12-hsigene-arxiv-v2.pdf",
+            "relation": "仅使用arXiv 2409.12470v2；13页PDF选读首页作者/摘要及第5页Fig. 3主框架。未通读全文、读取其他版本或整理实验性能；代码只记录官方URL，不访问。正式书目仅关联题名与同序作者，不表示两版本正文、图号或实验相同。"
+          },
+          {
+            "id": "hsigene-tpami-2026-published-metadata",
+            "type": "正式书目关联（未读正文）",
+            "url": "https://doi.org/10.1109/tpami.2025.3610927",
+            "doi": "10.1109/tpami.2025.3610927",
+            "year": 2026,
+            "title": "HSIGene: A Foundation Model for Hyperspectral Image Generation",
+            "authors": [
+              "Li Pang",
+              "Xiangyong Cao",
+              "Datao Tang",
+              "Shuang Xu",
+              "Xueru Bai",
+              "Feng Zhou",
+              "Deyu Meng"
+            ],
+            "venue": "TPAMI",
+            "publicationName": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+            "volume": "48",
+            "issue": "1",
+            "page": "730-746",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "同题名与同序作者的正式书目关联；未读正式正文，不外推正文/图号/实验相同。"
+          }
+        ],
+        "methodFamilyId": "hsigene-tpami-2026",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据原摘要与主框架的实际HSI输入输出分类；复用已有任务/方法标签，不把谱轴当真实三维几何。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "bf13fcda717271ffe3fc23d909996e3a1175a25bfeba72803c06ca33893199da",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2409.12470v2",
+            "https://arxiv.org/pdf/2409.12470v2",
+            "https://api.crossref.org/works?query.title=HSIGene%3A+A+Foundation+Model+For+Hyperspectral+Image+Generation&rows=5"
+          ]
+        }
+      },
+      "citation": "@article{hsigene-tpami-2026,\n  title = {HSIGene: A Foundation Model for Hyperspectral Image Generation},\n  author = {Li Pang and Xiangyong Cao and Datao Tang and Shuang Xu and Xueru Bai and Feng Zhou and Deyu Meng},\n  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},\n  year = {2026},\n  volume = {48},\n  number = {1},\n  pages = {730--746},\n  doi = {10.1109/tpami.2025.3610927}\n}\n"
+    },
+    {
+      "id": "dual-camera-physics-informed-hsi-arxiv-2021",
+      "shortTitle": "Dual-camera physics-informed HSI",
+      "title": "Dual camera snapshot hyperspectral imaging system via physics informed learning",
+      "authors": "Hui Xie, Zhuang Zhao, Jing Han, Yi Zhang, Lianfa Bai, Jun Lu",
+      "year": 2021,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2109.02643",
+      "representation": "CNN由压缩观测估计HSI，经CASSI物理过程和彩色相机成像过程生成两路预测观测；以实测与预测差异构成闭环自监督优化。",
+      "tags": [],
+      "summary": "双相机联合获取压缩测量与彩色观测，用未预训练的物理信息CNN及两路测量一致性重建高光谱影像。",
+      "input": "双相机系统的CASSI压缩测量和同场景彩色图像。",
+      "output": "重建的高光谱影像HSI。",
+      "mechanism": "CNN由压缩观测估计HSI，经CASSI物理过程和彩色相机成像过程生成两路预测观测；以实测与预测差异构成闭环自监督优化。",
+      "readingNote": "仅使用arXiv 2109.02643v2；14页PDF选读首页作者/摘要及第5页Fig. 5主框架。未通读全文、读取其他版本或整理实验性能；代码只记录官方URL，不访问。正式书目仅关联题名与同序作者，不表示两版本正文、图号或实验相同。正式期刊Optics and Lasers in Engineering不在白名单，目录按合格arXiv版本收录。",
+      "paper": "https://arxiv.org/abs/2109.02643v2",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2109.02643v2",
+          "sourceVersion": "arXiv 2109.02643v2",
+          "figureLabel": "Fig. 5",
+          "page": 5,
+          "caption": "Schematic illustration of our closed-loop online self-supervised learning system.",
+          "verificationNote": "固定arXiv 2109.02643v2 PDF第5页Fig. 5主要原框架及图注已核；直接裁切，无重绘，每篇仅此一张。",
+          "path": "figures/dual-camera-physics-informed-hsi-arxiv-2021/framework.png",
+          "width": 1131,
+          "height": 687,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "a09883125c9f4d4da3b4202b04fe7489510191428a754f3257a3d035e8bbfcc5",
+          "attribution": "Hui Xie, Zhuang Zhao, Jing Han, Yi Zhang, Lianfa Bai, Jun Lu · arXiv 2109.02643v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              118,
+              410,
+              495,
+              639
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "computational-imaging",
+          "spectral-reconstruction",
+          "self-supervised-reconstruction"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要与主要原框架明确直接生成、采集/重建或检测高光谱数据；不属于纯多光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "双相机联合获取压缩测量与彩色观测，用未预训练的物理信息CNN及两路测量一致性重建高光谱影像。",
+        "datasets": "本轮未整理数据集或实验划分。",
+        "experimentSetting": "只核身份、直接HSI范围和主框架；实验协议未核。",
+        "conclusions": "任务与方法依据原摘要及主框架；性能结论未核。",
+        "limitations": "一个可用版本、一张主要原框架已获取；其他版本正文与图不列待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2109.02643v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "双相机联合获取压缩测量与彩色观测，用未预训练的物理信息CNN及两路测量一致性重建高光谱影像。",
+              "6作者无Jun Zhou；摘要明确直接高光谱输入/输出。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2109.02643v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF首页及第5页主框架/图注（选读）",
+            "supports": [
+              "CNN由压缩观测估计HSI，经CASSI物理过程和彩色相机成像过程生成两路预测观测；以实测与预测差异构成闭环自监督优化。",
+              "固定arXiv 2109.02643v2 PDF第5页Fig. 5主要原框架及图注已核；直接裁切，无重绘，每篇仅此一张。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Dual+camera+snapshot+hyperspectral+imaging+system+via+physics+informed+learning&rows=5",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式书目、完整作者及来源关联",
+            "supports": [
+              "同题名和同序6作者关联DOI 10.1016/j.optlaseng.2022.107023；不声称正式正文已读。",
+              "正式卷期年[2022, 7]；所用图仍明确归属arXiv 2109.02643v2。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dual-camera-physics-informed-hsi-arxiv-2021-v2",
+            "type": "所用唯一arXiv正文版本",
+            "url": "https://arxiv.org/abs/2109.02643v2",
+            "pdfUrl": "https://arxiv.org/pdf/2109.02643v2",
+            "arxivId": "2109.02643",
+            "arxivVersion": 2,
+            "year": 2021,
+            "title": "Dual camera snapshot hyperspectral imaging system via physics informed learning",
+            "authors": [
+              "Hui Xie",
+              "Zhuang Zhao",
+              "Jing Han",
+              "Yi Zhang",
+              "Lianfa Bai",
+              "Jun Lu"
+            ],
+            "firstSubmittedAt": "2021-09-06T13:39:54Z",
+            "updatedAt": "2021-11-17T09:26:46Z",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "localFile": "research/hyperspectral/sources/jun-zhou-denoising-primary-abstracts-2026-10-12-dual-camera-v2.pdf",
+            "relation": "仅使用arXiv 2109.02643v2；14页PDF选读首页作者/摘要及第5页Fig. 5主框架。未通读全文、读取其他版本或整理实验性能；代码只记录官方URL，不访问。正式书目仅关联题名与同序作者，不表示两版本正文、图号或实验相同。正式期刊Optics and Lasers in Engineering不在白名单，目录按合格arXiv版本收录。"
+          },
+          {
+            "id": "dual-camera-physics-informed-hsi-arxiv-2021-published-metadata",
+            "type": "正式书目关联（未读正文）",
+            "url": "https://doi.org/10.1016/j.optlaseng.2022.107023",
+            "doi": "10.1016/j.optlaseng.2022.107023",
+            "year": 2022,
+            "title": "Dual camera snapshot hyperspectral imaging system via physics-informed learning",
+            "authors": [
+              "Hui Xie",
+              "Zhuang Zhao",
+              "Jing Han",
+              "Yi Zhang",
+              "Lianfa Bai",
+              "Jun Lu"
+            ],
+            "venue": "Optics and Lasers in Engineering",
+            "publicationName": "Optics and Lasers in Engineering",
+            "volume": "154",
+            "issue": null,
+            "page": "107023",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "同题名与同序作者的正式书目关联；未读正式正文，不外推正文/图号/实验相同。"
+          }
+        ],
+        "methodFamilyId": "dual-camera-physics-informed-hsi-arxiv-2021",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据原摘要与主框架的实际HSI输入输出分类；复用已有任务/方法标签，不把谱轴当真实三维几何。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "9885a77fceb8db5d82661219678cb8f551f6c6f8910f5294f921f986071b25c8",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2109.02643v2",
+            "https://arxiv.org/pdf/2109.02643v2",
+            "https://api.crossref.org/works?query.title=Dual+camera+snapshot+hyperspectral+imaging+system+via+physics+informed+learning&rows=5"
+          ]
+        }
+      },
+      "citation": "@misc{dual-camera-physics-informed-hsi-arxiv-2021,\n  title = {Dual camera snapshot hyperspectral imaging system via physics informed learning},\n  author = {Hui Xie and Zhuang Zhao and Jing Han and Yi Zhang and Lianfa Bai and Jun Lu},\n  year = {2021},\n  eprint = {2109.02643},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2109.02643v2}\n}\n"
+    },
+    {
+      "id": "jmpt-hsi-change-detection-arxiv-2022",
+      "shortTitle": "JMPT",
+      "title": "A Joint Morphological Profiles and Patch Tensor Change Detection for Hyperspectral Imagery",
+      "authors": "Zengfu Hou, Wei Li",
+      "year": 2022,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "2201.08027",
+      "representation": "非重叠patch重排为张量，经三阶Tucker分解与影像重构形成张量域结果；max-tree/min-tree属性剖面形成特征域结果，融合生成变化图。",
+      "tags": [],
+      "summary": "联合局部patch张量重构与形态学属性剖面，检测双时相高光谱影像的变化。",
+      "input": "同场景双时相高光谱影像。",
+      "output": "融合张量域与形态学特征域结果的变化检测图。",
+      "mechanism": "非重叠patch重排为张量，经三阶Tucker分解与影像重构形成张量域结果；max-tree/min-tree属性剖面形成特征域结果，融合生成变化图。",
+      "readingNote": "仅使用arXiv 2201.08027v1；9页PDF选读首页作者/摘要及第3页Fig. 1主框架。未通读全文、读取其他版本或整理实验性能；代码只记录官方URL，不访问。所查Crossref前5条未匹配同题名正式记录；近题名且作者不同的记录不合并。",
+      "paper": "https://arxiv.org/abs/2201.08027v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2201.08027v1",
+          "sourceVersion": "arXiv 2201.08027v1",
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "caption": "Framework of proposed JMPT detector for hyperspectral change detection.",
+          "verificationNote": "固定arXiv 2201.08027v1 PDF第3页Fig. 1主要原框架及图注已核；直接裁切，无重绘，每篇仅此一张。",
+          "path": "figures/jmpt-hsi-change-detection-arxiv-2022/framework.png",
+          "width": 1371,
+          "height": 651,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "4a5cda54cf1a95fef1b6aca9ea9f25177510238aa95c051573347c5f601607ef",
+          "attribution": "Zengfu Hou, Wei Li · arXiv 2201.08027v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              78,
+              53,
+              535,
+              270
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "hyperspectral-change-detection",
+          "tensor-low-rank-learning",
+          "morphological-profiles"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "原摘要与主要原框架明确直接生成、采集/重建或检测高光谱数据；不属于纯多光谱。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "联合局部patch张量重构与形态学属性剖面，检测双时相高光谱影像的变化。",
+        "datasets": "本轮未整理数据集或实验划分。",
+        "experimentSetting": "只核身份、直接HSI范围和主框架；实验协议未核。",
+        "conclusions": "任务与方法依据原摘要及主框架；性能结论未核。",
+        "limitations": "一个可用版本、一张主要原框架已获取；其他版本正文与图不列待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2201.08027v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及完整作者名单",
+            "supports": [
+              "联合局部patch张量重构与形态学属性剖面，检测双时相高光谱影像的变化。",
+              "2作者无Jun Zhou；摘要明确直接高光谱输入/输出。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2201.08027v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv PDF首页及第3页主框架/图注（选读）",
+            "supports": [
+              "非重叠patch重排为张量，经三阶Tucker分解与影像重构形成张量域结果；max-tree/min-tree属性剖面形成特征域结果，融合生成变化图。",
+              "固定arXiv 2201.08027v1 PDF第3页Fig. 1主要原框架及图注已核；直接裁切，无重绘，每篇仅此一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "jmpt-hsi-change-detection-arxiv-2022-v1",
+            "type": "所用唯一arXiv正文版本",
+            "url": "https://arxiv.org/abs/2201.08027v1",
+            "pdfUrl": "https://arxiv.org/pdf/2201.08027v1",
+            "arxivId": "2201.08027",
+            "arxivVersion": 1,
+            "year": 2022,
+            "title": "A Joint Morphological Profiles and Patch Tensor Change Detection for Hyperspectral Imagery",
+            "authors": [
+              "Zengfu Hou",
+              "Wei Li"
+            ],
+            "firstSubmittedAt": "2022-01-20T07:34:17Z",
+            "updatedAt": "2022-01-20T07:34:17Z",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "localFile": "research/hyperspectral/sources/jun-zhou-coauthor-public-version-pagination-2026-10-12-2201.08027v1-pdf.pdf",
+            "relation": "仅使用arXiv 2201.08027v1；9页PDF选读首页作者/摘要及第3页Fig. 1主框架。未通读全文、读取其他版本或整理实验性能；代码只记录官方URL，不访问。所查Crossref前5条未匹配同题名正式记录；近题名且作者不同的记录不合并。"
+          }
+        ],
+        "methodFamilyId": "jmpt-hsi-change-detection-arxiv-2022",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据原摘要与主框架的实际HSI输入输出分类；复用已有任务/方法标签，不把谱轴当真实三维几何。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "7d279753ba3f9f10d6895ccf625680e2f9540185f1e510adabe52cefdbaf5f00",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2201.08027v1",
+            "https://arxiv.org/pdf/2201.08027v1"
+          ]
+        }
+      },
+      "citation": "@misc{jmpt-hsi-change-detection-arxiv-2022,\n  title = {A Joint Morphological Profiles and Patch Tensor Change Detection for Hyperspectral Imagery},\n  author = {Zengfu Hou and Wei Li},\n  year = {2022},\n  eprint = {2201.08027},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2201.08027v1}\n}\n"
     }
   ],
   "datasets": [
@@ -69063,7 +69539,8 @@
         "tsa-net-spectral-imaging-eccv-2020",
         "training-spectral-reconstruction-rgb-eccv-2014",
         "sparse-recovery-hsi-rgb-eccv-2016",
-        "hierarchical-beta-process-hsi-superresolution-eccv-2016"
+        "hierarchical-beta-process-hsi-superresolution-eccv-2016",
+        "dual-camera-physics-informed-hsi-arxiv-2021"
       ],
       "history": [
         {
@@ -69123,7 +69600,8 @@
         "random-printed-mask-2019",
         "event-camera-active-hsi-cvpr-2025",
         "pccadis-aperture-diffraction-hsi-eccv-2024",
-        "adis-aperture-diffraction-hsi-iccv-2023"
+        "adis-aperture-diffraction-hsi-iccv-2023",
+        "dual-camera-physics-informed-hsi-arxiv-2021"
       ],
       "history": [
         {
@@ -69193,7 +69671,8 @@
         "cst-cross-scope-hsi-sr-tip-2024",
         "cucanet-hsi-superresolution-eccv-2020",
         "sparse-spatio-spectral-hsi-superresolution-eccv-2014",
-        "hierarchical-beta-process-hsi-superresolution-eccv-2016"
+        "hierarchical-beta-process-hsi-superresolution-eccv-2016",
+        "hsigene-tpami-2026"
       ],
       "history": [
         {
@@ -69233,16 +69712,16 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
-        "comix-tgrs-2025",
+        "spectralmoe-dgss",
+        "hyplex-metasurface",
         "crf-cnn-hsi-igarss-2016",
         "crf-deep-feature-hsi-tgrs-2019",
-        "hyperfree-hsi-foundation-cvpr-2025",
+        "zhou-scholar-arxiv-2605-17286",
+        "comix-tgrs-2025",
         "hypersigma-tpami-2025",
-        "hyplex-metasurface",
-        "lwir-gas-plume-hsi-video-arxiv-2024",
+        "hyperfree-hsi-foundation-cvpr-2025",
         "methanemapper-hsi-plume-cvpr-2023",
-        "spectralmoe-dgss",
-        "zhou-scholar-arxiv-2605-17286"
+        "lwir-gas-plume-hsi-video-arxiv-2024"
       ],
       "history": [
         {
@@ -69282,6 +69761,7 @@
       "createdAt": "2026-10-08",
       "rationale": "根据 CVPR 2022 本轮已核验摘要形成；不是预设完整分类表。",
       "evidencePaperIds": [
+        "spectraltrack-tip-2025",
         "hmat",
         "tapt-arbitrary-fusion",
         "mst-cassi",
@@ -69300,7 +69780,6 @@
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
         "zhou-scholar-arxiv-2609-37340",
-        "spectraltrack-tip-2025",
         "hypersigma-tpami-2025",
         "decsc-tgrs-2025",
         "cross-source-neighborhood-contrast-if-2025",
@@ -70152,7 +70631,8 @@
         "zhou-20-hsi-2026",
         "zhou-scholar-nonlocal-low-rank-nonnegative-tensor-facto-2020",
         "hipandas-hsi-joint-restoration-iccv-2025",
-        "nctrf-hsi-superresolution-pr-2022"
+        "nctrf-hsi-superresolution-pr-2022",
+        "jmpt-hsi-change-detection-arxiv-2022"
       ],
       "history": [
         {
@@ -70373,7 +70853,8 @@
         "zhou-20-hsi-2026",
         "zhou-scholar-nmf-sae-an-interpretable-sparse-autoencode-2021",
         "egu-net-arxiv-2021",
-        "sah-sci-self-supervised-hsi-eccv-2024"
+        "sah-sci-self-supervised-hsi-eccv-2024",
+        "dual-camera-physics-informed-hsi-arxiv-2021"
       ],
       "history": [
         {
@@ -71466,7 +71947,8 @@
         "globalmind-hsi-change-isprs-2024",
         "hypernet-hsi-change-tgrs-2022",
         "bcg-net-hsi-multiclass-change-tip-2023",
-        "acda-hsi-anomaly-change-arxiv-2020"
+        "acda-hsi-anomaly-change-arxiv-2020",
+        "jmpt-hsi-change-detection-arxiv-2022"
       ],
       "history": [
         {
@@ -72719,6 +73201,7 @@
       "createdAt": "2026-10-08",
       "rationale": "逐篇复核现有论文的研究问题、输入输出和方法后建立；不继承三维专题的track分类。",
       "evidencePaperIds": [
+        "hucrtrack-tip-2026",
         "musf-gem",
         "cmfnet-cross-mamba",
         "s2msmamba-fusion",
@@ -72730,7 +73213,6 @@
         "zhou-scholar-arxiv-2603-09037",
         "zhou-dblp-arxiv-2412-00283",
         "zhou-dblp-arxiv-2404-00272",
-        "hucrtrack-tip-2026",
         "dualmamba-tgrs-2025",
         "decsc-tgrs-2025",
         "drsst-net-isprs-2026",
@@ -72791,7 +73273,8 @@
         "diffsci-snapshot-hsi-cvpr-2024",
         "lade-dun-snapshot-hsi-eccv-2024",
         "hsr-diff-hsi-fusion-iccv-2023",
-        "dds2m-hsi-restoration-iccv-2023"
+        "dds2m-hsi-restoration-iccv-2023",
+        "hsigene-tpami-2026"
       ],
       "history": [
         {
@@ -73317,7 +73800,8 @@
         "rs-emap-ensembles-2015",
         "tensor-morphological-profile-icip-2016",
         "gaussian-gabor-hsi-classification-2019",
-        "hsi-lidar-icv-multilevel-fusion-2020"
+        "hsi-lidar-icv-multilevel-fusion-2020",
+        "jmpt-hsi-change-detection-arxiv-2022"
       ],
       "history": [
         {
@@ -73577,6 +74061,8 @@
       "color": "#93afa1",
       "createdAt": "2026-10-09",
       "evidencePaperIds": [
+        "hucrtrack-tip-2026",
+        "spectraltrack-tip-2025",
         "hyperspectral-video-tracking-kcf-2018",
         "material-object-tracking-hsi-tip-2020",
         "zhou-82-hsi-2022",
@@ -73598,8 +74084,6 @@
         "zhou-scholar-arxiv-2605-20569",
         "zhou-scholar-arxiv-2605-17286",
         "zhou-strl-hyperspectral-tracking-2025",
-        "hucrtrack-tip-2026",
-        "spectraltrack-tip-2025",
         "csstrack-pattern-recognition-2026",
         "drsst-net-isprs-2026",
         "msp-net-arxiv-2026",
@@ -75223,7 +75707,8 @@
       "createdAt": "2026-10-13",
       "rationale": "CVPR2024 Unmixing before Fusion原摘要及Figure3明确非配对HSI/RGB合成新HSI样本，输入输出不同于测量重建。",
       "evidencePaperIds": [
-        "unmixing-before-fusion-hsi-synthesis-cvpr-2024"
+        "unmixing-before-fusion-hsi-synthesis-cvpr-2024",
+        "hsigene-tpami-2026"
       ],
       "history": [
         {
