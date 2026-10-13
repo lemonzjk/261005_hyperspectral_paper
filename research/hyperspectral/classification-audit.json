@@ -406,7 +406,11 @@
     "hsrmamba-single-hsi-superresolution-ijcai-2025",
     "signature-diffusion-hsi-model-watermark-ijcai-2025",
     "bi-diffcd-hsi-rgb-change-ijcai-2025",
-    "camm-multimodal-prior-sci-ijcai-2025"
+    "camm-multimodal-prior-sci-ijcai-2025",
+    "tdiffde-hsi-denoising-arxiv-2023",
+    "ssgn-hsi-hybrid-denoising-tgrs-2019",
+    "hsid-cnn-hsi-denoising-tgrs-2019",
+    "rmgf-hsi-band-selection-ijcai-2021"
   ],
   "sourceChecks": [
     {
@@ -3018,6 +3022,122 @@
       "supports": [
         "CAMM整体原框架：二维压缩测量和mask进入Mamba编码—解码网络；RGB及文本CLIP特征经FAM对齐，分别指导编码端和解码端MFM，输出重建HSI。",
         "唯一所用IJCAI2025正式公开PDF第3页Figure3主框架与完整原图注，未重绘；不额外收部件图或其他正文版本。"
+      ]
+    },
+    {
+      "paperId": "tdiffde-hsi-denoising-arxiv-2023",
+      "url": "https://arxiv.org/abs/2311.13622v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及作者元数据",
+      "supports": [
+        "TDiffDe从含有效图像信息的带噪HSI开始，截断训练好的扩散模型，以较短反向去噪过程恢复高光谱影像。",
+        "所用PDF首页为Jie Li；API为Jie L，原字段分别保留，展示采用PDF署名。当前所用版本无Jun Zhou，不外推其他版本。"
+      ]
+    },
+    {
+      "paperId": "tdiffde-hsi-denoising-arxiv-2023",
+      "url": "https://arxiv.org/pdf/2311.13622v1",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第2页主要原图及图注（选读）",
+      "supports": [
+        "TDiffDe主要原框架：前向扩散与截断步Tcut，以及由U-Net预测噪声的反向去噪步骤。",
+        "所用唯一arXiv2311.13622v1第2页Figure1主要原图及完整图注，未重绘；仅一张，不追加其他正文版本、图或实验。图号页码只属于所用版本。"
+      ]
+    },
+    {
+      "paperId": "ssgn-hsi-hybrid-denoising-tgrs-2019",
+      "url": "https://arxiv.org/abs/1810.00495v3",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及作者元数据",
+      "supports": [
+        "SSGN联合当前带、空间梯度与相邻带光谱差分，通过级联多尺度卷积预测噪声残差，去除高光谱影像中的混合噪声。",
+        "所用PDF首页完整作者与API同序一致。当前所用版本无Jun Zhou，不外推其他版本。"
+      ]
+    },
+    {
+      "paperId": "ssgn-hsi-hybrid-denoising-tgrs-2019",
+      "url": "https://api.crossref.org/works/10.1109/TGRS.2019.2912909",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式注册书目（只书目）",
+      "supports": [
+        "官方arXiv登记同一DOI，正式注册题名与完整作者同序一致；目录采用TGRS2019正式卷期，仅关联书目，不断言各版正文/实验一致。"
+      ]
+    },
+    {
+      "paperId": "ssgn-hsi-hybrid-denoising-tgrs-2019",
+      "url": "https://arxiv.org/pdf/1810.00495v3",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及图注（选读）",
+      "supports": [
+        "SSGN整体去噪流程原图：当前带和相邻光谱带经空间梯度/光谱差分转换，SSGN预测噪声残差后从当前带相减。",
+        "所用唯一arXiv1810.00495v3第3页Figure2主要原图及完整图注，未重绘；仅一张，不追加其他正文版本、图或实验。图号页码只属于所用版本。"
+      ]
+    },
+    {
+      "paperId": "ssgn-hsi-hybrid-denoising-tgrs-2019",
+      "url": "https://arxiv.org/pdf/1810.00495v3",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF提供的代码链接（仅记录URL）",
+      "supports": [
+        "记录https://github.com/WHUQZhang，未访问、下载、审查或运行；论文提供的是作者GitHub主页链接，不声称已定位具体仓库。"
+      ]
+    },
+    {
+      "paperId": "hsid-cnn-hsi-denoising-tgrs-2019",
+      "url": "https://arxiv.org/abs/1806.00183v3",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv完整原摘要及作者元数据",
+      "supports": [
+        "HSID-CNN联合当前带的空间信息与相邻带光谱信息，以多尺度卷积及多层特征融合学习噪声残差，恢复高光谱影像。",
+        "所用PDF首页完整作者与API同序一致。当前所用版本无Jun Zhou，不外推其他版本。"
+      ]
+    },
+    {
+      "paperId": "hsid-cnn-hsi-denoising-tgrs-2019",
+      "url": "https://api.crossref.org/works/10.1109/TGRS.2018.2865197",
+      "checkedAt": "2026-10-13",
+      "level": "Crossref正式注册书目（只书目）",
+      "supports": [
+        "官方arXiv登记同一DOI，正式注册题名与完整作者同序一致；仅关联书目，不断言各版正文/实验一致。目录采用TGRS正式卷期2019；DOI中的2018不作为HSID-CNN正式出版年。"
+      ]
+    },
+    {
+      "paperId": "hsid-cnn-hsi-denoising-tgrs-2019",
+      "url": "https://arxiv.org/pdf/1806.00183v3",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及图注（选读）",
+      "supports": [
+        "HSID-CNN主要流程原图：上部为模拟加噪训练和残差学习，下部为真实HSI输入、残差预测及恢复结果。",
+        "所用唯一arXiv1806.00183v3第3页Figure1主要原图及完整图注，未重绘；仅一张，不追加其他正文版本、图或实验。图号页码只属于所用版本。"
+      ]
+    },
+    {
+      "paperId": "hsid-cnn-hsi-denoising-tgrs-2019",
+      "url": "https://arxiv.org/pdf/1806.00183v3",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF提供的代码链接（仅记录URL）",
+      "supports": [
+        "记录https://github.com/WHUQZhang/HSID-CNN，未访问、下载、审查或运行；链接来自所用论文。"
+      ]
+    },
+    {
+      "paperId": "rmgf-hsi-band-selection-ijcai-2021",
+      "url": "https://www.ijcai.org/proceedings/2021/418",
+      "checkedAt": "2026-10-13",
+      "level": "IJCAI官方完整原摘要及出版书目",
+      "supports": [
+        "RMGF按HSI第一主成分的超像素区域构建多个波段相似图，经谱空加权图扩散融合和谱聚类，在各组中选取低噪声代表波段。",
+        "IJCAI官方完整作者与所用正式PDF首页同序一致，无Jun Zhou。正式DOI和页段3038–3044。"
+      ]
+    },
+    {
+      "paperId": "rmgf-hsi-band-selection-ijcai-2021",
+      "url": "https://www.ijcai.org/proceedings/2021/0418.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第2页主要原图及图注（选读）",
+      "supports": [
+        "RMGF整体原流程：HSI第一主成分及超像素分割、谱空加权区域图扩散融合、谱聚类与波段选择；分类是选带后的评估用途。",
+        "所用唯一IJCAI 2021 official proceedings PDF第2页Figure1主要原图及完整图注，未重绘；仅一张，不追加其他正文版本、图或实验。图号页码只属于所用版本。"
       ]
     }
   ]
