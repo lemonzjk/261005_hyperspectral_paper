@@ -14373,21 +14373,21 @@
       "pagination": "start0/max200，原返回顺序保留；61指定项，不是年度或作者全集。",
       "titleCount": 61,
       "candidateCount": 61,
-      "reviewedCount": 29,
-      "includedCount": 26,
+      "reviewedCount": 39,
+      "includedCount": 36,
       "excludedCount": 3,
-      "pendingCount": 32,
-      "sourcePrimaryAbstractsReviewed": 30,
-      "newUniquePrimaryAbstractsReviewed": 29,
+      "pendingCount": 22,
+      "sourcePrimaryAbstractsReviewed": 40,
+      "newUniquePrimaryAbstractsReviewed": 39,
       "status": "partial",
-      "statusLabel": "前30已处理，26入/3排/32待（1已读未决+后31）；非年度全集",
+      "statusLabel": "前40已处理，36入/3排/22待（1已读未决+后21）；非年度全集",
       "sourceSnapshot": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "collectionScope": "active",
       "gaps": [
-        "DSDP通用报告范围仍待；主稿注册TGRS2017已核，但实际输入/唯一正文及主图未核。后31原摘要未新读。",
-        "关键词外/其他年份/白名单、作者身份/范围/版本仍待。"
+        "DSDP通用报告范围/主稿实际材料仍待。后21原摘要未新读。",
+        "其他词/年份/白名单、作者身份/范围/版本仍待。"
       ],
-      "latestFollowupSnapshot": "research/hyperspectral/sources/arxiv-2016-third-ten-hsi-directory-2026-10-14.json"
+      "latestFollowupSnapshot": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json"
     },
     {
       "id": "arxiv-2016-second-ten-hsi-directory-2026-10-14",
@@ -14441,6 +14441,33 @@
       "collectionScope": "active",
       "gaps": [
         "父查询DSDP一已读未决及后31摘要未读；两Jun稿仍无当前可用原PDF，不断言付费/无公开版。其他词/作者/年度继续。"
+      ]
+    },
+    {
+      "id": "arxiv-2016-fourth-ten-hsi-directory-2026-10-14",
+      "venue": "arXiv",
+      "year": 2016,
+      "date": "2026-10-14",
+      "keywordGroup": "historical-query-single-version-followup",
+      "keywords": [
+        "hyperspectral"
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahyperspectral+AND+submittedDate%3A%5B201601010000+TO+201612312359%5D&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+      "method": "2016原rows30–39十原摘要/唯一PDF必要范围及主图；Jun Mamba-UNet新增公开条目定位。",
+      "pagination": "原61指定集合第四十项，非年度全集。",
+      "titleCount": 10,
+      "candidateCount": 10,
+      "reviewedCount": 10,
+      "includedCount": 10,
+      "excludedCount": 0,
+      "pendingCount": 0,
+      "status": "complete",
+      "sourcePrimaryAbstractsReviewed": 10,
+      "newUniquePrimaryAbstractsReviewed": 10,
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "collectionScope": "active",
+      "gaps": [
+        "父查询22待：DSDP一未决和后21未读；其他词/作者/年度继续。"
       ]
     }
   ],
@@ -53186,9 +53213,20 @@
       ],
       "bodyRead": false,
       "inputScopeStatus": "input_bands_and_mask_protocol_not_verified",
-      "latestFollowupEvidencePath": "research/hyperspectral/sources/jun-zhou-griffith-exclusion-abstract-recheck-2026-10-13.json",
+      "latestFollowupEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
       "primaryScopeEvidenceLevel": "primary_institution_abstract_declared_scope",
-      "boundary": "仅读取原摘要及复用已取得的必要范围证据，未新读全文或其他版本；未声明输入波段留白，不外推未读实验。官方代码仅URL，不访问。"
+      "boundary": "仅读取原摘要及复用已取得的必要范围证据，未新读全文或其他版本；未声明输入波段留白，不外推未读实验。官方代码仅URL，不访问。",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "pending",
+          "reason": "精确DOI的GREEN新定位10072/442449，Griffith原条目2b96df4a-7fbd-4811-951a-2b3a4b043eae已访问；当前原REST只见两个LICENSE及229/228字节文本，无该接口可见论文PDF，不下载许可文件、不把绿色标记当正文或推断付费。原摘要仍未给输入实际谱带，Applied Intelligence来源外及合格版本继续待核。"
+        }
+      ],
+      "lastReviewedAt": "2026-10-14",
+      "institutionalPublicHandle": "https://hdl.handle.net/10072/442449",
+      "institutionalItemUuid": "2b96df4a-7fbd-4811-951a-2b3a4b043eae"
     },
     {
       "title": "Spectral-spatial features for material based object tracking in hyperspectral videos.",
@@ -69765,13 +69803,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "lowrank-jointsparse-amp-hsi-arxiv-2016",
+      "reason": "用低秩与联合稀疏先验，从压缩观测恢复高光谱数据。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "用低秩与联合稀疏先验，从压缩观测恢复高光谱数据。"
+        }
+      ]
     },
     {
       "title": "Spatial Context based Angular Information Preserving Projection for Hyperspectral Image Classification",
@@ -69787,13 +69837,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "spatial-angular-projection-hsi-arxiv-2016",
+      "reason": "保留局部光谱角与空间上下文，投影后进行高光谱地物分类。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "保留局部光谱角与空间上下文，投影后进行高光谱地物分类。"
+        }
+      ]
     },
     {
       "title": "Person Re-identification with Hyperspectral Multi-Camera Systems --- A Pilot Study",
@@ -69811,13 +69873,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "hyperspectral-person-reid-arxiv-2016",
+      "reason": "以多相机高光谱观测中的皮肤光谱进行跨视角人员重识别。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "以多相机高光谱观测中的皮肤光谱进行跨视角人员重识别。"
+        }
+      ]
     },
     {
       "title": "Composite Kernel Local Angular Discriminant Analysis for Multi-Sensor Geospatial Image Analysis",
@@ -69834,13 +69908,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "composite-kernel-angular-hsi-lidar-arxiv-2016",
+      "reason": "融合高光谱与LiDAR伪波形，学习局部角度判别子空间进行地物分类。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "融合高光谱与LiDAR伪波形，学习局部角度判别子空间进行地物分类。"
+        }
+      ]
     },
     {
       "title": "Sparse Representation-Based Classification: Orthogonal Least Squares or Orthogonal Matching Pursuit?",
@@ -69856,13 +69942,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "classwise-ols-hsi-classification-arxiv-2016",
+      "reason": "比较OLS与OMP稀疏表示，并提出按类别构造OLS表示的高光谱分类器。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "比较OLS与OMP稀疏表示，并提出按类别构造OLS表示的高光谱分类器。"
+        }
+      ]
     },
     {
       "title": "Fast Hyperspectral Unmixing in Presence of Nonlinearity or Mismodelling Effects",
@@ -69881,13 +69979,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "fast-nonlinear-mismodelling-unmixing-arxiv-2016",
+      "reason": "用凸优化快速估计非线性或模型失配下的高光谱丰度及残差。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "用凸优化快速估计非线性或模型失配下的高光谱丰度及残差。"
+        }
+      ]
     },
     {
       "title": "Understanding the Plasmonics of Nanostructured Atomic Force Microscopy Tips",
@@ -69909,13 +70019,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "afm-tip-plasmonics-hsi-arxiv-2016",
+      "reason": "用扫描高光谱成像分析纳米结构AFM探针的等离激元响应。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "用扫描高光谱成像分析纳米结构AFM探针的等离激元响应。"
+        }
+      ]
     },
     {
       "title": "Fast and robust pushbroom hyperspectral imaging via DMD-based scanning",
@@ -69933,13 +70055,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "dmd-pushbroom-hyperspectral-arxiv-2016",
+      "reason": "用DMD电子扫描实现推扫高光谱采集，并以辅助RGB影像定位光谱切片。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "用DMD电子扫描实现推扫高光谱采集，并以辅助RGB影像定位光谱切片。"
+        }
+      ]
     },
     {
       "title": "Robust Volume Minimization-Based Matrix Factorization for Remote Sensing and Document Clustering",
@@ -69958,13 +70092,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "robust-volmin-hsi-factorization-arxiv-2016",
+      "reason": "在离群样本存在时稳健估计体积最小化分解，用于高光谱解混。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "在离群样本存在时稳健估计体积最小化分解，用于高光谱解混。"
+        }
+      ]
     },
     {
       "title": "On Clustering and Embedding Mixture Manifolds using a Low Rank Neighborhood Approach",
@@ -69980,13 +70126,25 @@
       "year": 2016,
       "searchId": "arxiv-2016-first-ten-hsi-directory-2026-10-14",
       "discoveredAt": "2026-10-14",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "仅官方题名/完整作者和arXiv书目；原摘要及必要范围/主图未读，不凭关键词确认。",
+      "decision": "included",
+      "paperId": "lowrank-neighborhood-mixture-manifold-arxiv-2016",
+      "reason": "以低秩邻域重建分离混合光谱流形，并完成聚类和嵌入。",
       "evidencePath": "research/hyperspectral/sources/arxiv-2016-first-ten-hsi-directory-2026-10-14.json",
       "sourcePolicyStatus": "arxiv_allowed",
-      "readingProgress": "title_only",
-      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。"
+      "readingProgress": "abstract_read",
+      "boundary": "指定词/首次提交日期查询不是年度或作者全集；API取得摘要不表示已读。",
+      "scopeStatus": "direct_hsi_confirmed",
+      "canonicalVenue": "arXiv",
+      "lastReviewedAt": "2026-10-14",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+      "followups": [
+        {
+          "date": "2026-10-14",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json",
+          "decision": "included",
+          "reason": "以低秩邻域重建分离混合光谱流形，并完成聚类和嵌入。"
+        }
+      ]
     },
     {
       "title": "A regularized tri-linear approach for optical interferometric imaging",
@@ -79162,6 +79320,37 @@
       "newFullTextReadingCount": 0,
       "figuresAdded": 3,
       "sourceSnapshot": "research/hyperspectral/sources/arxiv-2016-third-ten-hsi-directory-2026-10-14.json"
+    },
+    {
+      "id": "arxiv-2016-fourth-ten-hsi-directory-2026-10-14",
+      "date": "2026-10-14",
+      "searchIds": [
+        "arxiv-2016-fourth-ten-hsi-directory-2026-10-14"
+      ],
+      "paperIds": [
+        "lowrank-jointsparse-amp-hsi-arxiv-2016",
+        "spatial-angular-projection-hsi-arxiv-2016",
+        "hyperspectral-person-reid-arxiv-2016",
+        "composite-kernel-angular-hsi-lidar-arxiv-2016",
+        "classwise-ols-hsi-classification-arxiv-2016",
+        "fast-nonlinear-mismodelling-unmixing-arxiv-2016",
+        "afm-tip-plasmonics-hsi-arxiv-2016",
+        "dmd-pushbroom-hyperspectral-arxiv-2016",
+        "robust-volmin-hsi-factorization-arxiv-2016",
+        "lowrank-neighborhood-mixture-manifold-arxiv-2016"
+      ],
+      "new": 10,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 1,
+      "newSurveyCandidates": 0,
+      "sourcePrimaryAbstractsReviewed": 10,
+      "newUniquePrimaryAbstractsReviewed": 10,
+      "newPdfsDownloaded": 10,
+      "newFullTextReadingCount": 0,
+      "figuresAdded": 4,
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-2016-fourth-ten-hsi-directory-2026-10-14.json"
     }
   ],
   "gaps": [
