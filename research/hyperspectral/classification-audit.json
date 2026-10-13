@@ -454,7 +454,20 @@
     "dstc-hsi-supertoken-classification-eccv-2024",
     "pccadis-aperture-diffraction-hsi-eccv-2024",
     "ras2s-hsi-denoising-eccv-2024",
-    "sah-sci-self-supervised-hsi-eccv-2024"
+    "sah-sci-self-supervised-hsi-eccv-2024",
+    "methanemapper-hsi-plume-cvpr-2023",
+    "rdluf-mixs2-hsi-cvpr-2023",
+    "vcsd-vis-nir-illumination-cvpr-2023",
+    "sert-hsi-denoising-cvpr-2023",
+    "qsspn-hsi-classification-cvpr-2023",
+    "daem-blind-hsi-fusion-cvpr-2023",
+    "hsr-diff-hsi-fusion-iccv-2023",
+    "dds2m-hsi-restoration-iccv-2023",
+    "hsdt-hsi-denoising-iccv-2023",
+    "padut-hsi-reconstruction-iccv-2023",
+    "essaformer-single-hsi-sr-iccv-2023",
+    "t-honecls-hsi-pu-iccv-2023",
+    "adis-aperture-diffraction-hsi-iccv-2023"
   ],
   "sourceChecks": [
     {
@@ -4464,6 +4477,382 @@
       "level": "所用论文提供的作者公开链接（仅URL记录）",
       "supports": [
         "记录https://github.com/lyuxi/SAH-SCI；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "methanemapper-hsi-plume-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Kumar_MethaneMapper_Spectral_Absorption_Aware_Hyperspectral_Transformer_for_Methane_Detection_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "从AVIRIS-NG高光谱图像检测甲烷羽流，并提供大规模羽流分割标注数据。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "methanemapper-hsi-plume-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Kumar_MethaneMapper_Spectral_Absorption_Aware_Hyperspectral_Transformer_for_Methane_Detection_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 2. Overview of MethaneMapper (MM) architecture. Given a hyperspectral image, our RGB (400nm −700nm) and SWIR (2000nm−2500nm) band-pass filters passes a subset of channels in desired wavelength range and feed them to CNN backbones (ResNet) to extract features. These features are concatenated and fed to Transformer Encoder. Parallelly, our Spectral Feature Generator (SFG) modules takes in all channels of input image and generate methane candidates features. Next these candidates are sent to Query Refiner (QR) to refine queries. Then these queries decoded using encoded feature from Transformer Encoder. Finally each decoded query is used to predict a plume mask via Mask Prediction and, bounding box and class via FFNs (Feed Forward Network).",
+        "所用CVPR2023 CVF官方公开正文 PDF第3页Figure2主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "methanemapper-hsi-plume-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Kumar_MethaneMapper_Spectral_Absorption_Aware_Hyperspectral_Transformer_for_Methane_Detection_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/UCSB-VRL/MethaneMapper-Spectral-Absorption-aware-Hyperspectral-Transformer-for-Methane-Detection；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "rdluf-mixs2-hsi-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Dong_Residual_Degradation_Learning_Unfolding_Framework_With_Mixing_Priors_Across_Spectral_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "学习实际退化与名义编码矩阵之间的残差，以展开网络重建压缩高光谱观测。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "rdluf-mixs2-hsi-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Dong_Residual_Degradation_Learning_Unfolding_Framework_With_Mixing_Priors_Across_Spectral_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第4页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 2. Our proposed RDLUF comprises K stages (iterations). DConv denotes the depth-wise convolution. RDLGD calculates the degradation matrix ˆΦ by utilizing compressed data y and sensing matrix Φ, and executes the gradient descent with a learnable step size parameter ρk. There is a stage interaction between stages.",
+        "所用CVPR2023 CVF官方公开正文 PDF第4页Figure2主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "vcsd-vis-nir-illumination-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Niu_Visibility_Constrained_Wide-Band_Illumination_Spectrum_Design_for_Seeing-in-the-Dark_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "采集50带VIS-NIR高光谱数据，并利用其物理成像模拟优化兼顾人眼可见度与暗光重建的照明光谱。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "vcsd-vis-nir-illumination-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Niu_Visibility_Constrained_Wide-Band_Illumination_Spectrum_Design_for_Seeing-in-the-Dark_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第5–6页HSI输入/数据范围（选读）",
+      "supports": [
+        "原摘要明确自制50带滤轮高光谱采集；PDF5表1为400–890nm、10nm间隔，PDF6明确辅助图像由所采HSI物理合成。收录依据为实际HSI采集和处理，不声称最终增强网络直接输入50带。"
+      ]
+    },
+    {
+      "paperId": "vcsd-vis-nir-illumination-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Niu_Visibility_Constrained_Wide-Band_Illumination_Spectrum_Design_for_Seeing-in-the-Dark_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用版本具名图注与采集图示（仅定位框架）",
+      "supports": [
+        "所用CVPR2023正式版的Figure1为视觉响应/LED光谱曲线、Figure2为滤片曲线及采集相机照片、Figure3为数据样例、Figure4为结果图、Figure5为LED实现光谱曲线及硬件照片、Figure6为阈值结果和曲线；图注及Figure2、Figure5图示已核，未发现独立主要框架图。框架留白，不追其他版本或用照片替代。"
+      ]
+    },
+    {
+      "paperId": "vcsd-vis-nir-illumination-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Niu_Visibility_Constrained_Wide-Band_Illumination_Spectrum_Design_for_Seeing-in-the-Dark_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/MyNiuuu/VCSD；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "sert-hsi-denoising-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Li_Spectral_Enhanced_Rectangle_Transformer_for_Hyperspectral_Image_Denoising_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "结合空间非局部自相似与全局光谱低秩结构去除HSI噪声。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "sert-hsi-denoising-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Spectral_Enhanced_Rectangle_Transformer_for_Hyperspectral_Image_Denoising_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 1. Overall framework of SERT. (a) SERT mainly includes two essential components, i.e., SE for non-local spatial similarity and SE for global low-rank property. (b) spatial rectangle self-attention (RA) and (c) spectral enhancement (SE) module.",
+        "所用CVPR2023 CVF官方公开正文 PDF第3页Figure1主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "sert-hsi-denoising-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Li_Spectral_Enhanced_Rectangle_Transformer_for_Hyperspectral_Image_Denoising_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/MyuLi/SERT；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "qsspn-hsi-classification-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_Quantum-Inspired_Spectral-Spatial_Pyramid_Network_for_Hyperspectral_Image_Classification_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "利用量子表示启发的谱空特征网络，对HSI像素进行地物分类。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "qsspn-hsi-classification-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Quantum-Inspired_Spectral-Spatial_Pyramid_Network_for_Hyperspectral_Image_Classification_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 2. Illustration of the proposed QSSN and QSSPN frame- work. The yellow and blue boxes at the top are phase-prediction module (PPM) and measurement-like fusion module (MFM), re- spectively. The middle box shows the QSSN framework. The QSSPN framework is presented at the bottom.",
+        "所用CVPR2023 CVF官方公开正文 PDF第3页Figure2主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "daem-blind-hsi-fusion-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Xie_Toward_Stable_Interpretable_and_Lightweight_Hyperspectral_Super-Resolution_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "联合估计退化与融合HSI/MSI，构建可解释的轻量高光谱空间超分辨率方法。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "daem-blind-hsi-fusion-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xie_Toward_Stable_Interpretable_and_Lightweight_Hyperspectral_Super-Resolution_CVPR_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第4页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 2. An overview of the proposed coordination optimization HSI-SR framework. Degradation estimation and fusion facilitate a positive feedback loop in the framework. As shown in (c), the estimated PSF is involved in the optimization of the fusion module as a guidance. Explicit modeling of PSF and SRF are built under anisotropic Gaussian kernel and mixture Gaussian for a stable degradation estimation. A lightweight autoencoder is constructed to recover the HR-HSI under the spectral mixing prior for an interpretable fusion. To solve the HSI-SR structure flexibly and efficiently, a Monte Carlo EM algorithm is applied with alternative optimization.",
+        "所用CVPR2023 CVF官方公开正文 PDF第4页Figure2主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "daem-blind-hsi-fusion-cvpr-2023",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Xie_Toward_Stable_Interpretable_and_Lightweight_Hyperspectral_Super-Resolution_CVPR_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/WenjinGuo/DAEM；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "hsr-diff-hsi-fusion-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Wu_HSR-Diff_Hyperspectral_Image_Super-Resolution_via_Conditional_Diffusion_Models_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "用HSI/MSI条件引导扩散迭代，从噪声初始化生成高空间分辨率HSI。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "hsr-diff-hsi-fusion-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Wu_HSR-Diff_Hyperspectral_Image_Super-Resolution_via_Conditional_Diffusion_Models_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第4页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 3: Architecture of Conditional Denoising Transformer.",
+        "所用ICCV2023 CVF官方公开正文 PDF第4页Figure3主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。所选为CDFormer主要条件去噪架构，包含LR-HSI/HR-MSI输入与HR-HSI输出；扩散示意与其他子图不另取。"
+      ]
+    },
+    {
+      "paperId": "dds2m-hsi-restoration-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Miao_DDS2M_Self-Supervised_Denoising_Diffusion_Spatio-Spectral_Model_for_Hyperspectral_Image_Restoration_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "只用当前退化HSI，在反向扩散中学习未训练谱空网络，进行自监督HSI复原。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "dds2m-hsi-restoration-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Miao_DDS2M_Self-Supervised_Denoising_Diffusion_Spatio-Spectral_Model_for_Hyperspectral_Image_Restoration_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 2. An overview of the proposed self-supervised DDS2M. In DDS2M, the diffusion process is reversed with the help of the proposed VS2M, solely using the degraded HSI without any extra training data. VS2M consists of the untrained spatial and spectral networks (aiming at leveraging the intrinsic structure of HSIs) and the variational inference-based loss function (aiming at enabling the untrained networks to learn the posterior distribution).",
+        "所用ICCV2023 CVF官方公开正文 PDF第3页Figure2主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "dds2m-hsi-restoration-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Miao_DDS2M_Self-Supervised_Denoising_Diffusion_Spatio-Spectral_Model_for_Hyperspectral_Image_Restoration_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/miaoyuchun/DDS2M；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "hsdt-hsi-denoising-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Lai_Hybrid_Spectral_Denoising_Transformer_with_Guided_Attention_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "以混合卷积和引导光谱注意力，对可变波段HSI进行高效去噪。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "hsdt-hsi-denoising-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Lai_Hybrid_Spectral_Denoising_Transformer_with_Guided_Attention_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第4页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 3: Our HSDT architecture. We adopt a hierarchical multiscale encoder-decoder (a) with each building transformer block stacks (d) a Spectral-Spatial Separable Convolution, (b) a Guided Spectral Self-Attention, and (c) a Self-Modulated Feed-Forward Network sequentially. We append batch normalization after each convolution and predict the residual image.",
+        "所用ICCV2023 CVF官方公开正文 PDF第4页Figure3主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "hsdt-hsi-denoising-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Lai_Hybrid_Spectral_Denoising_Transformer_with_Guided_Attention_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/Zeqiang-Lai/HSDT；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "padut-hsi-reconstruction-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Li_Pixel_Adaptive_Deep_Unfolding_Transformer_for_Hyperspectral_Image_Reconstruction_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "依据逐像素退化调节数据更新，并以非局部光谱先验重建压缩HSI。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "padut-hsi-reconstruction-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Li_Pixel_Adaptive_Deep_Unfolding_Transformer_for_Hyperspectral_Image_Reconstruction_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第4页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 4: Illustration of our proposed Pixel Adaptive Deep Unfolding Transformer (PADUT) for HSI reconstruction. Top: the overall architecture that consists of K stages, each of which consists of a data module and a prior module. (a) Pixel-adaptive data module (b) Prior module (c) Stage fusion module",
+        "所用ICCV2023 CVF官方公开正文 PDF第4页Figure4主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "padut-hsi-reconstruction-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Li_Pixel_Adaptive_Deep_Unfolding_Transformer_for_Hyperspectral_Image_Reconstruction_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/MyuLi/PADUT；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "essaformer-single-hsi-sr-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Zhang_ESSAformer_Efficient_Transformer_for_Hyperspectral_Image_Super-resolution_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "以光谱相关系数核自注意力建模远程依赖，提升单幅HSI空间分辨率。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "essaformer-single-hsi-sr-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_ESSAformer_Efficient_Transformer_for_Hyperspectral_Image_Super-resolution_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 1. Overview of the proposed ESSAformer. The model is constructed by stacking upsampling/downsampling and encoder layers. The pipeline follows an iterative refinement process to handle the feature representations at different scales, thereby better encoding details and contextual information. All encoder layers having the same input resolution, i.e., the same color, share weight for a lightweight design.",
+        "所用ICCV2023 CVF官方公开正文 PDF第3页Figure1主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "t-honecls-hsi-pu-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Zhao_Class_Prior-Free_Positive-Unlabeled_Learning_with_Taylor_Variational_Loss_for_Hyperspectral_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "在类别先验未知时，利用少量正样本和未标注HSI训练二元地物分类器。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "t-honecls-hsi-pu-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Zhao_Class_Prior-Free_Positive-Unlabeled_Learning_with_Taylor_Variational_Loss_for_Hyperspectral_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 1: T-HOneCls: A Taylor series expansion-based variational framework for HSI PU learning.",
+        "所用ICCV2023 CVF官方公开正文 PDF第3页Figure1主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "t-honecls-hsi-pu-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Zhao_Class_Prior-Free_Positive-Unlabeled_Learning_with_Taylor_Variational_Loss_for_Hyperspectral_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/Hengwei-Zhao96/T-HOneCls；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "adis-aperture-diffraction-hsi-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Lv_Aperture_Diffraction_for_Compact_Snapshot_Spectral_Imaging_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "CVF官方完整原摘要与BibTeX",
+      "supports": [
+        "正交孔径掩模与马赛克传感器构成紧凑衍射光谱系统，从单次曝光恢复HSI。",
+        "所用PDF首页完整作者顺序与官方BibTeX相符，无Jun Zhou；仅限定所用版本。"
+      ]
+    },
+    {
+      "paperId": "adis-aperture-diffraction-hsi-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Lv_Aperture_Diffraction_for_Compact_Snapshot_Spectral_Imaging_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第6页HSI输入/光谱插值（选读）",
+      "supports": [
+        "所用PDF6明确450–650nm范围内28个波长的HSI输入，光谱插值处理单列，不仅凭spectral名称收录。"
+      ]
+    },
+    {
+      "paperId": "adis-aperture-diffraction-hsi-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Lv_Aperture_Diffraction_for_Compact_Snapshot_Spectral_Imaging_ICCV_2023_paper.pdf",
+      "checkedAt": "2026-10-13",
+      "level": "所用PDF第3页主要原图及完整图注（选读）",
+      "supports": [
+        "Figure 2. Illustration of ADIS architecture and reconstruction pipeline. In the upper-left, the equivalence between the two complementary masks is depicted. The PSF show in the middle is obtained by ADIS through monochromatic illumination and multiband superimposition.",
+        "所用ICCV2023 CVF官方公开正文 PDF第3页Figure2主要原框架及完整图注，未重绘；仅一张，图号页码不迁移到其他版本。"
+      ]
+    },
+    {
+      "paperId": "adis-aperture-diffraction-hsi-iccv-2023",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Lv_Aperture_Diffraction_for_Compact_Snapshot_Spectral_Imaging_ICCV_2023_paper.html",
+      "checkedAt": "2026-10-13",
+      "level": "所用论文的作者公开链接（仅URL记录）",
+      "supports": [
+        "记录https://github.com/Krito-ex/CSST；未访问项目、仓库、README、代码、权重、许可证或运行复现。"
+      ]
+    },
+    {
+      "paperId": "hsrmamba-single-hsi-superresolution-ijcai-2025",
+      "url": "https://arxiv.org/abs/2501.18500v2",
+      "checkedAt": "2026-10-13",
+      "level": "官方arXiv题名及完整作者书目（未读摘要/正文）",
+      "supports": [
+        "官方arXiv作者顺序与正式书目相同，题名/同方法简称关联；HSRMamba预印本与正式题名中的Image位置不同。仅书目版本关联，未另读arXiv摘要、正文或图，不断言各版本正文/实验相同。"
+      ]
+    },
+    {
+      "paperId": "dds2m-hsi-restoration-iccv-2023",
+      "url": "https://arxiv.org/abs/2303.06682v2",
+      "checkedAt": "2026-10-13",
+      "level": "官方arXiv题名及完整作者书目（未读摘要/正文）",
+      "supports": [
+        "官方arXiv作者顺序与正式书目相同，题名/同方法简称关联；HSRMamba预印本与正式题名中的Image位置不同。仅书目版本关联，未另读arXiv摘要、正文或图，不断言各版本正文/实验相同。"
       ]
     }
   ]
