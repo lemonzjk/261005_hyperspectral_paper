@@ -28,5 +28,5 @@
 - research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
-- 最新：ECCV2014/2016题名筛查新增6篇直接HSI主会论文，ECCV2018/2020官方目录补核另4篇；本轮6篇仅正式DOI书目、正文/主图入口受限，2018/2020四篇各一公开正文一主图。HVOT指定题名的Crossref完整摘要、作者表及OpenAlex Griffith关联已核；仍仅SSRN、无PDF/主图，合格来源版本待定，不扩张作者例外。无关键词题名、其他年份及作者身份/来源未决继续，非全集完成。
+- 最新：ECCV2010/2012关键词题名扫描排除11个泛光谱候选，ECCV2014/2016题名筛查新增6篇直接HSI主会论文，ECCV2018/2020官方目录补核另4篇；本轮6篇仅正式DOI书目、正文/主图入口受限，2018/2020四篇各一公开正文一主图。HVOT指定题名的Crossref完整摘要、作者表及OpenAlex Griffith关联已核；仍仅SSRN、无PDF/主图，合格来源版本待定，不扩张作者例外。无关键词题名、其他年份及作者身份/来源未决继续，非全集完成。
 - Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC两个SSRN版本已对账但仍无合格来源，HVOT、三分割输入、IF身份、Phase署名仍待。OpenAlex混并397未映射，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
