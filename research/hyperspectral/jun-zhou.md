@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-13作者未决无新原始材料，不重复失败入口或增加身份计数；Jun确认182。领域两个既有早期范围候选确认实际HSI并入库，总627，新增Treelet一主结构图；2015目录查询429待后续可访问时续接。[单版范围与主图](sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json)。
+
 2026-10-13作者混并差集续核：三此前未映射具体条目转survey关联。Frontiers in Medicine原Dataset明确OCT/PathMNIST/CIFAR10全部按RGB处理；Frontiers in Immunology原摘要及方法明确转录组免疫分型、20×病理WSI patch预测，按声明任务范围分别排除，后者不声称物理谱带/RGB已核。出版社记录的Jun单位分别A*STAR、上海同仁医院，单位差异不判异人或目标，混并ORCID不升级身份。ASTER矿物稿原Springer页面HTTP200仅Client Challenge，无原摘要/输入，单列pending，不把ASTER名字直接判HSI/纯MS或反复追同入口。索引现180目录、186Griffith、84survey、389未映射；只是三项，不排除其余集合或称作者全集。总库625、Jun确认182、475图不变，2原摘要/必要方法段，0新PDF/全文/逐版/图/代码。[三条原始访问、实际范围和单篇单位](sources/jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13.json)。
 
 2026-10-13作者未决无新原始身份/输入证据，维持Jun确认182，不重复受限入口。领域2014原41指定集合已处置：38不同目录工作、1早期版本关联、2排除、0待；最后十篇及3主图已入库，总625。其他作者与领域年份/白名单覆盖继续。[范围与版本关系](sources/arxiv-2014-last-ten-mainframes-2026-10-13.json)。

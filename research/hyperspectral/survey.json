@@ -13694,19 +13694,20 @@
       "pagination": "start0/max200，总数10，取得10唯一ID；只该词/日期查询集合，不是全领域。",
       "titleCount": 10,
       "candidateCount": 10,
-      "reviewedCount": 8,
-      "includedCount": 7,
+      "reviewedCount": 10,
+      "includedCount": 9,
       "excludedCount": 1,
-      "pendingCount": 2,
+      "pendingCount": 0,
       "sourcePrimaryAbstractsReviewed": 10,
-      "status": "partial",
-      "statusLabel": "关键词分页完整；范围未决和其他词检索仍待",
+      "status": "complete",
+      "statusLabel": "原指定10项9入/1排除/0待；非年度全集",
       "sourceSnapshot": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "collectionScope": "active",
       "gaps": [
-        "hyperspectral一个词不覆盖hyper-spectral、imaging spectroscopy等别名或没有该词的作品；不宣称年份/领域全集。",
-        "两早期范围候选及2010—2013的66个原摘要/实际贡献仍待。"
-      ]
+        "只原all:hyperspectral/1991–2009指定集合处置完成，未覆盖别名/无该关键词作品，不称全领域完成。",
+        "2010–2013原66集合仍有5范围/版本关系未决；其他年份/白名单矩阵及作者继续。"
+      ],
+      "latestFollowupSnapshot": "research/hyperspectral/sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json"
     },
     {
       "id": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
@@ -14117,6 +14118,35 @@
       "gaps": [
         "ASTER范围/身份/原来源仍待，HTTP200挑战不算可读正文。",
         "其余389未映射及已有作者未决继续，不称合并档案均为目标作者或作者全集。"
+      ]
+    },
+    {
+      "id": "arxiv-early-two-hsi-scope-resolution-2026-10-13",
+      "venue": "arXiv",
+      "year": "2006/2007",
+      "date": "2026-10-13",
+      "keywordGroup": "existing-historical-hsi-scope-resolution",
+      "keywords": [
+        "hyperspectral"
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahyperspectral+AND+submittedDate%3A%5B199101010000+TO+200912312359%5D&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+      "method": "复用原摘要，两个唯一v3只首页/图注及明确HSI应用输入输出段；一张主要基结构图。",
+      "pagination": "仅原早期指定两范围候选，不重查十个原摘要或其他版本。",
+      "titleCount": 2,
+      "candidateCount": 2,
+      "reviewedCount": 2,
+      "includedCount": 2,
+      "excludedCount": 0,
+      "pendingCount": 0,
+      "sourcePrimaryAbstractsReviewed": 0,
+      "newUniquePrimaryAbstractsReviewed": 0,
+      "sourcePrimaryNecessaryMaterialsReviewed": 2,
+      "status": "complete",
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json",
+      "collectionScope": "active",
+      "gaps": [
+        "未整理性能/证明/其他图；空谱cube不当几何三维。",
+        "2010–2013五范围/版本未决及其他年度/作者继续；2015新查询429未取得目录。"
       ]
     }
   ],
@@ -62575,13 +62605,24 @@
       "year": 2006,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-1991-2009",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "原摘要称hyperspectral-source-flux estimation，实际成像维度/研究对象及直接HSI处理范围待必要原稿证据，不按泛噪声题名排除。",
+      "decision": "included",
+      "paperId": "bihaar-poisson-hyperspectral-source-flux-arxiv-2006",
+      "reason": "用Bi-Haar域假设检验恢复Poisson高光谱计数及源光谱通量。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "只一个所用版本；完整原摘要阅读与仅书目定位分记。其他版本/实验/代码不列待办。"
+      "boundary": "只一个所用版本；完整原摘要阅读与仅书目定位分记。其他版本/实验/代码不列待办。",
+      "scopeStatus": "direct_hsi_primary_selected_pages_confirmed",
+      "lastReviewedAt": "2026-10-13",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json",
+      "followups": [
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json",
+          "decision": "included",
+          "reason": "用Bi-Haar域假设检验恢复Poisson高光谱计数及源光谱通量。"
+        }
+      ]
     },
     {
       "title": "Hierarchical Markovian models for hyperspectral image segmentation",
@@ -62619,14 +62660,25 @@
       "year": 2007,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-1991-2009",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "原摘要含HSI、DNA及广告数据，Treelets为通用基展开；实际HSI数据处理贡献与范围仍待必要原稿核验，不因多应用自动排除或收录。",
+      "decision": "included",
+      "paperId": "treelets-hyperspectral-tissue-classification-arxiv-2007",
+      "reason": "以自适应Treelets多尺度基压缩组织高光谱特征并分类。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
       "boundary": "只一个所用版本；完整原摘要阅读与仅书目定位分记。其他版本/实验/代码不列待办。",
-      "arxivReportedDoi": "10.1214/07-AOAS137"
+      "arxivReportedDoi": "10.1214/07-AOAS137",
+      "scopeStatus": "direct_hsi_primary_selected_pages_confirmed",
+      "lastReviewedAt": "2026-10-13",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json",
+      "followups": [
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json",
+          "decision": "included",
+          "reason": "以自适应Treelets多尺度基压缩组织高光谱特征并分类。"
+        }
+      ]
     },
     {
       "title": "Bayesian segmentation of hyperspectral images",
@@ -74859,6 +74911,31 @@
       "figuresAdded": 0,
       "sourceSnapshot": "research/hyperspectral/sources/jun-zhou-unmapped-medical-aster-primary-scope-2026-10-13.json",
       "readingBoundary": "两HTML只原摘要、实际任务/输入与作者单位；第三为挑战。没有目录增补、全文/逐版/图/科学代码访问。"
+    },
+    {
+      "id": "arxiv-early-two-hsi-scope-resolution-2026-10-13",
+      "date": "2026-10-13",
+      "searchIds": [
+        "arxiv-early-two-hsi-scope-resolution-2026-10-13"
+      ],
+      "paperIds": [
+        "bihaar-poisson-hyperspectral-source-flux-arxiv-2006",
+        "treelets-hyperspectral-tissue-classification-arxiv-2007"
+      ],
+      "new": 2,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 0,
+      "newSurveyCandidates": 0,
+      "sourcePrimaryAbstractsReviewed": 0,
+      "newUniquePrimaryAbstractsReviewed": 0,
+      "newPdfsDownloaded": 2,
+      "newFullTextReadingCount": 0,
+      "catalogFullTextReadingCount": 0,
+      "figuresAdded": 1,
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-early-two-hsi-scope-resolution-2026-10-13.json",
+      "readingBoundary": "两既有原摘要不重计，唯一v3必要HSI输入/输出及主Treelet结构；不全文/逐版/性能/科学代码。"
     }
   ],
   "gaps": [
