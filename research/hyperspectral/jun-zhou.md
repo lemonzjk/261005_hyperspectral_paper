@@ -1,5 +1,9 @@
 # 周峻老师高光谱论文调研
 
+2026-10-14领域2018指定114官方书目中两完整Jun Zhou字段对应已录KCF/材料跟踪，仅复用，不重读版本或补图；不是作者全集证明。Jun确认182不变，领域107条当前查询待核，实际范围/版本/作者候选仍继续。[有限目录与既有映射](sources/arxiv-2018-hsi-directory-locator-2026-10-14.json)。
+
+2026-10-14 SOC第一作者Xiangyu Liu加soil/carbon/hyperspectral有限官方arXiv查询一项为已录HyperVision，非SOC版本，不读另一版或补图；精确SSRN仍同题14作者，原目标身份/直接HSI证据保留、合格来源待，不证明无公开稿。Jun182不变；领域两新两主图，总807，2017指定93书目处置为84关联/7排/2范围或关系待（89摘要/四既有书目），其他作者/年继续。[有限版本定位与一版主图](sources/arxiv-2017-final-three-hsi-directory-2026-10-14.json)。
+
 2026-10-14 Mamba第一作者Bo Ding加Mamba/super-resolution有限官方arXiv查询0，精确注册五作者无摘要；不证明无公开稿/合格版，不推实际谱带，既有Griffith身份不变，范围/来源待，不重复旧受限页或代码。Jun182不变；领域十新四主图、无人机HSI赋谱独立摄影测量点云新增三维相关，总805，指定93为82关联/7排/4待，其他作者/年继续。[有限作者定位与材料](sources/arxiv-2017-ninth-ten-hsi-directory-2026-10-14.json)。
 
 2026-10-14两混并矿产完整OpenAlex索引摘要明确ETM+，USGS原传感器证据确认多光谱，按范围排除；原IEEE202空/SPIE挑战未取得原摘要，目标Jun身份仍未核，不凭单位/混并ORCID判异人。102survey/371未映射、Jun182不变；既有周峻CRF只复用书目，不读另一版或补图。领域七新四主图/两旧书目、一Net-FLICS所用稿范围排，总795，指定93为72关联/7排/14待，其他作者/年继续。[索引摘要与原传感器证据](sources/arxiv-2017-eighth-ten-hsi-directory-2026-10-14.json)。
