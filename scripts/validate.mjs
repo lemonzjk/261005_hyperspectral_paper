@@ -133,9 +133,21 @@ for (const papers of [topicPapers, [], ...trackDefinitions.map(track => catalog.
 }
 console.log('Timeline valid: full and filtered coverage, unique stations, no label collisions.');
 
-// Preserve retained publication facts; the user-authorized cleanup documents removals.
+// Preserve historical facts while recording evidence-backed additions separately.
 const baseline = JSON.parse(readFileSync(new URL('../research/hyperspectral/legacy-topic-baseline.json', import.meta.url)));
-assert.deepEqual(topicPapers.map(paper => paper.id).sort(), baseline.papers.filter(paper => !removedIds.has(paper.id)).map(paper => paper.id).sort(), 'Unexpected topic membership change outside authorized cleanup');
+const topicAdditions = cleanup.topicAdditions ?? [];
+assert.equal(new Set(topicAdditions.map(record => record.paperId)).size, topicAdditions.length, 'Duplicate topic addition');
+for (const record of topicAdditions) {
+  assert(!baseline.papers.some(paper => paper.id === record.paperId), `Historical paper recorded as a topic addition: ${record.paperId}`);
+  assert(topicPapers.some(paper => paper.id === record.paperId), `Topic addition absent from collection: ${record.paperId}`);
+  assert(record.reason?.trim() && /^\d{4}-\d{2}-\d{2}$/.test(record.date), `Missing topic addition decision: ${record.paperId}`);
+  assert(record.evidencePath?.startsWith('research/hyperspectral/sources/') && existsSync(new URL(`../${record.evidencePath}`, import.meta.url)), `Missing topic addition evidence: ${record.paperId}`);
+}
+const expectedTopicIds = [
+  ...baseline.papers.filter(paper => !removedIds.has(paper.id)).map(paper => paper.id),
+  ...topicAdditions.map(record => record.paperId),
+];
+assert.deepEqual(topicPapers.map(paper => paper.id).sort(), expectedTopicIds.sort(), 'Unexpected topic membership change outside recorded research decisions');
 for (const before of baseline.papers) {
   if (removedIds.has(before.id)) continue;
   const current = topicPapers.find(paper => paper.id === before.id);

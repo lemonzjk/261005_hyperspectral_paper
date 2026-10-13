@@ -17,17 +17,17 @@
 
 ## 当前状态
 
-- 总库690，677分类确认（审计661）、13暂定；192标签（任务81/方法98/应用13）。三维126，数据资源2，原图497。
-- 来源白名单408/arXiv181/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
+- 总库699，686分类确认（审计670）、13暂定；192标签（任务81/方法98/应用13）。三维127，数据资源2，原图500。
+- 来源白名单409/arXiv189/作者例外101；出版来源69种，11主要任务组、细标签搜索、多标签并集，URL恢复及SVG/BibTeX导出。
 - 来源范围、阅读深度、资料状态独立；PDF链接不表示已读，原图阻拦不表示全文付费。桌面/手机筛选与详情已核；dev可上传/替换≤10MB，FVMGN补图待核。
 - CVPR/ICCV/NeurIPS/ICML等指定查询有闭环，非全领域完成；矩阵只白名单，见coverage.md。
 
 ## 关键文件与下一步
 
 - src/data/catalog.json事实/分类/图；collection-policy.json来源与保护ID；library-groups.ts导航；materials.ts资料状态。
-- research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧专题事实。public/figures与research/figures.json原图续接；figures.py维护队列。
+- research/hyperspectral/含survey、sources、coverage、catalog-cleanup及classification-audit；legacy-topic-baseline保留旧事实；catalog-cleanup登记新三维成员。public/figures与research/figures.json原图续接；figures.py维护队列。
 - 作者先查漏，不增笔记。Jun确认182（81普通口径/101例外，103历史实际全文/79摘要），网页183含IF身份未核；ORCID3、DBLP12、Scholar10未决。Griffith387源项中176匹配169目录ID、12未决，另3直接HSI来源外待合格版本。jun-zhou.md统一待办。
 - 旧186继承排除已有处置：179声明范围排除、5重开、1补录PR导读、1书籍容器，非作者全集。目标ORCID120注册77目录/39排除/4待核不变。
 - 最新作者差集：激光谱锁定原注册摘要为二极管阵列出光谱/旁模控制，按声明任务范围排；反射波测井原Crossref给Jun的CNPC单位，但无摘要、SEG PDF403，实际输入/目标身份仍待，不向IF转移单位或判异人。原无线电/细胞B12及两医学范围排保留；ASTER、种子HSI综述Jun身份/来源、在轨谱带仍待。
-- 最新领域：2016第二十项新增6（三TIP/TGRS、三arXiv），Contextual CNN/逐带人脸分类各一主图；七带MODIS烧痕、四EUV离散谐波按实际多光谱暂排，题名自称HSI保留；DSDP通用一致性报告主稿关系待核。61现17入/2排/42待（1已读未决+后41）；既有Jun仅沿用摘要/书目，不重读正文/补图。v2烧痕PDF404仅取可用v1，不断言版本相同；纯SOS模拟不写真实测量。2015指定50为44入/3排/3已读未决：MLNMF/AMP关系、SPA范围；至2013指定76为66入/5排/5待、2014指定41为38工作/1版本/2排。均非年度全集；其他词/年/白名单、ECCV六范围及作者继续。
-- Mamba-UNet、海洋塑料、跨域皮肤、谱成像编辑、多视图编辑未决；SOC/HVOT新题名前五仅匹配SSRN，仍待合格来源；三分割输入、IF身份、Phase署名仍待。OpenAlex混并385未映射/88survey关联，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
+- 最新领域：2016第三十项新增9（1TPAMI/8arXiv，HySURE原ID恢复），热电HSI像元概念、探针两模式采集、active-set浅/深流程各一主图；探针真实3D表面+数百波长归三维，FWM逐点连续谱非双带；通用zigzag按声明任务暂排，不读其MATLAB。61现26入/3排/32待（DSDP一已读未决+后31）；DSDP主稿正式TGRS2017/四作者原注册已核，实际材料待；active-set DOI429保留定位不猜正式年。2015指定50为44入/3排/3未决：MLNMF/AMP关系、SPA范围；至2013指定76为66入/5排/5待、2014指定41为38工作/1版本/2排。均非年度全集；其他词/年/白名单、ECCV六范围及作者继续。
+- Mamba-UNet、谱成像编辑、多视图编辑未决；皮肤REST当前仅130字节SWORD XML，海洋塑料二级索引无PDF直链，两范围/版本仍待；SOC/HVOT新题名前五仅匹配SSRN，仍待合格来源；三分割输入、IF身份、Phase署名仍待。OpenAlex混并385未映射/88survey关联，6译题仅引用关联；其他姓名与共同作者候选、历年矩阵仍待，不称全量完成。
