@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-13未决稿公开版本定位：Kexin Zeng、Favour Ekong、Zhenxing Wu官方整名arXiv分别0/0、2/2、5/5，7条仅题名/完整作者字段，未匹配三条既有在审候选。Wu集合含已录SUIT v1四作者，正式五作者含Jun差异沿用，不读另一版本或据此排除合著。三分割精确DOI的Semantic Scholar没有新PDF直链：GPINet/SAPNet的GREEN只是前次已查Griffith handle，FDNet为空；不重复无正文的入口，实际输入仍待。未新增目录/摘要/PDF/主图，不称作者全集。[逐项原始定位](sources/jun-zhou-firstauthor-segmentation-locators-2026-10-13.json)。
+
 2026-10-13原样简称范围续核：原989条官方arXiv快照中剩余87条原样J. Zhou/J Zhou，79条题名明确为粒子衰变、核碰撞或高能散射等物理主题，按声明对象暂排直接HSI，未读其摘要/正文；8条较宽泛的观测/仪器题名另核完整原摘要，分别为宇宙射线微波/中子、850微米尘埃偏振、核子QCD/正电子束、宇宙射线综述、CI/CO离散射电谱线及暗物质电离信号，无直接HSI任务依据。结论写回原索引，不另建同名范围外目录。当前142摘要暂排、79题名主题暂排、1继承决定、767仅元数据；本快照167原样简称已有范围处置，简称仍不确认个人身份，其他姓名串未自动判异人/范围外，不能称989全审或作者全集。0新增论文/PDF/全文/图/代码访问；总库519、Jun确认182不变。[原始范围证据与逐项边界](sources/jun-zhou-exact-initial-particle-scope-2026-10-13.json)。
 
 2026-10-13合著者书目与受限主图续核：Huanfa Chen精确整名arXiv8/8、注册ORCID过滤Crossref20/20均只核题名/完整作者字段，0完整Jun Zhou。已知IF103225五作者正式书目未登记Huanfa ORCID，因而未进入过滤集合；零项不证明没有合著或作者全集，IF的Jun原始单篇身份仍待，不能把Huanfa的UCL单位转给Jun。三指定arXiv定位查询未匹配AutoRSISC、SVM和两个原型分类候选，四条保持身份/直接HSI范围未决。BABS、SiamBAG各一次官方图接口418，原图未得，留白且不重复追这两个入口；没有新摘要/PDF/全文/原图或代码访问。总库519、Jun确认182不变。[Huanfa书目与阳性对照](sources/jun-zhou-huanfa-bibliography-control-2026-10-13.json)、[四候选与两图入口](sources/jun-zhou-cv-version-and-figure-locators-2026-10-13.json)。

@@ -496,7 +496,9 @@
     "cucanet-hsi-superresolution-eccv-2020",
     "hsigene-tpami-2026",
     "dual-camera-physics-informed-hsi-arxiv-2021",
-    "jmpt-hsi-change-detection-arxiv-2022"
+    "jmpt-hsi-change-detection-arxiv-2022",
+    "loglrtr-hsi-fusion-arxiv-2023",
+    "hsrnet-hsi-fusion-arxiv-2020"
   ],
   "sourceChecks": [
     {
@@ -5770,6 +5772,46 @@
       "supports": [
         "非重叠patch重排为张量，经三阶Tucker分解与影像重构形成张量域结果；max-tree/min-tree属性剖面形成特征域结果，融合生成变化图。",
         "固定arXiv 2201.08027v1 PDF第3页Fig. 1主要原框架及图注已核；直接裁切，无重绘，每篇仅此一张。"
+      ]
+    },
+    {
+      "paperId": "loglrtr-hsi-fusion-arxiv-2023",
+      "url": "https://arxiv.org/abs/2310.10044v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv v1完整原摘要及完整作者名单",
+      "supports": [
+        "将低分辨率HSI与高分辨率MSI融合，利用张量环因子的对数张量核范数及加权总变分恢复高分辨率HSI。",
+        "4位作者无Jun Zhou；直接HSI与MSI融合，输出HR-HSI。"
+      ]
+    },
+    {
+      "paperId": "loglrtr-hsi-fusion-arxiv-2023",
+      "url": "https://arxiv.org/pdf/2310.10044v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv PDF首页及主要原图/图注定位（选读）",
+      "supports": [
+        "对张量环各因子引入mode-2对数张量核范数正则，结合加权总变分约束谱空连续性；用近端交替最小化求解融合模型。",
+        "21页固定v1仅首页作者/原摘要与Fig1–7图注定位；图注均为参数/质量曲线、融合结果或误差图，未定位独立方法主框架，图位留白。"
+      ]
+    },
+    {
+      "paperId": "hsrnet-hsi-fusion-arxiv-2020",
+      "url": "https://arxiv.org/abs/2005.14400v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv v1完整原摘要及完整作者名单",
+      "supports": [
+        "通过深度空间—光谱卷积网络融合低分辨率HSI与高分辨率MSI，恢复高空间分辨率HSI。",
+        "6位作者无Jun Zhou；直接HSI与MSI融合，输出HR-HSI。"
+      ]
+    },
+    {
+      "paperId": "hsrnet-hsi-fusion-arxiv-2020",
+      "url": "https://arxiv.org/pdf/2005.14400v1",
+      "checkedAt": "2026-10-13",
+      "level": "固定arXiv PDF首页及主要原图/图注定位（选读）",
+      "supports": [
+        "上采样LR-HSI保留光谱信息；高通滤波提取LR-HSI与HR-MSI空间细节，经卷积及ResNet残差模块生成补偿，与上采样HSI相加输出HR-HSI。",
+        "12页固定v1只选读首页作者/原摘要及第3页Fig2主框架；每篇一个版本，一张主图。"
       ]
     }
   ]

@@ -16,6 +16,10 @@
 
 2026-10-13已有候选主图续接：HSIGene按TPAMI48(1)(2026)730–746正式书目收录，唯一所用材料为arXiv2409.12470v2第1/5页及Fig3；双相机物理信息重建按arXiv2109.02643v2第1/5页及Fig5收录，正式Optics and Lasers in Engineering154(2022)107023来源外，仅关联元数据；JMPT按arXiv2201.08027v1第1/3页及Fig1收录。每篇一张主要原框架，不读全文/其他版本或实验，不访问代码；3篇无Jun，不增加作者182。总库522、确认509/暂定13、审计493、主图记录450（355篇有图），来源365/56/101。近题名且不同作者的形态学/patch论文未合并；Crossref前三题名各前5并非全检索。[原始书目、所用版本和主图](sources/hsi-existing-candidates-mainframes-2026-10-13.json)。
 
+2026-10-13未决公开材料定位：三位未决周峻候选作者的指定整名arXiv0/0、2/2、5/5书目未匹配对应稿，三分割定位没有新PDF；不把空集合、无Jun字符串或GREEN落地页作为排除/全文证据。六早期ECCV候选用精确DOI定位，HAL三次成功零匹配只限该集合，三TLS失败不当零；KTH旧PDF实际返回Dismissed site、Springer返回Client Challenge、EPFL TLS失败，六范围仍待，不重复失效入口。均无论文摘要/正文新读、无目录/图新增。[作者与三分割定位](sources/jun-zhou-firstauthor-segmentation-locators-2026-10-13.json)、[六早期候选定位](sources/eccv-2002-2006-six-candidate-public-locators-2026-10-13.json)。
+
+2026-10-13两融合候选续接：LogLRTR的arXiv2310.10044v1首页及7条图注定位明确直接LR-HSI/HR-MSI融合；Fig1–7均参数/质量曲线及融合结果/误差图，独立主框架未定位，留白不阻塞目录。HSRnet的arXiv2005.14400v1只选读首页与第3页Fig2，保存一张完整原框架。近题名JSTARS2024第三作者与原稿不同，TNNLS2022题名增Attention但同6作者，均只留关系待核线索，不自动合并或补读另一版本。2篇无Jun，总库524、确认511/暂定13、审计495、图记录451（356篇有图），来源365/58/101；无新全文/代码访问。[原摘要、所用版本、原图与书目边界](sources/hsi-fusion-cnn-mainframe-2026-10-13.json)。
+
 当前来源白名单与作者例外见 [收录政策](../../src/data/collection-policy.json)，逐项清理决定见 [清理审计](catalog-cleanup.json)。
 
 周峻作者续核（2026-10-12）：OpenAlex两个档案指定分页6＋833共839源项，含多ORCID/多机构混并线索，不能整批归给目标作者；原八新候选仍未决，IF103225身份与SSRN5009494元数据关系、SSRN6802779合格版本优先；IF主框架当前已取得。Phase-Locked v2原稿八页/框架已读，官网/API一作者与PDF五作者含Jun冲突，撤销旧无Jun分流，作为潜在作者漏录优先核；目录未新增。简称989快照现134摘要暂排＋1继承旧决定、854仅元数据，不称逐篇排除。共同作者书目新增两篇普通白名单TIP，两套九作者名单均无Jun Zhou；另DualMamba v1全文及四原图已整理、同五作者TGRS2025正式书目关联，Jingyi非目标Jun。Mamba-UNet免费两图确认地物掩膜输入，谱带/分解算子仍未知，撤回Fourier推断；总库398，周峻仍181（102全文/79摘要），目录未闭环。原始证据见 [作者差集](sources/jun-zhou-openalex-author-inventory-2026-10-12.json)、[主要来源与两篇跟踪论文](sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json)。官方代码只记链接；旧记录中的源码、依赖、权重、代码许可或复现核查不列后续待办，历史结果保留。
