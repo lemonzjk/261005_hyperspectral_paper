@@ -13722,20 +13722,20 @@
       "pagination": "start0/max200，总数66，取得66唯一ID；只该词/日期查询集合，不是全领域。",
       "titleCount": 66,
       "candidateCount": 66,
-      "reviewedCount": 43,
-      "includedCount": 39,
+      "reviewedCount": 51,
+      "includedCount": 47,
       "excludedCount": 4,
-      "pendingCount": 23,
+      "pendingCount": 15,
       "sourcePrimaryAbstractsReviewed": 66,
       "status": "partial",
       "statusLabel": "关键词分页完整；范围未决和其他词检索仍待",
       "sourceSnapshot": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "collectionScope": "active",
       "gaps": [
-        "66关键词/首次提交日期匹配原摘要已读，但不是年度领域全集。",
-        "2013后20条必要书目/去重/一版主图待续接；吸收器、CPCP、Fano关系仍待。"
+        "66原摘要已读，但关键词/日期集合不是年度全集。",
+        "2013最后10材料待续接；偏振仪范围与压缩荧光关联待，另有吸收器/CPCP范围和Fano关联。"
       ],
-      "latestFollowupSnapshot": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json"
+      "latestFollowupSnapshot": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json"
     },
     {
       "id": "arxiv-2010-2011-hsi-scope-mainframes-2026-10-13",
@@ -13849,6 +13849,35 @@
       "gaps": [
         "余20的范围、版本去重和一版主图待续接，含泛理论/偏振器潜在适用边界。",
         "作者未决、其他年份/词及无关键词目录未闭环。"
+      ]
+    },
+    {
+      "id": "arxiv-2013-middle-hsi-directory-2026-10-13",
+      "venue": "arXiv",
+      "year": "2013",
+      "date": "2026-10-13",
+      "keywordGroup": "historical-hsi-existing-year-subset-followup",
+      "keywords": [
+        "hyperspectral"
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=all%3Ahyperspectral+AND+submittedDate%3A%5B201001010000+TO+201312312359%5D&start=0&max_results=200&sortBy=submittedDate&sortOrder=ascending",
+      "method": "既有2013中间10候选原摘要复核，各固定一版必要书目/范围/主图，8入2待；原摘要此前已读，不重复计新读。",
+      "pagination": "原2013指定30中索引10—19，共10条材料续接；非年度领域全集。",
+      "titleCount": 10,
+      "candidateCount": 10,
+      "reviewedCount": 8,
+      "includedCount": 8,
+      "excludedCount": 0,
+      "pendingCount": 2,
+      "sourcePrimaryAbstractsReviewed": 10,
+      "newUniquePrimaryAbstractsReviewed": 0,
+      "status": "partial",
+      "statusLabel": "中间10处置8入2待；其他年份/词仍待",
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+      "collectionScope": "active",
+      "gaps": [
+        "一页压缩荧光稿关系未明、偏振仪直接HSI贡献待核。",
+        "2013最后10与整体作者/年度领域目录继续。"
       ]
     }
   ],
@@ -64035,22 +64064,28 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "sparse-gnmf-unmixing-arxiv-2013",
+      "reason": "以图正则NMF与稀疏约束进行高光谱端元和丰度解混。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "以图正则NMF与稀疏约束进行高光谱端元和丰度解混。"
         }
       ]
     },
@@ -64068,23 +64103,29 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "dissimilarity-rf-hsi-retrieval-arxiv-2013",
+      "reason": "在高光谱图像数据库检索中以不相似度空间和用户相关性反馈更新排序。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
       "arxivReportedDoi": "10.1016/j.patrec.2013.05.025",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "在高光谱图像数据库检索中以不相似度空间和用户相关性反馈更新排序。"
         }
       ]
     },
@@ -64107,21 +64148,27 @@
       "discoveredAt": "2026-10-13",
       "decision": "pending",
       "paperId": null,
-      "reason": "完整原摘要明确压缩高光谱荧光显微，与已录2012稿作者/方法相关，但题名和作者顺序不同，未核明确版本关系；保留待核关联，不自动重复收录或要求逐版阅读。",
+      "reason": "唯一稿仅一页；官方API未列会议/期刊或明确版本关系，题名及作者顺序与已录2012压缩荧光显微稿不同，虽然六作者和方法相关，仍未证实版本/扩展关系。保留既有候选关联，不重复入库、不另读2012正文或追实验。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
       "relatedCatalogPaperId": "compressive-fluorescence-microscopy-arxiv-2012",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "scopeStatus": "direct_hsi_version_relation_pending",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要明确压缩高光谱荧光显微，与已录2012稿作者/方法相关，但题名和作者顺序不同，未核明确版本关系；保留待核关联，不自动重复收录或要求逐版阅读。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "pending",
+          "reason": "唯一稿仅一页；官方API未列会议/期刊或明确版本关系，题名及作者顺序与已录2012压缩荧光显微稿不同，虽然六作者和方法相关，仍未证实版本/扩展关系。保留既有候选关联，不重复入库、不另读2012正文或追实验。"
         }
       ]
     },
@@ -64140,23 +64187,29 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "residual-component-unmixing-tip-2014",
+      "reason": "联合高光谱非线性解混与非线性检测，以残差成分及空间结构建模。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
       "arxivReportedDoi": "10.1109/TIP.2014.2312616",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "联合高光谱非线性解混与非线性检测，以残差成分及空间结构建模。"
         }
       ]
     },
@@ -64174,22 +64227,28 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "bayesian-multiband-fusion-arxiv-2013",
+      "reason": "用Bayesian物理退化模型融合低空间分辨率HSI与MSI，恢复高空间分辨率高光谱影像。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "用Bayesian物理退化模型融合低空间分辨率HSI与MSI，恢复高空间分辨率高光谱影像。"
         }
       ]
     },
@@ -64207,24 +64266,32 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "spatial-aware-dictionary-arxiv-2013",
+      "reason": "为高光谱像元学习同时表达光谱与邻域上下文的结构化稀疏字典，再用线性SVM分类。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "为高光谱像元学习同时表达光谱与邻域上下文的结构化稀疏字典，再用线性SVM分类。"
         }
-      ]
+      ],
+      "formalPublicationStatus": "registered_title_notice_of_removal",
+      "sourceScopeStatus": "arxiv_allowed_formal_removal_marker_retained"
     },
     {
       "title": "Design, optimization and realization of FLC based Stokes polarimeters and Mueller matrix ellipsometer using a genetic algorithm",
@@ -64244,21 +64311,27 @@
       "discoveredAt": "2026-10-13",
       "decision": "pending",
       "paperId": null,
-      "reason": "完整原摘要已读；实际直接HSI应用或采集贡献仍需必要范围证据，不凭背景/潜在适用声明自动收录。",
+      "reason": "所用首页称装置适于HSI，第2页图为一般偏振态分析器、第6页实际为空气Mueller谱测量；所见材料尚未证实直接HSI成像/采集贡献，保留范围候选，不自动扩大通用宽带偏振仪为HSI。API所列DOI正式题名有变化，原样保留，不按只潜在适用排除。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
       "arxivReportedDoi": "10.1016/j.tsf.2013.11.146",
-      "scopeStatus": "direct_hsi_contribution_unverified",
+      "scopeStatus": "direct_hsi_instrument_contribution_unverified",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；实际直接HSI应用或采集贡献仍需必要范围证据，不凭背景/潜在适用声明自动收录。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "pending",
+          "reason": "所用首页称装置适于HSI，第2页图为一般偏振态分析器、第6页实际为空气Mueller谱测量；所见材料尚未证实直接HSI成像/采集贡献，保留范围候选，不自动扩大通用宽带偏振仪为HSI。API所列DOI正式题名有变化，原样保留，不按只潜在适用排除。"
         }
       ]
     },
@@ -64276,23 +64349,29 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "rank-two-nmf-clustering-tgrs-2015",
+      "reason": "以秩二NMF递归分裂高光谱像元簇，形成稳定、平衡的层次聚类。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
       "arxivReportedDoi": "10.1109/TGRS.2014.2352857",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "以秩二NMF递归分裂高光谱像元簇，形成稳定、平衡的层次聚类。"
         }
       ]
     },
@@ -64313,22 +64392,28 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "normalized-scaled-gradient-unmixing-arxiv-2013",
+      "reason": "用归一化缩放梯度法求解具有非负及和为1约束的高光谱线性解混。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "用归一化缩放梯度法求解具有非负及和为1约束的高光谱线性解混。"
         }
       ]
     },
@@ -64345,23 +64430,29 @@
       "year": 2013,
       "searchId": "arxiv-1991-2013-hyperspectral-query-2026-10-13-2010-2013",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "paperId": null,
-      "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。",
+      "decision": "included",
+      "paperId": "sdp-preconditioned-spa-arxiv-2013",
+      "reason": "对近可分离NMF作半定规划预调节，提高高光谱端元提取算法对噪声的稳健性。",
       "evidencePath": "research/hyperspectral/sources/arxiv-1991-2013-hyperspectral-query-2026-10-13.json",
       "sourcePolicyStatus": "arxiv_allowed",
       "readingProgress": "abstract_read",
-      "boundary": "一个所用正文版本；原摘要与必要书目/范围/主图选读，不通读全文/其他版本/实验或科学代码。",
+      "boundary": "一个所用版本；只原摘要/必要书目/范围/主图，最多一张主原图，无图留白，不通读证明、逐版/性能/科学代码检查。",
       "arxivReportedDoi": "10.1137/130940670",
-      "scopeStatus": "direct_hsi_original_abstract",
+      "scopeStatus": "direct_hsi_confirmed",
       "lastReviewedAt": "2026-10-13",
-      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
+      "latestEvidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
       "followups": [
         {
           "date": "2026-10-13",
           "evidencePath": "research/hyperspectral/sources/arxiv-2013-first-half-hsi-mainframes-2026-10-13.json",
           "decision": "pending",
           "reason": "完整原摘要已读；原摘要明确直接高光谱任务；一个版本的必要书目/去重与主图定位待续接，不重复添加候选。"
+        },
+        {
+          "date": "2026-10-13",
+          "evidencePath": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+          "decision": "included",
+          "reason": "对近可分离NMF作半定规划预调节，提高高光谱端元提取算法对噪声的稳健性。"
         }
       ]
     },
@@ -72714,6 +72805,41 @@
       "readingBoundary": "前10唯一PDF仅首页/图注定位/必要范围及两主要原图，其他20只原摘要；不全文、逐版、性能/科学代码审查。",
       "gaps": [
         "后20与作者/整体年度目录继续。"
+      ]
+    },
+    {
+      "id": "arxiv-2013-middle-hsi-directory-2026-10-13",
+      "date": "2026-10-13",
+      "searchIds": [
+        "arxiv-2013-middle-hsi-directory-2026-10-13"
+      ],
+      "paperIds": [
+        "sparse-gnmf-unmixing-arxiv-2013",
+        "dissimilarity-rf-hsi-retrieval-arxiv-2013",
+        "residual-component-unmixing-tip-2014",
+        "bayesian-multiband-fusion-arxiv-2013",
+        "spatial-aware-dictionary-arxiv-2013",
+        "rank-two-nmf-clustering-tgrs-2015",
+        "normalized-scaled-gradient-unmixing-arxiv-2013",
+        "sdp-preconditioned-spa-arxiv-2013"
+      ],
+      "new": 8,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 2,
+      "newSurveyCandidates": 0,
+      "sourcePrimaryAbstractsReviewed": 10,
+      "newUniquePrimaryAbstractsReviewed": 0,
+      "sourceRegisteredTitlesObtained": 10,
+      "newPdfsDownloaded": 10,
+      "newFullTextReadingCount": 0,
+      "catalogFullTextReadingCount": 0,
+      "figuresAdded": 2,
+      "sourceSnapshot": "research/hyperspectral/sources/arxiv-2013-middle-hsi-directory-2026-10-13.json",
+      "readingBoundary": "10份唯一PDF只必要首页/书目、图注、范围及两主原图，不通读全文/证明或其他版本，不核性能/科学代码。",
+      "gaps": [
+        "作者、最后10及四个历史范围/关系候选继续。"
       ]
     }
   ],
