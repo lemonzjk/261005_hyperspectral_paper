@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-13 SOC版本续核：OpenAlex工作W7204442691将SSRN 7358018与7404220合并为同一工作，两个入口均为acceptedVersion，未列arXiv/期刊/会议位置且无PDF直链；原注册摘要明确VNIR–SWIR连续高光谱成像与SOC回归，Jun身份沿用目标ORCID/Griffith证据。仍不满足新收录来源白名单，保持一个pending候选，不扩张保护作者例外，不再逐版读正文。[证据](sources/jun-zhou-soc-openalex-version-followup-2026-10-13.json)。
+
 2026-10-13 HVOT续核：Crossref DOI 10.2139/ssrn.6802779 注册完整摘要明确直接研究高光谱视频目标跟踪，12人作者表含Jun Zhou；OpenAlex单篇authorships将该Jun关联Griffith University。当前仍只有SSRN posted-content，不在新收录白名单；OpenAlex仅给acceptedVersion落地链接且无PDF，SSRN页本次403，未取得合格arXiv/白名单版本或主图。身份与范围改为已核，来源资格/公开正文/主图继续pending，不扩张保护作者例外。[证据](sources/jun-zhou-hvot-crossref-openalex-2026-10-13.json)。
 
 状态更新：2026-10-13。目录、全文与资源快照续核至2026-10-12。当前目标是论文目录完整，优先查漏及必要的作者身份、范围和版本核验，不新增学习笔记；每篇只找一个可用版本、一张主要原框架图；只读定位图及确认必要作者/范围的内容，不逐页或逐版阅读，代码只留链接。目录覆盖尚未闭环；付费且无公开版本或确实不可获取材料的留白不阻塞目录完成。
