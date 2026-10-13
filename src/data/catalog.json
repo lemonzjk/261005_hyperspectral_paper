@@ -57045,6 +57045,872 @@
         }
       },
       "citation": "@misc{pnp_pbcd_hsi_anomaly_arxiv_2024,\n  title = {Provably Convergent Plug-and-play Proximal Block Coordinate Descent Method for Hyperspectral Anomaly Detection},\n  author = {Xiaoxia Liu and Shijie Yu},\n  year = {2024},\n  eprint = {2412.14824},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2412.14824v3}\n}\n"
+    },
+    {
+      "id": "lrs-pnp-dip-hsi-inpainting-arxiv-2025",
+      "shortTitle": "LRS-PnP-DIP(1-Lip)",
+      "title": "Self-supervised Deep Hyperspectral Inpainting with the Plug and Play and Deep Image Prior Models",
+      "authors": "Shuo Li, Mehrdad Yaghoobi",
+      "year": 2025,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "主流程交替更新去噪变量、1-Lipschitz DIP变量和影像，并更新拉格朗日及惩罚项；DIP编码器—解码器对各层施加Lipschitz约束，主图标明移除跳连。",
+      "tags": [],
+      "summary": "结合低秩与稀疏模型、PnP去噪和1-Lipschitz深度图像先验，修补高光谱影像缺失数据。",
+      "input": "带有缺失或噪声的HSI及观测掩膜。",
+      "output": "修补后的高光谱影像。",
+      "mechanism": "主流程交替更新去噪变量、1-Lipschitz DIP变量和影像，并更新拉格朗日及惩罚项；DIP编码器—解码器对各层施加Lipschitz约束，主图标明移除跳连。",
+      "readingNote": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。",
+      "paper": "https://arxiv.org/abs/2501.08195v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2501.08195v1",
+          "sourceVersion": "arXiv2501.08195v1",
+          "figureLabel": "Figure 1",
+          "page": 8,
+          "caption": "LRS-PnP-DIP(1-Lip)主要原流程及DIP架构：交替更新去噪、DIP和影像变量，1-Lipschitz DIP在各层施加约束并移除跳连。",
+          "verificationNote": "所用arXiv2501.08195v1第8页Figure1完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。",
+          "path": "figures/lrs-pnp-dip-hsi-inpainting-arxiv-2025/framework.png",
+          "width": 1215,
+          "height": 1365,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "13e21da572c2db3f68be28ead3324eab4b999a3a6a15093310c9635534792151",
+          "attribution": "Shuo Li, Mehrdad Yaghoobi · arXiv2501.08195v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              160,
+              85,
+              565,
+              540
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "code": "https://github.com/shuoli0708/LRS-PnP-DIP",
+      "library": {
+        "categoryIds": [
+          "spectral-data-restoration",
+          "plug-and-play"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要直接处理HSI；普通白名单或arXiv，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何用受约束的深度图像先验稳定地修补HSI？",
+        "datasets": "未整理数据集或实验划分。",
+        "experimentSetting": "只核身份/范围和主图或图注，不整理协议、证明或性能数值。",
+        "conclusions": "任务及主要方法依据原摘要/主图，性能未核。",
+        "limitations": "一个版本、一主图或无独立框架图状态已记录；其他正文、图和实验不设为资料待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2501.08195v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及作者名单",
+            "supports": [
+              "结合低秩与稀疏模型、PnP去噪和1-Lipschitz深度图像先验，修补高光谱影像缺失数据。",
+              "所用PDF首页作者姓名/顺序已核，无Jun Zhou；大小写格式按PDF显示并保留API原字段，不外推其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2501.08195v1",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第8页主要原图及图注（选读）",
+            "supports": [
+              "LRS-PnP-DIP(1-Lip)主要原流程及DIP架构：交替更新去噪、DIP和影像变量，1-Lipschitz DIP在各层施加约束并移除跳连。",
+              "所用arXiv2501.08195v1第8页Figure1完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2501.08195v1",
+            "checkedAt": "2026-10-13",
+            "level": "所用论文提供的作者公开链接（仅URL记录）",
+            "supports": [
+              "记录https://github.com/shuoli0708/LRS-PnP-DIP；未访问项目、仓库、代码、权重、许可证或运行复现。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "lrs-pnp-dip-hsi-inpainting-arxiv-2025-arxiv",
+            "type": "所用唯一arXiv公开正文版本",
+            "url": "https://arxiv.org/abs/2501.08195v1",
+            "pdfUrl": "https://arxiv.org/pdf/2501.08195v1",
+            "arxivId": "2501.08195",
+            "arxivVersion": 1,
+            "year": 2025,
+            "authors": [
+              "Shuo Li",
+              "Mehrdad Yaghoobi"
+            ],
+            "apiAuthors": [
+              "Shuo Li",
+              "Mehrdad Yaghoobi"
+            ],
+            "firstSubmittedAt": "2025-01-14T15:18:28Z",
+            "updatedAt": "2025-01-14T15:18:28Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13-2501.08195v1.pdf",
+            "relation": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。"
+          }
+        ],
+        "methodFamilyId": "lrs-pnp-dip-hsi-inpainting-arxiv-2025",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要与主图直接研究高光谱修补及PnP/DIP先验，沿用数据复原和PnP；未核收敛证明或性能，不按MDPI模板占位字段认定正式来源。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d457ae2600eb759025b95439cf0a1ab16149239533e143e6612538c8820a1607",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2501.08195v1",
+            "https://arxiv.org/pdf/2501.08195v1"
+          ]
+        }
+      },
+      "citation": "@misc{lrs_pnp_dip_hsi_inpainting_arxiv_2025,\n  title = {Self-supervised Deep Hyperspectral Inpainting with the Plug and Play and Deep Image Prior Models},\n  author = {Shuo Li and Mehrdad Yaghoobi},\n  year = {2025},\n  eprint = {2501.08195},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2501.08195v1}\n}\n"
+    },
+    {
+      "id": "prisma-hsi-pansharpening-benchmark-arxiv-2023",
+      "shortTitle": "PRISMA HSI Pansharpening",
+      "title": "Deep Learning Hyperspectral Pansharpening on large scale PRISMA dataset",
+      "authors": "Simone Zini, Mirko Paolo Barbato, Flavio Piccoli, Paolo Napoletano",
+      "year": 2023,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "围绕新PRISMA数据集比较多种HSI全色锐化方法，原摘要区分降分辨率和全分辨率评测；所用版本具名图为采样地图、数据示例、波段统计及结果曲线，未取得独立框架图。",
+      "tags": [],
+      "summary": "构建大范围PRISMA高光谱全色锐化数据集，适配并评测多个深度学习与传统方法。",
+      "input": "PRISMA低空间分辨HSI与高空间分辨全色影像。",
+      "output": "高空间分辨HSI及全色锐化评测基准。",
+      "mechanism": "围绕新PRISMA数据集比较多种HSI全色锐化方法，原摘要区分降分辨率和全分辨率评测；所用版本具名图为采样地图、数据示例、波段统计及结果曲线，未取得独立框架图。",
+      "readingNote": "仅一个所用arXiv正文版本，原摘要/首页和具名图的图号/图注定位，未逐页阅读全文或整理性能；没有独立框架图留白，不取其他版本/图。未访问代码。",
+      "paper": "https://arxiv.org/abs/2307.11666v2",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_figure_captions_verified",
+      "frameworkFigures": [],
+      "code": "https://thezino.github.io/HSbenchmarkPRISMA/",
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用arXiv2307.11666v2的10张具名图为采样地图、数据例图、波段统计、性能/结果和光谱曲线，未取得独立框架图；只核图号/图注，不阅读全文，不把数据或结果图冒充框架，不要求另找版本。",
+        "sourceUrl": "https://arxiv.org/pdf/2307.11666v2",
+        "checkedAt": "2026-10-13"
+      },
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "datasets-benchmarks"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要直接处理HSI；普通白名单或arXiv，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何在大规模PRISMA数据上评测HSI全色锐化的重建保真度？",
+        "datasets": "PRISMA数据基准，原摘要约262200km²；未核实验划分或数据下载。",
+        "experimentSetting": "只核身份/范围和主图或图注，不整理协议、证明或性能数值。",
+        "conclusions": "任务及主要方法依据原摘要/主图，性能未核。",
+        "limitations": "一个版本、一主图或无独立框架图状态已记录；其他正文、图和实验不设为资料待办。",
+        "dataLinks": [
+          "https://thezino.github.io/HSbenchmarkPRISMA/"
+        ],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2307.11666v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及作者名单",
+            "supports": [
+              "构建大范围PRISMA高光谱全色锐化数据集，适配并评测多个深度学习与传统方法。",
+              "所用PDF首页作者姓名/顺序已核，无Jun Zhou；大小写格式按PDF显示并保留API原字段，不外推其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2307.11666v2",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF图号及图注定位（只找主图）",
+            "supports": [
+              "所用arXiv2307.11666v2的10张具名图为采样地图、数据例图、波段统计、性能/结果和光谱曲线，未取得独立框架图；只核图号/图注，不阅读全文，不把数据或结果图冒充框架，不要求另找版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2307.11666v2",
+            "checkedAt": "2026-10-13",
+            "level": "所用论文提供的作者公开链接（仅URL记录）",
+            "supports": [
+              "记录https://thezino.github.io/HSbenchmarkPRISMA/；未访问项目、仓库、代码、权重、许可证或运行复现。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "prisma-hsi-pansharpening-benchmark-arxiv-2023-arxiv",
+            "type": "所用唯一arXiv公开正文版本",
+            "url": "https://arxiv.org/abs/2307.11666v2",
+            "pdfUrl": "https://arxiv.org/pdf/2307.11666v2",
+            "arxivId": "2307.11666",
+            "arxivVersion": 2,
+            "year": 2023,
+            "authors": [
+              "Simone Zini",
+              "Mirko Paolo Barbato",
+              "Flavio Piccoli",
+              "Paolo Napoletano"
+            ],
+            "apiAuthors": [
+              "Simone Zini",
+              "Mirko Paolo Barbato",
+              "Flavio Piccoli",
+              "Paolo Napoletano"
+            ],
+            "firstSubmittedAt": "2023-07-21T16:10:22Z",
+            "updatedAt": "2023-07-28T11:55:30Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13-2307.11666v2.pdf",
+            "relation": "仅一个所用arXiv正文版本，原摘要/首页和具名图的图号/图注定位，未逐页阅读全文或整理性能；没有独立框架图留白，不取其他版本/图。未访问代码。"
+          }
+        ],
+        "methodFamilyId": "prisma-hsi-pansharpening-benchmark-arxiv-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要明确PRISMA高光谱数据、直接HSI全色锐化和新数据集贡献，归空间超分辨率/数据集基准；不是仅MS锐化。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c28fcf405589e2bb4d5d683d3a9ea38ff9bad88a07401717ebd6434ae01395ff",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2307.11666v2",
+            "https://arxiv.org/pdf/2307.11666v2"
+          ]
+        }
+      },
+      "citation": "@misc{prisma_hsi_pansharpening_benchmark_arxiv_2023,\n  title = {Deep Learning Hyperspectral Pansharpening on large scale PRISMA dataset},\n  author = {Simone Zini and Mirko Paolo Barbato and Flavio Piccoli and Paolo Napoletano},\n  year = {2023},\n  eprint = {2307.11666},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2307.11666v2}\n}\n"
+    },
+    {
+      "id": "mumlp-hsi-classification-arxiv-2023",
+      "shortTitle": "MUMLP",
+      "title": "Multi-Scale U-Shape MLP for Hyperspectral Image Classification",
+      "authors": "Moule Lin, Weipeng Jing, Donglin Di, Guangsheng Chen, Houbing Song",
+      "year": 2023,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "主要架构由MSC-1/MSC-2多尺度通道模块和UMLP堆叠组成，混合像元与通道特征，最终经全连接层输出类别。",
+      "tags": [],
+      "summary": "MUMLP以多尺度通道模块和U形MLP编码器—解码器混合谱空信息，进行HSI像元地物分类。",
+      "input": "高光谱影像像元及其谱空邻域表示。",
+      "output": "像元地物类别。",
+      "mechanism": "主要架构由MSC-1/MSC-2多尺度通道模块和UMLP堆叠组成，混合像元与通道特征，最终经全连接层输出类别。",
+      "readingNote": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。",
+      "paper": "https://arxiv.org/abs/2307.10186v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2307.10186v1",
+          "sourceVersion": "arXiv2307.10186v1",
+          "figureLabel": "Figure 2",
+          "page": 3,
+          "caption": "MUMLP主要原架构：上部展示MSC与UMLP组件，下部为输入HSI经MLP、多尺度通道和U形MLP堆叠到全连接类别输出的整体流程。",
+          "verificationNote": "所用arXiv2307.10186v1第3页Figure2完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。",
+          "path": "figures/mumlp-hsi-classification-arxiv-2023/framework.png",
+          "width": 1575,
+          "height": 858,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "e46b309744c615c6c7981d8911867530a59c98a394fa5b44f093ee9613546db3",
+          "attribution": "Moule Lin, Weipeng Jing, Donglin Di, Guangsheng Chen, Houbing Song · arXiv2307.10186v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              35,
+              50,
+              560,
+              336
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "library": {
+        "categoryIds": [
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要直接处理HSI；普通白名单或arXiv，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以多尺度通道和U形MLP混合HSI局部/全局信息进行分类？",
+        "datasets": "未整理数据集或实验划分。",
+        "experimentSetting": "只核身份/范围和主图或图注，不整理协议、证明或性能数值。",
+        "conclusions": "任务及主要方法依据原摘要/主图，性能未核。",
+        "limitations": "一个版本、一主图或无独立框架图状态已记录；其他正文、图和实验不设为资料待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2307.10186v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及作者名单",
+            "supports": [
+              "MUMLP以多尺度通道模块和U形MLP编码器—解码器混合谱空信息，进行HSI像元地物分类。",
+              "所用PDF首页作者姓名/顺序已核，无Jun Zhou；大小写格式按PDF显示并保留API原字段，不外推其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2307.10186v1",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第3页主要原图及图注（选读）",
+            "supports": [
+              "MUMLP主要原架构：上部展示MSC与UMLP组件，下部为输入HSI经MLP、多尺度通道和U形MLP堆叠到全连接类别输出的整体流程。",
+              "所用arXiv2307.10186v1第3页Figure2完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/LGRS.2022.3141547",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册书目（只书目）",
+            "supports": [
+              "官方arXiv同DOI、正式注册同题名/同序完整作者，仅书目关联，不断言正文或实验相同。GRSL2022白名单外只关联；按arXiv2023收录，正式年份与arXiv提交年分开，不扩大作者例外。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mumlp-hsi-classification-arxiv-2023-arxiv",
+            "type": "所用唯一arXiv公开正文版本",
+            "url": "https://arxiv.org/abs/2307.10186v1",
+            "pdfUrl": "https://arxiv.org/pdf/2307.10186v1",
+            "arxivId": "2307.10186",
+            "arxivVersion": 1,
+            "year": 2023,
+            "authors": [
+              "Moule Lin",
+              "Weipeng Jing",
+              "Donglin Di",
+              "Guangsheng Chen",
+              "Houbing Song"
+            ],
+            "apiAuthors": [
+              "Moule Lin",
+              "Weipeng Jing",
+              "Donglin Di",
+              "Guangsheng Chen",
+              "Houbing Song"
+            ],
+            "firstSubmittedAt": "2023-07-05T08:52:27Z",
+            "updatedAt": "2023-07-05T08:52:27Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13-2307.10186v1.pdf",
+            "relation": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。"
+          },
+          {
+            "id": "mumlp-hsi-classification-arxiv-2023-formal",
+            "type": "关联正式出版书目",
+            "url": "https://doi.org/10.1109/lgrs.2022.3141547",
+            "doi": "10.1109/lgrs.2022.3141547",
+            "year": 2022,
+            "venue": "GRSL",
+            "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+            "title": "Multi-Scale U-Shape MLP for Hyperspectral Image Classification",
+            "authors": [
+              "Moule Lin",
+              "Weipeng Jing",
+              "Donglin Di",
+              "Guangsheng Chen",
+              "Houbing Song"
+            ],
+            "volume": "19",
+            "pages": "1-5",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_bibliographic_association_only",
+            "relation": "官方arXiv同DOI、正式注册同题名/同序完整作者，仅书目关联，不断言正文或实验相同。GRSL2022白名单外只关联；按arXiv2023收录，正式年份与arXiv提交年分开，不扩大作者例外。"
+          }
+        ],
+        "methodFamilyId": "mumlp-hsi-classification-arxiv-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要与主图明确HSI像元分类，沿用地物分类；不把U形MLP当Transformer或把特征压缩当图像压缩任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "48956564b6602757e070ca8ea5ed04c0a6958a38b1174fc649b0aac29eacccd3",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2307.10186v1",
+            "https://arxiv.org/pdf/2307.10186v1"
+          ]
+        }
+      },
+      "citation": "@misc{mumlp_hsi_classification_arxiv_2023,\n  title = {Multi-Scale U-Shape MLP for Hyperspectral Image Classification},\n  author = {Moule Lin and Weipeng Jing and Donglin Di and Guangsheng Chen and Houbing Song},\n  year = {2023},\n  eprint = {2307.10186},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2307.10186v1}\n}\n"
+    },
+    {
+      "id": "mafnet-hsi-denoising-arxiv-2023",
+      "shortTitle": "MAFNet",
+      "title": "Multi-scale Adaptive Fusion Network for Hyperspectral Image Denoising",
+      "authors": "Haodong Pan, Feng Gao, Junyu Dong, Qian Du",
+      "year": 2023,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "多尺度分支经初始卷积和粗融合跨尺度传递信息，再经细融合及共同注意力模块整合，预测噪声后从输入相减恢复HSI。",
+      "tags": [],
+      "summary": "MAFNet用粗/细两阶段多尺度特征融合与共同注意力融合，预测噪声残差以恢复HSI。",
+      "input": "带噪高光谱影像。",
+      "output": "去噪后的高光谱影像。",
+      "mechanism": "多尺度分支经初始卷积和粗融合跨尺度传递信息，再经细融合及共同注意力模块整合，预测噪声后从输入相减恢复HSI。",
+      "readingNote": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。",
+      "paper": "https://arxiv.org/abs/2304.09373v1",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2304.09373v1",
+          "sourceVersion": "arXiv2304.09373v1",
+          "figureLabel": "Figure 2",
+          "page": 4,
+          "caption": "MAFNet整体原框架：初始多尺度特征、粗融合、细融合及共同注意力，最后重建噪声并从输入相减。",
+          "verificationNote": "所用arXiv2304.09373v1第4页Figure2完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。",
+          "path": "figures/mafnet-hsi-denoising-arxiv-2023/framework.png",
+          "width": 1560,
+          "height": 834,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "ae8738614b57d45f191af413ead88c187aa77e5af3b0e75d5c35135342292d7e",
+          "attribution": "Haodong Pan, Feng Gao, Junyu Dong, Qian Du · arXiv2304.09373v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              50,
+              565,
+              328
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "code": "https://github.com/summitgao/MAFNet",
+      "library": {
+        "categoryIds": [
+          "spectral-denoising"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要直接处理HSI；普通白名单或arXiv，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何交换多尺度上下文并保留光谱结构以去除HSI噪声？",
+        "datasets": "未整理数据集或实验划分。",
+        "experimentSetting": "只核身份/范围和主图或图注，不整理协议、证明或性能数值。",
+        "conclusions": "任务及主要方法依据原摘要/主图，性能未核。",
+        "limitations": "一个版本、一主图或无独立框架图状态已记录；其他正文、图和实验不设为资料待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2304.09373v1",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及作者名单",
+            "supports": [
+              "MAFNet用粗/细两阶段多尺度特征融合与共同注意力融合，预测噪声残差以恢复HSI。",
+              "所用PDF首页作者姓名/顺序已核，无Jun Zhou；大小写格式按PDF显示并保留API原字段，不外推其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2304.09373v1",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第4页主要原图及图注（选读）",
+            "supports": [
+              "MAFNet整体原框架：初始多尺度特征、粗融合、细融合及共同注意力，最后重建噪声并从输入相减。",
+              "所用arXiv2304.09373v1第4页Figure2完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2304.09373v1",
+            "checkedAt": "2026-10-13",
+            "level": "所用论文提供的作者公开链接（仅URL记录）",
+            "supports": [
+              "记录https://github.com/summitgao/MAFNet；未访问项目、仓库、代码、权重、许可证或运行复现。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mafnet-hsi-denoising-arxiv-2023-arxiv",
+            "type": "所用唯一arXiv公开正文版本",
+            "url": "https://arxiv.org/abs/2304.09373v1",
+            "pdfUrl": "https://arxiv.org/pdf/2304.09373v1",
+            "arxivId": "2304.09373",
+            "arxivVersion": 1,
+            "year": 2023,
+            "authors": [
+              "Haodong Pan",
+              "Feng Gao",
+              "Junyu Dong",
+              "Qian Du"
+            ],
+            "apiAuthors": [
+              "Haodong Pan",
+              "Feng Gao",
+              "Junyu Dong",
+              "Qian Du"
+            ],
+            "firstSubmittedAt": "2023-04-19T02:00:21Z",
+            "updatedAt": "2023-04-19T02:00:21Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13-2304.09373v1.pdf",
+            "relation": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。"
+          }
+        ],
+        "methodFamilyId": "mafnet-hsi-denoising-arxiv-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要及主图直接HSI去噪，沿用去噪任务；多尺度支路或中间上采样不自动当独立超分辨率任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "76a9b52d5f53a24481708137f8d6dce65262dc9574588f96576386a20a4967ed",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2304.09373v1",
+            "https://arxiv.org/pdf/2304.09373v1"
+          ]
+        }
+      },
+      "citation": "@misc{mafnet_hsi_denoising_arxiv_2023,\n  title = {Multi-scale Adaptive Fusion Network for Hyperspectral Image Denoising},\n  author = {Haodong Pan and Feng Gao and Junyu Dong and Qian Du},\n  year = {2023},\n  eprint = {2304.09373},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2304.09373v1}\n}\n"
+    },
+    {
+      "id": "tuning-free-pnp-hsi-deconvolution-tgrs-2023",
+      "shortTitle": "Tuning-free PnP HSI Deconvolution",
+      "title": "Tuning-free Plug-and-Play Hyperspectral Image Deconvolution with Deep Priors",
+      "authors": "Xiuheng Wang, Jie Chen, Cédric Richard",
+      "year": 2023,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "主框架上部为B3DDN深度先验网络，下部为ADMM降质模型求逆和参数/停止准则更新；3D残差白度用于免手动调参。",
+      "tags": [],
+      "summary": "以盲3D去噪网络作为PnP先验进行HSI反卷积，用三维残差白度调整惩罚参数并判断停止。",
+      "input": "模糊且含噪的HSI及其降质观测模型。",
+      "output": "复原的高光谱影像。",
+      "mechanism": "主框架上部为B3DDN深度先验网络，下部为ADMM降质模型求逆和参数/停止准则更新；3D残差白度用于免手动调参。",
+      "readingNote": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。",
+      "paper": "https://doi.org/10.1109/tgrs.2023.3253549",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/2211.15307v2",
+          "sourceVersion": "arXiv2211.15307v2",
+          "figureLabel": "Figure 1",
+          "page": 3,
+          "caption": "免调参HSI反卷积整体原图：上部B3DDN先验，下部ADMM降质模型求逆、参数更新及停止判断。",
+          "verificationNote": "所用arXiv2211.15307v2第3页Figure1完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。",
+          "path": "figures/tuning-free-pnp-hsi-deconvolution-tgrs-2023/framework.png",
+          "width": 1560,
+          "height": 828,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "1b23e7ac42e7c20a1934e618962f9d7460e6445f20879f9f704ddf84a0c8e0f3",
+          "attribution": "Xiuheng Wang, Jie Chen, Cédric Richard · arXiv2211.15307v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              50,
+              565,
+              326
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tgrs.2023.3253549",
+      "code": "https://github.com/xiuheng-wang/Tuning_free_PnP_HSI_deconvolution",
+      "library": {
+        "categoryIds": [
+          "spectral-data-restoration",
+          "plug-and-play"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要直接处理HSI；普通白名单或arXiv，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以去噪先验及残差白度实现免手动调参的HSI反卷积？",
+        "datasets": "未整理数据集或实验划分。",
+        "experimentSetting": "只核身份/范围和主图或图注，不整理协议、证明或性能数值。",
+        "conclusions": "任务及主要方法依据原摘要/主图，性能未核。",
+        "limitations": "一个版本、一主图或无独立框架图状态已记录；其他正文、图和实验不设为资料待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2211.15307v2",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及作者名单",
+            "supports": [
+              "以盲3D去噪网络作为PnP先验进行HSI反卷积，用三维残差白度调整惩罚参数并判断停止。",
+              "所用PDF首页作者姓名/顺序已核，无Jun Zhou；大小写格式按PDF显示并保留API原字段，不外推其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2211.15307v2",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第3页主要原图及图注（选读）",
+            "supports": [
+              "免调参HSI反卷积整体原图：上部B3DDN先验，下部ADMM降质模型求逆、参数更新及停止判断。",
+              "所用arXiv2211.15307v2第3页Figure1完整主要原图及图注，未重绘；仅一张，不取其他版本/图片，图号页码不迁移到正式版。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109/TGRS.2023.3253549",
+            "checkedAt": "2026-10-13",
+            "level": "Crossref正式注册书目（只书目）",
+            "supports": [
+              "官方arXiv同DOI、正式注册同题名/同序完整作者，仅书目关联，不断言正文或实验相同。TGRS2023白名单内，目录采用正式2023年；唯一正文及主图来自arXiv2022v2，不另取正式正文。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2211.15307v2",
+            "checkedAt": "2026-10-13",
+            "level": "所用论文提供的作者公开链接（仅URL记录）",
+            "supports": [
+              "记录https://github.com/xiuheng-wang/Tuning_free_PnP_HSI_deconvolution；未访问项目、仓库、代码、权重、许可证或运行复现。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "tuning-free-pnp-hsi-deconvolution-tgrs-2023-arxiv",
+            "type": "所用唯一arXiv公开正文版本",
+            "url": "https://arxiv.org/abs/2211.15307v2",
+            "pdfUrl": "https://arxiv.org/pdf/2211.15307v2",
+            "arxivId": "2211.15307",
+            "arxivVersion": 2,
+            "year": 2022,
+            "authors": [
+              "Xiuheng Wang",
+              "Jie Chen",
+              "Cédric Richard"
+            ],
+            "apiAuthors": [
+              "Xiuheng Wang",
+              "Jie Chen",
+              "Cédric Richard"
+            ],
+            "firstSubmittedAt": "2022-11-28T13:41:14Z",
+            "updatedAt": "2023-02-06T08:43:09Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13-2211.15307v2.pdf",
+            "relation": "仅一个所用arXiv正文版本，完整原摘要、首页署名及一主要原图/图注选读；未逐页阅读全文、另读版本、核证明或深挖实验，未访问代码。"
+          },
+          {
+            "id": "tuning-free-pnp-hsi-deconvolution-tgrs-2023-formal",
+            "type": "关联正式出版书目",
+            "url": "https://doi.org/10.1109/tgrs.2023.3253549",
+            "doi": "10.1109/tgrs.2023.3253549",
+            "year": 2023,
+            "venue": "TGRS",
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "title": "Tuning-Free Plug-and-Play Hyperspectral Image Deconvolution With Deep Priors",
+            "authors": [
+              "Xiuheng Wang",
+              "Jie Chen",
+              "Cédric Richard"
+            ],
+            "volume": "61",
+            "pages": "1-13",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "官方arXiv同DOI、正式注册同题名/同序完整作者，仅书目关联，不断言正文或实验相同。TGRS2023白名单内，目录采用正式2023年；唯一正文及主图来自arXiv2022v2，不另取正式正文。"
+          }
+        ],
+        "methodFamilyId": "tuning-free-pnp-hsi-deconvolution-tgrs-2023",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要与主图直接复原模糊/含噪HSI，归数据复原/PnP；3D为谱空张量，不视作几何三维，也不把内部去噪步骤单列独立去噪任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "8a34684264bc874d95cd9f9b3a1fdac998ac14c05f8c068986a29722b58d33c2",
+          "sourceUrls": [
+            "https://doi.org/10.1109/tgrs.2023.3253549",
+            "https://arxiv.org/abs/2211.15307v2",
+            "https://arxiv.org/pdf/2211.15307v2"
+          ]
+        }
+      },
+      "citation": "@article{tuning_free_pnp_hsi_deconvolution_tgrs_2023,\n  title = {Tuning-Free Plug-and-Play Hyperspectral Image Deconvolution With Deep Priors},\n  author = {Xiuheng Wang and Jie Chen and Cédric Richard},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2023},\n  volume = {61},\n  doi = {10.1109/tgrs.2023.3253549},\n  url = {https://doi.org/10.1109/tgrs.2023.3253549}\n}\n"
+    },
+    {
+      "id": "pnp-priors-hsi-unmixing-arxiv-2020",
+      "shortTitle": "PnP Priors Unmixing",
+      "title": "A Plug-and-Play Priors Framework for Hyperspectral Unmixing",
+      "authors": "Min Zhao, Xiuheng Wang, Jie Chen, Wei Chen",
+      "year": 2020,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "将解混问题分解为依赖前向模型的常规优化和可由去噪器实现的先验近端子问题，灵活接入不同去噪器；方法依据原摘要，所用具名图均为结果或曲线。",
+      "tags": [],
+      "summary": "在HSI解混的ADMM迭代中以独立去噪器替换先验近端算子，避免手工设计复杂正则项。",
+      "input": "混合高光谱像元及其空间观测。",
+      "output": "组分材料及对应丰度。",
+      "mechanism": "将解混问题分解为依赖前向模型的常规优化和可由去噪器实现的先验近端子问题，灵活接入不同去噪器；方法依据原摘要，所用具名图均为结果或曲线。",
+      "readingNote": "仅一个所用arXiv正文版本，原摘要/首页和具名图的图号/图注定位，未逐页阅读全文或整理性能；没有独立框架图留白，不取其他版本/图。未访问代码。",
+      "paper": "https://arxiv.org/abs/2012.13074v3",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_figure_captions_verified",
+      "frameworkFigures": [],
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用arXiv2012.13074v3的10张具名图为参数/RMSE曲线、丰度/重建/误差图和真实数据例图，未取得独立框架图；只核图号/图注，不阅读全文，不将结果图或伪代码替代框架，不要求另找版本。",
+        "sourceUrl": "https://arxiv.org/pdf/2012.13074v3",
+        "checkedAt": "2026-10-13"
+      },
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "plug-and-play"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要直接处理HSI；普通白名单或arXiv，无作者例外。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "如何以可替换去噪先验简化HSI解混正则化？",
+        "datasets": "未整理数据集或实验划分。",
+        "experimentSetting": "只核身份/范围和主图或图注，不整理协议、证明或性能数值。",
+        "conclusions": "任务及主要方法依据原摘要/主图，性能未核。",
+        "limitations": "一个版本、一主图或无独立框架图状态已记录；其他正文、图和实验不设为资料待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/2012.13074v3",
+            "checkedAt": "2026-10-13",
+            "level": "固定arXiv完整原摘要及作者名单",
+            "supports": [
+              "在HSI解混的ADMM迭代中以独立去噪器替换先验近端算子，避免手工设计复杂正则项。",
+              "所用PDF首页作者姓名/顺序已核，无Jun Zhou；大小写格式按PDF显示并保留API原字段，不外推其他版本。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2012.13074v3",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF图号及图注定位（只找主图）",
+            "supports": [
+              "所用arXiv2012.13074v3的10张具名图为参数/RMSE曲线、丰度/重建/误差图和真实数据例图，未取得独立框架图；只核图号/图注，不阅读全文，不将结果图或伪代码替代框架，不要求另找版本。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "pnp-priors-hsi-unmixing-arxiv-2020-arxiv",
+            "type": "所用唯一arXiv公开正文版本",
+            "url": "https://arxiv.org/abs/2012.13074v3",
+            "pdfUrl": "https://arxiv.org/pdf/2012.13074v3",
+            "arxivId": "2012.13074",
+            "arxivVersion": 3,
+            "year": 2020,
+            "authors": [
+              "Min Zhao",
+              "Xiuheng Wang",
+              "Jie Chen",
+              "Wei Chen"
+            ],
+            "apiAuthors": [
+              "Min zhao",
+              "Xiuheng Wang",
+              "Jie Chen",
+              "Wei Chen"
+            ],
+            "firstSubmittedAt": "2020-12-24T02:48:50Z",
+            "updatedAt": "2021-04-25T01:12:40Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13-2012.13074v3.pdf",
+            "relation": "仅一个所用arXiv正文版本，原摘要/首页和具名图的图号/图注定位，未逐页阅读全文或整理性能；没有独立框架图留白，不取其他版本/图。未访问代码。"
+          }
+        ],
+        "methodFamilyId": "pnp-priors-hsi-unmixing-arxiv-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要直接HSI解混及PnP近端先验，沿用解混/PnP；不是把去噪先验输出当独立HSI去噪任务。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "5858e6bfe5e6ee86be9184d9ac1ca919bb0293f1e7ec6b9bd632459d1a81eb77",
+          "sourceUrls": [
+            "https://arxiv.org/abs/2012.13074v3",
+            "https://arxiv.org/pdf/2012.13074v3"
+          ]
+        }
+      },
+      "citation": "@misc{pnp_priors_hsi_unmixing_arxiv_2020,\n  title = {A Plug-and-Play Priors Framework for Hyperspectral Unmixing},\n  author = {Min Zhao and Xiuheng Wang and Jie Chen and Wei Chen},\n  year = {2020},\n  eprint = {2012.13074},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2012.13074v3}\n}\n"
     }
   ],
   "datasets": [
@@ -57270,7 +58136,8 @@
         "bdt-hsi-msi-fusion-ijcai-2023",
         "adknet-hsi-superresolution-ijcai-2022",
         "hsrmamba-single-hsi-superresolution-ijcai-2025",
-        "deep-pnp-hsi-restoration-arxiv-2022"
+        "deep-pnp-hsi-restoration-arxiv-2022",
+        "prisma-hsi-pansharpening-benchmark-arxiv-2023"
       ],
       "history": [
         {
@@ -57582,7 +58449,8 @@
         "tdiffde-hsi-denoising-arxiv-2023",
         "ssgn-hsi-hybrid-denoising-tgrs-2019",
         "hsid-cnn-hsi-denoising-tgrs-2019",
-        "deep-pnp-hsi-restoration-arxiv-2022"
+        "deep-pnp-hsi-restoration-arxiv-2022",
+        "mafnet-hsi-denoising-arxiv-2023"
       ],
       "history": [
         {
@@ -57675,7 +58543,8 @@
         "zhou-scholar-a-new-hyperspectral-unmixing-benchmark-for-2024",
         "zhou-scholar-arxiv-2309-00005",
         "bihot-spdan-hsi-tracking-arxiv-2024",
-        "hyspecnet-11k-hsi-compression-arxiv-2023"
+        "hyspecnet-11k-hsi-compression-arxiv-2023",
+        "prisma-hsi-pansharpening-benchmark-arxiv-2023"
       ],
       "history": [
         {
@@ -57885,7 +58754,8 @@
         "hypersigma-tpami-2025",
         "egu-net-arxiv-2021",
         "phase-locked-snr-arxiv-2025",
-        "pnp-net-hsi-unmixing-arxiv-2024"
+        "pnp-net-hsi-unmixing-arxiv-2024",
+        "pnp-priors-hsi-unmixing-arxiv-2020"
       ],
       "history": [
         {
@@ -58251,7 +59121,10 @@
         "deep-pnp-hsi-anomaly-2021",
         "deep-pnp-hsi-restoration-arxiv-2022",
         "pnp-net-hsi-unmixing-arxiv-2024",
-        "pnp-pbcd-hsi-anomaly-arxiv-2024"
+        "pnp-pbcd-hsi-anomaly-arxiv-2024",
+        "lrs-pnp-dip-hsi-inpainting-arxiv-2025",
+        "tuning-free-pnp-hsi-deconvolution-tgrs-2023",
+        "pnp-priors-hsi-unmixing-arxiv-2020"
       ],
       "history": [
         {
@@ -58311,7 +59184,9 @@
         "t3sc-2021",
         "hsi-l0-gradient-lowrank-restoration-2019",
         "zhou-76-hsi-2022",
-        "deep-pnp-hsi-restoration-arxiv-2022"
+        "deep-pnp-hsi-restoration-arxiv-2022",
+        "lrs-pnp-dip-hsi-inpainting-arxiv-2025",
+        "tuning-free-pnp-hsi-deconvolution-tgrs-2023"
       ],
       "history": [
         {
@@ -60100,7 +60975,8 @@
         "active-multikernel-hsi-domain-adaptation-pr-2018",
         "mct-center-mask-arxiv-2022",
         "docnn-drc-hsi-classification-arxiv-2021",
-        "active-dense-hsi-classification-arxiv-2020"
+        "active-dense-hsi-classification-arxiv-2020",
+        "mumlp-hsi-classification-arxiv-2023"
       ],
       "history": [
         {

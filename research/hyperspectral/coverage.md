@@ -4,7 +4,7 @@
 
 现有目录已按来源白名单及高光谱范围清理，周峻既有181条直接高光谱保留，作者例外仅放宽来源。检索状态仅证明记录中指定官方目录、分页和关键词的实际覆盖，不代表领域全集已收齐。旧范围的扫描保留为历史证据，不列为后续全领域检索目标。 本轮新增共同作者书目快照至2026-10-12；各既有查询仍以其原始日期、分页和证据为准，不表示旧年度记录已统一重查。
 
-2026-10-13最新：Hongruixuan Chen指定arXiv46/46唯一书目仅题名/作者，无Jun字段；唯一字面HSI HyperSIGMA已录，仅映射不重读或补图，46摘要本轮未读，不否定HVOT公开版本。既有候选1923 Deep PnP复原、1913 PnP-Net解混、1912 PnP-PBCD异常检测各固定一版；前两各一主要原图，异常稿8张具名图为特征像/ROC/检测结果/参数曲线，框架留白。解混仅补同页端元/丰度输出必要段；Deep PnP的Neurocomputing2022来源外只书目关联，三项均arXiv。3新论文、2图，3PDF49页只下载、0新全文/代码访问。总库436、确认423/暂定13、审计413、184标签、原图373，来源298/37/101；Jun确认182及网页183、作者/四IJCAI范围未决不变。作者/全领域目录仍未闭环。[必要书目、主要原图及留白](sources/jun-zhou-hongruixuan-pnp-mainframes-2026-10-13.json)。
+2026-10-13最新：Zhuo Zheng指定arXiv34/34唯一书目仅题名/作者，无Jun字段；3HSI题名新增候选（HOpenCls、谱空全局分类、FPGA），34摘要未读，不否定HVOT公开版本。既有六候选续收LRS-PnP-DIP修补、PRISMA融合基准、MUMLP分类、MAFNet去噪、免调参PnP反卷积及早期PnP解混；各一个所用版本，4主要原图，PRISMA/早期PnP解混具名图均数据/统计/结果/曲线、无独立框架留白。TGRS2023白名单只关联正式书目/唯一arXiv2022v2正文，MUMLP的GRSL2022来源外只书目关联；MDPI模板占位不作正式来源。6新论文、4图，6PDF111页为下载计数、0新全文/代码访问。总库442、确认429/暂定13、审计419、184标签、原图377，来源299/42/101；Jun182及网页183、作者/四IJCAI范围未决不变。作者/全领域目录仍未闭环。[必要书目、主要原图及留白](sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13.json)。
 
 当前来源白名单与作者例外见 [收录政策](../../src/data/collection-policy.json)，逐项清理决定见 [清理审计](catalog-cleanup.json)。
 
@@ -1060,3 +1060,5 @@
 - 2026-10-13 / jun-zhou-weihao-tracking-compression-2026-10-13：Weihao Xuan指定arXiv52/52唯一书目只题名/作者，无Jun/字面HSI、52摘要未读，不排除HVOT公开版本。既有候选1910 Spectral-Enhanced Transformers和1914 BihoT/SPDAN各固定一版一主图；1920 HySpecNet-11k压缩基准仅两具名图为样例/曲线，无独立框架留白。三项均arXiv，TNNLS2025/IGARSS2023来源外只书目关联；新增高光谱压缩任务沿用已有重建复原组映射。无图页面改“所用版本未发现”，不暗示阅读全文。3新论文、2主图，3PDF24页只下载、0新全文/代码访问。总库433、确认420/暂定13、审计410、184标签、原图371，来源298/34/101；Jun确认182及网页183、作者/四IJCAI范围未决不变。作者/全领域目录仍未闭环。[原始证据与读取边界](sources/jun-zhou-weihao-tracking-compression-2026-10-13.json)。
 
 - 2026-10-13 / jun-zhou-hongruixuan-pnp-mainframes-2026-10-13：Hongruixuan Chen指定arXiv46/46唯一书目仅题名/作者，无Jun字段；唯一字面HSI HyperSIGMA已录，仅映射不重读或补图，46摘要本轮未读，不否定HVOT公开版本。既有候选1923 Deep PnP复原、1913 PnP-Net解混、1912 PnP-PBCD异常检测各固定一版；前两各一主要原图，异常稿8张具名图为特征像/ROC/检测结果/参数曲线，框架留白。解混仅补同页端元/丰度输出必要段；Deep PnP的Neurocomputing2022来源外只书目关联，三项均arXiv。3新论文、2图，3PDF49页只下载、0新全文/代码访问。总库436、确认423/暂定13、审计413、184标签、原图373，来源298/37/101；Jun确认182及网页183、作者/四IJCAI范围未决不变。作者/全领域目录仍未闭环。[原始证据与读取边界](sources/jun-zhou-hongruixuan-pnp-mainframes-2026-10-13.json)。
+
+- 2026-10-13 / jun-zhou-zhuozheng-six-mainframes-2026-10-13：Zhuo Zheng指定arXiv34/34唯一书目仅题名/作者，无Jun字段；3HSI题名新增候选（HOpenCls、谱空全局分类、FPGA），34摘要未读，不否定HVOT公开版本。既有六候选续收LRS-PnP-DIP修补、PRISMA融合基准、MUMLP分类、MAFNet去噪、免调参PnP反卷积及早期PnP解混；各一个所用版本，4主要原图，PRISMA/早期PnP解混具名图均数据/统计/结果/曲线、无独立框架留白。TGRS2023白名单只关联正式书目/唯一arXiv2022v2正文，MUMLP的GRSL2022来源外只书目关联；MDPI模板占位不作正式来源。6新论文、4图，6PDF111页为下载计数、0新全文/代码访问。总库442、确认429/暂定13、审计419、184标签、原图377，来源299/42/101；Jun182及网页183、作者/四IJCAI范围未决不变。作者/全领域目录仍未闭环。[原始证据与读取边界](sources/jun-zhou-zhuozheng-six-mainframes-2026-10-13.json)。
