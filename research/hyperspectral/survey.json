@@ -12975,13 +12975,15 @@
       "candidateCount": 2,
       "reviewedCount": 0,
       "status": "partial",
-      "statusLabel": "仅书目筛查，原摘要未读；不作自然人全集/HVOT无公开版证明",
+      "statusLabel": "新HSI题名已续核入库，一公开版本一主图；非作者全集/HVOT无公开版证明",
       "sourceSnapshot": "sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
       "gaps": [
         "完整Jun字段零命中不能证明作者全集或HVOT不存在合格公开版本。",
-        "新HSI题名候选尚未核原摘要/主要框架；既有目录只书目对照不重取正文。"
+        "其余书目未逐篇读摘要；本轮仅处理已定位16题名。"
       ],
-      "collectionScope": "active"
+      "collectionScope": "active",
+      "followupSnapshot": "sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json",
+      "followupCandidateCount": 2
     },
     {
       "id": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
@@ -13001,11 +13003,35 @@
       "candidateCount": 14,
       "reviewedCount": 0,
       "status": "partial",
-      "statusLabel": "仅书目筛查，原摘要未读；不作自然人全集/HVOT无公开版证明",
+      "statusLabel": "新HSI题名已续核入库，一公开版本一主图；非作者全集/HVOT无公开版证明",
       "sourceSnapshot": "sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
       "gaps": [
         "完整Jun字段零命中不能证明作者全集或HVOT不存在合格公开版本。",
-        "新HSI题名候选尚未核原摘要/主要框架；既有目录只书目对照不重取正文。"
+        "其余书目未逐篇读摘要；本轮仅处理已定位16题名。"
+      ],
+      "collectionScope": "active",
+      "followupSnapshot": "sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json",
+      "followupCandidateCount": 14
+    },
+    {
+      "id": "jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13-target-title",
+      "venue": "arXiv",
+      "date": "2026-10-13",
+      "keywordGroup": "target-unresolved-title-crosscheck",
+      "keywords": [
+        "ti:\"hyperspectral video\" AND ti:\"tracking\""
+      ],
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22hyperspectral+video%22+AND+ti%3A%22tracking%22&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending",
+      "method": "限定题名字段查询，6条完整题名/作者书目，与既有3篇Jun跟踪正例对照；未读6条摘要，3新领域题名候选单列。",
+      "pagination": "6/6唯一arXiv基础ID",
+      "candidateCount": 3,
+      "reviewedCount": 0,
+      "status": "partial",
+      "statusLabel": "指定题名集合完成对照，HVOT合格来源/身份仍未决",
+      "sourceSnapshot": "sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json",
+      "gaps": [
+        "不把限定题名未命中当作无公开版证明；3新题名摘要/范围尚未核。",
+        "作者身份、来源及整个领域历年缺口继续。"
       ],
       "collectionScope": "active"
     }
@@ -50960,7 +50986,7 @@
       "discoveredAt": "2026-10-12",
       "indexedAt": "2026-10-12",
       "decision": "pending",
-      "reason": "Crossref完整注册摘要实际读，确认直接高光谱视频跟踪综述；SSRN不在新收录来源，合格正式/arXiv版本待查。Jun身份只有索引ORCID/Griffith关联，单篇原文单位待核。 本轮同题Crossref限定八返回无合格正式匹配，Yokoya学术页206条当前解析中未见该题；均不证明没有公开/正式版。近题TGRS2024.3483072另五作者，无Jun，不是同版本。",
+      "reason": "Crossref完整注册摘要实际读，确认直接高光谱视频跟踪综述；SSRN不在新收录来源，合格正式/arXiv版本待查。Jun身份只有索引ORCID/Griffith关联，单篇原文单位待核。 本轮同题Crossref限定八返回无合格正式匹配，Yokoya学术页206条当前解析中未见该题；均不证明没有公开/正式版。近题TGRS2024.3483072另五作者，无Jun，不是同版本。 本轮arXiv指定ti:\"hyperspectral video\" AND ti:\"tracking\"返回6书目，3既有Jun跟踪稿作为查询正例；未定位本题，不据限定查询断言无公开版。",
       "readingProgress": "abstract_read",
       "readingSourceBoundary": "IF只有完整二级索引摘要，SSRN跟踪为完整注册原摘要，Mamba为出版社完整原摘要；其他优先候选仅书目。",
       "identityStatus": "unverified_single_paper_primary_affiliation",
@@ -50969,7 +50995,8 @@
       "relatedDoi": "",
       "followupEvidencePaths": [
         "research/hyperspectral/sources/jun-zhou-new-candidates-primary-followup-2026-10-12.json",
-        "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json"
+        "research/hyperspectral/sources/jun-zhou-tiangong-yokoya-comix-2026-10-12.json",
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
       ],
       "followupStatus": "pending_identity_or_qualified_version"
     },
@@ -60031,12 +60058,18 @@
       "arxivId": "2012.15104",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-yokoya-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "noniterative-dcchi-hsi-tip-2021",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "Hyperspectral Super-Resolution via Coupled Tensor Ring Factorization",
@@ -60047,12 +60080,18 @@
       "arxivId": "2001.01547",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-yokoya-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "nctrf-hsi-superresolution-pr-2022",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "MBTI: A Multi-Branch Efficient Fine-Tuning Framework for Hyperspectral Image Classification with Foundation Models",
@@ -60063,12 +60102,18 @@
       "arxivId": "2607.12782",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "mbti-foundation-hsi-classification-arxiv-2026",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "arxiv"
     },
     {
       "title": "MambaMoE: Mixture-of-Spectral-Spatial-Experts State Space Model for Hyperspectral Image Classification",
@@ -60079,12 +60124,18 @@
       "arxivId": "2504.20509",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "mambamoe-hsi-classification-if-2026",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "Dual Selective Fusion Transformer Network for Hyperspectral Image Classification",
@@ -60095,12 +60146,18 @@
       "arxivId": "2410.03171",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "dsformer-hsi-classification-arxiv-2024",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "arxiv"
     },
     {
       "title": "Cross-Scope Spatial-Spectral Information Aggregation for Hyperspectral Image Super-Resolution",
@@ -60111,12 +60168,18 @@
       "arxivId": "2311.17340",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "cst-cross-scope-hsi-sr-tip-2024",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "HKNAS: Classification of Hyperspectral Imagery Based on Hyper Kernel Neural Architecture Search",
@@ -60127,12 +60190,18 @@
       "arxivId": "2304.11701",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "hknas-hsi-classification-arxiv-2023",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "arxiv"
     },
     {
       "title": "DCN-T: Dual Context Network with Transformer for Hyperspectral Image Classification",
@@ -60143,12 +60212,18 @@
       "arxivId": "2304.09915",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "dcn-t-hsi-classification-tip-2023",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "GlobalMind: Global Multi-head Interactive Self-attention Network for Hyperspectral Change Detection",
@@ -60159,12 +60234,18 @@
       "arxivId": "2304.08687",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "globalmind-hsi-change-isprs-2024",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "One-Step Detection Paradigm for Hyperspectral Anomaly Detection via Spectral Deviation Relationship Learning",
@@ -60175,12 +60256,18 @@
       "arxivId": "2303.12342",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "tdd-one-step-hsi-anomaly-arxiv-2023",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "arxiv"
     },
     {
       "title": "HyperNet: Self-Supervised Hyperspectral Spatial-Spectral Feature Understanding Network for Hyperspectral Change Detection",
@@ -60191,12 +60278,18 @@
       "arxivId": "2207.09634",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "hypernet-hsi-change-tgrs-2022",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "Binary Change Guided Hyperspectral Multiclass Change Detection",
@@ -60207,12 +60300,18 @@
       "arxivId": "2112.04493",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "bcg-net-hsi-multiclass-change-tip-2023",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
     },
     {
       "title": "Spectral-Spatial Global Graph Reasoning for Hyperspectral Image Classification",
@@ -60223,12 +60322,18 @@
       "arxivId": "2106.13952",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "ssgrn-hsi-classification-arxiv-2021",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "arxiv"
     },
     {
       "title": "Robust Self-Ensembling Network for Hyperspectral Image Classification",
@@ -60239,12 +60344,18 @@
       "arxivId": "2104.03765",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "rsen-hsi-classification-arxiv-2021",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "arxiv"
     },
     {
       "title": "Hyperspectral Anomaly Change Detection Based on Auto-encoder",
@@ -60255,12 +60366,18 @@
       "arxivId": "2010.14119",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
-      "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
-      "readingProgress": "title_only",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
       "sourcePolicyStatus": "arxiv",
-      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "acda-hsi-anomaly-change-arxiv-2020",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "arxiv"
     },
     {
       "title": "Few-Shot Hyperspectral Image Classification With Unknown Classes Using Multitask Deep Learning",
@@ -60271,12 +60388,66 @@
       "arxivId": "2009.03508",
       "searchId": "jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13-liangpei-directory",
       "discoveredAt": "2026-10-13",
+      "decision": "included",
+      "reason": "官方原摘要及固定一个arXiv公开正文主要原图确认直接HSI；正式书目必要关联，不另读版本；一主图已得。",
+      "readingProgress": "abstract_read",
+      "sourcePolicyStatus": "arxiv",
+      "scopeStatus": "direct_hyperspectral_verified",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
+      "paperId": "mdl4ow-openworld-hsi-tgrs-2021",
+      "followupEvidencePaths": [
+        "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+      ],
+      "followupStatus": "included_one_version_one_main_figure",
+      "catalogSourcePolicyStatus": "whitelist"
+    },
+    {
+      "title": "Hyperspectral Adapter for Object Tracking based on Hyperspectral Video",
+      "authors": "Long Gao, Yunhe Zhang, Langkun Chen, Yan Jiang, Weiying Xie, Yunsong Li",
+      "year": 2025,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2503.22199v1",
+      "arxivId": "2503.22199",
+      "searchId": "jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13-target-title",
+      "discoveredAt": "2026-10-13",
       "decision": "pending",
-      "reason": "指定共同作者书目中的高光谱题名线索；本轮只读题名/作者，原摘要、范围、版本关联与一主图后续核验，不计入总库。",
       "readingProgress": "title_only",
       "sourcePolicyStatus": "arxiv",
       "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
-      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json"
+      "reason": "周峻未决跟踪题名查询产生的非Jun高光谱题名线索；本轮只核题名/完整作者，未读原摘要/正文，不计总库。",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+    },
+    {
+      "title": "Detection and tracking of gas plumes in LWIR hyperspectral video sequence data",
+      "authors": "Torin Gerhart, Justin Sunu, Ekaterina Merkurjev, Jen-Mei Chang, Jerome Gilles, Andrea L. Bertozzi",
+      "year": 2024,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/2411.00281v1",
+      "arxivId": "2411.00281",
+      "searchId": "jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13-target-title",
+      "discoveredAt": "2026-10-13",
+      "decision": "pending",
+      "readingProgress": "title_only",
+      "sourcePolicyStatus": "arxiv",
+      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
+      "reason": "周峻未决跟踪题名查询产生的非Jun高光谱题名线索；本轮只核题名/完整作者，未读原摘要/正文，不计总库。",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
+    },
+    {
+      "title": "Tracking in Aerial Hyperspectral Videos using Deep Kernelized Correlation Filters",
+      "authors": "Burak Uzkent, Aneesh Rangnekar, Matthew J. Hoffman",
+      "year": 2017,
+      "venue": "arXiv",
+      "url": "https://arxiv.org/abs/1711.07235v3",
+      "arxivId": "1711.07235",
+      "searchId": "jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13-target-title",
+      "discoveredAt": "2026-10-13",
+      "decision": "pending",
+      "readingProgress": "title_only",
+      "sourcePolicyStatus": "arxiv",
+      "scopeStatus": "hyperspectral_title_locator_pending_primary_abstract",
+      "reason": "周峻未决跟踪题名查询产生的非Jun高光谱题名线索；本轮只核题名/完整作者，未读原摘要/正文，不计总库。",
+      "evidencePath": "research/hyperspectral/sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json"
     }
   ],
   "batches": [
@@ -67666,6 +67837,41 @@
       "pdfPagesRead": 0,
       "sourceSnapshot": "sources/jun-zhou-yokoya-liangpei-cvf2023-mainframes-2026-10-13.json",
       "readingBoundary": "两共同作者216书目只元数据；2023年度4509题名45原摘要，13新增/12主图/1无框架；19PDF只身份/范围/图选读，0全文/代码访问。"
+    },
+    {
+      "id": "jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13",
+      "date": "2026-10-13",
+      "searchIds": [
+        "jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13-target-title"
+      ],
+      "paperIds": [
+        "noniterative-dcchi-hsi-tip-2021",
+        "nctrf-hsi-superresolution-pr-2022",
+        "mbti-foundation-hsi-classification-arxiv-2026",
+        "mambamoe-hsi-classification-if-2026",
+        "dsformer-hsi-classification-arxiv-2024",
+        "cst-cross-scope-hsi-sr-tip-2024",
+        "hknas-hsi-classification-arxiv-2023",
+        "dcn-t-hsi-classification-tip-2023",
+        "globalmind-hsi-change-isprs-2024",
+        "tdd-one-step-hsi-anomaly-arxiv-2023",
+        "hypernet-hsi-change-tgrs-2022",
+        "bcg-net-hsi-multiclass-change-tip-2023",
+        "ssgrn-hsi-classification-arxiv-2021",
+        "rsen-hsi-classification-arxiv-2021",
+        "acda-hsi-anomaly-change-arxiv-2020",
+        "mdl4ow-openworld-hsi-tgrs-2021"
+      ],
+      "new": 16,
+      "updated": 0,
+      "duplicates": 0,
+      "excluded": 0,
+      "pending": 3,
+      "figuresAdded": 16,
+      "newFullTextReadingCount": 0,
+      "pdfPagesRead": 0,
+      "sourceSnapshot": "sources/jun-zhou-yokoya-liangpei-candidates-mainframes-2026-10-13.json",
+      "readingBoundary": "16原候选各一个arXiv正文及一主图；16原摘要、首页身份和主图选读，0新全文/代码访问；正式版本只书目。目标6题名只元数据。"
     }
   ],
   "gaps": [
