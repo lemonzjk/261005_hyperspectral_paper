@@ -67853,6 +67853,530 @@
           ]
         }
       }
+    },
+    {
+      "id": "css-hsi-recovery-eccv-2018",
+      "shortTitle": "CSS selection + HSI recovery",
+      "title": "Joint Camera Spectral Sensitivity Selection and Hyperspectral Image Recovery",
+      "authors": "Ying Fu, Tao Zhang, Yinqiang Zheng, Debing Zhang, Hua Huang",
+      "year": 2018,
+      "venue": "ECCV",
+      "publicationName": "Computer Vision – ECCV 2018",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "统一CNN框架联合学习CSS选择与HSI恢复；训练时先联合优化，测试时在选定CSS下采集RGB并由恢复网络重建HSI。",
+      "tags": [],
+      "summary": "联合选择相机谱响应并从单幅RGB恢复高光谱图像。",
+      "input": "单幅RGB图像及候选相机谱响应。",
+      "output": "恢复HSI和选定的最优相机谱响应。",
+      "mechanism": "统一CNN框架联合学习CSS选择与HSI恢复；训练时先联合优化，测试时在选定CSS下采集RGB并由恢复网络重建HSI。",
+      "readingNote": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+      "paper": "https://www.ecva.net/papers/eccv_2018/papers_ECCV/html/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.php",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.pdf",
+          "sourceVersion": "ECCV 2018官方公开正文",
+          "figureLabel": "Fig. 1",
+          "page": 3,
+          "caption": "Fig. 1. Overview of the proposed method, which combines optimal CSS selection and HSI recovery into a uniﬁed CNN-based framework. The parameters for these two as- pects are jointly learned ﬁrst. Then, the RGB images are captured under the selected optimal CSS as the inputs and the underlying HSIs are reconstructed by using the HSI recovery network. The black arrow shows the training process and the red arrow denotes the testing process.",
+          "verificationNote": "所用ECCV 2018官方公开正文PDF第3页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/css-hsi-recovery-eccv-2018/framework.png",
+          "width": 1071,
+          "height": 636,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "372e89a4662155e2dc6cbe59d2564aa5d6868893796c5fc5fe0995d8f61c87b4",
+          "attribution": "Ying Fu, Tao Zhang, Yinqiang Zheng, Debing Zhang, Hua Huang · ECCV 2018",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              129.0,
+              59.0,
+              486.0,
+              271.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{css-hsi-recovery-eccv-2018,\n  title = {Joint Camera Spectral Sensitivity Selection and Hyperspectral Image Recovery},\n  author = {Ying Fu and Tao Zhang and Yinqiang Zheng and Debing Zhang and Hua Huang},\n  booktitle = {Computer Vision – ECCV 2018},\n  year = {2018},\n  url = {https://www.ecva.net/papers/eccv_2018/papers_ECCV/html/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.php}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "spectral-instrument-design"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "ECVA/ECCV白名单；原摘要和主框架明确直接高光谱输入输出。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "联合选择相机谱响应并从单幅RGB恢复高光谱图像。",
+        "datasets": "不整理实验划分/性能；输入类型依据原摘要和主框架。",
+        "experimentSetting": "只核身份、HSI范围和主框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足当前资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ecva.net/papers/eccv_2018/papers_ECCV/html/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.php",
+            "checkedAt": "2026-10-13",
+            "level": "ECVA官方完整原摘要、作者与DOI书目",
+            "supports": [
+              "联合选择相机谱响应并从单幅RGB恢复高光谱图像。",
+              "所用PDF首页完整作者与ECVA记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第3页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 1. Overview of the proposed method, which combines optimal CSS selection and HSI recovery into a uniﬁed CNN-based framework. The parameters for these two as- pects are jointly learned ﬁrst. Then, the RGB images are captured under the selected optimal CSS as the inputs and the underlying HSIs are reconstructed by using the HSI recovery network. The black arrow shows the training process and the red arrow denotes the testing process.",
+              "所用ECCV 2018官方公开正文PDF第3页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "css-hsi-recovery-eccv-2018-official",
+            "type": "所用唯一ECCV公开正文版本",
+            "url": "https://www.ecva.net/papers/eccv_2018/papers_ECCV/html/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.php",
+            "pdfUrl": "https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.pdf",
+            "year": 2018,
+            "title": "Joint Camera Spectral Sensitivity Selection and Hyperspectral Image Recovery",
+            "authors": [
+              "Ying Fu",
+              "Tao Zhang",
+              "Yinqiang Zheng",
+              "Debing Zhang",
+              "Hua Huang"
+            ],
+            "venue": "ECCV",
+            "publicationName": "Computer Vision – ECCV 2018",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/eccv-2018-2020-hsi-mainframes-2026-10-13-eccv2018-0.pdf"
+          }
+        ],
+        "methodFamilyId": "css-hsi-recovery-eccv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类，排除纯多光谱与非HSI光场候选。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "5de17bef4cae88fb9df8dd04c5811d2b21a5953e40888bbbc020bc0d2b0be1f9",
+          "sourceUrls": [
+            "https://www.ecva.net/papers/eccv_2018/papers_ECCV/html/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.php",
+            "https://www.ecva.net/papers/eccv_2018/papers_ECCV/papers/Ying_Fu_Joint_Camera_Spectral_ECCV_2018_paper.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tsa-net-spectral-imaging-eccv-2020",
+      "shortTitle": "TSA-Net",
+      "title": "End-to-End Low Cost Compressive Spectral Imaging with Spatial-Spectral Self-Attention",
+      "authors": "Ziyi Meng, Jiawei Ma, Xin Yuan",
+      "year": 2020,
+      "venue": "ECCV",
+      "publicationName": "Computer Vision – ECCV 2020",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "复现单色散器CASSI采集真实数据，TSA-Net分别建模空间和光谱相关性，以卷积、池化和上采样恢复谱空数据。",
+      "tags": [],
+      "summary": "以空间—光谱自注意力实现低成本CASSI视频率高光谱重建。",
+      "input": "SD-CASSI压缩测量与编码硬件。",
+      "output": "重建HSI/高光谱视频。",
+      "mechanism": "复现单色散器CASSI采集真实数据，TSA-Net分别建模空间和光谱相关性，以卷积、池化和上采样恢复谱空数据。",
+      "readingNote": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+      "paper": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4272_ECCV_2020_paper.php",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123680188.pdf",
+          "sourceVersion": "ECCV 2020官方公开正文",
+          "figureLabel": "Fig. 3",
+          "page": 8,
+          "caption": "Fig. 3: (a) Spatial-Spectral Self-Attention (TSA) for one V feature (head). The spatial correlation involves the modelling for x-axis and y-axis separately and aggregation in an order-independent manner: the input is mapped to Q and K for each dimension: the size of kernel and feature are speciﬁed individually. The spectral correlation modelling will ﬂatten samples in one spectral channel (2D plane) as a feature vector. The operation in dashed box denotes the network structure is shared while trained in parallel. (b) TSA-Net Architecture. Each convolution layer adopts a 3 × 3 operator with stride 1 and outputs O-channel cube. The size of pooling and upsampling is P and T.",
+          "verificationNote": "所用ECCV 2020官方公开正文PDF第8页Fig. 3主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/tsa-net-spectral-imaging-eccv-2020/framework.png",
+          "width": 1071,
+          "height": 1041,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "9ce81218bbce42d2a636cf66a644806b78f5f0d0a46e104944ef70f5b80c32a1",
+          "attribution": "Ziyi Meng, Jiawei Ma, Xin Yuan · ECCV 2020",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              129.0,
+              69.0,
+              486.0,
+              416.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{tsa-net-spectral-imaging-eccv-2020,\n  title = {End-to-End Low Cost Compressive Spectral Imaging with Spatial-Spectral Self-Attention},\n  author = {Ziyi Meng and Jiawei Ma and Xin Yuan},\n  booktitle = {Computer Vision – ECCV 2020},\n  year = {2020},\n  url = {https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4272_ECCV_2020_paper.php}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-reconstruction",
+          "transformer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "ECVA/ECCV白名单；原摘要和主框架明确直接高光谱输入输出。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以空间—光谱自注意力实现低成本CASSI视频率高光谱重建。",
+        "datasets": "不整理实验划分/性能；输入类型依据原摘要和主框架。",
+        "experimentSetting": "只核身份、HSI范围和主框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足当前资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4272_ECCV_2020_paper.php",
+            "checkedAt": "2026-10-13",
+            "level": "ECVA官方完整原摘要、作者与DOI书目",
+            "supports": [
+              "以空间—光谱自注意力实现低成本CASSI视频率高光谱重建。",
+              "所用PDF首页完整作者与ECVA记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123680188.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第8页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 3: (a) Spatial-Spectral Self-Attention (TSA) for one V feature (head). The spatial correlation involves the modelling for x-axis and y-axis separately and aggregation in an order-independent manner: the input is mapped to Q and K for each dimension: the size of kernel and feature are speciﬁed individually. The spectral correlation modelling will ﬂatten samples in one spectral channel (2D plane) as a feature vector. The operation in dashed box denotes the network structure is shared while trained in parallel. (b) TSA-Net Architecture. Each convolution layer adopts a 3 × 3 operator with stride 1 and outputs O-channel cube. The size of pooling and upsampling is P and T.",
+              "所用ECCV 2020官方公开正文PDF第8页Fig. 3主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "tsa-net-spectral-imaging-eccv-2020-official",
+            "type": "所用唯一ECCV公开正文版本",
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4272_ECCV_2020_paper.php",
+            "pdfUrl": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123680188.pdf",
+            "year": 2020,
+            "title": "End-to-End Low Cost Compressive Spectral Imaging with Spatial-Spectral Self-Attention",
+            "authors": [
+              "Ziyi Meng",
+              "Jiawei Ma",
+              "Xin Yuan"
+            ],
+            "venue": "ECCV",
+            "publicationName": "Computer Vision – ECCV 2020",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/eccv-2018-2020-hsi-mainframes-2026-10-13-eccv2020-3.pdf"
+          }
+        ],
+        "methodFamilyId": "tsa-net-spectral-imaging-eccv-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类，排除纯多光谱与非HSI光场候选。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "20b9f9d1a856d16c50cfa2b91bdefd98e5178f0927b71e5a8c12ea033b697989",
+          "sourceUrls": [
+            "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4272_ECCV_2020_paper.php",
+            "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123680188.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "dispersion-unmixing-eccv-2020",
+      "shortTitle": "Differentiable dispersion unmixing",
+      "title": "Differentiable Programming for Hyperspectral Unmixing using a Physics-based Dispersion Model",
+      "authors": "John Janiczek, Parth Thaker, Gautam Dasarathy, Christopher S. Edwards, Philip Christensen, Suren Jayasuriya",
+      "year": 2020,
+      "venue": "ECCV",
+      "publicationName": "Computer Vision – ECCV 2020",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "分析合成交替优化丰度与色散参数；CNN逆渲染预测两者，并将可微物理色散模型中的重建误差反向传播。",
+      "tags": [],
+      "summary": "用物理色散模型和可微编程估计光谱变化与材料丰度。",
+      "input": "高光谱像元/光谱及物理色散参数。",
+      "output": "端元变化参数、丰度和解混结果。",
+      "mechanism": "分析合成交替优化丰度与色散参数；CNN逆渲染预测两者，并将可微物理色散模型中的重建误差反向传播。",
+      "readingNote": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+      "paper": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/5893_ECCV_2020_paper.php",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123720647.pdf",
+          "sourceVersion": "ECCV 2020官方公开正文",
+          "figureLabel": "Fig. 3",
+          "page": 8,
+          "caption": "Fig. 3. Analysis-by-Synthesis: The analysis-by-synthesis algorithm uses diﬀeren- tiable programming to ﬁnd optimal dispersion parameters and abundances. The initial dispersion parameters and the target spectra are fed as inputs, and the algorithm al- ternates between optimizing the abundances in the least squares sense and updating the dispersion parameters with respect to the gradient",
+          "verificationNote": "所用ECCV 2020官方公开正文PDF第8页Fig. 3主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/dispersion-unmixing-eccv-2020/framework.png",
+          "width": 1071,
+          "height": 786,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "e1703d465c01bbb78031673b8c1bdd016aa4e87b1c3f287703b2ff90201d59db",
+          "attribution": "John Janiczek, Parth Thaker, Gautam Dasarathy, Christopher S. Edwards, Philip Christensen, Suren Jayasuriya · ECCV 2020",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              129.0,
+              59.0,
+              486.0,
+              321.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{dispersion-unmixing-eccv-2020,\n  title = {Differentiable Programming for Hyperspectral Unmixing using a Physics-based Dispersion Model},\n  author = {John Janiczek and Parth Thaker and Gautam Dasarathy and Christopher S. Edwards and Philip Christensen and Suren Jayasuriya},\n  booktitle = {Computer Vision – ECCV 2020},\n  year = {2020},\n  url = {https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/5893_ECCV_2020_paper.php}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "spectral-radiative-transfer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "ECVA/ECCV白名单；原摘要和主框架明确直接高光谱输入输出。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用物理色散模型和可微编程估计光谱变化与材料丰度。",
+        "datasets": "不整理实验划分/性能；输入类型依据原摘要和主框架。",
+        "experimentSetting": "只核身份、HSI范围和主框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足当前资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/5893_ECCV_2020_paper.php",
+            "checkedAt": "2026-10-13",
+            "level": "ECVA官方完整原摘要、作者与DOI书目",
+            "supports": [
+              "用物理色散模型和可微编程估计光谱变化与材料丰度。",
+              "所用PDF首页完整作者与ECVA记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123720647.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第8页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 3. Analysis-by-Synthesis: The analysis-by-synthesis algorithm uses diﬀeren- tiable programming to ﬁnd optimal dispersion parameters and abundances. The initial dispersion parameters and the target spectra are fed as inputs, and the algorithm al- ternates between optimizing the abundances in the least squares sense and updating the dispersion parameters with respect to the gradient",
+              "所用ECCV 2020官方公开正文PDF第8页Fig. 3主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dispersion-unmixing-eccv-2020-official",
+            "type": "所用唯一ECCV公开正文版本",
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/5893_ECCV_2020_paper.php",
+            "pdfUrl": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123720647.pdf",
+            "year": 2020,
+            "title": "Differentiable Programming for Hyperspectral Unmixing using a Physics-based Dispersion Model",
+            "authors": [
+              "John Janiczek",
+              "Parth Thaker",
+              "Gautam Dasarathy",
+              "Christopher S. Edwards",
+              "Philip Christensen",
+              "Suren Jayasuriya"
+            ],
+            "venue": "ECCV",
+            "publicationName": "Computer Vision – ECCV 2020",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/eccv-2018-2020-hsi-mainframes-2026-10-13-eccv2020-5.pdf"
+          }
+        ],
+        "methodFamilyId": "dispersion-unmixing-eccv-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类，排除纯多光谱与非HSI光场候选。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "a8e87b464f2fa627d31bde257215ce0b9e247e9b19bec6ad51a181761e633f54",
+          "sourceUrls": [
+            "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/5893_ECCV_2020_paper.php",
+            "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123720647.pdf"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cucanet-hsi-superresolution-eccv-2020",
+      "shortTitle": "CUCaNet",
+      "title": "Cross-Attention in Coupled Unmixing Nets for Unsupervised Hyperspectral Super-Resolution",
+      "authors": "Jing Yao, Danfeng Hong, Jocelyn Chanussot, Deyu Meng, Xiaoxiang Zhu, Zongben Xu",
+      "year": 2020,
+      "venue": "ECCV",
+      "publicationName": "Computer Vision – ECCV 2020",
+      "publicationStatus": "published",
+      "venueTier": "conference",
+      "collections": [
+        "hyperspectral"
+      ],
+      "representation": "双流卷积自编码器估计丰度和端元，空间—光谱一致性约束保持解混结构，跨注意力在两流间传递互补信息。",
+      "tags": [],
+      "summary": "以跨注意力耦合解混网络从HSI与MSI无监督提升空间分辨率。",
+      "input": "低空间分辨率HSI与高空间分辨率MSI。",
+      "output": "高空间分辨率HSI。",
+      "mechanism": "双流卷积自编码器估计丰度和端元，空间—光谱一致性约束保持解混结构，跨注意力在两流间传递互补信息。",
+      "readingNote": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+      "paper": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/6628_ECCV_2020_paper.php",
+      "verifiedAt": "2026-10-13",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123740205.pdf",
+          "sourceVersion": "ECCV 2020官方公开正文",
+          "figureLabel": "Fig. 1",
+          "page": 4,
+          "caption": "Fig. 1. An illustration of the proposed end-to-end CUCaNet inspired by spectral un- mixing techniques, which mainly consists of two important modules: cross-attention and spatial-spectral consistency.",
+          "verificationNote": "所用ECCV 2020官方公开正文PDF第4页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。",
+          "path": "figures/cucanet-hsi-superresolution-eccv-2020/framework.png",
+          "width": 1071,
+          "height": 846,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-13",
+          "sha256": "50fe4e6f9ae79e397e113e19b8ef74923d4d89954b55aab8b82ab3bc1aaf63eb",
+          "attribution": "Jing Yao, Danfeng Hong, Jocelyn Chanussot, Deyu Meng, Xiaoxiang Zhu, Zongben Xu · ECCV 2020",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              129.0,
+              59.0,
+              486.0,
+              341.0
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@inproceedings{cucanet-hsi-superresolution-eccv-2020,\n  title = {Cross-Attention in Coupled Unmixing Nets for Unsupervised Hyperspectral Super-Resolution},\n  author = {Jing Yao and Danfeng Hong and Jocelyn Chanussot and Deyu Meng and Xiaoxiang Zhu and Zongben Xu},\n  booktitle = {Computer Vision – ECCV 2020},\n  year = {2020},\n  url = {https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/6628_ECCV_2020_paper.php}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spatial-super-resolution",
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "ECVA/ECCV白名单；原摘要和主框架明确直接高光谱输入输出。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以跨注意力耦合解混网络从HSI与MSI无监督提升空间分辨率。",
+        "datasets": "不整理实验划分/性能；输入类型依据原摘要和主框架。",
+        "experimentSetting": "只核身份、HSI范围和主框架，不整理实验协议。",
+        "conclusions": "任务与方法依据原摘要和主框架；性能未核。",
+        "limitations": "一个版本、一张主图已满足当前资料目标；其他版本/图不设待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/6628_ECCV_2020_paper.php",
+            "checkedAt": "2026-10-13",
+            "level": "ECVA官方完整原摘要、作者与DOI书目",
+            "supports": [
+              "以跨注意力耦合解混网络从HSI与MSI无监督提升空间分辨率。",
+              "所用PDF首页完整作者与ECVA记录相符，无Jun Zhou；仅限所用版本。"
+            ]
+          },
+          {
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123740205.pdf",
+            "checkedAt": "2026-10-13",
+            "level": "所用PDF第4页主要原图及完整图注（选读）",
+            "supports": [
+              "Fig. 1. An illustration of the proposed end-to-end CUCaNet inspired by spectral un- mixing techniques, which mainly consists of two important modules: cross-attention and spatial-spectral consistency.",
+              "所用ECCV 2020官方公开正文PDF第4页Fig. 1主要原框架/流程图及完整图注，原图裁切、未重绘；仅一张。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "cucanet-hsi-superresolution-eccv-2020-official",
+            "type": "所用唯一ECCV公开正文版本",
+            "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/6628_ECCV_2020_paper.php",
+            "pdfUrl": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123740205.pdf",
+            "year": 2020,
+            "title": "Cross-Attention in Coupled Unmixing Nets for Unsupervised Hyperspectral Super-Resolution",
+            "authors": [
+              "Jing Yao",
+              "Danfeng Hong",
+              "Jocelyn Chanussot",
+              "Deyu Meng",
+              "Xiaoxiang Zhu",
+              "Zongben Xu"
+            ],
+            "venue": "ECCV",
+            "publicationName": "Computer Vision – ECCV 2020",
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "whitelist",
+            "relation": "仅一个ECCV官方公开正文版本；读取原摘要、首页完整作者及一张主要原框架/流程图，未逐页通读、逐版阅读或整理性能。代码只留链接（本条无代码URL）。",
+            "localFile": "research/hyperspectral/sources/eccv-2018-2020-hsi-mainframes-2026-10-13-eccv2020-6.pdf"
+          }
+        ],
+        "methodFamilyId": "cucanet-hsi-superresolution-eccv-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-13",
+          "basis": "catalog_and_primary_source",
+          "rationale": "依据直接HSI输入输出及原摘要/主框架分类，排除纯多光谱与非HSI光场候选。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b5c990b7f7f54f3fa8163dc3c3c99cca4c5a319d03915ab89a19192b5f3cb89c",
+          "sourceUrls": [
+            "https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/6628_ECCV_2020_paper.php",
+            "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123740205.pdf"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -67987,7 +68511,9 @@
         "adis-aperture-diffraction-hsi-iccv-2023",
         "noniterative-dcchi-hsi-tip-2021",
         "cst-hsi-reconstruction-eccv-2022",
-        "mask-uncertainty-hsi-reconstruction-eccv-2022"
+        "mask-uncertainty-hsi-reconstruction-eccv-2022",
+        "css-hsi-recovery-eccv-2018",
+        "tsa-net-spectral-imaging-eccv-2020"
       ],
       "history": [
         {
@@ -68114,7 +68640,8 @@
         "dds2m-hsi-restoration-iccv-2023",
         "essaformer-single-hsi-sr-iccv-2023",
         "nctrf-hsi-superresolution-pr-2022",
-        "cst-cross-scope-hsi-sr-tip-2024"
+        "cst-cross-scope-hsi-sr-tip-2024",
+        "cucanet-hsi-superresolution-eccv-2020"
       ],
       "history": [
         {
@@ -68260,7 +68787,8 @@
         "globalmind-hsi-change-isprs-2024",
         "cst-hsi-reconstruction-eccv-2022",
         "stas-hsi-restoration-eccv-2022",
-        "hya-t-hyperspectral-tracking-arxiv-2025"
+        "hya-t-hyperspectral-tracking-arxiv-2025",
+        "tsa-net-spectral-imaging-eccv-2020"
       ],
       "history": [
         {
@@ -68789,7 +69317,9 @@
         "phase-locked-snr-arxiv-2025",
         "pnp-net-hsi-unmixing-arxiv-2024",
         "pnp-priors-hsi-unmixing-arxiv-2020",
-        "bcg-net-hsi-multiclass-change-tip-2023"
+        "bcg-net-hsi-multiclass-change-tip-2023",
+        "dispersion-unmixing-eccv-2020",
+        "cucanet-hsi-superresolution-eccv-2020"
       ],
       "history": [
         {
@@ -68999,7 +69529,8 @@
         "thz-dual-chip-comb-imaging-optica-2019",
         "event-camera-active-hsi-cvpr-2025",
         "pccadis-aperture-diffraction-hsi-eccv-2024",
-        "adis-aperture-diffraction-hsi-iccv-2023"
+        "adis-aperture-diffraction-hsi-iccv-2023",
+        "css-hsi-recovery-eccv-2018"
       ],
       "history": [
         {
@@ -71184,7 +71715,8 @@
         "dart-dlamaize-traits",
         "ahsl-forest-stress",
         "sensor-spectral-simulator",
-        "enmap-acquisition-geometry"
+        "enmap-acquisition-geometry",
+        "dispersion-unmixing-eccv-2020"
       ],
       "history": [
         {
