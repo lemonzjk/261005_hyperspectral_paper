@@ -1,5 +1,7 @@
 # 高光谱检索覆盖
 
+2026-10-14 arXiv2018指定114最后rows100–113十一新原摘要、十新增、七主图，THz双梳/周峻材料跟踪/NGMeet三旧只书目复用。S3RMLSC、DSFA、CoSpace按TGRS2019，其他七arXiv；TSP2020、ICCVW2019、LGRS2019、JSTARS2021、TCYB2020、ICSPIS2018只正式元数据源外，Workshop不是ICCV主会，RG定位注册404非正式发表证据、不重复查询。同作者SSRLSC与半监督S3RMLSC分列，聚类diffusion LMS不当扩散生成模型。DSFA所用p5真实River198带与两个六带ETM+分列；HEG所用p11真实Indian Pines/Salinas/PaviaU与红潮MS任务分列；CoSpace所用p2直接HSI/MSI公共表示训练、区外MSI类别输出，不当重建HSI或纯MS。七主图每篇一张：S3RMLSC Fig1/p4全流程；DSFA Fig2/p4双网/SFA/阈值；RGB重建Figure2/p2三模型；Ladder Figure3/p3三支与各层连接；HEG Fig1/p1生成/挖掘/初始及终模型回路；SSMRPE Fig1/p3图/权重/投影/嵌入/分类；CoSpace Fig2/p2对应区/联合图/公共子空间/区外分类。耦合Tucker局部恢复示意、SSRLSC精度曲线和聚类解混结果不是独立主框架，三篇留白。作者两个代码URL仅链接。EELS所用p1/p8实际STEM电子能量损失、合成spectrum-lines，不把作者hyperspectral用词自动当光学HSI；范围留候选，原Ultramicroscopy2019注册源外保留，未读其他版本/提取图，不自动排。总903、890确认/13暂定、审计874、601图（506篇有图）、三维135、203标签、来源456/346/101；114现103关联/5排/6已读范围关系待，107原摘要/七旧书目，指定集合已处理但非年度或作者全集。Jun182及主要未决不变，其他词/年/场所/作者继续，0新全文/逐版/性能/代码检查。[最后指定项与单版主框架](sources/arxiv-2018-final-fourteen-hsi-directory-2026-10-14.json)。
+
 2026-10-14 arXiv2018原rows90–99九新增/六主要原图，周峻KCF只复用书目。Optics Express2018光纤散斑、TIP2019 ALMM/高维双边NLM、TGRS2020 ULTRA-V按白名单，其余注意力选带/三维地形/缩短并行GRU/变密度SP-FTI/无泄漏评测按arXiv；Access、WHISPERS、ICASSP、LGRS只正式元数据，不扩白名单。注意力选带API旧题名与所用PDF当前题名分列，当前题名同注册及同序四作者可受控关联，Pablo Ribalta缩写与全名保留。六主图各一：光纤Fig2/p5 STM校准完整、43独立波长通道，未画反演不补；注意力Fig1/p2三模块/融合完整；ALMM Fig2/p4两个字典/丰度/尺度完整；GRU Fig4/p3整体及张量尺寸，原名St-SS-GRU，pGRU另图不拼接；VDS SP-FTI Figure1/p2采集原理完整；高维滤波Fig2/p3完整聚类/系数/卷积/重组，原RGB示意与所用p9实际33带/p10实际200带HSI分列。新SP-FTI p2明确变密度不同于前稿多层采样，p8[8]直接引1809.00950，ICASSP同题新稿书目解开旧稿误候选，两篇不同工作关系分列，不重读旧版。SWIR所用p1 LiDAR派生DEM/p2实际260带真实几何加入HS3D，输出地形类别图不是原始点云逐点预测；其场景/光谱/结果无框架。ULTRA-V通用CP示意、评测稿验证1D CNN不当完整主框架，三篇留白。评测稿贡献是无重叠训练块/测试移除与划分，不重复建数据资源。作者两个代码/划分URL只链接不访问。总893、880确认/13暂定、审计864、594图（499篇有图）、三维135、203标签、来源453/339/101；114现93关联/5排/16待，前100条96摘要/四旧书目、五已读范围/关系待、后14未新读/三旧书目。Jun182未决不变，0新全文/逐版/性能/代码检查。[必要实际输入与六主要原图](sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14.json)。
 
 2026-10-14 arXiv2018原rows80–89九新增/五主要原图，SSGN只复用书目。Rényi多变量信息选带按TPAMI注册2019先行信息，原占位1-1/无卷期保留原响应，不当正式页码、不猜最终年卷页；所用p16实际AVIRIS220带支持直接HSI。CDCL、张量对齐及RLPA按TGRS2019，季节谱变化HSI/MS融合按TIP2020，其余SP-FTI、MDCPE、端元缩减、CLEOT四arXiv。CLEOT CVIU2020只书目源外，Viven/Vivien两拼写保留，p12实际ROSIS103带；端元缩减实际数据表包含Salinas-A/Pavia/Cuprite等，不因摘要同时称MS排除。SP-FTI同序三作者异题ICASSP2019候选缺明确版本关系暂不并，另外题名查询异稿不关联。各一主图：CDCL Fig2/p3更新回路与ERW完整；TA Fig1/p2共享投影/子空间完整，核心对齐非完整分类/场景三维；SP-FTI Figure1/p2光学采集原理完整、仅数值验证不宣称实物；MDCPE Fig2/p3训练/测试/图例完整；RLPA Fig1/p2 SSPTM和标签清理完整，标签噪声非影像去噪。其余四无独立框架留白，不用结果/二维玩具分类代替，不追其他版。RLPA作者代码只URL；端元缩减被引工具不是作者代码。总884、871确认/13暂定、审计855、588图（493篇有图）、三维134、203标签、来源449/334/101；114现84关联/5排/25待，前90条87摘要/三旧书目、五已读范围/关系待、后24未新读/四旧书目。Jun182及主要作者未决不变，其他词/年/场所及作者继续，0新全文/逐版/性能/代码检查。[单版必要资料与五主要原图](sources/arxiv-2018-eleventh-ten-hsi-directory-2026-10-14.json)。
@@ -401,7 +403,7 @@
 | Optics Letters | journal | 最早可用目录至 2026 | 2007–2010年度Crossref题名六成像词及16系统/重建词已扫；关系受限候选和出版社全目录/其他年度待查 |
 | Nature Communications | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
 | Nature Methods | journal | 最早可用目录至 2026 | 尚未独立系统检索；见上方已执行年度记录 |
-| arXiv | preprint | 最早可用目录至 2026 | 至2017指定集合已逐批处置但有范围/关系待；2018指定114前100条已处理，93关联/5排/16待；后续年份、其他词及无关键词研究待查 |
+| arXiv | preprint | 最早可用目录至 2026 | 至2017指定集合已逐批处置但有范围/关系待；2018指定114已处理，103关联/5排/6范围关系待，非年度全集；后续年份、其他词及无关键词研究待查 |
 | Optics Express | specialist_journal | 最早可用目录至 2026 | 2007 DD-CASSI 定向核验；年度全量仍未检索 |
 
 ## 当前缺口
