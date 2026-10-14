@@ -1,5 +1,7 @@
 # 周峻老师高光谱论文调研
 
+2026-10-14 TGRS2020完整771条原注册逐项核目标个人ORCID与完整Jun Zhou姓名，两口径均仅两已有工作：Superpixel-Level Weighted Label Propagation、Spectral Mixture Model Inspired Network Architectures。作者字段ORCID命中仅支持本篇，不转移身份/共同作者，也不证明自然人年度或历年全集；未重读这两旧论文或重复取图，Jun182不变。领域三原摘要/百新增中HS-LiDAR耦合稿Zhu Li不混目标Jun Zhou。[完整年度原注册身份交叉](sources/tgrs-2020-registered-hsi-directory-2026-10-14.json)。
+
 2026-10-14在TGRS2019完整853条原注册中逐项核目标个人ORCID，只五篇命中且均已有目录ID：CRF、TV-NTF、多尺度超像素、Gaussian-Gabor、L0恢复。相较原121题名子集扩展了身份检索边界，但没有新增Jun身份/论文确认，Jun182不变；未以共作者/缩写转移身份，不读参考文献，不证明自然人年度或历年全集。领域四新增无目标身份转移。[完整注册集身份交叉](sources/tgrs-2019-no-hsi-word-optical-scope-2026-10-14.json)。
 
 2026-10-14混并差集六条原注册定位五成功一429，四观看眼动/注视密度/视觉舒适度原题名按声明视觉感知主题暂排，只题名/作者、0摘要/PDF；两书目/实际输入、目标身份或合格来源待，不把429当零结果，不重试。原机构/作者字段不转移身份，132survey/341元数据未映射，Jun182不变。领域胶囊正式含Jun Li而所用稿不含，署名差异保留、不混Jun Zhou，不新增作者确认。[原始书目与身份边界](sources/tgrs-2019-remaining-eighty-one-and-jun-six-2026-10-14.json)。
