@@ -136782,17 +136782,44 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2019.2948865",
-      "representation": "未获取。",
+      "representation": "沿三个张量模态映射至低维子空间，然后用三维卷积、池化和全连接Softmax分类。",
       "tags": [],
-      "summary": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "readingNote": "仅作者原注册题名、DOI、书目与正式日期核验，目录优先；任务分类依据题名暂定。原摘要/实际方法、一个可获取版本的主图是资料待办；不猜补、不据索引无链接宣称付费或无公开版。",
+      "summary": "以多线性映射层先压缩谱空冗余，再由三维卷积进行高光谱影像分类。",
+      "input": "局部高光谱图块。",
+      "output": "像元类别预测。",
+      "mechanism": "沿三个张量模态映射至低维子空间，然后用三维卷积、池化和全连接Softmax分类。",
+      "readingNote": "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。所用1908.09526v1官方未给正式DOI，精确规范题名/同序四作者受控关联TGRS2020，只这一稿；不推其他版内容相同。只Fig2完整映射/卷积/全连接主网络，不追加Fig3核对照；三模态/3D卷积是空间-光谱数据轴，不是几何三维。",
       "paper": "https://doi.org/10.1109/tgrs.2019.2948865",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1908.09526v1",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2019.2948865",
+          "sourceVersion": "arXiv1908.09526v1",
+          "figureLabel": "Fig. 2.",
+          "page": 6,
+          "caption": "Fig. 2. The architecture of our proposed MCNN.",
+          "verificationNote": "所用1908.09526v1官方未给正式DOI，精确规范题名/同序四作者受控关联TGRS2020，只这一稿；不推其他版内容相同。只Fig2完整映射/卷积/全连接主网络，不追加Fig3核对照；三模态/3D卷积是空间-光谱数据轴，不是几何三维。 完整原图直接裁切、视觉核对，一张。",
+          "path": "figures/tgrs-2020-hsi-2948865/framework.png",
+          "width": 1479,
+          "height": 1497,
+          "verifiedAt": "2026-10-14",
+          "verificationStatus": "verified",
+          "sha256": "474ada5fdcc4730d17fd147dbb8f0972dc321c5c02156ce57b77cfa441f0e901",
+          "attribution": "Rui Li, Zhibin Pan, Yang Wang, Ping Wang",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              60,
+              53,
+              553,
+              552
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "58",
       "issue": "5",
       "page": "3136-3147",
@@ -136801,16 +136828,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者原注册题名明确直接高光谱研究；实际方法/输入未核，题名任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要/实际方法和可获取的单版主图仍资料待，不阻塞目录。",
+        "relationNote": "所用原摘要/主图确认直接高光谱，数据谱轴与真实几何分列；无独立主框架可留白。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以多线性映射层先压缩谱空冗余，再由三维卷积进行高光谱影像分类。",
+        "datasets": "只确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只书目、范围与一个主图，性能未核。",
+        "conclusions": "原摘要与主图必要内容确认主要任务，不摘录性能。",
+        "limitations": "每篇只所用一个版本、一张主要框架；其他版本/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -136819,6 +136846,23 @@
             "level": "原Crossref年度完整注册书目，gzip快照可核",
             "supports": [
               "正式TGRS2020白名单来源、题名明确HSI、同序作者与DOI/出版日期/卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1908.09526v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方指定版本完整原摘要（复用已存原API）",
+            "supports": [
+              "以多线性映射层先压缩谱空冗余，再由三维卷积进行高光谱影像分类。",
+              "所用1908.09526v1官方未给正式DOI，精确规范题名/同序四作者受控关联TGRS2020，只这一稿；不推其他版内容相同。只Fig2完整映射/卷积/全连接主网络，不追加Fig3核对照；三模态/3D卷积是空间-光谱数据轴，不是几何三维。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1908.09526v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页与主图/图注必要选读",
+            "supports": [
+              "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。所用1908.09526v1官方未给正式DOI，精确规范题名/同序四作者受控关联TGRS2020，只这一稿；不推其他版内容相同。只Fig2完整映射/卷积/全连接主网络，不追加Fig3核对照；三模态/3D卷积是空间-光谱数据轴，不是几何三维。"
             ]
           }
         ],
@@ -136847,7 +136891,7 @@
           },
           {
             "id": "tgrs-2020-hsi-2948865-public-version-bibliography",
-            "type": "公开预印本书目（材料待整理）",
+            "type": "唯一所用公开稿",
             "url": "https://arxiv.org/abs/1908.09526v1",
             "title": "A Convolutional Neural Network with Mapping Layers for Hyperspectral Image Classification",
             "authors": [
@@ -136861,13 +136905,35 @@
             "arxivVersion": 1,
             "firstSubmittedAt": "2019-08-26T08:42:26Z",
             "updatedAt": "2019-08-26T08:42:26Z",
-            "readingProgress": "title_only",
-            "metadataStatus": "仅官方指定ID列表返回元数据，未读正文/其他版本",
+            "readingProgress": "abstract_read",
+            "metadataStatus": "只所用版本官方元数据/首页已核，不检查其他或最新版本",
             "sourcePolicyStatus": "arxiv_allowed",
-            "relation": "官方arXiv无正式DOI；精确规范题名与同序作者支持候选公开版书目关联，只元数据，未读摘要/PDF，不声称两版内容完全相同。"
+            "relation": "所用1908.09526v1官方未给正式DOI，精确规范题名/同序四作者受控关联TGRS2020，只这一稿；不推其他版内容相同。只Fig2完整映射/卷积/全连接主网络，不追加Fig3核对照；三模态/3D卷积是空间-光谱数据轴，不是几何三维。",
+            "pdfUrl": "https://arxiv.org/pdf/1908.09526v1",
+            "localFile": "research/hyperspectral/sources/tgrs-2020-seven-public-materials-and-2021-jun-2026-10-14-1908.09526v1.pdf.gz",
+            "compression": "gzip"
           }
         ],
-        "methodFamilyId": "tgrs-2020-hsi-2948865"
+        "methodFamilyId": "tgrs-2020-hsi-2948865",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与单版主图/必要图注核验，谱空卷积和图结构不是几何三维；无独立框架不凑图。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "7c39a8266dec73f2491506685a8846ef3bc4c65b4e43a0db16e1d417953e2d93",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2020-01-01%2Cuntil-pub-date%3A2020-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/abs/1908.09526v1",
+            "https://arxiv.org/pdf/1908.09526v1"
+          ]
+        }
       },
       "arxivId": "1908.09526"
     },
@@ -136885,17 +136951,44 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2019.2949180",
-      "representation": "未获取。",
+      "representation": "多个尺度图随图卷积迭代更新节点关系，融合各尺度输出并以交叉熵监督分类。",
       "tags": [],
-      "summary": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "readingNote": "仅作者原注册题名、DOI、书目与正式日期核验，目录优先；任务分类依据题名暂定。原摘要/实际方法、一个可获取版本的主图是资料待办；不猜补、不据索引无链接宣称付费或无公开版。",
+      "summary": "以可动态更新的多尺度超像素图卷积提取判别特征并完成高光谱分类。",
+      "input": "高光谱影像及SLIC超像素，在不同邻域尺度构建图。",
+      "output": "像元地物类别图。",
+      "mechanism": "多个尺度图随图卷积迭代更新节点关系，融合各尺度输出并以交叉熵监督分类。",
+      "readingNote": "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。所用1905.06133v1官方元数据无正式DOI，精确规范题名/同序六作者受控关联TGRS2020，不能说官方arXiv明确给DOI；只Fig1总框架，不追加邻域示意。图的几何拓扑/对象外观不是三维场景，仍普通HSI分类。",
       "paper": "https://doi.org/10.1109/tgrs.2019.2949180",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1905.06133v1",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2019.2949180",
+          "sourceVersion": "arXiv1905.06133v1",
+          "figureLabel": "Fig. 1.",
+          "page": 4,
+          "caption": "Fig. 1. The framework of our algorithm. (a) is the original hyperspectral image. (b) shows the superpixels segmented by SLIC algorithm [60], where a local region of the hyperspectral image is exhibited which contains eight superpixels x1, x2, · · · , x8. In (c), the circles and green lines represent the graph nodes and edges, respectively, where different colors of the nodes represent different land-cover types. Speciﬁcally, at each scale, the edge weight is updated gradually along with the convolution on graph nodes, so that the graph can be dynamically reﬁned. Here two dynamic graph convolutional layers are employed for each scale, where softplus [61] is utilized as the activation function. In (d), the classiﬁcation result is acquired by integrating the multi-scale outputs, and the cross-entropy loss is used to penalize the label difference between the output and the seed superpixels.",
+          "verificationNote": "所用1905.06133v1官方元数据无正式DOI，精确规范题名/同序六作者受控关联TGRS2020，不能说官方arXiv明确给DOI；只Fig1总框架，不追加邻域示意。图的几何拓扑/对象外观不是三维场景，仍普通HSI分类。 完整原图直接裁切、视觉核对，一张。",
+          "path": "figures/tgrs-2020-hsi-2949180/framework.png",
+          "width": 1545,
+          "height": 894,
+          "verifiedAt": "2026-10-14",
+          "verificationStatus": "verified",
+          "sha256": "11270475a8ac3de0000d81927775e8949e8d3820ac865e8396b0ea97b6889d3f",
+          "attribution": "Sheng Wan, Chen Gong, Ping Zhong, Bo Du, Lefei Zhang, Jian Yang",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              52,
+              563,
+              350
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "58",
       "issue": "5",
       "page": "3162-3177",
@@ -136904,16 +136997,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者原注册题名明确直接高光谱研究；实际方法/输入未核，题名任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要/实际方法和可获取的单版主图仍资料待，不阻塞目录。",
+        "relationNote": "所用原摘要/主图确认直接高光谱，数据谱轴与真实几何分列；无独立主框架可留白。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以可动态更新的多尺度超像素图卷积提取判别特征并完成高光谱分类。",
+        "datasets": "只确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只书目、范围与一个主图，性能未核。",
+        "conclusions": "原摘要与主图必要内容确认主要任务，不摘录性能。",
+        "limitations": "每篇只所用一个版本、一张主要框架；其他版本/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -136922,6 +137015,23 @@
             "level": "原Crossref年度完整注册书目，gzip快照可核",
             "supports": [
               "正式TGRS2020白名单来源、题名明确HSI、同序作者与DOI/出版日期/卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1905.06133v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方指定版本完整原摘要（复用已存原API）",
+            "supports": [
+              "以可动态更新的多尺度超像素图卷积提取判别特征并完成高光谱分类。",
+              "所用1905.06133v1官方元数据无正式DOI，精确规范题名/同序六作者受控关联TGRS2020，不能说官方arXiv明确给DOI；只Fig1总框架，不追加邻域示意。图的几何拓扑/对象外观不是三维场景，仍普通HSI分类。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1905.06133v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页与主图/图注必要选读",
+            "supports": [
+              "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。所用1905.06133v1官方元数据无正式DOI，精确规范题名/同序六作者受控关联TGRS2020，不能说官方arXiv明确给DOI；只Fig1总框架，不追加邻域示意。图的几何拓扑/对象外观不是三维场景，仍普通HSI分类。"
             ]
           }
         ],
@@ -136952,7 +137062,7 @@
           },
           {
             "id": "tgrs-2020-hsi-2949180-public-version-bibliography",
-            "type": "公开预印本书目（材料待整理）",
+            "type": "唯一所用公开稿",
             "url": "https://arxiv.org/abs/1905.06133v1",
             "title": "Multi-scale Dynamic Graph Convolutional Network for Hyperspectral Image Classification",
             "authors": [
@@ -136968,13 +137078,35 @@
             "arxivVersion": 1,
             "firstSubmittedAt": "2019-05-14T14:27:37Z",
             "updatedAt": "2019-05-14T14:27:37Z",
-            "readingProgress": "title_only",
-            "metadataStatus": "仅官方指定ID列表返回元数据，未读正文/其他版本",
+            "readingProgress": "abstract_read",
+            "metadataStatus": "只所用版本官方元数据/首页已核，不检查其他或最新版本",
             "sourcePolicyStatus": "arxiv_allowed",
-            "relation": "官方arXiv无正式DOI；精确规范题名与同序作者支持候选公开版书目关联，只元数据，未读摘要/PDF，不声称两版内容完全相同。"
+            "relation": "所用1905.06133v1官方元数据无正式DOI，精确规范题名/同序六作者受控关联TGRS2020，不能说官方arXiv明确给DOI；只Fig1总框架，不追加邻域示意。图的几何拓扑/对象外观不是三维场景，仍普通HSI分类。",
+            "pdfUrl": "https://arxiv.org/pdf/1905.06133v1",
+            "localFile": "research/hyperspectral/sources/tgrs-2020-seven-public-materials-and-2021-jun-2026-10-14-1905.06133v1.pdf.gz",
+            "compression": "gzip"
           }
         ],
-        "methodFamilyId": "tgrs-2020-hsi-2949180"
+        "methodFamilyId": "tgrs-2020-hsi-2949180",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与单版主图/必要图注核验，谱空卷积和图结构不是几何三维；无独立框架不凑图。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "fa512fc5935e8705c801af0d17544cc876dd5cb6c3559ccffb6f8133fd080761",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2020-01-01%2Cuntil-pub-date%3A2020-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/abs/1905.06133v1",
+            "https://arxiv.org/pdf/1905.06133v1"
+          ]
+        }
       },
       "arxivId": "1905.06133"
     },
@@ -138544,17 +138676,44 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2019.2961947",
-      "representation": "未获取。",
+      "representation": "以ConvLSTM单元提取谱空依赖，经池化、展平、全连接层输出类别；作者另有二维变体但只保留一主要三维分支图。",
       "tags": [],
-      "summary": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "readingNote": "仅作者原注册题名、DOI、书目与正式日期核验，目录优先；任务分类依据题名暂定。原摘要/实际方法、一个可获取版本的主图是资料待办；不猜补、不据索引无链接宣称付费或无公开版。",
+      "summary": "扩展ConvLSTM处理高光谱局部图块，联合建模谱带长距离依赖和空间结构用于分类。",
+      "input": "高光谱局部图块；所选SSCL3DNN分支使用PCA后保留的谱空立方体。",
+      "output": "像元地物类别。",
+      "mechanism": "以ConvLSTM单元提取谱空依赖，经池化、展平、全连接层输出类别；作者另有二维变体但只保留一主要三维分支图。",
+      "readingNote": "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1905.03577v2，明确DOI/同题名同序六作者；所用版本更新2022、首次2019及正式TGRS2020日期分列，不逐版对读。只Fig2 SSCL3DNN完整分支作为唯一主图，Fig1 SSCL2DNN/SaCL2DNN与Fig3单元子图不追加。3D轴是两空间维+谱维，不是三维场景或视频时序；谱维LSTM不当动态场景。",
       "paper": "https://doi.org/10.1109/tgrs.2019.2961947",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1905.03577v2",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2019.2961947",
+          "sourceVersion": "arXiv1905.03577v2",
+          "figureLabel": "Fig. 2.",
+          "page": 7,
+          "caption": "Fig. 2. The proposed spatial-spectral ConvLSTM 3-D Neural Network (SSCL3DNN) structure.",
+          "verificationNote": "只1905.03577v2，明确DOI/同题名同序六作者；所用版本更新2022、首次2019及正式TGRS2020日期分列，不逐版对读。只Fig2 SSCL3DNN完整分支作为唯一主图，Fig1 SSCL2DNN/SaCL2DNN与Fig3单元子图不追加。3D轴是两空间维+谱维，不是三维场景或视频时序；谱维LSTM不当动态场景。 完整原图直接裁切、视觉核对，一张。",
+          "path": "figures/tgrs-2020-hsi-2961947/framework.png",
+          "width": 1440,
+          "height": 384,
+          "verifiedAt": "2026-10-14",
+          "verificationStatus": "verified",
+          "sha256": "96571aa9f4d313badb3c8e06a1c7dd28d24c58bcea6b68b07a3a5702f22d95a2",
+          "attribution": "Wen-Shuai Hu, Heng-Chao Li, Lei Pan, Wei Li, Ran Tao, Qian Du",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              68,
+              58,
+              548,
+              186
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "58",
       "issue": "6",
       "page": "4237-4250",
@@ -138563,16 +138722,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者原注册题名明确直接高光谱研究；实际方法/输入未核，题名任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要/实际方法和可获取的单版主图仍资料待，不阻塞目录。",
+        "relationNote": "所用原摘要/主图确认直接高光谱，数据谱轴与真实几何分列；无独立主框架可留白。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "扩展ConvLSTM处理高光谱局部图块，联合建模谱带长距离依赖和空间结构用于分类。",
+        "datasets": "只确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只书目、范围与一个主图，性能未核。",
+        "conclusions": "原摘要与主图必要内容确认主要任务，不摘录性能。",
+        "limitations": "每篇只所用一个版本、一张主要框架；其他版本/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -138581,6 +138740,23 @@
             "level": "原Crossref年度完整注册书目，gzip快照可核",
             "supports": [
               "正式TGRS2020白名单来源、题名明确HSI、同序作者与DOI/出版日期/卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1905.03577v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方指定版本完整原摘要（复用已存原API）",
+            "supports": [
+              "扩展ConvLSTM处理高光谱局部图块，联合建模谱带长距离依赖和空间结构用于分类。",
+              "只1905.03577v2，明确DOI/同题名同序六作者；所用版本更新2022、首次2019及正式TGRS2020日期分列，不逐版对读。只Fig2 SSCL3DNN完整分支作为唯一主图，Fig1 SSCL2DNN/SaCL2DNN与Fig3单元子图不追加。3D轴是两空间维+谱维，不是三维场景或视频时序；谱维LSTM不当动态场景。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1905.03577v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页与主图/图注必要选读",
+            "supports": [
+              "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1905.03577v2，明确DOI/同题名同序六作者；所用版本更新2022、首次2019及正式TGRS2020日期分列，不逐版对读。只Fig2 SSCL3DNN完整分支作为唯一主图，Fig1 SSCL2DNN/SaCL2DNN与Fig3单元子图不追加。3D轴是两空间维+谱维，不是三维场景或视频时序；谱维LSTM不当动态场景。"
             ]
           }
         ],
@@ -138611,7 +138787,7 @@
           },
           {
             "id": "tgrs-2020-hsi-2961947-public-version-bibliography",
-            "type": "公开预印本书目（材料待整理）",
+            "type": "唯一所用公开稿",
             "url": "https://arxiv.org/abs/1905.03577v2",
             "title": "Spatial-Spectral Feature Extraction via Deep ConvLSTM Neural Networks for Hyperspectral Image Classification",
             "authors": [
@@ -138627,13 +138803,35 @@
             "arxivVersion": 2,
             "firstSubmittedAt": "2019-05-09T12:43:11Z",
             "updatedAt": "2022-04-11T03:41:57Z",
-            "readingProgress": "title_only",
-            "metadataStatus": "仅官方指定ID列表返回元数据，未读正文/其他版本",
+            "readingProgress": "abstract_read",
+            "metadataStatus": "只所用版本官方元数据/首页已核，不检查其他或最新版本",
             "sourcePolicyStatus": "arxiv_allowed",
-            "relation": "官方arXiv元数据的明确DOI/同题名同序作者受控关联；只版本书目，原摘要/PDF与主图未整理，不表示已读该稿。"
+            "relation": "只1905.03577v2，明确DOI/同题名同序六作者；所用版本更新2022、首次2019及正式TGRS2020日期分列，不逐版对读。只Fig2 SSCL3DNN完整分支作为唯一主图，Fig1 SSCL2DNN/SaCL2DNN与Fig3单元子图不追加。3D轴是两空间维+谱维，不是三维场景或视频时序；谱维LSTM不当动态场景。",
+            "pdfUrl": "https://arxiv.org/pdf/1905.03577v2",
+            "localFile": "research/hyperspectral/sources/tgrs-2020-seven-public-materials-and-2021-jun-2026-10-14-1905.03577v2.pdf.gz",
+            "compression": "gzip"
           }
         ],
-        "methodFamilyId": "tgrs-2020-hsi-2961947"
+        "methodFamilyId": "tgrs-2020-hsi-2961947",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与单版主图/必要图注核验，谱空卷积和图结构不是几何三维；无独立框架不凑图。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "2218487b88368a00701f4cadae8fa20f8d412c2e43b8c8808bac153ace1f55af",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2020-01-01%2Cuntil-pub-date%3A2020-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/abs/1905.03577v2",
+            "https://arxiv.org/pdf/1905.03577v2"
+          ]
+        }
       },
       "arxivId": "1905.03577"
     },
@@ -138815,35 +139013,63 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2019.2957251",
-      "representation": "未获取。",
+      "representation": "空间不变滤波与超像素聚合，加上极坐标傅里叶连续方向梯度描述，拼接不同组与阶数的特征。",
       "tags": [],
-      "summary": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "readingNote": "仅作者原注册题名、DOI、书目与正式日期核验，目录优先；任务分类依据题名暂定。原摘要/实际方法、一个可获取版本的主图是资料待办；不猜补、不据索引无链接宣称付费或无公开版。",
+      "summary": "结合空间与傅里叶频域的不变属性轮廓，提取较稳健的高光谱分类特征。",
+      "input": "分组高光谱影像及局部空间结构。",
+      "output": "拼接的空间/频率不变特征表示，用于后续特征学习或降维/分类。",
+      "mechanism": "空间不变滤波与超像素聚合，加上极坐标傅里叶连续方向梯度描述，拼接不同组与阶数的特征。",
+      "readingNote": "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。所用1912.08847v1明确DOI，同题名及同序六作者关联；只Fig5整体HSI分组/SIF-FIF/堆叠/FL或DR流程，不追加Fig4分解子步骤。原图终点是特征学习/降维，不补画分类器；frequency是空间频域，不当光学波长新增模态。作者代码主页原摘要提供，只记链接。",
       "paper": "https://doi.org/10.1109/tgrs.2019.2957251",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1912.08847v1",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2019.2957251",
+          "sourceVersion": "arXiv1912.08847v1",
+          "figureLabel": "Fig. 5.",
+          "page": 7,
+          "caption": "Fig. 5. The proposed IAPs-based classiﬁcation framework.",
+          "verificationNote": "所用1912.08847v1明确DOI，同题名及同序六作者关联；只Fig5整体HSI分组/SIF-FIF/堆叠/FL或DR流程，不追加Fig4分解子步骤。原图终点是特征学习/降维，不补画分类器；frequency是空间频域，不当光学波长新增模态。作者代码主页原摘要提供，只记链接。 完整原图直接裁切、视觉核对，一张。",
+          "path": "figures/tgrs-2020-hsi-2957251/framework.png",
+          "width": 1545,
+          "height": 648,
+          "verifiedAt": "2026-10-14",
+          "verificationStatus": "verified",
+          "sha256": "664f9dbde677ab75f03aa5093c6be6aed32182325e57ff8fb371603ad6096055",
+          "attribution": "Danfeng Hong, Xin Wu, Pedram Ghamisi, Jocelyn Chanussot, Naoto Yokoya, Xiao Xiang Zhu",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              54,
+              563,
+              270
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "58",
       "issue": "6",
       "page": "3791-3808",
       "citation": "@article{tgrs-2020-hsi-2957251,\n  title = {Invariant Attribute Profiles: A Spatial-Frequency Joint Feature Extractor for Hyperspectral Image Classification},\n  author = {Danfeng Hong and Xin Wu and Pedram Ghamisi and Jocelyn Chanussot and Naoto Yokoya and Xiao Xiang Zhu},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2020},\n  volume = {58},\n  number = {6},\n  pages = {3791--3808},\n  doi = {10.1109/tgrs.2019.2957251}\n}\n",
       "library": {
         "categoryIds": [
-          "land-cover-classification"
+          "land-cover-classification",
+          "spectral-dimensionality-reduction"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者原注册题名明确直接高光谱研究；实际方法/输入未核，题名任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要/实际方法和可获取的单版主图仍资料待，不阻塞目录。",
+        "relationNote": "所用原摘要/主图确认直接高光谱，数据谱轴与真实几何分列；无独立主框架可留白。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "结合空间与傅里叶频域的不变属性轮廓，提取较稳健的高光谱分类特征。",
+        "datasets": "只确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只书目、范围与一个主图，性能未核。",
+        "conclusions": "原摘要与主图必要内容确认主要任务，不摘录性能。",
+        "limitations": "每篇只所用一个版本、一张主要框架；其他版本/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -138852,6 +139078,23 @@
             "level": "原Crossref年度完整注册书目，gzip快照可核",
             "supports": [
               "正式TGRS2020白名单来源、题名明确HSI、同序作者与DOI/出版日期/卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1912.08847v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方指定版本完整原摘要（复用已存原API）",
+            "supports": [
+              "结合空间与傅里叶频域的不变属性轮廓，提取较稳健的高光谱分类特征。",
+              "所用1912.08847v1明确DOI，同题名及同序六作者关联；只Fig5整体HSI分组/SIF-FIF/堆叠/FL或DR流程，不追加Fig4分解子步骤。原图终点是特征学习/降维，不补画分类器；frequency是空间频域，不当光学波长新增模态。作者代码主页原摘要提供，只记链接。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1912.08847v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页与主图/图注必要选读",
+            "supports": [
+              "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。所用1912.08847v1明确DOI，同题名及同序六作者关联；只Fig5整体HSI分组/SIF-FIF/堆叠/FL或DR流程，不追加Fig4分解子步骤。原图终点是特征学习/降维，不补画分类器；frequency是空间频域，不当光学波长新增模态。作者代码主页原摘要提供，只记链接。"
             ]
           }
         ],
@@ -138882,7 +139125,7 @@
           },
           {
             "id": "tgrs-2020-hsi-2957251-public-version-bibliography",
-            "type": "公开预印本书目（材料待整理）",
+            "type": "唯一所用公开稿",
             "url": "https://arxiv.org/abs/1912.08847v1",
             "title": "Invariant Attribute Profiles: A Spatial-Frequency Joint Feature Extractor for Hyperspectral Image Classification",
             "authors": [
@@ -138898,15 +139141,38 @@
             "arxivVersion": 1,
             "firstSubmittedAt": "2019-12-18T19:27:07Z",
             "updatedAt": "2019-12-18T19:27:07Z",
-            "readingProgress": "title_only",
-            "metadataStatus": "仅官方指定ID列表返回元数据，未读正文/其他版本",
+            "readingProgress": "abstract_read",
+            "metadataStatus": "只所用版本官方元数据/首页已核，不检查其他或最新版本",
             "sourcePolicyStatus": "arxiv_allowed",
-            "relation": "官方arXiv元数据的明确DOI/同题名同序作者受控关联；只版本书目，原摘要/PDF与主图未整理，不表示已读该稿。"
+            "relation": "所用1912.08847v1明确DOI，同题名及同序六作者关联；只Fig5整体HSI分组/SIF-FIF/堆叠/FL或DR流程，不追加Fig4分解子步骤。原图终点是特征学习/降维，不补画分类器；frequency是空间频域，不当光学波长新增模态。作者代码主页原摘要提供，只记链接。",
+            "pdfUrl": "https://arxiv.org/pdf/1912.08847v1",
+            "localFile": "research/hyperspectral/sources/tgrs-2020-seven-public-materials-and-2021-jun-2026-10-14-1912.08847v1.pdf.gz",
+            "compression": "gzip"
           }
         ],
-        "methodFamilyId": "tgrs-2020-hsi-2957251"
+        "methodFamilyId": "tgrs-2020-hsi-2957251",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与单版主图/必要图注核验，谱空卷积和图结构不是几何三维；无独立框架不凑图。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "459c89c3da18c9d3deabd075b980f463e038dcff3440ae8e11d5a886a7259fff",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2020-01-01%2Cuntil-pub-date%3A2020-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/abs/1912.08847v1",
+            "https://arxiv.org/pdf/1912.08847v1"
+          ]
+        }
       },
-      "arxivId": "1912.08847"
+      "arxivId": "1912.08847",
+      "code": "https://sites.google.com/view/danfeng-hong/data-code"
     },
     {
       "id": "tgrs-2020-hsi-2961599",
@@ -138922,17 +139188,44 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2019.2961599",
-      "representation": "未获取。",
+      "representation": "先降维和超像素分割，再提取区域谱空特征并构建收缩加权图，以图分类器传播标签回到像元。",
       "tags": [],
-      "summary": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "readingNote": "仅作者原注册题名、DOI、书目与正式日期核验，目录优先；任务分类依据题名暂定。原摘要/实际方法、一个可获取版本的主图是资料待办；不猜补、不据索引无链接宣称付费或无公开版。",
+      "summary": "以适合高光谱的超像素压缩图表示，利用少量标注完成半监督影像分类。",
+      "input": "高光谱影像及少量区域/像元标签。",
+      "output": "高光谱像元类别图。",
+      "mechanism": "先降维和超像素分割，再提取区域谱空特征并构建收缩加权图，以图分类器传播标签回到像元。",
+      "readingNote": "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1903.06548v3，明确DOI及同题名/同序三作者；官方Aviles-Rivero/正式Aviles Rivero与Schönlieb缩写拼写分列。所用页眉SEPTEMBER2014是模板，不改正式2020。只Fig2完整降维/超像素/构图/分类总流程；图节点关系不当三维几何。",
       "paper": "https://doi.org/10.1109/tgrs.2019.2961599",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1903.06548v3",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2019.2961599",
+          "sourceVersion": "arXiv1903.06548v3",
+          "figureLabel": "Fig. 2.",
+          "page": 3,
+          "caption": "Fig. 2. The proposed framework for the method. A HSI is read in and dimensionally reduced before superpixel segmentation occurs. Features are then extracted from each superpixel and, when combined with the initial labelling, are used to create a superpixel based graph. A graph classiﬁer is used to propagate information across the graph. The ﬁnal labels are then combined with the superpixel map to give the classiﬁcation of the HSI.",
+          "verificationNote": "只1903.06548v3，明确DOI及同题名/同序三作者；官方Aviles-Rivero/正式Aviles Rivero与Schönlieb缩写拼写分列。所用页眉SEPTEMBER2014是模板，不改正式2020。只Fig2完整降维/超像素/构图/分类总流程；图节点关系不当三维几何。 完整原图直接裁切、视觉核对，一张。",
+          "path": "figures/tgrs-2020-hsi-2961599/framework.png",
+          "width": 1557,
+          "height": 720,
+          "verifiedAt": "2026-10-14",
+          "verificationStatus": "verified",
+          "sha256": "8ba33c6659a579b16970719a7afccc45e0b50904988bff79a849e71506733950",
+          "attribution": "Philip Sellars, Angelica Aviles-Rivero, Carola-Bibiane Schönlieb",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              44,
+              54,
+              563,
+              294
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "58",
       "issue": "6",
       "page": "4180-4193",
@@ -138941,16 +139234,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者原注册题名明确直接高光谱研究；实际方法/输入未核，题名任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要/实际方法和可获取的单版主图仍资料待，不阻塞目录。",
+        "relationNote": "所用原摘要/主图确认直接高光谱，数据谱轴与真实几何分列；无独立主框架可留白。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以适合高光谱的超像素压缩图表示，利用少量标注完成半监督影像分类。",
+        "datasets": "只确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只书目、范围与一个主图，性能未核。",
+        "conclusions": "原摘要与主图必要内容确认主要任务，不摘录性能。",
+        "limitations": "每篇只所用一个版本、一张主要框架；其他版本/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -138959,6 +139252,23 @@
             "level": "原Crossref年度完整注册书目，gzip快照可核",
             "supports": [
               "正式TGRS2020白名单来源、题名明确HSI、同序作者与DOI/出版日期/卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1903.06548v3",
+            "checkedAt": "2026-10-14",
+            "level": "官方指定版本完整原摘要（复用已存原API）",
+            "supports": [
+              "以适合高光谱的超像素压缩图表示，利用少量标注完成半监督影像分类。",
+              "只1903.06548v3，明确DOI及同题名/同序三作者；官方Aviles-Rivero/正式Aviles Rivero与Schönlieb缩写拼写分列。所用页眉SEPTEMBER2014是模板，不改正式2020。只Fig2完整降维/超像素/构图/分类总流程；图节点关系不当三维几何。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1903.06548v3",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页与主图/图注必要选读",
+            "supports": [
+              "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1903.06548v3，明确DOI及同题名/同序三作者；官方Aviles-Rivero/正式Aviles Rivero与Schönlieb缩写拼写分列。所用页眉SEPTEMBER2014是模板，不改正式2020。只Fig2完整降维/超像素/构图/分类总流程；图节点关系不当三维几何。"
             ]
           }
         ],
@@ -138986,7 +139296,7 @@
           },
           {
             "id": "tgrs-2020-hsi-2961599-public-version-bibliography",
-            "type": "公开预印本书目（材料待整理）",
+            "type": "唯一所用公开稿",
             "url": "https://arxiv.org/abs/1903.06548v3",
             "title": "Superpixel Contracted Graph-Based Learning for Hyperspectral Image Classification",
             "authors": [
@@ -138999,13 +139309,35 @@
             "arxivVersion": 3,
             "firstSubmittedAt": "2019-03-14T13:23:43Z",
             "updatedAt": "2019-03-19T15:11:25Z",
-            "readingProgress": "title_only",
-            "metadataStatus": "仅官方指定ID列表返回元数据，未读正文/其他版本",
+            "readingProgress": "abstract_read",
+            "metadataStatus": "只所用版本官方元数据/首页已核，不检查其他或最新版本",
             "sourcePolicyStatus": "arxiv_allowed",
-            "relation": "官方arXiv元数据的明确DOI/同题名同序作者受控关联；只版本书目，原摘要/PDF与主图未整理，不表示已读该稿。"
+            "relation": "只1903.06548v3，明确DOI及同题名/同序三作者；官方Aviles-Rivero/正式Aviles Rivero与Schönlieb缩写拼写分列。所用页眉SEPTEMBER2014是模板，不改正式2020。只Fig2完整降维/超像素/构图/分类总流程；图节点关系不当三维几何。",
+            "pdfUrl": "https://arxiv.org/pdf/1903.06548v3",
+            "localFile": "research/hyperspectral/sources/tgrs-2020-seven-public-materials-and-2021-jun-2026-10-14-1903.06548v3.pdf.gz",
+            "compression": "gzip"
           }
         ],
-        "methodFamilyId": "tgrs-2020-hsi-2961599"
+        "methodFamilyId": "tgrs-2020-hsi-2961599",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与单版主图/必要图注核验，谱空卷积和图结构不是几何三维；无独立框架不凑图。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "5f4759bd24eb6c578d64826e8190dd6cdb310773f3c4aa0cdf51a8a3bc44e8fe",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2020-01-01%2Cuntil-pub-date%3A2020-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/abs/1903.06548v3",
+            "https://arxiv.org/pdf/1903.06548v3"
+          ]
+        }
       },
       "arxivId": "1903.06548"
     },
@@ -139754,16 +140086,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2020.2968541",
-      "representation": "未获取。",
+      "representation": "空间与光谱两套观测各作线性混合分解，以耦合项关联共享聚类，减少高度相关端元造成的歧义。",
       "tags": [],
-      "summary": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "readingNote": "仅作者原注册题名、DOI、书目与正式日期核验，目录优先；任务分类依据题名暂定。原摘要/实际方法、一个可获取版本的主图是资料待办；不猜补、不据索引无链接宣称付费或无公开版。",
+      "summary": "通过共享聚类耦合的矩阵共同分解，联合解混高光谱观测与像元空间上下文特征。",
+      "input": "高光谱光学观测与从同一场景提取的空间上下文特征。",
+      "output": "材料端元光谱、混合系数及共享空间/光谱签名聚类。",
+      "mechanism": "空间与光谱两套观测各作线性混合分解，以耦合项关联共享聚类，减少高度相关端元造成的歧义。",
+      "readingNote": "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1907.08511v2，官方明确DOI/同题名及同序四作者，正式2020/预印本2019分列。全稿仅图注检索Fig1–9均数据纹理/丰度/结果/聚类展示，无独立主方法框架；留白，不以结果图凑框架。空间上下文不是场景几何三维。",
       "paper": "https://doi.org/10.1109/tgrs.2020.2968541",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
+      "verificationLevel": "primary_abstract_verified",
       "frameworkFigures": [],
       "volume": "58",
       "issue": "7",
@@ -139773,16 +140105,16 @@
         "categoryIds": [
           "spectral-unmixing"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者原注册题名明确直接高光谱研究；实际方法/输入未核，题名任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要/实际方法和可获取的单版主图仍资料待，不阻塞目录。",
+        "relationNote": "所用原摘要/主图确认直接高光谱，数据谱轴与真实几何分列；无独立主框架可留白。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "通过共享聚类耦合的矩阵共同分解，联合解混高光谱观测与像元空间上下文特征。",
+        "datasets": "只确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只书目、范围与一个主图，性能未核。",
+        "conclusions": "原摘要与主图必要内容确认主要任务，不摘录性能。",
+        "limitations": "每篇只所用一个版本、一张主要框架；其他版本/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -139791,6 +140123,23 @@
             "level": "原Crossref年度完整注册书目，gzip快照可核",
             "supports": [
               "正式TGRS2020白名单来源、题名明确HSI、同序作者与DOI/出版日期/卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1907.08511v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方指定版本完整原摘要（复用已存原API）",
+            "supports": [
+              "通过共享聚类耦合的矩阵共同分解，联合解混高光谱观测与像元空间上下文特征。",
+              "只1907.08511v2，官方明确DOI/同题名及同序四作者，正式2020/预印本2019分列。全稿仅图注检索Fig1–9均数据纹理/丰度/结果/聚类展示，无独立主方法框架；留白，不以结果图凑框架。空间上下文不是场景几何三维。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1907.08511v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页与主图/图注必要选读",
+            "supports": [
+              "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1907.08511v2，官方明确DOI/同题名及同序四作者，正式2020/预印本2019分列。全稿仅图注检索Fig1–9均数据纹理/丰度/结果/聚类展示，无独立主方法框架；留白，不以结果图凑框架。空间上下文不是场景几何三维。"
             ]
           }
         ],
@@ -139819,7 +140168,7 @@
           },
           {
             "id": "tgrs-2020-hsi-2968541-public-version-bibliography",
-            "type": "公开预印本书目（材料待整理）",
+            "type": "唯一所用公开稿",
             "url": "https://arxiv.org/abs/1907.08511v2",
             "title": "Matrix cofactorization for joint spatial-spectral unmixing of hyperspectral images",
             "authors": [
@@ -139833,13 +140182,35 @@
             "arxivVersion": 2,
             "firstSubmittedAt": "2019-07-19T13:43:08Z",
             "updatedAt": "2020-02-14T10:10:41Z",
-            "readingProgress": "title_only",
-            "metadataStatus": "仅官方指定ID列表返回元数据，未读正文/其他版本",
+            "readingProgress": "abstract_read",
+            "metadataStatus": "只所用版本官方元数据/首页已核，不检查其他或最新版本",
             "sourcePolicyStatus": "arxiv_allowed",
-            "relation": "官方arXiv元数据的明确DOI/同题名同序作者受控关联；只版本书目，原摘要/PDF与主图未整理，不表示已读该稿。"
+            "relation": "只1907.08511v2，官方明确DOI/同题名及同序四作者，正式2020/预印本2019分列。全稿仅图注检索Fig1–9均数据纹理/丰度/结果/聚类展示，无独立主方法框架；留白，不以结果图凑框架。空间上下文不是场景几何三维。",
+            "pdfUrl": "https://arxiv.org/pdf/1907.08511v2",
+            "localFile": "research/hyperspectral/sources/tgrs-2020-seven-public-materials-and-2021-jun-2026-10-14-1907.08511v2.pdf.gz",
+            "compression": "gzip"
           }
         ],
-        "methodFamilyId": "tgrs-2020-hsi-2968541"
+        "methodFamilyId": "tgrs-2020-hsi-2968541",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与单版主图/必要图注核验，谱空卷积和图结构不是几何三维；无独立框架不凑图。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "671d33f83eaa26de1a48c2291c3c504a7f85c175ae3dfda9e03eebcbc922af37",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2020-01-01%2Cuntil-pub-date%3A2020-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/abs/1907.08511v2",
+            "https://arxiv.org/pdf/1907.08511v2"
+          ]
+        }
       },
       "arxivId": "1907.08511"
     },
@@ -141181,16 +141552,16 @@
         "hyperspectral"
       ],
       "doi": "10.1109/tgrs.2020.2979908",
-      "representation": "未获取。",
+      "representation": "对全图与局部区域施加低秩矩阵模型，使用平滑Schatten-p近似和加速主化最小化优化全局-局部秩正则最小二乘目标。",
       "tags": [],
-      "summary": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "readingNote": "仅作者原注册题名、DOI、书目与正式日期核验，目录优先；任务分类依据题名暂定。原摘要/实际方法、一个可获取版本的主图是资料待办；不猜补、不据索引无链接宣称付费或无公开版。",
+      "summary": "从配准的低空间分辨率高光谱和低谱分辨率多光谱观测估计高分辨率高光谱影像。",
+      "input": "共配准HS与MS影像，分别具有较粗空间或谱分辨率。",
+      "output": "同时具有较高空间与谱分辨率的HS影像。",
+      "mechanism": "对全图与局部区域施加低秩矩阵模型，使用平滑Schatten-p近似和加速主化最小化优化全局-局部秩正则最小二乘目标。",
+      "readingNote": "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1907.01149v2完整原摘要、首页书目及图注定位；明确DOI、同题名同序四作者关联正式2020。Fig1只一般HSR观测场景、Fig2局部分块、Fig3–12数据/结果，不是该优化方法的完整主框架；留白，不追其他版或补重绘。直接HS+MS重建HS可收，不是纯MS。",
       "paper": "https://doi.org/10.1109/tgrs.2020.2979908",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
+      "verificationLevel": "primary_abstract_verified",
       "frameworkFigures": [],
       "volume": "58",
       "issue": "10",
@@ -141200,16 +141571,16 @@
         "categoryIds": [
           "spatial-super-resolution"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "作者原注册题名明确直接高光谱研究；实际方法/输入未核，题名任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "原注册题名明确直接高光谱研究，正式TGRS2020书目已核；方法和实际输入未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要/实际方法和可获取的单版主图仍资料待，不阻塞目录。",
+        "relationNote": "所用原摘要/主图确认直接高光谱，数据谱轴与真实几何分列；无独立主框架可留白。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "从配准的低空间分辨率高光谱和低谱分辨率多光谱观测估计高分辨率高光谱影像。",
+        "datasets": "只确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只书目、范围与一个主图，性能未核。",
+        "conclusions": "原摘要与主图必要内容确认主要任务，不摘录性能。",
+        "limitations": "每篇只所用一个版本、一张主要框架；其他版本/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -141218,6 +141589,23 @@
             "level": "原Crossref年度完整注册书目，gzip快照可核",
             "supports": [
               "正式TGRS2020白名单来源、题名明确HSI、同序作者与DOI/出版日期/卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/1907.01149v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方指定版本完整原摘要（复用已存原API）",
+            "supports": [
+              "从配准的低空间分辨率高光谱和低谱分辨率多光谱观测估计高分辨率高光谱影像。",
+              "只1907.01149v2完整原摘要、首页书目及图注定位；明确DOI、同题名同序四作者关联正式2020。Fig1只一般HSR观测场景、Fig2局部分块、Fig3–12数据/结果，不是该优化方法的完整主框架；留白，不追其他版或补重绘。直接HS+MS重建HS可收，不是纯MS。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1907.01149v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页与主图/图注必要选读",
+            "supports": [
+              "只一个公开稿：完整原摘要、首页书目、主图/图注必要选读，不整篇、逐版、性能或代码访问。只1907.01149v2完整原摘要、首页书目及图注定位；明确DOI、同题名同序四作者关联正式2020。Fig1只一般HSR观测场景、Fig2局部分块、Fig3–12数据/结果，不是该优化方法的完整主框架；留白，不追其他版或补重绘。直接HS+MS重建HS可收，不是纯MS。"
             ]
           }
         ],
@@ -141246,7 +141634,7 @@
           },
           {
             "id": "tgrs-2020-hsi-2979908-public-version-bibliography",
-            "type": "公开预印本书目（材料待整理）",
+            "type": "唯一所用公开稿",
             "url": "https://arxiv.org/abs/1907.01149v2",
             "title": "Hyperspectral Super-Resolution via Global-Local Low-Rank Matrix Estimation",
             "authors": [
@@ -141260,13 +141648,35 @@
             "arxivVersion": 2,
             "firstSubmittedAt": "2019-07-02T03:46:02Z",
             "updatedAt": "2020-03-08T21:06:50Z",
-            "readingProgress": "title_only",
-            "metadataStatus": "仅官方指定ID列表返回元数据，未读正文/其他版本",
+            "readingProgress": "abstract_read",
+            "metadataStatus": "只所用版本官方元数据/首页已核，不检查其他或最新版本",
             "sourcePolicyStatus": "arxiv_allowed",
-            "relation": "官方arXiv元数据的明确DOI/同题名同序作者受控关联；只版本书目，原摘要/PDF与主图未整理，不表示已读该稿。"
+            "relation": "只1907.01149v2完整原摘要、首页书目及图注定位；明确DOI、同题名同序四作者关联正式2020。Fig1只一般HSR观测场景、Fig2局部分块、Fig3–12数据/结果，不是该优化方法的完整主框架；留白，不追其他版或补重绘。直接HS+MS重建HS可收，不是纯MS。",
+            "pdfUrl": "https://arxiv.org/pdf/1907.01149v2",
+            "localFile": "research/hyperspectral/sources/tgrs-2020-seven-public-materials-and-2021-jun-2026-10-14-1907.01149v2.pdf.gz",
+            "compression": "gzip"
           }
         ],
-        "methodFamilyId": "tgrs-2020-hsi-2979908"
+        "methodFamilyId": "tgrs-2020-hsi-2979908",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "完整原摘要与单版主图/必要图注核验，谱空卷积和图结构不是几何三维；无独立框架不凑图。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "331e76a1a54cdf37143ca5e1c9d76aeda5f5afeb11d2f68063f50f34834d9ba7",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2020-01-01%2Cuntil-pub-date%3A2020-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/abs/1907.01149v2",
+            "https://arxiv.org/pdf/1907.01149v2"
+          ]
+        }
       },
       "arxivId": "1907.01149"
     },
@@ -144442,6 +144852,7 @@
         "tgrs-2019-hsi-2900509",
         "tgrs-2020-hsi-2947200",
         "tgrs-2020-hsi-2949427",
+        "tgrs-2020-hsi-2957251",
         "tgrs-2020-hsi-2963848"
       ],
       "history": [
