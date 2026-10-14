@@ -120710,7 +120710,7 @@
             "https://arxiv.org/pdf/1809.00950v1"
           ]
         },
-        "pendingVersionRelations": [
+        "resolvedVersionLocators": [
           {
             "doi": "10.1109/icassp.2019.8683396",
             "registeredTitle": "Compressive Single-pixel Fourier Transform Imaging Using Structured Illumination",
@@ -120721,7 +120721,21 @@
             ],
             "status": "version_relation_unresolved",
             "reason": "同序三作者但题名不同，所用官方记录没有明确对应关系；仅书目候选，不作为已关联版本，不另读正文。",
-            "evidencePath": "research/hyperspectral/sources/arxiv-2018-eleventh-ten-hsi-directory-2026-10-14.json"
+            "evidencePath": "research/hyperspectral/sources/arxiv-2018-eleventh-ten-hsi-directory-2026-10-14.json",
+            "resolution": "different_work_same_authors",
+            "resolvedAt": "2026-10-14",
+            "resolvedPaperId": "vds-singlepixel-fti-arxiv-2018",
+            "resolutionEvidencePath": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14.json",
+            "resolutionReason": "新稿同题正式书目且明确引用前稿并区分变密度/多层采样；ICASSP2019对应新稿，不是旧稿正式版本。"
+          }
+        ],
+        "relatedWorks": [
+          {
+            "paperId": "vds-singlepixel-fti-arxiv-2018",
+            "status": "cited_by_method_extension",
+            "checkedAt": "2026-10-14",
+            "evidencePath": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14.json",
+            "reason": "新稿p2/p8[8]明确改变采样设计并引用本稿；两篇不同方法工作分列。"
           }
         ]
       }
@@ -121287,6 +121301,1429 @@
         "sourceUrl": "https://arxiv.org/pdf/1810.01163v1",
         "checkedAt": "2026-10-14"
       }
+    },
+    {
+      "id": "fiber-speckle-snapshot-oe-2018",
+      "shortTitle": "Fiber speckle snapshot imaging",
+      "title": "Snapshot fiber spectral imaging using speckle correlations and compressive sensing",
+      "authors": "Rebecca French, Sylvain Gigan, Otto L. Muskens",
+      "year": 2018,
+      "venue": "Optics Express",
+      "publicationName": "Optics Express",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1810.10871",
+      "representation": "DBSCAN定位光纤芯散斑并建立空间位置对应的谱传输矩阵，利用l1最小化重建波长域稀疏图像，也研究非压缩宽谱重建；主图是校准流程，不宣称图中包含未画出的全部反演。",
+      "tags": [],
+      "summary": "通过多芯多模光纤散斑和压缩感知实现紧凑快照光谱成像。",
+      "input": "光纤各芯输出的波长相关散斑、单色相机观测及校准谱传输矩阵。",
+      "output": "各空间位置的重建光谱及光谱图像。",
+      "mechanism": "DBSCAN定位光纤芯散斑并建立空间位置对应的谱传输矩阵，利用l1最小化重建波长域稀疏图像，也研究非压缩宽谱重建；主图是校准流程，不宣称图中包含未画出的全部反演。",
+      "readingNote": "唯一所用arXiv 1810.10871v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Optics Express2018正式关联；p5校准609–694nm共43个独立波长通道，空间散斑与谱维联合重建支持直接HSI。",
+      "paper": "https://doi.org/10.1364/oe.26.032302",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1810.10871v1",
+          "sourceVersion": "arXiv 1810.10871v1",
+          "figureLabel": "Figure 2:",
+          "page": 5,
+          "caption": "Figure 2: A schematic showing the principle of the MCMMF STM calibration. Light travels through a MCMMF and the cross-section of the end of the ﬁber is imaged on to a camera. A clustering algorithm, DBSCAN, detects the positions of the speckle patterns produced by each ﬁber core on the camera. These coordinates are then used to calibrate a STM by measuring wavelength-dependent speckle patterns at every position and storing them in a 3-dimensional data cube. The coordinates are also used to search any arbitrary image for spectral signatures at those positions after calibration.",
+          "verificationNote": "完整保留多芯光纤/单色相机、散斑采集、DBSCAN定位和每处STM校准；原主方法图为校准，不补画未显示的l1重建。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/fiber-speckle-snapshot-oe-2018/framework.png",
+          "width": 1107,
+          "height": 945,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "04bedd49899c465342942f515c9329fca80c9588ae61d5a469e15b08ac3a1815",
+          "attribution": "Rebecca French, Sylvain Gigan, Otto L. Muskens · arXiv 1810.10871v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              122,
+              70,
+              491,
+              385
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1364/oe.26.032302",
+      "citation": "@article{fiber-speckle-snapshot-oe-2018,\n  title = {Snapshot fiber spectral imaging using speckle correlations and compressive sensing},\n  author = {Rebecca French and Sylvain Gigan and Otto L. Muskens},\n  journal = {Optics Express},\n  year = {2018},\n  volume = {26},\n  number = {24},\n  pages = {32302},\n  doi = {10.1364/oe.26.032302}\n}\n",
+      "library": {
+        "categoryIds": [
+          "computational-imaging",
+          "spectral-reconstruction"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "通过多芯多模光纤散斑和压缩感知实现紧凑快照光谱成像。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1810.10871v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "通过多芯多模光纤散斑和压缩感知实现紧凑快照光谱成像。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1810.10871v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1810.10871v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Optics Express2018正式关联；p5校准609–694nm共43个独立波长通道，空间散斑与谱维联合重建支持直接HSI。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1364%2FOE.26.032302",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "fiber-speckle-snapshot-oe-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1810.10871v1",
+            "pdfUrl": "https://arxiv.org/pdf/1810.10871v1",
+            "arxivId": "1810.10871",
+            "arxivVersion": 1,
+            "title": "Snapshot fiber spectral imaging using speckle correlations and compressive sensing",
+            "authors": [
+              "Rebecca French",
+              "Sylvain Gigan",
+              "Otto L. Muskens"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-10-24T16:58:26Z",
+            "updatedAt": "2018-10-24T16:58:26Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1810.10871v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1810.10871v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Optics Express2018正式关联；p5校准609–694nm共43个独立波长通道，空间散斑与谱维联合重建支持直接HSI。"
+          },
+          {
+            "id": "fiber-speckle-snapshot-oe-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1364/oe.26.032302",
+            "doi": "10.1364/oe.26.032302",
+            "title": "Snapshot fiber spectral imaging using speckle correlations and compressive sensing",
+            "authors": [
+              "Rebecca French",
+              "Sylvain Gigan",
+              "Otto l. Muskens"
+            ],
+            "year": 2018,
+            "publicationName": "Optics Express",
+            "volume": "26",
+            "issue": "24",
+            "page": "32302",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "fiber-speckle-snapshot-oe-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d577264e4ee582237452d7c529d3e2074ffa331a8ff86b64ad5362395dfb312a",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1810.10871v1",
+            "https://arxiv.org/pdf/1810.10871v1",
+            "https://api.crossref.org/works/10.1364%2FOE.26.032302"
+          ]
+        }
+      }
+    },
+    {
+      "id": "attention-cnn-band-selection-arxiv-2018",
+      "shortTitle": "Attention CNN band selection",
+      "title": "Hyperspectral Band Selection Using Attention-based Convolutional Neural Networks",
+      "authors": "Pablo Ribalta Lorenzo, Lukasz Tulczyjew, Michal Marcinkiewicz, Jakub Nalepa",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1811.02667",
+      "representation": "在一维卷积不同层插入注意力模块，对激活计算注意力热图、局部类别假设和置信度；融合分类预测并根据分数筛选重要谱带。",
+      "tags": [],
+      "summary": "利用不同深度卷积激活和门控注意力识别高光谱重要谱带。",
+      "input": "高光谱像元的谱带序列及监督类别。",
+      "output": "谱带注意力分数、精选谱带集合及类别预测。",
+      "mechanism": "在一维卷积不同层插入注意力模块，对激活计算注意力热图、局部类别假设和置信度；融合分类预测并根据分数筛选重要谱带。",
+      "readingNote": "唯一所用arXiv 1811.02667v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。API旧题名与所用PDF当前题名分列；PDF当前题名与IEEE Access2020注册一致、同序四作者，但Access来源外只关联元数据，不扩白名单。PDF首作者Pablo Ribalta与API/正式Pablo Ribalta Lorenzo保留。",
+      "paper": "https://arxiv.org/abs/1811.02667v3",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1811.02667v3",
+          "sourceVersion": "arXiv 1811.02667v3",
+          "figureLabel": "Fig. 1.",
+          "page": 2,
+          "caption": "Fig. 1. In attention-based CNNs, features at different levels Z l are processed to generate the attention heatmaps, and they are used to output (i) a class hypothesis based on the local information, and (ii) a conﬁdence score cl. The ﬁnal output is the softmaxed weighted sum of the attention estimators, and the output of the network’s classiﬁer (here, an artiﬁcial neural network, ANN containing two hidden layers containing 512 and 128 neurons with ReLU).",
+          "verificationNote": "完整保留一维卷积/池化、三层注意力估计、置信度和局部假设、ANN及类别加权融合。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/attention-cnn-band-selection-arxiv-2018/framework.png",
+          "width": 759,
+          "height": 438,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "c6fce89301d0b449496d043dfc412d253bd863c40e474aa95405d18ae1db4bcd",
+          "attribution": "Pablo Ribalta Lorenzo, Lukasz Tulczyjew, Michal Marcinkiewicz, Jakub Nalepa · arXiv 1811.02667v3",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              312,
+              55,
+              565,
+              201
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{attention-cnn-band-selection-arxiv-2018,\n  title = {Hyperspectral Band Selection Using Attention-based Convolutional Neural Networks},\n  author = {Pablo Ribalta Lorenzo and Lukasz Tulczyjew and Michal Marcinkiewicz and Jakub Nalepa},\n  year = {2018},\n  eprint = {1811.02667},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1811.02667v3}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-band-selection",
+          "spectral-band-attention"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "利用不同深度卷积激活和门控注意力识别高光谱重要谱带。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1811.02667v3",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "利用不同深度卷积激活和门控注意力识别高光谱重要谱带。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1811.02667v3",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1811.02667v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。API旧题名与所用PDF当前题名分列；PDF当前题名与IEEE Access2020注册一致、同序四作者，但Access来源外只关联元数据，不扩白名单。PDF首作者Pablo Ribalta与API/正式Pablo Ribalta Lorenzo保留。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Band+Selection+from+Hyperspectral+Images+Using+Attention-based+Convolutional+Neural+Networks&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1811.02667v3",
+            "checkedAt": "2026-10-14",
+            "level": "所用p3作者代码链接声明",
+            "supports": [
+              "只记录作者URL，不访问代码仓库、README、依赖或运行检查。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "attention-cnn-band-selection-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1811.02667v3",
+            "pdfUrl": "https://arxiv.org/pdf/1811.02667v3",
+            "arxivId": "1811.02667",
+            "arxivVersion": 3,
+            "title": "Hyperspectral Band Selection Using Attention-based Convolutional Neural Networks",
+            "authors": [
+              "Pablo Ribalta Lorenzo",
+              "Lukasz Tulczyjew",
+              "Michal Marcinkiewicz",
+              "Jakub Nalepa"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-10-24T19:32:48Z",
+            "updatedAt": "2020-01-09T08:50:48Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1811.02667v3.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1811.02667v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。API旧题名与所用PDF当前题名分列；PDF当前题名与IEEE Access2020注册一致、同序四作者，但Access来源外只关联元数据，不扩白名单。PDF首作者Pablo Ribalta与API/正式Pablo Ribalta Lorenzo保留。",
+            "rawApiTitle": "Band Selection from Hyperspectral Images Using Attention-based Convolutional Neural Networks",
+            "rawApiAuthors": [
+              "Pablo Ribalta Lorenzo",
+              "Lukasz Tulczyjew",
+              "Michal Marcinkiewicz",
+              "Jakub Nalepa"
+            ],
+            "pdfTitle": "Hyperspectral Band Selection Using Attention-based Convolutional Neural Networks",
+            "pdfAuthors": [
+              "Pablo Ribalta",
+              "Lukasz Tulczyjew",
+              "Michal Marcinkiewicz",
+              "Jakub Nalepa"
+            ]
+          },
+          {
+            "id": "attention-cnn-band-selection-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/access.2020.2977454",
+            "doi": "10.1109/access.2020.2977454",
+            "title": "Hyperspectral Band Selection Using Attention-Based Convolutional Neural Networks",
+            "authors": [
+              "Pablo Ribalta Lorenzo",
+              "Lukasz Tulczyjew",
+              "Michal Marcinkiewicz",
+              "Jakub Nalepa"
+            ],
+            "year": 2020,
+            "publicationName": "IEEE Access",
+            "volume": "8",
+            "issue": null,
+            "page": "42384-42403",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "attention-cnn-band-selection-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "15f1f9bd0eea6cbac3d9fb847acc0894ecf08ddf23c9640c7a497143996e70b5",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1811.02667v3",
+            "https://arxiv.org/pdf/1811.02667v3",
+            "https://api.crossref.org/works?query.title=Band+Selection+from+Hyperspectral+Images+Using+Attention-based+Convolutional+Neural+Networks&rows=3",
+            "https://arxiv.org/pdf/1811.02667v3"
+          ]
+        }
+      },
+      "code": "https://github.com/ESA-PhiLab/hypernet/tree/master/python_research/experiments/hsi_attention"
+    },
+    {
+      "id": "swir-dem-terrain-segmentation-arxiv-2018",
+      "shortTitle": "SWIR–DEM terrain segmentation",
+      "title": "3D Terrain Segmentation in the SWIR Spectrum",
+      "authors": "Dalton Rosario, Anthony Ortiz, Olac Fuentes",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hs3d",
+        "hyperspectral"
+      ],
+      "arxivId": "1810.11690",
+      "representation": "利用图像定位和最优随机化RANSAC匹配HS-SWIR与DEM正射影像，再用光谱斜率/比率和高程规则分割；实际DEM几何支持三维专题，输出为地形类别图，不称原始点云逐点预测。",
+      "tags": [
+        "高光谱与DEM",
+        "三维地形分割",
+        "光谱与高程规则"
+      ],
+      "summary": "结合高光谱短波红外影像与三维数字高程模型进行地形类别分割。",
+      "input": "独立采集的260带HS-SWIR影像、LiDAR派生DEM及其可见光正射影像。",
+      "output": "对应地形中的建筑、住宅、树木、草地和道路等类别图。",
+      "mechanism": "利用图像定位和最优随机化RANSAC匹配HS-SWIR与DEM正射影像，再用光谱斜率/比率和高程规则分割；实际DEM几何支持三维专题，输出为地形类别图，不称原始点云逐点预测。",
+      "readingNote": "唯一所用arXiv 1810.11690v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。WHISPERS2018书目源外只关联；实际260带HS-SWIR与LiDAR派生三维DEM，结果/光谱/地形示例没有独立框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1810.11690v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{swir-dem-terrain-segmentation-arxiv-2018,\n  title = {3D Terrain Segmentation in the SWIR Spectrum},\n  author = {Dalton Rosario and Anthony Ortiz and Olac Fuentes},\n  year = {2018},\n  eprint = {1810.11690},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1810.11690v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "semantic-segmentation",
+          "hsi-lidar-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "结合高光谱短波红外影像与三维数字高程模型进行地形类别分割。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1810.11690v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "结合高光谱短波红外影像与三维数字高程模型进行地形类别分割。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1810.11690v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1810.11690v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。WHISPERS2018书目源外只关联；实际260带HS-SWIR与LiDAR派生三维DEM，结果/光谱/地形示例没有独立框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=3D+Terrain+Segmentation+in+the+SWIR+Spectrum&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1810.11690v1",
+            "checkedAt": "2026-10-14",
+            "level": "所用p1三维DEM/p2实际260带输入",
+            "supports": [
+              "HS-SWIR与LiDAR派生三维DEM联合分割地形，输出类别图；不是原始点云逐点语义预测。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "swir-dem-terrain-segmentation-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1810.11690v1",
+            "pdfUrl": "https://arxiv.org/pdf/1810.11690v1",
+            "arxivId": "1810.11690",
+            "arxivVersion": 1,
+            "title": "3D Terrain Segmentation in the SWIR Spectrum",
+            "authors": [
+              "Dalton Rosario",
+              "Anthony Ortiz",
+              "Olac Fuentes"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-10-27T17:59:26Z",
+            "updatedAt": "2018-10-27T17:59:26Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1810.11690v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1810.11690v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。WHISPERS2018书目源外只关联；实际260带HS-SWIR与LiDAR派生三维DEM，结果/光谱/地形示例没有独立框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "swir-dem-terrain-segmentation-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/whispers.2018.8747269",
+            "doi": "10.1109/whispers.2018.8747269",
+            "title": "3D Terrain Segmentation in the Swir Spectrum",
+            "authors": [
+              "Dalton Rosario",
+              "Anthony Ortiz",
+              "Olac Fuentes"
+            ],
+            "year": 2018,
+            "publicationName": "2018 9th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS)",
+            "volume": null,
+            "issue": null,
+            "page": "1-5",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "swir-dem-terrain-segmentation-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "d43382256b91bfa1c05ed19f111e9c4e4951895bbc77bcb29b23cd51c45e0653",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1810.11690v1",
+            "https://arxiv.org/pdf/1810.11690v1",
+            "https://api.crossref.org/works?query.title=3D+Terrain+Segmentation+in+the+SWIR+Spectrum&rows=3",
+            "https://arxiv.org/pdf/1810.11690v1"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用为反射谱、DEM/HSI场景与分割结果，没有独立谱/高程规则分割框架；留白，不追其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1810.11690v1",
+        "checkedAt": "2026-10-14"
+      },
+      "track": "fusion",
+      "scope": "相关研究"
+    },
+    {
+      "id": "almm-spectral-variability-tip-2019",
+      "shortTitle": "ALMM",
+      "title": "An Augmented Linear Mixing Model to Address Spectral Variability for Hyperspectral Unmixing",
+      "authors": "Danfeng Hong, Naoto Yokoya, Jocelyn Chanussot, Xiao Xiang Zhu",
+      "year": 2019,
+      "venue": "TIP",
+      "publicationName": "IEEE Transactions on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1810.12000",
+      "representation": "通过端元字典建模主要尺度变化，再以与端元低相干的附加字典表示其他谱变化；在解混优化中共同学习字典和丰度，避免把复杂变化全部吸入丰度。",
+      "tags": [],
+      "summary": "用扩展线性混合模型分别处理高光谱解混中的尺度和其他谱变化。",
+      "input": "高光谱影像及端元字典。",
+      "output": "丰度、尺度因子和附加谱变化字典/系数。",
+      "mechanism": "通过端元字典建模主要尺度变化，再以与端元低相干的附加字典表示其他谱变化；在解混优化中共同学习字典和丰度，避免把复杂变化全部吸入丰度。",
+      "readingNote": "唯一所用arXiv 1810.12000v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TIP2019，所用页眉2018/XX占位不作为正式年卷页。",
+      "paper": "https://doi.org/10.1109/tip.2018.2878958",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1810.12000v1",
+          "sourceVersion": "arXiv 1810.12000v1",
+          "figureLabel": "Fig. 2:",
+          "page": 4,
+          "caption": "Fig. 2: The holistic diagram of spectral unmixing using the proposed ALMM.",
+          "verificationNote": "完整保留观测/理想/谱变化HSI三部分、端元字典/丰度/尺度因子与谱变化字典/系数两支。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/almm-spectral-variability-tip-2019/framework.png",
+          "width": 1482,
+          "height": 720,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "57709718232063b263561f98b9909e13ad526ce1f371e40dd5750099881de5ca",
+          "attribution": "Danfeng Hong, Naoto Yokoya, Jocelyn Chanussot, Xiao Xiang Zhu · arXiv 1810.12000v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              59,
+              56,
+              553,
+              296
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tip.2018.2878958",
+      "citation": "@article{almm-spectral-variability-tip-2019,\n  title = {An Augmented Linear Mixing Model to Address Spectral Variability for Hyperspectral Unmixing},\n  author = {Danfeng Hong and Naoto Yokoya and Jocelyn Chanussot and Xiao Xiang Zhu},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2019},\n  volume = {28},\n  number = {4},\n  pages = {1923--1938},\n  doi = {10.1109/tip.2018.2878958}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用扩展线性混合模型分别处理高光谱解混中的尺度和其他谱变化。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1810.12000v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "用扩展线性混合模型分别处理高光谱解混中的尺度和其他谱变化。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1810.12000v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1810.12000v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TIP2019，所用页眉2018/XX占位不作为正式年卷页。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2FTIP.2018.2878958",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "almm-spectral-variability-tip-2019-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1810.12000v1",
+            "pdfUrl": "https://arxiv.org/pdf/1810.12000v1",
+            "arxivId": "1810.12000",
+            "arxivVersion": 1,
+            "title": "An Augmented Linear Mixing Model to Address Spectral Variability for Hyperspectral Unmixing",
+            "authors": [
+              "Danfeng Hong",
+              "Naoto Yokoya",
+              "Jocelyn Chanussot",
+              "Xiao Xiang Zhu"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-10-29T08:35:42Z",
+            "updatedAt": "2018-10-29T08:35:42Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1810.12000v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1810.12000v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TIP2019，所用页眉2018/XX占位不作为正式年卷页。"
+          },
+          {
+            "id": "almm-spectral-variability-tip-2019-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tip.2018.2878958",
+            "doi": "10.1109/tip.2018.2878958",
+            "title": "An Augmented Linear Mixing Model to Address Spectral Variability for Hyperspectral Unmixing",
+            "authors": [
+              "Danfeng Hong",
+              "Naoto Yokoya",
+              "Jocelyn Chanussot",
+              "Xiao Xiang Zhu"
+            ],
+            "year": 2019,
+            "publicationName": "IEEE Transactions on Image Processing",
+            "volume": "28",
+            "issue": "4",
+            "page": "1923-1938",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "almm-spectral-variability-tip-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "f324ee6172590e2e513085745879ca49d9484b6d774fe5958cfc8fb7a225423a",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1810.12000v1",
+            "https://arxiv.org/pdf/1810.12000v1",
+            "https://api.crossref.org/works/10.1109%2FTIP.2018.2878958"
+          ]
+        }
+      }
+    },
+    {
+      "id": "shorten-spatial-spectral-pgru-arxiv-2018",
+      "shortTitle": "St-SS-pGRU",
+      "title": "Shorten Spatial-spectral RNN with Parallel-GRU for Hyperspectral Image Classification",
+      "authors": "Haowen Luo",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1810.12563",
+      "representation": "多尺度三维卷积汇集空间/谱信息，卷积缩短递归时间步，再使用并行GRU与分类层；唯一主图展示St-SS-GRU整体和张量形状，pGRU替换结构在另图，不拼图或称该主图已画并行分支。",
+      "tags": [],
+      "summary": "缩短谱序列并融合空间卷积和并行GRU进行高光谱分类。",
+      "input": "高光谱谱空邻域。",
+      "output": "像元地物类别。",
+      "mechanism": "多尺度三维卷积汇集空间/谱信息，卷积缩短递归时间步，再使用并行GRU与分类层；唯一主图展示St-SS-GRU整体和张量形状，pGRU替换结构在另图，不拼图或称该主图已画并行分支。",
+      "readingNote": "唯一所用arXiv 1810.12563v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。注册三项异题/作者不关联，所用单作者Haowen Luo保留；三维卷积只是谱空特征，不加入几何三维专题。",
+      "paper": "https://arxiv.org/abs/1810.12563v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1810.12563v1",
+          "sourceVersion": "arXiv 1810.12563v1",
+          "figureLabel": "Fig. 4.",
+          "page": 3,
+          "caption": "Fig. 4. St-SS-GRU: (1) The ﬁrst row shows a ﬂowchart of the network. FC refers to fully connected layer and Conv refers to Convolutional layers. (2) The second row illustrates the shapes of input and output tensors of each layer and their connection. (3) N is the number of ﬁlters in the 3D-Convolutional layer, D is the number of bands in the input image, T is the number of GRU timestep, and H is the number of neurons in hidden layer in a GRU. For the Pavia University dataset, D=103, and in the experiment the hyperparameters are set as: N=16, T=5, H=128.",
+          "verificationNote": "完整保留St-SS-GRU多尺度谱空卷积、缩短GRU、类别输出及张量形状行；本图未画pGRU替换子结构，保留原图名，不拼接另一图。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/shorten-spatial-spectral-pgru-arxiv-2018/framework.png",
+          "width": 708,
+          "height": 489,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "f6e243339be03a69c7a44996bb2397ad86bcd131e014c3b4863037a0e6fe0b55",
+          "attribution": "Haowen Luo · arXiv 1810.12563v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              318,
+              47,
+              554,
+              210
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{shorten-spatial-spectral-pgru-arxiv-2018,\n  title = {Shorten Spatial-spectral RNN with Parallel-GRU for Hyperspectral Image Classification},\n  author = {Haowen Luo},\n  year = {2018},\n  eprint = {1810.12563},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1810.12563v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "缩短谱序列并融合空间卷积和并行GRU进行高光谱分类。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1810.12563v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "缩短谱序列并融合空间卷积和并行GRU进行高光谱分类。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1810.12563v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1810.12563v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。注册三项异题/作者不关联，所用单作者Haowen Luo保留；三维卷积只是谱空特征，不加入几何三维专题。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "shorten-spatial-spectral-pgru-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1810.12563v1",
+            "pdfUrl": "https://arxiv.org/pdf/1810.12563v1",
+            "arxivId": "1810.12563",
+            "arxivVersion": 1,
+            "title": "Shorten Spatial-spectral RNN with Parallel-GRU for Hyperspectral Image Classification",
+            "authors": [
+              "Haowen Luo"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-10-30T07:57:27Z",
+            "updatedAt": "2018-10-30T07:57:27Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1810.12563v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1810.12563v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。注册三项异题/作者不关联，所用单作者Haowen Luo保留；三维卷积只是谱空特征，不加入几何三维专题。"
+          }
+        ],
+        "methodFamilyId": "shorten-spatial-spectral-pgru-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "e0739033887d59e83ca5d2f2694c89c1b08c0ebdaaf4b100e15191ef58beb759",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1810.12563v1",
+            "https://arxiv.org/pdf/1810.12563v1"
+          ]
+        }
+      }
+    },
+    {
+      "id": "vds-singlepixel-fti-arxiv-2018",
+      "shortTitle": "VDS SP-FTI",
+      "title": "Compressive Single-pixel Fourier Transform Imaging using Structured Illumination",
+      "authors": "Amirafshar Moshtaghpour, José M. Bioucas-Dias, Laurent Jacques",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1810.13200",
+      "representation": "依据Fourier/Hadamard感知基与Haar稀疏基的局部相干性联合设计空间和光程差变密度采样；所用p2明确不同于原[8]多层采样前稿，两项工作分列关联，不误并版本。",
+      "tags": [],
+      "summary": "通过变密度空间/光程差采样降低单像素傅里叶高光谱成像测量量。",
+      "input": "Hadamard结构照明与部分光程差单像素干涉测量。",
+      "output": "重建高光谱体。",
+      "mechanism": "依据Fourier/Hadamard感知基与Haar稀疏基的局部相干性联合设计空间和光程差变密度采样；所用p2明确不同于原[8]多层采样前稿，两项工作分列关联，不误并版本。",
+      "readingNote": "唯一所用arXiv 1810.13200v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ICASSP2019书目同题同序三作者只元数据，源外保留arXiv；p2明确变密度与前稿多层采样不同，p8[8]引用1809.00950，建立方法前后关系，不重读旧稿。",
+      "paper": "https://arxiv.org/abs/1810.13200v2",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1810.13200v2",
+          "sourceVersion": "arXiv 1810.13200v2",
+          "figureLabel": "Figure 1:",
+          "page": 2,
+          "caption": "Figure 1: Operating principles of SP-FTI. A continuous HS volume Xc (e.g., observed from a confocal microscope) is spatially and temporally modulated from space-time coding of the light source.",
+          "verificationNote": "完整保留Hadamard孔径/光源、样本/光学/干涉仪与单像素传感器；仅本稿一主原理图，变密度策略在正文，未画部分不补画。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/vds-singlepixel-fti-arxiv-2018/framework.png",
+          "width": 1407,
+          "height": 600,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "c30cfe54b9958770906748c90d1b91db91ae0934b5d4f4da74ae44ff4d6faf79",
+          "attribution": "Amirafshar Moshtaghpour, José M. Bioucas-Dias, Laurent Jacques · arXiv 1810.13200v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              70,
+              71,
+              539,
+              271
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{vds-singlepixel-fti-arxiv-2018,\n  title = {Compressive Single-pixel Fourier Transform Imaging using Structured Illumination},\n  author = {Amirafshar Moshtaghpour and José M. Bioucas-Dias and Laurent Jacques},\n  year = {2018},\n  eprint = {1810.13200},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1810.13200v2}\n}\n",
+      "library": {
+        "categoryIds": [
+          "computational-imaging",
+          "spectral-reconstruction"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "通过变密度空间/光程差采样降低单像素傅里叶高光谱成像测量量。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1810.13200v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "通过变密度空间/光程差采样降低单像素傅里叶高光谱成像测量量。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1810.13200v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1810.13200v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ICASSP2019书目同题同序三作者只元数据，源外保留arXiv；p2明确变密度与前稿多层采样不同，p8[8]引用1809.00950，建立方法前后关系，不重读旧稿。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Compressive+Single-pixel+Fourier+Transform+Imaging+using+Structured+Illumination&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "vds-singlepixel-fti-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1810.13200v2",
+            "pdfUrl": "https://arxiv.org/pdf/1810.13200v2",
+            "arxivId": "1810.13200",
+            "arxivVersion": 2,
+            "title": "Compressive Single-pixel Fourier Transform Imaging using Structured Illumination",
+            "authors": [
+              "Amirafshar Moshtaghpour",
+              "José M. Bioucas-Dias",
+              "Laurent Jacques"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-10-31T10:29:07Z",
+            "updatedAt": "2019-02-18T11:30:23Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1810.13200v2.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1810.13200v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ICASSP2019书目同题同序三作者只元数据，源外保留arXiv；p2明确变密度与前稿多层采样不同，p8[8]引用1809.00950，建立方法前后关系，不重读旧稿。"
+          },
+          {
+            "id": "vds-singlepixel-fti-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/icassp.2019.8683396",
+            "doi": "10.1109/icassp.2019.8683396",
+            "title": "Compressive Single-pixel Fourier Transform Imaging Using Structured Illumination",
+            "authors": [
+              "A. Moshtaghpour",
+              "J. M. Bioucas-Dias",
+              "L. Jacques"
+            ],
+            "year": 2019,
+            "publicationName": "ICASSP 2019 - 2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+            "volume": null,
+            "issue": null,
+            "page": "7810-7814",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "vds-singlepixel-fti-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "af63c4614ad84aa391f2cd824a610b8291e1c6b8461e8bd74757c3bec2a3bebd",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1810.13200v2",
+            "https://arxiv.org/pdf/1810.13200v2",
+            "https://api.crossref.org/works?query.title=Compressive+Single-pixel+Fourier+Transform+Imaging+using+Structured+Illumination&rows=3"
+          ]
+        },
+        "relatedWorks": [
+          {
+            "paperId": "singlepixel-fti-compressive-arxiv-2018",
+            "status": "method_extension_reference",
+            "referenceLabel": "[8]",
+            "reason": "所用p2明确本稿空间/光程差变密度采样不同于前稿多层采样，p8[8]直接引用1809.00950；分列方法工作，不误并版本。",
+            "checkedAt": "2026-10-14",
+            "evidencePath": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14.json",
+            "existingPaperNewVersionRead": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "ultra-v-tgrs-2020",
+      "shortTitle": "ULTRA-V",
+      "title": "Low-Rank Tensor Modeling for Hyperspectral Unmixing Accounting for Spectral Variability",
+      "authors": "Tales Imbiriba, Ricardo Augusto Borsoi, José Carlos Moreira Bermudez",
+      "year": 2020,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1811.02413",
+      "representation": "对端元/丰度张量施加由标量调节的低秩正则，减少严格低秩分解的表达约束；张量是谱空数据表示，不是三维场景几何，通用CP分解示意不当ULTRA-V整流程。",
+      "tags": [],
+      "summary": "通过可调低秩张量正则处理高光谱解混中的端元谱变化。",
+      "input": "高光谱影像、端元及丰度的张量表示。",
+      "output": "空间变化端元和像元丰度。",
+      "mechanism": "对端元/丰度张量施加由标量调节的低秩正则，减少严格低秩分解的表达约束；张量是谱空数据表示，不是三维场景几何，通用CP分解示意不当ULTRA-V整流程。",
+      "readingNote": "唯一所用arXiv 1811.02413v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TGRS2020，所用接收页眉2019不是正式卷年；通用CP分解/丰度/谱曲线与结果无独立ULTRA-V整框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://doi.org/10.1109/tgrs.2019.2949543",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "doi": "10.1109/tgrs.2019.2949543",
+      "citation": "@article{ultra-v-tgrs-2020,\n  title = {Low-Rank Tensor Modeling for Hyperspectral Unmixing Accounting for Spectral Variability},\n  author = {Tales Imbiriba and Ricardo Augusto Borsoi and José Carlos Moreira Bermudez},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2020},\n  volume = {58},\n  number = {3},\n  pages = {1833--1842},\n  doi = {10.1109/tgrs.2019.2949543}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing",
+          "tensor-low-rank-learning"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "通过可调低秩张量正则处理高光谱解混中的端元谱变化。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1811.02413v3",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "通过可调低秩张量正则处理高光谱解混中的端元谱变化。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1811.02413v3",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1811.02413v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TGRS2020，所用接收页眉2019不是正式卷年；通用CP分解/丰度/谱曲线与结果无独立ULTRA-V整框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Low-Rank+Tensor+Modeling+for+Hyperspectral+Unmixing+Accounting+for+Spectral+Variability&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ultra-v-tgrs-2020-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1811.02413v3",
+            "pdfUrl": "https://arxiv.org/pdf/1811.02413v3",
+            "arxivId": "1811.02413",
+            "arxivVersion": 3,
+            "title": "Low-Rank Tensor Modeling for Hyperspectral Unmixing Accounting for Spectral Variability",
+            "authors": [
+              "Tales Imbiriba",
+              "Ricardo Augusto Borsoi",
+              "José Carlos Moreira Bermudez"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-11-02T21:09:58Z",
+            "updatedAt": "2019-10-23T18:21:53Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1811.02413v3.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1811.02413v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TGRS2020，所用接收页眉2019不是正式卷年；通用CP分解/丰度/谱曲线与结果无独立ULTRA-V整框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "ultra-v-tgrs-2020-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2019.2949543",
+            "doi": "10.1109/tgrs.2019.2949543",
+            "title": "Low-Rank Tensor Modeling for Hyperspectral Unmixing Accounting for Spectral Variability",
+            "authors": [
+              "Tales Imbiriba",
+              "Ricardo Augusto Borsoi",
+              "Jose Carlos Moreira Bermudez"
+            ],
+            "year": 2020,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "58",
+            "issue": "3",
+            "page": "1833-1842",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "ultra-v-tgrs-2020",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "935267098aa6eb683dc4484f019e005db0c160293e4e471ae669ebc2b5cbb03d",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1811.02413v3",
+            "https://arxiv.org/pdf/1811.02413v3",
+            "https://api.crossref.org/works?query.title=Low-Rank+Tensor+Modeling+for+Hyperspectral+Unmixing+Accounting+for+Spectral+Variability&rows=3"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用Fig1为通用CP张量分解，其余为丰度、参数、端元结果，没有独立ULTRA-V主框架；留白，不追其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1811.02413v3",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "fast-highdim-bilateral-nlm-tip-2019",
+      "shortTitle": "Fast high-dimensional filtering",
+      "title": "Fast High-Dimensional Bilateral and Nonlocal Means Filtering",
+      "authors": "Pravin Nair, Kunal. N. Chaudhury",
+      "year": 2019,
+      "venue": "TIP",
+      "publicationName": "IEEE Transactions on Image Processing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1811.02363",
+      "representation": "聚类引导图的值域，以数据确定移位高斯及权重，形成中间图、计算系数并用快速卷积和加权重组近似滤波；主图用彩色图示例，实际HSI处理另由所用p9及图注明确，不把示意图换成虚构HSI。",
+      "tags": [],
+      "summary": "以数据驱动高斯核近似加速高维双边和非局部均值滤波，包括实际HSI去噪。",
+      "input": "高维输入图像、引导图和滤波参数；包含33带及200带高光谱实验。",
+      "output": "滤波/去噪后的多通道图像。",
+      "mechanism": "聚类引导图的值域，以数据确定移位高斯及权重，形成中间图、计算系数并用快速卷积和加权重组近似滤波；主图用彩色图示例，实际HSI处理另由所用p9及图注明确，不把示意图换成虚构HSI。",
+      "readingNote": "唯一所用arXiv 1811.02363v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TIP2019，实际33/200带HSI去噪由必要原文和图注确认；流场三维对照不把本HSI去噪论文加入HS3D。",
+      "paper": "https://doi.org/10.1109/tip.2018.2878955",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1811.02363v1",
+          "sourceVersion": "arXiv 1811.02363v1",
+          "figureLabel": "Fig. 2.",
+          "page": 3,
+          "caption": "Fig. 2. Flowchart of our algorithm with the main modules. Also shown are the timings for the bilateral ﬁltering of a 1MP color image. The ﬁlter parameters are σs = 10 and σr = 75. When K = 4 (number of clusters), total time required is 253 ms and the PSNR is 48.30 dB. The symbols used in the ﬂowchart are deﬁned in Section II (also see Algorithm 1).",
+          "verificationNote": "完整保留引导/输入、值域聚类、中间图、系数/快速卷积及加权重组输出；图中彩色图演示/原计时不改写为HSI或本轮性能核验。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/fast-highdim-bilateral-nlm-tip-2019/framework.png",
+          "width": 1401,
+          "height": 465,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "94a889ee7d980b7e83374428321a5729d8b1149e21ae2d8ac73a1a4d62fc43d7",
+          "attribution": "Pravin Nair, Kunal. N. Chaudhury · arXiv 1811.02363v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              72,
+              54,
+              539,
+              209
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tip.2018.2878955",
+      "citation": "@article{fast-highdim-bilateral-nlm-tip-2019,\n  title = {Fast High-Dimensional Bilateral and Nonlocal Means Filtering},\n  author = {Pravin Nair and Kunal. N. Chaudhury},\n  journal = {IEEE Transactions on Image Processing},\n  year = {2019},\n  volume = {28},\n  number = {3},\n  pages = {1470--1481},\n  doi = {10.1109/tip.2018.2878955}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-denoising"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以数据驱动高斯核近似加速高维双边和非局部均值滤波，包括实际HSI去噪。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1811.02363v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "以数据驱动高斯核近似加速高维双边和非局部均值滤波，包括实际HSI去噪。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1811.02363v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1811.02363v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TIP2019，实际33/200带HSI去噪由必要原文和图注确认；流场三维对照不把本HSI去噪论文加入HS3D。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2FTIP.2018.2878955",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "fast-highdim-bilateral-nlm-tip-2019-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1811.02363v1",
+            "pdfUrl": "https://arxiv.org/pdf/1811.02363v1",
+            "arxivId": "1811.02363",
+            "arxivVersion": 1,
+            "title": "Fast High-Dimensional Bilateral and Nonlocal Means Filtering",
+            "authors": [
+              "Pravin Nair",
+              "Kunal. N. Chaudhury"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-11-06T14:20:35Z",
+            "updatedAt": "2018-11-06T14:20:35Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1811.02363v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1811.02363v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。正式TIP2019，实际33/200带HSI去噪由必要原文和图注确认；流场三维对照不把本HSI去噪论文加入HS3D。"
+          },
+          {
+            "id": "fast-highdim-bilateral-nlm-tip-2019-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tip.2018.2878955",
+            "doi": "10.1109/tip.2018.2878955",
+            "title": "Fast High-Dimensional Bilateral and Nonlocal Means Filtering",
+            "authors": [
+              "Pravin Nair",
+              "Kunal N. Chaudhury"
+            ],
+            "year": 2019,
+            "publicationName": "IEEE Transactions on Image Processing",
+            "volume": "28",
+            "issue": "3",
+            "page": "1470-1481",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "fast-highdim-bilateral-nlm-tip-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c7eb52e2302d74dd1d70df258726be596883da0e3b78acd6a093e9b310906b2f",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1811.02363v1",
+            "https://arxiv.org/pdf/1811.02363v1",
+            "https://api.crossref.org/works/10.1109%2FTIP.2018.2878955"
+          ]
+        }
+      }
+    },
+    {
+      "id": "validating-hsi-segmentation-arxiv-2018",
+      "shortTitle": "Leakage-free HSI validation",
+      "title": "Validating Hyperspectral Image Segmentation",
+      "authors": "Jakub Nalepa, Michal Myller, Michal Kawulok",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1811.03707",
+      "representation": "随机选取至少覆盖算法邻域的训练块，将其作为独立图像并从测试影像移除；贡献是划分与评测方法，谱CNN图仅用于验证，不作为新分割框架或另建重复数据资源。",
+      "tags": [],
+      "summary": "为高光谱分割评测生成避免空间邻域训练/测试泄漏的数据划分。",
+      "input": "带类别真值的高光谱影像、训练数量及邻域大小。",
+      "output": "互不重叠的块状训练/测试集合和评测基准划分。",
+      "mechanism": "随机选取至少覆盖算法邻域的训练块，将其作为独立图像并从测试影像移除；贡献是划分与评测方法，谱CNN图仅用于验证，不作为新分割框架或另建重复数据资源。",
+      "readingNote": "唯一所用arXiv 1811.03707v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。LGRS2019同题同序三作者书目源外，只关联；结果划分图/泄漏示意与验证用1D CNN不是数据划分主框架，留白。作者代码/划分URL只记录，不访问。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1811.03707v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{validating-hsi-segmentation-arxiv-2018,\n  title = {Validating Hyperspectral Image Segmentation},\n  author = {Jakub Nalepa and Michal Myller and Michal Kawulok},\n  year = {2018},\n  eprint = {1811.03707},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1811.03707v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "datasets-benchmarks"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "为高光谱分割评测生成避免空间邻域训练/测试泄漏的数据划分。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [
+          "https://tinyurl.com/ieee-grsl"
+        ],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1811.03707v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "为高光谱分割评测生成避免空间邻域训练/测试泄漏的数据划分。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1811.03707v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1811.03707v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。LGRS2019同题同序三作者书目源外，只关联；结果划分图/泄漏示意与验证用1D CNN不是数据划分主框架，留白。作者代码/划分URL只记录，不访问。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2FLGRS.2019.2895697",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1811.03707v1",
+            "checkedAt": "2026-10-14",
+            "level": "所用p2作者划分/实现链接声明",
+            "supports": [
+              "只记录作者共享URL，不访问重定向、代码或数据仓库。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "validating-hsi-segmentation-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1811.03707v1",
+            "pdfUrl": "https://arxiv.org/pdf/1811.03707v1",
+            "arxivId": "1811.03707",
+            "arxivVersion": 1,
+            "title": "Validating Hyperspectral Image Segmentation",
+            "authors": [
+              "Jakub Nalepa",
+              "Michal Myller",
+              "Michal Kawulok"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-11-08T22:59:40Z",
+            "updatedAt": "2018-11-08T22:59:40Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-twelfth-ten-hsi-directory-2026-10-14-1811.03707v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1811.03707v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。LGRS2019同题同序三作者书目源外，只关联；结果划分图/泄漏示意与验证用1D CNN不是数据划分主框架，留白。作者代码/划分URL只记录，不访问。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "validating-hsi-segmentation-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/lgrs.2019.2895697",
+            "doi": "10.1109/lgrs.2019.2895697",
+            "title": "Validating Hyperspectral Image Segmentation",
+            "authors": [
+              "Jakub Nalepa",
+              "Michal Myller",
+              "Michal Kawulok"
+            ],
+            "year": 2019,
+            "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+            "volume": "16",
+            "issue": "8",
+            "page": "1264-1268",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "validating-hsi-segmentation-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要和必要实际HSI输入支持直接成像、选带、解混、滤波或评测任务；DEM为真实三维几何，其他谱空卷积/张量/流场对照不自动加入HS3D。数据划分贡献与验证网络区分，通用CP示意不冒充方法框架。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "81f03dde2641064fcf43da13e60c5b995b2745246a26bc9647966cda58b4f456",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1811.03707v1",
+            "https://arxiv.org/pdf/1811.03707v1",
+            "https://api.crossref.org/works/10.1109%2FLGRS.2019.2895697",
+            "https://arxiv.org/pdf/1811.03707v1"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用为泄漏/分区示例和验证用1D CNN，没有独立数据划分主框架；评测网络不冒充新分割或划分流程，留白，不追其他版本。",
+        "sourceUrl": "https://arxiv.org/pdf/1811.03707v1",
+        "checkedAt": "2026-10-14"
+      },
+      "code": "https://tinyurl.com/ieee-grsl"
     }
   ],
   "datasets": [
@@ -121454,7 +122891,9 @@
         "fourier-spectral-basis-snapshot-oe-2018",
         "multiscale-cnn-rgb-hsi-arxiv-2018",
         "desci-tpami-2019",
-        "singlepixel-fti-compressive-arxiv-2018"
+        "singlepixel-fti-compressive-arxiv-2018",
+        "fiber-speckle-snapshot-oe-2018",
+        "vds-singlepixel-fti-arxiv-2018"
       ],
       "history": [
         {
@@ -121531,7 +122970,9 @@
         "multilevel-ci-fti-hsi-arxiv-2018",
         "polariton-hsi-semiconductor-arxiv-2018",
         "fourier-spectral-basis-snapshot-oe-2018",
-        "singlepixel-fti-compressive-arxiv-2018"
+        "singlepixel-fti-compressive-arxiv-2018",
+        "fiber-speckle-snapshot-oe-2018",
+        "vds-singlepixel-fti-arxiv-2018"
       ],
       "history": [
         {
@@ -121682,7 +123123,8 @@
         "subspace-mlr-mrf-hyperspectral-segmentation-tgrs-2012",
         "feature-sampling-hsi-cell-classification-arxiv-2017",
         "susa-lowshot-hsi-tgrs-2018",
-        "earthmapper-hsi-segmentation-arxiv-2018"
+        "earthmapper-hsi-segmentation-arxiv-2018",
+        "swir-dem-terrain-segmentation-arxiv-2018"
       ],
       "history": [
         {
@@ -122004,7 +123446,8 @@
         "mixture-noise-lowrank-restoration-tip-2016",
         "non-iid-nmog-hsi-denoising-arxiv-2017",
         "lrtdtv-hsi-restoration-arxiv-2017",
-        "wlrtr-hsi-restoration-arxiv-2017"
+        "wlrtr-hsi-restoration-arxiv-2017",
+        "fast-highdim-bilateral-nlm-tip-2019"
       ],
       "history": [
         {
@@ -122109,7 +123552,8 @@
         "hsi-unmixing-labels-benchmark-arxiv-2017",
         "normalization-hsi-classification-benchmark-arxiv-2017",
         "cnn-rsl-hsi-classification-arxiv-2017",
-        "hs-sod-dataset-arxiv-2018"
+        "hs-sod-dataset-arxiv-2018",
+        "validating-hsi-segmentation-arxiv-2018"
       ],
       "history": [
         {
@@ -122430,7 +123874,9 @@
         "grassmannian-endmember-arxiv-2018",
         "mua-sv-tip-2020",
         "dscn-plusplus-arxiv-2018",
-        "residuum-condition-endmember-pruning-arxiv-2018"
+        "residuum-condition-endmember-pruning-arxiv-2018",
+        "almm-spectral-variability-tip-2019",
+        "ultra-v-tgrs-2020"
       ],
       "history": [
         {
@@ -122788,7 +124234,8 @@
         "lowrank-tensor-tv-superresolution-arxiv-2016",
         "graph-multilinear-lowrank-hsi-arxiv-2016",
         "parallel-nncp-hsi-arxiv-2018",
-        "tensor-alignment-da-tgrs-2019"
+        "tensor-alignment-da-tgrs-2019",
+        "ultra-v-tgrs-2020"
       ],
       "history": [
         {
@@ -123999,7 +125446,8 @@
         "multi-dictionary-hsi-band-selection-arxiv-2018",
         "maize-haploid-lstm-cnn-arxiv-2018",
         "higher-order-cumulant-band-arxiv-2018",
-        "multivariate-matrix-renyi-hsi-tpami-2019"
+        "multivariate-matrix-renyi-hsi-tpami-2019",
+        "attention-cnn-band-selection-arxiv-2018"
       ],
       "history": [
         {
@@ -124737,7 +126185,8 @@
         "cross-source-neighborhood-contrast-if-2025",
         "composite-kernel-angular-hsi-lidar-arxiv-2016",
         "esdap-lidar-hsi-landcover-arxiv-2017",
-        "mimrf-hsi-lidar-tgrs-2020"
+        "mimrf-hsi-lidar-tgrs-2020",
+        "swir-dem-terrain-segmentation-arxiv-2018"
       ],
       "history": [
         {
@@ -124954,7 +126403,8 @@
         "tensor-alignment-da-tgrs-2019",
         "mdcpe-cotraining-arxiv-2018",
         "rlpa-noisy-labels-tgrs-2019",
-        "cleot-noisy-hsi-labels-arxiv-2018"
+        "cleot-noisy-hsi-labels-arxiv-2018",
+        "shorten-spatial-spectral-pgru-arxiv-2018"
       ],
       "history": [
         {
@@ -127256,7 +128706,8 @@
         "zhou-scholar-bae-net-a-band-attention-aware-ensemble-ne-2020",
         "zhou-scholar-attention-networks-for-band-weighting-and--2019",
         "zhou-scholar-arxiv-2404-05258",
-        "hypernet-hsi-change-tgrs-2022"
+        "hypernet-hsi-change-tgrs-2022",
+        "attention-cnn-band-selection-arxiv-2018"
       ],
       "dimension": "method",
       "status": "confirmed",
