@@ -118193,6 +118193,629 @@
         "checkedAt": "2026-10-14"
       },
       "code": "https://github.com/savasozkan/dscn"
+    },
+    {
+      "id": "superpca-tgrs-2018",
+      "shortTitle": "SuperPCA / MSuperPCA",
+      "title": "SuperPCA: A Superpixelwise PCA Approach for Unsupervised Feature Extraction of Hyperspectral Imagery",
+      "authors": "Junjun Jiang, Jiayi Ma, Chen Chen, Zhongyuan Wang, Zhihua Cai, Lizhe Wang",
+      "year": 2018,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1806.09807",
+      "representation": "先首主成分/ERS分割，再各均质区域单独PCA，得到不同尺度的表征；分别SVM分类并决策融合。降维特征无监督，整个含SVM的分类流程不误称完全无标注。",
+      "tags": [],
+      "summary": "用超像素内独立PCA降维，并融合多尺度分类结果。",
+      "input": "高光谱影像及由首主成分生成的多尺度超像素区域。",
+      "output": "区域自适应低维特征与地物分类图。",
+      "mechanism": "先首主成分/ERS分割，再各均质区域单独PCA，得到不同尺度的表征；分别SVM分类并决策融合。降维特征无监督，整个含SVM的分类流程不误称完全无标注。",
+      "readingNote": "唯一所用arXiv 1806.09807v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。TGRS2018同题同序六作者仅书目关联；Junjun Jiang不是Jun Zhou，不读另一正文。",
+      "paper": "https://doi.org/10.1109/tgrs.2018.2828029",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1806.09807v2",
+          "sourceVersion": "arXiv 1806.09807v2",
+          "figureLabel": "Fig. 2.",
+          "page": 2,
+          "caption": "Fig. 2. Outline of the proposed multiscale SuperPCA based HSI classiﬁcation framework.",
+          "verificationNote": "唯一主要整体框架：完整保留HSI、首主成分/ERS、多尺度分割、区域PCA、各尺度SVM与决策融合，不另取局部Fig1。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/superpca-tgrs-2018/framework.png",
+          "width": 1236,
+          "height": 909,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "b458ff284b4137e76823e861fc6de62a98b6baa4fc5e67cfc644603a0b77ab91",
+          "attribution": "Junjun Jiang, Jiayi Ma, Chen Chen, Zhongyuan Wang, Zhihua Cai, Lizhe Wang · arXiv 1806.09807v2",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              98,
+              53,
+              510,
+              356
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tgrs.2018.2828029",
+      "citation": "@article{superpca-tgrs-2018,\n  title = {SuperPCA: A Superpixelwise PCA Approach for Unsupervised Feature Extraction of Hyperspectral Imagery},\n  author = {Junjun Jiang and Jiayi Ma and Chen Chen and Zhongyuan Wang and Zhihua Cai and Lizhe Wang},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2018},\n  volume = {56},\n  number = {8},\n  pages = {4581--4593},\n  doi = {10.1109/tgrs.2018.2828029}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用超像素内独立PCA降维，并融合多尺度分类结果。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1806.09807v2",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "用超像素内独立PCA降维，并融合多尺度分类结果。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.09807v2",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1806.09807v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。TGRS2018同题同序六作者仅书目关联；Junjun Jiang不是Jun Zhou，不读另一正文。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2FTGRS.2018.2828029",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.09807v2",
+            "checkedAt": "2026-10-14",
+            "level": "所用首页作者代码声明",
+            "supports": [
+              "只记录作者实现URL，不访问仓库/README/依赖/权重或运行检查。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "superpca-tgrs-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1806.09807v2",
+            "pdfUrl": "https://arxiv.org/pdf/1806.09807v2",
+            "arxivId": "1806.09807",
+            "arxivVersion": 2,
+            "title": "SuperPCA: A Superpixelwise PCA Approach for Unsupervised Feature Extraction of Hyperspectral Imagery",
+            "authors": [
+              "Junjun Jiang",
+              "Jiayi Ma",
+              "Chen Chen",
+              "Zhongyuan Wang",
+              "Zhihua Cai",
+              "Lizhe Wang"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-06-26T06:38:07Z",
+            "updatedAt": "2018-09-15T03:24:17Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-eighth-five-and-initial-scope-2026-10-14-1806.09807v2.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1806.09807v2；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。TGRS2018同题同序六作者仅书目关联；Junjun Jiang不是Jun Zhou，不读另一正文。"
+          },
+          {
+            "id": "superpca-tgrs-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2018.2828029",
+            "doi": "10.1109/tgrs.2018.2828029",
+            "title": "SuperPCA: A Superpixelwise PCA Approach for Unsupervised Feature Extraction of Hyperspectral Imagery",
+            "authors": [
+              "Junjun Jiang",
+              "Jiayi Ma",
+              "Chen Chen",
+              "Zhongyuan Wang",
+              "Zhihua Cai",
+              "Lizhe Wang"
+            ],
+            "year": 2018,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "56",
+            "issue": "8",
+            "page": "4581-4593",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "superpca-tgrs-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/主图确认直接HSI；区分首投/更新年、相机全谱/公开子谱、局部无监督PCA/含监督SVM整流程、数据流形几何/场景三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "23e8403b70e3d08a3b855e824a70d731216c2e29eb2820e7002c481ae60f1711",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1806.09807v2",
+            "https://arxiv.org/pdf/1806.09807v2",
+            "https://api.crossref.org/works/10.1109%2FTGRS.2018.2828029",
+            "https://arxiv.org/pdf/1806.09807v2"
+          ]
+        }
+      },
+      "code": "https://github.com/junjun-jiang/SuperPCA"
+    },
+    {
+      "id": "hs-sod-dataset-arxiv-2018",
+      "shortTitle": "HS-SOD dataset",
+      "title": "Hyperspectral Image Dataset for Benchmarking on Salient Object Detection",
+      "authors": "Nevrez Imamoglu, Yu Oishi, Xiaoqiang Zhang, Guanqun Ding, Yuming Fang, Toru Kouyama, Ryosuke Nakamura",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1806.11314",
+      "representation": "采集场景后作传感器暗噪声校正、谱段裁切与人工显著区域标注，用数据评测既有显著检测方法；sRGB只是对应可视化，不把整个数据集当RGB或新增检测网络。",
+      "tags": [],
+      "summary": "构建自然场景高光谱显著目标检测数据集。",
+      "input": "NH-AIK高光谱相机采集的自然场景，保留380–780 nm谱段。",
+      "output": "60幅高光谱场景、显著目标二值真值、对应sRGB及采集参数。",
+      "mechanism": "采集场景后作传感器暗噪声校正、谱段裁切与人工显著区域标注，用数据评测既有显著检测方法；sRGB只是对应可视化，不把整个数据集当RGB或新增检测网络。",
+      "readingNote": "唯一所用arXiv 1806.11314v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。QoMEX2018源外保留arXiv2018首投；唯一所用v3更新于2026，首页说明链接/图尺寸更新，不混作2026新论文或另读v1。相机151通道350–1100 nm规格与实际公开380–780 nm子谱分列；相机照片/采集地图/标注样例不是流程框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1806.11314v3",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{hs-sod-dataset-arxiv-2018,\n  title = {Hyperspectral Image Dataset for Benchmarking on Salient Object Detection},\n  author = {Nevrez Imamoglu and Yu Oishi and Xiaoqiang Zhang and Guanqun Ding and Yuming Fang and Toru Kouyama and Ryosuke Nakamura},\n  year = {2018},\n  eprint = {1806.11314},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1806.11314v3}\n}\n",
+      "library": {
+        "categoryIds": [
+          "datasets-benchmarks",
+          "hyperspectral-salient-object-detection"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "构建自然场景高光谱显著目标检测数据集。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [
+          "https://github.com/nevrez/HS-SOD",
+          "https://huggingface.co/datasets/gsvrg/HS-SOD",
+          "https://github.com/gistairc/HS-SOD"
+        ],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1806.11314v3",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "构建自然场景高光谱显著目标检测数据集。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.11314v3",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1806.11314v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。QoMEX2018源外保留arXiv2018首投；唯一所用v3更新于2026，首页说明链接/图尺寸更新，不混作2026新论文或另读v1。相机151通道350–1100 nm规格与实际公开380–780 nm子谱分列；相机照片/采集地图/标注样例不是流程框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2FQoMEX.2018.8463428",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.11314v3",
+            "checkedAt": "2026-10-14",
+            "level": "所用p2实际采集及公开数据链接",
+            "supports": [
+              "相机151通道350–1100nm、5nm与公开380–780nm子谱区分；三个原作者数据URL只记录、不访问仓库或检查数据。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "hs-sod-dataset-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1806.11314v3",
+            "pdfUrl": "https://arxiv.org/pdf/1806.11314v3",
+            "arxivId": "1806.11314",
+            "arxivVersion": 3,
+            "title": "Hyperspectral Image Dataset for Benchmarking on Salient Object Detection",
+            "authors": [
+              "Nevrez Imamoglu",
+              "Yu Oishi",
+              "Xiaoqiang Zhang",
+              "Guanqun Ding",
+              "Yuming Fang",
+              "Toru Kouyama",
+              "Ryosuke Nakamura"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-06-29T09:31:56Z",
+            "updatedAt": "2026-09-30T07:56:16Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-eighth-five-and-initial-scope-2026-10-14-1806.11314v3.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1806.11314v3；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。QoMEX2018源外保留arXiv2018首投；唯一所用v3更新于2026，首页说明链接/图尺寸更新，不混作2026新论文或另读v1。相机151通道350–1100 nm规格与实际公开380–780 nm子谱分列；相机照片/采集地图/标注样例不是流程框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "hs-sod-dataset-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/qomex.2018.8463428",
+            "doi": "10.1109/qomex.2018.8463428",
+            "title": "Hyperspectral Image Dataset for Benchmarking on Salient Object Detection",
+            "authors": [
+              "Nevrez Imamoglu",
+              "Yu Oishi",
+              "Xiaoqiang Zhang",
+              "Guanqun Ding",
+              "Yuming Fang",
+              "Toru Kouyama",
+              "Ryosuke Nakamura"
+            ],
+            "year": 2018,
+            "publicationName": "2018 Tenth International Conference on Quality of Multimedia Experience (QoMEX)",
+            "volume": null,
+            "issue": null,
+            "page": "1-3",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "hs-sod-dataset-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/主图确认直接HSI；区分首投/更新年、相机全谱/公开子谱、局部无监督PCA/含监督SVM整流程、数据流形几何/场景三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c6221cec61f05b2bd1b347441df31ba9c82e9ba7e89fba50a5e8d0a047073a03",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1806.11314v3",
+            "https://arxiv.org/pdf/1806.11314v3",
+            "https://api.crossref.org/works/10.1109%2FQoMEX.2018.8463428",
+            "https://arxiv.org/pdf/1806.11314v3"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用图为相机照片、采集地点地图及场景/标注样例，无独立数据构建或算法框架；留白，不追其他版。",
+        "sourceUrl": "https://arxiv.org/pdf/1806.11314v3",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "grassmannian-endmember-arxiv-2018",
+      "shortTitle": "Grassmannian endmembers",
+      "title": "Endmember Extraction on the Grassmannian",
+      "authors": "Elin Farnell, Henry Kvinge, Michael Kirby, Chris Peterson",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1807.01401",
+      "representation": "以子空间表示谱变化，在Grassmann流形嵌入与凸包分层中定位边界点；实际AVIRIS Indian Pines参与，不只泛数学适用。嵌入R3或局部3×3补丁不表示几何点云，也不声称必然输出完整丰度图。",
+      "tags": [],
+      "summary": "在Grassmann流形上提取描述高光谱变化的子空间端元。",
+      "input": "高光谱场景中构建的局部谱子空间。",
+      "output": "凸包顶点/候选端元子空间及材料纯度兴趣区域。",
+      "mechanism": "以子空间表示谱变化，在Grassmann流形嵌入与凸包分层中定位边界点；实际AVIRIS Indian Pines参与，不只泛数学适用。嵌入R3或局部3×3补丁不表示几何点云，也不声称必然输出完整丰度图。",
+      "readingNote": "唯一所用arXiv 1807.01401v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。DSW2018同题同序四作者正式元数据来源外，所用图为流形嵌入/端元结果，没有独立框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1807.01401v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{grassmannian-endmember-arxiv-2018,\n  title = {Endmember Extraction on the Grassmannian},\n  author = {Elin Farnell and Henry Kvinge and Michael Kirby and Chris Peterson},\n  year = {2018},\n  eprint = {1807.01401},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1807.01401v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "在Grassmann流形上提取描述高光谱变化的子空间端元。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1807.01401v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "在Grassmann流形上提取描述高光谱变化的子空间端元。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1807.01401v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1807.01401v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。DSW2018同题同序四作者正式元数据来源外，所用图为流形嵌入/端元结果，没有独立框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Endmember+Extraction+on+the+Grassmannian&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "grassmannian-endmember-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1807.01401v1",
+            "pdfUrl": "https://arxiv.org/pdf/1807.01401v1",
+            "arxivId": "1807.01401",
+            "arxivVersion": 1,
+            "title": "Endmember Extraction on the Grassmannian",
+            "authors": [
+              "Elin Farnell",
+              "Henry Kvinge",
+              "Michael Kirby",
+              "Chris Peterson"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-07-03T23:35:47Z",
+            "updatedAt": "2018-07-03T23:35:47Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-eighth-five-and-initial-scope-2026-10-14-1807.01401v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1807.01401v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。DSW2018同题同序四作者正式元数据来源外，所用图为流形嵌入/端元结果，没有独立框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "grassmannian-endmember-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/dsw.2018.8439109",
+            "doi": "10.1109/dsw.2018.8439109",
+            "title": "ENDMEMBER EXTRACTION ON THE GRASSMANNIAN",
+            "authors": [
+              "Elin Farnell",
+              "Henry Kvinge",
+              "Michael Kirby",
+              "Chris Peterson"
+            ],
+            "year": 2018,
+            "publicationName": "2018 IEEE Data Science Workshop (DSW)",
+            "volume": null,
+            "issue": null,
+            "page": "71-75",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "grassmannian-endmember-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/主图确认直接HSI；区分首投/更新年、相机全谱/公开子谱、局部无监督PCA/含监督SVM整流程、数据流形几何/场景三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "0cf41bc30a0b9c680d961f707083129bcc1888fe185109cfa22f2c1021efa8ae",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1807.01401v1",
+            "https://arxiv.org/pdf/1807.01401v1",
+            "https://api.crossref.org/works?query.title=Endmember+Extraction+on+the+Grassmannian&rows=3"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用图为MDS嵌入、候选子空间端元及局部纯度区域结果，无独立方法框架；留白，不追其他版。",
+        "sourceUrl": "https://arxiv.org/pdf/1807.01401v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "supervised-geometry-hsi-mapping-arxiv-2018",
+      "shortTitle": "Supervised geometry-aware mapping",
+      "title": "A Supervised Geometry-Aware Mapping Approach for Classification of Hyperspectral Images",
+      "authors": "Ramanarayan Mohanty, S L Happy, Aurobinda Routray",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1807.02682",
+      "representation": "优化反映数据内在结构和异类分离的非线性目标，求得线性投影矩阵，再在映射空间降维/分类；这里geometry是光谱数据流形，不是场景三维表面。",
+      "tags": [],
+      "summary": "用监督几何感知线性映射增强高光谱类别判别。",
+      "input": "高光谱像元及训练类别标签。",
+      "output": "判别空间中的像元表征与后续分类结果。",
+      "mechanism": "优化反映数据内在结构和异类分离的非线性目标，求得线性投影矩阵，再在映射空间降维/分类；这里geometry是光谱数据流形，不是场景三维表面。",
+      "readingNote": "唯一所用arXiv 1807.02682v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。LGRS2018不在项目普通白名单，只正式书目关联；页眉LaTeX2015模板不作发表年。所用四图均分类/代价结果，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1807.02682v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{supervised-geometry-hsi-mapping-arxiv-2018,\n  title = {A Supervised Geometry-Aware Mapping Approach for Classification of Hyperspectral Images},\n  author = {Ramanarayan Mohanty and S L Happy and Aurobinda Routray},\n  year = {2018},\n  eprint = {1807.02682},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1807.02682v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用监督几何感知线性映射增强高光谱类别判别。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1807.02682v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "用监督几何感知线性映射增强高光谱类别判别。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1807.02682v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1807.02682v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。LGRS2018不在项目普通白名单，只正式书目关联；页眉LaTeX2015模板不作发表年。所用四图均分类/代价结果，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2FLGRS.2018.2804888",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "supervised-geometry-hsi-mapping-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1807.02682v1",
+            "pdfUrl": "https://arxiv.org/pdf/1807.02682v1",
+            "arxivId": "1807.02682",
+            "arxivVersion": 1,
+            "title": "A Supervised Geometry-Aware Mapping Approach for Classification of Hyperspectral Images",
+            "authors": [
+              "Ramanarayan Mohanty",
+              "S L Happy",
+              "Aurobinda Routray"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-07-07T15:57:50Z",
+            "updatedAt": "2018-07-07T15:57:50Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-eighth-five-and-initial-scope-2026-10-14-1807.02682v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1807.02682v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。LGRS2018不在项目普通白名单，只正式书目关联；页眉LaTeX2015模板不作发表年。所用四图均分类/代价结果，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "supervised-geometry-hsi-mapping-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/lgrs.2018.2804888",
+            "doi": "10.1109/lgrs.2018.2804888",
+            "title": "A Supervised Geometry-Aware Mapping Approach for Classification of Hyperspectral Images",
+            "authors": [
+              "Ramanarayan Mohanty",
+              "S. L. Happy",
+              "Aurobinda Routray"
+            ],
+            "year": 2018,
+            "publicationName": "IEEE Geoscience and Remote Sensing Letters",
+            "volume": "15",
+            "issue": "4",
+            "page": "582-586",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "supervised-geometry-hsi-mapping-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/主图确认直接HSI；区分首投/更新年、相机全谱/公开子谱、局部无监督PCA/含监督SVM整流程、数据流形几何/场景三维。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "5ac1cad07e57afcbd09fc69f87ebf6425e49d7ed0e92b62a5e8ab3527a94295f",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1807.02682v1",
+            "https://arxiv.org/pdf/1807.02682v1",
+            "https://api.crossref.org/works/10.1109%2FLGRS.2018.2804888"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用四图均为分类比较或代价曲线，无独立几何映射方法框架；留白，不追其他版。",
+        "sourceUrl": "https://arxiv.org/pdf/1807.02682v1",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "datasets": [
@@ -119010,7 +119633,8 @@
         "hyperspectral-pansharpening-review-arxiv-2015",
         "hsi-unmixing-labels-benchmark-arxiv-2017",
         "normalization-hsi-classification-benchmark-arxiv-2017",
-        "cnn-rsl-hsi-classification-arxiv-2017"
+        "cnn-rsl-hsi-classification-arxiv-2017",
+        "hs-sod-dataset-arxiv-2018"
       ],
       "history": [
         {
@@ -119327,7 +119951,8 @@
         "bundle-group-mixed-norm-unmix-tip-2019",
         "gaee-ivfm-endmember-arxiv-2018",
         "nuclear-norm-difference-pruning-arxiv-2018",
-        "dscn-unmixing-arxiv-2018"
+        "dscn-unmixing-arxiv-2018",
+        "grassmannian-endmember-arxiv-2018"
       ],
       "history": [
         {
@@ -119417,7 +120042,9 @@
         "rank1-tensor-hsi-classification-tgrs-2018",
         "fixed-point-jacobi-hsi-dimensionality-arxiv-2017",
         "rffica-rfflda-hsi-arxiv-2018",
-        "parallel-nncp-hsi-arxiv-2018"
+        "parallel-nncp-hsi-arxiv-2018",
+        "superpca-tgrs-2018",
+        "supervised-geometry-hsi-mapping-arxiv-2018"
       ],
       "history": [
         {
@@ -121833,7 +122460,9 @@
         "svm-variational-probability-hsi-arxiv-2018",
         "gan-labeled-hsi-synthesis-arxiv-2018",
         "ben-hamida-3d-cnn-tgrs-2018",
-        "tree-ap-fp-comparison-arxiv-2018"
+        "tree-ap-fp-comparison-arxiv-2018",
+        "superpca-tgrs-2018",
+        "supervised-geometry-hsi-mapping-arxiv-2018"
       ],
       "history": [
         {
@@ -123630,7 +124259,8 @@
       "evidencePaperIds": [
         "spectral-saliency-icip-2013",
         "material-salient-object-hsi-2018",
-        "zhou-scholar-arxiv-2605-17286"
+        "zhou-scholar-arxiv-2605-17286",
+        "hs-sod-dataset-arxiv-2018"
       ],
       "history": [
         {
