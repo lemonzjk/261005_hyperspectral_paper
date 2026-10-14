@@ -124456,6 +124456,365 @@
           ]
         }
       }
+    },
+    {
+      "id": "pyresnet-hsi-tgrs-2019",
+      "shortTitle": "PyResNet",
+      "title": "Deep Pyramidal Residual Networks for Spectral–Spatial Hyperspectral Image Classification",
+      "authors": "Mercedes E. Paoletti, Juan Mario Haut, Ruben Fernandez-Beltran, Javier Plaza, Antonio J. Plaza, Filiberto Pla",
+      "year": 2019,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2018.2860125",
+      "volume": "57",
+      "issue": "2",
+      "page": "740-754",
+      "representation": "输入经过卷积/批归一化、P1/P2/P3金字塔残差模块与输出模块；随深度逐渐增加特征图，P2/P3含下采样，末端全连接输出地物类别。",
+      "tags": [],
+      "summary": "以逐层增加特征图的金字塔瓶颈残差网络提取谱空特征并分类高光谱像元。",
+      "input": "以待分类像元为中心的N×d×d高光谱谱空邻域。",
+      "output": "高光谱像元地物类别。",
+      "mechanism": "输入经过卷积/批归一化、P1/P2/P3金字塔残差模块与输出模块；随深度逐渐增加特征图，P2/P3含下采样，末端全连接输出地物类别。",
+      "readingNote": "一个所用公开版本；完整原摘要、首页书目和主方法图及图注必要选读；不通读全文、比较所有版本、整理性能或访问代码。只保留完整主网络Fig3，不另取残差单元Fig1/2。UJI原元数据明确DOI、六同序作者；PDF首页作者使用缩写，原样保留。正式TGRS2019/57(2)/740–754与稿页脚2018 DRAFT分列，不把页脚当正式年；N轴为光谱，不当几何三维。",
+      "paper": "https://doi.org/10.1109/tgrs.2018.2860125",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://repositori.uji.es/server/api/core/bitstreams/701c2e8d-0fdf-4d6f-b4a6-88d89af8032c/content",
+          "paperUrl": "https://repositori.uji.es/handle/10234/177995",
+          "sourceVersion": "UJI公开作者稿（所用PDF页脚December 10, 2018 DRAFT）",
+          "figureLabel": "Fig. 3.",
+          "page": 8,
+          "caption": "Fig. 3. Proposed hyperspectral pyramidal residual network architecture model. The input block pi,j ∈RN×d×d is passed through ﬁve different modules that compose the hyperspectral pyramidal residual network: C, P1, P2, P3 and the output module. C is composed by a CONV and a BATCH-NORM layers, while P1, P2 and P3 modules, also called pyramidal modules, are composed by three pyramidal bottleneck residual units (B(i) 1 , B(i) 2 and B(i) 3 , being i = {1, 2, 3} the pyramid layer). These residual units are composed by three BATCH-NORM layers followed by their corresponding CONV layers and with a ReLU at the end of the unit. Instead of P1, that maintains the spatial size, P2 and P3 reduce the data space adding strides equal to s = 2 (green CONV layer) and a downsampling layer. Finally, the output module is composed by a downsampling layer and a fully connected layer that performs the ﬁnal classiﬁcation. Each CONV layer has its own number of ﬁlters and kernel sizes, n1 and k1 for the ﬁrst module and n(j) l and k(j) l for the pyramid layers (being j = 1, 2, 3 the j-th residual unit B(i) j and l = 1, 2, 3 the number of the l-th CONV layer). The fully connected layer is composed by Nclass neurons, being Nclass the number of different land-cover classes in the original HSI data.",
+          "verificationNote": "只保留完整主网络Fig3，不另取残差单元Fig1/2。UJI原元数据明确DOI、六同序作者；PDF首页作者使用缩写，原样保留。正式TGRS2019/57(2)/740–754与稿页脚2018 DRAFT分列，不把页脚当正式年；N轴为光谱，不当几何三维。 原图及图注视觉核对，直接裁切，无重绘；只保留此一张。",
+          "path": "figures/pyresnet-hsi-tgrs-2019/framework.png",
+          "width": 1416,
+          "height": 813,
+          "verifiedAt": "2026-10-14",
+          "verificationStatus": "verified",
+          "sha256": "95a84e804348b3eef1588db91d2b7dd642432e17e1c27dd4f1fe98f5db0d5eb9",
+          "attribution": "Mercedes E. Paoletti, Juan Mario Haut, Ruben Fernandez-Beltran, Javier Plaza, Antonio J. Plaza, Filiberto Pla · UJI公开作者稿（所用PDF页脚December 10, 2018 DRAFT）",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              70,
+              60,
+              542,
+              331
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@article{pyresnet-hsi-tgrs-2019,\n  title = {Deep Pyramidal Residual Networks for Spectral–Spatial Hyperspectral Image Classification},\n  author = {Mercedes E. Paoletti and Juan Mario Haut and Ruben Fernandez-Beltran and Javier Plaza and Antonio J. Plaza and Filiberto Pla},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2019},\n  volume = {57},\n  number = {2},\n  pages = {740--754},\n  doi = {10.1109/tgrs.2018.2860125}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及主要方法图明确直接高光谱像元分类，谱空邻域不等于三维几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以逐层增加特征图的金字塔瓶颈残差网络提取谱空特征并分类高光谱像元。",
+        "datasets": "只核实际HSI模态，不整理实验划分。",
+        "experimentSetting": "本轮只核书目/直接HSI范围及一张主方法图；性能未核。",
+        "conclusions": "任务与主要方法按原摘要/主图确认，不摘录未核性能结论。",
+        "limitations": "正式正文、其他版本/图、实验与代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://repositori.uji.es/server/api/pid/find?id=10234%2F177995",
+            "checkedAt": "2026-10-14",
+            "level": "机构原摘要/书目",
+            "supports": [
+              "以逐层增加特征图的金字塔瓶颈残差网络提取谱空特征并分类高光谱像元。",
+              "所用源明确直接高光谱分类；同序六/三作者均无Jun Zhou，不表示自然人作者全集。"
+            ]
+          },
+          {
+            "url": "https://repositori.uji.es/server/api/core/bitstreams/701c2e8d-0fdf-4d6f-b4a6-88d89af8032c/content",
+            "checkedAt": "2026-10-14",
+            "level": "唯一公开PDF首页及主要原方法图/图注",
+            "supports": [
+              "一个所用公开版本；完整原摘要、首页书目和主方法图及图注必要选读；不通读全文、比较所有版本、整理性能或访问代码。只保留完整主网络Fig3，不另取残差单元Fig1/2。UJI原元数据明确DOI、六同序作者；PDF首页作者使用缩写，原样保留。正式TGRS2019/57(2)/740–754与稿页脚2018 DRAFT分列，不把页脚当正式年；N轴为光谱，不当几何三维。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2019-01-01%2Cuntil-pub-date%3A2019-12-31&rows=1000&cursor=%2A",
+            "checkedAt": "2026-10-14",
+            "level": "复用Crossref原年度注册书目，完整响应见共享快照",
+            "supports": [
+              "正式TGRS2019二月卷57期2，DOI题名及同序作者关联；不另读正式正文。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "pyresnet-hsi-tgrs-2019-selected-public-material",
+            "type": "唯一所用公开正文",
+            "url": "https://repositori.uji.es/handle/10234/177995",
+            "pdfUrl": "https://repositori.uji.es/server/api/core/bitstreams/701c2e8d-0fdf-4d6f-b4a6-88d89af8032c/content",
+            "title": "Deep Pyramidal Residual Networks for Spectral-Spatial Hyperspectral Image Classification",
+            "authors": [
+              "Mercedes E. Paoletti",
+              "Juan Mario Haut",
+              "Ruben Fernandez-Beltran",
+              "Javier Plaza",
+              "Antonio J. Plaza",
+              "Filiberto Pla"
+            ],
+            "year": 2018,
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/tgrs-2019-next-ten-and-jun-eight-difference-2026-10-14-uji-pdf.pdf.gz",
+            "compression": "gzip",
+            "relation": "一个所用公开版本；完整原摘要、首页书目和主方法图及图注必要选读；不通读全文、比较所有版本、整理性能或访问代码。只保留完整主网络Fig3，不另取残差单元Fig1/2。UJI原元数据明确DOI、六同序作者；PDF首页作者使用缩写，原样保留。正式TGRS2019/57(2)/740–754与稿页脚2018 DRAFT分列，不把页脚当正式年；N轴为光谱，不当几何三维。",
+            "rawRepositoryAuthors": [
+              "Paoletti, Mercedes Eugenia",
+              "Haut, Juan M.",
+              "Fernandez-Beltran, Ruben",
+              "Plaza, Javier",
+              "Plaza, Antonio",
+              "Pla, Filiberto"
+            ],
+            "pdfAuthorNames": [
+              "Mercedes E. Paoletti",
+              "Juan M. Haut",
+              "Ruben Fernandez-Beltran",
+              "Javier Plaza",
+              "Antonio J. Plaza",
+              "Filiberto Pla"
+            ],
+            "pdfPrintedDate": "December 10, 2018 DRAFT",
+            "dateBoundary": "仅稿页脚日期，不作正式发表日期或上传日期证明。"
+          },
+          {
+            "id": "pyresnet-hsi-tgrs-2019-formal-bibliography",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2018.2860125",
+            "doi": "10.1109/tgrs.2018.2860125",
+            "title": "Deep Pyramidal Residual Networks for Spectral–Spatial Hyperspectral Image Classification",
+            "authors": [
+              "Mercedes E. Paoletti",
+              "Juan Mario Haut",
+              "Ruben Fernandez-Beltran",
+              "Javier Plaza",
+              "Antonio J. Plaza",
+              "Filiberto Pla"
+            ],
+            "year": 2019,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "57",
+            "issue": "2",
+            "page": "740-754",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "正式注册书目关联；一个公开所用正文，不比较另一正文。"
+          }
+        ],
+        "methodFamilyId": "pyresnet-hsi-tgrs-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及主图确认高光谱分类；主方法示意与完整网络范围分列，不推几何三维或未核性能。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "b116c4269a4764dfee1a7cda0ce76dde47a2dd51db13aba67818b36e33cf12d0",
+          "sourceUrls": [
+            "https://repositori.uji.es/server/api/pid/find?id=10234%2F177995",
+            "https://repositori.uji.es/server/api/core/bitstreams/701c2e8d-0fdf-4d6f-b4a6-88d89af8032c/content",
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2019-01-01%2Cuntil-pub-date%3A2019-12-31&rows=1000&cursor=%2A"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lslrr-hsi-classification-tgrs-2019",
+      "shortTitle": "LSLRR",
+      "title": "Locality and Structure Regularized Low Rank Representation for Hyperspectral Image Classification",
+      "authors": "Qi Wang, Xiang He, Xuelong Li",
+      "year": 2019,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "doi": "10.1109/tgrs.2018.2862899",
+      "volume": "57",
+      "issue": "2",
+      "page": "911-923",
+      "representation": "局部约束用空间与光谱距离表征邻近关系，结构保持约束使表示近块对角；学习判别字典和低秩表示，并由测试像元对训练类别的表示贡献决定标签。",
+      "tags": [],
+      "summary": "以局部空间—光谱距离和近块对角结构约束改进低秩表示，直接判别高光谱像元类别。",
+      "input": "高光谱训练/测试像元的光谱及空间位置。",
+      "output": "高光谱像元分类标签。",
+      "mechanism": "局部约束用空间与光谱距离表征邻近关系，结构保持约束使表示近块对角；学习判别字典和低秩表示，并由测试像元对训练类别的表示贡献决定标签。",
+      "readingNote": "一个所用公开版本；完整原摘要、首页书目和主方法图及图注必要选读；不通读全文、比较所有版本、整理性能或访问代码。Fig1为训练/测试样本、字典、低秩表示与噪声的主要方法示意，未画完整求解器，说明不冒称全算法流程。官方arXiv明确DOI；API第二作者Xiange He、PDF及正式原注册Xiang He差异保留，不自行改署名或逐版阅读。",
+      "paper": "https://doi.org/10.1109/tgrs.2018.2862899",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1905.02488v1",
+          "paperUrl": "https://arxiv.org/abs/1905.02488v1",
+          "sourceVersion": "arXiv1905.02488v1",
+          "figureLabel": "Fig. 1.",
+          "page": 5,
+          "caption": "Fig. 1. Illustration of the proposed LSLRR method. The value of colored and white blocks are non-zero and zero, respectively. Besides, the value of gray blocks is close to zero. For the purpose of simpliﬁcation, only two class are used to describe the method.",
+          "verificationNote": "Fig1为训练/测试样本、字典、低秩表示与噪声的主要方法示意，未画完整求解器，说明不冒称全算法流程。官方arXiv明确DOI；API第二作者Xiange He、PDF及正式原注册Xiang He差异保留，不自行改署名或逐版阅读。 原图及图注视觉核对，直接裁切，无重绘；只保留此一张。",
+          "path": "figures/lslrr-hsi-classification-tgrs-2019/framework.png",
+          "width": 1560,
+          "height": 447,
+          "verifiedAt": "2026-10-14",
+          "verificationStatus": "verified",
+          "sha256": "792ddafb8936a617584dac664719a68c1c572301f6f7bc3d609523eaa42e85ab",
+          "attribution": "Qi Wang, Xiang He, Xuelong Li · arXiv1905.02488v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              52,
+              565,
+              201
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "arxivId": "1905.02488",
+      "citation": "@article{lslrr-hsi-classification-tgrs-2019,\n  title = {Locality and Structure Regularized Low Rank Representation for Hyperspectral Image Classification},\n  author = {Qi Wang and Xiang He and Xuelong Li},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2019},\n  volume = {57},\n  number = {2},\n  pages = {911--923},\n  doi = {10.1109/tgrs.2018.2862899}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及主要方法图明确直接高光谱像元分类，谱空邻域不等于三维几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以局部空间—光谱距离和近块对角结构约束改进低秩表示，直接判别高光谱像元类别。",
+        "datasets": "只核实际HSI模态，不整理实验划分。",
+        "experimentSetting": "本轮只核书目/直接HSI范围及一张主方法图；性能未核。",
+        "conclusions": "任务与主要方法按原摘要/主图确认，不摘录未核性能结论。",
+        "limitations": "正式正文、其他版本/图、实验与代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1905.02488v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要/明确DOI",
+            "supports": [
+              "以局部空间—光谱距离和近块对角结构约束改进低秩表示，直接判别高光谱像元类别。",
+              "所用源明确直接高光谱分类；同序六/三作者均无Jun Zhou，不表示自然人作者全集。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1905.02488v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一公开PDF首页及主要原方法图/图注",
+            "supports": [
+              "一个所用公开版本；完整原摘要、首页书目和主方法图及图注必要选读；不通读全文、比较所有版本、整理性能或访问代码。Fig1为训练/测试样本、字典、低秩表示与噪声的主要方法示意，未画完整求解器，说明不冒称全算法流程。官方arXiv明确DOI；API第二作者Xiange He、PDF及正式原注册Xiang He差异保留，不自行改署名或逐版阅读。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2019-01-01%2Cuntil-pub-date%3A2019-12-31&rows=1000&cursor=%2A",
+            "checkedAt": "2026-10-14",
+            "level": "复用Crossref原年度注册书目，完整响应见共享快照",
+            "supports": [
+              "正式TGRS2019二月卷57期2，DOI题名及同序作者关联；不另读正式正文。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "lslrr-hsi-classification-tgrs-2019-selected-public-material",
+            "type": "唯一所用公开正文",
+            "url": "https://arxiv.org/abs/1905.02488v1",
+            "pdfUrl": "https://arxiv.org/pdf/1905.02488v1",
+            "title": "Locality and Structure Regularized Low Rank Representation for Hyperspectral Image Classification",
+            "authors": [
+              "Qi Wang",
+              "Xiange He",
+              "Xuelong Li"
+            ],
+            "year": 2019,
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/tgrs-2019-next-ten-and-jun-eight-difference-2026-10-14-tgrs9-pdf.pdf.gz",
+            "compression": "gzip",
+            "relation": "一个所用公开版本；完整原摘要、首页书目和主方法图及图注必要选读；不通读全文、比较所有版本、整理性能或访问代码。Fig1为训练/测试样本、字典、低秩表示与噪声的主要方法示意，未画完整求解器，说明不冒称全算法流程。官方arXiv明确DOI；API第二作者Xiange He、PDF及正式原注册Xiang He差异保留，不自行改署名或逐版阅读。",
+            "arxivId": "1905.02488",
+            "arxivVersion": 1,
+            "firstSubmittedAt": "2019-05-07",
+            "rawCitationAuthors": [
+              "Wang, Qi",
+              "He, Xiange",
+              "Li, Xuelong"
+            ],
+            "pdfAuthorNames": [
+              "Qi Wang",
+              "Xiang He",
+              "Xuelong Li"
+            ],
+            "authorNameBoundary": "官方API Xiange He 与所用PDF/原注册Xiang He分列；明确DOI支持版本关联，不默改原名。",
+            "metadataStatus": "所用v1官方原书目已核；未检查其他版本或最新版本",
+            "sourcePolicyStatus": "arxiv_allowed"
+          },
+          {
+            "id": "lslrr-hsi-classification-tgrs-2019-formal-bibliography",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2018.2862899",
+            "doi": "10.1109/tgrs.2018.2862899",
+            "title": "Locality and Structure Regularized Low Rank Representation for Hyperspectral Image Classification",
+            "authors": [
+              "Qi Wang",
+              "Xiang He",
+              "Xuelong Li"
+            ],
+            "year": 2019,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "57",
+            "issue": "2",
+            "page": "911-923",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "正式注册书目关联；一个公开所用正文，不比较另一正文。"
+          }
+        ],
+        "methodFamilyId": "lslrr-hsi-classification-tgrs-2019",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及主图确认高光谱分类；主方法示意与完整网络范围分列，不推几何三维或未核性能。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "a0765a0e7bcfeddecd5a57b7166c98ed42d3482072a42d9a1a8473bba6313057",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1905.02488v1",
+            "https://arxiv.org/pdf/1905.02488v1",
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2019-01-01%2Cuntil-pub-date%3A2019-12-31&rows=1000&cursor=%2A"
+          ]
+        }
+      }
     }
   ],
   "datasets": [
@@ -128152,7 +128511,9 @@
         "ssrlsc-hsi-dimension-arxiv-2018",
         "hard-example-generation-hsi-arxiv-2018",
         "ssmrpe-hsi-manifold-arxiv-2018",
-        "cospace-hs-ms-tgrs-2019"
+        "cospace-hs-ms-tgrs-2019",
+        "pyresnet-hsi-tgrs-2019",
+        "lslrr-hsi-classification-tgrs-2019"
       ],
       "history": [
         {
