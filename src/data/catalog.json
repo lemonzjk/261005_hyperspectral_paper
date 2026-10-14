@@ -143793,7 +143793,7 @@
     },
     {
       "id": "tgrs-2021-hsi-2994205",
-      "shortTitle": "Hyperspectral Image Classification With Context-Aware Dynamic Graph Convolutional Net",
+      "shortTitle": "CAD-GCN",
       "title": "Hyperspectral Image Classification With Context-Aware Dynamic Graph Convolutional Network",
       "authors": "Sheng Wan, Chen Gong, Ping Zhong, Shirui Pan, Guangyu Li, Jian Yang",
       "year": 2021,
@@ -143806,16 +143806,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "通过区域图投影与动态图更新，学习远距离上下文并进行高光谱分类。",
+      "input": "高光谱影像，投影为由像元软分配构成的区域图。",
+      "output": "回投影到像元网格的地物类别。",
+      "mechanism": "区域图上的图卷积与邻接边权/边过滤器联合更新，再回投影到像元并用交叉熵训练。",
+      "representation": "区域图上的图卷积与邻接边权/边过滤器联合更新，再回投影到像元并用交叉熵训练。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只1909.11953v1原摘要/首页及Fig1/p4图投影、动态细化、回投影完整框架，不追加Fig2像元分配子图。正式2021/预印本2019分列；与既有MDGCN异题名/不同DOI，不合并不同工作。图拓扑不是几何三维。",
       "paper": "https://doi.org/10.1109/tgrs.2020.2994205",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-2994205/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/1909.11953",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.2994205",
+          "sourceVersion": "arXiv1909.11953v1",
+          "figureLabel": "Fig. 1.",
+          "page": 4,
+          "caption": "Fig. 1. The framework of our proposed CAD-GCN. (a) is the original HSI. (b) shows the ﬁve regions from the original HSI obtained via pixel-to-region assignment. (c) and (d) denote two dynamic graph convolutional layers, where the circles with different colors correspond to different image regions (i.e., graph nodes) and the gray lines represent graph edges. From (c) to (d), both the edge weight and the connective relationships among regions can be dynamically reﬁned during the convolution operation, and thus the improved graph structure and node representations can be obtained. In our model, softplus [48] is utilized as the activation function. In (e), the learned graph representation can be interpolated back into 2D image grids based on the region-to-pixel assignment, and then the cross-entropy loss is used to penalize the label differences between the network output and the originally labeled pixels.",
+          "verificationNote": "只1909.11953v1原摘要/首页及Fig1/p4图投影、动态细化、回投影完整框架，不追加Fig2像元分配子图。正式2021/预印本2019分列；与既有MDGCN异题名/不同DOI，不合并不同工作。图拓扑不是几何三维。 原PDF直接裁切并视觉核对，一张。",
+          "width": 1464,
+          "height": 480,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "6e489d6e7d6b5e53a1c4c9c9fefe613d4eed32bfb3b535c47d3b25c692f67a5f",
+          "attribution": "Sheng Wan, Chen Gong, Ping Zhong, Shirui Pan, Guangyu Li, Jian Yang",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              62,
+              52,
+              550,
+              212
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "1",
       "page": "597-612",
@@ -143824,16 +143851,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "通过区域图投影与动态图更新，学习远距离上下文并进行高光谱分类。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -143842,6 +143869,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1909.11953",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "通过区域图投影与动态图更新，学习远距离上下文并进行高光谱分类。",
+              "只1909.11953v1原摘要/首页及Fig1/p4图投影、动态细化、回投影完整框架，不追加Fig2像元分配子图。正式2021/预印本2019分列；与既有MDGCN异题名/不同DOI，不合并不同工作。图拓扑不是几何三维。"
             ]
           }
         ],
@@ -143869,9 +143905,51 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-2994205-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/1909.11953v1",
+            "pdfUrl": "https://arxiv.org/pdf/1909.11953",
+            "title": "Hyperspectral Image Classification With Context-Aware Dynamic Graph Convolutional Network",
+            "authors": [
+              "Sheng Wan",
+              "Chen Gong",
+              "Ping Zhong",
+              "Shirui Pan",
+              "Guangyu Li",
+              "Jian Yang"
+            ],
+            "arxivId": "1909.11953",
+            "arxivVersion": 1,
+            "year": 2019,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-1909.11953.pdf.gz",
+            "compression": "gzip",
+            "relation": "只1909.11953v1原摘要/首页及Fig1/p4图投影、动态细化、回投影完整框架，不追加Fig2像元分配子图。正式2021/预印本2019分列；与既有MDGCN异题名/不同DOI，不合并不同工作。图拓扑不是几何三维。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-2994205"
+        "methodFamilyId": "tgrs-2021-hsi-2994205",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "caa2963c55802a1de40c1efefc0bc67c6bdde0ba760dc33cf1c530d7c56e257a",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/1909.11953"
+          ]
+        }
       }
     },
     {
@@ -146483,7 +146561,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3007921",
-      "shortTitle": "Hyperspectral Image Classification With Attention-Aided CNNs",
+      "shortTitle": "Attention-Aided CNNs",
       "title": "Hyperspectral Image Classification With Attention-Aided CNNs",
       "authors": "Renlong Hang, Zhu Li, Qingshan Liu, Pedram Ghamisi, Shuvra S. Bhattacharyya",
       "year": 2021,
@@ -146496,16 +146574,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "以谱注意力和空间注意力两个CNN分支提取判别信息，再加权融合分类结果。",
+      "input": "高光谱局部谱空图块。",
+      "output": "像元地物类别。",
+      "mechanism": "两个分支分别强调判别谱带/通道和空间位置，并将谱、空分类结果自适应加权。",
+      "representation": "两个分支分别强调判别谱带/通道和空间位置，并将谱、空分类结果自适应加权。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只2005.11977v2的原摘要/首页和Fig1/p3双支主框架；不追加Fig2两注意力子模块。正式TGRS2021、所用预印本2020分列。Zhu Li/其他作者不混目标Jun Zhou；谱空轴不是真实三维几何。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3007921",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3007921/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/2005.11977",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.3007921",
+          "sourceVersion": "arXiv2005.11977v2",
+          "figureLabel": "Fig. 1:",
+          "page": 3,
+          "caption": "Fig. 1: Flowchart of the proposed model. Note that the numbers represent the size of each layer for the Houston 2018 data.",
+          "verificationNote": "只2005.11977v2的原摘要/首页和Fig1/p3双支主框架；不追加Fig2两注意力子模块。正式TGRS2021、所用预印本2020分列。Zhu Li/其他作者不混目标Jun Zhou；谱空轴不是真实三维几何。 原PDF直接裁切并视觉核对，一张。",
+          "width": 1362,
+          "height": 531,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "9a3b241e0f73db71ddac78aa4023029497e421b696ea1dc011fc4c6a47424355",
+          "attribution": "Renlong Hang, Zhu Li, Qingshan Liu, Pedram Ghamisi, Shuvra S. Bhattacharyya",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              82,
+              51,
+              536,
+              228
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "3",
       "page": "2281-2293",
@@ -146514,16 +146619,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以谱注意力和空间注意力两个CNN分支提取判别信息，再加权融合分类结果。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -146532,6 +146637,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2005.11977",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "以谱注意力和空间注意力两个CNN分支提取判别信息，再加权融合分类结果。",
+              "只2005.11977v2的原摘要/首页和Fig1/p3双支主框架；不追加Fig2两注意力子模块。正式TGRS2021、所用预印本2020分列。Zhu Li/其他作者不混目标Jun Zhou；谱空轴不是真实三维几何。"
             ]
           }
         ],
@@ -146558,14 +146672,55 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3007921-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2005.11977v2",
+            "pdfUrl": "https://arxiv.org/pdf/2005.11977",
+            "title": "Hyperspectral Image Classification with Attention Aided CNNs",
+            "authors": [
+              "Renlong Hang",
+              "Zhu Li",
+              "Qingshan Liu",
+              "Pedram Ghamisi",
+              "Shuvra S. Bhattacharyya"
+            ],
+            "arxivId": "2005.11977",
+            "arxivVersion": 2,
+            "year": 2020,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2005.11977.pdf.gz",
+            "compression": "gzip",
+            "relation": "只2005.11977v2的原摘要/首页和Fig1/p3双支主框架；不追加Fig2两注意力子模块。正式TGRS2021、所用预印本2020分列。Zhu Li/其他作者不混目标Jun Zhou；谱空轴不是真实三维几何。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3007921"
+        "methodFamilyId": "tgrs-2021-hsi-3007921",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "510a725ddf6e6a6f2e6ebf1b1519a3accd8dffbfbd08ce9784f537881dfa35ad",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2005.11977"
+          ]
+        }
       }
     },
     {
       "id": "tgrs-2021-hsi-3007945",
-      "shortTitle": "Hyperspectral Image Restoration via Global L 1-2 Spatial–Spectral Total Variation Reg",
+      "shortTitle": "Global SSTV / nonconvex local LR",
       "title": "Hyperspectral Image Restoration via Global L 1-2 Spatial–Spectral Total Variation Regularized Local Low-Rank Tensor Recovery",
       "authors": "Haijin Zeng, Xiaozhen Xie, Haojie Cui, Hanping Yin, Jifeng Ning",
       "year": 2021,
@@ -146578,15 +146733,15 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "结合全局谱空总变差与非凸局部低秩张量近似，去除高光谱混合噪声。",
+      "input": "被混合噪声污染的高光谱影像。",
+      "output": "恢复的干净高光谱影像。",
+      "mechanism": "所用公开稿以张量L_gamma范数刻画局部低秩先验，同时用全局谱空总变差保留局部细节和整体结构。",
+      "representation": "所用公开稿以张量L_gamma范数刻画局部低秩先验，同时用全局谱空总变差保留局部细节和整体结构。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。所用2006.00235v1题名Denoising/Nonconvex Local Low-Rank Tensor Approximation、三作者；正式Restoration/Global L1-2 Spatial-Spectral Total Variation Regularized Local Low-Rank Tensor Recovery、五作者分别保留。官方arXiv citation_doi明确10.1109/TGRS.2020.3007945支持书目版本关联，不据同DOI断言两版方法/实验相同；不把正式题名L1-2写成所用稿L_gamma。只一PDF首页及图注定位：Fig1低秩张量近似示意、Fig2局部分块、其余为数据/结果，未见完整总变差-低秩复原主框架，留白，不追别版。正式2021/预印本2020分列。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3007945",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
+      "verificationLevel": "primary_abstract_verified",
       "frameworkFigures": [],
       "volume": "59",
       "issue": "4",
@@ -146594,18 +146749,19 @@
       "citation": "@article{tgrs-2021-hsi-3007945,\n  title = {Hyperspectral Image Restoration via Global L 1-2 Spatial–Spectral Total Variation Regularized Local Low-Rank Tensor Recovery},\n  author = {Haijin Zeng and Xiaozhen Xie and Haojie Cui and Hanping Yin and Jifeng Ning},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2021},\n  volume = {59},\n  number = {4},\n  pages = {3309--3325},\n  doi = {10.1109/tgrs.2020.3007945}\n}\n",
       "library": {
         "categoryIds": [
+          "spectral-denoising",
           "spectral-data-restoration"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "结合全局谱空总变差与非凸局部低秩张量近似，去除高光谱混合噪声。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -146614,6 +146770,23 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2006.00235",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "结合全局谱空总变差与非凸局部低秩张量近似，去除高光谱混合噪声。",
+              "所用2006.00235v1题名Denoising/Nonconvex Local Low-Rank Tensor Approximation、三作者；正式Restoration/Global L1-2 Spatial-Spectral Total Variation Regularized Local Low-Rank Tensor Recovery、五作者分别保留。官方arXiv citation_doi明确10.1109/TGRS.2020.3007945支持书目版本关联，不据同DOI断言两版方法/实验相同；不把正式题名L1-2写成所用稿L_gamma。只一PDF首页及图注定位：Fig1低秩张量近似示意、Fig2局部分块、其余为数据/结果，未见完整总变差-低秩复原主框架，留白，不追别版。正式2021/预印本2020分列。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2006.00235v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv原元数据/明确DOI，版本身份与正式书目对应",
+            "supports": [
+              "所用2006.00235v1题名Denoising/Nonconvex Local Low-Rank Tensor Approximation、三作者；正式Restoration/Global L1-2 Spatial-Spectral Total Variation Regularized Local Low-Rank Tensor Recovery、五作者分别保留。官方arXiv citation_doi明确10.1109/TGRS.2020.3007945支持书目版本关联，不据同DOI断言两版方法/实验相同；不把正式题名L1-2写成所用稿L_gamma。只一PDF首页及图注定位：Fig1低秩张量近似示意、Fig2局部分块、其余为数据/结果，未见完整总变差-低秩复原主框架，留白，不追别版。正式2021/预印本2020分列。"
             ]
           }
         ],
@@ -146640,9 +146813,49 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3007945-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2006.00235v1",
+            "pdfUrl": "https://arxiv.org/pdf/2006.00235",
+            "title": "Hyperspectral Image Denoising via Global Spatial-Spectral Total Variation Regularized Nonconvex Local Low-Rank Tensor Approximation",
+            "authors": [
+              "Haijin Zeng",
+              "Xiaozhen Xie",
+              "Jifeng Ning"
+            ],
+            "arxivId": "2006.00235",
+            "arxivVersion": 1,
+            "year": 2020,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2006.00235.pdf.gz",
+            "compression": "gzip",
+            "relation": "所用2006.00235v1题名Denoising/Nonconvex Local Low-Rank Tensor Approximation、三作者；正式Restoration/Global L1-2 Spatial-Spectral Total Variation Regularized Local Low-Rank Tensor Recovery、五作者分别保留。官方arXiv citation_doi明确10.1109/TGRS.2020.3007945支持书目版本关联，不据同DOI断言两版方法/实验相同；不把正式题名L1-2写成所用稿L_gamma。只一PDF首页及图注定位：Fig1低秩张量近似示意、Fig2局部分块、其余为数据/结果，未见完整总变差-低秩复原主框架，留白，不追别版。正式2021/预印本2020分列。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3007945"
+        "methodFamilyId": "tgrs-2021-hsi-3007945",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "50cbae70955ccbfb6734b8196a5beb9e86a69fff5842d9671440989c8c179a29",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2006.00235",
+            "https://arxiv.org/abs/2006.00235v1"
+          ]
+        }
       }
     },
     {
@@ -147136,7 +147349,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3014286",
-      "shortTitle": "Efficient Deep Learning of Nonlocal Features for Hyperspectral Image Classification",
+      "shortTitle": "ENL-FCN",
       "title": "Efficient Deep Learning of Nonlocal Features for Hyperspectral Image Classification",
       "authors": "Yu Shen, Sijie Zhu, Chen Chen, Qian Du, Liang Xiao, Jianyu Chen, Delu Pan",
       "year": 2021,
@@ -147149,16 +147362,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "在整幅高光谱全卷积分类中用高效非局部模块汇聚长距离上下文。",
+      "input": "整幅高光谱影像。",
+      "output": "像元地物类别图。",
+      "mechanism": "FCN提取局部谱空特征，并嵌入两个高效非局部模块，以十字路径和循环操作传播长距离像元信息。",
+      "representation": "FCN提取局部谱空特征，并嵌入两个高效非局部模块，以十字路径和循环操作传播长距离像元信息。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只2008.00542v1原摘要/首页及Fig1/p3整网输入、两个非局部模块与分类输出；不追加Fig2模块对照/Fig3传播子步骤。Non-local/Nonlocal题名原拼写保留，循环消息传播不是视频/动态三维，3D数据轴不加入HS3D。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3014286",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3014286/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/2008.00542",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.3014286",
+          "sourceVersion": "arXiv2008.00542v1",
+          "figureLabel": "Fig. 1:",
+          "page": 3,
+          "caption": "Fig. 1: Network architecture of the proposed ENL-FCN. The HSI is ﬁrst fed into FCN for local spectral-spatial information extraction. After Conv.2 layer of the network, two efﬁcient non-local modules are embedded in parallel for integrating long- range contextual information of HSI. s denotes the convolutional kernel size, N denotes the number of convolutional kernels.",
+          "verificationNote": "只2008.00542v1原摘要/首页及Fig1/p3整网输入、两个非局部模块与分类输出；不追加Fig2模块对照/Fig3传播子步骤。Non-local/Nonlocal题名原拼写保留，循环消息传播不是视频/动态三维，3D数据轴不加入HS3D。 原PDF直接裁切并视觉核对，一张。",
+          "width": 1473,
+          "height": 435,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "1f63d2547e4756888a6b8dd2c61b4afae267cdd77f4069efd2d7376e9227ba31",
+          "attribution": "Yu Shen, Sijie Zhu, Chen Chen, Qian Du, Liang Xiao, Jianyu Chen, Delu Pan",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              62,
+              53,
+              553,
+              198
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "7",
       "page": "6029-6043",
@@ -147167,16 +147407,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "在整幅高光谱全卷积分类中用高效非局部模块汇聚长距离上下文。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -147185,6 +147425,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2008.00542",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "在整幅高光谱全卷积分类中用高效非局部模块汇聚长距离上下文。",
+              "只2008.00542v1原摘要/首页及Fig1/p3整网输入、两个非局部模块与分类输出；不追加Fig2模块对照/Fig3传播子步骤。Non-local/Nonlocal题名原拼写保留，循环消息传播不是视频/动态三维，3D数据轴不加入HS3D。"
             ]
           }
         ],
@@ -147213,9 +147462,52 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3014286-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2008.00542v1",
+            "pdfUrl": "https://arxiv.org/pdf/2008.00542",
+            "title": "Efficient Deep Learning of Non-local Features for Hyperspectral Image Classification",
+            "authors": [
+              "Yu Shen",
+              "Sijie Zhu",
+              "Chen Chen",
+              "Qian Du",
+              "Liang Xiao",
+              "Jianyu Chen",
+              "Delu Pan"
+            ],
+            "arxivId": "2008.00542",
+            "arxivVersion": 1,
+            "year": 2020,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2008.00542.pdf.gz",
+            "compression": "gzip",
+            "relation": "只2008.00542v1原摘要/首页及Fig1/p3整网输入、两个非局部模块与分类输出；不追加Fig2模块对照/Fig3传播子步骤。Non-local/Nonlocal题名原拼写保留，循环消息传播不是视频/动态三维，3D数据轴不加入HS3D。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3014286"
+        "methodFamilyId": "tgrs-2021-hsi-3014286",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "25c9d3a353fb378b432fe99eb3f34b329b31e3abf054ba796426879820095030",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2008.00542"
+          ]
+        }
       }
     },
     {
@@ -147475,7 +147767,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3015843",
-      "shortTitle": "Adaptive DropBlock-Enhanced Generative Adversarial Networks for Hyperspectral Image C",
+      "shortTitle": "ADGAN",
       "title": "Adaptive DropBlock-Enhanced Generative Adversarial Networks for Hyperspectral Image Classification",
       "authors": "Junjie Wang, Feng Gao, Junyu Dong, Qian Du",
       "year": 2021,
@@ -147488,16 +147780,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "以自适应DropBlock正则生成器和判别器，缓解类别不均衡与模式坍塌造成的高光谱分类问题。",
+      "input": "降维后的高光谱图块、真实类别标签以及生成器噪声。",
+      "output": "地物类别预测；训练阶段生成与类别条件对应的假样本。",
+      "mechanism": "判别器使用单个类别/假样本输出，生成器和判别器中的AdapDrop按数据自适应掩码形状。",
+      "representation": "判别器使用单个类别/假样本输出，生成器和判别器中的AdapDrop按数据自适应掩码形状。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只2201.08938v1原摘要/首页和Fig2/p4完整ADGAN输入-生成/判别-分类流程，不追加Fig1既有ACGAN对照、Fig3–4正则子图。正式TGRS2021早于所用预印本2022，不按arXiv年月改正式年份。Junjie Wang/Junyu Dong不混Jun Zhou。原摘要代码地址只记录链接。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3015843",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3015843/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/2201.08938",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.3015843",
+          "sourceVersion": "arXiv2201.08938v1",
+          "figureLabel": "Fig. 2.",
+          "page": 4,
+          "caption": "Fig. 2. Framework of ADGAN for HSI classiﬁcation.",
+          "verificationNote": "只2201.08938v1原摘要/首页和Fig2/p4完整ADGAN输入-生成/判别-分类流程，不追加Fig1既有ACGAN对照、Fig3–4正则子图。正式TGRS2021早于所用预印本2022，不按arXiv年月改正式年份。Junjie Wang/Junyu Dong不混Jun Zhou。原摘要代码地址只记录链接。 原PDF直接裁切并视觉核对，一张。",
+          "width": 1221,
+          "height": 543,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "d532d120d93891bf06bfc82e739c1016af2480de6a6ce821541b18735efeba41",
+          "attribution": "Junjie Wang, Feng Gao, Junyu Dong, Qian Du",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              103,
+              54,
+              510,
+              235
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "6",
       "page": "5040-5053",
@@ -147506,16 +147825,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以自适应DropBlock正则生成器和判别器，缓解类别不均衡与模式坍塌造成的高光谱分类问题。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -147524,6 +147843,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2201.08938",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "以自适应DropBlock正则生成器和判别器，缓解类别不均衡与模式坍塌造成的高光谱分类问题。",
+              "只2201.08938v1原摘要/首页和Fig2/p4完整ADGAN输入-生成/判别-分类流程，不追加Fig1既有ACGAN对照、Fig3–4正则子图。正式TGRS2021早于所用预印本2022，不按arXiv年月改正式年份。Junjie Wang/Junyu Dong不混Jun Zhou。原摘要代码地址只记录链接。"
             ]
           }
         ],
@@ -147549,10 +147877,51 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3015843-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2201.08938v1",
+            "pdfUrl": "https://arxiv.org/pdf/2201.08938",
+            "title": "Adaptive DropBlock Enhanced Generative Adversarial Networks for Hyperspectral Image Classification",
+            "authors": [
+              "Junjie Wang",
+              "Feng Gao",
+              "Junyu Dong",
+              "Qian Du"
+            ],
+            "arxivId": "2201.08938",
+            "arxivVersion": 1,
+            "year": 2022,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2201.08938.pdf.gz",
+            "compression": "gzip",
+            "relation": "只2201.08938v1原摘要/首页和Fig2/p4完整ADGAN输入-生成/判别-分类流程，不追加Fig1既有ACGAN对照、Fig3–4正则子图。正式TGRS2021早于所用预印本2022，不按arXiv年月改正式年份。Junjie Wang/Junyu Dong不混Jun Zhou。原摘要代码地址只记录链接。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3015843"
-      }
+        "methodFamilyId": "tgrs-2021-hsi-3015843",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "22b701988bcff9e3c32a08904ddf419002da8b4199b6d369ee04fb863c43d2c9",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2201.08938"
+          ]
+        }
+      },
+      "code": "https://github.com/summitgao/HC_ADGAN"
     },
     {
       "id": "tgrs-2021-hsi-3013022",
@@ -147885,7 +148254,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3018135",
-      "shortTitle": "Graph Convolutional Subspace Clustering: A Robust Subspace Clustering Framework for H",
+      "shortTitle": "GCSC",
       "title": "Graph Convolutional Subspace Clustering: A Robust Subspace Clustering Framework for Hyperspectral Image",
       "authors": "Yaoming Cai, Zijia Zhang, Zhihua Cai, Xiaobo Liu, Xinwei Jiang, Qin Yan",
       "year": 2021,
@@ -147898,16 +148267,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "把图卷积嵌入作为自表示字典，学习高光谱样本亲和性并完成子空间聚类。",
+      "input": "高光谱特征矩阵X与图邻接矩阵A。",
+      "output": "像元/样本聚类标签。",
+      "mechanism": "图卷积嵌入、自表示亲和矩阵和谱聚类串联，提出具闭式解的EGCSC及核版本EKGCSC。",
+      "representation": "图卷积嵌入、自表示亲和矩阵和谱聚类串联，提出具闭式解的EGCSC及核版本EKGCSC。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只2004.10476v1原摘要/首页与Fig2/p4完整图卷积-自表示-谱聚类主流程，不追加Fig1动机或Fig3t-SNE。无监督聚类不写监督类别真值；图节点关系不是三维场景。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3018135",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3018135/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/2004.10476",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.3018135",
+          "sourceVersion": "arXiv2004.10476v1",
+          "figureLabel": "Fig. 2.",
+          "page": 4,
+          "caption": "Fig. 2. The ﬂowchart of the proposed graph convolutional subspace clustering framework. The framework follows the basic steps of the existing subspace clustering methods but takes a feature matrix X and a adjacency matrix A of the graph as inputs, which results in a novel graph convolutional self-representation. The graph convolution will generate a robust graph embedding that is used as a dictionary for the subsequent afﬁnity learning.",
+          "verificationNote": "只2004.10476v1原摘要/首页与Fig2/p4完整图卷积-自表示-谱聚类主流程，不追加Fig1动机或Fig3t-SNE。无监督聚类不写监督类别真值；图节点关系不是三维场景。 原PDF直接裁切并视觉核对，一张。",
+          "width": 1308,
+          "height": 456,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "215cd8dbab2bdc6e9a070f0efd3c9f3de1014aea643502dcd6679fe2a1874336",
+          "attribution": "Yaoming Cai, Zijia Zhang, Zhihua Cai, Xiaobo Liu, Xinwei Jiang, Qin Yan",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              84,
+              55,
+              520,
+              207
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "5",
       "page": "4191-4202",
@@ -147916,16 +148312,16 @@
         "categoryIds": [
           "hyperspectral-clustering"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "把图卷积嵌入作为自表示字典，学习高光谱样本亲和性并完成子空间聚类。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -147934,6 +148330,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2004.10476",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "把图卷积嵌入作为自表示字典，学习高光谱样本亲和性并完成子空间聚类。",
+              "只2004.10476v1原摘要/首页与Fig2/p4完整图卷积-自表示-谱聚类主流程，不追加Fig1动机或Fig3t-SNE。无监督聚类不写监督类别真值；图节点关系不是三维场景。"
             ]
           }
         ],
@@ -147961,9 +148366,51 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3018135-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2004.10476v1",
+            "pdfUrl": "https://arxiv.org/pdf/2004.10476",
+            "title": "Graph Convolutional Subspace Clustering: A Robust Subspace Clustering Framework for Hyperspectral Image",
+            "authors": [
+              "Yaoming Cai",
+              "Zijia Zhang",
+              "Zhihua Cai",
+              "Xiaobo Liu",
+              "Xinwei Jiang",
+              "Qin Yan"
+            ],
+            "arxivId": "2004.10476",
+            "arxivVersion": 1,
+            "year": 2020,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2004.10476.pdf.gz",
+            "compression": "gzip",
+            "relation": "只2004.10476v1原摘要/首页与Fig2/p4完整图卷积-自表示-谱聚类主流程，不追加Fig1动机或Fig3t-SNE。无监督聚类不写监督类别真值；图节点关系不是三维场景。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3018135"
+        "methodFamilyId": "tgrs-2021-hsi-3018135",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "6bb170bc928d3365e2e50c56c721f1090f8c616c29dc88d0244abd2a7c1ce004",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2004.10476"
+          ]
+        }
       }
     },
     {
@@ -148213,7 +148660,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3011429",
-      "shortTitle": "SLCRF: Subspace Learning With Conditional Random Field for Hyperspectral Image Classi",
+      "shortTitle": "SLCRF",
       "title": "SLCRF: Subspace Learning With Conditional Random Field for Hyperspectral Image Classification",
       "authors": "Yun Cao, Jie Mei, Yuebin Wang, Liqiang Zhang, Junhuan Peng, Bing Zhang, Lihua Li, Yibo Zheng",
       "year": 2021,
@@ -148226,34 +148673,62 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "将条件随机场约束嵌入高光谱子空间学习，在少量标注下联合学习表示与分类。",
+      "input": "高光谱影像及少量标注。",
+      "output": "子空间表示及像元类别图。",
+      "mechanism": "3D卷积自编码器学习低维表示，基于邻近像元谱空关系构造CRF并嵌入半监督子空间学习。",
+      "representation": "3D卷积自编码器学习低维表示，基于邻近像元谱空关系构造CRF并嵌入半监督子空间学习。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只2010.03115所用PDF，原官方页面显示v1且citation_doi匹配正式DOI、八作者。PDF首页无arXiv版本印记，版本依据官方元数据，来源URL/快照分别记录；不补读其他版。只Fig1/p2完整3DCAE、CRF和分类总框架；原图注与后文被PDF文本合块，按图注边界截取。3D卷积为空间-光谱轴，不当真实几何。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3011429",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3011429/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/2010.03115",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.3011429",
+          "sourceVersion": "arXiv2010.03115v1",
+          "figureLabel": "Fig. 1.",
+          "page": 2,
+          "caption": "Fig. 1. The SLCRF workflow for HSI classification. (a) The HSI. (b) The learning procedure of the SLCRF. (c) The classification results. In (b), the representation of subspace learning is obtained from the 3DCAE. Then, the conditional random field framework is constructed and further embedded into the SL procedure.",
+          "verificationNote": "只2010.03115所用PDF，原官方页面显示v1且citation_doi匹配正式DOI、八作者。PDF首页无arXiv版本印记，版本依据官方元数据，来源URL/快照分别记录；不补读其他版。只Fig1/p2完整3DCAE、CRF和分类总框架；原图注与后文被PDF文本合块，按图注边界截取。3D卷积为空间-光谱轴，不当真实几何。 原PDF直接裁切并视觉核对，一张。",
+          "width": 1551,
+          "height": 578,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "08c74d3120d882ce154ab5409f809e7cb05f03cc293b4a3cfc98bfb34fe9c21b",
+          "attribution": "Yun Cao, Jie Mei, Yuebin Wang, Liqiang Zhang, Junhuan Peng, Bing Zhang, Lihua Li, Yibo Zheng",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              46,
+              565,
+              238.5
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "5",
       "page": "4203-4217",
       "citation": "@article{tgrs-2021-hsi-3011429,\n  title = {SLCRF: Subspace Learning With Conditional Random Field for Hyperspectral Image Classification},\n  author = {Yun Cao and Jie Mei and Yuebin Wang and Liqiang Zhang and Junhuan Peng and Bing Zhang and Lihua Li and Yibo Zheng},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2021},\n  volume = {59},\n  number = {5},\n  pages = {4203--4217},\n  doi = {10.1109/tgrs.2020.3011429}\n}\n",
       "library": {
         "categoryIds": [
-          "land-cover-classification"
+          "land-cover-classification",
+          "spectral-dimensionality-reduction"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "将条件随机场约束嵌入高光谱子空间学习，在少量标注下联合学习表示与分类。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -148262,6 +148737,23 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2010.03115",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "将条件随机场约束嵌入高光谱子空间学习，在少量标注下联合学习表示与分类。",
+              "只2010.03115所用PDF，原官方页面显示v1且citation_doi匹配正式DOI、八作者。PDF首页无arXiv版本印记，版本依据官方元数据，来源URL/快照分别记录；不补读其他版。只Fig1/p2完整3DCAE、CRF和分类总框架；原图注与后文被PDF文本合块，按图注边界截取。3D卷积为空间-光谱轴，不当真实几何。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/abs/2010.03115v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv原元数据/明确DOI，版本身份与正式书目对应",
+            "supports": [
+              "只2010.03115所用PDF，原官方页面显示v1且citation_doi匹配正式DOI、八作者。PDF首页无arXiv版本印记，版本依据官方元数据，来源URL/快照分别记录；不补读其他版。只Fig1/p2完整3DCAE、CRF和分类总框架；原图注与后文被PDF文本合块，按图注边界截取。3D卷积为空间-光谱轴，不当真实几何。"
             ]
           }
         ],
@@ -148291,9 +148783,54 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3011429-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2010.03115v1",
+            "pdfUrl": "https://arxiv.org/pdf/2010.03115",
+            "title": "SLCRF: Subspace Learning with Conditional Random Field for Hyperspectral Image Classification",
+            "authors": [
+              "Yun Cao",
+              "Jie Mei",
+              "Yuebin Wang",
+              "Liqiang Zhang",
+              "Junhuan Peng",
+              "Bing Zhang",
+              "Lihua Li",
+              "Yibo Zheng"
+            ],
+            "arxivId": "2010.03115",
+            "arxivVersion": 1,
+            "year": 2020,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2010.03115.pdf.gz",
+            "compression": "gzip",
+            "relation": "只2010.03115所用PDF，原官方页面显示v1且citation_doi匹配正式DOI、八作者。PDF首页无arXiv版本印记，版本依据官方元数据，来源URL/快照分别记录；不补读其他版。只Fig1/p2完整3DCAE、CRF和分类总框架；原图注与后文被PDF文本合块，按图注边界截取。3D卷积为空间-光谱轴，不当真实几何。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3011429"
+        "methodFamilyId": "tgrs-2021-hsi-3011429",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "c5f76176ae7997eac4cf80c652915fc70effe82e28955a858f8464f22f8cb051",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2010.03115",
+            "https://arxiv.org/abs/2010.03115v1"
+          ]
+        }
       }
     },
     {
@@ -148709,7 +149246,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3019313",
-      "shortTitle": "Deep Clustering With Intraclass Distance Constraint for Hyperspectral Images",
+      "shortTitle": "DCIDC",
       "title": "Deep Clustering With Intraclass Distance Constraint for Hyperspectral Images",
       "authors": "Jinguang Sun, Wanli Wang, Xian Wei, Li Fang, Xiaoliang Tang, Yusheng Xu, Hui Yu, Wei Yao",
       "year": 2021,
@@ -148722,16 +149259,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "用类内距离约束自编码器，使高光谱低维表示更适合聚类。",
+      "input": "高维高光谱像元表示。",
+      "output": "低维聚类表示及聚类标签。",
+      "mechanism": "联合优化自编码器重建、特征映射与聚类，利用类内距离约束反馈修正潜在表示。",
+      "representation": "联合优化自编码器重建、特征映射与聚类，利用类内距离约束反馈修正潜在表示。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只1904.00562v1原摘要/首页与Fig2/p4完整编码-解码、聚类及约束反馈，不追加Fig1通用自编码器。正式题名Intraclass/所用Intra-class和正式2021/预印本2019分列；图中颜色是聚类示意，不推定有监督标签输入。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3019313",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3019313/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/1904.00562",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.3019313",
+          "sourceVersion": "arXiv1904.00562v1",
+          "figureLabel": "Fig. 2.",
+          "page": 4,
+          "caption": "Fig. 2. Network framework of the proposed algorithm",
+          "verificationNote": "只1904.00562v1原摘要/首页与Fig2/p4完整编码-解码、聚类及约束反馈，不追加Fig1通用自编码器。正式题名Intraclass/所用Intra-class和正式2021/预印本2019分列；图中颜色是聚类示意，不推定有监督标签输入。 原PDF直接裁切并视觉核对，一张。",
+          "width": 714,
+          "height": 789,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "6280c8e669b89f435c7de5d0e40b4abaca9583c123cc76bc90c12675143f0f7f",
+          "attribution": "Jinguang Sun, Wanli Wang, Xian Wei, Li Fang, Xiaoliang Tang, Yusheng Xu, Hui Yu, Wei Yao",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              319,
+              52,
+              557,
+              315
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "5",
       "page": "4135-4149",
@@ -148740,16 +149304,16 @@
         "categoryIds": [
           "hyperspectral-clustering"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "用类内距离约束自编码器，使高光谱低维表示更适合聚类。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -148758,6 +149322,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1904.00562",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "用类内距离约束自编码器，使高光谱低维表示更适合聚类。",
+              "只1904.00562v1原摘要/首页与Fig2/p4完整编码-解码、聚类及约束反馈，不追加Fig1通用自编码器。正式题名Intraclass/所用Intra-class和正式2021/预印本2019分列；图中颜色是聚类示意，不推定有监督标签输入。"
             ]
           }
         ],
@@ -148787,9 +149360,53 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3019313-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/1904.00562v1",
+            "pdfUrl": "https://arxiv.org/pdf/1904.00562",
+            "title": "Deep Clustering With Intra-class Distance Constraint for Hyperspectral Images",
+            "authors": [
+              "Jinguang Sun",
+              "Wanli Wang",
+              "Xian Wei",
+              "Li Fang",
+              "Xiaoliang Tang",
+              "Yusheng Xu",
+              "Hui Yu",
+              "Wei Yao"
+            ],
+            "arxivId": "1904.00562",
+            "arxivVersion": 1,
+            "year": 2019,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-1904.00562.pdf.gz",
+            "compression": "gzip",
+            "relation": "只1904.00562v1原摘要/首页与Fig2/p4完整编码-解码、聚类及约束反馈，不追加Fig1通用自编码器。正式题名Intraclass/所用Intra-class和正式2021/预印本2019分列；图中颜色是聚类示意，不推定有监督标签输入。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3019313"
+        "methodFamilyId": "tgrs-2021-hsi-3019313",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "9c5c73883e942f601dd33d0f55980d9e2fbb3e866b8c7fe4e90442850ef99455",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/1904.00562"
+          ]
+        }
       }
     },
     {
@@ -151299,7 +151916,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3045790",
-      "shortTitle": "Physically Constrained Transfer Learning Through Shared Abundance Space for Hyperspec",
+      "shortTitle": "PCTL-SAS",
       "title": "Physically Constrained Transfer Learning Through Shared Abundance Space for Hyperspectral Image Classification",
       "authors": "Ying Qu, Razieh Kaviani Baghbaderani, Wei Li, Lianru Gao, Yuxiang Zhang, Hairong Qi",
       "year": 2021,
@@ -151312,16 +151929,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "将源域和目标域高光谱投影到共享丰度空间，学习可迁移的分类表示。",
+      "input": "源域与目标域高光谱数据，以及源域类别标签。",
+      "output": "目标域像元地物类别。",
+      "mechanism": "共享稀疏Dirichlet编码器施加丰度非负/和为一约束，仿射迁移解码器重建，并结合互判别表示和CNN分类器。",
+      "representation": "共享稀疏Dirichlet编码器施加丰度非负/和为一约束，仿射迁移解码器重建，并结合互判别表示和CNN分类器。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只2008.08563v2原摘要/首页与Fig2/p4编码器、解码器、互判别模块和分类器完整主框架，不追加Fig1概念/Fig3与Fig5子网络。正式题名Physically Constrained/预印本Physically-Constrained、正式2021/预印本2020分列。丰度物理约束与3D CNN谱空轴不是几何三维。",
       "paper": "https://doi.org/10.1109/tgrs.2020.3045790",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3045790/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/2008.08563",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2020.3045790",
+          "sourceVersion": "arXiv2008.08563v2",
+          "figureLabel": "Fig. 2.",
+          "page": 4,
+          "caption": "Fig. 2. Flowchart of the proposed physically-constrained transfer learning approach for HSI classiﬁcation.",
+          "verificationNote": "只2008.08563v2原摘要/首页与Fig2/p4编码器、解码器、互判别模块和分类器完整主框架，不追加Fig1概念/Fig3与Fig5子网络。正式题名Physically Constrained/预印本Physically-Constrained、正式2021/预印本2020分列。丰度物理约束与3D CNN谱空轴不是几何三维。 原PDF直接裁切并视觉核对，一张。",
+          "width": 762,
+          "height": 360,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "b4bb09ec8c9c271bc5c8ee024c74f57fc2257169b277634e0e61917ceabb73a1",
+          "attribution": "Ying Qu, Razieh Kaviani Baghbaderani, Wei Li, Lianru Gao, Yuxiang Zhang, Hairong Qi",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              590,
+              302,
+              710
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "12",
       "page": "10455-10472",
@@ -151330,16 +151974,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "将源域和目标域高光谱投影到共享丰度空间，学习可迁移的分类表示。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -151348,6 +151992,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2008.08563",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "将源域和目标域高光谱投影到共享丰度空间，学习可迁移的分类表示。",
+              "只2008.08563v2原摘要/首页与Fig2/p4编码器、解码器、互判别模块和分类器完整主框架，不追加Fig1概念/Fig3与Fig5子网络。正式题名Physically Constrained/预印本Physically-Constrained、正式2021/预印本2020分列。丰度物理约束与3D CNN谱空轴不是几何三维。"
             ]
           }
         ],
@@ -151375,9 +152028,51 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3045790-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2008.08563v2",
+            "pdfUrl": "https://arxiv.org/pdf/2008.08563",
+            "title": "Physically-Constrained Transfer Learning through Shared Abundance Space for Hyperspectral Image Classification",
+            "authors": [
+              "Ying Qu",
+              "Razieh Kaviani Baghbaderani",
+              "Wei Li",
+              "Lianru Gao",
+              "Yuxiang Zhang",
+              "Hairong Qi"
+            ],
+            "arxivId": "2008.08563",
+            "arxivVersion": 2,
+            "year": 2020,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2008.08563.pdf.gz",
+            "compression": "gzip",
+            "relation": "只2008.08563v2原摘要/首页与Fig2/p4编码器、解码器、互判别模块和分类器完整主框架，不追加Fig1概念/Fig3与Fig5子网络。正式题名Physically Constrained/预印本Physically-Constrained、正式2021/预印本2020分列。丰度物理约束与3D CNN谱空轴不是几何三维。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3045790"
+        "methodFamilyId": "tgrs-2021-hsi-3045790",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "bbc3a961584623d15d7593682e96cb7c75859b59d0e079d7433f9f3c419de32c",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2008.08563"
+          ]
+        }
       }
     },
     {
@@ -152118,7 +152813,7 @@
     },
     {
       "id": "tgrs-2021-hsi-3049282",
-      "shortTitle": "Hyperspectral Image Classification With Spatial Consistence Using Fully Convolutional",
+      "shortTitle": "FCSPN",
       "title": "Hyperspectral Image Classification With Spatial Consistence Using Fully Convolutional Spatial Propagation Network",
       "authors": "Yenan Jiang, Ying Li, Shanrong Zou, Haokui Zhang, Yunpeng Bai",
       "year": 2021,
@@ -152131,16 +152826,43 @@
         "hyperspectral"
       ],
       "tags": [],
-      "summary": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-      "input": "高光谱数据（作者原题名声明，实际输入未核）。",
-      "output": "未获取。",
-      "mechanism": "未获取。",
-      "representation": "未获取。",
-      "readingNote": "仅原注册题名/作者/DOI/正式日期/卷期页，目录优先；任务分类按题名暂定。原摘要、实际方法及可获取的一版主框架仍资料待，不猜补，不将入口失败当付费/无公开版。",
+      "summary": "先用三维全卷积网络初步分类，再以空间传播网络细化高光谱类别图。",
+      "input": "高光谱影像。",
+      "output": "空间一致的像元地物类别图。",
+      "mechanism": "3D-FCN结合双可分离残差单元和通道注意力产生初始得分，CSPN学习局部线性传播以细化结果。",
+      "representation": "3D-FCN结合双可分离残差单元和通道注意力产生初始得分，CSPN学习局部线性传播以细化结果。",
+      "readingNote": "只一个可用公开稿：原摘要、首页及定位主图必要内容；不整篇、逐版、性能或代码访问。只2008.01421v1原摘要/首页与Fig1/p4初步分类-CSPN细化完整主流程，不追加Fig2残差单元/Fig3通道注意力/Fig4传播过程。3D为空间谱数据轴，空间一致性不是几何表面。",
       "paper": "https://doi.org/10.1109/tgrs.2021.3049282",
       "verifiedAt": "2026-10-14",
-      "verificationLevel": "primary_bibliography_verified",
-      "frameworkFigures": [],
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "path": "figures/tgrs-2021-hsi-3049282/framework.png",
+          "sourceUrl": "https://arxiv.org/pdf/2008.01421",
+          "paperUrl": "https://doi.org/10.1109/tgrs.2021.3049282",
+          "sourceVersion": "arXiv2008.01421v1",
+          "figureLabel": "Fig. 1.",
+          "page": 4,
+          "caption": "Fig. 1. FCSPN based HSI classiﬁcation framework. There are two main parts in this framework, which are the 3D-FCN based preliminary classiﬁcation, and the CSPN-based reﬁnement.",
+          "verificationNote": "只2008.01421v1原摘要/首页与Fig1/p4初步分类-CSPN细化完整主流程，不追加Fig2残差单元/Fig3通道注意力/Fig4传播过程。3D为空间谱数据轴，空间一致性不是几何表面。 原PDF直接裁切并视觉核对，一张。 裁切保留原图注，避免截断底部FCSPN标签。",
+          "width": 1551,
+          "height": 567,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "11f395bed775037317a71841ffe487196263593fc1e015230a4c62a17a79d459",
+          "attribution": "Yenan Jiang, Ying Li, Shanrong Zou, Haokui Zhang, Yunpeng Bai",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              48,
+              53,
+              565,
+              242
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
       "volume": "59",
       "issue": "12",
       "page": "10425-10437",
@@ -152149,16 +152871,16 @@
         "categoryIds": [
           "land-cover-classification"
         ],
-        "classificationStatus": "provisional",
+        "classificationStatus": "confirmed",
         "relation": "hyperspectral",
-        "relationNote": "原注册题名声明直接高光谱任务；实际方法/输入未核，任务分类暂定。",
-        "readingProgress": "title_only",
-        "verificationStatus": "pending",
-        "researchQuestion": "作者原注册题名明确直接高光谱研究，正式TGRS2021书目已核；方法和实际输入尚未获取。",
-        "datasets": "未获取。",
-        "experimentSetting": "未获取。",
-        "conclusions": "未获取。",
-        "limitations": "原摘要和可获取的一版主框架资料待，不阻塞目录。",
+        "relationNote": "所用公开稿直接HSI原摘要/主框架已核，图关系和谱轴不当真实几何。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "先用三维全卷积网络初步分类，再以空间传播网络细化高光谱类别图。",
+        "datasets": "仅确认高光谱模态，不整理实验划分。",
+        "experimentSetting": "只原摘要/必要主图，性能未核。",
+        "conclusions": "原摘要与主图确认主要任务，不摘录性能。",
+        "limitations": "每篇一个公开稿、一张主要框架；其他版/整篇/性能/代码不列待办，无独立框架可留白。",
         "dataLinks": [],
         "evidence": [
           {
@@ -152167,6 +152889,15 @@
             "level": "原ISSN年度830/830完整Crossref注册书目，复用已存gzip快照",
             "supports": [
               "正式TGRS2021白名单来源，题名明确直接HSI、同序作者、DOI和卷期页；不表示已读原摘要。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/2008.01421",
+            "checkedAt": "2026-10-14",
+            "level": "唯一所用公开PDF原摘要/首页与一个主图或图注定位",
+            "supports": [
+              "先用三维全卷积网络初步分类，再以空间传播网络细化高光谱类别图。",
+              "只2008.01421v1原摘要/首页与Fig1/p4初步分类-CSPN细化完整主流程，不追加Fig2残差单元/Fig3通道注意力/Fig4传播过程。3D为空间谱数据轴，空间一致性不是几何表面。"
             ]
           }
         ],
@@ -152193,9 +152924,50 @@
             "readingProgress": "title_only",
             "sourcePolicyStatus": "whitelist_allowed",
             "relation": "正式书目，不另取正式正文或逐版对读。"
+          },
+          {
+            "id": "tgrs-2021-hsi-3049282-selected-public-material",
+            "type": "唯一所用arXiv公开稿",
+            "url": "https://arxiv.org/abs/2008.01421v1",
+            "pdfUrl": "https://arxiv.org/pdf/2008.01421",
+            "title": "Hyperspectral Image Classification with Spatial Consistence Using Fully Convolutional Spatial Propagation Network",
+            "authors": [
+              "Yenan Jiang",
+              "Ying Li",
+              "Shanrong Zou",
+              "Haokui Zhang",
+              "Yunpeng Bai"
+            ],
+            "arxivId": "2008.01421",
+            "arxivVersion": 1,
+            "year": 2020,
+            "readingProgress": "abstract_read",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "metadataStatus": "所用PDF首页/版本印记或原官方页面已核，不检查最新/其他版本；同题名同序作者受控关联，异题名/署名者由明确DOI关联且差异保留",
+            "localFile": "research/hyperspectral/sources/tgrs-2021-ten-public-materials-and-2022-jun-2026-10-14-2008.01421.pdf.gz",
+            "compression": "gzip",
+            "relation": "只2008.01421v1原摘要/首页与Fig1/p4初步分类-CSPN细化完整主流程，不追加Fig2残差单元/Fig3通道注意力/Fig4传播过程。3D为空间谱数据轴，空间一致性不是几何表面。"
           }
         ],
-        "methodFamilyId": "tgrs-2021-hsi-3049282"
+        "methodFamilyId": "tgrs-2021-hsi-3049282",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "单版原摘要/主框架核任务；谱空或图拓扑不是真实三维；明确同DOI版本异作者/题名仍分列，无独立框架留白。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "0c5ff81253ed7aef39d8bdd6080dda9c274b176ec57603bdefffefecde1bdcca",
+          "sourceUrls": [
+            "https://api.crossref.org/journals/0196-2892/works?filter=from-pub-date%3A2021-01-01%2Cuntil-pub-date%3A2021-12-31&rows=1000&cursor=%2A",
+            "https://arxiv.org/pdf/2008.01421"
+          ]
+        }
       }
     },
     {
@@ -154109,6 +154881,7 @@
         "tgrs-2020-hsi-2987954",
         "tgrs-2021-hsi-2993631",
         "tgrs-2021-hsi-3006757",
+        "tgrs-2021-hsi-3007945",
         "tgrs-2021-hsi-3008844",
         "tgrs-2021-hsi-3032168",
         "tgrs-2021-hsi-3040221",
@@ -154688,6 +155461,7 @@
         "tgrs-2020-hsi-2963848",
         "tgrs-2021-hsi-2995709",
         "tgrs-2021-hsi-2997835",
+        "tgrs-2021-hsi-3011429",
         "tgrs-2021-hsi-3021140"
       ],
       "history": [
