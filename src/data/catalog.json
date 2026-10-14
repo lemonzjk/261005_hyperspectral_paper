@@ -117394,6 +117394,805 @@
           ]
         }
       }
+    },
+    {
+      "id": "ben-hamida-3d-cnn-tgrs-2018",
+      "shortTitle": "3-D deep HSI classification",
+      "title": "Three dimensional Deep Learning approach for remote sensing image classification",
+      "authors": "Amina Ben Hamida, Alexandre Benoit, Patrick Lambert, Chokri Ben Amar",
+      "year": 2018,
+      "venue": "TGRS",
+      "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+      "publicationStatus": "published",
+      "venueTier": "journal",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1806.05824",
+      "representation": "先以3D卷积同时编码两空间轴和光谱轴，再接1D卷积与全连接分类；这里3D不表示几何深度、点云或表面重建。",
+      "tags": [],
+      "summary": "通过联合谱空三维卷积分类高光谱像元。",
+      "input": "高光谱像元的空间邻域与全部谱带组成的谱空立方。",
+      "output": "中心像元的地物类别概率与标签。",
+      "mechanism": "先以3D卷积同时编码两空间轴和光谱轴，再接1D卷积与全连接分类；这里3D不表示几何深度、点云或表面重建。",
+      "readingNote": "唯一所用arXiv 1806.05824v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。API DOI明确，正式3-D与预印本Three dimensional等价题名变化及同序四作者支持书目关联；A Benoit按所用首页Alexandre Benoit展开，原API保留。谱空三轴非几何三维。",
+      "paper": "https://doi.org/10.1109/tgrs.2018.2818945",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1806.05824v1",
+          "sourceVersion": "arXiv 1806.05824v1",
+          "figureLabel": "Fig. 1:",
+          "page": 5,
+          "caption": "Fig. 1: Overview of the proposed 3D Deep architecture.",
+          "verificationNote": "主要网络总览：完整保留谱空输入、3D/1D卷积、全连接与类别概率，仅此一张。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/ben-hamida-3d-cnn-tgrs-2018/framework.png",
+          "width": 726,
+          "height": 348,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "e21bce37236287fa94d69d14eea39de36ccecd91c1f93e452cef316382b01596",
+          "attribution": "Amina Ben Hamida, Alexandre Benoit, Patrick Lambert, Chokri Ben Amar · arXiv 1806.05824v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              317,
+              347,
+              559,
+              463
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "doi": "10.1109/tgrs.2018.2818945",
+      "citation": "@article{ben-hamida-3d-cnn-tgrs-2018,\n  title = {Three dimensional Deep Learning approach for remote sensing image classification},\n  author = {Amina Ben Hamida and Alexandre Benoit and Patrick Lambert and Chokri Ben Amar},\n  journal = {IEEE Transactions on Geoscience and Remote Sensing},\n  year = {2018},\n  volume = {56},\n  number = {8},\n  pages = {4420--4434},\n  doi = {10.1109/tgrs.2018.2818945}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "通过联合谱空三维卷积分类高光谱像元。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1806.05824v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "通过联合谱空三维卷积分类高光谱像元。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.05824v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1806.05824v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。API DOI明确，正式3-D与预印本Three dimensional等价题名变化及同序四作者支持书目关联；A Benoit按所用首页Alexandre Benoit展开，原API保留。谱空三轴非几何三维。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1109%2FTGRS.2018.2818945",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "API DOI明确，正式3-D与预印本Three dimensional等价题名变化及同序四作者支持书目关联；A Benoit按所用首页Alexandre Benoit展开，原API保留。谱空三轴非几何三维。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.05824v1",
+            "checkedAt": "2026-10-14",
+            "level": "所用作者官方代码声明",
+            "supports": [
+              "第2页作者实现URL只记录，不访问仓库、README、依赖、权重或运行检查。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "ben-hamida-3d-cnn-tgrs-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1806.05824v1",
+            "pdfUrl": "https://arxiv.org/pdf/1806.05824v1",
+            "arxivId": "1806.05824",
+            "arxivVersion": 1,
+            "title": "Three dimensional Deep Learning approach for remote sensing image classification",
+            "authors": [
+              "Amina Ben Hamida",
+              "Alexandre Benoit",
+              "Patrick Lambert",
+              "Chokri Ben Amar"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-06-15T06:35:47Z",
+            "updatedAt": "2018-06-15T06:35:47Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-seventh-five-hsi-directory-2026-10-14-1806.05824v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1806.05824v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。API DOI明确，正式3-D与预印本Three dimensional等价题名变化及同序四作者支持书目关联；A Benoit按所用首页Alexandre Benoit展开，原API保留。谱空三轴非几何三维。",
+            "rawApiAuthors": [
+              "Amina Ben Hamida",
+              "A Benoit",
+              "Patrick Lambert",
+              "Chokri Ben Amar"
+            ],
+            "pdfAuthorStrings": [
+              "Amina Ben Hamida",
+              "Alexandre Benoit",
+              "Patrick Lambert",
+              "Chokri Ben Amar"
+            ]
+          },
+          {
+            "id": "ben-hamida-3d-cnn-tgrs-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/tgrs.2018.2818945",
+            "doi": "10.1109/tgrs.2018.2818945",
+            "title": "3-D Deep Learning Approach for Remote Sensing Image Classification",
+            "authors": [
+              "Amina Ben Hamida",
+              "Alexandre Benoit",
+              "Patrick Lambert",
+              "Chokri Ben Amar"
+            ],
+            "year": 2018,
+            "publicationName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "volume": "56",
+            "issue": "8",
+            "page": "4420-4434",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "whitelist_allowed",
+            "relation": "API DOI明确，正式3-D与预印本Three dimensional等价题名变化及同序四作者支持书目关联；A Benoit按所用首页Alexandre Benoit展开，原API保留。谱空三轴非几何三维。",
+            "selectedApiTitle": "Three dimensional Deep Learning approach for remote sensing image classification"
+          }
+        ],
+        "methodFamilyId": "ben-hamida-3d-cnn-tgrs-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/方法图支持直接HSI；谱空三维/时序非几何，低秩CP因子不当语义分类，DSCN预计算端元不当全盲提取。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "9931c0c68520896cb8dd9a4aa401deffb840ba7479beb976510a3cc83f0f089b",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1806.05824v1",
+            "https://arxiv.org/pdf/1806.05824v1",
+            "https://api.crossref.org/works/10.1109%2FTGRS.2018.2818945",
+            "https://arxiv.org/pdf/1806.05824v1"
+          ]
+        }
+      },
+      "code": "https://github.com/AminaBh/3D_deepLearning_for_hyperspectral_images"
+    },
+    {
+      "id": "tree-ap-fp-comparison-arxiv-2018",
+      "shortTitle": "Tree AP / FP comparison",
+      "title": "Classification of remote sensing images using attribute profiles and feature profiles from different trees: a comparative study",
+      "authors": "Minh-Tan Pham, Erchan Aptoula, Sébastien Lefèvre",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1806.06985",
+      "representation": "用包含树和分区树进行属性过滤，AP保留过滤后的灰度，FP改用连通分量的统计/几何特征；实际Pavia为103带，不能把同文全色对照当全研究输入。",
+      "tags": [],
+      "summary": "比较不同树结构生成的属性剖面与特征剖面对高光谱分类的作用。",
+      "input": "ROSIS Pavia University高光谱影像及对照全色影像。",
+      "output": "多尺度形态特征与地物类别图。",
+      "mechanism": "用包含树和分区树进行属性过滤，AP保留过滤后的灰度，FP改用连通分量的统计/几何特征；实际Pavia为103带，不能把同文全色对照当全研究输入。",
+      "readingNote": "唯一所用arXiv 1806.06985v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。IGARSS2018同题同序三作者仅正式书目；来源外保留arXiv。不同题JSTARS稿不凭相同作者合并，不另读另一版本。",
+      "paper": "https://arxiv.org/abs/1806.06985v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1806.06985v1",
+          "sourceVersion": "arXiv 1806.06985v1",
+          "figureLabel": "Fig. 1:",
+          "page": 2,
+          "caption": "Fig. 1: Generation of the APs and FPs from a grayscale image X w.r.t. the attribute ﬁltering φk. Here Γp denotes the connected component (CC) containing p; X′ = φk(X) is the ﬁltered image; and f is the feature (attribute) to be extracted.",
+          "verificationNote": "主要AP/FP生成框架，保留原图、建树/剪枝及两输出分支；图示灰度输入，不把它说成全高光谱分类端到端网络。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/tree-ap-fp-comparison-arxiv-2018/framework.png",
+          "width": 1446,
+          "height": 600,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "4c3b3f4a0d6b6514f3ca6a5477e6f6466e045e7a3e18236e6c207e4a13c9f0f5",
+          "attribution": "Minh-Tan Pham, Erchan Aptoula, Sébastien Lefèvre · arXiv 1806.06985v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              68,
+              66,
+              550,
+              266
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{tree-ap-fp-comparison-arxiv-2018,\n  title = {Classification of remote sensing images using attribute profiles and feature profiles from different trees: a comparative study},\n  author = {Minh-Tan Pham and Erchan Aptoula and Sébastien Lefèvre},\n  year = {2018},\n  eprint = {1806.06985},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1806.06985v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "land-cover-classification",
+          "morphological-profiles"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "比较不同树结构生成的属性剖面与特征剖面对高光谱分类的作用。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1806.06985v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "比较不同树结构生成的属性剖面与特征剖面对高光谱分类的作用。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.06985v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1806.06985v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。IGARSS2018同题同序三作者仅正式书目；来源外保留arXiv。不同题JSTARS稿不凭相同作者合并，不另读另一版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Classification+of+remote+sensing+images+using+attribute+profiles+and+feature+profiles+from+different+trees%3A+a+comparative+study&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "tree-ap-fp-comparison-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1806.06985v1",
+            "pdfUrl": "https://arxiv.org/pdf/1806.06985v1",
+            "arxivId": "1806.06985",
+            "arxivVersion": 1,
+            "title": "Classification of remote sensing images using attribute profiles and feature profiles from different trees: a comparative study",
+            "authors": [
+              "Minh-Tan Pham",
+              "Erchan Aptoula",
+              "Sébastien Lefèvre"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-06-18T23:34:55Z",
+            "updatedAt": "2018-06-18T23:34:55Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-seventh-five-hsi-directory-2026-10-14-1806.06985v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1806.06985v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。IGARSS2018同题同序三作者仅正式书目；来源外保留arXiv。不同题JSTARS稿不凭相同作者合并，不另读另一版本。"
+          },
+          {
+            "id": "tree-ap-fp-comparison-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/igarss.2018.8517735",
+            "doi": "10.1109/igarss.2018.8517735",
+            "title": "Classification of Remote Sensing Images Using Attribute Profiles and Feature Profiles from Different Trees: A Comparative Study",
+            "authors": [
+              "Minh-Tan Pham",
+              "Erchan Aptoula",
+              "Sebastien Lefevre"
+            ],
+            "year": 2018,
+            "publicationName": "IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium",
+            "volume": null,
+            "issue": null,
+            "page": "4511-4514",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "tree-ap-fp-comparison-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/方法图支持直接HSI；谱空三维/时序非几何，低秩CP因子不当语义分类，DSCN预计算端元不当全盲提取。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "a84e688d058cfc7f91ac8c6349b01035428a6db188e16921f485992e1b12e4d5",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1806.06985v1",
+            "https://arxiv.org/pdf/1806.06985v1",
+            "https://api.crossref.org/works?query.title=Classification+of+remote+sensing+images+using+attribute+profiles+and+feature+profiles+from+different+trees%3A+a+comparative+study&rows=3"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mars-richardson-ice-state-arxiv-2018",
+      "shortTitle": "Mars CRISM ice evolution",
+      "title": "Ice state evolution during spring in Richardson crater, Mars",
+      "authors": "François Andrieu, Frédéric Schmidt, Sylvain Douté, Eric Chassefière",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1806.07136",
+      "representation": "以辐射传输模型拟合观测谱并反演冰层状态与杂质属性，随后分析春季演化；不是只把高光谱作未来应用，也不把冰层厚度反演自动当几何表面重建。",
+      "tags": [],
+      "summary": "反演火星CRISM近红外高光谱以分析春季冰层状态演化。",
+      "input": "Richardson陨坑的CRISM近红外高光谱影像。",
+      "output": "CO2冰透明/颗粒状态、厚度及水冰/尘埃等属性估计。",
+      "mechanism": "以辐射传输模型拟合观测谱并反演冰层状态与杂质属性，随后分析春季演化；不是只把高光谱作未来应用，也不把冰层厚度反演自动当几何表面重建。",
+      "readingNote": "唯一所用arXiv 1806.07136v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Icarus2018同题同序四作者仅正式书目，原PDF页脚2022不是发表或arXiv首次年份；冰层/冷喷流模型与观测结果不是处理框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1806.07136v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{mars-richardson-ice-state-arxiv-2018,\n  title = {Ice state evolution during spring in Richardson crater, Mars},\n  author = {François Andrieu and Frédéric Schmidt and Sylvain Douté and Eric Chassefière},\n  year = {2018},\n  eprint = {1806.07136},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1806.07136v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "celestial-spectral-characterization",
+          "spectral-radiative-transfer"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "反演火星CRISM近红外高光谱以分析春季冰层状态演化。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1806.07136v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "反演火星CRISM近红外高光谱以分析春季冰层状态演化。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.07136v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1806.07136v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Icarus2018同题同序四作者仅正式书目，原PDF页脚2022不是发表或arXiv首次年份；冰层/冷喷流模型与观测结果不是处理框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works/10.1016%2Fj.icarus.2018.06.019",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "mars-richardson-ice-state-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1806.07136v1",
+            "pdfUrl": "https://arxiv.org/pdf/1806.07136v1",
+            "arxivId": "1806.07136",
+            "arxivVersion": 1,
+            "title": "Ice state evolution during spring in Richardson crater, Mars",
+            "authors": [
+              "François Andrieu",
+              "Frédéric Schmidt",
+              "Sylvain Douté",
+              "Eric Chassefière"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-06-19T10:02:39Z",
+            "updatedAt": "2018-06-19T10:02:39Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-seventh-five-hsi-directory-2026-10-14-1806.07136v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1806.07136v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。Icarus2018同题同序四作者仅正式书目，原PDF页脚2022不是发表或arXiv首次年份；冰层/冷喷流模型与观测结果不是处理框架，留白。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "mars-richardson-ice-state-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1016/j.icarus.2018.06.019",
+            "doi": "10.1016/j.icarus.2018.06.019",
+            "title": "Ice state evolution during spring in Richardson crater, Mars",
+            "authors": [
+              "François Andrieu",
+              "Frédéric Schmidt",
+              "Sylvain Douté",
+              "Eric Chassefière"
+            ],
+            "year": 2018,
+            "publicationName": "Icarus",
+            "volume": "315",
+            "issue": null,
+            "page": "158-173",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "mars-richardson-ice-state-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/方法图支持直接HSI；谱空三维/时序非几何，低秩CP因子不当语义分类，DSCN预计算端元不当全盲提取。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "bfaf9f8f0b18e36f17a4065121528d71671879428b29670775252cd4895b8aa3",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1806.07136v1",
+            "https://arxiv.org/pdf/1806.07136v1",
+            "https://api.crossref.org/works/10.1016%2Fj.icarus.2018.06.019"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用图为冰层物理模型、观测与拟合结果及喷流演化解释，未发现独立高光谱处理框架；留白，不追其他版。",
+        "sourceUrl": "https://arxiv.org/pdf/1806.07136v1",
+        "checkedAt": "2026-10-14"
+      }
+    },
+    {
+      "id": "parallel-nncp-hsi-arxiv-2018",
+      "shortTitle": "Parallel NNCP",
+      "title": "Parallel Nonnegative CP Decomposition of Dense Tensors",
+      "authors": "Grey Ballard, Koby Hayashi, Ramakrishnan Kannan",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1806.07985",
+      "representation": "使用维度树复用MTTKRP计算，在多维处理器网格上分配数据并通信/更新因子；实际33通道400–720 nm数据，不因通用算法或含神经成像对照排除直接HSI处理，不声称输出语义类别或端元标签。",
+      "tags": [],
+      "summary": "并行非负CP分解真实高光谱及延时高光谱张量。",
+      "input": "Souto wood pile的1024×1344×33高光谱立方与Nogueiró九时刻序列。",
+      "output": "非负低秩CP因子与对应张量近似。",
+      "mechanism": "使用维度树复用MTTKRP计算，在多维处理器网格上分配数据并通信/更新因子；实际33通道400–720 nm数据，不因通用算法或含神经成像对照排除直接HSI处理，不声称输出语义类别或端元标签。",
+      "readingNote": "唯一所用arXiv 1806.07985v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。HiPC2018同题作者注册第三人given/family倒置为Kannan Ramakrishnan；精确两名前序、第三完整姓名词集合及所用署名支持元数据关联，原字段保留。33带空间/谱轴与延时轴不自动成几何三维。",
+      "paper": "https://arxiv.org/abs/1806.07985v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_and_main_framework_verified",
+      "frameworkFigures": [
+        {
+          "sourceUrl": "https://arxiv.org/pdf/1806.07985v1",
+          "sourceVersion": "arXiv 1806.07985v1",
+          "figureLabel": "Fig. 3.",
+          "page": 6,
+          "caption": "Fig. 3. Illustration of 2nd inner iteration of Par-NNCP algorithm for 3-way tensor on a 3×3×3 processor grid, showing data distribution, communication, and computation across steps. Highlighted areas correspond to processor (1, 3, 1) and its processor slice with which it communicates. The column normalization and computation of G(2), which involve communication across all processors, is not shown here.",
+          "verificationNote": "主要并行迭代图，完整保留(a)–(e)数据分配、计算、Reduce-Scatter、NLS及All-Gather；原图注明确列归一化/Gram全局通信未画出，不补画或称整个外层训练流程。固定所用版本原图及图注已核，直接裁切、无重绘，每篇仅一张。",
+          "path": "figures/parallel-nncp-hsi-arxiv-2018/framework.png",
+          "width": 1569,
+          "height": 378,
+          "verificationStatus": "verified",
+          "verifiedAt": "2026-10-14",
+          "sha256": "0847d197ffb6c67c1ad70468c45265b6f4bf38c9d8722cd25f371d991f9a2aa3",
+          "attribution": "Grey Ballard, Koby Hayashi, Ramakrishnan Kannan · arXiv 1806.07985v1",
+          "extraction": {
+            "method": "original_pdf_crop",
+            "pdfCoordinateBoxPoints": [
+              45,
+              51,
+              568,
+              177
+            ],
+            "renderScale": 3
+          }
+        }
+      ],
+      "citation": "@misc{parallel-nncp-hsi-arxiv-2018,\n  title = {Parallel Nonnegative CP Decomposition of Dense Tensors},\n  author = {Grey Ballard and Koby Hayashi and Ramakrishnan Kannan},\n  year = {2018},\n  eprint = {1806.07985},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1806.07985v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-dimensionality-reduction",
+          "tensor-low-rank-learning"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "并行非负CP分解真实高光谱及延时高光谱张量。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1806.07985v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "并行非负CP分解真实高光谱及延时高光谱张量。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.07985v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1806.07985v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。HiPC2018同题作者注册第三人given/family倒置为Kannan Ramakrishnan；精确两名前序、第三完整姓名词集合及所用署名支持元数据关联，原字段保留。33带空间/谱轴与延时轴不自动成几何三维。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Parallel+Nonnegative+CP+Decomposition+of+Dense+Tensors&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "HiPC2018同题作者注册第三人given/family倒置为Kannan Ramakrishnan；精确两名前序、第三完整姓名词集合及所用署名支持元数据关联，原字段保留。33带空间/谱轴与延时轴不自动成几何三维。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "parallel-nncp-hsi-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1806.07985v1",
+            "pdfUrl": "https://arxiv.org/pdf/1806.07985v1",
+            "arxivId": "1806.07985",
+            "arxivVersion": 1,
+            "title": "Parallel Nonnegative CP Decomposition of Dense Tensors",
+            "authors": [
+              "Grey Ballard",
+              "Koby Hayashi",
+              "Ramakrishnan Kannan"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-06-19T13:52:12Z",
+            "updatedAt": "2018-06-19T13:52:12Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-seventh-five-hsi-directory-2026-10-14-1806.07985v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1806.07985v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。HiPC2018同题作者注册第三人given/family倒置为Kannan Ramakrishnan；精确两名前序、第三完整姓名词集合及所用署名支持元数据关联，原字段保留。33带空间/谱轴与延时轴不自动成几何三维。"
+          },
+          {
+            "id": "parallel-nncp-hsi-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/hipc.2018.00012",
+            "doi": "10.1109/hipc.2018.00012",
+            "title": "Parallel Nonnegative CP Decomposition of Dense Tensors",
+            "authors": [
+              "Grey Ballard",
+              "Koby Hayashi",
+              "Kannan Ramakrishnan"
+            ],
+            "year": 2018,
+            "publicationName": "2018 IEEE 25th International Conference on High Performance Computing (HiPC)",
+            "volume": null,
+            "issue": null,
+            "page": "22-31",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "HiPC2018同题作者注册第三人given/family倒置为Kannan Ramakrishnan；精确两名前序、第三完整姓名词集合及所用署名支持元数据关联，原字段保留。33带空间/谱轴与延时轴不自动成几何三维。"
+          }
+        ],
+        "methodFamilyId": "parallel-nncp-hsi-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/方法图支持直接HSI；谱空三维/时序非几何，低秩CP因子不当语义分类，DSCN预计算端元不当全盲提取。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "cbdb6ea3484ffbdaadbabafa44b0d6fd94ca0623f2434a4fb1264da441ed8830",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1806.07985v1",
+            "https://arxiv.org/pdf/1806.07985v1",
+            "https://api.crossref.org/works?query.title=Parallel+Nonnegative+CP+Decomposition+of+Dense+Tensors&rows=3"
+          ]
+        }
+      }
+    },
+    {
+      "id": "dscn-unmixing-arxiv-2018",
+      "shortTitle": "DSCN-S / DSCN-P",
+      "title": "Deep Spectral Convolution Network for HyperSpectral Unmixing",
+      "authors": "Savas Ozkan, Gozde Bozdagi Akar",
+      "year": 2018,
+      "venue": "arXiv",
+      "publicationName": "arXiv",
+      "publicationStatus": "preprint",
+      "venueTier": "preprint",
+      "collections": [
+        "hyperspectral"
+      ],
+      "arxivId": "1806.08562",
+      "representation": "谱卷积编码局部光谱特征，谱归一化提高滤波选择性，DSCN-S/DSCN-P分别形成稀疏/概率形式的丰度；所用稿p2明确专注Enc并使用预计算端元，不误称同时盲提取全部端元。",
+      "tags": [],
+      "summary": "以深层光谱卷积和光谱归一化估计高光谱丰度。",
+      "input": "混合高光谱像元及预先计算的端元。",
+      "output": "每像元的材料丰度及光谱重建。",
+      "mechanism": "谱卷积编码局部光谱特征，谱归一化提高滤波选择性，DSCN-S/DSCN-P分别形成稀疏/概率形式的丰度；所用稿p2明确专注Enc并使用预计算端元，不误称同时盲提取全部端元。",
+      "readingNote": "唯一所用arXiv 1806.08562v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ICIP2018同题同序两作者正式书目源外保留arXiv；另一个2020同名扩展题不同团队不关联。唯一Fig1是丰度结果，不冒充框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。",
+      "paper": "https://arxiv.org/abs/1806.08562v1",
+      "verifiedAt": "2026-10-14",
+      "verificationLevel": "primary_abstract_verified",
+      "frameworkFigures": [],
+      "citation": "@misc{dscn-unmixing-arxiv-2018,\n  title = {Deep Spectral Convolution Network for HyperSpectral Unmixing},\n  author = {Savas Ozkan and Gozde Bozdagi Akar},\n  year = {2018},\n  eprint = {1806.08562},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/1806.08562v1}\n}\n",
+      "library": {
+        "categoryIds": [
+          "spectral-unmixing"
+        ],
+        "classificationStatus": "confirmed",
+        "relation": "hyperspectral",
+        "relationNote": "完整原摘要及必要范围段支持实际直接高光谱处理/学习/应用；多光谱输出、其他模态对照不取消直接HSI研究。",
+        "readingProgress": "abstract_read",
+        "verificationStatus": "abstract_verified",
+        "researchQuestion": "以深层光谱卷积和光谱归一化估计高光谱丰度。",
+        "datasets": "本轮不整理实验划分；实际模态和必要范围证据见输入及来源。",
+        "experimentSetting": "只核作者/书目、直接HSI范围和一个版本的一张主图；性能未核。",
+        "conclusions": "任务与方法按完整原摘要及必要所用材料确认；不摘录未核实验结论。",
+        "limitations": "无独立框架允许留白；正式版正文、其他图、实验及代码检查不列后续待办。",
+        "dataLinks": [],
+        "evidence": [
+          {
+            "url": "https://arxiv.org/abs/1806.08562v1",
+            "checkedAt": "2026-10-14",
+            "level": "官方arXiv完整原摘要与书目",
+            "supports": [
+              "以深层光谱卷积和光谱归一化估计高光谱丰度。",
+              "原摘要及所用材料支持直接高光谱研究，命名作者中无Jun Zhou；不表示作者全集检索完成。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.08562v1",
+            "checkedAt": "2026-10-14",
+            "level": "唯一PDF首页、图注定位及必要范围/主图选读",
+            "supports": [
+              "唯一所用arXiv 1806.08562v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ICIP2018同题同序两作者正式书目源外保留arXiv；另一个2020同名扩展题不同团队不关联。唯一Fig1是丰度结果，不冒充框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+            ]
+          },
+          {
+            "url": "https://api.crossref.org/works?query.title=Deep+Spectral+Convolution+Network+for+HyperSpectral+Unmixing&rows=3",
+            "checkedAt": "2026-10-14",
+            "level": "Crossref原始注册书目",
+            "supports": [
+              "精确题名和同序作者的正式书目关联；正式正文未另读。"
+            ]
+          },
+          {
+            "url": "https://arxiv.org/pdf/1806.08562v1",
+            "checkedAt": "2026-10-14",
+            "level": "所用作者官方代码声明",
+            "supports": [
+              "第1页作者实现URL只记录，不访问仓库、README、依赖、权重或运行检查。"
+            ]
+          }
+        ],
+        "versions": [
+          {
+            "id": "dscn-unmixing-arxiv-2018-arxiv",
+            "type": "唯一所用arXiv正文",
+            "url": "https://arxiv.org/abs/1806.08562v1",
+            "pdfUrl": "https://arxiv.org/pdf/1806.08562v1",
+            "arxivId": "1806.08562",
+            "arxivVersion": 1,
+            "title": "Deep Spectral Convolution Network for HyperSpectral Unmixing",
+            "authors": [
+              "Savas Ozkan",
+              "Gozde Bozdagi Akar"
+            ],
+            "year": 2018,
+            "firstSubmittedAt": "2018-06-22T09:02:43Z",
+            "updatedAt": "2018-06-22T09:02:43Z",
+            "readingProgress": "abstract_read",
+            "localFile": "research/hyperspectral/sources/arxiv-2018-seventh-five-hsi-directory-2026-10-14-1806.08562v1.pdf.gz",
+            "compression": "gzip",
+            "sourcePolicyStatus": "arxiv_allowed",
+            "relation": "唯一所用arXiv 1806.08562v1；完整原摘要、首页书目和图注定位已核，只选读确认HSI范围与主要图必要内容；不通读全文、逐版阅读、整理实验性能或访问科学代码。ICIP2018同题同序两作者正式书目源外保留arXiv；另一个2020同名扩展题不同团队不关联。唯一Fig1是丰度结果，不冒充框架。所用版本未发现独立方法主框架，留白，不要求补读其他版本。"
+          },
+          {
+            "id": "dscn-unmixing-arxiv-2018-published-metadata",
+            "type": "正式书目关联（仅元数据）",
+            "url": "https://doi.org/10.1109/icip.2018.8451420",
+            "doi": "10.1109/icip.2018.8451420",
+            "title": "Deep Spectral Convolution Network for Hyperspectral Unmixing",
+            "authors": [
+              "Savas Ozkan",
+              "Gozde Bozdagi Akar"
+            ],
+            "year": 2018,
+            "publicationName": "2018 25th IEEE International Conference on Image Processing (ICIP)",
+            "volume": null,
+            "issue": null,
+            "page": "3313-3317",
+            "readingProgress": "title_only",
+            "sourcePolicyStatus": "outside_whitelist_metadata_only",
+            "relation": "精确题名、同序作者姓氏及所用稿姓名核对，仅正式书目关联；不读取另一正文，不断言文字/实验相同。"
+          }
+        ],
+        "methodFamilyId": "dscn-unmixing-arxiv-2018",
+        "classificationReview": {
+          "reviewedAt": "2026-10-14",
+          "basis": "catalog_and_primary_source",
+          "rationale": "原摘要及必要所用输入/方法图支持直接HSI；谱空三维/时序非几何，低秩CP因子不当语义分类，DSCN预计算端元不当全盲提取。",
+          "evidenceFields": [
+            "title",
+            "summary",
+            "input",
+            "output",
+            "mechanism",
+            "readingNote"
+          ],
+          "evidenceDigest": "fabf0a576bc3193b36a00f9cb2d2a4aefd7211f96b3021f43a4370f3a140b048",
+          "sourceUrls": [
+            "https://arxiv.org/abs/1806.08562v1",
+            "https://arxiv.org/pdf/1806.08562v1",
+            "https://api.crossref.org/works?query.title=Deep+Spectral+Convolution+Network+for+HyperSpectral+Unmixing&rows=3",
+            "https://arxiv.org/pdf/1806.08562v1"
+          ]
+        }
+      },
+      "frameworkFigureSearch": {
+        "status": "no_framework",
+        "note": "所用唯一Fig1是Jasper Ridge丰度估计结果，未发现独立DSCN框架；留白，不追其他版。",
+        "sourceUrl": "https://arxiv.org/pdf/1806.08562v1",
+        "checkedAt": "2026-10-14"
+      },
+      "code": "https://github.com/savasozkan/dscn"
     }
   ],
   "datasets": [
@@ -118527,7 +119326,8 @@
         "adaptive-bundles-double-sparse-tgrs-2019",
         "bundle-group-mixed-norm-unmix-tip-2019",
         "gaee-ivfm-endmember-arxiv-2018",
-        "nuclear-norm-difference-pruning-arxiv-2018"
+        "nuclear-norm-difference-pruning-arxiv-2018",
+        "dscn-unmixing-arxiv-2018"
       ],
       "history": [
         {
@@ -118616,7 +119416,8 @@
         "l1-scaling-cut-hsi-arxiv-2017",
         "rank1-tensor-hsi-classification-tgrs-2018",
         "fixed-point-jacobi-hsi-dimensionality-arxiv-2017",
-        "rffica-rfflda-hsi-arxiv-2018"
+        "rffica-rfflda-hsi-arxiv-2018",
+        "parallel-nncp-hsi-arxiv-2018"
       ],
       "history": [
         {
@@ -118877,7 +119678,8 @@
         "loglrtr-hsi-fusion-arxiv-2023",
         "tmac-hsi-completion-arxiv-2013",
         "lowrank-tensor-tv-superresolution-arxiv-2016",
-        "graph-multilinear-lowrank-hsi-arxiv-2016"
+        "graph-multilinear-lowrank-hsi-arxiv-2016",
+        "parallel-nncp-hsi-arxiv-2018"
       ],
       "history": [
         {
@@ -121029,7 +121831,9 @@
         "rkhs-rbf-bandwidth-hsi-arxiv-2018",
         "rffica-rfflda-hsi-arxiv-2018",
         "svm-variational-probability-hsi-arxiv-2018",
-        "gan-labeled-hsi-synthesis-arxiv-2018"
+        "gan-labeled-hsi-synthesis-arxiv-2018",
+        "ben-hamida-3d-cnn-tgrs-2018",
+        "tree-ap-fp-comparison-arxiv-2018"
       ],
       "history": [
         {
@@ -121162,7 +121966,8 @@
         "enmap-acquisition-geometry",
         "dispersion-unmixing-eccv-2020",
         "contaminated-rough-slab-radiative-transfer-arxiv-2015",
-        "nyc-lwir-temperature-emissivity-arxiv-2017"
+        "nyc-lwir-temperature-emissivity-arxiv-2017",
+        "mars-richardson-ice-state-arxiv-2018"
       ],
       "history": [
         {
@@ -122248,7 +123053,8 @@
         "tensor-morphological-profile-icip-2016",
         "gaussian-gabor-hsi-classification-2019",
         "hsi-lidar-icv-multilevel-fusion-2020",
-        "jmpt-hsi-change-detection-arxiv-2022"
+        "jmpt-hsi-change-detection-arxiv-2022",
+        "tree-ap-fp-comparison-arxiv-2018"
       ],
       "history": [
         {
@@ -124440,7 +125246,8 @@
       "rationale": "GJ758B原稿实际32连续积分场通道提取伴星谱并拟合谱型/温度/重力；既有垂直大气廓线或温度发射率分离任务均不对应该输出。",
       "evidencePaperIds": [
         "gj758-b-hyperspectral-characterization-arxiv-2017",
-        "titan-vims-polar-cloud-mapping-arxiv-2018"
+        "titan-vims-polar-cloud-mapping-arxiv-2018",
+        "mars-richardson-ice-state-arxiv-2018"
       ],
       "history": [
         {
