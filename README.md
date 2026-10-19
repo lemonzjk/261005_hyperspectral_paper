@@ -80,7 +80,7 @@ npm run preview
 
 ## GitHub Pages
 
-仓库已包含 `.github/workflows/pages.yml`。发布时先在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**，然后推送 `main`。部署成功后的预期地址：
+仓库已包含 `.github/workflows/pages.yml`。发布时先在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**，然后在 Actions 中手动运行 `Build and deploy atlas`。推送 `main` 不会自动发布。部署成功后的预期地址：
 
 https://lemonzjk.github.io/261005_hyperspectral_paper/
 
