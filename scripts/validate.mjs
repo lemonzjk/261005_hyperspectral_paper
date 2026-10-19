@@ -1,5 +1,6 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import assert from 'node:assert/strict';
 import { tracks as trackDefinitions } from '../src/tracks.ts';
 import { timelineLayout } from '../src/timeline-layout.ts';
@@ -9,6 +10,18 @@ import { matchesAuthor, splitAuthors, createAuthorMatcher, createPaperQueryMatch
 import { allowedPublication, canonicalVenue, publicationScope } from '../src/publications.ts';
 import { groupedTasks, countGroupPapers } from '../src/library-groups.ts';
 import { materialStatus } from '../src/materials.ts';
+
+// PDF originals are local research archives, not required in a fresh clone.
+// Use --require-local-pdfs when auditing the local archive itself.
+const isPdfArchive = path => /\.pdf(?:\.gz)?$/i.test(path);
+const sourceAvailable = path => typeof path === 'string' && path.length > 0 && (
+  (isPdfArchive(path) && !process.argv.includes('--require-local-pdfs')) ||
+  existsSync(new URL('../' + path, import.meta.url))
+);
+const trackedFiles = execFileSync('git', ['ls-files', '-z'], {
+  cwd: new URL('..', import.meta.url), encoding: 'utf8', maxBuffer: 16 * 1024 * 1024,
+}).split('\0').filter(Boolean);
+assert(!trackedFiles.some(isPdfArchive), 'PDF originals must remain untracked');
 
 const context = readFileSync(new URL('../CONTEXT.md', import.meta.url), 'utf8');
 const contextCharacters = [...context].length;
@@ -28,9 +41,9 @@ for (const record of reinstatements.values()) {
   assert(removed?.relation === 'hyperspectral' && removed.reason === '出版来源不在项目顶会顶刊/arXiv白名单', `Only source-excluded HSI may be reinstated: ${record.paperId}`);
   assert(paper?.venue === 'arXiv' && paper.arxivId === record.arxivId, `Reinstatement requires the recorded arXiv source: ${record.paperId}`);
   const version = paper.library?.versions?.find(version => version.arxivId === record.arxivId && version.pdfUrl === record.selectedPdfUrl);
-  assert(version?.localFile && existsSync(new URL(`../${version.localFile}`, import.meta.url)), `Reinstatement needs an archived selected original: ${record.paperId}`);
+  assert(version?.localFile && sourceAvailable(version.localFile), `Reinstatement needs an archived selected original: ${record.paperId}`);
   assert(record.reason?.trim() && /^\d{4}-\d{2}-\d{2}$/.test(record.date), `Missing reinstatement decision: ${record.paperId}`);
-  assert(record.evidencePath?.startsWith('research/hyperspectral/sources/') && existsSync(new URL(`../${record.evidencePath}`, import.meta.url)), `Missing reinstatement evidence: ${record.paperId}`);
+  assert(record.evidencePath?.startsWith('research/hyperspectral/sources/') && sourceAvailable(record.evidencePath), `Missing reinstatement evidence: ${record.paperId}`);
 }
 const protectedIds = new Set(policy.protectedAuthor.existingPaperIds);
 const ids = new Set();
@@ -141,7 +154,7 @@ for (const record of topicAdditions) {
   assert(!baseline.papers.some(paper => paper.id === record.paperId), `Historical paper recorded as a topic addition: ${record.paperId}`);
   assert(topicPapers.some(paper => paper.id === record.paperId), `Topic addition absent from collection: ${record.paperId}`);
   assert(record.reason?.trim() && /^\d{4}-\d{2}-\d{2}$/.test(record.date), `Missing topic addition decision: ${record.paperId}`);
-  assert(record.evidencePath?.startsWith('research/hyperspectral/sources/') && existsSync(new URL(`../${record.evidencePath}`, import.meta.url)), `Missing topic addition evidence: ${record.paperId}`);
+  assert(record.evidencePath?.startsWith('research/hyperspectral/sources/') && sourceAvailable(record.evidencePath), `Missing topic addition evidence: ${record.paperId}`);
 }
 const expectedTopicIds = [
   ...baseline.papers.filter(paper => !removedIds.has(paper.id)).map(paper => paper.id),
@@ -336,7 +349,7 @@ const survey = JSON.parse(readFileSync(new URL('../research/hyperspectral/survey
 for (const candidate of survey.candidates) {
   assert(['pending', 'included', 'excluded', 'duplicate'].includes(candidate.decision) && candidate.reason, 'Candidate needs explicit decision and reason');
   if (['included', 'duplicate'].includes(candidate.decision)) assert(ids.has(candidate.paperId), 'Included candidate must resolve to catalog');
-  if (candidate.decision !== 'pending') assert(candidate.evidencePath && existsSync(new URL('../' + candidate.evidencePath, import.meta.url)), 'Reviewed candidate needs saved source evidence');
+  if (candidate.decision !== 'pending') assert(candidate.evidencePath && sourceAvailable(candidate.evidencePath), 'Reviewed candidate needs saved source evidence');
 }
 for (const search of survey.searches) {
   assert(search.keywords.length && search.pagination && search.gaps.length, 'Search audit needs keywords, pagination, and gaps');
